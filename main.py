@@ -34,12 +34,12 @@ MAX_DAILY_QUOTA = 1200  # 무료 티어 안전 마진
 
 webhook_url = os.environ.get("DISCORD_WEBHOOK_URL")
 
-# 💡 [핵심 방어 1] 일일 쿼터 초과 시 멈춤
+# 일일 쿼터 초과 시 안전 종료
 if current_count >= MAX_DAILY_QUOTA:
   print("⚠️ [쿼터 방어] 일일 허용 횟수 도달. 이번 실행을 건너뜁니다.")
   exit(0)
 
-# 💡 [핵심 방어 2] 12시간마다 강제 생존신고(Health-Check) 로직
+# 12시간마다 강제 생존신고(Health-Check) 체크
 last_check_str = state_data.get("last_health_check")
 is_health_check = False
 if last_check_str:
@@ -47,7 +47,7 @@ if last_check_str:
   if (NOW - last_check_time) >= timedelta(hours=12):
     is_health_check = True
 else:
-    is_health_check = True
+  is_health_check = True
 
 # 2. 이전 조사 기록 불러오기
 history_data = []
@@ -75,9 +75,9 @@ prompt = """
     4. 출처 원문 텍스트(Raw Text Quote): (해당 출처에서 인용하거나 근거로 삼은 실제 원문 문장 또는 규정 조항의 텍스트)
     """
 
-# 4. 🔄 [기업형 폴백 & 재시도 픽서 로직]
-# 1단계: 최신 모델 (gemini-flash-latest) 로 3회 시도
-# 2단계: 실패 시 하위 안정 모델 (gemini-3.5-flash-lite) 로 3회 추가 시도
+# 4. 모델 폴백 & 재시도 픽서 로직
+# 1단계: 최신 모델 (gemini-flash-latest)로 3회 시도
+# 2단계: 실패 시 하위 안정 모델 (gemini-3.5-flash-lite)로 3회 추가 시도
 models_to_try = ["gemini-flash-latest", "gemini-3.5-flash-lite"]
 ai_message = ""
 success = False
@@ -102,22 +102,21 @@ for model_name in models_to_try:
         time.sleep(retry_delay)
 
   if success:
-    break  *# 성공하면 하위 모델로 넘어가지 않고 탈출*
+    break  # 성공하면 하위 모델로 넘어가지 않고 탈출
 
-# 만약 모든 모델이 실패했을 경우의 최후 방어
+# 모든 모델 실패 시 방어
 if not success:
   ai_message = (
       "⚠️ [시스템 긴급 경고] 모든 AI 모델(Latest 및 Lite)의 일시적"
       " 과부하로 이번 회차 조사가 지연되었습니다. 시스템은 정상 대기"
       " 중입니다."
   )
-  success = True  # 봇 다운을 막기 위해 생존 처리
+  success = True
 
 # 5. 디스코드 전송 (2000자 제한 방어)
 if len(ai_message) > 1900:
   ai_message = ai_message[:1900] + "\n...(내용이 길어 일부 생략됨)"
 
-# 12시간 헬스체크인 경우 메시지 타이틀 변경
 title_prefix = (
     "🟢 **[12시간 시스템 생존신고 & 정기 헬스체크]**"
     if is_health_check
