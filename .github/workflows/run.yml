@@ -2,17 +2,16 @@ name: Servo Drive CRA Automated Research
 
 on:
   schedule:
-    - cron: '0 * * * *' # 매 정각(1시간에 1번) 실행 (무료 티어 1,500회 제한 방어)
-  workflow_dispatch: # 스마트폰에서 언제든 수동으로 테스트 실행 가능
+    - cron: '*/5 * * * *' # 5분 주기 실행
+  workflow_dispatch:      # 수동 실행 버튼 허용
+
+# 깃허브 액션이 스스로 파일을 수정하고 푸시(Push)할 수 있도록 권한 부여
+permissions:
+  contents: write
 
 jobs:
-  run-research-bot:
+  run-bot:
     runs-on: ubuntu-latest
-    
-    # 깃허브 액션이 state.json 수정을 위해 저장소에 쓰기 권한을 갖도록 설정
-    permissions:
-      contents: write
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -20,10 +19,11 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.10'
+          python-version: '3.x' # 특정 버전을 고정하지 않고 최신 안정 버전을 유연하게 받아와 504 에러 방어
 
       - name: Install dependencies
         run: |
+          python -m pip install --upgrade pip
           pip install google-genai requests
 
       - name: Run Python automation script
@@ -32,11 +32,3 @@ jobs:
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
         run: |
           python main.py
-
-      - name: Auto-commit updated state.json
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add state.json
-          git commit -m "chore: update state.json execution count [skip ci]" || echo "No changes to commit"
-          git push
