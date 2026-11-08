@@ -1,6 +1,7 @@
 from datetime import datetime, timedelta
 import json
 import os
+import subprocess
 import time
 from google import genai
 import requests
@@ -49,7 +50,7 @@ if last_check_str:
 else:
   is_health_check = True
 
-# 2. 이전 조사 기록 불러오기
+# 2. 🧠 [외부 메모리 읽기] 깃허브에 쌓인 이전 히스토리 불러오기
 history_data = []
 try:
   if os.path.exists(HISTORY_FILE):
@@ -58,14 +59,24 @@ try:
 except Exception:
   history_data = []
 
+recent_snippets = [item.get("snippet", "") for item in history_data[-5:]]
+context_memory = (
+    "\n".join([f"- {s}" for s in recent_snippets])
+    if recent_snippets
+    else "아직 초기 조사 단계입니다."
+)
+
 # 3. Gemini 클라이언트 초기화 및 프롬프트
 client = genai.Client(api_key=os.environ.get("GEMINI_API_KEY"))
 
-prompt = """
+prompt = f"""
     당신은 유럽연합(EU) CRA(Cyber Resilience Act) 규격 및 산업용 자동화 보안 최고 전문가입니다.
-    산업용 서보 드라이브(Servo Drive) 제조사가 반드시 준수해야 하는 
-    CRA 핵심 요건(예: 취약점 무상 패치, Secure by default, 기술 문서, SBOM 등) 중 
-    아직 다루지 않았을 법한 핵심 주제를 깊이 있게 선정하여 아래 4가지 양식에 맞추어 엄격하게 조사하고 작성해 주세요.
+    산업용 서보 드라이브(Servo Drive) 제조사가 반드시 준수해야 하는 CRA 핵심 요건을 조사하고 있습니다.
+
+    [지금까지 깃허브 외부 메모리에 누적된 이전 조사 내용 (참고용 - 중복 조사 방지)]
+    {context_memory}
+
+    위의 이전 내용들과 중복되지 않으면서, 아직 다루지 않은 더 발전되거나 세부적인 CRA 핵심 주제(예: 취약점 무상 패치, Secure by default, 기술 문서, SBOM, 생명주기 관리 등)를 깊이 있게 선정하여 아래 4가지 양식에 맞추어 엄격하게 조사하고 작성해 주세요.
     추측성 내용은 절대 배제하고, 실제 EU 규정 조항이나 공식 가이드라인을 기반으로 높은 품질의 전문적인 내용을 작성하세요.
 
     [작성 양식]
@@ -75,9 +86,7 @@ prompt = """
     4. 출처 원문 텍스트(Raw Text Quote): (해당 출처에서 인용하거나 근거로 삼은 실제 원문 문장 또는 규정 조항의 텍스트)
     """
 
-# 4. 모델 폴백 & 재시도 픽서 로직
-# 1단계: 최신 모델 (gemini-flash-latest)로 3회 시도
-# 2단계: 실패 시 하위 안정 모델 (gemini-3.5-flash-lite)로 3회 추가 시도
+# 4. 모델 폴백 & 재시도 픽서 로직 (Latest ➔ Lite)
 models_to_try = ["gemini-flash-latest", "gemini-3.5-flash-lite"]
 ai_message = ""
 success = False
@@ -102,9 +111,8 @@ for model_name in models_to_try:
         time.sleep(retry_delay)
 
   if success:
-    break  # 성공하면 하위 모델로 넘어가지 않고 탈출
+    break
 
-# 모든 모델 실패 시 방어
 if not success:
   ai_message = (
       "⚠️ [시스템 긴급 경고] 모든 AI 모델(Latest 및 Lite)의 일시적"
@@ -113,25 +121,43 @@ if not success:
   )
   success = True
 
-# 5. 디스코드 전송 (2000자 제한 방어)
-if len(ai_message) > 1900:
-  ai_message = ai_message[:1900] + "\n...(내용이 길어 일부 생략됨)"
-
+# 5. 디스코드 분할 전송 (2000자 제한 방어)
 title_prefix = (
     "🟢 **[12시간 시스템 생존신고 & 정기 헬스체크]**"
     if is_health_check
     else "🛡️ **[CRA 규격 심층 조사 및 근거 리포트]**"
 )
 
-payload = {
-    "content": (
-        f"{title_prefix} (오늘 누적 횟수: {current_count + 1})\n\n{ai_message}"
-    )
-}
-if webhook_url:
-  requests.post(webhook_url, json=payload)
+full_text = (
+    f"{title_prefix} (오늘 누적 횟수: {current_count + 1})\n\n{ai_message}"
+)
 
-# 6. 상태 업데이트 및 기록 저장
+
+def send_discord_chunked(text, webhook_url):
+  if not webhook_url:
+    return
+  max_len = 1900
+  chunks = [text[i : i + max_len] for i in range(0, len(text), max_len)]
+  for idx, chunk in enumerate(chunks):
+    msg = chunk
+    if len(chunks) > 1:
+      msg = f"(파트 {idx+1}/{len(chunks)})\n" + msg
+    payload = {"content": msg}
+    requests.post(webhook_url, json=payload)
+    time.sleep(1)
+
+
+send_discord_chunked(full_text, webhook_url)
+
+# 6. GitHub 백서버 저장 (폴더별 마크다운 아카이브 & 상태 업데이트)
+os.makedirs("research_archive", exist_ok=True)
+archive_filename = f"research_archive/{TODAY}_{NOW.strftime('%H%M%S')}.md"
+with open(archive_filename, "w", encoding="utf-8") as f:
+  f.write(
+      f"# CRA Research Report\n- **Date:** {TODAY} {NOW.strftime('%H:%M:%S')}\n-"
+      f" **Count:** {current_count + 1}\n\n{ai_message}"
+  )
+
 state_data["count"] = current_count + 1
 if is_health_check:
   state_data["last_health_check"] = NOW.isoformat()
@@ -139,12 +165,23 @@ if is_health_check:
 with open(STATE_FILE, "w", encoding="utf-8") as f:
   json.dump(state_data, f, indent=2, ensure_ascii=False)
 
-# 히스토리 기록 추가
 history_data.append({
     "date": TODAY,
     "time": NOW.strftime("%H:%M:%S"),
     "count": state_data["count"],
     "snippet": ai_message[:150],
+    "file": archive_filename,
 })
 with open(HISTORY_FILE, "w", encoding="utf-8") as f:
   json.dump(history_data, f, indent=2, ensure_ascii=False)
+
+# 7. 🚀 [엔터프라이즈 기능] 변경된 아카이브 파일들을 깃허브에 자동 커밋 & 푸시
+try:
+  subprocess.run(["git", "config", "--global", "user.name", "CRA-Research-Bot"], check=True)
+  subprocess.run(["git", "config", "--global", "user.email", "bot@users.noreply.github.com"], check=True)
+  subprocess.run(["git", "add", "state.json", "history.json", "research_archive/"], check=True)
+  subprocess.run(["git", "commit", "-m", f"Auto-archive: Research report #{current_count + 1}"], check=True)
+  subprocess.run(["git", "push"], check=True)
+  print("🚀 깃허브 백서버에 아카이브가 성공적으로 동기화되었습니다.")
+except Exception as e:
+  print(f"⚠️ Git Push 생략 또는 변경사항 없음: {str(e)}")
