@@ -1,6 +1,6 @@
 from datetime import datetime
 import json
-os import os
+import os
 from google import genai
 import requests
 
