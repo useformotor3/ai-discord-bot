@@ -1,11 +1,10 @@
 name: Servo Drive CRA Automated Research
 
 on:
-  schedule:
-    - cron: '*/5 * * * *' # 5분 주기 실행
-  workflow_dispatch:      # 수동 실행 버튼 허용
+  repository_dispatch:     # 외부 API 신호를 받아 실행되도록 설정
+    types: [run-bot]       # 'run-bot'이라는 신호가 오면 작동
+  workflow_dispatch:      # 수동 실행 버튼도 유지
 
-# 깃허브 액션이 스스로 파일을 수정하고 푸시(Push)할 수 있도록 권한 부여
 permissions:
   contents: write
 
@@ -19,7 +18,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.x' # 특정 버전을 고정하지 않고 최신 안정 버전을 유연하게 받아와 504 에러 방어
+          python-version: '3.x'
 
       - name: Install dependencies
         run: |
