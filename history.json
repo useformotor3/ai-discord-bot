@@ -26,5 +26,12 @@
     "count": 7,
     "snippet": "**1. 주제 요약:**\n산업용 서보 드라이브 제조사는 제품 출하 시 공용 기본 비밀번호 사용을 전면 배제하고 고유 인증 체계를 강제하는 '디폴트 보안(Secure by Default)' 구성을 적용해야 합니다.\n또한 물리적 디버그 포트(JTAG, UART) 잠금 및 ",
     "file": "research_archive/2026-11-08_112818.md"
+  },
+  {
+    "date": "2026-11-08",
+    "time": "12:00:59",
+    "count": 8,
+    "snippet": "EU CRA(Cyber Resilience Act) 규격 및 산업용 자동화 보안 전문가로서, 이전 조사 내용(무상 보안 패치, SBOM, Secure by Default 및 디버그 포트 잠금)과 중복되지 않으며 서보 드라이브 제조사가 반드시 준수해야 할 또 다른 핵심적",
+    "file": "research_archive/2026-11-08_120059.md"
   }
 ]
