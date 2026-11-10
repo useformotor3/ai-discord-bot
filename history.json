@@ -4870,5 +4870,12 @@
     "count": 278,
     "snippet": "1. 주제 요약: 산업용 서보 드라이브 제조사가 CRA 부속서 I(Annex I)에 따라 이행해야 할 '취약점 관리 및 조정된 취약점 공개(Coordinated Vulnerability Disclosure, CVD)' 프로세스 구축 요건입니다. 제조사는 발견된 취약점의",
     "file": "research_archive/2026-11-10_230537.md"
+  },
+  {
+    "date": "2026-11-10",
+    "time": "23:10:47",
+    "count": 279,
+    "snippet": "유럽연합(EU) 사이버탄력성법(CRA, Cyber Resilience Act) 규격 및 산업용 자동화 보안 전문가로서, 이전 조사 내용(보안 업데이트 자동화, SBOM, 암호화/원격접속 보호, 무상 패치, CVD 프로세스)과 중복되지 않으며 서보 드라이브 제조사가 반드",
+    "file": "research_archive/2026-11-10_231047.md"
   }
 ]
