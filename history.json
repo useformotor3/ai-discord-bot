@@ -4828,5 +4828,12 @@
     "count": 272,
     "snippet": "EU CRA(Cyber Resilience Act, Regulation (EU) 2024/2847) 규격 및 산업용 자동화 보안 최고 전문가로서, 이전의 기초적·하드웨어적·일반 SBOM 및 단순 취약점 패치 논의를 완전히 배제하고, 산업용 서보 드라이브(Servo Dr",
     "file": "research_archive/2026-11-10_223533.md"
+  },
+  {
+    "date": "2026-11-10",
+    "time": "22:40:44",
+    "count": 273,
+    "snippet": "1. 주제 요약: 산업용 서보 드라이브 제조사가 준수해야 할 CRA 제11조 및 부속서 I(Annex I)에 따른 '기본 설정 보안(Secure by default)' 의구현 요건으로, 제품 출고 시 무단 액세스 방지를 위한 강화된 초기 상태 및 배송 전 공격 표면(A",
+    "file": "research_archive/2026-11-10_224044.md"
   }
 ]
