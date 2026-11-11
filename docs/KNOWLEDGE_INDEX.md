@@ -1,0 +1,68 @@
+# CRA 지식 인덱스 및 검증대장
+
+이 파일은 기존 조사 아카이브와 앞으로 추가할 자료의 색인 기준이다. 현재 기존 자료의 개별 주장 검증은 아직 수행하지 않았다.
+
+## 기존 저장소 자료 현황 (초기 관찰)
+- `research_archive/`: 날짜/시간 기반 Markdown 조사 파일 다수 존재
+- `history.json`: 조사 이력 JSON
+- `state.json`: 누적 상태 카운터. 과거 관찰 시 count 값 275가 있었으나 실제 파일 수와 동일한지 검증되지 않음
+- `main.py`: Gemini API를 이용한 CRA 조사 및 Discord 전송, Markdown 아카이브/상태 저장 로직
+- `.github/workflows/run.yml`: workflow_dispatch 및 repository_dispatch 트리거. cron 예약 실행은 확인되지 않음
+- 위 내용은 초기 구조 확인이며, 각 문서의 사실 정확성이나 최신성을 보증하지 않는다.
+
+## 검증 상태 정의
+| 상태 | 의미 |
+|---|---|
+| VERIFIED | 원문과 독립 근거를 확인 |
+| PARTIALLY_VERIFIED | 일부 내용/근거만 확인 |
+| UNVERIFIED | 아직 검증하지 않음 |
+| CONFLICT | 출처 간 불일치 |
+| OUTDATED | 개정·폐지·대체된 자료 |
+| NOT_APPLICABLE | 제품별 적용성 검토 후 비적용 판단 |
+
+## 자료 레지스트리 필드
+| 필드 | 설명 |
+|---|---|
+| record_id | 고유 자료 ID |
+| local_path | 저장소 내 파일 경로 |
+| topic | CRA/제품분류/취약점/SBOM/업데이트/ST/TI 등 |
+| document_title | 문서 제목 |
+| publisher | 발행기관 |
+| source_url | 원문 URL |
+| source_type | 법령/표준/가이드/데이터시트/보안공지/내부 조사 |
+| version_date | 문서 버전·발행일·개정일 |
+| checked_at | 실제 확인일 |
+| source_excerpt | 필요한 최소 원문 인용 또는 원문 위치 |
+| interpretation | 한국어 해석 |
+| related_claims | 연결된 주장 ID |
+| verification_status | 검증 상태 |
+| notes | 제한·충돌·후속 조치 |
+
+## 주장 레지스트리 템플릿
+| claim_id | 주장 | 유형 | 원문 근거 | 교차근거 | 적용성 | 상태 |
+|---|---|---|---|---|---|---|
+| CRA-CLM-0001 | 조사 후 입력 | 사실/해석/권고 | URL+조항 | 독립 출처 | 제품 조건 | UNVERIFIED |
+
+## 핵심 공식 출처 후보
+아래는 조사 시작점이며, 각 자료의 현재 버전과 해당 쟁점의 근거 적합성은 실제 검증 단계에서 확인한다.
+- EUR-Lex — Regulation (EU) 2024/2847: https://eur-lex.europa.eu/eli/reg/2024/2847/oj
+- European Commission — Cyber Resilience Act 정책 페이지: https://digital-strategy.ec.europa.eu/en/policies/cyber-resilience-act
+- ENISA: https://www.enisa.europa.eu/
+- CEN-CENELEC: https://www.cencenelec.eu/
+- ETSI: https://www.etsi.org/
+- STMicroelectronics: https://www.st.com/
+- Texas Instruments: https://www.ti.com/
+
+## 제조사 조사 레코드 기준
+### ST
+정확한 MCU 부품 번호가 확정되기 전에는 제품군 수준의 일반 조사로 표시한다. 부트 보안, 디버그 접근 제어, 키/보안 저장, 암호 가속, 펌웨어 업데이트 보호, 보안 공지, Errata, 제품 수명주기를 확인한다.
+
+### TI
+ST와 비교할 기능 범위와 제품군을 먼저 정의한다. 동급 기능이 확인되지 않으면 '비교 불가/자료 미확인'으로 표시하며 억지로 동등 비교하지 않는다.
+
+## 다음 색인 작업
+1. 전체 archive 파일명/크기/날짜 인벤토리 생성
+2. 문서별 제목·핵심 주장·URL 추출
+3. 동일 URL 및 중복 주장 식별
+4. 원문 접속 및 조항/페이지 대조
+5. 검증 결과를 별도 레코드로 저장하고 원본 아카이브는 보존
