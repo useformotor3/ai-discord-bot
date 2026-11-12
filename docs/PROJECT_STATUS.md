@@ -170,3 +170,10 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - A-009–A-015 및 B-001–B-002, 8개 파일의 Raw Text Quote를 EUR-Lex 현행 원문과 다시 대조했다.
 - 8개 모두 직접 인용으로 재사용 불가 판정. 지원기간의 “whichever is shorter/longer” 혼동, Article 14 신고 대상 확대, Annex I Part I/II 구조 혼합이 반복됨.
 - Batch 01과 Batch 02를 합쳐 Pass B/C 재검증 16/34개 고유 표본 진행. 이 수치는 문서 수이며 claim 수가 아니다. 동일 AI 세션의 별도 절차 검증이며 제3자 검토가 아니다.
+
+
+## Pass B/C 별도 재검증 — Batch 03
+- 상세: [ARCHIVE_PASS_BC_AUDIT_BATCH_03_2026-11-12.md](ARCHIVE_PASS_BC_AUDIT_BATCH_03_2026-11-12.md).
+- B-003–B-010 8개 파일을 EUR-Lex 현행 원문으로 재검증했다. B-009의 secure-by-default 문구만 핵심 취지가 일치하나 위치/표현 수정 필요. 나머지는 직접 인용/조항/적용 범위에 오류가 확인됐다.
+- B-010의 Class II 적합성 평가 근거는 Article 32(3)이며 Article 24가 아니다. Annex III Class II 카테고리 및 Article 7 core functionality 증거가 없어 서보 드라이브 Class II 단정은 미확정/근거 부족이다.
+- Pass B/C 재검증 24/34개 고유 표본 진행. 10개 파일 남음. 동일 AI 세션의 별도 절차 검증이며 독립 제3자 검토는 아니다.
