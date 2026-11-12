@@ -89,7 +89,7 @@ TI 공식 비교 기준 예시로 MSPM0G3529-Q1 데이터시트(SLASFO2B, revise
 
 ## 기존 조사 아카이브 품질 감사
 - 990개 전체 후보 추출 결과: 4,400개 주장 문단, 1,224개 Article 후보, URL 문자열 후보 0개. 자동 추출은 법적 검증이 아니다.
-- 수동 표본 14개 파일: 11건 CONFLICT, 3건 PARTIALLY_VERIFIED. 무작위 표본이 아니므로 990개 전체 오류율로 일반화하지 않는다.
+- 수동 표본 누계 34개 파일: 25건 CONFLICT, 9건 PARTIALLY_VERIFIED. 무작위 표본이 아니므로 990개 전체 오류율로 일반화하지 않는다.
 - 반복 오류: Article 10/11/14 혼동, Article 24/32 혼동, 지원기간과 무상 업데이트 조항 혼동, 24h/72h 신고 범위 과장, 서보 드라이브 Class I 자동 단정.
 - 상세: [초기 5개 감사](ARCHIVE_MANUAL_SAMPLE_AUDIT_5_2026-11-12.md), [추가 9개 감사](ARCHIVE_MANUAL_AUDIT_9_2026-11-12.md).
 
@@ -126,4 +126,4 @@ TI 비교 예시로 MSPM0G3529-Q1 데이터시트 SLASFO2B RevB (October 2025)�
 
 주의: TI 공식 제품 기술자료 인덱스에는 SLAAE29 RevB (2026-08-27)와 G-Series TRM RevF (2026-11-05)가 표시되어 최신판 본문 확인이 추가로 필요하다. 이번 문서의 SLAAE29A 분석은 RevA에 한정한다. TI 데이터시트의 PSA Level 1 “targeted”는 인증 취득 완료가 아니다. Q1/ASIL 관련 표현은 CRA 적합성 증거와 다르다.
 
-기능별 표, source metadata, 제품 적용 한계 및 추가 시험 큐는 [제조사 보안 자료 레지스터](MANUFACTURER_SECURITY_SOURCE_REGISTER_2026-11-12.md)를 참조한다. 개별 기술 주장과 원문 위치/상태는 [Claim Evidence Ledger](CLAIM_EVIDENCE_LEDGER.md)에 등록했다. 현재 초기 제조사 주장 8건을 등록했으며, 이 레코드는 MCU 기능 사실의 출처 검증이지 서보 드라이브 전체의 CRA 적합성 판정이 아니다.
+기능별 표, source metadata, 제품 적용 한계 및 추가 시험 큐는 [제조사 보안 자료 레지스터](MANUFACTURER_SECURITY_SOURCE_REGISTER_2026-11-12.md)를 참조한다. 개별 기술 주장과 원문 위치/상태는 [Claim Evidence Ledger](CLAIM_EVIDENCE_LEDGER.md)에 등록했다. 현재 제조사 주장 12건(문서 수준 VERIFIED 11건, 최신판 확인 대기 PARTIALLY_VERIFIED 1건)을 등록했으며, 이 레코드는 MCU 기능 사실의 출처 검증이지 서보 드라이브 전체의 CRA 적합성 판정이 아니다.
