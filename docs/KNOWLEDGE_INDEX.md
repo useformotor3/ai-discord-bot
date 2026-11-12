@@ -293,3 +293,8 @@ ST와 비교할 기능 범위와 제품군을 먼저 정의한다. 동급 기능
 ## TI functional safety integration matrix
 - [TI SFFS983A → Servo-Drive Safety Integration Matrix](TI_SAFETY_MECHANISM_SERVO_DRIVE_INTEGRATION_MATRIX_2026-11-12.md): maps diagnostic mechanism families to IF-01..IF-09, candidate verification and evidence.
 - All mapped tests are PROPOSED / NOT_RUN; FMEDA values, diagnostic coverage and exact part-specific applicability remain open.
+
+
+## Main-only report #80 audit
+- [Audit #80](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_80_2026-11-12.md): PARTIALLY_VERIFIED. Secure-by-default/access/attack-surface concepts valid; quote misnumbered/composite and implementation mandates overstated.
+- Claim row CRA-ARCH-080-001 added.
