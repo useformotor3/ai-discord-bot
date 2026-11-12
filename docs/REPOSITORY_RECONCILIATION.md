@@ -1,69 +1,60 @@
 # 저장소 브랜치 및 자료 정합성 감사
 
 **확인일:** 2026-11-12  
-**저장소:** useformotor3/ai-discord-bot  
-**방법:** GitHub recursive Git Trees, history.json, state.json, Compare API 및 원문 파일 직접 조회  
-**범위:** 브랜치/커밋/파일 수/이력 정합성. 문서 내용의 CRA 정확성은 별도 감사.
+**방법:** GitHub recursive Git Trees, history.json, state.json, Compare API 및 원문 파일 직접 조회.
 
-## 1. 현재 브랜치 관계
-- 비교 기준: main...cra-project-foundation
-- 상태: diverged
-- 작업 브랜치만 앞선 커밋: 19
-- main만 앞선 커밋: 5
-- 공통 조상: b425b6db591e34abe003522157cf97ecf2240d9f
-- 작업 브랜치 HEAD 확인값: d5e391b3ccb5105afb2f5d5fbdcafcbd67a40564
-- main은 작업 브랜치가 아직 포함하지 않은 5개 자동 아카이브 커밋을 보유한다.
+## 1. 브랜치 관계
+- main과 cra-project-foundation은 Git commit graph 기준 diverged 상태다.
+- 최초 비교에서 작업 브랜치 ahead 19, behind 5였으며 공통 조상은 b425b6db591e34abe003522157cf97ecf2240d9f.
+- main의 자동 아카이브 5개 커밋을 cherry-pick하지 않고, 해당 시점의 history/state와 archive 파일을 작업 브랜치에 콘텐츠 단위로 복사했다. 따라서 콘텐츠는 맞춰졌지만 commit graph가 같아진 것은 아니다.
+- 이후 main에서 새 archive가 추가된 것이 확인되어 그 파일도 별도로 복사했다. 동기화 작업 도중에도 main이 변경될 수 있으므로 이 수량은 확인 시점 기준이다.
 
-## 2. 아카이브 및 이력 수량
+## 2. 마지막 재검증 결과
 | 항목 | main | cra-project-foundation |
 |---|---:|---:|
-| research_archive/*.md | 989 | 984 |
-| history.json 항목 | 989 | 984 |
-| history 경로 고유성 | 989개 모두 고유 | 984개 모두 고유 |
-| history 경로가 archive에 존재 | 989/989 | 984/984 |
-| archive지만 history에 없는 파일 | 0 | 0 |
+| research_archive/*.md | 990 | 990 |
+| history.json 항목 | 990 | 990 |
+| history file 경로 고유성 | 990 | 990 |
+| archive와 history 상호 연결 | 누락 0 | 누락 0 |
+| history orphan | 0 | 0 |
 
-과거 문서의 985개는 오래된 수치다. 현재 확인값은 main 989개, 작업 브랜치 984개다.
+main과 작업 브랜치 모두 archive 990개와 history 990개가 일치했다. state.json은 date=2026-11-12, count=3이며 일일 카운터다.
 
-## 3. main에만 있는 5개 자동 아카이브
-아래 파일은 main의 history.json에도 등록되어 있다.
-- research_archive/2026-11-11_234543.md — Count #279
-- research_archive/2026-11-11_235047.md — Count #280
-- research_archive/2026-11-11_235547.md — Count #281
-- research_archive/2026-11-12_000106.md — Count #1
-- research_archive/2026-11-12_000539.md — Count #2
+## 3. 동기화한 main 전용 파일
+- 2026-11-11_234543.md (#279)
+- 2026-11-11_235047.md (#280)
+- 2026-11-11_235547.md (#281)
+- 2026-11-12_000106.md (#1)
+- 2026-11-12_000539.md (#2)
+- 2026-11-12_001038.md (#3)
 
-main state.json은 date=2026-11-12, count=2다. count는 날짜 변경 시 초기화되는 일일 카운터이며 누적 파일 수가 아니다.
+파일 원문을 main에서 읽어 작업 브랜치에 새 파일로 복사했고, history.json/state.json도 main 버전으로 동기화했다. 원본 파일을 삭제하거나 덮어쓰지 않았다.
 
-## 4. 5개 문서 표본 검토
-- #279: 무상 업데이트/안전 배포를 Annex I Part I point 2로 연결하고 직접 인용문으로 표시한 문장이 공식 원문과 일치하지 않는다. 무상 제공은 Annex I Part II point (8), 안전 배포는 point (7).
-- #280: SBOM은 Annex I Part II point (1)이 맞지만 기술문서를 Annex II로 표시한 부분은 부정확하다. 기술문서는 Article 31 및 Annex VII를 확인해야 한다.
-- #281: 지원기간 근거는 Article 14(3)이 아니라 Article 13(8). 일반 원칙은 최소 5년이며 예상 사용기간이 5년보다 짧으면 그 기간에 맞춘다.
-- #1: 무상 업데이트를 Article 13(4) 및 Annex I Part I로 연결한 부분이 부정확하다. Annex I Part II point (8)과 Article 13(8)의 역할을 구분해야 한다.
-- #2: CVD 정책은 Annex I Part II point (5), 취약점 신고 연락처는 point (6), 무상 보안 업데이트는 point (8). 복합 직접 인용문은 원문 대조 전 재사용 금지.
+## 4. 내용 감사
+6개 파일 모두 CRA 조항/직접 인용 오류 또는 과장 표현이 발견됐다. 주요 반복 오류:
+- 무상 보안 업데이트를 Annex I Part I 또는 Article 13(4)/Article 14(3) 등 잘못된 위치에 연결
+- Annex I Part II points (5)–(8)의 CVD, 신고 연락처, 안전한 배포, 무상 업데이트를 혼동
+- 지원기간 Article 13(8)을 Article 14로 잘못 인용
+- 공식 원문과 일치하지 않는 복합 문장을 직접 인용처럼 표시
+- 제품 정보 없이 서보 드라이브를 Important Class I/II로 단정
 
-상세 판정: [ARCHIVE_TRIAGE_MAIN_ONLY_5.md](ARCHIVE_TRIAGE_MAIN_ONLY_5.md)
+세부: [ARCHIVE_TRIAGE_MAIN_ONLY_6.md](ARCHIVE_TRIAGE_MAIN_ONLY_6.md)
 
-## 5. 브랜치 통합 방침
-두 브랜치는 diverged 상태다. 자동 merge/rebase/cherry-pick은 하지 않는다.
-1. main 전용 5개 파일과 state/history 변경을 검토한다.
-2. 원본을 보존하고 검증 상태를 분리한다.
-3. 필요하면 정정/검증 인덱스를 별도 추가한다.
-4. main 병합은 diff·충돌 검토 후 PR로 제안한다. 사용자 승인 전 main에 직접 병합하지 않는다.
-
-## 6. 재발 방지
-- 수량은 브랜치별 Git tree에서 재산출하고 history와 대조한다.
-- state.json count는 일일 카운터로만 해석한다.
+## 5. 재발 방지
+- 파일 수는 브랜치별 Git tree에서 재산출하고 history와 대조한다.
+- state count는 일일 카운터로 해석한다.
 - 자동 생성 archive는 검증 전 초안이다.
-- 기준 브랜치, HEAD SHA, 확인일을 인벤토리에 기록한다.
+- 기준 브랜치/HEAD SHA/확인일을 기록한다.
+- 동기화 중 main이 갱신될 수 있으므로 작업 후 재조회하고, 불일치가 있으면 확정 보고서 갱신을 중단한다.
+- commit graph가 diverged인 상태에서 자동 merge하지 않는다. PR 전 diff와 충돌을 검토한다.
 
-## 7. 감사 한계
-파일 경로/이력 정합성 및 5개 파일 표본 내용 감사다. 989개 전체 주장·링크·인용 전수 검증은 아니다.
+## 6. 감사 한계
+이 감사는 파일/이력 정합성과 6개 문서의 표본 내용 감사다. 990개 전체 주장·링크·인용의 전수 검증은 아니다.
 
 ## 공식 근거
 EUR-Lex Regulation (EU) 2024/2847: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R2847
-- Article 13(8): 지원기간
-- Article 14: 신고 의무
-- Annex I Part II (1)–(8): SBOM 및 취약점 처리
-- Annex II: 사용자 정보 및 지침
-- Article 31 및 Annex VII: 기술문서
+- Article 13(8): support period
+- Article 14: reporting obligations
+- Annex I Part II points (1)–(8): SBOM and vulnerability handling
+- Annex II: user information/instructions
+- Article 31 and Annex VII: technical documentation
