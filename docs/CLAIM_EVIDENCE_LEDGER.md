@@ -86,3 +86,14 @@
 
 
 | TI-008 | TI의 MSPM0G3506 제품 기술자료 목록에는 *Cybersecurity Enablers in MSPM0 MCUs* Rev B, 2026-08-27이 표시된다. | technical_fact | TI MSPM0G3506 official technical-document index / https://www.ti.com/product/MSPM0G3506, Technical documentation list | Rev B의 존재와 날짜는 목록에서 확인. Rev B 본문을 직접 확인하지 않았고 MSPM0G3529-Q1에 대한 직접 적용성도 미확인. | PARTIALLY_VERIFIED |
+
+
+## 7. TI G-Series 최신 문서 확인 추가 레코드 (2026-11-12)
+
+| Claim ID | 원자적 주장 | 유형 | 출처 및 정확한 위치 | 검증 범위 / 판정 | 상태 |
+|---|---|---|---|---|---|
+| TI-009 | TI MSPM0G3529-Q1 제품 페이지는 전체 모듈 설명을 위해 MSPM0 G-Series 80MHz Technical Reference Manual을 참조하도록 안내한다. | technical_fact | TI MSPM0G3529-Q1 product page, description / https://www.ti.com/product/MSPM0G3529-Q1 | 제품 페이지의 문서 참조 문구 확인. 해당 TRM 내 특정 보안 레지스터/기능의 부품 적용성은 별도 확인 필요. | VERIFIED |
+| TI-010 | TI MSPM0-DIAGNOSTIC-LIB 공식 기술자료 인덱스는 MSPM0 G-Series 80-MHz Technical Reference Manual Rev F, 2026-11-05를 표시한다. | technical_fact | TI MSPM0-DIAGNOSTIC-LIB page, Technical documentation table / https://www.ti.com/tool/MSPM0-DIAGNOSTIC-LIB | 인덱스에 문서명·Rev F·날짜가 표시됨. PDF/HTML 본문을 가져오지 못했으므로 Rev F의 내용은 검증하지 않음. | VERIFIED (index metadata only) |
+| TI-011 | SLAAE29 Rev B 본문이 현재 TI 공식 링크에서 확인되었다. | technical_fact | 이전 세션의 index 탐색 메모; 이번 세션에서 직접 PDF/문서 페이지 재현 실패 | 최신판 Rev B의 존재 및 본문은 이번 세션의 재검증을 통과하지 못함. 기존 Rev A 분석을 유지하고 Rev B는 확보 전까지 인용 금지. | UNVERIFIED |
+
+**TI-008 처리 메모:** 과거 Rev B 날짜/인덱스 확인 기록은 보존하되, 이번 재점검에서 공식 원문을 재현하지 못했으므로 Rev B 내용의 근거로 사용하지 않는다. Rev B 본문을 실제 확보한 뒤 별도 revision 레코드로 갱신한다.
