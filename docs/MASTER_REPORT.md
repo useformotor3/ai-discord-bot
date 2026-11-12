@@ -287,3 +287,8 @@ main report #123은 사용자 정보·지침서 제공이라는 유효한 CRA �
 ## CRA 사용자 보안정보·지침서 템플릿
 
 #123 감사 후 Annex II(1)–(9), 특히 point 7 및 8(a)–(f), 9를 제품 증거와 연결하는 [서보 드라이브 CRA 사용자 보안정보·지침서 체크리스트](SERVO_DRIVE_CRA_USER_SECURITY_INFORMATION_CHECKLIST.md)를 별도 템플릿으로 작성했다. Article 13(18) 사용자 정보/지침서 제공·보존, Article 13(19) 지원 종료일 표시/가능한 경우 알림을 별도로 추적한다. 모든 제품별 상태는 NOT_STARTED/UNVERIFIED이며 실제 SKU·제품 경계·기능·데이터·지원기간 확인 전 적합성 주장을 하지 않는다.
+
+
+## 신규 main archive 감사 #124 — 취약점 처리 및 업데이트
+
+#124는 CVD와 보안 업데이트라는 유효한 주제지만, 취약점 처리 요구사항을 Annex I Part I Section 2로 잘못 분류했다. 실제 근거는 Annex I Part II(1)~(8)이다. 직접 인용문도 공식 원문과 일치하지 않는다. 암호학적 서명 검증과 fail-safe/recovery architecture는 강력한 위험기반 설계 후보이나 모든 제품에 동일 구현을 명시한 CRA 문구는 아니다. 자동 업데이트는 해당하는 경우 기본 활성화, 쉬운 opt-out, 사용자 통지 및 임시 연기 조건을 함께 다뤄야 한다. 상세: [#124 감사](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_124_2026-11-12.md).
