@@ -101,3 +101,18 @@ TI 공식 비교 기준 예시로 MSPM0G3529-Q1 데이터시트(SLASFO2B, revise
 
 ## 문서 변경 이력
 - 2026-11-12: 통합 보고서 기본 구조 생성. 검증 전 내용을 확정 사실로 쓰지 않도록 상태를 명시.
+
+
+## 기존 조사 아카이브 품질 감사 — 추가 20개 표본 (2026-11-12)
+
+2026-11-11~2026-11-12 생성된 지원기간, 무상 업데이트, 적합성 평가, 제품 분류, 업데이트 무결성, SBOM, CVD 관련 문서 20개를 EUR-Lex 법령 원문과 대조했다. 14개는 조항·인용·의무 범위가 원문과 충돌(CONFLICT), 6개는 일부 취지는 맞지만 근거 위치/직접 인용/구현 의무 범위가 부정확(PARTIALLY_VERIFIED)했다. 초기 5개와 추가 9개를 합산한 34개 비무작위 표본은 25 CONFLICT, 9 PARTIALLY_VERIFIED다. 이 수치는 위험 기반 표본 결과이며 전체 990개 오류율로 해석할 수 없다.
+
+반복된 오류를 바로잡는 기준은 다음과 같다.
+- 제조자 의무 및 지원기간은 Article 13(8). 최소 5년 원칙이지만 예상 사용기간이 5년 미만이면 그 예상 사용기간을 적용한다. 지원기간 종료일 고지는 Article 13(19) 및 Annex II(7)와 연결한다.
+- SBOM은 Annex I Part II(1), 기술적으로 가능한 경우 보안 업데이트와 기능 업데이트 분리는 Part II(2), CVD는 Part II(5)–(6), 안전한 업데이트 배포는 Part II(7), 무상 보안 업데이트는 Part II(8).
+- 제품 속성 보안은 Annex I Part I(2)(b)/(d)/(f)/(j)로 구분한다. 특정 Root CA, TLS 버전, dual-bank 구조 등은 위험 기반 설계 예시이지 법령이 일률적으로 특정한 구현으로 단정하지 않는다.
+- 제조자 신고는 Article 14이며 actively exploited vulnerability와 severe incident를 구분한다. 모든 취약점 발견을 24/72시간 신고 대상으로 일반화하지 않는다.
+- Article 24는 open-source software stewards, Article 31은 기술문서, Article 32는 제품 적합성 평가 절차다.
+- Important Class I/II는 Article 7 및 Annex III의 core functionality 기준으로 판단한다. 일반적인 산업용 서보 드라이브/산업 자동화 시스템이 Annex III에 독립 카테고리로 열거되어 있다고 인용하면 안 된다.
+
+파일별 판정·SHA·정정 근거는 [추가 20개 수동 감사](ARCHIVE_MANUAL_AUDIT_20_2026-11-12.md)를 참조한다. 원본 아카이브는 보존했으며, 이 감사만으로 제품별 법적 적용성이나 CRA 적합성을 확정하지 않는다.
