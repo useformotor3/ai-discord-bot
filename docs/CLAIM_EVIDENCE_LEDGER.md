@@ -48,7 +48,7 @@
 | TI-004 | MSPM0G3529-Q1은 AES 키 최대 4개를 위한 secure key storage를 명시한다. | technical_fact | TI-DS-3529 SLASFO2B Rev B, §8.18 및 §8.21 Keystore / 위 TI 데이터시트 URL | 키 저장 개수 및 AES engine 연계 설명 확인. 키 provisioning/rotation/revocation/zeroization의 전체 제품 정책까지 자동 보장하지 않음. | VERIFIED |
 | TI-005 | MSPM0G3529-Q1 데이터시트는 TRNG의 32-bit random output 및 built-in health tests를 설명한다. | technical_fact | TI-DS-3529 SLASFO2B Rev B, §8.19 TRNG / 위 TI 데이터시트 URL | 부품 데이터시트의 TRNG 설명 확인. 상위 DRBG 구성 및 제품의 난수 사용 적절성은 별도 검증 필요. | VERIFIED |
 | TI-006 | MSPM0G3529-Q1의 cybersecurity architecture는 데이터시트에 “PSA Level 1 certification targeted”로 기재되어 있다. | technical_fact | TI-DS-3529 SLASFO2B Rev B, §1 Features / 위 TI 데이터시트 URL | 목표/예정 표현 확인. 인증 취득 완료를 의미하지 않음. | VERIFIED (표현 확인) |
-| TI-007 | TI SLAAE29A는 MSPM0 플랫폼의 BCR/BSL/CSC, secure boot, secure storage 및 cryptographic acceleration의 동작 구조를 설명한다. | technical_fact | TI-SLAAE29, Rev A revised December 2025, §§1.3, 2, 3, 4, 5 / https://www.ti.com/lit/an/slaae29a/slaae29a.pdf | 플랫폼 문서의 구조/예제 설명 확인. 특정 부품의 레지스터·revision별 적용은 데이터시트 및 최신 G-Series TRM과 교차 확인. | VERIFIED (플랫폼 설명) / 상세 부품 적용 PARTIALLY_VERIFIED |
+| TI-007 | TI SLAAE29A Rev A는 MSPM0 플랫폼의 BCR/BSL/CSC, secure boot, secure storage 및 cryptographic acceleration의 동작 구조를 설명한다. | technical_fact | TI-SLAAE29, Rev A revised December 2025, §§1.3, 2, 3, 4, 5 / https://www.ti.com/lit/an/slaae29a/slaae29a.pdf | Rev A PDF의 플랫폼 구조/예제 설명 확인. 특정 부품의 레지스터·revision별 적용은 데이터시트 및 최신 G-Series TRM과 교차 확인. | VERIFIED (Rev A 문서 내용) / 최신판 반영 PARTIALLY_VERIFIED |
 
 ## 4. 기존 아카이브 정정 큐 연결
 
@@ -84,3 +84,5 @@
 - [ ] TI G-Series TRM 최신 revision과 SLAAE29 최신 revision의 part-specific 적용성 확인
 - [ ] 각 설계 권고에 시험 절차/합격 기준/증거 산출물 연결
 
+
+| TI-008 | TI의 MSPM0G3506 제품 기술자료 목록에는 *Cybersecurity Enablers in MSPM0 MCUs* Rev B, 2026-08-27이 표시된다. | technical_fact | TI MSPM0G3506 official technical-document index / https://www.ti.com/product/MSPM0G3506, Technical documentation list | Rev B의 존재와 날짜는 목록에서 확인. Rev B 본문을 직접 확인하지 않았고 MSPM0G3529-Q1에 대한 직접 적용성도 미확인. | PARTIALLY_VERIFIED |
