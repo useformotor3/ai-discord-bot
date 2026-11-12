@@ -193,3 +193,10 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - Annex I Part I 제품 속성 13개 항목, Part II 취약점 처리 8개 항목, Article 13 제조자 의무, Article 14 신고를 HW/FW/운영 통제·시험·합격 기준·증거 파일 후보로 연결.
 - 법령 요구와 구현 권고를 구분하고, 제품별 입력이 없는 모든 row는 UNVERIFIED 유지.
 - 이 매트릭스는 일반 참조 설계 초안이며 제품별 적용성/CRA 적합성 결론이 아니다.
+
+
+## 위협 모델 및 시험·증거 대장 (2026-11-12)
+- [THREAT_MODEL_SERVO_DRIVE_CRA.md](THREAT_MODEL_SERVO_DRIVE_CRA.md): 자산 10종(AST-01..10), 공격자 6유형(ACT-01..06), 신뢰 경계 8개(TB-01..08), 위협 18개(TH-01..18) 등록.
+- [SECURITY_TEST_EVIDENCE_REGISTER.md](SECURITY_TEST_EVIDENCE_REGISTER.md): 위협별 시험 케이스, NOT_RUN 기본 상태, 증거 ID/파일명/메타데이터 규칙, 제품별 수치형 합격 기준 입력표 작성.
+- 설계 후보와 법령 의무를 분리했으며, 특정 알고리즘/secure element/dual-bank/네트워크 분리 회로를 법령 직접 요구로 표시하지 않음.
+- 실제 DUT/SKU/MCU/인터페이스/안전 경계/승인된 합격 기준 미확보. 시험 실행 및 제품별 위험도는 미확정(UNVERIFIED).
