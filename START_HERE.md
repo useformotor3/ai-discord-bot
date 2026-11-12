@@ -54,3 +54,10 @@
 4. 서보 드라이브 제품 경계/인터페이스/의도된 용도를 정의해 CRA 적용성 검토
 5. ST MCU 정확한 부품번호 확보 후 ST/TI 기능별 동급 비교
 6. main.py와 Gemini 명령 구조는 분석 및 변경 제안만 수행하고 승인 대기
+
+
+## 최신 작업 업데이트 (2026-11-12)
+- 추가 20개 고위험 조사 아카이브 수동 감사: [ARCHIVE_MANUAL_AUDIT_20_2026-11-12.md](docs/ARCHIVE_MANUAL_AUDIT_20_2026-11-12.md), 14 CONFLICT / 6 PARTIALLY_VERIFIED.
+- 초기 5개 + 추가 9개 + 추가 20개 누계 34개, 25 CONFLICT / 9 PARTIALLY_VERIFIED. 비무작위 위험 표본이므로 전체 오류율로 일반화하지 않는다.
+- 다음 우선순위: (1) 남은 위험 플래그 후보를 원문 대조, (2) 기존 990개 출처 canonical URL/문서 버전/조항 위치 복원, (3) 주장별 정정 ledger 구축, (4) ST/TI 공식 기술자료 비교 확장.
+- 기존 research_archive 원본, main.py, Gemini prompt 및 운영 run.yml은 수정하지 않았다. main 병합도 하지 않았다.
