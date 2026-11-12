@@ -442,7 +442,7 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - 사용자 명시 승인에 따라 `cra-project-foundation`에서만 1차 구현했다. 상세 변경/제한/테스트 기록: [CHANGE_PROPOSAL_MAIN_GEMINI.md §14](CHANGE_PROPOSAL_MAIN_GEMINI.md).
 - `main.py`는 `prompts/CRA_RESEARCH_PROMPT_V2.txt`를 읽고 `cra_report_contract.py`의 JSON schema/validator/renderer를 거친 유효 보고서만 성공 경로에 전달한다.
 - 모든 모델 호출 실패, 빈 응답, 잘못된 JSON, 필수 필드/enum 오류, 원문 없는 직접 인용, VERIFIED 승격은 fail-closed. 실패 시 non-zero 종료하며 Discord/archive/state/history 성공 경로보다 앞에서 중단한다.
-- mock 회귀 테스트 13개 추가. committed source/test 내용을 격리 Python 런타임에서 재현한 결과 14/14 PASS; `py_compile` 3/3 파일 통과.
+- mock 회귀 테스트 13개 추가. committed source/test 내용을 격리 Python 런타임에서 재현한 결과 16/16 PASS; `py_compile` 3/3 파일 통과.
 - 테스트는 fake client만 사용. Gemini API/네트워크/유료 호출 0회. GitHub Actions CI 결과는 별도 확인 전까지 UNVERIFIED.
 - 제외 유지: 모델 ID/순서, quota constant, 최근 5개 snippet context(중복 방지 참고용 전달 유지), Discord 전송 로직, archive/history/state schema, `.github/workflows/run.yml`, main branch. 실제 Gemini structured-output 모델 호환성은 API 호출 없이 확인하지 못했다.
 - `main` 병합/동기화, merge/rebase는 수행하지 않았다.
