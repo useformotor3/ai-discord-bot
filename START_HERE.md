@@ -208,3 +208,9 @@
 ## 2026-11-12 추가 — main-only report #122
 - [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_122_2026-11-12.md](docs/ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_122_2026-11-12.md): CONFLICT. Secure-by-default/access-control 주제는 관련성이 있으나 Annex I 번호 및 직접 인용이 잘못되었고, forced password change/RBAC/모든 미사용 포트 비활성화를 보편적 의무로 과장.
 - main HEAD는 #122, commit 39d614a760aebc98ce16fb534ddd75ddbcc5c1e3. 원본 main archive는 수정하지 않음.
+
+
+## 2026-11-12 추가 — main-only report #123
+- [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_123_2026-11-12.md](docs/ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_123_2026-11-12.md): CONFLICT. Article 13(7) 오인용, Article 13(18)/(19) 누락, Annex II Part I/II라는 잘못된 구조 및 합성 인용, 서보 드라이브 Class II 근거 없음.
+- Annex II 사용자 문서 항목 1~9 및 8(a)~(f)를 상세 감사 문서에서 확인. SBOM 접근 위치는 제조사가 사용자에게 SBOM을 제공하기로 한 경우만 해당.
+- 최신 main report #123, commit 1f9dc5e28d760ce5b47efda0e897a0a540d33ecb. 원본 main archive는 수정하지 않음.
