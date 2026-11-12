@@ -129,3 +129,11 @@ ST와 비교할 기능 범위와 제품군을 먼저 정의한다. 동급 기능
 ## 서보 드라이브 제품 경계 기준
 - [SERVO_DRIVE_PRODUCT_BOUNDARY_TEMPLATE.md](SERVO_DRIVE_PRODUCT_BOUNDARY_TEMPLATE.md): Article 2/3 적용 범위, 제품 경계 후보, remote data processing, Annex III/IV core functionality 분류 입력 템플릿.
 - 서보 드라이브 명칭만으로 CRA 적용 또는 Important Class I/II를 확정하지 않는다. 완제품과 별도 판매 구성요소, MCU 자체를 분리해 검토한다.
+
+
+## 2026-11-12 — 20개 고위험 아카이브 수동 감사
+- 상세 판정/원본 SHA/정정 기준: [ARCHIVE_MANUAL_AUDIT_20_2026-11-12.md](ARCHIVE_MANUAL_AUDIT_20_2026-11-12.md).
+- 20개 결과: 14 CONFLICT, 6 PARTIALLY_VERIFIED. 초기 5개 및 추가 9개 포함 누계 34개: 25 CONFLICT, 9 PARTIALLY_VERIFIED.
+- 핵심 공식 조항 맵: 지원기간 Article 13(8), 종료일 고지 Article 13(19)/Annex II(7), SBOM Annex I Part II(1), 업데이트 분리 Part II(2), CVD Part II(5)–(6), 안전한 배포 Part II(7), 무상 보안 업데이트 Part II(8), 신고 Article 14, 제품 적합성 평가 Article 32, 기술문서 Article 31, open-source stewards Article 24.
+- 제품 속성 보안은 Annex I Part I(2)(b)/(d)/(f)/(j). Article 7/Annex III의 core functionality 기준 없이 서보 드라이브 전체를 Class I/II로 단정하지 않는다.
+- 모든 과거 archive 주장은 여전히 개별 검증 전까지 UNVERIFIED이며, 표본 결과를 전체 오류율로 일반화하지 않는다.
