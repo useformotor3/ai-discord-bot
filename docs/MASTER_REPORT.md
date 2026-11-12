@@ -116,3 +116,14 @@ TI 공식 비교 기준 예시로 MSPM0G3529-Q1 데이터시트(SLASFO2B, revise
 - Important Class I/II는 Article 7 및 Annex III의 core functionality 기준으로 판단한다. 일반적인 산업용 서보 드라이브/산업 자동화 시스템이 Annex III에 독립 카테고리로 열거되어 있다고 인용하면 안 된다.
 
 파일별 판정·SHA·정정 근거는 [추가 20개 수동 감사](ARCHIVE_MANUAL_AUDIT_20_2026-11-12.md)를 참조한다. 원본 아카이브는 보존했으며, 이 감사만으로 제품별 법적 적용성이나 CRA 적합성을 확정하지 않는다.
+
+
+## 제조사 MCU 보안 기능 근거 및 비교 (2026-11-12)
+
+제조사 1차 자료를 기능별로 분리해 등록했다. ST는 AN5156 Rev14 (June 2026)를 중심으로 STM32 제품군의 RDP/product state, memory protection, debug protection, secure boot/SFU, SFI, cryptography/TRNG 및 제품군별 기능 차이를 확인했다. ST 문서 자체가 제품별 Reference Manual 확인을 요구하므로 실제 MCU 주문 코드가 확보되기 전까지 특정 ST 부품의 기능은 확정하지 않는다.
+
+TI 비교 예시로 MSPM0G3529-Q1 데이터시트 SLASFO2B RevB (October 2025)를 확인했다. 해당 부품의 데이터시트 §8.18–8.21은 debug security, AES-128/256 및 여러 mode, code/data firewalls, secure boot/update, up to four AES keys, CSC, hardware monotonic counter, TRNG를 명시한다. Flash 512KB, SRAM 128KB, dual-bank/address swap도 기재한다. TI SLAAE29A RevA (December 2025)는 MSPM0 플랫폼의 CSC boot flow 및 secure storage 개념을 상세 설명한다.
+
+주의: TI 공식 제품 기술자료 인덱스에는 SLAAE29 RevB (2026-08-27)와 G-Series TRM RevF (2026-11-05)가 표시되어 최신판 본문 확인이 추가로 필요하다. 이번 문서의 SLAAE29A 분석은 RevA에 한정한다. TI 데이터시트의 PSA Level 1 “targeted”는 인증 취득 완료가 아니다. Q1/ASIL 관련 표현은 CRA 적합성 증거와 다르다.
+
+기능별 표, source metadata, 제품 적용 한계 및 추가 시험 큐는 [제조사 보안 자료 레지스터](MANUFACTURER_SECURITY_SOURCE_REGISTER_2026-11-12.md)를 참조한다. 개별 기술 주장과 원문 위치/상태는 [Claim Evidence Ledger](CLAIM_EVIDENCE_LEDGER.md)에 등록했다. 현재 초기 제조사 주장 8건을 등록했으며, 이 레코드는 MCU 기능 사실의 출처 검증이지 서보 드라이브 전체의 CRA 적합성 판정이 아니다.
