@@ -3,12 +3,12 @@
 이 파일은 기존 조사 아카이브와 앞으로 추가할 자료의 색인 기준이다. 현재 기존 자료의 개별 주장 검증은 아직 수행하지 않았다.
 
 ## 기존 저장소 자료 현황 (초기 관찰)
-- `research_archive/`: 날짜/시간 기반 Markdown 조사 파일 다수 존재
-- `history.json`: 조사 이력 JSON
-- `state.json`: 누적 상태 카운터. 과거 관찰 시 count 값 275가 있었으나 실제 파일 수와 동일한지 검증되지 않음
+- `research_archive/`: 2026-11-12 감사 시점 main 브랜치 기준 Markdown 985개
+- `history.json`: 985개 항목. archive 경로 985/985 일치, 중복 경로 0개 확인
+- `state.json`: 날짜별 일일 카운터. 2026-11-11 기준 count=279이며 누적 보고서 수가 아님
 - `main.py`: Gemini API를 이용한 CRA 조사 및 Discord 전송, Markdown 아카이브/상태 저장 로직
 - `.github/workflows/run.yml`: workflow_dispatch 및 repository_dispatch 트리거. cron 예약 실행은 확인되지 않음
-- 위 내용은 초기 구조 확인이며, 각 문서의 사실 정확성이나 최신성을 보증하지 않는다.
+- 위 내용은 인벤토리/표본 감사 결과이며, 985개 문서의 모든 주장이 전수 검증된 것은 아니다. 대표 문서의 오류 사례는 [INITIAL_AUDIT.md](INITIAL_AUDIT.md)에 기록했다.
 
 ## 검증 상태 정의
 | 상태 | 의미 |
@@ -59,6 +59,17 @@
 
 ### TI
 ST와 비교할 기능 범위와 제품군을 먼저 정의한다. 동급 기능이 확인되지 않으면 '비교 불가/자료 미확인'으로 표시하며 억지로 동등 비교하지 않는다.
+
+## 확인된 공식 기준선 (2026-11-12)
+- Regulation (EU) 2024/2847 Article 14: 적극 악용 취약점 및 중대 보안 사고 신고 의무. 24시간 조기 경보 및 72시간 후속 신고 등은 Article 14의 구체 항목에 따라 구분한다.
+- Article 71: 일반 적용일 2027-12-11, Article 14는 2026-09-11부터 적용, Chapter IV는 2026-06-11부터 적용.
+- Annex I Part II point (2): 기술적으로 가능한 경우 보안 업데이트를 기능 업데이트와 분리.
+- Annex I Part II point (7): 안전한 업데이트 배포 메커니즘.
+- Annex I Part II point (8): 보안 업데이트의 지체 없는 제공 및 원칙적인 무상 제공.
+- Article 13(8): 지원 기간 결정 및 최소 5년 원칙(예상 사용기간이 5년보다 짧은 경우 예외).
+- 제품의 Important Class I/II 여부는 제품 명칭만으로 단정하지 않고 Article 7, Annex III 및 Implementing Regulation (EU) 2025/2392의 핵심 기능/기술 정의로 판단한다.
+- 공식 원문: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R2847
+- 분류 기술 설명: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R2392
 
 ## 다음 색인 작업
 1. 전체 archive 파일명/크기/날짜 인벤토리 생성
