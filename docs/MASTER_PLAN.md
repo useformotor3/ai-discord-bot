@@ -230,3 +230,10 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 - [x] G-01..G-06 설계 동결 입력 게이트 정의.
 - [ ] 제품 SKU/BD-01..15 및 실제 ST MCU 전체 주문 코드 확보 후 DEC 선택과 part-specific capability matrix 완료.
 - [ ] timing/jitter, communications, power/reset, gate-driver/safety boundary를 승인된 수치/회로 증거로 검증.
+
+## main-only 보고서 #37–#39 감사
+
+- [x] main-only 자동 생성 보고서 #37–#39를 EUR-Lex Article 13 및 Annex I 원문과 대조.
+- [x] Article 13(8) 지원기간과 Annex I Part II(8) 무상 보안 업데이트 분리, Article 13(6) component vulnerability 처리와 혼동 방지.
+- [x] Annex I Part II 번호(1)–(8)와 Part I(2)(b)/(c) 오인용을 감사 문서 및 claim ledger에 기록.
+- [ ] main 자동 생성물 신규 commit 감시 및 위험기반 감사 계속. 브랜치 동기화/병합은 승인 없이 하지 않는다.
