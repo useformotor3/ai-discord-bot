@@ -258,3 +258,14 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - 하드웨어 아키텍처에 IF-01..IF-09 인터페이스 설계 계약을 추가했다: 외부 통신, 통신→모션 명령, MCU→Gate Driver, 센서/엔코더, NVM, 선택적 Secure Element, debug/service, power/reset/clock, 제조 프로비저닝.
 - 각 인터페이스에 신뢰 경계, 설계 계약, 전기/물리 검토 항목, 기존 시험 연결을 정의했다.
 - 회로도 리뷰 체크리스트 10개 항목 추가. 모든 제품별 상태는 UNKNOWN/UNVERIFIED이며 전압·절연·ESD·타이밍 수치는 임의로 정하지 않았다.
+
+
+## Main-only reports #40–#55 감사 — 2026-11-12
+
+- main 자동 생성 보고서 #40–#55의 원문을 commit diff에서 확인하고 EUR-Lex Regulation (EU) 2024/2847과 대조했다.
+- 파일 단위 판정: PARTIALLY_VERIFIED 2건 (#40 secure-by-default/attack-surface, #49 secure decommissioning/user-data removal), CONFLICT 14건. 직접 인용으로 재사용 가능한 완전 VERIFIED 파일은 0건.
+- 반복 오류: Article 11/10/13(4)/13(6)/13(8)/14 혼동, Annex I Part I와 Part II 혼합, Part II(8) 무상 업데이트와 Article 13(8) 지원기간 혼동, Article 14 신고대상 범위 확대, 존재하지 않는 문장/번호의 인용, 특정 구현(RSA/ECDSA, dual-bank, hot-patch, zero downtime, STO/SIL core separation)을 법적 의무로 단정.
+- 중요 정정: secure decommissioning은 Annex II point 8(d) 및 영구 데이터/설정 제거는 Annex I Part I(2)(m)에 근거가 있다. 다만 Annex VII가 아니라 Annex II이며 cryptographic erasure 자체가 일률적으로 명시된 것은 아니다.
+- 정확한 매핑은 Article 13(8)=support period, Article 14=actively exploited vulnerability/severe incident reporting, Annex I Part II(7)=secure update distribution, Part II(8)=free security updates(맞춤형 제품에 대한 제조자-사업 사용자 별도 합의 예외), Annex II point 8(d)=secure decommissioning instructions.
+- 상세: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_40_55_2026-11-12.md](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_40_55_2026-11-12.md). 원본 main archive/history/state, main.py, Gemini prompt, production workflow는 수정하지 않았다.
+- 공식 EUR-Lex source lines checked: Article 13 lines 888–905; Article 14 lines 939–964; Annex I lines 1743–1773; Annex II lines 1776–1794. Commission C(2026) 5252 official publication page confirms 27 July 2026 publication and non-binding nature.
