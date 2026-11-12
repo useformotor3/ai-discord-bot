@@ -311,3 +311,8 @@ ST와 비교할 기능 범위와 제품군을 먼저 정의한다. 동급 기능
 - User-document checklist anchors: Annex II(1)–(9), especially point 7 (support type/end date), point 8(a)–(f) (secure commissioning, data-security effects, update installation, decommissioning/data removal, auto-update opt-out, integrator information), point 9 (SBOM location only if manufacturer chooses to make SBOM available).
 - “Digital Product Passport” is not a CRA Annex II statutory label; servo drive Class II status remains UNVERIFIED without Annex III product-category/core-function evidence.
 - Claim ledger row CRA-ARCH-123-001.
+
+
+## CRA Annex II user information checklist
+- [SERVO_DRIVE_CRA_USER_SECURITY_INFORMATION_CHECKLIST.md](SERVO_DRIVE_CRA_USER_SECURITY_INFORMATION_CHECKLIST.md): working template mapping Article 13(16)–(19) and Annex II(1)–(9) to servo-drive user information, integration instructions, evidence and verification status.
+- Product-specific entries remain NOT_STARTED/UNVERIFIED. “Digital Product Passport” is not the CRA Annex II statutory label; Class II status cannot be inferred from “servo drive” alone.
