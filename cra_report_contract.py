@@ -112,7 +112,7 @@ def validate_report(payload: Any) -> dict[str, Any]:
         raise ReportValidationError("unsupported schema_version")
     _require_string(payload["topic"], "topic")
     _require_string(payload["summary_ko"], "summary_ko")
-    if payload["overall_status"] not in REPORT_STATUSES:
+    if not isinstance(payload["overall_status"], str) or payload["overall_status"] not in REPORT_STATUSES:
         raise ReportValidationError("overall_status cannot be VERIFIED or an unknown value")
 
     if not isinstance(payload["claims"], list) or not payload["claims"]:
@@ -132,7 +132,11 @@ def validate_report(payload: Any) -> dict[str, Any]:
         if not isinstance(claim, dict) or set(claim) != set(CLAIM_FIELDS):
             raise ReportValidationError(f"{prefix} fields mismatch")
         for field in CLAIM_FIELDS:
-            _require_string(claim[field], f"{prefix}.{field}")
+            if field == "source_excerpt":
+                if not isinstance(claim[field], str):
+                    raise ReportValidationError(f"{prefix}.source_excerpt must be a string")
+            else:
+                _require_string(claim[field], f"{prefix}.{field}")
         if claim["claim_id"] in seen_ids:
             raise ReportValidationError(f"{prefix}.claim_id is duplicated")
         seen_ids.add(claim["claim_id"])
