@@ -98,3 +98,8 @@
 - 34개 표본의 재검증은 별도 2차 절차로 진행한다. 첫 배치 A-001–A-008 결과: [ARCHIVE_PASS_BC_AUDIT_BATCH_01_2026-11-12.md](docs/ARCHIVE_PASS_BC_AUDIT_BATCH_01_2026-11-12.md).
 - Batch 01은 8개 파일 중 법령 직접 인용/조항 연결이 완전히 VERIFIED된 파일은 0개. 일부 정확한 문구는 있었으나 잘못된 위치·합성 인용이 확인됐다.
 - 같은 AI 세션의 별도 재검증이며 독립 제3자 법률 검토가 아님을 명시한다.
+
+
+## Pass B/C Batch 02
+- [ARCHIVE_PASS_BC_AUDIT_BATCH_02_2026-11-12.md](docs/ARCHIVE_PASS_BC_AUDIT_BATCH_02_2026-11-12.md): A-009–A-015 및 B-001–B-002, 8개 파일 추가 재검증.
+- 8개 모두 Raw Text Quote를 현행 법령 직접 인용으로 재사용 불가. 지원기간 문구의 shorter/longer 역전, Article 14 신고 범위 확대, Annex Part I/II 혼합이 반복됨.
