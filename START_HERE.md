@@ -203,3 +203,8 @@
 - [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_81_121_2026-11-12.md](docs/ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_81_121_2026-11-12.md): 41개 보고서 commit diff 검토, 33 CONFLICT / 8 PARTIALLY_VERIFIED / 0 VERIFIED.
 - 41개 Raw Text Quote 블록은 모두 직접 인용으로 재사용 금지. Article 13(8) 지원기간, Annex I Part II(8) 무상 보안 업데이트, Article 14 신고 의무를 반복 혼동하고, 존재하지 않는 조항 번호/합성 인용과 Secure Boot·디지털 서명·무중단 업데이트의 보편적 의무 단정이 반복됨.
 - 최신 main HEAD는 report #121, commit d0ba9802e4b7fead4192263d8ebd08f44a7c547e. 작업 브랜치에서만 감사 기록. main archive/history/state, main.py, Gemini prompt, run.yml 수정 및 merge/rebase/sync 없음.
+
+
+## 2026-11-12 추가 — main-only report #122
+- [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_122_2026-11-12.md](docs/ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_122_2026-11-12.md): CONFLICT. Secure-by-default/access-control 주제는 관련성이 있으나 Annex I 번호 및 직접 인용이 잘못되었고, forced password change/RBAC/모든 미사용 포트 비활성화를 보편적 의무로 과장.
+- main HEAD는 #122, commit 39d614a760aebc98ce16fb534ddd75ddbcc5c1e3. 원본 main archive는 수정하지 않음.
