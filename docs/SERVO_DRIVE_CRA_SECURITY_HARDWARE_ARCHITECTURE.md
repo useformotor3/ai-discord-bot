@@ -204,3 +204,34 @@ flowchart LR
 
 모든 Gate는 현재 미충족/TBD다. 따라서 이 매트릭스는 설계 선택 절차이며, 특정 회로나 부품을 선정하거나 제품 적합성을 선언하지 않는다.
 
+## 11. 인터페이스별 하드웨어 설계 계약
+
+이 절은 회로도 작성 전에 인터페이스마다 신호 소유자, 신뢰 경계, 기본 상태, 보호/검증 항목을 고정하기 위한 설계 입력이다. 전압, 절연 내압, ESD 등급, 타이밍, 핀 번호, 부품은 실제 SKU·회로·환경 규격이 확인되기 전에는 지정하지 않는다.
+
+| IF ID | 경로 / 신호 | 신뢰 경계와 설계 계약 | 하드웨어 검토 항목 | 검증 연결 / 상태 |
+|---|---|---|---|---|
+| IF-01 | 외부 Ethernet/Fieldbus → PHY/Transceiver → 통신 도메인 | 외부 프레임은 신뢰하지 않는다. PHY 이후 parser가 길이·상태·세션을 검증하기 전에는 모션 제어 명령으로 취급하지 않는다. | 실제 프로토콜/속도, PHY 호환성, isolation 필요성, termination, common-mode, ESD/surge, EMC, 커넥터·실드 접지 | TST-NET-01..03; 전기/EMC 적합성 시험은 별도 계획 필요; UNKNOWN |
+| IF-02 | 통신 도메인 → 모션 제어 MCU/태스크 | 정규화된 command object만 경계 통과. 명령 출처·권한·상태·범위·freshness를 검증하고 queue/IPC 용량을 제한한다. | 단일 MCU이면 MPU/메모리·태스크 분리, 별도 MCU이면 IPC framing/timeout/reset/fault behavior, DMA ownership | TST-CMD-01..04, TST-AVL-01..03; UNVERIFIED |
+| IF-03 | 모션 MCU → Gate Driver (PWM/Enable/Reset) 및 Gate Driver → MCU (Fault/Ready) | 통신/서비스 프로세서가 gate enable을 직접 소유하지 않도록 한다. reset, brownout, clock loss, watchdog, boot/update 중 출력 기본 상태를 위험·안전 분석으로 결정한다. | PWM polarity/default, enable pull state, fault latch, reset sequencing, isolation, propagation delay, independent inhibit path 필요성 | TST-AVL-01..03 및 별도 gate-driver/fault-inhibit 검증; 제품 안전 아키텍처 필요; UNKNOWN |
+| IF-04 | Encoder/Resolver/Analog Sensor → Front-End → MCU | 센서 입력은 고장·단선·단락·범위초과·위조 가능성을 고려한다. 유효성 검증 전 제어 피드백으로 신뢰하지 않는다. | Differential/single-ended, excitation, isolation, analog filtering, cable shielding, common-mode, sampling/latency, fault detect coverage | TST-SNS-01..03; 센서별 electrical qualification 별도; UNKNOWN |
+| IF-05 | MCU ↔ Internal/External Flash·EEPROM | boot image, configuration, counter, audit record의 영역·권한·수명주기를 분리한다. 외부 NVM은 물리 접근 가능성을 가정하고 보호 수준을 위험평가로 결정한다. | write protection, ECC/CRC 역할 분리, endurance, erase granularity, atomic update, brownout behavior, bus access control | TST-UPD-06, TST-NVM-01..03; UNVERIFIED |
+| IF-06 | MCU ↔ Optional Secure Element | Secure Element는 선택사항이다. 채택 시 key ownership, command authorization, bus probing, reset/power fault, provisioning/recovery를 함께 설계한다. | interface (I²C/SPI 등 실제 선택), bus pull-up/clock, package tamper assumption, key slots/policy, lifecycle lock | TST-KEY-01..03; 부품 미선정 |
+| IF-07 | SWD/JTAG/ROM boot/Service connector | 개발·생산·현장 서비스·RMA 상태별 접근 정책을 분리한다. 생산 잠금 이후의 복구 경로는 권한·감사·오용 방지 조건을 갖춰야 한다. | connector exposure, test pad access, option-byte lifecycle, debug authentication/disable, recovery mode entry conditions | TST-DBG-01..02, TST-SVC-01..03; UNVERIFIED |
+| IF-08 | Power rails / BOR / Reset / Watchdog / Clock | 전원·클록 이상 시 boot/update/NVM transaction과 모션 출력의 상태를 정의한다. reset 원인과 반복 reset 정책을 기록한다. | rail sequencing, brownout threshold, supervisor tolerance, reset polarity, watchdog window, oscillator failure, hold-up 필요성 | TST-UPD-06, TST-NVM-03, TST-AVL-03; 수치 미정 |
+| IF-09 | Factory fixture → Provisioning interface | 생산 스테이션은 장치 identity 및 trust anchor를 주입하는 권한 경계다. 재작업·폐기·RMA·생산 실패 경로도 추적한다. | fixture authentication, physical access, per-device identity, secure key injection, debug lock timing, rework authorization | TST-KEY-02..03, TST-SUP-01..03; UNVERIFIED |
+
+### 11.1 회로도 리뷰 체크리스트
+
+- [ ] 모든 외부 커넥터/테스트 패드/무선·유선 인터페이스가 인터페이스 인벤토리에 존재한다.
+- [ ] 외부 통신 신호가 모션 제어 입력으로 변환되는 지점에 parser/authorization/state validation 경계가 있다.
+- [ ] 통신 부하·서비스 작업·업데이트가 모션 제어의 승인된 timing/jitter budget을 침범하지 않는다는 시험 계획이 있다.
+- [ ] MCU reset/brownout/clock fault/watchdog 및 부트 실패 시 PWM/enable의 기본 전기 상태가 정의되어 있다.
+- [ ] Gate driver fault/ready/enable 경로와 기능안전 관련 신호의 소유권·우선순위가 문서화되어 있다.
+- [ ] NVM 영역, key material, firmware image, configuration, audit data의 접근권한과 무결성 보호가 구분되어 있다.
+- [ ] SWD/JTAG/ROM boot/service 포트의 개발→양산→RMA lifecycle 전환과 복구 조건이 정의되어 있다.
+- [ ] 생산 프로비저닝에서 장치별 키/인증서, firmware hash, station ID, 작업자/시간, 결과가 비밀값 없이 추적 가능하다.
+- [ ] ESD/Surge/EMC/절연/온도/진동 등 전기·환경 검증을 보안시험과 별도 시험계획으로 추적한다.
+- [ ] 각 회로 블록의 선택 이유, 대안, 비용·공급망·실시간성 영향 및 미해결 위험이 기록되어 있다.
+
+현재 모든 IF 항목은 제품별 확인 전 설계 계약 초안이다. 체크리스트는 완료된 것으로 간주하지 않으며, 실제 회로도/부품번호/시험 증거가 확보되면 상태를 갱신한다.
+
