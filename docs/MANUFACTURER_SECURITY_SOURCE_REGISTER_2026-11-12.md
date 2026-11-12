@@ -15,7 +15,7 @@
 | ST-AN5447 | ST AN5447, *Overview of Secure Boot and Secure Firmware Update solution on Arm TrustZone STM32 MCUs* | Rev 3, August 2021 | https://www.st.com/content/st_com/en/technical-documents/an5447-overview-of-secure-boot-and-secure-firmware-update-solution-on-arm-trustzone-stm32-microcontrollers-stmicroelectronics.html | TrustZone 기반 STM32의 secure boot/SFU 및 SBSFU 비교 | 문서 내용 VERIFIED; 대상 제품군 적용성 UNVERIFIED |
 | TI-DS-3529 | TI MSPM0G3529-Q1 datasheet, *MSPM0G352x-Q1 Automotive Mixed-Signal Microcontrollers With CAN-FD Interface* | SLASFO2B, November 2024, revised October 2025 | https://www.ti.com/lit/ds/symlink/mspm0g3529-q1.pdf | 정확한 부품의 CPU/메모리/주변장치/보안 기능 | 문서상 부품 기능 VERIFIED |
 | TI-SLAAE29 | TI SLAAE29A, *Cybersecurity Enablers in MSPM0 MCUs* | Rev A, revised December 2025 | https://www.ti.com/lit/an/slaae29a/slaae29a.pdf | MSPM0 플랫폼의 BCR/BSL/CSC, secure boot, secure storage, AES/TRNG 구조 및 기능별 시리즈 매핑 | 문서 내용 VERIFIED; 개별 구현은 해당 부품 데이터시트·G-Series TRM 대조 필요 |
-| TI-TRM-G | TI MSPM0 G-Series 80-MHz Microcontrollers Technical Reference Manual | SLAAE29A에서 참조한 Rev C | https://www.ti.com/lit/ug/slau846/slau846.pdf | 보안 레지스터, CSC/INITDONE, KEYSTORE, 메모리 보호의 레지스터 수준 상세 | 이번 단계에서는 전체 레지스터 수준 검증 미완료 |
+| TI-TRM-G | TI MSPM0 G-Series 80-MHz Microcontrollers Technical Reference Manual | TI 기술자료 목록에서 Rev F, Nov 5 2026 표시 확인. 직접 문서 URL/3529-Q1 적용 revision은 별도 확인 필요 | https://www.ti.com/product/MSPM0G3529-Q1 | 보안 레지스터, CSC/INITDONE, KEYSTORE, 메모리 보호의 레지스터 수준 상세 | 문서 최신 리비전 발견; part-specific applicability / direct document link UNVERIFIED |
 
 > ST 문서 페이지는 PDF가 공식 기준 문서이며 웹 HTML은 편의·초기 평가용이라고 명시한다. 보고서의 확정 인용은 PDF revision을 기준으로 한다.
 
