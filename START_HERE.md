@@ -79,3 +79,10 @@
 - [ARCHIVE_CLAIM_CORRECTION_LEDGER_2026-11-12.md](docs/ARCHIVE_CLAIM_CORRECTION_LEDGER_2026-11-12.md)에 34개 고유 원본의 SHA-1, 원문 행 위치, 주장 요약, CRA 정정 룰, 판정 상태를 연결.
 - 감사 ID 35개 중 A-013/B-006은 동일 원본 파일/SHA이므로 중복 1개 제거. 고유 파일 기준 25 CONFLICT / 9 PARTIALLY_VERIFIED.
 - 34개는 비무작위 표본이며 990개 전체 오류율이 아니다. 원본 archive는 변경하지 않음.
+
+
+## 2026-11-12 추가 업데이트 — 법령 인용문 단위 감사
+- [ARCHIVE_QUOTE_LEVEL_AUDIT_2026-11-12.md](docs/ARCHIVE_QUOTE_LEVEL_AUDIT_2026-11-12.md)에 기존 34개 고유 표본의 법령 인용 블록, 원본 경로·행 위치, 판정 및 정정 조항을 연결.
+- A-013/B-006 중복은 한 건으로 처리. 일부 SBOM/Article 31 문구는 원문과 부합하거나 생략 인용에 해당하지만, 상당수는 paraphrase를 직접 인용처럼 표시했거나 조항을 합성·오기함.
+- EUR-Lex Regulation (EU) 2024/2847의 Article 13(8)/(9), Article 14, Article 31/32, Annex I Part I/II, Annex II/III/VII/VIII를 직접 대조.
+- 기존 원본 archive는 수정하지 않았다. 감사는 34개 표본에 한정되며 990개 전수검증이 아니다.
