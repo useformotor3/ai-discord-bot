@@ -245,3 +245,8 @@ ST와 비교할 기능 범위와 제품군을 먼저 정의한다. 동급 기능
 - main의 #37–#39는 지원기간 Article 13(8), 무상 보안 업데이트 Annex I Part II(8), CVD Part II(5), contact Part II(6)를 혼동하거나 오인용했다.
 - #38의 Annex I Part II (a)–(d) quote는 원문 구조와 불일치, #39의 Part I(2)(b) quote는 실제 (c) 업데이트 요건을 (b)로 잘못 매핑.
 - 상세: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_37_39_2026-11-12.md](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_37_39_2026-11-12.md). EUR-Lex lines 888–908, 1747–1773 기준.
+
+## 하드웨어 인터페이스 설계 계약
+
+- [SERVO_DRIVE_CRA_SECURITY_HARDWARE_ARCHITECTURE.md](SERVO_DRIVE_CRA_SECURITY_HARDWARE_ARCHITECTURE.md)에 IF-01..IF-09 인터페이스 계약 및 회로도 리뷰 체크리스트를 추가했다.
+- 통신→모션 명령, gate driver, 센서, NVM, Secure Element, debug/service, power/reset, 제조 프로비저닝의 경계를 문서화했으며 제품별 전기 수치/부품/핀맵은 미확인이다.
