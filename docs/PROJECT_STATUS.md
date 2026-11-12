@@ -399,3 +399,9 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - Correct map: Article 13(18) (user information/instructions, paper/electronic, clarity/language, retention); Article 13(19) (support end-date at purchase and feasible end-of-support notification); Article 13(17) contact; Annex II(1)–(9), especially (7), (8)(a)–(f), (9). Article 13(7) is systematic documentation of cybersecurity aspects.
 - Detailed audit: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_123_2026-11-12.md](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_123_2026-11-12.md). Claim row CRA-ARCH-123-001.
 - No main archive/history/state, main.py, Gemini prompt, production workflow or run.yml modification; no merge/rebase/sync. No tests/CI PASS claimed.
+
+
+## User information documentation workstream — 2026-11-12
+- Created docs/SERVO_DRIVE_CRA_USER_SECURITY_INFORMATION_CHECKLIST.md, mapping Article 13(16)–(19) and Annex II(1)–(9) into a practical evidence checklist.
+- All product-specific rows remain NOT_STARTED. No SKU, product boundary, interface, data storage, update behavior, support-period evidence or Annex III category assessment has been supplied.
+- This is a working template, not a conformity declaration or evidence that the product meets CRA.
