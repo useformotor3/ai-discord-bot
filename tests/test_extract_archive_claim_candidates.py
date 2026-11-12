@@ -7,7 +7,7 @@ class ExtractArchiveClaimsTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             root=Path(tmp); d=root/"research_archive"; d.mkdir()
             f=d/"sample.md"
-            f.write_text("# Test CRA\n\n제조사는 보안 업데이트를 무상으로 제공해야 합니다.\n\nArticle 13(8) and Annex I Part II.\n\nSource: https://eur-lex.europa.eu/example\n\nRaw Text Quote: sample text", encoding="utf-8")
+            f.write_text("# Test CRA\n\n제조사는 보안 업데이트를 무상으로 제공해야 합니다. 이 의무는 CRA Annex I Part II point 8의 문맥과 예외 조건을 함께 검토해야 합니다.\n\nArticle 13(8) and Annex I Part II.\n\nSource: https://eur-lex.europa.eu/example\n\nRaw Text Quote: sample text", encoding="utf-8")
             r=extract_file(f,root)
             self.assertEqual(r["verification_status"],"UNVERIFIED_AI_ARCHIVE")
             self.assertIn("Article 13(8)",r["article_reference_candidates"])
