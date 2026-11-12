@@ -159,7 +159,7 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 - [x] Batch 03 B-003–B-010
 - [x] Batch 04 B-011–B-020
 - [x] 최종 집계: VERIFIED 0 / PARTIALLY_VERIFIED 6 / REJECTED 28. [최종 요약](ARCHIVE_PASS_BC_FINAL_SUMMARY_2026-11-12.md)
-- [ ] 이 결과를 반영한 검증 정정본 및 HW/FW/시험/증거 추적성 매트릭스 작성.
+- [x] HW/FW/시험/증거 추적성 매트릭스 작성: CRA_REQUIREMENTS_TO_SERVO_DRIVE_TRACEABILITY_MATRIX.md.
 - [ ] 나머지 956개 archive는 P0 위험 후보부터 단계별 검증. 34개 표본 결과를 전수 오류율로 일반화하지 않음.
 
 
@@ -168,3 +168,12 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 - [ ] 제품 경계 BD-01–BD-15 입력 확보 후 적용성 업데이트.
 - [ ] 실제 ST MCU 주문 코드/실리콘 리비전 확인 후 부품별 기능과 시험 가능성 확정.
 - [ ] 제품 위험평가/기능안전 검토를 반영해 각 시험의 수치형 합격 기준 승인.
+
+
+## 위협 모델 및 시험·증거 구조
+- [x] 일반 서보 드라이브 자산/공격자/신뢰 경계/위협 시나리오 초안 작성: [THREAT_MODEL_SERVO_DRIVE_CRA.md](THREAT_MODEL_SERVO_DRIVE_CRA.md).
+- [x] 위협별 시험 ID, 기대 결과, 증거 파일/메타데이터, 시험 상태 규칙 작성: [SECURITY_TEST_EVIDENCE_REGISTER.md](SECURITY_TEST_EVIDENCE_REGISTER.md).
+- [ ] 제품 SKU/실제 인터페이스/설치 토폴로지 입력으로 위협 모델 맞춤화 및 위험도 산정.
+- [ ] 실제 ST MCU 주문 코드/실리콘 리비전으로 boot/debug/crypto/NVM 통제 가능성 확인.
+- [ ] 제어주기/지터/부하/복구시간 등 수치형 합격 기준을 제품 요구사항·위험평가·기능안전 분석으로 승인.
+- [ ] 승인된 시험환경에서 TST 케이스 실행, raw evidence hash 기록 및 별도 검토.
