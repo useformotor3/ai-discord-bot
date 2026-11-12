@@ -326,3 +326,12 @@ Detailed report: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_81_121_2026-11-12.md](ARCHIVE_M
 | CRA-ARCH-121-001 | #121 | 지원기간/secure decommissioning 일부 타당, 사전 EOL 통지 의무·인용 과장 | PARTIALLY_VERIFIED |
 
 **Batch result:** 41 reports; 33 CONFLICT / 8 PARTIALLY_VERIFIED / 0 VERIFIED. All 41 Raw Text Quote blocks are rejected for verbatim reuse. Consecutive risk batch only; not a random sample or archive-wide error rate. Legal baseline: Article 13(8) support period (including expected-use-under-five-years exception); Article 13(9) post-issuance update retention; Annex I Part II(8) free updates with tailor-made business-user agreement exception; Article 14 actively exploited vulnerability/severe incident reporting; Annex I Part II(5)–(7) CVD/contact/secure distribution; Annex II(2) contact point and 8(d) secure decommissioning information. Do not infer a universal Secure Boot, TPM, signature algorithm, dual-bank, rollback, zero-downtime, forced-password-change or port-disable requirement.
+
+
+## 17. Main-only report #122 audit (2026-11-12)
+
+Detailed report: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_122_2026-11-12.md](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_122_2026-11-12.md).
+
+| Claim ID | Report | Atomic finding | Status |
+|---|---:|---|---|
+| CRA-ARCH-122-001 | #122 | Secure-by-default/access-control/attack-surface themes map to Annex I Part I(2)(b),(d),(j), but Annex numbering and quote are composite/wrong; universal forced password change, unique credentials, port disabling and RBAC mandates are unsupported. | CONFLICT |
