@@ -65,3 +65,25 @@ https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R2847
 - EUR-Lex Annex I: lines 1743–1773 (Part I product properties and Part II vulnerability handling).
 - EUR-Lex Annex II: lines 1776–1794 (support information, secure installation and decommissioning).
 - Commission C(2026) 5252 publication page (27 July 2026): https://digital-strategy.ec.europa.eu/en/library/commission-publishes-new-guidance-support-timely-cyber-resilience-act-implementation. Guidance is non-binding; use it as interpretive context, not replacement legal text.
+
+## Addendum: Commission C(2026) 5252 guidance cross-check
+
+The official Commission publication page confirms publication on 27 July 2026 and explicitly states that the guidance is non-binding:
+https://digital-strategy.ec.europa.eu/en/library/commission-publishes-new-guidance-support-timely-cyber-resilience-act-implementation
+
+The complete text was inspected through a structured reproduction that identifies the official Annex PDF filename and SHA-256 and states that its text was verified against that PDF:
+https://cra.orcwg.org/official-guidance/
+The reproduction is a navigation/transcription aid; the Commission PDF remains authoritative. Relevant additional interpretation:
+- Points 125–126: support period reflects expected use, reasonable user expectations, product nature and relevant Union law; at least five years unless expected use is shorter.
+- Point 126 explicitly says five years is not the default for every product. Point 125 and Recital 60 expect longer support where reasonable expected use is longer; the guidance specifically notes industrial control systems often remain in use significantly longer.
+- Point 127 explains Article 13(19): support end date (month/year) is indicated at purchase; a notification after expiry is displayed where technically feasible.
+- Points 139–145: product classification depends on the product's core functionality and actual technical capabilities; mere integration of a component with an important/critical category function does not automatically classify the whole product in that category.
+- Points 209–210: Article 14 reporting applies to actively exploited vulnerabilities contained in the product and severe incidents, and continues after the vulnerability-handling support period ends.
+- Point 222: Article 13(6) is upstream reporting of vulnerabilities in integrated components.
+
+For the servo-drive project, do not default to a five-year support period without expected-use evidence. Industrial duty cycles, machine lifetime, service expectations and sector-specific legislation should be considered in the documented support-period rationale. Do not automatically classify the whole servo drive as Important Class I because it contains a security-capable MCU; evaluate the marketed product's core functionality and separately supplied component boundary.
+
+## TI G-Series TRM Rev F access status
+
+TI's official product pages list the MSPM0 G-Series 80-MHz Technical Reference Manual Rev F dated 5 November 2026. The TI page identifies the manual as a 25 MB PDF; the web viewer/download path failed in this session due content-size/decoding limits. Thus **revision/date metadata is verified, but the Rev F security chapter, register descriptions, and revision changes remain NOT_VERIFIED**. Do not derive register-level or security-feature claims from the title/revision index alone. Relevant TI official product page:
+https://www.ti.com/product/MSPM0G3507
