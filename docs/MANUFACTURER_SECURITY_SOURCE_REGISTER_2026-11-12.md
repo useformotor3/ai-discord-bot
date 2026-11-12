@@ -70,7 +70,7 @@
 - ST AN5156 Rev 14: front matter / applicable product series; device protections; debug port and interface protection; secure boot/SFU; STM32 security features by device; Guidelines; revision history.
 - ST AN4992 Rev 19: SFI security features, SFI constraints, supported MCU family table.
 - TI SLASFO2B Rev B: §1 Features; §3 Description; §4 Functional Block Diagram; §8.18 Security; §8.19 TRNG; §8.20 AESADV; §8.21 Keystore; §11 Revision History.
-- TI SLAAE29A Rev A (analyzed copy): §1.3 Platform Security Enablers; §2 Device Security Model; §3 Secure Boot; §4 Secure Storage; §5 Cryptographic Acceleration; §9 Revision History. TI index now lists SLAAE29 Rev B (Aug 27 2026) for MSPM0G3506; Rev B content must be checked before finalizing the MSPM0 platform comparison.
+- TI SLAAE29A Rev A (analyzed copy): §1.3 Platform Security Enablers; §2 Device Security Model; §3 Secure Boot; §4 Secure Storage; §5 Cryptographic Acceleration; §9 Revision History. 이전 조사 메모에는 TI index의 SLAAE29 Rev B (Aug 27 2026) 표시가 기록되어 있으나, 이번 세션에서 해당 공식 인덱스/Rev B 원문을 재현하지 못했다. Rev B는 원문 확보 전까지 UNVERIFIED로 취급한다.
 
 **결론:** TI MSPM0G3529-Q1은 데이터시트에서 여러 보안 기능을 명시하는 구체적 비교 사례다. ST는 AN5156의 제품군별 기능 표가 강력한 출발점이지만 실제 부품번호가 없어 현재 특정 ST MCU와의 동급 비교는 불가능하다. 실제 ST part number가 확보되기 전까지 ST 쪽의 부품별 기능은 UNVERIFIED로 유지한다.
 
