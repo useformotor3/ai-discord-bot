@@ -67,7 +67,12 @@ ST 공식 기준선은 AN5156 Rev 14 (June 2026)와 STM32Trust로 시작한다. 
 근거: [ST AN5156](https://www.st.com/content/st_com/en/technical-documents/an5156-introduction-to-security-for-stm32-mcus-stmicroelectronics.html), [STM32Trust](https://www.st.com/content/st_com/en/ecosystems/stm32trust.html).
 
 ## 7. TI 반도체 기술 비교
-작성 상태: ST와 동일한 비교 기준을 적용하고 공식 데이터시트·Reference Manual·보안 문서에 근거해 작성한다.
+
+TI 공식 비교 기준 예시로 MSPM0G3529-Q1 데이터시트(SLASFO2B, revised October 2025)와 SLAAE29A Cybersecurity Enablers in MSPM0 MCUs(revised December 2025)를 확보했다. 이 예시 부품은 80 MHz Cortex-M0+, 최대 512 KB ECC Flash, 128 KB SRAM, dual-bank flash/address swap, AES-128/256 가속, secure key storage, flash firewalls, TRNG, secure boot 및 secure in-field update 기능을 데이터시트에 명시한다.
+
+이 정보는 기능 비교의 출발점이지 ST와의 동급 성능/비용/보안 동등성 판정이 아니다. ST의 정확한 주문 코드와 TI 비교 대상 주문 코드를 먼저 확정한 뒤 동일한 조건과 문서 리비전으로 비교한다.
+
+공식 자료: [TI MSPM0G3529-Q1 datasheet](https://www.ti.com/lit/ds/symlink/mspm0g3529-q1.pdf), [TI SLAAE29A](https://www.ti.com/lit/an/slaae29a/slaae29a.pdf).
 
 ## 8–12. 개발·운영·시험·문서화
 작성 상태: CRA 원문 및 관련 표준/공식 가이드 검증 후 구체화한다.
