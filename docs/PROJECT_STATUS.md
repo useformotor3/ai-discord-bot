@@ -137,3 +137,13 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - 집계 검증 중 감사 ID 중복을 발견: A-013과 B-006은 동일한 `2026-11-11_230055.md` / SHA-1. 따라서 35개 감사 ID 행이 34개 고유 파일을 가리킨다.
 - 고유 파일 기준 판정은 25 CONFLICT / 9 PARTIALLY_VERIFIED로 기존 34건 집계와 일치한다. 추가 9개 보고서의 10개 ID 중 1개가 추가 20개 표본과 중복.
 - 원본 아카이브 34개는 수정하지 않았다. 이 작업은 표본 정정 추적성 구축이며 990개 전체 전수 검증이 아니다.
+
+
+## 2026-11-12 — 34개 표본 법령 인용문 단위 감사
+- 상세 결과: [ARCHIVE_QUOTE_LEVEL_AUDIT_2026-11-12.md](ARCHIVE_QUOTE_LEVEL_AUDIT_2026-11-12.md).
+- 기존 감사 ID 35행을 원본 SHA-1 기준 34개 고유 파일로 대조했다. A-013/B-006은 동일 원본이므로 중복 집계하지 않는다.
+- 각 원본의 법령 인용 후보를 EUR-Lex 공식 원문과 대조하고, 직접 인용/생략 인용/요약의 오표시/합성·창작 문구/조항 오기를 구분했다.
+- 반복 오류: Article 10·11을 제조자 의무/신고로 오인, Article 14를 지원기간·무료 업데이트로 오인, Article 24를 기술문서/적합성 평가로 오인, Annex I Part I/II 혼동, 존재하지 않는 산업 자동화/서보 드라이브 Annex III 카테고리 생성.
+- 지원기간 Article 13(8), 업데이트 무상 제공 Annex I Part II(8), 업데이트 분리 Part II(2), 신고 Article 14는 서로 다른 의무다. Annex I Part I(2)(g)는 데이터 최소화, (h)는 가용성 보호다.
+- 감사 결과는 34개 위험 기반 표본에만 적용된다. 전체 990개 오류율로 일반화하지 않는다.
+- 원본 research_archive, main.py, Gemini prompt, production run.yml은 수정하지 않았다. main merge 없음.
