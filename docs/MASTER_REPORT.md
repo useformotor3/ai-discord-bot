@@ -127,3 +127,13 @@ TI 비교 예시로 MSPM0G3529-Q1 데이터시트 SLASFO2B RevB (October 2025)�
 주의: TI 공식 제품 기술자료 인덱스에는 SLAAE29 RevB (2026-08-27)와 G-Series TRM RevF (2026-11-05)가 표시되어 최신판 본문 확인이 추가로 필요하다. 이번 문서의 SLAAE29A 분석은 RevA에 한정한다. TI 데이터시트의 PSA Level 1 “targeted”는 인증 취득 완료가 아니다. Q1/ASIL 관련 표현은 CRA 적합성 증거와 다르다.
 
 기능별 표, source metadata, 제품 적용 한계 및 추가 시험 큐는 [제조사 보안 자료 레지스터](MANUFACTURER_SECURITY_SOURCE_REGISTER_2026-11-12.md)를 참조한다. 개별 기술 주장과 원문 위치/상태는 [Claim Evidence Ledger](CLAIM_EVIDENCE_LEDGER.md)에 등록했다. 현재 제조사 주장 12건(문서 수준 VERIFIED 11건, 최신판 확인 대기 PARTIALLY_VERIFIED 1건)을 등록했으며, 이 레코드는 MCU 기능 사실의 출처 검증이지 서보 드라이브 전체의 CRA 적합성 판정이 아니다.
+
+
+## 5. 서보 드라이브 보안 하드웨어 참조 아키텍처 (초안)
+
+[서보 드라이브 CRA 보안 하드웨어 아키텍처](SERVO_DRIVE_CRA_SECURITY_HARDWARE_ARCHITECTURE.md)에 외부 통신·서비스 인터페이스, 통신 도메인, 모션 제어 MCU, NVM, 선택적 secure element, 디버그 포트, 제조 프로비저닝 및 전원/리셋 감독 블록을 정리했다. Trust boundary와 secure boot/update, 키 관리, 생산 프로비저닝, 업데이트 부정시험, CRA 요구사항-설계-증거 연결을 포함한다.
+
+이 아키텍처는 개발자 토론용 참조 설계다. 특정 MCU/secure element/암호 알고리즘을 CRA가 직접 요구한다는 뜻이 아니며, 실제 회로도·제품 SKU·ST MCU 주문 코드가 확인되기 전까지 제품별 적용성은 UNVERIFIED다. STO 등 기능안전 경로는 별도 안전 분석의 대상이며 CRA 요구사항과 혼동하지 않는다.
+
+### TI 최신 문서 재점검 결과
+TI MSPM0G3529-Q1 제품 페이지는 MSPM0 G-Series TRM을 참조한다. TI MSPM0-DIAGNOSTIC-LIB 기술자료 인덱스는 G-Series TRM Rev F(2026-11-05)를 표시한다. 다만 전체 PDF/HTML 본문은 도구의 크기 제한으로 열람하지 못했으므로 Rev F의 보안 장 내용을 검증했다고 주장하지 않는다. SLAAE29 Rev B도 이번 세션에서 공식 본문을 재확보하지 못했으며, 기존 SLAAE29A Rev A만 본문 확인된 자료로 유지한다.
