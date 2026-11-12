@@ -86,3 +86,9 @@
 - A-013/B-006 중복은 한 건으로 처리. 일부 SBOM/Article 31 문구는 원문과 부합하거나 생략 인용에 해당하지만, 상당수는 paraphrase를 직접 인용처럼 표시했거나 조항을 합성·오기함.
 - EUR-Lex Regulation (EU) 2024/2847의 Article 13(8)/(9), Article 14, Article 31/32, Annex I Part I/II, Annex II/III/VII/VIII를 직접 대조.
 - 기존 원본 archive는 수정하지 않았다. 감사는 34개 표본에 한정되며 990개 전수검증이 아니다.
+
+
+## 필수 검증 절차
+- [검증 운영 프로토콜](docs/VERIFICATION_PROTOCOL.md)을 모든 조사·보고서·설계 작업에 적용한다.
+- 빠른 진행은 검색량을 늘리는 것이 아니라 P0 위험 항목부터 원문 확인 → 별도 재검증 → 반증 확인 → 제품 적용성 → 설계/시험 증거로 연결하는 방식으로 한다.
+- 같은 AI의 반복 답변은 독립 더블체크가 아니다. Pass A/B/C 기록이 없으면 VERIFIED로 승격하지 않는다.
