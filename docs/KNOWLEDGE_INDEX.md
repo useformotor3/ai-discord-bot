@@ -223,3 +223,8 @@ ST와 비교할 기능 범위와 제품군을 먼저 정의한다. 동급 기능
 
 - main 자동 생성 report #36은 Article 14를 무상 업데이트 조항으로 오인하고, Annex I Part I(2)(b),(c),(g)의 문구/번호를 잘못 인용했으며, Secure Boot/Measured Boot/TPM을 보편 의무로 단정했다. 정식 CRA 제목의 개정 법령 번호도 오기했다.
 - 감사 문서: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_36_2026-11-12.md](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_36_2026-11-12.md). CONFLICT / quote REJECTED. main 원본 보존.
+
+## 자동 조사 품질 게이트 변경 제안
+
+- main-only report #35/#36의 원문 대조 결과를 반영해 [CHANGE_PROPOSAL_MAIN_GEMINI.md](CHANGE_PROPOSAL_MAIN_GEMINI.md)에 직접 인용 exact-match, 법령 조항 위치, 법령 제목/개정 법령 메타데이터, 의무-설계 선택 분리 및 회귀 테스트를 추가했다.
+- 제안은 USER_APPROVAL_REQUIRED이며 실제 main.py/Gemini prompt/production workflow 변경은 없다.
