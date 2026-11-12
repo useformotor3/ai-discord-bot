@@ -211,3 +211,10 @@ ST와 비교할 기능 범위와 제품군을 먼저 정의한다. 동급 기능
 - [Commission C(2026) 5252 가이드 검토](CRA_COMMISSION_GUIDANCE_REVIEW_2026-11-12.md): 공식 게시 메타데이터 VERIFIED, Annex 본문 상세 검증 PENDING.
 - 제조사 revision 메타데이터: ST AN5156 Rev14/June 2026; TI SLAAE29 Rev B/Aug 27 2026 및 G-Series TRM Rev F/Nov 5 2026의 공식 인덱스 표시 확인. TI 최신 revision 본문 내용은 미검증.
 - [주장·근거 대장](CLAIM_EVIDENCE_LEDGER.md)에 EU-GUIDE-001, TI-012/013, ST-002 메타데이터 claim을 등록. 메타데이터 검증을 기능 claim 검증으로 확대 해석하지 않는다.
+
+## 2026-11-12 추가 검증 기록
+
+- 통합 매트릭스 참조 검사: TR 20개, TH 18개, AST 10개, TST 45개. 모든 매트릭스 시험 ID/range는 시험 대장에 존재. 실제 시험은 NOT_RUN.
+- main-only report #35는 Secure Boot/TPM/SE/디지털 서명 하드웨어 의무를 CRA가 일률 요구한다고 잘못 단정하고, Annex I Part I(2)(b)–(d)의 항목을 잘못 인용했다. 감사: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_35_2026-11-12.md](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_35_2026-11-12.md).
+- TI SLAAE29 Rev B HTML 본문 직접 확인: https://www.ti.com/document-viewer/lit/html/SLAAE29. Revision history/CSC/KEYSTORE/AESADV/TRNG 내용은 문서 수준 VERIFIED. 단, 머리말의 supported-device list에 MSPM0G3529-Q1이 없으므로 G3529-Q1에 대한 직접 적용성은 UNVERIFIED.
+- Commission guidance C(2026) 5252 게시 사실은 VERIFIED, Annex PDF 본문 페이지/문단 검증은 다운로드 도구 오류로 PENDING.
