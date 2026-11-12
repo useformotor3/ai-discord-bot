@@ -183,3 +183,9 @@ Pass B/C 합계 24/34개 파일 진행, 10개 남음. 동일 AI 세션의 별도
 
 ## CRA 요구사항 → HW/FW/시험/증거 추적성
 검증된 법령 요구를 개발자가 실행할 수 있도록 [CRA_REQUIREMENTS_TO_SERVO_DRIVE_TRACEABILITY_MATRIX.md](CRA_REQUIREMENTS_TO_SERVO_DRIVE_TRACEABILITY_MATRIX.md)를 작성했다. Annex I Part I의 제품 보안 속성, Part II의 취약점 처리, Articles 13–14의 제조자 의무/신고를 하드웨어 블록, 펌웨어/운영 통제, 시험 제안, 객관적 증거 후보에 연결했다. 이 문서는 일반 참조 설계 초안이며, 제품 SKU·실제 MCU 주문 코드·통신/원격 기능·안전 아키텍처가 확인되기 전에는 제품별 적용성과 시험 합격 기준을 확정하지 않는다.
+
+
+## 위협 모델과 시험·증거 체계 (초안)
+일반 참조 모델로 [서보 드라이브 CRA 위협 모델](THREAT_MODEL_SERVO_DRIVE_CRA.md)을 추가했다. 보호 자산(AST), 공격자(ACT), 신뢰 경계(TB), 위협 시나리오(TH)를 식별하고 HW/FW/통신/생산/운영 통제 후보에 연결했다. 제품별 사실이 없는 상태에서 위험도 점수나 적용성을 임의로 확정하지 않았다.
+
+[보안 시험·증거 대장](SECURITY_TEST_EVIDENCE_REGISTER.md)은 각 위협을 TST-* 시험 ID와 EV-* 증거 ID로 연결한다. 시험은 모두 NOT_RUN이며, 제품 제어주기·지터·부하·복구시간 등 수치형 합격 기준은 승인된 제품 요구사항/위험평가/기능안전 분석을 입력받아 확정해야 한다. 시험 PASS는 CRA 적합성 결론과 동일하지 않다.
