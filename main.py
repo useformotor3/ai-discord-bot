@@ -4,7 +4,10 @@ import os
 import subprocess
 import time
 from google import genai
+from google.genai import types
 import requests
+
+from cra_report_contract import ReportGenerationError, generate_validated_report
 
 # 0. 파일 경로 설정
 STATE_FILE = "state.json"
@@ -66,60 +69,30 @@ context_memory = (
     else "아직 초기 조사 단계입니다."
 )
 
-# 3. Gemini 클라이언트 초기화 및 프롬프트
+# 3. Gemini 클라이언트 초기화 및 버전 관리 프롬프트 로드
 client = genai.Client(api_key=os.environ.get("GEMINI_API_KEY"))
+PROMPT_FILE = "prompts/CRA_RESEARCH_PROMPT_V2.txt"
+with open(PROMPT_FILE, "r", encoding="utf-8") as f:
+  prompt = f.read()
 
-prompt = f"""
-    당신은 유럽연합(EU) CRA(Cyber Resilience Act) 규격 및 산업용 자동화 보안 최고 전문가입니다.
-    산업용 서보 드라이브(Servo Drive) 제조사가 반드시 준수해야 하는 CRA 핵심 요건을 조사하고 있습니다.
-
-    [지금까지 깃허브 외부 메모리에 누적된 이전 조사 내용 (참고용 - 중복 조사 방지)]
-    {context_memory}
-
-    위의 이전 내용들과 중복되지 않으면서, 아직 다루지 않은 더 발전되거나 세부적인 CRA 핵심 주제(예: 취약점 무상 패치, Secure by default, 기술 문서, SBOM, 생명주기 관리 등)를 깊이 있게 선정하여 아래 4가지 양식에 맞추어 엄격하게 조사하고 작성해 주세요.
-    추측성 내용은 절대 배제하고, 실제 EU 규정 조항이나 공식 가이드라인을 기반으로 높은 품질의 전문적인 내용을 작성하세요.
-
-    [작성 양식]
-    1. 주제 요약: (핵심 내용 2줄)
-    2. 규격 근거 및 상세 내용: (CRA 조항 또는 산업 표준 기준의 구체적 설명)
-    3. 출처 자료(Source): (참고한 공식 EU 규정 문서명, 웹사이트 이름 또는 표준 규격 명칭)
-    4. 출처 원문 텍스트(Raw Text Quote): (해당 출처에서 인용하거나 근거로 삼은 실제 원문 문장 또는 규정 조항의 텍스트)
-    """
-
-# 4. 모델 폴백 & 재시도 픽서 로직 (Latest ➔ Lite)
+# 4. JSON 계약 검증을 포함한 모델 폴백. 유효한 결과가 없으면 저장/게시 전에 중단.
 models_to_try = ["gemini-flash-latest", "gemini-3.5-flash-lite"]
-ai_message = ""
-success = False
-
-for model_name in models_to_try:
-  max_retries = 3
-  retry_delay = 5
-  print(f"🔍 모델 [{model_name}]으로 조사를 시도합니다.")
-
-  for attempt in range(1, max_retries + 1):
-    try:
-      response = client.models.generate_content(
-          model=model_name, contents=prompt
-      )
-      if response and response.text:
-        ai_message = response.text
-        success = True
-        break
-    except Exception as e:
-      print(f"모델 {model_name} 시도 {attempt} 실패: {str(e)}")
-      if attempt < max_retries:
-        time.sleep(retry_delay)
-
-  if success:
-    break
-
-if not success:
-  ai_message = (
-      "⚠️ [시스템 긴급 경고] 모든 AI 모델(Latest 및 Lite)의 일시적"
-      " 과부하로 이번 회차 조사가 지연되었습니다. 시스템은 정상 대기"
-      " 중입니다."
+try:
+  report_payload, ai_message, selected_model = generate_validated_report(
+      client=client,
+      models=models_to_try,
+      prompt=prompt,
+      config_factory=types.GenerateContentConfig,
+      max_retries=3,
+      retry_delay=5,
+      sleeper=time.sleep,
+      logger=print,
   )
-  success = True
+  print(f"Validated CRA draft generated with model: {selected_model}")
+except ReportGenerationError as e:
+  # Fail closed: do not enter Discord/archive/state/history success path.
+  print(f"FAIL-CLOSED: {e}")
+  raise SystemExit(1)
 
 # 5. 디스코드 분할 전송 (2000자 제한 방어)
 title_prefix = (
