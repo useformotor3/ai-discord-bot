@@ -253,3 +253,10 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 - [ ] Continue with later main-branch reports after checking commit sequence and source content.
 - [ ] Commission C(2026) 5252 Annex full paragraph-level review; official index/publication metadata is verified, full PDF extraction remains incomplete in this environment.
 - [ ] TI G-Series TRM Rev F security chapter: official revision metadata verified (Nov 5 2026), but full body not yet verified; do not make feature/registration claims from revision metadata alone.
+
+
+## TI TRM Rev F 재점검
+- [x] TI 공식 MSPM0G3507 제품 페이지에서 TRM Rev F / 2026-11-05 게시 메타데이터 확인.
+- [x] 동일 페이지에 공개된 MSPM0G3507 feature summary를 해당 제품 페이지 주장으로만 기록하고 G3529-Q1과 분리.
+- [ ] Rev F PDF/HTML 전체 본문 확보 후 security/debug/boot/flash/NVM/register 내용을 실제 페이지·표 번호와 함께 검증.
+- [ ] 최종 TI benchmark order code가 정해지면 datasheet, TRM family applicability, errata, SLAAE29B supported-device list를 삼중 대조.
