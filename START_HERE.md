@@ -147,3 +147,8 @@
 
 - main의 자동 생성 report #36도 감사했다. Article 14를 무상 업데이트와 혼동, Annex I Part I(2)(b),(c),(g) 오기, Secure Boot/Measured Boot/TPM을 보편 의무로 단정, 법령 제목의 개정 법령 번호 오기가 확인됐다.
 - 감사 기록: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_36_2026-11-12.md](docs/ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_36_2026-11-12.md). 파일 판정 CONFLICT, 직접 인용 블록 REJECTED. main 원본 수정 없음.
+
+## 2026-11-12 추가 — main-only 보고서 #37–#39
+
+- main-only 자동 생성 보고서 #37–#39 3건을 공식 EUR-Lex와 대조, 모두 CONFLICT. Article 13(8) 지원기간 / Annex I Part II(8) 무상 업데이트 / CVD Part II(5) / contact Part II(6)를 분리. Annex I Part II (a)–(d) 인용 및 Part I(2)(b)/(c) 인용 오류를 기록.
+- 상세 감사: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_37_39_2026-11-12.md](docs/ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_37_39_2026-11-12.md). main 원본은 불변 유지.
