@@ -315,3 +315,10 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 - [ ] #122 이후 신규 main archive 보고서는 commit 기준으로 대기열/감사 수행.
 - [ ] P0: Article 13(8) 지원기간 shorter-than-five-years exception, Annex I Part II(8) 무상 업데이트 예외, Article 14 두 신고 트랙을 통합 보고서와 claim ledger에 재검증.
 - [ ] #81–#121 이후 추가된 main 보고서가 있는지 다음 세션에서 HEAD 재확인. main 동기화/병합은 승인 없이 금지.
+
+
+## 2026-11-12 추가 진행 — main-only report #122
+- [x] main report #122 commit diff 확인 및 EUR-Lex Annex I Part I(2)(b),(d),(j), Part II(5), Annex II(2)와 대조.
+- [x] [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_122_2026-11-12.md](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_122_2026-11-12.md) 작성. 판정 CONFLICT.
+- [ ] #123 이후 신규 보고서 commit 여부를 계속 확인하고 위험기반 감사.
+- [ ] #81–#122 정정사항을 원본과 분리한 별도 errata로 통합.
