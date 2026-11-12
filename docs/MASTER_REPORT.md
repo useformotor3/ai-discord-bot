@@ -268,3 +268,12 @@ TI 공식 기능안전 매뉴얼 SFFS983A Rev A(2026-10-30)의 지원 부품 목
 ## 신규 main 아카이브 감사: #80
 
 main의 #80 보고서는 secure-by-default, 접근통제, 공격면 최소화 주제는 CRA Annex I Part I(2)(b),(d),(j)에 부합한다. 그러나 원문 인용은 Annex I Part I Section 1(a)–(d)라는 존재하지 않는 구조를 만들고 여러 요건을 합성했다. 모든 debug/port 비활성화, 강제 비밀번호 변경, Secure Boot의 보편 의무화는 법문을 과장한다. 파일 단위 PARTIALLY_VERIFIED이며 원문 인용은 재사용 불가다. 상세: [#80 감사](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_80_2026-11-12.md).
+
+
+## 신규 main archive 감사 #81–#122
+
+main의 #81–#121 41개 연속 보고서를 EUR-Lex와 대조한 결과 파일 단위 CONFLICT 33 / PARTIALLY_VERIFIED 8 / VERIFIED 0이며, 41개 Raw Text Quote 블록은 모두 직접 인용으로 재사용할 수 없다. 반복 오류는 Article 13(8) 지원기간과 Annex I Part II(8) 무상 업데이트 혼동, 5년 미만 예상 사용기간 예외 역전/누락, Article 14 신고 범위 오해, 존재하지 않는 세부 항목과 합성 인용, Secure Boot·서명·rollback·RBAC·비밀번호·포트 설정을 보편적 법적 의무로 과장한 것이다. 상세: [#81–#121 감사](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_81_121_2026-11-12.md).
+
+후속 main report #122도 별도 감사하여 CONFLICT 판정했다. Secure-by-default/access-control/attack-surface 주제는 관련성이 있으나 Annex I 번호와 인용이 틀리고, 강제 비밀번호 변경·RBAC·모든 포트 비활성화는 보편적 직접 의무가 아니다. 상세: [#122 감사](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_122_2026-11-12.md).
+
+원본 main archive/history/state는 수정하지 않았고 작업 브랜치에 감사 기록만 추가했다.
