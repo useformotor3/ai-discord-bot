@@ -108,3 +108,9 @@
 ## Pass B/C Batch 03
 - [ARCHIVE_PASS_BC_AUDIT_BATCH_03_2026-11-12.md](docs/ARCHIVE_PASS_BC_AUDIT_BATCH_03_2026-11-12.md): B-003–B-010 8개 파일 재검증.
 - B-009 secure-by-default 문구만 현행 Annex I Part I(2)(b)와 핵심 취지가 일치하나 원문 위치/표현을 정정해야 한다. B-010은 Article 24/32 혼동 및 서보 드라이브 Class II 근거 없는 단정이 확인됐다.
+
+
+## 34개 표본 Pass B/C 최종 결과
+- [ARCHIVE_PASS_BC_FINAL_SUMMARY_2026-11-12.md](docs/ARCHIVE_PASS_BC_FINAL_SUMMARY_2026-11-12.md): 34개 고유 원본 재검증 최종 요약.
+- 파일 단위 결과: VERIFIED 0 / PARTIALLY_VERIFIED 6 / REJECTED 28. 34개 위험 기반 표본 결과이며 전체 990개 오류율이 아님.
+- 동일 AI 세션의 별도 원문 재확인 절차이며 독립 제3자 법률 검토는 아님.
