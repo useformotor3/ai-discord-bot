@@ -237,3 +237,10 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 - [x] Article 13(8) 지원기간과 Annex I Part II(8) 무상 보안 업데이트 분리, Article 13(6) component vulnerability 처리와 혼동 방지.
 - [x] Annex I Part II 번호(1)–(8)와 Part I(2)(b)/(c) 오인용을 감사 문서 및 claim ledger에 기록.
 - [ ] main 자동 생성물 신규 commit 감시 및 위험기반 감사 계속. 브랜치 동기화/병합은 승인 없이 하지 않는다.
+
+## 하드웨어 인터페이스 설계 계약
+
+- [x] IF-01..IF-09의 신호 경계·설계 계약·검토 항목·시험 연결 작성.
+- [x] 회로도 리뷰 체크리스트 10개 항목 추가.
+- [ ] 실제 회로도, 커넥터/핀맵, PHY·센서·gate driver 부품번호, power tree, clock/reset, isolation/EMC 요구를 확보해 설계 검토.
+- [ ] 승인된 motion control timing/jitter budget 및 fault response 기준으로 시험 수행.
