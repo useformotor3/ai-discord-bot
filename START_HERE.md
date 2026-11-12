@@ -219,3 +219,9 @@
 ## 2026-11-12 추가 — CRA Annex II 사용자 정보 템플릿
 - [SERVO_DRIVE_CRA_USER_SECURITY_INFORMATION_CHECKLIST.md](docs/SERVO_DRIVE_CRA_USER_SECURITY_INFORMATION_CHECKLIST.md): Article 13(16)–(19), Annex II(1)–(9)를 서보 드라이브 사용자 지침서·보안 정보·증거 추적 항목으로 변환한 작업용 템플릿.
 - 제품별 내용은 모두 미확정. “Digital Product Passport”는 법정 CRA 명칭이 아니며 Class II 분류는 Annex III 제품 기능 근거 없이 추정하지 않음.
+
+
+## 2026-11-12 추가 — main-only report #124
+- [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_124_2026-11-12.md](docs/ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_124_2026-11-12.md): CONFLICT. 취약점 처리 요구사항은 Annex I Part II(1)–(8)이며 Part I Section 2가 아님. 직접 인용문은 합성/번호 오류. 서명 검증과 복구 아키텍처를 보편적 직접 의무로 과장.
+- 올바른 구분: Part I(2)(c) 자동 업데이트 기본 설정(해당 시) 및 사용자 제어; Part II(5) CVD; (6) 연락/정보 공유; (7) 안전한 배포; (8) 지체 없는 무상 업데이트(맞춤형 제품의 business-user 합의 예외).
+- main latest at discovery: #124, commit 17eebdb0af513ae2b6800e13d55b798d095631cc. 원본 main archive 수정 없음.
