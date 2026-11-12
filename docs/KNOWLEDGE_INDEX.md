@@ -298,3 +298,9 @@ ST와 비교할 기능 범위와 제품군을 먼저 정의한다. 동급 기능
 ## Main-only report #80 audit
 - [Audit #80](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_80_2026-11-12.md): PARTIALLY_VERIFIED. Secure-by-default/access/attack-surface concepts valid; quote misnumbered/composite and implementation mandates overstated.
 - Claim row CRA-ARCH-080-001 added.
+
+
+## Main-only reports #81–#122 audit
+- [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_81_121_2026-11-12.md](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_81_121_2026-11-12.md): #81–#121, 41 files; 33 CONFLICT / 8 PARTIALLY_VERIFIED / 0 VERIFIED; all 41 Raw Text Quote blocks rejected for verbatim reuse.
+- [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_122_2026-11-12.md](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_122_2026-11-12.md): #122, CONFLICT.
+- Legal baseline map: Article 13(8)/(9), Article 14, Annex I Part I(2), Annex I Part II(1)–(8), Annex II(2)/(8)(d). See detailed audit docs and claim ledger CRA-ARCH-081-001..CRA-ARCH-122-001.
