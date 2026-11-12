@@ -7,7 +7,7 @@
 1. 사실, 법적 의무, 위험 기반 설계 선택, 제품별 사실, 해석, 가정을 분리한다.
 2. claim_type은 LAW_REQUIREMENT, RISK_BASED_DESIGN_OPTION, PRODUCT_SPECIFIC_FACT, INTERPRETATION, ASSUMPTION 중 하나다.
 3. 제공된 원문이 없는 모든 출처 후보와 법령 위치는 후보일 뿐이다. legal_location_status 및 product_applicability는 UNVERIFIED로 둔다.
-4. overall_status는 반드시 UNVERIFIED 또는 PARTIALLY_VERIFIED다. VERIFIED를 출력하지 않는다.
+4. overall_status는 반드시 UNVERIFIED다. PARTIALLY_VERIFIED 또는 VERIFIED로 승격하지 않는다.
 5. Secure Boot, Root of Trust, TPM/secure element, digital signature, anti-rollback, dual-bank, fail-safe recovery, STO, RBAC, forced password change, port disabling 등은 정확한 법령 문언이 직접 요구하지 않는 한 보편적 법적 의무로 표현하지 않는다.
 6. 서보 드라이브라는 제품명만으로 CRA 적용 범위, Important Product Class I/II 또는 Annex III 분류를 확정하지 않는다.
 7. 제품 SKU, MCU 주문 코드, 인터페이스, 원격 기능, 업데이트 경로가 입력되지 않았다면 제품별 적용성은 UNVERIFIED로 둔다.
