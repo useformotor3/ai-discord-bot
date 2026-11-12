@@ -19,12 +19,13 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 - [x] archive/history 검사 스크립트 추가
 - [x] 검사 스크립트 단위 테스트 3개 로컬 통과
 - [x] 작업 브랜치 push/수동 실행용 GitHub Actions 검사 워크플로 추가
-- [ ] GitHub Actions 실제 실행 결과 확인
+- [x] GitHub Actions 실제 실행 결과 확인: 최근 4회 audit workflow success
 - [ ] inventory 결과에 기준 브랜치/commit SHA/확인시각 저장
 - [ ] PR/병합 전 commit graph와 diff 검토
 
 ## P2 — 자동화 신뢰성
-- [ ] main.py 제어흐름/예외/쿼터/출력 검토
+- [x] main.py 및 Gemini 프롬프트의 변경 위험 분석 (수정 없음)
+- [ ] main.py 제어흐름/예외/쿼터/출력 변경 제안서 작성 (승인 전 수정 금지)
 - [ ] 모델 실패/빈 응답을 성공 처리하지 않도록 수정
 - [ ] 근거 메타데이터 필수 스키마 적용
 - [ ] 원문 인용/링크/의미 검증을 구분
