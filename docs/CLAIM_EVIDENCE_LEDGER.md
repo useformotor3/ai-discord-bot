@@ -184,3 +184,13 @@
 | CRA-ARCH-055-001 | Annex I Part I Section 2 point (h) requires zero-downtime updates free of charge. | Annex I Part II(7)–(8) | Annex structure and quote wrong; free-of-charge rule has tailor-made business-user exception. | CONFLICT |
 
 Detailed file-level audit: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_40_55_2026-11-12.md](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_40_55_2026-11-12.md). Original main archive files remain unchanged.
+
+## 14. TI Rev F and product-page claims (2026-11-12)
+
+| Claim ID | Atomic claim | Source | Assessment | Status |
+|---|---|---|---|---|
+| TI-TRM-REVF-001 | TI MSPM0 G-Series 80-MHz TRM Rev F is listed on the official MSPM0G3507 product page with date 2026-11-05. | TI MSPM0G3507 official page, Technical documentation list | Page lists Rev F and date; this verifies publication metadata only, not the body. | VERIFIED (metadata only) |
+| TI-TRM-REVF-002 | The full Rev F security chapter/register descriptions and Rev E→F changes were reviewed. | TI MSPM0 G-Series TRM Rev F | Viewer content is 25,348,105 bytes and cannot be rendered here; PDF open inaccessible. | NOT_VERIFIED |
+| TI-G3507-001 | MSPM0G3507 page lists AES, TRNG, CRC, flash ECC, SRAM parity option, MPU, SWD and security-related product descriptors. | TI MSPM0G3507 official product page | Verified as a page-level claim for MSPM0G3507; must confirm in exact order-code datasheet/TRM/errata before design reliance. | PARTIALLY_VERIFIED (device applicability only) |
+| TI-G3529-001 | MSPM0G3507 product-page feature list proves the same features for MSPM0G3529-Q1. | TI MSPM0G3507 page vs G3529-Q1 datasheet/support list | Different part/order code; cross-device inference is invalid. | REJECTED |
+| TI-SLAAE29B-APPL-001 | SLAAE29B CSC/KEYSTORE/TRNG examples automatically apply to MSPM0G3529-Q1. | SLAAE29B supported-device scope | G3529-Q1 not listed in supported-device list reviewed; direct applicability not established. | NOT_ESTABLISHED |
