@@ -422,3 +422,16 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - Protected files unchanged across branches: main.py SHA 86a7731aad5de8d75581fc953bcea2c44adf2f2b; .github/workflows/run.yml SHA 65a8cadc8eac593f551e390698e367b1d161ecf1.
 - Reports #123 and #124 each audited CONFLICT; audit docs and ledger rows CRA-ARCH-123-001/124-001 added. Annex II user-information checklist template created. Gemini pipeline change proposal updated with evidence/acceptance criteria only; USER_APPROVAL_REQUIRED remains.
 - No tests run; no CI PASS claimed. Original main archive/history/state and production code/prompt/workflow unchanged.
+
+
+## Pipeline proposal update — 2026-11-12
+
+- Latest main auto-archive report at this check: #128, main HEAD `15ceea4b9477b8c0928352a5b4228c0508e88daa`.
+- Audited reports #125–#128 from their individual commit diffs; all four are CONFLICT. Detailed record: `docs/ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_125_128_2026-11-12.md`.
+- Added review-only Gemini prompt v2: `docs/PROPOSED_GEMINI_PROMPT_V2.md`.
+- Expanded `docs/CHANGE_PROPOSAL_MAIN_GEMINI.md` with the #125–#128 evidence and a narrowed first implementation: Gemini command/output contract + JSON validation + fail-closed model failure handling. The proposal explicitly keeps context-memory redesign, model selection/fallback, quota policy, Discord/workflow, and archive/history/state schema outside the first change.
+- Work branch was `1eb77fd7b36b97c6a031464a611c90530ab088d1` before documentation commits in this session. Branch comparison at that point: diverged, 407 ahead / 131 behind. Recheck final HEAD/count after documentation updates.
+- Protected `main.py` blob remains `86a7731aad5de8d75581fc953bcea2c44adf2f2b` on both branches at last read; run.yml SHA and final branch status pending final integrity check.
+- No production prompt, main.py, parser, workflow, archive/history/state, or main branch changes. No tests run and no CI PASS claimed.
+- Implementation remains USER_APPROVAL_REQUIRED; current user instruction was applied to preparing and recording the proposal, not bypassing the explicit diff approval gate in AI_RULEBOOK §12.
+
