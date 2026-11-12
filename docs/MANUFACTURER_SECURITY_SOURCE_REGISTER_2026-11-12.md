@@ -73,3 +73,18 @@
 - TI SLAAE29A Rev A (analyzed copy): §1.3 Platform Security Enablers; §2 Device Security Model; §3 Secure Boot; §4 Secure Storage; §5 Cryptographic Acceleration; §9 Revision History. TI index now lists SLAAE29 Rev B (Aug 27 2026) for MSPM0G3506; Rev B content must be checked before finalizing the MSPM0 platform comparison.
 
 **결론:** TI MSPM0G3529-Q1은 데이터시트에서 여러 보안 기능을 명시하는 구체적 비교 사례다. ST는 AN5156의 제품군별 기능 표가 강력한 출발점이지만 실제 부품번호가 없어 현재 특정 ST MCU와의 동급 비교는 불가능하다. 실제 ST part number가 확보되기 전까지 ST 쪽의 부품별 기능은 UNVERIFIED로 유지한다.
+
+
+## 6. TI 최신 G-Series TRM 원문 접근성 재점검 (2026-11-12)
+
+- MSPM0G3529-Q1 공식 제품 페이지는 해당 제품군의 전체 모듈 설명을 위해 *MSPM0 G-Series 80MHz Microcontrollers Technical Reference Manual*을 참조하도록 연결한다. 데이터시트 Rev B도 해당 G-Series TRM을 안내한다.
+- TI의 공식 MSPM0-DIAGNOSTIC-LIB 기술자료 인덱스에는 G-Series TRM **Rev F, 2026-11-05**가 표시된다. 해당 페이지는 MSPM0G3529-Q1을 포함하는 MSPM0 제품군 자료와 함께 제공된다.
+- TRM 문헌 번호는 **SLAU846**으로 확인된다. TI의 HTML/PDF 열기 시 문서가 너무 커서 현재 도구가 전체 본문을 가져오지 못했다. 따라서 Rev F의 SECURITY 장, CSC/KEYSTORE/debug 관련 레지스터 설명을 직접 확인한 것으로 기록하지 않는다.
+- 이전 검색에서 제기된 SLAAE29 Rev B는 이번 재점검에서 TI 공식 Rev B PDF/직접 문서 페이지를 재현하지 못했다. 현재 검증 가능한 분석 자료는 **SLAAE29A Rev A, revised December 2025**다. Rev B는 원문 확보 전까지 UNVERIFIED로 둔다.
+- 공식 링크:
+  - MSPM0G3529-Q1 제품 페이지: https://www.ti.com/product/MSPM0G3529-Q1
+  - TI MSPM0-DIAGNOSTIC-LIB 기술자료 인덱스(TRM Rev F 표시): https://www.ti.com/tool/MSPM0-DIAGNOSTIC-LIB
+  - G-Series TRM 문헌번호 기반 공식 링크(열람 실패): https://www.ti.com/lit/pdf/SLAU846
+  - SLAAE29A Rev A: https://www.ti.com/lit/an/slaae29a/slaae29a.pdf
+
+**정확성 보정:** Rev F의 문서명/개정일 인덱스 확인과 Rev F 본문 내용 검증은 별개다. 본문 직접 열람 전까지 보안 장 상세 주장은 SLAAE29A Rev A 및 MSPM0G3529-Q1 데이터시트에서 실제 확인한 범위로 한정한다.
