@@ -44,8 +44,8 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 - [ ] 기존 990개 자료의 법령/표준/제조사 공식 출처 URL 복원 및 원문 연결
 - [x] 초기 5개 파일 수동 표본 감사: 4 CONFLICT, 1 PARTIALLY_VERIFIED
 - [x] 추출기 schema 1.1: 주장/인용/위험 후보 행 번호와 문맥 스니펫 추가, CI success
-- [ ] 위험 플래그 표본검사로 실제 오류/정상 주장 분리
-- [ ] 오류 유형·빈도·영향과 정정 이력 작성 (현재 14개 비무작위 표본: 11 CONFLICT, 3 PARTIALLY_VERIFIED)
+- [x] 위험 주제 표본검사로 실제 오류/정상 주장 분리 (추가 20개: 14 CONFLICT / 6 PARTIALLY_VERIFIED)
+- [ ] 오류 유형·빈도·영향과 정정 이력 작성 (누계 34개 비무작위 표본: 25 CONFLICT, 9 PARTIALLY_VERIFIED)
 
 ## P4 — 제품/반도체 적용
 - [x] 제품 경계/의도된 용도/인터페이스/원격 기능/업데이트 경로 확인 템플릿 작성
@@ -81,3 +81,10 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 - 2026-11-12: 기본 계획 및 세션 연속성 규칙 수립.
 - 2026-11-12: main/작업 브랜치 archive 동기화 및 표본 감사.
 - 2026-11-12: archive/history 무결성 검사 스크립트, 테스트, GitHub Actions 워크플로 추가.
+
+
+## 2026-11-12 추가 진행 — 고위험 아카이브 20개 감사
+- [x] 2026-11-11~2026-11-12 생성물 중 지원기간/업데이트/분류/적합성 평가/SBOM/신고 관련 20개를 공식 EUR-Lex 원문과 대조.
+- 결과: 14 CONFLICT, 6 PARTIALLY_VERIFIED. 무작위 표본이 아니므로 전체 오류율 추정 불가.
+- 상세: [ARCHIVE_MANUAL_AUDIT_20_2026-11-12.md](ARCHIVE_MANUAL_AUDIT_20_2026-11-12.md).
+- 원본 archive는 수정하지 않음. main.py/Gemini prompt/운영 workflow 미수정.
