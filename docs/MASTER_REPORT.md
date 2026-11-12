@@ -225,3 +225,7 @@ main의 자동 생성 report #36은 Secure Boot/Measured Boot/TPM을 CRA의 보�
 ## 하드웨어 블록 설계 선택 프레임워크
 
 하드웨어 참조 아키텍처에 DEC-01..DEC-10 설계 선택 매트릭스를 추가했다. 모션/통신 MCU 토폴로지, 부트 신뢰 시작점, Flash slot/update, debug/service, 네트워크 경계, 키 저장, 전원/리셋, 센서, gate-driver 경계, 제조 프로비저닝을 비교 대상으로 정리하고, 각 선택에 판단 기준과 시험 ID를 연결했다. G-01..G-06 설계 동결 게이트는 제품 경계, 정확한 MCU, 인터페이스, timing, 기능안전 경계, 제조 키 수명주기를 요구한다. 실제 SKU/MCU/회로가 없으므로 선택은 전부 TBD이며 이 문서는 제품별 설계 확정본이 아니다.
+
+## main-only 자동 생성 보고서 #37–#39 감사 결과
+
+main의 #37–#39 보고서를 EUR-Lex 원문과 대조한 결과 세 건 모두 CONFLICT로 판정했다. 지원기간은 Article 13(8), 무상 보안 업데이트는 Annex I Part II(8), CVD 정책은 Part II(5), 신고 연락처는 Part II(6)로 구분해야 한다. Article 13(6)은 통합 구성요소의 취약점 통지·수정 문맥이며 지원기간 조항이 아니다. Annex I Part II는 (a)–(d)가 아니라 (1)–(8)의 제조자 요구사항이고, Annex I Part I(2)(b)는 secure-by-default, (c)는 취약점 업데이트/자동 업데이트 조건이다. 상세: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_37_39_2026-11-12.md](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_37_39_2026-11-12.md).
