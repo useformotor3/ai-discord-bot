@@ -142,3 +142,11 @@ TI MSPM0G3529-Q1 제품 페이지는 MSPM0 G-Series TRM을 참조한다. TI MSPM
 ## 6. 기존 조사 아카이브 표본 정정 추적
 
 기존 자동 생성 자료의 표본 감사 결과는 [ARCHIVE_CLAIM_CORRECTION_LEDGER_2026-11-12.md](ARCHIVE_CLAIM_CORRECTION_LEDGER_2026-11-12.md)에 원본 파일 경로, SHA-1 blob, 원문 행 위치, 핵심 주장, 법령 정정 룰, 판정 상태로 연결했다. 35개 감사 ID 중 A-013/B-006이 동일 원본 파일이므로 고유 파일은 34개이며, 고유 파일 기준 25 CONFLICT / 9 PARTIALLY_VERIFIED다. 표본은 비무작위이므로 990개 전체 오류율로 일반화하지 않는다. 원본 archive는 변경하지 않았다.
+
+
+## 부록 — 기존 조사 archive 인용 신뢰성 감사 (2026-11-12)
+기존 CRA 조사 archive 중 위험 기반으로 선정한 34개 고유 파일을 EUR-Lex Regulation (EU) 2024/2847과 대조했다. 감사 ID 35행 중 A-013/B-006은 동일 파일이어서 중복을 제거했다. 파일별 인용 위치, 원문 일치 여부, 잘못 연결된 조항 및 정정 위치는 [ARCHIVE_QUOTE_LEVEL_AUDIT_2026-11-12.md](ARCHIVE_QUOTE_LEVEL_AUDIT_2026-11-12.md)에 기록했다.
+
+이 표본에서는 직접 인용처럼 표시된 합성 문구, 요약의 인용 오표시, Article/Annex 위치 오류가 반복적으로 확인되었다. 지원기간은 Article 13(8), 업데이트의 최소 이용 가능 기간은 Article 13(9), 업데이트 취약점 처리 및 기능 업데이트와의 분리는 Annex I Part II(2), 무상 제공은 Part II(8), 법정 신고는 Article 14다. 제품 분류는 Article 7 및 Annex III의 core functionality 기준이며, 기술문서는 Article 31/Annex VII, 적합성 평가는 Article 32다.
+
+본 표본 결과는 전체 990개 archive의 오류율 추정치가 아니다. 원본 archive는 변경하지 않았으며, 보고서 본문에서 검증되지 않은 인용을 그대로 재사용하지 않는다. 이 감사는 법률 자문 또는 제품별 CRA 적합성 판정을 대체하지 않는다.
