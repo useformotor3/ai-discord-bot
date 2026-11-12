@@ -162,3 +162,10 @@ TI MSPM0G3529-Q1 제품 페이지는 MSPM0 G-Series TRM을 참조한다. TI MSPM
 기존 34개 표본 인용 감사와 구분하여, A-001–A-008에 대해 EUR-Lex 현행 원문을 다시 열어 조항·문맥·예외를 재확인하고 반대 근거를 점검했다. 상세 결과는 [Pass B/C Batch 01](ARCHIVE_PASS_BC_AUDIT_BATCH_01_2026-11-12.md)에 기록했다.
 
 이 배치에서 Article 13(8) 지원기간, Annex I Part II(8) 무상 업데이트, Part II(2) 업데이트 분리, Part I(2)(c) 자동 업데이트, Article 14 신고를 명확히 분리했다. 8개 파일 중 인용 블록 전체가 VERIFIED된 파일은 없다. 일부 정확한 인용과 잘못된 조항 연결이 한 파일에 함께 존재하므로 주장/인용 단위로 관리한다. 이 Pass B/C는 동일 AI 세션 내 별도 재확인 절차이며 독립 제3자 검토가 아니다.
+
+
+## Pass B/C 재검증 Batch 02 — A-009–A-015, B-001–B-002
+- EUR-Lex 현행 CRA 원문을 다시 열어 Article 13(8)–(9), Article 14, Annex I Part I/II를 재대조하고 반대 근거·예외를 확인.
+- 신규 문서 docs/ARCHIVE_PASS_BC_AUDIT_BATCH_02_2026-11-12.md 생성.
+- 8개 파일 모두 Raw Text Quote를 현행 CRA 직접 인용으로 재사용할 수 없다고 판정. 지원기간 shorter/longer 역전, Article 14 신고 범위 과장, Part I/II 혼동, draft 조항 번호 사용이 반복됨.
+- Batch 01+02 합계 16/34개 파일 재검증. 독립 제3자 검토가 아니라 동일 AI 세션의 별도 재검증이며, 이 수치를 34개 전체 검증 완료로 표현하지 않음.
