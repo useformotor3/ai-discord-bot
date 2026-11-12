@@ -110,3 +110,13 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - 기준 원문 EUR-Lex Regulation (EU) 2024/2847: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R2847 (확인일 2026-11-12).
 
 - 추가 감사 반영 후 CRA Archive Integrity workflow run [43130099298](https://github.com/useformotor3/ai-discord-bot/actions/runs/43130099298) completed/success. 단위 테스트와 strict archive/history consistency 단계 모두 통과.
+
+
+## 제조사 MCU 보안 자료 기준선 / 주장 대장 (2026-11-12)
+- [MANUFACTURER_SECURITY_SOURCE_REGISTER_2026-11-12.md](MANUFACTURER_SECURITY_SOURCE_REGISTER_2026-11-12.md): ST AN5156 Rev14 (June 2026), AN4992 Rev19 (July 2026), TI MSPM0G3529-Q1 SLASFO2B RevB (October 2025), TI SLAAE29A RevA 및 TI G-Series TRM revision index를 등록. 기능별 secure boot/update, debug/lifecycle, key storage, crypto/TRNG, memory isolation, manufacturing provisioning 비교.
+- [CLAIM_EVIDENCE_LEDGER.md](CLAIM_EVIDENCE_LEDGER.md): source ID, canonical URL, version, source location, claim type, status, correction, product scope 스키마 및 제조사 기술 주장 초기 8건.
+- TI MSPM0G3529-Q1은 구체적인 비교 예시 부품. 이 제품이 프로젝트 대상 또는 ST MCU의 동급 대체품이라는 뜻은 아님.
+- TI의 MSPM0G3506 문서 인덱스에서 SLAAE29 RevB(2026-08-27), G-Series TRM RevF(2026-11-05) 목록을 확인. SLAAE29 RevB 본문 및 G3529-Q1 적용성은 아직 검증 전. 기존 RevA 기반 기술 설명은 이전 판본으로 한정.
+- ST AN5156은 여러 STM32 시리즈를 다루므로 정확한 ST 주문 코드가 없으면 부품별 기능을 확정하지 않는다.
+- TI 데이터시트의 PSA Level 1 “targeted”는 인증 취득 완료가 아니다. Automotive Q1/ASIL 관련 문구는 CRA 적합성 근거가 아니다.
+- 원본 archive, main.py, Gemini prompt, 운영 research workflow 및 main branch는 수정하지 않음.
