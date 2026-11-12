@@ -379,3 +379,16 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 - [ ] schema v3, evidence bundle, exact quote/locator validator — 별도 승인 필요.
 - [ ] SDK-only smoke test/workflow/dependency changes — diff 제시 및 별도 승인 필요.
 - [ ] 실제 Gemini API/실제 외부 fetch는 별도 승인 전 금지.
+
+
+## Source Evidence Pipeline — Phase A (2026-11-13)
+- [x] 사용자 승인 후 작업 브랜치에 고정 공식 source registry 및 source_id-only fetcher 추가 (`source_evidence.py`).
+- [x] HTTPS/host/DNS public-IP/redirect/timeout/MIME/status/response-size 제한 및 SHA-256 provenance metadata 구현.
+- [x] mock-only 테스트 추가 (`tests/test_source_evidence.py`). CI 검증은 별도 결과로 확정한다.
+- [ ] 최신 branch HEAD의 GitHub Actions 전체 unittest + strict archive audit 결과 확인.
+- [ ] Phase A 구현 파일 재열람 및 diff/경계 검토.
+- [ ] Phase B HTML/XML/PDF extraction 및 법령 locator 설계/승인.
+- [ ] Phase C evidence bundle/schema v3/prompt v3 설계/승인.
+- [ ] Phase D exact quote/source ID/locator validator 설계/승인.
+- [ ] Phase E 실제 공식 URL read-only fetch는 별도 승인 전 수행 금지.
+- 보호 경계: `main.py`, Gemini prompt, 운영 workflow, model order/quota, archive/history/state, `main` branch 변경 및 merge/rebase/sync 금지.
