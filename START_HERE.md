@@ -175,3 +175,9 @@
 - CVD/contact 근거는 Annex I Part II(5),(6); user-facing single point of contact는 Annex II point 2.
 - Secure-by-default, access control, attack-surface limitation은 각각 Annex I Part I(2)(b),(d),(j). 구체적인 포트 차단/최초 비밀번호 변경은 제품 위험평가에 따른 설계 선택으로 분리한다.
 - 원본 main 파일은 수정하지 않는다.
+
+
+## 2026-11-12 추가 — main-only reports #60–#78
+- [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_60_78_2026-11-12.md](docs/ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_60_78_2026-11-12.md): 19개 보고서 원문 대조, 6 PARTIALLY_VERIFIED / 13 CONFLICT / 0 VERIFIED. 이 배치의 Raw Text Quote는 직접 인용으로 재사용하지 않는다.
+- main 최신 자동 생성 report는 #78로 갱신 확인. 이후 세션은 #79 이후 commit 여부부터 확인한다.
+- Article 13(8), Article 14, Annex I Part I/II, Annex II의 조항 매핑을 새 감사 문서와 claim ledger에서 확인한다.
