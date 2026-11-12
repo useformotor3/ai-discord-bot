@@ -173,3 +173,9 @@ ST와 비교할 기능 범위와 제품군을 먼저 정의한다. 동급 기능
 - [ARCHIVE_PASS_BC_AUDIT_BATCH_01_2026-11-12.md](ARCHIVE_PASS_BC_AUDIT_BATCH_01_2026-11-12.md): A-001–A-008 재검증.
 - EUR-Lex 현행 CRA에서 Article 13(8) 지원기간, Article 13(9) 업데이트 보존, Annex I Part I(2)(c) 자동 업데이트, Part II(2) 업데이트 분리, Part II(8) 무상 제공, Article 14 신고를 재확인.
 - 동일 AI의 별도 Pass B/C 절차이며 독립 제3자 검토가 아니다. 배치 내 모든 파일은 일부 오류/부분 일치가 있어 전체 VERIFIED 없음.
+
+
+## Pass B/C 재검증 인덱스
+- Batch 01: [A-001–A-008](ARCHIVE_PASS_BC_AUDIT_BATCH_01_2026-11-12.md)
+- Batch 02: [A-009–A-015, B-001–B-002](ARCHIVE_PASS_BC_AUDIT_BATCH_02_2026-11-12.md)
+- 공통 정정: Article 13(8) 지원기간, Annex I Part II(8) 무상 업데이트, Part II(2) 기능 업데이트 분리, Article 14 신고를 서로 다른 의무로 구분. 지원기간 “whichever is shorter”를 일반 규칙으로 쓰지 않는다.
