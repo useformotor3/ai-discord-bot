@@ -191,5 +191,10 @@ CI는 실제 외부 API나 Gemini 호출 없이 fixture를 사용한다. 별도 
 - Added `source_evidence.py`: fixed source registry (EUR-Lex CRA, selected ST documents, TI MSPM0G3529-Q1 datasheet, TI cybersecurity note, TI functional safety manual), source-ID-only lookup, HTTPS/exact-host/DNS-public-IP checks, manual same-host redirects, connect/read timeout, streamed byte caps, MIME/status validation, SHA-256, and structured metadata.
 - Added `tests/test_source_evidence.py` with mock-only transport and resolver fixtures. No external HTTP request is performed by tests.
 - `FetchResult.content` is in-memory only. The module does not persist source documents, import into `main.py`, or change production workflow. `FetchMetadata.to_dict()` exposes provenance metadata for later evidence-bundle work.
-- Status at implementation: CODE_ADDED / CI_PENDING. Phase A is not considered validated until the latest work-branch Actions run confirms all tests and strict archive audit.
+- CI validation: PASS on exact Phase A code/test HEAD `21efe17ac151dcdb630abeed20769e4224ec3356`, workflow run [#43330278366](https://github.com/useformotor3/ai-discord-bot/actions/runs/43330278366). `python -m unittest discover -s tests -v`: 45 tests, 0 failures, 0 errors; `python scripts/audit_archive.py --strict`: archive 990 / history 990, missing/orphan/duplicate paths 0, `consistent=true`.
 - Not implemented: HTML/XML/PDF extraction, legal clause locator, quote matching, evidence bundle/schema v3, prompt or production integration, automatic VERIFIED, actual live URL fetch.
+
+
+### Phase A review notes
+- Registry is immutable at runtime (`MappingProxyType`); transport explicitly disables ambient proxy/environment configuration for the default session and sets TLS certificate verification on each request.
+- DNS public-IP validation is a preflight check, not IP pinning: a DNS time-of-check/time-of-use race remains possible. Before any production/live use, add pinned-IP transport or network egress enforcement and separately review it. Phase A is not production-integrated.
