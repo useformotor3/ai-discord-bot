@@ -338,3 +338,11 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 - [ ] 실제 제품 SKU/경계/기능/인터페이스/저장 데이터/업데이트 방식/지원기간 입력값 확보.
 - [ ] Annex II 각 항목의 증거 파일·버전·담당자·승인자·문서 위치를 채우고 상태를 검증.
 - [ ] Annex III 기준에 따라 제품 분류를 별도 검토; servo drive라는 이유만으로 Class II 지정 금지.
+
+
+## 2026-11-12 추가 진행 — main-only report #124
+- [x] main #124 commit diff 검토 및 EUR-Lex Annex I Part I(2)(c), Part II(1)–(8), Article 13(17), Annex II(2)와 대조.
+- [x] [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_124_2026-11-12.md](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_124_2026-11-12.md) 작성. 판정 CONFLICT.
+- [ ] #124에서 반복된 legal requirement vs risk-based design 구분을 Gemini 변경 제안서 acceptance criteria에 반영.
+- [ ] 서보 드라이브 업데이트 경로·boot architecture·flash layout·recovery/safe-state 요구사항 확보 후 구현 후보를 제품별로 평가.
+- [ ] 다음 세션에서 main HEAD 확인 후 #125 이후 보고서 감사.
