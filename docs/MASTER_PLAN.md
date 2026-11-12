@@ -368,3 +368,14 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 - [ ] 원문 수집/URL·인용·조항·법률 해석 자동 검증 모듈은 별도 설계 및 승인 후 진행.
 - [ ] quota 정책, 모델 선택/순서, Discord HTTP 오류 처리, recent_snippets 문맥 개선은 이번 범위에서 제외.
 - [ ] main branch 반영/merge/rebase/sync는 별도 승인 전 금지.
+
+## 2026-11-13 — 1차 구현 CI 실증 및 Source Evidence Pipeline 설계
+- [x] 최신 작업 브랜치 GitHub Actions run #43205954271에서 전체 26 tests PASS (CRA contract 17 포함).
+- [x] archive/history strict audit PASS: 990/990, missing/orphan/duplicate 0.
+- [x] Google 공식 SDK의 JSON Schema structured output 문서 및 현재 모델 카탈로그 확인. 실제 API 호출/모델 접근 검증은 하지 않음.
+- [x] 다음 단계의 source evidence pipeline 설계 문서 작성: `docs/PROPOSED_SOURCE_EVIDENCE_PIPELINE_V1.md`.
+- [ ] source registry/fetcher/metadata/hash 구현 — 별도 승인 필요.
+- [ ] EUR-Lex clause locator 및 ST/TI official document extraction adapter — 별도 승인 필요.
+- [ ] schema v3, evidence bundle, exact quote/locator validator — 별도 승인 필요.
+- [ ] SDK-only smoke test/workflow/dependency changes — diff 제시 및 별도 승인 필요.
+- [ ] 실제 Gemini API/실제 외부 fetch는 별도 승인 전 금지.
