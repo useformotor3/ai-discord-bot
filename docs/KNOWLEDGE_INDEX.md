@@ -256,3 +256,9 @@ ST와 비교할 기능 범위와 제품군을 먼저 정의한다. 동급 기능
 - [Audit #40–#55](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_40_55_2026-11-12.md): 2 PARTIALLY_VERIFIED / 14 CONFLICT at file level; no file fully cleared for verbatim legal quotation.
 - Key legal mapping: Article 13(8) support period; Article 14 reporting of actively exploited vulnerabilities and severe incidents; Annex I Part II(7) secure update distribution and Part II(8) free updates; Annex II point 8(d) secure decommissioning instructions; Annex I Part I(2)(m) permanent data/settings removal.
 - Claim rows CRA-ARCH-040-001 through CRA-ARCH-055-001 added to CLAIM_EVIDENCE_LEDGER.md.
+
+
+## TI TRM Rev F metadata re-check
+- TI MSPM0G3507 product page lists G-Series TRM Rev F dated 2026-11-05; HTML viewer exceeds size limit (25,348,105 bytes), so body/register details remain NOT_VERIFIED.
+- MSPM0G3507 page-level AES/TRNG/CRC/MPU/ECC/SRAM parity/SWD descriptors are not transferable to MSPM0G3529-Q1 or other variants without exact part documentation.
+- Source register §9; claim ledger TI-TRM-REVF-001..TI-SLAAE29B-APPL-001.
