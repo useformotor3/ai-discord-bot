@@ -90,3 +90,14 @@ ASIL D is not interchangeable with IEC 61508 SIL 3. No direct SIL 3 claim can be
 | IEC 61508 SIL 3 / IEC 61800-5-2 product achievement | NOT ESTABLISHED |
 
 Next: obtain the exact G3529-Q1 FMEDA/safety analysis report and full TRM Rev F content, then map the safety manual's host/actuator assumptions to IF-01..IF-09 and the test/evidence register. Do not infer numeric FMEDA values or SIL equivalence from the manual's ASIL summary.
+
+
+## FMEDA / safety-analysis report access route
+
+A public web search did not locate an exact MSPM0G3529-Q1 FMEDA or Safety Analysis Report. TI's general Functional Safety page says customers should contact their local sales representative when a selected product's analysis report is not available:
+https://www.ti.com/en-us/technologies/functional-safety
+
+TI's general safety-collateral overview also states that access to the safety manual / safety analysis report / FMEDA package may require a valid Safety NDA:
+https://www.ti.com/document-viewer/lit/html/SPRAD57
+
+These are general TI process statements, not proof that a G3529-Q1 FMEDA is unavailable or that its specific access terms are identical. The exact G3529-Q1 FMEDA availability, NDA requirements, cost and delivery route remain UNVERIFIED. Do not invent or assume a free download route.
