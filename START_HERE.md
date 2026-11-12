@@ -132,3 +132,13 @@
 - [European Commission CRA Guidance 검토](docs/CRA_COMMISSION_GUIDANCE_REVIEW_2026-11-12.md): C(2026) 5252, 2026-07-27 공식 게시 사실 및 프로젝트 영향 검토. Annex 본문 단락별 검증은 미완료.
 - 제조사 자료 인덱스 변경: TI SLAAE29 Rev B 및 G-Series TRM Rev F는 공식 인덱스 메타데이터만 확인. 본문 내용은 확인 전 인용 금지. ST AN5156 Rev14/June 2026 메타데이터 재확인.
 - 매주 월요일 09:00(Asia/Seoul) 공식 CRA/ST/TI 자료 변경 점검 자동화가 등록됨. 변경 시 공식 원문과 revision diff를 확인하고 cra-project-foundation 브랜치에만 반영 후보를 기록한다.
+
+## 2026-11-12 추가 — 추적성 검사 및 main-only report #35 감사
+
+- CRA_INTEGRATED_TRACEABILITY_MATRIX: TR-01..TR-20, 중복 0.
+- THREAT_MODEL: AST-01..10 10개, TH-01..18 18개, 중복 0.
+- SECURITY_TEST_EVIDENCE_REGISTER: TST-* 45개, 중복 0. 통합 매트릭스의 단일 ID 및 번호 범위 참조를 전개해 검사한 결과 45개 모두 시험 대장에 존재. 실제 시험은 모두 NOT_RUN.
+- main-only 자동 생성 report #35는 법령 원문과 충돌하는 Secure Boot/하드웨어 Root of Trust 의무 단정 및 잘못된 Annex I 직접 인용을 포함. 작업 브랜치 감사 문서 [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_35_2026-11-12.md](docs/ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_35_2026-11-12.md)에 기록. main 원본은 수정하지 않음.
+- TI SLAAE29 Rev B 본문을 TI 공식 HTML 뷰어에서 직접 확인. CSC secure boot flow, KEYSTORE, AESADV/TRNG 설명 및 revision history를 확인했으나, Rev B 지원 부품 목록에 MSPM0G3529-Q1은 포함되지 않음. G3529-Q1에 Rev B 플랫폼 설명을 직접 적용하지 않음.
+- Commission C(2026) 5252 Annex PDF는 공식 다운로드 링크에서 다시 시도했으나 도구의 Unicode decoding error로 열지 못함. 페이지/문단 단위 검증은 여전히 PENDING.
+- main.py, Gemini prompt, production run.yml, main branch는 수정하지 않음.
