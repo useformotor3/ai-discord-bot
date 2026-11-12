@@ -194,3 +194,14 @@ Detailed file-level audit: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_40_55_2026-11-12.md](
 | TI-G3507-001 | MSPM0G3507 page lists AES, TRNG, CRC, flash ECC, SRAM parity option, MPU, SWD and security-related product descriptors. | TI MSPM0G3507 official product page | Verified as a page-level claim for MSPM0G3507; must confirm in exact order-code datasheet/TRM/errata before design reliance. | PARTIALLY_VERIFIED (device applicability only) |
 | TI-G3529-001 | MSPM0G3507 product-page feature list proves the same features for MSPM0G3529-Q1. | TI MSPM0G3507 page vs G3529-Q1 datasheet/support list | Different part/order code; cross-device inference is invalid. | REJECTED |
 | TI-SLAAE29B-APPL-001 | SLAAE29B CSC/KEYSTORE/TRNG examples automatically apply to MSPM0G3529-Q1. | SLAAE29B supported-device scope | G3529-Q1 not listed in supported-device list reviewed; direct applicability not established. | NOT_ESTABLISHED |
+
+## 15. Main-only reports #56–#59 (2026-11-12)
+
+| Claim ID | Atomic claim / audit focus | Source location | Assessment | Status |
+|---|---|---|---|---|
+| CRA-ARCH-056-001 | Article 14 mandates automatic reporting of all exploitable vulnerabilities and severe incidents within 24/72h. | Article 14(1)–(4); Article 16(3) | Only actively exploited vulnerabilities and severe incidents are mandatory tracks; separate final-report clocks; platform routes via CSIRT and ENISA; no manufacturer-side automatic reporting mandate. | CONFLICT |
+| CRA-ARCH-057-001 | CVD policy and contact address are Annex I Part I Section 2 obligations with the report's quoted wording. | Annex I Part II(5),(6); Annex II point 2 | Core CVD/contact requirements are real, but cited Part/Section is wrong and quote is composite/non-verbatim. | PARTIALLY_VERIFIED / quote REJECTED |
+| CRA-ARCH-058-001 | CRA explicitly requires disabling all nonessential ports/debug interfaces and mandatory first-boot password change. | Annex I Part I(2)(b),(d),(j) | Secure-by-default/access control/attack-surface requirements are real; these concrete controls are risk-based design options, not universal express commands. | PARTIALLY_VERIFIED / quote REJECTED |
+| CRA-ARCH-059-001 | Article 13(2) requires free security patches and Annex I Part I Section 1 subpoints (a),(b) quote secure-by-default/free update rules. | Article 13(2),(8); Annex I Part I(2)(b); Part II(8) | Article 13(2) is risk assessment; support period and free updates are separate provisions; quote/reference inaccurate. | CONFLICT |
+
+Detailed audit: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_56_59_2026-11-12.md](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_56_59_2026-11-12.md).
