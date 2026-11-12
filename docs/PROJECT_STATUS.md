@@ -163,3 +163,10 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - 8개 파일 중 인용 블록 전체가 VERIFIED인 파일은 0개. A-003의 SBOM 인용은 원문 일치, A-004의 secure-by-default/접근통제 인용은 대체로 일치, A-005의 CVD 취지는 일부 맞지만 신고 조항과 인용 번호가 잘못됐다. 나머지는 직접 인용 오기/합성 또는 위치 오류가 확인됐다.
 - 중요 정정: Article 13(8)은 지원기간(최소 5년, 예상 사용기간이 더 짧으면 그 기간), 무상 업데이트는 Annex I Part II(8), 업데이트 분리는 Part II(2), 자동 업데이트 관련 제품 속성은 Part I(2)(c), 신고는 Article 14.
 - Pass B/C는 동일 AI 세션 내 별도 원문 재확인 절차이며 제3자 독립 법률 검토가 아니다. VERIFIED 승격은 아직 없음.
+
+
+## Pass B/C 별도 재검증 — Batch 02
+- 상세: [ARCHIVE_PASS_BC_AUDIT_BATCH_02_2026-11-12.md](ARCHIVE_PASS_BC_AUDIT_BATCH_02_2026-11-12.md).
+- A-009–A-015 및 B-001–B-002, 8개 파일의 Raw Text Quote를 EUR-Lex 현행 원문과 다시 대조했다.
+- 8개 모두 직접 인용으로 재사용 불가 판정. 지원기간의 “whichever is shorter/longer” 혼동, Article 14 신고 대상 확대, Annex I Part I/II 구조 혼합이 반복됨.
+- Batch 01과 Batch 02를 합쳐 Pass B/C 재검증 16/34개 고유 표본 진행. 이 수치는 문서 수이며 claim 수가 아니다. 동일 AI 세션의 별도 절차 검증이며 제3자 검토가 아니다.
