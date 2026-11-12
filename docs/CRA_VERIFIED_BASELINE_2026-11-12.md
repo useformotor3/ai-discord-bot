@@ -93,3 +93,25 @@
 6. ST AN5544: https://www.st.com/resource/en/application_note/an5544-integration-guide-of-sbsfu-on-stm32cubewl-including-kms-stmicroelectronics.pdf
 
 **주의:** 이 기준선은 법령·공식 제조사 자료의 첫 번째 검증된 기준점이다. 제품별 법적 적용성 판단, 표준 최신성, 세부 설계 적합성, 적합성 평가를 완료했다는 뜻은 아니다.
+
+
+## 4.1 TI MCU 공식 기술자료 — 비교 기준 예시 (ST와 동급 판정 아님)
+
+**Texas Instruments MSPM0G3529-Q1**
+- 공식 데이터시트: https://www.ti.com/lit/ds/symlink/mspm0g3529-q1.pdf
+- 문서 번호/리비전: SLASFO2B, November 2024, revised October 2025.
+- Cortex-M0+ 최대 80 MHz, 최대 512 KB Flash(ECC), 128 KB SRAM(첫 64 KB ECC/parity 보호), dual-bank flash/address swap.
+- 데이터시트의 보안 관련 기능: AES-128/256 가속(GCM/GMAC, CCM/CBC-MAC, CBC, CTR), 최대 4개 AES 키 보관을 위한 secure key storage, flexible flash/code-data firewalls, TRNG.
+- 데이터시트에는 secure boot 및 secure in-field firmware update 지원을 기술하고 있다. 다만 구현 방식, 보호 범위, 구성 조건은 Technical Reference Manual 및 SDK 구현 문서를 확인해야 한다.
+- 해당 부품은 Q1 자동차 등급 제품이다. 이를 산업용 서보 드라이브의 적합성/실시간 성능/안전 인증 대체로 해석하지 않는다.
+
+**TI application note — Cybersecurity Enablers in MSPM0 MCUs**
+- 공식 PDF: https://www.ti.com/lit/an/slaae29a/slaae29a.pdf
+- SLAAE29A, January 2023, revised December 2025.
+- MSPM0 제품군의 secure boot, secure storage, flash write/read-execute/IP protection, secure key storage, cryptographic acceleration, TRNG, device-specific capability matrix를 설명.
+- 문서 자체가 일부 기능은 일부 MSPM0 device에서만 제공된다고 명시한다. 따라서 정확한 TI part number와 해당 문서의 capability matrix를 확인해야 한다.
+
+**TI MSPM0G3529-Q1와 ST 비교 시 주의**
+- ST AN5156은 광범위한 STM32 제품군을 다루는 보안 개요/기능표이며, TI SLAAE29A도 MSPM0 제품군의 기능 매트릭스다. 두 문서를 나란히 놓고 “모든 ST/TI MCU가 동일 기능”이라고 비교할 수 없다.
+- 비교는 정확한 STM32 주문 코드와 TI 주문 코드, 데이터시트/Reference Manual revision, 보안 상태 설정, SDK 버전, 실제 boot/update implementation을 같은 항목으로 대조해야 한다.
+- 현재 ST 사용 부품번호가 미확정이므로 TI는 비교 기준 예시로만 기록하며, 성능/비용/기능 동등성 결론은 보류한다.
