@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
-  "generated_at_utc": "2026-11-12T00:24:51.016052+00:00",
+  "generated_at_utc": "2026-11-12T00:25:08.600785+00:00",
   "source_branch": "cra-project-foundation",
-  "source_commit": "c872b7d84df6accfde30e3b432bb2dc56e20b460",
+  "source_commit": "46a425232c0bc6e2a36fcf072ad25fa1148626f5",
   "archive_file_count": 990,
   "claim_candidate_block_count": 4400,
   "source_url_candidate_count": 0,
@@ -2608,8 +2608,8 @@
       "article_reference_candidates": [],
       "annex_reference_candidates": [
         "Annex I",
-        "Annex I, Part I",
         "ANNEX I, Part I",
+        "Annex I, Part I",
         "ANNEX I, Part II"
       ],
       "source_url_candidates": [],
