@@ -183,3 +183,13 @@ CI는 실제 외부 API나 Gemini 호출 없이 fixture를 사용한다. 별도 
 - any workflow or dependency changes
 - any real external fetch or Gemini API execution
 - model IDs/order, quota, archive/history/state schema
+
+
+## 13. Phase A implementation record (2026-11-13)
+
+- User approval: received for Phase A only; Phase B–E remain unapproved.
+- Added `source_evidence.py`: fixed source registry (EUR-Lex CRA, selected ST documents, TI MSPM0G3529-Q1 datasheet, TI cybersecurity note, TI functional safety manual), source-ID-only lookup, HTTPS/exact-host/DNS-public-IP checks, manual same-host redirects, connect/read timeout, streamed byte caps, MIME/status validation, SHA-256, and structured metadata.
+- Added `tests/test_source_evidence.py` with mock-only transport and resolver fixtures. No external HTTP request is performed by tests.
+- `FetchResult.content` is in-memory only. The module does not persist source documents, import into `main.py`, or change production workflow. `FetchMetadata.to_dict()` exposes provenance metadata for later evidence-bundle work.
+- Status at implementation: CODE_ADDED / CI_PENDING. Phase A is not considered validated until the latest work-branch Actions run confirms all tests and strict archive audit.
+- Not implemented: HTML/XML/PDF extraction, legal clause locator, quote matching, evidence bundle/schema v3, prompt or production integration, automatic VERIFIED, actual live URL fetch.
