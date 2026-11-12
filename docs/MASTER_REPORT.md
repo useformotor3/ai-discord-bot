@@ -33,7 +33,9 @@
 14. 용어집 및 참고자료
 
 ## 1. CRA 개요
-CRA는 EU 시장에 제공되는 디지털 요소 제품에 대한 수평적 사이버보안 규정이다. 법령 기준선은 별도 문서 [CRA_LEGAL_BASELINE.md](CRA_LEGAL_BASELINE.md)에 정리했다.
+CRA는 EU 시장에 제공되는 디지털 요소 제품에 대한 수평적 사이버보안 규정이다. 공식 원문을 대조한 현재 기준선은 [CRA_VERIFIED_BASELINE_2026-11-12.md](CRA_VERIFIED_BASELINE_2026-11-12.md)에 정리했다.
+
+기존 990개 자동 조사 아카이브에서 주장 후보 4,400개 문단을 추출했지만 URL 후보는 0개였다. 따라서 기존 보고서들은 출처의 문서명만으로는 검증이 불충분할 수 있다. 각 주장에 EUR-Lex/Commission/제조사 공식 원문 링크, 조항/섹션 위치, 버전/개정일, 원문 대조 결과를 추가해야 한다. 전체 후보는 [archive_claim_evidence_candidates.json](../reports/archive_claim_evidence_candidates.json)에 저장.
 
 2026-11-12 기준 Article 14 제조자 신고 의무는 2026-09-11부터 적용 중이며, 규정의 일반 적용일은 2027-12-11이다. 신고 대상은 모든 취약점이 아니라 제품 내 actively exploited vulnerability와 제품 보안에 영향을 주는 severe incident다. 구체적인 24시간·72시간·최종 보고 시한은 사건 유형별로 구분해야 한다.
 
