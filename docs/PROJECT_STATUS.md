@@ -232,3 +232,10 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - main-only report #35/#36에서 법령 조항 오기, 원문에 없는 Secure Boot 직접 인용, Article 14/무상 업데이트 혼동이 재현됨.
 - [CHANGE_PROPOSAL_MAIN_GEMINI.md](CHANGE_PROPOSAL_MAIN_GEMINI.md)에 직접 인용 문자열 검증, Annex/Part/point 정합성, 법령 메타데이터 대조, 법령 의무와 설계 선택 분리, 회귀 테스트를 추가 제안했다.
 - 제안 상태는 USER_APPROVAL_REQUIRED. main.py, Gemini prompt, 파서/검증 게이트, production workflow는 변경하지 않았다.
+
+## 하드웨어 아키텍처 법령 매핑 정정 — 2026-11-12
+
+- 재검사에서 CRA-HW-05의 confidentiality/integrity를 Part I(2)(f) 하나로 연결한 오류, CRA-HW-06의 availability/resilience를 Part I(2)(g)로 연결한 오류를 발견해 수정했다.
+- 정확한 매핑: confidentiality (e), integrity (f), data minimisation (g), availability/DoS resilience (h), connected device/network impact (i).
+- CRA-HW-11을 추가해 Part I(2)(g) 데이터 최소화 설계 검토를 별도 연결했다.
+- TI SLAAE29 Rev B 직접 확인 결과와 MSPM0G3529-Q1 미포함 지원 부품 목록 주의사항도 아키텍처 문서에 반영했다. 제품별 기능 적용성은 UNVERIFIED.
