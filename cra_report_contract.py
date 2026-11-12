@@ -16,7 +16,7 @@ CLAIM_TYPES = {
     "INTERPRETATION",
     "ASSUMPTION",
 }
-REPORT_STATUSES = {"UNVERIFIED", "PARTIALLY_VERIFIED"}
+REPORT_STATUSES = {"UNVERIFIED"}
 
 CLAIM_FIELDS = (
     "claim_id",
@@ -44,40 +44,40 @@ REPORT_FIELDS = (
 )
 
 CRA_REPORT_SCHEMA: dict[str, Any] = {
-    "type": "OBJECT",
+    "type": "object",
     "properties": {
-        "schema_version": {"type": "STRING", "enum": [SCHEMA_VERSION]},
-        "topic": {"type": "STRING"},
-        "summary_ko": {"type": "STRING"},
+        "schema_version": {"type": "string", "enum": [SCHEMA_VERSION]},
+        "topic": {"type": "string"},
+        "summary_ko": {"type": "string"},
         "claims": {
-            "type": "ARRAY",
+            "type": "array",
             "items": {
-                "type": "OBJECT",
+                "type": "object",
                 "properties": {
-                    "claim_id": {"type": "STRING"},
-                    "claim_type": {"type": "STRING", "enum": sorted(CLAIM_TYPES)},
-                    "claim_text_ko": {"type": "STRING"},
-                    "legal_location_candidate": {"type": "STRING"},
-                    "source_title_candidate": {"type": "STRING"},
-                    "publisher_candidate": {"type": "STRING"},
-                    "source_url_candidate": {"type": "STRING"},
-                    "document_version_candidate": {"type": "STRING"},
-                    "source_excerpt": {"type": "STRING"},
-                    "excerpt_type": {"type": "STRING", "enum": ["NONE"]},
-                    "legal_location_status": {"type": "STRING", "enum": ["UNVERIFIED"]},
+                    "claim_id": {"type": "string"},
+                    "claim_type": {"type": "string", "enum": sorted(CLAIM_TYPES)},
+                    "claim_text_ko": {"type": "string"},
+                    "legal_location_candidate": {"type": "string"},
+                    "source_title_candidate": {"type": "string"},
+                    "publisher_candidate": {"type": "string"},
+                    "source_url_candidate": {"type": "string"},
+                    "document_version_candidate": {"type": "string"},
+                    "source_excerpt": {"type": "string"},
+                    "excerpt_type": {"type": "string", "enum": ["NONE"]},
+                    "legal_location_status": {"type": "string", "enum": ["UNVERIFIED"]},
                     "product_applicability": {
-                        "type": "STRING",
+                        "type": "string",
                         "enum": ["UNVERIFIED", "NOT_APPLICABLE_PENDING_EVIDENCE"],
                     },
-                    "limitations": {"type": "STRING"},
+                    "limitations": {"type": "string"},
                 },
                 "required": list(CLAIM_FIELDS),
                 "additionalProperties": False,
             },
         },
-        "counterchecks": {"type": "ARRAY", "items": {"type": "STRING"}},
-        "limitations": {"type": "ARRAY", "items": {"type": "STRING"}},
-        "overall_status": {"type": "STRING", "enum": sorted(REPORT_STATUSES)},
+        "counterchecks": {"type": "array", "items": {"type": "string"}},
+        "limitations": {"type": "array", "items": {"type": "string"}},
+        "overall_status": {"type": "string", "enum": sorted(REPORT_STATUSES)},
     },
     "required": list(REPORT_FIELDS),
     "additionalProperties": False,
