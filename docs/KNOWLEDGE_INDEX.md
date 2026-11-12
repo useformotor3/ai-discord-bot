@@ -159,3 +159,11 @@ ST와 비교할 기능 범위와 제품군을 먼저 정의한다. 동급 기능
 ## 기존 CRA 아카이브 표본 정정 대장
 - [ARCHIVE_CLAIM_CORRECTION_LEDGER_2026-11-12.md](ARCHIVE_CLAIM_CORRECTION_LEDGER_2026-11-12.md): 34개 고유 원본 표본의 SHA-1, 원문 행 위치, 주장 요약, 법령 정정 룰, 판정 상태 연결. 감사 ID 35개 중 A-013/B-006 중복 1개를 SHA-1 기준 제거. 고유 파일 판정 25 CONFLICT / 9 PARTIALLY_VERIFIED.
 - 이 결과는 비무작위 표본이며 990개 전체 오류율로 일반화하지 않는다. 원본 archive는 불변으로 유지한다.
+
+
+## 2026-11-12 — CRA 법령 인용문 단위 감사
+- 상세: [ARCHIVE_QUOTE_LEVEL_AUDIT_2026-11-12.md](ARCHIVE_QUOTE_LEVEL_AUDIT_2026-11-12.md).
+- 34개 고유 원본의 법령 인용 후보를 EUR-Lex 원문과 대조했다. A-013/B-006은 같은 원본이므로 한 번만 계산한다.
+- 직접 인용과 요약을 구분하고, 조항 오기 및 합성 문구를 식별했다. 특히 Article 13(8) 지원기간, Annex I Part II(8) 무상 업데이트, Part II(2) 업데이트 분리, Article 14 신고를 서로 구분한다.
+- Article 10은 역량 증진, Article 11은 일반 제품 안전, Article 24는 오픈소스 소프트웨어 스튜어드, Article 31은 기술문서, Article 32는 적합성 평가다.
+- 이 결과는 위험 기반 34개 표본에 한정되며, 전체 990개 archive의 전수 검증이 아니다.
