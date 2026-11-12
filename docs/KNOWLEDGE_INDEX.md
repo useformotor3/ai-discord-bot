@@ -3,12 +3,12 @@
 이 파일은 기존 조사 아카이브와 앞으로 추가할 자료의 색인 기준이다. 현재 기존 자료의 개별 주장 검증은 아직 수행하지 않았다.
 
 ## 기존 저장소 자료 현황 (초기 관찰)
-- `research_archive/`: 2026-11-12 감사 시점 main 브랜치 기준 Markdown 985개
-- `history.json`: 985개 항목. archive 경로 985/985 일치, 중복 경로 0개 확인
+- `research_archive/`: cra-project-foundation 작업 브랜치에서 Markdown 990개 확인
+- `history.json`: 990개 항목. archive 경로 990/990 일치, 중복 경로 0개 확인
 - `state.json`: 날짜별 일일 카운터. 2026-11-11 기준 count=279이며 누적 보고서 수가 아님
 - `main.py`: Gemini API를 이용한 CRA 조사 및 Discord 전송, Markdown 아카이브/상태 저장 로직
 - `.github/workflows/run.yml`: workflow_dispatch 및 repository_dispatch 트리거. cron 예약 실행은 확인되지 않음
-- 위 내용은 인벤토리/표본 감사 결과이며, 985개 문서의 모든 주장이 전수 검증된 것은 아니다. 대표 문서의 오류 사례는 [INITIAL_AUDIT.md](INITIAL_AUDIT.md)에 기록했다.
+- 위 내용은 인벤토리/표본 감사 결과이며, 990개 문서의 모든 주장이 전수 검증된 것은 아니다. 대표 문서의 오류 사례는 [INITIAL_AUDIT.md](INITIAL_AUDIT.md)에 기록했다.
 
 ## 검증 상태 정의
 | 상태 | 의미 |
@@ -71,12 +71,16 @@ ST와 비교할 기능 범위와 제품군을 먼저 정의한다. 동급 기능
 - 공식 원문: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R2847
 - 분류 기술 설명: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R2392
 
+## 출처 메타데이터 결손 감사 (2026-11-12)
+- 990개 전체 후보 추출에서 URL 후보 0개. 대표 6개 원본을 열어보니 Source 항목에 문서명/조항만 있고 canonical URL이 없는 패턴을 확인.
+- 추출기 schema 1.1은 출처 섹션, claim/quote 행 번호, 위험 후보 문맥을 보존.
+- 모든 후보는 UNVERIFIED. 출처 URL 누락 원인 및 수동 검증 큐: [ARCHIVE_SOURCE_GAP_AUDIT_2026-11-12.md](ARCHIVE_SOURCE_GAP_AUDIT_2026-11-12.md).
+
 ## 다음 색인 작업
-1. 전체 archive 파일명/크기/날짜 인벤토리 생성
-2. 문서별 제목·핵심 주장·URL 추출
-3. 동일 URL 및 중복 주장 식별
-4. 원문 접속 및 조항/페이지 대조
-5. 검증 결과를 별도 레코드로 저장하고 원본 아카이브는 보존
+1. 위험 플래그별 표본을 원문과 대조해 실제 오류/정상 주장을 분리
+2. 출처 문서명에서 공식 canonical URL을 복원하고 정확한 조항/페이지 연결
+3. 직접 인용을 원문과 대조하고 불일치 인용을 정정/삭제
+4. 검증 레코드와 정정 이력을 별도 저장하고 원본 아카이브 보존
 
 
 ## 2026-11-12 공식 원문 대조 — CRA 1차 기준선
