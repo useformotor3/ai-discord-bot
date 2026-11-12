@@ -280,3 +280,11 @@ ST와 비교할 기능 범위와 제품군을 먼저 정의한다. 동급 기능
 - [Audit #79](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_79_2026-11-12.md): PARTIALLY_VERIFIED. The 24h early-warning concept is valid, but reportable scope, 72h/final-report staging, quote and paragraph attribution are incorrect.
 - Correct Article 14 tracks: actively exploited vulnerability 24h / 72h / final ≤14 days after corrective measure available; severe incident 24h / 72h / final within one month after incident notification.
 - Claim CRA-ARCH-079-001 added.
+
+
+## TI MSPM0G3529-Q1 functional safety evidence
+- [TI MSPM0G3529-Q1 Functional Safety Manual Review](TI_MSPM0G3529_Q1_FUNCTIONAL_SAFETY_REVIEW_2026-11-12.md): SFFS983A Rev A supported-device list includes exact G3529-Q1.
+- Manual states component-level systematic integrity ASIL D and random-fault mechanisms up to ASIL B; this is not SIL 3 certification/equivalence.
+- Key integration assumptions: host-supervised communication loss, host-provisioned actuator-disable mechanism, integrator-selected diagnostics, FTTI >10 ms, MPFDTI <8 h.
+- QM/non-safety-critical IPs include DEBUG, RTC, AES, TRNG, KEYSTORE, MATHACL and DFT; do not count as safety mechanisms.
+- Claim ledger TI-SAFETY-001..005 and TI-TRM-REVF-004; TRM Rev F body remains NOT_VERIFIED.
