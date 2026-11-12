@@ -154,6 +154,13 @@ class ContractTests(unittest.TestCase):
         with self.assertRaises(ReportValidationError):
             parse_and_validate_report(json.dumps(payload))
 
+    def test_prompt_requires_unverified_status_without_conflicting_partial_status(self):
+        prompt = (
+            Path(__file__).resolve().parents[1] / "prompts" / "CRA_RESEARCH_PROMPT_V2.txt"
+        ).read_text(encoding="utf-8")
+        self.assertIn("overall_status는 반드시 UNVERIFIED다.", prompt)
+        self.assertNotIn("UNVERIFIED 또는 PARTIALLY_VERIFIED다", prompt)
+
     def test_previous_five_snippet_context_is_still_included(self):
         source = (Path(__file__).resolve().parents[1] / "main.py").read_text(encoding="utf-8")
         self.assertIn("history_data[-5:]", source)
