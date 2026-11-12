@@ -164,3 +164,43 @@ flowchart LR
 | IN-08 | STO 등 별도 기능안전 경로의 존재/경계(해당 시) | UNKNOWN |
 
 **현재 결론:** 이 문서는 설계 토론과 증거 수집의 기준점이다. 특정 MCU의 기능 적용, 부품 선택, CRA 제품 분류, 적합성 또는 안전성 결론은 아직 내릴 수 없다.
+
+## 10. 하드웨어 설계 선택 매트릭스
+
+아래 표는 회로/부품을 확정하기 전 비교해야 할 선택지와 판단 기준이다. 현재는 제품 입력이 없어 모든 DEC 상태를 TBD로 둔다. CRA가 특정 MCU, Secure Element, dual-bank Flash, 별도 통신 MCU 또는 특정 암호 알고리즘을 일률적으로 요구한다는 의미가 아니다.
+
+| Decision ID | 블록/결정 | 선택지(예시) | 선택 기준 | 연계 시험 | 상태 |
+|---|---|---|---|---|---|
+| DEC-01 | 모션 제어/통신 처리 토폴로지 | 단일 MCU 내 논리 분리 / 통신 MCU와 모션 MCU 분리 | 제어 주기·지터, CPU/메모리 부하, protocol attack surface, 장애 격리, BOM/전력/개발 복잡도 | TST-NET-01..03, TST-CMD-01..04, TST-AVL-01..03 | TBD |
+| DEC-02 | 부트 신뢰 시작점 | MCU ROM/immutable boot 지원 / 변경 통제된 bootloader / 외부 보안 부트 지원 블록 | boot chain 변경 가능성, signature/authenticity 검증 지원, lifecycle/debug lock, recovery, 해당 MCU의 실제 지원 문서 | TST-UPD-01..06, TST-DBG-01..02 | TBD |
+| DEC-03 | 펌웨어 저장/업데이트 슬롯 | 단일 bank + recovery / dual-bank / 외부 Flash slot | 이미지 크기, Flash endurance, 원자적 전환, 전원 차단 복구, downgrade 정책, 원가 | TST-UPD-04..06, TST-NVM-01..03 | TBD |
+| DEC-04 | 서비스/디버그 접근 | SWD/JTAG 생산 잠금 / 인증형 서비스 모드 / 별도 복구 포트 | 개발·서비스·양산 lifecycle, RMA 절차, 물리 접근 위협, 복구 가능성, 감사 추적 | TST-SVC-01..03, TST-DBG-01..02 | TBD |
+| DEC-05 | 외부 통신 경계 | 단일 PHY/Transceiver / 별도 gateway 또는 통신 MCU / 논리 분리 | 실제 fieldbus, isolation/EMC, parser 격리, rate limiting, 네트워크 fault containment | TST-NET-01..03, TST-CMD-01..04, TST-AVL-01..03 | TBD |
+| DEC-06 | 키 저장/장치 신원 | MCU 보호영역 / 외부 Secure Element / 서버 기반 장치 인증과 조합 | private key non-exportability, device uniqueness, provisioning, rotation/revocation, RMA/폐기 | TST-KEY-01..03 | TBD |
+| DEC-07 | 전원/리셋/복구 | MCU 내부 BOR/watchdog / 외부 reset supervisor / 별도 power-good/fault latch | brownout 범위, reset sequencing, update 중단 복구, reset cause 기록, 전력/비용 | TST-UPD-06, TST-NVM-03, TST-AVL-03 | TBD |
+| DEC-08 | 센서/엔코더 입력 | MCU 직접 입력 / 절연·보호 front-end / 별도 feedback processor | 신호 무결성, EMC, 단선/단락, spoofing, latency, 진단 범위 | TST-SNS-01..03 | TBD |
+| DEC-09 | Gate driver/Power stage 제어 경계 | MCU 직접 enable / 독립 fault-inhibit 경로 / 별도 안전 제어 경로(해당 시) | 제품 위험분석, reset/fault 반응, 전력단 고장, 기능안전 아키텍처, 제어 출력 영향 | TST-AVL-01..03, TST-SNS-01..03 및 별도 승인된 안전 검증 | TBD |
+| DEC-10 | 제조 프로비저닝 | 공장 fixture 기반 / 위탁 생산 station / 현장 최초 등록 | trust anchor 주입, station identity, per-device key, firmware provenance, 재작업/RMA, 감사 로그 | TST-KEY-02..03, TST-SUP-01..03 | TBD |
+
+### 10.1 선택 원칙
+
+1. 먼저 실제 제품 경계와 intended purpose를 확정한다. 제품 정보 없이 네트워크·원격 서비스·별도 모듈을 가정하지 않는다.
+2. 실제 ST MCU 주문 코드와 silicon revision의 datasheet, reference manual, errata를 확보한 뒤 DEC-02/03/06을 평가한다. AN5156 제품군 설명만으로 특정 STM32 부품 기능을 확정하지 않는다.
+3. 보안 통제가 모션 제어 주기·지터·CPU 부하·메모리·복구 시간에 미치는 영향을 측정한다. 수치형 합격 기준은 제품 요구사항과 위험/안전 분석에서 승인한다.
+4. 통신 MCU 분리, 외부 Secure Element, dual-bank Flash는 선택지다. 비용·복잡도·공격 표면·복구성 비교 없이 기본값으로 채택하지 않는다.
+5. Gate inhibit/STO 등 전력단·기능안전 경로는 CRA 보안 통제와 별도 안전 분석의 경계로 유지한다.
+6. Secure Boot, firmware signature, key storage는 제품 위험에 따라 선택하는 구현 통제다. Annex I의 결과 요구와 특정 구현을 동일시하지 않는다.
+
+### 10.2 설계 동결 전 필수 입력
+
+| Gate | 필수 입력 | 설계 동결 조건 |
+|---|---|---|
+| G-01 | 제품 SKU, EU 공급 형태, intended purpose, BD-01..BD-15 | 제품 경계와 CRA 적용성 판단 근거가 문서화됨 |
+| G-02 | 실제 ST MCU 전체 주문 코드, package, silicon revision | 기능별 datasheet/RM/errata matrix 완료 |
+| G-03 | Ethernet/fieldbus/USB/serial/service port 및 network topology | 모든 외부/내부 인터페이스와 trust boundary가 식별됨 |
+| G-04 | 모션 제어 주기, jitter, 부하, update/recovery 제한 | 승인된 성능/복구 기준이 존재 |
+| G-05 | 기능안전 구조 및 gate-driver fault path (해당 시) | CRA 보안과 기능안전 책임/검증 경계가 분리됨 |
+| G-06 | 제조 프로비저닝, key ownership, service/RMA 정책 | 키/장치 수명주기 및 생산 추적성 검토 완료 |
+
+모든 Gate는 현재 미충족/TBD다. 따라서 이 매트릭스는 설계 선택 절차이며, 특정 회로나 부품을 선정하거나 제품 적합성을 선언하지 않는다.
+
