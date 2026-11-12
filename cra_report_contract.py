@@ -131,10 +131,18 @@ def validate_report(payload: Any) -> dict[str, Any]:
         prefix = f"claims[{index}]"
         if not isinstance(claim, dict) or set(claim) != set(CLAIM_FIELDS):
             raise ReportValidationError(f"{prefix} fields mismatch")
+        optional_text_fields = {
+            "legal_location_candidate",
+            "source_title_candidate",
+            "publisher_candidate",
+            "source_url_candidate",
+            "document_version_candidate",
+            "source_excerpt",
+        }
         for field in CLAIM_FIELDS:
-            if field == "source_excerpt":
+            if field in optional_text_fields:
                 if not isinstance(claim[field], str):
-                    raise ReportValidationError(f"{prefix}.source_excerpt must be a string")
+                    raise ReportValidationError(f"{prefix}.{field} must be a string")
             else:
                 _require_string(claim[field], f"{prefix}.{field}")
         if claim["claim_id"] in seen_ids:
@@ -148,7 +156,10 @@ def validate_report(payload: Any) -> dict[str, Any]:
             )
         if claim["legal_location_status"] != "UNVERIFIED":
             raise ReportValidationError(f"{prefix}.legal_location_status must remain UNVERIFIED")
-        if claim["product_applicability"] not in PRODUCT_STATUSES:
+        if claim["product_applicability"] not in {
+            "UNVERIFIED",
+            "NOT_APPLICABLE_PENDING_EVIDENCE",
+        }:
             raise ReportValidationError(f"{prefix}.product_applicability is invalid")
 
     return payload
