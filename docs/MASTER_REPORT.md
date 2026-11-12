@@ -175,3 +175,7 @@ TI MSPM0G3529-Q1 제품 페이지는 MSPM0 G-Series TRM을 참조한다. TI MSPM
 B-003–B-010 8개 파일을 EUR-Lex 원문으로 재검증했다. B-009의 secure-by-default 문구는 Annex I Part I(2)(b)와 취지가 일치하지만 조항 위치 및 “original state” 표현을 바로잡아야 한다. B-010의 Class II 절차는 Article 32(3)이며, Article 24로 잘못 인용했고 Annex III Class II 분류 근거 없이 서보 드라이브를 Class II로 단정했다. 기술문서 Article 31, 적합성 평가 Article 32, DoC Article 28, CE 원칙 Article 29와 부착 규칙 Article 30을 분리한다. 상세: [Batch 03](ARCHIVE_PASS_BC_AUDIT_BATCH_03_2026-11-12.md).
 
 Pass B/C 합계 24/34개 파일 진행, 10개 남음. 동일 AI 세션의 별도 재검증 절차이며 독립 제3자 법률 검토는 아니다.
+
+
+## Pass B/C 최종 검증 결과 반영
+기존 위험 기반 표본 34개 고유 원본을 EUR-Lex 현행 CRA 원문으로 별도 재대조했다. 파일 단위 결과는 VERIFIED 0, PARTIALLY_VERIFIED 6, REJECTED 28이다. 이 수치는 34개 표본에 한정되며 990개 전체 오류율이 아니다. 지원기간 Article 13(8), 업데이트 보존 Article 13(9), 신고 Article 14, 업데이트 처리/분리/무상 제공 Annex I Part II(2)/(8), 기술문서 Article 31, 적합성 평가 Article 32, DoC Article 28, CE 원칙/부착 Article 29/30을 구분한다. 상세: [ARCHIVE_PASS_BC_FINAL_SUMMARY_2026-11-12.md](ARCHIVE_PASS_BC_FINAL_SUMMARY_2026-11-12.md).
