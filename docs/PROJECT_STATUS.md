@@ -245,3 +245,10 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - [SERVO_DRIVE_CRA_SECURITY_HARDWARE_ARCHITECTURE.md](SERVO_DRIVE_CRA_SECURITY_HARDWARE_ARCHITECTURE.md)에 DEC-01..DEC-10 선택 매트릭스와 G-01..G-06 설계 동결 게이트를 추가했다.
 - 단일/분리 MCU, boot trust anchor, Flash slot, debug/service, network boundary, key storage, power/reset, sensor, gate driver, manufacturing provisioning의 대안을 정리했다.
 - 특정 부품/회로는 선택하지 않았다. 모든 DEC/Gate는 TBD/미충족이며 제품 SKU, 정확한 ST MCU, 실제 인터페이스, timing/safety 입력을 기다린다.
+
+## main-only report #37–#39 감사 — 2026-11-12
+
+- main 자동 생성 보고서 #37–#39 원문을 EUR-Lex와 대조했다. 3건 모두 CONFLICT, 합성/오위치 직접 인용은 REJECTED.
+- 반복 오류: Article 11/13(2)/13(6)을 지원기간 또는 무상 업데이트 근거로 오용; Article 13(8) 지원기간과 Annex I Part II(8) 무상 업데이트 혼동; Annex I Part II를 (a)–(d)로 잘못 인용; Part I(2)(b)와 (c) 혼동.
+- 정확한 법령 원문 위치: Article 13(2),(6),(8) lines 888–908; Annex I Part I(2)(b),(c) and Part II(1)–(8) lines 1747–1773.
+- 상세: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_37_39_2026-11-12.md](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_37_39_2026-11-12.md). 원본 main archive/history/state 수정 없음.
