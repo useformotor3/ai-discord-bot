@@ -161,3 +161,26 @@
 **공식 원문 위치:** EUR-Lex Article 13(2),(6),(8) lines 888–908; Annex I Part I(2)(b),(c) 및 Part II(1)–(8) lines 1747–1773. https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R2847
 
 상세 파일: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_37_39_2026-11-12.md](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_37_39_2026-11-12.md). 원본 main archive는 수정하지 않았다.
+
+## 13. Main-only reports #40–#55 (batch audit)
+
+| Claim ID | Atomic claim / audit focus | Source location | Result | Status |
+|---|---|---|---|---|
+| CRA-ARCH-040-001 | CRA requires secure-by-default configuration and limits attack surfaces. | Annex I Part I(2)(b),(j) | Substantive requirements exist, but report's direct quotations are not exact and concrete port/account controls are implementation examples, not universal text. | PARTIALLY_VERIFIED |
+| CRA-ARCH-041-001 | Annex I Part I subpoints (a)–(f) quoted in report #41 match source. | Annex I Part I(2)(a)–(m) | Report's numbering and wording do not match official source. | CONFLICT / quote REJECTED |
+| CRA-ARCH-042-001 | “secure by default enforcement mechanisms” and cited access-control text are verbatim CRA clauses. | Annex I Part I(2)(b),(d) | Phrase/structure not source-verbatim; source wording differs. | CONFLICT / quote REJECTED |
+| CRA-ARCH-043-001 | Industrial servo drives are automatically Important Class I and report quotes Annex I accurately. | Annex III Class I categories; Annex I Part I | Servo-drive classification not established by product name; quotation composite/non-verbatim. | CONFLICT |
+| CRA-ARCH-044-001 | Article 11 requires reporting all vulnerabilities/incidents within 24h and 72h. | Article 14(1)–(5) | Reporting clause is Article 14; only actively exploited vulnerabilities and severe incidents; different final-report clocks. | CONFLICT |
+| CRA-ARCH-045-001 | CRA mandates free updates under Annex I Part I(2)(h), RSA/ECDSA signing and dual-bank rollback. | Annex I Part II(7)–(8); Part I(2)(c),(f),(h) | Free update is Part II(8); specific algorithms, dual-bank and rollback not universally prescribed by cited text. | CONFLICT |
+| CRA-ARCH-046-001 | Article 14 requires all vulnerability reporting and automated telemetry/EN 18031 for generic servo drives. | Article 14(1)–(7); Annex I Part I(2) | Scope/timing and quote are inaccurate; automatic telemetry not prescribed; EN 18031 scope/product applicability not demonstrated. | CONFLICT |
+| CRA-ARCH-047-001 | CRA mandates safety-core segregation, STO safe state and SIL 3 update architecture. | Article 13(2); Annex I Part I/II | Risk assessment must consider health/safety impacts; specific SIL/STO/core architecture is not stated as a universal CRA requirement. | CONFLICT |
+| CRA-ARCH-048-001 | Annex I Part I(1)(h) and Recital 28 contain the quoted safety-update requirements. | Annex I Part I(2)(h); Recital 28 | Cited point concerns availability/DoS resilience; quote not found at cited legal location. | CONFLICT / quote REJECTED |
+| CRA-ARCH-049-001 | CRA requires secure decommissioning instructions and secure user-data removal. | Annex II point 8(d); Annex I Part I(2)(m) | Core obligation is supported, but archive mislabels Annex II as Annex VII and overstates cryptographic erasure/advance notice. | PARTIALLY_VERIFIED |
+| CRA-ARCH-050-001 | CRA mandates zero-downtime/hot-patching as part of free security updates. | Annex I Part II(7)–(8) | Free security updates supported; zero-downtime/hot-patch is not a prescribed universal implementation. | CONFLICT |
+| CRA-ARCH-051-001 | Article 14 and Annex II establish the five-year support period and free patch requirement. | Article 13(8); Annex I Part II(8); Annex II point 7 | Article mapping wrong; under-five-year expected-use exception omitted; quote not verbatim. | CONFLICT |
+| CRA-ARCH-052-001 | Article 10(6) and Annex I labels require dual-bank, hot-patch and zero-downtime. | Article 13(8); Annex I Part II(2),(7),(8) | Article/Annex references wrong; implementation architecture is not universally mandated. | CONFLICT |
+| CRA-ARCH-053-001 | Article 13(6) is support-period/free-update clause and Part I(2)(g) is DoS/update clause. | Article 13(6),(8); Annex I Part I(2)(g),(h); Part II(8) | 13(6) concerns integrated component vulnerabilities; (g) is data minimisation; free updates are Part II(8). | CONFLICT |
+| CRA-ARCH-054-001 | Article 13(4) and Annex I point (h) contain the quoted five-year/free-update rule. | Article 13(4),(8); Annex I Part II(8) | 13(4) concerns technical documentation of risk assessment; cited quote is not source-verbatim. | CONFLICT |
+| CRA-ARCH-055-001 | Annex I Part I Section 2 point (h) requires zero-downtime updates free of charge. | Annex I Part II(7)–(8) | Annex structure and quote wrong; free-of-charge rule has tailor-made business-user exception. | CONFLICT |
+
+Detailed file-level audit: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_40_55_2026-11-12.md](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_40_55_2026-11-12.md). Original main archive files remain unchanged.
