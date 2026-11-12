@@ -198,3 +198,9 @@ ST와 비교할 기능 범위와 제품군을 먼저 정의한다. 동급 기능
 ## 서보 드라이브 요구사항 추적성 매트릭스
 - [CRA_REQUIREMENTS_TO_SERVO_DRIVE_TRACEABILITY_MATRIX.md](CRA_REQUIREMENTS_TO_SERVO_DRIVE_TRACEABILITY_MATRIX.md): Annex I Part I/II 및 Articles 13–14를 HW/FW/운영 통제·시험·증거 후보에 연결.
 - 현재는 일반 참조 설계 초안. 제품 SKU/MCU 주문 코드/통신 구성/안전 아키텍처가 미확인이라 제품별 적용과 시험은 UNVERIFIED.
+
+
+## 위협 모델 및 시험·증거 추적성 (2026-11-12)
+- [일반 서보 드라이브 CRA 위협 모델](THREAT_MODEL_SERVO_DRIVE_CRA.md): AST-01..10 자산, ACT-01..06 공격자, TB-01..08 신뢰 경계, TH-01..18 시나리오 및 통제 후보.
+- [보안 시험·증거 대장](SECURITY_TEST_EVIDENCE_REGISTER.md): TST-* 시험 ID, NOT_RUN 기본 상태, EV-* 증거 ID, 필수 메타데이터와 제품별 합격 기준 입력값.
+- 위협·통제·시험은 일반 참조 모델이다. 실제 제품 인터페이스/MCU/안전 경계가 확인되기 전 위험 등급·제품 적용성·시험 PASS를 확정하지 않는다.
