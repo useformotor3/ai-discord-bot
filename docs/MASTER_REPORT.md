@@ -189,3 +189,13 @@ Pass B/C 합계 24/34개 파일 진행, 10개 남음. 동일 AI 세션의 별도
 일반 참조 모델로 [서보 드라이브 CRA 위협 모델](THREAT_MODEL_SERVO_DRIVE_CRA.md)을 추가했다. 보호 자산(AST), 공격자(ACT), 신뢰 경계(TB), 위협 시나리오(TH)를 식별하고 HW/FW/통신/생산/운영 통제 후보에 연결했다. 제품별 사실이 없는 상태에서 위험도 점수나 적용성을 임의로 확정하지 않았다.
 
 [보안 시험·증거 대장](SECURITY_TEST_EVIDENCE_REGISTER.md)은 각 위협을 TST-* 시험 ID와 EV-* 증거 ID로 연결한다. 시험은 모두 NOT_RUN이며, 제품 제어주기·지터·부하·복구시간 등 수치형 합격 기준은 승인된 제품 요구사항/위험평가/기능안전 분석을 입력받아 확정해야 한다. 시험 PASS는 CRA 적합성 결론과 동일하지 않다.
+
+
+## 통합 요구사항–위협–설계–시험–증거 추적성
+[CRA_INTEGRATED_TRACEABILITY_MATRIX.md](CRA_INTEGRATED_TRACEABILITY_MATRIX.md)는 법령 요구사항을 자산·위협·HW/FW 통제 후보·시험 ID·증거 ID까지 연결하는 통합 추적표다. TR-01..TR-20은 Annex I Part I/II, Articles 7, 13, 14 및 관련 제품 분류 검토를 포함한다. 제품별 적용성은 아직 UNVERIFIED이며 시험은 NOT_RUN이다.
+
+## European Commission 2026 CRA guidance
+Commission은 2026-07-27 C(2026) 5252 CRA 실무 가이드를 공식 게시했다. 주요 주제는 scope/remote data processing/FOSS, substantial modification, support periods, reporting, risk assessment이며 67개 예시 등을 포함한다. 가이드는 비구속적이므로 Regulation (EU) 2024/2847 원문을 대체하지 않는다. 공식 게시 사실은 확인했으나 Annex의 개별 페이지/문단은 아직 직접 검증하지 않았다. 상세 검토: [CRA_COMMISSION_GUIDANCE_REVIEW_2026-11-12.md](CRA_COMMISSION_GUIDANCE_REVIEW_2026-11-12.md).
+
+## 제조사 문서 최신 revision 메타데이터
+ST AN5156 Rev14/June 2026, TI SLAAE29 Rev B/August 2026, TI MSPM0 G-Series TRM Rev F/November 2026의 공식 페이지/인덱스 표시를 확인했다. TI Rev B 및 TRM Rev F 본문은 확보/검증되지 않았으므로 기능 상세를 근거로 인용하지 않는다. 실제 ST MCU part number가 없는 상태에서 제품별 기능을 확정하지 않는다.
