@@ -233,3 +233,8 @@ main의 #37–#39 보고서를 EUR-Lex 원문과 대조한 결과 세 건 모두
 ## 하드웨어 인터페이스 설계 계약
 
 하드웨어 참조 아키텍처에 IF-01..IF-09 인터페이스 계약을 추가했다. 외부 네트워크 입력에서 모션 명령까지, 모션 MCU와 gate driver, 센서 feedback, NVM/key storage, debug/service, power/reset, 제조 프로비저닝 경로마다 신뢰 경계와 설계 검토 항목을 정리했다. 회로도 리뷰 체크리스트는 10개 항목이며, 실제 전기 사양·핀맵·부품·타이밍·안전 경계가 확보되기 전까지 모두 설계 입력/미확인 상태다.
+
+
+## 신규 아카이브 감사: main reports #40–#55
+
+main 브랜치의 #40–#55를 EUR-Lex 원문과 대조했다. 파일 단위로 #40과 #49는 PARTIALLY_VERIFIED, 나머지 14건은 CONFLICT다. 이 배치에서 완전 VERIFIED로 직접 인용 가능한 보고서는 없다. 핵심 법령 구조는 Article 13(8) 지원기간, Article 14 신고, Annex I Part II(7) 안전한 업데이트 배포, Part II(8) 무상 보안 업데이트, Annex II point 8(d) 안전한 제품 폐기 안내다. 상세 판정과 각 보고서별 오류는 [감사 보고서](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_40_55_2026-11-12.md) 및 [주장·근거 대장](CLAIM_EVIDENCE_LEDGER.md)을 참조한다. 원본 main 파일은 보존했다.
