@@ -210,5 +210,7 @@ CI는 실제 외부 API나 Gemini 호출 없이 fixture를 사용한다. 별도 
 - PDF adapter: extracts text by 1-based page using a pypdf-compatible reader. `pypdf` is optional/lazy-loaded and no dependency/workflow change was made. OCR/scanned-page recognition is not implemented; absence of backend returns `PDF_BACKEND_UNAVAILABLE`.
 - All adapters require a registered `source_id`; parser receives bytes only and performs no network access or file persistence.
 - Tests use inline fixture HTML/XML and a fake PDF reader. No external URL fetch, real PDF, OCR, Gemini call, schema/prompt/validator/main.py/workflow changes.
-- CI validation pending for the Phase B code/test HEAD; do not call Phase B validated until the run is complete.
+- CI validation: PASS on exact Phase B code/test HEAD `14666beefec6441df0a169aec81fa5c93d04fc22`, workflow run [#43331128802](https://github.com/useformotor3/ai-discord-bot/actions/runs/43331128802). Full unittest: 55 tests, 0 failures, 0 errors; strict archive audit: archive/history 990/990, missing/orphan/duplicate/malformed 0, `consistent=true`.
 - Limitations: fixture-based structural coverage is not confirmation of the live EUR-Lex Formex/HTML serialization or manufacturer PDF extraction fidelity. Legal locator candidates do not establish quote accuracy or interpretation.
+
+- Final diff review: `main.py` unchanged within each branch (main SHA `86a7731...`, work SHA `9979527...`); run workflow identical between main/work (`65a8cad...`); prompt and report contract not modified by Phase B; `main.py` does not import `source_extraction.py`.
