@@ -85,6 +85,11 @@ TI 공식 비교 기준 예시로 MSPM0G3529-Q1 데이터시트(SLASFO2B, revise
 ## 14. 용어집 및 참고자료
 검증된 공식 자료만 확정 참고문헌에 등록한다. 출처별 확인일과 버전을 함께 기록한다.
 
+## 기존 조사 아카이브 품질 감사
+- 990개 전체 후보 추출 결과: 4,400개 주장 문단, 1,224개 Article 후보, URL 문자열 후보 0개. 자동 추출은 법적 검증이 아니다.
+- 초기 5개 파일 수동 대조: 4건 CONFLICT, 1건 PARTIALLY_VERIFIED. Article 13/14, Annex I/II, Annex VII 위치 및 직접 인용 정확성 문제를 확인했다.
+- 상세: [ARCHIVE_MANUAL_SAMPLE_AUDIT_5_2026-11-12.md](ARCHIVE_MANUAL_SAMPLE_AUDIT_5_2026-11-12.md).
+
 ## 미해결 사항
 - ST MCU의 정확한 부품 번호/제품군 미확정
 - 대상 서보 드라이브의 기능 및 인터페이스 범위 미확정
