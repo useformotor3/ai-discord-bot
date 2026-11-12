@@ -346,14 +346,14 @@ if not success:
 - `main.py`: inline prompt/기존 자유형 응답 처리를 제거하고 버전관리 prompt + JSON 응답 계약 + fail-closed adapter를 연결.
 - `prompts/CRA_RESEARCH_PROMPT_V2.txt`: 운영용 prompt v2 추가.
 - `cra_report_contract.py`: JSON schema, strict required-field/enum 검사, quote/VERIFIED 금지, Markdown renderer, 모델 폴백/실패 예외 추가.
-- `tests/test_cra_report_contract.py`: mock 기반 회귀 테스트 추가.
+- `tests/test_cra_report_contract.py`: mock 기반 회귀 테스트 14개 추가. 기존 recent_snippets[-5:] 중복 방지 문맥이 prompt v2에도 전달되는지 회귀 검사 포함.
 - `.github/workflows/run.yml`, 모델 목록/순서, quota constant, Discord 전송, archive/history/state schema, 최근 5개 snippet 문맥은 변경하지 않았다.
 - `main` branch에 반영하지 않았으며 merge/rebase/sync하지 않았다.
 
 ### 14.8 1차 mock 검증 결과
-- committed source와 test 내용을 격리된 Python 런타임에서 재현하여 13개 테스트 PASS, failures=0, errors=0.
+- committed source와 test 내용을 격리된 Python 런타임에서 재현하여 14개 테스트 PASS, failures=0, errors=0.
 - `py_compile`: `cra_report_contract.py`, `tests/test_cra_report_contract.py`, `main.py` 3개 파일 통과.
 - 검증 항목: 정상 JSON/Markdown 렌더링, 빈 응답, 잘못된 JSON, top-level 및 claim 필드 누락, 잘못된 enum, 중복 claim ID, 직접 인용 거부, VERIFIED 승격 거부, 모델 폴백, 전체 모델 실패, fail-closed 종료가 Discord/archive/state/history 쓰기보다 앞서는지 확인.
-- 모든 모델 호출은 fake client를 사용했으며 실제 Gemini API/네트워크/유료 호출은 0회.
+- 모든 모델 호출은 fake client를 사용했으며 실제 Gemini API/네트워크/유료 호출은 0회. 기존 recent_snippets[-5:] 문맥 전달은 유지했으며, 이를 사실 근거가 아닌 중복 방지용 요약으로 명시.
 - 주의: 이 결과는 격리 런타임에서 committed source/test 내용을 재현한 mock 테스트다. GitHub Actions 실행 결과는 아직 별도 확인되지 않았으므로 CI PASS로 주장하지 않는다.
 - 다음 gate: GitHub Actions 실제 결과 확인, 설치된 google-genai SDK 및 선택 모델의 structured output 호환성은 실제 API를 호출하지 않고는 확인 불가. 실제 API 호출은 별도 사용자 승인 전 금지.
