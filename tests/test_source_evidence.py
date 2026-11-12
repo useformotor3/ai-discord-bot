@@ -182,6 +182,7 @@ class SourceEvidenceTests(unittest.TestCase):
         self.assertFalse(kwargs["allow_redirects"])
         self.assertEqual(kwargs["timeout"], (5.0, 20.0))
         self.assertTrue(kwargs["stream"])
+        self.assertTrue(kwargs["verify"])
 
 
 if __name__ == "__main__":
