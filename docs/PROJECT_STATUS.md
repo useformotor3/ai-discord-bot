@@ -391,3 +391,11 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - 최신 work commit combined status는 빈 statuses array. CI/test PASS는 확인되지 않았고 주장하지 않는다.
 - Daily archive audit automation enabled, next run 2026-11-13 09:00 Asia/Seoul. Weekly official-source monitor remains separate.
 - docs/CHANGE_PROPOSAL_MAIN_GEMINI.md에 #81–#122 증거와 P0/P1 acceptance criteria 추가. 제안만 업데이트; main.py/prompt/parser/production workflow 미수정, USER_APPROVAL_REQUIRED 유지.
+
+
+## Main-only report #123 audit — 2026-11-12
+- New main report #123: commit 1f9dc5e28d760ce5b47efda0e897a0a540d33ecb; source research_archive/2026-11-12_101044.md.
+- Verdict CONFLICT. User information/instructions is a valid CRA topic, but the report misattributes the duty to Article 13(7) instead of 13(18), fabricates an Annex II Part I/II structure and composite quote, oversimplifies support-period wording, and asserts servo-drive Important Product Class II without category evidence.
+- Correct map: Article 13(18) (user information/instructions, paper/electronic, clarity/language, retention); Article 13(19) (support end-date at purchase and feasible end-of-support notification); Article 13(17) contact; Annex II(1)–(9), especially (7), (8)(a)–(f), (9). Article 13(7) is systematic documentation of cybersecurity aspects.
+- Detailed audit: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_123_2026-11-12.md](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_123_2026-11-12.md). Claim row CRA-ARCH-123-001.
+- No main archive/history/state, main.py, Gemini prompt, production workflow or run.yml modification; no merge/rebase/sync. No tests/CI PASS claimed.
