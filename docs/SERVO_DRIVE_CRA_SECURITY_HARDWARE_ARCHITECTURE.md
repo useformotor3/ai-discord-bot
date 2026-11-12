@@ -111,12 +111,13 @@ flowchart LR
 | CRA-HW-02 | Annex I Part I(2)(d) access control | 디버그, 서비스, 파라미터 변경, 펌웨어 업데이트 권한 분리 | role/access matrix, unauthorized access test |
 | CRA-HW-03 | Annex I Part I(2)(j) attack surface | 물리·논리 인터페이스 인벤토리, 미사용 포트/기능 제한 | interface inventory, attack-surface review |
 | CRA-HW-04 | Article 13(2)–(4) risk assessment | 통신/업데이트/디버그/키/센서/전원 경로 위협 모델링 | threat model, risk register, residual risk decision |
-| CRA-HW-05 | Annex I Part I(2)(f) confidentiality/integrity of stored/transmitted data | 비밀/자격증명/중요 파라미터의 저장·전송 보호 | data classification, crypto design, extraction/interception tests |
-| CRA-HW-06 | Annex I Part I(2)(g) availability/resilience | 업데이트 복구, 전원 이상, DoS 영향, 정상 제어 복귀 검증 | fault injection, power-cut, recovery test |
+| CRA-HW-05 | Annex I Part I(2)(e) confidentiality and (f) integrity | 비밀/자격증명/중요 파라미터의 저장·전송 기밀성 보호와 데이터·명령·프로그램·설정 무결성 보호를 구분해 설계 | data classification, crypto design, integrity controls, extraction/interception/fault-injection tests |
+| CRA-HW-06 | Annex I Part I(2)(h),(i) availability/resilience and impact on connected devices/networks | 업데이트 복구, 전원 이상, DoS 영향, 정상 제어 복귀 및 연결된 기기/네트워크 가용성 영향 검증 | fault injection, power-cut, recovery and network-load tests |
 | CRA-HW-07 | Annex I Part II(1), Article 13(5)–(7) | 외부 MCU/통신칩/부트 라이브러리 포함 구성요소 식별·취약점 due diligence | machine-readable SBOM, supplier records, component vulnerability review |
 | CRA-HW-08 | Annex I Part II(2), (7), (8) | 보안 업데이트 배포·무결성·기능 업데이트와 분리 가능성·무상 제공 정책 | release policy, signed package, update test, customer communication |
 | CRA-HW-09 | Article 13(8), Annex I Part II(5)–(6) | 지원기간/취약점 처리 및 CVD 운영 프로세스 | support-period rationale, PSIRT process, contact point |
 | CRA-HW-10 | Article 14 | actively exploited vulnerability / severe incident 신고 분류 및 escalation 절차 | incident playbook, decision log, reporting evidence |
+| CRA-HW-11 | Annex I Part I(2)(g) data minimisation | 진단/telemetry/log/remote-service 데이터 항목을 의도된 목적에 필요한 범위로 제한 | data inventory, purpose mapping, minimisation review |
 
 ## 7. 검증 시험 및 증거 패키지 체크리스트
 
@@ -143,10 +144,11 @@ flowchart LR
 - 공식 자료: https://www.st.com/content/st_com/en/technical-documents/an5156-introduction-to-security-for-stm32-mcus-stmicroelectronics.html
 
 ### TI 비교 예시
-- MSPM0G3529-Q1 datasheet SLASFO2B Rev B (revised October 2025)는 80MHz Cortex-M0+, 최대 512KB ECC Flash, 128KB SRAM, dual-bank/address swap, AES-128/256, 최대 4개 AES key secure storage, firewall, TRNG 및 secure boot/update 지원을 제품 문서에 명시한다.
-- TI G-Series TRM은 MSPM0G352x 제품군에 적용되는 기술 세부를 확인하는 필수 자료다. TI 공식 G-Series TRM 문서 인덱스는 Rev F, 2026-11-05를 표시하지만, 이번 검토에서는 거대한 PDF/HTML 원문을 도구로 정상 열람하지 못했다. 따라서 Rev F의 보안 장 세부 내용은 아직 확인하지 않았고, 이전 Rev A/C 문서 내용을 Rev F의 확인 결과처럼 사용하지 않는다.
-- TI SLAAE29A Rev A (revised December 2025)는 플랫폼 보안 구조/CSC boot flow 설명의 참고 자료다. 별도의 Rev B 본문은 이번 조사에서 공식 원문을 확보하지 못했으므로 최신판으로 확정하지 않는다.
-- 공식 자료: https://www.ti.com/product/MSPM0G3529-Q1 ; https://www.ti.com/tool/MSPM0-DIAGNOSTIC-LIB ; https://www.ti.com/lit/an/slaae29a/slaae29a.pdf
+- MSPM0G3529-Q1 datasheet SLASFO2B Rev B (revised October 2025)는 80MHz Cortex-M0+, 최대 512KB ECC Flash, 128KB SRAM, dual-bank/address swap, AES-128/256, 최대 4개 AES key secure storage, firewall, TRNG 및 secure boot/update 지원을 제품 문서에 명시한다. 이 데이터시트가 G3529-Q1 기능의 직접 근거다.
+- TI G-Series TRM 문서 인덱스는 Rev F, 2026-11-05를 표시하지만, 대용량 PDF/HTML 원문을 이번 검토에서 정상 열람하지 못했다. 따라서 Rev F의 보안 장/레지스터 세부는 미확인이다.
+- TI SLAAE29 Rev B (August 2026) 본문은 공식 HTML 뷰어에서 확인했다. CSC boot flow, KEYSTORE, AESADV, 일부 MSPM0 device의 TRNG 설명이 포함된다. 다만 Rev B 머리말의 supported-device list에 MSPM0G3529-Q1은 포함되지 않는다. 그러므로 Rev B의 CSC/KEYSTORE/TRNG 예제를 G3529-Q1의 직접 기능 증거로 전용하지 않는다. G3529-Q1은 해당 부품 데이터시트와 실제 적용 가능한 G-Series TRM/errata로 확인한다.
+- SLAAE29A Rev A 분석은 과거 revision 근거로 보존하되, Rev B 본문이 확인된 사실을 반영한다. Rev B의 문서 내용 VERIFIED와 G3529-Q1 제품 적용성 UNVERIFIED를 구분한다.
+- 공식 자료: https://www.ti.com/product/MSPM0G3529-Q1 ; https://www.ti.com/tool/MSPM0-DIAGNOSTIC-LIB ; https://www.ti.com/document-viewer/lit/html/SLAAE29 ; https://www.ti.com/lit/an/slaae29a/slaae29a.pdf
 
 ## 9. 미해결 입력 — 제품별 설계로 전환하기 위해 필요한 사실
 
