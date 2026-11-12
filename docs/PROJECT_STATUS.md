@@ -452,3 +452,14 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - main `main.py` SHA는 `86a7731aad5de8d75581fc953bcea2c44adf2f2b` 그대로, 작업 브랜치 SHA는 `997952702fdd9d2472468b82e6efdd65b2bb4376`.
 - `.github/workflows/run.yml`은 양 브랜치 SHA 동일 `65a8cadc8eac593f551e390698e367b1d161ecf1`.
 - 최신 commit status checks는 빈 배열. CI PASS 확인 전까지 미확인 상태로 유지.
+
+## GitHub Actions 검증 완료 및 다음 설계 단계 — 2026-11-13
+
+- 최신 1차 구현 커밋 `aabffb6022f328caf24df58e9fa551da9b69a4d7`의 GitHub Actions run [#43205954271](https://github.com/useformotor3/ai-discord-bot/actions/runs/43205954271) 확인.
+- Job `audit`: success. `python -m unittest discover -s tests -v` 결과 전체 26 tests, 0 failures, 0 errors. CRA contract test 17개 포함.
+- `python scripts/audit_archive.py --strict` 성공: archive 990, history 990, missing/orphan/duplicate paths 0, consistent=true.
+- 이 CI 결과는 mock/fixture 기반 검증이며 실제 Gemini API 호출이나 production execution을 검증한 것은 아님.
+- Google 공식 SDK 문서에서 `response_json_schema`와 `response_mime_type=application/json` 구성을 확인. 모델 문서상 `gemini-3.5-flash-lite`는 stable 및 structured outputs 지원. `gemini-flash-latest`는 latest alias 규칙이 hot-swap 가능하므로 실제 계정/API 접근성 및 정확한 대상 버전은 API 호출 없이 확정하지 않음.
+- 다음 단계 설계만 진행: [CRA Source Evidence Pipeline v1 proposal](PROPOSED_SOURCE_EVIDENCE_PIPELINE_V1.md). 공식 allowlist 기반 원문 수집, hash/provenance, exact quote/locator validation, human review gate.
+- 새 fetcher/schema v3/prompt v3/main.py/workflow/실제 외부 fetch/Gemini API는 별도 승인 전 미구현.
+- 현재 work branch HEAD (proposal 추가 후): `4392fe27a9b3fb98e107a50764893fcfd4d77e11`. main branch 변경/merge/rebase/sync 없음.
