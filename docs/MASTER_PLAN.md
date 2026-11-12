@@ -161,3 +161,10 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 - [x] 최종 집계: VERIFIED 0 / PARTIALLY_VERIFIED 6 / REJECTED 28. [최종 요약](ARCHIVE_PASS_BC_FINAL_SUMMARY_2026-11-12.md)
 - [ ] 이 결과를 반영한 검증 정정본 및 HW/FW/시험/증거 추적성 매트릭스 작성.
 - [ ] 나머지 956개 archive는 P0 위험 후보부터 단계별 검증. 34개 표본 결과를 전수 오류율로 일반화하지 않음.
+
+
+## 설계/시험 추적성 매트릭스
+- [x] 법령 요구사항을 HW/FW/시험/증거 구조로 변환한 초안 작성: [CRA_REQUIREMENTS_TO_SERVO_DRIVE_TRACEABILITY_MATRIX.md](CRA_REQUIREMENTS_TO_SERVO_DRIVE_TRACEABILITY_MATRIX.md).
+- [ ] 제품 경계 BD-01–BD-15 입력 확보 후 적용성 업데이트.
+- [ ] 실제 ST MCU 주문 코드/실리콘 리비전 확인 후 부품별 기능과 시험 가능성 확정.
+- [ ] 제품 위험평가/기능안전 검토를 반영해 각 시험의 수치형 합격 기준 승인.
