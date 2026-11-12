@@ -192,3 +192,8 @@
 - [TI_MSPM0G3529_Q1_FUNCTIONAL_SAFETY_REVIEW_2026-11-12.md](docs/TI_MSPM0G3529_Q1_FUNCTIONAL_SAFETY_REVIEW_2026-11-12.md): SFFS983A Rev A supported-device list에 MSPM0G3529-Q1이 포함됨.
 - component-level systematic ASIL D / random-fault ASIL B는 SIL 3와 동등하지 않다. §4.3의 host actuator-disable, communication-loss monitoring, integrator diagnostics 및 QM IP 제한을 확인한다.
 - 정확한 FMEDA 및 G3529-Q1 TRM Rev F 본문 확보는 미완료.
+
+
+## 2026-11-12 추가 — main-only report #80
+- [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_80_2026-11-12.md](docs/ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_80_2026-11-12.md): secure-by-default/access/attack-surface themes partially verified; quote and universal implementation claims rejected.
+- Latest main auto-archive report #80; next session starts by checking #81+.
