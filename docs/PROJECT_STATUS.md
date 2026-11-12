@@ -487,3 +487,14 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - Registry immutable, default requests session ignores ambient proxy env, TLS verification explicitly enabled. No actual network fetch or Gemini API request.
 - 보안 한계: DNS public-IP check는 연결 전 사전검사이며 IP pinning이 아니므로 DNS TOCTOU 잔여 위험이 있다. 운영 사용 전 IP-pinned transport 또는 egress firewall 검토 필요.
 - 이 CI 성공은 mock/fixture 검증이지 공식 URL fetch 성공, 실제 문서 추출, CRA claim 검증 또는 production 동작 증명이 아니다.
+
+
+## Source Evidence Phase B 구현 (2026-11-13)
+- `source_extraction.py` 및 `tests/test_source_extraction.py`를 작업 브랜치에 별도 추가.
+- HTML: 보이는 텍스트/title 추출, script/style/noscript/svg 제외, 입력/출력 크기 제한, raw/text SHA-256.
+- EUR-Lex XML: DTD/entity 거부, Article/Annex/Part/paragraph/point 계층 locator 후보 생성. 상태는 `CANDIDATES_EXTRACTED`이며 법적 검증 완료가 아님.
+- EUR-Lex HTML: 텍스트 기반 Article/Annex 후보만 생성하고 `CANDIDATES_ONLY`로 표시. 계층은 XML 우선.
+- PDF: pypdf 호환 reader를 통한 1-based page text 추출. pypdf는 optional lazy dependency로 두고 workflow/requirements 변경 없음. OCR/스캔 페이지는 미지원.
+- 모든 parser는 등록된 source_id만 받고 bytes 입력만 처리한다. 네트워크 요청/파일 저장/실제 문서 다운로드 없음.
+- CI는 현재 Phase B HEAD 기준 검증 대기. 실 EUR-Lex serialization 및 실제 제조사 PDF 추출 품질은 아직 검증되지 않음.
+- Phase C evidence bundle/schema v3/prompt v3, Phase D exact quote validator, Phase E live fetch는 별도 승인 전 금지.
