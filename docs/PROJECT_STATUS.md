@@ -298,3 +298,12 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - 배치 판정: PARTIALLY_VERIFIED 2 / CONFLICT 2 / fully VERIFIED 0. 상세 감사 및 4개 atomic claim row 추가.
 - 공식 EUR-Lex 확인: Article 14 lines 939–975; Annex I lines 1743–1773; Annex II lines 1776–1794.
 - 원본 main archive/history/state, main.py, Gemini prompt, production workflow는 수정하지 않았다.
+
+
+## Repository integrity check after #56–#59 audit
+
+- main HEAD remains report #59: ee5c75840ee4868c7d3f56f3895c8bc7b50cfe44.
+- Current compare: cra-project-foundation is 319 commits ahead and 62 behind main (diverged). No sync, merge or rebase performed.
+- main.py blob SHA matches both branches: 86a7731aad5de8d75581fc953bcea2c44adf2f2b.
+- .github/workflows/run.yml blob SHA matches both branches: 65a8cadc8eac593f551e390698e367b1d161ecf1.
+- Latest work-branch commit: 26be6cbaa1285a7e6bf616d8a2af899b428f964b. Combined status returned an empty statuses array; CI result is unknown/not reported.
