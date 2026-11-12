@@ -142,3 +142,8 @@
 - TI SLAAE29 Rev B 본문을 TI 공식 HTML 뷰어에서 직접 확인. CSC secure boot flow, KEYSTORE, AESADV/TRNG 설명 및 revision history를 확인했으나, Rev B 지원 부품 목록에 MSPM0G3529-Q1은 포함되지 않음. G3529-Q1에 Rev B 플랫폼 설명을 직접 적용하지 않음.
 - Commission C(2026) 5252 Annex PDF는 공식 다운로드 링크에서 다시 시도했으나 도구의 Unicode decoding error로 열지 못함. 페이지/문단 단위 검증은 여전히 PENDING.
 - main.py, Gemini prompt, production run.yml, main branch는 수정하지 않음.
+
+## 2026-11-12 추가 — main-only report #36 감사
+
+- main의 자동 생성 report #36도 감사했다. Article 14를 무상 업데이트와 혼동, Annex I Part I(2)(b),(c),(g) 오기, Secure Boot/Measured Boot/TPM을 보편 의무로 단정, 법령 제목의 개정 법령 번호 오기가 확인됐다.
+- 감사 기록: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_36_2026-11-12.md](docs/ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_36_2026-11-12.md). 파일 판정 CONFLICT, 직접 인용 블록 REJECTED. main 원본 수정 없음.
