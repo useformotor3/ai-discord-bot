@@ -413,3 +413,12 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - Correct map: Part I(2)(c) applicable auto-update default/opt-out/notification/postponement; Part II(5) CVD; (6) vulnerability info/contact; (7) secure distribution; (8) timely/free updates with tailor-made business-user exception; Article 13(17)/Annex II(2) single contact.
 - Detailed audit: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_124_2026-11-12.md](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_124_2026-11-12.md). Claim row CRA-ARCH-124-001.
 - No main source/protected code/prompt/workflow changes; no merge/rebase/sync. No tests/CI PASS claimed.
+
+
+## Final integrity check after report #124 — 2026-11-12
+- Latest main archive report: #124, commit 17eebdb0af513ae2b6800e13d55b798d095631cc.
+- Final work branch HEAD at check: c42031d47a9069859e3016da405b215982f0bb57.
+- Branches remain diverged: cra-project-foundation 405 ahead / 127 behind main. No merge/rebase/sync.
+- Protected files unchanged across branches: main.py SHA 86a7731aad5de8d75581fc953bcea2c44adf2f2b; .github/workflows/run.yml SHA 65a8cadc8eac593f551e390698e367b1d161ecf1.
+- Reports #123 and #124 each audited CONFLICT; audit docs and ledger rows CRA-ARCH-123-001/124-001 added. Annex II user-information checklist template created. Gemini pipeline change proposal updated with evidence/acceptance criteria only; USER_APPROVAL_REQUIRED remains.
+- No tests run; no CI PASS claimed. Original main archive/history/state and production code/prompt/workflow unchanged.
