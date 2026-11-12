@@ -66,12 +66,15 @@ CRA를 모르는 개발자가 서보 드라이브 개발에 적용할 수 있는
 - 사용자 승인 전 main.py, Gemini prompt, 운영 research workflow는 수정하지 않음.
 
 ## 수동 표본 감사
-- 초기 5개 조사 파일을 EUR-Lex 원문과 대조. 조항 번호/인용 오류 4개, 부분 검증 1개 발견. 상세: [ARCHIVE_MANUAL_SAMPLE_AUDIT_5_2026-11-12.md](ARCHIVE_MANUAL_SAMPLE_AUDIT_5_2026-11-12.md)
-- 출처 URL 누락 원인 표본 감사 및 전수 검증 큐 작성: [ARCHIVE_SOURCE_GAP_AUDIT_2026-11-12.md](ARCHIVE_SOURCE_GAP_AUDIT_2026-11-12.md)
+- 초기 5개 조사 파일 감사: 4 CONFLICT, 1 PARTIALLY_VERIFIED. [상세](ARCHIVE_MANUAL_SAMPLE_AUDIT_5_2026-11-12.md)
+- 추가 9개 고위험 후보 감사: 7 CONFLICT, 2 PARTIALLY_VERIFIED. Article 10/11/14 혼동, 지원기간/무상 업데이트 조항 혼동, Class I 단정 및 Article 24/32 혼동 확인. [상세](ARCHIVE_MANUAL_AUDIT_9_2026-11-12.md)
+- 합계 14개 표본: 11 CONFLICT, 3 PARTIALLY_VERIFIED. 무작위 표본이 아닌 위험 기반/시간순 표본이며 전체 990개 오류율을 의미하지 않는다.
+- 출처 URL 누락 원인 표본 감사 및 전수 검증 큐: [ARCHIVE_SOURCE_GAP_AUDIT_2026-11-12.md](ARCHIVE_SOURCE_GAP_AUDIT_2026-11-12.md)
 
 ## 다음 작업
 - [x] URL 후보 0개 원인 대표 6개 표본에서 확인, 출처 메타데이터 개선/검증 큐 문서화
-- [ ] 위험 플래그별 표본검사와 실제 오류/정상 주장 구분
+- [x] 위험 플래그에서 추가 9개 고위험 문서 수동 감사 (7 CONFLICT, 2 PARTIALLY_VERIFIED)
+- [ ] 위험 플래그별 추가 표본검사 및 실제 오류/정상 주장 구분
 - [ ] 원문 인용 후보와 내부 텍스트 원문 대조표 작성
 - [ ] main.py 실패 처리·근거 스키마·검증 게이트 변경 제안서 작성 (사용자 승인 전 수정 금지)
 - [ ] 기존 990개 자료 전체 주제 분류 및 주장/출처 인벤토리
