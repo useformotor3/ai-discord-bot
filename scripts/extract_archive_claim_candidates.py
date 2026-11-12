@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""Extract review candidates from CRA research archives. This is NOT a legal verifier."""
+"""Extract review candidates from CRA research archives. This is NOT a legal verifier.
+The generated report is committed to the working branch by its dedicated workflow."""
 from __future__ import annotations
 import argparse
 import hashlib
