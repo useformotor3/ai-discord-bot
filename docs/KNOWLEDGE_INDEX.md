@@ -239,3 +239,9 @@ ST와 비교할 기능 범위와 제품군을 먼저 정의한다. 동급 기능
 
 - 하드웨어 참조 아키텍처에 DEC-01..DEC-10 선택 매트릭스와 G-01..G-06 설계 동결 게이트를 추가했다.
 - 각 항목은 대안/판단 기준/연계 시험을 갖지만 실제 선택은 TBD. 제품 SKU와 ST MCU 전체 주문 코드 없이 부품/회로를 임의 확정하지 않는다.
+
+## main-only reports #37–#39 감사
+
+- main의 #37–#39는 지원기간 Article 13(8), 무상 보안 업데이트 Annex I Part II(8), CVD Part II(5), contact Part II(6)를 혼동하거나 오인용했다.
+- #38의 Annex I Part II (a)–(d) quote는 원문 구조와 불일치, #39의 Part I(2)(b) quote는 실제 (c) 업데이트 요건을 (b)로 잘못 매핑.
+- 상세: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_37_39_2026-11-12.md](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_37_39_2026-11-12.md). EUR-Lex lines 888–908, 1747–1773 기준.
