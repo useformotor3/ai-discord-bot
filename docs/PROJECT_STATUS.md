@@ -318,3 +318,13 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - 상세 감사: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_60_78_2026-11-12.md](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_60_78_2026-11-12.md). 원본 main archive/history/state는 수정하지 않았다.
 - EUR-Lex checked: Article 13 lines 888–908; Article 14 lines 939–975; Annex I lines 1743–1773; Annex II lines 1776–1794.
 - No merge/rebase/sync. No main.py/Gemini prompt/production workflow/run.yml edits. CI status not yet rechecked; do not claim pass.
+
+
+## Main-only report #79 audit — 2026-11-12
+
+- #79 commit 61d596354e1e4a700915306cecb1bc29f0828698 was discovered after #60–#78 batch completion.
+- Verdict: PARTIALLY_VERIFIED. Article 14 reporting and 24-hour early warning are relevant, but the report broadens the reportable category, mislabels the 72-hour notification as a final notification, and misattributes/non-verbatim quotes Article 14(2).
+- Correct active-vulnerability sequence: early warning ≤24h; vulnerability notification ≤72h; final report ≤14 days after corrective/mitigating measure becomes available. Severe incident has a separate 24h/72h/one-month track.
+- Detailed audit: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_79_2026-11-12.md](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_79_2026-11-12.md). Original main archive remains unchanged.
+- Latest main report now #79; compare main vs work branch is diverged 329 ahead / 82 behind. No sync/merge/rebase.
+- main.py and production run.yml blob hashes remain 86a7731aad5de8d75581fc953bcea2c44adf2f2b and 65a8cadc8eac593f551e390698e367b1d161ecf1 on main. Latest work-branch status query returned empty statuses; CI remains unknown.
