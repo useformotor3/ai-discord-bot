@@ -211,3 +211,9 @@ main 브랜치의 자동 생성 report #35는 Secure Boot, 하드웨어 Root of 
 ### TI SLAAE29 Rev B 직접 확인
 
 TI 공식 HTML 문서 뷰어에서 SLAAE29B 본문과 §9 Revision History를 확인했다. Rev B는 CSC secure boot 예제, KEYSTORE, AESADV 및 일부 MSPM0 디바이스의 TRNG를 설명한다. 다만 문서의 지원 부품 목록에는 MSPM0G3529-Q1이 없으므로, 이 Rev B 설명을 해당 Q1 부품의 직접 기능 증거로 사용하지 않는다. 정확한 부품의 데이터시트 및 적용 가능한 TRM/errata가 우선이다.
+
+## main-only report #36 법령 인용 감사
+
+main의 자동 생성 report #36은 Secure Boot/Measured Boot/TPM을 CRA의 보편적 하드웨어 의무로 단정하고, Annex I Part I(2)(b),(c),(g)의 항목을 잘못 인용했다. 또한 Article 14(actively exploited vulnerability 및 severe incident 신고)를 무상 보안 업데이트 의무와 혼동했다. 무상 보안 업데이트는 Annex I Part II(8), 지원기간은 Article 13(8)로 구분해야 한다. 보고서의 CRA 정식 제목에 적힌 개정 법령 번호도 EUR-Lex 원문과 일치하지 않는다.
+
+파일 판정은 CONFLICT, 직접 인용 블록은 REJECTED다. 상세: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_36_2026-11-12.md](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_36_2026-11-12.md). main 원본은 수정하지 않았다.
