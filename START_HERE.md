@@ -242,3 +242,12 @@
 - 원문 수집·URL/조항/인용/법률 의미 검증은 미구현이므로 결과는 UNVERIFIED 초안이다.
 - `.github/workflows/run.yml`, 모델 선택/순서, quota, Discord 전송, archive/history/state schema, main branch는 변경하지 않았다. merge/rebase/sync도 하지 않았다.
 - 상세: [변경 제안 및 구현 결과](docs/CHANGE_PROPOSAL_MAIN_GEMINI.md), [상황판](docs/PROJECT_STATUS.md), [세션 로그](SESSION_LOG/2026-11-12.md).
+
+
+## 2026-11-13 — CI 검증 및 다음 단계
+- Gemini pipeline 1차 구현의 GitHub Actions run #43205954271에서 전체 26 tests PASS (CRA contract 17 포함), archive/history strict audit 990/990 및 불일치 0 확인.
+- CI는 mock/fixture 검증이며 실제 Gemini API/운영 실행은 아님.
+- 공식 Google SDK/model 문서 대조 완료: `response_json_schema` 지원, `gemini-3.5-flash-lite` stable + structured outputs. 실제 계정 API 접근은 미확인.
+- 다음 단계 source evidence 설계: [PROPOSED_SOURCE_EVIDENCE_PIPELINE_V1.md](docs/PROPOSED_SOURCE_EVIDENCE_PIPELINE_V1.md).
+- 현재는 설계 문서만 작성. fetcher/schema v3/prompt v3/main.py/workflow/실제 API 또는 네트워크 fetch는 별도 승인 전 구현·실행하지 않음.
+- 최신 세션 로그: [SESSION_LOG/2026-11-13.md](SESSION_LOG/2026-11-13.md).
