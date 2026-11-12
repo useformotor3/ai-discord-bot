@@ -208,3 +208,15 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - ST AN5156 Rev14/June 2026 공식 페이지 메타데이터 재확인. 정확한 ST MCU 부품 기능은 여전히 미확인.
 - 주간 CRA·MCU 보안 자료 점검 자동화 등록: 매주 월요일 09:00 Asia/Seoul, 첫 예정 실행 2026-11-16.
 - 모든 신규 매트릭스 행은 제품 적용성 UNVERIFIED, 시험 NOT_RUN. `main.py`, Gemini prompt, production workflow, main branch는 변경하지 않음.
+
+## 2026-11-12 — 통합 연결성·자동 생성물 감사 추가
+
+- 통합 매트릭스 검사: TR-01..TR-20 20개, 중복 0.
+- 위협 모델 검사: AST 10개, TH 18개, 중복 0.
+- 시험 대장 검사: TST 45개, 중복 0. 매트릭스 내 모든 개별/범위 참조 45개가 대장에 존재. 실제 DUT 시험 결과는 전부 NOT_RUN.
+- main 브랜치의 자동 생성 report #35(research_archive/2026-11-12_025041.md, blob f4bdaf84c19da80707b43f9db616712a7d17061d, commit f3eed0a20bfd9ee118561e8bcd0ae890d84ef6e2)를 EUR-Lex Annex I와 대조. 하드웨어 Secure Boot/TPM/SE/디지털 서명 의무 단정 및 Annex I Part I(2)(b)–(d) 직접 인용 번호/문구 오류 발견. 파일 판정 CONFLICT, 인용 블록 REJECTED.
+- 상세: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_35_2026-11-12.md](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_35_2026-11-12.md). main 원본/이력/상태는 변경하지 않음.
+- TI SLAAE29 Rev B 본문을 공식 HTML에서 직접 확인. Revision history와 CSC/KEYSTORE/AESADV/TRNG 설명을 확인했으나, 문서 지원 부품 목록에는 MSPM0G3529-Q1이 없음. 따라서 Rev B의 플랫폼 예제를 G3529-Q1 기능으로 전용하지 않음.
+- Commission C(2026) 5252 Annex는 공식 endpoint에서 도구 Unicode decoding error로 다시 열지 못함. 본문 페이지별 검증 미완료.
+- main.py SHA-1 86a7731aad5de8d75581fc953bcea2c44adf2f2b, production run.yml SHA-1 65a8cadc8eac593f551e390698e367b1d161ecf1 확인. 변경 없음.
+- main 병합 없음. 이 감사/문서 변경은 cra-project-foundation 브랜치에만 저장.
