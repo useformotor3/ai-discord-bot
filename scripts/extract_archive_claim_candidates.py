@@ -38,22 +38,22 @@ def extract_file(path: Path, root: Path) -> dict:
     title = next((x.lstrip("# ").strip() for x in lines if x.startswith("#")), "")
     # Keep legacy string arrays for compatibility, and add line-addressable records.
     paragraph_records = []
+    all_paragraph_records = []
     cursor = 0
     for block in re.split(r"\n\s*\n", text):
         start = text.find(block, cursor)
         end = start + len(block)
         cursor = end
+        item = {
+            "line_start": text.count("\n", 0, start) + 1,
+            "line_end": text.count("\n", 0, end) + 1,
+            "text": block.strip()[:1800],
+        }
+        all_paragraph_records.append(item)
         if CLAIM_RE.search(block) and len(block.strip()) > 60:
-            paragraph_records.append({
-                "line_start": text.count("\n", 0, start) + 1,
-                "line_end": text.count("\n", 0, end) + 1,
-                "text": block.strip()[:1800],
-            })
+            paragraph_records.append(item)
     claims = [item["text"] for item in paragraph_records[:20]]
-    quote_records = []
-    for item in paragraph_records:
-        if QUOTE_RE.search(item["text"]):
-            quote_records.append(item)
+    quote_records = [item for item in all_paragraph_records if QUOTE_RE.search(item["text"])]
     quotes = [item["text"][:1500] for item in quote_records[:10]]
     # Source sections often contain only a long document title and no canonical URL.
     source_sections = []
