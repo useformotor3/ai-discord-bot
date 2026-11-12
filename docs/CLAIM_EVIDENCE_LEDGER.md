@@ -264,3 +264,14 @@ Detailed review: [TI_MSPM0G3529_Q1_FUNCTIONAL_SAFETY_REVIEW_2026-11-12.md](TI_MS
 
 
 | TI-SAFETY-006 | TI general functional-safety guidance says to contact local sales if a selected product's analysis report is unavailable; TI safety-collateral access may require a valid Safety NDA. | https://www.ti.com/en-us/technologies/functional-safety ; https://www.ti.com/document-viewer/lit/html/SPRAD57 | General TI access-process guidance only; exact G3529-Q1 FMEDA availability, NDA, price and delivery route are not established. | VERIFIED (general TI guidance only) |
+
+
+## 15. Main-only report #80 audit (2026-11-12)
+
+Detailed findings: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_80_2026-11-12.md](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_80_2026-11-12.md).
+
+| Claim ID | Original report | Atomic claim / correction | Status |
+|---|---|---|---|
+| CRA-ARCH-080-001 | #80 | Secure-by-default is Annex I Part I(2)(b), access control (d), attack-surface limitation (j); the report's Section 1 (a)–(d) quote is composite/misnumbered and universal port/debug/password/Secure Boot implementation claims are overstated. | PARTIALLY_VERIFIED |
+
+The legal themes are supported, but the raw quote is rejected for verbatim reuse and implementation choices must remain risk-based.
