@@ -13,6 +13,8 @@ import re
 from typing import Callable, Iterable
 import xml.etree.ElementTree as ET
 
+from source_evidence import SOURCE_REGISTRY
+
 EXTRACTOR_VERSION = "1.0.0"
 DEFAULT_MAX_INPUT_BYTES = 25 * 1024 * 1024
 DEFAULT_MAX_TEXT_CHARS = 5_000_000
@@ -65,6 +67,11 @@ class ExtractedDocument:
             "pages": [asdict(page) for page in self.pages],
             "locator_status": self.locator_status,
         }
+
+
+def _validate_source_id(source_id: str) -> None:
+    if source_id not in SOURCE_REGISTRY:
+        raise ExtractionError("UNKNOWN_SOURCE_ID")
 
 
 def _decode_bytes(data: bytes, max_input_bytes: int) -> str:
@@ -159,6 +166,7 @@ def extract_html_document(
     max_input_bytes: int = DEFAULT_MAX_INPUT_BYTES,
     max_text_chars: int = DEFAULT_MAX_TEXT_CHARS,
 ) -> ExtractedDocument:
+    _validate_source_id(source_id)
     raw = bytes(data)
     html = _decode_bytes(raw, max_input_bytes)
     parser = _HTMLTextParser()
@@ -208,6 +216,7 @@ def extract_eurlex_xml(
     max_input_bytes: int = DEFAULT_MAX_INPUT_BYTES,
     max_text_chars: int = DEFAULT_MAX_TEXT_CHARS,
 ) -> ExtractedDocument:
+    _validate_source_id(source_id)
     raw = bytes(data)
     xml_text = _decode_bytes(raw, max_input_bytes)
     # Reject DTD/entity declarations rather than relying on parser-specific expansion behavior.
@@ -312,8 +321,12 @@ def extract_pdf_pages(
     max_text_chars: int = DEFAULT_MAX_TEXT_CHARS,
     max_pages: int = 1000,
 ) -> ExtractedDocument:
+    _validate_source_id(source_id)
     raw = bytes(data)
-    _decode_bytes(raw, max_input_bytes)
+    if len(raw) > max_input_bytes:
+        raise ExtractionError("INPUT_TOO_LARGE")
+    if not raw:
+        raise ExtractionError("EMPTY_INPUT")
     if not raw.startswith(b"%PDF-"):
         raise ExtractionError("PDF_SIGNATURE_INVALID")
     if reader_factory is None:
