@@ -239,3 +239,107 @@
 
 ### Approval status
 These are evidence-backed proposal additions only. No main.py, Gemini prompt, parser, validation gate, model selection/fallback, production workflow or run.yml was modified. Implementation remains USER_APPROVAL_REQUIRED.
+
+
+## 13. 신규 실증 사례 — main-only reports #125–#128 (2026-11-12)
+
+### 관찰된 실패 증거
+- main HEAD가 #125 이후 #126, #127, #128까지 진행된 것을 commit history로 확인했다.
+- #125: Article 13(18)/Annex II 사용자 지침을 Annex I Part II Section 2에 배치하고, Annex II Point 1에 존재하지 않는 하위항목을 직접 인용처럼 생성. Article 13(8)의 지원기간 예외를 단순화.
+- #126: 신고 의무를 Article 11로 오기(정확한 법적 트랙은 Article 14), CVD/contact의 Annex I Part II 위치와 원문 인용 오류.
+- #127: CVD를 Annex I Part I로 오배치, Article 13(6)을 지원기간 근거처럼 사용, expected lifetime/5-year 문구를 잘못 표현.
+- #128: Annex I Part I에 존재하지 않는 (5)/(6) 하위항목을 생성하고 Secure Boot/RoT/서명/rollback/STO를 보편적 CRA 의무로 과장.
+- 상세 감사: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_125_128_2026-11-12.md](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_125_128_2026-11-12.md). 4개 모두 CONFLICT.
+
+### 변경 제안에 미치는 영향
+이 연속 사례는 프롬프트 문구만 추가하는 방식이 충분하지 않음을 보여준다. 오류는 (a) 법령 구조 생성, (b) 법적 근거 ID 혼동, (c) 원문 인용 합성, (d) 법적 의무와 설계 선택 혼합, (e) 제품 분류 추정으로 반복된다. 따라서 Gemini 명령문을 기준선/출력 계약으로 개선하고, 파서 및 실패 게이트를 최소 보완하는 범위로 제한한다.
+
+## 14. 1차 구현 제안 — 범위 축소 및 구체 변경안
+
+**목표:** 대규모 재설계 없이 Gemini 명령문을 핵심으로 개선하고, 운영상 가장 위험한 실패 경로만 차단한다.
+
+### 14.1 변경 파일
+1. `main.py` — 기존 inline prompt를 버전관리 prompt 파일에서 읽도록 변경하거나, prompt 파일을 명확한 단일 상수로 교체. JSON 응답 파싱/필수 필드 검사 및 모델 전체 실패 시 fail-closed 처리.
+2. `prompts/CRA_RESEARCH_PROMPT_V2.txt` — 운영 Gemini 명령문. 현재는 제안서 `docs/PROPOSED_GEMINI_PROMPT_V2.md`에만 존재하며 운영 적용 전 복사/검토한다.
+3. 테스트 파일 — 성공/실패/빈 응답/잘못된 JSON/필수 필드 누락/모델 폴백을 fixture로 검사한다.
+
+`.github/workflows/run.yml`, Secrets, trigger, model list/ordering, quota policy, Discord format, archive/history/state schema, main branch는 1차 변경 범위에서 제외한다. 단, 기존 모델 ID가 structured output을 지원하지 않으면 구현 전 지원 모델 확인이 별도 선행 조건이다.
+
+### 14.2 현재 → 제안 흐름
+
+**현재**
+```python
+response = client.models.generate_content(
+    model=model_name, contents=prompt
+)
+if response and response.text:
+    ai_message = response.text
+    success = True
+...
+if not success:
+    ai_message = "시스템 긴급 경고..."
+    success = True
+# 이후 Discord/archive/state/history 정상 성공 경로로 진행
+```
+
+**제안**
+```python
+response = client.models.generate_content(
+    model=model_name,
+    contents=prompt,
+    config=GenerateContentConfig(
+        response_mime_type="application/json",
+        response_json_schema=CRA_REPORT_SCHEMA,
+    ),
+)
+payload = json.loads(response.text or "")
+validate_required_fields(payload)
+ai_message = render_report(payload)
+success = True
+...
+if not success:
+    log_failure_without_secrets()
+    raise SystemExit(1)  # Discord/archive/state/history success path 진입 금지
+```
+
+위 코드는 변경 의도를 나타내는 diff 예시이며 실행 가능한 완성 코드가 아니다. 실제 구현에서는 현재 설치되는 `google-genai` SDK 버전과 선택된 모델의 schema 지원을 CI에서 확인한다. SDK 공식 문서는 `response_mime_type="application/json"` 및 `response_json_schema` 사용을 안내한다: https://googleapis.github.io/python-genai/ 및 https://ai.google.dev/gemini-api/docs/structured-output.
+
+### 14.3 1차 Gemini 명령문 계약
+- 검토용 프롬프트: [PROPOSED_GEMINI_PROMPT_V2.md](PROPOSED_GEMINI_PROMPT_V2.md).
+- 법령 원문 본문이 입력되지 않으면 직접 인용을 생성하지 않고 excerpt를 빈 값으로 둔다.
+- 출처/조항 후보는 후보로만 기록하고 `UNVERIFIED`를 유지한다.
+- LAW_REQUIREMENT / RISK_BASED_DESIGN_OPTION / PRODUCT_SPECIFIC_FACT / INTERPRETATION / ASSUMPTION을 분리한다.
+- Article 13(6)/(8)/(9)/(17)/(18)/(19), Article 14, Annex I Part I/II, Annex II를 구분한다.
+- Annex II Point 1–9의 정확한 구조 및 Part I/II라는 허위 하위구조 생성 금지.
+- 서보 드라이브만으로 Important Product Class I/II를 추정하지 않는다.
+- 모델은 VERIFIED를 출력할 수 없다. 모델 전체 실패·빈 응답·JSON 오류·필수 필드 누락 시 성공 저장/게시를 금지한다.
+- 기존 recent_snippets[-5:] 문맥 구조, 모델 선택/폴백, 실행 workflow, quota constant, Discord 전달은 1차에서 변경하지 않는다. 이 제한으로 중복 방지/출처 검증 문제가 완전히 해결되는 것은 아니다.
+
+### 14.4 영향·제한·위험
+- 장점: 변경 파일과 회귀 범위를 최소화, 허위 인용 기본 차단, 모델 실패가 정상 archive로 저장되는 P0 결함 차단, 출력 파싱 안정화.
+- 제한: 원문 검색/수집이 없으므로 1차 산출물은 법령·출처 검증 완료 보고서가 아니라 근거 후보가 포함된 UNVERIFIED 초안이다. 정확한 조항 위치·URL·법률 해석을 자동 VERIFIED로 만들지 않는다.
+- 위험: JSON schema 미지원 모델/SDK 버전, 응답 잘림, renderer 오류, 기존 보고서 포맷 변경, fail-closed로 인한 조사 공백. 테스트에서 모델 호출은 mock 처리하여 비용을 0으로 유지한다.
+- 무료 정책: 유료 모델·유료 Search grounding·결제 활성화·유료 폴백은 추가하지 않는다. schema 지원 확인을 위해 실 API 호출이 필요해지면 사용자에게 별도 승인 요청하고, 우선 CI/mock 테스트만 수행한다.
+
+### 14.5 테스트와 성공 기준
+1. 두 모델 모두 예외: non-zero 종료, Discord/archive/history/state 변경 없음.
+2. 빈 응답/공백 응답: 모델 폴백 이후에도 없으면 fail-closed.
+3. 잘못된 JSON, top-level 필수 키 누락, claim 필드 누락/잘못된 enum: 게시/아카이브 금지.
+4. 원문 미제공: direct quote 0개, 모델의 overall status는 UNVERIFIED/PARTIALLY_VERIFIED 범위.
+5. 모델이 VERIFIED를 출력: schema/validator가 거부 또는 UNVERIFIED로 강등.
+6. CRA 고정 회귀 fixture: Article 13(8) vs Part II(8), Article 14 vs Article 11, Annex I Part I vs Part II, Annex II 1–9, nonexistent Annex II Part I/II, Secure Boot/RoT/rollback universal mandate, Class II inference.
+7. 성공 응답 fixture: Markdown renderer 결과가 기존 archive/Discord 흐름에 전달되고 기존 state/history schema가 유지됨.
+8. 모든 실패 로그에서 API key/webhook secret 미노출.
+9. mock 기반 테스트는 네트워크/API 호출 0회, 유료 비용 0원.
+
+**성공 기준:** 모델 실패/빈 응답/invalid output이 성공 저장되는 경로 0개, 원문 미제공 direct quote 0개, 모델 자체 VERIFIED 승격 0개, 기존 archive/history/state 호환성 손상 0개. 테스트 PASS는 실제 CI 결과 확인 후에만 보고한다.
+
+### 14.6 백업 및 롤백
+- 적용 전 작업 브랜치 HEAD 및 변경 대상 파일 blob SHA 기록.
+- prompt 파일, main.py, tests를 별도 커밋으로 나누어 변경.
+- main branch와 운영 run.yml은 변경하지 않는다.
+- 각 커밋 직후 diff 및 fixture tests 확인.
+- 실패 시 해당 커밋을 revert하고 사전 SHA로 복구. archive/history/state 원본은 테스트에서 복사본만 사용.
+
+### 14.7 승인 경계
+현재 사용자의 "진행"은 이 1차 구현안을 구체화하고 제안 문서/프롬프트 초안을 작업 브랜치에 기록하는 범위로 적용했다. **실제 운영 프롬프트 파일 추가, main.py 수정, parser/validator 변경, 테스트 추가 및 실행은 본 문서의 최종 diff를 사용자가 명시적으로 승인한 뒤 수행한다.** 현재 운영 파일은 변경하지 않았다.
