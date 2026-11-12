@@ -122,3 +122,22 @@
 - **중요한 적용성 한계:** SLAAE29B 문서 머리말의 지원 부품 목록에는 MSPM0G3506-Q1, MSPM0G3507-Q1 등은 있으나 MSPM0G3529-Q1은 포함되어 있지 않다. 따라서 SLAAE29B의 CSC/KEYSTORE/TRNG 설명을 MSPM0G3529-Q1에 직접 적용되는 기능으로 인용하면 안 된다. G3529-Q1에 대해서는 해당 부품 데이터시트 및 실제 적용 가능한 G-Series TRM/errata로 별도 확인한다.
 - 판정: Rev B 본문 및 revision history는 VERIFIED(문서 내용); G3529-Q1 직접 적용성은 NOT ESTABLISHED / UNVERIFIED.
 - 기존 Rev A는 이전 revision 기록으로 보존한다. Rev B 확인 사실은 Rev A를 소급해 대체하는 것으로 쓰지 않는다.
+
+## 9. TI MSPM0 G-Series TRM Rev F official product-page confirmation (2026-11-12)
+
+### Official product-page evidence
+- TI MSPM0G3507 official product page lists *MSPM0 G-Series 80-MHz Microcontrollers Technical Reference Manual (Rev. F)* dated 2026-11-05 in its top technical-documentation list: https://www.ti.com/product/MSPM0G3507
+- Page lines 204–212 (web inspection) list the Rev F TRM, MSPM0G350x/G150x Errata Rev H dated 2026-08-14, and *Cybersecurity Enablers in MSPM0 MCUs (Rev. B)* dated 2026-08-27.
+- The same product page's feature summary for MSPM0G3507 reports Cortex-M0+ with MPU, flash ECC, SRAM parity option, AES, TRNG, CRC, SWD, and cryptographic acceleration/secure communication/secure debug. These are claims for the MSPM0G3507 page/device family as described there; do not transfer them to a different order code without its datasheet, device comparison and errata.
+- The HTML viewer endpoint for the family TRM is too large (25,348,105 bytes) for the current viewer to render. A direct PDF open was inaccessible. Therefore Rev F revision/date and its listing on the MSPM0G3507 page are VERIFIED; Rev F security chapter, register semantics, changes versus Rev E, and exact SKU applicability are NOT_VERIFIED.
+- Do not treat the existence of a TRM as proof that every G-Series part implements every described IP block. The manual itself has device-type families; check the exact device and package-specific datasheet/errata.
+
+### Scope warning: MSPM0G3507 is not MSPM0G3529-Q1
+- The product page reviewed here is MSPM0G3507 (catalog/general-purpose variant), not MSPM0G3529-Q1.
+- Existing SLAAE29 Rev B support-list warning remains: do not claim CSC/KEYSTORE functionality for G3529-Q1 merely from SLAAE29B's generic G-Series discussion; the exact part must appear in the note's supported-device scope and its own datasheet/TRM/errata must confirm.
+- No part number has been supplied for the target ST MCU or final TI benchmark device. Therefore all product selection, security capability and SIL 3 architecture conclusions remain UNVERIFIED.
+
+### Source classification
+- TI MSPM0G3507 product page: manufacturer product-page summary / feature index, not a replacement for the datasheet, TRM, errata or security manual.
+- TI MSPM0 G-Series TRM Rev F: official reference manual revision listed; full body not read in this session.
+- TI SLAAE29 Rev B: application note body read; supported-device scope controls applicability.
