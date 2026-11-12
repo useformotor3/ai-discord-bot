@@ -135,3 +135,14 @@
 | CRA-ARCH-035-004 | CRA Annex I가 모든 firmware update package에 제조자 개인키 서명을 명시적으로 요구한다. | legal_fact | EUR-Lex Annex I Part I(2)(c),(f), Part II(2),(7) | 업데이트 가능성·안전한 배포 및 무결성 요구는 확인되나, 특정 digital-signature/key architecture를 일률 지정하지 않음. | CONFLICT |
 
 원본 #35 파일은 main 브랜치에만 존재하며 cra-project-foundation에는 포함되지 않는다. 감사는 작업 브랜치에만 기록하고 main 원본은 수정하지 않았다. 상세: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_35_2026-11-12.md](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_35_2026-11-12.md).
+
+## 11. Main-only report #36 감사
+
+| Claim ID | 원자적 주장 | 유형 | 출처 및 위치 | 검증 범위 / 판정 | 상태 |
+|---|---|---|---|---|---|
+| CRA-ARCH-036-001 | CRA Annex I는 모든 제품에 TPM/하드웨어 Root of Trust/Measured Boot/Secure Boot를 일률적으로 요구한다. | legal_fact | Regulation (EU) 2024/2847, Annex I Part I(1)–(2) / https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R2847 | 특정 하드웨어/부트 구조가 보편적 법정 의무로 열거되지 않음을 원문 대조. 위험 기반 구현 통제 후보로 구분. | CONFLICT |
+| CRA-ARCH-036-002 | Article 14는 무상 보안 업데이트 제공 의무를 규정한다. | legal_fact | 같은 원문 Article 13(8), Article 14(1)–(4), Annex I Part II(8) | Article 14는 actively exploited vulnerability/severe incident 신고; 무상 보안 업데이트는 Part II(8), 지원기간은 Article 13(8). | CONFLICT |
+| CRA-ARCH-036-003 | Annex I Part I(2)(b),(c),(g)는 데이터 변조 방지, Secure Boot, 취약점 업데이트를 각각 규정한다. | legal_fact | 같은 원문 Annex I Part I(2)(b),(c),(e),(f),(g),(h) | (b) secure-by-default, (c) update remediation, (g) data minimisation. 원본은 기밀성/무결성 문구를 혼합하고 secure boot 문장을 창작. | CONFLICT / quote REJECTED |
+| CRA-ARCH-036-004 | CRA 정식 제목은 Regulation (EU) No 165/2014 및 Directive (EU) 2019/1939를 개정한다고 적는다. | legal_fact | 같은 원문 document title, EUR-Lex lines 160–161 / URL above | 정식 제목은 Regulations (EU) No 168/2013 및 (EU) 2019/1020, Directive (EU) 2020/1828의 개정을 명시. | CONFLICT |
+
+원본 main 파일 research_archive/2026-11-12_025529.md, blob SHA 0d5b3f17b13f8935a90c23400173e401a76e1953, commit 5cd4a18dbf5dc4712d669b29b8846af799f5efc1. 상세: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_36_2026-11-12.md](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_36_2026-11-12.md). 원본은 main에 보존하고 수정하지 않았다.
