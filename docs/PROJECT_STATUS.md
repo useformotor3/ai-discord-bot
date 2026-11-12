@@ -177,3 +177,12 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - B-003–B-010 8개 파일을 EUR-Lex 현행 원문으로 재검증했다. B-009의 secure-by-default 문구만 핵심 취지가 일치하나 위치/표현 수정 필요. 나머지는 직접 인용/조항/적용 범위에 오류가 확인됐다.
 - B-010의 Class II 적합성 평가 근거는 Article 32(3)이며 Article 24가 아니다. Annex III Class II 카테고리 및 Article 7 core functionality 증거가 없어 서보 드라이브 Class II 단정은 미확정/근거 부족이다.
 - Pass B/C 재검증 24/34개 고유 표본 진행. 10개 파일 남음. 동일 AI 세션의 별도 절차 검증이며 독립 제3자 검토는 아니다.
+
+
+## Pass B/C 최종 재검증 완료 — 2026-11-12
+- 상세 최종 요약: [ARCHIVE_PASS_BC_FINAL_SUMMARY_2026-11-12.md](ARCHIVE_PASS_BC_FINAL_SUMMARY_2026-11-12.md).
+- 기존 감사 ID 35행에서 A-013/B-006 동일 원본을 제거한 34개 고유 파일 전체를 4개 배치로 재검증했다.
+- 파일 단위 결과: VERIFIED 0, PARTIALLY_VERIFIED 6, REJECTED 28. 파일 내 일부 문구가 맞더라도 다른 인용/조항이 잘못된 경우 PARTIALLY_VERIFIED로 분류했다.
+- 반복 오류: Article 13(8) 지원기간과 Part II(8) 무상 업데이트 혼동, Article 14 신고 대상 범위 과장, Annex I Part I/II 혼동, Article 31/32 및 Article 28/29/30 혼동, Annex III 산업 자동화/서보 드라이브 카테고리 창작.
+- 범위는 34개 위험 기반 표본의 CRA 법령 인용이며 990개 전체 오류율이 아니다. 표준·제조사 인용 및 나머지 956개는 별도 검증 필요.
+- 검증 절차는 동일 AI 세션의 별도 Pass B/C이며 제3자 독립 법률 검토가 아니다.
