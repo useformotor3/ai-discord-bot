@@ -114,3 +114,8 @@
 - [ARCHIVE_PASS_BC_FINAL_SUMMARY_2026-11-12.md](docs/ARCHIVE_PASS_BC_FINAL_SUMMARY_2026-11-12.md): 34개 고유 원본 재검증 최종 요약.
 - 파일 단위 결과: VERIFIED 0 / PARTIALLY_VERIFIED 6 / REJECTED 28. 34개 위험 기반 표본 결과이며 전체 990개 오류율이 아님.
 - 동일 AI 세션의 별도 원문 재확인 절차이며 독립 제3자 법률 검토는 아님.
+
+
+## 다음 설계 산출물
+- [CRA_REQUIREMENTS_TO_SERVO_DRIVE_TRACEABILITY_MATRIX.md](docs/CRA_REQUIREMENTS_TO_SERVO_DRIVE_TRACEABILITY_MATRIX.md): 검증된 법령 요구를 HW/FW/시험/객관적 증거로 연결하는 추적성 매트릭스 초안.
+- 제품 SKU와 실제 ST MCU 부품번호가 없으므로 모든 제품별 적용 및 시험 결과는 UNVERIFIED로 유지.
