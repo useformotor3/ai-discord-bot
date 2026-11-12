@@ -264,3 +264,11 @@
 - 최신 Phase A HEAD `21efe17ac151dcdb630abeed20769e4224ec3356`, Actions [#43330278366](https://github.com/useformotor3/ai-discord-bot/actions/runs/43330278366) success.
 - 전체 45 tests PASS, archive/history strict audit 990/990 consistent.
 - mock-only 결과다. 실제 공식 URL fetch/API 호출은 하지 않았다. DNS preflight에는 TOCTOU 한계가 있어 운영 적용 전 보완 필요.
+
+
+## 2026-11-13 — Source Evidence Phase B
+- 사용자 승인 후 작업 브랜치에 `source_extraction.py`와 mock tests 추가.
+- HTML text/title, EUR-Lex XML structural locator candidates, HTML text locator candidates, PDF page-text adapter 구현.
+- PDF pypdf optional lazy-load; workflow/dependency 변경 없음. OCR 미지원.
+- locator는 후보/구조 정보이며 법률 해석 또는 quote validation 아님.
+- Phase B CI 검증 대기. 실제 URL fetch/API/production integration 없음.
