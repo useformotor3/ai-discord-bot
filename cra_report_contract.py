@@ -67,7 +67,7 @@ CRA_REPORT_SCHEMA: dict[str, Any] = {
                     "legal_location_status": {"type": "string", "enum": ["UNVERIFIED"]},
                     "product_applicability": {
                         "type": "string",
-                        "enum": ["UNVERIFIED", "NOT_APPLICABLE_PENDING_EVIDENCE"],
+                        "enum": ["UNVERIFIED"],
                     },
                     "limitations": {"type": "string"},
                 },
@@ -154,11 +154,8 @@ def validate_report(payload: Any) -> dict[str, Any]:
             )
         if claim["legal_location_status"] != "UNVERIFIED":
             raise ReportValidationError(f"{prefix}.legal_location_status must remain UNVERIFIED")
-        if claim["product_applicability"] not in {
-            "UNVERIFIED",
-            "NOT_APPLICABLE_PENDING_EVIDENCE",
-        }:
-            raise ReportValidationError(f"{prefix}.product_applicability is invalid")
+        if claim["product_applicability"] != "UNVERIFIED":
+            raise ReportValidationError(f"{prefix}.product_applicability must remain UNVERIFIED")
 
     return payload
 
