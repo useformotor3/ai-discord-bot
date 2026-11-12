@@ -120,3 +120,18 @@
 | ST-002 | ST 공식 AN5156 페이지는 Rev 14, June 2026을 표시한다. | technical_fact | ST AN5156 official page / https://www.st.com/content/st_com/en/technical-documents/an5156-introduction-to-security-for-stm32-mcus-stmicroelectronics.html | 문서 revision/date와 범위 확인. 특정 MCU 기능은 part-specific 자료가 필요. | VERIFIED (document metadata only) |
 
 **주의:** 위 VERIFIED는 게시/문서 메타데이터 사실만을 의미한다. 가이드 해석, TI Rev B/TRM Rev F 본문 내용, ST 특정 부품 기능의 VERIFIED를 의미하지 않는다.
+
+## 10. TI SLAAE29 Rev B 본문 및 main-only 보고서 #35 감사
+
+| Claim ID | 원자적 주장 | 유형 | 출처 및 정확한 위치 | 검증 범위 / 판정 | 상태 |
+|---|---|---|---|---|---|
+| TI-014 | SLAAE29 Rev B는 Rev A 대비 MSPM0L211x/G511x/G321x 지원표 갱신, 256-byte vector alignment, AESADV DMA element size 성능표 갱신을 기록한다. | technical_fact | TI SLAAE29B, §9 Revision History / https://www.ti.com/document-viewer/lit/html/SLAAE29 | Rev B HTML 본문 직접 확인. | VERIFIED |
+| TI-015 | SLAAE29B 문서의 머리말 지원 부품 목록에는 MSPM0G3529-Q1이 포함되지 않는다. | technical_fact | TI SLAAE29B document header / 위 URL | 문서 목록에 포함된 device IDs를 직접 확인. 이 문서에서 G3529-Q1의 CSC/KEYSTORE/TRNG 기능을 입증할 수 없음. | VERIFIED (문서 scope list only) |
+| TI-016 | SLAAE29B §3.2.1은 CSC 예제에서 rollback check 및 AES-CMAC 또는 SHA-256+ECDSA 기반 이미지 검증 흐름을 설명한다. | technical_fact | TI SLAAE29B §3.2.1 / https://www.ti.com/document-viewer/lit/html/SLAAE29B/GUID-A5D8BF2B-16E3-460E-9288-A0EB8F6E7431 | 문서 예제 내용 확인. G3529-Q1 적용성은 입증되지 않음. | VERIFIED (document example) / product application UNVERIFIED |
+| TI-017 | SLAAE29B §4.5는 CSC가 INITDONE 전 KEYSTORE를 설정하고, INITDONE 이후 애플리케이션은 저장 키를 직접 읽거나 쓸 수 없다고 설명한다. | technical_fact | TI SLAAE29B §4.5 / https://www.ti.com/document-viewer/lit/html/SLAAE29B/GUID-5E58A744-C68A-49E7-9E40-427EB637E0C9 | 문서 설명 직접 확인. G3529-Q1 적용성은 별도 문서 확인 필요. | VERIFIED (document example) / product application UNVERIFIED |
+| CRA-ARCH-035-001 | Annex I는 모든 대상 제품에 하드웨어 기반 Secure Boot를 특정 회로/체인으로 구현하라고 명시하지 않는다. | legal_fact | Regulation (EU) 2024/2847, Annex I Part I(1)–(2), Part II / https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R2847 | Annex I 전체의 기술 중립적 결과 요구를 직접 대조. Secure Boot는 위험 기반 설계 통제 후보로 구분. | VERIFIED (법령 문언 범위) |
+| CRA-ARCH-035-002 | Annex I는 TPM/Secure Element/Secure Enclave를 모든 대상 제품의 의무 부품으로 특정하지 않는다. | legal_fact | 같은 EUR-Lex 원문, Annex I Part I(2)(d)–(f), Part II(7) | 접근통제·기밀성·무결성·안전한 업데이트 결과 요구와 특정 부품 지정 여부를 분리해 확인. | VERIFIED (법령 문언 범위) |
+| CRA-ARCH-035-003 | main-only 보고서 #35의 “Raw Text Quote”는 Annex I Part I(2)(b)–(d)의 실제 문구/번호와 일치한다. | legal_fact | 원본 main file research_archive/2026-11-12_025041.md, blob SHA f4bdaf84c19da80707b43f9db616712a7d17061d; EUR-Lex Annex I Part I | (b) secure-by-default, (c) security-update remediation, (d) access control임을 대조. 원본 인용은 integrity/availability/update 문구를 잘못된 항목에 배정하고 원문에 없는 문장을 합성. | CONFLICT / quote REJECTED |
+| CRA-ARCH-035-004 | CRA Annex I가 모든 firmware update package에 제조자 개인키 서명을 명시적으로 요구한다. | legal_fact | EUR-Lex Annex I Part I(2)(c),(f), Part II(2),(7) | 업데이트 가능성·안전한 배포 및 무결성 요구는 확인되나, 특정 digital-signature/key architecture를 일률 지정하지 않음. | CONFLICT |
+
+원본 #35 파일은 main 브랜치에만 존재하며 cra-project-foundation에는 포함되지 않는다. 감사는 작업 브랜치에만 기록하고 main 원본은 수정하지 않았다. 상세: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_35_2026-11-12.md](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_35_2026-11-12.md).
