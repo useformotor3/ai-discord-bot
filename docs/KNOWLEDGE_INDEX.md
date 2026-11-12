@@ -99,3 +99,12 @@ ST와 비교할 기능 범위와 제품군을 먼저 정의한다. 동급 기능
 - STM32 제품군별 메모리/디버그/부트/암호 기능을 설명하지만 개별 기능은 제품군과 정확한 부품번호별로 확인해야 한다.
 - STM32Trust: https://www.st.com/content/st_com/en/ecosystems/stm32trust.html
 - 정확한 사용 MCU 부품번호 미확인. 제품별 지원 여부는 미검증.
+
+
+## 전체 archive 주장 후보 추출 결과 (2026-11-12)
+- JSON: [reports/archive_claim_evidence_candidates.json](../reports/archive_claim_evidence_candidates.json)
+- 990개 파일에서 claim candidate 4,400 blocks, Article candidate 1,224개, URL candidate 0개.
+- 휴리스틱 플래그: SBOM 범위 305, 5년 고정지원 표현 500, Article 14 언급 201, Article 11 신고 오기 후보 85, Article 13(8) 14, Annex 혼동 21, CRA 인증 의무 오해 16, 업데이트 분리 조건 후보 4, 제품 분류 단정 190.
+- 플래그는 확정 오류가 아니다. 중복 카운트 가능. 각 문서와 공식 원문을 대조해야 한다.
+- URL 후보 0개는 과거 자료의 source field가 문서명 위주였을 가능성을 시사한다. 출처 링크 복원 작업이 필요하다.
+- GitHub Actions run: https://github.com/useformotor3/ai-discord-bot/actions/runs/43127072320
