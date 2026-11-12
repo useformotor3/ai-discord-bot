@@ -41,8 +41,10 @@ CRA를 모르는 개발자가 서보 드라이브 개발에 적용할 수 있는
 ## CRA 근거 검증/전수 후보 추출
 - [CRA_VERIFIED_BASELINE_2026-11-12.md](CRA_VERIFIED_BASELINE_2026-11-12.md): EUR-Lex Article 13/14/71, Annex I/II, Annex VII와 Commission reporting guidance를 원문 대조한 1차 기준선.
 - ST AN5156 Rev 14 (June 2026), STM32Trust 및 TI MSPM0G3529-Q1 데이터시트(SLASFO2B, revised Oct 2025), TI SLAAE29A(Rev Dec 2025) 공식 자료를 확보. ST 부품번호가 없어 동급 비교는 미확정.
-- scripts/extract_archive_claim_candidates.py 및 관련 tests/workflow 실행 성공. 전체 990개에서 주장 후보 문단 4,400개, Article 후보 1,224개 추출.
-- 실제 URL 후보는 0개로 추출됨. 현재 아카이브는 출처명/문서명은 기록했지만 검증 가능한 URL이 누락된 것으로 보이며, 표본 및 전체 원문에서 재확인할 핵심 품질 문제.
+- scripts/extract_archive_claim_candidates.py schema 1.1 및 tests/workflow 최종 실행 성공. 990개에서 주장 후보 4,400개, Article 후보 1,224개 추출.
+- 추출기에 출처 섹션, 주장 문단 행 번호, 인용 후보 행 번호, 위험 플래그별 문맥 스니펫(최대 3개)을 추가. 모든 항목은 UNVERIFIED.
+- URL 후보 0개의 원인을 대표 원본 6개에서 확인: Source 영역은 법령 문서명/조항명 중심이고 canonical URL이 기록되지 않은 패턴. 표본은 원인 확인용이며 990개 전체의 URL 누락률을 대신하지 않는다.
+- 상세: [ARCHIVE_SOURCE_GAP_AUDIT_2026-11-12.md](ARCHIVE_SOURCE_GAP_AUDIT_2026-11-12.md).
 - 휴리스틱 플래그: SBOM 범위 과장 후보 305, 5년 고정 지원기간 표현 500, Article 14 신고 언급 201, Article 11 신고 오기 가능성 85, 제품 분류 단정 후보 190, Annex 구분 혼동 21, CRA 인증 의무 단정 16, 업데이트 분리 조건 누락 후보 4, Article 13(8) 지원기간 14. 오류 확정 수가 아니라 검토 우선순위 후보.
 - 최초 구현의 URL 정규식 escaping 오류 및 테스트 fixture 길이 오류로 CI 실패를 경험. 로그에 근거해 수정 후 최종 extraction workflow와 archive integrity workflow success 확인.
 - 전체 JSON은 reports/archive_claim_evidence_candidates.json에 GitHub Actions가 커밋함. Artifact run 43127072320도 success.
@@ -65,9 +67,10 @@ CRA를 모르는 개발자가 서보 드라이브 개발에 적용할 수 있는
 
 ## 수동 표본 감사
 - 초기 5개 조사 파일을 EUR-Lex 원문과 대조. 조항 번호/인용 오류 4개, 부분 검증 1개 발견. 상세: [ARCHIVE_MANUAL_SAMPLE_AUDIT_5_2026-11-12.md](ARCHIVE_MANUAL_SAMPLE_AUDIT_5_2026-11-12.md)
+- 출처 URL 누락 원인 표본 감사 및 전수 검증 큐 작성: [ARCHIVE_SOURCE_GAP_AUDIT_2026-11-12.md](ARCHIVE_SOURCE_GAP_AUDIT_2026-11-12.md)
 
 ## 다음 작업
-- [ ] URL 후보 0개 원인 및 출처 필드 누락 표본/전수 확인
+- [x] URL 후보 0개 원인 대표 6개 표본에서 확인, 출처 메타데이터 개선/검증 큐 문서화
 - [ ] 위험 플래그별 표본검사와 실제 오류/정상 주장 구분
 - [ ] 원문 인용 후보와 내부 텍스트 원문 대조표 작성
 - [ ] main.py 실패 처리·근거 스키마·검증 게이트 변경 제안서 작성 (사용자 승인 전 수정 금지)
