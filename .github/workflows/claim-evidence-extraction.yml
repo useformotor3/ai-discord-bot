@@ -1,0 +1,35 @@
+name: CRA Claim Evidence Extraction
+
+on:
+  push:
+    branches:
+      - cra-project-foundation
+    paths:
+      - "research_archive/**"
+      - "scripts/extract_archive_claim_candidates.py"
+      - "tests/test_extract_archive_claim_candidates.py"
+      - ".github/workflows/claim-evidence-extraction.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+      - name: Run extraction tests
+        run: python -m unittest discover -s tests -p 'test_extract_archive_claim_candidates.py' -v
+      - name: Extract claim and evidence candidates
+        run: python scripts/extract_archive_claim_candidates.py --output reports/archive_claim_evidence_candidates.json
+      - name: Upload full archive extraction
+        uses: actions/upload-artifact@v4
+        with:
+          name: cra-archive-claim-evidence-candidates
+          path: reports/archive_claim_evidence_candidates.json
+          if-no-files-found: error
+          retention-days: 30
