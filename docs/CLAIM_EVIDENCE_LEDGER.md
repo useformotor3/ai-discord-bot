@@ -245,3 +245,19 @@ Detailed findings: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_79_2026-11-12.md](ARCHIVE_MAN
 | CRA-ARCH-079-001 | #79 | Article 14(1) is limited to actively exploited vulnerabilities contained in the product; stages are 24h early warning, 72h vulnerability notification, and final report within 14 days after corrective/mitigating measure becomes available. Article 14(3)–(5) separately governs severe incidents. | PARTIALLY_VERIFIED |
 
 The 24-hour early-warning theme is supported, but the report broadens scope, mislabels the 72-hour stage as a final notification, misattributes the quote to Article 14(2), and gives a non-verbatim quotation. No quote block cleared.
+
+
+## 14. TI MSPM0G3529-Q1 functional safety source claims (2026-11-12)
+
+Detailed review: [TI_MSPM0G3529_Q1_FUNCTIONAL_SAFETY_REVIEW_2026-11-12.md](TI_MSPM0G3529_Q1_FUNCTIONAL_SAFETY_REVIEW_2026-11-12.md).
+
+| Claim ID | Atomic claim | Source / location | Assessment | Status |
+|---|---|---|---|---|
+| TI-SAFETY-001 | SFFS983A Rev A supported-device list includes MSPM0G3529-Q1. | TI SFFS983A header, https://www.ti.com/document-viewer/lit/html/SFFS983A | Direct supported-device list includes exact order code. | VERIFIED |
+| TI-SAFETY-002 | SFFS983A §2 describes the Gx51x/Gx52x component as SEooC, developed to relevant ISO 26262:2018 requirements, with systematic integrity ASIL D and random-fault mechanisms up to ASIL B. | TI SFFS983A §2, https://www.ti.com/document-viewer/lit/html/SFFS983A/GUID-0E1AF9E3-352B-463D-B3C3-2CF2CDCB4E58 | Component-level statements only; not a complete-system or SIL 3 certification. | VERIFIED (component manual statement) |
+| TI-SAFETY-003 | SFFS983A §4.3 assumes integrator-selected diagnostics, host-provisioned actuator disable, host communication-loss supervision, FTTI >10 ms, MPFDTI <8 h, random-fault metrics up to ASIL B and systematic requirements up to ASIL D. | TI SFFS983A §4.3, https://www.ti.com/document-viewer/lit/html/SFFS983A/GUID-6A88B39F-C64B-47C8-8816-05A909052D85 | These are stated system assumptions/conditions; not proof the servo-drive system meets them. | VERIFIED (manual assumptions) |
+| TI-SAFETY-004 | SFFS983A §4.3 treats DEBUG, RTC, AES, TRNG, KEYSTORE, MATHACL and DFT as QM/not safety-critical for this safety concept. | Same SFFS983A §4.3 URL | Do not credit these IPs as safety mechanisms without separate justification; manual says QM IPs shall not be used in safety-critical applications. | VERIFIED |
+| TI-SAFETY-005 | SFFS983A §6 lists 74 functional-safety mechanism entries, including PWM safe-state, watchdog, memory/flash, clock, voltage and interface diagnostics. | TI SFFS983A §6 contents and §6.3, https://www.ti.com/document-viewer/lit/html/SFFS983A | Inventory existence verified; actual diagnostic coverage, configuration and application implementation are separate. | VERIFIED (document inventory) |
+| TI-TRM-REVF-004 | TI official product page lists MSPM0 G-Series 80-MHz TRM Rev F dated 2026-11-05. | TI MSPM0G3507 page, technical documentation list, https://www.ti.com/product/MSPM0G3507 | Metadata verified; 25,348,105-byte HTML/PDF body could not be rendered. Security register/body and Rev E→F diff remain NOT_VERIFIED. | VERIFIED (metadata only) |
+
+**Do not infer:** ASIL D equals SIL 3; the MCU alone achieves SIL 3; security IP is safety-qualified; or all 74 mechanisms are automatically implemented. Exact FMEDA values, diagnostic coverage, product architecture and system validation remain open.
