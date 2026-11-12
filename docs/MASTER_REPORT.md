@@ -199,3 +199,15 @@ Commission은 2026-07-27 C(2026) 5252 CRA 실무 가이드를 공식 게시했�
 
 ## 제조사 문서 최신 revision 메타데이터
 ST AN5156 Rev14/June 2026, TI SLAAE29 Rev B/August 2026, TI MSPM0 G-Series TRM Rev F/November 2026의 공식 페이지/인덱스 표시를 확인했다. TI Rev B 및 TRM Rev F 본문은 확보/검증되지 않았으므로 기능 상세를 근거로 인용하지 않는다. 실제 ST MCU part number가 없는 상태에서 제품별 기능을 확정하지 않는다.
+
+## CRA 법령 인용 품질 감사 — main-only report #35
+
+main 브랜치의 자동 생성 report #35는 Secure Boot, 하드웨어 Root of Trust, TPM/Secure Element 및 디지털 서명 기반 업데이트 검증을 CRA가 모든 서보 드라이브에 직접 요구한다고 단정한다. EUR-Lex Regulation (EU) 2024/2847 Annex I는 위험평가 기반의 기술 중립적 보안 결과를 규정하며, 특정 Secure Boot chain/TPM/SE를 일률적 부품 의무로 명시하지 않는다. 이들은 위험에 맞는 설계 통제 후보로 구분해야 한다.
+
+해당 보고서의 “Raw Text Quote”는 Annex I Part I(2)(b)–(d)의 번호와 문구가 일치하지 않는다. 실제 (b)는 secure-by-default, (c)는 취약점을 보안 업데이트로 해결할 수 있는 속성, (d)는 비인가 접근 통제다. 원본 인용은 무결성·가용성·secure update 문장을 잘못된 항목에 배정한 합성 인용으로 판정했다. 파일 단위 CONFLICT, 인용 블록 REJECTED.
+
+상세 판정 및 권장 정정 문안: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_35_2026-11-12.md](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_35_2026-11-12.md). main 원본 파일은 보존했으며 수정하지 않았다.
+
+### TI SLAAE29 Rev B 직접 확인
+
+TI 공식 HTML 문서 뷰어에서 SLAAE29B 본문과 §9 Revision History를 확인했다. Rev B는 CSC secure boot 예제, KEYSTORE, AESADV 및 일부 MSPM0 디바이스의 TRNG를 설명한다. 다만 문서의 지원 부품 목록에는 MSPM0G3529-Q1이 없으므로, 이 Rev B 설명을 해당 Q1 부품의 직접 기능 증거로 사용하지 않는다. 정확한 부품의 데이터시트 및 적용 가능한 TRM/errata가 우선이다.
