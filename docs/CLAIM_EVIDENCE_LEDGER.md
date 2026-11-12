@@ -97,3 +97,14 @@
 | TI-011 | SLAAE29 Rev B 본문이 현재 TI 공식 링크에서 확인되었다. | technical_fact | 이전 세션의 index 탐색 메모; 이번 세션에서 직접 PDF/문서 페이지 재현 실패 | 최신판 Rev B의 존재 및 본문은 이번 세션의 재검증을 통과하지 못함. 기존 Rev A 분석을 유지하고 Rev B는 확보 전까지 인용 금지. | UNVERIFIED |
 
 **TI-008 처리 메모:** 과거 Rev B 날짜/인덱스 확인 기록은 보존하되, 이번 재점검에서 공식 원문을 재현하지 못했으므로 Rev B 내용의 근거로 사용하지 않는다. Rev B 본문을 실제 확보한 뒤 별도 revision 레코드로 갱신한다.
+
+
+## 8. 기존 아카이브 34개 고유 표본의 원자적 정정 대장
+
+[ARCHIVE_CLAIM_CORRECTION_LEDGER_2026-11-12.md](ARCHIVE_CLAIM_CORRECTION_LEDGER_2026-11-12.md)에 초기 5개 + 추가 9개 고유 파일 + 추가 20개 파일의 원본 경로, SHA-1 blob, 원문 행 위치, 핵심 주장, CRA 정정 룰 ID 및 감사 상태를 연결했다.
+
+- 고유 원본 파일: 34개
+- 고유 파일 기준 판정: 25 CONFLICT / 9 PARTIALLY_VERIFIED
+- 감사 ID는 35개이며, A-013과 B-006이 동일 원본 파일/SHA이므로 1건 중복 제거
+- 원본 archive는 수정하지 않음
+- 이 정정 대장은 표본 자료에 대한 추적성 기록이며, 990개 전체 전수 검증이 아님
