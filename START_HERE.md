@@ -41,9 +41,14 @@
 - [CRA 법령 기준선](docs/CRA_LEGAL_BASELINE.md)
 - [저장소 브랜치/이력 정합성 감사](docs/REPOSITORY_RECONCILIATION.md)
 
+## 현재 기준선 (2026-11-12 확인)
+- cra-project-foundation: archive 990개, history 990개, 경로 중복/누락/orphan 0.
+- CRA Archive Integrity GitHub Actions: 최근 확인한 4회 실행 모두 success. 각 실행에서 단위 테스트와 strict archive/history 검사가 통과.
+- main.py와 Gemini 프롬프트는 사용자 승인 전 수정 금지. 변경 필요 시 제안서를 먼저 제출하고 승인 대기.
+
 ## 최우선 다음 작업
-1. main과 cra-project-foundation의 조사 아카이브 차이 5건 원인 확인
-2. archive/history/state/main.py의 구조·정합성 및 자동화 실패 처리 점검
-3. 기존 984개 조사 파일 인벤토리·주제 분류 및 주장/출처 추출
-4. CRA 공식 원문 기준 핵심 주장 전수 검증
+1. 기존 990개 조사 파일의 메타데이터·주제·주장·출처 인벤토리 생성
+2. CRA 공식 원문 기준 핵심 주장 검증 및 오류 위험도 분류
+3. main.py와 Gemini 명령 구조는 분석 및 변경 제안만 수행하고 승인 대기
+4. 별도 검사 도구와 테스트를 독립적으로 개선
 5. ST MCU 정확한 부품 번호가 확보되면 제품별 기술 분석; 그 전에는 제품군 수준에서만 조사하고 미확정 표시
