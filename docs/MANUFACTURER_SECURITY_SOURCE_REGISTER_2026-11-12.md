@@ -88,3 +88,21 @@
   - SLAAE29A Rev A: https://www.ti.com/lit/an/slaae29a/slaae29a.pdf
 
 **정확성 보정:** Rev F의 문서명/개정일 인덱스 확인과 Rev F 본문 내용 검증은 별개다. 본문 직접 열람 전까지 보안 장 상세 주장은 SLAAE29A Rev A 및 MSPM0G3529-Q1 데이터시트에서 실제 확인한 범위로 한정한다.
+
+
+## 7. 2026-11-12 추가 공식 자료 변경 감시 결과
+
+### TI SLAAE29 Rev B — 공식 인덱스 메타데이터 재확인
+- TI 공식 MSPM0G3506 제품 페이지의 Technical documentation 목록에 *Cybersecurity Enablers in MSPM0 MCUs (Rev. B)*, 2026-08-27이 표시된다: https://www.ti.com/product/MSPM0G3506
+- 별도 TI 공식 제품 페이지 검색 결과에서도 동일 문서명/Rev B/날짜가 표시되지만, 이 세션에서 TI PDF/HTML 본문 링크를 안정적으로 열지 못했다.
+- 판정: Rev B 문서가 공식 기술자료 목록에 등록된 메타데이터는 확인. Rev B의 본문 내용, Rev A와의 차이, MSPM0G3529-Q1에 대한 적용성은 UNVERIFIED. Rev B 내용을 인용하지 않고 SLAAE29A Rev A의 분석만 유지한다.
+
+### TI MSPM0 G-Series TRM Rev F
+- TI 공식 MSPM0-DIAGNOSTIC-LIB 기술자료 인덱스에 *MSPM0 G-Series 80-MHz Microcontrollers Technical Reference Manual (Rev. F)*, 2026-11-05가 표시된다: https://www.ti.com/tool/MSPM0-DIAGNOSTIC-LIB
+- 문헌번호 SLAU846 확인 기록은 유지한다. 대용량 PDF/HTML 본문을 이번 세션에서 열람하지 못했으므로 보안 관련 장/레지스터 상세 내용은 검증하지 않았다.
+
+### ST AN5156
+- ST 공식 문서 페이지는 AN5156 Rev 14, June 2026을 표시한다: https://www.st.com/content/st_com/en/technical-documents/an5156-introduction-to-security-for-stm32-mcus-stmicroelectronics.html
+- 해당 문서는 제품군별 개요이며 정확한 MCU 주문 코드의 기능 보증 자료가 아니다. part-specific datasheet/RM/errata 대조가 계속 필요하다.
+
+**운영 규칙:** 공식 인덱스에 개정판이 표시된 사실과 개정판 본문 내용 검증을 별개로 기록한다. URL/검색 스니펫만으로 기능 상세 claim을 승격하지 않는다.
