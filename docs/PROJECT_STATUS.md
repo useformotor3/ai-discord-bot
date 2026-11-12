@@ -354,3 +354,11 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - Created [TI_SAFETY_MECHANISM_SERVO_DRIVE_INTEGRATION_MATRIX_2026-11-12.md](TI_SAFETY_MECHANISM_SERVO_DRIVE_INTEGRATION_MATRIX_2026-11-12.md).
 - Maps TI SFFS983A mechanism families (ADC/comparator/CPU/memory/flash/DMA/GPIO/PWM/watchdog/clock/BOR/CAN-FD/common-cause) to servo-drive IF-01..IF-09 and candidate evidence.
 - All entries are design/test proposals only and NOT_RUN. No diagnostic coverage or system safety metric is inferred. Exact FMEDA and product-specific verification remain open.
+
+
+## Main-only report #80 audit — 2026-11-12
+
+- New main report #80 discovered at commit 78e73cb118d8bd9ca4ab7ec1433afe02c5b3eb12 after #79.
+- Verdict: PARTIALLY_VERIFIED. Secure-by-default, access-control and attack-surface themes are supported by Annex I Part I(2)(b),(d),(j), but the report's Section 1(a)–(d) quote is composite/misnumbered and universal debug/port/password/Secure Boot mandates are overstated.
+- Detailed audit: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_80_2026-11-12.md](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_80_2026-11-12.md). Claim row CRA-ARCH-080-001 added. Original main archive remains unchanged.
+- Latest main report now #80; continue checking for new commits before concluding an audit batch.
