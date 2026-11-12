@@ -40,7 +40,7 @@ CRA를 모르는 개발자가 서보 드라이브 개발에 적용할 수 있는
 
 ## CRA 근거 검증/전수 후보 추출
 - [CRA_VERIFIED_BASELINE_2026-11-12.md](CRA_VERIFIED_BASELINE_2026-11-12.md): EUR-Lex Article 13/14/71, Annex I/II, Annex VII와 Commission reporting guidance를 원문 대조한 1차 기준선.
-- ST AN5156 Rev 14 (June 2026) 및 STM32Trust 공식 자료를 기준으로 MCU 보안 기능 후보를 정리. 정확한 MCU 파트넘버가 없어 제품별 지원 여부는 미확정.
+- ST AN5156 Rev 14 (June 2026), STM32Trust 및 TI MSPM0G3529-Q1 데이터시트(SLASFO2B, revised Oct 2025), TI SLAAE29A(Rev Dec 2025) 공식 자료를 확보. ST 부품번호가 없어 동급 비교는 미확정.
 - scripts/extract_archive_claim_candidates.py 및 관련 tests/workflow 실행 성공. 전체 990개에서 주장 후보 문단 4,400개, Article 후보 1,224개 추출.
 - 실제 URL 후보는 0개로 추출됨. 현재 아카이브는 출처명/문서명은 기록했지만 검증 가능한 URL이 누락된 것으로 보이며, 표본 및 전체 원문에서 재확인할 핵심 품질 문제.
 - 휴리스틱 플래그: SBOM 범위 과장 후보 305, 5년 고정 지원기간 표현 500, Article 14 신고 언급 201, Article 11 신고 오기 가능성 85, 제품 분류 단정 후보 190, Annex 구분 혼동 21, CRA 인증 의무 단정 16, 업데이트 분리 조건 누락 후보 4, Article 13(8) 지원기간 14. 오류 확정 수가 아니라 검토 우선순위 후보.
@@ -62,6 +62,9 @@ CRA를 모르는 개발자가 서보 드라이브 개발에 적용할 수 있는
 ## 메인 코드 변경 제안
 - [CHANGE_PROPOSAL_MAIN_GEMINI.md](CHANGE_PROPOSAL_MAIN_GEMINI.md)에 main.py/Gemini prompt 개선안 작성.
 - 사용자 승인 전 main.py, Gemini prompt, 운영 research workflow는 수정하지 않음.
+
+## 수동 표본 감사
+- 초기 5개 조사 파일을 EUR-Lex 원문과 대조. 조항 번호/인용 오류 4개, 부분 검증 1개 발견. 상세: [ARCHIVE_MANUAL_SAMPLE_AUDIT_5_2026-11-12.md](ARCHIVE_MANUAL_SAMPLE_AUDIT_5_2026-11-12.md)
 
 ## 다음 작업
 - [ ] URL 후보 0개 원인 및 출처 필드 누락 표본/전수 확인
