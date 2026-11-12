@@ -46,8 +46,11 @@ Annex I Part II의 핵심 취약점 처리 의무에는 SBOM, 지체 없는 취�
 ## 2. 제품 적용 범위와 제품 분류 판단
 작성 상태: 제품의 기능·의도된 용도·연결성·시장·구성 정보를 바탕으로 판단 절차를 작성한다. 서보 드라이브라는 명칭만으로 적용 여부나 분류를 단정하지 않는다.
 
+판단에 필요한 최소 입력은 제품의 시장/판매 형태, 단독/시스템 통합 형태, 네트워크 연결/원격 처리 여부, 의도된 목적, 소프트웨어/펌웨어 기능, 업데이트 경로, 제품 경계 및 Annex III/IV 목록의 정확한 분류 문구다. 제조사·MCU가 아니라 완제품의 기능과 법령상 정의를 기준으로 판단한다.
+
 ## 3. CRA 요구사항을 개발 업무로 번역하기
-작성 상태: 원문 조항별로 설계·개발·시험·취약점 처리·문서화 작업을 매핑한다.
+
+첫 번째 공식 근거 매핑은 [CRA_VERIFIED_BASELINE_2026-11-12.md](CRA_VERIFIED_BASELINE_2026-11-12.md)에 정리했다. 주요 개발 작업은 제품 위험평가(Article 13(2)–(4)), 제3자 구성요소 due diligence(13(5)–(7)), 지원기간/취약점 처리(13(8)), SBOM(Annex I Part II(1)), 보안 업데이트 분리(Part II(2), 기술적으로 가능한 경우), CVD(Part II(5)), 안전한 업데이트 배포(Part II(7)), 원칙적 무상 업데이트(Part II(8)), Article 14 신고 절차다.
 
 ## 4. 서보 드라이브 시스템 경계와 위협 모델
 작성 상태: 전원부, 제어부, MCU, 통신 인터페이스, 엔코더/센서, 서비스 포트, 부트로더, 업데이트 경로 등을 제품 조건에 따라 식별한다.
@@ -56,7 +59,10 @@ Annex I Part II의 핵심 취약점 처리 의무에는 SBOM, 지체 없는 취�
 작성 상태: 부품 선정, 디버그 포트, 키 저장, 물리적 접근, 보안 부팅 기반, 보안 경계 등을 검토한다.
 
 ## 6. ST MCU 기반 보안 구현 가이드
-작성 상태: 정확한 MCU 파트넘버와 문서 리비전이 확인된 뒤 기능별 지원 여부 및 구현 절차를 작성한다.
+
+ST 공식 기준선은 AN5156 Rev 14 (June 2026)와 STM32Trust로 시작한다. AN5156은 보안 기능의 개요/제품군 매트릭스를 제공하지만 모든 기능이 모든 STM32에 공통 제공되는 것은 아니다. 정확한 부품번호, 실리콘 리비전, 메모리 구성, Option Bytes 및 제품 상태를 확인한 뒤 Secure Boot/SFU/SFI, TrustZone, 디버그 인증/잠금, 키 저장, TRNG, 암호 가속, 메모리 보호의 적용성을 판단한다.
+
+근거: [ST AN5156](https://www.st.com/content/st_com/en/technical-documents/an5156-introduction-to-security-for-stm32-mcus-stmicroelectronics.html), [STM32Trust](https://www.st.com/content/st_com/en/ecosystems/stm32trust.html).
 
 ## 7. TI 반도체 기술 비교
 작성 상태: ST와 동일한 비교 기준을 적용하고 공식 데이터시트·Reference Manual·보안 문서에 근거해 작성한다.
