@@ -186,3 +186,10 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - 반복 오류: Article 13(8) 지원기간과 Part II(8) 무상 업데이트 혼동, Article 14 신고 대상 범위 과장, Annex I Part I/II 혼동, Article 31/32 및 Article 28/29/30 혼동, Annex III 산업 자동화/서보 드라이브 카테고리 창작.
 - 범위는 34개 위험 기반 표본의 CRA 법령 인용이며 990개 전체 오류율이 아니다. 표준·제조사 인용 및 나머지 956개는 별도 검증 필요.
 - 검증 절차는 동일 AI 세션의 별도 Pass B/C이며 제3자 독립 법률 검토가 아니다.
+
+
+## 법령 요구사항 → HW/FW/시험 추적성 매트릭스
+- [CRA_REQUIREMENTS_TO_SERVO_DRIVE_TRACEABILITY_MATRIX.md](CRA_REQUIREMENTS_TO_SERVO_DRIVE_TRACEABILITY_MATRIX.md) 생성.
+- Annex I Part I 제품 속성 13개 항목, Part II 취약점 처리 8개 항목, Article 13 제조자 의무, Article 14 신고를 HW/FW/운영 통제·시험·합격 기준·증거 파일 후보로 연결.
+- 법령 요구와 구현 권고를 구분하고, 제품별 입력이 없는 모든 row는 UNVERIFIED 유지.
+- 이 매트릭스는 일반 참조 설계 초안이며 제품별 적용성/CRA 적합성 결론이 아니다.
