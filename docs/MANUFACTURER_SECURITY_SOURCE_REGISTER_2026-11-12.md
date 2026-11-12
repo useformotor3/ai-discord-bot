@@ -106,3 +106,16 @@
 - 해당 문서는 제품군별 개요이며 정확한 MCU 주문 코드의 기능 보증 자료가 아니다. part-specific datasheet/RM/errata 대조가 계속 필요하다.
 
 **운영 규칙:** 공식 인덱스에 개정판이 표시된 사실과 개정판 본문 내용 검증을 별개로 기록한다. URL/검색 스니펫만으로 기능 상세 claim을 승격하지 않는다.
+
+## 8. TI SLAAE29 Rev B 본문 직접 확인 (2026-11-12)
+
+- TI 공식 MSPM0G3506 제품 기술자료 목록에서 SLAAE29 Rev B / 2026-08-27 링크를 열어 TI HTML 문서 뷰어의 실제 본문을 확인했다.
+- 공식 HTML 문서: https://www.ti.com/document-viewer/lit/html/SLAAE29
+- 문서 머리말은 SLAAE29B, January 2023–August 2026을 표시한다.
+- Revision history(§9)는 Rev A(Dec 2025) 대비 Rev B(Aug 2026)의 변경으로 MSPM0L211x, MSPM0G511x, MSPM0G321x 지원/기능 비교표 갱신, Application Interrupt Vectors 시작 주소 256-byte 정렬 요구, AESADV 성능표의 DMA element size 차등 갱신을 명시한다.
+- §3.2.1 CSC secure boot flow는 최고 버전 이미지 선택, rollback 확인, AES-CMAC 하드웨어 검증 또는 SHA-256+ECDSA 소프트웨어 검증, rollback counter/CMAC tag/KEYSTORE/firewall/bank-swap 설정 흐름을 설명한다.
+- §4.5 KEYSTORE는 CSC가 INITDONE 전 키를 설정하고, INITDONE 이후 애플리케이션은 저장 키를 직접 읽거나 쓸 수 없으며 crypto engine에서 사용하도록 트리거하는 구조를 설명한다. KEYSTORE는 BOOTRST 시 초기화되고 SYSRST 및 하위 reset에서는 유지된다고 설명한다.
+- §5.1.2 AESADV는 AES-128/256 및 CBC/CFB/OFB/CTR, CBC-MAC/CMAC, CCM, GCM 등의 모드를 기술한다. §5.2 TRNG는 “certain MSPM0 devices”에 한정된 기능으로 설명한다.
+- **중요한 적용성 한계:** SLAAE29B 문서 머리말의 지원 부품 목록에는 MSPM0G3506-Q1, MSPM0G3507-Q1 등은 있으나 MSPM0G3529-Q1은 포함되어 있지 않다. 따라서 SLAAE29B의 CSC/KEYSTORE/TRNG 설명을 MSPM0G3529-Q1에 직접 적용되는 기능으로 인용하면 안 된다. G3529-Q1에 대해서는 해당 부품 데이터시트 및 실제 적용 가능한 G-Series TRM/errata로 별도 확인한다.
+- 판정: Rev B 본문 및 revision history는 VERIFIED(문서 내용); G3529-Q1 직접 적용성은 NOT ESTABLISHED / UNVERIFIED.
+- 기존 Rev A는 이전 revision 기록으로 보존한다. Rev B 확인 사실은 Rev A를 소급해 대체하는 것으로 쓰지 않는다.
