@@ -11,6 +11,7 @@ from hashlib import sha256
 import ipaddress
 import socket
 from typing import Callable, Iterable
+from types import MappingProxyType
 from urllib.parse import urljoin, urlsplit
 
 DEFAULT_TIMEOUT = (5.0, 20.0)
@@ -32,7 +33,7 @@ class SourceDefinition:
 
 
 # Exact URLs and hostnames are curated in code review. Model output is never accepted here.
-SOURCE_REGISTRY: dict[str, SourceDefinition] = {
+SOURCE_REGISTRY = MappingProxyType({
     item.source_id: item
     for item in (
         SourceDefinition(
@@ -106,7 +107,7 @@ SOURCE_REGISTRY: dict[str, SourceDefinition] = {
             5 * 1024 * 1024,
         ),
     )
-}
+})
 
 ALLOWED_HOSTS = frozenset(urlsplit(item.canonical_url).hostname for item in SOURCE_REGISTRY.values())
 
