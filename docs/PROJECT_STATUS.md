@@ -71,6 +71,10 @@ CRA를 모르는 개발자가 서보 드라이브 개발에 적용할 수 있는
 - 합계 14개 표본: 11 CONFLICT, 3 PARTIALLY_VERIFIED. 무작위 표본이 아닌 위험 기반/시간순 표본이며 전체 990개 오류율을 의미하지 않는다.
 - 출처 URL 누락 원인 표본 감사 및 전수 검증 큐: [ARCHIVE_SOURCE_GAP_AUDIT_2026-11-12.md](ARCHIVE_SOURCE_GAP_AUDIT_2026-11-12.md)
 
+## 제품 경계 및 적용성 템플릿
+- [SERVO_DRIVE_PRODUCT_BOUNDARY_TEMPLATE.md](SERVO_DRIVE_PRODUCT_BOUNDARY_TEMPLATE.md) 생성. Article 2/3 scope, digital connection, remote data processing, product boundary, core functionality 및 Annex III/IV 분류 입력을 수집하도록 구성.
+- 제품 SKU, EU 판매 형태, 실제 연결성, 원격 기능, ST MCU 주문 코드가 확인되지 않아 현재 적용성/등급은 UNVERIFIED.
+
 ## 다음 작업
 - [x] URL 후보 0개 원인 대표 6개 표본에서 확인, 출처 메타데이터 개선/검증 큐 문서화
 - [x] 위험 플래그에서 추가 9개 고위험 문서 수동 감사 (7 CONFLICT, 2 PARTIALLY_VERIFIED)
