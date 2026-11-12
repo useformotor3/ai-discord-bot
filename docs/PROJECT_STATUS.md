@@ -68,7 +68,7 @@ CRA를 모르는 개발자가 서보 드라이브 개발에 적용할 수 있는
 ## 수동 표본 감사
 - 초기 5개 조사 파일 감사: 4 CONFLICT, 1 PARTIALLY_VERIFIED. [상세](ARCHIVE_MANUAL_SAMPLE_AUDIT_5_2026-11-12.md)
 - 추가 9개 고위험 후보 감사: 7 CONFLICT, 2 PARTIALLY_VERIFIED. Article 10/11/14 혼동, 지원기간/무상 업데이트 조항 혼동, Class I 단정 및 Article 24/32 혼동 확인. [상세](ARCHIVE_MANUAL_AUDIT_9_2026-11-12.md)
-- 합계 14개 표본: 11 CONFLICT, 3 PARTIALLY_VERIFIED. 무작위 표본이 아닌 위험 기반/시간순 표본이며 전체 990개 오류율을 의미하지 않는다.
+- 당시 합계 14개 표본: 11 CONFLICT, 3 PARTIALLY_VERIFIED. 이후 추가 20개 감사 반영 누계는 34개: 25 CONFLICT, 9 PARTIALLY_VERIFIED. 무작위 표본이 아닌 위험 기반/시간순 표본이며 전체 990개 오류율을 의미하지 않는다.
 - 출처 URL 누락 원인 표본 감사 및 전수 검증 큐: [ARCHIVE_SOURCE_GAP_AUDIT_2026-11-12.md](ARCHIVE_SOURCE_GAP_AUDIT_2026-11-12.md)
 
 ## 제품 경계 및 적용성 템플릿
@@ -114,7 +114,7 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 
 ## 제조사 MCU 보안 자료 기준선 / 주장 대장 (2026-11-12)
 - [MANUFACTURER_SECURITY_SOURCE_REGISTER_2026-11-12.md](MANUFACTURER_SECURITY_SOURCE_REGISTER_2026-11-12.md): ST AN5156 Rev14 (June 2026), AN4992 Rev19 (July 2026), TI MSPM0G3529-Q1 SLASFO2B RevB (October 2025), TI SLAAE29A RevA 및 TI G-Series TRM revision index를 등록. 기능별 secure boot/update, debug/lifecycle, key storage, crypto/TRNG, memory isolation, manufacturing provisioning 비교.
-- [CLAIM_EVIDENCE_LEDGER.md](CLAIM_EVIDENCE_LEDGER.md): source ID, canonical URL, version, source location, claim type, status, correction, product scope 스키마 및 제조사 기술 주장 초기 8건.
+- [CLAIM_EVIDENCE_LEDGER.md](CLAIM_EVIDENCE_LEDGER.md): source ID, canonical URL, version, source location, claim type, status, correction, product scope 스키마 및 제조사 기술 주장 초기 12건(문서 수준 VERIFIED 11건, 최신판 확인 대기 PARTIALLY_VERIFIED 1건).
 - TI MSPM0G3529-Q1은 구체적인 비교 예시 부품. 이 제품이 프로젝트 대상 또는 ST MCU의 동급 대체품이라는 뜻은 아님.
 - TI의 MSPM0G3506 문서 인덱스에서 SLAAE29 RevB(2026-08-27), G-Series TRM RevF(2026-11-05) 목록을 확인. SLAAE29 RevB 본문 및 G3529-Q1 적용성은 아직 검증 전. 기존 RevA 기반 기술 설명은 이전 판본으로 한정.
 - ST AN5156은 여러 STM32 시리즈를 다루므로 정확한 ST 주문 코드가 없으면 부품별 기능을 확정하지 않는다.
