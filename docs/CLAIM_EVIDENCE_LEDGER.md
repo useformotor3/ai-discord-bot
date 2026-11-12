@@ -261,3 +261,6 @@ Detailed review: [TI_MSPM0G3529_Q1_FUNCTIONAL_SAFETY_REVIEW_2026-11-12.md](TI_MS
 | TI-TRM-REVF-004 | TI official product page lists MSPM0 G-Series 80-MHz TRM Rev F dated 2026-11-05. | TI MSPM0G3507 page, technical documentation list, https://www.ti.com/product/MSPM0G3507 | Metadata verified; 25,348,105-byte HTML/PDF body could not be rendered. Security register/body and Rev E→F diff remain NOT_VERIFIED. | VERIFIED (metadata only) |
 
 **Do not infer:** ASIL D equals SIL 3; the MCU alone achieves SIL 3; security IP is safety-qualified; or all 74 mechanisms are automatically implemented. Exact FMEDA values, diagnostic coverage, product architecture and system validation remain open.
+
+
+| TI-SAFETY-006 | TI general functional-safety guidance says to contact local sales if a selected product's analysis report is unavailable; TI safety-collateral access may require a valid Safety NDA. | https://www.ti.com/en-us/technologies/functional-safety ; https://www.ti.com/document-viewer/lit/html/SPRAD57 | General TI access-process guidance only; exact G3529-Q1 FMEDA availability, NDA, price and delivery route are not established. | VERIFIED (general TI guidance only) |
