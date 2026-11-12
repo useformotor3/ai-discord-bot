@@ -120,3 +120,5 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - ST AN5156은 여러 STM32 시리즈를 다루므로 정확한 ST 주문 코드가 없으면 부품별 기능을 확정하지 않는다.
 - TI 데이터시트의 PSA Level 1 “targeted”는 인증 취득 완료가 아니다. Automotive Q1/ASIL 관련 문구는 CRA 적합성 근거가 아니다.
 - 원본 archive, main.py, Gemini prompt, 운영 research workflow 및 main branch는 수정하지 않음.
+
+- 제조사 source register/claim ledger 반영 후 CRA Archive Integrity run [43133646074](https://github.com/useformotor3/ai-discord-bot/actions/runs/43133646074) completed/success. Unit tests 및 strict archive/history consistency 모두 통과.
