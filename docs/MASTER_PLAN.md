@@ -177,3 +177,19 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 - [ ] 실제 ST MCU 주문 코드/실리콘 리비전으로 boot/debug/crypto/NVM 통제 가능성 확인.
 - [ ] 제어주기/지터/부하/복구시간 등 수치형 합격 기준을 제품 요구사항·위험평가·기능안전 분석으로 승인.
 - [ ] 승인된 시험환경에서 TST 케이스 실행, raw evidence hash 기록 및 별도 검토.
+
+
+## 2026-11-12 통합 추적성 / 공식 가이드 검토
+- [x] 통합 end-to-end 추적성 표 작성: [CRA_INTEGRATED_TRACEABILITY_MATRIX.md](CRA_INTEGRATED_TRACEABILITY_MATRIX.md), TR-01..TR-20.
+- [x] CRA Commission guidance 공식 게시 메타데이터 기록: [CRA_COMMISSION_GUIDANCE_REVIEW_2026-11-12.md](CRA_COMMISSION_GUIDANCE_REVIEW_2026-11-12.md).
+- [x] TI SLAAE29 Rev B / G-Series TRM Rev F 및 ST AN5156 Rev14의 공식 인덱스 메타데이터 재확인(본문 내용 검증과 구분).
+- [ ] Commission C(2026) 5252 Annex PDF 원문을 확보해 페이지/문단별 Pass B/C 검증.
+- [ ] TI SLAAE29 Rev B PDF/HTML 원문 확보 및 Rev A와 revision diff 검토.
+- [ ] TI G-Series TRM Rev F(SLAU846) 본문 보안 관련 장 열람·부품별 적용성 확인.
+- [ ] 제품 경계 BD-01..BD-15를 실제 제품 사실로 채움.
+- [ ] ST MCU 전체 주문 코드/실리콘 revision 확보 후 part-specific security capability matrix 작성.
+- [ ] 승인된 제품 위험/안전 요구로 수치형 합격 기준 확정 및 실제 DUT 시험 실행.
+
+## 정기 공식 자료 점검
+- 주간 자동화 등록: 매주 월요일 09:00 Asia/Seoul. 범위는 EUR-Lex/European Commission/ENISA 및 ST/TI 공식 보안 문서.
+- 자동화는 자료 변경을 조사·요약하고 작업 브랜치 반영 후보를 제시한다. main.py/Gemini prompt/production workflow/main branch 변경 권한을 부여하지 않는다.
