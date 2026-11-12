@@ -228,3 +228,9 @@ ST와 비교할 기능 범위와 제품군을 먼저 정의한다. 동급 기능
 
 - main-only report #35/#36의 원문 대조 결과를 반영해 [CHANGE_PROPOSAL_MAIN_GEMINI.md](CHANGE_PROPOSAL_MAIN_GEMINI.md)에 직접 인용 exact-match, 법령 조항 위치, 법령 제목/개정 법령 메타데이터, 의무-설계 선택 분리 및 회귀 테스트를 추가했다.
 - 제안은 USER_APPROVAL_REQUIRED이며 실제 main.py/Gemini prompt/production workflow 변경은 없다.
+
+## 하드웨어 아키텍처 조항 매핑 정정
+
+- 하드웨어 아키텍처 문서의 CRA-HW-05/06 법령 매핑 오류를 수정했다. 기밀성=(e), 무결성=(f), 데이터 최소화=(g), 가용성/DoS=(h), 연결된 기기·네트워크 영향=(i).
+- Part I(2)(g) 데이터 최소화 항목을 CRA-HW-11로 별도 추가했다.
+- TI SLAAE29B는 문서 수준 본문 확인 완료, 그러나 supported-device list에 MSPM0G3529-Q1은 없어 해당 부품 적용성은 별도 확인 필요.
