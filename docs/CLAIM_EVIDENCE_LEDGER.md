@@ -146,3 +146,18 @@
 | CRA-ARCH-036-004 | CRA 정식 제목은 Regulation (EU) No 165/2014 및 Directive (EU) 2019/1939를 개정한다고 적는다. | legal_fact | 같은 원문 document title, EUR-Lex lines 160–161 / URL above | 정식 제목은 Regulations (EU) No 168/2013 및 (EU) 2019/1020, Directive (EU) 2020/1828의 개정을 명시. | CONFLICT |
 
 원본 main 파일 research_archive/2026-11-12_025529.md, blob SHA 0d5b3f17b13f8935a90c23400173e401a76e1953, commit 5cd4a18dbf5dc4712d669b29b8846af799f5efc1. 상세: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_36_2026-11-12.md](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_36_2026-11-12.md). 원본은 main에 보존하고 수정하지 않았다.
+
+## 12. Main-only reports #37–#39 감사
+
+| Claim ID | 주장 | 법령 근거 | 검증 결과 | 상태 |
+|---|---|---|---|---|
+| CRA-ARCH-037-001 | 지원기간/무상 업데이트 문구가 Annex I Part II의 단일 인용문이며 Article 11이 구체적 근거다. | Regulation (EU) 2024/2847 Article 13(8), Annex I Part II(8) | 원본 인용은 현행 원문과 일치하지 않는 합성 문구. Article 11 대신 구체 지원기간 Article 13(8), 무상 업데이트 Part II(8)로 구분 | CONFLICT / quote REJECTED |
+| CRA-ARCH-037-002 | 지원기간은 예상수명과 5년 중 무조건 더 긴 기간이다. | Article 13(8), 특히 support period 문단 | 최소 5년 원칙이나 제품 예상 사용기간이 5년 미만이면 예상 사용기간으로 정함. 예외를 생략하면 오도 | CONFLICT |
+| CRA-ARCH-038-001 | Annex I Part II의 (a)–(d) 인용은 원문 항목이다. | Annex I Part II(1)–(8) | Part II는 제조자 의무 8개 번호 항목. 원본 (a)–(d) 문구는 번호/본문 모두 일치하지 않음 | CONFLICT / quote REJECTED |
+| CRA-ARCH-038-002 | Article 13(2)에 expected lifetime/5 years/whichever shorter 무상 업데이트 문구가 있다. | Article 13(2),(8), Annex I Part II(8) | Article 13(2)는 위험평가 의무. 원본 문구는 해당 조항에 존재하지 않는 합성 인용. 지원기간은 13(8), 무상 업데이트는 Part II(8) | CONFLICT |
+| CRA-ARCH-039-001 | Article 13(6)은 지원기간 및 무료 보안 업데이트를 규정한다. | Article 13(6),(8), Annex I Part II(8) | 13(6)은 통합된 구성요소 취약점의 원 공급자 통지/수정 관련. 지원기간 13(8), 무료 업데이트 Part II(8) | CONFLICT |
+| CRA-ARCH-039-002 | Annex I Part I(2)(b)는 자동 업데이트/업데이트 알림 요건이다. | Annex I Part I(2)(b),(c) | (b)는 secure-by-default 및 원래 상태 reset, 자동 보안 업데이트/통지는 (c) | CONFLICT / quote REJECTED |
+
+**공식 원문 위치:** EUR-Lex Article 13(2),(6),(8) lines 888–908; Annex I Part I(2)(b),(c) 및 Part II(1)–(8) lines 1747–1773. https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R2847
+
+상세 파일: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_37_39_2026-11-12.md](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_37_39_2026-11-12.md). 원본 main archive는 수정하지 않았다.
