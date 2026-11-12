@@ -282,3 +282,13 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 - [x] Report #79 commit diff fetched and compared with EUR-Lex Article 14.
 - [x] File-level PARTIALLY_VERIFIED verdict and atomic claim CRA-ARCH-079-001 added.
 - [ ] Continue with report #80+ after checking latest main commits; do not merge/sync without approval.
+
+
+## TI MSPM0G3529-Q1 functional safety evidence
+- [x] TI SFFS983A Rev A opened; exact MSPM0G3529-Q1 supported-device inclusion verified.
+- [x] Component-level ASIL D systematic / ASIL B random-fault statements and integration assumptions recorded.
+- [x] QM/non-safety-critical status of DEBUG/AES/TRNG/KEYSTORE etc. recorded to prevent misuse in safety-critical path.
+- [ ] Retrieve exact G3529-Q1 FMEDA/safety analysis report and confirm failure rates, diagnostic coverage, hardware metrics and restrictions.
+- [ ] Map TI manual's host/actuator-disable assumptions and safety mechanisms to IF-01..IF-09 and test/evidence register as a comparison example, not target-product selection.
+- [ ] Acquire/read full G-Series TRM Rev F and exact G3529-Q1 register applicability; do not infer from index metadata.
+- [ ] Do not convert ASIL D/ASIL B into IEC 61508 SIL 3 equivalence or certification claim.
