@@ -214,3 +214,8 @@
 - [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_123_2026-11-12.md](docs/ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_123_2026-11-12.md): CONFLICT. Article 13(7) 오인용, Article 13(18)/(19) 누락, Annex II Part I/II라는 잘못된 구조 및 합성 인용, 서보 드라이브 Class II 근거 없음.
 - Annex II 사용자 문서 항목 1~9 및 8(a)~(f)를 상세 감사 문서에서 확인. SBOM 접근 위치는 제조사가 사용자에게 SBOM을 제공하기로 한 경우만 해당.
 - 최신 main report #123, commit 1f9dc5e28d760ce5b47efda0e897a0a540d33ecb. 원본 main archive는 수정하지 않음.
+
+
+## 2026-11-12 추가 — CRA Annex II 사용자 정보 템플릿
+- [SERVO_DRIVE_CRA_USER_SECURITY_INFORMATION_CHECKLIST.md](docs/SERVO_DRIVE_CRA_USER_SECURITY_INFORMATION_CHECKLIST.md): Article 13(16)–(19), Annex II(1)–(9)를 서보 드라이브 사용자 지침서·보안 정보·증거 추적 항목으로 변환한 작업용 템플릿.
+- 제품별 내용은 모두 미확정. “Digital Product Passport”는 법정 CRA 명칭이 아니며 Class II 분류는 Annex III 제품 기능 근거 없이 추정하지 않음.
