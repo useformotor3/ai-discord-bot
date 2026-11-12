@@ -108,3 +108,8 @@ ST와 비교할 기능 범위와 제품군을 먼저 정의한다. 동급 기능
 - 플래그는 확정 오류가 아니다. 중복 카운트 가능. 각 문서와 공식 원문을 대조해야 한다.
 - URL 후보 0개는 과거 자료의 source field가 문서명 위주였을 가능성을 시사한다. 출처 링크 복원 작업이 필요하다.
 - GitHub Actions run: https://github.com/useformotor3/ai-discord-bot/actions/runs/43127072320
+
+
+## 수동 표본 감사
+- [ARCHIVE_MANUAL_SAMPLE_AUDIT_5_2026-11-12.md](ARCHIVE_MANUAL_SAMPLE_AUDIT_5_2026-11-12.md): 초기 5개 파일을 EUR-Lex와 대조, 4 CONFLICT / 1 PARTIALLY_VERIFIED.
+- 전체 오류율을 나타내는 무작위 표본은 아니다. 발견한 오류 유형을 전수 검증 규칙으로 전환하는 데 사용한다.
