@@ -258,3 +258,9 @@
 - 공식 registry의 source_id만 fetch할 수 있으며, HTTPS/host/DNS/redirect/MIME/size/timeout gate와 SHA-256 metadata를 제공한다.
 - live network fetch 및 Gemini API 호출 없음. 생산 코드/프롬프트/workflow/main branch 미변경.
 - 다음 세션은 최신 Actions 결과 및 source_evidence.py/test diff를 먼저 확인하고 Phase A 검증을 마무리한다. Phase B 이후는 별도 승인 필요.
+
+
+### Phase A CI 결과 — 2026-11-13
+- 최신 Phase A HEAD `21efe17ac151dcdb630abeed20769e4224ec3356`, Actions [#43330278366](https://github.com/useformotor3/ai-discord-bot/actions/runs/43330278366) success.
+- 전체 45 tests PASS, archive/history strict audit 990/990 consistent.
+- mock-only 결과다. 실제 공식 URL fetch/API 호출은 하지 않았다. DNS preflight에는 TOCTOU 한계가 있어 운영 적용 전 보완 필요.
