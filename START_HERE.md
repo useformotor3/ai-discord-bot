@@ -73,3 +73,9 @@
 ## 2026-11-12 추가 업데이트 — 하드웨어 참조 설계
 - [서보 드라이브 CRA 보안 하드웨어 아키텍처](docs/SERVO_DRIVE_CRA_SECURITY_HARDWARE_ARCHITECTURE.md) 생성. 제품별 사실이 미확정이므로 설계 초안이며 적용성 UNVERIFIED.
 - TI G-Series TRM Rev F (2026-11-05)는 공식 기술자료 인덱스에서 확인했으나 본문은 열람 실패. SLAAE29 Rev B 본문도 미확보. Rev A/데이터시트에서 직접 확인된 범위와 최신판 인덱스 메타데이터를 혼동하지 않는다.
+
+
+## 2026-11-12 추가 업데이트 — 아카이브 표본 정정 대장
+- [ARCHIVE_CLAIM_CORRECTION_LEDGER_2026-11-12.md](docs/ARCHIVE_CLAIM_CORRECTION_LEDGER_2026-11-12.md)에 34개 고유 원본의 SHA-1, 원문 행 위치, 주장 요약, CRA 정정 룰, 판정 상태를 연결.
+- 감사 ID 35개 중 A-013/B-006은 동일 원본 파일/SHA이므로 중복 1개 제거. 고유 파일 기준 25 CONFLICT / 9 PARTIALLY_VERIFIED.
+- 34개는 비무작위 표본이며 990개 전체 오류율이 아니다. 원본 archive는 변경하지 않음.
