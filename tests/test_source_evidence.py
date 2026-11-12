@@ -90,8 +90,9 @@ class SourceEvidenceTests(unittest.TestCase):
 
     def test_non_https_registry_target_is_rejected(self):
         fetcher = self.make_fetcher([FakeResponse()])
+        from source_evidence import _validate_https_target
         with self.assertRaisesRegex(SourceFetchError, "HTTPS_REQUIRED"):
-            fetcher._validate_for_test("http://eur-lex.europa.eu/x", "eur-lex.europa.eu")
+            _validate_https_target("http://eur-lex.europa.eu/x", "eur-lex.europa.eu", lambda _h: [PUBLIC_IP])
 
     def test_redirect_to_untrusted_host_is_blocked(self):
         response = FakeResponse(status=302, headers={"Location": "https://attacker.example/file"})
