@@ -215,3 +215,11 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 - [x] main-only report #35/#36에서 관찰된 허위/합성 인용과 조항 혼동을 변경 제안서의 실증 근거로 등록.
 - [x] quote exact-match, legal location cross-check, legal metadata check, Article 13/14/Annex I Part II(8) 분리, Secure Boot/TPM 설계 권고와 법적 의무 구분을 회귀 테스트 요구사항에 추가.
 - [ ] P0/P1/P2 변경은 사용자 승인 후에만 구현. 현재 main.py/Gemini prompt/production workflow 변경 없음.
+
+## 하드웨어 아키텍처 조항 매핑 정정
+
+- [x] CRA-HW-05 confidentiality/integrity의 조항 분리·정정: Part I(2)(e)/(f).
+- [x] CRA-HW-06 availability/resilience 정정: Part I(2)(h),(i).
+- [x] 데이터 최소화 Part I(2)(g)를 CRA-HW-11로 별도 추가.
+- [x] TI SLAAE29B 문서 내용과 MSPM0G3529-Q1 part applicability 경고를 하드웨어 아키텍처에 반영.
+- [ ] 수정된 아키텍처/요구사항 매트릭스 전체 조항을 EUR-Lex와 한 번 더 비교하고, 제품별 적용성은 실제 SKU/MCU 입력 후 확정.
