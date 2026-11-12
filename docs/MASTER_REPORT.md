@@ -87,8 +87,9 @@ TI 공식 비교 기준 예시로 MSPM0G3529-Q1 데이터시트(SLASFO2B, revise
 
 ## 기존 조사 아카이브 품질 감사
 - 990개 전체 후보 추출 결과: 4,400개 주장 문단, 1,224개 Article 후보, URL 문자열 후보 0개. 자동 추출은 법적 검증이 아니다.
-- 초기 5개 파일 수동 대조: 4건 CONFLICT, 1건 PARTIALLY_VERIFIED. Article 13/14, Annex I/II, Annex VII 위치 및 직접 인용 정확성 문제를 확인했다.
-- 상세: [ARCHIVE_MANUAL_SAMPLE_AUDIT_5_2026-11-12.md](ARCHIVE_MANUAL_SAMPLE_AUDIT_5_2026-11-12.md).
+- 수동 표본 14개 파일: 11건 CONFLICT, 3건 PARTIALLY_VERIFIED. 무작위 표본이 아니므로 990개 전체 오류율로 일반화하지 않는다.
+- 반복 오류: Article 10/11/14 혼동, Article 24/32 혼동, 지원기간과 무상 업데이트 조항 혼동, 24h/72h 신고 범위 과장, 서보 드라이브 Class I 자동 단정.
+- 상세: [초기 5개 감사](ARCHIVE_MANUAL_SAMPLE_AUDIT_5_2026-11-12.md), [추가 9개 감사](ARCHIVE_MANUAL_AUDIT_9_2026-11-12.md).
 
 ## 미해결 사항
 - ST MCU의 정확한 부품 번호/제품군 미확정
