@@ -64,6 +64,10 @@ class SourceEvidenceTests(unittest.TestCase):
             self.assertIn(parsed.hostname, ALLOWED_HOSTS)
             self.assertGreater(source.max_bytes, 0)
 
+    def test_registry_cannot_be_mutated_at_runtime(self):
+        with self.assertRaises(TypeError):
+            SOURCE_REGISTRY["UNAPPROVED"] = SOURCE_REGISTRY["CRA_EURLEX_2024_2847"]
+
     def test_unknown_source_id_cannot_supply_arbitrary_url(self):
         fetcher = self.make_fetcher([])
         with self.assertRaisesRegex(SourceFetchError, "UNKNOWN_SOURCE_ID"):
