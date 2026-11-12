@@ -141,3 +141,27 @@
 - TI MSPM0G3507 product page: manufacturer product-page summary / feature index, not a replacement for the datasheet, TRM, errata or security manual.
 - TI MSPM0 G-Series TRM Rev F: official reference manual revision listed; full body not read in this session.
 - TI SLAAE29 Rev B: application note body read; supported-device scope controls applicability.
+
+
+## 10. TI MSPM0G3529-Q1 Functional Safety Manual — direct applicability verified (2026-11-12)
+
+### Official source
+- TI *Functional Safety Manual for MSPM0Gx51x and MSPM0Gx52x*, SFFS983A, Rev A, October 30, 2026:
+  https://www.ti.com/document-viewer/lit/html/SFFS983A
+- TI MSPM0G3529-Q1 product page:
+  https://www.ti.com/product/MSPM0G3529-Q1
+- SFFS983A header supported-device list explicitly includes MSPM0G3529-Q1. This is direct part-scope evidence, unlike the SLAAE29B application note support list, which did not include G3529-Q1.
+
+### Verified contents
+- §2: SEooC; developed according to relevant ISO 26262:2018 requirements; systematic integrity ASIL D; random-fault integrity mechanisms up to ASIL B.
+- §4.2: internal error response options include actuator outputs to safe state, device reset, or error reporting to host CPU.
+- §4.3: system-level assumptions include integrator selection/implementation of diagnostics from FMEDA and safety manual, host-provisioned actuator disable mechanism, host monitoring of communication loss, random-fault architectural metrics up to ASIL B, systematic-fault requirements up to ASIL D, FTTI >10 ms, MPFDTI <8 h.
+- §4.3 explicitly treats DEBUG, RTC, AES, TRNG, KEYSTORE, MATHACL and DFT as QM/not safety-critical for this safety concept; these IPs shall not be used in safety-critical applications. It also excludes unprotected SRAM bank from safety-critical contexts and recommends no flash programming during safety-critical tasks.
+- §6 lists 74 mechanism entries, including register checks, ADC/comparator/CPU/memory/flash/watchdog/clock/BOR/PWM/CAN-FD and common-cause mechanisms.
+- Revision history §D: document changes from Aug 13, 2025 to Oct 30, 2026; Rev A expanded scope to MSPM0Gx52x and MSPM0Gx51x and updated multiple module/safety mechanism descriptions.
+
+### Important limits
+- ASIL D systematic capability and ASIL B random-fault capability are component-level automotive functional-safety statements, not SIL 3 certification or direct equivalence to IEC 61508 SIL 3.
+- The manual assumes system integrator implementation and selection of diagnostics, external actuator-disable mechanism and host supervision. Exact FMEDA failure rates/diagnostic coverage and product implementation remain to be retrieved/verified.
+- TI MSPM0 G-Series TRM SLAU846 Rev F is listed on the MSPM0G3507 official product page as dated 2026-11-05, but the 25,348,105-byte HTML/PDF viewer cannot render it in this environment. Revision metadata VERIFIED; Rev F register/security body and Rev E→F diff NOT_VERIFIED.
+- Review details: [TI MSPM0G3529-Q1 Functional Safety Manual Review](TI_MSPM0G3529_Q1_FUNCTIONAL_SAFETY_REVIEW_2026-11-12.md).
