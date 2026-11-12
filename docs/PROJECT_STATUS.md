@@ -108,3 +108,5 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - 반복 오류: Article 10/11/14 오기, Article 24/31/32 혼동, Article 13(8) 지원기간 예외 방향, Annex I Part I/II 및 Annex II/III 혼동, 허위 직접 인용, 존재하지 않는 산업 자동화/서보 드라이브 Annex III 분류.
 - 원본 research_archive 990개는 수정하지 않았다. main.py/Gemini prompt/운영 run workflow 미수정.
 - 기준 원문 EUR-Lex Regulation (EU) 2024/2847: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R2847 (확인일 2026-11-12).
+
+- 추가 감사 반영 후 CRA Archive Integrity workflow run [43130099298](https://github.com/useformotor3/ai-discord-bot/actions/runs/43130099298) completed/success. 단위 테스트와 strict archive/history consistency 단계 모두 통과.
