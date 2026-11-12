@@ -405,3 +405,11 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - Created docs/SERVO_DRIVE_CRA_USER_SECURITY_INFORMATION_CHECKLIST.md, mapping Article 13(16)–(19) and Annex II(1)–(9) into a practical evidence checklist.
 - All product-specific rows remain NOT_STARTED. No SKU, product boundary, interface, data storage, update behavior, support-period evidence or Annex III category assessment has been supplied.
 - This is a working template, not a conformity declaration or evidence that the product meets CRA.
+
+
+## Main-only report #124 audit — 2026-11-12
+- Main report #124: commit 17eebdb0af513ae2b6800e13d55b798d095631cc; source research_archive/2026-11-12_101546.md.
+- Verdict CONFLICT. Topic is valid, but vulnerability handling is mislocated in Annex I Part I Section 2 (actual Annex I Part II(1)–(8)); Raw Text Quote is synthetic/wrongly numbered. Universal cryptographic-signature and fail-safe recovery architecture mandates are overstated.
+- Correct map: Part I(2)(c) applicable auto-update default/opt-out/notification/postponement; Part II(5) CVD; (6) vulnerability info/contact; (7) secure distribution; (8) timely/free updates with tailor-made business-user exception; Article 13(17)/Annex II(2) single contact.
+- Detailed audit: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_124_2026-11-12.md](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_124_2026-11-12.md). Claim row CRA-ARCH-124-001.
+- No main source/protected code/prompt/workflow changes; no merge/rebase/sync. No tests/CI PASS claimed.
