@@ -137,3 +137,13 @@ ST와 비교할 기능 범위와 제품군을 먼저 정의한다. 동급 기능
 - 핵심 공식 조항 맵: 지원기간 Article 13(8), 종료일 고지 Article 13(19)/Annex II(7), SBOM Annex I Part II(1), 업데이트 분리 Part II(2), CVD Part II(5)–(6), 안전한 배포 Part II(7), 무상 보안 업데이트 Part II(8), 신고 Article 14, 제품 적합성 평가 Article 32, 기술문서 Article 31, open-source stewards Article 24.
 - 제품 속성 보안은 Annex I Part I(2)(b)/(d)/(f)/(j). Article 7/Annex III의 core functionality 기준 없이 서보 드라이브 전체를 Class I/II로 단정하지 않는다.
 - 모든 과거 archive 주장은 여전히 개별 검증 전까지 UNVERIFIED이며, 표본 결과를 전체 오류율로 일반화하지 않는다.
+
+
+## 제조사 MCU 보안 자료 / claim evidence ledger (2026-11-12)
+- 제조사 source register 및 기능별 비교: [MANUFACTURER_SECURITY_SOURCE_REGISTER_2026-11-12.md](MANUFACTURER_SECURITY_SOURCE_REGISTER_2026-11-12.md).
+- 구조화된 주장/근거 대장: [CLAIM_EVIDENCE_LEDGER.md](CLAIM_EVIDENCE_LEDGER.md).
+- ST AN5156 Rev14 June 2026: 제품군별 보안 기능, RDP/product state, WRP/PCROP/HDP/MPU/firewall/TrustZone, SB/SFU, SFI, 암호·난수 가이드. 특정 MCU 지원 여부는 exact part datasheet/reference manual/errata 확인 필수.
+- TI MSPM0G3529-Q1 SLASFO2B RevB Oct 2025: §8.18 secure boot/update, debug security, AES-128/256, firewalls, up to four AES keys, CSC, monotonic counter, TRNG. §8.19–8.21 TRNG/AESADV/Keystore 상세.
+- TI SLAAE29A RevA Dec 2025의 CSC/secure boot/secure storage 구조를 확인. TI 공식 G3506 자료목록에서 RevB Aug 27 2026 및 G-Series TRM RevF Nov 5 2026이 최신 문서로 표시됨. RevB 본문과 G3529-Q1 적용성은 추가 확인 대기.
+- TI 제품 페이지의 PSA L1 certification targeted 표현은 인증 완료 증거가 아니다. Automotive Q1 / ASIL targeted는 CRA 적합성 판단과 별개.
+- ST 실제 MCU 주문 코드 미확정이므로 ST 기능은 제품군 자료 기준선이며 부품별 검증은 UNVERIFIED.
