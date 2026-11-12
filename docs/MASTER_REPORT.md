@@ -46,7 +46,9 @@ Annex I Part II의 핵심 취약점 처리 의무에는 SBOM, 지체 없는 취�
 근거: [Regulation (EU) 2024/2847](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R2847), [Implementing Regulation (EU) 2025/2392](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R2392), [European Commission reporting obligations](https://digital-strategy.ec.europa.eu/en/policies/cra-reporting).
 
 ## 2. 제품 적용 범위와 제품 분류 판단
-작성 상태: 제품의 기능·의도된 용도·연결성·시장·구성 정보를 바탕으로 판단 절차를 작성한다. 서보 드라이브라는 명칭만으로 적용 여부나 분류를 단정하지 않는다.
+제품별 사실을 기록할 입력 시트는 [SERVO_DRIVE_PRODUCT_BOUNDARY_TEMPLATE.md](SERVO_DRIVE_PRODUCT_BOUNDARY_TEMPLATE.md)에 작성했다. Article 2/3의 디지털 요소 제품 및 연결성 정의, Article 7과 Implementing Regulation (EU) 2025/2392의 core-functionality 기준을 사용한다. 드라이브 본체, 내장 펌웨어, 별도 옵션 모듈, PC 툴, 앱, 원격 데이터 처리 서비스, 센서/엔코더, 상위 시스템의 경계를 구분한다.
+
+현재 제품 SKU, EU 판매 형태, 정확한 연결 인터페이스, 원격 데이터 처리의 기능 필수성, ST MCU 주문 코드가 확인되지 않았으므로 CRA 적용성과 Important Class I/II 판단은 UNVERIFIED로 유지한다. 서보 드라이브라는 명칭만으로 적용 여부나 분류를 단정하지 않는다.
 
 판단에 필요한 최소 입력은 제품의 시장/판매 형태, 단독/시스템 통합 형태, 네트워크 연결/원격 처리 여부, 의도된 목적, 소프트웨어/펌웨어 기능, 업데이트 경로, 제품 경계 및 Annex III/IV 목록의 정확한 분류 문구다. 제조사·MCU가 아니라 완제품의 기능과 법령상 정의를 기준으로 판단한다.
 
