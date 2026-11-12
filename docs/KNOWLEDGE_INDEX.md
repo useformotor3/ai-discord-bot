@@ -250,3 +250,9 @@ ST와 비교할 기능 범위와 제품군을 먼저 정의한다. 동급 기능
 
 - [SERVO_DRIVE_CRA_SECURITY_HARDWARE_ARCHITECTURE.md](SERVO_DRIVE_CRA_SECURITY_HARDWARE_ARCHITECTURE.md)에 IF-01..IF-09 인터페이스 계약 및 회로도 리뷰 체크리스트를 추가했다.
 - 통신→모션 명령, gate driver, 센서, NVM, Secure Element, debug/service, power/reset, 제조 프로비저닝의 경계를 문서화했으며 제품별 전기 수치/부품/핀맵은 미확인이다.
+
+
+## Main-only reports #40–#55 audit
+- [Audit #40–#55](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_40_55_2026-11-12.md): 2 PARTIALLY_VERIFIED / 14 CONFLICT at file level; no file fully cleared for verbatim legal quotation.
+- Key legal mapping: Article 13(8) support period; Article 14 reporting of actively exploited vulnerabilities and severe incidents; Annex I Part II(7) secure update distribution and Part II(8) free updates; Annex II point 8(d) secure decommissioning instructions; Annex I Part I(2)(m) permanent data/settings removal.
+- Claim rows CRA-ARCH-040-001 through CRA-ARCH-055-001 added to CLAIM_EVIDENCE_LEDGER.md.
