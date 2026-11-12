@@ -169,3 +169,9 @@ TI MSPM0G3529-Q1 제품 페이지는 MSPM0 G-Series TRM을 참조한다. TI MSPM
 - 신규 문서 docs/ARCHIVE_PASS_BC_AUDIT_BATCH_02_2026-11-12.md 생성.
 - 8개 파일 모두 Raw Text Quote를 현행 CRA 직접 인용으로 재사용할 수 없다고 판정. 지원기간 shorter/longer 역전, Article 14 신고 범위 과장, Part I/II 혼동, draft 조항 번호 사용이 반복됨.
 - Batch 01+02 합계 16/34개 파일 재검증. 독립 제3자 검토가 아니라 동일 AI 세션의 별도 재검증이며, 이 수치를 34개 전체 검증 완료로 표현하지 않음.
+
+
+## 인용 신뢰성 — Pass B/C Batch 03
+B-003–B-010 8개 파일을 EUR-Lex 원문으로 재검증했다. B-009의 secure-by-default 문구는 Annex I Part I(2)(b)와 취지가 일치하지만 조항 위치 및 “original state” 표현을 바로잡아야 한다. B-010의 Class II 절차는 Article 32(3)이며, Article 24로 잘못 인용했고 Annex III Class II 분류 근거 없이 서보 드라이브를 Class II로 단정했다. 기술문서 Article 31, 적합성 평가 Article 32, DoC Article 28, CE 원칙 Article 29와 부착 규칙 Article 30을 분리한다. 상세: [Batch 03](ARCHIVE_PASS_BC_AUDIT_BATCH_03_2026-11-12.md).
+
+Pass B/C 합계 24/34개 파일 진행, 10개 남음. 동일 AI 세션의 별도 재검증 절차이며 독립 제3자 법률 검토는 아니다.
