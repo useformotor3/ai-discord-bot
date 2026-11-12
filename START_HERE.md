@@ -225,3 +225,10 @@
 - [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_124_2026-11-12.md](docs/ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_124_2026-11-12.md): CONFLICT. 취약점 처리 요구사항은 Annex I Part II(1)–(8)이며 Part I Section 2가 아님. 직접 인용문은 합성/번호 오류. 서명 검증과 복구 아키텍처를 보편적 직접 의무로 과장.
 - 올바른 구분: Part I(2)(c) 자동 업데이트 기본 설정(해당 시) 및 사용자 제어; Part II(5) CVD; (6) 연락/정보 공유; (7) 안전한 배포; (8) 지체 없는 무상 업데이트(맞춤형 제품의 business-user 합의 예외).
 - main latest at discovery: #124, commit 17eebdb0af513ae2b6800e13d55b798d095631cc. 원본 main archive 수정 없음.
+
+
+## 2026-11-12 추가 — Gemini 파이프라인 변경안 검토 대기
+- main auto-archive reports #125–#128 감사: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_125_128_2026-11-12.md](docs/ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_125_128_2026-11-12.md), 4건 모두 CONFLICT.
+- Gemini 명령문 검토 초안: [PROPOSED_GEMINI_PROMPT_V2.md](docs/PROPOSED_GEMINI_PROMPT_V2.md).
+- 1차 구현 제안 및 구체 diff/테스트/롤백: [CHANGE_PROPOSAL_MAIN_GEMINI.md](docs/CHANGE_PROPOSAL_MAIN_GEMINI.md) §14.
+- 운영 main.py/prompt/parser/workflow는 승인 전 변경 금지. 현재는 제안 문서만 작업 브랜치에 기록.
