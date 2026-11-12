@@ -36,12 +36,17 @@ CRA를 모르는 개발자가 서보 드라이브 개발에 적용할 수 있는
 - scripts/audit_archive.py: archive/history 경로, 중복, orphan, malformed history 검사. state.count는 일일 카운터로만 표시.
 - tests/test_audit_archive.py: 정상/누락/고아/중복/잘못된 이력 항목 테스트 3개.
 - .github/workflows/archive-audit.yml: 작업 브랜치 push 및 수동 실행 시 테스트와 strict audit 수행.
-- 로컬 unittest: 3개 테스트 통과. GitHub Actions 실행 결과는 아직 확인하지 못했으므로 CI 통과로 표현하지 않는다.
+- 로컬 unittest: 3개 테스트 통과. GitHub Actions 최근 4회 실행의 audit job 및 단위 테스트/strict 검사 단계 모두 success 확인. [실행 이력](https://github.com/useformotor3/ai-discord-bot/actions/workflows/archive-audit.yml?query=branch%3Acra-project-foundation)
+
+## 별도 인벤토리 파이프라인
+- scripts/build_archive_inventory.py: 990개 archive에서 파일 SHA-256, 크기, 제목/헤딩, URL 후보, CRA 조항/Annex 후보, 주제 키워드 후보, history 메타데이터 추출.
+- 모든 레코드는 UNVERIFIED_AI_ARCHIVE로 표시. 키워드 분류/URL 추출은 후보일 뿐 법령·링크·인용 정확성 검증이 아님.
+- tests/test_build_archive_inventory.py: 메타데이터 추출/미분류/중복 이력 테스트.
+- .github/workflows/archive-inventory.yml: 수동 실행 및 archive 변경 시 인벤토리 JSON을 30일 Artifact로 업로드. 최초 실행 상태 확인 중.
 
 ## 다음 작업
-- [ ] GitHub Actions CI 실행 결과 확인
-- [ ] inventory 검사 결과를 기준 SHA와 함께 보관하는 기능 추가
-- [ ] main.py 실패 처리·근거 스키마·검증 게이트 설계
+- [ ] 인벤토리 워크플로 테스트/Artifact 확인
+- [ ] main.py 실패 처리·근거 스키마·검증 게이트 변경 제안서 작성 (사용자 승인 전 수정 금지)
 - [ ] 기존 990개 자료 전체 주제 분류 및 주장/출처 인벤토리
 - [ ] CRA 공식 근거 전수 검증
 - [ ] 서보 드라이브 적용성 분석
