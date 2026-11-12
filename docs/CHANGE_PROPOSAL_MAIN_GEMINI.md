@@ -180,3 +180,40 @@
 15. Secure Boot/TPM/Measured Boot가 법령의 보편적 의무로 표현되면 risk-based design recommendation으로 강등하거나 게시 보류.
 
 **상태:** 위 내용은 변경 제안에만 추가했다. main.py, Gemini prompt, parsing/validation gate, production workflow는 수정하지 않았으며 사용자 승인 대기 상태를 유지한다.
+
+
+## 11. 신규 실증 사례 — main-only reports #81–#122 (2026-11-12)
+
+### 관찰된 실패 증거
+
+- Reports #81–#121의 41개 연속 commit diff를 확인하고 EUR-Lex Regulation (EU) 2024/2847 Article 13–14, Annex I Part I/II, Annex II와 대조했다.
+- 파일 단위 판정: 33 CONFLICT / 8 PARTIALLY_VERIFIED / 0 VERIFIED. 41개 Raw Text Quote 블록 모두 직접 인용으로 재사용 불가.
+- 후속 #122도 CONFLICT: secure-by-default/access-control 주제는 관련성이 있으나 Annex I 구조·인용이 잘못되고 forced password change, RBAC, 모든 미사용 포트 비활성화를 보편적 법적 의무로 과장했다.
+- 상세 근거: ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_81_121_2026-11-12.md, ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_122_2026-11-12.md, claim ledger CRA-ARCH-081-001..CRA-ARCH-122-001.
+
+### 반복 실패 유형
+
+1. Article 13(8) support period와 Annex I Part II(8) free security updates를 반복 혼동.
+2. 지원기간의 5년 원칙을 expected lifetime보다 무조건 짧은/긴 기간으로 오인하고, expected use가 5년 미만이면 그 예상 사용기간에 대응한다는 예외를 누락 또는 역전.
+3. Article 14를 모든 취약점 신고, 무상 업데이트 또는 일반적인 취약점 처리 조항으로 오인. 실제 신고 대상은 actively exploited vulnerability 및 severe incident로 구분해야 한다.
+4. 존재하지 않는 Annex I 세부 번호, Article 하위항목, 합성 Raw Text Quote를 생성.
+5. Secure Boot, TPM/Root of Trust, 디지털 서명 알고리즘, dual-bank/rollback, zero-downtime update, 강제 최초 비밀번호 변경, RBAC, 모든 포트 비활성화 등을 법령이 일률적으로 명령하는 것처럼 표현.
+6. Secure-by-default/access control/attack surface와 같은 정확한 상위 개념이 있더라도 잘못된 번호·합성 인용·구현 과장이 포함되면 파일 전체를 VERIFIED로 승격할 수 없음.
+
+### P0/P1 변경 제안에 추가할 구체적 acceptance criteria
+
+- Legal clause registry: 법령별 Article/Annex/Part/point의 공식 구조를 기계 판독 가능한 고정 레지스트리로 유지하고, 모델 출력의 legal_location이 존재하지 않거나 잘못된 경우 자동 거부.
+- Source-bound quote only: 원문 수집기가 실제 본문을 가져오지 못했으면 source_excerpt와 direct_quote 필드는 비워 둔다. 모델은 인용문을 생성할 권한이 없다.
+- Exact-match quote gate: 정규화된 인용 문자열이 확보된 원문에 존재하지 않으면 quote=REJECTED, claim status 최대 UNVERIFIED, archive 확정 저장/게시 금지.
+- Obligation-vs-design taxonomy: LAW_REQUIREMENT, RISK_BASED_DESIGN_OPTION, PRODUCT_SPECIFIC_FACT, INTERPRETATION을 분리한다. Secure Boot/RBAC/TPM 등은 원문에 직접 명시되지 않는 한 LAW_REQUIREMENT로 허용하지 않는다.
+- Cross-clause guard: Article 13(8), Article 13(9), Article 14, Annex I Part I(2), Annex I Part II(1)–(8), Annex II(2)/(8)(d)를 서로 다른 obligation ID로 매핑하고 상호 대체를 금지한다.
+- Support-period exception test: 테스트 fixture에 expected use 3년, 5년, 10년 사례를 넣어 “3년 예상 제품은 3년 support period; 일반 제품은 최소 5년; 예상 사용이 10년이면 support period를 10년 수준으로 정당화”하는 방향을 검증한다. 구체 사례는 법률 자문이 아닌 문언 처리 회귀 테스트다.
+- Article 14 dual-track test: actively exploited vulnerability와 severe incident를 분리하고, 24h/72h/14일-after-measure vs 24h/72h/1개월-after-incident-notification을 각각 검증한다.
+- No class inference: 서보 드라이브 제품 분류는 실제 core functionality와 Annex III/Implementing Regulation 기준이 입력되기 전 자동 확정하지 않는다.
+- Fail closed: 원문 미수집, legal-location mismatch, quote mismatch, 필수 메타데이터 누락 시 report success/archive count/history update/Discord publication을 차단한다.
+
+### 현재 제안 상태와 사용자 승인 게이트
+
+- 위 항목은 P0/P1 변경 제안의 추가 증거와 acceptance criteria일 뿐이다.
+- main.py, Gemini prompt, parser/validator, model selection/fallback, context construction, production workflow 및 run.yml은 변경하지 않았다.
+- 구현 전에는 이 추가 제안에 대해 별도 사용자 승인을 받고, 구체 diff·영향·회귀/비용 위험·테스트·롤백을 다시 제시한다.
