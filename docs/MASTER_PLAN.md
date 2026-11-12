@@ -223,3 +223,10 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 - [x] 데이터 최소화 Part I(2)(g)를 CRA-HW-11로 별도 추가.
 - [x] TI SLAAE29B 문서 내용과 MSPM0G3529-Q1 part applicability 경고를 하드웨어 아키텍처에 반영.
 - [ ] 수정된 아키텍처/요구사항 매트릭스 전체 조항을 EUR-Lex와 한 번 더 비교하고, 제품별 적용성은 실제 SKU/MCU 입력 후 확정.
+
+## 하드웨어 블록 설계 선택 단계
+
+- [x] 일반 참조 아키텍처에 DEC-01..DEC-10 설계 선택 매트릭스 추가.
+- [x] G-01..G-06 설계 동결 입력 게이트 정의.
+- [ ] 제품 SKU/BD-01..15 및 실제 ST MCU 전체 주문 코드 확보 후 DEC 선택과 part-specific capability matrix 완료.
+- [ ] timing/jitter, communications, power/reset, gate-driver/safety boundary를 승인된 수치/회로 증거로 검증.
