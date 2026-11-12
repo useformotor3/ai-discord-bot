@@ -109,6 +109,9 @@
 
 ## 8. TI SLAAE29 Rev B 본문 직접 확인 (2026-11-12)
 
+> **정정:** 아래 8절의 직접 본문 확인 결과가 7절의 이전 “Rev B 원문 재현 실패” 기록보다 최신이다. 7절은 당시 접근 실패 이력으로 보존하며, Rev B 본문 상태는 8절을 기준으로 한다.
+
+
 - TI 공식 MSPM0G3506 제품 기술자료 목록에서 SLAAE29 Rev B / 2026-08-27 링크를 열어 TI HTML 문서 뷰어의 실제 본문을 확인했다.
 - 공식 HTML 문서: https://www.ti.com/document-viewer/lit/html/SLAAE29
 - 문서 머리말은 SLAAE29B, January 2023–August 2026을 표시한다.
