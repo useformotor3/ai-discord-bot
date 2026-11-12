@@ -268,3 +268,11 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 - [x] Four atomic claim rows and detailed audit report added.
 - [ ] Continue auditing future main reports only after confirming new commits; no auto-sync/merge.
 - [ ] Improve automated research quality gate proposal (exact quote, article/annex/part/point validation, obligation vs design-option classification) only after explicit approval.
+
+
+## Main-only reports #60–#78 audit
+- [x] main #60–#78 commit diffs fetched and compared with EUR-Lex Regulation (EU) 2024/2847.
+- [x] Detailed audit report and 19 atomic claim rows added to the work branch.
+- [x] Distinguish Article 13(8) support period, Article 14 reporting, Annex I Part II(5) CVD, Part II(6) vulnerability contact, Part II(7) secure distribution, Part II(8) free updates, Part I(2)(b)/(d)/(g)/(j) secure-by-default/access/data minimisation/attack surface.
+- [ ] Continue auditing only after checking commits newer than #78; preserve main archive and require separate approval for any sync/merge.
+- [ ] Add quote-level exact-match checks to the pending main.py/Gemini change proposal; do not implement without explicit user approval.
