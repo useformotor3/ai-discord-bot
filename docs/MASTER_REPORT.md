@@ -179,3 +179,7 @@ Pass B/C 합계 24/34개 파일 진행, 10개 남음. 동일 AI 세션의 별도
 
 ## Pass B/C 최종 검증 결과 반영
 기존 위험 기반 표본 34개 고유 원본을 EUR-Lex 현행 CRA 원문으로 별도 재대조했다. 파일 단위 결과는 VERIFIED 0, PARTIALLY_VERIFIED 6, REJECTED 28이다. 이 수치는 34개 표본에 한정되며 990개 전체 오류율이 아니다. 지원기간 Article 13(8), 업데이트 보존 Article 13(9), 신고 Article 14, 업데이트 처리/분리/무상 제공 Annex I Part II(2)/(8), 기술문서 Article 31, 적합성 평가 Article 32, DoC Article 28, CE 원칙/부착 Article 29/30을 구분한다. 상세: [ARCHIVE_PASS_BC_FINAL_SUMMARY_2026-11-12.md](ARCHIVE_PASS_BC_FINAL_SUMMARY_2026-11-12.md).
+
+
+## CRA 요구사항 → HW/FW/시험/증거 추적성
+검증된 법령 요구를 개발자가 실행할 수 있도록 [CRA_REQUIREMENTS_TO_SERVO_DRIVE_TRACEABILITY_MATRIX.md](CRA_REQUIREMENTS_TO_SERVO_DRIVE_TRACEABILITY_MATRIX.md)를 작성했다. Annex I Part I의 제품 보안 속성, Part II의 취약점 처리, Articles 13–14의 제조자 의무/신고를 하드웨어 블록, 펌웨어/운영 통제, 시험 제안, 객관적 증거 후보에 연결했다. 이 문서는 일반 참조 설계 초안이며, 제품 SKU·실제 MCU 주문 코드·통신/원격 기능·안전 아키텍처가 확인되기 전에는 제품별 적용성과 시험 합격 기준을 확정하지 않는다.
