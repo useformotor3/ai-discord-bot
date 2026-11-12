@@ -253,3 +253,8 @@ main 브랜치의 #56–#59를 EUR-Lex와 대조했다. #56과 #59는 CONFLICT, 
 ## 신규 main 아카이브 감사: #60–#78
 
 main 브랜치의 자동 생성 보고서 #60–#78 19건을 EUR-Lex Regulation (EU) 2024/2847 원문과 대조했다. 파일 단위 결과는 PARTIALLY_VERIFIED 6건(#60, #61, #63, #73, #76, #77), CONFLICT 13건, 완전 VERIFIED 0건이다. 이 배치의 Raw Text Quote는 모두 직접 인용으로 재사용할 수 없다. 반복 오류는 Article 13(7)과 13(8), Article 14 신고, Annex I Part I(2)(g) 데이터 최소화, Part II(5)–(8) 취약점 처리 요구를 혼동한 것이다. 정확한 매핑은 Article 13(8)=지원기간, Article 14=적극 악용 취약점/심각한 사고 신고, Annex I Part II(5)=CVD, (6)=취약점 신고 연락처, (7)=안전한 업데이트 배포, (8)=무상 보안 업데이트다. 상세: [#60–#78 감사](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_60_78_2026-11-12.md). 원본 main archive는 보존했다.
+
+
+## 신규 main 아카이브 감사: #79
+
+main의 #79 보고서는 Article 14의 적극 악용 취약점 신고와 24시간 조기 경고를 다루지만, 신고 대상 범위를 넓히고 72시간 취약점 통보와 최종 보고를 혼동했다. 정확한 취약점 신고 흐름은 24시간 조기 경고, 72시간 취약점 통보, 시정/완화 조치 가용 후 14일 이내 최종 보고다. 심각한 사고는 별도 24시간/72시간/1개월 흐름이다. 파일 단위 PARTIALLY_VERIFIED이며 원문 인용은 재사용 불가다. 상세: [#79 감사](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_79_2026-11-12.md).
