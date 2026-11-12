@@ -200,3 +200,11 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - [SECURITY_TEST_EVIDENCE_REGISTER.md](SECURITY_TEST_EVIDENCE_REGISTER.md): 위협별 시험 케이스, NOT_RUN 기본 상태, 증거 ID/파일명/메타데이터 규칙, 제품별 수치형 합격 기준 입력표 작성.
 - 설계 후보와 법령 의무를 분리했으며, 특정 알고리즘/secure element/dual-bank/네트워크 분리 회로를 법령 직접 요구로 표시하지 않음.
 - 실제 DUT/SKU/MCU/인터페이스/안전 경계/승인된 합격 기준 미확보. 시험 실행 및 제품별 위험도는 미확정(UNVERIFIED).
+
+## 2026-11-12 통합 추적성 및 공식 자료 변경 감시
+- [CRA_INTEGRATED_TRACEABILITY_MATRIX.md](CRA_INTEGRATED_TRACEABILITY_MATRIX.md) 생성: TR-01..TR-20을 법령 요구 → 자산/위협 → HW/FW 통제 후보 → TST 시험 → EV 증거 ID로 연결.
+- [CRA_COMMISSION_GUIDANCE_REVIEW_2026-11-12.md](CRA_COMMISSION_GUIDANCE_REVIEW_2026-11-12.md) 생성: European Commission C(2026) 5252, 2026-07-27 공식 게시 사실과 적용 영향 등록. Annex 본문 페이지/문단별 검증은 PENDING.
+- TI SLAAE29 Rev B(2026-08-27)와 G-Series TRM Rev F(2026-11-05)는 공식 인덱스 메타데이터만 확인. 본문 세부 내용은 열람/검증하지 않았으므로 미확인 유지.
+- ST AN5156 Rev14/June 2026 공식 페이지 메타데이터 재확인. 정확한 ST MCU 부품 기능은 여전히 미확인.
+- 주간 CRA·MCU 보안 자료 점검 자동화 등록: 매주 월요일 09:00 Asia/Seoul, 첫 예정 실행 2026-11-16.
+- 모든 신규 매트릭스 행은 제품 적용성 UNVERIFIED, 시험 NOT_RUN. `main.py`, Gemini prompt, production workflow, main branch는 변경하지 않음.
