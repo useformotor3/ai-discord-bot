@@ -322,3 +322,12 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 - [x] [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_122_2026-11-12.md](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_122_2026-11-12.md) 작성. 판정 CONFLICT.
 - [ ] #123 이후 신규 보고서 commit 여부를 계속 확인하고 위험기반 감사.
 - [ ] #81–#122 정정사항을 원본과 분리한 별도 errata로 통합.
+
+
+## 2026-11-12 추가 진행 — main-only report #123
+- [x] main #123 commit diff 검토 및 EUR-Lex Article 13(7),(17)–(19), Annex II(1)–(9)와 대조.
+- [x] [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_123_2026-11-12.md](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_123_2026-11-12.md) 작성. 판정 CONFLICT.
+- [x] 올바른 사용자 문서 항목을 Annex II(1)–(9), 특히 (7), (8)(a)–(f), (9)로 정리.
+- [ ] #123 감사 기준으로 서보 드라이브 CRA 사용자 보안정보/지침서 체크리스트를 원본과 별도 문서로 작성.
+- [ ] 제품 핵심 기능·의도된 용도 확인 전 Important Product Class II 자동 단정 금지.
+- [ ] 다음 세션에서 main HEAD를 재확인하고 #124 이후 보고서 감사.
