@@ -32,7 +32,7 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 - [x] 미검증 생성물을 UNVERIFIED 초안으로 렌더링하고 법령/제품 적용성 VERIFIED 승격 차단
 - [ ] Discord timeout/HTTP status/재시도/중복 방지
 - [ ] 무료 한도 fail-closed 및 유료 호출 금지
-- [x] mock 실패 경로 테스트 fixture 13개 추가 (격리 런타임 16/16 PASS; CI 결과 별도 확인 대기)
+- [x] mock 실패 경로 테스트 fixture 13개 추가 (격리 런타임 17/17 PASS; CI 결과 별도 확인 대기)
 
 ## P3 — CRA 근거 검증
 - [ ] Regulation (EU) 2024/2847 및 개정 이력 재확인
@@ -363,7 +363,7 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 - [x] 운영 prompt를 `prompts/CRA_RESEARCH_PROMPT_V2.txt`로 분리하고 원문 미제공 시 직접 인용을 금지.
 - [x] `cra_report_contract.py`에 structured JSON schema, strict validator, UNVERIFIED Markdown renderer, 제한된 모델 폴백/fail-closed 예외 구현.
 - [x] `main.py`를 validator와 연결. 전체 모델 실패/빈 응답/invalid JSON/필수 필드 오류 시 non-zero 종료로 Discord/archive/state/history 성공 경로 차단.
-- [x] mock 회귀 테스트 13개 추가 및 격리 런타임에서 16/16 PASS, py_compile 3/3 통과.
+- [x] mock 회귀 테스트 13개 추가 및 격리 런타임에서 17/17 PASS, py_compile 3/3 통과.
 - [ ] GitHub Actions 실제 실행 결과 확인 및 google-genai SDK/모델 structured-output 호환성 검증(실 API 호출 승인 전까지 미실시).
 - [ ] 원문 수집/URL·인용·조항·법률 해석 자동 검증 모듈은 별도 설계 및 승인 후 진행.
 - [ ] quota 정책, 모델 선택/순서, Discord HTTP 오류 처리, recent_snippets 문맥 개선은 이번 범위에서 제외.
