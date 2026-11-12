@@ -88,6 +88,12 @@ CRA를 모르는 개발자가 서보 드라이브 개발에 적용할 수 있는
 - [ ] TI 비교 및 통합 보고서 작성
 - [ ] 브랜치 PR/병합 전 diff 및 충돌 검토
 
+## 최근 CI/기준 상태 (2026-11-12)
+- 최신 CRA Archive Integrity run 43128434351: completed/success. 최신 run의 테스트 및 strict archive/history consistency 단계 success.
+- Claim Evidence Extraction run 43127855869: completed/success. Artifact ID 13903243617 생성.
+- archive 990개 유지. main.py SHA-1 blob은 기존 값 86a7731aad5de8d75581fc953bcea2c44adf2f2b로 변경 없음.
+- main branch 병합/운영 workflow 변경 없음.
+
 ## 상태
 VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABLE
 
