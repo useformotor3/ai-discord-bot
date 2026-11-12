@@ -1,6 +1,6 @@
 # 변경 제안서 — CRA 자동 조사 파이프라인 신뢰성 개선
 
-**상태: USER_APPROVAL_REQUIRED — 제안만 작성, main.py/Gemini prompt 변경 없음**  
+**상태: APPROVED_FOR_WORK_BRANCH_IMPLEMENTATION — 사용자 승인에 따라 작업 브랜치 구현 완료, main 미반영**  
 **대상:** `main.py`, Gemini prompt, 후속 근거 검증 단계  
 **기준 코드:** cra-project-foundation의 현재 `main.py`  
 **목표:** 0원 운영 원칙을 유지하면서, 근거가 확인되지 않은 AI 생성물이 성공 보고서처럼 게시·저장되는 것을 차단한다.
@@ -341,5 +341,19 @@ if not success:
 - 각 커밋 직후 diff 및 fixture tests 확인.
 - 실패 시 해당 커밋을 revert하고 사전 SHA로 복구. archive/history/state 원본은 테스트에서 복사본만 사용.
 
-### 14.7 승인 경계
-현재 사용자의 "진행"은 이 1차 구현안을 구체화하고 제안 문서/프롬프트 초안을 작업 브랜치에 기록하는 범위로 적용했다. **실제 운영 프롬프트 파일 추가, main.py 수정, parser/validator 변경, 테스트 추가 및 실행은 본 문서의 최종 diff를 사용자가 명시적으로 승인한 뒤 수행한다.** 현재 운영 파일은 변경하지 않았다.
+### 14.7 승인 및 구현 경계 — 2026-11-12 갱신
+사용자가 2026-11-12에 "위 제안 범위 그대로 작업 브랜치에서 실제 구현을 승인한다. mock 테스트부터 진행해줘."라고 명시 승인했다. 이에 따라 아래 구현을 `cra-project-foundation`에서 수행했다.
+- `main.py`: inline prompt/기존 자유형 응답 처리를 제거하고 버전관리 prompt + JSON 응답 계약 + fail-closed adapter를 연결.
+- `prompts/CRA_RESEARCH_PROMPT_V2.txt`: 운영용 prompt v2 추가.
+- `cra_report_contract.py`: JSON schema, strict required-field/enum 검사, quote/VERIFIED 금지, Markdown renderer, 모델 폴백/실패 예외 추가.
+- `tests/test_cra_report_contract.py`: mock 기반 회귀 테스트 추가.
+- `.github/workflows/run.yml`, 모델 목록/순서, quota constant, Discord 전송, archive/history/state schema, 최근 5개 snippet 문맥은 변경하지 않았다.
+- `main` branch에 반영하지 않았으며 merge/rebase/sync하지 않았다.
+
+### 14.8 1차 mock 검증 결과
+- committed source와 test 내용을 격리된 Python 런타임에서 재현하여 13개 테스트 PASS, failures=0, errors=0.
+- `py_compile`: `cra_report_contract.py`, `tests/test_cra_report_contract.py`, `main.py` 3개 파일 통과.
+- 검증 항목: 정상 JSON/Markdown 렌더링, 빈 응답, 잘못된 JSON, top-level 및 claim 필드 누락, 잘못된 enum, 중복 claim ID, 직접 인용 거부, VERIFIED 승격 거부, 모델 폴백, 전체 모델 실패, fail-closed 종료가 Discord/archive/state/history 쓰기보다 앞서는지 확인.
+- 모든 모델 호출은 fake client를 사용했으며 실제 Gemini API/네트워크/유료 호출은 0회.
+- 주의: 이 결과는 격리 런타임에서 committed source/test 내용을 재현한 mock 테스트다. GitHub Actions 실행 결과는 아직 별도 확인되지 않았으므로 CI PASS로 주장하지 않는다.
+- 다음 gate: GitHub Actions 실제 결과 확인, 설치된 google-genai SDK 및 선택 모델의 structured output 호환성은 실제 API를 호출하지 않고는 확인 불가. 실제 API 호출은 별도 사용자 승인 전 금지.
