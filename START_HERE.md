@@ -166,3 +166,12 @@
 - 주요 교정: Article 13(8)=지원기간, Article 14=적극 악용 취약점/심각한 사고 신고, Annex I Part II(7)=안전한 업데이트 배포, Part II(8)=무상 보안 업데이트, Annex II 8(d)=안전한 폐기 안내.
 - 특정 서명 알고리즘, dual-bank, hot-patch, zero-downtime, STO/SIL 분리 등을 CRA의 보편적 직접 의무로 인용하지 않는다. 제품 위험평가·기능안전 설계 선택으로 분리한다.
 - 원본 main archive는 수정하지 않았고 작업 브랜치에 감사 문서/claim ledger만 추가했다.
+
+
+## 2026-11-12 추가 — main reports #56–#59 감사
+
+- [상세 감사 #56–#59](docs/ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_56_59_2026-11-12.md): #56 CONFLICT, #57 PARTIALLY_VERIFIED, #58 PARTIALLY_VERIFIED, #59 CONFLICT.
+- Article 14 신고는 actively exploited vulnerability와 severe incident를 분리하고 최종보고 기한도 각각 14일/1개월로 관리한다.
+- CVD/contact 근거는 Annex I Part II(5),(6); user-facing single point of contact는 Annex II point 2.
+- Secure-by-default, access control, attack-surface limitation은 각각 Annex I Part I(2)(b),(d),(j). 구체적인 포트 차단/최초 비밀번호 변경은 제품 위험평가에 따른 설계 선택으로 분리한다.
+- 원본 main 파일은 수정하지 않는다.
