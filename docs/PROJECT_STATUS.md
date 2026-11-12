@@ -286,3 +286,15 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - TRM HTML viewer는 25,348,105 bytes로 렌더링 제한을 초과하고 PDF 직접 열기도 실패했다. Rev F metadata VERIFIED, Rev F body/security chapter/register details NOT_VERIFIED.
 - TI SLAAE29 Rev B supported-device scope의 G3529-Q1 적용성 미확정 경고 유지. G3529-Q1 기능을 주장하려면 해당 SKU의 데이터시트·TRM·errata를 별도로 확인한다.
 - 상세 source register §9 및 claim ledger TI-TRM-REVF-001..TI-SLAAE29B-APPL-001 참조.
+
+
+## Main-only reports #56–#59 감사 — 2026-11-12
+
+- 정정: 이전 점검에서 #55를 최신으로 기록했으나, 후속 commit search에서 main의 #56–#59가 확인되었다. 현재 main HEAD는 report #59 commit ee5c75840ee4868c7d3f56f3895c8bc7b50cfe44.
+- #56 CONFLICT: Article 14 신고 범위를 actively exploited vulnerability 및 severe incident로 구분하지 않고 확대, 자동보고/수신기관 경로를 과장, 취약점 final report 14일과 severe incident final report 1개월의 차이를 누락.
+- #57 PARTIALLY_VERIFIED: CVD 정책 및 contact address 요구사항 자체는 실재하지만 정확한 근거는 Annex I Part II(5),(6), user-facing single point of contact는 Annex II point 2. 보고서의 Part I Section 2 인용 및 원문 인용은 부정확.
+- #58 PARTIALLY_VERIFIED: Secure-by-default Annex I Part I(2)(b), access control (d), attack surface (j)는 실재. 다만 모든 보조 포트/debug를 무조건 비활성화하거나 최초 부팅 비밀번호 변경을 법문이 직접 강제한다고 단정할 수 없음.
+- #59 CONFLICT: Article 13(2)는 위험평가; 지원기간은 Article 13(8); 무상 보안 업데이트는 Annex I Part II(8); secure-by-default는 Part I(2)(b). 서로 다른 요건과 인용을 혼합.
+- 배치 판정: PARTIALLY_VERIFIED 2 / CONFLICT 2 / fully VERIFIED 0. 상세 감사 및 4개 atomic claim row 추가.
+- 공식 EUR-Lex 확인: Article 14 lines 939–975; Annex I lines 1743–1773; Annex II lines 1776–1794.
+- 원본 main archive/history/state, main.py, Gemini prompt, production workflow는 수정하지 않았다.
