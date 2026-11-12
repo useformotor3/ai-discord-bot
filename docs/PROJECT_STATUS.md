@@ -347,3 +347,10 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - Compare status: cra-project-foundation is diverged, 347 commits ahead / 82 behind main. No sync, merge or rebase performed.
 - Protected file hashes match across branches: main.py 86a7731aad5de8d75581fc953bcea2c44adf2f2b; .github/workflows/run.yml 65a8cadc8eac593f551e390698e367b1d161ecf1.
 - Latest work branch HEAD: 9c23c6922570593bf6c47eca66f02e1d2ec9ea06. Combined status returned an empty statuses array; CI/test pass is not established.
+
+
+## TI safety mechanism integration mapping — 2026-11-12
+
+- Created [TI_SAFETY_MECHANISM_SERVO_DRIVE_INTEGRATION_MATRIX_2026-11-12.md](TI_SAFETY_MECHANISM_SERVO_DRIVE_INTEGRATION_MATRIX_2026-11-12.md).
+- Maps TI SFFS983A mechanism families (ADC/comparator/CPU/memory/flash/DMA/GPIO/PWM/watchdog/clock/BOR/CAN-FD/common-cause) to servo-drive IF-01..IF-09 and candidate evidence.
+- All entries are design/test proposals only and NOT_RUN. No diagnostic coverage or system safety metric is inferred. Exact FMEDA and product-specific verification remain open.
