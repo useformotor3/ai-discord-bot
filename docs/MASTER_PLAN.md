@@ -305,3 +305,13 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 - [x] Report #80 commit diff fetched and compared with EUR-Lex Annex I Part I.
 - [x] File-level PARTIALLY_VERIFIED verdict and atomic claim CRA-ARCH-080-001 added.
 - [ ] Continue with report #81+ after checking latest main commits; no automatic branch sync or merge.
+
+
+## 2026-11-12 추가 진행 — main-only reports #81–#121 감사
+- [x] main #81–#121의 41개 archive commit diff에서 보고서 원문을 확인하고 EUR-Lex Regulation (EU) 2024/2847 Article 13–14, Annex I Part I/II, Annex II와 대조.
+- [x] 감사 문서 [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_81_121_2026-11-12.md](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_81_121_2026-11-12.md) 생성.
+- [x] 파일 판정 33 CONFLICT / 8 PARTIALLY_VERIFIED / 0 VERIFIED. 41개 직접 인용 블록 모두 verbatim 재사용 금지.
+- [ ] 41개 보고서에서 반복된 법령 정정사항을 원본과 구분한 별도 errata/정정본에 통합.
+- [ ] #122 이후 신규 main archive 보고서는 commit 기준으로 대기열/감사 수행.
+- [ ] P0: Article 13(8) 지원기간 shorter-than-five-years exception, Annex I Part II(8) 무상 업데이트 예외, Article 14 두 신고 트랙을 통합 보고서와 claim ledger에 재검증.
+- [ ] #81–#121 이후 추가된 main 보고서가 있는지 다음 세션에서 HEAD 재확인. main 동기화/병합은 승인 없이 금지.
