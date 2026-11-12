@@ -143,6 +143,12 @@ class ContractTests(unittest.TestCase):
         with self.assertRaises(ReportValidationError):
             parse_and_validate_report(json.dumps(payload))
 
+    def test_previous_five_snippet_context_is_still_included(self):
+        source = (Path(__file__).resolve().parents[1] / "main.py").read_text(encoding="utf-8")
+        self.assertIn("history_data[-5:]", source)
+        self.assertIn("f\"{context_memory}\"", source)
+        self.assertIn("중복 방지용 이전 조사 요약", source)
+
     def test_fail_closed_exit_precedes_all_success_side_effects(self):
         source = (Path(__file__).resolve().parents[1] / "main.py").read_text(encoding="utf-8")
         failure_exit = source.index("raise SystemExit(1)")
