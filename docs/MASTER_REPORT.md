@@ -137,3 +137,8 @@ TI 비교 예시로 MSPM0G3529-Q1 데이터시트 SLASFO2B RevB (October 2025)�
 
 ### TI 최신 문서 재점검 결과
 TI MSPM0G3529-Q1 제품 페이지는 MSPM0 G-Series TRM을 참조한다. TI MSPM0-DIAGNOSTIC-LIB 기술자료 인덱스는 G-Series TRM Rev F(2026-11-05)를 표시한다. 다만 전체 PDF/HTML 본문은 도구의 크기 제한으로 열람하지 못했으므로 Rev F의 보안 장 내용을 검증했다고 주장하지 않는다. SLAAE29 Rev B도 이번 세션에서 공식 본문을 재확보하지 못했으며, 기존 SLAAE29A Rev A만 본문 확인된 자료로 유지한다.
+
+
+## 6. 기존 조사 아카이브 표본 정정 추적
+
+기존 자동 생성 자료의 표본 감사 결과는 [ARCHIVE_CLAIM_CORRECTION_LEDGER_2026-11-12.md](ARCHIVE_CLAIM_CORRECTION_LEDGER_2026-11-12.md)에 원본 파일 경로, SHA-1 blob, 원문 행 위치, 핵심 주장, 법령 정정 룰, 판정 상태로 연결했다. 35개 감사 ID 중 A-013/B-006이 동일 원본 파일이므로 고유 파일은 34개이며, 고유 파일 기준 25 CONFLICT / 9 PARTIALLY_VERIFIED다. 표본은 비무작위이므로 990개 전체 오류율로 일반화하지 않는다. 원본 archive는 변경하지 않았다.
