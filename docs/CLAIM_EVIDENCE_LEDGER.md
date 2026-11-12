@@ -234,3 +234,14 @@ Detailed file-level findings: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_60_78_2026-11-12.m
 | CRA-ARCH-078-001 | #78 | Article 13(8) is support period, but the quote is fabricated/oversimplified; free updates are Part II(8). | CONFLICT |
 
 **Batch totals:** 19 files; 6 PARTIALLY_VERIFIED; 13 CONFLICT; 0 fully VERIFIED. No Raw Text Quote block from #60–#78 is cleared for verbatim reuse. These are file-level findings, not an archive-wide error rate.
+
+
+## 13. Main-only report #79 audit (2026-11-12)
+
+Detailed findings: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_79_2026-11-12.md](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_79_2026-11-12.md).
+
+| Claim ID | Original report | Atomic claim / correction | Status |
+|---|---|---|---|
+| CRA-ARCH-079-001 | #79 | Article 14(1) is limited to actively exploited vulnerabilities contained in the product; stages are 24h early warning, 72h vulnerability notification, and final report within 14 days after corrective/mitigating measure becomes available. Article 14(3)–(5) separately governs severe incidents. | PARTIALLY_VERIFIED |
+
+The 24-hour early-warning theme is supported, but the report broadens scope, mislabels the 72-hour stage as a final notification, misattributes the quote to Article 14(2), and gives a non-verbatim quotation. No quote block cleared.
