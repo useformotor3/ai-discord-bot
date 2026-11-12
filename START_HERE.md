@@ -61,3 +61,10 @@
 - 초기 5개 + 추가 9개 + 추가 20개 누계 34개, 25 CONFLICT / 9 PARTIALLY_VERIFIED. 비무작위 위험 표본이므로 전체 오류율로 일반화하지 않는다.
 - 다음 우선순위: (1) 남은 위험 플래그 후보를 원문 대조, (2) 기존 990개 출처 canonical URL/문서 버전/조항 위치 복원, (3) 주장별 정정 ledger 구축, (4) ST/TI 공식 기술자료 비교 확장.
 - 기존 research_archive 원본, main.py, Gemini prompt 및 운영 run.yml은 수정하지 않았다. main 병합도 하지 않았다.
+
+
+## 제조사 MCU 자료/주장 대장 업데이트 (2026-11-12)
+- [제조사 보안 자료 레지스터](docs/MANUFACTURER_SECURITY_SOURCE_REGISTER_2026-11-12.md): ST/TI 공식 자료 버전 및 기능별 비교, 제품별 한계, 시험 큐.
+- [Claim Evidence Ledger](docs/CLAIM_EVIDENCE_LEDGER.md): 기술 주장과 source URL/버전/원문 위치/제품 범위/검증 상태 연결.
+- TI MSPM0G3529-Q1은 비교 예시 부품이며 실제 프로젝트 선택 부품이 아니다. ST 실제 MCU 주문 코드가 없으므로 ST 부품별 기능은 UNVERIFIED.
+- TI SLAAE29 RevB 및 G-Series TRM RevF가 공식 자료 인덱스에서 더 최신으로 확인되어 다음 세션에서 본문/적용성 대조가 필요하다.
