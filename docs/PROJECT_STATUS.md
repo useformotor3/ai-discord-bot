@@ -381,3 +381,13 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - Correct map: Annex I Part I(2)(b)=secure-by-default/reset; (d)=access control; (j)=attack surface. CVD=Part II(5), user-facing contact information=Annex II(2).
 - Detailed audit: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_122_2026-11-12.md](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_122_2026-11-12.md).
 - Original main archive/history/state unchanged. No protected code/prompt/workflow changes, no merge/rebase/sync. No tests/CI PASS claimed.
+
+
+## 최종 상태 확인 — 2026-11-12
+- main HEAD: #122, 39d614a760aebc98ce16fb534ddd75ddbcc5c1e3.
+- cra-project-foundation HEAD: 16115ac5e58277308f7fc34a84219c48886ed52f.
+- Branch compare: diverged, 작업 브랜치 379 ahead / 125 behind. No merge/rebase/sync.
+- Protected blob SHA 일치: main.py 86a7731aad5de8d75581fc953bcea2c44adf2f2b; .github/workflows/run.yml 65a8cadc8eac593f551e390698e367b1d161ecf1. main과 작업 브랜치에서 동일.
+- 최신 work commit combined status는 빈 statuses array. CI/test PASS는 확인되지 않았고 주장하지 않는다.
+- Daily archive audit automation enabled, next run 2026-11-13 09:00 Asia/Seoul. Weekly official-source monitor remains separate.
+- docs/CHANGE_PROPOSAL_MAIN_GEMINI.md에 #81–#122 증거와 P0/P1 acceptance criteria 추가. 제안만 업데이트; main.py/prompt/parser/production workflow 미수정, USER_APPROVAL_REQUIRED 유지.
