@@ -38,11 +38,11 @@ def extract_file(path: Path, root: Path) -> dict:
     title = next((x.lstrip("# ").strip() for x in lines if x.startswith("#")), "")
     # Keep legacy string arrays for compatibility, and add line-addressable records.
     paragraph_records = []
-    offset = 0
+    cursor = 0
     for block in re.split(r"\n\s*\n", text):
-        start = offset
+        start = text.find(block, cursor)
         end = start + len(block)
-        offset = end + 2
+        cursor = end
         if CLAIM_RE.search(block) and len(block.strip()) > 60:
             paragraph_records.append({
                 "line_start": text.count("\n", 0, start) + 1,
@@ -74,8 +74,8 @@ def extract_file(path: Path, root: Path) -> dict:
     for name, rx in COMPILED_RISKS.items():
         matches = []
         for match in rx.finditer(text):
-            line_no = text.count("\\n", 0, match.start()) + 1
-            snippet = text[max(0, match.start() - 160):min(len(text), match.end() + 160)].replace("\\n", " ")
+            line_no = text.count("\n", 0, match.start()) + 1
+            snippet = text[max(0, match.start() - 160):min(len(text), match.end() + 160)].replace("\n", " ")
             matches.append({"line": line_no, "snippet": snippet[:500]})
             if len(matches) == 3:
                 break
