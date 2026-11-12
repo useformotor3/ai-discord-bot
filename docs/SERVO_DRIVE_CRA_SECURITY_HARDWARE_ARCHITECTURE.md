@@ -235,3 +235,30 @@ flowchart LR
 
 현재 모든 IF 항목은 제품별 확인 전 설계 계약 초안이다. 체크리스트는 완료된 것으로 간주하지 않으며, 실제 회로도/부품번호/시험 증거가 확보되면 상태를 갱신한다.
 
+
+
+## 12. TI MSPM0G3529-Q1 기능안전 매뉴얼에서 얻은 통합 설계 검토사항 (비선정 부품 참고)
+
+이 절은 TI SFFS983A Rev A의 MSPM0Gx51x/Gx52x 구성요소 안전 개념을 비교 참고로 정리한 것이다. 지원 부품 목록에 MSPM0G3529-Q1이 명시되어 있으나, 현재 프로젝트의 목표 MCU가 TI로 확정된 것은 아니다. 이 내용은 일반 서보 드라이브 설계 요구사항이나 SIL 3 달성 근거로 자동 승격하지 않는다.
+
+### 12.1 시스템 경계에 반영할 교훈
+
+- TI 매뉴얼 §4.2는 내부 오류 대응 예시로 actuator output을 safe state로 전환, MCU reset, host CPU로 오류 전달을 제시한다.
+- §4.3은 system integrator가 FMEDA/안전 매뉴얼을 검토해 진단을 선택·구현하고, host controller를 통해 actuator-disable mechanism을 제공하며, host가 MCU와의 통신 손실을 감시한다는 가정을 둔다.
+- 따라서 IF-02/IF-03은 통신·서비스 도메인과 모션/출력 도메인의 권한을 분리하고, 별도 actuator-disable/fault-inhibit 경로의 필요성을 제품 위험·안전 분석으로 결정해야 한다. 일반 통신 MCU나 원격 서비스 경로가 단독으로 gate enable을 소유하지 않도록 검토한다.
+- TI 문서의 FTTI >10 ms 및 MPFDTI <8 h는 해당 TI 안전 개념의 시스템 가정이다. 다른 제품의 설계 요구나 합격 기준으로 복사하지 않는다.
+- TI 문서상 ECC/parity 보호가 없는 SRAM bank는 safety-critical application context에서 사용하지 않는다는 가정이 있다. 실제 제품은 선택 MCU의 메모리 맵·보호 범위·진단을 확인해야 한다.
+
+### 12.2 Safety/security domain 분리
+
+SFFS983A §4.3은 DEBUG, RTC, AES, TRNG, KEYSTORE, MATHACL, DFT를 해당 안전 개념에서 QM/non-safety-critical IP로 분류하고 안전 중요 용도로 사용하지 말 것을 명시한다. 따라서:
+- 보안 기능(AES/TRNG/KEYSTORE/secure boot/debug control)이 있다는 사실만으로 그 기능이 안전 진단 또는 안전 경로에 포함된다고 가정하지 않는다.
+- 보안 key, firmware authenticity, debug lifecycle은 CRA/security evidence로 추적하되, 안전 기능으로 credit하려면 별도 안전 분석·안전 매뉴얼·FMEDA의 명시적 근거가 필요하다.
+- 보안 업데이트/Flash programming이 safety-critical task와 겹치지 않도록 운용·상태전이·출력 inhibit 설계를 검토한다. TI 매뉴얼은 safety-critical task 중 Flash programming을 하지 않는 것을 권고한다.
+
+### 12.3 적용성 및 근거 상태
+
+- TI SFFS983A Rev A: MSPM0G3529-Q1 포함, component-level systematic ASIL D / random-fault mechanisms up to ASIL B 명시.
+- ASIL D는 IEC 61508 SIL 3와 등가가 아니다. MCU 단품 또는 일반 참조 회로의 SIL 3 달성을 주장할 수 없다.
+- 정확한 FMEDA, failure rate, diagnostic coverage, safety manual의 모든 usage condition, 실제 보드/소프트웨어 구현은 별도 검증이 필요하다.
+- 상세: [TI_MSPM0G3529_Q1_FUNCTIONAL_SAFETY_REVIEW_2026-11-12.md](TI_MSPM0G3529_Q1_FUNCTIONAL_SAFETY_REVIEW_2026-11-12.md).
