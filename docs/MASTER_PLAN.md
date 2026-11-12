@@ -346,3 +346,14 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 - [ ] #124에서 반복된 legal requirement vs risk-based design 구분을 Gemini 변경 제안서 acceptance criteria에 반영.
 - [ ] 서보 드라이브 업데이트 경로·boot architecture·flash layout·recovery/safe-state 요구사항 확보 후 구현 후보를 제품별로 평가.
 - [ ] 다음 세션에서 main HEAD 확인 후 #125 이후 보고서 감사.
+
+
+## 2026-11-12 추가 — 파이프라인 변경안 구체화 (#125–#128 반영)
+
+- [x] main reports #125–#128 commit diff 검토 및 반복 오류 유형을 정리: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_125_128_2026-11-12.md](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_125_128_2026-11-12.md). 4개 모두 CONFLICT.
+- [x] Gemini 명령문 v2 검토 초안 작성: [PROPOSED_GEMINI_PROMPT_V2.md](PROPOSED_GEMINI_PROMPT_V2.md). 운영 prompt에는 미적용.
+- [x] [CHANGE_PROPOSAL_MAIN_GEMINI.md](CHANGE_PROPOSAL_MAIN_GEMINI.md)에 #125–#128 증거, 구체 변경 범위, diff 예시, 테스트/롤백/승인 경계 추가.
+- [ ] 사용자 최종 승인 후에만 운영 prompt 파일, main.py JSON parsing/schema validation, fail-closed path 및 mock fixture tests 구현.
+- [ ] 구현 후 mock 기반 회귀 테스트 및 GitHub Actions 결과를 직접 확인. 실제 API/유료 호출은 별도 승인 없이 수행하지 않는다.
+- [ ] main branch, main.py 운영본, .github/workflows/run.yml, archive/history/state는 별도 승인 전 변경/동기화하지 않는다.
+
