@@ -237,7 +237,7 @@
 ## 최신 상태 — Gemini 파이프라인 1차 구현 (2026-11-12)
 - 사용자 승인 후 `cra-project-foundation`에서 `main.py`, `cra_report_contract.py`, `prompts/CRA_RESEARCH_PROMPT_V2.txt`, `tests/test_cra_report_contract.py`를 구현했다.
 - Gemini JSON 출력 계약/필수 필드 검증/직접 인용 금지/VERIFIED 승격 차단/모든 모델 실패 시 fail-closed를 적용.
-- mock 테스트 13개를 격리 런타임에서 재현해 14/14 PASS, py_compile 3/3 PASS. 실제 API·네트워크 호출은 0회.
+- mock 테스트 13개를 격리 런타임에서 재현해 16/16 PASS, py_compile 3/3 PASS. 실제 API·네트워크 호출은 0회.
 - GitHub Actions 실행 결과는 아직 확인되지 않아 CI PASS로 간주하지 않는다.
 - 원문 수집·URL/조항/인용/법률 의미 검증은 미구현이므로 결과는 UNVERIFIED 초안이다.
 - `.github/workflows/run.yml`, 모델 선택/순서, quota, Discord 전송, archive/history/state schema, main branch는 변경하지 않았다. merge/rebase/sync도 하지 않았다.
