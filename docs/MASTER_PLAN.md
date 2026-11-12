@@ -276,3 +276,9 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 - [x] Distinguish Article 13(8) support period, Article 14 reporting, Annex I Part II(5) CVD, Part II(6) vulnerability contact, Part II(7) secure distribution, Part II(8) free updates, Part I(2)(b)/(d)/(g)/(j) secure-by-default/access/data minimisation/attack surface.
 - [ ] Continue auditing only after checking commits newer than #78; preserve main archive and require separate approval for any sync/merge.
 - [ ] Add quote-level exact-match checks to the pending main.py/Gemini change proposal; do not implement without explicit user approval.
+
+
+## Main-only report #79 follow-up
+- [x] Report #79 commit diff fetched and compared with EUR-Lex Article 14.
+- [x] File-level PARTIALLY_VERIFIED verdict and atomic claim CRA-ARCH-079-001 added.
+- [ ] Continue with report #80+ after checking latest main commits; do not merge/sync without approval.
