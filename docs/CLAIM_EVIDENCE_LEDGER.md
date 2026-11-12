@@ -108,3 +108,15 @@
 - 감사 ID는 35개이며, A-013과 B-006이 동일 원본 파일/SHA이므로 1건 중복 제거
 - 원본 archive는 수정하지 않음
 - 이 정정 대장은 표본 자료에 대한 추적성 기록이며, 990개 전체 전수 검증이 아님
+
+
+## 9. 2026-11-12 공식 가이드 및 제조사 개정판 메타데이터
+
+| Claim ID | 원자적 주장 | 유형 | 출처 및 정확한 위치 | 검증 범위 / 판정 | 상태 |
+|---|---|---|---|---|---|
+| EU-GUIDE-001 | European Commission은 2026-07-27 CRA 적용 실무 가이드 C(2026) 5252를 공식 게시했다. | official_publication_fact | Commission publication page, publication date / https://digital-strategy.ec.europa.eu/en/library/commission-publishes-new-guidance-support-timely-cyber-resilience-act-implementation | 공식 게시 페이지에서 문서명, 게시일, 주요 주제 및 non-binding 안내를 확인. Annex 본문 문단/페이지별 직접 검증은 별도 진행. | VERIFIED (publication metadata only) |
+| TI-012 | TI 공식 MSPM0G3506 기술자료 목록은 *Cybersecurity Enablers in MSPM0 MCUs (Rev. B)*, 2026-08-27을 표시한다. | technical_fact | TI MSPM0G3506 product page, Technical documentation list / https://www.ti.com/product/MSPM0G3506 | 공식 제품 페이지 목록의 문서명·Rev B·날짜만 확인. Rev B 본문 및 MSPM0G3529-Q1 적용성은 검증하지 않음. | VERIFIED (index metadata only) |
+| TI-013 | TI 공식 MSPM0-DIAGNOSTIC-LIB 기술자료 인덱스는 MSPM0 G-Series TRM Rev F, 2026-11-05를 표시한다. | technical_fact | TI MSPM0-DIAGNOSTIC-LIB, Technical documentation table / https://www.ti.com/tool/MSPM0-DIAGNOSTIC-LIB | 인덱스 메타데이터만 확인. 본문 보안 장/레지스터 내용은 미확인. | VERIFIED (index metadata only) |
+| ST-002 | ST 공식 AN5156 페이지는 Rev 14, June 2026을 표시한다. | technical_fact | ST AN5156 official page / https://www.st.com/content/st_com/en/technical-documents/an5156-introduction-to-security-for-stm32-mcus-stmicroelectronics.html | 문서 revision/date와 범위 확인. 특정 MCU 기능은 part-specific 자료가 필요. | VERIFIED (document metadata only) |
+
+**주의:** 위 VERIFIED는 게시/문서 메타데이터 사실만을 의미한다. 가이드 해석, TI Rev B/TRM Rev F 본문 내용, ST 특정 부품 기능의 VERIFIED를 의미하지 않는다.
