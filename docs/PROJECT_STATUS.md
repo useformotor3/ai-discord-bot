@@ -463,3 +463,9 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - 다음 단계 설계만 진행: [CRA Source Evidence Pipeline v1 proposal](PROPOSED_SOURCE_EVIDENCE_PIPELINE_V1.md). 공식 allowlist 기반 원문 수집, hash/provenance, exact quote/locator validation, human review gate.
 - 새 fetcher/schema v3/prompt v3/main.py/workflow/실제 외부 fetch/Gemini API는 별도 승인 전 미구현.
 - 현재 work branch HEAD (proposal 추가 후): `4392fe27a9b3fb98e107a50764893fcfd4d77e11`. main branch 변경/merge/rebase/sync 없음.
+
+### 2026-11-13 최종 브랜치 상태
+- Work HEAD: `5f205748f1437ac059e70b947800edc9b5b26786`; main 대비 diverged, 459 ahead / 283 behind. merge/rebase/sync 미실시.
+- main `main.py` SHA `86a7731aad5de8d75581fc953bcea2c44adf2f2b` unchanged; work branch implementation SHA `997952702fdd9d2472468b82e6efdd65b2bb4376`.
+- `.github/workflows/run.yml` 양 브랜치 SHA 동일 `65a8cadc8eac593f551e390698e367b1d161ecf1`.
+- 이전 구현 commit run #43205954271은 전체 26 tests PASS. 문서 변경 후 최신 HEAD run #43328023696은 마지막 조회 시 in_progress.
