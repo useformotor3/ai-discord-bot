@@ -277,3 +277,8 @@ main의 #81–#121 41개 연속 보고서를 EUR-Lex와 대조한 결과 파일 
 후속 main report #122도 별도 감사하여 CONFLICT 판정했다. Secure-by-default/access-control/attack-surface 주제는 관련성이 있으나 Annex I 번호와 인용이 틀리고, 강제 비밀번호 변경·RBAC·모든 포트 비활성화는 보편적 직접 의무가 아니다. 상세: [#122 감사](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_122_2026-11-12.md).
 
 원본 main archive/history/state는 수정하지 않았고 작업 브랜치에 감사 기록만 추가했다.
+
+
+## 신규 main archive 감사 #123 — 사용자 지침서/보안 정보
+
+main report #123은 사용자 정보·지침서 제공이라는 유효한 CRA 주제를 다루지만, 핵심 근거를 Article 13(7)로 잘못 인용했다. 실제 사용자 지침서 동봉/전자 제공·명료성·보관 의무는 Article 13(18), 지원 종료일 표시·가능한 경우 종료 알림은 Article 13(19)다. Annex II는 Part I/II가 아니라 1~9번 구조이며, 보안 초기 설정·업데이트 설치·안전한 폐기·자동 업데이트 기본 설정 해제·통합자 정보는 8(a)~(f)에 있다. SBOM 접근 위치는 제조사가 사용자에게 SBOM을 제공하기로 결정한 경우의 9번이다. “Digital Product Passport”는 CRA Annex II의 법정 명칭이 아니며, 서보 드라이브 Class II 분류도 실제 제품 기능/Annex III 근거 없이 단정할 수 없다. 파일 단위 CONFLICT. 상세: [#123 감사](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_123_2026-11-12.md).
