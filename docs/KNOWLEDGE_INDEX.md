@@ -124,3 +124,8 @@ ST와 비교할 기능 범위와 제품군을 먼저 정의한다. 동급 기능
 - 앞선 초기 5개 감사와 합계 14개 표본: 11 CONFLICT / 3 PARTIALLY_VERIFIED. 무작위 표본이 아니므로 전체 archive 오류율로 일반화하지 않는다.
 - 추가 확인한 고위험 혼동: Article 10/11/14, Article 24/32, support period vs free updates, all-vulnerability reporting vs Article 14 scope, product Class I/II core-functionality classification.
 - 제품 분류는 Article 7 + Implementing Regulation (EU) 2025/2392의 core-functionality 기준으로 판단한다.
+
+
+## 서보 드라이브 제품 경계 기준
+- [SERVO_DRIVE_PRODUCT_BOUNDARY_TEMPLATE.md](SERVO_DRIVE_PRODUCT_BOUNDARY_TEMPLATE.md): Article 2/3 적용 범위, 제품 경계 후보, remote data processing, Annex III/IV core functionality 분류 입력 템플릿.
+- 서보 드라이브 명칭만으로 CRA 적용 또는 Important Class I/II를 확정하지 않는다. 완제품과 별도 판매 구성요소, MCU 자체를 분리해 검토한다.
