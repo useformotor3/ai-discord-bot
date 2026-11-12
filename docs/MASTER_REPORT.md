@@ -229,3 +229,7 @@ main의 자동 생성 report #36은 Secure Boot/Measured Boot/TPM을 CRA의 보�
 ## main-only 자동 생성 보고서 #37–#39 감사 결과
 
 main의 #37–#39 보고서를 EUR-Lex 원문과 대조한 결과 세 건 모두 CONFLICT로 판정했다. 지원기간은 Article 13(8), 무상 보안 업데이트는 Annex I Part II(8), CVD 정책은 Part II(5), 신고 연락처는 Part II(6)로 구분해야 한다. Article 13(6)은 통합 구성요소의 취약점 통지·수정 문맥이며 지원기간 조항이 아니다. Annex I Part II는 (a)–(d)가 아니라 (1)–(8)의 제조자 요구사항이고, Annex I Part I(2)(b)는 secure-by-default, (c)는 취약점 업데이트/자동 업데이트 조건이다. 상세: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_37_39_2026-11-12.md](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_37_39_2026-11-12.md).
+
+## 하드웨어 인터페이스 설계 계약
+
+하드웨어 참조 아키텍처에 IF-01..IF-09 인터페이스 계약을 추가했다. 외부 네트워크 입력에서 모션 명령까지, 모션 MCU와 gate driver, 센서 feedback, NVM/key storage, debug/service, power/reset, 제조 프로비저닝 경로마다 신뢰 경계와 설계 검토 항목을 정리했다. 회로도 리뷰 체크리스트는 10개 항목이며, 실제 전기 사양·핀맵·부품·타이밍·안전 경계가 확보되기 전까지 모두 설계 입력/미확인 상태다.
