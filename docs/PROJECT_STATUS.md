@@ -362,3 +362,14 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - Verdict: PARTIALLY_VERIFIED. Secure-by-default, access-control and attack-surface themes are supported by Annex I Part I(2)(b),(d),(j), but the report's Section 1(a)–(d) quote is composite/misnumbered and universal debug/port/password/Secure Boot mandates are overstated.
 - Detailed audit: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_80_2026-11-12.md](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_80_2026-11-12.md). Claim row CRA-ARCH-080-001 added. Original main archive remains unchanged.
 - Latest main report now #80; continue checking for new commits before concluding an audit batch.
+
+
+## Main-only reports #81–#121 audit — 2026-11-12
+
+- Source main HEAD: #121, commit d0ba9802e4b7fead4192263d8ebd08f44a7c547e. Reports #81–#121 are 41 consecutive archive commits; full added report text was inspected from commit diffs.
+- File-level verdicts: 33 CONFLICT / 8 PARTIALLY_VERIFIED / 0 VERIFIED. All 41 Raw Text Quote blocks rejected for verbatim reuse. This is a consecutive risk batch, not a random sample or archive-wide error rate.
+- Detailed report: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_81_121_2026-11-12.md](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_81_121_2026-11-12.md).
+- Main recurring defects: Article 13(8) support period conflated with Annex I Part II(8) free updates; under-five-year expected-use exception reversed/omitted; Article 14 misattributed as general vulnerability reporting/free-update clause; fabricated Annex I subpoints and composite raw quotes; universal Secure Boot/signature/rollback/default-password/port-disable mandates overstated.
+- Correct map: Article 13(8) support period; Article 13(9) update retention after issuance; Annex I Part I(2)(b),(c),(d),(j) secure default/updates/access/attack surface; Annex I Part II(1)–(8) vulnerability handling; Article 14 actively exploited vulnerability and severe incident reporting; Annex II(2) contact point; Annex II(8)(d) secure decommissioning information.
+- No source archive/history/state, main.py, Gemini prompt, production workflow, run.yml or main branch modifications. No merge/rebase/sync. No tests run; no CI PASS claimed.
+- Branch compare at audit start: diverged, work branch 364 ahead / 124 behind main. Do not use old branch counts after new commits; recheck after final documentation updates.
