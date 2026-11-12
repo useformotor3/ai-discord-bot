@@ -331,3 +331,10 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 - [ ] #123 감사 기준으로 서보 드라이브 CRA 사용자 보안정보/지침서 체크리스트를 원본과 별도 문서로 작성.
 - [ ] 제품 핵심 기능·의도된 용도 확인 전 Important Product Class II 자동 단정 금지.
 - [ ] 다음 세션에서 main HEAD를 재확인하고 #124 이후 보고서 감사.
+
+
+## CRA 사용자 보안정보·지침서 산출물
+- [x] #123 법령 매핑에 따라 [SERVO_DRIVE_CRA_USER_SECURITY_INFORMATION_CHECKLIST.md](SERVO_DRIVE_CRA_USER_SECURITY_INFORMATION_CHECKLIST.md) 템플릿 작성.
+- [ ] 실제 제품 SKU/경계/기능/인터페이스/저장 데이터/업데이트 방식/지원기간 입력값 확보.
+- [ ] Annex II 각 항목의 증거 파일·버전·담당자·승인자·문서 위치를 채우고 상태를 검증.
+- [ ] Annex III 기준에 따라 제품 분류를 별도 검토; servo drive라는 이유만으로 Class II 지정 금지.
