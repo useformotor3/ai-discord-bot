@@ -193,3 +193,13 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 ## 정기 공식 자료 점검
 - 주간 자동화 등록: 매주 월요일 09:00 Asia/Seoul. 범위는 EUR-Lex/European Commission/ENISA 및 ST/TI 공식 보안 문서.
 - 자동화는 자료 변경을 조사·요약하고 작업 브랜치 반영 후보를 제시한다. main.py/Gemini prompt/production workflow/main branch 변경 권한을 부여하지 않는다.
+
+## 추가 검증 진행 — 2026-11-12
+
+- [x] 통합 매트릭스 TR-01..20 / 위협 TH-01..18 / 자산 AST-01..10 / 시험 TST 45개 ID 중복·참조 정합성 검사. 모든 매트릭스 시험 참조가 시험 대장에 존재.
+- [x] main-only 자동 생성 report #35의 CRA 법령 인용 감사 및 정정 기록. 원본 main 파일은 수정하지 않음.
+- [x] TI SLAAE29 Rev B 공식 HTML 본문 및 revision history 확인.
+- [ ] TI SLAAE29 Rev B의 지원 부품 목록과 MSPM0G3529-Q1 데이터시트/적용 TRM 사이의 part-specific 보안 기능 교차확인.
+- [ ] TI G-Series TRM Rev F 보안 장/레지스터 상세 본문 확보. 현재 대용량 HTML 본문은 열람 실패.
+- [ ] Commission C(2026) 5252 Annex PDF 페이지/문단별 검증. 공식 download endpoint는 Unicode decoding error.
+- [ ] main branch의 신규 자동 생성 archive/history 차이 및 CRA 법령 오류를 계속 감사하되 main은 사용자 승인 없이 수정/병합하지 않음.
