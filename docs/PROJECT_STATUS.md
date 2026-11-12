@@ -269,3 +269,11 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - 정확한 매핑은 Article 13(8)=support period, Article 14=actively exploited vulnerability/severe incident reporting, Annex I Part II(7)=secure update distribution, Part II(8)=free security updates(맞춤형 제품에 대한 제조자-사업 사용자 별도 합의 예외), Annex II point 8(d)=secure decommissioning instructions.
 - 상세: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_40_55_2026-11-12.md](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_40_55_2026-11-12.md). 원본 main archive/history/state, main.py, Gemini prompt, production workflow는 수정하지 않았다.
 - 공식 EUR-Lex source lines checked: Article 13 lines 888–905; Article 14 lines 939–964; Annex I lines 1743–1773; Annex II lines 1776–1794. Commission C(2026) 5252 official publication page confirms 27 July 2026 publication and non-binding nature.
+
+
+## Commission guidance / TI TRM Rev F follow-up — 2026-11-12
+
+- Commission C(2026) 5252 Annex structured text was inspected via a transcription page that identifies the official PDF filename and SHA-256 and states it was verified against the PDF; official Commission page confirms publication 2026-07-27 and non-binding status. Support-period guidance points 125–127: 5 years is not the default; use expected-use rationale, and industrial control systems often have longer expected use. Core-functionality points 139–145 reinforce that product category cannot be inferred from the presence of a component alone. Reporting points 209–210 reinforce Article 14's limited reporting scope and continuation after support ends. Commission PDF remains authoritative.
+- TI official product page confirms MSPM0 G-Series TRM Rev F dated 2026-11-05. Full PDF is about 25 MB and could not be opened in this environment. Revision metadata VERIFIED; security chapter/register-level content NOT_VERIFIED. No Rev F feature/register claim added.
+- Protected files independently compared on main and cra-project-foundation: main.py blob SHA 86a7731aad5de8d75581fc953bcea2c44adf2f2b; .github/workflows/run.yml blob SHA 65a8cadc8eac593f551e390698e367b1d161ecf1. Both match across branches.
+- Latest audit commit status endpoint returned no statuses; do not claim CI passed.
