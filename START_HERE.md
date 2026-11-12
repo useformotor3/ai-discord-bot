@@ -158,3 +158,11 @@
 - 하드웨어 참조 아키텍처에 DEC-01..DEC-10 선택 매트릭스, G-01..G-06 설계 동결 게이트, IF-01..IF-09 인터페이스 계약 및 회로도 리뷰 체크리스트를 추가했다.
 - 제품별 회로/전압/절연/ESD/타이밍/핀맵/부품은 입력이 없어 미확정. 기존 시험 대장과의 ID 참조는 재검사했고 누락 참조 0.
 - main-only 보고서 #37–#39 법령 인용 감사는 [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_37_39_2026-11-12.md](docs/ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_37_39_2026-11-12.md)에 기록했다.
+
+
+## 2026-11-12 추가 — main-only reports #40–#55 감사
+
+- [main reports #40–#55 상세 감사](docs/ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_40_55_2026-11-12.md): 파일 단위 PARTIALLY_VERIFIED 2 / CONFLICT 14, 완전 VERIFIED 0.
+- 주요 교정: Article 13(8)=지원기간, Article 14=적극 악용 취약점/심각한 사고 신고, Annex I Part II(7)=안전한 업데이트 배포, Part II(8)=무상 보안 업데이트, Annex II 8(d)=안전한 폐기 안내.
+- 특정 서명 알고리즘, dual-bank, hot-patch, zero-downtime, STO/SIL 분리 등을 CRA의 보편적 직접 의무로 인용하지 않는다. 제품 위험평가·기능안전 설계 선택으로 분리한다.
+- 원본 main archive는 수정하지 않았고 작업 브랜치에 감사 문서/claim ledger만 추가했다.
