@@ -328,3 +328,14 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - Detailed audit: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_79_2026-11-12.md](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_79_2026-11-12.md). Original main archive remains unchanged.
 - Latest main report now #79; compare main vs work branch is diverged 329 ahead / 82 behind. No sync/merge/rebase.
 - main.py and production run.yml blob hashes remain 86a7731aad5de8d75581fc953bcea2c44adf2f2b and 65a8cadc8eac593f551e390698e367b1d161ecf1 on main. Latest work-branch status query returned empty statuses; CI remains unknown.
+
+
+## TI MSPM0G3529-Q1 functional safety evidence — 2026-11-12
+
+- Located TI SFFS983A Rev A *Functional Safety Manual for MSPM0Gx51x and MSPM0Gx52x*, dated October 30, 2026; supported-device header explicitly includes MSPM0G3529-Q1.
+- §2 states SEooC, developed to relevant ISO 26262:2018 requirements, systematic integrity ASIL D and random-fault mechanisms up to ASIL B. This is component-level evidence, not SIL 3 certification or a complete servo-drive claim.
+- §4.3 assumptions include integrator-selected diagnostics from FMEDA/safety manual, host-provisioned actuator-disable mechanism, host communication-loss supervision, FTTI >10 ms, MPFDTI <8 h, random ASIL B and systematic ASIL D assumptions.
+- §4.3 explicitly classifies DEBUG, RTC, AES, TRNG, KEYSTORE, MATHACL and DFT as QM/non-safety-critical for this safety concept; do not count them as safety mechanisms. Unprotected SRAM bank is excluded from safety-critical contexts; TI recommends no flash programming during safety-critical tasks.
+- §6 lists 74 diagnostic/safety mechanism entries, but implementation and diagnostic coverage remain application/system integrator responsibilities.
+- Detailed review: [TI_MSPM0G3529_Q1_FUNCTIONAL_SAFETY_REVIEW_2026-11-12.md](TI_MSPM0G3529_Q1_FUNCTIONAL_SAFETY_REVIEW_2026-11-12.md). Source register §10 and claim ledger TI-SAFETY-001..005.
+- TRM Rev F remains metadata-only; full body/security register details remain NOT_VERIFIED. No SIL 3 equivalence inferred.
