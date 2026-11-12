@@ -238,3 +238,8 @@ main의 #37–#39 보고서를 EUR-Lex 원문과 대조한 결과 세 건 모두
 ## 신규 아카이브 감사: main reports #40–#55
 
 main 브랜치의 #40–#55를 EUR-Lex 원문과 대조했다. 파일 단위로 #40과 #49는 PARTIALLY_VERIFIED, 나머지 14건은 CONFLICT다. 이 배치에서 완전 VERIFIED로 직접 인용 가능한 보고서는 없다. 핵심 법령 구조는 Article 13(8) 지원기간, Article 14 신고, Annex I Part II(7) 안전한 업데이트 배포, Part II(8) 무상 보안 업데이트, Annex II point 8(d) 안전한 제품 폐기 안내다. 상세 판정과 각 보고서별 오류는 [감사 보고서](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_40_55_2026-11-12.md) 및 [주장·근거 대장](CLAIM_EVIDENCE_LEDGER.md)을 참조한다. 원본 main 파일은 보존했다.
+
+
+## TI 최신 TRM Rev F 상태 재검증
+
+TI MSPM0G3507 공식 제품 페이지에서 G-Series TRM Rev F가 2026-11-05자로 등록된 것을 확인했다. 같은 페이지의 MSPM0G3507 기능 요약은 AES, TRNG, CRC, MPU, flash ECC, SRAM parity option 및 SWD 등을 나열하지만 이는 해당 제품 페이지 수준의 근거다. TRM 본문은 25,348,105 bytes의 HTML viewer 렌더링 제한으로 열람하지 못해 보안 장·레지스터·개정 차이는 아직 미검증이다. 특히 MSPM0G3507의 기능을 MSPM0G3529-Q1에 전이하지 않는다. 상세 출처 및 claim status는 [제조사 자료 등록부](MANUFACTURER_SECURITY_SOURCE_REGISTER_2026-11-12.md) §9와 [주장·근거 대장](CLAIM_EVIDENCE_LEDGER.md)을 참조한다.
