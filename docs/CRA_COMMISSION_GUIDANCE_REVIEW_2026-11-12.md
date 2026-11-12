@@ -55,6 +55,12 @@ Commission은 가이드가 비구속적(non-binding)이라고 명시한다. 따�
 4. 변경이 필요한 기존 제품 경계 템플릿/추적성 매트릭스만 최소 수정.
 5. 변경 전후 근거와 문서 revision을 CLAIM_EVIDENCE_LEDGER.md에 기록.
 
+## 6. 2026-11-12 재접근 시도
+
+- 공식 게시 페이지에서 Annex 다운로드 링크 ID 6을 다시 열었다: https://digital-strategy.ec.europa.eu/en/library/commission-publishes-new-guidance-support-timely-cyber-resilience-act-implementation
+- 링크는 공식 Commission newsroom endpoint https://ec.europa.eu/newsroom/dae/redirection/document/131456 로 연결되지만, PDF fetch가 Unicode decoding error로 실패했다.
+- 이 결과는 공식 게시 사실/주제 확인과 Annex PDF의 본문 검증을 구분해야 함을 재확인한다. Annex의 문단·페이지·직접 인용은 여전히 PENDING이며, 내용 요약을 확정 근거로 승격하지 않는다.
+
 ## 6. 출처
 
 - European Commission official publication page: https://digital-strategy.ec.europa.eu/en/library/commission-publishes-new-guidance-support-timely-cyber-resilience-act-implementation
