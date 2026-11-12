@@ -220,3 +220,9 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - Commission C(2026) 5252 Annex는 공식 endpoint에서 도구 Unicode decoding error로 다시 열지 못함. 본문 페이지별 검증 미완료.
 - main.py SHA-1 86a7731aad5de8d75581fc953bcea2c44adf2f2b, production run.yml SHA-1 65a8cadc8eac593f551e390698e367b1d161ecf1 확인. 변경 없음.
 - main 병합 없음. 이 감사/문서 변경은 cra-project-foundation 브랜치에만 저장.
+
+## 2026-11-12 — main-only report #36 감사
+
+- main report #36: research_archive/2026-11-12_025529.md, blob SHA 0d5b3f17b13f8935a90c23400173e401a76e1953, commit 5cd4a18dbf5dc4712d669b29b8846af799f5efc1.
+- EUR-Lex 원문 대조 결과: Article 14(신고)와 Annex I Part II(8)(무상 보안 업데이트) 혼동, Annex I Part I(2)(b),(c),(g) 오기, Secure Boot/Measured Boot/TPM 보편 의무 단정, 정식 법령 제목의 개정 법령 번호 오류.
+- 파일 판정 CONFLICT, Raw Text Quote REJECTED. 상세: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_36_2026-11-12.md](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_36_2026-11-12.md). main 원본 수정/병합 없음.
