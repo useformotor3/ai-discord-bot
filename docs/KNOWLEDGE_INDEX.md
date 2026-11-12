@@ -77,3 +77,25 @@ ST와 비교할 기능 범위와 제품군을 먼저 정의한다. 동급 기능
 3. 동일 URL 및 중복 주장 식별
 4. 원문 접속 및 조항/페이지 대조
 5. 검증 결과를 별도 레코드로 저장하고 원본 아카이브는 보존
+
+
+## 2026-11-12 공식 원문 대조 — CRA 1차 기준선
+- 상세 기록: [CRA_VERIFIED_BASELINE_2026-11-12.md](CRA_VERIFIED_BASELINE_2026-11-12.md)
+- EUR-Lex 공식 원문: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R2847
+- Article 13(2)–(4): 제품 의도된 용도/합리적으로 예견 가능한 사용/운영 환경 등을 고려한 위험평가와 기술문서 반영.
+- Article 13(5)–(7): 제3자 구성요소 due diligence, 취약점 처리·기록.
+- Article 13(8): 지원기간은 예상 사용기간/제품 특성/사용자 기대 등을 반영. 최소 5년 원칙이나 예상 사용기간이 5년 미만이면 그 기간 예외. 지원기간 산정 근거는 Annex VII 기술문서에 포함.
+- Article 13(9): 지원기간 중 배포한 각 보안 업데이트는 발행 후 최소 10년 또는 지원기간 잔여기간 중 더 긴 기간 동안 이용 가능.
+- Annex I Part II(1): 기계 판독 가능한 SBOM, 최소 top-level dependencies 포함. Recital 77은 SBOM 공개 의무가 없다고 설명하며 Annex VII(8)은 시장감시당국의 정당한 요청 등 조건에 따른 제출을 규정.
+- Annex I Part II(2): 기술적으로 가능한 경우 보안 업데이트를 기능 업데이트와 분리.
+- Annex I Part II(8): 보안 업데이트를 지체 없이 배포하고 맞춤형 제품 관련 제조자-사업 사용자 간 별도 합의 예외를 제외하고 무상 제공.
+- Annex I Part I(2)(b),(d),(j): secure-by-default, 접근통제, 공격표면 최소화.
+- Article 14: actively exploited vulnerability 및 severe incident 신고. Commission 페이지는 2026-09-11부터 적용, 조기경보 24시간, 72시간 통지 및 유형별 최종 보고를 확인.
+- Article 71(2): Article 14는 2026-09-11, CRA 일반 적용은 2027-12-11.
+- 공식 출처: Commission reporting obligations https://digital-strategy.ec.europa.eu/en/policies/cra-reporting
+
+## ST MCU 공식 기술 기준선
+- ST AN5156 Rev 14, June 2026: https://www.st.com/content/st_com/en/technical-documents/an5156-introduction-to-security-for-stm32-mcus-stmicroelectronics.html
+- STM32 제품군별 메모리/디버그/부트/암호 기능을 설명하지만 개별 기능은 제품군과 정확한 부품번호별로 확인해야 한다.
+- STM32Trust: https://www.st.com/content/st_com/en/ecosystems/stm32trust.html
+- 정확한 사용 MCU 부품번호 미확인. 제품별 지원 여부는 미검증.
