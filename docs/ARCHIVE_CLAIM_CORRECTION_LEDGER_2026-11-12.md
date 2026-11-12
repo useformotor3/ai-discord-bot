@@ -113,3 +113,10 @@
 - 이 단계는 이전 ledger의 주장 요약을 인용 단위로 보완한다. 모든 비법령 출처(ST/TI/표준 등)의 인용 검증을 포함하지 않는다.
 - 직접 인용으로 재사용 가능한 문구는 원문 위치와 생략 범위를 다시 확인한 일부에 한정한다. PARAPHRASE_MISLABELED, COMPOSITE_OR_FABRICATED, WRONG_REFERENCE 문구는 직접 인용으로 재사용하지 않는다.
 - 34개는 위험 기반 비무작위 표본이며 전체 990개 archive의 오류율로 일반화하지 않는다. 원본 archive 불변.
+
+
+## 10. Pass B/C 최종 결과 연결
+- 34개 고유 표본의 별도 원문 재확인 결과: [ARCHIVE_PASS_BC_FINAL_SUMMARY_2026-11-12.md](ARCHIVE_PASS_BC_FINAL_SUMMARY_2026-11-12.md).
+- 파일 단위 결과: VERIFIED 0 / PARTIALLY_VERIFIED 6 / REJECTED 28. 이 수치는 위험 기반 표본에만 적용된다.
+- 상세 배치: [01](ARCHIVE_PASS_BC_AUDIT_BATCH_01_2026-11-12.md), [02](ARCHIVE_PASS_BC_AUDIT_BATCH_02_2026-11-12.md), [03](ARCHIVE_PASS_BC_AUDIT_BATCH_03_2026-11-12.md), [04](ARCHIVE_PASS_BC_AUDIT_BATCH_04_2026-11-12.md).
+- 원본 archive는 변경하지 않았다. 직접 인용 오류를 교정할 때는 별도 정정본만 변경한다.
