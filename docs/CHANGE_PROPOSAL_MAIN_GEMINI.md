@@ -217,3 +217,25 @@
 - 위 항목은 P0/P1 변경 제안의 추가 증거와 acceptance criteria일 뿐이다.
 - main.py, Gemini prompt, parser/validator, model selection/fallback, context construction, production workflow 및 run.yml은 변경하지 않았다.
 - 구현 전에는 이 추가 제안에 대해 별도 사용자 승인을 받고, 구체 diff·영향·회귀/비용 위험·테스트·롤백을 다시 제시한다.
+
+
+## 12. 신규 실증 사례 — reports #123–#124 (2026-11-12)
+
+### 관찰된 추가 실패 증거
+- #123: 사용자 지침서 의무를 Article 13(7)에 잘못 연결(정확한 근거 Article 13(18)); Annex II에 존재하지 않는 Part I/Part II 구조를 생성; Annex II 8(a)–(f), 9의 조건을 왜곡; “Digital Product Passport”를 법정 용어처럼 사용; 서보 드라이브 Class II를 제품 증거 없이 단정.
+- #124: 취약점 처리 요구사항을 Annex I Part I Section 2로 잘못 분류(정확한 구조 Annex I Part II(1)–(8)); 합성 Raw Text Quote; cryptographic signature 및 fail-safe recovery를 보편적 명시 의무로 과장.
+- 상세 파일: ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_123_2026-11-12.md, ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_124_2026-11-12.md; ledger CRA-ARCH-123-001/124-001.
+
+### 추가 P0/P1 acceptance criteria
+- **Annex structure registry:** Article/Annex/Part/point/letter structure is canonicalized; non-existent labels such as “Annex II Part I/II” and “Annex I Part I Section 2” are rejected.
+- **Obligation paragraph mapping:** Article 13(7) systematic cybersecurity documentation, 13(17) single contact, 13(18) user instructions, 13(19) support-end-date information are distinct IDs and cannot be substituted.
+- **Annex II conditionality:** points 1–9 are represented exactly; point 8(a)–(f) separately typed; point 9 SBOM access location is conditional on manufacturer deciding to make SBOM available to users.
+- **Article 13(18)/(19) document retention/display:** tests must separately validate instruction provision/retention and support-end-date display at purchase, including at least month/year and feasible end-of-support notification.
+- **Part I vs Part II separation:** product cybersecurity properties (Part I) cannot be substituted for vulnerability-handling process obligations (Part II).
+- **Security-update taxonomy:** Part I(2)(c) applicable automatic-update default and user controls are distinct from Part II(7) secure distribution and Part II(8) timely/free update availability.
+- **Implementation mandate guard:** signature verification, secure boot, anti-rollback, dual-bank/recovery, fail-safe modes and RBAC are not classified as universal LAW_REQUIREMENT unless an exact legal source says so; they may be RISK_BASED_DESIGN_OPTION and need product-specific justification.
+- **Product-class guard:** Important Product/Class I/Class II classification requires actual Annex III category and core-function evidence. Product name or industrial use alone is insufficient.
+- **No statutory-label hallucination:** “Digital Product Passport” cannot be represented as CRA Annex II legal terminology; if used internally, it must be labelled manufacturer-created information package.
+
+### Approval status
+These are evidence-backed proposal additions only. No main.py, Gemini prompt, parser, validation gate, model selection/fallback, production workflow or run.yml was modified. Implementation remains USER_APPROVAL_REQUIRED.
