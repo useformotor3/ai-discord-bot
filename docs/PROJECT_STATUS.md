@@ -252,3 +252,9 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - 반복 오류: Article 11/13(2)/13(6)을 지원기간 또는 무상 업데이트 근거로 오용; Article 13(8) 지원기간과 Annex I Part II(8) 무상 업데이트 혼동; Annex I Part II를 (a)–(d)로 잘못 인용; Part I(2)(b)와 (c) 혼동.
 - 정확한 법령 원문 위치: Article 13(2),(6),(8) lines 888–908; Annex I Part I(2)(b),(c) and Part II(1)–(8) lines 1747–1773.
 - 상세: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_37_39_2026-11-12.md](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_37_39_2026-11-12.md). 원본 main archive/history/state 수정 없음.
+
+## 하드웨어 인터페이스 설계 계약 — IF-01..IF-09
+
+- 하드웨어 아키텍처에 IF-01..IF-09 인터페이스 설계 계약을 추가했다: 외부 통신, 통신→모션 명령, MCU→Gate Driver, 센서/엔코더, NVM, 선택적 Secure Element, debug/service, power/reset/clock, 제조 프로비저닝.
+- 각 인터페이스에 신뢰 경계, 설계 계약, 전기/물리 검토 항목, 기존 시험 연결을 정의했다.
+- 회로도 리뷰 체크리스트 10개 항목 추가. 모든 제품별 상태는 UNKNOWN/UNVERIFIED이며 전압·절연·ESD·타이밍 수치는 임의로 정하지 않았다.
