@@ -339,3 +339,11 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - §6 lists 74 diagnostic/safety mechanism entries, but implementation and diagnostic coverage remain application/system integrator responsibilities.
 - Detailed review: [TI_MSPM0G3529_Q1_FUNCTIONAL_SAFETY_REVIEW_2026-11-12.md](TI_MSPM0G3529_Q1_FUNCTIONAL_SAFETY_REVIEW_2026-11-12.md). Source register §10 and claim ledger TI-SAFETY-001..005.
 - TRM Rev F remains metadata-only; full body/security register details remain NOT_VERIFIED. No SIL 3 equivalence inferred.
+
+
+## Final repository integrity check — 2026-11-12 15:29 KST
+
+- Latest main HEAD remains report #79: 61d596354e1e4a700915306cecb1bc29f0828698. No #80+ report appeared in the latest commit search.
+- Compare status: cra-project-foundation is diverged, 347 commits ahead / 82 behind main. No sync, merge or rebase performed.
+- Protected file hashes match across branches: main.py 86a7731aad5de8d75581fc953bcea2c44adf2f2b; .github/workflows/run.yml 65a8cadc8eac593f551e390698e367b1d161ecf1.
+- Latest work branch HEAD: 9c23c6922570593bf6c47eca66f02e1d2ec9ea06. Combined status returned an empty statuses array; CI/test pass is not established.
