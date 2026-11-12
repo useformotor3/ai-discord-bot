@@ -55,7 +55,10 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 - [x] ST AN5156 Rev 14 (June 2026) 및 STM32Trust 공식 기준선 확보
 - [x] TI MSPM0G3529-Q1 데이터시트 및 SLAAE29A 보안 기능 문서 확보 (참고 기준 예시, 동급 비교 아님)
 - [ ] ST MCU 정확한 부품 번호와 문서 리비전 확인
-- [ ] Secure Boot, 디버그 잠금, 키 저장, 암호, 난수, 업데이트 기능 검증
+- [x] 제조사 보안 자료 source register 및 기능별 ST/TI 비교표 작성 (ST AN5156 Rev14, TI MSPM0G3529-Q1 SLASFO2B RevB)
+- [x] 제조사 기술 주장 8개를 source location에 연결한 claim ledger 초기화
+- [ ] TI SLAAE29 RevB (2026-08) 본문 및 최신 G-Series TRM RevF 상세 대조
+- [ ] Secure Boot, 디버그 잠금, 키 저장, 암호, 난수, 업데이트 기능의 실제 구현/시험 검증
 - [ ] TI 동급 제품 비교
 
 ## P5 — 통합 보고서
@@ -88,3 +91,10 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 - 결과: 14 CONFLICT, 6 PARTIALLY_VERIFIED. 무작위 표본이 아니므로 전체 오류율 추정 불가.
 - 상세: [ARCHIVE_MANUAL_AUDIT_20_2026-11-12.md](ARCHIVE_MANUAL_AUDIT_20_2026-11-12.md).
 - 원본 archive는 수정하지 않음. main.py/Gemini prompt/운영 workflow 미수정.
+
+
+## 2026-11-12 제조사 보안 자료 및 주장 대장
+- [x] ST/TI 공식 자료 레지스터 및 기능별 비교: [MANUFACTURER_SECURITY_SOURCE_REGISTER_2026-11-12.md](MANUFACTURER_SECURITY_SOURCE_REGISTER_2026-11-12.md).
+- [x] 출처·문서 버전·원문 위치·주장 유형·상태를 연결하는 [CLAIM_EVIDENCE_LEDGER.md](CLAIM_EVIDENCE_LEDGER.md) 생성. 제조사 주장 초기 8건 등록.
+- [ ] TI SLAAE29 Rev B(2026-08-27) 본문 및 G-Series TRM Rev F(2026-11-05) 보안 장 상세 검토. 현재 Rev A SLAAE29A 분석은 이전 판본 기준임을 명시.
+- [ ] 실제 ST MCU part number 확보 전 ST 기능 비교는 제품군 수준으로만 유지.
