@@ -226,3 +226,9 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - main report #36: research_archive/2026-11-12_025529.md, blob SHA 0d5b3f17b13f8935a90c23400173e401a76e1953, commit 5cd4a18dbf5dc4712d669b29b8846af799f5efc1.
 - EUR-Lex 원문 대조 결과: Article 14(신고)와 Annex I Part II(8)(무상 보안 업데이트) 혼동, Annex I Part I(2)(b),(c),(g) 오기, Secure Boot/Measured Boot/TPM 보편 의무 단정, 정식 법령 제목의 개정 법령 번호 오류.
 - 파일 판정 CONFLICT, Raw Text Quote REJECTED. 상세: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_36_2026-11-12.md](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_36_2026-11-12.md). main 원본 수정/병합 없음.
+
+## 자동 조사 파이프라인 신뢰성 — #35/#36 증거 반영
+
+- main-only report #35/#36에서 법령 조항 오기, 원문에 없는 Secure Boot 직접 인용, Article 14/무상 업데이트 혼동이 재현됨.
+- [CHANGE_PROPOSAL_MAIN_GEMINI.md](CHANGE_PROPOSAL_MAIN_GEMINI.md)에 직접 인용 문자열 검증, Annex/Part/point 정합성, 법령 메타데이터 대조, 법령 의무와 설계 선택 분리, 회귀 테스트를 추가 제안했다.
+- 제안 상태는 USER_APPROVAL_REQUIRED. main.py, Gemini prompt, 파서/검증 게이트, production workflow는 변경하지 않았다.
