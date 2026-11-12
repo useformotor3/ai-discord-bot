@@ -33,7 +33,15 @@
 14. 용어집 및 참고자료
 
 ## 1. CRA 개요
-작성 상태: 조사 전. 공식 법령 원문 및 최신 공식 안내를 확인한 후 작성한다.
+CRA는 EU 시장에 제공되는 디지털 요소 제품에 대한 수평적 사이버보안 규정이다. 법령 기준선은 별도 문서 [CRA_LEGAL_BASELINE.md](CRA_LEGAL_BASELINE.md)에 정리했다.
+
+2026-11-12 기준 Article 14 제조자 신고 의무는 2026-09-11부터 적용 중이며, 규정의 일반 적용일은 2027-12-11이다. 신고 대상은 모든 취약점이 아니라 제품 내 actively exploited vulnerability와 제품 보안에 영향을 주는 severe incident다. 구체적인 24시간·72시간·최종 보고 시한은 사건 유형별로 구분해야 한다.
+
+Annex I Part II의 핵심 취약점 처리 의무에는 SBOM, 지체 없는 취약점 조치, 정기 보안시험, 조정된 취약점 공개 정책, 안전한 업데이트 배포, 보안 업데이트의 원칙적 무상 제공 등이 포함된다.
+
+완제품 서보 드라이브가 Important Class I/II에 해당하는지, ST MCU가 Class I category 14에 해당하는지는 서로 별개로 판단해야 한다. 제품명이나 MCU 제조사만으로 등급을 단정하지 않는다.
+
+근거: [Regulation (EU) 2024/2847](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R2847), [Implementing Regulation (EU) 2025/2392](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R2392), [European Commission reporting obligations](https://digital-strategy.ec.europa.eu/en/policies/cra-reporting).
 
 ## 2. 제품 적용 범위와 제품 분류 판단
 작성 상태: 제품의 기능·의도된 용도·연결성·시장·구성 정보를 바탕으로 판단 절차를 작성한다. 서보 드라이브라는 명칭만으로 적용 여부나 분류를 단정하지 않는다.
