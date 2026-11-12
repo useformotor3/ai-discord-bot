@@ -244,3 +244,12 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 - [x] 회로도 리뷰 체크리스트 10개 항목 추가.
 - [ ] 실제 회로도, 커넥터/핀맵, PHY·센서·gate driver 부품번호, power tree, clock/reset, isolation/EMC 요구를 확보해 설계 검토.
 - [ ] 승인된 motion control timing/jitter budget 및 fault response 기준으로 시험 수행.
+
+
+## Main-only reports #40–#55 audit
+- [x] main-only CRA reports #40–#55 source text reviewed from GitHub commits and compared with EUR-Lex Regulation (EU) 2024/2847.
+- [x] Detailed audit report and 16 atomic claim rows added to the work branch.
+- [x] Distinguish Article 13(8) support period, Article 14 reporting, Annex I Part II(7) secure distribution, Part II(8) free updates, Annex II 8(d) decommissioning.
+- [ ] Continue with later main-branch reports after checking commit sequence and source content.
+- [ ] Commission C(2026) 5252 Annex full paragraph-level review; official index/publication metadata is verified, full PDF extraction remains incomplete in this environment.
+- [ ] TI G-Series TRM Rev F security chapter: official revision metadata verified (Nov 5 2026), but full body not yet verified; do not make feature/registration claims from revision metadata alone.
