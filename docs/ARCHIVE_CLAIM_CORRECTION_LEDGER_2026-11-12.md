@@ -94,7 +94,7 @@
 ## 7. 미해결 후속 작업
 
 - [x] A-013/B-006 중복을 SHA-1로 확인하고 고유 파일 기준 집계 보정
-- [ ] 각 원본의 직접 인용 블록을 EUR-Lex 원문과 문자 단위 비교하고 인용 오류를 개별 quote claim으로 분리
+- [x] 각 원본의 법령 인용 블록을 EUR-Lex 원문과 대조하고 인용 판정을 별도 quote-level 감사로 분리
 - [x] A-001~A-015, B-001~B-020의 원본 경로·SHA-1 중복 여부 대조 완료 (A-013/B-006만 중복)
 - [ ] 각 claim에 canonical URL, 조항·항·점, 최소 원문 excerpt, 한국어 정정문을 개별 레코드로 확장
 - [ ] 원본 archive 파일은 계속 불변으로 유지
@@ -105,3 +105,11 @@
 2. Commission Implementing Regulation (EU) 2025/2392, EUR-Lex: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R2392
 
 **법령 적용 주의:** Article 14 신고 의무는 2026-09-11부터 적용되며, CRA 일반 적용일은 2027-12-11이다(Article 71). 이 문서는 법률 자문이나 제품별 적합성 판정이 아니다.
+
+
+## 9. 직접 인용문 단위 감사 연결 (2026-11-12)
+- [x] 34개 고유 표본의 법령 인용 후보를 EUR-Lex 공식 원문과 대조하고 원본 행 위치별 판정을 기록했다.
+- 상세 판정표: [ARCHIVE_QUOTE_LEVEL_AUDIT_2026-11-12.md](ARCHIVE_QUOTE_LEVEL_AUDIT_2026-11-12.md).
+- 이 단계는 이전 ledger의 주장 요약을 인용 단위로 보완한다. 모든 비법령 출처(ST/TI/표준 등)의 인용 검증을 포함하지 않는다.
+- 직접 인용으로 재사용 가능한 문구는 원문 위치와 생략 범위를 다시 확인한 일부에 한정한다. PARAPHRASE_MISLABELED, COMPOSITE_OR_FABRICATED, WRONG_REFERENCE 문구는 직접 인용으로 재사용하지 않는다.
+- 34개는 위험 기반 비무작위 표본이며 전체 990개 archive의 오류율로 일반화하지 않는다. 원본 archive 불변.
