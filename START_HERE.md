@@ -152,3 +152,9 @@
 
 - main-only 자동 생성 보고서 #37–#39 3건을 공식 EUR-Lex와 대조, 모두 CONFLICT. Article 13(8) 지원기간 / Annex I Part II(8) 무상 업데이트 / CVD Part II(5) / contact Part II(6)를 분리. Annex I Part II (a)–(d) 인용 및 Part I(2)(b)/(c) 인용 오류를 기록.
 - 상세 감사: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_37_39_2026-11-12.md](docs/ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_37_39_2026-11-12.md). main 원본은 불변 유지.
+
+## 2026-11-12 추가 — 하드웨어 인터페이스 설계 계약
+
+- 하드웨어 참조 아키텍처에 DEC-01..DEC-10 선택 매트릭스, G-01..G-06 설계 동결 게이트, IF-01..IF-09 인터페이스 계약 및 회로도 리뷰 체크리스트를 추가했다.
+- 제품별 회로/전압/절연/ESD/타이밍/핀맵/부품은 입력이 없어 미확정. 기존 시험 대장과의 ID 참조는 재검사했고 누락 참조 0.
+- main-only 보고서 #37–#39 법령 인용 감사는 [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_37_39_2026-11-12.md](docs/ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_37_39_2026-11-12.md)에 기록했다.
