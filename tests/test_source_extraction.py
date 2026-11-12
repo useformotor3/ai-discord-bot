@@ -1,5 +1,6 @@
 import hashlib
 import unittest
+from unittest import mock
 
 from source_extraction import (
     ExtractionError,
@@ -95,7 +96,7 @@ class SourceExtractionTests(unittest.TestCase):
     def test_pdf_backend_unavailable_is_explicit(self):
         # A factory import is deliberately lazy; force the no-backend branch without touching the network.
         raw = b"%PDF-1.7 fixture"
-        with unittest.mock.patch.dict("sys.modules", {"pypdf": None}):
+        with mock.patch.dict("sys.modules", {"pypdf": None}):
             with self.assertRaisesRegex(ExtractionError, "PDF_BACKEND_UNAVAILABLE"):
                 extract_pdf_pages("TI_MSPM0G3529_Q1_DATASHEET", raw)
 
