@@ -147,3 +147,11 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - 지원기간 Article 13(8), 업데이트 무상 제공 Annex I Part II(8), 업데이트 분리 Part II(2), 신고 Article 14는 서로 다른 의무다. Annex I Part I(2)(g)는 데이터 최소화, (h)는 가용성 보호다.
 - 감사 결과는 34개 위험 기반 표본에만 적용된다. 전체 990개 오류율로 일반화하지 않는다.
 - 원본 research_archive, main.py, Gemini prompt, production run.yml은 수정하지 않았다. main merge 없음.
+
+
+## 검증 품질 게이트 — 2026-11-12
+- [검증 운영 프로토콜](VERIFICATION_PROTOCOL.md)을 프로젝트 공통 작업 기준으로 추가했다.
+- VERIFIED 승격에는 공식 원문·정확한 버전/위치/문맥, 별도 재검증(Pass B), 반증 확인(Pass C), 제품 적용성 판단이 필요하다.
+- 동일 AI의 반복 답변은 독립 검증으로 계산하지 않는다. 법령의 단일 권위 원문은 독립적인 문맥/조항 재확인으로 검증 절차를 남기며, 별도 출처가 원문을 반복하는 경우 독립 증거로 과장하지 않는다.
+- 작업 순서는 P0 제품 범위/분류/핵심 의무/정확한 MCU → P1 설계·시험 → P2 보조 설명으로 고정했다.
+- 이번 세션은 운영 프로토콜 문서화만 완료했다. 기존 34개 인용 감사 전체를 이 신규 Pass A/B/C 양식으로 재실행한 것은 아니다. 기존 인용 감사는 사람의 원문 대조 기록이며, 신규 프로토콜 기준으로는 재검증 보완이 남아 있다.
