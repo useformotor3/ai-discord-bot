@@ -205,3 +205,32 @@ Detailed file-level audit: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_40_55_2026-11-12.md](
 | CRA-ARCH-059-001 | Article 13(2) requires free security patches and Annex I Part I Section 1 subpoints (a),(b) quote secure-by-default/free update rules. | Article 13(2),(8); Annex I Part I(2)(b); Part II(8) | Article 13(2) is risk assessment; support period and free updates are separate provisions; quote/reference inaccurate. | CONFLICT |
 
 Detailed audit: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_56_59_2026-11-12.md](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_56_59_2026-11-12.md).
+
+
+## 12. Main-only reports #60–#78 audit (2026-11-12)
+
+Detailed file-level findings: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_60_78_2026-11-12.md](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_60_78_2026-11-12.md).
+
+| Claim ID | Original report | Atomic claim / correction | Status |
+|---|---|---|---|
+| CRA-ARCH-060-001 | #60 | CVD is Annex I Part II(5); free security updates are Part II(8); Part I(2)(g) is data minimisation, not updates. | PARTIALLY_VERIFIED |
+| CRA-ARCH-061-001 | #61 | Secure-by-default is Part I(2)(b); attack-surface limitation is Part I(2)(j); mandatory MFA/forced password change/blanket port disablement are not universal express commands. | PARTIALLY_VERIFIED |
+| CRA-ARCH-062-001 | #62 | Article 13(7) is systematic documentation, not free updates or support period; cited Part I numbering is invalid. | CONFLICT |
+| CRA-ARCH-063-001 | #63 | Secure-by-default and attack-surface limitation are valid themes, but cited paragraph/letter locations are wrong; blanket interface disablement is an implementation choice. | PARTIALLY_VERIFIED |
+| CRA-ARCH-064-001 | #64 | Article 13(7) and Part I(2)(g) do not establish free-patch duty; Part I(2)(g) is data minimisation. | CONFLICT |
+| CRA-ARCH-065-001 | #65 | Article 13(6) concerns integrated-component vulnerabilities; Article 13(8) support period has an exception where expected use is under five years. | CONFLICT |
+| CRA-ARCH-066-001 | #66 | Article 14(2) is not a free-update clause; Article 14 governs mandatory reporting. | CONFLICT |
+| CRA-ARCH-067-001 | #67 | Automatic updates are conditional where applicable; free updates are Part II(8), and the quote is composite/non-verbatim. | CONFLICT |
+| CRA-ARCH-068-001 | #68 | Article 11 is general product safety; support period is Article 13(8), free updates Part II(8). | CONFLICT |
+| CRA-ARCH-069-001 | #69 | Part I(2)(g) is data minimisation and (h) availability/DoS resilience; neither is the quoted telemetry opt-in/update rule. | CONFLICT |
+| CRA-ARCH-070-001 | #70 | CRA does not universally prescribe HSM/Secure Boot/runtime integrity implementation; the cited quote is synthetic. | CONFLICT |
+| CRA-ARCH-071-001 | #71 | Article 11(2) is not the claimed free-update/CVD provision; CVD is Part II(5), free updates Part II(8). | CONFLICT |
+| CRA-ARCH-072-001 | #72 | Article 14(3) is severe-incident reporting; support period is Article 13(8), free updates Part II(8). | CONFLICT |
+| CRA-ARCH-073-001 | #73 | Article 13(8) correctly identifies support period, but Part I(2)(g) is data minimisation and the quoted Article 13(8) text is not authentic. | PARTIALLY_VERIFIED |
+| CRA-ARCH-074-001 | #74 | Article 14(3) is severe-incident reporting; Part II(1) is SBOM identification/documentation, not update automation. | CONFLICT |
+| CRA-ARCH-075-001 | #75 | Five-year support rule omits the expected-use-under-five-years exception; Part II(2) is not the quoted free-update clause. | CONFLICT |
+| CRA-ARCH-076-001 | #76 | Part II(8) supports timely/free updates subject to tailor-made exception; cited Part I(2)(g) is wrong and quote is not verbatim. | PARTIALLY_VERIFIED |
+| CRA-ARCH-077-001 | #77 | Secure-by-default/attack-surface principles are valid; mandatory password/port/debug/signature implementation details are overstated. | PARTIALLY_VERIFIED |
+| CRA-ARCH-078-001 | #78 | Article 13(8) is support period, but the quote is fabricated/oversimplified; free updates are Part II(8). | CONFLICT |
+
+**Batch totals:** 19 files; 6 PARTIALLY_VERIFIED; 13 CONFLICT; 0 fully VERIFIED. No Raw Text Quote block from #60–#78 is cleared for verbatim reuse. These are file-level findings, not an archive-wide error rate.
