@@ -78,6 +78,17 @@ class ContractTests(unittest.TestCase):
         with self.assertRaises(ReportValidationError):
             parse_and_validate_report(json.dumps(payload))
 
+    def test_json_schema_uses_standard_json_schema_types(self):
+        self.assertEqual(CRA_REPORT_SCHEMA["type"], "object")
+        self.assertEqual(CRA_REPORT_SCHEMA["properties"]["claims"]["type"], "array")
+        self.assertEqual(CRA_REPORT_SCHEMA["properties"]["topic"]["type"], "string")
+
+    def test_partially_verified_status_rejected_without_source_evidence(self):
+        payload = valid_payload()
+        payload["overall_status"] = "PARTIALLY_VERIFIED"
+        with self.assertRaises(ReportValidationError):
+            parse_and_validate_report(json.dumps(payload))
+
     def test_model_cannot_promote_verified(self):
         payload = valid_payload()
         payload["overall_status"] = "VERIFIED"
