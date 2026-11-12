@@ -147,3 +147,10 @@ ST와 비교할 기능 범위와 제품군을 먼저 정의한다. 동급 기능
 - TI SLAAE29A RevA Dec 2025의 CSC/secure boot/secure storage 구조를 확인. TI 공식 G3506 자료목록에서 RevB Aug 27 2026 및 G-Series TRM RevF Nov 5 2026이 최신 문서로 표시됨. RevB 본문과 G3529-Q1 적용성은 추가 확인 대기.
 - TI 제품 페이지의 PSA L1 certification targeted 표현은 인증 완료 증거가 아니다. Automotive Q1 / ASIL targeted는 CRA 적합성 판단과 별개.
 - ST 실제 MCU 주문 코드 미확정이므로 ST 기능은 제품군 자료 기준선이며 부품별 검증은 UNVERIFIED.
+
+
+## 2026-11-12 추가 — 서보 드라이브 보안 하드웨어 참조 설계
+- [서보 드라이브 CRA 보안 하드웨어 아키텍처](SERVO_DRIVE_CRA_SECURITY_HARDWARE_ARCHITECTURE.md): 참조 블록, trust boundary, secure boot/update 흐름, 키 프로비저닝, CRA 조항-설계-시험 증거 매핑, 시험 체크리스트. 제품별 사실은 전부 UNVERIFIED로 유지.
+- TI MSPM0G3529-Q1 제품 페이지는 G-Series TRM을 참조하며, TI MSPM0-DIAGNOSTIC-LIB 기술자료 표는 G-Series TRM Rev F (2026-11-05)를 표시한다. 전체 본문은 도구의 크기 제한으로 열지 못했으므로 Rev F 보안 장 내용은 미검증.
+- TI SLAAE29A Rev A는 기존에 확인한 참고 자료로 유지. SLAAE29 Rev B 본문은 이번 세션에서 공식 원문 확보 실패, UNVERIFIED.
+- TI 공식 인덱스: https://www.ti.com/tool/MSPM0-DIAGNOSTIC-LIB
