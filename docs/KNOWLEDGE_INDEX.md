@@ -218,3 +218,8 @@ ST와 비교할 기능 범위와 제품군을 먼저 정의한다. 동급 기능
 - main-only report #35는 Secure Boot/TPM/SE/디지털 서명 하드웨어 의무를 CRA가 일률 요구한다고 잘못 단정하고, Annex I Part I(2)(b)–(d)의 항목을 잘못 인용했다. 감사: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_35_2026-11-12.md](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_35_2026-11-12.md).
 - TI SLAAE29 Rev B HTML 본문 직접 확인: https://www.ti.com/document-viewer/lit/html/SLAAE29. Revision history/CSC/KEYSTORE/AESADV/TRNG 내용은 문서 수준 VERIFIED. 단, 머리말의 supported-device list에 MSPM0G3529-Q1이 없으므로 G3529-Q1에 대한 직접 적용성은 UNVERIFIED.
 - Commission guidance C(2026) 5252 게시 사실은 VERIFIED, Annex PDF 본문 페이지/문단 검증은 다운로드 도구 오류로 PENDING.
+
+## main-only report #36 검증
+
+- main 자동 생성 report #36은 Article 14를 무상 업데이트 조항으로 오인하고, Annex I Part I(2)(b),(c),(g)의 문구/번호를 잘못 인용했으며, Secure Boot/Measured Boot/TPM을 보편 의무로 단정했다. 정식 CRA 제목의 개정 법령 번호도 오기했다.
+- 감사 문서: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_36_2026-11-12.md](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_36_2026-11-12.md). CONFLICT / quote REJECTED. main 원본 보존.
