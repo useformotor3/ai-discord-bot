@@ -154,3 +154,8 @@ ST와 비교할 기능 범위와 제품군을 먼저 정의한다. 동급 기능
 - TI MSPM0G3529-Q1 제품 페이지는 G-Series TRM을 참조하며, TI MSPM0-DIAGNOSTIC-LIB 기술자료 표는 G-Series TRM Rev F (2026-11-05)를 표시한다. 전체 본문은 도구의 크기 제한으로 열지 못했으므로 Rev F 보안 장 내용은 미검증.
 - TI SLAAE29A Rev A는 기존에 확인한 참고 자료로 유지. SLAAE29 Rev B 본문은 이번 세션에서 공식 원문 확보 실패, UNVERIFIED.
 - TI 공식 인덱스: https://www.ti.com/tool/MSPM0-DIAGNOSTIC-LIB
+
+
+## 기존 CRA 아카이브 표본 정정 대장
+- [ARCHIVE_CLAIM_CORRECTION_LEDGER_2026-11-12.md](ARCHIVE_CLAIM_CORRECTION_LEDGER_2026-11-12.md): 34개 고유 원본 표본의 SHA-1, 원문 행 위치, 주장 요약, 법령 정정 룰, 판정 상태 연결. 감사 ID 35개 중 A-013/B-006 중복 1개를 SHA-1 기준 제거. 고유 파일 판정 25 CONFLICT / 9 PARTIALLY_VERIFIED.
+- 이 결과는 비무작위 표본이며 990개 전체 오류율로 일반화하지 않는다. 원본 archive는 불변으로 유지한다.
