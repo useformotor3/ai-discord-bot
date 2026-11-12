@@ -469,3 +469,12 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - main `main.py` SHA `86a7731aad5de8d75581fc953bcea2c44adf2f2b` unchanged; work branch implementation SHA `997952702fdd9d2472468b82e6efdd65b2bb4376`.
 - `.github/workflows/run.yml` 양 브랜치 SHA 동일 `65a8cadc8eac593f551e390698e367b1d161ecf1`.
 - 이전 구현 commit run #43205954271은 전체 26 tests PASS. 문서 변경 후 최신 HEAD run #43328023696은 마지막 조회 시 in_progress.
+
+
+## 공식 출처 수집 Phase A 구현 (2026-11-13)
+- 사용자 승인 범위인 Phase A만 `cra-project-foundation`에 구현: `source_evidence.py`, `tests/test_source_evidence.py`.
+- registry는 EUR-Lex CRA 원문, ST AN5156/AN4992/AN5447, TI MSPM0G3529-Q1 데이터시트, TI SLAAE29A, TI SFFS983A의 고정 source_id와 공식 canonical URL을 제공한다.
+- fetcher는 임의 URL 입력을 받지 않고 source_id만 허용한다. HTTPS, 정확한 hostname, DNS public-IP, credential URL/비표준 port 차단, same-host redirect만 허용, timeout, streamed byte cap, MIME/status 검사를 적용한다.
+- 성공 응답은 원문 바이트 SHA-256 및 publisher/title/document ID/revision/fetched time/status/MIME/size metadata를 반환한다. 원문 바이트는 메모리 반환만 하며 저장소에 저장하지 않는다.
+- mock-only 테스트 추가. 실제 네트워크 fetch, Gemini API, production import/integration은 수행하지 않았다. CI 상태는 별도 확인 후 갱신한다.
+- Phase B(HTML/XML/PDF extraction/locator), Phase C(schema/prompt), Phase D(quote validator), Phase E(live fetch)는 승인 대기. `main.py`, prompt, 운영 workflow, main branch, archive/history/state는 변경 금지 유지.
