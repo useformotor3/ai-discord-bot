@@ -260,3 +260,11 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 - [x] 동일 페이지에 공개된 MSPM0G3507 feature summary를 해당 제품 페이지 주장으로만 기록하고 G3529-Q1과 분리.
 - [ ] Rev F PDF/HTML 전체 본문 확보 후 security/debug/boot/flash/NVM/register 내용을 실제 페이지·표 번호와 함께 검증.
 - [ ] 최종 TI benchmark order code가 정해지면 datasheet, TRM family applicability, errata, SLAAE29B supported-device list를 삼중 대조.
+
+
+## Main-only reports #56–#59 audit
+- [x] main #56–#59 source text and commit diffs checked; main HEAD currently report #59.
+- [x] EUR-Lex Article 14 reporting tracks, Annex I Part I security properties, Part II CVD/contact/free update clauses, Annex II contact details compared.
+- [x] Four atomic claim rows and detailed audit report added.
+- [ ] Continue auditing future main reports only after confirming new commits; no auto-sync/merge.
+- [ ] Improve automated research quality gate proposal (exact quote, article/annex/part/point validation, obligation vs design-option classification) only after explicit approval.
