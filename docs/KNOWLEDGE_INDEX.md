@@ -193,3 +193,8 @@ ST와 비교할 기능 범위와 제품군을 먼저 정의한다. 동급 기능
 - [34개 고유 표본 최종 재검증 요약](ARCHIVE_PASS_BC_FINAL_SUMMARY_2026-11-12.md): VERIFIED 0 / PARTIALLY_VERIFIED 6 / REJECTED 28.
 - 배치 보고서: [01](ARCHIVE_PASS_BC_AUDIT_BATCH_01_2026-11-12.md), [02](ARCHIVE_PASS_BC_AUDIT_BATCH_02_2026-11-12.md), [03](ARCHIVE_PASS_BC_AUDIT_BATCH_03_2026-11-12.md), [04](ARCHIVE_PASS_BC_AUDIT_BATCH_04_2026-11-12.md).
 - 법령 정정 기준: Article 13(8)/(9), Article 14, Annex I Part I/II, Article 31/32, Article 28/29/30의 정확한 구분을 유지.
+
+
+## 서보 드라이브 요구사항 추적성 매트릭스
+- [CRA_REQUIREMENTS_TO_SERVO_DRIVE_TRACEABILITY_MATRIX.md](CRA_REQUIREMENTS_TO_SERVO_DRIVE_TRACEABILITY_MATRIX.md): Annex I Part I/II 및 Articles 13–14를 HW/FW/운영 통제·시험·증거 후보에 연결.
+- 현재는 일반 참조 설계 초안. 제품 SKU/MCU 주문 코드/통신 구성/안전 아키텍처가 미확인이라 제품별 적용과 시험은 UNVERIFIED.
