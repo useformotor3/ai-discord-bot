@@ -187,7 +187,7 @@ CI는 실제 외부 API나 Gemini 호출 없이 fixture를 사용한다. 별도 
 
 ## 13. Phase A implementation record (2026-11-13)
 
-- User approval: received for Phase A only; Phase B–E remain unapproved.
+- User approval: Phase A and Phase B received as separate, bounded work-branch implementation approvals; Phase C–E remain unapproved.
 - Added `source_evidence.py`: fixed source registry (EUR-Lex CRA, selected ST documents, TI MSPM0G3529-Q1 datasheet, TI cybersecurity note, TI functional safety manual), source-ID-only lookup, HTTPS/exact-host/DNS-public-IP checks, manual same-host redirects, connect/read timeout, streamed byte caps, MIME/status validation, SHA-256, and structured metadata.
 - Added `tests/test_source_evidence.py` with mock-only transport and resolver fixtures. No external HTTP request is performed by tests.
 - `FetchResult.content` is in-memory only. The module does not persist source documents, import into `main.py`, or change production workflow. `FetchMetadata.to_dict()` exposes provenance metadata for later evidence-bundle work.
@@ -198,3 +198,17 @@ CI는 실제 외부 API나 Gemini 호출 없이 fixture를 사용한다. 별도 
 ### Phase A review notes
 - Registry is immutable at runtime (`MappingProxyType`); transport explicitly disables ambient proxy/environment configuration for the default session and sets TLS certificate verification on each request.
 - DNS public-IP validation is a preflight check, not IP pinning: a DNS time-of-check/time-of-use race remains possible. Before any production/live use, add pinned-IP transport or network egress enforcement and separately review it. Phase A is not production-integrated.
+
+
+## 14. Phase B implementation record (2026-11-13)
+
+- User approval: received to proceed with Phase B as a separate, non-production module. Phase C–E remain unapproved.
+- Added `source_extraction.py` and `tests/test_source_extraction.py`.
+- HTML adapter: extracts visible text/title while excluding script/style/noscript/svg content; enforces input/text limits and hashes raw bytes + normalized text.
+- EUR-Lex XML adapter: rejects DTD/entity declarations, parses structured Article/Annex/Part/paragraph/point hierarchy into locator candidates. Locator status is `CANDIDATES_EXTRACTED`, not legal verification.
+- EUR-Lex HTML adapter: derives text-based Article/Annex candidates only and labels them `CANDIDATES_ONLY`; XML remains preferred for hierarchy.
+- PDF adapter: extracts text by 1-based page using a pypdf-compatible reader. `pypdf` is optional/lazy-loaded and no dependency/workflow change was made. OCR/scanned-page recognition is not implemented; absence of backend returns `PDF_BACKEND_UNAVAILABLE`.
+- All adapters require a registered `source_id`; parser receives bytes only and performs no network access or file persistence.
+- Tests use inline fixture HTML/XML and a fake PDF reader. No external URL fetch, real PDF, OCR, Gemini call, schema/prompt/validator/main.py/workflow changes.
+- CI validation pending for the Phase B code/test HEAD; do not call Phase B validated until the run is complete.
+- Limitations: fixture-based structural coverage is not confirmation of the live EUR-Lex Formex/HTML serialization or manufacturer PDF extraction fidelity. Legal locator candidates do not establish quote accuracy or interpretation.
