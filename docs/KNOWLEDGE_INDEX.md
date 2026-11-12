@@ -179,3 +179,11 @@ ST와 비교할 기능 범위와 제품군을 먼저 정의한다. 동급 기능
 - Batch 01: [A-001–A-008](ARCHIVE_PASS_BC_AUDIT_BATCH_01_2026-11-12.md)
 - Batch 02: [A-009–A-015, B-001–B-002](ARCHIVE_PASS_BC_AUDIT_BATCH_02_2026-11-12.md)
 - 공통 정정: Article 13(8) 지원기간, Annex I Part II(8) 무상 업데이트, Part II(2) 기능 업데이트 분리, Article 14 신고를 서로 다른 의무로 구분. 지원기간 “whichever is shorter”를 일반 규칙으로 쓰지 않는다.
+
+
+## Pass B/C 재검증 인덱스
+- Batch 01: [A-001–A-008](ARCHIVE_PASS_BC_AUDIT_BATCH_01_2026-11-12.md)
+- Batch 02: [A-009–A-015, B-001–B-002](ARCHIVE_PASS_BC_AUDIT_BATCH_02_2026-11-12.md)
+- Batch 03: [B-003–B-010](ARCHIVE_PASS_BC_AUDIT_BATCH_03_2026-11-12.md)
+- Batch 04 예정: B-011–B-020.
+- 핵심 조항 매핑: 지원기간 Article 13(8), 업데이트 보존 Article 13(9), 신고 Article 14, 기술문서 Article 31, 적합성 평가 Article 32, DoC Article 28, CE 원칙 Article 29/부착 Article 30.
