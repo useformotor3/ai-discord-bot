@@ -498,3 +498,11 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - 모든 parser는 등록된 source_id만 받고 bytes 입력만 처리한다. 네트워크 요청/파일 저장/실제 문서 다운로드 없음.
 - CI는 현재 Phase B HEAD 기준 검증 대기. 실 EUR-Lex serialization 및 실제 제조사 PDF 추출 품질은 아직 검증되지 않음.
 - Phase C evidence bundle/schema v3/prompt v3, Phase D exact quote validator, Phase E live fetch는 별도 승인 전 금지.
+
+
+## Source Evidence Phase B — CI 검증 완료 (2026-11-13)
+- Phase B code/test HEAD `14666beefec6441df0a169aec81fa5c93d04fc22`, Actions [#43331128802](https://github.com/useformotor3/ai-discord-bot/actions/runs/43331128802): completed/success.
+- 전체 unittest **55 tests, 0 failures, 0 errors**. Phase B parser 테스트 10개 포함.
+- Strict archive audit: archive/history 990/990, missing/orphan/duplicate/malformed 0, `consistent=true`.
+- diff 재확인: `main.py` unchanged, run workflow SHA main/work 동일, Gemini prompt 및 contract 미수정. `main.py`에서 extraction module import 없음.
+- 실제 EUR-Lex/ST/TI 문서 접속·파싱은 수행하지 않음. PDF adapter는 fake reader로만 검증, pypdf optional lazy dependency는 설치/실문서 테스트 미실시. OCR 미지원.
