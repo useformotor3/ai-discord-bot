@@ -209,3 +209,9 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 - [x] main-only report #35 법령 인용 감사.
 - [x] main-only report #36 법령 인용 감사: Article 14/Part II(8) 혼동, Annex I 항목 오기, Secure Boot/TPM 보편 의무 단정, 정식 법령 제목 오류 확인.
 - [ ] 이후 main 자동 생성 자료는 새 commit을 확인한 뒤 위험 기반 감사 큐에 추가. main 변경/수정/병합은 별도 승인 전 금지.
+
+## 자동 조사 파이프라인 개선 제안 업데이트
+
+- [x] main-only report #35/#36에서 관찰된 허위/합성 인용과 조항 혼동을 변경 제안서의 실증 근거로 등록.
+- [x] quote exact-match, legal location cross-check, legal metadata check, Article 13/14/Annex I Part II(8) 분리, Secure Boot/TPM 설계 권고와 법적 의무 구분을 회귀 테스트 요구사항에 추가.
+- [ ] P0/P1/P2 변경은 사용자 승인 후에만 구현. 현재 main.py/Gemini prompt/production workflow 변경 없음.
