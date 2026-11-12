@@ -2,19 +2,19 @@
 
 > 저장소: useformotor3/ai-discord-bot  
 > 작업 브랜치: cra-project-foundation  
-> 확인일: 2026-11-12
+> 마지막 원본 대조: 2026-11-12
 
 ## 목적/범위
 CRA를 모르는 개발자가 서보 드라이브 개발에 적용할 수 있는 공개 근거 기반 실무 지침과 통합 보고서 구축. CRA 전용이며 SIL 3 벤치마킹 제외. ST MCU 우선, TI 비교. Public 저장소에는 공개 자료만 저장.
 
 ## 실제 저장소 상태
-- 작업 브랜치 HEAD: d5e391b3ccb5105afb2f5d5fbdcafcbd67a40564
-- main과 작업 브랜치: diverged. 작업 브랜치 ahead 19, behind 5. 공통 조상 b425b6db591e34abe003522157cf97ecf2240d9f.
-- main: archive 989, history 989. 경로 중복/누락 없음.
-- cra-project-foundation: archive 984, history 984. 경로 중복/누락 없음.
-- main 전용 5개 archive는 모두 main history에 등록. 표본 내용에서 CRA 조항/인용 오류 발견.
-- main state.json: date=2026-11-12, count=2. 일일 카운터이지 누적 파일 수가 아님.
-- 상세: [REPOSITORY_RECONCILIATION.md](REPOSITORY_RECONCILIATION.md), [ARCHIVE_TRIAGE_MAIN_ONLY_5.md](ARCHIVE_TRIAGE_MAIN_ONLY_5.md)
+- main과 작업 브랜치는 diverged. 작업 브랜치는 main의 자동 아카이브 커밋 5개 이후 추가된 기록을 별도 콘텐츠 복사로 보존했으며, Git commit graph는 여전히 diverged 상태다.
+- main: archive 990, history 990. 경로 중복/누락 없음.
+- cra-project-foundation: archive 990, history 990. 경로 중복/누락 없음.
+- 작업 브랜치의 5개 main 전용 파일뿐 아니라 이후 확인된 2026-11-12_001038.md도 원문 그대로 복사했다.
+- main/작업 브랜치 state.json: date=2026-11-12, count=3 (일일 카운터).
+- 6개 main 생성물의 표본 검토에서 조항/직접 인용/제품 분류 오류가 반복됨. [ARCHIVE_TRIAGE_MAIN_ONLY_6.md](ARCHIVE_TRIAGE_MAIN_ONLY_6.md)
+- 브랜치 관계와 파일 정합성: [REPOSITORY_RECONCILIATION.md](REPOSITORY_RECONCILIATION.md)
 
 ## 운영 규칙
 - 신규 세션은 START_HERE, AI_RULEBOOK, 상황판, 계획, 지식 인덱스, 보고서, 최근 세션 로그를 먼저 읽는다.
@@ -33,14 +33,14 @@ CRA를 모르는 개발자가 서보 드라이브 개발에 적용할 수 있는
 - run.yml cron 미구현.
 
 ## 다음 작업
-- [ ] main 전용 5개 archive 및 state/history 변경을 안전하게 작업 브랜치에 반영할지 검토
-- [ ] archive/history 인벤토리 자동 검사 스크립트 작성
+- [ ] inventory 검사 스크립트 및 테스트 작성
 - [ ] main.py 실패 처리·근거 스키마·검증 게이트 설계
-- [ ] 기존 자료 전체 주제 분류 및 주장/출처 인벤토리
+- [ ] 기존 990개 자료 전체 주제 분류 및 주장/출처 인벤토리
 - [ ] CRA 공식 근거 전수 검증
 - [ ] 서보 드라이브 적용성 분석
 - [ ] ST MCU 정확한 부품 번호 확보 후 기능 검증
 - [ ] TI 비교 및 통합 보고서 작성
+- [ ] 브랜치 PR/병합 전 diff 및 충돌 검토
 
 ## 상태
 VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABLE
