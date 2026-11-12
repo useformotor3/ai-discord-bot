@@ -38,6 +38,12 @@ CRA를 모르는 개발자가 서보 드라이브 개발에 적용할 수 있는
 - .github/workflows/archive-audit.yml: 작업 브랜치 push 및 수동 실행 시 테스트와 strict audit 수행.
 - 로컬 unittest: 3개 테스트 통과. GitHub Actions 최근 4회 실행의 audit job 및 단위 테스트/strict 검사 단계 모두 success 확인. [실행 이력](https://github.com/useformotor3/ai-discord-bot/actions/workflows/archive-audit.yml?query=branch%3Acra-project-foundation)
 
+## CRA 근거 검증/전수 후보 추출
+- [CRA_VERIFIED_BASELINE_2026-11-12.md](CRA_VERIFIED_BASELINE_2026-11-12.md): EUR-Lex Article 13/14/71, Annex I/II, Annex VII와 Commission reporting guidance를 원문 대조한 1차 기준선.
+- ST AN5156 Rev 14 (June 2026) 및 STM32Trust 공식 자료를 기준으로 MCU 보안 기능 후보를 정리. 정확한 MCU 파트넘버가 없어 제품별 지원 여부는 미확정.
+- scripts/extract_archive_claim_candidates.py 및 관련 tests/workflow 추가. 전체 990개를 대상으로 주장 문단, URL, Article/Annex 후보, 인용 구역, 위험 검색 플래그를 추출하는 작업을 수행 중. 모든 항목은 UNVERIFIED 상태.
+- 최초 구현에서 URL 정규식 escaping 오류로 CI 실패가 발생. 오류 로그 확인 후 정규식 수정 커밋 반영. 수정 커밋 실행 결과 확인 전에는 성공으로 간주하지 않음.
+
 ## 별도 인벤토리 파이프라인
 - scripts/build_archive_inventory.py: 990개 archive에서 파일 SHA-256, 크기, 제목/헤딩, URL 후보, CRA 조항/Annex 후보, 주제 키워드 후보, history 메타데이터 추출.
 - 모든 레코드는 UNVERIFIED_AI_ARCHIVE로 표시. 키워드 분류/URL 추출은 후보일 뿐 법령·링크·인용 정확성 검증이 아님.
@@ -55,7 +61,8 @@ CRA를 모르는 개발자가 서보 드라이브 개발에 적용할 수 있는
 - 사용자 승인 전 main.py, Gemini prompt, 운영 research workflow는 수정하지 않음.
 
 ## 다음 작업
-- [ ] 인벤토리 990개 원문에서 출처·조항·인용 후보를 별도 검증대장으로 정리
+- [ ] claim-evidence extraction workflow 결과 및 Artifact 검증
+- [ ] 추출 결과의 위험 플래그 표본검사 및 1차 정정대장 생성
 - [ ] main.py 실패 처리·근거 스키마·검증 게이트 변경 제안서 작성 (사용자 승인 전 수정 금지)
 - [ ] 기존 990개 자료 전체 주제 분류 및 주장/출처 인벤토리
 - [ ] CRA 공식 근거 전수 검증
