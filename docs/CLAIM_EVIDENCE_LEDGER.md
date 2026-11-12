@@ -346,3 +346,14 @@ Detailed report: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_123_2026-11-12.md](ARCHIVE_MANU
 | CRA-ARCH-123-001 | #123 | User-instructions obligation misattributed to Article 13(7) instead of 13(18); Annex II falsely described as Part I/II and quote is synthetic; support period is oversimplified; Class II servo-drive claim unsupported. | CONFLICT |
 
 Correct mapping: Article 13(18) accompanying information/instructions and retention; Article 13(19) support-end-date display/notification; Article 13(17) single contact; Annex II(1)–(9), especially (7), (8)(a)–(f), (9). Article 13(7) is systematic documentation of cybersecurity aspects, not the user-manual provision.
+
+
+## 19. Main-only report #124 audit (2026-11-12)
+
+Detailed report: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_124_2026-11-12.md](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_124_2026-11-12.md).
+
+| Claim ID | Report | Atomic finding | Status |
+|---|---:|---|---|
+| CRA-ARCH-124-001 | #124 | Vulnerability handling is Annex I Part II(1)–(8), not Part I Section 2; raw quote is synthetic/wrongly numbered; cryptographic signature and fail-safe recovery are design candidates, not universal named mandates. | CONFLICT |
+
+Correct map: Annex I Part I(2)(c) for applicable automatic-update default/user controls; Part II(5) CVD policy; Part II(6) vulnerability information/contact; Part II(7) secure update distribution; Part II(8) timely/free security updates subject to tailor-made business-user exception; Article 13(17)/Annex II(2) user-facing single point of contact.
