@@ -222,6 +222,8 @@ class OfficialSourceFetcher:
         if session is None:
             import requests
             session = requests.Session()
+            # Ignore ambient proxy/certificate environment variables for predictable transport.
+            session.trust_env = False
         self.session = session
         self.resolver = resolver
         self.clock = clock
@@ -245,6 +247,7 @@ class OfficialSourceFetcher:
                     allow_redirects=False,
                     stream=True,
                     timeout=self.timeout,
+                    verify=True,
                     headers={"User-Agent": "CRA-Source-Evidence-Fetcher/1.0"},
                 )
             except Exception as exc:
