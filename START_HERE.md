@@ -68,3 +68,8 @@
 - [Claim Evidence Ledger](docs/CLAIM_EVIDENCE_LEDGER.md): 기술 주장과 source URL/버전/원문 위치/제품 범위/검증 상태 연결.
 - TI MSPM0G3529-Q1은 비교 예시 부품이며 실제 프로젝트 선택 부품이 아니다. ST 실제 MCU 주문 코드가 없으므로 ST 부품별 기능은 UNVERIFIED.
 - TI SLAAE29 RevB 및 G-Series TRM RevF가 공식 자료 인덱스에서 더 최신으로 확인되어 다음 세션에서 본문/적용성 대조가 필요하다.
+
+
+## 2026-11-12 추가 업데이트 — 하드웨어 참조 설계
+- [서보 드라이브 CRA 보안 하드웨어 아키텍처](docs/SERVO_DRIVE_CRA_SECURITY_HARDWARE_ARCHITECTURE.md) 생성. 제품별 사실이 미확정이므로 설계 초안이며 적용성 UNVERIFIED.
+- TI G-Series TRM Rev F (2026-11-05)는 공식 기술자료 인덱스에서 확인했으나 본문은 열람 실패. SLAAE29 Rev B 본문도 미확보. Rev A/데이터시트에서 직접 확인된 범위와 최신판 인덱스 메타데이터를 혼동하지 않는다.
