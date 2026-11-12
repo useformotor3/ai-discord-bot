@@ -299,3 +299,9 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 - [ ] Confirm exact G3529-Q1 applicability of every referenced IP/diagnostic in the full TRM/datasheet/errata.
 - [ ] Retrieve FMEDA and establish system-level diagnostic coverage/metrics.
 - [ ] Convert selected candidates into approved safety test procedures only after target safety requirements and DUT are defined; all current candidates remain NOT_RUN.
+
+
+## Main-only report #80 follow-up
+- [x] Report #80 commit diff fetched and compared with EUR-Lex Annex I Part I.
+- [x] File-level PARTIALLY_VERIFIED verdict and atomic claim CRA-ARCH-080-001 added.
+- [ ] Continue with report #81+ after checking latest main commits; no automatic branch sync or merge.
