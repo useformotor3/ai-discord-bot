@@ -12,7 +12,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   extract:
@@ -26,6 +26,15 @@ jobs:
         run: python -m unittest discover -s tests -p 'test_extract_archive_claim_candidates.py' -v
       - name: Extract claim and evidence candidates
         run: python scripts/extract_archive_claim_candidates.py --output reports/archive_claim_evidence_candidates.json
+      - name: Persist extraction JSON in repository
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add reports/archive_claim_evidence_candidates.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Update full CRA archive claim evidence extraction'
+            git push
+          fi
       - name: Upload full archive extraction
         uses: actions/upload-artifact@v4
         with:
