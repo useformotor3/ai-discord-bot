@@ -394,3 +394,13 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 - 보호 경계: `main.py`, Gemini prompt, 운영 workflow, model order/quota, archive/history/state, `main` branch 변경 및 merge/rebase/sync 금지.
 
 - [ ] 운영/live fetch 전 DNS TOCTOU 대응(IP-pinned transport 또는 egress enforcement) 설계 및 별도 검토.
+
+
+## Source Evidence Pipeline — Phase B (2026-11-13)
+- [x] 별도 parser module `source_extraction.py` 추가 (HTML text/title, EUR-Lex XML structure, HTML locator candidates, PDF page text adapter).
+- [x] source_id registry binding, DTD/entity block, input/text/page limits, raw/text SHA-256 추가.
+- [x] mock fixture tests `tests/test_source_extraction.py` 추가.
+- [ ] Phase B exact HEAD GitHub Actions 전체 unittest 및 strict archive audit 확인.
+- [ ] live EUR-Lex XML/HTML fixture와 실제 ST/TI PDF의 parser fidelity 검증은 Phase E 별도 승인 후 진행.
+- [ ] OCR/scanned PDF 지원 필요성 판단; 현재 미지원.
+- [ ] Phase C evidence bundle/schema v3/prompt v3는 별도 승인 전 금지.
