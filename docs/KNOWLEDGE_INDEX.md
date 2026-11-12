@@ -167,3 +167,9 @@ ST와 비교할 기능 범위와 제품군을 먼저 정의한다. 동급 기능
 - 직접 인용과 요약을 구분하고, 조항 오기 및 합성 문구를 식별했다. 특히 Article 13(8) 지원기간, Annex I Part II(8) 무상 업데이트, Part II(2) 업데이트 분리, Article 14 신고를 서로 구분한다.
 - Article 10은 역량 증진, Article 11은 일반 제품 안전, Article 24는 오픈소스 소프트웨어 스튜어드, Article 31은 기술문서, Article 32는 적합성 평가다.
 - 이 결과는 위험 기반 34개 표본에 한정되며, 전체 990개 archive의 전수 검증이 아니다.
+
+
+## Pass B/C 재검증 배치
+- [ARCHIVE_PASS_BC_AUDIT_BATCH_01_2026-11-12.md](ARCHIVE_PASS_BC_AUDIT_BATCH_01_2026-11-12.md): A-001–A-008 재검증.
+- EUR-Lex 현행 CRA에서 Article 13(8) 지원기간, Article 13(9) 업데이트 보존, Annex I Part I(2)(c) 자동 업데이트, Part II(2) 업데이트 분리, Part II(8) 무상 제공, Article 14 신고를 재확인.
+- 동일 AI의 별도 Pass B/C 절차이며 독립 제3자 검토가 아니다. 배치 내 모든 파일은 일부 오류/부분 일치가 있어 전체 VERIFIED 없음.
