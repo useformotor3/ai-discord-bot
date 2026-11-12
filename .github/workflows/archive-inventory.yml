@@ -1,0 +1,42 @@
+name: CRA Archive Inventory
+
+on:
+  push:
+    branches:
+      - cra-project-foundation
+    paths:
+      - "research_archive/**"
+      - "history.json"
+      - "scripts/build_archive_inventory.py"
+      - "tests/test_build_archive_inventory.py"
+      - ".github/workflows/archive-inventory.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  inventory:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Run inventory unit tests
+        run: python -m unittest tests/test_build_archive_inventory.py -v
+
+      - name: Build heuristic archive inventory
+        run: python scripts/build_archive_inventory.py --output reports/archive_inventory.json
+
+      - name: Upload inventory artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: cra-archive-inventory
+          path: reports/archive_inventory.json
+          if-no-files-found: error
+          retention-days: 30
