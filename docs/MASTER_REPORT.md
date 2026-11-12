@@ -263,3 +263,8 @@ main의 #79 보고서는 Article 14의 적극 악용 취약점 신고와 24시�
 ## TI MSPM0G3529-Q1 기능안전 자료 직접 확인
 
 TI 공식 기능안전 매뉴얼 SFFS983A Rev A(2026-10-30)의 지원 부품 목록에 MSPM0G3529-Q1이 명시되어 있음을 확인했다. §2는 SEooC 및 ISO 26262:2018 관련 개발, 체계적 무결성 ASIL D, 랜덤 고장 메커니즘 최대 ASIL B를 기술한다. §4.3은 FMEDA/안전 매뉴얼에 따른 통합자의 진단 선택, 호스트에 의한 actuator-disable 및 통신 손실 감시, FTTI >10 ms, MPFDTI <8 h 등의 시스템 가정을 명시한다. DEBUG/AES/TRNG/KEYSTORE 등은 이 안전 개념에서 QM/안전 비중요 IP로 분류된다. 따라서 ASIL D를 SIL 3와 등치하거나 해당 MCU 단독으로 서보 드라이브 SIL 3 달성을 주장해서는 안 된다. 상세: [TI 기능안전 검토](TI_MSPM0G3529_Q1_FUNCTIONAL_SAFETY_REVIEW_2026-11-12.md).
+
+
+## 신규 main 아카이브 감사: #80
+
+main의 #80 보고서는 secure-by-default, 접근통제, 공격면 최소화 주제는 CRA Annex I Part I(2)(b),(d),(j)에 부합한다. 그러나 원문 인용은 Annex I Part I Section 1(a)–(d)라는 존재하지 않는 구조를 만들고 여러 요건을 합성했다. 모든 debug/port 비활성화, 강제 비밀번호 변경, Secure Boot의 보편 의무화는 법문을 과장한다. 파일 단위 PARTIALLY_VERIFIED이며 원문 인용은 재사용 불가다. 상세: [#80 감사](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_80_2026-11-12.md).
