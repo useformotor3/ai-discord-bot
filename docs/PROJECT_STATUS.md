@@ -373,3 +373,11 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - Correct map: Article 13(8) support period; Article 13(9) update retention after issuance; Annex I Part I(2)(b),(c),(d),(j) secure default/updates/access/attack surface; Annex I Part II(1)–(8) vulnerability handling; Article 14 actively exploited vulnerability and severe incident reporting; Annex II(2) contact point; Annex II(8)(d) secure decommissioning information.
 - No source archive/history/state, main.py, Gemini prompt, production workflow, run.yml or main branch modifications. No merge/rebase/sync. No tests run; no CI PASS claimed.
 - Branch compare at audit start: diverged, work branch 364 ahead / 124 behind main. Do not use old branch counts after new commits; recheck after final documentation updates.
+
+
+## Main-only report #122 audit — 2026-11-12
+- New main report #122 discovered at commit 39d614a760aebc98ce16fb534ddd75ddbcc5c1e3; source file research_archive/2026-11-12_100532.md.
+- Verdict: CONFLICT. Secure-by-default/access-control/attack-surface themes are relevant, but Annex I Part I/II numbering and the Raw Text Quote are wrong/composite. Forced first-use password change, unique credentials, universal port disabling and RBAC are not prescribed as universal implementations by the cited text.
+- Correct map: Annex I Part I(2)(b)=secure-by-default/reset; (d)=access control; (j)=attack surface. CVD=Part II(5), user-facing contact information=Annex II(2).
+- Detailed audit: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_122_2026-11-12.md](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_122_2026-11-12.md).
+- Original main archive/history/state unchanged. No protected code/prompt/workflow changes, no merge/rebase/sync. No tests/CI PASS claimed.
