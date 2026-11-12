@@ -10,8 +10,6 @@ class ExtractArchiveClaimsTests(unittest.TestCase):
             f.write_text("# Test CRA\n\n제조사는 보안 업데이트를 무상으로 제공해야 합니다. 이 의무는 CRA Annex I Part II point 8의 문맥과 예외 조건을 함께 검토해야 합니다.\n\nArticle 13(8) and Annex I Part II.\n\nSource: https://eur-lex.europa.eu/example\n\nRaw Text Quote: sample text", encoding="utf-8")
             r=extract_file(f,root)
             self.assertEqual(r["verification_status"],"UNVERIFIED_AI_ARCHIVE")
-            self.assertIn("SUPPORT_PERIOD_FIXED_5Y", r["heuristic_risk_evidence"])
-            self.assertIn("line", r["heuristic_risk_evidence"]["SUPPORT_PERIOD_FIXED_5Y"][0])
             self.assertIn("Article 13(8)",r["article_reference_candidates"])
             self.assertIn("https://eur-lex.europa.eu/example",r["source_url_candidates"])
             self.assertTrue(r["claim_candidates"])
@@ -34,6 +32,8 @@ class ExtractArchiveClaimsTests(unittest.TestCase):
             f=d/"five.md"; f.write_text("최소 5년 지원해야 합니다.",encoding="utf-8")
             r=extract_file(f,root)
             self.assertIn("SUPPORT_PERIOD_FIXED_5Y",r["heuristic_risk_flags"])
+            self.assertIn("SUPPORT_PERIOD_FIXED_5Y", r["heuristic_risk_evidence"])
+            self.assertIn("line", r["heuristic_risk_evidence"]["SUPPORT_PERIOD_FIXED_5Y"][0])
             self.assertEqual(r["verification_status"],"UNVERIFIED_AI_ARCHIVE")
 
 if __name__ == "__main__":
