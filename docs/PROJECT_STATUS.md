@@ -1,58 +1,56 @@
 # CRA 서보 드라이브 개발 프로젝트 — 상황판
 
-> 목적: CRA를 처음 접하는 개발자도 요구사항을 이해하고, 서보 드라이브 제품 개발에 반영할 수 있도록 근거 기반의 실무 지식과 산출물을 관리한다.
-> 범위: 특정 업체의 비공개 설계가 아닌 공개 규정·표준·제조사 자료 중심의 일반 개발 가이드. 현재 ST MCU를 우선 분석 대상으로 삼고 TI 자료는 비교·참고 대상으로 다룬다.
+> 기준 저장소: useformotor3/ai-discord-bot  
+> 기준 작업 브랜치: cra-project-foundation  
+> 기준 확인일: 2026-11-12  
+> 프로젝트 목적: CRA를 처음 접하는 개발자도 서보 드라이브 개발에 적용할 수 있는 근거 기반 실무 지침과 통합 보고서를 구축한다.
 
 ## 현재 상태
-- 프로젝트 상태: 기반 문서 생성 완료 / 기존 자료 1차 감사 완료 / 전수 검증 진행 예정
-- 우선 대상: EU Cyber Resilience Act(CRA)와 서보 드라이브 제품 개발 적용
-- MCU 기준: STMicroelectronics MCU (정확한 부품 번호는 미확정)
-- 비교 대상: Texas Instruments 반도체·보안 기술
-- 자료 검증: archive 985개 및 history 985개 인벤토리 대조 완료, 표본 오류 발견. 개별 주장 전수 검증은 진행 예정
-- 통합 보고서: CRA 법령 기준선 문서 작성, 본문 통합은 진행 예정
-- 자동화: 기존 GitHub Actions의 수동 실행 및 repository_dispatch 구조를 유지. 예약 실행은 현재 워크플로 파일에 cron이 확인되지 않아 미구현으로 취급한다.
+- 프로젝트: CRA 전용. SIL 3 벤치마킹은 범위에서 제외.
+- 저장소 공개 상태: Public 유지 결정. 공개 자료만 저장하며 비밀정보/비공개 설계자료 금지.
+- 우선 MCU: STMicroelectronics (정확한 부품 번호 미확정). TI는 비교·참고.
+- 독자: CRA를 모르는 서보 드라이브 개발자.
+- 기본 문서: START_HERE 및 docs 운영 문서 존재. 각 문서는 지속적으로 개선 가능.
+- 기존 자료: cra-project-foundation 브랜치 archive 984개, history 984개. file 경로 984개 전부 존재·유일. main 브랜치 archive는 989개로 5개 차이 확인.
+- 브랜치 정합성: 5개 추가 archive의 main 유입 시점/의도 및 main history 연결은 미확인. [REPOSITORY_RECONCILIATION.md](REPOSITORY_RECONCILIATION.md)
+- 내용 검증: 초기 표본 감사에서 조항 인용·직접 인용·제품 분류 오류 발견. 기존 archive 전수 검증 미완료.
+- 자동화: main.py는 실패 메시지를 성공으로 처리할 위험, 출처 자동 검증 부재, 프로젝트 문서 문맥 미사용, timeout/HTTP 확인 부족. 운영 신뢰성 개선 필요.
+- 자동 실행: 현재 run.yml에는 workflow_dispatch/repository_dispatch만 확인. cron 미구현.
+- 보고서: 법령 기준선과 통합 보고서 골격 존재. 제품별 적용성 및 ST MCU 기능 분석은 미완료.
 
-## 핵심 원칙
-1. 규정 원문과 해석, 설계 권고, 시험 증거를 분리한다.
-2. 확인되지 않은 사실은 사실처럼 쓰지 않고 상태를 '미확인'으로 표시한다.
-3. 공식 법령·표준기관·제조사 원문을 우선한다.
-4. 각 핵심 주장에 출처 URL, 문서명, 버전/발행일, 확인일, 관련 원문 위치를 기록한다.
-5. 제품별 적용성은 제품의 기능·시장·구성 및 법적 정의를 확인한 뒤 판단한다.
-6. 무료 한도 초과 시 유료 서비스로 자동 전환하지 않고 작업을 중단한다.
-7. 이 저장소는 공개 저장소다. 비밀키, 토큰, 개인정보, 고객 자료, 비공개 설계정보를 절대 커밋하지 않는다.
+## 확정 운영 규칙
+1. 모든 신규 세션/작업 시작 시 START_HERE.md와 AI_RULEBOOK, 상황판, 계획서, 지식 인덱스, 통합 보고서, 최근 세션 로그를 먼저 읽는다.
+2. 현재 GitHub 원본과 대조하지 않은 과거 기록·대화 기억·AI 답변을 사실로 재사용하지 않는다.
+3. 근거, 원문 위치, 확인일, 검증 상태가 없는 핵심 주장은 확정 보고서에 넣지 않는다.
+4. 실패/오류/실패한 시도도 기록하고 재발 방지 조치를 만든다.
+5. 문서뿐 아니라 폴더 구조·스키마·자동화 코드까지 개선 대상으로 삼는다.
+6. 작업 후 변경 파일을 다시 읽고 검증한 뒤 SESSION_LOG와 상황판/계획을 갱신한다.
+7. Public 저장소에는 공개 자료만 저장하고 유료 전환은 금지한다.
 
-## 최근 감사 결과
-- 2026-11-12 main 브랜치 기준 archive Markdown 985개, history 항목 985개, file 경로 누락 0개, 중복 경로 0개 확인
-- 대표 문서에서 Article 11/14, Annex I Part II, Article 13(8) 등의 인용 오류와 서보 드라이브 Class I/II 단정 문제 발견
-- 세부 감사: [INITIAL_AUDIT.md](INITIAL_AUDIT.md)
-- 검증된 법령 기준선: [CRA_LEGAL_BASELINE.md](CRA_LEGAL_BASELINE.md)
-
-## 다음 작업
-- [ ] 기존 조사 아카이브 전체 목록과 주제 분류 생성
-- [ ] 각 조사 문서의 주장·출처·원문 연결 추출
-- [ ] CRA 공식 법령 및 유럽위원회 자료를 기준으로 핵심 일정·의무 검증
-- [ ] 서보 드라이브 기능/인터페이스/업데이트/취약점 관리 관점의 적용성 매핑
-- [ ] ST MCU 정확한 제품군별 보안 기능 조사
-- [ ] TI 비교 자료 조사
-- [ ] 통합 보고서 초안 작성 및 독립 검증
-- [ ] GitHub Actions에 검증·인덱싱·보고서 갱신 절차 추가
-
-## 주요 링크
-- 저장소: https://github.com/useformotor3/ai-discord-bot
-- 기존 조사 아카이브: ../research_archive/
-- 실행 워크플로: ../.github/workflows/run.yml
-- 프로젝트 계획: MASTER_PLAN.md
-- AI 행동강령: AI_RULEBOOK.md
-- 지식 인덱스: KNOWLEDGE_INDEX.md
-- 통합 보고서: MASTER_REPORT.md
-- 대화 기록: ../SESSION_LOG/
+## 다음 우선 작업
+- [ ] main과 cra-project-foundation의 공통 조상 및 커밋 그래프 비교
+- [ ] main의 history.json/state.json 정합성 확인
+- [ ] main에만 있는 archive 5개 조사 및 이관 필요성 판단
+- [ ] 재현 가능한 archive/history 인벤토리 스크립트 추가
+- [ ] main.py의 실패 처리·근거 필드·timeout·HTTP 오류·비밀정보 처리 개선 설계
+- [ ] 기존 자료 984개 주제 분류 및 주장/출처 추출
+- [ ] CRA 법령/공식기관 기준선 재검증
+- [ ] 서보 드라이브 기능 기반 적용성 매핑
+- [ ] ST MCU 정확한 파트넘버 확보 후 부품별 보안 기능 확인
+- [ ] TI 비교 분석
+- [ ] 개발 실무 통합 보고서 완성
 
 ## 상태 표기
-- `VERIFIED`: 원문 및 독립 근거로 확인 완료
-- `PARTIALLY_VERIFIED`: 일부만 확인
-- `UNVERIFIED`: 근거 확인 전
-- `CONFLICT`: 출처 간 내용 충돌
-- `OUTDATED`: 폐지·개정 등으로 현행 자료가 아님
-- `NOT_APPLICABLE`: 적용성 검토 결과 해당 없음 (판단 근거 필수)
+VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABLE
+
+## 주요 문서
+- [시작점](../START_HERE.md)
+- [AI 행동강령](AI_RULEBOOK.md)
+- [마스터 계획](MASTER_PLAN.md)
+- [지식 인덱스](KNOWLEDGE_INDEX.md)
+- [통합 보고서](MASTER_REPORT.md)
+- [초기 감사](INITIAL_AUDIT.md)
+- [법령 기준선](CRA_LEGAL_BASELINE.md)
+- [브랜치 정합성 감사](REPOSITORY_RECONCILIATION.md)
 
 마지막 갱신: 2026-11-12
