@@ -335,3 +335,14 @@ Detailed report: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_122_2026-11-12.md](ARCHIVE_MANU
 | Claim ID | Report | Atomic finding | Status |
 |---|---:|---|---|
 | CRA-ARCH-122-001 | #122 | Secure-by-default/access-control/attack-surface themes map to Annex I Part I(2)(b),(d),(j), but Annex numbering and quote are composite/wrong; universal forced password change, unique credentials, port disabling and RBAC mandates are unsupported. | CONFLICT |
+
+
+## 18. Main-only report #123 audit (2026-11-12)
+
+Detailed report: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_123_2026-11-12.md](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_123_2026-11-12.md).
+
+| Claim ID | Report | Atomic finding | Status |
+|---|---:|---|---|
+| CRA-ARCH-123-001 | #123 | User-instructions obligation misattributed to Article 13(7) instead of 13(18); Annex II falsely described as Part I/II and quote is synthetic; support period is oversimplified; Class II servo-drive claim unsupported. | CONFLICT |
+
+Correct mapping: Article 13(18) accompanying information/instructions and retention; Article 13(19) support-end-date display/notification; Article 13(17) single contact; Annex II(1)–(9), especially (7), (8)(a)–(f), (9). Article 13(7) is systematic documentation of cybersecurity aspects, not the user-manual provision.
