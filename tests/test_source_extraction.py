@@ -100,11 +100,15 @@ class SourceExtractionTests(unittest.TestCase):
             with self.assertRaisesRegex(ExtractionError, "PDF_BACKEND_UNAVAILABLE"):
                 extract_pdf_pages("TI_MSPM0G3529_Q1_DATASHEET", raw)
 
+    def test_unknown_source_id_is_rejected(self):
+        with self.assertRaisesRegex(ExtractionError, "UNKNOWN_SOURCE_ID"):
+            extract_html_document("MODEL_INVENTED_SOURCE", b"<p>text</p>")
+
     def test_input_and_extracted_text_limits_are_enforced(self):
         with self.assertRaisesRegex(ExtractionError, "INPUT_TOO_LARGE"):
-            extract_html_document("x", b"<p>12345</p>", max_input_bytes=4)
+            extract_html_document("ST_AN5156_REV14", b"<p>12345</p>", max_input_bytes=4)
         with self.assertRaisesRegex(ExtractionError, "EXTRACTED_TEXT_TOO_LARGE"):
-            extract_html_document("x", b"<p>12345</p>", max_text_chars=4)
+            extract_html_document("ST_AN5156_REV14", b"<p>12345</p>", max_text_chars=4)
 
 
 if __name__ == "__main__":
