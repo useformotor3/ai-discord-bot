@@ -358,3 +358,9 @@ if not success:
 - 모든 모델 호출은 fake client를 사용했으며 실제 Gemini API/네트워크/유료 호출은 0회. 기존 recent_snippets[-5:] 문맥 전달은 유지했으며, 이를 사실 근거가 아닌 중복 방지용 요약으로 명시.
 - 주의: 이 결과는 격리 런타임에서 committed source/test 내용을 재현한 mock 테스트다. GitHub Actions 실행 결과는 아직 별도 확인되지 않았으므로 CI PASS로 주장하지 않는다.
 - 다음 gate: GitHub Actions 실제 결과 확인, 설치된 google-genai SDK 및 선택 모델의 structured output 호환성은 실제 API를 호출하지 않고는 확인 불가. 실제 API 호출은 별도 사용자 승인 전 금지.
+
+### 14.9 GitHub Actions 결과 확인 — 2026-11-13
+- Run [#43205954271](https://github.com/useformotor3/ai-discord-bot/actions/runs/43205954271), commit `aabffb6022f328caf24df58e9fa551da9b69a4d7`, job `audit`: success.
+- Log confirms `python -m unittest discover -s tests -v`: 26 tests, 0 failures, 0 errors; CRA contract module contains 17 dedicated tests.
+- `python scripts/audit_archive.py --strict`: archive/history 990/990, missing/orphan/duplicate paths 0, consistent=true.
+- This is CI mock/fixture evidence only; it does not establish actual Gemini API/model compatibility or a successful production run.
