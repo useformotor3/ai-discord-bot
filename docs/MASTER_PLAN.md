@@ -98,3 +98,14 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 - [x] 출처·문서 버전·원문 위치·주장 유형·상태를 연결하는 [CLAIM_EVIDENCE_LEDGER.md](CLAIM_EVIDENCE_LEDGER.md) 생성. 제조사 주장 초기 8건 등록.
 - [ ] TI SLAAE29 Rev B(2026-08-27) 본문 및 G-Series TRM Rev F(2026-11-05) 보안 장 상세 검토. 현재 Rev A SLAAE29A 분석은 이전 판본 기준임을 명시.
 - [ ] 실제 ST MCU part number 확보 전 ST 기능 비교는 제품군 수준으로만 유지.
+
+
+## 2026-11-12 추가 진행 — 하드웨어 설계 참조 초안
+- [x] 서보 드라이브 CRA 보안 하드웨어 참조 아키텍처 초안 작성 (제품별 설계 확정 아님)
+- [x] 외부 네트워크/서비스/업데이트/디버그/제조 프로비저닝 trust boundary 정의
+- [x] Secure Boot/update negative test 및 power-cut/recovery test 후보 10개 작성
+- [x] CRA 요구사항-설계 작업-객관적 증거 매핑 초안 작성
+- [ ] 실제 ST MCU 주문 코드 확보 후 part-specific 기능/제약/errata 검증
+- [ ] TI G-Series TRM Rev F 본문 보안 장 열람 및 MSPM0G3529-Q1 적용성 확인
+- [ ] TI SLAAE29 최신 revision 원문 확보 및 Rev A와 diff 검토
+- [ ] 제품 회로도/통신 인터페이스/업데이트 경로/서비스 포트 사실 반영
