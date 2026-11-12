@@ -288,3 +288,8 @@ ST와 비교할 기능 범위와 제품군을 먼저 정의한다. 동급 기능
 - Key integration assumptions: host-supervised communication loss, host-provisioned actuator-disable mechanism, integrator-selected diagnostics, FTTI >10 ms, MPFDTI <8 h.
 - QM/non-safety-critical IPs include DEBUG, RTC, AES, TRNG, KEYSTORE, MATHACL and DFT; do not count as safety mechanisms.
 - Claim ledger TI-SAFETY-001..005 and TI-TRM-REVF-004; TRM Rev F body remains NOT_VERIFIED.
+
+
+## TI functional safety integration matrix
+- [TI SFFS983A → Servo-Drive Safety Integration Matrix](TI_SAFETY_MECHANISM_SERVO_DRIVE_INTEGRATION_MATRIX_2026-11-12.md): maps diagnostic mechanism families to IF-01..IF-09, candidate verification and evidence.
+- All mapped tests are PROPOSED / NOT_RUN; FMEDA values, diagnostic coverage and exact part-specific applicability remain open.
