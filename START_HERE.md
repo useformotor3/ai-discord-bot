@@ -197,3 +197,9 @@
 ## 2026-11-12 추가 — main-only report #80
 - [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_80_2026-11-12.md](docs/ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_80_2026-11-12.md): secure-by-default/access/attack-surface themes partially verified; quote and universal implementation claims rejected.
 - Latest main auto-archive report #80; next session starts by checking #81+.
+
+
+## 2026-11-12 추가 — main-only 보고서 #81–#121 감사
+- [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_81_121_2026-11-12.md](docs/ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_81_121_2026-11-12.md): 41개 보고서 commit diff 검토, 33 CONFLICT / 8 PARTIALLY_VERIFIED / 0 VERIFIED.
+- 41개 Raw Text Quote 블록은 모두 직접 인용으로 재사용 금지. Article 13(8) 지원기간, Annex I Part II(8) 무상 보안 업데이트, Article 14 신고 의무를 반복 혼동하고, 존재하지 않는 조항 번호/합성 인용과 Secure Boot·디지털 서명·무중단 업데이트의 보편적 의무 단정이 반복됨.
+- 최신 main HEAD는 report #121, commit d0ba9802e4b7fead4192263d8ebd08f44a7c547e. 작업 브랜치에서만 감사 기록. main archive/history/state, main.py, Gemini prompt, run.yml 수정 및 merge/rebase/sync 없음.
