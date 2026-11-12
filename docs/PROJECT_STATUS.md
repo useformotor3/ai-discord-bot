@@ -277,3 +277,12 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - TI official product page confirms MSPM0 G-Series TRM Rev F dated 2026-11-05. Full PDF is about 25 MB and could not be opened in this environment. Revision metadata VERIFIED; security chapter/register-level content NOT_VERIFIED. No Rev F feature/register claim added.
 - Protected files independently compared on main and cra-project-foundation: main.py blob SHA 86a7731aad5de8d75581fc953bcea2c44adf2f2b; .github/workflows/run.yml blob SHA 65a8cadc8eac593f551e390698e367b1d161ecf1. Both match across branches.
 - Latest audit commit status endpoint returned no statuses; do not claim CI passed.
+
+
+## TI MSPM0 G-Series TRM Rev F 접근 재점검 — 2026-11-12
+
+- TI MSPM0G3507 공식 제품 페이지의 Technical documentation 목록에서 MSPM0 G-Series 80-MHz TRM Rev F / 2026-11-05를 재확인했다. 같은 목록에 MSPM0G350x/G150x Errata Rev H (2026-08-14), Cybersecurity Enablers in MSPM0 MCUs Rev B (2026-08-27)도 표시된다.
+- TI 페이지의 MSPM0G3507 기능 요약에는 MPU, flash ECC, SRAM parity option, AES, TRNG, CRC, SWD 및 security descriptors가 표시된다. 이는 MSPM0G3507 페이지의 정보일 뿐 다른 SKU, 특히 MSPM0G3529-Q1에 자동 전이하지 않는다.
+- TRM HTML viewer는 25,348,105 bytes로 렌더링 제한을 초과하고 PDF 직접 열기도 실패했다. Rev F metadata VERIFIED, Rev F body/security chapter/register details NOT_VERIFIED.
+- TI SLAAE29 Rev B supported-device scope의 G3529-Q1 적용성 미확정 경고 유지. G3529-Q1 기능을 주장하려면 해당 SKU의 데이터시트·TRM·errata를 별도로 확인한다.
+- 상세 source register §9 및 claim ledger TI-TRM-REVF-001..TI-SLAAE29B-APPL-001 참조.
