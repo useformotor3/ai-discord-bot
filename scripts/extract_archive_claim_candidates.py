@@ -36,12 +36,51 @@ def extract_file(path: Path, root: Path) -> dict:
     blocks = [b.strip() for b in re.split(r"\n\s*\n", text) if b.strip()]
     lines = text.splitlines()
     title = next((x.lstrip("# ").strip() for x in lines if x.startswith("#")), "")
-    claims = [b[:1800] for b in blocks if CLAIM_RE.search(b) and len(b) > 60][:20]
-    quotes = [b[:1500] for b in blocks if QUOTE_RE.search(b)][:10]
+    # Keep legacy string arrays for compatibility, and add line-addressable records.
+    paragraph_records = []
+    offset = 0
+    for block in re.split(r"\n\s*\n", text):
+        start = offset
+        end = start + len(block)
+        offset = end + 2
+        if CLAIM_RE.search(block) and len(block.strip()) > 60:
+            paragraph_records.append({
+                "line_start": text.count("\n", 0, start) + 1,
+                "line_end": text.count("\n", 0, end) + 1,
+                "text": block.strip()[:1800],
+            })
+    claims = [item["text"] for item in paragraph_records[:20]]
+    quote_records = []
+    for item in paragraph_records:
+        if QUOTE_RE.search(item["text"]):
+            quote_records.append(item)
+    quotes = [item["text"][:1500] for item in quote_records[:10]]
+    # Source sections often contain only a long document title and no canonical URL.
+    source_sections = []
+    for i, line in enumerate(lines):
+        if re.search(r"(?:source|출처\s*자료|참고\s*자료|references?)", line, re.I):
+            section = [line.strip()]
+            for following in lines[i + 1:i + 9]:
+                if re.match(r"^\s*(?:#{1,6}\s+|\*\*\d+\.|\d+\.)", following):
+                    break
+                if following.strip():
+                    section.append(following.strip())
+            source_sections.append("\n".join(section)[:1800])
     urls = sorted({u.rstrip(".,;:'\"") for u in URL_RE.findall(text)})
     articles = sorted(set(ARTICLE_RE.findall(text)), key=str.lower)
     annexes = sorted(set(ANNEX_RE.findall(text)), key=str.lower)
     flags = [k for k, rx in COMPILED_RISKS.items() if rx.search(text)]
+    risk_evidence = {}
+    for name, rx in COMPILED_RISKS.items():
+        matches = []
+        for match in rx.finditer(text):
+            line_no = text.count("\\n", 0, match.start()) + 1
+            snippet = text[max(0, match.start() - 160):min(len(text), match.end() + 160)].replace("\\n", " ")
+            matches.append({"line": line_no, "snippet": snippet[:500]})
+            if len(matches) == 3:
+                break
+        if matches:
+            risk_evidence[name] = matches
     date_match = re.search(r"(?:Date|날짜)\s*[:：]\s*([^\n]+)", text, re.I)
     return {
         "path": path.relative_to(root).as_posix(),
@@ -52,8 +91,13 @@ def extract_file(path: Path, root: Path) -> dict:
         "article_reference_candidates": articles,
         "annex_reference_candidates": annexes,
         "source_url_candidates": urls,
+        "source_section_candidates": source_sections[:10],
+        "source_section_count": len(source_sections),
         "claim_candidates": claims,
+        "claim_candidate_records": paragraph_records[:20],
         "quote_section_candidates": quotes,
+        "quote_candidate_records": quote_records[:10],
+        "heuristic_risk_evidence": risk_evidence,
         "heuristic_risk_flags": flags,
         "verification_status": "UNVERIFIED_AI_ARCHIVE",
     }
@@ -67,7 +111,7 @@ def build(root: Path) -> dict:
     records = [extract_file(p, root) for p in files]
     counts = Counter(flag for record in records for flag in record["heuristic_risk_flags"])
     return {
-        "schema_version": "1.0",
+        "schema_version": "1.1",
         "generated_at_utc": datetime.now(timezone.utc).isoformat(),
         "source_branch": os.environ.get("GITHUB_REF_NAME", "local"),
         "source_commit": os.environ.get("GITHUB_SHA"),
@@ -81,6 +125,8 @@ def build(root: Path) -> dict:
             "A URL candidate does not prove reachability, authority, currency, or support for the adjacent claim.",
             "Article/Annex strings are candidates; exact paragraph and legal context require primary-source review.",
             "Direct-quote candidates are not authenticated quotations until compared with the cited original.",
+            "Source sections are extracted heuristically; a document title is not a canonical source URL.",
+            "Claim and risk snippets include approximate source line numbers for human review.",
             "Every record remains UNVERIFIED_AI_ARCHIVE.",
         ],
         "records": records,
