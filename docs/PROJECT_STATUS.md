@@ -122,3 +122,11 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - 원본 archive, main.py, Gemini prompt, 운영 research workflow 및 main branch는 수정하지 않음.
 
 - 제조사 source register/claim ledger 반영 후 CRA Archive Integrity run [43133646074](https://github.com/useformotor3/ai-discord-bot/actions/runs/43133646074) completed/success. Unit tests 및 strict archive/history consistency 모두 통과.
+
+
+## 2026-11-12 추가 진행 — 보안 하드웨어 참조 설계 및 TI 문서 재점검
+- [서보 드라이브 CRA 보안 하드웨어 아키텍처](SERVO_DRIVE_CRA_SECURITY_HARDWARE_ARCHITECTURE.md) 생성: 12개 하드웨어 블록 후보, 6개 trust boundary, secure boot/update 흐름, 키/제조 프로비저닝, 10개 업데이트 시험, CRA 조항-설계-증거 매핑 포함.
+- 문서는 제품별 설계 확정본이 아니다. ST MCU part number, 제품 SKU, 실제 인터페이스/업데이트/안전 경계가 없으므로 구현/적용성 상태는 UNVERIFIED.
+- TI MSPM0G3529-Q1 제품 페이지에서 G-Series TRM 참조를 확인했고, TI MSPM0-DIAGNOSTIC-LIB 기술자료 인덱스에서 TRM Rev F (2026-11-05)를 확인. TRM 본문은 대용량으로 현재 도구에서 열람 실패하여 보안 장 세부 내용은 검증하지 않음.
+- SLAAE29 Rev B는 공식 본문 재확보 실패. SLAAE29A Rev A만 본문 확인된 자료로 유지.
+- 새 아키텍처 문서의 모든 CRA 설계 연결은 법령의 결과 요구를 개발 작업으로 번역한 권고이며, 특정 부품/알고리즘/회로를 CRA가 직접 요구한다고 표현하지 않음.
