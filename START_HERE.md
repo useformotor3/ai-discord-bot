@@ -251,3 +251,10 @@
 - 다음 단계 source evidence 설계: [PROPOSED_SOURCE_EVIDENCE_PIPELINE_V1.md](docs/PROPOSED_SOURCE_EVIDENCE_PIPELINE_V1.md).
 - 현재는 설계 문서만 작성. fetcher/schema v3/prompt v3/main.py/workflow/실제 API 또는 네트워크 fetch는 별도 승인 전 구현·실행하지 않음.
 - 최신 세션 로그: [SESSION_LOG/2026-11-13.md](SESSION_LOG/2026-11-13.md).
+
+
+## 2026-11-13 — Source Evidence Phase A
+- 사용자 승인 후 `source_evidence.py` 및 mock 테스트를 `cra-project-foundation`에 추가했다.
+- 공식 registry의 source_id만 fetch할 수 있으며, HTTPS/host/DNS/redirect/MIME/size/timeout gate와 SHA-256 metadata를 제공한다.
+- live network fetch 및 Gemini API 호출 없음. 생산 코드/프롬프트/workflow/main branch 미변경.
+- 다음 세션은 최신 Actions 결과 및 source_evidence.py/test diff를 먼저 확인하고 Phase A 검증을 마무리한다. Phase B 이후는 별도 승인 필요.
