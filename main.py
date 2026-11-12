@@ -73,7 +73,12 @@ context_memory = (
 client = genai.Client(api_key=os.environ.get("GEMINI_API_KEY"))
 PROMPT_FILE = "prompts/CRA_RESEARCH_PROMPT_V2.txt"
 with open(PROMPT_FILE, "r", encoding="utf-8") as f:
-  prompt = f.read()
+  prompt_template = f.read()
+prompt = (
+    f"{prompt_template}\\n\\n"
+    "[중복 방지용 이전 조사 요약 — 사실 근거가 아니며 재검증 대상]\n"
+    f"{context_memory}"
+)
 
 # 4. JSON 계약 검증을 포함한 모델 폴백. 유효한 결과가 없으면 저장/게시 전에 중단.
 models_to_try = ["gemini-flash-latest", "gemini-3.5-flash-lite"]
