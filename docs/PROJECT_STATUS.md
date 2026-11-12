@@ -446,3 +446,9 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - 테스트는 fake client만 사용. Gemini API/네트워크/유료 호출 0회. GitHub Actions CI 결과는 별도 확인 전까지 UNVERIFIED.
 - 제외 유지: 모델 ID/순서, quota constant, 최근 5개 snippet context(중복 방지 참고용 전달 유지), Discord 전송 로직, archive/history/state schema, `.github/workflows/run.yml`, main branch. 실제 Gemini structured-output 모델 호환성은 API 호출 없이 확인하지 못했다.
 - `main` 병합/동기화, merge/rebase는 수행하지 않았다.
+
+### 최종 integrity check
+- 작업 브랜치 HEAD `fefee7f71cee13fce819b43ce23106cec6f2974b`; main 대비 diverged, 435 ahead / 135 behind. merge/rebase/sync 없음.
+- main `main.py` SHA는 `86a7731aad5de8d75581fc953bcea2c44adf2f2b` 그대로, 작업 브랜치 SHA는 `997952702fdd9d2472468b82e6efdd65b2bb4376`.
+- `.github/workflows/run.yml`은 양 브랜치 SHA 동일 `65a8cadc8eac593f551e390698e367b1d161ecf1`.
+- 최신 commit status checks는 빈 배열. CI PASS 확인 전까지 미확인 상태로 유지.
