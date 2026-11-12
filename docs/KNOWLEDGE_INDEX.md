@@ -316,3 +316,9 @@ ST와 비교할 기능 범위와 제품군을 먼저 정의한다. 동급 기능
 ## CRA Annex II user information checklist
 - [SERVO_DRIVE_CRA_USER_SECURITY_INFORMATION_CHECKLIST.md](SERVO_DRIVE_CRA_USER_SECURITY_INFORMATION_CHECKLIST.md): working template mapping Article 13(16)–(19) and Annex II(1)–(9) to servo-drive user information, integration instructions, evidence and verification status.
 - Product-specific entries remain NOT_STARTED/UNVERIFIED. “Digital Product Passport” is not the CRA Annex II statutory label; Class II status cannot be inferred from “servo drive” alone.
+
+
+## Main-only report #124 audit
+- [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_124_2026-11-12.md](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_124_2026-11-12.md): CONFLICT. Vulnerability handling is Annex I Part II(1)–(8), not Part I Section 2; quoted text is synthetic; cryptographic signature and recovery architecture are risk-based design candidates, not universal named CRA mandates.
+- Legal map: Part I(2)(c) applicable automatic-update default and user controls; Part II(5) CVD; (6) vulnerability information/contact; (7) secure update distribution; (8) timely/free updates with tailor-made business-user exception; Article 13(17)/Annex II(2) single contact.
+- Claim ledger row CRA-ARCH-124-001.
