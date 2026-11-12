@@ -149,3 +149,34 @@
 - Google AI Developers Forum 공식 응답(2026-10-22): https://discuss.ai.google.dev/t/subject-gemini-api-all-models-return-no-longer-available-to-new-users-404-despite-active-billing/178572/2
   - 신규 프로젝트용 모델로 gemini-3.8-flash 및 gemini-3.5-flash-lite를 안내. 실제 프로젝트 접근 가능 여부는 별도 확인 필요.
 - 모델별 제한/사용량은 프로젝트별 AI Studio 화면에서 확인: https://aistudio.google.com/
+
+## 10. 신규 실증 사례 — main-only 보고서 #35/#36 (2026-11-12)
+
+### 관찰된 실패 증거
+
+| Report | 원본 main commit / file | 확인된 문제 | 감사 기록 |
+|---|---|---|---|
+| #35 | f3eed0a20bfd9ee118561e8bcd0ae890d84ef6e2 / research_archive/2026-11-12_025041.md | Secure Boot/하드웨어 Root of Trust/TPM/디지털 서명을 CRA 보편 의무로 단정. Annex I Part I(2)(b)–(d) 문구와 번호를 잘못 조합한 Raw Text Quote | ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_35_2026-11-12.md |
+| #36 | 5cd4a18dbf5dc4712d669b29b8846af799f5efc1 / research_archive/2026-11-12_025529.md | Secure Boot/Measured Boot/TPM 보편 의무 단정. Annex I에 없는 Secure Boot 문장을 직접 인용처럼 삽입. Article 14를 무상 업데이트와 혼동. CRA 정식 제목의 개정 법령 번호 오류 | ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_36_2026-11-12.md |
+
+두 원본은 main에만 존재하며 작업 브랜치에는 복사/수정하지 않았다. 원본 archive는 불변으로 유지하고 작업 브랜치의 감사 문서와 Claim Evidence Ledger에 정정 내용을 기록했다.
+
+### 제안 보강 — P1/P2에 추가할 필수 게이트
+
+1. **직접 인용 생성 금지 기본값:** 원문 수집 단계에서 확보한 정확한 source text가 입력으로 전달되지 않았다면 모델은 Raw Text Quote를 생성하지 않는다. 인용 대신 paraphrase와 UNVERIFIED를 사용한다.
+2. **인용 문자열 일치:** quote는 수집된 원문과 공백/줄바꿈 정규화 후 문자열 대조한다. 일치하지 않으면 quote REJECTED, 게시 보류.
+3. **법령 위치 정합성:** Annex/Part/point 및 Article 번호를 별도 공식 조항 인덱스와 대조한다. 문구가 다른 항목에 존재해도 번호가 틀리면 VERIFIED 금지.
+4. **법령 식별 메타데이터:** CELEX/Regulation number, 정식 제목, 개정 대상 법령 목록, 문서 버전을 EUR-Lex 메타데이터와 대조한다.
+5. **의무와 구현 선택 분리:** CRA의 결과 요구(예: integrity, access control, secure update distribution)와 구현 후보(예: Secure Boot, TPM, SE, digital signature)를 별도 claim_type/field로 저장한다. 구현 후보를 법령의 직접 의무 문장으로 승격하지 않는다.
+6. **조항 역할 구분:** Article 13 support period, Article 14 reporting, Annex I Part II(8) free-of-charge security updates를 서로 다른 legal obligation ID로 고정 매핑한다.
+
+### 추가 회귀 테스트
+
+10. 원문에 없는 “secure boot” 직접 인용이 생성되면 검증 실패 및 게시 금지.
+11. Annex I Part I(2)(b)/(c)/(g)와 실제 문구가 불일치하면 quote/claim을 REJECTED 처리.
+12. Regulation (EU) 2024/2847 정식 제목 또는 amending act list가 EUR-Lex와 다르면 metadata validation 실패.
+13. Article 14를 free-of-charge update obligation으로 매핑하면 실패.
+14. 원문 수집 실패/본문 미제공 시 VERIFIED quote 0개, archive의 확정 연구 건수 증가 0.
+15. Secure Boot/TPM/Measured Boot가 법령의 보편적 의무로 표현되면 risk-based design recommendation으로 강등하거나 게시 보류.
+
+**상태:** 위 내용은 변경 제안에만 추가했다. main.py, Gemini prompt, parsing/validation gate, production workflow는 수정하지 않았으며 사용자 승인 대기 상태를 유지한다.
