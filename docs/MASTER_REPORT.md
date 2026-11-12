@@ -248,3 +248,8 @@ TI MSPM0G3507 공식 제품 페이지에서 G-Series TRM Rev F가 2026-11-05자�
 ## 신규 main 아카이브 감사: #56–#59
 
 main 브랜치의 #56–#59를 EUR-Lex와 대조했다. #56과 #59는 CONFLICT, #57과 #58은 PARTIALLY_VERIFIED이며 완전 VERIFIED 보고서는 없다. 주요 오류는 Article 14의 신고 대상·시한 구분 누락, CVD 근거를 Annex I Part I Section 2로 잘못 연결한 것, Secure-by-default 구현 선택을 보편적 법적 명령으로 단정한 것, Article 13(2) 위험평가와 Article 13(8) 지원기간 및 Annex I Part II(8) 무상 업데이트를 혼동한 것이다. 상세는 [#56–#59 감사](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_56_59_2026-11-12.md) 및 claim ledger를 참조한다. 원본 main archive는 수정하지 않았다.
+
+
+## 신규 main 아카이브 감사: #60–#78
+
+main 브랜치의 자동 생성 보고서 #60–#78 19건을 EUR-Lex Regulation (EU) 2024/2847 원문과 대조했다. 파일 단위 결과는 PARTIALLY_VERIFIED 6건(#60, #61, #63, #73, #76, #77), CONFLICT 13건, 완전 VERIFIED 0건이다. 이 배치의 Raw Text Quote는 모두 직접 인용으로 재사용할 수 없다. 반복 오류는 Article 13(7)과 13(8), Article 14 신고, Annex I Part I(2)(g) 데이터 최소화, Part II(5)–(8) 취약점 처리 요구를 혼동한 것이다. 정확한 매핑은 Article 13(8)=지원기간, Article 14=적극 악용 취약점/심각한 사고 신고, Annex I Part II(5)=CVD, (6)=취약점 신고 연락처, (7)=안전한 업데이트 배포, (8)=무상 보안 업데이트다. 상세: [#60–#78 감사](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_60_78_2026-11-12.md). 원본 main archive는 보존했다.
