@@ -1,5 +1,6 @@
 import json
 import unittest
+from pathlib import Path
 from types import SimpleNamespace
 
 from cra_report_contract import (
@@ -122,6 +123,36 @@ class ContractTests(unittest.TestCase):
             )
         self.assertNotIn("secret-like", str(caught.exception))
         self.assertEqual(len(models.calls), 2)
+
+    def test_missing_claim_field_rejected(self):
+        payload = valid_payload()
+        del payload["claims"][0]["limitations"]
+        with self.assertRaises(ReportValidationError):
+            parse_and_validate_report(json.dumps(payload))
+
+    def test_invalid_claim_enum_rejected(self):
+        payload = valid_payload()
+        payload["claims"][0]["claim_type"] = "VERIFIED_FACT"
+        with self.assertRaises(ReportValidationError):
+            parse_and_validate_report(json.dumps(payload))
+
+    def test_duplicate_claim_id_rejected(self):
+        payload = valid_payload()
+        duplicate = dict(payload["claims"][0])
+        payload["claims"].append(duplicate)
+        with self.assertRaises(ReportValidationError):
+            parse_and_validate_report(json.dumps(payload))
+
+    def test_fail_closed_exit_precedes_all_success_side_effects(self):
+        source = (Path(__file__).resolve().parents[1] / "main.py").read_text(encoding="utf-8")
+        failure_exit = source.index("raise SystemExit(1)")
+        for success_side_effect in (
+            "send_discord_chunked(full_text, webhook_url)",
+            'os.makedirs("research_archive", exist_ok=True)',
+            'with open(STATE_FILE, "w", encoding="utf-8")',
+            'with open(HISTORY_FILE, "w", encoding="utf-8")',
+        ):
+            self.assertGreater(source.index(success_side_effect), failure_exit)
 
     def test_empty_response_retries_then_fails_closed(self):
         models = FakeModels(["", "   "])
