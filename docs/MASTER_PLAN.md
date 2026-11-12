@@ -292,3 +292,10 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 - [ ] Map TI manual's host/actuator-disable assumptions and safety mechanisms to IF-01..IF-09 and test/evidence register as a comparison example, not target-product selection.
 - [ ] Acquire/read full G-Series TRM Rev F and exact G3529-Q1 register applicability; do not infer from index metadata.
 - [ ] Do not convert ASIL D/ASIL B into IEC 61508 SIL 3 equivalence or certification claim.
+
+
+## TI safety mechanism to servo-drive mapping
+- [x] Created a separate SFFS983A-to-servo-drive integration matrix, mapping diagnostic mechanism families to IF-01..IF-09 and candidate validation evidence.
+- [ ] Confirm exact G3529-Q1 applicability of every referenced IP/diagnostic in the full TRM/datasheet/errata.
+- [ ] Retrieve FMEDA and establish system-level diagnostic coverage/metrics.
+- [ ] Convert selected candidates into approved safety test procedures only after target safety requirements and DUT are defined; all current candidates remain NOT_RUN.
