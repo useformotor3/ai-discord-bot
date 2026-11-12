@@ -119,3 +119,9 @@
 ## 다음 설계 산출물
 - [CRA_REQUIREMENTS_TO_SERVO_DRIVE_TRACEABILITY_MATRIX.md](docs/CRA_REQUIREMENTS_TO_SERVO_DRIVE_TRACEABILITY_MATRIX.md): 검증된 법령 요구를 HW/FW/시험/객관적 증거로 연결하는 추적성 매트릭스 초안.
 - 제품 SKU와 실제 ST MCU 부품번호가 없으므로 모든 제품별 적용 및 시험 결과는 UNVERIFIED로 유지.
+
+
+## 2026-11-12 추가 — 위협 모델 및 시험·증거 대장
+- [서보 드라이브 CRA 위협 모델](docs/THREAT_MODEL_SERVO_DRIVE_CRA.md): 자산 10종, 공격자 6유형, 신뢰 경계 8개, 위협 시나리오 18개와 통제 후보를 연결.
+- [보안 시험·증거 대장](docs/SECURITY_TEST_EVIDENCE_REGISTER.md): 업데이트/네트워크/명령/가용성/서비스/디버그/NVM/키/센서/운영 시험 40여 개의 ID, 기대 결과, 증거 메타데이터 규칙을 정의.
+- 모든 시험은 NOT_RUN이며 실제 제품 시험을 수행한 것이 아니다. 실제 제품 입력·수치형 합격 기준이 확보되기 전까지 제품별 위험/적용성은 UNVERIFIED.
