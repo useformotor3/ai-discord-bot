@@ -204,3 +204,10 @@ ST와 비교할 기능 범위와 제품군을 먼저 정의한다. 동급 기능
 - [일반 서보 드라이브 CRA 위협 모델](THREAT_MODEL_SERVO_DRIVE_CRA.md): AST-01..10 자산, ACT-01..06 공격자, TB-01..08 신뢰 경계, TH-01..18 시나리오 및 통제 후보.
 - [보안 시험·증거 대장](SECURITY_TEST_EVIDENCE_REGISTER.md): TST-* 시험 ID, NOT_RUN 기본 상태, EV-* 증거 ID, 필수 메타데이터와 제품별 합격 기준 입력값.
 - 위협·통제·시험은 일반 참조 모델이다. 실제 제품 인터페이스/MCU/안전 경계가 확인되기 전 위험 등급·제품 적용성·시험 PASS를 확정하지 않는다.
+
+
+## 통합 추적성 및 2026 Commission guidance
+- [통합 CRA 추적성 매트릭스](CRA_INTEGRATED_TRACEABILITY_MATRIX.md): TR-01..20을 법령, 자산/위협, HW/FW, TST, EV로 연결.
+- [Commission C(2026) 5252 가이드 검토](CRA_COMMISSION_GUIDANCE_REVIEW_2026-11-12.md): 공식 게시 메타데이터 VERIFIED, Annex 본문 상세 검증 PENDING.
+- 제조사 revision 메타데이터: ST AN5156 Rev14/June 2026; TI SLAAE29 Rev B/Aug 27 2026 및 G-Series TRM Rev F/Nov 5 2026의 공식 인덱스 표시 확인. TI 최신 revision 본문 내용은 미검증.
+- [주장·근거 대장](CLAIM_EVIDENCE_LEDGER.md)에 EU-GUIDE-001, TI-012/013, ST-002 메타데이터 claim을 등록. 메타데이터 검증을 기능 claim 검증으로 확대 해석하지 않는다.
