@@ -268,3 +268,9 @@ ST와 비교할 기능 범위와 제품군을 먼저 정의한다. 동급 기능
 - [Audit #56–#59](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_56_59_2026-11-12.md): #56 CONFLICT, #57 PARTIALLY_VERIFIED, #58 PARTIALLY_VERIFIED, #59 CONFLICT.
 - Correct mapping: Article 14(1)–(4) separate actively exploited vulnerability and severe incident tracks; Annex I Part II(5),(6) CVD/contact; Annex II point 2 user-facing single point of contact; Annex I Part I(2)(b),(d),(j) secure-by-default/access/attack surface; Part II(8) free updates.
 - Claim rows CRA-ARCH-056-001 through CRA-ARCH-059-001 added.
+
+
+## Main-only reports #60–#78 audit
+- [Audit #60–#78](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_60_78_2026-11-12.md): 6 PARTIALLY_VERIFIED / 13 CONFLICT / 0 fully VERIFIED; no quote block cleared for verbatim reuse.
+- Correct mapping: Article 13(8) support period; Article 14 mandatory reporting; Annex I Part II(5) CVD, (6) vulnerability contact, (7) secure distribution, (8) free updates; Part I(2)(b) secure-by-default, (d) access control, (g) data minimisation, (j) attack surface.
+- Claim rows CRA-ARCH-060-001 through CRA-ARCH-078-001 added to CLAIM_EVIDENCE_LEDGER.md.
