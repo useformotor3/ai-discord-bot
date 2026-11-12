@@ -130,3 +130,10 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - TI MSPM0G3529-Q1 제품 페이지에서 G-Series TRM 참조를 확인했고, TI MSPM0-DIAGNOSTIC-LIB 기술자료 인덱스에서 TRM Rev F (2026-11-05)를 확인. TRM 본문은 대용량으로 현재 도구에서 열람 실패하여 보안 장 세부 내용은 검증하지 않음.
 - SLAAE29 Rev B는 공식 본문 재확보 실패. SLAAE29A Rev A만 본문 확인된 자료로 유지.
 - 새 아키텍처 문서의 모든 CRA 설계 연결은 법령의 결과 요구를 개발 작업으로 번역한 권고이며, 특정 부품/알고리즘/회로를 CRA가 직접 요구한다고 표현하지 않음.
+
+
+## 2026-11-12 추가 — 아카이브 34개 표본 정정 추적성
+- [ARCHIVE_CLAIM_CORRECTION_LEDGER_2026-11-12.md](ARCHIVE_CLAIM_CORRECTION_LEDGER_2026-11-12.md) 생성: 원본 파일 경로·SHA-1·행 위치·주장 요약·정정 근거 룰·판정 상태 연결.
+- 집계 검증 중 감사 ID 중복을 발견: A-013과 B-006은 동일한 `2026-11-11_230055.md` / SHA-1. 따라서 35개 감사 ID 행이 34개 고유 파일을 가리킨다.
+- 고유 파일 기준 판정은 25 CONFLICT / 9 PARTIALLY_VERIFIED로 기존 34건 집계와 일치한다. 추가 9개 보고서의 10개 ID 중 1개가 추가 20개 표본과 중복.
+- 원본 아카이브 34개는 수정하지 않았다. 이 작업은 표본 정정 추적성 구축이며 990개 전체 전수 검증이 아니다.
