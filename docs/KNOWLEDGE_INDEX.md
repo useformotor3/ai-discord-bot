@@ -274,3 +274,9 @@ ST와 비교할 기능 범위와 제품군을 먼저 정의한다. 동급 기능
 - [Audit #60–#78](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_60_78_2026-11-12.md): 6 PARTIALLY_VERIFIED / 13 CONFLICT / 0 fully VERIFIED; no quote block cleared for verbatim reuse.
 - Correct mapping: Article 13(8) support period; Article 14 mandatory reporting; Annex I Part II(5) CVD, (6) vulnerability contact, (7) secure distribution, (8) free updates; Part I(2)(b) secure-by-default, (d) access control, (g) data minimisation, (j) attack surface.
 - Claim rows CRA-ARCH-060-001 through CRA-ARCH-078-001 added to CLAIM_EVIDENCE_LEDGER.md.
+
+
+## Main-only report #79 audit
+- [Audit #79](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_79_2026-11-12.md): PARTIALLY_VERIFIED. The 24h early-warning concept is valid, but reportable scope, 72h/final-report staging, quote and paragraph attribution are incorrect.
+- Correct Article 14 tracks: actively exploited vulnerability 24h / 72h / final ≤14 days after corrective measure available; severe incident 24h / 72h / final within one month after incident notification.
+- Claim CRA-ARCH-079-001 added.
