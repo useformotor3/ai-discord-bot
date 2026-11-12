@@ -14,12 +14,14 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 - [ ] 문서 상충 자동 점검과 운영 절차 테스트
 
 ## P1 — 브랜치/자료 정합성
-- [x] main과 작업 브랜치의 commit graph 비교
-- [x] main/작업 브랜치 archive 990, history 990 확인
-- [x] archive/history 경로 상호 연결 누락 0 확인
-- [x] main에서 확인한 6개 추가 파일과 history/state를 작업 브랜치에 콘텐츠 복사
-- [ ] commit graph 및 PR 통합 전략 검토
-- [ ] inventory 스크립트로 파일 수, SHA, 중복/누락, orphan, history 연결 자동 산출
+- [x] main/작업 브랜치 archive 및 history 정합성 확인(990/990)
+- [x] main에서 확인한 6개 추가 파일을 작업 브랜치에 콘텐츠 단위로 보존
+- [x] archive/history 검사 스크립트 추가
+- [x] 검사 스크립트 단위 테스트 3개 로컬 통과
+- [x] 작업 브랜치 push/수동 실행용 GitHub Actions 검사 워크플로 추가
+- [ ] GitHub Actions 실제 실행 결과 확인
+- [ ] inventory 결과에 기준 브랜치/commit SHA/확인시각 저장
+- [ ] PR/병합 전 commit graph와 diff 검토
 
 ## P2 — 자동화 신뢰성
 - [ ] main.py 제어흐름/예외/쿼터/출력 검토
@@ -29,7 +31,7 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 - [ ] 미검증 생성물은 초안으로 격리
 - [ ] Discord timeout/HTTP status/재시도/중복 방지
 - [ ] 무료 한도 fail-closed 및 유료 호출 금지
-- [ ] 테스트 fixture로 실패 경로 검증
+- [ ] 실패 경로 테스트 fixture
 
 ## P3 — CRA 근거 검증
 - [ ] Regulation (EU) 2024/2847 및 개정 이력 재확인
@@ -67,5 +69,5 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 
 ## 변경 이력
 - 2026-11-12: 기본 계획 및 세션 연속성 규칙 수립.
-- 2026-11-12: main/작업 브랜치 diverged 및 main 전용 archive 표본 감사 반영.
-- 2026-11-12: main에서 새로 발견된 #3 보고서까지 복사하고 archive/history 990/990 정합성 재확인.
+- 2026-11-12: main/작업 브랜치 archive 동기화 및 표본 감사.
+- 2026-11-12: archive/history 무결성 검사 스크립트, 테스트, GitHub Actions 워크플로 추가.
