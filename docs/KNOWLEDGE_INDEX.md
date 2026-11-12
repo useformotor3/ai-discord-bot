@@ -117,3 +117,10 @@ ST와 비교할 기능 범위와 제품군을 먼저 정의한다. 동급 기능
 ## 수동 표본 감사
 - [ARCHIVE_MANUAL_SAMPLE_AUDIT_5_2026-11-12.md](ARCHIVE_MANUAL_SAMPLE_AUDIT_5_2026-11-12.md): 초기 5개 파일을 EUR-Lex와 대조, 4 CONFLICT / 1 PARTIALLY_VERIFIED.
 - 전체 오류율을 나타내는 무작위 표본은 아니다. 발견한 오류 유형을 전수 검증 규칙으로 전환하는 데 사용한다.
+
+
+## 추가 수동 감사 — 2026-11-12
+- [ARCHIVE_MANUAL_AUDIT_9_2026-11-12.md](ARCHIVE_MANUAL_AUDIT_9_2026-11-12.md): 추가 9개 고위험 후보, 7 CONFLICT / 2 PARTIALLY_VERIFIED.
+- 앞선 초기 5개 감사와 합계 14개 표본: 11 CONFLICT / 3 PARTIALLY_VERIFIED. 무작위 표본이 아니므로 전체 archive 오류율로 일반화하지 않는다.
+- 추가 확인한 고위험 혼동: Article 10/11/14, Article 24/32, support period vs free updates, all-vulnerability reporting vs Article 14 scope, product Class I/II core-functionality classification.
+- 제품 분류는 Article 7 + Implementing Regulation (EU) 2025/2392의 core-functionality 기준으로 판단한다.
