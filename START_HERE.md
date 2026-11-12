@@ -125,3 +125,10 @@
 - [서보 드라이브 CRA 위협 모델](docs/THREAT_MODEL_SERVO_DRIVE_CRA.md): 자산 10종, 공격자 6유형, 신뢰 경계 8개, 위협 시나리오 18개와 통제 후보를 연결.
 - [보안 시험·증거 대장](docs/SECURITY_TEST_EVIDENCE_REGISTER.md): 업데이트/네트워크/명령/가용성/서비스/디버그/NVM/키/센서/운영 시험 40여 개의 ID, 기대 결과, 증거 메타데이터 규칙을 정의.
 - 모든 시험은 NOT_RUN이며 실제 제품 시험을 수행한 것이 아니다. 실제 제품 입력·수치형 합격 기준이 확보되기 전까지 제품별 위험/적용성은 UNVERIFIED.
+
+
+## 2026-11-12 통합 추적성 및 정기 점검
+- [통합 CRA 요구사항–위협–HW/FW–시험–증거 매트릭스](docs/CRA_INTEGRATED_TRACEABILITY_MATRIX.md): TR-01..TR-20 end-to-end trace ID와 P0/P1 실행 백로그.
+- [European Commission CRA Guidance 검토](docs/CRA_COMMISSION_GUIDANCE_REVIEW_2026-11-12.md): C(2026) 5252, 2026-07-27 공식 게시 사실 및 프로젝트 영향 검토. Annex 본문 단락별 검증은 미완료.
+- 제조사 자료 인덱스 변경: TI SLAAE29 Rev B 및 G-Series TRM Rev F는 공식 인덱스 메타데이터만 확인. 본문 내용은 확인 전 인용 금지. ST AN5156 Rev14/June 2026 메타데이터 재확인.
+- 매주 월요일 09:00(Asia/Seoul) 공식 CRA/ST/TI 자료 변경 점검 자동화가 등록됨. 변경 시 공식 원문과 revision diff를 확인하고 cra-project-foundation 브랜치에만 반영 후보를 기록한다.
