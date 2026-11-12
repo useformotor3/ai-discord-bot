@@ -151,3 +151,13 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 - [x] Batch 03 B-003–B-010 (8개): [상세](ARCHIVE_PASS_BC_AUDIT_BATCH_03_2026-11-12.md)
 - [ ] Batch 04 B-011–B-020 (10개) Pass B/C 수행.
 - [ ] 전체 34개 재검증 완료 후 최종 상태 집계와 정정본 동기화.
+
+
+## Pass B/C 최종 재검증 — 34/34 완료
+- [x] Batch 01 A-001–A-008
+- [x] Batch 02 A-009–A-015(중복 A-013 제외), B-001–B-002
+- [x] Batch 03 B-003–B-010
+- [x] Batch 04 B-011–B-020
+- [x] 최종 집계: VERIFIED 0 / PARTIALLY_VERIFIED 6 / REJECTED 28. [최종 요약](ARCHIVE_PASS_BC_FINAL_SUMMARY_2026-11-12.md)
+- [ ] 이 결과를 반영한 검증 정정본 및 HW/FW/시험/증거 추적성 매트릭스 작성.
+- [ ] 나머지 956개 archive는 P0 위험 후보부터 단계별 검증. 34개 표본 결과를 전수 오류율로 일반화하지 않음.
