@@ -45,11 +45,11 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 - [x] 초기 5개 파일 수동 표본 감사: 4 CONFLICT, 1 PARTIALLY_VERIFIED
 - [x] 추출기 schema 1.1: 주장/인용/위험 후보 행 번호와 문맥 스니펫 추가, CI success
 - [ ] 위험 플래그 표본검사로 실제 오류/정상 주장 분리
-- [ ] 오류 유형·빈도·영향과 정정 이력 작성
+- [ ] 오류 유형·빈도·영향과 정정 이력 작성 (현재 14개 비무작위 표본: 11 CONFLICT, 3 PARTIALLY_VERIFIED)
 
 ## P4 — 제품/반도체 적용
 - [ ] 제품 경계/의도된 용도/인터페이스/원격 기능/업데이트 경로 정의
-- [ ] CRA 적용성 및 분류 판단표 작성
+- [ ] CRA 적용성 및 분류 판단표 작성 (Article 7 + Implementing Regulation 2025/2392 core-functionality 기준 반영)
 - [ ] 위협 모델 및 HW/FW/통신/운영 요구사항 분해
 - [x] ST AN5156 Rev 14 (June 2026) 및 STM32Trust 공식 기준선 확보
 - [x] TI MSPM0G3529-Q1 데이터시트 및 SLAAE29A 보안 기능 문서 확보 (참고 기준 예시, 동급 비교 아님)
