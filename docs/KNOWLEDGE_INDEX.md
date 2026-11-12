@@ -262,3 +262,9 @@ ST와 비교할 기능 범위와 제품군을 먼저 정의한다. 동급 기능
 - TI MSPM0G3507 product page lists G-Series TRM Rev F dated 2026-11-05; HTML viewer exceeds size limit (25,348,105 bytes), so body/register details remain NOT_VERIFIED.
 - MSPM0G3507 page-level AES/TRNG/CRC/MPU/ECC/SRAM parity/SWD descriptors are not transferable to MSPM0G3529-Q1 or other variants without exact part documentation.
 - Source register §9; claim ledger TI-TRM-REVF-001..TI-SLAAE29B-APPL-001.
+
+
+## Main-only reports #56–#59 audit
+- [Audit #56–#59](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_56_59_2026-11-12.md): #56 CONFLICT, #57 PARTIALLY_VERIFIED, #58 PARTIALLY_VERIFIED, #59 CONFLICT.
+- Correct mapping: Article 14(1)–(4) separate actively exploited vulnerability and severe incident tracks; Annex I Part II(5),(6) CVD/contact; Annex II point 2 user-facing single point of contact; Annex I Part I(2)(b),(d),(j) secure-by-default/access/attack surface; Part II(8) free updates.
+- Claim rows CRA-ARCH-056-001 through CRA-ARCH-059-001 added.
