@@ -307,3 +307,14 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - main.py blob SHA matches both branches: 86a7731aad5de8d75581fc953bcea2c44adf2f2b.
 - .github/workflows/run.yml blob SHA matches both branches: 65a8cadc8eac593f551e390698e367b1d161ecf1.
 - Latest work-branch commit: 26be6cbaa1285a7e6bf616d8a2af899b428f964b. Combined status returned an empty statuses array; CI result is unknown/not reported.
+
+
+## Main-only reports #60–#78 audit — 2026-11-12
+
+- 새 commit sequence 확인으로 main의 최신 자동 생성 보고서가 #78임을 확인했다. #60–#78 원본 diff 19건을 가져와 EUR-Lex Regulation (EU) 2024/2847 원문과 대조했다.
+- 결과: 6 PARTIALLY_VERIFIED (#60, #61, #63, #73, #76, #77), 13 CONFLICT, 0 fully VERIFIED. 모든 Raw Text Quote 블록은 verbatim 재사용 불가로 판정.
+- 반복 오류: Article 11/13(6)/(7)/(8)/14 혼동, Part I(2)(g) 데이터 최소화를 취약점 업데이트로 오인, Part II(1)/(2)/(7)/(8) 혼합, 지원기간 5년 예외 누락, secure-by-default/attack-surface의 설계 선택을 보편적 법적 명령으로 과장, 합성·비문언 인용.
+- 핵심 정정: support period=Article 13(8), CVD=Annex I Part II(5), contact address=Part II(6), secure distribution=Part II(7), free updates=Part II(8), secure-by-default=Part I(2)(b), attack surface=Part I(2)(j), data minimisation=Part I(2)(g), access control=Part I(2)(d).
+- 상세 감사: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_60_78_2026-11-12.md](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_60_78_2026-11-12.md). 원본 main archive/history/state는 수정하지 않았다.
+- EUR-Lex checked: Article 13 lines 888–908; Article 14 lines 939–975; Annex I lines 1743–1773; Annex II lines 1776–1794.
+- No merge/rebase/sync. No main.py/Gemini prompt/production workflow/run.yml edits. CI status not yet rechecked; do not claim pass.
