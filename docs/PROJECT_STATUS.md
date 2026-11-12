@@ -239,3 +239,9 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - 정확한 매핑: confidentiality (e), integrity (f), data minimisation (g), availability/DoS resilience (h), connected device/network impact (i).
 - CRA-HW-11을 추가해 Part I(2)(g) 데이터 최소화 설계 검토를 별도 연결했다.
 - TI SLAAE29 Rev B 직접 확인 결과와 MSPM0G3529-Q1 미포함 지원 부품 목록 주의사항도 아키텍처 문서에 반영했다. 제품별 기능 적용성은 UNVERIFIED.
+
+## 하드웨어 설계 선택 매트릭스 추가
+
+- [SERVO_DRIVE_CRA_SECURITY_HARDWARE_ARCHITECTURE.md](SERVO_DRIVE_CRA_SECURITY_HARDWARE_ARCHITECTURE.md)에 DEC-01..DEC-10 선택 매트릭스와 G-01..G-06 설계 동결 게이트를 추가했다.
+- 단일/분리 MCU, boot trust anchor, Flash slot, debug/service, network boundary, key storage, power/reset, sensor, gate driver, manufacturing provisioning의 대안을 정리했다.
+- 특정 부품/회로는 선택하지 않았다. 모든 DEC/Gate는 TBD/미충족이며 제품 SKU, 정확한 ST MCU, 실제 인터페이스, timing/safety 입력을 기다린다.
