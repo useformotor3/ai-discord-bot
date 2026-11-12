@@ -103,3 +103,8 @@
 ## Pass B/C Batch 02
 - [ARCHIVE_PASS_BC_AUDIT_BATCH_02_2026-11-12.md](docs/ARCHIVE_PASS_BC_AUDIT_BATCH_02_2026-11-12.md): A-009–A-015 및 B-001–B-002, 8개 파일 추가 재검증.
 - 8개 모두 Raw Text Quote를 현행 법령 직접 인용으로 재사용 불가. 지원기간 문구의 shorter/longer 역전, Article 14 신고 범위 확대, Annex Part I/II 혼합이 반복됨.
+
+
+## Pass B/C Batch 03
+- [ARCHIVE_PASS_BC_AUDIT_BATCH_03_2026-11-12.md](docs/ARCHIVE_PASS_BC_AUDIT_BATCH_03_2026-11-12.md): B-003–B-010 8개 파일 재검증.
+- B-009 secure-by-default 문구만 현행 Annex I Part I(2)(b)와 핵심 취지가 일치하나 원문 위치/표현을 정정해야 한다. B-010은 Article 24/32 혼동 및 서보 드라이브 Class II 근거 없는 단정이 확인됐다.
