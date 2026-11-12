@@ -275,3 +275,54 @@ Detailed findings: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_80_2026-11-12.md](ARCHIVE_MAN
 | CRA-ARCH-080-001 | #80 | Secure-by-default is Annex I Part I(2)(b), access control (d), attack-surface limitation (j); the report's Section 1 (a)–(d) quote is composite/misnumbered and universal port/debug/password/Secure Boot implementation claims are overstated. | PARTIALLY_VERIFIED |
 
 The legal themes are supported, but the raw quote is rejected for verbatim reuse and implementation choices must remain risk-based.
+
+
+## 16. Main-only reports #81–#121 audit (2026-11-12)
+
+Detailed report: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_81_121_2026-11-12.md](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_81_121_2026-11-12.md). Source main HEAD: d0ba9802e4b7fead4192263d8ebd08f44a7c547e.
+
+| Claim ID | Report | Finding | Status |
+|---|---:|---|---|
+| CRA-ARCH-081-001 | #81 | 기본 자격증명 금지/강제 변경 문구 및 인용 합성 | CONFLICT |
+| CRA-ARCH-082-001 | #82 | 지원기간 shorter-than-five-years 예외 역전, Annex 인용 조작 | CONFLICT |
+| CRA-ARCH-083-001 | #83 | Annex 번호/인용 조작, 보편적 자격증명·포트 의무 과장 | CONFLICT |
+| CRA-ARCH-084-001 | #84 | secure-default 주제 일부 타당, 인용·하위항목·비밀번호 의무 오류 | CONFLICT |
+| CRA-ARCH-085-001 | #85 | 기본 보안/업데이트 무결성 취지는 타당, Secure Boot 보편 의무 및 인용 오류 | PARTIALLY_VERIFIED |
+| CRA-ARCH-086-001 | #86 | 기본 보안/무결성 취지는 타당, 인용과 구현 의무 과장 | PARTIALLY_VERIFIED |
+| CRA-ARCH-087-001 | #87 | Secure Boot/Root of Trust 법적 의무 및 Annex 인용 조작 | CONFLICT |
+| CRA-ARCH-088-001 | #88 | Annex I Part I/II 혼합, 합성 인용 | CONFLICT |
+| CRA-ARCH-089-001 | #89 | 인터페이스/Secure Boot 보편 의무와 Annex 하위항목 조작 | CONFLICT |
+| CRA-ARCH-090-001 | #90 | Secure Boot/rollback 보편 의무 및 기술문서 보관기간 오인용 | CONFLICT |
+| CRA-ARCH-091-001 | #91 | SBOM 근거 Annex I Part II(1) 오인용, Article 13 인용 합성 | CONFLICT |
+| CRA-ARCH-092-001 | #92 | Secure Boot 보편 의무, Annex VII/Article 24 인용 오류 | CONFLICT |
+| CRA-ARCH-093-001 | #93 | 서명·dual-bank·무중단 업데이트를 법적 의무로 과장 | CONFLICT |
+| CRA-ARCH-094-001 | #94 | 지원기간 shorter/longer 규칙 역전, 합성 인용 | CONFLICT |
+| CRA-ARCH-095-001 | #95 | Annex VII/Part I 하위항목 오인용, 지원기간 문구 합성 | CONFLICT |
+| CRA-ARCH-096-001 | #96 | 지원기간 longer 오인, IEC 62443 SL2를 CRA와 혼동 | CONFLICT |
+| CRA-ARCH-097-001 | #97 | CVD/contact 주제는 타당하나 Article 14·Annex 번호/인용 오류 | CONFLICT |
+| CRA-ARCH-098-001 | #98 | 기본 보안·접근제어 취지는 타당, MFA/RBAC/고유 비밀번호 보편 의무 과장 | PARTIALLY_VERIFIED |
+| CRA-ARCH-099-001 | #99 | Article 13(6) third-party component 처리 취지 과장 및 합성 인용 | CONFLICT |
+| CRA-ARCH-100-001 | #100 | 무상 업데이트 근거 Annex I Part II(8) 대신 Part I(2)(g) 오인용 | CONFLICT |
+| CRA-ARCH-101-001 | #101 | Article 14 신고 범위·원격 telemetry 자동 신고 의무 과장 | CONFLICT |
+| CRA-ARCH-102-001 | #102 | 지원기간 longer 오인, Part II 하위항목·인용 조작 | CONFLICT |
+| CRA-ARCH-103-001 | #103 | Annex I Part II/Article 13(4) 세부 인용 조작 | CONFLICT |
+| CRA-ARCH-104-001 | #104 | 기본 보안/접근제어 취지는 타당, 포트·암호·RBAC 보편 의무 과장 | PARTIALLY_VERIFIED |
+| CRA-ARCH-105-001 | #105 | 기본 보안 취지는 타당, Annex 인용과 초기 인증 의무 오류 | PARTIALLY_VERIFIED |
+| CRA-ARCH-106-001 | #106 | Article 14를 모든 취약점/사고로 확대, 인용 합성 | CONFLICT |
+| CRA-ARCH-107-001 | #107 | 제품 Class II 추정 근거 없음, free update 및 Annex 인용 조작 | CONFLICT |
+| CRA-ARCH-108-001 | #108 | 지원기간/무상업데이트 혼합, 자동업데이트·서명 의무 과장 | CONFLICT |
+| CRA-ARCH-109-001 | #109 | 존재하지 않는 Article 11(7), 지원기간/무료 업데이트 오인용 | CONFLICT |
+| CRA-ARCH-110-001 | #110 | Article 11 및 Annex 인용 오류, 직접 인용 합성 | CONFLICT |
+| CRA-ARCH-111-001 | #111 | Article 13(8) 지원기간과 무상 업데이트 의무 혼동 | CONFLICT |
+| CRA-ARCH-112-001 | #112 | 존재하지 않는 Article 14(2)(h)/Part II(1)(f) 인용 | CONFLICT |
+| CRA-ARCH-113-001 | #113 | Annex I Part I/II 번호와 문구 조작, 예외 누락 | CONFLICT |
+| CRA-ARCH-114-001 | #114 | Article 14를 secure update 의무로 오인, 서명·rollback 과장 | CONFLICT |
+| CRA-ARCH-115-001 | #115 | Annex I 문자 번호/인용 조작, unique credential 의무 과장 | CONFLICT |
+| CRA-ARCH-116-001 | #116 | Article 11 및 Annex I Part II CVD 인용 합성 | CONFLICT |
+| CRA-ARCH-117-001 | #117 | secure-default/reset 취지는 타당, 비밀번호/포트 보편 의무 과장 | PARTIALLY_VERIFIED |
+| CRA-ARCH-118-001 | #118 | Annex I Part I point (g) 인용 조작, 디지털 서명 의무 과장 | CONFLICT |
+| CRA-ARCH-119-001 | #119 | 지원기간 주제는 타당하나 Article 10 오인용, 5년 예외 누락 | PARTIALLY_VERIFIED |
+| CRA-ARCH-120-001 | #120 | Article 14 대신 Article 11, 신고 대상·최종보고 기한 혼동 | CONFLICT |
+| CRA-ARCH-121-001 | #121 | 지원기간/secure decommissioning 일부 타당, 사전 EOL 통지 의무·인용 과장 | PARTIALLY_VERIFIED |
+
+**Batch result:** 41 reports; 33 CONFLICT / 8 PARTIALLY_VERIFIED / 0 VERIFIED. All 41 Raw Text Quote blocks are rejected for verbatim reuse. Consecutive risk batch only; not a random sample or archive-wide error rate. Legal baseline: Article 13(8) support period (including expected-use-under-five-years exception); Article 13(9) post-issuance update retention; Annex I Part II(8) free updates with tailor-made business-user agreement exception; Article 14 actively exploited vulnerability/severe incident reporting; Annex I Part II(5)–(7) CVD/contact/secure distribution; Annex II(2) contact point and 8(d) secure decommissioning information. Do not infer a universal Secure Boot, TPM, signature algorithm, dual-bank, rollback, zero-downtime, forced-password-change or port-disable requirement.
