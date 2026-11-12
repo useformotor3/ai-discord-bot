@@ -304,3 +304,10 @@ ST와 비교할 기능 범위와 제품군을 먼저 정의한다. 동급 기능
 - [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_81_121_2026-11-12.md](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_81_121_2026-11-12.md): #81–#121, 41 files; 33 CONFLICT / 8 PARTIALLY_VERIFIED / 0 VERIFIED; all 41 Raw Text Quote blocks rejected for verbatim reuse.
 - [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_122_2026-11-12.md](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_122_2026-11-12.md): #122, CONFLICT.
 - Legal baseline map: Article 13(8)/(9), Article 14, Annex I Part I(2), Annex I Part II(1)–(8), Annex II(2)/(8)(d). See detailed audit docs and claim ledger CRA-ARCH-081-001..CRA-ARCH-122-001.
+
+
+## Main-only report #123 audit
+- [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_123_2026-11-12.md](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_123_2026-11-12.md): CONFLICT. Article 13(7) is systematic cybersecurity documentation; user information/instructions is Article 13(18), support end-date display is Article 13(19), and Annex II is numbered 1–9 (not Part I/II).
+- User-document checklist anchors: Annex II(1)–(9), especially point 7 (support type/end date), point 8(a)–(f) (secure commissioning, data-security effects, update installation, decommissioning/data removal, auto-update opt-out, integrator information), point 9 (SBOM location only if manufacturer chooses to make SBOM available).
+- “Digital Product Passport” is not a CRA Annex II statutory label; servo drive Class II status remains UNVERIFIED without Annex III product-category/core-function evidence.
+- Claim ledger row CRA-ARCH-123-001.
