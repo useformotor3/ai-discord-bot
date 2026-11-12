@@ -203,3 +203,9 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 - [ ] TI G-Series TRM Rev F 보안 장/레지스터 상세 본문 확보. 현재 대용량 HTML 본문은 열람 실패.
 - [ ] Commission C(2026) 5252 Annex PDF 페이지/문단별 검증. 공식 download endpoint는 Unicode decoding error.
 - [ ] main branch의 신규 자동 생성 archive/history 차이 및 CRA 법령 오류를 계속 감사하되 main은 사용자 승인 없이 수정/병합하지 않음.
+
+## main-only 자동 생성 보고서 후속 감사
+
+- [x] main-only report #35 법령 인용 감사.
+- [x] main-only report #36 법령 인용 감사: Article 14/Part II(8) 혼동, Annex I 항목 오기, Secure Boot/TPM 보편 의무 단정, 정식 법령 제목 오류 확인.
+- [ ] 이후 main 자동 생성 자료는 새 commit을 확인한 뒤 위험 기반 감사 큐에 추가. main 변경/수정/병합은 별도 승인 전 금지.
