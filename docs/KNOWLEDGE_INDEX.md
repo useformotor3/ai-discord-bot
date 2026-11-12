@@ -187,3 +187,9 @@ ST와 비교할 기능 범위와 제품군을 먼저 정의한다. 동급 기능
 - Batch 03: [B-003–B-010](ARCHIVE_PASS_BC_AUDIT_BATCH_03_2026-11-12.md)
 - Batch 04 예정: B-011–B-020.
 - 핵심 조항 매핑: 지원기간 Article 13(8), 업데이트 보존 Article 13(9), 신고 Article 14, 기술문서 Article 31, 적합성 평가 Article 32, DoC Article 28, CE 원칙 Article 29/부착 Article 30.
+
+
+## Pass B/C 최종 요약
+- [34개 고유 표본 최종 재검증 요약](ARCHIVE_PASS_BC_FINAL_SUMMARY_2026-11-12.md): VERIFIED 0 / PARTIALLY_VERIFIED 6 / REJECTED 28.
+- 배치 보고서: [01](ARCHIVE_PASS_BC_AUDIT_BATCH_01_2026-11-12.md), [02](ARCHIVE_PASS_BC_AUDIT_BATCH_02_2026-11-12.md), [03](ARCHIVE_PASS_BC_AUDIT_BATCH_03_2026-11-12.md), [04](ARCHIVE_PASS_BC_AUDIT_BATCH_04_2026-11-12.md).
+- 법령 정정 기준: Article 13(8)/(9), Article 14, Annex I Part I/II, Article 31/32, Article 28/29/30의 정확한 구분을 유지.
