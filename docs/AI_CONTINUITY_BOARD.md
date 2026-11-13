@@ -421,3 +421,8 @@
 - Current P0: reconcile the 345 atomic claims and 46 canonical requirements against Volume 1, Volume 2, PSIRT SOP, requirements matrix, integrated traceability matrix and test evidence register; resolve duplicated/contradictory wording and keep exact legal locators. Then proceed to main-only audit #63–#67.
 - No production code, main.py, production workflow, Gemini V2 prompt/contract or main branch was changed. E3 live source fetch remains unexecuted. This batch is documentation-only.
 
+## 2026-11-13 — Logging / Secure Data Lifecycle
+
+- Canonical mapping for Annex I Part I(2)(l)/(2)(m) and Annex II(8)(d) completed.
+- TST-LOG-01/02 and TST-ERASE-01..04 are registered, all NOT_RUN. TST-NVM-01..03 remain distinct integrity/access tests.
+- Threat model AST-11 / TH-19 and architecture/implementation plan updated. No DUT or production hardware test executed.
