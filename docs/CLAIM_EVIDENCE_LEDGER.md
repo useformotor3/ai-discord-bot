@@ -525,6 +525,13 @@ Correct map: Annex I Part I(2)(c) for applicable automatic-update default/user c
 | CRA-ARCH-MAIN-20261113-010-005 | #10 | 관리자 권한 분리/least privilege가 인용된 secure-by-default 조항의 명문 세부 요구다. | Annex I Part I(2)(d) | CRA-REQ-SECURE-DEFAULT-001; CRA-REQ-ACCESS-CONTROL-001 | CONFLICT | 적절한 접근통제 결과 요구는 있으나 해당 구체 역할 설계를 직접 지정하지 않는다. |
 | CRA-ARCH-MAIN-20261113-010-006 | #10 | PE-CONS 105/23의 초안/타협안 인용이 현행 최종 규정의 정확한 인용이다. | Regulation (EU) 2024/2847, Annex I | CRA-EVIDENCE-QUOTE-ACCURACY-001 | CONFLICT | 최종 현행 조항과 위치·문언을 대조해야 하며 초안 인용을 최종 법령 인용으로 재사용하지 않는다. |
 | CRA-ARCH-MAIN-20261113-011-001 | #11 | 제품의 사이버보안 수준은 위험에 기반해 적절한 수준이어야 한다. | Annex I Part I(1) | CRA-REQ-RISK-BASELINE-001 | VERIFIED | 원문상 risk-based cybersecurity level 요구 확인. |
+| CRA-REQ-NO-KNOWN-EXPLOIT-001 | Annex I Part I(2)(a) | 제품은 시장 출시 시 알려진 악용 가능 취약점이 없어야 한다. | SBOM/CVE triage, release gate, vulnerability acceptance record |
+| CRA-REQ-CONFIDENTIALITY-001 | Annex I Part I(2)(e) | 저장·전송·처리 데이터의 기밀성을 보호한다. | data-flow map, crypto design, key management test |
+| CRA-REQ-DATA-MINIMIZATION-001 | Annex I Part I(2)(g) | 의도된 목적에 필요한 적절·관련·최소 데이터만 처리한다. | data inventory, purpose mapping, minimization review |
+| CRA-REQ-AVAILABILITY-001 | Annex I Part I(2)(h) | 필수·기본 기능 가용성과 DoS 공격에 대한 복원력/완화 조치를 보호한다. | DoS/flood test, timing trace, safe recovery |
+| CRA-REQ-INTERCONNECTIVITY-001 | Annex I Part I(2)(i) | 제품 또는 연결된 기기가 다른 기기/네트워크가 제공하는 서비스 가용성에 미치는 부정적 영향을 최소화한다. | network load test, packet capture, integration report |
+| CRA-REQ-EXPLOIT-MITIGATION-001 | Annex I Part I(2)(k) | 적절한 exploit mitigation 메커니즘/기술로 사고 영향을 줄인다. | threat model, memory protection, input validation, fuzzing |
+| CRA-REQ-PRODUCT-RISK-ASSESSMENT-001 | Article 13(2)–(4), Article 31/Annex VII | intended purpose, foreseeable use/misuse 및 operating environment를 반영한 제품 사이버보안 위험평가와 기술문서화. | product boundary, risk assessment, technical file |
 | CRA-ARCH-MAIN-20261113-011-002 | #11 | secure-by-default와 외부 인터페이스를 포함한 attack-surface 제한은 CRA 요구사항이다. | Annex I Part I(2)(b), (j) | CRA-REQ-SECURE-DEFAULT-001 | VERIFIED | 결과 요구의 근거 확인. |
 | CRA-ARCH-MAIN-20261113-011-003 | #11 | 모든 통신 포트·USB·서비스 Ethernet·테스트 계정은 모든 제품에서 기본 비활성화해야 한다. | Annex I Part I(2)(j) | CRA-REQ-ATTACK-SURFACE-001 | CONFLICT | 위험기반 공격표면 제한을 모든 인터페이스 일괄 차단 의무로 확대했다. |
 | CRA-ARCH-MAIN-20261113-011-004 | #11 | 제품별 고유 기본 비밀번호 또는 최초 사용 강제 변경이 CRA의 명시적 보편 의무다. | Annex I Part I(2)(b), (d) | CRA-REQ-SECURE-DEFAULT-001; CRA-REQ-ACCESS-CONTROL-001 | CONFLICT | 구체 인증 설계는 위험기반 구현 후보이며 인용 조항이 직접 지정하지 않는다. |
