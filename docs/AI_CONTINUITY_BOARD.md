@@ -4,7 +4,7 @@
 - 기준일: 2026-11-13
 - 기준 작업 브랜치: `cra-project-foundation`
 - 마지막 확인 작업 HEAD: **브랜치 tip을 새 세션 시작 시 실시간 조회** (이 문서에 고정 SHA를 두지 않음)
-- 마지막 확인 main HEAD: `e9bc84bfb5ccc7c18a69298cbd8f88376691b18c` (Auto-archive: Research report #93)
+- 마지막 확인 main HEAD: `aaded0f4d0b84a1891b5801a6048c4de92511822` (Auto-archive: Research report #107)
 - 상태: **상시 갱신 운영 기준 문서**
 - 목적: 새 대화에서도 AI가 목표·현황·성과·실패·미완료·다음 행동을 추측 없이 복원하고, 과정 작업에 매몰되지 않고 실제 CRA 산출물을 계속 완성하도록 한다.
 
@@ -28,7 +28,7 @@
 |---|---|
 | 작업 브랜치 | `cra-project-foundation` |
 | main 브랜치 | 읽기 전용. 병합·rebase·sync 금지 |
-| main 최신 관찰 | HEAD `e9bc84bfb5ccc7c18a69298cbd8f88376691b18c`, report #93 |
+| main 최신 관찰 | HEAD `aaded0f4d0b84a1891b5801a6048c4de92511822`, report #107; state count 107; history 1,382 entries; archive tree count not rechecked |
 | main 아카이브 | 1,368개 파일 / history 1,368개 / 고유 경로 1,368개 (2026-11-13 재조회) |
 | 작업 브랜치 아카이브 | 최근 strict audit 기준 990개 / history 990개 정합 |
 | main과 작업 브랜치 | diverged, 작업 브랜치 ahead 657 / behind 384 (2026-11-13 재비교) |
@@ -236,3 +236,14 @@
 - 제2권 구현 계획에 제품 분류 매트릭스, PSIRT SOP, HW 아키텍처, 통합 추적성 매트릭스의 정본 링크와 역할 구분을 추가했다.
 - MASTER_REPORT의 MCU category 14 문구를 “MCU 자체의 기술 설명 및 별도 시장 제공 여부”와 “완제품 분류”가 서로 다른 판단임을 명확히 했다.
 - 이번 내용 반영은 #43–#47 감사 정정의 관련 상위 문서 연결/명확화다. 과거 모든 archive 감사 항목을 제1권·제2권 전체에 전수 반영한 것은 아니다. 다음 P0에서 Claim Evidence Ledger와 정정 대장을 상위 보고서 전체와 대조한다.
+
+
+## 2026-11-13 진행 업데이트 — main reports #48–#52 및 보고서 통합
+
+- main 최신 HEAD를 재조회: aaded0f4d0b84a1891b5801a6048c4de92511822 (report #107); state count 107; history 1,382 entries. state count는 당일 카운터이며 누적 파일 수로 쓰지 않는다.
+- #48–#52 원본 5개를 날짜+count+경로로 매핑하고 archive blob SHA를 기록했다.
+- [#48–#52 수동 감사](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_48_52_2026-11-13.md): 3 CONFLICT / 2 PARTIALLY_VERIFIED / 0 VERIFIED; direct quote reuse 0/5.
+- 핵심 정정: Article 14(8) machine-readable notification은 actively exploited vulnerability/severe incident 사용자 통지에 한정되고 “where appropriate” 조건이 있다. Annex I Part II(5)/(6)은 CVD/contact address, Part II(4)는 fixed vulnerability disclosure, Part II(7)은 secure update distribution, Part II(8)은 원칙적 무상 업데이트다. Article 13(6)은 제조사가 통합 구성요소 취약점을 구성요소 제조/유지 주체에 보고하는 방향이다.
+- 누적 #8–#52: 45건, 40 CONFLICT / 5 PARTIALLY_VERIFIED / 0 VERIFIED; 비무작위 연속 표본.
+- 이번 배치의 주요 결론은 Claim Evidence Ledger, 제1권, 제2권, PSIRT SOP 및 MASTER_REPORT에 연결·반영했다.
+- 다음 감사 시작점 #53. main은 계속 read-only, 제품별 적용성은 UNVERIFIED, 실제 DUT 시험은 NOT_RUN.
