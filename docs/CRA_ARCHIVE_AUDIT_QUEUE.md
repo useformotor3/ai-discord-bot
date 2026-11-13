@@ -2395,3 +2395,11 @@ Batch result: 5/5 CONFLICT, 0 PARTIALLY_VERIFIED, 0 VERIFIED; 0/5 Raw Text Quote
 - #38 판정 재검토: Annex I Part I(2)(m) 데이터·설정 영구 제거 기능 결과 요구를 누락한 기존 판정을 PARTIALLY_VERIFIED로 수정.
 - 누적 #8–#57: 50건, 40 CONFLICT / 10 PARTIALLY_VERIFIED / 0 VERIFIED; 0/50 direct quote reuse.
 - 다음 감사 배치: #58–#62. 배치 시작 시 main HEAD/state/history.json을 새로 조회하고 날짜+count+경로+blob SHA로 원본을 고정한다.
+
+
+## 2026-11-13 main 기준선 및 다음 감사
+
+- main HEAD: `8ebc3cdc361a1b694e4ad18b5d85cc6dec5d1f35` (Auto-archive report #112).
+- state.json count 112 (당일 카운터), history.json 1,387 entries. archive tree count는 미확인.
+- #53–#57 감사 완료: 1 CONFLICT / 4 PARTIALLY_VERIFIED / 0 VERIFIED.
+- 다음 main-only 감사 대상: #58–#62. 배치 시작 시 main HEAD/state/history를 새로 조회하고 날짜+count+경로+blob SHA를 고정한다.
