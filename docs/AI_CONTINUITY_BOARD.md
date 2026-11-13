@@ -3,7 +3,7 @@
 - 문서 ID: CRA-OPS-CONTINUITY-001
 - 기준일: 2026-11-13
 - 기준 작업 브랜치: `cra-project-foundation`
-- 마지막 확인 작업 HEAD: `3bec6968cf214a3748595a465b01cd308bf7dc25`
+- 마지막 확인 작업 HEAD: **브랜치 tip을 새 세션 시작 시 실시간 조회** (이 문서에 고정 SHA를 두지 않음)
 - 마지막 확인 main HEAD: `e9bc84bfb5ccc7c18a69298cbd8f88376691b18c` (Auto-archive: Research report #93)
 - 상태: **상시 갱신 운영 기준 문서**
 - 목적: 새 대화에서도 AI가 목표·현황·성과·실패·미완료·다음 행동을 추측 없이 복원하고, 과정 작업에 매몰되지 않고 실제 CRA 산출물을 계속 완성하도록 한다.
@@ -175,3 +175,6 @@
 - main 대비 작업 브랜치: diverged, ahead 657 / behind 384. Merge base `b425b6db591e34abe003522157cf97ecf2240d9f`. merge/rebase/sync 금지 유지.
 - 최신 작업 commit `3bec6968cf214a3748595a465b01cd308bf7dc25`은 문서 8개만 변경했다. main.py, production workflow, prompts, contracts, schema, evidence bundle 등 보호 파일 변경 없음.
 - 해당 exact HEAD의 Actions run은 조회되지 않았고 commit status는 pending / 0 statuses다. 따라서 이번 문서 변경에 대한 CI는 **미실행/미확인**이다. 마지막 확인된 이전 CI success(140 tests)는 과거 commit에 대한 결과이지 현재 HEAD의 CI 결과가 아니다.
+
+
+- 참고: #38–#42 감사 본문 commit은 `3bec6968cf214a3748595a465b01cd308bf7dc25`; 그 후 연속성·대기열의 stale baseline을 보정한 문서 전용 commit이 추가되었다. 정확한 현재 HEAD는 매 세션 GitHub branch endpoint에서 확인한다.
