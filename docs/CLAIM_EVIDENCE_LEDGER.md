@@ -767,3 +767,49 @@ Correct map: Annex I Part I(2)(c) for applicable automatic-update default/user c
 
 - #33–#37 파일 단위 판정은 기존 감사 결과대로 5 CONFLICT / 0 PARTIALLY_VERIFIED / 0 VERIFIED이며 direct quote reuse 0/5.
 - 개별 법령 사실 VERIFIED와 원본 파일 전체 CONFLICT를 구분한다. 서보 드라이브의 Class I/II 실제 적용성은 UNVERIFIED, DUT 시험 NOT_RUN.
+
+## 2026-11-13 — #38–#42 원자 주장·인용 분해 (33 claims)
+
+- 원본 감사: [main-only #38–#42 Pass A/B/C 감사](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_38_42_2026-11-13.md).
+- 원본 main 경로·blob SHA: #38 \`research_archive/2026-11-13_030533.md\` / \`f66d4335654b3b8b9836dcaebe1205eae731c532\`; #39 \`031039.md\` / \`9dfae4ba67f48e056f222bcc86ca3189f8bb384a\`; #40 \`031539.md\` / \`449b601a1df9bef3f3acd789ea2a7fcba0804ea2\`; #41 \`032039.md\` / \`e8d5ef7ead0cb481d158597110e98bdcd006b07c\`; #42 \`032532.md\` / \`0c9ca2e1c69b6bed759f1afa85dd2327d29cf319\`.
+- 공식 기준: Regulation (EU) 2024/2847, EUR-Lex consolidated text 20.11.2024.
+
+| Claim ID | 원본 | 원자 주장 | 근거 위치 | 상태 | 판정/정정 |
+|---|---:|---|---|---|---|
+| CRA-ARCH-MAIN-20261113-038-001 | #38 | 제품은 사용자에게 모든 데이터와 설정을 안전하고 쉽게 영구 제거할 수 있는 가능성을 제공해야 한다. | Annex I Part I(2)(m) | VERIFIED | 안전한 영구 삭제 가능성에 관한 제품 기능 결과 요구 확인. |
+| CRA-ARCH-MAIN-20261113-038-002 | #38 | 제품 안전 폐기 및 사용자 데이터 제거 방법에 관한 상세 지침/정보를 제공해야 한다. | Annex II(8)(d) | VERIFIED | 사용자 지침/정보 제공 의무 확인. |
+| CRA-ARCH-MAIN-20261113-038-003 | #38 | 모든 제품은 NAND/EEPROM의 모든 민감 데이터를 물리적으로 복구 불가능하게 소거하는 특정 sanitization 기능을 구현해야 한다. | Annex I Part I(2)(m), Annex II(8)(d) | CONFLICT | 영구 삭제 결과와 특정 메모리/물리 소거 방식은 구분. 법령은 특정 NAND/EEPROM 알고리즘을 지정하지 않는다. |
+| CRA-ARCH-MAIN-20261113-038-004 | #38 | Annex I Part I(2)(e)/(f)는 데이터 보호·무결성 요구다. | Annex I Part I(2)(e), (f) | VERIFIED | (e)=기밀성, (f)=무결성. 단, 폐기/영구 삭제의 직접 근거는 (m). |
+| CRA-ARCH-MAIN-20261113-038-005 | #38 | Annex I Part II가 secure decommissioning의 직접 근거다. | Annex I Part II; Part I(2)(m) | CONFLICT | Part II는 vulnerability handling requirements, secure deletion은 Part I(2)(m) 및 Annex II(8)(d). |
+| CRA-ARCH-MAIN-20261113-038-006 | #38 | Raw Text Quote의 잔존 민감 데이터 삭제 문구가 Part I(2)(m)의 정확한 직접 인용이다. | Annex I Part I(2)(m) | CONFLICT | 보고서의 quote는 다른 요구를 합성했고 현행 원문과 일치하지 않는다. |
+| CRA-ARCH-MAIN-20261113-039-001 | #39 | support period 동안 취약점을 효과적으로 처리해야 하며 원칙적으로 최소 5년이다. | Article 13(8) | VERIFIED | expected use가 5년 미만이면 그 기간에 대응하는 예외 포함. |
+| CRA-ARCH-MAIN-20261113-039-002 | #39 | 지원기간 중 제공한 각 보안 업데이트는 발행 후 최소 10년 또는 남은 지원기간 중 더 긴 기간 동안 이용 가능해야 한다. | Article 13(9) | VERIFIED | 업데이트 가용성 의무는 support period 자체와 별도. |
+| CRA-ARCH-MAIN-20261113-039-003 | #39 | 보안 업데이트는 원칙적으로 무상 제공된다. | Annex I Part II(8) | PARTIALLY_VERIFIED | tailored product에 관한 제조자-사업 사용자 별도 합의 예외 필요. |
+| CRA-ARCH-MAIN-20261113-039-004 | #39 | 제조사 의무/무상 업데이트 근거는 Article 11 및 Annex I Part I(1)(h)다. | Article 13(8), Annex I Part II(8) | CONFLICT | Article 13(8)=support period, Part II(8)=free updates; Article 11/Part I(1)(h) 매핑 오류. |
+| CRA-ARCH-MAIN-20261113-039-005 | #39 | support period는 expected lifetime 또는 5년 중 짧은 기간이다. | Article 13(8) | CONFLICT | 원칙은 최소 5년이며 expected use가 5년 미만일 때 그 기간에 대응. |
+| CRA-ARCH-MAIN-20261113-039-006 | #39 | Raw Text Quote의 “whichever is shorter” 및 Part I(1)(h) free update 문구가 현행 직접 인용이다. | Article 13(8)–(9), Annex I Part II(8) | CONFLICT | 현행 최종 규정과 문언·조항 위치가 불일치. |
+| CRA-ARCH-MAIN-20261113-040-001 | #40 | 제품에는 안전한 설치·운영·유지관리를 위한 정보와 지침이 동반되어야 한다. | Annex II(1)–(2) | VERIFIED | 사용자 정보/지침 요구 확인. |
+| CRA-ARCH-MAIN-20261113-040-002 | #40 | 제공되는 기술 보안 지원의 종류와 support period 종료일 정보를 사용자에게 제공해야 한다. | Annex II(7) | VERIFIED | 지원기간·지원 정보 제공 요구 확인. |
+| CRA-ARCH-MAIN-20261113-040-003 | #40 | Annex II(8)(a)–(f)는 안전한 시운전/사용, 보안 영향, 업데이트, 폐기/데이터 삭제, 자동 업데이트 설정, 통합자 정보 등을 다룬다. | Annex II(8)(a)–(f) | VERIFIED | 항목별 사용자 지침 범위 확인. |
+| CRA-ARCH-MAIN-20261113-040-004 | #40 | 기본 관리자 계정 변경, 모든 포트 활성/비활성, 보안 로깅 설정은 모든 제품의 보편적 Annex II 필수 항목이다. | Annex II(8) | CONFLICT | Annex II의 명시 항목과 제품별 위험·기능에 따른 추가 지침을 구분. |
+| CRA-ARCH-MAIN-20261113-040-005 | #40 | 사용자 정보 제공 의무의 직접 근거는 Annex I Part I/II다. | Annex II | CONFLICT | 사용자 정보·지침의 직접 근거는 Annex II. Annex I는 제품 속성/취약점 처리 요구. |
+| CRA-ARCH-MAIN-20261113-040-006 | #40 | Raw Text Quote의 default settings/secure configuration/minimum update period 문장이 Annex II의 정확한 직접 인용이다. | Annex II(1)–(8) | CONFLICT | 여러 사용자 정보 항목을 합성한 문장으로 직접 인용 재사용 불가. |
+| CRA-ARCH-MAIN-20261113-041-001 | #41 | 취약점은 위험에 비례해 지체 없이 처리·시정해야 한다. | Annex I Part II(2) | VERIFIED | vulnerability remediation 요구 확인. |
+| CRA-ARCH-MAIN-20261113-041-002 | #41 | 제품 보안의 효과적이고 정기적인 시험·검토가 요구된다. | Annex I Part II(3) | VERIFIED | regular testing/review 요구 확인. |
+| CRA-ARCH-MAIN-20261113-041-003 | #41 | 수정된 취약점 정보는 보안 업데이트가 제공된 후 공개해야 하며 정당한 보안 위험 시 지연 가능하다. | Annex I Part II(4) | VERIFIED | 공개 시점과 justified delay 예외 확인. |
+| CRA-ARCH-MAIN-20261113-041-004 | #41 | 취약점의 적시 수정·완화를 위한 안전한 업데이트 배포 메커니즘이 요구된다. | Annex I Part II(7) | VERIFIED | secure distribution mechanism 요구 확인. |
+| CRA-ARCH-MAIN-20261113-041-005 | #41 | 보안 업데이트는 원칙적으로 무상 제공된다. | Annex I Part II(8) | PARTIALLY_VERIFIED | tailored-product/business-user agreement exception 포함 필요. |
+| CRA-ARCH-MAIN-20261113-041-006 | #41 | 모든 제품은 특정 digital signing/rollback/fail-safe 방식으로 패치를 배포해야 한다. | Annex I Part II(7), risk assessment | CONFLICT | secure distribution 결과 요구와 특정 서명·rollback 구현은 구분. 위험기반 설계 선택. |
+| CRA-ARCH-MAIN-20261113-041-007 | #41 | Article 11 및 composite Raw Text Quote가 취약점 처리 요구의 정확한 근거다. | Article 13(8), Annex I Part II(2)–(8) | CONFLICT | 제조사 의무 Article 13, Part II 항목별 문언을 합성하지 않는다. |
+| CRA-ARCH-MAIN-20261113-042-001 | #42 | 제조자는 CVD 정책을 수립·집행해야 한다. | Annex I Part II(5) | VERIFIED | 정책 요구 확인. |
+| CRA-ARCH-MAIN-20261113-042-002 | #42 | 제조자는 취약점 신고 연락 주소를 제공해야 한다. | Annex I Part II(6) | VERIFIED | contact address 요구 확인. |
+| CRA-ARCH-MAIN-20261113-042-003 | #42 | 수정된 취약점 정보는 보안 업데이트 제공 후 공개해야 한다. | Annex I Part II(4) | PARTIALLY_VERIFIED | justified security-risk case에서 사용자 patch 적용 기회 후로 지연 가능. |
+| CRA-ARCH-MAIN-20261113-042-004 | #42 | 사용자 단일 연락 창구와 CVD 정책을 찾을 수 있는 정보를 제공해야 한다. | Article 13(17), Annex II(2) | VERIFIED | 사용자 정보 및 contact point 요구 확인. |
+| CRA-ARCH-MAIN-20261113-042-005 | #42 | 모든 취약점 보안 권고문을 ENISA/CSIRT에 동시에 신고해야 한다. | Article 14(1)–(7), Annex I Part II(4)–(6) | CONFLICT | 일반 CVD/public disclosure와 Article 14의 제한된 법정 신고 트리거를 혼합. |
+| CRA-ARCH-MAIN-20261113-042-006 | #42 | 일반 서보 드라이브는 Class I/II 중요 제품이다. | Article 7, Annex III | UNVERIFIED | 제품 core functionality 및 Annex III 범주 증거 없음. |
+| CRA-ARCH-MAIN-20261113-042-007 | #42 | VDP 근거는 Article 11 및 Annex I Part I이다. | Article 13(8), Annex I Part II(5)/(6) | CONFLICT | 제조사 의무 Article 13, CVD/contact Part II(5)/(6). |
+| CRA-ARCH-MAIN-20261113-042-008 | #42 | Raw Text Quote가 현행 CVD/Article14 문언의 정확한 직접 인용이다. | Annex I Part II(4)–(6), Article 14 | CONFLICT | 조항·문언·신고 범위를 합성했으므로 재사용 불가. |
+
+- #38–#42 파일 단위 판정은 기존 감사 결과대로 3 CONFLICT / 2 PARTIALLY_VERIFIED / 0 VERIFIED이며 direct quote reuse 0/5.
+- #38은 Annex I Part I(2)(m) 후속 확인으로 PARTIALLY_VERIFIED로 정정된 최신 판정을 유지한다.
+- 개별 법령 사실 VERIFIED와 원본 파일 전체 판정을 구분한다. 제품별 적용성 UNVERIFIED, DUT 시험 NOT_RUN.
