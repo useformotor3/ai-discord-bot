@@ -403,7 +403,7 @@ Correct map: Annex I Part I(2)(c) for applicable automatic-update default/user c
 ### 집계와 한계
 
 - #13–#52: 40건 중 35 CONFLICT / 5 PARTIALLY_VERIFIED / 0 VERIFIED, 직접 인용 재사용 0/40.
-- #8–#47: 40건 중 36 CONFLICT / 4 PARTIALLY_VERIFIED / 0 VERIFIED, 직접 인용 재사용 0/40. #8–#12의 5 CONFLICT는 이전 누적 집계에서 역산한 값이며, 원본 감사 문서·개별 판정 링크를 이번 대조에서 재확인하지 못했다.
+- #8–#47: 40건 중 36 CONFLICT / 4 PARTIALLY_VERIFIED / 0 VERIFIED, 직접 인용 재사용 0/40. #8–#12의 5 CONFLICT는 원본 감사 문서와 각 archive blob SHA를 재확인했다.
 - #8–#52: 45건 중 39 CONFLICT / 6 PARTIALLY_VERIFIED / 0 VERIFIED, 직접 인용 재사용 0/45. 각 보고서에 날짜 포함 파일 중심 주장 ID 1개씩 총 45개를 등록했다.
 - #8–#57: 50건 중 40 CONFLICT / 10 PARTIALLY_VERIFIED / 0 VERIFIED, 직접 인용 재사용 0/50. #53–#57은 1 CONFLICT / 4 PARTIALLY_VERIFIED다.
 - 이 결과는 날짜/번호로 연속 선택한 비무작위 표본이다. 전체 main 아카이브의 오류율로 일반화하지 않는다.
@@ -411,9 +411,9 @@ Correct map: Annex I Part I(2)(c) for applicable automatic-update default/user c
 - 다음 P0: #8–#52의 날짜+원본 경로+blob SHA를 기준으로 감사 문서와 Ledger ID를 1:1 대조하고, 중복/누락/상태 차이를 폐쇄한다.
 
 
-## 31. 2026-11-13 main reports #13–#52 날짜·원본·주장별 추적 대장
+## 31. 2026-11-13 main reports #13–#57 날짜·원본·주장별 추적 대장
 
-> 아래는 2026-11-13 날짜의 일일 보고서 번호 #13–#52에 대한 원본 파일 식별 및 파일 단위 중심 주장 추적이다. 번호가 같은 다른 날짜의 보고서와 혼동하지 않도록 날짜와 경로, Git blob SHA를 함께 기록했다. 각 행은 배치 감사의 중심 오류/정정 요약이며, 다중 주장 문서의 모든 문장을 원자 주장으로 분해한 완전한 claim coverage를 의미하지 않는다.
+> 아래는 2026-11-13 날짜의 일일 보고서 번호 #13–#57에 대한 원본 파일 식별 및 파일 단위 중심 주장 추적이다. 번호가 같은 다른 날짜의 보고서와 혼동하지 않도록 날짜와 경로, Git blob SHA를 함께 기록했다. 각 행은 배치 감사의 중심 오류/정정 요약이며, 다중 주장 문서의 모든 문장을 원자 주장으로 분해한 완전한 claim coverage를 의미하지 않는다.
 
 | 주장 ID | 일일 번호 | 원본 archive 경로 | 원본 blob SHA | 판정 | 핵심 정정 요약 |
 |---|---:|---|---|---|---|
@@ -464,6 +464,7 @@ Correct map: Annex I Part I(2)(c) for applicable automatic-update default/user c
 | CRA-ARCH-MAIN-20261113-052-001 | #52 | `research_archive/2026-11-13_041532.md` | `3672c41635364ef99b494cd8944c4998bbfc01c8` | CONFLICT | Article 13(6) 신고 방향은 제조사→구성요소 제조/유지 주체; 공급자→상위 제조사/사용자 일반 통지 의무로 역전 불가. |
 
 - #13–#52 배치 합계: 40건 중 CONFLICT 35 / PARTIALLY_VERIFIED 5 / VERIFIED 0. 직접 인용 재사용 승인 0/40.
+- #13–#57 배치 합계: 45건 중 CONFLICT 36 / PARTIALLY_VERIFIED 9 / VERIFIED 0. 직접 인용 재사용 승인 0/45.
 - #8–#12의 원본 감사 파일과 개별 archive SHA를 재확인했고, 날짜 포함 claim ID 5개를 아래 추적 표에 등록했다.
 - 위 ID는 날짜가 포함된 신규 감사 레코드다. 과거 날짜의 `CRA-ARCH-043-001` 등 번호 기반 레코드와 동일하다고 간주하지 않는다.
 - 이 표의 판정은 파일 단위 중심 주장이다. 완전한 원자 주장 분해는 #13–#57 감사 보고서의 세부 claim과 추가 대조해야 한다.
