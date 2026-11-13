@@ -1,3 +1,12 @@
+## 한국어 핵심 요약
+
+- 대상: main 보고서 #33–#37, 총 5건.
+- 판정: CONFLICT 5건 / PARTIALLY_VERIFIED 0건 / VERIFIED 0건.
+- 직접 인용 재사용 승인: 0/5. 제품별 적용성은 모두 UNVERIFIED.
+- 반복 오류: Article 13(8) 지원기간, Article 13(9) 업데이트 가용성, Annex I Part II(8) 무상 보안 업데이트를 서로 혼동; Article 14의 적극 악용 취약점/심각한 사고 신고 범위를 확대; Annex I Part I(2)(b)/(d)/(j) 보안 기본값·접근통제·공격표면 조항의 위치와 의미 오기; 서보 드라이브 Class I/II 자동 분류.
+- 첫 접속 비밀번호 변경, 고유 자격증명, 모든 포트 비활성화, JTAG 일괄 잠금을 보편적 CRA 직접 의무로 단정하지 않는다. 위험평가 기반 설계 후보로 구분한다.
+- 아래 영문 상세 기록은 원본 commit·archive SHA·보고서별 판정을 보존한다. 한국어 법령 정본은 [CRA 공식 법령 기준선](CRA_VERIFIED_BASELINE_2026-11-12.md), 독자용 설명은 [제1권](CRA_SERVO_DRIVE_COMPLIANCE_REPORT_V1.md)을 참조한다.
+
 # Main-only CRA Archive Manual Audit — Reports #33–#37
 
 - 감사일: 2026-11-13
