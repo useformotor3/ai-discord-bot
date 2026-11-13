@@ -681,3 +681,9 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - 최신 실질 산출물: [#28–#32 감사](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_28_32_2026-11-13.md). 다음 감사 시작 #33.
 - Phase D hardening final code/test 140/140 및 archive 990/990 성공; 문서 최신화 HEAD도 CI #43384628893에서 140/140 및 990/990 성공. 최신 결과/한계는 AI_CONTINUITY_BOARD와 SESSION_LOG 참조.
 - E3 live fetch 및 보호 파일/production integration/main merge는 별도 승인 전 실행 금지.
+
+
+## 2026-11-13 — main reports #33–#37 감사 업데이트
+- 신규 [#33–#37 감사 보고서](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_33_37_2026-11-13.md): 5 CONFLICT, direct quote reuse 0/5.
+- 누적 #8–#37 감사 30건 모두 CONFLICT, direct quote reuse 0/30. 연속 비무작위 배치이므로 전체 archive 오류율로 일반화하지 않는다.
+- 다음 대상 #38부터. main 원본은 읽기 전용.

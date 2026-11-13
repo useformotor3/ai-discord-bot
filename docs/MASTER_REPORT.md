@@ -312,3 +312,8 @@ main report #123은 사용자 정보·지침서 제공이라는 유효한 CRA �
 ## main 자동 조사 보고서 #28–#32 수동 감사
 
 main 브랜치의 #28–#32를 archive 원문과 기존 EUR-Lex 현행 법령 기준선에 대조했다. 5건 모두 CONFLICT이며 Raw Text Quote 5개 모두 현행 법령 직접 인용으로 재사용할 수 없다. 반복 오류는 Article 13(8) 지원기간과 Annex I Part II(8) 무상 보안 업데이트의 혼동, CVD 근거 Part II(5) 오인용, Article 14 신고 의무를 Article 11로 잘못 연결, Annex III 제품 분류의 자동 단정이다. 상세 판정·blob SHA·정정 규칙은 [#28–#32 감사 보고서](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_28_32_2026-11-13.md)를 참조한다. 이번 배치는 기존 법령 기준선을 재사용했으며 새 E3 fetch나 PDF 시각 대조를 수행하지 않았다.
+
+
+## main 자동 조사 보고서 #33–#37 감사
+
+#33–#37에서는 CVD/VDP, 무상 보안 업데이트, Secure-by-default, Important Product 분류 및 적합성 평가를 다뤘으나, 5건 모두 현행 CRA 법령 구조·조항·제품 적용성을 잘못 연결해 CONFLICT로 판정했다. 특히 CVD에 특정 PGP 방식 강제, Article 14를 Article 11로 오기, unique password/port disable의 보편 의무화, Article 13(6)과 무료 업데이트 혼동, Article 24와 Article 32의 혼동이 확인됐다. 직접 인용 재사용 가능 문구는 0/5다. 상세: [#33–#37 감사 보고서](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_33_37_2026-11-13.md).

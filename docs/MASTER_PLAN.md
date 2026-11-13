@@ -579,3 +579,11 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 - main 현재 report #91, archive/history 1,366/1,366. 다음 audit target #33. 우선 #33–#91 대기열을 최신 main SHA 기준으로 등록하고 P0 claims부터 Pass A/B/C.
 - 제1권 CRA 조사 보고서와 제2권 구현 계획은 초판이다. #28–#32 감사 결과 및 반복 정정 규칙을 통합해 다음 revision을 작성한다.
 - E3 live source fetch, protected production code, Gemini V2 prompt/contract, main branch mutation/merge/rebase/sync는 별도 명시 승인 전 금지.
+
+
+## 2026-11-13 — main reports #33–#37 감사 완료
+- [x] #33–#37 Pass A/B/C 감사 및 blob SHA 기록.
+- 결과 5 CONFLICT / 0 PARTIALLY_VERIFIED / 0 VERIFIED; Raw Text Quote 재사용 0/5.
+- 누적 #8–#37: 30 CONFLICT / direct quote reuse 0/30. 비무작위 연속 배치로 전체 오류율 추정에 사용하지 않는다.
+- 다음 감사 시작점 #38. main tip 최신화 후 queue와 보고서 본문을 재확인한다.
+- 적합성 평가 경로, 특히 Article 32 및 관련 Annex는 신규 공식 원문 재확인 전 제품별 판단/설계 확정 근거로 사용하지 않는다.

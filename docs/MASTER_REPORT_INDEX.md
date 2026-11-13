@@ -51,3 +51,7 @@
 
 - [AI 연속성·실행 현황판](AI_CONTINUITY_BOARD.md): 신규 세션에서 프로젝트 목표, Git/CI 기준선, 실제 완료·실패·미완료, 작업 교훈, 다음 행동을 복원하는 필수 문서.
 - [main reports #28–#32 수동 감사](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_28_32_2026-11-13.md): 5 CONFLICT / 0 PARTIALLY_VERIFIED / 0 VERIFIED; direct quote reuse 0/5. main 원본은 read-only.
+
+
+## main archive 수동 감사 추가
+- [#33–#37 감사](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_33_37_2026-11-13.md): 5 CONFLICT / direct quote reuse 0/5.

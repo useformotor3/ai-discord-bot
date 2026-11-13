@@ -142,3 +142,10 @@
 10. 다음 작업 대상 archive와 기존 감사 문서 원문
 
 새 세션에서 이전 대화의 기억을 믿고 바로 구현하지 말 것. 현재 저장소를 재조회하고 이 문서의 HEAD/수치가 최신인지 먼저 확인할 것.
+
+
+## 2026-11-13 진행 업데이트 — main reports #33–#37
+- [#33–#37 수동 감사](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_33_37_2026-11-13.md) 생성: 5 CONFLICT / 0 PARTIALLY_VERIFIED / 0 VERIFIED, direct quote reuse 0/5.
+- #33 CVD 채널/보안 권고문 요건을 특정 PGP 방식 의무로 과장; #34 CVD/Article 14 혼합 및 Article 11 오기; #35 unique password/port restrictions를 보편적 법정 의무로 과장; #36 Article 13(6)/지원기간/무상 업데이트 혼합; #37 Article 24 오기 및 Class I/II 자동 분류 오류.
+- 누적 수동 감사: #8–#37, 총 30건. #8–#12 5, #13–#27 15, #28–#32 5, #33–#37 5. 30건 모두 CONFLICT, 직접 인용 재사용 0/30. 연속·비무작위 배치이며 전체 archive 오류율이 아님.
+- 다음 감사 대상 #38. main tip은 새 세션/다음 배치 시작 시 재조회.

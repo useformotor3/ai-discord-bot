@@ -2323,3 +2323,14 @@ Batch result: 5/5 CONFLICT, 0 PARTIALLY_VERIFIED, 0 VERIFIED; 0/5 Raw Text Quote
 - Batch: 5 CONFLICT / 0 PARTIALLY_VERIFIED / 0 VERIFIED; raw direct quote reusable 0/5. Sequential non-random batch, not an archive-wide error rate.
 - Method limitation: reused the existing EUR-Lex legal baseline and prior #8–#27 audit; no new E3 live fetch, PDF visual inspection or new independent official cross-source check in this batch.
 - Next target: #33 onward; refresh/register all reports through current main #91 before choosing subsequent batches. Keep main read-only.
+
+
+## 2026-11-13 — main reports #33–#37 audit
+
+- Detailed report: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_33_37_2026-11-13.md](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_33_37_2026-11-13.md).
+- #33 CONFLICT — `research_archive/2026-11-13_024039.md`, blob `c9c8f17bae8dd90890f9075927aa5fb6668c32b0`.
+- #34 CONFLICT — `research_archive/2026-11-13_024544.md`, blob `97101ee32c543adc2b684c92eec4c831cbe2c479`.
+- #35 CONFLICT — `research_archive/2026-11-13_025045.md`, blob `842b48aa5ba2382ce58cdddcb1f8b836c5336eb6`.
+- #36 CONFLICT — `research_archive/2026-11-13_025531.md`, blob `06f32803648a15f7638add752a8b9a064d4ee3f9`.
+- #37 CONFLICT — `research_archive/2026-11-13_030054.md`, blob `a8f77a2ecc3bc2301ab87a5f90d2ae6626489eab`.
+- Batch 5 CONFLICT / 0 PARTIALLY_VERIFIED / 0 VERIFIED; direct quote reuse 0/5. Next target #38.
