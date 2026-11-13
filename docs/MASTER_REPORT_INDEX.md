@@ -97,7 +97,7 @@
 - [#48–#52 상세 감사](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_48_52_2026-11-13.md): 3 CONFLICT / 2 PARTIALLY_VERIFIED / 0 VERIFIED; direct quote reuse 0/5.
 - [Claim Evidence Ledger](CLAIM_EVIDENCE_LEDGER.md)에 원자 주장별 correction record 5개를 추가했다.
 - 제1권/제2권/PSIRT SOP 및 MASTER_REPORT에 Article 14(8) machine-readable user notification의 제한 조건, CVD/contact address의 정확한 Annex I Part II 위치, Article 13(6) component vulnerability reporting 방향, support/update 의무의 조항 구분을 반영했다.
-- 누적 #8–#52: 45건, 40 CONFLICT / 5 PARTIALLY_VERIFIED / 0 VERIFIED. 비무작위 연속 표본.
+- 누적 #8–#52: 45건, 39 CONFLICT / 6 PARTIALLY_VERIFIED / 0 VERIFIED. 비무작위 연속 표본.
 
 
 ## 문서 언어 및 통합 원칙 — 2026-11-13
@@ -111,7 +111,7 @@
 
 ## 최신 통합 진행 위치 — 2026-11-13
 
-- 최신 감사 범위: main reports #8–#52. #8–#52 누적 45건 중 40 CONFLICT / 5 PARTIALLY_VERIFIED / 0 VERIFIED. 비무작위 연속 표본이며 전체 아카이브 오류율이 아니다.
+- 최신 감사 범위: main reports #8–#52. #8–#52 누적 45건 중 39 CONFLICT / 6 PARTIALLY_VERIFIED / 0 VERIFIED. 비무작위 연속 표본이며 전체 아카이브 오류율이 아니다.
 - 상세 감사 정본: [#43–#47](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_43_47_2026-11-13.md), [#48–#52](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_48_52_2026-11-13.md).
 - 주장별 정정 정본: [CLAIM_EVIDENCE_LEDGER.md](CLAIM_EVIDENCE_LEDGER.md).
 - 법령 조항 통합 정본: [CRA_VERIFIED_BASELINE_2026-11-12.md](CRA_VERIFIED_BASELINE_2026-11-12.md).
