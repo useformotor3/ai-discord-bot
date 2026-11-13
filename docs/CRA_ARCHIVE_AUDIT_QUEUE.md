@@ -2435,3 +2435,10 @@ Batch result: 5/5 CONFLICT, 0 PARTIALLY_VERIFIED, 0 VERIFIED; 0/5 Raw Text Quote
 - main 원본 경로/blob SHA를 재확인하고 Claim Evidence Ledger에 원자 Claim ID 29개를 추가했다.
 - Article 14의 신고 범위·기한, Article 13 제조사 의무, Annex I Part I/II, Annex III Class I/II 분류를 각각 분리했다.
 - 다음 원자 분해 배치: #18–#22. #23–#57까지 순차 분해 후 상위 문서와 문장 단위 전수 대조.
+
+## 2026-11-13 — #18–#22 원자 주장 분해 완료
+
+- 기존 #18–#22 파일 단위 감사 결과는 5 CONFLICT / direct quote reuse 0/5로 유지.
+- main 원본 경로/blob SHA를 재확인하고 Claim Evidence Ledger에 원자 Claim ID 29개를 추가했다.
+- Article 14 신고 trigger와 기한, support period Article 13(8), 무상 업데이트 Part II(8), CVD Part II(5), secure-by-default Part I(2)(b), access control (d), integrity (f), attack surface (j)를 분리했다.
+- 다음 원자 분해 배치: #23–#27. 이후 #28–#57 순으로 진행하고 상위 문서와 교차 대조한다.
