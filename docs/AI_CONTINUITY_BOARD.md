@@ -258,3 +258,12 @@
 - 이 기준선 조회 시 작업 HEAD는 ad7b2732b5a554842772be8cabb23ba29d270ae4였다. 이후 START_HERE 및 MASTER_REPORT 문서 정정 commit f42fa408858f8160fb5a379a052294c36cc0465d, 91372b411ccb037602c59e4a88791119b04a7a73가 추가되었으므로 현재 tip은 다음 세션 시작 시 동적으로 다시 조회한다. 기준선 시점 main 비교는 diverged, ahead 690 / behind 398, merge base b425b6db591e34abe003522157cf97ecf2240d9f.
 - 최신 HEAD 문서 변경은 docs/SESSION_LOG에 한정된 마지막 commit이며, 전체 문서 변경은 그 직전 연속 docs-only commits에 기록되어 있다. main merge/rebase/sync는 수행하지 않았다.
 - exact HEAD CI run/status는 별도 조회 결과가 없는 한 PASS로 기록하지 않는다.
+
+
+## 2026-11-13 사용자 의도 업데이트 — 한국어 최종 산출물
+
+- 사용자가 명시한 기본 언어는 한국어다. 최종 보고서·매뉴얼·SOP·설계·시험 자료의 설명과 결론을 한국어로 작성한다.
+- 법령/표준의 공식 명칭, 조항 번호, 제조사 문서명, 부품번호, 정확한 원문 인용 및 고정 상태 코드는 영어 원문을 유지할 수 있다.
+- 사용자는 검증·수정된 조사 결과를 실제 보고서와 매뉴얼에 통합하는 것을 중요하게 본다. 문서가 과도하게 분리되어 최종 내용을 찾기 어려워지지 않도록 기존 정본에 통합하고, 독립 목적이 있는 문서만 별도로 유지한다.
+- 전체 문서 구성과 링크는 CRA_DOCUMENT_ARCHITECTURE_AND_NAVIGATION.md, 발행 문서 목록은 MASTER_REPORT_INDEX.md가 담당한다.
+- #8–#52 정정의 상위 문서 전수 대조는 미완료이며, 다음 P0 작업이다.
