@@ -820,3 +820,17 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - 해당 exact HEAD의 GitHub Actions workflow runs 0, combined statuses 0. CI 미실행/미확인.
 - main HEAD #112와 비교: diverged, 작업 브랜치 ahead 788 / behind 403, merge base `b425b6db591e34abe003522157cf97ecf2240d9f`.
 - main read-only, merge/rebase/sync 금지. 보호 파일 7개 SHA 변경 없음.
+
+## 2026-11-13 최신 상태 — main #118 / 감사 #58–#62 완료
+
+- main HEAD: \`75add8711d0254da7dea1766bb42f80fc04d36ee\` (Auto-archive report #118).
+- main state.json: 2026-11-13 / count 118 (당일 카운터); history.json 1,393 entries. recursive archive tree count는 별도 확인하지 않았다.
+- main reports #58–#62: 5 PARTIALLY_VERIFIED / 0 CONFLICT / 0 VERIFIED; direct quote reuse 0/5.
+- 누적 #8–#62: 55건, 40 CONFLICT / 15 PARTIALLY_VERIFIED / 0 VERIFIED; direct quote reuse 0/55. 비무작위 연속 표본이며 전체 archive 오류율이 아니다.
+- 원자 Claim ID 20개를 Claim Evidence Ledger에 추가했다. 제품별 적용성은 UNVERIFIED, 실제 DUT 시험은 NOT_RUN.
+- 법령 정정: CVD Part II(5), 신고 연락 주소 Part II(6), free updates Part II(8); Article 14 두 신고 트랙과 24h/72h/14일/1개월 기한; logging Part I 2(l), availability/DoS Part I 2(h).
+- 관련 독자용 보고서·제2권·PSIRT SOP·법령 기준선·요구사항 매트릭스·마스터 인덱스에 정정 반영.
+- main은 read-only. main merge/rebase/sync 금지.
+- main과 작업 브랜치 compare: diverged, work ahead 791 / behind 409, merge base \`b425b6db591e34abe003522157cf97ecf2240d9f\`.
+- 이번 변경은 문서 전용이다. 코드 테스트 결과 또는 CI PASS로 표현하지 않는다. exact documentation HEAD의 Actions/status는 별도 확인 전까지 미확인.
+- 다음 P0: #8–#57 개별 주장·인용 원자 분해와 제1권/제2권/SOP/매트릭스 전수 대조. 이후 main-only #63–#67.
