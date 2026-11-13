@@ -693,3 +693,17 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 - [ ] #8–#57 개별 문서 내 모든 주장·인용을 원자 단위로 분해하고 Claim ID/공식 원문/정정/반증 연결.
 - [ ] 영문 상세 감사 문서의 한국어 본문 전환 또는 상세 한국어판 작성.
 - [ ] 다음 main-only 감사 #58–#62. 배치 시작 시 main HEAD/state/history 재조회.
+
+## 2026-11-13 P0 — #58–#62 감사 완료 및 통합
+
+- [x] main reports #58–#62 원본 5개를 main read-only에서 가져오고 날짜/일일 번호/경로/blob SHA 고정.
+- [x] EUR-Lex Article 13/14, Article 16(3), Annex I Part I/II, Annex II Pass A/B/C 대조.
+- [x] #58–#62 파일 단위 판정 5 PARTIALLY_VERIFIED / 0 CONFLICT / 0 VERIFIED; direct quote reuse 0/5.
+- [x] 원자 Claim ID 20개를 Ledger에 추가하고 법령 위치/정정/상태 연결.
+- [x] 제1권·제2권·PSIRT SOP·법령 기준선·요구사항 매트릭스·통합 매트릭스·MASTER_REPORT·인덱스에 정정 반영.
+- [x] main #118 기준선 기록: state count 118, history 1,393; archive tree count 미확인.
+- [ ] **다음 P0:** #8–#57 원본의 개별 주장·직접 인용을 원자 Claim ID/공식 원문 locator/정정/반증과 1:1 연결.
+- [ ] #8–#57의 Claim Evidence Ledger와 제1권·제2권·PSIRT SOP·추적성 매트릭스·시험 대장 전수 대조.
+- [ ] #13–#57 영문 상세 감사 문서를 한국어 본문으로 전환하거나, 원본 보존 + 한국어 상세판 작성.
+- [ ] 위 전수 대조 후 main-only reports #63–#67 감사. 배치 시작 시 main HEAD/state/history를 다시 조회한다.
+- main read-only, merge/rebase/sync 금지. E3 live fetch와 protected production integration은 별도 승인 전 금지.
