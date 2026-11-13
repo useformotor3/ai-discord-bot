@@ -386,7 +386,7 @@ Correct map: Annex I Part I(2)(c) for applicable automatic-update default/user c
 
 | 감사 범위 | 상세 감사 문서 | 판정 | 직접 인용 재사용 | Ledger 원자 주장 연결 |
 |---|---|---|---:|---|
-| #8–#12 | 세부 파일 경로/문서 ID 재확인 필요 | 이전 누적 요약에서 5 CONFLICT로 계산되나 원본 감사 문서 링크 재확인 필요 | 누적 #8–#47 집계에 포함되어 0/5 | 개별 claim ID 미확인 |
+| #8–#12 | [감사 #8–#12](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_8_12_2026-11-13.md) | 5 CONFLICT | 0/5 | 날짜 포함 claim ID 5개 등록 |
 | #13–#27 | [감사 #13–#27](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_13_27_2026-11-13.md) | 15 CONFLICT | 0/15 | 개별 원자 claim ID 미등록 |
 | #28–#32 | [감사 #28–#32](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_28_32_2026-11-13.md) | 5 CONFLICT | 0/5 | 개별 원자 claim ID 미등록 |
 | #33–#37 | [감사 #33–#37](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_33_37_2026-11-13.md) | 5 CONFLICT | 0/5 | #35–#37의 일부 ID가 과거 기록에 있으나 날짜/경로 기준 재매핑 필요 |
@@ -410,6 +410,11 @@ Correct map: Annex I Part I(2)(c) for applicable automatic-update default/user c
 
 | 주장 ID | 일일 번호 | 원본 archive 경로 | 원본 blob SHA | 판정 | 핵심 정정 요약 |
 |---|---:|---|---|---|---|
+| CRA-ARCH-MAIN-20261113-008-001 | #8 | `research_archive/2026-11-13_003535.md` | `8141a7ff3d71cd2899e10a85c735b15351c72161` | CONFLICT | 보안 기본값 조항 오기; 최초 비밀번호 강제 변경·모든 JTAG/포트 비활성화를 보편 의무로 과장. |
+| CRA-ARCH-MAIN-20261113-009-001 | #9 | `research_archive/2026-11-13_004046.md` | `c06112da2cd050b4eb0813828beb948975fb82d4` | CONFLICT | 무상 업데이트·CVD·연락처·지원기간을 혼합; Article 11 오기 및 맞춤형 제품 예외 누락. |
+| CRA-ARCH-MAIN-20261113-010-001 | #10 | `research_archive/2026-11-13_004542.md` | `e9d5f5606a95567a9535de119edbbfa34739d02b` | CONFLICT | 보안 기본값을 Class II/Annex I Part II로 오분류; 서보 드라이브 Class II 근거 없음. |
+| CRA-ARCH-MAIN-20261113-011-001 | #11 | `research_archive/2026-11-13_005038.md` | `3dab8049841c07992184993c5b18fc1dcab94836` | CONFLICT | 모든 포트·JTAG 비활성화와 최초 고유 비밀번호를 보편 의무로 과장; Part I(1)/(2)(b)/(d)/(j) 구분 필요. |
+| CRA-ARCH-MAIN-20261113-012-001 | #12 | `research_archive/2026-11-13_005535.md` | `acda92dbe87ffbc549a8d52d42961b4bf058b983` | CONFLICT | CVD Part II(5), 연락처 Part II(6), 시정 Part II(2), 무상 업데이트 Part II(8), Article 14 신고 혼합. |
 | CRA-ARCH-MAIN-20261113-013-001 | #13 | `research_archive/2026-11-13_010102.md` | `2e9fb641dcebcb411dca1e686de916bf09dbfcb9` | CONFLICT | CVD·일반 취약점/사고 통지를 혼합하고 Article 11 및 NIS2 연락처 문구를 잘못 인용; CVD·연락처·Article 14 신고를 분리. |
 | CRA-ARCH-MAIN-20261113-014-001 | #14 | `research_archive/2026-11-13_010538.md` | `dda0e0308d5fffb11659f6c395a9b0a3da26b1de` | CONFLICT | 보안 기본값·접근통제·공격표면 조항 번호 오기; 최초 비밀번호 변경·모든 포트/디버그 비활성화를 보편 의무로 과장. |
 | CRA-ARCH-MAIN-20261113-015-001 | #15 | `research_archive/2026-11-13_011036.md` | `f150569deac61b8d74a424bb1c76518438816de0` | CONFLICT | 무상 보안 업데이트와 CVD를 Annex I Part I/Article 11에 잘못 배치; Part II(8)/(5)/(6)/(7)로 분리. |
@@ -452,6 +457,6 @@ Correct map: Annex I Part I(2)(c) for applicable automatic-update default/user c
 | CRA-ARCH-MAIN-20261113-052-001 | #52 | `research_archive/2026-11-13_041532.md` | `3672c41635364ef99b494cd8944c4998bbfc01c8` | CONFLICT | Article 13(6) 신고 방향은 제조사→구성요소 제조/유지 주체; 공급자→상위 제조사/사용자 일반 통지 의무로 역전 불가. |
 
 - #13–#52 배치 합계: 40건 중 CONFLICT 35 / PARTIALLY_VERIFIED 5 / VERIFIED 0. 직접 인용 재사용 승인 0/40.
-- #8–#12는 기존 누적 통계에 포함되지만, 이번 원본/경로 재대조에서 상세 감사 파일과 개별 SHA를 아직 식별하지 못했다. 추정된 누계로 개별 레코드를 생성하지 않는다.
+- #8–#12의 원본 감사 파일과 개별 archive SHA를 재확인했고, 날짜 포함 claim ID 5개를 아래 추적 표에 등록했다.
 - 위 ID는 날짜가 포함된 신규 감사 레코드다. 과거 날짜의 `CRA-ARCH-043-001` 등 번호 기반 레코드와 동일하다고 간주하지 않는다.
 - 이 표의 판정은 파일 단위 중심 주장이다. 완전한 원자 주장 분해는 #13–#52 감사 보고서의 세부 claim과 추가 대조해야 한다.
