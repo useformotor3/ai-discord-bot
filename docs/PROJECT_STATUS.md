@@ -761,4 +761,4 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - cra-project-foundation history.json: 990 entries; state.json: 2026-11-12 / count 3 (당일 카운터).
 - branch compare: diverged; work branch ahead 690 / behind 398; merge base b425b6db591e34abe003522157cf97ecf2240d9f.
 - main은 읽기 전용이며 merge/rebase/sync하지 않는다. archive tree 개수는 history count와 동일하다고 추정하지 않는다.
-- 최신 문서 작업 HEAD는 ad7b2732b5a554842772be8cabb23ba29d270ae4로 확인했다. 이 HEAD의 CI는 별도 검증 전까지 미실행/미확인이다.
+- 기준선 시점 문서 작업 HEAD는 ad7b2732b5a554842772be8cabb23ba29d270ae4였고, 이후 START_HERE 및 MASTER_REPORT 정정 commit f42fa408858f8160fb5a379a052294c36cc0465d와 91372b411ccb037602c59e4a88791119b04a7a73가 추가되었다. 최종 tip의 CI는 별도 확인 전까지 미실행/미확인이다.
