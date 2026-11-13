@@ -180,3 +180,6 @@
 - Claim Evidence Ledger: 55 file-level records + 345 atomic claims = 400 unique IDs, zero collisions; 46 canonical requirements, all atomic claims mapped.
 - Canonical requirement mapping is integrated into [requirements-to-servo-drive matrix](CRA_REQUIREMENTS_TO_SERVO_DRIVE_TRACEABILITY_MATRIX.md) and [integrated traceability matrix](CRA_INTEGRATED_TRACEABILITY_MATRIX.md).
 - Next P0: reconcile Volume 1/2, PSIRT SOP, traceability matrices and test evidence register against the 345 atomic claims; then audit main reports #63–#67.
+
+- [Security Test Evidence Register](SECURITY_TEST_EVIDENCE_REGISTER.md): includes TST-LOG-01/02 and TST-ERASE-01..04; all NOT_RUN.
+- [Product Classification and Access Control Matrix](CRA_PRODUCT_CLASSIFICATION_AND_ACCESS_CONTROL_MATRIX.md): Article 7/Annex III/Implementing Regulation 2025/2392 and Annex I Part I(2)(d) canonical mapping.
