@@ -322,3 +322,7 @@ ST와 비교할 기능 범위와 제품군을 먼저 정의한다. 동급 기능
 - [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_124_2026-11-12.md](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_124_2026-11-12.md): CONFLICT. Vulnerability handling is Annex I Part II(1)–(8), not Part I Section 2; quoted text is synthetic; cryptographic signature and recovery architecture are risk-based design candidates, not universal named CRA mandates.
 - Legal map: Part I(2)(c) applicable automatic-update default and user controls; Part II(5) CVD; (6) vulnerability information/contact; (7) secure update distribution; (8) timely/free updates with tailor-made business-user exception; Article 13(17)/Annex II(2) single contact.
 - Claim ledger row CRA-ARCH-124-001.
+
+
+## 2026-11-13 — CRA main archive audit queue
+- [CRA Main Archive Audit Queue](CRA_ARCHIVE_AUDIT_QUEUE.md): 166 newly detected main reports (#129–#288 and #1–#6), source commit/path/time/topic, P0–P3 triage, and per-report verification issues. All entries are NEW / NOT_YET_AUDITED; file verdicts remain UNVERIFIED until Pass A/B/C.
