@@ -201,6 +201,14 @@ def validate_evidence_bundle(bundle: Any) -> dict[str, Any]:
                 or source["document_identifier"] != registered.document_identifier
                 or source["revision"] != registered.revision):
             raise EvidenceBundleError("BUNDLE_SOURCE_REGISTRY_MISMATCH")
+        canonical_host = urlsplit(registered.canonical_url).hostname
+        final = urlsplit(str(source["final_url"]))
+        if final.scheme != "https" or final.hostname != canonical_host:
+            raise EvidenceBundleError("BUNDLE_FINAL_URL_INVALID")
+        if source["mime_type"] not in registered.expected_mime_types:
+            raise EvidenceBundleError("BUNDLE_MIME_TYPE_INVALID")
+        if not isinstance(source["fetched_at_utc"], str) or not source["fetched_at_utc"]:
+            raise EvidenceBundleError("BUNDLE_FETCH_TIME_INVALID")
         if source["http_status"] != 200 or source["byte_count"] <= 0:
             raise EvidenceBundleError("BUNDLE_SOURCE_FETCH_METADATA_INVALID")
         for hash_field in ("raw_sha256", "extracted_text_sha256"):
