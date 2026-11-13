@@ -2465,3 +2465,10 @@ Batch result: 5/5 CONFLICT, 0 PARTIALLY_VERIFIED, 0 VERIFIED; 0/5 Raw Text Quote
 - conformity assessment는 Article 32 및 Annex VIII 기준으로 재정리: Class I 조건부 A/B+C/H, Class II B+C/H; Module C=internal production control, Module H=full quality assurance.
 - DoC Article 28, CE Article 30, technical documentation Article 31/Annex VII. 서보 드라이브 Class I/II 적용성은 UNVERIFIED.
 - 다음 원자 분해 배치: #38–#42. 이후 #43–#57까지 순차 분해.
+
+## 2026-11-13 — #38–#42 원자 주장 분해 완료
+
+- 기존 #38–#42 파일 단위 결과는 #38 후속 정정을 반영해 3 CONFLICT / 2 PARTIALLY_VERIFIED / 0 VERIFIED, direct quote reuse 0/5.
+- Claim Evidence Ledger에 원자 Claim ID 33개를 추가했다.
+- Part I(2)(m) 영구 삭제 가능성, Annex II(8)(d) 폐기 지침, Article 13(8)/(9) 지원기간·업데이트 가용성, Annex II user instructions, Part II vulnerability handling을 분리했다.
+- 다음 원자 분해 배치: #43–#47. 이후 #48–#57까지 순차 분해.
