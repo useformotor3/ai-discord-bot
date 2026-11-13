@@ -75,7 +75,7 @@ def _observed_identity(source_id: str, text: str, title: str) -> tuple[str, str]
     observed_id = token if re.search(re.escape(token), combined, re.I) else ""
     # Revision extraction is deliberately conservative; no revision is inferred
     # from a URL, HTTP Last-Modified header, registry value or model-generated text.
-    match = re.search(r"\bRev(?:ision)?\.?\s*([A-Z]?\d+(?:\.\d+)?)\b", combined, re.I)
+    match = re.search(r"\bRev(?:ision)?\.?\s*((?:[A-Z]?\d+(?:\.\d+)?|[A-Z]))\b", combined, re.I)
     observed_revision = ""
     if match:
         observed_revision = "Rev " + match.group(1)
@@ -85,8 +85,8 @@ def _observed_identity(source_id: str, text: str, title: str) -> tuple[str, str]
 def _revision_matches(expected: str, observed: str) -> bool:
     if not expected or not observed:
         return False
-    expected_match = re.search(r"\bRev(?:ision)?\.?\s*([A-Z]?\d+(?:\.\d+)?)\b", expected, re.I)
-    observed_match = re.search(r"\bRev(?:ision)?\.?\s*([A-Z]?\d+(?:\.\d+)?)\b", observed, re.I)
+    expected_match = re.search(r"\bRev(?:ision)?\.?\s*((?:[A-Z]?\d+(?:\.\d+)?|[A-Z]))\b", expected, re.I)
+    observed_match = re.search(r"\bRev(?:ision)?\.?\s*((?:[A-Z]?\d+(?:\.\d+)?|[A-Z]))\b", observed, re.I)
     return bool(expected_match and observed_match and expected_match.group(1).upper() == observed_match.group(1).upper())
 
 
