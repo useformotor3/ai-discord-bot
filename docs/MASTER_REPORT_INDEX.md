@@ -18,8 +18,12 @@
 | 6 | [THREAT_MODEL_SERVO_DRIVE_CRA.md](THREAT_MODEL_SERVO_DRIVE_CRA.md) | 자산·공격자·신뢰 경계·위협 | 기존 일반 참조 모델 |
 | 7 | [SECURITY_TEST_EVIDENCE_REGISTER.md](SECURITY_TEST_EVIDENCE_REGISTER.md) | 보안 시험 및 증거 대장 | 시험 미실시 |
 | 8 | [SERVO_DRIVE_CRA_USER_SECURITY_INFORMATION_CHECKLIST.md](SERVO_DRIVE_CRA_USER_SECURITY_INFORMATION_CHECKLIST.md) | Annex II 사용자 정보·설명서 | 템플릿 |
+| 9 | [CRA_VERIFIED_BASELINE_2026-11-12.md](CRA_VERIFIED_BASELINE_2026-11-12.md) | 법령 조항·의무·예외의 한국어 기준선 | 정본 기준선 |
+| 10 | [CRA_PRODUCT_CLASSIFICATION_AND_ACCESS_CONTROL_MATRIX.md](CRA_PRODUCT_CLASSIFICATION_AND_ACCESS_CONTROL_MATRIX.md) | 제품 분류 판단과 접근통제 요구/설계/증거 | v0.2 한국어판 |
 
 ## 품질·검증 규칙
+
+**기본 언어:** 이 인덱스가 연결하는 최종 보고서·매뉴얼·SOP·설계·시험 자료는 한국어를 기본으로 한다. 공식 법령명·문서명·조항·부품번호·원문 인용·상태 코드는 영어 원문을 유지할 수 있다.
 - 법령 원문에서 확인된 법적 요구와 제품 적용 판정을 분리한다.
 - 공식 원문, 문서번호/버전, 조항·페이지·문단 위치가 없는 직접 인용은 금지한다.
 - 번역/요약/해석은 직접 인용문과 분리한다.
@@ -103,3 +107,13 @@
 - 영어로 작성된 기존 실무 문서는 별도 영어판이 필요한 경우가 아니면 한국어 정본으로 전환한다.
 - 감사 파일은 원본 SHA·반증·검증 이력을 보존한다. 검증된 정정 결론은 주장 대장과 이 인덱스가 연결하는 제1권·제2권·SOP·매트릭스에 반영한다.
 - 최신 통합 상태: [#48–#52 감사](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_48_52_2026-11-13.md) 및 [주장·근거 정정 대장](CLAIM_EVIDENCE_LEDGER.md) 참조. 제품별 적용성은 미검증, 실제 DUT 시험은 미실시.
+
+
+## 최신 통합 진행 위치 — 2026-11-13
+
+- 최신 감사 범위: main reports #8–#52. #8–#52 누적 45건 중 40 CONFLICT / 5 PARTIALLY_VERIFIED / 0 VERIFIED. 비무작위 연속 표본이며 전체 아카이브 오류율이 아니다.
+- 상세 감사 정본: [#43–#47](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_43_47_2026-11-13.md), [#48–#52](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_48_52_2026-11-13.md).
+- 주장별 정정 정본: [CLAIM_EVIDENCE_LEDGER.md](CLAIM_EVIDENCE_LEDGER.md).
+- 법령 조항 통합 정본: [CRA_VERIFIED_BASELINE_2026-11-12.md](CRA_VERIFIED_BASELINE_2026-11-12.md).
+- 최종 독자용 설명: 제1권, 제2권, MASTER_REPORT. 운영 절차: PSIRT SOP. 분류·접근통제 상세: 한국어 매트릭스 v0.2.
+- #8–#52 전체 정정의 제1권·제2권·SOP·추적성 매트릭스 간 전수 대조는 진행 중이며 완료로 표시하지 않는다.
