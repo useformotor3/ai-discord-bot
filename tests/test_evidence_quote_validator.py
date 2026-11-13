@@ -211,7 +211,7 @@ class QuoteValidatorTests(unittest.TestCase):
 
     def test_chunked_excerpt_locator_rebuilds(self):
         altered = copy.copy(self.document)
-        unit = LegalUnit("Article 2", "ARTICLE", "2", "A" * 4500)
+        unit = LegalUnit("Article 2", "ARTICLE", "2", "A" * 2000 + "B" * 2000 + "C" * 500)
         object.__setattr__(altered, "units", (unit,))
         bundle = build_evidence_bundle(self.fetch, altered)
         result = validate_evidence_quotes(self.fetch, altered, bundle)
