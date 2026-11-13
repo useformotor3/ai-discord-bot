@@ -497,3 +497,11 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 - [x] Protected production files/workflows and main remain unchanged. No real URL fetch, Gemini API, production integration, or cost incurred.
 - [ ] E3 real EUR-Lex + manufacturer source fetch/extraction fidelity: separate explicit user approval required.
 - Details: `docs/PHASE_E_IMPLEMENTATION.md` and `docs/PHASE_E_CONTROLLED_FETCH_AND_EXTRACTION_DESIGN.md`.
+
+
+## 2026-11-13 — Main archive reports #13–#27 audited
+- Completed Pass A/B/C review of 15 main-only reports #13–#27; detailed findings and commit/blob traceability: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_13_27_2026-11-13.md](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_13_27_2026-11-13.md).
+- Result: 15 CONFLICT / 0 PARTIALLY_VERIFIED / 0 VERIFIED; 0/15 Raw Text Quote blocks reusable as current-law verbatim quotes. Product applicability UNVERIFIED. Non-random sequential batch; not a whole-archive error rate.
+- Add correction rules: distinguish Article 13(8) support period, Article 13(9) update availability, Annex I Part II(5) CVD, Part II(6) contact/information sharing, Part II(7) secure distribution, Part II(8) free updates and Article 14 reporting.
+- Next audit target: reports #28 onward, prioritizing P0 claims. Original main branch remains read-only.
+- Phase E3 approval package prepared: [PHASE_E3_APPROVAL_PACKAGE.md](PHASE_E3_APPROVAL_PACKAGE.md). It is design only; actual network fetch is still NOT AUTHORIZED.
