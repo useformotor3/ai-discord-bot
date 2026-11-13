@@ -161,3 +161,10 @@ main의 `history.json`에서 날짜, 일일 보고서 번호, 정확한 경로�
 - 직접 인용 재사용 승인: 0/45
 
 이 표본은 연속·비무작위 표본이다. main 전체 아카이브의 오류율로 제시해서는 안 된다.
+
+## 원자 Claim ID 연결 — #48–#52
+
+- #48–#52에 대해 [Claim Evidence Ledger](CLAIM_EVIDENCE_LEDGER.md)에 원자 Claim ID 31개를 등록했다.
+- 파일 단위 결과 3 CONFLICT / 2 PARTIALLY_VERIFIED / direct quote reuse 0/5 유지.
+- Article 14(8)의 기계 판독 가능 통지 범위, Part II(4) 공개 시점·지연 예외, Part II(5)/(6) CVD/연락 주소, Part II(8) 무상 업데이트 예외를 분리했다.
+- Article 13(5)–(7) 공급망 구성요소 실사·취약점 보고 방향·기록 의무와 Article 14 사용자/당국 신고를 구분했다.
