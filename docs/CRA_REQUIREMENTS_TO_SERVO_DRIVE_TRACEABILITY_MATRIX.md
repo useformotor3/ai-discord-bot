@@ -29,8 +29,8 @@
 | P1-09 | Part I(2)(i) | 연결된 다른 기기/네트워크의 가용성에 대한 부정적 영향 최소화 | 네트워크 rate limit, broadcast/multicast 제어, 프로토콜 오류 격리 | 비정상 트래픽 생성 시 연결망의 승인된 가용성 기준을 위반하지 않음 | Network load test, packet capture, integration report | UNVERIFIED |
 | P1-10 | Part I(2)(j) | 외부 인터페이스를 포함한 공격 표면 제한 | 불필요한 포트/서비스 제거, 서비스 포트 접근 정책, debug lifecycle | 제품 포트/서비스 인벤토리와 실제 스캔 결과 일치; 불필요한 인터페이스 노출 없음 | Interface inventory, port scan, production configuration | UNVERIFIED |
 | P1-11 | Part I(2)(k) | 적절한 exploit mitigation으로 사고 영향 감소 | privilege separation, memory protection, secure state machine, input validation | 정해진 공격/오류 주입에서 권한 상승/제어 명령 변조/비인가 실행이 발생하지 않음 | Threat model, fuzzing, penetration test, MPU config | UNVERIFIED |
-| P1-12 | Part I(2)(l) | 사용자 opt-out 메커니즘을 포함해 관련 내부 활동을 기록·모니터링하고 보안 정보 제공 | 이벤트 로그, 접근/설정 변경 감사, 시간/용량 관리 | 권한 변경/서비스 접근/업데이트/무결성 실패가 로그에 남고 로그 포화 시 동작 정의 | Logging spec, sample logs, log integrity/retention test | UNVERIFIED |
-| P1-13 | Part I(2)(m) | 사용자 데이터/설정 영구 삭제 가능; 다른 제품/시스템으로 전송 시 안전하게 수행 | 인증된 초기화, 키 폐기, 안전한 설정 삭제 | reset/decommission 후 지정 데이터 복구 불가 또는 허용된 보존 항목만 남음 | Secure erase test, decommission procedure, key zeroisation evidence | UNVERIFIED |
+| P1-12 | Part I(2)(l) | 사용자 opt-out 메커니즘을 포함해 관련 내부 활동을 기록·모니터링하고 보안 정보 제공 | 이벤트 로그, 접근/설정 변경 감사, 시간/용량 관리 | 권한 변경/서비스 접근/업데이트/무결성 실패가 로그에 남고 로그 포화 시 동작 정의 | Logging spec, TST-LOG-01/02, sample logs | UNVERIFIED |
+| P1-13 | Part I(2)(m) | 사용자 데이터/설정의 안전하고 쉬운 영구 제거; 전송 가능한 데이터는 다른 제품/시스템으로 안전하게 전송 | 저장소 inventory, 매체별 삭제/키 폐기, 목적지 인증·암호화 전송 | 삭제 후 복구 불가, 전송 시 기밀성·무결성·진본성 확인 | TST-ERASE-01..04, decommission procedure, storage map | UNVERIFIED |
 
 ## 3. 제조자 취약점 처리 요구사항 — Annex I Part II
 
@@ -163,7 +163,7 @@
 | P1-10 | CRA-REQ-ATTACK-SURFACE-001 |
 | P1-11 | CRA-REQ-EXPLOIT-MITIGATION-001 |
 | P1-12 | CRA-REQ-SECURITY-LOGGING-001 |
-| P1-13 | CRA-REQ-SECURE-DATA-ERASURE-001 |
+| P1-13 | CRA-REQ-SECURE-DATA-ERASURE-001; CRA-REQ-SECURE-DATA-TRANSFER-001 |
 | P2-01 | CRA-REQ-SBOM-001 |
 | P2-02 | CRA-REQ-REMEDIATION-001 |
 | P2-03 | CRA-REQ-SECURITY-TEST-001 |
@@ -180,3 +180,9 @@
 | R-01 | CRA-REQ-REPORT-ACTIVE-001; CRA-REQ-REPORT-ROUTE-001 |
 | R-02 | CRA-REQ-REPORT-SEVERE-001; CRA-REQ-REPORT-ROUTE-001 |
 | R-03 | CRA-REQ-USER-NOTIFY-001 |
+
+## 12. Logging / Secure Erasure 시험 ID 보강
+
+- P1-12 (Annex I Part I(2)(l)): 증거 열에 TST-LOG-01/02를 명시한다. 시험은 로그 무결성·접근통제·포화 시 동작 검증이며, 특정 tamper-proof 기술/보존기간을 법령이 지정한다는 뜻이 아니다.
+- P1-13 (Annex I Part I(2)(m), Annex II(8)(d)): 증거 열에 TST-ERASE-01..04를 명시한다. TST-NVM-01..03은 저장 데이터 무결성/접근통제/전원차단 시험이므로 secure erase 증거를 대체하지 않는다.
+- P1-13의 두 법적 결과를 구분한다: (a) 모든 데이터·설정의 안전하고 쉬운 영구 제거, (b) 데이터가 다른 제품/시스템으로 전송될 수 있는 경우 안전한 전송. 사용자 폐기 지침은 Annex II(8)(d).
