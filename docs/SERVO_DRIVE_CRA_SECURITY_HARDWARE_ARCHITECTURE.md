@@ -262,3 +262,10 @@ SFFS983A §4.3은 DEBUG, RTC, AES, TRNG, KEYSTORE, MATHACL, DFT를 해당 안전
 - ASIL D는 IEC 61508 SIL 3와 등가가 아니다. MCU 단품 또는 일반 참조 회로의 SIL 3 달성을 주장할 수 없다.
 - 정확한 FMEDA, failure rate, diagnostic coverage, safety manual의 모든 usage condition, 실제 보드/소프트웨어 구현은 별도 검증이 필요하다.
 - 상세: [TI_MSPM0G3529_Q1_FUNCTIONAL_SAFETY_REVIEW_2026-11-12.md](TI_MSPM0G3529_Q1_FUNCTIONAL_SAFETY_REVIEW_2026-11-12.md).
+
+## Secure data lifecycle / logging architecture decisions
+
+- CRA-REQ-SECURITY-LOGGING-001: event logger는 motion/control real-time task와 분리된 bounded queue/worker로 설계 후보를 둔다. Queue overflow 시 제어 기능·안전 상태에 미치는 영향을 위험평가하고 중요 보안 이벤트 보존 정책을 정한다. 로그 저장 매체/보존기간/tamper-proof 방식은 SKU/위험평가/성능 수치 확인 전 확정하지 않는다.
+- CRA-REQ-SECURE-DATA-ERASURE-001: internal/external Flash, EEPROM/FRAM, backup registers, logs, credentials, certificates, calibration/configuration 등 모든 persistent store를 inventory한다. 저장매체별 erase granularity, endurance, key wrapping/cryptographic erase 가능성, service/RMA access를 확인한다.
+- CRA-REQ-SECURE-DATA-TRANSFER-001: 데이터 전송 기능이 존재하는 경우 authenticated destination, confidentiality, integrity, authenticity, interrupted-transfer recovery를 설계한다. 전송 기능이 없다면 product-boundary 근거로 NOT_APPLICABLE 검토.
+- 사용자 폐기 지침은 Annex II(8)(d)로 별도 관리한다. 시험은 TST-LOG-01/02 및 TST-ERASE-01..04, 현재 모두 NOT_RUN.
