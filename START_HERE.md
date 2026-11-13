@@ -12,6 +12,7 @@
 - 운영 원칙: Public 저장소 유지, 공개 자료만 저장, 비용 0원 우선, 유료 전환 금지.
 
 ## 신규 세션 필수 읽기 순서
+0. [AI 연속성·실행 현황판](docs/AI_CONTINUITY_BOARD.md) — 목표·현재 HEAD·완료/실패/미완료·다음 행동의 최우선 기준
 1. [AI 행동강령](docs/AI_RULEBOOK.md) — 작업 전 필수 절차와 품질 기준
 2. [프로젝트 상황판](docs/PROJECT_STATUS.md) — 현재 사실·진행 상태·위험
 3. [마스터 계획](docs/MASTER_PLAN.md) — 우선순위와 완료 조건
@@ -356,3 +357,10 @@
 - Keep report deliverables visible in `docs/MASTER_REPORT_INDEX.md`; each report must identify document ID/version/date, verified source references and exact locations, claim-level verification status, product assumptions, unresolved inputs and tests NOT_RUN.
 - Current CRA report editions are generic framework/first editions, not product-specific conformity findings or a completed SIL 3 servo-drive benchmark. Product SKU, exact MCU order code and test evidence are still missing.
 - After the approved Phase D hardening passes exact-head CI, prioritize substantive report revision and evidence-linked comparison tables over further architecture/process-only work.
+
+
+## 2026-11-13 — 상시 연속성 현황판 도입 및 범위 정정
+- [AI 연속성·실행 현황판](docs/AI_CONTINUITY_BOARD.md)을 신규 세션 필수 첫 문서로 지정했다. 매 세션은 현재 저장소 상태와 대조하고 작업 종료 시 반드시 갱신한다.
+- 현재 프로젝트 범위는 CRA 전용이다. SIL 3 벤치마킹은 현재 범위가 아니며 과거 로그의 관련 문구는 현재 우선순위로 재사용하지 않는다.
+- 결과물 우선 원칙: 가능하면 매 작업마다 보고서 장/표/설계/검증 대장 등 실질 산출물을 함께 만든다. 코드 개선은 허용하며, 코드-only 작업은 예외 사유를 기록한다.
+- 현재 main tip은 report #91, archive/history 1,366/1,366이다. 감사는 #8–#32까지 완료되어 있으며, #33부터 이어간다. 최신 숫자/HEAD는 새 세션마다 재조회한다.

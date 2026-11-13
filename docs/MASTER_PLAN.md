@@ -568,3 +568,14 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 4. Preserve the boundary that reviewer identity/independence are human-process controls, not machine-authenticated facts.
 5. Require focused tests, full unittest suite, strict archive audit and exact-HEAD CI before marking complete.
 6. After verification, return to the deliverable-first workstream: validate official source claims, expand the CRA servo-drive report with source-linked evidence, and publish the next report revision. Do not let pipeline hardening substitute for report production.
+
+
+## 2026-11-13 — CRA 전용·결과물 우선 실행 기준
+
+- 현재 범위는 CRA 서보 드라이브 조사·적용·설계·시험·증거·보고서이며 SIL 3 벤치마킹은 범위 밖이다.
+- 신규 세션은 `docs/AI_CONTINUITY_BOARD.md`를 필수로 읽고, 현재 HEAD/main archive/CI를 다시 확인한다.
+- 보고서 생산과 검증을 코드/파이프라인 개선과 동등한 최우선 결과로 취급한다. 가능한 작업마다 실제 보고서 본문, 비교표, 설계도, claim audit 또는 증거 대장을 남긴다.
+- main archive report #8–#32 감사 완료: 총 25건 CONFLICT, direct quote reuse 0/25. 이 결과는 연속 비무작위 배치이며 전체 1,366개 archive 오류율이 아니다.
+- main 현재 report #91, archive/history 1,366/1,366. 다음 audit target #33. 우선 #33–#91 대기열을 최신 main SHA 기준으로 등록하고 P0 claims부터 Pass A/B/C.
+- 제1권 CRA 조사 보고서와 제2권 구현 계획은 초판이다. #28–#32 감사 결과 및 반복 정정 규칙을 통합해 다음 revision을 작성한다.
+- E3 live source fetch, protected production code, Gemini V2 prompt/contract, main branch mutation/merge/rebase/sync는 별도 명시 승인 전 금지.

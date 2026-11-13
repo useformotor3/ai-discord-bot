@@ -669,3 +669,15 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - Two failed intermediate CI attempts were corrected; only the final exact-head run is the passing verification.
 - Protected production/prompt/contract/schema/bundle files retained their pre-change blob SHAs. No merge/rebase/sync with `main`.
 - Next priority is substantive report production and claim-level evidence validation, not further process-only expansion.
+
+
+## 2026-11-13 — 현재 운영 기준 재설정 (AI_CONTINUITY_BOARD 우선)
+
+- 단일 인수인계/실행 기준: [AI_CONTINUITY_BOARD.md](AI_CONTINUITY_BOARD.md). 신규 세션은 반드시 읽고 현재 Git 상태와 대조한다.
+- 범위 명확화: 현재 CRA 서보 드라이브 프로젝트 전용. SIL 3 벤치마킹은 범위 밖이며, 과거 로그의 관련 표현은 현재 목표가 아니다.
+- 결과물 우선: 매 작업에 가능하면 보고서/표/설계/claim audit 산출물을 남긴다. 코드 수정은 금지하지 않으며, 결과물의 신뢰성·재현성 향상에 필요하면 수행한다.
+- main 최신 확인: HEAD `4452662e6cba0bb81c6efb4b309b30f4733d8f71`, report #91; archive/history 1,366/1,366, unique path 1,366. 작업 브랜치 archive/history strict audit 기준 990/990. main read-only.
+- main reports #8–#32 수동 감사 완료. #8–#12 5 CONFLICT, #13–#27 15 CONFLICT, #28–#32 5 CONFLICT. 각 배치는 연속·비무작위이며 전체 archive 오류율이 아니다.
+- 최신 실질 산출물: [#28–#32 감사](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_28_32_2026-11-13.md). 다음 감사 시작 #33.
+- Phase D hardening final code/test 140/140 및 archive 990/990 성공; 문서 최신화 HEAD도 CI #43384628893에서 140/140 및 990/990 성공. 최신 결과/한계는 AI_CONTINUITY_BOARD와 SESSION_LOG 참조.
+- E3 live fetch 및 보호 파일/production integration/main merge는 별도 승인 전 실행 금지.

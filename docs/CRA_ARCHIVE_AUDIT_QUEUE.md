@@ -2309,3 +2309,17 @@ Batch result: 5/5 CONFLICT, 0 PARTIALLY_VERIFIED, 0 VERIFIED; 0/5 Raw Text Quote
   - #25 — CONFLICT; commit `7d308b5a2b5c73385abde943412622bdc8f74317`; `research_archive/2026-11-13_020056.md`; blob `a482f9198569dfe173d63250eebee6d8f9a6f9e8`; 서보 드라이브 Class I/II 단정 및 Annex I draft 인용·하드웨어 구현 의무 과장.
   - #26 — CONFLICT; commit `d079e63339d20549361bba9d4c4de71fcb3346db`; `research_archive/2026-11-13_020541.md`; blob `132dd081b4bed0d431d8f68b8e00b3fc83b9035d`; 기본 설정·접근통제·무결성 조항 번호/문언 혼합, hardcoded credential/포트 보편 금지 과장.
   - #27 — CONFLICT; commit `c7eb7296671541c1ad2268cdcee80885091f230c`; `research_archive/2026-11-13_021039.md`; blob `3b6537c40590118c43d1fbc5f1922121d7f6d276`; 무상 업데이트/CVD 주제는 관련되나 Annex I Part I·Article 13(4) 오인용.
+
+
+## 2026-11-13 — main reports #28–#32 Pass A/B/C audit
+
+- Current main tip at queue refresh: `4452662e6cba0bb81c6efb4b309b30f4733d8f71`, Auto-archive report #91. Main history/archive inventory is 1,366/1,366 with 1,366 unique paths.
+- Batch audit: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_28_32_2026-11-13.md](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_28_32_2026-11-13.md).
+- #28 CONFLICT; archive `research_archive/2026-11-13_021538.md`; blob `78de23c029c47dee16ebc82adf7123c2bf52fa4a`.
+- #29 CONFLICT; archive `research_archive/2026-11-13_022039.md`; blob `e5248b9d23e94ea0ef5ad7ffb30f2dcd100e3434`.
+- #30 CONFLICT; archive `research_archive/2026-11-13_022538.md`; blob `15439fdad39d1759f522023fc3f1201c1fbf4e8f`.
+- #31 CONFLICT; archive `research_archive/2026-11-13_023045.md`; blob `bc85eca9a24980a199e00fc13752f158b11e059e`.
+- #32 CONFLICT; archive `research_archive/2026-11-13_023540.md`; blob `71146baf92e406e18209f9981d8a7afc47620be2`.
+- Batch: 5 CONFLICT / 0 PARTIALLY_VERIFIED / 0 VERIFIED; raw direct quote reusable 0/5. Sequential non-random batch, not an archive-wide error rate.
+- Method limitation: reused the existing EUR-Lex legal baseline and prior #8–#27 audit; no new E3 live fetch, PDF visual inspection or new independent official cross-source check in this batch.
+- Next target: #33 onward; refresh/register all reports through current main #91 before choosing subsequent batches. Keep main read-only.

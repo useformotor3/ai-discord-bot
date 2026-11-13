@@ -307,3 +307,8 @@ main report #123은 사용자 정보·지침서 제공이라는 유효한 CRA �
 ## 신규 main archive 감사 #124 — 취약점 처리 및 업데이트
 
 #124는 CVD와 보안 업데이트라는 유효한 주제지만, 취약점 처리 요구사항을 Annex I Part I Section 2로 잘못 분류했다. 실제 근거는 Annex I Part II(1)~(8)이다. 직접 인용문도 공식 원문과 일치하지 않는다. 암호학적 서명 검증과 fail-safe/recovery architecture는 강력한 위험기반 설계 후보이나 모든 제품에 동일 구현을 명시한 CRA 문구는 아니다. 자동 업데이트는 해당하는 경우 기본 활성화, 쉬운 opt-out, 사용자 통지 및 임시 연기 조건을 함께 다뤄야 한다. 상세: [#124 감사](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_124_2026-11-12.md).
+
+
+## main 자동 조사 보고서 #28–#32 수동 감사
+
+main 브랜치의 #28–#32를 archive 원문과 기존 EUR-Lex 현행 법령 기준선에 대조했다. 5건 모두 CONFLICT이며 Raw Text Quote 5개 모두 현행 법령 직접 인용으로 재사용할 수 없다. 반복 오류는 Article 13(8) 지원기간과 Annex I Part II(8) 무상 보안 업데이트의 혼동, CVD 근거 Part II(5) 오인용, Article 14 신고 의무를 Article 11로 잘못 연결, Annex III 제품 분류의 자동 단정이다. 상세 판정·blob SHA·정정 규칙은 [#28–#32 감사 보고서](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_28_32_2026-11-13.md)를 참조한다. 이번 배치는 기존 법령 기준선을 재사용했으며 새 E3 fetch나 PDF 시각 대조를 수행하지 않았다.

@@ -45,3 +45,9 @@
 - [C1_C2_SOURCE_EVIDENCE_IMPLEMENTATION_REPORT.md](C1_C2_SOURCE_EVIDENCE_IMPLEMENTATION_REPORT.md) — 승인된 C1+C2 구현, 테스트 및 잔여 제한.
 
 - [RESEARCH_DOUBLE_CHECK_STANDARD.md](RESEARCH_DOUBLE_CHECK_STANDARD.md) — 모든 CRA 조사 자료의 필수 원문·독립 교차검증 규칙.
+
+
+## 2026-11-13 — 감사 산출물 및 운영 연속성
+
+- [AI 연속성·실행 현황판](AI_CONTINUITY_BOARD.md): 신규 세션에서 프로젝트 목표, Git/CI 기준선, 실제 완료·실패·미완료, 작업 교훈, 다음 행동을 복원하는 필수 문서.
+- [main reports #28–#32 수동 감사](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_28_32_2026-11-13.md): 5 CONFLICT / 0 PARTIALLY_VERIFIED / 0 VERIFIED; direct quote reuse 0/5. main 원본은 read-only.
