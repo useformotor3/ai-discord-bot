@@ -317,7 +317,7 @@
 ## #8–#57 원본 Claim ID 확장 후 기준선 갱신
 
 - Claim Evidence Ledger의 제31절 제목/범위를 #13–#57로 확장하고, #53–#57 다섯 건의 원본·SHA·파일 중심 claim ID를 확인했다.
-- #8–#57 총 50개 보고서에 날짜 포함 파일 중심 Claim ID 50개를 연결했다. 개별 하위 주장·인용 블록의 원자 분해는 별도 미완료.
+- 이전 스냅샷의 기록이다. 이후 #8–#57 원자 분해 308개 및 #58–#62 원자 분해 21개를 완료했고, 현재 Ledger는 345개 atomic claims / 400 unique IDs다.
 - Ledger 확장 commit: `e1b9ee24f1fe185a0fe8e9945a59836ba74246c7`. 이 commit은 docs/CLAIM_EVIDENCE_LEDGER.md만 변경했고 exact HEAD CI runs/status는 0/0으로 미실행·미확인.
 - main #112와 비교: diverged, ahead 788 / behind 403, merge base `b425b6db591e34abe003522157cf97ecf2240d9f`.
 - 이 continuity board 갱신이 다음 docs-only commit이므로 새 exact HEAD/CI는 갱신 직후 다시 확인한다.
@@ -377,7 +377,7 @@
 
 ## 2026-11-13 P0 진행 — #33–#37 원자 Claim ID 분해 및 category check
 
-- #33–#37 원본 경로/blob SHA 재확인, Ledger에 원자 Claim ID 31개 추가.
+- #33–#37 원본 경로/blob SHA 재확인, Ledger에 원자 Claim ID 33개 추가.
 - 파일 단위 판정 5 CONFLICT / direct quote reuse 0/5 유지.
 - EUR-Lex Implementing Regulation (EU) 2025/2392 추가 확인: important product classification은 Annex III technical description/core functionality 기준. 내장 네트워크 인터페이스만으로 host servo drive 자동 Class I/II가 되지 않는다.
 - Conformity assessment Article 32/Annex VIII; DoC Article 28; CE Article 30; technical documentation Article 31/Annex VII로 정정.
@@ -399,7 +399,7 @@
 
 ## 2026-11-13 P0 진행 — #48–#52 원자 Claim ID 분해
 
-- #48–#52 원본 경로/blob SHA 재확인, Ledger에 원자 Claim ID 31개 추가.
+- #48–#52 원본 경로/blob SHA 재확인, Ledger에 원자 Claim ID 36개 추가.
 - 파일 단위 결과 3 CONFLICT / 2 PARTIALLY_VERIFIED / direct quote reuse 0/5 유지.
 - Article 14(8) machine-readable notice, Part II(4) disclosure timing, CVD/contact/free update, Article 13(5)–(7) supply-chain component reporting direction 정정.
 - 다음 원자 분해 대상 #53–#57.
@@ -410,3 +410,14 @@
 - 파일 단위 결과 1 CONFLICT / 4 PARTIALLY_VERIFIED / direct quote reuse 0/5 유지.
 - #8–#57 50개 보고서의 원자 claim decomposition 완료.
 - 다음 P0는 300+ Claim ID의 중복·상충·법령 locator 정규화 및 제1권/제2권/SOP/매트릭스/시험 대장 전수 대조. 이후 #63–#67 main-only 감사.
+
+## 2026-11-13 authoritative snapshot — #8–#62 audit and claim normalization
+
+- main latest observed: report #119; HEAD \`6491a5db6ea35ea97a6d97e85bac43f9a3cf41c0\`; state count 119; history.json 1,394 entries. Archive tree count was not rechecked. main remains read-only.
+- main-only audit scope #8–#62: 55 consecutive, non-random reports; file-level results **40 CONFLICT / 15 PARTIALLY_VERIFIED / 0 VERIFIED**; direct quote reuse **0/55**. This is not a statistical error rate for the full archive.
+- Claim Evidence Ledger: 55 file-level source records + 345 atomic claims = **400 unique IDs**, duplicate IDs 0. All 345 atomic claims have one or more Canonical IDs. Canonical register defines 45 requirements; 43 are referenced by legacy atomic claims, and 2 are forward-mapped to matrix requirements.
+- #8–#57 (50 reports) and #58–#62 (5 reports) have completed atomic decomposition. Individual legal facts marked VERIFIED do not promote a conflicting source file to VERIFIED.
+- Product-specific applicability, Class I/II classification, exact MCU order code and DUT test results remain UNVERIFIED/NOT_RUN.
+- Current P0: reconcile the 345 atomic claims and 45 canonical requirements against Volume 1, Volume 2, PSIRT SOP, requirements matrix, integrated traceability matrix and test evidence register; resolve duplicated/contradictory wording and keep exact legal locators. Then proceed to main-only audit #63–#67.
+- No production code, main.py, production workflow, Gemini V2 prompt/contract or main branch was changed. E3 live source fetch remains unexecuted. This batch is documentation-only.
+
