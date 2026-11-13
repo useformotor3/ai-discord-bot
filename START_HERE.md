@@ -329,3 +329,9 @@
 - E1/E2 implementation and offline adversarial tests complete; see `docs/PHASE_E_IMPLEMENTATION.md`.
 - Exact code/test CI: HEAD `d355aefb74f2b1b9159de98827fac8600fb68d4c`, run #43367432101, 126 tests OK; strict archive audit 990/990 consistent.
 - E3 (real official-source fetch/extraction) remains blocked until separately approved. No live source fetch or production integration has occurred.
+
+
+## 2026-11-13 — Main archive reports #13–#27
+- Completed the next manual audit batch: [reports #13–#27](docs/ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_13_27_2026-11-13.md). Result: 15 CONFLICT; 0/15 Raw Text Quote blocks reusable as verbatim current CRA text. This is a non-random batch, not a whole-archive error rate.
+- Next archive audit starts at report #28. Keep original main archive/history/state read-only.
+- [Phase E3 approval package](docs/PHASE_E3_APPROVAL_PACKAGE.md) is prepared but **not approved or executed**. Live official-source fetch requires the explicit phrase “E3 실행 승인”.
