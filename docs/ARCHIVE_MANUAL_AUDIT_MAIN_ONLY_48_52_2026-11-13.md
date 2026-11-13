@@ -1,162 +1,163 @@
-# CRA Main-only Archive Manual Audit — Reports #48–#52
+# main 아카이브 수동 감사 보고서 — 보고서 #48–#52
 
-- Audit date: 2026-11-13
-- Source branch: main (read-only)
-- Recording branch: cra-project-foundation
-- Audit method: Pass A (exact archive claims/quotes) → Pass B (official CRA text) → Pass C (counter-evidence, exceptions, product boundary)
-- Status: completed for the five identified archive files; no independent third-party legal review performed.
+- 감사일: 2026-11-13
+- 원본 브랜치: `main` (읽기 전용)
+- 기록 브랜치: `cra-project-foundation`
+- 감사 방법: 1차 원문 주장·인용 추출 → 2차 공식 CRA 원문 대조 → 3차 반증·예외·제품 경계 검토
+- 감사 범위: 식별된 원본 아카이브 5개 파일. 외부 법률전문가의 독립 검토는 수행하지 않았다.
 
-## 1. Scope and source identity
+## 1. 감사 대상 원본과 식별 정보
 
-The five reports were mapped using the date, daily count, and exact path in main/history.json. The archive originals were fetched from main and their Git blob SHA values recorded below.
+main의 `history.json`에서 날짜, 일일 보고서 번호, 정확한 경로를 대조해 다섯 보고서를 식별했다. 원본 파일은 main에서 읽기 전용으로 가져왔으며 Git blob SHA를 기록했다.
 
-| Daily report | Original archive path | Blob SHA |
+| 일일 보고서 | main 원본 경로 | Blob SHA |
 |---:|---|---|
-| #48 | research_archive/2026-11-13_035531.md | 539b1d73d7053c5b1e252c775c503b055e978dd9 |
-| #49 | research_archive/2026-11-13_040051.md | 3d661d5545974406fee419f60234f99d29427495 |
-| #50 | research_archive/2026-11-13_040534.md | 8bbfe9b22a009c90dba493d3086462bb605a1b50 |
-| #51 | research_archive/2026-11-13_041039.md | 8625c7e82389aea9cd3e5a0694cd0b920c90e8cf |
-| #52 | research_archive/2026-11-13_041532.md | 3672c41635364ef99b494cd8944c4998bbfc01c8 |
+| #48 | `research_archive/2026-11-13_035531.md` | `539b1d73d7053c5b1e252c775c503b055e978dd9` |
+| #49 | `research_archive/2026-11-13_040051.md` | `3d661d5545974406fee419f60234f99d29427495` |
+| #50 | `research_archive/2026-11-13_040534.md` | `8bbfe9b22a009c90dba493d3086462bb605a1b50` |
+| #51 | `research_archive/2026-11-13_041039.md` | `8625c7e82389aea9cd3e5a0694cd0b920c90e8cf` |
+| #52 | `research_archive/2026-11-13_041532.md` | `3672c41635364ef99b494cd8944c4998bbfc01c8` |
 
-## 2. Verdict summary
+## 2. 판정 요약
 
-- CONFLICT: 3 (#49, #50, #52)
-- PARTIALLY_VERIFIED: 2 (#48, #51)
-- VERIFIED: 0
-- Direct quote blocks accepted for verbatim reuse as current CRA text: 0/5
+- CONFLICT(충돌): 3건 — #49, #50, #52
+- PARTIALLY_VERIFIED(부분 검증): 2건 — #48, #51
+- VERIFIED(완전 검증): 0건
+- 현행 CRA 법령의 직접 인용문으로 재사용 승인: 0/5
 
-The verdict is file-level. It does not imply that every sentence in a CONFLICT file is false; it means the central legal claim, legal locator, or asserted obligation is materially wrong. Partial verification is limited to the specific element identified below.
+판정은 파일 단위다. CONFLICT는 파일의 모든 문장이 틀렸다는 뜻이 아니라, 중심 법적 주장·조항 위치·의무 범위 중 하나 이상이 중대하게 잘못되었다는 뜻이다. PARTIALLY_VERIFIED는 아래에 명시한 제한된 요소만 확인되었다는 의미다.
 
-## 3. Pass A/B/C findings
+## 3. 보고서별 1차·2차·3차 검토 결과
 
 ### #48 — PARTIALLY_VERIFIED
 
-**Central claim:** Manufacturers must provide automated security advisories and machine-readable vulnerability notices under Annex I Part II(2), with CSAF as the expected format.
+**중심 주장:** Annex I Part II(2)에 따라 제조사는 자동 보안 권고와 기계 판독 가능 취약점 공지를 제공해야 하며, CSAF가 예상 형식이라는 주장.
 
-**What is supported**
-- Annex I Part II(4) requires sharing and public disclosure of information about fixed vulnerabilities after a security update is available, subject to a justified delay where publication risk outweighs security benefit.
-- Annex I Part II(5) requires a coordinated vulnerability disclosure policy.
-- Article 14(8) requires informing impacted users, and where appropriate all users, after an actively exploited vulnerability or severe incident. Where appropriate, that user information is to be in a structured, machine-readable format that is easily automatically processable.
+**확인된 내용**
+- Annex I Part II(4)는 보안 업데이트가 제공된 뒤 수정된 취약점 정보를 공유·공개하도록 한다. 다만 공개가 보안상 이익보다 위험을 키우는 경우 정당한 지연 예외가 있다.
+- Annex I Part II(5)는 조정된 취약점 공개 정책(CVD 정책)을 요구한다.
+- Article 14(8)은 적극 악용 취약점 또는 제품 보안에 영향을 미치는 심각한 사고에 해당하는 경우 영향을 받는 사용자에게 통지하도록 한다. 적절한 경우 구조화된 기계 판독 가능 형식으로 정보를 제공한다.
 
-**What conflicts**
-- Annex I Part II(2) is the obligation to address and remediate vulnerabilities without delay, including by security updates; where technically feasible, security updates are to be separate from functionality updates. It does not contain the quoted automatic advisory/machine-readable requirement.
-- The machine-readable user-notification language is in Article 14(8), and is limited to the specified Article 14 events and qualified by “where appropriate”. It is not a universal obligation to issue automated notices for every vulnerability.
-- CSAF is not named as a mandatory format in the cited CRA provisions. It may be considered as an implementation choice, not a universal CRA mandate.
-- Automatic update language is separately addressed in Annex I Part I point 2(c) and Part II point 7, with their own conditions; it does not establish a blanket automated advisory system.
+**충돌·과장**
+- Annex I Part II(2)는 취약점을 지체 없이 해결·완화하고 보안 업데이트를 제공하는 의무다. 기술적으로 가능한 경우 보안 업데이트를 기능 업데이트와 분리한다. 이 조항은 자동 공지나 기계 판독 가능 형식의 일반 의무를 규정하지 않는다.
+- 기계 판독 가능 사용자 통지 문구는 Article 14(8)에 있고, 해당 신고 사건 및 “where appropriate(적절한 경우)” 조건에 한정된다. 모든 취약점에 대한 자동 통지 의무가 아니다.
+- CSAF는 인용된 CRA 조항에서 의무 형식으로 지정되지 않는다. 구현 선택지로 고려할 수는 있다.
+- 자동 업데이트 관련 요구는 Annex I Part I point 2(c) 및 Part II point 7 등 별도 조항과 조건을 가진다. 이것이 모든 취약점에 대한 자동 공지 시스템 의무를 만들지는 않는다.
 
-**Quote result:** The alleged Annex I Part II(2) quotation does not match the final text. The alleged Article 11 quotation is not the current CRA provision. Neither quote is reusable as a verbatim quotation.
+**직접 인용 판정:** Annex I Part II(2)라고 표시한 문구는 현행 법령 원문과 일치하지 않는다. Article 11로 표시한 인용도 해당 의무의 정확한 근거가 아니다. 직접 인용으로 재사용하지 않는다.
 
 ### #49 — CONFLICT
 
-**Central claim:** Free security updates throughout the expected lifetime are required under Annex I Part I point 2; Article 11 requires reporting all actively exploited vulnerabilities/incidents with an immediate 24-hour notice; support period is the expected lifetime or five years, whichever is shorter.
+**중심 주장:** Annex I Part I point 2에 따라 예상 수명 동안 무상 보안 업데이트를 제공하고, Article 11에 따라 모든 적극 악용 취약점/사고를 즉시 24시간 내 신고하며, 지원기간은 예상 수명과 5년 중 짧은 기간이라는 주장.
 
-**What conflicts**
-- The relevant reporting provision is Article 14, not Article 11. Article 14 separates actively exploited vulnerabilities from severe incidents affecting product security and defines staged deadlines: 24-hour early warning, 72-hour notification, and different final-report deadlines (14 days after corrective/mitigating measure for actively exploited vulnerabilities; one month after the incident notification for severe incidents).
-- Free security update distribution is Annex I Part II point 8, not Annex I Part I point 2. Part II point 8 requires updates addressing identified security issues to be disseminated without delay and, unless otherwise agreed between manufacturer and business user for a tailor-made product, free of charge and accompanied by advisory messages.
-- Article 13(8) governs the support period. It must reflect expected use and is at least five years, except where expected use is less than five years, in which case the support period corresponds to expected use. “Expected lifetime or five years, whichever is shorter” is not an accurate statement of the general rule.
-- Article 13(9) separately requires each security update made available during the support period to remain available for at least 10 years after issue or the remainder of the support period, whichever is longer.
-- The assertion that updates must not cause any functional degradation, or that a “zero-downtime/rollback” design is specifically mandated, is not established by the cited provisions. Those may be risk-based engineering choices.
+**충돌·오류**
+- 관련 신고 조항은 Article 11이 아니라 Article 14다. Article 14는 적극 악용 취약점과 제품 보안에 영향을 미치는 심각한 사고를 구분하고 단계별 기한을 둔다. 24시간 조기 경보, 72시간 이내 신고가 적용되며, 최종 보고 기한은 적극 악용 취약점의 경우 시정/완화 조치가 가능해진 뒤 14일 이내, 심각한 사고의 경우 사고 신고 후 1개월 이내다.
+- 무상 보안 업데이트 배포는 Annex I Part I point 2가 아니라 Part II point 8이다. 식별된 보안 문제를 해결하는 업데이트는 지체 없이 배포하고, 맞춤형 제품에 대해 제조자와 사업 사용자가 달리 합의한 경우를 제외하고 무상 제공한다. 사용자 권고 메시지도 함께 제공한다.
+- 지원기간은 Article 13(8)에 따른다. 예상 사용기간, 사용자 기대, 제품 특성·의도된 목적 등을 고려하며 원칙적으로 최소 5년이다. 예상 사용기간이 5년 미만이면 그 예상 사용기간에 대응한다. “예상 수명과 5년 중 짧은 기간”이라는 일반 규칙은 부정확하다.
+- Article 13(9)는 지원기간 중 제공된 각 보안 업데이트를 발행 후 최소 10년 또는 지원기간 잔여기간 중 더 긴 기간 동안 이용 가능하게 해야 한다고 별도로 규정한다.
+- 업데이트가 기능 저하를 절대 일으키지 않아야 한다거나 무중단/롤백 구조가 CRA에 명시된 의무라는 주장은 인용 조항으로 입증되지 않는다. 위험기반 엔지니어링 선택으로 분리해야 한다.
 
-**What is supported**
-- CRA does require free security updates in the ordinary case under Annex I Part II point 8, subject to the tailor-made product/business-user agreement exception.
-- Article 14 does contain a 24-hour early-warning deadline for the specified reportable events, but not as a single all-purpose reporting rule.
+**확인된 내용**
+- CRA는 Annex I Part II point 8에 따라 일반적으로 무상 보안 업데이트를 요구하며, 맞춤형 제품에 관한 제조자-사업 사용자 간 합의 예외가 있다.
+- Article 14에는 해당 신고 사건에 대한 24시간 조기 경보 기한이 있다. 다만 모든 취약점에 적용되는 단일 신고 규칙은 아니다.
 
-**Quote result:** Both alleged quotations are materially different from the final CRA text and cannot be reused verbatim.
+**직접 인용 판정:** 인용된 두 문구 모두 현행 CRA 원문과 실질적으로 다르므로 재사용하지 않는다.
 
 ### #50 — CONFLICT
 
-**Central claim:** An industrial servo drive is an Important Product Class I because it is high-risk; all vulnerabilities require free patches and public security advisories.
+**중심 주장:** 산업용 서보 드라이브는 위험도가 높으므로 Important Product Class I이며, 모든 취약점에 대해 무상 패치와 공개 보안 권고를 제공해야 한다는 주장.
 
-**What conflicts**
-- The CRA does not classify a servo drive as Class I merely because it is an industrial or high-risk product. Article 7 and Annex III require the product’s core functionality to match a listed category, read with Commission Implementing Regulation (EU) 2025/2392 technical descriptions.
-- Annex III Class I category 14 is “microcontrollers with security-related functionalities”; Class II category 4 is “tamper-resistant microcontrollers”. These are distinct component/product categories. Integrating an MCU into a servo drive does not by itself classify the complete drive as Class I or II.
-- The cited Article 11 is not the final manufacturer-obligations/reporting locator. Relevant provisions include Article 13(8)/(9), Article 14, and Annex I Part II(2), (4), and (8), each with different scope.
-- Public disclosure under Annex I Part II point 4 concerns fixed vulnerabilities once a security update has been made available and includes a justified-delay exception. It is not an unconditional public notice for every vulnerability.
-- Free distribution under Annex I Part II point 8 is subject to the express tailor-made product/business-user agreement exception.
+**충돌·오류**
+- CRA는 산업용 또는 고위험 용도라는 이유만으로 서보 드라이브를 Class I로 분류하지 않는다. Article 7 및 Annex III의 제품 핵심 기능을 Commission Implementing Regulation (EU) 2025/2392의 기술 설명과 대조해야 한다.
+- Annex III Class I category 14는 “보안 관련 기능을 갖춘 마이크로컨트롤러”이고 Class II category 4는 “변조 방지 마이크로컨트롤러”다. 서로 다른 범주이며, MCU를 서보 드라이브에 통합했다고 완제품 드라이브가 자동으로 Class I 또는 II가 되는 것은 아니다.
+- Article 11은 해당 제조자 신고·취약점 처리 근거가 아니다. 관련 의무는 Article 13(8), Article 14, Annex I Part II(2), (4), (8) 등 각 조항의 범위에 따라 분리해야 한다.
+- Annex I Part II point 4의 공개 의무는 보안 업데이트 제공 후 수정된 취약점 정보를 공개하는 것이며 정당한 지연 예외가 있다. 모든 취약점을 조건 없이 즉시 공개하는 의무가 아니다.
+- Annex I Part II point 8의 무상 제공에는 맞춤형 제품 관련 제조자-사업 사용자 간 합의 예외가 있다.
 
-**What is supported**
-- Security updates are required to address identified security issues and are ordinarily free of charge under Annex I Part II point 8.
-- Vulnerability information must be publicly disclosed after a security update under Part II point 4, subject to its stated exception.
+**확인된 내용**
+- 식별된 보안 문제를 해결하기 위한 보안 업데이트는 원칙적으로 무상 제공된다.
+- 수정 취약점 정보는 보안 업데이트 제공 후 공개하되 정당한 지연 예외를 고려한다.
 
-**Quote result:** The report provides no accurate final-text verbatim quotation supporting its Class I claim or its combined Article 11/Annex I assertion. No quote accepted.
+**직접 인용 판정:** Class I 주장 및 Article 11/Annex I 결합 주장에 대한 정확한 현행 법령 인용이 제시되지 않았다. 직접 인용을 승인하지 않는다.
 
 ### #51 — PARTIALLY_VERIFIED
 
-**Central claim:** Manufacturers must maintain a coordinated vulnerability disclosure policy and a clear external reporting channel, with secure reporting such as PGP.
+**중심 주장:** 제조사는 조정된 취약점 공개 정책과 명확한 외부 신고 채널을 유지해야 하며, PGP와 같은 안전한 신고 방식을 사용해야 한다는 주장.
 
-**What is supported**
-- Annex I Part II point 5 requires manufacturers to put in place and enforce a coordinated vulnerability disclosure policy.
-- Annex I Part II point 6 requires measures facilitating information sharing about potential vulnerabilities in the product and third-party components, including a contact address for reporting discovered vulnerabilities.
-- Article 13(8) also requires appropriate policies and procedures, including CVD policies, for processing and remediating potential vulnerabilities reported from internal or external sources.
-- Annex II point 2 requires user-facing information about the single point of contact and where the manufacturer’s CVD policy can be found.
+**확인된 내용**
+- Annex I Part II point 5는 제조사가 조정된 취약점 공개 정책을 수립하고 집행하도록 요구한다.
+- Annex I Part II point 6은 제품 및 제3자 구성요소의 잠재 취약점 정보 공유를 촉진하는 조치와 취약점 신고 연락 주소를 요구한다.
+- Article 13(8)은 지원기간 동안 내부·외부에서 보고된 잠재 취약점을 처리·시정하기 위한 적절한 정책과 절차를 요구하며 CVD 정책을 포함한다.
+- Annex II point 2는 사용자에게 단일 연락 창구 및 제조사 CVD 정책을 찾을 수 있는 위치를 제공하는 정보를 요구한다.
 
-**What conflicts**
-- The report incorrectly locates these duties in Annex I Part I and refers to Article 10. The relevant vulnerability-handling requirements are in Annex I Part II points 5 and 6, with Article 13(8) supporting the policy/process obligation.
-- PGP encryption is an implementation option, not a specific universal CRA mandate in the cited provisions.
-- The report’s proposed fixed deadlines for all third-party reports and mandatory CVE assignment/publication are not established by the cited text. Public disclosure of fixed vulnerabilities is addressed separately in Annex I Part II point 4, with a justified-delay exception.
+**충돌·과장**
+- 원본은 관련 의무를 Annex I Part I 및 Article 10에 잘못 배치했다. 정확한 근거는 Annex I Part II points 5 and 6, Article 13(8)이다.
+- PGP 암호화는 구현 선택지이지 인용 조항이 모든 제조사에 보편적으로 요구하는 기술이 아니다.
+- 모든 외부 신고에 고정 기한을 적용하거나 CVE 부여·공개를 일률 의무화한다는 주장은 인용 법령에서 확인되지 않는다. 수정 취약점 공개는 Annex I Part II point 4에 별도 규정되며 정당한 지연 예외가 있다.
 
-**Quote result:** The quoted text is not a faithful verbatim extract of the final provision and its locator is wrong. No quote accepted.
+**직접 인용 판정:** 원문 인용은 현행 법령 문구와 일치하지 않고 조항 위치도 잘못되었다. 재사용하지 않는다.
 
 ### #52 — CONFLICT
 
-**Central claim:** CRA imposes a supply-chain vulnerability information-transfer duty requiring component suppliers to notify the servo-drive manufacturer, which must then notify integrators and end users; all vulnerabilities are to be patched free of charge for a minimum five-year period.
+**중심 주장:** 구성요소 공급자는 취약점 정보를 서보 드라이브 제조사에 전달해야 하고, 제조사는 모든 통합자·최종 사용자에게 다시 통지해야 하며, 모든 취약점은 최소 5년간 무상 패치해야 한다는 주장.
 
-**What conflicts**
-- Article 13(6) states the direction of the explicit component-vulnerability reporting duty: when the manufacturer identifies a vulnerability in an integrated component, the manufacturer reports it to the person/entity manufacturing or maintaining that component and addresses/remediates it under Annex I Part II. Where the manufacturer develops a modification, relevant code or documentation is shared with that component manufacturer/maintainer where appropriate in machine-readable format.
-- Article 13(5) requires due diligence when integrating third-party components. Article 13(7) requires systematic documentation of relevant cybersecurity aspects, including vulnerabilities and relevant third-party information. These provisions do not create the report’s blanket legal rule that every component supplier must notify every integrating manufacturer or that the manufacturer must always forward all vulnerability details to every integrator/end user.
-- User notification is specifically addressed in Article 14(8) for actively exploited vulnerabilities and severe incidents, with the “where appropriate” structured machine-readable condition. It is not a general duty to automatically transfer all supply-chain vulnerability information to every downstream party.
-- Article 13(8) sets the support period: at least five years, except where expected use is shorter. Free security update distribution is separately governed by Annex I Part II point 8 and its tailor-made product/business-user agreement exception.
-- The report’s quoted Annex I text does not match the final Annex I Part II points (1)–(8), and the alleged Article 11 quote is not the final Article 13(8) wording.
+**충돌·오류**
+- Article 13(6)은 제조사가 통합 구성요소에서 취약점을 식별한 경우 해당 구성요소를 제조하거나 유지관리하는 주체에게 보고하고 Annex I Part II에 따라 처리·시정하도록 규정한다. 제조사가 수정 사항을 개발하는 경우 적절한 때 관련 코드나 문서를 기계 판독 가능 형식으로 해당 구성요소 제조사/유지관리 주체와 공유한다.
+- Article 13(5)는 제3자 구성요소 통합 시 실사(due diligence)를 요구한다. Article 13(7)은 관련 사이버보안 측면과 취약점·제3자 정보를 체계적으로 문서화하도록 한다. 이 조항들이 모든 구성요소 공급자가 모든 통합 제조사에 자동 통지해야 한다거나 제조사가 모든 취약점 정보를 모든 통합자/최종 사용자에게 항상 전달해야 한다는 일반 규칙을 만들지는 않는다.
+- 사용자 통지는 Article 14(8)에서 적극 악용 취약점 및 제품 보안에 영향을 미치는 심각한 사고에 대해 별도로 다룬다. “where appropriate” 조건의 기계 판독 가능 형식은 모든 공급망 취약점 통지에 일반 적용되지 않는다.
+- Article 13(8)은 지원기간을 정한다. 무상 보안 업데이트 배포는 Annex I Part II point 8에 별도로 규정되며 맞춤형 제품 관련 제조자-사업 사용자 합의 예외가 있다.
+- 원본의 Annex I 인용은 현행 Annex I Part II(1)–(8)의 문언과 일치하지 않는다. Article 11 인용도 Article 13(8)의 현행 문구가 아니다.
 
-**What is supported**
-- Manufacturers must exercise due diligence on integrated third-party components and report identified component vulnerabilities to the component manufacturer/maintainer under Article 13(6).
-- Manufacturers must maintain appropriate vulnerability-handling processes during the support period and generally provide security updates free of charge under Part II point 8.
+**확인된 내용**
+- 제조사는 통합 제3자 구성요소에 대한 실사를 수행해야 한다.
+- 통합 구성요소의 취약점을 식별한 제조사는 Article 13(6)에 따라 구성요소 제조사/유지관리 주체에 보고하고 제품 측 취약점 처리·시정을 수행해야 한다.
+- 제조사는 지원기간 동안 적절한 취약점 처리 절차를 운영하고, Annex I Part II point 8에 따라 원칙적으로 무상 보안 업데이트를 제공해야 한다.
 
-**Quote result:** The quoted passages are draft-like/paraphrased composites and do not match the final legal text. No quote accepted.
+**직접 인용 판정:** 원본의 인용 문구는 현행 법령의 직접 인용이 아니라 초안형 요약/합성 문구다. 직접 인용으로 재사용하지 않는다.
 
-## 4. Consolidated legal correction rules from this batch
+## 4. 이 배치에서 통합해야 할 법령 정정 기준
 
-| Subject | Correct legal anchor | Avoid |
+| 주제 | 정확한 법적 근거 | 피해야 할 해석 |
 |---|---|---|
-| Fixed-vulnerability public disclosure | Annex I Part II(4) | Treating it as universal immediate disclosure of every vulnerability |
-| CVD policy | Annex I Part II(5); Article 13(8) | Annex I Part I or Article 10 locator |
-| Vulnerability reporting contact | Annex I Part II(6); Annex II point 2 | Claiming PGP or a specific encryption technology is universally mandated |
-| Secure update distribution | Annex I Part II(7) | Confusing it with public advisory format |
-| Free security update distribution | Annex I Part II(8) | Omitting tailor-made product/business-user agreement exception |
-| Support period | Article 13(8) | “Expected lifetime or five years, whichever is shorter” as an unqualified rule |
-| Security update availability | Article 13(9) | Treating support period itself as a 10-year requirement |
-| Component vulnerability reporting | Article 13(6) | Reversing the express reporting direction |
-| Machine-readable user notification | Article 14(8), where appropriate | Applying it to every vulnerability/advisory |
-| Mandatory incident/vulnerability reporting | Article 14(1)–(4) | Article 11 or all-vulnerability reporting |
-| Important product classification | Article 7, Annex III, Implementing Regulation (EU) 2025/2392 | Automatically classifying industrial servo drives as Class I/II |
+| 수정 취약점 공개 | Annex I Part II(4) | 모든 취약점의 무조건 즉시 공개 |
+| CVD 정책 | Annex I Part II(5), Article 13(8) | Annex I Part I 또는 Article 10으로 잘못 표기 |
+| 취약점 신고 연락처 | Annex I Part II(6), Annex II(2) | PGP 등 특정 암호 기술이 보편 의무라고 주장 |
+| 안전한 업데이트 배포 | Annex I Part II(7) | 보안 권고 형식 의무와 혼합 |
+| 무상 보안 업데이트 | Annex I Part II(8) | 맞춤형 제품/사업 사용자 합의 예외 누락 |
+| 지원기간 | Article 13(8) | “예상 수명과 5년 중 짧은 기간”을 일반 규칙으로 사용 |
+| 보안 업데이트 가용성 | Article 13(9) | 지원기간 자체가 10년 의무라고 해석 |
+| 구성요소 취약점 보고 | Article 13(6) | 법령에 명시된 신고 방향을 역전 |
+| 기계 판독 가능 사용자 통지 | Article 14(8), where appropriate | 모든 취약점/보안 공지에 일반 적용 |
+| 법정 취약점·사고 신고 | Article 14(1)–(4) | Article 11 또는 모든 취약점 신고로 오인 |
+| 중요 제품 분류 | Article 7, Annex III, Implementing Regulation (EU) 2025/2392 | 산업용 서보 드라이브를 자동 Class I/II로 분류 |
 
-## 5. Official primary sources checked
+## 5. 확인한 공식 1차 출처
 
-1. Regulation (EU) 2024/2847, EUR-Lex official text:
-   https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R2847
-   - Article 7; Article 13(5)–(9); Article 14(1)–(8); Annex I Part I point 2(c)/(d); Annex I Part II points (1)–(8); Annex II point 2.
-2. Official Journal PDF of Regulation (EU) 2024/2847:
+1. Regulation (EU) 2024/2847, EUR-Lex 공식 원문  
+   https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R2847  
+   확인 범위: Article 7, Article 13(5)–(9), Article 14(1)–(8), Annex I Part I point 2(c)/(d), Annex I Part II points (1)–(8), Annex II point 2.
+2. Regulation (EU) 2024/2847, Official Journal PDF  
    https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32024R2847
-3. Commission Implementing Regulation (EU) 2025/2392:
-   https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R2392
-   - Technical descriptions for Annex III categories, including security-related microcontrollers and tamper-resistant microcontrollers.
+3. Commission Implementing Regulation (EU) 2025/2392  
+   https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R2392  
+   확인 범위: Annex III 범주의 기술 설명, 보안 관련 마이크로컨트롤러와 변조 방지 마이크로컨트롤러의 구분.
 
-The final CRA text was checked directly through EUR-Lex search-returned official text excerpts for the cited provisions. The browser open endpoint itself presented a robot-check page, so this audit does not claim a fresh E3 live fetcher execution or a visual PDF-page inspection. No independent external legal counsel review was performed.
+현행 CRA 문언은 EUR-Lex 검색 결과로 제공된 공식 조항 텍스트를 직접 대조했다. 브라우저 열기 기능은 로봇 확인 페이지를 반환했으므로, 이번 감사에서 E3 실시간 수집기 실행이나 PDF 페이지의 시각 검토를 수행했다고 주장하지 않는다. 외부 법률전문가의 독립 검토도 수행하지 않았다.
 
-## 6. Main branch and product applicability limitations
+## 6. main 브랜치 및 제품 적용성의 제한
 
-- main is read-only; the five source archives were not modified.
-- No merge, rebase, or sync was performed.
-- No product SKU, intended purpose, actual MCU order code, product boundary, or technical architecture was available. Product-specific applicability/classification remains UNVERIFIED.
-- This is a legal-text audit of the archive claims, not a product conformity assessment or a DUT test result.
+- main은 읽기 전용으로 유지했고 다섯 원본 아카이브를 수정하지 않았다.
+- merge, rebase, sync를 수행하지 않았다.
+- 제품 SKU, 의도된 용도, 실제 MCU 주문 코드, 제품 경계 및 기술 아키텍처가 제공되지 않았다. 제품별 적용성/분류는 UNVERIFIED다.
+- 이 문서는 자동 생성 조사 주장의 법령 문언 감사이며, 제품 적합성 평가나 DUT 시험 결과가 아니다.
 
-## 7. Cumulative consecutive audit sample
+## 7. 누적 연속 감사 표본
 
-Including reports #8–#47, the consecutive non-random sample #8–#52 contains 45 reports:
+#8–#47에 이번 #48–#52를 포함한 연속·비무작위 표본은 총 45건이다.
 
-- CONFLICT: 40
-- PARTIALLY_VERIFIED: 5
-- VERIFIED: 0
-- Direct quote reuse: 0/45
+- CONFLICT: 40건
+- PARTIALLY_VERIFIED: 5건
+- VERIFIED: 0건
+- 직접 인용 재사용 승인: 0/45
 
-This is a consecutive, non-random sample. It must not be presented as an error rate for the entire main archive.
+이 표본은 연속·비무작위 표본이다. main 전체 아카이브의 오류율로 제시해서는 안 된다.
