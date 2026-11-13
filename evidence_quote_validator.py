@@ -6,8 +6,10 @@ proof of publisher authenticity, visual PDF fidelity, legal meaning, or claim su
 """
 from __future__ import annotations
 
-from copy import deepcopy
+from datetime import datetime
 from hashlib import sha256
+import json
+import re
 from typing import Any, Mapping
 
 from evidence_bundle import (
@@ -87,6 +89,7 @@ def validate_evidence_quotes(
     report_payload: Mapping[str, Any] | None = None,
     *,
     context_chars: int = 500,
+    extraction_error: str | None = None,
 ) -> dict[str, Any]:
     """Rebuild and compare the canonical bundle; return machine-only results.
 
@@ -95,6 +98,13 @@ def validate_evidence_quotes(
     """
     if not isinstance(context_chars, int) or isinstance(context_chars, bool) or not 0 <= context_chars <= 500:
         raise QuoteValidationError("INVALID_CONTEXT_LIMIT")
+    if extraction_error:
+        status = "UNSUPPORTED_EXTRACTION" if extraction_error in {"PDF_BACKEND_UNAVAILABLE", "OCR_UNAVAILABLE", "UNSUPPORTED_FORMAT"} else "SOURCE_UNAVAILABLE"
+        return {
+            "status": status, "error_code": extraction_error,
+            "evidence": [], "claim_evidence": {},
+            "limitations": ["Extraction could not be reproduced; no evidence was accepted."],
+        }
     if fetch_result is None or extracted_document is None:
         return {
             "status": "SOURCE_UNAVAILABLE", "error_code": "SOURCE_OR_EXTRACTION_UNAVAILABLE",
@@ -136,7 +146,9 @@ def validate_evidence_quotes(
                 "locator_class": "LOCATOR_UNAVAILABLE",
             })
             continue
-        candidates = segment_index.get((canonical["locator"], canonical["unit_type"]), [])
+        locator = canonical["locator"]
+        base_locator = re.sub(r" \[segment \d+/\d+\]$", "", locator)
+        candidates = segment_index.get((base_locator, canonical["unit_type"]), [])
         if len(candidates) != 1:
             results.append({
                 "evidence_id": evidence_id, "status": "AMBIGUOUS",
@@ -188,7 +200,9 @@ def validate_evidence_quotes(
                 raise QuoteValidationError("DUPLICATE_OR_EMPTY_CLAIM_ID")
             seen_claims.add(claim_id)
             ids = claim.get("evidence_ids")
-            if not isinstance(ids, list) or not ids or len(ids) != len(set(ids)) or not set(ids) <= valid_ids:
+            if (not isinstance(ids, list) or not ids
+                    or any(not isinstance(value, str) for value in ids)
+                    or len(ids) != len(set(ids)) or not set(ids) <= valid_ids):
                 raise QuoteValidationError("CLAIM_EVIDENCE_REFERENCE_INVALID")
             claim_evidence[claim_id] = list(ids)
 
@@ -199,7 +213,7 @@ def validate_evidence_quotes(
         "status": overall,
         "source_sha256": rebuilt["sources"][0]["raw_sha256"],
         "extraction_text_sha256": rebuilt["sources"][0]["extracted_text_sha256"],
-        "bundle_sha256": _digest(repr(rebuilt)),
+        "bundle_sha256": sha256(json.dumps(rebuilt, ensure_ascii=False, sort_keys=True, separators=(",", ":")).encode("utf-8")).hexdigest(),
         "evidence": results,
         "claim_evidence": claim_evidence,
         "limitations": [
@@ -287,6 +301,13 @@ def validate_human_review_record(record: Any) -> dict[str, Any]:
         raise QuoteValidationError("CONTEXT_PASS_REQUIRED")
     if record["claim_support"] != "SUPPORTED" and record["review_decision"] == "ACCEPT_AS_CANDIDATE":
         raise QuoteValidationError("CLAIM_SUPPORT_REQUIRED")
+    timestamp = record["reviewed_at_utc"]
+    try:
+        parsed = datetime.fromisoformat(timestamp.replace("Z", "+00:00"))
+        if parsed.tzinfo is None or parsed.utcoffset() is None:
+            raise ValueError("timezone required")
+    except (TypeError, ValueError):
+        raise QuoteValidationError("REVIEW_TIMESTAMP_INVALID")
     return {
         "valid": True,
         "review_decision": record["review_decision"],
