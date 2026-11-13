@@ -29,9 +29,9 @@
 | 작업 브랜치 | `cra-project-foundation` |
 | main 브랜치 | 읽기 전용. 병합·rebase·sync 금지 |
 | main 최신 관찰 | HEAD `aaded0f4d0b84a1891b5801a6048c4de92511822`, report #107; state count 107; history 1,382 entries; archive tree count not rechecked |
-| main 아카이브 | 1,368개 파일 / history 1,368개 / 고유 경로 1,368개 (2026-11-13 재조회) |
+| main 자료 상태 | history.json 1,382 entries; state.json count 107 (당일 카운터); archive tree count는 이번 조회에서 미확인 |
 | 작업 브랜치 아카이브 | 최근 strict audit 기준 990개 / history 990개 정합 |
-| main과 작업 브랜치 | diverged, 작업 브랜치 ahead 657 / behind 384 (2026-11-13 재비교) |
+| main과 작업 브랜치 | diverged, 작업 브랜치 ahead 690 / behind 398; merge base `b425b6db591e34abe003522157cf97ecf2240d9f` (2026-11-13 재비교) |
 | 최근 코드 검증 | Phase D hardening exact HEAD CI #43384495713 success: 140 tests, archive 990/990, consistent=true |
 | 최근 문서 검증 | continuity/audit 갱신 후 CI #43384628893 success: 140 tests, archive 990/990, consistent=true |
 | 보호 파일 | main.py, production run.yml, V2 prompt/contract, Phase C bundle/schema/V3 contract 변경 금지. 별도 승인 없이 수정하지 않음 |
@@ -247,3 +247,14 @@
 - 누적 #8–#52: 45건, 40 CONFLICT / 5 PARTIALLY_VERIFIED / 0 VERIFIED; 비무작위 연속 표본.
 - 이번 배치의 주요 결론은 Claim Evidence Ledger, 제1권, 제2권, PSIRT SOP 및 MASTER_REPORT에 연결·반영했다.
 - 다음 감사 시작점 #53. main은 계속 read-only, 제품별 적용성은 UNVERIFIED, 실제 DUT 시험은 NOT_RUN.
+
+
+## 2026-11-13 최신 Git 기준선 보정 — report #107 및 통합 작업 HEAD
+
+- main HEAD: aaded0f4d0b84a1891b5801a6048c4de92511822 (Auto-archive report #107).
+- main state.json: date 2026-11-13, count 107. 이는 당일 카운터이며 누적 자료 수가 아니다.
+- main history.json: 1,382 entries. Recursive archive tree count는 이번 보정에서 조회하지 않았으므로 1,382개 archive 파일이라고 단정하지 않는다.
+- cra-project-foundation history.json: 990 entries. state.json은 date 2026-11-12, count 3; 이 값은 일일 카운터다. 마지막 strict archive audit가 확인한 990/990 정합성 결과는 이전 검증 기준이며 이번 문서 전용 commit 후 새 strict audit를 실행한 것은 아니다.
+- 현재 작업 HEAD: ad7b2732b5a554842772be8cabb23ba29d270ae4. main 대비 diverged, ahead 690 / behind 398, merge base b425b6db591e34abe003522157cf97ecf2240d9f.
+- 최신 HEAD 문서 변경은 docs/SESSION_LOG에 한정된 마지막 commit이며, 전체 문서 변경은 그 직전 연속 docs-only commits에 기록되어 있다. main merge/rebase/sync는 수행하지 않았다.
+- exact HEAD CI run/status는 별도 조회 결과가 없는 한 PASS로 기록하지 않는다.
