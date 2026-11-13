@@ -176,4 +176,4 @@
 - [ ] C5: claim validator/report builder non-production integration
 - [ ] C6: production main/prompt/workflow integration (separate approval)
 
-**현재 실행 상태:** 코드 변경 없음. 실제 URL fetch 없음. 이 문서는 감사와 변경 제안이다.
+**현재 상태:** C1+C2 구현 결과는 `docs/C1_C2_SOURCE_EVIDENCE_IMPLEMENTATION_REPORT.md` 참조. C3 이후, E3 live fetch, C5/C6는 미실행이며 각각 별도 단계/승인 필요.
