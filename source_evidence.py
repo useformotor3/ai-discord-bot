@@ -8,6 +8,7 @@ from __future__ import annotations
 from dataclasses import asdict, dataclass
 from datetime import datetime, timezone
 from hashlib import sha256
+import http.client
 import ipaddress
 import socket
 from typing import Callable, Iterable
@@ -182,6 +183,7 @@ def _read_limited(response: object, limit: int, chunk_size: int) -> bytes:
     content_length = headers.get("Content-Length")
     if content_length is None:
         content_length = headers.get("content-length")
+    declared_length: int | None = None
     if content_length is not None:
         try:
             normalized_length = str(content_length).strip()
@@ -200,13 +202,23 @@ def _read_limited(response: object, limit: int, chunk_size: int) -> bytes:
         parts = iterator(chunk_size=chunk_size)
     else:
         parts = (getattr(response, "content", b""),)
-    for part in parts:
-        if not part:
-            continue
-        total += len(part)
-        if total > limit:
-            raise SourceFetchError("RESPONSE_TOO_LARGE")
-        chunks.append(bytes(part))
+    try:
+        for part in parts:
+            if not part:
+                continue
+            total += len(part)
+            if total > limit:
+                raise SourceFetchError("RESPONSE_TOO_LARGE")
+            chunks.append(bytes(part))
+    except SourceFetchError:
+        raise
+    except http.client.IncompleteRead as exc:
+        raise SourceFetchError("TRUNCATED_RESPONSE") from exc
+    except Exception as exc:
+        raise SourceFetchError("RESPONSE_STREAM_FAILED") from exc
+
+    if declared_length is not None and total != declared_length:
+        raise SourceFetchError("TRUNCATED_RESPONSE")
     return b"".join(chunks)
 
 
