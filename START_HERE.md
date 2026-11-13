@@ -455,3 +455,9 @@
 - EUR-Lex Implementing Regulation (EU) 2025/2392를 확인해 Annex III core-functionality test와 Article 32/Annex VIII 평가 경로를 보완했다.
 - 기존 파일 단위 감사는 5 CONFLICT / direct quote reuse 0/5로 유지한다. 서보 드라이브 Class I/II 적용성은 UNVERIFIED.
 - 다음 원자 분해 대상은 #38–#42.
+
+## 원자 주장 분해 진행 — #38–#42 완료
+
+- #38–#42 개별 주장·인용 33개를 [Claim Evidence Ledger](docs/CLAIM_EVIDENCE_LEDGER.md)에 원자 Claim ID로 등록했다.
+- #38은 Part I(2)(m) 영구 삭제 가능성과 Annex II(8)(d) 폐기 지침을 함께 반영해 PARTIALLY_VERIFIED로 정정된 상태를 유지한다.
+- 다음 원자 분해 대상은 #43–#47.
