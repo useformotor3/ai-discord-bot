@@ -2313,7 +2313,7 @@ Batch result: 5/5 CONFLICT, 0 PARTIALLY_VERIFIED, 0 VERIFIED; 0/5 Raw Text Quote
 
 ## 2026-11-13 — main reports #28–#32 Pass A/B/C audit
 
-- Current main observation: report #119, HEAD `6491a5db6ea35ea97a6d97e85bac43f9a3cf41c0`; state count 125, history.json 1,400 entries. Archive tree count not rechecked; main read-only.
+- Current main observation: report #125, HEAD `92e8ca7aa4a86b38627a1d8e9535e5b0463a8392`; state count125 (daily); archive/history 1,400/1,400, consistent=true; main read-only.
 - Batch audit: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_28_32_2026-11-13.md](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_28_32_2026-11-13.md).
 - #28 CONFLICT; archive `research_archive/2026-11-13_021538.md`; blob `78de23c029c47dee16ebc82adf7123c2bf52fa4a`.
 - #29 CONFLICT; archive `research_archive/2026-11-13_022039.md`; blob `e5248b9d23e94ea0ef5ad7ffb30f2dcd100e3434`.
@@ -2504,6 +2504,6 @@ Batch result: 5/5 CONFLICT, 0 PARTIALLY_VERIFIED, 0 VERIFIED; 0/5 Raw Text Quote
 ## 2026-11-13 current main / branch baseline
 
 - Current main report #125 / HEAD \`92e8ca7aa4a86b38627a1d8e9535e5b0463a8392\`; state count125 (daily counter), history.json 1,400 entries.
-- Current work branch HEAD \`ced168745cd19400ba29131a495c3bf5c3f924eb\`; diverged from main, ahead968/behind416. Do not merge/rebase/sync. Main remains read-only.
+- Current work branch HEAD \`ced168745cd19400ba29131a495c3bf5c3f924eb\`; diverged from main, diverged; ahead/behind values dynamic. Do not merge/rebase/sync. Main remains read-only.
 - #8–#62 source path/blob SHA revalidation: 55/55 match current main tree.
 - Latest branch push CI run 43408438728 SUCCESS: 140 tests, archive/history 990/990, unique990, no missing/orphan/duplicate/malformed entries. Branch snapshot only.
