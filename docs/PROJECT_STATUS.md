@@ -703,7 +703,7 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 
 
 ## 최신 커밋/검증 상태 보정 — 2026-11-13
-- Current work branch head is dynamic; re-fetch the branch endpoint at session start. Last verified compare status: diverged, ahead968/behind416.
+- Current work branch head is dynamic; re-fetch the branch endpoint at session start. Last verified compare status: diverged, diverged; ahead/behind values dynamic.
 - Historical main snapshot: report #93 / archive-history 1,368/1,368; superseded by current report #125 / archive-history 1,400/1,400.
 - 최신 감사 #38–#42: 4 CONFLICT / 1 PARTIALLY_VERIFIED / 0 VERIFIED; direct quote reuse 0/5.
 - exact HEAD CI: run 미발견, commit status pending/0 statuses. 이번 문서 업데이트 CI는 미실행/미확인으로 기록한다. 이전 성공 CI를 현 HEAD 검증으로 간주하지 않는다.
@@ -945,7 +945,7 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 
 - main HEAD: report #125, SHA \`92e8ca7aa4a86b38627a1d8e9535e5b0463a8392\`; state.json count 125 (daily counter), history.json 1,400 entries; current main tree \`7679729e1b128eacf26034346dafb29aa8da610b\`.
 - Work branch \`cra-project-foundation\` HEAD: \`ced168745cd19400ba29131a495c3bf5c3f924eb\`.
-- Git compare main..work branch: **diverged**, ahead 968 / behind 416, merge base \`b425b6db591e34abe003522157cf97ecf2240d9f\`. Do not merge, rebase, sync or write to main. This divergence includes historical branch differences and is not created by this documentation-only continuation.
+- Git compare main..work branch: **diverged**, diverged; ahead/behind values dynamic, merge base \`b425b6db591e34abe003522157cf97ecf2240d9f\`. Do not merge, rebase, sync or write to main. This divergence includes historical branch differences and is not created by this documentation-only continuation.
 - Main archive source revalidation: all 55 audited file paths and blob SHAs for reports #8–#62 match the current main tree (55/55, missing 0, mismatches 0).
 - Latest push CI on current work-branch HEAD: run 43408438728 SUCCESS; 140 tests passed; strict archive audit 990/990, unique paths 990, missing/orphan/duplicate/malformed 0, consistent=true. The branch workflow's state.count=3 is a daily counter, not an archive total. No PR-triggered workflow run and no PR was created.
 - Current branch commits in this continuation are documentation-only; no additional production code changes were made here. Existing branch-vs-main code differences remain unmerged and must be reviewed separately.
