@@ -93,20 +93,25 @@ def _decode_bytes(data: bytes, max_input_bytes: int) -> str:
         raise ExtractionError("EMPTY_INPUT")
     raw = bytes(data)
     # Never silently replace damaged bytes: loss is a hard extraction failure.
-    encodings = ("utf-8-sig", "utf-16", "utf-32")
-    for encoding in encodings:
+    if raw.startswith((b"\xff\xfe", b"\xfe\xff")):
         try:
-            return raw.decode(encoding, errors="strict")
-        except UnicodeDecodeError:
-            continue
+            return raw.decode("utf-16", errors="strict")
+        except UnicodeDecodeError as exc:
+            raise ExtractionError("CHARSET_DECODE_FAILED") from exc
+    if raw.startswith((b"\x00\x00\xfe\xff", b"\xff\xfe\x00\x00")):
+        try:
+            return raw.decode("utf-32", errors="strict")
+        except UnicodeDecodeError as exc:
+            raise ExtractionError("CHARSET_DECODE_FAILED") from exc
     # XML declarations and HTML charset declarations are accepted only when
-    # the declared codec decodes strictly. No lossy fallback is permitted.
+    # the declared codec decodes strictly. Otherwise UTF-8 is the default.
     head = raw[:4096].decode("ascii", errors="ignore")
     match = re.search(r"(?:encoding|charset)\s*=\s*['\"]?([A-Za-z0-9._-]+)", head, re.I)
-    if match:
-        try:
-            return raw.decode(match.group(1), errors="strict")
-        except (LookupError, UnicodeDecodeError) as exc:
+    encoding = match.group(1) if match else "utf-8"
+    try:
+        return raw.decode(encoding, errors="strict")
+    except (LookupError, UnicodeDecodeError) as exc:
+        raise ExtractionError("CHARSET_DECODE_FAILED") from exc
             raise ExtractionError("CHARSET_DECODE_FAILED") from exc
     raise ExtractionError("CHARSET_DECODE_FAILED")
 
