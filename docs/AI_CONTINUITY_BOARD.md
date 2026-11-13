@@ -396,3 +396,10 @@
 - 파일 단위 결과 3 CONFLICT / 2 PARTIALLY_VERIFIED / direct quote reuse 0/5 유지.
 - Article 7/Annex III 분류, Article 32/Annex VIII 평가, Article 64 과징금, Annex I 2(d) 접근통제, Article 13/Annex I vulnerability handling을 정정.
 - 다음 원자 분해 대상 #48–#52.
+
+## 2026-11-13 P0 진행 — #48–#52 원자 Claim ID 분해
+
+- #48–#52 원본 경로/blob SHA 재확인, Ledger에 원자 Claim ID 31개 추가.
+- 파일 단위 결과 3 CONFLICT / 2 PARTIALLY_VERIFIED / direct quote reuse 0/5 유지.
+- Article 14(8) machine-readable notice, Part II(4) disclosure timing, CVD/contact/free update, Article 13(5)–(7) supply-chain component reporting direction 정정.
+- 다음 원자 분해 대상 #53–#57.
