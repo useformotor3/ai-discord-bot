@@ -2414,3 +2414,10 @@ Batch result: 5/5 CONFLICT, 0 PARTIALLY_VERIFIED, 0 VERIFIED; 0/5 Raw Text Quote
 - 누적 #8–#62: 55건, 40 CONFLICT / 15 PARTIALLY_VERIFIED / 0 VERIFIED; direct quote reuse 0/55. 비무작위 연속 표본이며 전체 archive 오류율이 아니다.
 - 다음 P0: #8–#57 원자 주장·인용 분해와 제1권/제2권/SOP/매트릭스 전수 대조. 다음 감사 배치 #63–#67.
 - main은 읽기 전용, merge/rebase/sync 금지.
+
+## 2026-11-13 사후 기준선 갱신 — main #119
+
+- #58–#62 감사 당시 main 기준선은 report #118 / history 1,393 entries였다.
+- 감사 문서화 도중 main 자동 아카이브가 report #119를 추가했다: HEAD \`6491a5db6ea35ea97a6d97e85bac43f9a3cf41c0\`, state count 119, history 1,394 entries.
+- #119는 #58–#62 감사 범위에 포함되지 않았으며 아직 감사하지 않았다. 다음 배치는 #63–#67이다.
+- 다음 배치 시작 시 main HEAD/state/history를 다시 읽고 일일 count와 archive 경로를 재매핑한다. main은 read-only.
