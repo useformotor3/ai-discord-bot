@@ -723,3 +723,12 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - 범위: Article 7/Annex III/Implementing Regulation 2025/2392 분류 절차, Article 32 평가 경로, Annex I Part I 2(d) 접근통제 요구, 위험기반 구현 후보 및 시험 증거.
 - 제품별 적용성은 SKU/의도된 목적/제품 경계가 확보되지 않아 UNVERIFIED.
 
+
+
+## 2026-11-13 — 문서 구조·보고서 통합 원칙 반영
+
+- 사용자 의도 재확인: 검증·수정한 내용을 최종 CRA 보고서와 매뉴얼에 취합하는 것이 핵심 결과다. 문서가 과도하게 분리되어 탐색이 어려워지는 것을 방지해야 하며, 그렇다고 모든 내용을 한 파일로 합치는 것은 아니다.
+- 신규 [CRA 문서 구조·전체 목차·링크 안내](CRA_DOCUMENT_ARCHITECTURE_AND_NAVIGATION.md)를 작성했다. 문서 계층, 정본 우선순위, 세션 읽기 순서, 보고서·SOP·아키텍처·매트릭스·감사자료 링크를 정의했다.
+- START_HERE, AI_RULEBOOK, AI_CONTINUITY_BOARD, MASTER_REPORT_INDEX, MASTER_REPORT, MASTER_PLAN에 사용자 의도와 문서 통합 규칙을 연결했다.
+- 현재까지 문서 구조를 만든 것은 과거 감사 결과가 모든 최종 보고서에 통합되었다는 뜻이 아니다. 제1권·제2권·마스터 보고서·Claim Evidence Ledger·정정 대장의 상호 대조와 누락 통합은 다음 P0 작업이다.
+- 이 문서 업데이트는 문서 운영 체계 반영이며, 법령 검증·제품별 적용성·DUT 시험·CI 성공을 새로 입증하지 않는다.
