@@ -409,3 +409,7 @@ The main-only audit covers 55 consecutive, non-random archive reports (#8–#62)
 The Claim Evidence Ledger now contains 55 file-level source records and 345 atomic claim records (400 unique IDs, zero collisions). Every atomic claim is mapped to one or more Canonical Requirement IDs. The canonical register contains 46 requirements, including all Annex I Part I control families, Annex I Part II vulnerability handling, Articles 13–14, product classification, conformity assessment, technical documentation, DoC/CE, penalties and transition rules.
 
 The atomic decomposition preserves the distinction between a verified legal fact and the file-level verdict of the source report. Product-specific applicability, servo-drive Class I/II classification, exact MCU order code and DUT test evidence remain UNVERIFIED/NOT_RUN. The next P0 is full cross-document reconciliation of the 345 claims against this report, Volume 2, PSIRT SOP, both traceability matrices and the test evidence register.
+
+## 2026-11-13 logging and secure data lifecycle update
+
+Annex I Part I(2)(l) logging/monitoring/opt-out and Part I(2)(m) secure permanent data erasure plus secure transfer (where applicable) are now explicitly mapped to Canonical IDs. Annex II(8)(d) user decommissioning instructions are tracked separately. Added TST-LOG-01/02 and TST-ERASE-01..04 to the test evidence register; all remain NOT_RUN. TST-NVM-01..03 remain storage integrity/access/power-fault tests and do not substitute for erase tests.
