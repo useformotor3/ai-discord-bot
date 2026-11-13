@@ -2449,3 +2449,10 @@ Batch result: 5/5 CONFLICT, 0 PARTIALLY_VERIFIED, 0 VERIFIED; 0/5 Raw Text Quote
 - main 원본 경로/blob SHA를 재확인하고 Claim Evidence Ledger에 원자 Claim ID 30개를 추가했다.
 - secure-by-default/access/attack surface와 특정 비밀번호·MFA/JTAG/포트 구현 선택, Annex III Class I/II 분류를 분리했다.
 - 다음 원자 분해 배치: #28–#32. #33–#57까지 순차 분해 후 상위 문서와 교차 대조.
+
+## 2026-11-13 — #28–#32 원자 주장 분해 완료
+
+- 기존 #28–#32 파일 단위 감사 결과는 5 CONFLICT / direct quote reuse 0/5로 유지.
+- main 원본 경로/blob SHA를 재확인하고 Claim Evidence Ledger에 원자 Claim ID 25개를 추가했다.
+- Article 13(8)/(9), Annex I Part II(5)/(6)/(8), Article 14, Annex VII(4)를 분리하고 지원기간·신고 범위·직접 인용 오류를 정정했다.
+- 다음 원자 분해 배치: #33–#37. 이후 #38–#57까지 순차 분해 후 상위 문서와 교차 대조.
