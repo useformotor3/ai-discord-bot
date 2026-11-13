@@ -541,3 +541,14 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - Since baseline report #128, main now has 167 new archive reports (#129–#288 and #1–#7), plus `history.json` and `state.json` updates. State count is 7.
 - Queue verified at 167 unique entries: P0 111 / P1 33 / P2 0 / P3 23. Report #7 is P1 and remains NEW / NOT_YET_AUDITED; file verdict UNVERIFIED.
 - Preliminary EUR-Lex comparison flags a non-verbatim Annex I Part I(2)(b) quote and Article 13(2) misreference in #7. Full Pass A/B/C is pending; see queue entry for the precise source note.
+
+
+## Phase C final verification — 2026-11-13
+- Fixed the CI-discovered indentation error in `evidence_bundle.py` (the excerpt hashing and append now remain inside the segment loop; removed the misplaced redundant total counter).
+- Exact code commit tested: `6344b576db64438e9a2ebfe5acdcc74afeac479e`.
+- GitHub Actions run #43338094337: SUCCESS — [CRA Archive Integrity](https://github.com/useformotor3/ai-discord-bot/actions/runs/43338094337).
+- Full unit suite: 79 tests, all passed.
+- Strict archive audit: archive_count 990; history_entry_count 990; archive_missing_history [], history_orphans [], duplicate_history_paths [], malformed_history_entry_indexes []; consistent=true.
+- Protected file SHAs rechecked on the work branch: `main.py` `997952702fdd9d2472468b82e6efdd65b2bb4376`; production `.github/workflows/run.yml` `65a8cadc8eac593f551e390698e367b1d161ecf1`; v2 prompt `14e9ce8618bc447a371dc28fc725cda3636470c5`; v2 contract `e0c1f1db353f664ae8c817c2f335d3a6efef4076`. All unchanged from pre-Phase-C baselines.
+- No production import/integration, no main-branch modification, no merge/rebase/sync, no live fetch or Gemini API call.
+- Phase C code/test/strict archive verification is COMPLETE. Production integration and Phase D remain separate and require their own design/approval.
