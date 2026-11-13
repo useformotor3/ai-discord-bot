@@ -102,7 +102,7 @@ def _decode_bytes(data: bytes, max_input_bytes: int) -> str:
     # XML declarations and HTML charset declarations are accepted only when
     # the declared codec decodes strictly. No lossy fallback is permitted.
     head = raw[:4096].decode("ascii", errors="ignore")
-    match = re.search(r"(?:encoding|charset)\\s*=\\s*['\\\"]?([A-Za-z0-9._-]+)", head, re.I)
+    match = re.search(r"(?:encoding|charset)\s*=\s*['\"]?([A-Za-z0-9._-]+)", head, re.I)
     if match:
         try:
             return raw.decode(match.group(1), errors="strict")
