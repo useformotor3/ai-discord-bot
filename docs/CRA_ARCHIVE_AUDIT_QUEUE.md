@@ -2486,3 +2486,10 @@ Batch result: 5/5 CONFLICT, 0 PARTIALLY_VERIFIED, 0 VERIFIED; 0/5 Raw Text Quote
 - Claim Evidence Ledger에 원자 Claim ID 31개 추가.
 - Article 14(8) machine-readable notice, Part II(4) disclosure/delay, CVD/contact, free update exception, Article 13(5)–(7) component due diligence/reporting direction을 분리.
 - 다음 원자 분해 배치: #53–#57. 이후 #8–#57 전체 상위 문서 전수 대조.
+
+## 2026-11-13 — #53–#57 원자 주장 분해 완료
+
+- 기존 #53–#57 파일 단위 결과 1 CONFLICT / 4 PARTIALLY_VERIFIED / direct quote reuse 0/5 유지.
+- Claim Evidence Ledger에 원자 Claim ID 32개 추가.
+- Part I 2(m) secure erasure, Annex II 8(d) disposal instructions, Article13(18)/(19) user info/end-of-support, Article13(8)/(9), PartII(8), Article14/69(3)을 분리.
+- #8–#57 원자 분해 50건 전체가 완료됨. 다음 P0는 300+ Claim ID와 제1권/제2권/SOP/매트릭스/시험 대장의 전수 대조 및 중복/상충 정리.
