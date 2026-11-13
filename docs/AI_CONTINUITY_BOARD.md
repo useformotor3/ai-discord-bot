@@ -4,7 +4,7 @@
 - 기준일: 2026-11-13
 - 기준 작업 브랜치: `cra-project-foundation`
 - 마지막 확인 작업 HEAD: **브랜치 tip을 새 세션 시작 시 실시간 조회** (이 문서에 고정 SHA를 두지 않음)
-- 마지막 확인 main HEAD: `6491a5db6ea35ea97a6d97e85bac43f9a3cf41c0` (Auto-archive: Research report #119)
+- 마지막 확인 main HEAD: `6491a5db6ea35ea97a6d97e85bac43f9a3cf41c0` (Auto-archive: Research report #125)
 - 상태: **상시 갱신 운영 기준 문서**
 - 목적: 새 대화에서도 AI가 목표·현황·성과·실패·미완료·다음 행동을 추측 없이 복원하고, 과정 작업에 매몰되지 않고 실제 CRA 산출물을 계속 완성하도록 한다.
 
@@ -28,8 +28,8 @@
 |---|---|
 | 작업 브랜치 | `cra-project-foundation` |
 | main 브랜치 | 읽기 전용. 병합·rebase·sync 금지 |
-| main 최신 관찰 | HEAD `6491a5db6ea35ea97a6d97e85bac43f9a3cf41c0`, report #119; state count 119; history 1,394 entries; archive tree count not rechecked |
-| main 자료 상태 | history.json 1,394 entries; state.json count 119 (당일 카운터); archive tree count는 이번 조회에서 미확인 |
+| main 최신 관찰 | HEAD `92e8ca7aa4a86b38627a1d8e9535e5b0463a8392`, report #125; state count 125; history 1,394 entries; archive tree count not rechecked |
+| main 자료 상태 | history.json 1,400 entries; state.json count 119 (당일 카운터); archive tree count는 이번 조회에서 미확인 |
 | 작업 브랜치 아카이브 | 최근 strict audit 기준 990개 / history 990개 정합 |
 | main과 작업 브랜치 | diverged; ahead/behind 수치는 변경되므로 새 세션마다 동적 재조회. merge base `b425b6db591e34abe003522157cf97ecf2240d9f` |
 | 최근 코드 검증 | Phase D hardening exact HEAD CI #43384495713 success: 140 tests, archive 990/990, consistent=true |
@@ -158,7 +158,7 @@
 
 ## 2026-11-13 진행 업데이트 — main reports #38–#42
 
-- main latest observation: report #119; HEAD `6491a5db6ea35ea97a6d97e85bac43f9a3cf41c0`; state count 119; history.json 1,394 entries. Archive tree count not rechecked; main remains read-only.
+- main latest observation: report #125; HEAD `92e8ca7aa4a86b38627a1d8e9535e5b0463a8392`; state count 125; history.json 1,400 entries. Archive tree count not rechecked; main remains read-only.
 - reports #38–#42 원문과 history metadata를 다시 조회하고 blob SHA를 기록했다.
 - 신규 [#38–#42 감사](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_38_42_2026-11-13.md): 4 CONFLICT / 1 PARTIALLY_VERIFIED / 0 VERIFIED; direct quote reuse 0/5.
 - 주요 교정: Annex II point 8(d)는 안전한 폐기 및 사용자 데이터 제거 방법에 관한 지침 제공이며, 모든 제품에 복구 불가능한 NAND/EEPROM 소거 기능을 명시한 문구가 아니다. Annex II point 7/8은 사용자 정보·지침서 요구다. 무상 업데이트는 Annex I Part II(8), 지원기간은 Article 13(8), 제공된 업데이트 가용성은 Article 13(9). CVD/연락/공개/안전 배포는 Part II(4)–(7)로 구분한다.
@@ -169,10 +169,10 @@
 
 
 ## 2026-11-13 — 최신 Git/CI 상태 재확인
-- 작업 브랜치 HEAD: `3bec6968cf214a3748595a465b01cd308bf7dc25`; main HEAD: `e9bc84bfb5ccc7c18a69298cbd8f88376691b18c` (#93).
+- 작업 브랜치 HEAD: `ced168745cd19400ba29131a495c3bf5c3f924eb`; main HEAD: `92e8ca7aa4a86b38627a1d8e9535e5b0463a8392` (#125). Compare: diverged, ahead 968 / behind 416; merge/rebase 금지.
 - main `research_archive` 실제 tree 파일 1,368개, `history.json` 1,368개, `state.json` count 93. Tree 응답 truncated=false로 확인.
 - main 대비 작업 브랜치: diverged, ahead 657 / behind 384. Merge base `b425b6db591e34abe003522157cf97ecf2240d9f`. merge/rebase/sync 금지 유지.
-- 최신 작업 commit `3bec6968cf214a3748595a465b01cd308bf7dc25`은 문서 8개만 변경했다. main.py, production workflow, prompts, contracts, schema, evidence bundle 등 보호 파일 변경 없음.
+- 현재 work branch HEAD `ced168745cd19400ba29131a495c3bf5c3f924eb`까지의 이번 연속 작업은 문서만 변경했다. main.py, production workflow, prompts, contracts, schema, evidence bundle 등 보호 파일 변경 없음.
 - 해당 exact HEAD의 Actions run은 조회되지 않았고 commit status는 pending / 0 statuses다. 따라서 이번 문서 변경에 대한 CI는 **미실행/미확인**이다. 마지막 확인된 이전 CI success(140 tests)는 과거 commit에 대한 결과이지 현재 HEAD의 CI 결과가 아니다.
 
 
@@ -317,7 +317,7 @@
 ## #8–#57 원본 Claim ID 확장 후 기준선 갱신
 
 - Claim Evidence Ledger의 제31절 제목/범위를 #13–#57로 확장하고, #53–#57 다섯 건의 원본·SHA·파일 중심 claim ID를 확인했다.
-- 이전 스냅샷의 기록이다. 이후 #8–#57 원자 분해 308개 및 #58–#62 원자 분해 21개를 완료했고, 현재 Ledger는 345개 atomic claims / 400 unique IDs다.
+- 이전 스냅샷의 기록이다. 이후 #8–#57 원자 분해 324개 및 #58–#62 원자 분해 21개를 완료했고, 현재 Ledger는 345개 atomic claims / 400 unique IDs다.
 - Ledger 확장 commit: `e1b9ee24f1fe185a0fe8e9945a59836ba74246c7`. 이 commit은 docs/CLAIM_EVIDENCE_LEDGER.md만 변경했고 exact HEAD CI runs/status는 0/0으로 미실행·미확인.
 - main #112와 비교: diverged, ahead 788 / behind 403, merge base `b425b6db591e34abe003522157cf97ecf2240d9f`.
 - 이 continuity board 갱신이 다음 docs-only commit이므로 새 exact HEAD/CI는 갱신 직후 다시 확인한다.
@@ -333,10 +333,10 @@
 - 다음 P0: #8–#57 원자 주장·인용 분해와 상위 문서 전수 대조. 그 후 main-only #63–#67.
 - 이번 작업은 문서 전용이다. exact final documentation HEAD의 CI/Actions 결과는 별도 확인 전까지 미확인으로 유지한다.
 
-## 사후 기준선 — main report #119 (2026-11-13)
+## 사후 기준선 — main report #125 (2026-11-13)
 
 - #58–#62 감사 시점 main 기준선은 report #118 / history 1,393 entries였다.
-- 후속 자동 아카이브로 main이 report #119까지 진행: HEAD \`6491a5db6ea35ea97a6d97e85bac43f9a3cf41c0\`, state count 119, history 1,394 entries.
+- 후속 자동 아카이브로 main이 report #125까지 진행: HEAD \`6491a5db6ea35ea97a6d97e85bac43f9a3cf41c0\`, state count 125, history 1,394 entries.
 - #119는 아직 감사하지 않았다. 다음 감사 시작점은 #63–#67이며, 배치 시작 시 main HEAD/state/history를 다시 조회한다.
 - main/work branch는 diverged. ahead/behind는 변경되므로 매 세션 동적으로 확인하고 merge/rebase/sync하지 않는다.
 
@@ -413,7 +413,7 @@
 
 ## 2026-11-13 authoritative snapshot — #8–#62 audit and claim normalization
 
-- main latest observed: report #119; HEAD \`6491a5db6ea35ea97a6d97e85bac43f9a3cf41c0\`; state count 119; history.json 1,394 entries. Archive tree count was not rechecked. main remains read-only.
+- main latest observed: report #125; HEAD \`6491a5db6ea35ea97a6d97e85bac43f9a3cf41c0\`; state count 125; history.json 1,400 entries. Archive tree count was not rechecked. main remains read-only.
 - main-only audit scope #8–#62: 55 consecutive, non-random reports; file-level results **40 CONFLICT / 15 PARTIALLY_VERIFIED / 0 VERIFIED**; direct quote reuse **0/55**. This is not a statistical error rate for the full archive.
 - Claim Evidence Ledger: 55 file-level source records + 345 atomic claims = **400 unique IDs**, duplicate IDs 0. All 345 atomic claims have one or more Canonical IDs. Canonical register defines 46 requirements; 43 are referenced by legacy atomic claims, and 3 are forward-mapped to matrix requirements.
 - #8–#57 (50 reports) and #58–#62 (5 reports) have completed atomic decomposition. Individual legal facts marked VERIFIED do not promote a conflicting source file to VERIFIED.
@@ -426,3 +426,13 @@
 - Canonical mapping for Annex I Part I(2)(l)/(2)(m) and Annex II(8)(d) completed.
 - TST-LOG-01/02 and TST-ERASE-01..04 are registered, all NOT_RUN. TST-NVM-01..03 remain distinct integrity/access tests.
 - Threat model AST-11 / TH-19 and architecture/implementation plan updated. No DUT or production hardware test executed.
+
+## 2026-11-13 current Git baseline — main #125 / work branch divergence
+
+- main HEAD: report #125, SHA \`92e8ca7aa4a86b38627a1d8e9535e5b0463a8392\`; state.json count 125 (daily counter), history.json 1,400 entries; current main tree \`7679729e1b128eacf26034346dafb29aa8da610b\`.
+- Work branch \`cra-project-foundation\` HEAD: \`ced168745cd19400ba29131a495c3bf5c3f924eb\`.
+- Git compare main..work branch: **diverged**, ahead 968 / behind 416, merge base \`b425b6db591e34abe003522157cf97ecf2240d9f\`. Do not merge, rebase, sync or write to main. This divergence includes historical branch differences and is not created by this documentation-only continuation.
+- Main archive source revalidation: all 55 audited file paths and blob SHAs for reports #8–#62 match the current main tree (55/55, missing 0, mismatches 0).
+- Latest push CI on current work-branch HEAD: run 43408438728 SUCCESS; 140 tests passed; strict archive audit 990/990, unique paths 990, missing/orphan/duplicate/malformed 0, consistent=true. The branch workflow's state.count=3 is a daily counter, not an archive total. No PR-triggered workflow run and no PR was created.
+- Current branch commits in this continuation are documentation-only; no additional production code changes were made here. Existing branch-vs-main code differences remain unmerged and must be reviewed separately.
+
