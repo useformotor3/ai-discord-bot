@@ -401,3 +401,11 @@ main 브랜치의 #28–#32를 archive 원문과 기존 EUR-Lex 현행 법령 �
 Conformity assessment 본문은 Article 32, 모듈은 Annex VIII다. Module A=internal control, B=EU-type examination, C=internal production control, H=full quality assurance. DoC Article 28, CE Article 30, technical documentation Article 31/Annex VII다.
 
 실제 servo drive Class I/II 분류와 평가 경로는 제품 SKU, 공급 경계, core functionality, 내장/별도 네트워크 인터페이스, MCU 보안 기능 자료가 확보되기 전까지 UNVERIFIED다. #37 원본은 Article 24/20/23 오기와 Annex/Module 혼합으로 file-level CONFLICT이며 직접 인용 재사용 0/5다. 상세 근거는 [#33–#37 감사](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_33_37_2026-11-13.md) 및 [법령 기준선](CRA_VERIFIED_BASELINE_2026-11-12.md)를 따른다.
+
+## 2026-11-13 evidence status — main archive #8–#62
+
+The main-only audit covers 55 consecutive, non-random archive reports (#8–#62): 40 CONFLICT, 15 PARTIALLY_VERIFIED, 0 VERIFIED; direct quote reuse 0/55. This is not a statistical error rate for the full archive.
+
+The Claim Evidence Ledger now contains 55 file-level source records and 345 atomic claim records (400 unique IDs, zero collisions). Every atomic claim is mapped to one or more Canonical Requirement IDs. The canonical register contains 45 requirements, including all Annex I Part I control families, Annex I Part II vulnerability handling, Articles 13–14, product classification, conformity assessment, technical documentation, DoC/CE, penalties and transition rules.
+
+The atomic decomposition preserves the distinction between a verified legal fact and the file-level verdict of the source report. Product-specific applicability, servo-drive Class I/II classification, exact MCU order code and DUT test evidence remain UNVERIFIED/NOT_RUN. The next P0 is full cross-document reconciliation of the 345 claims against this report, Volume 2, PSIRT SOP, both traceability matrices and the test evidence register.
