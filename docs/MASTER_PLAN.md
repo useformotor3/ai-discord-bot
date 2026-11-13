@@ -610,3 +610,9 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
   3. 취약점·지원기간 표(Article 13(8)/(9), Article 14, Annex I Part II(1)–(8)).
 - 다음 #48–#52 감사는 위 세 문서 산출물과 병행하며, 단순 아카이브 판정 반복에 머물지 않는다.
 
+## 2026-11-13 — 실무 산출물 v0.1 작성
+
+- [CRA_PRODUCT_CLASSIFICATION_AND_ACCESS_CONTROL_MATRIX.md](CRA_PRODUCT_CLASSIFICATION_AND_ACCESS_CONTROL_MATRIX.md) 작성.
+- 제품 분류 판단 게이트, Annex III category cross-check, Article 32 route, 접근통제 legal-vs-design matrix, 검증 증거 목록 및 미확인 입력을 한 문서로 구성했다.
+- 다음 개정: 실제 SKU/매뉴얼/제품 경계 확보 후 classification record를 제품별로 완성하고, 접근통제 설계/시험 항목에 실제 HW/FW architecture evidence를 연결한다.
+

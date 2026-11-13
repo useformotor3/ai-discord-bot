@@ -326,3 +326,7 @@ main 브랜치의 #28–#32를 archive 원문과 기존 EUR-Lex 현행 법령 �
 
 #43–#47은 적합성 평가/제품 분류, 접근통제, 취약점 처리, CVD 및 무상 보안 업데이트를 다뤘다. 감사 결과 3건 CONFLICT, 2건 PARTIALLY_VERIFIED이며 직접 인용 재사용은 0/5다. 특히 CRA Annex III Class II에 IACS, PLC, servo drive가 열거되어 있다는 #43의 인용은 최종 법령과 다르다. 제품 분류는 Article 7의 core functionality 및 Commission Implementing Regulation (EU) 2025/2392의 technical description을 적용해야 한다. 적합성 평가 조항은 Article 32다. 접근통제는 Annex I Part I point 2(d)에 근거하지만 RBAC·least privilege 등의 구체 방식은 위험기반 구현수단으로 구분한다. 취약점 처리·지원기간·무상 업데이트는 Article 13(8)/(9), Article 14, Annex I Part II(1)–(8)의 서로 다른 요구로 관리한다. 상세 근거와 원본 SHA는 [#43–#47 감사 보고서](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_43_47_2026-11-13.md)에 기록했다.
 
+## 제품 분류 및 접근통제 실무 매트릭스
+
+아카이브 감사 결과를 실무에 적용하기 위해 [CRA 제품 분류 및 접근통제 매트릭스 v0.1](CRA_PRODUCT_CLASSIFICATION_AND_ACCESS_CONTROL_MATRIX.md)을 추가했다. 이 문서는 Article 7/Annex III와 Implementing Regulation (EU) 2025/2392에 따른 core-functionality 기반 분류 절차, Article 32 적합성 평가 경로, Annex I Part I point 2(d) 접근통제 요구 및 RBAC/least privilege 등 위험기반 설계 선택, 검증 증거 목록을 정리한다. 제품 SKU와 경계가 미확정이므로 제품별 분류는 UNVERIFIED로 유지한다.
+

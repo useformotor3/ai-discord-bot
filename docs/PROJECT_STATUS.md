@@ -717,3 +717,9 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - 제품 분류 정정: CRA Annex III Class II에 IACS/PLC/servo drive가 열거되지 않는다. Article 7 core functionality 및 Implementing Regulation (EU) 2025/2392 technical description을 적용해야 한다.
 - 다음 배치 #48–#52.
 
+## 2026-11-13 — 제품 분류/접근통제 매트릭스 v0.1
+
+- 신규 실무 산출물: [CRA_PRODUCT_CLASSIFICATION_AND_ACCESS_CONTROL_MATRIX.md](CRA_PRODUCT_CLASSIFICATION_AND_ACCESS_CONTROL_MATRIX.md).
+- 범위: Article 7/Annex III/Implementing Regulation 2025/2392 분류 절차, Article 32 평가 경로, Annex I Part I 2(d) 접근통제 요구, 위험기반 구현 후보 및 시험 증거.
+- 제품별 적용성은 SKU/의도된 목적/제품 경계가 확보되지 않아 UNVERIFIED.
+

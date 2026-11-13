@@ -66,3 +66,7 @@
 - [#43–#47 상세 감사](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_43_47_2026-11-13.md): 3 CONFLICT / 2 PARTIALLY_VERIFIED / 0 VERIFIED; Raw Text Quote 재사용 0/5.
 - 핵심 정정: 서보 드라이브가 자동으로 Annex III Class II라는 근거 없음; 분류는 Article 7 core functionality 및 Implementing Regulation (EU) 2025/2392에 따라 검토. 적합성 평가는 Article 32. 접근통제는 Annex I Part I 2(d). 지원기간 Article 13(8), 업데이트 가용성 13(9), 무상 업데이트 Annex I Part II(8).
 
+## 실무 요구사항 매트릭스
+
+- [CRA 제품 분류 및 접근통제 매트릭스 v0.1](CRA_PRODUCT_CLASSIFICATION_AND_ACCESS_CONTROL_MATRIX.md): Article 7/Annex III/Implementing Regulation 2025/2392 기반 제품 분류 결정 게이트, Article 32 적합성 평가 경로, Annex I Part I 2(d) 접근통제의 법적 요구와 권장 구현·시험 증거를 분리.
+

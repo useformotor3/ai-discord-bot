@@ -191,3 +191,10 @@
 - 작업 branch 최신 기준(커밋 직전): `a1fd870632fdfdb0bf5ca04804515aaf0e37f868`; main 대비 diverged, ahead 659 / behind 389, merge base `b425b6db591e34abe003522157cf97ecf2240d9f`. main read-only, merge/rebase/sync 금지.
 - 다음 감사 #48–#52. 보호 파일은 이번 배치에서 수정하지 않는다.
 
+## 2026-11-13 실무 산출물 추가 — 제품 분류/접근통제 매트릭스 v0.1
+
+- 신규 문서: [CRA_PRODUCT_CLASSIFICATION_AND_ACCESS_CONTROL_MATRIX.md](CRA_PRODUCT_CLASSIFICATION_AND_ACCESS_CONTROL_MATRIX.md).
+- 목적: #43–#44 감사 결과를 실무용 분류 판단표와 접근통제 설계/시험 증거표로 전환.
+- 핵심: 서보 드라이브가 Annex III Class II라고 자동 가정하지 않는다. Article 7 core functionality, Annex III, Implementing Regulation 2025/2392 technical descriptions를 적용한다. 접근통제는 Annex I Part I 2(d); RBAC/least privilege/unique credentials 등은 법문과 구분된 위험기반 설계 수단이다.
+- SKU, intended purpose, 제품 경계 및 기술자료 미확보로 제품별 분류/적합성은 UNVERIFIED.
+
