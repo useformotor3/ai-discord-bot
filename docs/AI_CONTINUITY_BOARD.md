@@ -4,7 +4,7 @@
 - 기준일: 2026-11-13
 - 기준 작업 브랜치: `cra-project-foundation`
 - 마지막 확인 작업 HEAD: **브랜치 tip을 새 세션 시작 시 실시간 조회** (이 문서에 고정 SHA를 두지 않음)
-- 마지막 확인 main HEAD: `aaded0f4d0b84a1891b5801a6048c4de92511822` (Auto-archive: Research report #107)
+- 마지막 확인 main HEAD: `6491a5db6ea35ea97a6d97e85bac43f9a3cf41c0` (Auto-archive: Research report #119)
 - 상태: **상시 갱신 운영 기준 문서**
 - 목적: 새 대화에서도 AI가 목표·현황·성과·실패·미완료·다음 행동을 추측 없이 복원하고, 과정 작업에 매몰되지 않고 실제 CRA 산출물을 계속 완성하도록 한다.
 
@@ -28,10 +28,10 @@
 |---|---|
 | 작업 브랜치 | `cra-project-foundation` |
 | main 브랜치 | 읽기 전용. 병합·rebase·sync 금지 |
-| main 최신 관찰 | HEAD `aaded0f4d0b84a1891b5801a6048c4de92511822`, report #107; state count 107; history 1,382 entries; archive tree count not rechecked |
-| main 자료 상태 | history.json 1,382 entries; state.json count 107 (당일 카운터); archive tree count는 이번 조회에서 미확인 |
+| main 최신 관찰 | HEAD `6491a5db6ea35ea97a6d97e85bac43f9a3cf41c0`, report #119; state count 119; history 1,394 entries; archive tree count not rechecked |
+| main 자료 상태 | history.json 1,394 entries; state.json count 119 (당일 카운터); archive tree count는 이번 조회에서 미확인 |
 | 작업 브랜치 아카이브 | 최근 strict audit 기준 990개 / history 990개 정합 |
-| main과 작업 브랜치 | diverged, 작업 브랜치 ahead 690 / behind 398; merge base `b425b6db591e34abe003522157cf97ecf2240d9f` (2026-11-13 재비교) |
+| main과 작업 브랜치 | diverged; ahead/behind 수치는 변경되므로 새 세션마다 동적 재조회. merge base `b425b6db591e34abe003522157cf97ecf2240d9f` |
 | 최근 코드 검증 | Phase D hardening exact HEAD CI #43384495713 success: 140 tests, archive 990/990, consistent=true |
 | 최근 문서 검증 | continuity/audit 갱신 후 CI #43384628893 success: 140 tests, archive 990/990, consistent=true |
 | 보호 파일 | main.py, production run.yml, V2 prompt/contract, Phase C bundle/schema/V3 contract 변경 금지. 별도 승인 없이 수정하지 않음 |
@@ -101,24 +101,23 @@
 
 ## 6. 현재 우선순위
 
-### P0 — 진행 중
-1. **main archive 보고서 #33 이후 최신까지 감사 대기열 복원 및 우선순위화.** 현재 main tip은 #91이며, 기존 queue가 #27에서 멈춰 있어 #28–#91 범위의 추적성을 최신화해야 한다.
-2. 연속 보고서 #28–#32의 원문/인용 오류를 별도 감사 보고서로 기록하고 queue/claim ledger에 연결.
-3. 법령 오류가 반복된 영역(Article 13(8)/(9), Article 14, Annex I Part II(2)/(5)–(8), Annex II, Annex III 분류)을 통합 정정표로 제1권 보고서에 반영.
-4. 기존 제1권/제2권/아키텍처/추적성 매트릭스 사이의 requirement ID와 근거 링크 정합성 확인.
+### P0 — 현재 진행
+1. **#8–#57 개별 주장·직접 인용 원자 분해:** 파일 중심 Claim ID를 세부 원자 Claim ID로 분해하고 공식 원문·정확한 조항/locator·정정·반증과 연결.
+2. **상위 문서 전수 대조:** Claim Evidence Ledger와 제1권·제2권·PSIRT SOP·요구사항/통합 매트릭스·위협 모델·시험 증거 대장의 문장/요구 ID/상태/예외를 교차 대조.
+3. #13–#57 영문 상세 감사 문서를 원본 보존 + 한국어 상세판 또는 한국어 본문으로 전환.
+4. 다음 main-only 감사 #63–#67. 배치 시작 시 main HEAD/state/history를 재조회하고 원본 SHA를 고정한다.
 
 ### P1 — 이어서 진행
-5. main archive의 최신 조사물 중 반복이 적은 실질 주장만 추출해 claim-level audit. “새 주제” 프롬프트 문구를 그대로 신뢰하지 말고 실제 본문 중복을 판단.
-6. ST AN5156 Rev14 등 공식 제조사 자료를 source register와 claim ledger에 연결. 최신 revision 인덱스만 확인된 자료는 본문을 확인할 때까지 인용 금지.
-7. 실제 ST MCU 부품번호가 없으므로 일반 ST 기능 설명과 부품별 적용성 결론을 분리.
-8. 제품 입력자료가 확보되면 Product Boundary & CRA Applicability Decision Record 작성.
-9. PSIRT SOP에 역할/연락처/T0 기록 필드를 보완하고 tabletop 시나리오를 작성하되, 실행은 실제 조직 승인 후.
+5. ST AN5156 등 제조사 공식 자료를 source register/claim ledger에 연결하되, 최신 revision 인덱스만 확인된 자료는 본문 확인 전 인용 금지.
+6. 실제 ST MCU 주문 코드가 없으므로 일반 ST 기능 설명과 부품별 적용성 결론을 분리한다.
+7. 제품 입력자료가 확보되면 Product Boundary & CRA Applicability Decision Record를 작성한다.
+8. PSIRT 역할/연락처/T0 기록 필드 보완 및 tabletop 설계. 실행은 조직 승인 후.
 
 ### P2 — 보류/승인 필요
-10. E3 real official source fetch: 별도 승인 전 실행 금지.
-11. main.py, production workflow, Gemini V2 prompt/contract, production integration: 별도 change proposal 및 명시적 승인 전 수정 금지.
-12. main 브랜치 merge/rebase/sync: 명시적 승인 전 금지.
-13. 유료 서비스·유료 API·외부 배포: 사용자 승인 없이 실행 금지.
+9. E3 real official source fetch: 별도 승인 전 실행 금지.
+10. main.py, production workflow, Gemini V2 prompt/contract, production integration: 별도 change proposal 및 명시적 승인 전 수정 금지.
+11. main 브랜치 merge/rebase/sync: 명시적 승인 전 금지.
+12. 유료 서비스·유료 API·외부 배포: 사용자 승인 없이 실행 금지.
 
 ## 7. 완료 판정 원칙
 
