@@ -2387,3 +2387,11 @@ Batch result: 5/5 CONFLICT, 0 PARTIALLY_VERIFIED, 0 VERIFIED; 0/5 Raw Text Quote
 - 주요 정정: Article 14(8)의 machine-readable user notification은 특정 신고 사건에 대해 where appropriate 적용; CVD는 Annex I Part II(5), contact address는 Part II(6), security updates는 Part II(2)/(7)/(8)로 분리; support period Article 13(8), update availability Article 13(9); component vulnerability report direction Article 13(6).
 - 상세: [#48–#52 감사 보고서](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_48_52_2026-11-13.md).
 - 다음 감사 시작점 #53. 배치 시작 시 main HEAD/history/state를 다시 확인한다.
+
+
+## 2026-11-13 — main reports #53–#57 완료
+
+- #53–#57: 1 CONFLICT / 4 PARTIALLY_VERIFIED / 0 VERIFIED; direct quote reuse 0/5.
+- #38 판정 재검토: Annex I Part I(2)(m) 데이터·설정 영구 제거 기능 결과 요구를 누락한 기존 판정을 PARTIALLY_VERIFIED로 수정.
+- 누적 #8–#57: 50건, 40 CONFLICT / 10 PARTIALLY_VERIFIED / 0 VERIFIED; 0/50 direct quote reuse.
+- 다음 감사 배치: #58–#62. 배치 시작 시 main HEAD/state/history.json을 새로 조회하고 날짜+count+경로+blob SHA로 원본을 고정한다.
