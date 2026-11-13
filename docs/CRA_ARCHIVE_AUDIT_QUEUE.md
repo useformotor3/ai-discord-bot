@@ -2493,3 +2493,10 @@ Batch result: 5/5 CONFLICT, 0 PARTIALLY_VERIFIED, 0 VERIFIED; 0/5 Raw Text Quote
 - Claim Evidence Ledger에 원자 Claim ID 32개 추가.
 - Part I 2(m) secure erasure, Annex II 8(d) disposal instructions, Article13(18)/(19) user info/end-of-support, Article13(8)/(9), PartII(8), Article14/69(3)을 분리.
 - #8–#57 원자 분해 50건 전체가 완료됨. 다음 P0는 300+ Claim ID와 제1권/제2권/SOP/매트릭스/시험 대장의 전수 대조 및 중복/상충 정리.
+
+## 2026-11-13 — #8–#62 atomic decomposition complete
+
+- 55 main archive reports (#8–#62) audited: 40 CONFLICT / 15 PARTIALLY_VERIFIED / 0 VERIFIED; direct quote reuse 0/55. Consecutive, non-random sample.
+- Ledger: 55 file-level source records + 345 atomic claims = 400 unique IDs; 0 collisions; 45 canonical requirements; 345/345 atomic claims mapped.
+- Next P0 is canonical cross-document reconciliation, not another isolated audit batch: Volume 1, Volume 2, PSIRT SOP, requirements matrix, integrated matrix and test evidence register.
+- After P0 reconciliation, proceed with main-only audit #63–#67 using a fresh main HEAD/state/history snapshot.
