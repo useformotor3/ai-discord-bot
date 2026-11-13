@@ -181,3 +181,16 @@ CRA Single Reporting Platform을 통한 제출 구조를 기준으로 한다. �
 - Annex I Part II(4) 수정 취약점 공개, (5) CVD 정책, (6) 취약점 신고 연락처, (7) 안전한 업데이트 배포, (8) 원칙적 무상 보안 업데이트를 서로 구분한다.
 - 지원기간은 Article 13(8), 지원기간 중 제공된 각 보안 업데이트의 보존·가용성은 Article 13(9)로 관리한다.
 - 상세 원문·SHA·반증: [#48–#52 감사 보고서](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_48_52_2026-11-13.md).
+
+## #58–#62 감사 정정 — 신고 트리거·수신자·기한
+
+- 일반 취약점 접수·처리·CVD는 Article 13(8), Annex I Part II(5)/(6)에 따라 모두 관리한다. 그러나 모든 일반 취약점이 Article 14 의무 신고 대상은 아니다.
+- Article 14 신고 트리거는 (1) actively exploited vulnerability, (2) 제품 보안에 영향을 미치는 severe incident 두 가지로 분리한다.
+- actively exploited vulnerability: 24h early warning, 72h vulnerability notification, corrective/mitigating measure가 이용 가능해진 후 14일 이내 final report.
+- severe incident: 24h early warning, 72h incident notification, incident notification 제출 후 1개월 이내 final report.
+- 제조자는 Article 14(7)에 따라 지정 CSIRT의 전자 신고 엔드포인트/단일 신고 플랫폼을 이용하며 ENISA에 동시에 접근 가능하게 한다.
+- 시장감시기관은 제조자의 Article 14 직접 신고 수신자로 적지 않는다. CSIRT가 Article 16(3)에 따라 필요한 정보를 시장감시기관에 제공한다.
+- Article 14(8) 사용자 통지는 actively exploited vulnerability 또는 severe incident에 대한 통지이며, 영향 사용자와 적절한 경우 모든 사용자에게 제공한다. 기계 판독 가능 형식은 where appropriate 조건이다.
+- CVD 신고 연락 주소(Part II(6)), 사용자 단일 연락 창구(Article 13(17)), Annex II(2) 사용자 정보는 각각 확인한다.
+
+원문 대조: [main reports #58–#62 감사](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_58_62_2026-11-13.md).
