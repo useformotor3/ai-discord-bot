@@ -329,7 +329,7 @@
 - #58–#62 감사: 5 PARTIALLY_VERIFIED / 0 CONFLICT / 0 VERIFIED; direct quote reuse 0/5.
 - 누적 #8–#62: 55건, 40 CONFLICT / 15 PARTIALLY_VERIFIED / 0 VERIFIED; direct quote reuse 0/55. 비무작위 연속 표본.
 - CVD Part II(5), contact address Part II(6), free updates Part II(8), Article14 active exploitation/severe incident two-track reporting, 24h/72h/14-day/1-month deadlines, logging Part I 2(l) 정정을 제1권/제2권/SOP/매트릭스에 반영.
-- 원자 Claim ID 20개를 Ledger에 추가. 제품별 적용성 UNVERIFIED, 실제 DUT 시험 NOT_RUN.
+- 원자 Claim ID 21개를 Ledger에 추가. 제품별 적용성 UNVERIFIED, 실제 DUT 시험 NOT_RUN.
 - 다음 P0: #8–#57 원자 주장·인용 분해와 상위 문서 전수 대조. 그 후 main-only #63–#67.
 - 이번 작업은 문서 전용이다. exact final documentation HEAD의 CI/Actions 결과는 별도 확인 전까지 미확인으로 유지한다.
 
@@ -343,7 +343,7 @@
 ## 2026-11-13 P0 진행 — #8–#12 원자 Claim ID 분해
 
 - #8–#12 원본과 blob SHA를 main에서 다시 대조했고, 기존 파일 단위 판정 5 CONFLICT / direct quote reuse 0/5를 유지했다.
-- Claim Evidence Ledger에 31개 원자 Claim ID를 추가했다. 일부 개별 법령 원칙은 VERIFIED이나 파일 전체 판정과 제품 적합성으로 확대하지 않는다.
+- Claim Evidence Ledger에 32개 원자 Claim ID를 추가했다. 일부 개별 법령 원칙은 VERIFIED이나 파일 전체 판정과 제품 적합성으로 확대하지 않는다.
 - 핵심 법령 구조: secure-by-default Part I 2(b), access control 2(d), attack surface 2(j); Class II는 Annex III; Part II는 vulnerability handling.
 - 다음 작업은 #13–#17 원자 주장 분해 후 #18–#57 순차 분해 및 정본 문서 교차 대조.
 
@@ -370,7 +370,7 @@
 
 ## 2026-11-13 P0 진행 — #28–#32 원자 Claim ID 분해
 
-- #28–#32 원본 경로/blob SHA 재확인, Ledger에 원자 Claim ID 25개 추가.
+- #28–#32 원본 경로/blob SHA 재확인, Ledger에 원자 Claim ID 33개 추가.
 - 파일 단위 판정 5 CONFLICT / direct quote reuse 0/5 유지. 개별 법령 사실 VERIFIED와 원본 파일 전체 CONFLICT를 구분.
 - support period/update availability/CVD/contact/free updates/Article 14 신고 범위/Annex VII technical documentation을 각각 분리.
 - 다음 원자 분해 대상 #33–#37.
