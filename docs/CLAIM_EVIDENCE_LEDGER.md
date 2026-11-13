@@ -949,7 +949,7 @@ Correct map: Annex I Part I(2)(c) for applicable automatic-update default/user c
 - #8–#57 file-level source records: 50개, ID suffix \`-FILE-001\`; 원본 경로/blob SHA/파일 단위 판정 추적.
 - #8–#62 atomic claim records: 345개, ID suffix \`-001\`, \`-002\` 등; 개별 법령 주장·인용·반증 추적.
 - CRA archive ID namespace 전체: 400개 unique ID (55 file-level + 345 atomic). 중복 ID 0개를 유지해야 한다.
-- Canonical requirement IDs: 45개. 345개 atomic claim의 Canonical ID 열을 정규화했으며, 하나의 claim은 여러 요구사항에 연결될 수 있다.
+- Canonical requirement IDs: 46개. 345개 atomic claim의 Canonical ID 열을 정규화했으며, 하나의 claim은 여러 요구사항에 연결될 수 있다.
 - 파일 단위 판정과 개별 claim 상태는 별개다. 개별 claim VERIFIED가 원본 파일 전체 VERIFIED를 의미하지 않는다.
 - 제품별 적용성/Class I/II, SKU·core functionality, 실제 DUT 시험은 관련 증거가 확보되기 전까지 UNVERIFIED/NOT_RUN이다.
 
@@ -967,6 +967,7 @@ Correct map: Annex I Part I(2)(c) for applicable automatic-update default/user c
 | CRA-REQ-AUTO-UPDATE-001 | Annex I Part I(2)(c) | 자동 보안 업데이트, 업데이트 통지 및 사용자 opt-out 등 정확한 조건을 충족한다. | 업데이트 UX, opt-out 시험, 알림 증거 |
 | CRA-REQ-SECURITY-LOGGING-001 | Annex I Part I(2)(l) | 관련 내부 활동(데이터·서비스·기능 접근/변경 포함)을 기록·모니터링하고 사용자 opt-out 메커니즘 제공. | 이벤트 목록, 로그 시험, opt-out 동작, 저장공간 포화 시험 |
 | CRA-REQ-SECURE-DATA-ERASURE-001 | Annex I Part I(2)(m), Annex II(8)(d) | 사용자가 모든 데이터·설정을 안전하고 쉽게 영구 제거할 수 있는 가능성과 폐기 지침 제공. 특정 NAND/EEPROM 소거 알고리즘은 지정하지 않음. | 데이터 저장 맵, 삭제 기능, 복구 가능성 시험 |
+| CRA-REQ-SECURE-DATA-TRANSFER-001 | Annex I Part I(2)(m) | 해당 데이터가 다른 제품/시스템으로 전송될 수 있는 경우 그 전송을 안전하게 수행. | transfer flow, confidentiality/integrity/authenticity checks, destination verification |
 | CRA-REQ-SBOM-001 | Annex I Part II(1) | 취약점 및 구성요소 식별·문서화, top-level dependencies를 포함한 machine-readable SBOM. | SBOM, component inventory, vulnerability mapping |
 | CRA-REQ-REMEDIATION-001 | Annex I Part II(2) | 취약점을 위험에 비례해 지체 없이 처리·시정하고, 기술적으로 가능하면 보안 업데이트를 기능 업데이트와 분리. | PSIRT triage, remediation SLA, release separation evidence |
 | CRA-REQ-SECURITY-TEST-001 | Annex I Part II(3) | 제품 보안의 효과적이고 정기적인 시험·검토. | 시험계획, 결과, 재시험 및 취약점 조치 기록 |
