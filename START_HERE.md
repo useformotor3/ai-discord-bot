@@ -411,3 +411,10 @@
 - main 최신 관찰 HEAD #118: \`75add8711d0254da7dea1766bb42f80fc04d36ee\`; state count 118; history 1,393 entries. Archive tree count는 미확인.
 - 다음 P0는 #8–#57 개별 주장·인용의 원자 분해와 상위 문서 전수 대조다. 이후 main-only 감사 #63–#67.
 - main은 읽기 전용이며 merge/rebase/sync 금지.
+
+## 사후 기준선 — main report #119 (2026-11-13)
+
+- #58–#62 감사는 report #118까지의 main 원본을 대상으로 했다.
+- 이후 main 자동 아카이브가 #119를 추가했다: HEAD \`6491a5db6ea35ea97a6d97e85bac43f9a3cf41c0\`, state count 119, history 1,394 entries.
+- #119는 아직 감사하지 않았다. 다음 감사 시작점은 #63–#67이며, 배치 시작 시 main HEAD/state/history를 다시 확인한다.
+- main은 read-only, merge/rebase/sync 금지.
