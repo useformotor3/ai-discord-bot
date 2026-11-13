@@ -390,15 +390,15 @@ Correct map: Annex I Part I(2)(c) for applicable automatic-update default/user c
 | #13–#27 | [감사 #13–#27](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_13_27_2026-11-13.md) | 15 CONFLICT | 0/15 | 날짜 포함 파일 중심 주장 ID 5개 등록; 개별 세부 주장 분해는 후속 |
 | #28–#32 | [감사 #28–#32](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_28_32_2026-11-13.md) | 5 CONFLICT | 0/5 | 개별 원자 claim ID 미등록 |
 | #33–#37 | [감사 #33–#37](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_33_37_2026-11-13.md) | 5 CONFLICT | 0/5 | 날짜 포함 파일 중심 주장 ID 5개 등록; 과거 날짜의 별도 ID와 구분 |
-| #38–#42 | [감사 #38–#42](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_38_42_2026-11-13.md) | 4 CONFLICT / 1 PARTIALLY_VERIFIED | 0/5 | 날짜 포함 파일 중심 주장 ID 5개 등록; 과거 날짜의 별도 ID와 구분 |
+| #38–#42 | [감사 #38–#42](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_38_42_2026-11-13.md) | 3 CONFLICT / 2 PARTIALLY_VERIFIED | 0/5 | #38 재검토로 PARTIALLY_VERIFIED 정정; 날짜 포함 파일 중심 주장 ID 5개 등록 |
 | #43–#47 | [감사 #43–#47](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_43_47_2026-11-13.md) | 3 CONFLICT / 2 PARTIALLY_VERIFIED | 0/5 | 날짜 포함 파일 중심 주장 ID 5개 등록; 과거 날짜의 별도 ID와 구분 |
 | #48–#52 | [감사 #48–#52](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_48_52_2026-11-13.md) | 3 CONFLICT / 2 PARTIALLY_VERIFIED | 0/5 | CRA-ARCH-MAIN-20261113-048–052-001 다섯 레코드 등록 |
 
 ### 집계와 한계
 
 - #13–#52: 40건 중 35 CONFLICT / 5 PARTIALLY_VERIFIED / 0 VERIFIED, 직접 인용 재사용 0/40.
-- #8–#47: 40건 중 37 CONFLICT / 3 PARTIALLY_VERIFIED / 0 VERIFIED, 직접 인용 재사용 0/40. #8–#12의 5 CONFLICT는 이전 누적 집계에서 역산한 값이며, 원본 감사 문서·개별 판정 링크를 이번 대조에서 재확인하지 못했다.
-- #8–#52: 45건 중 40 CONFLICT / 5 PARTIALLY_VERIFIED / 0 VERIFIED, 직접 인용 재사용 0/45. 각 보고서에 날짜 포함 파일 중심 주장 ID 1개씩 총 45개를 등록했다.
+- #8–#47: 40건 중 36 CONFLICT / 4 PARTIALLY_VERIFIED / 0 VERIFIED, 직접 인용 재사용 0/40. #8–#12의 5 CONFLICT는 이전 누적 집계에서 역산한 값이며, 원본 감사 문서·개별 판정 링크를 이번 대조에서 재확인하지 못했다.
+- #8–#52: 45건 중 39 CONFLICT / 6 PARTIALLY_VERIFIED / 0 VERIFIED, 직접 인용 재사용 0/45. 각 보고서에 날짜 포함 파일 중심 주장 ID 1개씩 총 45개를 등록했다.
 - 이 결과는 날짜/번호로 연속 선택한 비무작위 표본이다. 전체 main 아카이브의 오류율로 일반화하지 않는다.
 - Ledger에는 #8–#52 각 파일의 날짜·경로·SHA·판정·중심 정정 내용을 연결한 파일 중심 claim ID 45개가 등록되었다. 다만 한 파일 안의 여러 법적 주장·직접 인용을 모두 별도 원자 claim으로 분해한 것은 아니므로 세부 claim coverage는 미완료다.
 - 다음 P0: #8–#52의 날짜+원본 경로+blob SHA를 기준으로 감사 문서와 Ledger ID를 1:1 대조하고, 중복/누락/상태 차이를 폐쇄한다.
@@ -440,7 +440,7 @@ Correct map: Annex I Part I(2)(c) for applicable automatic-update default/user c
 | CRA-ARCH-MAIN-20261113-035-001 | #35 | `research_archive/2026-11-13_025045.md` | `842b48aa5ba2382ce58cdddcb1f8b836c5336eb6` | CONFLICT | Secure-by-default 및 초기 설정을 보편적 비밀번호 변경 의무로 확대; Annex I Part I(2)(b) 및 위험기반 설계 구분. |
 | CRA-ARCH-MAIN-20261113-036-001 | #36 | `research_archive/2026-11-13_025531.md` | `06f32803648a15f7638add752a8b9a064d4ee3f9` | CONFLICT | 무상 업데이트와 지원기간 조항 혼동; Article 13(8)/(9), Annex I Part II(8) 분리. |
 | CRA-ARCH-MAIN-20261113-037-001 | #37 | `research_archive/2026-11-13_030054.md` | `a8f77a2ecc3bc2301ab87a5f90d2ae6626489eab` | CONFLICT | Important Product 분류 및 적합성 평가 경로의 근거 부족; Article 7/Annex III/시행규정 및 Article 32 기준. |
-| CRA-ARCH-MAIN-20261113-038-001 | #38 | `research_archive/2026-11-13_030533.md` | `f66d4335654b3b8b9836dcaebe1205eae731c532` | CONFLICT | Annex II point 8(d)의 안전한 폐기·데이터 제거 사용자 지침을 실제 데이터 sanitization 기능 의무로 확대. |
+| CRA-ARCH-MAIN-20261113-038-001 | #38 | `research_archive/2026-11-13_030533.md` | `f66d4335654b3b8b9836dcaebe1205eae731c532` | PARTIALLY_VERIFIED | Annex II point 8(d)의 안전한 폐기·데이터 제거 사용자 지침을 실제 데이터 sanitization 기능 의무로 확대. |
 | CRA-ARCH-MAIN-20261113-039-001 | #39 | `research_archive/2026-11-13_031039.md` | `9dfae4ba67f48e056f222bcc86ca3189f8bb384a` | CONFLICT | Article 11 오기 및 지원기간·업데이트 가용성·무상 업데이트 혼합; Article 13(8)/(9), Part II(8)로 정정. |
 | CRA-ARCH-MAIN-20261113-040-001 | #40 | `research_archive/2026-11-13_031539.md` | `449b601a1df9bef3f3acd789ea2a7fcba0804ea2` | PARTIALLY_VERIFIED | 사용자 정보·지침 제공 주제는 타당하나 Annex II 위치와 일부 계정/포트/로그 요구를 보편 의무로 과장. |
 | CRA-ARCH-MAIN-20261113-041-001 | #41 | `research_archive/2026-11-13_032039.md` | `e8d5ef7ead0cb481d158597110e98bdcd006b07c` | CONFLICT | Annex I Part II(2)–(8) 의무 혼합; 특정 서명·rollback/fail-safe 구조를 CRA의 보편 의무로 단정. |
@@ -460,3 +460,10 @@ Correct map: Annex I Part I(2)(c) for applicable automatic-update default/user c
 - #8–#12의 원본 감사 파일과 개별 archive SHA를 재확인했고, 날짜 포함 claim ID 5개를 아래 추적 표에 등록했다.
 - 위 ID는 날짜가 포함된 신규 감사 레코드다. 과거 날짜의 `CRA-ARCH-043-001` 등 번호 기반 레코드와 동일하다고 간주하지 않는다.
 - 이 표의 판정은 파일 단위 중심 주장이다. 완전한 원자 주장 분해는 #13–#52 감사 보고서의 세부 claim과 추가 대조해야 한다.
+
+
+## #38 재검토에 따른 판정 정정 — 2026-11-13
+
+- Annex I Part I point 2(m)를 누락했던 기존 #38 감사의 파일 판정을 CONFLICT에서 PARTIALLY_VERIFIED로 정정했다.
+- Part I 2(m)는 해당되는 제품에서 사용자가 모든 데이터와 설정을 안전하고 쉽게 영구 제거할 수 있는 가능성을 요구하고, Annex II 8(d)는 안전한 폐기/사용자 데이터 제거 방법의 지침을 요구한다.
+- #8–#47 누계는 40건 중 36 CONFLICT / 4 PARTIALLY_VERIFIED / 0 VERIFIED로 정정한다. #8–#52 누계는 45건 중 39 CONFLICT / 6 PARTIALLY_VERIFIED / 0 VERIFIED다. 직접 인용 재사용은 계속 0/45.
