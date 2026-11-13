@@ -344,3 +344,7 @@
 - 운영 자동화 코드 변경은 [PROTECTED_CODE_CHANGE_PROPOSAL_V1.md](docs/PROTECTED_CODE_CHANGE_PROPOSAL_V1.md)를 먼저 검토하고 사용자 별도 승인 후 진행한다.
 - 보고서 파일을 실제 산출물로 계속 생성한다. 파일이 커지면 권/장 분리, 마스터 인덱스, 안정적 요구사항/출처/시험 ID를 유지한다.
 - 법령 VERIFIED와 제품 적용 VERIFIED를 분리한다. 미확인 제품 사실·시험 미실시는 절대 완료 처리하지 않는다.
+
+
+- 마스터 보고서 인덱스: [MASTER_REPORT_INDEX.md](docs/MASTER_REPORT_INDEX.md)
+- Article 14 신고 대응 절차: [CRA_ARTICLE14_PSIRT_RESPONSE_SOP_V1.md](docs/CRA_ARTICLE14_PSIRT_RESPONSE_SOP_V1.md)
