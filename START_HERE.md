@@ -377,3 +377,13 @@
 ## 최신 감사 진행 위치 (2026-11-13)
 - main reports #8–#37 수동 감사 완료. 최신 배치 #33–#37 결과 5 CONFLICT / direct quote reuse 0/5. 다음 대상 #38.
 - 감사 문서 CI #43386808125 success: 140 tests, archive/history 990/990 consistent=true.
+
+
+## 2026-11-13 — 한국어 정본 및 최신 통합 기준
+
+- 최종 산출물 기본 언어는 한국어다. 법령명·조항·표준·제조사 문서명·부품번호·원문 인용·상태 코드는 영어 원문을 유지할 수 있다.
+- [AI 행동강령](docs/AI_RULEBOOK.md) 제15절과 [문서 구조·전체 링크 지도](docs/CRA_DOCUMENT_ARCHITECTURE_AND_NAVIGATION.md) 제11절을 적용한다.
+- 최신 감사 범위는 #8–#52이며, 누적 45건 중 40 CONFLICT / 5 PARTIALLY_VERIFIED / 0 VERIFIED다. 비무작위 연속 표본이며 전체 archive 오류율이 아니다.
+- 다음 main-only 감사 시작점은 #53이다. 배치 시작 시 main HEAD/state/history를 다시 조회한다.
+- #43–#47 및 #48–#52 정정은 제1권·제2권·PSIRT SOP·MASTER_REPORT와 관련 매트릭스에 단계적으로 통합한다. 전수 문서 대조는 아직 진행 중이다.
+- 현재 기준선의 숫자와 CI 상태는 [AI_CONTINUITY_BOARD](docs/AI_CONTINUITY_BOARD.md) 및 [PROJECT_STATUS](docs/PROJECT_STATUS.md)에서 새 세션마다 다시 확인한다. 과거 로그의 main HEAD·감사 위치·CI 성공은 최신 기준선으로 재사용하지 않는다.
