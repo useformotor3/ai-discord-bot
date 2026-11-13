@@ -163,6 +163,52 @@ class SourceEvidenceTests(unittest.TestCase):
         with self.assertRaisesRegex(SourceFetchError, "RESPONSE_TOO_LARGE"):
             fetcher.fetch("CRA_EURLEX_2024_2847")
 
+
+    def test_all_dns_answers_are_validated_and_passed_to_transport(self):
+        answers = [PUBLIC_IP, "8.8.8.8"]
+        calls = []
+        fetcher = OfficialSourceFetcher(
+            FakeSession([FakeResponse()]),
+            resolver=lambda host: calls.append(host) or answers,
+        )
+        fetcher.fetch("CRA_EURLEX_2024_2847")
+        self.assertEqual(calls, ["eur-lex.europa.eu"])
+        self.assertEqual(
+            fetcher.session.calls[0][1]["pinned_ips"],
+            ("1.1.1.1", "8.8.8.8"),
+        )
+
+    def test_mixed_public_private_dns_answers_are_blocked_before_http(self):
+        session = FakeSession([FakeResponse()])
+        fetcher = OfficialSourceFetcher(
+            session,
+            resolver=lambda _host: [PUBLIC_IP, "10.0.0.1"],
+        )
+        with self.assertRaisesRegex(SourceFetchError, "NON_PUBLIC_ADDRESS_BLOCKED"):
+            fetcher.fetch("CRA_EURLEX_2024_2847")
+        self.assertEqual(session.calls, [])
+
+    def test_dns_resolution_is_not_repeated_by_fetcher_or_transport_contract(self):
+        resolver_calls = []
+        session = FakeSession([FakeResponse()])
+        fetcher = OfficialSourceFetcher(
+            session,
+            resolver=lambda host: resolver_calls.append(host) or [PUBLIC_IP],
+        )
+        fetcher.fetch("CRA_EURLEX_2024_2847")
+        self.assertEqual(resolver_calls, ["eur-lex.europa.eu"])
+        self.assertEqual(session.calls[0][1]["pinned_ips"], (PUBLIC_IP,))
+
+    def test_compressed_response_is_rejected_and_closed(self):
+        response = FakeResponse(headers={
+            "Content-Type": "text/html",
+            "Content-Encoding": "gzip",
+        })
+        fetcher = self.make_fetcher([response])
+        with self.assertRaisesRegex(SourceFetchError, "CONTENT_ENCODING_NOT_ALLOWED"):
+            fetcher.fetch("CRA_EURLEX_2024_2847")
+        self.assertTrue(response.closed)
+
     def test_empty_body_is_blocked(self):
         fetcher = self.make_fetcher([FakeResponse(body=b"")])
         with self.assertRaisesRegex(SourceFetchError, "EMPTY_RESPONSE"):
@@ -183,6 +229,7 @@ class SourceEvidenceTests(unittest.TestCase):
         fetcher = self.make_fetcher([FakeResponse()])
         fetcher.fetch("CRA_EURLEX_2024_2847")
         kwargs = fetcher.session.calls[0][1]
+        self.assertEqual(kwargs["pinned_ips"], (PUBLIC_IP,))
         self.assertFalse(kwargs["allow_redirects"])
         self.assertEqual(kwargs["timeout"], (5.0, 20.0))
         self.assertTrue(kwargs["stream"])
