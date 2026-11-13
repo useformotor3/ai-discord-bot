@@ -141,7 +141,7 @@
 
 - [Claim Evidence Ledger](CLAIM_EVIDENCE_LEDGER.md) 제30–31절에 2026-11-13 main reports #8–#52 총 45건의 날짜 포함 파일 중심 ID, archive path, blob SHA, 판정 및 중심 정정 요약을 연결했다.
 - #8–#12 상세 감사 문서를 재확인하고 누락되었던 원본 식별 정보를 보완했다.
-- 개별 보고서 안의 모든 하위 주장·직접 인용 블록에 대한 원자 분해는 별도 미완료 항목이다.
+- 이전 상태 기록이며 superseded. #8–#62 55개 보고서의 원자 주장 345개 분해 및 Canonical ID 매핑을 완료했다.
 
 
 ## #53–#57 감사 및 정본 통합 — 2026-11-13
@@ -164,13 +164,13 @@
 
 ## 원자 주장 추적성 진행 — #8–#12
 
-- #8–#12 원자 Claim ID 31개를 [Claim Evidence Ledger](CLAIM_EVIDENCE_LEDGER.md)에 등록했다.
+- #8–#12 원자 Claim ID 32개를 [Claim Evidence Ledger](CLAIM_EVIDENCE_LEDGER.md)에 등록했다.
 - 기존 파일 단위 판정은 5 CONFLICT / direct quote reuse 0/5로 유지한다.
 - 다음 원자 분해 대상은 #13–#17이며, #18–#57까지 순차 진행 후 상위 보고서·SOP·매트릭스와 전수 대조한다.
 
 ## #33–#37 원자 주장·제품 분류 법령 보완
 
-- #33–#37 원자 Claim ID 31개: [Claim Evidence Ledger](CLAIM_EVIDENCE_LEDGER.md).
+- #33–#37 원자 Claim ID 33개: [Claim Evidence Ledger](CLAIM_EVIDENCE_LEDGER.md).
 - #37의 Article 7/32/28/30/31 및 Annex VIII 정정과 Commission Implementing Regulation (EU) 2025/2392의 core-functionality test를 [CRA_VERIFIED_BASELINE](CRA_VERIFIED_BASELINE_2026-11-12.md) 및 제1권/제2권에 반영.
 - 실제 servo drive Class I/II 적용성은 UNVERIFIED. 별도 네트워크 인터페이스 제품과 host drive를 구분하고 제품 자료 확보 후 판단.
 
