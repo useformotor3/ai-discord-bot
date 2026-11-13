@@ -598,3 +598,11 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - No actual EUR-Lex/ST/TI URL fetch, Gemini API, production integration, `main.py`, production `run.yml`, v2 prompt/contract or main branch change.
 - E3 real official-source fetch/extraction fidelity remains NOT RUN and requires separate explicit user approval.
 - Details: `docs/PHASE_E_IMPLEMENTATION.md`.
+
+
+## 2026-11-13 — Archive audit #13–#27 and Phase E3 gate
+- Audited main-only reports #13–#27 from their exact auto-archive commits and archive blobs. Result: **15 CONFLICT / 0 PARTIALLY_VERIFIED / 0 VERIFIED**; 0/15 Raw Text Quote blocks accepted as current-law verbatim quotations.
+- Common material errors: Article 11/14 confusion; support period vs free updates vs update availability; Annex I Part I vs Part II; Annex II vs Annex VII technical documentation; unsupported Class I/II classification; blanket first-boot password/MFA/JTAG/port-disablement mandates.
+- Detailed evidence: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_13_27_2026-11-13.md](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_13_27_2026-11-13.md). The batch is non-random and not a representative error rate. Product applicability remains UNVERIFIED.
+- E3 approval package: [PHASE_E3_APPROVAL_PACKAGE.md](PHASE_E3_APPROVAL_PACKAGE.md). Design only; no live fetch, no Gemini/API call and no production integration. E3 requires explicit phrase “E3 실행 승인”.
+- Protected files and main branch remain outside this documentation-only change. No tests/CI PASS claimed for this audit batch.
