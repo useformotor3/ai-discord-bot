@@ -184,3 +184,11 @@ EUR-Lex 검색 결과로 제공된 공식 현행 원문과 Official Journal PDF 
 - merge/rebase/sync를 수행하지 않았다.
 - 제품 SKU, 실제 저장 데이터·설정, intended purpose, 제품 경계, 통신/업데이트 구성 및 MCU 주문 코드는 미확정이다.
 - 이 문서는 자동 조사 보고서의 법령 주장 감사이며 제품 적합성 평가나 DUT 시험 결과가 아니다.
+
+## 원자 Claim ID 연결 — #53–#57
+
+- #53–#57에 대해 [Claim Evidence Ledger](CLAIM_EVIDENCE_LEDGER.md)에 원자 Claim ID 32개를 등록했다.
+- 파일 단위 결과 1 CONFLICT / 4 PARTIALLY_VERIFIED / direct quote reuse 0/5 유지.
+- #53의 secure erasure Part I 2(m), Annex II 8(d), Article13(18)/(19) 사용자 정보/지원 종료일을 분리.
+- #54–#55의 Article13(8) support period, Article13(9) update availability, PartII(8) free updates를 분리.
+- #56–#57의 CVD, Article14 two-track reporting, Article69(3) 적용 범위 및 final-report deadlines를 분리.
