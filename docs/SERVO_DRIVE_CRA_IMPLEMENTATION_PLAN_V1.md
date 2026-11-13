@@ -49,6 +49,8 @@
 
 **산출물:** Product Boundary & CRA Applicability Decision Record (PB-001). 현재 NOT_STARTED.
 
+분류 판정의 근거표와 Article 32 절차별 조건은 [CRA_PRODUCT_CLASSIFICATION_AND_ACCESS_CONTROL_MATRIX.md](CRA_PRODUCT_CLASSIFICATION_AND_ACCESS_CONTROL_MATRIX.md)를 기준으로 작성한다. 제품에 통합된 MCU의 분류와 완제품 드라이브의 분류를 혼동하지 않는다.
+
 ## 3. P0 — Article 14 신고 대응 체계
 
 2026-09-11부터 신고 의무가 적용 중이다. 제품이 시장에 나와 있거나 출시 준비 중이라면 제품 보안 사고 인지·분류·보고 절차를 우선 마련한다.
@@ -75,6 +77,8 @@
 | 72h 신고 | T72 | T72+1개월 최종 보고 | 원인·완화·시정 조치·재발 방지 기록 |
 
 법정 기한은 공식 CRA와 Commission 안내에 따라 관리한다. 이 표는 법률 자문을 대체하지 않으며 실제 사건 시 법무/규제 책임자 검토가 필요하다.
+
+접수 필드, 사건 분류, 신고 판단 기록, 에스컬레이션 및 운영 역할은 [CRA Article 14 PSIRT 대응 SOP](CRA_ARTICLE14_PSIRT_RESPONSE_SOP_V1.md)를 실무 절차의 정본으로 사용한다. Article 14 신고 트리거와 Annex I Part II의 모든 취약점 처리 의무를 같은 것으로 취급하지 않는다.
 
 **산출물:** PSIRT SOP, incident intake form, 24h/72h/14d/1month clock log, tabletop exercise report. 현재 NOT_STARTED.
 
@@ -124,6 +128,8 @@
 이중 뱅크, rollback 방지, secure boot, 서명 업데이트는 설계 후보다. 실제 MCU의 지원 기능·메모리 크기·실시간성·복구 동작을 확인한 뒤 선택한다. 'Secure Boot가 있다'는 부품 기능만으로 완제품 신뢰 체인이 성립하지 않는다.
 
 ## 5. P1 — 접근통제·데이터·인터페이스
+
+법적 요구와 권장 구현 수단의 구분, 접근통제 설계 검토 및 시험 증거는 [CRA_PRODUCT_CLASSIFICATION_AND_ACCESS_CONTROL_MATRIX.md](CRA_PRODUCT_CLASSIFICATION_AND_ACCESS_CONTROL_MATRIX.md)를 참조한다. RBAC, least privilege, MFA, 고유 장치별 자격증명 등은 위험기반 구현 후보이며 CRA가 모든 제품에 동일한 기술을 직접 명령한다고 쓰지 않는다.
 
 - 사용자/서비스/생산 역할을 구분하고 최소권한을 적용한다.
 - 기본 비밀번호 강제, 계정 생성·변경·복구 방식은 위협모델과 사용자 환경을 반영해 설계한다. CRA가 모든 제품에 특정 로그인 방식을 명시한다고 주장하지 않는다.
@@ -207,3 +213,14 @@ Annex II의 1~9번을 제품 사용자 설명서/온라인 문서에 매핑한�
 
 ---
 문서의 '설계 후보'는 제품 설계 승인 전까지 제안 상태로 유지한다.
+
+
+## 문서 간 연결 및 정본 참조
+
+- 제품 경계·분류·접근통제의 법적 요구/구현 구분: [제품 분류·접근통제 매트릭스](CRA_PRODUCT_CLASSIFICATION_AND_ACCESS_CONTROL_MATRIX.md).
+- 신고 대응 역할·접수·기한·훈련: [Article 14 PSIRT SOP](CRA_ARTICLE14_PSIRT_RESPONSE_SOP_V1.md).
+- 요구사항 ID에서 위협·HW/FW·시험·증거까지의 연결: [통합 추적성 매트릭스](CRA_INTEGRATED_TRACEABILITY_MATRIX.md).
+- 설계 블록·신뢰 경계·인터페이스 계약: [보안 HW 아키텍처](SERVO_DRIVE_CRA_SECURITY_HARDWARE_ARCHITECTURE.md).
+- 전체 문서 지도: [CRA_DOCUMENT_ARCHITECTURE_AND_NAVIGATION.md](CRA_DOCUMENT_ARCHITECTURE_AND_NAVIGATION.md).
+
+이 제2권은 실행 순서와 설계/시험 계획의 정본이다. 법령 해석의 세부 근거는 제1권 및 법령 기준선, 실제 운영 절차는 PSIRT SOP, 추적성 ID는 통합 매트릭스를 기준으로 한다.
