@@ -464,5 +464,5 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 - [x] Added human-review packet and mandatory reviewer-record fields; candidate acceptance requires explicit quote/locator/context/claim-support passes and completed countercheck.
 - [x] Added adversarial tests for exact match, raw/extraction/bundle tampering, repeated excerpt/locator ambiguity, missing source/PDF backend, context bounds, claim references and human-review completeness.
 - [x] First full test suite and strict archive audit: Actions #43345148925 SUCCESS, 103 tests PASS; archive/history 990/990, consistent=true.
-- [ ] Final hardened HEAD CI and protected-file SHA/diff recheck — pending.
+- [x] Final hardened HEAD `eaf4b4d31c0dccd2a624ab0f67fabdc166936a70` Actions #43345315133 SUCCESS: 105 tests PASS; strict archive audit 990/990 consistent; protected files and Phase C schema/code SHAs unchanged.
 - Boundaries unchanged: no `main.py`, production workflow, v2 prompt/contract, Phase C schema/IDs, live fetch, Gemini API, or main-branch changes; no merge/rebase/sync.
