@@ -2456,3 +2456,12 @@ Batch result: 5/5 CONFLICT, 0 PARTIALLY_VERIFIED, 0 VERIFIED; 0/5 Raw Text Quote
 - main 원본 경로/blob SHA를 재확인하고 Claim Evidence Ledger에 원자 Claim ID 25개를 추가했다.
 - Article 13(8)/(9), Annex I Part II(5)/(6)/(8), Article 14, Annex VII(4)를 분리하고 지원기간·신고 범위·직접 인용 오류를 정정했다.
 - 다음 원자 분해 배치: #33–#37. 이후 #38–#57까지 순차 분해 후 상위 문서와 교차 대조.
+
+## 2026-11-13 — #33–#37 원자 주장 분해 및 공식 분류 규정 재확인
+
+- 기존 #33–#37 파일 단위 감사 결과는 5 CONFLICT / direct quote reuse 0/5로 유지.
+- main 원본 경로/blob SHA를 재확인하고 Claim Evidence Ledger에 원자 Claim ID 31개를 추가했다.
+- Commission Implementing Regulation (EU) 2025/2392를 EUR-Lex에서 추가 확인했다. Article 7 core-functionality test 및 Annex III technical descriptions를 반영.
+- conformity assessment는 Article 32 및 Annex VIII 기준으로 재정리: Class I 조건부 A/B+C/H, Class II B+C/H; Module C=internal production control, Module H=full quality assurance.
+- DoC Article 28, CE Article 30, technical documentation Article 31/Annex VII. 서보 드라이브 Class I/II 적용성은 UNVERIFIED.
+- 다음 원자 분해 배치: #38–#42. 이후 #43–#57까지 순차 분해.
