@@ -678,7 +678,7 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - 결과물 우선: 매 작업에 가능하면 보고서/표/설계/claim audit 산출물을 남긴다. 코드 수정은 금지하지 않으며, 결과물의 신뢰성·재현성 향상에 필요하면 수행한다.
 - main 최신 확인: report #119, HEAD `6491a5db6ea35ea97a6d97e85bac43f9a3cf41c0`; state count 119, history.json 1,394 entries. Archive tree count는 미재확인. main read-only.
 - main reports #8–#62 수동 감사 완료: 55건, 40 CONFLICT / 15 PARTIALLY_VERIFIED / 0 VERIFIED, direct quote reuse 0/55. 연속·비무작위 표본이며 전체 archive 오류율이 아니다.
-- 최신 실질 산출물: Claim Evidence Ledger 345개 원자 주장 및 45개 Canonical ID 매핑. 다음 P0는 제1권·제2권·SOP·매트릭스·시험 대장 전수 대조 후 #63–#67 감사.
+- 최신 실질 산출물: Claim Evidence Ledger 345개 원자 주장 및 46개 Canonical ID 매핑. 다음 P0는 제1권·제2권·SOP·매트릭스·시험 대장 전수 대조 후 #63–#67 감사.
 - Phase D hardening final code/test 140/140 및 archive 990/990 성공; 문서 최신화 HEAD도 CI #43384628893에서 140/140 및 990/990 성공. 최신 결과/한계는 AI_CONTINUITY_BOARD와 SESSION_LOG 참조.
 - E3 live fetch 및 보호 파일/production integration/main merge는 별도 승인 전 실행 금지.
 
@@ -928,9 +928,9 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 
 - main latest observed: report #119; HEAD \`6491a5db6ea35ea97a6d97e85bac43f9a3cf41c0\`; state count 119; history.json 1,394 entries. Archive tree count was not rechecked. main remains read-only.
 - main-only audit scope #8–#62: 55 consecutive, non-random reports; file-level results **40 CONFLICT / 15 PARTIALLY_VERIFIED / 0 VERIFIED**; direct quote reuse **0/55**. This is not a statistical error rate for the full archive.
-- Claim Evidence Ledger: 55 file-level source records + 345 atomic claims = **400 unique IDs**, duplicate IDs 0. All 345 atomic claims have one or more Canonical IDs. Canonical register defines 45 requirements; 43 are referenced by legacy atomic claims, and 2 are forward-mapped to matrix requirements.
+- Claim Evidence Ledger: 55 file-level source records + 345 atomic claims = **400 unique IDs**, duplicate IDs 0. All 345 atomic claims have one or more Canonical IDs. Canonical register defines 46 requirements; 43 are referenced by legacy atomic claims, and 3 are forward-mapped to matrix requirements.
 - #8–#57 (50 reports) and #58–#62 (5 reports) have completed atomic decomposition. Individual legal facts marked VERIFIED do not promote a conflicting source file to VERIFIED.
 - Product-specific applicability, Class I/II classification, exact MCU order code and DUT test results remain UNVERIFIED/NOT_RUN.
-- Current P0: reconcile the 345 atomic claims and 45 canonical requirements against Volume 1, Volume 2, PSIRT SOP, requirements matrix, integrated traceability matrix and test evidence register; resolve duplicated/contradictory wording and keep exact legal locators. Then proceed to main-only audit #63–#67.
+- Current P0: reconcile the 345 atomic claims and 46 canonical requirements against Volume 1, Volume 2, PSIRT SOP, requirements matrix, integrated traceability matrix and test evidence register; resolve duplicated/contradictory wording and keep exact legal locators. Then proceed to main-only audit #63–#67.
 - No production code, main.py, production workflow, Gemini V2 prompt/contract or main branch was changed. E3 live source fetch remains unexecuted. This batch is documentation-only.
 
