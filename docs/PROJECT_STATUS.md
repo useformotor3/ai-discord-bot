@@ -842,3 +842,11 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - #119는 아직 감사하지 않았다. 다음 main-only 배치는 #63–#67이며 시작 시 최신 main HEAD/state/history를 다시 확인한다.
 - main과 작업 브랜치는 diverged 상태다. ahead/behind 수치는 작업 중 계속 바뀌므로 다음 세션에서 동적으로 재조회한다. merge/rebase/sync 금지.
 - 이 기록은 #58–#62 원본 감사 기준선(#118)을 바꾸지 않는다.
+
+## 2026-11-13 — #8–#12 원자 주장 분해 완료
+
+- #8–#12 원본 경로/blob SHA와 기존 Pass A/B/C 감사 결과를 main에서 다시 대조했다.
+- Claim Evidence Ledger에 원자 Claim ID 31개를 추가했다.
+- 파일 단위 결과는 5 CONFLICT / 0 PARTIALLY_VERIFIED / 0 VERIFIED; direct quote reuse 0/5로 유지.
+- 개별 VERIFIED는 법령 문장만 확인한 상태이며 제품별 적용성·Class I/II 분류는 UNVERIFIED, DUT 시험 NOT_RUN.
+- 다음 원자 분해 배치는 #13–#17. #18–#57까지 순차적으로 Claim ID·공식 원문 locator·정정·반증을 연결한다.
