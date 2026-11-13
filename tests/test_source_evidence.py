@@ -105,13 +105,21 @@ class SourceEvidenceTests(unittest.TestCase):
             fetcher.fetch("CRA_EURLEX_2024_2847")
         self.assertTrue(response.closed)
 
-    def test_redirect_to_same_allowlisted_host_is_followed(self):
+    def test_redirect_to_same_allowlisted_host_is_followed_and_revalidated(self):
         first = FakeResponse(status=302, headers={"Location": "/legal-content/EN/TXT/?uri=CELEX:32024R2847"})
         second = FakeResponse(body=b"final bytes")
-        fetcher = self.make_fetcher([first, second])
+        resolver_calls = []
+        session = FakeSession([first, second])
+        fetcher = OfficialSourceFetcher(
+            session,
+            resolver=lambda host: resolver_calls.append(host) or [PUBLIC_IP],
+            clock=lambda: datetime(2026, 11, 13, 0, 0, tzinfo=timezone.utc),
+        )
         result = fetcher.fetch("CRA_EURLEX_2024_2847")
         self.assertEqual(result.content, b"final bytes")
         self.assertEqual(len(fetcher.session.calls), 2)
+        self.assertEqual(resolver_calls, ["eur-lex.europa.eu", "eur-lex.europa.eu"])
+        self.assertTrue(first.closed)
 
     def test_private_or_loopback_dns_address_is_blocked(self):
         fetcher = OfficialSourceFetcher(
@@ -219,6 +227,24 @@ class SourceEvidenceTests(unittest.TestCase):
         })
         fetcher = self.make_fetcher([response])
         with self.assertRaisesRegex(SourceFetchError, "CONTENT_ENCODING_NOT_ALLOWED"):
+            fetcher.fetch("CRA_EURLEX_2024_2847")
+        self.assertTrue(response.closed)
+
+
+    def test_http_downgrade_redirect_is_blocked_and_closed(self):
+        response = FakeResponse(status=302, headers={"Location": "http://eur-lex.europa.eu/file"})
+        fetcher = self.make_fetcher([response])
+        with self.assertRaisesRegex(SourceFetchError, "HTTPS_REQUIRED"):
+            fetcher.fetch("CRA_EURLEX_2024_2847")
+        self.assertTrue(response.closed)
+
+    def test_truncated_response_body_is_rejected_and_closed(self):
+        response = FakeResponse(
+            body=b"short",
+            headers={"Content-Type": "text/html", "Content-Length": "10"},
+        )
+        fetcher = self.make_fetcher([response])
+        with self.assertRaisesRegex(SourceFetchError, "TRUNCATED_RESPONSE"):
             fetcher.fetch("CRA_EURLEX_2024_2847")
         self.assertTrue(response.closed)
 
