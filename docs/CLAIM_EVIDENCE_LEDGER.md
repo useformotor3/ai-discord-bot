@@ -722,3 +722,48 @@ Correct map: Annex I Part I(2)(c) for applicable automatic-update default/user c
 
 - #28–#32 파일 단위 판정은 기존 감사 결과대로 5 CONFLICT / 0 PARTIALLY_VERIFIED / 0 VERIFIED이며 direct quote reuse 0/5.
 - 개별 법령 사실 VERIFIED와 원본 파일 전체 CONFLICT를 구분한다. 제품별 적용성은 UNVERIFIED, DUT 시험 NOT_RUN.
+
+## 2026-11-13 — #33–#37 원자 주장·인용 분해 (31 claims)
+
+- 원본 감사: [main-only #33–#37 Pass A/B/C 감사](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_33_37_2026-11-13.md).
+- 원본 main 경로·blob SHA: #33 \`research_archive/2026-11-13_024039.md\` / \`c9c8f17bae8dd90890f9075927aa5fb6668c32b0\`; #34 \`024544.md\` / \`97101ee32c543adc2b684c92eec4c831cbe2c479\`; #35 \`025045.md\` / \`842b48aa5ba2382ce58cdddcb1f8b836c5336eb6\`; #36 \`025531.md\` / \`06f32803648a15f7638add752a8b9a064d4ee3f9\`; #37 \`030054.md\` / \`a8f77a2ecc3bc2301ab87a5f90d2ae6626489eab\`.
+- 공식 기준: Regulation (EU) 2024/2847 및 Commission Implementing Regulation (EU) 2025/2392.
+
+| Claim ID | 원본 | 원자 주장 | 근거 위치 | 상태 | 판정/정정 |
+|---|---:|---|---|---|---|
+| CRA-ARCH-MAIN-20261113-033-001 | #33 | 제조자는 CVD 정책을 수립·집행해야 한다. | Annex I Part II(5), Article 13(8) | VERIFIED | CVD 정책 의무 확인. |
+| CRA-ARCH-MAIN-20261113-033-002 | #33 | 모든 취약점 신고는 PGP 등 특정 암호 방식으로 받아야 한다. | Annex I Part II(5), (6) | CONFLICT | 안전한 신고 채널/연락 주소 요구와 PGP 키 사용은 구분. PGP는 설계 선택. |
+| CRA-ARCH-MAIN-20261113-033-003 | #33 | 수정된 취약점 정보는 보안 업데이트가 제공된 후 공개해야 한다. | Annex I Part II(4) | PARTIALLY_VERIFIED | fixed vulnerability 정보 공개 의무는 있으나 duly justified security-risk case에서 사용자 patch 적용 기회 후로 공개를 지연할 수 있다. |
+| CRA-ARCH-MAIN-20261113-033-004 | #33 | 모든 제보 취약점을 European Vulnerability Database/CSIRT에 일반적으로 공유해야 한다. | Annex I Part II(6), Article 14 | CONFLICT | 일반 취약점 정보 공유/CVD와 Article 14의 제한된 법정 신고 트리거를 구분. |
+| CRA-ARCH-MAIN-20261113-033-005 | #33 | 모든 서보 드라이브는 Class I/II 중요 제품이다. | Article 7, Annex III, Implementing Regulation 2025/2392 | UNVERIFIED | 제품의 core functionality가 Annex III/기술 설명에 해당하는지 확인 전 분류 불가. |
+| CRA-ARCH-MAIN-20261113-033-006 | #33 | Raw Text Quote의 익명 신고·보안 처리·public advisory 문장이 Part II(5)의 정확한 직접 인용이다. | Annex I Part II(4)–(6) | CONFLICT | Part II(4),(5),(6)의 문언을 합성했다. |
+| CRA-ARCH-MAIN-20261113-034-001 | #34 | 제조자는 제품 취약점과 구성요소를 식별·문서화하고 SBOM을 작성해야 한다. | Annex I Part II(1) | VERIFIED | top-level dependencies를 포함하는 machine-readable SBOM 요구 확인. |
+| CRA-ARCH-MAIN-20261113-034-002 | #34 | 제조자는 CVD 정책을 수립·집행해야 한다. | Annex I Part II(5) | VERIFIED | CVD 정책 요구 확인. |
+| CRA-ARCH-MAIN-20261113-034-003 | #34 | 제조자는 취약점을 적시에 고칠 수 있도록 안전한 업데이트 배포 메커니즘을 제공해야 한다. | Annex I Part II(7) | VERIFIED | secure distribution mechanism 요구 확인. |
+| CRA-ARCH-MAIN-20261113-034-004 | #34 | 모든 발견 취약점은 ENISA/CSIRT에 정해진 기한으로 신고해야 한다. | Article 14(1)–(7) | CONFLICT | Article 14 trigger는 actively exploited vulnerability 및 severe incident 두 트랙. |
+| CRA-ARCH-MAIN-20261113-034-005 | #34 | 제조사 신고 의무 근거는 Article 11이다. | Article 13, Article 14 | CONFLICT | 제조사 의무 Article 13, 법정 신고 Article 14. |
+| CRA-ARCH-MAIN-20261113-034-006 | #34 | Annex I/Article 11의 composite Raw Text Quote가 현행 직접 인용이다. | Annex I Part II(1), (2), (5), (7); Article 14 | CONFLICT | 서로 다른 조항을 합성한 문장으로 직접 인용 재사용 불가. |
+| CRA-ARCH-MAIN-20261113-035-001 | #35 | 제품은 secure-by-default configuration으로 제공되어야 한다. | Annex I Part I(2)(b) | VERIFIED | secure default와 original-state reset 가능성 확인. |
+| CRA-ARCH-MAIN-20261113-035-002 | #35 | 최초 부팅 시 고유한 비밀번호/암호화 키를 반드시 강제 생성해야 한다. | Annex I Part I(2)(b), (d) | CONFLICT | 구체 first-boot credential flow는 보편적 직접 법적 의무가 아니다. |
+| CRA-ARCH-MAIN-20261113-035-003 | #35 | 필수 작동에 불필요한 모든 네트워크 인터페이스/서비스/포트를 기본 차단해야 한다. | Annex I Part I(2)(j) | CONFLICT | attack-surface limitation은 요구되나 모든 인터페이스 일괄 차단 방식은 법령이 지정하지 않는다. |
+| CRA-ARCH-MAIN-20261113-035-004 | #35 | 초기 설정 과정의 시스템 무결성을 특정 방식으로 기술문서에 증명해야 한다. | Article 31, Annex VII | UNVERIFIED | 기술문서·시험·위험평가 요구는 있으나 보고서의 구체적 “초기 설정 무결성 증명” 범위는 근거/시험 기준 미제시. |
+| CRA-ARCH-MAIN-20261113-035-005 | #35 | Raw Text Quote에 latest patch/unique default password/mandatory password change 문구가 현행 Annex I에 있다. | Annex I Part I(2)(b), (c), (d) | CONFLICT | 제시된 문장은 현행 원문과 불일치하는 합성/비현행 인용. |
+| CRA-ARCH-MAIN-20261113-036-001 | #36 | 보안 업데이트는 원칙적으로 무상 제공되어야 한다. | Annex I Part II(8) | PARTIALLY_VERIFIED | tailored-product/business-user agreement exception 포함 필요. |
+| CRA-ARCH-MAIN-20261113-036-002 | #36 | support period는 expected lifetime 또는 5년 중 짧은 기간이다. | Article 13(8) | CONFLICT | 원칙적으로 최소 5년이며 expected use가 더 짧으면 그 기간에 대응한다. |
+| CRA-ARCH-MAIN-20261113-036-003 | #36 | 제조자는 CVD 신고 채널과 취약점 처리 정책을 마련해야 한다. | Annex I Part II(5), (6) | VERIFIED | CVD policy와 contact address/information sharing을 구분. |
+| CRA-ARCH-MAIN-20261113-036-004 | #36 | 듀얼 뱅크 플래시/롤링 업데이트가 CRA가 지정한 필수 구현이다. | Annex I Part II(7), risk assessment | UNVERIFIED | 안전한 업데이트 배포 결과 요구와 구체 A/B·dual-bank 구현은 별도. 제품 설계 후보. |
+| CRA-ARCH-MAIN-20261113-036-005 | #36 | Annex I Part I(2)(c)가 free security updates를 규정한다. | Annex I Part I(2)(c), Part II(8) | CONFLICT | Part I(2)(c)는 자동 업데이트·사용자 통지·opt-out 관련 제품 속성, 무상 업데이트는 Part II(8). |
+| CRA-ARCH-MAIN-20261113-036-006 | #36 | Article 13(6)이 무상 보안 업데이트의 직접 근거다. | Article 13(8), Annex I Part II(8) | CONFLICT | 무상 업데이트의 직접 근거는 Part II(8); support period는 Article 13(8). |
+| CRA-ARCH-MAIN-20261113-037-001 | #37 | 산업용 서보 드라이브는 Annex III Class I 또는 II에 자동 포함된다. | Article 7, Annex III, Implementing Regulation 2025/2392 | UNVERIFIED | 제품의 core functionality와 공식 technical description 확인 전 분류 불가. |
+| CRA-ARCH-MAIN-20261113-037-002 | #37 | Class I conformity assessment는 내부 통제 Module A 또는 조건에 따라 Module B+C/Module H 경로가 있다. | Article 32(1), (2); Annex VIII Parts I–IV | PARTIALLY_VERIFIED | 큰 구조는 맞지만 Article 32(2)의 조건·B+C 경로 및 현행 Annex VIII 위치를 정확히 기술해야 한다. |
+| CRA-ARCH-MAIN-20261113-037-003 | #37 | Class II 제품은 Notified Body가 관여하는 Module B+C 또는 Module H 경로를 따른다. | Article 32(3); Annex VIII Parts II–IV | PARTIALLY_VERIFIED | 제3자 관여와 B+C/H 선택은 맞으나 Module/Annex 매핑을 바로잡아야 한다. |
+| CRA-ARCH-MAIN-20261113-037-004 | #37 | conformity assessment 절차의 본문 근거는 Article 24다. | Article 32 | CONFLICT | 현행 CRA의 conformity assessment procedures는 Article 32. |
+| CRA-ARCH-MAIN-20261113-037-005 | #37 | 기술문서의 내용은 Annex VII에 규정된다. | Article 31, Annex VII | VERIFIED | 기술문서 요구와 최소 내용 확인. |
+| CRA-ARCH-MAIN-20261113-037-006 | #37 | EU Declaration of Conformity의 본문 근거는 Article 20이다. | Article 28, Annex V/VI | CONFLICT | 현행 EU DoC는 Article 28, Annex V/VI. |
+| CRA-ARCH-MAIN-20261113-037-007 | #37 | CE marking의 본문 근거는 Article 30이다. | Article 30 | VERIFIED | CE marking 규정 위치 확인. |
+| CRA-ARCH-MAIN-20261113-037-008 | #37 | 기술문서의 본문 근거는 Article 23이다. | Article 31, Annex VII | CONFLICT | 현행 technical documentation은 Article 31. |
+| CRA-ARCH-MAIN-20261113-037-009 | #37 | Module C는 quality assurance of production process이며 Module H는 class I 전용이다. | Article 32; Annex VIII Parts III/IV | CONFLICT | Module C는 internal production control, Module H는 full quality assurance이며 Class II에도 Article 32(3) 경로로 사용 가능. |
+| CRA-ARCH-MAIN-20261113-037-010 | #37 | Class I/II 분류는 제품명보다 core functionality와 Annex III 기술 설명으로 판단한다. | Article 7(1)–(2); Implementing Regulation 2025/2392 | VERIFIED | 제품 분류 기준 확인. 단, 실제 서보 드라이브의 적용 결과는 UNVERIFIED. |
+
+- #33–#37 파일 단위 판정은 기존 감사 결과대로 5 CONFLICT / 0 PARTIALLY_VERIFIED / 0 VERIFIED이며 direct quote reuse 0/5.
+- 개별 법령 사실 VERIFIED와 원본 파일 전체 CONFLICT를 구분한다. 서보 드라이브의 Class I/II 실제 적용성은 UNVERIFIED, DUT 시험 NOT_RUN.
