@@ -1,7 +1,9 @@
 # 주장·근거 정정 대장 (Claim Evidence Ledger)
 
+> **언어 원칙:** 이 대장의 설명·판정 사유·정정 내용은 한국어를 기본으로 작성한다. 법령명, 공식 문서명, 조항 번호, 제조사 원문 인용 및 상태 코드(VERIFIED 등)는 원문 식별을 위해 영어를 유지할 수 있다.
+
 **목적:** 기존 조사 아카이브와 향후 설계 보고서의 핵심 주장을 원본 파일·원문 위치·정확한 출처·정정·검증 상태와 연결한다.  
-**기준일:** 2026-11-12  
+**기준일:** 2026-11-13  
 **작업 브랜치:** `cra-project-foundation`
 
 ## 1. 상태 정의
@@ -359,14 +361,14 @@ Detailed report: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_124_2026-11-12.md](ARCHIVE_MANU
 Correct map: Annex I Part I(2)(c) for applicable automatic-update default/user controls; Part II(5) CVD policy; Part II(6) vulnerability information/contact; Part II(7) secure update distribution; Part II(8) timely/free security updates subject to tailor-made business-user exception; Article 13(17)/Annex II(2) user-facing single point of contact.
 
 
-## Main-only archive reports #48–#52 correction records — 2026-11-13
+## main 아카이브 보고서 #48–#52 주장별 정정 레코드 — 2026-11-13
 
-| Claim ID | Archive report | Atomic finding | Status |
+| 주장 ID | 원본 보고서 | 원자적 검증 결과 | 판정 |
 |---|---:|---|---|
-| CRA-ARCH-MAIN-048-001 | #48 | Machine-readable user notification is Article 14(8), only for actively exploited vulnerabilities/severe incidents and where appropriate; Annex I Part II(2) does not impose a universal automated advisory format. CSAF is not named as mandatory. | PARTIALLY_VERIFIED |
-| CRA-ARCH-MAIN-049-001 | #49 | Free security updates are Annex I Part II(8), not Annex I Part I(2); reporting is Article 14, not Article 11; Article 13(8)/(9) support period and update retention were misstated. | CONFLICT |
-| CRA-ARCH-MAIN-050-001 | #50 | Industrial servo drives are not automatically Annex III Class I based on industrial/high-risk use; whole-product core functionality and the technical description govern classification. | CONFLICT |
-| CRA-ARCH-MAIN-051-001 | #51 | CVD policy and vulnerability contact address are required by Annex I Part II(5)/(6); Annex I Part I/Article 10 locators and mandatory PGP assertion are unsupported. | PARTIALLY_VERIFIED |
-| CRA-ARCH-MAIN-052-001 | #52 | Article 13(6) reporting direction is manufacturer → component manufacturer/maintainer when an integrated-component vulnerability is identified; no blanket supplier → integrator/end-user notification rule is established by the cited text. | CONFLICT |
+| CRA-ARCH-MAIN-048-001 | #48 | 기계 판독 가능 사용자 통지는 Article 14(8)에 규정되어 있으며, 적극 악용 취약점 또는 제품 보안에 영향을 미치는 심각한 사고에 대한 사용자 통지에서 적절한 경우 적용된다. Annex I Part II(2)는 모든 보안 공지에 대한 자동·기계 판독 형식을 일반적으로 요구하지 않는다. CSAF도 의무 형식으로 지정하지 않는다. | PARTIALLY_VERIFIED |
+| CRA-ARCH-MAIN-049-001 | #49 | 무상 보안 업데이트는 Annex I Part II(8)에 근거하며 Part I(2)가 아니다. 신고 조항은 Article 11이 아니라 Article 14다. 지원기간과 업데이트 보존기간은 Article 13(8)/(9)로 구분한다. | CONFLICT |
+| CRA-ARCH-MAIN-050-001 | #50 | 산업용·고위험 용도라는 이유만으로 서보 드라이브를 Annex III Class I로 자동 분류할 수 없다. 제품 전체의 핵심 기능과 시행규정의 기술 설명을 대조해야 한다. | CONFLICT |
+| CRA-ARCH-MAIN-051-001 | #51 | 조정된 취약점 공개 정책(CVD)과 취약점 신고 연락처의 근거는 Annex I Part II(5)/(6)이다. Annex I Part I 또는 Article 10이라는 조항 위치와 PGP의 보편적 의무 주장은 근거가 없다. | PARTIALLY_VERIFIED |
+| CRA-ARCH-MAIN-052-001 | #52 | 통합 구성요소의 취약점을 제조사가 식별한 경우 Article 13(6)의 명시적 신고 방향은 해당 구성요소 제조사/유지관리 주체를 향한다. 모든 공급자가 통합 제조사나 최종 사용자에게 자동 통지해야 한다는 포괄 의무는 인용 조항에서 확인되지 않는다. | CONFLICT |
 
-Detailed source paths, archive blob SHAs, official provision mapping, quote assessment and counter-evidence: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_48_52_2026-11-13.md](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_48_52_2026-11-13.md).
+원본 경로·아카이브 blob SHA·공식 조항 매핑·인용문 판정·반증은 [#48–#52 상세 감사 보고서](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_48_52_2026-11-13.md)를 참조한다.
