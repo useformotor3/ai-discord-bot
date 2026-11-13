@@ -677,3 +677,48 @@ Correct map: Annex I Part I(2)(c) for applicable automatic-update default/user c
 
 - #23–#27 파일 단위 판정은 기존 감사 결과대로 5 CONFLICT / 0 PARTIALLY_VERIFIED / 0 VERIFIED이며 direct quote reuse 0/5.
 - 개별 법령 사실 VERIFIED와 원본 파일 전체 CONFLICT를 구분한다. 제품별 적용성·Class I/II 분류는 UNVERIFIED, DUT 시험 NOT_RUN.
+
+## 2026-11-13 — #28–#32 원자 주장·인용 분해 (25 claims)
+
+- 원본 감사: [main-only #28–#32 Pass A/B/C 감사](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_28_32_2026-11-13.md).
+- 원본 main 경로·blob SHA: #28 \`research_archive/2026-11-13_021538.md\` / \`78de23c029c47dee16ebc82adf7123c2bf52fa4a\`; #29 \`022039.md\` / \`e5248b9d23e94ea0ef5ad7ffb30f2dcd100e3434\`; #30 \`022538.md\` / \`15439fdad39d1759f522023fc3f1201c1fbf4e8f\`; #31 \`023045.md\` / \`bc85eca9a24980a199e00fc13752f158b11e059e\`; #32 \`023540.md\` / \`71146baf92e406e18209f9981d8a7afc47620be2\`.
+- 공식 기준: Regulation (EU) 2024/2847, EUR-Lex consolidated text 20.11.2024.
+
+| Claim ID | 원본 | 원자 주장 | 근거 위치 | 상태 | 판정/정정 |
+|---|---:|---|---|---|---|
+| CRA-ARCH-MAIN-20261113-028-001 | #28 | 보안 업데이트는 원칙적으로 무상 제공되어야 한다. | Annex I Part II(8) | PARTIALLY_VERIFIED | 맞춤형 제품에 관한 제조자-사업 사용자 합의 예외를 포함해야 한다. |
+| CRA-ARCH-MAIN-20261113-028-002 | #28 | support period는 expected lifetime 또는 5년 중 짧은 기간이다. | Article 13(8) | CONFLICT | 원칙적으로 최소 5년, 예상 사용기간이 5년 미만이면 그 예상 사용기간에 대응한다. |
+| CRA-ARCH-MAIN-20261113-028-003 | #28 | 제조자는 CVD 정책을 수립·집행해야 한다. | Article 13(8), Annex I Part II(5) | VERIFIED | 법령상 CVD 정책 의무 확인. |
+| CRA-ARCH-MAIN-20261113-028-004 | #28 | 제조자는 취약점 신고 연락 주소를 제공하고 정보 공유를 촉진해야 한다. | Annex I Part II(6) | VERIFIED | 연락 주소 및 정보 공유 촉진 조치 확인. |
+| CRA-ARCH-MAIN-20261113-028-005 | #28 | ENISA 협력은 모든 취약점의 즉시 신고를 의미한다. | Article 14(1)–(7) | CONFLICT | Article 14는 actively exploited vulnerability 및 severe incident 두 신고 트랙과 지정 CSIRT/단일 플랫폼 경로로 한정. |
+| CRA-ARCH-MAIN-20261113-028-006 | #28 | “whichever is shorter”가 Article 13(8)의 정확한 지원기간 문언이다. | Article 13(8) | CONFLICT | 현행 조항의 예외 구조와 반대되는 표현이며 직접 인용 재사용 불가. |
+| CRA-ARCH-MAIN-20261113-028-007 | #28 | Part II CVD/free update 복합 Raw Text Quote가 정확한 직접 인용이다. | Annex I Part II(5), (8) | CONFLICT | 여러 의무를 합성했고 원문 위치/문언과 불일치. |
+| CRA-ARCH-MAIN-20261113-029-001 | #29 | 사용 가능한 보안 업데이트는 원칙적으로 무상 제공된다. | Annex I Part II(8) | PARTIALLY_VERIFIED | tailored-product/business-user agreement exception 포함 필요. |
+| CRA-ARCH-MAIN-20261113-029-002 | #29 | 업데이트 가용성을 사용자에게 알리고 advisory 정보를 제공해야 한다. | Annex I Part I(2)(c), Part II(8) | VERIFIED | 자동 업데이트/알림 및 advisory 관련 문언 확인. |
+| CRA-ARCH-MAIN-20261113-029-003 | #29 | support period는 최소 5년 또는 주요 상용화 기간으로 정한다. | Article 13(8) | PARTIALLY_VERIFIED | support period는 expected use를 반영하며 expected use가 5년 미만이면 그 기간에 대응한다. “주요 상용화 기간”은 별도 법령 용어가 아니다. |
+| CRA-ARCH-MAIN-20261113-029-004 | #29 | 제조사 일반 의무의 근거는 Article 10이다. | Article 13 | CONFLICT | 현행 CRA 제조사 의무는 Article 13. |
+| CRA-ARCH-MAIN-20261113-029-005 | #29 | 유상 계약 여부와 무관하게 예외 없이 무상 업데이트를 제공해야 한다. | Annex I Part II(8) | CONFLICT | 맞춤형 제품에 관해 제조자와 사업 사용자가 달리 합의한 경우 예외가 있다. |
+| CRA-ARCH-MAIN-20261113-029-006 | #29 | 지원기간 종료일/지원 정보를 사용자에게 제공하고 기술문서에서 지원기간 산정 근거를 기록한다. | Annex II(7), Annex VII(4), Article 13(8) | VERIFIED | 사용자 안내와 기술문서의 서로 다른 요구로 구분. |
+| CRA-ARCH-MAIN-20261113-029-007 | #29 | Article 10(6)/Annex I의 Raw Text Quote가 현행 직접 인용이다. | Article 13(8), Annex I Part II(8) | CONFLICT | 조항 번호·문언이 현행 원문과 불일치. |
+| CRA-ARCH-MAIN-20261113-030-001 | #30 | actively exploited vulnerability와 severe incident는 Article 14 신고 트리거다. | Article 14(1)–(4) | VERIFIED | 두 신고 트랙 확인. |
+| CRA-ARCH-MAIN-20261113-030-002 | #30 | 모든 제품 취약점 및 모든 보안 사고를 ENISA에 의무 신고해야 한다. | Article 14(1)–(7) | CONFLICT | 일반 취약점 처리와 법정 신고를 구분하고 두 Article 14 trigger만 적용. |
+| CRA-ARCH-MAIN-20261113-030-003 | #30 | 24h/72h 초기 신고 단계가 Article 14에 있다. | Article 14(2), (4) | PARTIALLY_VERIFIED | 맞지만 취약점 final report 14일, severe incident final report 1개월을 추가해야 한다. |
+| CRA-ARCH-MAIN-20261113-030-004 | #30 | 제조사 신고 의무는 Article 11이다. | Article 13, Article 14 | CONFLICT | Article 13 제조사 의무, Article 14 신고. |
+| CRA-ARCH-MAIN-20261113-030-005 | #30 | 모든 서보 드라이브에 실시간 런타임 탐지·모니터링·로깅 체계를 법령이 직접 요구한다. | Annex I Part I(1), (2)(l) | CONFLICT | 관련 내부 활동 기록·모니터링 결과 요구와 특정 실시간 탐지 아키텍처는 구분. 제품 위험평가 기반 설계 후보. |
+| CRA-ARCH-MAIN-20261113-030-006 | #30 | NIS2 single point of contact를 Article 11/CRA 신고의 직접 수신자로 인용한 문장이 정확하다. | Article 14(1), (7), Article 13(17) | CONFLICT | CRA 단일 신고 플랫폼/지정 CSIRT와 제조사 사용자 연락 창구를 혼합. |
+| CRA-ARCH-MAIN-20261113-031-001 | #31 | 제조자는 CVD 정책을 마련해야 한다. | Annex I Part II(5), Article 13(8) | VERIFIED | CVD 정책 의무 확인. |
+| CRA-ARCH-MAIN-20261113-031-002 | #31 | Article 14는 severe incident와 actively exploited vulnerability를 신고 대상으로 한다. | Article 14(1)–(4) | VERIFIED | 두 신고 트랙 확인. |
+| CRA-ARCH-MAIN-20261113-031-003 | #31 | Article 14 신고 의무는 Class I/II 중요 제품에만 적용된다. | Article 14, Article 69(3) | CONFLICT | CRA 범위 제품의 Article 14 적용이며 Class I/II 제한으로 읽지 않는다. |
+| CRA-ARCH-MAIN-20261113-031-004 | #31 | CVD 정책의 직접 근거는 Annex I Part II(2)다. | Annex I Part II(2), (5), (6) | CONFLICT | Part II(2)는 취약점 처리·시정, (5)는 CVD 정책, (6)은 신고 연락/정보 공유. |
+| CRA-ARCH-MAIN-20261113-031-005 | #31 | 24h/72h는 두 신고 트랙의 초기 기한이다. | Article 14(2), (4) | PARTIALLY_VERIFIED | 최종 보고 기한 14일/1개월과 구분 필요. |
+| CRA-ARCH-MAIN-20261113-031-006 | #31 | Article 14의 NIS2 SPO Raw Text Quote가 현행 CRA 직접 인용이다. | Article 14(1), (7) | CONFLICT | 현행 CRA 신고 경로·문언과 불일치. |
+| CRA-ARCH-MAIN-20261113-031-007 | #31 | Annex I Part II(2)의 익명 신고/contact address quote가 CVD 정책의 정확한 직접 인용이다. | Annex I Part II(5), (6) | CONFLICT | CVD policy는 (5), contact address/information sharing은 (6). 합성 인용 불가. |
+| CRA-ARCH-MAIN-20261113-032-001 | #32 | 보안 업데이트는 원칙적으로 무상 제공된다. | Annex I Part II(8) | PARTIALLY_VERIFIED | tailored-product/business-user agreement exception 포함 필요. |
+| CRA-ARCH-MAIN-20261113-032-002 | #32 | 제조사의 free update 의무 근거는 Article 11이다. | Article 13, Annex I Part II(8) | CONFLICT | 제조사 의무는 Article 13, 구체 무상 업데이트는 Part II(8). |
+| CRA-ARCH-MAIN-20261113-032-003 | #32 | vulnerability handling은 Annex I Part I point 2에 있다. | Annex I Part I, Part II | CONFLICT | Part I는 제품 속성, Part II는 vulnerability handling requirements. |
+| CRA-ARCH-MAIN-20261113-032-004 | #32 | support period는 최소 5년 또는 expected market cycle로 정한다. | Article 13(8) | PARTIALLY_VERIFIED | expected use를 반영하고 expected use가 5년 미만이면 그 기간에 대응한다. “market cycle”은 법령 용어가 아니다. |
+| CRA-ARCH-MAIN-20261113-032-005 | #32 | 지원기간 산정 근거를 기술문서에 포함해야 한다. | Annex VII(4), Article 13(8) | VERIFIED | 기술문서에 support period 결정에 고려한 관련 정보를 포함. |
+| CRA-ARCH-MAIN-20261113-032-006 | #32 | Raw Text Quote의 Annex I Part I(2)(2) 위치와 자동 무상 업데이트 문구가 정확하다. | Annex I Part I(2)(c), Part II(8) | CONFLICT | 업데이트 가용성/자동 설치/무상 제공 요구를 잘못된 위치와 합성 문구로 제시. |
+
+- #28–#32 파일 단위 판정은 기존 감사 결과대로 5 CONFLICT / 0 PARTIALLY_VERIFIED / 0 VERIFIED이며 direct quote reuse 0/5.
+- 개별 법령 사실 VERIFIED와 원본 파일 전체 CONFLICT를 구분한다. 제품별 적용성은 UNVERIFIED, DUT 시험 NOT_RUN.
