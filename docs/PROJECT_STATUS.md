@@ -899,3 +899,11 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - 파일 단위 결과는 #38 정정 반영 후 3 CONFLICT / 2 PARTIALLY_VERIFIED / 0 VERIFIED; direct quote reuse 0/5.
 - Annex I Part I(2)(m) 영구 삭제 가능성과 Annex II(8)(d) 폐기 지침을 분리해 반영했다. 제품별 데이터 저장 구조 및 적용성 UNVERIFIED, DUT 시험 NOT_RUN.
 - 다음 원자 분해 배치는 #43–#47.
+
+## 2026-11-13 — #43–#47 원자 주장 분해 완료
+
+- #43–#47 원본 5건의 경로/blob SHA를 main에서 재확인했다.
+- Claim Evidence Ledger에 원자 Claim ID 37개를 추가했다.
+- 파일 단위 결과 3 CONFLICT / 2 PARTIALLY_VERIFIED / 0 VERIFIED; direct quote reuse 0/5 유지.
+- Article 7/Annex III product classification, Article 32 conformity assessment, Article 64 penalty tiers, Annex I Part I 2(d) access control, Article 13(8)/(9) 및 Part II(4)–(8)을 정정.
+- 실제 서보 드라이브 분류 UNVERIFIED, DUT 시험 NOT_RUN. 다음 원자 분해 배치는 #48–#52.
