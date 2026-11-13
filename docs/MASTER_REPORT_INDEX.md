@@ -173,3 +173,10 @@
 - #33–#37 원자 Claim ID 31개: [Claim Evidence Ledger](CLAIM_EVIDENCE_LEDGER.md).
 - #37의 Article 7/32/28/30/31 및 Annex VIII 정정과 Commission Implementing Regulation (EU) 2025/2392의 core-functionality test를 [CRA_VERIFIED_BASELINE](CRA_VERIFIED_BASELINE_2026-11-12.md) 및 제1권/제2권에 반영.
 - 실제 servo drive Class I/II 적용성은 UNVERIFIED. 별도 네트워크 인터페이스 제품과 host drive를 구분하고 제품 자료 확보 후 판단.
+
+## 2026-11-13 authoritative evidence index
+
+- main-only reports #8–#62: 55 files, 40 CONFLICT / 15 PARTIALLY_VERIFIED / 0 VERIFIED, direct quote reuse 0/55; consecutive non-random sample only.
+- Claim Evidence Ledger: 55 file-level records + 345 atomic claims = 400 unique IDs, zero collisions; 45 canonical requirements, all atomic claims mapped.
+- Canonical requirement mapping is integrated into [requirements-to-servo-drive matrix](CRA_REQUIREMENTS_TO_SERVO_DRIVE_TRACEABILITY_MATRIX.md) and [integrated traceability matrix](CRA_INTEGRATED_TRACEABILITY_MATRIX.md).
+- Next P0: reconcile Volume 1/2, PSIRT SOP, traceability matrices and test evidence register against the 345 atomic claims; then audit main reports #63–#67.
