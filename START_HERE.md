@@ -323,3 +323,9 @@
 - [Phase E 통제된 공식 출처 fetch/추출 품질 검증 설계](docs/PHASE_E_CONTROLLED_FETCH_AND_EXTRACTION_DESIGN.md) 작성.
 - Phase A DNS preflight와 실제 TCP 연결 간 TOCTOU 잔여 위험을 확인했으므로 IP-pinned transport 및 TLS hostname 검증을 E1/E2 mock/adversarial tests로 입증하기 전 실제 URL fetch 금지.
 - 현재 사용자 승인 요청은 E1+E2 작업 브랜치 구현/오프라인 테스트에 한정. E3 실제 URL fetch는 E1/E2 CI 확인 후 별도 승인.
+
+
+## 2026-11-13 — Phase E E1/E2 completed
+- E1/E2 implementation and offline adversarial tests complete; see `docs/PHASE_E_IMPLEMENTATION.md`.
+- Exact code/test CI: HEAD `d355aefb74f2b1b9159de98827fac8600fb68d4c`, run #43367432101, 126 tests OK; strict archive audit 990/990 consistent.
+- E3 (real official-source fetch/extraction) remains blocked until separately approved. No live source fetch or production integration has occurred.
