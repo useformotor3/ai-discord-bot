@@ -101,7 +101,7 @@
 
 ## 2026-11-13 후속 공식 법령 확인 및 원자 Claim ID 연결 — #33–#37
 
-- #33–#37에 대해 [Claim Evidence Ledger](CLAIM_EVIDENCE_LEDGER.md)에 원자 Claim ID 31개를 등록했다.
+- #33–#37에 대해 [Claim Evidence Ledger](CLAIM_EVIDENCE_LEDGER.md)에 원자 Claim ID 33개를 등록했다.
 - 파일 단위 결과는 5 CONFLICT / direct quote reuse 0/5로 유지한다.
 - **추가 공식 확인:** Commission Implementing Regulation (EU) 2025/2392, adopted 28.11.2025, in force 21.12.2025. EUR-Lex: https://eur-lex.europa.eu/eli/reg_impl/2025/2392/oj/eng
 - Article 7(1) 및 Implementing Regulation 2025/2392에 따라 중요한 제품 분류는 Annex III category의 **core functionality** 및 기술 설명으로 판단한다. 제품에 별도 네트워크 인터페이스 기능이 통합되어 있다는 사실만으로 host product가 자동으로 해당 category가 되지 않는다. 다만 standalone physical/virtual network interface product는 Class I category에 해당할 수 있다.
