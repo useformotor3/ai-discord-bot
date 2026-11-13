@@ -795,3 +795,14 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 - [x] file-level 3 CONFLICT / 2 PARTIALLY_VERIFIED와 개별 claim 상태 구분.
 - [ ] 다음 배치 #53–#57 원자 Claim ID 분해.
 - [ ] #8–#57 전체 원자 claim과 제1권·제2권·SOP·매트릭스 전수 대조.
+
+## 2026-11-13 P0 — #53–#57 원자 주장 분해 및 #8–#57 전체 완료
+
+- [x] #53–#57 main 원본 경로/blob SHA 재확인.
+- [x] 개별 주장·인용 32개를 원자 Claim ID로 분해해 Ledger에 연결.
+- [x] #53 Part I 2(m)/Annex II 8(d)/Article13(18)/(19), #54–#55 Article13(8)/(9)/PartII(8), #56–#57 Article14/69(3) 정정.
+- [x] #8–#57 50개 보고서의 원자 claim decomposition 완료.
+- [ ] **다음 P0:** Ledger 50개 배치의 중복/상충 Claim ID와 법령 locator를 전수 정규화하고 제1권/제2권/SOP/매트릭스/시험 증거 대장과 문장 단위 대조.
+- [ ] 중복 claim은 canonical ID로 통합하되 원본 report refs를 모두 유지.
+- [ ] 상충하는 상태/문구는 official legal source와 exact article/paragraph로 해소.
+- [ ] 전수 대조 후 #63–#67 main-only 감사 및 신규 claim extraction.
