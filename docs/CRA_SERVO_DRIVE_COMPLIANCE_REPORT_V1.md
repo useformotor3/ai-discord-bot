@@ -61,6 +61,10 @@ CRA는 디지털 요소가 있는 제품의 사이버보안 요구와 제조사�
 - Important Product/Class I/Class II는 제품명이나 '산업용'이라는 표현만으로 결정하지 않는다. Annex III 및 관련 시행규정의 범주·핵심 기능을 대조한다. 분류가 달라지면 적합성 평가 경로도 달라질 수 있다.
 - 본 프로젝트는 현 시점에서 제품 적용성 및 등급을 **미판정**으로 유지한다.
 
+**분류 해석의 중요 구분:** Annex III Class I category 14는 보안 관련 기능을 가진 마이크로컨트롤러, Class II category 4는 tamper-resistant microcontrollers다. 다만 실제 ST MCU가 해당 기술 설명을 충족하는지와 그 MCU 자체가 시장에 제공되는 제품인지, 서보 드라이브 완제품이 해당 범주의 core functionality를 갖는지는 서로 다른 판단이다. 드라이브 안에 해당 MCU를 통합했다는 이유만으로 완제품 드라이브가 자동으로 Class I 또는 Class II가 되지 않는다. 상세 판단표는 [제품 분류·접근통제 매트릭스](CRA_PRODUCT_CLASSIFICATION_AND_ACCESS_CONTROL_MATRIX.md)를 사용한다. 제품별 결론은 SKU·MCU 주문 코드·시장 공급 형태·기능 자료가 확보되기 전까지 UNVERIFIED다.
+
+**적합성 평가 경로:** 제품 범주를 먼저 확정한 뒤 Article 32의 해당 절차를 선택한다. Article 24는 적합성 평가 조항이 아니며 오픈소스 소프트웨어 스튜어드 관련 조항이다.
+
 ## 3. 법령 요구사항 기준선
 
 ### 3.1 Article 13 — 제조사 의무 중 설계·지원 관련 핵심
@@ -94,6 +98,7 @@ CRA는 디지털 요소가 있는 제품의 사이버보안 요구와 제조사�
 - 신고는 CRA Single Reporting Platform을 통해 지정 CSIRT에 제출하며 ENISA가 동시에 접근할 수 있도록 하는 구조다.
 - 제조사 내부 시스템이 모든 취약점을 자동으로 외부 신고해야 한다는 의미로 확대 해석하지 않는다.
 - 신고 판단, 인지 시각, 조기 경고·신고·최종 보고 시각, 영향 제품, 완화 조치, 사용자 통지 결정을 기록한다.
+- 실무 역할, 접수 필드, 사건 분류와 기한 추적은 [Article 14 PSIRT 대응 SOP](CRA_ARTICLE14_PSIRT_RESPONSE_SOP_V1.md)를 따른다. 조직의 실제 담당자·연락처·관할 CSIRT는 확정 전까지 TBD로 유지한다.
 
 ### 3.3 Annex I Part I — 제품 속성 요구
 
@@ -115,6 +120,8 @@ CRA는 디지털 요소가 있는 제품의 사이버보안 요구와 제조사�
 | (2)(m) | 데이터·설정 안전하고 영구적인 제거 | 서비스 반환·재판매·폐기 시 삭제 |
 
 위 행의 설계 예는 구현 후보이지 법령이 특정 회로 또는 특정 제품 기능을 직접 명령한다는 의미가 아니다.
+
+**접근통제 조항의 해석:** Annex I Part I point 2(d)는 적절한 통제 메커니즘(예: 인증, 신원·접근관리)을 통해 비인가 접근을 방지하고 가능한 비인가 접근을 보고하도록 요구한다. CRA가 모든 제품에 RBAC, MFA, 고유 비밀번호, 인증서 기반 방식 중 특정 구현을 일률적으로 지정하는 것은 아니다. 구체 설계는 제품 위험평가와 인터페이스에 맞춰 선택하고, 법적 요구와 구현 후보를 [제품 분류·접근통제 매트릭스](CRA_PRODUCT_CLASSIFICATION_AND_ACCESS_CONTROL_MATRIX.md)에서 구분한다.
 
 ### 3.4 Annex I Part II — 취약점 처리 요구
 
@@ -214,3 +221,13 @@ CRA는 디지털 요소가 있는 제품의 사이버보안 요구와 제조사�
 
 ---
 문서 변경은 근거 또는 제품 입력이 새로 확인될 때 버전업한다. 미확인 내용을 완성으로 표시하지 않는다.
+
+
+## 문서 간 연결 및 정본 참조
+
+- 제품 분류와 접근통제 세부 판단·시험 증거: [CRA_PRODUCT_CLASSIFICATION_AND_ACCESS_CONTROL_MATRIX.md](CRA_PRODUCT_CLASSIFICATION_AND_ACCESS_CONTROL_MATRIX.md).
+- Article 14 사건 접수·분류·기한·에스컬레이션: [CRA_ARTICLE14_PSIRT_RESPONSE_SOP_V1.md](CRA_ARTICLE14_PSIRT_RESPONSE_SOP_V1.md).
+- HW/FW 설계 실행 및 시험 계획: [제2권 구현 계획](SERVO_DRIVE_CRA_IMPLEMENTATION_PLAN_V1.md).
+- 전체 문서 역할과 최신 링크: [CRA 문서 구조·전체 목차·링크 안내](CRA_DOCUMENT_ARCHITECTURE_AND_NAVIGATION.md).
+
+이 제1권은 법령 요구와 제조사 의무의 독자용 상위 설명이다. 특정 설계 통제의 구현 상세·시험 증거는 매트릭스/제2권에, 사건 처리의 실제 절차는 PSIRT SOP에 둔다. 같은 법령 문구를 각 문서에 길게 복제하지 않고 해당 정본을 참조한다.
