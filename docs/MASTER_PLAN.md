@@ -549,3 +549,12 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 - [ ] C3 source-specific adapters/PDF backend hardening.
 - [ ] C5 non-production report/claim integration after bundle contract review.
 - [ ] C6 production integration remains separate protected-code approval.
+
+
+## 조사 자료 더블체크 의무화
+- [x] `docs/RESEARCH_DOUBLE_CHECK_STANDARD.md` 수립.
+- 모든 향후 법령·제조사·제품·HW/FW 자료는 공식 원문, revision, 정확한 locator, 문맥·예외를 1차 확인한다.
+- 독립적인 공식 근거를 통한 2차 교차검증을 수행한다.
+- 2차 검증이 미완료면 VERIFIED 금지; PARTIALLY_VERIFIED / CONFLICT / UNVERIFIED로 유지한다.
+- PDF 핵심 인용·표·도면은 페이지 이미지 시각 대조를 수행한다.
+- Bundle의 IDENTITY_AND_REVISION_MATCHED는 문자열 일치일 뿐 VERIFIED가 아니다.
