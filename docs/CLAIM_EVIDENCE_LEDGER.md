@@ -962,3 +962,50 @@ Correct map: Annex I Part I(2)(c) for applicable automatic-update default/user c
 - CRA archive ID namespace 전체: 395개 unique ID (50 file-level + 345 atomic). 중복 ID 0개를 유지해야 한다.
 - 파일 단위 판정과 개별 claim 상태는 별개다. 개별 claim VERIFIED가 원본 파일 전체 VERIFIED를 의미하지 않는다.
 - 제품별 적용성/Class I/II, SKU·core functionality, 실제 DUT 시험은 관련 증거가 확보되기 전까지 UNVERIFIED/NOT_RUN이다.
+
+## 2026-11-13 Canonical Requirement Register — 정본 요구사항 ID
+
+법령 기준: Regulation (EU) 2024/2847 consolidated 20.11.2024 및 Commission Implementing Regulation (EU) 2025/2392. 아래 Canonical ID는 원자 claim을 상위 요구사항에 연결한다. 각 원자 행의 Canonical ID 열이 crosswalk의 기준이다.
+
+| Canonical ID | 공식 근거 | 정본 요구사항·경계 | 주요 검증 증거 |
+|---|---|---|---|
+| CRA-REQ-RISK-BASELINE-001 | Annex I Part I(1) | 제품의 사이버보안 수준은 위험에 기반한 적절한 수준이어야 한다. | 위험평가, threat model, 보안 요구사항 |
+| CRA-REQ-SECURE-DEFAULT-001 | Annex I Part I(2)(b) | secure-by-default 설정 및 original-state reset 가능성. 특정 first-use password 방식은 별도 설계 선택. | 출하 설정, factory reset 시험, default configuration evidence |
+| CRA-REQ-ACCESS-CONTROL-001 | Annex I Part I(2)(d) | 무단 접근을 막는 적절한 제어 메커니즘(인증·ID·접근관리 포함). RBAC/MFA/least privilege는 위험기반 구현 선택. | 계정·권한 모델, 인증 시험, 무단 접근 보고/감사 기록 |
+| CRA-REQ-ATTACK-SURFACE-001 | Annex I Part I(2)(j) | 공격표면과 외부 인터페이스를 위험에 맞게 제한. 모든 포트/JTAG 일괄 비활성화는 보편 의무가 아님. | 인터페이스 목록, 서비스/포트 위협분석, 설정 시험 |
+| CRA-REQ-INTEGRITY-001 | Annex I Part I(2)(f) | 데이터·명령·프로그램·설정의 무결성을 보호한다. | 펌웨어/설정 무결성 설계, 변조 시험 |
+| CRA-REQ-AUTO-UPDATE-001 | Annex I Part I(2)(c) | 자동 보안 업데이트, 업데이트 통지 및 사용자 opt-out 등 정확한 조건을 충족한다. | 업데이트 UX, opt-out 시험, 알림 증거 |
+| CRA-REQ-SECURITY-LOGGING-001 | Annex I Part I(2)(l) | 관련 내부 활동(데이터·서비스·기능 접근/변경 포함)을 기록·모니터링하고 사용자 opt-out 메커니즘 제공. | 이벤트 목록, 로그 시험, opt-out 동작, 저장공간 포화 시험 |
+| CRA-REQ-SECURE-DATA-ERASURE-001 | Annex I Part I(2)(m), Annex II(8)(d) | 사용자가 모든 데이터·설정을 안전하고 쉽게 영구 제거할 수 있는 가능성과 폐기 지침 제공. 특정 NAND/EEPROM 소거 알고리즘은 지정하지 않음. | 데이터 저장 맵, 삭제 기능, 복구 가능성 시험 |
+| CRA-REQ-SBOM-001 | Annex I Part II(1) | 취약점 및 구성요소 식별·문서화, top-level dependencies를 포함한 machine-readable SBOM. | SBOM, component inventory, vulnerability mapping |
+| CRA-REQ-REMEDIATION-001 | Annex I Part II(2) | 취약점을 위험에 비례해 지체 없이 처리·시정하고, 기술적으로 가능하면 보안 업데이트를 기능 업데이트와 분리. | PSIRT triage, remediation SLA, release separation evidence |
+| CRA-REQ-SECURITY-TEST-001 | Annex I Part II(3) | 제품 보안의 효과적이고 정기적인 시험·검토. | 시험계획, 결과, 재시험 및 취약점 조치 기록 |
+| CRA-REQ-VULN-DISCLOSURE-001 | Annex I Part II(4) | 수정된 취약점 정보는 보안 업데이트 제공 후 공개. 정당한 보안 위험이 있는 경우 사용자 적용 기회 후 지연 가능. | advisory, release timing, delay rationale |
+| CRA-REQ-CVD-POLICY-001 | Article 13(8), Annex I Part II(5) | 내부·외부 제보 취약점 처리·시정을 위한 CVD 정책을 수립·집행. | CVD policy, intake/triage workflow, governance approval |
+| CRA-REQ-CVD-CONTACT-001 | Annex I Part II(6) | 취약점 신고 연락 주소 및 취약점 정보 공유 촉진 조치 제공. PGP는 특정 법정 방식이 아님. | contact address, intake channel, response ownership |
+| CRA-REQ-SECURE-UPDATE-DIST-001 | Annex I Part II(7) | 취약점 시정·완화를 위한 안전한 업데이트 배포 메커니즘 제공. A/B, dual-bank, rollback은 설계 선택. | 서명/검증, update transport, interruption/failure test |
+| CRA-REQ-FREE-UPDATE-001 | Annex I Part II(8) | 보안 업데이트는 지체 없이 배포하고 원칙적으로 무상 제공. 맞춤형 제품에 관해 제조자와 사업 사용자가 달리 합의한 경우 예외. | update policy, 계약 예외 검토, release/advisory evidence |
+| CRA-REQ-SUPPORT-PERIOD-001 | Article 13(8) | support period는 expected use를 반영하고 원칙적으로 최소 5년. expected use가 5년 미만이면 그 기간에 대응. | expected-use rationale, support-period decision record |
+| CRA-REQ-UPDATE-AVAILABILITY-001 | Article 13(9) | 각 보안 업데이트는 발행 후 최소 10년 또는 남은 support period 중 더 긴 기간 동안 이용 가능. | release archive, download availability, version retention |
+| CRA-REQ-COMPONENT-DUE-001 | Article 13(5)–(7) | 제3자 구성요소 due diligence, 식별된 취약점의 구성요소 제조자/유지관리 주체 보고, 필요한 코드/문서 공유 및 기록. | supplier/component inventory, notification records, technical documentation |
+| CRA-REQ-USER-CONTACT-001 | Article 13(17) | 사용자가 쉽게 식별하고 직접·신속하게 소통할 단일 연락 창구. 선호 통신수단 선택 가능, 자동화 도구만으로 제한 금지. | user manual/contact point, response process, human contact route |
+| CRA-REQ-USER-INFO-RETENTION-001 | Article 13(18), Annex II | Annex II 사용자 정보/지침을 최소 10년 또는 support period 중 더 긴 기간 제공 가능하게 유지. | controlled manual, version archive, publication evidence |
+| CRA-REQ-SUPPORT-END-001 | Article 13(19), Annex II(7) | support period 종료일을 구매 시 명확히 표시하고 기술적으로 가능한 경우 종료 알림 제공. | product page/label/manual, EOL notice process |
+| CRA-REQ-USER-INSTRUCTIONS-001 | Annex II(1)–(8) | 안전한 설치·운영·유지관리, 연락 창구, 업데이트, 지원기간, 폐기·데이터 삭제 등 사용자 정보 제공. | Korean user manual, installation/maintenance/disposal instructions |
+| CRA-REQ-REPORT-ACTIVE-001 | Article 14(1)–(2) | actively exploited vulnerability 인지 시 24h early warning, 72h vulnerability notification, 조치 이용 후 14일 final report. | incident clock, CSIRT submission, final report evidence |
+| CRA-REQ-REPORT-SEVERE-001 | Article 14(3)–(4) | 제품 보안에 영향을 미치는 severe incident는 24h/72h 및 신고 후 1개월 final report. | severity assessment, incident report, final report |
+| CRA-REQ-REPORT-ROUTE-001 | Article 14(7) | 지정 CSIRT 전자 신고 엔드포인트/단일 플랫폼 사용, ENISA에 동시에 접근 가능. | submission platform receipt, CSIRT endpoint, ENISA access |
+| CRA-REQ-REPORT-SCOPE-TIMELINE-001 | Article 14(1)–(7) | 일반 취약점 CVD와 법정 신고 trigger/기한을 구분. 모든 발견 취약점이 Article 14 신고 대상은 아님. | trigger decision tree, 24h/72h/14d/1m clock records |
+| CRA-REQ-USER-NOTIFY-001 | Article 14(8) | active exploited vulnerability/severe incident의 영향 사용자 및 적절한 경우 모든 사용자 통지. machine-readable 형식은 where appropriate. | customer impact list, advisory, notification evidence |
+| CRA-REQ-CLASSIFICATION-001 | Article 7, Annex III, Implementing Regulation 2025/2392 | Class I/II는 제품 core functionality와 technical description으로 판단. 내장 인터페이스만으로 host product 자동 분류 금지. | product boundary, intended purpose, category assessment |
+| CRA-REQ-CONFORMITY-001 | Article 32, Annex VIII | 해당 Class에 맞는 Module A/B+C/H 등 절차와 조건 적용. Module C=internal production control, H=full quality assurance. | conformity assessment plan, Notified Body decision, certificates |
+| CRA-REQ-TECHDOC-001 | Article 31, Annex VII | 기술문서 작성·유지 및 support period 산정 근거 포함. | technical file, risk assessment, test evidence |
+| CRA-REQ-DOC-001 | Article 28, Annex V/VI | EU Declaration of Conformity 작성 및 필요한 정보 포함. | signed DoC, product/model traceability |
+| CRA-REQ-CE-001 | Article 30 | CE marking 요건 준수. | marking artwork, label/photo evidence |
+| CRA-REQ-PENALTY-001 | Article 64(2)–(3) | 위반 유형별 penalty tier를 구분. Annex I/Article 13/14와 Article 32(1)–(3)의 금액·비율이 다름. | legal obligation mapping, compliance decision record |
+| CRA-REQ-TRANSITION-001 | Article 69(3) | 2027-12-11 이전 출시 제품에도 Article 14 신고 의무 적용. | placing-on-market date evidence, incident procedure |
+| CRA-REQ-MANUFACTURER-ARTICLE13-001 | Article 13 | 제조사 의무의 정확한 본문 조항. Article 11은 General product safety로 인용하지 않음. | article-to-requirement crosswalk, legal review |
+| CRA-REQ-VULNERABILITY-HANDLING-001 | Annex I Part II | Part II는 vulnerability handling requirements. Part I 제품 속성 요구와 혼동하지 않음. | legal clause map, vulnerability process traceability |
+| CRA-EVIDENCE-QUOTE-ACCURACY-001 | Evidence governance rule | 직접 인용은 최종 consolidated text의 정확한 문언·조항·버전과 일치해야 한다. 요약/합성문은 paraphrase로 표시. | exact quote locator, source version, reviewer sign-off |
+
+**매핑 원칙:** 원자 claim의 Canonical ID 열은 하나 이상의 상위 요구사항을 가리킨다. 파일 단위 판정은 별도 유지하며, Canonical ID는 제품 적합성 PASS를 뜻하지 않는다. 제품별 적용성·시험 상태는 각 evidence record에서 따로 관리한다.
