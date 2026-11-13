@@ -882,3 +882,12 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - 파일 단위 판정은 5 CONFLICT / 0 PARTIALLY_VERIFIED / 0 VERIFIED; direct quote reuse 0/5로 유지.
 - 개별 법령 사실 VERIFIED와 원본 보고서 전체 CONFLICT를 구분. 제품별 적용성 UNVERIFIED, DUT 시험 NOT_RUN.
 - 다음 원자 분해 배치는 #33–#37.
+
+## 2026-11-13 — #33–#37 원자 주장 분해 및 Article 7/32 법령 재확인
+
+- #33–#37 원본 5건의 경로/blob SHA를 main에서 재확인했다.
+- Claim Evidence Ledger에 원자 Claim ID 31개를 추가했다.
+- 파일 단위 판정은 5 CONFLICT / 0 PARTIALLY_VERIFIED / 0 VERIFIED; direct quote reuse 0/5로 유지.
+- Commission Implementing Regulation (EU) 2025/2392를 EUR-Lex에서 직접 확인해 Annex III product-category technical description 및 core-functionality 기준을 추가 반영했다.
+- Article 32/Annex VIII conformity assessment, Article 28 DoC, Article 30 CE, Article 31/Annex VII technical documentation으로 정정.
+- 서보 드라이브 Class I/II 적용성 UNVERIFIED, DUT 시험 NOT_RUN. 다음 원자 분해 배치는 #38–#42.
