@@ -222,3 +222,17 @@
 3. 매 감사 배치 종료 시 발견한 정정 사항을 claim ledger, MASTER_REPORT, 해당 권/매뉴얼/매트릭스에 반영하거나, 미반영 사유와 다음 반영 작업을 기록한다.
 4. MASTER_REPORT_INDEX와 문서 지도는 문서 생성·이동·폐기 때 함께 갱신한다.
 5. 매 세션마다 사용자의 최신 의도와 행동강령이 현행 문서에 반영되었는지 확인한다.
+
+
+## 2026-11-13 추가 진행 — 감사 정정의 상위 보고서 통합 시작
+
+- 문서 지도 생성 후 단순 링크 정리에서 멈추지 않고 제1권·제2권의 기존 내용을 다시 읽어 #43–#47 감사에서 확인된 분류·접근통제 오류와 중복 위험을 점검했다.
+- 제1권 CRA compliance report에 다음을 반영했다.
+  - Annex III Class I category 14(보안 관련 기능이 있는 MCU)와 Class II category 4(tamper-resistant MCU), 완제품 서보 드라이브 분류를 분리.
+  - MCU 통합만으로 완제품이 자동 Class I/II가 되지 않음을 명시.
+  - Article 32가 적합성 평가 조항이고 Article 24가 아니라는 점을 명시.
+  - Annex I Part I point 2(d) 접근통제 법적 요구와 RBAC/MFA/least privilege 등 위험기반 구현 후보를 분리하고 매트릭스 링크 추가.
+  - Article 14 운영 정본으로 PSIRT SOP 링크 연결.
+- 제2권 구현 계획에 제품 분류 매트릭스, PSIRT SOP, HW 아키텍처, 통합 추적성 매트릭스의 정본 링크와 역할 구분을 추가했다.
+- MASTER_REPORT의 MCU category 14 문구를 “MCU 자체의 기술 설명 및 별도 시장 제공 여부”와 “완제품 분류”가 서로 다른 판단임을 명확히 했다.
+- 이번 내용 반영은 #43–#47 감사 정정의 관련 상위 문서 연결/명확화다. 과거 모든 archive 감사 항목을 제1권·제2권 전체에 전수 반영한 것은 아니다. 다음 P0에서 Claim Evidence Ledger와 정정 대장을 상위 보고서 전체와 대조한다.
