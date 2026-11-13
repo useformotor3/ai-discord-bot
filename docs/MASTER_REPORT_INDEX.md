@@ -161,3 +161,9 @@
 - 운영 절차: Article 14 PSIRT SOP의 trigger/recipient/deadline을 보완.
 - 누적 #8–#62: 55건, 40 CONFLICT / 15 PARTIALLY_VERIFIED / 0 VERIFIED; 직접 인용 재사용 0/55. 비무작위 연속 표본.
 - #8–#57 개별 주장·인용의 원자 분해 및 상위 문서 전수 대조는 계속 진행 중이다.
+
+## 원자 주장 추적성 진행 — #8–#12
+
+- #8–#12 원자 Claim ID 31개를 [Claim Evidence Ledger](CLAIM_EVIDENCE_LEDGER.md)에 등록했다.
+- 기존 파일 단위 판정은 5 CONFLICT / direct quote reuse 0/5로 유지한다.
+- 다음 원자 분해 대상은 #13–#17이며, #18–#57까지 순차 진행 후 상위 보고서·SOP·매트릭스와 전수 대조한다.
