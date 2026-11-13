@@ -365,11 +365,11 @@ Correct map: Annex I Part I(2)(c) for applicable automatic-update default/user c
 
 | 주장 ID | 원본 보고서 | 원자적 검증 결과 | 판정 |
 |---|---:|---|---|
-| CRA-ARCH-MAIN-048-001 | #48 | 기계 판독 가능 사용자 통지는 Article 14(8)에 규정되어 있으며, 적극 악용 취약점 또는 제품 보안에 영향을 미치는 심각한 사고에 대한 사용자 통지에서 적절한 경우 적용된다. Annex I Part II(2)는 모든 보안 공지에 대한 자동·기계 판독 형식을 일반적으로 요구하지 않는다. CSAF도 의무 형식으로 지정하지 않는다. | PARTIALLY_VERIFIED |
-| CRA-ARCH-MAIN-049-001 | #49 | 무상 보안 업데이트는 Annex I Part II(8)에 근거하며 Part I(2)가 아니다. 신고 조항은 Article 11이 아니라 Article 14다. 지원기간과 업데이트 보존기간은 Article 13(8)/(9)로 구분한다. | CONFLICT |
-| CRA-ARCH-MAIN-050-001 | #50 | 산업용·고위험 용도라는 이유만으로 서보 드라이브를 Annex III Class I로 자동 분류할 수 없다. 제품 전체의 핵심 기능과 시행규정의 기술 설명을 대조해야 한다. | CONFLICT |
-| CRA-ARCH-MAIN-051-001 | #51 | 조정된 취약점 공개 정책(CVD)과 취약점 신고 연락처의 근거는 Annex I Part II(5)/(6)이다. Annex I Part I 또는 Article 10이라는 조항 위치와 PGP의 보편적 의무 주장은 근거가 없다. | PARTIALLY_VERIFIED |
-| CRA-ARCH-MAIN-052-001 | #52 | 통합 구성요소의 취약점을 제조사가 식별한 경우 Article 13(6)의 명시적 신고 방향은 해당 구성요소 제조사/유지관리 주체를 향한다. 모든 공급자가 통합 제조사나 최종 사용자에게 자동 통지해야 한다는 포괄 의무는 인용 조항에서 확인되지 않는다. | CONFLICT |
+| CRA-ARCH-MAIN-20261113-048-001 | #48 | 기계 판독 가능 사용자 통지는 Article 14(8)에 규정되어 있으며, 적극 악용 취약점 또는 제품 보안에 영향을 미치는 심각한 사고에 대한 사용자 통지에서 적절한 경우 적용된다. Annex I Part II(2)는 모든 보안 공지에 대한 자동·기계 판독 형식을 일반적으로 요구하지 않는다. CSAF도 의무 형식으로 지정하지 않는다. | PARTIALLY_VERIFIED |
+| CRA-ARCH-MAIN-20261113-049-001 | #49 | 무상 보안 업데이트는 Annex I Part II(8)에 근거하며 Part I(2)가 아니다. 신고 조항은 Article 11이 아니라 Article 14다. 지원기간과 업데이트 보존기간은 Article 13(8)/(9)로 구분한다. | CONFLICT |
+| CRA-ARCH-MAIN-20261113-050-001 | #50 | 산업용·고위험 용도라는 이유만으로 서보 드라이브를 Annex III Class I로 자동 분류할 수 없다. 제품 전체의 핵심 기능과 시행규정의 기술 설명을 대조해야 한다. | CONFLICT |
+| CRA-ARCH-MAIN-20261113-051-001 | #51 | 조정된 취약점 공개 정책(CVD)과 취약점 신고 연락처의 근거는 Annex I Part II(5)/(6)이다. Annex I Part I 또는 Article 10이라는 조항 위치와 PGP의 보편적 의무 주장은 근거가 없다. | PARTIALLY_VERIFIED |
+| CRA-ARCH-MAIN-20261113-052-001 | #52 | 통합 구성요소의 취약점을 제조사가 식별한 경우 Article 13(6)의 명시적 신고 방향은 해당 구성요소 제조사/유지관리 주체를 향한다. 모든 공급자가 통합 제조사나 최종 사용자에게 자동 통지해야 한다는 포괄 의무는 인용 조항에서 확인되지 않는다. | CONFLICT |
 
 원본 경로·아카이브 blob SHA·공식 조항 매핑·인용문 판정·반증은 [#48–#52 상세 감사 보고서](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_48_52_2026-11-13.md)를 참조한다.
 
@@ -378,3 +378,27 @@ Correct map: Annex I Part I(2)(c) for applicable automatic-update default/user c
 
 - #48–#52 다섯 개 주장 레코드를 한국어로 전환했다. 기존 Claim ID, 판정, 조항 위치, 원본 SHA 추적은 보존했다.
 - 법령 기준선과 제품 분류·접근통제 매트릭스를 한국어 설명 정본으로 갱신했다.
+
+
+## 30. 2026-11-13 main 연속 감사 배치 색인 및 원자 주장 연결 상태
+
+> 이 절은 배치 단위 탐색 색인이다. 개별 claim record를 대체하지 않는다. 보고서 번호는 날짜가 바뀌면 반복될 수 있으므로 신규 claim ID에는 날짜/원본 범위를 포함한다.
+
+| 감사 범위 | 상세 감사 문서 | 판정 | 직접 인용 재사용 | Ledger 원자 주장 연결 |
+|---|---|---|---:|---|
+| #8–#12 | 세부 파일 경로/문서 ID 재확인 필요 | 이전 누적 요약에서 5 CONFLICT로 계산되나 원본 감사 문서 링크 재확인 필요 | 누적 #8–#47 집계에 포함되어 0/5 | 개별 claim ID 미확인 |
+| #13–#27 | [감사 #13–#27](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_13_27_2026-11-13.md) | 15 CONFLICT | 0/15 | 개별 원자 claim ID 미등록 |
+| #28–#32 | [감사 #28–#32](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_28_32_2026-11-13.md) | 5 CONFLICT | 0/5 | 개별 원자 claim ID 미등록 |
+| #33–#37 | [감사 #33–#37](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_33_37_2026-11-13.md) | 5 CONFLICT | 0/5 | #35–#37의 일부 ID가 과거 기록에 있으나 날짜/경로 기준 재매핑 필요 |
+| #38–#42 | [감사 #38–#42](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_38_42_2026-11-13.md) | 4 CONFLICT / 1 PARTIALLY_VERIFIED | 0/5 | #40–#42 일부 ID가 과거 기록에 있으나 날짜/경로 기준 재매핑 필요 |
+| #43–#47 | [감사 #43–#47](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_43_47_2026-11-13.md) | 3 CONFLICT / 2 PARTIALLY_VERIFIED | 0/5 | CRA-ARCH-043–047 레코드 존재 여부와 원본 날짜/경로를 재대조해야 함 |
+| #48–#52 | [감사 #48–#52](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_48_52_2026-11-13.md) | 3 CONFLICT / 2 PARTIALLY_VERIFIED | 0/5 | CRA-ARCH-MAIN-20261113-048–052-001 다섯 레코드 등록 |
+
+### 집계와 한계
+
+- #13–#52: 40건 중 35 CONFLICT / 5 PARTIALLY_VERIFIED / 0 VERIFIED, 직접 인용 재사용 0/40.
+- #8–#47: 40건 중 37 CONFLICT / 3 PARTIALLY_VERIFIED / 0 VERIFIED, 직접 인용 재사용 0/40. #8–#12의 5 CONFLICT는 이전 누적 집계에서 역산한 값이며, 원본 감사 문서·개별 판정 링크를 이번 대조에서 재확인하지 못했다.
+- #8–#52: 45건 중 40 CONFLICT / 5 PARTIALLY_VERIFIED / 0 VERIFIED, 직접 인용 재사용 0/45.
+- 이 결과는 날짜/번호로 연속 선택한 비무작위 표본이다. 전체 main 아카이브의 오류율로 일반화하지 않는다.
+- Ledger에 개별 원자 주장 ID가 없는 #13–#34 및 일부 #35–#47은 상세 감사 문서가 존재하더라도 주장 단위 추적은 미완료다. 이 배치 색인을 추가한 것만으로 원자 claim coverage가 완료된 것으로 간주하지 않는다.
+- 다음 P0: #8–#52의 날짜+원본 경로+blob SHA를 기준으로 감사 문서와 Ledger ID를 1:1 대조하고, 중복/누락/상태 차이를 폐쇄한다.
