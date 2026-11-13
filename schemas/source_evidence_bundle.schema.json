@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://example.invalid/schemas/source_evidence_bundle.schema.json",
+  "$id": "urn:cra:source-evidence-bundle:1.0.0",
   "title": "CRA Source Evidence Bundle",
   "type": "object",
   "additionalProperties": false,
