@@ -177,6 +177,6 @@
 ## 2026-11-13 authoritative evidence index
 
 - main-only reports #8–#62: 55 files, 40 CONFLICT / 15 PARTIALLY_VERIFIED / 0 VERIFIED, direct quote reuse 0/55; consecutive non-random sample only.
-- Claim Evidence Ledger: 55 file-level records + 345 atomic claims = 400 unique IDs, zero collisions; 45 canonical requirements, all atomic claims mapped.
+- Claim Evidence Ledger: 55 file-level records + 345 atomic claims = 400 unique IDs, zero collisions; 46 canonical requirements, all atomic claims mapped.
 - Canonical requirement mapping is integrated into [requirements-to-servo-drive matrix](CRA_REQUIREMENTS_TO_SERVO_DRIVE_TRACEABILITY_MATRIX.md) and [integrated traceability matrix](CRA_INTEGRATED_TRACEABILITY_MATRIX.md).
 - Next P0: reconcile Volume 1/2, PSIRT SOP, traceability matrices and test evidence register against the 345 atomic claims; then audit main reports #63–#67.
