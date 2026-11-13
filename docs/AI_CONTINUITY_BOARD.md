@@ -255,6 +255,6 @@
 - main state.json: date 2026-11-13, count 107. 이는 당일 카운터이며 누적 자료 수가 아니다.
 - main history.json: 1,382 entries. Recursive archive tree count는 이번 보정에서 조회하지 않았으므로 1,382개 archive 파일이라고 단정하지 않는다.
 - cra-project-foundation history.json: 990 entries. state.json은 date 2026-11-12, count 3; 이 값은 일일 카운터다. 마지막 strict archive audit가 확인한 990/990 정합성 결과는 이전 검증 기준이며 이번 문서 전용 commit 후 새 strict audit를 실행한 것은 아니다.
-- 현재 작업 HEAD: ad7b2732b5a554842772be8cabb23ba29d270ae4. main 대비 diverged, ahead 690 / behind 398, merge base b425b6db591e34abe003522157cf97ecf2240d9f.
+- 이 기준선 조회 시 작업 HEAD는 ad7b2732b5a554842772be8cabb23ba29d270ae4였다. 이후 START_HERE 및 MASTER_REPORT 문서 정정 commit f42fa408858f8160fb5a379a052294c36cc0465d, 91372b411ccb037602c59e4a88791119b04a7a73가 추가되었으므로 현재 tip은 다음 세션 시작 시 동적으로 다시 조회한다. 기준선 시점 main 비교는 diverged, ahead 690 / behind 398, merge base b425b6db591e34abe003522157cf97ecf2240d9f.
 - 최신 HEAD 문서 변경은 docs/SESSION_LOG에 한정된 마지막 commit이며, 전체 문서 변경은 그 직전 연속 docs-only commits에 기록되어 있다. main merge/rebase/sync는 수행하지 않았다.
 - exact HEAD CI run/status는 별도 조회 결과가 없는 한 PASS로 기록하지 않는다.
