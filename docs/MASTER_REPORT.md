@@ -393,3 +393,11 @@ main 브랜치의 #28–#32를 archive 원문과 기존 EUR-Lex 현행 법령 �
 - 감사 로깅: Annex I Part I 2(l). Part I 2(h)는 availability/DoS resilience다. 특정 tamper-proof 저장, circular buffer, Syslog over TLS는 법령이 지정한 보편적 기술이 아니다.
 
 상세 원본 SHA·조항·반증은 [#58–#62 감사 보고서](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_58_62_2026-11-13.md) 및 [Claim Evidence Ledger](CLAIM_EVIDENCE_LEDGER.md)를 따른다.
+
+## 최신 법령 보완 — Important Product 및 적합성 평가
+
+#33–#37 원자 분해 과정에서 Commission Implementing Regulation (EU) 2025/2392를 추가 확인했다. CRA Article 7(1) 및 해당 시행규정에 따라 Annex III Class I/II 분류는 제품의 core functionality와 technical description을 기준으로 한다. 서보 드라이브에 Ethernet/Fieldbus 인터페이스가 통합되어 있다는 사실만으로 드라이브 전체가 자동 Class I이 되는 것은 아니다. 별도 공급되는 네트워크 인터페이스 제품과 host drive를 구분한다.
+
+Conformity assessment 본문은 Article 32, 모듈은 Annex VIII다. Module A=internal control, B=EU-type examination, C=internal production control, H=full quality assurance. DoC Article 28, CE Article 30, technical documentation Article 31/Annex VII다.
+
+실제 servo drive Class I/II 분류와 평가 경로는 제품 SKU, 공급 경계, core functionality, 내장/별도 네트워크 인터페이스, MCU 보안 기능 자료가 확보되기 전까지 UNVERIFIED다. #37 원본은 Article 24/20/23 오기와 Annex/Module 혼합으로 file-level CONFLICT이며 직접 인용 재사용 0/5다. 상세 근거는 [#33–#37 감사](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_33_37_2026-11-13.md) 및 [법령 기준선](CRA_VERIFIED_BASELINE_2026-11-12.md)를 따른다.
