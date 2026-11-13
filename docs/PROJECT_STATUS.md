@@ -732,3 +732,12 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - START_HERE, AI_RULEBOOK, AI_CONTINUITY_BOARD, MASTER_REPORT_INDEX, MASTER_REPORT, MASTER_PLAN에 사용자 의도와 문서 통합 규칙을 연결했다.
 - 현재까지 문서 구조를 만든 것은 과거 감사 결과가 모든 최종 보고서에 통합되었다는 뜻이 아니다. 제1권·제2권·마스터 보고서·Claim Evidence Ledger·정정 대장의 상호 대조와 누락 통합은 다음 P0 작업이다.
 - 이 문서 업데이트는 문서 운영 체계 반영이며, 법령 검증·제품별 적용성·DUT 시험·CI 성공을 새로 입증하지 않는다.
+
+
+## 2026-11-13 — 상위 보고서 내용 통합 착수
+
+- 제1권, 제2권, MASTER_REPORT를 직접 재열람해 #43–#47 감사 정정이 상위 문서에서 어떻게 설명되는지 확인했다.
+- 제1권에 Annex III Class I category 14와 Class II category 4의 MCU 구분, MCU 자체의 기술 설명/시장 공급과 완제품 드라이브 분류의 구분, Article 32 평가 경로, Annex I Part I 2(d) 접근통제 해석 및 매트릭스·PSIRT SOP 연결을 추가했다.
+- 제2권에 제품 분류/접근통제 매트릭스, PSIRT SOP, HW 아키텍처, 통합 추적성 매트릭스의 역할별 링크를 추가했다.
+- MASTER_REPORT의 MCU category 14 문구를 완제품 통합만으로 분류가 자동 결정되지 않는다는 점을 명확히 했다.
+- 이 통합은 #43–#47 관련 정정 일부에 대한 첫 반영이다. Claim Evidence Ledger/정정 대장과 제1권·제2권의 전체 요구사항을 대조하는 전수 동기화는 미완료.
