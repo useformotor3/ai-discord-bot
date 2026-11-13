@@ -357,3 +357,16 @@ Detailed report: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_124_2026-11-12.md](ARCHIVE_MANU
 | CRA-ARCH-124-001 | #124 | Vulnerability handling is Annex I Part II(1)–(8), not Part I Section 2; raw quote is synthetic/wrongly numbered; cryptographic signature and fail-safe recovery are design candidates, not universal named mandates. | CONFLICT |
 
 Correct map: Annex I Part I(2)(c) for applicable automatic-update default/user controls; Part II(5) CVD policy; Part II(6) vulnerability information/contact; Part II(7) secure update distribution; Part II(8) timely/free security updates subject to tailor-made business-user exception; Article 13(17)/Annex II(2) user-facing single point of contact.
+
+
+## Main-only archive reports #48–#52 correction records — 2026-11-13
+
+| Claim ID | Archive report | Atomic finding | Status |
+|---|---:|---|---|
+| CRA-ARCH-MAIN-048-001 | #48 | Machine-readable user notification is Article 14(8), only for actively exploited vulnerabilities/severe incidents and where appropriate; Annex I Part II(2) does not impose a universal automated advisory format. CSAF is not named as mandatory. | PARTIALLY_VERIFIED |
+| CRA-ARCH-MAIN-049-001 | #49 | Free security updates are Annex I Part II(8), not Annex I Part I(2); reporting is Article 14, not Article 11; Article 13(8)/(9) support period and update retention were misstated. | CONFLICT |
+| CRA-ARCH-MAIN-050-001 | #50 | Industrial servo drives are not automatically Annex III Class I based on industrial/high-risk use; whole-product core functionality and the technical description govern classification. | CONFLICT |
+| CRA-ARCH-MAIN-051-001 | #51 | CVD policy and vulnerability contact address are required by Annex I Part II(5)/(6); Annex I Part I/Article 10 locators and mandatory PGP assertion are unsupported. | PARTIALLY_VERIFIED |
+| CRA-ARCH-MAIN-052-001 | #52 | Article 13(6) reporting direction is manufacturer → component manufacturer/maintainer when an integrated-component vulnerability is identified; no blanket supplier → integrator/end-user notification rule is established by the cited text. | CONFLICT |
+
+Detailed source paths, archive blob SHAs, official provision mapping, quote assessment and counter-evidence: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_48_52_2026-11-13.md](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_48_52_2026-11-13.md).
