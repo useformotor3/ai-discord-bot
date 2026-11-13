@@ -800,3 +800,14 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - #38 재검토 결과: Annex I Part I(2)(m)의 안전하고 쉬운 데이터·설정 영구 제거 가능성 요구를 누락했던 기존 감사 판정을 PARTIALLY_VERIFIED로 정정.
 - #8–#47: 40건, 36 CONFLICT / 4 PARTIALLY_VERIFIED. #8–#52: 45건, 39 CONFLICT / 6 PARTIALLY_VERIFIED. #8–#57: 50건, 40 CONFLICT / 10 PARTIALLY_VERIFIED / 0 VERIFIED, 직접 인용 재사용 0/50.
 - 제품별 적용성은 SKU·제품 경계·저장 구조·실제 MCU 정보 미확정으로 UNVERIFIED. 실제 DUT 시험 NOT_RUN.
+
+
+## 2026-11-13 최종 Git/감사 기준선 확인
+
+- main HEAD: `8ebc3cdc361a1b694e4ad18b5d85cc6dec5d1f35` (Auto-archive report #112).
+- main state.json: date 2026-11-13 / count 112. main history.json: 1,387 entries. Recursive archive tree count는 이번에 별도 확인하지 않았다.
+- cra-project-foundation history.json: 990 entries. state.json: 2026-11-12 / count 3 (당일 카운터).
+- 브랜치 비교: diverged, 작업 브랜치 ahead 783 / behind 403, merge base `b425b6db591e34abe003522157cf97ecf2240d9f`. main은 읽기 전용이며 merge/rebase/sync 금지.
+- 작업 브랜치 최신 확인 HEAD 직전 기준: `45be8357c676a1c15e672d4b381474943211230e`. 이후 continuity board 갱신이 수행되므로 최종 tip은 해당 갱신 commit으로 확인한다.
+- 정확한 HEAD의 GitHub Actions run/status: 조회 결과 workflow runs 0, combined statuses 0. CI는 미실행/미확인으로 기록한다.
+- 보호 파일 7개 SHA는 기준선과 동일하며 이번 작업에서 변경되지 않았다.
