@@ -36,7 +36,7 @@ class SourceBundleTests(unittest.TestCase):
         fetched, extracted = self.make_pair(
             "<html><head><title>AN5156 Rev 14</title></head><body>"
             "<h1>AN5156</h1><p>Rev 14 (June 2026)</p>"
-            "<article><p>Security lifecycle requirements.</p></article></body></html>"
+            "<h2>Article 13</h2><p>Security lifecycle requirements.</p></body></html>"
         )
         bundle = build_source_evidence_bundle(fetched, extracted)
         self.assertEqual(bundle.identity_status, "IDENTITY_AND_REVISION_MATCHED")
