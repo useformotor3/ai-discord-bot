@@ -1020,3 +1020,8 @@ Batch direct quote reuse: **0/5**. Per-file quote counts are not inferred where 
 | CRA-ARCH-MAIN-20261113-061-FILE-001 | #61 | research_archive/2026-11-13_050052.md | 6d3149dfd83b1862bc2388b6ee15d376d53a4e8e | PARTIALLY_VERIFIED | See batch result below | ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_58_62_2026-11-13.md |
 | CRA-ARCH-MAIN-20261113-062-FILE-001 | #62 | research_archive/2026-11-13_050532.md | 5a280db701cf970c32ef85d97010e0dd1dbd7fa0 | PARTIALLY_VERIFIED | See batch result below | ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_58_62_2026-11-13.md |
 
+## 2026-11-13 current main source revalidation — report #125
+
+- Current main HEAD: 92e8ca7aa4a86b38627a1d8e9535e5b0463a8392; main tree: 7679729e1b128eacf26034346dafb29aa8da610b; history.json: 1,400 entries.
+- All 55 file-level source paths and recorded blob SHAs for reports #8–#62 were compared against the current main tree: **55/55 match; missing 0; mismatches 0**.
+- This validates the immutability/current presence of the audited source files, not the correctness of every legal claim or product applicability.
