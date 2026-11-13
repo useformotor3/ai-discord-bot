@@ -575,8 +575,8 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 - 현재 범위는 CRA 서보 드라이브 조사·적용·설계·시험·증거·보고서이며 SIL 3 벤치마킹은 범위 밖이다.
 - 신규 세션은 `docs/AI_CONTINUITY_BOARD.md`를 필수로 읽고, 현재 HEAD/main archive/CI를 다시 확인한다.
 - 보고서 생산과 검증을 코드/파이프라인 개선과 동등한 최우선 결과로 취급한다. 가능한 작업마다 실제 보고서 본문, 비교표, 설계도, claim audit 또는 증거 대장을 남긴다.
-- main archive report #8–#32 감사 완료: 총 25건 CONFLICT, direct quote reuse 0/25. 이 결과는 연속 비무작위 배치이며 전체 1,366개 archive 오류율이 아니다.
-- main 현재 report #91, archive/history 1,366/1,366. 다음 audit target #33. 우선 #33–#91 대기열을 최신 main SHA 기준으로 등록하고 P0 claims부터 Pass A/B/C.
+- main archive reports #8–#62 감사 완료: 55건, 40 CONFLICT / 15 PARTIALLY_VERIFIED / 0 VERIFIED, direct quote reuse 0/55. 연속 비무작위 표본이며 전체 archive 오류율이 아니다.
+- main 최신 관찰 report #119 / HEAD `6491a5db6ea35ea97a6d97e85bac43f9a3cf41c0`; state 119, history 1,394. 다음 main-only audit target #63–#67이며, P0 canonical cross-document reconciliation 이후 수행.
 - 제1권 CRA 조사 보고서와 제2권 구현 계획은 초판이다. #28–#32 감사 결과 및 반복 정정 규칙을 통합해 다음 revision을 작성한다.
 - E3 live source fetch, protected production code, Gemini V2 prompt/contract, main branch mutation/merge/rebase/sync는 별도 명시 승인 전 금지.
 
@@ -687,7 +687,7 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 ## 2026-11-13 P0 — #53–#57 통합 및 다음 감사
 
 - [x] main reports #53–#57 Pass A/B/C 감사: 1 CONFLICT / 4 PARTIALLY_VERIFIED / 0 VERIFIED.
-- [x] #53–#57 원본 경로/blob SHA 및 날짜 포함 Claim ID 5개를 Ledger에 등록.
+- [x] #53–#57 원본 경로/blob SHA 및 원자 Claim ID 32개를 Ledger에 등록.
 - [x] Part I(2)(m) 데이터 제거 기능 결과, Annex II(8)(d) 사용자 지침, Article 13(19) 지원 종료일/종료 시점 알림을 법령 기준선과 보고서/매뉴얼에 반영.
 - [x] Article 14 신고가 Class I/II 한정이 아니며 Article 69(3)상 기존 출시 제품에도 적용됨을 정정.
 - [ ] #8–#57 개별 문서 내 모든 주장·인용을 원자 단위로 분해하고 Claim ID/공식 원문/정정/반증 연결.
@@ -718,7 +718,7 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 ## 2026-11-13 P0 — #8–#12 원자 주장 분해
 
 - [x] main archive #8–#12 원본 경로/blob SHA 재대조.
-- [x] 기존 감사 결과의 파일 단위 판정을 유지하면서 개별 주장·인용을 31개 원자 Claim ID로 분해.
+- [x] 기존 감사 결과의 파일 단위 판정을 유지하면서 개별 주장·인용을 32개 원자 Claim ID로 분해.
 - [x] secure-by-default Part I(2)(b), access control (d), attack surface (j), Class II Annex III 분리.
 - [x] 강제 첫 접속 비밀번호 변경/모든 포트·JTAG 차단/least privilege를 보편적 법적 직접 의무로 쓰지 않도록 반증 연결.
 - [ ] 다음 배치 #13–#17 원자 Claim ID 분해.
@@ -806,3 +806,14 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 - [ ] 중복 claim은 canonical ID로 통합하되 원본 report refs를 모두 유지.
 - [ ] 상충하는 상태/문구는 official legal source와 exact article/paragraph로 해소.
 - [ ] 전수 대조 후 #63–#67 main-only 감사 및 신규 claim extraction.
+
+## 2026-11-13 authoritative snapshot — #8–#62 audit and claim normalization
+
+- main latest observed: report #119; HEAD \`6491a5db6ea35ea97a6d97e85bac43f9a3cf41c0\`; state count 119; history.json 1,394 entries. Archive tree count was not rechecked. main remains read-only.
+- main-only audit scope #8–#62: 55 consecutive, non-random reports; file-level results **40 CONFLICT / 15 PARTIALLY_VERIFIED / 0 VERIFIED**; direct quote reuse **0/55**. This is not a statistical error rate for the full archive.
+- Claim Evidence Ledger: 55 file-level source records + 345 atomic claims = **400 unique IDs**, duplicate IDs 0. All 345 atomic claims have one or more Canonical IDs. Canonical register defines 45 requirements; 43 are referenced by legacy atomic claims, and 2 are forward-mapped to matrix requirements.
+- #8–#57 (50 reports) and #58–#62 (5 reports) have completed atomic decomposition. Individual legal facts marked VERIFIED do not promote a conflicting source file to VERIFIED.
+- Product-specific applicability, Class I/II classification, exact MCU order code and DUT test results remain UNVERIFIED/NOT_RUN.
+- Current P0: reconcile the 345 atomic claims and 45 canonical requirements against Volume 1, Volume 2, PSIRT SOP, requirements matrix, integrated traceability matrix and test evidence register; resolve duplicated/contradictory wording and keep exact legal locators. Then proceed to main-only audit #63–#67.
+- No production code, main.py, production workflow, Gemini V2 prompt/contract or main branch was changed. E3 live source fetch remains unexecuted. This batch is documentation-only.
+
