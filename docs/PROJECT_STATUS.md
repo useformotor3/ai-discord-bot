@@ -515,3 +515,13 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - 신규 대기열: [CRA_ARCHIVE_AUDIT_QUEUE.md](CRA_ARCHIVE_AUDIT_QUEUE.md). P0/P1/P2/P3 우선순위와 보고서별 commit SHA, 파일, 원문 시각, 주제 및 검증 쟁점을 기록했다.
 - EUR-Lex Regulation (EU) 2024/2847 Article 13(8)/(9), Article 14, Article 71(2), Annex I Part I/II, Annex II 1–9, Article 7/Annex III를 원문과 주변 문맥으로 사전 확인했다. Commission C(2026) 5252 게시 정보 및 ENISA SRP/FAQ도 공식 페이지에서 확인했다. 이는 개별 보고서 VERIFIED 판정이 아니다.
 - main archive/history/state는 읽기 전용. main.py, Gemini prompt, 운영 자동화 코드, run.yml 및 main 브랜치 수정 없음. merge/rebase/sync 없음. 문서 등록만 수행했으며 테스트는 실행하지 않았다.
+
+
+## Source Evidence Pipeline — Phase C implementation (2026-11-13)
+- User explicitly approved the Phase C design scope. Added `evidence_bundle.py`, `cra_report_contract_v3.py`, `schemas/cra_research_v3.schema.json`, and `prompts/CRA_RESEARCH_PROMPT_V3.txt` on the work branch.
+- Added `tests/test_evidence_bundle.py` and `tests/test_cra_report_contract_v3.py`.
+- Bundle builder joins Phase A fetch metadata/raw bytes with Phase B extraction results, checks source registry identity, HTTP 200, same-host HTTPS final URL, MIME, byte count, raw/text SHA-256, and emits deterministic Evidence IDs. Excerpts are bounded (2,000 chars each; max 200 entries; max 100,000 total chars).
+- v3 contract validates claim-level Evidence IDs against the bundle; unknown/duplicate IDs, invalid structure and `VERIFIED`/`PARTIALLY_VERIFIED` promotion are rejected. Rendering derives `BUNDLE_LINKED_UNVERIFIED` / `NO_EVIDENCE`.
+- v2 contract/prompt and production `main.py`/workflow were not changed; no production import/integration. No live fetch, Gemini API call, paid service or billing change.
+- Important limit: hash checks establish internal integrity consistency, not publisher authenticity or semantic/legal correctness. Evidence ID linkage is not verification. Phase D exact quote/context validation and human review remain separate.
+- CI status: pending exact final commit observation. Do not mark Phase C tests/CI passed until the Actions run is confirmed.
