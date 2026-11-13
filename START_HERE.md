@@ -55,14 +55,13 @@
 - main.py, production run.yml, Gemini V2 prompt, contracts, schemas, evidence bundle은 별도 승인 전 수정 금지.
 - 최신 작업 HEAD의 CI run/status가 확인되지 않으면 PASS라고 기록하지 않는다.
 
-## 최우선 다음 작업
-1. 990개 자료의 위험 플래그별 표본을 원문과 대조해 실제 오류/정상 주장 구분
-2. URL 후보 0개 원인을 대표 6개에서 확인했으므로 공식 canonical URL 복원
-3. SBOM/지원기간/Article 14/제품 분류 관련 후보를 우선 검증
-4. 초기 5개 파일 수동 감사 정정 규칙을 전체 보고서에 반영
-4. 서보 드라이브 제품 경계/인터페이스/의도된 용도를 정의해 CRA 적용성 검토
-5. ST MCU 정확한 부품번호 확보 후 ST/TI 기능별 동급 비교
-6. main.py와 Gemini 명령 구조는 분석 및 변경 제안만 수행하고 승인 대기
+## 최우선 다음 작업 (2026-11-13 최신)
+1. #8–#52 감사 결과와 Claim Evidence Ledger를 제1권·제2권·PSIRT SOP·법령 기준선·요구사항/통합 추적성 매트릭스에 전수 대조한다.
+2. 불일치·누락된 법령 조항, 예외, 상태만 기존 정본에 통합하고 문서 분리를 최소화한다.
+3. 한국어가 아닌 영문 중심의 최종 실무 문서는 독자와 용도를 확인해 한국어 정본으로 전환한다.
+4. main reports #53–#57을 원문 SHA와 공식 법령으로 감사하고 같은 배치에서 상위 문서 통합까지 수행한다.
+5. 제품 SKU, 제품 경계, 의도된 용도, 실제 ST MCU 주문 코드가 확보되면 제품별 분류·설계·ST/TI 비교를 갱신한다.
+6. main.py/Gemini 명령 구조/production workflow 변경은 별도 승인 전 수정하지 않는다.
 
 
 ## 최신 작업 업데이트 (2026-11-12)
@@ -359,24 +358,23 @@
 - Article 14 신고 대응 절차: [CRA_ARTICLE14_PSIRT_RESPONSE_SOP_V1.md](docs/CRA_ARTICLE14_PSIRT_RESPONSE_SOP_V1.md)
 
 
-## 2026-11-13 — report-first execution rule
+## 2026-11-13 — 보고서 우선 실행 원칙
 
-- Do not confuse pipeline, validator, backlog or plan updates with a completed technical report.
-- Keep report deliverables visible in `docs/MASTER_REPORT_INDEX.md`; each report must identify document ID/version/date, verified source references and exact locations, claim-level verification status, product assumptions, unresolved inputs and tests NOT_RUN.
-- Current CRA report editions are generic framework/first editions, not product-specific conformity findings or a completed SIL 3 servo-drive benchmark. Product SKU, exact MCU order code and test evidence are still missing.
-- After the approved Phase D hardening passes exact-head CI, prioritize substantive report revision and evidence-linked comparison tables over further architecture/process-only work.
+- 수집 파이프라인, 검증기, 백로그, 계획서만 갱신한 것을 기술 보고서 완성으로 간주하지 않는다.
+- 보고서 산출물은 `docs/MASTER_REPORT_INDEX.md`에 등록한다. 각 문서는 문서 ID/버전/기준일, 공식 출처와 정확한 위치, 주장별 검증 상태, 제품 가정, 미해결 입력, NOT_RUN 시험을 명시한다.
+- 현재 CRA 보고서는 일반 참조 기준선이며 제품별 적합성 판정이 아니다. 제품 SKU, 정확한 MCU 주문 코드 및 시험 증거가 미확정이다.
+- 아키텍처/운영 문서만 반복 개선하지 말고, 검증된 내용을 실제 보고서 본문·비교표·매뉴얼에 우선 반영한다.
 
 
 ## 2026-11-13 — 상시 연속성 현황판 도입 및 범위 정정
 - [AI 연속성·실행 현황판](docs/AI_CONTINUITY_BOARD.md)을 신규 세션 필수 첫 문서로 지정했다. 매 세션은 현재 저장소 상태와 대조하고 작업 종료 시 반드시 갱신한다.
 - 현재 프로젝트 범위는 CRA 전용이다. SIL 3 벤치마킹은 현재 범위가 아니며 과거 로그의 관련 문구는 현재 우선순위로 재사용하지 않는다.
 - 결과물 우선 원칙: 가능하면 매 작업마다 보고서 장/표/설계/검증 대장 등 실질 산출물을 함께 만든다. 코드 개선은 허용하며, 코드-only 작업은 예외 사유를 기록한다.
-- 현재 main tip은 report #91, archive/history 1,366/1,366이다. 감사는 #8–#32까지 완료되어 있으며, #33부터 이어간다. 최신 숫자/HEAD는 새 세션마다 재조회한다.
+- 이 항목은 과거 기록이며 최신 상태로 사용하지 않는다. 현재 감사 위치와 main HEAD/state/history는 문서 하단의 '한국어 정본 및 최신 통합 기준'과 AI_CONTINUITY_BOARD에서 확인한다.
 
 
-## 최신 감사 진행 위치 (2026-11-13)
-- main reports #8–#37 수동 감사 완료. 최신 배치 #33–#37 결과 5 CONFLICT / direct quote reuse 0/5. 다음 대상 #38.
-- 감사 문서 CI #43386808125 success: 140 tests, archive/history 990/990 consistent=true.
+## 과거 감사 진행 기록 (현재 기준으로 사용 금지)
+- 아래에 남아 있는 과거 배치 위치와 CI 결과는 당시 기록이다. 최신 감사 위치는 #8–#52 완료, 다음 대상 #53이며, 최신 HEAD CI 상태는 매 세션 현재 커밋 기준으로 다시 확인한다.
 
 
 ## 2026-11-13 — 한국어 정본 및 최신 통합 기준
