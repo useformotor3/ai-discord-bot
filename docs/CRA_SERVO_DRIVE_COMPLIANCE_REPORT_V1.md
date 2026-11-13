@@ -278,3 +278,33 @@ Annex I Part II(1)의 machine-readable 요구는 SBOM 형식에 관한 것이다
 - Article 13(19)는 지원기간 종료일을 구매 시 쉽게 접근 가능하게 표시하고, 제품 특성상 기술적으로 가능한 경우 지원기간 종료 시점에 도달했음을 알리는 알림을 표시하도록 한다. 모든 제품에 별도의 사전 통지 기간을 요구한다고 쓰지 않는다.
 - 지원기간은 Article 13(8), 개별 업데이트의 가용성은 Article 13(9), 무상 업데이트 배포는 Annex I Part II(8)로 구분한다.
 - Article 14 신고 의무는 Class I/II에만 한정되지 않는다. Article 69(3)에 따라 2027-12-11 이전 출시 제품에도 Article 14가 적용된다.
+
+## 3.7 CVD 정책·취약점 신고·보안 이벤트 기록 — #58–#62 감사 정정
+
+### CVD와 신고 연락처
+
+- 제조자는 support period 동안 취약점을 효과적으로 처리하고, 내부·외부에서 보고된 잠재 취약점을 처리·시정하기 위한 적절한 정책과 절차를 갖춰야 한다. 여기에는 Annex I Part II(5)의 CVD 정책이 포함된다(Article 13(8)).
+- CVD 정책의 수립·집행(Part II(5)), 취약점 신고 연락 주소와 정보 공유 촉진 조치(Part II(6)), 사용자 단일 연락 창구(Article 13(17)), Annex II(2)의 사용자 정보 제공을 분리해 관리한다.
+- 단일 연락 창구는 사용자가 쉽게 식별할 수 있어야 하며, 사용자가 선호하는 통신 수단을 선택할 수 있어야 한다. 자동화 도구만으로 제한할 수 없다.
+- CVD 정책의 존재만으로 모든 일반 취약점이 Article 14 의무 신고 대상이 되는 것은 아니다.
+
+### Article 14 법정 신고 — 두 개의 트랙
+
+| 신고 트랙 | 트리거 | 기한 | 수신·경로 |
+|---|---|---|---|
+| 적극 악용 취약점 | 제품에 포함된 actively exploited vulnerability를 인지 | 24h early warning / 72h vulnerability notification / corrective or mitigating measure 이용 가능 후 14일 final report | 지정 CSIRT 및 ENISA, 단일 신고 플랫폼 |
+| 심각한 제품 보안 사고 | 제품 보안에 영향을 미치는 severe incident를 인지 | 24h early warning / 72h incident notification / incident notification 제출 후 1개월 final report | 지정 CSIRT 및 ENISA, 단일 신고 플랫폼 |
+
+- Article 14(7)에 따라 제조자는 지정 CSIRT의 전자 신고 엔드포인트를 사용하고, 신고는 ENISA에 동시에 접근 가능해야 한다.
+- 시장감시기관은 제조자의 Article 14 직접 신고 수신자와 다르다. 신고를 받은 지정 CSIRT가 Article 16(3)에 따라 시장감시기관에 필요한 정보를 제공한다.
+- Article 14(8) 사용자 통지는 actively exploited vulnerability 또는 severe incident에 대해 영향받은 사용자와 적절한 경우 모든 사용자에게 제공한다. machine-readable 형식은 where appropriate 조건이다.
+- 일반 취약점의 접수·분석·수정·공개는 Article 13 및 Annex I Part II에 따른 취약점 처리/CVD 프로세스로 관리하고 Article 14 트리거와 구분한다.
+
+### 보안 이벤트 기록 및 모니터링
+
+- Annex I Part I point 2(l)은 보안 관련 정보를 제공하기 위해 관련 내부 활동을 기록·모니터링하도록 한다. 데이터·서비스·기능에 대한 접근 또는 변경을 포함하며 사용자 opt-out 메커니즘이 포함된다.
+- point 2(h)는 가용성 및 DoS 복원력 요구다. logging 조항으로 인용하지 않는다.
+- CRA는 point 2(l)에서 특정 저장장치, 로그 보존기간, tamper-proof 기술, circular buffer, Syslog over TLS를 지정하지 않는다. 이러한 구현은 제품 위험평가, 제어주기/지터, 저장 용량, 현장 유지보수, 데이터 최소화 및 사용자 opt-out 설계를 근거로 선택한다.
+- 서보 드라이브 권장 설계 후보: 제어 루프와 비동기 분리된 bounded logging, actor/time/action/result 기록, 저장공간 포화 시 제어 기능 보호, 권한 통제 및 무결성 검증, 안전한 추출·진단 인터페이스. 이는 법령이 지정한 유일한 구현이 아니라 설계 후보이며 제품별 검증이 필요하다.
+
+상세 원본·SHA·판정·반증: [main reports #58–#62 감사](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_58_62_2026-11-13.md).
