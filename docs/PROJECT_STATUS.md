@@ -762,3 +762,11 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - branch compare: diverged; work branch ahead 690 / behind 398; merge base b425b6db591e34abe003522157cf97ecf2240d9f.
 - main은 읽기 전용이며 merge/rebase/sync하지 않는다. archive tree 개수는 history count와 동일하다고 추정하지 않는다.
 - 기준선 시점 문서 작업 HEAD는 ad7b2732b5a554842772be8cabb23ba29d270ae4였고, 이후 START_HERE 및 MASTER_REPORT 정정 commit f42fa408858f8160fb5a379a052294c36cc0465d와 91372b411ccb037602c59e4a88791119b04a7a73가 추가되었다. 최종 tip의 CI는 별도 확인 전까지 미실행/미확인이다.
+
+
+## 2026-11-13 — 한국어 정본 정책
+
+- 사용자 명시 지시: 프로젝트 최종 보고서·매뉴얼·SOP·설계·시험 자료의 기본 언어는 한국어다.
+- 법령/표준 공식 명칭, 조항 번호, 제조사 문서명, 부품번호, 원문 인용, 코드 및 고정 상태값은 영어 원문을 유지할 수 있다.
+- 영어 문서의 최종 산출물 정본은 한국어로 전환하되, 원문 근거·기술적 의미·추적 ID·검증 상태는 보존한다.
+- 행동강령 제15절, 문서 지도 제11절을 운영 기준으로 삼는다.
