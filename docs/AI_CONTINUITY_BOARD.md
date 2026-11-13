@@ -289,3 +289,15 @@
 - #8–#12 상세 감사 파일을 다시 찾아 원본 SHA와 판정을 확인했다. 다섯 건 모두 CONFLICT, 직접 인용 재사용 0/5.
 - #13–#52 40건은 CONFLICT 35 / PARTIALLY_VERIFIED 5 / VERIFIED 0. 전체 #8–#52는 CONFLICT 40 / PARTIALLY_VERIFIED 5 / VERIFIED 0.
 - 이 연결은 파일별 중심 주장 추적이다. 보고서 내 모든 개별 주장과 인용 블록의 원자적 분해/정정 링크는 아직 미완료다.
+
+
+## 2026-11-13 — main reports #53–#57 감사 및 정본 통합
+
+- main 최신 관찰: HEAD `8ebc3cdc361a1b694e4ad18b5d85cc6dec5d1f35` (Auto-archive report #112), state.json count 112, history.json 1,387 entries. state count는 당일 카운터이며 archive 파일 수가 아니다.
+- #53–#57 감사: 1 CONFLICT / 4 PARTIALLY_VERIFIED / 0 VERIFIED; 직접 인용 재사용 0/5.
+- #8–#47 재검토 정정: #38은 Annex I Part I(2)(m) 데이터·설정 영구 제거 기능 결과 요구를 누락했던 점을 바로잡아 CONFLICT에서 PARTIALLY_VERIFIED로 변경. #8–#47 누계는 36 CONFLICT / 4 PARTIALLY_VERIFIED.
+- #8–#52 누계: 45건, 39 CONFLICT / 6 PARTIALLY_VERIFIED / 0 VERIFIED.
+- #8–#57 누계: 50건, 40 CONFLICT / 10 PARTIALLY_VERIFIED / 0 VERIFIED; 직접 인용 재사용 0/50. 비무작위 연속 표본.
+- Claim Evidence Ledger에 #53–#57 날짜 포함 원본 경로·SHA·판정·중심 정정 claim ID 5개를 추가했다.
+- 제1권·제2권·사용자 보안정보 체크리스트·요구사항 추적성 매트릭스·CRA 법령 기준선에 Part I 2(m), Annex II 8(d), Article 13(19), Article 14/69(3) 정정을 반영했다.
+- 다음 감사 시작점 #58. main HEAD/state/history를 배치 시작 시 다시 조회한다.
