@@ -55,3 +55,9 @@
 
 ## main archive 수동 감사 추가
 - [#33–#37 감사](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_33_37_2026-11-13.md): 5 CONFLICT / direct quote reuse 0/5.
+
+## 2026-11-13 — main reports #38–#42 감사 추가
+
+- [#38–#42 상세 감사 보고서](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_38_42_2026-11-13.md): 4 CONFLICT / 1 PARTIALLY_VERIFIED / 0 VERIFIED, Raw Text Quote 직접 인용 재사용 0/5.
+- 주요 정정: Annex II point 8(d) 폐기 지침과 실제 secure erase 기능 구분; Article 13(8)/(9)와 Annex I Part II(8) 구분; Annex II point 7/8 사용자 정보; Annex I Part II(4)–(8) 취약점 처리 항목 구분.
+

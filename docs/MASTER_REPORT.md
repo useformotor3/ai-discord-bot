@@ -317,3 +317,8 @@ main 브랜치의 #28–#32를 archive 원문과 기존 EUR-Lex 현행 법령 �
 ## main 자동 조사 보고서 #33–#37 감사
 
 #33–#37에서는 CVD/VDP, 무상 보안 업데이트, Secure-by-default, Important Product 분류 및 적합성 평가를 다뤘으나, 5건 모두 현행 CRA 법령 구조·조항·제품 적용성을 잘못 연결해 CONFLICT로 판정했다. 특히 CVD에 특정 PGP 방식 강제, Article 14를 Article 11로 오기, unique password/port disable의 보편 의무화, Article 13(6)과 무료 업데이트 혼동, Article 24와 Article 32의 혼동이 확인됐다. 직접 인용 재사용 가능 문구는 0/5다. 상세: [#33–#37 감사 보고서](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_33_37_2026-11-13.md).
+
+## main 자동 조사 보고서 #38–#42 감사
+
+#38–#42는 안전한 폐기, 무상 보안 업데이트, 사용자 지침, 보안 패치 배포, VDP를 다뤘다. 4건은 CONFLICT, 1건은 PARTIALLY_VERIFIED이며 직접 인용으로 재사용 가능한 문구는 0/5다. Annex II point 8(d)는 secure decommissioning 및 사용자 데이터 제거 방법을 설명하는 지침 제공 의무이지, 모든 제품에 복구 불가능한 데이터 소거 기능을 명시한 조항이 아니다. 무료 보안 업데이트(Annex I Part II(8)), 지원기간(Article 13(8)), 업데이트 가용성(Article 13(9)) 및 취약점 공개/CVD/연락/안전 배포(Part II(4)–(7))를 구분해야 한다. 상세 판정과 원본 blob SHA는 [#38–#42 감사 보고서](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_38_42_2026-11-13.md)에 기록했다.
+

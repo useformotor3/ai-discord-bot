@@ -2334,3 +2334,16 @@ Batch result: 5/5 CONFLICT, 0 PARTIALLY_VERIFIED, 0 VERIFIED; 0/5 Raw Text Quote
 - #36 CONFLICT — `research_archive/2026-11-13_025531.md`, blob `06f32803648a15f7638add752a8b9a064d4ee3f9`.
 - #37 CONFLICT — `research_archive/2026-11-13_030054.md`, blob `a8f77a2ecc3bc2301ab87a5f90d2ae6626489eab`.
 - Batch 5 CONFLICT / 0 PARTIALLY_VERIFIED / 0 VERIFIED; direct quote reuse 0/5. Next target #38.
+
+## 2026-11-13 — main reports #38–#42 감사 결과
+
+- main 관찰 HEAD: `e9bc84bfb5ccc7c18a69298cbd8f88376691b18c` (report #93); state count 93; history.json 1,368 entries.
+- #38 — CONFLICT — `research_archive/2026-11-13_030533.md`, blob `f66d4335654b3b8b9836dcaebe1205eae731c532`.
+- #39 — CONFLICT — `research_archive/2026-11-13_031039.md`, blob `9dfae4ba67f48e056f222bcc86ca3189f8bb384a`.
+- #40 — PARTIALLY_VERIFIED — `research_archive/2026-11-13_031539.md`, blob `449b601a1df9bef3f3acd789ea2a7fcba0804ea2`.
+- #41 — CONFLICT — `research_archive/2026-11-13_032039.md`, blob `e8d5ef7ead0cb481d158597110e98bdcd006b07c`.
+- #42 — CONFLICT — `research_archive/2026-11-13_032532.md`, blob `0c9ca2e1c69b6bed759f1afa85dd2327d29cf319`.
+- 배치 결과 4 CONFLICT / 1 PARTIALLY_VERIFIED / 0 VERIFIED; Raw Text Quote 직접 인용 재사용 0/5.
+- 상세: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_38_42_2026-11-13.md](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_38_42_2026-11-13.md).
+- 다음 대상 #43–#47. main 원본 read-only.
+

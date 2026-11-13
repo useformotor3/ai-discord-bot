@@ -691,3 +691,12 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 
 ## CI after CRA audit documentation update
 - HEAD `5fcd433436cc6261284d1bc8bbf648ae78af9b2e`, Actions #43386808125 SUCCESS; 140 tests passed; strict archive/history 990/990, missing/orphan/duplicate/malformed 0, consistent=true.
+
+## 2026-11-13 — main reports #38–#42 감사
+
+- 상세: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_38_42_2026-11-13.md](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_38_42_2026-11-13.md).
+- 결과: 4 CONFLICT / 1 PARTIALLY_VERIFIED / 0 VERIFIED; 직접 인용 재사용 0/5.
+- main 최신 관찰 HEAD는 `e9bc84bfb5ccc7c18a69298cbd8f88376691b18c`, state count #93, history 1,368 entries. 이전 #91/1,366 기록은 stale.
+- 누적 #8–#42: 35건, 34 CONFLICT / 1 PARTIALLY_VERIFIED / 0 VERIFIED. 비무작위 연속 표본이므로 전체 오류율 아님.
+- 다음 배치 #43–#47. main read-only 유지.
+

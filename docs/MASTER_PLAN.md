@@ -592,3 +592,11 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 ## 감사 문서 CI 확인
 - #28–#37 감사 및 연속성 문서 HEAD `5fcd433436cc6261284d1bc8bbf648ae78af9b2e`: Actions #43386808125 SUCCESS, 140 tests, strict archive 990/990 consistent=true.
 - 다음 감사는 #38부터 진행한다.
+
+## 2026-11-13 — reports #38–#42 감사 완료 및 다음 실행
+
+- #38–#42 Pass A/B/C 감사 완료. 결과 4 CONFLICT / 1 PARTIALLY_VERIFIED / 0 VERIFIED, 직접 인용 재사용 0/5.
+- 이번 배치의 핵심 정정: Annex II point 8(d)는 secure decommissioning 및 user-data removal instructions 제공 의무다. 이는 모든 제품의 irrecoverable wipe 기능을 명시한 문구와 다르다. 사용자 정보는 Annex II point 7 및 8(a)–(f), 무료 보안 업데이트는 Annex I Part II(8), support period는 Article 13(8), update availability는 Article 13(9)로 분리한다.
+- 다음 작업: #43–#47 감사 후 사용자 지침서 체크리스트/제1권 CRA 보고서의 EOL, support period, update, VDP 절을 정정한다. 아카이브 감사만 계속하지 말고 제1권/제2권에 교정 결과를 통합하는 deliverable-first 작업을 병행한다.
+- main 최신 관찰: HEAD `e9bc84bfb5ccc7c18a69298cbd8f88376691b18c`, state count 93, history 1,368 entries. 작업 브랜치 상태는 커밋 직전 재확인한다.
+

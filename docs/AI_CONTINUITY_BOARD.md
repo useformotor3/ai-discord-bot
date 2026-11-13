@@ -156,3 +156,14 @@
 - Full unittest suite: 140 tests passed.
 - Strict archive audit: 990 archive / 990 history / 990 unique valid paths; missing, orphan, duplicate and malformed entries all 0; consistent=true.
 - This CI validates repository tests/archive consistency, not legal interpretation or product applicability.
+
+## 2026-11-13 진행 업데이트 — main reports #38–#42
+
+- main HEAD 재조회: `e9bc84bfb5ccc7c18a69298cbd8f88376691b18c` (Auto-archive report #93); main state `2026-11-13 / count 93`; history.json 1,368 entries. 이전 현황판의 main HEAD #91 및 archive/history 1,366 수치는 현재 기준으로 오래되었으므로 최신 수치로 대체해야 한다.
+- reports #38–#42 원문과 history metadata를 다시 조회하고 blob SHA를 기록했다.
+- 신규 [#38–#42 감사](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_38_42_2026-11-13.md): 4 CONFLICT / 1 PARTIALLY_VERIFIED / 0 VERIFIED; direct quote reuse 0/5.
+- 주요 교정: Annex II point 8(d)는 안전한 폐기 및 사용자 데이터 제거 방법에 관한 지침 제공이며, 모든 제품에 복구 불가능한 NAND/EEPROM 소거 기능을 명시한 문구가 아니다. Annex II point 7/8은 사용자 정보·지침서 요구다. 무상 업데이트는 Annex I Part II(8), 지원기간은 Article 13(8), 제공된 업데이트 가용성은 Article 13(9). CVD/연락/공개/안전 배포는 Part II(4)–(7)로 구분한다.
+- EUR-Lex Regulation (EU) 2024/2847 공식 HTML의 Article 13 및 Annex I/II 원문을 이번 배치에서 다시 열어 대조했다. 별도 제3자 법률검토, E3 controlled fetch, PDF 시각검토, 제품별 기술자료 확인은 하지 않았다.
+- 누적 main-only 감사 #8–#42: 35건 중 34 CONFLICT / 1 PARTIALLY_VERIFIED / 0 VERIFIED. 연속·비무작위 표본이므로 전체 archive 오류율이 아니다.
+- 다음 감사 시작점 #43. main은 계속 읽기 전용이며 branch merge/rebase/sync는 수행하지 않는다.
+
