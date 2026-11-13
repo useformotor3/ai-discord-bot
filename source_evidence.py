@@ -179,7 +179,9 @@ def _validate_https_target(url: str, expected_host: str, resolver: Callable[[str
 
 def _read_limited(response: object, limit: int, chunk_size: int) -> bytes:
     headers = getattr(response, "headers", {})
-    content_length = headers.get("Content-Length") or headers.get("content-length")
+    content_length = headers.get("Content-Length")
+    if content_length is None:
+        content_length = headers.get("content-length")
     if content_length is not None:
         try:
             normalized_length = str(content_length).strip()
