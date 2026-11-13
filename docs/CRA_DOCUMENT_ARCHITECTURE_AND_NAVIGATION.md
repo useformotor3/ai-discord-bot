@@ -142,3 +142,14 @@
 
 - [main reports #48–#52 audit](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_48_52_2026-11-13.md): 3 CONFLICT / 2 PARTIALLY_VERIFIED / 0 VERIFIED; direct quote reuse 0/5.
 - Claim-level corrections are indexed in [CLAIM_EVIDENCE_LEDGER.md](CLAIM_EVIDENCE_LEDGER.md) and integrated into Volume 1, Volume 2, the Article 14 PSIRT SOP and MASTER_REPORT.
+
+
+## 11. 문서 기본 언어 및 용어 관리 — 한국어 정본
+
+- 이 프로젝트의 기본 언어는 한국어다. 최종 보고서, 매뉴얼, SOP, 설계 설명, 시험 절차, 표의 설명과 결론은 한국어로 작성한다.
+- 법령·표준·공식 문서의 명칭, 조항 번호, 기술 식별자, 제조사 원문 인용은 원문 그대로 유지할 수 있다.
+- 핵심 전문용어는 최초 등장 시 한국어(영문)로 병기하고, 이후 같은 문서와 관련 문서에서 한국어 표기를 통일한다.
+- 법령 직접 인용, 번역, 요약, 해석, 설계 권고를 구분한다. 한국어 번역을 공식 법령의 원문 인용처럼 표시하지 않는다.
+- 기존 영문 문서가 최종 산출물의 정본 역할을 한다면 한국어 본문으로 전환한다. 영어가 필요한 자료는 공식 원문 증거 또는 부록으로 유지하고, 독자용 한국어 설명을 제공한다.
+- 파일명·코드·필드명·고정 상태 코드의 영어 표기는 링크와 도구 호환성을 위해 유지할 수 있다. 파일명이나 코드가 영어라는 이유로 본문까지 영어로 작성하지 않는다.
+- 문서 언어 전환 시 요구사항 ID, 주장 ID, 조항 위치, 출처 URL, 버전, 검증 상태, 시험 상태를 변경하지 않는다.
