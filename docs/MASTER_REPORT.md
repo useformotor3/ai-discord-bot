@@ -330,3 +330,10 @@ main 브랜치의 #28–#32를 archive 원문과 기존 EUR-Lex 현행 법령 �
 
 아카이브 감사 결과를 실무에 적용하기 위해 [CRA 제품 분류 및 접근통제 매트릭스 v0.1](CRA_PRODUCT_CLASSIFICATION_AND_ACCESS_CONTROL_MATRIX.md)을 추가했다. 이 문서는 Article 7/Annex III와 Implementing Regulation (EU) 2025/2392에 따른 core-functionality 기반 분류 절차, Article 32 적합성 평가 경로, Annex I Part I point 2(d) 접근통제 요구 및 RBAC/least privilege 등 위험기반 설계 선택, 검증 증거 목록을 정리한다. 제품 SKU와 경계가 미확정이므로 제품별 분류는 UNVERIFIED로 유지한다.
 
+
+
+## 문서 체계와 사용 경로
+
+본 통합 보고서와 세부 매뉴얼·설계·감사 자료의 역할 및 전체 링크는 [CRA 문서 구조·전체 목차·링크 안내](CRA_DOCUMENT_ARCHITECTURE_AND_NAVIGATION.md)를 기준으로 한다. 이 지도는 보고서 내용을 대체하지 않는다. 감사 배치에서 검증·정정된 결론은 Claim Evidence Ledger 및 정정 대장과 연결한 뒤 본 보고서의 관련 장, 제1권·제2권, SOP 및 매트릭스에 반영한다. 배치 감사 문서는 원문·SHA·반증 기록을 보존하는 상세 증거로 유지한다.
+
+문서 분리는 독립적인 실무 목적이 있을 때만 유지한다. 독자가 최종 결론을 찾기 위해 여러 감사 파일을 직접 역추적하지 않도록, 상위 보고서에는 요약 결론과 관련 정본 링크를 제공한다. 제품별 미확인 입력과 NOT_RUN 시험은 검증 완료로 승격하지 않는다.
