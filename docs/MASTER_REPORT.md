@@ -379,3 +379,17 @@ main 브랜치의 #28–#32를 archive 원문과 기존 EUR-Lex 현행 법령 �
 #53–#57은 데이터·설정의 안전한 제거, 지원기간, 무상 보안 업데이트, CVD 및 법정 신고를 다뤘다. 감사 결과 CONFLICT 1건, PARTIALLY_VERIFIED 4건, VERIFIED 0건이며 직접 인용 재사용 승인은 0/5다. 특히 Annex I Part I point 2(m)는 해당되는 제품에서 사용자가 모든 데이터와 설정을 안전하고 쉽게 영구 제거할 수 있는 가능성을 요구하고, Annex II point 8(d)는 안전한 폐기와 데이터 제거 방법의 사용자 지침을 요구한다. 두 요구를 분리해 추적한다. Article 13(19)는 지원 종료일을 구매 시 표시하고, 기술적으로 가능한 경우 지원기간 종료 시점 알림을 표시하도록 한다. Article 14 신고는 Class I/II에만 한정되지 않으며 Article 69(3)에 따라 2027-12-11 이전 출시 제품에도 적용된다. 상세 근거·SHA·반증은 [#53–#57 감사 보고서](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_53_57_2026-11-13.md)와 [Claim Evidence Ledger](CLAIM_EVIDENCE_LEDGER.md)에 보존했다.
 
 #38 재검토에서 Annex I Part I(2)(m)를 누락한 점을 확인해 해당 보고서 판정을 CONFLICT에서 PARTIALLY_VERIFIED로 정정했다. 그 결과 #8–#47은 40건 중 36 CONFLICT / 4 PARTIALLY_VERIFIED, #8–#52는 45건 중 39 CONFLICT / 6 PARTIALLY_VERIFIED, #8–#57은 50건 중 40 CONFLICT / 10 PARTIALLY_VERIFIED / 0 VERIFIED다. 비무작위 연속 표본이며 전체 archive 오류율이 아니다.
+
+## main 자동 조사 보고서 #58–#62 감사 반영
+
+#58–#62는 CVD, 무상 보안 업데이트, Article 14 신고 및 감사 로깅을 다뤘다. 파일 단위 감사 결과는 5 PARTIALLY_VERIFIED / 0 CONFLICT / 0 VERIFIED이며 직접 인용 재사용 승인은 0/5다. 누적 #8–#62는 55건 중 40 CONFLICT / 15 PARTIALLY_VERIFIED / 0 VERIFIED, 직접 인용 재사용 0/55다. 비무작위 연속 표본이며 전체 archive 오류율이 아니다.
+
+최종 법령 해석은 다음과 같이 구분한다.
+- CVD 정책: Article 13(8), Annex I Part II(5).
+- 취약점 신고 연락 주소: Annex I Part II(6); 사용자 단일 연락 창구: Article 13(17), Annex II(2).
+- 원칙적 무상 보안 업데이트: Annex I Part II(8), 맞춤형 제품의 제조자-사업 사용자 합의 예외 포함.
+- Article 14 신고: actively exploited vulnerability 및 severe incident 두 트랙. 24h/72h 외에 최종 보고는 각각 14일/1개월로 다르다.
+- 신고는 지정 CSIRT/ENISA 단일 플랫폼 경로이며, 시장감시기관은 Article 16(3)에 따라 CSIRT가 정보를 제공한다.
+- 감사 로깅: Annex I Part I 2(l). Part I 2(h)는 availability/DoS resilience다. 특정 tamper-proof 저장, circular buffer, Syslog over TLS는 법령이 지정한 보편적 기술이 아니다.
+
+상세 원본 SHA·조항·반증은 [#58–#62 감사 보고서](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_58_62_2026-11-13.md) 및 [Claim Evidence Ledger](CLAIM_EVIDENCE_LEDGER.md)를 따른다.
