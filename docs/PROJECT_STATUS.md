@@ -525,3 +525,12 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - v2 contract/prompt and production `main.py`/workflow were not changed; no production import/integration. No live fetch, Gemini API call, paid service or billing change.
 - Important limit: hash checks establish internal integrity consistency, not publisher authenticity or semantic/legal correctness. Evidence ID linkage is not verification. Phase D exact quote/context validation and human review remain separate.
 - CI status: pending exact final commit observation. Do not mark Phase C tests/CI passed until the Actions run is confirmed.
+
+
+### Final integrity check after queue refinement — 2026-11-13
+- Latest main remains report #6, HEAD `173c4d29ee62c0e96cfadf93824d6807ef2d148a`; baseline compare remains 166 reports / 166 archive files / 168 changed paths.
+- Queue re-read and refined: 166 entries, priority distribution P0 111 / P1 32 / P2 0 / P3 23. #1 and general Annex I topic #223 were reclassified to P0 and P1 respectively; every item remains NEW / NOT_YET_AUDITED, file verdict UNVERIFIED, quote/claim verdict NOT_YET_AUDITED.
+- Final work branch HEAD `b3ff22437c8cac7124fa94e9bdda0bc52ae5563a`; compare to main: diverged, work 510 ahead / 297 behind. No merge/rebase/sync.
+- Protected blob check: main.py main `86a7731aad5de8d75581fc953bcea2c44adf2f2b`, work `997952702fdd9d2472468b82e6efdd65b2bb4376` (pre-existing approved work-branch implementation; unchanged by this run); `.github/workflows/run.yml` both branches `65a8cadc8eac593f551e390698e367b1d161ecf1`.
+- The work branch also received 10 concurrent Phase C-related commits during this run, adding/updating `cra_report_contract_v3.py`, `evidence_bundle.py`, `prompts/CRA_RESEARCH_PROMPT_V3.txt`, `schemas/cra_research_v3.schema.json`, and two test files. This audit run did not create, modify, review, or infer approval for those changes; no protected production file was changed by this run.
+- Documentation-only audit changes in this run. No tests executed and no CI PASS claimed.
