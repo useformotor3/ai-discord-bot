@@ -3,7 +3,7 @@
 - 기준일: 2026-11-13
 - 구현 범위: 승인된 C1 + C2만
 - 브랜치: \`cra-project-foundation\`
-- 상태: **구현 완료 후보 / 전체 CI 및 최종 코드 검토 대기**
+- 상태: **구현 완료 / CI 통과**
 - 외부 공식 URL fetch: NOT RUN
 - production integration: NOT IMPLEMENTED
 
@@ -57,3 +57,13 @@
 4. C3 adapter/PDF backend는 C1+C2 검증 종료 후 별도 계획.
 5. C5 report integration은 bundle contract가 안정된 뒤 non-production path로 제안.
 
+
+## CI 검증 결과
+- Code/test HEAD: 0ee797dcc3e7d52b3167c8f11bf373a283f7a480
+- Run #43380860467: https://github.com/useformotor3/ai-discord-bot/actions/runs/43380860467
+- 135 tests passed; strict archive audit successful.
+- Archive/history: 990/990; missing/orphan/duplicate/malformed = 0; consistent true.
+- Documentation HEAD before double-check standard: 1c298b28f80ea06dc3ee7859d009fc59f6c2b926
+- Run #43380949421: https://github.com/useformotor3/ai-discord-bot/actions/runs/43380949421
+- 135 tests passed; strict archive audit successful.
+- Final documentation additions for mandatory double-check standard trigger a new CI run; record its result separately.
