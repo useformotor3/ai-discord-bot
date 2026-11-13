@@ -142,3 +142,12 @@
 - [Claim Evidence Ledger](CLAIM_EVIDENCE_LEDGER.md) 제30–31절에 2026-11-13 main reports #8–#52 총 45건의 날짜 포함 파일 중심 ID, archive path, blob SHA, 판정 및 중심 정정 요약을 연결했다.
 - #8–#12 상세 감사 문서를 재확인하고 누락되었던 원본 식별 정보를 보완했다.
 - 개별 보고서 안의 모든 하위 주장·직접 인용 블록에 대한 원자 분해는 별도 미완료 항목이다.
+
+
+## #53–#57 감사 및 정본 통합 — 2026-11-13
+
+- [main 보고서 #53–#57 감사](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_53_57_2026-11-13.md): 1 CONFLICT / 4 PARTIALLY_VERIFIED / 0 VERIFIED; 직접 인용 재사용 0/5.
+- #38 판정은 Annex I Part I(2)(m) 누락을 확인해 PARTIALLY_VERIFIED로 정정했다.
+- 누적 #8–#57: 50건, 40 CONFLICT / 10 PARTIALLY_VERIFIED / 0 VERIFIED; 직접 인용 재사용 0/50.
+- 정정은 CRA 법령 기준선, 제1권·제2권, 사용자 정보 체크리스트, 요구사항 추적성 매트릭스에 반영했다.
+- 다음 main-only 감사 대상은 #58–#62다.
