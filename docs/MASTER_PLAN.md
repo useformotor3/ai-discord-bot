@@ -477,3 +477,11 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 - [ ] E3: 실제 EUR-Lex/ST/TI fetch 및 HTML/XML/PDF 추출 품질 검증 — E1/E2 구현·CI 확인 후 별도 사용자 승인 필요.
 - [x] Phase E 설계 단계에서는 코드, workflow, 운영 설정, live URL fetch, Gemini API 및 비용 설정을 변경하지 않음.
 - 승인 요청 범위는 E1+E2 작업 브랜치 전용 구현/오프라인 테스트만. E3, production integration, protected files, main merge/rebase/sync는 포함하지 않음.
+
+
+## 2026-11-13 — main-only reports #8–#12 audit
+- [x] Reports #8–#12 original archive files, commit SHA and blob SHA 확인 후 현행 EUR-Lex Regulation (EU) 2024/2847 Article 11/13/14, Annex I Part I/II, Annex II 및 Annex III와 Pass A/B/C 대조.
+- [x] 상세 감사: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_8_12_2026-11-13.md](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_8_12_2026-11-13.md). 5 CONFLICT / 0 PARTIALLY_VERIFIED / 0 VERIFIED; 5개 Raw Text Quote 모두 현행 법령 직접 인용으로 재사용 불가.
+- [x] `CRA_ARCHIVE_AUDIT_QUEUE.md`에 #8–#12 판정·원본 SHA·commit·후속 교정 규칙 기록.
+- [ ] main #13–#27 queue 등록 및 P0 우선 Pass A/B/C 감사. 현재 관찰된 main tip은 report #27, commit `c7eb7296671541c1ad2268cdcee80885091f230c`.
+- 제품 적용성은 SKU/의도된 용도/연결성/실제 ST MCU 부품번호 미확정으로 계속 UNVERIFIED.
