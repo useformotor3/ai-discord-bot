@@ -322,3 +322,14 @@
 - Ledger 확장 commit: `e1b9ee24f1fe185a0fe8e9945a59836ba74246c7`. 이 commit은 docs/CLAIM_EVIDENCE_LEDGER.md만 변경했고 exact HEAD CI runs/status는 0/0으로 미실행·미확인.
 - main #112와 비교: diverged, ahead 788 / behind 403, merge base `b425b6db591e34abe003522157cf97ecf2240d9f`.
 - 이 continuity board 갱신이 다음 docs-only commit이므로 새 exact HEAD/CI는 갱신 직후 다시 확인한다.
+
+## 2026-11-13 최신 연속성 갱신 — main #118 / audit #58–#62
+
+- main HEAD \`75add8711d0254da7dea1766bb42f80fc04d36ee\` (Auto-archive #118); state count 118; history 1,393 entries. archive tree count는 별도 확인하지 않았다.
+- 작업 브랜치 \`cra-project-foundation\`; main과 diverged, work ahead 791 / behind 409; merge base \`b425b6db591e34abe003522157cf97ecf2240d9f\`. main read-only, merge/rebase/sync 금지.
+- #58–#62 감사: 5 PARTIALLY_VERIFIED / 0 CONFLICT / 0 VERIFIED; direct quote reuse 0/5.
+- 누적 #8–#62: 55건, 40 CONFLICT / 15 PARTIALLY_VERIFIED / 0 VERIFIED; direct quote reuse 0/55. 비무작위 연속 표본.
+- CVD Part II(5), contact address Part II(6), free updates Part II(8), Article14 active exploitation/severe incident two-track reporting, 24h/72h/14-day/1-month deadlines, logging Part I 2(l) 정정을 제1권/제2권/SOP/매트릭스에 반영.
+- 원자 Claim ID 20개를 Ledger에 추가. 제품별 적용성 UNVERIFIED, 실제 DUT 시험 NOT_RUN.
+- 다음 P0: #8–#57 원자 주장·인용 분해와 상위 문서 전수 대조. 그 후 main-only #63–#67.
+- 이번 작업은 문서 전용이다. exact final documentation HEAD의 CI/Actions 결과는 별도 확인 전까지 미확인으로 유지한다.
