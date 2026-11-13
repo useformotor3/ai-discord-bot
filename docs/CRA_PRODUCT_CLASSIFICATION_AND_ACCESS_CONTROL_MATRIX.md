@@ -119,3 +119,13 @@ Annex III Class II 범주는 다음 네 가지다.
 
 - 2026-11-13 v0.1: #43–#47 감사 및 EUR-Lex 공식 원문을 바탕으로 최초 작성. 제품별 적용성은 미검증으로 유지.
 - 2026-11-13 v0.2: #48–#52 감사 정정 및 한국어 우선 원칙을 반영. 표·설명·증거 항목을 한국어로 정리하고 법령·표준의 공식 식별자는 원문으로 유지.
+
+
+## 6. Canonical Requirement ID 연결
+
+| 기존 평가 항목 | Canonical Requirement ID | 경계 |
+|---|---|---|
+| Product category / core functionality | CRA-REQ-CLASSIFICATION-001 | Article 7/Annex III/Implementing Regulation 2025/2392; 내장 네트워크 인터페이스만으로 host drive 자동 분류 금지 |
+| Access control / authentication | CRA-REQ-ACCESS-CONTROL-001 | Annex I Part I(2)(d); 적절한 결과 요구와 RBAC/MFA/role design 선택을 구분 |
+| Attack surface / debug / service access | CRA-REQ-ATTACK-SURFACE-001 | Annex I Part I(2)(j); 모든 port/JTAG 일괄 비활성화가 보편 의무는 아님 |
+| Conformity route if important product | CRA-REQ-CONFORMITY-001 | Article 32/Annex VIII; actual class must be evidenced first |
