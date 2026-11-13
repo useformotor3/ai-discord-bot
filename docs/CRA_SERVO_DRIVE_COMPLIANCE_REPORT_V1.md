@@ -321,3 +321,17 @@ Annex I Part II(1)의 machine-readable 요구는 SBOM 형식에 관한 것이다
 - 실제 제품 분류와 평가 경로는 SKU, 제품 경계, core functionality, 별도 네트워크 인터페이스 공급 여부 및 보안 관련 MCU 기능을 확인하기 전까지 UNVERIFIED다.
 
 공식 기준: Regulation (EU) 2024/2847 및 Commission Implementing Regulation (EU) 2025/2392. 상세 원문 대조와 #37 오류는 [#33–#37 감사](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_33_37_2026-11-13.md)를 참조.
+
+## 3.10 Secure data lifecycle — 삭제와 전송을 별도 추적
+
+- Annex I Part I(2)(m)는 사용자에게 모든 데이터·설정을 안전하고 쉽게 영구 제거할 가능성을 제공하고, 해당 데이터가 다른 제품/시스템으로 전송될 수 있으면 그 전송도 안전하게 수행하도록 요구한다.
+- Annex II(8)(d)는 안전한 폐기 및 사용자 데이터 제거 방법에 관한 상세 사용자 지침이다. 제품 내부 삭제 기능(Part I 2(m))과 폐기 안내(Annex II 8(d))를 하나로 축약하지 않는다.
+- 특정 NAND/EEPROM 물리 소거, 특정 crypto-erase 알고리즘 또는 특정 메모리 구조는 법령이 지정하지 않는다. 실제 저장매체·키·로그·설정·백업 영역을 inventory한 뒤 매체별 삭제/키 폐기/전송 방식을 위험평가로 결정한다.
+- Canonical IDs: CRA-REQ-SECURE-DATA-ERASURE-001, CRA-REQ-SECURE-DATA-TRANSFER-001, CRA-REQ-USER-INSTRUCTIONS-001.
+- Verification: TST-ERASE-01..04, 모두 NOT_RUN. TST-NVM-01..03은 무결성/접근/전원차단 시험이며 삭제 시험으로 대체 사용하지 않는다.
+
+## 3.11 Security logging — 기록·모니터링·opt-out
+
+- Annex I Part I(2)(l)는 관련 내부 활동(데이터·서비스·기능 접근 또는 변경)을 기록·모니터링하고 사용자 opt-out 메커니즘을 제공하도록 요구한다.
+- 로그의 특정 저장매체, 보존기간, Syslog/TLS, tamper-proof 기술은 CRA가 일률 지정하지 않는다. 제어 태스크와 분리된 bounded logging, 접근통제, 포화/overflow 처리, 시각 동기화, 데이터 최소화는 제품 위험평가에 따른 설계 후보.
+- Canonical ID: CRA-REQ-SECURITY-LOGGING-001. Verification: TST-LOG-01/02, NOT_RUN.
