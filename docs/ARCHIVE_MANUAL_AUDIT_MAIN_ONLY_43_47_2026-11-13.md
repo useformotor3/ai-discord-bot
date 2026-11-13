@@ -1,3 +1,5 @@
+# Main-only CRA Archive Manual Audit — Reports #43–#47
+
 ## 한국어 핵심 요약
 
 - 대상: 2026-11-13 main 보고서 #43–#47, 총 5건. 날짜+일일 번호+원본 경로로 식별.
@@ -9,7 +11,6 @@
 - Article 13(8) 지원기간, Article 13(9) 업데이트 가용성, Annex I Part II(8) 무상 업데이트, Part II(4) 수정 취약점 공개, Article 14 신고를 각각 구분한다.
 - 아래 영문 상세 기록은 원본 SHA·보고서별 반증을 보존한다. 한국어 정본은 [CRA 공식 법령 기준선](CRA_VERIFIED_BASELINE_2026-11-12.md), [제품 분류·접근통제 매트릭스](CRA_PRODUCT_CLASSIFICATION_AND_ACCESS_CONTROL_MATRIX.md), [제1권](CRA_SERVO_DRIVE_COMPLIANCE_REPORT_V1.md)을 참조한다.
 
-# Main-only CRA Archive Manual Audit — Reports #43–#47
 
 - 감사일: 2026-11-13
 - 원본 브랜치: `main` (읽기 전용)
