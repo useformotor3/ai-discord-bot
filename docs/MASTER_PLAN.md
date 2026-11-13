@@ -768,3 +768,12 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 - [x] Article 32/Annex VIII conformity assessment, Article 28 DoC, Article 30 CE, Article 31/Annex VII technical documentation 정정.
 - [ ] 다음 배치 #38–#42 원자 Claim ID 분해.
 - [ ] #43–#57까지 순차 분해 후 제1권·제2권·SOP·매트릭스 전수 대조.
+
+## 2026-11-13 P0 — #38–#42 원자 주장 분해
+
+- [x] #38–#42 main 원본 경로/blob SHA 재확인.
+- [x] 개별 주장·인용 33개를 원자 Claim ID로 분해해 Ledger에 연결.
+- [x] #38 Annex I Part I(2)(m) 영구 삭제 기능 결과 요구와 Annex II(8)(d) 사용자 폐기 지침을 함께 반영.
+- [x] Article 13(8)/(9), Annex II user instructions, Annex I Part II vulnerability handling을 분리.
+- [ ] 다음 배치 #43–#47 원자 Claim ID 분해.
+- [ ] #48–#57까지 순차 분해 후 제1권·제2권·SOP·매트릭스 전수 대조.
