@@ -523,3 +523,15 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 - [x] 마스터 보고서 인덱스 `docs/MASTER_REPORT_INDEX.md` 생성.
 - [x] Article 14 신고 대응 절차서 `docs/CRA_ARTICLE14_PSIRT_RESPONSE_SOP_V1.md` 초판 생성.
 - [ ] PSIRT 역할/연락처/제조사 단일 연락 창구 입력 및 tabletop 실행.
+
+
+## 2026-11-13 — 수집 코드 우선순위 재조정
+- [x] 현재 source fetcher/extractor 및 archive candidate workflow 코드 감사.
+- [x] `docs/SOURCE_COLLECTION_CODE_AUDIT_AND_CHANGE_PROPOSAL_V1.md` 작성.
+- [ ] **P0 선행:** C1 strict extraction integrity + observed document identity/revision.
+- [ ] **P0 선행:** C2 source evidence bundle manifest + raw/text hash + locator linkage.
+- [ ] C3 source-specific adapter/PDF backend hardening.
+- [ ] C4 Phase E3 실제 공식 URL fetch — 별도 승인 필요.
+- [ ] C5 non-production claim validator/report builder 통합.
+- [ ] C6 main/prompt/production workflow integration — 별도 승인 필요.
+- **현재 코드 변경·live fetch 없음.** C1+C2 구현은 상세 제안에 대한 사용자 승인 대기.
