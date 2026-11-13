@@ -784,3 +784,10 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - 법령 기준선에 #13–#42 반복 오류 패턴을 공통 정정 규칙으로 추가했다.
 - 제1권·제2권·요구사항 추적성 매트릭스에 법령 조항과 설계 후보의 구분을 반영했다.
 - Claim Evidence Ledger의 과거 감사 레코드에는 아직 보고서 #8–#12에 대한 명시적 주장 ID 연결이 부족하다. 이를 완료된 것으로 간주하지 않는다.
+
+
+## 2026-11-13 — #8–#52 파일 중심 Claim ID 연결
+
+- #8–#52 45개 원본 보고서의 날짜·archive 경로·blob SHA·판정·중심 정정 요약을 Claim Evidence Ledger에 고유 ID로 등록했다.
+- #8–#12 원본 감사 문서와 SHA를 재확인했다. 5건 모두 CONFLICT, 직접 인용 재사용 0/5.
+- 세부 주장/인용 블록 단위의 완전한 원자 분해는 미완료이며, 파일 중심 레코드 등록과 구분한다.
