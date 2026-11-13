@@ -1,23 +1,26 @@
 """Pinned-IP HTTPS transport for curated official-source fetches.
 
-The caller must resolve and validate every DNS answer before calling get(). This
-transport never resolves the URL hostname: TCP connects to one of the supplied
-literal IP addresses while TLS SNI and certificate hostname checks use the URL
-hostname. Redirects are deliberately disabled and handled by the caller.
+The caller resolves and validates every DNS answer before calling get(). This
+transport never resolves the URL hostname: TCP connects to a supplied literal
+IP while TLS SNI and certificate hostname checks use the URL hostname. It uses
+only the Python standard library; redirects and implicit retries are disabled.
 """
 from __future__ import annotations
 
+import http.client
 import ipaddress
+import socket
+import ssl
 from typing import Iterable
 from urllib.parse import urlsplit
-
-import requests
-import urllib3
-from urllib3.exceptions import ConnectTimeoutError, MaxRetryError, NewConnectionError
 
 
 class PinnedTransportError(RuntimeError):
     """A pinned connection could not be established safely."""
+
+
+class _PinnedConnectError(OSError):
+    """TCP connection to one explicitly pinned IP failed."""
 
 
 def normalize_public_ips(addresses: Iterable[str]) -> tuple[str, ...]:
@@ -64,16 +67,41 @@ def normalize_public_ips(addresses: Iterable[str]) -> tuple[str, ...]:
     return tuple(sorted(normalized, key=lambda value: (ipaddress.ip_address(value).version, int(ipaddress.ip_address(value)))))
 
 
+class _PinnedHTTPSConnection(http.client.HTTPSConnection):
+    def __init__(self, host: str, address: str, connect_timeout: float, read_timeout: float, context: ssl.SSLContext):
+        super().__init__(host=host, port=443, timeout=connect_timeout, context=context)
+        self._pinned_address = address
+        self._read_timeout = read_timeout
+
+    def connect(self) -> None:
+        try:
+            raw_socket = socket.create_connection((self._pinned_address, self.port), self.timeout)
+        except OSError as exc:
+            raise _PinnedConnectError("PINNED_TCP_CONNECT_FAILED") from exc
+        try:
+            # SNI and certificate hostname verification deliberately use the
+            # original allowlisted DNS hostname, never the literal IP.
+            self.sock = self._context.wrap_socket(raw_socket, server_hostname=self.host)
+            self.sock.settimeout(self._read_timeout)
+        except Exception:
+            raw_socket.close()
+            raise
+
+
 class _PinnedResponse:
-    def __init__(self, response: object, pool: urllib3.HTTPSConnectionPool):
+    def __init__(self, response: http.client.HTTPResponse, connection: _PinnedHTTPSConnection):
         self._response = response
-        self._pool = pool
-        self.status_code = int(getattr(response, "status", 0))
+        self._connection = connection
+        self.status_code = int(response.status)
         self.headers = response.headers
         self.closed = False
 
     def iter_content(self, chunk_size: int):
-        yield from self._response.stream(amt=chunk_size, decode_content=False)
+        while True:
+            chunk = self._response.read(chunk_size)
+            if not chunk:
+                break
+            yield chunk
 
     def close(self) -> None:
         if self.closed:
@@ -82,7 +110,7 @@ class _PinnedResponse:
         try:
             self._response.close()
         finally:
-            self._pool.close()
+            self._connection.close()
 
 
 class PinnedHTTPSession:
@@ -102,7 +130,7 @@ class PinnedHTTPSession:
         parsed = urlsplit(url)
         if parsed.scheme.lower() != "https" or not parsed.hostname:
             raise PinnedTransportError("HTTPS_REQUIRED")
-        if parsed.port not in (None, 443) or parsed.username is not None or parsed.password is not None:
+        if parsed.port not in (None, 443) or parsed.username is not None or parsed.password is not None or parsed.fragment:
             raise PinnedTransportError("INVALID_PINNED_URL")
         if allow_redirects:
             raise PinnedTransportError("AUTOMATIC_REDIRECT_BLOCKED")
@@ -110,55 +138,43 @@ class PinnedHTTPSession:
             raise PinnedTransportError("STREAMING_REQUIRED")
         if verify is False:
             raise PinnedTransportError("TLS_VERIFICATION_REQUIRED")
+        if len(timeout) != 2 or timeout[0] <= 0 or timeout[1] <= 0:
+            raise PinnedTransportError("INVALID_TIMEOUT")
 
         host = parsed.hostname.encode("idna").decode("ascii").lower()
         ips = normalize_public_ips(pinned_ips)
-        ca_bundle = verify if isinstance(verify, str) else requests.certs.where()
+        try:
+            context = ssl.create_default_context(cafile=verify if isinstance(verify, str) else None)
+        except (OSError, ssl.SSLError) as exc:
+            raise PinnedTransportError("TLS_TRUST_STORE_UNAVAILABLE") from exc
+        context.check_hostname = True
+        context.verify_mode = ssl.CERT_REQUIRED
+
         target = parsed.path or "/"
         if parsed.query:
             target += "?" + parsed.query
-        request_headers = dict(headers or {})
-        request_headers["Host"] = host
-        request_headers["Accept-Encoding"] = "identity"
+        reserved_headers = {"host", "accept-encoding", "connection"}
+        request_headers = {
+            key: value for key, value in (headers or {}).items()
+            if key.lower() not in reserved_headers
+        }
+        # http.client supplies Host from connection.host (the original DNS
+        # name) and Accept-Encoding: identity. Avoid duplicate Host headers.
+        request_headers["Connection"] = "close"
 
         last_connection_error: Exception | None = None
         for address in ips:
-            pool = urllib3.HTTPSConnectionPool(
-                host=address,
-                port=443,
-                server_hostname=host,
-                assert_hostname=host,
-                cert_reqs="CERT_REQUIRED",
-                ca_certs=ca_bundle,
-                maxsize=1,
-                block=True,
-                retries=False,
-            )
+            connection = _PinnedHTTPSConnection(host, address, timeout[0], timeout[1], context)
             try:
-                response = pool.request(
-                    "GET",
-                    target,
-                    headers=request_headers,
-                    timeout=urllib3.Timeout(connect=timeout[0], read=timeout[1]),
-                    retries=False,
-                    redirect=False,
-                    preload_content=False,
-                    decode_content=False,
-                )
-                return _PinnedResponse(response, pool)
-            except (ConnectTimeoutError, NewConnectionError, OSError) as exc:
-                pool.close()
+                connection.request("GET", target, headers=request_headers)
+                response = connection.getresponse()
+                return _PinnedResponse(response, connection)
+            except _PinnedConnectError as exc:
+                connection.close()
                 last_connection_error = exc
                 continue
-            except MaxRetryError as exc:
-                pool.close()
-                reason = getattr(exc, "reason", None)
-                if isinstance(reason, (ConnectTimeoutError, NewConnectionError, OSError)):
-                    last_connection_error = exc
-                    continue
-                raise
             except Exception:
-                pool.close()
+                connection.close()
                 raise
 
         raise PinnedTransportError("PINNED_CONNECTION_FAILED") from last_connection_error
