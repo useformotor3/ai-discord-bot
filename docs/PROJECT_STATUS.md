@@ -741,3 +741,14 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - 제2권에 제품 분류/접근통제 매트릭스, PSIRT SOP, HW 아키텍처, 통합 추적성 매트릭스의 역할별 링크를 추가했다.
 - MASTER_REPORT의 MCU category 14 문구를 완제품 통합만으로 분류가 자동 결정되지 않는다는 점을 명확히 했다.
 - 이 통합은 #43–#47 관련 정정 일부에 대한 첫 반영이다. Claim Evidence Ledger/정정 대장과 제1권·제2권의 전체 요구사항을 대조하는 전수 동기화는 미완료.
+
+
+## 2026-11-13 — main reports #48–#52 감사 및 법령 정정 통합
+
+- main 최신 관찰: HEAD aaded0f4d0b84a1891b5801a6048c4de92511822 (report #107); state count 107; history 1,382 entries. archive tree count는 이번에 별도 확인하지 않았다.
+- #48–#52 감사 결과: 3 CONFLICT / 2 PARTIALLY_VERIFIED / 0 VERIFIED; 직접 인용 재사용 0/5.
+- 누적 #8–#52: 45건, 40 CONFLICT / 5 PARTIALLY_VERIFIED / 0 VERIFIED. 비무작위 연속 표본이며 전체 archive 오류율이 아니다.
+- 상세 감사 및 SHA: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_48_52_2026-11-13.md](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_48_52_2026-11-13.md).
+- Claim Evidence Ledger에 5개 원자 주장 correction record를 추가했다.
+- 제1권에 Article 14(8)의 제한적 machine-readable user notification과 Article 13(6) component vulnerability reporting 방향을 명확히 한다. 제2권 공급망·PSIRT 실행계획에도 같은 해석을 반영한다.
+- 제품별 적용성/분류는 SKU, 제품 경계, intended purpose, MCU 주문 코드 미확정으로 UNVERIFIED. DUT 시험 NOT_RUN.
