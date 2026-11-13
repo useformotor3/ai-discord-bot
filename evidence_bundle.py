@@ -144,10 +144,7 @@ def build_evidence_bundle(fetch_result: Any, extracted_document: Any, *,
             total_chars += len(excerpt)
             if total_chars > max_total_excerpt_chars:
                 raise EvidenceBundleError("TOTAL_EXCERPT_LIMIT_EXCEEDED")
-            total_excerpt_chars += len(excerpt)
-        if total_excerpt_chars > DEFAULT_MAX_TOTAL_EXCERPT_CHARS:
-            raise EvidenceBundleError("BUNDLE_TOTAL_EXCERPT_LIMIT_EXCEEDED")
-        excerpt_hash = _digest(excerpt.encode("utf-8"))
+            excerpt_hash = _digest(excerpt.encode("utf-8"))
             part_locator = locator if len(parts) == 1 else f"{locator} [segment {part_index}/{len(parts)}]"
             evidence.append({
                 "evidence_id": _evidence_id(source_id, raw_hash, extractor_version,
