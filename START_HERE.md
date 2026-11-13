@@ -477,7 +477,7 @@
 ## 원자 주장 분해 진행 — #53–#57 완료
 
 - #53–#57 개별 주장·인용 32개를 [Claim Evidence Ledger](docs/CLAIM_EVIDENCE_LEDGER.md)에 원자 Claim ID로 등록했다.
-- #8–#57 50개 보고서의 원자 claim decomposition을 완료했다.
+- #8–#62 55개 보고서의 원자 claim decomposition 345개를 완료했다. 55 file-level records와 합쳐 400 unique IDs, duplicate 0.
 - 다음 P0는 Ledger의 중복/상충 claim 및 공식 원문 locator 정규화, 제1권·제2권·SOP·매트릭스·시험 대장 전수 대조다.
 
 ## 2026-11-13 authoritative snapshot — #8–#62 audit and claim normalization
