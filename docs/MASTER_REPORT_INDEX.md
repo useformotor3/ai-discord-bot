@@ -183,3 +183,10 @@
 
 - [Security Test Evidence Register](SECURITY_TEST_EVIDENCE_REGISTER.md): includes TST-LOG-01/02 and TST-ERASE-01..04; all NOT_RUN.
 - [Product Classification and Access Control Matrix](CRA_PRODUCT_CLASSIFICATION_AND_ACCESS_CONTROL_MATRIX.md): Article 7/Annex III/Implementing Regulation 2025/2392 and Annex I Part I(2)(d) canonical mapping.
+
+## Current Git / CI baseline — 2026-11-13
+
+- main: report #125, HEAD \`92e8ca7aa4a86b38627a1d8e9535e5b0463a8392\`; state count125 (daily), history 1,400.
+- work branch: \`cra-project-foundation\` HEAD \`ced168745cd19400ba29131a495c3bf5c3f924eb\`; compare diverged, ahead968/behind416. No merge/rebase/sync authorized or performed.
+- Source integrity: #8–#62 source file paths/blob SHAs 55/55 match current main tree.
+- Latest push CI: run 43408438728 SUCCESS, 140 tests, archive audit 990/990 consistent. This is branch CI, not main archive count.
