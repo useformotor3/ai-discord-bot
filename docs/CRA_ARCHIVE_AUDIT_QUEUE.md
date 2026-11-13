@@ -2403,3 +2403,14 @@ Batch result: 5/5 CONFLICT, 0 PARTIALLY_VERIFIED, 0 VERIFIED; 0/5 Raw Text Quote
 - state.json count 112 (당일 카운터), history.json 1,387 entries. archive tree count는 미확인.
 - #53–#57 감사 완료: 1 CONFLICT / 4 PARTIALLY_VERIFIED / 0 VERIFIED.
 - 다음 main-only 감사 대상: #58–#62. 배치 시작 시 main HEAD/state/history를 새로 조회하고 날짜+count+경로+blob SHA를 고정한다.
+
+## 2026-11-13 — main reports #58–#62 완료
+
+- main 최신 관찰 기준선: HEAD \`75add8711d0254da7dea1766bb42f80fc04d36ee\` (Auto-archive report #118); state count 118; history 1,393 entries. Archive tree count는 별도 확인하지 않았다.
+- #58–#62 원본 경로와 blob SHA를 main에서 읽기 전용으로 고정하고 EUR-Lex CRA 원문 Pass A/B/C 대조를 완료했다.
+- 결과: **5 PARTIALLY_VERIFIED / 0 CONFLICT / 0 VERIFIED**; 직접 인용 재사용 0/5.
+- #58–#62 원본과 조항별 정정: [감사 보고서](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_58_62_2026-11-13.md).
+- 핵심 정정: CVD Part II(5), 연락 주소 Part II(6), free updates Part II(8); Article 14는 actively exploited vulnerability/severe incident 두 트랙만 의무 신고; 24h/72h 외에 14일/1개월 최종 보고; logging은 Part I 2(l), Part I 2(h)는 availability/DoS.
+- 누적 #8–#62: 55건, 40 CONFLICT / 15 PARTIALLY_VERIFIED / 0 VERIFIED; direct quote reuse 0/55. 비무작위 연속 표본이며 전체 archive 오류율이 아니다.
+- 다음 P0: #8–#57 원자 주장·인용 분해와 제1권/제2권/SOP/매트릭스 전수 대조. 다음 감사 배치 #63–#67.
+- main은 읽기 전용, merge/rebase/sync 금지.
