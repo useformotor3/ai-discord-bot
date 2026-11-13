@@ -579,3 +579,11 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - E1/E2 구현은 별도 사용자 승인 대기. E3 실제 URL fetch/extraction은 E1/E2 CI 통과 후에도 별도 승인 필요.
 - 본 설계 작성 중 실제 URL fetch/Gemini API 호출/비용 발생/production integration은 수행하지 않음.
 - Phase D final baseline HEAD: `1b543af653435a25f89feea7f80abdf370ecda7f`; Phase E design commit: `b0d5e5eda3ffadaaa8438e711af72789417d9f48`. Branch: `cra-project-foundation`. No main merge/rebase/sync.
+
+
+## Main-only archive reports #8–#12 audit — 2026-11-13
+- Reports #8–#12 원문 5개를 main read-only로 확인하고 EUR-Lex 현행 Regulation (EU) 2024/2847과 Pass A/B/C 대조. 상세: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_8_12_2026-11-13.md](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_8_12_2026-11-13.md).
+- 결과: 5 CONFLICT / 0 PARTIALLY_VERIFIED / 0 VERIFIED. 5개 Raw Text Quote 블록 모두 직접 인용으로 재사용 불가.
+- 반복 오류: secure-by-default를 Annex I Part II/Class II로 잘못 배치, draft text를 current-law quote로 사용, forced first-boot password/JTAG/all-port disablement를 보편 의무로 과장, Article 13(8) support period와 Annex I Part II(8) free updates 혼합, Article 14 신고 범위 확대.
+- 교정 기준: Annex I Part I(2)(b) secure-by-default/reset; Part I(2)(d) access control; Part I(2)(j) attack surface; Part II(2),(5),(6),(7),(8) vulnerability handling; Article 13(8)/(9)/(17); Article 14 actively exploited vulnerability/severe incident scope.
+- queue에 #8–#12 상세 판정 추가. 현재 main tip report #27; #13–#27은 queue 미등록/감사 미완료로 남김. 전체 archive 오류율로 일반화하지 않음.
