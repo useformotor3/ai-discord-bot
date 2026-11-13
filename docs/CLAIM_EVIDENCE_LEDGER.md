@@ -508,7 +508,7 @@ Correct map: Annex I Part I(2)(c) for applicable automatic-update default/user c
 - 위 원자 Claim ID는 개별 법령 문장·주장을 추적하기 위한 보조 레코드다. 제품별 적용성은 전부 UNVERIFIED이며 실제 DUT 시험은 NOT_RUN.
 - 누적 파일 단위 감사 #8–#62: 55건, 40 CONFLICT / 15 PARTIALLY_VERIFIED / 0 VERIFIED; 직접 인용 재사용 0/55. 비무작위 연속 표본.
 
-## 2026-11-13 — #8–#12 원자 주장·인용 분해 (31 claims)
+## 2026-11-13 — #8–#12 원자 주장·인용 분해 (32 claims)
 
 - 원본 감사: [main-only #8–#12 Pass A/B/C 감사](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_8_12_2026-11-13.md).
 - 법령 기준: Regulation (EU) 2024/2847, EUR-Lex consolidated text 20.11.2024. 공식 원문: https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:02024R2847-20241120
@@ -678,7 +678,7 @@ Correct map: Annex I Part I(2)(c) for applicable automatic-update default/user c
 - #23–#27 파일 단위 판정은 기존 감사 결과대로 5 CONFLICT / 0 PARTIALLY_VERIFIED / 0 VERIFIED이며 direct quote reuse 0/5.
 - 개별 법령 사실 VERIFIED와 원본 파일 전체 CONFLICT를 구분한다. 제품별 적용성·Class I/II 분류는 UNVERIFIED, DUT 시험 NOT_RUN.
 
-## 2026-11-13 — #28–#32 원자 주장·인용 분해 (25 claims)
+## 2026-11-13 — #28–#32 원자 주장·인용 분해 (33 claims)
 
 - 원본 감사: [main-only #28–#32 Pass A/B/C 감사](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_28_32_2026-11-13.md).
 - 원본 main 경로·blob SHA: #28 \`research_archive/2026-11-13_021538.md\` / \`78de23c029c47dee16ebc82adf7123c2bf52fa4a\`; #29 \`022039.md\` / \`e5248b9d23e94ea0ef5ad7ffb30f2dcd100e3434\`; #30 \`022538.md\` / \`15439fdad39d1759f522023fc3f1201c1fbf4e8f\`; #31 \`023045.md\` / \`bc85eca9a24980a199e00fc13752f158b11e059e\`; #32 \`023540.md\` / \`71146baf92e406e18209f9981d8a7afc47620be2\`.
@@ -723,7 +723,7 @@ Correct map: Annex I Part I(2)(c) for applicable automatic-update default/user c
 - #28–#32 파일 단위 판정은 기존 감사 결과대로 5 CONFLICT / 0 PARTIALLY_VERIFIED / 0 VERIFIED이며 direct quote reuse 0/5.
 - 개별 법령 사실 VERIFIED와 원본 파일 전체 CONFLICT를 구분한다. 제품별 적용성은 UNVERIFIED, DUT 시험 NOT_RUN.
 
-## 2026-11-13 — #33–#37 원자 주장·인용 분해 (31 claims)
+## 2026-11-13 — #33–#37 원자 주장·인용 분해 (33 claims)
 
 - 원본 감사: [main-only #33–#37 Pass A/B/C 감사](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_33_37_2026-11-13.md).
 - 원본 main 경로·blob SHA: #33 \`research_archive/2026-11-13_024039.md\` / \`c9c8f17bae8dd90890f9075927aa5fb6668c32b0\`; #34 \`024544.md\` / \`97101ee32c543adc2b684c92eec4c831cbe2c479\`; #35 \`025045.md\` / \`842b48aa5ba2382ce58cdddcb1f8b836c5336eb6\`; #36 \`025531.md\` / \`06f32803648a15f7638add752a8b9a064d4ee3f9\`; #37 \`030054.md\` / \`a8f77a2ecc3bc2301ab87a5f90d2ae6626489eab\`.
@@ -863,7 +863,7 @@ Correct map: Annex I Part I(2)(c) for applicable automatic-update default/user c
 - #43–#47 파일 단위 판정은 기존 감사 결과대로 3 CONFLICT / 2 PARTIALLY_VERIFIED / 0 VERIFIED이며 direct quote reuse 0/5.
 - 개별 법령 사실 VERIFIED와 원본 파일 전체 판정을 구분한다. 제품별 적용성 UNVERIFIED, DUT 시험 NOT_RUN.
 
-## 2026-11-13 — #48–#52 원자 주장·인용 분해 (31 claims)
+## 2026-11-13 — #48–#52 원자 주장·인용 분해 (36 claims)
 
 - 원본 감사: [main-only #48–#52 Pass A/B/C 감사](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_48_52_2026-11-13.md).
 - 원본 main 경로·blob SHA: #48 \`research_archive/2026-11-13_035531.md\` / \`539b1d73d7053c5b1e252c775c503b055e978dd9\`; #49 \`040051.md\` / \`3d661d5545974406fee419f60234f99d29427495\`; #50 \`040534.md\` / \`8bbfe9b22a009c90dba493d3086462bb605a1b50\`; #51 \`041039.md\` / \`8625c7e82389aea9cd3e5a0694cd0b920c90e8cf\`; #52 \`041532.md\` / \`3672c41635364ef99b494cd8944c4998bbfc01c8\`.
