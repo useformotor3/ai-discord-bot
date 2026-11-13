@@ -1,5 +1,15 @@
 # Main-only Archive Manual Audit — Reports #8–#12
 
+## 한국어 핵심 요약
+
+- 대상: 2026-11-13 main 보고서 #8–#12, 총 5건.
+- 판정: CONFLICT 5건 / PARTIALLY_VERIFIED 0건 / VERIFIED 0건.
+- 현행 CRA 법령 직접 인용으로 재사용 가능한 Raw Text Quote: 0/5. 제품별 적용성은 모두 UNVERIFIED.
+- 반복 오류: 보안 기본값을 Annex I Part II 또는 Class II 의무로 잘못 분류, 첫 접속 비밀번호 강제 변경·모든 포트/JTAG/디버그 비활성화를 보편 의무로 과장, CVD·취약점 신고 연락처·무상 업데이트·Article 14 신고를 하나의 의무처럼 혼합, 제조사 의무를 Article 11로 오기.
+- 정정 기준: Annex I Part I(2)(b)=보안 기본값/초기 상태 복원, Part I(2)(d)=접근통제, Part I(2)(j)=공격표면 제한; Annex I Part II(2)=취약점 시정, (5)=CVD 정책, (6)=취약점 정보 공유/연락처, (7)=안전한 업데이트 배포, (8)=원칙적 무상 보안 업데이트; 지원기간 Article 13(8), 업데이트 가용성 Article 13(9), 단일 연락 창구 Article 13(17), 법정 신고 Article 14.
+- 아래 영문 상세 기록은 원본 main commit·archive SHA·보고서별 반증을 보존한다. 최종 독자용 설명은 한국어 법령 기준선과 제1권을 참조한다.
+
+
 - Audit date: 2026-11-13
 - Target branch: `cra-project-foundation`
 - Original source branch: `main` (read-only)
