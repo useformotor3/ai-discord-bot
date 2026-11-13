@@ -187,7 +187,7 @@
 - 핵심 발견: report #43의 “IACS/PLC/servo drives are Annex III Class II” 인용은 최종 CRA Annex III에 없다. Annex III Class II의 네 범주와 Implementing Regulation (EU) 2025/2392의 technical description을 대조했다. Article 7의 core functionality 기준 및 통합 구성요소만으로 분류가 자동 성립하지 않는다는 점도 반영했다. 적합성 평가는 Article 24가 아닌 Article 32.
 - #44 접근통제의 실제 근거는 Annex I Part I point 2(d). RBAC/least privilege/unique credentials 등은 위험기반 구현 수단이지 CRA가 보편 구현방식으로 각각 명시한 문구가 아니다.
 - #45–#47은 Article 13, Article 14, Annex I Part I 2(c), Part II(1)–(8)의 위치와 예외를 재정렬했다. Article 13(8) 최소 5년 지원기간의 5년 미만 예상 사용 예외, Article 13(9) 업데이트 가용성, Part II(8) 무상 제공 및 tailor-made/business-user 별도 합의 예외를 분리했다.
-- 누적 main-only 감사 #8–#47: 40건, 37 CONFLICT / 3 PARTIALLY_VERIFIED / 0 VERIFIED, direct quote reuse 0/40. 연속·비무작위 표본이므로 전체 archive 오류율 아님.
+- 누적 main-only 감사 #8–#47: 40건, 36 CONFLICT / 4 PARTIALLY_VERIFIED / 0 VERIFIED, direct quote reuse 0/40. 연속·비무작위 표본이므로 전체 archive 오류율 아님.
 - 작업 branch 최신 기준(커밋 직전): `a1fd870632fdfdb0bf5ca04804515aaf0e37f868`; main 대비 diverged, ahead 659 / behind 389, merge base `b425b6db591e34abe003522157cf97ecf2240d9f`. main read-only, merge/rebase/sync 금지.
 - 다음 감사 #48–#52. 보호 파일은 이번 배치에서 수정하지 않는다.
 
@@ -244,7 +244,7 @@
 - #48–#52 원본 5개를 날짜+count+경로로 매핑하고 archive blob SHA를 기록했다.
 - [#48–#52 수동 감사](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_48_52_2026-11-13.md): 3 CONFLICT / 2 PARTIALLY_VERIFIED / 0 VERIFIED; direct quote reuse 0/5.
 - 핵심 정정: Article 14(8) machine-readable notification은 actively exploited vulnerability/severe incident 사용자 통지에 한정되고 “where appropriate” 조건이 있다. Annex I Part II(5)/(6)은 CVD/contact address, Part II(4)는 fixed vulnerability disclosure, Part II(7)은 secure update distribution, Part II(8)은 원칙적 무상 업데이트다. Article 13(6)은 제조사가 통합 구성요소 취약점을 구성요소 제조/유지 주체에 보고하는 방향이다.
-- 누적 #8–#52: 45건, 40 CONFLICT / 5 PARTIALLY_VERIFIED / 0 VERIFIED; 비무작위 연속 표본.
+- 누적 #8–#52: 45건, 39 CONFLICT / 6 PARTIALLY_VERIFIED / 0 VERIFIED; 비무작위 연속 표본.
 - 이번 배치의 주요 결론은 Claim Evidence Ledger, 제1권, 제2권, PSIRT SOP 및 MASTER_REPORT에 연결·반영했다.
 - 다음 감사 시작점 #53. main은 계속 read-only, 제품별 적용성은 UNVERIFIED, 실제 DUT 시험은 NOT_RUN.
 
