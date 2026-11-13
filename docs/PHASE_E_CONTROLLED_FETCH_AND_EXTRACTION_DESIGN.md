@@ -1,7 +1,7 @@
 # Phase E 설계 제안 — 통제된 공식 출처 수집 및 추출 품질 검증
 
 - 기준일: 2026-11-13
-- 상태: **DESIGN ONLY — 구현 승인 대기**
+- 상태: **E1 + E2 IMPLEMENTED — CI VERIFIED; E3 SEPARATE APPROVAL REQUIRED**
 - 대상 브랜치: `cra-project-foundation`
 - 기준 HEAD: `1b543af653435a25f89feea7f80abdf370ecda7f`
 - 선행 단계: Phase A–D 구현 및 mock/fixture CI 검증 완료
@@ -51,13 +51,13 @@ Phase E의 목적은 Phase A–D의 mock/fixture 검증을 넘어, 공식 출처
 
 ## 3. 제안하는 단계와 승인 게이트
 
-### E0 — 설계/위협 분석 (현재 단계)
+### E0 — 설계/위협 분석 (완료)
 
 - 기존 fetcher, parser, bundle 및 quote validator 경계 확인.
 - DNS TOCTOU, 리다이렉트, 다중 A/AAAA, TLS hostname 검증, proxy 환경, 응답 크기/압축, parser fidelity 위험을 명시.
 - 코드 변경 및 live fetch 없음.
 
-### E1 — 연결 IP 고정 transport 구현 (별도 명시 승인 필요)
+### E1 — 연결 IP 고정 transport 구현 (완료)
 
 권장 방향:
 1. source_id registry에서 얻은 고정 URL/hostname만 transport에 전달한다.
@@ -69,9 +69,9 @@ Phase E의 목적은 Phase A–D의 mock/fixture 검증을 넘어, 공식 출처
 7. 자동 redirect는 계속 비활성화한다. 각 redirect hop마다 URL scheme/host/port와 새 DNS 응답을 다시 검증하고, 등록된 동일 hostname만 허용한다.
 8. connect/read timeout, 총 응답 byte cap, Content-Length 및 streaming cap, MIME/status 검사, response close, 오류 코드 sanitization을 유지한다.
 
-구현 방식은 기존 requests/urllib3 버전과 호환되는 custom transport/adapter를 우선 검토하되, 내부 API 의존성이 과도하거나 TLS 검증을 정확히 보존하지 못하면 채택하지 않는다. 대안으로 검증된 egress proxy/network enforcement를 검토할 수 있으나, 비용·운영 의존성·실제 정책 강제 가능성을 확인하기 전에는 전제하지 않는다.
+실제 구현은 requests/urllib3 의존성을 추가하지 않고 Python 표준 라이브러리 `http.client`/`socket`/`ssl` 기반 custom HTTPSConnection으로 구성했다. `socket.create_connection`에는 validated literal IP만 전달하고, TLS SNI와 certificate hostname check는 원래 allowlisted hostname을 유지한다. TLS/HTTP 오류는 다른 IP로 재시도하지 않고, TCP connect 실패만 동일 DNS response의 validated IP 집합 내에서 fallback한다. proxy와 자동 redirect는 사용하지 않는다.
 
-### E2 — 오프라인 adversarial transport 검증 (E1과 같은 승인 범위 또는 별도 승인)
+### E2 — 오프라인 adversarial transport 검증 (완료)
 
 필수 mock/integration cases:
 - DNS 응답의 A/AAAA 중 하나라도 비공인 주소인 혼합 응답
@@ -87,7 +87,7 @@ Phase E의 목적은 Phase A–D의 mock/fixture 검증을 넘어, 공식 출처
 - response resource close와 sanitized error 확인
 - 기존 Phase A–D 회귀 테스트 및 strict archive audit
 
-TLS/연결 목적지 테스트는 fake session 호출 인자만 확인하는 테스트로 대체하지 않는다. 로컬 loopback TLS fixture를 사용하되, 해당 fixture 주소는 테스트 전용 경로에서만 허용하고 production allowlist/transport 정책을 우회하지 않도록 분리한다.
+TLS/연결 목적지 검증은 OpenSSL로 생성한 임시 인증서와 local loopback TLS fixture를 사용한다. 테스트 중에만 `socket.create_connection`을 패치하여 애플리케이션이 전달한 public test IP를 local fixture로 라우팅하고, 전달된 원 IP와 TLS SNI/Host header를 각각 검증한다. 이 fixture는 production allowlist나 transport에 private-IP 예외를 추가하지 않는다. 실제 public network 접속은 하지 않는다.
 
 ### E3 — 실제 공식 출처 fetch 및 추출 품질 검증 (별도 명시 승인 필요)
 
@@ -103,23 +103,23 @@ E1/E2 통과 후에도 별도 승인을 받은 경우에만 수행한다.
 
 ## 4. 파일별 제안 diff와 범위
 
-E1/E2 구현 승인 시 예상 변경 후보:
-- 신규 `source_transport.py`: 연결 시점 DNS 검증 및 IP-pinned TLS transport.
-- 수정 `source_evidence.py`: 기본 transport를 새 adapter에 연결하고 기존 source_id API/metadata/error contract 유지.
-- 신규 `tests/test_source_transport.py`: DNS/IP/TLS/redirect/retry adversarial 테스트.
-- 필요 시 수정 `tests/test_source_evidence.py`: 새 transport와 fetcher 통합 회귀.
+E1/E2 실제 변경 파일:
+- 신규 `source_transport.py`: validated IP로 TCP connect, 원래 hostname SNI/certificate verification을 수행하는 표준 라이브러리 transport.
+- 수정 `source_evidence.py`: default transport 연결, DNS answer 검증, Content-Length/stream truncation/encoding fail-closed; source_id API/metadata contract 유지.
+- 신규 `tests/test_source_transport.py`: DNS/IP, IPv4/IPv6, TLS identity/trust, connect/read timeout, pinned-IP fallback adversarial 테스트.
+- 수정 `tests/test_source_evidence.py`: resolver/redirect revalidation, content encoding/length, truncation, size/MIME/status 회귀 테스트.
 - 신규 `docs/PHASE_E_IMPLEMENTATION.md`: 실제 변경, 테스트, CI SHA, 잔여 한계 기록.
 
 E3 실제 fetch 승인을 받은 경우 추가 변경 후보:
 - `docs/PHASE_E_LIVE_SOURCE_VALIDATION.md`: 실제 fetch별 source ID, timestamp, status, MIME, byte count, hash, revision 확인, 추출 품질/수동 대조 결과 기록.
 - 필요한 경우 기존 registry metadata 수정은 diff/근거를 먼저 제시하고 별도 승인받는다.
 
-**이번 설계 단계에서는 위 파일들을 생성/수정하지 않는다.** 운영 `main.py`, `.github/workflows/run.yml`, Gemini v2 prompt/contract, model/quota/fallback, production runtime, archive/history/state 및 `main` 브랜치는 변경 대상이 아니다.
+E1/E2는 위 파일에 구현되었다. 운영 `main.py`, `.github/workflows/run.yml`, Gemini v2 prompt/contract, model/quota/fallback, production runtime, archive/history/state 및 `main` 브랜치는 변경하지 않았다.
 
 ## 5. 영향 및 위험 평가
 
 - 긍정 효과: 검사 IP와 실제 연결 IP의 일치 보장, DNS rebinding/TOCTOU 노출 감소, TLS hostname 검증 유지, 실제 official document parser fidelity의 검증 가능성.
-- 잔여 위험: OS/network routing, DNS resolver 신뢰, TLS CA store, HTTP library 내부 동작, IPv6 transition/NAT64, 서버 측 콘텐츠 변경, publisher authenticity, 악성/오류 문서, PDF 텍스트 추출 손실.
+- 잔여 위험: OS/network routing/transparent proxy, DNS resolver 신뢰, OS TLS CA store, 미분류 IPv6 transition/translation, 서버 측 콘텐츠 변경, publisher authenticity, 악성/오류 문서, PDF 텍스트 추출 손실. 실제 external IPv6 path 및 real DNS는 미검증.
 - 가용성 위험: 공식 CDN이 다수 IP/지역별 주소를 반환하거나 주소가 자주 바뀌면 fail-closed가 정상 문서 수집도 차단할 수 있다. 이 경우 allowlist를 느슨하게 하지 말고 원인과 공식 주소 변경 근거를 확인한다.
 - 법적/기술 판단 위험: 추출된 문자열이 정확해도 조항 의미/예외/제품 적용성은 별도 검토가 필요하다.
 - 비용: 설계 및 mock tests는 무료. live fetch는 기존 인터넷 접속만 사용하며 paid API/service/account upgrade는 금지. 예상치 못한 로그인/유료 다운로드/요금 안내가 나오면 즉시 중단한다.
@@ -154,11 +154,12 @@ E3 실제 fetch 승인을 받은 경우 추가 변경 후보:
 
 현재 판정:
 - Phase A–D mock/fixture 구현: 완료 기록 및 CI 근거 존재.
-- DNS TOCTOU: **OPEN — live fetch 차단 조건**.
+- E1 DNS TOCTOU application-level mitigation: **IMPLEMENTED — E2 offline TLS/socket tests + CI PASS**. Network routing/resolver trust residuals remain.
+- E1/E2 exact CI: run `43367432101`, tested HEAD `d355aefb74f2b1b9159de98827fac8600fb68d4c`, 126 tests OK; strict archive 990/990 consistent. Details: `PHASE_E_IMPLEMENTATION.md`.
 - 실제 EUR-Lex/ST/TI fetch: NOT RUN.
 - 실제 PDF backend/pypdf: CI에서 미검증.
 - OCR: 미지원.
 - 제품별 법령 적용성/MCU 부품 기능: 기존 UNVERIFIED 유지.
 
 **E1 + E2 작업 브랜치 전용 구현 및 오프라인 테스트는 사용자 승인 후 완료되었다.**
-실제 URL 접속(E3), Gemini API 호출, production integration, protected file 변경, 비용 발생, main merge/rebase/sync는 이 승인 요청에 포함되지 않는다. E1/E2 구현 및 CI 검증 결과는 `PHASE_E_IMPLEMENTATION.md`에 기록했다. E3는 별도 승인받는다.
+실제 URL 접속(E3), Gemini API 호출, production integration, protected file 변경, 비용 발생, main merge/rebase/sync는 승인 범위에 포함되지 않았고 수행하지 않았다. E1/E2 구현 및 CI 검증 결과는 `PHASE_E_IMPLEMENTATION.md`에 기록했다. E3는 별도 승인받는다.
