@@ -2425,7 +2425,7 @@ Batch result: 5/5 CONFLICT, 0 PARTIALLY_VERIFIED, 0 VERIFIED; 0/5 Raw Text Quote
 ## 2026-11-13 — #8–#12 원자 주장 분해 완료
 
 - 기존 #8–#12 파일 단위 감사는 5 CONFLICT / direct quote reuse 0/5.
-- 원본 감사 보고서와 main archive blob SHA를 다시 대조하고 Claim Evidence Ledger에 원자 Claim ID 31개를 추가했다.
+- 원본 감사 보고서와 main archive blob SHA를 다시 대조하고 Claim Evidence Ledger에 원자 Claim ID 32개를 추가했다.
 - 법령 원칙의 일부 개별 claim은 VERIFIED지만, 원본 파일 단위 판정은 변경하지 않는다.
 - 다음 원자 분해 배치: #13–#17. 이후 #18–#57 순으로 진행하며, 상위 문서와 문장 단위 대조를 병행한다.
 
@@ -2453,14 +2453,14 @@ Batch result: 5/5 CONFLICT, 0 PARTIALLY_VERIFIED, 0 VERIFIED; 0/5 Raw Text Quote
 ## 2026-11-13 — #28–#32 원자 주장 분해 완료
 
 - 기존 #28–#32 파일 단위 감사 결과는 5 CONFLICT / direct quote reuse 0/5로 유지.
-- main 원본 경로/blob SHA를 재확인하고 Claim Evidence Ledger에 원자 Claim ID 25개를 추가했다.
+- main 원본 경로/blob SHA를 재확인하고 Claim Evidence Ledger에 원자 Claim ID 33개를 추가했다.
 - Article 13(8)/(9), Annex I Part II(5)/(6)/(8), Article 14, Annex VII(4)를 분리하고 지원기간·신고 범위·직접 인용 오류를 정정했다.
 - 다음 원자 분해 배치: #33–#37. 이후 #38–#57까지 순차 분해 후 상위 문서와 교차 대조.
 
 ## 2026-11-13 — #33–#37 원자 주장 분해 및 공식 분류 규정 재확인
 
 - 기존 #33–#37 파일 단위 감사 결과는 5 CONFLICT / direct quote reuse 0/5로 유지.
-- main 원본 경로/blob SHA를 재확인하고 Claim Evidence Ledger에 원자 Claim ID 31개를 추가했다.
+- main 원본 경로/blob SHA를 재확인하고 Claim Evidence Ledger에 원자 Claim ID 33개를 추가했다.
 - Commission Implementing Regulation (EU) 2025/2392를 EUR-Lex에서 추가 확인했다. Article 7 core-functionality test 및 Annex III technical descriptions를 반영.
 - conformity assessment는 Article 32 및 Annex VIII 기준으로 재정리: Class I 조건부 A/B+C/H, Class II B+C/H; Module C=internal production control, Module H=full quality assurance.
 - DoC Article 28, CE Article 30, technical documentation Article 31/Annex VII. 서보 드라이브 Class I/II 적용성은 UNVERIFIED.
@@ -2483,7 +2483,7 @@ Batch result: 5/5 CONFLICT, 0 PARTIALLY_VERIFIED, 0 VERIFIED; 0/5 Raw Text Quote
 ## 2026-11-13 — #48–#52 원자 주장 분해 완료
 
 - 기존 #48–#52 파일 단위 결과 3 CONFLICT / 2 PARTIALLY_VERIFIED / direct quote reuse 0/5 유지.
-- Claim Evidence Ledger에 원자 Claim ID 31개 추가.
+- Claim Evidence Ledger에 원자 Claim ID 36개 추가.
 - Article 14(8) machine-readable notice, Part II(4) disclosure/delay, CVD/contact, free update exception, Article 13(5)–(7) component due diligence/reporting direction을 분리.
 - 다음 원자 분해 배치: #53–#57. 이후 #8–#57 전체 상위 문서 전수 대조.
 
