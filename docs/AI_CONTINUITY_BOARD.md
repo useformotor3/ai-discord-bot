@@ -382,3 +382,10 @@
 - EUR-Lex Implementing Regulation (EU) 2025/2392 추가 확인: important product classification은 Annex III technical description/core functionality 기준. 내장 네트워크 인터페이스만으로 host servo drive 자동 Class I/II가 되지 않는다.
 - Conformity assessment Article 32/Annex VIII; DoC Article 28; CE Article 30; technical documentation Article 31/Annex VII로 정정.
 - 실제 서보 드라이브 Class I/II 적용성은 UNVERIFIED. 다음 원자 분해 대상 #38–#42.
+
+## 2026-11-13 P0 진행 — #38–#42 원자 Claim ID 분해
+
+- #38–#42 원본 경로/blob SHA 재확인, Ledger에 원자 Claim ID 33개 추가.
+- 파일 단위 결과는 #38 후속 정정 반영 3 CONFLICT / 2 PARTIALLY_VERIFIED / direct quote reuse 0/5.
+- Annex I Part I(2)(m) secure data erasure와 Annex II(8)(d) decommissioning instructions를 분리해 정본에 반영.
+- 다음 원자 분해 대상 #43–#47.
