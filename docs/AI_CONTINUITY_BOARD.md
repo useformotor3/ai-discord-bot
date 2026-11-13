@@ -169,7 +169,7 @@
 
 
 ## 2026-11-13 — 최신 Git/CI 상태 재확인
-- 작업 브랜치 HEAD: `ced168745cd19400ba29131a495c3bf5c3f924eb`; main HEAD: `92e8ca7aa4a86b38627a1d8e9535e5b0463a8392` (#125). Compare: diverged, ahead 968 / behind 416; merge/rebase 금지.
+- 작업 브랜치 HEAD: `ced168745cd19400ba29131a495c3bf5c3f924eb`; main HEAD: `92e8ca7aa4a86b38627a1d8e9535e5b0463a8392` (#125). Compare: diverged, diverged; ahead/behind values dynamic; merge/rebase 금지.
 - Historical main snapshot #93: tree/history 1,368/1,368. Superseded by current main #125: tree/history 1,400/1,400, missing/orphan/duplicate 0.
 - main 대비 작업 브랜치: diverged, ahead 657 / behind 384. Merge base `b425b6db591e34abe003522157cf97ecf2240d9f`. merge/rebase/sync 금지 유지.
 - 현재 work branch HEAD `ced168745cd19400ba29131a495c3bf5c3f924eb`까지의 이번 연속 작업은 문서만 변경했다. main.py, production workflow, prompts, contracts, schema, evidence bundle 등 보호 파일 변경 없음.
@@ -431,7 +431,7 @@
 
 - main HEAD: report #125, SHA \`92e8ca7aa4a86b38627a1d8e9535e5b0463a8392\`; state.json count 125 (daily counter), history.json 1,400 entries; current main tree \`7679729e1b128eacf26034346dafb29aa8da610b\`.
 - Work branch \`cra-project-foundation\` HEAD: \`ced168745cd19400ba29131a495c3bf5c3f924eb\`.
-- Git compare main..work branch: **diverged**, ahead 968 / behind 416, merge base \`b425b6db591e34abe003522157cf97ecf2240d9f\`. Do not merge, rebase, sync or write to main. This divergence includes historical branch differences and is not created by this documentation-only continuation.
+- Git compare main..work branch: **diverged**, diverged; ahead/behind values dynamic, merge base \`b425b6db591e34abe003522157cf97ecf2240d9f\`. Do not merge, rebase, sync or write to main. This divergence includes historical branch differences and is not created by this documentation-only continuation.
 - Main archive source revalidation: all 55 audited file paths and blob SHAs for reports #8–#62 match the current main tree (55/55, missing 0, mismatches 0).
 - Latest push CI on current work-branch HEAD: run 43408438728 SUCCESS; 140 tests passed; strict archive audit 990/990, unique paths 990, missing/orphan/duplicate/malformed 0, consistent=true. The branch workflow's state.count=3 is a daily counter, not an archive total. No PR-triggered workflow run and no PR was created.
 - Current branch commits in this continuation are documentation-only; no additional production code changes were made here. Existing branch-vs-main code differences remain unmerged and must be reviewed separately.
