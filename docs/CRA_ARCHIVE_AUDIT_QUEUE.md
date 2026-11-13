@@ -2284,3 +2284,28 @@ Batch result: 5/5 CONFLICT, 0 PARTIALLY_VERIFIED, 0 VERIFIED; 0/5 Raw Text Quote
 
 ### Queue coverage gap
 - The current main tip observed during this session is report #27 (`c7eb7296671541c1ad2268cdcee80885091f230c`). Reports #13–#27 were not part of the prior queue and remain to be registered before their audits. Do not treat this five-report batch as covering #13–#27 or the complete main archive.
+
+
+## 2026-11-13 reports #13–#27 — Pass A/B/C batch audit completed
+
+- Audit record: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_13_27_2026-11-13.md](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_13_27_2026-11-13.md).
+- Main report commits and archive blob SHA-1 values were checked read-only. No original main archive/history/state file was modified.
+- Batch verdict: **15 CONFLICT / 0 PARTIALLY_VERIFIED / 0 VERIFIED**. All 15 Raw Text Quote blocks are **REJECTED** for direct quotation of current Regulation (EU) 2024/2847. Product applicability remains UNVERIFIED.
+- Repeated defects: Article 11 used as manufacturer reporting/vulnerability handling; Article 14 scope expanded beyond actively exploited vulnerabilities/severe incidents; Annex I Part I product properties mixed with Part II vulnerability handling; free updates, CVD, support period and update availability conflated; Article 13(8) “whichever is shorter” misstatement; Annex II mistaken for technical documentation; secure-by-default subpoints misnumbered; forced password/MFA/JTAG/all-port-disablement claims presented as universal law; servo-drive Class I/II asserted without Annex III/core-functionality evidence.
+- This is a sequential, non-random batch, not a representative archive error rate. The EUR-Lex current-law baseline was reused from the immediately preceding #8–#12 audit; this batch did not run the Phase E live fetcher.
+- Per-report evidence (main commit, archive path and blob SHA-1):
+  - #13 — CONFLICT; commit `5b46858ab88595ce9e5b7b33175b81c4e24e7905`; `research_archive/2026-11-13_010102.md`; blob `2e9fb641dcebcb411dca1e686de916bf09dbfcb9`; CVD/Article 14 신고 범위와 구판 NIS2 문구 혼합.
+  - #14 — CONFLICT; commit `f4e8b82ad46f3fe5c5a6f55d0fcd33d44d0006d1`; `research_archive/2026-11-13_010538.md`; blob `dda0e0308d5fffb11659f6c395a9b0a3da26b1de`; Secure-by-default 구판 조항 번호 및 포트/비밀번호 보편 의무 과장.
+  - #15 — CONFLICT; commit `54e67c1082d86fd8559d6c41107cdc9736ce8c76`; `research_archive/2026-11-13_011036.md`; blob `f150569deac61b8d74a424bb1c76518438816de0`; 무상 업데이트/CVD 주제는 관련되나 Annex I Part I·Article 11 오기 및 합성 인용.
+  - #16 — CONFLICT; commit `c0f038825fcda6f2d546846870e0505080b96cb5`; `research_archive/2026-11-13_011537.md`; blob `2f67047e45084598819a1d7b4ccd4a463c2dc168`; 지원기간 5년 단정, Article 11/Part I 오기, quote 합성.
+  - #17 — CONFLICT; commit `1e5fddc195a8f94483fdffbd3aa7b7ef4704c9e7`; `research_archive/2026-11-13_012038.md`; blob `a2a8c24d6e0933f5d6e3e6fcdb570037ed652e7e`; CVD·무상 업데이트를 Part I로 오배치, 여러 조항 합성 인용.
+  - #18 — CONFLICT; commit `d5b4441be57c9a33cd256b30392f546cd6026b23`; `research_archive/2026-11-13_012535.md`; blob `a39605cfc909d39990ecc46bdd8caa5e8f97efd4`; Article 14 주제이나 Article 11로 오기, 모든 취약점/사고 신고로 범위 확대.
+  - #19 — CONFLICT; commit `eb1d64f8b60127c0d68119ce06a8f0b9e63471da`; `research_archive/2026-11-13_013047.md`; blob `8211d1c2905452bf87e41722ca408119092644d1`; Article 11 오기, 지원기간 'whichever is shorter' 오류, Annex I Part II(1) 오인용.
+  - #20 — CONFLICT; commit `6ec0d9eee85c141e1ab2e621d5a3989855c98c35`; `research_archive/2026-11-13_013528.md`; blob `d80151fca7d8302bd353715b3d8608412b99e065`; Secure-by-default와 integrity 하위항목 혼동, 강제 비밀번호 변경 과장.
+  - #21 — CONFLICT; commit `8fafb874c5e1427d65def1b1672459d376e33567`; `research_archive/2026-11-13_014042.md`; blob `34c0a04a117ff8175bec68e93e26600b520cebb5`; Secure-by-default·지원기간·Annex II 기술문서 혼합 및 조항 오기.
+  - #22 — CONFLICT; commit `3a0b1aec3c17d5ea61dcd674a71b12ba487b3b01`; `research_archive/2026-11-13_014539.md`; blob `a6695390839a167aa9a4b99473b2a70ba61dc838`; Class I/II 제품 단정, 비밀번호/MFA/포트 비활성화 보편 의무 과장.
+  - #23 — CONFLICT; commit `0d5cc63bd9bbe47eb84887950c056d2d4df80f73`; `research_archive/2026-11-13_015044.md`; blob `d8315ca10d9d1d811978c73ab8ffbd77e296971d`; 초기 비밀번호 설정을 법정 강제 절차로 단정, quote의 문언·항목 오기.
+  - #24 — CONFLICT; commit `4a13cfeb9cba3e378b68e52ee5e7c03990cca3ca`; `research_archive/2026-11-13_015535.md`; blob `c43117db6c681bd4b6865b955ac66a0fa012a1fd`; Secure-by-default와 업데이트 요구를 잘못된 문단·항목으로 합성 인용.
+  - #25 — CONFLICT; commit `7d308b5a2b5c73385abde943412622bdc8f74317`; `research_archive/2026-11-13_020056.md`; blob `a482f9198569dfe173d63250eebee6d8f9a6f9e8`; 서보 드라이브 Class I/II 단정 및 Annex I draft 인용·하드웨어 구현 의무 과장.
+  - #26 — CONFLICT; commit `d079e63339d20549361bba9d4c4de71fcb3346db`; `research_archive/2026-11-13_020541.md`; blob `132dd081b4bed0d431d8f68b8e00b3fc83b9035d`; 기본 설정·접근통제·무결성 조항 번호/문언 혼합, hardcoded credential/포트 보편 금지 과장.
+  - #27 — CONFLICT; commit `c7eb7296671541c1ad2268cdcee80885091f230c`; `research_archive/2026-11-13_021039.md`; blob `3b6537c40590118c43d1fbc5f1922121d7f6d276`; 무상 업데이트/CVD 주제는 관련되나 Annex I Part I·Article 13(4) 오인용.
