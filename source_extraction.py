@@ -93,11 +93,11 @@ def _decode_bytes(data: bytes, max_input_bytes: int) -> str:
         raise ExtractionError("EMPTY_INPUT")
     raw = bytes(data)
     # Never silently replace damaged bytes: loss is a hard extraction failure.
-    if raw.startswith((b"\xff\xfe", b"\xfe\xff")):
         try:
             return raw.decode("utf-16", errors="strict")
         except UnicodeDecodeError as exc:
             raise ExtractionError("CHARSET_DECODE_FAILED") from exc
+    if raw.startswith((b"\xff\xfe", b"\xfe\xff")):
     if raw.startswith((b"\x00\x00\xfe\xff", b"\xff\xfe\x00\x00")):
         try:
             return raw.decode("utf-32", errors="strict")
