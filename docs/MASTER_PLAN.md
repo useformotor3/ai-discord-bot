@@ -436,3 +436,9 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 - [ ] P3 warning-only 23개가 모델 실패를 성공 archive로 처리하는지 운영 경로 감사.
 - Final main HEAD #6: `173c4d29ee62c0e96cfadf93824d6807ef2d148a`; work HEAD `b3ff22437c8cac7124fa94e9bdda0bc52ae5563a`; work 510 ahead / 297 behind main. merge/rebase/sync 없음.
 - Work branch에 별도 Phase C v3 관련 동시 커밋 10개가 관찰됨. 본 일일 감사는 해당 구현을 수정/검토/승인하지 않았으며 production 통합 전 별도 diff·승인·테스트 확인이 필요하다.
+
+
+## 2026-11-13 — Report #7 added
+- [x] Rechecked main HEAD `bd50257a80c0524402c70a7da420043ecfa0f490` and archive `research_archive/2026-11-13_003055.md`; history/state show daily count 7.
+- [x] Added report #7 to the queue; verified 167 distinct items. Priority distribution P0 111 / P1 33 / P2 0 / P3 23.
+- [ ] Complete Pass A/B/C for #7: Annex I Part I(2)(b) exact wording/exception/reset phrase; Article 13(1) vs 13(2); forced password change, debug-port disablement and factory-reset patch/key retention as risk-based design vs explicit mandate.
