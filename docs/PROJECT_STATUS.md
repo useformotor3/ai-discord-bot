@@ -921,7 +921,7 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - #53–#57 원본 5건의 경로/blob SHA를 main에서 재확인했다.
 - Claim Evidence Ledger에 원자 Claim ID 32개를 추가했다.
 - 파일 단위 결과 1 CONFLICT / 4 PARTIALLY_VERIFIED / 0 VERIFIED; direct quote reuse 0/5 유지.
-- #8–#57 전체 50개 보고서의 원자 claim decomposition을 완료했다. 다음은 Claim Ledger/제1권/제2권/SOP/매트릭스/시험 증거 대장 전수 대조다.
+- #8–#62 전체 55개 보고서의 원자 claim decomposition 345개를 완료했다. 55개 파일 레코드와 합쳐 400개 unique ID, 중복 0개. 다음은 제1권/제2권/SOP/매트릭스/시험 증거 대장 전수 대조다.
 - 제품별 적용성 UNVERIFIED, DUT 시험 NOT_RUN.
 
 ## 2026-11-13 authoritative snapshot — #8–#62 audit and claim normalization
