@@ -339,3 +339,10 @@
 - 후속 자동 아카이브로 main이 report #119까지 진행: HEAD \`6491a5db6ea35ea97a6d97e85bac43f9a3cf41c0\`, state count 119, history 1,394 entries.
 - #119는 아직 감사하지 않았다. 다음 감사 시작점은 #63–#67이며, 배치 시작 시 main HEAD/state/history를 다시 조회한다.
 - main/work branch는 diverged. ahead/behind는 변경되므로 매 세션 동적으로 확인하고 merge/rebase/sync하지 않는다.
+
+## 2026-11-13 P0 진행 — #8–#12 원자 Claim ID 분해
+
+- #8–#12 원본과 blob SHA를 main에서 다시 대조했고, 기존 파일 단위 판정 5 CONFLICT / direct quote reuse 0/5를 유지했다.
+- Claim Evidence Ledger에 31개 원자 Claim ID를 추가했다. 일부 개별 법령 원칙은 VERIFIED이나 파일 전체 판정과 제품 적합성으로 확대하지 않는다.
+- 핵심 법령 구조: secure-by-default Part I 2(b), access control 2(d), attack surface 2(j); Class II는 Annex III; Part II는 vulnerability handling.
+- 다음 작업은 #13–#17 원자 주장 분해 후 #18–#57 순차 분해 및 정본 문서 교차 대조.
