@@ -639,3 +639,14 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 - 반복 감사에서 검증된 핵심 결론을 최종 보고서에서 찾을 수 있고, 상세 원문 감사로 역추적할 수 있다.
 - 동일 요구사항이 보고서·매뉴얼·매트릭스에서 서로 다른 조항·상태로 표시되지 않는다.
 - 제품별 미확인 사항과 실제 미실행 시험은 계속 명시한다.
+
+
+## 2026-11-13 추가 — main reports #48–#52 감사와 상위 문서 반영
+
+- [x] main reports #48–#52 Pass A/B/C 감사: 3 CONFLICT / 2 PARTIALLY_VERIFIED / 0 VERIFIED; direct quote reuse 0/5.
+- [x] 원본 archive path/blob SHA 및 공식 법령 조항·예외를 감사 문서에 기록.
+- [x] Claim Evidence Ledger에 5개 원자 주장 정정 레코드 추가.
+- [x] Article 14(8) 사용자 통지의 범위와 where appropriate machine-readable 조건을 제1권/PSIRT SOP에 반영.
+- [x] Article 13(6) 구성요소 취약점 보고 방향과 Part II(4)–(8) 요구사항 구분을 제1권/제2권/MASTER_REPORT에 반영.
+- [ ] 감사 #8–#52의 정정 사항 전체를 Claim Evidence Ledger와 제1권/제2권/매트릭스/매뉴얼 간에 전수 대조해 미반영 항목을 폐쇄한다.
+- [ ] 다음 main-only audit batch #53–#57을 수행하고, 동일한 보고서 통합 절차를 반복한다.
