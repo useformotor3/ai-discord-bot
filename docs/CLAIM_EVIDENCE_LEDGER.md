@@ -52,20 +52,9 @@
 | TI-006 | MSPM0G3529-Q1의 cybersecurity architecture는 데이터시트에 “PSA Level 1 certification targeted”로 기재되어 있다. | technical_fact | TI-DS-3529 SLASFO2B Rev B, §1 Features / 위 TI 데이터시트 URL | 목표/예정 표현 확인. 인증 취득 완료를 의미하지 않음. | VERIFIED (표현 확인) |
 | TI-007 | TI SLAAE29A Rev A는 MSPM0 플랫폼의 BCR/BSL/CSC, secure boot, secure storage 및 cryptographic acceleration의 동작 구조를 설명한다. | technical_fact | TI-SLAAE29, Rev A revised December 2025, §§1.3, 2, 3, 4, 5 / https://www.ti.com/lit/an/slaae29a/slaae29a.pdf | Rev A PDF의 플랫폼 구조/예제 설명 확인. 특정 부품의 레지스터·revision별 적용은 데이터시트 및 최신 G-Series TRM과 교차 확인. | VERIFIED (Rev A 문서 내용) / 최신판 반영 PARTIALLY_VERIFIED |
 
-## 4. 기존 아카이브 정정 큐 연결
+## 4. 기존 아카이브 정정 큐 연결 — historical records
 
-현재 위험 기반 수동 감사 34개는 파일별 판정 문서에 기록되어 있다. 아래 큐는 각 감사 문서의 ID를 원자적 주장 단위의 ledger 레코드로 분해하기 위한 작업 대기열이다. 원본 문서의 정확한 문장·행 번호를 추가로 추출하기 전에는 이 요약을 VERIFIED 주장으로 사용하지 않는다.
-
-| Audit batch | 대상 레코드 | 기존 감사 결과 | Ledger 처리 상태 |
-|---|---|---|---|
-| 초기 5개 | A-001–A-005 | 4 CONFLICT / 1 PARTIALLY_VERIFIED | 원본 문장/행 범위로 분해 필요 |
-| 추가 9개 | A-006–A-015 | 7 CONFLICT / 2 PARTIALLY_VERIFIED | 원본 문장/행 범위로 분해 필요 |
-| 추가 20개 | B-001–B-020 | 14 CONFLICT / 6 PARTIALLY_VERIFIED | 원본 문장/행 범위로 분해 필요 |
-
-각 배치의 원본 파일 SHA와 상세 판정은 다음 문서에서 확인한다.
-- [초기 5개 감사](ARCHIVE_MANUAL_SAMPLE_AUDIT_5_2026-11-12.md)
-- [추가 9개 감사](ARCHIVE_MANUAL_AUDIT_9_2026-11-12.md)
-- [추가 20개 감사](ARCHIVE_MANUAL_AUDIT_20_2026-11-12.md)
+이 절의 A/B 배치(#1–#34)는 2026-11-12 초기 수동 감사 기록으로 보존한다. 2026-11-13 main archive #8–#62의 최신 감사/원자 분해 현황은 아래 파일 레코드 및 Canonical Requirement Register를 기준으로 한다. 과거 A/B 레코드와 신규 CRA-ARCH-MAIN ID namespace를 혼합하지 않는다.
 
 ## 5. 사용 규칙
 
@@ -959,7 +948,7 @@ Correct map: Annex I Part I(2)(c) for applicable automatic-update default/user c
 
 - #8–#57 file-level source records: 50개, ID suffix \`-FILE-001\`; 원본 경로/blob SHA/파일 단위 판정 추적.
 - #8–#62 atomic claim records: 345개, ID suffix \`-001\`, \`-002\` 등; 개별 법령 주장·인용·반증 추적.
-- CRA archive ID namespace 전체: 395개 unique ID (50 file-level + 345 atomic). 중복 ID 0개를 유지해야 한다.
+- CRA archive ID namespace 전체: 400개 unique ID (55 file-level + 345 atomic). 중복 ID 0개를 유지해야 한다.
 - 파일 단위 판정과 개별 claim 상태는 별개다. 개별 claim VERIFIED가 원본 파일 전체 VERIFIED를 의미하지 않는다.
 - 제품별 적용성/Class I/II, SKU·core functionality, 실제 DUT 시험은 관련 증거가 확보되기 전까지 UNVERIFIED/NOT_RUN이다.
 
@@ -1009,3 +998,14 @@ Correct map: Annex I Part I(2)(c) for applicable automatic-update default/user c
 | CRA-EVIDENCE-QUOTE-ACCURACY-001 | Evidence governance rule | 직접 인용은 최종 consolidated text의 정확한 문언·조항·버전과 일치해야 한다. 요약/합성문은 paraphrase로 표시. | exact quote locator, source version, reviewer sign-off |
 
 **매핑 원칙:** 원자 claim의 Canonical ID 열은 하나 이상의 상위 요구사항을 가리킨다. 파일 단위 판정은 별도 유지하며, Canonical ID는 제품 적합성 PASS를 뜻하지 않는다. 제품별 적용성·시험 상태는 각 evidence record에서 따로 관리한다.
+
+## 2026-11-13 main archive file-level source records — #58–#62
+
+| File Record ID | Report | main source path | main blob SHA | File-level status | Direct quote reuse | Audit |
+|---|---:|---|---|---|---:|---|
+| CRA-ARCH-MAIN-20261113-058-FILE-001 | #58 | research_archive/2026-11-13_044541.md | a5d535859eee483d47abb4dbf809cb10fdd3b8ce | PARTIALLY_VERIFIED | 0/1 | ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_58_62_2026-11-13.md |
+| CRA-ARCH-MAIN-20261113-059-FILE-001 | #59 | research_archive/2026-11-13_045038.md | 798aadd8105d1b44a03823f0f058e2e5c5fdae04 | PARTIALLY_VERIFIED | 0/1 | ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_58_62_2026-11-13.md |
+| CRA-ARCH-MAIN-20261113-060-FILE-001 | #60 | research_archive/2026-11-13_045534.md | 412a5cb249e0f198f7c024cf1a6736c9d2d932be | PARTIALLY_VERIFIED | 0/1 | ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_58_62_2026-11-13.md |
+| CRA-ARCH-MAIN-20261113-061-FILE-001 | #61 | research_archive/2026-11-13_050052.md | 6d3149dfd83b1862bc2388b6ee15d376d53a4e8e | PARTIALLY_VERIFIED | 0/1 | ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_58_62_2026-11-13.md |
+| CRA-ARCH-MAIN-20261113-062-FILE-001 | #62 | research_archive/2026-11-13_050532.md | 5a280db701cf970c32ef85d97010e0dd1dbd7fa0 | PARTIALLY_VERIFIED | 0/1 | ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_58_62_2026-11-13.md |
+
