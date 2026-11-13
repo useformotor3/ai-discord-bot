@@ -1,7 +1,7 @@
 # Phase C — Evidence Bundle / JSON Schema v3 / Gemini Prompt v3
 
 - Date: 2026-11-13
-- Status: implementation committed to cra-project-foundation; CI verification pending.
+- Status: implementation and CI verification complete on cra-project-foundation.
 - Approval: user explicitly approved the bounded Phase C proposal on 2026-11-13.
 - Production integration: NOT IMPLEMENTED.
 
@@ -47,4 +47,11 @@
 
 - Existing 55-test suite remains unchanged.
 - New unit tests cover fetch/extraction hash mismatch, source registry mismatch, URL/MIME tampering, excerpt/hash/ID tampering, size limits, schema parity, unknown/duplicate Evidence IDs, invalid JSON, status promotion, and rendering.
-- CI result must be recorded against the exact final tested commit SHA. Until the run is observed, mark CI as pending.
+- Verified: code commit `6344b576db64438e9a2ebfe5acdcc74afeac479e`, GitHub Actions #43338094337 SUCCESS; 79 tests passed and strict archive audit 990/990, consistent=true.
+
+
+## Final verification record
+- Corrected the initial CI import failure (IndentationError in segment loop) before acceptance.
+- Exact tested code SHA: `6344b576db64438e9a2ebfe5acdcc74afeac479e`.
+- Actions run #43338094337: SUCCESS; 79 tests passed; strict archive audit 990/990 and consistent=true.
+- Protected production/v2 files unchanged. Phase C remains isolated and is not wired into production.
