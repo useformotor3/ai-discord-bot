@@ -89,6 +89,16 @@ class EvidenceBundleTests(unittest.TestCase):
         with self.assertRaisesRegex(EvidenceBundleError, "SOURCE_NOT_SUCCESSFULLY_FETCHED"):
             build_evidence_bundle(altered, self.document)
 
+    def test_final_url_and_mime_mutation_rejected(self):
+        bundle = build_evidence_bundle(self.fetch, self.document)
+        bundle["sources"][0]["final_url"] = "https://attacker.invalid/document"
+        with self.assertRaisesRegex(EvidenceBundleError, "BUNDLE_FINAL_URL_INVALID"):
+            validate_evidence_bundle(bundle)
+        bundle = build_evidence_bundle(self.fetch, self.document)
+        bundle["sources"][0]["mime_type"] = "application/octet-stream"
+        with self.assertRaisesRegex(EvidenceBundleError, "BUNDLE_MIME_TYPE_INVALID"):
+            validate_evidence_bundle(bundle)
+
     def test_excerpt_mutation_rejected(self):
         bundle = build_evidence_bundle(self.fetch, self.document)
         bundle["evidence"][0]["excerpt"] += " changed"
