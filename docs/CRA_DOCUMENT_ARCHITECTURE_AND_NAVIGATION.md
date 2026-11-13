@@ -176,3 +176,10 @@
 - 독자용 법령 해석: [제1권](CRA_SERVO_DRIVE_COMPLIANCE_REPORT_V1.md) 제3장.
 - 구현·매뉴얼 반영: [제2권](SERVO_DRIVE_CRA_IMPLEMENTATION_PLAN_V1.md), [요구사항 추적성 매트릭스](CRA_REQUIREMENTS_TO_SERVO_DRIVE_TRACEABILITY_MATRIX.md), [사용자 정보 체크리스트](SERVO_DRIVE_CRA_USER_SECURITY_INFORMATION_CHECKLIST.md).
 - 각 배치 원본·SHA·개별 판정은 감사 보고서에 보존한다. 이 링크 지도에 법령 내용을 중복 복사하지 않는다.
+
+
+### #53–#57 감사의 통합 위치
+
+- [#53–#57 상세 감사](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_53_57_2026-11-13.md): 1 CONFLICT / 4 PARTIALLY_VERIFIED / 0 VERIFIED.
+- [주장·근거 정정 대장](CLAIM_EVIDENCE_LEDGER.md)에 날짜 포함 원본 경로·SHA·파일 중심 claim ID 5개를 등록했다.
+- 데이터 제거 기능은 Annex I Part I 2(m), 폐기 지침은 Annex II 8(d), 지원 종료 정보는 Article 13(19), 신고 범위는 Article 14 및 Article 69(3)로 분리해 제1권·제2권·사용자 정보 체크리스트·요구사항 추적성 매트릭스에 반영했다.
