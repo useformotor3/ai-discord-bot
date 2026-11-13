@@ -51,7 +51,7 @@
 - 작업 브랜치 cra-project-foundation의 현재 HEAD와 CI는 AI_CONTINUITY_BOARD 및 PROJECT_STATUS에서 세션마다 실시간 재확인한다.
 - 작업 브랜치 history.json은 990 entries. 마지막으로 확인된 strict archive audit는 archive/history 990/990 정합성을 통과했으나, 최신 문서 전용 변경 HEAD에서 새 strict audit/CI를 실행한 것은 아니다.
 - main 최신 관찰: report #107, HEAD aaded0f4d0b84a1891b5801a6048c4de92511822; history.json 1,382 entries, state.json count 107(당일 카운터). archive tree 파일 수는 이번 확인에서 재검증하지 않았다.
-- main과 작업 브랜치는 diverged이며, 현재 비교는 작업 브랜치 ahead 690 / behind 398. main merge/rebase/sync 금지.
+- main과 작업 브랜치는 diverged다. 정확한 ahead/behind 수치는 세션마다 AI_CONTINUITY_BOARD에서 재조회한다. main merge/rebase/sync 금지.
 - main.py, production run.yml, Gemini V2 prompt, contracts, schemas, evidence bundle은 별도 승인 전 수정 금지.
 - 최신 작업 HEAD의 CI run/status가 확인되지 않으면 PASS라고 기록하지 않는다.
 
