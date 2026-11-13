@@ -732,3 +732,12 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 - [x] 파일 단위 CONFLICT 5건과 개별 법령 사실 VERIFIED를 분리 기록.
 - [ ] 다음 배치 #18–#22 원자 Claim ID 분해.
 - [ ] #23–#57까지 순차 분해 후 제1권·제2권·PSIRT SOP·매트릭스 전수 대조.
+
+## 2026-11-13 P0 — #18–#22 원자 주장 분해
+
+- [x] #18–#22 main 원본 경로/blob SHA 재확인.
+- [x] 개별 법령 주장·인용 29개를 원자 Claim ID로 분해해 Ledger에 연결.
+- [x] Article 14 신고 trigger, support period, free updates/CVD, secure-default/access/integrity/attack-surface 조항을 분리.
+- [x] file-level CONFLICT 5건과 개별 법령 사실 VERIFIED를 분리 기록.
+- [ ] 다음 배치 #23–#27 원자 Claim ID 분해.
+- [ ] #28–#57까지 순차 분해 후 제1권·제2권·PSIRT SOP·매트릭스 전수 대조.
