@@ -335,3 +335,12 @@
 - Completed the next manual audit batch: [reports #13–#27](docs/ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_13_27_2026-11-13.md). Result: 15 CONFLICT; 0/15 Raw Text Quote blocks reusable as verbatim current CRA text. This is a non-random batch, not a whole-archive error rate.
 - Next archive audit starts at report #28. Keep original main archive/history/state read-only.
 - [Phase E3 approval package](docs/PHASE_E3_APPROVAL_PACKAGE.md) is prepared but **not approved or executed**. Live official-source fetch requires the explicit phrase “E3 실행 승인”.
+
+
+## 2026-11-13 — 보고서 우선 작업 기준
+- 먼저 읽을 통합 인덱스: [CRA 서보 드라이브 통합 보고서](docs/MASTER_REPORT.md).
+- 제1권 법령 조사: [CRA_SERVO_DRIVE_COMPLIANCE_REPORT_V1.md](docs/CRA_SERVO_DRIVE_COMPLIANCE_REPORT_V1.md).
+- 제2권 적용·구현 방안: [SERVO_DRIVE_CRA_IMPLEMENTATION_PLAN_V1.md](docs/SERVO_DRIVE_CRA_IMPLEMENTATION_PLAN_V1.md).
+- 운영 자동화 코드 변경은 [PROTECTED_CODE_CHANGE_PROPOSAL_V1.md](docs/PROTECTED_CODE_CHANGE_PROPOSAL_V1.md)를 먼저 검토하고 사용자 별도 승인 후 진행한다.
+- 보고서 파일을 실제 산출물로 계속 생성한다. 파일이 커지면 권/장 분리, 마스터 인덱스, 안정적 요구사항/출처/시험 ID를 유지한다.
+- 법령 VERIFIED와 제품 적용 VERIFIED를 분리한다. 미확인 제품 사실·시험 미실시는 절대 완료 처리하지 않는다.
