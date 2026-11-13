@@ -56,7 +56,7 @@ CRA는 EU 시장에 제공되는 디지털 요소 제품에 대한 수평적 사
 
 Annex I Part II의 핵심 취약점 처리 의무에는 SBOM, 지체 없는 취약점 조치, 정기 보안시험, 조정된 취약점 공개 정책, 안전한 업데이트 배포, 보안 업데이트의 원칙적 무상 제공 등이 포함된다.
 
-완제품 서보 드라이브가 Important Class I/II에 해당하는지, ST MCU가 Class I category 14에 해당하는지는 서로 별개로 판단해야 한다. 제품명이나 MCU 제조사만으로 등급을 단정하지 않는다.
+완제품 서보 드라이브가 Important Class I/II에 해당하는지, ST MCU 자체가 Annex III Class I category 14의 기술 설명을 충족하는지(그리고 MCU 자체가 별도 제품으로 시장에 제공되는지)는 서로 별개로 판단해야 한다. 단순히 MCU를 드라이브에 통합했다는 이유만으로 완제품의 분류가 자동 결정되지 않는다. 제품명이나 MCU 제조사만으로 등급을 단정하지 않는다. [제품 분류·접근통제 매트릭스](CRA_PRODUCT_CLASSIFICATION_AND_ACCESS_CONTROL_MATRIX.md) 참조.
 
 근거: [Regulation (EU) 2024/2847](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R2847), [Implementing Regulation (EU) 2025/2392](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R2392), [European Commission reporting obligations](https://digital-strategy.ec.europa.eu/en/policies/cra-reporting).
 
