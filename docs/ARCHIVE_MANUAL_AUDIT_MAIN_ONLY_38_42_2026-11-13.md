@@ -106,3 +106,11 @@
 2026-11-13 후속 교차검토에서 기존 감사가 Annex I Part I point 2(m)를 누락한 사실을 확인했다. 해당 조항은 사용자가 모든 데이터와 설정을 안전하고 쉽게 영구 제거할 수 있는 가능성을 제품에 제공하도록 요구한다. Annex II point 8(d)는 안전한 폐기 및 사용자 데이터 제거 방법에 관한 지침/정보를 별도로 요구한다.
 
 이에 따라 #38의 파일 판정을 CONFLICT에서 PARTIALLY_VERIFIED로 정정했다. 원본이 특정 NAND/EEPROM sanitization 구현을 보편 의무로 확대하고 잘못된 조항을 인용한 문제는 유지한다. 직접 인용 재사용 판정은 계속 REJECTED이며, 제품별 적용성은 데이터 저장 구조가 미확정이므로 UNVERIFIED다.
+
+## 원자 Claim ID 연결 — #38–#42
+
+- #38–#42에 대해 [Claim Evidence Ledger](CLAIM_EVIDENCE_LEDGER.md)에 원자 Claim ID 33개를 등록했다.
+- 파일 단위 결과는 #38 후속 정정을 반영해 3 CONFLICT / 2 PARTIALLY_VERIFIED / 0 VERIFIED, direct quote reuse 0/5로 유지한다.
+- #38은 Annex I Part I(2)(m)의 영구 삭제 가능성 요구와 Annex II(8)(d)의 폐기 지침을 함께 적용한다. 특정 NAND/EEPROM sanitization 구현은 법령이 지정하지 않는다.
+- #39는 Article 13(8) support period, Article 13(9) update availability, Part II(8) free update를 분리한다.
+- #40은 Annex II user instructions, #41은 Part II(2)–(8) vulnerability handling, #42는 Part II(4)–(6)/Article 13(17)/Article 14의 차이를 분리한다.
