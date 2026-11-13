@@ -244,3 +244,12 @@ Annex II의 1~9번을 제품 사용자 설명서/온라인 문서에 매핑한�
 - Annex I Part II(1)–(8)의 취약점 처리 항목은 각각 분리해 추적한다. 사용자 설명서는 Article 13(18)/Annex II, 기술문서는 Article 31/Annex VII를 기준으로 한다.
 - 안전한 폐기 안내(Annex II point 8(d))와 제품 내부의 데이터 삭제 기능 구현을 구분한다.
 - Article 14 신고는 두 신고 트랙과 최종 보고 기한을 구분하고, CVD/일반 취약점 처리와 혼합하지 않는다.
+
+
+## #13–#42 감사 정정의 구현·매뉴얼 반영
+
+- 법령 조항의 정본은 [CRA 공식 법령 기준선](CRA_VERIFIED_BASELINE_2026-11-12.md)을 따른다.
+- Annex I Part I(2)(b)–(j)의 요구 결과와 위험기반 구현 선택을 구분한다. 특정 비밀번호 정책, 포트 비활성화, JTAG 잠금, TPM/SE, Secure Boot, 서명 방식, A/B bank, rollback, 무중단 업데이트를 보편적 법정 의무로 전제하지 않는다.
+- Annex I Part II(1)–(8)의 취약점 처리 항목은 각각 분리해 추적한다. 사용자 설명서는 Article 13(18)/Annex II, 기술문서는 Article 31/Annex VII를 기준으로 한다.
+- 안전한 폐기 안내(Annex II point 8(d))와 제품 내부의 데이터 삭제 기능 구현을 구분한다.
+- Article 14 신고는 두 신고 트랙과 최종 보고 기한을 구분하고, CVD/일반 취약점 처리와 혼합하지 않는다.
