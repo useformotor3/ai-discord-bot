@@ -788,7 +788,7 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 
 ## 2026-11-13 — #8–#52 파일 중심 Claim ID 연결
 
-- #8–#52 45개 원본 보고서의 날짜·archive 경로·blob SHA·판정·중심 정정 요약을 Claim Evidence Ledger에 고유 ID로 등록했다.
+- #8–#62 55개 원본 보고서의 날짜·archive 경로·blob SHA·판정·중심 정정 요약을 Claim Evidence Ledger에 고유 ID로 등록했다.
 - #8–#12 원본 감사 문서와 SHA를 재확인했다. 5건 모두 CONFLICT, 직접 인용 재사용 0/5.
 - 세부 주장/인용 블록 단위의 완전한 원자 분해는 미완료이며, 파일 중심 레코드 등록과 구분한다.
 
