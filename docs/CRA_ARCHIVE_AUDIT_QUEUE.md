@@ -2500,3 +2500,10 @@ Batch result: 5/5 CONFLICT, 0 PARTIALLY_VERIFIED, 0 VERIFIED; 0/5 Raw Text Quote
 - Ledger: 55 file-level source records + 345 atomic claims = 400 unique IDs; 0 collisions; 46 canonical requirements; 345/345 atomic claims mapped.
 - Next P0 is canonical cross-document reconciliation, not another isolated audit batch: Volume 1, Volume 2, PSIRT SOP, requirements matrix, integrated matrix and test evidence register.
 - After P0 reconciliation, proceed with main-only audit #63–#67 using a fresh main HEAD/state/history snapshot.
+
+## 2026-11-13 current main / branch baseline
+
+- Current main report #125 / HEAD \`92e8ca7aa4a86b38627a1d8e9535e5b0463a8392\`; state count125 (daily counter), history.json 1,400 entries.
+- Current work branch HEAD \`ced168745cd19400ba29131a495c3bf5c3f924eb\`; diverged from main, ahead968/behind416. Do not merge/rebase/sync. Main remains read-only.
+- #8–#62 source path/blob SHA revalidation: 55/55 match current main tree.
+- Latest branch push CI run 43408438728 SUCCESS: 140 tests, archive/history 990/990, unique990, no missing/orphan/duplicate/malformed entries. Branch snapshot only.
