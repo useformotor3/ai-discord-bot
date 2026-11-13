@@ -2313,7 +2313,7 @@ Batch result: 5/5 CONFLICT, 0 PARTIALLY_VERIFIED, 0 VERIFIED; 0/5 Raw Text Quote
 
 ## 2026-11-13 — main reports #28–#32 Pass A/B/C audit
 
-- Current main tip at queue refresh: `4452662e6cba0bb81c6efb4b309b30f4733d8f71`, Auto-archive report #91. Main history/archive inventory is 1,366/1,366 with 1,366 unique paths.
+- Current main observation: report #119, HEAD `6491a5db6ea35ea97a6d97e85bac43f9a3cf41c0`; state count 119, history.json 1,394 entries. Archive tree count not rechecked; main read-only.
 - Batch audit: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_28_32_2026-11-13.md](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_28_32_2026-11-13.md).
 - #28 CONFLICT; archive `research_archive/2026-11-13_021538.md`; blob `78de23c029c47dee16ebc82adf7123c2bf52fa4a`.
 - #29 CONFLICT; archive `research_archive/2026-11-13_022039.md`; blob `e5248b9d23e94ea0ef5ad7ffb30f2dcd100e3434`.
