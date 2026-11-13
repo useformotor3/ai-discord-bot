@@ -2263,3 +2263,24 @@
 - `main.py`, Gemini prompt, 운영 자동화 코드, `.github/workflows/run.yml`, main 브랜치 수정 없음.
 - main과 작업 브랜치 간 merge/rebase/sync 없음.
 - 이번 문서 작업은 대기열/상황판/계획/세션 로그만 갱신한다. 실행하지 않은 테스트는 PASS로 기록하지 않는다.
+
+
+## 2026-11-13 reports #8–#12 — Pass A/B/C batch audit completed
+
+- Audit record: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_8_12_2026-11-13.md](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_8_12_2026-11-13.md).
+- Main-only source commits and archive blob SHAs were checked against the five report files. Original `main` archive files remain unchanged.
+- #8 — P1 — CONFLICT; Raw Text Quote REJECTED. Secure-by-default theme is relevant, but draft quote/provision mapping and universal first-boot password/debug-disable claims are incorrect or overclaimed.
+  - Commit: `2a295906507f0f2540a3c09cd760b5c77c4fb373`; file: `research_archive/2026-11-13_003535.md`; blob: `8141a7ff3d71cd2899e10a85c735b15351c72161`.
+- #9 — P0 — CONFLICT; Raw Text Quote REJECTED. Free updates, support period, CVD, update distribution and Article 14 scope are materially conflated.
+  - Commit: `fda58af984b8e5d0ad06d0f2e6bcdb19563e6914`; file: `research_archive/2026-11-13_004046.md`; blob: `c06112da2cd050b4eb0813828beb948975fb82d4`.
+- #10 — P0 — CONFLICT; Raw Text Quote REJECTED. Secure-by-default is Annex I Part I(2)(b), not Part II/Class II; generic servo drive Class II and forced password details unsupported.
+  - Commit: `5f45f1c28fd3b1542c4b574d495fadd009716e09`; file: `research_archive/2026-11-13_004542.md`; blob: `e9d5f5606a95567a9535de119edbbfa34739d02b`.
+- #11 — P1 — CONFLICT; Raw Text Quote REJECTED. Malformed/composite quotation; broad secure-default/attack-surface themes do not create universal port/JTAG/first-use-password mandates.
+  - Commit: `76589196b933c1da5ffbff47270dacf16dc4044a`; file: `research_archive/2026-11-13_005038.md`; blob: `3dab8049841c07992184993c5b18fc1dcab94836`.
+- #12 — P0 — CONFLICT; Raw Text Quote REJECTED. CVD and contact obligations exist, but Article 11 is General product safety; manufacturer obligations are Article 13; Article 14 scope is limited to actively exploited vulnerabilities and severe incidents.
+  - Commit: `59d1b14dcdb95badace59a13fe46a00e1e4177f9`; file: `research_archive/2026-11-13_005535.md`; blob: `acda92dbe87ffbc549a8d52d42961b4bf058b983`.
+
+Batch result: 5/5 CONFLICT, 0 PARTIALLY_VERIFIED, 0 VERIFIED; 0/5 Raw Text Quote blocks reusable as verbatim current-law quotations. Product applicability remains UNVERIFIED. This is a non-random time-sequenced batch, not a representative archive error rate.
+
+### Queue coverage gap
+- The current main tip observed during this session is report #27 (`c7eb7296671541c1ad2268cdcee80885091f230c`). Reports #13–#27 were not part of the prior queue and remain to be registered before their audits. Do not treat this five-report batch as covering #13–#27 or the complete main archive.
