@@ -389,7 +389,7 @@
 
 ## 2026-11-13 — #8–#52 원본 추적 ID 연결 현황
 
-- #8–#52 45개 보고서의 날짜 포함 Claim ID, 원본 archive 경로, blob SHA, 파일 판정과 중심 정정 요약을 [Claim Evidence Ledger](docs/CLAIM_EVIDENCE_LEDGER.md)에 등록했다.
+- #8–#62 55개 보고서의 날짜 포함 Claim ID, 원본 archive 경로, blob SHA, 파일 판정과 중심 정정 요약을 [Claim Evidence Ledger](docs/CLAIM_EVIDENCE_LEDGER.md)에 등록했다.
 - #8–#12 상세 감사 문서도 재확인해 원본 경로와 SHA를 복원했다.
 - 보고서 내 모든 하위 주장·직접 인용의 원자 단위 연결은 후속 P0로 남아 있다.
 
@@ -445,13 +445,13 @@
 
 ## 원자 주장 분해 진행 — #28–#32 완료
 
-- #28–#32 개별 주장·인용 25개를 [Claim Evidence Ledger](docs/CLAIM_EVIDENCE_LEDGER.md)에 원자 Claim ID로 등록했다.
+- #28–#32 개별 주장·인용 33개를 [Claim Evidence Ledger](docs/CLAIM_EVIDENCE_LEDGER.md)에 원자 Claim ID로 등록했다.
 - 기존 파일 단위 감사는 5 CONFLICT / direct quote reuse 0/5로 유지한다.
 - 다음 원자 분해 대상은 #33–#37.
 
 ## 원자 주장 분해 진행 — #33–#37 완료
 
-- #33–#37 개별 주장·인용 31개를 [Claim Evidence Ledger](docs/CLAIM_EVIDENCE_LEDGER.md)에 원자 Claim ID로 등록했다.
+- #33–#37 개별 주장·인용 33개를 [Claim Evidence Ledger](docs/CLAIM_EVIDENCE_LEDGER.md)에 원자 Claim ID로 등록했다.
 - EUR-Lex Implementing Regulation (EU) 2025/2392를 확인해 Annex III core-functionality test와 Article 32/Annex VIII 평가 경로를 보완했다.
 - 기존 파일 단위 감사는 5 CONFLICT / direct quote reuse 0/5로 유지한다. 서보 드라이브 Class I/II 적용성은 UNVERIFIED.
 - 다음 원자 분해 대상은 #38–#42.
@@ -470,7 +470,7 @@
 
 ## 원자 주장 분해 진행 — #48–#52 완료
 
-- #48–#52 개별 주장·인용 31개를 [Claim Evidence Ledger](docs/CLAIM_EVIDENCE_LEDGER.md)에 원자 Claim ID로 등록했다.
+- #48–#52 개별 주장·인용 36개를 [Claim Evidence Ledger](docs/CLAIM_EVIDENCE_LEDGER.md)에 원자 Claim ID로 등록했다.
 - 기존 파일 단위 판정 3 CONFLICT / 2 PARTIALLY_VERIFIED / direct quote reuse 0/5 유지.
 - 다음 원자 분해 대상은 #53–#57.
 
