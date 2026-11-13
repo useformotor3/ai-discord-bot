@@ -21,14 +21,18 @@
 
 ## 2. 보고서별 판정
 
-### #38 — CONFLICT
+### #38 — PARTIALLY_VERIFIED
 
 - 유효한 법적 연결은 **Annex II point 8(d)**다. 제조사는 제품의 안전한 폐기에 관한 상세 지침 또는 해당 지침의 인터넷 주소를 제공해야 하며, 그 정보에는 사용자 데이터의 안전한 제거 방법이 포함된다.
 - 원문은 제조사가 모든 제품에 대해 NAND/EEPROM의 모든 민감 데이터를 복구 불가능하게 지우는 전용 기능을 구현해야 한다고 직접 규정하지 않는다. 보고서는 “정보·지침 제공” 의무를 “완전한 물리/논리적 sanitization 기능 구현” 의무로 확대했다.
 - Annex I Part I(2)(e)는 데이터 기밀성, (f)는 데이터·명령·프로그램·구성의 무단 변경 방지/무결성에 관한 요구다. 이 조항을 폐기 시 잔존 데이터의 영구 소각 의무로 인용할 수 없다.
 - Annex I Part II는 취약점 처리 요구사항이며 폐기 지침의 직접 근거가 아니다.
-- Raw Text Quote: REJECTED — 두 번째 인용은 Annex I에 없는 문구를 법령 발췌처럼 제시했고, 첫 번째 인용도 현행 원문 locator가 특정되지 않았다.
-- 정정: Annex II point 8(d)의 secure decommissioning/user-data removal instructions를 기준으로 사용자 매뉴얼 요구사항을 작성한다. 실제 삭제 기능·매체 sanitization 수준은 제품 데이터 저장 구조, 위협 모델 및 적용 가능한 별도 요구를 확인한 뒤 설계 선택으로 정한다.
+- 중요한 누락: 현행 Annex I Part I point 2(m)는 제품이 사용자에게 모든 데이터와 설정을 안전하고 쉽게 영구 제거할 수 있는 가능성을 제공하도록 명시한다. 따라서 CRA에는 사용자 데이터의 안전한 영구 제거에 관한 제품 기능 결과 요구가 존재한다. 보고서가 이 조항을 인용하지 않고 Part I(1), Part II를 근거로 든 것은 조항 매핑 오류다.
+- Annex II point 8(d)는 제품의 안전한 폐기와 사용자 데이터의 안전한 제거 방법에 관한 상세 지침/정보를 사용자에게 제공하도록 한다. 이 사용자 지침 의무는 Part I 2(m)의 제품 기능 결과 요구와 함께 적용해 해석해야 한다.
+- Part I 2(m)는 특정 NAND/EEPROM 물리 소거 방식, 특정 삭제 알고리즘, 모든 데이터의 물리적 복구 불가능성을 특정 구현으로 명령하지 않는다. 데이터·설정의 저장 형태, 전송 가능성, 제품 위험평가에 따라 안전하고 쉽게 영구 제거할 수 있는 사용자 기능/절차를 설계해야 한다.
+- Raw Text Quote: REJECTED — 인용 위치와 문언은 부정확하며, Part I(2)(m)의 직접 문언을 제시하지 않았다.
+- 정정: 제품 데이터·설정 저장 구조를 확인하고 Part I(2)(m)의 삭제 가능성 및 Annex II point 8(d)의 폐기 지침을 함께 추적한다. 특정 NAND/EEPROM sanitization 방식은 위험기반 구현 선택으로 분리한다.
+- 판정 이유: 안전한 데이터 제거라는 중심 의무는 Part I(2)(m) 및 Annex II point 8(d)로 부분 뒷받침되지만, 원본의 법적 locator와 특정 물리/논리 sanitization 구현 주장은 과장되어 PARTIALLY_VERIFIED로 정정한다.
 
 ### #39 — CONFLICT
 
@@ -72,13 +76,13 @@
 | 항목 | 결과 |
 |---|---:|
 | 감사 보고서 | 5 |
-| CONFLICT | 4 |
-| PARTIALLY_VERIFIED | 1 |
+| CONFLICT | 3 |
+| PARTIALLY_VERIFIED | 2 |
 | VERIFIED | 0 |
 | 직접 인용 재사용 가능 | 0 / 5 |
 | 제품별 적용성 | 5건 모두 UNVERIFIED |
 
-이번 배치는 연속·비무작위 표본이다. 1,368개 history 항목 전체의 오류율로 일반화하지 않는다.
+이번 배치는 연속·비무작위 표본이다. 전체 history/archive 오류율로 일반화하지 않는다.
 
 ## 4. 정정 규칙 및 후속 적용
 
@@ -95,3 +99,10 @@
 - Annex II 사용자 지침서 체크리스트와 Article 13/Annex I 취약점 처리 매트릭스에 이번 정정 규칙을 반영한다.
 - 제1권 CRA 보고서의 EOL/decommissioning, free security updates, user instructions, VDP 절을 이번 감사 결과에 맞게 보강한다.
 - 제품 SKU/제품 경계/데이터 저장 구조/지원기간이 확보되기 전 제품별 적합성은 UNVERIFIED로 유지한다.
+
+
+## 5. #38 재검토 이력 — Annex I Part I point 2(m) 반영
+
+2026-11-13 후속 교차검토에서 기존 감사가 Annex I Part I point 2(m)를 누락한 사실을 확인했다. 해당 조항은 사용자가 모든 데이터와 설정을 안전하고 쉽게 영구 제거할 수 있는 가능성을 제품에 제공하도록 요구한다. Annex II point 8(d)는 안전한 폐기 및 사용자 데이터 제거 방법에 관한 지침/정보를 별도로 요구한다.
+
+이에 따라 #38의 파일 판정을 CONFLICT에서 PARTIALLY_VERIFIED로 정정했다. 원본이 특정 NAND/EEPROM sanitization 구현을 보편 의무로 확대하고 잘못된 조항을 인용한 문제는 유지한다. 직접 인용 재사용 판정은 계속 REJECTED이며, 제품별 적용성은 데이터 저장 구조가 미확정이므로 UNVERIFIED다.
