@@ -95,7 +95,7 @@ B. product security에 impact를 미치는 severe incident인지 확인한다.
 6. 제품 위험평가 갱신 및 임시 완화 결정
 7. 공급자/통합자/관련 이해관계자와 필요한 정보 공유
 8. 신고 대상이면 CRA Single Reporting Platform을 통한 지정 CSIRT 제출 절차 진행
-9. 보안 업데이트/완화 배포, 사용자 영향·통지 판단
+9. 보안 업데이트/완화 배포, Article 14(8) 적용 사건의 사용자 영향·통지 판단
 10. 최종 보고 제출 및 원인·시정·재발방지 기록
 11. 사건 종료 검토, 교훈·위험평가·SBOM·테스트 케이스 갱신
 
@@ -109,6 +109,8 @@ B. product security에 impact를 미치는 severe incident인지 확인한다.
 - 공개 가능 정보와 제한 정보 구분
 - ENISA/CSIRT 공유·후속 요청·시장감시기관 관련 기록(해당 시)
 - 사용자 통지 여부, 통지 대상/시각/채널/내용
+- Article 14(8) 사건이면 actively exploited vulnerability 또는 severe incident 해당 근거, 영향 사용자 범위, 통지 필요성, where appropriate machine-readable 형식 판단 및 사용자에게 제공한 완화·시정 조치
+- Article 14(8)의 machine-readable 형식은 해당 사건의 사용자 통지에 대한 조건부 요구다. 모든 취약점/보안 권고를 자동 기계 판독 형식으로 배포해야 한다는 일반 의무로 확대하지 않는다.
 - 미제출 판단 시 법적 근거·사실·승인자
 
 CRA Single Reporting Platform을 통한 제출 구조를 기준으로 한다. 내부 자동화가 외부 기관에 직접 임의 전송하도록 만들지 말고, 제출 권한·승인·수신확인 기록을 통제한다.
@@ -168,3 +170,11 @@ CRA Single Reporting Platform을 통한 제출 구조를 기준으로 한다. �
 - European Commission, CRA reporting obligations: https://digital-strategy.ec.europa.eu/en/policies/cra-reporting
 
 본 절차는 규정 원문 및 Commission 안내를 기준으로 작성했다. 신고 플랫폼 세부 UI/필수 입력항목·국가별 관할은 실제 제출 시 최신 공식 지침을 확인해야 한다.
+
+
+### #48–#52 감사 정정 반영 — 공급망·사용자 통지
+
+- Article 13(6)의 구성요소 취약점 신고는 제품 제조사가 해당 구성요소 제조/유지 주체에 보고하는 방향이다. 공급자가 항상 상위 제조사에 자동 보고해야 한다는 일반 CRA 의무로 표현하지 않는다.
+- Article 14(8) 사용자 통지는 actively exploited vulnerability 또는 제품 보안에 영향을 미치는 severe incident에 한정된다. 구조화된 machine-readable 형식은 where appropriate 조건이며 모든 취약점 공지에 일률 적용되지 않는다.
+- Annex I Part II(4) fixed-vulnerability disclosure, (5) CVD policy, (6) contact address, (7) secure update distribution, (8) timely/free security updates를 각각 구분한다.
+- 상세: [#48–#52 감사](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_48_52_2026-11-13.md).
