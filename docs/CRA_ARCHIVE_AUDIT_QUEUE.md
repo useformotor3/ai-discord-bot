@@ -2370,3 +2370,20 @@ Batch result: 5/5 CONFLICT, 0 PARTIALLY_VERIFIED, 0 VERIFIED; 0/5 Raw Text Quote
 - 누적 #8–#47: 40건, 37 CONFLICT / 3 PARTIALLY_VERIFIED / 0 VERIFIED. 비무작위 연속 표본.
 - 다음 감사 시작점 #48. 실행 전 main HEAD/history/state를 다시 확인.
 
+
+
+## 최신 상태 보정 및 main reports #48–#52 감사 — 2026-11-13
+
+- main HEAD: aaded0f4d0b84a1891b5801a6048c4de92511822 (Auto-archive: Research report #107).
+- main state.json: date 2026-11-13, count 107. 이는 당일 카운터이며 누적 archive 수가 아니다.
+- main history.json: 1,382 entries. main research_archive recursive tree 파일 수는 이번 상태 보정에서 별도로 재확인하지 않았다.
+- #48 — PARTIALLY_VERIFIED — research_archive/2026-11-13_035531.md, blob 539b1d73d7053c5b1e252c775c503b055e978dd9.
+- #49 — CONFLICT — research_archive/2026-11-13_040051.md, blob 3d661d5545974406fee419f60234f99d29427495.
+- #50 — CONFLICT — research_archive/2026-11-13_040534.md, blob 8bbfe9b22a009c90dba493d3086462bb605a1b50.
+- #51 — PARTIALLY_VERIFIED — research_archive/2026-11-13_041039.md, blob 8625c7e82389aea9cd3e5a0694cd0b920c90e8cf.
+- #52 — CONFLICT — research_archive/2026-11-13_041532.md, blob 3672c41635364ef99b494cd8944c4998bbfc01c8.
+- 배치: 3 CONFLICT / 2 PARTIALLY_VERIFIED / 0 VERIFIED; direct quote reuse 0/5.
+- 누적 #8–#52: 45건, 40 CONFLICT / 5 PARTIALLY_VERIFIED / 0 VERIFIED, direct quote reuse 0/45. 비무작위 연속 표본이며 전체 archive 오류율이 아니다.
+- 주요 정정: Article 14(8)의 machine-readable user notification은 특정 신고 사건에 대해 where appropriate 적용; CVD는 Annex I Part II(5), contact address는 Part II(6), security updates는 Part II(2)/(7)/(8)로 분리; support period Article 13(8), update availability Article 13(9); component vulnerability report direction Article 13(6).
+- 상세: [#48–#52 감사 보고서](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_48_52_2026-11-13.md).
+- 다음 감사 시작점 #53. 배치 시작 시 main HEAD/history/state를 다시 확인한다.
