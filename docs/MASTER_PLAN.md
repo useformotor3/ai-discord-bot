@@ -535,3 +535,17 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 - [ ] C5 non-production claim validator/report builder 통합.
 - [ ] C6 main/prompt/production workflow integration — 별도 승인 필요.
 - **현재 코드 변경·live fetch 없음.** C1+C2 구현은 상세 제안에 대한 사용자 승인 대기.
+
+
+## C1+C2 수집 무결성 및 Evidence Bundle — 승인 후 구현
+- [x] strict charset decoding; invalid/lossy bytes fail closed.
+- [x] PDF page/empty-page/extraction quality diagnostics.
+- [x] fetch raw hash ↔ extraction raw hash ↔ normalized text hash linkage.
+- [x] source_id mismatch / hash mismatch blocks bundle.
+- [x] expected vs observed document ID/revision separated; unconfirmed/mismatch states retained.
+- [x] bounded excerpt/evidence IDs and versioned JSON schema.
+- [ ] Final CI run and strict archive audit for exact final commit.
+- [ ] Add real official-source fixtures and verify extraction fidelity only after separate E3 approval.
+- [ ] C3 source-specific adapters/PDF backend hardening.
+- [ ] C5 non-production report/claim integration after bundle contract review.
+- [ ] C6 production integration remains separate protected-code approval.
