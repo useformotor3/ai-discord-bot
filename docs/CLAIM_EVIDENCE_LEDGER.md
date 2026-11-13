@@ -397,7 +397,7 @@ Correct map: Annex I Part I(2)(c) for applicable automatic-update default/user c
 - #8–#57: 50건 중 40 CONFLICT / 10 PARTIALLY_VERIFIED / 0 VERIFIED, 직접 인용 재사용 0/50. #53–#57은 1 CONFLICT / 4 PARTIALLY_VERIFIED다.
 - 이 결과는 날짜/번호로 연속 선택한 비무작위 표본이다. 전체 main 아카이브의 오류율로 일반화하지 않는다.
 - 과거 파일 중심 레코드에 대한 설명이다. 최신 구조에서는 #8–#57 파일 단위 레코드 50개를 -FILE-001 suffix로 보존하고, 각 보고서의 세부 주장은 별도 원자 Claim ID로 분해한다.
-- 다음 P0: #8–#52의 날짜+원본 경로+blob SHA를 기준으로 감사 문서와 Ledger ID를 1:1 대조하고, 중복/누락/상태 차이를 폐쇄한다.
+- 다음 P0: #8–#62의 날짜+원본 경로+blob SHA를 기준으로 감사 문서와 Ledger ID를 1:1 대조하고, Volume 1/2·SOP·매트릭스·시험 대장과 중복/누락/상태 차이를 폐쇄한다.
 
 
 ## 31. 2026-11-13 main reports #13–#57 날짜·원본·주장별 추적 대장
@@ -546,7 +546,7 @@ Correct map: Annex I Part I(2)(c) for applicable automatic-update default/user c
 | CRA-ARCH-MAIN-20261113-012-008 | #12 | 취약점 시정 문구 “without undue delay”가 Part II(2)의 정확한 직접 인용이다. | Annex I Part II(2) | CRA-EVIDENCE-QUOTE-ACCURACY-001; CRA-REQ-REMEDIATION-001 | CONFLICT | 현행 문언은 “without delay”; 인용문을 직접 인용으로 재사용하지 않는다. |
 
 - #8–#12 파일 단위 판정은 기존 감사 결과대로 5 CONFLICT / 0 PARTIALLY_VERIFIED / 0 VERIFIED이며 direct quote reuse 0/5.
-- 위 31개는 개별 claim 단위다. 일부 법령 원칙은 VERIFIED여도 원본 보고서 전체가 VERIFIED라는 뜻은 아니다.
+- 위 32개는 개별 claim 단위다. 일부 법령 원칙은 VERIFIED여도 원본 보고서 전체가 VERIFIED라는 뜻은 아니다.
 - 제품별 적용성·Class I/II 분류는 전부 UNVERIFIED. 실제 DUT 시험은 NOT_RUN.
 
 ## 2026-11-13 — #13–#17 원자 주장·인용 분해 (29 claims)
@@ -953,7 +953,7 @@ Correct map: Annex I Part I(2)(c) for applicable automatic-update default/user c
 
 ## 2026-11-13 claim ID 무결성 인벤토리
 
-- #8–#57 file-level source records: 50개, ID suffix \`-FILE-001\`; 원본 경로/blob SHA/파일 단위 판정 추적.
+- #8–#62 file-level source records: 55개, ID suffix \`-FILE-001\`; 원본 경로/blob SHA/파일 단위 판정 추적.
 - #8–#62 atomic claim records: 345개, ID suffix \`-001\`, \`-002\` 등; 개별 법령 주장·인용·반증 추적.
 - CRA archive ID namespace 전체: 400개 unique ID (55 file-level + 345 atomic). 중복 ID 0개를 유지해야 한다.
 - Canonical requirement IDs: 46개. 345개 atomic claim의 Canonical ID 열을 정규화했으며, 하나의 claim은 여러 요구사항에 연결될 수 있다.
