@@ -4,7 +4,7 @@ from datetime import datetime, timezone
 
 from source_bundle import EvidenceBundleError, build_source_evidence_bundle
 from source_evidence import FetchMetadata, FetchResult, SOURCE_REGISTRY
-from source_extraction import extract_html_document
+from source_extraction import extract_eurlex_html
 
 
 class SourceBundleTests(unittest.TestCase):
@@ -29,7 +29,7 @@ class SourceBundleTests(unittest.TestCase):
             status="FETCHED",
         )
         fetched = FetchResult(metadata, raw)
-        extracted = extract_html_document(source.source_id, raw)
+        extracted = extract_eurlex_html(source.source_id, raw)
         return fetched, extracted
 
     def test_bundle_links_hashes_identity_revision_and_excerpt(self):
@@ -60,7 +60,7 @@ class SourceBundleTests(unittest.TestCase):
         self.assertEqual(bundle.identity_status, "REVISION_MISMATCH")
 
     def test_raw_hash_mismatch_blocks_bundle(self):
-        fetched, extracted = self.make_pair("<html><body>AN5156 Rev 14</body></html>")
+        fetched, extracted = self.make_pair("<html><body>AN5156 Rev 14<h2>Article 13</h2><p>Article text.</p></body></html>")
         object.__setattr__(fetched.metadata, "sha256", "0" * 64)
         with self.assertRaisesRegex(EvidenceBundleError, "FETCH_RAW_HASH_MISMATCH"):
             build_source_evidence_bundle(fetched, extracted)
