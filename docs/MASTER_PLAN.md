@@ -576,7 +576,7 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 - 신규 세션은 `docs/AI_CONTINUITY_BOARD.md`를 필수로 읽고, 현재 HEAD/main archive/CI를 다시 확인한다.
 - 보고서 생산과 검증을 코드/파이프라인 개선과 동등한 최우선 결과로 취급한다. 가능한 작업마다 실제 보고서 본문, 비교표, 설계도, claim audit 또는 증거 대장을 남긴다.
 - main archive reports #8–#62 감사 완료: 55건, 40 CONFLICT / 15 PARTIALLY_VERIFIED / 0 VERIFIED, direct quote reuse 0/55. 연속 비무작위 표본이며 전체 archive 오류율이 아니다.
-- main 최신 관찰 report #119 / HEAD `6491a5db6ea35ea97a6d97e85bac43f9a3cf41c0`; state 119, history 1,394. 다음 main-only audit target #63–#67이며, P0 canonical cross-document reconciliation 이후 수행.
+- main 최신 관찰 report #125 / HEAD `92e8ca7aa4a86b38627a1d8e9535e5b0463a8392`; state 119, history 1,394. 다음 main-only audit target #63–#67이며, P0 canonical cross-document reconciliation 이후 수행.
 - 제1권 CRA 조사 보고서와 제2권 구현 계획은 초판이다. #28–#32 감사 결과 및 반복 정정 규칙을 통합해 다음 revision을 작성한다.
 - E3 live source fetch, protected production code, Gemini V2 prompt/contract, main branch mutation/merge/rebase/sync는 별도 명시 승인 전 금지.
 
@@ -708,10 +708,10 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 - [ ] 위 전수 대조 후 main-only reports #63–#67 감사. 배치 시작 시 main HEAD/state/history를 다시 조회한다.
 - main read-only, merge/rebase/sync 금지. E3 live fetch와 protected production integration은 별도 승인 전 금지.
 
-## 사후 기준선 — main report #119 확인 (2026-11-13)
+## 사후 기준선 — main report #125 확인 (2026-11-13)
 
 - #58–#62 감사는 main report #118 기준으로 수행했다.
-- 이후 main에 report #119가 추가됨: HEAD \`6491a5db6ea35ea97a6d97e85bac43f9a3cf41c0\`, state count 119, history 1,394 entries.
+- 이후 main에 report #125가 추가됨: HEAD \`6491a5db6ea35ea97a6d97e85bac43f9a3cf41c0\`, state count 125, history 1,394 entries.
 - #119는 미감사 상태다. 다음 archive 감사는 #63–#67부터 수행하며, 배치 시작 시 main state/history/HEAD를 재조회한다.
 - main read-only, merge/rebase/sync 금지.
 
@@ -809,7 +809,7 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 
 ## 2026-11-13 authoritative snapshot — #8–#62 audit and claim normalization
 
-- main latest observed: report #119; HEAD \`6491a5db6ea35ea97a6d97e85bac43f9a3cf41c0\`; state count 119; history.json 1,394 entries. Archive tree count was not rechecked. main remains read-only.
+- main latest observed: report #125; HEAD \`6491a5db6ea35ea97a6d97e85bac43f9a3cf41c0\`; state count 125; history.json 1,400 entries. Archive tree count was not rechecked. main remains read-only.
 - main-only audit scope #8–#62: 55 consecutive, non-random reports; file-level results **40 CONFLICT / 15 PARTIALLY_VERIFIED / 0 VERIFIED**; direct quote reuse **0/55**. This is not a statistical error rate for the full archive.
 - Claim Evidence Ledger: 55 file-level source records + 345 atomic claims = **400 unique IDs**, duplicate IDs 0. All 345 atomic claims have one or more Canonical IDs. Canonical register defines 46 requirements; 43 are referenced by legacy atomic claims, and 3 are forward-mapped to matrix requirements.
 - #8–#57 (50 reports) and #58–#62 (5 reports) have completed atomic decomposition. Individual legal facts marked VERIFIED do not promote a conflicting source file to VERIFIED.
@@ -824,3 +824,13 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 - [x] TST-ERASE-01..04 added to Security Test Evidence Register; all NOT_RUN.
 - [x] P1-12/P1-13 and TR-11/TR-12A/B/C traceability updated.
 - [ ] Execute only after exact SKU/storage topology/firmware access are available; do not claim PASS from a proposed test case.
+
+## 2026-11-13 current Git baseline — main #125 / work branch divergence
+
+- main HEAD: report #125, SHA \`92e8ca7aa4a86b38627a1d8e9535e5b0463a8392\`; state.json count 125 (daily counter), history.json 1,400 entries; current main tree \`7679729e1b128eacf26034346dafb29aa8da610b\`.
+- Work branch \`cra-project-foundation\` HEAD: \`ced168745cd19400ba29131a495c3bf5c3f924eb\`.
+- Git compare main..work branch: **diverged**, ahead 968 / behind 416, merge base \`b425b6db591e34abe003522157cf97ecf2240d9f\`. Do not merge, rebase, sync or write to main. This divergence includes historical branch differences and is not created by this documentation-only continuation.
+- Main archive source revalidation: all 55 audited file paths and blob SHAs for reports #8–#62 match the current main tree (55/55, missing 0, mismatches 0).
+- Latest push CI on current work-branch HEAD: run 43408438728 SUCCESS; 140 tests passed; strict archive audit 990/990, unique paths 990, missing/orphan/duplicate/malformed 0, consistent=true. The branch workflow's state.count=3 is a daily counter, not an archive total. No PR-triggered workflow run and no PR was created.
+- Current branch commits in this continuation are documentation-only; no additional production code changes were made here. Existing branch-vs-main code differences remain unmerged and must be reviewed separately.
+
