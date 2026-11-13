@@ -317,3 +317,9 @@
 - Code: [evidence_quote_validator.py](evidence_quote_validator.py); tests: [test_evidence_quote_validator.py](tests/test_evidence_quote_validator.py); implementation note: [PHASE_D_IMPLEMENTATION.md](docs/PHASE_D_IMPLEMENTATION.md).
 - Machine EXACT_MATCH means exact match to Phase B normalized extraction only. Legal/product status stays UNVERIFIED; PDF visual fidelity, semantic claim support and legal interpretation remain human review.
 - Final hardened HEAD `eaf4b4d31c0dccd2a624ab0f67fabdc166936a70` passed Actions #43345315133: 105 tests, archive/history 990/990 consistent; protected files and Phase C bundle/v3/schema unchanged. Do not merge/rebase/sync or integrate production.
+
+
+## 2026-11-13 추가 — Phase E 설계 및 승인 대기
+- [Phase E 통제된 공식 출처 fetch/추출 품질 검증 설계](docs/PHASE_E_CONTROLLED_FETCH_AND_EXTRACTION_DESIGN.md) 작성.
+- Phase A DNS preflight와 실제 TCP 연결 간 TOCTOU 잔여 위험을 확인했으므로 IP-pinned transport 및 TLS hostname 검증을 E1/E2 mock/adversarial tests로 입증하기 전 실제 URL fetch 금지.
+- 현재 사용자 승인 요청은 E1+E2 작업 브랜치 구현/오프라인 테스트에 한정. E3 실제 URL fetch는 E1/E2 CI 확인 후 별도 승인.
