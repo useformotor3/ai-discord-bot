@@ -14,6 +14,8 @@ from typing import Callable, Iterable
 from types import MappingProxyType
 from urllib.parse import urljoin, urlsplit
 
+from source_transport import PinnedHTTPSession, PinnedTransportError, normalize_public_ips
+
 DEFAULT_TIMEOUT = (5.0, 20.0)
 DEFAULT_MAX_REDIRECTS = 3
 DEFAULT_CHUNK_SIZE = 64 * 1024
@@ -153,7 +155,7 @@ def _default_resolver(host: str) -> Iterable[str]:
     return {entry[4][0] for entry in socket.getaddrinfo(host, 443, type=socket.SOCK_STREAM)}
 
 
-def _validate_https_target(url: str, expected_host: str, resolver: Callable[[str], Iterable[str]]) -> None:
+def _validate_https_target(url: str, expected_host: str, resolver: Callable[[str], Iterable[str]]) -> tuple[str, ...]:
     parsed = urlsplit(url)
     if parsed.scheme.lower() != "https" or not parsed.hostname:
         raise SourceFetchError("HTTPS_REQUIRED")
@@ -166,18 +168,13 @@ def _validate_https_target(url: str, expected_host: str, resolver: Callable[[str
     if parsed.fragment:
         raise SourceFetchError("URL_FRAGMENT_BLOCKED")
     try:
-        addresses = tuple(resolver(parsed.hostname))
+        # Resolve once per hop. The returned literal IPs are passed to the
+        # transport; the transport never performs a second hostname lookup.
+        return normalize_public_ips(resolver(parsed.hostname))
+    except PinnedTransportError as exc:
+        raise SourceFetchError(str(exc)) from exc
     except Exception as exc:
         raise SourceFetchError("DNS_RESOLUTION_FAILED") from exc
-    if not addresses:
-        raise SourceFetchError("DNS_NO_ADDRESS")
-    for address in addresses:
-        try:
-            ip = ipaddress.ip_address(address)
-        except ValueError as exc:
-            raise SourceFetchError("DNS_INVALID_ADDRESS") from exc
-        if not ip.is_global:
-            raise SourceFetchError("NON_PUBLIC_ADDRESS_BLOCKED")
 
 
 def _read_limited(response: object, limit: int, chunk_size: int) -> bytes:
@@ -221,10 +218,9 @@ class OfficialSourceFetcher:
         chunk_size: int = DEFAULT_CHUNK_SIZE,
     ):
         if session is None:
-            import requests
-            session = requests.Session()
-            # Ignore ambient proxy/certificate environment variables for predictable transport.
-            session.trust_env = False
+            # No hostname-based HTTP client: this adapter connects only to the
+            # validated literal IPs while preserving TLS SNI/certificate hostname.
+            session = PinnedHTTPSession()
         self.session = session
         self.resolver = resolver
         self.clock = clock
@@ -241,10 +237,11 @@ class OfficialSourceFetcher:
         current_url = source.canonical_url
 
         for redirect_count in range(self.max_redirects + 1):
-            _validate_https_target(current_url, expected_host, self.resolver)
+            pinned_ips = _validate_https_target(current_url, expected_host, self.resolver)
             try:
                 response = self.session.get(
                     current_url,
+                    pinned_ips=pinned_ips,
                     allow_redirects=False,
                     stream=True,
                     timeout=self.timeout,
@@ -272,6 +269,13 @@ class OfficialSourceFetcher:
                 if callable(close):
                     close()
                 raise SourceFetchError("HTTP_STATUS_NOT_200")
+
+            content_encoding = (headers.get("Content-Encoding") or headers.get("content-encoding") or "identity").strip().lower()
+            if content_encoding not in ("", "identity"):
+                close = getattr(response, "close", None)
+                if callable(close):
+                    close()
+                raise SourceFetchError("CONTENT_ENCODING_NOT_ALLOWED")
 
             mime = (headers.get("Content-Type") or headers.get("content-type") or "")
             mime = mime.split(";", 1)[0].strip().lower()
