@@ -630,3 +630,15 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - 상세: `docs/SOURCE_COLLECTION_CODE_AUDIT_AND_CHANGE_PROPOSAL_V1.md`.
 - 권장 다음 단계 C1+C2: strict decode/degradation diagnostics, observed identity/revision, evidence bundle/manifest/hash linkage. Offline tests only; 구현 승인 대기.
 - E3 live fetch, production main/prompt/workflow 변경은 별도 승인 전 수행하지 않는다.
+
+
+## C1+C2 구현 상태 — 2026-11-13
+- `source_extraction.py` strict decoding; invalid byte sequences fail closed, BOM/declared charset strict decoding only.
+- PDF extraction page_count/empty_page_count/quality_status diagnostics.
+- `source_bundle.py` deterministic bundle; source/hash integrity checks; expected/observed document ID/revision; bounded excerpts.
+- `schemas/source_evidence_bundle.schema.json` v1.0.0 contract.
+- Tests added for invalid encoding, declared charset, PDF quality, hash/source mismatch and identity/revision states.
+- CI intermediate failures were used to identify and correct decoder indentation/BOM handling and test fixture locator issue. Do not count those intermediate runs as success.
+- Latest CI run pending: 43380860467 on SHA 0ee797dcc3e7d52b3167c8f11bf373a283f7a480; tests step observed success, archive audit still running at time of update.
+- Live official fetch NOT RUN; real document identity/extraction fidelity UNVERIFIED; report builder integration NOT IMPLEMENTED.
+- Details: `docs/C1_C2_SOURCE_EVIDENCE_IMPLEMENTATION_REPORT.md`.
