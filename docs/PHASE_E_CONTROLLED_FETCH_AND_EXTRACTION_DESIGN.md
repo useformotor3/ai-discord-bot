@@ -73,19 +73,21 @@ Phase E의 목적은 Phase A–D의 mock/fixture 검증을 넘어, 공식 출처
 
 ### E2 — 오프라인 adversarial transport 검증 (완료)
 
-필수 mock/integration cases:
-- DNS 응답의 A/AAAA 중 하나라도 비공인 주소인 혼합 응답
-- 사전 DNS 검사 후 연결 단계에서 다른 주소를 반환하려는 rebinding 시도
-- 검증 IP로 TCP 연결이 이루어지는지 확인
-- 원래 hostname이 HTTP Host/SNI/certificate verification에 유지되는지 확인
-- 잘못된 인증서, hostname mismatch, 만료/신뢰되지 않는 인증서 거부
-- redirect to other host, scheme downgrade, nonstandard port, redirect loop 거부
-- same-host redirect hop마다 재검증
-- retry/fallback이 검증되지 않은 주소를 사용하지 않는지 확인
-- IPv4-mapped IPv6, IPv6 ULA/link-local/multicast, NAT64 well-known prefix 및 reserved address 거부
-- DNS timeout/empty/invalid response, connect timeout, read timeout, truncated body, oversized body, invalid Content-Length, MIME mismatch, non-200, empty response
-- response resource close와 sanitized error 확인
-- 기존 Phase A–D 회귀 테스트 및 strict archive audit
+구현 및 CI에서 검증한 offline cases:
+- DNS A/AAAA 혼합 public/private 및 invalid/empty answers fail-closed; resolver 결과가 validated literal IP tuple로 전달되고 transport에서 hostname 재조회가 없음.
+- 검증 literal IPv4/IPv6 주소가 TCP connect 대상으로 전달됨.
+- 원래 hostname의 TLS SNI/Host header 유지, hostname mismatch 및 untrusted certificate chain 거부.
+- TCP connect fallback은 제공된 validated IP 집합만 사용; connect timeout fail-closed; read timeout 후 다른 IP로 재시도하지 않음.
+- same-host redirect hop마다 DNS 재검증, other-host 및 HTTP downgrade redirect 차단, redirect count limit, nonstandard port 차단.
+- IPv4-mapped IPv6, private/loopback/link-local/multicast/reserved, NAT64 well-known/local-use, 6to4, Teredo, scoped IPv6 거부.
+- read stream truncated/oversized, invalid/negative/empty Content-Length, non-identity Content-Encoding, MIME mismatch, non-200, empty response, response close 및 sanitized error.
+- 기존 Phase A–D 전체 회귀 테스트와 strict archive audit.
+
+범위 밖/실제 네트워크에서 입증되지 않은 항목:
+- public DNS resolver integrity 및 real DNS rebinding environment.
+- real external IPv6 routing, transparent proxy/NAT/network egress enforcement.
+- 별도 expired-certificate fixture (hostname mismatch 및 untrusted chain은 검증).
+- publisher digital signature/authenticity, real official document revision and extraction fidelity.
 
 TLS/연결 목적지 검증은 OpenSSL로 생성한 임시 인증서와 local loopback TLS fixture를 사용한다. 테스트 중에만 `socket.create_connection`을 패치하여 애플리케이션이 전달한 public test IP를 local fixture로 라우팅하고, 전달된 원 IP와 TLS SNI/Host header를 각각 검증한다. 이 fixture는 production allowlist나 transport에 private-IP 예외를 추가하지 않는다. 실제 public network 접속은 하지 않는다.
 
