@@ -174,3 +174,10 @@ This is a sequential, non-random batch selected by report number/time. It is not
 - 파일 단위 결과는 기존대로 5 CONFLICT / direct quote reuse 0/5다.
 - Article 14는 모든 CRA 범위 제품에 적용되는 두 신고 트랙이며 Class I/II에만 한정하지 않는다. CVD·연락처·무상 업데이트는 Annex I Part II(5)/(6)/(8), 제조사 의무는 Article 13이다.
 - secure-by-default Part I(2)(b), access control (d), attack surface (j)를 서로 분리하고 first-boot password/blanket interface disablement를 보편적 법적 의무로 쓰지 않는다.
+
+## 원자 Claim ID 연결 — #18–#22
+
+- #18–#22에 대해 [Claim Evidence Ledger](CLAIM_EVIDENCE_LEDGER.md)에 원자 Claim ID 29개를 등록했다.
+- 파일 단위 결과는 5 CONFLICT / direct quote reuse 0/5로 유지한다.
+- Article 14 신고 trigger, support period Article 13(8), free updates Part II(8), CVD Part II(5), contact Part II(6), secure default Part I(2)(b), access control (d), integrity (f), attack surface (j)를 서로 분리했다.
+- Secure Boot/signing/A-B partition/MFA/first-use password 등은 해당 조항의 보편적 명문 의무로 쓰지 않고 제품별 위험기반 설계 후보로 기록한다.
