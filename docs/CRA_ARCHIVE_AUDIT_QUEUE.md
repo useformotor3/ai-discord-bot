@@ -5,14 +5,14 @@
 > 감사 대상 브랜치: `main` (읽기 전용)  
 > 기록 브랜치: `cra-project-foundation`  
 > 기준점: 기존 감사 기록의 마지막 보고서 #128, commit `15ceea4b9477b8c0928352a5b4228c0508e88daa`  
-> 이번 확인 main HEAD: `173c4d29ee62c0e96cfadf93824d6807ef2d148a` (Auto-archive: Research report #6)
+> 이번 확인 main HEAD: `bd50257a80c0524402c70a7da420043ecfa0f490` (Auto-archive: Research report #7)
 
 ## 실행 결과 요약
 
-- 기준점 #128 이후 main에서 **166개 보고서 commit 및 166개 신규 archive 파일** 확인.
-- 신규 보고서: #129–#288 (2026-11-12 일일 카운트) 및 #1–#6 (2026-11-13 일일 카운트 리셋 후).
-- compare 결과: `ahead 166 / behind 0`; 변경 파일 168개 = archive 166개 + `history.json` + `state.json`.
-- `history.json`은 신규 기록을 추가했고, `state.json`은 날짜 `2026-11-13`, count `6`으로 갱신됨. 날짜 경계에서 일일 count가 288에서 1로 재시작한 것으로 보이며, 누적 history와 archive 경로로 개별 보고서를 매핑했다.
+- 기준점 #128 이후 main에서 **167개 보고서 commit 및 167개 신규 archive 파일** 확인.
+- 신규 보고서: #129–#288 (2026-11-12 일일 카운트) 및 #1–#7 (2026-11-13 일일 카운트 리셋 후).
+- compare 결과: `ahead 167 / behind 0`; 변경 파일 169개 = archive 167개 + `history.json` + `state.json`.
+- `history.json`은 신규 기록을 추가했고, `state.json`은 날짜 `2026-11-13`, count `7`으로 갱신됨. 날짜 경계에서 일일 count가 288에서 1로 재시작한 것으로 보이며, 누적 history와 archive 경로로 개별 보고서를 매핑했다.
 - 이번 실행에서 **23개 archive는 모델 과부하/조사 지연 경고 문구만 포함**한다. 실질 CRA 조사 주장으로 간주하지 않았고 P3로 분류했다.
 - 우선순위 분포: P0 ${counts.P0} / P1 ${counts.P1} / P2 ${counts.P2} / P3 ${counts.P3}.
 - 기존 대기열 문서는 작업 브랜치에 없어 새로 생성했다. 모든 166개 항목은 중복 없이 등록했다.
@@ -2153,7 +2153,7 @@
 - 우선 검증 쟁점: Annex I Part I(1),(2)(b),(d),(j)의 위험기반 요구와 tailor-made 예외; 강제 비밀번호 변경/모든 포트 차단은 보편적 직접 의무인지 별도 확인; 제품 적용성 별도: 실제 서보 드라이브 SKU/핵심 기능/의도된 용도/인터페이스/업데이트 경로 및 ST MCU 주문 코드 미확정; 제조사 공식 데이터시트·RM·errata 확인 전 기술 기능 UNVERIFIED
 
 
-## 2026-11-13 reports #1–#6
+## 2026-11-13 reports #1–#7
 
 ### Report #1 — P0
 - 상태: **NEW / NOT_YET_AUDITED**
@@ -2233,6 +2233,21 @@
 - 개별 주장 판정: **NOT_YET_AUDITED**
 - 우선 검증 쟁점: Annex I Part I(1),(2)(b),(d),(j)의 위험기반 요구와 tailor-made 예외; 강제 비밀번호 변경/모든 포트 차단은 보편적 직접 의무인지 별도 확인; Annex I Part I(2)(d),(j)의 접근통제·공격표면 제한; 특정 포트 일괄 차단을 법령의 직접 문언으로 과장하지 않는지; 제품 적용성 별도: 실제 서보 드라이브 SKU/핵심 기능/의도된 용도/인터페이스/업데이트 경로 및 ST MCU 주문 코드 미확정; 제조사 공식 데이터시트·RM·errata 확인 전 기술 기능 UNVERIFIED
 
+
+### Report #7 — P1
+- 상태: **NEW / NOT_YET_AUDITED**
+- 확인일: 2026-11-13
+- 생성 시각: 2026-11-13 00:30:55 (원문 Date; 시간대 미표기)
+- 원문 commit: [bd50257a80c0524402c70a7da420043ecfa0f490](https://github.com/useformotor3/ai-discord-bot/commit/bd50257a80c0524402c70a7da420043ecfa0f490)
+- 원문 파일: [research_archive/2026-11-13_003055.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-13_003055.md)
+- 핵심 주장 주제: Secure by Default 및 초기 상태 위험 경감; 보고서는 최초 접속 강제 비밀번호 변경/기기별 고유 기본 비밀번호, 진단·디버그 포트 기본 비활성화, 공장 초기화 후 보안 패치 수준·암호키 유지가 CRA 준수에 필요하다고 주장한다.
+- 보고서 기재 조항(미검증): Annex I Part I, Section 1, paragraph 2(b); Article 13 paragraph 2.
+- 파일 단위 판정: **UNVERIFIED** (신규 대기; 전체 Pass A/B/C 미완료)
+- Raw Text Quote 판정: **NOT_YET_AUDITED**
+- 개별 주장 판정: **NOT_YET_AUDITED**
+- 사전 원문 메모(최종 판정 아님): EUR-Lex 현행 Annex I Part I(2)(b)는 “made available on the market with a secure by default configuration”이라고 하며 tailor-made product/business user 합의 예외와 “original state” reset 문구를 포함한다. 보고서 quote의 “delivered”, “initial state” 표현 및 예외 생략은 verbatim quote와 불일치한다. Article 13(2)는 제조사 의무 quote가 아니라 cybersecurity risk assessment 조항이며, 인용된 제조사 설계·개발·생산 의무는 Article 13(1)에 있다. [EUR-Lex](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R2847) lines 888–892, 1750–1752 참조.
+- 우선 검증 쟁점: Annex I Part I(2)(b)의 정확한 문언·tailor-made 예외·reset “original state”를 재확인; Article 13(1)/(2) 번호와 quote의 직접 인용 여부; forced first-boot password change/unique password, 모든 진단·디버그 포트 비활성화, factory reset 후 patch/key 보존은 법령의 보편적 구현 명령인지 위험기반 설계 선택인지 분리; 실제 제품 SKU·계정/포트·reset 동작·보안 업데이트 설계 및 제조사 근거 확인.
+
 ## 다음 감사 순서
 
 1. P0 중 지원기간/무상 업데이트/Article 14 신고/Important Product 분류/Annex II/SBOM 주장을 우선 Pass A/B/C로 검증한다.
@@ -2242,7 +2257,7 @@
 
 ## 무결성 및 변경 경계
 
-- 이번 기준 main HEAD: `173c4d29ee62c0e96cfadf93824d6807ef2d148a`.
+- 이번 기준 main HEAD: `bd50257a80c0524402c70a7da420043ecfa0f490`.
 - 작업 브랜치 기록 대상: `cra-project-foundation`.
 - main의 archive/history/state는 읽기만 했다. 원본 main 파일 수정·삭제 없음.
 - `main.py`, Gemini prompt, 운영 자동화 코드, `.github/workflows/run.yml`, main 브랜치 수정 없음.
