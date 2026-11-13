@@ -385,3 +385,10 @@
 - 다음 main-only 감사 시작점은 #53이다. 배치 시작 시 main HEAD/state/history를 다시 조회한다.
 - #43–#47 및 #48–#52 정정은 제1권·제2권·PSIRT SOP·MASTER_REPORT와 관련 매트릭스에 단계적으로 통합한다. 전수 문서 대조는 아직 진행 중이다.
 - 현재 기준선의 숫자와 CI 상태는 [AI_CONTINUITY_BOARD](docs/AI_CONTINUITY_BOARD.md) 및 [PROJECT_STATUS](docs/PROJECT_STATUS.md)에서 새 세션마다 다시 확인한다. 과거 로그의 main HEAD·감사 위치·CI 성공은 최신 기준선으로 재사용하지 않는다.
+
+
+## 2026-11-13 — #8–#52 원본 추적 ID 연결 현황
+
+- #8–#52 45개 보고서의 날짜 포함 Claim ID, 원본 archive 경로, blob SHA, 파일 판정과 중심 정정 요약을 [Claim Evidence Ledger](docs/CLAIM_EVIDENCE_LEDGER.md)에 등록했다.
+- #8–#12 상세 감사 문서도 재확인해 원본 경로와 SHA를 복원했다.
+- 보고서 내 모든 하위 주장·직접 인용의 원자 단위 연결은 후속 P0로 남아 있다.
