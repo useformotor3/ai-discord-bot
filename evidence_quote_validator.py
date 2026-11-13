@@ -6,7 +6,7 @@ proof of publisher authenticity, visual PDF fidelity, legal meaning, or claim su
 """
 from __future__ import annotations
 
-from datetime import datetime
+from datetime import datetime, timezone
 from hashlib import sha256
 import json
 import re
