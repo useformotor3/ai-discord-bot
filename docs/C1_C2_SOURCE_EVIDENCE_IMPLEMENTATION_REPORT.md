@@ -66,4 +66,4 @@
 - Documentation HEAD before double-check standard: 1c298b28f80ea06dc3ee7859d009fc59f6c2b926
 - Run #43380949421: https://github.com/useformotor3/ai-discord-bot/actions/runs/43380949421
 - 135 tests passed; strict archive audit successful.
-- Final documentation additions for mandatory double-check standard trigger a new CI run; record its result separately.
+- Final documentation HEAD: 969864d8c54925a21458468a31b8accccd1c3d3b\n- Final docs CI Run #43381102226: https://github.com/useformotor3/ai-discord-bot/actions/runs/43381102226 — 135 tests passed; strict archive audit successful (990/990, consistent true).
