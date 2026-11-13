@@ -183,3 +183,21 @@ CRA의 데이터 제거 관련 요구는 두 개의 별도 근거로 관리한�
 3. **지원 종료 정보:** Article 13(19)는 지원기간 종료일을 구매 시 명확하고 쉽게 접근 가능하게 표시하고, 제품 특성상 기술적으로 가능한 경우 지원 종료 시점에 제품이 지원기간 종료에 도달했음을 알리는 알림을 표시하도록 한다. 이는 모든 제품에 대한 별도의 사전 종료 통지 기한을 정한 조항이 아니다.
 
 서보 드라이브에 실제로 저장되는 파라미터·튜닝 데이터·로그·인증서·키와 데이터 전송 기능은 제품 SKU/아키텍처로 확인한다. CRA는 특정 NAND/EEPROM 물리 소거 회로, 특정 암호학적 삭제 알고리즘 또는 복구 불가능성 시험 방법을 이 조항에서 일률 지정하지 않는다. 설계는 Part I 2(m)의 결과를 달성하도록 제품별 위험과 저장 구조에 맞춰 정당화한다.
+
+## 2.5 #58–#62 감사로 보완한 CVD·신고·로깅 정본
+
+| 쟁점 | 정확한 법령 기준 | 잘못된 해석 방지 |
+|---|---|---|
+| CVD 정책 | Article 13(8), Annex I Part II(5) | CVD 정책과 법정 Article 14 신고를 같은 트리거로 취급하지 않는다. |
+| 신고 연락 주소 | Annex I Part II(6) | 취약점 신고 연락 주소를 제공하고 잠재 취약점 정보 공유를 촉진한다. |
+| 사용자 단일 연락 창구 | Article 13(17), Annex II(2) | 쉽게 식별 가능해야 하고 사용자 지침에 포함. 선호 통신 수단을 선택할 수 있으며 자동화 도구만 허용해서는 안 된다. |
+| 원칙적 무상 보안 업데이트 | Annex I Part II(8) | 지체 없이 배포하고 원칙적으로 무상. 맞춤형 제품에 관해 제조자와 사업 사용자가 달리 합의한 경우 예외. |
+| 적극 악용 취약점 신고 | Article 14(1), (2), (7) | 지정 CSIRT와 ENISA에 단일 신고 플랫폼으로 제출. 24h early warning, 72h vulnerability notification, 시정/완화 조치 이용 가능 후 14일 final report. |
+| 심각한 제품 보안 사고 신고 | Article 14(3)–(5), (7) | 24h early warning, 72h incident notification, incident notification 제출 후 1개월 final report. |
+| 사용자 통지 | Article 14(8) | actively exploited vulnerability 또는 severe incident에 대해 영향 사용자 및 적절한 경우 모든 사용자. machine-readable 형식은 where appropriate 조건. |
+| 시장감시기관 정보 공유 | Article 16(3) | 신고를 받은 CSIRT가 필요한 정보를 시장감시기관에 제공. 제조자의 Article 14 직접 신고 수신자와 혼동 금지. |
+| 보안 이벤트 로깅 | Annex I Part I 2(l) | 관련 내부 활동 기록·모니터링, 데이터·서비스·기능 접근/변경 포함, 사용자 opt-out 메커니즘. |
+| 가용성/DoS | Annex I Part I 2(h) | 필수·기본 기능 가용성과 DoS 복원력·완화. logging과 혼동 금지. |
+| 로그 저장·전송 구현 | 위험평가 및 제품 설계 | tamper-proof storage, 보존기간, circular buffer, Syslog over TLS는 이 조항이 지정한 보편적 기술 의무가 아니다. |
+
+직접 인용은 EUR-Lex 현행 consolidated text의 문언·위치와 일치하는 경우에만 허용한다. #58–#62의 Raw Text Quote 5건은 재사용 승인하지 않았다.
