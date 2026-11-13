@@ -15,7 +15,7 @@ import xml.etree.ElementTree as ET
 
 from source_evidence import SOURCE_REGISTRY
 
-EXTRACTOR_VERSION = "1.0.0"
+EXTRACTOR_VERSION = "1.1.0"
 DEFAULT_MAX_INPUT_BYTES = 25 * 1024 * 1024
 DEFAULT_MAX_TEXT_CHARS = 5_000_000
 PDF_BACKEND_UNAVAILABLE = "PDF_BACKEND_UNAVAILABLE"
@@ -53,6 +53,11 @@ class ExtractedDocument:
     units: tuple[LegalUnit, ...]
     pages: tuple[PageText, ...]
     locator_status: str
+    decode_charset: str = "utf-8-sig"
+    replacement_char_count: int = 0
+    page_count: int = 0
+    empty_page_count: int = 0
+    quality_status: str = "NOT_ASSESSED"
 
     def to_dict(self) -> dict[str, object]:
         return {
@@ -66,6 +71,11 @@ class ExtractedDocument:
             "units": [asdict(unit) for unit in self.units],
             "pages": [asdict(page) for page in self.pages],
             "locator_status": self.locator_status,
+            "decode_charset": self.decode_charset,
+            "replacement_char_count": self.replacement_char_count,
+            "page_count": self.page_count,
+            "empty_page_count": self.empty_page_count,
+            "quality_status": self.quality_status,
         }
 
 
@@ -81,8 +91,24 @@ def _decode_bytes(data: bytes, max_input_bytes: int) -> str:
         raise ExtractionError("INPUT_TOO_LARGE")
     if not data:
         raise ExtractionError("EMPTY_INPUT")
-    # XML declarations are honored by ElementTree; HTML is decoded with replacement.
-    return bytes(data).decode("utf-8-sig", errors="replace")
+    raw = bytes(data)
+    # Never silently replace damaged bytes: loss is a hard extraction failure.
+    encodings = ("utf-8-sig", "utf-16", "utf-32")
+    for encoding in encodings:
+        try:
+            return raw.decode(encoding, errors="strict")
+        except UnicodeDecodeError:
+            continue
+    # XML declarations and HTML charset declarations are accepted only when
+    # the declared codec decodes strictly. No lossy fallback is permitted.
+    head = raw[:4096].decode("ascii", errors="ignore")
+    match = re.search(r"(?:encoding|charset)\\s*=\\s*['\\\"]?([A-Za-z0-9._-]+)", head, re.I)
+    if match:
+        try:
+            return raw.decode(match.group(1), errors="strict")
+        except (LookupError, UnicodeDecodeError) as exc:
+            raise ExtractionError("CHARSET_DECODE_FAILED") from exc
+    raise ExtractionError("CHARSET_DECODE_FAILED")
 
 
 def _clean_text(value: str) -> str:
@@ -143,6 +169,9 @@ def _document(
     units: Iterable[LegalUnit] = (),
     pages: Iterable[PageText] = (),
     locator_status: str = "NOT_APPLICABLE",
+    page_count: int = 0,
+    empty_page_count: int = 0,
+    quality_status: str = "NOT_ASSESSED",
 ) -> ExtractedDocument:
     cleaned = _clean_text(text)
     return ExtractedDocument(
@@ -156,6 +185,11 @@ def _document(
         units=tuple(units),
         pages=tuple(pages),
         locator_status=locator_status,
+        decode_charset="strict-auto",
+        replacement_char_count=0,
+        page_count=page_count,
+        empty_page_count=empty_page_count,
+        quality_status=quality_status,
     )
 
 
@@ -360,4 +394,7 @@ def extract_pdf_pages(
         source_id, "PDF_PAGE_TEXT_V1", raw, text,
         pages=pages,
         locator_status="PAGE_LOCATORS_ONLY",
+        page_count=len(pages),
+        empty_page_count=sum(1 for page in pages if not page.text.strip()),
+        quality_status=("REVIEW_REQUIRED" if not pages or all(not page.text.strip() for page in pages) else ("PARTIAL_TEXT" if any(not page.text.strip() for page in pages) else "TEXT_EXTRACTED_NOT_VISUALLY_VERIFIED")),
     )
