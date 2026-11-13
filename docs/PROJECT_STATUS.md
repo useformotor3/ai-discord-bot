@@ -891,3 +891,11 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - Commission Implementing Regulation (EU) 2025/2392를 EUR-Lex에서 직접 확인해 Annex III product-category technical description 및 core-functionality 기준을 추가 반영했다.
 - Article 32/Annex VIII conformity assessment, Article 28 DoC, Article 30 CE, Article 31/Annex VII technical documentation으로 정정.
 - 서보 드라이브 Class I/II 적용성 UNVERIFIED, DUT 시험 NOT_RUN. 다음 원자 분해 배치는 #38–#42.
+
+## 2026-11-13 — #38–#42 원자 주장 분해 완료
+
+- #38–#42 원본 5건의 경로/blob SHA를 main에서 재확인했다.
+- Claim Evidence Ledger에 원자 Claim ID 33개를 추가했다.
+- 파일 단위 결과는 #38 정정 반영 후 3 CONFLICT / 2 PARTIALLY_VERIFIED / 0 VERIFIED; direct quote reuse 0/5.
+- Annex I Part I(2)(m) 영구 삭제 가능성과 Annex II(8)(d) 폐기 지침을 분리해 반영했다. 제품별 데이터 저장 구조 및 적용성 UNVERIFIED, DUT 시험 NOT_RUN.
+- 다음 원자 분해 배치는 #43–#47.
