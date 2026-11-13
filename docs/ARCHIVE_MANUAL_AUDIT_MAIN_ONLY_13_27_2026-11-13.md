@@ -1,3 +1,5 @@
+# Main-only Archive Manual Audit — Reports #13–#27
+
 ## 한국어 핵심 요약
 
 - 대상: main 보고서 #13–#27, 총 15건.
@@ -8,7 +10,6 @@
 - 정정 기준: 제조사 의무 Article 13, 신고 Article 14, 지원기간 Article 13(8), 업데이트 가용성 Article 13(9), CVD Annex I Part II(5), 신고 연락처/정보 공유 Part II(6), 무상 보안 업데이트 Part II(8), secure-by-default Part I(2)(b), 접근통제 Part I(2)(d), 공격표면 Part I(2)(j).
 - 아래 영문 상세 감사 기록은 원본 주장·commit·archive SHA 추적을 보존한다. 독자용 정본 설명은 한국어 CRA 법령 기준선과 제1권을 참조한다.
 
-# Main-only Archive Manual Audit — Reports #13–#27
 
 - Audit date: 2026-11-13
 - Target branch: `cra-project-foundation`
