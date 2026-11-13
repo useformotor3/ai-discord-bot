@@ -1,3 +1,13 @@
+## 한국어 핵심 요약
+
+- 대상: main 보고서 #13–#27, 총 15건.
+- 판정: CONFLICT 15건 / PARTIALLY_VERIFIED 0건 / VERIFIED 0건.
+- 현행 CRA 법령 직접 인용으로 재사용 가능한 Raw Text Quote: 0/15.
+- 제품별 적용성: 15건 모두 UNVERIFIED.
+- 반복 오류: 제조사 의무/신고 조항을 Article 11로 오기, Article 14 신고 범위 확대, CVD·신고 연락처·무상 업데이트를 Annex I Part I/II에서 혼합, 지원기간의 5년 예외를 잘못 표현, 서보 드라이브의 Class I/II 자동 분류, 첫 접속 비밀번호 변경·MFA·JTAG 잠금·모든 포트 비활성화·Secure Boot 등을 보편적 법적 의무로 과장.
+- 정정 기준: 제조사 의무 Article 13, 신고 Article 14, 지원기간 Article 13(8), 업데이트 가용성 Article 13(9), CVD Annex I Part II(5), 신고 연락처/정보 공유 Part II(6), 무상 보안 업데이트 Part II(8), secure-by-default Part I(2)(b), 접근통제 Part I(2)(d), 공격표면 Part I(2)(j).
+- 아래 영문 상세 감사 기록은 원본 주장·commit·archive SHA 추적을 보존한다. 독자용 정본 설명은 한국어 CRA 법령 기준선과 제1권을 참조한다.
+
 # Main-only Archive Manual Audit — Reports #13–#27
 
 - Audit date: 2026-11-13
