@@ -2313,7 +2313,7 @@ Batch result: 5/5 CONFLICT, 0 PARTIALLY_VERIFIED, 0 VERIFIED; 0/5 Raw Text Quote
 
 ## 2026-11-13 — main reports #28–#32 Pass A/B/C audit
 
-- Current main observation: report #119, HEAD `6491a5db6ea35ea97a6d97e85bac43f9a3cf41c0`; state count 119, history.json 1,394 entries. Archive tree count not rechecked; main read-only.
+- Current main observation: report #119, HEAD `6491a5db6ea35ea97a6d97e85bac43f9a3cf41c0`; state count 125, history.json 1,400 entries. Archive tree count not rechecked; main read-only.
 - Batch audit: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_28_32_2026-11-13.md](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_28_32_2026-11-13.md).
 - #28 CONFLICT; archive `research_archive/2026-11-13_021538.md`; blob `78de23c029c47dee16ebc82adf7123c2bf52fa4a`.
 - #29 CONFLICT; archive `research_archive/2026-11-13_022039.md`; blob `e5248b9d23e94ea0ef5ad7ffb30f2dcd100e3434`.
@@ -2337,7 +2337,7 @@ Batch result: 5/5 CONFLICT, 0 PARTIALLY_VERIFIED, 0 VERIFIED; 0/5 Raw Text Quote
 
 ## 2026-11-13 — main reports #38–#42 감사 결과
 
-- main 관찰 HEAD: `e9bc84bfb5ccc7c18a69298cbd8f88376691b18c` (report #93); state count 93; history.json 1,368 entries.
+- historical main snapshot #93/1,368 is superseded by current main #125/1,400.
 - #38 — CONFLICT — `research_archive/2026-11-13_030533.md`, blob `f66d4335654b3b8b9836dcaebe1205eae731c532`.
 - #39 — CONFLICT — `research_archive/2026-11-13_031039.md`, blob `9dfae4ba67f48e056f222bcc86ca3189f8bb384a`.
 - #40 — PARTIALLY_VERIFIED — `research_archive/2026-11-13_031539.md`, blob `449b601a1df9bef3f3acd789ea2a7fcba0804ea2`.
@@ -2351,8 +2351,8 @@ Batch result: 5/5 CONFLICT, 0 PARTIALLY_VERIFIED, 0 VERIFIED; 0/5 Raw Text Quote
 
 ## 최신 상태 보정 — 2026-11-13 (우선 적용)
 
-- main HEAD: `e9bc84bfb5ccc7c18a69298cbd8f88376691b18c` (report #93).
-- main state: `2026-11-13 / count 93`; `history.json` entries 1,368; recursive Git tree에서 `research_archive/` 파일 1,368개 확인(truncated=false).
+- historical main HEAD #93 is superseded; current main report #125.
+- current main state count125 (daily); `history.json` and recursive `research_archive/` tree both 1,400, consistency true.
 - 감사 완료 main-only 연속 구간: #8–#42. 상세 배치 #8–#12, #13–#27, #28–#32, #33–#37, #38–#42. 누계 35건: 34 CONFLICT / 1 PARTIALLY_VERIFIED / 0 VERIFIED; 직접 인용 재사용 0/35. 비무작위 연속 표본이므로 전체 오류율 아님.
 - #38–#42 상세 결과: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_38_42_2026-11-13.md](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_38_42_2026-11-13.md).
 - 다음 감사 시작점 #43. 실행 전 main HEAD/history/state 및 report 경로를 다시 확인한다.
@@ -2418,7 +2418,7 @@ Batch result: 5/5 CONFLICT, 0 PARTIALLY_VERIFIED, 0 VERIFIED; 0/5 Raw Text Quote
 ## 2026-11-13 사후 기준선 갱신 — main #119
 
 - #58–#62 감사 당시 main 기준선은 report #118 / history 1,393 entries였다.
-- 감사 문서화 도중 main 자동 아카이브가 report #119를 추가했다: HEAD \`6491a5db6ea35ea97a6d97e85bac43f9a3cf41c0\`, state count 119, history 1,394 entries.
+- 감사 문서화 도중 main 자동 아카이브가 report #119를 추가했다: HEAD \`6491a5db6ea35ea97a6d97e85bac43f9a3cf41c0\`, state count 125, history 1,400 entries.
 - #119는 #58–#62 감사 범위에 포함되지 않았으며 아직 감사하지 않았다. 다음 배치는 #63–#67이다.
 - 다음 배치 시작 시 main HEAD/state/history를 다시 읽고 일일 count와 archive 경로를 재매핑한다. main은 read-only.
 
