@@ -569,3 +569,13 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - Legal status and product applicability remain UNVERIFIED. Machine EXACT_MATCH is only normalized-extraction integrity, not publisher authenticity, PDF visual fidelity, legal interpretation or semantic claim support.
 - No network/file writes, OCR, dependency/workflow changes or production integration.
 - Exact-head full test/strict archive CI verification pending; do not treat implementation as verified until run result is inspected.
+
+
+## Phase E design proposal — 2026-11-13
+- 설계: [PHASE_E_CONTROLLED_FETCH_AND_EXTRACTION_DESIGN.md](PHASE_E_CONTROLLED_FETCH_AND_EXTRACTION_DESIGN.md).
+- 현재 Phase A fetcher는 fixed source_id registry, HTTPS/host/port, DNS public-IP preflight, same-host redirect, timeout, MIME/status/size/hash controls를 갖지만, DNS preflight와 requests의 실제 연결 사이에 재조회가 가능해 DNS TOCTOU 잔여 위험이 있다.
+- 이를 live fetch 차단 조건으로 지정했다. E1에서 연결 시점 IP pinning + 원래 hostname 기반 TLS SNI/certificate verification을 구현하고, E2 adversarial offline tests를 통과해야 한다.
+- Phase B real EUR-Lex/ST/TI parsing fidelity 미검증. PDF CI는 fake reader만 사용했고 pypdf real document/OCR은 미검증/미지원.
+- E1/E2 구현은 별도 사용자 승인 대기. E3 실제 URL fetch/extraction은 E1/E2 CI 통과 후에도 별도 승인 필요.
+- 본 설계 작성 중 실제 URL fetch/Gemini API 호출/비용 발생/production integration은 수행하지 않음.
+- Phase D final baseline HEAD: `1b543af653435a25f89feea7f80abdf370ecda7f`; Phase E design commit: `b0d5e5eda3ffadaaa8438e711af72789417d9f48`. Branch: `cra-project-foundation`. No main merge/rebase/sync.
