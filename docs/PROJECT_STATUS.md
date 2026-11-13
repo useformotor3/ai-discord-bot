@@ -838,7 +838,7 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 ## 2026-11-13 사후 main 기준선 갱신 — report #125
 
 - #58–#62 감사 시점 main 기준선은 report #118 / history 1,393 entries였다.
-- 문서 통합 후 main 자동 아카이브가 report #119를 추가했다: HEAD \`6491a5db6ea35ea97a6d97e85bac43f9a3cf41c0\`, state count 125, history 1,400 entries.
+- 문서 통합 후 main 자동 아카이브가 report #125까지 진행했다: HEAD \`92e8ca7aa4a86b38627a1d8e9535e5b0463a8392\`, state count 125, history 1,400 entries.
 - #119는 아직 감사하지 않았다. 다음 main-only 배치는 #63–#67이며 시작 시 최신 main HEAD/state/history를 다시 확인한다.
 - main과 작업 브랜치는 diverged 상태다. ahead/behind 수치는 작업 중 계속 바뀌므로 다음 세션에서 동적으로 재조회한다. merge/rebase/sync 금지.
 - 이 기록은 #58–#62 원본 감사 기준선(#118)을 바꾸지 않는다.
@@ -926,7 +926,7 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 
 ## 2026-11-13 authoritative snapshot — #8–#62 audit and claim normalization
 
-- main latest observed: report #119; HEAD \`6491a5db6ea35ea97a6d97e85bac43f9a3cf41c0\`; state count 125; history.json 1,400 entries. Archive tree count was not rechecked. main remains read-only.
+- main latest observed: report #125; HEAD \`92e8ca7aa4a86b38627a1d8e9535e5b0463a8392\`; state count 125; history.json 1,400 entries. Archive tree count was not rechecked. main remains read-only.
 - main-only audit scope #8–#62: 55 consecutive, non-random reports; file-level results **40 CONFLICT / 15 PARTIALLY_VERIFIED / 0 VERIFIED**; direct quote reuse **0/55**. This is not a statistical error rate for the full archive.
 - Claim Evidence Ledger: 55 file-level source records + 345 atomic claims = **400 unique IDs**, duplicate IDs 0. All 345 atomic claims have one or more Canonical IDs. Canonical register defines 46 requirements; 43 are referenced by legacy atomic claims, and 3 are forward-mapped to matrix requirements.
 - #8–#57 (50 reports) and #58–#62 (5 reports) have completed atomic decomposition. Individual legal facts marked VERIFIED do not promote a conflicting source file to VERIFIED.
