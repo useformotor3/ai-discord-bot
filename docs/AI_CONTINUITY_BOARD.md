@@ -346,3 +346,10 @@
 - Claim Evidence Ledger에 31개 원자 Claim ID를 추가했다. 일부 개별 법령 원칙은 VERIFIED이나 파일 전체 판정과 제품 적합성으로 확대하지 않는다.
 - 핵심 법령 구조: secure-by-default Part I 2(b), access control 2(d), attack surface 2(j); Class II는 Annex III; Part II는 vulnerability handling.
 - 다음 작업은 #13–#17 원자 주장 분해 후 #18–#57 순차 분해 및 정본 문서 교차 대조.
+
+## 2026-11-13 P0 진행 — #13–#17 원자 Claim ID 분해
+
+- #13–#17 원본 경로/blob SHA 재확인, Claim Evidence Ledger에 원자 Claim ID 29개 추가.
+- 파일 단위 판정은 5 CONFLICT / direct quote reuse 0/5로 유지. 개별 법령 사실 VERIFIED와 원본 파일 전체 CONFLICT를 혼동하지 않는다.
+- 핵심 정정: Article 14는 actively exploited vulnerability/severe incident 두 트랙, 모든 CRA 범위 제품; Article 13 제조사 의무; Annex I Part II(5)/(6)/(8) CVD/연락처/무상 업데이트; Part I(2)(b)/(d)/(j) secure default/access/attack surface.
+- 다음 원자 분해 대상 #18–#22.
