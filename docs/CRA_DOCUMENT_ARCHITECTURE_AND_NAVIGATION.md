@@ -168,3 +168,11 @@
 - 독자용 법령 해석: [제1권](CRA_SERVO_DRIVE_COMPLIANCE_REPORT_V1.md) 제3장.
 - 구현·매뉴얼 반영: [제2권](SERVO_DRIVE_CRA_IMPLEMENTATION_PLAN_V1.md), [요구사항 추적성 매트릭스](CRA_REQUIREMENTS_TO_SERVO_DRIVE_TRACEABILITY_MATRIX.md), [사용자 정보 체크리스트](SERVO_DRIVE_CRA_USER_SECURITY_INFORMATION_CHECKLIST.md).
 - 각 배치 원본·SHA·개별 판정은 감사 보고서에 보존한다. 이 링크 지도에 법령 내용을 중복 복사하지 않는다.
+
+
+### #13–#42 반복 정정의 통합 위치
+
+- 법령 조항 및 예외의 정본: [CRA 공식 법령 기준선](CRA_VERIFIED_BASELINE_2026-11-12.md) 제2.3절.
+- 독자용 법령 해석: [제1권](CRA_SERVO_DRIVE_COMPLIANCE_REPORT_V1.md) 제3장.
+- 구현·매뉴얼 반영: [제2권](SERVO_DRIVE_CRA_IMPLEMENTATION_PLAN_V1.md), [요구사항 추적성 매트릭스](CRA_REQUIREMENTS_TO_SERVO_DRIVE_TRACEABILITY_MATRIX.md), [사용자 정보 체크리스트](SERVO_DRIVE_CRA_USER_SECURITY_INFORMATION_CHECKLIST.md).
+- 각 배치 원본·SHA·개별 판정은 감사 보고서에 보존한다. 이 링크 지도에 법령 내용을 중복 복사하지 않는다.
