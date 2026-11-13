@@ -827,7 +827,7 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - main state.json: 2026-11-13 / count 118 (당일 카운터); history.json 1,393 entries. recursive archive tree count는 별도 확인하지 않았다.
 - main reports #58–#62: 5 PARTIALLY_VERIFIED / 0 CONFLICT / 0 VERIFIED; direct quote reuse 0/5.
 - 누적 #8–#62: 55건, 40 CONFLICT / 15 PARTIALLY_VERIFIED / 0 VERIFIED; direct quote reuse 0/55. 비무작위 연속 표본이며 전체 archive 오류율이 아니다.
-- 원자 Claim ID 20개를 Claim Evidence Ledger에 추가했다. 제품별 적용성은 UNVERIFIED, 실제 DUT 시험은 NOT_RUN.
+- 원자 Claim ID 21개를 Claim Evidence Ledger에 추가했다. 제품별 적용성은 UNVERIFIED, 실제 DUT 시험은 NOT_RUN.
 - 법령 정정: CVD Part II(5), 신고 연락 주소 Part II(6), free updates Part II(8); Article 14 두 신고 트랙과 24h/72h/14일/1개월 기한; logging Part I 2(l), availability/DoS Part I 2(h).
 - 관련 독자용 보고서·제2권·PSIRT SOP·법령 기준선·요구사항 매트릭스·마스터 인덱스에 정정 반영.
 - main은 read-only. main merge/rebase/sync 금지.
@@ -878,7 +878,7 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 ## 2026-11-13 — #28–#32 원자 주장 분해 완료
 
 - #28–#32 원본 5건의 경로/blob SHA를 main에서 재확인했다.
-- Claim Evidence Ledger에 원자 Claim ID 25개를 추가했다.
+- Claim Evidence Ledger에 원자 Claim ID 33개를 추가했다.
 - 파일 단위 판정은 5 CONFLICT / 0 PARTIALLY_VERIFIED / 0 VERIFIED; direct quote reuse 0/5로 유지.
 - 개별 법령 사실 VERIFIED와 원본 보고서 전체 CONFLICT를 구분. 제품별 적용성 UNVERIFIED, DUT 시험 NOT_RUN.
 - 다음 원자 분해 배치는 #33–#37.
