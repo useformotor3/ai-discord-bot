@@ -167,3 +167,10 @@ This is a sequential, non-random batch selected by report number/time. It is not
 - The repository's previously checked EUR-Lex current-law baseline was used for provision mapping. This batch did not invoke Phase E live fetch, did not store raw source documents and did not modify main.
 - Same AI performed the review. It is not independent legal advice, an external audit or conformity assessment.
 - No tests were run for this documentation-only audit; no CI PASS is claimed.
+
+## 원자 Claim ID 연결 — #13–#17
+
+- #13–#17에 대해 [Claim Evidence Ledger](CLAIM_EVIDENCE_LEDGER.md)에 원자 Claim ID 29개를 등록했다.
+- 파일 단위 결과는 기존대로 5 CONFLICT / direct quote reuse 0/5다.
+- Article 14는 모든 CRA 범위 제품에 적용되는 두 신고 트랙이며 Class I/II에만 한정하지 않는다. CVD·연락처·무상 업데이트는 Annex I Part II(5)/(6)/(8), 제조사 의무는 Article 13이다.
+- secure-by-default Part I(2)(b), access control (d), attack surface (j)를 서로 분리하고 first-boot password/blanket interface disablement를 보편적 법적 의무로 쓰지 않는다.
