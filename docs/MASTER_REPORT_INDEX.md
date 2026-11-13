@@ -94,3 +94,12 @@
 - [Claim Evidence Ledger](CLAIM_EVIDENCE_LEDGER.md)에 원자 주장별 correction record 5개를 추가했다.
 - 제1권/제2권/PSIRT SOP 및 MASTER_REPORT에 Article 14(8) machine-readable user notification의 제한 조건, CVD/contact address의 정확한 Annex I Part II 위치, Article 13(6) component vulnerability reporting 방향, support/update 의무의 조항 구분을 반영했다.
 - 누적 #8–#52: 45건, 40 CONFLICT / 5 PARTIALLY_VERIFIED / 0 VERIFIED. 비무작위 연속 표본.
+
+
+## 문서 언어 및 통합 원칙 — 2026-11-13
+
+- 최종 독자용 문서의 기본 언어는 한국어다. 제목·요약·설명·표·절차·판단 근거·결론을 한국어로 유지한다.
+- 법령/표준의 공식 명칭, 조항 번호, 제조사 문서명, 부품번호, 코드, 정확한 원문 인용 및 고정 상태 코드는 영어 원문을 유지할 수 있다.
+- 영어로 작성된 기존 실무 문서는 별도 영어판이 필요한 경우가 아니면 한국어 정본으로 전환한다.
+- 감사 파일은 원본 SHA·반증·검증 이력을 보존한다. 검증된 정정 결론은 주장 대장과 이 인덱스가 연결하는 제1권·제2권·SOP·매트릭스에 반영한다.
+- 최신 통합 상태: [#48–#52 감사](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_48_52_2026-11-13.md) 및 [주장·근거 정정 대장](CLAIM_EVIDENCE_LEDGER.md) 참조. 제품별 적용성은 미검증, 실제 DUT 시험은 미실시.
