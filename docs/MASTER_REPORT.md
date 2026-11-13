@@ -413,3 +413,9 @@ The atomic decomposition preserves the distinction between a verified legal fact
 ## 2026-11-13 logging and secure data lifecycle update
 
 Annex I Part I(2)(l) logging/monitoring/opt-out and Part I(2)(m) secure permanent data erasure plus secure transfer (where applicable) are now explicitly mapped to Canonical IDs. Annex II(8)(d) user decommissioning instructions are tracked separately. Added TST-LOG-01/02 and TST-ERASE-01..04 to the test evidence register; all remain NOT_RUN. TST-NVM-01..03 remain storage integrity/access/power-fault tests and do not substitute for erase tests.
+
+## 2026-11-13 source baseline and CI revalidation
+
+Current main is report #125 / HEAD \`92e8ca7aa4a86b38627a1d8e9535e5b0463a8392\`, state count 125 (daily counter), history 1,400 entries. All 55 source files audited in reports #8–#62 were revalidated against the current main Git tree: 55/55 paths and blob SHAs match, with zero missing or mismatched files.
+
+The work branch HEAD is \`ced168745cd19400ba29131a495c3bf5c3f924eb\`; compare status is diverged (ahead 968 / behind 416). Do not merge/rebase/sync or write to main. Latest push workflow run 43408438728 succeeded: 140 tests passed and strict archive audit 990/990 consistent, zero missing/orphan/duplicate/malformed entries. This CI result describes the work branch snapshot, not current main's 1,400 history entries.
