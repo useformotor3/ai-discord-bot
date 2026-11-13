@@ -600,3 +600,13 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 - 다음 작업: #43–#47 감사 후 사용자 지침서 체크리스트/제1권 CRA 보고서의 EOL, support period, update, VDP 절을 정정한다. 아카이브 감사만 계속하지 말고 제1권/제2권에 교정 결과를 통합하는 deliverable-first 작업을 병행한다.
 - main 최신 관찰: HEAD `e9bc84bfb5ccc7c18a69298cbd8f88376691b18c`, state count 93, history 1,368 entries. 작업 브랜치 상태는 커밋 직전 재확인한다.
 
+## 2026-11-13 — reports #43–#47 감사 및 보고서 통합 우선순위
+
+- #43–#47 감사 완료: 3 CONFLICT / 2 PARTIALLY_VERIFIED / 0 VERIFIED; direct quote reuse 0/5.
+- 제품 분류에서 가장 중대한 오류는 “산업용 서보 드라이브/IACS/PLC = Annex III Class II”라는 근거 없는 일반화다. Annex III Class II의 4개 범주와 Commission Implementing Regulation (EU) 2025/2392를 기준으로 core functionality를 평가한다.
+- 마스터 보고서에 즉시 반영할 산출물:
+  1. 제품 범주·제품 경계·core functionality 판정표(Article 7, Annex III, Implementing Regulation 2025/2392).
+  2. 접근통제 매트릭스(Annex I Part I 2(d): 법적 요구와 RBAC/least privilege 등 설계 수단 구분).
+  3. 취약점·지원기간 표(Article 13(8)/(9), Article 14, Annex I Part II(1)–(8)).
+- 다음 #48–#52 감사는 위 세 문서 산출물과 병행하며, 단순 아카이브 판정 반복에 머물지 않는다.
+

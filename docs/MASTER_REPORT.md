@@ -322,3 +322,7 @@ main 브랜치의 #28–#32를 archive 원문과 기존 EUR-Lex 현행 법령 �
 
 #38–#42는 안전한 폐기, 무상 보안 업데이트, 사용자 지침, 보안 패치 배포, VDP를 다뤘다. 4건은 CONFLICT, 1건은 PARTIALLY_VERIFIED이며 직접 인용으로 재사용 가능한 문구는 0/5다. Annex II point 8(d)는 secure decommissioning 및 사용자 데이터 제거 방법을 설명하는 지침 제공 의무이지, 모든 제품에 복구 불가능한 데이터 소거 기능을 명시한 조항이 아니다. 무료 보안 업데이트(Annex I Part II(8)), 지원기간(Article 13(8)), 업데이트 가용성(Article 13(9)) 및 취약점 공개/CVD/연락/안전 배포(Part II(4)–(7))를 구분해야 한다. 상세 판정과 원본 blob SHA는 [#38–#42 감사 보고서](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_38_42_2026-11-13.md)에 기록했다.
 
+## main 자동 조사 보고서 #43–#47 감사 결과 반영
+
+#43–#47은 적합성 평가/제품 분류, 접근통제, 취약점 처리, CVD 및 무상 보안 업데이트를 다뤘다. 감사 결과 3건 CONFLICT, 2건 PARTIALLY_VERIFIED이며 직접 인용 재사용은 0/5다. 특히 CRA Annex III Class II에 IACS, PLC, servo drive가 열거되어 있다는 #43의 인용은 최종 법령과 다르다. 제품 분류는 Article 7의 core functionality 및 Commission Implementing Regulation (EU) 2025/2392의 technical description을 적용해야 한다. 적합성 평가 조항은 Article 32다. 접근통제는 Annex I Part I point 2(d)에 근거하지만 RBAC·least privilege 등의 구체 방식은 위험기반 구현수단으로 구분한다. 취약점 처리·지원기간·무상 업데이트는 Article 13(8)/(9), Article 14, Annex I Part II(1)–(8)의 서로 다른 요구로 관리한다. 상세 근거와 원본 SHA는 [#43–#47 감사 보고서](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_43_47_2026-11-13.md)에 기록했다.
+

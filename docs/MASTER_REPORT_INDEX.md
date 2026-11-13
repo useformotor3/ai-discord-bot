@@ -61,3 +61,8 @@
 - [#38–#42 상세 감사 보고서](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_38_42_2026-11-13.md): 4 CONFLICT / 1 PARTIALLY_VERIFIED / 0 VERIFIED, Raw Text Quote 직접 인용 재사용 0/5.
 - 주요 정정: Annex II point 8(d) 폐기 지침과 실제 secure erase 기능 구분; Article 13(8)/(9)와 Annex I Part II(8) 구분; Annex II point 7/8 사용자 정보; Annex I Part II(4)–(8) 취약점 처리 항목 구분.
 
+## 2026-11-13 — main reports #43–#47 감사 추가
+
+- [#43–#47 상세 감사](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_43_47_2026-11-13.md): 3 CONFLICT / 2 PARTIALLY_VERIFIED / 0 VERIFIED; Raw Text Quote 재사용 0/5.
+- 핵심 정정: 서보 드라이브가 자동으로 Annex III Class II라는 근거 없음; 분류는 Article 7 core functionality 및 Implementing Regulation (EU) 2025/2392에 따라 검토. 적합성 평가는 Article 32. 접근통제는 Annex I Part I 2(d). 지원기간 Article 13(8), 업데이트 가용성 13(9), 무상 업데이트 Annex I Part II(8).
+

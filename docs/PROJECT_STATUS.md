@@ -707,3 +707,13 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - 최신 main: `e9bc84bfb5ccc7c18a69298cbd8f88376691b18c`, report #93, archive/history 1,368/1,368.
 - 최신 감사 #38–#42: 4 CONFLICT / 1 PARTIALLY_VERIFIED / 0 VERIFIED; direct quote reuse 0/5.
 - exact HEAD CI: run 미발견, commit status pending/0 statuses. 이번 문서 업데이트 CI는 미실행/미확인으로 기록한다. 이전 성공 CI를 현 HEAD 검증으로 간주하지 않는다.
+
+## 2026-11-13 — main reports #43–#47 감사
+
+- 상세: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_43_47_2026-11-13.md](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_43_47_2026-11-13.md).
+- 결과: 3 CONFLICT / 2 PARTIALLY_VERIFIED / 0 VERIFIED; direct quote reuse 0/5.
+- main 최신: `a3d5b567f216f5e001e643513ee7ce87443a806d`, report #98, archive/history 1,373/1,373.
+- 누적 #8–#47: 40건, 37 CONFLICT / 3 PARTIALLY_VERIFIED / 0 VERIFIED. 연속·비무작위 표본.
+- 제품 분류 정정: CRA Annex III Class II에 IACS/PLC/servo drive가 열거되지 않는다. Article 7 core functionality 및 Implementing Regulation (EU) 2025/2392 technical description을 적용해야 한다.
+- 다음 배치 #48–#52.
+

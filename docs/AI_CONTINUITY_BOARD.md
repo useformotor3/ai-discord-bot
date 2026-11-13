@@ -178,3 +178,16 @@
 
 
 - 참고: #38–#42 감사 본문 commit은 `3bec6968cf214a3748595a465b01cd308bf7dc25`; 그 후 연속성·대기열의 stale baseline을 보정한 문서 전용 commit이 추가되었다. 정확한 현재 HEAD는 매 세션 GitHub branch endpoint에서 확인한다.
+
+## 2026-11-13 진행 업데이트 — main reports #43–#47
+
+- 최신 main 재조회: HEAD `a3d5b567f216f5e001e643513ee7ce87443a806d` (report #98); state count 98; history.json 1,373 entries; recursive tree에서 research_archive 1,373개, truncated=false.
+- 날짜+count+path로 2026-11-13 report #43–#47을 고정해 원문 5건과 blob SHA를 기록했다.
+- 신규 [#43–#47 감사](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_43_47_2026-11-13.md): 3 CONFLICT / 2 PARTIALLY_VERIFIED / 0 VERIFIED; direct quote reuse 0/5.
+- 핵심 발견: report #43의 “IACS/PLC/servo drives are Annex III Class II” 인용은 최종 CRA Annex III에 없다. Annex III Class II의 네 범주와 Implementing Regulation (EU) 2025/2392의 technical description을 대조했다. Article 7의 core functionality 기준 및 통합 구성요소만으로 분류가 자동 성립하지 않는다는 점도 반영했다. 적합성 평가는 Article 24가 아닌 Article 32.
+- #44 접근통제의 실제 근거는 Annex I Part I point 2(d). RBAC/least privilege/unique credentials 등은 위험기반 구현 수단이지 CRA가 보편 구현방식으로 각각 명시한 문구가 아니다.
+- #45–#47은 Article 13, Article 14, Annex I Part I 2(c), Part II(1)–(8)의 위치와 예외를 재정렬했다. Article 13(8) 최소 5년 지원기간의 5년 미만 예상 사용 예외, Article 13(9) 업데이트 가용성, Part II(8) 무상 제공 및 tailor-made/business-user 별도 합의 예외를 분리했다.
+- 누적 main-only 감사 #8–#47: 40건, 37 CONFLICT / 3 PARTIALLY_VERIFIED / 0 VERIFIED, direct quote reuse 0/40. 연속·비무작위 표본이므로 전체 archive 오류율 아님.
+- 작업 branch 최신 기준(커밋 직전): `a1fd870632fdfdb0bf5ca04804515aaf0e37f868`; main 대비 diverged, ahead 659 / behind 389, merge base `b425b6db591e34abe003522157cf97ecf2240d9f`. main read-only, merge/rebase/sync 금지.
+- 다음 감사 #48–#52. 보호 파일은 이번 배치에서 수정하지 않는다.
+

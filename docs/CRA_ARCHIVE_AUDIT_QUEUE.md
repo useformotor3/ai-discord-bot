@@ -2356,3 +2356,17 @@ Batch result: 5/5 CONFLICT, 0 PARTIALLY_VERIFIED, 0 VERIFIED; 0/5 Raw Text Quote
 - 감사 완료 main-only 연속 구간: #8–#42. 상세 배치 #8–#12, #13–#27, #28–#32, #33–#37, #38–#42. 누계 35건: 34 CONFLICT / 1 PARTIALLY_VERIFIED / 0 VERIFIED; 직접 인용 재사용 0/35. 비무작위 연속 표본이므로 전체 오류율 아님.
 - #38–#42 상세 결과: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_38_42_2026-11-13.md](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_38_42_2026-11-13.md).
 - 다음 감사 시작점 #43. 실행 전 main HEAD/history/state 및 report 경로를 다시 확인한다.
+
+## 최신 상태 보정 및 main reports #43–#47 감사 — 2026-11-13
+
+- main HEAD: `a3d5b567f216f5e001e643513ee7ce87443a806d` (report #98); state count 98; history 1,373; research_archive 1,373 files.
+- #43 — CONFLICT — `research_archive/2026-11-13_033047.md`, blob `aaea865c90a6c082b172403248c07d5dda783102`.
+- #44 — PARTIALLY_VERIFIED — `research_archive/2026-11-13_033533.md`, blob `4641a3feeb5654f1abd3c59323825c7f7a5145cc`.
+- #45 — PARTIALLY_VERIFIED — `research_archive/2026-11-13_034038.md`, blob `ffe8ac1e5e41b80859631ac4c4975b0f6fc71bf5`.
+- #46 — CONFLICT — `research_archive/2026-11-13_034535.md`, blob `61c22b5a97fc0e053668da26956b21f7ea85fe5c`.
+- #47 — CONFLICT — `research_archive/2026-11-13_035035.md`, blob `e5f3d9fb2fb4cda62a5fc04a50e64f3d05ca1218`.
+- 배치: 3 CONFLICT / 2 PARTIALLY_VERIFIED / 0 VERIFIED; 직접 인용 재사용 0/5.
+- 상세: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_43_47_2026-11-13.md](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_43_47_2026-11-13.md).
+- 누적 #8–#47: 40건, 37 CONFLICT / 3 PARTIALLY_VERIFIED / 0 VERIFIED. 비무작위 연속 표본.
+- 다음 감사 시작점 #48. 실행 전 main HEAD/history/state를 다시 확인.
+
