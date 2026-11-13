@@ -290,10 +290,17 @@
 - Added isolated Phase C implementation on `cra-project-foundation`: [Evidence Bundle](evidence_bundle.py), [v3 contract](cra_report_contract_v3.py), [JSON Schema](schemas/cra_research_v3.schema.json), [Gemini Prompt](prompts/CRA_RESEARCH_PROMPT_V3.txt).
 - Bundle is in-memory only; no full source document is persisted. The builder verifies registry metadata, successful fetch, same-host HTTPS, MIME, byte count, raw/extracted hashes and bounded excerpt integrity.
 - v3 claims reference existing `evidence_ids`; renderer obtains citation metadata/excerpts from the bundle. Unknown IDs and any VERIFIED/PARTIALLY_VERIFIED promotion are rejected.
-- Added dedicated bundle and v3 contract tests. CI/full regression status is pending exact run confirmation.
+- Added dedicated bundle and v3 contract tests. Exact code commit `6344b576db64438e9a2ebfe5acdcc74afeac479e` passed 79 tests and strict archive audit 990/990 (GitHub Actions #43338094337).
 - No changes to v2, `main.py`, production workflow or `main` branch; no live URL/Gemini/API calls.
 
 
 ## 2026-11-13 — Report #7
 - Added report #7 (`bd50257a80c0524402c70a7da420043ecfa0f490`, `research_archive/2026-11-13_003055.md`) to the queue. The queue now has 167 entries.
 - Preliminary EUR-Lex note flags quote and Article-number mismatches; the file remains UNVERIFIED pending full Pass A/B/C.
+
+
+## Phase C final verification — 2026-11-13
+- Fixed CI-reported indentation error in `evidence_bundle.py`.
+- Exact code commit `6344b576db64438e9a2ebfe5acdcc74afeac479e`: 79 tests PASS; strict archive audit 990/990, consistent=true.
+- [GitHub Actions #43338094337 — SUCCESS](https://github.com/useformotor3/ai-discord-bot/actions/runs/43338094337).
+- `main.py`, production workflow, v2 prompt and v2 contract remained unchanged. No production integration or main-branch sync.
