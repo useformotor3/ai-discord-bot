@@ -699,7 +699,7 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 - [x] main reports #58–#62 원본 5개를 main read-only에서 가져오고 날짜/일일 번호/경로/blob SHA 고정.
 - [x] EUR-Lex Article 13/14, Article 16(3), Annex I Part I/II, Annex II Pass A/B/C 대조.
 - [x] #58–#62 파일 단위 판정 5 PARTIALLY_VERIFIED / 0 CONFLICT / 0 VERIFIED; direct quote reuse 0/5.
-- [x] 원자 Claim ID 20개를 Ledger에 추가하고 법령 위치/정정/상태 연결.
+- [x] 원자 Claim ID 21개를 Ledger에 추가하고 법령 위치/정정/상태 연결.
 - [x] 제1권·제2권·PSIRT SOP·법령 기준선·요구사항 매트릭스·통합 매트릭스·MASTER_REPORT·인덱스에 정정 반영.
 - [x] main #118 기준선 기록: state count 118, history 1,393; archive tree count 미확인.
 - [ ] **다음 P0:** #8–#57 원본의 개별 주장·직접 인용을 원자 Claim ID/공식 원문 locator/정정/반증과 1:1 연결.
@@ -754,7 +754,7 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 ## 2026-11-13 P0 — #28–#32 원자 주장 분해
 
 - [x] #28–#32 main 원본 경로/blob SHA 재확인.
-- [x] 개별 법령 주장·인용 25개를 원자 Claim ID로 분해해 Ledger에 연결.
+- [x] 개별 법령 주장·인용 33개를 원자 Claim ID로 분해해 Ledger에 연결.
 - [x] support period Article 13(8), update availability Article 13(9), CVD/contact/free update Annex I Part II, Article 14 two-track, Annex VII technical documentation을 분리.
 - [x] file-level CONFLICT 5건과 개별 법령 사실 VERIFIED를 구분.
 - [ ] 다음 배치 #33–#37 원자 Claim ID 분해.
