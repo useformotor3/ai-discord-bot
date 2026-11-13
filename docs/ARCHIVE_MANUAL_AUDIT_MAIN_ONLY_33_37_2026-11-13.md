@@ -1,3 +1,5 @@
+# Main-only CRA Archive Manual Audit — Reports #33–#37
+
 ## 한국어 핵심 요약
 
 - 대상: main 보고서 #33–#37, 총 5건.
@@ -7,7 +9,6 @@
 - 첫 접속 비밀번호 변경, 고유 자격증명, 모든 포트 비활성화, JTAG 일괄 잠금을 보편적 CRA 직접 의무로 단정하지 않는다. 위험평가 기반 설계 후보로 구분한다.
 - 아래 영문 상세 기록은 원본 commit·archive SHA·보고서별 판정을 보존한다. 한국어 법령 정본은 [CRA 공식 법령 기준선](CRA_VERIFIED_BASELINE_2026-11-12.md), 독자용 설명은 [제1권](CRA_SERVO_DRIVE_COMPLIANCE_REPORT_V1.md)을 참조한다.
 
-# Main-only CRA Archive Manual Audit — Reports #33–#37
 
 - 감사일: 2026-11-13
 - 원본 브랜치: `main` (읽기 전용)
