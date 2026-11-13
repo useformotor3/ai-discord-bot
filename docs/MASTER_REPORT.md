@@ -350,7 +350,7 @@ main 브랜치의 #28–#32를 archive 원문과 기존 EUR-Lex 현행 법령 �
 
 최종 독자용 보고서와 매뉴얼의 기본 언어는 한국어다. 법령·표준의 공식 명칭, 조항 번호, 제조사 문서명, 부품번호, 정확한 원문 인용과 고정 상태 코드는 원문을 유지한다. 한국어 정본과 전체 문서 역할은 [문서 구조·전체 링크 안내](CRA_DOCUMENT_ARCHITECTURE_AND_NAVIGATION.md)를 따른다.
 
-#8–#52 연속 감사 표본의 결과는 45건 중 39 CONFLICT, 6 PARTIALLY_VERIFIED, 0 VERIFIED다. 이 표본은 비무작위이며 전체 archive 오류율이 아니다. 감사 원문·SHA·반증은 배치 감사 문서에 보존하고, 주장별 정정은 [주장·근거 정정 대장](CLAIM_EVIDENCE_LEDGER.md), 최종 법령 해석은 제1권, 설계·운영 적용은 제2권과 관련 SOP/매트릭스에 통합한다.
+#8–#52 연속 감사 표본의 결과는 50건 중 40 CONFLICT, 10 PARTIALLY_VERIFIED, 0 VERIFIED다. 이 표본은 비무작위이며 전체 archive 오류율이 아니다. 감사 원문·SHA·반증은 배치 감사 문서에 보존하고, 주장별 정정은 [주장·근거 정정 대장](CLAIM_EVIDENCE_LEDGER.md), 최종 법령 해석은 제1권, 설계·운영 적용은 제2권과 관련 SOP/매트릭스에 통합한다.
 
 현재 #48–#52의 주요 정정은 제1권·제2권·PSIRT SOP·분류/접근통제 매트릭스에 반영했다. #8–#52 전체 정정의 전수 대조는 아직 완료되지 않았다. 제품별 SKU·제품 경계·실제 MCU 주문 코드가 미확정이므로 제품별 적용성과 분류는 UNVERIFIED이며 실제 DUT 시험은 NOT_RUN이다.
 
@@ -372,3 +372,10 @@ main 브랜치의 #28–#32를 archive 원문과 기존 EUR-Lex 현행 법령 �
 | conformity assessment | 적합성 평가 |
 
 영문 용어는 법령 원문·공식 문서 검색을 위해 필요한 경우에만 병기한다. 설명과 결론은 한국어로 통일한다.
+
+
+## main 자동 조사 보고서 #53–#57 감사 반영
+
+#53–#57은 데이터·설정의 안전한 제거, 지원기간, 무상 보안 업데이트, CVD 및 법정 신고를 다뤘다. 감사 결과 CONFLICT 1건, PARTIALLY_VERIFIED 4건, VERIFIED 0건이며 직접 인용 재사용 승인은 0/5다. 특히 Annex I Part I point 2(m)는 해당되는 제품에서 사용자가 모든 데이터와 설정을 안전하고 쉽게 영구 제거할 수 있는 가능성을 요구하고, Annex II point 8(d)는 안전한 폐기와 데이터 제거 방법의 사용자 지침을 요구한다. 두 요구를 분리해 추적한다. Article 13(19)는 지원 종료일을 구매 시 표시하고, 기술적으로 가능한 경우 지원기간 종료 시점 알림을 표시하도록 한다. Article 14 신고는 Class I/II에만 한정되지 않으며 Article 69(3)에 따라 2027-12-11 이전 출시 제품에도 적용된다. 상세 근거·SHA·반증은 [#53–#57 감사 보고서](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_53_57_2026-11-13.md)와 [Claim Evidence Ledger](CLAIM_EVIDENCE_LEDGER.md)에 보존했다.
+
+#38 재검토에서 Annex I Part I(2)(m)를 누락한 점을 확인해 해당 보고서 판정을 CONFLICT에서 PARTIALLY_VERIFIED로 정정했다. 그 결과 #8–#47은 40건 중 36 CONFLICT / 4 PARTIALLY_VERIFIED, #8–#52는 45건 중 39 CONFLICT / 6 PARTIALLY_VERIFIED, #8–#57은 50건 중 40 CONFLICT / 10 PARTIALLY_VERIFIED / 0 VERIFIED다. 비무작위 연속 표본이며 전체 archive 오류율이 아니다.
