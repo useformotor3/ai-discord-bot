@@ -201,3 +201,31 @@ CRA의 데이터 제거 관련 요구는 두 개의 별도 근거로 관리한�
 | 로그 저장·전송 구현 | 위험평가 및 제품 설계 | tamper-proof storage, 보존기간, circular buffer, Syslog over TLS는 이 조항이 지정한 보편적 기술 의무가 아니다. |
 
 직접 인용은 EUR-Lex 현행 consolidated text의 문언·위치와 일치하는 경우에만 허용한다. #58–#62의 Raw Text Quote 5건은 재사용 승인하지 않았다.
+
+## 2.6 Important Product 분류 및 적합성 평가 — 2025/2392 반영
+
+### 제품 분류 원칙
+- CRA Article 7(1): 제품의 **core functionality**가 Annex III의 제품 범주에 해당할 때 important product로 분류한다.
+- Article 7(1)은 어떤 제품에 다른 important product의 core functionality를 가진 제품이 통합되어 있다는 사실만으로 host product 자체가 자동으로 해당 적합성 평가 절차 대상이 되는 것은 아니라고 명시한다.
+- Commission Implementing Regulation (EU) 2025/2392(2025-11-28 채택, 2025-12-21 발효)는 Annex III/IV 범주의 technical description을 구체화한다. 제품에 범주 기능을 부수적으로 포함할 수 있다는 사실과 제품 자체의 core functionality가 해당 범주라는 사실을 구분한다.
+- Class I에는 physical/virtual network interfaces가 포함될 수 있다. technical description은 Ethernet, Fieldbus 등 네트워크 연결용 hardware adapters/controllers 등을 포함한다. 그러나 servo drive에 내장된 네트워크 인터페이스만으로 drive host product가 자동 Class I이 되는 것은 아니다.
+- Class II에는 hypervisors/container runtime systems, firewalls/IDS/IPS, tamper-resistant microprocessors/controllers 등이 있다. 일반적인 servo drive라는 제품명만으로 Class II를 부여할 근거가 없다.
+- 따라서 현재 servo drive Class I/II 분류는 UNVERIFIED다. 제품 SKU, 판매/공급 경계, core functionality, 내장 네트워크 인터페이스가 별도 제품으로 공급되는지, 실제 MCU가 tamper-resistant/security-related 기능을 가진 독립 제품인지 확인한 뒤 결정한다.
+
+### 적합성 평가·문서·CE 경로
+| 주제 | 정확한 근거 | 정정 |
+|---|---|---|
+| 적합성 평가 절차 | Article 32 | Article 24가 아니다. |
+| 일반 제품 절차 | Article 32(1), Annex VIII | Module A(internal control), B+C(EU-type examination + internal production control), H(full quality assurance), 적용 가능한 EU cybersecurity certification scheme 중 법령 조건에 따른 경로. |
+| Class I 추가 조건 | Article 32(2) | harmonised standards/common specifications/certification scheme이 없거나 전부/일부만 적용된 경우 B+C 또는 H 경로. |
+| Class II | Article 32(3) | B+C 또는 H 경로; Notified Body 관여. |
+| Module 정의 | Annex VIII Parts I–IV | Part I=A internal control; Part II=B EU-type examination; Part III=C internal production control; Part IV=H full quality assurance. |
+| EU Declaration of Conformity | Article 28, Annex V/VI | Article 20이 아니다. |
+| CE marking | Article 30 | CE marking 조건/부착. |
+| Technical documentation | Article 31, Annex VII | Article 23이 아니다. |
+
+Class I/II 실제 적용성은 제품 core functionality 및 공식 technical description을 검토하기 전까지 결론 내리지 않는다. 제품 분류와 conformity route는 제3자 법률/적합성 검토가 필요한 고위험 결정이다.
+
+공식 출처:
+- Regulation (EU) 2024/2847, Article 7, Article 28, Article 30–32, Annex III, Annex VII–VIII: https://eur-lex.europa.eu/eli/reg/2024/2847/2024-11-20/eng
+- Commission Implementing Regulation (EU) 2025/2392: https://eur-lex.europa.eu/eli/reg_impl/2025/2392/oj/eng
