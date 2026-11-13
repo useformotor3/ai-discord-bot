@@ -711,7 +711,7 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 ## 사후 기준선 — main report #125 확인 (2026-11-13)
 
 - #58–#62 감사는 main report #118 기준으로 수행했다.
-- 이후 main에 report #125가 추가됨: HEAD \`6491a5db6ea35ea97a6d97e85bac43f9a3cf41c0\`, state count 125, history 1,400 entries.
+- 이후 main에 report #125가 추가됨: HEAD \`92e8ca7aa4a86b38627a1d8e9535e5b0463a8392\`, state count 125, history 1,400 entries.
 - #119는 미감사 상태다. 다음 archive 감사는 #63–#67부터 수행하며, 배치 시작 시 main state/history/HEAD를 재조회한다.
 - main read-only, merge/rebase/sync 금지.
 
@@ -809,7 +809,7 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 
 ## 2026-11-13 authoritative snapshot — #8–#62 audit and claim normalization
 
-- main latest observed: report #125; HEAD \`6491a5db6ea35ea97a6d97e85bac43f9a3cf41c0\`; state count 125; history.json 1,400 entries. Archive tree count was not rechecked. main remains read-only.
+- main latest observed: report #125; HEAD \`92e8ca7aa4a86b38627a1d8e9535e5b0463a8392\`; state count 125; history.json 1,400 entries. Archive tree count was not rechecked. main remains read-only.
 - main-only audit scope #8–#62: 55 consecutive, non-random reports; file-level results **40 CONFLICT / 15 PARTIALLY_VERIFIED / 0 VERIFIED**; direct quote reuse **0/55**. This is not a statistical error rate for the full archive.
 - Claim Evidence Ledger: 55 file-level source records + 345 atomic claims = **400 unique IDs**, duplicate IDs 0. All 345 atomic claims have one or more Canonical IDs. Canonical register defines 46 requirements; 43 are referenced by legacy atomic claims, and 3 are forward-mapped to matrix requirements.
 - #8–#57 (50 reports) and #58–#62 (5 reports) have completed atomic decomposition. Individual legal facts marked VERIFIED do not promote a conflicting source file to VERIFIED.
