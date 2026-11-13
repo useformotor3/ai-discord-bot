@@ -519,3 +519,7 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 - [ ] DOCX/PDF/PPTX/XLSX 무료 배포 파이프라인 설계·검증.
 
 **진행 원칙:** 보고서 파일을 먼저 만들고 근거·설계·시험을 이어서 채운다. 파일이 커지면 권/장으로 분할하고 마스터 인덱스와 안정적 ID로 연결한다. 법령 근거 VERIFIED와 제품 적용 VERIFIED를 분리한다.
+
+- [x] 마스터 보고서 인덱스 `docs/MASTER_REPORT_INDEX.md` 생성.
+- [x] Article 14 신고 대응 절차서 `docs/CRA_ARTICLE14_PSIRT_RESPONSE_SOP_V1.md` 초판 생성.
+- [ ] PSIRT 역할/연락처/제조사 단일 연락 창구 입력 및 tabletop 실행.
