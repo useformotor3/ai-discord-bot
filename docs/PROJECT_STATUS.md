@@ -620,3 +620,13 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 
 - 마스터 보고서 인덱스 `docs/MASTER_REPORT_INDEX.md` 및 Article 14 PSIRT SOP `docs/CRA_ARTICLE14_PSIRT_RESPONSE_SOP_V1.md` 생성.
 - PSIRT 역할/연락처/실제 제품 정보는 TBD, tabletop exercise는 NOT_RUN.
+
+
+## 수집 코드 감사 결과 — 2026-11-13
+- 현재 fetcher/transport/parser는 mock/fixture 검증 기반이며 실제 공식 원문 fetch는 NOT RUN.
+- registry revision/date는 코드 상수이며 실제 문서 표지/개정정보와 자동 대조하지 않는다.
+- HTML decode replacement, generic HTML text extraction, PDF optional backend 및 fake PDF tests의 한계가 확인됨.
+- fetch result와 extraction result를 claim/report에 연결하는 evidence bundle이 아직 없다.
+- 상세: `docs/SOURCE_COLLECTION_CODE_AUDIT_AND_CHANGE_PROPOSAL_V1.md`.
+- 권장 다음 단계 C1+C2: strict decode/degradation diagnostics, observed identity/revision, evidence bundle/manifest/hash linkage. Offline tests only; 구현 승인 대기.
+- E3 live fetch, production main/prompt/workflow 변경은 별도 승인 전 수행하지 않는다.
