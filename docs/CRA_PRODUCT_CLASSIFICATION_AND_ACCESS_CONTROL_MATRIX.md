@@ -1,113 +1,121 @@
-# CRA Product Classification & Access Control Matrix — Industrial Servo Drive
+# CRA 제품 분류 및 접근통제 매트릭스 — 산업용 서보 드라이브
 
-- Version: 0.1
-- Date: 2026-11-13
-- Scope: generic industrial servo drive / drive family; CRA only
-- Status: legal framework checked; product-specific classification and implementation remain UNVERIFIED pending SKU, intended purpose, system boundary and technical evidence.
-- Legal baseline: Regulation (EU) 2024/2847 and Commission Implementing Regulation (EU) 2025/2392, EUR-Lex official texts.
+- 문서 ID: CRA-SD-MTX-CLASS-AC-001
+- 버전: 0.2
+- 기준일: 2026-11-13
+- 적용 범위: 일반 산업용 서보 드라이브 및 제품군 / CRA
+- 상태: 법령 기준선 확인 완료. 제품별 분류·구현 적합성은 SKU, 의도된 용도, 제품 경계 및 기술 증거가 확보되기 전까지 **UNVERIFIED(미검증)**.
+- 법령 기준: Regulation (EU) 2024/2847 및 Commission Implementing Regulation (EU) 2025/2392 공식 EUR-Lex 원문.
 
-## 1. Executive conclusion
+## 1. 핵심 결론
 
-A servo drive must not be labelled automatically as an Annex III Class I or Class II important product merely because it is network-connected, used in industrial automation, or can influence motion. The CRA classification test is based on whether the product **as a whole has the core functionality** of a category listed in Annex III, read with the technical descriptions in Implementing Regulation (EU) 2025/2392.
+서보 드라이브가 네트워크에 연결되거나 산업 자동화에 사용되거나 모션에 영향을 준다는 이유만으로 CRA Annex III의 중요 제품 Class I 또는 Class II로 자동 분류해서는 안 된다. 분류는 Annex III에 열거된 범주와 Commission Implementing Regulation (EU) 2025/2392의 기술 설명을 함께 적용해 **제품 전체의 핵심 기능(core functionality)**을 기준으로 판단한다.
 
-The Annex III Class II categories are limited to:
-1. Hypervisors and container runtime systems supporting virtualised execution;
-2. Firewalls, intrusion detection and prevention systems;
-3. Tamper-resistant microprocessors;
-4. Tamper-resistant microcontrollers.
+Annex III Class II 범주는 다음 네 가지다.
 
-Neither “industrial automation and control systems”, “PLC”, “motion controller” nor “servo drive” is expressly listed as a Class II category in Annex III. An embedded network interface, firewall-like feature, security chip or other component does not automatically classify the complete drive as an important product. The whole product's core functionality and the exact technical description must be assessed.
+1. 가상화 실행을 지원하는 하이퍼바이저 및 컨테이너 런타임 시스템
+2. 방화벽, 침입 탐지 시스템(IDS) 및 침입 방지 시스템(IPS)
+3. 변조 방지 마이크로프로세서
+4. 변조 방지 마이크로컨트롤러
 
-Regardless of important-product classification, a product with digital elements in CRA scope remains subject to the applicable general CRA essential cybersecurity requirements, manufacturer obligations, risk assessment, technical documentation and conformity assessment route.
+“IACS(산업 자동화 및 제어 시스템)”, “PLC”, “모션 컨트롤러”, “서보 드라이브”는 Annex III Class II의 독립 범주로 명시되어 있지 않다. 드라이브에 네트워크 인터페이스, 방화벽 유사 기능, 보안 칩 또는 다른 구성요소가 포함되었다는 사실만으로 완제품 전체가 중요 제품으로 분류되는 것은 아니다. 완제품의 핵심 기능과 정확한 기술 설명을 대조해야 한다.
 
-## 2. Product boundary and classification decision
+중요 제품 분류 여부와 별개로 CRA 적용범위에 포함되는 디지털 요소 제품에는 해당되는 일반 필수 사이버보안 요구사항, 제조사 의무, 위험평가, 기술문서 및 적합성 평가 절차가 적용된다.
 
-| Gate | Question / evidence needed | Current status | Decision rule |
+## 2. 제품 경계 및 분류 판단
+
+| 단계 | 확인 질문 및 필요한 증거 | 현재 상태 | 판단 원칙 |
 |---|---|---|---|
-| A. CRA scope | Does the marketed product contain software/data and allow direct or indirect logical/physical data connection to a device/network? | UNVERIFIED | Establish intended purpose, interfaces, connectivity, and whether the item is marketed as a product with digital elements. |
-| B. Product boundary | Is the assessed item a standalone drive, drive + engineering software, network option module, controller, or a larger machine/system? | UNVERIFIED | Define product boundary and separate products/components placed on the market from integrated components. |
-| C. Core functionality | What is the product's primary function as marketed and documented? | UNVERIFIED | Use intended purpose, datasheet, user manual, architecture and actual marketed function. |
-| D. Annex III match | Does the whole product's core functionality meet one of Annex III categories and the technical description in Implementing Regulation 2025/2392? | UNVERIFIED | Do not infer a match from industrial use or an integrated component alone. |
-| E. Class and route | If a category matches, is it Class I or II and which Article 32 route applies? | UNVERIFIED | Apply Article 32(1)–(3) only after category matching. |
-| F. Other legislation | Does the same product also fall under other Union harmonisation legislation (e.g. machinery/electrical/EMC)? | UNVERIFIED | Coordinate the CRA assessment and technical documentation with applicable sectoral legislation; do not assume CRA replaces it. |
+| A. CRA 적용범위 | 시장에 제공되는 제품에 소프트웨어/데이터가 포함되고 기기·네트워크와 직접 또는 간접 데이터 연결이 가능한가? | UNVERIFIED | 의도된 용도, 인터페이스, 연결성 및 디지털 요소 제품 해당 여부를 확인한다. |
+| B. 제품 경계 | 평가 대상이 독립형 드라이브, 드라이브+엔지니어링 소프트웨어, 통신 옵션 모듈, 컨트롤러 또는 더 큰 기계/시스템인가? | UNVERIFIED | 시장에 제공되는 제품과 통합 구성요소의 경계를 구분한다. |
+| C. 핵심 기능 | 시장에 제공되는 제품의 주된 기능은 무엇인가? | UNVERIFIED | 의도된 용도, 데이터시트, 사용자 설명서, 아키텍처 및 실제 판매 기능을 확인한다. |
+| D. Annex III 해당 여부 | 제품 전체의 핵심 기능이 Annex III 범주 및 시행규정 2025/2392의 기술 설명에 해당하는가? | UNVERIFIED | 산업용 사용 또는 통합 구성요소만으로 해당 여부를 추정하지 않는다. |
+| E. 등급 및 절차 | 해당 범주가 확인되면 Class I/II 중 무엇이며 Article 32의 어떤 절차가 적용되는가? | UNVERIFIED | 범주 매칭을 먼저 완료한 뒤 Article 32(1)–(3)을 적용한다. |
+| F. 다른 법령 | 동일 제품에 기계·전기·EMC 등 다른 EU 조화 법령도 적용되는가? | UNVERIFIED | CRA와 다른 분야별 법령의 평가·기술문서를 조정한다. CRA가 다른 법령을 대체한다고 가정하지 않는다. |
 
-### 2.1 Annex III cross-check
+### 2.1 Annex III 범주 대조
 
-| CRA Annex III category | Class | Generic servo drive conclusion |
+| CRA Annex III 범주 | 등급 | 일반 서보 드라이브에 대한 현재 판단 |
 |---|---|---|
-| Identity management / privileged access management | I | Not established; a drive's local account system alone does not prove that its core function is identity management. |
-| Physical and virtual network interfaces | I | A network interface embedded in a drive does not by itself establish that the whole drive's core functionality is a network interface. Review any separately marketed interface product/module. |
-| Operating systems / boot managers / network management systems | I | Not established from the generic servo-drive description. |
-| Hypervisors / container runtime systems | II | Not ordinarily the drive's core functionality; verify if the product is actually such a platform. |
-| Firewalls / IDS / IPS | II | A drive with filtering or monitoring features is not automatically a firewall/IDS/IPS product; core functionality must meet the technical description. |
-| Tamper-resistant microprocessors / microcontrollers | II | A security chip inside the drive does not automatically make the complete drive a Class II product. Assess whether the marketed product itself is the qualifying component and meets the technical description/AVA_VAN criteria. |
+| 신원 관리 / 특권 접근 관리 | Class I | 미확정. 드라이브의 로컬 계정 기능만으로 신원 관리 제품이 핵심 기능이라고 입증되지는 않는다. |
+| 물리적·가상 네트워크 인터페이스 | Class I | 드라이브에 내장된 네트워크 인터페이스만으로 완제품의 핵심 기능이 네트워크 인터페이스라고 볼 수 없다. 별도 판매되는 인터페이스 제품/모듈은 별도로 검토한다. |
+| 운영체제 / 부트 관리자 / 네트워크 관리 시스템 | Class I | 일반 서보 드라이브 설명만으로 해당한다고 볼 수 없다. |
+| 하이퍼바이저 / 컨테이너 런타임 시스템 | Class II | 일반적으로 드라이브의 핵심 기능이 아니다. 실제 제품이 해당 실행 플랫폼인지 확인한다. |
+| 방화벽 / IDS / IPS | Class II | 필터링·모니터링 기능이 있는 드라이브가 자동으로 방화벽/IDS/IPS 제품이 되는 것은 아니다. 기술 설명과 핵심 기능을 확인한다. |
+| 변조 방지 마이크로프로세서 / 마이크로컨트롤러 | Class II | 드라이브 내부 보안 칩만으로 완제품이 Class II가 되지 않는다. 시장에 제공되는 평가 대상 제품 자체가 해당 구성요소인지, 기술 설명 및 AVA_VAN 기준을 충족하는지 판단한다. |
 
-### 2.2 Conformity assessment route (only after classification)
+**MCU 관련 별도 구분:** Annex III Class I category 14의 보안 관련 기능을 갖춘 마이크로컨트롤러와 Class II category 4의 변조 방지 마이크로컨트롤러는 서로 다른 범주다. 실제 MCU가 기술 설명을 충족하는지, MCU 자체가 별도 제품으로 시장에 제공되는지, 그 MCU를 통합한 서보 드라이브 완제품이 별도 범주의 핵심 기능을 갖는지는 각각 구분해 판단한다.
 
-| Product status | CRA route |
+### 2.2 적합성 평가 경로 — 분류 확정 후 적용
+
+| 제품 상태 | CRA 절차 |
 |---|---|
-| Ordinary product with digital elements, not Annex III/IV category | Article 32(1): manufacturer selects an available procedure, including Module A internal control, Module B+C, Module H, or an available/applicable European cybersecurity certification scheme. |
-| Annex III Class I important product | Article 32(2): third-party assessment is required where the stated conditions apply, including absence/partial application of harmonised standards, common specifications or substantial-level certification scheme. |
-| Annex III Class II important product | Article 32(3): Module B+C, Module H, or where available and applicable, a European cybersecurity certification scheme at assurance level at least substantial. |
-| Annex IV critical product | Article 32(4) and Article 8; determine whether a delegated act requires certification or otherwise the applicable route. Do not assume a servo drive is Annex IV. |
+| Annex III/IV 범주에 해당하지 않는 일반 디지털 요소 제품 | Article 32(1): 제조사가 적용 가능한 절차 중 선택한다. Module A 내부 생산 관리, Module B+C, Module H 또는 적용 가능한 유럽 사이버보안 인증제도를 포함한다. |
+| Annex III Class I 중요 제품 | Article 32(2): 조화표준, 공통 사양 또는 실질적 보안 수준의 인증제도가 없거나 일부만 적용되는 등 법령이 정한 조건에서는 제3자 평가가 요구된다. |
+| Annex III Class II 중요 제품 | Article 32(3): Module B+C, Module H 또는 이용 가능하고 적용 가능한 경우 최소 substantial 보증 수준의 유럽 사이버보안 인증제도를 적용한다. |
+| Annex IV 중요 제품 | Article 32(4) 및 Article 8을 검토한다. 위임법령의 인증 요구 여부와 해당 절차를 확인한다. 서보 드라이브가 Annex IV라고 가정하지 않는다. |
 
-**Important:** Article 24 is not the CRA conformity-assessment provision; it addresses open-source software stewards. The relevant conformity-assessment provision is Article 32.
+**주의:** Article 24는 CRA 적합성 평가 조항이 아니라 오픈소스 소프트웨어 스튜어드 관련 조항이다. 적합성 평가의 관련 조항은 Article 32다.
 
-## 3. Access-control compliance and design matrix
+## 3. 접근통제 법적 요구 및 설계 매트릭스
 
-The legal anchor for access control is **Annex I Part I point 2(d)**. It requires protection from unauthorised access by appropriate control mechanisms, including but not limited to authentication, identity or access-management systems, and reporting on possible unauthorised access. The CRA does not prescribe one universal RBAC architecture or one specific password/certificate technology for every servo drive.
+접근통제의 법적 근거는 **Annex I Part I point 2(d)**다. 이 조항은 인증, 신원·접근 관리 시스템 등을 포함하되 이에 한정되지 않는 적절한 통제 메커니즘을 통해 무단 접근으로부터 제품을 보호하고, 가능한 무단 접근에 관한 보고를 포함하도록 요구한다. CRA가 모든 서보 드라이브에 하나의 RBAC 구조나 특정 비밀번호·인증서 기술을 보편적으로 지정하는 것은 아니다.
 
-| Area | Legal basis / status | Recommended engineering control (risk-based) | Verification evidence |
+| 영역 | 법적 근거 및 성격 | 위험기반 권장 설계 통제 | 확인 증거 |
 |---|---|---|---|
-| Authentication | Annex I Part I 2(d): explicit outcome/appropriate mechanism | Authenticate local, network, engineering-tool and service access according to threat model; avoid unauthenticated privileged operations | Interface inventory; authentication design; negative tests; access-control test report |
-| Identity lifecycle | Annex I Part I 2(d): identity management is an example | Separate device, user, service and integration identities where relevant; define provisioning, rotation and revocation | Identity lifecycle procedure; credential provisioning records; revocation test |
-| Role separation | Not a named universal CRA implementation requirement | Define operator, maintenance, commissioning and administrator roles if justified by functions and risk | Role-permission matrix; privilege escalation tests |
-| Least privilege | Risk-based design principle; not separately named as a universal CRA clause | Grant only permissions needed for each role/service; isolate diagnostic/update functions | Threat model; permission review; unauthorized-action tests |
-| Parameter protection | Annex I Part I 2(f) protects integrity of commands/programs/configuration from unauthorised modification | Authenticate and authorize sensitive configuration writes; protect parameter import/export and restore workflows | Parameter write authorization tests; integrity checks; audit evidence |
-| Service/debug interfaces | Annex I Part I 2(j) requires attack-surface limitation, including external interfaces | Inventory USB, serial, JTAG/SWD, fieldbus and maintenance interfaces; disable/restrict unused interfaces where risk justifies | Interface inventory; production configuration; penetration test |
-| Shared/default credentials | CRA does not state a universal clause requiring a particular unique-password scheme | Avoid universal shared credentials and undocumented backdoors; use per-device credentials or another proportionate mechanism | Credential uniqueness test; factory reset test; design review |
-| Security event reporting | Annex I Part I 2(d) includes reporting possible unauthorised access | Record/report relevant access events where technically and proportionately appropriate; protect logs against tampering | Event catalogue; log integrity test; time/source attribution test |
-| Secure remote maintenance | Derived from risk assessment and access-control requirements | Mutual authentication, scoped access, time-limited service sessions, customer authorization and session termination | Remote-service threat model; session tests; access revocation test |
-| Recovery and factory reset | Risk-based; relevant to confidentiality/integrity and user instructions | Ensure reset/recovery does not restore insecure credentials or expose stored secrets | Reset/recovery test; secure erase procedure; post-reset security test |
+| 인증 | Annex I Part I 2(d): 적절한 메커니즘을 통한 결과 요구 | 위협모델에 따라 로컬·네트워크·엔지니어링 도구·서비스 접근을 인증하고, 비인증 특권 작업을 방지한다. | 인터페이스 목록, 인증 설계, 부정 시험, 접근통제 시험보고서 |
+| 신원 수명주기 | Annex I Part I 2(d): 신원 관리가 예시로 명시됨 | 필요 시 장치·사용자·서비스·통합 주체의 신원을 분리하고 등록·프로비저닝·교체·폐기 절차를 정의한다. | 신원 수명주기 절차, 자격증명 프로비저닝 기록, 폐기 시험 |
+| 역할 분리 | 모든 제품에 대한 명시적 보편 구현 의무는 아님 | 기능과 위험에 따라 운전자·정비·시운전·관리자 역할을 구분한다. | 역할-권한표, 권한 상승 시험 |
+| 최소 권한 | 위험기반 설계 원칙이며 별도 보편 CRA 조항으로 명시된 것은 아님 | 각 역할·서비스에 필요한 최소 권한만 부여하고 진단·업데이트 기능을 분리한다. | 위협모델, 권한 검토, 비인가 작업 시험 |
+| 파라미터 보호 | Annex I Part I 2(f): 명령·프로그램·설정의 무단 변경으로부터 무결성 보호 | 민감 설정 쓰기를 인증·인가하고 파라미터 가져오기/내보내기 및 복구 절차를 보호한다. | 파라미터 쓰기 인가 시험, 무결성 확인, 감사 기록 |
+| 서비스/디버그 인터페이스 | Annex I Part I 2(j): 외부 인터페이스를 포함한 공격 표면 제한 | USB, 직렬, JTAG/SWD, 필드버스, 정비 인터페이스를 목록화하고 위험에 따라 미사용 인터페이스를 비활성화/제한한다. | 인터페이스 목록, 양산 설정, 침투시험 |
+| 공유/기본 자격증명 | 특정 고유 비밀번호 방식을 보편적으로 요구하는 조항은 아님 | 공용 자격증명과 문서화되지 않은 백도어를 피하고, 개별 장치 자격증명 등 비례적인 통제를 선택한다. | 자격증명 고유성 시험, 공장 초기화 시험, 설계 검토 |
+| 보안 이벤트 보고 | Annex I Part I 2(d): 가능한 무단 접근에 대한 보고 포함 | 기술적·비례적으로 적절한 경우 접근 이벤트를 기록·보고하고 로그 변조를 방지한다. | 이벤트 목록, 로그 무결성 시험, 시간/출처 추적 시험 |
+| 원격 정비 보안 | 위험평가 및 접근통제 요구에서 도출되는 설계 | 상호 인증, 범위 제한, 시간 제한 정비 세션, 고객 승인 및 세션 종료를 적용한다. | 원격 정비 위협모델, 세션 시험, 접근 철회 시험 |
+| 복구 및 공장 초기화 | 기밀성/무결성 및 사용자 지침과 관련된 위험기반 설계 | 초기화/복구 후 취약한 자격증명이 복원되거나 저장 비밀이 노출되지 않도록 한다. | 초기화/복구 시험, 안전 삭제 절차, 초기화 후 보안 시험 |
 
-### 3.1 Legal requirement vs implementation choice
+### 3.1 법적 요구와 구현 선택의 구분
 
-- **Legal requirement:** appropriate protection from unauthorised access under Annex I Part I point 2(d), based on the product's risk assessment and applicability.
-- **Potential implementation choices:** RBAC, least privilege, MFA, certificate-based authentication, unique per-device credentials, secure service mode, privileged-action confirmation, protected audit logs.
-- These implementation choices should be selected and justified from the risk assessment; do not label each one a verbatim CRA mandate unless another applicable legal/standard requirement establishes it.
-- Article 13(3) requires the risk assessment to indicate whether and how Annex I Part I point 2 requirements apply and how they are implemented. Where a requirement is not applicable, the technical documentation must contain a clear justification under Article 13(4).
+- **법적 요구:** 제품 위험평가와 적용성을 고려해 Annex I Part I point 2(d)에 따른 무단 접근 방지 결과를 적절한 통제로 달성한다.
+- **가능한 구현 선택:** RBAC, 최소 권한, 다중요소 인증(MFA), 인증서 기반 인증, 장치별 고유 자격증명, 보안 서비스 모드, 특권 작업 확인, 보호된 감사 로그.
+- 위 구현 선택은 위험평가로 선정·정당화해야 한다. 다른 적용 법령/표준이 근거를 제공하지 않는 한 각각을 CRA의 직접적인 보편 의무라고 표시하지 않는다.
+- Article 13(3)은 위험평가에서 Annex I Part I point 2 요구사항이 적용되는지, 어떻게 적용·구현되는지를 나타내도록 한다. 적용되지 않는 요구사항은 Article 13(4)에 따라 기술문서에 명확한 근거를 남긴다.
 
-## 4. Required evidence package
+## 4. 필요한 증거 패키지
 
-| Evidence ID | Deliverable | Minimum content |
+| 증거 ID | 산출물 | 최소 포함 내용 |
 |---|---|---|
-| CL-01 | Product identity & intended-purpose statement | Product name/SKU, versions, market configuration, intended purpose, reasonably foreseeable use |
-| CL-02 | Product-boundary diagram | Drive, option modules, firmware, engineering software, cloud/remote service, third-party components |
-| CL-03 | Annex III classification record | Core-functionality rationale; each plausible category considered; Implementing Regulation 2025/2392 technical-description comparison |
-| CL-04 | CRA applicability / other-law matrix | Applicable CRA requirements and relevant other Union legislation; reasoned exclusions |
-| AC-01 | Interface and asset inventory | Ethernet/fieldbus, USB/serial, service/debug, parameter/configuration, update, diagnostics, identity stores |
-| AC-02 | Threat and access-control model | Threat actors, assets, trust boundaries, attack paths, risk rating, selected mitigations |
-| AC-03 | Role/permission matrix | Roles, protected operations, authorization policy, privilege boundaries |
-| AC-04 | Security verification report | Authentication, authorization, privilege escalation, reset, service access, parameter integrity and event reporting tests |
-| TD-01 | CRA technical documentation traceability | Article 13 risk assessment, Annex VII architecture, applied requirements, justification of non-applicability, test reports |
+| CL-01 | 제품 식별 및 의도된 용도 선언 | 제품명/SKU, 버전, 시장 구성, 의도된 용도, 합리적으로 예상 가능한 사용 |
+| CL-02 | 제품 경계도 | 드라이브, 옵션 모듈, 펌웨어, 엔지니어링 소프트웨어, 클라우드/원격 서비스, 제3자 구성요소 |
+| CL-03 | Annex III 분류 기록 | 핵심 기능 근거, 검토한 후보 범주, 시행규정 2025/2392 기술 설명 대조 |
+| CL-04 | CRA 적용성 및 다른 법령 매트릭스 | 적용 CRA 요구사항과 관련 EU 법령, 제외 사유 |
+| AC-01 | 인터페이스 및 자산 목록 | Ethernet/필드버스, USB/직렬, 서비스/디버그, 파라미터/설정, 업데이트, 진단, 신원 저장소 |
+| AC-02 | 위협 및 접근통제 모델 | 공격자, 자산, 신뢰 경계, 공격 경로, 위험 등급, 선택한 완화책 |
+| AC-03 | 역할/권한표 | 역할, 보호 작업, 인가 정책, 권한 경계 |
+| AC-04 | 보안 검증 보고서 | 인증, 인가, 권한 상승, 초기화, 서비스 접근, 파라미터 무결성 및 이벤트 보고 시험 |
+| TD-01 | CRA 기술문서 추적성 | Article 13 위험평가, Annex VII 아키텍처, 적용 요구사항, 비적용 정당화, 시험 보고서 |
 
-## 5. Open inputs — product-specific determination blocked
+## 5. 제품별 판정을 막고 있는 미확인 입력
 
-The following information is required before a product-specific classification or compliance conclusion can be issued:
-- Exact product family and SKU(s), including network/communication option variants.
-- Datasheet, installation/user manual, firmware/software architecture and marketed intended purpose.
-- Whether drive, engineering tool, option module and remote service are separate products or one product boundary.
-- Core functionality statement and any security product functionality that might match Annex III.
-- Network, service and debug interface list; authentication/authorization model; credential lifecycle.
-- Expected use/support period and EU market placement model.
+제품별 분류 또는 적합성 결론을 내리기 전에 다음 정보가 필요하다.
 
-Until these are supplied and reviewed, the product classification and the actual adequacy of access-control implementation remain **UNVERIFIED**.
+- 네트워크/통신 옵션을 포함한 정확한 제품군 및 SKU
+- 데이터시트, 설치/사용자 설명서, 펌웨어/소프트웨어 아키텍처 및 시장에 표시된 의도된 용도
+- 드라이브, 엔지니어링 도구, 옵션 모듈, 원격 서비스가 별도 제품인지 하나의 제품 경계인지
+- 핵심 기능 설명 및 Annex III에 해당할 수 있는 보안 제품 기능
+- 네트워크·서비스·디버그 인터페이스 목록, 인증/인가 구조, 자격증명 수명주기
+- 예상 사용기간 및 지원기간, EU 시장 출시 형태
 
-## 6. Primary official sources
+위 정보가 확보·검토되기 전까지 제품 분류와 실제 접근통제 구현의 적절성은 **UNVERIFIED(미검증)**로 유지한다.
 
-1. Regulation (EU) 2024/2847, especially Articles 7, 13, 28, 30–32, 64; Annex I Part I points 2(d), 2(f), 2(j); Annex III; Annex VII and VIII: https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32024R2847
-2. Commission Implementing Regulation (EU) 2025/2392, especially recitals (3)–(6), Article 2 and Annex I Class I/Class II technical descriptions: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R2392
+## 6. 공식 1차 출처
 
-## 7. Change history
+1. Regulation (EU) 2024/2847 — Article 7, 13, 28, 30–32, 64; Annex I Part I points 2(d), 2(f), 2(j); Annex III, Annex VII 및 Annex VIII  
+   https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32024R2847
+2. Commission Implementing Regulation (EU) 2025/2392 — 전문 (3)–(6), Article 2 및 Annex I의 Class I/Class II 기술 설명  
+   https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R2392
 
-- 2026-11-13 v0.1: Initial matrix created from the #43–#47 archive audit and official EUR-Lex texts. Product-specific applicability intentionally left UNVERIFIED.
+## 7. 변경 이력
+
+- 2026-11-13 v0.1: #43–#47 감사 및 EUR-Lex 공식 원문을 바탕으로 최초 작성. 제품별 적용성은 미검증으로 유지.
+- 2026-11-13 v0.2: #48–#52 감사 정정 및 한국어 우선 원칙을 반영. 표·설명·증거 항목을 한국어로 정리하고 법령·표준의 공식 식별자는 원문으로 유지.
