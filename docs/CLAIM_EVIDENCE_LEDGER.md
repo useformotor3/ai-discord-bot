@@ -635,3 +635,45 @@ Correct map: Annex I Part I(2)(c) for applicable automatic-update default/user c
 
 - #18–#22 파일 단위 판정은 기존 감사 결과대로 5 CONFLICT / 0 PARTIALLY_VERIFIED / 0 VERIFIED이며 direct quote reuse 0/5.
 - 개별 법령 사실 VERIFIED와 원본 파일 전체 CONFLICT를 구분한다. 제품별 적용성·Class I/II 분류는 UNVERIFIED, DUT 시험 NOT_RUN.
+
+## 2026-11-13 — #23–#27 원자 주장·인용 분해 (30 claims)
+
+- 원본 감사: [main-only #13–#27 Pass A/B/C 감사](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_13_27_2026-11-13.md).
+- 원본 main 경로·blob SHA: #23 \`research_archive/2026-11-13_015044.md\` / \`d8315ca10d9d1d811978c73ab8ffbd77e296971d\`; #24 \`015535.md\` / \`c43117db6c681bd4b6865b955ac66a0fa012a1fd\`; #25 \`020056.md\` / \`a482f9198569dfe173d63250eebee6d8f9a6f9e8\`; #26 \`020541.md\` / \`132dd081b4bed0d431d8f68b8e00b3fc83b9035d\`; #27 \`021039.md\` / \`3b6537c40590118c43d1fbc5f1922121d7f6d276\`.
+- 공식 기준: Regulation (EU) 2024/2847, EUR-Lex consolidated text 20.11.2024.
+
+| Claim ID | 원본 | 원자 주장 | 근거 위치 | 상태 | 판정/정정 |
+|---|---:|---|---|---|---|
+| CRA-ARCH-MAIN-20261113-023-001 | #23 | 제품은 secure-by-default configuration으로 제공되어야 한다. | Annex I Part I(2)(b) | VERIFIED | secure default 요구 확인. |
+| CRA-ARCH-MAIN-20261113-023-002 | #23 | secure-by-default에는 original-state reset 가능성이 포함된다. | Annex I Part I(2)(b) | VERIFIED | 현행 문언과 일치. |
+| CRA-ARCH-MAIN-20261113-023-003 | #23 | 최초 전원 인가 시 강력한 고유 비밀번호 변경을 강제해야 한다. | Annex I Part I(2)(b), (d) | CONFLICT | 구체 first-use password flow는 CRA의 보편적 직접 의무가 아니다. |
+| CRA-ARCH-MAIN-20261113-023-004 | #23 | 공장 초기화 상태에서 약한 기본 비밀번호·관리자 계정 공백이 없도록 해야 한다. | Annex I Part I(1), (2)(b), (d) | PARTIALLY_VERIFIED | secure-by-default/appropriate access controls 결과와 연결되나 구체 계정 정책은 제품별 위험평가로 정당화. |
+| CRA-ARCH-MAIN-20261113-023-005 | #23 | Raw Text Quote의 (a)/(b)/(c) 문구가 현행 Annex I의 정확한 인용이다. | Annex I Part I(2)(b), (d) | CONFLICT | 현행 하위 항목 번호·문언과 일치하지 않는다. |
+| CRA-ARCH-MAIN-20261113-024-001 | #24 | 제품은 secure-by-default configuration으로 제공되어야 한다. | Annex I Part I(2)(b) | VERIFIED | secure default 요구 확인. |
+| CRA-ARCH-MAIN-20261113-024-002 | #24 | 모든 기본 계정·원격 포트·디버그 인터페이스를 모든 제품에서 비활성화해야 한다. | Annex I Part I(2)(j), (d) | CONFLICT | attack-surface/access-control 결과 요구를 일률적인 포트 차단으로 확대했다. |
+| CRA-ARCH-MAIN-20261113-024-003 | #24 | 관리자 계정 비밀번호 강제 변경이 보편적 직접 의무다. | Annex I Part I(2)(b), (d) | CONFLICT | 구체 초기 비밀번호 정책은 위험기반 설계 선택. |
+| CRA-ARCH-MAIN-20261113-024-004 | #24 | 모든 서비스·포트는 사용자가 명시적으로 켜기 전 외부 접근 불가 상태여야 한다. | Annex I Part I(2)(j) | CONFLICT | 위험기반 최소화 요구는 있으나 모든 제품에 대한 이 구체 운영 모델은 법령이 지정하지 않는다. |
+| CRA-ARCH-MAIN-20261113-024-005 | #24 | 보고서의 secure-default/update 복합 Raw Text Quote가 현행 원문과 일치한다. | Annex I Part I(2)(b), (c) | CONFLICT | 하위 항목·문언을 합성해 직접 인용으로 재사용할 수 없다. |
+| CRA-ARCH-MAIN-20261113-025-001 | #25 | 제품은 위험기반 secure-by-default 상태로 제공되어야 한다. | Annex I Part I(1), (2)(b) | VERIFIED | 법령상 결과 요구 확인. |
+| CRA-ARCH-MAIN-20261113-025-002 | #25 | 산업용 서보 드라이브는 Important Product Class I/II다. | Article 7, Annex III | UNVERIFIED | 제품 전체 core functionality와 Annex III 범주 증거 없음. |
+| CRA-ARCH-MAIN-20261113-025-003 | #25 | 모든 hardcoded/default credentials는 CRA가 명시적으로 일률 금지한다. | Annex I Part I(2)(b), (d) | CONFLICT | 안전한 기본 설정 결과는 요구하지만 특정 credential 구현·금지 방식은 직접 지정하지 않는다. |
+| CRA-ARCH-MAIN-20261113-025-004 | #25 | JTAG/UART는 모든 제품에서 비활성화 또는 물리 봉인해야 한다. | Annex I Part I(2)(j) | CONFLICT | attack-surface limitation을 특정 디버그 포트 조치로 일률화했다. |
+| CRA-ARCH-MAIN-20261113-025-005 | #25 | 최초 접속 시 고유 비밀번호/MFA 설정을 강제해야 한다. | Annex I Part I(2)(d) | CONFLICT | 인증 설계는 제품 위험에 따른 선택이며 해당 조항이 MFA/first-use를 직접 명시하지 않는다. |
+| CRA-ARCH-MAIN-20261113-025-006 | #25 | least-privilege administrator separation이 해당 CRA 조항의 명문 세부 의무다. | Annex I Part I(2)(d) | CONFLICT | 적절한 접근통제 결과와 구체 권한 모델을 구분한다. |
+| CRA-ARCH-MAIN-20261113-025-007 | #25 | PE-CONS 103/23 초안 문구가 현행 최종 Regulation의 정확한 인용이다. | Regulation (EU) 2024/2847, Annex I | CONFLICT | 초안/타협안 인용을 최종 법령의 현행 문언으로 재사용하지 않는다. |
+| CRA-ARCH-MAIN-20261113-026-001 | #26 | 제품은 secure-by-default configuration으로 제공되어야 한다. | Annex I Part I(2)(b) | VERIFIED | secure default 요구 확인. |
+| CRA-ARCH-MAIN-20261113-026-002 | #26 | 외부 인터페이스를 포함한 attack surface를 제한해야 한다. | Annex I Part I(2)(j) | VERIFIED | 결과 요구 확인. |
+| CRA-ARCH-MAIN-20261113-026-003 | #26 | 모든 제품에서 공통 마스터 비밀번호를 금지하고 고유 초기 인증정보를 강제해야 한다. | Annex I Part I(2)(b), (d) | CONFLICT | 구체 credential mechanism은 보편적 직접 문언이 아니다. |
+| CRA-ARCH-MAIN-20261113-026-004 | #26 | 모든 fieldbus/USB/debug interface를 기본 비활성화해야 한다. | Annex I Part I(2)(j) | CONFLICT | attack-surface 결과 요구를 모든 인터페이스의 일괄 차단으로 확대했다. |
+| CRA-ARCH-MAIN-20261113-026-005 | #26 | 모든 backdoor/test diagnostic code를 CRA가 특정 방식으로 제거하도록 명시한다. | Annex I Part I(1), (2)(a), (j) | PARTIALLY_VERIFIED | 알려진 악용 취약점 부재·공격표면 제한 결과와 관련되나 특정 코드 제거 방식은 제품별 분석 필요. |
+| CRA-ARCH-MAIN-20261113-026-006 | #26 | Raw Text Quote의 (a)/(b)/(f)가 현행 secure-default/access/integrity 요구의 정확한 매핑이다. | Annex I Part I(2)(b), (d), (f) | CONFLICT | 하위 항목과 문언을 혼합·오배정했다. |
+| CRA-ARCH-MAIN-20261113-027-001 | #27 | 보안 업데이트는 지체 없이 배포되고 원칙적으로 무상 제공되어야 한다. | Annex I Part II(8) | PARTIALLY_VERIFIED | 맞춤형 제품의 제조자-사업 사용자 합의 예외를 포함해야 한다. |
+| CRA-ARCH-MAIN-20261113-027-002 | #27 | 제조자는 CVD 정책을 수립·집행해야 한다. | Article 13(8), Annex I Part II(5) | VERIFIED | 법령상 CVD 정책 의무 확인. |
+| CRA-ARCH-MAIN-20261113-027-003 | #27 | 취약점 신고 연락 주소와 사용자 단일 연락 창구를 제공해야 한다. | Annex I Part II(6), Article 13(17), Annex II(2) | VERIFIED | contact address와 single point of contact, 사용자 정보 제공을 구분. |
+| CRA-ARCH-MAIN-20261113-027-004 | #27 | CVD 정책은 공개 웹사이트에 게시되어야 한다. | Annex II(2), Article 13(17) | PARTIALLY_VERIFIED | 사용자가 정책을 찾을 수 있는 위치와 연락 창구를 사용자 정보에 포함하나 특정 웹사이트만을 요구하지 않는다. |
+| CRA-ARCH-MAIN-20261113-027-005 | #27 | 취약점은 예상 수명 전체에 걸쳐 무상 패치해야 한다. | Article 13(8), Annex I Part II(8) | PARTIALLY_VERIFIED | support period 산정과 무상 업데이트 의무는 별개이며 tailored-product agreement exception을 포함한다. |
+| CRA-ARCH-MAIN-20261113-027-006 | #27 | 취약점 처리/무상 업데이트 근거가 Annex I Part I Section 1 Paragraph 2다. | Annex I Part II(2), (5), (6), (8) | CONFLICT | Part II가 vulnerability handling requirements이며 Part I 제품 속성 요구와 구분. |
+| CRA-ARCH-MAIN-20261113-027-007 | #27 | Article 13(4) 인용문이 취약점 처리 및 무상 업데이트의 정확한 직접 인용이다. | Article 13(8), Annex I Part II(8) | CONFLICT | 조항 번호와 제시 문언이 현행 원문과 일치하지 않는다. |
+
+- #23–#27 파일 단위 판정은 기존 감사 결과대로 5 CONFLICT / 0 PARTIALLY_VERIFIED / 0 VERIFIED이며 direct quote reuse 0/5.
+- 개별 법령 사실 VERIFIED와 원본 파일 전체 CONFLICT를 구분한다. 제품별 적용성·Class I/II 분류는 UNVERIFIED, DUT 시험 NOT_RUN.
