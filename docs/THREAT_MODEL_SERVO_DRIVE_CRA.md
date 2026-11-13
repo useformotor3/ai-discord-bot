@@ -124,3 +124,12 @@
 - [ ] 원시 로그/패킷/빌드 해시/설정 덤프 등 증거 보존
 - [ ] 독립 검토자 또는 별도 검증 단계 완료
 
+## 추가 위협 — Secure Data Lifecycle
+
+| Asset ID | 자산 | 보안 속성 | 위협 연결 |
+|---|---|---|---|
+| AST-09 | 사용자 데이터·설정·로그·인증서·장치 비밀 및 백업 사본 | 기밀성·무결성·안전한 영구 제거 | TH-19 |
+
+| Threat ID | 위협 시나리오 | STRIDE | 영향 | 통제/검증 후보 |
+|---|---|---|---|---|
+| TH-19 | RMA/수리/재판매/폐기 과정에서 잔존 데이터·설정·키가 복구되거나, 지원되는 데이터 전송 경로가 비인가 목적지로 유출 | Information Disclosure/Tampering | 고객 설정·장치 신원·운영 데이터 유출, 장치 재사용/사칭, 공급망 영향 | 저장소 inventory, 매체별 secure erase/key destruction, authenticated secure transfer, Annex II(8)(d) 사용자 지침, TST-ERASE-01..04 |
