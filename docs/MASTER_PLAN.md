@@ -456,3 +456,13 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 - [x] Prepare design-only proposal: deterministic bundle rebuild, locator provenance classes, bounded context packet, human review records and fail-closed statuses.
 - [ ] User review/approval of Phase D implementation scope.
 - [ ] Implementation not started. No changes to v2, `main.py`, production workflow, Phase C schema or runtime.
+
+
+## Phase D — exact quote / locator validation implementation (2026-11-13)
+- [x] User explicitly approved the isolated Phase D implementation scope.
+- [x] Added `evidence_quote_validator.py`: canonical bundle rebuild, provenance/content comparison, locator candidate classification, repeated-position ambiguity handling, bounded context, claim-to-evidence reference checks.
+- [x] Added human-review packet and mandatory reviewer-record fields; candidate acceptance requires explicit quote/locator/context/claim-support passes and completed countercheck.
+- [x] Added adversarial tests for exact match, raw/extraction/bundle tampering, repeated excerpt/locator ambiguity, missing source/PDF backend, context bounds, claim references and human-review completeness.
+- [ ] Full test suite and strict archive audit on exact final implementation HEAD — pending.
+- [ ] Recheck protected file SHAs and review final diff — pending.
+- Boundaries unchanged: no `main.py`, production workflow, v2 prompt/contract, Phase C schema/IDs, live fetch, Gemini API, or main-branch changes; no merge/rebase/sync.
