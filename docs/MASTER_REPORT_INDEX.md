@@ -86,3 +86,11 @@
 - 제2권 [SERVO_DRIVE_CRA_IMPLEMENTATION_PLAN_V1.md](SERVO_DRIVE_CRA_IMPLEMENTATION_PLAN_V1.md): 분류 매트릭스, PSIRT SOP, 접근통제 매트릭스, HW 아키텍처, 통합 추적성의 역할별 연결을 추가.
 - [MASTER_REPORT.md](MASTER_REPORT.md): MCU category 14 관련 문장을 기술 설명 및 MCU 자체의 시장 제공 여부를 포함하도록 명확화.
 - 제품별 SKU/MCU/제품 경계가 미확정이므로 제품별 분류·적합성은 계속 UNVERIFIED. 문서 수정은 제품 적합성 승인이나 DUT 시험을 의미하지 않는다.
+
+
+## main reports #48–#52 감사 및 법령 정정 통합
+
+- [#48–#52 상세 감사](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_48_52_2026-11-13.md): 3 CONFLICT / 2 PARTIALLY_VERIFIED / 0 VERIFIED; direct quote reuse 0/5.
+- [Claim Evidence Ledger](CLAIM_EVIDENCE_LEDGER.md)에 원자 주장별 correction record 5개를 추가했다.
+- 제1권/제2권/PSIRT SOP 및 MASTER_REPORT에 Article 14(8) machine-readable user notification의 제한 조건, CVD/contact address의 정확한 Annex I Part II 위치, Article 13(6) component vulnerability reporting 방향, support/update 의무의 조항 구분을 반영했다.
+- 누적 #8–#52: 45건, 40 CONFLICT / 5 PARTIALLY_VERIFIED / 0 VERIFIED. 비무작위 연속 표본.
