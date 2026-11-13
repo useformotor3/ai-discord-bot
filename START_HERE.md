@@ -473,3 +473,9 @@
 - #48–#52 개별 주장·인용 31개를 [Claim Evidence Ledger](docs/CLAIM_EVIDENCE_LEDGER.md)에 원자 Claim ID로 등록했다.
 - 기존 파일 단위 판정 3 CONFLICT / 2 PARTIALLY_VERIFIED / direct quote reuse 0/5 유지.
 - 다음 원자 분해 대상은 #53–#57.
+
+## 원자 주장 분해 진행 — #53–#57 완료
+
+- #53–#57 개별 주장·인용 32개를 [Claim Evidence Ledger](docs/CLAIM_EVIDENCE_LEDGER.md)에 원자 Claim ID로 등록했다.
+- #8–#57 50개 보고서의 원자 claim decomposition을 완료했다.
+- 다음 P0는 Ledger의 중복/상충 claim 및 공식 원문 locator 정규화, 제1권·제2권·SOP·매트릭스·시험 대장 전수 대조다.
