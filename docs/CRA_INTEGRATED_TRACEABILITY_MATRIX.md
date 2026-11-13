@@ -82,3 +82,12 @@
 - [검증 프로토콜](VERIFICATION_PROTOCOL.md)
 - [주장·근거 대장](CLAIM_EVIDENCE_LEDGER.md)
 
+## #58–#62 감사 보완 — 통합 매핑 주의
+
+- TR-19(Article 14)는 일반 취약점 전체가 아니라 actively exploited vulnerability 및 제품 보안에 영향을 미치는 severe incident 두 트랙으로 판정한다.
+- 기한은 각각 24h/72h 공통 초기 단계와 다른 최종 보고 기한(취약점: 시정조치 이용 후 14일, severe incident: incident notification 후 1개월)으로 나눈다.
+- 신고는 지정 CSIRT 전자 엔드포인트/단일 신고 플랫폼으로 제출하고 ENISA에 동시에 접근 가능하게 한다. CSIRT가 Article 16(3)에 따라 시장감시기관에 필요한 정보를 제공한다.
+- 사용자 통지는 Article 14(8)의 trigger/영향 사용자/where appropriate machine-readable 조건으로 제한한다.
+- 새 로깅 요구는 TR-21로 추적한다: Annex I Part I 2(l), 관련 내부 활동의 기록·모니터링 및 opt-out. 2(h)는 availability/DoS다.
+- CVD 정책·연락 주소·사용자 단일 연락 창구는 Annex I Part II(5)/(6), Article 13(17), Annex II(2)로 분리한다.
+- TST-LOG-01/02는 제품 설계 후보의 무결성·저장공간 포화 동작을 검증하는 시험이며, CRA가 특정 로그 저장/전송 기술을 지정했다는 뜻이 아니다.
