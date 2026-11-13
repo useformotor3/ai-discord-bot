@@ -209,6 +209,18 @@ class QuoteValidatorTests(unittest.TestCase):
         with self.assertRaisesRegex(QuoteValidationError, "REVIEW_TIMESTAMP_INVALID"):
             validate_human_review_record(record)
 
+    def test_review_timestamp_must_be_utc_not_local_offset(self):
+        record = self._valid_review()
+        record["reviewed_at_utc"] = "2026-11-13T09:00:00+09:00"
+        with self.assertRaisesRegex(QuoteValidationError, "REVIEW_TIMESTAMP_INVALID"):
+            validate_human_review_record(record)
+
+    def test_review_packet_rejects_duplicate_claim_ids(self):
+        result = validate_evidence_quotes(self.fetch, self.document, self.bundle)
+        duplicate = {"claims": self.report["claims"] * 2}
+        with self.assertRaisesRegex(QuoteValidationError, "CLAIM_EVIDENCE_REFERENCE_INVALID"):
+            build_human_review_packet(result, self.bundle, duplicate)
+
     def test_chunked_excerpt_locator_rebuilds(self):
         altered = copy.copy(self.document)
         unit = LegalUnit("Article 2", "ARTICLE", "2", "A" * 2000 + "B" * 2000 + "C" * 500)
