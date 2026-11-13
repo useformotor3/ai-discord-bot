@@ -333,3 +333,10 @@
 - 원자 Claim ID 20개를 Ledger에 추가. 제품별 적용성 UNVERIFIED, 실제 DUT 시험 NOT_RUN.
 - 다음 P0: #8–#57 원자 주장·인용 분해와 상위 문서 전수 대조. 그 후 main-only #63–#67.
 - 이번 작업은 문서 전용이다. exact final documentation HEAD의 CI/Actions 결과는 별도 확인 전까지 미확인으로 유지한다.
+
+## 사후 기준선 — main report #119 (2026-11-13)
+
+- #58–#62 감사 시점 main 기준선은 report #118 / history 1,393 entries였다.
+- 후속 자동 아카이브로 main이 report #119까지 진행: HEAD \`6491a5db6ea35ea97a6d97e85bac43f9a3cf41c0\`, state count 119, history 1,394 entries.
+- #119는 아직 감사하지 않았다. 다음 감사 시작점은 #63–#67이며, 배치 시작 시 main HEAD/state/history를 다시 조회한다.
+- main/work branch는 diverged. ahead/behind는 변경되므로 매 세션 동적으로 확인하고 merge/rebase/sync하지 않는다.
