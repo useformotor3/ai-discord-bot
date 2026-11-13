@@ -1,7 +1,7 @@
 # Phase D Implementation — Exact Quote Validation and Human Review
 
 - Date: 2026-11-13
-- Status: IMPLEMENTED — CI verification pending
+- Status: IMPLEMENTED — final CI verification pending
 - Target branch: `cra-project-foundation`
 - Design: [PHASE_D_EXACT_QUOTE_VALIDATION_DESIGN.md](PHASE_D_EXACT_QUOTE_VALIDATION_DESIGN.md)
 
@@ -24,7 +24,7 @@ Machine outcomes are integrity/provenance results only. Locator classes remain c
 
 The packet carries the exact excerpt, source metadata/hashes, locator class, bounded context (maximum 500 characters per side), claim reference, and explicit untrusted-source warning. Reviewer identity, UTC timestamp, protocol version, rationale, counter-evidence and review decisions are blank for the human to complete.
 
-A candidate acceptance record requires quote, locator, context/exception and claim-support PASS plus a completed countercheck. The validator checks completeness and timezone presence; it cannot authenticate reviewer identity, prove independence, or substitute for Pass B/C.
+A candidate acceptance record requires quote, locator, context/exception and claim-support PASS plus a completed countercheck. The validator checks completeness and UTC-zero timestamp; it cannot authenticate reviewer identity, prove independence, or substitute for Pass B/C.
 
 ## Boundaries
 
@@ -34,7 +34,7 @@ A candidate acceptance record requires quote, locator, context/exception and cla
 
 ## Verification
 
-- New test count and full-suite result: pending exact-head GitHub Actions.
-- Strict archive audit: pending exact-head GitHub Actions.
+- First implementation CI: Actions #43345148925 SUCCESS on `7720e50b8e8d9b3ba94dfa67cf558862d5484a66`; 103 tests passed and strict archive audit was consistent 990/990.
+- Strict archive audit in first CI: archive/history 990/990; missing/orphan/duplicate/malformed = 0; consistent=true.
 - Protected-file SHA recheck: pending final implementation review.
 - Live source fetch and Gemini API compatibility: not tested; not in scope.
