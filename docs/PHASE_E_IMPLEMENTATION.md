@@ -4,8 +4,8 @@
 - Status: **E1 + E2 IMPLEMENTED — CI VERIFIED**
 - Branch: `cra-project-foundation`
 - Baseline before implementation: `1b543af653435a25f89feea7f80abdf370ecda7f`
-- Exact code/test verification HEAD: `8e78d2930745219eba3561c8108a7decec217636`
-- CI run: [CRA Archive Integrity #43367117735](https://github.com/useformotor3/ai-discord-bot/actions/runs/43367117735)
+- Exact code/test verification HEAD: `d355aefb74f2b1b9159de98827fac8600fb68d4c`
+- CI run: [CRA Archive Integrity #43367432101](https://github.com/useformotor3/ai-discord-bot/actions/runs/43367432101)
 - Live official-source fetch: **NOT RUN**
 - Production integration: **NOT IMPLEMENTED**
 
@@ -25,7 +25,7 @@ The approval did not include E3 real official-source fetch, Gemini API calls, pr
 
 ### Modified
 - `source_evidence.py`
-- `tests/test_source_evidence.py`
+- `tests/test_source_evidence.py`: `b3a35fafd45a03277ec894589b9e2b137be8a95e`
 
 No workflow or dependency file was changed. The transport uses only Python standard-library modules (`http.client`, `socket`, `ssl`, `ipaddress`); this avoids adding a package-install requirement to the existing archive-audit CI workflow.
 
@@ -88,8 +88,9 @@ Additional fetcher tests verify:
 - all DNS answers are passed as validated literal IPs;
 - a mixed public/private answer set prevents any HTTP request;
 - resolver invocation is not repeated by the transport contract;
+- same-host redirect hops trigger DNS revalidation; HTTP downgrade redirects are rejected;
 - compressed response bodies are rejected and closed;
-- malformed/negative/empty Content-Length values are rejected.
+- malformed/negative/empty Content-Length values and truncated bodies are rejected.
 
 ## 5. CI evidence
 
@@ -101,7 +102,7 @@ GitHub Actions:
 
 Verified job:
 - `Run archive audit unit tests`: success
-- `Ran 121 tests in 1.845s`
+- `Ran 126 tests in 2.764s`
 - `OK`
 - `Verify archive and history consistency`: success
 - `archive_count = 990`
@@ -118,9 +119,9 @@ Earlier intermediate CI attempts failed while the transport briefly depended on 
 
 The code/test delta from the Phase E baseline is limited to:
 - `source_evidence.py`
-- `source_transport.py` (new)
+- `source_transport.py` (new): `13160055d1785e6a788d78b9bc44bbb5eb0d20e8`
 - `tests/test_source_evidence.py`
-- `tests/test_source_transport.py` (new)
+- `tests/test_source_transport.py` (new): `a0cce1e3d1d9627f39bbcec7f3e2bfca263c619e`
 
 The following hashes were re-read after implementation and remain unchanged:
 - `main.py`: `997952702fdd9d2472468b82e6efdd65b2bb4376`
