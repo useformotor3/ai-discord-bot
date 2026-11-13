@@ -403,3 +403,10 @@
 - 파일 단위 결과 3 CONFLICT / 2 PARTIALLY_VERIFIED / direct quote reuse 0/5 유지.
 - Article 14(8) machine-readable notice, Part II(4) disclosure timing, CVD/contact/free update, Article 13(5)–(7) supply-chain component reporting direction 정정.
 - 다음 원자 분해 대상 #53–#57.
+
+## 2026-11-13 P0 진행 — #53–#57 원자 Claim ID 분해 / #8–#57 완료
+
+- #53–#57 원본 경로/blob SHA 재확인, Ledger에 원자 Claim ID 32개 추가.
+- 파일 단위 결과 1 CONFLICT / 4 PARTIALLY_VERIFIED / direct quote reuse 0/5 유지.
+- #8–#57 50개 보고서의 원자 claim decomposition 완료.
+- 다음 P0는 300+ Claim ID의 중복·상충·법령 locator 정규화 및 제1권/제2권/SOP/매트릭스/시험 대장 전수 대조. 이후 #63–#67 main-only 감사.
