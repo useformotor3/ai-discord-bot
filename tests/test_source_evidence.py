@@ -188,7 +188,7 @@ class SourceEvidenceTests(unittest.TestCase):
         self.assertEqual(calls, ["eur-lex.europa.eu"])
         self.assertEqual(
             fetcher.session.calls[0][1]["pinned_ips"],
-            ("1.1.1.1", "8.8.8.8"),
+            ("8.8.8.8", "93.184.216.34"),
         )
 
     def test_mixed_public_private_dns_answers_are_blocked_before_http(self):
