@@ -786,3 +786,12 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 - [x] #44 access-control result requirement와 RBAC/least-privilege implementation options 분리.
 - [ ] 다음 배치 #48–#52 원자 Claim ID 분해.
 - [ ] #53–#57까지 순차 분해 후 제1권·제2권·SOP·매트릭스 전수 대조.
+
+## 2026-11-13 P0 — #48–#52 원자 주장 분해
+
+- [x] #48–#52 main 원본 경로/blob SHA 재확인.
+- [x] 개별 주장·인용 31개를 원자 Claim ID로 분해해 Ledger에 연결.
+- [x] Article 14(8) machine-readable notice, Part II(4) disclosure, CVD/contact/free update, Article 13(5)–(7) supply-chain component obligations 정정.
+- [x] file-level 3 CONFLICT / 2 PARTIALLY_VERIFIED와 개별 claim 상태 구분.
+- [ ] 다음 배치 #53–#57 원자 Claim ID 분해.
+- [ ] #8–#57 전체 원자 claim과 제1권·제2권·SOP·매트릭스 전수 대조.
