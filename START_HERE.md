@@ -304,3 +304,9 @@
 - Exact code commit `6344b576db64438e9a2ebfe5acdcc74afeac479e`: 79 tests PASS; strict archive audit 990/990, consistent=true.
 - [GitHub Actions #43338094337 — SUCCESS](https://github.com/useformotor3/ai-discord-bot/actions/runs/43338094337).
 - `main.py`, production workflow, v2 prompt and v2 contract remained unchanged. No production integration or main-branch sync.
+
+
+## Phase D — Exact quote / locator validation (design only)
+- [Design proposal](docs/PHASE_D_EXACT_QUOTE_VALIDATION_DESIGN.md) covers deterministic excerpt reconstruction, locator candidate classes, bounded context packets, human review records and fail-closed status separation.
+- Machine exactness will only establish correspondence to normalized extraction output; legal meaning, source-view fidelity and claim support still require human review.
+- Implementation is NOT started and requires separate explicit approval. No production/v2 changes.
