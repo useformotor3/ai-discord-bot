@@ -587,3 +587,14 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - 반복 오류: secure-by-default를 Annex I Part II/Class II로 잘못 배치, draft text를 current-law quote로 사용, forced first-boot password/JTAG/all-port disablement를 보편 의무로 과장, Article 13(8) support period와 Annex I Part II(8) free updates 혼합, Article 14 신고 범위 확대.
 - 교정 기준: Annex I Part I(2)(b) secure-by-default/reset; Part I(2)(d) access control; Part I(2)(j) attack surface; Part II(2),(5),(6),(7),(8) vulnerability handling; Article 13(8)/(9)/(17); Article 14 actively exploited vulnerability/severe incident scope.
 - queue에 #8–#12 상세 판정 추가. 현재 main tip report #27; #13–#27은 queue 미등록/감사 미완료로 남김. 전체 archive 오류율로 일반화하지 않음.
+
+
+## Phase E E1/E2 implementation status — 2026-11-13
+- **E1 + E2 COMPLETE / CI VERIFIED.** User-approved work branch implementation only.
+- Runtime transport is standard-library only: `source_transport.py`. It connects to validated literal IPs while preserving original hostname TLS SNI/certificate verification and Host header. No DNS re-resolution in transport; no proxy; no automatic redirects; TCP connect fallback only among the same validated IP list.
+- `source_evidence.py` revalidates DNS on every same-host redirect hop and now rejects unsupported content encoding, malformed Content-Length and truncated responses.
+- CI exact code/test HEAD `d355aefb74f2b1b9159de98827fac8600fb68d4c`, run [#43367432101](https://github.com/useformotor3/ai-discord-bot/actions/runs/43367432101): **126 tests OK**; archive/history 990/990; no missing/orphan/duplicate/malformed records; consistent=true.
+- Tests are offline. Local TLS fixture routes test public-looking IPv4/IPv6 literals to loopback only inside the test process. Real DNS, external IPv6 routing, transparent proxy/network egress, expired-certificate fixture and publisher authenticity are not proven.
+- No actual EUR-Lex/ST/TI URL fetch, Gemini API, production integration, `main.py`, production `run.yml`, v2 prompt/contract or main branch change.
+- E3 real official-source fetch/extraction fidelity remains NOT RUN and requires separate explicit user approval.
+- Details: `docs/PHASE_E_IMPLEMENTATION.md`.
