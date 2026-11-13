@@ -417,3 +417,14 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 - [ ] P3 warning-only 23개에 대해 모델 호출 실패가 성공 archive로 처리되는지 운영 실패 경로 대조.
 - [ ] 다음 실행에서 main HEAD 이후 신규 보고서만 대기열에 추가하고 SHA/path 기준으로 중복 제거.
 - 보호 경계 유지: main.py, Gemini prompt, 운영 자동화 코드, .github/workflows/run.yml, main branch 변경 금지; merge/rebase/sync 금지.
+
+
+## 2026-11-13 — Phase C implementation plan
+- [x] Phase C design and implementation explicitly approved by user.
+- [x] Add in-memory provenance-bound Evidence Bundle builder with strict source/raw/extraction hash checks and bounded excerpts.
+- [x] Add isolated CRA report v3 validator/renderer, JSON Schema v3 and Gemini Prompt v3.
+- [x] Add bundle/contract mock regression tests.
+- [ ] Confirm exact final commit GitHub Actions full unittest result and strict archive audit result.
+- [ ] Re-read final diff and confirm protected files unchanged.
+- [ ] Record exact verified CI commit/run and update Phase C completion status.
+- [ ] Phase D exact quote/context validator and human review design remains separate; not started.
