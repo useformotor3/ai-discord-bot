@@ -677,7 +677,7 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 
 ## 2026-11-13 P0 — #8–#52 파일 중심 Claim ID 연결
 
-- [x] #8–#52 총 45개 원본 보고서의 날짜+경로+blob SHA+판정+중심 정정 요약을 Claim Evidence Ledger에 고유 ID로 등록.
+- [x] #8–#62 총 55개 원본 보고서의 날짜+경로+blob SHA+판정+중심 정정 요약을 Claim Evidence Ledger에 고유 ID로 등록.
 - [x] #8–#12의 상세 감사 파일을 재발견하고 원본 경로/SHA/판정 확인.
 - [ ] 각 보고서의 개별 법적 주장·Raw Text Quote 블록을 원자 주장 ID로 분해하고 정확한 조항·원문·정정·반증과 연결.
 - [ ] 감사 결과와 제1권·제2권·SOP·추적성 매트릭스의 개별 요구사항 표현을 문장/조항 단위로 교차 대조.
@@ -763,7 +763,7 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 ## 2026-11-13 P0 — #33–#37 원자 주장 분해
 
 - [x] #33–#37 main 원본 경로/blob SHA 재확인.
-- [x] 개별 주장·인용 31개를 원자 Claim ID로 분해해 Ledger에 연결.
+- [x] 개별 주장·인용 33개를 원자 Claim ID로 분해해 Ledger에 연결.
 - [x] Commission Implementing Regulation (EU) 2025/2392로 Annex III category technical descriptions/core functionality 추가 검증.
 - [x] Article 32/Annex VIII conformity assessment, Article 28 DoC, Article 30 CE, Article 31/Annex VII technical documentation 정정.
 - [ ] 다음 배치 #38–#42 원자 Claim ID 분해.
@@ -790,7 +790,7 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 ## 2026-11-13 P0 — #48–#52 원자 주장 분해
 
 - [x] #48–#52 main 원본 경로/blob SHA 재확인.
-- [x] 개별 주장·인용 31개를 원자 Claim ID로 분해해 Ledger에 연결.
+- [x] 개별 주장·인용 36개를 원자 Claim ID로 분해해 Ledger에 연결.
 - [x] Article 14(8) machine-readable notice, Part II(4) disclosure, CVD/contact/free update, Article 13(5)–(7) supply-chain component obligations 정정.
 - [x] file-level 3 CONFLICT / 2 PARTIALLY_VERIFIED와 개별 claim 상태 구분.
 - [ ] 다음 배치 #53–#57 원자 Claim ID 분해.
