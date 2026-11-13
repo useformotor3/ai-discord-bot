@@ -1,0 +1,112 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "enum": [
+        "cra-research-v3"
+      ]
+    },
+    "topic": {
+      "type": "string"
+    },
+    "summary_ko": {
+      "type": "string"
+    },
+    "claims": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 50,
+      "items": {
+        "type": "object",
+        "properties": {
+          "claim_id": {
+            "type": "string"
+          },
+          "claim_type": {
+            "type": "string",
+            "enum": [
+              "ASSUMPTION",
+              "INTERPRETATION",
+              "LAW_REQUIREMENT",
+              "PRODUCT_SPECIFIC_FACT",
+              "RISK_BASED_DESIGN_OPTION"
+            ]
+          },
+          "claim_text_ko": {
+            "type": "string"
+          },
+          "legal_location_candidate": {
+            "type": "string"
+          },
+          "evidence_ids": {
+            "type": "array",
+            "maxItems": 10,
+            "uniqueItems": true,
+            "items": {
+              "type": "string"
+            }
+          },
+          "legal_location_status": {
+            "type": "string",
+            "enum": [
+              "UNVERIFIED"
+            ]
+          },
+          "product_applicability": {
+            "type": "string",
+            "enum": [
+              "UNVERIFIED"
+            ]
+          },
+          "limitations": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "claim_id",
+          "claim_type",
+          "claim_text_ko",
+          "legal_location_candidate",
+          "evidence_ids",
+          "legal_location_status",
+          "product_applicability",
+          "limitations"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "counterchecks": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "overall_status": {
+      "type": "string",
+      "enum": [
+        "UNVERIFIED"
+      ]
+    }
+  },
+  "required": [
+    "schema_version",
+    "topic",
+    "summary_ko",
+    "claims",
+    "counterchecks",
+    "limitations",
+    "overall_status"
+  ],
+  "additionalProperties": false
+}
