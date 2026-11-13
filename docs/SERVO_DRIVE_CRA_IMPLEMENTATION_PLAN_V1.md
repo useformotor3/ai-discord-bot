@@ -289,3 +289,13 @@ Annex II의 1~9번을 제품 사용자 설명서/온라인 문서에 매핑한�
 - 시험 대장 TST-LOG-01/02는 설계 선택의 무결성·포화 동작 검증용이다. PASS는 CRA 전체 적합성 판정이 아니다.
 
 제품별 적용성, 로그 이벤트 목록, 보존 기간, 실제 MCU/Flash 자원은 SKU·제품 구조·위험평가 자료가 없어 UNVERIFIED다.
+
+## Product Classification / Conformity Assessment — 승인 전 판정 금지
+
+1. 제품 단위 분류와 부품 단위 분류를 구분한다. Servo drive host product, separately supplied network interface, MCU/secure element는 판매/공급 경계와 core functionality에 따라 각각 판단한다.
+2. Article 7(1) 및 Implementing Regulation (EU) 2025/2392의 technical description을 사용한다. 단순히 Ethernet/Fieldbus 기능이 있다는 이유만으로 servo drive 전체를 Class I로 지정하지 않는다.
+3. Class I 후보는 physical/virtual network interface 등 Annex III category의 core functionality를 실제로 수행하는지 확인한다. Class II 후보는 hypervisor/container runtime, firewall/IDS/IPS, tamper-resistant processor/controller 등 해당 기술 설명과 대조한다.
+4. Article 32 및 Annex VIII에 따라 conformity route를 결정한다: A=internal control, B=EU-type examination, C=internal production control, H=full quality assurance. Class I 조건부 경로는 Article 32(2), Class II는 (3)을 적용한다.
+5. DoC Article 28, CE Article 30, technical documentation Article 31/Annex VII로 추적한다.
+6. 제품 SKU, core functionality, 네트워크 인터페이스 독립 공급 여부, MCU 보안 기능/주문 코드가 확보되기 전까지 Class I/II 및 conformity route는 UNVERIFIED. Notified Body 필요 여부를 추측하지 않는다.
+7. 이 분류는 법적·상업적 영향이 크므로 최종 제품 자료와 공식 원문 검토 후 별도 의사결정 기록 및 전문가 검토를 거친다.
