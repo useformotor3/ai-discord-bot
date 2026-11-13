@@ -125,4 +125,4 @@
 | TR-12A | CRA-REQ-SECURE-DATA-ERASURE-001 | Storage inventory, TST-ERASE-01/03, erase/recovery evidence |
 | TR-12B | CRA-REQ-SECURE-DATA-TRANSFER-001 | Transfer flow, destination authentication, TST-ERASE-02 |
 | TR-12C | CRA-REQ-USER-INSTRUCTIONS-001 | Annex II(8)(d) Korean decommissioning guide, TST-ERASE-04 |
-| TR-11 | CRA-REQ-SECURITY-LOGGING-001 | TST-LOG-01/02, event taxonomy, bounded queue/overflow test |
+| TR-11A | CRA-REQ-SECURITY-LOGGING-001 | TST-LOG-01/02, event taxonomy, bounded queue/overflow test |
