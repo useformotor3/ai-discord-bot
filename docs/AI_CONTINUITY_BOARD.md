@@ -313,3 +313,12 @@
 - 최신 감사: #53–#57 완료, 1 CONFLICT / 4 PARTIALLY_VERIFIED / 0 VERIFIED.
 - #38의 Annex I Part I(2)(m) 누락을 후속 검토에서 발견해 PARTIALLY_VERIFIED로 정정. 누적 #8–#57: 50건, 40 CONFLICT / 10 PARTIALLY_VERIFIED / 0 VERIFIED, direct quote reuse 0/50.
 - 다음 작업: #8–#57 원자 주장·인용 분해와 상위 문서 전수 대조. 이후 main-only #58–#62 감사.
+
+
+## #8–#57 원본 Claim ID 확장 후 기준선 갱신
+
+- Claim Evidence Ledger의 제31절 제목/범위를 #13–#57로 확장하고, #53–#57 다섯 건의 원본·SHA·파일 중심 claim ID를 확인했다.
+- #8–#57 총 50개 보고서에 날짜 포함 파일 중심 Claim ID 50개를 연결했다. 개별 하위 주장·인용 블록의 원자 분해는 별도 미완료.
+- Ledger 확장 commit: `e1b9ee24f1fe185a0fe8e9945a59836ba74246c7`. 이 commit은 docs/CLAIM_EVIDENCE_LEDGER.md만 변경했고 exact HEAD CI runs/status는 0/0으로 미실행·미확인.
+- main #112와 비교: diverged, ahead 788 / behind 403, merge base `b425b6db591e34abe003522157cf97ecf2240d9f`.
+- 이 continuity board 갱신이 다음 docs-only commit이므로 새 exact HEAD/CI는 갱신 직후 다시 확인한다.
