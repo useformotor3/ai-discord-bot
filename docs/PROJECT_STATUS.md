@@ -676,7 +676,7 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - 단일 인수인계/실행 기준: [AI_CONTINUITY_BOARD.md](AI_CONTINUITY_BOARD.md). 신규 세션은 반드시 읽고 현재 Git 상태와 대조한다.
 - 범위 명확화: 현재 CRA 서보 드라이브 프로젝트 전용. SIL 3 벤치마킹은 범위 밖이며, 과거 로그의 관련 표현은 현재 목표가 아니다.
 - 결과물 우선: 매 작업에 가능하면 보고서/표/설계/claim audit 산출물을 남긴다. 코드 수정은 금지하지 않으며, 결과물의 신뢰성·재현성 향상에 필요하면 수행한다.
-- main 최신 확인: report #119, HEAD `6491a5db6ea35ea97a6d97e85bac43f9a3cf41c0`; state count 119, history.json 1,394 entries. Archive tree count는 미재확인. main read-only.
+- main 최신 확인: report #125, HEAD `92e8ca7aa4a86b38627a1d8e9535e5b0463a8392`; state count 125 (daily counter), history.json 1,400 entries. main read-only.
 - main reports #8–#62 수동 감사 완료: 55건, 40 CONFLICT / 15 PARTIALLY_VERIFIED / 0 VERIFIED, direct quote reuse 0/55. 연속·비무작위 표본이며 전체 archive 오류율이 아니다.
 - 최신 실질 산출물: Claim Evidence Ledger 345개 원자 주장 및 46개 Canonical ID 매핑. 다음 P0는 제1권·제2권·SOP·매트릭스·시험 대장 전수 대조 후 #63–#67 감사.
 - Phase D hardening final code/test 140/140 및 archive 990/990 성공; 문서 최신화 HEAD도 CI #43384628893에서 140/140 및 990/990 성공. 최신 결과/한계는 AI_CONTINUITY_BOARD와 SESSION_LOG 참조.
@@ -838,7 +838,7 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 ## 2026-11-13 사후 main 기준선 갱신 — report #119
 
 - #58–#62 감사 시점 main 기준선은 report #118 / history 1,393 entries였다.
-- 문서 통합 후 main 자동 아카이브가 report #119를 추가했다: HEAD \`6491a5db6ea35ea97a6d97e85bac43f9a3cf41c0\`, state count 119, history 1,394 entries.
+- 문서 통합 후 main 자동 아카이브가 report #119를 추가했다: HEAD \`6491a5db6ea35ea97a6d97e85bac43f9a3cf41c0\`, state count 125, history 1,394 entries.
 - #119는 아직 감사하지 않았다. 다음 main-only 배치는 #63–#67이며 시작 시 최신 main HEAD/state/history를 다시 확인한다.
 - main과 작업 브랜치는 diverged 상태다. ahead/behind 수치는 작업 중 계속 바뀌므로 다음 세션에서 동적으로 재조회한다. merge/rebase/sync 금지.
 - 이 기록은 #58–#62 원본 감사 기준선(#118)을 바꾸지 않는다.
@@ -926,7 +926,7 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 
 ## 2026-11-13 authoritative snapshot — #8–#62 audit and claim normalization
 
-- main latest observed: report #119; HEAD \`6491a5db6ea35ea97a6d97e85bac43f9a3cf41c0\`; state count 119; history.json 1,394 entries. Archive tree count was not rechecked. main remains read-only.
+- main latest observed: report #119; HEAD \`6491a5db6ea35ea97a6d97e85bac43f9a3cf41c0\`; state count 119; history.json 1,400 entries. Archive tree count was not rechecked. main remains read-only.
 - main-only audit scope #8–#62: 55 consecutive, non-random reports; file-level results **40 CONFLICT / 15 PARTIALLY_VERIFIED / 0 VERIFIED**; direct quote reuse **0/55**. This is not a statistical error rate for the full archive.
 - Claim Evidence Ledger: 55 file-level source records + 345 atomic claims = **400 unique IDs**, duplicate IDs 0. All 345 atomic claims have one or more Canonical IDs. Canonical register defines 46 requirements; 43 are referenced by legacy atomic claims, and 3 are forward-mapped to matrix requirements.
 - #8–#57 (50 reports) and #58–#62 (5 reports) have completed atomic decomposition. Individual legal facts marked VERIFIED do not promote a conflicting source file to VERIFIED.
@@ -940,3 +940,13 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - Added TST-ERASE-01..04 (secure erase, secure transfer where supported, interruption/failure recovery, user decommissioning instructions). All NOT_RUN.
 - TST-LOG-01/02 remain the logging evidence; both NOT_RUN. TST-NVM-01..03 are not erase substitutes.
 - Threat model uses AST-11 / TH-19; implementation plan and hardware architecture include storage inventory, bounded logging, and secure data lifecycle design candidates.
+
+## 2026-11-13 current Git baseline — main #125 / work branch divergence
+
+- main HEAD: report #125, SHA \`92e8ca7aa4a86b38627a1d8e9535e5b0463a8392\`; state.json count 125 (daily counter), history.json 1,400 entries; current main tree \`7679729e1b128eacf26034346dafb29aa8da610b\`.
+- Work branch \`cra-project-foundation\` HEAD: \`ced168745cd19400ba29131a495c3bf5c3f924eb\`.
+- Git compare main..work branch: **diverged**, ahead 968 / behind 416, merge base \`b425b6db591e34abe003522157cf97ecf2240d9f\`. Do not merge, rebase, sync or write to main. This divergence includes historical branch differences and is not created by this documentation-only continuation.
+- Main archive source revalidation: all 55 audited file paths and blob SHAs for reports #8–#62 match the current main tree (55/55, missing 0, mismatches 0).
+- Latest push CI on current work-branch HEAD: run 43408438728 SUCCESS; 140 tests passed; strict archive audit 990/990, unique paths 990, missing/orphan/duplicate/malformed 0, consistent=true. The branch workflow's state.count=3 is a daily counter, not an archive total. No PR-triggered workflow run and no PR was created.
+- Current branch commits in this continuation are documentation-only; no additional production code changes were made here. Existing branch-vs-main code differences remain unmerged and must be reviewed separately.
+
