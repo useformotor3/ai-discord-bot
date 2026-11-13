@@ -534,3 +534,10 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - Protected blob check: main.py main `86a7731aad5de8d75581fc953bcea2c44adf2f2b`, work `997952702fdd9d2472468b82e6efdd65b2bb4376` (pre-existing approved work-branch implementation; unchanged by this run); `.github/workflows/run.yml` both branches `65a8cadc8eac593f551e390698e367b1d161ecf1`.
 - The work branch also received 10 concurrent Phase C-related commits during this run, adding/updating `cra_report_contract_v3.py`, `evidence_bundle.py`, `prompts/CRA_RESEARCH_PROMPT_V3.txt`, `schemas/cra_research_v3.schema.json`, and two test files. This audit run did not create, modify, review, or infer approval for those changes; no protected production file was changed by this run.
 - Documentation-only audit changes in this run. No tests executed and no CI PASS claimed.
+
+
+## Main report #7 — 2026-11-13
+- Current main HEAD `bd50257a80c0524402c70a7da420043ecfa0f490` (Auto-archive: Research report #7); archive `research_archive/2026-11-13_003055.md`, commit `bd50257a80c0524402c70a7da420043ecfa0f490`, original Date `2026-11-13 00:30:55` (timezone unspecified).
+- Since baseline report #128, main now has 167 new archive reports (#129–#288 and #1–#7), plus `history.json` and `state.json` updates. State count is 7.
+- Queue verified at 167 unique entries: P0 111 / P1 33 / P2 0 / P3 23. Report #7 is P1 and remains NEW / NOT_YET_AUDITED; file verdict UNVERIFIED.
+- Preliminary EUR-Lex comparison flags a non-verbatim Annex I Part I(2)(b) quote and Article 13(2) misreference in #7. Full Pass A/B/C is pending; see queue entry for the precise source note.
