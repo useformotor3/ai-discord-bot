@@ -367,3 +367,10 @@
 - 파일 단위 판정 5 CONFLICT / direct quote reuse 0/5 유지. 개별 법령 사실 VERIFIED와 원본 파일 전체 CONFLICT를 구분.
 - secure default/access/attack surface, CVD/contact/free updates, Class I/II product classification 및 구현 선택을 분리.
 - 다음 원자 분해 대상 #28–#32.
+
+## 2026-11-13 P0 진행 — #28–#32 원자 Claim ID 분해
+
+- #28–#32 원본 경로/blob SHA 재확인, Ledger에 원자 Claim ID 25개 추가.
+- 파일 단위 판정 5 CONFLICT / direct quote reuse 0/5 유지. 개별 법령 사실 VERIFIED와 원본 파일 전체 CONFLICT를 구분.
+- support period/update availability/CVD/contact/free updates/Article 14 신고 범위/Annex VII technical documentation을 각각 분리.
+- 다음 원자 분해 대상 #33–#37.
