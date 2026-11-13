@@ -485,3 +485,15 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 - [x] `CRA_ARCHIVE_AUDIT_QUEUE.md`에 #8–#12 판정·원본 SHA·commit·후속 교정 규칙 기록.
 - [ ] main #13–#27 queue 등록 및 P0 우선 Pass A/B/C 감사. 현재 관찰된 main tip은 report #27, commit `c7eb7296671541c1ad2268cdcee80885091f230c`.
 - 제품 적용성은 SKU/의도된 용도/연결성/실제 ST MCU 부품번호 미확정으로 계속 UNVERIFIED.
+
+
+## Phase E status update — 2026-11-13 (E1/E2 complete)
+- [x] User approved E1+E2 only; implemented `source_transport.py` standard-library IP-pinned HTTPS transport and connected it to `source_evidence.py`.
+- [x] Validates every A/AAAA result; any non-public/invalid item fails closed. TCP uses only the validated literal IP set; TLS SNI/certificate hostname checks and Host header retain the allowlisted DNS hostname.
+- [x] Redirects are manual and each hop is revalidated. Only TCP connect failures can fall back to another IP in the same validated answer set; TLS/read/protocol errors do not fallback.
+- [x] Response handling hardened for Content-Encoding, malformed/negative/empty Content-Length and truncated body.
+- [x] E2 offline tests cover IPv4/IPv6 literal routing, TLS hostname/trust, connect/read timeouts, pinned fallback, DNS answer validation, redirects, body/MIME/status/size and Phase A–D regressions.
+- [x] Exact code/test HEAD `d355aefb74f2b1b9159de98827fac8600fb68d4c` CI run [#43367432101](https://github.com/useformotor3/ai-discord-bot/actions/runs/43367432101): 126 tests OK; strict archive 990/990, consistent=true.
+- [x] Protected production files/workflows and main remain unchanged. No real URL fetch, Gemini API, production integration, or cost incurred.
+- [ ] E3 real EUR-Lex + manufacturer source fetch/extraction fidelity: separate explicit user approval required.
+- Details: `docs/PHASE_E_IMPLEMENTATION.md` and `docs/PHASE_E_CONTROLLED_FETCH_AND_EXTRACTION_DESIGN.md`.
