@@ -374,3 +374,11 @@
 - 파일 단위 판정 5 CONFLICT / direct quote reuse 0/5 유지. 개별 법령 사실 VERIFIED와 원본 파일 전체 CONFLICT를 구분.
 - support period/update availability/CVD/contact/free updates/Article 14 신고 범위/Annex VII technical documentation을 각각 분리.
 - 다음 원자 분해 대상 #33–#37.
+
+## 2026-11-13 P0 진행 — #33–#37 원자 Claim ID 분해 및 category check
+
+- #33–#37 원본 경로/blob SHA 재확인, Ledger에 원자 Claim ID 31개 추가.
+- 파일 단위 판정 5 CONFLICT / direct quote reuse 0/5 유지.
+- EUR-Lex Implementing Regulation (EU) 2025/2392 추가 확인: important product classification은 Annex III technical description/core functionality 기준. 내장 네트워크 인터페이스만으로 host servo drive 자동 Class I/II가 되지 않는다.
+- Conformity assessment Article 32/Annex VIII; DoC Article 28; CE Article 30; technical documentation Article 31/Annex VII로 정정.
+- 실제 서보 드라이브 Class I/II 적용성은 UNVERIFIED. 다음 원자 분해 대상 #38–#42.
