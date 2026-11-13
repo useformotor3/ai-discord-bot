@@ -160,5 +160,5 @@ E3 실제 fetch 승인을 받은 경우 추가 변경 후보:
 - OCR: 미지원.
 - 제품별 법령 적용성/MCU 부품 기능: 기존 UNVERIFIED 유지.
 
-**요청하는 승인 범위는 E1 + E2의 작업 브랜치 전용 구현 및 오프라인 테스트뿐이다.**
-실제 URL 접속(E3), Gemini API 호출, production integration, protected file 변경, 비용 발생, main merge/rebase/sync는 이 승인 요청에 포함되지 않는다. E1/E2 구현과 CI 검증 결과를 보고한 뒤 E3는 별도 승인받는다.
+**E1 + E2 작업 브랜치 전용 구현 및 오프라인 테스트는 사용자 승인 후 완료되었다.**
+실제 URL 접속(E3), Gemini API 호출, production integration, protected file 변경, 비용 발생, main merge/rebase/sync는 이 승인 요청에 포함되지 않는다. E1/E2 구현 및 CI 검증 결과는 `PHASE_E_IMPLEMENTATION.md`에 기록했다. E3는 별도 승인받는다.
