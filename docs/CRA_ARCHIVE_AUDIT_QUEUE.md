@@ -2421,3 +2421,10 @@ Batch result: 5/5 CONFLICT, 0 PARTIALLY_VERIFIED, 0 VERIFIED; 0/5 Raw Text Quote
 - 감사 문서화 도중 main 자동 아카이브가 report #119를 추가했다: HEAD \`6491a5db6ea35ea97a6d97e85bac43f9a3cf41c0\`, state count 119, history 1,394 entries.
 - #119는 #58–#62 감사 범위에 포함되지 않았으며 아직 감사하지 않았다. 다음 배치는 #63–#67이다.
 - 다음 배치 시작 시 main HEAD/state/history를 다시 읽고 일일 count와 archive 경로를 재매핑한다. main은 read-only.
+
+## 2026-11-13 — #8–#12 원자 주장 분해 완료
+
+- 기존 #8–#12 파일 단위 감사는 5 CONFLICT / direct quote reuse 0/5.
+- 원본 감사 보고서와 main archive blob SHA를 다시 대조하고 Claim Evidence Ledger에 원자 Claim ID 31개를 추가했다.
+- 법령 원칙의 일부 개별 claim은 VERIFIED지만, 원본 파일 단위 판정은 변경하지 않는다.
+- 다음 원자 분해 배치: #13–#17. 이후 #18–#57 순으로 진행하며, 상위 문서와 문장 단위 대조를 병행한다.
