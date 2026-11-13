@@ -284,3 +284,11 @@
 - Latest checked main HEAD: `173c4d29ee62c0e96cfadf93824d6807ef2d148a` (report #6).
 - Since audited baseline #128, 166 new reports (#129–#288 and #1–#6) are registered in [docs/CRA_ARCHIVE_AUDIT_QUEUE.md](docs/CRA_ARCHIVE_AUDIT_QUEUE.md) on `cra-project-foundation` only.
 - Next session: read queue and audit P0 items with Pass A/B/C; do not treat queue registration or official-source baseline pre-check as report verification.
+
+
+## Phase C — Evidence Bundle v3 (2026-11-13)
+- Added isolated Phase C implementation on `cra-project-foundation`: [Evidence Bundle](evidence_bundle.py), [v3 contract](cra_report_contract_v3.py), [JSON Schema](schemas/cra_research_v3.schema.json), [Gemini Prompt](prompts/CRA_RESEARCH_PROMPT_V3.txt).
+- Bundle is in-memory only; no full source document is persisted. The builder verifies registry metadata, successful fetch, same-host HTTPS, MIME, byte count, raw/extracted hashes and bounded excerpt integrity.
+- v3 claims reference existing `evidence_ids`; renderer obtains citation metadata/excerpts from the bundle. Unknown IDs and any VERIFIED/PARTIALLY_VERIFIED promotion are rejected.
+- Added dedicated bundle and v3 contract tests. CI/full regression status is pending exact run confirmation.
+- No changes to v2, `main.py`, production workflow or `main` branch; no live URL/Gemini/API calls.
