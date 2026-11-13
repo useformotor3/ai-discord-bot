@@ -1022,6 +1022,6 @@ Batch direct quote reuse: **0/5**. Per-file quote counts are not inferred where 
 
 ## 2026-11-13 current main source revalidation — report #125
 
-- Current main HEAD: 92e8ca7aa4a86b38627a1d8e9535e5b0463a8392; main tree: 7679729e1b128eacf26034346dafb29aa8da610b; history.json: 1,400 entries.
+- Current main HEAD: 92e8ca7aa4a86b38627a1d8e9535e5b0463a8392; main tree: 7679729e1b128eacf26034346dafb29aa8da610b; archive tree/history.json: 1,400/1,400, unique paths 1,400, missing/orphan/duplicate 0.
 - All 55 file-level source paths and recorded blob SHAs for reports #8–#62 were compared against the current main tree: **55/55 match; missing 0; mismatches 0**.
 - This validates the immutability/current presence of the audited source files, not the correctness of every legal claim or product applicability.
