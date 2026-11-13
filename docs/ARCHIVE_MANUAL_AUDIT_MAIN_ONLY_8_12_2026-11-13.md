@@ -137,7 +137,7 @@ This is a time-sequenced, non-random five-report batch. It is not a representati
 
 ## 원자 Claim ID 연결 — #8–#12
 
-- #8–#12에 대해 [Claim Evidence Ledger](CLAIM_EVIDENCE_LEDGER.md)에 원자 Claim ID 31개를 등록했다.
+- #8–#12에 대해 [Claim Evidence Ledger](CLAIM_EVIDENCE_LEDGER.md)에 원자 Claim ID 32개를 등록했다.
 - VERIFIED는 해당 법령 문장만 확인했다는 뜻이며 제품별 적용성/제품 적합성 판정이 아니다.
 - 파일 단위 결과는 그대로 5 CONFLICT / 0 PARTIALLY_VERIFIED / 0 VERIFIED, direct quote reuse 0/5다.
 - 주요 반증: secure-by-default는 Annex I Part I(2)(b), access control은 Part I(2)(d), attack-surface limitation은 Part I(2)(j); Class II는 Annex III의 별도 분류. Part II는 vulnerability handling requirements다.
