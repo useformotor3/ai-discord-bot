@@ -167,7 +167,7 @@ class QuoteValidatorTests(unittest.TestCase):
             "countercheck": "COMPLETED", "review_decision": "ACCEPT_AS_CANDIDATE",
             "countercheck_target": "The exact claim wording and its legal scope are checked.",
             "counter_evidence_examined": "Adjacent paragraphs, exceptions and referenced definitions were examined.",
-            "countercheck_conclusion": "No contrary provision was found in the examined source context."
+            "countercheck_conclusion": "No contrary provision was found in the examined source context.",
             "reviewer_role": "Independent technical/legal reviewer",
             "reviewer_identifier": "reviewer-1",
             "reviewed_at_utc": datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z"),
