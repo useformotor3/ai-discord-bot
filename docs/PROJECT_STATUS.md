@@ -834,3 +834,11 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - main과 작업 브랜치 compare: diverged, work ahead 791 / behind 409, merge base \`b425b6db591e34abe003522157cf97ecf2240d9f\`.
 - 이번 변경은 문서 전용이다. 코드 테스트 결과 또는 CI PASS로 표현하지 않는다. exact documentation HEAD의 Actions/status는 별도 확인 전까지 미확인.
 - 다음 P0: #8–#57 개별 주장·인용 원자 분해와 제1권/제2권/SOP/매트릭스 전수 대조. 이후 main-only #63–#67.
+
+## 2026-11-13 사후 main 기준선 갱신 — report #119
+
+- #58–#62 감사 시점 main 기준선은 report #118 / history 1,393 entries였다.
+- 문서 통합 후 main 자동 아카이브가 report #119를 추가했다: HEAD \`6491a5db6ea35ea97a6d97e85bac43f9a3cf41c0\`, state count 119, history 1,394 entries.
+- #119는 아직 감사하지 않았다. 다음 main-only 배치는 #63–#67이며 시작 시 최신 main HEAD/state/history를 다시 확인한다.
+- main과 작업 브랜치는 diverged 상태다. ahead/behind 수치는 작업 중 계속 바뀌므로 다음 세션에서 동적으로 재조회한다. merge/rebase/sync 금지.
+- 이 기록은 #58–#62 원본 감사 기준선(#118)을 바꾸지 않는다.
