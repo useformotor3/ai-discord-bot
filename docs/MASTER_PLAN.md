@@ -449,3 +449,10 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 - 79/79 unit tests passed. Strict archive audit: archive/history 990/990; missing/orphan/duplicate/malformed = 0; consistent=true.
 - Protected work-branch files unchanged: main.py `997952702fdd9d2472468b82e6efdd65b2bb4376`; run.yml `65a8cadc8eac593f551e390698e367b1d161ecf1`; v2 prompt `14e9ce8618bc447a371dc28fc725cda3636470c5`; v2 contract `e0c1f1db353f664ae8c817c2f335d3a6efef4076`.
 - Phase C implementation and mock/fixture regression validation complete. No live source fetch, Gemini API invocation, production integration or protected branch sync.
+
+
+## Phase D — exact quote / locator validation design (2026-11-13)
+- [x] Read Phase B extraction structures, Phase C bundle/contract and verification protocol.
+- [x] Prepare design-only proposal: deterministic bundle rebuild, locator provenance classes, bounded context packet, human review records and fail-closed statuses.
+- [ ] User review/approval of Phase D implementation scope.
+- [ ] Implementation not started. No changes to v2, `main.py`, production workflow, Phase C schema or runtime.
