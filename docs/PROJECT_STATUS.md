@@ -650,3 +650,13 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - 교차검증 미완료 자료는 VERIFIED로 승격하지 않는다.
 - C1+C2 CI code/test SHA `0ee797dcc3e7d52b3167c8f11bf373a283f7a480`: 135 tests OK, strict archive 990/990 consistent.
 - Documentation CI run `43380949421` on SHA `1c298b28f80ea06dc3ee7859d009fc59f6c2b926`: success.
+
+
+## 2026-11-13 Phase D hardening — implementation update
+
+- Scope: Phase D validator, its tests, Phase D implementation note, this status board, master plan, session log and START_HERE only.
+- Added bundle-hash + Evidence ID inventory linkage between quote validation and human-review packet construction; inconsistent or incomplete inventories fail closed.
+- Added per-claim evidence status. Any non-`EXACT_MATCH` evidence blocks candidate-support eligibility in the review packet.
+- Replaced free-form counter-evidence with structured countercheck target / evidence examined / conclusion fields and minimum-length checks; rejected future UTC timestamps.
+- Reviewer identity/independence are explicitly not machine-authenticated. Hashes are not signatures.
+- Exact-head tests, strict archive audit and GitHub Actions result: pending. Do not treat the earlier Phase D CI as verification of this new HEAD.

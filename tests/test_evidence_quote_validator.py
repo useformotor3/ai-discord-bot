@@ -165,9 +165,12 @@ class QuoteValidatorTests(unittest.TestCase):
             "claim_id": "C1", "quote_exactness": "PASS", "locator_match": "PASS",
             "context_and_exception_check": "PASS", "claim_support": "SUPPORTED",
             "countercheck": "COMPLETED", "review_decision": "ACCEPT_AS_CANDIDATE",
-            "counter_evidence": "Checked adjacent paragraphs and exceptions.",
+            "countercheck_target": "The exact claim wording and its legal scope are checked.",
+            "counter_evidence_examined": "Adjacent paragraphs, exceptions and referenced definitions were examined.",
+            "countercheck_conclusion": "No contrary provision was found in the examined source context."
             "reviewer_role": "Independent technical/legal reviewer",
-            "reviewer_identifier": "reviewer-1", "reviewed_at_utc": "2026-11-13T00:00:00Z",
+            "reviewer_identifier": "reviewer-1",
+            "reviewed_at_utc": datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z"),
             "protocol_version": "VERIFICATION_PROTOCOL_V1",
             "rationale": "Exact excerpt and locator checked against official source.",
         })
@@ -181,7 +184,7 @@ class QuoteValidatorTests(unittest.TestCase):
 
     def test_missing_human_field_rejected(self):
         record = self._valid_review()
-        del record["counter_evidence"]
+        del record["countercheck_target"]
         with self.assertRaisesRegex(QuoteValidationError, "REVIEW_FIELDS_INVALID"):
             validate_human_review_record(record)
 
@@ -220,6 +223,41 @@ class QuoteValidatorTests(unittest.TestCase):
         duplicate = {"claims": self.report["claims"] * 2}
         with self.assertRaisesRegex(QuoteValidationError, "CLAIM_EVIDENCE_REFERENCE_INVALID"):
             build_human_review_packet(result, self.bundle, duplicate)
+
+    def test_review_packet_rejects_validation_result_from_other_bundle(self):
+        result = validate_evidence_quotes(self.fetch, self.document, self.bundle, self.report)
+        result["bundle_sha256"] = "0" * 64
+        with self.assertRaisesRegex(QuoteValidationError, "VALIDATION_BUNDLE_HASH_MISMATCH"):
+            build_human_review_packet(result, self.bundle, self.report)
+
+    def test_review_packet_rejects_incomplete_evidence_inventory(self):
+        result = validate_evidence_quotes(self.fetch, self.document, self.bundle, self.report)
+        result["evidence"] = []
+        with self.assertRaisesRegex(QuoteValidationError, "VALIDATION_EVIDENCE_ID_SET_MISMATCH"):
+            build_human_review_packet(result, self.bundle, self.report)
+
+    def test_claim_level_status_blocks_non_exact_evidence(self):
+        result = validate_evidence_quotes(self.fetch, self.document, self.bundle, self.report)
+        result["evidence"][0]["status"] = "MISMATCH"
+        result["status"] = "MISMATCH"
+        packet = build_human_review_packet(result, self.bundle, self.report)
+        self.assertEqual(packet["claim_evidence_status"]["C-001"]["status"], "BLOCKED")
+        self.assertFalse(packet["items"][0]["claim_support_eligible"])
+
+    def test_generic_countercheck_text_rejected(self):
+        record = self._valid_review()
+        record["counter_evidence_examined"] = "reviewed"
+        with self.assertRaisesRegex(QuoteValidationError, "COUNTERCHECK_DETAIL_INSUFFICIENT"):
+            validate_human_review_record(record)
+
+    def test_future_review_timestamp_rejected(self):
+        record = self._valid_review()
+        record["reviewed_at_utc"] = (
+            datetime.now(timezone.utc).replace(microsecond=0)
+            + __import__("datetime").timedelta(hours=1)
+        ).isoformat().replace("+00:00", "Z")
+        with self.assertRaisesRegex(QuoteValidationError, "REVIEW_TIMESTAMP_INVALID"):
+            validate_human_review_record(record)
 
     def test_chunked_excerpt_locator_rebuilds(self):
         altered = copy.copy(self.document)

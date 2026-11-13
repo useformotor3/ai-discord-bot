@@ -38,3 +38,13 @@ A candidate acceptance record requires quote, locator, context/exception and cla
 - Strict archive audit in first CI: archive/history 990/990; missing/orphan/duplicate/malformed = 0; consistent=true.
 - Protected-file SHA recheck: unchanged: `main.py` `997952702fdd9d2472468b82e6efdd65b2bb4376`; production `run.yml` `65a8cadc8eac593f551e390698e367b1d161ecf1`; v2 prompt `14e9ce8618bc447a371dc28fc725cda3636470c5`; v2 contract `e0c1f1db353f664ae8c817c2f335d3a6efef4076`. Phase C bundle/v3 contract/schema SHAs also unchanged.
 - Live source fetch and Gemini API compatibility: not tested; not in scope.
+
+
+## Phase D hardening addendum — 2026-11-13
+
+- Human-review packet creation now checks that the supplied validation result's deterministic bundle hash and sorted Evidence ID inventory match the exact bundle supplied to the packet builder. It also rejects missing, duplicate, unknown or inconsistent evidence-status inventories.
+- The validation result and packet expose claim-level evidence status separately. A claim is marked `BLOCKED` and `claim_support_eligible=false` if any referenced evidence is not `EXACT_MATCH`; this is a review-packet gate, not an automatic legal or semantic approval.
+- Countercheck records now require separate target, counter-evidence examined, and conclusion fields; each must contain at least 20 non-whitespace characters. This screens out generic placeholders but cannot prove that the reviewer actually performed the work.
+- Future UTC review timestamps are rejected.
+- Reviewer identity and independence remain **not machine-authenticated**. Deterministic hashes are consistency checks, not signatures or authenticity proofs; a caller able to rewrite the entire result can also recompute an unsigned hash.
+- Verification for this addendum is pending exact-head CI. No live source fetch, Gemini API, OCR, production integration, protected-file edit, or main-branch operation is included.

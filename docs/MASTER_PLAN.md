@@ -558,3 +558,13 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 - 2차 검증이 미완료면 VERIFIED 금지; PARTIALLY_VERIFIED / CONFLICT / UNVERIFIED로 유지한다.
 - PDF 핵심 인용·표·도면은 페이지 이미지 시각 대조를 수행한다.
 - Bundle의 IDENTITY_AND_REVISION_MATCHED는 문자열 일치일 뿐 VERIFIED가 아니다.
+
+
+## Phase D hardening — 2026-11-13
+
+1. Close validation-result/bundle mix-up risk with deterministic bundle fingerprint and complete Evidence ID inventory checks.
+2. Carry claim-level machine evidence status into review packets; block candidate-support eligibility unless all linked evidence is EXACT_MATCH.
+3. Require structured countercheck details and reject future UTC review timestamps.
+4. Preserve the boundary that reviewer identity/independence are human-process controls, not machine-authenticated facts.
+5. Require focused tests, full unittest suite, strict archive audit and exact-HEAD CI before marking complete.
+6. After verification, return to the deliverable-first workstream: validate official source claims, expand the CRA servo-drive report with source-linked evidence, and publish the next report revision. Do not let pipeline hardening substitute for report production.

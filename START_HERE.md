@@ -348,3 +348,11 @@
 
 - 마스터 보고서 인덱스: [MASTER_REPORT_INDEX.md](docs/MASTER_REPORT_INDEX.md)
 - Article 14 신고 대응 절차: [CRA_ARTICLE14_PSIRT_RESPONSE_SOP_V1.md](docs/CRA_ARTICLE14_PSIRT_RESPONSE_SOP_V1.md)
+
+
+## 2026-11-13 — report-first execution rule
+
+- Do not confuse pipeline, validator, backlog or plan updates with a completed technical report.
+- Keep report deliverables visible in `docs/MASTER_REPORT_INDEX.md`; each report must identify document ID/version/date, verified source references and exact locations, claim-level verification status, product assumptions, unresolved inputs and tests NOT_RUN.
+- Current CRA report editions are generic framework/first editions, not product-specific conformity findings or a completed SIL 3 servo-drive benchmark. Product SKU, exact MCU order code and test evidence are still missing.
+- After the approved Phase D hardening passes exact-head CI, prioritize substantive report revision and evidence-linked comparison tables over further architecture/process-only work.

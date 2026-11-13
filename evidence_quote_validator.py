@@ -38,7 +38,8 @@ REVIEW_ENUMS = {
 REVIEW_REQUIRED = frozenset({
     "claim_id", "quote_exactness", "locator_match",
     "context_and_exception_check", "claim_support", "countercheck",
-    "counter_evidence", "review_decision", "reviewer_role",
+    "countercheck_target", "counter_evidence_examined", "countercheck_conclusion",
+    "review_decision", "reviewer_role",
     "reviewer_identifier", "reviewed_at_utc", "protocol_version", "rationale",
 })
 
@@ -53,6 +54,19 @@ class QuoteValidationError(ValueError):
 
 def _digest(text: str) -> str:
     return sha256(text.encode("utf-8")).hexdigest()
+
+def _bundle_digest(bundle: Mapping[str, Any]) -> str:
+    """Return a deterministic consistency hash; this is not a signature."""
+    encoded = json.dumps(bundle, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
+    return sha256(encoded.encode("utf-8")).hexdigest()
+
+
+def _aggregate_status(statuses: list[str]) -> str:
+    if statuses and all(status == "EXACT_MATCH" for status in statuses):
+        return "EXACT_MATCH"
+    if any(status == "AMBIGUOUS" for status in statuses):
+        return "AMBIGUOUS"
+    return "MISMATCH"
 
 
 def _locator_class(document: Any, unit_type: str, locator: str) -> str:
@@ -209,13 +223,29 @@ def validate_evidence_quotes(
     overall = "EXACT_MATCH" if results and all(x["status"] == "EXACT_MATCH" for x in results) else (
         "AMBIGUOUS" if any(x["status"] == "AMBIGUOUS" for x in results) else "MISMATCH"
     )
+    evidence_status_by_id = {item["evidence_id"]: item["status"] for item in results}
+    claim_evidence_status = {}
+    for claim_id, evidence_ids in claim_evidence.items():
+        statuses = [
+            {"evidence_id": evidence_id, "machine_status": evidence_status_by_id[evidence_id]}
+            for evidence_id in evidence_ids
+        ]
+        all_exact = all(item["machine_status"] == "EXACT_MATCH" for item in statuses)
+        claim_evidence_status[claim_id] = {
+            "status": "EXACT_MATCH" if all_exact else "BLOCKED",
+            "evidence": statuses,
+            "eligible_for_human_candidate_review": all_exact,
+        }
+
     return {
         "status": overall,
         "source_sha256": rebuilt["sources"][0]["raw_sha256"],
         "extraction_text_sha256": rebuilt["sources"][0]["extracted_text_sha256"],
-        "bundle_sha256": sha256(json.dumps(rebuilt, ensure_ascii=False, sort_keys=True, separators=(",", ":")).encode("utf-8")).hexdigest(),
+        "bundle_sha256": _bundle_digest(rebuilt),
+        "evidence_ids": sorted(rebuilt_by_id),
         "evidence": results,
         "claim_evidence": claim_evidence,
+        "claim_evidence_status": claim_evidence_status,
         "limitations": [
             "EXACT_MATCH proves correspondence only to Phase B normalized extraction output.",
             "It does not prove publisher authenticity, visual PDF fidelity, legal meaning, claim support, or product applicability.",
@@ -233,9 +263,28 @@ def build_human_review_packet(
     validate_evidence_bundle(bundle)
     if not isinstance(validation_result, Mapping) or not isinstance(report_payload, Mapping):
         raise QuoteValidationError("REVIEW_PACKET_INPUT_INVALID")
+    if validation_result.get("bundle_sha256") != _bundle_digest(bundle):
+        raise QuoteValidationError("VALIDATION_BUNDLE_HASH_MISMATCH")
+
     by_id = {item["evidence_id"]: item for item in bundle["evidence"]}
-    checks = {item["evidence_id"]: item for item in validation_result.get("evidence", [])}
+    expected_ids = sorted(by_id)
+    if validation_result.get("evidence_ids") != expected_ids:
+        raise QuoteValidationError("VALIDATION_EVIDENCE_ID_SET_MISMATCH")
+
+    evidence_checks = validation_result.get("evidence")
+    if not isinstance(evidence_checks, list):
+        raise QuoteValidationError("VALIDATION_EVIDENCE_INVENTORY_INVALID")
+    check_ids = [item.get("evidence_id") for item in evidence_checks if isinstance(item, Mapping)]
+    if len(check_ids) != len(evidence_checks) or len(check_ids) != len(set(check_ids)) or sorted(check_ids) != expected_ids:
+        raise QuoteValidationError("VALIDATION_EVIDENCE_ID_SET_MISMATCH")
+    checks = {item["evidence_id"]: item for item in evidence_checks}
+    if any(item.get("status") not in MACHINE_STATUSES for item in evidence_checks):
+        raise QuoteValidationError("VALIDATION_EVIDENCE_STATUS_INVALID")
+    if validation_result.get("status") != _aggregate_status([item["status"] for item in evidence_checks]):
+        raise QuoteValidationError("VALIDATION_STATUS_INCONSISTENT")
+
     packet = []
+    claim_evidence_status = {}
     claims = report_payload.get("claims")
     if not isinstance(claims, list):
         raise QuoteValidationError("REPORT_CLAIMS_INVALID")
@@ -249,6 +298,19 @@ def build_human_review_packet(
                 or len(ids) != len(set(ids))):
             raise QuoteValidationError("CLAIM_EVIDENCE_REFERENCE_INVALID")
         seen_claim_ids.add(claim_id)
+        per_claim = [
+            {"evidence_id": evidence_id, "machine_status": checks[evidence_id]["status"]}
+            for evidence_id in ids
+            if evidence_id in checks
+        ]
+        if len(per_claim) != len(ids):
+            raise QuoteValidationError("CLAIM_EVIDENCE_REFERENCE_INVALID")
+        claim_exact = all(item["machine_status"] == "EXACT_MATCH" for item in per_claim)
+        claim_evidence_status[claim_id] = {
+            "status": "EXACT_MATCH" if claim_exact else "BLOCKED",
+            "evidence": per_claim,
+            "eligible_for_human_candidate_review": claim_exact,
+        }
         for evidence_id in ids:
             if evidence_id not in by_id or evidence_id not in checks:
                 raise QuoteValidationError("CLAIM_EVIDENCE_REFERENCE_INVALID")
@@ -268,7 +330,9 @@ def build_human_review_packet(
                 },
                 "locator": evidence["locator"],
                 "locator_class": check.get("locator_class", "LOCATOR_UNAVAILABLE"),
-                "machine_status": check.get("status", "MISMATCH"),
+                "machine_status": check["status"],
+                "claim_evidence_status": "EXACT_MATCH" if claim_exact else "BLOCKED",
+                "claim_support_eligible": claim_exact,
                 "excerpt": evidence["excerpt"],
                 "excerpt_sha256": evidence["excerpt_sha256"],
                 "context_before": str(check.get("context_before", ""))[:500],
@@ -281,6 +345,8 @@ def build_human_review_packet(
         "machine_status": validation_result.get("status", "MISMATCH"),
         "legal_status": "UNVERIFIED",
         "product_applicability": "UNVERIFIED",
+        "claim_evidence_status": claim_evidence_status,
+        "reviewer_identity_authenticated": False,
         "items": packet,
     }
 
@@ -306,6 +372,11 @@ def validate_human_review_record(record: Any) -> dict[str, Any]:
         raise QuoteValidationError("CONTEXT_PASS_REQUIRED")
     if record["claim_support"] != "SUPPORTED" and record["review_decision"] == "ACCEPT_AS_CANDIDATE":
         raise QuoteValidationError("CLAIM_SUPPORT_REQUIRED")
+    for key in ("countercheck_target", "counter_evidence_examined", "countercheck_conclusion"):
+        value = record[key]
+        if not isinstance(value, str) or len(value.strip()) < 20:
+            raise QuoteValidationError("COUNTERCHECK_DETAIL_INSUFFICIENT")
+
     timestamp = record["reviewed_at_utc"]
     try:
         if not isinstance(timestamp, str):
@@ -313,6 +384,8 @@ def validate_human_review_record(record: Any) -> dict[str, Any]:
         parsed = datetime.fromisoformat(timestamp.replace("Z", "+00:00"))
         if parsed.tzinfo is None or parsed.utcoffset() is None or parsed.utcoffset().total_seconds() != 0:
             raise ValueError("UTC timezone required")
+        if parsed > datetime.now(timezone.utc):
+            raise ValueError("future timestamp")
     except (TypeError, ValueError):
         raise QuoteValidationError("REVIEW_TIMESTAMP_INVALID")
     return {
@@ -320,5 +393,6 @@ def validate_human_review_record(record: Any) -> dict[str, Any]:
         "review_decision": record["review_decision"],
         "legal_status": "UNVERIFIED",
         "product_applicability": "UNVERIFIED",
-        "note": "Record completeness only; independent Pass B/C and product applicability remain separate.",
+        "reviewer_identity_authenticated": False,
+        "note": "Record completeness only; reviewer identity/independence are not machine-authenticated. Independent Pass B/C and product applicability remain separate.",
     }
