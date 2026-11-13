@@ -7,7 +7,7 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from unittest.mock import patch
 
-import urllib3.util.connection
+import source_transport
 
 from source_transport import PinnedHTTPSession, PinnedTransportError, normalize_public_ips
 
@@ -23,9 +23,13 @@ class _LocalTLSServer(ThreadingHTTPServer):
 class _Handler(BaseHTTPRequestHandler):
     protocol_version = "HTTP/1.1"
     host_header = None
+    host_headers = None
+    accept_encoding = None
 
     def do_GET(self):
         type(self).host_header = self.headers.get("Host")
+        type(self).host_headers = self.headers.get_all("Host")
+        type(self).accept_encoding = self.headers.get("Accept-Encoding")
         body = b"local TLS fixture"
         self.send_response(200)
         self.send_header("Content-Type", "text/html")
@@ -100,7 +104,7 @@ class SourceTransportTests(unittest.TestCase):
         return server, thread, seen
 
     def _patch_connect(self, server, requested):
-        original = urllib3.util.connection.create_connection
+        original = source_transport.socket.create_connection
 
         def routed(address, *args, **kwargs):
             requested.append(address)
@@ -109,7 +113,7 @@ class SourceTransportTests(unittest.TestCase):
                 return original(("127.0.0.1", server.server_port), *args, **kwargs)
             return original(address, *args, **kwargs)
 
-        return patch("urllib3.util.connection.create_connection", side_effect=routed)
+        return patch("source_transport.socket.create_connection", side_effect=routed)
 
     def test_real_tls_uses_pinned_ip_sni_and_original_host_header(self):
         server, thread, sni = self._serve_tls()
@@ -131,6 +135,41 @@ class SourceTransportTests(unittest.TestCase):
             self.assertEqual(requested, [(PUBLIC_IP, 443)])
             self.assertEqual(sni, [HOST])
             self.assertEqual(_Handler.host_header, HOST)
+            self.assertEqual(_Handler.host_headers, [HOST])
+            self.assertEqual(_Handler.accept_encoding, "identity")
+        finally:
+            server.shutdown()
+            server.server_close()
+            thread.join(timeout=2)
+
+    def test_ipv6_literal_is_used_as_connect_target_with_original_tls_hostname(self):
+        ipv6_public = "2606:4700:4700::1111"
+        server, thread, sni = self._serve_tls()
+        requested = []
+        original = source_transport.socket.create_connection
+
+        def routed(address, *args, **kwargs):
+            requested.append(address)
+            host, _port = address
+            if host == ipv6_public:
+                return original(("127.0.0.1", server.server_port), *args, **kwargs)
+            return original(address, *args, **kwargs)
+
+        try:
+            with patch("source_transport.socket.create_connection", side_effect=routed):
+                response = PinnedHTTPSession().get(
+                    f"https://{HOST}/ipv6",
+                    pinned_ips=[ipv6_public],
+                    verify=str(self.cert_file),
+                    timeout=(2, 2),
+                )
+                try:
+                    self.assertEqual(response.status_code, 200)
+                    self.assertEqual(b"".join(response.iter_content(4096)), b"local TLS fixture")
+                finally:
+                    response.close()
+            self.assertEqual(requested, [(ipv6_public, 443)])
+            self.assertEqual(sni, [HOST])
         finally:
             server.shutdown()
             server.server_close()
@@ -141,7 +180,7 @@ class SourceTransportTests(unittest.TestCase):
         requested = []
         try:
             with self._patch_connect(server, requested):
-                with self.assertRaises(urllib3.exceptions.SSLError):
+                with self.assertRaises(ssl.SSLCertVerificationError):
                     PinnedHTTPSession().get(
                         "https://different.example/fixture",
                         pinned_ips=[PUBLIC_IP],
@@ -157,7 +196,7 @@ class SourceTransportTests(unittest.TestCase):
     def test_connection_fallback_uses_only_supplied_pinned_ips(self):
         server, thread, sni = self._serve_tls()
         requested = []
-        original = urllib3.util.connection.create_connection
+        original = source_transport.socket.create_connection
 
         def routed(address, *args, **kwargs):
             requested.append(address)
@@ -169,7 +208,7 @@ class SourceTransportTests(unittest.TestCase):
             return original(address, *args, **kwargs)
 
         try:
-            with patch("urllib3.util.connection.create_connection", side_effect=routed):
+            with patch("source_transport.socket.create_connection", side_effect=routed):
                 response = PinnedHTTPSession().get(
                     f"https://{HOST}/fallback",
                     pinned_ips=["1.0.0.1", PUBLIC_IP],
