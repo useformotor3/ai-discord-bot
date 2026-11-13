@@ -552,3 +552,45 @@ Correct map: Annex I Part I(2)(c) for applicable automatic-update default/user c
 - #8–#12 파일 단위 판정은 기존 감사 결과대로 5 CONFLICT / 0 PARTIALLY_VERIFIED / 0 VERIFIED이며 direct quote reuse 0/5.
 - 위 31개는 개별 claim 단위다. 일부 법령 원칙은 VERIFIED여도 원본 보고서 전체가 VERIFIED라는 뜻은 아니다.
 - 제품별 적용성·Class I/II 분류는 전부 UNVERIFIED. 실제 DUT 시험은 NOT_RUN.
+
+## 2026-11-13 — #13–#17 원자 주장·인용 분해 (29 claims)
+
+- 원본 감사: [main-only #13–#27 Pass A/B/C 감사](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_13_27_2026-11-13.md).
+- 원본 main 경로·blob SHA: #13 \`research_archive/2026-11-13_010102.md\` / \`2e9fb641dcebcb411dca1e686de916bf09dbfcb9\`; #14 \`010538.md\` / \`dda0e0308d5fffb11659f6c395a9b0a3da26b1de\`; #15 \`011036.md\` / \`f150569deac61b8d74a424bb1c76518438816de0\`; #16 \`011537.md\` / \`2f67047e45084598819a1d7b4ccd4a463c2dc168\`; #17 \`012038.md\` / \`a2a8c24d6e0933f5d6e3e6fcdb570037ed652e7e\`.
+- 공식 기준: EUR-Lex consolidated Regulation (EU) 2024/2847, 20.11.2024. 개별 상태는 법령 주장만 평가하며 제품별 적용성은 별도다.
+
+| Claim ID | 원본 | 원자 주장 | 근거 위치 | 상태 | 판정/정정 |
+|---|---:|---|---|---|---|
+| CRA-ARCH-MAIN-20261113-013-001 | #13 | 제조자는 CVD 정책을 마련하고 집행해야 한다. | Article 13(8), Annex I Part II(5) | VERIFIED | CVD 정책 의무 확인. |
+| CRA-ARCH-MAIN-20261113-013-002 | #13 | 모든 발견 취약점과 모든 사이버 사고를 Article 14에 따라 신고해야 한다. | Article 14(1)–(4) | CONFLICT | 의무 신고는 actively exploited vulnerability 및 제품 보안에 영향을 미치는 severe incident 두 트랙. |
+| CRA-ARCH-MAIN-20261113-013-003 | #13 | 24h/72h 신고 기한은 일반 취약점 모두에 적용된다. | Article 14(2), (4) | CONFLICT | 해당 기한은 Article 14의 두 신고 트리거에만 적용. 최종 보고는 취약점 14일, 사고 1개월. |
+| CRA-ARCH-MAIN-20261113-013-004 | #13 | 제조사 신고 의무 조항은 Article 11이다. | Article 13, Article 14 | CONFLICT | 제조사 일반 의무는 Article 13, 법정 신고는 Article 14. |
+| CRA-ARCH-MAIN-20261113-013-005 | #13 | Article 14 신고는 Class I/II 중요 제품에만 적용된다. | Article 14, Article 69(3) | CONFLICT | Article 14는 CRA 범위 제품에 적용되며 Article 69(3)는 2027-12-11 전 출시 제품에도 신고 의무를 적용한다. |
+| CRA-ARCH-MAIN-20261113-013-006 | #13 | 인용한 NIS2 single point of contact 문구가 CRA의 정확한 직접 인용이다. | Article 13(17), Annex II(2) | CONFLICT | CRA의 사용자 단일 연락 창구는 Article 13(17)/Annex II(2)이며 제시 문구는 다른 법령·구조를 혼합. |
+| CRA-ARCH-MAIN-20261113-014-001 | #14 | 제품의 사이버보안 수준은 위험에 기반한 적절한 수준이어야 한다. | Annex I Part I(1) | VERIFIED | 위험기반 전체 보안 수준 요구 확인. |
+| CRA-ARCH-MAIN-20261113-014-002 | #14 | 제품은 secure-by-default configuration으로 제공되어야 하며 original-state reset 가능성을 포함한다. | Annex I Part I(2)(b) | VERIFIED | 최종 법령 문언과 일치. |
+| CRA-ARCH-MAIN-20261113-014-003 | #14 | 외부 인터페이스를 포함해 attack surface를 제한해야 한다. | Annex I Part I(2)(j) | VERIFIED | 결과 요구 확인. |
+| CRA-ARCH-MAIN-20261113-014-004 | #14 | 모든 원격 포트·디버그 인터페이스를 모든 제품에서 비활성화해야 한다. | Annex I Part I(2)(j) | CONFLICT | 모든 포트의 일괄 비활성화를 요구하는 직접 문언은 없다. |
+| CRA-ARCH-MAIN-20261113-014-005 | #14 | 최초 전원 인가 시 강력한 고유 인증정보 설정을 반드시 강제해야 한다. | Annex I Part I(2)(b), (d) | CONFLICT | 구체 first-boot password flow는 위험기반 설계 후보이지 보편적 직접 명령이 아니다. |
+| CRA-ARCH-MAIN-20261113-014-006 | #14 | 인용한 Annex I (a)/(b) 구조가 현행 secure-default/access-control 문언과 일치한다. | Annex I Part I(2)(b), (d) | CONFLICT | 현행 (b)는 secure default/reset, (d)는 appropriate access controls. 보고서의 번호/문구가 다르다. |
+| CRA-ARCH-MAIN-20261113-015-001 | #15 | 사용 가능한 보안 업데이트는 원칙적으로 무상 제공되어야 한다. | Annex I Part II(8) | PARTIALLY_VERIFIED | 맞춤형 제품에 관한 제조자-사업 사용자 합의 예외 포함 필요. |
+| CRA-ARCH-MAIN-20261113-015-002 | #15 | 제조자는 CVD 정책을 수립·집행해야 한다. | Article 13(8), Annex I Part II(5) | VERIFIED | 법령상 정책 의무 확인. |
+| CRA-ARCH-MAIN-20261113-015-003 | #15 | CVD 정책은 반드시 공식 웹사이트에 게시해야 한다. | Article 13(17), Annex II(2) | PARTIALLY_VERIFIED | 사용자가 정책을 찾을 수 있는 위치와 단일 연락 창구를 사용자 정보에 포함해야 하나 특정 웹사이트 방식으로 한정하지 않는다. |
+| CRA-ARCH-MAIN-20261113-015-004 | #15 | 무상 업데이트/CVD 의무의 근거는 Annex I Part I 및 Article 11이다. | Annex I Part II(5), (8), Article 13 | CONFLICT | CVD는 Part II(5), 무상 업데이트는 Part II(8), 제조사 의무는 Article 13. |
+| CRA-ARCH-MAIN-20261113-015-005 | #15 | 보고서 Raw Text Quote가 Part I/Article 11의 정확한 직접 인용이다. | Annex I Part II(5), (8) | CONFLICT | 제시 문장은 서로 다른 요구를 합성한 것으로 현행 원문과 불일치. |
+| CRA-ARCH-MAIN-20261113-016-001 | #16 | 지원기간은 예상 사용기간을 반영하고 원칙적으로 최소 5년이다. | Article 13(8) | PARTIALLY_VERIFIED | 예상 사용기간이 5년 미만이면 지원기간은 예상 사용기간에 대응하는 예외를 포함해야 한다. |
+| CRA-ARCH-MAIN-20261113-016-002 | #16 | 보안 업데이트는 원칙적으로 무상 제공된다. | Annex I Part II(8) | PARTIALLY_VERIFIED | 맞춤형 제품/사업 사용자 합의 예외 누락. |
+| CRA-ARCH-MAIN-20261113-016-003 | #16 | 제조자는 사용자 취약점 신고를 위한 단일 연락 창구를 지정해야 한다. | Article 13(17), Annex II(2) | VERIFIED | 쉽게 식별 가능하고 사용자 정보에 포함되어야 하며 자동화 도구만으로 제한 불가. |
+| CRA-ARCH-MAIN-20261113-016-004 | #16 | 취약점 처리/무상 업데이트 의무의 법적 근거는 Article 11이다. | Article 13(8), Annex I Part II | CONFLICT | Article 11 오기. 제조사 의무는 Article 13. |
+| CRA-ARCH-MAIN-20261113-016-005 | #16 | CVD/무상 업데이트는 Annex I Part I의 취약점 처리 조항이다. | Annex I Part II(5), (8) | CONFLICT | Part I는 제품 속성, Part II는 취약점 처리. |
+| CRA-ARCH-MAIN-20261113-016-006 | #16 | 보고서의 Article 11/Annex I Raw Text Quote가 현행 직접 인용이다. | Article 13, Annex I Part II | CONFLICT | 조항 번호와 문언 모두 현행 원문과 일치하지 않는다. |
+| CRA-ARCH-MAIN-20261113-017-001 | #17 | 제조자는 취약점 신고 연락 주소와 신고 접수 메커니즘을 제공해야 한다. | Annex I Part II(6), Article 13(17) | VERIFIED | contact address와 사용자 단일 연락 창구를 구분해 기록. |
+| CRA-ARCH-MAIN-20261113-017-002 | #17 | 사용 가능한 보안 업데이트는 원칙적으로 무상 제공된다. | Annex I Part II(8) | PARTIALLY_VERIFIED | 맞춤형 제품에 관한 제조자-사업 사용자 합의 예외 포함 필요. |
+| CRA-ARCH-MAIN-20261113-017-003 | #17 | 지원기간은 예상 사용기간 및 최소 5년 원칙을 반영한다. | Article 13(8) | PARTIALLY_VERIFIED | 예상 사용기간이 5년 미만이면 그 예상 사용기간에 대응하는 예외를 포함해야 한다. |
+| CRA-ARCH-MAIN-20261113-017-004 | #17 | CVD/무상 업데이트의 근거는 Article 11 및 Annex I Part I다. | Article 13(8), Annex I Part II(5), (8) | CONFLICT | 제조사 의무 Article 13, CVD/무상 업데이트 Part II(5)/(8). |
+| CRA-ARCH-MAIN-20261113-017-005 | #17 | A/B 파티션 및 atomic firmware update가 CRA가 지정한 필수 구현 방식이다. | Annex I Part II(7), risk assessment | UNVERIFIED | 안전한 업데이트 배포 결과 요구와 특정 구현 방식은 분리. A/B/atomic update는 제품별 설계 후보. |
+| CRA-ARCH-MAIN-20261113-017-006 | #17 | 보고서의 composite Raw Text Quote가 현행 법령의 정확한 직접 인용이다. | Annex I Part II(2), (5)–(8) | CONFLICT | 여러 하위 항목을 합성한 문장으로 직접 인용 재사용 불가. |
+
+- #13–#17 파일 단위 판정은 기존 감사 결과대로 5 CONFLICT / 0 PARTIALLY_VERIFIED / 0 VERIFIED이며 direct quote reuse 0/5.
+- 위 29개는 개별 claim 단위다. 일부 개별 법령 사실이 VERIFIED여도 원본 보고서 전체 판정을 바꾸지 않는다.
+- 제품별 적용성·Class I/II 분류는 UNVERIFIED, 실제 DUT 시험은 NOT_RUN.
