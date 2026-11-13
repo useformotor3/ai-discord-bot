@@ -70,3 +70,11 @@
 
 - [CRA 제품 분류 및 접근통제 매트릭스 v0.1](CRA_PRODUCT_CLASSIFICATION_AND_ACCESS_CONTROL_MATRIX.md): Article 7/Annex III/Implementing Regulation 2025/2392 기반 제품 분류 결정 게이트, Article 32 적합성 평가 경로, Annex I Part I 2(d) 접근통제의 법적 요구와 권장 구현·시험 증거를 분리.
 
+
+
+## 문서 구조·전체 링크 안내
+
+- [CRA 문서 구조·전체 목차·링크 안내](CRA_DOCUMENT_ARCHITECTURE_AND_NAVIGATION.md): 문서 계층, 정본 우선순위, 세션 읽기 순서, 보고서·매뉴얼·설계·감사자료의 역할과 전체 링크를 모은 탐색 문서.
+- [AI 연속성·실행 현황판](AI_CONTINUITY_BOARD.md): 사용자 의도와 작업 우선순위·진행 상태의 운영 정본.
+- [AI 행동강령](AI_RULEBOOK.md): 검증 및 문서 통합 규칙.
+- 문서 운영 원칙: 감사 보고서는 증거·이력 보존, Claim Evidence Ledger/정정 대장은 주장별 교정 추적, MASTER_REPORT 및 제1·2권은 독자용 결론 통합, SOP/아키텍처/매트릭스/시험 대장은 실제 사용 목적에 따라 분리 유지.
