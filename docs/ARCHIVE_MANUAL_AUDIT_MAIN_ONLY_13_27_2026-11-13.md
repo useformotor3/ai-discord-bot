@@ -181,3 +181,10 @@ This is a sequential, non-random batch selected by report number/time. It is not
 - 파일 단위 결과는 5 CONFLICT / direct quote reuse 0/5로 유지한다.
 - Article 14 신고 trigger, support period Article 13(8), free updates Part II(8), CVD Part II(5), contact Part II(6), secure default Part I(2)(b), access control (d), integrity (f), attack surface (j)를 서로 분리했다.
 - Secure Boot/signing/A-B partition/MFA/first-use password 등은 해당 조항의 보편적 명문 의무로 쓰지 않고 제품별 위험기반 설계 후보로 기록한다.
+
+## 원자 Claim ID 연결 — #23–#27
+
+- #23–#27에 대해 [Claim Evidence Ledger](CLAIM_EVIDENCE_LEDGER.md)에 원자 Claim ID 30개를 등록했다.
+- 파일 단위 결과는 5 CONFLICT / direct quote reuse 0/5로 유지한다.
+- Secure-by-default Part I(2)(b), access control (d), attack surface (j), CVD Part II(5), contact Part II(6), free updates Part II(8)을 분리했다.
+- Class I/II 분류는 제품 전체 core functionality 증거 없이는 UNVERIFIED. 강제 first-use password, MFA, JTAG lockout, A/B partition, universal service disablement는 보편적 직접 법적 의무로 쓰지 않는다.
