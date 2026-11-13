@@ -98,6 +98,7 @@ CRA는 디지털 요소가 있는 제품의 사이버보안 요구와 제조사�
 - 신고는 CRA Single Reporting Platform을 통해 지정 CSIRT에 제출하며 ENISA가 동시에 접근할 수 있도록 하는 구조다.
 - 제조사 내부 시스템이 모든 취약점을 자동으로 외부 신고해야 한다는 의미로 확대 해석하지 않는다.
 - 신고 판단, 인지 시각, 조기 경고·신고·최종 보고 시각, 영향 제품, 완화 조치, 사용자 통지 결정을 기록한다.
+- Article 14(8)은 actively exploited vulnerability 또는 제품 보안에 영향을 미치는 severe incident를 인지한 뒤 영향을 받는 사용자(필요한 경우 모든 사용자)에게 통지하도록 한다. 구조화된 machine-readable 형식은 “where appropriate” 조건으로 적용되며, 모든 취약점/보안 공지에 대한 일반 의무가 아니다. 자세한 운영은 [PSIRT SOP](CRA_ARTICLE14_PSIRT_RESPONSE_SOP_V1.md) 참조.
 - 실무 역할, 접수 필드, 사건 분류와 기한 추적은 [Article 14 PSIRT 대응 SOP](CRA_ARTICLE14_PSIRT_RESPONSE_SOP_V1.md)를 따른다. 조직의 실제 담당자·연락처·관할 CSIRT는 확정 전까지 TBD로 유지한다.
 
 ### 3.3 Annex I Part I — 제품 속성 요구
@@ -231,3 +232,10 @@ CRA는 디지털 요소가 있는 제품의 사이버보안 요구와 제조사�
 - 전체 문서 역할과 최신 링크: [CRA 문서 구조·전체 목차·링크 안내](CRA_DOCUMENT_ARCHITECTURE_AND_NAVIGATION.md).
 
 이 제1권은 법령 요구와 제조사 의무의 독자용 상위 설명이다. 특정 설계 통제의 구현 상세·시험 증거는 매트릭스/제2권에, 사건 처리의 실제 절차는 PSIRT SOP에 둔다. 같은 법령 문구를 각 문서에 길게 복제하지 않고 해당 정본을 참조한다.
+
+
+### 공급망 취약점 처리의 방향과 경계
+
+Article 13(5)–(7)은 제조사의 제3자 구성요소 due diligence, 구성요소 취약점 인지 시 구성요소 제조/유지 주체에 대한 신고 및 시정, 관련 사이버보안 사항의 체계적 문서화를 규정한다. 특히 Article 13(6)의 명시적 신고 방향은 **제품 제조사에서 구성요소 제조/유지 주체로** 향한다. 이를 모든 공급자가 상위 제조사에 자동 통지해야 한다는 일반 의무로 뒤집어 쓰지 않는다. 공급자 계약·PSIRT 채널·CVD 절차를 통한 정보 교환은 위험기반 운영 설계로 구분한다.
+
+Annex I Part II(1)의 machine-readable 요구는 SBOM 형식에 관한 것이다. Article 14(8)의 machine-readable user notification은 적극 악용 취약점 또는 심각한 제품 보안 사고에 대한 사용자 통지에서 “where appropriate” 적용된다. 이 두 조항을 Annex I Part II(2)의 일반 보안 공지 의무로 합치지 않는다.
