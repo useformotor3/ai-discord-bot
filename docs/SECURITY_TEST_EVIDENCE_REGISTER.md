@@ -123,3 +123,12 @@
 - BLOCKED: DUT/부품/환경/합격 기준 미확정으로 실행 불가.
 - NOT_APPLICABLE: 제품 경계/설계 근거로 시험 비적용이 승인됨.
 - PASS는 자동으로 CRA 적합성 결론이 아니다. 요구사항별 적용성 및 증거 검토가 별도 필요하다.
+
+## 7. Secure data erasure and transfer test cases — Annex I Part I(2)(m)
+
+| Test ID | 연결 위협 | 목적/절차 요약 | 기대 결과(정성 기준) | 필요한 증거 | 상태 |
+|---|---|---|---|---|---|
+| TST-ERASE-01 | TH-19 | Internal/external Flash, EEPROM/FRAM, backup 영역, logs, credentials, certificates, calibration/configuration 등 persistent storage inventory 후 사용자 삭제 절차 실행 및 승인된 방법으로 잔존 데이터 확인 | 사용자 데이터·설정이 안전하고 영구적으로 제거됨. 매체별 적절한 erase/cryptographic erase 사용; 특정 NAND 물리 소거 방식은 법령이 고정하지 않음 | storage map, pre/post dump hash, erase log, recovery attempt, key destruction evidence (secret-free) | NOT_RUN |
+| TST-ERASE-02 | TH-19 | 제품이 다른 제품/시스템으로 데이터 전송을 지원하는 경우 전송·수신 경로 및 목적지 검증 | 전송 데이터의 기밀성·무결성·진본성 보호, 의도한 목적지 확인, 실패 시 안전한 처리 | transfer flow, package hash, authenticated channel trace, destination verification log | NOT_RUN |
+| TST-ERASE-03 | TH-19 | erase/transfer 도중 전원 차단·리셋·통신 중단 주입 | 부분 삭제/부분 전송 상태가 노출되지 않고 안전한 재개·재시도 또는 정의된 실패 상태로 전이 | power/network fault trace, state log, post-fault storage verification | NOT_RUN |
+| TST-ERASE-04 | TH-19 | Annex II(8)(d) secure decommissioning 및 사용자 데이터 제거 지침 검토/사용성 tabletop | 한국어 사용자 지침으로 안전한 폐기와 데이터 제거 절차를 재현 가능하게 설명 | manual revision, review checklist, tabletop record | NOT_RUN |
