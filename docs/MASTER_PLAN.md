@@ -707,3 +707,10 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 - [ ] #13–#57 영문 상세 감사 문서를 한국어 본문으로 전환하거나, 원본 보존 + 한국어 상세판 작성.
 - [ ] 위 전수 대조 후 main-only reports #63–#67 감사. 배치 시작 시 main HEAD/state/history를 다시 조회한다.
 - main read-only, merge/rebase/sync 금지. E3 live fetch와 protected production integration은 별도 승인 전 금지.
+
+## 사후 기준선 — main report #119 확인 (2026-11-13)
+
+- #58–#62 감사는 main report #118 기준으로 수행했다.
+- 이후 main에 report #119가 추가됨: HEAD \`6491a5db6ea35ea97a6d97e85bac43f9a3cf41c0\`, state count 119, history 1,394 entries.
+- #119는 미감사 상태다. 다음 archive 감사는 #63–#67부터 수행하며, 배치 시작 시 main state/history/HEAD를 재조회한다.
+- main read-only, merge/rebase/sync 금지.
