@@ -281,8 +281,8 @@
 
 
 ## 2026-11-13 — Daily main archive audit
-- Latest checked main HEAD: `173c4d29ee62c0e96cfadf93824d6807ef2d148a` (report #6).
-- Since audited baseline #128, 166 new reports (#129–#288 and #1–#6) are registered in [docs/CRA_ARCHIVE_AUDIT_QUEUE.md](docs/CRA_ARCHIVE_AUDIT_QUEUE.md) on `cra-project-foundation` only.
+- Latest checked main HEAD: `bd50257a80c0524402c70a7da420043ecfa0f490` (report #7).
+- Since audited baseline #128, 167 new reports (#129–#288 and #1–#7) are registered in [docs/CRA_ARCHIVE_AUDIT_QUEUE.md](docs/CRA_ARCHIVE_AUDIT_QUEUE.md) on `cra-project-foundation` only.
 - Next session: read queue and audit P0 items with Pass A/B/C; do not treat queue registration or official-source baseline pre-check as report verification.
 
 
@@ -292,3 +292,8 @@
 - v3 claims reference existing `evidence_ids`; renderer obtains citation metadata/excerpts from the bundle. Unknown IDs and any VERIFIED/PARTIALLY_VERIFIED promotion are rejected.
 - Added dedicated bundle and v3 contract tests. CI/full regression status is pending exact run confirmation.
 - No changes to v2, `main.py`, production workflow or `main` branch; no live URL/Gemini/API calls.
+
+
+## 2026-11-13 — Report #7
+- Added report #7 (`bd50257a80c0524402c70a7da420043ecfa0f490`, `research_archive/2026-11-13_003055.md`) to the queue. The queue now has 167 entries.
+- Preliminary EUR-Lex note flags quote and Article-number mismatches; the file remains UNVERIFIED pending full Pass A/B/C.
