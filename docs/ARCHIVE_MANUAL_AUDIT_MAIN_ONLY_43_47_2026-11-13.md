@@ -112,3 +112,11 @@
 3. Annex I Part I point 2(d) 접근통제 매트릭스를 작성하되 법적 의무와 권장 설계 통제(RBAC, least privilege, unique credentials, certificate-based authentication)를 별도 컬럼으로 분리한다.
 4. Article 13(8)/(9), Annex I Part II(4)–(8) 기반 취약점·지원기간·업데이트 요구사항 표를 실제 보고서에 반영한다.
 5. SKU, intended purpose, core functionality, EU 공급 형태 및 제품 경계가 확보되기 전 제품별 분류/적합성은 UNVERIFIED로 유지한다.
+
+## 원자 Claim ID 연결 — #43–#47
+
+- #43–#47에 대해 [Claim Evidence Ledger](CLAIM_EVIDENCE_LEDGER.md)에 원자 Claim ID 37개를 등록했다.
+- 파일 단위 결과는 3 CONFLICT / 2 PARTIALLY_VERIFIED / direct quote reuse 0/5로 유지한다.
+- #43의 Class II 범주 허위 인용, Article 24/32 혼동, Article 64 penalty 15m/3% 오기를 정정했다. Article 64(2)=15m/2.5%, Article 64(3)=10m/2%.
+- #44는 Annex I Part I 2(d) 접근통제 결과 요구와 RBAC/least privilege/고유 자격증명 같은 구현 선택을 분리했다.
+- #45–#47은 Article 13(8)/(9), Annex I Part II(4)–(8)의 support period/update availability/CVD/disclosure/free update를 분리했다.
