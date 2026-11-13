@@ -68,7 +68,10 @@ def build_evidence_bundle(fetch_result: Any, extracted_document: Any, *,
     Raw bytes and full extracted document text are not copied into the bundle.
     Excerpts are exact contiguous substrings of extracted text/units.
     """
-    if min(max_excerpt_chars, max_evidence_units, max_total_excerpt_chars) <= 0:
+    if (min(max_excerpt_chars, max_evidence_units, max_total_excerpt_chars) <= 0
+            or max_excerpt_chars > DEFAULT_MAX_EXCERPT_CHARS
+            or max_evidence_units > DEFAULT_MAX_EVIDENCE_UNITS
+            or max_total_excerpt_chars > DEFAULT_MAX_TOTAL_EXCERPT_CHARS):
         raise EvidenceBundleError("INVALID_BUNDLE_LIMIT")
     try:
         metadata = fetch_result.metadata.to_dict()
@@ -90,7 +93,10 @@ def build_evidence_bundle(fetch_result: Any, extracted_document: Any, *,
         raise EvidenceBundleError("SOURCE_NOT_SUCCESSFULLY_FETCHED")
     if metadata.get("canonical_url") != source.canonical_url:
         raise EvidenceBundleError("CANONICAL_URL_MISMATCH")
-    if metadata.get("publisher") != source.publisher or metadata.get("document_identifier") != source.document_identifier:
+    if (metadata.get("publisher") != source.publisher
+            or metadata.get("title") != source.title
+            or metadata.get("document_identifier") != source.document_identifier
+            or metadata.get("revision") != source.revision):
         raise EvidenceBundleError("SOURCE_REGISTRY_METADATA_MISMATCH")
     final_url = str(metadata.get("final_url", ""))
     if urlsplit(final_url).scheme != "https" or urlsplit(final_url).hostname != urlsplit(source.canonical_url).hostname:
@@ -138,7 +144,10 @@ def build_evidence_bundle(fetch_result: Any, extracted_document: Any, *,
             total_chars += len(excerpt)
             if total_chars > max_total_excerpt_chars:
                 raise EvidenceBundleError("TOTAL_EXCERPT_LIMIT_EXCEEDED")
-            excerpt_hash = _digest(excerpt.encode("utf-8"))
+            total_excerpt_chars += len(excerpt)
+        if total_excerpt_chars > DEFAULT_MAX_TOTAL_EXCERPT_CHARS:
+            raise EvidenceBundleError("BUNDLE_TOTAL_EXCERPT_LIMIT_EXCEEDED")
+        excerpt_hash = _digest(excerpt.encode("utf-8"))
             part_locator = locator if len(parts) == 1 else f"{locator} [segment {part_index}/{len(parts)}]"
             evidence.append({
                 "evidence_id": _evidence_id(source_id, raw_hash, extractor_version,
@@ -188,7 +197,9 @@ def validate_evidence_bundle(bundle: Any) -> dict[str, Any]:
             raise EvidenceBundleError("BUNDLE_SOURCE_ID_INVALID")
         if (source["canonical_url"] != registered.canonical_url
                 or source["publisher"] != registered.publisher
-                or source["document_identifier"] != registered.document_identifier):
+                or source["title"] != registered.title
+                or source["document_identifier"] != registered.document_identifier
+                or source["revision"] != registered.revision):
             raise EvidenceBundleError("BUNDLE_SOURCE_REGISTRY_MISMATCH")
         if source["http_status"] != 200 or source["byte_count"] <= 0:
             raise EvidenceBundleError("BUNDLE_SOURCE_FETCH_METADATA_INVALID")
@@ -198,7 +209,10 @@ def validate_evidence_bundle(bundle: Any) -> dict[str, Any]:
                 raise EvidenceBundleError("BUNDLE_HASH_FORMAT_INVALID")
         source_map[source_id] = source
 
+    if len(evidence) > DEFAULT_MAX_EVIDENCE_UNITS:
+        raise EvidenceBundleError("BUNDLE_EVIDENCE_UNIT_LIMIT_EXCEEDED")
     seen: set[str] = set()
+    total_excerpt_chars = 0
     for item in evidence:
         fields = {"evidence_id", "source_id", "locator", "unit_type", "excerpt", "excerpt_sha256"}
         if not isinstance(item, dict) or set(item) != fields:
