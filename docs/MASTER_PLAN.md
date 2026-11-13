@@ -817,3 +817,10 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 - Current P0: reconcile the 345 atomic claims and 46 canonical requirements against Volume 1, Volume 2, PSIRT SOP, requirements matrix, integrated traceability matrix and test evidence register; resolve duplicated/contradictory wording and keep exact legal locators. Then proceed to main-only audit #63–#67.
 - No production code, main.py, production workflow, Gemini V2 prompt/contract or main branch was changed. E3 live source fetch remains unexecuted. This batch is documentation-only.
 
+## 2026-11-13 P0 — Logging / Secure Data Lifecycle evidence
+
+- [x] Annex I Part I(2)(l) logging/monitoring/opt-out canonical mapping.
+- [x] Annex I Part I(2)(m) permanent erasure and secure transfer (where applicable) separated; Annex II(8)(d) disposal instructions separated.
+- [x] TST-ERASE-01..04 added to Security Test Evidence Register; all NOT_RUN.
+- [x] P1-12/P1-13 and TR-11/TR-12A/B/C traceability updated.
+- [ ] Execute only after exact SKU/storage topology/firmware access are available; do not claim PASS from a proposed test case.
