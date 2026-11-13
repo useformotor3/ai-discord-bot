@@ -4,7 +4,7 @@
 
 ## 현재 발행된 보고서
 
-- [마스터 인덱스](MASTER_REPORT_INDEX.md) (저장소 인덱스 파일이 생성되면 연결)
+- [마스터 인덱스](MASTER_REPORT_INDEX.md) — 발행 문서와 상태를 모은 현재 카탈로그.
 - [제1권 CRA 서보 드라이브 사이버보안 요구사항 조사 보고서](CRA_SERVO_DRIVE_COMPLIANCE_REPORT_V1.md)
 - [제2권 서보 드라이브 CRA 적용·구현 방안](SERVO_DRIVE_CRA_IMPLEMENTATION_PLAN_V1.md)
 - [운영 조사 자동화 코드 개선 제안서](PROTECTED_CODE_CHANGE_PROPOSAL_V1.md) — 승인 전 검토본
