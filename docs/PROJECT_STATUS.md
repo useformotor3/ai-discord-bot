@@ -617,3 +617,6 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - 제품 SKU, intended purpose, EU 공급 형태, 실제 MCU order code, 네트워크/서비스 기능, 업데이트 경로 미확정. 제품별 적합성·분류·MCU 기능은 UNKNOWN/UNVERIFIED.
 - 시험 대장에 기록된 시험은 설계 후보이며 실제 제품 시험은 NOT_RUN.
 - 다음 작업: 추적성 매트릭스 통합·검사, main 1,347개 아카이브의 정확한 기준 SHA 고정 및 inventory 재생성, PSIRT tabletop 문서, 사용자 입력값 확보.
+
+- 마스터 보고서 인덱스 `docs/MASTER_REPORT_INDEX.md` 및 Article 14 PSIRT SOP `docs/CRA_ARTICLE14_PSIRT_RESPONSE_SOP_V1.md` 생성.
+- PSIRT 역할/연락처/실제 제품 정보는 TBD, tabletop exercise는 NOT_RUN.
