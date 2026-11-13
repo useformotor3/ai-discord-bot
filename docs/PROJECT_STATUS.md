@@ -791,3 +791,12 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - #8–#52 45개 원본 보고서의 날짜·archive 경로·blob SHA·판정·중심 정정 요약을 Claim Evidence Ledger에 고유 ID로 등록했다.
 - #8–#12 원본 감사 문서와 SHA를 재확인했다. 5건 모두 CONFLICT, 직접 인용 재사용 0/5.
 - 세부 주장/인용 블록 단위의 완전한 원자 분해는 미완료이며, 파일 중심 레코드 등록과 구분한다.
+
+
+## 2026-11-13 — #53–#57 감사 상태 및 누적 정정
+
+- main 최신 관찰: HEAD 8ebc3cdc361a1b694e4ad18b5d85cc6dec5d1f35 (#112), state count 112, history 1,387 entries. archive tree count는 별도 조회하지 않았다.
+- #53–#57: 1 CONFLICT / 4 PARTIALLY_VERIFIED / 0 VERIFIED; direct quote reuse 0/5.
+- #38 재검토 결과: Annex I Part I(2)(m)의 안전하고 쉬운 데이터·설정 영구 제거 가능성 요구를 누락했던 기존 감사 판정을 PARTIALLY_VERIFIED로 정정.
+- #8–#47: 40건, 36 CONFLICT / 4 PARTIALLY_VERIFIED. #8–#52: 45건, 39 CONFLICT / 6 PARTIALLY_VERIFIED. #8–#57: 50건, 40 CONFLICT / 10 PARTIALLY_VERIFIED / 0 VERIFIED, 직접 인용 재사용 0/50.
+- 제품별 적용성은 SKU·제품 경계·저장 구조·실제 MCU 정보 미확정으로 UNVERIFIED. 실제 DUT 시험 NOT_RUN.
