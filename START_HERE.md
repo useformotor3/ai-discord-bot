@@ -278,3 +278,9 @@
 - Phase B HEAD `14666beefec6441df0a169aec81fa5c93d04fc22`, Actions [#43331128802](https://github.com/useformotor3/ai-discord-bot/actions/runs/43331128802) success.
 - 전체 55 tests PASS; strict archive/history audit 990/990 consistent.
 - main.py/prompt/contract/run workflow 미변경. 실제 공식 URL/PDF fetch는 미실시, PDF fake reader 테스트만 완료.
+
+
+## 2026-11-13 — Daily main archive audit
+- Latest checked main HEAD: `173c4d29ee62c0e96cfadf93824d6807ef2d148a` (report #6).
+- Since audited baseline #128, 166 new reports (#129–#288 and #1–#6) are registered in [docs/CRA_ARCHIVE_AUDIT_QUEUE.md](docs/CRA_ARCHIVE_AUDIT_QUEUE.md) on `cra-project-foundation` only.
+- Next session: read queue and audit P0 items with Pass A/B/C; do not treat queue registration or official-source baseline pre-check as report verification.
