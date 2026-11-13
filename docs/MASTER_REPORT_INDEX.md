@@ -151,3 +151,13 @@
 - 누적 #8–#57: 50건, 40 CONFLICT / 10 PARTIALLY_VERIFIED / 0 VERIFIED; 직접 인용 재사용 0/50.
 - 정정은 CRA 법령 기준선, 제1권·제2권, 사용자 정보 체크리스트, 요구사항 추적성 매트릭스에 반영했다.
 - 다음 main-only 감사 대상은 #58–#62다.
+
+## #58–#62 감사 및 정본 연결 — 2026-11-13
+
+- [main 보고서 #58–#62 감사](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_58_62_2026-11-13.md): 5 PARTIALLY_VERIFIED / 0 CONFLICT / 0 VERIFIED; 직접 인용 재사용 0/5.
+- 주장별 원자 레코드: [Claim Evidence Ledger](CLAIM_EVIDENCE_LEDGER.md)의 #58–#62 섹션.
+- 법령 정본: [CRA_VERIFIED_BASELINE_2026-11-12.md](CRA_VERIFIED_BASELINE_2026-11-12.md)의 CVD·신고·로깅 보완.
+- 독자용 보고서: 제1권에 CVD/Article 14/로그 법령 요구를 통합, 제2권에 PSIRT/로그 설계 선택을 통합.
+- 운영 절차: Article 14 PSIRT SOP의 trigger/recipient/deadline을 보완.
+- 누적 #8–#62: 55건, 40 CONFLICT / 15 PARTIALLY_VERIFIED / 0 VERIFIED; 직접 인용 재사용 0/55. 비무작위 연속 표본.
+- #8–#57 개별 주장·인용의 원자 분해 및 상위 문서 전수 대조는 계속 진행 중이다.
