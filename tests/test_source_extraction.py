@@ -111,5 +111,26 @@ class SourceExtractionTests(unittest.TestCase):
             extract_html_document("ST_AN5156_REV14", b"<p>12345</p>", max_text_chars=4)
 
 
+    def test_invalid_utf8_is_rejected_instead_of_silently_replaced(self):
+        raw = b"<html><body>bad-\xff-byte</body></html>"
+        with self.assertRaisesRegex(ExtractionError, "CHARSET_DECODE_FAILED"):
+            extract_html_document("ST_AN5156_REV14", raw)
+
+    def test_declared_windows_1252_is_decoded_strictly(self):
+        raw = b'<html><head><meta charset="windows-1252"><title>caf\xe9</title></head><body>caf\xe9</body></html>'
+        result = extract_html_document("ST_AN5156_REV14", raw)
+        self.assertIn("café", result.text)
+        self.assertEqual(result.replacement_char_count, 0)
+
+    def test_pdf_reports_empty_page_quality_diagnostics(self):
+        class PartialReader:
+            def __init__(self, _stream):
+                self.pages = [FakePage("text"), FakePage(""), FakePage("more text")]
+        result = extract_pdf_pages("TI_MSPM0G3529_Q1_DATASHEET", b"%PDF-1.7 fixture", reader_factory=PartialReader)
+        self.assertEqual(result.page_count, 3)
+        self.assertEqual(result.empty_page_count, 1)
+        self.assertEqual(result.quality_status, "PARTIAL_TEXT")
+
+
 if __name__ == "__main__":
     unittest.main()
