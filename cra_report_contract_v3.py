@@ -28,6 +28,7 @@ def _string_array():
 
 
 CRA_REPORT_V3_SCHEMA: dict[str, Any] = {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
     "type": "object",
     "properties": {
         "schema_version": {"type": "string", "enum": [SCHEMA_VERSION]},
