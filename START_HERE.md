@@ -418,3 +418,9 @@
 - 이후 main 자동 아카이브가 #119를 추가했다: HEAD \`6491a5db6ea35ea97a6d97e85bac43f9a3cf41c0\`, state count 119, history 1,394 entries.
 - #119는 아직 감사하지 않았다. 다음 감사 시작점은 #63–#67이며, 배치 시작 시 main HEAD/state/history를 다시 확인한다.
 - main은 read-only, merge/rebase/sync 금지.
+
+## 원자 주장 분해 진행 — #8–#12 완료
+
+- #8–#12 원본 5건의 개별 주장·인용을 31개 원자 Claim ID로 분해해 [Claim Evidence Ledger](docs/CLAIM_EVIDENCE_LEDGER.md)에 등록했다.
+- 기존 파일 단위 감사 판정 5 CONFLICT / direct quote reuse 0/5는 유지한다.
+- 다음 원자 분해 대상은 #13–#17이며, #18–#57까지 순차 진행한다.
