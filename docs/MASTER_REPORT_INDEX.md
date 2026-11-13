@@ -167,3 +167,9 @@
 - #8–#12 원자 Claim ID 31개를 [Claim Evidence Ledger](CLAIM_EVIDENCE_LEDGER.md)에 등록했다.
 - 기존 파일 단위 판정은 5 CONFLICT / direct quote reuse 0/5로 유지한다.
 - 다음 원자 분해 대상은 #13–#17이며, #18–#57까지 순차 진행 후 상위 보고서·SOP·매트릭스와 전수 대조한다.
+
+## #33–#37 원자 주장·제품 분류 법령 보완
+
+- #33–#37 원자 Claim ID 31개: [Claim Evidence Ledger](CLAIM_EVIDENCE_LEDGER.md).
+- #37의 Article 7/32/28/30/31 및 Annex VIII 정정과 Commission Implementing Regulation (EU) 2025/2392의 core-functionality test를 [CRA_VERIFIED_BASELINE](CRA_VERIFIED_BASELINE_2026-11-12.md) 및 제1권/제2권에 반영.
+- 실제 servo drive Class I/II 적용성은 UNVERIFIED. 별도 네트워크 인터페이스 제품과 host drive를 구분하고 제품 자료 확보 후 판단.
