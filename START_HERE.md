@@ -392,3 +392,12 @@
 - #8–#52 45개 보고서의 날짜 포함 Claim ID, 원본 archive 경로, blob SHA, 파일 판정과 중심 정정 요약을 [Claim Evidence Ledger](docs/CLAIM_EVIDENCE_LEDGER.md)에 등록했다.
 - #8–#12 상세 감사 문서도 재확인해 원본 경로와 SHA를 복원했다.
 - 보고서 내 모든 하위 주장·직접 인용의 원자 단위 연결은 후속 P0로 남아 있다.
+
+
+## 최신 감사 상태 — #8–#57 (2026-11-13)
+
+- #53–#57 감사 완료: 1 CONFLICT / 4 PARTIALLY_VERIFIED / 0 VERIFIED; 직접 인용 재사용 0/5.
+- #38 감사 판정은 Annex I Part I(2)(m) 데이터·설정 영구 제거 요구를 누락한 점을 확인해 PARTIALLY_VERIFIED로 정정했다.
+- #8–#57 누계: 50건 중 40 CONFLICT / 10 PARTIALLY_VERIFIED / 0 VERIFIED, 직접 인용 재사용 0/50. 비무작위 연속 표본이며 전체 archive 오류율이 아니다.
+- Claim Evidence Ledger에는 #8–#57 50개 보고서의 날짜 포함 파일 중심 ID가 등록되었다. 각 파일 내부의 모든 개별 법적 주장/인용을 원자 레코드로 분해하는 작업은 미완료다.
+- 다음 감사 시작점은 #58–#62다.
