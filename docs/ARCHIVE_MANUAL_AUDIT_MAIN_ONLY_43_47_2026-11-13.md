@@ -1,3 +1,14 @@
+## 한국어 핵심 요약
+
+- 대상: 2026-11-13 main 보고서 #43–#47, 총 5건. 날짜+일일 번호+원본 경로로 식별.
+- 판정: CONFLICT 3건 / PARTIALLY_VERIFIED 2건 / VERIFIED 0건.
+- 직접 인용 재사용 승인: 0/5. 제품별 적용성은 모두 UNVERIFIED.
+- #43의 “IACS/PLC/서보 드라이브가 Annex III Class II” 주장은 최종 Annex III에 없는 범주를 인용한 중대 오류다. Class II는 하이퍼바이저/컨테이너 런타임, 방화벽/IDS/IPS, 변조 방지 마이크로프로세서, 변조 방지 마이크로컨트롤러의 네 범주다.
+- 제품 분류는 Article 7·Annex III 및 Implementing Regulation (EU) 2025/2392의 핵심 기능/기술 설명을 기준으로 한다. 적합성 평가는 Article 32이며 Article 24가 아니다.
+- 접근통제는 Annex I Part I 2(d). RBAC, 최소 권한, MFA, 고유 자격증명 등은 위험기반 구현 후보로 법적 문언과 분리한다.
+- Article 13(8) 지원기간, Article 13(9) 업데이트 가용성, Annex I Part II(8) 무상 업데이트, Part II(4) 수정 취약점 공개, Article 14 신고를 각각 구분한다.
+- 아래 영문 상세 기록은 원본 SHA·보고서별 반증을 보존한다. 한국어 정본은 [CRA 공식 법령 기준선](CRA_VERIFIED_BASELINE_2026-11-12.md), [제품 분류·접근통제 매트릭스](CRA_PRODUCT_CLASSIFICATION_AND_ACCESS_CONTROL_MATRIX.md), [제1권](CRA_SERVO_DRIVE_COMPLIANCE_REPORT_V1.md)을 참조한다.
+
 # Main-only CRA Archive Manual Audit — Reports #43–#47
 
 - 감사일: 2026-11-13
