@@ -750,3 +750,12 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 - [x] Annex III Class I/II 제품 분류를 제품 전체 core functionality 증거가 필요한 별도 판단으로 기록.
 - [ ] 다음 배치 #28–#32 원자 Claim ID 분해.
 - [ ] #33–#57까지 순차 분해 후 제1권·제2권·PSIRT SOP·매트릭스 전수 대조.
+
+## 2026-11-13 P0 — #28–#32 원자 주장 분해
+
+- [x] #28–#32 main 원본 경로/blob SHA 재확인.
+- [x] 개별 법령 주장·인용 25개를 원자 Claim ID로 분해해 Ledger에 연결.
+- [x] support period Article 13(8), update availability Article 13(9), CVD/contact/free update Annex I Part II, Article 14 two-track, Annex VII technical documentation을 분리.
+- [x] file-level CONFLICT 5건과 개별 법령 사실 VERIFIED를 구분.
+- [ ] 다음 배치 #33–#37 원자 Claim ID 분해.
+- [ ] #38–#57까지 순차 분해 후 제1권·제2권·PSIRT SOP·매트릭스 전수 대조.
