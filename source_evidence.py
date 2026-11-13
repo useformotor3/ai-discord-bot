@@ -180,12 +180,16 @@ def _validate_https_target(url: str, expected_host: str, resolver: Callable[[str
 def _read_limited(response: object, limit: int, chunk_size: int) -> bytes:
     headers = getattr(response, "headers", {})
     content_length = headers.get("Content-Length") or headers.get("content-length")
-    if content_length:
+    if content_length is not None:
         try:
-            if int(content_length) > limit:
-                raise SourceFetchError("RESPONSE_TOO_LARGE")
-        except ValueError as exc:
+            normalized_length = str(content_length).strip()
+            if not normalized_length or not normalized_length.isdecimal():
+                raise ValueError("invalid content length")
+            declared_length = int(normalized_length)
+        except (TypeError, ValueError) as exc:
             raise SourceFetchError("INVALID_CONTENT_LENGTH") from exc
+        if declared_length > limit:
+            raise SourceFetchError("RESPONSE_TOO_LARGE")
 
     chunks: list[bytes] = []
     total = 0
