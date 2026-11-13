@@ -138,10 +138,10 @@
 - 이 문서의 링크 목록은 저장소 문서 지도이며 법적·기술적 주장의 증거 자체가 아니다.
 
 
-### 2026-11-13 audit navigation update
+### 2026-11-13 감사 탐색 링크
 
-- [main reports #48–#52 audit](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_48_52_2026-11-13.md): 3 CONFLICT / 2 PARTIALLY_VERIFIED / 0 VERIFIED; direct quote reuse 0/5.
-- Claim-level corrections are indexed in [CLAIM_EVIDENCE_LEDGER.md](CLAIM_EVIDENCE_LEDGER.md) and integrated into Volume 1, Volume 2, the Article 14 PSIRT SOP and MASTER_REPORT.
+- [main 보고서 #48–#52 감사](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_48_52_2026-11-13.md): CONFLICT 3건 / PARTIALLY_VERIFIED 2건 / VERIFIED 0건; 직접 인용 재사용 승인 0/5.
+- 주장별 정정은 [CLAIM_EVIDENCE_LEDGER.md](CLAIM_EVIDENCE_LEDGER.md)에 기록하고 제1권·제2권·Article 14 PSIRT SOP·MASTER_REPORT에 반영했다.
 
 
 ## 11. 문서 기본 언어 및 용어 관리 — 한국어 정본
@@ -160,3 +160,11 @@
 - [한국어 CRA 법령 기준선](CRA_VERIFIED_BASELINE_2026-11-12.md): 조항·예외·신고·지원기간·업데이트·CVD·분류 기준의 통합 정본.
 - [한국어 제품 분류·접근통제 매트릭스 v0.2](CRA_PRODUCT_CLASSIFICATION_AND_ACCESS_CONTROL_MATRIX.md): 분류 판단 게이트, Article 32 경로, 접근통제 법적 요구/구현 후보/증거.
 - 최종 보고서 기본 언어는 한국어다. 영문은 법령/표준/공식 문서명, 기술 식별자, 정확한 원문 인용에 한해 유지한다.
+
+
+### #13–#42 반복 정정의 통합 위치
+
+- 법령 조항 및 예외의 정본: [CRA 공식 법령 기준선](CRA_VERIFIED_BASELINE_2026-11-12.md) 제2.3절.
+- 독자용 법령 해석: [제1권](CRA_SERVO_DRIVE_COMPLIANCE_REPORT_V1.md) 제3장.
+- 구현·매뉴얼 반영: [제2권](SERVO_DRIVE_CRA_IMPLEMENTATION_PLAN_V1.md), [요구사항 추적성 매트릭스](CRA_REQUIREMENTS_TO_SERVO_DRIVE_TRACEABILITY_MATRIX.md), [사용자 정보 체크리스트](SERVO_DRIVE_CRA_USER_SECURITY_INFORMATION_CHECKLIST.md).
+- 각 배치 원본·SHA·개별 판정은 감사 보고서에 보존한다. 이 링크 지도에 법령 내용을 중복 복사하지 않는다.
