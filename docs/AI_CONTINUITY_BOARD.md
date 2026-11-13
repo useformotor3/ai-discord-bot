@@ -28,8 +28,8 @@
 |---|---|
 | 작업 브랜치 | `cra-project-foundation` |
 | main 브랜치 | 읽기 전용. 병합·rebase·sync 금지 |
-| main 최신 관찰 | HEAD `92e8ca7aa4a86b38627a1d8e9535e5b0463a8392`, report #125; state count 125; history 1,394 entries; archive tree count not rechecked |
-| main 자료 상태 | history.json 1,400 entries; state.json count 119 (당일 카운터); archive tree count는 이번 조회에서 미확인 |
+| main 최신 관찰 | HEAD `92e8ca7aa4a86b38627a1d8e9535e5b0463a8392`, report #125; state count 125; history 1,400 entries; archive tree count not rechecked |
+| main 자료 상태 | history.json/archive tree 1,400/1,400; state.json count125 (당일 카운터); missing/orphan/duplicate 0 |
 | 작업 브랜치 아카이브 | 최근 strict audit 기준 990개 / history 990개 정합 |
 | main과 작업 브랜치 | diverged; ahead/behind 수치는 변경되므로 새 세션마다 동적 재조회. merge base `b425b6db591e34abe003522157cf97ecf2240d9f` |
 | 최근 코드 검증 | Phase D hardening exact HEAD CI #43384495713 success: 140 tests, archive 990/990, consistent=true |
@@ -170,7 +170,7 @@
 
 ## 2026-11-13 — 최신 Git/CI 상태 재확인
 - 작업 브랜치 HEAD: `ced168745cd19400ba29131a495c3bf5c3f924eb`; main HEAD: `92e8ca7aa4a86b38627a1d8e9535e5b0463a8392` (#125). Compare: diverged, ahead 968 / behind 416; merge/rebase 금지.
-- main `research_archive` 실제 tree 파일 1,368개, `history.json` 1,368개, `state.json` count 93. Tree 응답 truncated=false로 확인.
+- Historical main snapshot #93: tree/history 1,368/1,368. Superseded by current main #125: tree/history 1,400/1,400, missing/orphan/duplicate 0.
 - main 대비 작업 브랜치: diverged, ahead 657 / behind 384. Merge base `b425b6db591e34abe003522157cf97ecf2240d9f`. merge/rebase/sync 금지 유지.
 - 현재 work branch HEAD `ced168745cd19400ba29131a495c3bf5c3f924eb`까지의 이번 연속 작업은 문서만 변경했다. main.py, production workflow, prompts, contracts, schema, evidence bundle 등 보호 파일 변경 없음.
 - 해당 exact HEAD의 Actions run은 조회되지 않았고 commit status는 pending / 0 statuses다. 따라서 이번 문서 변경에 대한 CI는 **미실행/미확인**이다. 마지막 확인된 이전 CI success(140 tests)는 과거 commit에 대한 결과이지 현재 HEAD의 CI 결과가 아니다.
@@ -336,7 +336,7 @@
 ## 사후 기준선 — main report #125 (2026-11-13)
 
 - #58–#62 감사 시점 main 기준선은 report #118 / history 1,393 entries였다.
-- 후속 자동 아카이브로 main이 report #125까지 진행: HEAD \`6491a5db6ea35ea97a6d97e85bac43f9a3cf41c0\`, state count 125, history 1,394 entries.
+- 후속 자동 아카이브로 main이 report #125까지 진행: HEAD \`6491a5db6ea35ea97a6d97e85bac43f9a3cf41c0\`, state count 125, history 1,400 entries.
 - #119는 아직 감사하지 않았다. 다음 감사 시작점은 #63–#67이며, 배치 시작 시 main HEAD/state/history를 다시 조회한다.
 - main/work branch는 diverged. ahead/behind는 변경되므로 매 세션 동적으로 확인하고 merge/rebase/sync하지 않는다.
 
