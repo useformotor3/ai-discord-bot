@@ -387,20 +387,20 @@ Correct map: Annex I Part I(2)(c) for applicable automatic-update default/user c
 | 감사 범위 | 상세 감사 문서 | 판정 | 직접 인용 재사용 | Ledger 원자 주장 연결 |
 |---|---|---|---:|---|
 | #8–#12 | [감사 #8–#12](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_8_12_2026-11-13.md) | 5 CONFLICT | 0/5 | 날짜 포함 claim ID 5개 등록 |
-| #13–#27 | [감사 #13–#27](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_13_27_2026-11-13.md) | 15 CONFLICT | 0/15 | 개별 원자 claim ID 미등록 |
+| #13–#27 | [감사 #13–#27](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_13_27_2026-11-13.md) | 15 CONFLICT | 0/15 | 날짜 포함 파일 중심 주장 ID 5개 등록; 개별 세부 주장 분해는 후속 |
 | #28–#32 | [감사 #28–#32](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_28_32_2026-11-13.md) | 5 CONFLICT | 0/5 | 개별 원자 claim ID 미등록 |
-| #33–#37 | [감사 #33–#37](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_33_37_2026-11-13.md) | 5 CONFLICT | 0/5 | #35–#37의 일부 ID가 과거 기록에 있으나 날짜/경로 기준 재매핑 필요 |
-| #38–#42 | [감사 #38–#42](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_38_42_2026-11-13.md) | 4 CONFLICT / 1 PARTIALLY_VERIFIED | 0/5 | #40–#42 일부 ID가 과거 기록에 있으나 날짜/경로 기준 재매핑 필요 |
-| #43–#47 | [감사 #43–#47](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_43_47_2026-11-13.md) | 3 CONFLICT / 2 PARTIALLY_VERIFIED | 0/5 | CRA-ARCH-043–047 레코드 존재 여부와 원본 날짜/경로를 재대조해야 함 |
+| #33–#37 | [감사 #33–#37](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_33_37_2026-11-13.md) | 5 CONFLICT | 0/5 | 날짜 포함 파일 중심 주장 ID 5개 등록; 과거 날짜의 별도 ID와 구분 |
+| #38–#42 | [감사 #38–#42](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_38_42_2026-11-13.md) | 4 CONFLICT / 1 PARTIALLY_VERIFIED | 0/5 | 날짜 포함 파일 중심 주장 ID 5개 등록; 과거 날짜의 별도 ID와 구분 |
+| #43–#47 | [감사 #43–#47](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_43_47_2026-11-13.md) | 3 CONFLICT / 2 PARTIALLY_VERIFIED | 0/5 | 날짜 포함 파일 중심 주장 ID 5개 등록; 과거 날짜의 별도 ID와 구분 |
 | #48–#52 | [감사 #48–#52](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_48_52_2026-11-13.md) | 3 CONFLICT / 2 PARTIALLY_VERIFIED | 0/5 | CRA-ARCH-MAIN-20261113-048–052-001 다섯 레코드 등록 |
 
 ### 집계와 한계
 
 - #13–#52: 40건 중 35 CONFLICT / 5 PARTIALLY_VERIFIED / 0 VERIFIED, 직접 인용 재사용 0/40.
 - #8–#47: 40건 중 37 CONFLICT / 3 PARTIALLY_VERIFIED / 0 VERIFIED, 직접 인용 재사용 0/40. #8–#12의 5 CONFLICT는 이전 누적 집계에서 역산한 값이며, 원본 감사 문서·개별 판정 링크를 이번 대조에서 재확인하지 못했다.
-- #8–#52: 45건 중 40 CONFLICT / 5 PARTIALLY_VERIFIED / 0 VERIFIED, 직접 인용 재사용 0/45.
+- #8–#52: 45건 중 40 CONFLICT / 5 PARTIALLY_VERIFIED / 0 VERIFIED, 직접 인용 재사용 0/45. 각 보고서에 날짜 포함 파일 중심 주장 ID 1개씩 총 45개를 등록했다.
 - 이 결과는 날짜/번호로 연속 선택한 비무작위 표본이다. 전체 main 아카이브의 오류율로 일반화하지 않는다.
-- Ledger에 개별 원자 주장 ID가 없는 #13–#34 및 일부 #35–#47은 상세 감사 문서가 존재하더라도 주장 단위 추적은 미완료다. 이 배치 색인을 추가한 것만으로 원자 claim coverage가 완료된 것으로 간주하지 않는다.
+- Ledger에는 #8–#52 각 파일의 날짜·경로·SHA·판정·중심 정정 내용을 연결한 파일 중심 claim ID 45개가 등록되었다. 다만 한 파일 안의 여러 법적 주장·직접 인용을 모두 별도 원자 claim으로 분해한 것은 아니므로 세부 claim coverage는 미완료다.
 - 다음 P0: #8–#52의 날짜+원본 경로+blob SHA를 기준으로 감사 문서와 Ledger ID를 1:1 대조하고, 중복/누락/상태 차이를 폐쇄한다.
 
 
