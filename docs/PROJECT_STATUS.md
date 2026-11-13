@@ -660,3 +660,12 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - Replaced free-form counter-evidence with structured countercheck target / evidence examined / conclusion fields and minimum-length checks; rejected future UTC timestamps.
 - Reviewer identity/independence are explicitly not machine-authenticated. Hashes are not signatures.
 - Exact-head tests, strict archive audit and GitHub Actions result: pending. Do not treat the earlier Phase D CI as verification of this new HEAD.
+
+
+### Phase D hardening — verification closed
+
+- Final exact code/test HEAD `b8a5952427dbfbfc3c6dfeca0a593a360591141e`: GitHub Actions #43384495713 SUCCESS.
+- Full suite 140/140 passed; strict archive audit 990/990, missing/orphan/duplicate/malformed 0, consistent=true.
+- Two failed intermediate CI attempts were corrected; only the final exact-head run is the passing verification.
+- Protected production/prompt/contract/schema/bundle files retained their pre-change blob SHAs. No merge/rebase/sync with `main`.
+- Next priority is substantive report production and claim-level evidence validation, not further process-only expansion.

@@ -48,3 +48,14 @@ A candidate acceptance record requires quote, locator, context/exception and cla
 - Future UTC review timestamps are rejected.
 - Reviewer identity and independence remain **not machine-authenticated**. Deterministic hashes are consistency checks, not signatures or authenticity proofs; a caller able to rewrite the entire result can also recompute an unsigned hash.
 - Verification for this addendum is pending exact-head CI. No live source fetch, Gemini API, OCR, production integration, protected-file edit, or main-branch operation is included.
+
+
+## Exact-head verification — 2026-11-13
+
+- Final verified code/test commit: `b8a5952427dbfbfc3c6dfeca0a593a360591141e`.
+- GitHub Actions [#43384495713](https://github.com/useformotor3/ai-discord-bot/actions/runs/43384495713): **SUCCESS** on that exact commit.
+- Full unittest suite: **140 tests passed**, 0 failures, 0 errors.
+- Strict archive audit: archive 990 / history 990; missing paths 0; orphan paths 0; duplicate paths 0; malformed entries 0; `consistent=true`.
+- Two earlier CI attempts failed and were corrected before the final green run: #43384361447 (missing UTC timezone import) and #43384417623 (test-fixture syntax comma). Do not report either failed run as successful.
+- Protected-file SHAs after implementation match the pre-change values: `main.py` `997952702fdd9d2472468b82e6efdd65b2bb4376`; `.github/workflows/run.yml` `65a8cadc8eac593f551e390698e367b1d161ecf1`; v2 prompt `14e9ce8618bc447a371dc28fc725cda3636470c5`; v2 contract `e0c1f1db353f664ae8c817c2f335d3a6efef4076`; Phase C schema `6afd04bafd4fe098972ce762e5354e2199ca237b`; `evidence_bundle.py` `ad7227d9e89f74864f349d1b632d664752550fc1`; v3 contract `911d616fec846fcbd361256ea08399c6fb50e93b`.
+- Verification is limited to mock/fixture unit tests and repository archive consistency. No live official-source fetch, PDF visual validation, Gemini API, production bot integration, legal interpretation, reviewer identity authentication, or product test was performed.
