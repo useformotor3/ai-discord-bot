@@ -505,3 +505,17 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 - Add correction rules: distinguish Article 13(8) support period, Article 13(9) update availability, Annex I Part II(5) CVD, Part II(6) contact/information sharing, Part II(7) secure distribution, Part II(8) free updates and Article 14 reporting.
 - Next audit target: reports #28 onward, prioritizing P0 claims. Original main branch remains read-only.
 - Phase E3 approval package prepared: [PHASE_E3_APPROVAL_PACKAGE.md](PHASE_E3_APPROVAL_PACKAGE.md). It is design only; actual network fetch is still NOT AUTHORIZED.
+
+
+## 2026-11-13 — 보고서 파일 우선 발행 및 운영 코드 개선 제안
+- [x] 제1권 CRA 법령 조사 보고서 초판 생성: `docs/CRA_SERVO_DRIVE_COMPLIANCE_REPORT_V1.md`.
+- [x] 제2권 서보 드라이브 적용·구현 방안 초판 생성: `docs/SERVO_DRIVE_CRA_IMPLEMENTATION_PLAN_V1.md`.
+- [x] 기존 `docs/MASTER_REPORT.md`에 새 보고서 진입 링크 추가. 기존 본문은 삭제하지 않고 과거 초안으로 구분.
+- [x] 운영 조사 자동화 보호 파일 개선 제안서 작성: `docs/PROTECTED_CODE_CHANGE_PROPOSAL_V1.md`. 코드 변경 전 승인 대기.
+- [ ] 기존 추적성 매트릭스와 제1·2권 조항/요구사항 ID 통합 및 전수 링크 검사.
+- [ ] 1,347개 main 아카이브의 inventory를 최신 main SHA 기준으로 재현하고 주제/조항/출처/중복/오류 후보 분류.
+- [ ] Article 14 PSIRT tabletop 절차 및 제품 입력자료 확보.
+- [ ] 실제 SKU/MCU/인터페이스/업데이트/지원기간 확보 후 제품별 적용성 확정.
+- [ ] DOCX/PDF/PPTX/XLSX 무료 배포 파이프라인 설계·검증.
+
+**진행 원칙:** 보고서 파일을 먼저 만들고 근거·설계·시험을 이어서 채운다. 파일이 커지면 권/장으로 분할하고 마스터 인덱스와 안정적 ID로 연결한다. 법령 근거 VERIFIED와 제품 적용 VERIFIED를 분리한다.
