@@ -616,3 +616,26 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 - 제품 분류 판단 게이트, Annex III category cross-check, Article 32 route, 접근통제 legal-vs-design matrix, 검증 증거 목록 및 미확인 입력을 한 문서로 구성했다.
 - 다음 개정: 실제 SKU/매뉴얼/제품 경계 확보 후 classification record를 제품별로 완성하고, 접근통제 설계/시험 항목에 실제 HW/FW architecture evidence를 연결한다.
 
+
+
+## 2026-11-13 추가 — 보고서·매뉴얼 통합 및 문서 구조 정리
+
+### 목표
+감사 보고서가 누적되는 데 그치지 않고 검증·정정 결과가 실제 CRA 보고서와 매뉴얼에 반영되도록 한다. 문서를 무조건 하나로 합치지 않되 과도한 분할과 중복을 줄인다.
+
+### 실행 항목
+- [x] 전체 문서 역할·정본·읽기 순서·링크를 정의한 CRA_DOCUMENT_ARCHITECTURE_AND_NAVIGATION.md 작성.
+- [x] START_HERE에 문서 지도 및 상위 보고서 인덱스 연결.
+- [x] AI_RULEBOOK에 문서 생성 억제, 정본 지정, 감사 결과의 본문 통합 의무 추가.
+- [x] MASTER_REPORT_INDEX 및 MASTER_REPORT에 문서 구조·탐색 링크 추가.
+- [ ] 제1권·제2권·MASTER_REPORT·Claim Evidence Ledger·정정 대장을 상호 대조해 감사에서 확인된 정정이 누락된 장/표를 찾는다.
+- [ ] 반복 법령 정정(제품 분류, Article 13(8)/(9), Article 14, Annex I Part I/II, Annex II)을 단일 CRA 요구사항 기준표로 정리하고 제1권 본문에 반영한다.
+- [ ] HW/FW 매뉴얼·PSIRT SOP·추적성 매트릭스에 동일 요구사항 ID와 근거 링크를 맞춘다.
+- [ ] 문서별 중복 내용을 정리하고 superseded 상태 및 대체 링크를 표시한다.
+
+### 완료 기준
+- 사용자는 START_HERE에서 전체 문서 지도를 열 수 있다.
+- MASTER_REPORT_INDEX에서 모든 현재 발행 산출물과 상태/역할을 찾을 수 있다.
+- 반복 감사에서 검증된 핵심 결론을 최종 보고서에서 찾을 수 있고, 상세 원문 감사로 역추적할 수 있다.
+- 동일 요구사항이 보고서·매뉴얼·매트릭스에서 서로 다른 조항·상태로 표시되지 않는다.
+- 제품별 미확인 사항과 실제 미실행 시험은 계속 명시한다.
