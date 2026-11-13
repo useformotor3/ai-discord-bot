@@ -606,3 +606,14 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - Detailed evidence: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_13_27_2026-11-13.md](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_13_27_2026-11-13.md). The batch is non-random and not a representative error rate. Product applicability remains UNVERIFIED.
 - E3 approval package: [PHASE_E3_APPROVAL_PACKAGE.md](PHASE_E3_APPROVAL_PACKAGE.md). Design only; no live fetch, no Gemini/API call and no production integration. E3 requires explicit phrase “E3 실행 승인”.
 - Protected files and main branch remain outside this documentation-only change. No tests/CI PASS claimed for this audit batch.
+
+
+## 2026-11-13 — 실제 보고서 산출물 발행
+- 제1권: `docs/CRA_SERVO_DRIVE_COMPLIANCE_REPORT_V1.md` — CRA 적용성, Article 13/14, Annex I/II, 일정, 우선순위, 공식 출처.
+- 제2권: `docs/SERVO_DRIVE_CRA_IMPLEMENTATION_PLAN_V1.md` — 제품 경계, Article 14 신고 절차, HW/FW 인터페이스, 업데이트, SBOM/CVD, 시험 및 완료 게이트.
+- 기존 `docs/MASTER_REPORT.md`는 기존 본문을 보존하면서 새 보고서 링크를 추가했다. 기존 본문은 검증 완료로 간주하지 않는다.
+- `docs/PROTECTED_CODE_CHANGE_PROPOSAL_V1.md`에 운영 코드/프롬프트 개선 제안과 테스트·롤백 계획을 작성했다. `main.py`, 운영 workflow, Gemini prompt는 변경하지 않았다.
+- 법령 일정 기준: Commission 공식 페이지상 신고 의무 2026-09-11 적용, CRA 일반 전면 적용 2027-12-11. Article 14 운영 준비는 P0.
+- 제품 SKU, intended purpose, EU 공급 형태, 실제 MCU order code, 네트워크/서비스 기능, 업데이트 경로 미확정. 제품별 적합성·분류·MCU 기능은 UNKNOWN/UNVERIFIED.
+- 시험 대장에 기록된 시험은 설계 후보이며 실제 제품 시험은 NOT_RUN.
+- 다음 작업: 추적성 매트릭스 통합·검사, main 1,347개 아카이브의 정확한 기준 SHA 고정 및 inventory 재생성, PSIRT tabletop 문서, 사용자 입력값 확보.
