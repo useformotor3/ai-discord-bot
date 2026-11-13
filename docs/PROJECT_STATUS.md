@@ -676,9 +676,9 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - 단일 인수인계/실행 기준: [AI_CONTINUITY_BOARD.md](AI_CONTINUITY_BOARD.md). 신규 세션은 반드시 읽고 현재 Git 상태와 대조한다.
 - 범위 명확화: 현재 CRA 서보 드라이브 프로젝트 전용. SIL 3 벤치마킹은 범위 밖이며, 과거 로그의 관련 표현은 현재 목표가 아니다.
 - 결과물 우선: 매 작업에 가능하면 보고서/표/설계/claim audit 산출물을 남긴다. 코드 수정은 금지하지 않으며, 결과물의 신뢰성·재현성 향상에 필요하면 수행한다.
-- main 최신 확인: HEAD `4452662e6cba0bb81c6efb4b309b30f4733d8f71`, report #91; archive/history 1,366/1,366, unique path 1,366. 작업 브랜치 archive/history strict audit 기준 990/990. main read-only.
-- main reports #8–#32 수동 감사 완료. #8–#12 5 CONFLICT, #13–#27 15 CONFLICT, #28–#32 5 CONFLICT. 각 배치는 연속·비무작위이며 전체 archive 오류율이 아니다.
-- 최신 실질 산출물: [#28–#32 감사](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_28_32_2026-11-13.md). 다음 감사 시작 #33.
+- main 최신 확인: report #119, HEAD `6491a5db6ea35ea97a6d97e85bac43f9a3cf41c0`; state count 119, history.json 1,394 entries. Archive tree count는 미재확인. main read-only.
+- main reports #8–#62 수동 감사 완료: 55건, 40 CONFLICT / 15 PARTIALLY_VERIFIED / 0 VERIFIED, direct quote reuse 0/55. 연속·비무작위 표본이며 전체 archive 오류율이 아니다.
+- 최신 실질 산출물: Claim Evidence Ledger 345개 원자 주장 및 45개 Canonical ID 매핑. 다음 P0는 제1권·제2권·SOP·매트릭스·시험 대장 전수 대조 후 #63–#67 감사.
 - Phase D hardening final code/test 140/140 및 archive 990/990 성공; 문서 최신화 HEAD도 CI #43384628893에서 140/140 및 990/990 성공. 최신 결과/한계는 AI_CONTINUITY_BOARD와 SESSION_LOG 참조.
 - E3 live fetch 및 보호 파일/production integration/main merge는 별도 승인 전 실행 금지.
 
@@ -846,7 +846,7 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 ## 2026-11-13 — #8–#12 원자 주장 분해 완료
 
 - #8–#12 원본 경로/blob SHA와 기존 Pass A/B/C 감사 결과를 main에서 다시 대조했다.
-- Claim Evidence Ledger에 원자 Claim ID 31개를 추가했다.
+- Claim Evidence Ledger에 원자 Claim ID 32개를 추가했다.
 - 파일 단위 결과는 5 CONFLICT / 0 PARTIALLY_VERIFIED / 0 VERIFIED; direct quote reuse 0/5로 유지.
 - 개별 VERIFIED는 법령 문장만 확인한 상태이며 제품별 적용성·Class I/II 분류는 UNVERIFIED, DUT 시험 NOT_RUN.
 - 다음 원자 분해 배치는 #13–#17. #18–#57까지 순차적으로 Claim ID·공식 원문 locator·정정·반증을 연결한다.
@@ -886,7 +886,7 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 ## 2026-11-13 — #33–#37 원자 주장 분해 및 Article 7/32 법령 재확인
 
 - #33–#37 원본 5건의 경로/blob SHA를 main에서 재확인했다.
-- Claim Evidence Ledger에 원자 Claim ID 31개를 추가했다.
+- Claim Evidence Ledger에 원자 Claim ID 33개를 추가했다.
 - 파일 단위 판정은 5 CONFLICT / 0 PARTIALLY_VERIFIED / 0 VERIFIED; direct quote reuse 0/5로 유지.
 - Commission Implementing Regulation (EU) 2025/2392를 EUR-Lex에서 직접 확인해 Annex III product-category technical description 및 core-functionality 기준을 추가 반영했다.
 - Article 32/Annex VIII conformity assessment, Article 28 DoC, Article 30 CE, Article 31/Annex VII technical documentation으로 정정.
@@ -911,7 +911,7 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 ## 2026-11-13 — #48–#52 원자 주장 분해 완료
 
 - #48–#52 원본 5건의 경로/blob SHA를 main에서 재확인했다.
-- Claim Evidence Ledger에 원자 Claim ID 31개를 추가했다.
+- Claim Evidence Ledger에 원자 Claim ID 36개를 추가했다.
 - 파일 단위 결과 3 CONFLICT / 2 PARTIALLY_VERIFIED / 0 VERIFIED; direct quote reuse 0/5 유지.
 - Article 14(8), Annex I Part II(4)–(8), Article 13(5)–(7) 공급망 구성요소 의무를 분리했다.
 - 제품별 적용성 UNVERIFIED, DUT 시험 NOT_RUN. 다음 원자 분해 배치는 #53–#57.
@@ -923,3 +923,14 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - 파일 단위 결과 1 CONFLICT / 4 PARTIALLY_VERIFIED / 0 VERIFIED; direct quote reuse 0/5 유지.
 - #8–#57 전체 50개 보고서의 원자 claim decomposition을 완료했다. 다음은 Claim Ledger/제1권/제2권/SOP/매트릭스/시험 증거 대장 전수 대조다.
 - 제품별 적용성 UNVERIFIED, DUT 시험 NOT_RUN.
+
+## 2026-11-13 authoritative snapshot — #8–#62 audit and claim normalization
+
+- main latest observed: report #119; HEAD \`6491a5db6ea35ea97a6d97e85bac43f9a3cf41c0\`; state count 119; history.json 1,394 entries. Archive tree count was not rechecked. main remains read-only.
+- main-only audit scope #8–#62: 55 consecutive, non-random reports; file-level results **40 CONFLICT / 15 PARTIALLY_VERIFIED / 0 VERIFIED**; direct quote reuse **0/55**. This is not a statistical error rate for the full archive.
+- Claim Evidence Ledger: 55 file-level source records + 345 atomic claims = **400 unique IDs**, duplicate IDs 0. All 345 atomic claims have one or more Canonical IDs. Canonical register defines 45 requirements; 43 are referenced by legacy atomic claims, and 2 are forward-mapped to matrix requirements.
+- #8–#57 (50 reports) and #58–#62 (5 reports) have completed atomic decomposition. Individual legal facts marked VERIFIED do not promote a conflicting source file to VERIFIED.
+- Product-specific applicability, Class I/II classification, exact MCU order code and DUT test results remain UNVERIFIED/NOT_RUN.
+- Current P0: reconcile the 345 atomic claims and 45 canonical requirements against Volume 1, Volume 2, PSIRT SOP, requirements matrix, integrated traceability matrix and test evidence register; resolve duplicated/contradictory wording and keep exact legal locators. Then proceed to main-only audit #63–#67.
+- No production code, main.py, production workflow, Gemini V2 prompt/contract or main branch was changed. E3 live source fetch remains unexecuted. This batch is documentation-only.
+
