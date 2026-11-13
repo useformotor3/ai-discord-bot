@@ -239,11 +239,16 @@ def build_human_review_packet(
     claims = report_payload.get("claims")
     if not isinstance(claims, list):
         raise QuoteValidationError("REPORT_CLAIMS_INVALID")
+    seen_claim_ids = set()
     for claim in claims:
         claim_id = claim.get("claim_id") if isinstance(claim, Mapping) else None
         ids = claim.get("evidence_ids") if isinstance(claim, Mapping) else None
-        if not isinstance(claim_id, str) or not isinstance(ids, list) or not ids:
+        if (not isinstance(claim_id, str) or not claim_id or claim_id in seen_claim_ids
+                or not isinstance(ids, list) or not ids
+                or any(not isinstance(value, str) for value in ids)
+                or len(ids) != len(set(ids))):
             raise QuoteValidationError("CLAIM_EVIDENCE_REFERENCE_INVALID")
+        seen_claim_ids.add(claim_id)
         for evidence_id in ids:
             if evidence_id not in by_id or evidence_id not in checks:
                 raise QuoteValidationError("CLAIM_EVIDENCE_REFERENCE_INVALID")
@@ -303,9 +308,11 @@ def validate_human_review_record(record: Any) -> dict[str, Any]:
         raise QuoteValidationError("CLAIM_SUPPORT_REQUIRED")
     timestamp = record["reviewed_at_utc"]
     try:
+        if not isinstance(timestamp, str):
+            raise ValueError("timestamp must be text")
         parsed = datetime.fromisoformat(timestamp.replace("Z", "+00:00"))
-        if parsed.tzinfo is None or parsed.utcoffset() is None:
-            raise ValueError("timezone required")
+        if parsed.tzinfo is None or parsed.utcoffset() is None or parsed.utcoffset().total_seconds() != 0:
+            raise ValueError("UTC timezone required")
     except (TypeError, ValueError):
         raise QuoteValidationError("REVIEW_TIMESTAMP_INVALID")
     return {
