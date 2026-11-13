@@ -19,13 +19,12 @@
 1. [AI 행동강령](docs/AI_RULEBOOK.md) — 작업 전 필수 절차와 품질 기준
 2. [프로젝트 상황판](docs/PROJECT_STATUS.md) — 현재 사실·진행 상태·위험
 3. [마스터 계획](docs/MASTER_PLAN.md) — 우선순위와 완료 조건
-4. [지식 인덱스](docs/KNOWLEDGE_INDEX.md) — 근거·검증 상태
-5. [통합 보고서](docs/MASTER_REPORT.md) — 현재 보고서 구조와 작성 상태
-6. [문서 구조·전체 링크 지도](docs/CRA_DOCUMENT_ARCHITECTURE_AND_NAVIGATION.md) — 문서 역할과 정본 위치
-7. [마스터 보고서 인덱스](docs/MASTER_REPORT_INDEX.md) — 발행 문서 카탈로그
-8. [통합 마스터 보고서](docs/MASTER_REPORT.md) — 독자용 통합 본문
-9. [최근 세션 기록](SESSION_LOG/) — 직전 결정·성공·실패·다음 작업
-7. 작업에 관련된 감사·법령 기준선·제조사 자료를 추가로 확인한다.
+4. [문서 구조·전체 링크 지도](docs/CRA_DOCUMENT_ARCHITECTURE_AND_NAVIGATION.md) — 문서 역할과 정본 위치
+5. [마스터 보고서 인덱스](docs/MASTER_REPORT_INDEX.md) — 발행 문서 카탈로그
+6. [통합 마스터 보고서](docs/MASTER_REPORT.md) — 독자용 통합 본문
+7. [지식 인덱스](docs/KNOWLEDGE_INDEX.md) — 근거·검증 상태
+8. [최근 세션 기록](SESSION_LOG/) — 직전 결정·성공·실패·다음 작업
+9. 작업에 관련된 감사·법령 기준선·제조사 자료를 추가로 확인한다.
 
 필수 문서를 읽지 못하면 이전 대화 기억으로 내용을 채우지 않는다. 확인 불가 상태를 명시하고 저장소를 다시 확인하거나 사용자에게 필요한 정보를 요청한다.
 
@@ -48,10 +47,13 @@
 - [CRA 법령 기준선](docs/CRA_LEGAL_BASELINE.md)
 - [저장소 브랜치/이력 정합성 감사](docs/REPOSITORY_RECONCILIATION.md)
 
-## 현재 기준선 (2026-11-12 확인)
-- cra-project-foundation: archive 990개, history 990개, 경로 중복/누락/orphan 0.
-- CRA Archive Integrity GitHub Actions: 최근 확인한 4회 실행 모두 success. 각 실행에서 단위 테스트와 strict archive/history 검사가 통과.
-- main.py와 Gemini 프롬프트는 사용자 승인 전 수정 금지. 변경 필요 시 제안서를 먼저 제출하고 승인 대기.
+## 현재 기준선 (2026-11-13 확인)
+- 작업 브랜치 cra-project-foundation의 현재 HEAD와 CI는 AI_CONTINUITY_BOARD 및 PROJECT_STATUS에서 세션마다 실시간 재확인한다.
+- 작업 브랜치 history.json은 990 entries. 마지막으로 확인된 strict archive audit는 archive/history 990/990 정합성을 통과했으나, 최신 문서 전용 변경 HEAD에서 새 strict audit/CI를 실행한 것은 아니다.
+- main 최신 관찰: report #107, HEAD aaded0f4d0b84a1891b5801a6048c4de92511822; history.json 1,382 entries, state.json count 107(당일 카운터). archive tree 파일 수는 이번 확인에서 재검증하지 않았다.
+- main과 작업 브랜치는 diverged이며, 현재 비교는 작업 브랜치 ahead 690 / behind 398. main merge/rebase/sync 금지.
+- main.py, production run.yml, Gemini V2 prompt, contracts, schemas, evidence bundle은 별도 승인 전 수정 금지.
+- 최신 작업 HEAD의 CI run/status가 확인되지 않으면 PASS라고 기록하지 않는다.
 
 ## 최우선 다음 작업
 1. 990개 자료의 위험 플래그별 표본을 원문과 대조해 실제 오류/정상 주장 구분
