@@ -2497,6 +2497,6 @@ Batch result: 5/5 CONFLICT, 0 PARTIALLY_VERIFIED, 0 VERIFIED; 0/5 Raw Text Quote
 ## 2026-11-13 — #8–#62 atomic decomposition complete
 
 - 55 main archive reports (#8–#62) audited: 40 CONFLICT / 15 PARTIALLY_VERIFIED / 0 VERIFIED; direct quote reuse 0/55. Consecutive, non-random sample.
-- Ledger: 55 file-level source records + 345 atomic claims = 400 unique IDs; 0 collisions; 45 canonical requirements; 345/345 atomic claims mapped.
+- Ledger: 55 file-level source records + 345 atomic claims = 400 unique IDs; 0 collisions; 46 canonical requirements; 345/345 atomic claims mapped.
 - Next P0 is canonical cross-document reconciliation, not another isolated audit batch: Volume 1, Volume 2, PSIRT SOP, requirements matrix, integrated matrix and test evidence register.
 - After P0 reconciliation, proceed with main-only audit #63–#67 using a fresh main HEAD/state/history snapshot.
