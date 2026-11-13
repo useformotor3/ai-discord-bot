@@ -1001,11 +1001,13 @@ Correct map: Annex I Part I(2)(c) for applicable automatic-update default/user c
 
 ## 2026-11-13 main archive file-level source records — #58–#62
 
-| File Record ID | Report | main source path | main blob SHA | File-level status | Direct quote reuse | Audit |
+Batch direct quote reuse: **0/5**. Per-file quote counts are not inferred where the audit only reports a batch total.
+
+| File Record ID | Report | main source path | main blob SHA | File-level status | Batch quote result | Audit |
 |---|---:|---|---|---|---:|---|
-| CRA-ARCH-MAIN-20261113-058-FILE-001 | #58 | research_archive/2026-11-13_044541.md | a5d535859eee483d47abb4dbf809cb10fdd3b8ce | PARTIALLY_VERIFIED | 0/1 | ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_58_62_2026-11-13.md |
-| CRA-ARCH-MAIN-20261113-059-FILE-001 | #59 | research_archive/2026-11-13_045038.md | 798aadd8105d1b44a03823f0f058e2e5c5fdae04 | PARTIALLY_VERIFIED | 0/1 | ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_58_62_2026-11-13.md |
-| CRA-ARCH-MAIN-20261113-060-FILE-001 | #60 | research_archive/2026-11-13_045534.md | 412a5cb249e0f198f7c024cf1a6736c9d2d932be | PARTIALLY_VERIFIED | 0/1 | ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_58_62_2026-11-13.md |
-| CRA-ARCH-MAIN-20261113-061-FILE-001 | #61 | research_archive/2026-11-13_050052.md | 6d3149dfd83b1862bc2388b6ee15d376d53a4e8e | PARTIALLY_VERIFIED | 0/1 | ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_58_62_2026-11-13.md |
-| CRA-ARCH-MAIN-20261113-062-FILE-001 | #62 | research_archive/2026-11-13_050532.md | 5a280db701cf970c32ef85d97010e0dd1dbd7fa0 | PARTIALLY_VERIFIED | 0/1 | ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_58_62_2026-11-13.md |
+| CRA-ARCH-MAIN-20261113-058-FILE-001 | #58 | research_archive/2026-11-13_044541.md | a5d535859eee483d47abb4dbf809cb10fdd3b8ce | PARTIALLY_VERIFIED | See batch result below | ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_58_62_2026-11-13.md |
+| CRA-ARCH-MAIN-20261113-059-FILE-001 | #59 | research_archive/2026-11-13_045038.md | 798aadd8105d1b44a03823f0f058e2e5c5fdae04 | PARTIALLY_VERIFIED | See batch result below | ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_58_62_2026-11-13.md |
+| CRA-ARCH-MAIN-20261113-060-FILE-001 | #60 | research_archive/2026-11-13_045534.md | 412a5cb249e0f198f7c024cf1a6736c9d2d932be | PARTIALLY_VERIFIED | See batch result below | ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_58_62_2026-11-13.md |
+| CRA-ARCH-MAIN-20261113-061-FILE-001 | #61 | research_archive/2026-11-13_050052.md | 6d3149dfd83b1862bc2388b6ee15d376d53a4e8e | PARTIALLY_VERIFIED | See batch result below | ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_58_62_2026-11-13.md |
+| CRA-ARCH-MAIN-20261113-062-FILE-001 | #62 | research_archive/2026-11-13_050532.md | 5a280db701cf970c32ef85d97010e0dd1dbd7fa0 | PARTIALLY_VERIFIED | See batch result below | ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_58_62_2026-11-13.md |
 
