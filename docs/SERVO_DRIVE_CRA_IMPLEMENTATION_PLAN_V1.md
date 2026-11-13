@@ -147,7 +147,9 @@
 - CVE 및 공급업체 보안 권고 모니터링
 - 영향도·악용 가능성·제품 노출·완화 가능성 triage
 - 내부/외부 신고를 CVD 절차로 접수
+- 구성요소 취약점을 식별하면 Article 13(6)에 따라 해당 구성요소 제조/유지 주체에 보고하고, 제품 측 시정·완화 조치를 병행. 공급자→제조사 자동 통지를 법령상 일반 의무로 전제하지 않음
 - 패치 개발·검토·시험·배포·공개
+- Article 14(8) 해당 사건은 영향 사용자 통지 여부·범위·시각을 판단하고, 구조화된 machine-readable 형식은 where appropriate 조건에 따라 선택
 - 각 릴리스와 보안 공지의 원본/해시/승인 기록 보존
 
 ### 6.2 지원기간·업데이트 보존
@@ -224,3 +226,11 @@ Annex II의 1~9번을 제품 사용자 설명서/온라인 문서에 매핑한�
 - 전체 문서 지도: [CRA_DOCUMENT_ARCHITECTURE_AND_NAVIGATION.md](CRA_DOCUMENT_ARCHITECTURE_AND_NAVIGATION.md).
 
 이 제2권은 실행 순서와 설계/시험 계획의 정본이다. 법령 해석의 세부 근거는 제1권 및 법령 기준선, 실제 운영 절차는 PSIRT SOP, 추적성 ID는 통합 매트릭스를 기준으로 한다.
+
+
+### #48–#52 감사 정정 반영 — 공급망·사용자 통지
+
+- Article 13(6)의 구성요소 취약점 신고는 제품 제조사가 해당 구성요소 제조/유지 주체에 보고하는 방향이다. 공급자가 항상 상위 제조사에 자동 보고해야 한다는 일반 CRA 의무로 표현하지 않는다.
+- Article 14(8) 사용자 통지는 actively exploited vulnerability 또는 제품 보안에 영향을 미치는 severe incident에 한정된다. 구조화된 machine-readable 형식은 where appropriate 조건이며 모든 취약점 공지에 일률 적용되지 않는다.
+- Annex I Part II(4) fixed-vulnerability disclosure, (5) CVD policy, (6) contact address, (7) secure update distribution, (8) timely/free security updates를 각각 구분한다.
+- 상세: [#48–#52 감사](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_48_52_2026-11-13.md).
