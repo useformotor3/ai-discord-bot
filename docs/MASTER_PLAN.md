@@ -463,6 +463,6 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 - [x] Added `evidence_quote_validator.py`: canonical bundle rebuild, provenance/content comparison, locator candidate classification, repeated-position ambiguity handling, bounded context, claim-to-evidence reference checks.
 - [x] Added human-review packet and mandatory reviewer-record fields; candidate acceptance requires explicit quote/locator/context/claim-support passes and completed countercheck.
 - [x] Added adversarial tests for exact match, raw/extraction/bundle tampering, repeated excerpt/locator ambiguity, missing source/PDF backend, context bounds, claim references and human-review completeness.
-- [ ] Full test suite and strict archive audit on exact final implementation HEAD — pending.
-- [ ] Recheck protected file SHAs and review final diff — pending.
+- [x] First full test suite and strict archive audit: Actions #43345148925 SUCCESS, 103 tests PASS; archive/history 990/990, consistent=true.
+- [ ] Final hardened HEAD CI and protected-file SHA/diff recheck — pending.
 - Boundaries unchanged: no `main.py`, production workflow, v2 prompt/contract, Phase C schema/IDs, live fetch, Gemini API, or main-branch changes; no merge/rebase/sync.
