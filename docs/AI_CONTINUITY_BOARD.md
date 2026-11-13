@@ -149,3 +149,10 @@
 - #33 CVD 채널/보안 권고문 요건을 특정 PGP 방식 의무로 과장; #34 CVD/Article 14 혼합 및 Article 11 오기; #35 unique password/port restrictions를 보편적 법정 의무로 과장; #36 Article 13(6)/지원기간/무상 업데이트 혼합; #37 Article 24 오기 및 Class I/II 자동 분류 오류.
 - 누적 수동 감사: #8–#37, 총 30건. #8–#12 5, #13–#27 15, #28–#32 5, #33–#37 5. 30건 모두 CONFLICT, 직접 인용 재사용 0/30. 연속·비무작위 배치이며 전체 archive 오류율이 아님.
 - 다음 감사 대상 #38. main tip은 새 세션/다음 배치 시작 시 재조회.
+
+
+## CI verification after #28–#37 audit updates
+- Audit/documentation HEAD `5fcd433436cc6261284d1bc8bbf648ae78af9b2e`: GitHub Actions [#43386808125](https://github.com/useformotor3/ai-discord-bot/actions/runs/43386808125) SUCCESS.
+- Full unittest suite: 140 tests passed.
+- Strict archive audit: 990 archive / 990 history / 990 unique valid paths; missing, orphan, duplicate and malformed entries all 0; consistent=true.
+- This CI validates repository tests/archive consistency, not legal interpretation or product applicability.

@@ -587,3 +587,8 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 - 누적 #8–#37: 30 CONFLICT / direct quote reuse 0/30. 비무작위 연속 배치로 전체 오류율 추정에 사용하지 않는다.
 - 다음 감사 시작점 #38. main tip 최신화 후 queue와 보고서 본문을 재확인한다.
 - 적합성 평가 경로, 특히 Article 32 및 관련 Annex는 신규 공식 원문 재확인 전 제품별 판단/설계 확정 근거로 사용하지 않는다.
+
+
+## 감사 문서 CI 확인
+- #28–#37 감사 및 연속성 문서 HEAD `5fcd433436cc6261284d1bc8bbf648ae78af9b2e`: Actions #43386808125 SUCCESS, 140 tests, strict archive 990/990 consistent=true.
+- 다음 감사는 #38부터 진행한다.
