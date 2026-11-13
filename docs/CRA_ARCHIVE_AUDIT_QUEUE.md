@@ -4,8 +4,8 @@
 > 대상 저장소: [useformotor3/ai-discord-bot](https://github.com/useformotor3/ai-discord-bot)  
 > 감사 대상 브랜치: `main` (읽기 전용)  
 > 기록 브랜치: `cra-project-foundation`  
-> 기준점: 기존 감사 기록의 마지막 보고서 #128, commit `15ceea4b9477b8c0928352a5b4228c0508e88daa`  
-> 이번 확인 main HEAD: `bd50257a80c0524402c70a7da420043ecfa0f490` (Auto-archive: Research report #7)
+> 과거 기준점 기록은 아래의 과거 수집 이력이다. 최신 조회는 아래 2026-11-13 최신 상태 보정 항목을 우선한다.  
+> 과거 확인 HEAD: `bd50257a80c0524402c70a7da420043ecfa0f490` (report #7). 최신 HEAD는 아래 보정 항목 참조.
 
 ## 실행 결과 요약
 
@@ -2347,3 +2347,12 @@ Batch result: 5/5 CONFLICT, 0 PARTIALLY_VERIFIED, 0 VERIFIED; 0/5 Raw Text Quote
 - 상세: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_38_42_2026-11-13.md](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_38_42_2026-11-13.md).
 - 다음 대상 #43–#47. main 원본 read-only.
 
+
+
+## 최신 상태 보정 — 2026-11-13 (우선 적용)
+
+- main HEAD: `e9bc84bfb5ccc7c18a69298cbd8f88376691b18c` (report #93).
+- main state: `2026-11-13 / count 93`; `history.json` entries 1,368; recursive Git tree에서 `research_archive/` 파일 1,368개 확인(truncated=false).
+- 감사 완료 main-only 연속 구간: #8–#42. 상세 배치 #8–#12, #13–#27, #28–#32, #33–#37, #38–#42. 누계 35건: 34 CONFLICT / 1 PARTIALLY_VERIFIED / 0 VERIFIED; 직접 인용 재사용 0/35. 비무작위 연속 표본이므로 전체 오류율 아님.
+- #38–#42 상세 결과: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_38_42_2026-11-13.md](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_38_42_2026-11-13.md).
+- 다음 감사 시작점 #43. 실행 전 main HEAD/history/state 및 report 경로를 다시 확인한다.

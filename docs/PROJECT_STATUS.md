@@ -700,3 +700,10 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - 누적 #8–#42: 35건, 34 CONFLICT / 1 PARTIALLY_VERIFIED / 0 VERIFIED. 비무작위 연속 표본이므로 전체 오류율 아님.
 - 다음 배치 #43–#47. main read-only 유지.
 
+
+
+## 최신 커밋/검증 상태 보정 — 2026-11-13
+- 최신 문서 감사 commit: `3bec6968cf214a3748595a465b01cd308bf7dc25` (cra-project-foundation).
+- 최신 main: `e9bc84bfb5ccc7c18a69298cbd8f88376691b18c`, report #93, archive/history 1,368/1,368.
+- 최신 감사 #38–#42: 4 CONFLICT / 1 PARTIALLY_VERIFIED / 0 VERIFIED; direct quote reuse 0/5.
+- exact HEAD CI: run 미발견, commit status pending/0 statuses. 이번 문서 업데이트 CI는 미실행/미확인으로 기록한다. 이전 성공 CI를 현 HEAD 검증으로 간주하지 않는다.

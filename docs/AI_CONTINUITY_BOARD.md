@@ -3,8 +3,8 @@
 - 문서 ID: CRA-OPS-CONTINUITY-001
 - 기준일: 2026-11-13
 - 기준 작업 브랜치: `cra-project-foundation`
-- 마지막 확인 작업 HEAD: `81d58716071fdb7debe5f780707d3b0d7870a902`
-- 마지막 확인 main HEAD: `4452662e6cba0bb81c6efb4b309b30f4733d8f71` (Auto-archive: Research report #91)
+- 마지막 확인 작업 HEAD: `3bec6968cf214a3748595a465b01cd308bf7dc25`
+- 마지막 확인 main HEAD: `e9bc84bfb5ccc7c18a69298cbd8f88376691b18c` (Auto-archive: Research report #93)
 - 상태: **상시 갱신 운영 기준 문서**
 - 목적: 새 대화에서도 AI가 목표·현황·성과·실패·미완료·다음 행동을 추측 없이 복원하고, 과정 작업에 매몰되지 않고 실제 CRA 산출물을 계속 완성하도록 한다.
 
@@ -28,10 +28,10 @@
 |---|---|
 | 작업 브랜치 | `cra-project-foundation` |
 | main 브랜치 | 읽기 전용. 병합·rebase·sync 금지 |
-| main 최신 관찰 | HEAD `4452662e6cba0bb81c6efb4b309b30f4733d8f71`, report #91 |
-| main 아카이브 | 1,366개 파일 / history 1,366개 / 고유 경로 1,366개 (2026-11-13 조회) |
+| main 최신 관찰 | HEAD `e9bc84bfb5ccc7c18a69298cbd8f88376691b18c`, report #93 |
+| main 아카이브 | 1,368개 파일 / history 1,368개 / 고유 경로 1,368개 (2026-11-13 재조회) |
 | 작업 브랜치 아카이브 | 최근 strict audit 기준 990개 / history 990개 정합 |
-| main과 작업 브랜치 | diverged, 작업 브랜치 ahead 653 / behind 382. 수치 재확인 전에는 고정 사실로 재사용 금지 |
+| main과 작업 브랜치 | diverged, 작업 브랜치 ahead 657 / behind 384 (2026-11-13 재비교) |
 | 최근 코드 검증 | Phase D hardening exact HEAD CI #43384495713 success: 140 tests, archive 990/990, consistent=true |
 | 최근 문서 검증 | continuity/audit 갱신 후 CI #43384628893 success: 140 tests, archive 990/990, consistent=true |
 | 보호 파일 | main.py, production run.yml, V2 prompt/contract, Phase C bundle/schema/V3 contract 변경 금지. 별도 승인 없이 수정하지 않음 |
@@ -167,3 +167,11 @@
 - 누적 main-only 감사 #8–#42: 35건 중 34 CONFLICT / 1 PARTIALLY_VERIFIED / 0 VERIFIED. 연속·비무작위 표본이므로 전체 archive 오류율이 아니다.
 - 다음 감사 시작점 #43. main은 계속 읽기 전용이며 branch merge/rebase/sync는 수행하지 않는다.
 
+
+
+## 2026-11-13 — 최신 Git/CI 상태 재확인
+- 작업 브랜치 HEAD: `3bec6968cf214a3748595a465b01cd308bf7dc25`; main HEAD: `e9bc84bfb5ccc7c18a69298cbd8f88376691b18c` (#93).
+- main `research_archive` 실제 tree 파일 1,368개, `history.json` 1,368개, `state.json` count 93. Tree 응답 truncated=false로 확인.
+- main 대비 작업 브랜치: diverged, ahead 657 / behind 384. Merge base `b425b6db591e34abe003522157cf97ecf2240d9f`. merge/rebase/sync 금지 유지.
+- 최신 작업 commit `3bec6968cf214a3748595a465b01cd308bf7dc25`은 문서 8개만 변경했다. main.py, production workflow, prompts, contracts, schema, evidence bundle 등 보호 파일 변경 없음.
+- 해당 exact HEAD의 Actions run은 조회되지 않았고 commit status는 pending / 0 statuses다. 따라서 이번 문서 변경에 대한 CI는 **미실행/미확인**이다. 마지막 확인된 이전 CI success(140 tests)는 과거 commit에 대한 결과이지 현재 HEAD의 CI 결과가 아니다.
