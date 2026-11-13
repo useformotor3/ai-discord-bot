@@ -406,7 +406,7 @@
 
 - #58–#62 감사 완료: 5 PARTIALLY_VERIFIED / 0 CONFLICT / 0 VERIFIED; 직접 인용 재사용 0/5.
 - 누적 #8–#62: 55건 중 40 CONFLICT / 15 PARTIALLY_VERIFIED / 0 VERIFIED, direct quote reuse 0/55. 비무작위 연속 표본이며 전체 archive 오류율이 아니다.
-- #58–#62 원자 Claim ID 20개를 [Claim Evidence Ledger](docs/CLAIM_EVIDENCE_LEDGER.md)에 추가했다.
+- #58–#62 원자 Claim ID 21개를 [Claim Evidence Ledger](docs/CLAIM_EVIDENCE_LEDGER.md)에 추가했다.
 - #58–#62의 법령 정정은 제1권·제2권·PSIRT SOP·법령 기준선·요구사항 매트릭스·MASTER_REPORT에 반영했다.
 - main 최신 관찰 HEAD #118: \`75add8711d0254da7dea1766bb42f80fc04d36ee\`; state count 118; history 1,393 entries. Archive tree count는 미확인.
 - 다음 P0는 #8–#57 개별 주장·인용의 원자 분해와 상위 문서 전수 대조다. 이후 main-only 감사 #63–#67.
@@ -479,3 +479,14 @@
 - #53–#57 개별 주장·인용 32개를 [Claim Evidence Ledger](docs/CLAIM_EVIDENCE_LEDGER.md)에 원자 Claim ID로 등록했다.
 - #8–#57 50개 보고서의 원자 claim decomposition을 완료했다.
 - 다음 P0는 Ledger의 중복/상충 claim 및 공식 원문 locator 정규화, 제1권·제2권·SOP·매트릭스·시험 대장 전수 대조다.
+
+## 2026-11-13 authoritative snapshot — #8–#62 audit and claim normalization
+
+- main latest observed: report #119; HEAD \`6491a5db6ea35ea97a6d97e85bac43f9a3cf41c0\`; state count 119; history.json 1,394 entries. Archive tree count was not rechecked. main remains read-only.
+- main-only audit scope #8–#62: 55 consecutive, non-random reports; file-level results **40 CONFLICT / 15 PARTIALLY_VERIFIED / 0 VERIFIED**; direct quote reuse **0/55**. This is not a statistical error rate for the full archive.
+- Claim Evidence Ledger: 55 file-level source records + 345 atomic claims = **400 unique IDs**, duplicate IDs 0. All 345 atomic claims have one or more Canonical IDs. Canonical register defines 45 requirements; 43 are referenced by legacy atomic claims, and 2 are forward-mapped to matrix requirements.
+- #8–#57 (50 reports) and #58–#62 (5 reports) have completed atomic decomposition. Individual legal facts marked VERIFIED do not promote a conflicting source file to VERIFIED.
+- Product-specific applicability, Class I/II classification, exact MCU order code and DUT test results remain UNVERIFIED/NOT_RUN.
+- Current P0: reconcile the 345 atomic claims and 45 canonical requirements against Volume 1, Volume 2, PSIRT SOP, requirements matrix, integrated traceability matrix and test evidence register; resolve duplicated/contradictory wording and keep exact legal locators. Then proceed to main-only audit #63–#67.
+- No production code, main.py, production workflow, Gemini V2 prompt/contract or main branch was changed. E3 live source fetch remains unexecuted. This batch is documentation-only.
+
