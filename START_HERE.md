@@ -11,6 +11,9 @@
 - 독자: CRA를 모르는 서보 드라이브 개발자.
 - 운영 원칙: Public 저장소 유지, 공개 자료만 저장, 비용 0원 우선, 유료 전환 금지.
 
+## 전체 문서 지도
+- [CRA 문서 구조·전체 목차·링크 안내](docs/CRA_DOCUMENT_ARCHITECTURE_AND_NAVIGATION.md) — 문서 역할, 정본 위치, 전체 링크, 감사자료와 최종 보고서의 연결 구조.
+
 ## 신규 세션 필수 읽기 순서
 0. [AI 연속성·실행 현황판](docs/AI_CONTINUITY_BOARD.md) — 목표·현재 HEAD·완료/실패/미완료·다음 행동의 최우선 기준
 1. [AI 행동강령](docs/AI_RULEBOOK.md) — 작업 전 필수 절차와 품질 기준
@@ -18,7 +21,10 @@
 3. [마스터 계획](docs/MASTER_PLAN.md) — 우선순위와 완료 조건
 4. [지식 인덱스](docs/KNOWLEDGE_INDEX.md) — 근거·검증 상태
 5. [통합 보고서](docs/MASTER_REPORT.md) — 현재 보고서 구조와 작성 상태
-6. [최근 세션 기록](SESSION_LOG/) — 직전 결정·성공·실패·다음 작업
+6. [문서 구조·전체 링크 지도](docs/CRA_DOCUMENT_ARCHITECTURE_AND_NAVIGATION.md) — 문서 역할과 정본 위치
+7. [마스터 보고서 인덱스](docs/MASTER_REPORT_INDEX.md) — 발행 문서 카탈로그
+8. [통합 마스터 보고서](docs/MASTER_REPORT.md) — 독자용 통합 본문
+9. [최근 세션 기록](SESSION_LOG/) — 직전 결정·성공·실패·다음 작업
 7. 작업에 관련된 감사·법령 기준선·제조사 자료를 추가로 확인한다.
 
 필수 문서를 읽지 못하면 이전 대화 기억으로 내용을 채우지 않는다. 확인 불가 상태를 명시하고 저장소를 다시 확인하거나 사용자에게 필요한 정보를 요청한다.
