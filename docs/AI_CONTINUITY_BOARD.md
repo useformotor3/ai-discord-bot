@@ -284,7 +284,7 @@
 
 ## 2026-11-13 — #8–#52 Ledger 원본 추적 연결 완료(파일 중심)
 
-- #8–#52 총 45개 보고서의 2026-11-13 날짜, 원본 archive 경로, blob SHA, 파일 판정, 중심 정정 요약을 Claim Evidence Ledger에 날짜 포함 ID로 등록했다.
+- #8–#62 총 55개 보고서의 2026-11-13 날짜, 원본 archive 경로, blob SHA, 파일 판정, 중심 정정 요약을 Claim Evidence Ledger에 날짜 포함 ID로 등록했다.
 - #8–#12 상세 감사 파일을 다시 찾아 원본 SHA와 판정을 확인했다. 다섯 건 모두 CONFLICT, 직접 인용 재사용 0/5.
 - #13–#52 40건은 CONFLICT 35 / PARTIALLY_VERIFIED 5 / VERIFIED 0. 전체 #8–#52는 CONFLICT 40 / PARTIALLY_VERIFIED 5 / VERIFIED 0.
 - 이 연결은 파일별 중심 주장 추적이다. 보고서 내 모든 개별 주장과 인용 블록의 원자적 분해/정정 링크는 아직 미완료다.
