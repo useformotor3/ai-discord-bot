@@ -406,3 +406,14 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 - [ ] Phase C evidence bundle/schema v3/prompt v3는 별도 승인 전 금지.
 
 - [x] `main.py`, production prompt/contract, production run workflow 미변경 및 production import 부재 확인.
+
+
+## 2026-11-13 — 신규 main archive 166개 대기열 등록
+- [x] 기존 기준점 #128 / commit `15ceea4b9477b8c0928352a5b4228c0508e88daa` 이후 main commit history와 compare 결과 확인.
+- [x] reports #129–#288 및 #1–#6 총 166개, archive 파일 166개, history/state 변경 2개를 확인하고 commit SHA/path/time/topic을 매핑.
+- [x] [CRA_ARCHIVE_AUDIT_QUEUE.md](CRA_ARCHIVE_AUDIT_QUEUE.md) 신규 생성 및 166개 항목 중복 없는지 재조회 검증.
+- [x] EUR-Lex 현행 본문, Commission C(2026) 5252 게시 페이지, ENISA SRP/FAQ의 법령 기준선·공식 운영정보 사전 확인.
+- [ ] P0 항목부터 Pass A/B/C 개별 감사. 모든 신규 항목의 파일 판정은 현재 UNVERIFIED, Raw Text Quote/개별 주장 판정은 NOT_YET_AUDITED.
+- [ ] P3 warning-only 23개에 대해 모델 호출 실패가 성공 archive로 처리되는지 운영 실패 경로 대조.
+- [ ] 다음 실행에서 main HEAD 이후 신규 보고서만 대기열에 추가하고 SHA/path 기준으로 중복 제거.
+- 보호 경계 유지: main.py, Gemini prompt, 운영 자동화 코드, .github/workflows/run.yml, main branch 변경 금지; merge/rebase/sync 금지.
