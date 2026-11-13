@@ -353,3 +353,22 @@ main 브랜치의 #28–#32를 archive 원문과 기존 EUR-Lex 현행 법령 �
 #8–#52 연속 감사 표본의 결과는 45건 중 40 CONFLICT, 5 PARTIALLY_VERIFIED, 0 VERIFIED다. 이 표본은 비무작위이며 전체 archive 오류율이 아니다. 감사 원문·SHA·반증은 배치 감사 문서에 보존하고, 주장별 정정은 [주장·근거 정정 대장](CLAIM_EVIDENCE_LEDGER.md), 최종 법령 해석은 제1권, 설계·운영 적용은 제2권과 관련 SOP/매트릭스에 통합한다.
 
 현재 #48–#52의 주요 정정은 제1권·제2권·PSIRT SOP·분류/접근통제 매트릭스에 반영했다. #8–#52 전체 정정의 전수 대조는 아직 완료되지 않았다. 제품별 SKU·제품 경계·실제 MCU 주문 코드가 미확정이므로 제품별 적용성과 분류는 UNVERIFIED이며 실제 DUT 시험은 NOT_RUN이다.
+
+
+## 한국어 용어 정본 — #48–#52 정정 반영
+
+| 영문 원문/식별자 | 한국어 기본 표기 |
+|---|---|
+| actively exploited vulnerability | 적극 악용되는 취약점 |
+| severe incident affecting the security of the product | 제품 보안에 영향을 미치는 심각한 사고 |
+| early warning | 조기 경보 |
+| notification | 신고 |
+| final report | 최종 보고 |
+| machine-readable format | 기계 판독 가능 형식 |
+| coordinated vulnerability disclosure policy | 조정된 취약점 공개 정책(CVD 정책) |
+| support period | 지원기간 |
+| security update | 보안 업데이트 |
+| core functionality | 핵심 기능 |
+| conformity assessment | 적합성 평가 |
+
+영문 용어는 법령 원문·공식 문서 검색을 위해 필요한 경우에만 병기한다. 설명과 결론은 한국어로 통일한다.
