@@ -209,7 +209,7 @@ Detailed file-level audit: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_40_55_2026-11-12.md](
 Detailed audit: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_56_59_2026-11-12.md](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_56_59_2026-11-12.md).
 
 
-## 12. Main-only reports #60–#78 audit (2026-11-12)
+## 20. main 보고서 #60–#78 감사 (2026-11-12)
 
 Detailed file-level findings: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_60_78_2026-11-12.md](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_60_78_2026-11-12.md).
 
@@ -238,7 +238,7 @@ Detailed file-level findings: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_60_78_2026-11-12.m
 **Batch totals:** 19 files; 6 PARTIALLY_VERIFIED; 13 CONFLICT; 0 fully VERIFIED. No Raw Text Quote block from #60–#78 is cleared for verbatim reuse. These are file-level findings, not an archive-wide error rate.
 
 
-## 13. Main-only report #79 audit (2026-11-12)
+## 21. main 보고서 #79 감사 (2026-11-12)
 
 Detailed findings: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_79_2026-11-12.md](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_79_2026-11-12.md).
 
@@ -249,7 +249,7 @@ Detailed findings: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_79_2026-11-12.md](ARCHIVE_MAN
 The 24-hour early-warning theme is supported, but the report broadens scope, mislabels the 72-hour stage as a final notification, misattributes the quote to Article 14(2), and gives a non-verbatim quotation. No quote block cleared.
 
 
-## 14. TI MSPM0G3529-Q1 functional safety source claims (2026-11-12)
+## 22. TI MSPM0G3529-Q1 기능안전 출처 주장 (2026-11-12)
 
 Detailed review: [TI_MSPM0G3529_Q1_FUNCTIONAL_SAFETY_REVIEW_2026-11-12.md](TI_MSPM0G3529_Q1_FUNCTIONAL_SAFETY_REVIEW_2026-11-12.md).
 
@@ -268,7 +268,7 @@ Detailed review: [TI_MSPM0G3529_Q1_FUNCTIONAL_SAFETY_REVIEW_2026-11-12.md](TI_MS
 | TI-SAFETY-006 | TI general functional-safety guidance says to contact local sales if a selected product's analysis report is unavailable; TI safety-collateral access may require a valid Safety NDA. | https://www.ti.com/en-us/technologies/functional-safety ; https://www.ti.com/document-viewer/lit/html/SPRAD57 | General TI access-process guidance only; exact G3529-Q1 FMEDA availability, NDA, price and delivery route are not established. | VERIFIED (general TI guidance only) |
 
 
-## 15. Main-only report #80 audit (2026-11-12)
+## 23. main 보고서 #80 감사 (2026-11-12)
 
 Detailed findings: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_80_2026-11-12.md](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_80_2026-11-12.md).
 
@@ -279,7 +279,7 @@ Detailed findings: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_80_2026-11-12.md](ARCHIVE_MAN
 The legal themes are supported, but the raw quote is rejected for verbatim reuse and implementation choices must remain risk-based.
 
 
-## 16. Main-only reports #81–#121 audit (2026-11-12)
+## 24. main 보고서 #81–#121 감사 (2026-11-12)
 
 Detailed report: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_81_121_2026-11-12.md](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_81_121_2026-11-12.md). Source main HEAD: d0ba9802e4b7fead4192263d8ebd08f44a7c547e.
 
@@ -330,7 +330,7 @@ Detailed report: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_81_121_2026-11-12.md](ARCHIVE_M
 **Batch result:** 41 reports; 33 CONFLICT / 8 PARTIALLY_VERIFIED / 0 VERIFIED. All 41 Raw Text Quote blocks are rejected for verbatim reuse. Consecutive risk batch only; not a random sample or archive-wide error rate. Legal baseline: Article 13(8) support period (including expected-use-under-five-years exception); Article 13(9) post-issuance update retention; Annex I Part II(8) free updates with tailor-made business-user agreement exception; Article 14 actively exploited vulnerability/severe incident reporting; Annex I Part II(5)–(7) CVD/contact/secure distribution; Annex II(2) contact point and 8(d) secure decommissioning information. Do not infer a universal Secure Boot, TPM, signature algorithm, dual-bank, rollback, zero-downtime, forced-password-change or port-disable requirement.
 
 
-## 17. Main-only report #122 audit (2026-11-12)
+## 25. main 보고서 #122 감사 (2026-11-12)
 
 Detailed report: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_122_2026-11-12.md](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_122_2026-11-12.md).
 
@@ -339,7 +339,7 @@ Detailed report: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_122_2026-11-12.md](ARCHIVE_MANU
 | CRA-ARCH-122-001 | #122 | Secure-by-default/access-control/attack-surface themes map to Annex I Part I(2)(b),(d),(j), but Annex numbering and quote are composite/wrong; universal forced password change, unique credentials, port disabling and RBAC mandates are unsupported. | CONFLICT |
 
 
-## 18. Main-only report #123 audit (2026-11-12)
+## 26. main 보고서 #123 감사 (2026-11-12)
 
 Detailed report: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_123_2026-11-12.md](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_123_2026-11-12.md).
 
@@ -350,7 +350,7 @@ Detailed report: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_123_2026-11-12.md](ARCHIVE_MANU
 Correct mapping: Article 13(18) accompanying information/instructions and retention; Article 13(19) support-end-date display/notification; Article 13(17) single contact; Annex II(1)–(9), especially (7), (8)(a)–(f), (9). Article 13(7) is systematic documentation of cybersecurity aspects, not the user-manual provision.
 
 
-## 19. Main-only report #124 audit (2026-11-12)
+## 27. main 보고서 #124 감사 (2026-11-12)
 
 Detailed report: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_124_2026-11-12.md](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_124_2026-11-12.md).
 
@@ -361,7 +361,7 @@ Detailed report: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_124_2026-11-12.md](ARCHIVE_MANU
 Correct map: Annex I Part I(2)(c) for applicable automatic-update default/user controls; Part II(5) CVD policy; Part II(6) vulnerability information/contact; Part II(7) secure update distribution; Part II(8) timely/free security updates subject to tailor-made business-user exception; Article 13(17)/Annex II(2) user-facing single point of contact.
 
 
-## main 아카이브 보고서 #48–#52 주장별 정정 레코드 — 2026-11-13
+## 28. main 아카이브 보고서 #48–#52 주장별 정정 레코드 — 2026-11-13
 
 | 주장 ID | 원본 보고서 | 원자적 검증 결과 | 판정 |
 |---|---:|---|---|
@@ -374,7 +374,7 @@ Correct map: Annex I Part I(2)(c) for applicable automatic-update default/user c
 원본 경로·아카이브 blob SHA·공식 조항 매핑·인용문 판정·반증은 [#48–#52 상세 감사 보고서](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_48_52_2026-11-13.md)를 참조한다.
 
 
-## 2026-11-13 — #48–#52 주장 정정의 한국어 기록 확인
+## 29. 2026-11-13 — #48–#52 주장 정정의 한국어 기록 확인
 
 - #48–#52 다섯 개 주장 레코드를 한국어로 전환했다. 기존 Claim ID, 판정, 조항 위치, 원본 SHA 추적은 보존했다.
 - 법령 기준선과 제품 분류·접근통제 매트릭스를 한국어 설명 정본으로 갱신했다.
