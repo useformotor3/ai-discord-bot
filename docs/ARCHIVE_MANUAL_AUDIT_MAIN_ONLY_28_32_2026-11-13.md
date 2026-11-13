@@ -101,3 +101,10 @@
 - 기준선은 작업 브랜치의 `docs/CRA_LEGAL_BASELINE.md`, #8–#12 및 #13–#27 감사 문서에서 확인된 법령 매핑을 재사용했다.
 - 이번 배치에서는 live fetch, PDF 시각 검토, 새로운 독립 공식 교차 출처 확인을 하지 않았다. 해당 작업은 후속 단계로 남긴다.
 - 본 감사는 법률 자문, 독립 제3자 감사, 제품별 CRA 적합성 평가가 아니다.
+
+## 원자 Claim ID 연결 — #28–#32
+
+- #28–#32에 대해 [Claim Evidence Ledger](CLAIM_EVIDENCE_LEDGER.md)에 원자 Claim ID 25개를 등록했다.
+- 파일 단위 결과는 5 CONFLICT / direct quote reuse 0/5로 유지한다.
+- Article 13(8) support period, Article 13(9) update availability, Annex I Part II(5)/(6)/(8) CVD/contact/free updates, Article 14 two-track reporting, Annex VII(4) technical documentation을 각각 분리했다.
+- “whichever is shorter” 지원기간 문구, Article 10/11 제조사 의무 오기, Part I/Part II 혼합, 모든 취약점의 ENISA 신고 주장은 재사용하지 않는다.
