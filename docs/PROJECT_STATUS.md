@@ -696,15 +696,15 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 
 - 상세: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_38_42_2026-11-13.md](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_38_42_2026-11-13.md).
 - 결과: 4 CONFLICT / 1 PARTIALLY_VERIFIED / 0 VERIFIED; 직접 인용 재사용 0/5.
-- main 최신 관찰 HEAD는 `e9bc84bfb5ccc7c18a69298cbd8f88376691b18c`, state count #93, history 1,368 entries. 이전 #91/1,366 기록은 stale.
+- Historical snapshot (superseded): main report #93 / HEAD `e9bc84bfb5ccc7c18a69298cbd8f88376691b18c`, state93, history1,368. Current main baseline is report #125.
 - 누적 #8–#42: 35건, 34 CONFLICT / 1 PARTIALLY_VERIFIED / 0 VERIFIED. 비무작위 연속 표본이므로 전체 오류율 아님.
 - 다음 배치 #43–#47. main read-only 유지.
 
 
 
 ## 최신 커밋/검증 상태 보정 — 2026-11-13
-- 최신 문서 감사 commit: `3bec6968cf214a3748595a465b01cd308bf7dc25` (cra-project-foundation).
-- 최신 main: `e9bc84bfb5ccc7c18a69298cbd8f88376691b18c`, report #93, archive/history 1,368/1,368.
+- Current work branch head is dynamic; re-fetch the branch endpoint at session start. Last verified compare status: diverged, ahead968/behind416.
+- Historical main snapshot: report #93 / archive-history 1,368/1,368; superseded by current report #125 / archive-history 1,400/1,400.
 - 최신 감사 #38–#42: 4 CONFLICT / 1 PARTIALLY_VERIFIED / 0 VERIFIED; direct quote reuse 0/5.
 - exact HEAD CI: run 미발견, commit status pending/0 statuses. 이번 문서 업데이트 CI는 미실행/미확인으로 기록한다. 이전 성공 CI를 현 HEAD 검증으로 간주하지 않는다.
 
@@ -835,10 +835,10 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - 이번 변경은 문서 전용이다. 코드 테스트 결과 또는 CI PASS로 표현하지 않는다. exact documentation HEAD의 Actions/status는 별도 확인 전까지 미확인.
 - 다음 P0: #8–#57 개별 주장·인용 원자 분해와 제1권/제2권/SOP/매트릭스 전수 대조. 이후 main-only #63–#67.
 
-## 2026-11-13 사후 main 기준선 갱신 — report #119
+## 2026-11-13 사후 main 기준선 갱신 — report #125
 
 - #58–#62 감사 시점 main 기준선은 report #118 / history 1,393 entries였다.
-- 문서 통합 후 main 자동 아카이브가 report #119를 추가했다: HEAD \`6491a5db6ea35ea97a6d97e85bac43f9a3cf41c0\`, state count 125, history 1,394 entries.
+- 문서 통합 후 main 자동 아카이브가 report #119를 추가했다: HEAD \`6491a5db6ea35ea97a6d97e85bac43f9a3cf41c0\`, state count 125, history 1,400 entries.
 - #119는 아직 감사하지 않았다. 다음 main-only 배치는 #63–#67이며 시작 시 최신 main HEAD/state/history를 다시 확인한다.
 - main과 작업 브랜치는 diverged 상태다. ahead/behind 수치는 작업 중 계속 바뀌므로 다음 세션에서 동적으로 재조회한다. merge/rebase/sync 금지.
 - 이 기록은 #58–#62 원본 감사 기준선(#118)을 바꾸지 않는다.
@@ -926,7 +926,7 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 
 ## 2026-11-13 authoritative snapshot — #8–#62 audit and claim normalization
 
-- main latest observed: report #119; HEAD \`6491a5db6ea35ea97a6d97e85bac43f9a3cf41c0\`; state count 119; history.json 1,400 entries. Archive tree count was not rechecked. main remains read-only.
+- main latest observed: report #119; HEAD \`6491a5db6ea35ea97a6d97e85bac43f9a3cf41c0\`; state count 125; history.json 1,400 entries. Archive tree count was not rechecked. main remains read-only.
 - main-only audit scope #8–#62: 55 consecutive, non-random reports; file-level results **40 CONFLICT / 15 PARTIALLY_VERIFIED / 0 VERIFIED**; direct quote reuse **0/55**. This is not a statistical error rate for the full archive.
 - Claim Evidence Ledger: 55 file-level source records + 345 atomic claims = **400 unique IDs**, duplicate IDs 0. All 345 atomic claims have one or more Canonical IDs. Canonical register defines 46 requirements; 43 are referenced by legacy atomic claims, and 3 are forward-mapped to matrix requirements.
 - #8–#57 (50 reports) and #58–#62 (5 reports) have completed atomic decomposition. Individual legal facts marked VERIFIED do not promote a conflicting source file to VERIFIED.
