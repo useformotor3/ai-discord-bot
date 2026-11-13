@@ -130,3 +130,17 @@
 | REPORTING-02 | Article 14(8) | 영향 사용자 통지와 where appropriate 구조화된 기계 판독 가능 형식 판단을 기록 | PSIRT SOP 참조 |
 
 **핵심 구분:** Part I 2(m)는 제품 기능 결과 요구, Annex II 8(d)는 사용자 지침 요구다. Article 13(19)는 구매 시 지원 종료일 표시와 기술적으로 가능한 경우 지원 종료 시점 알림을 규정하며, 별도 사전 통지 기간을 정하지 않는다.
+
+## 10. #58–#62 감사 반영 — CVD·신고·로그 요구사항
+
+| 요구사항 ID | 정확한 근거 | 요구 결과 | 설계/증거 연결 | 현재 상태 |
+|---|---|---|---|---|
+| CVD-01 | Article 13(8), Annex I Part II(5) | support period 동안 잠재 취약점을 처리·시정할 정책과 CVD 정책을 수립·집행 | PSIRT policy, intake workflow, triage/remediation record | 조직/제품 절차 미확정 |
+| CVD-02 | Annex I Part II(6), Article 13(17), Annex II(2) | 취약점 신고 연락 주소, 사용자 단일 연락 창구 및 사용자 안내 제공 | contact point, user manual, web/contact channel, response SLA | TBD |
+| UPDATE-FREE-01 | Annex I Part II(8) | 보안 업데이트를 지체 없이 배포하고 원칙적으로 무상 제공 | update policy, release record, tailored-product agreement review | 계약/정책 미확정 |
+| REPORT-14-01 | Article 14(1)–(2), (7) | actively exploited vulnerability 신고: 24h/72h/시정조치 이용 후 14일 | PSIRT clock, CSIRT endpoint, ENISA single platform submission evidence | 조직/관할 미확정 |
+| REPORT-14-02 | Article 14(3)–(5), (7) | severe incident 신고: 24h/72h/incident notification 후 1개월 | incident severity decision, submission record, final report | 조직/제품 미확정 |
+| USER-NOTIFY-14 | Article 14(8) | 해당 트리거에서 영향 사용자 및 적절한 경우 모든 사용자 통지 | customer impact inventory, advisory, where-appropriate format rationale | 사용자 인벤토리 미확정 |
+| LOG-SEC-01 | Annex I Part I 2(l) | 관련 내부 활동 기록·모니터링, 접근/변경 활동 포함, 사용자 opt-out | TST-LOG-01/02, audit log evidence, UI/policy review | 제품 로그 설계 미확정 |
+
+**해석 경계:** Annex I Part I 2(h)는 availability/DoS resilience이고 logging은 2(l)이다. Tamper-proof retention, circular buffer, Syslog over TLS는 법령이 지정한 방식이 아니라 제품 위험평가 기반 설계 후보다. Article 14 신고 수신자와 Article 16(3)의 시장감시기관 정보 공유를 혼동하지 않는다.
