@@ -109,7 +109,7 @@ class QuoteValidatorTests(unittest.TestCase):
         original = self.document.units
         # The bundle's line fallback uses document.text, so create a structural unit
         # with a repeated phrase and a unique stable locator.
-        unit = LegalUnit("Article 1", "ARTICLE", "1", "repeat repeat")
+        unit = LegalUnit("Article 1", "ARTICLE", "1", "repeat " * 600)
         object.__setattr__(altered, "units", (unit,))
         bundle = build_evidence_bundle(self.fetch, altered)
         result = validate_evidence_quotes(self.fetch, altered, bundle)
@@ -118,8 +118,9 @@ class QuoteValidatorTests(unittest.TestCase):
 
     def test_duplicate_locator_segments_are_ambiguous(self):
         altered = copy.copy(self.document)
-        unit = LegalUnit("Article 1", "ARTICLE", "1", "one")
-        object.__setattr__(altered, "units", (unit, unit))
+        unit_a = LegalUnit("Article 1", "ARTICLE", "1", "one")
+        unit_b = LegalUnit("Article 1", "ARTICLE", "1", "two")
+        object.__setattr__(altered, "units", (unit_a, unit_b))
         bundle = build_evidence_bundle(self.fetch, altered)
         result = validate_evidence_quotes(self.fetch, altered, bundle)
         self.assertEqual(result["status"], "AMBIGUOUS")
