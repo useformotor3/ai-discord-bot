@@ -71,18 +71,21 @@ No workflow or dependency file was changed. The transport uses only Python stand
 
 New transport tests use a local TLS fixture. The fixture creates an ephemeral self-signed certificate with the expected DNS SAN using OpenSSL. During tests only, the socket connection function maps a supplied public-looking test IP to a loopback TLS server; the test records the exact IP passed to TCP connect. This is an offline harness and does not contact the public network.
 
-Covered cases:
+Covered transport cases (14 tests):
 1. IPv4-mapped IPv6 normalization and duplicate elimination.
 2. Mixed public/private DNS answers fail closed.
 3. Loopback, link-local, documentation/reserved, multicast and unsafe IPv6 ranges rejected.
 4. NAT64, 6to4, Teredo and scoped IPv6 rejected.
 5. Empty, malformed and non-string DNS answers rejected.
-6. Actual local TLS handshake confirms the literal pinned IPv4 destination, original hostname SNI, single original Host header and identity content encoding.
-7. A public IPv6 literal is passed as the TCP connect target while original hostname SNI is preserved (local test route; not a real external IPv6 connection).
+6. Actual local TLS handshake confirms literal pinned IPv4 destination, original hostname SNI, single original Host header and identity content encoding.
+7. Public IPv6 literal is passed as TCP connect target while original hostname SNI is preserved (local route; not a real external IPv6 connection).
 8. Certificate hostname mismatch is rejected.
-9. Connection fallback uses only the supplied pinned IP list.
-10. Caller-supplied private IP is rejected again at the transport boundary.
-11. Disabled TLS verification and automatic redirects are rejected.
+9. Untrusted certificate chain is rejected.
+10. Connection fallback uses only the supplied pinned IP list.
+11. Connect timeout fails closed after the supplied pinned candidates.
+12. Read timeout does not trigger fallback to another IP.
+13. Caller-supplied private IP is rejected again at the transport boundary.
+14. Disabled TLS verification and automatic redirects are rejected.
 
 Additional fetcher tests verify:
 - all DNS answers are passed as validated literal IPs;
@@ -91,14 +94,15 @@ Additional fetcher tests verify:
 - same-host redirect hops trigger DNS revalidation; HTTP downgrade redirects are rejected;
 - compressed response bodies are rejected and closed;
 - malformed/negative/empty Content-Length values and truncated bodies are rejected.
+Existing regression tests continue to cover response status, MIME, byte limits, empty body, redirect host/limit, timeout arguments, metadata and SHA-256 behavior.
 
 ## 5. CI evidence
 
 Exact code/test HEAD:
-`8e78d2930745219eba3561c8108a7decec217636`
+`d355aefb74f2b1b9159de98827fac8600fb68d4c`
 
 GitHub Actions:
-[Run #43367117735](https://github.com/useformotor3/ai-discord-bot/actions/runs/43367117735)
+[Run #43367432101](https://github.com/useformotor3/ai-discord-bot/actions/runs/43367432101)
 
 Verified job:
 - `Run archive audit unit tests`: success
@@ -113,14 +117,14 @@ Verified job:
 - `malformed_history_entry_indexes = []`
 - `consistent = true`
 
-Earlier intermediate CI attempts failed while the transport briefly depended on packages not installed by the existing test workflow, and then while two new test expectations were incorrect. The implementation was changed to standard-library-only transport and the test expectations/content-length handling were corrected. The final exact code/test HEAD above passed all 121 tests and strict archive audit. Earlier failed runs are retained in GitHub Actions history and are not represented as successful.
+Earlier intermediate CI attempts failed while the transport briefly depended on packages not installed by the existing test workflow, and then while two new test expectations were incorrect. The implementation was changed to standard-library-only transport and the test expectations/content-length handling were corrected. The final exact code/test HEAD above passed all 126 tests and strict archive audit. Earlier failed runs are retained in GitHub Actions history and are not represented as successful.
 
 ## 6. Protected boundary and change review
 
 The code/test delta from the Phase E baseline is limited to:
-- `source_evidence.py`
+- `source_evidence.py`: `bf5258aa63692ad3fa1e07814b9d8f94899f3198`
 - `source_transport.py` (new): `13160055d1785e6a788d78b9bc44bbb5eb0d20e8`
-- `tests/test_source_evidence.py`
+- `tests/test_source_evidence.py`: `b3a35fafd45a03277ec894589b9e2b137be8a95e`
 - `tests/test_source_transport.py` (new): `a0cce1e3d1d9627f39bbcec7f3e2bfca263c619e`
 
 The following hashes were re-read after implementation and remain unchanged:
