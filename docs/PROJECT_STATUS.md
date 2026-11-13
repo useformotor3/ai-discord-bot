@@ -559,3 +559,13 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - Proposal covers deterministic exact-excerpt reconstruction from Phase A raw bytes + Phase B extraction, locator provenance classification, bounded context packets, human review records, separate machine/human statuses and fail-closed behavior.
 - Important boundary: exact match means exact contiguous text in the normalized extraction output, not proof of visual PDF fidelity, legal meaning, semantic claim support or product applicability.
 - No code/schema/prompt/production workflow changes were made for Phase D. Implementation awaits separate explicit approval.
+
+
+## Phase D implementation — 2026-11-13
+- User explicitly approved the Phase D implementation scope on 2026-11-13.
+- Added isolated `evidence_quote_validator.py` and `tests/test_evidence_quote_validator.py`; implementation details: [PHASE_D_IMPLEMENTATION.md](PHASE_D_IMPLEMENTATION.md).
+- Machine checks rebuild Phase C Evidence Bundle from the supplied Phase A raw bytes + Phase B extraction result, compare provenance/content, classify locator candidates, detect non-unique segment/quote positions, and produce bounded context.
+- Added claim-to-Evidence-ID validation and a bounded human-review packet with empty reviewer fields; candidate acceptance requires quote/locator/context/claim-support PASS and completed countercheck.
+- Legal status and product applicability remain UNVERIFIED. Machine EXACT_MATCH is only normalized-extraction integrity, not publisher authenticity, PDF visual fidelity, legal interpretation or semantic claim support.
+- No network/file writes, OCR, dependency/workflow changes or production integration.
+- Exact-head full test/strict archive CI verification pending; do not treat implementation as verified until run result is inspected.
