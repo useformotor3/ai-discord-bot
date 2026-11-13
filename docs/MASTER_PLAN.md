@@ -714,3 +714,12 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 - 이후 main에 report #119가 추가됨: HEAD \`6491a5db6ea35ea97a6d97e85bac43f9a3cf41c0\`, state count 119, history 1,394 entries.
 - #119는 미감사 상태다. 다음 archive 감사는 #63–#67부터 수행하며, 배치 시작 시 main state/history/HEAD를 재조회한다.
 - main read-only, merge/rebase/sync 금지.
+
+## 2026-11-13 P0 — #8–#12 원자 주장 분해
+
+- [x] main archive #8–#12 원본 경로/blob SHA 재대조.
+- [x] 기존 감사 결과의 파일 단위 판정을 유지하면서 개별 주장·인용을 31개 원자 Claim ID로 분해.
+- [x] secure-by-default Part I(2)(b), access control (d), attack surface (j), Class II Annex III 분리.
+- [x] 강제 첫 접속 비밀번호 변경/모든 포트·JTAG 차단/least privilege를 보편적 법적 직접 의무로 쓰지 않도록 반증 연결.
+- [ ] 다음 배치 #13–#17 원자 Claim ID 분해.
+- [ ] 이어서 #18–#57 순차 분해 및 제1권·제2권·PSIRT SOP·추적성 매트릭스와 문장 단위 전수 대조.
