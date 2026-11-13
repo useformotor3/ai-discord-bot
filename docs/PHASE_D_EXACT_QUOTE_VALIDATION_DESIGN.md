@@ -1,7 +1,7 @@
 # Phase D Design Proposal — Exact Quote / Locator Validation and Human Review
 
 - Date: 2026-11-13
-- Status: DESIGN ONLY — implementation NOT approved or started.
+- Status: DESIGN BASELINE — implementation approved and recorded in [PHASE_D_IMPLEMENTATION.md](PHASE_D_IMPLEMENTATION.md). The proposal remains the scope reference.
 - Depends on: Phase A source registry/fetcher, Phase B extraction adapters, Phase C Evidence Bundle v1 / CRA report v3.
 - Target branch: `cra-project-foundation`.
 - Production integration: explicitly out of scope.
