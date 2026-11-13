@@ -642,3 +642,11 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - Latest CI run pending: 43380860467 on SHA 0ee797dcc3e7d52b3167c8f11bf373a283f7a480; tests step observed success, archive audit still running at time of update.
 - Live official fetch NOT RUN; real document identity/extraction fidelity UNVERIFIED; report builder integration NOT IMPLEMENTED.
 - Details: `docs/C1_C2_SOURCE_EVIDENCE_IMPLEMENTATION_REPORT.md`.
+
+
+## 조사 자료 이중 검증 정책
+- 필수 기준: `docs/RESEARCH_DOUBLE_CHECK_STANDARD.md`.
+- 향후 모든 조사 자료는 원문/개정판/locator/문맥 확인 후 독립 공식 출처로 교차검증한다.
+- 교차검증 미완료 자료는 VERIFIED로 승격하지 않는다.
+- C1+C2 CI code/test SHA `0ee797dcc3e7d52b3167c8f11bf373a283f7a480`: 135 tests OK, strict archive 990/990 consistent.
+- Documentation CI run `43380949421` on SHA `1c298b28f80ea06dc3ee7859d009fc59f6c2b926`: success.
