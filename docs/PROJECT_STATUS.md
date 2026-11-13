@@ -2,7 +2,7 @@
 
 > 저장소: useformotor3/ai-discord-bot  
 > 작업 브랜치: cra-project-foundation  
-> 마지막 확인일: 2026-11-12
+> 마지막 확인일: 2026-11-13
 
 ## 목적/범위
 CRA를 모르는 개발자가 서보 드라이브 개발에 적용할 수 있는 공개 근거 기반 실무 지침과 통합 보고서 구축. CRA 전용이며 SIL 3 벤치마킹 제외. ST MCU 우선, TI 비교. Public 저장소에는 공개 자료만 저장.
@@ -752,3 +752,13 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - Claim Evidence Ledger에 5개 원자 주장 correction record를 추가했다.
 - 제1권에 Article 14(8)의 제한적 machine-readable user notification과 Article 13(6) component vulnerability reporting 방향을 명확히 한다. 제2권 공급망·PSIRT 실행계획에도 같은 해석을 반영한다.
 - 제품별 적용성/분류는 SKU, 제품 경계, intended purpose, MCU 주문 코드 미확정으로 UNVERIFIED. DUT 시험 NOT_RUN.
+
+
+## 2026-11-13 최신 Git 기준선 — main #107
+
+- main HEAD: aaded0f4d0b84a1891b5801a6048c4de92511822 (Auto-archive report #107).
+- main state.json: 2026-11-13 / count 107 (당일 카운터); history.json: 1,382 entries. Archive recursive tree count는 별도 재확인하지 않았다.
+- cra-project-foundation history.json: 990 entries; state.json: 2026-11-12 / count 3 (당일 카운터).
+- branch compare: diverged; work branch ahead 690 / behind 398; merge base b425b6db591e34abe003522157cf97ecf2240d9f.
+- main은 읽기 전용이며 merge/rebase/sync하지 않는다. archive tree 개수는 history count와 동일하다고 추정하지 않는다.
+- 최신 문서 작업 HEAD는 ad7b2732b5a554842772be8cabb23ba29d270ae4로 확인했다. 이 HEAD의 CI는 별도 검증 전까지 미실행/미확인이다.
