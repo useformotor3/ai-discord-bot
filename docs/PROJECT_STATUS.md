@@ -858,3 +858,11 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - 파일 단위 판정은 5 CONFLICT / 0 PARTIALLY_VERIFIED / 0 VERIFIED; direct quote reuse 0/5로 유지.
 - 개별 법령 사실 VERIFIED와 원본 보고서 전체 CONFLICT를 분리했다. 제품별 적용성·분류 UNVERIFIED, DUT 시험 NOT_RUN.
 - 다음 원자 분해 배치는 #18–#22.
+
+## 2026-11-13 — #18–#22 원자 주장 분해 완료
+
+- #18–#22 원본 5건의 경로/blob SHA를 main에서 재확인했다.
+- Claim Evidence Ledger에 원자 Claim ID 29개를 추가했다.
+- 파일 단위 판정은 5 CONFLICT / 0 PARTIALLY_VERIFIED / 0 VERIFIED; direct quote reuse 0/5로 유지.
+- 개별 법령 사실 VERIFIED와 원본 보고서 전체 CONFLICT를 구분. 제품별 적용성·분류 UNVERIFIED, DUT 시험 NOT_RUN.
+- 다음 원자 분해 배치는 #23–#27.
