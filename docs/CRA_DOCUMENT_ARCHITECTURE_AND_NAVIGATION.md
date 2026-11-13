@@ -136,3 +136,9 @@
 - 현재 프로젝트는 CRA 전용이다. 사용자가 새로 요청하지 않는 한 SIL 3 벤치마킹으로 확장하지 않는다.
 - 제품 SKU, intended purpose, 제품 경계, 실제 인터페이스/업데이트 방식, ST MCU 주문 코드가 확보되기 전 제품별 적용성·분류·적합성은 UNVERIFIED다.
 - 이 문서의 링크 목록은 저장소 문서 지도이며 법적·기술적 주장의 증거 자체가 아니다.
+
+
+### 2026-11-13 audit navigation update
+
+- [main reports #48–#52 audit](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_48_52_2026-11-13.md): 3 CONFLICT / 2 PARTIALLY_VERIFIED / 0 VERIFIED; direct quote reuse 0/5.
+- Claim-level corrections are indexed in [CLAIM_EVIDENCE_LEDGER.md](CLAIM_EVIDENCE_LEDGER.md) and integrated into Volume 1, Volume 2, the Article 14 PSIRT SOP and MASTER_REPORT.
