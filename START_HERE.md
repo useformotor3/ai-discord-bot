@@ -424,3 +424,9 @@
 - #8–#12 원본 5건의 개별 주장·인용을 31개 원자 Claim ID로 분해해 [Claim Evidence Ledger](docs/CLAIM_EVIDENCE_LEDGER.md)에 등록했다.
 - 기존 파일 단위 감사 판정 5 CONFLICT / direct quote reuse 0/5는 유지한다.
 - 다음 원자 분해 대상은 #13–#17이며, #18–#57까지 순차 진행한다.
+
+## 원자 주장 분해 진행 — #13–#17 완료
+
+- #13–#17 개별 주장·인용 29개를 [Claim Evidence Ledger](docs/CLAIM_EVIDENCE_LEDGER.md)에 원자 Claim ID로 등록했다.
+- 기존 파일 단위 감사는 5 CONFLICT / direct quote reuse 0/5로 유지한다.
+- 다음 원자 분해 대상은 #18–#22.
