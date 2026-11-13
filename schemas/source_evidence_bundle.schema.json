@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/schemas/source_evidence_bundle.schema.json",
+  "title": "CRA Source Evidence Bundle",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version", "source_id", "canonical_url", "final_url", "publisher",
+    "title", "expected_document_identifier", "observed_document_identifier",
+    "expected_revision", "observed_revision", "identity_status", "fetched_at_utc",
+    "http_status", "mime_type", "byte_count", "raw_sha256",
+    "extracted_text_sha256", "extraction_method", "extractor_version",
+    "decode_charset", "replacement_char_count", "extraction_quality_status",
+    "page_count", "empty_page_count", "locator_status", "evidence"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "source_id": {"type": "string", "minLength": 1},
+    "canonical_url": {"type": "string", "format": "uri"},
+    "final_url": {"type": "string", "format": "uri"},
+    "publisher": {"type": "string"},
+    "title": {"type": "string"},
+    "expected_document_identifier": {"type": "string"},
+    "observed_document_identifier": {"type": "string"},
+    "expected_revision": {"type": "string"},
+    "observed_revision": {"type": "string"},
+    "identity_status": {"enum": ["IDENTITY_AND_REVISION_MATCHED", "IDENTITY_UNCONFIRMED", "IDENTITY_MISMATCH", "REVISION_MISMATCH"]},
+    "fetched_at_utc": {"type": "string", "format": "date-time"},
+    "http_status": {"const": 200},
+    "mime_type": {"type": "string"},
+    "byte_count": {"type": "integer", "minimum": 1},
+    "raw_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "extracted_text_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "extraction_method": {"type": "string"},
+    "extractor_version": {"type": "string"},
+    "decode_charset": {"type": "string"},
+    "replacement_char_count": {"const": 0},
+    "extraction_quality_status": {"type": "string"},
+    "page_count": {"type": "integer", "minimum": 0},
+    "empty_page_count": {"type": "integer", "minimum": 0},
+    "locator_status": {"type": "string"},
+    "evidence": {
+      "type": "array",
+      "maxItems": 100,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["evidence_id", "locator", "excerpt", "excerpt_sha256"],
+        "properties": {
+          "evidence_id": {"type": "string", "pattern": "^[a-f0-9]{24}$"},
+          "locator": {"type": "string", "minLength": 1},
+          "excerpt": {"type": "string", "minLength": 1, "maxLength": 500},
+          "excerpt_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+        }
+      }
+    }
+  }
+}
