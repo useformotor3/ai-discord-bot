@@ -506,3 +506,12 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - Strict archive audit: archive/history 990/990, missing/orphan/duplicate/malformed 0, `consistent=true`.
 - diff 재확인: `main.py` unchanged, run workflow SHA main/work 동일, Gemini prompt 및 contract 미수정. `main.py`에서 extraction module import 없음.
 - 실제 EUR-Lex/ST/TI 문서 접속·파싱은 수행하지 않음. PDF adapter는 fake reader로만 검증, pypdf optional lazy dependency는 설치/실문서 테스트 미실시. OCR 미지원.
+
+
+## Daily CRA archive audit queue update — 2026-11-13
+- 기준점: main report #128, commit `15ceea4b9477b8c0928352a5b4228c0508e88daa`; 최신 확인 main HEAD `173c4d29ee62c0e96cfadf93824d6807ef2d148a` (report #6).
+- 기준점 이후 166개 Auto-archive commit 및 166개 신규 `research_archive` 파일을 확인했다: #129–#288 및 일일 count reset 이후 #1–#6. compare 변경 파일은 archive 166 + `history.json` + `state.json` = 168개.
+- 23개 파일은 모델 과부하/조사 지연 경고만 포함한다. 나머지 파일도 아직 개별 Pass A/B/C 감사를 수행하지 않았으므로 모든 항목은 NEW / NOT_YET_AUDITED, 파일 판정 UNVERIFIED, 인용문·개별 주장 판정 NOT_YET_AUDITED다.
+- 신규 대기열: [CRA_ARCHIVE_AUDIT_QUEUE.md](CRA_ARCHIVE_AUDIT_QUEUE.md). P0/P1/P2/P3 우선순위와 보고서별 commit SHA, 파일, 원문 시각, 주제 및 검증 쟁점을 기록했다.
+- EUR-Lex Regulation (EU) 2024/2847 Article 13(8)/(9), Article 14, Article 71(2), Annex I Part I/II, Annex II 1–9, Article 7/Annex III를 원문과 주변 문맥으로 사전 확인했다. Commission C(2026) 5252 게시 정보 및 ENISA SRP/FAQ도 공식 페이지에서 확인했다. 이는 개별 보고서 VERIFIED 판정이 아니다.
+- main archive/history/state는 읽기 전용. main.py, Gemini prompt, 운영 자동화 코드, run.yml 및 main 브랜치 수정 없음. merge/rebase/sync 없음. 문서 등록만 수행했으며 테스트는 실행하지 않았다.
