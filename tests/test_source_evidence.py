@@ -157,6 +157,19 @@ class SourceEvidenceTests(unittest.TestCase):
         with self.assertRaisesRegex(SourceFetchError, "RESPONSE_TOO_LARGE"):
             fetcher.fetch("CRA_EURLEX_2024_2847")
 
+
+    def test_negative_and_malformed_content_lengths_are_rejected(self):
+        for content_length in ["-1", "not-a-number", "1, 1", ""]:
+            with self.subTest(content_length=content_length):
+                response = FakeResponse(headers={
+                    "Content-Type": "text/html",
+                    "Content-Length": content_length,
+                })
+                fetcher = self.make_fetcher([response])
+                with self.assertRaisesRegex(SourceFetchError, "INVALID_CONTENT_LENGTH"):
+                    fetcher.fetch("CRA_EURLEX_2024_2847")
+                self.assertTrue(response.closed)
+
     def test_streamed_body_over_limit_is_blocked(self):
         source = SOURCE_REGISTRY["CRA_EURLEX_2024_2847"]
         fetcher = self.make_fetcher([FakeResponse(chunks=[b"x" * source.max_bytes, b"y"])])
