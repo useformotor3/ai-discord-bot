@@ -34,5 +34,8 @@
 - 이 인덱스는 최신 발행본만 가리키며, 이전 버전은 삭제하지 않고 이력으로 보존한다.
 - DOCX/PDF/PPTX/XLSX 변환은 Markdown 원본 검증 후 수행하고 원본 버전/해시를 기록한다.
 
+## 수집 코드 개선 감사 및 제안
+- [SOURCE_COLLECTION_CODE_AUDIT_AND_CHANGE_PROPOSAL_V1.md](SOURCE_COLLECTION_CODE_AUDIT_AND_CHANGE_PROPOSAL_V1.md) — 공식 원문 수집·추출 코드의 P0/P1 결함, 단계별 수정·테스트·롤백 제안. C1+C2 승인 대기.
+
 ## 운영 코드 개선 제안
 - [PROTECTED_CODE_CHANGE_PROPOSAL_V1.md](PROTECTED_CODE_CHANGE_PROPOSAL_V1.md) — 보호 파일 변경 전 승인 검토본. 구현 승인 전.
