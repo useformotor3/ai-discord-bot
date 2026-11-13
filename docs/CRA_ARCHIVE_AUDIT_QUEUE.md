@@ -2479,3 +2479,10 @@ Batch result: 5/5 CONFLICT, 0 PARTIALLY_VERIFIED, 0 VERIFIED; 0/5 Raw Text Quote
 - Claim Evidence Ledger에 원자 Claim ID 37개 추가.
 - #43 Class II 범주/Article32/Article64 penalty 오기, #44 Part I 2(d) 접근통제, #45–#47 Article 13(8)/(9) 및 Part II(4)–(8) 정정을 반영.
 - 다음 원자 분해 배치: #48–#52. 이후 #53–#57까지 순차 분해.
+
+## 2026-11-13 — #48–#52 원자 주장 분해 완료
+
+- 기존 #48–#52 파일 단위 결과 3 CONFLICT / 2 PARTIALLY_VERIFIED / direct quote reuse 0/5 유지.
+- Claim Evidence Ledger에 원자 Claim ID 31개 추가.
+- Article 14(8) machine-readable notice, Part II(4) disclosure/delay, CVD/contact, free update exception, Article 13(5)–(7) component due diligence/reporting direction을 분리.
+- 다음 원자 분해 배치: #53–#57. 이후 #8–#57 전체 상위 문서 전수 대조.
