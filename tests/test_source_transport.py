@@ -1,5 +1,7 @@
 import ssl
 import subprocess
+import socket
+import time
 import tempfile
 import threading
 import unittest
@@ -25,8 +27,11 @@ class _Handler(BaseHTTPRequestHandler):
     host_header = None
     host_headers = None
     accept_encoding = None
+    delay_seconds = 0
 
     def do_GET(self):
+        if type(self).delay_seconds:
+            time.sleep(type(self).delay_seconds)
         type(self).host_header = self.headers.get("Host")
         type(self).host_headers = self.headers.get_all("Host")
         type(self).accept_encoding = self.headers.get("Accept-Encoding")
@@ -193,6 +198,23 @@ class SourceTransportTests(unittest.TestCase):
             server.server_close()
             thread.join(timeout=2)
 
+    def test_untrusted_certificate_chain_is_rejected(self):
+        server, thread, _sni = self._serve_tls()
+        requested = []
+        try:
+            with self._patch_connect(server, requested):
+                with self.assertRaises(ssl.SSLCertVerificationError):
+                    PinnedHTTPSession().get(
+                        f"https://{HOST}/untrusted-ca",
+                        pinned_ips=[PUBLIC_IP],
+                        timeout=(2, 2),
+                    )
+            self.assertEqual(requested, [(PUBLIC_IP, 443)])
+        finally:
+            server.shutdown()
+            server.server_close()
+            thread.join(timeout=2)
+
     def test_connection_fallback_uses_only_supplied_pinned_ips(self):
         server, thread, sni = self._serve_tls()
         requested = []
@@ -223,6 +245,52 @@ class SourceTransportTests(unittest.TestCase):
             self.assertEqual(requested, [("1.0.0.1", 443), (PUBLIC_IP, 443)])
             self.assertEqual(sni, [HOST])
         finally:
+            server.shutdown()
+            server.server_close()
+            thread.join(timeout=2)
+
+    def test_connect_timeout_fails_closed_after_only_pinned_candidates(self):
+        requested = []
+
+        def timed_out(address, *_args, **_kwargs):
+            requested.append(address)
+            raise socket.timeout("fixture connect timeout")
+
+        with patch("source_transport.socket.create_connection", side_effect=timed_out):
+            with self.assertRaisesRegex(PinnedTransportError, "PINNED_CONNECTION_FAILED"):
+                PinnedHTTPSession().get(
+                    f"https://{HOST}/connect-timeout",
+                    pinned_ips=[PUBLIC_IP],
+                    timeout=(0.01, 0.1),
+                    verify=str(self.cert_file),
+                )
+        self.assertEqual(requested, [(PUBLIC_IP, 443)])
+
+    def test_read_timeout_does_not_fallback_to_another_ip(self):
+        server, thread, _sni = self._serve_tls()
+        requested = []
+        original = source_transport.socket.create_connection
+        _Handler.delay_seconds = 0.2
+
+        def routed(address, *args, **kwargs):
+            requested.append(address)
+            host, _port = address
+            if host in (PUBLIC_IP, "1.0.0.1"):
+                return original(("127.0.0.1", server.server_port), *args, **kwargs)
+            raise AssertionError("unexpected destination")
+
+        try:
+            with patch("source_transport.socket.create_connection", side_effect=routed):
+                with self.assertRaises(TimeoutError):
+                    PinnedHTTPSession().get(
+                        f"https://{HOST}/read-timeout",
+                        pinned_ips=["1.0.0.1", PUBLIC_IP],
+                        verify=str(self.cert_file),
+                        timeout=(2, 0.03),
+                    )
+            self.assertEqual(requested, [("1.0.0.1", 443)])
+        finally:
+            _Handler.delay_seconds = 0
             server.shutdown()
             server.server_close()
             thread.join(timeout=2)
