@@ -299,3 +299,20 @@ Annex II의 1~9번을 제품 사용자 설명서/온라인 문서에 매핑한�
 5. DoC Article 28, CE Article 30, technical documentation Article 31/Annex VII로 추적한다.
 6. 제품 SKU, core functionality, 네트워크 인터페이스 독립 공급 여부, MCU 보안 기능/주문 코드가 확보되기 전까지 Class I/II 및 conformity route는 UNVERIFIED. Notified Body 필요 여부를 추측하지 않는다.
 7. 이 분류는 법적·상업적 영향이 크므로 최종 제품 자료와 공식 원문 검토 후 별도 의사결정 기록 및 전문가 검토를 거친다.
+
+## P0 설계 작업 — Logging 및 Secure Data Lifecycle
+
+### CRA-REQ-SECURITY-LOGGING-001 (Annex I Part I(2)(l))
+1. 이벤트 taxonomy 작성: 인증 성공/실패, 역할·권한 변경, 설정/파라미터 변경, 서비스·디버그 접근, 업데이트 검증/실패, 무결성 오류, 보안 상태 변경.
+2. actor/time/action/result 및 관련 object를 기록하되 개인/운영 데이터는 목적에 필요한 최소 범위로 제한한다.
+3. 제어 태스크와 비동기 분리, bounded queue, CPU/Flash 수명/지터 budget, overflow 정책, 중요 이벤트 우선순위를 정의한다.
+4. 로그 읽기/삭제/내보내기 권한, 무결성 보호, 시간 기준, 저장공간 포화 및 사용자 opt-out 동작을 정의한다.
+5. 시험: TST-LOG-01/02. 현재 NOT_RUN.
+
+### CRA-REQ-SECURE-DATA-ERASURE-001 / CRA-REQ-SECURE-DATA-TRANSFER-001 (Annex I Part I(2)(m))
+1. persistent storage inventory를 작성한다: internal/external Flash, EEPROM/FRAM, backup registers/SRAM, logs, credentials, certificates, device identity, calibration/configuration.
+2. 사용자 데이터·설정의 안전하고 쉬운 영구 제거 경로를 정의한다. 매체별 erase granularity/endurance 및 key lifecycle을 고려하되 특정 NAND physical erase/crypto erase를 법정 필수로 단정하지 않는다.
+3. 제품이 다른 제품/시스템으로 데이터 전송을 지원한다면 목적지 인증, confidentiality, integrity, authenticity, 전송 실패 처리와 원본 데이터 삭제 선택을 정의한다.
+4. RMA/수리/재판매/폐기 절차에서 사용자 데이터·키·로그·설정의 제거 책임과 증거를 정의한다.
+5. Annex II(8)(d) 한국어 폐기/데이터 제거 지침을 작성한다.
+6. 시험: TST-ERASE-01..04. 현재 NOT_RUN. TST-NVM-01..03은 저장 무결성 시험으로 별도 유지.
