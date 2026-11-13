@@ -552,3 +552,10 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - Protected file SHAs rechecked on the work branch: `main.py` `997952702fdd9d2472468b82e6efdd65b2bb4376`; production `.github/workflows/run.yml` `65a8cadc8eac593f551e390698e367b1d161ecf1`; v2 prompt `14e9ce8618bc447a371dc28fc725cda3636470c5`; v2 contract `e0c1f1db353f664ae8c817c2f335d3a6efef4076`. All unchanged from pre-Phase-C baselines.
 - No production import/integration, no main-branch modification, no merge/rebase/sync, no live fetch or Gemini API call.
 - Phase C code/test/strict archive verification is COMPLETE. Production integration and Phase D remain separate and require their own design/approval.
+
+
+## Next phase proposal — Phase D design only (2026-11-13)
+- Created `docs/PHASE_D_EXACT_QUOTE_VALIDATION_DESIGN.md`.
+- Proposal covers deterministic exact-excerpt reconstruction from Phase A raw bytes + Phase B extraction, locator provenance classification, bounded context packets, human review records, separate machine/human statuses and fail-closed behavior.
+- Important boundary: exact match means exact contiguous text in the normalized extraction output, not proof of visual PDF fidelity, legal meaning, semantic claim support or product applicability.
+- No code/schema/prompt/production workflow changes were made for Phase D. Implementation awaits separate explicit approval.
