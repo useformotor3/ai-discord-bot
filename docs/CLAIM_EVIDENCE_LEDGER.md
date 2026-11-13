@@ -594,3 +594,44 @@ Correct map: Annex I Part I(2)(c) for applicable automatic-update default/user c
 - #13–#17 파일 단위 판정은 기존 감사 결과대로 5 CONFLICT / 0 PARTIALLY_VERIFIED / 0 VERIFIED이며 direct quote reuse 0/5.
 - 위 29개는 개별 claim 단위다. 일부 개별 법령 사실이 VERIFIED여도 원본 보고서 전체 판정을 바꾸지 않는다.
 - 제품별 적용성·Class I/II 분류는 UNVERIFIED, 실제 DUT 시험은 NOT_RUN.
+
+## 2026-11-13 — #18–#22 원자 주장·인용 분해 (29 claims)
+
+- 원본 감사: [main-only #13–#27 Pass A/B/C 감사](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_13_27_2026-11-13.md).
+- 원본 main 경로·blob SHA: #18 \`research_archive/2026-11-13_012535.md\` / \`a39605cfc909d39990ecc46bdd8caa5e8f97efd4\`; #19 \`013047.md\` / \`8211d1c2905452bf87e41722ca408119092644d1\`; #20 \`013528.md\` / \`d80151fca7d8302bd353715b3d8608412b99e065\`; #21 \`014042.md\` / \`34c0a04a117ff8175bec68e93e26600b520cebb5\`; #22 \`014539.md\` / \`a6695390839a167aa9a4b99473b2a70ba61dc838\`.
+- 공식 기준: Regulation (EU) 2024/2847, EUR-Lex consolidated text 20.11.2024.
+
+| Claim ID | 원본 | 원자 주장 | 근거 위치 | 상태 | 판정/정정 |
+|---|---:|---|---|---|---|
+| CRA-ARCH-MAIN-20261113-018-001 | #18 | actively exploited vulnerability는 Article 14 의무 신고 대상이다. | Article 14(1)–(2) | VERIFIED | 지정 CSIRT와 ENISA에 단일 신고 플랫폼으로 통지. |
+| CRA-ARCH-MAIN-20261113-018-002 | #18 | actively exploited vulnerability 신고는 24h early warning 및 72h vulnerability notification 단계를 갖는다. | Article 14(2)(a), (b) | VERIFIED | 최종 보고는 corrective/mitigating measure 이용 가능 후 14일 이내라는 별도 기한을 추가해야 한다. |
+| CRA-ARCH-MAIN-20261113-018-003 | #18 | 제조사 신고 의무 조항은 Article 11이다. | Article 13, Article 14 | CONFLICT | 제조사 의무 Article 13, 법정 신고 Article 14. |
+| CRA-ARCH-MAIN-20261113-018-004 | #18 | 모든 취약점 및 모든 보안 사고가 Article 14 신고 대상이다. | Article 14(1)–(5) | CONFLICT | actively exploited vulnerability와 제품 보안에 영향을 미치는 severe incident로 한정. |
+| CRA-ARCH-MAIN-20261113-018-005 | #18 | NIS2 Article 17 single point of contact 문구가 CRA Article 14의 직접 인용이다. | Article 14(1), (7); Article 13(17) | CONFLICT | CRA는 지정 CSIRT/ENISA 단일 신고 플랫폼과 제조사 단일 연락 창구를 별도 규정한다. |
+| CRA-ARCH-MAIN-20261113-019-001 | #19 | 보안 업데이트는 원칙적으로 무상 제공되어야 한다. | Annex I Part II(8) | PARTIALLY_VERIFIED | 맞춤형 제품에 관해 제조자와 사업 사용자가 달리 합의한 예외 포함 필요. |
+| CRA-ARCH-MAIN-20261113-019-002 | #19 | support period는 예상 수명과 5년 중 짧은 기간이다. | Article 13(8) | CONFLICT | 원칙은 최소 5년이며 예상 사용기간이 5년 미만이면 그 예상 사용기간에 대응한다. |
+| CRA-ARCH-MAIN-20261113-019-003 | #19 | 제조자는 CVD 정책을 수립·집행해야 한다. | Article 13(8), Annex I Part II(5) | VERIFIED | 법령상 CVD 정책 의무 확인. |
+| CRA-ARCH-MAIN-20261113-019-004 | #19 | 취약점 신고 연락처와 정책을 사용자에게 알리는 절차가 필요하다. | Annex I Part II(6), Article 13(17), Annex II(2) | PARTIALLY_VERIFIED | 연락 주소·단일 연락 창구·정책 위치를 구분. 특정 웹사이트 방식으로 한정하지 않는다. |
+| CRA-ARCH-MAIN-20261113-019-005 | #19 | 모든 보안 업데이트는 반드시 암호학적 서명 및 Secure Boot로 검증되어야 한다. | Annex I Part II(7), risk assessment | CONFLICT | 안전한 업데이트 배포 결과 요구와 특정 서명/Secure Boot 방식은 구분. 구체 기술은 위험기반 설계 후보. |
+| CRA-ARCH-MAIN-20261113-019-006 | #19 | Article 11 및 Annex I Part II(1) 인용이 free update/CVD 의무의 정확한 근거다. | Article 13, Annex I Part II(5), (8) | CONFLICT | Article 11 오기, Part II(1)은 SBOM/구성요소 식별. CVD (5), 무상 업데이트 (8). |
+| CRA-ARCH-MAIN-20261113-020-001 | #20 | 제품은 secure-by-default configuration으로 제공되어야 한다. | Annex I Part I(2)(b) | VERIFIED | secure-by-default와 original-state reset 가능성. |
+| CRA-ARCH-MAIN-20261113-020-002 | #20 | Annex I Part I(2)(f)가 secure-by-default 또는 초기 비밀번호 변경 요구다. | Annex I Part I(2)(b), (f) | CONFLICT | (b)는 secure-by-default, (f)는 데이터·명령·프로그램·설정 무결성 보호. |
+| CRA-ARCH-MAIN-20261113-020-003 | #20 | 최초 접속 시 공장 비밀번호 강제 변경이 CRA의 보편적 직접 의무다. | Annex I Part I(2)(b), (d) | CONFLICT | 구체 first-use password flow는 위험기반 설계 후보. |
+| CRA-ARCH-MAIN-20261113-020-004 | #20 | Raw Text Quote의 (b)/(f)/(g)가 secure default/access control에 관한 현행 조항의 정확한 인용이다. | Annex I Part I(2)(b), (d), (f), (g) | CONFLICT | 번호와 문언이 혼합·오배정됨. |
+| CRA-ARCH-MAIN-20261113-020-005 | #20 | secure-by-default에는 제품을 original state로 reset할 가능성이 포함된다. | Annex I Part I(2)(b) | VERIFIED | 현행 최종 법령 문언과 일치. |
+| CRA-ARCH-MAIN-20261113-021-001 | #21 | 제품은 secure-by-default 및 적절한 접근통제 상태로 제공되어야 한다. | Annex I Part I(2)(b), (d) | VERIFIED | secure default와 appropriate access controls를 분리 추적. |
+| CRA-ARCH-MAIN-20261113-021-002 | #21 | 모든 제품은 고유한 초기 인증정보 또는 사용자 강제 변경을 반드시 구현해야 한다. | Annex I Part I(2)(b), (d) | CONFLICT | 법령은 결과 기반 보안 기본값/접근통제를 요구하며 특정 초기 비밀번호 방식은 지정하지 않는다. |
+| CRA-ARCH-MAIN-20261113-021-003 | #21 | Annex II가 CRA technical documentation의 근거다. | Article 31, Annex VII; Article 13(18), Annex II | CONFLICT | Annex II는 사용자 정보·지침, 기술문서는 Article 31/Annex VII. |
+| CRA-ARCH-MAIN-20261113-021-004 | #21 | support period는 예상 수명 또는 최소 5년이다. | Article 13(8) | PARTIALLY_VERIFIED | 예상 사용기간이 5년 미만이면 그 예상 사용기간에 대응하는 예외를 함께 기록. |
+| CRA-ARCH-MAIN-20261113-021-005 | #21 | 제조자는 지원기간 중 보안 업데이트를 원칙적으로 무상 제공해야 한다. | Annex I Part II(8), Article 13(8) | PARTIALLY_VERIFIED | tailored product/business-user agreement exception 누락. |
+| CRA-ARCH-MAIN-20261113-021-006 | #21 | Article 13(3)이 free security update와 advisory messages를 직접 규정한다. | Article 13(8), Annex I Part II(8) | CONFLICT | 해당 인용은 현재 조항의 문언·위치와 일치하지 않는다. |
+| CRA-ARCH-MAIN-20261113-021-007 | #21 | Annex II가 technical documentation 및 support 기간을 모두 규정한다. | Annex II, Annex VII, Article 13(8) | CONFLICT | Annex II user instructions, Annex VII technical documentation, Article 13(8) support period로 분리. |
+| CRA-ARCH-MAIN-20261113-022-001 | #22 | 제품은 위험에 기반한 secure-by-default configuration으로 제공되어야 한다. | Annex I Part I(1), (2)(b) | VERIFIED | 위험기반 보안 수준 및 secure default 확인. |
+| CRA-ARCH-MAIN-20261113-022-002 | #22 | 일반 산업용 서보 드라이브가 Annex III Class I/II 제품이다. | Article 7, Annex III | UNVERIFIED | 제품 전체 core functionality 및 Annex III 범주 증거가 없어 분류 불가. |
+| CRA-ARCH-MAIN-20261113-022-003 | #22 | 모든 hardcoded/default credential은 법령상 무조건 금지된다. | Annex I Part I(2)(b), (d) | CONFLICT | 취약한 기본 설정 방지는 요구되지만 구체 자격증명 구현·금지 문구를 보편 의무로 직접 단정하지 않는다. |
+| CRA-ARCH-MAIN-20261113-022-004 | #22 | 첫 접속 시 비밀번호 또는 MFA 설정을 반드시 강제해야 한다. | Annex I Part I(2)(d) | CONFLICT | MFA/first-use provisioning은 위험기반 접근통제 설계 후보. |
+| CRA-ARCH-MAIN-20261113-022-005 | #22 | 미사용 포트/디버그 인터페이스는 모든 제품에서 기본 비활성화해야 한다. | Annex I Part I(2)(j) | CONFLICT | attack-surface limitation 결과 요구를 모든 인터페이스 일괄 차단으로 확대하지 않는다. |
+| CRA-ARCH-MAIN-20261113-022-006 | #22 | Raw Text Quote의 (a)/(b) secure-default/access-control 번호가 현행 법령과 일치한다. | Annex I Part I(2)(b), (d) | CONFLICT | 현행 (b)=secure-by-default/reset, (d)=appropriate access controls. 보고서의 문구·번호는 불일치. |
+
+- #18–#22 파일 단위 판정은 기존 감사 결과대로 5 CONFLICT / 0 PARTIALLY_VERIFIED / 0 VERIFIED이며 direct quote reuse 0/5.
+- 개별 법령 사실 VERIFIED와 원본 파일 전체 CONFLICT를 구분한다. 제품별 적용성·Class I/II 분류는 UNVERIFIED, DUT 시험 NOT_RUN.
