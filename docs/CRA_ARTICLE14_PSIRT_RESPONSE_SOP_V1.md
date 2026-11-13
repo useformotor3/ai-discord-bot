@@ -169,12 +169,15 @@ CRA Single Reporting Platform을 통한 제출 구조를 기준으로 한다. �
 - Regulation (EU) 2024/2847, Article 14 및 Article 13(17): https://eur-lex.europa.eu/eli/reg/2024/2847/oj
 - European Commission, CRA reporting obligations: https://digital-strategy.ec.europa.eu/en/policies/cra-reporting
 
-본 절차는 규정 원문 및 Commission 안내를 기준으로 작성했다. 신고 플랫폼 세부 UI/필수 입력항목·국가별 관할은 실제 제출 시 최신 공식 지침을 확인해야 한다.
+본 절차는 규정 원문 및 유럽연합 집행위원회 안내를 기준으로 작성했다. 신고 플랫폼의 세부 화면/필수 입력항목·국가별 관할은 실제 제출 시 최신 공식 지침을 확인해야 한다.
+
+용어 통일: 적극 악용 취약점, 제품 보안에 영향을 미치는 심각한 사고, 조기 경보, 신고, 최종 보고, 영향 사용자 통지를 구분한다. Article 14(8)의 기계 판독 가능 형식은 적절한 경우에 적용되는 조건부 요구다.
 
 
-### #48–#52 감사 정정 반영 — 공급망·사용자 통지
+### #48–#52 감사 정정 반영 — 공급망 취약점 및 사용자 통지
 
-- Article 13(6)의 구성요소 취약점 신고는 제품 제조사가 해당 구성요소 제조/유지 주체에 보고하는 방향이다. 공급자가 항상 상위 제조사에 자동 보고해야 한다는 일반 CRA 의무로 표현하지 않는다.
-- Article 14(8) 사용자 통지는 actively exploited vulnerability 또는 제품 보안에 영향을 미치는 severe incident에 한정된다. 구조화된 machine-readable 형식은 where appropriate 조건이며 모든 취약점 공지에 일률 적용되지 않는다.
-- Annex I Part II(4) fixed-vulnerability disclosure, (5) CVD policy, (6) contact address, (7) secure update distribution, (8) timely/free security updates를 각각 구분한다.
-- 상세: [#48–#52 감사](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_48_52_2026-11-13.md).
+- Article 13(6)의 구성요소 취약점 신고 방향은 제품 제조사에서 해당 구성요소 제조사/유지관리 주체로 향한다. 공급자가 항상 상위 제조사에 자동 통지해야 한다는 일반 CRA 의무로 표현하지 않는다.
+- Article 14(8)의 사용자 통지는 적극 악용 취약점 또는 제품 보안에 영향을 미치는 심각한 사고에 대한 통지다. 구조화된 기계 판독 가능 형식은 “where appropriate(적절한 경우)” 조건이며 모든 취약점 공지에 일률 적용하지 않는다.
+- Annex I Part II(4) 수정 취약점 공개, (5) CVD 정책, (6) 취약점 신고 연락처, (7) 안전한 업데이트 배포, (8) 원칙적 무상 보안 업데이트를 서로 구분한다.
+- 지원기간은 Article 13(8), 지원기간 중 제공된 각 보안 업데이트의 보존·가용성은 Article 13(9)로 관리한다.
+- 상세 원문·SHA·반증: [#48–#52 감사 보고서](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_48_52_2026-11-13.md).
