@@ -475,3 +475,35 @@ Correct map: Annex I Part I(2)(c) for applicable automatic-update default/user c
 - Annex I Part I point 2(m)를 누락했던 기존 #38 감사의 파일 판정을 CONFLICT에서 PARTIALLY_VERIFIED로 정정했다.
 - Part I 2(m)는 해당되는 제품에서 사용자가 모든 데이터와 설정을 안전하고 쉽게 영구 제거할 수 있는 가능성을 요구하고, Annex II 8(d)는 안전한 폐기/사용자 데이터 제거 방법의 지침을 요구한다.
 - #8–#47 누계는 40건 중 36 CONFLICT / 4 PARTIALLY_VERIFIED / 0 VERIFIED로 정정한다. #8–#52 누계는 45건 중 39 CONFLICT / 6 PARTIALLY_VERIFIED / 0 VERIFIED다. 직접 인용 재사용은 계속 0/45.
+
+## 2026-11-13 main reports #58–#62 — 원자 주장 추적
+
+공식 기준: EUR-Lex consolidated Regulation (EU) 2024/2847, 20.11.2024. 각 상태는 아래에 적힌 법령 주장만 평가하며 제품별 적용성은 별도다.
+
+| Claim ID | 원본 | 원자 주장 | 근거 위치 | 상태 | 정정·한계 |
+|---|---:|---|---|---|---|
+| CRA-ARCH-MAIN-20261113-058-001 | #58 | 제조자는 CVD 정책을 수립·집행해야 한다. | Article 13(8), Annex I Part II(5) | VERIFIED | 법령상 정책 의무 확인. 제품별 프로세스 증거는 미확인. |
+| CRA-ARCH-MAIN-20261113-058-002 | #58 | 취약점 신고 연락 주소 및 사용자 단일 연락 창구가 필요하다. | Part II(6), Article 13(17), Annex II(2) | VERIFIED | contact address와 single point of contact, 사용자 지침을 분리. |
+| CRA-ARCH-MAIN-20261113-058-003 | #58 | 보안 업데이트는 원칙적으로 무상 제공된다. | Annex I Part II(8) | PARTIALLY_VERIFIED | 맞춤형 제품에 관해 제조자와 사업 사용자가 달리 합의한 예외를 포함해야 한다. |
+| CRA-ARCH-MAIN-20261113-058-004 | #58 | 산업용 서보 드라이브가 Class II/important product다. | Article 7, Annex III | UNVERIFIED | 제품 전체 core functionality 및 Annex III 범주 확인 전 분류 불가. |
+| CRA-ARCH-MAIN-20261113-059-001 | #59 | CVD 정책은 CRA 취약점 처리 의무에 포함된다. | Article 13(8), Annex I Part II(5) | VERIFIED | CVD 정책 의무 자체는 확인. |
+| CRA-ARCH-MAIN-20261113-059-002 | #59 | 보안 업데이트는 원칙적으로 무상이며 지체 없이 배포한다. | Annex I Part II(8) | PARTIALLY_VERIFIED | tailored product/business user agreement exception 누락. |
+| CRA-ARCH-MAIN-20261113-059-003 | #59 | 서보 드라이브가 Class I로 분류된다. | Article 7, Annex III | UNVERIFIED | SKU/core functionality 근거 없음. |
+| CRA-ARCH-MAIN-20261113-059-004 | #59 | Article 11(7) 및 Annex I Section 2 인용이 현행 직접 인용이다. | Article 11, Article 13, Annex I | CONFLICT | Article 11은 General product safety이며 제조사 의무는 Article 13. 제시 문장은 현행 원문과 일치하지 않는다. |
+| CRA-ARCH-MAIN-20261113-060-001 | #60 | 적극 악용 취약점은 Article 14 의무 신고 대상이다. | Article 14(1)–(2) | VERIFIED | 지정 CSIRT와 ENISA에 단일 신고 플랫폼으로 제출. |
+| CRA-ARCH-MAIN-20261113-060-002 | #60 | 제품 보안에 영향을 미치는 severe incident도 별도 의무 신고 대상이다. | Article 14(3)–(5) | VERIFIED | actively exploited vulnerability 트랙과 구분. |
+| CRA-ARCH-MAIN-20261113-060-003 | #60 | 24h/72h 기한은 모든 일반 취약점에 적용된다. | Article 14(1)–(4) | CONFLICT | 두 신고 트랙의 정해진 trigger에만 적용. 최종 보고는 취약점 14일, severe incident 1개월. |
+| CRA-ARCH-MAIN-20261113-060-004 | #60 | 보고서의 Article 14(1)/Annex I Part II(1) 인용은 정확한 직접 인용이다. | Article 14, Annex I Part II(1)–(2) | CONFLICT | 직접 인용 불일치. Part II(1)은 SBOM/구성요소 식별, (2)는 취약점 처리·시정. |
+| CRA-ARCH-MAIN-20261113-061-001 | #61 | 관련 내부 활동의 기록·모니터링으로 보안 관련 정보를 제공해야 한다. | Annex I Part I 2(l) | VERIFIED | 데이터·서비스·기능의 접근/변경을 포함하며 사용자 opt-out 메커니즘 포함. |
+| CRA-ARCH-MAIN-20261113-061-002 | #61 | CRA logging 요구의 위치가 Part I 2(1)(h)다. | Annex I Part I 2(h), 2(l) | CONFLICT | 정확한 logging 위치는 2(l); 2(h)는 availability/DoS resilience. |
+| CRA-ARCH-MAIN-20261113-061-003 | #61 | tamper-proof retention, circular buffer, Syslog over TLS가 CRA의 직접 의무다. | Annex I Part I 2(l) | UNVERIFIED | 법령이 지정한 구현 방식이 아님. 제품 위험평가 기반 설계 후보. |
+| CRA-ARCH-MAIN-20261113-061-004 | #61 | 보고서 Raw Text Quote가 2(l)의 정확한 직접 인용이다. | Annex I Part I 2(l) | CONFLICT | 제시된 문장은 현행 원문과 불일치하는 합성 인용. |
+| CRA-ARCH-MAIN-20261113-062-001 | #62 | Article 14는 actively exploited vulnerability와 severe incident를 신고 대상으로 한다. | Article 14(1)–(5) | VERIFIED | 일반 취약점 처리/CVD와 의무 신고 트리거를 분리. |
+| CRA-ARCH-MAIN-20261113-062-002 | #62 | 두 트랙 모두 24h/72h 단계가 있다. | Article 14(2), (4) | PARTIALLY_VERIFIED | 맞지만 최종 보고 기한은 취약점 14일, 사고 1개월로 다르다. |
+| CRA-ARCH-MAIN-20261113-062-003 | #62 | 제조자는 Article 14 신고를 시장감시기관에 직접 제출한다. | Article 14(7), Article 16(3) | CONFLICT | 제조자는 지정 CSIRT 엔드포인트/단일 플랫폼으로 신고하고, CSIRT가 필요한 정보를 시장감시기관에 제공한다. |
+| CRA-ARCH-MAIN-20261113-062-004 | #62 | 모든 발견 취약점에 대해 Article 14(8) 사용자 통지가 필요하다. | Article 14(8) | CONFLICT | actively exploited vulnerability 또는 severe incident에 한정. 영향 사용자 및 적절한 경우 모든 사용자. |
+| CRA-ARCH-MAIN-20261113-062-005 | #62 | Article 11(8) 및 보고서 인용이 제조사 신고/사용자 통지의 정확한 근거다. | Article 13, Article 14(8) | CONFLICT | 제조사 의무 Article 13, 신고 Article 14. 제시 인용은 현행 조항과 불일치. |
+
+- #58–#62 파일 단위 판정: 5 PARTIALLY_VERIFIED / 0 CONFLICT / 0 VERIFIED; 직접 인용 재사용 승인 0/5.
+- 위 원자 Claim ID는 개별 법령 문장·주장을 추적하기 위한 보조 레코드다. 제품별 적용성은 전부 UNVERIFIED이며 실제 DUT 시험은 NOT_RUN.
+- 누적 파일 단위 감사 #8–#62: 55건, 40 CONFLICT / 15 PARTIALLY_VERIFIED / 0 VERIFIED; 직접 인용 재사용 0/55. 비무작위 연속 표본.
