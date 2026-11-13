@@ -507,3 +507,48 @@ Correct map: Annex I Part I(2)(c) for applicable automatic-update default/user c
 - #58–#62 파일 단위 판정: 5 PARTIALLY_VERIFIED / 0 CONFLICT / 0 VERIFIED; 직접 인용 재사용 승인 0/5.
 - 위 원자 Claim ID는 개별 법령 문장·주장을 추적하기 위한 보조 레코드다. 제품별 적용성은 전부 UNVERIFIED이며 실제 DUT 시험은 NOT_RUN.
 - 누적 파일 단위 감사 #8–#62: 55건, 40 CONFLICT / 15 PARTIALLY_VERIFIED / 0 VERIFIED; 직접 인용 재사용 0/55. 비무작위 연속 표본.
+
+## 2026-11-13 — #8–#12 원자 주장·인용 분해 (31 claims)
+
+- 원본 감사: [main-only #8–#12 Pass A/B/C 감사](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_8_12_2026-11-13.md).
+- 법령 기준: Regulation (EU) 2024/2847, EUR-Lex consolidated text 20.11.2024. 공식 원문: https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:02024R2847-20241120
+- 원본 경로 및 SHA는 원본 감사 문서에 기록되어 있다. 아래 레코드는 파일 단위 판정이 아니라 개별 법령 주장/인용의 원자 판정이다.
+
+| Claim ID | 원본 | 원자 주장 | 근거 위치 | 상태 | 판정/정정 |
+|---|---:|---|---|---|---|
+| CRA-ARCH-MAIN-20261113-008-001 | #8 | 제품은 위험평가에 따라 secure-by-default configuration으로 시장에 제공되어야 한다. | Annex I Part I(1), (2)(b) | VERIFIED | 법령상 결과 요구 확인. |
+| CRA-ARCH-MAIN-20261113-008-002 | #8 | secure-by-default에는 제품을 original state로 reset할 가능성이 포함된다. | Annex I Part I(2)(b) | VERIFIED | 원문에 명시. |
+| CRA-ARCH-MAIN-20261113-008-003 | #8 | 모든 제품은 최초 접속 시 고유하고 강력한 비밀번호 변경을 강제해야 한다. | Annex I Part I(2)(b), (d) | CONFLICT | 해당 세부 방식은 조항의 보편적 직접 의무가 아니다. 위험기반 설계 선택으로 분리. |
+| CRA-ARCH-MAIN-20261113-008-004 | #8 | JTAG/디버그/미사용 포트·서비스를 모든 제품에서 기본 비활성화해야 한다. | Annex I Part I(2)(j) | CONFLICT | 공격표면 제한이라는 결과 요구는 있으나 모든 인터페이스를 일률 비활성화하라는 문언은 없다. |
+| CRA-ARCH-MAIN-20261113-008-005 | #8 | 제품 reset 기능은 원래의 secure-by-default 상태로 돌아가도록 설계해야 한다. | Annex I Part I(2)(b) | PARTIALLY_VERIFIED | secure default와 original-state reset을 함께 읽는 해석은 타당하나 reset 구현의 세부 방식은 제품별 설계·시험으로 확인. |
+| CRA-ARCH-MAIN-20261113-008-006 | #8 | Raw Text Quote의 (a)/(b) 및 default-password 변경 문구가 현행 Annex I의 정확한 직접 인용이다. | Annex I Part I(2)(b), (d) | CONFLICT | 현행 (b)는 secure-by-default/reset, (d)는 appropriate access controls이며 default password modification 문구는 인용된 조항에 없다. |
+| CRA-ARCH-MAIN-20261113-009-001 | #9 | 제조자는 support period 동안 취약점을 효과적으로 처리해야 한다. | Article 13(8), Annex I Part II(2) | VERIFIED | 지원기간 및 지체 없는 취약점 처리 의무 확인. |
+| CRA-ARCH-MAIN-20261113-009-002 | #9 | support period는 예상 사용기간 또는 최소 5년 중 더 긴 기간이다. | Article 13(8) | CONFLICT | 원칙은 최소 5년이나 예상 사용기간이 5년보다 짧으면 그 예상 사용기간에 대응한다. |
+| CRA-ARCH-MAIN-20261113-009-003 | #9 | 사용 가능한 보안 업데이트는 원칙적으로 무상 제공된다. | Annex I Part II(8) | PARTIALLY_VERIFIED | 맞춤형 제품에 관해 제조자와 사업 사용자가 달리 합의한 예외 포함 필요. |
+| CRA-ARCH-MAIN-20261113-009-004 | #9 | 제조자는 CVD 정책을 갖추고 취약점 신고 연락처를 제공해야 한다. | Article 13(8), Annex I Part II(5), (6) | VERIFIED | CVD 정책과 연락 주소의 법적 근거 확인. |
+| CRA-ARCH-MAIN-20261113-009-005 | #9 | 모든 발견 취약점과 업데이트를 동일한 방식으로 사용자에게 공지해야 한다. | Annex I Part I(2)(c), Part II(4), Annex II | PARTIALLY_VERIFIED | 업데이트 가능 통지 및 수정 취약점 공개 요구는 있으나 모든 잠재 취약점의 즉시 공지로 확대하지 않는다. |
+| CRA-ARCH-MAIN-20261113-009-006 | #9 | 제조사 취약점 처리 의무의 근거는 Article 11이다. | Article 13(8), Annex I Part II | CONFLICT | 제조사 의무는 Article 13이며 Article 11은 General product safety다. |
+| CRA-ARCH-MAIN-20261113-009-007 | #9 | 보고서의 Part I/Manufacturer Obligations 복합 인용이 현행 원문의 정확한 직접 인용이다. | Annex I Part I(2)(c), Part II(2), (8) | CONFLICT | 서로 다른 요구를 합성했고 현행 문언과 일치하지 않는다. |
+| CRA-ARCH-MAIN-20261113-010-001 | #10 | secure-by-default는 Annex I Part I(2)(b)에 규정되어 있다. | Annex I Part I(2)(b) | VERIFIED | Part I는 제품 속성 요구사항. |
+| CRA-ARCH-MAIN-20261113-010-002 | #10 | Annex I Part II가 Class II 중요 제품 요구사항을 뜻한다. | Annex I Part I/II, Annex III | CONFLICT | Part II는 vulnerability handling requirements이고 Class II는 Annex III의 별도 제품 분류다. |
+| CRA-ARCH-MAIN-20261113-010-003 | #10 | 일반 산업용 서보 드라이브는 CRA Class II 제품이다. | Article 7, Annex III | UNVERIFIED | 제품 전체 core functionality와 Annex III 범주 증거가 없어 분류할 수 없다. |
+| CRA-ARCH-MAIN-20261113-010-004 | #10 | 모든 서보 드라이브는 최초 접속 시 고유·고엔트로피 비밀번호 설정을 강제해야 한다. | Annex I Part I(2)(b), (d) | CONFLICT | 구체 비밀번호 생성·변경 절차는 해당 문언의 직접 보편 의무가 아니다. |
+| CRA-ARCH-MAIN-20261113-010-005 | #10 | 관리자 권한 분리/least privilege가 인용된 secure-by-default 조항의 명문 세부 요구다. | Annex I Part I(2)(d) | CONFLICT | 적절한 접근통제 결과 요구는 있으나 해당 구체 역할 설계를 직접 지정하지 않는다. |
+| CRA-ARCH-MAIN-20261113-010-006 | #10 | PE-CONS 105/23의 초안/타협안 인용이 현행 최종 규정의 정확한 인용이다. | Regulation (EU) 2024/2847, Annex I | CONFLICT | 최종 현행 조항과 위치·문언을 대조해야 하며 초안 인용을 최종 법령 인용으로 재사용하지 않는다. |
+| CRA-ARCH-MAIN-20261113-011-001 | #11 | 제품의 사이버보안 수준은 위험에 기반해 적절한 수준이어야 한다. | Annex I Part I(1) | VERIFIED | 원문상 risk-based cybersecurity level 요구 확인. |
+| CRA-ARCH-MAIN-20261113-011-002 | #11 | secure-by-default와 외부 인터페이스를 포함한 attack-surface 제한은 CRA 요구사항이다. | Annex I Part I(2)(b), (j) | VERIFIED | 결과 요구의 근거 확인. |
+| CRA-ARCH-MAIN-20261113-011-003 | #11 | 모든 통신 포트·USB·서비스 Ethernet·테스트 계정은 모든 제품에서 기본 비활성화해야 한다. | Annex I Part I(2)(j) | CONFLICT | 위험기반 공격표면 제한을 모든 인터페이스 일괄 차단 의무로 확대했다. |
+| CRA-ARCH-MAIN-20261113-011-004 | #11 | 제품별 고유 기본 비밀번호 또는 최초 사용 강제 변경이 CRA의 명시적 보편 의무다. | Annex I Part I(2)(b), (d) | CONFLICT | 구체 인증 설계는 위험기반 구현 후보이며 인용 조항이 직접 지정하지 않는다. |
+| CRA-ARCH-MAIN-20261113-011-005 | #11 | “a appropriate level...” 및 secure-default 인용문이 정확한 Raw Text Quote다. | Annex I Part I(1), (2)(b) | CONFLICT | 문법 오류·합성/요약 문구가 포함되어 현행 법령의 직접 인용으로 재사용 불가. |
+| CRA-ARCH-MAIN-20261113-012-001 | #12 | 제조자는 CVD 정책을 수립하고 집행해야 한다. | Annex I Part II(5), Article 13(8) | VERIFIED | 원문상 정책 수립·집행 의무 확인. |
+| CRA-ARCH-MAIN-20261113-012-002 | #12 | 취약점 신고 연락 주소를 제공해야 한다. | Annex I Part II(6) | VERIFIED | 연락 주소 제공 및 정보 공유 촉진 요구 확인. |
+| CRA-ARCH-MAIN-20261113-012-003 | #12 | CVD 정책은 반드시 공식 웹사이트에 공개해야 한다. | Article 13(17), Annex II(2) | PARTIALLY_VERIFIED | 정책을 찾을 수 있는 위치와 단일 연락 창구를 사용자 정보에 포함해야 하나, 특정 웹사이트 공개 방식으로 한정하지 않는다. |
+| CRA-ARCH-MAIN-20261113-012-004 | #12 | 보안 패치는 원칙적으로 무상 제공된다. | Annex I Part II(8) | PARTIALLY_VERIFIED | 맞춤형 제품 관련 제조자-사업 사용자 합의 예외 포함 필요. |
+| CRA-ARCH-MAIN-20261113-012-005 | #12 | 모든 잠재 취약점은 Article 14에 따라 ENISA/CSIRT에 의무 신고해야 한다. | Article 14(1)–(4) | CONFLICT | 의무 신고 트리거는 actively exploited vulnerability와 severe incident 두 트랙이다. 일반 취약점은 CVD/취약점 처리 절차와 분리. |
+| CRA-ARCH-MAIN-20261113-012-006 | #12 | 제조사 사용자 정보/지침의 근거는 Article 11이다. | Article 13(18), Annex II | CONFLICT | 제조사 의무 Article 13, 사용자 정보·지침 Article 13(18)/Annex II. |
+| CRA-ARCH-MAIN-20261113-012-007 | #12 | CVD 정책 문구 “made publicly available”가 Annex I Part II(5)의 정확한 직접 인용이다. | Annex I Part II(5), Annex II(2) | CONFLICT | Part II(5)는 “put in place and enforce a policy”이며 사용자 정보의 정책 위치 제공은 Annex II(2)로 구분. |
+| CRA-ARCH-MAIN-20261113-012-008 | #12 | 취약점 시정 문구 “without undue delay”가 Part II(2)의 정확한 직접 인용이다. | Annex I Part II(2) | CONFLICT | 현행 문언은 “without delay”; 인용문을 직접 인용으로 재사용하지 않는다. |
+
+- #8–#12 파일 단위 판정은 기존 감사 결과대로 5 CONFLICT / 0 PARTIALLY_VERIFIED / 0 VERIFIED이며 direct quote reuse 0/5.
+- 위 31개는 개별 claim 단위다. 일부 법령 원칙은 VERIFIED여도 원본 보고서 전체가 VERIFIED라는 뜻은 아니다.
+- 제품별 적용성·Class I/II 분류는 전부 UNVERIFIED. 실제 DUT 시험은 NOT_RUN.
