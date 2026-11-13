@@ -466,3 +466,14 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 - [x] First full test suite and strict archive audit: Actions #43345148925 SUCCESS, 103 tests PASS; archive/history 990/990, consistent=true.
 - [x] Final hardened HEAD `eaf4b4d31c0dccd2a624ab0f67fabdc166936a70` Actions #43345315133 SUCCESS: 105 tests PASS; strict archive audit 990/990 consistent; protected files and Phase C schema/code SHAs unchanged.
 - Boundaries unchanged: no `main.py`, production workflow, v2 prompt/contract, Phase C schema/IDs, live fetch, Gemini API, or main-branch changes; no merge/rebase/sync.
+
+
+## Phase E — controlled official-source fetch and extraction quality (2026-11-13)
+- [x] Phase E design proposal 작성: `docs/PHASE_E_CONTROLLED_FETCH_AND_EXTRACTION_DESIGN.md`.
+- [x] Phase A fetcher의 DNS 사전검사와 실제 requests 연결 간 DNS TOCTOU 잔여 위험을 원문 코드로 확인.
+- [x] Phase B real-document parser fidelity 미검증 및 PDF fake-reader-only/optional backend 상태 재확인.
+- [ ] E1: source_id registry를 유지하면서 실제 TCP 연결을 검증된 A/AAAA IP로 고정하고 TLS SNI/hostname 검증을 원래 hostname으로 보존하는 transport 구현 — 사용자 별도 승인 대기.
+- [ ] E2: DNS rebinding, IPv4/IPv6, TLS, redirect/retry, timeout/size/MIME/status adversarial tests 및 전체 CI — E1/E2 구현 승인 대기.
+- [ ] E3: 실제 EUR-Lex/ST/TI fetch 및 HTML/XML/PDF 추출 품질 검증 — E1/E2 구현·CI 확인 후 별도 사용자 승인 필요.
+- [x] Phase E 설계 단계에서는 코드, workflow, 운영 설정, live URL fetch, Gemini API 및 비용 설정을 변경하지 않음.
+- 승인 요청 범위는 E1+E2 작업 브랜치 전용 구현/오프라인 테스트만. E3, production integration, protected files, main merge/rebase/sync는 포함하지 않음.
