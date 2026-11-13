@@ -713,7 +713,7 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - 상세: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_43_47_2026-11-13.md](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_43_47_2026-11-13.md).
 - 결과: 3 CONFLICT / 2 PARTIALLY_VERIFIED / 0 VERIFIED; direct quote reuse 0/5.
 - main 최신: `a3d5b567f216f5e001e643513ee7ce87443a806d`, report #98, archive/history 1,373/1,373.
-- 누적 #8–#47: 40건, 37 CONFLICT / 3 PARTIALLY_VERIFIED / 0 VERIFIED. 연속·비무작위 표본.
+- 누적 #8–#47: 40건, 36 CONFLICT / 4 PARTIALLY_VERIFIED / 0 VERIFIED. 연속·비무작위 표본.
 - 제품 분류 정정: CRA Annex III Class II에 IACS/PLC/servo drive가 열거되지 않는다. Article 7 core functionality 및 Implementing Regulation (EU) 2025/2392 technical description을 적용해야 한다.
 - 다음 배치 #48–#52.
 
@@ -747,7 +747,7 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 
 - main 최신 관찰: HEAD aaded0f4d0b84a1891b5801a6048c4de92511822 (report #107); state count 107; history 1,382 entries. archive tree count는 이번에 별도 확인하지 않았다.
 - #48–#52 감사 결과: 3 CONFLICT / 2 PARTIALLY_VERIFIED / 0 VERIFIED; 직접 인용 재사용 0/5.
-- 누적 #8–#52: 45건, 40 CONFLICT / 5 PARTIALLY_VERIFIED / 0 VERIFIED. 비무작위 연속 표본이며 전체 archive 오류율이 아니다.
+- 누적 #8–#52: 45건, 39 CONFLICT / 6 PARTIALLY_VERIFIED / 0 VERIFIED. 비무작위 연속 표본이며 전체 archive 오류율이 아니다.
 - 상세 감사 및 SHA: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_48_52_2026-11-13.md](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_48_52_2026-11-13.md).
 - Claim Evidence Ledger에 5개 원자 주장 correction record를 추가했다.
 - 제1권에 Article 14(8)의 제한적 machine-readable user notification과 Article 13(6) component vulnerability reporting 방향을 명확히 한다. 제2권 공급망·PSIRT 실행계획에도 같은 해석을 반영한다.
