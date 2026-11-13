@@ -862,3 +862,51 @@ Correct map: Annex I Part I(2)(c) for applicable automatic-update default/user c
 
 - #43–#47 파일 단위 판정은 기존 감사 결과대로 3 CONFLICT / 2 PARTIALLY_VERIFIED / 0 VERIFIED이며 direct quote reuse 0/5.
 - 개별 법령 사실 VERIFIED와 원본 파일 전체 판정을 구분한다. 제품별 적용성 UNVERIFIED, DUT 시험 NOT_RUN.
+
+## 2026-11-13 — #48–#52 원자 주장·인용 분해 (31 claims)
+
+- 원본 감사: [main-only #48–#52 Pass A/B/C 감사](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_48_52_2026-11-13.md).
+- 원본 main 경로·blob SHA: #48 \`research_archive/2026-11-13_035531.md\` / \`539b1d73d7053c5b1e252c775c503b055e978dd9\`; #49 \`040051.md\` / \`3d661d5545974406fee419f60234f99d29427495\`; #50 \`040534.md\` / \`8bbfe9b22a009c90dba493d3086462bb605a1b50\`; #51 \`041039.md\` / \`8625c7e82389aea9cd3e5a0694cd0b920c90e8cf\`; #52 \`041532.md\` / \`3672c41635364ef99b494cd8944c4998bbfc01c8\`.
+- 공식 기준: Regulation (EU) 2024/2847, EUR-Lex consolidated text 20.11.2024.
+
+| Claim ID | 원본 | 원자 주장 | 근거 위치 | 상태 | 판정/정정 |
+|---|---:|---|---|---|---|
+| CRA-ARCH-MAIN-20261113-048-001 | #48 | 제조자는 취약점을 처리하고 보안 업데이트를 제공해야 한다. | Article 13(8), Annex I Part II(2) | VERIFIED | vulnerability handling/updates 요구 확인. |
+| CRA-ARCH-MAIN-20261113-048-002 | #48 | Article 14(8)은 active exploited vulnerability/severe incident 통지에 기계 판독 가능 형식을 적절한 경우 허용한다. | Article 14(8) | VERIFIED | trigger 및 where appropriate 조건 확인. |
+| CRA-ARCH-MAIN-20261113-048-003 | #48 | 모든 취약점 정보와 패치는 사용자/ENISA/CSIRT에 자동 기계 판독 가능 형식으로 제공해야 한다. | Article 14(8), Annex I Part II(4)–(6) | CONFLICT | 모든 취약점 일반 의무가 아니며 CSAF 등 특정 형식은 지정되지 않는다. |
+| CRA-ARCH-MAIN-20261113-048-004 | #48 | CSAF는 CRA가 지정한 의무 보안 권고 형식이다. | Article 14(8), Annex I Part II(4) | CONFLICT | CSAF는 구현 선택지/표준 후보이지 해당 조항의 의무 형식이 아니다. |
+| CRA-ARCH-MAIN-20261113-048-005 | #48 | 제조사 의무 근거는 Article 11이다. | Article 13(8), Annex I Part II | CONFLICT | 현행 제조사 의무는 Article 13. |
+| CRA-ARCH-MAIN-20261113-048-006 | #48 | Part II(2)/Article 11 Raw Text Quote가 현행 직접 인용이다. | Annex I Part II(2), Article 13(8) | CONFLICT | 인용문은 Part II(2)의 정확한 원문이 아니며 Article 11도 오기. |
+| CRA-ARCH-MAIN-20261113-049-001 | #49 | 보안 업데이트는 원칙적으로 무상 제공된다. | Annex I Part II(8) | PARTIALLY_VERIFIED | tailored-product/business-user agreement exception 포함 필요. |
+| CRA-ARCH-MAIN-20261113-049-002 | #49 | 모든 취약점과 모든 사고를 ENISA에 신고해야 한다. | Article 14(1)–(7) | CONFLICT | actively exploited vulnerability와 severe incident 두 trigger로 한정. |
+| CRA-ARCH-MAIN-20261113-049-003 | #49 | 24h early warning은 Article 14의 신고 단계다. | Article 14(2)(a), (4)(a) | PARTIALLY_VERIFIED | 두 trigger에 한정하며 72h 및 final report 14일/1개월을 함께 구분해야 한다. |
+| CRA-ARCH-MAIN-20261113-049-004 | #49 | support period는 expected lifetime과 5년 중 짧은 기간이다. | Article 13(8) | CONFLICT | 최소 5년, expected use가 5년 미만이면 그 기간에 대응. |
+| CRA-ARCH-MAIN-20261113-049-005 | #49 | 보안 업데이트는 기능 저하/중단을 절대 일으키지 않아야 하고 rollback/fail-safe가 법령의 직접 의무다. | Annex I Part II(7), risk assessment | CONFLICT | secure update distribution 결과 요구와 특정 무중단/rollback 구현을 구분. |
+| CRA-ARCH-MAIN-20261113-049-006 | #49 | 제조사 의무/신고 근거는 Article 11이다. | Article 13, Article 14 | CONFLICT | 제조사 의무 Article 13, 법정 신고 Article 14. |
+| CRA-ARCH-MAIN-20261113-049-007 | #49 | Article 11(1)/Annex I Part I(2)(1) Raw Text Quote가 현행 직접 인용이다. | Article 14(2), Annex I Part II(8) | CONFLICT | 조항·기한·지원기간 문언이 최종 법령과 불일치. |
+| CRA-ARCH-MAIN-20261113-050-001 | #50 | 산업용 서보 드라이브는 Important Product Class I에 자동 해당한다. | Article 7, Annex III, Implementing Regulation 2025/2392 | UNVERIFIED | core functionality 및 technical description 증거 없으므로 제품별 분류 불가. |
+| CRA-ARCH-MAIN-20261113-050-002 | #50 | 보안 업데이트는 원칙적으로 무상 제공된다. | Annex I Part II(8) | PARTIALLY_VERIFIED | 맞춤형 제품의 제조자-사업 사용자 합의 예외 포함 필요. |
+| CRA-ARCH-MAIN-20261113-050-003 | #50 | 수정 취약점 정보는 보안 업데이트 제공 후 공개해야 한다. | Annex I Part II(4) | PARTIALLY_VERIFIED | justified security-risk case의 공개 지연 예외 포함. |
+| CRA-ARCH-MAIN-20261113-050-004 | #50 | CVSS 점수/영향 펌웨어 버전/공식 채널 공개 형식이 모든 제품에 법정 필수다. | Annex I Part II(4), (8) | UNVERIFIED | 유용한 advisory 필드일 수 있으나 CRA가 이 세부 형식을 일률 지정하지 않는다. |
+| CRA-ARCH-MAIN-20261113-050-005 | #50 | 제조사 의무는 Article 11, CVD/free updates는 Part I/II generic 항목이다. | Article 13(8), Annex I Part II(4), (5), (8) | CONFLICT | CVD (5), disclosure (4), free updates (8), manufacturer Article 13으로 분리. |
+| CRA-ARCH-MAIN-20261113-050-006 | #50 | 모든 취약점을 조건 없이 즉시 공개해야 한다. | Annex I Part II(4) | CONFLICT | fixed vulnerability 공개는 보안 업데이트 제공 후이며 justified delay 예외가 있다. |
+| CRA-ARCH-MAIN-20261113-051-001 | #51 | 제조자는 CVD 정책을 수립·집행해야 한다. | Article 13(8), Annex I Part II(5) | VERIFIED | CVD policy requirement 확인. |
+| CRA-ARCH-MAIN-20261113-051-002 | #51 | 취약점 신고 연락 주소와 정보 공유 촉진 조치를 제공해야 한다. | Annex I Part II(6) | VERIFIED | contact address 및 information sharing 요구 확인. |
+| CRA-ARCH-MAIN-20261113-051-003 | #51 | 사용자에게 CVD 정책을 찾을 수 있는 위치와 단일 연락 창구를 안내해야 한다. | Article 13(17), Annex II(2) | VERIFIED | 사용자 정보에 포함하는 요구 확인. |
+| CRA-ARCH-MAIN-20261113-051-004 | #51 | PGP 암호화가 CRA의 보편적 직접 의무다. | Annex I Part II(5), (6) | CONFLICT | 안전한 신고 채널 구현 선택이며 특정 암호 기술은 지정하지 않는다. |
+| CRA-ARCH-MAIN-20261113-051-005 | #51 | 모든 제보에 고정된 법정 응답기한/CVE 발급/공개 타임라인이 있다. | Annex I Part II(4)–(6), Article 14 | CONFLICT | CVD 운영 SLA와 Article 14의 제한된 신고기한을 구분. |
+| CRA-ARCH-MAIN-20261113-051-006 | #51 | VDP 의무의 근거는 Annex I Part I 및 Article 10이다. | Article 13(8), Annex I Part II(5), (6) | CONFLICT | 정확한 근거는 Article 13(8), Part II(5)/(6). |
+| CRA-ARCH-MAIN-20261113-051-007 | #51 | Raw Text Quote가 현행 CVD policy 문언의 직접 인용이다. | Annex I Part II(5), (6) | CONFLICT | 인용 위치와 문언이 불일치. |
+| CRA-ARCH-MAIN-20261113-052-001 | #52 | 제조자는 통합 제3자 구성요소에 대해 due diligence를 수행해야 한다. | Article 13(5) | VERIFIED | 제3자 구성요소 실사 의무 확인. |
+| CRA-ARCH-MAIN-20261113-052-002 | #52 | 통합 구성요소의 취약점을 식별한 제조자는 해당 구성요소 제조자/유지관리 주체에 보고하고 제품 측 조치를 수행해야 한다. | Article 13(6) | VERIFIED | 공급망 취약점 보고 방향과 시정 의무 확인. |
+| CRA-ARCH-MAIN-20261113-052-003 | #52 | 제조사가 취약점 수정을 위해 소프트웨어 변경을 개발한 경우 적절한 때 관련 코드/문서를 구성요소 제조자/유지관리 주체와 공유한다. | Article 13(6) | VERIFIED | 기계 판독 가능 형식 조건을 포함해 정확히 추적. |
+| CRA-ARCH-MAIN-20261113-052-004 | #52 | 제조자는 제3자 구성요소의 사이버보안 측면과 취약점 관련 정보를 체계적으로 문서화해야 한다. | Article 13(7) | VERIFIED | technical documentation/recording 요구 확인. |
+| CRA-ARCH-MAIN-20261113-052-005 | #52 | 모든 구성요소 공급자는 모든 취약점을 상위 서보 드라이브 제조사에 즉시 통보해야 한다는 일반 의무가 있다. | Article 13(5)–(7) | CONFLICT | Article 13(6)의 명시적 보고 방향은 취약점을 식별한 제조자에서 구성요소 제조자/유지관리 주체로 향한다. |
+| CRA-ARCH-MAIN-20261113-052-006 | #52 | 제조자는 모든 구성요소 취약점을 모든 통합자/최종 사용자에게 자동 통지해야 한다. | Article 14(8), Annex I Part II(4) | CONFLICT | 사용자 통지 및 공개는 해당 trigger/조건/시점에 따라 별도 적용. |
+| CRA-ARCH-MAIN-20261113-052-007 | #52 | 보안 업데이트는 원칙적으로 무상 제공된다. | Annex I Part II(8) | PARTIALLY_VERIFIED | tailored-product/business-user agreement exception 포함 필요. |
+| CRA-ARCH-MAIN-20261113-052-008 | #52 | support period는 최소 5년이며 expected use가 더 짧으면 그 기간에 대응한다. | Article 13(8) | VERIFIED | 정확한 지원기간 구조 확인. |
+| CRA-ARCH-MAIN-20261113-052-009 | #52 | Article 14는 모든 공급망 취약점 정보를 ENISA에 신고하도록 한다. | Article 14(1)–(7), Article 13(6) | CONFLICT | 공급망 구성요소 취약점 처리와 Article 14의 active/severe 신고 트리거를 구분. |
+| CRA-ARCH-MAIN-20261113-052-010 | #52 | Article 11/Annex I Part II composite Raw Text Quote가 현행 직접 인용이다. | Article 13(5)–(8), Annex I Part II(1)–(8) | CONFLICT | 초안/합성 문구이며 직접 인용 재사용 불가. |
+
+- #48–#52 파일 단위 판정은 기존 감사 결과대로 3 CONFLICT / 2 PARTIALLY_VERIFIED / 0 VERIFIED이며 direct quote reuse 0/5.
+- 개별 법령 사실 VERIFIED와 원본 파일 전체 판정을 구분한다. 제품별 적용성 UNVERIFIED, DUT 시험 NOT_RUN.
