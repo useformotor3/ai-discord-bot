@@ -308,3 +308,16 @@ Annex I Part II(1)의 machine-readable 요구는 SBOM 형식에 관한 것이다
 - 서보 드라이브 권장 설계 후보: 제어 루프와 비동기 분리된 bounded logging, actor/time/action/result 기록, 저장공간 포화 시 제어 기능 보호, 권한 통제 및 무결성 검증, 안전한 추출·진단 인터페이스. 이는 법령이 지정한 유일한 구현이 아니라 설계 후보이며 제품별 검증이 필요하다.
 
 상세 원본·SHA·판정·반증: [main reports #58–#62 감사](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_58_62_2026-11-13.md).
+
+## 3.8 Important Product 분류와 conformity assessment — 최신 법령 정정
+
+- 서보 드라이브라는 명칭 또는 산업용 용도만으로 Annex III Class I/II를 자동 부여하지 않는다.
+- Article 7(1)과 Commission Implementing Regulation (EU) 2025/2392에 따라 제품의 core functionality가 Annex III category의 technical description에 해당하는지 판단한다.
+- Class I에는 physical/virtual network interfaces가 포함될 수 있으나, 드라이브에 Ethernet/Fieldbus interface가 통합되어 있다는 사실만으로 드라이브 host product 자체가 자동 Class I이 되는 것은 아니다. 별도 판매되는 network interface 제품과 드라이브 전체를 구분한다.
+- Class II는 hypervisor/container runtime, firewall/IDS/IPS, tamper-resistant microprocessor/controller 등 열거된 범주를 기준으로 판단한다. 일반 servo drive의 이름만으로 Class II가 되지 않는다.
+- 적합성 평가 본문은 Article 32, 절차 모듈 정의는 Annex VIII다. Module A=internal control, B=EU-type examination, C=internal production control, H=full quality assurance.
+- Article 32(1)은 일반 경로를, (2)는 Class I의 표준 미적용/부분 적용 조건에서 B+C 또는 H 경로를, (3)은 Class II의 B+C 또는 H 경로를 규정한다.
+- DoC=Article 28/Annex V–VI, CE=Article 30, technical documentation=Article 31/Annex VII.
+- 실제 제품 분류와 평가 경로는 SKU, 제품 경계, core functionality, 별도 네트워크 인터페이스 공급 여부 및 보안 관련 MCU 기능을 확인하기 전까지 UNVERIFIED다.
+
+공식 기준: Regulation (EU) 2024/2847 및 Commission Implementing Regulation (EU) 2025/2392. 상세 원문 대조와 #37 오류는 [#33–#37 감사](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_33_37_2026-11-13.md)를 참조.
