@@ -759,3 +759,12 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 - [x] file-level CONFLICT 5건과 개별 법령 사실 VERIFIED를 구분.
 - [ ] 다음 배치 #33–#37 원자 Claim ID 분해.
 - [ ] #38–#57까지 순차 분해 후 제1권·제2권·PSIRT SOP·매트릭스 전수 대조.
+
+## 2026-11-13 P0 — #33–#37 원자 주장 분해
+
+- [x] #33–#37 main 원본 경로/blob SHA 재확인.
+- [x] 개별 주장·인용 31개를 원자 Claim ID로 분해해 Ledger에 연결.
+- [x] Commission Implementing Regulation (EU) 2025/2392로 Annex III category technical descriptions/core functionality 추가 검증.
+- [x] Article 32/Annex VIII conformity assessment, Article 28 DoC, Article 30 CE, Article 31/Annex VII technical documentation 정정.
+- [ ] 다음 배치 #38–#42 원자 Claim ID 분해.
+- [ ] #43–#57까지 순차 분해 후 제1권·제2권·SOP·매트릭스 전수 대조.
