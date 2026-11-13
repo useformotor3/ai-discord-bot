@@ -301,3 +301,15 @@
 - Claim Evidence Ledger에 #53–#57 날짜 포함 원본 경로·SHA·판정·중심 정정 claim ID 5개를 추가했다.
 - 제1권·제2권·사용자 보안정보 체크리스트·요구사항 추적성 매트릭스·CRA 법령 기준선에 Part I 2(m), Annex II 8(d), Article 13(19), Article 14/69(3) 정정을 반영했다.
 - 다음 감사 시작점 #58. main HEAD/state/history를 배치 시작 시 다시 조회한다.
+
+
+## 2026-11-13 최종 기준선 — main #112 / audit #57 완료
+
+- main 최신 관찰 HEAD: `8ebc3cdc361a1b694e4ad18b5d85cc6dec5d1f35` (report #112); state count 112; history 1,387 entries. archive tree count는 재조회하지 않았다.
+- 작업 브랜치 history.json 990 entries, state.json 2026-11-12/count 3.
+- main과 작업 브랜치: diverged, ahead 783 / behind 403, merge base `b425b6db591e34abe003522157cf97ecf2240d9f`. main은 read-only, merge/rebase/sync 금지.
+- 직전 작업 tip `45be8357c676a1c15e672d4b381474943211230e`는 branch와 identical 확인. 이 commit의 workflow runs 0, combined statuses 0; CI 미실행/미확인.
+- 보호 파일 7개 SHA 변경 없음.
+- 최신 감사: #53–#57 완료, 1 CONFLICT / 4 PARTIALLY_VERIFIED / 0 VERIFIED.
+- #38의 Annex I Part I(2)(m) 누락을 후속 검토에서 발견해 PARTIALLY_VERIFIED로 정정. 누적 #8–#57: 50건, 40 CONFLICT / 10 PARTIALLY_VERIFIED / 0 VERIFIED, direct quote reuse 0/50.
+- 다음 작업: #8–#57 원자 주장·인용 분해와 상위 문서 전수 대조. 이후 main-only #58–#62 감사.
