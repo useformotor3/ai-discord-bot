@@ -69,6 +69,12 @@ class QuoteValidatorTests(unittest.TestCase):
         result = validate_evidence_quotes(None, self.document, self.bundle)
         self.assertEqual(result["status"], "SOURCE_UNAVAILABLE")
 
+    def test_missing_pdf_backend_is_unsupported_not_pass(self):
+        result = validate_evidence_quotes(
+            self.fetch, None, self.bundle, extraction_error="PDF_BACKEND_UNAVAILABLE"
+        )
+        self.assertEqual(result["status"], "UNSUPPORTED_EXTRACTION")
+
     def test_mutated_excerpt_fails_closed(self):
         altered = copy.deepcopy(self.bundle)
         altered["evidence"][0]["excerpt"] += " altered"
@@ -196,6 +202,21 @@ class QuoteValidatorTests(unittest.TestCase):
         record["rationale"] = " "
         with self.assertRaisesRegex(QuoteValidationError, "REVIEW_FIELD_MISSING"):
             validate_human_review_record(record)
+
+    def test_review_timestamp_requires_timezone(self):
+        record = self._valid_review()
+        record["reviewed_at_utc"] = "2026-11-13T00:00:00"
+        with self.assertRaisesRegex(QuoteValidationError, "REVIEW_TIMESTAMP_INVALID"):
+            validate_human_review_record(record)
+
+    def test_chunked_excerpt_locator_rebuilds(self):
+        altered = copy.copy(self.document)
+        unit = LegalUnit("Article 2", "ARTICLE", "2", "A" * 4500)
+        object.__setattr__(altered, "units", (unit,))
+        bundle = build_evidence_bundle(self.fetch, altered)
+        result = validate_evidence_quotes(self.fetch, altered, bundle)
+        self.assertEqual(result["status"], "EXACT_MATCH")
+        self.assertEqual(len(result["evidence"]), 3)
 
 
 if __name__ == "__main__":
