@@ -78,3 +78,11 @@
 - [AI 연속성·실행 현황판](AI_CONTINUITY_BOARD.md): 사용자 의도와 작업 우선순위·진행 상태의 운영 정본.
 - [AI 행동강령](AI_RULEBOOK.md): 검증 및 문서 통합 규칙.
 - 문서 운영 원칙: 감사 보고서는 증거·이력 보존, Claim Evidence Ledger/정정 대장은 주장별 교정 추적, MASTER_REPORT 및 제1·2권은 독자용 결론 통합, SOP/아키텍처/매트릭스/시험 대장은 실제 사용 목적에 따라 분리 유지.
+
+
+## 상위 보고서 통합 업데이트 — 2026-11-13
+
+- 제1권 [CRA_SERVO_DRIVE_COMPLIANCE_REPORT_V1.md](CRA_SERVO_DRIVE_COMPLIANCE_REPORT_V1.md): #43–#47 정정에 맞춰 MCU category 14와 완제품 분류의 차이, Article 32 평가 경로, 접근통제 법적 요구와 권장 구현의 차이를 명확히 하고 분류 매트릭스/PSIRT SOP 링크를 추가.
+- 제2권 [SERVO_DRIVE_CRA_IMPLEMENTATION_PLAN_V1.md](SERVO_DRIVE_CRA_IMPLEMENTATION_PLAN_V1.md): 분류 매트릭스, PSIRT SOP, 접근통제 매트릭스, HW 아키텍처, 통합 추적성의 역할별 연결을 추가.
+- [MASTER_REPORT.md](MASTER_REPORT.md): MCU category 14 관련 문장을 기술 설명 및 MCU 자체의 시장 제공 여부를 포함하도록 명확화.
+- 제품별 SKU/MCU/제품 경계가 미확정이므로 제품별 분류·적합성은 계속 UNVERIFIED. 문서 수정은 제품 적합성 승인이나 DUT 시험을 의미하지 않는다.
