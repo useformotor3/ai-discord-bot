@@ -51,3 +51,19 @@
 ## 다음 재개 지점
 
 먼저 `reports/RESEARCH_QUALITY_AUDIT_2026-11-14.md`와 `reports/CRA_CORRECTIONS_REPORTS_28_29_2026-11-14.md`를 읽는다. 다음은 `reports/MAIN_PY_IMPROVEMENT_DESIGN_2026-11-14.md`의 Phase A 테스트 기반 구축이다. 사용자 승인 전까지 main.py와 운영 workflow는 수정하지 않는다.
+## Phase A 진행 결과 — 2026-11-14
+
+- 사용자 승인: Phase A 테스트 기반 구축 승인 완료
+- 추가 파일: `tests/conftest.py`, `tests/test_main_characterization.py`, `tests/test_mock_infrastructure.py`, `tests/README.md`
+- mock 경계: Gemini SDK, Discord HTTP 요청, Git subprocess, sleep
+- 테스트 실행 결과(격리된 로컬 검증): `python -m compileall -q tests` 통과, `pytest -q tests/test_mock_infrastructure.py` 2 passed
+- 실제 `main.py`를 실행하는 characterization 3건은 저장소 전체 checkout이 없는 실행 환경에서 아직 실행하지 못했다. 따라서 전체 테스트 통과로 간주하지 않는다.
+- 외부 서비스 실호출: 없음
+- 운영 파일 변경: 없음 (`main.py`, workflow, `state.json`, `history.json` 미변경)
+
+## 브랜치 동시성 주의
+
+- 작업 브랜치는 최신 `main`과 diverged 상태이며, 확인 시점 기준 main보다 2 commits behind였다.
+- main에는 자동화 아카이브가 계속 추가되고 있다(확인된 최신 보고서 #31).
+- 운영 아카이브를 덮어쓰지 않도록 이번 단계에서 merge/rebase하지 않았다. 후속 통합 전 최신 main 변경을 별도 비교한다.
+
