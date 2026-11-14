@@ -8,7 +8,7 @@
 CRA를 모르는 개발자가 서보 드라이브 개발에 적용할 수 있는 공개 근거 기반 실무 지침과 통합 보고서 구축. CRA 전용이며 SIL 3 벤치마킹 제외. ST MCU 우선, TI 비교. Public 저장소에는 공개 자료만 저장.
 
 ## 실제 저장소 상태
-- main과 작업 브랜치는 Git commit graph 기준 diverged 상태. archive 콘텐츠는 동기화했지만 commit graph를 병합한 것은 아니다.
+- main과 작업 브랜치는 Git commit graph 기준 diverged 상태이며 archive/history 총량도 다르다(main 1,565; 작업 브랜치 990). commit graph 또는 archive 전체 동기화가 완료된 것으로 표현하지 않는다.
 - 작업 브랜치 기준 archive/history 990/990, 경로 중복/누락/orphan 0 (2026-11-14 재확인).
 - main 최신 확인 archive/history 1,565/1,565, 경로 중복/누락/orphan 0 (2026-11-14 재확인).
 - main에서 확인된 6개 추가 자동 생성물을 원문 그대로 작업 브랜치에 보존.
