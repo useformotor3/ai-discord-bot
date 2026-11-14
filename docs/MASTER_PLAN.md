@@ -853,3 +853,11 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 - [x] report #1–#3을 CRA_ARCHIVE_AUDIT_QUEUE에 NEW / NOT_YET_AUDITED로 등록하고 P0/P1 우선순위 및 법령·기술 쟁점 사전 메모 작성.
 - [ ] report #1부터 전체 Pass A/B/C 수행. Raw Text Quote와 개별 atomic claim을 별도 판정하고 파일 단위 verdict와 혼동하지 않는다.
 - [ ] 실제 SKU/product boundary/ST MCU 주문 코드 확보 전 제품 적용성 및 제조사별 보안 기능은 UNVERIFIED 유지. IEC 62443-4-2 원문도 무료 공식 접근 범위에서 별도 확인.
+
+## 2026-11-14 — archive queue advanced through report #4
+
+- [x] #1–#3 queue registration and EUR-Lex pre-memo recorded.
+- [x] New main report #4 fetched, commit/path/blob SHA verified and registered as NEW / NOT_YET_AUDITED.
+- [x] #4 duplicate topic with #2 identified; map to the same canonical requirements rather than create duplicate requirements.
+- [ ] Full Pass A/B/C for #1–#4; prioritize #1 P0, then #2–#4 P1. Raw quote and atomic claims must be adjudicated separately from file-level verdict.
+- [ ] Product SKU/product boundary/ST MCU order code and IEC 62443-4-2 official text remain required for product/technology applicability decisions.
