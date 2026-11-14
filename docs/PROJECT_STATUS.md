@@ -956,7 +956,7 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - cra-project-foundation baseline HEAD: \`89ce7f1160ad91ab2801bd5bbbecb96ca004ca9f\`; archive/history 990/990. Branch graph diverged from main, ahead 1,000 / behind 581 at that snapshot. Re-fetch live refs before each session; no merge/rebase/sync.
 - Latest branch push CI at baseline: run 43531794670 SUCCESS; strict audit 990/990, missing/orphan/duplicate/malformed 0. CI checks archive integrity, not CRA product compliance.
 - Traceability reconciliation: both matrices cover all 45 Canonical Requirements; 49/49 test IDs are mapped; all 49 tests NOT_RUN.
-- Ledger: 55 file records + 345 atomic claims for #8–#62; plus 99 legacy claim records with candidate Canonical/Evidence crosswalks pending independent review. Total 499 unique CRA-ARCH IDs, duplicate 0. 5 summary rows #48–#52 use SUMMARY labels, not Claim IDs.
+- Ledger before 2026-11-14 report #4: 55 file +345 atomic (#8–#62) +99 legacy =499 unique IDs. After report #4: 56 file +351 new atomic +99 legacy =506 unique IDs; duplicate definitions 0. 99 legacy crosswalks are CANDIDATE pending independent review. #48–#52 summary rows use SUMMARY labels, not Claim IDs.
 - Next P0: independently review the 99 legacy candidate crosswalks and finish sentence-level reconciliation across Volume 1/2, PSIRT SOP, classification matrix, threat model and test register. Next archive audit begins at 2026-11-14 daily reports #1–#5 after the P0 mapping pass.
 - Product-specific applicability, Important Product classification and exact MCU order code remain UNVERIFIED; all DUT tests NOT_RUN. main.py, production workflow, Gemini prompt, schema and evidence bundle unchanged.
 
