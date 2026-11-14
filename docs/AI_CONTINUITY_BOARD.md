@@ -1,7 +1,7 @@
 # CRA 프로젝트 — AI 연속성·실행 현황판
 
 - 문서 ID: CRA-OPS-CONTINUITY-001
-- 기준일: 2026-11-13
+- 기준일: 2026-11-14
 - 기준 작업 브랜치: `cra-project-foundation`
 - 마지막 확인 작업 HEAD: **브랜치 tip을 새 세션 시작 시 실시간 조회** (이 문서에 고정 SHA를 두지 않음)
 - 2026-11-14 main snapshot: HEAD `291b1c93905d41c9bba83b4510c3e5ef43f86e95`; archive/history 1,565/1,565; state count2 daily.
