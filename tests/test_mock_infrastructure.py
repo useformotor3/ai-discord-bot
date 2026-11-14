@@ -3,6 +3,8 @@ import subprocess
 
 import pytest
 
+from test_main_characterization import VALID_REPORT
+
 
 def test_fixture_exposes_separate_external_call_captures(run_main):
     assert set(run_main.captured) == {
@@ -30,7 +32,7 @@ def test_fixture_intercepts_all_external_boundaries(run_main):
         encoding="utf-8",
     )
 
-    run_main.execute(["mock response"])
+    run_main.execute([VALID_REPORT])
 
     assert len(run_main.captured["model_calls"]) == 1
     assert run_main.captured["model_calls"][0]["model"] == "mock-model"
