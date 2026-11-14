@@ -336,7 +336,7 @@
 ## 사후 기준선 — main report #125 (2026-11-13)
 
 - #58–#62 감사 시점 main 기준선은 report #118 / history 1,393 entries였다.
-- 후속 자동 아카이브로 main이 report #125까지 진행: HEAD \`92e8ca7aa4a86b38627a1d8e9535e5b0463a8392\`, state count 125, history 1,400 entries.
+- Historical 2026-11-13 snapshot: main report #125 / archive-history 1,400/1,400; superseded by 2026-11-14 archive/history 1,565/1,565.
 - #119는 아직 감사하지 않았다. 다음 감사 시작점은 #63–#67이며, 배치 시작 시 main HEAD/state/history를 다시 조회한다.
 - main/work branch는 diverged. ahead/behind는 변경되므로 매 세션 동적으로 확인하고 merge/rebase/sync하지 않는다.
 
@@ -413,7 +413,7 @@
 
 ## 2026-11-13 authoritative snapshot — #8–#62 audit and claim normalization
 
-- main latest observed: report #125; HEAD \`92e8ca7aa4a86b38627a1d8e9535e5b0463a8392\`; state count 125; history.json 1,400 entries. Archive tree count was not rechecked. main remains read-only.
+- Historical 2026-11-13 snapshot: main report #125 / archive-history 1,400/1,400; superseded by 2026-11-14 archive/history 1,565/1,565; main remains read-only.
 - main-only audit scope #8–#62: 55 consecutive, non-random reports; file-level results **40 CONFLICT / 15 PARTIALLY_VERIFIED / 0 VERIFIED**; direct quote reuse **0/55**. This is not a statistical error rate for the full archive.
 - Claim Evidence Ledger: 55 file-level source records + 345 atomic claims = **400 unique IDs**, duplicate IDs 0. All 345 atomic claims have one or more Canonical IDs. Canonical register defines 45 requirements; 42 are referenced by new atomic claims, and 3 are forward-mapped to matrix requirements; 99 legacy claims remain unmapped.
 - #8–#57 (50 reports) and #58–#62 (5 reports) have completed atomic decomposition. Individual legal facts marked VERIFIED do not promote a conflicting source file to VERIFIED.
