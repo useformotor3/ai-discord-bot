@@ -53,10 +53,14 @@
 | M-02 | Article 13(5)–(7) | 제3자/오픈소스 구성요소 due diligence, 구성요소 취약점 통보·수정, 관련 기록 | Supplier assessment, SBOM, vulnerability records, component notification evidence |
 | M-03 | Article 13(8) | 제품 예상 사용기간/사용자 기대/제품 특성 등을 고려해 지원기간 결정. 최소 5년, 예상 사용기간이 5년 미만이면 그 기간 | Support-period rationale, product lifetime assumptions, user-facing end date |
 | M-04 | Article 13(9) | 지원기간 중 제공된 각 보안 업데이트를 발행 후 최소 10년 또는 지원기간 잔여기간 중 더 긴 기간 이용 가능하게 유지 | Update archive availability checks, retention policy, restore test |
-| M-05 | Article 13(12), Article 31, Annex VII | 시장 출시 전 기술문서 작성 및 적합성 평가 수행/의뢰 | Technical file index, assessment record, DoC |
-| R-01 | Article 14(1)–(2) | actively exploited vulnerability 신고: 24h early warning, 72h vulnerability notification, corrective/mitigating measure available 후 14일 내 final report | Reporting decision tree, incident tabletop, timestamped records |
-| R-02 | Article 14(3)–(4) | severe incident 신고: 24h early warning, 72h incident notification, (b) 통지 후 1개월 이내 final report | Severe incident criteria, tabletop exercise, timestamped records |
+| M-05 | Article 13(12), Article 28, Article 30, Article 31, Annex V–VIII | 시장 출시 전 기술문서·적합성 평가·EU DoC·CE 표시를 준비하고 해당 제품 분류에 맞는 절차 적용 | Technical file index, conformity assessment record, signed DoC, CE marking evidence |
+| M-06 | Article 13(18), Annex II | 사용자에게 제공해야 하는 정보·지침을 최소 10년 또는 support period 중 더 긴 기간 이용 가능하게 유지 | Controlled Korean manual, revision history, publication/archive retention record |
+| M-07 | Article 7, Annex III, Implementing Regulation (EU) 2025/2392 | Important/critical product 분류를 제품 경계·핵심 기능·시행규정 기술 설명에 따라 판단; 제품명이나 MCU 탑재만으로 등급을 단정하지 않음 | Product boundary, intended purpose, core-functionality mapping, classification rationale |
+| M-08 | Article 64 | 적용 가능한 위반 유형과 penalty tier를 구분해 규제 준수 기록에 연결; 벌칙 조항을 제품 설계 요구사항으로 오인하지 않음 | Legal applicability review, compliance decision record |
+| R-01 | Article 14(1)–(2) | actively exploited vulnerability 신고: 24h early warning, 72h vulnerability notification, corrective/mitigating measure available 후 14일 내 final report; Article 14 trigger와 기한을 일반 CVD와 구분 | Reporting decision tree, incident tabletop, timestamped records |
+| R-02 | Article 14(3)–(4) | severe incident 신고: 24h early warning, 72h incident notification, (b) 통지 후 1개월 이내 final report; Article 14 trigger와 기한을 일반 CVD와 구분 | Severe incident criteria, tabletop exercise, timestamped records |
 | R-03 | Article 14(8) | 영향받는 사용자 및 적절한 경우 모든 사용자에게 취약점/사고 및 완화·시정 조치 정보 통지 | User notification procedure, contact coverage, message template |
+| R-04 | Article 69(3) | 2027-12-11 이전 시장 출시 제품에도 Article 14 신고 의무가 적용되는 전환 규칙을 신고 절차에 반영 | Placing-on-market date evidence, incident applicability decision, Article 14 tabletop |
 
 ## 5. 하드웨어 블록 연결
 
@@ -165,20 +169,24 @@
 | P1-12 | CRA-REQ-SECURITY-LOGGING-001 |
 | P1-13 | CRA-REQ-SECURE-DATA-ERASURE-001; CRA-REQ-SECURE-DATA-TRANSFER-001 |
 | P2-01 | CRA-REQ-SBOM-001 |
-| P2-02 | CRA-REQ-REMEDIATION-001 |
+| P2-02 | CRA-REQ-REMEDIATION-001; CRA-REQ-VULNERABILITY-HANDLING-001 |
 | P2-03 | CRA-REQ-SECURITY-TEST-001 |
 | P2-04 | CRA-REQ-VULN-DISCLOSURE-001 |
 | P2-05 | CRA-REQ-CVD-POLICY-001 |
 | P2-06 | CRA-REQ-CVD-CONTACT-001; CRA-REQ-USER-CONTACT-001; CRA-REQ-USER-INSTRUCTIONS-001 |
 | P2-07 | CRA-REQ-SECURE-UPDATE-DIST-001 |
 | P2-08 | CRA-REQ-FREE-UPDATE-001 |
-| M-01 | CRA-REQ-PRODUCT-RISK-ASSESSMENT-001; CRA-REQ-TECHDOC-001 |
-| M-02 | CRA-REQ-COMPONENT-DUE-001 |
+| M-01 | CRA-REQ-PRODUCT-RISK-ASSESSMENT-001; CRA-REQ-TECHDOC-001; CRA-REQ-MANUFACTURER-ARTICLE13-001 |
+| M-02 | CRA-REQ-COMPONENT-DUE-001; CRA-REQ-MANUFACTURER-ARTICLE13-001 |
 | M-03 | CRA-REQ-SUPPORT-PERIOD-001; CRA-REQ-SUPPORT-END-001 |
 | M-04 | CRA-REQ-UPDATE-AVAILABILITY-001 |
-| M-05 | CRA-REQ-CONFORMITY-001; CRA-REQ-DOC-001; CRA-REQ-TECHDOC-001 |
-| R-01 | CRA-REQ-REPORT-ACTIVE-001; CRA-REQ-REPORT-ROUTE-001 |
-| R-02 | CRA-REQ-REPORT-SEVERE-001; CRA-REQ-REPORT-ROUTE-001 |
+| M-05 | CRA-REQ-CONFORMITY-001; CRA-REQ-DOC-001; CRA-REQ-CE-001; CRA-REQ-TECHDOC-001 |
+| M-06 | CRA-REQ-USER-INFO-RETENTION-001; CRA-REQ-USER-INSTRUCTIONS-001 |
+| M-07 | CRA-REQ-CLASSIFICATION-001 |
+| M-08 | CRA-REQ-PENALTY-001 |
+| R-04 | CRA-REQ-TRANSITION-001; CRA-REQ-REPORT-SCOPE-TIMELINE-001 |
+| R-01 | CRA-REQ-REPORT-ACTIVE-001; CRA-REQ-REPORT-ROUTE-001; CRA-REQ-REPORT-SCOPE-TIMELINE-001 |
+| R-02 | CRA-REQ-REPORT-SEVERE-001; CRA-REQ-REPORT-ROUTE-001; CRA-REQ-REPORT-SCOPE-TIMELINE-001 |
 | R-03 | CRA-REQ-USER-NOTIFY-001 |
 
 ## 12. Logging / Secure Erasure 시험 ID 보강
