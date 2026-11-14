@@ -191,3 +191,24 @@
 - 이번 작업에서 저장소 코드나 workflow를 변경하지 않음
 - 운영 main, state.json, history.json, main.py, run.yml 미변경
 - 다음 단계는 원본 파일의 blob SHA를 일치시킬 수 있는 실행 경로 확보
+
+
+## 2026-11-14 — P1-A 코드 정적 재검토 및 잔여 위험 우선순위화
+
+### 검토
+- GitHub 작업 브랜치의 `main.py` 원문을 직접 조회해 P1-A 구현과 후속 부작용 경로를 재검토
+- state/history fail-closed, count 검증, datetime 정규화, 전체 모델 실패 시 외부 부작용 차단 경로를 확인
+- Discord timeout/status 미검증, Discord 전송과 파일 저장 순서, state/history 비원자적 write, Git push 실패 삼킴, webhook 미설정의 무표시, 출처 내용 미검증, import 시점 파이프라인 실행 구조를 잔여 위험으로 분류
+
+### 판단
+- 가장 먼저 해결할 것은 원본 소스 동일성이 보장된 전체 테스트 환경 확보
+- 이후 전송/저장/동기화의 부분 성공과 데이터 손상 위험을 우선 개선
+- P1-B 코드 변경 및 workflow 변경은 별도 승인 전 수행하지 않음
+
+### 검증 한계 및 운영 영향
+- 이번 단계는 GitHub에서 읽은 코드에 대한 정적 검토이며 새 코드 테스트를 실행한 것이 아님
+- 임시 재구성 사본 pytest 21 passed는 blob SHA 불일치로 예비 결과에 한정
+- 저장소 전체 pytest와 GitHub Actions CI 미실행
+- `main.py`, workflow, `state.json`, `history.json`, 운영 `main` 미변경
+- 실제 Gemini API, Discord webhook, Git commit/push, 운영 workflow 호출 없음
+- 상세 설계 기록: `reports/MAIN_PY_IMPROVEMENT_DESIGN_2026-11-14.md` §14
