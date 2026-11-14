@@ -4,7 +4,7 @@
 - 기준일: 2026-11-13
 - 기준 작업 브랜치: `cra-project-foundation`
 - 마지막 확인 작업 HEAD: **브랜치 tip을 새 세션 시작 시 실시간 조회** (이 문서에 고정 SHA를 두지 않음)
-- 마지막 확인 main HEAD: `92e8ca7aa4a86b38627a1d8e9535e5b0463a8392` (Auto-archive report #125; archive/history 1,400/1,400)
+- 2026-11-14 main snapshot: HEAD `291b1c93905d41c9bba83b4510c3e5ef43f86e95`; archive/history 1,565/1,565; state count2 daily.
 - 상태: **상시 갱신 운영 기준 문서**
 - 목적: 새 대화에서도 AI가 목표·현황·성과·실패·미완료·다음 행동을 추측 없이 복원하고, 과정 작업에 매몰되지 않고 실제 CRA 산출물을 계속 완성하도록 한다.
 
@@ -28,7 +28,7 @@
 |---|---|
 | 작업 브랜치 | `cra-project-foundation` |
 | main 브랜치 | 읽기 전용. 병합·rebase·sync 금지 |
-| main 최신 관찰 | HEAD `92e8ca7aa4a86b38627a1d8e9535e5b0463a8392`, report #125; state count 125; history 1,400 entries; archive tree count not rechecked |
+| main 최신 관찰 | 2026-11-14 snapshot HEAD `291b1c93905d41c9bba83b4510c3e5ef43f86e95`; archive/history 1,565/1,565; state count2 daily |
 | main 자료 상태 | history.json/archive tree 1,400/1,400; state.json count125 (당일 카운터); missing/orphan/duplicate 0 |
 | 작업 브랜치 아카이브 | 최근 strict audit 기준 990개 / history 990개 정합 |
 | main과 작업 브랜치 | diverged; ahead/behind 수치는 변경되므로 새 세션마다 동적 재조회. merge base `b425b6db591e34abe003522157cf97ecf2240d9f` |
@@ -158,7 +158,7 @@
 
 ## 2026-11-13 진행 업데이트 — main reports #38–#42
 
-- main latest observation: report #125; HEAD `92e8ca7aa4a86b38627a1d8e9535e5b0463a8392`; state count 125; history.json 1,400 entries. Archive tree count not rechecked; main remains read-only.
+- main latest observation at 2026-11-14 snapshot: HEAD `291b1c93905d41c9bba83b4510c3e5ef43f86e95`; archive/history 1,565/1,565; main remains read-only.
 - reports #38–#42 원문과 history metadata를 다시 조회하고 blob SHA를 기록했다.
 - 신규 [#38–#42 감사](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_38_42_2026-11-13.md): 4 CONFLICT / 1 PARTIALLY_VERIFIED / 0 VERIFIED; direct quote reuse 0/5.
 - 주요 교정: Annex II point 8(d)는 안전한 폐기 및 사용자 데이터 제거 방법에 관한 지침 제공이며, 모든 제품에 복구 불가능한 NAND/EEPROM 소거 기능을 명시한 문구가 아니다. Annex II point 7/8은 사용자 정보·지침서 요구다. 무상 업데이트는 Annex I Part II(8), 지원기간은 Article 13(8), 제공된 업데이트 가용성은 Article 13(9). CVD/연락/공개/안전 배포는 Part II(4)–(7)로 구분한다.
@@ -170,7 +170,7 @@
 
 ## 2026-11-13 — 최신 Git/CI 상태 재확인
 - 작업 브랜치 HEAD는 매 세션 live branch endpoint에서 재조회; main HEAD: `92e8ca7aa4a86b38627a1d8e9535e5b0463a8392` (#125). Compare: diverged; ahead/behind values dynamic; merge/rebase 금지.
-- Historical main snapshot #93: tree/history 1,368/1,368. Superseded by current main #125: tree/history 1,400/1,400, missing/orphan/duplicate 0.
+- Historical main snapshots #93/1,368 and #125/1,400 are superseded by 2026-11-14 snapshot 1,565/1,565; missing/orphan/duplicate 0.
 - main 대비 작업 브랜치: diverged, ahead 657 / behind 384. Merge base `b425b6db591e34abe003522157cf97ecf2240d9f`. merge/rebase/sync 금지 유지.
 - 이번 연속 작업은 문서만 변경했으며, 현재 branch HEAD는 live endpoint에서 재조회한다. main.py, production workflow, prompts, contracts, schema, evidence bundle 등 보호 파일 변경 없음.
 - 해당 exact HEAD의 Actions run은 조회되지 않았고 commit status는 pending / 0 statuses다. 따라서 이번 문서 변경에 대한 CI는 **미실행/미확인**이다. 마지막 확인된 이전 CI success(140 tests)는 과거 commit에 대한 결과이지 현재 HEAD의 CI 결과가 아니다.
@@ -418,7 +418,7 @@
 - Claim Evidence Ledger: 55 file-level source records + 345 atomic claims = **400 unique IDs**, duplicate IDs 0. All 345 atomic claims have one or more Canonical IDs. Canonical register defines 45 requirements; 42 are referenced by new atomic claims, and 3 are forward-mapped to matrix requirements; 99 legacy claims remain unmapped.
 - #8–#57 (50 reports) and #58–#62 (5 reports) have completed atomic decomposition. Individual legal facts marked VERIFIED do not promote a conflicting source file to VERIFIED.
 - Product-specific applicability, Class I/II classification, exact MCU order code and DUT test results remain UNVERIFIED/NOT_RUN.
-- Current P0: reconcile the 345 atomic claims and 46 canonical requirements against Volume 1, Volume 2, PSIRT SOP, requirements matrix, integrated traceability matrix and test evidence register; resolve duplicated/contradictory wording and keep exact legal locators. Then proceed to main-only audit #63–#67.
+- Current P0: migrate 99 legacy claims without Canonical IDs; finish sentence-level reconciliation of Volume 1/2, PSIRT SOP, classification matrix, threat model and test register; then audit 2026-11-14 main-only reports #1–#5.
 - No production code, main.py, production workflow, Gemini V2 prompt/contract or main branch was changed. E3 live source fetch remains unexecuted. This batch is documentation-only.
 
 ## 2026-11-13 — Logging / Secure Data Lifecycle
