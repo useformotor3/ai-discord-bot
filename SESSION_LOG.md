@@ -332,3 +332,19 @@
 - README의 Run #3 실행 commit 표기가 Run #1 commit으로 잘못 남아 있어 `dddba44a41851e9d0319ce9a91535a9d26145d92`로 정정했다.
 - `PROJECT_LOG.jsonl`에 이중 형식 로그 구축 사건 자체를 추가했다.
 - 전체 JSONL과 관리 문서 재조회 후 GitHub compare를 다시 확인: `main` 대비 diverged, 102 ahead / 54 behind. merge/rebase는 수행하지 않았다.
+
+
+## 2026-11-14 — Git/Discord 실패 경로 fixture 설계
+
+### 원본 검토
+- tests/conftest.py의 Discord mock은 항상 204를 반환하며 timeout/status/header/예외를 지원하지 않는다.
+- Git subprocess mock은 모든 명령에 returncode=0을 반환하고 check=True 실패를 재현하지 않는다.
+- main.py는 Discord timeout/status 검사와 Git 실패 상태화를 수행하지 않는다.
+
+### 설계 산출물
+- reports/MAIN_PY_IMPROVEMENT_DESIGN_2026-11-14.md §16에 fixture 확장안과 D01~D06, G01~G04, S01~S03, L01 실패 시나리오를 기록했다.
+- P1-B 최소 제안은 Discord timeout/status/retry, Git 단계별 실패 상태, state/history 원자적 저장, 부분 성공 분리, 비밀정보 비노출이다.
+
+### 변경 및 검증 경계
+- 이번 단계는 원본 파일 정적 검토 및 설계 문서 갱신이다. main.py, tests, workflow, 운영 데이터는 변경하지 않았고 테스트 실행도 하지 않았다.
+- fixture/test 변경과 P1-B 운영 코드 변경은 승인 전 구현하지 않는다.
