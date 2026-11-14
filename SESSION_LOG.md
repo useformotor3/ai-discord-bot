@@ -431,3 +431,10 @@
 - Run #13 시점 기준 docs commit 대비 23 ahead / 0 behind.
 - main 대비 diverged 134 ahead / 58 behind; main HEAD `3b2dafd098b51eb60998ce3be032efc4a42760fb`, merge-base `f9a12a5778f5fa1d907201ab2931d20ca2656bb7`.
 - 문서 갱신 commit 이후 수치는 다시 조회한다. merge/rebase/PR merge는 하지 않는다.
+
+## 2026-11-14 — 관리 문서 재조회 후 최신 브랜치 수치 확정
+- README, PROJECT_STATUS, MASTER_PLAN, SESSION_LOG, PROJECT_LOG, tests/README 및 workflow를 동일 브랜치에서 다시 fetch했다. JSONL 10행 모두 JSON 파싱 성공.
+- 문서 갱신 직전 HEAD `11c89c2bf513c0562aa0451caf38effae2041e26`; 기준 docs commit 대비 24 ahead / 0 behind.
+- main 대비 diverged 135 ahead / 59 behind; main HEAD `8034668f45496ef532bfdfb865b29d4149cf2a94`, merge-base `f9a12a5778f5fa1d907201ab2931d20ca2656bb7`.
+- main.py blob SHA `470ac101d5cc4fdb2c5077d5468ef00327af3d43` 보존 확인. 기준 commit 대비 diff에도 main.py는 포함되지 않는다.
+- Run #13 검증 commit `27d2c69287631b041672b9989fdeeb3066f5ebb9` 이후는 문서만 갱신했으므로 30 passed / 5 xfailed의 코드 검증 근거는 유효하다.

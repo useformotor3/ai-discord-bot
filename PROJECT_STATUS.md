@@ -307,3 +307,10 @@
 - Run #12 실패를 삭제하거나 성공으로 바꾸지 않는다. 이력은 Run #12 및 Run #13 링크로 보존한다.
 - 기준 docs commit 대비 현재 23 ahead / 0 behind. `main` 대비 diverged 134 ahead / 58 behind (조회 당시 main HEAD `3b2dafd098b51eb60998ce3be032efc4a42760fb`, merge-base `f9a12a5778f5fa1d907201ab2931d20ca2656bb7`). 문서 commit 추가 후 ahead 수는 증가한다.
 - 이번 테스트는 fixture injection과 경계 관찰을 검증한다. 운영 main.py의 retry/부분 전송/상태화/atomic persistence를 검증하지 않는다.
+
+## 19. 관리 문서 갱신 후 원격 상태 재조회 — 2026-11-14
+- 직전 HEAD: `11c89c2bf513c0562aa0451caf38effae2041e26`.
+- 기준 docs commit 대비 24 ahead / 0 behind.
+- main 대비 diverged 135 ahead / 59 behind; main HEAD `8034668f45496ef532bfdfb865b29d4149cf2a94`, merge-base `f9a12a5778f5fa1d907201ab2931d20ca2656bb7`.
+- Run #13에서 검증된 테스트 소스 commit `27d2c69287631b041672b9989fdeeb3066f5ebb9` 이후 변경은 문서·로그뿐이다.
+- main.py blob SHA는 `470ac101d5cc4fdb2c5077d5468ef00327af3d43`이며 이번 테스트 브랜치 기준 commit 대비 미변경이다.
