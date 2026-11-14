@@ -840,7 +840,7 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 - [x] Correct Canonical Requirement register count to 45.
 - [x] Both traceability matrices now map all 45 Canonical IDs.
 - [x] Expanded test ID ranges and slash shorthand; 49/49 tests linked; all NOT_RUN.
-- [ ] Migrate 99 legacy claim IDs (\`CRA-ARCH-035-*\`…\`CRA-ARCH-124-*\`) to Canonical/evidence IDs; do not force-map ambiguous claims.
+- [ ] Independently review the 99 legacy candidate crosswalks (\`CRA-ARCH-035-*\`…\`CRA-ARCH-124-*\`); approve, correct, remove or mark UNMAPPED without forcing ambiguous links.
 - [ ] Sentence-level reconciliation of Volume 1, Volume 2, PSIRT SOP, classification matrix, threat model and test evidence register.
 - [ ] Then audit main-only reports #1–#5 for 2026-11-14 using fresh main HEAD/history/state/blob SHA.
 - [ ] Keep main read-only; no merge/rebase/sync. No protected code/workflow/prompt/schema/evidence bundle edits without separate approval.
