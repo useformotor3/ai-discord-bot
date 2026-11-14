@@ -2660,3 +2660,8 @@ Batch result: 5/5 CONFLICT, 0 PARTIALLY_VERIFIED, 0 VERIFIED; 0/5 Raw Text Quote
 - Raw Text Quote 사전 판정: CONFLICT 후보 — 조항 문자·문언·초안 여부 대조 필요.
 - 제품별 적용성: UNVERIFIED — 정확한 ST MCU 주문 코드, boot ROM, secure boot chain, key storage 및 firmware update design 미확정.
 
+## 2026-11-14 live archive baseline — 00:25 UTC
+
+- main HEAD `4a38d85a1cd6c50dfec0ab2c2f0c9b5931d5ea8d`; archive/history 1,569/1,569; state date/count 2026-11-14 / 6 (daily counter).
+- Reports #1–#6 are registered; #4/#5 AUDITED; #1–#3/#6 remain pending manual review.
+- #2/#4/#5 overlap on secure-by-default/initial-auth; #6 is Secure Boot/HWRoT. main read-only; refresh refs and blob SHAs before audit.
