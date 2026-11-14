@@ -177,7 +177,7 @@
 ## 2026-11-13 authoritative evidence index
 
 - main-only reports #8–#62: 55 files, 40 CONFLICT / 15 PARTIALLY_VERIFIED / 0 VERIFIED, direct quote reuse 0/55; consecutive non-random sample only.
-- Claim Evidence Ledger: 55 file-level records + 345 atomic claims = 400 unique IDs, zero collisions; 45 canonical requirements; 42 referenced by new claims, 3 forward-mapped; 99 legacy claims have candidate crosswalks pending independent review.
+- Claim Evidence Ledger: #8–#62 namespace 55 file +345 atomic =400 IDs; after report #4 the full Ledger has 56 file +351 new atomic +99 legacy =506 unique IDs, duplicate definitions 0. Canonical 45; 42 directly referenced by new claims, 3 forward-mapped; 99 legacy crosswalks are CANDIDATE pending independent review.
 - Canonical requirement mapping is integrated into [requirements-to-servo-drive matrix](CRA_REQUIREMENTS_TO_SERVO_DRIVE_TRACEABILITY_MATRIX.md) and [integrated traceability matrix](CRA_INTEGRATED_TRACEABILITY_MATRIX.md).
 - Next P0: independently review 99 legacy candidate mappings and complete sentence-level reconciliation of Volume 1/2, PSIRT SOP, product-classification matrix, threat model and test register; then audit 2026-11-14 main-only reports #1–#5.
 
