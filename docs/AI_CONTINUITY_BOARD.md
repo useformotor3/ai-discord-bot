@@ -418,7 +418,7 @@
 - Claim Evidence Ledger: 55 file-level source records + 345 atomic claims = **400 unique IDs**, duplicate IDs 0. All 345 atomic claims have one or more Canonical IDs. Canonical register defines 45 requirements; 42 are referenced by new atomic claims, and 3 are forward-mapped to matrix requirements; 99 legacy claims remain unmapped.
 - #8–#57 (50 reports) and #58–#62 (5 reports) have completed atomic decomposition. Individual legal facts marked VERIFIED do not promote a conflicting source file to VERIFIED.
 - Product-specific applicability, Class I/II classification, exact MCU order code and DUT test results remain UNVERIFIED/NOT_RUN.
-- Current P0: migrate 99 legacy claims without Canonical IDs; finish sentence-level reconciliation of Volume 1/2, PSIRT SOP, classification matrix, threat model and test register; then audit 2026-11-14 main-only reports #1–#5.
+- Current P0: independently review 99 legacy candidate crosswalks; finish sentence-level reconciliation of Volume 1/2, PSIRT SOP, classification matrix, threat model and test register; then audit 2026-11-14 main-only reports #1–#5.
 - No production code, main.py, production workflow, Gemini V2 prompt/contract or main branch was changed. E3 live source fetch remains unexecuted. This batch is documentation-only.
 
 ## 2026-11-13 — Logging / Secure Data Lifecycle
@@ -443,6 +443,6 @@
 - Latest CI at that branch snapshot: run 43531794670 SUCCESS, strict audit 990/990 consistent. This is not product compliance evidence.
 - Canonical register actual count 45. Integrated matrix 45/45; requirements matrix 45/45. Test register 49; integrated matrix references 49/49 after range/slash expansion; all NOT_RUN.
 - Ledger total 499 unique CRA-ARCH IDs: 55 file-level + 345 new atomic claims (#8–#62) + 99 legacy atomic claims. Duplicate 0 after #48–#52 summary rows were moved to SUMMARY labels.
-- Of the 345 new atomic claims, 343 map to one or more CRA-REQ IDs; two quote-accuracy-only claims map to CRA-EVIDENCE-QUOTE-ACCURACY-001. 99 legacy claims have no Canonical ID mapping yet.
+- Of the 345 new atomic claims, 343 map to one or more CRA-REQ IDs; two quote-accuracy-only claims map to CRA-EVIDENCE-QUOTE-ACCURACY-001. 99 legacy claims now have candidate Canonical/Evidence crosswalks; independent claim-by-claim review remains.
 - Next P0: migrate the 99 legacy claims, then finish line-by-line reconciliation of Volume 1/2, SOP, classification matrix, threat model and test register. Next main-only archive batch is #1–#5 for 2026-11-14 after fresh snapshot.
 - Product-specific CRA applicability/Class I/II and exact ST MCU remain UNVERIFIED; all DUT tests NOT_RUN. No production code or protected workflow changes in this pass.
