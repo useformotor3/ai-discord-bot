@@ -94,3 +94,11 @@
 - 테스트 fixture가 항상 성공을 반환하거나 실패 예외를 무시하면 그 경로는 검증되지 않은 것으로 명시한다.
 - 운영 workflow를 테스트 목적으로 실행하지 않는다. 별도 테스트 workflow 추가·기존 workflow 변경·PR 트리거 구성은 사용자에게 영향과 위험을 설명하고 별도 승인받는다.
 - 정적 검토, helper 단위 테스트, 원본 전체 pytest, CI, 운영 실행을 서로 다른 검증 단계로 구분한다.
+ 
+## 12. 이중 형식 프로젝트 로그
+- 프로젝트 변경 이력은 `PROJECT_LOG.jsonl`과 `SESSION_LOG.md`에 함께 남긴다.
+- JSONL은 한 줄에 하나의 완전한 JSON 객체를 기록한다. 최소 필드: `event_id`, `date`, `kind`, `status`, `summary_ko`, `branch`, `files`, `verification`, `limitations`, `approval`.
+- 실행·검증 사건에는 가능한 경우 `commit`, `evidence`(CI/PR/공식 근거 링크)를 추가한다. 미실행 항목을 성공으로 기록하지 않는다.
+- `SESSION_LOG.md`에는 배경, 판단 이유, 상세 절차, 검증 범위와 미해결 사항을 한국어로 기록한다.
+- 두 로그는 같은 사건 ID 또는 명확한 상호 링크로 연결하고, 값이 충돌하면 원본 증거를 재조회해 정정한다.
+- `state.json`·`history.json`은 기존 운영 자동화 데이터이며 프로젝트 작업 로그와 분리한다. 별도 승인 없이 변경하지 않는다.
