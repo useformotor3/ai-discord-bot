@@ -2598,3 +2598,23 @@ Batch result: 5/5 CONFLICT, 0 PARTIALLY_VERIFIED, 0 VERIFIED; 0/5 Raw Text Quote
 - Raw Text Quote 사전 판정: CONFLICT / REJECTED 후보
 - 개별 주장 사전 판정: secure-by-default 및 접근통제 주제는 PARTIALLY_VERIFIED 후보; 고정 비밀번호 금지·강제 변경·고유 비밀번호·모든 미사용 포트 비활성화를 CRA의 보편적 명시 의무로 단정한 부분은 CONFLICT 후보.
 - 제품별 적용성: UNVERIFIED — 실제 인증 설계, 인터페이스, 제품 SKU 미확정.
+
+### #4 — Secure-by-default 및 초기 인증·서비스 기본값
+
+- 상태: NEW / NOT_YET_AUDITED
+- 확인일: 2026-11-14
+- 보고서 번호: #4 (2026-11-14 일일 카운트)
+- 원문 생성 시각: 2026-11-14 00:15:49 (파일 Date; 시간대 미표기)
+- 원문 commit: [03b3ecaaa506c00146f5cb9d5855e6a66c3ef1c7](https://github.com/useformotor3/ai-discord-bot/commit/03b3ecaaa506c00146f5cb9d5855e6a66c3ef1c7) — commit timestamp 2026-11-14T00:16:06Z
+- 원문 파일: [research_archive/2026-11-14_001549.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_001549.md)
+- 원문 blob SHA: 44105223e8d841bbf2f5f273da950723a33dedbd
+- 우선순위: P1 — secure-by-default/access-control/attack-surface 요구와 제품별 초기 인증 구현을 분리 검증.
+- 중복성 경고: #2(2026-11-14_000536.md)와 주제 및 상당수 문장이 중복된다. 별도 새 요구사항으로 집계하지 말고 #2와 공통/차이 주장만 비교한다.
+- 핵심 주장 주제: 공장 기본 자격증명, 최초 사용 시 비밀번호 강제 변경, 개별 장치 초기 인증정보, 미사용 서비스·포트·디버그 인터페이스 비활성화, 인증된 백업/복원·업데이트 인터페이스.
+- 검증할 법령 쟁점: Annex I Part I(2)(b)의 secure-by-default/original-state reset, (2)(d)의 appropriate access controls, (2)(j)의 attack-surface limitation을 각각 분리한다. 법령은 특정 고정 비밀번호 금지·강제 password change·개별 device password·모든 비필수 포트 일괄 비활성화를 보편적 방식으로 지정하는지 확인한다.
+- 사전 메모: Raw Text Quote는 (b)와 (c)를 제시하지만 (c)는 현재 법령의 access-control 항목이 아니라 security-update 관련 항목이다. 접근통제는 Part I(2)(d)에 위치한다. 직접 인용의 조항 문자 오류 후보로 표시한다.
+- 파일 단위 판정: UNVERIFIED (Pass A/B/C 미완료)
+- Raw Text Quote 사전 판정: CONFLICT / REJECTED 후보 — (c) 조항 문자 및 문언/의무 범위 대조 필요.
+- 개별 주장 사전 판정: secure-by-default/appropriate access control/attack-surface 주제는 PARTIALLY_VERIFIED 후보; 강제 비밀번호 변경·모든 미사용 포트 차단은 보편적 직접 의무 주장으로는 CONFLICT 후보.
+- 제품별 적용성: UNVERIFIED — SKU, 계정 모델, 실제 서비스/포트/디버그 정책 미확정.
+
