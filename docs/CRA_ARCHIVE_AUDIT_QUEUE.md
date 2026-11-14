@@ -2601,7 +2601,7 @@ Batch result: 5/5 CONFLICT, 0 PARTIALLY_VERIFIED, 0 VERIFIED; 0/5 Raw Text Quote
 
 ### #4 — Secure-by-default 및 초기 인증·서비스 기본값
 
-- 상태: NEW / NOT_YET_AUDITED
+- 상태: AUDITED
 - 확인일: 2026-11-14
 - 보고서 번호: #4 (2026-11-14 일일 카운트)
 - 원문 생성 시각: 2026-11-14 00:15:49 (파일 Date; 시간대 미표기)
@@ -2623,3 +2623,7 @@ Batch result: 5/5 CONFLICT, 0 PARTIALLY_VERIFIED, 0 VERIFIED; 0/5 Raw Text Quote
 - main HEAD `03b3ecaaa506c00146f5cb9d5855e6a66c3ef1c7`; archive/history 1,567/1,567; state date/count 2026-11-14 / 4 (daily counter).
 - Reports #1–#4 for 2026-11-14 are registered for manual audit; #4 duplicates the secure-by-default/initial-auth topic in #2 and should be cross-compared.
 - Main remains read-only. Refresh main HEAD/history/state and each file blob SHA before auditing.
+
+- 최종 감사: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_4_2026-11-14.md](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_4_2026-11-14.md)
+- 최종 파일 판정: CONFLICT; Raw Text Quote 0/1 재사용. 6개 원자 주장 중 PARTIALLY_VERIFIED 4, CONFLICT 2.
+- 중복 처리: #2와 동일 주제이므로 신규 Canonical Requirement 생성 없음; 통합 보고서에서는 하나의 정본 절로 통합.
