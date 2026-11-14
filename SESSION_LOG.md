@@ -72,3 +72,30 @@
 - 다음은 실제 저장소 checkout이 가능한 환경에서 characterization 전체 테스트 실행 및 결과 보완이다.
 - Phase B(P0 코드 수정)는 별도 사용자 승인 전까지 시작하지 않는다.
 
+## 2026-11-14 — Phase B P0 수정
+
+### 승인 범위
+- 사용자 승인에 따라 작업 브랜치에서 P0 모델 실패/응답 검증 문제 수정
+- 운영 workflow, state.json, history.json은 변경하지 않음
+- 실제 Gemini API, Discord Webhook, Git push 호출 금지
+
+### 코드 변경
+- `main.py`에 보고서 최소 구조 검증 함수 추가
+- 응답 길이 250자 미만, 필수 4개 항목 누락, 대표 오류/쿼터/서비스 장애 문구가 있으면 무효 처리
+- 무효 응답은 동일 모델에서 최대 3회 시도 후 다음 모델로 폴백
+- 모든 모델이 실패하면 비정상 종료하고 전송·아카이브·상태 변경·Git 동기화 이전에 중단
+
+### 테스트 변경 및 결과
+- 기존 P0 결함 재현 테스트를 기대 동작 검증으로 교체
+- 정상 보고서, 모델 폴백, 전체 모델 실패, 짧은/형식 불량 응답, 오류 문구가 섞인 응답, 기존 상태파일 보존을 검증
+- mock 인프라 경계 테스트 포함
+- 격리 Python 실행환경에서 compileall 통과 및 pytest 9 passed
+- 실제 외부 API/Discord/Git 호출 없음. GitHub Actions CI/운영 실행은 수행하지 않음.
+
+### 남은 범위
+- P1: state.json/history.json 손상 시 fail-closed 처리
+- P1: last_health_check datetime parsing 오류 처리
+- P1: Discord timeout 및 HTTP status 확인
+- P1: Git commit/push 실패를 실행 상태에 반영
+- 이 항목들은 이번 승인 범위의 P0 수정에 포함하지 않았으며 다음 단계에서 우선순위를 재검토한다.
+
