@@ -2,17 +2,17 @@
 
 > 저장소: useformotor3/ai-discord-bot  
 > 작업 브랜치: cra-project-foundation  
-> 마지막 확인일: 2026-11-13
+> 마지막 확인일: 2026-11-14
 
 ## 목적/범위
 CRA를 모르는 개발자가 서보 드라이브 개발에 적용할 수 있는 공개 근거 기반 실무 지침과 통합 보고서 구축. CRA 전용이며 SIL 3 벤치마킹 제외. ST MCU 우선, TI 비교. Public 저장소에는 공개 자료만 저장.
 
 ## 실제 저장소 상태
 - main과 작업 브랜치는 Git commit graph 기준 diverged 상태. archive 콘텐츠는 동기화했지만 commit graph를 병합한 것은 아니다.
-- 작업 브랜치 마지막 확인 시 archive 990, history 990, 경로 중복/누락/orphan 0.
-- main 마지막 확인 시 archive 990, history 990, 경로 중복/누락 0.
+- 작업 브랜치 기준 archive/history 990/990, 경로 중복/누락/orphan 0 (2026-11-14 재확인).
+- main 최신 확인 archive/history 1,565/1,565, 경로 중복/누락/orphan 0 (2026-11-14 재확인).
 - main에서 확인된 6개 추가 자동 생성물을 원문 그대로 작업 브랜치에 보존.
-- main state.json: date=2026-11-12, count=3 (일일 카운터).
+- main state.json: date=2026-11-14, count=2 (일일 카운터; archive 총량 아님).
 - 6개 자동 생성 보고서 표본에서 CRA 조항/직접 인용/제품 분류 오류 발견. [ARCHIVE_TRIAGE_MAIN_ONLY_6.md](ARCHIVE_TRIAGE_MAIN_ONLY_6.md)
 - 브랜치 및 파일 정합성: [REPOSITORY_RECONCILIATION.md](REPOSITORY_RECONCILIATION.md)
 
@@ -213,7 +213,7 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 
 - 통합 매트릭스 검사: TR-01..TR-20 20개, 중복 0.
 - 위협 모델 검사: AST 10개, TH 18개, 중복 0.
-- 시험 대장 검사: TST 45개, 중복 0. 매트릭스 내 모든 개별/범위 참조 45개가 대장에 존재. 실제 DUT 시험 결과는 전부 NOT_RUN.
+- 시험 대장 검사: TST 49개, 중복 0. 통합 매트릭스의 범위/축약 표기를 확장해 49/49 연결 확인. 실제 DUT 시험 결과는 전부 NOT_RUN.
 - main 브랜치의 자동 생성 report #35(research_archive/2026-11-12_025041.md, blob f4bdaf84c19da80707b43f9db616712a7d17061d, commit f3eed0a20bfd9ee118561e8bcd0ae890d84ef6e2)를 EUR-Lex Annex I와 대조. 하드웨어 Secure Boot/TPM/SE/디지털 서명 의무 단정 및 Annex I Part I(2)(b)–(d) 직접 인용 번호/문구 오류 발견. 파일 판정 CONFLICT, 인용 블록 REJECTED.
 - 상세: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_35_2026-11-12.md](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_35_2026-11-12.md). main 원본/이력/상태는 변경하지 않음.
 - TI SLAAE29 Rev B 본문을 공식 HTML에서 직접 확인. Revision history와 CSC/KEYSTORE/AESADV/TRNG 설명을 확인했으나, 문서 지원 부품 목록에는 MSPM0G3529-Q1이 없음. 따라서 Rev B의 플랫폼 예제를 G3529-Q1 기능으로 전용하지 않음.
@@ -678,7 +678,7 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - 결과물 우선: 매 작업에 가능하면 보고서/표/설계/claim audit 산출물을 남긴다. 코드 수정은 금지하지 않으며, 결과물의 신뢰성·재현성 향상에 필요하면 수행한다.
 - main 최신 확인: report #125, HEAD `92e8ca7aa4a86b38627a1d8e9535e5b0463a8392`; state count 125 (daily counter), history.json 1,400 entries. main read-only.
 - main reports #8–#62 수동 감사 완료: 55건, 40 CONFLICT / 15 PARTIALLY_VERIFIED / 0 VERIFIED, direct quote reuse 0/55. 연속·비무작위 표본이며 전체 archive 오류율이 아니다.
-- 최신 실질 산출물: Claim Evidence Ledger 345개 원자 주장 및 46개 Canonical ID 매핑. 다음 P0는 제1권·제2권·SOP·매트릭스·시험 대장 전수 대조 후 #63–#67 감사.
+- 최신 실질 산출물: Claim Evidence Ledger 345개 신규 원자 주장 및 45개 Canonical ID; 이전 legacy claim 99개는 매핑 대기. 다음 P0는 제1권·제2권·SOP·매트릭스·시험 대장 전수 대조 후 #63–#67 감사.
 - Phase D hardening final code/test 140/140 및 archive 990/990 성공; 문서 최신화 HEAD도 CI #43384628893에서 140/140 및 990/990 성공. 최신 결과/한계는 AI_CONTINUITY_BOARD와 SESSION_LOG 참조.
 - E3 live fetch 및 보호 파일/production integration/main merge는 별도 승인 전 실행 금지.
 
@@ -928,7 +928,7 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 
 - main latest observed: report #125; HEAD \`92e8ca7aa4a86b38627a1d8e9535e5b0463a8392\`; state count 125; history.json 1,400 entries. Archive tree count was not rechecked. main remains read-only.
 - main-only audit scope #8–#62: 55 consecutive, non-random reports; file-level results **40 CONFLICT / 15 PARTIALLY_VERIFIED / 0 VERIFIED**; direct quote reuse **0/55**. This is not a statistical error rate for the full archive.
-- Claim Evidence Ledger: 55 file-level source records + 345 atomic claims = **400 unique IDs**, duplicate IDs 0. All 345 atomic claims have one or more Canonical IDs. Canonical register defines 46 requirements; 43 are referenced by legacy atomic claims, and 3 are forward-mapped to matrix requirements.
+- Claim Evidence Ledger: 55 file-level source records + 345 atomic claims = **400 unique IDs**, duplicate IDs 0. All 345 atomic claims have one or more Canonical IDs. Canonical register defines 45 requirements; 42 are referenced by new atomic claims, and 3 are forward-mapped to matrix requirements; 99 legacy claims remain unmapped.
 - #8–#57 (50 reports) and #58–#62 (5 reports) have completed atomic decomposition. Individual legal facts marked VERIFIED do not promote a conflicting source file to VERIFIED.
 - Product-specific applicability, Class I/II classification, exact MCU order code and DUT test results remain UNVERIFIED/NOT_RUN.
 - Current P0: reconcile the 345 atomic claims and 46 canonical requirements against Volume 1, Volume 2, PSIRT SOP, requirements matrix, integrated traceability matrix and test evidence register; resolve duplicated/contradictory wording and keep exact legal locators. Then proceed to main-only audit #63–#67.
@@ -950,3 +950,12 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - Latest push CI on current work-branch HEAD: run 43408438728 SUCCESS; 140 tests passed; strict archive audit 990/990, unique paths 990, missing/orphan/duplicate/malformed 0, consistent=true. The branch workflow's state.count=3 is a daily counter, not an archive total. No PR-triggered workflow run and no PR was created.
 - Current branch commits in this continuation are documentation-only; no additional production code changes were made here. Existing branch-vs-main code differences remain unmerged and must be reviewed separately.
 
+## 2026-11-14 — current repository and traceability baseline
+
+- main HEAD at baseline: \`291b1c93905d41c9bba83b4510c3e5ef43f86e95\`; archive/history 1,565/1,565; missing/orphan/duplicate 0. main state date 2026-11-14, count 2 (daily counter).
+- cra-project-foundation baseline HEAD: \`89ce7f1160ad91ab2801bd5bbbecb96ca004ca9f\`; archive/history 990/990. Branch graph diverged from main, ahead 1,000 / behind 581 at that snapshot. Re-fetch live refs before each session; no merge/rebase/sync.
+- Latest branch push CI at baseline: run 43531794670 SUCCESS; strict audit 990/990, missing/orphan/duplicate/malformed 0. CI checks archive integrity, not CRA product compliance.
+- Traceability reconciliation: both matrices cover all 45 Canonical Requirements; 49/49 test IDs are mapped; all 49 tests NOT_RUN.
+- Ledger: 55 file records + 345 atomic claims for #8–#62; plus 99 legacy claim records without Canonical IDs. Total 499 unique CRA-ARCH IDs, duplicate 0. 5 summary rows #48–#52 use SUMMARY labels, not Claim IDs.
+- Next P0: migrate 99 legacy claims to canonical/evidence IDs and finish sentence-level reconciliation across Volume 1/2, PSIRT SOP, classification matrix, threat model and test register. Next archive audit begins at 2026-11-14 daily reports #1–#5 after the P0 mapping pass.
+- Product-specific applicability, Important Product classification and exact MCU order code remain UNVERIFIED; all DUT tests NOT_RUN. main.py, production workflow, Gemini prompt, schema and evidence bundle unchanged.
