@@ -576,7 +576,7 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 - 신규 세션은 `docs/AI_CONTINUITY_BOARD.md`를 필수로 읽고, 현재 HEAD/main archive/CI를 다시 확인한다.
 - 보고서 생산과 검증을 코드/파이프라인 개선과 동등한 최우선 결과로 취급한다. 가능한 작업마다 실제 보고서 본문, 비교표, 설계도, claim audit 또는 증거 대장을 남긴다.
 - main archive reports #8–#62 감사 완료: 55건, 40 CONFLICT / 15 PARTIALLY_VERIFIED / 0 VERIFIED, direct quote reuse 0/55. 연속 비무작위 표본이며 전체 archive 오류율이 아니다.
-- main 최신 관찰 report #125 / HEAD `92e8ca7aa4a86b38627a1d8e9535e5b0463a8392`; state 125, history 1,400. 다음 main-only audit target #63–#67이며, P0 canonical cross-document reconciliation 이후 수행.
+- Historical main snapshot #125/1,400 is superseded. Current 2026-11-14 snapshot: HEAD `291b1c93905d41c9bba83b4510c3e5ef43f86e95`, archive/history 1,565/1,565, state count2 daily. Next archive audit target #1–#5 for 2026-11-14 after legacy mapping.
 - 제1권 CRA 조사 보고서와 제2권 구현 계획은 초판이다. #28–#32 감사 결과 및 반복 정정 규칙을 통합해 다음 revision을 작성한다.
 - E3 live source fetch, protected production code, Gemini V2 prompt/contract, main branch mutation/merge/rebase/sync는 별도 명시 승인 전 금지.
 
@@ -598,7 +598,7 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 - #38–#42 Pass A/B/C 감사 완료. 결과 4 CONFLICT / 1 PARTIALLY_VERIFIED / 0 VERIFIED, 직접 인용 재사용 0/5.
 - 이번 배치의 핵심 정정: Annex II point 8(d)는 secure decommissioning 및 user-data removal instructions 제공 의무다. 이는 모든 제품의 irrecoverable wipe 기능을 명시한 문구와 다르다. 사용자 정보는 Annex II point 7 및 8(a)–(f), 무료 보안 업데이트는 Annex I Part II(8), support period는 Article 13(8), update availability는 Article 13(9)로 분리한다.
 - 다음 작업: #43–#47 감사 후 사용자 지침서 체크리스트/제1권 CRA 보고서의 EOL, support period, update, VDP 절을 정정한다. 아카이브 감사만 계속하지 말고 제1권/제2권에 교정 결과를 통합하는 deliverable-first 작업을 병행한다.
-- historical main snapshot #93/1,368 is superseded; current main is #125, archive/history 1,400/1,400.
+- Historical main snapshots #93/1,368 and #125/1,400 are superseded by 2026-11-14 archive/history 1,565/1,565.
 
 ## 2026-11-13 — reports #43–#47 감사 및 보고서 통합 우선순위
 
@@ -814,7 +814,7 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 - Claim Evidence Ledger: 55 file-level source records + 345 atomic claims = **400 unique IDs**, duplicate IDs 0. All 345 atomic claims have one or more Canonical IDs. Canonical register defines 45 requirements; 42 are referenced by new atomic claims, and 3 are forward-mapped to matrix requirements; 99 legacy claims remain unmapped.
 - #8–#57 (50 reports) and #58–#62 (5 reports) have completed atomic decomposition. Individual legal facts marked VERIFIED do not promote a conflicting source file to VERIFIED.
 - Product-specific applicability, Class I/II classification, exact MCU order code and DUT test results remain UNVERIFIED/NOT_RUN.
-- Current P0: reconcile the 345 atomic claims and 46 canonical requirements against Volume 1, Volume 2, PSIRT SOP, requirements matrix, integrated traceability matrix and test evidence register; resolve duplicated/contradictory wording and keep exact legal locators. Then proceed to main-only audit #63–#67.
+- Current P0: migrate 99 legacy claims without Canonical IDs; finish sentence-level reconciliation of Volume 1/2, PSIRT SOP, classification matrix, threat model and test register; then audit main-only daily reports #1–#5 for 2026-11-14.
 - No production code, main.py, production workflow, Gemini V2 prompt/contract or main branch was changed. E3 live source fetch remains unexecuted. This batch is documentation-only.
 
 ## 2026-11-13 P0 — Logging / Secure Data Lifecycle evidence
