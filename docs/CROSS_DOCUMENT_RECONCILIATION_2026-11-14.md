@@ -74,7 +74,7 @@ Ledger의 서로 다른 기록 범위를 혼합하지 않도록 집계를 분리
 1. **legacy claim 99개 candidate review:** 추가한 99개 후보 연결을 각 원문 문장/근거 조항과 대조해 승인·수정·삭제한다. 불명확하면 UNMAPPED로 유지하고 억지 매핑하지 않는다.
 2. **정본 문장 대조:** 345개 신규 원자 주장과 legacy 99개를 제1권, 제2권, PSIRT SOP, 제품 분류 매트릭스, 위협 모델, 시험 대장과 문장 단위로 대조한다. 정정 내용은 독자용 정본에 반영하거나 미반영 사유를 기록한다.
 3. **PSIRT SOP 연결:** Article 14 trigger, 기한, 신고 경로, 사용자 통지 및 Article 69(3) 전환 규칙을 Canonical ID와 양 매트릭스에 연결한다.
-4. **다음 main-only archive audit:** 2026-11-14 일일 보고서 #1–#2는 미감사다. 다음 배치는 #1–#5를 목표로 하되, 실행 시점의 main HEAD/history/state 및 원본 blob SHA를 다시 고정한다.
+4. **다음 main-only archive audit:** 2026-11-14 일일 보고서 #1–#4가 대기열에 등록되었다. 다음 배치는 #1–#5를 목표로 하되, 실행 시점의 main HEAD/history/state 및 원본 blob SHA를 다시 고정한다.
 
 ## 6. 제품·시험 상태 경계
 
@@ -89,3 +89,11 @@ Ledger의 서로 다른 기록 범위를 혼합하지 않도록 집계를 분리
 - Test ID: 시험 대장과 통합 매트릭스의 개별 ID, \`..\` 범위 및 \`/\` 축약 표기를 확장한 후 집합 비교.
 - Claim ID: Ledger 전체의 \`CRA-ARCH-*\` 행에서 중복을 확인하고 summary 표기는 별도 namespace로 분리.
 - Archive: GitHub main의 recursive tree와 \`history.json\`의 경로·개수를 비교. \`state.json.count\`는 일일 카운터로 취급.
+
+## 2026-11-14 live recheck — 00:19 UTC
+
+- main HEAD: \`03b3ecaaa506c00146f5cb9d5855e6a66c3ef1c7\`; archive/history 1,567/1,567; state.json date/count 2026-11-14 / 4 (daily counter).
+- work branch HEAD at check: \`f0fbb4954b0853987ce9f918733e5f6858150483\`; archive/history 990/990.
+- compare main...cra-project-foundation: diverged, ahead 1,049 / behind 583. This is a snapshot; re-fetch live refs before every session. No merge/rebase/sync.
+- latest push CI run \`43533348296\` on the checked branch HEAD: SUCCESS; strict archive audit 990/990, missing/orphan/duplicate/malformed 0. Archive integrity only, not product compliance.
+- main daily report #4 is now registered in \`CRA_ARCHIVE_AUDIT_QUEUE.md\`; reports #1–#4 are queued for manual Pass A/B/C review. #4 overlaps #2 on secure-by-default and initial authentication; audit the overlap instead of treating it as a new requirement.
