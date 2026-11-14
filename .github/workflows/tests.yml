@@ -1,0 +1,61 @@
+name: Isolated Python Tests
+
+on:
+  push:
+    branches:
+      - docs/cra-audit-and-project-control-2026-11-14
+    paths:
+      - ".github/workflows/tests.yml"
+      - "main.py"
+      - "tests/**"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: isolated-tests-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    name: Source integrity, compile and pytest
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout approved working branch
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Verify exact source blob identities
+        shell: bash
+        run: |
+          set -euo pipefail
+          verify_blob() {
+            local path="$1"
+            local expected="$2"
+            local actual
+            actual="$(git hash-object "$path")"
+            printf '%s  %s  expected=%s\n' "$actual" "$path" "$expected"
+            test "$actual" = "$expected"
+          }
+          verify_blob "main.py" "470ac101d5cc4fdb2c5077d5468ef00327af3d43"
+          verify_blob "tests/conftest.py" "d55069fa82b4eb9d555033db8f8c2867ff774dd6"
+          verify_blob "tests/test_main_characterization.py" "8019b18696bc9f1eb729feed633ecf2e32f36c04"
+          verify_blob "tests/test_mock_infrastructure.py" "863a77c5ec3dc50c0a21b246b22cb862a8baeaa2"
+          verify_blob "tests/test_p1_reliability.py" "cff881cb0da2724f8810b88ae621909a9e23a6f9"
+
+      - name: Install test dependency
+        run: python -m pip install --disable-pip-version-check pytest
+
+      - name: Compile source and tests
+        run: python -m compileall -q main.py tests
+
+      - name: Run complete repository test suite
+        run: python -m pytest -q
