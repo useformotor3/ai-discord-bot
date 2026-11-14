@@ -68,10 +68,15 @@ def run_main(tmp_path, monkeypatch):
 
         def fake_post(url, *, json, **kwargs):
             response_spec = discord_queue.pop(0) if discord_queue else None
+            status_code = (
+                response_spec.get("status_code", 204)
+                if isinstance(response_spec, dict)
+                else getattr(response_spec, "status_code", None)
+            )
             captured["discord_posts"].append({
                 "timeout": kwargs.get("timeout"),
                 "payload_length": len(json.get("content", "")),
-                "status_code": getattr(response_spec, "status_code", None),
+                "status_code": status_code,
             })
             if isinstance(response_spec, BaseException):
                 raise response_spec
