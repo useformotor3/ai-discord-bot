@@ -31,3 +31,9 @@
 ### 변경 범위
 - 이번 브랜치: 운영 문서와 감사 기록만 추가
 - 금지/미수정: `main.py`, `.github/workflows/run.yml`, `state.json`, `history.json`
+
+### 추가 수행 — 보고서 정정본
+- #28 지원기간 근거를 Article 13(8), 무상 업데이트를 Annex I Part I 2(g), 업데이트 지속 제공을 Article 13(9)로 정정
+- #29 적극 악용 취약점 보고와 심각한 사고 보고를 분리하고 24h/72h/14일 및 1개월 시한을 구분
+- 정정본: `reports/CRA_CORRECTIONS_REPORTS_28_29_2026-11-14.md`
+- 원본 #28·#29는 변경/삭제하지 않음
