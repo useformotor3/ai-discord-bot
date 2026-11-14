@@ -62,7 +62,7 @@
 ### 검증
 - Python compileall: 통과
 - mock infrastructure test: 2 passed
-- 전체 `main.py` characterization test: 저장소 전체 checkout이 없는 실행 환경으로 인해 미실행. 통과로 보고하지 않음.
+- 브랜치에서 조회한 `main.py` 원문을 격리 작업공간에 반영해 전체 suite 실행: 5 passed.
 - 실제 Gemini/Discord/Git 외부 호출: 없음
 - 파일 재조회로 GitHub 저장 내용 확인
 
