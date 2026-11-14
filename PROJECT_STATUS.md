@@ -18,9 +18,9 @@
 | P0 모델 실패 처리 | 작업 브랜치 구현 | 응답 구조 검사, 모든 모델 실패 시 비정상 종료 |
 | P1-A 상태·이력 안전성 | 작업 브랜치 구현 | 손상 JSON/스키마 fail-closed, 날짜·시간 호환 |
 | helper 독립 테스트 | 이전 독립 실행 7 passed | 실제 저장소 전체 suite 아님 |
-| 임시 재구성 사본 테스트 | 21 passed | 5개 핵심 파일의 blob SHA가 GitHub 원본과 불일치. 예비 결과로만 인정 |
-| 실제 저장소 전체 pytest | 미완료 | 원본 byte-identical checkout/실행 경로 미확보 |
-| GitHub Actions CI | 미실행/미검증 | 기존 운영 workflow는 repository_dispatch/workflow_dispatch만 트리거. 테스트 실행에 사용하지 않음 |
+| 임시 재구성 사본 테스트 | 예비 결과 | SHA 불일치로 원본 검증으로 인정하지 않음; 현재는 별도 Actions 원본 테스트로 대체 |
+| 실제 저장소 전체 pytest | **통과** | Run #3 최신 검증 commit에서 21 passed, 5개 SHA 일치 |
+| 테스트 전용 GitHub Actions CI | **통과** | Run #1~#3 success; 최신 Run #3에서 SHA·compileall·pytest 재검증 |
 | P1-B 전송·동기화 신뢰성 | 설계 및 정적 감사 | Discord/Git 실패 경로, 원자적 저장 개선은 별도 승인 필요 |
 | CRA 요구사항 추적 | 후속 | 공식 조항-제품 적용성-통제-시험 증거 연결 |
 | SIL 기능안전 자료 | 별도 추적 | CRA 사이버보안 결론과 혼합 금지 |
@@ -61,13 +61,13 @@
 | 임시 재구성 사본 compileall | 종료 코드 0 | 임시 사본 문법 검증 |
 | 임시 재구성 사본 pytest | 21 passed | 임시 사본 예비 검증 |
 | 임시 사본 blob SHA 비교 | 5개 모두 불일치 | 원본 동일성 실패 |
-| 작업 브랜치 원본 전체 pytest | 미실행 | 완료로 표시 금지 |
-| GitHub Actions CI | 미실행 | 완료로 표시 금지 |
+| 작업 브랜치 원본 전체 pytest | **21 passed** | Run #3 commit `dddba44a41851e9d0319ce9a91535a9d26145d92`; 5개 SHA 일치 |
+| 테스트 전용 GitHub Actions CI | **success** | [Run #3](https://github.com/useformotor3/ai-discord-bot/actions/runs/43568074938) |
 | 운영 workflow/API/Discord/Git push | 실행 안 함 | 운영 영향 없음 |
 
-실행 환경에서 Git clone은 DNS 단계에서 실패했다. connector로 원본 파일을 읽고 정적 검토는 가능하지만, 현재 실행환경에 정확한 파일을 전달해 SHA 일치까지 확인한 전체 pytest는 아직 불가능하다.
+이전 ChatGPT 실행환경의 Git clone은 DNS 단계에서 실패했으나, 별도 승인된 테스트 전용 GitHub Actions로 대체 경로를 확보했다. Actions checkout 원본에서 다섯 개 Git blob SHA 일치, compileall, pytest 21 passed를 확인했다. 따라서 원본 테스트 실행 경로 문제는 해결된 것으로 갱신한다.
 
-기존 workflow는 `repository_dispatch: run-bot` 및 `workflow_dispatch`에서 운영 `main.py`를 실행한다. 따라서 테스트를 위해 이 workflow를 실행하지 않는다. 테스트 전용 workflow 추가/수정 역시 별도 승인 전에는 하지 않는다.
+기존 workflow는 `repository_dispatch: run-bot` 및 `workflow_dispatch`에서 운영 `main.py`를 실행한다. 따라서 테스트를 위해 이 workflow를 실행하지 않는다. 테스트 전용 workflow `.github/workflows/tests.yml`은 별도 승인을 받아 추가했으며, 운영 workflow와 분리해 사용한다.
 
 ## 4. 위험 우선순위 및 조치
 
@@ -92,12 +92,11 @@
 
 ## 6. 다음 재개 지점
 
-1. 정확한 GitHub 원본 파일을 격리 환경으로 전달할 수 있는 경로를 확보한다.
-2. 각 파일의 Git blob SHA가 GitHub 조회 당시 값과 일치하는지 검증한다.
-3. 원본 동일성이 입증된 소스에서 compileall 및 전체 pytest를 실행한다.
-4. fixture를 개선할 때 Git/Discord 실패 경로가 실제로 테스트되는지 확인한다.
-5. 전체 회귀 검증 후 P1-B 최소 변경안과 롤백 방안을 사용자에게 제시하고 별도 승인받는다.
-6. 이후 CRA 요구사항 추적 및 검증된 통합 보고서로 진행한다.
+1. 기본 원본 실행 경로는 확보했고, 최신 Run #3에서 SHA·compileall·pytest 21 passed를 재확인했다.
+2. fixture의 Git/Discord 실패 경로 검증 공백을 보강할 설계안을 작성한다.
+3. P1-B 최소 변경안과 롤백 방안을 사용자에게 제시하고 별도 승인받는다.
+4. 승인된 변경 후 동일 CI 게이트로 전체 회귀 검증한다.
+5. 이후 CRA 요구사항 추적 및 검증된 통합 보고서로 진행한다.
 
 ## 7. 문서 진입점
 
