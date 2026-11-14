@@ -408,13 +408,13 @@ The main-only audit covers 55 consecutive, non-random archive reports (#8–#62)
 
 The 2026-11-13 main-only namespace in the Claim Evidence Ledger contains 55 file-level source records and 345 atomic claim records (400 unique IDs, zero collisions); the full Ledger also contains 99 older legacy claims, for 499 unique CRA-ARCH IDs. Every atomic claim is mapped to one or more Canonical Requirement IDs. The canonical register contains 45 requirements, including all Annex I Part I control families, Annex I Part II vulnerability handling, Articles 13–14, product classification, conformity assessment, technical documentation, DoC/CE, penalties and transition rules.
 
-The atomic decomposition preserves the distinction between a verified legal fact and the file-level verdict of the source report. Product-specific applicability, servo-drive Class I/II classification, exact MCU order code and DUT test evidence remain UNVERIFIED/NOT_RUN. The next P0 is full cross-document reconciliation of the 345 claims against this report, Volume 2, PSIRT SOP, both traceability matrices and the test evidence register.
+The atomic decomposition preserves the distinction between a verified legal fact and the file-level verdict of the source report. Product-specific applicability, servo-drive Class I/II classification, exact MCU order code and DUT test evidence remain UNVERIFIED/NOT_RUN. The next P0 is migration of 99 legacy claims and sentence-level reconciliation across Volume 1/2, PSIRT SOP, product classification matrix, threat model and test register.
 
 ## 2026-11-13 logging and secure data lifecycle update
 
 Annex I Part I(2)(l) logging/monitoring/opt-out and Part I(2)(m) secure permanent data erasure plus secure transfer (where applicable) are now explicitly mapped to Canonical IDs. Annex II(8)(d) user decommissioning instructions are tracked separately. Added TST-LOG-01/02 and TST-ERASE-01..04 to the test evidence register; all remain NOT_RUN. TST-NVM-01..03 remain storage integrity/access/power-fault tests and do not substitute for erase tests.
 
-## 2026-11-13 source baseline and CI revalidation
+## 2026-11-13 source baseline and CI revalidation (historical snapshot; superseded 2026-11-14)
 
 Current main is report #125 / HEAD \`92e8ca7aa4a86b38627a1d8e9535e5b0463a8392\`, state count 125 (daily counter), history 1,400 entries. All 55 source files audited in reports #8–#62 were revalidated against the current main Git tree: 55/55 paths and blob SHAs match, with zero missing or mismatched files.
 
