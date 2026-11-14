@@ -2573,3 +2573,28 @@ Batch result: 5/5 CONFLICT, 0 PARTIALLY_VERIFIED, 0 VERIFIED; 0/5 Raw Text Quote
 - Raw Text Quote 사전 판정: CONFLICT / REJECTED 후보 (Annex I 번호·문구·권한 주체 불일치)
 - 개별 주장 사전 판정: confidentiality/integrity의 법령 주제는 PARTIALLY_VERIFIED 후보; Secure Boot/RoT의 보편적 법정 의무 주장은 CONFLICT 후보; IEC 62443-4-2 매핑은 UNVERIFIED.
 - 제품별 적용성: UNVERIFIED — 제품 SKU, fieldbus 구성, 실제 ST MCU 주문 코드 및 업데이트 구조 미확정.
+
+## 2026-11-14 — main advanced to report #4
+
+- 확인일: 2026-11-14
+- main HEAD: 03b3ecaaa506c00146f5cb9d5855e6a66c3ef1c7 (Auto-archive: Research report #4).
+- 직전 main HEAD: a761c5a8ad9029b1f1bce85265130e755aa39352 (report #3). 1 commit ahead; 변경 파일은 history.json, research_archive/2026-11-14_001549.md, state.json.
+- history.json: 1,567 entries. state.json: date=2026-11-14, count=4 (일일 카운터). #4 원문 파일을 main에서 fetch하고 blob SHA를 확인했다. 전체 archive tree count는 재열거하지 않았다.
+
+### #4 — Secure by Default / 초기 인증 / 공격 표면
+
+- 상태: NEW / NOT_YET_AUDITED
+- 확인일: 2026-11-14
+- 보고서 번호: #4 (2026-11-14 일일 카운트)
+- 원문 생성 시각: 2026-11-14 00:15:49 (파일 Date; 시간대 미표기)
+- 원문 commit: [03b3ecaaa506c00146f5cb9d5855e6a66c3ef1c7](https://github.com/useformotor3/ai-discord-bot/commit/03b3ecaaa506c00146f5cb9d5855e6a66c3ef1c7) — commit timestamp 2026-11-14T00:16:06Z
+- 원문 파일: [research_archive/2026-11-14_001549.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_001549.md)
+- 원문 blob SHA: 44105223e8d841bbf2f5f273da950723a33dedbd
+- 우선순위: P1 — 초기 인증·기본 설정·서비스 노출의 설계 후보. #2와 주제가 중복되므로 새 요구사항을 중복 생성하지 않고 동일 canonical requirement에 연결할 것.
+- 핵심 주장 주제: 출고/초기화 시 secure-by-default, 고정 기본 비밀번호 금지, 최초 사용 시 강제 비밀번호 변경 또는 고유 초기 인증 정보, 불필요한 서비스/포트 비활성화, 네트워크 관리 인터페이스 인증.
+- 검증할 법령 쟁점: Annex I Part I(2)(b) secure-by-default 및 original state 복원, (2)(d) 접근통제, (2)(j) 공격 표면 제한의 정확한 범위와 조건. Annex VII 기술 문서가 특정 비밀번호 방식이나 모든 인터페이스 차단 방식을 직접 지정하는지 확인한다.
+- 사전 메모: #2와 동일한 주제이며 CRA의 secure-by-default/access-control/attack-surface 요구는 Annex I Part I(2)(b),(d),(j)에 위치한다. 그러나 CRA 문언은 고정 기본 비밀번호를 모두 금지하거나 최초 부팅 강제 변경/고유 기본 비밀번호를 보편적 구현으로 명시하지 않는다. JTAG/UART/Telnet/HTTP/FTP 등 특정 포트·서비스의 일괄 비활성화도 위험기반 설계 후보이지 모든 제품에 대해 열거된 법정 구현 방식은 아니다. Raw Text Quote의 (b)/(c) numbering과 delivered/initial 표현은 현행 원문 (2)(b)/(2)(d)의 번호·문구와 불일치한다. 실제 (2)(c)는 자동 보안 업데이트 설정 관련 요건이다.
+- 파일 단위 판정: UNVERIFIED (전체 Pass A/B/C 미완료)
+- Raw Text Quote 사전 판정: CONFLICT / REJECTED 후보
+- 개별 주장 사전 판정: secure-by-default 및 접근통제 주제는 PARTIALLY_VERIFIED 후보; 고정 비밀번호 금지·강제 변경·고유 비밀번호·모든 미사용 포트 비활성화를 CRA의 보편적 명시 의무로 단정한 부분은 CONFLICT 후보.
+- 제품별 적용성: UNVERIFIED — 실제 인증 설계, 인터페이스, 제품 SKU 미확정.
