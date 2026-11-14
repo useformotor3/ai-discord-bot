@@ -207,3 +207,10 @@
 - [Report #4 — Secure-by-default / 초기 인증 감사](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_4_2026-11-14.md): file verdict CONFLICT, direct quote 0/1, #2와 중복 주제. 제품별 적용성 UNVERIFIED.
 
 - [Report #5 — Secure-by-default / 초기 상태 변경 방지 감사](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_5_2026-11-14.md): file verdict CONFLICT, quote 0/2, #2/#4와 중복 주제, Article 10/13 및 Annex I 인용 정정.
+
+## 2026-11-14 live main recheck — 00:25 UTC
+
+- main HEAD: \`4a38d85a1cd6c50dfec0ab2c2f0c9b5931d5ea8d\`; archive/history 1,569/1,569; state date/count 2026-11-14 / 6 (daily counter).
+- Reports #1–#6 are now present in the 2026-11-14 daily archive. Manual audit status: #4 and #5 AUDITED; #1–#3 and #6 pending. #2/#4/#5 overlap on secure-by-default/initial authentication; #6 is Secure Boot/HWRoT.
+- main remains read-only. Re-fetch main HEAD/history/state and original blob SHAs before each audit batch.
+- Work branch HEAD and CI are dynamic; re-fetch after the latest queue update. No merge/rebase/sync.
