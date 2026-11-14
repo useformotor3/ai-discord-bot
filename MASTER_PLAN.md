@@ -79,19 +79,18 @@
 - Phase 1 표본 감사 및 #28/#29 정정본 작성: 수행
 - Phase 2 P0 모델 응답 검증/실패 차단: 작업 브랜치 구현 및 격리 mock 테스트 9 passed 기록
 - Phase 2 P1-A state/history 검증 및 datetime 호환: 작업 브랜치 구현, helper 독립 pytest 7 passed
-- Phase 3 전체 저장소 테스트: 미완료. 실제 checkout 기반 전체 pytest와 CI는 아직 실행하지 않음
+- Phase 3 기본 원본 테스트 실행 기반: 확보. 테스트 전용 GitHub Actions Run #1~#3 success, 최신 Run #3에서 SHA 5개 일치, compileall 통과, pytest 21 passed
 - Phase 2 P1-B Discord 전송/Git 동기화 신뢰성: 설계만 존재, 별도 승인 대기
 - Phase 4~6: 후속 단계
 
 ## 다음 실행 순서 — 객관적 우선순위
 
-1. **테스트 실행 기반 확보**: 작업 브랜치의 실제 소스를 격리 환경에 확보하고 전체 pytest 실행. 운영 workflow는 실행하지 않는다.
-2. **P1-A 통합 회귀 확인**: Phase A/B 테스트와 P1-A 테스트를 함께 실행하고 실패를 분류한다.
-3. **P1-B 제안**: Discord timeout/status/retry와 Git push 상태화의 최소 변경 범위·위험·테스트·롤백을 제시하고 승인받는다.
-4. **P1-B 구현 및 테스트**: 승인된 범위만 작업 브랜치에 반영한다.
-5. **조사 품질 구조화**: 출처 메타데이터와 topic/correction 인덱스 설계 및 검증.
-6. **요구사항 추적**: CRA 조항에서 제품 요구사항, 설계 통제, 시험 증거까지 연결.
-7. **통합 문서화**: 검증된 사실만 한국어 기준 보고서와 필요한 부속서에 반영.
+1. **실패 경로 fixture 보강 설계**: Git add/commit/push 실패, Discord timeout/network/429/4xx/5xx, 부분 성공을 테스트하는 시나리오를 설계한다.
+2. **P1-B 제안**: Discord timeout/status/retry와 Git push 상태화의 최소 변경 범위·위험·테스트·롤백을 제시하고 승인받는다.
+3. **P1-B 구현 및 테스트**: 승인된 범위만 작업 브랜치에 반영하고 동일 CI 게이트에서 회귀 검증한다.
+4. **조사 품질 구조화**: 출처 메타데이터와 topic/correction 인덱스 설계 및 검증.
+5. **요구사항 추적**: CRA 조항에서 제품 요구사항, 설계 통제, 시험 증거까지 연결.
+6. **통합 문서화**: 검증된 사실만 한국어 기준 보고서와 필요한 부속서에 반영.
 
 ## 완료 정의
 
