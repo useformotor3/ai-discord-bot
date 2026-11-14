@@ -74,7 +74,7 @@ Ledger의 서로 다른 기록 범위를 혼합하지 않도록 집계를 분리
 1. **legacy claim 99개 candidate review:** 추가한 99개 후보 연결을 각 원문 문장/근거 조항과 대조해 승인·수정·삭제한다. 불명확하면 UNMAPPED로 유지하고 억지 매핑하지 않는다.
 2. **정본 문장 대조:** 345개 신규 원자 주장과 legacy 99개를 제1권, 제2권, PSIRT SOP, 제품 분류 매트릭스, 위협 모델, 시험 대장과 문장 단위로 대조한다. 정정 내용은 독자용 정본에 반영하거나 미반영 사유를 기록한다.
 3. **PSIRT SOP 연결:** Article 14 trigger, 기한, 신고 경로, 사용자 통지 및 Article 69(3) 전환 규칙을 Canonical ID와 양 매트릭스에 연결한다.
-4. **다음 main-only archive audit:** 2026-11-14 일일 보고서 #1–#4가 대기열에 등록되었다. 다음 배치는 #1–#5를 목표로 하되, 실행 시점의 main HEAD/history/state 및 원본 blob SHA를 다시 고정한다.
+4. **다음 main-only archive audit:** 2026-11-14 reports #4/#5 are audited; #1–#3 remain pending. Next batch should audit #1–#3 first, then proceed to the next daily reports after a fresh main snapshot.
 
 ## 6. 제품·시험 상태 경계
 
@@ -105,3 +105,11 @@ Ledger의 서로 다른 기록 범위를 혼합하지 않도록 집계를 분리
 - File verdict CONFLICT; Raw Text Quote rejected 0/1; 6 atomic claims: 4 PARTIALLY_VERIFIED, 2 CONFLICT. #4 overlaps #2 and creates no new Canonical Requirement.
 - Updated Ledger totals: 56 file records +351 new atomic claims +99 legacy claims = 506 unique CRA-ARCH ID definitions; duplicate definitions 0. Legacy candidate crosswalk references are not new definitions.
 - Annex I Part I(2)(b) secure-by-default; (2)(c) security updates; (2)(d) access control; (2)(j) attack-surface limitation. #4 mislabels (2)(c) as access control; official source: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R2847.
+
+
+## 2026-11-14 report #5 audit extension
+
+- Main-only report #5 source SHA: 447753b6ec40949251315d1274cdcf8ea3570218; manual audit: ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_5_2026-11-14.md.
+- File verdict CONFLICT; Raw Text Quote rejected 0/2; six atomic claims: 3 PARTIALLY_VERIFIED, 3 CONFLICT. #5 overlaps #2/#4 and creates no new Canonical Requirement.
+- Key correction: manufacturer obligations are Article 13, not Article 10; Annex I Part I(2)(a)=known exploitable vulnerabilities, (b)=secure-by-default, (j)=attack surface limitation.
+- Updated Ledger totals: 57 file records +357 new atomic claims +99 legacy claims =513 unique CRA-ARCH ID definitions; duplicate definitions 0. Legacy crosswalk references remain CANDIDATE.
