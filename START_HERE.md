@@ -531,3 +531,10 @@ Read [Cross-document Reconciliation](docs/CROSS_DOCUMENT_RECONCILIATION_2026-11-
 - [Report #4 audit](docs/ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_4_2026-11-14.md): file CONFLICT, quote 0/1, 6 claims reviewed; overlaps #2.
 - Ledger after #4: 506 unique CRA-ARCH ID definitions; 99 legacy crosswalks are CANDIDATE pending independent review.
 - Queue #4 is AUDITED; reports #1–#3 remain to be audited.
+
+
+## 2026-11-14 report #5 manual audit
+
+- [Report #5 audit](docs/ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_5_2026-11-14.md): CONFLICT, quote 0/2, overlaps #2/#4.
+- Ledger after #4/#5: 513 unique CRA-ARCH ID definitions; 99 legacy crosswalks remain CANDIDATE.
+- Queue #4/#5 AUDITED; reports #1–#3 remain pending.
