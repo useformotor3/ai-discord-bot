@@ -194,3 +194,19 @@ CRA Single Reporting Platform을 통한 제출 구조를 기준으로 한다. �
 - CVD 신고 연락 주소(Part II(6)), 사용자 단일 연락 창구(Article 13(17)), Annex II(2) 사용자 정보는 각각 확인한다.
 
 원문 대조: [main reports #58–#62 감사](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_58_62_2026-11-13.md).
+
+## 2026-11-14 Canonical Requirement traceability
+
+본 SOP의 Article 14 운영 절차는 다음 Canonical Requirement ID와 연결한다. 요구사항의 상세 정의 및 HW/FW/시험/증거 연결은 [통합 추적성 매트릭스](CRA_INTEGRATED_TRACEABILITY_MATRIX.md)와 [요구사항 추적성 매트릭스](CRA_REQUIREMENTS_TO_SERVO_DRIVE_TRACEABILITY_MATRIX.md)를 정본으로 사용한다.
+
+| SOP 절차 | Canonical Requirement ID | 적용 경계 |
+|---|---|---|
+| actively exploited vulnerability 신고 트랙 | CRA-REQ-REPORT-ACTIVE-001 | Article 14(1)–(2)의 제한된 trigger 및 단계별 기한 |
+| severe incident 신고 트랙 | CRA-REQ-REPORT-SEVERE-001 | Article 14(3)–(4)의 별도 trigger 및 1개월 final report |
+| 신고 경로·관할 CSIRT | CRA-REQ-REPORT-ROUTE-001 | Article 14(7) 신고 경로 |
+| trigger 및 기한 판정 | CRA-REQ-REPORT-SCOPE-TIMELINE-001 | 모든 취약점/사고의 일괄 신고로 확대 금지 |
+| 영향 사용자 통지 | CRA-REQ-USER-NOTIFY-001 | Article 14(8), where appropriate 조건 |
+| 전환 규정 | CRA-REQ-TRANSITION-001 | Article 69(3), 2027-12-11 이전 출시 제품에도 Article 14 신고 의무 적용 |
+| 제조자 의무 조항 식별 | CRA-REQ-MANUFACTURER-ARTICLE13-001 | Article 13 제조자 의무와 Article 14 신고를 혼동하지 않음 |
+
+모의훈련·운영 검증은 시험 대장의 TST-OPS-03/04를 사용하며 현재 NOT_RUN이다. 법정 신고 준비 여부나 실제 PSIRT 운영 능력을 입증하는 시험 결과로 간주하지 않는다.
