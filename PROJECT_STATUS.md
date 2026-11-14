@@ -73,7 +73,7 @@
 
 | 우선순위 | 항목 | 조치 |
 |---|---|---|
-| P0 | 원본 소스 동일성 보장 테스트 환경 | 실행 가능한 정확한 전달 경로 확보, blob SHA 선검증 |
+| P0 | 원본 소스 동일성 보장 테스트 환경 | **해결** — 전용 GitHub Actions에서 SHA 일치 후 compileall/pytest 수행 |
 | P1 | Git push 실패 미검증 | subprocess mock이 non-zero/CalledProcessError를 재현하도록 개선 |
 | P1 | Discord timeout/status 미검증 | timeout, 429/4xx/5xx, 네트워크 오류 테스트 및 코드 개선 |
 | P1 | 전송-아카이브-상태의 부분 성공 | 단계별 상태와 재실행/idempotency 정책 설계 |
@@ -171,3 +171,13 @@
 - Run #1(21 passed in 0.16s), Run #2(success)에 이어 문서 기록 반영 후 최신 HEAD에서 다시 성공했다.
 - Run #3의 source integrity, compile, pytest 단계와 최종 conclusion을 모두 확인했다.
 - 현재까지 확인된 테스트는 mock 기반이다. Discord/Git 실패 경로 검증 공백과 P1-B 미구현 상태는 유지한다.
+
+
+## 11. 최신 원격 상태 스냅샷 — 2026-11-14
+
+- 작업 브랜치 HEAD 확인 시점: `a413eee5faa8844d42224987aef98f2b99704b72`
+- main 대비 compare: diverged, 93 ahead / 53 behind
+- 이 수치는 해당 조회 시점의 스냅샷이며 이후 커밋에 따라 변동한다.
+- 테스트 전용 CI 최신 검증: [Run #3 success](https://github.com/useformotor3/ai-discord-bot/actions/runs/43568074938), 검증 commit `dddba44a41851e9d0319ce9a91535a9d26145d92`
+- Run #3 이후의 추가 변경은 README/상황판/계획 등 문서만이며 `main.py`, 테스트 소스, 테스트 workflow의 SHA 기준값은 변경하지 않았다.
+- merge/rebase는 여전히 보류한다.
