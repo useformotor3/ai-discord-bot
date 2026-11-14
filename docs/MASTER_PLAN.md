@@ -844,3 +844,12 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 - [ ] Sentence-level reconciliation of Volume 1, Volume 2, PSIRT SOP, classification matrix, threat model and test evidence register.
 - [ ] Then audit main-only reports #1–#5 for 2026-11-14 using fresh main HEAD/history/state/blob SHA.
 - [ ] Keep main read-only; no merge/rebase/sync. No protected code/workflow/prompt/schema/evidence bundle edits without separate approval.
+
+
+## 2026-11-14 — main CRA archive queue refresh
+
+- [x] main #2 → #3 commit delta 확인: report #3 archive 신규 추가, history.json +1, state.json count 2→3.
+- [x] 기존 대기열에 없던 2026-11-14 report #1/#2 등록 누락을 발견해 원문 commit/path/blob SHA를 보존.
+- [x] report #1–#3을 CRA_ARCHIVE_AUDIT_QUEUE에 NEW / NOT_YET_AUDITED로 등록하고 P0/P1 우선순위 및 법령·기술 쟁점 사전 메모 작성.
+- [ ] report #1부터 전체 Pass A/B/C 수행. Raw Text Quote와 개별 atomic claim을 별도 판정하고 파일 단위 verdict와 혼동하지 않는다.
+- [ ] 실제 SKU/product boundary/ST MCU 주문 코드 확보 전 제품 적용성 및 제조사별 보안 기능은 UNVERIFIED 유지. IEC 62443-4-2 원문도 무료 공식 접근 범위에서 별도 확인.
