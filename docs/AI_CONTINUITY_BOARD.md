@@ -467,3 +467,11 @@
 - #4는 #2와 같은 secure-by-default/초기 인증 주제다. 별도 요구사항 중복을 만들지 말고 동일 canonical requirement에 연결. #2/#4의 특정 비밀번호·포트 차단 구현은 법령 문언과 위험기반 설계 후보를 구분한다.
 - EUR-Lex OJ 20.11.2024 Annex I Part I(2)(b),(c),(d),(j) 문맥에서 #4 Raw Text Quote의 numbering/표현 불일치 후보를 확인했다. 전체 Pass A/B/C는 미완료.
 - main read-only, protected code/workflow/prompt unchanged; merge/rebase/sync 없음; tests not run. 다음 감사는 #1부터 전체 Pass A/B/C.
+
+## 2026-11-14 live recheck — 00:19 UTC
+
+- main HEAD: \`03b3ecaaa506c00146f5cb9d5855e6a66c3ef1c7\`; archive/history 1,567/1,567; state.json date/count 2026-11-14 / 4 (daily counter).
+- work branch HEAD at check: \`f0fbb4954b0853987ce9f918733e5f6858150483\`; archive/history 990/990.
+- compare main...cra-project-foundation: diverged, ahead 1,049 / behind 583. This is a snapshot; re-fetch live refs before every session. No merge/rebase/sync.
+- latest push CI run \`43533348296\` on the checked branch HEAD: SUCCESS; strict archive audit 990/990, missing/orphan/duplicate/malformed 0. Archive integrity only, not product compliance.
+- main daily report #4 is now registered in \`CRA_ARCHIVE_AUDIT_QUEUE.md\`; reports #1–#4 are queued for manual Pass A/B/C review. #4 overlaps #2 on secure-by-default and initial authentication; audit the overlap instead of treating it as a new requirement.
