@@ -1,14 +1,33 @@
-"""현재 main.py의 동작을 기록하는 Phase A characterization tests.
-
-이 테스트들은 운영 코드를 고치지 않는 Phase A의 기준선이다.
-특히 전체 모델 실패 경로의 잘못된 성공 처리는 알려진 P0 결함이며,
-Phase B에서 기대 동작으로 테스트를 전환한다.
-"""
+"""Phase B: 유효한 보고서만 후속 처리되는지 검증한다."""
 import json
+
+import pytest
+
+
+VALID_REPORT = """# CRA 심층 조사 보고서
+
+## 1. 주제 요약
+산업용 서보 드라이브의 사이버보안 요구사항과 제조자 책임을 정리한다.
+제품의 의도된 용도와 위험평가 결과를 기준으로 요구사항 적용성을 판단한다.
+
+## 2. 규격 근거 및 상세 내용
+규정 (EU) 2024/2847의 관련 조항과 부속서 요구사항을 구분해 검토한다.
+제조자는 제품 설계와 개발 단계에서 적절한 사이버보안 위험평가를 수행하고,
+식별된 위험을 기술문서와 제품 보안 설계에 반영해야 한다.
+본 설명은 적용성 검토를 위한 조사 초안이며 제품 분류는 별도 확인이 필요하다.
+
+## 3. 출처 자료(Source)
+EU 공식 법령 데이터베이스 EUR-Lex, Regulation (EU) 2024/2847.
+https://eur-lex.europa.eu/eli/reg/2024/2847/2024-11-20/eng
+
+## 4. 출처 원문 텍스트(Raw Text Quote)
+원문 조항을 확인하고 제품에 적용되는 문구를 인용해 근거를 기록한다.
+인용은 원문과 대조해야 하며 요약 문구를 법령 직접 인용으로 표시하지 않는다.
+"""
 
 
 def test_successful_generation_uses_only_mocked_external_services(run_main):
-    run_main.execute(["테스트 보고서: CRA Article 13"])
+    run_main.execute([VALID_REPORT])
 
     state = json.loads((run_main.workdir / "state.json").read_text(encoding="utf-8"))
     history = json.loads((run_main.workdir / "history.json").read_text(encoding="utf-8"))
@@ -17,9 +36,7 @@ def test_successful_generation_uses_only_mocked_external_services(run_main):
     assert state["count"] == 1
     assert len(history) == 1
     assert len(archives) == 1
-    assert "테스트 보고서" in archives[0].read_text(encoding="utf-8")
-
-    # Gemini, Discord, Git은 fixture mock을 통해서만 호출된다.
+    assert "CRA 심층 조사 보고서" in archives[0].read_text(encoding="utf-8")
     assert len(run_main.captured["model_calls"]) == 1
     assert len(run_main.captured["discord_posts"]) == 1
     assert [cmd[0] for cmd in run_main.captured["git_commands"]] == [
@@ -32,7 +49,7 @@ def test_model_fallback_is_exercised_without_real_api_calls(run_main):
         RuntimeError("mock transient failure 1"),
         RuntimeError("mock transient failure 2"),
         RuntimeError("mock transient failure 3"),
-        "두 번째 모델의 테스트 보고서",
+        VALID_REPORT,
     ])
 
     calls = run_main.captured["model_calls"]
@@ -42,20 +59,37 @@ def test_model_fallback_is_exercised_without_real_api_calls(run_main):
     assert len(run_main.captured["discord_posts"]) == 1
 
 
-def test_all_model_failures_currently_expose_known_p0_bug(run_main):
-    """현재 결함을 명시적으로 고정해 Phase B에서 수정 여부를 확인한다."""
-    run_main.execute([
-        RuntimeError("mock failure") for _ in range(6)
-    ])
+def test_all_model_failures_stop_without_side_effects(run_main):
+    with pytest.raises(SystemExit) as exc:
+        run_main.execute([RuntimeError("mock failure") for _ in range(6)])
 
-    state = json.loads((run_main.workdir / "state.json").read_text(encoding="utf-8"))
-    history = json.loads((run_main.workdir / "history.json").read_text(encoding="utf-8"))
-    archives = list((run_main.workdir / "research_archive").glob("*.md"))
-
-    # 현재 main.py는 전체 모델 실패 후에도 경고문을 보고서로 저장한다.
-    # 이는 통과해야 할 제품 요구사항이 아니라 Phase B에서 제거할 기준선이다.
+    assert exc.value.code == 1
     assert len(run_main.captured["model_calls"]) == 6
-    assert state["count"] == 1
-    assert len(history) == 1
-    assert len(archives) == 1
-    assert "시스템 긴급 경고" in archives[0].read_text(encoding="utf-8")
+    assert run_main.captured["discord_posts"] == []
+    assert run_main.captured["git_commands"] == []
+    assert not (run_main.workdir / "state.json").exists()
+    assert not (run_main.workdir / "history.json").exists()
+    assert not (run_main.workdir / "research_archive").exists()
+
+
+def test_invalid_short_or_malformed_output_is_retried_and_rejected(run_main):
+    invalid = "단순 오류 응답입니다. 조사를 완료하지 못했습니다."
+    with pytest.raises(SystemExit) as exc:
+        run_main.execute([invalid] * 6)
+
+    assert exc.value.code == 1
+    assert len(run_main.captured["model_calls"]) == 6
+    assert run_main.captured["discord_posts"] == []
+    assert run_main.captured["git_commands"] == []
+    assert not (run_main.workdir / "research_archive").exists()
+
+
+def test_invalid_first_model_response_falls_back_to_valid_second_model(run_main):
+    invalid = "짧은 응답"
+    run_main.execute([invalid, invalid, invalid, VALID_REPORT])
+
+    calls = run_main.captured["model_calls"]
+    assert len(calls) == 4
+    assert all(call["model"] == "gemini-flash-latest" for call in calls[:3])
+    assert calls[3]["model"] == "gemini-3.5-flash-lite"
+    assert len(run_main.captured["discord_posts"]) == 1
