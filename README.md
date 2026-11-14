@@ -15,7 +15,7 @@
 - 임시 재구성 사본 pytest: 21 passed (blob SHA 불일치로 예비 결과만 인정)
 - **원본 동일성이 입증된 저장소 전체 pytest 및 GitHub Actions CI: 미실행**
 - 실제 코드 리뷰에서 Discord/Git 실패 처리, 원자적 저장, 테스트 fixture의 실패 경로 검증 공백 확인
-- main 대비 작업 브랜치: 61 ahead / 49 behind, diverged. merge/rebase 보류
+- main 대비 작업 브랜치: 67 ahead / 49 behind, diverged. merge/rebase 보류
 
 Actions 성공은 자동화 실행 결과이지 CRA 법령 해석이나 출처의 사실 정확성을 보증하지 않습니다. 테스트 통과 숫자는 반드시 실행한 정확한 소스와 범위를 함께 표시합니다.
 
