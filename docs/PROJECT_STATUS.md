@@ -969,3 +969,12 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - 파일 단위 판정은 세 건 모두 UNVERIFIED / NEW / NOT_YET_AUDITED. 사전 원문 대조에서 #1 SBOM 적용범위·Annex VII 인용, #2 secure-by-default Raw Text Quote 및 포트/비밀번호 보편 의무 주장, #3 Secure Boot 의무화·Annex I 인용 구조에 충돌 후보를 기록. 전체 Pass A/B/C 감사와 원자 주장 분해는 미완료.
 - EUR-Lex Regulation (EU) 2024/2847 OJ L 20.11.2024의 Annex I Part I/II, Annex II, Article 31, Annex VII, Annex VIII 관련 문맥을 확인. 제조사 자료는 실제 ST MCU 주문 코드 미확정으로 검증 보류; IEC 62443-4-2 SR mapping도 UNVERIFIED.
 - main read-only. 이번 실행에서 main.py, Gemini prompt, 운영 자동화 코드, .github/workflows/run.yml 또는 main 브랜치 파일을 수정하지 않음. merge/rebase/sync 없음. 테스트 미실행.
+
+## 2026-11-14 — main report #4 queue update
+
+- main HEAD: 03b3ecaaa506c00146f5cb9d5855e6a66c3ef1c7 (report #4). #3 → #4는 1 commit이며 report #4 archive, history.json, state.json이 변경됐다.
+- main history.json: 1,567 entries; state.json count=4 (일일 카운터). #4 원문 파일 fetch 완료; 전체 archive tree count는 재열거하지 않음.
+- CRA_ARCHIVE_AUDIT_QUEUE에 2026-11-14 report #1–#4 등록. #1/#2는 queue 누락 보정, #3/#4는 main #2 기준선 이후 추가된 보고서. #4는 #2와 secure-by-default/초기 인증 주제가 중복된다.
+- #4 사전 원문 확인: Annex I Part I(2)(b),(d),(j)는 secure-by-default/access control/attack-surface 요구를 뒷받침하지만, 고정 기본 비밀번호 금지·최초 사용 강제 변경·모든 미사용 포트 차단을 보편적 구현으로 직접 지정하지 않는다. Raw Text Quote는 번호와 문구가 원문과 불일치하는 후보.
+- #1–#4 파일 단위 판정은 모두 UNVERIFIED / NEW / NOT_YET_AUDITED. #1 P0, #2–#4 P1. 전체 Pass A/B/C 및 제품별 적용성 검증은 미완료.
+- main read-only; main.py, Gemini prompt, 운영 자동화 코드, .github/workflows/run.yml 및 main 브랜치 변경 없음. merge/rebase/sync 없음. 테스트 미실행.
