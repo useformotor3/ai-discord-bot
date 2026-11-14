@@ -35,3 +35,27 @@
 2. 각 파일의 Git blob SHA가 조회 시점의 SHA와 일치하는지 먼저 확인한다.
 3. 일치한 원본에 대해 compileall 및 전체 pytest를 다시 실행한다.
 4. 결과와 실행 로그를 상황판 및 세션 로그에 반영한다.
+
+## 2026-11-14 추가 검증 — GitHub Actions 원본 checkout 성공
+
+이전 임시 재구성 사본의 SHA 불일치 문제를 해소하기 위해 사용자의 별도 승인을 받아 테스트 전용 workflow를 작업 브랜치에 추가했다.
+
+- Workflow: `.github/workflows/tests.yml`
+- 실행: [GitHub Actions Run #1](https://github.com/useformotor3/ai-discord-bot/actions/runs/43567990149)
+- 실행 commit: `d31c604c6067685e33f6888cbc488c0e45d80be7`
+- checkout된 원본의 5개 핵심 파일 Git blob SHA: 모두 GitHub 조회값과 일치
+- compileall: 종료 코드 0
+- pytest: **21 passed in 0.16s**
+- workflow/job 결론: success
+
+이 결과는 임시로 재구성한 파일이 아니라 GitHub Actions가 실행 commit에서 직접 checkout한 원본에 대한 검증이다. 따라서 해당 commit의 기본 pytest suite는 통과한 것으로 인정한다.
+
+### 보안 및 범위
+- 테스트 전용 workflow는 작업 브랜치 push 및 수동 실행만 지원한다.
+- `contents: read`, checkout credential persistence 비활성화.
+- Gemini API/Discord webhook 비밀키와 운영 Git push 권한을 사용하지 않는다.
+- 기존 운영 `run.yml`, 운영 `main.py`, `state.json`, `history.json`, 운영 `main` 브랜치는 변경하거나 실행하지 않았다.
+- 테스트는 mock 기반이며 Discord timeout/status 및 Git push 실패 동작을 검증하지 않는다. 이 공백은 별도 P1-B 범위로 남긴다.
+
+### 결론
+원본 동일성 검증 실행 경로 및 기본 회귀 테스트 기반을 확보했다. 다만 테스트 커버리지의 실패 경로 공백까지 해소한 것은 아니므로 P1-B 구현 전 별도 설계·승인을 유지한다.
