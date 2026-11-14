@@ -861,3 +861,11 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 - [x] #4 duplicate topic with #2 identified; map to the same canonical requirements rather than create duplicate requirements.
 - [ ] Full Pass A/B/C for #1–#4; prioritize #1 P0, then #2–#4 P1. Raw quote and atomic claims must be adjudicated separately from file-level verdict.
 - [ ] Product SKU/product boundary/ST MCU order code and IEC 62443-4-2 official text remain required for product/technology applicability decisions.
+
+## 2026-11-14 live recheck — 00:19 UTC
+
+- main HEAD: \`03b3ecaaa506c00146f5cb9d5855e6a66c3ef1c7\`; archive/history 1,567/1,567; state.json date/count 2026-11-14 / 4 (daily counter).
+- work branch HEAD at check: \`f0fbb4954b0853987ce9f918733e5f6858150483\`; archive/history 990/990.
+- compare main...cra-project-foundation: diverged, ahead 1,049 / behind 583. This is a snapshot; re-fetch live refs before every session. No merge/rebase/sync.
+- latest push CI run \`43533348296\` on the checked branch HEAD: SUCCESS; strict archive audit 990/990, missing/orphan/duplicate/malformed 0. Archive integrity only, not product compliance.
+- main daily report #4 is now registered in \`CRA_ARCHIVE_AUDIT_QUEUE.md\`; reports #1–#4 are queued for manual Pass A/B/C review. #4 overlaps #2 on secure-by-default and initial authentication; audit the overlap instead of treating it as a new requirement.
