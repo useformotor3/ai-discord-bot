@@ -177,9 +177,9 @@
 ## 2026-11-13 authoritative evidence index
 
 - main-only reports #8–#62: 55 files, 40 CONFLICT / 15 PARTIALLY_VERIFIED / 0 VERIFIED, direct quote reuse 0/55; consecutive non-random sample only.
-- Claim Evidence Ledger: 55 file-level records + 345 atomic claims = 400 unique IDs, zero collisions; 45 canonical requirements; 42 referenced by new claims, 3 forward-mapped; 99 legacy claims unmapped.
+- Claim Evidence Ledger: 55 file-level records + 345 atomic claims = 400 unique IDs, zero collisions; 45 canonical requirements; 42 referenced by new claims, 3 forward-mapped; 99 legacy claims have candidate crosswalks pending independent review.
 - Canonical requirement mapping is integrated into [requirements-to-servo-drive matrix](CRA_REQUIREMENTS_TO_SERVO_DRIVE_TRACEABILITY_MATRIX.md) and [integrated traceability matrix](CRA_INTEGRATED_TRACEABILITY_MATRIX.md).
-- Next P0: migrate 99 legacy claims without Canonical IDs and complete sentence-level reconciliation of Volume 1/2, PSIRT SOP, product-classification matrix, threat model and test register; then audit 2026-11-14 main-only reports #1–#5.
+- Next P0: independently review 99 legacy candidate mappings and complete sentence-level reconciliation of Volume 1/2, PSIRT SOP, product-classification matrix, threat model and test register; then audit 2026-11-14 main-only reports #1–#5.
 
 - [Security Test Evidence Register](SECURITY_TEST_EVIDENCE_REGISTER.md): includes TST-LOG-01/02 and TST-ERASE-01..04; all NOT_RUN.
 - [Product Classification and Access Control Matrix](CRA_PRODUCT_CLASSIFICATION_AND_ACCESS_CONTROL_MATRIX.md): Article 7/Annex III/Implementing Regulation 2025/2392 and Annex I Part I(2)(d) canonical mapping.
