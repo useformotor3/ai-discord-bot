@@ -959,3 +959,13 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - Ledger: 55 file records + 345 atomic claims for #8–#62; plus 99 legacy claim records with candidate Canonical/Evidence crosswalks pending independent review. Total 499 unique CRA-ARCH IDs, duplicate 0. 5 summary rows #48–#52 use SUMMARY labels, not Claim IDs.
 - Next P0: independently review the 99 legacy candidate crosswalks and finish sentence-level reconciliation across Volume 1/2, PSIRT SOP, classification matrix, threat model and test register. Next archive audit begins at 2026-11-14 daily reports #1–#5 after the P0 mapping pass.
 - Product-specific applicability, Important Product classification and exact MCU order code remain UNVERIFIED; all DUT tests NOT_RUN. main.py, production workflow, Gemini prompt, schema and evidence bundle unchanged.
+
+
+## 2026-11-14 — main CRA archive queue refresh (#1–#3)
+
+- main HEAD: a761c5a8ad9029b1f1bce85265130e755aa39352 (Auto-archive report #3). Previous main #2 HEAD 291b1c93905d41c9bba83b4510c3e5ef43f86e95 대비 1 commit ahead; diff는 report #3 archive 신규 추가, history.json 1 entry 추가, state.json count 2→3.
+- main history.json: 1,566 entries; state.json date=2026-11-14, count=3 (일일 카운터). report #1–#3 원문 파일은 main에서 개별 fetch 완료. archive tree 전체 recursive count는 별도 재검증하지 않음.
+- CRA_ARCHIVE_AUDIT_QUEUE에 2026-11-14 report #1–#3 등록 완료. #1/#2는 이전 main #2 snapshot에 있었으나 queue 누락을 보정했고, #3은 그 이후 새로 추가됨. #1 P0, #2/#3 P1.
+- 파일 단위 판정은 세 건 모두 UNVERIFIED / NEW / NOT_YET_AUDITED. 사전 원문 대조에서 #1 SBOM 적용범위·Annex VII 인용, #2 secure-by-default Raw Text Quote 및 포트/비밀번호 보편 의무 주장, #3 Secure Boot 의무화·Annex I 인용 구조에 충돌 후보를 기록. 전체 Pass A/B/C 감사와 원자 주장 분해는 미완료.
+- EUR-Lex Regulation (EU) 2024/2847 OJ L 20.11.2024의 Annex I Part I/II, Annex II, Article 31, Annex VII, Annex VIII 관련 문맥을 확인. 제조사 자료는 실제 ST MCU 주문 코드 미확정으로 검증 보류; IEC 62443-4-2 SR mapping도 UNVERIFIED.
+- main read-only. 이번 실행에서 main.py, Gemini prompt, 운영 자동화 코드, .github/workflows/run.yml 또는 main 브랜치 파일을 수정하지 않음. merge/rebase/sync 없음. 테스트 미실행.
