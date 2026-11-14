@@ -198,3 +198,10 @@
 - 런타임 `state.json`·`history.json`은 프로젝트 작업 로그가 아니며 별도 승인 없이 수정하지 않는다.
 - 최근 원격 compare 재조회: `main` 대비 diverged, 96 commits ahead / 54 commits behind (2026-11-14 조회 시점). 이후 문서 커밋으로 ahead 값은 증가할 수 있으므로 통합 직전 재조회한다.
 - 병합/리베이스는 계속 보류한다.
+
+## 12. 프로젝트 로그 구축 후 원격 상태 재확인 — 2026-11-14
+
+- `PROJECT_LOG.jsonl` 및 관리 문서 갱신 후 GitHub compare 재조회: `main` 대비 diverged, **102 ahead / 54 behind**.
+- compare 기준 main HEAD: `6ba398b5aebb136b1026b94cf361670b1f7f60bd`; merge base: `f9a12a5778f5fa1d907201ab2931d20ca2656bb7`.
+- 이 값은 이번 조회 시점의 스냅샷이다. 자동화 커밋으로 변동 가능하며 병합/리베이스는 보류한다.
+- CI 최신 성공 근거는 Run #3, 검증 commit `dddba44a41851e9d0319ce9a91535a9d26145d92`; 이후 이번 작업은 문서만 변경했다.
