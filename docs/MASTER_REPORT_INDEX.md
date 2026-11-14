@@ -186,7 +186,7 @@
 
 ## Current Git / CI baseline — 2026-11-14
 
-- main: report #125, HEAD \`92e8ca7aa4a86b38627a1d8e9535e5b0463a8392\`; state count125 (daily), history 1,400.
+- Historical main snapshot 2026-11-13: report #125 / archive-history 1,400/1,400; superseded by 2026-11-14 snapshot in CROSS_DOCUMENT_RECONCILIATION_2026-11-14.md.
 - work branch: \`cra-project-foundation\` HEAD \`ced168745cd19400ba29131a495c3bf5c3f924eb\`; compare diverged, diverged; ahead/behind values dynamic. No merge/rebase/sync authorized or performed.
 - Source integrity: #8–#62 source file paths/blob SHAs 55/55 match current main tree.
 - Latest push CI at that snapshot: run 43531794670 SUCCESS; strict archive audit 990/990 consistent. This is branch CI, not main archive count.
