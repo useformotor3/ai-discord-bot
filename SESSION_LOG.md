@@ -297,3 +297,12 @@
 ### 다음 재개 지점
 1. 상황판과 README에 Run #1 및 21 passed를 반영하고 저장 후 재조회
 2. fixture 실패 경로 보강 설계 및 P1-B 별도 승인 절차 진행
+
+
+## 2026-11-14 — 최신 브랜치 HEAD에서 CI 재검증
+
+- 앞선 Run #1 성공 결과를 README/상황판/계획/감사 기록에 반영한 후 최신 HEAD `dddba44a41851e9d0319ce9a91535a9d26145d92`에서 workflow 재실행을 확인했다.
+- [Run #3](https://github.com/useformotor3/ai-discord-bot/actions/runs/43568074938): success
+- 원본 SHA 5개 일치, compileall 통과, pytest **21 passed in 0.19s**
+- 테스트 전용 workflow가 코드 기준 SHA를 검사하고 있음을 반복 확인했다.
+- 이 실행은 문서 변경을 포함한 최신 HEAD의 회귀 검증이다. P1-B의 실패 경로 테스트를 새로 추가한 것은 아니다.
