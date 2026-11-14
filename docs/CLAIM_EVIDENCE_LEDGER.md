@@ -955,7 +955,7 @@ Correct map: Annex I Part I(2)(c) for applicable automatic-update default/user c
 
 - #8–#62 file-level source records: 55개, ID suffix \`-FILE-001\`; 원본 경로/blob SHA/파일 단위 판정 추적.
 - #8–#62 atomic claim records: 345개, ID suffix \`-001\`, \`-002\` 등; 개별 법령 주장·인용·반증 추적.
-- 2026-11-13 main-only namespace: 400 unique ID (55 file-level + 345 atomic). 이전 legacy claim 99개가 별도 존재하므로 전체 Ledger는 499 unique CRA-ARCH IDs다. 파일 요약 표기는 Claim ID namespace에서 제외하고 SUMMARY-#NN으로 표시한다.
+- 2026-11-13 main-only namespace: 400 unique ID (55 file-level + 345 atomic). 이전 legacy claim 99개가 별도 존재하므로 report #4 감사 전 전체 Ledger는 499 unique CRA-ARCH IDs였다. Report #4 반영 후 506개다. 파일 요약 표기는 Claim ID namespace에서 제외하고 SUMMARY-#NN으로 표시한다.
 - Canonical requirement IDs: 45개. 345개 atomic claim의 Canonical ID 열을 정규화했으며, 하나의 claim은 여러 요구사항에 연결될 수 있다.
 - 파일 단위 판정과 개별 claim 상태는 별개다. 개별 claim VERIFIED가 원본 파일 전체 VERIFIED를 의미하지 않는다.
 - 제품별 적용성/Class I/II, SKU·core functionality, 실제 DUT 시험은 관련 증거가 확보되기 전까지 UNVERIFIED/NOT_RUN이다.
@@ -1037,7 +1037,7 @@ Batch direct quote reuse: **0/5**. Per-file quote counts are not inferred where 
 
 - #8–#62 main-only namespace: 55 file-level records + 345 atomic claims = 400 unique IDs.
 - Earlier legacy claim namespace \`CRA-ARCH-035-*\`…\`CRA-ARCH-124-*\`: 99 additional atomic claim records; none yet has a \`CRA-REQ-*\` mapping.
-- Entire Ledger: 55 file records + 345 new atomic claims + 99 legacy claims = **499 unique CRA-ARCH IDs**, duplicate 0.
+- Entire Ledger before report #4: 55 file records + 345 new atomic claims + 99 legacy claims = **499 unique CRA-ARCH IDs**, duplicate 0.
 - Of the 345 new atomic claims, 343 reference one or more of 42 Canonical Requirements. Two quote-accuracy-only claims reference \`CRA-EVIDENCE-QUOTE-ACCURACY-001\` and intentionally do not receive a product requirement ID.
 - The 45-entry Canonical Requirement Register has 42 requirements directly referenced by new atomic claims and 3 currently forward-mapped only in the traceability matrices: interconnectivity, exploit mitigation, secure data transfer.
 - All 99 legacy claims now have candidate Canonical/Evidence crosswalk rows. These are not independently verified; review them claim-by-claim before marking migration complete.
