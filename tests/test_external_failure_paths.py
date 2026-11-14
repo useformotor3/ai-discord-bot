@@ -40,9 +40,9 @@ def test_discord_429_is_retried_then_succeeds(run_main):
 
 @pytest.mark.xfail(
     strict=True,
-    reason="P1-B: Discord 5xx는 제한 재시도해야 함",
+    reason="P1-B: 5xx 응답은 중복 방지 수단이 없으면 delivery_unknown으로 남기고 자동 재전송하지 않아야 함",
 )
-def test_discord_503_is_retried_then_succeeds(run_main):
+def test_discord_503_is_not_retried_when_delivery_is_ambiguous(run_main):
     run_main.execute(
         [VALID_REPORT],
         discord_responses=[
@@ -51,7 +51,23 @@ def test_discord_503_is_retried_then_succeeds(run_main):
         ],
     )
 
-    assert len(run_main.captured["discord_posts"]) == 2
+    assert len(run_main.captured["discord_posts"]) == 1
+    assert run_main.captured.get("discord_status") == "delivery_unknown"
+
+
+@pytest.mark.parametrize("status_code", [401, 403, 404])
+@pytest.mark.xfail(
+    strict=True,
+    reason="P1-B: Discord 인증/권한/없는 webhook 오류는 영구 실패로 분류하고 재시도하지 않아야 함",
+)
+def test_discord_permanent_errors_are_not_retried(run_main, status_code):
+    run_main.execute(
+        [VALID_REPORT],
+        discord_responses=[{"status_code": status_code}],
+    )
+
+    assert len(run_main.captured["discord_posts"]) == 1
+    assert run_main.captured.get("discord_status") == "permanent_failure"
 
 
 @pytest.mark.xfail(
