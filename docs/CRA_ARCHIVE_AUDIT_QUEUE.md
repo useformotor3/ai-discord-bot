@@ -2618,3 +2618,8 @@ Batch result: 5/5 CONFLICT, 0 PARTIALLY_VERIFIED, 0 VERIFIED; 0/5 Raw Text Quote
 - 개별 주장 사전 판정: secure-by-default/appropriate access control/attack-surface 주제는 PARTIALLY_VERIFIED 후보; 강제 비밀번호 변경·모든 미사용 포트 차단은 보편적 직접 의무 주장으로는 CONFLICT 후보.
 - 제품별 적용성: UNVERIFIED — SKU, 계정 모델, 실제 서비스/포트/디버그 정책 미확정.
 
+## 2026-11-14 live archive baseline — 00:19 UTC
+
+- main HEAD `03b3ecaaa506c00146f5cb9d5855e6a66c3ef1c7`; archive/history 1,567/1,567; state date/count 2026-11-14 / 4 (daily counter).
+- Reports #1–#4 for 2026-11-14 are registered for manual audit; #4 duplicates the secure-by-default/initial-auth topic in #2 and should be cross-compared.
+- Main remains read-only. Refresh main HEAD/history/state and each file blob SHA before auditing.
