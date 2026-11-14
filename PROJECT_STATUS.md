@@ -57,7 +57,7 @@
 - 추가 파일: `tests/conftest.py`, `tests/test_main_characterization.py`, `tests/test_mock_infrastructure.py`, `tests/README.md`
 - mock 경계: Gemini SDK, Discord HTTP 요청, Git subprocess, sleep
 - 테스트 실행 결과(격리된 로컬 검증): `python -m compileall -q tests` 통과, `pytest -q tests/test_mock_infrastructure.py` 2 passed
-- 실제 `main.py`를 실행하는 characterization 3건은 저장소 전체 checkout이 없는 실행 환경에서 아직 실행하지 못했다. 따라서 전체 테스트 통과로 간주하지 않는다.
+- 브랜치에서 조회한 `main.py` 원문을 격리 작업공간에 반영해 전체 테스트를 실행했다: `python -m compileall -q tests` 통과, `pytest -q` 5 passed. 이는 mock 격리 실행이며 운영 환경/CI 실행은 아니다.
 - 외부 서비스 실호출: 없음
 - 운영 파일 변경: 없음 (`main.py`, workflow, `state.json`, `history.json` 미변경)
 
