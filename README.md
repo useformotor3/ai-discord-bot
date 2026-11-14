@@ -80,9 +80,9 @@ Actions 성공은 자동화 실행 결과이지 CRA 법령 해석이나 출처�
 
 
 ## 최신 원격 상태 — 2026-11-14 확인
-- 현재 작업 브랜치 HEAD 확인값(작업 시작): `4f599f14e92dcbe5ead14d4886feda34cfd874da`
+- CI 검증 대상 commit: `27d2c69287631b041672b9989fdeeb3066f5ebb9` (Run #13); 문서 정리 전 HEAD
 - 기준 브랜치: `docs/cra-audit-and-project-control-2026-11-14` @ `c6dfc5cee2485922b2313030dd9a5843e347afe7`
-- 기준 브랜치 대비: 21 ahead / 0 behind (작업 시작 시점)
-- `main` 대비: diverged, 132 ahead / 58 behind (작업 시작 시점; 자동화 커밋으로 변동)
-- 최신 확인 테스트 증거: [Run #11](https://github.com/useformotor3/ai-discord-bot/actions/runs/43569359083), 23 passed / 5 xfailed. 이번 추가 테스트는 아직 CI 미실행.
+- 기준 브랜치 대비: 23 ahead / 0 behind (Run #13 시점)
+- `main` 대비: diverged, 134 ahead / 58 behind (Run #13 시점; 자동화 커밋으로 변동)
+- 최신 확인 테스트 증거: [Run #13](https://github.com/useformotor3/ai-discord-bot/actions/runs/43570175208), 30 passed / 5 xfailed. Run #13이 새 fixture 7개 case를 포함한 변경 소스 SHA와 compileall을 검증했다.
 - 이 문서 앞부분의 과거 브랜치/Run #3 요약은 당시 기록이다. 현재 기준은 이 최신 상태 절과 `PROJECT_STATUS.md`를 따른다.

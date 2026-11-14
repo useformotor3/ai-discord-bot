@@ -65,3 +65,10 @@ python -m pytest -q
 - Git add/commit/push 각 단계의 non-zero return 및 check=True 예외, 실패 후 후속 명령 중단
 - 이 테스트는 fixture 기능만 검증한다. 운영 코드의 retry, permanent-failure handling, sync status, atomic write를 검증하지 않는다.
 - 최신 실행 결과는 이번 변경 commit의 GitHub Actions run을 확인한 뒤 기록한다.
+
+
+## 2차 확장 CI 결과 — 2026-11-14
+- Run #12: 실패. 변경된 `tests/test_mock_infrastructure.py`의 SHA pin 누락이 원인으로, source integrity 단계에서 중단되어 compileall/pytest는 실행되지 않았다.
+- Run #13: [성공](https://github.com/useformotor3/ai-discord-bot/actions/runs/43570175208), commit `27d2c69287631b041672b9989fdeeb3066f5ebb9`.
+- 6개 핵심 파일 Git blob SHA 일치, compileall 통과, pytest **30 passed, 5 xfailed**.
+- 새로 추가한 7개 fixture case는 Run #13에 포함된다.

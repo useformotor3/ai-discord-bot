@@ -289,7 +289,21 @@
 - P1-B 운영 코드와 `main.py`는 수정하지 않는다.
 
 ### CI 및 후속 확인
-- 새 테스트 수: 기존 23 passed / 5 xfailed에서 7개 fixture case 추가. 실제 결과는 새 commit의 Actions 실행 후 기록한다.
+- 새 테스트 수: 기존 23 passed / 5 xfailed에서 7개 fixture case 추가. Run #13에서 30 passed / 5 xfailed로 확인했다.
 - 테스트 workflow의 source pin은 변경된 `tests/test_mock_infrastructure.py` blob SHA로 갱신했다.
-- CI 전 검증은 미실행 상태다. 성공을 주장하지 않는다.
-- 기존 Run #11은 테스트 소스 변경 전 commit이므로 이번 추가 7개 case를 검증하지 않는다.
+- Run #13에서 source integrity, compileall, pytest 전체가 통과했다.
+- Run #11은 변경 전 소스만 검증하며, 이번 추가 7개 case는 Run #13에서 검증했다.
+
+
+## 18. 실패 주입 2차 확장 CI 완료 및 정정 이력 — 2026-11-14
+
+- 검증 대상 commit: `27d2c69287631b041672b9989fdeeb3066f5ebb9`
+- [GitHub Actions Run #13 — success](https://github.com/useformotor3/ai-discord-bot/actions/runs/43570175208)
+- 6개 source blob SHA: 모두 일치
+- `python -m compileall -q main.py tests`: 통과
+- `python -m pytest -q`: **30 passed, 5 xfailed in 0.26s**
+- 기존 23 passed / 5 xfailed에서 fixture capability 테스트 7건을 추가한 결과다.
+- Run #12는 실패했다. 로그에서 `tests/test_mock_infrastructure.py`의 실제 blob SHA가 workflow pin과 불일치한 것을 확인했다. 운영 코드/테스트 로직 실패가 아니라 SHA 고정값 갱신 누락이었다. 이후 테스트 파일과 workflow pin을 같은 논리 작업으로 수정하고 Run #13에서 SHA 6개 일치 및 전체 테스트 통과를 확인했다.
+- Run #12 실패를 삭제하거나 성공으로 바꾸지 않는다. 이력은 Run #12 및 Run #13 링크로 보존한다.
+- 기준 docs commit 대비 현재 23 ahead / 0 behind. `main` 대비 diverged 134 ahead / 58 behind (조회 당시 main HEAD `3b2dafd098b51eb60998ce3be032efc4a42760fb`, merge-base `f9a12a5778f5fa1d907201ab2931d20ca2656bb7`). 문서 commit 추가 후 ahead 수는 증가한다.
+- 이번 테스트는 fixture injection과 경계 관찰을 검증한다. 운영 main.py의 retry/부분 전송/상태화/atomic persistence를 검증하지 않는다.

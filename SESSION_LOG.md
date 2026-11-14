@@ -415,3 +415,19 @@
 - 이번 commit을 push한 후 전용 Actions에서 exact blob SHA → compileall → 전체 pytest 순으로 검증한다.
 - 새 CI 결과 전에는 테스트 통과를 주장하지 않는다. 기존 Run #11은 변경 전 코드만 검증한다.
 - merge/rebase/PR merge, 운영 workflow 실행, Gemini/Discord 실호출, 실제 Git push는 수행하지 않는다.
+
+
+## 2026-11-14 — 실패 주입 fixture 2차 확장 CI 검증 및 정정
+
+### CI 결과
+- 첫 실행 Run #12: [failure](https://github.com/useformotor3/ai-discord-bot/actions/runs/43570141381), commit `717175eed7bd29c0d8d9e86616b66fe5ebfc24da`.
+- 로그를 확인한 결과 `tests/test_mock_infrastructure.py` 실제 SHA `0750cc274fe2490c30e1d508c721c86ed3d9ee1b`와 workflow 기대 SHA `706d0c1d7cfcd595129e6cd4c42947ab4bf00bb8`가 불일치했다. 이 단계에서 중단되어 compileall/pytest는 실행되지 않았다.
+- 테스트 소스의 생성 문자열 개행 이스케이프도 함께 점검·수정했고, workflow SHA를 새 blob `05a92ff7ff3a6e4a0374d270770ecc6cf38e0a7f`로 갱신했다.
+- 수정 commit: `27d2c69287631b041672b9989fdeeb3066f5ebb9`.
+- Run #13: [success](https://github.com/useformotor3/ai-discord-bot/actions/runs/43570175208). 6개 blob SHA 모두 일치, compileall 통과, pytest **30 passed, 5 xfailed in 0.26s**.
+- 이 결과는 현재 테스트 소스와 fixture를 대상으로 한 mock CI다. 실제 Gemini/Discord/Git push나 운영 workflow는 실행하지 않았다.
+
+### 원격 추적
+- Run #13 시점 기준 docs commit 대비 23 ahead / 0 behind.
+- main 대비 diverged 134 ahead / 58 behind; main HEAD `3b2dafd098b51eb60998ce3be032efc4a42760fb`, merge-base `f9a12a5778f5fa1d907201ab2931d20ca2656bb7`.
+- 문서 갱신 commit 이후 수치는 다시 조회한다. merge/rebase/PR merge는 하지 않는다.
