@@ -538,3 +538,10 @@ Read [Cross-document Reconciliation](docs/CROSS_DOCUMENT_RECONCILIATION_2026-11-
 - [Report #5 audit](docs/ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_5_2026-11-14.md): CONFLICT, quote 0/2, overlaps #2/#4.
 - Ledger after #4/#5: 513 unique CRA-ARCH ID definitions; 99 legacy crosswalks remain CANDIDATE.
 - Queue #4/#5 AUDITED; reports #1–#3 remain pending.
+
+## 2026-11-14 live main recheck — 00:25 UTC
+
+- main HEAD: \`4a38d85a1cd6c50dfec0ab2c2f0c9b5931d5ea8d\`; archive/history 1,569/1,569; state date/count 2026-11-14 / 6 (daily counter).
+- Reports #1–#6 are now present in the 2026-11-14 daily archive. Manual audit status: #4 and #5 AUDITED; #1–#3 and #6 pending. #2/#4/#5 overlap on secure-by-default/initial authentication; #6 is Secure Boot/HWRoT.
+- main remains read-only. Re-fetch main HEAD/history/state and original blob SHAs before each audit batch.
+- Work branch HEAD and CI are dynamic; re-fetch after the latest queue update. No merge/rebase/sync.
