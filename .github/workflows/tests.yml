@@ -49,7 +49,7 @@ jobs:
           verify_blob "main.py" "470ac101d5cc4fdb2c5077d5468ef00327af3d43"
           verify_blob "tests/conftest.py" "52a9f75aeda9d067c34f3fb54db98e3989d14010"
           verify_blob "tests/test_main_characterization.py" "8019b18696bc9f1eb729feed633ecf2e32f36c04"
-          verify_blob "tests/test_mock_infrastructure.py" "706d0c1d7cfcd595129e6cd4c42947ab4bf00bb8"
+          verify_blob "tests/test_mock_infrastructure.py" "05a92ff7ff3a6e4a0374d270770ecc6cf38e0a7f"
           verify_blob "tests/test_p1_reliability.py" "cff881cb0da2724f8810b88ae621909a9e23a6f9"
           verify_blob "tests/test_external_failure_paths.py" "1fcc15c68b1bde5acb7d1ad18dcb21b84ab87183"
 

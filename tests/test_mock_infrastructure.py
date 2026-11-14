@@ -96,14 +96,14 @@ def test_git_mock_reproduces_check_true_called_process_error(run_main):
 def test_discord_fixture_injects_transport_exceptions(run_main, failure):
     script = run_main.workdir / "discord_transport_failure.py"
     script.write_text(
-        "import requests\\n"
-        "try:\\n"
+        "import requests\n"
+        "try:\n"
         "    requests.post('https://example.invalid/mock', "
-        "json={'content': 'mock'}, timeout=5)\\n"
-        "except Exception as exc:\\n"
-        "    assert str(exc) in ('mock connection reset', 'mock request timeout')\\n"
-        "else:\\n"
-        "    raise AssertionError('transport exception was not injected')\\n",
+        "json={'content': 'mock'}, timeout=5)\n"
+        "except Exception as exc:\n"
+        "    assert str(exc) in ('mock connection reset', 'mock request timeout')\n"
+        "else:\n"
+        "    raise AssertionError('transport exception was not injected')\n",
         encoding="utf-8",
     )
     run_main.execute(["unused"], script_path=script, discord_responses=[failure])
@@ -116,11 +116,11 @@ def test_discord_fixture_injects_transport_exceptions(run_main, failure):
 def test_discord_fixture_injects_authentication_http_failures(run_main, status_code):
     script = run_main.workdir / "discord_auth_failure.py"
     script.write_text(
-        "import requests\\n"
+        "import requests\n"
         "response = requests.post('https://example.invalid/mock', "
-        "json={'content': 'mock'}, timeout=2)\\n"
-        "assert response.status_code in (401, 403)\\n"
-        "response.raise_for_status()\\n",
+        "json={'content': 'mock'}, timeout=2)\n"
+        "assert response.status_code in (401, 403)\n"
+        "response.raise_for_status()\n",
         encoding="utf-8",
     )
     with pytest.raises(RuntimeError, match=str(status_code)):
@@ -153,10 +153,10 @@ def test_git_fixture_injects_failure_at_each_sync_stage(
 ):
     script = run_main.workdir / "git_stage_failure.py"
     script.write_text(
-        "import subprocess\\n"
-        "subprocess.run(['git', 'add', '.'], check=True)\\n"
-        "subprocess.run(['git', 'commit', '-m', 'test'], check=True)\\n"
-        "subprocess.run(['git', 'push'], check=True)\\n",
+        "import subprocess\n"
+        "subprocess.run(['git', 'add', '.'], check=True)\n"
+        "subprocess.run(['git', 'commit', '-m', 'test'], check=True)\n"
+        "subprocess.run(['git', 'push'], check=True)\n",
         encoding="utf-8",
     )
     responses = [0] * failed_index + [1]
