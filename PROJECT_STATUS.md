@@ -98,3 +98,11 @@
 - `.github/workflows/run.yml`, `state.json`, `history.json`, 운영 `main` 브랜치는 변경하지 않음
 - 실제 외부 API/Discord/Git push 및 GitHub Actions 운영 실행은 하지 않음
 - 테스트 실행/최종 저장 검증은 별도 기록으로 완료 여부를 구분한다.
+
+
+### P1-A 검증 현황 보충
+- 저장소에서 기존 `state.json`을 재조회해 객체/date 문자열/count 정수/last_health_check 문자열 구조 확인
+- 기존 `history.json` 1,592개 항목을 JSON 파싱해 최상위 배열 및 모든 항목 객체임을 확인
+- 신규 helper 및 P1 테스트 모듈의 Python 문법 파싱(ast.parse) 통과
+- 이 환경에서는 GitHub 저장소 checkout 기반 pytest 실행을 수행하지 못했으므로, P1-A pytest 통과로 보고하지 않는다.
+- 현재 브랜치 비교: main 대비 41 commits ahead / 6 commits behind. main 자동화가 계속 진행 중이므로 merge/rebase 보류
