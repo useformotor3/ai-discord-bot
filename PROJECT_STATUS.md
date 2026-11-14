@@ -85,3 +85,16 @@
 - 미수정: `.github/workflows/run.yml`, `state.json`, `history.json`
 - P1 항목(상태파일 손상 처리, datetime 오류, Discord timeout/status 검증, Git push 실패 상태화)은 이번 Phase B 범위에서 제외하고 후속 개선 대상으로 유지한다.
 
+
+
+## Phase P1-A — 상태·이력 안전성 개선 진행 (2026-11-14)
+
+- 사용자 승인 범위: 작업 브랜치에서 상태파일·이력파일·날짜 처리와 mock 테스트만 개선
+- `main.py`: `load_state()`, `load_history()`, `parse_health_check()` 추가
+- 손상된 JSON, 잘못된 최상위 자료형, 필수 상태 필드 오류, 음수/비정수 count, 잘못된 날짜는 조용히 초기화하지 않고 안전 종료하도록 변경
+- `history.json`은 배열인지, 각 항목이 객체인지 확인하고 기존 항목 필드는 강제하지 않아 구형 이력 호환성을 유지
+- timezone-aware datetime은 로컬 naive 시각으로 정규화해 기존 NOW 비교에서 aware/naive 혼합 오류를 방지
+- 새 테스트 파일 `tests/test_p1_reliability.py` 추가
+- `.github/workflows/run.yml`, `state.json`, `history.json`, 운영 `main` 브랜치는 변경하지 않음
+- 실제 외부 API/Discord/Git push 및 GitHub Actions 운영 실행은 하지 않음
+- 테스트 실행/최종 저장 검증은 별도 기록으로 완료 여부를 구분한다.
