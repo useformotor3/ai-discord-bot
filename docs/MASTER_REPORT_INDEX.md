@@ -177,7 +177,7 @@
 ## 2026-11-13 authoritative evidence index
 
 - main-only reports #8–#62: 55 files, 40 CONFLICT / 15 PARTIALLY_VERIFIED / 0 VERIFIED, direct quote reuse 0/55; consecutive non-random sample only.
-- Claim Evidence Ledger: 55 file-level records + 345 atomic claims = 400 unique IDs, zero collisions; 46 canonical requirements, all atomic claims mapped.
+- Claim Evidence Ledger: 55 file-level records + 345 atomic claims = 400 unique IDs, zero collisions; 45 canonical requirements; 42 referenced by new claims, 3 forward-mapped; 99 legacy claims unmapped.
 - Canonical requirement mapping is integrated into [requirements-to-servo-drive matrix](CRA_REQUIREMENTS_TO_SERVO_DRIVE_TRACEABILITY_MATRIX.md) and [integrated traceability matrix](CRA_INTEGRATED_TRACEABILITY_MATRIX.md).
 - Next P0: reconcile Volume 1/2, PSIRT SOP, traceability matrices and test evidence register against the 345 atomic claims; then audit main reports #63–#67.
 
@@ -190,3 +190,5 @@
 - work branch: \`cra-project-foundation\` HEAD \`ced168745cd19400ba29131a495c3bf5c3f924eb\`; compare diverged, diverged; ahead/behind values dynamic. No merge/rebase/sync authorized or performed.
 - Source integrity: #8–#62 source file paths/blob SHAs 55/55 match current main tree.
 - Latest push CI: run 43408438728 SUCCESS, 140 tests, archive audit 990/990 consistent. This is branch CI, not main archive count.
+
+- [2026-11-14 Cross-document Reconciliation](CROSS_DOCUMENT_RECONCILIATION_2026-11-14.md): Ledger/Canonical ID/traceability/test ID 집합 대조와 미완료 migration 백로그.
