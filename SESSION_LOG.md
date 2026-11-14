@@ -242,5 +242,6 @@
 - 상세 기록: `reports/MAIN_PY_IMPROVEMENT_DESIGN_2026-11-14.md` §15 및 `PROJECT_STATUS.md`
 
 ### GitHub 관리 문서 갱신
-- README, AI_RULEBOOK, PROJECT_STATUS, MASTER_PLAN, SESSION_LOG 및 개선 설계 보고서 갱신 예정
-- 저장 후 동일 브랜치에서 재조회하여 저장 내용과 blob SHA를 확인한다.
+- README, AI_RULEBOOK, PROJECT_STATUS, MASTER_PLAN, SESSION_LOG 및 개선 설계 보고서를 작업 브랜치에 갱신했다.
+- 여섯 파일을 동일 브랜치에서 다시 fetch해 저장된 내용과 새 blob SHA를 확인했다.
+- 갱신 후 main 대비 67 ahead / 49 behind를 재조회했다.
