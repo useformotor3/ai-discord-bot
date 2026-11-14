@@ -68,11 +68,13 @@
 - aware/naive datetime 호환 처리
 - 기존 `state.json` 구조 및 `history.json` 1,592개 배열 항목을 조회해 호환성 기준 확인
 - 신규 helper 로직 독립 pytest: 7 passed
-- 중요 한계: 위 7 passed는 helper 수준의 독립 검증이다. 저장소 전체 pytest, `main.py` 통합 실행, GitHub Actions CI 통과가 아니다.
+- 예비 재구성 사본 실행: compileall 종료 코드 0, pytest 21 passed. 단, 실행 사본 5개 파일의 Git blob SHA가 GitHub 원본과 모두 불일치하여 예비 결과로만 인정한다.
+- 저장소 전체 pytest 및 GitHub Actions CI는 미실행 상태다. 21 passed를 실제 저장소 테스트 통과로 보고하지 않는다.
+- 상세: `reports/TEST_EXECUTION_ENVIRONMENT_AUDIT_2026-11-14.md`
 
 ## 5. 브랜치 보호 및 운영 영향
 
-- 현재 작업 브랜치는 `main`보다 45 commits 앞서고 7 commits 뒤처진 diverged 상태다.
+- 최신 비교 결과 현재 작업 브랜치는 `main`보다 54 commits 앞서고 48 commits 뒤처진 diverged 상태다. main의 신규 커밋이 계속 누적되고 있으므로 비교 수치는 재확인 시점에 따라 달라진다.
 - 자동 생성 아카이브와 운영 변경을 보존하기 위해 merge/rebase는 보류한다.
 - 운영 `main`, `.github/workflows/run.yml`, `state.json`, `history.json`은 이번 관리 문서 갱신에서 수정하지 않는다.
 - 이번 단계에서 실제 Gemini/Discord/Git push 또는 운영 workflow를 실행하지 않는다.
