@@ -342,3 +342,54 @@ history.json의 기존 필드는 하위 호환을 유지한다. 새 필드를 �
 - GitHub에서 원본 소스와 테스트 파일을 다시 fetch하고 blob SHA를 기록한 정적 검토다.
 - 이 검토에서 실제 저장소 pytest, CI, 운영 workflow를 실행하지 않았다.
 - `main.py`, tests, workflow, state/history 및 운영 main은 변경하지 않았다.
+
+
+## 16. Git/Discord 실패 경로 fixture 설계 — 2026-11-14
+
+### 현재 fixture에서 확인한 한계
+- tests/conftest.py의 fake_post()는 항상 HTTP 204를 반환하고 timeout 인자를 기록하거나 검증하지 않는다.
+- Discord mock 응답에는 raise_for_status(), headers, Retry-After가 없다.
+- fake_subprocess_run()은 모든 명령에 returncode=0을 반환하고 check=True의 CalledProcessError 동작을 재현하지 않는다.
+- 현재 fixture는 명령별 실패 순서, 재시도 횟수, 부분 전송, 단계별 결과를 관찰할 수 없다.
+- main.py 자체도 Discord timeout/status 검사와 Git 실패 상태화를 하지 않으므로, 현 상태에서 실패 테스트를 추가해도 올바른 운영 동작을 검증할 수 없다.
+
+### 제안 fixture 설계 — 테스트 전용 변경
+1. Discord 응답 큐: 성공 응답, HTTP 상태, headers, requests 예외(timeout/connection error)를 순서대로 반환하도록 한다.
+2. Discord 호출 기록: URL 원문은 저장하지 않고 호출 횟수, payload 길이/파트 번호, timeout 값만 기록해 webhook 비밀값 노출을 방지한다.
+3. Git 명령 큐: add, commit, push를 구분해 명령별 return code 또는 예외를 지정한다.
+4. check=True 동작: non-zero return code에서 실제 subprocess.CalledProcessError를 발생시킨다.
+5. 테스트별 설정: 기본값은 현재와 같이 성공 mock으로 유지해 기존 characterization 테스트의 호환성을 보존한다.
+6. 시간 대기: sleep mock은 호출 시간/횟수만 기록하고 실제 대기하지 않는다. 재시도 정책 테스트는 대기 함수 호출 기록으로 확인한다.
+
+### 실패 시나리오 매트릭스
+
+| ID | 주입 상황 | 기대 검증 |
+|---|---|---|
+| D01 | Discord timeout 1회 후 성공 | timeout 인자 전달, 제한 재시도, 최종 sent |
+| D02 | 연결 오류 반복 | 재시도 상한, 최종 failed, 성공으로 기록하지 않음 |
+| D03 | HTTP 429 + Retry-After | 헤더 기반 대기 정책, 재시도 상한 |
+| D04 | HTTP 400/401/403 | 불필요한 재시도 없이 실패/설정 오류로 구분 |
+| D05 | HTTP 500/502/503 | 제한 재시도 후 최종 상태 반영 |
+| D06 | 여러 chunk 중 일부만 전송 성공 | 전송된 파트와 실패 파트를 구분하고 중복 재전송 위험 기록 |
+| G01 | git add non-zero | commit/push 후속 명령이 실행되지 않음 |
+| G02 | git commit non-zero 또는 CalledProcessError | push가 실행되지 않고 sync 실패가 명시됨 |
+| G03 | git push non-zero 또는 CalledProcessError | 로컬 archive 존재와 원격 sync 실패를 분리 기록 |
+| G04 | Git 명령 성공/변경 없음 | 실제 결과에 맞는 synced/no_changes 상태 |
+| S01 | state 임시 파일 작성 실패 | 기존 state 원본 보존, 성공으로 표시하지 않음 |
+| S02 | atomic replace 실패 | 기존 파일 보존 가능 여부와 복구 동작 검증 |
+| S03 | history 저장 실패 | state/history 간 불일치 및 재실행 위험 검증 |
+| L01 | 예외 메시지에 테스트용 secret 포함 | 로그·상태 기록에 secret이 노출되지 않음 |
+
+### P1-B 최소 구현 제안 — 승인 전 미구현
+- Discord: 명시적 timeout, raise_for_status() 또는 동등한 status 판정, 429/일시적 5xx/네트워크 오류만 제한 재시도, 일반 4xx 재시도 금지.
+- Git: add/commit/push 단계를 구분하고 실패를 삼키지 않으며, 원격 sync 실패 상태를 실행 결과에 남긴다.
+- 저장: 임시 파일에 완전한 JSON을 쓴 뒤 원자적 교체를 수행하고, 저장 실패 시 기존 파일을 보존한다.
+- 부분 성공: archive 저장, Discord 전송, Git sync를 하나의 성공 boolean으로 뭉개지 않는다. 단계별 상태와 최종 partial/failed 판정 기준을 명시한다.
+- 비밀정보: webhook URL, API 키, payload 원문 및 민감한 예외 문자열을 로그에 기록하지 않는다.
+
+### 구현 경계와 승인 게이트
+- 이 절은 원본 main.py와 fixture를 읽어 작성한 설계이며 코드·테스트·workflow를 수정하거나 실행한 것이 아니다.
+- 테스트 fixture 변경은 별도 테스트 전용 범위로 제안한다.
+- P1-B 운영 코드 변경은 별도 사용자 승인 전 금지한다.
+- 승인 시에도 작업 브랜치만 수정하고 운영 main, .github/workflows/run.yml, state.json, history.json, 실제 Gemini/Discord/Git push는 건드리지 않는다.
+- 승인 후 fixture 단위 검증 → 테스트 전용 Actions SHA 기준 갱신 → 전체 pytest/compileall → 실패 로그 확인 순으로 진행한다.
