@@ -2643,3 +2643,20 @@ Batch result: 5/5 CONFLICT, 0 PARTIALLY_VERIFIED, 0 VERIFIED; 0/5 Raw Text Quote
 - 주요 법령 정정: 제조자 의무는 Article 13이며 Article 10이 아니다. Annex I Part I(2)(a)=known exploitable vulnerabilities, (b)=secure-by-default, (d)=access control, (f)=integrity, (j)=attack surface.
 - 제품별 적용성: UNVERIFIED — 제품 SKU, 실제 계정 모델, 포트/서비스/진단 인터페이스 목록 미확정.
 
+### #6 — Hardware Root of Trust / Secure Boot 보편 의무 주장
+
+- 상태: NEW / NOT_YET_AUDITED
+- 확인일: 2026-11-14
+- 보고서 번호: #6 (2026-11-14 일일 카운트)
+- 원문 생성 시각: 2026-11-14 00:25:33 (파일 Date; 시간대 미표기)
+- 원문 commit: [4a38d85a1cd6c50dfec0ab2c2f0c9b5931d5ea8d](https://github.com/useformotor3/ai-discord-bot/commit/4a38d85a1cd6c50dfec0ab2c2f0c9b5931d5ea8d) — commit timestamp 2026-11-14T00:25:47Z
+- 원문 파일: [research_archive/2026-11-14_002533.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_002533.md)
+- 원문 blob SHA: 40cdae09b33a6dde8affbfab4e66327755e63d12
+- 우선순위: P1 — 펌웨어 무결성/Secure Boot 설계 후보와 법령상 결과 요구를 분리한다.
+- 핵심 주장 주제: hardware Root of Trust, Secure Boot, 서명 검증, TPM/Secure Element/Secure Enclave, Class II 제품의 의무 주장.
+- 검증할 법령 쟁점: Annex I Part I(2)(f)의 무결성 보호와 (2)(e)의 기밀성/암호화 예시를 정확히 구분한다. Secure Boot, HWRoT, TPM/SE를 모든 제품 또는 Class II에 보편적 필수로 직접 지정하는지 확인한다.
+- 사전 메모: 보고서는 Annex I Part I(2)(b)를 integrity requirement로 인용하지만 최종 규정의 (2)(b)는 secure-by-default이며, integrity는 (2)(f)에 위치한다. Raw Text Quote의 문언이 최종 규정의 정확한 조항·문구인지 확인이 필요하다.
+- 파일 단위 판정: UNVERIFIED (Pass A/B/C 미완료)
+- Raw Text Quote 사전 판정: CONFLICT 후보 — 조항 문자·문언·초안 여부 대조 필요.
+- 제품별 적용성: UNVERIFIED — 정확한 ST MCU 주문 코드, boot ROM, secure boot chain, key storage 및 firmware update design 미확정.
+
