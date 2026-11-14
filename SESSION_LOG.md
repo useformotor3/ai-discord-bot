@@ -99,3 +99,25 @@
 - P1: Git commit/push 실패를 실행 상태에 반영
 - 이 항목들은 이번 승인 범위의 P0 수정에 포함하지 않았으며 다음 단계에서 우선순위를 재검토한다.
 
+
+
+## 2026-11-14 — P1-A 상태·이력 데이터 보호
+
+### 승인 범위
+- 사용자 승인에 따라 작업 브랜치에서 상태·이력 파일 검증과 날짜 호환성만 수정
+- workflow, state.json, history.json, 운영 main 브랜치는 변경하지 않음
+- Gemini API, Discord Webhook, Git commit/push 실호출 금지
+
+### 구현
+- `main.py`에 `load_state()`, `load_history()`, `parse_health_check()` 추가
+- 상태파일 JSON 파싱 실패, 최상위 자료형 오류, date/count 필드 오류, 잘못된 last_health_check는 원본을 보존하고 안전 종료
+- 이력파일 JSON 파싱 실패, 배열이 아닌 최상위 구조, 객체가 아닌 이력 항목은 원본을 보존하고 안전 종료
+- 기존 이력 항목의 추가 필드는 요구하지 않아 하위 호환성을 유지
+- timezone-aware datetime은 로컬 naive datetime으로 정규화한 뒤 기존 비교 로직에 전달
+- `tests/test_p1_reliability.py`에 손상 파일, 스키마 오류, datetime 호환성 테스트 추가
+- `tests/README.md`를 현재 테스트 범위에 맞게 정리
+
+### 미완료 검증
+- 이 기록 시점에서 GitHub 저장 후 재조회 및 실제 pytest 실행은 아직 최종 확인 전
+- GitHub Actions CI와 운영 workflow는 실행하지 않음
+- P1-B(Discord timeout/status, Git 동기화 실패 상태화)는 별도 승인 대상
