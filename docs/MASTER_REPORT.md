@@ -416,9 +416,9 @@ Annex I Part I(2)(l) logging/monitoring/opt-out and Part I(2)(m) secure permanen
 
 ## 2026-11-13 source baseline and CI revalidation (historical snapshot; superseded 2026-11-14)
 
-Current main is report #125 / HEAD \`92e8ca7aa4a86b38627a1d8e9535e5b0463a8392\`, state count 125 (daily counter), history 1,400 entries. All 55 source files audited in reports #8–#62 were revalidated against the current main Git tree: 55/55 paths and blob SHAs match, with zero missing or mismatched files.
+Historical 2026-11-13 main snapshot: report #125 / archive-history 1,400/1,400. The 55 source files audited in #8–#62 matched their recorded paths and blob SHAs at that time; superseded by the 2026-11-14 snapshot in CROSS_DOCUMENT_RECONCILIATION_2026-11-14.md.
 
-The work branch HEAD is \`ced168745cd19400ba29131a495c3bf5c3f924eb\`; compare status is diverged (diverged; ahead/behind values dynamic). Do not merge/rebase/sync or write to main. Latest completed push workflow result is recorded in the current status board; re-fetch the latest run for the current branch HEAD before relying on CI. This CI result describes the work branch snapshot, not current main's archive/history 1,400/1,400.
+Historical work-branch snapshot only. For current branch status use the live refs and latest CI in GitHub; never merge/rebase/sync or write to main without explicit approval.
 
 ## 2026-11-14 cross-document traceability reconciliation
 
