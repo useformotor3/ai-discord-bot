@@ -34,7 +34,7 @@ Ledger의 서로 다른 기록 범위를 혼합하지 않도록 집계를 분리
 
 - #48–#52의 요약행 5개는 원자 Claim ID와 중복되던 표시를 \`SUMMARY-#48\`…\`SUMMARY-#52\`로 변경했다. 이 요약행은 Claim ID 집계에서 제외한다.
 - 전체 Ledger의 CRA-ARCH 식별자 499개는 현재 중복 0개다.
-- legacy claim 99개(\`CRA-ARCH-035-*\`…\`CRA-ARCH-124-*\`)는 Canonical Requirement ID 연결이 없다. 별도 migration backlog로 남긴다.
+- legacy claim 99개(\`CRA-ARCH-035-*\`…\`CRA-ARCH-124-*\`)는 별도 crosswalk에 CANDIDATE mapping 99/99를 추가했다(32 + 67). 이는 독립 검토 전의 추적성 후보이며, 법령 검증 상태를 바꾸지 않는다.
 - 2026-11-13 신규 atomic 345개 중 343개는 하나 이상의 \`CRA-REQ-*\`에 연결된다. 나머지 2개는 초안/타협안 문구와 최종 법령의 직접 인용 정확성만 다루므로 \`CRA-EVIDENCE-QUOTE-ACCURACY-001\`에 연결되어 있으며, 제품 요구사항 ID를 억지로 부여하지 않는다.
 
 ## 3. Canonical Requirement Register
@@ -45,7 +45,7 @@ Ledger의 서로 다른 기록 범위를 혼합하지 않도록 집계를 분리
   - \`CRA-REQ-INTERCONNECTIVITY-001\`
   - \`CRA-REQ-EXPLOIT-MITIGATION-001\`
   - \`CRA-REQ-SECURE-DATA-TRANSFER-001\`
-- legacy claim 99개는 위 42개 집계에 포함하지 않았으며, 개별 문장 의미를 확인한 뒤 별도로 매핑해야 한다.
+- legacy claim 99개는 위 42개 집계에 포함하지 않았다. 99/99 후보 매핑을 추가했으며, 개별 문장·근거를 재확인하는 독립 검토가 남았다.
 
 ## 4. 추적성 매트릭스 대조 결과
 
@@ -71,7 +71,7 @@ Ledger의 서로 다른 기록 범위를 혼합하지 않도록 집계를 분리
 
 ## 5. 남은 P0 작업
 
-1. **legacy claim 99개 migration:** 각 claim의 실제 문장과 근거 조항을 다시 읽고 45개 Canonical ID 또는 evidence-governance ID로 매핑한다. 불명확하면 UNMAPPED로 유지하고 억지 매핑하지 않는다.
+1. **legacy claim 99개 candidate review:** 추가한 99개 후보 연결을 각 원문 문장/근거 조항과 대조해 승인·수정·삭제한다. 불명확하면 UNMAPPED로 유지하고 억지 매핑하지 않는다.
 2. **정본 문장 대조:** 345개 신규 원자 주장과 legacy 99개를 제1권, 제2권, PSIRT SOP, 제품 분류 매트릭스, 위협 모델, 시험 대장과 문장 단위로 대조한다. 정정 내용은 독자용 정본에 반영하거나 미반영 사유를 기록한다.
 3. **PSIRT SOP 연결:** Article 14 trigger, 기한, 신고 경로, 사용자 통지 및 Article 69(3) 전환 규칙을 Canonical ID와 양 매트릭스에 연결한다.
 4. **다음 main-only archive audit:** 2026-11-14 일일 보고서 #1–#2는 미감사다. 다음 배치는 #1–#5를 목표로 하되, 실행 시점의 main HEAD/history/state 및 원본 blob SHA를 다시 고정한다.
