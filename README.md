@@ -113,3 +113,9 @@ Actions 성공은 자동화 실행 결과이지 CRA 법령 해석이나 출처�
 - main 대비 diverged 139 ahead / 59 behind; main HEAD `8034668f45496ef532bfdfb865b29d4149cf2a94`, merge-base `f9a12a5778f5fa1d907201ab2931d20ca2656bb7`.
 - 마지막 테스트 코드 검증은 Run #15, commit `b2e108768be08f06e85af154835424682337ebf5`: 30 passed / 8 xfailed. 그 이후 변경은 문서/로그뿐이다.
 - main.py SHA `470ac101d5cc4fdb2c5077d5468ef00327af3d43` 유지.
+
+
+## 다음 승인 대기 작업
+- P1-B는 단계별로 분리했다. 우선 제안은 **P1-B1 Discord 전송 결과 신뢰성**만이다.
+- 변경 파일, 기대 동작, 테스트, 롤백 및 제외 범위는 [개선 설계 보고서](reports/MAIN_PY_IMPROVEMENT_DESIGN_2026-11-14.md)의 §18을 참조한다.
+- P1-B1은 main.py 운영 코드 변경이므로 별도 승인 전까지 구현하지 않는다.

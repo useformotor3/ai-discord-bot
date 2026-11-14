@@ -469,3 +469,42 @@ history.json의 기존 필드는 하위 호환을 유지한다. 새 필드를 �
 - 운영 workflow/API/secret 영향 분석
 
 **결론:** 먼저 Discord POST의 중복 가능성을 해결하는 상태 모델과 저장 일관성을 확정한다. 그 후 최소 구현 범위를 사용자에게 제안하고 별도 승인을 받는다. 이 문서 작성만으로 운영 코드나 workflow를 변경하지 않는다.
+
+
+## 18. P1-B 단계별 구현 제안 — 사용자 승인 대기
+
+### 우선순위
+P1-B를 한 번에 전면 수정하지 않고 아래 단계로 분리한다.
+
+1. **P1-B1 Discord 전송 결과의 신뢰성** — timeout, HTTP 상태, 429, 영구 오류, 전달 불명확 상태, chunk 부분 성공
+2. **P1-B2 로컬 저장 신뢰성** — archive 고유 ID/atomic write, state/history transaction journal 및 복구
+3. **P1-B3 Git 동기화 신뢰성** — add/commit/push 결과 분리, push 실패 후 원격 ref reconciliation
+4. **P1-B4 구조 개선** — import-time 실행 제거와 main guard 등. B1~B3 안정화 이후 진행
+
+### 이번에 승인 요청할 최소 범위: P1-B1
+**변경 예정 파일**
+- `main.py`: `send_discord_chunked`에 명시적 connect/read timeout, `wait=true`, status 판정, 429 Retry-After 처리, 영구 실패 및 delivery_unknown 상태, chunk별 결과를 추가한다. archive/state/history/Git 동작은 이 단계에서 구조적으로 재작성하지 않는다.
+- `tests/conftest.py`: Requests 예외 유형과 HTTP 응답, 429 헤더/본문, wait=true 성공 응답, chunk별 순서/결과를 안전하게 주입·관찰한다.
+- `tests/test_external_failure_paths.py`: 승인된 정책 기대 테스트를 xfail에서 일반 테스트로 전환한다.
+- `.github/workflows/tests.yml`: 변경된 원본 blob SHA 기준값만 갱신한다.
+- `tests/README.md`: 정책과 테스트 범위 기록.
+- `reports/MAIN_PY_IMPROVEMENT_DESIGN_2026-11-14.md`: 변경/검증 결과와 한계 기록.
+
+**P1-B1 기대 동작**
+- 2xx 응답과 message ID를 확인한 chunk만 sent 처리한다(`wait=true`).
+- 429는 Discord의 Retry-After/retry_after를 따르며 재시도 상한을 둔다. 대기 예산을 넘으면 deferred로 남긴다.
+- 400/401/403/404는 permanent_failure, 재시도하지 않는다.
+- 503/ReadTimeout/일반 ConnectionError는 delivery_unknown, 중복 방지 수단이 없으므로 자동 재전송하지 않는다.
+- ConnectTimeout은 Requests 문서 근거에 따라 제한 재시도를 허용하되 상한을 둔다.
+- 일부 chunk가 확인 성공한 뒤 후속 chunk가 실패하면 partial로 기록하고 이미 성공한 chunk를 처음부터 재전송하지 않는다.
+- 보고서 archive는 Discord 실패와 독립적으로 보존하는 것이 목표다. 기존 xfail의 “400이면 archive/state/history 저장 금지” 기대는 §17의 archive-first 정책과 충돌하므로 구현 전 승인된 정책에 맞춰 수정한다.
+
+**검증 및 복구**
+- 테스트 전용 Actions에서 핵심 blob SHA 확인 → compileall → 전체 pytest.
+- 신규 정상 동작 테스트는 xfail 표식을 제거하고 pass해야 한다.
+- 실제 Discord webhook, Gemini API, 운영 workflow는 실행하지 않는다.
+- 단일 논리 commit으로 묶고 CI 실패 시 원인을 기록한 뒤 수정 commit을 추가한다.
+- 롤백은 작업 브랜치의 revert commit으로 수행한다. force push/history rewrite 금지.
+
+### 승인 경계
+P1-B1은 `main.py`를 수정하는 운영 코드 변경이므로 이 제안서 작성만으로 실행하지 않는다. P1-B1의 위 파일·동작 범위만 별도 승인받은 후 구현한다. P1-B2~B4, 운영 `main`, `.github/workflows/run.yml`, `state.json`, `history.json`, 운영 secrets 및 실제 외부 서비스 호출은 이번 승인 요청에 포함하지 않는다.

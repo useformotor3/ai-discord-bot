@@ -338,3 +338,10 @@
 - main 대비 diverged 139 ahead / 59 behind; main HEAD `8034668f45496ef532bfdfb865b29d4149cf2a94`, merge-base `f9a12a5778f5fa1d907201ab2931d20ca2656bb7`.
 - Run #15 검증 commit `b2e108768be08f06e85af154835424682337ebf5` 이후는 문서/로그만 변경.
 - main.py blob SHA `470ac101d5cc4fdb2c5077d5468ef00327af3d43` 유지.
+
+
+## 23. 다음 작업의 승인 경계 — P1-B1 제안
+- P1-B 구현을 B1 Discord 전송, B2 atomic persistence, B3 Git sync, B4 구조 개선으로 분리했다.
+- 우선 승인 요청 대상은 B1만: timeout/wait=true/status, 429 Retry-After, permanent failure, delivery_unknown, chunk partial.
+- 변경 예정 파일과 테스트/롤백/제외 범위는 개선 설계 보고서 §18에 명시했다.
+- P1-B1은 main.py 수정이 포함되므로 현재 미승인·미구현 상태다. 사용자 별도 승인 전에는 운영 코드를 변경하지 않는다.
