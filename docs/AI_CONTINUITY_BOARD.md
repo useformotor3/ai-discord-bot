@@ -475,3 +475,10 @@
 - compare main...cra-project-foundation: diverged, ahead 1,049 / behind 583. This is a snapshot; re-fetch live refs before every session. No merge/rebase/sync.
 - latest push CI run \`43533348296\` on the checked branch HEAD: SUCCESS; strict archive audit 990/990, missing/orphan/duplicate/malformed 0. Archive integrity only, not product compliance.
 - main daily report #4 is now registered in \`CRA_ARCHIVE_AUDIT_QUEUE.md\`; reports #1–#4 are queued for manual Pass A/B/C review. #4 overlaps #2 on secure-by-default and initial authentication; audit the overlap instead of treating it as a new requirement.
+
+
+## 2026-11-14 report #4 manual audit
+
+- Report #4 (main 2026-11-14_001549.md; blob SHA 44105223e8d841bbf2f5f273da950723a33dedbd) audited. File CONFLICT; quote 0/1; 6 atomic claims (4 PARTIALLY_VERIFIED, 2 CONFLICT).
+- #4 duplicates #2 secure-by-default/initial-auth topic; no new requirement. Ledger now 506 unique CRA-ARCH IDs (56 file +351 new atomic +99 legacy); duplicate definitions 0.
+- Queue #4 AUDITED. #1–#3 remain for manual review; next batch target #1–#5.
