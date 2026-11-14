@@ -514,5 +514,5 @@ Read [Cross-document Reconciliation](docs/CROSS_DOCUMENT_RECONCILIATION_2026-11-
 - Ledger: 499 unique CRA-ARCH IDs = 55 file records + 345 new atomic claims + 99 legacy claims. Duplicate 0. The 99 legacy claims have candidate crosswalks; independent claim-by-claim review remains.
 - Latest main baseline: archive/history 1,565/1,565, state date 2026-11-14 count2 (daily counter); main read-only.
 - Work branch baseline: archive/history 990/990; diverged from main. Re-fetch live HEAD/compare/CI before every new batch. Do not merge/rebase/sync.
-- Next P0: migrate 99 legacy claims and reconcile report volumes/SOP/classification matrix/threat model/test register; then audit main-only reports #1–#5 for 2026-11-14.
+- Next P0: independently review 99 legacy candidate crosswalks and reconcile report volumes/SOP/classification matrix/threat model/test register; then audit main-only reports #1–#5 for 2026-11-14.
 - Keep product applicability and Class I/II UNVERIFIED; all DUT tests NOT_RUN. Protected production files remain unchanged.
