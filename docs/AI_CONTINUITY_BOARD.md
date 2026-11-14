@@ -442,7 +442,7 @@
 - Work branch snapshot before this reconciliation report: HEAD \`89ce7f1160ad91ab2801bd5bbbecb96ca004ca9f\`; archive/history 990/990; compare diverged ahead1000/behind581. Live refs must be re-fetched every session.
 - Latest CI at that branch snapshot: run 43531794670 SUCCESS, strict audit 990/990 consistent. This is not product compliance evidence.
 - Canonical register actual count 45. Integrated matrix 45/45; requirements matrix 45/45. Test register 49; integrated matrix references 49/49 after range/slash expansion; all NOT_RUN.
-- Ledger total 499 unique CRA-ARCH IDs: 55 file-level + 345 new atomic claims (#8–#62) + 99 legacy atomic claims. Duplicate 0 after #48–#52 summary rows were moved to SUMMARY labels.
+- Ledger before report #4: 499 unique IDs (55 file +345 new atomic #8–#62 +99 legacy). After report #4: 506 unique IDs (56 file +351 new atomic +99 legacy), duplicate definitions 0. Legacy candidate crosswalks remain CANDIDATE.
 - Of the 345 new atomic claims, 343 map to one or more CRA-REQ IDs; two quote-accuracy-only claims map to CRA-EVIDENCE-QUOTE-ACCURACY-001. 99 legacy claims now have candidate Canonical/Evidence crosswalks; independent claim-by-claim review remains.
 - Next P0: migrate the 99 legacy claims, then finish line-by-line reconciliation of Volume 1/2, SOP, classification matrix, threat model and test register. Next main-only archive batch is #1–#5 for 2026-11-14 after fresh snapshot.
 - Product-specific CRA applicability/Class I/II and exact ST MCU remain UNVERIFIED; all DUT tests NOT_RUN. No production code or protected workflow changes in this pass.
