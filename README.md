@@ -13,7 +13,8 @@
 - P1-A 상태·이력 안전성: 작업 브랜치 구현 완료
 - helper 독립 pytest: 7 passed (전체 저장소 테스트 아님)
 - 임시 재구성 사본 pytest: 21 passed (blob SHA 불일치로 예비 결과만 인정)
-- **원본 동일성이 입증된 저장소 전체 pytest 및 GitHub Actions CI: 미실행 (작업 브랜치 Actions runs 0건 확인)**
+- **원본 동일성 검증 후 GitHub Actions pytest: 21 passed (Run #1, success)**
+- 다섯 개 핵심 파일 Git blob SHA 일치, compileall 통과 확인
 - 실제 코드 리뷰에서 Discord/Git 실패 처리, 원자적 저장, 테스트 fixture의 실패 경로 검증 공백 확인
 - main 대비 작업 브랜치: diverged. 문서 커밋으로 수치가 계속 변하므로 정확한 ahead/behind는 통합 직전에 실시간 재조회
 - 2026-11-14 15:31 KST 스냅샷: 72 ahead / 50 behind; 당시 작업 브랜치 Actions runs 0건 (CI 성공 증거 없음)
@@ -48,8 +49,15 @@ Actions 성공은 자동화 실행 결과이지 CRA 법령 해석이나 출처�
 7. 운영 workflow를 테스트 목적으로 실행하지 않습니다.
 8. 의미 있는 작업이 끝날 때 README, 상황판, 마스터 계획, 행동강령, 세션 로그와 관련 보고서를 동기화하고 GitHub에서 재조회합니다.
 
+## 테스트 실행 증거
+
+- [GitHub Actions Run #1 — 21 passed](https://github.com/useformotor3/ai-discord-bot/actions/runs/43567990149)
+- 실행 commit: `d31c604c6067685e33f6888cbc488c0e45d80be7`
+- 다섯 개 핵심 파일의 Git blob SHA 일치 확인 후 compileall 및 pytest 실행.
+- 테스트 전용 workflow: [.github/workflows/tests.yml](.github/workflows/tests.yml)
+
 ## 다음 작업
 
-원본 소스의 blob SHA가 일치하는 격리 실행 경로를 확보하고 전체 pytest를 실행합니다. 이와 별개로 현재 테스트 fixture의 Git/Discord 실패 경로 검증 공백을 보완할 필요가 있습니다. P1-B 코드 변경과 workflow 변경은 별도 승인 전까지 수행하지 않습니다.
+기본 원본 테스트 실행 기반은 확보했습니다. 다음은 Git/Discord 실패 경로의 fixture 보강 설계와 P1-B 최소 변경안입니다. P1-B 코드 변경은 별도 승인 전까지 수행하지 않습니다.
 
 자세한 재개 지점과 검증 한계는 [PROJECT_STATUS.md](PROJECT_STATUS.md)를 기준으로 합니다.
