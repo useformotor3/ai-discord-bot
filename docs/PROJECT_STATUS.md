@@ -978,3 +978,11 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - #4 사전 원문 확인: Annex I Part I(2)(b),(d),(j)는 secure-by-default/access control/attack-surface 요구를 뒷받침하지만, 고정 기본 비밀번호 금지·최초 사용 강제 변경·모든 미사용 포트 차단을 보편적 구현으로 직접 지정하지 않는다. Raw Text Quote는 번호와 문구가 원문과 불일치하는 후보.
 - #1–#4 파일 단위 판정은 모두 UNVERIFIED / NEW / NOT_YET_AUDITED. #1 P0, #2–#4 P1. 전체 Pass A/B/C 및 제품별 적용성 검증은 미완료.
 - main read-only; main.py, Gemini prompt, 운영 자동화 코드, .github/workflows/run.yml 및 main 브랜치 변경 없음. merge/rebase/sync 없음. 테스트 미실행.
+
+## 2026-11-14 live recheck — 00:19 UTC
+
+- main HEAD: \`03b3ecaaa506c00146f5cb9d5855e6a66c3ef1c7\`; archive/history 1,567/1,567; state.json date/count 2026-11-14 / 4 (daily counter).
+- work branch HEAD at check: \`f0fbb4954b0853987ce9f918733e5f6858150483\`; archive/history 990/990.
+- compare main...cra-project-foundation: diverged, ahead 1,049 / behind 583. This is a snapshot; re-fetch live refs before every session. No merge/rebase/sync.
+- latest push CI run \`43533348296\` on the checked branch HEAD: SUCCESS; strict archive audit 990/990, missing/orphan/duplicate/malformed 0. Archive integrity only, not product compliance.
+- main daily report #4 is now registered in \`CRA_ARCHIVE_AUDIT_QUEUE.md\`; reports #1–#4 are queued for manual Pass A/B/C review. #4 overlaps #2 on secure-by-default and initial authentication; audit the overlap instead of treating it as a new requirement.
