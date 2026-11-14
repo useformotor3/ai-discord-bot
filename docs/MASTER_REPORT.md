@@ -408,7 +408,7 @@ The main-only audit covers 55 consecutive, non-random archive reports (#8–#62)
 
 The 2026-11-13 main-only namespace contains 55 file-level source records and 345 atomic claims (400 unique IDs, zero collisions); 343 claims reference one or more of 42 CRA-REQ IDs, while two quote-accuracy claims reference an evidence-governance ID only. The Ledger also contains 99 older legacy claims with candidate crosswalks pending independent review. After report #4 audit, the full Ledger defines 56 file records + 351 new atomic claims + 99 legacy claims = 506 unique CRA-ARCH IDs, duplicate definitions 0. The Canonical Requirement Register contains 45 requirements.
 
-The atomic decomposition preserves the distinction between a verified legal fact and the file-level verdict of the source report. Product-specific applicability, servo-drive Class I/II classification, exact MCU order code and DUT test evidence remain UNVERIFIED/NOT_RUN. The next P0 is migration of 99 legacy claims and sentence-level reconciliation across Volume 1/2, PSIRT SOP, product classification matrix, threat model and test register.
+The atomic decomposition preserves the distinction between a verified legal fact and the file-level verdict of the source report. Product-specific applicability, servo-drive Class I/II classification, exact MCU order code and DUT test evidence remain UNVERIFIED/NOT_RUN. The next P0 is independent review of the 99 legacy candidate crosswalks and sentence-level reconciliation across Volume 1/2, PSIRT SOP, product classification matrix, threat model and test register.
 
 ## 2026-11-13 logging and secure data lifecycle update
 
