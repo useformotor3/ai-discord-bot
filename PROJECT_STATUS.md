@@ -314,3 +314,12 @@
 - main 대비 diverged 135 ahead / 59 behind; main HEAD `8034668f45496ef532bfdfb865b29d4149cf2a94`, merge-base `f9a12a5778f5fa1d907201ab2931d20ca2656bb7`.
 - Run #13에서 검증된 테스트 소스 commit `27d2c69287631b041672b9989fdeeb3066f5ebb9` 이후 변경은 문서·로그뿐이다.
 - main.py blob SHA는 `470ac101d5cc4fdb2c5077d5468ef00327af3d43`이며 이번 테스트 브랜치 기준 commit 대비 미변경이다.
+
+
+## 20. P1-B 정책 재검토 — 구현 전 설계만 수행
+- 공식 Discord Rate Limits/Webhook Execute 및 Python Requests timeout/예외 문서를 교차 확인해 §17에 설계 정책을 추가했다.
+- 핵심 수정 판단: Discord POST의 ReadTimeout/5xx는 서버 반영 여부가 불명확하므로, 중복 방지 수단 없이 무조건 재시도하는 기존 가정은 위험하다. 429는 서버가 제공한 Retry-After/retry_after를 따르고, 401/403/404는 재시도하지 않는다.
+- `wait=true`로 서버 확인 및 message ID를 받을 수 있으나, 응답이 유실된 경우 중복 가능성을 완전히 없애지는 못한다.
+- state/history 파일별 atomic replace는 두 파일 간 transaction 보장이 아니다. journal/recovery 정책이 필요하다.
+- 현행 503 retry strict xfail는 정책과 충돌할 수 있어 구현 전에 재검토한다.
+- 이번 단계는 문서 설계만이다. main.py/운영 workflow/state/history 변경 및 운영 실행은 없다.

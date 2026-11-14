@@ -94,3 +94,9 @@ Actions 성공은 자동화 실행 결과이지 CRA 법령 해석이나 출처�
 - Run #13에서 검증된 테스트 commit은 `27d2c69287631b041672b9989fdeeb3066f5ebb9`이며, 그 이후 변경은 관리 문서와 로그다.
 - `main.py` blob SHA `470ac101d5cc4fdb2c5077d5468ef00327af3d43`; 테스트 브랜치의 기준 commit 대비 변경 파일 목록에도 `main.py`는 없다.
 - 문서 저장 후 ahead/behind는 다시 증가할 수 있으므로 다음 작업 시작 시 재조회한다.
+
+
+## P1-B 정책 설계 최신화
+- [P1-B 전송·저장·동기화 정책 명세](reports/MAIN_PY_IMPROVEMENT_DESIGN_2026-11-14.md#17-p1-b-전송저장동기화-정책-명세--2026-11-14-구현-전-설계)
+- Discord 429/timeout/POST 중복 가능성, chunk 부분 성공, state/history transaction, Git 원격 동기화 확인 정책을 공식 기술 문서와 대조해 정리했다.
+- 구현 승인이 아니다. 운영 코드 변경 전 별도 제안·승인이 필요하다.

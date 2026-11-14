@@ -393,3 +393,79 @@ history.json의 기존 필드는 하위 호환을 유지한다. 새 필드를 �
 - P1-B 운영 코드 변경은 별도 사용자 승인 전 금지한다.
 - 승인 시에도 작업 브랜치만 수정하고 운영 main, .github/workflows/run.yml, state.json, history.json, 실제 Gemini/Discord/Git push는 건드리지 않는다.
 - 승인 후 fixture 단위 검증 → 테스트 전용 Actions SHA 기준 갱신 → 전체 pytest/compileall → 실패 로그 확인 순으로 진행한다.
+
+
+## 17. P1-B 전송·저장·동기화 정책 명세 — 2026-11-14 (구현 전 설계)
+
+### 17.1 적용 범위와 설계 근거
+이 절은 기존 `main.py`의 외부 부작용 순서와 Discord/Git 실패 경로 테스트를 바탕으로 작성한 설계다. **운영 코드 변경 승인이 아니며**, 구현 전 사용자 승인이 별도로 필요하다.
+
+공식 기술 문서 교차 확인:
+- Discord Rate Limits: 429 응답에서 `Retry-After` 헤더 또는 JSON `retry_after`를 읽어 대기해야 하며, 401/403/429 등의 반복 invalid request는 임시 제한 위험이 있다. 404 webhook은 재요청하지 말라는 안내가 있다. https://github.com/discord/discord-api-docs/blob/main/developers/topics/rate-limits.mdx
+- Discord Execute Webhook: `wait=true`이면 서버가 메시지 전송을 확인한 후 메시지 객체를 반환한다. 기본 `wait=false`에서는 메시지가 저장되지 않아도 오류를 돌려주지 않을 수 있다. https://github.com/discord/discord-api-docs/blob/main/developers/resources/webhook.mdx
+- Requests: timeout을 지정하지 않으면 요청이 무기한 대기할 수 있고, timeout은 전체 요청 wall-clock 제한이 아니라 socket read 간격 기준이다. `ConnectTimeout`은 재시도해도 안전하다고 문서화되어 있으나 `ReadTimeout`/일반 ConnectionError는 요청이 서버에 반영됐는지 불명확할 수 있다. https://docs.python-requests.org/en/latest/user/quickstart/
+- Requests advanced timeout: connect/read timeout을 튜플로 분리할 수 있다. https://docs.python-requests.org/en/latest/user/advanced/
+
+### 17.2 Discord 전송 정책 — 중복 메시지 위험 우선
+현재 `requests.post()`는 timeout과 응답 확인 없이 호출되며, 메시지 POST는 네트워크 응답이 끊겼을 때 서버가 메시지를 이미 저장했는지 클라이언트가 알 수 없다. 따라서 단순 재시도는 중복 보고서를 만들 수 있다.
+
+| 응답/오류 | 권고 동작 | 근거/주의 |
+|---|---|---|
+| 2xx + `wait=true` 메시지 객체 확인 | 해당 chunk를 sent로 기록하고 message ID 보존 | 서버 확인이 있는 성공 |
+| HTTP 429 | `Retry-After` 또는 JSON `retry_after`를 파싱해 해당 시간 이후 제한 재시도 | Discord 공식 rate-limit 정책 |
+| HTTP 400 | 영구 요청 오류로 중단, 재시도 금지 | payload/요청 수정 필요 |
+| HTTP 401/403 | 즉시 중단, 설정/권한 오류로 분류, 재시도 금지 | invalid request 누적 위험 |
+| HTTP 404 | 즉시 중단, webhook 설정 오류로 분류, 재시도 금지 | Discord는 404 webhook 반복 요청을 금지하도록 안내 |
+| HTTP 5xx | 기본은 `delivery_unknown`으로 기록하고 자동 재시도하지 않음 | POST가 서버에 반영됐는지 불명확해 중복 전송 위험. 향후 idempotency/outbox 정책 확보 시 재검토 |
+| `ConnectTimeout` | 제한 횟수 내 재시도 가능 | Requests 문서상 연결 수립 전 timeout은 재시도 안전 |
+| `ReadTimeout`/일반 ConnectionError | `delivery_unknown`, 자동 재시도 보류 | 서버 수신 후 응답만 유실됐을 수 있음 |
+
+- Timeout은 connect/read 별도 설정을 사용하고, 값은 설정 상수로 관리한다. 초기 후보값은 connect 3.05초/read 10초이며 실제 네트워크 특성 검증 후 조정한다. Requests timeout은 전체 실행시간 상한이 아님을 문서화한다.
+- 429의 Retry-After가 현재 실행의 최대 대기 예산을 넘으면 더 짧은 시간으로 임의 축소해 재시도하지 않는다. `deferred`/실패 상태로 남기고 다음 실행 또는 별도 재처리로 넘긴다.
+- Discord rate limit 숫자를 코드에 하드코딩하지 않고 응답 헤더/본문을 따른다.
+- 429 재시도 상한, 최대 대기 예산, backoff/jitter는 설정값으로 명시하고 테스트한다.
+
+### 17.3 Chunk/부분 전송
+- 각 chunk에 `run_id`, `chunk_index`, `chunk_count`, content hash를 부여한다.
+- `wait=true` 성공 응답에서 반환된 message ID를 chunk별로 기록한다.
+- chunk 1..k가 확인 성공하고 k+1에서 영구 실패하면 전체 결과를 `partial`로 기록한다. 성공 chunk를 무조건 처음부터 다시 보내지 않는다.
+- timeout/5xx 등 전달 여부가 불명확한 chunk는 `unknown`으로 남긴다. 중복 방지 정책 없이 자동 재전송하지 않는다.
+- 현재 `state.json`/ `history.json`만으로는 chunk outbox/재처리 이력을 안전하게 보존하기 어렵다. P1-B에서 outbox 저장 구조가 필요한지 별도 결정한다.
+
+### 17.4 Archive/state/history 저장 정책
+- 보고서 archive는 임시 파일에 전체 내용을 기록하고 flush/fsync 후 atomic replace한다. 충돌 방지를 위해 run_id 또는 UUID를 파일명에 포함한다.
+- `state.json`과 `history.json`은 각각 atomic replace를 해도 두 파일 사이의 원자성이 자동 보장되지 않는다.
+- 두 파일 일관성을 요구한다면 transaction journal/run_id를 두고, 임시 파일 작성 → journal 기록 → 교체 → 완료 기록/정리 순서 및 시작 시 복구 절차를 설계해야 한다.
+- 한 파일 교체 후 다음 파일 교체가 실패하거나 프로세스가 중단되는 경우를 테스트한다. 원본 보존 및 재시작 복구가 검증되기 전에는 저장 성공으로 표시하지 않는다.
+- 운영 데이터 형식은 하위 호환을 유지하고, 기존 1,592개 history 항목을 일괄 재작성하지 않는다.
+
+### 17.5 실행 단계 및 최종 상태
+권고 순서:
+1. 입력 state/history 읽기 및 검증
+2. 조사 결과 생성 및 구조 검증
+3. archive 및 state/history transaction 저장
+4. Discord 전송(outbox 상태와 chunk 결과 기록)
+5. Git add/commit/push 동기화
+6. 실행 결과 요약 기록
+
+단계별 상태를 분리한다: `research_status`, `archive_status`, `discord_status`, `git_sync_status`, `execution_status`.
+- archive/state/history 필수 저장이 실패하면 `failed`.
+- 필수 저장은 성공했으나 Discord 또는 Git sync가 실패/unknown이면 `partial`.
+- webhook 미설정은 `skipped`로 명시하며 프로젝트 운영 정책에서 필수 채널인지에 따라 최종 상태를 결정한다.
+- Git push 실패 시 이미 생성한 로컬 commit을 보존한다. 다음 실행에서 새 보고서를 만들지 말고 원격 ref를 확인해 동일 commit이 이미 반영됐는지 판정한 뒤 필요한 경우 같은 commit을 push한다.
+- Git add/commit 실패 시 후속 명령을 실행하지 않는다. commit 단계에서 변경 없음은 `no_changes`로 구분한다.
+
+### 17.6 테스트 계약의 정합성 검토 필요
+현재 `tests/test_external_failure_paths.py`의 5개 strict xfail 중 503 응답 후 자동 재시도를 기대하는 테스트는 위의 중복 방지 정책과 충돌할 수 있다. P1-B 구현 전에 해당 테스트를 `delivery_unknown` 기대 동작으로 변경할지, 재시도 전 중복 방지 수단을 도입할지 확정해야 한다. 승인되지 않은 정책을 테스트가 먼저 확정하지 않도록 한다.
+
+### 17.7 구현 전 승인 게이트
+다음 구현 제안서에는 아래를 포함한다.
+- 변경 전/후 `main.py` 동작 및 함수별 diff
+- 신규 상태/outbox/journal 스키마와 기존 파일 하위 호환성
+- Discord duplicate/unknown delivery 정책
+- Git remote reconciliation 절차
+- atomic write crash-recovery 테스트
+- CI SHA pin 갱신, 전체 pytest, rollback 절차
+- 운영 workflow/API/secret 영향 분석
+
+**결론:** 먼저 Discord POST의 중복 가능성을 해결하는 상태 모델과 저장 일관성을 확정한다. 그 후 최소 구현 범위를 사용자에게 제안하고 별도 승인을 받는다. 이 문서 작성만으로 운영 코드나 workflow를 변경하지 않는다.

@@ -113,3 +113,12 @@
 - 작업 완료 후 기준점 대비 파일 diff, branch HEAD, CI run, main 대비 diverged 상태를 다시 조회한다.
 - 실패한 시도와 수정 내역도 감추지 않고 기록한다. 복구는 우선 revert commit으로 하며, 승인 없는 force push·history rewrite·merge·rebase는 금지한다.
 - 별도 승인 전 PR merge 및 운영 배포를 하지 않는다.
+
+
+## 14. HTTP POST·재시도·부분 성공 안전 원칙
+- 외부 POST 요청은 timeout을 명시하고 HTTP 응답 성공 여부를 확인한다.
+- 응답 유실 시 서버가 작업을 반영했는지 불명확할 수 있다. idempotency 보장 없이 timeout/5xx POST를 자동 재전송해 중복 작업을 만들지 않는다.
+- Discord 429는 공식 Retry-After/retry_after를 준수하고, 400/401/403/404 등 영구 오류는 반복 요청하지 않는다.
+- chunk 전송은 파트별 확인 상태를 유지하고 일부 성공을 전체 성공으로 표시하지 않는다.
+- 파일별 atomic replace가 여러 파일을 하나의 transaction으로 만드는 것은 아니다. state/history 복구 journal 또는 동등한 일관성 설계를 검증한다.
+- 이 규칙은 설계 기준이며 P1-B 운영 코드 구현은 별도 사용자 승인 전 금지한다.

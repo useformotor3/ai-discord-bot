@@ -438,3 +438,25 @@
 - main 대비 diverged 135 ahead / 59 behind; main HEAD `8034668f45496ef532bfdfb865b29d4149cf2a94`, merge-base `f9a12a5778f5fa1d907201ab2931d20ca2656bb7`.
 - main.py blob SHA `470ac101d5cc4fdb2c5077d5468ef00327af3d43` 보존 확인. 기준 commit 대비 diff에도 main.py는 포함되지 않는다.
 - Run #13 검증 commit `27d2c69287631b041672b9989fdeeb3066f5ebb9` 이후는 문서만 갱신했으므로 30 passed / 5 xfailed의 코드 검증 근거는 유효하다.
+
+
+## 2026-11-14 — P1-B 전송·저장·동기화 정책 정밀 설계
+
+### 공식 기술 문서 확인
+- Discord 공식 Rate Limits 문서에서 429의 Retry-After 또는 JSON retry_after 준수, invalid request(401/403/429) 반복 위험, webhook 404 재요청 금지 안내를 확인했다.
+- Discord Execute Webhook 문서에서 wait=true일 때 서버가 메시지 저장을 확인하고 message 객체를 반환하며, wait=false 기본 동작은 저장되지 않은 메시지에 오류를 돌려주지 않을 수 있음을 확인했다.
+- Python Requests 문서에서 timeout 미지정 시 무기한 대기 가능, connect/read timeout 구분, ConnectTimeout은 재시도 안전하다고 명시된 점을 확인했다.
+
+### 설계 판단
+- Discord POST의 ReadTimeout/일반 ConnectionError/5xx는 서버 측 반영 여부가 불명확하므로, idempotency 수단 없이 무조건 재시도하면 중복 메시지를 만들 수 있다. 기본 상태를 delivery_unknown으로 두고 재시도는 보류한다.
+- 429는 Retry-After/retry_after를 준수하며 실행 대기 예산을 초과하면 임의로 대기시간을 줄이지 않고 deferred로 처리한다.
+- wait=true와 chunk별 message ID/상태를 사용해 확인 성공 파트를 추적한다. 부분 성공과 unknown 파트를 분리한다.
+- archive를 먼저 원자적으로 저장하되 state/history 각각의 atomic replace만으로 두 파일 간 transaction이 보장되지 않으므로 journal/recovery 설계를 추가한다.
+- Git push 실패 시 로컬 commit을 보존하고 다음 실행에서 원격 ref를 조회해 같은 commit의 반영 여부를 먼저 확인한다.
+- 기존 503 retry strict xfail는 새 정책과 충돌할 수 있으므로 P1-B 구현 전 테스트 계약을 수정하거나 중복 방지 수단을 먼저 결정한다.
+
+### 승인/운영 경계
+- 상세 설계는 `reports/MAIN_PY_IMPROVEMENT_DESIGN_2026-11-14.md` §17에 기록했다.
+- 공식 출처는 Discord Rate Limits, Discord Webhook Resource, Python Requests Quickstart/Advanced 문서다.
+- 이번 변경은 문서만이며 main.py, 운영 workflow, state/history를 수정하지 않았다. 운영 Gemini/Discord/Git push도 실행하지 않았다.
+- P1-B 코드는 별도 승인 전까지 구현하지 않는다.
