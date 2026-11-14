@@ -48,3 +48,12 @@ python -m pytest -q
 - compileall: 통과
 - pytest: **21 passed in 0.16s**
 - 기존 운영 workflow와 외부 Gemini/Discord/Git push는 호출하지 않았다.
+
+
+## Discord/Git 실패 경로 테스트 — 2026-11-14
+
+- `tests/conftest.py`는 Discord 응답 큐(HTTP status, headers, 예외), timeout 전달값, Git 명령별 return code/예외, `check=True`의 `CalledProcessError`, sleep 호출을 mock으로 기록한다.
+- `tests/test_mock_infrastructure.py`는 429/Retry-After 응답과 Git push 실패를 fixture 단위에서 주입하고 격리되는지 확인한다.
+- `tests/test_external_failure_paths.py`는 현재 `main.py`에서 아직 구현되지 않은 P1-B 기대 동작을 `xfail(strict=True)`로 표시한다. 이는 결함을 통과로 위장하지 않고 CI에 예상 미구현 항목을 명시한다. 향후 코드가 기대 동작을 충족하면 XPASS(strict)로 CI가 실패하므로 해당 xfail 표식을 제거하고 정상 통과 테스트로 전환해야 한다.
+- 이번 범위는 fixture/test/테스트 전용 workflow뿐이다. 운영 `main.py`, 운영 workflow, state/history 데이터는 수정하지 않는다.
+- 외부 Gemini, 실제 Discord webhook, 실제 Git push는 호출하지 않는다.
