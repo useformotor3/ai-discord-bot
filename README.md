@@ -12,6 +12,7 @@
 - P0 응답 검증/실패 차단: 작업 브랜치 구현 완료
 - P1-A 상태·이력 안전성: 작업 브랜치 구현 완료
 - P1-A helper 독립 테스트: 7 passed
+- 예비 재구성 사본 pytest: 21 passed (원본 blob SHA 불일치로 예비 결과만 인정)
 - **저장소 전체 pytest 및 GitHub Actions CI: 아직 미실행**
 - 작업 브랜치는 현재 확인 기준 main 대비 45 commits ahead / 7 commits behind이며 diverged 상태입니다. 자동 생성 운영 데이터를 보존하기 위해 merge/rebase를 보류합니다.
 
@@ -45,6 +46,6 @@ Actions 성공은 자동화 실행 결과이지 CRA 법령 해석이나 출처�
 
 ## 다음 작업
 
-우선 작업 브랜치 전체 소스를 격리 환경에 확보해 compileall과 전체 pytest를 실행합니다. 전체 회귀 검증 전에는 P1-B(Discord timeout/status/retry 및 Git 동기화 실패 상태화) 구현으로 넘어가지 않습니다.
+우선 GitHub 원본과 blob SHA가 일치하는 작업 브랜치 소스를 격리 환경에 확보해 compileall과 전체 pytest를 실행합니다. 전체 회귀 검증 전에는 P1-B(Discord timeout/status/retry 및 Git 동기화 실패 상태화) 구현으로 넘어가지 않습니다.
 
 자세한 재개 지점과 검증 한계는 [PROJECT_STATUS.md](PROJECT_STATUS.md)를 기준으로 합니다.
