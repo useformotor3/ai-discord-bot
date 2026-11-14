@@ -28,3 +28,15 @@ python -m pytest -q
 - pytest 통과는 mock 환경에서 코드 경로가 기대대로 동작한다는 뜻이다.
 - 실제 Gemini·Discord 연동, GitHub Actions 운영 실행, CRA 법령 해석의 정확성을 보증하지 않는다.
 - Discord timeout/HTTP status, Git push 실패 상태화, 아카이브 원자적 저장은 P1-B 후속 범위다.
+
+## GitHub Actions 자동 검증
+
+작업 브랜치 `docs/cra-audit-and-project-control-2026-11-14`에서 테스트 코드, `main.py` 또는 `.github/workflows/tests.yml`가 변경되면 테스트 전용 workflow가 실행되도록 구성했다.
+
+- workflow: [Isolated Python Tests](../.github/workflows/tests.yml)
+- 실행 순서: 원본 Git blob SHA 확인 → pytest 설치 → `compileall` → `pytest -q`
+- 권한: `contents: read`만 사용
+- Gemini API 키, Discord webhook, Git push 권한을 사용하지 않는다.
+- 운영 workflow `run.yml`은 호출하지 않는다.
+- 현재 workflow의 SHA 기준값은 2026-11-14에 확인한 다섯 개 원본 파일의 blob SHA다. 이 파일들을 의도적으로 변경할 때는 변경 검토와 함께 기준값도 갱신해야 한다.
+- GitHub Actions 결과는 해당 실행의 commit SHA, 각 단계 로그, 테스트 결과와 함께 판단한다.
