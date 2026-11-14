@@ -458,3 +458,12 @@
 - 실제 제품 SKU/ST MCU 주문 코드 미확정: 제품 적용성 및 제조사별 Secure Boot/SFU/SFI 기능은 UNVERIFIED. IEC 62443-4-2 SR 3.1/SR 3.4 매핑도 무료 공식 원문 검증 전 UNVERIFIED.
 - main read-only; main.py, Gemini prompt, 운영 workflow, .github/workflows/run.yml 변경 없음. merge/rebase/sync 없음. 테스트는 실행하지 않음.
 - 다음: #1부터 전체 Pass A/B/C 및 원문 인용/개별 claim 별도 판정. #2/#3은 P1로 후속 처리.
+
+## 2026-11-14 — main archive advanced to report #4
+
+- Main HEAD: 03b3ecaaa506c00146f5cb9d5855e6a66c3ef1c7 (report #4). main #3 → #4: 1 commit, archive #4 + history.json + state.json.
+- history.json: 1,567 entries; state.json count 4 (일일 카운터). report #4 원문 fetch 확인; archive tree 전체 재열거는 미실시.
+- 감사 대기열에 2026-11-14 #1–#4 등록. #1/#2는 이전 #2 snapshot에 있었으나 queue 누락을 보정; #3/#4는 이후 추가. 파일 단위는 모두 UNVERIFIED / NEW / NOT_YET_AUDITED.
+- #4는 #2와 같은 secure-by-default/초기 인증 주제다. 별도 요구사항 중복을 만들지 말고 동일 canonical requirement에 연결. #2/#4의 특정 비밀번호·포트 차단 구현은 법령 문언과 위험기반 설계 후보를 구분한다.
+- EUR-Lex OJ 20.11.2024 Annex I Part I(2)(b),(c),(d),(j) 문맥에서 #4 Raw Text Quote의 numbering/표현 불일치 후보를 확인했다. 전체 Pass A/B/C는 미완료.
+- main read-only, protected code/workflow/prompt unchanged; merge/rebase/sync 없음; tests not run. 다음 감사는 #1부터 전체 Pass A/B/C.
