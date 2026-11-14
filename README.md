@@ -14,7 +14,7 @@
 - P1-A helper 독립 테스트: 7 passed
 - 예비 재구성 사본 pytest: 21 passed (원본 blob SHA 불일치로 예비 결과만 인정)
 - **저장소 전체 pytest 및 GitHub Actions CI: 아직 미실행**
-- 작업 브랜치는 현재 확인 기준 main 대비 54 commits ahead / 48 commits behind이며 diverged 상태입니다. 자동 생성 운영 데이터를 보존하기 위해 merge/rebase를 보류합니다.
+- 작업 브랜치는 `main`과 diverged 상태이며 main에도 다수의 신규 커밋이 누적되어 있습니다. 자동 생성 운영 데이터를 보존하고 충돌을 검토하기 전까지 merge/rebase를 보류합니다.
 
 Actions 성공은 자동화 실행 결과이지 CRA 법령 해석이나 출처의 사실 정확성을 보증하지 않습니다. helper 독립 테스트 결과를 전체 저장소 테스트 통과로 해석하지 않습니다.
 
