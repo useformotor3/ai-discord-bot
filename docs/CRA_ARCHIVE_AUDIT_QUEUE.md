@@ -2627,3 +2627,19 @@ Batch result: 5/5 CONFLICT, 0 PARTIALLY_VERIFIED, 0 VERIFIED; 0/5 Raw Text Quote
 - 최종 감사: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_4_2026-11-14.md](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_4_2026-11-14.md)
 - 최종 파일 판정: CONFLICT; Raw Text Quote 0/1 재사용. 6개 원자 주장 중 PARTIALLY_VERIFIED 4, CONFLICT 2.
 - 중복 처리: #2와 동일 주제이므로 신규 Canonical Requirement 생성 없음; 통합 보고서에서는 하나의 정본 절로 통합.
+
+### #5 — Secure-by-default 및 초기 상태 변경 방지
+
+- 상태: AUDITED
+- 확인일: 2026-11-14
+- 보고서 번호: #5 (2026-11-14 일일 카운트)
+- 원문 생성 시각: 2026-11-14 00:20:38 (파일 Date; 시간대 미표기)
+- 원문 commit: [e3b94efcb955c4c39a6b63a3550987ca3e13068a](https://github.com/useformotor3/ai-discord-bot/commit/e3b94efcb955c4c39a6b63a3550987ca3e13068a) — commit timestamp 2026-11-14T00:20:54Z
+- 원문 파일: [research_archive/2026-11-14_002038.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_002038.md)
+- 원문 blob SHA: 447753b6ec40949251315d1274cdcf8ea3570218
+- 감사 결과: [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_5_2026-11-14.md](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_5_2026-11-14.md)
+- 파일 단위 판정: CONFLICT; Raw Text Quote 0/2; 6개 원자 주장 중 PARTIALLY_VERIFIED 3, CONFLICT 3.
+- 중복성 경고: #2/#4와 secure-by-default/initial-auth/port-hardening 주제가 중복된다. 새 Canonical Requirement를 생성하지 않는다.
+- 주요 법령 정정: 제조자 의무는 Article 13이며 Article 10이 아니다. Annex I Part I(2)(a)=known exploitable vulnerabilities, (b)=secure-by-default, (d)=access control, (f)=integrity, (j)=attack surface.
+- 제품별 적용성: UNVERIFIED — 제품 SKU, 실제 계정 모델, 포트/서비스/진단 인터페이스 목록 미확정.
+
