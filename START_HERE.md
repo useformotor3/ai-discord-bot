@@ -487,7 +487,7 @@
 - Claim Evidence Ledger: 55 file-level source records + 345 atomic claims = **400 unique IDs**, duplicate IDs 0. All 345 atomic claims have one or more Canonical IDs. Canonical register defines 45 requirements; 42 are referenced by new atomic claims, and 3 are forward-mapped to matrix requirements; 99 legacy claims remain unmapped.
 - #8–#57 (50 reports) and #58–#62 (5 reports) have completed atomic decomposition. Individual legal facts marked VERIFIED do not promote a conflicting source file to VERIFIED.
 - Product-specific applicability, Class I/II classification, exact MCU order code and DUT test results remain UNVERIFIED/NOT_RUN.
-- Current P0: reconcile the 345 atomic claims and 46 canonical requirements against Volume 1, Volume 2, PSIRT SOP, requirements matrix, integrated traceability matrix and test evidence register; resolve duplicated/contradictory wording and keep exact legal locators. Then proceed to main-only audit #63–#67.
+- Current P0: migrate 99 legacy claims without Canonical IDs, reconcile report volumes/SOP/classification matrix/threat model/test register, then audit main-only reports #1–#5 for 2026-11-14.
 - No production code, main.py, production workflow, Gemini V2 prompt/contract or main branch was changed. E3 live source fetch remains unexecuted. This batch is documentation-only.
 
 ## 2026-11-13 — Logging / Secure Data Lifecycle
