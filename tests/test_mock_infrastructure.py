@@ -32,7 +32,7 @@ def test_fixture_intercepts_all_external_boundaries(run_main):
         encoding="utf-8",
     )
 
-    run_main.execute([VALID_REPORT])
+    run_main.execute([VALID_REPORT], script_path=script)
 
     assert len(run_main.captured["model_calls"]) == 1
     assert run_main.captured["model_calls"][0]["model"] == "mock-model"
