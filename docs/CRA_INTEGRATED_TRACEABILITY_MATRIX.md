@@ -37,6 +37,7 @@
 | TR-18 | Article 13(8)–(9) | 위험/예상 사용기간 기반 지원기간(법정 예외 포함), 보안 업데이트 보존 | AST-08/10; TH-17 | Product support policy, update archive, retention/restore process | TST-OPS-02 | EV-SUPPORT-001, EV-RETENTION-001 | UNVERIFIED |
 | TR-19 | Article 14(1)–(4),(8) | actively exploited vulnerability와 severe incident를 구분해 신고·사용자 통지 | AST-08/10; TH-16/17 | PSIRT incident classification, ENISA SRP workflow, notification and timestamp controls | TST-OPS-03..04 | EV-INC-001..004 | UNVERIFIED |
 | TR-20 | Article 7, Annex III, Implementing Regulation (EU) 2025/2392 | Important/critical product 분류는 Annex III category와 core functionality에 근거 | 제품 경계 전체; MCU 역할·제품 core functionality 확인 | Product boundary analysis, intended purpose, MCU functionality mapping; 분류를 MCU 탑재 사실만으로 추정 금지 | TST-REM-01 및 product classification review | EV-BOUNDARY-001, EV-CLASS-001 | UNVERIFIED |
+| TR-22 | Article 13(18), Article 28, Article 30, Article 64, Annex II | 사용자 정보 보존, EU DoC, CE 표시 및 제재 관련 준수 기록 | 제품 문서·라벨·시장 출시 통제 | 한국어 사용자 정보의 버전/보존 관리, DoC·CE 검토, 적용 가능한 법적 책임·제재 근거 검토 | 문서 검토 및 출시 승인 게이트(실물 DUT 시험 아님) | 기술문서, 서명된 DoC, 라벨/제품 표시 증거, 매뉴얼 개정·보존 기록, 법무 검토 | UNVERIFIED |
 
 ## 3. 시험 대장과 통합 매트릭스의 연결 규칙
 
@@ -109,14 +110,15 @@
 | TR-11 | CRA-REQ-SECURITY-LOGGING-001 |
 | TR-12 | CRA-REQ-SECURE-DATA-ERASURE-001; CRA-REQ-SECURE-DATA-TRANSFER-001; CRA-REQ-USER-INSTRUCTIONS-001 |
 | TR-13 | CRA-REQ-SBOM-001 |
-| TR-14 | CRA-REQ-REMEDIATION-001; CRA-REQ-SECURITY-TEST-001 |
-| TR-15 | CRA-REQ-VULN-DISCLOSURE-001; CRA-REQ-CVD-POLICY-001; CRA-REQ-CVD-CONTACT-001 |
+| TR-14 | CRA-REQ-REMEDIATION-001; CRA-REQ-SECURITY-TEST-001; CRA-REQ-VULNERABILITY-HANDLING-001 |
+| TR-15 | CRA-REQ-VULN-DISCLOSURE-001; CRA-REQ-CVD-POLICY-001; CRA-REQ-CVD-CONTACT-001; CRA-REQ-USER-CONTACT-001 |
 | TR-16 | CRA-REQ-SECURE-UPDATE-DIST-001; CRA-REQ-FREE-UPDATE-001 |
-| TR-17 | CRA-REQ-PRODUCT-RISK-ASSESSMENT-001; CRA-REQ-COMPONENT-DUE-001; CRA-REQ-TECHDOC-001 |
-| TR-18 | CRA-REQ-SUPPORT-PERIOD-001; CRA-REQ-UPDATE-AVAILABILITY-001 |
-| TR-19 | CRA-REQ-REPORT-ACTIVE-001; CRA-REQ-REPORT-SEVERE-001; CRA-REQ-REPORT-ROUTE-001; CRA-REQ-USER-NOTIFY-001; CRA-REQ-TRANSITION-001 |
+| TR-17 | CRA-REQ-PRODUCT-RISK-ASSESSMENT-001; CRA-REQ-COMPONENT-DUE-001; CRA-REQ-TECHDOC-001; CRA-REQ-MANUFACTURER-ARTICLE13-001 |
+| TR-18 | CRA-REQ-SUPPORT-PERIOD-001; CRA-REQ-UPDATE-AVAILABILITY-001; CRA-REQ-SUPPORT-END-001 |
+| TR-19 | CRA-REQ-REPORT-ACTIVE-001; CRA-REQ-REPORT-SEVERE-001; CRA-REQ-REPORT-ROUTE-001; CRA-REQ-REPORT-SCOPE-TIMELINE-001; CRA-REQ-USER-NOTIFY-001; CRA-REQ-TRANSITION-001 |
 | TR-20 | CRA-REQ-CLASSIFICATION-001; CRA-REQ-CONFORMITY-001 |
-| TR-21 | CRA-REQ-SECURITY-LOGGING-001 |
+| TR-22 | CRA-REQ-USER-INFO-RETENTION-001; CRA-REQ-DOC-001; CRA-REQ-CE-001; CRA-REQ-PENALTY-001 |
+
 
 ## 8. Secure data lifecycle traceability
 
