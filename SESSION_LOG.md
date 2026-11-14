@@ -46,3 +46,29 @@
 - 구현 순서는 Phase A(테스트 기반)부터 시작하도록 제안
 - 아직 main.py, workflow, state.json, history.json 변경 없음
 - Phase A 구현은 사용자 승인 대기
+## 2026-11-14 — Phase A 테스트 기반 구축
+
+### 승인 범위
+- 사용자 승인에 따라 작업 브랜치 `docs/cra-audit-and-project-control-2026-11-14`에서 Phase A만 수행
+- 운영 `main.py`, `.github/workflows/run.yml`, `state.json`, `history.json`은 수정하지 않음
+- 실제 Gemini API, Discord Webhook, Git commit/push 호출 금지
+
+### 변경
+- `tests/conftest.py`: Gemini, requests, subprocess, sleep mock fixture
+- `tests/test_main_characterization.py`: 정상 생성, 모델 폴백, 전체 모델 실패의 현행 동작 기록
+- `tests/test_mock_infrastructure.py`: 외부 경계 mock 차단 검증
+- `tests/README.md`: 테스트 실행법과 테스트 해석 기준
+
+### 검증
+- Python compileall: 통과
+- mock infrastructure test: 2 passed
+- 전체 `main.py` characterization test: 저장소 전체 checkout이 없는 실행 환경으로 인해 미실행. 통과로 보고하지 않음.
+- 실제 Gemini/Discord/Git 외부 호출: 없음
+- 파일 재조회로 GitHub 저장 내용 확인
+
+### 관찰 및 다음 단계
+- 전체 모델 실패 시 오류 경고를 정상 보고서로 저장하는 BUG-01 경로를 characterization test로 고정했다. 이는 정상 요구사항이 아니며 Phase B에서 실패 상태와 아카이브/전송 차단을 기대하도록 테스트를 전환해야 한다.
+- 작업 브랜치는 main보다 2 commits 뒤처진 diverged 상태다. 자동 생성된 main 아카이브를 보존하기 위해 merge/rebase하지 않았다.
+- 다음은 실제 저장소 checkout이 가능한 환경에서 characterization 전체 테스트 실행 및 결과 보완이다.
+- Phase B(P0 코드 수정)는 별도 사용자 승인 전까지 시작하지 않는다.
+
