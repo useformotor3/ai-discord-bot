@@ -3,7 +3,7 @@
 - 작성일: 2026-11-14
 - 기준 코드: main.py @ main SHA 86a7731aad5de8d75581fc953bcea2c44adf2f2b
 - 기준 workflow: .github/workflows/run.yml @ main SHA 65a8cadc8eac593f551e390698e367b1d161ecf1
-- 상태: 설계 완료 / 코드 구현 승인 대기
+- 상태: 설계 완료 / Phase A 테스트 기반 파일 추가 완료 / Phase B 코드 수정은 별도 승인 대기
 - 변경 제한: 이 문서는 설계 문서이며 main.py, workflow, state.json, history.json을 변경하지 않는다.
 
 ## 1. 설계 목표
@@ -241,3 +241,13 @@ history.json의 기존 필드는 하위 호환을 유지한다. 새 필드를 �
 - 테스트 결과와 변경 diff를 제시한 뒤 Phase B 승인을 별도로 요청한다.
 
 이 설계 문서는 사용자 승인을 대신하지 않는다.
+
+
+## 12. Phase A 실행 기록 (2026-11-14)
+
+- 사용자 승인 후 작업 브랜치에 mock 기반 테스트 파일 4개를 추가했다.
+- Gemini SDK, Discord HTTP, Git subprocess, sleep을 mock 처리한다.
+- 운영 `main.py`, workflow, `state.json`, `history.json`은 변경하지 않았다.
+- 격리된 로컬 검증: compileall 통과, mock infrastructure 2 passed.
+- 저장소 전체 checkout이 없는 실행 환경이므로 실제 `main.py` characterization 3건은 아직 실행하지 못했다. 전체 테스트 통과라고 보고하지 않는다.
+- 다음 단계: 실제 저장소 checkout 환경에서 characterization suite를 실행하고, 이후 Phase B 구현은 별도 승인받는다.
