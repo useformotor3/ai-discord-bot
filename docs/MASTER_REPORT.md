@@ -406,7 +406,7 @@ Conformity assessment 본문은 Article 32, 모듈은 Annex VIII다. Module A=in
 
 The main-only audit covers 55 consecutive, non-random archive reports (#8–#62): 40 CONFLICT, 15 PARTIALLY_VERIFIED, 0 VERIFIED; direct quote reuse 0/55. This is not a statistical error rate for the full archive.
 
-The 2026-11-13 main-only namespace contains 55 file-level source records and 345 atomic claims (400 unique IDs, zero collisions); 343 claims reference one or more of 42 CRA-REQ IDs, while two quote-accuracy claims reference an evidence-governance ID only. The Ledger also contains 99 older legacy claims with candidate crosswalks pending independent review. After report #4 audit, the full Ledger defines 56 file records + 351 new atomic claims + 99 legacy claims = 506 unique CRA-ARCH IDs, duplicate definitions 0. The Canonical Requirement Register contains 45 requirements.
+The 2026-11-13 main-only namespace contains 55 file-level source records and 345 atomic claims (400 unique IDs, zero collisions); 343 claims reference one or more of 42 CRA-REQ IDs, while two quote-accuracy claims reference an evidence-governance ID only. The Ledger also contains 99 older legacy claims with candidate crosswalks pending independent review. After reports #4–#5 audits, the full Ledger defines 57 file records + 357 new atomic claims + 99 legacy claims = 513 unique CRA-ARCH IDs, duplicate definitions 0. The Canonical Requirement Register contains 45 requirements.
 
 The atomic decomposition preserves the distinction between a verified legal fact and the file-level verdict of the source report. Product-specific applicability, servo-drive Class I/II classification, exact MCU order code and DUT test evidence remain UNVERIFIED/NOT_RUN. The next P0 is independent review of the 99 legacy candidate crosswalks and sentence-level reconciliation across Volume 1/2, PSIRT SOP, product classification matrix, threat model and test register.
 
@@ -424,7 +424,7 @@ Historical work-branch snapshot only. For current branch status use the live ref
 
 The 2026-11-14 reconciliation report is [CROSS_DOCUMENT_RECONCILIATION_2026-11-14.md](CROSS_DOCUMENT_RECONCILIATION_2026-11-14.md). Both the integrated traceability matrix and requirements-to-servo-drive matrix now map all 45 Canonical Requirement IDs. The test register contains 49 cases, all NOT_RUN, and all 49 are referenced by the integrated matrix after expanding range and slash shorthand.
 
-Ledger counts are now scope-separated: the 2026-11-13 #8–#62 namespace has 55 file records + 345 atomic claims = 400 IDs; the Ledger also contains 99 older legacy claims with candidate crosswalks pending independent review, giving 506 unique CRA-ARCH IDs overall after report #4 adds one file record and six atomic claims. Of the new 345 claims, 343 have one or more CRA-REQ mappings; two quote-accuracy-only claims map to the evidence-governance ID.
+Ledger counts are now scope-separated: the 2026-11-13 #8–#62 namespace has 55 file records + 345 atomic claims = 400 IDs; the Ledger also contains 99 older legacy claims with candidate crosswalks pending independent review, giving 513 unique CRA-ARCH IDs overall after reports #4 and #5 add two file records and twelve atomic claims. Of the new 345 claims, 343 have one or more CRA-REQ mappings; two quote-accuracy-only claims map to the evidence-governance ID.
 
 The remaining P0 is independent review of the 99 legacy candidate mappings and line-by-line reconciliation of both report volumes, PSIRT SOP, product-classification matrix, threat model and test register. Product-specific applicability/classification remains UNVERIFIED; all DUT tests remain NOT_RUN.
 
@@ -432,3 +432,8 @@ The remaining P0 is independent review of the 99 legacy candidate mappings and l
 ## 2026-11-14 main-only report #4 audit
 
 Report #4 was audited against the official EUR-Lex text. File-level verdict: CONFLICT; its Raw Text Quote is rejected (0/1 reuse). Secure-by-default and appropriate access-control themes are valid, but universal forced password change/unique default password and blanket disabling of all non-essential ports are not specified as universal implementation methods. The quote assigns access control to Annex I Part I(2)(c), but the correct locator is (2)(d); (2)(c) concerns security updates. See [audit record](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_4_2026-11-14.md). Report #4 overlaps report #2 and adds no new Canonical Requirement.
+
+
+## 2026-11-14 main-only report #5 audit
+
+Report #5 was audited against EUR-Lex Regulation (EU) 2024/2847. File-level verdict: CONFLICT; Raw Text Quote reuse 0/2. It repeats the secure-by-default/initial-auth/port-hardening topic in #2/#4 and adds no new Canonical Requirement. It also misattributes manufacturer obligations to Article 10 (the relevant manufacturer obligations are Article 13) and mislabels Annex I Part I(2)(a)/(b)/(j). See [audit record](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_5_2026-11-14.md).
