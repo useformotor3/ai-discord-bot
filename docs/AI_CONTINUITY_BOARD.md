@@ -482,3 +482,10 @@
 - Report #4 (main 2026-11-14_001549.md; blob SHA 44105223e8d841bbf2f5f273da950723a33dedbd) audited. File CONFLICT; quote 0/1; 6 atomic claims (4 PARTIALLY_VERIFIED, 2 CONFLICT).
 - #4 duplicates #2 secure-by-default/initial-auth topic; no new requirement. Ledger now 506 unique CRA-ARCH IDs (56 file +351 new atomic +99 legacy); duplicate definitions 0.
 - Queue #4 AUDITED. #1–#3 remain for manual review; next batch target #1–#5.
+
+
+## 2026-11-14 report #5 manual audit
+
+- Report #5 (blob SHA 447753b6ec40949251315d1274cdcf8ea3570218) audited: file CONFLICT; quote 0/2; 6 claims (3 PARTIALLY_VERIFIED, 3 CONFLICT). #2/#4/#5 are overlapping secure-by-default/initial-auth reports; no new Canonical ID.
+- Article 10/13 and Annex I Part I(2)(a)/(b)/(j) corrections recorded. Queue #5 AUDITED; #1–#3 pending.
+- Ledger after #4/#5: 513 unique definitions (57 file +357 new atomic +99 legacy), duplicate 0. 99 legacy candidate crosswalks pending independent review.
