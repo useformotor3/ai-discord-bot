@@ -212,3 +212,35 @@
 - `main.py`, workflow, `state.json`, `history.json`, 운영 `main` 미변경
 - 실제 Gemini API, Discord webhook, Git commit/push, 운영 workflow 호출 없음
 - 상세 설계 기록: `reports/MAIN_PY_IMPROVEMENT_DESIGN_2026-11-14.md` §14
+
+
+## 2026-11-14 — 원본 테스트 fixture 및 main.py 부작용 경로 재검토
+
+### 검토 대상
+- 작업 브랜치의 `main.py`, `tests/conftest.py`, `tests/test_main_characterization.py`, `tests/test_p1_reliability.py`를 GitHub connector로 다시 조회
+- 각 파일의 blob SHA를 기록하고 코드 내용을 직접 검토
+- `.github/workflows/run.yml`의 트리거와 실행 단계를 재확인
+
+### 실제 확인된 사항
+- Git subprocess mock은 모든 명령에 대해 항상 returncode=0을 반환한다. 따라서 `check=True`에서 발생하는 Git 실패 예외를 재현하지 못한다.
+- Discord mock은 항상 HTTP 204를 반환하며 timeout/429/4xx/5xx/네트워크 오류를 검증하지 않는다.
+- 정상 테스트는 Git 명령 호출 횟수만 검사하며 명령별 실패 결과를 확인하지 않는다.
+- main.py는 Discord timeout/status를 확인하지 않고, Discord 전송이 아카이브/상태 저장보다 먼저 실행된다.
+- state/history는 목적 파일에 직접 write한다.
+- Git push 예외는 출력만 하고 삼켜 프로세스 성공 종료 가능성이 남는다.
+- history snippet 자료형과 초 단위 아카이브 파일명 충돌은 잠재 위험으로 분류했다. 실제 데이터 분포/충돌 여부는 미확인이다.
+
+### 판단
+- 기존 테스트는 정상 및 일부 모델 실패 경로에는 유용하지만 Git/Discord 실패 경로를 충분히 검증하지 못한다.
+- 원본 소스 동일성이 보장된 전체 테스트 환경 확보를 계속 최우선으로 둔다.
+- 이후 fixture 실패 경로 보강과 P1-B 구현은 범위·테스트·롤백을 제시하고 별도 승인을 받는다.
+
+### 변경/운영 영향
+- 이번 단계에서 GitHub 원본 코드와 테스트를 정적 검토했으며 코드/테스트/workflow/state/history는 변경하지 않았다.
+- 실제 pytest 및 CI는 실행하지 않았다.
+- 운영 Gemini/Discord/Git push 및 운영 workflow를 실행하지 않았다.
+- 상세 기록: `reports/MAIN_PY_IMPROVEMENT_DESIGN_2026-11-14.md` §15 및 `PROJECT_STATUS.md`
+
+### GitHub 관리 문서 갱신
+- README, AI_RULEBOOK, PROJECT_STATUS, MASTER_PLAN, SESSION_LOG 및 개선 설계 보고서 갱신 예정
+- 저장 후 동일 브랜치에서 재조회하여 저장 내용과 blob SHA를 확인한다.
