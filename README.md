@@ -51,7 +51,7 @@ Actions 성공은 자동화 실행 결과이지 CRA 법령 해석이나 출처�
 
 ## 테스트 실행 증거
 
-- [GitHub Actions Run #1 — 21 passed](https://github.com/useformotor3/ai-discord-bot/actions/runs/43567990149)
+- [GitHub Actions latest Run #3 — 21 passed](https://github.com/useformotor3/ai-discord-bot/actions/runs/43568074938)
 - 실행 commit: `d31c604c6067685e33f6888cbc488c0e45d80be7`
 - 다섯 개 핵심 파일의 Git blob SHA 일치 확인 후 compileall 및 pytest 실행.
 - 테스트 전용 workflow: [.github/workflows/tests.yml](.github/workflows/tests.yml)
