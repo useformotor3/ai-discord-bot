@@ -149,3 +149,9 @@
 2. P1-B 전송·저장·동기화 안정성 변경안과 롤백 설계 제시
 3. 승인 후 코드 구현 및 CI 회귀 검증
 4. CRA 출처 검증 메타데이터와 요구사항 추적 체계 구축
+
+
+### 최신 HEAD 반복 검증 결과
+- 문서 기록 반영 후 최신 작업 브랜치 HEAD `dddba44a41851e9d0319ce9a91535a9d26145d92`에서 테스트 전용 workflow가 다시 실행되었다.
+- [Run #3 — success](https://github.com/useformotor3/ai-discord-bot/actions/runs/43568074938), SHA 5개 일치, compileall 통과, pytest **21 passed in 0.19s**.
+- 기본 원본 테스트 실행 기반 확보 완료를 유지한다. 실패 경로 보강과 P1-B는 별도 작업/승인이다.
