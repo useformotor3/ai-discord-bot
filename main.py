@@ -113,6 +113,12 @@ def validate_research_report(text):
       "quota exceeded",
       "rate limit exceeded",
       "internal server error",
+      "resource_exhausted",
+      "permission_denied",
+      "service unavailable",
+      "요청 처리에 실패",
+      "응답 생성에 실패",
+      "조사를 완료하지 못했습니다",
   ]
   if any(marker.lower() in lowered for marker in error_markers):
     return False, "오류 또는 서비스 장애 문구가 보고서에 포함되어 있습니다."
