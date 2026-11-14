@@ -406,7 +406,7 @@ Conformity assessment 본문은 Article 32, 모듈은 Annex VIII다. Module A=in
 
 The main-only audit covers 55 consecutive, non-random archive reports (#8–#62): 40 CONFLICT, 15 PARTIALLY_VERIFIED, 0 VERIFIED; direct quote reuse 0/55. This is not a statistical error rate for the full archive.
 
-The Claim Evidence Ledger now contains 55 file-level source records and 345 atomic claim records (400 unique IDs, zero collisions). Every atomic claim is mapped to one or more Canonical Requirement IDs. The canonical register contains 46 requirements, including all Annex I Part I control families, Annex I Part II vulnerability handling, Articles 13–14, product classification, conformity assessment, technical documentation, DoC/CE, penalties and transition rules.
+The 2026-11-13 main-only namespace in the Claim Evidence Ledger contains 55 file-level source records and 345 atomic claim records (400 unique IDs, zero collisions); the full Ledger also contains 99 older legacy claims, for 499 unique CRA-ARCH IDs. Every atomic claim is mapped to one or more Canonical Requirement IDs. The canonical register contains 45 requirements, including all Annex I Part I control families, Annex I Part II vulnerability handling, Articles 13–14, product classification, conformity assessment, technical documentation, DoC/CE, penalties and transition rules.
 
 The atomic decomposition preserves the distinction between a verified legal fact and the file-level verdict of the source report. Product-specific applicability, servo-drive Class I/II classification, exact MCU order code and DUT test evidence remain UNVERIFIED/NOT_RUN. The next P0 is full cross-document reconciliation of the 345 claims against this report, Volume 2, PSIRT SOP, both traceability matrices and the test evidence register.
 
@@ -419,3 +419,11 @@ Annex I Part I(2)(l) logging/monitoring/opt-out and Part I(2)(m) secure permanen
 Current main is report #125 / HEAD \`92e8ca7aa4a86b38627a1d8e9535e5b0463a8392\`, state count 125 (daily counter), history 1,400 entries. All 55 source files audited in reports #8–#62 were revalidated against the current main Git tree: 55/55 paths and blob SHAs match, with zero missing or mismatched files.
 
 The work branch HEAD is \`ced168745cd19400ba29131a495c3bf5c3f924eb\`; compare status is diverged (diverged; ahead/behind values dynamic). Do not merge/rebase/sync or write to main. Latest completed push workflow result is recorded in the current status board; re-fetch the latest run for the current branch HEAD before relying on CI. This CI result describes the work branch snapshot, not current main's archive/history 1,400/1,400.
+
+## 2026-11-14 cross-document traceability reconciliation
+
+The 2026-11-14 reconciliation report is [CROSS_DOCUMENT_RECONCILIATION_2026-11-14.md](CROSS_DOCUMENT_RECONCILIATION_2026-11-14.md). Both the integrated traceability matrix and requirements-to-servo-drive matrix now map all 45 Canonical Requirement IDs. The test register contains 49 cases, all NOT_RUN, and all 49 are referenced by the integrated matrix after expanding range and slash shorthand.
+
+Ledger counts are now scope-separated: the 2026-11-13 #8–#62 namespace has 55 file records + 345 atomic claims = 400 IDs; the Ledger also contains 99 older legacy claims without Canonical Requirement mappings, giving 499 unique CRA-ARCH IDs overall. Of the new 345 claims, 343 have one or more CRA-REQ mappings; two quote-accuracy-only claims map to the evidence-governance ID.
+
+The remaining P0 is migration of the 99 legacy claims and line-by-line reconciliation of both report volumes, PSIRT SOP, product-classification matrix, threat model and test register. Product-specific applicability/classification remains UNVERIFIED; all DUT tests remain NOT_RUN.
