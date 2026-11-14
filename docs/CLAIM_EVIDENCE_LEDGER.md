@@ -955,7 +955,7 @@ Correct map: Annex I Part I(2)(c) for applicable automatic-update default/user c
 
 - #8–#62 file-level source records: 55개, ID suffix \`-FILE-001\`; 원본 경로/blob SHA/파일 단위 판정 추적.
 - #8–#62 atomic claim records: 345개, ID suffix \`-001\`, \`-002\` 등; 개별 법령 주장·인용·반증 추적.
-- CRA archive ID namespace 전체: 400개 unique ID (55 file-level + 345 atomic). 중복 ID 0개를 유지해야 한다. 파일 요약 표기는 Claim ID namespace에서 제외하고 SUMMARY-#NN으로 표시한다.
+- 2026-11-13 main-only namespace: 400 unique ID (55 file-level + 345 atomic). 이전 legacy claim 99개가 별도 존재하므로 전체 Ledger는 499 unique CRA-ARCH IDs다. 파일 요약 표기는 Claim ID namespace에서 제외하고 SUMMARY-#NN으로 표시한다.
 - Canonical requirement IDs: 45개. 345개 atomic claim의 Canonical ID 열을 정규화했으며, 하나의 claim은 여러 요구사항에 연결될 수 있다.
 - 파일 단위 판정과 개별 claim 상태는 별개다. 개별 claim VERIFIED가 원본 파일 전체 VERIFIED를 의미하지 않는다.
 - 제품별 적용성/Class I/II, SKU·core functionality, 실제 DUT 시험은 관련 증거가 확보되기 전까지 UNVERIFIED/NOT_RUN이다.
@@ -1032,3 +1032,12 @@ Batch direct quote reuse: **0/5**. Per-file quote counts are not inferred where 
 - #48–#52 상위 요약 5행은 원자 Claim ID와 중복되던 표시를 `SUMMARY-#48`…`SUMMARY-#52`로 바꾸었다. 이 요약행은 345개 원자 Claim ID 집계에 포함하지 않는다.
 - Ledger 집계 기준: 55 file-level source records + 345 atomic claims = 400 unique IDs; duplicate Claim IDs 0.
 - Canonical Requirement Register는 실제 45개다. 원자 주장에 직접 참조되는 ID 42개, traceability matrix에서 forward-map되는 ID 3개(Interconnectivity, Exploit mitigation, secure data transfer)로 구분한다.
+
+## 2026-11-14 full Ledger count and migration status
+
+- #8–#62 main-only namespace: 55 file-level records + 345 atomic claims = 400 unique IDs.
+- Earlier legacy claim namespace \`CRA-ARCH-035-*\`…\`CRA-ARCH-124-*\`: 99 additional atomic claim records; none yet has a \`CRA-REQ-*\` mapping.
+- Entire Ledger: 55 file records + 345 new atomic claims + 99 legacy claims = **499 unique CRA-ARCH IDs**, duplicate 0.
+- Of the 345 new atomic claims, 343 reference one or more of 42 Canonical Requirements. Two quote-accuracy-only claims reference \`CRA-EVIDENCE-QUOTE-ACCURACY-001\` and intentionally do not receive a product requirement ID.
+- The 45-entry Canonical Requirement Register has 42 requirements directly referenced by new atomic claims and 3 currently forward-mapped only in the traceability matrices: interconnectivity, exploit mitigation, secure data transfer.
+- Migration of the 99 legacy claims is open P0. Do not count them as mapped or complete.
