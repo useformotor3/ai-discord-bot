@@ -205,3 +205,13 @@
 - compare 기준 main HEAD: `6ba398b5aebb136b1026b94cf361670b1f7f60bd`; merge base: `f9a12a5778f5fa1d907201ab2931d20ca2656bb7`.
 - 이 값은 이번 조회 시점의 스냅샷이다. 자동화 커밋으로 변동 가능하며 병합/리베이스는 보류한다.
 - CI 최신 성공 근거는 Run #3, 검증 commit `dddba44a41851e9d0319ce9a91535a9d26145d92`; 이후 이번 작업은 문서만 변경했다.
+
+## 13. 실패 경로 fixture 설계 완료 — 구현 승인 대기
+
+- 원본 tests/conftest.py, tests/test_main_characterization.py, tests/test_p1_reliability.py 및 main.py를 재조회해 mock 동작과 미검증 경로를 확인했다.
+- 상세 설계: [main.py 개선 설계 보고서 §16](reports/MAIN_PY_IMPROVEMENT_DESIGN_2026-11-14.md).
+- Discord timeout/network/429/4xx/5xx/chunk 부분 전송, Git add/commit/push 실패, atomic save 실패, secret 비노출 테스트 시나리오를 정의했다.
+- 현재 fixture는 Discord 204와 Git returncode 0만 반환하므로 해당 실패 경로는 미검증이다.
+- 이번 작업은 설계 문서만 갱신했다. 테스트 코드와 main.py는 변경/실행하지 않았다.
+- P1-B 운영 코드 및 fixture/test 변경은 각각 승인 경계를 확인한 뒤 진행한다.
+- 설계 작성 전 마지막 compare 스냅샷: 106 ahead / 55 behind, diverged. 이후 문서 커밋으로 수치는 증가할 수 있다.
