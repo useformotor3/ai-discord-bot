@@ -1190,3 +1190,28 @@ Batch direct quote reuse: **0/5**. Per-file quote counts are not inferred where 
 - Legacy claims: 99 original claim records + 99 candidate crosswalk references (references are not new ID definitions).
 - Entire Ledger definitions: 56 file records + 351 new atomic claims + 99 legacy claims = **506 unique CRA-ARCH IDs**, duplicate definitions 0.
 - Across 351 new atomic claims, 349 reference at least one CRA-REQ ID; two #8–#62 quote-accuracy-only claims reference the evidence-governance ID. The 99 legacy crosswalks remain CANDIDATE pending independent review.
+
+## 2026-11-14 main-only report #5 — file and atomic claims
+
+| File ID | Report | Original file | Blob SHA | File verdict | Audit summary |
+|---|---:|---|---|---|---|
+| CRA-ARCH-MAIN-20261114-005-FILE-001 | #5 | research_archive/2026-11-14_002038.md | 447753b6ec40949251315d1274cdcf8ea3570218 | CONFLICT | #2/#4와 secure-by-default/초기 인증/포트 hardening 주제 중복. Article 10 제조자 의무 오인용; Annex I Part I(2)(a)/(b)/(j) 원문·위치 오류. 상세: ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_5_2026-11-14.md |
+
+| Claim ID | Report | Atomic claim | Legal source locator | Canonical ID / Evidence ID | Status | Assessment |
+|---|---:|---|---|---|---|---|
+| CRA-ARCH-MAIN-20261114-005-001 | #5 | 제품은 factory default에서 secure-by-default 상태여야 한다. | Annex I Part I(2)(b) | CRA-REQ-SECURE-DEFAULT-001 | PARTIALLY_VERIFIED | 핵심 요구는 맞으나 tailor-made product 예외와 original-state reset 가능성을 포함해야 한다. |
+| CRA-ARCH-MAIN-20261114-005-002 | #5 | 불필요한 네트워크 포트·서비스·진단 인터페이스는 CRA에 따라 기본 차단해야 한다. | Annex I Part I(2)(j), (d) | CRA-REQ-ATTACK-SURFACE-001; CRA-REQ-ACCESS-CONTROL-001 | PARTIALLY_VERIFIED | 외부 인터페이스를 포함한 공격표면 제한과 접근통제는 요구되나 특정 포트/서비스 blanket disablement는 구현 선택이다. |
+| CRA-ARCH-MAIN-20261114-005-003 | #5 | 기본 계정이 있으면 최초 설치 시 강제 변경 또는 고정 마스터 비밀번호 차단이 의무다. | Annex I Part I(2)(b), (d) | CRA-REQ-SECURE-DEFAULT-001; CRA-REQ-ACCESS-CONTROL-001 | CONFLICT | 특정 password lifecycle 방식의 보편적 강제는 법령 문언에 없다. |
+| CRA-ARCH-MAIN-20261114-005-004 | #5 | 제어 파라미터는 무단 접근/변경으로부터 보호되어야 한다. | Annex I Part I(2)(d), (f) | CRA-REQ-ACCESS-CONTROL-001; CRA-REQ-INTEGRITY-001 | PARTIALLY_VERIFIED | 적절한 접근통제 및 사용자 승인 없는 변경에 대한 무결성 보호와 부합한다. |
+| CRA-ARCH-MAIN-20261114-005-005 | #5 | 제조자 의무는 Article 10이며 secure-by-default를 규정한다. | Article 13(1)–(4), Annex I Part I | CRA-REQ-MANUFACTURER-ARTICLE13-001; CRA-REQ-TECHDOC-001; CRA-REQ-PRODUCT-RISK-ASSESSMENT-001 | CONFLICT | 제조자 의무는 Article 13이며 위험평가 및 기술문서화를 포함한다. |
+| CRA-ARCH-MAIN-20261114-005-006 | #5 | Raw Text Quote의 Annex I Part I(2)(a)가 secure-by-default/attack-surface 원문을 인용한다. | Annex I Part I(2)(a), (b), (j) | CRA-EVIDENCE-QUOTE-ACCURACY-001; CRA-REQ-SECURE-DEFAULT-001; CRA-REQ-ATTACK-SURFACE-001 | CONFLICT | (2)(a)=known exploitable vulnerabilities 없음, (2)(b)=secure-by-default, (2)(j)=attack surface 제한. 직접 인용 재사용 금지. |
+
+
+
+## 2026-11-14 updated Ledger count after report #5 audit
+
+- #8–#62: 55 file records +345 atomic claims =400 unique IDs.
+- 2026-11-14 reports #4–#5: 2 file records +12 atomic claims =14 IDs.
+- Legacy claim namespace: 99 original claims with 99 candidate crosswalk references (references are not new ID definitions).
+- Entire Ledger definitions: 57 file records +357 new atomic claims +99 legacy claims = **513 unique CRA-ARCH IDs**, duplicate definitions 0.
+- Across 357 new atomic claims, 355 reference at least one CRA-REQ ID; two quote-accuracy-only claims from #8–#62 reference the evidence-governance ID. Legacy crosswalks remain CANDIDATE pending independent review.
