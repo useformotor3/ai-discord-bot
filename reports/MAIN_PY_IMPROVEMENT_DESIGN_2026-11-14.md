@@ -308,3 +308,37 @@ history.json의 기존 필드는 하위 호환을 유지한다. 새 필드를 �
 - 이번 절은 정적 코드 리뷰 기록만 추가했다.
 - `main.py`, workflow, `state.json`, `history.json`, 운영 `main`은 수정하지 않았다.
 - 실제 Gemini/Discord/Git push 및 운영 workflow는 실행하지 않았다.
+
+
+## 15. 원본 테스트 fixture 및 부작용 경로 정밀 검토 — 2026-11-14
+
+### 추가 확인 대상
+- `tests/conftest.py` @ blob SHA `d55069fa82b4eb9d555033db8f8c2867ff774dd6`
+- `tests/test_main_characterization.py` @ blob SHA `8019b18696bc9f1eb729feed633ecf2e32f36c04`
+- `tests/test_p1_reliability.py` @ blob SHA `cff881cb0da2724f8810b88ae621909a9e23a6f9`
+- `main.py` @ blob SHA `470ac101d5cc4fdb2c5077d5468ef00327af3d43`
+
+### 테스트 fixture에서 확인된 검증 공백
+1. `fake_subprocess_run()`은 전달된 명령의 결과와 무관하게 항상 `returncode=0`을 반환한다. `check=True`의 실패 동작도 재현하지 않는다. 따라서 Git config/add/commit/push 실패 경로를 검증하지 못한다.
+2. mock Discord `fake_post()`는 항상 HTTP 204를 반환한다. timeout 인자, 429, 4xx, 5xx, 네트워크 예외, 부분 전송을 검증하지 않는다.
+3. 정상 흐름 테스트는 Git 명령이 5회 호출되었는지 확인하지만 각 명령의 성공/실패 결과를 구분하지 않는다.
+4. 현재 테스트는 mock 경계가 호출을 가로채는지와 일부 정상/실패 흐름을 확인하지만, 실제 네트워크 통합 또는 GitHub Actions CI의 증거는 아니다.
+
+### main.py에서 추가로 확인한 위험
+| ID | 우선순위 | 코드 근거 | 위험 및 제안 |
+|---|---|---|---|
+| P1-R08 | 중간 | history 각 항목이 dict인지 검사하지만 `snippet`의 타입은 확인하지 않고 이후 문자열 join에 사용 | 숫자/배열/null snippet이 포함된 legacy 항목에서 프롬프트 구성 중 TypeError 가능. 기존 데이터 표본과 호환성을 확인한 뒤 문자열 정규화 또는 명시적 검증 필요 |
+| P1-R09 | 중간 | 아카이브 파일명이 날짜+시각(초 단위) | 같은 초에 두 실행이 발생하면 파일명 충돌 및 기존 보고서 덮어쓰기 가능. run_id 또는 충돌 방지 생성 필요 |
+| P1-R10 | 중간 | Discord 전송 실패 예외가 아카이브 저장보다 앞에서 발생 가능 | 일부 chunk 전송 후 실패하면 Discord 부분 전송만 남고 파일/상태 저장은 실행되지 않을 수 있음. idempotency와 부분 성공 정책 필요 |
+| P1-R11 | 중간 | `MAX_DAILY_QUOTA=1200` 하드코딩 | 모델/계정/정책별 실제 한도와 연결된 값인지 불명확. 공식 한도 확인 전 운영 정책값으로 단정 금지 |
+
+### 우선순위 재평가
+- P0: 원본 동일성 확인을 통과한 테스트 실행 경로 확보. 테스트 workflow를 추가하거나 기존 workflow를 수정하는 일은 별도 승인을 받기 전 금지.
+- P1: Git push 실패 검증을 포함하도록 mock을 강화하고, Discord 응답/timeout 및 state/history 원자적 저장·부분 성공 처리를 별도 승인 후 구현.
+- P2: snippet schema, archive collision, quota 설정, import-time 실행 구조, 출처 검증을 분리해 설계.
+- 기존 history의 실제 snippet 자료형 분포와 초 단위 파일명 충돌 여부는 아직 확인하지 않았으므로 발생 사실이 아닌 잠재 위험으로 기록한다.
+
+### 변경 및 검증 경계
+- GitHub에서 원본 소스와 테스트 파일을 다시 fetch하고 blob SHA를 기록한 정적 검토다.
+- 이 검토에서 실제 저장소 pytest, CI, 운영 workflow를 실행하지 않았다.
+- `main.py`, tests, workflow, state/history 및 운영 main은 변경하지 않았다.
