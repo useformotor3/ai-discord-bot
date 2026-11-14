@@ -57,3 +57,11 @@ python -m pytest -q
 - `tests/test_external_failure_paths.py`는 현재 `main.py`에서 아직 구현되지 않은 P1-B 기대 동작을 `xfail(strict=True)`로 표시한다. 이는 결함을 통과로 위장하지 않고 CI에 예상 미구현 항목을 명시한다. 향후 코드가 기대 동작을 충족하면 XPASS(strict)로 CI가 실패하므로 해당 xfail 표식을 제거하고 정상 통과 테스트로 전환해야 한다.
 - 이번 범위는 fixture/test/테스트 전용 workflow뿐이다. 운영 `main.py`, 운영 workflow, state/history 데이터는 수정하지 않는다.
 - 외부 Gemini, 실제 Discord webhook, 실제 Git push는 호출하지 않는다.
+
+
+## 추가 실패 주입 검증 — 2026-11-14
+- transport 예외(RuntimeError 기반 connection reset/timeout) 주입 및 호출 캡처
+- HTTP 401/403 응답 주입과 상태코드 관찰
+- Git add/commit/push 각 단계의 non-zero return 및 check=True 예외, 실패 후 후속 명령 중단
+- 이 테스트는 fixture 기능만 검증한다. 운영 코드의 retry, permanent-failure handling, sync status, atomic write를 검증하지 않는다.
+- 최신 실행 결과는 이번 변경 commit의 GitHub Actions run을 확인한 뒤 기록한다.

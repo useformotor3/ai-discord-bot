@@ -394,3 +394,24 @@
 ### 다음 단계
 - P1-B의 retry, 4xx/5xx, 부분 chunk 전송, Git sync 상태 및 atomic state/history write 정책을 명세한다.
 - 기존 동작/변경 동작, 영향 파일, 테스트, 롤백 계획을 포함한 구현안을 별도 제시하고 사용자 승인을 받는다.
+
+
+## 2026-11-14 — 원격 상태 재조회 및 실패 주입 fixture 2차 확장
+
+### 재개 전 확인
+- 저장소 관리 문서, 테스트 fixture, 실패 경로 테스트, 테스트 workflow를 현재 작업 브랜치에서 다시 조회했다.
+- 작업 시작 HEAD: `4f599f14e92dcbe5ead14d4886feda34cfd874da`.
+- 기준 docs 브랜치 commit `c6dfc5cee2485922b2313030dd9a5843e347afe7` 대비 21 ahead / 0 behind.
+- `main` HEAD `3b2dafd098b51eb60998ce3be032efc4a42760fb`; compare diverged 132 ahead / 58 behind.
+- README 및 상황판 상단의 현재 브랜치 표기가 이전 docs 브랜치로 남아 있는 것을 확인했다. 이번 묶음에서 정정한다.
+
+### 변경
+- `tests/test_mock_infrastructure.py`: Discord transport exception 2 case, HTTP 401/403 2 case, Git add/commit/push 단계별 실패 3 case 추가.
+- `.github/workflows/tests.yml`: 변경된 테스트 파일의 정확한 Git blob SHA로 source pin 갱신.
+- README, 상황판, 마스터 계획, 테스트 가이드에 현재 브랜치/스냅샷/검증 범위를 갱신한다.
+- 이번 변경은 테스트 경계의 오류 주입 capability 검증이다. main.py와 운영 workflow/data는 변경하지 않는다.
+
+### 검증 계획 및 제한
+- 이번 commit을 push한 후 전용 Actions에서 exact blob SHA → compileall → 전체 pytest 순으로 검증한다.
+- 새 CI 결과 전에는 테스트 통과를 주장하지 않는다. 기존 Run #11은 변경 전 코드만 검증한다.
+- merge/rebase/PR merge, 운영 workflow 실행, Gemini/Discord 실호출, 실제 Git push는 수행하지 않는다.

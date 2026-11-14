@@ -3,7 +3,7 @@
 - 최종 갱신: 2026-11-14 (KST)
 - 기준 저장소: `useformotor3/ai-discord-bot`
 - 운영 기준 브랜치: `main` (운영 자동화 및 데이터 보존)
-- 현재 작업 브랜치: `docs/cra-audit-and-project-control-2026-11-14`
+- 현재 작업 브랜치: `test/failure-path-fixtures-2026-11-14` (최신 상태 절 참조)
 - 이번 비교 기준: main과 diverged 상태. ahead/behind 수치는 main 자동화 커밋에 따라 변동하므로 통합 직전에 재조회
 - 프로젝트 상태: 조사 품질 감사 및 자동화 신뢰성 개선 진행 중
 - 주 문서 언어: 한국어
@@ -267,3 +267,29 @@
 - 기준 브랜치 commit `c6dfc5cee2485922b2313030dd9a5843e347afe7` 대비 20 ahead / 0 behind.
 - 운영 `main` 대비 diverged, 131 ahead / 57 behind.
 - 이 섹션을 반영하는 문서 커밋 1건이 추가되므로 이후 실제 ahead 값은 최소 1 증가한다. 다음 통합 판단 전에는 반드시 다시 조회한다.
+
+
+## 17. 최신 재개 스냅샷 및 추가 실패 주입 테스트 — 2026-11-14
+
+### 작업 시작 시 원격 기준점
+- 작업 브랜치: `test/failure-path-fixtures-2026-11-14`
+- 시작 HEAD: `4f599f14e92dcbe5ead14d4886feda34cfd874da`
+- 기준 브랜치/commit: `docs/cra-audit-and-project-control-2026-11-14` @ `c6dfc5cee2485922b2313030dd9a5843e347afe7`
+- 기준 브랜치 대비: 21 ahead / 0 behind
+- `main` HEAD: `3b2dafd098b51eb60998ce3be032efc4a42760fb`
+- `main` 대비: diverged, 132 ahead / 58 behind
+- merge-base: `f9a12a5778f5fa1d907201ab2931d20ca2656bb7`
+- 위 수치는 작업 시작 시점의 스냅샷이며 다음 커밋 후 ahead 수가 증가한다.
+
+### 이번 승인 범위에서 추가한 fixture 검증
+- Discord 전송 경계에서 연결/timeout 예외를 주입하고 캡처하는지 검증(2개 parameter case).
+- HTTP 401/403 응답을 주입하고 status 및 raise_for_status 동작을 확인(2개 parameter case).
+- Git add/commit/push 각 단계에 개별 실패를 주입하고 check=True의 CalledProcessError 및 이후 명령 미실행을 확인(3개 parameter case).
+- 이는 **fixture의 실패 주입 능력**을 확인하는 테스트이며, 현행 main.py가 해당 장애를 올바르게 복구/재시도하거나 상태화한다는 의미가 아니다.
+- P1-B 운영 코드와 `main.py`는 수정하지 않는다.
+
+### CI 및 후속 확인
+- 새 테스트 수: 기존 23 passed / 5 xfailed에서 7개 fixture case 추가. 실제 결과는 새 commit의 Actions 실행 후 기록한다.
+- 테스트 workflow의 source pin은 변경된 `tests/test_mock_infrastructure.py` blob SHA로 갱신했다.
+- CI 전 검증은 미실행 상태다. 성공을 주장하지 않는다.
+- 기존 Run #11은 테스트 소스 변경 전 commit이므로 이번 추가 7개 case를 검증하지 않는다.

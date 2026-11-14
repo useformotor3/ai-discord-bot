@@ -6,9 +6,9 @@
 
 ## 현재 상태
 
-- 작업 브랜치: `docs/cra-audit-and-project-control-2026-11-14`
+- 현재 작업 브랜치: `test/failure-path-fixtures-2026-11-14`
 - 운영 기준 브랜치: `main` — 별도 승인 없이 수정·병합하지 않습니다.
-- 현재 작업: 조사 품질 감사, 자동화 코드 신뢰성 개선, 원본 테스트 실행 기반 확보
+- 현재 작업: 테스트 전용 실패 주입 범위 확장 및 P1-B 정책 명세 (운영 코드 변경은 승인 대기)
 - P0 응답 검증/실패 차단: 작업 브랜치 구현 완료
 - P1-A 상태·이력 안전성: 작업 브랜치 구현 완료
 - helper 독립 pytest: 7 passed (전체 저장소 테스트 아님)
@@ -77,3 +77,12 @@ Actions 성공은 자동화 실행 결과이지 CRA 법령 해석이나 출처�
 - 변경 파일: `.github/workflows/tests.yml`, `tests/README.md`, `tests/conftest.py`, `tests/test_mock_infrastructure.py`, `tests/test_external_failure_paths.py`
 - 운영 `main.py`, 운영 workflow `run.yml`, `state.json`, `history.json`은 변경하지 않았다.
 - 상세 현황은 작업 브랜치의 `PROJECT_STATUS.md` 및 `SESSION_LOG.md`를 확인한다.
+
+
+## 최신 원격 상태 — 2026-11-14 확인
+- 현재 작업 브랜치 HEAD 확인값(작업 시작): `4f599f14e92dcbe5ead14d4886feda34cfd874da`
+- 기준 브랜치: `docs/cra-audit-and-project-control-2026-11-14` @ `c6dfc5cee2485922b2313030dd9a5843e347afe7`
+- 기준 브랜치 대비: 21 ahead / 0 behind (작업 시작 시점)
+- `main` 대비: diverged, 132 ahead / 58 behind (작업 시작 시점; 자동화 커밋으로 변동)
+- 최신 확인 테스트 증거: [Run #11](https://github.com/useformotor3/ai-discord-bot/actions/runs/43569359083), 23 passed / 5 xfailed. 이번 추가 테스트는 아직 CI 미실행.
+- 이 문서 앞부분의 과거 브랜치/Run #3 요약은 당시 기록이다. 현재 기준은 이 최신 상태 절과 `PROJECT_STATUS.md`를 따른다.
