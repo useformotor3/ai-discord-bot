@@ -59,3 +59,12 @@
 
 ### 결론
 원본 동일성 검증 실행 경로 및 기본 회귀 테스트 기반을 확보했다. 다만 테스트 커버리지의 실패 경로 공백까지 해소한 것은 아니므로 P1-B 구현 전 별도 설계·승인을 유지한다.
+
+
+## 최신 HEAD 반복 실행 증거 — 2026-11-14
+
+- [GitHub Actions Run #3](https://github.com/useformotor3/ai-discord-bot/actions/runs/43568074938)
+- 실행 commit: `dddba44a41851e9d0319ce9a91535a9d26145d92`
+- Git blob SHA 5개 일치, compileall 통과, pytest **21 passed in 0.19s**
+- Run #1 및 Run #2에 이어 최신 브랜치 HEAD에서도 workflow/job success 확인.
+- 테스트 전용 workflow 외 운영 workflow, 운영 main, 운영 데이터는 변경·실행하지 않았다.
