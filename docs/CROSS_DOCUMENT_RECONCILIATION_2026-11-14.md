@@ -97,3 +97,11 @@ Ledger의 서로 다른 기록 범위를 혼합하지 않도록 집계를 분리
 - compare main...cra-project-foundation: diverged, ahead 1,049 / behind 583. This is a snapshot; re-fetch live refs before every session. No merge/rebase/sync.
 - latest push CI run \`43533348296\` on the checked branch HEAD: SUCCESS; strict archive audit 990/990, missing/orphan/duplicate/malformed 0. Archive integrity only, not product compliance.
 - main daily report #4 is now registered in \`CRA_ARCHIVE_AUDIT_QUEUE.md\`; reports #1–#4 are queued for manual Pass A/B/C review. #4 overlaps #2 on secure-by-default and initial authentication; audit the overlap instead of treating it as a new requirement.
+
+
+## 2026-11-14 report #4 audit extension
+
+- Main-only report #4 source SHA: 44105223e8d841bbf2f5f273da950723a33dedbd; manual audit: ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_4_2026-11-14.md.
+- File verdict CONFLICT; Raw Text Quote rejected 0/1; 6 atomic claims: 4 PARTIALLY_VERIFIED, 2 CONFLICT. #4 overlaps #2 and creates no new Canonical Requirement.
+- Updated Ledger totals: 56 file records +351 new atomic claims +99 legacy claims = 506 unique CRA-ARCH ID definitions; duplicate definitions 0. Legacy candidate crosswalk references are not new definitions.
+- Annex I Part I(2)(b) secure-by-default; (2)(c) security updates; (2)(d) access control; (2)(j) attack-surface limitation. #4 mislabels (2)(c) as access control; official source: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R2847.
