@@ -200,3 +200,8 @@
 - compare main...cra-project-foundation: diverged, ahead 1,049 / behind 583. This is a snapshot; re-fetch live refs before every session. No merge/rebase/sync.
 - latest push CI run \`43533348296\` on the checked branch HEAD: SUCCESS; strict archive audit 990/990, missing/orphan/duplicate/malformed 0. Archive integrity only, not product compliance.
 - main daily report #4 is now registered in \`CRA_ARCHIVE_AUDIT_QUEUE.md\`; reports #1–#4 are queued for manual Pass A/B/C review. #4 overlaps #2 on secure-by-default and initial authentication; audit the overlap instead of treating it as a new requirement.
+
+
+## 2026-11-14 main-only manual audit
+
+- [Report #4 — Secure-by-default / 초기 인증 감사](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_4_2026-11-14.md): file verdict CONFLICT, direct quote 0/1, #2와 중복 주제. 제품별 적용성 UNVERIFIED.
