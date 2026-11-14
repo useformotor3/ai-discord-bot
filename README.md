@@ -15,8 +15,8 @@
 - 임시 재구성 사본 pytest: 21 passed (blob SHA 불일치로 예비 결과만 인정)
 - **원본 동일성이 입증된 저장소 전체 pytest 및 GitHub Actions CI: 미실행 (작업 브랜치 Actions runs 0건 확인)**
 - 실제 코드 리뷰에서 Discord/Git 실패 처리, 원자적 저장, 테스트 fixture의 실패 경로 검증 공백 확인
-- 2026-11-14 15:31 KST 조회: main 대비 diverged, 72 ahead / 50 behind
-- 동일 시점 작업 브랜치 GitHub Actions runs 조회: 0건 (CI 성공 증거 없음)
+- main 대비 작업 브랜치: diverged. 문서 커밋으로 수치가 계속 변하므로 정확한 ahead/behind는 통합 직전에 실시간 재조회
+- 2026-11-14 15:31 KST 스냅샷: 72 ahead / 50 behind; 당시 작업 브랜치 Actions runs 0건 (CI 성공 증거 없음)
 
 Actions 성공은 자동화 실행 결과이지 CRA 법령 해석이나 출처의 사실 정확성을 보증하지 않습니다. 테스트 통과 숫자는 반드시 실행한 정확한 소스와 범위를 함께 표시합니다.
 
