@@ -40,3 +40,11 @@ python -m pytest -q
 - 운영 workflow `run.yml`은 호출하지 않는다.
 - 현재 workflow의 SHA 기준값은 2026-11-14에 확인한 다섯 개 원본 파일의 blob SHA다. 이 파일들을 의도적으로 변경할 때는 변경 검토와 함께 기준값도 갱신해야 한다.
 - GitHub Actions 결과는 해당 실행의 commit SHA, 각 단계 로그, 테스트 결과와 함께 판단한다.
+## 실제 GitHub Actions 실행 결과 — 2026-11-14
+
+- Run #1: [Isolated Python Tests — success](https://github.com/useformotor3/ai-discord-bot/actions/runs/43567990149)
+- 실행 commit: `d31c604c6067685e33f6888cbc488c0e45d80be7`
+- 원본 Git blob SHA 5개: 전부 일치
+- compileall: 통과
+- pytest: **21 passed in 0.16s**
+- 기존 운영 workflow와 외부 Gemini/Discord/Git push는 호출하지 않았다.
