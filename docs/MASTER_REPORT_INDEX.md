@@ -2,7 +2,7 @@
 
 - 문서 ID: CRA-SD-MASTER-INDEX
 - 버전: 1.0
-- 기준일: 2026-11-13
+- 기준일: 2026-11-14
 - 작업 브랜치: cra-project-foundation
 - 제품별 상태: UNVERIFIED — 제품 식별정보/제품 경계 미확정
 
@@ -179,16 +179,16 @@
 - main-only reports #8–#62: 55 files, 40 CONFLICT / 15 PARTIALLY_VERIFIED / 0 VERIFIED, direct quote reuse 0/55; consecutive non-random sample only.
 - Claim Evidence Ledger: 55 file-level records + 345 atomic claims = 400 unique IDs, zero collisions; 45 canonical requirements; 42 referenced by new claims, 3 forward-mapped; 99 legacy claims unmapped.
 - Canonical requirement mapping is integrated into [requirements-to-servo-drive matrix](CRA_REQUIREMENTS_TO_SERVO_DRIVE_TRACEABILITY_MATRIX.md) and [integrated traceability matrix](CRA_INTEGRATED_TRACEABILITY_MATRIX.md).
-- Next P0: reconcile Volume 1/2, PSIRT SOP, traceability matrices and test evidence register against the 345 atomic claims; then audit main reports #63–#67.
+- Next P0: migrate 99 legacy claims without Canonical IDs and complete sentence-level reconciliation of Volume 1/2, PSIRT SOP, product-classification matrix, threat model and test register; then audit 2026-11-14 main-only reports #1–#5.
 
 - [Security Test Evidence Register](SECURITY_TEST_EVIDENCE_REGISTER.md): includes TST-LOG-01/02 and TST-ERASE-01..04; all NOT_RUN.
 - [Product Classification and Access Control Matrix](CRA_PRODUCT_CLASSIFICATION_AND_ACCESS_CONTROL_MATRIX.md): Article 7/Annex III/Implementing Regulation 2025/2392 and Annex I Part I(2)(d) canonical mapping.
 
-## Current Git / CI baseline — 2026-11-13
+## Current Git / CI baseline — 2026-11-14
 
 - main: report #125, HEAD \`92e8ca7aa4a86b38627a1d8e9535e5b0463a8392\`; state count125 (daily), history 1,400.
 - work branch: \`cra-project-foundation\` HEAD \`ced168745cd19400ba29131a495c3bf5c3f924eb\`; compare diverged, diverged; ahead/behind values dynamic. No merge/rebase/sync authorized or performed.
 - Source integrity: #8–#62 source file paths/blob SHAs 55/55 match current main tree.
-- Latest push CI: run 43408438728 SUCCESS, 140 tests, archive audit 990/990 consistent. This is branch CI, not main archive count.
+- Latest push CI at that snapshot: run 43531794670 SUCCESS; strict archive audit 990/990 consistent. This is branch CI, not main archive count.
 
 - [2026-11-14 Cross-document Reconciliation](CROSS_DOCUMENT_RECONCILIATION_2026-11-14.md): Ledger/Canonical ID/traceability/test ID 집합 대조와 미완료 migration 백로그.
