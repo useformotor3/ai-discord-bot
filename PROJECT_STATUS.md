@@ -85,7 +85,7 @@
 
 ## 5. 브랜치 보호 및 운영 영향
 
-- 이번 비교에서 작업 브랜치는 main보다 61 commits 앞서고 49 commits 뒤처진 diverged 상태다.
+- 이전 비교 기록(61 ahead / 49 behind)은 과거 스냅샷이다. 2026-11-14 15:31 KST 재조회 결과는 72 ahead / 50 behind이며 diverged 상태다.
 - main의 자동 생성 자료와 작업 변경의 충돌 여부를 확인하기 전까지 merge/rebase하지 않는다.
 - 운영 `main`, `.github/workflows/run.yml`, `state.json`, `history.json`은 변경하지 않았다.
 - 실제 Gemini/Discord/Git push 및 운영 workflow를 실행하지 않았다.
@@ -110,3 +110,14 @@
 - [자동화 코드 개선 설계 및 정적 검토](reports/MAIN_PY_IMPROVEMENT_DESIGN_2026-11-14.md)
 - [테스트 실행 환경 감사](reports/TEST_EXECUTION_ENVIRONMENT_AUDIT_2026-11-14.md)
 - [테스트 가이드](tests/README.md)
+
+
+## 8. 2026-11-14 15:31 KST — 원격 상태 재확인
+
+- 작업 브랜치 HEAD: `8813eb53b186b25e72ac157d664d636be6d68fd8`
+- 운영 main HEAD: `c9b5bff8ee851b6baa86bbe4073353c9303bb432`
+- GitHub compare 결과: diverged, 72 commits ahead / 50 commits behind
+- GitHub Actions runs API 조회 결과: 해당 작업 브랜치의 workflow run 0건
+- 해석: 이 브랜치에서 확인 가능한 CI 성공 증거가 없다. CI 통과 또는 테스트 완료로 표시하지 않는다.
+- 이번 조회는 GitHub API GET만 수행했다. workflow dispatch, 운영 자동화, 코드 실행은 하지 않았다.
+- 병합/리베이스는 계속 보류한다.
