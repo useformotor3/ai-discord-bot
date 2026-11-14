@@ -4,7 +4,7 @@
 - 기준 저장소: `useformotor3/ai-discord-bot`
 - 운영 기준 브랜치: `main` (운영 자동화 및 데이터 보존)
 - 현재 작업 브랜치: `docs/cra-audit-and-project-control-2026-11-14`
-- 브랜치 관계(이번 확인): `main` 대비 45 commits ahead / 7 commits behind, diverged
+- 브랜치 관계: `main`과 diverged 상태. ahead/behind 수치는 main 자동화 커밋과 이 브랜치의 문서 커밋으로 계속 변동하므로 통합 직전에 다시 비교
 - 프로젝트 상태: 조사 품질 감사 및 자동화 신뢰성 개선 진행 중
 - 주 문서 언어: 한국어
 - 안전 원칙: 법적 적합성·제품 분류·안전 관련 설계 판단은 근거와 인간 검토 없이 확정하지 않음
@@ -74,7 +74,7 @@
 
 ## 5. 브랜치 보호 및 운영 영향
 
-- 최신 비교 결과 현재 작업 브랜치는 `main`보다 54 commits 앞서고 48 commits 뒤처진 diverged 상태다. main의 신규 커밋이 계속 누적되고 있으므로 비교 수치는 재확인 시점에 따라 달라진다.
+- 최신 비교에서 작업 브랜치가 diverged 상태이고 main 쪽에도 다수의 신규 커밋이 누적된 것을 확인했다. 운영 자동 생성 자료와 작업 변경의 충돌 여부를 확인하기 전까지 merge/rebase를 보류한다.
 - 자동 생성 아카이브와 운영 변경을 보존하기 위해 merge/rebase는 보류한다.
 - 운영 `main`, `.github/workflows/run.yml`, `state.json`, `history.json`은 이번 관리 문서 갱신에서 수정하지 않는다.
 - 이번 단계에서 실제 Gemini/Discord/Git push 또는 운영 workflow를 실행하지 않는다.
