@@ -121,3 +121,42 @@
 - 해석: 이 브랜치에서 확인 가능한 CI 성공 증거가 없다. CI 통과 또는 테스트 완료로 표시하지 않는다.
 - 이번 조회는 GitHub API GET만 수행했다. workflow dispatch, 운영 자동화, 코드 실행은 하지 않았다.
 - 병합/리베이스는 계속 보류한다.
+
+## 9. 2026-11-14 — 테스트 전용 GitHub Actions 구현 및 원본 테스트 성공
+
+### 구현
+- 신규 workflow: `.github/workflows/tests.yml`
+- 테스트 가이드: `tests/README.md` 갱신
+- 실행 범위는 작업 브랜치 `docs/cra-audit-and-project-control-2026-11-14`로 제한
+- `push` 경로 필터와 수동 `workflow_dispatch` 지원
+- `permissions: contents: read`, checkout credential persistence 비활성화
+- Gemini API 키, Discord webhook, 운영 Git push 권한을 사용하지 않음
+- 기존 운영 `.github/workflows/run.yml` 및 운영 데이터는 변경하지 않음
+
+### 실제 실행 증거
+- Workflow: Isolated Python Tests
+- Run: [#1 — 성공](https://github.com/useformotor3/ai-discord-bot/actions/runs/43567990149)
+- 실행 commit: `d31c604c6067685e33f6888cbc488c0e45d80be7`
+- 실행 이벤트: push
+- Source integrity: 5개 핵심 파일 Git blob SHA 전부 일치
+  - `main.py`: `470ac101d5cc4fdb2c5077d5468ef00327af3d43`
+  - `tests/conftest.py`: `d55069fa82b4eb9d555033db8f8c2867ff774dd6`
+  - `tests/test_main_characterization.py`: `8019b18696bc9f1eb729feed633ecf2e32f36c04`
+  - `tests/test_mock_infrastructure.py`: `863a77c5ec3dc50c0a21b246b22cb862a8baeaa2`
+  - `tests/test_p1_reliability.py`: `cff881cb0da2724f8810b88ae621909a9e23a6f9`
+- `python -m compileall -q main.py tests`: 통과
+- `python -m pytest -q`: **21 passed in 0.16s**
+- Job conclusion: success
+
+### 해석과 제한
+- 이전 임시 재구성 사본의 21 passed와 달리, 이번 결과는 GitHub 원본 checkout과 SHA 일치가 확인된 commit에서 직접 실행한 결과다.
+- 현재 저장소의 pytest 자동 탐색 범위에서 21개 테스트가 통과했다.
+- 이 테스트는 mock 기반이다. 실제 Gemini/Discord 연동, 실제 Git push 성공, CRA 법률 해석 정확성, 미작성된 Discord/Git 실패 시나리오까지 보증하지 않는다.
+- Workflow의 SHA 고정값은 기준 소스가 바뀌면 의도적으로 실패한다. 소스 변경 시 검토 후 SHA 기준값을 함께 갱신해야 한다.
+- 운영 `main`, `main.py`, `.github/workflows/run.yml`, `state.json`, `history.json` 변경 없음.
+- 운영 workflow dispatch, Gemini API, Discord webhook, Git push 실행 없음.
+
+### 다음 단계
+1. 현재 테스트의 Git/Discord 실패 경로 검증 공백을 유지보수 항목으로 추적한다.
+2. P1-B 구현은 별도 승인 전까지 보류한다.
+3. 이후 코드 변경은 동일한 SHA 검증 → compileall → pytest CI 게이트를 통과시킨다.
