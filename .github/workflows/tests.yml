@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - docs/cra-audit-and-project-control-2026-11-14
+      - test/failure-path-fixtures-2026-11-14
     paths:
       - ".github/workflows/tests.yml"
       - "main.py"
@@ -46,10 +47,11 @@ jobs:
             test "$actual" = "$expected"
           }
           verify_blob "main.py" "470ac101d5cc4fdb2c5077d5468ef00327af3d43"
-          verify_blob "tests/conftest.py" "d55069fa82b4eb9d555033db8f8c2867ff774dd6"
+          verify_blob "tests/conftest.py" "e158786dc643d3c0548f39bcb74e8c4aef7a351c"
           verify_blob "tests/test_main_characterization.py" "8019b18696bc9f1eb729feed633ecf2e32f36c04"
-          verify_blob "tests/test_mock_infrastructure.py" "863a77c5ec3dc50c0a21b246b22cb862a8baeaa2"
+          verify_blob "tests/test_mock_infrastructure.py" "9e9c66548be11f9f4bf27eb0f1fe6d22b61b918a"
           verify_blob "tests/test_p1_reliability.py" "cff881cb0da2724f8810b88ae621909a9e23a6f9"
+          verify_blob "tests/test_external_failure_paths.py" "1fcc15c68b1bde5acb7d1ad18dcb21b84ab87183"
 
       - name: Install test dependency
         run: python -m pip install --disable-pip-version-check pytest
