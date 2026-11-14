@@ -126,3 +126,11 @@
 - GitHub Actions CI와 운영 workflow는 실행하지 않음
 - 현재 브랜치는 main 대비 41 commits ahead / 6 commits behind이며 자동화가 계속 추가되므로 merge/rebase 보류
 - P1-B(Discord timeout/status, Git 동기화 실패 상태화)는 별도 승인 대상
+
+
+### 추가 코드 수행 검증
+- GitHub에서 재조회한 P1-A helper 구현을 분리해 임시 pytest 환경에서 7개 동작 검증을 실행했고 7 passed
+- 손상 파일 원본 보존, 잘못된 state/history 구조 거부, datetime 시간대 정규화, 날짜 변경 시 quota count reset을 확인
+- 이 검증은 helper 로직의 독립 실행이며 저장소 전체 테스트 suite 또는 main.py end-to-end 실행이 아니다.
+- 전체 저장소 pytest, GitHub Actions CI, 운영 workflow는 미실행 상태로 유지한다.
+- 코드 리뷰상 Discord 응답 상태/timeout, Git push 실패 상태, state/history 원자적 저장은 아직 미해결이며 P1-B 또는 후속 안정성 작업 대상이다.
