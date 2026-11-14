@@ -18,6 +18,7 @@ def run_main(tmp_path, monkeypatch):
         "model_calls": [],
         "discord_posts": [],
         "git_commands": [],
+        "git_options": [],
         "sleep_calls": [],
     }
 
@@ -101,10 +102,8 @@ def run_main(tmp_path, monkeypatch):
 
         def fake_subprocess_run(args, **kwargs):
             command = list(args)
-            captured["git_commands"].append({
-                "args": command,
-                "check": kwargs.get("check", False),
-            })
+            captured["git_commands"].append(command)
+            captured["git_options"].append({"check": kwargs.get("check", False)})
             result = git_queue.pop(0) if git_queue else None
             if isinstance(result, BaseException):
                 raise result
