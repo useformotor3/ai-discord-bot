@@ -12,12 +12,13 @@ import pytest
 
 @pytest.fixture
 def run_main(tmp_path, monkeypatch):
-    """main.py를 임시 작업 디렉터리에서 실행하고 외부 의존성을 전부 mock한다."""
+    """성공 기본값과 주입 가능한 실패 응답으로 외부 경계를 격리한다."""
     repo_root = Path(__file__).resolve().parents[1]
     captured = {
         "model_calls": [],
         "discord_posts": [],
         "git_commands": [],
+        "sleep_calls": [],
     }
 
     class FakeModels:
@@ -37,7 +38,12 @@ def run_main(tmp_path, monkeypatch):
         def __init__(self, responses):
             self.models = FakeModels(responses)
 
-    def execute(responses, script_path=None):
+    def execute(
+        responses,
+        script_path=None,
+        discord_responses=None,
+        git_responses=None,
+    ):
         genai_module = types.ModuleType("google.genai")
         genai_module.Client = lambda api_key=None: FakeClient(responses)
         google_module = types.ModuleType("google")
@@ -45,27 +51,82 @@ def run_main(tmp_path, monkeypatch):
 
         requests_module = types.ModuleType("requests")
 
-        def fake_post(url, *, json):
-            captured["discord_posts"].append({"url": url, "json": json})
-            return SimpleNamespace(status_code=204, text="")
+        class FakeResponse:
+            def __init__(self, status_code=204, headers=None, text=""):
+                self.status_code = status_code
+                self.headers = headers or {}
+                self.text = text
+
+            def raise_for_status(self):
+                if self.status_code >= 400:
+                    raise RuntimeError(
+                        f"mock Discord HTTP failure: {self.status_code}"
+                    )
+
+        discord_queue = list(discord_responses or [])
+
+        def fake_post(url, *, json, **kwargs):
+            response_spec = discord_queue.pop(0) if discord_queue else None
+            captured["discord_posts"].append({
+                "timeout": kwargs.get("timeout"),
+                "payload_length": len(json.get("content", "")),
+                "status_code": getattr(response_spec, "status_code", None),
+            })
+            if isinstance(response_spec, BaseException):
+                raise response_spec
+            if isinstance(response_spec, dict):
+                return FakeResponse(
+                    status_code=response_spec.get("status_code", 204),
+                    headers=response_spec.get("headers"),
+                    text=response_spec.get("text", ""),
+                )
+            if response_spec is None:
+                return FakeResponse()
+            return response_spec
 
         requests_module.post = fake_post
+        requests_module.Timeout = type("Timeout", (Exception,), {})
+        requests_module.ConnectionError = type("ConnectionError", (Exception,), {})
 
         monkeypatch.setitem(sys.modules, "google", google_module)
         monkeypatch.setitem(sys.modules, "google.genai", genai_module)
         monkeypatch.setitem(sys.modules, "requests", requests_module)
-        monkeypatch.setattr(time, "sleep", lambda seconds: None)
+        monkeypatch.setattr(
+            time,
+            "sleep",
+            lambda seconds: captured["sleep_calls"].append(seconds),
+        )
+
+        git_queue = list(git_responses or [])
 
         def fake_subprocess_run(args, **kwargs):
-            captured["git_commands"].append(list(args))
-            return SimpleNamespace(returncode=0)
+            command = list(args)
+            captured["git_commands"].append({
+                "args": command,
+                "check": kwargs.get("check", False),
+            })
+            result = git_queue.pop(0) if git_queue else None
+            if isinstance(result, BaseException):
+                raise result
+            returncode = 0 if result is None else result
+            completed = subprocess.CompletedProcess(command, returncode)
+            if kwargs.get("check") and returncode:
+                raise subprocess.CalledProcessError(returncode, command)
+            return completed
 
         monkeypatch.setattr(subprocess, "run", fake_subprocess_run)
         monkeypatch.chdir(tmp_path)
         monkeypatch.setenv("GEMINI_API_KEY", "TEST_ONLY_NOT_A_REAL_KEY")
-        monkeypatch.setenv("DISCORD_WEBHOOK_URL", "https://example.invalid/mock-webhook")
+        monkeypatch.setenv(
+            "DISCORD_WEBHOOK_URL",
+            "https://example.invalid/mock-webhook",
+        )
 
-        target_script = Path(script_path) if script_path is not None else repo_root / "main.py"
+        target_script = (
+            Path(script_path)
+            if script_path is not None
+            else repo_root / "main.py"
+        )
         namespace = runpy.run_path(str(target_script), run_name="__main__")
         return namespace
 
