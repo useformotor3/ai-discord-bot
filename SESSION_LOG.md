@@ -476,3 +476,9 @@
 - 6개 source blob SHA 일치, compileall 통과, pytest **30 passed, 8 xfailed in 0.23s**.
 - 운영 main.py/운영 workflow/state/history 변경 없음.
 - 이번 조치는 테스트 계약과 설계 문서 정합화이며 P1-B 운영 구현 승인이 아니다.
+
+## 2026-11-14 — P1-B 정책 문서 저장 후 재조회
+- README, 상황판, 세션 로그, JSONL을 재조회할 수 있도록 최신 원격 상태를 추가 기록한다.
+- 직전 HEAD `5b3cd6ca70dcff7a50f4ad4c20f834592c9e8ca9`; 기준 docs commit 대비 28 ahead / 0 behind.
+- main 대비 diverged 139 ahead / 59 behind; main HEAD `8034668f45496ef532bfdfb865b29d4149cf2a94`, merge-base `f9a12a5778f5fa1d907201ab2931d20ca2656bb7`.
+- Run #15의 검증 대상은 `b2e108768be08f06e85af154835424682337ebf5`; 그 이후는 문서/로그 변경만이다.

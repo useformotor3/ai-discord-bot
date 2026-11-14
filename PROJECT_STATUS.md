@@ -332,3 +332,9 @@
 - 8 xfailed는 아직 구현되지 않은 P1-B 동작 계약이다. 이는 CI 실패가 아니라 의도적으로 표시한 미구현 기대 동작이다.
 - 기준 docs commit 대비 27 ahead / 0 behind; main 대비 diverged 138 ahead / 59 behind. main HEAD `8034668f45496ef532bfdfb865b29d4149cf2a94`, merge-base `f9a12a5778f5fa1d907201ab2931d20ca2656bb7`.
 - main.py blob SHA `470ac101d5cc4fdb2c5077d5468ef00327af3d43` 유지. 이번 변경은 테스트/문서이며 운영 구현은 없다.
+
+## 22. P1-B 정책 문서 갱신 후 원격 상태
+- 직전 HEAD `5b3cd6ca70dcff7a50f4ad4c20f834592c9e8ca9`; 기준 docs commit 대비 28 ahead / 0 behind.
+- main 대비 diverged 139 ahead / 59 behind; main HEAD `8034668f45496ef532bfdfb865b29d4149cf2a94`, merge-base `f9a12a5778f5fa1d907201ab2931d20ca2656bb7`.
+- Run #15 검증 commit `b2e108768be08f06e85af154835424682337ebf5` 이후는 문서/로그만 변경.
+- main.py blob SHA `470ac101d5cc4fdb2c5077d5468ef00327af3d43` 유지.

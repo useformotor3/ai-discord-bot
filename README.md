@@ -97,7 +97,7 @@ Actions 성공은 자동화 실행 결과이지 CRA 법령 해석이나 출처�
 
 
 ## P1-B 정책 설계 최신화
-- [P1-B 전송·저장·동기화 정책 명세](reports/MAIN_PY_IMPROVEMENT_DESIGN_2026-11-14.md#17-p1-b-전송저장동기화-정책-명세--2026-11-14-구현-전-설계)
+- [P1-B 전송·저장·동기화 정책 명세](reports/MAIN_PY_IMPROVEMENT_DESIGN_2026-11-14.md)
 - Discord 429/timeout/POST 중복 가능성, chunk 부분 성공, state/history transaction, Git 원격 동기화 확인 정책을 공식 기술 문서와 대조해 정리했다.
 - 구현 승인이 아니다. 운영 코드 변경 전 별도 제안·승인이 필요하다.
 
@@ -106,3 +106,10 @@ Actions 성공은 자동화 실행 결과이지 CRA 법령 해석이나 출처�
 - 503 자동 재시도 xfail을 중복 방지 관점의 `delivery_unknown` 기대 동작으로 변경했다.
 - Discord 401/403/404 영구 실패·재시도 금지 기대 테스트 3 case를 추가했다.
 - [Run #15 — success](https://github.com/useformotor3/ai-discord-bot/actions/runs/43570492842), commit `b2e108768be08f06e85af154835424682337ebf5`: **30 passed / 8 xfailed**.
+
+## 최신 상태 재조회 — 2026-11-14
+- 직전 HEAD: `5b3cd6ca70dcff7a50f4ad4c20f834592c9e8ca9`.
+- 기준 docs commit 대비 28 ahead / 0 behind.
+- main 대비 diverged 139 ahead / 59 behind; main HEAD `8034668f45496ef532bfdfb865b29d4149cf2a94`, merge-base `f9a12a5778f5fa1d907201ab2931d20ca2656bb7`.
+- 마지막 테스트 코드 검증은 Run #15, commit `b2e108768be08f06e85af154835424682337ebf5`: 30 passed / 8 xfailed. 그 이후 변경은 문서/로그뿐이다.
+- main.py SHA `470ac101d5cc4fdb2c5077d5468ef00327af3d43` 유지.
