@@ -260,3 +260,40 @@
 - Actions 실행기록 0건은 CI 성공이 아니다. 원본 전체 pytest와 CI는 여전히 미완료다.
 - GitHub GET 조회만 수행했으며 workflow dispatch, 운영 자동화, 코드 변경은 하지 않았다.
 - merge/rebase 및 P1-B 구현은 수행하지 않았다.
+
+## 2026-11-14 — 테스트 전용 GitHub Actions 구현 및 원본 전체 테스트 실행
+
+### 승인 범위
+- 사용자가 테스트 전용 GitHub Actions workflow 신규 생성을 명시적으로 승인했다.
+- 승인 범위: 작업 브랜치에 테스트 workflow 추가, 원본 SHA 검증, compileall, pytest 실행.
+- 운영 workflow, 운영 main 브랜치, 운영 상태/이력 데이터는 변경 금지.
+
+### 실제 변경
+- 신규 `.github/workflows/tests.yml` 생성
+  - 작업 브랜치에만 push 트리거 제한
+  - workflow_dispatch 지원
+  - contents: read만 허용
+  - checkout persist-credentials=false
+  - Gemini/Discord 비밀키 및 운영 Git push 사용 없음
+  - 5개 파일 Git blob SHA 선검증
+  - Python 3.11 compileall 및 pytest 실행
+- `tests/README.md`에 실행 방법, 보안 경계, SHA 갱신 규칙 추가
+
+### 실행 및 교차검증
+- GitHub Actions Run #1: [https://github.com/useformotor3/ai-discord-bot/actions/runs/43567990149]
+- run ID: `43567990149`
+- 실행 commit: `d31c604c6067685e33f6888cbc488c0e45d80be7`
+- 5개 핵심 파일의 Git blob SHA: 모두 일치
+- compileall: 통과
+- pytest: **21 passed in 0.16s**
+- job 및 workflow conclusion: success
+- GitHub Actions 로그에서 SHA별 실제 계산값, compileall 단계, pytest 출력과 21 passed 결과를 확인
+
+### 운영 영향
+- `main`, `main.py`, `.github/workflows/run.yml`, `state.json`, `history.json`은 변경하지 않음
+- 운영 workflow dispatch, Gemini API, Discord webhook, 실제 Git push 없음
+- 테스트는 mock 환경이며 Discord/Git 실패 경로를 충분히 검증하지 않음
+
+### 다음 재개 지점
+1. 상황판과 README에 Run #1 및 21 passed를 반영하고 저장 후 재조회
+2. fixture 실패 경로 보강 설계 및 P1-B 별도 승인 절차 진행
