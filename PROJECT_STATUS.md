@@ -345,3 +345,9 @@
 - 우선 승인 요청 대상은 B1만: timeout/wait=true/status, 429 Retry-After, permanent failure, delivery_unknown, chunk partial.
 - 변경 예정 파일과 테스트/롤백/제외 범위는 개선 설계 보고서 §18에 명시했다.
 - P1-B1은 main.py 수정이 포함되므로 현재 미승인·미구현 상태다. 사용자 별도 승인 전에는 운영 코드를 변경하지 않는다.
+
+## 24. P1-B1 제안서 저장 후 원격 상태
+- 현재 HEAD `f5a83e3c8e04a43b6e38a593c7b01bd360583b3f`; 기준 docs commit 대비 30 ahead / 0 behind.
+- main 대비 diverged 141 ahead / 60 behind; main HEAD `1dff09ffa9722119f6fb0847a51b6c87c322d114`, merge-base `f9a12a5778f5fa1d907201ab2931d20ca2656bb7`.
+- Run #15 검증 commit `b2e108768be08f06e85af154835424682337ebf5` 이후 테스트 소스는 변경하지 않았다.
+- 다음 단계는 P1-B1 승인 여부 확인이다. 승인 전 main.py 수정 금지.

@@ -119,3 +119,10 @@ Actions 성공은 자동화 실행 결과이지 CRA 법령 해석이나 출처�
 - P1-B는 단계별로 분리했다. 우선 제안은 **P1-B1 Discord 전송 결과 신뢰성**만이다.
 - 변경 파일, 기대 동작, 테스트, 롤백 및 제외 범위는 [개선 설계 보고서](reports/MAIN_PY_IMPROVEMENT_DESIGN_2026-11-14.md)의 §18을 참조한다.
 - P1-B1은 main.py 운영 코드 변경이므로 별도 승인 전까지 구현하지 않는다.
+
+## 최신 브랜치 상태 — 2026-11-14
+- 조회 HEAD: `f5a83e3c8e04a43b6e38a593c7b01bd360583b3f`
+- 기준 docs commit 대비 30 ahead / 0 behind.
+- main 대비 diverged 141 ahead / 60 behind; main HEAD `1dff09ffa9722119f6fb0847a51b6c87c322d114`, merge-base `f9a12a5778f5fa1d907201ab2931d20ca2656bb7`.
+- 마지막 테스트 검증 commit `b2e108768be08f06e85af154835424682337ebf5`, [Run #15](https://github.com/useformotor3/ai-discord-bot/actions/runs/43570492842): 30 passed / 8 xfailed. 이후 테스트 코드 변경은 없고 문서만 갱신했다.
+- main.py blob SHA `470ac101d5cc4fdb2c5077d5468ef00327af3d43` 유지.

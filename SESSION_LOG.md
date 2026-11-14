@@ -490,3 +490,9 @@
 - 우선순위는 현재 가장 큰 즉시 위험인 Discord 무한 대기/HTTP 실패의 성공 오인/중복 전송 불명확 상태를 다루는 B1로 설정했다.
 - B1의 변경 예정 파일, 함수 수준 동작, 테스트, CI SHA pin, rollback, 제외 범위를 개선 설계 보고서 §18에 기록했다.
 - 이 제안은 main.py 변경 승인이 아니다. B1 별도 승인 전에는 구현하지 않는다. B2~B4, 운영 main/workflow/data는 이번 제안 범위 밖이다.
+
+## 2026-11-14 — P1-B1 제안서 반영 후 원격 상태 확인
+- 직전 HEAD `f5a83e3c8e04a43b6e38a593c7b01bd360583b3f`.
+- 기준 docs commit 대비 30 ahead / 0 behind.
+- main 대비 diverged 141 ahead / 60 behind; main HEAD `1dff09ffa9722119f6fb0847a51b6c87c322d114`, merge-base `f9a12a5778f5fa1d907201ab2931d20ca2656bb7`.
+- 마지막 테스트 CI Run #15 검증 commit은 `b2e108768be08f06e85af154835424682337ebf5`; 그 이후 테스트 소스는 미변경이다.
