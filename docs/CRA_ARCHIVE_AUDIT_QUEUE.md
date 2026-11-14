@@ -2507,3 +2507,69 @@ Batch result: 5/5 CONFLICT, 0 PARTIALLY_VERIFIED, 0 VERIFIED; 0/5 Raw Text Quote
 - Current work branch HEAD \`ced168745cd19400ba29131a495c3bf5c3f924eb\`; diverged from main, diverged; ahead/behind values dynamic. Do not merge/rebase/sync. Main remains read-only.
 - #8–#62 source path/blob SHA revalidation: 55/55 match current main tree.
 - Latest branch push CI run 43408438728 SUCCESS: 140 tests, archive/history 990/990, unique990, no missing/orphan/duplicate/malformed entries. Branch snapshot only.
+
+## 2026-11-14 — 신규 대기열 보정 및 main #3 기준선
+
+- 확인일: 2026-11-14
+- 확인한 main HEAD: a761c5a8ad9029b1f1bce85265130e755aa39352 (Auto-archive: Research report #3).
+- 직전 main 기준선: 291b1c93905d41c9bba83b4510c3e5ef43f86e95 (report #2). 두 기준선 사이 main은 1 commit ahead이며 변경 파일은 history.json, research_archive/2026-11-14_001038.md, state.json 3개다.
+- 현재 history.json: 1,566 entries. state.json: date=2026-11-14, count=3이며 count는 일일 카운터다. #1/#2 파일은 이전 main #2 기준선에 이미 있었으나 기존 대기열에서 2026-11-14 경로가 확인되지 않아 누락 등록을 보정했다. #3은 #2 기준선 이후 추가된 신규 보고서다.
+- 이번 확인에서 #1–#3 원문 파일을 main에서 개별 fetch하고 commit SHA와 blob SHA를 고정했다. research_archive 전체 recursive tree count는 별도 재열거하지 않았으므로 1,566개 전체 정합성을 새로 검증했다고 주장하지 않는다.
+- 공식 사전 확인 기준: EUR-Lex, Regulation (EU) 2024/2847, OJ L 20.11.2024. [공식 PDF](https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32024R2847). Annex I Part I pp.67–68, Part II pp.68–69, Annex II pp.69–70, Article 31 pp.48–49, Annex VII pp.74–75, Annex VIII pp.76–78. EUR-Lex current consolidated record lists corrigenda C1/C2/C3; this pre-memo is limited to the cited provisions and does not claim a complete corrigendum-impact review.
+- 사전 메모는 원문 조항·주변 문맥의 부분 확인이다. 전체 Pass A/B/C, 모든 원자 주장 분해, 제품별 적용성 판정을 완료한 것이 아니다. 따라서 파일 단위 판정은 모두 UNVERIFIED로 유지한다.
+
+### #1 — SBOM 및 기술 문서
+
+- 상태: NEW / NOT_YET_AUDITED (기존 main #2 기준선에 존재했으나 대기열 누락 보정)
+- 확인일: 2026-11-14
+- 보고서 번호: #1 (2026-11-14 일일 카운트)
+- 원문 생성 시각: 2026-11-14 00:00:56 (파일 Date; 시간대 미표기)
+- 원문 commit: [d7b9610dd53cb99b8df2951bc324344645019944](https://github.com/useformotor3/ai-discord-bot/commit/d7b9610dd53cb99b8df2951bc324344645019944) — commit timestamp 2026-11-14T00:01:12Z
+- 원문 파일: [research_archive/2026-11-14_000056.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_000056.md)
+- 원문 blob SHA: 6c04e9e22a491e06cdda41eb1c669323d43c6828
+- 우선순위: P0 — SBOM 의무 범위, Annex VII 기술 문서, 보관기간 해석은 법적 의무와 제품 문서 체계를 좌우함.
+- 핵심 주장 주제: 서보 드라이브의 SBOM 및 기술 문서 작성·유지, Class I/II 중요 제품의 SBOM 의무, 기술 문서/SBOM의 10년 보관.
+- 검증할 법령 쟁점: Annex I Part II(1)의 적용 대상은 'products with digital elements' 제조자이며 Annex III Important Products Class I/II에만 한정된 문구가 아니다. Part II 제목은 vulnerability handling requirements다. Annex VII point 2(b)는 SBOM을 취약점 처리 프로세스 기술 문서 요소에 포함하고, point 8은 필요한 경우 시장감시당국의 합리적 요청에 따른 제공 조건을 둔다. Annex II point 9는 제조자가 SBOM을 사용자에게 제공하기로 결정한 경우에만 접근 위치 정보를 요구한다. Article 31(2)의 작성·갱신 시점과 Annex VIII의 해당 적합성 평가 절차별 보관 규칙을 구분한다.
+- 사전 메모: Annex I Part II(1)은 모든 CRA 범위 제품 제조자에게 취약점·구성요소 식별/문서화를 요구하고, machine-readable SBOM의 최소 범위는 적어도 top-level dependencies다. Annex VII 2(b), 8 및 Annex II 9의 문맥은 서로 다르다. 보고서의 'Important Digital Elements Class I/II에만 SBOM 의무'라는 범위 단정과 Annex VII/Annex I Part II 직접 인용 블록은 원문과 불일치한다. '최소 10년'은 Annex VII 문구만으로 일반화하지 말고 적용되는 Annex VIII conformity module의 보관 조항과 연결해야 한다.
+- 파일 단위 판정: UNVERIFIED (전체 Pass A/B/C 미완료)
+- Raw Text Quote 사전 판정: CONFLICT / REJECTED 후보 (Annex VII와 Annex I Part II로 표시된 인용문이 원문 문구·구조와 불일치)
+- 개별 주장 사전 판정: CONFLICT 후보 — SBOM 의무를 Class I/II에만 한정한 주장; Annex VII의 구성요소 목록 문구를 직접 인용으로 제시한 주장. 나머지 기술 문서 세부 범위 및 보관 경로는 추가 분해 필요.
+- 제품별 적용성: UNVERIFIED — 실제 SKU, 제품 경계, EU 시장 제공 형태 미확정.
+
+### #2 — Secure by default 및 공격 표면 최소화
+
+- 상태: NEW / NOT_YET_AUDITED (기존 main #2 기준선에 존재했으나 대기열 누락 보정)
+- 확인일: 2026-11-14
+- 보고서 번호: #2 (2026-11-14 일일 카운트)
+- 원문 생성 시각: 2026-11-14 00:05:36 (파일 Date; 시간대 미표기)
+- 원문 commit: [291b1c93905d41c9bba83b4510c3e5ef43f86e95](https://github.com/useformotor3/ai-discord-bot/commit/291b1c93905d41c9bba83b4510c3e5ef43f86e95) — commit timestamp 2026-11-14T00:05:51Z
+- 원문 파일: [research_archive/2026-11-14_000536.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_000536.md)
+- 원문 blob SHA: 01fbc98108cc2b0d0c56878999f0e749e83eee43
+- 우선순위: P1 — secure-by-default, 외부 인터페이스 및 초기 인증의 HW/FW 설계 후보를 분리 검증.
+- 핵심 주장 주제: 출고 기본 보안, 사용하지 않는 서비스/포트/디버그 인터페이스 비활성화, 고유 기본 비밀번호 또는 최초 사용 시 강제 변경.
+- 검증할 법령 쟁점: Annex I Part I point (2)(b)의 secure-by-default 및 original state 복원, point (2)(d)의 적절한 접근통제, point (2)(j)의 외부 인터페이스를 포함한 공격 표면 제한을 정확히 분리한다. 제품별 위험평가와 tailor-made 제품/business user 합의 예외를 확인한다.
+- 사전 메모: 법령의 핵심 주제는 Annex I Part I(2)(b),(d),(j)와 부합한다. 다만 법령은 모든 제품에 대해 JTAG/UART/FTP/웹 서버 등 특정 포트·서비스의 일괄 비활성화, 고유 기본 비밀번호, 최초 사용 시 강제 변경을 각각 보편적 구현 방식으로 명시하지 않는다. 이는 위험기반 설계 후보로 분리해야 한다. Raw Text Quote는 실제 (2)(b)/(2)(d) 구조를 합성하고 'initial state' 등 원문과 다른 표현을 사용한다.
+- 파일 단위 판정: UNVERIFIED (전체 Pass A/B/C 미완료)
+- Raw Text Quote 사전 판정: CONFLICT / REJECTED 후보 (조항 번호·문구 합성 및 원문 불일치)
+- 개별 주장 사전 판정: secure-by-default 핵심은 PARTIALLY_VERIFIED 후보; 특정 포트·서비스 전부 차단 및 강제 비밀번호 변경을 CRA의 보편적 명시 의무로 단정한 부분은 CONFLICT 후보.
+- 제품별 적용성: UNVERIFIED — 실제 네트워크 인터페이스·서비스 구성·제품 SKU 미확정.
+
+### #3 — 실시간 통신 및 펌웨어 무결성 / Secure Boot
+
+- 상태: NEW / NOT_YET_AUDITED (main #2 기준선 이후 신규 추가)
+- 확인일: 2026-11-14
+- 보고서 번호: #3 (2026-11-14 일일 카운트)
+- 원문 생성 시각: 2026-11-14 00:10:38 (파일 Date; 시간대 미표기)
+- 원문 commit: [a761c5a8ad9029b1f1bce85265130e755aa39352](https://github.com/useformotor3/ai-discord-bot/commit/a761c5a8ad9029b1f1bce85265130e755aa39352) — commit timestamp 2026-11-14T00:10:59Z
+- 원문 파일: [research_archive/2026-11-14_001038.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_001038.md)
+- 원문 blob SHA: 8598fc70247072e15dddbf0c7a2f2a28c8f6b87e
+- 우선순위: P1 — Secure Boot, RoT, 서명 검증, 업데이트 경로는 부품·아키텍처·시험 증거가 필요한 설계 후보.
+- 핵심 주장 주제: EtherCAT/PROFINET 등 실시간 통신과 펌웨어 무결성, Secure Boot, hardware Root of Trust, 디지털 서명 검증, 안전한 펌웨어 업데이트, IEC 62443-4-2 SR 3.1/SR 3.4 연계.
+- 검증할 법령·기술 쟁점: Annex I Part I(2)(e) confidentiality, (2)(f) integrity, (2)(j) attack surface 및 Annex I Part II(2)/(7)의 취약점 수정·안전한 업데이트 배포를 구분한다. Secure Boot/RoT/서명 검증을 법령이 모든 제품에 특정 방식으로 직접 강제하는지, 위험기반 구현 선택인지 확인한다. IEC 62443-4-2의 edition과 SR 3.1/SR 3.4 원문을 별도로 확인한다.
+- 사전 메모: Annex I Part I의 실제 체계는 point (1)과 point (2)(a)–(m)이며 'Section 1, Paragraph 2 & 3' 구조가 아니다. (2)(e)는 기밀성, (2)(f)는 데이터·명령·프로그램·설정 무결성이고, 실제 (2)(f)는 사용자에 의해 승인되지 않은 조작/변경을 다룬다. Annex I은 Secure Boot나 hardware RoT를 모든 제품에 대해 명칭 그대로 보편적 의무로 열거하지 않는다. 해당 기능은 위험평가에 따른 설계 후보로 평가해야 한다. 보고서의 Raw Text Quote는 조항 구조·문구가 원문과 불일치하며 'manufacturer'와 'user' 주체도 다르다.
+- 제조사 자료: 정확한 ST MCU 주문 코드와 제품 SKU가 없어 Secure Boot/SFU/SFI/키 저장 지원을 제조사 원문으로 확정하지 않았다.
+- IEC 62443-4-2: 이번 사전 확인에서 유료 표준 본문을 사용하지 않았으므로 SR 3.1/SR 3.4 연결은 UNVERIFIED.
+- 파일 단위 판정: UNVERIFIED (전체 Pass A/B/C 미완료)
+- Raw Text Quote 사전 판정: CONFLICT / REJECTED 후보 (Annex I 번호·문구·권한 주체 불일치)
+- 개별 주장 사전 판정: confidentiality/integrity의 법령 주제는 PARTIALLY_VERIFIED 후보; Secure Boot/RoT의 보편적 법정 의무 주장은 CONFLICT 후보; IEC 62443-4-2 매핑은 UNVERIFIED.
+- 제품별 적용성: UNVERIFIED — 제품 SKU, fieldbus 구성, 실제 ST MCU 주문 코드 및 업데이트 구조 미확정.
