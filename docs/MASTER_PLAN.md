@@ -884,3 +884,10 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 - [x] Report #4/#5 overlap with #2; no duplicate Canonical Requirement added.
 - [ ] Audit main-only reports #1–#3, then proceed with later daily reports.
 - [ ] Independently review 99 legacy candidate crosswalks and reconcile the report volumes/SOP/classification matrix/threat model.
+
+## 2026-11-14 live main recheck — 00:25 UTC
+
+- main HEAD: \`4a38d85a1cd6c50dfec0ab2c2f0c9b5931d5ea8d\`; archive/history 1,569/1,569; state date/count 2026-11-14 / 6 (daily counter).
+- Reports #1–#6 are now present in the 2026-11-14 daily archive. Manual audit status: #4 and #5 AUDITED; #1–#3 and #6 pending. #2/#4/#5 overlap on secure-by-default/initial authentication; #6 is Secure Boot/HWRoT.
+- main remains read-only. Re-fetch main HEAD/history/state and original blob SHAs before each audit batch.
+- Work branch HEAD and CI are dynamic; re-fetch after the latest queue update. No merge/rebase/sync.
