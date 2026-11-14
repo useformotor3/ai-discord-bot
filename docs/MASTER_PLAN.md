@@ -876,3 +876,11 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 - [x] Main-only report #4 Pass A/B preliminary manual audit against official EUR-Lex source; file CONFLICT, quote rejected, #2 overlap documented.
 - [x] Add six atomic claims and source blob SHA to Ledger; no new Canonical Requirement created.
 - [ ] Independently review 99 legacy candidate crosswalks and complete report #1–#3/#5 audits.
+
+
+## 2026-11-14 report #5 manual audit
+
+- [x] Main-only report #5 audited; file CONFLICT, quotes 0/2, Article 10/13 and Annex I locator errors recorded.
+- [x] Report #4/#5 overlap with #2; no duplicate Canonical Requirement added.
+- [ ] Audit main-only reports #1–#3, then proceed with later daily reports.
+- [ ] Independently review 99 legacy candidate crosswalks and reconcile the report volumes/SOP/classification matrix/threat model.
