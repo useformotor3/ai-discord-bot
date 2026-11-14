@@ -63,7 +63,7 @@
 
 ## 브랜치 동시성 주의
 
-- 작업 브랜치는 최신 `main`과 diverged 상태이며, 확인 시점 기준 main보다 2 commits behind였다.
+- 작업 브랜치는 최신 `main`과 diverged 상태이며, 확인 시점 기준 main보다 3 commits behind였다.
 - main에는 자동화 아카이브가 계속 추가되고 있다(확인된 최신 보고서 #31).
 - 운영 아카이브를 덮어쓰지 않도록 이번 단계에서 merge/rebase하지 않았다. 후속 통합 전 최신 main 변경을 별도 비교한다.
 
