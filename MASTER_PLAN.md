@@ -134,3 +134,18 @@
 - 이는 CI 성공이 아니라 해당 브랜치에 연결된 workflow 실행 기록을 확인하지 못했다는 뜻이다.
 - 기존 운영 workflow를 실행해 테스트를 만들지 않는다. 별도 테스트 전용 workflow 신설/수정은 사용자 승인 전 금지한다.
 - 다음 선행 작업은 원본 blob SHA 일치 실행환경 확보이며, 실행 불가 시 정확한 장애 원인과 대체 가능한 검증 수준을 문서화한다.
+
+## 2026-11-14 — 테스트 전용 CI 구축 완료
+
+- 별도 `.github/workflows/tests.yml`을 작업 브랜치에 추가했다. 기존 운영 workflow와 분리되어 있으며, 읽기 전용 권한과 mock 테스트만 사용한다.
+- GitHub Actions Run #1: [21 passed, success](https://github.com/useformotor3/ai-discord-bot/actions/runs/43567990149)
+- 테스트 대상 commit: `d31c604c6067685e33f6888cbc488c0e45d80be7`
+- 다섯 개 핵심 소스/테스트 파일의 Git blob SHA가 모두 기대값과 일치한 뒤 compileall 및 pytest를 수행했다.
+- 이로써 Phase 3의 **기본 원본 테스트 실행 기반 확보**는 완료로 변경한다. 단, 실패 경로 fixture 보강 및 P1-B 검증까지 완료된 것은 아니다.
+- 테스트 가이드의 SHA 고정 기준을 유지하고, 소스 변경 시 승인된 검토와 함께 기준값을 갱신한다.
+
+### 우선순위 재정렬
+1. Git/Discord 실패 시나리오의 fixture 보강 설계 및 별도 승인
+2. P1-B 전송·저장·동기화 안정성 변경안과 롤백 설계 제시
+3. 승인 후 코드 구현 및 CI 회귀 검증
+4. CRA 출처 검증 메타데이터와 요구사항 추적 체계 구축
