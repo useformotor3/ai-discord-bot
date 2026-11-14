@@ -3,7 +3,7 @@
 - 작성일: 2026-11-14
 - 기준 코드: main.py @ main SHA 86a7731aad5de8d75581fc953bcea2c44adf2f2b
 - 기준 workflow: .github/workflows/run.yml @ main SHA 65a8cadc8eac593f551e390698e367b1d161ecf1
-- 상태: 설계 완료 / Phase A 테스트 기반 파일 추가 완료 / Phase B 코드 수정은 별도 승인 대기
+- 상태: Phase A 테스트 기반 구축 완료 / Phase B P0 수정 및 mock 테스트 완료 / P1 개선은 후속 단계
 - 변경 제한: 이 문서는 설계 문서이며 main.py, workflow, state.json, history.json을 변경하지 않는다.
 
 ## 1. 설계 목표
@@ -251,3 +251,23 @@ history.json의 기존 필드는 하위 호환을 유지한다. 새 필드를 �
 - 격리된 로컬 검증: compileall 통과, 전체 pytest suite 5 passed. 브랜치에서 조회한 `main.py` 원문을 격리 작업공간에 반영해 실행했으며 실제 API/Discord/Git은 mock 처리했다.
 - 이 검증은 격리된 mock 테스트이며 GitHub Actions/운영 workflow 실행을 의미하지 않는다.
 - 다음 단계: 실제 저장소 checkout 환경에서 characterization suite를 실행하고, 이후 Phase B 구현은 별도 승인받는다.
+
+
+## 13. Phase B P0 수정 실행 기록 (2026-11-14)
+
+### 수정 내용
+- `validate_research_report()`를 추가해 응답이 문자열인지, 250자 이상인지, 프롬프트가 요구한 4개 필수 항목을 포함하는지 확인한다.
+- 대표적인 모델 오류·쿼터·서비스 장애 문구를 거부한다.
+- 빈 응답/무효 응답은 재시도하고 모델 폴백을 계속한다.
+- 모든 모델이 실패하면 `SystemExit(1)`로 종료한다. 이 종료는 Discord 전송, 아카이브 저장, state/history 변경, Git 동기화보다 앞서 실행된다.
+
+### 검증
+- 격리 mock 테스트에서 compileall 통과, pytest 9 passed.
+- 테스트는 정상 생성, 모델 폴백, 전 모델 실패, 무효 응답, 오류 문구가 섞인 응답, 기존 state/history 보존 및 외부 호출 mock을 포함한다.
+- 실제 Gemini/Discord/Git 호출과 GitHub Actions CI는 실행하지 않았다.
+
+### 한계 및 잔여 위험
+- 최소 구조 검사는 법령 원문과 출처 URL의 진위·조항 적합성까지 보증하지 않는다.
+- 250자/섹션 기준은 형식적 1차 필터이며 심층 내용 품질 검증은 아니다.
+- state/history 손상 처리, datetime parsing, Discord timeout/status, Git push 상태화 등 P1 항목은 미수정이다.
+- workflow, state.json, history.json은 변경하지 않았다.
