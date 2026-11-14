@@ -106,3 +106,11 @@
 - 신규 helper 및 P1 테스트 모듈의 Python 문법 파싱(ast.parse) 통과
 - 이 환경에서는 GitHub 저장소 checkout 기반 pytest 실행을 수행하지 못했으므로, P1-A pytest 통과로 보고하지 않는다.
 - 현재 브랜치 비교: main 대비 41 commits ahead / 6 commits behind. main 자동화가 계속 진행 중이므로 merge/rebase 보류
+
+
+### P1-A 코드 수행 검증 추가 (2026-11-14)
+- 현재 GitHub에서 재조회한 P1-A helper 로직을 분리한 임시 pytest 검증 7 passed
+- 검증 사례: 손상된 state JSON, 잘못된 state 스키마 5종, 잘못된 health datetime, 손상된 history JSON, 잘못된 history 구조, aware/naive datetime 비교, 날짜 변경 시 count 초기화
+- 이 7개는 helper 수준의 독립 검증이며 저장소 전체 `pytest` 실행 결과가 아니다. 전체 테스트 21개 통과로 표시하지 않는다.
+- 전체 저장소 pytest 및 main.py 통합 실행은 여전히 미실행이며, CI/운영 workflow도 실행하지 않았다.
+- 현재 브랜치 비교 최신 확인: main 대비 43 commits ahead / 6 commits behind
