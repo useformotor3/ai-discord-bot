@@ -446,3 +446,15 @@
 - Of the 345 new atomic claims, 343 map to one or more CRA-REQ IDs; two quote-accuracy-only claims map to CRA-EVIDENCE-QUOTE-ACCURACY-001. 99 legacy claims now have candidate Canonical/Evidence crosswalks; independent claim-by-claim review remains.
 - Next P0: migrate the 99 legacy claims, then finish line-by-line reconciliation of Volume 1/2, SOP, classification matrix, threat model and test register. Next main-only archive batch is #1–#5 for 2026-11-14 after fresh snapshot.
 - Product-specific CRA applicability/Class I/II and exact ST MCU remain UNVERIFIED; all DUT tests NOT_RUN. No production code or protected workflow changes in this pass.
+
+
+## 2026-11-14 — main archive queue refresh (#1–#3)
+
+- Main HEAD: a761c5a8ad9029b1f1bce85265130e755aa39352 (report #3). 직전 main baseline #2 (`291b1c93905d41c9bba83b4510c3e5ef43f86e95`) 이후 1 commit, 변경 파일은 history.json / report #3 archive / state.json.
+- main history.json: 1,566 entries. state.json: 2026-11-14 / count 3 (일일 카운터). 전체 archive recursive tree count는 이번 실행에서 별도 재열거하지 않음.
+- 2026-11-14 report #1/#2는 직전 main #2 baseline에 이미 존재했지만 queue 경로가 없어 누락 등록을 보정했고, #3은 #2 이후 추가된 신규 보고서다. docs/CRA_ARCHIVE_AUDIT_QUEUE.md에 #1–#3을 NEW / NOT_YET_AUDITED로 등록.
+- 우선순위: #1 P0 (SBOM/technical documentation scope); #2 P1 (secure-by-default / attack surface); #3 P1 (Secure Boot / firmware integrity / update). 세 파일 모두 file-level UNVERIFIED이며 전체 Pass A/B/C 감사는 미완료.
+- EUR-Lex Regulation (EU) 2024/2847 OJ L 20.11.2024 원문에서 Annex I Part I/II, Annex II, Article 31, Annex VII 및 Annex VIII의 관련 위치를 사전 확인했다. #1 SBOM 범위·Annex VII/II 인용, #2/#3 Raw Text Quote와 특정 구현수단의 보편적 법적 의무 단정에 불일치 후보가 있다. 상세 pre-memo는 감사 대기열에 기록.
+- 실제 제품 SKU/ST MCU 주문 코드 미확정: 제품 적용성 및 제조사별 Secure Boot/SFU/SFI 기능은 UNVERIFIED. IEC 62443-4-2 SR 3.1/SR 3.4 매핑도 무료 공식 원문 검증 전 UNVERIFIED.
+- main read-only; main.py, Gemini prompt, 운영 workflow, .github/workflows/run.yml 변경 없음. merge/rebase/sync 없음. 테스트는 실행하지 않음.
+- 다음: #1부터 전체 Pass A/B/C 및 원문 인용/개별 claim 별도 판정. #2/#3은 P1로 후속 처리.
