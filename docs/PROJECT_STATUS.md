@@ -676,7 +676,7 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - 단일 인수인계/실행 기준: [AI_CONTINUITY_BOARD.md](AI_CONTINUITY_BOARD.md). 신규 세션은 반드시 읽고 현재 Git 상태와 대조한다.
 - 범위 명확화: 현재 CRA 서보 드라이브 프로젝트 전용. SIL 3 벤치마킹은 범위 밖이며, 과거 로그의 관련 표현은 현재 목표가 아니다.
 - 결과물 우선: 매 작업에 가능하면 보고서/표/설계/claim audit 산출물을 남긴다. 코드 수정은 금지하지 않으며, 결과물의 신뢰성·재현성 향상에 필요하면 수행한다.
-- main 최신 확인: report #125, HEAD `92e8ca7aa4a86b38627a1d8e9535e5b0463a8392`; state count 125 (daily counter), history.json 1,400 entries. main read-only.
+- 2026-11-14 기준 main HEAD `291b1c93905d41c9bba83b4510c3e5ef43f86e95`; archive/history 1,565/1,565; state date/count 2026-11-14 / 2 (daily counter). main read-only.
 - main reports #8–#62 수동 감사 완료: 55건, 40 CONFLICT / 15 PARTIALLY_VERIFIED / 0 VERIFIED, direct quote reuse 0/55. 연속·비무작위 표본이며 전체 archive 오류율이 아니다.
 - 최신 실질 산출물: Claim Evidence Ledger 345개 신규 원자 주장 및 45개 Canonical ID; 이전 legacy claim 99개는 매핑 대기. 다음 P0는 제1권·제2권·SOP·매트릭스·시험 대장 전수 대조 후 #63–#67 감사.
 - Phase D hardening final code/test 140/140 및 archive 990/990 성공; 문서 최신화 HEAD도 CI #43384628893에서 140/140 및 990/990 성공. 최신 결과/한계는 AI_CONTINUITY_BOARD와 SESSION_LOG 참조.
@@ -704,7 +704,7 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 
 ## 최신 커밋/검증 상태 보정 — 2026-11-13
 - Current work branch head is dynamic; re-fetch the branch endpoint at session start. Last verified compare status: diverged, diverged; ahead/behind values dynamic.
-- Historical main snapshot: report #93 / archive-history 1,368/1,368; superseded by current report #125 / archive-history 1,400/1,400.
+- Historical main snapshots #93/1,368 and #125/1,400 are superseded by 2026-11-14 snapshot: archive/history 1,565/1,565.
 - 최신 감사 #38–#42: 4 CONFLICT / 1 PARTIALLY_VERIFIED / 0 VERIFIED; direct quote reuse 0/5.
 - exact HEAD CI: run 미발견, commit status pending/0 statuses. 이번 문서 업데이트 CI는 미실행/미확인으로 기록한다. 이전 성공 CI를 현 HEAD 검증으로 간주하지 않는다.
 
@@ -931,7 +931,7 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - Claim Evidence Ledger: 55 file-level source records + 345 atomic claims = **400 unique IDs**, duplicate IDs 0. All 345 atomic claims have one or more Canonical IDs. Canonical register defines 45 requirements; 42 are referenced by new atomic claims, and 3 are forward-mapped to matrix requirements; 99 legacy claims remain unmapped.
 - #8–#57 (50 reports) and #58–#62 (5 reports) have completed atomic decomposition. Individual legal facts marked VERIFIED do not promote a conflicting source file to VERIFIED.
 - Product-specific applicability, Class I/II classification, exact MCU order code and DUT test results remain UNVERIFIED/NOT_RUN.
-- Current P0: reconcile the 345 atomic claims and 46 canonical requirements against Volume 1, Volume 2, PSIRT SOP, requirements matrix, integrated traceability matrix and test evidence register; resolve duplicated/contradictory wording and keep exact legal locators. Then proceed to main-only audit #63–#67.
+- Current P0: migrate 99 legacy claims without Canonical IDs, then sentence-level reconcile Volume 1/2, PSIRT SOP, classification matrix, threat model and test register. After that audit main-only daily reports #1–#5 for 2026-11-14.
 - No production code, main.py, production workflow, Gemini V2 prompt/contract or main branch was changed. E3 live source fetch remains unexecuted. This batch is documentation-only.
 
 ## 2026-11-13 — Logging / Secure Data Lifecycle
