@@ -993,3 +993,10 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - main-only report #4 audited against EUR-Lex Regulation (EU) 2024/2847: file verdict CONFLICT, Raw Text Quote 0/1, 6 atomic claims (4 PARTIALLY_VERIFIED, 2 CONFLICT).
 - Report #4 overlaps #2; no new Canonical Requirement. Ledger after #4: 56 file records +351 new atomic claims +99 legacy claims = 506 unique IDs, duplicate definitions 0.
 - Next: independent review of 99 legacy candidate crosswalks and audit reports #1–#3/#5. Report #4 queue status AUDITED.
+
+
+## 2026-11-14 report #5 manual audit
+
+- Main-only report #5 audited against EUR-Lex: file verdict CONFLICT, Raw Text Quote 0/2, 6 atomic claims (3 PARTIALLY_VERIFIED, 3 CONFLICT). #5 duplicates #2/#4 and adds no new Canonical Requirement.
+- Corrected Article 10/13 and Annex I Part I(2)(a)/(b)/(j) locators. Queue #5 AUDITED; #1–#3 remain pending.
+- Ledger after #4/#5: 57 file +357 new atomic +99 legacy =513 unique CRA-ARCH IDs, duplicate definitions 0. 99 legacy crosswalks CANDIDATE pending independent review.
