@@ -1033,7 +1033,7 @@ Batch direct quote reuse: **0/5**. Per-file quote counts are not inferred where 
 - Ledger 집계 기준: 55 file-level source records + 345 atomic claims = 400 unique IDs; duplicate Claim IDs 0.
 - Canonical Requirement Register는 실제 45개다. 원자 주장에 직접 참조되는 ID 42개, traceability matrix에서 forward-map되는 ID 3개(Interconnectivity, Exploit mitigation, secure data transfer)로 구분한다.
 
-## 2026-11-14 full Ledger count and migration status
+## 2026-11-14 full Ledger count and migration status (before report #4 audit)
 
 - #8–#62 main-only namespace: 55 file-level records + 345 atomic claims = 400 unique IDs.
 - Earlier legacy claim namespace \`CRA-ARCH-035-*\`…\`CRA-ARCH-124-*\`: 99 additional atomic claim records; none yet has a \`CRA-REQ-*\` mapping.
@@ -1165,3 +1165,28 @@ Batch direct quote reuse: **0/5**. Per-file quote counts are not inferred where 
 - Legacy claim namespace CRA-ARCH-035-*…CRA-ARCH-124-*: 99 original claim rows; candidate crosswalks 99/99 (batch #35–#57: 32, batch #58–#124: 67).
 - Candidate crosswalks reference 33 distinct CRA-REQ IDs plus evidence-governance IDs. They do not change the original claim status or legal verification state. Independent review is still required; ambiguous links must be removed or marked UNMAPPED.
 - Canonical IDs with no direct atomic-claim reference remain forward-mapped: CRA-REQ-INTERCONNECTIVITY-001, CRA-REQ-EXPLOIT-MITIGATION-001, CRA-REQ-SECURE-DATA-TRANSFER-001.
+
+## 2026-11-14 main-only report #4 — file and atomic claims
+
+| File ID | Report | Original file | Blob SHA | File verdict | Audit summary |
+|---|---:|---|---|---|---|
+| CRA-ARCH-MAIN-20261114-004-FILE-001 | #4 | research_archive/2026-11-14_001549.md | 44105223e8d841bbf2f5f273da950723a33dedbd | CONFLICT | #2와 secure-by-default/초기 인증 주제 중복. Raw Text Quote에서 Part I(2)(c)를 access control로 잘못 인용; password/port 구현 방식을 보편 의무로 과장. 상세: ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_4_2026-11-14.md |
+
+| Claim ID | Report | Atomic claim | Legal source locator | Canonical ID / Evidence ID | Status | Assessment |
+|---|---:|---|---|---|---|---|
+| CRA-ARCH-MAIN-20261114-004-001 | #4 | 제품은 시장 출시 시 secure-by-default 구성이어야 한다. | Annex I Part I(2)(b) | CRA-REQ-SECURE-DEFAULT-001 | PARTIALLY_VERIFIED | 핵심 요구는 맞으나 tailor-made product에 대한 제조자-사업 사용자 합의 예외와 original-state reset 가능성을 포함해야 한다. |
+| CRA-ARCH-MAIN-20261114-004-002 | #4 | 고정/예측 가능한 기본 비밀번호는 금지되고 최초 사용 시 강제 변경 또는 장치별 고유 비밀번호가 법정 필수다. | Annex I Part I(2)(b), (d) | CRA-REQ-SECURE-DEFAULT-001; CRA-REQ-ACCESS-CONTROL-001 | CONFLICT | secure-by-default 및 적절한 접근통제 결과 요구는 있으나, 특정 비밀번호 방식의 보편적 강제는 법령 문언에 없다. |
+| CRA-ARCH-MAIN-20261114-004-003 | #4 | 모든 비필수 포트·서비스·디버그 인터페이스는 기본 비활성화되어야 한다. | Annex I Part I(2)(j), (d) | CRA-REQ-ATTACK-SURFACE-001; CRA-REQ-ACCESS-CONTROL-001 | PARTIALLY_VERIFIED | 외부 인터페이스를 포함한 공격표면 제한 및 접근통제 요구는 있으나 blanket disablement 목록은 제품 위험평가에 따른 구현 선택이다. |
+| CRA-ARCH-MAIN-20261114-004-004 | #4 | 백업/복원 및 펌웨어 업데이트 인터페이스는 인증된 세션에서만 접근 가능해야 한다. | Annex I Part I(2)(d), (f); Annex I Part II(7) | CRA-REQ-ACCESS-CONTROL-001; CRA-REQ-INTEGRITY-001; CRA-REQ-SECURE-UPDATE-DIST-001 | PARTIALLY_VERIFIED | 적절한 접근통제·무결성·안전한 업데이트 배포와 부합한다. 구체 세션 구조는 제품별 설계 선택이며 검증 증거 필요. |
+| CRA-ARCH-MAIN-20261114-004-005 | #4 | 제조사는 강력한 초기 인증 메커니즘을 기술문서에 입증해야 한다. | Article 13(7), Article 31, Annex VII | CRA-REQ-TECHDOC-001; CRA-REQ-ACCESS-CONTROL-001 | PARTIALLY_VERIFIED | 관련 사이버보안 측면 및 위험평가의 기술문서화는 요구되지만 특정 초기 인증 방식의 입증 항목을 그대로 지정하지 않는다. |
+| CRA-ARCH-MAIN-20261114-004-006 | #4 | Raw Text Quote의 (b)/(c)가 secure default와 unauthorized access 문언을 정확히 인용한다. | Annex I Part I(2)(b)–(d) | CRA-EVIDENCE-QUOTE-ACCURACY-001; CRA-REQ-SECURE-DEFAULT-001; CRA-REQ-ACCESS-CONTROL-001 | CONFLICT | (b)는 secure-by-default, (c)는 보안 업데이트, (d)는 비인가 접근 방지다. 직접 인용 재사용 금지. |
+
+
+
+## 2026-11-14 updated Ledger count after report #4 audit
+
+- 2026-11-13 #8–#62: 55 file records + 345 atomic claims = 400 unique IDs.
+- 2026-11-14 report #4: 1 file record + 6 atomic claims = 7 new IDs.
+- Legacy claims: 99 original claim records + 99 candidate crosswalk references (references are not new ID definitions).
+- Entire Ledger definitions: 56 file records + 351 new atomic claims + 99 legacy claims = **506 unique CRA-ARCH IDs**, duplicate definitions 0.
+- Across 351 new atomic claims, 349 reference at least one CRA-REQ ID; two #8–#62 quote-accuracy-only claims reference the evidence-governance ID. The 99 legacy crosswalks remain CANDIDATE pending independent review.
