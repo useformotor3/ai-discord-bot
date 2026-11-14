@@ -352,13 +352,13 @@ Correct map: Annex I Part I(2)(c) for applicable automatic-update default/user c
 
 ## 28. main 아카이브 보고서 #48–#52 주장별 정정 레코드 — 2026-11-13
 
-| 주장 ID | 원본 보고서 | 원자적 검증 결과 | 판정 |
+| 요약 표기(원자 Claim ID 아님) | 원본 보고서 | 파일 수준 핵심 정정 요약 | 판정 |
 |---|---:|---|---|
-| CRA-ARCH-MAIN-20261113-048-001 | #48 | 기계 판독 가능 사용자 통지는 Article 14(8)에 규정되어 있으며, 적극 악용 취약점 또는 제품 보안에 영향을 미치는 심각한 사고에 대한 사용자 통지에서 적절한 경우 적용된다. Annex I Part II(2)는 모든 보안 공지에 대한 자동·기계 판독 형식을 일반적으로 요구하지 않는다. CSAF도 의무 형식으로 지정하지 않는다. | PARTIALLY_VERIFIED |
-| CRA-ARCH-MAIN-20261113-049-001 | #49 | 무상 보안 업데이트는 Annex I Part II(8)에 근거하며 Part I(2)가 아니다. 신고 조항은 Article 11이 아니라 Article 14다. 지원기간과 업데이트 보존기간은 Article 13(8)/(9)로 구분한다. | CONFLICT |
-| CRA-ARCH-MAIN-20261113-050-001 | #50 | 산업용·고위험 용도라는 이유만으로 서보 드라이브를 Annex III Class I로 자동 분류할 수 없다. 제품 전체의 핵심 기능과 시행규정의 기술 설명을 대조해야 한다. | CONFLICT |
-| CRA-ARCH-MAIN-20261113-051-001 | #51 | 조정된 취약점 공개 정책(CVD)과 취약점 신고 연락처의 근거는 Annex I Part II(5)/(6)이다. Annex I Part I 또는 Article 10이라는 조항 위치와 PGP의 보편적 의무 주장은 근거가 없다. | PARTIALLY_VERIFIED |
-| CRA-ARCH-MAIN-20261113-052-001 | #52 | 통합 구성요소의 취약점을 제조사가 식별한 경우 Article 13(6)의 명시적 신고 방향은 해당 구성요소 제조사/유지관리 주체를 향한다. 모든 공급자가 통합 제조사나 최종 사용자에게 자동 통지해야 한다는 포괄 의무는 인용 조항에서 확인되지 않는다. | CONFLICT |
+| SUMMARY-#48 | #48 | 기계 판독 가능 사용자 통지는 Article 14(8)에 규정되어 있으며, 적극 악용 취약점 또는 제품 보안에 영향을 미치는 심각한 사고에 대한 사용자 통지에서 적절한 경우 적용된다. Annex I Part II(2)는 모든 보안 공지에 대한 자동·기계 판독 형식을 일반적으로 요구하지 않는다. CSAF도 의무 형식으로 지정하지 않는다. | PARTIALLY_VERIFIED |
+| SUMMARY-#49 | #49 | 무상 보안 업데이트는 Annex I Part II(8)에 근거하며 Part I(2)가 아니다. 신고 조항은 Article 11이 아니라 Article 14다. 지원기간과 업데이트 보존기간은 Article 13(8)/(9)로 구분한다. | CONFLICT |
+| SUMMARY-#50 | #50 | 산업용·고위험 용도라는 이유만으로 서보 드라이브를 Annex III Class I로 자동 분류할 수 없다. 제품 전체의 핵심 기능과 시행규정의 기술 설명을 대조해야 한다. | CONFLICT |
+| SUMMARY-#51 | #51 | 조정된 취약점 공개 정책(CVD)과 취약점 신고 연락처의 근거는 Annex I Part II(5)/(6)이다. Annex I Part I 또는 Article 10이라는 조항 위치와 PGP의 보편적 의무 주장은 근거가 없다. | PARTIALLY_VERIFIED |
+| SUMMARY-#52 | #52 | 통합 구성요소의 취약점을 제조사가 식별한 경우 Article 13(6)의 명시적 신고 방향은 해당 구성요소 제조사/유지관리 주체를 향한다. 모든 공급자가 통합 제조사나 최종 사용자에게 자동 통지해야 한다는 포괄 의무는 인용 조항에서 확인되지 않는다. | CONFLICT |
 | CRA-ARCH-MAIN-20261113-053-FILE-001 | #53 | `research_archive/2026-11-13_042039.md` | `16f8497915fe4a9233cb18f27f215b4a5e0565d3` | PARTIALLY_VERIFIED | Annex I Part I 2(m)의 사용자 데이터·설정 영구 제거 기능과 Annex II 8(d) 지침은 타당하나 특정 sanitization 방식 및 사전 지원종료 통지 의무는 과장. |
 | CRA-ARCH-MAIN-20261113-054-FILE-001 | #54 | `research_archive/2026-11-13_042528.md` | `f5acd2a0370dd02b42ad2409dd34cefd6823deea` | PARTIALLY_VERIFIED | Article 13(8) 지원기간 및 Annex VII/Annex II 사용자 정보는 타당하나 Part II(8) 무상 업데이트 예외와 정확한 조항 문언을 보완해야 함. |
 | CRA-ARCH-MAIN-20261113-055-FILE-001 | #55 | `research_archive/2026-11-13_043042.md` | `cb622a6a4ef322b19479b96d6238cdb865b11799` | PARTIALLY_VERIFIED | 무상 업데이트 주제는 맞지만 Article 13(4)/Part I 2(1)(g) 오인용, 맞춤형 제품 예외 및 workaround 적용 범위 누락. |
@@ -955,8 +955,8 @@ Correct map: Annex I Part I(2)(c) for applicable automatic-update default/user c
 
 - #8–#62 file-level source records: 55개, ID suffix \`-FILE-001\`; 원본 경로/blob SHA/파일 단위 판정 추적.
 - #8–#62 atomic claim records: 345개, ID suffix \`-001\`, \`-002\` 등; 개별 법령 주장·인용·반증 추적.
-- CRA archive ID namespace 전체: 400개 unique ID (55 file-level + 345 atomic). 중복 ID 0개를 유지해야 한다.
-- Canonical requirement IDs: 46개. 345개 atomic claim의 Canonical ID 열을 정규화했으며, 하나의 claim은 여러 요구사항에 연결될 수 있다.
+- CRA archive ID namespace 전체: 400개 unique ID (55 file-level + 345 atomic). 중복 ID 0개를 유지해야 한다. 파일 요약 표기는 Claim ID namespace에서 제외하고 SUMMARY-#NN으로 표시한다.
+- Canonical requirement IDs: 45개. 345개 atomic claim의 Canonical ID 열을 정규화했으며, 하나의 claim은 여러 요구사항에 연결될 수 있다.
 - 파일 단위 판정과 개별 claim 상태는 별개다. 개별 claim VERIFIED가 원본 파일 전체 VERIFIED를 의미하지 않는다.
 - 제품별 적용성/Class I/II, SKU·core functionality, 실제 DUT 시험은 관련 증거가 확보되기 전까지 UNVERIFIED/NOT_RUN이다.
 
@@ -1025,3 +1025,10 @@ Batch direct quote reuse: **0/5**. Per-file quote counts are not inferred where 
 - Current main HEAD: 92e8ca7aa4a86b38627a1d8e9535e5b0463a8392; main tree: 7679729e1b128eacf26034346dafb29aa8da610b; archive tree/history.json: 1,400/1,400, unique paths 1,400, missing/orphan/duplicate 0.
 - All 55 file-level source paths and recorded blob SHAs for reports #8–#62 were compared against the current main tree: **55/55 match; missing 0; mismatches 0**.
 - This validates the immutability/current presence of the audited source files, not the correctness of every legal claim or product applicability.
+
+
+## 2026-11-14 ID namespace and canonical-count correction
+
+- #48–#52 상위 요약 5행은 원자 Claim ID와 중복되던 표시를 `SUMMARY-#48`…`SUMMARY-#52`로 바꾸었다. 이 요약행은 345개 원자 Claim ID 집계에 포함하지 않는다.
+- Ledger 집계 기준: 55 file-level source records + 345 atomic claims = 400 unique IDs; duplicate Claim IDs 0.
+- Canonical Requirement Register는 실제 45개다. 원자 주장에 직접 참조되는 ID 42개, traceability matrix에서 forward-map되는 ID 3개(Interconnectivity, Exploit mitigation, secure data transfer)로 구분한다.
