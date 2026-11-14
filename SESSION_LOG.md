@@ -37,3 +37,12 @@
 - #29 적극 악용 취약점 보고와 심각한 사고 보고를 분리하고 24h/72h/14일 및 1개월 시한을 구분
 - 정정본: `reports/CRA_CORRECTIONS_REPORTS_28_29_2026-11-14.md`
 - 원본 #28·#29는 변경/삭제하지 않음
+
+## 2026-11-14 — main.py 상세 개선 설계
+- main.py와 운영 workflow의 main 기준 원문을 다시 확인
+- P0~P2 위험 12개를 정리
+- 단계별 실행 상태 모델, 모듈 분리, 실패/재시도 정책, 출처 메타데이터, 중복 추적, 상태파일 호환, 테스트 24개, CI 순서 설계
+- 상세 설계: `reports/MAIN_PY_IMPROVEMENT_DESIGN_2026-11-14.md`
+- 구현 순서는 Phase A(테스트 기반)부터 시작하도록 제안
+- 아직 main.py, workflow, state.json, history.json 변경 없음
+- Phase A 구현은 사용자 승인 대기
