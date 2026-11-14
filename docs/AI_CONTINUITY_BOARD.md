@@ -415,7 +415,7 @@
 
 - main latest observed: report #125; HEAD \`92e8ca7aa4a86b38627a1d8e9535e5b0463a8392\`; state count 125; history.json 1,400 entries. Archive tree count was not rechecked. main remains read-only.
 - main-only audit scope #8–#62: 55 consecutive, non-random reports; file-level results **40 CONFLICT / 15 PARTIALLY_VERIFIED / 0 VERIFIED**; direct quote reuse **0/55**. This is not a statistical error rate for the full archive.
-- Claim Evidence Ledger: 55 file-level source records + 345 atomic claims = **400 unique IDs**, duplicate IDs 0. All 345 atomic claims have one or more Canonical IDs. Canonical register defines 46 requirements; 43 are referenced by legacy atomic claims, and 3 are forward-mapped to matrix requirements.
+- Claim Evidence Ledger: 55 file-level source records + 345 atomic claims = **400 unique IDs**, duplicate IDs 0. All 345 atomic claims have one or more Canonical IDs. Canonical register defines 45 requirements; 42 are referenced by new atomic claims, and 3 are forward-mapped to matrix requirements; 99 legacy claims remain unmapped.
 - #8–#57 (50 reports) and #58–#62 (5 reports) have completed atomic decomposition. Individual legal facts marked VERIFIED do not promote a conflicting source file to VERIFIED.
 - Product-specific applicability, Class I/II classification, exact MCU order code and DUT test results remain UNVERIFIED/NOT_RUN.
 - Current P0: reconcile the 345 atomic claims and 46 canonical requirements against Volume 1, Volume 2, PSIRT SOP, requirements matrix, integrated traceability matrix and test evidence register; resolve duplicated/contradictory wording and keep exact legal locators. Then proceed to main-only audit #63–#67.
@@ -436,3 +436,13 @@
 - Latest push CI on current work-branch HEAD: run 43408438728 SUCCESS; 140 tests passed; strict archive audit 990/990, unique paths 990, missing/orphan/duplicate/malformed 0, consistent=true. The branch workflow's state.count=3 is a daily counter, not an archive total. No PR-triggered workflow run and no PR was created.
 - Current branch commits in this continuation are documentation-only; no additional production code changes were made here. Existing branch-vs-main code differences remain unmerged and must be reviewed separately.
 
+## 2026-11-14 — current cross-document reconciliation baseline
+
+- Main snapshot: HEAD \`291b1c93905d41c9bba83b4510c3e5ef43f86e95\`; archive/history 1,565/1,565; state count 2 is a daily counter. main read-only.
+- Work branch snapshot before this reconciliation report: HEAD \`89ce7f1160ad91ab2801bd5bbbecb96ca004ca9f\`; archive/history 990/990; compare diverged ahead1000/behind581. Live refs must be re-fetched every session.
+- Latest CI at that branch snapshot: run 43531794670 SUCCESS, strict audit 990/990 consistent. This is not product compliance evidence.
+- Canonical register actual count 45. Integrated matrix 45/45; requirements matrix 45/45. Test register 49; integrated matrix references 49/49 after range/slash expansion; all NOT_RUN.
+- Ledger total 499 unique CRA-ARCH IDs: 55 file-level + 345 new atomic claims (#8–#62) + 99 legacy atomic claims. Duplicate 0 after #48–#52 summary rows were moved to SUMMARY labels.
+- Of the 345 new atomic claims, 343 map to one or more CRA-REQ IDs; two quote-accuracy-only claims map to CRA-EVIDENCE-QUOTE-ACCURACY-001. 99 legacy claims have no Canonical ID mapping yet.
+- Next P0: migrate the 99 legacy claims, then finish line-by-line reconciliation of Volume 1/2, SOP, classification matrix, threat model and test register. Next main-only archive batch is #1–#5 for 2026-11-14 after fresh snapshot.
+- Product-specific CRA applicability/Class I/II and exact ST MCU remain UNVERIFIED; all DUT tests NOT_RUN. No production code or protected workflow changes in this pass.
