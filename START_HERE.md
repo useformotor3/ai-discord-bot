@@ -145,7 +145,7 @@
 
 - CRA_INTEGRATED_TRACEABILITY_MATRIX: TR-01..TR-20, 중복 0.
 - THREAT_MODEL: AST-01..10 10개, TH-01..18 18개, 중복 0.
-- SECURITY_TEST_EVIDENCE_REGISTER: TST-* 45개, 중복 0. 통합 매트릭스의 단일 ID 및 번호 범위 참조를 전개해 검사한 결과 45개 모두 시험 대장에 존재. 실제 시험은 모두 NOT_RUN.
+- SECURITY_TEST_EVIDENCE_REGISTER: TST-* 49개, 중복 0. 통합 매트릭스의 단일 ID, 번호 범위 및 slash 축약 참조를 전개해 검사한 결과 49개 모두 연결. 실제 시험은 모두 NOT_RUN.
 - main-only 자동 생성 report #35는 법령 원문과 충돌하는 Secure Boot/하드웨어 Root of Trust 의무 단정 및 잘못된 Annex I 직접 인용을 포함. 작업 브랜치 감사 문서 [ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_35_2026-11-12.md](docs/ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_35_2026-11-12.md)에 기록. main 원본은 수정하지 않음.
 - TI SLAAE29 Rev B 본문을 TI 공식 HTML 뷰어에서 직접 확인. CSC secure boot flow, KEYSTORE, AESADV/TRNG 설명 및 revision history를 확인했으나, Rev B 지원 부품 목록에 MSPM0G3529-Q1은 포함되지 않음. G3529-Q1에 Rev B 플랫폼 설명을 직접 적용하지 않음.
 - Commission C(2026) 5252 Annex PDF는 공식 다운로드 링크에서 다시 시도했으나 도구의 Unicode decoding error로 열지 못함. 페이지/문단 단위 검증은 여전히 PENDING.
@@ -484,7 +484,7 @@
 
 - main latest observed: report #125; HEAD \`6491a5db6ea35ea97a6d97e85bac43f9a3cf41c0\`; state count 125; history.json 1,400 entries. Archive tree count was not rechecked. main remains read-only.
 - main-only audit scope #8–#62: 55 consecutive, non-random reports; file-level results **40 CONFLICT / 15 PARTIALLY_VERIFIED / 0 VERIFIED**; direct quote reuse **0/55**. This is not a statistical error rate for the full archive.
-- Claim Evidence Ledger: 55 file-level source records + 345 atomic claims = **400 unique IDs**, duplicate IDs 0. All 345 atomic claims have one or more Canonical IDs. Canonical register defines 46 requirements; 43 are referenced by legacy atomic claims, and 3 are forward-mapped to matrix requirements.
+- Claim Evidence Ledger: 55 file-level source records + 345 atomic claims = **400 unique IDs**, duplicate IDs 0. All 345 atomic claims have one or more Canonical IDs. Canonical register defines 45 requirements; 42 are referenced by new atomic claims, and 3 are forward-mapped to matrix requirements; 99 legacy claims remain unmapped.
 - #8–#57 (50 reports) and #58–#62 (5 reports) have completed atomic decomposition. Individual legal facts marked VERIFIED do not promote a conflicting source file to VERIFIED.
 - Product-specific applicability, Class I/II classification, exact MCU order code and DUT test results remain UNVERIFIED/NOT_RUN.
 - Current P0: reconcile the 345 atomic claims and 46 canonical requirements against Volume 1, Volume 2, PSIRT SOP, requirements matrix, integrated traceability matrix and test evidence register; resolve duplicated/contradictory wording and keep exact legal locators. Then proceed to main-only audit #63–#67.
@@ -505,3 +505,14 @@
 - Latest push CI on current work-branch HEAD: run 43408438728 SUCCESS; 140 tests passed; strict archive audit 990/990, unique paths 990, missing/orphan/duplicate/malformed 0, consistent=true. The branch workflow's state.count=3 is a daily counter, not an archive total. No PR-triggered workflow run and no PR was created.
 - Current branch commits in this continuation are documentation-only; no additional production code changes were made here. Existing branch-vs-main code differences remain unmerged and must be reviewed separately.
 
+## 2026-11-14 — session continuation checkpoint
+
+Read [Cross-document Reconciliation](docs/CROSS_DOCUMENT_RECONCILIATION_2026-11-14.md) first for the latest count and verified matrix state.
+
+- Canonical Requirement Register: 45 IDs; both matrices cover 45/45.
+- Test evidence: 49 registered; 49/49 mapped; all NOT_RUN.
+- Ledger: 499 unique CRA-ARCH IDs = 55 file records + 345 new atomic claims + 99 legacy claims. Duplicate 0. The 99 legacy claims still lack Canonical ID mappings.
+- Latest main baseline: archive/history 1,565/1,565, state date 2026-11-14 count2 (daily counter); main read-only.
+- Work branch baseline: archive/history 990/990; diverged from main. Re-fetch live HEAD/compare/CI before every new batch. Do not merge/rebase/sync.
+- Next P0: migrate 99 legacy claims and reconcile report volumes/SOP/classification matrix/threat model/test register; then audit main-only reports #1–#5 for 2026-11-14.
+- Keep product applicability and Class I/II UNVERIFIED; all DUT tests NOT_RUN. Protected production files remain unchanged.
