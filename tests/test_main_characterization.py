@@ -1,5 +1,6 @@
 """Phase B: 유효한 보고서만 후속 처리되는지 검증한다."""
 import json
+from datetime import datetime
 
 import pytest
 
@@ -93,3 +94,39 @@ def test_invalid_first_model_response_falls_back_to_valid_second_model(run_main)
     assert all(call["model"] == "gemini-flash-latest" for call in calls[:3])
     assert calls[3]["model"] == "gemini-3.5-flash-lite"
     assert len(run_main.captured["discord_posts"]) == 1
+
+def test_error_text_inside_an_otherwise_structured_report_is_rejected(run_main):
+    error_report = VALID_REPORT + "\n시스템 긴급 경고: 요청 처리에 실패했습니다."
+    with pytest.raises(SystemExit) as exc:
+        run_main.execute([error_report] * 6)
+
+    assert exc.value.code == 1
+    assert len(run_main.captured["model_calls"]) == 6
+    assert run_main.captured["discord_posts"] == []
+    assert run_main.captured["git_commands"] == []
+    assert not (run_main.workdir / "research_archive").exists()
+
+
+def test_all_model_failures_preserve_existing_state_and_history(run_main):
+    state = {
+        "date": datetime.now().strftime("%Y-%m-%d"),
+        "count": 17,
+        "last_health_check": datetime.now().isoformat(),
+    }
+    history = [{"date": state["date"], "count": 17, "snippet": "기존 기록"}]
+    state_path = run_main.workdir / "state.json"
+    history_path = run_main.workdir / "history.json"
+    state_path.write_text(json.dumps(state, ensure_ascii=False), encoding="utf-8")
+    history_path.write_text(json.dumps(history, ensure_ascii=False), encoding="utf-8")
+    state_before = state_path.read_bytes()
+    history_before = history_path.read_bytes()
+
+    with pytest.raises(SystemExit) as exc:
+        run_main.execute([RuntimeError("mock failure") for _ in range(6)])
+
+    assert exc.value.code == 1
+    assert state_path.read_bytes() == state_before
+    assert history_path.read_bytes() == history_before
+    assert run_main.captured["discord_posts"] == []
+    assert run_main.captured["git_commands"] == []
+    assert not (run_main.workdir / "research_archive").exists()
