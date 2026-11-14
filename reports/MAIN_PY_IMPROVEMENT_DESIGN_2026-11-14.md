@@ -248,6 +248,6 @@ history.json의 기존 필드는 하위 호환을 유지한다. 새 필드를 �
 - 사용자 승인 후 작업 브랜치에 mock 기반 테스트 파일 4개를 추가했다.
 - Gemini SDK, Discord HTTP, Git subprocess, sleep을 mock 처리한다.
 - 운영 `main.py`, workflow, `state.json`, `history.json`은 변경하지 않았다.
-- 격리된 로컬 검증: compileall 통과, mock infrastructure 2 passed.
-- 저장소 전체 checkout이 없는 실행 환경이므로 실제 `main.py` characterization 3건은 아직 실행하지 못했다. 전체 테스트 통과라고 보고하지 않는다.
+- 격리된 로컬 검증: compileall 통과, 전체 pytest suite 5 passed. 브랜치에서 조회한 `main.py` 원문을 격리 작업공간에 반영해 실행했으며 실제 API/Discord/Git은 mock 처리했다.
+- 이 검증은 격리된 mock 테스트이며 GitHub Actions/운영 workflow 실행을 의미하지 않는다.
 - 다음 단계: 실제 저장소 checkout 환경에서 characterization suite를 실행하고, 이후 Phase B 구현은 별도 승인받는다.
