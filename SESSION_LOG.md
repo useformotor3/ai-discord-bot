@@ -348,3 +348,49 @@
 ### 변경 및 검증 경계
 - 이번 단계는 원본 파일 정적 검토 및 설계 문서 갱신이다. main.py, tests, workflow, 운영 데이터는 변경하지 않았고 테스트 실행도 하지 않았다.
 - fixture/test 변경과 P1-B 운영 코드 변경은 승인 전 구현하지 않는다.
+
+
+## 2026-11-14 — 전용 실패 경로 테스트 브랜치 구현 및 검증
+
+### 사용자 승인
+- 사용자가 테스트 전용 fixture 및 실패 경로 테스트 추가를 승인했다.
+- 승인 경계: `main.py`, 운영 workflow, `state.json`, `history.json` 미변경. 실제 Gemini/Discord/Git push 및 운영 workflow 실행 금지.
+
+### 브랜치 전략 및 기준점
+- 기존 문서/설계 브랜치 `docs/cra-audit-and-project-control-2026-11-14`의 commit `c6dfc5cee2485922b2313030dd9a5843e347afe7`에서 새 작업 브랜치 `test/failure-path-fixtures-2026-11-14`를 생성했다.
+- 이 방식으로 기존 문서 작업과 실패 경로 테스트 작업을 분리하고, 변경을 기준 commit 대비 비교할 수 있게 했다.
+- 기준점 대비 변경 파일은 `.github/workflows/tests.yml`, `tests/README.md`, `tests/conftest.py`, `tests/test_mock_infrastructure.py`, `tests/test_external_failure_paths.py` 5개 경로다.
+- `main.py` blob SHA는 기준과 동일하게 `470ac101d5cc4fdb2c5077d5468ef00327af3d43`이며 수정하지 않았다.
+
+### 구현
+- Discord mock은 response queue, HTTP status, headers/Retry-After, 예외, timeout 인자, payload 길이를 관찰할 수 있게 했다. webhook URL과 payload 본문은 캡처하지 않는다.
+- Git mock은 명령별 return code/예외를 주입하고 `check=True`에서 `subprocess.CalledProcessError`를 발생시킨다.
+- sleep mock은 실제 대기 없이 호출 시간을 기록한다.
+- 경계 mock 자체의 동작을 검증하는 테스트 2건을 추가/보강했다.
+- 현재 운영 코드가 아직 만족하지 못하는 P1-B 기대 동작 5건은 `xfail(strict=True)`로 표시했다. 이는 결함을 성공 처리하지 않으며 향후 구현 시 XPASS(strict)가 되면 테스트를 정상 통과로 전환하도록 하는 게이트다.
+- 테스트 전용 workflow에 feature branch push 트리거를 추가하고 6개 파일 blob SHA를 검증하도록 했다.
+
+### CI 시행착오 및 원인 교정
+- Run #5 실패: probe 테스트가 실제 main.py로 실행되어 유효 보고서가 아닌 mock 응답을 사용했고, HTTP status capture도 미완성이었다.
+- Run #6 취소: workflow의 기대 blob SHA와 새 fixture blob이 일시적으로 어긋났다.
+- Run #7 실패: probe 스크립트 경로를 지정하지 않아 main.py가 실행됐다.
+- Run #8 실패: test_mock_infrastructure.py 변경 후 workflow SHA 기준 갱신 전 실행됐다.
+- Run #9 실패: 동일 probe script_path 연결 오류가 남아 있어 재수정했다.
+- Run #10 취소: 같은 브랜치 후속 push로 concurrency 정책이 이전 실행을 취소했다.
+- 위 오류는 모두 workflow/job 로그에서 확인하고 수정했다. 실패 실행을 성공으로 보고하지 않는다.
+
+### 최종 CI 검증
+- Run #11: https://github.com/useformotor3/ai-discord-bot/actions/runs/43569359083
+- 검증 commit: `821d64bea0bc96710f083a773eabede80ba4a45c`
+- 6개 파일 blob SHA 전부 일치, Python compileall 통과, pytest `23 passed, 5 xfailed in 0.20s`.
+- 5 xfailed: Discord timeout 전달, 429 재시도, 503 재시도, 400 후속 저장 차단, Git push 실패 상태화.
+- 실제 Gemini/Discord/Git push, 운영 workflow 실행 없음.
+
+### Git 변경 추적 및 개선점
+- 전용 브랜치에서만 변경했으며 기준 commit 대비 파일 목록을 compare로 확인했다. merge/rebase/PR merge는 하지 않았다.
+- GitHub Contents API로 파일을 순차 갱신해 수정 파일마다 별도 commit이 생겼다. 이력은 추적 가능하지만 commit granularity가 세분화된 점은 개선 대상이다. 이후 여러 파일을 한 논리 작업으로 묶을 수 있는 Git tree/commit 경로를 사용하거나 변경 파일 묶음을 먼저 확정한 뒤 단일 logical commit으로 기록하는 방식을 우선한다.
+- `AI_RULEBOOK.md`에 브랜치 기준점, 변경 전/후 SHA, CI commit SHA, rollback 및 commit grouping 규칙을 추가했다.
+
+### 다음 단계
+- P1-B의 retry, 4xx/5xx, 부분 chunk 전송, Git sync 상태 및 atomic state/history write 정책을 명세한다.
+- 기존 동작/변경 동작, 영향 파일, 테스트, 롤백 계획을 포함한 구현안을 별도 제시하고 사용자 승인을 받는다.
