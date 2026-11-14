@@ -986,3 +986,10 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - compare main...cra-project-foundation: diverged, ahead 1,049 / behind 583. This is a snapshot; re-fetch live refs before every session. No merge/rebase/sync.
 - latest push CI run \`43533348296\` on the checked branch HEAD: SUCCESS; strict archive audit 990/990, missing/orphan/duplicate/malformed 0. Archive integrity only, not product compliance.
 - main daily report #4 is now registered in \`CRA_ARCHIVE_AUDIT_QUEUE.md\`; reports #1–#4 are queued for manual Pass A/B/C review. #4 overlaps #2 on secure-by-default and initial authentication; audit the overlap instead of treating it as a new requirement.
+
+
+## 2026-11-14 report #4 manual audit
+
+- main-only report #4 audited against EUR-Lex Regulation (EU) 2024/2847: file verdict CONFLICT, Raw Text Quote 0/1, 6 atomic claims (4 PARTIALLY_VERIFIED, 2 CONFLICT).
+- Report #4 overlaps #2; no new Canonical Requirement. Ledger after #4: 56 file records +351 new atomic claims +99 legacy claims = 506 unique IDs, duplicate definitions 0.
+- Next: independent review of 99 legacy candidate crosswalks and audit reports #1–#3/#5. Report #4 queue status AUDITED.
