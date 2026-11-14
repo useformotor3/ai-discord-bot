@@ -67,3 +67,21 @@
 - main에는 자동화 아카이브가 계속 추가되고 있다(확인된 최신 보고서 #31).
 - 운영 아카이브를 덮어쓰지 않도록 이번 단계에서 merge/rebase하지 않았다. 후속 통합 전 최신 main 변경을 별도 비교한다.
 
+## Phase B P0 수정 결과 — 2026-11-14
+
+- 사용자 승인: Phase B P0 수정 진행 승인
+- `main.py`에 `validate_research_report()` 추가
+- 최소 250자, 4개 필수 섹션(주제 요약 / 규격 근거·상세 내용 / 출처 자료·Source / 출처 원문·Raw Text Quote) 검사
+- 빈 응답, 짧은 응답, 필수 섹션 누락, 알려진 오류/쿼터/서비스 장애 문구가 포함된 응답은 거부
+- 유효하지 않은 응답은 모델별 재시도 후 다음 모델로 폴백
+- 모든 모델 실패 시 `SystemExit(1)`로 종료하며 Discord 전송, 아카이브 생성, state/history 변경, Git 명령을 실행하지 않음
+- 기존 state/history 파일 보존 여부를 테스트로 확인
+- 격리 mock 테스트: compileall 통과, pytest 9 passed
+- 실제 Gemini/Discord/Git 외부 호출 및 운영 workflow 실행: 없음
+- GitHub Actions CI는 실행하지 않음
+
+## 변경 범위
+- 수정: `main.py`, `tests/test_main_characterization.py`, `tests/README.md`
+- 미수정: `.github/workflows/run.yml`, `state.json`, `history.json`
+- P1 항목(상태파일 손상 처리, datetime 오류, Discord timeout/status 검증, Git push 실패 상태화)은 이번 Phase B 범위에서 제외하고 후속 개선 대상으로 유지한다.
+
