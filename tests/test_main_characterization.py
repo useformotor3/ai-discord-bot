@@ -23,7 +23,7 @@ def test_successful_generation_uses_only_mocked_external_services(run_main):
     assert len(run_main.captured["model_calls"]) == 1
     assert len(run_main.captured["discord_posts"]) == 1
     assert [cmd[0] for cmd in run_main.captured["git_commands"]] == [
-        "git", "git", "git", "git"
+        "git", "git", "git", "git", "git"
     ]
 
 
