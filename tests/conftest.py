@@ -37,7 +37,7 @@ def run_main(tmp_path, monkeypatch):
         def __init__(self, responses):
             self.models = FakeModels(responses)
 
-    def execute(responses):
+    def execute(responses, script_path=None):
         genai_module = types.ModuleType("google.genai")
         genai_module.Client = lambda api_key=None: FakeClient(responses)
         google_module = types.ModuleType("google")
@@ -65,7 +65,8 @@ def run_main(tmp_path, monkeypatch):
         monkeypatch.setenv("GEMINI_API_KEY", "TEST_ONLY_NOT_A_REAL_KEY")
         monkeypatch.setenv("DISCORD_WEBHOOK_URL", "https://example.invalid/mock-webhook")
 
-        namespace = runpy.run_path(str(repo_root / "main.py"), run_name="__main__")
+        target_script = Path(script_path) if script_path is not None else repo_root / "main.py"
+        namespace = runpy.run_path(str(target_script), run_name="__main__")
         return namespace
 
     return SimpleNamespace(
