@@ -13,7 +13,7 @@
 - P1-A 상태·이력 안전성: 작업 브랜치 구현 완료
 - helper 독립 pytest: 7 passed (전체 저장소 테스트 아님)
 - 임시 재구성 사본 pytest: 21 passed (blob SHA 불일치로 예비 결과만 인정)
-- **원본 동일성 검증 후 GitHub Actions pytest: 21 passed (Run #1, success)**
+- **원본 동일성 검증 후 GitHub Actions pytest: 21 passed (최신 Run #3, success)**
 - 다섯 개 핵심 파일 Git blob SHA 일치, compileall 통과 확인
 - 실제 코드 리뷰에서 Discord/Git 실패 처리, 원자적 저장, 테스트 fixture의 실패 경로 검증 공백 확인
 - main 대비 작업 브랜치: diverged. 문서 커밋으로 수치가 계속 변하므로 정확한 ahead/behind는 통합 직전에 실시간 재조회
