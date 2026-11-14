@@ -43,11 +43,11 @@
 - [x] 공식 EUR-Lex 원문으로 핵심 조항 대조
 - [x] 운영 코드의 실패 처리 결함 식별
 - [x] 보고서 #28·#29 정정본 작성 및 원본 보존
-- [ ] 자동화 실패 상태·근거 URL·조항 검증을 위한 코드 변경안 제출
+- [x] 자동화 실패 상태·근거 URL·조항 검증을 위한 코드 변경안 제출
 - [ ] 사용자 승인 후 작업 브랜치에서 main.py 변경
-- [ ] mock/unit 테스트 및 CI 검증
+- [ ] Phase A 테스트 기반 구축 승인 및 mock/unit 테스트 실행
 - [ ] 검증된 자료를 누적 통합 보고서로 편입
 
 ## 다음 재개 지점
 
-먼저 `reports/RESEARCH_QUALITY_AUDIT_2026-11-14.md`와 `reports/CRA_CORRECTIONS_REPORTS_28_29_2026-11-14.md`를 읽는다. 다음은 자동화 코드 변경 제안서를 작성한다. main.py와 운영 workflow는 별도 승인 전까지 수정하지 않는다.
+먼저 `reports/RESEARCH_QUALITY_AUDIT_2026-11-14.md`와 `reports/CRA_CORRECTIONS_REPORTS_28_29_2026-11-14.md`를 읽는다. 다음은 `reports/MAIN_PY_IMPROVEMENT_DESIGN_2026-11-14.md`의 Phase A 테스트 기반 구축이다. 사용자 승인 전까지 main.py와 운영 workflow는 수정하지 않는다.
