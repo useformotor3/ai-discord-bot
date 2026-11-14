@@ -117,7 +117,12 @@
 - `tests/test_p1_reliability.py`에 손상 파일, 스키마 오류, datetime 호환성 테스트 추가
 - `tests/README.md`를 현재 테스트 범위에 맞게 정리
 
-### 미완료 검증
-- 이 기록 시점에서 GitHub 저장 후 재조회 및 실제 pytest 실행은 아직 최종 확인 전
+### 검증 결과 및 한계
+- GitHub에 저장한 `main.py`, 신규 테스트, README, 상황판, 세션 로그를 다시 fetch해 저장 확인
+- 기존 `state.json`은 객체/date 문자열/count 정수/last_health_check 문자열 구조로 확인
+- 기존 `history.json`은 1,592개 항목의 배열이며 비객체 항목 0개임을 JSON 파싱으로 확인
+- 신규 helper와 P1 테스트 모듈의 Python 문법 파싱(ast.parse)은 통과
+- 이 환경에서 GitHub 저장소 checkout 기반 pytest 실행은 수행하지 못했으므로 pytest 통과로 보고하지 않음
 - GitHub Actions CI와 운영 workflow는 실행하지 않음
+- 현재 브랜치는 main 대비 41 commits ahead / 6 commits behind이며 자동화가 계속 추가되므로 merge/rebase 보류
 - P1-B(Discord timeout/status, Git 동기화 실패 상태화)는 별도 승인 대상
