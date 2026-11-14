@@ -215,3 +215,36 @@
 - 이번 작업은 설계 문서만 갱신했다. 테스트 코드와 main.py는 변경/실행하지 않았다.
 - P1-B 운영 코드 및 fixture/test 변경은 각각 승인 경계를 확인한 뒤 진행한다.
 - 설계 작성 전 마지막 compare 스냅샷: 106 ahead / 55 behind, diverged. 이후 문서 커밋으로 수치는 증가할 수 있다.
+
+
+## 14. 실패 경로 fixture 구현 및 CI 검증 — 2026-11-14
+
+### 브랜치 및 기준점
+- 전용 작업 브랜치: `test/failure-path-fixtures-2026-11-14`
+- 기준 브랜치: `docs/cra-audit-and-project-control-2026-11-14`
+- 기준 commit SHA: `c6dfc5cee2485922b2313030dd9a5843e347afe7`
+- 작업 시작 시 `main` 비교: diverged, 111 ahead / 56 behind (이후 main 자동 커밋으로 변동 가능)
+
+### 실제 변경 범위 — 기준점 대비
+- 수정: `tests/conftest.py` — Discord 응답 큐/status/headers/예외/timeout 관찰, Git 명령별 return code 및 check=True 예외, sleep 기록
+- 수정: `tests/test_mock_infrastructure.py` — Discord 429/Retry-After 응답과 Git CalledProcessError 주입 확인
+- 추가: `tests/test_external_failure_paths.py` — timeout, 429 retry, 503 retry, 400 실패 차단, Git sync failed 기대 동작 5건(strict xfail)
+- 수정: `.github/workflows/tests.yml` — 전용 feature branch 트리거와 6개 소스·테스트 blob SHA 검사
+- 수정: `tests/README.md` — fixture 사용법, strict xfail 해석 규칙
+- 기준 commit 대비 diff는 위 5개 경로만 변경되었으며 `main.py`는 변경하지 않았다.
+
+### CI 실행 및 교정 이력
+- Run #5: 테스트 2건 실패(경계 probe가 main.py를 실행하도록 잘못 연결, status capture 미반영). fixture/test 설계 결함으로 판정하고 수정.
+- Run #6: workflow SHA 기준과 직전 fixture commit 불일치로 취소/검증 중단.
+- Run #7: 테스트 1건 실패(경계 probe에 script_path 미지정). 수정.
+- Run #8: 변경된 test_mock_infrastructure.py blob SHA와 workflow 기준값 불일치. workflow SHA 갱신.
+- Run #9: 테스트 1건 실패(동일 probe 실행 대상 오류). 수정.
+- Run #10: 같은 브랜치 후속 push에 따른 concurrency 취소.
+- Run #11: [성공](https://github.com/useformotor3/ai-discord-bot/actions/runs/43569359083), 실행 commit `821d64bea0bc96710f083a773eabede80ba4a45c`; 6개 blob SHA 모두 일치, compileall 통과, pytest **23 passed, 5 xfailed**.
+- 실패 시도는 모두 로그에서 원인을 확인했으며 최종 성공 결과와 혼동하지 않는다.
+
+### 해석 및 미해결 사항
+- 5 xfailed는 현행 main.py가 아직 지원하지 않는 P1-B 기대 동작을 엄격히 표시한다. 운영 코드 결함이 수정되어 테스트가 통과하면 XPASS(strict)로 CI가 실패하므로 xfail 해제 및 정상 테스트 전환이 필요하다.
+- 이번 승인 범위는 테스트 fixture/test 및 테스트 전용 workflow다. P1-B 운영 코드 수정은 수행하지 않았다.
+- Gemini API, 실 Discord webhook, 실제 Git push, 운영 workflow는 호출하지 않았다.
+- merge/rebase/PR merge는 수행하지 않았다.
