@@ -72,3 +72,10 @@ python -m pytest -q
 - Run #13: [성공](https://github.com/useformotor3/ai-discord-bot/actions/runs/43570175208), commit `27d2c69287631b041672b9989fdeeb3066f5ebb9`.
 - 6개 핵심 파일 Git blob SHA 일치, compileall 통과, pytest **30 passed, 5 xfailed**.
 - 새로 추가한 7개 fixture case는 Run #13에 포함된다.
+
+
+## Discord 영구/불명확 전송 오류 기대 동작
+- HTTP 401/403/404: permanent_failure, 자동 재시도 금지(strict xfail).
+- HTTP 503: delivery_unknown, 중복 방지 수단이 없는 한 자동 재전송 금지(strict xfail).
+- 429: Retry-After/retry_after 준수 제한 재시도(strict xfail).
+- [Run #15](https://github.com/useformotor3/ai-discord-bot/actions/runs/43570492842): 30 passed, 8 xfailed. xfail은 아직 main.py에 구현되지 않은 P1-B 기대 동작을 나타낸다.

@@ -323,3 +323,12 @@
 - state/history 파일별 atomic replace는 두 파일 간 transaction 보장이 아니다. journal/recovery 정책이 필요하다.
 - 현행 503 retry strict xfail는 정책과 충돌할 수 있어 구현 전에 재검토한다.
 - 이번 단계는 문서 설계만이다. main.py/운영 workflow/state/history 변경 및 운영 실행은 없다.
+
+
+## 21. Discord 오류 테스트 계약 정합화 및 최신 CI — 2026-11-14
+- 초기 503 retry xfail은 Discord POST 중복 가능성과 충돌하여 `delivery_unknown`으로 변경했다.
+- 401/403/404는 영구 실패(permanent_failure), 자동 재시도 금지 기대 테스트 3 case를 추가했다.
+- [Run #15](https://github.com/useformotor3/ai-discord-bot/actions/runs/43570492842), tested commit `b2e108768be08f06e85af154835424682337ebf5`: 6개 blob SHA 일치, compileall 통과, **30 passed, 8 xfailed in 0.23s**.
+- 8 xfailed는 아직 구현되지 않은 P1-B 동작 계약이다. 이는 CI 실패가 아니라 의도적으로 표시한 미구현 기대 동작이다.
+- 기준 docs commit 대비 27 ahead / 0 behind; main 대비 diverged 138 ahead / 59 behind. main HEAD `8034668f45496ef532bfdfb865b29d4149cf2a94`, merge-base `f9a12a5778f5fa1d907201ab2931d20ca2656bb7`.
+- main.py blob SHA `470ac101d5cc4fdb2c5077d5468ef00327af3d43` 유지. 이번 변경은 테스트/문서이며 운영 구현은 없다.

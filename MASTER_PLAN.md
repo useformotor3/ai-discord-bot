@@ -198,3 +198,10 @@
 - Discord POST는 중복 가능성을 고려해 delivery unknown과 재시도 가능 상태를 구분한다. 429는 Retry-After/retry_after 준수, 400/401/403/404는 영구 실패로 중단한다.
 - state/history의 다중 파일 일관성에는 transaction journal/recovery 검증이 필요하다.
 - 다음 단계는 구현 전 변경 제안 및 승인이다. 운영 코드 변경은 별도 승인 전 금지한다.
+
+
+## 2026-11-14 — Discord 실패 테스트 정책 정합화
+- 503 응답의 무조건 재시도 기대를 제거하고 delivery_unknown으로 남기는 duplicate-safe 계약으로 수정했다.
+- 401/403/404 영구 실패 및 자동 재시도 금지 xfail 3 case를 추가했다.
+- [Run #15](https://github.com/useformotor3/ai-discord-bot/actions/runs/43570492842): 30 passed / 8 xfailed.
+- 다음 단계는 P1-B 최소 구현안과 복구/중복 방지 설계를 승인 요청하는 것이다. 운영 코드 변경은 별도 승인 전 금지한다.

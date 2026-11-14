@@ -460,3 +460,19 @@
 - 공식 출처는 Discord Rate Limits, Discord Webhook Resource, Python Requests Quickstart/Advanced 문서다.
 - 이번 변경은 문서만이며 main.py, 운영 workflow, state/history를 수정하지 않았다. 운영 Gemini/Discord/Git push도 실행하지 않았다.
 - P1-B 코드는 별도 승인 전까지 구현하지 않는다.
+
+
+## 2026-11-14 — Discord 실패 테스트 계약 수정 및 CI 검증
+
+### 정책 정합성 수정
+- 공식 Discord 문서와 Requests 문서에 근거해 503/ReadTimeout 등의 POST 결과는 서버 반영 여부가 불명확할 수 있으므로, idempotency/outbox 없이 자동 재전송하지 않는 정책을 채택했다.
+- 기존 `test_discord_503_is_retried_then_succeeds` 기대를 `delivery_unknown` + no automatic retry로 변경했다.
+- HTTP 401/403/404에 대해 `permanent_failure` + no retry 기대 테스트 3 case를 추가했다.
+- 이 기대 동작은 현행 main.py에 구현되지 않아 strict xfail로 남긴다.
+
+### CI
+- [Run #15 — success](https://github.com/useformotor3/ai-discord-bot/actions/runs/43570492842)
+- tested commit: `b2e108768be08f06e85af154835424682337ebf5`
+- 6개 source blob SHA 일치, compileall 통과, pytest **30 passed, 8 xfailed in 0.23s**.
+- 운영 main.py/운영 workflow/state/history 변경 없음.
+- 이번 조치는 테스트 계약과 설계 문서 정합화이며 P1-B 운영 구현 승인이 아니다.
