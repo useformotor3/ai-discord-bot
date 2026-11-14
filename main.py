@@ -12,26 +12,105 @@ HISTORY_FILE = "history.json"
 TODAY = datetime.now().strftime("%Y-%m-%d")
 NOW = datetime.now()
 
-# 1. state.json 읽기 및 일일 쿼터 체크
-try:
-  if os.path.exists(STATE_FILE):
-    with open(STATE_FILE, "r", encoding="utf-8") as f:
-      state_data = json.load(f)
-  else:
-    state_data = {
-        "date": TODAY,
+def load_state(path, today):
+  """상태파일을 검증해 읽는다. 손상된 파일은 초기화하지 않고 안전 실패한다."""
+  if not os.path.exists(path):
+    return {
+        "date": today,
         "count": 0,
-        "last_health_check": datetime.now().isoformat(),
+        "last_health_check": NOW.isoformat(),
     }
-except Exception:
-  state_data = {"date": TODAY, "count": 0}
 
-if state_data.get("date") != TODAY:
-  state_data["date"] = TODAY
-  state_data["count"] = 0
+  try:
+    with open(path, "r", encoding="utf-8") as f:
+      data = json.load(f)
+  except (OSError, UnicodeError, json.JSONDecodeError) as exc:
+    raise SystemExit(
+        f"❌ [상태파일 오류] {path}를 읽을 수 없습니다. 원본을 보존하고 종료합니다."
+    ) from exc
+
+  if not isinstance(data, dict):
+    raise SystemExit(
+        f"❌ [상태파일 오류] {path}의 최상위 구조가 객체가 아닙니다. 원본을 보존하고 종료합니다."
+    )
+
+  stored_date = data.get("date")
+  if not isinstance(stored_date, str):
+    raise SystemExit(
+        f"❌ [상태파일 오류] {path}의 date 필드가 없거나 문자열이 아닙니다."
+    )
+  try:
+    datetime.strptime(stored_date, "%Y-%m-%d")
+  except ValueError as exc:
+    raise SystemExit(
+        f"❌ [상태파일 오류] {path}의 date 형식이 올바르지 않습니다."
+    ) from exc
+
+  count = data.get("count")
+  if isinstance(count, bool) or not isinstance(count, int) or count < 0:
+    raise SystemExit(
+        f"❌ [상태파일 오류] {path}의 count는 0 이상의 정수여야 합니다."
+    )
+
+  last_check = data.get("last_health_check")
+  if last_check is not None:
+    if not isinstance(last_check, str):
+      raise SystemExit(
+          f"❌ [상태파일 오류] {path}의 last_health_check는 ISO 날짜 문자열이어야 합니다."
+      )
+    try:
+      datetime.fromisoformat(last_check)
+    except ValueError as exc:
+      raise SystemExit(
+          f"❌ [상태파일 오류] {path}의 last_health_check 날짜 형식이 올바르지 않습니다."
+      ) from exc
+
+  if stored_date != today:
+    data["date"] = today
+    data["count"] = 0
+  return data
+
+
+def load_history(path):
+  """이력파일의 JSON과 항목 구조를 검증한다. 손상된 이력은 빈 목록으로 대체하지 않는다."""
+  if not os.path.exists(path):
+    return []
+
+  try:
+    with open(path, "r", encoding="utf-8") as f:
+      data = json.load(f)
+  except (OSError, UnicodeError, json.JSONDecodeError) as exc:
+    raise SystemExit(
+        f"❌ [이력파일 오류] {path}를 읽을 수 없습니다. 원본을 보존하고 종료합니다."
+    ) from exc
+
+  if not isinstance(data, list):
+    raise SystemExit(
+        f"❌ [이력파일 오류] {path}의 최상위 구조가 배열이 아닙니다. 원본을 보존하고 종료합니다."
+    )
+  if any(not isinstance(item, dict) for item in data):
+    raise SystemExit(
+        f"❌ [이력파일 오류] {path}에 객체가 아닌 이력 항목이 있습니다. 원본을 보존하고 종료합니다."
+    )
+  return data
+
+
+def parse_health_check(value):
+  """ISO datetime을 파싱하고 aware/naive 혼용을 현재 로컬 시간 기준으로 정규화한다."""
+  if not value:
+    return None
+  parsed = datetime.fromisoformat(value)
+  if parsed.tzinfo is not None:
+    return parsed.astimezone().replace(tzinfo=None)
+  return parsed
+
+
+# 1. 상태·이력 파일을 먼저 검증한다. 오류가 있으면 어떤 외부 작업도 시작하지 않는다.
+state_data = load_state(STATE_FILE, TODAY)
+history_data = load_history(HISTORY_FILE)
 
 current_count = state_data["count"]
-MAX_DAILY_QUOTA = 1200  # 무료 티어 안전 마진
+MAX_DAILY_QUOTA = 1200  # 운영 한도는 별도 공식 정책 확인 필요
 
 webhook_url = os.environ.get("DISCORD_WEBHOOK_URL")
 
@@ -43,22 +122,19 @@ if current_count >= MAX_DAILY_QUOTA:
 # 12시간마다 강제 생존신고(Health-Check) 체크
 last_check_str = state_data.get("last_health_check")
 is_health_check = False
-if last_check_str:
-  last_check_time = datetime.fromisoformat(last_check_str)
-  if (NOW - last_check_time) >= timedelta(hours=12):
-    is_health_check = True
-else:
+try:
+  last_check_time = parse_health_check(last_check_str)
+except (TypeError, ValueError) as exc:
+  raise SystemExit(
+      "❌ [상태파일 오류] last_health_check를 해석할 수 없어 안전 종료합니다."
+  ) from exc
+
+if last_check_time is None:
+  is_health_check = True
+elif (NOW - last_check_time) >= timedelta(hours=12):
   is_health_check = True
 
-# 2. 🧠 [외부 메모리 읽기] 깃허브에 쌓인 이전 히스토리 불러오기
-history_data = []
-try:
-  if os.path.exists(HISTORY_FILE):
-    with open(HISTORY_FILE, "r", encoding="utf-8") as f:
-      history_data = json.load(f)
-except Exception:
-  history_data = []
-
+# 2. 🧠 [외부 메모리] 검증된 이력의 최근 요약을 조사 프롬프트에 반영
 recent_snippets = [item.get("snippet", "") for item in history_data[-5:]]
 context_memory = (
     "\n".join([f"- {s}" for s in recent_snippets])
