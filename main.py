@@ -86,6 +86,40 @@ prompt = f"""
     4. 출처 원문 텍스트(Raw Text Quote): (해당 출처에서 인용하거나 근거로 삼은 실제 원문 문장 또는 규정 조항의 텍스트)
     """
 
+def validate_research_report(text):
+  """프롬프트가 요구한 최소 보고서 구조를 확인한다. 정확성 검증과는 별개다."""
+  if not isinstance(text, str):
+    return False, "응답이 문자열이 아닙니다."
+
+  report = text.strip()
+  if len(report) < 250:
+    return False, "응답 길이가 최소 기준(250자)에 미달합니다."
+
+  lowered = report.lower()
+  required_sections = [
+      ("주제 요약",),
+      ("규격 근거", "상세 내용"),
+      ("출처 자료", "source:"),
+      ("출처 원문", "raw text quote"),
+  ]
+  for alternatives in required_sections:
+    if not any(marker in lowered for marker in alternatives):
+      return False, f"필수 보고서 항목 누락: {' / '.join(alternatives)}"
+
+  error_markers = [
+      "시스템 긴급 경고",
+      "모든 ai 모델",
+      "temporarily unavailable",
+      "quota exceeded",
+      "rate limit exceeded",
+      "internal server error",
+  ]
+  if any(marker.lower() in lowered for marker in error_markers):
+    return False, "오류 또는 서비스 장애 문구가 보고서에 포함되어 있습니다."
+
+  return True, ""
+
+
 # 4. 모델 폴백 & 재시도 픽서 로직 (Latest ➔ Lite)
 models_to_try = ["gemini-flash-latest", "gemini-3.5-flash-lite"]
 ai_message = ""
@@ -101,10 +135,18 @@ for model_name in models_to_try:
       response = client.models.generate_content(
           model=model_name, contents=prompt
       )
-      if response and response.text:
-        ai_message = response.text
+      candidate = response.text if response and response.text else ""
+      is_valid, validation_reason = validate_research_report(candidate)
+      if is_valid:
+        ai_message = candidate.strip()
         success = True
         break
+      print(
+          f"모델 {model_name} 시도 {attempt} 무효 응답: "
+          f"{validation_reason}"
+      )
+      if attempt < max_retries:
+        time.sleep(retry_delay)
     except Exception as e:
       print(f"모델 {model_name} 시도 {attempt} 실패: {str(e)}")
       if attempt < max_retries:
@@ -114,12 +156,11 @@ for model_name in models_to_try:
     break
 
 if not success:
-  ai_message = (
-      "⚠️ [시스템 긴급 경고] 모든 AI 모델(Latest 및 Lite)의 일시적"
-      " 과부하로 이번 회차 조사가 지연되었습니다. 시스템은 정상 대기"
-      " 중입니다."
+  print(
+      "❌ [조사 실패] 모든 모델 호출이 실패했거나 응답 검증을 통과하지 "
+      "못했습니다. 이번 실행은 전송·아카이브·카운트 증가 없이 종료합니다."
   )
-  success = True
+  raise SystemExit(1)
 
 # 5. 디스코드 분할 전송 (2000자 제한 방어)
 title_prefix = (
