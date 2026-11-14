@@ -14,7 +14,7 @@
 - P1-A helper 독립 테스트: 7 passed
 - 예비 재구성 사본 pytest: 21 passed (원본 blob SHA 불일치로 예비 결과만 인정)
 - **저장소 전체 pytest 및 GitHub Actions CI: 아직 미실행**
-- 작업 브랜치는 현재 확인 기준 main 대비 45 commits ahead / 7 commits behind이며 diverged 상태입니다. 자동 생성 운영 데이터를 보존하기 위해 merge/rebase를 보류합니다.
+- 작업 브랜치는 현재 확인 기준 main 대비 54 commits ahead / 48 commits behind이며 diverged 상태입니다. 자동 생성 운영 데이터를 보존하기 위해 merge/rebase를 보류합니다.
 
 Actions 성공은 자동화 실행 결과이지 CRA 법령 해석이나 출처의 사실 정확성을 보증하지 않습니다. helper 독립 테스트 결과를 전체 저장소 테스트 통과로 해석하지 않습니다.
 
@@ -32,6 +32,7 @@ Actions 성공은 자동화 실행 결과이지 CRA 법령 해석이나 출처�
 - [조사 품질 감사](reports/RESEARCH_QUALITY_AUDIT_2026-11-14.md)
 - [CRA 보고서 #28·#29 정정 기록](reports/CRA_CORRECTIONS_REPORTS_28_29_2026-11-14.md)
 - [자동화 코드 개선 설계 및 테스트 계획](reports/MAIN_PY_IMPROVEMENT_DESIGN_2026-11-14.md)
+- [테스트 실행 환경 감사 및 예비 검증 한계](reports/TEST_EXECUTION_ENVIRONMENT_AUDIT_2026-11-14.md)
 - [테스트 가이드](tests/README.md)
 
 ## 진행 원칙
