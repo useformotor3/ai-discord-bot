@@ -516,3 +516,11 @@ Read [Cross-document Reconciliation](docs/CROSS_DOCUMENT_RECONCILIATION_2026-11-
 - Work branch baseline: archive/history 990/990; diverged from main. Re-fetch live HEAD/compare/CI before every new batch. Do not merge/rebase/sync.
 - Next P0: independently review 99 legacy candidate crosswalks and reconcile report volumes/SOP/classification matrix/threat model/test register; then audit main-only reports #1–#5 for 2026-11-14.
 - Keep product applicability and Class I/II UNVERIFIED; all DUT tests NOT_RUN. Protected production files remain unchanged.
+
+## 2026-11-14 live recheck — 00:19 UTC
+
+- main HEAD: \`03b3ecaaa506c00146f5cb9d5855e6a66c3ef1c7\`; archive/history 1,567/1,567; state.json date/count 2026-11-14 / 4 (daily counter).
+- work branch HEAD at check: \`f0fbb4954b0853987ce9f918733e5f6858150483\`; archive/history 990/990.
+- compare main...cra-project-foundation: diverged, ahead 1,049 / behind 583. This is a snapshot; re-fetch live refs before every session. No merge/rebase/sync.
+- latest push CI run \`43533348296\` on the checked branch HEAD: SUCCESS; strict archive audit 990/990, missing/orphan/duplicate/malformed 0. Archive integrity only, not product compliance.
+- main daily report #4 is now registered in \`CRA_ARCHIVE_AUDIT_QUEUE.md\`; reports #1–#4 are queued for manual Pass A/B/C review. #4 overlaps #2 on secure-by-default and initial authentication; audit the overlap instead of treating it as a new requirement.
