@@ -427,3 +427,8 @@ The 2026-11-14 reconciliation report is [CROSS_DOCUMENT_RECONCILIATION_2026-11-1
 Ledger counts are now scope-separated: the 2026-11-13 #8–#62 namespace has 55 file records + 345 atomic claims = 400 IDs; the Ledger also contains 99 older legacy claims with candidate crosswalks pending independent review, giving 499 unique CRA-ARCH IDs overall. Of the new 345 claims, 343 have one or more CRA-REQ mappings; two quote-accuracy-only claims map to the evidence-governance ID.
 
 The remaining P0 is independent review of the 99 legacy candidate mappings and line-by-line reconciliation of both report volumes, PSIRT SOP, product-classification matrix, threat model and test register. Product-specific applicability/classification remains UNVERIFIED; all DUT tests remain NOT_RUN.
+
+
+## 2026-11-14 main-only report #4 audit
+
+Report #4 was audited against the official EUR-Lex text. File-level verdict: CONFLICT; its Raw Text Quote is rejected (0/1 reuse). Secure-by-default and appropriate access-control themes are valid, but universal forced password change/unique default password and blanket disabling of all non-essential ports are not specified as universal implementation methods. The quote assigns access control to Annex I Part I(2)(c), but the correct locator is (2)(d); (2)(c) concerns security updates. See [audit record](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_4_2026-11-14.md). Report #4 overlaps report #2 and adds no new Canonical Requirement.
