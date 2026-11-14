@@ -1000,3 +1000,10 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - Main-only report #5 audited against EUR-Lex: file verdict CONFLICT, Raw Text Quote 0/2, 6 atomic claims (3 PARTIALLY_VERIFIED, 3 CONFLICT). #5 duplicates #2/#4 and adds no new Canonical Requirement.
 - Corrected Article 10/13 and Annex I Part I(2)(a)/(b)/(j) locators. Queue #5 AUDITED; #1–#3 remain pending.
 - Ledger after #4/#5: 57 file +357 new atomic +99 legacy =513 unique CRA-ARCH IDs, duplicate definitions 0. 99 legacy crosswalks CANDIDATE pending independent review.
+
+## 2026-11-14 live main recheck — 00:25 UTC
+
+- main HEAD: \`4a38d85a1cd6c50dfec0ab2c2f0c9b5931d5ea8d\`; archive/history 1,569/1,569; state date/count 2026-11-14 / 6 (daily counter).
+- Reports #1–#6 are now present in the 2026-11-14 daily archive. Manual audit status: #4 and #5 AUDITED; #1–#3 and #6 pending. #2/#4/#5 overlap on secure-by-default/initial authentication; #6 is Secure Boot/HWRoT.
+- main remains read-only. Re-fetch main HEAD/history/state and original blob SHAs before each audit batch.
+- Work branch HEAD and CI are dynamic; re-fetch after the latest queue update. No merge/rebase/sync.
