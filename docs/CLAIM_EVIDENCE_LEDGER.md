@@ -1040,7 +1040,7 @@ Batch direct quote reuse: **0/5**. Per-file quote counts are not inferred where 
 - Entire Ledger: 55 file records + 345 new atomic claims + 99 legacy claims = **499 unique CRA-ARCH IDs**, duplicate 0.
 - Of the 345 new atomic claims, 343 reference one or more of 42 Canonical Requirements. Two quote-accuracy-only claims reference \`CRA-EVIDENCE-QUOTE-ACCURACY-001\` and intentionally do not receive a product requirement ID.
 - The 45-entry Canonical Requirement Register has 42 requirements directly referenced by new atomic claims and 3 currently forward-mapped only in the traceability matrices: interconnectivity, exploit mitigation, secure data transfer.
-- Migration of the 99 legacy claims is open P0. Do not count them as mapped or complete.
+- All 99 legacy claims now have candidate Canonical/Evidence crosswalk rows. These are not independently verified; review them claim-by-claim before marking migration complete.
 
 ## 2026-11-14 legacy claim mapping — candidate batch #35–#57
 
@@ -1158,3 +1158,10 @@ Batch direct quote reuse: **0/5**. Per-file quote counts are not inferred where 
 | CRA-ARCH-124-001 | CRA-REQ-VULNERABILITY-HANDLING-001; CRA-REQ-REMEDIATION-001; CRA-REQ-SECURE-UPDATE-DIST-001; CRA-REQ-INTEGRITY-001; CRA-EVIDENCE-QUOTE-ACCURACY-001 | Annex I Part II vulnerability handling과 서명/fail-safe 구현 선택 구분 | CANDIDATE |
 
 **Batch result:** 67/99 legacy claims에 Canonical/Evidence ID 후보 연결을 추가했다. 후보 매핑은 traceability aid이며 법령 사실 VERIFIED 또는 제품 적용성 PASS가 아니다. 의미가 모호한 연결은 다음 독립 검토에서 제거/수정할 수 있다.
+
+
+## 2026-11-14 legacy mapping coverage summary
+
+- Legacy claim namespace CRA-ARCH-035-*…CRA-ARCH-124-*: 99 original claim rows; candidate crosswalks 99/99 (batch #35–#57: 32, batch #58–#124: 67).
+- Candidate crosswalks reference 33 distinct CRA-REQ IDs plus evidence-governance IDs. They do not change the original claim status or legal verification state. Independent review is still required; ambiguous links must be removed or marked UNMAPPED.
+- Canonical IDs with no direct atomic-claim reference remain forward-mapped: CRA-REQ-INTERCONNECTIVITY-001, CRA-REQ-EXPLOIT-MITIGATION-001, CRA-REQ-SECURE-DATA-TRANSFER-001.
