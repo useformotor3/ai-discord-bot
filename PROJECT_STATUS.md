@@ -70,7 +70,8 @@
 - 신규 helper 로직 독립 pytest: 7 passed
 - 예비 재구성 사본 실행: compileall 종료 코드 0, pytest 21 passed. 단, 실행 사본 5개 파일의 Git blob SHA가 GitHub 원본과 모두 불일치하여 예비 결과로만 인정한다.
 - 저장소 전체 pytest 및 GitHub Actions CI는 미실행 상태다. 21 passed를 실제 저장소 테스트 통과로 보고하지 않는다.
-- 상세: `reports/TEST_EXECUTION_ENVIRONMENT_AUDIT_2026-11-14.md`
+- 정적 코드 재검토에서 Discord timeout/status, Discord-아카이브 순서, state/history 원자적 저장, Git sync 실패 상태화, webhook 생략 상태, 출처 실증 검증, import 시점 실행 구조의 위험을 재확인했다.
+- 상세: `reports/TEST_EXECUTION_ENVIRONMENT_AUDIT_2026-11-14.md`, `reports/MAIN_PY_IMPROVEMENT_DESIGN_2026-11-14.md` §14
 
 ## 5. 브랜치 보호 및 운영 영향
 
