@@ -248,3 +248,14 @@
 - 이번 승인 범위는 테스트 fixture/test 및 테스트 전용 workflow다. P1-B 운영 코드 수정은 수행하지 않았다.
 - Gemini API, 실 Discord webhook, 실제 Git push, 운영 workflow는 호출하지 않았다.
 - merge/rebase/PR merge는 수행하지 않았다.
+
+
+## 15. 전용 테스트 브랜치 최종 추적 스냅샷 — 2026-11-14
+
+- 현재 확인 대상 HEAD(상황판 갱신 직전): `b652cbe264d0f99db27f5b0aacaa81a011abfac1`.
+- 기준 브랜치 `docs/cra-audit-and-project-control-2026-11-14`의 기준 commit `c6dfc5cee2485922b2313030dd9a5843e347afe7` 대비 18 commits ahead / 0 behind.
+- `main` 대비 diverged: 129 ahead / 57 behind (조회 시점). main 자동화 커밋으로 변동할 수 있다.
+- 기준 commit 대비 실제 변경 경로는 11개이며 `main.py`는 변경 파일 목록에 없다. `main`과의 전체 비교에 보이는 `main.py` 변경은 상위 문서/개선 브랜치에서 상속된 기존 변경이며 이번 전용 테스트 브랜치의 신규 변경이 아니다.
+- 18개 commit은 GitHub Contents API의 파일 단위 업데이트 및 CI SHA 정정 커밋이 누적된 결과다. 추적성은 유지되지만 논리 작업 단위보다 세분화된 점은 비효율이다. 다음 작업부터는 변경 묶음을 확정한 뒤 Git tree/commit API 등으로 논리적 커밋 수를 줄인다.
+- Run #11은 commit `821d64bea0bc96710f083a773eabede80ba4a45c`에서 실행됐으며, 그 뒤 변경은 관리 문서와 로그만이다. 테스트 소스/fixture/workflow는 Run #11 이후 변경하지 않았다.
+- 병합/리베이스/PR merge 및 운영 실행은 하지 않았다.
