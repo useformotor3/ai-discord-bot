@@ -869,3 +869,10 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 - compare main...cra-project-foundation: diverged, ahead 1,049 / behind 583. This is a snapshot; re-fetch live refs before every session. No merge/rebase/sync.
 - latest push CI run \`43533348296\` on the checked branch HEAD: SUCCESS; strict archive audit 990/990, missing/orphan/duplicate/malformed 0. Archive integrity only, not product compliance.
 - main daily report #4 is now registered in \`CRA_ARCHIVE_AUDIT_QUEUE.md\`; reports #1–#4 are queued for manual Pass A/B/C review. #4 overlaps #2 on secure-by-default and initial authentication; audit the overlap instead of treating it as a new requirement.
+
+
+## 2026-11-14 report #4 manual audit
+
+- [x] Main-only report #4 Pass A/B preliminary manual audit against official EUR-Lex source; file CONFLICT, quote rejected, #2 overlap documented.
+- [x] Add six atomic claims and source blob SHA to Ledger; no new Canonical Requirement created.
+- [ ] Independently review 99 legacy candidate crosswalks and complete report #1–#3/#5 audits.
