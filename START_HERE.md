@@ -524,3 +524,10 @@ Read [Cross-document Reconciliation](docs/CROSS_DOCUMENT_RECONCILIATION_2026-11-
 - compare main...cra-project-foundation: diverged, ahead 1,049 / behind 583. This is a snapshot; re-fetch live refs before every session. No merge/rebase/sync.
 - latest push CI run \`43533348296\` on the checked branch HEAD: SUCCESS; strict archive audit 990/990, missing/orphan/duplicate/malformed 0. Archive integrity only, not product compliance.
 - main daily report #4 is now registered in \`CRA_ARCHIVE_AUDIT_QUEUE.md\`; reports #1–#4 are queued for manual Pass A/B/C review. #4 overlaps #2 on secure-by-default and initial authentication; audit the overlap instead of treating it as a new requirement.
+
+
+## 2026-11-14 report #4 manual audit
+
+- [Report #4 audit](docs/ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_4_2026-11-14.md): file CONFLICT, quote 0/1, 6 claims reviewed; overlaps #2.
+- Ledger after #4: 506 unique CRA-ARCH ID definitions; 99 legacy crosswalks are CANDIDATE pending independent review.
+- Queue #4 is AUDITED; reports #1–#3 remain to be audited.
