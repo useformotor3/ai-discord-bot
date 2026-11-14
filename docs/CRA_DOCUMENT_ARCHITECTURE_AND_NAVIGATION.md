@@ -183,3 +183,10 @@
 - [#53–#57 상세 감사](ARCHIVE_MANUAL_AUDIT_MAIN_ONLY_53_57_2026-11-13.md): 1 CONFLICT / 4 PARTIALLY_VERIFIED / 0 VERIFIED.
 - [주장·근거 정정 대장](CLAIM_EVIDENCE_LEDGER.md)에 날짜 포함 원본 경로·SHA·파일 중심 claim ID 5개를 등록했다.
 - 데이터 제거 기능은 Annex I Part I 2(m), 폐기 지침은 Annex II 8(d), 지원 종료 정보는 Article 13(19), 신고 범위는 Article 14 및 Article 69(3)로 분리해 제1권·제2권·사용자 정보 체크리스트·요구사항 추적성 매트릭스에 반영했다.
+
+## 2026-11-14 문서 간 추적성 감사
+
+- [문서 간 추적성 재검증 보고서](CROSS_DOCUMENT_RECONCILIATION_2026-11-14.md)는 Ledger ID, 45개 Canonical Requirement, 양 추적성 매트릭스 및 49개 시험 ID의 연결 상태를 기록한다.
+- Ledger의 99개 legacy claim은 아직 Canonical ID로 이전되지 않았으므로 검증 완료 정본으로 간주하지 않는다.
+- 새 요약행은 Claim ID namespace와 분리해 SUMMARY-#48…#52로 표시한다.
+
