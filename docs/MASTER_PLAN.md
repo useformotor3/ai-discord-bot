@@ -14,7 +14,7 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 - [ ] 문서 상충 자동 점검과 운영 절차 테스트
 
 ## P1 — 브랜치/자료 정합성
-- [x] main/작업 브랜치 archive 및 history 정합성 확인(990/990)
+- [x] main archive/history 1,565/1,565, 작업 브랜치 990/990
 - [x] main에서 확인한 6개 추가 파일을 작업 브랜치에 콘텐츠 단위로 보존
 - [x] archive/history 검사 스크립트 추가
 - [x] 검사 스크립트 단위 테스트 3개 로컬 통과
@@ -196,7 +196,7 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 
 ## 추가 검증 진행 — 2026-11-12
 
-- [x] 통합 매트릭스 TR-01..20 / 위협 TH-01..18 / 자산 AST-01..10 / 시험 TST 45개 ID 중복·참조 정합성 검사. 모든 매트릭스 시험 참조가 시험 대장에 존재.
+- [x] 통합 매트릭스 TR-01..22 / 위협 TH-01..19 / 자산 AST-01..11 / 시험 TST 49개 ID 중복·참조 정합성 검사. 모든 매트릭스 시험 참조가 시험 대장에 존재.
 - [x] main-only 자동 생성 report #35의 CRA 법령 인용 감사 및 정정 기록. 원본 main 파일은 수정하지 않음.
 - [x] TI SLAAE29 Rev B 공식 HTML 본문 및 revision history 확인.
 - [ ] TI SLAAE29 Rev B의 지원 부품 목록과 MSPM0G3529-Q1 데이터시트/적용 TRM 사이의 part-specific 보안 기능 교차확인.
@@ -811,7 +811,7 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 
 - main latest observed: report #125; HEAD \`92e8ca7aa4a86b38627a1d8e9535e5b0463a8392\`; state count 125; history.json 1,400 entries. Archive tree count was not rechecked. main remains read-only.
 - main-only audit scope #8–#62: 55 consecutive, non-random reports; file-level results **40 CONFLICT / 15 PARTIALLY_VERIFIED / 0 VERIFIED**; direct quote reuse **0/55**. This is not a statistical error rate for the full archive.
-- Claim Evidence Ledger: 55 file-level source records + 345 atomic claims = **400 unique IDs**, duplicate IDs 0. All 345 atomic claims have one or more Canonical IDs. Canonical register defines 46 requirements; 43 are referenced by legacy atomic claims, and 3 are forward-mapped to matrix requirements.
+- Claim Evidence Ledger: 55 file-level source records + 345 atomic claims = **400 unique IDs**, duplicate IDs 0. All 345 atomic claims have one or more Canonical IDs. Canonical register defines 45 requirements; 42 are referenced by new atomic claims, and 3 are forward-mapped to matrix requirements; 99 legacy claims remain unmapped.
 - #8–#57 (50 reports) and #58–#62 (5 reports) have completed atomic decomposition. Individual legal facts marked VERIFIED do not promote a conflicting source file to VERIFIED.
 - Product-specific applicability, Class I/II classification, exact MCU order code and DUT test results remain UNVERIFIED/NOT_RUN.
 - Current P0: reconcile the 345 atomic claims and 46 canonical requirements against Volume 1, Volume 2, PSIRT SOP, requirements matrix, integrated traceability matrix and test evidence register; resolve duplicated/contradictory wording and keep exact legal locators. Then proceed to main-only audit #63–#67.
@@ -834,3 +834,13 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 - Latest push CI on current work-branch HEAD: run 43408438728 SUCCESS; 140 tests passed; strict archive audit 990/990, unique paths 990, missing/orphan/duplicate/malformed 0, consistent=true. The branch workflow's state.count=3 is a daily counter, not an archive total. No PR-triggered workflow run and no PR was created.
 - Current branch commits in this continuation are documentation-only; no additional production code changes were made here. Existing branch-vs-main code differences remain unmerged and must be reviewed separately.
 
+## 2026-11-14 P0 — Cross-document traceability
+
+- [x] Ledger summary-ID collision cleanup for #48–#52; total CRA-ARCH IDs re-counted.
+- [x] Correct Canonical Requirement register count to 45.
+- [x] Both traceability matrices now map all 45 Canonical IDs.
+- [x] Expanded test ID ranges and slash shorthand; 49/49 tests linked; all NOT_RUN.
+- [ ] Migrate 99 legacy claim IDs (\`CRA-ARCH-035-*\`…\`CRA-ARCH-124-*\`) to Canonical/evidence IDs; do not force-map ambiguous claims.
+- [ ] Sentence-level reconciliation of Volume 1, Volume 2, PSIRT SOP, classification matrix, threat model and test evidence register.
+- [ ] Then audit main-only reports #1–#5 for 2026-11-14 using fresh main HEAD/history/state/blob SHA.
+- [ ] Keep main read-only; no merge/rebase/sync. No protected code/workflow/prompt/schema/evidence bundle edits without separate approval.
