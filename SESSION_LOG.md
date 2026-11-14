@@ -306,3 +306,24 @@
 - 원본 SHA 5개 일치, compileall 통과, pytest **21 passed in 0.19s**
 - 테스트 전용 workflow가 코드 기준 SHA를 검사하고 있음을 반복 확인했다.
 - 이 실행은 문서 변경을 포함한 최신 HEAD의 회귀 검증이다. P1-B의 실패 경로 테스트를 새로 추가한 것은 아니다.
+
+
+## 2026-11-14 — 사람·AI 공용 이중 형식 프로젝트 로그 구축
+
+### 사용자 확인 사항
+- 사용자는 로그가 AI가 파악할 수 있는 형식과 사람이 읽을 수 있는 형식으로 함께 누적되는지 확인을 요청했다.
+- 점검 결과 `SESSION_LOG.md` 등 한국어 관리 문서는 존재했으나, 프로젝트 변경 사건을 일정한 스키마로 파싱할 전용 JSONL 로그는 없었다.
+- 기존 `state.json`·`history.json`은 자동화 런타임 데이터이므로 프로젝트 개발 로그로 간주하지 않기로 했다.
+
+### 실제 변경
+- `PROJECT_LOG.jsonl` 신규 생성: 프로젝트 관리, P1-A, 테스트 workflow 승인/구축, CI Run #1 및 Run #3의 검증 사실을 구조화 이벤트로 기록했다.
+- `README.md`: 두 로그의 역할과 진입 링크 추가.
+- `AI_RULEBOOK.md`: JSONL 필수 필드, 증거/한계/승인 기록 규칙 추가.
+- `PROJECT_STATUS.md`: 이중 기록 체계와 브랜치 diverged 상태 기록.
+- `MASTER_PLAN.md`: 새 대화 재개 시 JSONL과 한국어 세션 로그를 함께 확인하도록 추가.
+
+### 검증 및 제한
+- 기록된 CI 증거: Run #1 및 Run #3 링크, 원본 blob SHA 확인, compileall 및 pytest 21 passed.
+- GitHub compare 재조회 당시 `main` 대비 diverged, 96 ahead / 54 behind. 이후 문서 커밋이 추가되므로 수치는 변동 가능하며 통합 직전 다시 조회해야 한다.
+- 운영 `main`, `main.py`, 운영 workflow, `state.json`, `history.json`은 이번 작업에서 변경하지 않았다.
+- P1-B 구현이나 실패 경로 테스트 추가는 수행하지 않았다. 별도 승인 경계를 유지한다.
