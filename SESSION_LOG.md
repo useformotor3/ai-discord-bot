@@ -164,3 +164,30 @@
 2. P1-A 통합 회귀 검증 결과를 상황판/세션 로그에 기록
 3. P1-B 최소 변경안 제시 및 사용자 승인 요청
 4. 승인된 변경만 구현하고 mock 테스트 후 저장소 전체 회귀 검증
+
+
+## 2026-11-14 — 격리 테스트 환경 확보 및 예비 실행
+
+### 수행
+- GitHub 저장소 메타데이터에서 저장소 공개 상태(public)와 작업 브랜치 접근 권한 확인
+- 작업 브랜치의 main.py 및 테스트 4개 파일을 GitHub에서 조회
+- 컨테이너에서 branch clone 시도: DNS 해석 실패(`Could not resolve host: github.com`)
+- 별도 임시 디렉터리에 조회한 내용을 바탕으로 테스트 사본을 구성하고 compileall 및 pytest 실행
+
+### 예비 실행 결과
+- compileall 종료 코드 0
+- pytest 21 passed (0.14s)
+- Gemini/Discord/Git/sleep 경계는 mock 처리
+- 실제 외부 API, Discord webhook, Git commit/push, GitHub Actions workflow 실행 없음
+
+### 중요 제한 및 교차검증
+- 임시 사본 5개 파일의 Git blob SHA-1을 GitHub 조회 당시 SHA와 비교한 결과 5개 모두 불일치
+- 따라서 실행한 사본이 GitHub 원본과 byte-for-byte 동일하지 않음
+- 21 passed는 임시 재구성 사본의 예비 검증일 뿐, 작업 브랜치 전체 저장소 pytest 통과로 보고하지 않음
+- 전체 저장소 pytest와 GitHub Actions CI는 미실행 상태 유지
+- 상세 기록: `reports/TEST_EXECUTION_ENVIRONMENT_AUDIT_2026-11-14.md`
+
+### 변경/운영 영향
+- 이번 작업에서 저장소 코드나 workflow를 변경하지 않음
+- 운영 main, state.json, history.json, main.py, run.yml 미변경
+- 다음 단계는 원본 파일의 blob SHA를 일치시킬 수 있는 실행 경로 확보
