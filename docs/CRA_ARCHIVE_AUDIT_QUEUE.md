@@ -4742,3 +4742,7 @@ Batch result: 5/5 CONFLICT, 0 PARTIALLY_VERIFIED, 0 VERIFIED; 0/5 Raw Text Quote
 - 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 영역(펌웨어 무결성, 실시간 통신 보안, 공급망 SBOM, 자산 관리, 일반 취약점 패치 등)과 엄격히 중복되
 - 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
 - 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+## 2026-11-15 state.json last_health_check caveat
+- Latest main state.json was re-opened after the queue/document commits: `date=2026-11-15`, `count=12`, `last_health_check=2026-11-14T21:15:39.725042`.
+- The `last_health_check` value is older than the current archive additions; this run did not update it and does not treat it as evidence of a current successful health check.
