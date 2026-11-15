@@ -504,3 +504,7 @@
 - New queue range: 2026-11-14 #7–#288 (282) and 2026-11-15 #1–#12 (12). Priority: P0 156 / P1 134 / P2 0 / P3 4.
 - All newly registered reports remain UNVERIFIED; quote/claim NOT_YET_AUDITED; product applicability UNVERIFIED. Topic extraction used history.json snippets; full report Pass A/B/C is pending.
 - EUR-Lex direct open and ENISA SRP access were blocked; Commission C(2026) 5252 publication page was accessible but non-binding. Main remains read-only; no protected changes, merge/rebase/sync or tests.
+
+## 2026-11-15 state.json last_health_check caveat
+- Latest main state.json was re-opened after the queue/document commits: `date=2026-11-15`, `count=12`, `last_health_check=2026-11-14T21:15:39.725042`.
+- The `last_health_check` value is older than the current archive additions; this run did not update it and does not treat it as evidence of a current successful health check.
