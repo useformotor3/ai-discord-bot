@@ -496,3 +496,11 @@
 - Reports #1–#6 are now present in the 2026-11-14 daily archive. Manual audit status: #4 and #5 AUDITED; #1–#3 and #6 pending. #2/#4/#5 overlap on secure-by-default/initial authentication; #6 is Secure Boot/HWRoT.
 - main remains read-only. Re-fetch main HEAD/history/state and original blob SHAs before each audit batch.
 - Work branch HEAD and CI are dynamic; re-fetch after the latest queue update. No merge/rebase/sync.
+
+## 2026-11-15 live archive baseline
+- main HEAD `fa76fc44a190d2452cd8c5774711ab0efd74aa2f`; history.json 1,863 entries; state.json 2026-11-15/count 12 (daily counter).
+- Previous queue baseline: main report #4 `03b3ecaaa506c00146f5cb9d5855e6a66c3ef1c7`.
+- New main archive additions since that baseline: 296 commits and 296 archive files. Exact-path dedup found 294 not-yet-queued items; 2026-11-14 #5/#6 were already present.
+- New queue range: 2026-11-14 #7–#288 (282) and 2026-11-15 #1–#12 (12). Priority: P0 156 / P1 134 / P2 0 / P3 4.
+- All newly registered reports remain UNVERIFIED; quote/claim NOT_YET_AUDITED; product applicability UNVERIFIED. Topic extraction used history.json snippets; full report Pass A/B/C is pending.
+- EUR-Lex direct open and ENISA SRP access were blocked; Commission C(2026) 5252 publication page was accessible but non-binding. Main remains read-only; no protected changes, merge/rebase/sync or tests.
