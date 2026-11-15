@@ -891,3 +891,12 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 - Reports #1–#6 are now present in the 2026-11-14 daily archive. Manual audit status: #4 and #5 AUDITED; #1–#3 and #6 pending. #2/#4/#5 overlap on secure-by-default/initial authentication; #6 is Secure Boot/HWRoT.
 - main remains read-only. Re-fetch main HEAD/history/state and original blob SHAs before each audit batch.
 - Work branch HEAD and CI are dynamic; re-fetch after the latest queue update. No merge/rebase/sync.
+
+## 2026-11-15 CRA archive queue expansion
+- [x] main report #4 기준선 이후 296개 자동 아카이브 commit/archive 파일 및 history/state 변경 확인.
+- [x] exact-path 중복 제거 후 294개 신규 보고서를 CRA_ARCHIVE_AUDIT_QUEUE.md에 등록.
+- [ ] P0 156건부터 원문 전체 Pass A claim extraction → Pass B authoritative source reopening → Pass C countercheck 수행.
+- [ ] Raw Text Quote, atomic claim, file-level verdict, product applicability를 각각 별도 판정.
+- [ ] EUR-Lex 현행 통합본 및 C1/C2/C3 corrigenda를 본문 접근 가능 시 재확인하고 ENISA SRP 최신 공식 안내를 재개방.
+- [ ] P3 4건은 모델 오류/과부하 경고가 성공 아카이브로 기록되는지 운영 위험으로 점검; 보호 코드 변경은 별도 사용자 승인 전 금지.
+- [ ] 제품 SKU, intended purpose/core functionality, 네트워크/업데이트 경로, ST MCU 주문 코드 확보 후 제품별 적용성 판단.
