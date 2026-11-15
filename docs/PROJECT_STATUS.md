@@ -2,7 +2,7 @@
 
 > 저장소: useformotor3/ai-discord-bot  
 > 작업 브랜치: cra-project-foundation  
-> 마지막 확인일: 2026-11-14
+> 마지막 확인일: 2026-11-15
 
 ## 목적/범위
 CRA를 모르는 개발자가 서보 드라이브 개발에 적용할 수 있는 공개 근거 기반 실무 지침과 통합 보고서 구축. CRA 전용이며 SIL 3 벤치마킹 제외. ST MCU 우선, TI 비교. Public 저장소에는 공개 자료만 저장.
@@ -1007,3 +1007,12 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - Reports #1–#6 are now present in the 2026-11-14 daily archive. Manual audit status: #4 and #5 AUDITED; #1–#3 and #6 pending. #2/#4/#5 overlap on secure-by-default/initial authentication; #6 is Secure Boot/HWRoT.
 - main remains read-only. Re-fetch main HEAD/history/state and original blob SHAs before each audit batch.
 - Work branch HEAD and CI are dynamic; re-fetch after the latest queue update. No merge/rebase/sync.
+
+## 2026-11-15 main archive recheck
+- main HEAD: `fa76fc44a190d2452cd8c5774711ab0efd74aa2f` (Auto-archive report #12).
+- 이전 감사 대기열 기준선은 2026-11-14 report #4 `03b3ecaaa506c00146f5cb9d5855e6a66c3ef1c7`.
+- 기준선 이후 296개 자동 아카이브 commit 및 296개 신규 archive 파일을 확인했고 history.json/state.json 변경을 대조했다. history.json 1,863 entries; state.json 2026-11-15/count 12 (일일 카운터).
+- 기존 대기열의 2026-11-14 #5/#6은 exact path 기준으로 제외하고 294개를 추가 등록: 2026-11-14 #7–#288 (282건), 2026-11-15 #1–#12 (12건).
+- 1차 triage: P0 156 / P1 134 / P2 0 / P3 4. 전 항목 NEW / NOT_YET_AUDITED, 파일 UNVERIFIED, quote/claim NOT_YET_AUDITED, 제품 적용성 UNVERIFIED.
+- 작업 브랜치 HEAD at start of documentation update: `3d040fe4efeb8b3befa82e8c4df1e0ab359d839b`; main 대비 상태 diverged, ahead 1096, behind 879.
+- main은 읽기 전용. main.py, Gemini prompt, 운영 자동화, .github/workflows/run.yml 수정 없음. merge/rebase/sync 없음. 테스트/CI 미실행.
