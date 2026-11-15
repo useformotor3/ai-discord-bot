@@ -545,3 +545,10 @@ Read [Cross-document Reconciliation](docs/CROSS_DOCUMENT_RECONCILIATION_2026-11-
 - Reports #1–#6 are now present in the 2026-11-14 daily archive. Manual audit status: #4 and #5 AUDITED; #1–#3 and #6 pending. #2/#4/#5 overlap on secure-by-default/initial authentication; #6 is Secure Boot/HWRoT.
 - main remains read-only. Re-fetch main HEAD/history/state and original blob SHAs before each audit batch.
 - Work branch HEAD and CI are dynamic; re-fetch after the latest queue update. No merge/rebase/sync.
+
+## 2026-11-15 live main snapshot
+- main HEAD: `fa76fc44a190d2452cd8c5774711ab0efd74aa2f` (Auto-archive report #12); history.json 1,863 entries; state.json 2026-11-15/count 12 (daily counter).
+- Last queued main baseline: report #4 `03b3ecaaa506c00146f5cb9d5855e6a66c3ef1c7`.
+- Since that baseline, 296 archive commits/files were added. Two reports (#5/#6, 2026-11-14) were already in the queue; 294 new entries were registered (#7–#288 on 2026-11-14 and #1–#12 on 2026-11-15).
+- All 294 remain NEW / NOT_YET_AUDITED and file-level UNVERIFIED. Full Pass A/B/C and product applicability checks remain pending.
+- Work branch is documentation-only in this run. Re-fetch live refs next session; no merge/rebase/sync.
