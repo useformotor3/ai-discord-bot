@@ -326,3 +326,10 @@ ST와 비교할 기능 범위와 제품군을 먼저 정의한다. 동급 기능
 
 ## 2026-11-13 — CRA main archive audit queue
 - [CRA Main Archive Audit Queue](CRA_ARCHIVE_AUDIT_QUEUE.md): 166 newly detected main reports (#129–#288 and #1–#6), source commit/path/time/topic, P0–P3 triage, and per-report verification issues. All entries are NEW / NOT_YET_AUDITED; file verdicts remain UNVERIFIED until Pass A/B/C.
+
+## 2026-11-15 신규 main 아카이브 대기열
+- main HEAD `fa76fc44a190d2452cd8c5774711ab0efd74aa2f`; history.json 1,863 entries; state.json 2026-11-15/count 12 (daily counter).
+- Previous queue baseline: report #4 `03b3ecaaa506c00146f5cb9d5855e6a66c3ef1c7`.
+- Since that baseline 296 archive commits/files were added; exact-path dedup excluded existing #5/#6 and registered 294 new items: 2026-11-14 #7–#288 and 2026-11-15 #1–#12.
+- Topic/Priority are first-pass extracts from history.json snippets. Full report claim extraction and Pass A/B/C remain pending.
+- All new files UNVERIFIED; Raw Text Quote and atomic claims NOT_YET_AUDITED; product applicability UNVERIFIED. Queue: docs/CRA_ARCHIVE_AUDIT_QUEUE.md.
