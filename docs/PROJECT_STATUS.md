@@ -1016,3 +1016,7 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - 1차 triage: P0 156 / P1 134 / P2 0 / P3 4. 전 항목 NEW / NOT_YET_AUDITED, 파일 UNVERIFIED, quote/claim NOT_YET_AUDITED, 제품 적용성 UNVERIFIED.
 - 작업 브랜치 HEAD at start of documentation update: `3d040fe4efeb8b3befa82e8c4df1e0ab359d839b`; main 대비 상태 diverged, ahead 1096, behind 879.
 - main은 읽기 전용. main.py, Gemini prompt, 운영 자동화, .github/workflows/run.yml 수정 없음. merge/rebase/sync 없음. 테스트/CI 미실행.
+
+## 2026-11-15 state.json last_health_check caveat
+- Latest main state.json was re-opened after the queue/document commits: `date=2026-11-15`, `count=12`, `last_health_check=2026-11-14T21:15:39.725042`.
+- The `last_health_check` value is older than the current archive additions; this run did not update it and does not treat it as evidence of a current successful health check.
