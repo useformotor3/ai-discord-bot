@@ -2665,3 +2665,2080 @@ Batch result: 5/5 CONFLICT, 0 PARTIALLY_VERIFIED, 0 VERIFIED; 0/5 Raw Text Quote
 - main HEAD `4a38d85a1cd6c50dfec0ab2c2f0c9b5931d5ea8d`; archive/history 1,569/1,569; state date/count 2026-11-14 / 6 (daily counter).
 - Reports #1–#6 are registered; #4/#5 AUDITED; #1–#3/#6 remain pending manual review.
 - #2/#4/#5 overlap on secure-by-default/initial-auth; #6 is Secure Boot/HWRoT. main read-only; refresh refs and blob SHAs before audit.
+
+## 2026-11-15 자동 점검 — main report #12 기준 신규 대기열 등록
+
+- 확인일: 2026-11-15; main HEAD: `fa76fc44a190d2452cd8c5774711ab0efd74aa2f` (Auto-archive report #12).
+- 이전 대기열 기준선: report #4 `03b3ecaaa506c00146f5cb9d5855e6a66c3ef1c7`. 기준선 이후 296개 자동 archive commit 및 296개 archive 파일 추가; history.json/state.json 변경.
+- history.json: 1863 entries; state.json: 2026-11-15 / count=12 (일일 카운터).
+- 기존 대기열의 2026-11-14 #5/#6 두 건은 중복 등록하지 않고, **294건** 신규 등록: 2026-11-14 #7–#288 (282), 2026-11-15 #1–#12 (12).
+- 우선순위 1차 분포: P0 156 / P1 134 / P2 0 / P3 4. Triage이며 검증 판정이 아니다.
+
+### 공식 자료 사전 확인 및 제한
+
+- EUR-Lex 검색 결과는 현행 통합본 CELEX 02024R2847-20241120 및 corrigenda C1/C2/C3를 표시한다. 본문 직접 열기는 anti-bot/JavaScript 검증으로 차단되어 snippet만으로 조항 검증을 하지 않았으며 신규 항목에 VERIFIED 메모를 부여하지 않는다. [EUR-Lex consolidated text](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02024R2847-20241120).
+- European Commission C(2026) 5252 안내 페이지(2026-07-27)를 열어 non-binding이며 제품 범위, substantial modification, support period, reporting obligations, risk assessment를 다룸을 확인했다. Reporting obligations 적용일 2026-09-11, 주된 CRA 의무 적용일 2027-12-11을 명시한다. 이는 맥락 메모이지 개별 법령 인용 검증이 아니다. [Commission guidance](https://digital-strategy.ec.europa.eu/en/library/commission-publishes-new-guidance-support-timely-cyber-resilience-act-implementation).
+- ENISA SRP/FAQ 접근은 제한되어 이번 실행에서 최신 절차를 재확인하지 못했다. 제조사 공식 기능은 SKU 및 ST MCU 주문 코드 미확정으로 검증하지 않았다.
+- 294건 모두 원문 전체를 재독하지 않았다. 번호·commit·path·생성 시각·주제는 main commit history와 history.json 매핑으로 추출했다. 원문 전체 Pass A/B/C는 후속 감사다.
+
+### 2026-11-14 신규 보고서 #7–#288
+
+### #7 — P1 — EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 누적된 메모리(일반 보안, 취약점 처리, 생명주기, 고속 실시간 통신, 펌웨어 무결성 등)와 완전히 중복되지 않으며,
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 00:30:48 (시간대 미표기)
+- 원문: [commit 960d624372a63e378dfeb6558be326593dab8ece](https://github.com/useformotor3/ai-discord-bot/commit/960d624372a63e378dfeb6558be326593dab8ece) | [research_archive/2026-11-14_003048.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_003048.md) | commit UTC 2026-11-14T00:31:05Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 누적된 메모리(일반 보안, 취약점 처리, 생명주기, 고속 실시간 통신, 펌웨어 무결성 등)와 완전히 중복되지 않으며,
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #8 — P1 — EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 누적된 메모리 내용(일반 보안, 취약점 처리, 생명주기 관리, 고속 실시간 통신 및 펌웨어 무결성 등)과 완전히 중복되
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 00:35:37 (시간대 미표기)
+- 원문: [commit 25c5a498fde5927357e3e824bc0d81c5e33396cc](https://github.com/useformotor3/ai-discord-bot/commit/25c5a498fde5927357e3e824bc0d81c5e33396cc) | [research_archive/2026-11-14_003537.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_003537.md) | commit UTC 2026-11-14T00:35:53Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 누적된 메모리 내용(일반 보안, 취약점 처리, 생명주기 관리, 고속 실시간 통신 및 펌웨어 무결성 등)과 완전히 중복되
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #9 — P1 — EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 메모리에서 다루어진 일반 보안, 취약점 처리, 생명주기, 고속 실시간 통신, 펌웨어 무결성 등과 중복되지 않도록 **'
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 00:40:42 (시간대 미표기)
+- 원문: [commit 149b77ffa12aa64bc5ea96e2ac0ace3d2a1ded42](https://github.com/useformotor3/ai-discord-bot/commit/149b77ffa12aa64bc5ea96e2ac0ace3d2a1ded42) | [research_archive/2026-11-14_004042.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_004042.md) | commit UTC 2026-11-14T00:40:58Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 메모리에서 다루어진 일반 보안, 취약점 처리, 생명주기, 고속 실시간 통신, 펌웨어 무결성 등과 중복되지 않도록 **'
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #10 — P0 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 메모리(일반 보안, 취약점 처리, 생명주기 관리, 고속 실시간 통신, 펌웨어 무결성, SBOM 등)와 완전히
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 00:45:39 (시간대 미표기)
+- 원문: [commit b24f4a5ee6ccb8c2123b568a7c007b4d0c53a59d](https://github.com/useformotor3/ai-discord-bot/commit/b24f4a5ee6ccb8c2123b568a7c007b4d0c53a59d) | [research_archive/2026-11-14_004539.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_004539.md) | commit UTC 2026-11-14T00:45:57Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 메모리(일반 보안, 취약점 처리, 생명주기 관리, 고속 실시간 통신, 펌웨어 무결성, SBOM 등)와 완전히
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #11 — P0 — EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다뤄진 일반 보안, 취약점 처리, 생명주기 관리, 고속 실시간 통신, 펌웨어 무결성, 그리고 SBOM에 이어, 산업용
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 00:50:37 (시간대 미표기)
+- 원문: [commit 769a16404c0f28a394e82b2e2fecc9194a762e90](https://github.com/useformotor3/ai-discord-bot/commit/769a16404c0f28a394e82b2e2fecc9194a762e90) | [research_archive/2026-11-14_005037.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_005037.md) | commit UTC 2026-11-14T00:50:54Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다뤄진 일반 보안, 취약점 처리, 생명주기 관리, 고속 실시간 통신, 펌웨어 무결성, 그리고 SBOM에 이어, 산업용
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #12 — P0 — EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 메모리에서 다루어진 내용(일반 보안, 취약점 처리, 생명주기, 고속 실시간 통신, 펌웨어 무결성, SBOM 등)과 완전
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 00:55:32 (시간대 미표기)
+- 원문: [commit b7f5f4244b0f8555e373e1bcb5381a3413786525](https://github.com/useformotor3/ai-discord-bot/commit/b7f5f4244b0f8555e373e1bcb5381a3413786525) | [research_archive/2026-11-14_005532.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_005532.md) | commit UTC 2026-11-14T00:55:48Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 메모리에서 다루어진 내용(일반 보안, 취약점 처리, 생명주기, 고속 실시간 통신, 펌웨어 무결성, SBOM 등)과 완전
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #13 — P0 — EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 메모리에서 다루어진 일반 보안, 취약점 처리, 생명주기 관리, 고속 실시간 통신, 펌웨어 무결성, SBOM 등과 완전히
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 01:00:52 (시간대 미표기)
+- 원문: [commit 8eda52d60067072c60dc6c9a17cf6bbb01001d61](https://github.com/useformotor3/ai-discord-bot/commit/8eda52d60067072c60dc6c9a17cf6bbb01001d61) | [research_archive/2026-11-14_010052.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_010052.md) | commit UTC 2026-11-14T01:01:09Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 메모리에서 다루어진 일반 보안, 취약점 처리, 생명주기 관리, 고속 실시간 통신, 펌웨어 무결성, SBOM 등과 완전히
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #14 — P0 — EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 메모리(일반 보안, 취약점 처리, 생명주기 관리, 고속 실시간 통신, 펌웨어 무결성, SBOM 등)와 중복되지 않는 핵
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 01:05:33 (시간대 미표기)
+- 원문: [commit dc16b2709a4bf835837fb777bb7dcb11128d8a35](https://github.com/useformotor3/ai-discord-bot/commit/dc16b2709a4bf835837fb777bb7dcb11128d8a35) | [research_archive/2026-11-14_010533.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_010533.md) | commit UTC 2026-11-14T01:05:50Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 메모리(일반 보안, 취약점 처리, 생명주기 관리, 고속 실시간 통신, 펌웨어 무결성, SBOM 등)와 중복되지 않는 핵
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #15 — P0 — EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 메모리에서 다루어진 내용(일반 보안, 취약점 처리, 생명주기 관리, 고속 실시간 통신, 펌웨어 무결성, SBOM 등)과
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 01:10:44 (시간대 미표기)
+- 원문: [commit 566aeca04f59ffdf12feba81460e53005a02d307](https://github.com/useformotor3/ai-discord-bot/commit/566aeca04f59ffdf12feba81460e53005a02d307) | [research_archive/2026-11-14_011044.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_011044.md) | commit UTC 2026-11-14T01:11:00Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 메모리에서 다루어진 내용(일반 보안, 취약점 처리, 생명주기 관리, 고속 실시간 통신, 펌웨어 무결성, SBOM 등)과
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #16 — P0 — EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 메모리에서 다루어진 일반 보안, 취약점 처리, 생명주기 관리, 고속 실시간 통신, 펌웨어 무결성, SBOM 등과 중복되
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 01:15:43 (시간대 미표기)
+- 원문: [commit 77c889e21da4263e91203a3ba540ed2bfbceb2ae](https://github.com/useformotor3/ai-discord-bot/commit/77c889e21da4263e91203a3ba540ed2bfbceb2ae) | [research_archive/2026-11-14_011543.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_011543.md) | commit UTC 2026-11-14T01:16:00Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 메모리에서 다루어진 일반 보안, 취약점 처리, 생명주기 관리, 고속 실시간 통신, 펌웨어 무결성, SBOM 등과 중복되
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #17 — P0 — EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 메모리에서 다루어진 일반 보안, 취약점 처리, 생명주기 관리, 고속 실시간 통신, 펌웨어 무결성, SBOM 등과 중복되
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 01:20:32 (시간대 미표기)
+- 원문: [commit a74372a1837d07cc53e514da83c57a6cdb533547](https://github.com/useformotor3/ai-discord-bot/commit/a74372a1837d07cc53e514da83c57a6cdb533547) | [research_archive/2026-11-14_012032.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_012032.md) | commit UTC 2026-11-14T01:20:47Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 메모리에서 다루어진 일반 보안, 취약점 처리, 생명주기 관리, 고속 실시간 통신, 펌웨어 무결성, SBOM 등과 중복되
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #18 — P0 — EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 메모리에서 다루어진 일반 보안, 취약점 처리, 생명주기 관리, 고속 실시간 통신, 펌웨어 무결성, SBOM 등과 중복되
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 01:25:36 (시간대 미표기)
+- 원문: [commit 0e5b8e89a94b0b0ab34b48e2f78ef20bbfdba3c9](https://github.com/useformotor3/ai-discord-bot/commit/0e5b8e89a94b0b0ab34b48e2f78ef20bbfdba3c9) | [research_archive/2026-11-14_012536.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_012536.md) | commit UTC 2026-11-14T01:25:50Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 메모리에서 다루어진 일반 보안, 취약점 처리, 생명주기 관리, 고속 실시간 통신, 펌웨어 무결성, SBOM 등과 중복되
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #19 — P0 — EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 메모리(일반 보안, 취약점 처리, 생명주기 관리, 고속 실시간 통신, 펌웨어 무결성, SBOM 등)와 중복되지 않으며,
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 01:30:47 (시간대 미표기)
+- 원문: [commit 8e72ac96be10df56584fa59e5f5452b4ee825290](https://github.com/useformotor3/ai-discord-bot/commit/8e72ac96be10df56584fa59e5f5452b4ee825290) | [research_archive/2026-11-14_013047.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_013047.md) | commit UTC 2026-11-14T01:31:05Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 메모리(일반 보안, 취약점 처리, 생명주기 관리, 고속 실시간 통신, 펌웨어 무결성, SBOM 등)와 중복되지 않으며,
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #20 — P0 — EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 메모리에서 다루어진 일반적인 보안 요건, 취약점 처리, 생명주기 관리, 고속 실시간 통신, 펌웨어 무결성, SBOM 등
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 01:35:30 (시간대 미표기)
+- 원문: [commit 2325f677d9995e10f290c68f1d66ba4f2f74e2d3](https://github.com/useformotor3/ai-discord-bot/commit/2325f677d9995e10f290c68f1d66ba4f2f74e2d3) | [research_archive/2026-11-14_013530.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_013530.md) | commit UTC 2026-11-14T01:35:46Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 메모리에서 다루어진 일반적인 보안 요건, 취약점 처리, 생명주기 관리, 고속 실시간 통신, 펌웨어 무결성, SBOM 등
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #21 — P0 — EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 메모리에서 다루어진 일반 보안, 취약점 처리, 생명주기 관리, 고속 실시간 통신, 펌웨어 무결성, SBOM 등을 철저히
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 01:40:36 (시간대 미표기)
+- 원문: [commit 7296b3fdf172443200fab5ca4281826a6de12ae0](https://github.com/useformotor3/ai-discord-bot/commit/7296b3fdf172443200fab5ca4281826a6de12ae0) | [research_archive/2026-11-14_014036.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_014036.md) | commit UTC 2026-11-14T01:40:53Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 메모리에서 다루어진 일반 보안, 취약점 처리, 생명주기 관리, 고속 실시간 통신, 펌웨어 무결성, SBOM 등을 철저히
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #22 — P0 — EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 메모리에서 다루어진 일반 보안, 취약점 처리, 생명주기 관리, 고속 실시간 통신, 펌웨어 무결성, SBOM 등을 철저히
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 01:45:36 (시간대 미표기)
+- 원문: [commit a356c94599a854ef010330f8baace4e9b15bcc30](https://github.com/useformotor3/ai-discord-bot/commit/a356c94599a854ef010330f8baace4e9b15bcc30) | [research_archive/2026-11-14_014536.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_014536.md) | commit UTC 2026-11-14T01:45:53Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 메모리에서 다루어진 일반 보안, 취약점 처리, 생명주기 관리, 고속 실시간 통신, 펌웨어 무결성, SBOM 등을 철저히
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #23 — P0 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 규격 및 산업용 자동화 보안 최고 전문가로서, 이전 메모리에서 다루어진 일반 보안, 취약점 처리, 생명주기 관리, 고속 실시간 통신, 펌웨어 무결성, SB
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 01:50:43 (시간대 미표기)
+- 원문: [commit 40d9fc7748d8571f07dfcc701e334a7f0b312d09](https://github.com/useformotor3/ai-discord-bot/commit/40d9fc7748d8571f07dfcc701e334a7f0b312d09) | [research_archive/2026-11-14_015043.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_015043.md) | commit UTC 2026-11-14T01:51:00Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 규격 및 산업용 자동화 보안 최고 전문가로서, 이전 메모리에서 다루어진 일반 보안, 취약점 처리, 생명주기 관리, 고속 실시간 통신, 펌웨어 무결성, SB
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #24 — P0 — EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 규격 및 산업용 자동화 보안 최고 전문가로서, 이전 메모리(일반 보안, 취약점 처리, 생명주기 관리, 고속 실시간 통신, 펌웨어 무결성, SBOM 등)에서 다루어진
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 01:55:36 (시간대 미표기)
+- 원문: [commit 4588007a62f2dfe83875c53230619383f9c5e7a0](https://github.com/useformotor3/ai-discord-bot/commit/4588007a62f2dfe83875c53230619383f9c5e7a0) | [research_archive/2026-11-14_015536.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_015536.md) | commit UTC 2026-11-14T01:55:55Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 규격 및 산업용 자동화 보안 최고 전문가로서, 이전 메모리(일반 보안, 취약점 처리, 생명주기 관리, 고속 실시간 통신, 펌웨어 무결성, SBOM 등)에서 다루어진
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #25 — P0 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 규격 및 산업용 자동화 보안 최고 전문가로서, 이전 메모리(일반 보안, 취약점 처리, 생명주기 관리, 고속 실시간 통신, 펌웨어 무결성, SBOM 등)에서
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 02:00:57 (시간대 미표기)
+- 원문: [commit 2457ab8a219a6350410959269e3d39b244ed9cef](https://github.com/useformotor3/ai-discord-bot/commit/2457ab8a219a6350410959269e3d39b244ed9cef) | [research_archive/2026-11-14_020057.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_020057.md) | commit UTC 2026-11-14T02:01:13Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 규격 및 산업용 자동화 보안 최고 전문가로서, 이전 메모리(일반 보안, 취약점 처리, 생명주기 관리, 고속 실시간 통신, 펌웨어 무결성, SBOM 등)에서
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #26 — P0 — EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 규격 및 산업용 자동화 보안 최고 전문가로서, 이전 메모리(일반 보안, 취약점 처리, 생명주기 관리, 고속 실시간 통신, 펌웨어 무결성, SBOM 등)에서 다루어진
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 02:05:32 (시간대 미표기)
+- 원문: [commit da3726c3b68fde4d8a9a69a27d811ab94efff2d7](https://github.com/useformotor3/ai-discord-bot/commit/da3726c3b68fde4d8a9a69a27d811ab94efff2d7) | [research_archive/2026-11-14_020532.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_020532.md) | commit UTC 2026-11-14T02:05:48Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 규격 및 산업용 자동화 보안 최고 전문가로서, 이전 메모리(일반 보안, 취약점 처리, 생명주기 관리, 고속 실시간 통신, 펌웨어 무결성, SBOM 등)에서 다루어진
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #27 — P0 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 메모리에서 다루어진 주제(일반 보안, 취약점 처리, 생명주기 관리, 고속 실시간 통신, 펌웨어 무결성, SB
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 02:10:45 (시간대 미표기)
+- 원문: [commit a117912dc5aeb6069a197935126da6c14528137c](https://github.com/useformotor3/ai-discord-bot/commit/a117912dc5aeb6069a197935126da6c14528137c) | [research_archive/2026-11-14_021045.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_021045.md) | commit UTC 2026-11-14T02:11:01Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 메모리에서 다루어진 주제(일반 보안, 취약점 처리, 생명주기 관리, 고속 실시간 통신, 펌웨어 무결성, SB
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #28 — P0 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 메모리에서 다루어진 주제(일반 보안, 취약점 처리, 생명주기 관리, 고속 실시간 통신, 펌웨어 무결성, SB
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 02:15:42 (시간대 미표기)
+- 원문: [commit 7fbcd1f3781e4101c029e2a51da9111d31c8fb75](https://github.com/useformotor3/ai-discord-bot/commit/7fbcd1f3781e4101c029e2a51da9111d31c8fb75) | [research_archive/2026-11-14_021542.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_021542.md) | commit UTC 2026-11-14T02:15:58Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 메모리에서 다루어진 주제(일반 보안, 취약점 처리, 생명주기 관리, 고속 실시간 통신, 펌웨어 무결성, SB
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #29 — P0 — EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 메모리에서 다루어진 주제(일반 보안, 취약점 처리, 생명주기 관리, 고속 실시간 통신, 펌웨어 무결성, SBOM 등)와
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 02:20:40 (시간대 미표기)
+- 원문: [commit f9a12a5778f5fa1d907201ab2931d20ca2656bb7](https://github.com/useformotor3/ai-discord-bot/commit/f9a12a5778f5fa1d907201ab2931d20ca2656bb7) | [research_archive/2026-11-14_022040.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_022040.md) | commit UTC 2026-11-14T02:20:54Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 메모리에서 다루어진 주제(일반 보안, 취약점 처리, 생명주기 관리, 고속 실시간 통신, 펌웨어 무결성, SBOM 등)와
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #30 — P0 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 규격 및 산업용 자동화 보안 최고 전문가로서, 이전 메모리에서 다뤄진 일반적인 보안, 펌웨어 무결성, 생명주기 관리, 취약점 처리, SBOM, 고속 실시간
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 02:25:32 (시간대 미표기)
+- 원문: [commit 120aa73c03c7c5f8590679daa646c560eae82133](https://github.com/useformotor3/ai-discord-bot/commit/120aa73c03c7c5f8590679daa646c560eae82133) | [research_archive/2026-11-14_022532.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_022532.md) | commit UTC 2026-11-14T02:25:49Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 규격 및 산업용 자동화 보안 최고 전문가로서, 이전 메모리에서 다뤄진 일반적인 보안, 펌웨어 무결성, 생명주기 관리, 취약점 처리, SBOM, 고속 실시간
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #31 — P0 — EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 메모리에서 다루어진 주제(일반 보안, 취약점 처리, 생명주기 관리, 고속 실시간 통신, 펌웨어 무결성, SBOM 등)와
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 02:30:43 (시간대 미표기)
+- 원문: [commit 6724424b757b5d78464dc888930f79475f45e2d3](https://github.com/useformotor3/ai-discord-bot/commit/6724424b757b5d78464dc888930f79475f45e2d3) | [research_archive/2026-11-14_023043.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_023043.md) | commit UTC 2026-11-14T02:30:59Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 메모리에서 다루어진 주제(일반 보안, 취약점 처리, 생명주기 관리, 고속 실시간 통신, 펌웨어 무결성, SBOM 등)와
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #32 — P0 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 메모리에서 다루어진 일반적 보안, 취약점 처리, 생명주기 관리, 고속 실시간 통신, 펌웨어 무결성, SBOM
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 02:35:37 (시간대 미표기)
+- 원문: [commit 70c56b441caad1e58d9b21fe2ce5cece71709b03](https://github.com/useformotor3/ai-discord-bot/commit/70c56b441caad1e58d9b21fe2ce5cece71709b03) | [research_archive/2026-11-14_023537.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_023537.md) | commit UTC 2026-11-14T02:35:53Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 메모리에서 다루어진 일반적 보안, 취약점 처리, 생명주기 관리, 고속 실시간 통신, 펌웨어 무결성, SBOM
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #33 — P0 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 메모리에서 다루어진 주제(일반 보안, 취약점 처리, 생명주기 관리, 고속 실시간 통신, 펌웨어 무결성, SB
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 02:40:41 (시간대 미표기)
+- 원문: [commit dc1e85687cbf62e68df818d55ca0e4ab43051b10](https://github.com/useformotor3/ai-discord-bot/commit/dc1e85687cbf62e68df818d55ca0e4ab43051b10) | [research_archive/2026-11-14_024041.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_024041.md) | commit UTC 2026-11-14T02:40:57Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 메모리에서 다루어진 주제(일반 보안, 취약점 처리, 생명주기 관리, 고속 실시간 통신, 펌웨어 무결성, SB
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #34 — P0 — EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 메모리에서 다루어진 주제(일반 보안, 취약점 처리, 생명주기 관리, 고속 실시간 통신, 펌웨어 무결성, SBOM 등)와
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 02:45:31 (시간대 미표기)
+- 원문: [commit 7a07e46104d2bce2af4e4481454817a1aa019940](https://github.com/useformotor3/ai-discord-bot/commit/7a07e46104d2bce2af4e4481454817a1aa019940) | [research_archive/2026-11-14_024531.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_024531.md) | commit UTC 2026-11-14T02:45:48Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 메모리에서 다루어진 주제(일반 보안, 취약점 처리, 생명주기 관리, 고속 실시간 통신, 펌웨어 무결성, SBOM 등)와
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #35 — P0 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 메모리에서 다루어진 일반적 보안, 취약점 처리, 생명주기 관리, 고속 실시간 통신, 펌웨어 무결성, SBOM
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 02:50:37 (시간대 미표기)
+- 원문: [commit 4ecff77eebd6db16264dd5b22300c63666dfa699](https://github.com/useformotor3/ai-discord-bot/commit/4ecff77eebd6db16264dd5b22300c63666dfa699) | [research_archive/2026-11-14_025037.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_025037.md) | commit UTC 2026-11-14T02:50:53Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 메모리에서 다루어진 일반적 보안, 취약점 처리, 생명주기 관리, 고속 실시간 통신, 펌웨어 무결성, SBOM
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #36 — P0 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 메모리에서 다루어진 일반 보안, 취약점 처리, 생명주기 관리, 고속 실시간 통신, 펌웨어 무결성, SBOM
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 02:55:36 (시간대 미표기)
+- 원문: [commit d1f34b4e4451caeea7197900ca92b8b71b544a77](https://github.com/useformotor3/ai-discord-bot/commit/d1f34b4e4451caeea7197900ca92b8b71b544a77) | [research_archive/2026-11-14_025536.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_025536.md) | commit UTC 2026-11-14T02:55:52Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 메모리에서 다루어진 일반 보안, 취약점 처리, 생명주기 관리, 고속 실시간 통신, 펌웨어 무결성, SBOM
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #37 — P0 — 유럽연합(EU) CRA(Cyberresilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 메모리에서 다루어진 일반적 보안, 취약점 처리, 생명주기 관리, 고속 실시간 통신, 펌웨어 무결성, SBOM
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 03:00:54 (시간대 미표기)
+- 원문: [commit bf1070c46d6228561ad6b591ab6e61efd679bad1](https://github.com/useformotor3/ai-discord-bot/commit/bf1070c46d6228561ad6b591ab6e61efd679bad1) | [research_archive/2026-11-14_030054.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_030054.md) | commit UTC 2026-11-14T03:01:12Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyberresilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 메모리에서 다루어진 일반적 보안, 취약점 처리, 생명주기 관리, 고속 실시간 통신, 펌웨어 무결성, SBOM
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #38 — P1 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전에 다루어진 일반적 보안 요구사항, 기본 취약점 처리, 생명주기 관리, 고속 실시간 통신, 펌웨어 무결성, 일
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 03:05:30 (시간대 미표기)
+- 원문: [commit 86e93d1ca8607d2155824519b2d98ced15febb75](https://github.com/useformotor3/ai-discord-bot/commit/86e93d1ca8607d2155824519b2d98ced15febb75) | [research_archive/2026-11-14_030530.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_030530.md) | commit UTC 2026-11-14T03:05:46Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전에 다루어진 일반적 보안 요구사항, 기본 취약점 처리, 생명주기 관리, 고속 실시간 통신, 펌웨어 무결성, 일
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #39 — P0 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 일반적 주제(기본 취약점 처리, 생명주기 관리, 고속 실시간 통신, 펌웨어 무결성, 기본 수준의 S
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 03:10:38 (시간대 미표기)
+- 원문: [commit 613de277e79156b2a38f60e5ad111e6c0edfdecb](https://github.com/useformotor3/ai-discord-bot/commit/613de277e79156b2a38f60e5ad111e6c0edfdecb) | [research_archive/2026-11-14_031038.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_031038.md) | commit UTC 2026-11-14T03:10:55Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 일반적 주제(기본 취약점 처리, 생명주기 관리, 고속 실시간 통신, 펌웨어 무결성, 기본 수준의 S
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #40 — P0 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 메모리에서 다루어진 일반적 보안, 기본 취약점 처리, 생명주기 관리, 고속 실시간 통신, 펌웨어 무결성, 일
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 03:15:41 (시간대 미표기)
+- 원문: [commit 701463c1862d603529b5b8506f8d14afc54bd307](https://github.com/useformotor3/ai-discord-bot/commit/701463c1862d603529b5b8506f8d14afc54bd307) | [research_archive/2026-11-14_031541.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_031541.md) | commit UTC 2026-11-14T03:15:58Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 메모리에서 다루어진 일반적 보안, 기본 취약점 처리, 생명주기 관리, 고속 실시간 통신, 펌웨어 무결성, 일
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #41 — P1 — EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 조사에서 다루어진 기본적인 내용과 중복되지 않도록 서보 드라이브 제조사가 준수해야 할 **'보안 업데이트 무상 제공 및
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 03:20:34 (시간대 미표기)
+- 원문: [commit dfe42c2f57b346f290fe1152103559766aa2fb95](https://github.com/useformotor3/ai-discord-bot/commit/dfe42c2f57b346f290fe1152103559766aa2fb95) | [research_archive/2026-11-14_032034.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_032034.md) | commit UTC 2026-11-14T03:20:51Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 조사에서 다루어진 기본적인 내용과 중복되지 않도록 서보 드라이브 제조사가 준수해야 할 **'보안 업데이트 무상 제공 및
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #42 — P1 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 메모리에서 다루어진 기본적인 내용과 중복되지 않으며, 산업용 서보 드라이브(Servo Drive) 제조사가
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 03:25:33 (시간대 미표기)
+- 원문: [commit 68f0f21a804870356e795896afa4958dbef4f813](https://github.com/useformotor3/ai-discord-bot/commit/68f0f21a804870356e795896afa4958dbef4f813) | [research_archive/2026-11-14_032533.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_032533.md) | commit UTC 2026-11-14T03:25:49Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 메모리에서 다루어진 기본적인 내용과 중복되지 않으며, 산업용 서보 드라이브(Servo Drive) 제조사가
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #43 — P0 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 조사 내용(기본적 취약점 처리, 생명주기 관리, 고속 실시간 통신, 펌웨어 무결성, 일반적 SBOM 등)과
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 03:30:46 (시간대 미표기)
+- 원문: [commit 9e78d1f8dbb93d3436a53057295cb481e99b6b7f](https://github.com/useformotor3/ai-discord-bot/commit/9e78d1f8dbb93d3436a53057295cb481e99b6b7f) | [research_archive/2026-11-14_033046.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_033046.md) | commit UTC 2026-11-14T03:31:03Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 조사 내용(기본적 취약점 처리, 생명주기 관리, 고속 실시간 통신, 펌웨어 무결성, 일반적 SBOM 등)과
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #44 — P0 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 메모리에서 다루어진 일반적 보안, 취약점 관리, SBOM, 펌웨어 무결성 등의 내용을 완전히 배제하고, 서보
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 03:35:28 (시간대 미표기)
+- 원문: [commit 16ab6863a863128232ba908f5fe9f30a6fd00064](https://github.com/useformotor3/ai-discord-bot/commit/16ab6863a863128232ba908f5fe9f30a6fd00064) | [research_archive/2026-11-14_033528.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_033528.md) | commit UTC 2026-11-14T03:35:44Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 메모리에서 다루어진 일반적 보안, 취약점 관리, SBOM, 펌웨어 무결성 등의 내용을 완전히 배제하고, 서보
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #45 — P0 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 메모리에서 다루어진 일반적 보안, 취약점 관리, SBOM, 펌웨어 무결성, 보안 업데이트 무상 제공 등의 범
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 03:40:37 (시간대 미표기)
+- 원문: [commit 2cc82842dc37d86f052c311b55c3d529c3cccf0a](https://github.com/useformotor3/ai-discord-bot/commit/2cc82842dc37d86f052c311b55c3d529c3cccf0a) | [research_archive/2026-11-14_034037.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_034037.md) | commit UTC 2026-11-14T03:40:54Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 메모리에서 다루어진 일반적 보안, 취약점 관리, SBOM, 펌웨어 무결성, 보안 업데이트 무상 제공 등의 범
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #46 — P0 — EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 일반적인 보안 관리, SBOM, 펌웨어 무결성, 취약점 패치 등의 범주와 완전히 차별화되는 **'디지털 요소가
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 03:45:38 (시간대 미표기)
+- 원문: [commit df1421c6da35431f1c2f9739a7d2aded5a57c4e0](https://github.com/useformotor3/ai-discord-bot/commit/df1421c6da35431f1c2f9739a7d2aded5a57c4e0) | [research_archive/2026-11-14_034538.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_034538.md) | commit UTC 2026-11-14T03:45:57Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 일반적인 보안 관리, SBOM, 펌웨어 무결성, 취약점 패치 등의 범주와 완전히 차별화되는 **'디지털 요소가
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #47 — P0 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 일반적인 보안 관리, SBOM, 펌웨어 무결성, 취약점 패치 등의 범주와 완전히 차별화되는 **산업
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 03:50:37 (시간대 미표기)
+- 원문: [commit 47002e9526a96987e4e3c83f6bbebbbac7feff97](https://github.com/useformotor3/ai-discord-bot/commit/47002e9526a96987e4e3c83f6bbebbbac7feff97) | [research_archive/2026-11-14_035037.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_035037.md) | commit UTC 2026-11-14T03:50:53Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 일반적인 보안 관리, SBOM, 펌웨어 무결성, 취약점 패치 등의 범주와 완전히 차별화되는 **산업
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #48 — P0 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 일반적인 보안 관리, 펌웨어 무결성, 일반적 SBOM, 취약점 패치 등의 범주와 완전히 차별화되면서
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 03:55:31 (시간대 미표기)
+- 원문: [commit 45b1e6b3cd9768c31375f5b922964d7a9b0f0631](https://github.com/useformotor3/ai-discord-bot/commit/45b1e6b3cd9768c31375f5b922964d7a9b0f0631) | [research_archive/2026-11-14_035531.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_035531.md) | commit UTC 2026-11-14T03:55:47Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 일반적인 보안 관리, 펌웨어 무결성, 일반적 SBOM, 취약점 패치 등의 범주와 완전히 차별화되면서
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #49 — P0 — EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 메모리에서 다뤄진 일반적인 보안 관리, SBOM, 펌웨어 무결성, 취약점 패치, 보안 업데이트 무상 제공 범주와 완전히
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 04:00:57 (시간대 미표기)
+- 원문: [commit 2fd824fbd39c453e6b502f4d4692931b915fe9fc](https://github.com/useformotor3/ai-discord-bot/commit/2fd824fbd39c453e6b502f4d4692931b915fe9fc) | [research_archive/2026-11-14_040057.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_040057.md) | commit UTC 2026-11-14T04:01:14Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 메모리에서 다뤄진 일반적인 보안 관리, SBOM, 펌웨어 무결성, 취약점 패치, 보안 업데이트 무상 제공 범주와 완전히
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #50 — P0 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 일반적인 보안 관리, SBOM, 펌웨어 무결성, 취약점 패치 범주와 완전히 차별화되는 **산업용 서
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 04:05:38 (시간대 미표기)
+- 원문: [commit cd192b082cc4b9f51f1269d4cc715b7d0b15bc40](https://github.com/useformotor3/ai-discord-bot/commit/cd192b082cc4b9f51f1269d4cc715b7d0b15bc40) | [research_archive/2026-11-14_040538.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_040538.md) | commit UTC 2026-11-14T04:05:58Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 일반적인 보안 관리, SBOM, 펌웨어 무결성, 취약점 패치 범주와 완전히 차별화되는 **산업용 서
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #51 — P0 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 일반적인 보안 관리, SBOM, 펌웨어 무결성, 취약점 패치 범주와 완전히 차별화되면서 산업용 서보
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 04:10:43 (시간대 미표기)
+- 원문: [commit 7f3159572dada047c37e15f9294539322d88a927](https://github.com/useformotor3/ai-discord-bot/commit/7f3159572dada047c37e15f9294539322d88a927) | [research_archive/2026-11-14_041043.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_041043.md) | commit UTC 2026-11-14T04:10:59Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 일반적인 보안 관리, SBOM, 펌웨어 무결성, 취약점 패치 범주와 완전히 차별화되면서 산업용 서보
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #52 — P0 — EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 일반적인 보안 관리, SBOM, 펌웨어 무결성, 취약점 패치 범주와 완전히 차별화되면서 산업용 서보 드라이브에
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 04:15:39 (시간대 미표기)
+- 원문: [commit ea56857a8cdd7cea87491de913a4c951987c1827](https://github.com/useformotor3/ai-discord-bot/commit/ea56857a8cdd7cea87491de913a4c951987c1827) | [research_archive/2026-11-14_041539.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_041539.md) | commit UTC 2026-11-14T04:15:56Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 일반적인 보안 관리, SBOM, 펌웨어 무결성, 취약점 패치 범주와 완전히 차별화되면서 산업용 서보 드라이브에
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #53 — P0 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 메모리에서 다뤄진 일반적인 보안 관리, SBOM, 펌웨어 무결성, 취약점 패치 및 보안 업데이트 무상 제공
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 04:20:36 (시간대 미표기)
+- 원문: [commit 296fb8f096f0cb50fed812939ae069865982bc23](https://github.com/useformotor3/ai-discord-bot/commit/296fb8f096f0cb50fed812939ae069865982bc23) | [research_archive/2026-11-14_042036.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_042036.md) | commit UTC 2026-11-14T04:20:53Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 메모리에서 다뤄진 일반적인 보안 관리, SBOM, 펌웨어 무결성, 취약점 패치 및 보안 업데이트 무상 제공
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #54 — P0 — EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 일반적인 보안 관리, SBOM, 펌웨어 무결성, 취약점 패치 범주와 완전히 차별화되면서, 산업용 서보 드라이브
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 04:25:35 (시간대 미표기)
+- 원문: [commit b3ac2f6c281bba0f0deca1fdf5e2671c884338af](https://github.com/useformotor3/ai-discord-bot/commit/b3ac2f6c281bba0f0deca1fdf5e2671c884338af) | [research_archive/2026-11-14_042535.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_042535.md) | commit UTC 2026-11-14T04:25:51Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 일반적인 보안 관리, SBOM, 펌웨어 무결성, 취약점 패치 범주와 완전히 차별화되면서, 산업용 서보 드라이브
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #55 — P0 — EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 일반적인 보안 관리, SBOM, 펌웨어 무결성, 취약점 패치 및 보안 업데이트 범주와 완전히 차별화되는 새로운
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 04:30:51 (시간대 미표기)
+- 원문: [commit f11e4c3e1b0859a2d40216eb0f2c3aacfb74b700](https://github.com/useformotor3/ai-discord-bot/commit/f11e4c3e1b0859a2d40216eb0f2c3aacfb74b700) | [research_archive/2026-11-14_043051.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_043051.md) | commit UTC 2026-11-14T04:31:09Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 일반적인 보안 관리, SBOM, 펌웨어 무결성, 취약점 패치 및 보안 업데이트 범주와 완전히 차별화되는 새로운
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #56 — P0 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞선 메모리에서 다루어진 일반적 요건(기본 보안 설정, SBOM, 취약점 패치 등)과 완전히 차별화되며, 산업용
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 04:35:34 (시간대 미표기)
+- 원문: [commit 71aff2a8f4b10d733589975452762cf3c4624729](https://github.com/useformotor3/ai-discord-bot/commit/71aff2a8f4b10d733589975452762cf3c4624729) | [research_archive/2026-11-14_043534.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_043534.md) | commit UTC 2026-11-14T04:35:53Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞선 메모리에서 다루어진 일반적 요건(기본 보안 설정, SBOM, 취약점 패치 등)과 완전히 차별화되며, 산업용
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #57 — P0 — EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞선 메모리에서 다루어진 일반적 요건(기본 설정, SBOM, 취약점 패치 등)과 완전히 차별화되며, 산업용 서보 드라이브의
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 04:40:36 (시간대 미표기)
+- 원문: [commit 855d56a7b6b7ddbe9db7f80c0dd3244cb069a568](https://github.com/useformotor3/ai-discord-bot/commit/855d56a7b6b7ddbe9db7f80c0dd3244cb069a568) | [research_archive/2026-11-14_044036.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_044036.md) | commit UTC 2026-11-14T04:40:53Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞선 메모리에서 다루어진 일반적 요건(기본 설정, SBOM, 취약점 패치 등)과 완전히 차별화되며, 산업용 서보 드라이브의
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #58 — P0 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞선 메모리에서 다루어진 일반적 요건(기본 보안 설정, SBOM, 취약점 패치, 펌웨어 무결성, 생명주기 관리 등
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 04:45:41 (시간대 미표기)
+- 원문: [commit 9f2a603d4f9c6fc0690e37a7c134a71c00f947e2](https://github.com/useformotor3/ai-discord-bot/commit/9f2a603d4f9c6fc0690e37a7c134a71c00f947e2) | [research_archive/2026-11-14_044541.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_044541.md) | commit UTC 2026-11-14T04:45:58Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞선 메모리에서 다루어진 일반적 요건(기본 보안 설정, SBOM, 취약점 패치, 펌웨어 무결성, 생명주기 관리 등
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #59 — P0 — EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다루어진 기본 보안 설정, SBOM, 취약점 패치, 무결성, 생명주기 관리 등의 일반적 요건과 완전히 차별화되며, 산업
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 04:50:34 (시간대 미표기)
+- 원문: [commit c91bad183d8f32e5b6abcd89f4570d779f220c68](https://github.com/useformotor3/ai-discord-bot/commit/c91bad183d8f32e5b6abcd89f4570d779f220c68) | [research_archive/2026-11-14_045034.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_045034.md) | commit UTC 2026-11-14T04:50:51Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다루어진 기본 보안 설정, SBOM, 취약점 패치, 무결성, 생명주기 관리 등의 일반적 요건과 완전히 차별화되며, 산업
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #60 — P0 — EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다루어진 기본 보안 설정, SBOM, 취약점 패치, 무결성, 생명주기 관리 등의 일반적 요건과 완전히 차별화되도록 **
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 04:55:36 (시간대 미표기)
+- 원문: [commit 51e3e6a6c2c8869243bb8a7f82edfd6553034874](https://github.com/useformotor3/ai-discord-bot/commit/51e3e6a6c2c8869243bb8a7f82edfd6553034874) | [research_archive/2026-11-14_045536.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_045536.md) | commit UTC 2026-11-14T04:55:53Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다루어진 기본 보안 설정, SBOM, 취약점 패치, 무결성, 생명주기 관리 등의 일반적 요건과 완전히 차별화되도록 **
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #61 — P0 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞선 메모리에서 다루어진 일반적 요건(기본 설정, SBOM, 취약점 패치, 무결성 검증, 생명주기 관리 등)과 완
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 05:00:55 (시간대 미표기)
+- 원문: [commit 94725c92dad032663dcf0b320842baf173905573](https://github.com/useformotor3/ai-discord-bot/commit/94725c92dad032663dcf0b320842baf173905573) | [research_archive/2026-11-14_050055.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_050055.md) | commit UTC 2026-11-14T05:01:12Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞선 메모리에서 다루어진 일반적 요건(기본 설정, SBOM, 취약점 패치, 무결성 검증, 생명주기 관리 등)과 완
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #62 — P0 — EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞선 메모리에서 다루어진 일반적 요건(기본 설정, SBOM, 취약점 패치, 무결성 검증, 생명주기 관리 등)과 완전히 차별화
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 05:05:36 (시간대 미표기)
+- 원문: [commit 8ac47c86f66685f3beb64276ac2454d59260607b](https://github.com/useformotor3/ai-discord-bot/commit/8ac47c86f66685f3beb64276ac2454d59260607b) | [research_archive/2026-11-14_050536.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_050536.md) | commit UTC 2026-11-14T05:05:52Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞선 메모리에서 다루어진 일반적 요건(기본 설정, SBOM, 취약점 패치, 무결성 검증, 생명주기 관리 등)과 완전히 차별화
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #63 — P1 — EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞선 메모리에서 다루어진 일반적 요건들과 완전히 차별화되도록 **산업용 서보 드라이브의 실시간 통신 및 런타임 제어 영역에서
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 05:10:45 (시간대 미표기)
+- 원문: [commit e8baaa90c5f653ed872b9a6fb7b75d2420817028](https://github.com/useformotor3/ai-discord-bot/commit/e8baaa90c5f653ed872b9a6fb7b75d2420817028) | [research_archive/2026-11-14_051045.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_051045.md) | commit UTC 2026-11-14T05:11:02Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞선 메모리에서 다루어진 일반적 요건들과 완전히 차별화되도록 **산업용 서보 드라이브의 실시간 통신 및 런타임 제어 영역에서
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #64 — P0 — EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다루어진 일반적 보안 요건(기본 설정, SBOM, 취약점 패치, 무결성, 생명주기 관리 등)과 완전히 차별화되는 **산
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 05:15:34 (시간대 미표기)
+- 원문: [commit 6ffc230d03b5c575099d37bb940abcbeb2281f6a](https://github.com/useformotor3/ai-discord-bot/commit/6ffc230d03b5c575099d37bb940abcbeb2281f6a) | [research_archive/2026-11-14_051534.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_051534.md) | commit UTC 2026-11-14T05:15:50Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다루어진 일반적 보안 요건(기본 설정, SBOM, 취약점 패치, 무결성, 생명주기 관리 등)과 완전히 차별화되는 **산
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #65 — P1 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다룬 일반적 요건 및 실시간 통신 영역과 차별화되며, 산업용 서보 드라이브 제조사가 반드시 준수해야 할 **
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 05:20:38 (시간대 미표기)
+- 원문: [commit 37422f5b052f5049b9950bdb0e5ae2776545e549](https://github.com/useformotor3/ai-discord-bot/commit/37422f5b052f5049b9950bdb0e5ae2776545e549) | [research_archive/2026-11-14_052038.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_052038.md) | commit UTC 2026-11-14T05:20:55Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다룬 일반적 요건 및 실시간 통신 영역과 차별화되며, 산업용 서보 드라이브 제조사가 반드시 준수해야 할 **
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #66 — P1 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞선 메모리에서 다루어진 일반적 요건, 실시간 통신 및 취약점 통보 영역과 완전히 차별화되도록 **산업용 서보 드
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 05:25:28 (시간대 미표기)
+- 원문: [commit 7d62699162460011aaa3e9a87394fb301f9ec164](https://github.com/useformotor3/ai-discord-bot/commit/7d62699162460011aaa3e9a87394fb301f9ec164) | [research_archive/2026-11-14_052528.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_052528.md) | commit UTC 2026-11-14T05:25:45Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞선 메모리에서 다루어진 일반적 요건, 실시간 통신 및 취약점 통보 영역과 완전히 차별화되도록 **산업용 서보 드
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #67 — P1 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다루어진 일반적 요건, 실시간 통신, 취약점 통보 영역과 완전히 차별화되며, 산업용 서보 드라이브 제조사가
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 05:30:50 (시간대 미표기)
+- 원문: [commit b253c25c8b65ea50410fb5859a1d73eb599de03b](https://github.com/useformotor3/ai-discord-bot/commit/b253c25c8b65ea50410fb5859a1d73eb599de03b) | [research_archive/2026-11-14_053050.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_053050.md) | commit UTC 2026-11-14T05:31:07Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다루어진 일반적 요건, 실시간 통신, 취약점 통보 영역과 완전히 차별화되며, 산업용 서보 드라이브 제조사가
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #68 — P1 — EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞선 메모리에서 다루어진 일반적 요건, 실시간 통신, 취약점 통보, 펌웨어 무결성 등의 영역과 완전히 차별화되도록 **산업용
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 05:35:39 (시간대 미표기)
+- 원문: [commit dd30f06468aa925f932f09192df5397283ad9b40](https://github.com/useformotor3/ai-discord-bot/commit/dd30f06468aa925f932f09192df5397283ad9b40) | [research_archive/2026-11-14_053539.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_053539.md) | commit UTC 2026-11-14T05:35:54Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞선 메모리에서 다루어진 일반적 요건, 실시간 통신, 취약점 통보, 펌웨어 무결성 등의 영역과 완전히 차별화되도록 **산업용
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #69 — P1 — EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 메모리에서 다루어진 일반적 요건, 실시간 통신, 취약점 통보, 펌웨어 무결성 등의 영역과 완전히 차별화되도록 **산업용
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 05:40:36 (시간대 미표기)
+- 원문: [commit c1c24fb105d6ea877bde5a7d3da4923fb92f1e89](https://github.com/useformotor3/ai-discord-bot/commit/c1c24fb105d6ea877bde5a7d3da4923fb92f1e89) | [research_archive/2026-11-14_054036.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_054036.md) | commit UTC 2026-11-14T05:40:52Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 메모리에서 다루어진 일반적 요건, 실시간 통신, 취약점 통보, 펌웨어 무결성 등의 영역과 완전히 차별화되도록 **산업용
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #70 — P1 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 메모리에서 다뤄진 일반적 요건, 실시간 통신, 취약점 통보, 펌웨어 무결성을 완전히 배제하고, 산업용 서보
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 05:45:35 (시간대 미표기)
+- 원문: [commit 9849e1796f34dc32151e22d2dc29e725f8a2b0b9](https://github.com/useformotor3/ai-discord-bot/commit/9849e1796f34dc32151e22d2dc29e725f8a2b0b9) | [research_archive/2026-11-14_054535.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_054535.md) | commit UTC 2026-11-14T05:45:51Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 메모리에서 다뤄진 일반적 요건, 실시간 통신, 취약점 통보, 펌웨어 무결성을 완전히 배제하고, 산업용 서보
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #71 — P1 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 메모리에서 다뤄진 일반적 요건, 실시간 통신, 취약점 통보, 펌웨어 무결성을 완전히 배제하고, 산업용 서보
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 05:50:34 (시간대 미표기)
+- 원문: [commit 5a925aa0bf8e66b9c934c17f9c048ca1caa5e3da](https://github.com/useformotor3/ai-discord-bot/commit/5a925aa0bf8e66b9c934c17f9c048ca1caa5e3da) | [research_archive/2026-11-14_055034.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_055034.md) | commit UTC 2026-11-14T05:50:48Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 메모리에서 다뤄진 일반적 요건, 실시간 통신, 취약점 통보, 펌웨어 무결성을 완전히 배제하고, 산업용 서보
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #72 — P1 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞선 메모리에서 다루어진 일반적 요건, 실시간 통신, 취약점 통보, 펌웨어 무결성을 완전히 배제하고, **산업용
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 05:55:29 (시간대 미표기)
+- 원문: [commit e83a36976d164459f20193afab2de92a29f62c10](https://github.com/useformotor3/ai-discord-bot/commit/e83a36976d164459f20193afab2de92a29f62c10) | [research_archive/2026-11-14_055529.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_055529.md) | commit UTC 2026-11-14T05:55:46Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞선 메모리에서 다루어진 일반적 요건, 실시간 통신, 취약점 통보, 펌웨어 무결성을 완전히 배제하고, **산업용
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #73 — P1 — EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 메모리에서 다루어진 일반적 요건, 실시간 통신, 취약점 통보, 펌웨어 무결성 영역을 완전히 배제하고, 산업용 서보 드라
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 06:00:49 (시간대 미표기)
+- 원문: [commit 95e0c12145921b1cc88ea0c170b781fe5d0fbd7a](https://github.com/useformotor3/ai-discord-bot/commit/95e0c12145921b1cc88ea0c170b781fe5d0fbd7a) | [research_archive/2026-11-14_060049.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_060049.md) | commit UTC 2026-11-14T06:01:05Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 메모리에서 다루어진 일반적 요건, 실시간 통신, 취약점 통보, 펌웨어 무결성 영역을 완전히 배제하고, 산업용 서보 드라
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #74 — P1 — EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞선 메모리에서 다루어진 일반적 요건, 실시간 통신, 취약점 통보, 펌웨어 무결성 영역과 완전히 차별화되도록 **산업용 서보
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 06:05:38 (시간대 미표기)
+- 원문: [commit a891ec1f38721e4213607a90385f54029f8bac8a](https://github.com/useformotor3/ai-discord-bot/commit/a891ec1f38721e4213607a90385f54029f8bac8a) | [research_archive/2026-11-14_060538.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_060538.md) | commit UTC 2026-11-14T06:05:56Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞선 메모리에서 다루어진 일반적 요건, 실시간 통신, 취약점 통보, 펌웨어 무결성 영역과 완전히 차별화되도록 **산업용 서보
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #75 — P1 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 메모리에서 다뤄진 일반적 요건, 실시간 통신, 취약점 통보, 펌웨어 무결성 영역을 완전히 배제하고, 산업용
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 06:10:42 (시간대 미표기)
+- 원문: [commit 4d00035e906161c7f966e83728e92867728f3f87](https://github.com/useformotor3/ai-discord-bot/commit/4d00035e906161c7f966e83728e92867728f3f87) | [research_archive/2026-11-14_061042.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_061042.md) | commit UTC 2026-11-14T06:10:57Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 메모리에서 다뤄진 일반적 요건, 실시간 통신, 취약점 통보, 펌웨어 무결성 영역을 완전히 배제하고, 산업용
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #76 — P1 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 메모리에서 다뤄진 일반적 요건, 실시간 통신, 취약점 통보, 펌웨어 무결성 영역을 완전히 배제하고, 산업용
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 06:15:35 (시간대 미표기)
+- 원문: [commit 1f422b54420dbea4cbd0b05cc15505fb5fb49733](https://github.com/useformotor3/ai-discord-bot/commit/1f422b54420dbea4cbd0b05cc15505fb5fb49733) | [research_archive/2026-11-14_061535.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_061535.md) | commit UTC 2026-11-14T06:15:51Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 메모리에서 다뤄진 일반적 요건, 실시간 통신, 취약점 통보, 펌웨어 무결성 영역을 완전히 배제하고, 산업용
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #77 — P1 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 메모리에서 다뤄진 영역(일반적 요건, 실시간 통신, 취약점 통보, 펌웨어 무결성)과 완전히 차별화되며, 산업
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 06:20:41 (시간대 미표기)
+- 원문: [commit 26c2ca7a89b03decc1b8053bce0cf692e0b71bf8](https://github.com/useformotor3/ai-discord-bot/commit/26c2ca7a89b03decc1b8053bce0cf692e0b71bf8) | [research_archive/2026-11-14_062041.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_062041.md) | commit UTC 2026-11-14T06:20:57Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 메모리에서 다뤄진 영역(일반적 요건, 실시간 통신, 취약점 통보, 펌웨어 무결성)과 완전히 차별화되며, 산업
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #78 — P1 — EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 메모리에서 다루어진 영역(일반적 요건, 실시간 통신, 취약점 통보, 펌웨어 무결성)과 완전히 차별화되도록 **산업용 서
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 06:25:32 (시간대 미표기)
+- 원문: [commit c695d369ab76f7cbd6a82deadab32d1f4a8eae1d](https://github.com/useformotor3/ai-discord-bot/commit/c695d369ab76f7cbd6a82deadab32d1f4a8eae1d) | [research_archive/2026-11-14_062532.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_062532.md) | commit UTC 2026-11-14T06:25:49Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 메모리에서 다루어진 영역(일반적 요건, 실시간 통신, 취약점 통보, 펌웨어 무결성)과 완전히 차별화되도록 **산업용 서
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #79 — P1 — EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 메모리에서 다뤄진 영역(일반적 요건, 실시간 통신, 취약점 통보, 펌웨어 무결성)과 완전히 차별화되면서 산업용 서보 드
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 06:30:47 (시간대 미표기)
+- 원문: [commit c9b5bff8ee851b6baa86bbe4073353c9303bb432](https://github.com/useformotor3/ai-discord-bot/commit/c9b5bff8ee851b6baa86bbe4073353c9303bb432) | [research_archive/2026-11-14_063047.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_063047.md) | commit UTC 2026-11-14T06:31:04Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 메모리에서 다뤄진 영역(일반적 요건, 실시간 통신, 취약점 통보, 펌웨어 무결성)과 완전히 차별화되면서 산업용 서보 드
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #80 — P1 — EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 메모리에서 다뤄진 영역(일반적 요건, 실시간 통신, 취약점 통보, 펌웨어 무결성)과 완전히 차별화되도록 **산업용 서보
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 06:35:30 (시간대 미표기)
+- 원문: [commit 6f9213365cc0e846c10e9a9fc833ec5a979cc7cb](https://github.com/useformotor3/ai-discord-bot/commit/6f9213365cc0e846c10e9a9fc833ec5a979cc7cb) | [research_archive/2026-11-14_063530.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_063530.md) | commit UTC 2026-11-14T06:35:46Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 메모리에서 다뤄진 영역(일반적 요건, 실시간 통신, 취약점 통보, 펌웨어 무결성)과 완전히 차별화되도록 **산업용 서보
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #81 — P1 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 메모리에서 다뤄진 영역(일반적 요건, 실시간 통신, 취약점 통보, 펌웨어 무결성)과 완전히 차별화되도록 **
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 06:40:39 (시간대 미표기)
+- 원문: [commit bf31de5ddabcd590056e7cefca4a913ed49421cf](https://github.com/useformotor3/ai-discord-bot/commit/bf31de5ddabcd590056e7cefca4a913ed49421cf) | [research_archive/2026-11-14_064039.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_064039.md) | commit UTC 2026-11-14T06:40:55Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 메모리에서 다뤄진 영역(일반적 요건, 실시간 통신, 취약점 통보, 펌웨어 무결성)과 완전히 차별화되도록 **
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #82 — P1 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 메모리에서 다뤄진 영역(일반적 요건, 실시간 통신, 취약점 통보, 펌웨어 무결성)과 완전히 차별화되도록 **
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 06:45:42 (시간대 미표기)
+- 원문: [commit 4332a50b4fcf386d43f68e70b9f65f248b467299](https://github.com/useformotor3/ai-discord-bot/commit/4332a50b4fcf386d43f68e70b9f65f248b467299) | [research_archive/2026-11-14_064542.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_064542.md) | commit UTC 2026-11-14T06:45:59Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 메모리에서 다뤄진 영역(일반적 요건, 실시간 통신, 취약점 통보, 펌웨어 무결성)과 완전히 차별화되도록 **
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #83 — P1 — EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 메모리에서 다뤄진 영역(일반적 요건, 실시간 통신, 취약점 통보, 펌웨어 무결성)과 완전히 차별화되도록 **산업용 서보
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 06:50:41 (시간대 미표기)
+- 원문: [commit 6ba398b5aebb136b1026b94cf361670b1f7f60bd](https://github.com/useformotor3/ai-discord-bot/commit/6ba398b5aebb136b1026b94cf361670b1f7f60bd) | [research_archive/2026-11-14_065041.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_065041.md) | commit UTC 2026-11-14T06:50:57Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 메모리에서 다뤄진 영역(일반적 요건, 실시간 통신, 취약점 통보, 펌웨어 무결성)과 완전히 차별화되도록 **산업용 서보
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #84 — P1 — EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 메모리에서 다뤄진 영역(일반적 요건, 실시간 통신, 취약점 통보, 펌웨어 무결성)과 완전히 차별화되도록 **산업용 서보
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 06:55:35 (시간대 미표기)
+- 원문: [commit ce061e0024cf81b9d5fa9a9007e731bc9fcdd494](https://github.com/useformotor3/ai-discord-bot/commit/ce061e0024cf81b9d5fa9a9007e731bc9fcdd494) | [research_archive/2026-11-14_065535.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_065535.md) | commit UTC 2026-11-14T06:55:53Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 메모리에서 다뤄진 영역(일반적 요건, 실시간 통신, 취약점 통보, 펌웨어 무결성)과 완전히 차별화되도록 **산업용 서보
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #85 — P1 — EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 메모리에서 다뤄진 영역(일반적 요건, 실시간 통신, 취약점 통보, 펌웨어 무결성)과 완전히 차별화되도록 **산업용 서보
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 07:00:49 (시간대 미표기)
+- 원문: [commit ea000135499826fc3d13698edd1bb70f6f4d8693](https://github.com/useformotor3/ai-discord-bot/commit/ea000135499826fc3d13698edd1bb70f6f4d8693) | [research_archive/2026-11-14_070049.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_070049.md) | commit UTC 2026-11-14T07:01:05Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 메모리에서 다뤄진 영역(일반적 요건, 실시간 통신, 취약점 통보, 펌웨어 무결성)과 완전히 차별화되도록 **산업용 서보
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #86 — P1 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 메모리에서 다뤄진 영역(일반적 요건, 실시간 통신, 취약점 통보, 펌웨어 무결성)과 완전히 차별화되도록 서보
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 07:05:27 (시간대 미표기)
+- 원문: [commit 7694d1d29d35e3a1931a295e939721e8eef95671](https://github.com/useformotor3/ai-discord-bot/commit/7694d1d29d35e3a1931a295e939721e8eef95671) | [research_archive/2026-11-14_070527.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_070527.md) | commit UTC 2026-11-14T07:05:44Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 메모리에서 다뤄진 영역(일반적 요건, 실시간 통신, 취약점 통보, 펌웨어 무결성)과 완전히 차별화되도록 서보
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #87 — P1 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전에 다뤄진 영역(일반적 요건, 실시간 통신, 취약점 통보, 펌웨어 무결성)과 완전히 차별화되도록 산업용 서보
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 07:10:43 (시간대 미표기)
+- 원문: [commit 3b2dafd098b51eb60998ce3be032efc4a42760fb](https://github.com/useformotor3/ai-discord-bot/commit/3b2dafd098b51eb60998ce3be032efc4a42760fb) | [research_archive/2026-11-14_071043.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_071043.md) | commit UTC 2026-11-14T07:11:00Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전에 다뤄진 영역(일반적 요건, 실시간 통신, 취약점 통보, 펌웨어 무결성)과 완전히 차별화되도록 산업용 서보
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #88 — P1 — EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 조사에서 다뤄진 영역(일반적 요건, 실시간 통신, 취약점 통보, 펌웨어 무결성)과 완전히 차별화되도록 **산업용 서보
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 07:15:38 (시간대 미표기)
+- 원문: [commit 8034668f45496ef532bfdfb865b29d4149cf2a94](https://github.com/useformotor3/ai-discord-bot/commit/8034668f45496ef532bfdfb865b29d4149cf2a94) | [research_archive/2026-11-14_071538.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_071538.md) | commit UTC 2026-11-14T07:15:54Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 조사에서 다뤄진 영역(일반적 요건, 실시간 통신, 취약점 통보, 펌웨어 무결성)과 완전히 차별화되도록 **산업용 서보
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #89 — P1 — EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 메모리에서 다뤄진 영역(일반적 요건, 실시간 통신, 취약점 통보, 펌웨어 무결성)과 완벽하게 차별화되면서 산업용 서보
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 07:20:38 (시간대 미표기)
+- 원문: [commit 1dff09ffa9722119f6fb0847a51b6c87c322d114](https://github.com/useformotor3/ai-discord-bot/commit/1dff09ffa9722119f6fb0847a51b6c87c322d114) | [research_archive/2026-11-14_072038.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_072038.md) | commit UTC 2026-11-14T07:20:54Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 메모리에서 다뤄진 영역(일반적 요건, 실시간 통신, 취약점 통보, 펌웨어 무결성)과 완벽하게 차별화되면서 산업용 서보
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #90 — P0 — EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전에 다뤄진 영역(일반적 요건, 실시간 통신, 취약점 통보, 펌웨어 무결성)과 완벽하게 차별화되는 **"소프트웨어 자재 명
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 07:25:36 (시간대 미표기)
+- 원문: [commit 94b5dd780abe08c91e4efeb3b0382821e370b44a](https://github.com/useformotor3/ai-discord-bot/commit/94b5dd780abe08c91e4efeb3b0382821e370b44a) | [research_archive/2026-11-14_072536.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_072536.md) | commit UTC 2026-11-14T07:25:52Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전에 다뤄진 영역(일반적 요건, 실시간 통신, 취약점 통보, 펌웨어 무결성)과 완벽하게 차별화되는 **"소프트웨어 자재 명
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #91 — P0 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전에 다뤄진 영역(일반적 요건, 실시간 통신, 취약점 통보, 펌웨어 무결성, 기본적 SBOM)과 완벽하게 차별화
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 07:30:46 (시간대 미표기)
+- 원문: [commit 9d54776319c455696b26dc3f47beb3b0f5bc96f5](https://github.com/useformotor3/ai-discord-bot/commit/9d54776319c455696b26dc3f47beb3b0f5bc96f5) | [research_archive/2026-11-14_073046.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_073046.md) | commit UTC 2026-11-14T07:31:02Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전에 다뤄진 영역(일반적 요건, 실시간 통신, 취약점 통보, 펌웨어 무결성, 기본적 SBOM)과 완벽하게 차별화
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #92 — P0 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전에 다뤄진 영역(일반적 요건, 실시간 통신, 취약점 통보, 펌웨어 무결성, 기본적 SBOM)과 완벽하게 차별화
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 07:35:29 (시간대 미표기)
+- 원문: [commit 7361d6c4d6c8fc1f4bd7f2b39aeb60708ef61518](https://github.com/useformotor3/ai-discord-bot/commit/7361d6c4d6c8fc1f4bd7f2b39aeb60708ef61518) | [research_archive/2026-11-14_073529.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_073529.md) | commit UTC 2026-11-14T07:35:46Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전에 다뤄진 영역(일반적 요건, 실시간 통신, 취약점 통보, 펌웨어 무결성, 기본적 SBOM)과 완벽하게 차별화
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #93 — P0 — EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전에 다뤄진 영역(일반적 요건, 실시간 통신, 취약점 통보, 펌웨어 무결성, 기본적 SBOM)과 완벽하게 차별화되는 핵심
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 07:40:39 (시간대 미표기)
+- 원문: [commit 1f62ea9c3a2769f573d2c027817658b410c171f1](https://github.com/useformotor3/ai-discord-bot/commit/1f62ea9c3a2769f573d2c027817658b410c171f1) | [research_archive/2026-11-14_074039.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_074039.md) | commit UTC 2026-11-14T07:40:56Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전에 다뤄진 영역(일반적 요건, 실시간 통신, 취약점 통보, 펌웨어 무결성, 기본적 SBOM)과 완벽하게 차별화되는 핵심
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #94 — P0 — EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전에 다뤄진 영역(일반적 요건, 실시간 통신, 취약점 통보, 펌웨어 무결성, 기본적 SBOM 등)과 완벽하게 차별화되는 핵
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 07:45:35 (시간대 미표기)
+- 원문: [commit fcb1b87aca1d3d5d0136b8e85bb20dbceb872990](https://github.com/useformotor3/ai-discord-bot/commit/fcb1b87aca1d3d5d0136b8e85bb20dbceb872990) | [research_archive/2026-11-14_074535.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_074535.md) | commit UTC 2026-11-14T07:45:49Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전에 다뤄진 영역(일반적 요건, 실시간 통신, 취약점 통보, 펌웨어 무결성, 기본적 SBOM 등)과 완벽하게 차별화되는 핵
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #95 — P0 — EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전에 다뤄진 영역(일반적 요건, 실시간 통신, 취약점 통보, 펌웨어 무결성, 기본적 SBOM, 제조사 생명주기 관리 등)과
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 07:50:37 (시간대 미표기)
+- 원문: [commit 621679accf58ed1d87b4049d91306c8991c63ad7](https://github.com/useformotor3/ai-discord-bot/commit/621679accf58ed1d87b4049d91306c8991c63ad7) | [research_archive/2026-11-14_075037.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_075037.md) | commit UTC 2026-11-14T07:50:53Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전에 다뤄진 영역(일반적 요건, 실시간 통신, 취약점 통보, 펌웨어 무결성, 기본적 SBOM, 제조사 생명주기 관리 등)과
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #96 — P0 — EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전에 다뤄진 영역(일반적 요건, 실시간 통신, 취약점 통보, 펌웨어 무결성, 기본적 SBOM, 제조사 생명주기 관리 등)과
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 07:55:30 (시간대 미표기)
+- 원문: [commit de2227983b7a2fbc874f9c526c402ba62bd96404](https://github.com/useformotor3/ai-discord-bot/commit/de2227983b7a2fbc874f9c526c402ba62bd96404) | [research_archive/2026-11-14_075530.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_075530.md) | commit UTC 2026-11-14T07:55:47Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전에 다뤄진 영역(일반적 요건, 실시간 통신, 취약점 통보, 펌웨어 무결성, 기본적 SBOM, 제조사 생명주기 관리 등)과
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #97 — P1 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전에 다뤄진 영역과 완벽하게 차별화되는 핵심 주제인 **"취약점의 무상 제공 및 보안 업데이트 수명 주기 보장(
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 08:00:57 (시간대 미표기)
+- 원문: [commit d64592269e9a940f16f4e7273a86142ff4df5906](https://github.com/useformotor3/ai-discord-bot/commit/d64592269e9a940f16f4e7273a86142ff4df5906) | [research_archive/2026-11-14_080057.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_080057.md) | commit UTC 2026-11-14T08:01:14Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전에 다뤄진 영역과 완벽하게 차별화되는 핵심 주제인 **"취약점의 무상 제공 및 보안 업데이트 수명 주기 보장(
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #98 — P0 — EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전에 다뤄진 영역(일반적 요건, 실시간 통신, 취약점 통보, 펌웨어 무결성, 기본적 SBOM, 제조사 생명주기 관리, 취약
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 08:05:33 (시간대 미표기)
+- 원문: [commit 243b0d40ae55f5f54cc951b60a8fffdfa37fa80e](https://github.com/useformotor3/ai-discord-bot/commit/243b0d40ae55f5f54cc951b60a8fffdfa37fa80e) | [research_archive/2026-11-14_080533.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_080533.md) | commit UTC 2026-11-14T08:05:49Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전에 다뤄진 영역(일반적 요건, 실시간 통신, 취약점 통보, 펌웨어 무결성, 기본적 SBOM, 제조사 생명주기 관리, 취약
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #99 — P0 — EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전에 다뤄진 일반 요건, 통신 보안, 취약점 통보, 펌웨어 무결성, 기본 SBOM, 생명주기 관리, 취약점 무상 패치 등의
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 08:10:40 (시간대 미표기)
+- 원문: [commit 43be1d048a0423d357cb9cc560c507a1cbe10789](https://github.com/useformotor3/ai-discord-bot/commit/43be1d048a0423d357cb9cc560c507a1cbe10789) | [research_archive/2026-11-14_081040.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_081040.md) | commit UTC 2026-11-14T08:10:56Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전에 다뤄진 일반 요건, 통신 보안, 취약점 통보, 펌웨어 무결성, 기본 SBOM, 생명주기 관리, 취약점 무상 패치 등의
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #100 — P0 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전에 다뤄진 일반 요건, 통신 보안, 취약점 통보, 펌웨어 무결성, 기본 SBOM, 생명주기 관리, 취약점 무상
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 08:15:34 (시간대 미표기)
+- 원문: [commit f34e415ebc94da765b44d7381712be834c98c546](https://github.com/useformotor3/ai-discord-bot/commit/f34e415ebc94da765b44d7381712be834c98c546) | [research_archive/2026-11-14_081534.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_081534.md) | commit UTC 2026-11-14T08:15:51Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전에 다뤄진 일반 요건, 통신 보안, 취약점 통보, 펌웨어 무결성, 기본 SBOM, 생명주기 관리, 취약점 무상
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #101 — P0 — EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전에 다뤄진 일반 요건, 통신 보안, 취약점 통보, 펌웨어 무결성, 기본/고급 SBOM, 생명주기 관리, 취약점 무상 패치
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 08:20:39 (시간대 미표기)
+- 원문: [commit fcf437917ae53f6bef57624fc31b7fb03453f75d](https://github.com/useformotor3/ai-discord-bot/commit/fcf437917ae53f6bef57624fc31b7fb03453f75d) | [research_archive/2026-11-14_082039.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_082039.md) | commit UTC 2026-11-14T08:20:55Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전에 다뤄진 일반 요건, 통신 보안, 취약점 통보, 펌웨어 무결성, 기본/고급 SBOM, 생명주기 관리, 취약점 무상 패치
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #102 — P0 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전에 다뤄진 영역(일반 요건, 통신 보안, 취약점 통보, 펌웨어 무결성, SBOM, 생명주기 관리, 취약점 무상
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 08:25:34 (시간대 미표기)
+- 원문: [commit 582df91541c65d24847fb2a74b910146b32ade6d](https://github.com/useformotor3/ai-discord-bot/commit/582df91541c65d24847fb2a74b910146b32ade6d) | [research_archive/2026-11-14_082534.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_082534.md) | commit UTC 2026-11-14T08:25:50Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전에 다뤄진 영역(일반 요건, 통신 보안, 취약점 통보, 펌웨어 무결성, SBOM, 생명주기 관리, 취약점 무상
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #103 — P0 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이미 다뤄진 일반 요건, 통신 보안, 취약점 통보, 펌웨어 무결성, SBOM, 생명주기 관리, 취약점 무상 패치
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 08:30:47 (시간대 미표기)
+- 원문: [commit 35a75899784ab1a230087e01478d4325d98251f5](https://github.com/useformotor3/ai-discord-bot/commit/35a75899784ab1a230087e01478d4325d98251f5) | [research_archive/2026-11-14_083047.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_083047.md) | commit UTC 2026-11-14T08:31:05Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이미 다뤄진 일반 요건, 통신 보안, 취약점 통보, 펌웨어 무결성, SBOM, 생명주기 관리, 취약점 무상 패치
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #104 — P0 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이미 다뤄진 영역(일반 요건, 통신 보안, 취약점 통보, 펌웨어 무결성, SBOM, 생명주기 관리, 취약점 무상
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 08:35:30 (시간대 미표기)
+- 원문: [commit d705e8266ef33db8674a60331dfe37a378fca02d](https://github.com/useformotor3/ai-discord-bot/commit/d705e8266ef33db8674a60331dfe37a378fca02d) | [research_archive/2026-11-14_083530.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_083530.md) | commit UTC 2026-11-14T08:35:47Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이미 다뤄진 영역(일반 요건, 통신 보안, 취약점 통보, 펌웨어 무결성, SBOM, 생명주기 관리, 취약점 무상
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #105 — P0 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전에 다루어진 영역(일반 요건, 통신 보안, 취약점 통보, 펌웨어 무결성, SBOM, 생명주기 관리, 취약점 무
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 08:40:39 (시간대 미표기)
+- 원문: [commit 7ea11aab7482c31a8ff59f7614f1861065776869](https://github.com/useformotor3/ai-discord-bot/commit/7ea11aab7482c31a8ff59f7614f1861065776869) | [research_archive/2026-11-14_084039.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_084039.md) | commit UTC 2026-11-14T08:40:59Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전에 다루어진 영역(일반 요건, 통신 보안, 취약점 통보, 펌웨어 무결성, SBOM, 생명주기 관리, 취약점 무
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #106 — P0 — EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전에 다뤄진 영역(일반 요건, 통신 보안, 취약점 통보, 펌웨어 무결성, SBOM, 생명주기 관리, 취약점 무상 패치 등)
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 08:45:36 (시간대 미표기)
+- 원문: [commit 2710cc9d804a427b3e21175adf7375dfbdc9b7f3](https://github.com/useformotor3/ai-discord-bot/commit/2710cc9d804a427b3e21175adf7375dfbdc9b7f3) | [research_archive/2026-11-14_084536.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_084536.md) | commit UTC 2026-11-14T08:45:52Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전에 다뤄진 영역(일반 요건, 통신 보안, 취약점 통보, 펌웨어 무결성, SBOM, 생명주기 관리, 취약점 무상 패치 등)
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #107 — P0 — EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다루어진 일반 요건, 통신 보안, 취약점 통보, 펌웨어 무결성, SBOM, 생명주기 관리, 취약점 무상 패치 등의 영
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 08:50:39 (시간대 미표기)
+- 원문: [commit f58b1d23bf6df2ccc22104e3a30ccd26aa25e985](https://github.com/useformotor3/ai-discord-bot/commit/f58b1d23bf6df2ccc22104e3a30ccd26aa25e985) | [research_archive/2026-11-14_085039.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_085039.md) | commit UTC 2026-11-14T08:50:56Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다루어진 일반 요건, 통신 보안, 취약점 통보, 펌웨어 무결성, SBOM, 생명주기 관리, 취약점 무상 패치 등의 영
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #108 — P0 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 영역(일반 요건, 통신 보안, 취약점 통보, 펌웨어 무결성, SBOM, 생명주기 관리, 취약점 무상
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 08:55:32 (시간대 미표기)
+- 원문: [commit 8f9407c3cb3fdd52204c996d0a73a5b7b84837b7](https://github.com/useformotor3/ai-discord-bot/commit/8f9407c3cb3fdd52204c996d0a73a5b7b84837b7) | [research_archive/2026-11-14_085532.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_085532.md) | commit UTC 2026-11-14T08:55:48Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 영역(일반 요건, 통신 보안, 취약점 통보, 펌웨어 무결성, SBOM, 생명주기 관리, 취약점 무상
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #109 — P0 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이미 다뤄진 영역(일반 요건, 통신 보안, 취약점 통보, 펌웨어 무결성, SBOM, 생명주기 관리, 취약점 무상
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 09:00:52 (시간대 미표기)
+- 원문: [commit b5bf3a7e214ea7cd4f70c84cbbe525f6503af03e](https://github.com/useformotor3/ai-discord-bot/commit/b5bf3a7e214ea7cd4f70c84cbbe525f6503af03e) | [research_archive/2026-11-14_090052.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_090052.md) | commit UTC 2026-11-14T09:01:10Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이미 다뤄진 영역(일반 요건, 통신 보안, 취약점 통보, 펌웨어 무결성, SBOM, 생명주기 관리, 취약점 무상
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #110 — P0 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 영역(일반 요건, 통신 보안, 취약점 통보, 펌웨어 무결성, SBOM, 생명주기 관리, 취약점 무상
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 09:05:35 (시간대 미표기)
+- 원문: [commit b18c5363c048c551fc31e8117ba238d26a6cd50e](https://github.com/useformotor3/ai-discord-bot/commit/b18c5363c048c551fc31e8117ba238d26a6cd50e) | [research_archive/2026-11-14_090535.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_090535.md) | commit UTC 2026-11-14T09:05:52Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 영역(일반 요건, 통신 보안, 취약점 통보, 펌웨어 무결성, SBOM, 생명주기 관리, 취약점 무상
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #111 — P0 — EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 영역(일반 요건, 통신 보안, 취약점 통보, 펌웨어 무결성, SBOM, 생명주기 관리, 취약점 무상 패치 등)
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 09:10:39 (시간대 미표기)
+- 원문: [commit 5971adfb8dcf01bb6c05d1e02616502510c774f6](https://github.com/useformotor3/ai-discord-bot/commit/5971adfb8dcf01bb6c05d1e02616502510c774f6) | [research_archive/2026-11-14_091039.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_091039.md) | commit UTC 2026-11-14T09:10:55Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 영역(일반 요건, 통신 보안, 취약점 통보, 펌웨어 무결성, SBOM, 생명주기 관리, 취약점 무상 패치 등)
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #112 — P0 — EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 영역(일반 요건, 통신 보안, 취약점 통보, 펌웨어 무결성, SBOM, 생명주기 관리, 취약점 무상 패치 등)
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 09:15:40 (시간대 미표기)
+- 원문: [commit 95642e91b51abfa6f49658158b9a4c4805324e9a](https://github.com/useformotor3/ai-discord-bot/commit/95642e91b51abfa6f49658158b9a4c4805324e9a) | [research_archive/2026-11-14_091540.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_091540.md) | commit UTC 2026-11-14T09:16:03Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 영역(일반 요건, 통신 보안, 취약점 통보, 펌웨어 무결성, SBOM, 생명주기 관리, 취약점 무상 패치 등)
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #113 — P0 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 영역(일반 요건, 통신 보안, 취약점 통보, 펌웨어 무결성, SBOM, 생명주기 관리, 취약점 무상
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 09:20:39 (시간대 미표기)
+- 원문: [commit 6005c006bfc1e840cc472290bda79396c28e7332](https://github.com/useformotor3/ai-discord-bot/commit/6005c006bfc1e840cc472290bda79396c28e7332) | [research_archive/2026-11-14_092039.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_092039.md) | commit UTC 2026-11-14T09:20:55Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 영역(일반 요건, 통신 보안, 취약점 통보, 펌웨어 무결성, SBOM, 생명주기 관리, 취약점 무상
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #114 — P0 — EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 조사에서 다루어진 일반적 요건, 통신 보안, 취약점 통보, SBOM, 생명주기 관리 등과 중복되지 않으며, 서보 드라이
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 09:25:34 (시간대 미표기)
+- 원문: [commit 95e0eb496fd49c9d9b0d6c593715ac7d3b1f2f16](https://github.com/useformotor3/ai-discord-bot/commit/95e0eb496fd49c9d9b0d6c593715ac7d3b1f2f16) | [research_archive/2026-11-14_092534.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_092534.md) | commit UTC 2026-11-14T09:26:01Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 조사에서 다루어진 일반적 요건, 통신 보안, 취약점 통보, SBOM, 생명주기 관리 등과 중복되지 않으며, 서보 드라이
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #115 — P0 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 조사에서 다뤄진 영역(일반 요건, 통신 보안, 취약점 통보, 펌웨어 무결성, SBOM, 생명주기 관리, 취약
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 09:30:43 (시간대 미표기)
+- 원문: [commit beeab6f22c7acf14676ace1b8cecf5ef6decd3b1](https://github.com/useformotor3/ai-discord-bot/commit/beeab6f22c7acf14676ace1b8cecf5ef6decd3b1) | [research_archive/2026-11-14_093043.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_093043.md) | commit UTC 2026-11-14T09:30:59Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 조사에서 다뤄진 영역(일반 요건, 통신 보안, 취약점 통보, 펌웨어 무결성, SBOM, 생명주기 관리, 취약
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #116 — P0 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 영역(일반 요건, 통신 보안, 취약점 통보, 펌웨어 무결성, SBOM, 생명주기 관리, 취약점 무상
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 09:35:30 (시간대 미표기)
+- 원문: [commit 0c4da5fd3e361bbce6e48dfc7891c3e1ea8d6d30](https://github.com/useformotor3/ai-discord-bot/commit/0c4da5fd3e361bbce6e48dfc7891c3e1ea8d6d30) | [research_archive/2026-11-14_093530.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_093530.md) | commit UTC 2026-11-14T09:35:45Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 영역(일반 요건, 통신 보안, 취약점 통보, 펌웨어 무결성, SBOM, 생명주기 관리, 취약점 무상
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #117 — P3 — ⚠️ [시스템 긴급 경고] 모든 AI 모델(Latest 및 Lite)의 일시적 과부하로 이번 회차 조사가 지연되었습니다. 시스템은 정상 대기 중입니다.
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 09:40:41 (시간대 미표기)
+- 원문: [commit 07e1f5fdf5fe9a9e1471391c6728b01221ecd9bb](https://github.com/useformotor3/ai-discord-bot/commit/07e1f5fdf5fe9a9e1471391c6728b01221ecd9bb) | [research_archive/2026-11-14_094041.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_094041.md) | commit UTC 2026-11-14T09:41:10Z
+- 핵심 주장 주제(1차): ⚠️ [시스템 긴급 경고] 모든 AI 모델(Latest 및 Lite)의 일시적 과부하로 이번 회차 조사가 지연되었습니다. 시스템은 정상 대기 중입니다.
+- 우선순위/검증 쟁점: P3 — 실질 조사 실패/경고 여부 확인. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #118 — P0 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 일반 요건, 통신 보안, 취약점 통보, 펌웨어 무결성, SBOM, 생명주기 관리, 취약점 무상 패치
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 09:45:37 (시간대 미표기)
+- 원문: [commit 3d990d3e9ce23abc17aeea141394882f525081ba](https://github.com/useformotor3/ai-discord-bot/commit/3d990d3e9ce23abc17aeea141394882f525081ba) | [research_archive/2026-11-14_094537.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_094537.md) | commit UTC 2026-11-14T09:46:02Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 일반 요건, 통신 보안, 취약점 통보, 펌웨어 무결성, SBOM, 생명주기 관리, 취약점 무상 패치
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #119 — P1 — EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞선 조사에서 다루어진 내용과 중복되지 않는 **[디지털 제품의 부속 기술 문서 작성 및 적합성 평가 절차 (Technica
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 09:50:41 (시간대 미표기)
+- 원문: [commit 030ad1192767b0735903ca1a1d331f3e8af42e17](https://github.com/useformotor3/ai-discord-bot/commit/030ad1192767b0735903ca1a1d331f3e8af42e17) | [research_archive/2026-11-14_095041.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_095041.md) | commit UTC 2026-11-14T09:51:03Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞선 조사에서 다루어진 내용과 중복되지 않는 **[디지털 제품의 부속 기술 문서 작성 및 적합성 평가 절차 (Technica
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #120 — P3 — ⚠️ [시스템 긴급 경고] 모든 AI 모델(Latest 및 Lite)의 일시적 과부하로 이번 회차 조사가 지연되었습니다. 시스템은 정상 대기 중입니다.
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 09:55:28 (시간대 미표기)
+- 원문: [commit 745c0184faab534d6fd20397d3b27b6dbafdbb6b](https://github.com/useformotor3/ai-discord-bot/commit/745c0184faab534d6fd20397d3b27b6dbafdbb6b) | [research_archive/2026-11-14_095528.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_095528.md) | commit UTC 2026-11-14T09:56:00Z
+- 핵심 주장 주제(1차): ⚠️ [시스템 긴급 경고] 모든 AI 모델(Latest 및 Lite)의 일시적 과부하로 이번 회차 조사가 지연되었습니다. 시스템은 정상 대기 중입니다.
+- 우선순위/검증 쟁점: P3 — 실질 조사 실패/경고 여부 확인. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #121 — P3 — ⚠️ [시스템 긴급 경고] 모든 AI 모델(Latest 및 Lite)의 일시적 과부하로 이번 회차 조사가 지연되었습니다. 시스템은 정상 대기 중입니다.
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 10:00:53 (시간대 미표기)
+- 원문: [commit cfbe0cec64c38b447eb6f4a414fbde5bb8cc817e](https://github.com/useformotor3/ai-discord-bot/commit/cfbe0cec64c38b447eb6f4a414fbde5bb8cc817e) | [research_archive/2026-11-14_100053.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_100053.md) | commit UTC 2026-11-14T10:01:21Z
+- 핵심 주장 주제(1차): ⚠️ [시스템 긴급 경고] 모든 AI 모델(Latest 및 Lite)의 일시적 과부하로 이번 회차 조사가 지연되었습니다. 시스템은 정상 대기 중입니다.
+- 우선순위/검증 쟁점: P3 — 실질 조사 실패/경고 여부 확인. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #122 — P0 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다뤄진 일반 요건, 통신 보안, 취약점 통보, 펌웨어 무결성, SBOM, 생명주기 관리, 취약점 무상 패치,
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 10:05:39 (시간대 미표기)
+- 원문: [commit 38433693adab150caeb1d515ab7f675ef1bf5903](https://github.com/useformotor3/ai-discord-bot/commit/38433693adab150caeb1d515ab7f675ef1bf5903) | [research_archive/2026-11-14_100539.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_100539.md) | commit UTC 2026-11-14T10:05:54Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다뤄진 일반 요건, 통신 보안, 취약점 통보, 펌웨어 무결성, SBOM, 생명주기 관리, 취약점 무상 패치,
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #123 — P1 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 조사 내용과 중복되지 않으며 산업용 서보 드라이브 제조사가 반드시 주목해야 할 **‘자동화된 취약점 정보 공
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 10:10:39 (시간대 미표기)
+- 원문: [commit c60f26ad3e0726fa961a0358c65779cf157e9d47](https://github.com/useformotor3/ai-discord-bot/commit/c60f26ad3e0726fa961a0358c65779cf157e9d47) | [research_archive/2026-11-14_101039.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_101039.md) | commit UTC 2026-11-14T10:10:53Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 조사 내용과 중복되지 않으며 산업용 서보 드라이브 제조사가 반드시 주목해야 할 **‘자동화된 취약점 정보 공
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #124 — P0 — EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다뤄진 일반 요건, 통신 보안, 취약점 통보, 펌웨어 무결성, SBOM, 생명주기 관리, 취약점 무상 패치, 기술 문서
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 10:15:37 (시간대 미표기)
+- 원문: [commit 4f6d7c005eecf6ed9f2dc9bef5d06391e4cc0b4c](https://github.com/useformotor3/ai-discord-bot/commit/4f6d7c005eecf6ed9f2dc9bef5d06391e4cc0b4c) | [research_archive/2026-11-14_101537.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_101537.md) | commit UTC 2026-11-14T10:15:52Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다뤄진 일반 요건, 통신 보안, 취약점 통보, 펌웨어 무결성, SBOM, 생명주기 관리, 취약점 무상 패치, 기술 문서
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #125 — P1 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 조사 내용과 중복되지 않으며 산업용 서보 드라이브 제조사가 반드시 준수해야 할 **‘Secure by Def
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 10:20:38 (시간대 미표기)
+- 원문: [commit 5c71b566d033e0b7b1ec6449dbf73d503f9a0ab6](https://github.com/useformotor3/ai-discord-bot/commit/5c71b566d033e0b7b1ec6449dbf73d503f9a0ab6) | [research_archive/2026-11-14_102038.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_102038.md) | commit UTC 2026-11-14T10:20:55Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 조사 내용과 중복되지 않으며 산업용 서보 드라이브 제조사가 반드시 준수해야 할 **‘Secure by Def
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #126 — P0 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 조사 내용(일반 요건, 통신 보안, 취약점 통보, 펌웨어 무결성, SBOM, 생명주기 관리, 취약점 무상 패
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 10:25:40 (시간대 미표기)
+- 원문: [commit 81e721ee6cbd92d80ed6f9b8b318881efcddeb69](https://github.com/useformotor3/ai-discord-bot/commit/81e721ee6cbd92d80ed6f9b8b318881efcddeb69) | [research_archive/2026-11-14_102540.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_102540.md) | commit UTC 2026-11-14T10:25:56Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 조사 내용(일반 요건, 통신 보안, 취약점 통보, 펌웨어 무결성, SBOM, 생명주기 관리, 취약점 무상 패
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #127 — P0 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다뤄진 주제(일반 요건, 통신 보안, 취약점 통보, 펌웨어 무결성, SBOM, 생명주기 관리, 취약점 무상
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 10:30:46 (시간대 미표기)
+- 원문: [commit 5833a790800178daaee6b274c8700b4c1b697ce7](https://github.com/useformotor3/ai-discord-bot/commit/5833a790800178daaee6b274c8700b4c1b697ce7) | [research_archive/2026-11-14_103046.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_103046.md) | commit UTC 2026-11-14T10:31:02Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다뤄진 주제(일반 요건, 통신 보안, 취약점 통보, 펌웨어 무결성, SBOM, 생명주기 관리, 취약점 무상
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #128 — P1 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 조사 내용과 중복되지 않는 새로운 핵심 주제인 **‘하드웨어 루트 오브 트러스트(Hardware-based
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 10:35:32 (시간대 미표기)
+- 원문: [commit ab0af21fa058bc4e8a2abddaebd28f9fbec83790](https://github.com/useformotor3/ai-discord-bot/commit/ab0af21fa058bc4e8a2abddaebd28f9fbec83790) | [research_archive/2026-11-14_103532.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_103532.md) | commit UTC 2026-11-14T10:35:49Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 조사 내용과 중복되지 않는 새로운 핵심 주제인 **‘하드웨어 루트 오브 트러스트(Hardware-based
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #129 — P1 — EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다뤄진 주제들과 중복되지 않으며 산업용 서보 드라이브 제조사가 반드시 준수해야 할 새로운 핵심 주제인 **‘자동화된 취
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 10:40:41 (시간대 미표기)
+- 원문: [commit 5325144cae4dd5a05843946eeec945039989e62c](https://github.com/useformotor3/ai-discord-bot/commit/5325144cae4dd5a05843946eeec945039989e62c) | [research_archive/2026-11-14_104041.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_104041.md) | commit UTC 2026-11-14T10:40:56Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다뤄진 주제들과 중복되지 않으며 산업용 서보 드라이브 제조사가 반드시 준수해야 할 새로운 핵심 주제인 **‘자동화된 취
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #130 — P1 — EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다뤄진 주제들과 중복되지 않으며 산업용 서보 드라이브 제조사가 반드시 준수해야 할 새로운 핵심 주제인 **‘CRA 부속
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 10:45:31 (시간대 미표기)
+- 원문: [commit b56fe588ea57ad4a5f0b53d71b5e124cf251fe99](https://github.com/useformotor3/ai-discord-bot/commit/b56fe588ea57ad4a5f0b53d71b5e124cf251fe99) | [research_archive/2026-11-14_104531.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_104531.md) | commit UTC 2026-11-14T10:45:49Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다뤄진 주제들과 중복되지 않으며 산업용 서보 드라이브 제조사가 반드시 준수해야 할 새로운 핵심 주제인 **‘CRA 부속
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #131 — P1 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다뤄진 주제들과 중복되지 않으며 산업용 서보 드라이브 제조사가 반드시 준수해야 할 새로운 핵심 주제인 **‘
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 10:50:46 (시간대 미표기)
+- 원문: [commit 9a1626e20d0c1d67284dc792f276714302d370db](https://github.com/useformotor3/ai-discord-bot/commit/9a1626e20d0c1d67284dc792f276714302d370db) | [research_archive/2026-11-14_105046.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_105046.md) | commit UTC 2026-11-14T10:51:01Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다뤄진 주제들과 중복되지 않으며 산업용 서보 드라이브 제조사가 반드시 준수해야 할 새로운 핵심 주제인 **‘
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #132 — P1 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다뤄진 하드웨어 보안, 취약점 자동화 처리, 적합성 평가(부속서 VII), 기본 설정(Secure by de
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 10:55:32 (시간대 미표기)
+- 원문: [commit 76bcc82f9c2156956a234058a4b3c69fee81910f](https://github.com/useformotor3/ai-discord-bot/commit/76bcc82f9c2156956a234058a4b3c69fee81910f) | [research_archive/2026-11-14_105532.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_105532.md) | commit UTC 2026-11-14T10:55:48Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다뤄진 하드웨어 보안, 취약점 자동화 처리, 적합성 평가(부속서 VII), 기본 설정(Secure by de
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #133 — P1 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다뤄진 하드웨어 보안, 취약점 자동화 처리, 적합성 평가, 기본 설정 등의 주제와 중복되지 않으며, 산업용
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 11:00:53 (시간대 미표기)
+- 원문: [commit 8e9f34334829f629031134ed230b59b85ef321d0](https://github.com/useformotor3/ai-discord-bot/commit/8e9f34334829f629031134ed230b59b85ef321d0) | [research_archive/2026-11-14_110053.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_110053.md) | commit UTC 2026-11-14T11:01:09Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다뤄진 하드웨어 보안, 취약점 자동화 처리, 적합성 평가, 기본 설정 등의 주제와 중복되지 않으며, 산업용
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #134 — P1 — EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다뤄진 하드웨어 보안, 취약점 자동화 처리, 적합성 평가(부속서 VII), 기본 설정(Secure by default)
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 11:05:28 (시간대 미표기)
+- 원문: [commit b9b79bc5c0d8fb3e0692b3774dff937c0ec5beaf](https://github.com/useformotor3/ai-discord-bot/commit/b9b79bc5c0d8fb3e0692b3774dff937c0ec5beaf) | [research_archive/2026-11-14_110528.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_110528.md) | commit UTC 2026-11-14T11:05:44Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다뤄진 하드웨어 보안, 취약점 자동화 처리, 적합성 평가(부속서 VII), 기본 설정(Secure by default)
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. Annex I Part I(2)(b),(d),(j); 특정 비밀번호 방식·최초 변경·모든 포트 차단을 보편적 법정 구현으로 과장하지 않음.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #135 — P1 — EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다뤄진 하드웨어 보안, 적합성 평가, 기본 설정(Secure by default) 등의 주제와 중복되지 않으며, 산업용
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 11:10:37 (시간대 미표기)
+- 원문: [commit 2c194fd7f8fc766d606f07199c9f3caa9594f3ea](https://github.com/useformotor3/ai-discord-bot/commit/2c194fd7f8fc766d606f07199c9f3caa9594f3ea) | [research_archive/2026-11-14_111037.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_111037.md) | commit UTC 2026-11-14T11:10:54Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다뤄진 하드웨어 보안, 적합성 평가, 기본 설정(Secure by default) 등의 주제와 중복되지 않으며, 산업용
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. Annex I Part I(2)(b),(d),(j); 특정 비밀번호 방식·최초 변경·모든 포트 차단을 보편적 법정 구현으로 과장하지 않음.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #136 — P1 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다뤄진 하드웨어 보안, 적합성 평가, 기본 설정(Secure by default), 취약점 자동화 처리 등의
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 11:15:40 (시간대 미표기)
+- 원문: [commit afad2b684b11c730727f9ebf13be66605f09b322](https://github.com/useformotor3/ai-discord-bot/commit/afad2b684b11c730727f9ebf13be66605f09b322) | [research_archive/2026-11-14_111540.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_111540.md) | commit UTC 2026-11-14T11:15:57Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다뤄진 하드웨어 보안, 적합성 평가, 기본 설정(Secure by default), 취약점 자동화 처리 등의
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. Annex I Part I(2)(b),(d),(j); 특정 비밀번호 방식·최초 변경·모든 포트 차단을 보편적 법정 구현으로 과장하지 않음.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #137 — P1 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다뤄진 하드웨어 보안, 적합성 평가, 기본 설정(Secure by default), 취약점 자동화 처리 등의
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 11:20:36 (시간대 미표기)
+- 원문: [commit 6540ec0a963949b9b387c024a5b11a1842d1ce7a](https://github.com/useformotor3/ai-discord-bot/commit/6540ec0a963949b9b387c024a5b11a1842d1ce7a) | [research_archive/2026-11-14_112036.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_112036.md) | commit UTC 2026-11-14T11:20:53Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다뤄진 하드웨어 보안, 적합성 평가, 기본 설정(Secure by default), 취약점 자동화 처리 등의
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. Annex I Part I(2)(b),(d),(j); 특정 비밀번호 방식·최초 변경·모든 포트 차단을 보편적 법정 구현으로 과장하지 않음.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #138 — P1 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다뤄진 하드웨어 보안, 적합성 평가, 기본 설정(Secure by default), 취약점 자동화 처리 등과
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 11:25:29 (시간대 미표기)
+- 원문: [commit 0b1d417ae344f15f123ddfea9fb96c12534195e0](https://github.com/useformotor3/ai-discord-bot/commit/0b1d417ae344f15f123ddfea9fb96c12534195e0) | [research_archive/2026-11-14_112529.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_112529.md) | commit UTC 2026-11-14T11:25:45Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다뤄진 하드웨어 보안, 적합성 평가, 기본 설정(Secure by default), 취약점 자동화 처리 등과
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. Annex I Part I(2)(b),(d),(j); 특정 비밀번호 방식·최초 변경·모든 포트 차단을 보편적 법정 구현으로 과장하지 않음.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #139 — P1 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다뤄진 하드웨어 보안, 적합성 평가(부속서 VII), 기본 설정(Secure by default), 취약점
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 11:30:43 (시간대 미표기)
+- 원문: [commit c8c9d66729812e452983e92162e0fdf72fd575a3](https://github.com/useformotor3/ai-discord-bot/commit/c8c9d66729812e452983e92162e0fdf72fd575a3) | [research_archive/2026-11-14_113043.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_113043.md) | commit UTC 2026-11-14T11:30:59Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다뤄진 하드웨어 보안, 적합성 평가(부속서 VII), 기본 설정(Secure by default), 취약점
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. Annex I Part I(2)(b),(d),(j); 특정 비밀번호 방식·최초 변경·모든 포트 차단을 보편적 법정 구현으로 과장하지 않음.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #140 — P1 — EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 하드웨어 보안, 적합성 평가, 기본 설정(Secure by default), 취약점 자동화 처리 등 기존에 다뤄진 주제들과
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 11:35:32 (시간대 미표기)
+- 원문: [commit 2d67da08f09168fc328b5483624ee89f310df1e4](https://github.com/useformotor3/ai-discord-bot/commit/2d67da08f09168fc328b5483624ee89f310df1e4) | [research_archive/2026-11-14_113532.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_113532.md) | commit UTC 2026-11-14T11:35:49Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 하드웨어 보안, 적합성 평가, 기본 설정(Secure by default), 취약점 자동화 처리 등 기존에 다뤄진 주제들과
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. Annex I Part I(2)(b),(d),(j); 특정 비밀번호 방식·최초 변경·모든 포트 차단을 보편적 법정 구현으로 과장하지 않음.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #141 — P1 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이미 다뤄진 하드웨어 보안, 적합성 평가, 기본 설정(Secure by default), 취약점 자동화 처리 등의
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 11:40:42 (시간대 미표기)
+- 원문: [commit 3125e16222c1f9811d9bc7cd9e5d915066ecb0d6](https://github.com/useformotor3/ai-discord-bot/commit/3125e16222c1f9811d9bc7cd9e5d915066ecb0d6) | [research_archive/2026-11-14_114042.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_114042.md) | commit UTC 2026-11-14T11:40:56Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이미 다뤄진 하드웨어 보안, 적합성 평가, 기본 설정(Secure by default), 취약점 자동화 처리 등의
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. Annex I Part I(2)(b),(d),(j); 특정 비밀번호 방식·최초 변경·모든 포트 차단을 보편적 법정 구현으로 과장하지 않음.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #142 — P1 — EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 언급된 하드웨어 보안, 적합성 평가, 기본 설정(Secure by default), 취약점 자동화 처리 등과 중복되지
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 11:45:32 (시간대 미표기)
+- 원문: [commit a7647ed39e9add0ca3f4fdb9a0297d0fd05d9abd](https://github.com/useformotor3/ai-discord-bot/commit/a7647ed39e9add0ca3f4fdb9a0297d0fd05d9abd) | [research_archive/2026-11-14_114532.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_114532.md) | commit UTC 2026-11-14T11:45:49Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 언급된 하드웨어 보안, 적합성 평가, 기본 설정(Secure by default), 취약점 자동화 처리 등과 중복되지
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. Annex I Part I(2)(b),(d),(j); 특정 비밀번호 방식·최초 변경·모든 포트 차단을 보편적 법정 구현으로 과장하지 않음.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #143 — P1 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다뤄진 하드웨어 보안, 적합성 평가, 기본 설정(Secure by default), 취약점 자동화 처리 등과
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 11:50:38 (시간대 미표기)
+- 원문: [commit 1a338ff908cd59314db6fefc8ad30dbda9cc267b](https://github.com/useformotor3/ai-discord-bot/commit/1a338ff908cd59314db6fefc8ad30dbda9cc267b) | [research_archive/2026-11-14_115038.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_115038.md) | commit UTC 2026-11-14T11:50:54Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다뤄진 하드웨어 보안, 적합성 평가, 기본 설정(Secure by default), 취약점 자동화 처리 등과
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. Annex I Part I(2)(b),(d),(j); 특정 비밀번호 방식·최초 변경·모든 포트 차단을 보편적 법정 구현으로 과장하지 않음.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #144 — P1 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다뤄진 하드웨어 보안, 적합성 평가, 기본 설정(Secure by default), 취약점 자동화 처리 등과
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 11:55:32 (시간대 미표기)
+- 원문: [commit 906981daf65cfbd49cd9031ad3e74fa84383ef5e](https://github.com/useformotor3/ai-discord-bot/commit/906981daf65cfbd49cd9031ad3e74fa84383ef5e) | [research_archive/2026-11-14_115532.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_115532.md) | commit UTC 2026-11-14T11:55:50Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다뤄진 하드웨어 보안, 적합성 평가, 기본 설정(Secure by default), 취약점 자동화 처리 등과
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. Annex I Part I(2)(b),(d),(j); 특정 비밀번호 방식·최초 변경·모든 포트 차단을 보편적 법정 구현으로 과장하지 않음.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #145 — P1 — EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다뤄진 하드웨어 보안, 적합성 평가, 기본 설정(Secure by default), 취약점 자동화 처리 등과 중복되지
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 12:00:51 (시간대 미표기)
+- 원문: [commit 680d7a6884d2227a9082e9e769e6e5d419ded99f](https://github.com/useformotor3/ai-discord-bot/commit/680d7a6884d2227a9082e9e769e6e5d419ded99f) | [research_archive/2026-11-14_120051.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_120051.md) | commit UTC 2026-11-14T12:01:07Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다뤄진 하드웨어 보안, 적합성 평가, 기본 설정(Secure by default), 취약점 자동화 처리 등과 중복되지
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. Annex I Part I(2)(b),(d),(j); 특정 비밀번호 방식·최초 변경·모든 포트 차단을 보편적 법정 구현으로 과장하지 않음.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #146 — P1 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다뤄진 하드웨어 보안, 적합성 평가, 기본 설정(Secure by default), 취약점 자동화 처리 등과
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 12:05:30 (시간대 미표기)
+- 원문: [commit cc53f6ed8d1c64e15fb8c44fa48eaecbd7f4f1e7](https://github.com/useformotor3/ai-discord-bot/commit/cc53f6ed8d1c64e15fb8c44fa48eaecbd7f4f1e7) | [research_archive/2026-11-14_120530.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_120530.md) | commit UTC 2026-11-14T12:05:47Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다뤄진 하드웨어 보안, 적합성 평가, 기본 설정(Secure by default), 취약점 자동화 처리 등과
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. Annex I Part I(2)(b),(d),(j); 특정 비밀번호 방식·최초 변경·모든 포트 차단을 보편적 법정 구현으로 과장하지 않음.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #147 — P1 — EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다뤄진 하드웨어 보안, 적합성 평가, 기본 설정(Secure by default), 취약점 자동화 처리 등과 중복되지
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 12:10:39 (시간대 미표기)
+- 원문: [commit a71241884e276f71768c8813808dd9b775b12307](https://github.com/useformotor3/ai-discord-bot/commit/a71241884e276f71768c8813808dd9b775b12307) | [research_archive/2026-11-14_121039.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_121039.md) | commit UTC 2026-11-14T12:10:54Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다뤄진 하드웨어 보안, 적합성 평가, 기본 설정(Secure by default), 취약점 자동화 처리 등과 중복되지
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. Annex I Part I(2)(b),(d),(j); 특정 비밀번호 방식·최초 변경·모든 포트 차단을 보편적 법정 구현으로 과장하지 않음.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #148 — P1 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이미 언급된 하드웨어 보안, 적합성 평가, 기본 설정(Secure by default), 취약점 자동화 처리와 중
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 12:15:36 (시간대 미표기)
+- 원문: [commit 713d07b5a29c1f2ce8e16f82f74cfb1f613f664c](https://github.com/useformotor3/ai-discord-bot/commit/713d07b5a29c1f2ce8e16f82f74cfb1f613f664c) | [research_archive/2026-11-14_121536.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_121536.md) | commit UTC 2026-11-14T12:15:52Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이미 언급된 하드웨어 보안, 적합성 평가, 기본 설정(Secure by default), 취약점 자동화 처리와 중
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. Annex I Part I(2)(b),(d),(j); 특정 비밀번호 방식·최초 변경·모든 포트 차단을 보편적 법정 구현으로 과장하지 않음.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #149 — P1 — EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다뤄진 하드웨어 보안, 적합성 평가, 기본 설정(Secure by default), 취약점 자동화 처리 등과 중복되지
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 12:20:33 (시간대 미표기)
+- 원문: [commit 43fce2cd53e56ff2604683f33aac453098a36393](https://github.com/useformotor3/ai-discord-bot/commit/43fce2cd53e56ff2604683f33aac453098a36393) | [research_archive/2026-11-14_122033.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_122033.md) | commit UTC 2026-11-14T12:20:49Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다뤄진 하드웨어 보안, 적합성 평가, 기본 설정(Secure by default), 취약점 자동화 처리 등과 중복되지
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. Annex I Part I(2)(b),(d),(j); 특정 비밀번호 방식·최초 변경·모든 포트 차단을 보편적 법정 구현으로 과장하지 않음.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #150 — P1 — EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다뤄진 하드웨어 보안, 적합성 평가, 기본 설정(Secure by default), 취약점 자동화 처리 등과 중복되지
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 12:25:29 (시간대 미표기)
+- 원문: [commit 05307abae619f5bb9311adddaba84fd8039adee3](https://github.com/useformotor3/ai-discord-bot/commit/05307abae619f5bb9311adddaba84fd8039adee3) | [research_archive/2026-11-14_122529.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_122529.md) | commit UTC 2026-11-14T12:25:44Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다뤄진 하드웨어 보안, 적합성 평가, 기본 설정(Secure by default), 취약점 자동화 처리 등과 중복되지
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. Annex I Part I(2)(b),(d),(j); 특정 비밀번호 방식·최초 변경·모든 포트 차단을 보편적 법정 구현으로 과장하지 않음.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #151 — P1 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 언급된 하드웨어 보안, 적합성 평가, 기본 설정(Secure by default), 취약점 자동화 처리 등과
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 12:30:45 (시간대 미표기)
+- 원문: [commit 422bb5068becd77fbceb9afbf837fac030708962](https://github.com/useformotor3/ai-discord-bot/commit/422bb5068becd77fbceb9afbf837fac030708962) | [research_archive/2026-11-14_123045.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_123045.md) | commit UTC 2026-11-14T12:31:11Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 언급된 하드웨어 보안, 적합성 평가, 기본 설정(Secure by default), 취약점 자동화 처리 등과
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. Annex I Part I(2)(b),(d),(j); 특정 비밀번호 방식·최초 변경·모든 포트 차단을 보편적 법정 구현으로 과장하지 않음.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #152 — P1 — EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다뤄진 하드웨어 보안, 적합성 평가, 기본 설정(Secure by default), 취약점 자동화 처리 등과 중복되지
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 12:35:33 (시간대 미표기)
+- 원문: [commit bc4350c6221bd9432766960af87e57d0557a2cbb](https://github.com/useformotor3/ai-discord-bot/commit/bc4350c6221bd9432766960af87e57d0557a2cbb) | [research_archive/2026-11-14_123533.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_123533.md) | commit UTC 2026-11-14T12:35:49Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다뤄진 하드웨어 보안, 적합성 평가, 기본 설정(Secure by default), 취약점 자동화 처리 등과 중복되지
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. Annex I Part I(2)(b),(d),(j); 특정 비밀번호 방식·최초 변경·모든 포트 차단을 보편적 법정 구현으로 과장하지 않음.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #153 — P1 — EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이미 언급된 하드웨어 보안, 적합성 평가, 기본 설정(Secure by default), 취약점 자동화 처리를 제외하고, 산
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 12:40:36 (시간대 미표기)
+- 원문: [commit 92796953654ab393c51865b9d5432117fc7e5b38](https://github.com/useformotor3/ai-discord-bot/commit/92796953654ab393c51865b9d5432117fc7e5b38) | [research_archive/2026-11-14_124036.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_124036.md) | commit UTC 2026-11-14T12:40:51Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이미 언급된 하드웨어 보안, 적합성 평가, 기본 설정(Secure by default), 취약점 자동화 처리를 제외하고, 산
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. Annex I Part I(2)(b),(d),(j); 특정 비밀번호 방식·최초 변경·모든 포트 차단을 보편적 법정 구현으로 과장하지 않음.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #154 — P1 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다뤄진 하드웨어 보안, 적합성 평가, 기본 설정(Secure by default), 취약점 자동화 처리 등과
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 12:45:40 (시간대 미표기)
+- 원문: [commit 31e266ad4270039991b94a2f0d686ca18a79d0cb](https://github.com/useformotor3/ai-discord-bot/commit/31e266ad4270039991b94a2f0d686ca18a79d0cb) | [research_archive/2026-11-14_124540.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_124540.md) | commit UTC 2026-11-14T12:45:56Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다뤄진 하드웨어 보안, 적합성 평가, 기본 설정(Secure by default), 취약점 자동화 처리 등과
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. Annex I Part I(2)(b),(d),(j); 특정 비밀번호 방식·최초 변경·모든 포트 차단을 보편적 법정 구현으로 과장하지 않음.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #155 — P1 — EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다뤄진 하드웨어 보안, 적합성 평가, 기본 설정(Secure by default), 취약점 자동화 처리 영역과 중복되지
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 12:50:35 (시간대 미표기)
+- 원문: [commit 7954d6e9c231bd01b1c43264d411f4270f53b099](https://github.com/useformotor3/ai-discord-bot/commit/7954d6e9c231bd01b1c43264d411f4270f53b099) | [research_archive/2026-11-14_125035.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_125035.md) | commit UTC 2026-11-14T12:50:51Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다뤄진 하드웨어 보안, 적합성 평가, 기본 설정(Secure by default), 취약점 자동화 처리 영역과 중복되지
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. Annex I Part I(2)(b),(d),(j); 특정 비밀번호 방식·최초 변경·모든 포트 차단을 보편적 법정 구현으로 과장하지 않음.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #156 — P1 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 조사 내용(하드웨어 보안, 적합성 평가, 기본 설정, 취약점 자동화 처리 등)과 중복되지 않으며, 산업용 서
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 12:55:38 (시간대 미표기)
+- 원문: [commit 0037e66a0137062d5115afb8e45c34dc4fcf6aa4](https://github.com/useformotor3/ai-discord-bot/commit/0037e66a0137062d5115afb8e45c34dc4fcf6aa4) | [research_archive/2026-11-14_125538.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_125538.md) | commit UTC 2026-11-14T12:55:55Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 조사 내용(하드웨어 보안, 적합성 평가, 기본 설정, 취약점 자동화 처리 등)과 중복되지 않으며, 산업용 서
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #157 — P1 — EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 하드웨어 보안, 적합성 평가, 기본 설정(Secure by default), 취약점 자동화 처리 등 이전 조사 영역과 완전히
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 13:00:52 (시간대 미표기)
+- 원문: [commit 8f2244aeb6204c20da7d9f64b9a78fd932853d27](https://github.com/useformotor3/ai-discord-bot/commit/8f2244aeb6204c20da7d9f64b9a78fd932853d27) | [research_archive/2026-11-14_130052.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_130052.md) | commit UTC 2026-11-14T13:01:08Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 하드웨어 보안, 적합성 평가, 기본 설정(Secure by default), 취약점 자동화 처리 등 이전 조사 영역과 완전히
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. Annex I Part I(2)(b),(d),(j); 특정 비밀번호 방식·최초 변경·모든 포트 차단을 보편적 법정 구현으로 과장하지 않음.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #158 — P1 — EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다뤄진 하드웨어 보안, 적합성 평가, 기본 설정(Secure by default), 취약점 자동화 처리 영역과 명확히
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 13:05:31 (시간대 미표기)
+- 원문: [commit cc0032211cded3658042c2b3070b8d91ab52b69d](https://github.com/useformotor3/ai-discord-bot/commit/cc0032211cded3658042c2b3070b8d91ab52b69d) | [research_archive/2026-11-14_130531.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_130531.md) | commit UTC 2026-11-14T13:05:47Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다뤄진 하드웨어 보안, 적합성 평가, 기본 설정(Secure by default), 취약점 자동화 처리 영역과 명확히
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. Annex I Part I(2)(b),(d),(j); 특정 비밀번호 방식·최초 변경·모든 포트 차단을 보편적 법정 구현으로 과장하지 않음.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #159 — P1 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다뤄진 하드웨어 보안, 적합성 평가, 기본 설정(Secure by default), 취약점 자동화 처리 영역
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 13:10:36 (시간대 미표기)
+- 원문: [commit c4739465672489502637a59519556c1f0168add6](https://github.com/useformotor3/ai-discord-bot/commit/c4739465672489502637a59519556c1f0168add6) | [research_archive/2026-11-14_131036.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_131036.md) | commit UTC 2026-11-14T13:10:52Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다뤄진 하드웨어 보안, 적합성 평가, 기본 설정(Secure by default), 취약점 자동화 처리 영역
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. Annex I Part I(2)(b),(d),(j); 특정 비밀번호 방식·최초 변경·모든 포트 차단을 보편적 법정 구현으로 과장하지 않음.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #160 — P1 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 하드웨어 보안, 적합성 평가, 기본 설정(Secure by default), 취약점 자동화 처리 등 기존에 다뤄진
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 13:15:37 (시간대 미표기)
+- 원문: [commit 119fa620ce5edad9bbd04298d8624d03ca420c14](https://github.com/useformotor3/ai-discord-bot/commit/119fa620ce5edad9bbd04298d8624d03ca420c14) | [research_archive/2026-11-14_131537.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_131537.md) | commit UTC 2026-11-14T13:15:53Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 하드웨어 보안, 적합성 평가, 기본 설정(Secure by default), 취약점 자동화 처리 등 기존에 다뤄진
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. Annex I Part I(2)(b),(d),(j); 특정 비밀번호 방식·최초 변경·모든 포트 차단을 보편적 법정 구현으로 과장하지 않음.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #161 — P1 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이미 다뤄진 하드웨어 보안, 적합성 평가, 기본 설정, 취약점 자동화 처리 영역과 명확히 차별화되는 **"소프트웨
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 13:20:35 (시간대 미표기)
+- 원문: [commit 0706e258b874fb3eba8f652830c02aff1c27dbd6](https://github.com/useformotor3/ai-discord-bot/commit/0706e258b874fb3eba8f652830c02aff1c27dbd6) | [research_archive/2026-11-14_132035.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_132035.md) | commit UTC 2026-11-14T13:20:50Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이미 다뤄진 하드웨어 보안, 적합성 평가, 기본 설정, 취약점 자동화 처리 영역과 명확히 차별화되는 **"소프트웨
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #162 — P1 — EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다뤄진 하드웨어 보안, 적합성 평가, 기본 설정(Secure by default), 취약점 자동화 처리 및 소프트웨어
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 13:25:36 (시간대 미표기)
+- 원문: [commit 676435d0d918e24ef84cfb4b09a3a661659409c6](https://github.com/useformotor3/ai-discord-bot/commit/676435d0d918e24ef84cfb4b09a3a661659409c6) | [research_archive/2026-11-14_132536.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_132536.md) | commit UTC 2026-11-14T13:25:53Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다뤄진 하드웨어 보안, 적합성 평가, 기본 설정(Secure by default), 취약점 자동화 처리 및 소프트웨어
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. Annex I Part I(2)(b),(d),(j); 특정 비밀번호 방식·최초 변경·모든 포트 차단을 보편적 법정 구현으로 과장하지 않음.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #163 — P0 — EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다뤄진 하드웨어 보안, 적합성 평가, 기본 설정, 취약점 자동화 처리, SBOM 영역과 명확히 차별화되는 **"취약점
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 13:30:47 (시간대 미표기)
+- 원문: [commit 49af9b2257941632467efa0852786e4dcca3abb2](https://github.com/useformotor3/ai-discord-bot/commit/49af9b2257941632467efa0852786e4dcca3abb2) | [research_archive/2026-11-14_133047.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_133047.md) | commit UTC 2026-11-14T13:31:04Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다뤄진 하드웨어 보안, 적합성 평가, 기본 설정, 취약점 자동화 처리, SBOM 영역과 명확히 차별화되는 **"취약점
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #164 — P0 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 하드웨어 보안, 적합성 평가, 기본 설정(Secure by default), 취약점 자동화 처리, SBOM, 취약
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 13:35:39 (시간대 미표기)
+- 원문: [commit 1457f1068941860ab492498ba83057d324052a9b](https://github.com/useformotor3/ai-discord-bot/commit/1457f1068941860ab492498ba83057d324052a9b) | [research_archive/2026-11-14_133539.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_133539.md) | commit UTC 2026-11-14T13:35:55Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 하드웨어 보안, 적합성 평가, 기본 설정(Secure by default), 취약점 자동화 처리, SBOM, 취약
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #165 — P0 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 하드웨어 보안, 적합성 평가, 기본 설정(Secure by default), 취약점 자동화 처리, SBOM, 취약
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 13:40:40 (시간대 미표기)
+- 원문: [commit 705b0564075bd33f975c52e097a756a43c74447c](https://github.com/useformotor3/ai-discord-bot/commit/705b0564075bd33f975c52e097a756a43c74447c) | [research_archive/2026-11-14_134040.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_134040.md) | commit UTC 2026-11-14T13:40:56Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 하드웨어 보안, 적합성 평가, 기본 설정(Secure by default), 취약점 자동화 처리, SBOM, 취약
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #166 — P0 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다뤄진 하드웨어 보안, 적합성 평가, 기본 설정, 취약점 자동화 처리, SBOM, 무상 패치 의무 등과 명확
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 13:45:35 (시간대 미표기)
+- 원문: [commit 2dcb0541091deeaa575adee0dacf1a1576abd048](https://github.com/useformotor3/ai-discord-bot/commit/2dcb0541091deeaa575adee0dacf1a1576abd048) | [research_archive/2026-11-14_134535.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_134535.md) | commit UTC 2026-11-14T13:45:51Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 (EU) 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다뤄진 하드웨어 보안, 적합성 평가, 기본 설정, 취약점 자동화 처리, SBOM, 무상 패치 의무 등과 명확
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #167 — P0 — EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다뤄진 하드웨어 보안, 적합성 평가, 기본 설정, 취약점 자동화 처리, SBOM, 무상 패치 의무 등과 명확히 차별화되
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 13:50:34 (시간대 미표기)
+- 원문: [commit b5769ae6dd413cd804c7e1430013ca1f75c8805f](https://github.com/useformotor3/ai-discord-bot/commit/b5769ae6dd413cd804c7e1430013ca1f75c8805f) | [research_archive/2026-11-14_135034.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_135034.md) | commit UTC 2026-11-14T13:50:53Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다뤄진 하드웨어 보안, 적합성 평가, 기본 설정, 취약점 자동화 처리, SBOM, 무상 패치 의무 등과 명확히 차별화되
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #168 — P0 — EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 하드웨어 보안, 적합성 평가, 기본 설정(Secure by default), 취약점 자동화 처리, SBOM, 무상 패치 의무
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 13:55:39 (시간대 미표기)
+- 원문: [commit 1c38ae389443f66555f68c24f533c4f54f129cc1](https://github.com/useformotor3/ai-discord-bot/commit/1c38ae389443f66555f68c24f533c4f54f129cc1) | [research_archive/2026-11-14_135539.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_135539.md) | commit UTC 2026-11-14T13:55:55Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 하드웨어 보안, 적합성 평가, 기본 설정(Secure by default), 취약점 자동화 처리, SBOM, 무상 패치 의무
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #169 — P1 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다룬 핵심 주제들과 중복되지 않도록 **산업용 서보 드라이브 제조사가 준수해야 할 '보안 업데이트의 전달 및
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 14:00:49 (시간대 미표기)
+- 원문: [commit dc97ca0b866f0e71c78a88a4f59259cfe09592f8](https://github.com/useformotor3/ai-discord-bot/commit/dc97ca0b866f0e71c78a88a4f59259cfe09592f8) | [research_archive/2026-11-14_140049.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_140049.md) | commit UTC 2026-11-14T14:01:14Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다룬 핵심 주제들과 중복되지 않도록 **산업용 서보 드라이브 제조사가 준수해야 할 '보안 업데이트의 전달 및
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #170 — P0 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다뤄진 주제(하드웨어 보안, 적합성 평가, 기본 설정, 취약점 자동화 처리, SBOM, 무상 패치, 디지털
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 14:05:29 (시간대 미표기)
+- 원문: [commit 6cf611cbe4e67fcd24b11c55d71663efbdba0b62](https://github.com/useformotor3/ai-discord-bot/commit/6cf611cbe4e67fcd24b11c55d71663efbdba0b62) | [research_archive/2026-11-14_140529.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_140529.md) | commit UTC 2026-11-14T14:05:47Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다뤄진 주제(하드웨어 보안, 적합성 평가, 기본 설정, 취약점 자동화 처리, SBOM, 무상 패치, 디지털
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #171 — P0 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다뤄진 주제(하드웨어 보안, 적합성 평가, 기본 설정, 취약점 자동화 처리, SBOM, 무상 패치, 디지털
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 14:10:56 (시간대 미표기)
+- 원문: [commit 3e887395646d6d36fb069c729add816718018c68](https://github.com/useformotor3/ai-discord-bot/commit/3e887395646d6d36fb069c729add816718018c68) | [research_archive/2026-11-14_141056.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_141056.md) | commit UTC 2026-11-14T14:11:19Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다뤄진 주제(하드웨어 보안, 적합성 평가, 기본 설정, 취약점 자동화 처리, SBOM, 무상 패치, 디지털
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #172 — P0 — EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다룬 하드웨어 보안, 적합성 평가, 기본 설정, 취약점 자동화 처리, SBOM, 무상 패치, 디지털 요소 수명주기, 보
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 14:15:36 (시간대 미표기)
+- 원문: [commit c372ba090112da175deb8da0c1c6a233acb1bb71](https://github.com/useformotor3/ai-discord-bot/commit/c372ba090112da175deb8da0c1c6a233acb1bb71) | [research_archive/2026-11-14_141536.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_141536.md) | commit UTC 2026-11-14T14:15:53Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다룬 하드웨어 보안, 적합성 평가, 기본 설정, 취약점 자동화 처리, SBOM, 무상 패치, 디지털 요소 수명주기, 보
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #173 — P0 — EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다뤄진 주요 영역(하드웨어 보안, 기본 설정, SBOM, 취약점 자동화 처리, 무상 패치, 보안 업데이트 전달 등)과
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 14:20:37 (시간대 미표기)
+- 원문: [commit 60bb0b519cd04307c4ee142ec738338d33fa60ab](https://github.com/useformotor3/ai-discord-bot/commit/60bb0b519cd04307c4ee142ec738338d33fa60ab) | [research_archive/2026-11-14_142037.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_142037.md) | commit UTC 2026-11-14T14:20:53Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다뤄진 주요 영역(하드웨어 보안, 기본 설정, SBOM, 취약점 자동화 처리, 무상 패치, 보안 업데이트 전달 등)과
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #174 — P1 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다룬 주제들과 중복되지 않도록 산업용 서보 드라이브 제조사가 준수해야 할 **'사고 및 심각한 취약점 보고
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 14:25:36 (시간대 미표기)
+- 원문: [commit e884b6e24f1b0261c3f10ee748f6fedfc3a416f1](https://github.com/useformotor3/ai-discord-bot/commit/e884b6e24f1b0261c3f10ee748f6fedfc3a416f1) | [research_archive/2026-11-14_142536.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_142536.md) | commit UTC 2026-11-14T14:25:52Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다룬 주제들과 중복되지 않도록 산업용 서보 드라이브 제조사가 준수해야 할 **'사고 및 심각한 취약점 보고
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #175 — P0 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다뤄진 주제(하드웨어 보안, 적합성 평가, 기본 설정, 취약점 자동화 처리, SBOM, 무상 패치, 디지털
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 14:30:41 (시간대 미표기)
+- 원문: [commit 76ee9a7a3520d671969b837975c89c0886462e44](https://github.com/useformotor3/ai-discord-bot/commit/76ee9a7a3520d671969b837975c89c0886462e44) | [research_archive/2026-11-14_143041.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_143041.md) | commit UTC 2026-11-14T14:30:59Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다뤄진 주제(하드웨어 보안, 적합성 평가, 기본 설정, 취약점 자동화 처리, SBOM, 무상 패치, 디지털
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #176 — P0 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다뤄진 주제(하드웨어 보안, 적합성 평가, 기본 설정, 취약점 자동화 처리, SBOM, 무상 패치, 디지털
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 14:35:30 (시간대 미표기)
+- 원문: [commit 1455c47c734488daeb191816ad829daaf7003b4d](https://github.com/useformotor3/ai-discord-bot/commit/1455c47c734488daeb191816ad829daaf7003b4d) | [research_archive/2026-11-14_143530.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_143530.md) | commit UTC 2026-11-14T14:35:48Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다뤄진 주제(하드웨어 보안, 적합성 평가, 기본 설정, 취약점 자동화 처리, SBOM, 무상 패치, 디지털
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #177 — P1 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다룬 주제들과 중복되지 않으며 산업용 서보 드라이브 제조사가 반드시 준수해야 할 **'보안 가이드라인 및 사
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 14:40:40 (시간대 미표기)
+- 원문: [commit cd215b23ff113820523daadc4b5abb599c2b3fb0](https://github.com/useformotor3/ai-discord-bot/commit/cd215b23ff113820523daadc4b5abb599c2b3fb0) | [research_archive/2026-11-14_144040.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_144040.md) | commit UTC 2026-11-14T14:40:56Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다룬 주제들과 중복되지 않으며 산업용 서보 드라이브 제조사가 반드시 준수해야 할 **'보안 가이드라인 및 사
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #178 — P0 — EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다뤄진 주제들(하드웨어 보안, 기본 설정, SBOM, 취약점 자동화 처리, 무상 패치, 보안 업데이트 전달, 사고 보고
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 14:45:45 (시간대 미표기)
+- 원문: [commit 0251273a711a9d61b14a41a65e9cbf4150b9da4f](https://github.com/useformotor3/ai-discord-bot/commit/0251273a711a9d61b14a41a65e9cbf4150b9da4f) | [research_archive/2026-11-14_144545.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_144545.md) | commit UTC 2026-11-14T14:46:02Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다뤄진 주제들(하드웨어 보안, 기본 설정, SBOM, 취약점 자동화 처리, 무상 패치, 보안 업데이트 전달, 사고 보고
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #179 — P1 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다룬 주제들과 중복되지 않으며 산업용 서보 드라이브 제조사가 반드시 준수해야 할 **'디지털 요소를 탑재한
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 14:50:36 (시간대 미표기)
+- 원문: [commit 9d4ae1802b6d5b9b9996974c12f87c3fef7821d5](https://github.com/useformotor3/ai-discord-bot/commit/9d4ae1802b6d5b9b9996974c12f87c3fef7821d5) | [research_archive/2026-11-14_145036.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_145036.md) | commit UTC 2026-11-14T14:50:52Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다룬 주제들과 중복되지 않으며 산업용 서보 드라이브 제조사가 반드시 준수해야 할 **'디지털 요소를 탑재한
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #180 — P1 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다룬 주제들과 중복되지 않으며 산업용 서보 드라이브 제조사가 반드시 준수해야 할 핵심 주제인 **'보안 업데
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 14:55:31 (시간대 미표기)
+- 원문: [commit a9a9162ee83a147775f3af745208d0051530775e](https://github.com/useformotor3/ai-discord-bot/commit/a9a9162ee83a147775f3af745208d0051530775e) | [research_archive/2026-11-14_145531.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_145531.md) | commit UTC 2026-11-14T14:55:48Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다룬 주제들과 중복되지 않으며 산업용 서보 드라이브 제조사가 반드시 준수해야 할 핵심 주제인 **'보안 업데
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #181 — P0 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다룬 주제들(하드웨어 보안, 기본 설정, SBOM, 취약점 처리, 수명주기, 보안 업데이트 전달, 사용자 설
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 15:00:55 (시간대 미표기)
+- 원문: [commit d89fd53b8aa536dd0e2982ca7d1053800fa2aad4](https://github.com/useformotor3/ai-discord-bot/commit/d89fd53b8aa536dd0e2982ca7d1053800fa2aad4) | [research_archive/2026-11-14_150055.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_150055.md) | commit UTC 2026-11-14T15:01:11Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다룬 주제들(하드웨어 보안, 기본 설정, SBOM, 취약점 처리, 수명주기, 보안 업데이트 전달, 사용자 설
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #182 — P1 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다룬 주제들과 중복되지 않으며 산업용 서보 드라이브 제조사가 반드시 준수해야 할 핵심 주제인 **'접근 제어
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 15:05:30 (시간대 미표기)
+- 원문: [commit f8d24adb0a8a33f661ab4fb2085e6292d44aae2f](https://github.com/useformotor3/ai-discord-bot/commit/f8d24adb0a8a33f661ab4fb2085e6292d44aae2f) | [research_archive/2026-11-14_150530.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_150530.md) | commit UTC 2026-11-14T15:05:48Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다룬 주제들과 중복되지 않으며 산업용 서보 드라이브 제조사가 반드시 준수해야 할 핵심 주제인 **'접근 제어
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #183 — P0 — EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다룬 하드웨어 보안, 기본 설정, SBOM, 취약점 처리, 수명주기 관리, 보안 업데이트 전달, 접근 제어 등과 중복되
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 15:10:41 (시간대 미표기)
+- 원문: [commit a31790c4a473f4501a355b61a9499487d5f9f7c5](https://github.com/useformotor3/ai-discord-bot/commit/a31790c4a473f4501a355b61a9499487d5f9f7c5) | [research_archive/2026-11-14_151041.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_151041.md) | commit UTC 2026-11-14T15:10:57Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다룬 하드웨어 보안, 기본 설정, SBOM, 취약점 처리, 수명주기 관리, 보안 업데이트 전달, 접근 제어 등과 중복되
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #184 — P1 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다룬 주요 보안 요구사항(수명주기 관리, 보안 업데이트 전달, 접근 제어 등)과 중복되지 않으며, 산업용 서
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 15:15:35 (시간대 미표기)
+- 원문: [commit e1c5cfbc82db2d6995344c5380c4a83b66d3eb06](https://github.com/useformotor3/ai-discord-bot/commit/e1c5cfbc82db2d6995344c5380c4a83b66d3eb06) | [research_archive/2026-11-14_151535.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_151535.md) | commit UTC 2026-11-14T15:15:51Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다룬 주요 보안 요구사항(수명주기 관리, 보안 업데이트 전달, 접근 제어 등)과 중복되지 않으며, 산업용 서
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #185 — P0 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다룬 주제들(보안 업데이트, 하드웨어 보안, 기본 설정, SBOM, 취약점 처리, 수명주기, 접근 제어 등)
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 15:20:34 (시간대 미표기)
+- 원문: [commit 5f7a3179c07f40b55439818ee19fef40f095fcdd](https://github.com/useformotor3/ai-discord-bot/commit/5f7a3179c07f40b55439818ee19fef40f095fcdd) | [research_archive/2026-11-14_152034.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_152034.md) | commit UTC 2026-11-14T15:20:51Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다룬 주제들(보안 업데이트, 하드웨어 보안, 기본 설정, SBOM, 취약점 처리, 수명주기, 접근 제어 등)
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #186 — P0 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다룬 주제들(하드웨어 보안, 기본 설정, SBOM, 취약점 처리, 수명주기, 보안 업데이트 전달, 사용자 설
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 15:25:30 (시간대 미표기)
+- 원문: [commit 33cf9f93f8c5e12104e7104d7973bc516b744ffd](https://github.com/useformotor3/ai-discord-bot/commit/33cf9f93f8c5e12104e7104d7973bc516b744ffd) | [research_archive/2026-11-14_152530.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_152530.md) | commit UTC 2026-11-14T15:25:47Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다룬 주제들(하드웨어 보안, 기본 설정, SBOM, 취약점 처리, 수명주기, 보안 업데이트 전달, 사용자 설
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #187 — P0 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다룬 하드웨어 보안, 기본 설정, SBOM, 취약점 처리, 수명주기 관리, 보안 업데이트 전달, 접근 제어,
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 15:30:56 (시간대 미표기)
+- 원문: [commit aeb099c5ec3d133f57fd473d1ae5361cbee2e721](https://github.com/useformotor3/ai-discord-bot/commit/aeb099c5ec3d133f57fd473d1ae5361cbee2e721) | [research_archive/2026-11-14_153056.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_153056.md) | commit UTC 2026-11-14T15:31:13Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다룬 하드웨어 보안, 기본 설정, SBOM, 취약점 처리, 수명주기 관리, 보안 업데이트 전달, 접근 제어,
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #188 — P0 — EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다룬 하드웨어/소프트웨어 보안 기본 설정, SBOM, 취약점 처리, 수명주기, 업데이트, 접근 제어, 사용자 설명서 등
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 15:35:32 (시간대 미표기)
+- 원문: [commit 9fadf1095d2e741ff749bfba16415d323ba0c9d5](https://github.com/useformotor3/ai-discord-bot/commit/9fadf1095d2e741ff749bfba16415d323ba0c9d5) | [research_archive/2026-11-14_153532.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_153532.md) | commit UTC 2026-11-14T15:35:46Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다룬 하드웨어/소프트웨어 보안 기본 설정, SBOM, 취약점 처리, 수명주기, 업데이트, 접근 제어, 사용자 설명서 등
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #189 — P0 — EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다룬 기본 설정, SBOM, 취약점 처리, 수명주기, 업데이트, 접근 제어, 사용자 설명서 등과 명확히 중복되지 않는
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 15:40:38 (시간대 미표기)
+- 원문: [commit 3fa2dc7f28abf55404f5556d12b7b7c52c87e069](https://github.com/useformotor3/ai-discord-bot/commit/3fa2dc7f28abf55404f5556d12b7b7c52c87e069) | [research_archive/2026-11-14_154038.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_154038.md) | commit UTC 2026-11-14T15:40:53Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다룬 기본 설정, SBOM, 취약점 처리, 수명주기, 업데이트, 접근 제어, 사용자 설명서 등과 명확히 중복되지 않는
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #190 — P0 — EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다룬 기본 설정, SBOM, 취약점 처리, 수명주기, 업데이트, 접근 제어, 사용자 설명서 등과 명확히 중복되지 않으며
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 15:45:32 (시간대 미표기)
+- 원문: [commit bdf2c2ea6a3cdb28838788038e9740de1ca58f80](https://github.com/useformotor3/ai-discord-bot/commit/bdf2c2ea6a3cdb28838788038e9740de1ca58f80) | [research_archive/2026-11-14_154532.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_154532.md) | commit UTC 2026-11-14T15:45:48Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다룬 기본 설정, SBOM, 취약점 처리, 수명주기, 업데이트, 접근 제어, 사용자 설명서 등과 명확히 중복되지 않으며
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #191 — P0 — EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 조사에서 다루어진 항목(하드웨어 보안, 기본 설정, SBOM, 취약점 처리, 수명주기, 업데이트, 접근 제어, 사용자
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 15:50:40 (시간대 미표기)
+- 원문: [commit 74a7cc0afe231ce66c6894a54d3faa82560db174](https://github.com/useformotor3/ai-discord-bot/commit/74a7cc0afe231ce66c6894a54d3faa82560db174) | [research_archive/2026-11-14_155040.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_155040.md) | commit UTC 2026-11-14T15:50:56Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 조사에서 다루어진 항목(하드웨어 보안, 기본 설정, SBOM, 취약점 처리, 수명주기, 업데이트, 접근 제어, 사용자
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #192 — P0 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 조사에서 다루어진 항목(하드웨어 보안, 기본 설정, SBOM, 취약점 처리, 수명주기, 업데이트, 접근 제어
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 15:55:32 (시간대 미표기)
+- 원문: [commit 97e6301f55075a19c802262c1cad424f32481718](https://github.com/useformotor3/ai-discord-bot/commit/97e6301f55075a19c802262c1cad424f32481718) | [research_archive/2026-11-14_155532.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_155532.md) | commit UTC 2026-11-14T15:55:48Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전 조사에서 다루어진 항목(하드웨어 보안, 기본 설정, SBOM, 취약점 처리, 수명주기, 업데이트, 접근 제어
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #193 — P0 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 항목(기본 설정, SBOM, 취약점 처리, 수명주기, 업데이트, 접근 제어, 사용자 설명서 등)과
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 16:00:55 (시간대 미표기)
+- 원문: [commit d1dc0ba24d0b6588765fe640fe380eb84bc04382](https://github.com/useformotor3/ai-discord-bot/commit/d1dc0ba24d0b6588765fe640fe380eb84bc04382) | [research_archive/2026-11-14_160055.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_160055.md) | commit UTC 2026-11-14T16:01:13Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 항목(기본 설정, SBOM, 취약점 처리, 수명주기, 업데이트, 접근 제어, 사용자 설명서 등)과
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #194 — P0 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다룬 기본 설정, SBOM, 취약점 처리, 수명주기, 업데이트, 접근 제어, 사용자 설명서 등과 명확히 중복
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 16:05:33 (시간대 미표기)
+- 원문: [commit 46ce7eeafe7570eee954d37998a1144ec4642481](https://github.com/useformotor3/ai-discord-bot/commit/46ce7eeafe7570eee954d37998a1144ec4642481) | [research_archive/2026-11-14_160533.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_160533.md) | commit UTC 2026-11-14T16:05:49Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다룬 기본 설정, SBOM, 취약점 처리, 수명주기, 업데이트, 접근 제어, 사용자 설명서 등과 명확히 중복
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #195 — P0 — EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 항목(기본 설정, SBOM, 취약점 처리, 수명주기, 업데이트, 접근 제어, 사용자 설명서 등)과 명확히 중복
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 16:10:41 (시간대 미표기)
+- 원문: [commit effb9e93864331a54b1f1973573ec7ef74547fa7](https://github.com/useformotor3/ai-discord-bot/commit/effb9e93864331a54b1f1973573ec7ef74547fa7) | [research_archive/2026-11-14_161041.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_161041.md) | commit UTC 2026-11-14T16:10:58Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 항목(기본 설정, SBOM, 취약점 처리, 수명주기, 업데이트, 접근 제어, 사용자 설명서 등)과 명확히 중복
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #196 — P0 — EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다루어진 기본 설정, SBOM, 취약점 처리, 수명주기, 업데이트, 접근 제어, 사용자 설명서 등과 명확히 중복되지 않
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 16:15:36 (시간대 미표기)
+- 원문: [commit a3263a3b642e4074023172ad185a6686fe006e86](https://github.com/useformotor3/ai-discord-bot/commit/a3263a3b642e4074023172ad185a6686fe006e86) | [research_archive/2026-11-14_161536.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_161536.md) | commit UTC 2026-11-14T16:15:52Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다루어진 기본 설정, SBOM, 취약점 처리, 수명주기, 업데이트, 접근 제어, 사용자 설명서 등과 명확히 중복되지 않
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #197 — P0 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 항목(기본 설정, SBOM, 취약점 처리, 수명주기, 업데이트, 접근 제어, 사용자 설명서 등)과
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 16:20:44 (시간대 미표기)
+- 원문: [commit b7084014b334319a73256258a030c8ed2c47a705](https://github.com/useformotor3/ai-discord-bot/commit/b7084014b334319a73256258a030c8ed2c47a705) | [research_archive/2026-11-14_162044.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_162044.md) | commit UTC 2026-11-14T16:21:00Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 항목(기본 설정, SBOM, 취약점 처리, 수명주기, 업데이트, 접근 제어, 사용자 설명서 등)과
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #198 — P0 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 항목(기본 설정, SBOM, 취약점 처리, 수명주기, 업데이트, 접근 제어, 사용자 설명서 등)과
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 16:25:31 (시간대 미표기)
+- 원문: [commit 0305035fd5d8501300583d035cf47359e8de66f1](https://github.com/useformotor3/ai-discord-bot/commit/0305035fd5d8501300583d035cf47359e8de66f1) | [research_archive/2026-11-14_162531.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_162531.md) | commit UTC 2026-11-14T16:25:47Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 항목(기본 설정, SBOM, 취약점 처리, 수명주기, 업데이트, 접근 제어, 사용자 설명서 등)과
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #199 — P0 — EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 기본 설정, SBOM, 취약점 처리, 수명주기, 업데이트, 접근 제어, 사용자 설명서 등과 명확히 중복되지 않
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 16:30:43 (시간대 미표기)
+- 원문: [commit 7b8283645b0ec9eb05e5e93f042bd44fe3066732](https://github.com/useformotor3/ai-discord-bot/commit/7b8283645b0ec9eb05e5e93f042bd44fe3066732) | [research_archive/2026-11-14_163043.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_163043.md) | commit UTC 2026-11-14T16:30:59Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 기본 설정, SBOM, 취약점 처리, 수명주기, 업데이트, 접근 제어, 사용자 설명서 등과 명확히 중복되지 않
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #200 — P0 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 항목(기본 설정, SBOM, 취약점 처리, 수명주기, 업데이트, 접근 제어, 사용자 설명서 등)과
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 16:35:37 (시간대 미표기)
+- 원문: [commit 79a114ba5ffc38c79981766e38b1cd756498ca39](https://github.com/useformotor3/ai-discord-bot/commit/79a114ba5ffc38c79981766e38b1cd756498ca39) | [research_archive/2026-11-14_163537.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_163537.md) | commit UTC 2026-11-14T16:35:54Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 항목(기본 설정, SBOM, 취약점 처리, 수명주기, 업데이트, 접근 제어, 사용자 설명서 등)과
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #201 — P0 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 기본 항목(기본 설정, SBOM, 취약점 처리, 수명주기, 업데이트, 접근 제어, 사용자 설명서 등
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 16:40:40 (시간대 미표기)
+- 원문: [commit 8e7ef5082c49aed630f0f05f8a3394e168ad5fba](https://github.com/useformotor3/ai-discord-bot/commit/8e7ef5082c49aed630f0f05f8a3394e168ad5fba) | [research_archive/2026-11-14_164040.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_164040.md) | commit UTC 2026-11-14T16:40:54Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 기본 항목(기본 설정, SBOM, 취약점 처리, 수명주기, 업데이트, 접근 제어, 사용자 설명서 등
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #202 — P1 — EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 항목들과 명확히 중복되지 않는 **'자동화된 취약점 및 보안 이벤트 로깅/모니터링 기능(Logging and
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 16:45:33 (시간대 미표기)
+- 원문: [commit f4a62e07a0286f8cf274e1dbb880333b47cdca0e](https://github.com/useformotor3/ai-discord-bot/commit/f4a62e07a0286f8cf274e1dbb880333b47cdca0e) | [research_archive/2026-11-14_164533.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_164533.md) | commit UTC 2026-11-14T16:45:50Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 항목들과 명확히 중복되지 않는 **'자동화된 취약점 및 보안 이벤트 로깅/모니터링 기능(Logging and
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. Annex I Part I(2)(l)의 기록·모니터링·opt-out 범위와 보존·개인정보·로그 무결성 설계를 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #203 — P0 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 항목(기본 설정, SBOM, 취약점 처리, 수명주기, 업데이트, 접근 제어, 사용자 설명서, 로깅
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 16:50:38 (시간대 미표기)
+- 원문: [commit 831f9641d06fd3f8ee4f32e972ab4e791d2366da](https://github.com/useformotor3/ai-discord-bot/commit/831f9641d06fd3f8ee4f32e972ab4e791d2366da) | [research_archive/2026-11-14_165038.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_165038.md) | commit UTC 2026-11-14T16:50:55Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 항목(기본 설정, SBOM, 취약점 처리, 수명주기, 업데이트, 접근 제어, 사용자 설명서, 로깅
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #204 — P0 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 항목(기본 설정, SBOM, 취약점 처리, 수명주기, 업데이트, 접근 제어, 사용자 설명서, 로깅
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 16:55:29 (시간대 미표기)
+- 원문: [commit ead1072c2967cc3b2e229f3e0117f9037658e0ea](https://github.com/useformotor3/ai-discord-bot/commit/ead1072c2967cc3b2e229f3e0117f9037658e0ea) | [research_archive/2026-11-14_165529.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_165529.md) | commit UTC 2026-11-14T16:55:53Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 항목(기본 설정, SBOM, 취약점 처리, 수명주기, 업데이트, 접근 제어, 사용자 설명서, 로깅
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #205 — P0 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 항목(기본 설정, SBOM, 취약점 처리, 수명주기, 업데이트, 접근 제어, 사용자 설명서, 로깅
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 17:01:00 (시간대 미표기)
+- 원문: [commit b675b386446bc3b4259e404156840d6247cea088](https://github.com/useformotor3/ai-discord-bot/commit/b675b386446bc3b4259e404156840d6247cea088) | [research_archive/2026-11-14_170100.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_170100.md) | commit UTC 2026-11-14T17:01:17Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 항목(기본 설정, SBOM, 취약점 처리, 수명주기, 업데이트, 접근 제어, 사용자 설명서, 로깅
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #206 — P0 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 항목(기본 설정, SBOM, 취약점 처리, 수명주기, 업데이트, 접근 제어, 사용자 설명서, 로깅
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 17:05:36 (시간대 미표기)
+- 원문: [commit 796c071558c04fb6ece91402f87050a33fef3bc8](https://github.com/useformotor3/ai-discord-bot/commit/796c071558c04fb6ece91402f87050a33fef3bc8) | [research_archive/2026-11-14_170536.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_170536.md) | commit UTC 2026-11-14T17:05:55Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 항목(기본 설정, SBOM, 취약점 처리, 수명주기, 업데이트, 접근 제어, 사용자 설명서, 로깅
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #207 — P0 — EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 항목(기본 설정, SBOM, 취약점 처리, 수명주기, 업데이트, 접근 제어, 사용자 설명서, 로깅 등)과 명확
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 17:10:37 (시간대 미표기)
+- 원문: [commit e6c7033e59fdab05c5809fbd1cbf1474aa9270f9](https://github.com/useformotor3/ai-discord-bot/commit/e6c7033e59fdab05c5809fbd1cbf1474aa9270f9) | [research_archive/2026-11-14_171037.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_171037.md) | commit UTC 2026-11-14T17:10:52Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 항목(기본 설정, SBOM, 취약점 처리, 수명주기, 업데이트, 접근 제어, 사용자 설명서, 로깅 등)과 명확
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #208 — P0 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이미 언급된 기본 설정, SBOM, 취약점 처리, 수명주기, 업데이트, 접근 제어, 로깅 등을 완전히 배제하고,
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 17:15:35 (시간대 미표기)
+- 원문: [commit 6db5ab202838c3b6109cf63a096b27247f0c2ea9](https://github.com/useformotor3/ai-discord-bot/commit/6db5ab202838c3b6109cf63a096b27247f0c2ea9) | [research_archive/2026-11-14_171535.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_171535.md) | commit UTC 2026-11-14T17:15:52Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이미 언급된 기본 설정, SBOM, 취약점 처리, 수명주기, 업데이트, 접근 제어, 로깅 등을 완전히 배제하고,
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #209 — P0 — EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이미 다뤄진 항목(기본 설정, SBOM, 취약점 처리, 수명주기, 업데이트, 접근 제어, 로깅, 사용자 설명서 등)과 명확히
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 17:20:39 (시간대 미표기)
+- 원문: [commit e4766cce219fa706750cdf360aea9119118519cf](https://github.com/useformotor3/ai-discord-bot/commit/e4766cce219fa706750cdf360aea9119118519cf) | [research_archive/2026-11-14_172039.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_172039.md) | commit UTC 2026-11-14T17:20:55Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이미 다뤄진 항목(기본 설정, SBOM, 취약점 처리, 수명주기, 업데이트, 접근 제어, 로깅, 사용자 설명서 등)과 명확히
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #210 — P0 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 항목(기본 설정, SBOM, 취약점 처리, 수명주기, 업데이트, 접근 제어, 로깅, 사용자 설명서
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 17:25:28 (시간대 미표기)
+- 원문: [commit 20fc179418a17e627347d5c4e2723146382fffdf](https://github.com/useformotor3/ai-discord-bot/commit/20fc179418a17e627347d5c4e2723146382fffdf) | [research_archive/2026-11-14_172528.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_172528.md) | commit UTC 2026-11-14T17:25:44Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 항목(기본 설정, SBOM, 취약점 처리, 수명주기, 업데이트, 접근 제어, 로깅, 사용자 설명서
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #211 — P0 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 반복적으로 다뤄진 항목(기본 설정, SBOM, 취약점 처리, 수명주기, 업데이트, 접근 제어, 로깅, 사용
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 17:30:44 (시간대 미표기)
+- 원문: [commit 85e15a7cfcb02f4c101735819226456af7ffd6c9](https://github.com/useformotor3/ai-discord-bot/commit/85e15a7cfcb02f4c101735819226456af7ffd6c9) | [research_archive/2026-11-14_173044.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_173044.md) | commit UTC 2026-11-14T17:31:01Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 반복적으로 다뤄진 항목(기본 설정, SBOM, 취약점 처리, 수명주기, 업데이트, 접근 제어, 로깅, 사용
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #212 — P0 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 반복 언급된 항목(기본 설정, SBOM, 취약점 처리, 수명주기, 업데이트, 접근 제어, 로깅, 사용자 설
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 17:35:34 (시간대 미표기)
+- 원문: [commit c59b6da8cc15ab88f426c0e5e563761c8d01796e](https://github.com/useformotor3/ai-discord-bot/commit/c59b6da8cc15ab88f426c0e5e563761c8d01796e) | [research_archive/2026-11-14_173534.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_173534.md) | commit UTC 2026-11-14T17:35:50Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 반복 언급된 항목(기본 설정, SBOM, 취약점 처리, 수명주기, 업데이트, 접근 제어, 로깅, 사용자 설
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #213 — P0 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이미 언급된 기본 설정, SBOM, 취약점 처리, 수명주기, 업데이트, 접근 제어, 로깅, 사용자 설명서 등과 명
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 17:40:44 (시간대 미표기)
+- 원문: [commit f1e3acff3484751de2778ddb64f460a42b842bb0](https://github.com/useformotor3/ai-discord-bot/commit/f1e3acff3484751de2778ddb64f460a42b842bb0) | [research_archive/2026-11-14_174044.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_174044.md) | commit UTC 2026-11-14T17:41:01Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이미 언급된 기본 설정, SBOM, 취약점 처리, 수명주기, 업데이트, 접근 제어, 로깅, 사용자 설명서 등과 명
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #214 — P0 — EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 언급된 기본 설정, SBOM, 취약점 처리, 수명주기, 업데이트, 접근 제어, 로깅, 사용자 설명서 등과 중복되지 않
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 17:45:32 (시간대 미표기)
+- 원문: [commit 157df3aa13115f3b620bd7c4d878156373871fb7](https://github.com/useformotor3/ai-discord-bot/commit/157df3aa13115f3b620bd7c4d878156373871fb7) | [research_archive/2026-11-14_174532.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_174532.md) | commit UTC 2026-11-14T17:45:49Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 언급된 기본 설정, SBOM, 취약점 처리, 수명주기, 업데이트, 접근 제어, 로깅, 사용자 설명서 등과 중복되지 않
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #215 — P0 — EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 반복 언급된 항목(기본 설정, SBOM, 취약점 처리, 수명주기, 업데이트, 접근 제어, 로깅, 사용자 설명서 등)과
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 17:50:36 (시간대 미표기)
+- 원문: [commit 3b6dd906578c046383f45ba90867d1e76b04e69a](https://github.com/useformotor3/ai-discord-bot/commit/3b6dd906578c046383f45ba90867d1e76b04e69a) | [research_archive/2026-11-14_175036.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_175036.md) | commit UTC 2026-11-14T17:50:53Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 반복 언급된 항목(기본 설정, SBOM, 취약점 처리, 수명주기, 업데이트, 접근 제어, 로깅, 사용자 설명서 등)과
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #216 — P0 — EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 반복 언급된 일반적 항목(기본 설정, SBOM, 취약점 처리, 수명주기, 업데이트, 접근 제어, 로깅, 사용자 설명서
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 17:55:31 (시간대 미표기)
+- 원문: [commit 01773b51e182a33f94926ac85bd50b93a8a96f2f](https://github.com/useformotor3/ai-discord-bot/commit/01773b51e182a33f94926ac85bd50b93a8a96f2f) | [research_archive/2026-11-14_175531.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_175531.md) | commit UTC 2026-11-14T17:55:48Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 반복 언급된 일반적 항목(기본 설정, SBOM, 취약점 처리, 수명주기, 업데이트, 접근 제어, 로깅, 사용자 설명서
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #217 — P1 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다루어진 일반적 항목들과 중복되지 않으며 산업용 서보 드라이브에 직접 적용되는 심화 규제 요건인 **"디지
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 18:00:45 (시간대 미표기)
+- 원문: [commit bc02b287e5e93080744cfb15f6d607f6e1b92a33](https://github.com/useformotor3/ai-discord-bot/commit/bc02b287e5e93080744cfb15f6d607f6e1b92a33) | [research_archive/2026-11-14_180045.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_180045.md) | commit UTC 2026-11-14T18:01:02Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다루어진 일반적 항목들과 중복되지 않으며 산업용 서보 드라이브에 직접 적용되는 심화 규제 요건인 **"디지
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #218 — P0 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이미 다뤄진 일반적 항목(기본 설정, SBOM, 취약점 처리, 수명주기, 업데이트, 접근 제어, 로깅, 사용자 설
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 18:05:30 (시간대 미표기)
+- 원문: [commit 9412ce25bd93a0ab09c31088af6560426f23bac4](https://github.com/useformotor3/ai-discord-bot/commit/9412ce25bd93a0ab09c31088af6560426f23bac4) | [research_archive/2026-11-14_180530.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_180530.md) | commit UTC 2026-11-14T18:05:47Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이미 다뤄진 일반적 항목(기본 설정, SBOM, 취약점 처리, 수명주기, 업데이트, 접근 제어, 로깅, 사용자 설
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #219 — P0 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 반복 언급된 일반적 보안 항목(기본 설정, SBOM, 취약점 처리, 수명주기, 업데이트, 접근 제어, 로깅
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 18:10:38 (시간대 미표기)
+- 원문: [commit ecbc74a6d493c21de6b9049f10164204009fe4b8](https://github.com/useformotor3/ai-discord-bot/commit/ecbc74a6d493c21de6b9049f10164204009fe4b8) | [research_archive/2026-11-14_181038.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_181038.md) | commit UTC 2026-11-14T18:10:56Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 반복 언급된 일반적 보안 항목(기본 설정, SBOM, 취약점 처리, 수명주기, 업데이트, 접근 제어, 로깅
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #220 — P1 — EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 반복 언급된 일반적 요건(기본 설정, 취약점 처리, 수명주기, 업데이트, 접근 제어, 로깅, 사용자 설명서 등)과 완
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 18:15:39 (시간대 미표기)
+- 원문: [commit b7de26fb979cb7d5996c180e5934dac7a0b8e347](https://github.com/useformotor3/ai-discord-bot/commit/b7de26fb979cb7d5996c180e5934dac7a0b8e347) | [research_archive/2026-11-14_181539.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_181539.md) | commit UTC 2026-11-14T18:15:56Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 반복 언급된 일반적 요건(기본 설정, 취약점 처리, 수명주기, 업데이트, 접근 제어, 로깅, 사용자 설명서 등)과 완
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #221 — P0 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 일반적인 보안 요건(기본 설정, 취약점 관리, SBOM, 로깅 등)과 중복되지 않으며, 산업용 서보
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 18:20:36 (시간대 미표기)
+- 원문: [commit a53bd58abf815e369e15b1b50249bf4d70c7f595](https://github.com/useformotor3/ai-discord-bot/commit/a53bd58abf815e369e15b1b50249bf4d70c7f595) | [research_archive/2026-11-14_182036.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_182036.md) | commit UTC 2026-11-14T18:20:52Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 일반적인 보안 요건(기본 설정, 취약점 관리, SBOM, 로깅 등)과 중복되지 않으며, 산업용 서보
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #222 — P0 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 일반적인 보안 요건(기본 설정, SBOM, 취약점 처리, 접근 제어, 로깅, 수명주기 등)과 완벽히
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 18:25:38 (시간대 미표기)
+- 원문: [commit 2bb2bf153b9c21f567d404e83d79c0ea0694e288](https://github.com/useformotor3/ai-discord-bot/commit/2bb2bf153b9c21f567d404e83d79c0ea0694e288) | [research_archive/2026-11-14_182538.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_182538.md) | commit UTC 2026-11-14T18:26:14Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 일반적인 보안 요건(기본 설정, SBOM, 취약점 처리, 접근 제어, 로깅, 수명주기 등)과 완벽히
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #223 — P1 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 일반적인 보안 요건과 완벽히 중복되지 않으며, 산업용 서보 드라이브(Servo Drive) 제조사가
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 18:30:44 (시간대 미표기)
+- 원문: [commit b71f05cc68b4792db31e5466748f651a94c99230](https://github.com/useformotor3/ai-discord-bot/commit/b71f05cc68b4792db31e5466748f651a94c99230) | [research_archive/2026-11-14_183044.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_183044.md) | commit UTC 2026-11-14T18:31:00Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 일반적인 보안 요건과 완벽히 중복되지 않으며, 산업용 서보 드라이브(Servo Drive) 제조사가
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #224 — P0 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 일반적인 보안 요건(기본 설정, SBOM, 취약점 관리, 로깅, 접근 제어 등)과 중복되지 않으며,
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 18:35:29 (시간대 미표기)
+- 원문: [commit 8266f1d5b4a57460c8bdfb522119599bbb14a11c](https://github.com/useformotor3/ai-discord-bot/commit/8266f1d5b4a57460c8bdfb522119599bbb14a11c) | [research_archive/2026-11-14_183529.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_183529.md) | commit UTC 2026-11-14T18:35:46Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 일반적인 보안 요건(기본 설정, SBOM, 취약점 관리, 로깅, 접근 제어 등)과 중복되지 않으며,
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #225 — P1 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 일반적인 보안 요건과 중복되지 않으며, 산업용 서보 드라이브(Servo Drive) 제조사가 준수해
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 18:40:34 (시간대 미표기)
+- 원문: [commit 8b6e76b79b47e97a48b00adfb1ea871e7b230e28](https://github.com/useformotor3/ai-discord-bot/commit/8b6e76b79b47e97a48b00adfb1ea871e7b230e28) | [research_archive/2026-11-14_184034.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_184034.md) | commit UTC 2026-11-14T18:40:58Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 일반적인 보안 요건과 중복되지 않으며, 산업용 서보 드라이브(Servo Drive) 제조사가 준수해
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #226 — P1 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 일반적인 보안 요건과 완벽히 차별화되면서 서보 드라이브와 같은 고정밀 실시간 제어 기기에 직접적으로
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 18:45:35 (시간대 미표기)
+- 원문: [commit d61e4e70335bf89dca8476f8dde8699ebfb81df6](https://github.com/useformotor3/ai-discord-bot/commit/d61e4e70335bf89dca8476f8dde8699ebfb81df6) | [research_archive/2026-11-14_184535.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_184535.md) | commit UTC 2026-11-14T18:45:51Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 일반적인 보안 요건과 완벽히 차별화되면서 서보 드라이브와 같은 고정밀 실시간 제어 기기에 직접적으로
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #227 — P0 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다루어진 일반적 보안 요건(기본 설정, SBOM, 접근 제어, 로깅, 취약점 일반 관리 등)과 완전히 차별화
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 18:50:39 (시간대 미표기)
+- 원문: [commit e2a2e942327487e5c3c5ee037a7dbda788e91ffa](https://github.com/useformotor3/ai-discord-bot/commit/e2a2e942327487e5c3c5ee037a7dbda788e91ffa) | [research_archive/2026-11-14_185039.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_185039.md) | commit UTC 2026-11-14T18:50:56Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다루어진 일반적 보안 요건(기본 설정, SBOM, 접근 제어, 로깅, 취약점 일반 관리 등)과 완전히 차별화
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #228 — P0 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다루어진 일반적인 보안 요건(기본 설정, SBOM, 접근 제어, 로깅, 일반 취약점 관리 등)과 완전히 차별
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 18:55:27 (시간대 미표기)
+- 원문: [commit 7045bbad8e65477444339d9240de2f8b0a235db2](https://github.com/useformotor3/ai-discord-bot/commit/7045bbad8e65477444339d9240de2f8b0a235db2) | [research_archive/2026-11-14_185527.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_185527.md) | commit UTC 2026-11-14T18:55:43Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다루어진 일반적인 보안 요건(기본 설정, SBOM, 접근 제어, 로깅, 일반 취약점 관리 등)과 완전히 차별
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #229 — P1 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다루어진 일반적 보안 요건(기본 설정, 접근 제어, 로깅, 일반 취약점 관리 등)과 완전히 차별화되며, 산업
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 19:00:55 (시간대 미표기)
+- 원문: [commit 34bbdc93d13aa04595ea0a18503f2305481bebea](https://github.com/useformotor3/ai-discord-bot/commit/34bbdc93d13aa04595ea0a18503f2305481bebea) | [research_archive/2026-11-14_190055.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_190055.md) | commit UTC 2026-11-14T19:01:11Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다루어진 일반적 보안 요건(기본 설정, 접근 제어, 로깅, 일반 취약점 관리 등)과 완전히 차별화되며, 산업
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #230 — P0 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 누적된 일반적 보안 요건(기본 설정, SBOM, 접근 제어, 로깅, 취약점 일반 관리 등)과 명확히 차별화되
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 19:05:33 (시간대 미표기)
+- 원문: [commit f5e4fac34db3a4266926226a8f18c7e7599099ab](https://github.com/useformotor3/ai-discord-bot/commit/f5e4fac34db3a4266926226a8f18c7e7599099ab) | [research_archive/2026-11-14_190533.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_190533.md) | commit UTC 2026-11-14T19:05:49Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 누적된 일반적 보안 요건(기본 설정, SBOM, 접근 제어, 로깅, 취약점 일반 관리 등)과 명확히 차별화되
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #231 — P1 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 누적된 일반적 보안 요건과 명확히 차별화되며, 고정밀 실시간 제어 기기인 **산업용 서보 드라이브(Servo
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 19:10:42 (시간대 미표기)
+- 원문: [commit 2312ec67fd8219e05c87a9d628791f3aa4d0d409](https://github.com/useformotor3/ai-discord-bot/commit/2312ec67fd8219e05c87a9d628791f3aa4d0d409) | [research_archive/2026-11-14_191042.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_191042.md) | commit UTC 2026-11-14T19:10:59Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 누적된 일반적 보안 요건과 명확히 차별화되며, 고정밀 실시간 제어 기기인 **산업용 서보 드라이브(Servo
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #232 — P0 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞선 메모리에서 다루어진 일반적 보안 요건(기본 설정, SBOM, 접근 제어, 로깅 등)과 명확히 차별화되며, 고
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 19:15:36 (시간대 미표기)
+- 원문: [commit 570e529416217c3a4869be6f8bdd993e940136dc](https://github.com/useformotor3/ai-discord-bot/commit/570e529416217c3a4869be6f8bdd993e940136dc) | [research_archive/2026-11-14_191536.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_191536.md) | commit UTC 2026-11-14T19:15:53Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞선 메모리에서 다루어진 일반적 보안 요건(기본 설정, SBOM, 접근 제어, 로깅 등)과 명확히 차별화되며, 고
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #233 — P0 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 누적된 일반적 보안 요건(기본 설정, SBOM, 접근 제어, 로깅 등)과 명확히 차별화되며, 고정밀 실시간
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 19:20:45 (시간대 미표기)
+- 원문: [commit 79082c630ecd1f1242e0b02f2db3090195b57e4a](https://github.com/useformotor3/ai-discord-bot/commit/79082c630ecd1f1242e0b02f2db3090195b57e4a) | [research_archive/2026-11-14_192045.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_192045.md) | commit UTC 2026-11-14T19:21:00Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 누적된 일반적 보안 요건(기본 설정, SBOM, 접근 제어, 로깅 등)과 명확히 차별화되며, 고정밀 실시간
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #234 — P1 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 누적된 일반적 보안 요건(기본 설정, 접근 제어, 로깅 등)과 중복되지 않으며, 고정밀 실시간 제어 기기인
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 19:25:33 (시간대 미표기)
+- 원문: [commit 082380f00343edc12d560c712c24db5988eb6b0f](https://github.com/useformotor3/ai-discord-bot/commit/082380f00343edc12d560c712c24db5988eb6b0f) | [research_archive/2026-11-14_192533.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_192533.md) | commit UTC 2026-11-14T19:25:50Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 누적된 일반적 보안 요건(기본 설정, 접근 제어, 로깅 등)과 중복되지 않으며, 고정밀 실시간 제어 기기인
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #235 — P0 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 누적된 일반적 보안 요건(기본 설정, 접근 제어, 로깅, SBOM 등)과 명확히 차별화되며, 산업용 서보 드
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 19:30:45 (시간대 미표기)
+- 원문: [commit e4ca3cdb215a3165b3e1329a97bc84da229e4a7c](https://github.com/useformotor3/ai-discord-bot/commit/e4ca3cdb215a3165b3e1329a97bc84da229e4a7c) | [research_archive/2026-11-14_193045.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_193045.md) | commit UTC 2026-11-14T19:31:02Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 누적된 일반적 보안 요건(기본 설정, 접근 제어, 로깅, SBOM 등)과 명확히 차별화되며, 산업용 서보 드
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #236 — P0 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 누적된 일반적 보안 요건(기본 설정, 접근 제어, 로깅, SBOM 등)과 명확히 차별화되며, 고정밀 실시간
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 19:35:27 (시간대 미표기)
+- 원문: [commit 70c51631025faabcd652e901242967b43cef0c02](https://github.com/useformotor3/ai-discord-bot/commit/70c51631025faabcd652e901242967b43cef0c02) | [research_archive/2026-11-14_193527.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_193527.md) | commit UTC 2026-11-14T19:35:44Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 누적된 일반적 보안 요건(기본 설정, 접근 제어, 로깅, SBOM 등)과 명확히 차별화되며, 고정밀 실시간
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #237 — P0 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 누적된 일반적 보안 요건(기본 설정, 접근 제어, 로깅, SBOM 등)과 명확히 차별화되며, 고정밀 실시간
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 19:40:37 (시간대 미표기)
+- 원문: [commit 2ccc193bb43c26833b9d92385b2c926fa882c548](https://github.com/useformotor3/ai-discord-bot/commit/2ccc193bb43c26833b9d92385b2c926fa882c548) | [research_archive/2026-11-14_194037.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_194037.md) | commit UTC 2026-11-14T19:40:54Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 누적된 일반적 보안 요건(기본 설정, 접근 제어, 로깅, SBOM 등)과 명확히 차별화되며, 고정밀 실시간
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #238 — P0 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 규격 및 산업용 자동화 보안 최고 전문가로서, 앞서 다룬 일반적 요건(기본 설정, 접근 제어, 로깅, SBOM 등)과 명확히 차별화되는 고정밀 서보 드라이
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 19:45:41 (시간대 미표기)
+- 원문: [commit 8af9fad4364d03c3862dad94c196dd0a94bfa26d](https://github.com/useformotor3/ai-discord-bot/commit/8af9fad4364d03c3862dad94c196dd0a94bfa26d) | [research_archive/2026-11-14_194541.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_194541.md) | commit UTC 2026-11-14T19:45:58Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 규격 및 산업용 자동화 보안 최고 전문가로서, 앞서 다룬 일반적 요건(기본 설정, 접근 제어, 로깅, SBOM 등)과 명확히 차별화되는 고정밀 서보 드라이
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #239 — P0 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 누적된 일반적 보안 요건(기본 설정, 접근 제어, 로깅, SBOM 등)과 명확히 차별화되며, 고정밀 실시간
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 19:50:38 (시간대 미표기)
+- 원문: [commit cef8d45961816efa9377c0ddd40a6c648c5f389c](https://github.com/useformotor3/ai-discord-bot/commit/cef8d45961816efa9377c0ddd40a6c648c5f389c) | [research_archive/2026-11-14_195038.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_195038.md) | commit UTC 2026-11-14T19:50:55Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 누적된 일반적 보안 요건(기본 설정, 접근 제어, 로깅, SBOM 등)과 명확히 차별화되며, 고정밀 실시간
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #240 — P0 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이미 다뤄진 일반적 요건(기본 설정, 접근 제어, 로깅, SBOM 등)을 완전히 배제하고, 고정밀 실시간 제어 기
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 19:55:34 (시간대 미표기)
+- 원문: [commit d61324a414be8bcd747b129473d47a19832b6666](https://github.com/useformotor3/ai-discord-bot/commit/d61324a414be8bcd747b129473d47a19832b6666) | [research_archive/2026-11-14_195534.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_195534.md) | commit UTC 2026-11-14T19:55:51Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이미 다뤄진 일반적 요건(기본 설정, 접근 제어, 로깅, SBOM 등)을 완전히 배제하고, 고정밀 실시간 제어 기
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #241 — P1 — 산업용 서보 드라이브(Servo Drive)
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 20:00:51 (시간대 미표기)
+- 원문: [commit ae51c024110698efbf76684eff0ef68938d78475](https://github.com/useformotor3/ai-discord-bot/commit/ae51c024110698efbf76684eff0ef68938d78475) | [research_archive/2026-11-14_200051.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_200051.md) | commit UTC 2026-11-14T20:01:07Z
+- 핵심 주장 주제(1차): 산업용 서보 드라이브(Servo Drive)
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #242 — P0 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 누적된 일반적 보안 요건(기본 설정, 접근 제어, 로깅, SBOM 등)과 명확히 차별화되며, 고정밀 실시간
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 20:05:31 (시간대 미표기)
+- 원문: [commit 3adf15d325f380d866f9cbd81260f0fbc94852c6](https://github.com/useformotor3/ai-discord-bot/commit/3adf15d325f380d866f9cbd81260f0fbc94852c6) | [research_archive/2026-11-14_200531.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_200531.md) | commit UTC 2026-11-14T20:05:47Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 누적된 일반적 보안 요건(기본 설정, 접근 제어, 로깅, SBOM 등)과 명확히 차별화되며, 고정밀 실시간
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #243 — P0 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 누적된 일반적 보안 요건(기본 설정, 접근 제어, 로깅, SBOM 등)과 명확히 차별화되며, 고정밀 실시간
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 20:10:45 (시간대 미표기)
+- 원문: [commit 22278b0ce897fb4a5757efd769107f05a1d2edd1](https://github.com/useformotor3/ai-discord-bot/commit/22278b0ce897fb4a5757efd769107f05a1d2edd1) | [research_archive/2026-11-14_201045.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_201045.md) | commit UTC 2026-11-14T20:11:01Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 누적된 일반적 보안 요건(기본 설정, 접근 제어, 로깅, SBOM 등)과 명확히 차별화되며, 고정밀 실시간
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #244 — P0 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다뤄진 일반적인 보안 요건(기본 설정, 접근 제어, 로깅, SBOM 등)과 명확히 차별화되면서 산업용 서보
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 20:15:34 (시간대 미표기)
+- 원문: [commit 89c53d8204644ee288efc8d64ed8a0e61a228302](https://github.com/useformotor3/ai-discord-bot/commit/89c53d8204644ee288efc8d64ed8a0e61a228302) | [research_archive/2026-11-14_201534.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_201534.md) | commit UTC 2026-11-14T20:15:51Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다뤄진 일반적인 보안 요건(기본 설정, 접근 제어, 로깅, SBOM 등)과 명확히 차별화되면서 산업용 서보
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #245 — P1 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 규격 및 산업용 자동화 보안 최고 전문가로서, 앞서 다뤄진 일반적인 보안 요건들과 명확히 차별화되며, 고정밀 실시간 제어 기기인 **산업용 서보 드라이브(
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 20:20:38 (시간대 미표기)
+- 원문: [commit bc8e09c2b32658bfdf03ffda490a6af77febd244](https://github.com/useformotor3/ai-discord-bot/commit/bc8e09c2b32658bfdf03ffda490a6af77febd244) | [research_archive/2026-11-14_202038.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_202038.md) | commit UTC 2026-11-14T20:20:55Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 규격 및 산업용 자동화 보안 최고 전문가로서, 앞서 다뤄진 일반적인 보안 요건들과 명확히 차별화되며, 고정밀 실시간 제어 기기인 **산업용 서보 드라이브(
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #246 — P0 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 규격 및 산업용 자동화 보안 최고 전문가로서, 앞서 다뤄진 일반적인 보안 요건(기본 설정, 접근 제어, 로깅, SBOM 등)과 명확히 차별화되면서, 고정밀
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 20:25:32 (시간대 미표기)
+- 원문: [commit 96e8586c4062084df601ef03a879e3c383f5af53](https://github.com/useformotor3/ai-discord-bot/commit/96e8586c4062084df601ef03a879e3c383f5af53) | [research_archive/2026-11-14_202532.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_202532.md) | commit UTC 2026-11-14T20:25:49Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 규격 및 산업용 자동화 보안 최고 전문가로서, 앞서 다뤄진 일반적인 보안 요건(기본 설정, 접근 제어, 로깅, SBOM 등)과 명확히 차별화되면서, 고정밀
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #247 — P1 — 산업용 서보 드라이브(Servo Drive)
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 20:30:40 (시간대 미표기)
+- 원문: [commit 4e209759f727f1019a0bdcdf2b87810366a695a6](https://github.com/useformotor3/ai-discord-bot/commit/4e209759f727f1019a0bdcdf2b87810366a695a6) | [research_archive/2026-11-14_203040.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_203040.md) | commit UTC 2026-11-14T20:30:56Z
+- 핵심 주장 주제(1차): 산업용 서보 드라이브(Servo Drive)
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #248 — P0 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 규격 및 산업용 자동화 보안 최고 전문가로서, 앞선 조사에서 다루어진 일반적 요건(기본 설정, 접근 제어, 로깅, SBOM 등)과 명확히 차별화되며, 산업
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 20:35:30 (시간대 미표기)
+- 원문: [commit 6ad90f3b8b210d45e37f923dc74386688762928b](https://github.com/useformotor3/ai-discord-bot/commit/6ad90f3b8b210d45e37f923dc74386688762928b) | [research_archive/2026-11-14_203530.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_203530.md) | commit UTC 2026-11-14T20:35:46Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 규격 및 산업용 자동화 보안 최고 전문가로서, 앞선 조사에서 다루어진 일반적 요건(기본 설정, 접근 제어, 로깅, SBOM 등)과 명확히 차별화되며, 산업
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #249 — P1 — 산업용 서보 드라이브(Servo Drive)
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 20:40:37 (시간대 미표기)
+- 원문: [commit af5b082609b65a2ed74c020f1760c041ee29b77e](https://github.com/useformotor3/ai-discord-bot/commit/af5b082609b65a2ed74c020f1760c041ee29b77e) | [research_archive/2026-11-14_204037.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_204037.md) | commit UTC 2026-11-14T20:40:54Z
+- 핵심 주장 주제(1차): 산업용 서보 드라이브(Servo Drive)
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #250 — P1 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞선 조사에서 다루어진 일반적 요건들을 완전히 배제하고, 고정밀 실시간 제어 기기인 **산업용 서보 드라이브(Se
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 20:45:35 (시간대 미표기)
+- 원문: [commit 22833c0af18d677796dda15b2a7160bc4f0a3cdd](https://github.com/useformotor3/ai-discord-bot/commit/22833c0af18d677796dda15b2a7160bc4f0a3cdd) | [research_archive/2026-11-14_204535.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_204535.md) | commit UTC 2026-11-14T20:45:52Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞선 조사에서 다루어진 일반적 요건들을 완전히 배제하고, 고정밀 실시간 제어 기기인 **산업용 서보 드라이브(Se
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #251 — P1 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞선 조사에서 다루어진 일반적 요건들을 완전히 배제하고, 고정밀 실시간 제어 기기인 **산업용 서보 드라이브(Se
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 20:50:33 (시간대 미표기)
+- 원문: [commit bd148e0c4e7eba59d5e7e6adc36071044c95b50d](https://github.com/useformotor3/ai-discord-bot/commit/bd148e0c4e7eba59d5e7e6adc36071044c95b50d) | [research_archive/2026-11-14_205033.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_205033.md) | commit UTC 2026-11-14T20:50:49Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞선 조사에서 다루어진 일반적 요건들을 완전히 배제하고, 고정밀 실시간 제어 기기인 **산업용 서보 드라이브(Se
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #252 — P0 — EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 규격 및 산업용 자동화 보안 최고 전문가로서, 앞선 일반적 보안 요건(기본 설정, 접근 제어, 로깅, SBOM 등)과 명확히 차별화되며, 고정밀 실시간 제어 기기인
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 20:55:32 (시간대 미표기)
+- 원문: [commit 515b42dc8f10ae2864c5a684bd99fa394394fd2c](https://github.com/useformotor3/ai-discord-bot/commit/515b42dc8f10ae2864c5a684bd99fa394394fd2c) | [research_archive/2026-11-14_205532.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_205532.md) | commit UTC 2026-11-14T20:55:48Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 규격 및 산업용 자동화 보안 최고 전문가로서, 앞선 일반적 보안 요건(기본 설정, 접근 제어, 로깅, SBOM 등)과 명확히 차별화되며, 고정밀 실시간 제어 기기인
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #253 — P1 — 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞선 조사에서 다루어진 일반적 요건들을 완전히 배제하고, 고정밀 실시간 제어 기기인 **산업용 서보 드라이브(Se
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 21:00:53 (시간대 미표기)
+- 원문: [commit 1b0c1fe4c9e1c80ba0cd664212f8b80e447154bb](https://github.com/useformotor3/ai-discord-bot/commit/1b0c1fe4c9e1c80ba0cd664212f8b80e447154bb) | [research_archive/2026-11-14_210053.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_210053.md) | commit UTC 2026-11-14T21:01:09Z
+- 핵심 주장 주제(1차): 유럽연합(EU) CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞선 조사에서 다루어진 일반적 요건들을 완전히 배제하고, 고정밀 실시간 제어 기기인 **산업용 서보 드라이브(Se
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #254 — P1 — EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 규격 및 산업용 자동화 보안 최고 전문가로서, 앞서 언급된 일반론적 접근을 완전히 배제하고, 고정밀 실시간 제어와 이더넷 기반 실시간 통신(EtherCAT, PROF
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 21:05:36 (시간대 미표기)
+- 원문: [commit 94d183718f1b2244dfbc9728c0d2c5eef010ac53](https://github.com/useformotor3/ai-discord-bot/commit/94d183718f1b2244dfbc9728c0d2c5eef010ac53) | [research_archive/2026-11-14_210536.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_210536.md) | commit UTC 2026-11-14T21:05:52Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 규격 및 산업용 자동화 보안 최고 전문가로서, 앞서 언급된 일반론적 접근을 완전히 배제하고, 고정밀 실시간 제어와 이더넷 기반 실시간 통신(EtherCAT, PROF
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #255 — P0 — EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 규격 및 산업용 자동화 보안 최고 전문가로서, 앞선 일반론적 조사 내용(기본 설정, 접근 제어, 로깅, 일반적 SBOM 등)과 명확히 차별화되는 **산업용 서보 드라
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 21:10:35 (시간대 미표기)
+- 원문: [commit 4f5c9fa7b1fe1a94d0e243c763b6a97d59b56212](https://github.com/useformotor3/ai-discord-bot/commit/4f5c9fa7b1fe1a94d0e243c763b6a97d59b56212) | [research_archive/2026-11-14_211035.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_211035.md) | commit UTC 2026-11-14T21:10:52Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 규격 및 산업용 자동화 보안 최고 전문가로서, 앞선 일반론적 조사 내용(기본 설정, 접근 제어, 로깅, 일반적 SBOM 등)과 명확히 차별화되는 **산업용 서보 드라
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #256 — P1 — EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞선 일반론적 조사에서 다루어진 내용과 완전히 차별화되도록 **산업용 서보 드라이브(Servo Drive)의 펌웨어 무결성
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 21:15:39 (시간대 미표기)
+- 원문: [commit 84a783cbddcb28e3f8fe3ee28f9906b69278a1f4](https://github.com/useformotor3/ai-discord-bot/commit/84a783cbddcb28e3f8fe3ee28f9906b69278a1f4) | [research_archive/2026-11-14_211539.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_211539.md) | commit UTC 2026-11-14T21:15:56Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞선 일반론적 조사에서 다루어진 내용과 완전히 차별화되도록 **산업용 서보 드라이브(Servo Drive)의 펌웨어 무결성
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #257 — P1 — EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 규격 및 산업용 자동화 보안 최고 전문가로서, 앞선 일반론적 조사에서 다루어진 내용과 완전히 차별화되도록 **산업용 서보 드라이브(Servo Drive)의 공급망 보
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 21:20:41 (시간대 미표기)
+- 원문: [commit 287b76980da0c91ed290a00412385e7c68000c0f](https://github.com/useformotor3/ai-discord-bot/commit/287b76980da0c91ed290a00412385e7c68000c0f) | [research_archive/2026-11-14_212041.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_212041.md) | commit UTC 2026-11-14T21:20:59Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 규격 및 산업용 자동화 보안 최고 전문가로서, 앞선 일반론적 조사에서 다루어진 내용과 완전히 차별화되도록 **산업용 서보 드라이브(Servo Drive)의 공급망 보
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #258 — P1 — EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞선 펌웨어, 통신, 공급망 보안 관련 조사와 완전히 차별화되면서 산업용 서보 드라이브 제조사가 반드시 직면하는 **"디지털
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 21:25:32 (시간대 미표기)
+- 원문: [commit 6f0af1d37b68255895e474475f678731a501193e](https://github.com/useformotor3/ai-discord-bot/commit/6f0af1d37b68255895e474475f678731a501193e) | [research_archive/2026-11-14_212532.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_212532.md) | commit UTC 2026-11-14T21:25:50Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞선 펌웨어, 통신, 공급망 보안 관련 조사와 완전히 차별화되면서 산업용 서보 드라이브 제조사가 반드시 직면하는 **"디지털
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #259 — P1 — EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 규격 및 산업용 자동화 보안 최고 전문가로서, 앞서 다뤄진 펌웨어, 실시간 통신, 공급망 보안, 디지털 요소 생명주기 관리 등의 내용을 완전히 배제하고, 서보 드라이
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 21:30:42 (시간대 미표기)
+- 원문: [commit d7150522d3d081860d66571c26b1d4e539010547](https://github.com/useformotor3/ai-discord-bot/commit/d7150522d3d081860d66571c26b1d4e539010547) | [research_archive/2026-11-14_213042.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_213042.md) | commit UTC 2026-11-14T21:30:59Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 규격 및 산업용 자동화 보안 최고 전문가로서, 앞서 다뤄진 펌웨어, 실시간 통신, 공급망 보안, 디지털 요소 생명주기 관리 등의 내용을 완전히 배제하고, 서보 드라이
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #260 — P1 — EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 규격 및 산업용 자동화 보안 최고 전문가로서, 앞선 펌웨어, 실시간 통신, 공급망 보안, 생명주기 관리 및 자산 관리 등의 주제와 완전히 차별화되도록 **산업용 서보
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 21:35:31 (시간대 미표기)
+- 원문: [commit 92d700c09cb86c88fe6e1624bdfe086abd9a0c75](https://github.com/useformotor3/ai-discord-bot/commit/92d700c09cb86c88fe6e1624bdfe086abd9a0c75) | [research_archive/2026-11-14_213531.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_213531.md) | commit UTC 2026-11-14T21:35:46Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 규격 및 산업용 자동화 보안 최고 전문가로서, 앞선 펌웨어, 실시간 통신, 공급망 보안, 생명주기 관리 및 자산 관리 등의 주제와 완전히 차별화되도록 **산업용 서보
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #261 — P1 — EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전의 펌웨어, 실시간 통신, 공급망, 생명주기 및 자산 관리 등의 주제와 완전히 차별화되도록 **산업용 서보 드라이브 제조
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 21:40:38 (시간대 미표기)
+- 원문: [commit ee6787be712d2d89f57644fa347a2e0c08e950c4](https://github.com/useformotor3/ai-discord-bot/commit/ee6787be712d2d89f57644fa347a2e0c08e950c4) | [research_archive/2026-11-14_214038.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_214038.md) | commit UTC 2026-11-14T21:40:54Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 이전의 펌웨어, 실시간 통신, 공급망, 생명주기 및 자산 관리 등의 주제와 완전히 차별화되도록 **산업용 서보 드라이브 제조
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #262 — P1 — EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 규격 및 산업용 자동화 보안 최고 전문가로서, 앞선 조사에서 다루어진 펌웨어, 실시간 통신, 공급망 보안, 생명주기 및 자산 관리를 완전히 배제하고, 제조사가 준수해
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 21:45:37 (시간대 미표기)
+- 원문: [commit ed29a394fd555fbb4756796c7304add2257f0177](https://github.com/useformotor3/ai-discord-bot/commit/ed29a394fd555fbb4756796c7304add2257f0177) | [research_archive/2026-11-14_214537.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_214537.md) | commit UTC 2026-11-14T21:45:54Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 규격 및 산업용 자동화 보안 최고 전문가로서, 앞선 조사에서 다루어진 펌웨어, 실시간 통신, 공급망 보안, 생명주기 및 자산 관리를 완전히 배제하고, 제조사가 준수해
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #263 — P1 — EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 규격 및 산업용 자동화 보안 최고 전문가로서, 앞서 다뤄진 펌웨어, 실시간 통신, 공급망 보안, 생명주기 및 자산 관리, 그리고 일반적인 취약점 패치 영역을 완전히
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 21:50:38 (시간대 미표기)
+- 원문: [commit 239e3939ca4c77dd4b5c1e7ab0f7d7360faa0760](https://github.com/useformotor3/ai-discord-bot/commit/239e3939ca4c77dd4b5c1e7ab0f7d7360faa0760) | [research_archive/2026-11-14_215038.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_215038.md) | commit UTC 2026-11-14T21:50:54Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 규격 및 산업용 자동화 보안 최고 전문가로서, 앞서 다뤄진 펌웨어, 실시간 통신, 공급망 보안, 생명주기 및 자산 관리, 그리고 일반적인 취약점 패치 영역을 완전히
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #264 — P1 — EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 규격 및 산업용 자동화 보안 최고 전문가로서, 앞서 다뤄진 펌웨어, 실시간 통신, 공급망 보안, 생명주기 및 자산 관리, 그리고 일반적인 취약점 패치 영역을 완전히
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 21:55:34 (시간대 미표기)
+- 원문: [commit 050f1aba26599938a10351bb47c73e011968323c](https://github.com/useformotor3/ai-discord-bot/commit/050f1aba26599938a10351bb47c73e011968323c) | [research_archive/2026-11-14_215534.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_215534.md) | commit UTC 2026-11-14T21:55:50Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 규격 및 산업용 자동화 보안 최고 전문가로서, 앞서 다뤄진 펌웨어, 실시간 통신, 공급망 보안, 생명주기 및 자산 관리, 그리고 일반적인 취약점 패치 영역을 완전히
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #265 — P1 — EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 규격 및 산업용 자동화 보안 최고 전문가로서, 앞선 조사에서 다루어진 펌웨어, 실시간 통신, 공급망 보안, 생명주기 관리, 자산 관리 및 일반적인 취약점 패치 영역을
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 22:00:52 (시간대 미표기)
+- 원문: [commit 63c494a86642173e26fe4e99b21517ff73015cc7](https://github.com/useformotor3/ai-discord-bot/commit/63c494a86642173e26fe4e99b21517ff73015cc7) | [research_archive/2026-11-14_220052.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_220052.md) | commit UTC 2026-11-14T22:01:08Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 규격 및 산업용 자동화 보안 최고 전문가로서, 앞선 조사에서 다루어진 펌웨어, 실시간 통신, 공급망 보안, 생명주기 관리, 자산 관리 및 일반적인 취약점 패치 영역을
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #266 — P1 — EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞선 조사에서 다루어진 펌웨어, 실시간 통신, 공급망 보안, 생명주기 및 자산 관리, 그리고 일반적인 취약점 패치 영역을 완
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 22:05:35 (시간대 미표기)
+- 원문: [commit fe4421b7bbe4a75c8cd9ef945766184194c21952](https://github.com/useformotor3/ai-discord-bot/commit/fe4421b7bbe4a75c8cd9ef945766184194c21952) | [research_archive/2026-11-14_220535.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_220535.md) | commit UTC 2026-11-14T22:05:52Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞선 조사에서 다루어진 펌웨어, 실시간 통신, 공급망 보안, 생명주기 및 자산 관리, 그리고 일반적인 취약점 패치 영역을 완
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #267 — P3 — ⚠️ [시스템 긴급 경고] 모든 AI 모델(Latest 및 Lite)의 일시적 과부하로 이번 회차 조사가 지연되었습니다. 시스템은 정상 대기 중입니다.
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 22:10:31 (시간대 미표기)
+- 원문: [commit f645007309d3aa552565a56642bf2329e7a4275e](https://github.com/useformotor3/ai-discord-bot/commit/f645007309d3aa552565a56642bf2329e7a4275e) | [research_archive/2026-11-14_221031.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_221031.md) | commit UTC 2026-11-14T22:11:00Z
+- 핵심 주장 주제(1차): ⚠️ [시스템 긴급 경고] 모든 AI 모델(Latest 및 Lite)의 일시적 과부하로 이번 회차 조사가 지연되었습니다. 시스템은 정상 대기 중입니다.
+- 우선순위/검증 쟁점: P3 — 실질 조사 실패/경고 여부 확인. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #268 — P1 — EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 요청하신 대로 기존에 다루어진 영역(펌웨어, 실시간 통신, 공급망 보안, 생명주기 및 자산 관리, 일반 취약점 패치)을 완전
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 22:15:35 (시간대 미표기)
+- 원문: [commit 0f879eeb017267d613bf3849fdb9a19ff842eb4d](https://github.com/useformotor3/ai-discord-bot/commit/0f879eeb017267d613bf3849fdb9a19ff842eb4d) | [research_archive/2026-11-14_221535.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_221535.md) | commit UTC 2026-11-14T22:15:52Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 요청하신 대로 기존에 다루어진 영역(펌웨어, 실시간 통신, 공급망 보안, 생명주기 및 자산 관리, 일반 취약점 패치)을 완전
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #269 — P1 — EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 영역(펌웨어, 실시간 통신, 공급망 보안, 생명주기 및 자산 관리, 일반 취약점 패치)을 완전히 배제하고, 제
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 22:20:37 (시간대 미표기)
+- 원문: [commit 5f3e809d0b9805dc404f90f73b385315c6131396](https://github.com/useformotor3/ai-discord-bot/commit/5f3e809d0b9805dc404f90f73b385315c6131396) | [research_archive/2026-11-14_222037.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_222037.md) | commit UTC 2026-11-14T22:20:57Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 영역(펌웨어, 실시간 통신, 공급망 보안, 생명주기 및 자산 관리, 일반 취약점 패치)을 완전히 배제하고, 제
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #270 — P1 — EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞선 조사에서 다루어진 영역(펌웨어, 실시간 통신, 공급망 보안, 생명주기 및 자산 관리, 일반 취약점 패치)을 철저히 배제
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 22:25:35 (시간대 미표기)
+- 원문: [commit 9f2aed915b6e85f43a574c1f7e2899532c735afc](https://github.com/useformotor3/ai-discord-bot/commit/9f2aed915b6e85f43a574c1f7e2899532c735afc) | [research_archive/2026-11-14_222535.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_222535.md) | commit UTC 2026-11-14T22:25:51Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞선 조사에서 다루어진 영역(펌웨어, 실시간 통신, 공급망 보안, 생명주기 및 자산 관리, 일반 취약점 패치)을 철저히 배제
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #271 — P1 — EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞선 조사에서 배제된 영역(펌웨어, 실시간 통신, 공급망 보안, 생명주기 및 자산 관리, 일반 취약점 패치)과 중복되지 않도
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 22:30:41 (시간대 미표기)
+- 원문: [commit 4995ee84c954a60b0d05682f5b85f3a16f9d37ba](https://github.com/useformotor3/ai-discord-bot/commit/4995ee84c954a60b0d05682f5b85f3a16f9d37ba) | [research_archive/2026-11-14_223041.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_223041.md) | commit UTC 2026-11-14T22:31:00Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞선 조사에서 배제된 영역(펌웨어, 실시간 통신, 공급망 보안, 생명주기 및 자산 관리, 일반 취약점 패치)과 중복되지 않도
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #272 — P1 — EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 언급된 배제 영역(펌웨어, 실시간 통신, 공급망 보안, 생명주기 및 자산 관리, 일반 취약점 패치)과 철저히 중복되지
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 22:35:31 (시간대 미표기)
+- 원문: [commit bcf3a7eab06715bbba2e6e4655a708924dc65cf5](https://github.com/useformotor3/ai-discord-bot/commit/bcf3a7eab06715bbba2e6e4655a708924dc65cf5) | [research_archive/2026-11-14_223531.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_223531.md) | commit UTC 2026-11-14T22:35:49Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 언급된 배제 영역(펌웨어, 실시간 통신, 공급망 보안, 생명주기 및 자산 관리, 일반 취약점 패치)과 철저히 중복되지
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #273 — P1 — EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 배제된 영역(펌웨어, 실시간 통신, 공급망 보안, 생명주기 및 자산 관리, 일반 취약점 패치)과 중복되지 않으며, 서보
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 22:40:41 (시간대 미표기)
+- 원문: [commit 67b456ad6e1782869b7d893f6160c760c046d7aa](https://github.com/useformotor3/ai-discord-bot/commit/67b456ad6e1782869b7d893f6160c760c046d7aa) | [research_archive/2026-11-14_224041.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_224041.md) | commit UTC 2026-11-14T22:40:56Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 배제된 영역(펌웨어, 실시간 통신, 공급망 보안, 생명주기 및 자산 관리, 일반 취약점 패치)과 중복되지 않으며, 서보
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #274 — P1 — EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 요청하신 바와 같이 기존에 다뤄진 영역(펌웨어, 실시간 통신, 공급망 보안, 생명주기 및 자산 관리, 일반 취약점 패치)과
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 22:45:38 (시간대 미표기)
+- 원문: [commit 6e2050def47aeff07b5004e02cffcb7b4ebe5011](https://github.com/useformotor3/ai-discord-bot/commit/6e2050def47aeff07b5004e02cffcb7b4ebe5011) | [research_archive/2026-11-14_224538.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_224538.md) | commit UTC 2026-11-14T22:45:54Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 요청하신 바와 같이 기존에 다뤄진 영역(펌웨어, 실시간 통신, 공급망 보안, 생명주기 및 자산 관리, 일반 취약점 패치)과
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #275 — P1 — EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 배제된 영역(펌웨어, 실시간 통신, 공급망 보안, 생명주기 및 자산 관리, 일반 취약점 패치)과 엄격히 중복되지 않도록
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 22:50:34 (시간대 미표기)
+- 원문: [commit ac19efa53efa1e42b85a1d39eff79619bab769a3](https://github.com/useformotor3/ai-discord-bot/commit/ac19efa53efa1e42b85a1d39eff79619bab769a3) | [research_archive/2026-11-14_225034.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_225034.md) | commit UTC 2026-11-14T22:50:49Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 배제된 영역(펌웨어, 실시간 통신, 공급망 보안, 생명주기 및 자산 관리, 일반 취약점 패치)과 엄격히 중복되지 않도록
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #276 — P1 — EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다뤄진 영역(펌웨어, 실시간 통신, 공급망 보안, 생명주기 및 자산 관리, 일반 취약점 패치)과 엄격히 중복되지 않도록
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 22:55:31 (시간대 미표기)
+- 원문: [commit ad033376299bca19a1e08b71a06a163348f3045a](https://github.com/useformotor3/ai-discord-bot/commit/ad033376299bca19a1e08b71a06a163348f3045a) | [research_archive/2026-11-14_225531.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_225531.md) | commit UTC 2026-11-14T22:55:47Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다뤄진 영역(펌웨어, 실시간 통신, 공급망 보안, 생명주기 및 자산 관리, 일반 취약점 패치)과 엄격히 중복되지 않도록
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #277 — P1 — EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 언급된 영역(펌웨어, 실시간 통신, 공급망 보안, 자산 관리 등)과 엄격히 중복되지 않으면서 산업용 서보 드라이브 제조
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 23:00:53 (시간대 미표기)
+- 원문: [commit 7710075c46ed32e394fde6479936ef2bd8a7ea96](https://github.com/useformotor3/ai-discord-bot/commit/7710075c46ed32e394fde6479936ef2bd8a7ea96) | [research_archive/2026-11-14_230053.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_230053.md) | commit UTC 2026-11-14T23:01:08Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 언급된 영역(펌웨어, 실시간 통신, 공급망 보안, 자산 관리 등)과 엄격히 중복되지 않으면서 산업용 서보 드라이브 제조
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #278 — P1 — EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다뤄진 영역(펌웨어, 실시간 통신, 공급망 보안, 자산 관리, 일반 취약점 패치 등)과 엄격히 중복되지 않도록, 산업용
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 23:05:32 (시간대 미표기)
+- 원문: [commit 2cce64b03b712c62303c9a56c4f79be35da193c8](https://github.com/useformotor3/ai-discord-bot/commit/2cce64b03b712c62303c9a56c4f79be35da193c8) | [research_archive/2026-11-14_230532.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_230532.md) | commit UTC 2026-11-14T23:05:48Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 앞서 다뤄진 영역(펌웨어, 실시간 통신, 공급망 보안, 자산 관리, 일반 취약점 패치 등)과 엄격히 중복되지 않도록, 산업용
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #279 — P1 — EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 영역(펌웨어, 실시간 통신, 공급망 보안, 생명주기 및 자산 관리, 일반 취약점 패치 등)과 엄격히 중복되지
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 23:10:36 (시간대 미표기)
+- 원문: [commit af8f2c7ef03e034337786503a9e20c5c930f19c3](https://github.com/useformotor3/ai-discord-bot/commit/af8f2c7ef03e034337786503a9e20c5c930f19c3) | [research_archive/2026-11-14_231036.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_231036.md) | commit UTC 2026-11-14T23:10:51Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 영역(펌웨어, 실시간 통신, 공급망 보안, 생명주기 및 자산 관리, 일반 취약점 패치 등)과 엄격히 중복되지
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #280 — P1 — EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 규격 및 산업용 자동화 보안 최고 전문가로서, 앞서 다뤄진 영역(펌웨어, 실시간 통신, 공급망 보안, 생명주기 및 자산 관리, 일반 취약점 패치 등)과 엄격히 중복되
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 23:15:37 (시간대 미표기)
+- 원문: [commit 2bda91039bca004da15b7f4920521a001e2f637a](https://github.com/useformotor3/ai-discord-bot/commit/2bda91039bca004da15b7f4920521a001e2f637a) | [research_archive/2026-11-14_231537.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_231537.md) | commit UTC 2026-11-14T23:15:53Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 규격 및 산업용 자동화 보안 최고 전문가로서, 앞서 다뤄진 영역(펌웨어, 실시간 통신, 공급망 보안, 생명주기 및 자산 관리, 일반 취약점 패치 등)과 엄격히 중복되
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #281 — P1 — EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 영역(펌웨어, 실시간 통신, 공급망 보안, 자산 관리, 일반 취약점 패치 등)과 엄격히 중복되지 않으며, 산업
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 23:20:36 (시간대 미표기)
+- 원문: [commit e77292694d18b6009ec6274e67fbb75f59a822ac](https://github.com/useformotor3/ai-discord-bot/commit/e77292694d18b6009ec6274e67fbb75f59a822ac) | [research_archive/2026-11-14_232036.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_232036.md) | commit UTC 2026-11-14T23:20:57Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 영역(펌웨어, 실시간 통신, 공급망 보안, 자산 관리, 일반 취약점 패치 등)과 엄격히 중복되지 않으며, 산업
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #282 — P1 — EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 영역(펌웨어, 실시간 통신, 공급망 보안, 자산 관리, 일반 취약점 패치 등)과 엄격히 중복되지 않으면서, 산
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 23:25:37 (시간대 미표기)
+- 원문: [commit 6edc79433173f7f3b205d86195e2c1c6c285bb96](https://github.com/useformotor3/ai-discord-bot/commit/6edc79433173f7f3b205d86195e2c1c6c285bb96) | [research_archive/2026-11-14_232537.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_232537.md) | commit UTC 2026-11-14T23:25:58Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 영역(펌웨어, 실시간 통신, 공급망 보안, 자산 관리, 일반 취약점 패치 등)과 엄격히 중복되지 않으면서, 산
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #283 — P1 — EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 영역(펌웨어, 실시간 통신, 공급망 보안, 자산 관리, 일반 취약점 패치 등)과 엄격히 중복되지 않으면서 산업
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 23:30:42 (시간대 미표기)
+- 원문: [commit a6c0776006e5e7a7b090377a5f3487a4ac8d6729](https://github.com/useformotor3/ai-discord-bot/commit/a6c0776006e5e7a7b090377a5f3487a4ac8d6729) | [research_archive/2026-11-14_233042.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_233042.md) | commit UTC 2026-11-14T23:30:58Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 영역(펌웨어, 실시간 통신, 공급망 보안, 자산 관리, 일반 취약점 패치 등)과 엄격히 중복되지 않으면서 산업
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #284 — P1 — EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 규격 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 영역(펌웨어, 실시간 통신, 공급망 보안, 자산 관리, 일반 취약점 패치 등)과 엄격히 중복되지 않도록
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 23:35:32 (시간대 미표기)
+- 원문: [commit 797db0442287411feacc247107b6e64eca948d4e](https://github.com/useformotor3/ai-discord-bot/commit/797db0442287411feacc247107b6e64eca948d4e) | [research_archive/2026-11-14_233532.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_233532.md) | commit UTC 2026-11-14T23:35:49Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 규격 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 영역(펌웨어, 실시간 통신, 공급망 보안, 자산 관리, 일반 취약점 패치 등)과 엄격히 중복되지 않도록
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #285 — P1 — EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 영역(펌웨어, 실시간 통신, 공급망 보안, 자산 관리, 일반 취약점 패치 등)과 엄격히 중복되지 않는 **'취
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 23:40:36 (시간대 미표기)
+- 원문: [commit fcc7cba849e3daf4f45db1933121ed35c3d5b6dc](https://github.com/useformotor3/ai-discord-bot/commit/fcc7cba849e3daf4f45db1933121ed35c3d5b6dc) | [research_archive/2026-11-14_234036.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_234036.md) | commit UTC 2026-11-14T23:40:53Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 영역(펌웨어, 실시간 통신, 공급망 보안, 자산 관리, 일반 취약점 패치 등)과 엄격히 중복되지 않는 **'취
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #286 — P1 — EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 영역(펌웨어, 실시간 통신, 공급망 보안, 자산 관리, 일반 취약점 패치 등)과 엄격히 중복되지 않으며, 산업
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 23:45:43 (시간대 미표기)
+- 원문: [commit 0bbd5d137d444a466b73727e657dab9362c438a8](https://github.com/useformotor3/ai-discord-bot/commit/0bbd5d137d444a466b73727e657dab9362c438a8) | [research_archive/2026-11-14_234543.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_234543.md) | commit UTC 2026-11-14T23:45:59Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 영역(펌웨어, 실시간 통신, 공급망 보안, 자산 관리, 일반 취약점 패치 등)과 엄격히 중복되지 않으며, 산업
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #287 — P1 — EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 규격 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 펌웨어, 실시간 통신, 공급망 보안, 자산 관리, 일반 취약점 패치 등과 엄격히 중복되지 않도록 **'디
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 23:50:37 (시간대 미표기)
+- 원문: [commit 5276f60b80a34e6c8a499f85454b42095556ac21](https://github.com/useformotor3/ai-discord-bot/commit/5276f60b80a34e6c8a499f85454b42095556ac21) | [research_archive/2026-11-14_235037.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_235037.md) | commit UTC 2026-11-14T23:50:54Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 규격 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 펌웨어, 실시간 통신, 공급망 보안, 자산 관리, 일반 취약점 패치 등과 엄격히 중복되지 않도록 **'디
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #288 — P1 — EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 규격 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 영역(펌웨어, 실시간 통신, 공급망 보안, 자산 관리, 일반 취약점 패치 등)과 엄격히 중복되지 않으며,
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-14 23:55:30 (시간대 미표기)
+- 원문: [commit 83094c90edd9b36b916c2e76bcc44a38cf2d5534](https://github.com/useformotor3/ai-discord-bot/commit/83094c90edd9b36b916c2e76bcc44a38cf2d5534) | [research_archive/2026-11-14_235530.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-14_235530.md) | commit UTC 2026-11-14T23:55:46Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 규격 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 영역(펌웨어, 실시간 통신, 공급망 보안, 자산 관리, 일반 취약점 패치 등)과 엄격히 중복되지 않으며,
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### 2026-11-15 신규 보고서 #1–#12
+
+### #1 — P1 — EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 영역(펌웨어, 실시간 통신, 공급망 보안, 자산 관리, 일반 취약점 패치 등)과 엄격히 중복되지 않는 **'디
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-15 00:00:54 (시간대 미표기)
+- 원문: [commit 7c2802a28de37950e5bbea8a3c8f154d20510119](https://github.com/useformotor3/ai-discord-bot/commit/7c2802a28de37950e5bbea8a3c8f154d20510119) | [research_archive/2026-11-15_000054.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-15_000054.md) | commit UTC 2026-11-15T00:01:10Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 영역(펌웨어, 실시간 통신, 공급망 보안, 자산 관리, 일반 취약점 패치 등)과 엄격히 중복되지 않는 **'디
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #2 — P1 — EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 영역(펌웨어, 실시간 통신, 공급망 보안, 자산 관리, 일반 취약점 패치 등)과 엄격히 중복되지 않도록, 서보
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-15 00:05:39 (시간대 미표기)
+- 원문: [commit 214fc39978f4696b565cbd715a50cd7b1a948208](https://github.com/useformotor3/ai-discord-bot/commit/214fc39978f4696b565cbd715a50cd7b1a948208) | [research_archive/2026-11-15_000539.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-15_000539.md) | commit UTC 2026-11-15T00:05:53Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 영역(펌웨어, 실시간 통신, 공급망 보안, 자산 관리, 일반 취약점 패치 등)과 엄격히 중복되지 않도록, 서보
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #3 — P1 — EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 규격 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 펌웨어, 실시간 통신, 공급망 보안, 자산 관리, 일반 취약점 패치 등과 엄격히 중복되지 않도록, 산업용
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-15 00:10:37 (시간대 미표기)
+- 원문: [commit c5eb8898e9320f0a9bffd1b3218a3ac31b853f88](https://github.com/useformotor3/ai-discord-bot/commit/c5eb8898e9320f0a9bffd1b3218a3ac31b853f88) | [research_archive/2026-11-15_001037.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-15_001037.md) | commit UTC 2026-11-15T00:10:53Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 규격 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 펌웨어, 실시간 통신, 공급망 보안, 자산 관리, 일반 취약점 패치 등과 엄격히 중복되지 않도록, 산업용
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #4 — P1 — EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 규격 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 영역(펌웨어, 실시간 통신, 공급망 보안, 자산 관리, 일반 취약점 패치 등)과 엄격히 중복되지 않도록
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-15 00:15:46 (시간대 미표기)
+- 원문: [commit a3857315d63555fc72b87ce62ae2b87e0f01a3af](https://github.com/useformotor3/ai-discord-bot/commit/a3857315d63555fc72b87ce62ae2b87e0f01a3af) | [research_archive/2026-11-15_001546.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-15_001546.md) | commit UTC 2026-11-15T00:16:02Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 규격 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 영역(펌웨어, 실시간 통신, 공급망 보안, 자산 관리, 일반 취약점 패치 등)과 엄격히 중복되지 않도록
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #5 — P1 — EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 영역(펌웨어, 실시간 통신, 공급망 보안, 자산 관리, 일반 취약점 패치 등)과 엄격히 중복되지 않으며, 서보
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-15 00:20:40 (시간대 미표기)
+- 원문: [commit 8f9d3228e9d10c671eb58a264f6efb0d8a9fb1d9](https://github.com/useformotor3/ai-discord-bot/commit/8f9d3228e9d10c671eb58a264f6efb0d8a9fb1d9) | [research_archive/2026-11-15_002040.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-15_002040.md) | commit UTC 2026-11-15T00:20:54Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 영역(펌웨어, 실시간 통신, 공급망 보안, 자산 관리, 일반 취약점 패치 등)과 엄격히 중복되지 않으며, 서보
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #6 — P1 — EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 영역(펌웨어, 실시간 통신, 공급망 보안, 자산 관리, 일반 취약점 패치 등)과 엄격히 중복되지 않도록 서보
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-15 00:25:34 (시간대 미표기)
+- 원문: [commit 873d9643807c553f9bec17d043c2a0e338a99da8](https://github.com/useformotor3/ai-discord-bot/commit/873d9643807c553f9bec17d043c2a0e338a99da8) | [research_archive/2026-11-15_002534.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-15_002534.md) | commit UTC 2026-11-15T00:25:50Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 영역(펌웨어, 실시간 통신, 공급망 보안, 자산 관리, 일반 취약점 패치 등)과 엄격히 중복되지 않도록 서보
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #7 — P1 — EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 영역(펌웨어, 실시간 통신, 공급망 보안, 자산 관리, 일반 취약점 패치 등)과 엄격히 중복되지 않도록 서보
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-15 00:30:45 (시간대 미표기)
+- 원문: [commit 297d63286d058916678912b4cca42f3fc0beeacb](https://github.com/useformotor3/ai-discord-bot/commit/297d63286d058916678912b4cca42f3fc0beeacb) | [research_archive/2026-11-15_003045.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-15_003045.md) | commit UTC 2026-11-15T00:31:01Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 영역(펌웨어, 실시간 통신, 공급망 보안, 자산 관리, 일반 취약점 패치 등)과 엄격히 중복되지 않도록 서보
+- 우선순위/검증 쟁점: P1 — 위험기반 HW/FW 설계·구현·시험 영향. 정확한 Article/Annex/point·현행 버전·주변 문맥 및 기술 원문 확인; 법령 요구·설계 권고·제품별 적용성 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #8 — P0 — EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 영역(펌웨어 무결성, 실시간 통신 보안, 공급망 SBOM, 자산 관리, 일반 취약점 패치 등)과 엄격히 중복되
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-15 00:35:34 (시간대 미표기)
+- 원문: [commit 3e6ce55924ad60720c6bd0f653a08e115acfbe4e](https://github.com/useformotor3/ai-discord-bot/commit/3e6ce55924ad60720c6bd0f653a08e115acfbe4e) | [research_archive/2026-11-15_003534.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-15_003534.md) | commit UTC 2026-11-15T00:35:50Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 영역(펌웨어 무결성, 실시간 통신 보안, 공급망 SBOM, 자산 관리, 일반 취약점 패치 등)과 엄격히 중복되
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #9 — P0 — EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 영역(펌웨어 무결성, 실시간 통신 보안, 공급망 SBOM, 자산 관리, 일반 취약점 패치 등)과 엄격히 중복되
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-15 00:40:43 (시간대 미표기)
+- 원문: [commit a0abdf09324252812489e1ac280ebf3302cf6b0b](https://github.com/useformotor3/ai-discord-bot/commit/a0abdf09324252812489e1ac280ebf3302cf6b0b) | [research_archive/2026-11-15_004043.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-15_004043.md) | commit UTC 2026-11-15T00:41:00Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 영역(펌웨어 무결성, 실시간 통신 보안, 공급망 SBOM, 자산 관리, 일반 취약점 패치 등)과 엄격히 중복되
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #10 — P0 — EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 영역(펌웨어 무결성, 실시간 통신 보안, 공급망 SBOM, 자산 관리, 일반 취약점 패치 등)과 엄격히 중복되
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-15 00:45:37 (시간대 미표기)
+- 원문: [commit 0f67c334a80e3f2a67c62fdad152d8ee7aa4a5ce](https://github.com/useformotor3/ai-discord-bot/commit/0f67c334a80e3f2a67c62fdad152d8ee7aa4a5ce) | [research_archive/2026-11-15_004537.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-15_004537.md) | commit UTC 2026-11-15T00:45:51Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 영역(펌웨어 무결성, 실시간 통신 보안, 공급망 SBOM, 자산 관리, 일반 취약점 패치 등)과 엄격히 중복되
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #11 — P0 — EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 영역(펌웨어 무결성, 실시간 통신 보안, 공급망 SBOM, 자산 관리, 일반 취약점 패치 등)과 엄격히 중복되
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-15 00:50:35 (시간대 미표기)
+- 원문: [commit 85c4f9c38fc2c0bb37cbf1fc73a2c639b73d52ce](https://github.com/useformotor3/ai-discord-bot/commit/85c4f9c38fc2c0bb37cbf1fc73a2c639b73d52ce) | [research_archive/2026-11-15_005035.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-15_005035.md) | commit UTC 2026-11-15T00:50:51Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 영역(펌웨어 무결성, 실시간 통신 보안, 공급망 SBOM, 자산 관리, 일반 취약점 패치 등)과 엄격히 중복되
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
+
+### #12 — P0 — EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 영역(펌웨어 무결성, 실시간 통신 보안, 공급망 SBOM, 자산 관리, 일반 취약점 패치 등)과 엄격히 중복되
+- 상태: NEW / NOT_YET_AUDITED | 확인일 2026-11-15 | 생성 2026-11-15 00:55:29 (시간대 미표기)
+- 원문: [commit fa76fc44a190d2452cd8c5774711ab0efd74aa2f](https://github.com/useformotor3/ai-discord-bot/commit/fa76fc44a190d2452cd8c5774711ab0efd74aa2f) | [research_archive/2026-11-15_005529.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-15_005529.md) | commit UTC 2026-11-15T00:55:45Z
+- 핵심 주장 주제(1차): EU CRA(Cyber Resilience Act, 규정 [EU] 2024/2847) 및 산업용 자동화 보안 최고 전문가로서, 기존에 다뤄진 영역(펌웨어 무결성, 실시간 통신 보안, 공급망 SBOM, 자산 관리, 일반 취약점 패치 등)과 엄격히 중복되
+- 우선순위/검증 쟁점: P0 — 법령 범위·기한·예외·분류·적합성평가·SBOM·지원 의무 영향. Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9), Annex VIII 보관 요건; Class I/II 한정 여부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 주제는 history.json snippet 기반이며 원문 전체 Pass A/B/C 미완료.
