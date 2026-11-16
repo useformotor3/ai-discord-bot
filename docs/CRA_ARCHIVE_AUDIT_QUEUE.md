@@ -7042,3 +7042,45 @@ Batch result: 5/5 CONFLICT, 0 PARTIALLY_VERIFIED, 0 VERIFIED; 0/5 Raw Text Quote
 - 핵심 주장 주제(원문 요약 첫 부분): 산업용 서보 드라이브 제조사는 CRA Annex II에 따라 제품의 안전한 설치, 초기 구성, 안전한 기본 설정(Secure by default) 유지 및 취약점 통지 수신을 위한 명확한 보안 지침과 정보를 사용자에게 제공해야 합니다.
 - 우선순위/검증 쟁점: P0 — EUR-Lex Article 13(17)–(19), Annex II(1)–(9): 사용자 정보·지침은 Article 13(18), 종료일 표시는 13(19), Annex II point 8(a)–(f); SBOM 사용자 접근은 point 9 조건부.
 - 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 전체 Pass A/B/C 미완료.
+
+
+## 2026-11-16 main advanced to report #9 — queue reconciliation
+
+- Latest main HEAD: `5f5d83f584639eb712d23d48444f8eee8618b24d` — Auto-archive: Research report #9 (commit UTC 2026-11-16T00:40:55Z).
+- Previous canonical queue baseline: report #7, `34684a441277d6ca68a307562717f0eb2fc6614f`.
+- Compare #7 → #9: `ahead 2 / behind 0`; changed files = two new `research_archive` files + `history.json` + `state.json`. No other main files changed in this delta.
+- Report #8 was already captured in `CRA_ARCHIVE_AUDIT_QUEUE_RECOVERY_2026-11-16.md` but had not yet been merged into this canonical queue. It is now incorporated below; report #9 is newly added. No duplicate #1–#7 entries were created.
+- `history.json`: 2,148 records. `state.json`: `date=2026-11-16`, `count=9` (daily counter, not archive total). `last_health_check=2026-11-15T21:20:38.480365` predates the latest archive commits and is not evidence of a current successful health check.
+- New canonical queue entries: #8 P1, #9 P0. Both remain `NEW / NOT_YET_AUDITED`; file verdict `UNVERIFIED`; Raw Text Quote and atomic claims `NOT_YET_AUDITED`; product applicability `UNVERIFIED`.
+- The pre-memos below are limited to the exact EUR-Lex text and surrounding context. They do not constitute full Pass A/B/C audits.
+
+### Official-source pre-memo — EUR-Lex Regulation (EU) 2024/2847
+
+Source reopened: [EUR-Lex, Regulation (EU) 2024/2847, OJ L 20.11.2024](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R2847). Relevant text checked in Article 13(1)–(9), Annex I Part I(1)–(2), and Annex I Part II(2), (7), (8).
+
+- Article 13(1) contains the manufacturer design/development/production obligation; Article 13(2) is the cybersecurity risk assessment. Article 11 is headed “General product safety”, not manufacturer obligations.
+- Article 13(8) sets the support-period framework: it reflects expected use; the general minimum is five years, but if expected use is shorter than five years, the support period corresponds to that expected-use time. Article 13(9) separately governs continued availability of each security update for at least 10 years after issuance or the remaining support period, whichever is longer.
+- Annex I Part I(2)(b) is secure-by-default (with the tailor-made product/business-user agreement exception); Part I(2)(c) concerns security updates and, where applicable, automatic updates enabled by default with user controls; Part I(2)(d) concerns protection from unauthorised access; Part I(2)(j) concerns limiting attack surfaces.
+- Annex I Part II(2) addresses remediation without delay and, where technically feasible, separation of security updates from functionality updates; Part II(7) requires secure update-distribution mechanisms; Part II(8) requires security updates without delay and free of charge unless otherwise agreed between manufacturer and business user for a tailor-made product.
+- A generic servo-drive name does not establish Important Product Class I/II status. Product classification and product-specific applicability remain separate from the legal-text check.
+
+### 2026-11-16 #8 — P1 — Secure by Default / initial authentication
+
+- Status: **NEW / NOT_YET_AUDITED** | 확인일: 2026-11-16 | 원문 생성: 00:35:33 (원문 시간대 미표기)
+- 원문: [commit 844ba4a80910dea52b5b49713b3b203c8d84ddb6](https://github.com/useformotor3/ai-discord-bot/commit/844ba4a80910dea52b5b49713b3b203c8d84ddb6) | [research_archive/2026-11-16_003533.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-16_003533.md) | commit UTC: 2026-11-16T00:35:50Z
+- 원문 blob SHA: `21a734ccadc3c7a78b84ac459118aa0a323f1951`
+- 핵심 주장 주제: 공장 출고 시 Secure by Default, 기본 패스워드 제거/최초 설치 시 고유 인증정보 설정, MFA 및 불필요한 네트워크 서비스·디버그 인터페이스 비활성화.
+- 우선 검증 쟁점: Annex I Part I(1), (2)(b), (2)(d), (2)(j); tailor-made product/business-user agreement 예외; 원문 인용의 실제 문구·번호 구조. 보고서가 서보 드라이브를 Class II로 표현한 근거도 별도 확인.
+- 사전 메모: Annex I Part I(2)(b),(d),(j)는 secure-by-default, 접근통제, 공격표면 제한의 결과 요구를 뒷받침한다. 다만 최초 비밀번호 변경 강제, MFA, 모든 포트/JTAG/UART의 일괄 비활성화는 CRA가 모든 제품에 명칭 그대로 강제하는 보편적 구현 방법으로 열거하지 않는다. 보고서 Raw Text Quote의 “delivered/initial state” 및 (1)/(2)/(3) 배열은 현행 Annex I Part I(1), Part I(2)(a)–(m) 구조·문구와 대조가 필요하며, 합성/번호 오류 후보로 기록한다.
+- 파일 판정: **UNVERIFIED** (전체 Pass A/B/C 미완료). Raw Text Quote 및 개별 주장: **NOT_YET_AUDITED**. 제품 적용성: **UNVERIFIED** (실제 SKU, 핵심 기능, 인터페이스 및 ST MCU 주문 코드 미확정).
+
+### 2026-11-16 #9 — P0 — free-of-charge security updates / vulnerability handling
+
+- Status: **NEW / NOT_YET_AUDITED** | 확인일: 2026-11-16 | 원문 생성: 00:40:38 (원문 시간대 미표기)
+- 원문: [commit 5f5d83f584639eb712d23d48444f8eee8618b24d](https://github.com/useformotor3/ai-discord-bot/commit/5f5d83f584639eb712d23d48444f8eee8618b24d) | [research_archive/2026-11-16_004038.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-16_004038.md) | commit UTC: 2026-11-16T00:40:55Z
+- 원문 blob SHA: `626418cfcf9cd2433a6d87babc31a1d704f53fa2`
+- 핵심 주장 주제: 취약점 처리 및 무상 보안 업데이트 제공, 지원기간, Secure by Default, 업데이트 배포 무결성·가용성.
+- 우선 검증 쟁점: Article 13(1)/(2)/(8)/(9); Annex I Part I(2)(b)/(c); Annex I Part II(2)/(7)/(8); tailor-made product/business-user agreement exception; support period <5-year expected-use exception; security-update availability retention.
+- 사전 메모: 보고서는 제조사 의무를 Article 11로 인용하지만 Article 11은 “General product safety”이며 제조사 의무는 Article 13에 있다. 보고서의 인용문은 Article 13(8)의 support-period 내용과 Annex I Part II(8)의 free-of-charge 업데이트 내용을 하나로 합성한 것으로 보이며 원문 그대로가 아니다. “최소 5년”을 무조건 적용하는 표현은 Article 13(8)의 expected-use <5-year 예외를 누락한다. Annex I Part I의 (a)/(b) 인용도 실제 Part I(2)(b)/(c)와 구분해야 한다. Part II(2)/(7)/(8)은 업데이트 분리(기술적으로 가능한 경우), 안전한 배포, 지체 없는 무상 제공 및 tailor-made business-user 합의 예외로 각각 나누어야 한다.
+- 파일 판정: **UNVERIFIED** (전체 Pass A/B/C 미완료). Raw Text Quote 및 개별 주장: **NOT_YET_AUDITED**; 단, Article 11 오인용·합성 인용·5년 예외 누락은 강한 CONFLICT 후보로 별도 기록한다. 제품 적용성: **UNVERIFIED**.
+
