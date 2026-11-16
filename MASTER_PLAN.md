@@ -254,10 +254,10 @@
 
 
 ## 최신 작업 브랜치 및 통합 기준 — 2026-11-16
-- 작업 브랜치: `feature/p1-b2-atomic-persistence-2026-11-16`; 감사 스냅샷 HEAD `2b2645b23876378a6c384c8da819de84104ac49a`.
-- 운영 main HEAD `260c0c2d38dd658714e58db5e7a4cdb2b34bc5b3` (#129); merge-base `f9a12a5778f5fa1d907201ab2931d20ca2656bb7`.
-- compare: 189 ahead / 676 behind. 이는 commit count이며 파일 삭제를 뜻하지 않는다.
-- merge-base 기준 main은 archive 676개 추가·삭제 0·history/state 2개 수정; 작업 브랜치는 22개 경로 추가·삭제 0·main.py 1개 수정이다.
+- 작업 브랜치: `feature/p1-b2-atomic-persistence-2026-11-16`; 감사 스냅샷 HEAD `0fe9912b5dbba29eeb3ebd9e9f2c16a42544f925`.
+- 운영 main HEAD `3ebf6b977b0127291957ffb415dbdbc83b5b6d97` (#129); merge-base `f9a12a5778f5fa1d907201ab2931d20ca2656bb7`.
+- compare: 204 ahead / 677 behind. 이는 commit count이며 파일 삭제를 뜻하지 않는다.
+- merge-base 기준 main은 archive 676개 추가·삭제 0·history/state 2개 수정; 작업 브랜치는 23개 경로 추가·삭제 0·main.py 1개 수정이다.
 - 운영 데이터 보존을 위한 3-way PR 통합 후보가 양호하나, 실제 PR conflict check 및 별도 승인 전 merge 금지.
 
 
@@ -271,7 +271,7 @@
 
 ## 2026-11-16 — 통합 전략 감사 완료
 - merge-base 기준 전체 recursive tree 비교와 history→archive 참조 무결성 확인을 완료했다.
-- main의 676개 archive는 merge-base 이후 추가된 자료이며 작업 브랜치가 삭제한 파일이 아니다. main history/state는 main에서만 변경됐고 작업 브랜치는 merge-base blob을 유지한다.
+- main의 677개 archive는 merge-base 이후 추가된 자료이며 작업 브랜치가 삭제한 파일이 아니다. main history/state는 main에서만 변경됐고 작업 브랜치는 merge-base blob을 유지한다.
 - 작업 브랜치의 코드·테스트·관리 문서 변경은 main의 운영 데이터 변경과 경로상 분리되어 3-way PR 통합 후보로 평가한다.
 - P1-B2 recovery target allowlist 보강 후 Actions 43851438733: 70 passed / 1 xfailed.
 - PR CI 트리거를 pull_request→main 및 main push로 준비했다.
