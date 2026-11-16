@@ -11,10 +11,10 @@ P0/P1 신뢰성 개선이 포함된 작업 브랜치를 운영 `main`에 통합�
 - 저장소: `useformotor3/ai-discord-bot`
 - 운영 브랜치: `main`
 - 작업 브랜치: `feature/p1-b2-atomic-persistence-2026-11-16`
-- 운영 main HEAD: `3ebf6b977b0127291957ffb415dbdbc83b5b6d97` — Auto-archive: Research report #130
-- 작업 브랜치 HEAD: `0fe9912b5dbba29eeb3ebd9e9f2c16a42544f925`
+- 운영 main HEAD: `267d97478b785e6bb268e224a70dbad6631cf43e` — Auto-archive: Research report #131
+- 작업 브랜치 HEAD: `02fde2489323f9f553405e014fac20d75d13a7fa`
 - merge-base: `f9a12a5778f5fa1d907201ab2931d20ca2656bb7`
-- compare: 204 ahead / 677 behind, diverged
+- compare: 221 ahead / 678 behind, diverged
 - 확인: GitHub API의 recursive Git tree 3개를 각각 조회했고 모두 `truncated=false`; blob 경로 및 SHA를 기준으로 비교했다.
 - 이 수치는 스냅샷 기준이다. main 자동 아카이브와 후속 문서 커밋에 따라 변한다.
 
@@ -22,18 +22,18 @@ P0/P1 신뢰성 개선이 포함된 작업 브랜치를 운영 `main`에 통합�
 
 | 항목 | merge-base | 운영 main | 작업 브랜치 |
 |---|---:|---:|---:|
-| blob 파일 수 | 1,597 | 2,274 | 1,620 |
-| research_archive 파일 수 | 1,592 | 2,269 | 1,592 |
+| blob 파일 수 | 1,597 | 2,275 | 1,620 |
+| research_archive 파일 수 | 1,592 | 2,270 | 1,592 |
 
 ### 3.1 merge-base → main
 
-- 추가: 677개
+- 추가: 678개
 - 삭제: 0개
 - 기존 경로 변경: `history.json`, `state.json` 2개
-- 추가 677개는 전부 `research_archive/`의 자동 생성 보고서
-- `history.json`은 1,592건에서 2,269건으로 증가
-- `state.json`은 당일 count=130
-- main의 archive 파일 2,269개와 history의 2,269개 file 참조가 모두 일치하며 누락 참조는 0개
+- 추가 678개는 전부 `research_archive/`의 자동 생성 보고서
+- `history.json`은 1,592건에서 2,270건으로 증가
+- `state.json`은 당일 count=131
+- main의 archive 파일 2,270개와 history의 2,270개 file 참조가 모두 일치하며 누락 참조는 0개
 
 ### 3.2 merge-base → 작업 브랜치
 
@@ -45,16 +45,16 @@ P0/P1 신뢰성 개선이 포함된 작업 브랜치를 운영 `main`에 통합�
 
 ### 3.3 중요한 병합 의미
 
-현재 두 branch tree만 직접 비교하면 main에만 존재하는 archive 677개가 보인다. 그러나 이것은 작업 브랜치가 삭제한 파일이 아니다. merge-base 이후 main이 추가한 파일이다. Git의 3-way 병합은 양쪽 변경을 merge-base와 비교하므로, **정상적인 merge commit은 main에서 추가된 677개 archive와 main에서 갱신된 history/state를 보존해야 한다.**
+현재 두 branch tree만 직접 비교하면 main에만 존재하는 archive 678개가 보인다. 그러나 이것은 작업 브랜치가 삭제한 파일이 아니다. merge-base 이후 main이 추가한 파일이다. Git의 3-way 병합은 양쪽 변경을 merge-base와 비교하므로, **정상적인 merge commit은 main에서 추가된 678개 archive와 main에서 갱신된 history/state를 보존해야 한다.**
 
-앞선 간이 비교에서 677개를 브랜치 삭제처럼 표현한 것은 부정확했다. 이번 보고서는 merge-base 기준의 실제 변경을 사용한다.
+앞선 간이 비교에서 678개를 브랜치 삭제처럼 표현한 것은 부정확했다. 이번 보고서는 merge-base 기준의 실제 변경을 사용한다.
 
 ## 4. 운영 데이터 및 workflow 보호 확인
 
 운영 main 스냅샷:
-- `state.json`: SHA `b92c8c89cbd792796c9598382c5c662faeb5afcf`, date `2026-11-16`, count=130
-- `history.json`: SHA `4e9d2d0f1c5e12064b5c4010c99bde2f0d34a367`, 2,269 entries
-- `research_archive/`: 2,269 files, history의 참조 누락 0
+- `state.json`: SHA `8f42a83f5d343bda8d4ee5bd4f6ceaa41afe56bb`, date `2026-11-16`, count=131
+- `history.json`: SHA `28e4c3bc68d6ea1bd259311caad2eeb1d4df15f3`, 2,270 entries
+- `research_archive/`: 2,270 files, history의 참조 누락 0
 - 운영 `.github/workflows/run.yml`: SHA `65a8cadc8eac593f551e390698e367b1d161ecf1`
 
 작업 브랜치는 위 운영 데이터 파일을 수정하지 않았고, 운영 `run.yml`도 변경하지 않았다. main.py만 작업 브랜치에서 개선되었다. merge 이후 운영 workflow가 개선된 main.py를 실행하면 실제 운영 동작이 바뀌므로, **코드가 main에 들어가는 행위와 운영 실행/배포 승인은 구분해야 한다.**
