@@ -252,11 +252,12 @@
 - 이 예약 작업은 ChatGPT의 모니터링이며 GitHub Actions 운영 workflow와 별개다.
 
 
-## 최신 작업 브랜치 포인터 — 2026-11-16
-- 현재 작업 브랜치: `feature/p1-b2-atomic-persistence-2026-11-16`.
-- 비교 스냅샷 commit: `0236dbda2793d6dc2ba4dfc245905a73f8783136`; main HEAD `6eec802125c1bcf3cf0b2dd1401a9c6430792920`; merge-base `f9a12a5778f5fa1d907201ab2931d20ca2656bb7`.
-- 비교: 181 ahead / 673 behind, diverged. main state count=126, history=2,265.
-- 이 수치는 snapshot commit 시점의 값이며, 이후 문서 커밋이나 main 자동 아카이브에 따라 바뀔 수 있다. 운영 데이터 전체 tree 감사 전 merge/rebase/PR merge 금지.
+## 최신 작업 브랜치 및 통합 기준 — 2026-11-16
+- 작업 브랜치: `feature/p1-b2-atomic-persistence-2026-11-16`; 감사 스냅샷 HEAD `2b2645b23876378a6c384c8da819de84104ac49a`.
+- 운영 main HEAD `260c0c2d38dd658714e58db5e7a4cdb2b34bc5b3` (#129); merge-base `f9a12a5778f5fa1d907201ab2931d20ca2656bb7`.
+- compare: 189 ahead / 676 behind. 이는 commit count이며 파일 삭제를 뜻하지 않는다.
+- merge-base 기준 main은 archive 676개 추가·삭제 0·history/state 2개 수정; 작업 브랜치는 22개 경로 추가·삭제 0·main.py 1개 수정이다.
+- 운영 데이터 보존을 위한 3-way PR 통합 후보가 양호하나, 실제 PR conflict check 및 별도 승인 전 merge 금지.
 
 
 ## 2026-11-16 — P1-B2 구현 완료
@@ -265,3 +266,13 @@
 - 장애 주입 및 통합 테스트 포함 Run #23에서 63 passed / 1 xfailed.
 - POSIX flock/fsync 기반이므로 Ubuntu 등 POSIX 실행 환경을 전제로 한다. Windows lock backend는 미구현.
 - P1-B3/B4, 운영 데이터, 운영 workflow, merge/rebase는 이번 승인 범위 밖이다.
+
+
+## 2026-11-16 — 통합 전략 감사 완료
+- merge-base 기준 전체 recursive tree 비교와 history→archive 참조 무결성 확인을 완료했다.
+- main의 676개 archive는 merge-base 이후 추가된 자료이며 작업 브랜치가 삭제한 파일이 아니다. main history/state는 main에서만 변경됐고 작업 브랜치는 merge-base blob을 유지한다.
+- 작업 브랜치의 코드·테스트·관리 문서 변경은 main의 운영 데이터 변경과 경로상 분리되어 3-way PR 통합 후보로 평가한다.
+- P1-B2 recovery target allowlist 보강 후 Actions 43851438733: 70 passed / 1 xfailed.
+- PR CI 트리거를 pull_request→main 및 main push로 준비했다.
+- 실제 PR 생성, merge, rebase, 운영 workflow/data 변경은 수행하지 않았다. 통합 및 운영 배포는 별도 승인 후 진행한다.
+- 상세: `reports/BRANCH_INTEGRATION_STRATEGY_2026-11-16.md`.
