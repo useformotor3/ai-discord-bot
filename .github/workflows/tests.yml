@@ -12,6 +12,13 @@ on:
       - "main.py"
       - "persistence.py"
       - "tests/**"
+      - "AI_RULEBOOK.md"
+      - "MASTER_PLAN.md"
+      - "PROJECT_STATUS.md"
+      - "README.md"
+      - "SESSION_LOG.md"
+      - "PROJECT_LOG.jsonl"
+      - "reports/**"
   pull_request:
     branches:
       - main
@@ -20,6 +27,13 @@ on:
       - "main.py"
       - "persistence.py"
       - "tests/**"
+      - "AI_RULEBOOK.md"
+      - "MASTER_PLAN.md"
+      - "PROJECT_STATUS.md"
+      - "README.md"
+      - "SESSION_LOG.md"
+      - "PROJECT_LOG.jsonl"
+      - "reports/**"
   workflow_dispatch:
 
 permissions:
