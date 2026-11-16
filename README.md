@@ -312,3 +312,5 @@ Actions 성공은 자동화 실행 결과이지 CRA 법령 해석이나 출처�
 - 체크포인트 보존 정책은 운영 run #2431에서 실제 정리 성공을 확인했다. 사전 실행 백업 브랜치는 30개 유지.
 - 추가 개선: KST 기준 일일 카운트, Gemini 모델 404 즉시 fallback, Git push 실패 fail-closed.
 - 상세 설계·근거·검증 한계: reports/OPS_TIMEZONE_MODEL_GIT_FAILURE_FIX_2026-11-17.md.
+
+- KST/모델/Git 저장 실패 개선 CI: Run #59 성공(99 passed, 1 xfailed). Run #58은 테스트의 구형 모델명 기대값 2건으로 실패했으며 수정 후 #59에서 통과.

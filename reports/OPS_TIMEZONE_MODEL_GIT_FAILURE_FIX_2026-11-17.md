@@ -27,3 +27,10 @@
 - Google Gemini API 모델 및 가격: https://ai.google.dev/gemini-api/docs/pricing
 - Google Gemini API 모델 가이드: https://ai.google.dev/gemini-api/docs/models
 - IANA time zone database key: Asia/Seoul (Python zoneinfo)
+
+
+## CI 결과 및 후속 확인
+- Run #58 (commit 4a11c5c7f15605d4e9e14e788281b51aefae7571): source SHA 검사 및 compileall 통과, pytest 95 passed / 2 failed / 1 xfailed. 실패는 테스트 두 곳이 이전 primary model ID `gemini-flash-latest`를 기대한 테스트 fixture 문제였다.
+- 수정 commit fc77d6da07684936a27a60eb1a4cb920ceb37c14에서 기대값을 `gemini-3.8-flash`로 바꾸고 404 fallback 및 Git push failure 회귀 테스트를 추가.
+- Run #59 (43975765823): 성공, 99 passed / 1 xfailed. Source SHA, compileall, 전체 pytest 통과.
+- 운영 실행 전이므로 실제 Gemini 모델 접근성, KST 기준 첫 daily reset, Git push failover 동작은 아직 운영 환경에서 검증되지 않았다.

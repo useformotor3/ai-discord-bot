@@ -368,3 +368,12 @@
 3. Git push 실패가 workflow 실패로 전파되는지 mock으로 검증한다. 실제 Discord/Gemini는 호출하지 않는다.
 4. CI 통과 후 다음 운영 실행에서 state date가 KST 기준인지, history/archive가 한 건씩 append되는지 확인한다.
 5. Git push race가 발생하면 강제 push하지 않고 fail-closed한다. Discord delivery와 Git archive가 분리되므로 중복 방지/outbox 설계는 별도 과제로 둔다.
+
+
+## 2026-11-17 — KST/model/Git fail-closed 구현 검증
+- [완료] Asia/Seoul 기준 날짜·시간 및 legacy naive UTC health-check 호환.
+- [완료] gemini-3.8-flash → gemini-3.5-flash-lite, 404/NOT_FOUND 즉시 fallback.
+- [완료] Git 저장 실패 시 비정상 종료, 강제 push 금지.
+- [완료] CI Run #59: 99 passed, 1 xfailed.
+- [대기] 다음 운영 실행에서 KST 날짜·일일 count, 실제 Gemini 모델 ID 성공, Git push와 operational_guard의 정상 완료 확인.
+- [대기] Discord 전송 이후 Git 저장 실패 시 재전송 중복 방지/outbox 설계.

@@ -587,3 +587,8 @@
 - Gemini model catalog 확인: gemini-3.8-flash 및 gemini-3.5-flash-lite 사용. 404/NOT_FOUND 즉시 fallback.
 - Git add/commit/push 오류는 warning 후 계속하지 않고 main.py exit 1로 처리. 강제 push/rebase 금지.
 - 변경 후 CI 대기/검증 예정. 실제 Gemini/Discord 운영 호출은 수행하지 않음.
+
+- KST/모델/Git 저장 실패 개선 commit: fc77d6da07684936a27a60eb1a4cb920ceb37c14.
+- CI Run #59: 성공, 99 passed / 1 xfailed; source SHA 검사·compileall·전체 pytest 통과. Run #58은 모델명 기대값이 구형이라 2건 실패했고, 테스트 수정 후 Run #59에서 재검증 통과.
+- 변경 후 실제 Gemini/Discord API 운영 실행은 아직 없음. 다음 production run에서 KST date/count, 신규 model id, 정상 Git push를 관찰해야 함.
+- 현재 데이터 readback: state count=254(기존 UTC 기준 값, 새 KST 로직 미적용 실행 기준), history=2,393, archive=2,393, 참조 누락 0. checkpoint refs=30.

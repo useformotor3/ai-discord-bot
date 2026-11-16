@@ -254,3 +254,5 @@
 - Gemini 모델 ID는 공식 Google AI for Developers 모델 카탈로그에서 확인한다. 404/NOT_FOUND는 동일 모델을 재시도하지 않고 다음 허용 모델로 전환한다. 429/5xx 등 일시 오류는 제한된 재시도 정책을 사용한다.
 - Git add/commit/push 실패는 경고만 남기고 성공 종료하지 않는다. 강제 push, force update, 자동 rebase로 운영 main을 덮어쓰지 않는다.
 - Discord 전송 후 Git 저장이 실패할 수 있다. 이 경우 Discord 전달을 취소할 수 없으므로 archive 누락과 중복 전송 위험을 명시적으로 추적한다.
+
+- 2026-11-17 CI Run #59에서 KST/model/Git fail-closed 변경이 99 passed, 1 xfailed로 통과했다. 단, 실제 Gemini/Discord 운영 API 호출 결과와 KST 적용 후 첫 일일 경계는 별도 관찰 전까지 검증 완료로 주장하지 않는다.

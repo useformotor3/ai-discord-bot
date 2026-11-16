@@ -818,3 +818,8 @@
 - 회귀 테스트: KST 기준 날짜, timezone-aware 및 legacy naive timestamp, 모델 404 fallback, Git push 실패 fail-closed.
 - 상세: reports/OPS_TIMEZONE_MODEL_GIT_FAILURE_FIX_2026-11-17.md.
 - CI 통과 전까지 변경 완료 선언 금지.
+
+- CI Run #58은 테스트에 남아 있던 gemini-flash-latest 기대값 2건으로 실패(95 passed, 2 failed, 1 xfailed). 원인 확인 후 기대값을 gemini-3.8-flash로 수정하고 404 fallback/Git push 실패 테스트를 추가.
+- CI Run #59 성공: 99 passed, 1 xfailed. SHA pin, compileall, 전체 pytest 통과.
+- 최신 main fc77d6da07684936a27a60eb1a4cb920ceb37c14. production active run 없음 확인.
+- 데이터 readback: state count=254, history/archive=2,393/2,393, 참조 누락 0, checkpoint refs 30. 신규 KST 코드는 실제 운영 실행 전이므로 다음 run 검증 대기.
