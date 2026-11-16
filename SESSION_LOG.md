@@ -657,3 +657,14 @@
 - PR 생성/merge, 운영 배포, run.yml 변경, 실제 Gemini/Discord 호출은 이번 작업에서 수행하지 않았다. 운영 반영은 별도 승인 대상이다.
 - 잔여: POSIX-only flock/fsync, Discord POST와 local persistence 사이의 outbox 부재, non-blocking lock, P1-B3/B4 미구현.
 - 상세 보고서: `reports/BRANCH_INTEGRATION_STRATEGY_2026-11-16.md`.
+
+
+## 2026-11-16 — 통합 감사 스냅샷 main #130 갱신
+- main은 Auto-archive #130으로 HEAD `3ebf6b977b0127291957ffb415dbdbc83b5b6d97`까지 전진했다.
+- 최신 데이터: state count=130, history=2,269건, archive=2,269개, history 참조 누락 0.
+- main tree 2,274 blobs, feature tree 1,620 blobs, merge-base tree 1,597 blobs. base→main archive +677/삭제 0; base→feature +23 paths/삭제 0/main.py 수정.
+- compare: feature 204 ahead / 677 behind. 수치는 스냅샷이며 main 자동 실행에 따라 계속 변한다.
+- PR 변경 예상: 24 paths(23 added + main.py modified). state/history/archive/run.yml은 PR에서 수정·삭제 대상이 아니어야 한다.
+- P1-B2 source/test/workflow SHA와 Actions 43851438733(70 passed / 1 xfailed)을 재확인했다.
+- main `run.yml` SHA `65a8cadc8eac593f551e390698e367b1d161ecf1` 유지.
+- PR 생성, merge, rebase, 운영 데이터/workflow 변경, 운영 실행 및 외부 서비스 호출 없음.
