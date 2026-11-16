@@ -222,3 +222,10 @@
 - 두 건 모두 조사 대기 상태이며 최종 보고서 본문에 검증 완료 결론으로 반영하지 않는다.
 - 전체 Pass A/B/C 및 제품 적용성 확인 전까지 file verdict UNVERIFIED, Raw Text Quote/atomic claims NOT_YET_AUDITED 유지.
 - 세부 근거·원문 링크: [CRA_ARCHIVE_AUDIT_QUEUE.md](CRA_ARCHIVE_AUDIT_QUEUE.md).
+
+
+## 2026-11-16 — main report #10 audit queue
+
+- #10 P0: vulnerability handling, CVD, free security updates and Article 14 reporting. Queue status NEW / NOT_YET_AUDITED; file UNVERIFIED.
+- No final report conclusion or product-specific requirement is promoted from this pre-memo. Full Pass A/B/C remains pending.
+- Details and official-source locators: [CRA_ARCHIVE_AUDIT_QUEUE.md](CRA_ARCHIVE_AUDIT_QUEUE.md).
