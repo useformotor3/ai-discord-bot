@@ -458,5 +458,5 @@
 - 검증된 commit: `045b8dbeb54d8d280ab91d6219d968bfdefed107`; main.py SHA `fa8679b758916ba8a446bae41b9ec1b40328da09`, persistence.py SHA `0250152c005f4ef842119e6ddd3b305fb57d0e31`, 신규 테스트 SHA `ab832e4267e7204538af128b4759c943cc0da212`.
 - 운영 main, 운영 run.yml, 운영 state/history/archive는 변경하지 않았다. 실제 Gemini/Discord 호출, 운영 Git push, merge/rebase/PR merge 없음.
 - 제한: 파일시스템 durability는 POSIX fsync/flock 지원 환경을 전제로 하며, Windows 네이티브 실행은 별도 lock backend 없이는 지원하지 않는다. CI runner는 Ubuntu.
-- 통합 보류: main HEAD `23027962c6eb919506d291e3ff4ef8d6e35894b9`, merge-base `f9a12a5778f5fa1d907201ab2931d20ca2656bb7`, 작업 브랜치 172 ahead / 672 behind. 자동 archive/state/history 보존 감사 전 병합하지 않는다.
+- 통합 보류: snapshot commit `0236dbda2793d6dc2ba4dfc245905a73f8783136` 기준 main HEAD `6eec802125c1bcf3cf0b2dd1401a9c6430792920`, merge-base `f9a12a5778f5fa1d907201ab2931d20ca2656bb7`, 작업 브랜치 181 ahead / 673 behind. main state count=126, history=2,265. 자동 archive/state/history 보존 감사 전 병합하지 않는다.
 - 다음 단계: P1-B2 구현 diff/운영 위험 최종 검토 및 통합 전략 별도 설계. P1-B3/B4는 이번 승인에 포함되지 않는다.
