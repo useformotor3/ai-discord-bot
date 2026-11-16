@@ -465,10 +465,10 @@
 
 
 ## 2026-11-16 통합 전략 감사 갱신 — merge-base 기준
-- 감사 스냅샷: main `3ebf6b977b0127291957ffb415dbdbc83b5b6d97` (#130), 작업 브랜치 `0fe9912b5dbba29eeb3ebd9e9f2c16a42544f925`, merge-base `f9a12a5778f5fa1d907201ab2931d20ca2656bb7`.
-- compare: 204 ahead / 677 behind. 이 수치는 커밋 그래프 차이이며 파일 삭제 수가 아니다.
-- recursive tree: merge-base 1,597 blobs(archive 1,592); main 2,274 blobs(archive 2,268); 작업 브랜치 1,620 blobs(archive 1,592).
-- merge-base→main: archive 677개 추가, 삭제 0, history/state 2개 수정. main history 2,269건과 archive 2,269개가 일치하고 file 참조 누락 0.
+- 감사 스냅샷: main `267d97478b785e6bb268e224a70dbad6631cf43e` (#131), 작업 브랜치 `0fe9912b5dbba29eeb3ebd9e9f2c16a42544f925`, merge-base `f9a12a5778f5fa1d907201ab2931d20ca2656bb7`.
+- compare: 221 ahead / 678 behind. 이 수치는 커밋 그래프 차이이며 파일 삭제 수가 아니다.
+- recursive tree: merge-base 1,597 blobs(archive 1,592); main 2,275 blobs(archive 2,268); 작업 브랜치 1,620 blobs(archive 1,592).
+- merge-base→main: archive 678개 추가, 삭제 0, history/state 2개 수정. main history 2,270건과 archive 2,270개가 일치하고 file 참조 누락 0.
 - merge-base→작업 브랜치: 23개 경로 추가, 삭제 0, main.py 1개 수정. state/history는 merge-base와 동일한 blob.
 - 결론: 3-way PR은 데이터 보존 측면에서 통합 후보가 양호하다. 실제 PR conflict check 전까지 merge 가능을 확정하지 않는다.
 - P1-B2 code review에서 recovery target이 저장소 내 임의 경로를 가리킬 수 있는 점을 발견해 `state.json`, `history.json`, `research_archive/*.md` allowlist로 제한했다.
@@ -478,10 +478,10 @@
 
 
 ## 2026-11-16 — 최신 원격 branch/main 비교
-- 작업 브랜치 HEAD(이 스냅샷 기준): `1aadc3fcd2b2e1b3bf2b45783da9fecb1a91afe7`.
-- 운영 main HEAD: `3ebf6b977b0127291957ffb415dbdbc83b5b6d97` (Auto-archive #130).
+- 작업 브랜치 HEAD(이 스냅샷 기준): `02fde2489323f9f553405e014fac20d75d13a7fa`.
+- 운영 main HEAD: `267d97478b785e6bb268e224a70dbad6631cf43e` (Auto-archive #131).
 - merge-base: `f9a12a5778f5fa1d907201ab2931d20ca2656bb7`.
-- compare: 216 ahead / 677 behind, diverged; PR compare 변경 파일 24개.
-- main state count=130, history=2,269, archive=2,269, 참조 누락 0.
+- compare: 221 ahead / 678 behind, diverged; PR compare 변경 파일 24개.
+- main state count=131, history=2,270, archive=2,270, 참조 누락 0.
 - 이 ahead 수치는 이 스냅샷 commit 기준이며, 로그/문서 추가 commit 이후 증가한다. main 자동 아카이브도 계속 변하므로 PR 직전 재조회한다.
 - 운영 run.yml SHA `65a8cadc8eac593f551e390698e367b1d161ecf1` 유지. PR/merge/운영 실행은 수행하지 않았다.
