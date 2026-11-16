@@ -539,3 +539,11 @@
 - main.py는 merge-base와 동일 SHA 86a7731aad5de8d75581fc953bcea2c44adf2f2b이며 작업 브랜치 SHA 4b631c04e34b2b3bbade0aa9301e7d48578a1e03. 운영 run.yml은 merge-base와 동일 SHA 65a8cadc8eac593f551e390698e367b1d161ecf1.
 - 운영 데이터/코드/workflow 변경, 운영 실행, merge/rebase/PR merge 없음. compare API 300개 경로 제한을 recursive tree 비교로 우회 확인.
 - 보고서: reports/BRANCH_INTEGRATION_AUDIT_2026-11-16.md. 결론: 통합 보류, 데이터 보존형 별도 change-control 필요.
+
+
+## 2026-11-16 — main 자동 아카이브로 통합 감사 스냅샷 갱신
+- main이 Auto-archive #111로 c6262ddb96d608216e16b0860d2d02b6aedde940에서 31e0f8137630630ee30ea55add039b571f2c6801로 전진한 것을 확인했다.
+- 최신 작업 브랜치 HEAD c43abc3315d8d7c8a3d5f4fc209465428a7e8aff; 42 ahead / 0 behind base, main 대비 153 ahead / 658 behind.
+- recursive tree 재검증: main 2,258 entries, base 1,600; archive 658개 추가, 삭제 0, history/state 2개 파일 변경. main history 2,250개, state count 111.
+- 기존 이벤트의 main_head 필드 오기를 최초 조회 시점의 main SHA로 정정하고 최신 스냅샷 이벤트를 추가한다.
+- 운영 파일 변경 및 merge/rebase/PR merge 없음.

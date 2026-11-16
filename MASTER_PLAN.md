@@ -228,3 +228,9 @@
 5. [승인 대기] main 반영, 데이터 변경, workflow 실행, P1-B2/B3/B4 구현.
 
 통합은 단순 branch merge가 아니라 운영 데이터와 자동 생성 보고서 보존을 포함한 별도 change-control 작업으로 취급한다. 현재 main 대비 152 ahead / 657 behind이며 통합을 진행하지 않는다.
+
+
+## 2026-11-16 최신 통합 감사 스냅샷
+- main HEAD `31e0f8137630630ee30ea55add039b571f2c6801`, 작업 브랜치 HEAD `c43abc3315d8d7c8a3d5f4fc209465428a7e8aff`.
+- 작업 브랜치 153 ahead / 658 behind main. main 고유 archive 658개, history 2,250개, state count 111.
+- 데이터 보존 및 별도 통합 설계 전까지 merge/rebase/PR merge 금지.
