@@ -80,17 +80,17 @@
 - Phase 2 P0 모델 응답 검증/실패 차단: 작업 브랜치 구현 및 격리 mock 테스트 9 passed 기록
 - Phase 2 P1-A state/history 검증 및 datetime 호환: 작업 브랜치 구현, helper 독립 pytest 7 passed
 - Phase 3 기본 원본 테스트 실행 기반: 확보. 테스트 전용 GitHub Actions Run #1~#3 success, 최신 Run #3에서 SHA 5개 일치, compileall 통과, pytest 21 passed
-- Phase 2 P1-B Discord 전송/Git 동기화 신뢰성: 설계만 존재, 별도 승인 대기
+- Phase 2 P1-B1 Discord 전송 및 P1-B2 atomic persistence: 작업 브랜치 구현·CI 검증 완료; P1-B3 Git sync/P1-B4 구조 개선은 미구현
 - Phase 4~6: 후속 단계
 
-## 다음 실행 순서 — 객관적 우선순위
+## 다음 실행 순서 — 2026-11-16 최신 우선순위
 
-1. **실패 경로 fixture 보강 설계**: Git add/commit/push 실패, Discord timeout/network/429/4xx/5xx, 부분 성공을 테스트하는 시나리오를 설계한다.
-2. **P1-B 제안**: Discord timeout/status/retry와 Git push 상태화의 최소 변경 범위·위험·테스트·롤백을 제시하고 승인받는다.
-3. **P1-B 구현 및 테스트**: 승인된 범위만 작업 브랜치에 반영하고 동일 CI 게이트에서 회귀 검증한다.
-4. **조사 품질 구조화**: 출처 메타데이터와 topic/correction 인덱스 설계 및 검증.
-5. **요구사항 추적**: CRA 조항에서 제품 요구사항, 설계 통제, 시험 증거까지 연결.
-6. **통합 문서화**: 검증된 사실만 한국어 기준 보고서와 필요한 부속서에 반영.
+1. **통합 전 PR 사전 검사**: 최신 main/feature ref 재조회, PR 변경 경로와 merge-base 비교를 다시 확인한다.
+2. **PR CI 및 conflict check**: PR 전용 mock CI, exact source SHA, compileall, 전체 pytest 및 GitHub conflict check를 검증한다.
+3. **통합 승인 요청**: 코드 통합과 운영 실행/배포를 구분해 변경 범위·롤백·운영 영향과 함께 별도 승인받는다.
+4. **P1-B3 설계**: Git push 결과의 durable status 및 재동기화 정책을 별도 승인 대상으로 제안한다.
+5. **P1-B4 설계**: import-time execution 분리 및 테스트 가능한 구조를 별도 단계로 제안한다.
+6. **조사 품질 구조화 및 CRA 요구사항 추적**: 기존 보고서 검증·정정 후 조항→제품 요구사항→통제→시험 증거로 연결한다.
 
 ## 완료 정의
 
@@ -207,7 +207,7 @@
 - 다음 단계는 P1-B 최소 구현안과 복구/중복 방지 설계를 승인 요청하는 것이다. 운영 코드 변경은 별도 승인 전 금지한다.
 
 
-## 다음 승인 게이트 — P1-B1
+## 과거 승인 게이트 기록 — P1-B1 (이후 승인·구현 완료)
 - P1-B 전체를 한 번에 구현하지 않고 B1 Discord 전송, B2 로컬 저장, B3 Git sync, B4 구조 개선으로 나눈다.
 - 다음 승인 요청은 B1만으로 제한한다. 설계서 §18의 변경 파일·테스트·롤백·제외 범위를 따른다.
 - 승인 전에는 main.py 및 운영 관련 코드를 수정하지 않는다.
@@ -217,10 +217,10 @@
 - P1-B1을 구현하고 테스트 전용 Actions Run #18에서 43 passed / 1 xfailed를 확인했다.
 - 1 xfailed는 P1-B3 Git sync 상태화 미구현 기대 동작이다.
 - Run #17 SHA pin 오류는 기록 후 수정했다. Run #18에서 source SHA, compileall, 전체 pytest 통과를 확인했다.
-- 다음 우선순위는 P1-B1 경계의 추가 검토 및 문서 정합성, 이후 P1-B2 atomic persistence 설계다. P1-B2는 별도 승인 전 구현하지 않는다.
+- 당시 다음 우선순위는 P1-B2 설계였다. P1-B2는 이후 별도 승인으로 구현·검증 완료했다.
 
 
-## 통합 게이트 — 2026-11-16 감사 반영
+## 이전 통합 게이트 스냅샷 — 2026-11-16 (이후 merge-base 재감사로 갱신)
 1. [완료] main/작업 브랜치 ref, merge-base, ahead/behind 재조회.
 2. [완료] merge-base와 main의 recursive Git tree 비교(양쪽 API truncated=false).
 3. [완료] 운영 state/history/archive 및 main.py/workflow 원문·SHA 교차확인.
@@ -240,7 +240,8 @@
 - [완료] P1-B2 원자적 저장 설계·구현: `reports/P1_B2_ATOMIC_PERSISTENCE_DESIGN_2026-11-16.md`.
 - [완료] crash/failure injection tests 및 테스트 전용 CI Run #23: 63 passed / 1 xfailed.
 - [완료] 정확한 source blob SHA, compileall, 전체 pytest 확인.
-- [다음] P1-B2 diff와 운영 위험을 별도 검토하고 데이터 보존을 포함한 통합 전략을 수립한다.
+- [완료] P1-B2 diff/운영 위험 검토 및 merge-base 기반 통합 전략 보고서 작성.
+- [다음] PR 사전 검사, PR CI 및 conflict check. PR 생성/merge/운영 rollout은 별도 승인 대상.
 - [보류/별도 승인] P1-B3 Git sync status, P1-B4 import-time execution cleanup.
 - 운영 main/data/workflow 변경과 merge/rebase/PR merge는 별도 승인 전 금지.
 
