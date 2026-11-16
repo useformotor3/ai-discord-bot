@@ -420,9 +420,11 @@
 - 자동 조사/아카이브 운영은 main에서 계속된 흔적이 있으나 P0/P1-A/P1-B1 신뢰성 개선은 작업 브랜치에만 존재한다. 운영 배포로 간주하지 않는다.
 - 상세: `reports/BRANCH_INTEGRATION_AUDIT_2026-11-16_REFRESH.md`.
 
-## P1-B2 상태
-- [완료] 원자적 로컬 저장 설계서 작성 및 자체 범위 검토.
-- [승인 대기] P1-B2 구현. 이번 단계에서 main.py/tests/workflow/state/history/archive 변경 없음.
+## P1-B2 상태 — 최신
+- [완료] 사용자 승인 후 durable journal 기반 atomic persistence 구현.
+- [완료] recovery target allowlist 적용: `state.json`, `history.json`, `research_archive/*.md`.
+- [완료] 장애 주입 테스트 및 Actions 43851438733: 70 passed / 1 xfailed.
+- [보류] PR 생성/merge와 운영 배포는 별도 승인 대상.
 
 
 ## 2026-11-16 운영 모니터링 설정
@@ -442,7 +444,7 @@
 - 운영 `.github/workflows/run.yml` SHA `65a8cadc8eac593f551e390698e367b1d161ecf1`.
 - recursive tree 전체 비교는 이번 조회에서 수행하지 못했으므로 archive 추가/삭제 수는 미확정이다. compare API의 파일 목록을 전체 경로 목록으로 간주하지 않는다.
 - 운영 main, 운영 workflow, state/history/archive 변경 없음. merge/rebase/PR merge/운영 실행/Gemini·Discord 외부 호출 없음.
-- P1-B2는 설계 완료·구현 별도 승인 대기. P1-B3/B4는 보류 상태 유지.
+- 당시 스냅샷에서는 P1-B2 구현 승인을 기다리고 있었다. 이후 사용자 승인으로 구현·CI 검증을 완료했으며 현재 상태는 아래 P1-B2 완료 섹션과 통합 전략 보고서를 따른다.
 
 
 ## P1-B2 구현 및 검증 완료 — 2026-11-16 (KST)
@@ -458,8 +460,8 @@
 - 검증된 commit: `045b8dbeb54d8d280ab91d6219d968bfdefed107`; main.py SHA `fa8679b758916ba8a446bae41b9ec1b40328da09`, persistence.py SHA `0250152c005f4ef842119e6ddd3b305fb57d0e31`, 신규 테스트 SHA `ab832e4267e7204538af128b4759c943cc0da212`.
 - 운영 main, 운영 run.yml, 운영 state/history/archive는 변경하지 않았다. 실제 Gemini/Discord 호출, 운영 Git push, merge/rebase/PR merge 없음.
 - 제한: 파일시스템 durability는 POSIX fsync/flock 지원 환경을 전제로 하며, Windows 네이티브 실행은 별도 lock backend 없이는 지원하지 않는다. CI runner는 Ubuntu.
-- 통합 보류: snapshot commit `0236dbda2793d6dc2ba4dfc245905a73f8783136` 기준 main HEAD `6eec802125c1bcf3cf0b2dd1401a9c6430792920`, merge-base `f9a12a5778f5fa1d907201ab2931d20ca2656bb7`, 작업 브랜치 181 ahead / 673 behind. main state count=126, history=2,265. 자동 archive/state/history 보존 감사 전 병합하지 않는다.
-- 다음 단계: P1-B2 구현 diff/운영 위험 최종 검토 및 통합 전략 별도 설계. P1-B3/B4는 이번 승인에 포함되지 않는다.
+- 이전 P1-B2 구현 직후 snapshot 수치는 이후 main 자동 아카이브로 superseded 됐다. 현재 merge-base 감사 결과는 `reports/BRANCH_INTEGRATION_STRATEGY_2026-11-16.md`와 아래 최신 통합 전략 감사 섹션을 따른다.
+- 다음 단계: 최신 main ref 재조회, PR Files changed 사전 검사, PR CI/conflict check. PR 생성·merge와 운영 배포는 별도 승인 대상이며 P1-B3/B4는 보류.
 
 
 ## 2026-11-16 통합 전략 감사 갱신 — merge-base 기준
