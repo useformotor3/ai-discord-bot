@@ -295,3 +295,14 @@ Actions 성공은 자동화 실행 결과이지 CRA 법령 해석이나 출처�
 - Merge 직후 same-SHA data integrity: state count 162, history 2,301, archive 2,301, missing refs 0. state/history blob SHA는 pre-merge main #162와 동일.
 - Merge 자체로 production workflow는 실행되지 않음(현재 trigger repository_dispatch/workflow_dispatch). 실제 Gemini/Discord 호출 없음.
 - 다음: 첫 production run 전 snapshot branch 및 post-run guard 동작을 실제 workflow에서 관찰한다.
+
+
+## 2026-11-17 — GitHub 자동화 점검 및 체크포인트 누적 개선
+- 원격 Actions 최근 20건은 조회 당시 completed/success였으나, #2412는 현재 작업 중 main 커밋이 추가된 경합으로 실패했다.
+- #2412: 로컬 보고서 #235 commit 생성, Discord 2/2 chunks 전송, Git push는 non-fast-forward(fetch first) 거부. operational_guard는 remote main 불일치로 자동 복구를 거부했다. 보고서 #235는 원격 history/archive/state에 반영되지 않았다.
+- 실행별 safety/data-pre-run 브랜치 94개 확인. 성공 실행 이후에도 무제한 누적되는 구조를 결함으로 분류.
+- main 변경 전 백업: safety/pre-checkpoint-prune-1abfcfb → 1abfcfb26a8b414dc75eb584082ed35cab0d6412.
+- main commit b89f2bf58752045361fa088a6fc4311ba8798fcb에 성공 실행에서만 최근 30개 체크포인트를 남기고 현재 baseline ref를 보호하는 pruning step 및 스크립트를 추가했다.
+- 첫 CI Run 43959203356: compileall 통과, pytest 96 passed / 1 failed / 1 xfailed. 실패는 보호된 오래된 ref 테스트의 기대값 오류이며 수정 후 재검증한다.
+- 아직 실제 checkpoint pruning은 실행되지 않았다. CI 통과 후 다음 정상 운영 실행에서만 실행되도록 구성했다.
+- 이후 main 변경은 활성 production run 종료 확인 후 수행한다. #2412 Discord 전송은 회수할 수 없으므로 후속 보고서 count 중복 가능성을 추적한다.

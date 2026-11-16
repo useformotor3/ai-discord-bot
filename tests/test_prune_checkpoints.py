@@ -25,8 +25,8 @@ def test_protected_older_checkpoint_is_retained_in_addition_to_newest():
     refs = _refs(40)
     deleted = select_refs_to_delete(refs, keep=30, protected=(refs[0],))
     assert len(deleted) == 9
-    assert refs[0] not in deleted
-    assert refs[-30:] == [ref for ref in refs if ref not in deleted]
+    retained = [ref for ref in refs if ref not in deleted]
+    assert retained == [refs[0], *refs[-30:]]
 
 
 @pytest.mark.parametrize("keep", [0, -1, True, 1.5])

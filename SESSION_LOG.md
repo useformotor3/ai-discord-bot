@@ -797,3 +797,13 @@
 ### 다음
 - first production workflow run is not yet executed. Before it, ensure snapshot branch and concurrency are active; after it, verify the guard result and archive/history/state invariants.
 - Discord messages, once sent, cannot be recalled by Git rollback.
+
+
+## 2026-11-17 — 운영 실행 #2412 경합 장애 및 복구 조치
+- #2411(43958205823)은 성공. #2412(43959068835)는 실행 중 main이 b89f2bf로 이동해 로컬 Auto-archive #235 commit ef4ca1fa의 push가 non-fast-forward로 거부됨.
+- main.py는 push 실패를 출력하고 진행했으나 operational_guard가 remote main 불일치를 감지해 자동 복구를 거부하고 workflow를 실패 처리함. 로컬 report #235는 원격 archive/history/state에 저장되지 않았고 Discord 2/2 청크는 이미 전송됨.
+- 동시 실행 중 main을 수정한 작업 순서 오류를 기록. 앞으로 운영 workflow 활성 여부를 먼저 확인하고 종료 뒤 main 변경.
+- checkpoint refs 94개 누적 확인. 성공 검증 후 최근 30개+현재 baseline ref를 보존하는 pruning 스크립트/step 추가.
+- CI #43959203356: 96 passed, 1 failed, 1 xfailed. 보호된 오래된 ref를 추가 보존하는 테스트의 기대값 오류로 판명, 수정 후 재검증 예정.
+- Gemini gemini-flash-latest 404 3회 후 fallback 경로로 진행. 모델 사용 가능성 별도 확인 필요.
+- 상세: reports/GITHUB_AUTOMATION_INCIDENT_2026-11-17.md.

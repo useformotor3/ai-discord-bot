@@ -238,3 +238,11 @@
 - merge 직후 동일 SHA 데이터 검사: state count=162, history=2,301, archive=2,301, missing refs=0. state/history blob SHA는 pre-merge main #162와 동일.
 - production run.yml의 pre-run snapshot 및 post-run guard가 main에 반영됐다. workflow는 repository_dispatch/workflow_dispatch만 트리거하므로 merge 자체가 Gemini/Discord 운영 실행을 유발하지 않았다.
 - 실제 Gemini/Discord 운영 실행은 아직 하지 않았다. 첫 실행 전후 snapshot branch·데이터 무결성을 확인한다. Discord 메시지는 외부 전송 후 회수할 수 없다.
+
+
+## 2026-11-17 — 운영 workflow와 main 변경의 상호 배제
+- Production workflow가 queued/in_progress인 동안에는 main에 코드·workflow 커밋을 올리지 않는다.
+- main 변경 전 최신 Actions run을 조회하고 production workflow의 active run이 0건임을 확인한다. 변경 후에는 push-triggered CI가 완료될 때까지 production workflow dispatch/외부 trigger와 충돌하지 않도록 한다.
+- 실행 중 main이 이동하면 run의 Git push가 non-fast-forward가 될 수 있다. 운영 데이터 커밋을 강제 push하거나 무조건 자동 복구하지 않는다.
+- checkpoint cleanup은 post-run guard가 성공한 경우에만 수행한다. 실패·복구 상황의 baseline ref는 정리하지 않는다.
+- Discord 전송 후 Git 저장이 실패하면 외부 전송은 되돌릴 수 없다. 동일 count/내용을 재전송하기 전에 기존 Discord 전달 결과를 확인하고 중복 위험을 기록한다.
