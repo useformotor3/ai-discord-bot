@@ -2265,3 +2265,11 @@
 - 핵심 주장 주제(원문 요약 첫 부분): 산업용 서보 드라이브 제조사는 CRA Annex II에 따라 제품의 안전한 설치, 초기 구성, 안전한 기본 설정(Secure by default) 유지 및 취약점 통지 수신을 위한 명확한 보안 지침과 정보를 사용자에게 제공해야 합니다.
 - 우선순위/검증 쟁점: P0 — EUR-Lex Article 13(17)–(19), Annex II(1)–(9): 사용자 정보·지침은 Article 13(18), 종료일 표시는 13(19), Annex II point 8(a)–(f); SBOM 사용자 접근은 point 9 조건부.
 - 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 전체 Pass A/B/C 미완료.
+
+### 2026-11-16 #8 — P1 — 산업용 서보 드라이브는 공장 출고 시점(Out-of-the-box)부터 무단 접근을 원천 차단하기 위해 변경 가능한 기본 패스워드가 없거나, 사용자가 최초 설치 시 강력한 고유 인
+- 상태: NEW / NOT_YET_AUDITED | 확인일: 2026-11-16 | 생성: 00:35:33 (원문 시간대 미표기)
+- 원문: [commit 844ba4a80910dea52b5b49713b3b203c8d84ddb6](https://github.com/useformotor3/ai-discord-bot/commit/844ba4a80910dea52b5b49713b3b203c8d84ddb6) | [research_archive/2026-11-16_003533.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-16_003533.md) | commit UTC: 2026-11-16T00:35:50.000Z
+- 원문 blob SHA: 21a734ccadc3c7a78b84ac459118aa0a323f1951
+- 핵심 주장 주제(원문 요약 첫 부분): 산업용 서보 드라이브는 공장 출고 시점(Out-of-the-box)부터 무단 접근을 원천 차단하기 위해 변경 가능한 기본 패스워드가 없거나, 사용자가 최초 설치 시 강력한 고유 인증 정보를 강제로 설정하도록 강제하는 'Secure by Default' 상태를 유지해야 합니다. 또한, 불필요한 기본 활성 
+- 우선순위/검증 쟁점: P1 — EUR-Lex Annex I Part I(2)(b),(d),(j),(l): secure-by-default·접근통제·공격표면 제한·관련 내부활동 기록/모니터링(opt-out). 특정 비밀번호 변경·포트/JTAG/UART 차단은 보편적 명시 구현수단이 아님.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 전체 Pass A/B/C 미완료.
