@@ -121,7 +121,7 @@
 - Discord 429는 공식 Retry-After/retry_after를 준수하고, 400/401/403/404 등 영구 오류는 반복 요청하지 않는다.
 - chunk 전송은 파트별 확인 상태를 유지하고 일부 성공을 전체 성공으로 표시하지 않는다.
 - 파일별 atomic replace가 여러 파일을 하나의 transaction으로 만드는 것은 아니다. state/history 복구 journal 또는 동등한 일관성 설계를 검증한다.
-- 이 규칙은 설계 기준이며 P1-B 운영 코드 구현은 별도 사용자 승인 전 금지한다.
+- P1-B2는 2026-11-16 사용자 승인으로 작업 브랜치 구현 및 CI 검증을 완료했다. P1-B3/B4와 운영 반영은 별도 승인 전 금지한다.
 
 
 ## 15. P1-B1 Discord webhook 전송 구현 원칙
@@ -132,7 +132,7 @@
 - 400/401/403/404는 영구 실패로 분류하고 재시도하지 않는다.
 - chunk별 성공 ID를 보존하고 일부 성공 후 실패는 partial로 표시한다.
 - 전송 상태의 영속화는 P1-B2/B3에서 별도 설계·승인한다.
-- 이번 사용자 승인은 P1-B1에만 적용된다. P1-B2~B4 및 운영 workflow는 승인된 것으로 간주하지 않는다.
+- P1-B1과 P1-B2는 각각 별도 사용자 승인을 받아 작업 브랜치 구현 및 테스트 전용 CI 검증을 완료했다. P1-B3/B4 및 운영 workflow 변경·운영 배포는 승인된 것으로 간주하지 않는다.
 
 
 ## Git 통합 감사 규칙 추가 — 2026-11-16
@@ -147,3 +147,14 @@
 - 손상된 journal/stage 또는 예상하지 못한 target SHA를 발견하면 자동 초기화·덮어쓰기하지 말고 fail-closed 한다.
 - P1-B2는 로컬 저장 일관성만 다룬다. Discord exactly-once/outbox와 Git sync status를 보장하지 않는다.
 - 설계 완료는 구현 승인이 아니다. 사용자 별도 승인 전 main.py/tests/workflow/운영 데이터 변경 금지.
+
+
+## 16. P1-B2 durable persistence 구현 기준 — 2026-11-16
+- `research_archive/`, `history.json`, `state.json`을 한 transaction ID로 묶고 PREPARED/APPLYING/COMMITTED journal을 사용한다.
+- stage/backup/manifest/journal은 SHA 검증과 fsync를 수행한다. target 교체는 같은 디렉터리의 임시 파일과 os.replace를 사용하고 directory fsync를 수행한다.
+- 시작 시 pending transaction recovery를 state/history 읽기 및 외부 API 호출보다 먼저 수행한다.
+- commit 시 처음 읽은 raw bytes snapshot SHA와 현재 target SHA를 비교해 동시 변경을 덮어쓰지 않는다.
+- journal/stage/backup 손상, 잘못된 경로, target SHA mismatch, lock 획득 실패는 fail-closed 한다. 자동 초기화·임의 복구·덮어쓰기를 금지한다.
+- POSIX `fcntl.flock` 및 directory fsync 지원 환경을 전제로 한다. Windows 지원을 주장하지 않는다.
+- lock은 recovery/commit 구간에 한정한다. 외부 API 호출 구간까지 잠그지 않으므로 Discord exactly-once 또는 중복 전송 방지는 제공하지 않는다.
+- P1-B2 CI Run #23: source SHA 일치, compileall 통과, 63 passed / 1 xfailed. xfail은 P1-B3 범위다.
