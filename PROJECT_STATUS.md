@@ -634,3 +634,13 @@
 - 단일 신고 플랫폼, coordinating CSIRT/ENISA 동시 통지, 사용자 통지, Article 14 적용일 2026-09-11 및 Article 69(3) 경과규정 확인.
 - Annex II는 사용자 지침, Annex VII가 기술문서.
 - 상세: `reports/CRA_CORRECTION_REPORT_2_2026-11-17.md`.
+
+
+## 2026-11-17 — CRA 보고서 #1 표본 감사 결과
+- 원본 `research_archive/2026-11-17_080532833611_7d315e0a.md` 보존.
+- Article 11은 General product safety이며 제조사 의무 조항이 아님. Article 13(8)은 support period, Annex I Part II (8)은 보안 업데이트 무상 제공(맞춤형 제품 business-user 합의 예외).
+- CVD 정책/접수 연락처/안전한 업데이트 배포는 Annex I Part II (5)–(7), Article 13(17), Annex II (2).
+- 디지털 서명은 무결성·안전 배포 구현 수단이지 CRA가 모든 제품에 직접 지정한 단일 암호방식은 아님.
+- 실시간 제어 중단 없는 설치 또는 STO 상태 설치도 법령의 보편적 설치 절차가 아니라 제품 위험분석·기능안전 영향평가 항목.
+- Annex I Part I(제품 속성)와 Part II(취약점 처리) 구조를 구분.
+- 상세: `reports/CRA_CORRECTION_REPORT_1_2026-11-17.md`.
