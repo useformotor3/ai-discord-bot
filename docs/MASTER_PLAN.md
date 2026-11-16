@@ -912,3 +912,14 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 - [ ] 두 보고서의 Raw Text Quote, atomic claim, file verdict, product applicability를 별도 판정. 모든 미실행 시험은 NOT_RUN 유지.
 - [ ] 제품 SKU, core functionality, EU market form, 네트워크·업데이트 경로, ST MCU 주문 코드가 확보되면 제품 적용성 및 제조사 기능을 별도 재검증.
 - 보호 코드·Gemini prompt·운영 workflow 변경은 별도 승인 전 금지. main read-only, merge/rebase/sync 금지.
+
+
+## 2026-11-16 — main report #10 감사 대기열
+
+- [x] main #9→#10 commit delta, archive/history/state 확인.
+- [x] #10을 P0 NEW / NOT_YET_AUDITED로 canonical queue에 등록.
+- [x] EUR-Lex Article 13/14/16, Annex I Part II(1),(2),(5)–(8), Annex VII point 2(b) 원문 재개방.
+- [x] ENISA SRP FAQ와 SRP v1.3 변경 안내 확인. FAQ는 2026-10-15 갱신본이고 SRP 문서는 2026-11-04 v1.3 업그레이드 후 갱신 중임을 주의사항으로 기록.
+- [ ] #10 전체 Pass A/B/C: CVD policy와 Annex VII technical documentation, Part II(1) SBOM vs (2)/(7)/(8) updates, Article 14 AEV/severe incident scope and recipient/deadlines, user notice, hot-patching claim.
+- [ ] Raw Text Quote/atomic claim/file verdict/product applicability를 별도 판정. 제품 SKU/업데이트 아키텍처 없이 hot-patching applicability 확정 금지.
+- main read-only; protected code/prompt/production workflow 변경 금지; merge/rebase/sync 금지. 테스트/CI는 실행하지 않았으며 PASS 기록 금지.
