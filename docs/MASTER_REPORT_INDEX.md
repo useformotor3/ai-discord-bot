@@ -214,3 +214,11 @@
 - Reports #1–#6 are now present in the 2026-11-14 daily archive. Manual audit status: #4 and #5 AUDITED; #1–#3 and #6 pending. #2/#4/#5 overlap on secure-by-default/initial authentication; #6 is Secure Boot/HWRoT.
 - main remains read-only. Re-fetch main HEAD/history/state and original blob SHAs before each audit batch.
 - Work branch HEAD and CI are dynamic; re-fetch after the latest queue update. No merge/rebase/sync.
+
+
+## 2026-11-16 — 신규 main archive 감사 대기열
+
+- Main report #8/#9 등록. #8 P1 (Secure by Default/initial authentication), #9 P0 (free security updates/vulnerability handling).
+- 두 건 모두 조사 대기 상태이며 최종 보고서 본문에 검증 완료 결론으로 반영하지 않는다.
+- 전체 Pass A/B/C 및 제품 적용성 확인 전까지 file verdict UNVERIFIED, Raw Text Quote/atomic claims NOT_YET_AUDITED 유지.
+- 세부 근거·원문 링크: [CRA_ARCHIVE_AUDIT_QUEUE.md](CRA_ARCHIVE_AUDIT_QUEUE.md).
