@@ -8,15 +8,15 @@
 
 - 현재 작업 브랜치: `test/failure-path-fixtures-2026-11-14`
 - 운영 기준 브랜치: `main` — 별도 승인 없이 수정·병합하지 않습니다.
-- 현재 작업: 테스트 전용 실패 주입 범위 확장 및 P1-B 정책 명세 (운영 코드 변경은 승인 대기)
+- 현재 작업: P1-B1 Discord 전송 신뢰성 구현 및 CI 검증 완료; P1-B2~B4는 별도 설계·승인 대기
 - P0 응답 검증/실패 차단: 작업 브랜치 구현 완료
 - P1-A 상태·이력 안전성: 작업 브랜치 구현 완료
 - helper 독립 pytest: 7 passed (전체 저장소 테스트 아님)
 - 임시 재구성 사본 pytest: 21 passed (blob SHA 불일치로 예비 결과만 인정)
-- **원본 동일성 검증 후 GitHub Actions pytest: 21 passed (최신 Run #3, success)**
-- 다섯 개 핵심 파일 Git blob SHA 일치, compileall 통과 확인
-- 실제 코드 리뷰에서 Discord/Git 실패 처리, 원자적 저장, 테스트 fixture의 실패 경로 검증 공백 확인
-- main 대비 작업 브랜치: diverged. 문서 커밋으로 수치가 계속 변하므로 정확한 ahead/behind는 통합 직전에 실시간 재조회
+- **최신 P1-B1 원본 동일성 검증 CI: 43 passed, 1 xfailed (Run #18, success)**
+- Run #18에서 핵심 파일 6개 Git blob SHA 일치 및 compileall 통과 확인
+- Discord 실패 분류·재시도·부분 chunk 처리는 P1-B1에서 구현; Git sync 상태화와 atomic persistence는 미완료
+- main 대비 작업 브랜치: diverged, 151 ahead / 610 behind (2026-11-16 조회); 통합 감사 전 병합 금지
 - 2026-11-14 15:31 KST 스냅샷: 72 ahead / 50 behind; 당시 작업 브랜치 Actions runs 0건 (CI 성공 증거 없음)
 
 Actions 성공은 자동화 실행 결과이지 CRA 법령 해석이나 출처의 사실 정확성을 보증하지 않습니다. 테스트 통과 숫자는 반드시 실행한 정확한 소스와 범위를 함께 표시합니다.

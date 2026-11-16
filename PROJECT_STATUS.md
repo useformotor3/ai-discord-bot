@@ -1,6 +1,6 @@
 # CRA 서보 드라이브 프로젝트 상황판
 
-- 최종 갱신: 2026-11-14 (KST)
+- 최종 갱신: 2026-11-16 (KST)
 - 기준 저장소: `useformotor3/ai-discord-bot`
 - 운영 기준 브랜치: `main` (운영 자동화 및 데이터 보존)
 - 현재 작업 브랜치: `test/failure-path-fixtures-2026-11-14` (최신 상태 절 참조)
@@ -21,11 +21,16 @@
 | 임시 재구성 사본 테스트 | 예비 결과 | SHA 불일치로 원본 검증으로 인정하지 않음; 현재는 별도 Actions 원본 테스트로 대체 |
 | 실제 저장소 전체 pytest | **통과** | Run #3 최신 검증 commit에서 21 passed, 5개 SHA 일치 |
 | 테스트 전용 GitHub Actions CI | **통과** | Run #1~#3 success; 최신 Run #3에서 SHA·compileall·pytest 재검증 |
-| P1-B 전송·동기화 신뢰성 | 설계 및 정적 감사 | Discord/Git 실패 경로, 원자적 저장 개선은 별도 승인 필요 |
+| P1-B1 Discord 전송 신뢰성 | **구현 및 CI 검증 완료** | Run #18: 43 passed / 1 xfailed; timeout/status/429/partial 검증 |
+| P1-B2 저장 원자성 | 미구현 | state/history transaction journal 및 crash recovery 설계·승인 필요 |
+| P1-B3 Git sync 상태화 | 미구현 | 유일한 strict xfail; 별도 승인 필요 |
+| P1-B4 구조 개선 | 미구현 | import-time 실행 제거 등 후속 단계 |
 | CRA 요구사항 추적 | 후속 | 공식 조항-제품 적용성-통제-시험 증거 연결 |
 | SIL 기능안전 자료 | 별도 추적 | CRA 사이버보안 결론과 혼합 금지 |
 
-## 2. 이번 단계에서 원본 코드로 확인한 사실
+## 2. P1-B1 이전 기준선에서 확인한 원본 코드 사실
+
+> 아래 Discord timeout/status 부재 등의 내용은 P1-B1 구현 전 기준선이다. 현재 변경 후 상태는 §26 및 P1-B1 상세 보고서를 따른다.
 
 검토 기준 파일:
 - `main.py`: blob SHA `470ac101d5cc4fdb2c5077d5468ef00327af3d43`
@@ -380,3 +385,10 @@
 - main 대비 diverged 149 ahead / 610 behind; main HEAD 8357da3abe3b87ca0e7a2fa50f862b693c0a226c, merge-base f9a12a5778f5fa1d907201ab2931d20ca2656bb7.
 - 문서 갱신 커밋 이후 ahead 수가 증가하므로 이 수치는 조회 시점 스냅샷이다.
 - 610 behind로 직접 병합하지 않고 통합 감사 전까지 병합·리베이스를 보류한다.
+
+
+## 27. 관리 문서 상단 현황 정합화 — 2026-11-16
+- README와 상황판의 상단 요약을 최신 P1-B1 구현/CI 결과에 맞춰 갱신했다.
+- 최신 테스트는 Run #18의 43 passed / 1 xfailed다.
+- P1-B2/B3/B4는 미구현이며 승인 범위 밖이다.
+- main 대비 151 ahead / 610 behind이므로 통합 감사 전 병합하지 않는다.
