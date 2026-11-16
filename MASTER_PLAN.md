@@ -332,3 +332,9 @@
 - 첫 운영 실행 전 per-run snapshot branch 생성과 실패 시 restore commit 경로를 mock으로 구현·리허설한다.
 - U+200B legacy state 파일은 참조/생성 경위를 확인할 때까지 보존한다.
 - 코드 rollback과 데이터 rollback을 분리하고, 외부 Discord 전송은 회수 불가 경계로 유지한다.
+
+## 2026-11-16 — 운영 rollback guard 계획
+- 운영 workflow 실행 전 baseline branch를 생성하고 실행 후 append-only 및 참조 무결성을 검증한다.
+- 복구는 remote main이 실행의 단일 child commit일 때만 data-only restore commit으로 수행하며 force-push하지 않는다.
+- local bare Git remote integration tests 및 최신 base PR CI 성공 후 통합한다.
+- 첫 실제 운영 실행 결과를 별도 관찰하고 외부 Discord 메시지는 회수 불가 경계로 관리한다.

@@ -761,3 +761,13 @@
 - U+200B ZERO WIDTH SPACE가 앞에 붙은 별도 state file(date=2026-06-07,count=0)은 보존한다.
 - 이전 moving-ref 조회에서 나타난 history/archive 차이는 동일 immutable SHA에서 재현되지 않아 snapshot race로 정정했다.
 - per-run 자동 snapshot/restore는 미구현/미검증이므로 첫 운영 실행 전 복원 리허설을 진행한다.
+
+## 2026-11-16 — production data checkpoint 및 rollback guard 구현
+- .github/workflows/run.yml: 실행 전 safety snapshot, concurrency, Python 3.11, 15분 timeout, post-run guard.
+- scripts/operational_guard.py: baseline/current snapshot, single-child/remote HEAD/changed path, append-only history, archive refs, state count, quota no-op, data-only restore commit.
+- tests/test_operational_guard.py: 정상 전이, append-only 위반, archive 누락/삭제, count 오류, 날짜 변경, unsafe path, bare remote 복구/미push/quota no-op.
+- .github/workflows/tests.yml: scripts compile 및 source blob pins, run.yml/scripts 변경 시 CI.
+- Run #43873774430: 80 passed, 1 failed, 1 xfailed. Fixture baseline 오류 수정.
+- 최종 Run #43874801395: 86 passed, 1 xfailed; compileall 및 source SHA 확인 성공. PR base f5b5a112ec72b01f8b3f91f734b8d755dde416c6.
+- main #161 baseline: state 161, history 2,300, archive 2,300, missing 0. safety/pre-merge-main-f5b5a11 exact SHA.
+- actual Gemini/Discord/production workflow not executed.

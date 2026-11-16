@@ -52,3 +52,12 @@
 6. 이상 시 재실행을 중단하고 코드 revert와 필요한 데이터 restore commit 수행
 
 이 보고서는 기술 감사이며 CRA 법적 적합성 또는 안전 인증을 의미하지 않는다.
+
+## 8. 신규 운영 workflow rollback guard 구현
+- production run.yml에 실행 전 snapshot branch, concurrency, post-run guard를 추가했다.
+- guard는 baseline commit과 run commit의 parent 관계 및 remote main HEAD를 확인한다.
+- 변경 commit은 state.json, history.json, research_archive/**만 허용한다.
+- history 1건 append, 기존 history 보존, archive 1개 추가, 기존 archive 보존, history file 참조, state count를 검사한다.
+- 검증 실패 시 remote main이 해당 run의 단일 child commit일 때만 data-only restore commit을 push한다. concurrent advance 또는 미push면 자동 복구하지 않는다.
+- local bare remote integration tests 및 CI Run #43874801395 (86 passed, 1 xfailed) 성공.
+- 실제 운영 workflow는 아직 실행하지 않았다. Discord 외부 전송은 회수할 수 없다.

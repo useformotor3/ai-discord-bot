@@ -542,3 +542,10 @@
 - U+200B가 앞에 붙은 별도 state 파일(date=2026-06-07,count=0, blob=de8505bdcb7709a96a4fe89edf124f9ad1917ce8)을 삭제하지 않고 보존.
 - 이전 moving-ref 불일치는 immutable SHA 재검사에서 재현되지 않아 snapshot race로 정정.
 - per-run 자동 snapshot/restore는 아직 미구현/미검증. 상세 reports/ROLLBACK_AND_DATA_BASELINE_AUDIT_2026-11-16.md.
+
+## 2026-11-16 — 운영 rollback guard 및 최신 통합 검증
+- feature HEAD 8ad2364992cfd0e4f60108d4bfcdf36e99d9131e; main HEAD f5b5a112ec72b01f8b3f91f734b8d755dde416c6.
+- compare 239 ahead / 708 behind; merge-base f9a12a5778f5fa1d907201ab2931d20ca2656bb7; changed paths 28.
+- PR #1 latest base/head exact match, mergeable clean at last check. Run #43874801395 success: 86 passed, 1 xfailed, compileall passed.
+- production workflow pre-run checkpoint and post-run guarded data-only restore implemented. No actual Gemini/Discord/production execution yet.
+- code/data backups: safety/pre-merge-main-f5b5a11 and safety/pre-merge-feature-8ad2364; both readback exact.

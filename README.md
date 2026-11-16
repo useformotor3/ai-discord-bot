@@ -270,3 +270,10 @@ Actions 성공은 자동화 실행 결과이지 CRA 법령 해석이나 출처�
 - U+200B가 앞에 붙은 별도 state 파일(date 2026-06-07,count 0)은 조사 전까지 보존한다.
 - moving-ref 조회에서 보인 불일치 1건은 immutable SHA 재검사에서 재현되지 않았다.
 - 상세 감사: reports/ROLLBACK_AND_DATA_BASELINE_AUDIT_2026-11-16.md.
+
+## 2026-11-16 — 운영 rollback guard 구현 및 검증
+- production workflow에 실행 전 고유 safety/data-pre-run checkpoint, 실행 직렬화, 실행 후 무결성 검증/조건부 데이터 복구를 추가했다.
+- operational_guard.py 및 테스트 추가. local bare Git remote로 정상 전이/복구 commit/미push 거부/quota no-op을 검증.
+- 최종 PR CI Run #43874801395: 86 passed, 1 xfailed, compileall 성공. https://github.com/useformotor3/ai-discord-bot/actions/runs/43874801395
+- 최신 main #161 baseline: f5b5a112ec72b01f8b3f91f734b8d755dde416c6; state count 161, history 2,300, archive 2,300, missing refs 0.
+- main backup safety/pre-merge-main-f5b5a11, feature backup safety/pre-merge-feature-8ad2364. 상세 reports/ROLLBACK_AND_DATA_BASELINE_AUDIT_2026-11-16.md

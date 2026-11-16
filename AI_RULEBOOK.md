@@ -208,3 +208,15 @@
 - moving ref를 서로 다른 API 호출에서 조회하면 자동 아카이브 사이에 snapshot race가 생길 수 있다. 데이터 감사는 먼저 HEAD SHA를 고정한다.
 - 이전 history/archive 1건 차이는 동일 immutable SHA 재검사에서 재현되지 않아 moving-ref race로 정정했다.
 - per-run 자동 데이터 백업/복원 리허설은 아직 미완료다.
+
+## 20. 운영 실행 checkpoint/복구 guard 구현 — 2026-11-16
+- production run workflow는 실행 직전 현재 main HEAD를 고유 safety/data-pre-run-{run_id}-{attempt} 브랜치로 보존한다.
+- production workflow concurrency group으로 중복 실행을 직렬화한다.
+- main.py 실행 뒤 operational_guard.py가 baseline/current commit parent, remote main HEAD, changed paths, state/history/archive append-only, 새 보고서 1건, count 및 참조 무결성을 확인한다.
+- 검증 실패 시 remote main이 해당 실행의 단일 child commit일 때만 state/history/archive를 baseline으로 복구하는 새 commit을 push한다. force-push는 사용하지 않는다.
+- remote main이 baseline 또는 다른 commit이면 자동 복구하지 않고 fail-closed 한다. checkpoint는 보존한다.
+- quota 등 clean no-op은 local/remote HEAD가 baseline과 같고 data path가 clean할 때만 허용한다.
+- local bare Git remote integration tests로 정상 전이, 손상 후 restore commit, 미push 거부, quota no-op을 검증했다.
+- CI Run 43873774430에서 fixture 오류 1건(80 passed, 1 failed, 1 xfailed)을 발견해 수정. 최종 Run 43874801395에서 86 passed, 1 xfailed 및 compileall 통과.
+- 최종 Run은 base f5b5a112ec72b01f8b3f91f734b8d755dde416c6, head 8ad2364992cfd0e4f60108d4bfcdf36e99d9131e 기준 성공.
+- 이는 데이터 구조 무결성 검사이며 CRA 법적 적합성 또는 외부 Discord 전달의 회수 가능성을 보장하지 않는다.
