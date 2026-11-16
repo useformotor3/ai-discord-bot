@@ -94,7 +94,10 @@ python -m pytest -q
 ## P1-B2 원자적 로컬 저장 테스트
 - `persistence.py`는 archive/history/state를 durable journal 기반 transaction으로 저장하고 PREPARED/APPLYING/COMMITTED 상태에서 재시작 roll-forward recovery를 수행한다.
 - 검증: 각 target replace 직후 중단, PREPARED 이후 중단, stage/fsync 실패, journal/stage/backup 손상, target SHA 불일치, stale snapshot, archive 충돌, 중복 target, 경로 위반, main 시작 시 recovery 실패의 외부 호출 차단.
-- CI Run #23: source SHA 일치, compileall 통과, 전체 suite 63 passed / 1 xfailed.
+- P1-B2 allowlist 보강 CI Actions 43851438733: source SHA 일치, compileall 통과, 전체 suite 70 passed / 1 xfailed.
 - xfailed 1건은 P1-B3 Git sync failure 상태화이며 P1-B2에서 변경하지 않는다.
 - POSIX `fcntl.flock` 및 directory fsync를 사용하므로 테스트 runner는 Ubuntu 기반이다. Windows 호환성은 검증되지 않았다.
 - 실제 Gemini/Discord/운영 Git push 및 운영 파일은 테스트하지 않으며 접근하지 않는다.
+
+- persistence recovery target은 `state.json`, `history.json`, `research_archive/*.md`만 허용한다. README, 코드, workflow, .git 등 저장소 내 임의 경로를 지정하는 manifest는 fail-closed 한다.
+- 테스트 전용 workflow는 pull_request→main 및 main push에도 실행되도록 구성했다. 외부 API/secrets 없이 mock 테스트만 수행한다.
