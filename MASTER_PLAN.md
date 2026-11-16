@@ -242,3 +242,14 @@
 - [승인 대기] P1-B2 코드 구현 및 crash/failure injection tests.
 - [보류] P1-B3 Git sync status, P1-B4 import-time execution cleanup.
 - 운영 main/data/workflow 변경과 merge/rebase/PR merge는 별도 승인 전 금지.
+
+
+## 2026-11-16 운영 모니터링 설정
+- ChatGPT 예약 작업 `매일 Git 브랜치 통합 상태 점검` 생성 완료. ID `6afacb7561d8819182728a42ffd4e867`, 매일 09:00 Asia/Seoul, 첫 실행 2026-11-17 09:00.
+- refs/ahead-behind/recursive tree/state-history-archive 변경을 재조회한다. 안전할 때만 작업 브랜치의 상황판·로그 문서를 갱신한다.
+- 운영 main/data/workflow 수정, merge/rebase/PR merge, 실제 Gemini/Discord 호출은 금지한다.
+- 이 예약 작업은 ChatGPT의 모니터링이며 GitHub Actions 운영 workflow와 별개다.
+
+
+## 최신 작업 브랜치 포인터
+- P1-B2 설계/감사 문서 커밋 이후 작업 브랜치 HEAD는 `38bb00c815eee3e754bff14f67bcab2f23172a92`이며, main HEAD `036334dd2665752c2e6ddb024001771cff4064c5` 대비 156 ahead / 660 behind다. 앞선 155/660 수치는 설계 문서 커밋 직전의 감사 기준 HEAD `227e3298066af4bda83fb0713fc1d57c749ee8c6` 기준 스냅샷이다.

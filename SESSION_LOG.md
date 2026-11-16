@@ -562,3 +562,10 @@
 - P1-B2 durable journal + staged roll-forward + old/new SHA 검증 + idempotent recovery 설계서를 작성했다.
 - P1-B2 구현은 미승인. main.py, tests, workflow, 운영 state/history/archive 변경 없음.
 - 상세: reports/P1_B2_ATOMIC_PERSISTENCE_DESIGN_2026-11-16.md 및 reports/BRANCH_INTEGRATION_AUDIT_2026-11-16_REFRESH.md.
+
+
+## 2026-11-16 운영 모니터링 설정
+- ChatGPT 예약 작업 `매일 Git 브랜치 통합 상태 점검` 생성 완료. ID `6afacb7561d8819182728a42ffd4e867`, 매일 09:00 Asia/Seoul, 첫 실행 2026-11-17 09:00.
+- refs/ahead-behind/recursive tree/state-history-archive 변경을 재조회한다. 안전할 때만 작업 브랜치의 상황판·로그 문서를 갱신한다.
+- 운영 main/data/workflow 수정, merge/rebase/PR merge, 실제 Gemini/Discord 호출은 금지한다.
+- 이 예약 작업은 ChatGPT의 모니터링이며 GitHub Actions 운영 workflow와 별개다.
