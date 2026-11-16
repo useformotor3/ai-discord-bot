@@ -475,3 +475,13 @@
 - 테스트 전용 workflow는 pull_request→main 및 main push 트리거를 갖도록 보강했다. Actions 43851438733: source SHA 일치, compileall 통과, 70 passed / 1 xfailed.
 - 운영 `run.yml`, state/history/archive, main 브랜치, 실제 서비스 호출은 변경하지 않았다. PR 생성·merge·운영 배포도 하지 않았다.
 - 권장 다음 단계: 최신 main 재조회 후 PR diff가 24개 예상 경로인지 확인하고, PR CI와 GitHub conflict check를 검증한다. PR/merge/운영 rollout은 별도 승인 대상.
+
+
+## 2026-11-16 — 최신 원격 branch/main 비교
+- 작업 브랜치 HEAD(이 스냅샷 기준): `1aadc3fcd2b2e1b3bf2b45783da9fecb1a91afe7`.
+- 운영 main HEAD: `3ebf6b977b0127291957ffb415dbdbc83b5b6d97` (Auto-archive #130).
+- merge-base: `f9a12a5778f5fa1d907201ab2931d20ca2656bb7`.
+- compare: 216 ahead / 677 behind, diverged; PR compare 변경 파일 24개.
+- main state count=130, history=2,269, archive=2,269, 참조 누락 0.
+- 이 ahead 수치는 이 스냅샷 commit 기준이며, 로그/문서 추가 commit 이후 증가한다. main 자동 아카이브도 계속 변하므로 PR 직전 재조회한다.
+- 운영 run.yml SHA `65a8cadc8eac593f551e390698e367b1d161ecf1` 유지. PR/merge/운영 실행은 수행하지 않았다.
