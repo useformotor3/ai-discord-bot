@@ -89,3 +89,12 @@ python -m pytest -q
 - HTTP 5xx, ReadTimeout, 일반 ConnectionError: delivery_unknown, 자동 재전송 금지.
 - 후속 chunk 실패: partial, 성공 chunk의 message ID 보존, archive/state/history 후속 저장 확인.
 - CI Run #18: 43 passed, 1 xfailed. 유일한 xfail은 P1-B3 Git sync failure 상태화.
+
+
+## P1-B2 원자적 로컬 저장 테스트
+- `persistence.py`는 archive/history/state를 durable journal 기반 transaction으로 저장하고 PREPARED/APPLYING/COMMITTED 상태에서 재시작 roll-forward recovery를 수행한다.
+- 검증: 각 target replace 직후 중단, PREPARED 이후 중단, stage/fsync 실패, journal/stage/backup 손상, target SHA 불일치, stale snapshot, archive 충돌, 중복 target, 경로 위반, main 시작 시 recovery 실패의 외부 호출 차단.
+- CI Run #23: source SHA 일치, compileall 통과, 전체 suite 63 passed / 1 xfailed.
+- xfailed 1건은 P1-B3 Git sync failure 상태화이며 P1-B2에서 변경하지 않는다.
+- POSIX `fcntl.flock` 및 directory fsync를 사용하므로 테스트 runner는 Ubuntu 기반이다. Windows 호환성은 검증되지 않았다.
+- 실제 Gemini/Discord/운영 Git push 및 운영 파일은 테스트하지 않으며 접근하지 않는다.
