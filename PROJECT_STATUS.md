@@ -22,7 +22,7 @@
 | 실제 저장소 전체 pytest | **통과** | Run #3 최신 검증 commit에서 21 passed, 5개 SHA 일치 |
 | 테스트 전용 GitHub Actions CI | **통과** | Run #1~#3 success; 최신 Run #3에서 SHA·compileall·pytest 재검증 |
 | P1-B1 Discord 전송 신뢰성 | **구현 및 CI 검증 완료** | Run #18: 43 passed / 1 xfailed; timeout/status/429/partial 검증 |
-| P1-B2 저장 원자성 | 구현 및 CI 검증 완료 | durable journal/stage/backup, SHA 보호, roll-forward recovery; Run #23: 63 passed / 1 xfailed |
+| P1-B2 저장 원자성 | 구현·보강 및 CI 검증 완료 | durable journal, SHA 보호, roll-forward, target allowlist; Actions 43851438733: 70 passed / 1 xfailed |
 | P1-B3 Git sync 상태화 | 미구현 | 유일한 strict xfail; 별도 승인 필요 |
 | P1-B4 구조 개선 | 미구현 | import-time 실행 제거 등 후속 단계 |
 | CRA 요구사항 추적 | 후속 | 공식 조항-제품 적용성-통제-시험 증거 연결 |
@@ -460,3 +460,16 @@
 - 제한: 파일시스템 durability는 POSIX fsync/flock 지원 환경을 전제로 하며, Windows 네이티브 실행은 별도 lock backend 없이는 지원하지 않는다. CI runner는 Ubuntu.
 - 통합 보류: snapshot commit `0236dbda2793d6dc2ba4dfc245905a73f8783136` 기준 main HEAD `6eec802125c1bcf3cf0b2dd1401a9c6430792920`, merge-base `f9a12a5778f5fa1d907201ab2931d20ca2656bb7`, 작업 브랜치 181 ahead / 673 behind. main state count=126, history=2,265. 자동 archive/state/history 보존 감사 전 병합하지 않는다.
 - 다음 단계: P1-B2 구현 diff/운영 위험 최종 검토 및 통합 전략 별도 설계. P1-B3/B4는 이번 승인에 포함되지 않는다.
+
+
+## 2026-11-16 통합 전략 감사 갱신 — merge-base 기준
+- 감사 스냅샷: main `260c0c2d38dd658714e58db5e7a4cdb2b34bc5b3` (#129), 작업 브랜치 `2b2645b23876378a6c384c8da819de84104ac49a`, merge-base `f9a12a5778f5fa1d907201ab2931d20ca2656bb7`.
+- compare: 189 ahead / 676 behind. 이 수치는 커밋 그래프 차이이며 파일 삭제 수가 아니다.
+- recursive tree: merge-base 1,597 blobs(archive 1,592); main 2,273 blobs(archive 2,268); 작업 브랜치 1,619 blobs(archive 1,592).
+- merge-base→main: archive 676개 추가, 삭제 0, history/state 2개 수정. main history 2,268건과 archive 2,268개가 일치하고 file 참조 누락 0.
+- merge-base→작업 브랜치: 22개 경로 추가, 삭제 0, main.py 1개 수정. state/history는 merge-base와 동일한 blob.
+- 결론: 3-way PR은 데이터 보존 측면에서 통합 후보가 양호하다. 실제 PR conflict check 전까지 merge 가능을 확정하지 않는다.
+- P1-B2 code review에서 recovery target이 저장소 내 임의 경로를 가리킬 수 있는 점을 발견해 `state.json`, `history.json`, `research_archive/*.md` allowlist로 제한했다.
+- 테스트 전용 workflow는 pull_request→main 및 main push 트리거를 갖도록 보강했다. Actions 43851438733: source SHA 일치, compileall 통과, 70 passed / 1 xfailed.
+- 운영 `run.yml`, state/history/archive, main 브랜치, 실제 서비스 호출은 변경하지 않았다. PR 생성·merge·운영 배포도 하지 않았다.
+- 권장 다음 단계: 최신 main 재조회 후 PR diff가 23개 예상 경로인지 확인하고, PR CI와 GitHub conflict check를 검증한다. PR/merge/운영 rollout은 별도 승인 대상.
