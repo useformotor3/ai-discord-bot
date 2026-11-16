@@ -10,13 +10,13 @@
 - 운영 기준 브랜치: `main` — 별도 승인 없이 수정·병합하지 않습니다.
 - P0 응답 검증/실패 차단, P1-A 상태·이력 검증, P1-B1 Discord 전송 신뢰성: 작업 브랜치 구현 완료
 - **P1-B2 로컬 다중 파일 저장 일관성: 사용자 승인 후 구현 및 테스트 CI 검증 완료**
-- **최신 테스트 전용 CI Run #23: 63 passed, 1 xfailed; source SHA·compileall·전체 pytest 통과**
-- P1-B2는 durable journal, staged payload, backup/SHA 검증, idempotent roll-forward recovery, snapshot 충돌 방지 적용
+- **최신 테스트 전용 CI (Actions 43851438733): 70 passed, 1 xfailed; source SHA·compileall·전체 pytest 통과**
+- P1-B2는 durable journal, staged payload, backup/SHA 검증, idempotent roll-forward recovery, snapshot 충돌 방지 및 허용 target allowlist 적용
 - P1-B3 Git sync 상태화는 미구현(기존 strict xfail), P1-B4 import-time 구조 개선도 미구현
 - Discord exactly-once/outbox는 P1-B2 범위 밖이며 보장하지 않음
-- main 대비 작업 브랜치: diverged, 181 ahead / 673 behind (snapshot commit `0236dbda2793d6dc2ba4dfc245905a73f8783136`, 2026-11-16); 통합 감사 전 병합 금지
-- 운영 main 최신 조회: HEAD `6eec802125c1bcf3cf0b2dd1401a9c6430792920`, state count=126, history=2,265
-- 운영 main의 main.py와 run.yml은 각각 기존 SHA `86a7731aad5de8d75581fc953bcea2c44adf2f2b`, `65a8cadc8eac593f551e390698e367b1d161ecf1`; 이번 구현에서 변경하지 않음
+- main 대비 작업 브랜치: diverged, 189 ahead / 676 behind (snapshot commit `2b2645b23876378a6c384c8da819de84104ac49a`, 2026-11-16); merge-base 기준 통합 분석은 완료, PR/merge는 별도 승인 대기
+- 운영 main 최신 조회: HEAD `260c0c2d38dd658714e58db5e7a4cdb2b34bc5b3` (#129), state count=129, history=2,268, archive=2,268
+- 운영 main의 main.py와 run.yml은 각각 SHA `86a7731aad5de8d75581fc953bcea2c44adf2f2b`, `65a8cadc8eac593f551e390698e367b1d161ecf1`; 작업 브랜치 main.py만 개선했고 run.yml은 변경하지 않음
 
 Actions 성공은 자동화 실행 결과이지 CRA 법령 해석이나 출처의 사실 정확성을 보증하지 않습니다. 테스트 통과 숫자는 반드시 실행한 정확한 소스와 범위를 함께 표시합니다.
 
@@ -177,7 +177,8 @@ Actions 성공은 자동화 실행 결과이지 CRA 법령 해석이나 출처�
 - recursive tree 비교(양쪽 truncated=false): merge-base 1,600 entries, main 2,260 entries. archive 660개 추가, 삭제 0개, history/state 변경 2개.
 - main history.json 2,252개 객체, state.json count=113. main.py SHA `86a7731aad5de8d75581fc953bcea2c44adf2f2b`, 작업 브랜치 main.py SHA `4b631c04e34b2b3bbade0aa9301e7d48578a1e03`.
 - 자동 조사/아카이브 운영은 main에서 계속된 흔적이 있으나 P0/P1-A/P1-B1 신뢰성 개선은 작업 브랜치에만 존재한다. 운영 배포로 간주하지 않는다.
-- 상세: `reports/BRANCH_INTEGRATION_AUDIT_2026-11-16_REFRESH.md`.
+- 상세 감사: `reports/BRANCH_INTEGRATION_AUDIT_2026-11-16_REFRESH.md`.
+- 통합 전략: `reports/BRANCH_INTEGRATION_STRATEGY_2026-11-16.md`.
 
 
 ## 2026-11-16 재개 시점 원격 상태 재확인
@@ -191,3 +192,11 @@ Actions 성공은 자동화 실행 결과이지 CRA 법령 해석이나 출처�
 - recursive tree 전체 비교는 이번 조회에서 수행하지 못했으므로 archive 추가/삭제 수는 미확정이다. compare API의 파일 목록을 전체 경로 목록으로 간주하지 않는다.
 - 운영 main, 운영 workflow, state/history/archive 변경 없음. merge/rebase/PR merge/운영 실행/Gemini·Discord 외부 호출 없음.
 - P1-B2는 설계 완료·구현 별도 승인 대기. P1-B3/B4는 보류 상태 유지.
+
+
+## 통합 전략 감사 — 2026-11-16
+- merge-base 기준 main은 archive 676개만 추가하고 history/state를 갱신했으며 삭제는 0개다.
+- 작업 브랜치는 main.py 수정 및 22개 경로 추가, 삭제 0개다. 따라서 3-way PR 통합 시 운영 archive/history/state 보존을 기대할 수 있다.
+- P1-B2 recovery target allowlist 보강 후 CI Actions 43851438733에서 70 passed / 1 xfailed.
+- PR 생성·merge·운영 배포는 별도 승인 전 수행하지 않는다.
+- 상세: [통합 전략 감사 보고서](reports/BRANCH_INTEGRATION_STRATEGY_2026-11-16.md).
