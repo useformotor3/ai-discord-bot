@@ -247,9 +247,13 @@ def commit_persistence_transaction(root, operations, fault_hook=None):
         if len(targets) != len(set(targets)):
             raise PersistenceError("동일 target이 한 트랜잭션에 중복 지정되었습니다.")
         txn_id = uuid.uuid4().hex
-        txn_dir = root / ".persistence_txn" / txn_id
-        (txn_dir / "staged").mkdir(parents=True)
+        txn_root = root / ".persistence_txn"
+        txn_dir = txn_root / txn_id
+        txn_dir.mkdir()
+        _fsync_dir(txn_root)
+        (txn_dir / "staged").mkdir()
         (txn_dir / "backup").mkdir()
+        _fsync_dir(txn_dir)
         manifest_ops = []
         for index, item in enumerate(operations):
             relative, payload = str(item["target"]), item["payload"]
