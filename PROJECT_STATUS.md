@@ -1,6 +1,6 @@
 # CRA 서보 드라이브 프로젝트 상황판
 
-- 최종 갱신: 2026-11-16 (KST)
+- 최종 갱신: 2026-11-17 (KST)
 - 기준 저장소: `useformotor3/ai-discord-bot`
 - 운영 기준 브랜치: `main` (운영 자동화 및 데이터 보존)
 - 현재 작업 브랜치: `feature/p1-b2-atomic-persistence-2026-11-16` (P1-B2 구현 전용)
@@ -592,3 +592,15 @@
 - CI Run #59: 성공, 99 passed / 1 xfailed; source SHA 검사·compileall·전체 pytest 통과. Run #58은 모델명 기대값이 구형이라 2건 실패했고, 테스트 수정 후 Run #59에서 재검증 통과.
 - 변경 후 실제 Gemini/Discord API 운영 실행은 아직 없음. 다음 production run에서 KST date/count, 신규 model id, 정상 Git push를 관찰해야 함.
 - 현재 데이터 readback: state count=254(기존 UTC 기준 값, 새 KST 로직 미적용 실행 기준), history=2,393, archive=2,393, 참조 누락 0. checkpoint refs=30.
+
+
+## 2026-11-17 — KST 적용 후 운영 데이터 readback
+- main 관찰 HEAD: `655bde43483f4c2e793954e4206590d768e6ab74`.
+- `state.json`: date=2026-11-17, count=4.
+- `history.json`: 전체 JSON 파싱 성공, 2,397개 항목.
+- 당일 마지막 4개 history: 08:05:32 / 08:10:37 / 08:15:40 / 08:20:40 KST, count 1~4.
+- 해당 4개 archive 파일을 각각 원격에서 재조회했고 모두 존재한다.
+- 보고서 #1~#4 자동 아카이브 커밋을 확인. #4 commit diff에서 history append, archive 생성, state count 3→4를 확인했다.
+- 따라서 KST 날짜·일일 카운트·원격 archive 저장은 운영 데이터로 확인됨.
+- 운영 Job 상세 로그는 현재 조회하지 못했다. 실제 Gemini 모델 ID, operational_guard, checkpoint pruning, Discord 응답 상태는 미확인으로 유지한다.
+- 상세 증거 및 제한: `reports/PRODUCTION_RUN_OBSERVATION_2026-11-17.md`.
