@@ -54,3 +54,11 @@ jobs:
         run: |
           set -euo pipefail
           python scripts/operational_guard.py --baseline-ref "${BASELINE_REF}" --branch main --run-id "${GITHUB_RUN_ID}"
+
+      - name: Prune old successful pre-run checkpoints
+        if: ${{ success() }}
+        env:
+          BASELINE_REF: safety/data-pre-run-${{ github.run_id }}-${{ github.run_attempt }}
+        run: |
+          set -euo pipefail
+          python scripts/prune_checkpoints.py --keep 30 --protect "refs/heads/${BASELINE_REF}"
