@@ -534,3 +534,11 @@
 - PR mergeable 응답은 false→true로 변동했고 PR base SHA가 main 최신 HEAD와 불일치하는 값을 반환했다. PR head 기준 CI는 성공이나 최신 main을 포함한 통합 결과 CI로 간주하지 않는다.
 - 복구 준비 평가: (1) 코드 이력/백업 브랜치 생성 완료, (2) 운영 데이터 snapshot/restore 검증 미완료, (3) main 통합 및 첫 운영 실행 미실행. 따라서 현재 코드 롤백 기준점은 있으나 운영 데이터까지 복구 준비 완료라고 말할 수 없다.
 - 다음 우선순위: backup refs readback → main 최신 base 기준 통합/CI 확인 → state/history/archive 사전 백업 및 복원 리허설 → PR merge commit 통합 → post-merge 검증 → 제한된 첫 실행 및 데이터 무결성 확인.
+
+## 2026-11-16 — 운영 데이터 기준선 #158 및 복구 상태
+- 고정 main SHA 4cf0e708b28a343898af00d01521044dfb9a1987.
+- 동일 SHA에서 state count=158, history=2,297, archive=2,297, 참조 누락 0. tree 2,305 entries, truncated=false.
+- safety/pre-merge-main-4cf0e70 readback SHA exact match.
+- U+200B가 앞에 붙은 별도 state 파일(date=2026-06-07,count=0, blob=de8505bdcb7709a96a4fe89edf124f9ad1917ce8)을 삭제하지 않고 보존.
+- 이전 moving-ref 불일치는 immutable SHA 재검사에서 재현되지 않아 snapshot race로 정정.
+- per-run 자동 snapshot/restore는 아직 미구현/미검증. 상세 reports/ROLLBACK_AND_DATA_BASELINE_AUDIT_2026-11-16.md.

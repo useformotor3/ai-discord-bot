@@ -753,3 +753,11 @@
 - feature backup branch: safety/pre-merge-feature-eba3aeb → eba3aeb5710dcc6507623d56d586a619e9a4fc46.
 - 현재 Git 코드 기준점은 보존했으나 state/history/archive의 별도 snapshot/restore는 아직 검증되지 않았다. 따라서 운영 데이터까지 복구 준비 완료라고 표현하지 않는다.
 - main merge, workflow 변경, 운영 실행은 아직 하지 않았다. 먼저 backup ref readback 및 데이터 복원 리허설을 진행한다.
+
+## 2026-11-16 — main #158 immutable data baseline 감사
+- main HEAD 4cf0e708b28a343898af00d01521044dfb9a1987 (Auto-archive #158).
+- backup safety/pre-merge-main-4cf0e70 readback SHA exact match.
+- tree entries 2,305, truncated=false; state count=158; history=2,297; archive=2,297; missing references=0.
+- U+200B ZERO WIDTH SPACE가 앞에 붙은 별도 state file(date=2026-06-07,count=0)은 보존한다.
+- 이전 moving-ref 조회에서 나타난 history/archive 차이는 동일 immutable SHA에서 재현되지 않아 snapshot race로 정정했다.
+- per-run 자동 snapshot/restore는 미구현/미검증이므로 첫 운영 실행 전 복원 리허설을 진행한다.

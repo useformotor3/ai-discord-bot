@@ -325,3 +325,10 @@
 6. 지속 운영: 매 세션 시작 시 이전 정상 commit/백업 ref/최근 CI를 확인하고, 변경 단위별 테스트 및 복구 가능성을 검증한다.
 
 완료 기준은 단순히 Git commit이 존재하는 것이 아니라, 코드와 운영 데이터 각각에 대해 정상 기준점으로 되돌리는 절차가 실제로 검증된 상태다.
+
+## 2026-11-16 — 운영 데이터 baseline 및 rollback
+- main HEAD를 immutable SHA로 고정한 뒤 state/history/archive를 같은 SHA에서 검사한다.
+- Git safety branch는 tracked 운영 데이터 기준 snapshot으로 유지한다.
+- 첫 운영 실행 전 per-run snapshot branch 생성과 실패 시 restore commit 경로를 mock으로 구현·리허설한다.
+- U+200B legacy state 파일은 참조/생성 경위를 확인할 때까지 보존한다.
+- 코드 rollback과 데이터 rollback을 분리하고, 외부 Discord 전송은 회수 불가 경계로 유지한다.

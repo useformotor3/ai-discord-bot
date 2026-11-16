@@ -262,3 +262,11 @@ Actions 성공은 자동화 실행 결과이지 CRA 법령 해석이나 출처�
 - Draft PR #1: https://github.com/useformotor3/ai-discord-bot/pull/1. main은 2622e332d6a3defd2079ccad3af36970001de5c1까지 진행. 최신 compare는 231 ahead / 703 behind, merge-base f9a12a5778f5fa1d907201ab2931d20ca2656bb7.
 - PR mergeable 값은 조회 시점에 변동했고 PR base SHA 응답도 main HEAD와 일치하지 않는 스냅샷을 반환했다. 최신 base 기준 통합 검증이 완료된 것으로 보지 않는다.
 - 코드 백업 ref는 만들었지만 운영 데이터 snapshot/restore 절차는 아직 검증되지 않았다. 이를 완료하고 복원 리허설하기 전에는 신규 코드의 첫 운영 실행을 하지 않는다.
+
+## 2026-11-16 — 운영 데이터 immutable baseline #158
+- 기준 commit 4cf0e708b28a343898af00d01521044dfb9a1987 (Auto-archive #158).
+- 동일 SHA 검사: state count=158, history=2,297, archive=2,297, 참조 누락 0, tree 2,305 entries.
+- backup safety/pre-merge-main-4cf0e70가 같은 SHA를 가리킨다.
+- U+200B가 앞에 붙은 별도 state 파일(date 2026-06-07,count 0)은 조사 전까지 보존한다.
+- moving-ref 조회에서 보인 불일치 1건은 immutable SHA 재검사에서 재현되지 않았다.
+- 상세 감사: reports/ROLLBACK_AND_DATA_BASELINE_AUDIT_2026-11-16.md.

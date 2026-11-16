@@ -200,3 +200,11 @@
 - feature pre-integration backup: safety/pre-merge-feature-eba3aeb → eba3aeb5710dcc6507623d56d586a619e9a4fc46.
 - 두 ref는 생성 완료했으며 별도 readback 및 SHA 검증을 다음 단계에서 완료해야 한다.
 - 코드 revert 경로는 마련됐지만 운영 데이터 snapshot/restore는 아직 미완료다. 따라서 main 통합과 신규 코드의 실제 운영 실행은 현재 이 문서만으로 안전하다고 간주하지 않는다.
+
+## 19. 운영 데이터 기준선 감사 결과 — 2026-11-16
+- immutable main snapshot 4cf0e708b28a343898af00d01521044dfb9a1987 기준 state count=158, history=2,297, archive=2,297, 참조 누락 0.
+- U+200B ZERO WIDTH SPACE가 앞에 붙은 별도 state.json(date=2026-06-07,count=0)은 원인 확인 전까지 보존한다.
+- safety/pre-merge-main-4cf0e70가 위 immutable main commit을 정확히 가리키는 것을 확인했다.
+- moving ref를 서로 다른 API 호출에서 조회하면 자동 아카이브 사이에 snapshot race가 생길 수 있다. 데이터 감사는 먼저 HEAD SHA를 고정한다.
+- 이전 history/archive 1건 차이는 동일 immutable SHA 재검사에서 재현되지 않아 moving-ref race로 정정했다.
+- per-run 자동 데이터 백업/복원 리허설은 아직 미완료다.
