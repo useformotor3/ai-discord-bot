@@ -613,5 +613,5 @@
 - 운영 `main.py`, `.github/workflows/run.yml`, 운영 `state.json`, `history.json`, `research_archive/` 변경 없음.
 - 실제 Gemini/Discord 호출, 운영 Git push, merge/rebase/PR merge 없음.
 - Discord 전송과 로컬 저장은 원자적이지 않으며 exactly-once/outbox는 보장하지 않는다.
-- 현재 main HEAD `23027962c6eb919506d291e3ff4ef8d6e35894b9`, branch compare 172 ahead / 672 behind, merge-base `f9a12a5778f5fa1d907201ab2931d20ca2656bb7`; 통합 보류.
+- compare snapshot commit `0236dbda2793d6dc2ba4dfc245905a73f8783136` 기준 main HEAD `6eec802125c1bcf3cf0b2dd1401a9c6430792920`, branch compare 181 ahead / 673 behind, merge-base `f9a12a5778f5fa1d907201ab2931d20ca2656bb7`; main state count=126, history=2,265; 통합 보류.
 - 다음 재개 지점: 구현 diff 및 POSIX 실행환경 제약을 검토하고, 운영 archive/state/history를 보존하는 별도 통합 전략을 설계한다. P1-B3/B4는 별도 승인 전 착수하지 않는다.
