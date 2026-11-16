@@ -333,3 +333,12 @@ ST와 비교할 기능 범위와 제품군을 먼저 정의한다. 동급 기능
 - Since that baseline 296 archive commits/files were added; exact-path dedup excluded existing #5/#6 and registered 294 new items: 2026-11-14 #7–#288 and 2026-11-15 #1–#12.
 - Topic/Priority are first-pass extracts from history.json snippets. Full report claim extraction and Pass A/B/C remain pending.
 - All new files UNVERIFIED; Raw Text Quote and atomic claims NOT_YET_AUDITED; product applicability UNVERIFIED. Queue: docs/CRA_ARCHIVE_AUDIT_QUEUE.md.
+
+
+## 2026-11-16 — CRA archive #8/#9 legal pre-memo (not full audit)
+
+- Official source reopened: [EUR-Lex Regulation (EU) 2024/2847, OJ L 20.11.2024](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R2847).
+- Article 13(1): manufacturer design/development/production conformity obligation. Article 13(2): cybersecurity risk assessment. Article 13(8): support period based on expected use, generally at least five years, but shorter where expected use is under five years. Article 13(9): each security update remains available at least 10 years after issuance or for the remainder of support period, whichever is longer.
+- Annex I Part I(2)(b): secure-by-default, subject to tailor-made product/business-user agreement; (2)(c): security updates and applicable automatic-update default/user controls; (2)(d): unauthorised-access protection; (2)(j): attack-surface limitation.
+- Annex I Part II(2): vulnerability remediation and, where technically feasible, separation of security/function updates; (7): secure update distribution; (8): no-delay, free-of-charge security updates unless otherwise agreed for a tailor-made product with a business user.
+- #8 and #9 queue records include pre-memos only. They are not VERIFIED and do not constitute full Pass A/B/C or product-specific applicability decisions. See [CRA_ARCHIVE_AUDIT_QUEUE.md](CRA_ARCHIVE_AUDIT_QUEUE.md).
