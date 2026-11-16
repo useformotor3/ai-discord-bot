@@ -52,7 +52,7 @@ def test_rejects_non_append_only_history():
         {"date": "2026-11-16", "count": 10, "file": "research_archive/changed.md"},
         args[4][-1],
     ]
-    args[2] = {"research_archive/old.md", "research_archive/changed.md"}
+    args[5] = {"research_archive/changed.md", "research_archive/new.md"}
     with pytest.raises(GuardError, match="history is not append-only"):
         validate_transition(*args)
 
