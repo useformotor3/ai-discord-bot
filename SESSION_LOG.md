@@ -513,3 +513,11 @@
 - 6개 핵심 SHA 일치, compileall 통과, pytest 43 passed / 1 xfailed in 0.34s.
 - xfail 1건은 P1-B3 Git push 실패 상태화이며 승인 범위 밖이다.
 - 실제 Discord/Gemini, 운영 workflow, 운영 Git push 미실행.
+
+
+## 2026-11-16 — 작업 브랜치와 main divergence 재확인
+- 작업 브랜치 HEAD 비교 기준: 37148b596760a03c40164ed6b5a3316310697ba0.
+- 기준 docs commit 대비 36 ahead / 0 behind.
+- main 대비 diverged 147 ahead / 610 behind. main HEAD 8357da3abe3b87ca0e7a2fa50f862b693c0a226c, merge-base f9a12a5778f5fa1d907201ab2931d20ca2656bb7.
+- main.py blob SHA: 작업 브랜치 4b631c04e34b2b3bbade0aa9301e7d48578a1e03, main 86a7731aad5de8d75581fc953bcea2c44adf2f2b. 작업 브랜치에는 P0/P1-A 및 승인된 P1-B1 변경이 있고 main은 다른 시점의 코드다.
+- 610 commits behind 상태이므로 PR/merge 전에 자동 생성 보고서, 코드, 데이터와 충돌을 별도 통합 감사해야 한다. 이번에는 merge/rebase/PR merge/운영 배포를 하지 않았다.
