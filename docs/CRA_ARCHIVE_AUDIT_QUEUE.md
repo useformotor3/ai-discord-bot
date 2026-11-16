@@ -4746,3 +4746,101 @@ Batch result: 5/5 CONFLICT, 0 PARTIALLY_VERIFIED, 0 VERIFIED; 0/5 Raw Text Quote
 ## 2026-11-15 state.json last_health_check caveat
 - Latest main state.json was re-opened after the queue/document commits: `date=2026-11-15`, `count=12`, `last_health_check=2026-11-14T21:15:39.725042`.
 - The `last_health_check` value is older than the current archive additions; this run did not update it and does not treat it as evidence of a current successful health check.
+
+## 2026-11-16 live main 재확인 및 신규 대기열 등록
+- main HEAD: `99f374ffee57abca87ac85605d0d9e22d3509bcf` (2026-11-16 report #3). 이전 대기열 기준선: `fa76fc44a190d2452cd8c5774711ab0efd74aa2f` (2026-11-15 report #12).
+- 기준선 이후 279 commits / 279 archive files 추가; 변경 파일 281개 = archive 279 + history.json + state.json. 신규 범위 2026-11-15 #13–#288 (276) 및 2026-11-16 #1–#3 (3). 기존 11/15 #1–#12 중복 제외.
+- history.json 2,142 entries; state.json date=2026-11-16/count=3 (일일 카운터), last_health_check=2026-11-15T21:20:38.480365 (최신 archive commit 이후 health check 증거로 간주하지 않음).
+- 모든 신규 항목은 NEW / NOT_YET_AUDITED, file UNVERIFIED, Raw Text Quote/개별 주장 NOT_YET_AUDITED, 제품 적용성 UNVERIFIED. 전체 Pass A/B/C 미완료.
+
+### 공식 원문 사전 확인 (개별 보고서 검증 완료 아님)
+- EUR-Lex Regulation (EU) 2024/2847 OJ L 20.11.2024: [공식 본문](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R2847), [통합본](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02024R2847-20241120). Article 13(8)–(9), 13(17)–(19), Article 14(1)–(8), Annex I Part I/II, Annex II(1)–(9) 문맥 직접 확인.
+- Article 13(8): support period는 예상 사용기간 반영, 원칙 최소 5년; 예상 사용이 5년 미만이면 그 기간. Article 13(9)는 security update 발행 후 최소 10년 또는 잔여 support period 중 더 긴 기간 가용성 유지.
+- Annex I Part II(8): 보안 업데이트는 지체 없이 배포하고 원칙 무료. tailor-made product에 대한 manufacturer/business user 별도 합의 예외 확인. Article 13(8) support period와 구분.
+- Article 14: AEV와 severe incident 구분; AEV 24h/72h 및 조치 가용 후 14일 final report, severe incident 24h/72h 및 1개월 final report. Article 14(8) 사용자 통지는 당국 신고와 별도.
+- Article 13(18)/Annex II 사용자 정보·지침, Article 13(19) 지원 종료일. Annex II point 9 SBOM 접근 정보는 제조자가 사용자 제공을 결정한 경우에만 적용.
+- Commission C(2026) 5252: 2026-07-27 공식 게시, scope/support period/reporting/risk assessment를 다루는 비구속적 지침. [공식 페이지](https://digital-strategy.ec.europa.eu/en/library/commission-publishes-new-guidance-support-timely-cyber-resilience-act-implementation).
+- ENISA CRA SRP FAQ: 2026-10-15 업데이트, 신고 대상·기한·SRP/CSIRT coordinator/ENISA 경로 확인. SRP는 2026-09-11 운영 개시; v1.3 업그레이드 이후 문서 갱신 공지가 있어 실제 제출 절차는 최신 자료 재확인 필요. [공식 FAQ](https://www.enisa.europa.eu/topics/product-security/vulnerability-services/eu-incident-response-and-cyber-crisis-management/single-reporting-platform-srp/frequently-asked-questions).
+- 정확한 제품 SKU/MCU order code 미확정: 제품별 적용성·제조사 기능 UNVERIFIED.
+
+### 신규 보고서 목록
+### 2026-11-15 #13 — P0 — 서보 드라이브 제조사는 제품 출시 시 잠재적 공격 표면을 최소화하기 위해 '기본적으로 안전한 상태(Secure by default)'로 설정해야 하며, 특히 인증
+- 상태: NEW / NOT_YET_AUDITED | 확인일: 2026-11-16 | 생성: 01:00:54 (시간대 미표기)
+- 원문: [commit 964d8e42385a763f97cb853330c7f43af19aba4c](https://github.com/useformotor3/ai-discord-bot/commit/964d8e42385a763f97cb853330c7f43af19aba4c) | [research_archive/2026-11-15_010054.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-15_010054.md) | commit UTC: 2026-11-15T01:01:10.000Z
+- 원문 blob SHA: e02285bd75348bf3e463e1b063fc297aecd6233b
+- 핵심 주장 주제(원문 요약 첫 부분): 서보 드라이브 제조사는 제품 출시 시 잠재적 공격 표면을 최소화하기 위해 '기본적으로 안전한 상태(Secure by default)'로 설정해야 하며, 특히 인증되지 않은 원격 접속 및 디버그 포트가 차단된 상태로 공급해야 합니다. 또한, 사용 중 발생하는 보안 관련 이벤트와 로그를 사용자가 모니터링할 수 있도록 필수적인
+- 우선순위/검증 쟁점: P0 — Article 13(8)–(9), Annex I Part II(5)–(8): support period 원칙 최소 5년(예상 사용기간 <5년이면 그 기간); 무료 업데이트는 Part II(8) 원칙이며 tailor-made product/business user 합의 예외. Article 13(9) 업데이트 가용성 유지와 구분.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 전체 Pass A/B/C 미완료.
+
+### 2026-11-15 #14 — P0 — 서보 드라이브 제조사는 제품의 예상 수명 주기 동안 발견된 취약점과 보안 업데이트를 사용자가 쉽게 접근할 수 있는 방식으로 지체 없이 무상 제공해야 하며, 이를 
+- 상태: NEW / NOT_YET_AUDITED | 확인일: 2026-11-16 | 생성: 01:05:32 (시간대 미표기)
+- 원문: [commit 4d5fc2dfe3ff67109af580cf0b756e5895b52a59](https://github.com/useformotor3/ai-discord-bot/commit/4d5fc2dfe3ff67109af580cf0b756e5895b52a59) | [research_archive/2026-11-15_010532.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-15_010532.md) | commit UTC: 2026-11-15T01:05:48.000Z
+- 원문 blob SHA: fea1aea37852bf75dcf4ff5ca28b90b6f8f6a0b3
+- 핵심 주장 주제(원문 요약 첫 부분): 서보 드라이브 제조사는 제품의 예상 수명 주기 동안 발견된 취약점과 보안 업데이트를 사용자가 쉽게 접근할 수 있는 방식으로 지체 없이 무상 제공해야 하며, 이를 위한 기계독실(Machine-readable) 형식의 취약점 정보 공표 체계를 갖추어야 합니다.
+- 우선순위/검증 쟁점: P0 — Article 13(8)–(9), Annex I Part II(5)–(8): support period 원칙 최소 5년(예상 사용기간 <5년이면 그 기간); 무료 업데이트는 Part II(8) 원칙이며 tailor-made product/business user 합의 예외. Article 13(9) 업데이트 가용성 유지와 구분.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 전체 Pass A/B/C 미완료.
+
+### 2026-11-15 #15 — P0 — 산업용 서보 드라이브 제조사는 CRA에 따라 제품의 예상 수명 주기(또는 최소 5년) 동안 발견된 보안 취약점을 무상으로 조치하고, 보안 업데이트(패치)를 지체 
+- 상태: NEW / NOT_YET_AUDITED | 확인일: 2026-11-16 | 생성: 01:10:43 (시간대 미표기)
+- 원문: [commit bd2c1470840b6621ca51b2e547707fcca0b72715](https://github.com/useformotor3/ai-discord-bot/commit/bd2c1470840b6621ca51b2e547707fcca0b72715) | [research_archive/2026-11-15_011043.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-15_011043.md) | commit UTC: 2026-11-15T01:10:59.000Z
+- 원문 blob SHA: dcf707b0ac128670f9ce8ce9953e1e8c8ce90397
+- 핵심 주장 주제(원문 요약 첫 부분): 산업용 서보 드라이브 제조사는 CRA에 따라 제품의 예상 수명 주기(또는 최소 5년) 동안 발견된 보안 취약점을 무상으로 조치하고, 보안 업데이트(패치)를 지체 없이 제공할 법적 의무를 집니다. 이는 공장 자동화 현장에서 사용되는 OT/IoT 기기의 지속적인 보안 유지 상태를 강제하기 위한 핵심 요건입니다.
+- 우선순위/검증 쟁점: P0 — Article 13(8)–(9), Annex I Part II(5)–(8): support period 원칙 최소 5년(예상 사용기간 <5년이면 그 기간); 무료 업데이트는 Part II(8) 원칙이며 tailor-made product/business user 합의 예외. Article 13(9) 업데이트 가용성 유지와 구분.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 전체 Pass A/B/C 미완료.
+
+### 2026-11-15 #16 — P0 — 서보 드라이브 제조사는 CRA에 따라 발견된 취약점과 보안 조치 정보를 유럽연합 사이버안보국(ENISA) 및 관할 시장 감시 당국에 정해진 법정 기한(조기 경보 
+- 상태: NEW / NOT_YET_AUDITED | 확인일: 2026-11-16 | 생성: 01:15:39 (시간대 미표기)
+- 원문: [commit ebb14d621a6d45e17d65a70deb457c76466766e9](https://github.com/useformotor3/ai-discord-bot/commit/ebb14d621a6d45e17d65a70deb457c76466766e9) | [research_archive/2026-11-15_011539.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-15_011539.md) | commit UTC: 2026-11-15T01:15:56.000Z
+- 원문 blob SHA: b29986264efd0c1e36b63c3a18f5066afd3bc8fc
+- 핵심 주장 주제(원문 요약 첫 부분): 서보 드라이브 제조사는 CRA에 따라 발견된 취약점과 보안 조치 정보를 유럽연합 사이버안보국(ENISA) 및 관할 시장 감시 당국에 정해진 법정 기한(조기 경보 24시간 이내) 내에 자동으로 고지해야 합니다. 또한, 서보 드라이브의 예상 수명 동안 최소 5년 또는 규정된 지원 기간 동안 사용료 청구 없이 무상으로 보안 업
+- 우선순위/검증 쟁점: P0 — Article 14(1)–(8): actively exploited vulnerability와 severe incident 구분; AEV 24h/72h 및 조치 가용 후 14일, severe incident 24h/72h 및 1개월. SRP/CSIRT coordinator·ENISA 및 Article 14(8) 사용자 통지 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 전체 Pass A/B/C 미완료.
+
+### 2026-11-15 #17 — P0 — 산업용 서보 드라이브는 공장 출하 시(Out-of-the-box) 인증 우회를 방지하기 위해 고유하고 변경 가능한 초기 비밀번호나 강력한 기본 인증 메커니즘을 갖
+- 상태: NEW / NOT_YET_AUDITED | 확인일: 2026-11-16 | 생성: 01:20:40 (시간대 미표기)
+- 원문: [commit 0ba31b23028c38176bb9b491e9eccc715a252c1f](https://github.com/useformotor3/ai-discord-bot/commit/0ba31b23028c38176bb9b491e9eccc715a252c1f) | [research_archive/2026-11-15_012040.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-15_012040.md) | commit UTC: 2026-11-15T01:20:54.000Z
+- 원문 blob SHA: d17006f2c020bad451f8ddb80b762fce6c4bd8f6
+- 핵심 주장 주제(원문 요약 첫 부분): 산업용 서보 드라이브는 공장 출하 시(Out-of-the-box) 인증 우회를 방지하기 위해 고유하고 변경 가능한 초기 비밀번호나 강력한 기본 인증 메커니즘을 갖추어야 하며, 공격 표면을 최소화하기 위해 불필요한 서비스와 포트가 기본적으로 비활성화된 'Secure by default' 상태로 제공되어야 합니다.
+- 우선순위/검증 쟁점: P0 — Annex I Part II(1) SBOM 및 top-level dependencies, Annex VII(2)(b) 기술문서, Annex II(9) 사용자 제공은 조건부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 전체 Pass A/B/C 미완료.
+
+### 2026-11-15 #18 — P0 — 산업용 서보 드라이브 제조사는 CRA에 따라 제품의 예상 지원 기간(최소 5년)을 명시해야 하며, 지원 종료 시점이 도래하기 최소 1년 전에 최종 사용자에게 명확
+- 상태: NEW / NOT_YET_AUDITED | 확인일: 2026-11-16 | 생성: 01:25:32 (시간대 미표기)
+- 원문: [commit 36100f70ee727ac74eb25b3768d1cec16977993c](https://github.com/useformotor3/ai-discord-bot/commit/36100f70ee727ac74eb25b3768d1cec16977993c) | [research_archive/2026-11-15_012532.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-15_012532.md) | commit UTC: 2026-11-15T01:25:48.000Z
+- 원문 blob SHA: fba2cbde1e083a2b7bb7e3e24d279605395f3545
+- 핵심 주장 주제(원문 요약 첫 부분): 산업용 서보 드라이브 제조사는 CRA에 따라 제품의 예상 지원 기간(최소 5년)을 명시해야 하며, 지원 종료 시점이 도래하기 최소 1년 전에 최종 사용자에게 명확한 사전 통지(End-of-Life/Support Notification)를 제공하여 플랜트 운영의 보안 공백을 방지해야 합니다.
+- 우선순위/검증 쟁점: P0 — Article 14(1)–(8): actively exploited vulnerability와 severe incident 구분; AEV 24h/72h 및 조치 가용 후 14일, severe incident 24h/72h 및 1개월. SRP/CSIRT coordinator·ENISA 및 Article 14(8) 사용자 통지 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 전체 Pass A/B/C 미완료.
+
+### 2026-11-15 #19 — P0 — 산업용 서보 드라이브는 제조 시점부터 외부 네트워크 인터페이스(예: 산업용 이더넷)가 활성화되어 공급될 때 발생할 수 있는 잠재적 공격 표면을 최소화하기 위해, 
+- 상태: NEW / NOT_YET_AUDITED | 확인일: 2026-11-16 | 생성: 01:30:43 (시간대 미표기)
+- 원문: [commit b282918f786bafcb341ff505ae57371fff52cb28](https://github.com/useformotor3/ai-discord-bot/commit/b282918f786bafcb341ff505ae57371fff52cb28) | [research_archive/2026-11-15_013043.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-15_013043.md) | commit UTC: 2026-11-15T01:30:59.000Z
+- 원문 blob SHA: aaa8bdbfc6a3d33ef568454d13ae94087637b1c3
+- 핵심 주장 주제(원문 요약 첫 부분): 산업용 서보 드라이브는 제조 시점부터 외부 네트워크 인터페이스(예: 산업용 이더넷)가 활성화되어 공급될 때 발생할 수 있는 잠재적 공격 표면을 최소화하기 위해, 'Secure by Default(기본 보안 설정)' 원칙에 따라 사용자 인증 및 통신 인터페이스가 안전한 초기 상태로 설정되어야 하며, 이를 입증할 기술 문서와
+- 우선순위/검증 쟁점: P0 — Annex I Part II(1) SBOM 및 top-level dependencies, Annex VII(2)(b) 기술문서, Annex II(9) 사용자 제공은 조건부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 전체 Pass A/B/C 미완료.
+
+### 2026-11-15 #20 — P0 — 서보 드라이브 제조사는 제품 출하 시 무단 접근을 막기 위해 모든 기본 네트워크 포트, 디폴트 계정, 진단 인터페이스가 안전하게 비활성화된 'Secure by D
+- 상태: NEW / NOT_YET_AUDITED | 확인일: 2026-11-16 | 생성: 01:35:29 (시간대 미표기)
+- 원문: [commit 6b96533468bfa5b2c76ceb75c522ab6569afc9e0](https://github.com/useformotor3/ai-discord-bot/commit/6b96533468bfa5b2c76ceb75c522ab6569afc9e0) | [research_archive/2026-11-15_013529.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-15_013529.md) | commit UTC: 2026-11-15T01:35:45.000Z
+- 원문 blob SHA: b6337706328027ed607db8ac7597b24eb17860a1
+- 핵심 주장 주제(원문 요약 첫 부분): 서보 드라이브 제조사는 제품 출하 시 무단 접근을 막기 위해 모든 기본 네트워크 포트, 디폴트 계정, 진단 인터페이스가 안전하게 비활성화된 'Secure by Default' 상태를 유지해야 합니다. 또한, CRA에 따라 발견된 취약점에 대해 최소 5년 또는 제품의 예상 수명 동안 보안 업데이트를 사용자에게 무상으로 제공
+- 우선순위/검증 쟁점: P0 — Article 13(8)–(9), Annex I Part II(5)–(8): support period 원칙 최소 5년(예상 사용기간 <5년이면 그 기간); 무료 업데이트는 Part II(8) 원칙이며 tailor-made product/business user 합의 예외. Article 13(9) 업데이트 가용성 유지와 구분.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 전체 Pass A/B/C 미완료.
+
+### 2026-11-15 #21 — P0 — 산업용 서보 드라이브 제조사는 제품의 예상 수명 주기(또는 최소 5년) 동안 발견된 보안 취약점을 무상으로 조치해야 하며, 보안 업데이트는 새 기능 추가와 명확히
+- 상태: NEW / NOT_YET_AUDITED | 확인일: 2026-11-16 | 생성: 01:40:41 (시간대 미표기)
+- 원문: [commit 9154a6060ca6d1f4c115b99a15e53505bb624493](https://github.com/useformotor3/ai-discord-bot/commit/9154a6060ca6d1f4c115b99a15e53505bb624493) | [research_archive/2026-11-15_014041.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-15_014041.md) | commit UTC: 2026-11-15T01:40:57.000Z
+- 원문 blob SHA: d7ac43b610c8160d58896daac6556c62327b9b81
+- 핵심 주장 주제(원문 요약 첫 부분): 산업용 서보 드라이브 제조사는 제품의 예상 수명 주기(또는 최소 5년) 동안 발견된 보안 취약점을 무상으로 조치해야 하며, 보안 업데이트는 새 기능 추가와 명확히 분리되어 사용자 동의 없이 강제 배포되거나 시스템 가동을 중단시켜서는 안 됩니다.
+- 우선순위/검증 쟁점: P0 — Article 13(8)–(9), Annex I Part II(5)–(8): support period 원칙 최소 5년(예상 사용기간 <5년이면 그 기간); 무료 업데이트는 Part II(8) 원칙이며 tailor-made product/business user 합의 예외. Article 13(9) 업데이트 가용성 유지와 구분.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 전체 Pass A/B/C 미완료.
+
+### 2026-11-15 #22 — P0 — 서보 드라이브 제조사는 제품의 예상 수명 또는 최소 5년 동안 발견된 취약점에 대한 보안 업데이트를 사용자에게 추가 비용 없이(Free of charge) 제공해
+- 상태: NEW / NOT_YET_AUDITED | 확인일: 2026-11-16 | 생성: 01:45:42 (시간대 미표기)
+- 원문: [commit 24f010bbd09ac6a938814140d6b70af7ed6c4aeb](https://github.com/useformotor3/ai-discord-bot/commit/24f010bbd09ac6a938814140d6b70af7ed6c4aeb) | [research_archive/2026-11-15_014542.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-15_014542.md) | commit UTC: 2026-11-15T01:45:58.000Z
+- 원문 blob SHA: 12b74cc2a66265b32782bf06186d8c9a4c5e33b9
+- 핵심 주장 주제(원문 요약 첫 부분): 서보 드라이브 제조사는 제품의 예상 수명 또는 최소 5년 동안 발견된 취약점에 대한 보안 업데이트를 사용자에게 추가 비용 없이(Free of charge) 제공해야 합니다. 취약점 수정 패치는 제조사가 인지한 즉시, 무결성이 보장된 채널을 통해 지연 없이 배포되어야 하며, 이는 Annex I(부속서 I)의 필수 사이버 보
+- 우선순위/검증 쟁점: P0 — Article 13(8)–(9), Annex I Part II(5)–(8): support period 원칙 최소 5년(예상 사용기간 <5년이면 그 기간); 무료 업데이트는 Part II(8) 원칙이며 tailor-made product/business user 합의 예외. Article 13(9) 업데이트 가용성 유지와 구분.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 전체 Pass A/B/C 미완료.
+
