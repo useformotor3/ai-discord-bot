@@ -91,9 +91,43 @@ def _load_manifest(txn_dir):
     except (OSError, UnicodeError, json.JSONDecodeError) as exc:
         raise PersistenceError(f"트랜잭션 manifest 손상: {txn_dir.name}") from exc
     if (not isinstance(manifest, dict) or manifest.get("schema_version") != 1
-            or not isinstance(manifest.get("operations"), list) or not manifest["operations"]):
+            or not isinstance(manifest.get("operations"), list) or not manifest["operations"]
+            or manifest.get("transaction_id") != txn_dir.name):
         raise PersistenceError(f"트랜잭션 manifest 구조 오류: {txn_dir.name}")
+    seen_targets = set()
+    for index, operation in enumerate(manifest["operations"]):
+        if not isinstance(operation, dict):
+            raise PersistenceError(f"manifest operation 구조 오류: {txn_dir.name}")
+        target = operation.get("target")
+        new_sha = operation.get("new_sha")
+        old_sha = operation.get("old_sha")
+        if (not isinstance(target, str) or target in seen_targets
+                or not isinstance(new_sha, str) or len(new_sha) != 64
+                or any(ch not in "0123456789abcdef" for ch in new_sha)
+                or (old_sha is not None and (
+                    not isinstance(old_sha, str) or len(old_sha) != 64
+                    or any(ch not in "0123456789abcdef" for ch in old_sha)
+                ))):
+            raise PersistenceError(f"manifest target/SHA 오류: {txn_dir.name}")
+        if operation.get("staged") != f"staged/{index}.bin":
+            raise PersistenceError(f"manifest staged 경로 오류: {txn_dir.name}")
+        expected_backup = f"backup/{index}.bin" if old_sha is not None else None
+        if operation.get("backup") != expected_backup:
+            raise PersistenceError(f"manifest backup 경로 오류: {txn_dir.name}")
+        seen_targets.add(target)
     return manifest
+
+
+def _safe_txn_child(txn_dir, relative):
+    rel = Path(relative)
+    if rel.is_absolute() or ".." in rel.parts or not rel.parts:
+        raise PersistenceError(f"허용되지 않은 transaction 내부 경로: {relative}")
+    path = txn_dir / rel
+    resolved = path.resolve()
+    base = txn_dir.resolve()
+    if (path.is_symlink() or (resolved != base and base not in resolved.parents)):
+        raise PersistenceError(f"transaction 외부 경로 또는 심볼릭 링크: {relative}")
+    return path
 
 
 def _target_state(root, operation):
@@ -104,7 +138,7 @@ def _target_state(root, operation):
 
 def _verify_staged(txn_dir, operation):
     try:
-        data = (txn_dir / operation["staged"]).read_bytes()
+        data = _safe_txn_child(txn_dir, operation["staged"]).read_bytes()
     except OSError as exc:
         raise PersistenceError(f"staged payload 누락: {operation['staged']}") from exc
     if _sha(data) != operation["new_sha"]:
@@ -116,7 +150,7 @@ def _verify_backup(txn_dir, operation):
     if operation.get("old_sha") is None:
         return
     try:
-        data = (txn_dir / operation["backup"]).read_bytes()
+        data = _safe_txn_child(txn_dir, operation["backup"]).read_bytes()
     except OSError as exc:
         raise PersistenceError(f"backup payload 누락: {operation['backup']}") from exc
     if _sha(data) != operation["old_sha"]:
@@ -209,6 +243,9 @@ def commit_persistence_transaction(root, operations, fault_hook=None):
         raise PersistenceError("저장 트랜잭션 작업 목록이 비어 있습니다.")
     with _transaction_lock(root):
         _recover_locked(root)
+        targets = [str(item.get("target", "")) for item in operations]
+        if len(targets) != len(set(targets)):
+            raise PersistenceError("동일 target이 한 트랜잭션에 중복 지정되었습니다.")
         txn_id = uuid.uuid4().hex
         txn_dir = root / ".persistence_txn" / txn_id
         (txn_dir / "staged").mkdir(parents=True)
