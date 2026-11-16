@@ -552,3 +552,13 @@ Read [Cross-document Reconciliation](docs/CROSS_DOCUMENT_RECONCILIATION_2026-11-
 - Since that baseline, 296 archive commits/files were added. Two reports (#5/#6, 2026-11-14) were already in the queue; 294 new entries were registered (#7–#288 on 2026-11-14 and #1–#12 on 2026-11-15).
 - All 294 remain NEW / NOT_YET_AUDITED and file-level UNVERIFIED. Full Pass A/B/C and product applicability checks remain pending.
 - Work branch is documentation-only in this run. Re-fetch live refs next session; no merge/rebase/sync.
+
+
+## 최신 기준선 — 2026-11-16 main report #9
+
+- main 최신 확인 HEAD: `5f5d83f584639eb712d23d48444f8eee8618b24d` (report #9).
+- canonical queue 기준선 #7 이후 #8/#9 두 건 추가. #8은 recovery artifact에서 canonical queue로 재통합했고 #9를 신규 등록했다. 상세 commit SHA/path/blob SHA와 사전 메모는 [CRA_ARCHIVE_AUDIT_QUEUE.md](docs/CRA_ARCHIVE_AUDIT_QUEUE.md).
+- main history.json 2,148 entries; state.json date/count 2026-11-16 / 9 (일일 카운터). last_health_check는 2026-11-15T21:20:38.480365로 최신 archive 이후 헬스체크 증거가 아니다.
+- #9 P0, #8 P1. 둘 다 NEW / NOT_YET_AUDITED, 파일 UNVERIFIED, quote/claim NOT_YET_AUDITED, 제품 적용성 UNVERIFIED.
+- 다음 작업: #9 전체 Pass A/B/C, 이어 #8 전체 Pass A/B/C. EUR-Lex 원문·주변 문맥 재확인; 제품 SKU/core functionality/ST MCU 주문 코드가 없으면 적용성 확정 금지.
+- 매 세션 시작 시 main/work branch HEAD와 queue를 재조회한다. main.py, Gemini prompt, production automation, .github/workflows/run.yml, main branch 보호. merge/rebase/sync 금지.
