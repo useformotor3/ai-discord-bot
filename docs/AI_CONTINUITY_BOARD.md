@@ -508,3 +508,15 @@
 ## 2026-11-15 state.json last_health_check caveat
 - Latest main state.json was re-opened after the queue/document commits: `date=2026-11-15`, `count=12`, `last_health_check=2026-11-14T21:15:39.725042`.
 - The `last_health_check` value is older than the current archive additions; this run did not update it and does not treat it as evidence of a current successful health check.
+
+
+## 2026-11-16 live archive recheck — main report #9
+
+- main HEAD: `5f5d83f584639eb712d23d48444f8eee8618b24d` (Auto-archive #9, commit UTC 00:40:55Z).
+- Queue baseline #7: `34684a441277d6ca68a307562717f0eb2fc6614f`. Delta #8/#9 = 2 commits, 2 archive files + history.json + state.json; ahead 2 / behind 0.
+- `history.json` 2,148 entries; `state.json` date/count 2026-11-16 / 9. Daily count is not total archive count. `last_health_check` remains 2026-11-15T21:20:38.480365 and predates the new reports.
+- #8 recovered from the temporary recovery artifact and re-merged into canonical queue; #9 newly registered. Queue update commit `495d29d62d41d0c7b8165016e4f6f6fc03deb1a8`.
+- #8 P1 secure-by-default/initial authentication; #9 P0 free security updates/vulnerability handling. Both NEW / NOT_YET_AUDITED; file UNVERIFIED; quote/claim NOT_YET_AUDITED; product applicability UNVERIFIED.
+- EUR-Lex direct text checked: Article 13(1)–(9), Annex I Part I(1)–(2), Part II(2),(7),(8). #9 has strong Article 11/13, synthetic quote, 5-year exception and Part I/II locator conflict candidates. #8 has overstatement candidates for mandatory first-use password change/MFA/blanket interface disablement.
+- Work branch at start of this run: `0bea166f73c32f888b6b5323326c9a6db6927078`; compare snapshot before updates: diverged, work ahead 1,139 / behind 1,164. Re-fetch live refs for final current HEAD. No merge/rebase/sync.
+- main.py, Gemini prompt, production automation, `.github/workflows/run.yml`, main branch unchanged. Tests/CI not run. Next: full Pass A/B/C for #9 P0, then #8 P1; no product applicability inference without SKU/core-function evidence.
