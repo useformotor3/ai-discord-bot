@@ -871,3 +871,13 @@
 - Annex II는 사용자 지침, Annex VII가 기술문서.
 - 원본 archive 보존, 정정 문서 별도 작성.
 - 상세: `reports/CRA_CORRECTION_REPORT_2_2026-11-17.md`.
+
+
+## 2026-11-17 — CRA 보고서 #1 근거 더블체크 및 정정
+- EUR-Lex Regulation (EU) 2024/2847 Article 11, Article 13(8)/(17), Annex I Part I (2)(c)/(f), Part II (5)–(8), Annex II/VII 대조.
+- Article 11은 General product safety. 제조사 의무는 Article 13.
+- 지원 기간은 Article 13(8), 무상 보안 업데이트는 Annex I Part II (8). 원본 Article 11(2)(c) 직접 인용문은 공식 원문과 불일치.
+- CVD 정책·제보 연락처·안전 배포는 Annex I Part II (5)–(7), Article 13(17), Annex II (2).
+- 디지털 서명은 보안 무결성 구현 수단, STO 연계 설치는 제품별 안전 검증 권고로 분리.
+- 원본 archive는 보존하고 정정 문서를 별도 작성.
+- 상세: `reports/CRA_CORRECTION_REPORT_1_2026-11-17.md`.
