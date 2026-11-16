@@ -191,12 +191,46 @@ def test_backup_sha_corruption_fails_closed(tmp_path):
         recover_pending_transactions(tmp_path)
 
 
-@pytest.mark.parametrize("bad_target", ["../outside", "/tmp/outside", ""])
+@pytest.mark.parametrize("bad_target", [
+    "../outside", "/tmp/outside", "", "README.md", ".git/config",
+    ".github/workflows/run.yml", "persistence.py",
+    "research_archive/nested/report.md", "research_archive/report.txt",
+])
 def test_invalid_target_path_is_rejected(tmp_path, bad_target):
     with pytest.raises(PersistenceError, match="target 경로"):
         commit_persistence_transaction(tmp_path, [
             {"target": bad_target, "payload": b"x", "expected_old": None},
         ])
+
+
+def test_recovery_rejects_manifest_target_outside_persistence_allowlist(tmp_path):
+    payloads = _seed(tmp_path)
+    with pytest.raises(RuntimeError):
+        commit_persistence_transaction(
+            tmp_path, _operations(tmp_path, payloads),
+            fault_hook=lambda stage, value: (
+                (_ for _ in ()).throw(RuntimeError("simulated crash"))
+                if stage == "after_prepared" else None
+            ),
+        )
+    txn_dir = next(
+        path for path in (tmp_path / ".persistence_txn").iterdir()
+        if path.is_dir()
+    )
+    manifest_path = txn_dir / "manifest.json"
+    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    manifest["operations"][0]["target"] = ".github/workflows/run.yml"
+    manifest_path.write_text(json.dumps(manifest), encoding="utf-8")
+    before = {
+        name: (tmp_path / name).read_bytes()
+        for name in ("state.json", "history.json")
+    }
+    with pytest.raises(PersistenceError, match="target 경로"):
+        recover_pending_transactions(tmp_path)
+    assert {
+        name: (tmp_path / name).read_bytes()
+        for name in ("state.json", "history.json")
+    } == before
 
 
 def test_journal_and_manifest_transaction_ids_must_match(tmp_path):
