@@ -192,3 +192,17 @@ def test_git_integration_accepts_clean_noop_quota_skip(tmp_path):
     work, baseline = _git_repo(tmp_path)
     assert verify_and_recover(work, "safety/pre-run-test", "main", "quota-skip") == 0
     assert _git(work, "rev-parse", "HEAD").stdout.strip() == baseline
+
+
+def test_current_snapshot_rejects_empty_archive_file(tmp_path):
+    from scripts.operational_guard import GuardError, _current_snapshot
+
+    (tmp_path / "state.json").write_text(
+        '{"date":"2026-11-16","count":1}', encoding="utf-8"
+    )
+    (tmp_path / "history.json").write_text("[]", encoding="utf-8")
+    archive = tmp_path / "research_archive"
+    archive.mkdir()
+    (archive / "empty.md").write_text("", encoding="utf-8")
+    with pytest.raises(GuardError, match="empty archive"):
+        _current_snapshot(tmp_path)

@@ -134,6 +134,8 @@ def _current_snapshot(root):
         for path in archive_root.rglob("*.md"):
             if path.is_symlink():
                 raise GuardError(f"archive symlink is not allowed: {path}")
+            if path.stat().st_size <= 0:
+                raise GuardError(f"empty archive file is not allowed: {path}")
             archives.add(path.relative_to(root).as_posix())
     return state, history, archives
 
