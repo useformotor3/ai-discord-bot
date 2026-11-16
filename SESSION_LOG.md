@@ -823,3 +823,15 @@
 - CI Run #59 성공: 99 passed, 1 xfailed. SHA pin, compileall, 전체 pytest 통과.
 - 최신 main fc77d6da07684936a27a60eb1a4cb920ceb37c14. production active run 없음 확인.
 - 데이터 readback: state count=254, history/archive=2,393/2,393, 참조 누락 0, checkpoint refs 30. 신규 KST 코드는 실제 운영 실행 전이므로 다음 run 검증 대기.
+
+
+## 2026-11-17 — KST 운영 적용 및 저장 무결성 readback
+- main HEAD `655bde43483f4c2e793954e4206590d768e6ab74`에서 운영 코드와 데이터 재조회.
+- state date=2026-11-17, count=4 확인.
+- history.json 전체 JSON 파싱 성공, 2,397 entries.
+- 마지막 4개 history의 KST 시간은 08:05:32, 08:10:37, 08:15:40, 08:20:40이며 count 1~4.
+- history가 가리키는 최근 archive 4개 파일 모두 원격에서 존재 및 blob SHA 확인.
+- 보고서 #1~#4 auto-archive commits 확인. #4 commit diff는 history append, archive 신규 생성, state count 3→4를 보여준다.
+- 운영 Git 저장 및 KST date/count/archive 반영은 확인됨.
+- 상세 Actions job log는 현재 도구에서 조회할 수 없어 실제 Gemini model ID, operational_guard, checkpoint pruning, Discord 응답 성공은 미확인으로 남긴다.
+- 상세 보고서: `reports/PRODUCTION_RUN_OBSERVATION_2026-11-17.md`.
