@@ -553,3 +553,12 @@
 - 감사 보고서의 main HEAD를 실제 main ref `31e0f8137630630ee30ea55add039b571f2c6801`로 정정했다.
 - 최신 main tree 기준 archive 추가 수 658개, history 항목 수 2,250개로 정합화했다.
 - 보고서의 153 ahead / 658 behind는 감사 당시 작업 브랜치 HEAD c43abc3... 기준 스냅샷이며, 후속 문서 커밋은 작업 브랜치 ahead만 증가시킨다.
+
+
+## 2026-11-16 — P1-B2 원자적 저장 설계 및 통합 감사 갱신
+- 작업 브랜치 HEAD 227e3298066af4bda83fb0713fc1d57c749ee8c6, main HEAD 036334dd2665752c2e6ddb024001771cff4064c5, merge-base f9a12a5778f5fa1d907201ab2931d20ca2656bb7.
+- 최신 비교 155 ahead / 660 behind. recursive tree 2,260 vs 1,600; archive 660개 추가, history/state 변경, 삭제 0. main history 2,252개, state count 113.
+- main의 자동 아카이브가 계속 실행되는 흔적을 확인했으나 신뢰성 개선 코드는 작업 브랜치에만 존재하며 운영 반영되지 않았다.
+- P1-B2 durable journal + staged roll-forward + old/new SHA 검증 + idempotent recovery 설계서를 작성했다.
+- P1-B2 구현은 미승인. main.py, tests, workflow, 운영 state/history/archive 변경 없음.
+- 상세: reports/P1_B2_ATOMIC_PERSISTENCE_DESIGN_2026-11-16.md 및 reports/BRANCH_INTEGRATION_AUDIT_2026-11-16_REFRESH.md.

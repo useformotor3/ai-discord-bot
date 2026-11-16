@@ -140,3 +140,10 @@
 - 운영 브랜치의 `state.json`, `history.json`, 자동 생성 archive는 코드 변경과 별도 보존 자산이다. 별도 데이터 migration 승인 없이 작업 브랜치의 파일로 덮어쓰지 않는다.
 - ahead/behind, HEAD, merge-base는 조회 시점의 스냅샷이다. 병합 판단 직전에 다시 조회한다.
 - CI 성공은 코드/테스트 범위의 검증 증거일 뿐 운영 데이터 보존, 법적 적합성 또는 기능안전 인증을 증명하지 않는다.
+
+
+## P1-B2 저장 설계 승인 경계 — 2026-11-16
+- archive/state/history의 atomicity는 파일별 os.replace만으로 다중 파일 transaction이 되지 않는다. durable journal, staged payload, old/new SHA 검증, idempotent recovery를 함께 설계한다.
+- 손상된 journal/stage 또는 예상하지 못한 target SHA를 발견하면 자동 초기화·덮어쓰기하지 말고 fail-closed 한다.
+- P1-B2는 로컬 저장 일관성만 다룬다. Discord exactly-once/outbox와 Git sync status를 보장하지 않는다.
+- 설계 완료는 구현 승인이 아니다. 사용자 별도 승인 전 main.py/tests/workflow/운영 데이터 변경 금지.

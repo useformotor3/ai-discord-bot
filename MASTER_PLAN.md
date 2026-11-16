@@ -234,3 +234,11 @@
 - main HEAD `31e0f8137630630ee30ea55add039b571f2c6801`, 작업 브랜치 HEAD `c43abc3315d8d7c8a3d5f4fc209465428a7e8aff`.
 - 작업 브랜치 153 ahead / 658 behind main. main 고유 archive 658개, history 2,250개, state count 111.
 - 데이터 보존 및 별도 통합 설계 전까지 merge/rebase/PR merge 금지.
+
+
+## 다음 실행 단계 — P1-B2 설계 완료
+- [완료] P1-B2 원자적 저장 설계서: `reports/P1_B2_ATOMIC_PERSISTENCE_DESIGN_2026-11-16.md`.
+- [완료] 최신 통합 감사 스냅샷: `reports/BRANCH_INTEGRATION_AUDIT_2026-11-16_REFRESH.md`.
+- [승인 대기] P1-B2 코드 구현 및 crash/failure injection tests.
+- [보류] P1-B3 Git sync status, P1-B4 import-time execution cleanup.
+- 운영 main/data/workflow 변경과 merge/rebase/PR merge는 별도 승인 전 금지.
