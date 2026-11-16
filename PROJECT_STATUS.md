@@ -623,3 +623,14 @@
 - 자동 rollback/Safe State는 CRA가 모든 제품에 직접 지정한 요구가 아니며, 서보 드라이브 위험분석 기반 엔지니어링 검증 항목으로 분류.
 - IEC 62443-4-1 Practice 7은 주제상 연결되나, 정식 라이선스 표준 전문 대조 전 세부 적합성 판단 보류.
 - 상세: `reports/CRA_CORRECTION_REPORT_3_2026-11-17.md`.
+
+
+## 2026-11-17 — CRA 보고서 #2 표본 감사 결과
+- 원본 `research_archive/2026-11-17_081037059553_f43b5252.md` 보존.
+- Article 11은 General product safety. CVD 정책/접수 연락처는 Article 13(8)/(17), Annex I Part II (5)/(6), Annex II (2).
+- Article 14 공식 제목은 Reporting obligations of manufacturers. 원본 Article 11 인용문은 공식 원문과 일치하지 않음.
+- actively exploited vulnerability: 24h early warning, 72h notification, 시정·완화 조치 가용 후 14일 final report.
+- severe incident: 24h early warning, 72h incident notification, incident notification 제출 후 1개월 final report.
+- 단일 신고 플랫폼, coordinating CSIRT/ENISA 동시 통지, 사용자 통지, Article 14 적용일 2026-09-11 및 Article 69(3) 경과규정 확인.
+- Annex II는 사용자 지침, Annex VII가 기술문서.
+- 상세: `reports/CRA_CORRECTION_REPORT_2_2026-11-17.md`.
