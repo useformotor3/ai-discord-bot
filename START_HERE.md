@@ -562,3 +562,13 @@ Read [Cross-document Reconciliation](docs/CROSS_DOCUMENT_RECONCILIATION_2026-11-
 - #9 P0, #8 P1. 둘 다 NEW / NOT_YET_AUDITED, 파일 UNVERIFIED, quote/claim NOT_YET_AUDITED, 제품 적용성 UNVERIFIED.
 - 다음 작업: #9 전체 Pass A/B/C, 이어 #8 전체 Pass A/B/C. EUR-Lex 원문·주변 문맥 재확인; 제품 SKU/core functionality/ST MCU 주문 코드가 없으면 적용성 확정 금지.
 - 매 세션 시작 시 main/work branch HEAD와 queue를 재조회한다. main.py, Gemini prompt, production automation, .github/workflows/run.yml, main branch 보호. merge/rebase/sync 금지.
+
+
+## 최신 기준선 추가 — 2026-11-16 main report #10
+
+- main 최신 확인 HEAD: `8c8faa1dd68273b2c7bdc47ff3589fa14b6994e7` (report #10).
+- #9 이후 신규 archive #10 1개, history.json 2,149 entries, state.json date=2026-11-16/count=10 (일일 카운터).
+- #10 P0, NEW / NOT_YET_AUDITED, file UNVERIFIED, quote/claim NOT_YET_AUDITED, product applicability UNVERIFIED.
+- #10 핵심 쟁점: CVD policy/Annex VII technical documentation은 법령 근거가 있음; Part II(1) SBOM vs (2)/(7)/(8) security updates; Article 11/14 mis-citation; Article 14 AEV/severe incident scope, SRP routing/deadlines; hot-patching is not a universal named mandate.
+- ENISA SRP FAQ 2026-10-15 update와 2026-11-04 v1.3 upgrade/documentation-refresh caveat 확인. Commission C(2026) 5252 page는 열었으나 Annex download decode failed.
+- 상세는 [CRA_ARCHIVE_AUDIT_QUEUE.md](docs/CRA_ARCHIVE_AUDIT_QUEUE.md). 다음은 #10 전체 Pass A/B/C.
