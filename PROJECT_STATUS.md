@@ -549,3 +549,11 @@
 - PR #1 latest base/head exact match, mergeable clean at last check. Run #43874801395 success: 86 passed, 1 xfailed, compileall passed.
 - production workflow pre-run checkpoint and post-run guarded data-only restore implemented. No actual Gemini/Discord/production execution yet.
 - code/data backups: safety/pre-merge-main-f5b5a11 and safety/pre-merge-feature-8ad2364; both readback exact.
+
+
+## 2026-11-16 — final integration readiness snapshot
+- feature code/test/workflow head abee2a88f7e0bbfad0ad483c6b50cea63e26b871; documentation/log commits may advance head thereafter.
+- main #162 adf74eaa6bfb102b661ea9e3e6d9ee84eaa4f890.
+- PR compare at snapshot 241 ahead / 709 behind, merge-base f9a12a5778f5fa1d907201ab2931d20ca2656bb7, 28 changed paths. No state.json/history.json/research_archive paths in PR diff.
+- PR mergeable clean at last refresh; Run #43875746973 on exact main #162 base passed 87 tests with 1 expected xfail.
+- Merge method: merge commit. Never squash/rebase/force-push. Keep safety refs and run first production execution only after merge verification.

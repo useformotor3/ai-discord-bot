@@ -771,3 +771,11 @@
 - 최종 Run #43874801395: 86 passed, 1 xfailed; compileall 및 source SHA 확인 성공. PR base f5b5a112ec72b01f8b3f91f734b8d755dde416c6.
 - main #161 baseline: state 161, history 2,300, archive 2,300, missing 0. safety/pre-merge-main-f5b5a11 exact SHA.
 - actual Gemini/Discord/production workflow not executed.
+
+
+## 2026-11-16 — main #162 final pre-merge snapshot
+- main SHA adf74eaa6bfb102b661ea9e3e6d9ee84eaa4f890 (Auto-archive #162), state count 162, history 2,301, archive 2,301, missing refs 0.
+- safety/pre-merge-main-adf74ea readback exact SHA; feature backup safety/pre-merge-feature-abee2a8 readback exact SHA.
+- PR #1 current code/test/workflow validation: Run #43875746973 success, 87 passed, 1 xfailed.
+- Code rollback and data-only rollback are separate; production workflow now creates pre-run snapshot branch and only auto-restores when remote main is exactly the run's single child commit.
+- actual production execution not yet performed.

@@ -220,3 +220,12 @@
 - CI Run 43873774430에서 fixture 오류 1건(80 passed, 1 failed, 1 xfailed)을 발견해 수정. 최종 Run 43874801395에서 86 passed, 1 xfailed 및 compileall 통과.
 - 최종 Run은 base f5b5a112ec72b01f8b3f91f734b8d755dde416c6, head 8ad2364992cfd0e4f60108d4bfcdf36e99d9131e 기준 성공.
 - 이는 데이터 구조 무결성 검사이며 CRA 법적 적합성 또는 외부 Discord 전달의 회수 가능성을 보장하지 않는다.
+
+
+## 21. 최신 rollback guard 보강 및 통합 기준 — 2026-11-16
+- _current_snapshot은 state/history/archive root의 symlink를 거부하고, 누락/읽기 오류를 GuardError로 바꿔 검증 실패 시 조건부 복구 경로로 보낸다.
+- empty archive file도 무결성 오류로 처리한다.
+- missing state file 통합 테스트를 추가해 baseline restore commit으로 복구되는 경로를 검증했다.
+- 최신 PR CI Run 43875746973: 87 passed, 1 xfailed, compileall 성공; base main SHA adf74eaa6bfb102b661ea9e3e6d9ee84eaa4f890, head abee2a88f7e0bbfad0ad483c6b50cea63e26b871.
+- main #162 backup safety/pre-merge-main-adf74ea -> adf74eaa6bfb102b661ea9e3e6d9ee84eaa4f890, readback exact.
+- main #162 same-SHA baseline: state count=162, history=2,301, archive=2,301, missing refs=0.

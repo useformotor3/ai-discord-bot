@@ -61,3 +61,11 @@
 - 검증 실패 시 remote main이 해당 run의 단일 child commit일 때만 data-only restore commit을 push한다. concurrent advance 또는 미push면 자동 복구하지 않는다.
 - local bare remote integration tests 및 CI Run #43874801395 (86 passed, 1 xfailed) 성공.
 - 실제 운영 workflow는 아직 실행하지 않았다. Discord 외부 전송은 회수할 수 없다.
+
+
+## 9. main #162 최종 pre-merge 데이터 기준선
+- immutable main SHA adf74eaa6bfb102b661ea9e3e6d9ee84eaa4f890 기준 state count=162, history=2,301, archive=2,301, history 참조 누락 0, tree truncated=false.
+- backup safety/pre-merge-main-adf74ea가 정확히 같은 SHA를 가리킨다.
+- feature head abee2a88f7e0bbfad0ad483c6b50cea63e26b871에 대한 PR CI Run #43875746973 성공(87 passed, 1 xfailed).
+- guard는 missing state, symlink data path, empty archive를 감지해 안전한 조건에서만 restore commit을 생성하도록 보강됐다.
+- production workflow 실제 실행은 아직 하지 않았다.

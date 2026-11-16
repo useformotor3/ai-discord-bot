@@ -338,3 +338,10 @@
 - 복구는 remote main이 실행의 단일 child commit일 때만 data-only restore commit으로 수행하며 force-push하지 않는다.
 - local bare Git remote integration tests 및 최신 base PR CI 성공 후 통합한다.
 - 첫 실제 운영 실행 결과를 별도 관찰하고 외부 Discord 메시지는 회수 불가 경계로 관리한다.
+
+
+## 2026-11-16 — latest rollback guard verification
+- Run #43875746973: 87 passed, 1 xfailed; compileall and source blob identity checks passed.
+- Tested normal one-report append, archive/history mismatch, deleted archive, invalid state count, date rollover, unsafe archive paths, local bare remote data restore, no-push fail-closed, quota no-op, missing state restore, symlink/empty archive detection.
+- main #162 baseline state=162, history=2,301, archive=2,301, missing refs=0. safety/pre-merge-main-adf74ea exact SHA.
+- First production execution is not yet performed; Gemini/Discord calls not made in CI.

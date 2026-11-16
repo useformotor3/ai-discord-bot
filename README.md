@@ -277,3 +277,12 @@ Actions 성공은 자동화 실행 결과이지 CRA 법령 해석이나 출처�
 - 최종 PR CI Run #43874801395: 86 passed, 1 xfailed, compileall 성공. https://github.com/useformotor3/ai-discord-bot/actions/runs/43874801395
 - 최신 main #161 baseline: f5b5a112ec72b01f8b3f91f734b8d755dde416c6; state count 161, history 2,300, archive 2,300, missing refs 0.
 - main backup safety/pre-merge-main-f5b5a11, feature backup safety/pre-merge-feature-8ad2364. 상세 reports/ROLLBACK_AND_DATA_BASELINE_AUDIT_2026-11-16.md
+
+
+## 2026-11-16 — rollback guard final CI and main #162 baseline
+- [Draft PR #1](https://github.com/useformotor3/ai-discord-bot/pull/1) includes production run.yml pre-run checkpoint and guarded restore.
+- Latest feature head at code verification: abee2a88f7e0bbfad0ad483c6b50cea63e26b871; main #162: adf74eaa6bfb102b661ea9e3e6d9ee84eaa4f890.
+- CI Run #43875746973 success: 87 passed, 1 xfailed, compileall and source SHA checks passed. https://github.com/useformotor3/ai-discord-bot/actions/runs/43875746973
+- main #162 immutable baseline: state count 162, history 2,301, archive 2,301, missing refs 0.
+- main backup safety/pre-merge-main-adf74ea readback SHA exact. Feature backup safety/pre-merge-feature-abee2a8 readback exact.
+- Production workflow has not yet been executed; first execution remains external-effect operation. The workflow now snapshots before run and verifies/restores data after run.
