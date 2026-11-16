@@ -14,7 +14,7 @@
 - P1-B2는 durable journal, staged payload, backup/SHA 검증, idempotent roll-forward recovery, snapshot 충돌 방지 및 허용 target allowlist 적용
 - P1-B3 Git sync 상태화는 미구현(기존 strict xfail), P1-B4 import-time 구조 개선도 미구현
 - Discord exactly-once/outbox는 P1-B2 범위 밖이며 보장하지 않음
-- main 대비 작업 브랜치: diverged, 204 ahead / 677 behind (snapshot commit `0fe9912b5dbba29eeb3ebd9e9f2c16a42544f925`, 2026-11-16); merge-base 기준 통합 분석은 완료, PR/merge는 별도 승인 대기
+- main 대비 작업 브랜치: diverged, 216 ahead / 677 behind (snapshot commit `1aadc3fcd2b2e1b3bf2b45783da9fecb1a91afe7`, 2026-11-16); merge-base 기준 통합 분석은 완료, PR/merge는 별도 승인 대기
 - 운영 main 최신 조회: HEAD `3ebf6b977b0127291957ffb415dbdbc83b5b6d97` (#130), state count=130, history=2,269, archive=2,269
 - 운영 main의 main.py와 run.yml은 각각 SHA `86a7731aad5de8d75581fc953bcea2c44adf2f2b`, `65a8cadc8eac593f551e390698e367b1d161ecf1`; 작업 브랜치 main.py만 개선했고 run.yml은 변경하지 않음
 
@@ -203,4 +203,15 @@ Actions 성공은 자동화 실행 결과이지 CRA 법령 해석이나 출처�
 - 작업 브랜치는 main.py 수정 및 23개 경로 추가, 삭제 0개다. 따라서 3-way PR 통합 시 운영 archive/history/state 보존을 기대할 수 있다.
 - P1-B2 recovery target allowlist 보강 후 CI Actions 43851438733에서 70 passed / 1 xfailed.
 - PR 생성·merge·운영 배포는 별도 승인 전 수행하지 않는다.
+- PR 비교 변경 경로: 24개(23개 추가 + main.py 수정). state/history/archive/run.yml 변경은 없어야 한다.
 - 상세: [통합 전략 감사 보고서](reports/BRANCH_INTEGRATION_STRATEGY_2026-11-16.md).
+
+
+## 2026-11-16 — 최신 원격 branch/main 비교
+- 작업 브랜치 HEAD(이 스냅샷 기준): `1aadc3fcd2b2e1b3bf2b45783da9fecb1a91afe7`.
+- 운영 main HEAD: `3ebf6b977b0127291957ffb415dbdbc83b5b6d97` (Auto-archive #130).
+- merge-base: `f9a12a5778f5fa1d907201ab2931d20ca2656bb7`.
+- compare: 216 ahead / 677 behind, diverged; PR compare 변경 파일 24개.
+- main state count=130, history=2,269, archive=2,269, 참조 누락 0.
+- 이 ahead 수치는 이 스냅샷 commit 기준이며, 로그/문서 추가 commit 이후 증가한다. main 자동 아카이브도 계속 변하므로 PR 직전 재조회한다.
+- 운영 run.yml SHA `65a8cadc8eac593f551e390698e367b1d161ecf1` 유지. PR/merge/운영 실행은 수행하지 않았다.
