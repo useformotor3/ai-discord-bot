@@ -3,9 +3,18 @@ name: Isolated Python Tests
 on:
   push:
     branches:
+      - main
       - docs/cra-audit-and-project-control-2026-11-14
       - test/failure-path-fixtures-2026-11-14
       - feature/p1-b2-atomic-persistence-2026-11-16
+    paths:
+      - ".github/workflows/tests.yml"
+      - "main.py"
+      - "persistence.py"
+      - "tests/**"
+  pull_request:
+    branches:
+      - main
     paths:
       - ".github/workflows/tests.yml"
       - "main.py"
