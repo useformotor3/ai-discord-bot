@@ -466,9 +466,9 @@
 
 ## 2026-11-16 통합 전략 감사 갱신 — merge-base 기준
 - 감사 스냅샷: main `260c0c2d38dd658714e58db5e7a4cdb2b34bc5b3` (#129), 작업 브랜치 `2b2645b23876378a6c384c8da819de84104ac49a`, merge-base `f9a12a5778f5fa1d907201ab2931d20ca2656bb7`.
-- compare: 189 ahead / 676 behind. 이 수치는 커밋 그래프 차이이며 파일 삭제 수가 아니다.
+- compare: 204 ahead / 677 behind. 이 수치는 커밋 그래프 차이이며 파일 삭제 수가 아니다.
 - recursive tree: merge-base 1,597 blobs(archive 1,592); main 2,273 blobs(archive 2,268); 작업 브랜치 1,619 blobs(archive 1,592).
-- merge-base→main: archive 676개 추가, 삭제 0, history/state 2개 수정. main history 2,268건과 archive 2,268개가 일치하고 file 참조 누락 0.
+- merge-base→main: archive 677개 추가, 삭제 0, history/state 2개 수정. main history 2,268건과 archive 2,268개가 일치하고 file 참조 누락 0.
 - merge-base→작업 브랜치: 22개 경로 추가, 삭제 0, main.py 1개 수정. state/history는 merge-base와 동일한 blob.
 - 결론: 3-way PR은 데이터 보존 측면에서 통합 후보가 양호하다. 실제 PR conflict check 전까지 merge 가능을 확정하지 않는다.
 - P1-B2 code review에서 recovery target이 저장소 내 임의 경로를 가리킬 수 있는 점을 발견해 `state.json`, `history.json`, `research_archive/*.md` allowlist로 제한했다.
