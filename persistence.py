@@ -76,6 +76,20 @@ def _safe_target(root, relative):
     rel = Path(relative)
     if rel.is_absolute() or ".." in rel.parts or not rel.parts:
         raise PersistenceError(f"허용되지 않은 target 경로: {relative}")
+    allowed = (
+        rel in (Path("state.json"), Path("history.json"))
+        or (
+            len(rel.parts) == 2
+            and rel.parts[0] == "research_archive"
+            and rel.suffix == ".md"
+            and rel.name not in ("", ".md")
+            and not rel.name.startswith(".")
+        )
+    )
+    if not allowed:
+        raise PersistenceError(
+            f"허용되지 않은 target 경로(허용 범위: state.json, history.json, research_archive/*.md): {relative}"
+        )
     target = root / rel
     if target.is_symlink():
         raise PersistenceError(f"심볼릭 링크 target은 허용되지 않습니다: {relative}")
