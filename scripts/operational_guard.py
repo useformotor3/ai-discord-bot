@@ -126,18 +126,25 @@ def _baseline_snapshot(root, ref):
 
 
 def _current_snapshot(root):
-    state = _json_bytes((root / "state.json").read_bytes(), "current state")
-    history = _json_bytes((root / "history.json").read_bytes(), "current history")
+    state_path = root / "state.json"
+    history_path = root / "history.json"
     archive_root = root / "research_archive"
-    archives = set()
-    if archive_root.exists():
-        for path in archive_root.rglob("*.md"):
-            if path.is_symlink():
-                raise GuardError(f"archive symlink is not allowed: {path}")
-            if path.stat().st_size <= 0:
-                raise GuardError(f"empty archive file is not allowed: {path}")
-            archives.add(path.relative_to(root).as_posix())
-    return state, history, archives
+    if state_path.is_symlink() or history_path.is_symlink() or archive_root.is_symlink():
+        raise GuardError("operational data paths must not be symlinks")
+    try:
+        state = _json_bytes(state_path.read_bytes(), "current state")
+        history = _json_bytes(history_path.read_bytes(), "current history")
+        archives = set()
+        if archive_root.exists():
+            for path in archive_root.rglob("*.md"):
+                if path.is_symlink():
+                    raise GuardError(f"archive symlink is not allowed: {path}")
+                if path.stat().st_size <= 0:
+                    raise GuardError(f"empty archive file is not allowed: {path}")
+                archives.add(path.relative_to(root).as_posix())
+        return state, history, archives
+    except OSError as exc:
+        raise GuardError(f"cannot read operational data snapshot: {exc}") from exc
 
 
 def _remote_head(root, branch):

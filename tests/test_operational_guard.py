@@ -206,3 +206,19 @@ def test_current_snapshot_rejects_empty_archive_file(tmp_path):
     (archive / "empty.md").write_text("", encoding="utf-8")
     with pytest.raises(GuardError, match="empty archive"):
         _current_snapshot(tmp_path)
+
+
+def test_git_integration_restores_missing_state_file(tmp_path):
+    from scripts.operational_guard import verify_and_recover
+
+    work, _ = _git_repo(tmp_path)
+    _write_one_report(work)
+    (work / "state.json").unlink()
+    _git(work, "add", "-A")
+    _git(work, "commit", "-m", "run with missing state")
+    _git(work, "push", "origin", "HEAD:refs/heads/main")
+
+    assert verify_and_recover(work, "safety/pre-run-test", "main", "missing-state") == 1
+    assert (work / "state.json").read_text(encoding="utf-8") == (
+        '{"date":"2026-11-16","count":10}'
+    )
