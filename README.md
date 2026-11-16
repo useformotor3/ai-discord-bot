@@ -126,3 +126,12 @@ Actions 성공은 자동화 실행 결과이지 CRA 법령 해석이나 출처�
 - main 대비 diverged 141 ahead / 60 behind; main HEAD `1dff09ffa9722119f6fb0847a51b6c87c322d114`, merge-base `f9a12a5778f5fa1d907201ab2931d20ca2656bb7`.
 - 마지막 테스트 검증 commit `b2e108768be08f06e85af154835424682337ebf5`, [Run #15](https://github.com/useformotor3/ai-discord-bot/actions/runs/43570492842): 30 passed / 8 xfailed. 이후 테스트 코드 변경은 없고 문서만 갱신했다.
 - main.py blob SHA `470ac101d5cc4fdb2c5077d5468ef00327af3d43` 유지.
+
+
+## P1-B1 Discord 전송 신뢰성 구현 — 2026-11-16
+- 사용자 승인 범위 P1-B1을 작업 브랜치에서 구현했다.
+- Discord webhook POST에 connect/read timeout (3.05, 10), wait=true, HTTP 응답 및 message ID 확인을 추가했다.
+- 429 Retry-After, ConnectTimeout 제한 재시도, 400/401/403/404 영구 실패, 5xx/ReadTimeout/ConnectionError 전달 불명확 상태, chunk partial 처리를 구현했다.
+- [GitHub Actions Run #18](https://github.com/useformotor3/ai-discord-bot/actions/runs/43808285335): 43 passed, 1 xfailed; source SHA 6개 및 compileall 통과.
+- Run #17은 main.py SHA pin 불일치로 실패했고 Run #18에서 정정 후 통과했다. 실패 이력은 보존한다.
+- P1-B2/B3/B4, 운영 main 병합, 실제 외부 서비스 호출은 미실행.

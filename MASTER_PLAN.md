@@ -211,3 +211,10 @@
 - P1-B 전체를 한 번에 구현하지 않고 B1 Discord 전송, B2 로컬 저장, B3 Git sync, B4 구조 개선으로 나눈다.
 - 다음 승인 요청은 B1만으로 제한한다. 설계서 §18의 변경 파일·테스트·롤백·제외 범위를 따른다.
 - 승인 전에는 main.py 및 운영 관련 코드를 수정하지 않는다.
+
+
+## 2026-11-16 — P1-B1 Discord 전송 구현 및 CI 확인
+- P1-B1을 구현하고 테스트 전용 Actions Run #18에서 43 passed / 1 xfailed를 확인했다.
+- 1 xfailed는 P1-B3 Git sync 상태화 미구현 기대 동작이다.
+- Run #17 SHA pin 오류는 기록 후 수정했다. Run #18에서 source SHA, compileall, 전체 pytest 통과를 확인했다.
+- 다음 우선순위는 P1-B1 경계의 추가 검토 및 문서 정합성, 이후 P1-B2 atomic persistence 설계다. P1-B2는 별도 승인 전 구현하지 않는다.

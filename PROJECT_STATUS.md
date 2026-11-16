@@ -351,3 +351,15 @@
 - main 대비 diverged 141 ahead / 60 behind; main HEAD `1dff09ffa9722119f6fb0847a51b6c87c322d114`, merge-base `f9a12a5778f5fa1d907201ab2931d20ca2656bb7`.
 - Run #15 검증 commit `b2e108768be08f06e85af154835424682337ebf5` 이후 테스트 소스는 변경하지 않았다.
 - 다음 단계는 P1-B1 승인 여부 확인이다. 승인 전 main.py 수정 금지.
+
+
+## 26. P1-B1 구현 CI 검증 완료 — 2026-11-16
+- 구현 commit: 715af78b42eacaeb3ca30c03c838132c2a51e707. CI pin 정정 commit: dc341d9e89a837df878257fd3740633f8688507f.
+- [Run #18 — success](https://github.com/useformotor3/ai-discord-bot/actions/runs/43808285335), tested HEAD dc341d9e89a837df878257fd3740633f8688507f.
+- source integrity: 핵심 파일 6개 Git blob SHA 모두 일치.
+- compileall: 통과.
+- pytest: **43 passed, 1 xfailed in 0.34s**.
+- Run #17은 잘못된 main.py SHA 기대값(900391...)과 실제 blob(4b631...) 불일치로 source integrity 단계에서 실패했다. workflow pin을 실제 SHA로 수정한 Run #18에서 성공했다.
+- 유일한 xfail은 Git push 실패 상태화(P1-B3)이며 이번 승인 범위 밖이다.
+- Discord 실패에도 archive/state/history 저장 흐름이 계속되는 점을 테스트했다. 단, 이들 파일의 atomicity/transaction 보장은 하지 않는다.
+- 실제 Discord/Gemini, 운영 workflow, 운영 Git push 미실행.
