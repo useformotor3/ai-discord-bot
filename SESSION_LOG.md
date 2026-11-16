@@ -734,3 +734,22 @@
 - Draft PR 생성만 수행. merge/rebase/force-push/운영 배포/운영 workflow 또는 state-history-archive 변경/실제 Gemini·Discord 호출 없음.
 - GitHub mergeable=true는 조회 시점 상태이며 main 자동 커밋에 따라 바뀔 수 있다.
 - 다음은 PR 리뷰와 최신 main 기준 재검토. 병합 및 운영 반영은 별도 승인 대상.
+
+
+## 2026-11-16 — 상시 진행 지시, PR 재조회 및 복구 체크포인트
+### 사용자 운영 지시
+- 사용자는 이후 매 단계별 승인을 묻지 말고 목표 달성에 필요한 작업을 계속 진행하라고 지시했다.
+- main 및 관련 운영 파일 수정도 허용하되, 실행 후 이상 발생 시 정상 코드로 복귀하고 데이터도 복구할 수 있어야 한다는 요구를 명시했다.
+- 이에 따라 AI_RULEBOOK.md §18을 추가해 상시 진행 권한과 복구 우선 게이트를 문서화했다.
+
+### 현재 원격 상태 재확인
+- main HEAD: 2622e332d6a3defd2079ccad3af36970001de5c1 (Auto-archive #156).
+- feature HEAD: eba3aeb5710dcc6507623d56d586a619e9a4fc46.
+- merge-base: f9a12a5778f5fa1d907201ab2931d20ca2656bb7; compare 231 ahead / 703 behind.
+- PR #1은 open/draft/not merged. mergeable 값이 조회 중 false→true로 변동했고 PR base SHA는 main 최신 HEAD와 일치하지 않는 값을 반환했다. PR head 기준 CI Run #33 success는 확인했으나 최신 main base와 통합된 commit의 CI 결과는 별도로 검증해야 한다.
+
+### 롤백 준비
+- main backup branch: safety/pre-merge-main-2622e332 → 2622e332d6a3defd2079ccad3af36970001de5c1.
+- feature backup branch: safety/pre-merge-feature-eba3aeb → eba3aeb5710dcc6507623d56d586a619e9a4fc46.
+- 현재 Git 코드 기준점은 보존했으나 state/history/archive의 별도 snapshot/restore는 아직 검증되지 않았다. 따라서 운영 데이터까지 복구 준비 완료라고 표현하지 않는다.
+- main merge, workflow 변경, 운영 실행은 아직 하지 않았다. 먼저 backup ref readback 및 데이터 복원 리허설을 진행한다.

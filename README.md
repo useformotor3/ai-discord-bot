@@ -253,3 +253,12 @@ Actions 성공은 자동화 실행 결과이지 CRA 법령 해석이나 출처�
 - PR-triggered Actions Run #32 (`43869220252`) 성공: source integrity, compile, 전체 pytest 단계 완료. [Run #32](https://github.com/useformotor3/ai-discord-bot/actions/runs/43869220252).
 - 이전 코드 검증 Run #43851438733은 70 passed / 1 xfailed였으며 PR-triggered run #32의 개별 테스트 수치는 job summary에서 확인되지 않아 별도 숫자로 단정하지 않는다.
 - 현재 PR은 검토용 Draft이며 merge/rebase/운영 반영은 하지 않았다. main의 지속적인 자동 아카이브로 base가 움직일 수 있으므로 병합 직전 재비교가 필요하다.
+
+
+## 2026-11-16 — 상시 진행 승인 및 복구 우선 운영 기준
+- 사용자는 매 단계별 승인 질문 없이 목표 달성에 필요한 작업을 계속 진행하도록 상시 승인했다. 안전 통제·검증·복구 절차는 유지한다.
+- AI_RULEBOOK.md §18에 변경 전 체크포인트, safety/ 백업 브랜치, merge commit, 운영 데이터 사전 백업/복원, 실패 시 revert/복구 절차를 명문화했다.
+- 현재 main 백업 safety/pre-merge-main-2622e332 → 2622e332d6a3defd2079ccad3af36970001de5c1; feature 백업 safety/pre-merge-feature-eba3aeb → eba3aeb5710dcc6507623d56d586a619e9a4fc46.
+- Draft PR #1: https://github.com/useformotor3/ai-discord-bot/pull/1. main은 2622e332d6a3defd2079ccad3af36970001de5c1까지 진행. 최신 compare는 231 ahead / 703 behind, merge-base f9a12a5778f5fa1d907201ab2931d20ca2656bb7.
+- PR mergeable 값은 조회 시점에 변동했고 PR base SHA 응답도 main HEAD와 일치하지 않는 스냅샷을 반환했다. 최신 base 기준 통합 검증이 완료된 것으로 보지 않는다.
+- 코드 백업 ref는 만들었지만 운영 데이터 snapshot/restore 절차는 아직 검증되지 않았다. 이를 완료하고 복원 리허설하기 전에는 신규 코드의 첫 운영 실행을 하지 않는다.

@@ -524,3 +524,13 @@
 - 사전 코드 검증 Run #43851438733은 70 passed / 1 xfailed. PR-triggered Run #32는 job-level success만 확인했으며 개별 passed/xfail 수치는 확인되지 않아 혼동하지 않는다.
 - PR은 검토 대기 상태다. 병합·리베이스·운영 workflow/data 변경·실제 Gemini/Discord 호출은 수행하지 않았다.
 - 다음 단계: PR 리뷰/Files changed 재검토 및 main 최신화에 따른 compare/conflict 재검증. 병합과 운영 반영은 별도 승인 필요.
+
+
+## 2026-11-16 — 상시 진행 승인 / 롤백 준비 현황
+- 사용자 지시: 매 단계별 승인 질문 없이 필요한 작업을 계속 진행. main 및 운영 관련 파일 수정도 허용하되, 실행 후 이상 발생 시 정상 코드/데이터로 복구할 수 있어야 함.
+- 행동강령 AI_RULEBOOK.md §18에 상시 진행 권한, 체크포인트, 백업, 통합 게이트, 실행 후 데이터 검증 및 실패 시 복구를 기록했다.
+- 백업 브랜치 생성: safety/pre-merge-main-2622e332 → 2622e332d6a3defd2079ccad3af36970001de5c1; safety/pre-merge-feature-eba3aeb → eba3aeb5710dcc6507623d56d586a619e9a4fc46.
+- main HEAD 2622e332d6a3defd2079ccad3af36970001de5c1; feature HEAD eba3aeb5710dcc6507623d56d586a619e9a4fc46; compare 231 ahead / 703 behind; merge-base f9a12a5778f5fa1d907201ab2931d20ca2656bb7.
+- PR mergeable 응답은 false→true로 변동했고 PR base SHA가 main 최신 HEAD와 불일치하는 값을 반환했다. PR head 기준 CI는 성공이나 최신 main을 포함한 통합 결과 CI로 간주하지 않는다.
+- 복구 준비 평가: (1) 코드 이력/백업 브랜치 생성 완료, (2) 운영 데이터 snapshot/restore 검증 미완료, (3) main 통합 및 첫 운영 실행 미실행. 따라서 현재 코드 롤백 기준점은 있으나 운영 데이터까지 복구 준비 완료라고 말할 수 없다.
+- 다음 우선순위: backup refs readback → main 최신 base 기준 통합/CI 확인 → state/history/archive 사전 백업 및 복원 리허설 → PR merge commit 통합 → post-merge 검증 → 제한된 첫 실행 및 데이터 무결성 확인.

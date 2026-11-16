@@ -167,3 +167,36 @@
 - merge-base 기준 tree diff로 운영 archive/state/history 보존 여부를 확인한다. 현재 tree 간 직접 차이를 삭제 기록으로 오인하지 않는다.
 - PR은 pull_request 전용 mock CI로 검증한다. PR CI에 운영 secrets, Gemini/Discord 호출, 운영 workflow 실행을 포함하지 않는다.
 - 코드 통합, 운영 workflow 변경, 실제 운영 실행/배포는 서로 다른 승인 경계로 유지한다.
+
+
+## 18. 사용자 상시 진행 승인 및 복구 우선 운영 — 2026-11-16
+
+### 18.1 진행 권한
+- 사용자는 반복적인 단계별 승인 질문 없이 목표 달성에 필요한 조사, 설계, 구현, 테스트, 문서화, 브랜치/커밋/PR 관리 및 안전한 통합 작업을 계속 진행하도록 상시 승인했다.
+- 기존 문서의 '매 단계 별도 승인' 문구는 이 상시 승인과 충돌하는 범위에서 이 조항으로 대체한다.
+- 이 승인은 안전 통제를 생략하라는 뜻이 아니다. 위험이 큰 작업은 먼저 격리·백업·검증하고, 되돌릴 수 없는 외부 부작용은 자동 진행하지 않는다.
+
+### 18.2 변경 전 체크포인트
+- 모든 의미 있는 변경 전에 원격 main과 작업 브랜치의 HEAD SHA, merge-base, ahead/behind, 대상 파일 blob SHA를 기록한다.
+- main에 통합하기 전 현재 main과 통합 대상 feature HEAD를 가리키는 별도 safety/ 백업 브랜치를 만든다. 백업 ref를 다시 읽어 SHA를 검증한다.
+- 커밋은 논리적 변경 단위로 묶는다. 기존 커밋을 덮어쓰는 force-push/rebase는 기본 금지하며, 복구는 revert commit 또는 별도 복구 브랜치로 수행한다.
+- 운영 데이터가 변경될 수 있는 실행 전에는 state.json, history.json, research_archive/의 스냅샷/체크섬/개수/참조 무결성을 확보한다. 백업을 실제 복원할 수 있는지 검증하지 못했다면 신규 코드의 운영 실행을 보류한다.
+
+### 18.3 통합 및 실행 게이트
+- PR 통합은 최신 base 기준 충돌 상태, PR 전체 diff, 보호 경로, 정확한 head SHA의 PR CI를 재확인한 후 수행한다.
+- 기본 통합 방식은 merge commit이다. squash/rebase/force-push는 이력 추적과 복구를 약화시키므로 사용하지 않는다.
+- 통합 후 main HEAD, merge commit, changed paths, workflow 결과를 재조회한다.
+- 운영 실행 전 compile/test/정적 검사 외에 입력 데이터 사전검사와 데이터 백업을 수행한다. 실행 후 state count/date, history 증가량, archive 파일 수, history→archive 참조 무결성, 로그 및 외부 전송 상태를 점검한다.
+- 문제가 발생하면 추가 실행/재시도를 중단하고 증거를 보존한다. 코드 문제는 직전 정상 merge commit으로 revert하고, 데이터 문제는 검증된 백업에서 별도 복구 commit으로 복원한다.
+- Discord 등 외부 전송은 이미 전달된 메시지를 Git revert로 회수할 수 없다. 중복 전송 위험이 있으면 자동 재전송하지 않고 상태를 delivery-unknown으로 남긴다.
+
+### 18.4 중단 조건과 보고
+- 테스트 실패, 원본 SHA 불일치, 보호 경로의 예상 밖 변경, 백업/복원 검증 실패, 데이터 무결성 저하, secret 노출 징후가 있으면 해당 단계에서 중단하고 원인을 조사한다.
+- 중단은 사용자에게 다시 승인받기 위한 절차가 아니라 데이터/서비스 손상을 막기 위한 안전 정지다. 복구 가능한 범위는 계속 자동으로 수행한다.
+- 매 세션 종료 시 기준/현재 SHA, 커밋, 파일 diff, CI 링크, 백업 ref, 복구 방법, 실행 여부 및 남은 위험을 README·PROJECT_STATUS·SESSION_LOG·PROJECT_LOG에 기록한다.
+
+### 18.5 현재 안전 체크포인트
+- main pre-integration backup: safety/pre-merge-main-2622e332 → 2622e332d6a3defd2079ccad3af36970001de5c1.
+- feature pre-integration backup: safety/pre-merge-feature-eba3aeb → eba3aeb5710dcc6507623d56d586a619e9a4fc46.
+- 두 ref는 생성 완료했으며 별도 readback 및 SHA 검증을 다음 단계에서 완료해야 한다.
+- 코드 revert 경로는 마련됐지만 운영 데이터 snapshot/restore는 아직 미완료다. 따라서 main 통합과 신규 코드의 실제 운영 실행은 현재 이 문서만으로 안전하다고 간주하지 않는다.
