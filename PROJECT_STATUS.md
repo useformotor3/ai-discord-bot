@@ -465,13 +465,13 @@
 
 
 ## 2026-11-16 통합 전략 감사 갱신 — merge-base 기준
-- 감사 스냅샷: main `260c0c2d38dd658714e58db5e7a4cdb2b34bc5b3` (#129), 작업 브랜치 `2b2645b23876378a6c384c8da819de84104ac49a`, merge-base `f9a12a5778f5fa1d907201ab2931d20ca2656bb7`.
+- 감사 스냅샷: main `3ebf6b977b0127291957ffb415dbdbc83b5b6d97` (#130), 작업 브랜치 `0fe9912b5dbba29eeb3ebd9e9f2c16a42544f925`, merge-base `f9a12a5778f5fa1d907201ab2931d20ca2656bb7`.
 - compare: 204 ahead / 677 behind. 이 수치는 커밋 그래프 차이이며 파일 삭제 수가 아니다.
-- recursive tree: merge-base 1,597 blobs(archive 1,592); main 2,273 blobs(archive 2,268); 작업 브랜치 1,619 blobs(archive 1,592).
-- merge-base→main: archive 677개 추가, 삭제 0, history/state 2개 수정. main history 2,268건과 archive 2,268개가 일치하고 file 참조 누락 0.
-- merge-base→작업 브랜치: 22개 경로 추가, 삭제 0, main.py 1개 수정. state/history는 merge-base와 동일한 blob.
+- recursive tree: merge-base 1,597 blobs(archive 1,592); main 2,274 blobs(archive 2,268); 작업 브랜치 1,620 blobs(archive 1,592).
+- merge-base→main: archive 677개 추가, 삭제 0, history/state 2개 수정. main history 2,269건과 archive 2,269개가 일치하고 file 참조 누락 0.
+- merge-base→작업 브랜치: 23개 경로 추가, 삭제 0, main.py 1개 수정. state/history는 merge-base와 동일한 blob.
 - 결론: 3-way PR은 데이터 보존 측면에서 통합 후보가 양호하다. 실제 PR conflict check 전까지 merge 가능을 확정하지 않는다.
 - P1-B2 code review에서 recovery target이 저장소 내 임의 경로를 가리킬 수 있는 점을 발견해 `state.json`, `history.json`, `research_archive/*.md` allowlist로 제한했다.
 - 테스트 전용 workflow는 pull_request→main 및 main push 트리거를 갖도록 보강했다. Actions 43851438733: source SHA 일치, compileall 통과, 70 passed / 1 xfailed.
 - 운영 `run.yml`, state/history/archive, main 브랜치, 실제 서비스 호출은 변경하지 않았다. PR 생성·merge·운영 배포도 하지 않았다.
-- 권장 다음 단계: 최신 main 재조회 후 PR diff가 23개 예상 경로인지 확인하고, PR CI와 GitHub conflict check를 검증한다. PR/merge/운영 rollout은 별도 승인 대상.
+- 권장 다음 단계: 최신 main 재조회 후 PR diff가 24개 예상 경로인지 확인하고, PR CI와 GitHub conflict check를 검증한다. PR/merge/운영 rollout은 별도 승인 대상.
