@@ -342,3 +342,5 @@ ST와 비교할 기능 범위와 제품군을 먼저 정의한다. 동급 기능
 - Annex I Part I(2)(b): secure-by-default, subject to tailor-made product/business-user agreement; (2)(c): security updates and applicable automatic-update default/user controls; (2)(d): unauthorised-access protection; (2)(j): attack-surface limitation.
 - Annex I Part II(2): vulnerability remediation and, where technically feasible, separation of security/function updates; (7): secure update distribution; (8): no-delay, free-of-charge security updates unless otherwise agreed for a tailor-made product with a business user.
 - #8 and #9 queue records include pre-memos only. They are not VERIFIED and do not constitute full Pass A/B/C or product-specific applicability decisions. See [CRA_ARCHIVE_AUDIT_QUEUE.md](CRA_ARCHIVE_AUDIT_QUEUE.md).
+
+- European Commission C(2026) 5252 publication page (27 July 2026) confirms that the non-binding guidance addresses support periods, reporting obligations and risk assessment. The official Annex download could not be decoded in this run; no section-level Commission guidance claim is verified. See the #9 pre-memo in CRA_ARCHIVE_AUDIT_QUEUE.md.
