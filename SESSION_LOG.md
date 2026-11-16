@@ -615,3 +615,45 @@
 - Discord 전송과 로컬 저장은 원자적이지 않으며 exactly-once/outbox는 보장하지 않는다.
 - compare snapshot commit `0236dbda2793d6dc2ba4dfc245905a73f8783136` 기준 main HEAD `6eec802125c1bcf3cf0b2dd1401a9c6430792920`, branch compare 181 ahead / 673 behind, merge-base `f9a12a5778f5fa1d907201ab2931d20ca2656bb7`; main state count=126, history=2,265; 통합 보류.
 - 다음 재개 지점: 구현 diff 및 POSIX 실행환경 제약을 검토하고, 운영 archive/state/history를 보존하는 별도 통합 전략을 설계한다. P1-B3/B4는 별도 승인 전 착수하지 않는다.
+
+
+## 2026-11-16 — merge-base 통합 전략 감사 및 P1-B2 보강
+
+### 기준 스냅샷
+- repo: `useformotor3/ai-discord-bot`
+- main HEAD: `260c0c2d38dd658714e58db5e7a4cdb2b34bc5b3` (Auto-archive #129)
+- feature HEAD: `2b2645b23876378a6c384c8da819de84104ac49a`
+- merge-base: `f9a12a5778f5fa1d907201ab2931d20ca2656bb7`
+- compare: 189 ahead / 676 behind; diverged.
+
+### 전체 tree 및 데이터 검증
+- recursive tree 응답은 base/main/feature 모두 truncated=false.
+- base: 1,597 blob / archive 1,592.
+- main: 2,273 blob / archive 2,268.
+- feature: 1,619 blob / archive 1,592.
+- base→main: 676개 archive 추가, 삭제 0, history/state 수정 2.
+- base→feature: 22개 경로 추가, 삭제 0, main.py 수정 1.
+- feature state/history blob은 base와 동일하다.
+- main state count=129, history 2,268건, archive 2,268개. history file 참조 누락 0.
+- 따라서 main의 archive 676개는 main에서 분기 후 추가된 자료이며 feature에서 삭제한 것이 아니다. 정상 3-way merge는 이 main 변경을 보존할 수 있는 구조다.
+
+### 추가 코드 검토 및 보강
+- P1-B2 `_safe_target()`이 저장소 root 안의 임의 경로를 허용하는 점을 발견했다. 복구 manifest가 변조되면 workflow/code/document를 target으로 지정할 수 있어 통합 전 보강이 필요했다.
+- 허용 target을 `state.json`, `history.json`, `research_archive/*.md`로 제한했다.
+- `.github/workflows/run.yml`, `.git/config`, README, 코드, archive 하위 폴더 및 비-md 경로 거부 테스트를 추가했다.
+- 테스트 workflow를 pull_request→main 및 main push에서도 실행하도록 변경했다. 권한은 contents:read, checkout persist-credentials:false이며 외부 secrets/API 호출 없음.
+
+### 검증
+- Actions ID `43851438733`: exact source SHA 확인, compileall 통과, **70 passed / 1 xfailed**.
+- source `persistence.py` SHA: `953e2a52b7e6d6e619a4f43766e52d6835df50c8`.
+- test SHA: `f78d36164b5ac0d5d5eebe0c5eb5c1214c4e0671`.
+- test workflow SHA: `6a5bee0785eccc1f1b8074b80761b1b2a772d3c0`.
+- xfail 1건은 P1-B3 Git sync 상태화로 범위 밖.
+
+### 권장 통합 전략 및 경계
+- 최신 main을 기준으로 feature→main PR을 생성하고 PR CI 및 conflict check를 검증한 후 merge commit 방식으로 통합하는 안을 권장한다.
+- PR Files changed에 state/history/archive/run.yml 삭제·변경이 없어야 한다. compare API는 23개 예상 경로를 보고한다.
+- squash/rebase/force-push 및 state/history/archive migration은 피한다.
+- PR 생성/merge, 운영 배포, run.yml 변경, 실제 Gemini/Discord 호출은 이번 작업에서 수행하지 않았다. 운영 반영은 별도 승인 대상이다.
+- 잔여: POSIX-only flock/fsync, Discord POST와 local persistence 사이의 outbox 부재, non-blocking lock, P1-B3/B4 미구현.
+- 상세 보고서: `reports/BRANCH_INTEGRATION_STRATEGY_2026-11-16.md`.
