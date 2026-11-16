@@ -6,18 +6,17 @@
 
 ## 현재 상태
 
-- 현재 작업 브랜치: `test/failure-path-fixtures-2026-11-14`
+- 현재 작업 브랜치: `feature/p1-b2-atomic-persistence-2026-11-16` (P1-B2 전용 구현 브랜치)
 - 운영 기준 브랜치: `main` — 별도 승인 없이 수정·병합하지 않습니다.
-- 현재 작업: P1-B1 Discord 전송 신뢰성 구현 및 CI 검증 완료; P1-B2~B4는 별도 설계·승인 대기
-- P0 응답 검증/실패 차단: 작업 브랜치 구현 완료
-- P1-A 상태·이력 안전성: 작업 브랜치 구현 완료
-- helper 독립 pytest: 7 passed (전체 저장소 테스트 아님)
-- 임시 재구성 사본 pytest: 21 passed (blob SHA 불일치로 예비 결과만 인정)
-- **최신 P1-B1 원본 동일성 검증 CI: 43 passed, 1 xfailed (Run #18, success)**
-- Run #18에서 핵심 파일 6개 Git blob SHA 일치 및 compileall 통과 확인
-- Discord 실패 분류·재시도·부분 chunk 처리는 P1-B1에서 구현; Git sync 상태화와 atomic persistence는 미완료
-- main 대비 작업 브랜치: diverged, 151 ahead / 610 behind (2026-11-16 조회); 통합 감사 전 병합 금지
-- 2026-11-14 15:31 KST 스냅샷: 72 ahead / 50 behind; 당시 작업 브랜치 Actions runs 0건 (CI 성공 증거 없음)
+- P0 응답 검증/실패 차단, P1-A 상태·이력 검증, P1-B1 Discord 전송 신뢰성: 작업 브랜치 구현 완료
+- **P1-B2 로컬 다중 파일 저장 일관성: 사용자 승인 후 구현 및 테스트 CI 검증 완료**
+- **최신 테스트 전용 CI Run #23: 63 passed, 1 xfailed; source SHA·compileall·전체 pytest 통과**
+- P1-B2는 durable journal, staged payload, backup/SHA 검증, idempotent roll-forward recovery, snapshot 충돌 방지 적용
+- P1-B3 Git sync 상태화는 미구현(기존 strict xfail), P1-B4 import-time 구조 개선도 미구현
+- Discord exactly-once/outbox는 P1-B2 범위 밖이며 보장하지 않음
+- main 대비 작업 브랜치: diverged, 172 ahead / 672 behind (2026-11-16 조회); 통합 감사 전 병합 금지
+- 운영 main 최신 조회: HEAD `23027962c6eb919506d291e3ff4ef8d6e35894b9`, state count=125, history=2,264
+- 운영 main의 main.py와 run.yml은 각각 기존 SHA `86a7731aad5de8d75581fc953bcea2c44adf2f2b`, `65a8cadc8eac593f551e390698e367b1d161ecf1`; 이번 구현에서 변경하지 않음
 
 Actions 성공은 자동화 실행 결과이지 CRA 법령 해석이나 출처의 사실 정확성을 보증하지 않습니다. 테스트 통과 숫자는 반드시 실행한 정확한 소스와 범위를 함께 표시합니다.
 
