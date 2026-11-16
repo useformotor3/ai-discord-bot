@@ -327,3 +327,9 @@ Actions 성공은 자동화 실행 결과이지 CRA 법령 해석이나 출처�
 - 원본은 보존하고 별도 정정 기록을 추가했다.
 - 핵심 정정: CRA Annex I Part I (2)(m), IEC 62443-4-2 CR 4.2, NIST SP 800-88 Rev.2 적용.
 - 상세: [CRA 보고서 #4 정정 및 기술 근거 감사](reports/CRA_CORRECTION_REPORT_4_2026-11-17.md).
+
+
+## 2026-11-17 CRA 보고서 #3 정정 감사
+- 원본은 보존하고 CRA Article 13(8)/(9), Annex I Part I (2)(c), Part II (2)/(4)/(8)을 공식 EUR-Lex 원문과 대조해 정정 기록을 추가했다.
+- 주요 정정: Article 13(8)은 지원 기간, 보안 업데이트 분리 제공은 Annex I Part II (2), 무상 제공은 Part II (8), 장기 이용 가능성은 Article 13(9).
+- 상세: [CRA 보고서 #3 정정 및 기술 근거 감사](reports/CRA_CORRECTION_REPORT_3_2026-11-17.md).
