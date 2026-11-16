@@ -7091,3 +7091,40 @@ Source reopened: [EUR-Lex, Regulation (EU) 2024/2847, OJ L 20.11.2024](https://e
 - [European Commission publication page for C(2026) 5252](https://digital-strategy.ec.europa.eu/en/library/commission-publishes-new-guidance-support-timely-cyber-resilience-act-implementation), published **27 July 2026**, explicitly lists support periods, reporting obligations and risk assessment among the topics covered. The Commission page labels the guidance **non-binding**; it supplements but does not replace Regulation (EU) 2024/2847.
 - The official Annex download was attempted from the Commission page but the document fetch failed with a Unicode decoding error. Therefore no Annex paragraph/section-level interpretation is recorded or treated as verified in this run.
 - ENISA SRP guidance was not reopened because reports #8/#9 do not make a specific Article 14 reporting-route claim. Manufacturer technical documents were not applicable to the legal claims under review; no exact servo-drive SKU or ST MCU order code is available.
+
+
+## 2026-11-16 main advanced to report #10
+
+- Latest main HEAD: `8c8faa1dd68273b2c7bdc47ff3589fa14b6994e7` — Auto-archive: Research report #10 (commit UTC 2026-11-16T00:45:50Z).
+- Previous main/queue baseline: report #9 `5f5d83f584639eb712d23d48444f8eee8618b24d`. Compare #9→#10: ahead 1 / behind 0; changed files are `research_archive/2026-11-16_004534.md`, `history.json`, and `state.json`.
+- `history.json`: 2,149 entries. `state.json`: `date=2026-11-16`, `count=10` (daily counter); `last_health_check=2026-11-15T21:20:38.480365` remains older than these archive commits.
+- New entry: #10 P0. Status NEW / NOT_YET_AUDITED; file verdict UNVERIFIED; Raw Text Quote and atomic claims NOT_YET_AUDITED; product applicability UNVERIFIED. No #8/#9 duplicate created.
+
+### Official-source pre-memo for #10 — CVD, security updates and Article 14 reporting
+
+Sources reopened:
+- [EUR-Lex Regulation (EU) 2024/2847](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R2847), Article 13(1)–(9), Article 14(1)–(8), Article 16, Annex I Part II(1),(2),(5)–(8), and Annex VII point 2(b).
+- [ENISA CRA Single Reporting Platform FAQ](https://www.enisa.europa.eu/topics/product-security/vulnerability-services/eu-incident-response-and-cyber-crisis-management/single-reporting-platform-srp/frequently-asked-questions), updated 15 October 2026. ENISA's SRP page separately notes a 4 November 2026 version 1.3 upgrade and says supporting documentation is being updated.
+- [European Commission C(2026) 5252 guidance publication page](https://digital-strategy.ec.europa.eu/en/library/commission-publishes-new-guidance-support-timely-cyber-resilience-act-implementation), published 27 July 2026; non-binding and includes reporting obligations/support periods. The Annex download failed decoding in this run, so no Annex paragraph-level claim is recorded.
+
+Preliminary findings (not full Pass A/B/C):
+- Article 11 is “General product safety”, not manufacturer obligations. Manufacturer obligations are in Article 13; Article 14 contains reporting obligations.
+- Annex I Part II point (1) is vulnerability/component identification and SBOM (top-level dependencies), not the quoted security-update sentence. Security-update remediation is Part II(2), secure distribution Part II(7), free/no-delay dissemination Part II(8), and CVD policy Part II(5). Contact address facilitation is Part II(6).
+- The report's quoted Part II point (1)(a) wording is not the current Annex I structure/text; it appears to combine Part I(2)(c) and Part II(2)/(7)/(8). The purported “Article 11, paragraph 7” quote is also mislocated; Article 11 has no such manufacturer-obligation paragraph.
+- CVD policy in technical documentation is supported by Annex VII point 2(b), which explicitly includes the coordinated vulnerability disclosure policy, vulnerability-reporting contact address, and secure-update-distribution technical solution. This claim should not be rejected merely because the report mis-cites other passages.
+- Article 14 mandatory notifications are limited to actively exploited vulnerabilities and severe incidents affecting product security, not every discovered vulnerability. Notifications are submitted via the ENISA Single Reporting Platform to the CSIRT designated as coordinator and are simultaneously accessible to ENISA; CSIRTs disseminate to other CSIRTs and provide necessary information to market surveillance authorities. The report's direct manufacturer-to-market-surveillance-authority wording is overbroad.
+- Article 14 deadlines: early warning ≤24h, notification ≤72h; AEV final report ≤14 days after corrective/mitigating measure becomes available; severe-incident final report ≤1 month after the 72h notification. Article 14(8) user notification is separate.
+- “Hot-patching” is not a named universal CRA mandate in the cited provisions. It may be a product/risk-specific engineering option; no SKU or update architecture is available to assess applicability.
+- Article 13(8) support period is based on expected use, generally at least five years but shorter if expected use is under five years; Article 13(9) update availability retention is a separate 10-year/remaining-support rule.
+
+- File verdict remains **UNVERIFIED**; quote/claim adjudication remains **NOT_YET_AUDITED** until full extraction, exact quote comparison and countercheck. Product applicability remains **UNVERIFIED**.
+
+### 2026-11-16 #10 — P0 — vulnerability handling, CVD and security-update reporting
+
+- Status: **NEW / NOT_YET_AUDITED** | 확인일: 2026-11-16 | 원문 생성: 00:45:34 (원문 시간대 미표기)
+- 원문: [commit 8c8faa1dd68273b2c7bdc47ff3589fa14b6994e7](https://github.com/useformotor3/ai-discord-bot/commit/8c8faa1dd68273b2c7bdc47ff3589fa14b6994e7) | [research_archive/2026-11-16_004534.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-16_004534.md) | commit UTC: 2026-11-16T00:45:50Z
+- 원문 blob SHA: `65ff030b88a9e87e4e3f51c314b077744d987ab6`
+- 핵심 주장 주제: 취약점 무상·신속 패치, CVD 정책, 핫 패칭/가동중단 최소화, Article 14 취약점·심각한 사고 신고.
+- 우선순위/검증 쟁점: Article 13(1)/(2)/(6)–(9), Article 14(1)–(8), Article 16(1)–(3), Annex I Part II(1),(2),(5)–(8), Annex VII point 2(b). 모든 취약점과 actively exploited vulnerability 구분; severe incident 범위; 신고 대상/수신자/기한; CVD 정책 및 기술문서 포함; hot-patching의 법적 의무 여부.
+- 사전 메모: CVD 정책 및 이를 기술문서에 포함하는 점은 Annex I Part II(5)와 Annex VII point 2(b)에서 뒷받침된다. 그러나 Raw Text Quote는 Part II(1)과 “Article 11 paragraph 7”을 잘못 인용한 것으로 보인다. Part II(1)은 SBOM이고, Part II(2)/(7)/(8)이 업데이트 처리·안전한 배포·무상 제공이다. Article 14 신고는 AEV와 severe incident로 한정되며, 모든 취약점의 의무 신고가 아니다. Hot-patching은 이 조항들에서 보편적 필수 구현수단으로 명시되지 않는다.
+- 파일 판정: **UNVERIFIED** (전체 Pass A/B/C 미완료). Raw Text Quote 및 개별 주장: **NOT_YET_AUDITED**, 다만 인용 위치/문구 오류 후보와 신고 범위 과장 후보를 기록한다. 제품 적용성: **UNVERIFIED**.
