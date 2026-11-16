@@ -578,3 +578,40 @@
 - recursive tree 전체 비교는 수행하지 못했으므로 archive delta를 미확정으로 남긴다.
 - 운영 파일·workflow·데이터, merge/rebase/PR merge, 운영 실행, Gemini/Discord 호출은 하지 않았다.
 - P1-B2 구현은 별도 승인 대기. P1-B3/B4 보류.
+
+
+## 2026-11-16 — P1-B2 원자적 로컬 저장 구현 및 검증
+
+### 승인 및 기준
+- 사용자 명시 승인에 따라 P1-B2 구현을 진행했다.
+- 구현 브랜치: `feature/p1-b2-atomic-persistence-2026-11-16`.
+- 브랜치 생성 기준: `7ae3b251861b9a3de9981bd7202e346d05ca9430`.
+- 기존 작업 브랜치와 운영 main은 분기되어 있으므로 기존 브랜치에 직접 구현하거나 운영 main에 반영하지 않았다.
+
+### 변경 파일
+- `persistence.py`: durable journal, staged/backup payload, SHA 검사, POSIX advisory lock, idempotent roll-forward recovery.
+- `main.py`: 시작 시 recovery, 단일 원본 bytes snapshot으로 state/history 읽기, 저장 직전 old SHA 확인, archive → history → state transaction 적용.
+- `tests/test_p1_b2_atomic_persistence.py`: crash/failure injection 및 main integration 테스트.
+- `.github/workflows/tests.yml`: 전용 브랜치 트리거와 핵심 소스 blob SHA pin 갱신. 운영 `run.yml`은 변경하지 않았다.
+- `reports/P1_B2_ATOMIC_PERSISTENCE_DESIGN_2026-11-16.md`, 관리 문서와 테스트 가이드를 구현 결과에 맞춰 갱신했다.
+
+### 구현 판단
+- 개별 `os.replace`만으로 다중 파일 transaction이 되지 않으므로 PREPARED/APPLYING/COMMITTED journal을 사용한다.
+- stage/backup/manifest/journal은 파일 fsync와 디렉터리 fsync를 수행한다. target 적용은 target과 같은 디렉터리에서 임시 파일을 fsync한 뒤 replace한다.
+- 복구는 이미 new SHA인 target을 건너뛰고 old SHA인 target만 roll-forward한다. 예상 밖 SHA, journal/stage/backup 손상, 경로 위반은 자동 덮어쓰기 없이 fail-closed 한다.
+- 장시간 Gemini/Discord 호출 동안 lock을 잡아두지 않도록 POSIX advisory lock은 recovery와 commit 구간에 한정했다. 대신 읽은 bytes snapshot과 저장 직전 SHA를 비교해 stale write를 차단한다. 이 방식은 로컬 lost-update를 방지하지만, 동시 실행의 Discord 중복 전송은 막지 않는다(P1-B2 범위 밖).
+- POSIX `fcntl.flock` 및 directory fsync를 사용하므로 현재 Ubuntu CI 실행 환경을 전제로 한다. Windows 네이티브 호환성은 별도 작업이다.
+
+### 검증
+- Run #21: 테스트 파일 SHA pin 불일치로 source-integrity 단계 실패; compileall/pytest는 실행되지 않았다.
+- Run #22: pin 정정 후 62 passed / 1 xfailed.
+- directory fsync 및 duplicate target 검증을 보강하고 SHA pin을 갱신한 Run #23: **63 passed / 1 xfailed**, source SHA·compileall·전체 pytest 모두 통과.
+- CI 증거: https://github.com/useformotor3/ai-discord-bot/actions/runs/43848498440
+- P1-B3 Git sync 상태화의 기존 xfail 1건은 범위 밖으로 유지했다.
+
+### 운영 영향 및 잔여 위험
+- 운영 `main.py`, `.github/workflows/run.yml`, 운영 `state.json`, `history.json`, `research_archive/` 변경 없음.
+- 실제 Gemini/Discord 호출, 운영 Git push, merge/rebase/PR merge 없음.
+- Discord 전송과 로컬 저장은 원자적이지 않으며 exactly-once/outbox는 보장하지 않는다.
+- 현재 main HEAD `23027962c6eb919506d291e3ff4ef8d6e35894b9`, branch compare 172 ahead / 672 behind, merge-base `f9a12a5778f5fa1d907201ab2931d20ca2656bb7`; 통합 보류.
+- 다음 재개 지점: 구현 diff 및 POSIX 실행환경 제약을 검토하고, 운영 archive/state/history를 보존하는 별도 통합 전략을 설계한다. P1-B3/B4는 별도 승인 전 착수하지 않는다.
