@@ -1033,3 +1033,15 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - 제품 SKU, intended purpose/core functionality, 실제 네트워크·업데이트 경로 및 ST MCU 주문 코드가 없어 제품별 CRA 적용성·Class I/II·제조사별 기능은 UNVERIFIED.
 - 이번 실행에서 main.py, Gemini prompt, 운영 자동화 코드, `.github/workflows/run.yml`, main 브랜치는 수정하지 않았다. main/work merge/rebase/sync 없음. 테스트/CI 미실행이며 PASS로 기록하지 않는다.
 - 상세 원문·주장 쟁점 및 commit/path/blob SHA는 [CRA_ARCHIVE_AUDIT_QUEUE.md](CRA_ARCHIVE_AUDIT_QUEUE.md)에 기록했다.
+
+
+## 2026-11-16 — main report #10 추가 등록
+
+- main 최신 확인 HEAD: `8c8faa1dd68273b2c7bdc47ff3589fa14b6994e7` (Report #10, commit UTC 2026-11-16T00:45:50Z).
+- 이전 main 기준점 #9 `5f5d83f584639eb712d23d48444f8eee8618b24d` 이후 1 commit, 변경 파일은 archive #10 + history.json + state.json.
+- history.json 2,149 entries; state.json date=2026-11-16/count=10 (일일 카운터). last_health_check=2026-11-15T21:20:38.480365는 최신 archive 이후 헬스체크 증거가 아니다.
+- #10 P0로 canonical queue에 등록했다. 주제는 무상·신속 보안 업데이트, CVD, 핫 패칭, Article 14 신고. 상태 NEW / NOT_YET_AUDITED; 파일 UNVERIFIED; quote/atomic claim NOT_YET_AUDITED; 제품 적용성 UNVERIFIED.
+- EUR-Lex 원문에서 Annex I Part II(1),(2),(5)–(8), Annex VII point 2(b), Article 13, 14, 16을 확인했다. CVD 정책 및 기술문서 포함은 근거가 있으나, 보고서의 Part II(1)(a)·Article 11(7) 직접 인용은 조항 위치/문구 오류 후보. Article 14는 AEV 및 severe incident 신고로 한정되며 모든 취약점 신고가 아니다. Hot-patching은 보편적 명시 의무가 아니다.
+- ENISA SRP FAQ(2026-10-15 update)를 열어 신고 대상·기한·경로를 확인했다. SRP 메인 페이지는 2026-11-04 v1.3 업그레이드 및 문서 갱신 중이라고 안내하므로 FAQ의 최신성 한계를 함께 기록했다.
+- European Commission C(2026) 5252 안내 페이지(2026-07-27, non-binding)는 열었으나 Annex 다운로드는 Unicode decoding 오류로 열람하지 못했다. 섹션 단위 검증은 하지 않았다.
+- 상세 근거/링크/미확인 쟁점은 [CRA_ARCHIVE_AUDIT_QUEUE.md](CRA_ARCHIVE_AUDIT_QUEUE.md). 전체 Pass A/B/C는 미완료.
