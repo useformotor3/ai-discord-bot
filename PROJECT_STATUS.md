@@ -3,7 +3,7 @@
 - 최종 갱신: 2026-11-16 (KST)
 - 기준 저장소: `useformotor3/ai-discord-bot`
 - 운영 기준 브랜치: `main` (운영 자동화 및 데이터 보존)
-- 현재 작업 브랜치: `test/failure-path-fixtures-2026-11-14` (최신 상태 절 참조)
+- 현재 작업 브랜치: `feature/p1-b2-atomic-persistence-2026-11-16` (P1-B2 구현 전용)
 - 이번 비교 기준: main과 diverged 상태. ahead/behind 수치는 main 자동화 커밋에 따라 변동하므로 통합 직전에 재조회
 - 프로젝트 상태: 조사 품질 감사 및 자동화 신뢰성 개선 진행 중
 - 주 문서 언어: 한국어
@@ -22,7 +22,7 @@
 | 실제 저장소 전체 pytest | **통과** | Run #3 최신 검증 commit에서 21 passed, 5개 SHA 일치 |
 | 테스트 전용 GitHub Actions CI | **통과** | Run #1~#3 success; 최신 Run #3에서 SHA·compileall·pytest 재검증 |
 | P1-B1 Discord 전송 신뢰성 | **구현 및 CI 검증 완료** | Run #18: 43 passed / 1 xfailed; timeout/status/429/partial 검증 |
-| P1-B2 저장 원자성 | 미구현 | state/history transaction journal 및 crash recovery 설계·승인 필요 |
+| P1-B2 저장 원자성 | 구현 및 CI 검증 완료 | durable journal/stage/backup, SHA 보호, roll-forward recovery; Run #23: 63 passed / 1 xfailed |
 | P1-B3 Git sync 상태화 | 미구현 | 유일한 strict xfail; 별도 승인 필요 |
 | P1-B4 구조 개선 | 미구현 | import-time 실행 제거 등 후속 단계 |
 | CRA 요구사항 추적 | 후속 | 공식 조항-제품 적용성-통제-시험 증거 연결 |
@@ -443,3 +443,20 @@
 - recursive tree 전체 비교는 이번 조회에서 수행하지 못했으므로 archive 추가/삭제 수는 미확정이다. compare API의 파일 목록을 전체 경로 목록으로 간주하지 않는다.
 - 운영 main, 운영 workflow, state/history/archive 변경 없음. merge/rebase/PR merge/운영 실행/Gemini·Discord 외부 호출 없음.
 - P1-B2는 설계 완료·구현 별도 승인 대기. P1-B3/B4는 보류 상태 유지.
+
+
+## P1-B2 구현 및 검증 완료 — 2026-11-16 (KST)
+- 사용자 승인: P1-B2 원자적 로컬 저장 구현 승인.
+- 전용 브랜치: `feature/p1-b2-atomic-persistence-2026-11-16`; 구현 기준 HEAD는 기존 관리 브랜치 `7ae3b251861b9a3de9981bd7202e346d05ca9430`.
+- 구현 파일: `main.py`, 신규 `persistence.py`, 신규 `tests/test_p1_b2_atomic_persistence.py`, 테스트 전용 `.github/workflows/tests.yml`.
+- 동작: 시작 시 미완료 저널 복구 후 state/history 원본 bytes snapshot을 읽는다. Discord 호출 후 로컬 저장 시 snapshot SHA를 다시 확인하고 archive → history → state 순서로 transaction을 적용한다.
+- 트랜잭션은 PREPARED/APPLYING/COMMITTED journal, staged payload, 기존 파일 backup, SHA 검증, 동일 파일시스템의 fsync + os.replace, 반복 가능한 roll-forward recovery를 사용한다.
+- 장애 주입: 각 replace 이후 중단, PREPARED 이후 중단, stage/fsync 실패, journal/stage/backup 손상, 외부 target 변경, archive 충돌, snapshot stale, 중복 target, 잘못된 경로, 시작 시 recovery 실패 차단을 검증한다.
+- 동시 실행은 POSIX advisory lock을 recovery/commit 구간에 적용하고, 장시간 외부 API 구간은 잠그지 않는다. 대신 처음 읽은 원본 bytes와 저장 직전 SHA를 비교해 stale update를 거부한다. 동시 실행에서 Discord 중복 전송을 막는 기능은 outbox 범위이므로 보장하지 않는다.
+- CI Run #21은 테스트 파일 SHA pin 불일치로 source-integrity 단계에서 실패(테스트 미실행). pin을 정정한 Run #22에서 62 passed / 1 xfailed, directory fsync 및 중복 target 검증 추가 후 Run #23에서 63 passed / 1 xfailed로 최종 통과.
+- Run #23: https://github.com/useformotor3/ai-discord-bot/actions/runs/43848498440
+- 검증된 commit: `045b8dbeb54d8d280ab91d6219d968bfdefed107`; main.py SHA `fa8679b758916ba8a446bae41b9ec1b40328da09`, persistence.py SHA `0250152c005f4ef842119e6ddd3b305fb57d0e31`, 신규 테스트 SHA `ab832e4267e7204538af128b4759c943cc0da212`.
+- 운영 main, 운영 run.yml, 운영 state/history/archive는 변경하지 않았다. 실제 Gemini/Discord 호출, 운영 Git push, merge/rebase/PR merge 없음.
+- 제한: 파일시스템 durability는 POSIX fsync/flock 지원 환경을 전제로 하며, Windows 네이티브 실행은 별도 lock backend 없이는 지원하지 않는다. CI runner는 Ubuntu.
+- 통합 보류: main HEAD `23027962c6eb919506d291e3ff4ef8d6e35894b9`, merge-base `f9a12a5778f5fa1d907201ab2931d20ca2656bb7`, 작업 브랜치 172 ahead / 672 behind. 자동 archive/state/history 보존 감사 전 병합하지 않는다.
+- 다음 단계: P1-B2 구현 diff/운영 위험 최종 검토 및 통합 전략 별도 설계. P1-B3/B4는 이번 승인에 포함되지 않는다.
