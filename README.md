@@ -135,3 +135,12 @@ Actions 성공은 자동화 실행 결과이지 CRA 법령 해석이나 출처�
 - [GitHub Actions Run #18](https://github.com/useformotor3/ai-discord-bot/actions/runs/43808285335): 43 passed, 1 xfailed; source SHA 6개 및 compileall 통과.
 - Run #17은 main.py SHA pin 불일치로 실패했고 Run #18에서 정정 후 통과했다. 실패 이력은 보존한다.
 - P1-B2/B3/B4, 운영 main 병합, 실제 외부 서비스 호출은 미실행.
+
+
+## 최신 원격 브랜치 비교 — 2026-11-16
+- 작업 브랜치 HEAD(비교 시점): bc0d05d45b63e9039a87abf6847c9daccc0124f3.
+- 기준 docs commit c6dfc5cee2485922b2313030dd9a5843e347afe7 대비 36 ahead / 0 behind.
+- 운영 main 대비 diverged: 147 ahead / 610 behind. main HEAD 8357da3abe3b87ca0e7a2fa50f862b693c0a226c, merge-base f9a12a5778f5fa1d907201ab2931d20ca2656bb7.
+- main.py SHA: 작업 브랜치 4b631c04e34b2b3bbade0aa9301e7d48578a1e03, main 86a7731aad5de8d75581fc953bcea2c44adf2f2b. 브랜치에는 P0/P1-A 및 P1-B1 변경이 있으나 main은 다른 시점의 코드다.
+- 610 behind의 큰 차이가 있으므로 main으로 직접 PR/merge하지 않는다. 먼저 두 브랜치의 commit/file 차이, 자동 생성 보고서와 데이터 영향, 충돌을 별도 통합 감사해야 한다.
+- merge/rebase/PR merge/운영 배포는 수행하지 않았다. 비교 수치는 조회 시점 기준이다.

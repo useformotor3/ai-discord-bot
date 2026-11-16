@@ -363,3 +363,12 @@
 - 유일한 xfail은 Git push 실패 상태화(P1-B3)이며 이번 승인 범위 밖이다.
 - Discord 실패에도 archive/state/history 저장 흐름이 계속되는 점을 테스트했다. 단, 이들 파일의 atomicity/transaction 보장은 하지 않는다.
 - 실제 Discord/Gemini, 운영 workflow, 운영 Git push 미실행.
+
+
+## 최신 원격 브랜치 비교 — 2026-11-16
+- 작업 브랜치 HEAD(비교 시점): bc0d05d45b63e9039a87abf6847c9daccc0124f3.
+- 기준 docs commit c6dfc5cee2485922b2313030dd9a5843e347afe7 대비 36 ahead / 0 behind.
+- 운영 main 대비 diverged: 147 ahead / 610 behind. main HEAD 8357da3abe3b87ca0e7a2fa50f862b693c0a226c, merge-base f9a12a5778f5fa1d907201ab2931d20ca2656bb7.
+- main.py SHA: 작업 브랜치 4b631c04e34b2b3bbade0aa9301e7d48578a1e03, main 86a7731aad5de8d75581fc953bcea2c44adf2f2b. 브랜치에는 P0/P1-A 및 P1-B1 변경이 있으나 main은 다른 시점의 코드다.
+- 610 behind의 큰 차이가 있으므로 main으로 직접 PR/merge하지 않는다. 먼저 두 브랜치의 commit/file 차이, 자동 생성 보고서와 데이터 영향, 충돌을 별도 통합 감사해야 한다.
+- merge/rebase/PR merge/운영 배포는 수행하지 않았다. 비교 수치는 조회 시점 기준이다.
