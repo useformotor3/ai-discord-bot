@@ -240,3 +240,124 @@
 - 우선순위/검증 쟁점: P0 — Article 13(8)–(9), Annex I Part II(5)–(8): support period 원칙 최소 5년(예상 사용 <5년이면 그 기간); 무료 업데이트 Part II(8) 및 tailor-made product/business user 합의 예외. Article 13(9) 업데이트 가용성과 구분.
 - 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 전체 Pass A/B/C 미완료.
 
+
+### 2026-11-15 #234 — P0 — 핵심 내용 1: 서보 드라이브 제조사는 CRA에 따라 제품의 예상 사용 기간(At least 5 years) 또는 최소 5년 중 더 긴 기간 동안 발견된 취약점에
+- 상태: NEW / NOT_YET_AUDITED | 확인일: 2026-11-16 | 생성: 19:25:30 (시간대 미표기)
+- 원문: [commit 75b35094cc645f0ae1ec65c05b0c837c6fc42e93](https://github.com/useformotor3/ai-discord-bot/commit/75b35094cc645f0ae1ec65c05b0c837c6fc42e93) | [research_archive/2026-11-15_192530.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-15_192530.md) | commit UTC: 2026-11-15T19:25:46.000Z
+- 원문 blob SHA: d7f66d6f5a835b1e2bf079c2f16ffd0debe2d000
+- 핵심 주장 주제(원문 요약 첫 부분): 핵심 내용 1: 서보 드라이브 제조사는 CRA에 따라 제품의 예상 사용 기간(At least 5 years) 또는 최소 5년 중 더 긴 기간 동안 발견된 취약점에 대해 추가 비용 청구 없이(Free-of-charge) 보안 업데이트 및 패치를 제공해야 합니다. 핵심 내용 2: 보안 업데이트는 기능적 업데
+- 우선순위/검증 쟁점: P0 — Article 13(8)–(9), Annex I Part II(5)–(8): support period 원칙 최소 5년(예상 사용 <5년이면 그 기간); 무료 업데이트 Part II(8) 및 tailor-made product/business user 합의 예외. Article 13(9) 업데이트 가용성과 구분.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 전체 Pass A/B/C 미완료.
+
+### 2026-11-15 #235 — P0 — 서보 드라이브 제조사는 CRA에 따라 제품의 예상 수명 주기 동안(최소 5년) 발견된 보안 취약점에 대한 무상 보안 업데이트 및 패치를 예외 없이 제공해야 합니다
+- 상태: NEW / NOT_YET_AUDITED | 확인일: 2026-11-16 | 생성: 19:30:46 (시간대 미표기)
+- 원문: [commit 984e54498c0e70162eca5c2ef3ea3d2cd4b72d0d](https://github.com/useformotor3/ai-discord-bot/commit/984e54498c0e70162eca5c2ef3ea3d2cd4b72d0d) | [research_archive/2026-11-15_193046.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-15_193046.md) | commit UTC: 2026-11-15T19:31:03.000Z
+- 원문 blob SHA: ea0def52be026ed0b983dc30a95280ac4448623f
+- 핵심 주장 주제(원문 요약 첫 부분): 서보 드라이브 제조사는 CRA에 따라 제품의 예상 수명 주기 동안(최소 5년) 발견된 보안 취약점에 대한 무상 보안 업데이트 및 패치를 예외 없이 제공해야 합니다.
+- 우선순위/검증 쟁점: P0 — Article 13(8)–(9), Annex I Part II(5)–(8): support period 원칙 최소 5년(예상 사용 <5년이면 그 기간); 무료 업데이트 Part II(8) 및 tailor-made product/business user 합의 예외. Article 13(9) 업데이트 가용성과 구분.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 전체 Pass A/B/C 미완료.
+
+### 2026-11-15 #236 — P0 — 서보 드라이브 제조사는 CRA에 따라 제품의 예상 수명 주기(또는 최소 5년) 동안 발견된 보안 취약점을 무상으로 조치해야 하며, 패치 배포 시 사용자가 쉽게 이
+- 상태: NEW / NOT_YET_AUDITED | 확인일: 2026-11-16 | 생성: 19:35:29 (시간대 미표기)
+- 원문: [commit bce34cf1421d55987a5c7846ec229e1cd147a5ec](https://github.com/useformotor3/ai-discord-bot/commit/bce34cf1421d55987a5c7846ec229e1cd147a5ec) | [research_archive/2026-11-15_193529.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-15_193529.md) | commit UTC: 2026-11-15T19:35:52.000Z
+- 원문 blob SHA: 06a4522658aec55d9f9c6cdb64c212c0e90d6fb6
+- 핵심 주장 주제(원문 요약 첫 부분): 서보 드라이브 제조사는 CRA에 따라 제품의 예상 수명 주기(또는 최소 5년) 동안 발견된 보안 취약점을 무상으로 조치해야 하며, 패치 배포 시 사용자가 쉽게 이해할 수 있는 보안 권고문(Security Advisory)을 함께 제공해야 합니다. 제조사는 취약점 신고를 위한 명확한 단일 창구(Contac
+- 우선순위/검증 쟁점: P0 — Article 14(1)–(8): AEV와 severe incident 구분; AEV 24h/72h 및 조치 가용 후 14일, severe incident 24h/72h 및 1개월. SRP/CSIRT coordinator·ENISA 및 Article 14(8) 사용자 통지 분리.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 전체 Pass A/B/C 미완료.
+
+### 2026-11-15 #237 — P0 — 핵심 내용: EU CRA 제11조 및 Annex I에 따라 서보 드라이브 제조사는 제품의 예상 수명 주기(최소 5년) 동안 발견된 취약점에 대한 보안 업데이트를 
+- 상태: NEW / NOT_YET_AUDITED | 확인일: 2026-11-16 | 생성: 19:40:38 (시간대 미표기)
+- 원문: [commit 1a1618de71887f5146169b46d4ba50a98ac1adaa](https://github.com/useformotor3/ai-discord-bot/commit/1a1618de71887f5146169b46d4ba50a98ac1adaa) | [research_archive/2026-11-15_194038.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-15_194038.md) | commit UTC: 2026-11-15T19:40:55.000Z
+- 원문 blob SHA: 56814b2aee857bcebb66a0e7da009b0bff7f7f69
+- 핵심 주장 주제(원문 요약 첫 부분): 핵심 내용: EU CRA 제11조 및 Annex I에 따라 서보 드라이브 제조사는 제품의 예상 수명 주기(최소 5년) 동안 발견된 취약점에 대한 보안 업데이트를 무상으로 제공하고, 수명 종료(End-of-Life) 시 이를 투명하게 공지해야 합니다. 기대 효과: 이는 단순한 초기 인증을 넘어 실질적인 운
+- 우선순위/검증 쟁점: P0 — Article 13(8)–(9), Annex I Part II(5)–(8): support period 원칙 최소 5년(예상 사용 <5년이면 그 기간); 무료 업데이트 Part II(8) 및 tailor-made product/business user 합의 예외. Article 13(9) 업데이트 가용성과 구분.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 전체 Pass A/B/C 미완료.
+
+### 2026-11-15 #238 — P0 — 서보 드라이브 제조사는 CRA에 따라 제품의 예상 수명 주기(또는 최소 5년) 동안 발견된 보안 취약점을 무상으로 즉시 패치해야 하며, 이를 위해 자동화된 보안 
+- 상태: NEW / NOT_YET_AUDITED | 확인일: 2026-11-16 | 생성: 19:45:35 (시간대 미표기)
+- 원문: [commit b877c82db2eadcb6dd93c88ecbeb183359fe0542](https://github.com/useformotor3/ai-discord-bot/commit/b877c82db2eadcb6dd93c88ecbeb183359fe0542) | [research_archive/2026-11-15_194535.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-15_194535.md) | commit UTC: 2026-11-15T19:45:51.000Z
+- 원문 blob SHA: 8987a2e2fe1b7fe5c82d53ede14604b889dcee2b
+- 핵심 주장 주제(원문 요약 첫 부분): 서보 드라이브 제조사는 CRA에 따라 제품의 예상 수명 주기(또는 최소 5년) 동안 발견된 보안 취약점을 무상으로 즉시 패치해야 하며, 이를 위해 자동화된 보안 업데이트 배포 메커니즘과 취약점 처리 정책을 기술 문서에 명시해야 합니다.
+- 우선순위/검증 쟁점: P0 — Article 13(8)–(9), Annex I Part II(5)–(8): support period 원칙 최소 5년(예상 사용 <5년이면 그 기간); 무료 업데이트 Part II(8) 및 tailor-made product/business user 합의 예외. Article 13(9) 업데이트 가용성과 구분.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 전체 Pass A/B/C 미완료.
+
+### 2026-11-15 #239 — P0 — 산업용 서보 드라이브 제조사는 EU CRA 부속서 VI에 따라 제품의 설계, 개발, 취약점 평가 과정 및 SBOM을 포함한 상세한 사이버 보안 기술 문서를 작성하
+- 상태: NEW / NOT_YET_AUDITED | 확인일: 2026-11-16 | 생성: 19:50:41 (시간대 미표기)
+- 원문: [commit d608d618eaa734e40ba944031b8574efd53844f8](https://github.com/useformotor3/ai-discord-bot/commit/d608d618eaa734e40ba944031b8574efd53844f8) | [research_archive/2026-11-15_195041.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-15_195041.md) | commit UTC: 2026-11-15T19:50:58.000Z
+- 원문 blob SHA: 5bdf2f6417b58daf38ec3ff919d5a4355720179e
+- 핵심 주장 주제(원문 요약 첫 부분): 산업용 서보 드라이브 제조사는 EU CRA 부속서 VI에 따라 제품의 설계, 개발, 취약점 평가 과정 및 SBOM을 포함한 상세한 사이버 보안 기술 문서를 작성하고, 이를 시장 출시 후 최소 10년간 보관해야 합니다. 해당 기술 문서는 서보 드라이브가 CRA의 본질적 요구사항(Annex I)을 충족함을 
+- 우선순위/검증 쟁점: P0 — Annex I Part II(1) SBOM/top-level dependencies, Annex VII(2)(b) 기술문서, Annex II(9) 사용자 제공은 조건부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 전체 Pass A/B/C 미완료.
+
+### 2026-11-15 #240 — P0 — 서보 드라이브 제조사는 CRA에 따라 발견된 취약점에 대해 무료로 보안 업데이트를 제공해야 하며, 특히 산업 현장의 가용성(Availability)을 보장하기 위
+- 상태: NEW / NOT_YET_AUDITED | 확인일: 2026-11-16 | 생성: 19:55:34 (시간대 미표기)
+- 원문: [commit bd452130dad97e68cfd839f48afcd63236abf361](https://github.com/useformotor3/ai-discord-bot/commit/bd452130dad97e68cfd839f48afcd63236abf361) | [research_archive/2026-11-15_195534.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-15_195534.md) | commit UTC: 2026-11-15T19:55:51.000Z
+- 원문 blob SHA: 3c9dba4ef40e94fa27973201f15490a62b1869b5
+- 핵심 주장 주제(원문 요약 첫 부분): 서보 드라이브 제조사는 CRA에 따라 발견된 취약점에 대해 무료로 보안 업데이트를 제공해야 하며, 특히 산업 현장의 가용성(Availability)을 보장하기 위해 운전 중 무중단으로 안전하게 패치를 적용하고 검증할 수 있는 메커니즘을 기술 문서에 구현해야 합니다.
+- 우선순위/검증 쟁점: P0 — Article 13(8)–(9), Annex I Part II(5)–(8): support period 원칙 최소 5년(예상 사용 <5년이면 그 기간); 무료 업데이트 Part II(8) 및 tailor-made product/business user 합의 예외. Article 13(9) 업데이트 가용성과 구분.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 전체 Pass A/B/C 미완료.
+
+### 2026-11-15 #241 — P0 — 서보 드라이브 제조사는 CRA에 따라 제품의 예상 지원 기간(최소 5년)을 명시해야 하며, 해당 기간 동안 보안 업데이트 제공 여부와 지원 종료 시점(EOL)을 
+- 상태: NEW / NOT_YET_AUDITED | 확인일: 2026-11-16 | 생성: 20:00:50 (시간대 미표기)
+- 원문: [commit 79fc894caaf51f1099326b2d8576d6e066550e0a](https://github.com/useformotor3/ai-discord-bot/commit/79fc894caaf51f1099326b2d8576d6e066550e0a) | [research_archive/2026-11-15_200050.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-15_200050.md) | commit UTC: 2026-11-15T20:01:06.000Z
+- 원문 blob SHA: c4970994494e73f8d80249b15fdeb7a8eb6e8125
+- 핵심 주장 주제(원문 요약 첫 부분): 서보 드라이브 제조사는 CRA에 따라 제품의 예상 지원 기간(최소 5년)을 명시해야 하며, 해당 기간 동안 보안 업데이트 제공 여부와 지원 종료 시점(EOL)을 시장 출시 단계부터 최종 사용자와 수입상에게 투명하게 고지해야 합니다. 이는 산업 현장의 예기치 않은 레거시 장비 방치를 막고 공급망 전체의 보
+- 우선순위/검증 쟁점: P0 — Article 13(8)–(9), Annex I Part II(5)–(8): support period 원칙 최소 5년(예상 사용 <5년이면 그 기간); 무료 업데이트 Part II(8) 및 tailor-made product/business user 합의 예외. Article 13(9) 업데이트 가용성과 구분.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 전체 Pass A/B/C 미완료.
+
+### 2026-11-15 #242 — P0 — 서보 드라이브는 시장 출시(Placing on the market) 시점에 사용자 干渉(개입) 없이도 안전하게 작동하도록 기본 설정(Secure by defaul
+- 상태: NEW / NOT_YET_AUDITED | 확인일: 2026-11-16 | 생성: 20:05:28 (시간대 미표기)
+- 원문: [commit 388751f93cf281b2be4d3aa8b1a3ff8a866e77c6](https://github.com/useformotor3/ai-discord-bot/commit/388751f93cf281b2be4d3aa8b1a3ff8a866e77c6) | [research_archive/2026-11-15_200528.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-15_200528.md) | commit UTC: 2026-11-15T20:05:45.000Z
+- 원문 blob SHA: de428d395e66cf53b91c669cc494c074f9d2f122
+- 핵심 주장 주제(원문 요약 첫 부분): 서보 드라이브는 시장 출시(Placing on the market) 시점에 사용자 干渉(개입) 없이도 안전하게 작동하도록 기본 설정(Secure by default)되어야 하며, 이를 입증하기 위한 기술 문서(Technical Documentation)에 제3자 오픈소스 및 하드웨어 컴포넌트의 취약성 연
+- 우선순위/검증 쟁점: P0 — Annex I Part II(1) SBOM/top-level dependencies, Annex VII(2)(b) 기술문서, Annex II(9) 사용자 제공은 조건부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 전체 Pass A/B/C 미완료.
+
+### 2026-11-15 #243 — P0 — 서보 드라이브 제조사는 CRA Annex I에 따라 제품의 예상 수명 또는 최소 5년 동안 발견된 취약점을 무상으로 즉시 패치할 수 있는 자동화된 배포 체계와 안
+- 상태: NEW / NOT_YET_AUDITED | 확인일: 2026-11-16 | 생성: 20:10:33 (시간대 미표기)
+- 원문: [commit a150ed796cbcdc4b2cb60c948f6a02023d517806](https://github.com/useformotor3/ai-discord-bot/commit/a150ed796cbcdc4b2cb60c948f6a02023d517806) | [research_archive/2026-11-15_201033.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-15_201033.md) | commit UTC: 2026-11-15T20:10:49.000Z
+- 원문 blob SHA: 2fb9727c2ad572dbe1f2770b833b56775bec6cf0
+- 핵심 주장 주제(원문 요약 첫 부분): 서보 드라이브 제조사는 CRA Annex I에 따라 제품의 예상 수명 또는 최소 5년 동안 발견된 취약점을 무상으로 즉시 패치할 수 있는 자동화된 배포 체계와 안전한 업데이트 생명주기를 보장해야 합니다. 이는 단순히 취약점을 고치는 것을 넘어, 보안 업데이트 과정 자체가 새로운 공격 벡터가 되지 않도록 
+- 우선순위/검증 쟁점: P0 — Article 13(8)–(9), Annex I Part II(5)–(8): support period 원칙 최소 5년(예상 사용 <5년이면 그 기간); 무료 업데이트 Part II(8) 및 tailor-made product/business user 합의 예외. Article 13(9) 업데이트 가용성과 구분.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 전체 Pass A/B/C 미완료.
+
+### 2026-11-15 #244 — P0 — 핵심 내용 1: 산업용 서보 드라이브 제조사는 CRA Annex I에 따라 제품의 예상 수명(또는 최소 5년) 동안 발견된 취약점에 대해 무상으로 보안 업데이트를
+- 상태: NEW / NOT_YET_AUDITED | 확인일: 2026-11-16 | 생성: 20:15:33 (시간대 미표기)
+- 원문: [commit a7c872408c3f23b2f01a1c657fe43c533aa54b5f](https://github.com/useformotor3/ai-discord-bot/commit/a7c872408c3f23b2f01a1c657fe43c533aa54b5f) | [research_archive/2026-11-15_201533.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-15_201533.md) | commit UTC: 2026-11-15T20:15:50.000Z
+- 원문 blob SHA: a8ed3ec2e3520649ffa5438dde9745b1bb094255
+- 핵심 주장 주제(원문 요약 첫 부분): 핵심 내용 1: 산업용 서보 드라이브 제조사는 CRA Annex I에 따라 제품의 예상 수명(또는 최소 5년) 동안 발견된 취약점에 대해 무상으로 보안 업데이트를 안전하게 배포할 수 있는 메커니즘을 제공해야 합니다. 핵심 내용 2: 기술 문서(Annex VII)에는 이러한 생명주기 동안의 업데이트 및 구
+- 우선순위/검증 쟁점: P0 — Article 13(8)–(9), Annex I Part II(5)–(8): support period 원칙 최소 5년(예상 사용 <5년이면 그 기간); 무료 업데이트 Part II(8) 및 tailor-made product/business user 합의 예외. Article 13(9) 업데이트 가용성과 구분.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 전체 Pass A/B/C 미완료.
+
+### 2026-11-15 #245 — P0 — 서보 드라이브의 핵심인 모션 컨트롤 펌웨어 및 실시간 제어 파라미터(게인 값 등)의 변조를 원천 차단하기 위해, 하드웨어 루트 오브 트러스트(RoT)를 활용한 암
+- 상태: NEW / NOT_YET_AUDITED | 확인일: 2026-11-16 | 생성: 20:20:35 (시간대 미표기)
+- 원문: [commit bea34e4eaa3e4d8a9dedb13aa760c8ee09cc1933](https://github.com/useformotor3/ai-discord-bot/commit/bea34e4eaa3e4d8a9dedb13aa760c8ee09cc1933) | [research_archive/2026-11-15_202035.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-15_202035.md) | commit UTC: 2026-11-15T20:20:52.000Z
+- 원문 blob SHA: 5848cd9d163370a9ac178affefc33d1b8ea7c9ad
+- 핵심 주장 주제(원문 요약 첫 부분): 서보 드라이브의 핵심인 모션 컨트롤 펌웨어 및 실시간 제어 파라미터(게인 값 등)의 변조를 원천 차단하기 위해, 하드웨어 루트 오브 트러스트(RoT)를 활용한 암호학적 안전한 부팅(Secure Boot) 및 런타임 무결성 검증 체계를 구축해야 합니다. CRA 부속서 I(Annex I)에 따라 제조사는 제
+- 우선순위/검증 쟁점: P0 — Annex I Part II(1) SBOM/top-level dependencies, Annex VII(2)(b) 기술문서, Annex II(9) 사용자 제공은 조건부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 전체 Pass A/B/C 미완료.
+
+### 2026-11-15 #246 — P0 — 서보 드라이브 제조사는 CRA Annex I에 따라 제품의 '예상 사용 수명(Expected Lifetime)'을 자체 산정하여 기술 문서에 명시해야 하며, 해당
+- 상태: NEW / NOT_YET_AUDITED | 확인일: 2026-11-16 | 생성: 20:25:36 (시간대 미표기)
+- 원문: [commit fd1e3b3917088c017f049b1db1846c527fed52bc](https://github.com/useformotor3/ai-discord-bot/commit/fd1e3b3917088c017f049b1db1846c527fed52bc) | [research_archive/2026-11-15_202536.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-15_202536.md) | commit UTC: 2026-11-15T20:25:52.000Z
+- 원문 blob SHA: b33866a5e5e67135a49aa63cce241b1ba9cade73
+- 핵심 주장 주제(원문 요약 첫 부분): 서보 드라이브 제조사는 CRA Annex I에 따라 제품의 '예상 사용 수명(Expected Lifetime)'을 자체 산정하여 기술 문서에 명시해야 하며, 해당 기간 동안 발견된 취약점에 대해 최소 5년 또는 산정된 수명 기간 중 더 긴 기간 동안 무상 보안 패치 및 지원을 제공해야 합니다. 이는 산업
+- 우선순위/검증 쟁점: P0 — Article 13(8)–(9), Annex I Part II(5)–(8): support period 원칙 최소 5년(예상 사용 <5년이면 그 기간); 무료 업데이트 Part II(8) 및 tailor-made product/business user 합의 예외. Article 13(9) 업데이트 가용성과 구분.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 전체 Pass A/B/C 미완료.
+
+### 2026-11-15 #247 — P0 — 서보 드라이브의 펌웨어 업그레이드나 제어 알고리즘 변경 등 '중대한 변경(Substantial Modification)' 발생 시, CRA 규정에 따른 적합성 평
+- 상태: NEW / NOT_YET_AUDITED | 확인일: 2026-11-16 | 생성: 20:30:42 (시간대 미표기)
+- 원문: [commit a2b6cd7f5a5dcc2364eaa9bf171b1226154752ea](https://github.com/useformotor3/ai-discord-bot/commit/a2b6cd7f5a5dcc2364eaa9bf171b1226154752ea) | [research_archive/2026-11-15_203042.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-15_203042.md) | commit UTC: 2026-11-15T20:30:58.000Z
+- 원문 blob SHA: 2af9f2130d43bf81c1eacf4ea035eea8aed1541f
+- 핵심 주장 주제(원문 요약 첫 부분): 서보 드라이브의 펌웨어 업그레이드나 제어 알고리즘 변경 등 '중대한 변경(Substantial Modification)' 발생 시, CRA 규정에 따른 적합성 평가(Conformity Assessment)를 재수행하고 기술 문서를 즉시 갱신해야 합니다. 제조사는 제품의 전체 생명주기 동안 이러한 변경 이
+- 우선순위/검증 쟁점: P0 — Annex I Part II(1) SBOM/top-level dependencies, Annex VII(2)(b) 기술문서, Annex II(9) 사용자 제공은 조건부.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 전체 Pass A/B/C 미완료.
+
+### 2026-11-15 #248 — P0 — 서보 드라이브 제조사는 CRA에 따른 보안 업데이트 및 패치 적용 시, 공장 자동화 라인의 실시간 제어 무결성과 가용성(Availability)을 손상시키지 않도
+- 상태: NEW / NOT_YET_AUDITED | 확인일: 2026-11-16 | 생성: 20:35:34 (시간대 미표기)
+- 원문: [commit f99b1dd08a8bca933033fcfefa9930c8dc477a34](https://github.com/useformotor3/ai-discord-bot/commit/f99b1dd08a8bca933033fcfefa9930c8dc477a34) | [research_archive/2026-11-15_203534.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-15_203534.md) | commit UTC: 2026-11-15T20:35:51.000Z
+- 원문 blob SHA: 2f383faba28ba2b0614e5a9ce3f7e65b592823d0
+- 핵심 주장 주제(원문 요약 첫 부분): 서보 드라이브 제조사는 CRA에 따른 보안 업데이트 및 패치 적용 시, 공장 자동화 라인의 실시간 제어 무결성과 가용성(Availability)을 손상시키지 않도록 '무중단/안전한 롤백(Rollback) 및 이중화(A/B 파티션) 펌웨어 업데이트 아키텍처'를 강제해야 합니다. 패치 적용 실패나 오작동 시
+- 우선순위/검증 쟁점: P0 — Article 13(8)–(9), Annex I Part II(5)–(8): support period 원칙 최소 5년(예상 사용 <5년이면 그 기간); 무료 업데이트 Part II(8) 및 tailor-made product/business user 합의 예외. Article 13(9) 업데이트 가용성과 구분.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 전체 Pass A/B/C 미완료.
+
