@@ -48,7 +48,7 @@ Actions 성공은 자동화 실행 결과이지 CRA 법령 해석이나 출처�
 7. 운영 workflow를 테스트 목적으로 실행하지 않습니다.
 8. 의미 있는 작업이 끝날 때 README, 상황판, 마스터 계획, 행동강령, 세션 로그와 관련 보고서를 동기화하고 GitHub에서 재조회합니다.
 
-## 테스트 실행 증거
+## 초기 테스트 실행 증거 — 2026-11-14 (과거 기준선)
 
 - [GitHub Actions latest Run #3 — 21 passed](https://github.com/useformotor3/ai-discord-bot/actions/runs/43568074938)
 - 실행 commit: `dddba44a41851e9d0319ce9a91535a9d26145d92`
@@ -57,7 +57,11 @@ Actions 성공은 자동화 실행 결과이지 CRA 법령 해석이나 출처�
 
 ## 다음 작업
 
-기본 원본 테스트 실행 기반은 확보했습니다. 다음은 Git/Discord 실패 경로의 fixture 보강 설계와 P1-B 최소 변경안입니다. P1-B 코드 변경은 별도 승인 전까지 수행하지 않습니다.
+- [완료] P1-B2 구현·보강 및 테스트 전용 CI 검증.
+- [완료] merge-base 기준 전체 tree 및 운영 archive/history/state 보존 분석.
+- [다음] 최신 main/feature ref를 재조회하고 PR Files changed에 예상 23개 경로 외의 데이터 변경·삭제가 없는지 확인한다.
+- [다음] PR CI와 GitHub conflict check를 검증한다.
+- PR 생성, merge, 운영 workflow 실행 및 배포는 별도 승인 전 수행하지 않는다. P1-B3/B4는 별도 범위다.
 
 자세한 재개 지점과 검증 한계는 [PROJECT_STATUS.md](PROJECT_STATUS.md)를 기준으로 합니다.
 
@@ -68,7 +72,7 @@ Actions 성공은 자동화 실행 결과이지 CRA 법령 해석이나 출처�
 - `state.json` 및 `history.json`은 기존 자동화 런타임 데이터로 유지하며 프로젝트 작업 로그로 대체하거나 임의 수정하지 않습니다.
 
 
-## 최신 테스트 개선 작업
+## 과거 테스트 fixture 작업 기록 — 2026-11-14
 - 작업 브랜치: `test/failure-path-fixtures-2026-11-14`
 - 기준 브랜치/커밋: `docs/cra-audit-and-project-control-2026-11-14` @ `c6dfc5cee2485922b2313030dd9a5843e347afe7`
 - 목적: Discord/Git 실패 응답을 주입할 수 있는 mock fixture 및 strict xfail 회귀 테스트 추가
@@ -114,7 +118,7 @@ Actions 성공은 자동화 실행 결과이지 CRA 법령 해석이나 출처�
 - main.py SHA `470ac101d5cc4fdb2c5077d5468ef00327af3d43` 유지.
 
 
-## 다음 승인 대기 작업
+## 과거 승인 게이트 기록 — P1-B1 (이후 승인·구현 완료)
 - P1-B는 단계별로 분리했다. 우선 제안은 **P1-B1 Discord 전송 결과 신뢰성**만이다.
 - 변경 파일, 기대 동작, 테스트, 롤백 및 제외 범위는 [개선 설계 보고서](reports/MAIN_PY_IMPROVEMENT_DESIGN_2026-11-14.md)의 §18을 참조한다.
 - P1-B1은 main.py 운영 코드 변경이므로 별도 승인 전까지 구현하지 않는다.
@@ -133,10 +137,10 @@ Actions 성공은 자동화 실행 결과이지 CRA 법령 해석이나 출처�
 - 429 Retry-After, ConnectTimeout 제한 재시도, 400/401/403/404 영구 실패, 5xx/ReadTimeout/ConnectionError 전달 불명확 상태, chunk partial 처리를 구현했다.
 - [GitHub Actions Run #18](https://github.com/useformotor3/ai-discord-bot/actions/runs/43808285335): 43 passed, 1 xfailed; source SHA 6개 및 compileall 통과.
 - Run #17은 main.py SHA pin 불일치로 실패했고 Run #18에서 정정 후 통과했다. 실패 이력은 보존한다.
-- P1-B2/B3/B4, 운영 main 병합, 실제 외부 서비스 호출은 미실행.
+- 이 P1-B1 작업 시점에는 P1-B2/B3/B4와 운영 main 병합이 미실행이었다. P1-B2는 이후 별도 승인으로 구현·검증됐으며, P1-B3/B4는 여전히 보류다.
 
 
-## 최신 원격 브랜치 비교 — 2026-11-16
+## 이전 원격 브랜치 비교 스냅샷 — 2026-11-16 (이후 갱신됨)
 - 작업 브랜치 HEAD(비교 시점): bc0d05d45b63e9039a87abf6847c9daccc0124f3.
 - 기준 docs commit c6dfc5cee2485922b2313030dd9a5843e347afe7 대비 36 ahead / 0 behind.
 - 운영 main 대비 diverged: 147 ahead / 610 behind. main HEAD 8357da3abe3b87ca0e7a2fa50f862b693c0a226c, merge-base f9a12a5778f5fa1d907201ab2931d20ca2656bb7.
@@ -171,7 +175,7 @@ Actions 성공은 자동화 실행 결과이지 CRA 법령 해석이나 출처�
 - 앞선 수치는 조회 시점 스냅샷이며 본 최신 수치로 대체한다. 상세 보고서와 PROJECT_LOG의 정정 이벤트 참조.
 
 
-## 최신 통합 감사 스냅샷 — 2026-11-16 (KST)
+## 이전 통합 감사 스냅샷 — 2026-11-16 (KST, 이후 갱신됨)
 - 작업 브랜치 HEAD `227e3298066af4bda83fb0713fc1d57c749ee8c6`; 운영 main HEAD `036334dd2665752c2e6ddb024001771cff4064c5`; merge-base `f9a12a5778f5fa1d907201ab2931d20ca2656bb7`.
 - 작업 브랜치 기준 base 대비 44 ahead / 0 behind, main 대비 155 ahead / 660 behind.
 - recursive tree 비교(양쪽 truncated=false): merge-base 1,600 entries, main 2,260 entries. archive 660개 추가, 삭제 0개, history/state 변경 2개.
