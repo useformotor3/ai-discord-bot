@@ -177,6 +177,15 @@ def verify_and_recover(root, baseline_ref, branch="main", run_id="unknown"):
     parent_line = _git(root, "rev-list", "--parents", "-n", "1", "HEAD").stdout.split()
     remote_sha = _remote_head(root, branch)
 
+    # A quota guard may intentionally exit without creating a report commit.
+    # Accept only a clean no-op; local uncommitted data changes remain an error.
+    if current_sha == baseline_sha and remote_sha == baseline_sha:
+        dirty = _git(root, "status", "--porcelain", "--", *DATA_PATHS).stdout
+        if not dirty:
+            print(json.dumps({"status": "no-op", "reason": "no operational data changes"}))
+            return 0
+        raise GuardError("no report commit was created but operational data is dirty")
+
     if len(parent_line) != 2 or parent_line[1] != baseline_sha:
         raise GuardError("run commit is not a single child of the pre-run snapshot")
     if remote_sha != current_sha:

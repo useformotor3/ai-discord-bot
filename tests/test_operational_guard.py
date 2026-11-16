@@ -184,3 +184,11 @@ def test_git_integration_refuses_restore_if_run_commit_was_not_pushed(tmp_path):
     with pytest.raises(GuardError, match="remote main does not point"):
         verify_and_recover(work, "safety/pre-run-test", "main", "unpublished")
     assert _git(work, "ls-remote", "origin", "refs/heads/main").stdout.split()[0] == baseline
+
+
+def test_git_integration_accepts_clean_noop_quota_skip(tmp_path):
+    from scripts.operational_guard import verify_and_recover
+
+    work, baseline = _git_repo(tmp_path)
+    assert verify_and_recover(work, "safety/pre-run-test", "main", "quota-skip") == 0
+    assert _git(work, "rev-parse", "HEAD").stdout.strip() == baseline
