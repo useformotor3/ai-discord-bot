@@ -5,26 +5,47 @@ import subprocess
 import time
 from google import genai
 import requests
+import uuid
+
+from persistence import (
+    commit_persistence_transaction,
+    read_optional_bytes,
+    recover_pending_transactions,
+)
 
 # 0. 파일 경로 설정
 STATE_FILE = "state.json"
 HISTORY_FILE = "history.json"
 TODAY = datetime.now().strftime("%Y-%m-%d")
 NOW = datetime.now()
+_UNSET = object()
 
-def load_state(path, today):
+def load_state(path, today, raw_bytes=_UNSET):
   """상태파일을 검증해 읽는다. 손상된 파일은 초기화하지 않고 안전 실패한다."""
-  if not os.path.exists(path):
+  if raw_bytes is _UNSET:
+    if not os.path.exists(path):
+      return {
+          "date": today,
+          "count": 0,
+          "last_health_check": NOW.isoformat(),
+      }
+    try:
+      with open(path, "r", encoding="utf-8") as f:
+        data = json.load(f)
+    except (OSError, UnicodeError, json.JSONDecodeError) as exc:
+      raise SystemExit(
+          f"❌ [상태파일 오류] {path}를 읽을 수 없습니다. 원본을 보존하고 종료합니다."
+      ) from exc
+  elif raw_bytes is None:
     return {
         "date": today,
         "count": 0,
         "last_health_check": NOW.isoformat(),
     }
-
-  try:
-    with open(path, "r", encoding="utf-8") as f:
-      data = json.load(f)
-  except (OSError, UnicodeError, json.JSONDecodeError) as exc:
+  else:
+    try:
+      data = json.loads(raw_bytes.decode("utf-8"))
+    except (UnicodeError, json.JSONDecodeError) as exc:
     raise SystemExit(
         f"❌ [상태파일 오류] {path}를 읽을 수 없습니다. 원본을 보존하고 종료합니다."
     ) from exc
@@ -71,15 +92,24 @@ def load_state(path, today):
   return data
 
 
-def load_history(path):
+def load_history(path, raw_bytes=_UNSET):
   """이력파일의 JSON과 항목 구조를 검증한다. 손상된 이력은 빈 목록으로 대체하지 않는다."""
-  if not os.path.exists(path):
+  if raw_bytes is _UNSET:
+    if not os.path.exists(path):
+      return []
+    try:
+      with open(path, "r", encoding="utf-8") as f:
+        data = json.load(f)
+    except (OSError, UnicodeError, json.JSONDecodeError) as exc:
+      raise SystemExit(
+          f"❌ [이력파일 오류] {path}를 읽을 수 없습니다. 원본을 보존하고 종료합니다."
+      ) from exc
+  elif raw_bytes is None:
     return []
-
-  try:
-    with open(path, "r", encoding="utf-8") as f:
-      data = json.load(f)
-  except (OSError, UnicodeError, json.JSONDecodeError) as exc:
+  else:
+    try:
+      data = json.loads(raw_bytes.decode("utf-8"))
+    except (UnicodeError, json.JSONDecodeError) as exc:
     raise SystemExit(
         f"❌ [이력파일 오류] {path}를 읽을 수 없습니다. 원본을 보존하고 종료합니다."
     ) from exc
@@ -105,9 +135,12 @@ def parse_health_check(value):
   return parsed
 
 
-# 1. 상태·이력 파일을 먼저 검증한다. 오류가 있으면 어떤 외부 작업도 시작하지 않는다.
-state_data = load_state(STATE_FILE, TODAY)
-history_data = load_history(HISTORY_FILE)
+# 1. 미완료 로컬 트랜잭션을 먼저 복구하고, 읽은 원본 bytes를 저장 시점까지 추적한다.
+recover_pending_transactions(".")
+state_snapshot = read_optional_bytes(STATE_FILE)
+history_snapshot = read_optional_bytes(HISTORY_FILE)
+state_data = load_state(STATE_FILE, TODAY, raw_bytes=state_snapshot)
+history_data = load_history(HISTORY_FILE, raw_bytes=history_snapshot)
 
 current_count = state_data["count"]
 MAX_DAILY_QUOTA = 1200  # 운영 한도는 별도 공식 정책 확인 필요
@@ -385,20 +418,17 @@ discord_result = send_discord_chunked(full_text, webhook_url)
 print(f"Discord 전송 결과: {discord_result['status']} ({discord_result['sent_chunks']}/{discord_result['total_chunks']} chunks 확인)")
 
 # 6. GitHub 백서버 저장 (폴더별 마크다운 아카이브 & 상태 업데이트)
-os.makedirs("research_archive", exist_ok=True)
-archive_filename = f"research_archive/{TODAY}_{NOW.strftime('%H%M%S')}.md"
-with open(archive_filename, "w", encoding="utf-8") as f:
-  f.write(
-      f"# CRA Research Report\n- **Date:** {TODAY} {NOW.strftime('%H:%M:%S')}\n-"
-      f" **Count:** {current_count + 1}\n\n{ai_message}"
-  )
+archive_filename = (
+    f"research_archive/{TODAY}_{NOW.strftime('%H%M%S%f')}_{uuid.uuid4().hex[:8]}.md"
+)
+archive_payload = (
+    f"# CRA Research Report\n- **Date:** {TODAY} {NOW.strftime('%H:%M:%S')}\n-"
+    f" **Count:** {current_count + 1}\n\n{ai_message}"
+).encode("utf-8")
 
 state_data["count"] = current_count + 1
 if is_health_check:
   state_data["last_health_check"] = NOW.isoformat()
-
-with open(STATE_FILE, "w", encoding="utf-8") as f:
-  json.dump(state_data, f, indent=2, ensure_ascii=False)
 
 history_data.append({
     "date": TODAY,
@@ -407,8 +437,30 @@ history_data.append({
     "snippet": ai_message[:150],
     "file": archive_filename,
 })
-with open(HISTORY_FILE, "w", encoding="utf-8") as f:
-  json.dump(history_data, f, indent=2, ensure_ascii=False)
+
+state_payload = json.dumps(state_data, indent=2, ensure_ascii=False).encode("utf-8")
+history_payload = json.dumps(history_data, indent=2, ensure_ascii=False).encode("utf-8")
+transaction_id = commit_persistence_transaction(
+    ".",
+    [
+        {
+            "target": archive_filename,
+            "payload": archive_payload,
+            "expected_old": None,
+        },
+        {
+            "target": HISTORY_FILE,
+            "payload": history_payload,
+            "expected_old": history_snapshot,
+        },
+        {
+            "target": STATE_FILE,
+            "payload": state_payload,
+            "expected_old": state_snapshot,
+        },
+    ],
+)
+print(f"로컬 저장 트랜잭션 완료: {transaction_id}")
 
 # 7. 🚀 [엔터프라이즈 기능] 변경된 아카이브 파일들을 깃허브에 자동 커밋 & 푸시
 try:
