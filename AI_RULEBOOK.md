@@ -158,3 +158,12 @@
 - POSIX `fcntl.flock` 및 directory fsync 지원 환경을 전제로 한다. Windows 지원을 주장하지 않는다.
 - lock은 recovery/commit 구간에 한정한다. 외부 API 호출 구간까지 잠그지 않으므로 Discord exactly-once 또는 중복 전송 방지는 제공하지 않는다.
 - P1-B2 CI Run #23: source SHA 일치, compileall 통과, 63 passed / 1 xfailed. xfail은 P1-B3 범위다.
+
+
+## 17. P1-B2 persistence target 제한 및 통합 기준 — 2026-11-16
+- Recovery manifest가 지정할 수 있는 target은 `state.json`, `history.json`, `research_archive/*.md`로 제한한다.
+- 저장소 내부 경로라는 이유만으로 README, 코드, workflow, `.git` 등 임의 파일을 persistence transaction target으로 허용하지 않는다.
+- 이 allowlist는 신규 transaction 생성과 기존 journal recovery 양쪽에서 강제하고, 허용 범위 밖 target은 fail-closed 한다.
+- merge-base 기준 tree diff로 운영 archive/state/history 보존 여부를 확인한다. 현재 tree 간 직접 차이를 삭제 기록으로 오인하지 않는다.
+- PR은 pull_request 전용 mock CI로 검증한다. PR CI에 운영 secrets, Gemini/Discord 호출, 운영 workflow 실행을 포함하지 않는다.
+- 코드 통합, 운영 workflow 변경, 실제 운영 실행/배포는 서로 다른 승인 경계로 유지한다.
