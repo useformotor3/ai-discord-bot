@@ -858,3 +858,16 @@
 - IEC 62443-4-1 Practice 7 연결은 주제상 타당하나, 공개 자료만으로 상세 조항 적합성을 선언하지 않음.
 - 원본 archive는 보존하고 정정 문서를 별도 작성.
 - 상세: `reports/CRA_CORRECTION_REPORT_3_2026-11-17.md`.
+
+
+## 2026-11-17 — CRA 보고서 #2 근거 더블체크 및 정정
+- EUR-Lex 공식 원문 Articles 11, 13–16, 69, 71 및 Annex I Part II, Annex II, Annex VII 대조.
+- Article 11은 General product safety이며 CVD 근거가 아님. CVD는 Article 13(8)/(17), Annex I Part II (5)/(6), Annex II (2).
+- Article 14는 Reporting obligations of manufacturers. 원본 Article 11 명의의 인용문은 공식 원문과 일치하지 않음.
+- actively exploited vulnerability: 24h early warning, 72h vulnerability notification, 시정/완화 조치 가용 후 14일 final report.
+- severe incident: 24h early warning, 72h incident notification, notification 제출 후 1개월 final report.
+- 단일 신고 플랫폼 및 coordinating CSIRT/ENISA 동시 통지, Article 14(8) 사용자 통지 반영.
+- Article 14는 2026-09-11부터 적용, Article 69(3)에 따라 이전 시장 출시된 CRA 범위 제품에도 적용.
+- Annex II는 사용자 지침, Annex VII가 기술문서.
+- 원본 archive 보존, 정정 문서 별도 작성.
+- 상세: `reports/CRA_CORRECTION_REPORT_2_2026-11-17.md`.
