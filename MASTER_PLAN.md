@@ -252,8 +252,11 @@
 - 이 예약 작업은 ChatGPT의 모니터링이며 GitHub Actions 운영 workflow와 별개다.
 
 
-## 최신 작업 브랜치 포인터
-- P1-B2 설계/감사 문서 커밋 이후 작업 브랜치 HEAD는 `38bb00c815eee3e754bff14f67bcab2f23172a92`이며, main HEAD `036334dd2665752c2e6ddb024001771cff4064c5` 대비 156 ahead / 660 behind다. 앞선 155/660 수치는 설계 문서 커밋 직전의 감사 기준 HEAD `227e3298066af4bda83fb0713fc1d57c749ee8c6` 기준 스냅샷이다.
+## 최신 작업 브랜치 포인터 — 2026-11-16
+- 현재 작업 브랜치: `feature/p1-b2-atomic-persistence-2026-11-16`.
+- 비교 스냅샷 commit: `0236dbda2793d6dc2ba4dfc245905a73f8783136`; main HEAD `6eec802125c1bcf3cf0b2dd1401a9c6430792920`; merge-base `f9a12a5778f5fa1d907201ab2931d20ca2656bb7`.
+- 비교: 181 ahead / 673 behind, diverged. main state count=126, history=2,265.
+- 이 수치는 snapshot commit 시점의 값이며, 이후 문서 커밋이나 main 자동 아카이브에 따라 바뀔 수 있다. 운영 데이터 전체 tree 감사 전 merge/rebase/PR merge 금지.
 
 
 ## 2026-11-16 — P1-B2 구현 완료
