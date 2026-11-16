@@ -7084,3 +7084,10 @@ Source reopened: [EUR-Lex, Regulation (EU) 2024/2847, OJ L 20.11.2024](https://e
 - 사전 메모: 보고서는 제조사 의무를 Article 11로 인용하지만 Article 11은 “General product safety”이며 제조사 의무는 Article 13에 있다. 보고서의 인용문은 Article 13(8)의 support-period 내용과 Annex I Part II(8)의 free-of-charge 업데이트 내용을 하나로 합성한 것으로 보이며 원문 그대로가 아니다. “최소 5년”을 무조건 적용하는 표현은 Article 13(8)의 expected-use <5-year 예외를 누락한다. Annex I Part I의 (a)/(b) 인용도 실제 Part I(2)(b)/(c)와 구분해야 한다. Part II(2)/(7)/(8)은 업데이트 분리(기술적으로 가능한 경우), 안전한 배포, 지체 없는 무상 제공 및 tailor-made business-user 합의 예외로 각각 나누어야 한다.
 - 파일 판정: **UNVERIFIED** (전체 Pass A/B/C 미완료). Raw Text Quote 및 개별 주장: **NOT_YET_AUDITED**; 단, Article 11 오인용·합성 인용·5년 예외 누락은 강한 CONFLICT 후보로 별도 기록한다. 제품 적용성: **UNVERIFIED**.
 
+
+
+### European Commission guidance pre-memo — support-period context for #9
+
+- [European Commission publication page for C(2026) 5252](https://digital-strategy.ec.europa.eu/en/library/commission-publishes-new-guidance-support-timely-cyber-resilience-act-implementation), published **27 July 2026**, explicitly lists support periods, reporting obligations and risk assessment among the topics covered. The Commission page labels the guidance **non-binding**; it supplements but does not replace Regulation (EU) 2024/2847.
+- The official Annex download was attempted from the Commission page but the document fetch failed with a Unicode decoding error. Therefore no Annex paragraph/section-level interpretation is recorded or treated as verified in this run.
+- ENISA SRP guidance was not reopened because reports #8/#9 do not make a specific Article 14 reporting-route claim. Manufacturer technical documents were not applicable to the legal claims under review; no exact servo-drive SKU or ST MCU order code is available.
