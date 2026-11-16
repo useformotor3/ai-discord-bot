@@ -341,3 +341,11 @@ Actions 성공은 자동화 실행 결과이지 CRA 법령 해석이나 출처�
 - actively exploited vulnerability: 24h/72h/시정조치 가용 후 14일 final report. Severe incident: 24h/72h/incident notification 후 1개월 final report.
 - Article 14는 2026-09-11부터 적용.
 - 상세: [CRA 보고서 #2 정정 및 기술 근거 감사](reports/CRA_CORRECTION_REPORT_2_2026-11-17.md).
+
+
+## 2026-11-17 CRA 보고서 #1 정정 감사
+- 원본은 보존하고 Article 13(8), Annex I Part I (2)(c)/(f), Part II (5)–(8), Annex II/VII를 공식 EUR-Lex 원문과 대조했다.
+- Article 11은 General product safety. 지원 기간은 Article 13(8), 무상 보안 업데이트는 Annex I Part II (8).
+- CVD 정책/제보 연락처/안전한 배포는 Annex I Part II (5)–(7), Article 13(17), Annex II (2).
+- 디지털 서명과 STO 연계 업데이트 설치는 특정 법정 구현 방식이 아니라 제품별 엔지니어링 검증 항목.
+- 상세: [CRA 보고서 #1 정정 및 기술 근거 감사](reports/CRA_CORRECTION_REPORT_1_2026-11-17.md).
