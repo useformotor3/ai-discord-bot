@@ -4,10 +4,10 @@
 
 ## 기준 스냅샷
 - 저장소: `useformotor3/ai-discord-bot`
-- 운영 main HEAD: `3ebf6b977b0127291957ffb415dbdbc83b5b6d97` (Auto-archive #130)
-- 작업 브랜치 HEAD: `0fe9912b5dbba29eeb3ebd9e9f2c16a42544f925`
+- 운영 main HEAD: `267d97478b785e6bb268e224a70dbad6631cf43e` (Auto-archive #131)
+- 작업 브랜치 HEAD: `02fde2489323f9f553405e014fac20d75d13a7fa`
 - merge-base: `f9a12a5778f5fa1d907201ab2931d20ca2656bb7`
-- compare: 204 ahead / 677 behind, diverged
+- compare: 221 ahead / 678 behind, diverged
 - 확인일: 2026-11-16 (KST)
 - base/main/feature recursive tree 모두 `truncated=false`.
 
@@ -15,19 +15,19 @@
 
 | 항목 | merge-base | main | feature |
 |---|---:|---:|---:|
-| blob 파일 수 | 1,597 | 2,274 | 1,620 |
-| research_archive | 1,592 | 2,269 | 1,592 |
+| blob 파일 수 | 1,597 | 2,275 | 1,620 |
+| research_archive | 1,592 | 2,270 | 1,592 |
 
-- merge-base→main: 677개 추가(모두 archive), 삭제 0, `history.json` 및 `state.json` 수정.
+- merge-base→main: 678개 추가(모두 archive), 삭제 0, `history.json` 및 `state.json` 수정.
 - merge-base→feature: 23개 경로 추가(테스트·코드·문서), 삭제 0, `main.py` 수정.
 - feature의 `state.json` 및 `history.json`은 merge-base와 같은 blob SHA다.
-- main의 2,269 history 항목은 2,269 archive 파일을 참조하며 누락 참조는 0개.
-- 677개 archive는 main이 분기 후 추가한 파일이며 feature가 삭제한 것이 아니다. 이 점을 직접 branch tree 비교와 혼동하지 않는다.
+- main의 2,270 history 항목은 2,270 archive 파일을 참조하며 누락 참조는 0개.
+- 678개 archive는 main이 분기 후 추가한 파일이며 feature가 삭제한 것이 아니다. 이 점을 직접 branch tree 비교와 혼동하지 않는다.
 
 ## 최신 운영 데이터
-- main `state.json`: count=130, SHA `b92c8c89cbd792796c9598382c5c662faeb5afcf`.
-- main `history.json`: 2,269 entries, SHA `4e9d2d0f1c5e12064b5c4010c99bde2f0d34a367`.
-- main `research_archive/`: 2,269 files.
+- main `state.json`: count=131, SHA `8f42a83f5d343bda8d4ee5bd4f6ceaa41afe56bb`.
+- main `history.json`: 2,270 entries, SHA `28e4c3bc68d6ea1bd259311caad2eeb1d4df15f3`.
+- main `research_archive/`: 2,270 files.
 - main `.github/workflows/run.yml`: SHA `65a8cadc8eac593f551e390698e367b1d161ecf1`, 미변경.
 
 ## 코드 검증 및 통합 판단
