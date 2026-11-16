@@ -496,3 +496,20 @@
 - 기준 docs commit 대비 30 ahead / 0 behind.
 - main 대비 diverged 141 ahead / 60 behind; main HEAD `1dff09ffa9722119f6fb0847a51b6c87c322d114`, merge-base `f9a12a5778f5fa1d907201ab2931d20ca2656bb7`.
 - 마지막 테스트 CI Run #15 검증 commit은 `b2e108768be08f06e85af154835424682337ebf5`; 그 이후 테스트 소스는 미변경이다.
+
+
+## 2026-11-16 — P1-B1 Discord 전송 신뢰성 구현 및 CI
+
+### 승인 및 변경
+- 사용자가 P1-B1만 구현하도록 승인했다. P1-B2~B4, 운영 workflow/data, 실제 Discord/Gemini 호출은 범위 밖이다.
+- main.py에 connect/read timeout (3.05, 10), wait=true, HTTP status/message ID 확인, 429 Retry-After 제한 재시도, ConnectTimeout 제한 재시도, 영구 오류 및 delivery_unknown 분류, chunk별 ID와 partial 상태를 구현했다.
+- Discord 실패가 archive/state/history 저장 흐름을 중단시키지 않도록 했다. 저장 원자성·transaction은 구현하지 않았다.
+- mock fixture와 P1-B1 테스트를 확장했다. P1-B3 Git sync 상태화 xfail 1건은 남겼다.
+
+### CI 및 정정
+- Run #17: [failure](https://github.com/useformotor3/ai-discord-bot/actions/runs/43808247888), commit 715af78b42eacaeb3ca30c03c838132c2a51e707. main.py SHA pin 기대값 900391...와 실제 4b631c04e34b2b3bbade0aa9301e7d48578a1e03가 달라 source integrity에서 중단했다. compileall/pytest는 실행되지 않았다.
+- workflow pin을 실제 main.py blob SHA로 수정했다.
+- Run #18: [success](https://github.com/useformotor3/ai-discord-bot/actions/runs/43808285335), commit dc341d9e89a837df878257fd3740633f8688507f.
+- 6개 핵심 SHA 일치, compileall 통과, pytest 43 passed / 1 xfailed in 0.34s.
+- xfail 1건은 P1-B3 Git push 실패 상태화이며 승인 범위 밖이다.
+- 실제 Discord/Gemini, 운영 workflow, 운영 Git push 미실행.

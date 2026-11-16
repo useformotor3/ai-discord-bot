@@ -79,3 +79,13 @@ python -m pytest -q
 - HTTP 503: delivery_unknown, 중복 방지 수단이 없는 한 자동 재전송 금지(strict xfail).
 - 429: Retry-After/retry_after 준수 제한 재시도(strict xfail).
 - [Run #15](https://github.com/useformotor3/ai-discord-bot/actions/runs/43570492842): 30 passed, 8 xfailed. xfail은 아직 main.py에 구현되지 않은 P1-B 기대 동작을 나타낸다.
+
+
+## P1-B1 Discord 전송 테스트
+- timeout: connect/read (3.05, 10), wait=true, 응답 message ID 확인.
+- ConnectTimeout: 최대 2회 재시도 후 failed.
+- HTTP 429: Retry-After 헤더 또는 JSON retry_after, 최대 2회 재시도, 대기값 30초 초과 deferred.
+- HTTP 400/401/403/404: permanent_failure, 재시도 금지.
+- HTTP 5xx, ReadTimeout, 일반 ConnectionError: delivery_unknown, 자동 재전송 금지.
+- 후속 chunk 실패: partial, 성공 chunk의 message ID 보존, archive/state/history 후속 저장 확인.
+- CI Run #18: 43 passed, 1 xfailed. 유일한 xfail은 P1-B3 Git sync failure 상태화.
