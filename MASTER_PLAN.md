@@ -236,11 +236,12 @@
 - 데이터 보존 및 별도 통합 설계 전까지 merge/rebase/PR merge 금지.
 
 
-## 다음 실행 단계 — P1-B2 설계 완료
-- [완료] P1-B2 원자적 저장 설계서: `reports/P1_B2_ATOMIC_PERSISTENCE_DESIGN_2026-11-16.md`.
-- [완료] 최신 통합 감사 스냅샷: `reports/BRANCH_INTEGRATION_AUDIT_2026-11-16_REFRESH.md`.
-- [승인 대기] P1-B2 코드 구현 및 crash/failure injection tests.
-- [보류] P1-B3 Git sync status, P1-B4 import-time execution cleanup.
+## 다음 실행 단계 — P1-B2 구현/검증 완료
+- [완료] P1-B2 원자적 저장 설계·구현: `reports/P1_B2_ATOMIC_PERSISTENCE_DESIGN_2026-11-16.md`.
+- [완료] crash/failure injection tests 및 테스트 전용 CI Run #23: 63 passed / 1 xfailed.
+- [완료] 정확한 source blob SHA, compileall, 전체 pytest 확인.
+- [다음] P1-B2 diff와 운영 위험을 별도 검토하고 데이터 보존을 포함한 통합 전략을 수립한다.
+- [보류/별도 승인] P1-B3 Git sync status, P1-B4 import-time execution cleanup.
 - 운영 main/data/workflow 변경과 merge/rebase/PR merge는 별도 승인 전 금지.
 
 
@@ -253,3 +254,11 @@
 
 ## 최신 작업 브랜치 포인터
 - P1-B2 설계/감사 문서 커밋 이후 작업 브랜치 HEAD는 `38bb00c815eee3e754bff14f67bcab2f23172a92`이며, main HEAD `036334dd2665752c2e6ddb024001771cff4064c5` 대비 156 ahead / 660 behind다. 앞선 155/660 수치는 설계 문서 커밋 직전의 감사 기준 HEAD `227e3298066af4bda83fb0713fc1d57c749ee8c6` 기준 스냅샷이다.
+
+
+## 2026-11-16 — P1-B2 구현 완료
+- 전용 브랜치 `feature/p1-b2-atomic-persistence-2026-11-16`에서 durable journal 기반 multi-file persistence를 구현했다.
+- recovery는 state/history 읽기와 외부 서비스 호출보다 먼저 수행한다. commit 시 읽은 원본 snapshot SHA를 확인해 동시 변경을 fail-closed 한다.
+- 장애 주입 및 통합 테스트 포함 Run #23에서 63 passed / 1 xfailed.
+- POSIX flock/fsync 기반이므로 Ubuntu 등 POSIX 실행 환경을 전제로 한다. Windows lock backend는 미구현.
+- P1-B3/B4, 운영 데이터, 운영 workflow, merge/rebase는 이번 승인 범위 밖이다.
