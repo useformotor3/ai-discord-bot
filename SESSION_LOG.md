@@ -529,3 +529,13 @@
 - main 대비 diverged 150 ahead / 610 behind; main HEAD 8357da3abe3b87ca0e7a2fa50f862b693c0a226c, merge-base f9a12a5778f5fa1d907201ab2931d20ca2656bb7.
 - main.py 작업 브랜치 SHA 4b631c04e34b2b3bbade0aa9301e7d48578a1e03, main SHA 86a7731aad5de8d75581fc953bcea2c44adf2f2b.
 - 운영 main으로 직접 PR/merge하지 않는다. 610 behind를 포함한 차이를 별도 통합 감사해야 한다.
+
+
+## 2026-11-16 — 읽기 전용 branch/main 통합 감사
+- 작업 브랜치 HEAD a7f2cd285ad89df2d0c67f14acb036e8e42a73d9; main HEAD a7f2cd285ad89df2d0c67f14acb036e8e42a73d9; merge-base f9a12a5778f5fa1d907201ab2931d20ca2656bb7.
+- 작업 브랜치 base 대비 41 ahead / 0 behind, main 대비 152 ahead / 657 behind.
+- recursive Git tree 비교: merge-base 1,600 entries, main 2,257 entries, 양쪽 truncated=false. main에 research_archive 신규 657개, 삭제 0개, 변경 경로 history.json/state.json/research_archive 디렉터리.
+- history.json 1,592 → 2,249개 객체. state.json count 29 → 110, 날짜 2026-11-14 → 2026-11-16.
+- main.py는 merge-base와 동일 SHA 86a7731aad5de8d75581fc953bcea2c44adf2f2b이며 작업 브랜치 SHA 4b631c04e34b2b3bbade0aa9301e7d48578a1e03. 운영 run.yml은 merge-base와 동일 SHA 65a8cadc8eac593f551e390698e367b1d161ecf1.
+- 운영 데이터/코드/workflow 변경, 운영 실행, merge/rebase/PR merge 없음. compare API 300개 경로 제한을 recursive tree 비교로 우회 확인.
+- 보고서: reports/BRANCH_INTEGRATION_AUDIT_2026-11-16.md. 결론: 통합 보류, 데이터 보존형 별도 change-control 필요.

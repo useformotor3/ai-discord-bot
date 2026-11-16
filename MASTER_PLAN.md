@@ -218,3 +218,13 @@
 - 1 xfailed는 P1-B3 Git sync 상태화 미구현 기대 동작이다.
 - Run #17 SHA pin 오류는 기록 후 수정했다. Run #18에서 source SHA, compileall, 전체 pytest 통과를 확인했다.
 - 다음 우선순위는 P1-B1 경계의 추가 검토 및 문서 정합성, 이후 P1-B2 atomic persistence 설계다. P1-B2는 별도 승인 전 구현하지 않는다.
+
+
+## 통합 게이트 — 2026-11-16 감사 반영
+1. [완료] main/작업 브랜치 ref, merge-base, ahead/behind 재조회.
+2. [완료] merge-base와 main의 recursive Git tree 비교(양쪽 API truncated=false).
+3. [완료] 운영 state/history/archive 및 main.py/workflow 원문·SHA 교차확인.
+4. [진행 전 보류] 데이터 보존을 전제로 한 코드/문서 통합 후보 분리와 migration 설계.
+5. [승인 대기] main 반영, 데이터 변경, workflow 실행, P1-B2/B3/B4 구현.
+
+통합은 단순 branch merge가 아니라 운영 데이터와 자동 생성 보고서 보존을 포함한 별도 change-control 작업으로 취급한다. 현재 main 대비 152 ahead / 657 behind이며 통합을 진행하지 않는다.
