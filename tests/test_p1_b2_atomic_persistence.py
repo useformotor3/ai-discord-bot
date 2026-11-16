@@ -4,6 +4,7 @@ import json
 import pytest
 
 import persistence
+from test_main_characterization import VALID_REPORT
 from persistence import (
     PersistenceError,
     commit_persistence_transaction,
@@ -211,3 +212,42 @@ def test_journal_and_manifest_transaction_ids_must_match(tmp_path):
     (txn_dir / "journal.json").write_text(json.dumps(journal), encoding="utf-8")
     with pytest.raises(PersistenceError, match="transaction ID"):
         recover_pending_transactions(tmp_path)
+
+
+
+def test_main_integration_commits_all_three_local_targets(run_main):
+    run_main.execute([VALID_REPORT])
+    state = json.loads((run_main.workdir / "state.json").read_text(encoding="utf-8"))
+    history = json.loads((run_main.workdir / "history.json").read_text(encoding="utf-8"))
+    archives = list((run_main.workdir / "research_archive").glob("*.md"))
+    assert state["count"] == 1
+    assert len(history) == 1
+    assert len(archives) == 1
+    assert history[0]["file"] == str(archives[0].relative_to(run_main.workdir))
+    assert not list((run_main.workdir / ".persistence_txn").glob("*/journal.json"))
+
+
+def test_main_recovers_before_any_external_call_when_journal_is_damaged(run_main):
+    payloads = {
+        "archive": b"# interrupted report",
+        "history": b'[{"count":1}]',
+        "state": b'{"date":"2026-11-16","count":1}',
+    }
+    (run_main.workdir / "state.json").write_bytes(b'{"date":"2026-11-16","count":0}')
+    (run_main.workdir / "history.json").write_bytes(b"[]")
+    operations = _operations(run_main.workdir, payloads)
+    with pytest.raises(RuntimeError):
+        commit_persistence_transaction(
+            run_main.workdir, operations,
+            fault_hook=_crash_after("research_archive/report.md"),
+        )
+    txn_dir = next(
+        path for path in (run_main.workdir / ".persistence_txn").iterdir()
+        if path.is_dir()
+    )
+    (txn_dir / "staged/1.bin").unlink()
+    with pytest.raises(PersistenceError, match="staged payload 누락"):
+        run_main.execute([VALID_REPORT])
+    assert run_main.captured["model_calls"] == []
+    assert run_main.captured["discord_posts"] == []
+    assert run_main.captured["git_commands"] == []
