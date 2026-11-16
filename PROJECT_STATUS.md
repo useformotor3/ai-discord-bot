@@ -512,3 +512,15 @@
 - main.py merge-base/main blob SHA 동일 `86a7731aad5de8d75581fc953bcea2c44adf2f2b`; 작업 브랜치 blob SHA `fa8679b758916ba8a446bae41b9ec1b40328da09`. 분기 이후 main.py의 양측 동시 수정은 확인되지 않음.
 - PR 미생성 상태이므로 GitHub mergeable 및 PR-triggered CI는 아직 미확인. 실제 통합 가능 여부는 PR 생성 후 재검증한다.
 - 운영 run.yml SHA `65a8cadc8eac593f551e390698e367b1d161ecf1` 유지.
+
+
+## 2026-11-16 — Draft PR #1 생성 및 PR CI 결과
+- [Draft PR #1](https://github.com/useformotor3/ai-discord-bot/pull/1) 생성 완료. base `main`, head `feature/p1-b2-atomic-persistence-2026-11-16`.
+- PR head SHA: `01e7cf50436f35d9eddb931ae4e1d177af805387`; PR 생성 시 base SHA: `38abb075ebe0f7180abaebc4da52e2f18ea28915`.
+- PR 생성 직전 compare: 230 ahead / 700 behind; merge-base `f9a12a5778f5fa1d907201ab2931d20ca2656bb7`.
+- PR 변경 24개(추가 23, 수정 main.py 1, 삭제 0); 보호 운영 경로 변경 없음.
+- GitHub PR 상태 재조회: open=true, draft=true, merged=false, mergeable=true.
+- PR-triggered Actions Run #32 (`43869220252`) success. source integrity, compile, complete pytest job 모두 성공.
+- 사전 코드 검증 Run #43851438733은 70 passed / 1 xfailed. PR-triggered Run #32는 job-level success만 확인했으며 개별 passed/xfail 수치는 확인되지 않아 혼동하지 않는다.
+- PR은 검토 대기 상태다. 병합·리베이스·운영 workflow/data 변경·실제 Gemini/Discord 호출은 수행하지 않았다.
+- 다음 단계: PR 리뷰/Files changed 재검토 및 main 최신화에 따른 compare/conflict 재검증. 병합과 운영 반영은 별도 승인 필요.

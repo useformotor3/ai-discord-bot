@@ -242,3 +242,14 @@ Actions 성공은 자동화 실행 결과이지 CRA 법령 해석이나 출처�
 - main.py merge-base/main blob SHA 동일 `86a7731aad5de8d75581fc953bcea2c44adf2f2b`; 작업 브랜치 blob SHA `fa8679b758916ba8a446bae41b9ec1b40328da09`. 분기 이후 main.py의 양측 동시 수정은 확인되지 않음.
 - PR 미생성 상태이므로 GitHub mergeable 및 PR-triggered CI는 아직 미확인. 실제 통합 가능 여부는 PR 생성 후 재검증한다.
 - 운영 run.yml SHA `65a8cadc8eac593f551e390698e367b1d161ecf1` 유지.
+
+
+## 2026-11-16 — Draft PR #1 생성 및 PR CI 검증
+- Draft PR: https://github.com/useformotor3/ai-discord-bot/pull/1
+- 대상: `main` ← `feature/p1-b2-atomic-persistence-2026-11-16`; PR head `01e7cf50436f35d9eddb931ae4e1d177af805387`, PR 생성 시 base main `38abb075ebe0f7180abaebc4da52e2f18ea28915`.
+- 생성 직전 compare: 230 ahead / 700 behind, merge-base `f9a12a5778f5fa1d907201ab2931d20ca2656bb7`; 변경 24개(23 added + main.py modified), 삭제 0.
+- 보호 경로 `state.json`, `history.json`, `research_archive/**`, 운영 `.github/workflows/run.yml`는 PR 변경 경로에서 제외됨.
+- PR 생성 후 GitHub 재조회: open, draft=true, merged=false, mergeable=true.
+- PR-triggered Actions Run #32 (`43869220252`) 성공: source integrity, compile, 전체 pytest 단계 완료. [Run #32](https://github.com/useformotor3/ai-discord-bot/actions/runs/43869220252).
+- 이전 코드 검증 Run #43851438733은 70 passed / 1 xfailed였으며 PR-triggered run #32의 개별 테스트 수치는 job summary에서 확인되지 않아 별도 숫자로 단정하지 않는다.
+- 현재 PR은 검토용 Draft이며 merge/rebase/운영 반영은 하지 않았다. main의 지속적인 자동 아카이브로 base가 움직일 수 있으므로 병합 직전 재비교가 필요하다.

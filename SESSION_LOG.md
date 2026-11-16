@@ -713,3 +713,24 @@
 - main.py merge-base/main blob SHA 동일 `86a7731aad5de8d75581fc953bcea2c44adf2f2b`; 작업 브랜치 blob SHA `fa8679b758916ba8a446bae41b9ec1b40328da09`. 분기 이후 main.py의 양측 동시 수정은 확인되지 않음.
 - PR 미생성 상태이므로 GitHub mergeable 및 PR-triggered CI는 아직 미확인. 실제 통합 가능 여부는 PR 생성 후 재검증한다.
 - 운영 run.yml SHA `65a8cadc8eac593f551e390698e367b1d161ecf1` 유지.
+
+
+## 2026-11-16 — Draft PR #1 생성 및 PR-triggered CI
+### 작업
+- 사용자 승인에 따라 `feature/p1-b2-atomic-persistence-2026-11-16` → `main` Draft PR #1 생성.
+- PR: https://github.com/useformotor3/ai-discord-bot/pull/1
+- PR head `01e7cf50436f35d9eddb931ae4e1d177af805387`; 생성 시 base SHA `38abb075ebe0f7180abaebc4da52e2f18ea28915`.
+- PR 생성 직전 compare 230 ahead / 700 behind, merge-base `f9a12a5778f5fa1d907201ab2931d20ca2656bb7`; changed files 24 (23 added, main.py modified, 0 deleted).
+- protected paths `state.json`, `history.json`, `research_archive/**`, production `.github/workflows/run.yml` absent from changed paths.
+
+### 검증 결과
+- PR 상태 재조회: open, draft, not merged, mergeable=true.
+- PR-triggered Actions Run #32 / ID `43869220252`: success.
+- Job `Source integrity, compile and pytest`: all steps completed successfully, including exact source blob integrity, compile, and complete repository pytest suite.
+- Run #43851438733 (pre-PR code validation): 70 passed / 1 xfailed. PR-triggered Run #32 exact test counts not exposed in job summary; do not infer.
+- Run URL: https://github.com/useformotor3/ai-discord-bot/actions/runs/43869220252
+
+### 경계 및 다음 단계
+- Draft PR 생성만 수행. merge/rebase/force-push/운영 배포/운영 workflow 또는 state-history-archive 변경/실제 Gemini·Discord 호출 없음.
+- GitHub mergeable=true는 조회 시점 상태이며 main 자동 커밋에 따라 바뀔 수 있다.
+- 다음은 PR 리뷰와 최신 main 기준 재검토. 병합 및 운영 반영은 별도 승인 대상.
