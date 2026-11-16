@@ -314,3 +314,10 @@ Actions 성공은 자동화 실행 결과이지 CRA 법령 해석이나 출처�
 - 상세 설계·근거·검증 한계: reports/OPS_TIMEZONE_MODEL_GIT_FAILURE_FIX_2026-11-17.md.
 
 - KST/모델/Git 저장 실패 개선 CI: Run #59 성공(99 passed, 1 xfailed). Run #58은 테스트의 구형 모델명 기대값 2건으로 실패했으며 수정 후 #59에서 통과.
+
+
+## 2026-11-17 운영 검증 업데이트
+- KST 기준 state date=2026-11-17, count=4 확인.
+- history 2,397개 파싱 및 당일 최신 archive 4개 원격 존재 확인.
+- 운영 Git archive 저장은 확인했으나 상세 Job 로그가 없어 실제 Gemini model ID, operational_guard, checkpoint pruning, Discord 응답은 미확인.
+- 상세: [운영 실행 관찰 및 데이터 무결성 확인](reports/PRODUCTION_RUN_OBSERVATION_2026-11-17.md).
