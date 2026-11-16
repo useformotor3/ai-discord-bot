@@ -256,21 +256,133 @@ full_text = (
 )
 
 
+DISCORD_CONNECT_TIMEOUT_SECONDS = 3.05
+DISCORD_READ_TIMEOUT_SECONDS = 10
+MAX_DISCORD_RETRIES = 2
+MAX_DISCORD_RETRY_WAIT_SECONDS = 30
+
+
+def _discord_retry_after_seconds(response):
+  """Discord 429의 Retry-After 또는 JSON retry_after 값을 초 단위로 읽는다."""
+  header_value = None
+  for key, value in getattr(response, "headers", {}).items():
+    if key.lower() == "retry-after":
+      header_value = value
+      break
+  candidates = [header_value]
+  try:
+    body = response.json()
+  except Exception:
+    body = {}
+  if isinstance(body, dict):
+    candidates.append(body.get("retry_after"))
+  for candidate in candidates:
+    if candidate is None:
+      continue
+    try:
+      delay = float(candidate)
+    except (TypeError, ValueError):
+      continue
+    if delay >= 0:
+      return delay
+  return None
+
+
 def send_discord_chunked(text, webhook_url):
+  """Discord 전송을 chunk별로 확인하고 모호한 POST 결과는 재전송하지 않는다."""
   if not webhook_url:
-    return
+    return {"status": "skipped", "chunks": [], "sent_chunks": 0, "total_chunks": 0}
   max_len = 1900
   chunks = [text[i : i + max_len] for i in range(0, len(text), max_len)]
+  chunk_results = []
+  sent_chunks = 0
+
+  def finish(failure_status, chunk_index, status_code=None):
+    chunk_result = {"index": chunk_index + 1, "status": failure_status}
+    if status_code is not None:
+      chunk_result["http_status"] = status_code
+    chunk_results.append(chunk_result)
+    overall = "partial" if sent_chunks else failure_status
+    return {
+        "status": overall,
+        "chunks": chunk_results,
+        "sent_chunks": sent_chunks,
+        "total_chunks": len(chunks),
+    }
+
   for idx, chunk in enumerate(chunks):
     msg = chunk
     if len(chunks) > 1:
       msg = f"(파트 {idx+1}/{len(chunks)})\n" + msg
     payload = {"content": msg}
-    requests.post(webhook_url, json=payload)
-    time.sleep(1)
+    chunk_sent = False
+    for attempt in range(MAX_DISCORD_RETRIES + 1):
+      try:
+        response = requests.post(
+            webhook_url,
+            json=payload,
+            params={"wait": "true"},
+            timeout=(DISCORD_CONNECT_TIMEOUT_SECONDS, DISCORD_READ_TIMEOUT_SECONDS),
+        )
+      except requests.exceptions.ConnectTimeout:
+        if attempt < MAX_DISCORD_RETRIES:
+          continue
+        return finish("failed", idx)
+      except (
+          requests.exceptions.ReadTimeout,
+          requests.exceptions.ConnectionError,
+          requests.exceptions.Timeout,
+          requests.exceptions.RequestException,
+      ):
+        return finish("delivery_unknown", idx)
+
+      status_code = response.status_code
+      if status_code == 429:
+        retry_after = _discord_retry_after_seconds(response)
+        if (
+            attempt >= MAX_DISCORD_RETRIES
+            or retry_after is None
+            or retry_after > MAX_DISCORD_RETRY_WAIT_SECONDS
+        ):
+          return finish("deferred", idx, status_code)
+        time.sleep(retry_after)
+        continue
+      if status_code in (400, 401, 403, 404):
+        return finish("permanent_failure", idx, status_code)
+      if 500 <= status_code <= 599:
+        return finish("delivery_unknown", idx, status_code)
+      if not 200 <= status_code <= 299:
+        return finish("permanent_failure", idx, status_code)
+      try:
+        response_body = response.json()
+      except Exception:
+        response_body = None
+      message_id = response_body.get("id") if isinstance(response_body, dict) else None
+      if not message_id:
+        return finish("delivery_unknown", idx, status_code)
+      chunk_results.append({
+          "index": idx + 1,
+          "status": "sent",
+          "message_id": str(message_id),
+          "http_status": status_code,
+      })
+      sent_chunks += 1
+      chunk_sent = True
+      break
+    if not chunk_sent:
+      return finish("deferred", idx)
+    if idx < len(chunks) - 1:
+      time.sleep(1)
+  return {
+      "status": "sent",
+      "chunks": chunk_results,
+      "sent_chunks": sent_chunks,
+      "total_chunks": len(chunks),
+  }
 
 
-send_discord_chunked(full_text, webhook_url)
+discord_result = send_discord_chunked(full_text, webhook_url)
+print(f"Discord 전송 결과: {discord_result['status']} ({discord_result['sent_chunks']}/{discord_result['total_chunks']} chunks 확인)")
 
 # 6. GitHub 백서버 저장 (폴더별 마크다운 아카이브 & 상태 업데이트)
 os.makedirs("research_archive", exist_ok=True)

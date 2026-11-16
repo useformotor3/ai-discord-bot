@@ -1,100 +1,142 @@
-"""P1-B 실패 경로 기대 동작을 고정한다.
-
-현재 main.py가 아직 해당 정책을 구현하지 않았으므로 strict xfail로 표시한다.
-운영 코드가 기대 동작을 충족하면 XPASS(strict)로 CI가 실패해 xfail 해제를 요구한다.
-"""
+"""P1-B1 Discord 전송 결과 정책과 미구현 P1-B3 경계를 검증한다."""
+import json
 import pytest
-
 from test_main_characterization import VALID_REPORT
 
 
-@pytest.mark.xfail(
-    strict=True,
-    reason="P1-B: Discord 요청에 명시적 timeout을 전달해야 함",
-)
-def test_discord_request_uses_explicit_timeout(run_main):
-    with pytest.raises(RuntimeError, match="mock timeout"):
-        run_main.execute(
-            [VALID_REPORT],
-            discord_responses=[RuntimeError("mock timeout")],
-        )
+def test_discord_connect_timeout_retries_with_explicit_timeout_and_wait(run_main):
+    namespace = run_main.execute(
+        [VALID_REPORT],
+        discord_responses=[
+            run_main.exception_types.ConnectTimeout("mock connect timeout"),
+            {"status_code": 200, "json": {"id": "discord-message-001"}},
+        ],
+    )
+    assert len(run_main.captured["discord_posts"]) == 2
+    for post in run_main.captured["discord_posts"]:
+        assert post["timeout"] == (3.05, 10)
+        assert post["params"] == {"wait": "true"}
+    assert namespace["discord_result"]["status"] == "sent"
+    assert namespace["discord_result"]["chunks"][0]["message_id"] == "discord-message-001"
 
-    assert run_main.captured["discord_posts"][0]["timeout"] is not None
 
-
-@pytest.mark.xfail(
-    strict=True,
-    reason="P1-B: Discord 429는 Retry-After 정책에 따라 제한 재시도해야 함",
-)
-def test_discord_429_is_retried_then_succeeds(run_main):
-    run_main.execute(
+def test_discord_429_retries_using_retry_after_header(run_main):
+    namespace = run_main.execute(
         [VALID_REPORT],
         discord_responses=[
             {"status_code": 429, "headers": {"Retry-After": "1"}},
-            {"status_code": 204},
+            {"status_code": 200, "json": {"id": "after-rate-limit"}},
         ],
     )
-
     assert len(run_main.captured["discord_posts"]) == 2
+    assert run_main.captured["sleep_calls"] == [1.0]
+    assert namespace["discord_result"]["status"] == "sent"
 
 
-@pytest.mark.xfail(
-    strict=True,
-    reason="P1-B: 5xx 응답은 중복 방지 수단이 없으면 delivery_unknown으로 남기고 자동 재전송하지 않아야 함",
-)
-def test_discord_503_is_not_retried_when_delivery_is_ambiguous(run_main):
-    run_main.execute(
+def test_discord_429_uses_json_retry_after_when_header_missing(run_main):
+    namespace = run_main.execute(
+        [VALID_REPORT],
+        discord_responses=[
+            {"status_code": 429, "json": {"retry_after": 2.5}},
+            {"status_code": 200, "json": {"id": "after-rate-limit"}},
+        ],
+    )
+    assert len(run_main.captured["discord_posts"]) == 2
+    assert run_main.captured["sleep_calls"] == [2.5]
+    assert namespace["discord_result"]["status"] == "sent"
+
+
+def test_discord_429_beyond_wait_budget_is_deferred(run_main):
+    namespace = run_main.execute(
+        [VALID_REPORT],
+        discord_responses=[{"status_code": 429, "headers": {"Retry-After": "31"}}],
+    )
+    assert len(run_main.captured["discord_posts"]) == 1
+    assert run_main.captured["sleep_calls"] == []
+    assert namespace["discord_result"]["status"] == "deferred"
+
+
+def test_discord_503_is_delivery_unknown_without_automatic_retry(run_main):
+    namespace = run_main.execute(
         [VALID_REPORT],
         discord_responses=[
             {"status_code": 503},
-            {"status_code": 204},
+            {"status_code": 200, "json": {"id": "must-not-be-sent"}},
         ],
     )
-
     assert len(run_main.captured["discord_posts"]) == 1
-    assert run_main.captured.get("discord_status") == "delivery_unknown"
+    assert namespace["discord_result"]["status"] == "delivery_unknown"
 
 
-@pytest.mark.parametrize("status_code", [401, 403, 404])
-@pytest.mark.xfail(
-    strict=True,
-    reason="P1-B: Discord 인증/권한/없는 webhook 오류는 영구 실패로 분류하고 재시도하지 않아야 함",
-)
+@pytest.mark.parametrize("status_code", [400, 401, 403, 404])
 def test_discord_permanent_errors_are_not_retried(run_main, status_code):
-    run_main.execute(
+    namespace = run_main.execute(
         [VALID_REPORT],
         discord_responses=[{"status_code": status_code}],
     )
-
     assert len(run_main.captured["discord_posts"]) == 1
-    assert run_main.captured.get("discord_status") == "permanent_failure"
+    assert namespace["discord_result"]["status"] == "permanent_failure"
+    assert len(list((run_main.workdir / "research_archive").glob("*.md"))) == 1
+    state = json.loads((run_main.workdir / "state.json").read_text(encoding="utf-8"))
+    history = json.loads((run_main.workdir / "history.json").read_text(encoding="utf-8"))
+    assert state["count"] == 1
+    assert len(history) == 1
 
 
-@pytest.mark.xfail(
-    strict=True,
-    reason="P1-B: 영구 Discord 4xx 실패를 성공으로 취급하거나 후속 저장하면 안 됨",
-)
-def test_discord_400_blocks_archive_and_state_updates(run_main):
-    run_main.execute(
-        [VALID_REPORT],
-        discord_responses=[{"status_code": 400}],
+@pytest.mark.parametrize("failure_type", ["ReadTimeout", "ConnectionError"])
+def test_ambiguous_transport_failures_are_not_retried(run_main, failure_type):
+    failure = getattr(run_main.exception_types, failure_type)(
+        "mock ambiguous transport failure"
     )
+    namespace = run_main.execute([VALID_REPORT], discord_responses=[failure])
+    assert len(run_main.captured["discord_posts"]) == 1
+    assert namespace["discord_result"]["status"] == "delivery_unknown"
 
-    assert not (run_main.workdir / "research_archive").exists()
-    assert not (run_main.workdir / "state.json").exists()
-    assert not (run_main.workdir / "history.json").exists()
+
+def test_later_chunk_failure_is_partial_and_preserves_archive(run_main):
+    long_report = VALID_REPORT + "\n" + ("추가 근거 검토 내용입니다. " * 180)
+    namespace = run_main.execute(
+        [long_report],
+        discord_responses=[
+            {"status_code": 200, "json": {"id": "first-chunk"}},
+            {"status_code": 403},
+        ],
+    )
+    result = namespace["discord_result"]
+    assert len(run_main.captured["discord_posts"]) == 2
+    assert result["status"] == "partial"
+    assert result["sent_chunks"] == 1
+    assert result["chunks"][0]["message_id"] == "first-chunk"
+    assert result["chunks"][1]["status"] == "permanent_failure"
+    assert len(list((run_main.workdir / "research_archive").glob("*.md"))) == 1
+    state = json.loads((run_main.workdir / "state.json").read_text(encoding="utf-8"))
+    history = json.loads((run_main.workdir / "history.json").read_text(encoding="utf-8"))
+    assert state["count"] == 1
+    assert len(history) == 1
+
+
+def test_connect_timeout_retry_limit_is_bounded(run_main):
+    namespace = run_main.execute(
+        [VALID_REPORT],
+        discord_responses=[
+            run_main.exception_types.ConnectTimeout("connect timeout 1"),
+            run_main.exception_types.ConnectTimeout("connect timeout 2"),
+            run_main.exception_types.ConnectTimeout("connect timeout 3"),
+        ],
+    )
+    assert len(run_main.captured["discord_posts"]) == 3
+    assert namespace["discord_result"]["status"] == "failed"
 
 
 @pytest.mark.xfail(
     strict=True,
-    reason="P1-B: Git push 실패를 삼키지 말고 sync 실패로 노출해야 함",
+    reason="P1-B3: Git push 실패를 삼키지 말고 sync 실패로 노출해야 함",
 )
 def test_git_push_failure_is_not_reported_as_full_success(run_main):
     run_main.execute(
         [VALID_REPORT],
         git_responses=[0, 0, 0, 0, 1],
     )
-
     assert run_main.captured["git_commands"][-1] == ["git", "push"]
     assert run_main.captured["git_options"][-1]["check"] is True
     assert run_main.captured["git_sync_status"] == "failed"

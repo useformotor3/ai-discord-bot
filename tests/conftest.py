@@ -22,6 +22,29 @@ def run_main(tmp_path, monkeypatch):
         "sleep_calls": [],
     }
 
+    class RequestException(Exception):
+        pass
+
+    class Timeout(RequestException):
+        pass
+
+    class ConnectTimeout(Timeout):
+        pass
+
+    class ReadTimeout(Timeout):
+        pass
+
+    class ConnectionError(RequestException):
+        pass
+
+    exception_types = SimpleNamespace(
+        RequestException=RequestException,
+        Timeout=Timeout,
+        ConnectTimeout=ConnectTimeout,
+        ReadTimeout=ReadTimeout,
+        ConnectionError=ConnectionError,
+    )
+
     class FakeModels:
         def __init__(self, responses):
             self.responses = list(responses)
@@ -53,10 +76,17 @@ def run_main(tmp_path, monkeypatch):
         requests_module = types.ModuleType("requests")
 
         class FakeResponse:
-            def __init__(self, status_code=204, headers=None, text=""):
+            def __init__(self, status_code=200, headers=None, text="",
+                         body=None, message_id="mock-message-id"):
                 self.status_code = status_code
                 self.headers = headers or {}
                 self.text = text
+                self.body = body if body is not None else {"id": message_id}
+
+            def json(self):
+                if isinstance(self.body, BaseException):
+                    raise self.body
+                return self.body
 
             def raise_for_status(self):
                 if self.status_code >= 400:
@@ -66,15 +96,16 @@ def run_main(tmp_path, monkeypatch):
 
         discord_queue = list(discord_responses or [])
 
-        def fake_post(url, *, json, **kwargs):
+        def fake_post(url, *, json, params=None, **kwargs):
             response_spec = discord_queue.pop(0) if discord_queue else None
             status_code = (
-                response_spec.get("status_code", 204)
+                response_spec.get("status_code", 200)
                 if isinstance(response_spec, dict)
                 else getattr(response_spec, "status_code", None)
             )
             captured["discord_posts"].append({
                 "timeout": kwargs.get("timeout"),
+                "params": params,
                 "payload_length": len(json.get("content", "")),
                 "status_code": status_code,
             })
@@ -82,17 +113,20 @@ def run_main(tmp_path, monkeypatch):
                 raise response_spec
             if isinstance(response_spec, dict):
                 return FakeResponse(
-                    status_code=response_spec.get("status_code", 204),
+                    status_code=response_spec.get("status_code", 200),
                     headers=response_spec.get("headers"),
                     text=response_spec.get("text", ""),
+                    body=response_spec.get("json", {"id": "mock-message-id"}),
+                    message_id=response_spec.get("message_id", "mock-message-id"),
                 )
             if response_spec is None:
                 return FakeResponse()
             return response_spec
 
         requests_module.post = fake_post
-        requests_module.Timeout = type("Timeout", (Exception,), {})
-        requests_module.ConnectionError = type("ConnectionError", (Exception,), {})
+        requests_module.Timeout = Timeout
+        requests_module.ConnectionError = ConnectionError
+        requests_module.exceptions = exception_types
 
         monkeypatch.setitem(sys.modules, "google", google_module)
         monkeypatch.setitem(sys.modules, "google.genai", genai_module)
@@ -138,4 +172,5 @@ def run_main(tmp_path, monkeypatch):
         execute=execute,
         captured=captured,
         workdir=tmp_path,
+        exception_types=exception_types,
     )
