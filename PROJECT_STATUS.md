@@ -604,3 +604,12 @@
 - 따라서 KST 날짜·일일 카운트·원격 archive 저장은 운영 데이터로 확인됨.
 - 운영 Job 상세 로그는 현재 조회하지 못했다. 실제 Gemini 모델 ID, operational_guard, checkpoint pruning, Discord 응답 상태는 미확인으로 유지한다.
 - 상세 증거 및 제한: `reports/PRODUCTION_RUN_OBSERVATION_2026-11-17.md`.
+
+
+## 2026-11-17 — CRA 보고서 #4 표본 감사 결과
+- 원본 `research_archive/2026-11-17_082040817286_b5f20b1f.md`는 보존했다.
+- 중대 정정: CRA 삭제 요건은 Annex I Part I (2)(m), 원본 (2)(i) 인용은 오기. (2)(i)는 서비스 가용성 영향 최소화 항목.
+- IEC 62443-4-2 CR 4.1은 정보 기밀성, CR 4.2는 정보 잔존/삭제, CR 4.3은 암호기술 사용으로 구분.
+- NIST SP 800-88 Rev.1은 2025-09-26 철회되어 Rev.2로 대체. Flash multi-pass overwrite 권고는 삭제/재작성 필요.
+- 하드웨어·펌웨어 강제, CE 필수 등 법령에 명시되지 않은 구현 단정은 권고 수준으로 재분류.
+- 정정 상세: `reports/CRA_CORRECTION_REPORT_4_2026-11-17.md`.
