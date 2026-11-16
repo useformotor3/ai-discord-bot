@@ -1,5 +1,9 @@
 name: Servo Drive CRA Automated Research
 
+concurrency:
+  group: cra-production-run
+  cancel-in-progress: false
+
 on:
   repository_dispatch:     # 외부 API 신호를 받아 실행되도록 설정
     types: [run-bot]       # 'run-bot'이라는 신호가 오면 작동
@@ -14,6 +18,17 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Create immutable pre-run data checkpoint
+        env:
+          BASELINE_REF: safety/data-pre-run-${{ github.run_id }}-${{ github.run_attempt }}
+        run: |
+          set -euo pipefail
+          git push origin "HEAD:refs/heads/${BASELINE_REF}"
+          echo "Pre-run snapshot: ${BASELINE_REF}"
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -31,3 +46,10 @@ jobs:
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
         run: |
           python main.py
+
+      - name: Verify run and automatically restore invalid data
+        env:
+          BASELINE_REF: safety/data-pre-run-${{ github.run_id }}-${{ github.run_attempt }}
+        run: |
+          set -euo pipefail
+          python scripts/operational_guard.py --baseline-ref "${BASELINE_REF}" --branch main --run-id "${GITHUB_RUN_ID}"
