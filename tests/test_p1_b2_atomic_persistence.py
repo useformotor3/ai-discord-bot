@@ -251,3 +251,15 @@ def test_main_recovers_before_any_external_call_when_journal_is_damaged(run_main
     assert run_main.captured["model_calls"] == []
     assert run_main.captured["discord_posts"] == []
     assert run_main.captured["git_commands"] == []
+
+
+
+def test_duplicate_targets_are_rejected_before_prepare(tmp_path):
+    _seed(tmp_path)
+    with pytest.raises(PersistenceError, match="중복 지정"):
+        commit_persistence_transaction(tmp_path, [
+            {"target": "state.json", "payload": b"one",
+             "expected_old": (tmp_path / "state.json").read_bytes()},
+            {"target": "state.json", "payload": b"two",
+             "expected_old": (tmp_path / "state.json").read_bytes()},
+        ])
