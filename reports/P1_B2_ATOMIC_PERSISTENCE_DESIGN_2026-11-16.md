@@ -4,7 +4,7 @@
 - 저장소: `useformotor3/ai-discord-bot`
 - 기준 작업 브랜치 HEAD: `227e3298066af4bda83fb0713fc1d57c749ee8c6`
 - 기준 `main.py` blob SHA: `4b631c04e34b2b3bbade0aa9301e7d48578a1e03`
-- 상태: **설계 완료 / 구현 승인 대기**
+- 상태: **사용자 승인 완료 / 구현 및 테스트 전용 CI 검증 완료 (2026-11-16)**
 - 범위: 로컬 `research_archive/`, `state.json`, `history.json` 저장 일관성
 - 제외: Discord outbox/전달 보장, Git push 상태화(P1-B3), import-time 실행구조(P1-B4), 운영 workflow, 운영 데이터 migration
 
@@ -76,6 +76,7 @@ staged 원본은 replace에 직접 소비하지 않는다. 매번 staged payload
 
 ### 3.4 Recovery 단계
 - 애플리케이션이 state/history를 읽거나 외부 서비스 호출을 시작하기 전에 미완료 journal을 검색한다.
+- POSIX advisory lock은 recovery 및 commit 구간에 한정한다. 장시간 Gemini/Discord 호출 중 lock을 유지하지 않고, 읽기 시점의 raw bytes SHA를 저장 직전에 비교해 stale update를 거부한다. 동시 실행에서 Discord 중복 전송까지 막는 보장은 제공하지 않는다.
 - PREPARED: manifest와 staged SHA가 정상이라면 정책에 따라 중단 또는 안전한 roll-forward를 수행한다. 구현 전 선택을 고정한다.
 - APPLYING: 각 target SHA를 검사해 이미 적용된 파일은 건너뛰고 나머지를 roll-forward 한다.
 - COMMITTED: 모든 target SHA가 new SHA인지 재확인한 뒤 stage/backup/journal을 정리한다.
@@ -136,7 +137,7 @@ staged 원본은 replace에 직접 소비하지 않는다. 매번 staged payload
 4. 외부 API mock 호출 0건, 운영 파일 변경 0건.
 5. 기존 state/history schema 및 archive markdown 호환성 확인.
 6. 재시작 복구가 idempotent임을 확인하고, 손상/불일치 시 fail-closed함을 확인한다.
-7. P1-B2 코드 구현은 별도 사용자 승인 이후에만 시작한다.
+7. 사용자 승인 후 구현을 완료했고, CI Run #23에서 63 passed / 1 xfailed로 검증했다.
 
 ## 8. 롤백과 운영 적용
 
@@ -147,4 +148,16 @@ staged 원본은 replace에 직접 소비하지 않는다. 매번 staged payload
 
 ## 9. 승인 경계
 
-이번 단계는 설계 문서 작성만 수행했다. `main.py`, tests, workflow, state/history/archive를 변경하지 않았다. 실제 P1-B2 구현은 별도 명시 승인 전까지 금지한다.
+사용자 승인에 따라 작업 브랜치에서 `main.py`, 신규 `persistence.py`, P1-B2 장애 주입 테스트, 테스트 전용 workflow SHA pin을 구현했다. CI Run #23에서 source SHA·compileall·전체 pytest(63 passed / 1 xfailed)를 검증했다. 운영 `main.py`, 운영 `run.yml`, 운영 state/history/archive는 변경하지 않았다. P1-B3/B4 및 운영 통합은 별도 승인 전까지 금지한다.
+
+
+## 10. 구현 결과 및 검증 — 2026-11-16
+- 구현 브랜치: `feature/p1-b2-atomic-persistence-2026-11-16`.
+- `persistence.py`: durable journal, staged payload, backup SHA, path/manifest validation, POSIX flock, fsync, idempotent roll-forward.
+- `main.py`: startup recovery → raw bytes snapshot read → report/Discord → archive/history/state transaction → existing Git sync attempt. P1-B1 Discord policy 자체는 변경하지 않았다.
+- 저장 직전 old SHA가 처음 읽은 snapshot과 다르면 fail-closed 한다. lock은 recovery/commit 동안만 유지해 외부 API 대기 중 점유하지 않는다.
+- CI Run #21은 테스트 파일 SHA pin 오류로 source integrity 단계에서 중단(테스트 미실행). Run #22에서 62 passed / 1 xfailed, directory fsync 및 중복 target 추가 후 Run #23에서 63 passed / 1 xfailed.
+- Run #23: https://github.com/useformotor3/ai-discord-bot/actions/runs/43848498440
+- 검증 commit: `045b8dbeb54d8d280ab91d6219d968bfdefed107`.
+- 제한: POSIX flock/fsync 지원 환경(현재 Ubuntu CI) 전제. Windows native lock backend 미구현. Discord POST와 local persistence는 원자적이지 않으며 exactly-once/outbox는 범위 밖.
+- 운영 main/data/workflow 미변경. main 대비 branch 172 ahead / 672 behind로 통합 보류.
