@@ -344,3 +344,12 @@ ST와 비교할 기능 범위와 제품군을 먼저 정의한다. 동급 기능
 - #8 and #9 queue records include pre-memos only. They are not VERIFIED and do not constitute full Pass A/B/C or product-specific applicability decisions. See [CRA_ARCHIVE_AUDIT_QUEUE.md](CRA_ARCHIVE_AUDIT_QUEUE.md).
 
 - European Commission C(2026) 5252 publication page (27 July 2026) confirms that the non-binding guidance addresses support periods, reporting obligations and risk assessment. The official Annex download could not be decoded in this run; no section-level Commission guidance claim is verified. See the #9 pre-memo in CRA_ARCHIVE_AUDIT_QUEUE.md.
+
+
+## 2026-11-16 — main report #10 legal/source pre-memo (not full audit)
+
+- [EUR-Lex Regulation (EU) 2024/2847](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R2847): Article 13(8) support-period rule and Article 13(9) update-availability retention are distinct; Annex I Part II(1) is SBOM, (2) remediation/separate security updates where technically feasible, (5) CVD policy, (6) vulnerability contact, (7) secure distribution, (8) no-delay/free updates subject to tailor-made business-user agreement; Annex VII point 2(b) includes CVD policy, vulnerability-reporting contact address and secure-update-distribution technical solution in technical documentation.
+- Article 14(1)–(8) mandatory reports concern actively exploited vulnerabilities and severe incidents, not every discovered vulnerability. Reports are submitted through the Article 16 SRP to the coordinator CSIRT and simultaneously accessible to ENISA; CSIRTs provide necessary information to market surveillance authorities.
+- [ENISA CRA SRP FAQ](https://www.enisa.europa.eu/topics/product-security/vulnerability-services/eu-incident-response-and-cyber-crisis-management/single-reporting-platform-srp/frequently-asked-questions), updated 15 October 2026, was opened for route/deadline details. The SRP page says version 1.3 upgrade on 4 November 2026 and supporting docs are being updated; verify the latest v1.3 instructions before operational use.
+- [European Commission C(2026) 5252 page](https://digital-strategy.ec.europa.eu/en/library/commission-publishes-new-guidance-support-timely-cyber-resilience-act-implementation), 27 July 2026, non-binding; Annex download failed Unicode decoding in this run, so no Annex paragraph-level verification.
+- Report #10 remains NEW / NOT_YET_AUDITED and UNVERIFIED at file level; see CRA_ARCHIVE_AUDIT_QUEUE.md. These are source pre-memos, not full Pass A/B/C.
