@@ -900,3 +900,15 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 - [ ] EUR-Lex 현행 통합본 및 C1/C2/C3 corrigenda를 본문 접근 가능 시 재확인하고 ENISA SRP 최신 공식 안내를 재개방.
 - [ ] P3 4건은 모델 오류/과부하 경고가 성공 아카이브로 기록되는지 운영 위험으로 점검; 보호 코드 변경은 별도 사용자 승인 전 금지.
 - [ ] 제품 SKU, intended purpose/core functionality, 네트워크/업데이트 경로, ST MCU 주문 코드 확보 후 제품별 적용성 판단.
+
+
+## 2026-11-16 — main CRA archive #8/#9 대기열 정합화
+
+- [x] main #7→#9 commit delta 확인: report #8/#9 archive 2개, history.json/state.json 변경.
+- [x] 기존 recovery artifact의 #8을 canonical `CRA_ARCHIVE_AUDIT_QUEUE.md`에 재통합하고 #9를 신규 등록. 중복 등록 없음.
+- [x] EUR-Lex Article 13(1)–(9), Annex I Part I(1)–(2), Part II(2),(7),(8)의 정확한 구조·예외·주변 문맥 사전 확인.
+- [ ] P0 #9 전체 Pass A claim extraction → Pass B exact EUR-Lex reopening → Pass C countercheck 수행. 특히 Article 11/13 혼동, Article 13(8) 5년 예외, Article 13(9) 업데이트 가용성, Annex I Part II(8) tailor-made/business-user 예외를 확인.
+- [ ] P1 #8 전체 Pass A/B/C 수행. secure-by-default 결과 요구와 강제 비밀번호 변경/MFA/일괄 포트 차단 등 구체 설계 선택을 분리.
+- [ ] 두 보고서의 Raw Text Quote, atomic claim, file verdict, product applicability를 별도 판정. 모든 미실행 시험은 NOT_RUN 유지.
+- [ ] 제품 SKU, core functionality, EU market form, 네트워크·업데이트 경로, ST MCU 주문 코드가 확보되면 제품 적용성 및 제조사 기능을 별도 재검증.
+- 보호 코드·Gemini prompt·운영 workflow 변경은 별도 승인 전 금지. main read-only, merge/rebase/sync 금지.
