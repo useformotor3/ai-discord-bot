@@ -7,7 +7,7 @@
 - 감사 시각: 2026-11-16 (KST)
 - 저장소: `useformotor3/ai-discord-bot`
 - 작업 브랜치 HEAD: `c43abc3315d8d7c8a3d5f4fc209465428a7e8aff`
-- 운영 main HEAD: `c43abc3315d8d7c8a3d5f4fc209465428a7e8aff`
+- 운영 main HEAD: `31e0f8137630630ee30ea55add039b571f2c6801`
 - 공통 조상(merge-base): `f9a12a5778f5fa1d907201ab2931d20ca2656bb7`
 - 작업 브랜치 기준 문서 base: `c6dfc5cee2485922b2313030dd9a5843e347afe7`
 
@@ -33,7 +33,7 @@ GitHub compare 응답의 변경 파일 목록은 300개에서 잘렸으므로 �
 - 삭제: 0개
 - 변경: 3개 경로
 
-추가 657개는 모두 `research_archive/` 아래 새 자동 생성 보고서다. 변경 파일은 `history.json`, `state.json` 2개다.
+추가 658개는 모두 `research_archive/` 아래 새 자동 생성 보고서다. 변경 파일은 `history.json`, `state.json` 2개다.
 
 1. `history.json` — 자동화 실행 이력 변경
 2. `state.json` — 운영 상태 변경
@@ -80,7 +80,7 @@ main의 운영 코드는 merge-base 이후 변경되지 않았다. P0/P1-A/P1-B1
 | 위험 | 등급 | 근거 / 통제 |
 |---|---|---|
 | 운영 상태 데이터 유실 | 매우 높음 | `state.json`이 main에서 갱신됨. main 원본 보존 |
-| 실행 이력 유실·중복 | 매우 높음 | `history.json` 1,592 → 2,249 항목 |
+| 실행 이력 유실·중복 | 매우 높음 | `history.json` 1,592 → 2,250 항목 |
 | 자동 생성 보고서 누락 | 높음 | main에 고유 archive 657개 |
 | 코드 회귀 | 높음 | main.py SHA가 작업 브랜치와 다름 |
 | 운영 자동화 영향 | 높음 | main workflow는 write 권한과 외부 secrets를 사용 |
@@ -111,3 +111,8 @@ main의 운영 코드는 merge-base 이후 변경되지 않았다. P0/P1-A/P1-B1
 - 최초 tree 비교 직후 main에서 Auto-archive #111 커밋이 추가되어 main HEAD가 `c6262ddb96d608216e16b0860d2d02b6aedde940`에서 `31e0f8137630630ee30ea55add039b571f2c6801`로 이동했다.
 - 최신 ref 재조회 및 recursive tree 재비교 결과를 본문 수치에 반영했다. 최신 main은 658개 archive 추가, history 2,250개, state count 111이다.
 - 최초 로그 이벤트의 main_head 필드 오기(작업 브랜치 SHA 기록)는 실제 최초 main SHA로 정정 이벤트를 추가했다.
+
+
+## 문서 커밋 이후 브랜치 포인터 해석
+- 위 153 ahead / 658 behind는 감사 스냅샷 작업 브랜치 HEAD `c43abc3315d8d7c8a3d5f4fc209465428a7e8aff` 기준이다.
+- 감사 결과를 기록·정정하는 후속 문서 커밋은 작업 브랜치만 전진시키며 운영 main에는 영향을 주지 않는다. 따라서 이후 ahead 수는 문서 커밋 수만큼 증가한다. 이 문서의 운영 main 기준 tree/데이터 수치는 main HEAD `31e0f8137630630ee30ea55add039b571f2c6801` 스냅샷이다.

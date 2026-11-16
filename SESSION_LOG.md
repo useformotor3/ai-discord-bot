@@ -547,3 +547,9 @@
 - recursive tree 재검증: main 2,258 entries, base 1,600; archive 658개 추가, 삭제 0, history/state 2개 파일 변경. main history 2,250개, state count 111.
 - 기존 이벤트의 main_head 필드 오기를 최초 조회 시점의 main SHA로 정정하고 최신 스냅샷 이벤트를 추가한다.
 - 운영 파일 변경 및 merge/rebase/PR merge 없음.
+
+
+## 2026-11-16 — 통합 감사 보고서 메타데이터 정정
+- 감사 보고서의 main HEAD를 실제 main ref `31e0f8137630630ee30ea55add039b571f2c6801`로 정정했다.
+- 최신 main tree 기준 archive 추가 수 658개, history 항목 수 2,250개로 정합화했다.
+- 보고서의 153 ahead / 658 behind는 감사 당시 작업 브랜치 HEAD c43abc3... 기준 스냅샷이며, 후속 문서 커밋은 작업 브랜치 ahead만 증가시킨다.
