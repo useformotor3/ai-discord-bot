@@ -845,3 +845,16 @@
 - CRA가 특정 hardware/firmware/CE 구현을 직접 의무화한다고 단정한 문장을 법적 요구와 엔지니어링 권고로 분리.
 - 원본 archive는 보존하고 정정 문서를 별도 작성.
 - 상세: `reports/CRA_CORRECTION_REPORT_4_2026-11-17.md`.
+
+
+## 2026-11-17 — CRA 보고서 #3 근거 더블체크 및 정정
+- EUR-Lex 공식 원문 Article 13(8)/(9), Annex I Part I (2)(c), Part II (2)/(4)/(7)/(8) 대조.
+- Article 13(8)은 support period(최소 5년 원칙, 제품 예상 사용 기간이 더 짧으면 그 기간)이며, 원본이 인용한 보안 업데이트 무상/분리 문구가 아님.
+- 분리 제공: Annex I Part II (2), 단 “where technically feasible” 조건.
+- 무상 제공: Annex I Part II (8), 단 맞춤형 제품에 대해 제조사와 business user가 달리 합의한 경우 예외.
+- 업데이트 장기 이용 가능성: Article 13(9), 발행 후 최소 10년 또는 support period 잔여기간 중 더 긴 기간.
+- 취약점 공개: Annex I Part II (4). CVE ID/CSAF는 법령이 지정한 형식이 아니라 운영 권고.
+- 자동 rollback/Safe State/독립적 패치 선택은 법적 문언과 구분해 엔지니어링 권고로 분류.
+- IEC 62443-4-1 Practice 7 연결은 주제상 타당하나, 공개 자료만으로 상세 조항 적합성을 선언하지 않음.
+- 원본 archive는 보존하고 정정 문서를 별도 작성.
+- 상세: `reports/CRA_CORRECTION_REPORT_3_2026-11-17.md`.
