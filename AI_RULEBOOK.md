@@ -146,7 +146,7 @@
 - archive/state/history의 atomicity는 파일별 os.replace만으로 다중 파일 transaction이 되지 않는다. durable journal, staged payload, old/new SHA 검증, idempotent recovery를 함께 설계한다.
 - 손상된 journal/stage 또는 예상하지 못한 target SHA를 발견하면 자동 초기화·덮어쓰기하지 말고 fail-closed 한다.
 - P1-B2는 로컬 저장 일관성만 다룬다. Discord exactly-once/outbox와 Git sync status를 보장하지 않는다.
-- 설계 완료는 구현 승인이 아니다. 사용자 별도 승인 전 main.py/tests/workflow/운영 데이터 변경 금지.
+- 이 문장은 P1-B2 설계 승인 이전의 경계 기록이다. 2026-11-16 사용자 승인 후 작업 브랜치 구현과 테스트 CI 검증을 완료했다. 운영 main/data/run.yml 변경과 PR merge/운영 배포는 여전히 별도 승인 대상.
 
 
 ## 16. P1-B2 durable persistence 구현 기준 — 2026-11-16
@@ -157,7 +157,7 @@
 - journal/stage/backup 손상, 잘못된 경로, target SHA mismatch, lock 획득 실패는 fail-closed 한다. 자동 초기화·임의 복구·덮어쓰기를 금지한다.
 - POSIX `fcntl.flock` 및 directory fsync 지원 환경을 전제로 한다. Windows 지원을 주장하지 않는다.
 - lock은 recovery/commit 구간에 한정한다. 외부 API 호출 구간까지 잠그지 않으므로 Discord exactly-once 또는 중복 전송 방지는 제공하지 않는다.
-- P1-B2 CI Run #23: source SHA 일치, compileall 통과, 63 passed / 1 xfailed. xfail은 P1-B3 범위다.
+- P1-B2 최신 보강 CI Actions 43851438733: source SHA 일치, compileall 통과, 70 passed / 1 xfailed. xfail은 P1-B3 범위다.
 
 
 ## 17. P1-B2 persistence target 제한 및 통합 기준 — 2026-11-16
