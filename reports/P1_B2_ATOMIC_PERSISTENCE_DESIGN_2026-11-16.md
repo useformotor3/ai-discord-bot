@@ -161,3 +161,11 @@ staged 원본은 replace에 직접 소비하지 않는다. 매번 staged payload
 - 검증 commit: `045b8dbeb54d8d280ab91d6219d968bfdefed107`.
 - 제한: POSIX flock/fsync 지원 환경(현재 Ubuntu CI) 전제. Windows native lock backend 미구현. Discord POST와 local persistence는 원자적이지 않으며 exactly-once/outbox는 범위 밖.
 - 운영 main/data/workflow 미변경. main 대비 branch 172 ahead / 672 behind로 통합 보류.
+
+
+## 11. 통합 전 코드 리뷰 보강 — recovery target allowlist
+- 후속 검토에서 이전 `_safe_target()`이 repository root 내부의 임의 경로를 허용하는 점을 확인했다. 유효한 형식의 journal/manifest가 변조되면 코드·문서·workflow 경로도 target이 될 수 있었다.
+- `state.json`, `history.json`, `research_archive/*.md`만 허용하도록 제한했고, 허용 범위 밖 경로를 지정한 recovery manifest가 fail-closed 하는 테스트를 추가했다.
+- PR CI 및 main push 시에도 테스트 전용 workflow가 실행되도록 trigger를 보강했다.
+- Actions 43851438733: source SHA 일치, compileall 통과, 70 passed / 1 xfailed.
+- 운영 main 및 운영 workflow/data는 변경하지 않았다.
