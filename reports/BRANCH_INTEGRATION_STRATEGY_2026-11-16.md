@@ -11,7 +11,7 @@ P0/P1 신뢰성 개선이 포함된 작업 브랜치를 운영 `main`에 통합�
 - 저장소: `useformotor3/ai-discord-bot`
 - 운영 브랜치: `main`
 - 작업 브랜치: `feature/p1-b2-atomic-persistence-2026-11-16`
-- 운영 main HEAD: `3ebf6b977b0127291957ffb415dbdbc83b5b6d97` — Auto-archive: Research report #129
+- 운영 main HEAD: `3ebf6b977b0127291957ffb415dbdbc83b5b6d97` — Auto-archive: Research report #130
 - 작업 브랜치 HEAD: `0fe9912b5dbba29eeb3ebd9e9f2c16a42544f925`
 - merge-base: `f9a12a5778f5fa1d907201ab2931d20ca2656bb7`
 - compare: 204 ahead / 677 behind, diverged
@@ -86,7 +86,7 @@ P0/P1 신뢰성 개선이 포함된 작업 브랜치를 운영 `main`에 통합�
 **권장: 작업 브랜치 → main 대상 Pull Request → merge commit 방식.**
 
 1. PR 생성 직전 main HEAD와 작업 브랜치 HEAD를 다시 조회한다. main 자동 아카이브가 계속되므로 이 보고서의 count를 영구 최신값으로 간주하지 않는다.
-2. PR의 Files changed에서 변경 경로가 예상 범위인지 확인한다. 특히 `state.json`, `history.json`, `research_archive/`, 운영 `.github/workflows/run.yml`의 삭제/변경이 없어야 한다.
+2. PR의 Files changed에서 변경 경로가 예상 범위인지 확인한다. 현재 compare snapshot은 24개 변경 경로(23개 추가 + main.py 수정)를 예상한다. 특히 `state.json`, `history.json`, `research_archive/`, 운영 `.github/workflows/run.yml`의 삭제/변경이 없어야 한다.
 3. PR CI에서 source SHA, compileall, 전체 pytest가 실행되고 통과하는지 확인한다.
 4. main의 자동 생성 archive/state/history가 PR diff에서 삭제 또는 덮어쓰기 대상으로 나타나지 않는지 다시 확인한다.
 5. merge-base 및 PR conflict check를 확인한 뒤, 별도 승인 후 merge commit으로 통합한다.
