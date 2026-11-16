@@ -576,3 +576,14 @@
 - 첫 CI Run 43959203356: compileall 통과, pytest 96 passed / 1 failed / 1 xfailed. 실패는 보호된 오래된 ref 테스트의 기대값 오류이며 수정 후 재검증한다.
 - 아직 실제 checkpoint pruning은 실행되지 않았다. CI 통과 후 다음 정상 운영 실행에서만 실행되도록 구성했다.
 - 이후 main 변경은 활성 production run 종료 확인 후 수행한다. #2412 Discord 전송은 회수할 수 없으므로 후속 보고서 count 중복 가능성을 추적한다.
+
+
+## 2026-11-17 최신 운영 점검
+- 최신 main 확인 시점 SHA: 514eebd9a7e96cafa16fe59107b1b840d51667f1 이후 자동 아카이브 커밋 1건 추가.
+- 운영 run #2431(43974577082): success, guard 성공, checkpoint pruning 성공.
+- pre-run checkpoint refs: 30개 유지, 현재 실행 baseline 포함.
+- 데이터: state count=253(당시 일일 카운트), history=2,392, archive=2,392, 참조 누락 0.
+- 발견: GitHub runner UTC 기준으로 TODAY/NOW 생성. KST 날짜 경계가 9시간 어긋날 수 있음. main.py를 Asia/Seoul 기준으로 수정.
+- Gemini model catalog 확인: gemini-3.8-flash 및 gemini-3.5-flash-lite 사용. 404/NOT_FOUND 즉시 fallback.
+- Git add/commit/push 오류는 warning 후 계속하지 않고 main.py exit 1로 처리. 강제 push/rebase 금지.
+- 변경 후 CI 대기/검증 예정. 실제 Gemini/Discord 운영 호출은 수행하지 않음.

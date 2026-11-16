@@ -1,6 +1,9 @@
 """P1-A: 상태·이력 파일의 손상 및 날짜 호환성 검증."""
 import json
 from datetime import datetime
+from zoneinfo import ZoneInfo
+
+SEOUL = ZoneInfo("Asia/Seoul")
 
 import pytest
 
@@ -54,7 +57,7 @@ def test_invalid_state_schema_is_preserved_and_rejected(run_main, payload):
 def test_invalid_last_health_check_is_preserved_and_rejected(run_main):
     path = run_main.workdir / "state.json"
     payload = {
-        "date": datetime.now().strftime("%Y-%m-%d"),
+        "date": datetime.now(SEOUL).strftime("%Y-%m-%d"),
         "count": 29,
         "last_health_check": "not-an-iso-datetime",
     }
@@ -89,7 +92,7 @@ def test_invalid_history_structure_is_preserved_and_rejected(run_main, payload):
 
 def test_timezone_aware_health_check_is_compatible_with_local_naive_clock(run_main):
     state = {
-        "date": datetime.now().strftime("%Y-%m-%d"),
+        "date": datetime.now(SEOUL).strftime("%Y-%m-%d"),
         "count": 4,
         "last_health_check": datetime.now().astimezone().isoformat(),
     }
@@ -107,9 +110,9 @@ def test_timezone_aware_health_check_is_compatible_with_local_naive_clock(run_ma
 
 def test_legacy_naive_datetime_and_missing_history_remain_compatible(run_main):
     state = {
-        "date": datetime.now().strftime("%Y-%m-%d"),
+        "date": datetime.now(SEOUL).strftime("%Y-%m-%d"),
         "count": 8,
-        "last_health_check": datetime.now().isoformat(),
+        "last_health_check": datetime.now(SEOUL).isoformat(),
     }
     (run_main.workdir / "state.json").write_text(
         json.dumps(state), encoding="utf-8"

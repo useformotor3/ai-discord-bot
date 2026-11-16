@@ -246,3 +246,11 @@
 - 실행 중 main이 이동하면 run의 Git push가 non-fast-forward가 될 수 있다. 운영 데이터 커밋을 강제 push하거나 무조건 자동 복구하지 않는다.
 - checkpoint cleanup은 post-run guard가 성공한 경우에만 수행한다. 실패·복구 상황의 baseline ref는 정리하지 않는다.
 - Discord 전송 후 Git 저장이 실패하면 외부 전송은 되돌릴 수 없다. 동일 count/내용을 재전송하기 전에 기존 Discord 전달 결과를 확인하고 중복 위험을 기록한다.
+
+
+## 2026-11-17 운영 시간·외부 API·저장 실패 원칙
+- 일일 CRA count 및 archive timestamp의 기준 시간대는 Asia/Seoul로 고정한다. 실행 runner의 OS 기본 시간대에 의존하지 않는다.
+- legacy naive health-check timestamp는 이전 GitHub-hosted runner가 기록한 UTC로 해석한다. 신규 timestamp는 timezone-aware ISO 형식으로 기록한다.
+- Gemini 모델 ID는 공식 Google AI for Developers 모델 카탈로그에서 확인한다. 404/NOT_FOUND는 동일 모델을 재시도하지 않고 다음 허용 모델로 전환한다. 429/5xx 등 일시 오류는 제한된 재시도 정책을 사용한다.
+- Git add/commit/push 실패는 경고만 남기고 성공 종료하지 않는다. 강제 push, force update, 자동 rebase로 운영 main을 덮어쓰지 않는다.
+- Discord 전송 후 Git 저장이 실패할 수 있다. 이 경우 Discord 전달을 취소할 수 없으므로 archive 누락과 중복 전송 위험을 명시적으로 추적한다.

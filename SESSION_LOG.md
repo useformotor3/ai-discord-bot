@@ -807,3 +807,14 @@
 - CI #43959203356: 96 passed, 1 failed, 1 xfailed. 보호된 오래된 ref를 추가 보존하는 테스트의 기대값 오류로 판명, 수정 후 재검증 예정.
 - Gemini gemini-flash-latest 404 3회 후 fallback 경로로 진행. 모델 사용 가능성 별도 확인 필요.
 - 상세: reports/GITHUB_AUTOMATION_INCIDENT_2026-11-17.md.
+
+
+## 2026-11-17 — KST·Gemini fallback·Git push fail-closed 개선
+- 최신 운영 #2431 success. guard/pruning 모두 통과. checkpoint ref 수 30개, 최신 baseline 포함.
+- state date가 runner UTC 날짜(2026-11-16)로 기록되는 문제 발견. KST는 2026-11-17이므로 daily count 경계가 9시간 늦게 바뀌는 결함으로 판정.
+- main.py: Asia/Seoul aware datetime 사용, legacy naive UTC timestamp는 UTC로 간주해 KST로 변환.
+- Gemini API 공식 모델 자료에서 gemini-3.8-flash, gemini-3.5-flash-lite 확인. 모델 404/NOT_FOUND는 즉시 fallback, 일시 오류 재시도는 유지.
+- Git 저장 오류를 warning-only에서 SystemExit(1)로 변경해 저장 실패를 성공처럼 취급하지 않도록 함. 원격 덮어쓰기/강제 push 없음.
+- 회귀 테스트: KST 기준 날짜, timezone-aware 및 legacy naive timestamp, 모델 404 fallback, Git push 실패 fail-closed.
+- 상세: reports/OPS_TIMEZONE_MODEL_GIT_FAILURE_FIX_2026-11-17.md.
+- CI 통과 전까지 변경 완료 선언 금지.

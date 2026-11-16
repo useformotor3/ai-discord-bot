@@ -1,6 +1,9 @@
 """Phase B: 유효한 보고서만 후속 처리되는지 검증한다."""
 import json
 from datetime import datetime
+from zoneinfo import ZoneInfo
+
+SEOUL = ZoneInfo("Asia/Seoul")
 
 import pytest
 
@@ -109,9 +112,9 @@ def test_error_text_inside_an_otherwise_structured_report_is_rejected(run_main):
 
 def test_all_model_failures_preserve_existing_state_and_history(run_main):
     state = {
-        "date": datetime.now().strftime("%Y-%m-%d"),
+        "date": datetime.now(SEOUL).strftime("%Y-%m-%d"),
         "count": 17,
-        "last_health_check": datetime.now().isoformat(),
+        "last_health_check": datetime.now(SEOUL).isoformat(),
     }
     history = [{"date": state["date"], "count": 17, "snippet": "기존 기록"}]
     state_path = run_main.workdir / "state.json"

@@ -306,3 +306,9 @@ Actions 성공은 자동화 실행 결과이지 CRA 법령 해석이나 출처�
 - 첫 CI Run 43959203356: compileall 통과, pytest 96 passed / 1 failed / 1 xfailed. 실패는 보호된 오래된 ref 테스트의 기대값 오류이며 수정 후 재검증한다.
 - 아직 실제 checkpoint pruning은 실행되지 않았다. CI 통과 후 다음 정상 운영 실행에서만 실행되도록 구성했다.
 - 이후 main 변경은 활성 production run 종료 확인 후 수행한다. #2412 Discord 전송은 회수할 수 없으므로 후속 보고서 count 중복 가능성을 추적한다.
+
+
+## 2026-11-17 운영 안정화 업데이트
+- 체크포인트 보존 정책은 운영 run #2431에서 실제 정리 성공을 확인했다. 사전 실행 백업 브랜치는 30개 유지.
+- 추가 개선: KST 기준 일일 카운트, Gemini 모델 404 즉시 fallback, Git push 실패 fail-closed.
+- 상세 설계·근거·검증 한계: reports/OPS_TIMEZONE_MODEL_GIT_FAILURE_FIX_2026-11-17.md.

@@ -1,4 +1,5 @@
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
+from zoneinfo import ZoneInfo
 import json
 import os
 import subprocess
@@ -16,8 +17,9 @@ from persistence import (
 # 0. 파일 경로 설정
 STATE_FILE = "state.json"
 HISTORY_FILE = "history.json"
-TODAY = datetime.now().strftime("%Y-%m-%d")
-NOW = datetime.now()
+SEOUL = ZoneInfo("Asia/Seoul")
+NOW = datetime.now(SEOUL)
+TODAY = NOW.strftime("%Y-%m-%d")
 _UNSET = object()
 
 def load_state(path, today, raw_bytes=_UNSET):
@@ -130,9 +132,11 @@ def parse_health_check(value):
   if not value:
     return None
   parsed = datetime.fromisoformat(value)
-  if parsed.tzinfo is not None:
-    return parsed.astimezone().replace(tzinfo=None)
-  return parsed
+  # Legacy timestamps were naive UTC values written by GitHub-hosted runners.
+  # New values are timezone-aware Asia/Seoul timestamps.
+  if parsed.tzinfo is None:
+    parsed = parsed.replace(tzinfo=timezone.utc)
+  return parsed.astimezone(SEOUL)
 
 
 # 1. 미완료 로컬 트랜잭션을 먼저 복구하고, 읽은 원본 bytes를 저장 시점까지 추적한다.
@@ -236,7 +240,7 @@ def validate_research_report(text):
 
 
 # 4. 모델 폴백 & 재시도 픽서 로직 (Latest ➔ Lite)
-models_to_try = ["gemini-flash-latest", "gemini-3.5-flash-lite"]
+models_to_try = ["gemini-3.8-flash", "gemini-3.5-flash-lite"]
 ai_message = ""
 success = False
 
@@ -263,6 +267,14 @@ for model_name in models_to_try:
       if attempt < max_retries:
         time.sleep(retry_delay)
     except Exception as e:
+      status_code = getattr(e, "status_code", None)
+      if status_code is None:
+        status_code = getattr(e, "code", None)
+      if status_code is None:
+        status_code = getattr(getattr(e, "response", None), "status_code", None)
+      if status_code == 404 or str(status_code).upper() in ("404", "NOT_FOUND"):
+        print(f"모델 {model_name}을 사용할 수 없습니다(404). 재시도 없이 다음 모델로 전환합니다.")
+        break
       print(f"모델 {model_name} 시도 {attempt} 실패: {str(e)}")
       if attempt < max_retries:
         time.sleep(retry_delay)
@@ -471,4 +483,5 @@ try:
   subprocess.run(["git", "push"], check=True)
   print("🚀 깃허브 백서버에 아카이브가 성공적으로 동기화되었습니다.")
 except Exception as e:
-  print(f"⚠️ Git Push 생략 또는 변경사항 없음: {str(e)}")
+  print(f"❌ GitHub 운영 데이터 저장 실패: {str(e)}. 원격 저장 성공으로 처리하지 않고 실행을 실패시킵니다.")
+  raise SystemExit(1) from e
