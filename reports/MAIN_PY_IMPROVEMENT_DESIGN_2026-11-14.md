@@ -471,7 +471,7 @@ history.json의 기존 필드는 하위 호환을 유지한다. 새 필드를 �
 **결론:** 먼저 Discord POST의 중복 가능성을 해결하는 상태 모델과 저장 일관성을 확정한다. 그 후 최소 구현 범위를 사용자에게 제안하고 별도 승인을 받는다. 이 문서 작성만으로 운영 코드나 workflow를 변경하지 않는다.
 
 
-## 18. P1-B 단계별 구현 제안 — 사용자 승인 대기
+## 18. P1-B 단계별 구현 제안 — P1-B1 승인 및 구현
 
 ### 우선순위
 P1-B를 한 번에 전면 수정하지 않고 아래 단계로 분리한다.
@@ -507,4 +507,28 @@ P1-B를 한 번에 전면 수정하지 않고 아래 단계로 분리한다.
 - 롤백은 작업 브랜치의 revert commit으로 수행한다. force push/history rewrite 금지.
 
 ### 승인 경계
-P1-B1은 `main.py`를 수정하는 운영 코드 변경이므로 이 제안서 작성만으로 실행하지 않는다. P1-B1의 위 파일·동작 범위만 별도 승인받은 후 구현한다. P1-B2~B4, 운영 `main`, `.github/workflows/run.yml`, `state.json`, `history.json`, 운영 secrets 및 실제 외부 서비스 호출은 이번 승인 요청에 포함하지 않는다.
+P1-B1은 2026-11-16 사용자 승인 후 구현했다. 승인 범위는 위의 P1-B1 파일·동작에 한정된다. P1-B2~B4, 운영 `main`, `.github/workflows/run.yml`, `state.json`, `history.json`, 운영 secrets 및 실제 외부 서비스 호출은 승인 범위 밖이다.
+
+
+## 19. P1-B1 구현 및 검증 결과 — 2026-11-16
+
+### 변경 파일 및 기능
+- main.py: Discord 전송 함수에 connect/read timeout (3.05, 10), wait=true, HTTP 응답 분류 및 message ID 확인을 구현했다.
+- 429: Retry-After 헤더 또는 JSON retry_after 사용, 최대 2회 재시도, 대기값 30초 초과 시 deferred.
+- ConnectTimeout: 최대 2회 재시도. ReadTimeout/일반 ConnectionError/5xx: delivery_unknown으로 처리하며 자동 재전송하지 않는다.
+- 400/401/403/404: permanent_failure, 재시도하지 않는다.
+- chunk별 message ID를 기록하고 후속 chunk 실패 시 partial 반환.
+- Discord 실패가 기존 archive/state/history 저장 흐름을 중단시키지 않도록 했다.
+
+### CI 증거
+- [Run #18 — success](https://github.com/useformotor3/ai-discord-bot/actions/runs/43808285335), tested commit dc341d9e89a837df878257fd3740633f8688507f.
+- 6개 핵심 blob SHA 일치, compileall 통과, pytest 43 passed / 1 xfailed in 0.34s.
+- Run #17은 main.py SHA pin 불일치로 source integrity 단계에서 실패했다. 실제 main.py blob 4b631c04e34b2b3bbade0aa9301e7d48578a1e03로 pin을 정정한 Run #18에서 통과했다.
+
+### 제한 및 미완료
+- Discord 결과는 현재 실행 메모리의 discord_result와 로그에만 남는다. 영속 outbox/status는 P1-B2/B3 범위 밖이다.
+- state/history 원자적 저장 및 transaction 복구는 구현하지 않았다.
+- Git sync 실패 상태화는 P1-B3 범위로 남겨 strict xfail 1건을 유지한다.
+- Retry-After 숫자 초 단위만 처리하며 HTTP-date 형식은 지원하지 않는다.
+- 30초 대기 예산은 현재 각 429 응답 기준이다. 누적 대기 예산은 별도 개선 항목이다.
+- 실제 Discord/Gemini 및 운영 workflow는 실행하지 않았다.

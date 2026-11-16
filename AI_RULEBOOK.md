@@ -122,3 +122,14 @@
 - chunk 전송은 파트별 확인 상태를 유지하고 일부 성공을 전체 성공으로 표시하지 않는다.
 - 파일별 atomic replace가 여러 파일을 하나의 transaction으로 만드는 것은 아니다. state/history 복구 journal 또는 동등한 일관성 설계를 검증한다.
 - 이 규칙은 설계 기준이며 P1-B 운영 코드 구현은 별도 사용자 승인 전 금지한다.
+
+
+## 15. P1-B1 Discord webhook 전송 구현 원칙
+- webhook POST는 connect/read timeout과 wait=true를 사용한다.
+- 2xx 응답이라도 message ID 확인 전에는 성공으로 기록하지 않는다.
+- ConnectTimeout만 제한 재시도하고 ReadTimeout/일반 ConnectionError/5xx는 delivery_unknown으로 분류해 중복 전송을 피한다.
+- 429는 Retry-After/retry_after를 따르며 재시도 횟수와 대기 예산을 제한한다.
+- 400/401/403/404는 영구 실패로 분류하고 재시도하지 않는다.
+- chunk별 성공 ID를 보존하고 일부 성공 후 실패는 partial로 표시한다.
+- 전송 상태의 영속화는 P1-B2/B3에서 별도 설계·승인한다.
+- 이번 사용자 승인은 P1-B1에만 적용된다. P1-B2~B4 및 운영 workflow는 승인된 것으로 간주하지 않는다.
