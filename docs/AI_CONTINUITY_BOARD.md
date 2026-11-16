@@ -520,3 +520,14 @@
 - EUR-Lex direct text checked: Article 13(1)–(9), Annex I Part I(1)–(2), Part II(2),(7),(8). #9 has strong Article 11/13, synthetic quote, 5-year exception and Part I/II locator conflict candidates. #8 has overstatement candidates for mandatory first-use password change/MFA/blanket interface disablement.
 - Work branch at start of this run: `0bea166f73c32f888b6b5323326c9a6db6927078`; compare snapshot before updates: diverged, work ahead 1,139 / behind 1,164. Re-fetch live refs for final current HEAD. No merge/rebase/sync.
 - main.py, Gemini prompt, production automation, `.github/workflows/run.yml`, main branch unchanged. Tests/CI not run. Next: full Pass A/B/C for #9 P0, then #8 P1; no product applicability inference without SKU/core-function evidence.
+
+
+## 2026-11-16 live archive recheck — main report #10
+
+- main HEAD: `8c8faa1dd68273b2c7bdc47ff3589fa14b6994e7` (Auto-archive #10, commit UTC 00:45:50Z).
+- Baseline #9: `5f5d83f584639eb712d23d48444f8eee8618b24d`. Delta #10 = 1 commit, one archive file + history.json + state.json.
+- history.json 2,149 entries; state.json 2026-11-16/count 10 (daily counter). last_health_check remains 2026-11-15T21:20:38.480365.
+- #10 P0 registered as NEW / NOT_YET_AUDITED; file UNVERIFIED; quote/claim NOT_YET_AUDITED; product applicability UNVERIFIED.
+- EUR-Lex confirms CVD policy Part II(5) and Annex VII point 2(b) technical-documentation entry; Part II(1) is SBOM, not update quote. Article 14 mandatory reporting covers AEV and severe incidents, not every vulnerability. ENISA SRP FAQ (updated 2026-10-15) confirms SRP route/deadlines; SRP page notes v1.3 upgrade on 2026-11-04 and documentation refresh in progress. Commission guidance page opened; official Annex download failed decoding.
+- Previous work-branch HEAD before #10 queue/doc update: `894988497e18c52d5c6bb783df25a72cb04ddd28`. Re-fetch current refs for final head/divergence. No merge/rebase/sync.
+- Next: full Pass A/B/C of #10, especially exact quote rejection/repair, CVD/Annex VII support, Article 14 scope and routing, hot-patching not a universal named mandate.
