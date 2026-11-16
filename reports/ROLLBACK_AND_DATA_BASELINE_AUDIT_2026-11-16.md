@@ -69,3 +69,10 @@
 - feature head abee2a88f7e0bbfad0ad483c6b50cea63e26b871에 대한 PR CI Run #43875746973 성공(87 passed, 1 xfailed).
 - guard는 missing state, symlink data path, empty archive를 감지해 안전한 조건에서만 restore commit을 생성하도록 보강됐다.
 - production workflow 실제 실행은 아직 하지 않았다.
+
+## 10. PR #1 merge 및 post-merge 검증 결과
+- PR #1 merge commit 6fd03efaf8623cb3ec2ab938aa7161b41ffed82e; parent main #162 및 feature head가 보존된 merge commit 방식이다.
+- post-merge safety branch safety/post-merge-main-6fd03ef readback SHA exact match.
+- push CI Run #43876347620 성공(87 passed, 1 xfailed, compileall passed).
+- merge 직후 state count=162, history=2,301, archive=2,301, missing refs=0; state/history blob SHA는 pre-merge main #162와 동일했다.
+- production workflow는 repository_dispatch/workflow_dispatch만 트리거하므로 merge 자체로 실행되지 않았다. 실제 Gemini/Discord/운영 실행은 하지 않았다.

@@ -229,3 +229,12 @@
 - 최신 PR CI Run 43875746973: 87 passed, 1 xfailed, compileall 성공; base main SHA adf74eaa6bfb102b661ea9e3e6d9ee84eaa4f890, head abee2a88f7e0bbfad0ad483c6b50cea63e26b871.
 - main #162 backup safety/pre-merge-main-adf74ea -> adf74eaa6bfb102b661ea9e3e6d9ee84eaa4f890, readback exact.
 - main #162 same-SHA baseline: state count=162, history=2,301, archive=2,301, missing refs=0.
+ 
+
+## 22. PR #1 통합 후 운영 기준 — 2026-11-16
+- PR #1은 merge commit으로 통합했다. merge commit 6fd03efaf8623cb3ec2ab938aa7161b41ffed82e, 부모는 main baseline adf74eaa6bfb102b661ea9e3e6d9ee84eaa4f890 및 feature head d48ae1c9b655d7384aff497c9d17168a5d0b25c5.
+- merge 직전 main/feature 백업 ref 및 merge 직후 post-merge backup ref를 생성하고 readback SHA를 검증했다.
+- merge 직후 push-triggered CI Run 43876347620 성공: 87 passed, 1 xfailed, compileall 성공.
+- merge 직후 동일 SHA 데이터 검사: state count=162, history=2,301, archive=2,301, missing refs=0. state/history blob SHA는 pre-merge main #162와 동일.
+- production run.yml의 pre-run snapshot 및 post-run guard가 main에 반영됐다. workflow는 repository_dispatch/workflow_dispatch만 트리거하므로 merge 자체가 Gemini/Discord 운영 실행을 유발하지 않았다.
+- 실제 Gemini/Discord 운영 실행은 아직 하지 않았다. 첫 실행 전후 snapshot branch·데이터 무결성을 확인한다. Discord 메시지는 외부 전송 후 회수할 수 없다.

@@ -345,3 +345,9 @@
 - Tested normal one-report append, archive/history mismatch, deleted archive, invalid state count, date rollover, unsafe archive paths, local bare remote data restore, no-push fail-closed, quota no-op, missing state restore, symlink/empty archive detection.
 - main #162 baseline state=162, history=2,301, archive=2,301, missing refs=0. safety/pre-merge-main-adf74ea exact SHA.
 - First production execution is not yet performed; Gemini/Discord calls not made in CI.
+
+## 2026-11-16 — 통합 단계 완료 및 다음 운영 단계
+- Phase 2 신뢰성 개선 및 Phase 3 테스트 기반/운영 data guard를 main에 통합 완료.
+- PR #1 merge commit 방식, post-merge CI 통과.
+- 다음은 production workflow 첫 실행 관찰이다. 실행 전 snapshot branch 생성, 실행 후 operational_guard 결과, state/history/archive 무결성을 확인한다.
+- 실제 운영 실행 결과를 법적 CRA 근거 검증과 혼동하지 않는다.

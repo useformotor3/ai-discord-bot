@@ -779,3 +779,21 @@
 - PR #1 current code/test/workflow validation: Run #43875746973 success, 87 passed, 1 xfailed.
 - Code rollback and data-only rollback are separate; production workflow now creates pre-run snapshot branch and only auto-restores when remote main is exactly the run's single child commit.
 - actual production execution not yet performed.
+
+## 2026-11-16 — PR #1 merge 및 post-merge 검증
+### 통합
+- PR #1: https://github.com/useformotor3/ai-discord-bot/pull/1
+- merge commit: 6fd03efaf8623cb3ec2ab938aa7161b41ffed82e
+- parent 1 main #162: adf74eaa6bfb102b661ea9e3e6d9ee84eaa4f890
+- parent 2 feature: d48ae1c9b655d7384aff497c9d17168a5d0b25c5
+- post-merge backup: safety/post-merge-main-6fd03ef, readback exact SHA.
+
+### 검증
+- push CI Run #43876347620 success; 87 passed, 1 xfailed; source blob identity, compileall, full pytest all passed.
+- same merge commit tree: state count 162, history 2,301, archive 2,301, history reference missing 0.
+- state/history blob SHA match pre-merge main #162; operational data was not changed by PR merge.
+- production workflow trigger remains repository_dispatch/workflow_dispatch; merge push ran only isolated test workflow. No actual Gemini/Discord or production workflow invocation.
+
+### 다음
+- first production workflow run is not yet executed. Before it, ensure snapshot branch and concurrency are active; after it, verify the guard result and archive/history/state invariants.
+- Discord messages, once sent, cannot be recalled by Git rollback.

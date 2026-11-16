@@ -557,3 +557,11 @@
 - PR compare at snapshot 241 ahead / 709 behind, merge-base f9a12a5778f5fa1d907201ab2931d20ca2656bb7, 28 changed paths. No state.json/history.json/research_archive paths in PR diff.
 - PR mergeable clean at last refresh; Run #43875746973 on exact main #162 base passed 87 tests with 1 expected xfail.
 - Merge method: merge commit. Never squash/rebase/force-push. Keep safety refs and run first production execution only after merge verification.
+
+## 2026-11-16 — PR #1 merge 이후 상황
+- PR #1 merge commit 6fd03efaf8623cb3ec2ab938aa7161b41ffed82e; parent main #162 adf74eaa6bfb102b661ea9e3e6d9ee84eaa4f890; parent feature d48ae1c9b655d7384aff497c9d17168a5d0b25c5.
+- post-merge backup safety/post-merge-main-6fd03ef exact SHA readback.
+- push CI Run #43876347620 success (87 passed, 1 xfailed, compileall passed).
+- same commit data integrity: state=162, history=2,301, archive=2,301, missing refs=0; state/history blobs unchanged from pre-merge baseline.
+- PR #1 closed/merged. production run.yml changed, but merge push triggered only isolated test workflow. No real Gemini/Discord call or production run.
+- Next: observe first explicitly triggered production run and verify pre-run checkpoint plus post-run guard.

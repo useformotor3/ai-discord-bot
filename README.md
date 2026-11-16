@@ -286,3 +286,12 @@ Actions 성공은 자동화 실행 결과이지 CRA 법령 해석이나 출처�
 - main #162 immutable baseline: state count 162, history 2,301, archive 2,301, missing refs 0.
 - main backup safety/pre-merge-main-adf74ea readback SHA exact. Feature backup safety/pre-merge-feature-abee2a8 readback exact.
 - Production workflow has not yet been executed; first execution remains external-effect operation. The workflow now snapshots before run and verifies/restores data after run.
+
+## 2026-11-16 — PR #1 통합 완료
+- PR #1 merged: https://github.com/useformotor3/ai-discord-bot/pull/1
+- merge commit 6fd03efaf8623cb3ec2ab938aa7161b41ffed82e (main #162 + feature d48ae1c9b655d7384aff497c9d17168a5d0b25c5).
+- Post-merge safety branch safety/post-merge-main-6fd03ef, readback exact SHA.
+- Push CI Run #43876347620 success: 87 passed, 1 xfailed, compileall success.
+- Merge 직후 same-SHA data integrity: state count 162, history 2,301, archive 2,301, missing refs 0. state/history blob SHA는 pre-merge main #162와 동일.
+- Merge 자체로 production workflow는 실행되지 않음(현재 trigger repository_dispatch/workflow_dispatch). 실제 Gemini/Discord 호출 없음.
+- 다음: 첫 production run 전 snapshot branch 및 post-run guard 동작을 실제 workflow에서 관찰한다.
