@@ -46,7 +46,7 @@ def load_state(path, today, raw_bytes=_UNSET):
     try:
       data = json.loads(raw_bytes.decode("utf-8"))
     except (UnicodeError, json.JSONDecodeError) as exc:
-    raise SystemExit(
+      raise SystemExit(
         f"❌ [상태파일 오류] {path}를 읽을 수 없습니다. 원본을 보존하고 종료합니다."
     ) from exc
 
@@ -110,7 +110,7 @@ def load_history(path, raw_bytes=_UNSET):
     try:
       data = json.loads(raw_bytes.decode("utf-8"))
     except (UnicodeError, json.JSONDecodeError) as exc:
-    raise SystemExit(
+      raise SystemExit(
         f"❌ [이력파일 오류] {path}를 읽을 수 없습니다. 원본을 보존하고 종료합니다."
     ) from exc
 
