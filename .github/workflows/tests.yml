@@ -9,6 +9,7 @@ on:
     paths:
       - ".github/workflows/tests.yml"
       - "main.py"
+      - "persistence.py"
       - "tests/**"
   workflow_dispatch:
 
@@ -48,8 +49,8 @@ jobs:
             test "$actual" = "$expected"
           }
           verify_blob "main.py" "fa8679b758916ba8a446bae41b9ec1b40328da09"
-          verify_blob "persistence.py" "a8b63856957674e9eb16043b8a0b7bc4e2cf74ea"
-          verify_blob "tests/test_p1_b2_atomic_persistence.py" "1ce8aa9b421d3108ed23f5ceca5b32553ffdde8a"
+          verify_blob "persistence.py" "b23503c8863839656840b2ca064408ebd8a00e4a"
+          verify_blob "tests/test_p1_b2_atomic_persistence.py" "f7818dea5d07dbaf1e6b856d529a13b4d9fb96c7"
           verify_blob "tests/conftest.py" "f465fa04f5c30bfa621bc910b2177d678c89fb64"
           verify_blob "tests/test_main_characterization.py" "8019b18696bc9f1eb729feed633ecf2e32f36c04"
           verify_blob "tests/test_mock_infrastructure.py" "05a92ff7ff3a6e4a0374d270770ecc6cf38e0a7f"
