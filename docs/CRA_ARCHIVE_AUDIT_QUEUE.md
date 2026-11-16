@@ -6166,3 +6166,124 @@ Batch result: 5/5 CONFLICT, 0 PARTIALLY_VERIFIED, 0 VERIFIED; 0/5 Raw Text Quote
 - 우선순위/검증 쟁점: P0 — Article 13(8)–(9), Annex I Part II(5)–(8): support period 원칙 최소 5년(예상 사용 <5년이면 그 기간); 무료 업데이트 Part II(8) 및 tailor-made product/business user 합의 예외. Article 13(9) 업데이트 가용성과 구분.
 - 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 전체 Pass A/B/C 미완료.
 
+
+### 2026-11-15 #189 — P0 — 서보 드라이브 제조사는 제품의 예상 수명 주기(또는 최소 5년) 동안 발견된 보안 취약점에 대해 추가 비용(무상) 없이 시기적절한 보안 업데이트(패치)를 배포해야
+- 상태: NEW / NOT_YET_AUDITED | 확인일: 2026-11-16 | 생성: 15:40:38 (시간대 미표기)
+- 원문: [commit 5611e941d3814596ed2c14e741b6b5f76fc0ceaf](https://github.com/useformotor3/ai-discord-bot/commit/5611e941d3814596ed2c14e741b6b5f76fc0ceaf) | [research_archive/2026-11-15_154038.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-15_154038.md) | commit UTC: 2026-11-15T15:40:56.000Z
+- 원문 blob SHA: c8305f3987505ae13c1d38135f2d5ae6e610106d
+- 핵심 주장 주제(원문 요약 첫 부분): 서보 드라이브 제조사는 제품의 예상 수명 주기(또는 최소 5년) 동안 발견된 보안 취약점에 대해 추가 비용(무상) 없이 시기적절한 보안 업데이트(패치)를 배포해야 합니다. 이는 사용자(시스템integrator 및 최종 사용자)가 별도의 상용 라이선스나 서비스 계약 없이도 필수적인 보안 패치를 적용하여 산
+- 우선순위/검증 쟁점: P0 — Article 13(8)–(9), Annex I Part II(5)–(8): support period 원칙 최소 5년(예상 사용 <5년이면 그 기간); 무료 업데이트 Part II(8) 및 tailor-made product/business user 합의 예외. Article 13(9) 업데이트 가용성과 구분.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 전체 Pass A/B/C 미완료.
+
+### 2026-11-15 #190 — P0 — 산업용 서보 드라이브는 출고 시점부터 무단 접근을 방지하기 위한 안전한 기본 설정(Secure by default)과 보안 관리자 계정의 강제 변경 메커니즘을 갖
+- 상태: NEW / NOT_YET_AUDITED | 확인일: 2026-11-16 | 생성: 15:45:35 (시간대 미표기)
+- 원문: [commit c96746d9087079edd12b5203f7a623affdde89d0](https://github.com/useformotor3/ai-discord-bot/commit/c96746d9087079edd12b5203f7a623affdde89d0) | [research_archive/2026-11-15_154535.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-15_154535.md) | commit UTC: 2026-11-15T15:45:51.000Z
+- 원문 blob SHA: e567354a6b3d94067a09e19127968d746b94e0c2
+- 핵심 주장 주제(원문 요약 첫 부분): 산업용 서보 드라이브는 출고 시점부터 무단 접근을 방지하기 위한 안전한 기본 설정(Secure by default)과 보안 관리자 계정의 강제 변경 메커니즘을 갖추어야 합니다. 제조사는 사용자가 제품을 수령한 즉시 추가적인 보안 설정 없이도 최소한의 공격 표면만 노출되도록 초기 구성을 보장해야 합니다.
+- 우선순위/검증 쟁점: P0 — Article 13(8)–(9), Annex I Part II(5)–(8): support period 원칙 최소 5년(예상 사용 <5년이면 그 기간); 무료 업데이트 Part II(8) 및 tailor-made product/business user 합의 예외. Article 13(9) 업데이트 가용성과 구분.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 전체 Pass A/B/C 미완료.
+
+### 2026-11-15 #191 — P0 — 서보 드라이브 제조사는 제품 출고 시 기본적으로 무단 접근을 방지하는 안전한 설정(Secure by Default)을 적용해야 하며, 특히 고유한 기본 비밀번호 
+- 상태: NEW / NOT_YET_AUDITED | 확인일: 2026-11-16 | 생성: 15:50:38 (시간대 미표기)
+- 원문: [commit 0bbd0f4b826b0ea843222ffa71a1061410f67058](https://github.com/useformotor3/ai-discord-bot/commit/0bbd0f4b826b0ea843222ffa71a1061410f67058) | [research_archive/2026-11-15_155038.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-15_155038.md) | commit UTC: 2026-11-15T15:50:55.000Z
+- 원문 blob SHA: e6b37673d75177d4e348ec8e1717d6a250110e47
+- 핵심 주장 주제(원문 요약 첫 부분): 서보 드라이브 제조사는 제품 출고 시 기본적으로 무단 접근을 방지하는 안전한 설정(Secure by Default)을 적용해야 하며, 특히 고유한 기본 비밀번호 설정 또는 첫 부팅 시 강제적인 자격 증명(Credential) 변경 메커니즘을 제공해야 합니다. 공장 초기화 상태나 기본 설정 상태에서 취약한
+- 우선순위/검증 쟁점: P0 — Article 13(8)–(9), Annex I Part II(5)–(8): support period 원칙 최소 5년(예상 사용 <5년이면 그 기간); 무료 업데이트 Part II(8) 및 tailor-made product/business user 합의 예외. Article 13(9) 업데이트 가용성과 구분.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 전체 Pass A/B/C 미완료.
+
+### 2026-11-15 #192 — P0 — 서보 드라이브 제조사는 제품 출고 시 인증되지 않은 접근, 불필요한 서비스, 기본 패스워드 등 보안 취약점이 제거된 '기본 보안 설정(Secure by defau
+- 상태: NEW / NOT_YET_AUDITED | 확인일: 2026-11-16 | 생성: 15:55:32 (시간대 미표기)
+- 원문: [commit 006c04125a8bc9e24a801e3e020e9d92da6e798c](https://github.com/useformotor3/ai-discord-bot/commit/006c04125a8bc9e24a801e3e020e9d92da6e798c) | [research_archive/2026-11-15_155532.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-15_155532.md) | commit UTC: 2026-11-15T15:55:49.000Z
+- 원문 blob SHA: 7b809660e0e41e277e133341ea723f2f8a0439e0
+- 핵심 주장 주제(원문 요약 첫 부분): 서보 드라이브 제조사는 제품 출고 시 인증되지 않은 접근, 불필요한 서비스, 기본 패스워드 등 보안 취약점이 제거된 '기본 보안 설정(Secure by default)' 상태를 유지해야 하며, 사용자가 이를 안전하게 변경할 수 있는 초기 메커니즘을 제공해야 합니다. 이는 CRA Annex I의 필수 사이
+- 우선순위/검증 쟁점: P0 — Article 13(8)–(9), Annex I Part II(5)–(8): support period 원칙 최소 5년(예상 사용 <5년이면 그 기간); 무료 업데이트 Part II(8) 및 tailor-made product/business user 합의 예외. Article 13(9) 업데이트 가용성과 구분.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 전체 Pass A/B/C 미완료.
+
+### 2026-11-15 #193 — P0 — 서보 드라이브 제조사는 제품이 시장에 출시될 때(Out-of-the-box) 인간이 개입하여 변경하기 전까지 가장 안전한 상태를 유지하도록 기본 설정(Secure
+- 상태: NEW / NOT_YET_AUDITED | 확인일: 2026-11-16 | 생성: 16:00:48 (시간대 미표기)
+- 원문: [commit 38b822206a0e3611993fec4c8b7bf37eda523e79](https://github.com/useformotor3/ai-discord-bot/commit/38b822206a0e3611993fec4c8b7bf37eda523e79) | [research_archive/2026-11-15_160048.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-15_160048.md) | commit UTC: 2026-11-15T16:01:03.000Z
+- 원문 blob SHA: 5c9f7de64449d8e1989cf9c0f4a0c9de97a6354b
+- 핵심 주장 주제(원문 요약 첫 부분): 서보 드라이브 제조사는 제품이 시장에 출시될 때(Out-of-the-box) 인간이 개입하여 변경하기 전까지 가장 안전한 상태를 유지하도록 기본 설정(Secure by default) 상태로 구성해야 합니다. 불필요한 공격 표면(Attack Surface)을 최소화하기 위해 기본적으로 모든 원격 접속 인
+- 우선순위/검증 쟁점: P0 — Article 13(8)–(9), Annex I Part II(5)–(8): support period 원칙 최소 5년(예상 사용 <5년이면 그 기간); 무료 업데이트 Part II(8) 및 tailor-made product/business user 합의 예외. Article 13(9) 업데이트 가용성과 구분.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 전체 Pass A/B/C 미완료.
+
+### 2026-11-15 #194 — P0 — 서보 드라이브 제조사는 제품을 시장에 출시할 때 안전하고 보안이 강화된 초기 상태(Secure by Default)로 설정해야 하며, 특히 인증되지 않은 무단 접
+- 상태: NEW / NOT_YET_AUDITED | 확인일: 2026-11-16 | 생성: 16:05:34 (시간대 미표기)
+- 원문: [commit 5ad33337041c6042f2d4fae9cd63e962bcf58543](https://github.com/useformotor3/ai-discord-bot/commit/5ad33337041c6042f2d4fae9cd63e962bcf58543) | [research_archive/2026-11-15_160534.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-15_160534.md) | commit UTC: 2026-11-15T16:05:59.000Z
+- 원문 blob SHA: 303992ba142a650041ed8d29023b75ab15eceeff
+- 핵심 주장 주제(원문 요약 첫 부분): 서보 드라이브 제조사는 제품을 시장에 출시할 때 안전하고 보안이 강화된 초기 상태(Secure by Default)로 설정해야 하며, 특히 인증되지 않은 무단 접근을 방지하기 위해 기본 계정의 패스워드 강제 변경 또는 비활성화 기능을 반드시 제공해야 합니다. 또한, 불필요한 기능과 기본 개방 포트를 사전
+- 우선순위/검증 쟁점: P0 — Article 13(8)–(9), Annex I Part II(5)–(8): support period 원칙 최소 5년(예상 사용 <5년이면 그 기간); 무료 업데이트 Part II(8) 및 tailor-made product/business user 합의 예외. Article 13(9) 업데이트 가용성과 구분.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 전체 Pass A/B/C 미완료.
+
+### 2026-11-15 #195 — P0 — 산업용 서보 드라이브는 공장 출고 시점부터 모든 불필요한 네트워크 포트, 서비스, 인터페이스가 기본적으로 비활성화(Off)되어 있어야 하며, 초기 관리자 계정의 
+- 상태: NEW / NOT_YET_AUDITED | 확인일: 2026-11-16 | 생성: 16:10:41 (시간대 미표기)
+- 원문: [commit deeebc5d64dbcb8ab1d32d471a8d2b69addac20b](https://github.com/useformotor3/ai-discord-bot/commit/deeebc5d64dbcb8ab1d32d471a8d2b69addac20b) | [research_archive/2026-11-15_161041.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-15_161041.md) | commit UTC: 2026-11-15T16:10:57.000Z
+- 원문 blob SHA: 9e9aa3d27655a87ec3cf5d7ca44854f6164e2693
+- 핵심 주장 주제(원문 요약 첫 부분): 산업용 서보 드라이브는 공장 출고 시점부터 모든 불필요한 네트워크 포트, 서비스, 인터페이스가 기본적으로 비활성화(Off)되어 있어야 하며, 초기 관리자 계정의 무작위 패스워드 강제 또는 사용자 설정 유도를 통해 공격 표면을 최소화해야 합니다. EU CRA 부속서 I(Annex I)에 의거하여, 제품의 
+- 우선순위/검증 쟁점: P0 — Article 13(8)–(9), Annex I Part II(5)–(8): support period 원칙 최소 5년(예상 사용 <5년이면 그 기간); 무료 업데이트 Part II(8) 및 tailor-made product/business user 합의 예외. Article 13(9) 업데이트 가용성과 구분.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 전체 Pass A/B/C 미완료.
+
+### 2026-11-15 #196 — P0 — 산업용 서보 드라이브 제조사는 CRA에 따라 제품의 예상 사용 기간(또는 최소 5년) 동안 발견된 보안 취약점을 무상으로 시정하고 보안 업데이트를 제공해야 합니다
+- 상태: NEW / NOT_YET_AUDITED | 확인일: 2026-11-16 | 생성: 16:15:37 (시간대 미표기)
+- 원문: [commit 029f7afce80f21e65898f4d59106d5dfe434b0a4](https://github.com/useformotor3/ai-discord-bot/commit/029f7afce80f21e65898f4d59106d5dfe434b0a4) | [research_archive/2026-11-15_161537.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-15_161537.md) | commit UTC: 2026-11-15T16:15:53.000Z
+- 원문 blob SHA: 110f873d03605b3d9da6aadb98d56b9c629f2f45
+- 핵심 주장 주제(원문 요약 첫 부분): 산업용 서보 드라이브 제조사는 CRA에 따라 제품의 예상 사용 기간(또는 최소 5년) 동안 발견된 보안 취약점을 무상으로 시정하고 보안 업데이트를 제공해야 합니다. 또한, 이를 보장하기 위한 패치 배포 메커니즘을 사전에 구축해야 합니다.
+- 우선순위/검증 쟁점: P0 — Article 13(8)–(9), Annex I Part II(5)–(8): support period 원칙 최소 5년(예상 사용 <5년이면 그 기간); 무료 업데이트 Part II(8) 및 tailor-made product/business user 합의 예외. Article 13(9) 업데이트 가용성과 구분.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 전체 Pass A/B/C 미완료.
+
+### 2026-11-15 #197 — P0 — 산업용 서보 드라이브는 제조 단계에서부터 무단 접근을 방지하기 위해 가장 제한적이고 안전한 상태로 설정(Secure by default)되어 출고되어야 합니다. 
+- 상태: NEW / NOT_YET_AUDITED | 확인일: 2026-11-16 | 생성: 16:20:39 (시간대 미표기)
+- 원문: [commit dc4d61638de797aae75b93a917569a7e26b88ec9](https://github.com/useformotor3/ai-discord-bot/commit/dc4d61638de797aae75b93a917569a7e26b88ec9) | [research_archive/2026-11-15_162039.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-15_162039.md) | commit UTC: 2026-11-15T16:20:55.000Z
+- 원문 blob SHA: 2fc1daf8ccb8a99badfdd0d05f92c8b930885d78
+- 핵심 주장 주제(원문 요약 첫 부분): 산업용 서보 드라이브는 제조 단계에서부터 무단 접근을 방지하기 위해 가장 제한적이고 안전한 상태로 설정(Secure by default)되어 출고되어야 합니다. 특히 사용자 인증을 위한 초기 비밀번호나 사전 공유 키(Pre-shared keys)는 고정된 값이나 일괄적인 기본값 사용이 엄격히 금지됩니다.
+- 우선순위/검증 쟁점: P0 — Article 13(8)–(9), Annex I Part II(5)–(8): support period 원칙 최소 5년(예상 사용 <5년이면 그 기간); 무료 업데이트 Part II(8) 및 tailor-made product/business user 합의 예외. Article 13(9) 업데이트 가용성과 구분.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 전체 Pass A/B/C 미완료.
+
+### 2026-11-15 #198 — P0 — 산업용 서보 드라이브는 초기 출고 시점부터 무단 접근을 방지하는 안전한 기본 설정(Secure by default)으로 구성되어야 하며, 불필요한 기능 및 기본 
+- 상태: NEW / NOT_YET_AUDITED | 확인일: 2026-11-16 | 생성: 16:25:35 (시간대 미표기)
+- 원문: [commit c8ad09f0d4287f95e72c35932b18e19a71c2d384](https://github.com/useformotor3/ai-discord-bot/commit/c8ad09f0d4287f95e72c35932b18e19a71c2d384) | [research_archive/2026-11-15_162535.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-15_162535.md) | commit UTC: 2026-11-15T16:25:51.000Z
+- 원문 blob SHA: d2eb533100da49fa594b4bc3492607e332f1db64
+- 핵심 주장 주제(원문 요약 첫 부분): 산업용 서보 드라이브는 초기 출고 시점부터 무단 접근을 방지하는 안전한 기본 설정(Secure by default)으로 구성되어야 하며, 불필요한 기능 및 기본 자격 증명이 제거되거나 제한되어야 합니다. 제조업체는 제품의 수명주기 동안 보안 업데이트 및 취약점 패치가 기본적으로 용이하고 안전하게 적용될 
+- 우선순위/검증 쟁점: P0 — Article 13(8)–(9), Annex I Part II(5)–(8): support period 원칙 최소 5년(예상 사용 <5년이면 그 기간); 무료 업데이트 Part II(8) 및 tailor-made product/business user 합의 예외. Article 13(9) 업데이트 가용성과 구분.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 전체 Pass A/B/C 미완료.
+
+### 2026-11-15 #199 — P0 — 산업용 서보 드라이브 제조사는 CRA에 따라 제품의 예상 수명 주기(최소 5년) 동안 발견된 보안 취약점을 추가 비용 청구 없이 안전하고 신속하게 패치할 수 있는
+- 상태: NEW / NOT_YET_AUDITED | 확인일: 2026-11-16 | 생성: 16:30:45 (시간대 미표기)
+- 원문: [commit ee54b9dea3ac1c06cb01ed988c17a848675ba5db](https://github.com/useformotor3/ai-discord-bot/commit/ee54b9dea3ac1c06cb01ed988c17a848675ba5db) | [research_archive/2026-11-15_163045.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-15_163045.md) | commit UTC: 2026-11-15T16:31:00.000Z
+- 원문 blob SHA: 4f7e0f93b5d6df5e1b1fdb10a2a6be853c5b5f42
+- 핵심 주장 주제(원문 요약 첫 부분): 산업용 서보 드라이브 제조사는 CRA에 따라 제품의 예상 수명 주기(최소 5년) 동안 발견된 보안 취약점을 추가 비용 청구 없이 안전하고 신속하게 패치할 수 있는 메커니즘을 제공해야 합니다. 보안 업데이트(Security Updates)는 기능 개선 업데이트와 명확히 분리되어야 하며, 공표된 즉시 최종 
+- 우선순위/검증 쟁점: P0 — Article 13(8)–(9), Annex I Part II(5)–(8): support period 원칙 최소 5년(예상 사용 <5년이면 그 기간); 무료 업데이트 Part II(8) 및 tailor-made product/business user 합의 예외. Article 13(9) 업데이트 가용성과 구분.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 전체 Pass A/B/C 미완료.
+
+### 2026-11-15 #200 — P0 — 산업용 서보 드라이브는 공장 출고 시(Out-of-the-box) 관리자 계정의 기본 비밀번호 비활성화 또는 고유한 초기 인증 정보 강제 설정 등 '기본 보안 설
+- 상태: NEW / NOT_YET_AUDITED | 확인일: 2026-11-16 | 생성: 16:35:33 (시간대 미표기)
+- 원문: [commit cde4bb9c7d3033e82ab20324299b8ea52c0f4e23](https://github.com/useformotor3/ai-discord-bot/commit/cde4bb9c7d3033e82ab20324299b8ea52c0f4e23) | [research_archive/2026-11-15_163533.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-15_163533.md) | commit UTC: 2026-11-15T16:35:49.000Z
+- 원문 blob SHA: 2be5bb08b5b3e11af1ed39a53f0b94287aad91c8
+- 핵심 주장 주제(원문 요약 첫 부분): 산업용 서보 드라이브는 공장 출고 시(Out-of-the-box) 관리자 계정의 기본 비밀번호 비활성화 또는 고유한 초기 인증 정보 강제 설정 등 '기본 보안 설정(Secure by default)' 상태로 제공되어야 합니다. 또한, 사용자가 제품을 안전하게 구성할 수 있는 가이드와 함께 무단 접근을 방
+- 우선순위/검증 쟁점: P0 — Article 13(8)–(9), Annex I Part II(5)–(8): support period 원칙 최소 5년(예상 사용 <5년이면 그 기간); 무료 업데이트 Part II(8) 및 tailor-made product/business user 합의 예외. Article 13(9) 업데이트 가용성과 구분.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 전체 Pass A/B/C 미완료.
+
+### 2026-11-15 #201 — P0 — 산업용 서보 드라이브는 초기 출고 시(Out-of-the-box) 모든 보안 위험이 최소화된 '기본 설정에 따른 안전성(Secure by default)' 상태여
+- 상태: NEW / NOT_YET_AUDITED | 확인일: 2026-11-16 | 생성: 16:40:35 (시간대 미표기)
+- 원문: [commit 71d40fb64cb8f3b98c7ea45b6fe6c42489019be8](https://github.com/useformotor3/ai-discord-bot/commit/71d40fb64cb8f3b98c7ea45b6fe6c42489019be8) | [research_archive/2026-11-15_164035.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-15_164035.md) | commit UTC: 2026-11-15T16:40:51.000Z
+- 원문 blob SHA: 68bfdca762f3b2a0e42497beb7a8261594165114
+- 핵심 주장 주제(원문 요약 첫 부분): 산업용 서보 드라이브는 초기 출고 시(Out-of-the-box) 모든 보안 위험이 최소화된 '기본 설정에 따른 안전성(Secure by default)' 상태여야 하며, 사용되지 않는 네트워크 인터페이스, 포트, 서비스 및 디폴트 계정은 기본적으로 비활성화되거나 변경을 강제해야 합니다. 이는 CRA A
+- 우선순위/검증 쟁점: P0 — Article 13(8)–(9), Annex I Part II(5)–(8): support period 원칙 최소 5년(예상 사용 <5년이면 그 기간); 무료 업데이트 Part II(8) 및 tailor-made product/business user 합의 예외. Article 13(9) 업데이트 가용성과 구분.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 전체 Pass A/B/C 미완료.
+
+### 2026-11-15 #202 — P0 — 산업용 서보 드라이브는 공장 출고 시(Out-of-the-box) 인증 정보 변경 강제, 불필요한 서비스 및 포트 비활성화 등 '기본 설정에 따른 안전성(Secu
+- 상태: NEW / NOT_YET_AUDITED | 확인일: 2026-11-16 | 생성: 16:45:34 (시간대 미표기)
+- 원문: [commit ee19d8142a7ee8182c61944bb665ce4edc979d84](https://github.com/useformotor3/ai-discord-bot/commit/ee19d8142a7ee8182c61944bb665ce4edc979d84) | [research_archive/2026-11-15_164534.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-15_164534.md) | commit UTC: 2026-11-15T16:45:50.000Z
+- 원문 blob SHA: f18b8ebc95c45a7a0b910537795f9539ee5ec462
+- 핵심 주장 주제(원문 요약 첫 부분): 산업용 서보 드라이브는 공장 출고 시(Out-of-the-box) 인증 정보 변경 강제, 불필요한 서비스 및 포트 비활성화 등 '기본 설정에 따른 안전성(Secure by default)'을 갖추어야 합니다. 제조사는 제품의 예상 수명 주기 동안 발견된 취약점에 대해 무상으로 보안 업데이트(Securit
+- 우선순위/검증 쟁점: P0 — Article 13(8)–(9), Annex I Part II(5)–(8): support period 원칙 최소 5년(예상 사용 <5년이면 그 기간); 무료 업데이트 Part II(8) 및 tailor-made product/business user 합의 예외. Article 13(9) 업데이트 가용성과 구분.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 전체 Pass A/B/C 미완료.
+
+### 2026-11-15 #203 — P0 — 서보 드라이브는 기본적으로 취약점이 악용될 수 있는 기능(예: 불필요한 포트, 서비스, 디버그 인터페이스)이 비활성화된 '안전한 기본 설정(Secure by De
+- 상태: NEW / NOT_YET_AUDITED | 확인일: 2026-11-16 | 생성: 16:50:40 (시간대 미표기)
+- 원문: [commit e981702a92f74d62bf0a069b13ad5b7effa60d77](https://github.com/useformotor3/ai-discord-bot/commit/e981702a92f74d62bf0a069b13ad5b7effa60d77) | [research_archive/2026-11-15_165040.md](https://github.com/useformotor3/ai-discord-bot/blob/main/research_archive/2026-11-15_165040.md) | commit UTC: 2026-11-15T16:50:58.000Z
+- 원문 blob SHA: 704c0e697fd5c55ba7249fd54719f6536e901ff9
+- 핵심 주장 주제(원문 요약 첫 부분): 서보 드라이브는 기본적으로 취약점이 악용될 수 있는 기능(예: 불필요한 포트, 서비스, 디버그 인터페이스)이 비활성화된 '안전한 기본 설정(Secure by Default)' 상태로 공급되어야 하며, 제조사는 사용자 인증 및 권한 관리를 통해 무단 접근으로부터 제품을 보호해야 합니다.
+- 우선순위/검증 쟁점: P0 — Article 13(8)–(9), Annex I Part II(5)–(8): support period 원칙 최소 5년(예상 사용 <5년이면 그 기간); 무료 업데이트 Part II(8) 및 tailor-made product/business user 합의 예외. Article 13(9) 업데이트 가용성과 구분.
+- 판정: 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED; 제품 적용성 UNVERIFIED. 전체 Pass A/B/C 미완료.
+
