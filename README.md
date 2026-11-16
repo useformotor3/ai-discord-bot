@@ -14,8 +14,8 @@
 - P1-B2는 durable journal, staged payload, backup/SHA 검증, idempotent roll-forward recovery, snapshot 충돌 방지 적용
 - P1-B3 Git sync 상태화는 미구현(기존 strict xfail), P1-B4 import-time 구조 개선도 미구현
 - Discord exactly-once/outbox는 P1-B2 범위 밖이며 보장하지 않음
-- main 대비 작업 브랜치: diverged, 172 ahead / 672 behind (2026-11-16 조회); 통합 감사 전 병합 금지
-- 운영 main 최신 조회: HEAD `23027962c6eb919506d291e3ff4ef8d6e35894b9`, state count=125, history=2,264
+- main 대비 작업 브랜치: diverged, 181 ahead / 673 behind (snapshot commit `0236dbda2793d6dc2ba4dfc245905a73f8783136`, 2026-11-16); 통합 감사 전 병합 금지
+- 운영 main 최신 조회: HEAD `6eec802125c1bcf3cf0b2dd1401a9c6430792920`, state count=126, history=2,265
 - 운영 main의 main.py와 run.yml은 각각 기존 SHA `86a7731aad5de8d75581fc953bcea2c44adf2f2b`, `65a8cadc8eac593f551e390698e367b1d161ecf1`; 이번 구현에서 변경하지 않음
 
 Actions 성공은 자동화 실행 결과이지 CRA 법령 해석이나 출처의 사실 정확성을 보증하지 않습니다. 테스트 통과 숫자는 반드시 실행한 정확한 소스와 범위를 함께 표시합니다.
