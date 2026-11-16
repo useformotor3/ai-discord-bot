@@ -321,3 +321,9 @@ Actions 성공은 자동화 실행 결과이지 CRA 법령 해석이나 출처�
 - history 2,397개 파싱 및 당일 최신 archive 4개 원격 존재 확인.
 - 운영 Git archive 저장은 확인했으나 상세 Job 로그가 없어 실제 Gemini model ID, operational_guard, checkpoint pruning, Discord 응답은 미확인.
 - 상세: [운영 실행 관찰 및 데이터 무결성 확인](reports/PRODUCTION_RUN_OBSERVATION_2026-11-17.md).
+
+
+## 2026-11-17 CRA 보고서 #4 정정 감사
+- 원본은 보존하고 별도 정정 기록을 추가했다.
+- 핵심 정정: CRA Annex I Part I (2)(m), IEC 62443-4-2 CR 4.2, NIST SP 800-88 Rev.2 적용.
+- 상세: [CRA 보고서 #4 정정 및 기술 근거 감사](reports/CRA_CORRECTION_REPORT_4_2026-11-17.md).
