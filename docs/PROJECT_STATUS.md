@@ -1020,3 +1020,16 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 ## 2026-11-15 state.json last_health_check caveat
 - Latest main state.json was re-opened after the queue/document commits: `date=2026-11-15`, `count=12`, `last_health_check=2026-11-14T21:15:39.725042`.
 - The `last_health_check` value is older than the current archive additions; this run did not update it and does not treat it as evidence of a current successful health check.
+
+
+## 2026-11-16 — main archive #8/#9 감사 대기열 정합화
+
+- main 최신 확인 HEAD: `5f5d83f584639eb712d23d48444f8eee8618b24d` (Report #9, 2026-11-16T00:40:55Z).
+- 이전 대기열 기준점: Report #7 `34684a441277d6ca68a307562717f0eb2fc6614f`. #7→#9 비교는 ahead 2 / behind 0, 변경 파일 4개(archive 2 + history.json + state.json).
+- Report #8은 기존 복구 기록 `CRA_ARCHIVE_AUDIT_QUEUE_RECOVERY_2026-11-16.md`에 있었으나 canonical queue에 재통합되지 않은 상태였다. #8을 canonical queue로 옮기고 #9를 추가해 중복 없이 정합화했다. Queue commit: `495d29d62d41d0c7b8165016e4f6f6fc03deb1a8`.
+- main `history.json`: 2,148 entries. `state.json`: 2026-11-16 / count 9 (일일 카운터). `last_health_check=2026-11-15T21:20:38.480365`는 최신 archive 이후의 정상 헬스체크 증거가 아니다.
+- 신규 queue 항목: #8 P1 (Secure by Default/초기 인증), #9 P0 (취약점 처리/무상 보안 업데이트). 두 항목 모두 NEW / NOT_YET_AUDITED, 파일 UNVERIFIED, Raw Text Quote/개별 주장 NOT_YET_AUDITED, 제품 적용성 UNVERIFIED.
+- EUR-Lex Regulation (EU) 2024/2847 OJ 20.11.2024를 직접 열어 Article 13(1)–(9), Annex I Part I(1)–(2), Part II(2),(7),(8)의 문맥을 확인했다. #9의 Article 11 제조사 의무 인용은 조항 제목과 충돌하고, 인용문은 Article 13(8) 지원기간과 Annex I Part II(8) 무상 업데이트를 합성한 후보이며, 5년 미만 예상 사용기간 예외를 누락한다. #8의 secure-by-default 주제는 관련성이 있으나 최초 비밀번호 변경/MFA/모든 포트 차단은 보편적 명시 구현수단으로 단정하지 않는다.
+- 제품 SKU, intended purpose/core functionality, 실제 네트워크·업데이트 경로 및 ST MCU 주문 코드가 없어 제품별 CRA 적용성·Class I/II·제조사별 기능은 UNVERIFIED.
+- 이번 실행에서 main.py, Gemini prompt, 운영 자동화 코드, `.github/workflows/run.yml`, main 브랜치는 수정하지 않았다. main/work merge/rebase/sync 없음. 테스트/CI 미실행이며 PASS로 기록하지 않는다.
+- 상세 원문·주장 쟁점 및 commit/path/blob SHA는 [CRA_ARCHIVE_AUDIT_QUEUE.md](CRA_ARCHIVE_AUDIT_QUEUE.md)에 기록했다.
