@@ -468,3 +468,13 @@
 6. [후속] claim locator의 paragraph/point 범위 검사 및 false-negative 테스트 추가. Article/Annex 범위 검사는 법률적 정확성 보증이 아니다.
 7. [후속] main의 9개 후속 커밋과 운영 데이터 보존 상태를 immutable SHA로 감사하고, 별도 integration branch에서만 통합·회귀 테스트한다.
 8. [보류] PR #3 Draft 유지. 최신 main 통합 CI/보호 경로/데이터 불변성 검증 전 merge 금지. Gemini live canary는 billing tier와 데이터 사용 조건 미확인으로 미실행.
+
+## 2026-11-17 — claim scope 회귀검증 및 후속 우선순위
+1. [완료] Article/Annex scope quote gate 추가 및 교차 조항 quote 거부 회귀 테스트.
+2. [완료] 첫 CI #279 실패(25 failed, 92 passed, 1 xfailed)의 원인을 regex double-escape로 특정하고 수정.
+3. [완료] 수정 head CI #294: 117 passed, 1 xfailed; exact SHA, compileall, full pytest 통과.
+4. [완료] EUR-Lex read-only Canary #101 success.
+5. [우선] 개별 Official Journal corrigenda 3건을 source pack에 추가하고 정정 대상·정정 문구를 기계 검증한다. 날짜 인덱스만 확인하는 현 상태를 개선한다.
+6. [후속] paragraph/point 수준 locator 범위 검증과 false-negative fixture 추가.
+7. [후속] 최신 main과 다시 비교(마지막 스냅샷 125 ahead / 10 behind)하고 운영 state/history/archive 불변성 확인 후 별도 integration branch에서 검증한다.
+8. [보류] PR #3 Draft 유지. 최신 main 기준 통합 CI 및 보호 경로 검증 전 merge 금지. Gemini live canary는 billing tier 확인 전 미실행.
