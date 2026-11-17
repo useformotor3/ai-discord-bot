@@ -769,3 +769,12 @@
 - 다음: #279/#95 결과 확인 → corrigenda 3건 독립 수집 및 문구 검증 → paragraph/point locator 강화 → main 9개 커밋/운영 데이터 불변성 감사 → 별도 integration branch 통합 테스트.
 - PR #3 Draft 유지. main, 운영 workflow, state/history/archive 변경 및 운영 실행 없음.
 - 상세 감사: reports/INTEGRATION_AND_CLAIM_SCOPE_AUDIT_2026-11-17.md.
+
+## 2026-11-17 — claim scope 수정 후 회귀검증 완료
+- 최초 CI #279는 **25 failed, 92 passed, 1 xfailed**로 실패했다. 원인은 새 helper의 정규식 이중 escape였으며, job log로 원인을 확인했다.
+- 정규식 수정 commit 7882aaf 및 exact SHA pin 갱신 후 CI #294: **117 passed, 1 xfailed**. Source SHA / compileall / full pytest 모두 통과.
+- EUR-Lex read-only Canary #101: success.
+- 실패 Run #279는 감사 기록으로 유지하며, 성공 Run #294와 혼동하지 않는다.
+- 마지막 compare 스냅샷: main 83bc2430842413080e73bc5b98a8a82c45d03909, feature 784c41a90bd77dd5776c1637f6abe646452e7175, **125 ahead / 10 behind**. 문서 갱신 후 다시 조회한다.
+- PROJECT_LOG.jsonl은 UTF-8 전체를 보존해 빈 행 제거 및 1행 1 JSON 객체로 정리했다.
+- 다음 우선순위는 개별 Official Journal corrigenda 원문 수집/정정 문구 검증이며, 그다음 최신 main 10개 후속 커밋 및 운영 데이터 불변성 감사다.
