@@ -393,3 +393,11 @@
 3. [완료] quota/일시 장애/품질 검증 실패 시 외부 전송·아카이브·상태 변경 없이 no-op 종료. 인증/설정 오류는 실패 유지.
 4. [완료] Free Tier 일일 한도와 재시도 여유를 고려해 운영 schedule을 3시간마다(8회/일)로 조정; 모델당 최대 2회 시도 기준 최대 16회/일.
 5. [진행] PR #11 isolated CI 재검증 및 병합, 이후 첫 3회 production run 관찰.
+## 2026-11-17 — 운영 안정화 PR #10–#12 병합 완료
+
+1. [완료] PR #10: EUR-Lex official-link gate + recent-30 archive duplicate-topic suppression. CI #455: 101 passed, 1 xfailed.
+2. [완료] PR #11: 외부 5분 repository_dispatch 제거, 3시간 schedule, Gemini 429/503 즉시 fallback, quota/quality clean no-op. CI #467: 103 passed, 1 xfailed.
+3. [완료] PR #12: 실패 후 guard always, dirty/unpublished data restore, guard 성공 후에만 checkpoint pruning, persist-before-Discord. CI #470: 105 passed, 1 xfailed.
+4. [진행] 첫 3회 3-hourly production run을 관찰하고 actual quota/Discord/guard/prune 결과 확인.
+5. [다음] CRA 한국어 통합 보고서와 requirements traceability matrix 작성. 법령 직접 의무와 제조사 권고 구현을 구분.
+6. [다음] SIL 3 servo drive benchmarking report 및 hardware block design 작성. IEC 61508/IEC 61800-5-2 기능안전 추적성과 CRA cybersecurity traceability를 별도 관리.
