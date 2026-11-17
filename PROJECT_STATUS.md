@@ -860,3 +860,14 @@
 - M/606 Annex I item 18 password manager deadline은 PDF printed page 2의 원본 표 우측 셀에서 `31/01/2027`로 시각 확인. 텍스트 추출에서 행 설명이 페이지 경계를 넘어가며 날짜 셀을 놓쳤던 문제를 해결했다.
 - 상세 manifest: `reports/CRA_PDF_SOURCE_PROVENANCE_2026-11-17.json`.
 - Run #642의 PDF fetch/test 단계는 통과했지만 기존 HTML publication-page source canary는 `C(2026) 5252` marker를 summary page에서 요구해 실패했다. 페이지 요약과 Annex PDF의 식별자를 분리하도록 `cra_source.py` marker를 수정하고 regression test를 추가했다. 수정 후 CI 재검증 대기.
+
+
+## 2026-11-17 — PR #33 source validator correction 및 Run #669 성공
+
+- 기존 Run #642에서 발견된 오류: Commission guidance publication summary page에 PDF 문서번호 `C(2026) 5252`가 반드시 존재해야 한다고 잘못 요구했다. 해당 페이지는 PDF Annex 자체가 아니므로 문서번호 marker를 페이지 검증에 사용하지 않도록 분리했다. PDF Annex identity marker는 `cra_pdf_sources.py`에서 별도로 검증한다.
+- Regression test 추가 및 source blob pins 갱신 후 [Run #669](https://github.com/useformotor3/ai-discord-bot/actions/runs/44052967754) 성공: **148 passed / 1 xfailed**.
+- Compileall 및 exact source blob identity 통과.
+- PDF canary: C(2026)5252 ANFR mirror 84 pages / 1,190,726 bytes / SHA-256 `fe209c250e3d1f7599e42826d91963666951332927edcf511a2e79fe8d2f8234`; C(2026)7861 Annex Commission PDF 6 pages / 151,267 bytes / SHA-256 `262b09596cb5cbe7d72a2c7789fb2512ee00db7f69082e7def2c8181b0f63276`.
+- PDF artifact ID `14315096266` 다운로드 및 readback 완료; ZIP SHA-256 `82e86c3347413bc6f210a7403939141679c34e5ad738822043af87fc5c2290c`가 GitHub metadata와 일치하고 내부 PDF hashes도 재계산 결과와 일치.
+- 기존 HTML source canary도 9개 allowlisted official sources, Article 64(10)/67 corrigenda, Article 13(8) locator/quote 통과.
+- M/606 item18 deadline `31/01/2027` 시각 검증 완료. Guidance Commission primary byte identity만 미확인.
