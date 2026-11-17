@@ -332,8 +332,8 @@ def append_source_manifest(report, source):
     ]
     for item in source["sources"]:
         lines.append(
-            f"- {item['id']}: {item['version']} | URL: {item['url']} | "
-            f"Visible-text SHA-256: {item['full_text_sha256']} | "
+            f"- {item['id']}: {item['version']} | Requested URL: {item['url']} | "
+            f"Final URL: {item['final_url']} | Visible-text SHA-256: {item['full_text_sha256']} | "
             f"Prompt-excerpt SHA-256: {item['prompt_excerpt_sha256']} | "
             f"Retrieved: {item['retrieved_at']}"
         )
@@ -347,7 +347,7 @@ def validate_source_manifest(report, source):
     if source.get("version") not in report or source.get("retrieved_at") not in report:
         return False, "자동 출처 manifest의 version/retrieved_at이 누락되었습니다."
     for item in source.get("sources", []):
-        for field in ("id", "version", "url", "full_text_sha256", "prompt_excerpt_sha256", "retrieved_at"):
+        for field in ("id", "version", "url", "final_url", "full_text_sha256", "prompt_excerpt_sha256", "retrieved_at"):
             value = item.get(field)
             if not isinstance(value, str) or value not in report:
                 return False, f"자동 출처 manifest 항목이 누락되었습니다: {item.get('id')} / {field}"
