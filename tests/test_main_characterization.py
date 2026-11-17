@@ -15,14 +15,14 @@ VALID_REPORT = """# CRA 심층 조사 보고서
 제품의 의도된 용도와 위험평가 결과를 기준으로 요구사항 적용성을 판단한다.
 
 ## 2. 규격 근거 및 상세 내용
-규정 (EU) 2024/2847의 관련 조항과 부속서 요구사항을 구분해 검토한다.
+규정 (EU) 2024/2847 Article 13(8)의 제조자 취약점 처리 의무를 원문과 대조한다.
 제조자는 제품 설계와 개발 단계에서 적절한 사이버보안 위험평가를 수행하고,
 식별된 위험을 기술문서와 제품 보안 설계에 반영해야 한다.
 본 설명은 적용성 검토를 위한 조사 초안이며 제품 분류는 별도 확인이 필요하다.
 
 ## 3. 출처 자료(Source)
 EU 공식 법령 데이터베이스 EUR-Lex, Regulation (EU) 2024/2847.
-https://eur-lex.europa.eu/eli/reg/2024/2847/2024-11-20/eng
+https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02024R2847-20241120
 
 ## 4. 출처 원문 텍스트(Raw Text Quote)
 “Manufacturers shall ensure that vulnerabilities of the product with digital elements, including its components, are handled effectively during the support period.”
