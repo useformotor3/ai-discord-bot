@@ -486,3 +486,20 @@
 - Run #577: 138 passed / 1 xfailed; 9 official sources and live Article 13(8) locator/quote canary passed on PR head.
 - Pre/post merge safety refs: `safety/pre-merge-main-pr28-2026-11-17` → `5f0c54a018e18b3453b1c836a5a7d2e9a266331b`; `safety/post-merge-main-pr28-2026-11-17` → `942e1e6b5f2887001279a96c21f94138d283a689`; both verified by readback.
 - Merge commit-specific Actions run was not confirmed; only PR head CI is claimed.
+
+
+## 2026-11-17 최신 재개 지점 — 공식 Guidance/M/606 Annex 1차 감사
+
+- 현재 작업 브랜치 `cra/official-annex-audit-2026-11-17`는 `main` @ `80245d9e132380a10581612c031f87869993b98d`에서 생성했으며, 생성 직전 compare 결과 main과 동일(0 ahead/0 behind)이었다.
+- [CRA 공식 Guidance 및 M/606 Annex 감사 보고서](reports/CRA_OFFICIAL_GUIDANCE_AND_M606_ANNEX_AUDIT_2026-11-17.md)를 추가했다. Commission Guidance C(2026) 5252의 주요 조항·페이지 locator와 C(2026) 7861 Annex I의 41개 표준 주제/ESO adoption deadline을 추출했다.
+- Guidance는 비구속적 Commission 해석이다. 법령 정본과 구분하고, 제품별 판단은 실제 모델·회로·통신·공급 구조를 기준으로 한다.
+- M/606 Annex의 ESO adoption deadline은 harmonised standard OJ citation 또는 CRA 제품 적용일과 동일하지 않다. 항목 18 날짜는 PDF text extraction에서 판독 불가로 미확인 처리한다.
+- 원본 PDF 바이너리 다운로드 및 SHA-256은 아직 미완료. 텍스트 추출/내용 검토 결과만 기록하고 byte identity 검증으로 과장하지 않는다.
+
+### 다음 작업 순서 업데이트
+1. M/606 Annex 원본 PDF 이미지에서 항목 18 날짜와 병합 셀을 시각 확인하고, C(2026) 7861 본문 결정문 및 register 첨부 전체를 확인한다.
+2. C(2026) 5252 PDF 원본 바이너리 취득 경로를 확보해 파일 크기, 페이지 수, SHA-256을 기록한다. ANFR mirror는 Commission 원본과 byte identity가 확인되기 전 보조 취득 경로로 표시한다.
+3. Guidance §2.5 paras. 26–28을 15개 interface matrix에 반영하고, analog/discrete/STO와 encoded data exchange의 판정 규칙을 구체화한다.
+4. Guidance §6 core functionality와 §8 RDPS 기준을 35 requirements/36 SEC controls 및 통합 보고서에 claim-level로 연결한다.
+5. Annex I의 41개 표준 주제를 SEC control/설계/시험 후보에 매핑하되 ESO adoption deadline, harmonised status, presumption of conformity, CRA application date를 별도 필드로 관리한다.
+6. Article/Annex live locator canary를 Annex I Part I/II 및 핵심 Article로 확대하고 mock regression + CI를 검증한다.
