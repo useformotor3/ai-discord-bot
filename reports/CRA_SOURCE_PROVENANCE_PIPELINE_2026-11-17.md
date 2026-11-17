@@ -95,7 +95,7 @@ source별로 다음 값을 보존한다.
 | Source ID | Visible text chars | Prompt excerpt SHA-256 |
 |---|---:|---|
 | CRA-2024-2847-consolidated | 196,071 | \`730cafdf7f450ea9e0e06805946fbbd8c1cfcded201cf5548189f9ee2d9dfc10\` |
-| CRA-2024-2847-corrigendum-2024-12-05 | 1,183 | \`3c571d13f24d66d38bb7f3caf9108dcbff7cdc4068c23a5afb68f54d2745ab\` |
+| CRA-2024-2847-corrigendum-2024-12-05 | 1,183 | \`3c571d13f24d66d38bb7f3caf9108dcbcbff7cdc4068c23a5afb68f54d2745ab\` |
 | CRA-2024-2847-corrigendum-2025-07-02 | 912 | \`49ed1db4abc2db47965235c6d54fedfb562993c27ccbdd6018467f16326d680f\` |
 | CRA-2024-2847-corrigendum-2025-10-17 | 783 | \`0d9f5bf6e6e00c399d6edda10fcdabfa9d955e8c65b72412b9e265a1c6f44733\` |
 | CRA-2025-327-EHDS-amendment | 394,101 | \`f9ecf4f4bcda5676db068428b248f5cc82ac3068d2ce9b70229d90bb577d1ee3\` |
