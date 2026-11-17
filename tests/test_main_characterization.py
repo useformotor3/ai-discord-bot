@@ -62,7 +62,7 @@ def test_successful_generation_uses_only_mocked_external_services(run_main):
     assert "CRA-COMMISSION-GUIDANCE-2026-07-27" in archive_text
     assert "CRA-2024-2847-consolidated" in run_main.captured["model_calls"][0]["prompt"]
     assert len(run_main.captured["model_calls"]) == 1
-    assert len(run_main.captured["discord_posts"]) == 1
+    assert len(run_main.captured["discord_posts"]) == 2
     assert [cmd[0] for cmd in run_main.captured["git_commands"]] == [
         "git", "git", "git", "git", "git"
     ]
@@ -190,7 +190,7 @@ def test_report_without_official_eurlex_source_is_rejected(run_main):
         run_main.execute([invalid] * 6)
 
     assert exc.value.code == 0
-    assert len(run_main.captured["model_calls"]) == 1
+    assert len(run_main.captured["model_calls"]) == 2
     assert run_main.captured["discord_posts"] == []
     assert run_main.captured["git_commands"] == []
     assert not (run_main.workdir / "research_archive").exists()
@@ -327,7 +327,7 @@ def test_source_pack_and_claim_evidence_are_included_in_prompt_and_archive(run_m
     assert "실제 수집한 공식 source pack" in prompt
     assert "Article 13" in prompt
     assert "CLAIM_EVIDENCE_JSON" in prompt
-    assert "SHA-256: fixture-sha256-cra" in archived_text
+    assert "Prompt-excerpt SHA-256: fixture-prompt-sha-cra" in archived_text
     assert "Source pack retrieved at:" in archived_text
 
 
