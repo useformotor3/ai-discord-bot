@@ -796,3 +796,9 @@
 - #17: least privilege/RBAC 직접 인용이 공식 OJ 원문에서 확인되지 않음. CRA는 Annex I Part I (2)(d)의 적절한 접근통제 메커니즘을 요구하지만 RBAC/MFA/session timeout을 일률적으로 직접 규정하지 않는다.
 - correction reports #14–#17을 별도 파일로 작성. 원본 archive는 그대로 보존.
 - 다음: #13 이하 자동 archive를 동일한 방식으로 순차 감사하고, corrected report index/claim evidence를 정리한다.
+
+## 2026-11-17 — 최신 자동 archive #18 정정 감사
+- main의 최신 자동 archive #18도 검토했다. RBAC/least privilege를 CRA 직접 의무로 제시하고, 여러 Annex I point를 한 문장 raw quote로 혼합한 문제를 확인했다.
+- Part I (2)(d)는 적절한 접근통제/인증/identity-access management 수단, (2)(b)는 secure-by-default, (2)(l)는 관련 내부 활동의 기록·모니터링을 각각 규정한다. 원본의 “including the principle of least privilege” 문구는 공식 OJ 직접 인용으로 확인되지 않는다.
+- correction report #18 생성: reports/CRA_CORRECTION_REPORT_18_2026-11-17.md. 원본 archive SHA f986f2f2db5f74ca8dd072deb2fe90e013b4a63c 보존.
+- 현재 별도 정정 보고서 #14–#18 완료. 다음은 #13 이하 역순 감사.
