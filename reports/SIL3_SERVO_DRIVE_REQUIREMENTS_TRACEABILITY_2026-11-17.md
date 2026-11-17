@@ -77,3 +77,5 @@
 - CRA final OJ: https://eur-lex.europa.eu/eli/reg/2024/2847/oj/eng
 
 **주의:** 이 매트릭스는 설계 추적성의 시작점이다. SIL 3 인증서, FMEDA, PFH 계산 및 최종 회로 검증을 대체하지 않는다.
+
+| FS-015 | 제품 안전 권고/firmware advisory 적용성 확인 | 정확한 catalog number, installed firmware, STO path(hardwired/network), safety certificate revision 기록 | 제조사 Product Safety Advisory/PCDC/firmware compatibility 확인 | 모델 선정 시 필수 |
