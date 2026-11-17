@@ -145,11 +145,13 @@ def run_main(tmp_path, monkeypatch):
             spec = source_response
             if isinstance(spec, BaseException):
                 raise spec
-            return FakeResponse(
+            response = FakeResponse(
                 status_code=spec.get("status_code", 200),
                 text=spec.get("text", ""),
                 body=spec.get("json", {}),
             )
+            response.url = spec.get("url", url)
+            return response
 
         requests_module.get = fake_get
         requests_module.Timeout = Timeout
