@@ -689,3 +689,13 @@
 - 최신 EUR-Lex read-only canary Run #29: **success**. 네 법령 원문 조회와 정오표 3개 날짜 확인. https://github.com/useformotor3/ai-discord-bot/actions/runs/43995859223
 - 보고서·README·상황판·마스터 계획·세션 로그·테스트 가이드·JSONL 프로젝트 로그를 동기화했다.
 - Draft PR #3 open/mergeable, 아직 main 미병합. 운영 main 최신 SHA ff599733d62a8926ee281a9958aa6e03f5ce75f4; 운영 main.py/run.yml, Gemini/Discord workflow 미변경.
+
+
+## 2026-11-17 — CRA claim-to-evidence gate 구현 중
+- 작업 브랜치에 `cra_claims.py` 구조화 주장-근거 validator를 추가했다. 법적 의무/공식 설명은 개별 claim_id, 정확한 source_id, Article/Annex locator, 해당 원문과 일치하는 50자 이상 직접 인용을 요구한다.
+- 본문 claim_id 참조와 JSON 근거 목록의 일치, 중복 ID, 등록되지 않은 출처, locator/quote 불일치, 해석·엔지니어링 권고의 별도 분류 및 basis를 검사한다.
+- `main.py`는 새 validator를 기존 EUR-Lex provenance validator 앞에 실행한다. 프롬프트도 구조화 JSON 출력을 요구한다.
+- 격리 테스트에서 첫 실패(85 passed / 27 failed / 1 xfailed)를 확인했다. 주요 원인은 f-string JSON 예시 중괄호, 기존 mock 보고서의 새 claim contract 미반영, 테스트 기대 메시지였다. 해당 수정 후 새 정확한 SHA의 CI 재검증이 필요하다.
+- 작업 전 복구 기준: `safety/pre-claim-evidence-2026-11-17-d8870e3` → `d8870e32e16ba5ebd3a7670d12816324de3b485a`.
+- 운영 main, production run.yml, 실제 Gemini/Discord 호출은 변경/실행하지 않았다.
+- 한계: gate는 선언된 claim의 추적성 검사이며 본문 자연어 전체에서 빠진 법적 주장을 자동 탐지하는 완전한 NLP 검증이 아니다. 법률 해석·제품 적용성·적합성은 사람 검토 대상이다.
