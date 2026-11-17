@@ -159,3 +159,69 @@ def test_git_push_failure_fails_workflow_instead_of_logging_success(run_main):
     assert (run_main.workdir / "state.json").exists()
     assert (run_main.workdir / "history.json").exists()
     assert len(list((run_main.workdir / "research_archive").glob("*.md"))) == 1
+
+
+def test_report_without_official_eurlex_source_is_rejected(run_main):
+    invalid = VALID_REPORT.replace(
+        "https://eur-lex.europa.eu/eli/reg/2024/2847/2024-11-20/eng",
+        "https://example.com/unknown-source",
+    )
+    with pytest.raises(SystemExit) as exc:
+        run_main.execute([invalid] * 6)
+
+    assert exc.value.code == 1
+    assert len(run_main.captured["model_calls"]) == 6
+    assert run_main.captured["discord_posts"] == []
+    assert run_main.captured["git_commands"] == []
+    assert not (run_main.workdir / "research_archive").exists()
+
+
+def test_duplicate_topic_is_blocked_before_discord_and_archive(run_main):
+    today = datetime.now(SEOUL).strftime("%Y-%m-%d")
+    archive_dir = run_main.workdir / "research_archive"
+    archive_dir.mkdir()
+    old_archive = archive_dir / "previous-report.md"
+    old_archive.write_text(
+        "취약점 처리 및 무상 보안 업데이트 제공 의무. "
+        "Vulnerability Handling and Free-of-Charge Security Updates. "
+        "제조사는 제품의 취약점을 관리하고 무료 보안 패치를 제공한다.",
+        encoding="utf-8",
+    )
+    state = {
+        "date": today,
+        "count": 1,
+        "last_health_check": datetime.now(SEOUL).isoformat(),
+    }
+    history = [{
+        "date": today,
+        "time": "12:00:00",
+        "count": 1,
+        "snippet": "취약점 처리 및 무상 보안 업데이트 제공 의무",
+        "file": "research_archive/previous-report.md",
+    }]
+    state_path = run_main.workdir / "state.json"
+    history_path = run_main.workdir / "history.json"
+    state_path.write_text(json.dumps(state, ensure_ascii=False), encoding="utf-8")
+    history_path.write_text(json.dumps(history, ensure_ascii=False), encoding="utf-8")
+    state_before = state_path.read_bytes()
+    history_before = history_path.read_bytes()
+
+    duplicate = VALID_REPORT.replace(
+        "산업용 서보 드라이브의 사이버보안 요구사항과 제조자 책임을 정리한다.",
+        "취약점 처리 및 무료 보안 업데이트 제공 의무를 정리한다.",
+    ).replace(
+        "제품의 의도된 용도와 위험평가 결과를 기준으로 요구사항 적용성을 판단한다.",
+        "Vulnerability Handling and Free-of-Charge Security Updates를 다룬다.",
+    )
+
+    with pytest.raises(SystemExit) as exc:
+        run_main.execute([duplicate])
+
+    assert exc.value.code == 0
+    assert len(run_main.captured["model_calls"]) == 1
+    assert run_main.captured["discord_posts"] == []
+    assert run_main.captured["git_commands"] == []
+    assert state_path.read_bytes() == state_before
+    assert history_path.read_bytes() == history_before
+    assert old_archive.exists()
+    assert len(list(archive_dir.glob("*.md"))) == 1
