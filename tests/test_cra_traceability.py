@@ -19,6 +19,7 @@ REQUIRED = (
     "README.md",
     "reports/CRA_INTEGRATED_COMPLIANCE_REPORT_2026-11-17.md",
     "reports/CRA_PRODUCT_BOUNDARY_AND_EVIDENCE_INTAKE_2026-11-17.md",
+    "reports/CRA_INTEGRATED_REPORT_INDEPENDENT_AUDIT_2026-11-17.md",
 )
 
 
@@ -110,4 +111,13 @@ def test_m606_item18_wrong_printed_page_fails_closed(tmp_path):
     provenance["visual_verification"][0]["printed_page_number"] = 2
     path.write_text(json.dumps(provenance), encoding="utf-8")
     with pytest.raises(TraceabilityError, match="printed EN 3"):
+        validate_traceability(tmp_path)
+
+
+def test_duplicate_integrated_report_section_number_fails_closed(tmp_path):
+    _copy_required_tree(tmp_path)
+    path = tmp_path / "reports/CRA_INTEGRATED_COMPLIANCE_REPORT_2026-11-17.md"
+    with path.open("a", encoding="utf-8") as stream:
+        stream.write("\n\n## 14. Duplicate section number regression\n")
+    with pytest.raises(TraceabilityError, match="duplicate top-level section numbers"):
         validate_traceability(tmp_path)

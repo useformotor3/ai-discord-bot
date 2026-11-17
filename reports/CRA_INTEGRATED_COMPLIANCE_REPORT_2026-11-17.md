@@ -12,7 +12,7 @@
 1. CRA는 EU 시장에 공급되는 제품 중 의도된 목적 또는 합리적으로 예견 가능한 사용에 장치/네트워크와의 직접·간접 논리적/물리적 데이터 연결이 포함된 제품 디지털 요소(PDE)에 적용된다(Article 2(1), Article 3(1), (22)).
 2. 일반적인 산업용 서보 드라이브는 펌웨어를 내장하고 EtherCAT, PROFINET, EtherNet/IP, Modbus, CANopen, USB 설정·진단 등 디지털 통신을 수행하는 경우 CRA 적용 대상일 가능성이 높다. 단, 특정 모델의 실제 인터페이스·프로토콜·사용 목적을 확인해야 한다.
 3. 전기 신호가 존재한다는 사실만으로 CRA의 데이터 연결이 성립하지는 않는다. Commission Guidance는 단순 전원/스위칭 신호와 송신자가 디지털 정보로 인코딩하고 수신자가 이를 해독하는 데이터 통신을 구분한다. 따라서 순수 아날로그 신호 또는 데이터로 인코딩되지 않은 단순 on/off 신호만 있는 구성은 적용 범위를 별도로 판단해야 한다.
-4. 현재 CRA Annex III/IV에는 일반 서보 드라이브라는 제품 카테고리가 직접 열거되어 있지 않다. 통신 포트나 일반 MCU를 포함한다는 사실만으로 중요 제품(Class I/II) 또는 중요 제품(Class II)/중요·핵심 제품으로 자동 분류하지 않는다. 제품 전체의 핵심 기능(core functionality)과 Annex III/IV 카테고리의 기능적 일치를 평가해야 한다. 통상적인 모터 제어가 핵심 기능인 서보 드라이브는 현재 자료상 기본(default) 제품 범주일 가능성이 높지만, 이는 모델별 검증 전 잠정 판단이다.
+4. 현재 CRA Annex III에는 중요 제품(Important products, Class I/II), Annex IV에는 중요 핵심 제품(Critical products) 카테고리가 열거되어 있으며 일반 서보 드라이브라는 제품 카테고리는 직접 열거되어 있지 않다. 통신 포트나 일반 MCU를 포함한다는 사실만으로 Annex III Class I/II 또는 Annex IV 제품으로 자동 분류하지 않는다. 제품 전체의 핵심 기능(core functionality)과 Annex III/IV 카테고리의 기능적 일치를 평가해야 한다. 통상적인 모터 제어가 핵심 기능인 서보 드라이브는 현재 자료상 기본(default) 제품 범주일 가능성이 높지만, 이는 모델별 검증 전 잠정 판단이다.
 5. 일반 제품 범주라면 Article 32(1)이 허용하는 Module A, Module B+C, Module H 또는 가능한 경우 EU 사이버보안 인증 중 적절한 경로를 선택한다. Module A는 일반 제품에서 흔히 검토되는 내부 관리 경로지만 유일한 선택지는 아니다. Annex III/IV 핵심 기능 제품은 Article 32(2)–(4)의 추가 평가 절차를 적용하므로 분류를 먼저 확정해야 한다.
 6. Article 14 신고 의무는 2026-09-11부터 이미 적용 중이다. CRA 적용일(2027-12-11) 전 시장에 출시된 제품도 신고 대상이 될 수 있으며, 지원기간이 끝난 제품에도 신고 의무는 계속된다. 기존 설치 제품을 보유한 제조사는 취약점·심각한 사고 접수, triage, 신고 책임자 및 24/72시간 대응 절차를 지금 운영해야 한다.
 7. 지원기간은 일률적인 5년이 아니다. 제품의 예상 사용기간, 사용자 기대, 제품의 성격 및 관련 EU 법령을 반영해야 하며, 최소 5년이 원칙이나 실제 예상 사용기간이 5년보다 짧으면 그 기간에 맞춘다. 산업용 제어 제품은 장기간 사용되는 경우가 많으므로, 5년을 자동 기본값으로 두지 말고 근거를 문서화해야 한다.
@@ -287,7 +287,7 @@ Commission Implementing Decision C(2026) 7861 final Annex는 M/606의 41개 표�
 작성 기준일: 2026-11-17. 본문에서 '가능성 높음', '잠정'으로 표시된 결론은 제품별 증거 확보 후 확정한다.
 
 
-## 11. Commission Guidance 및 M/606 표준화 근거 추적 — 2026-11-17 추가
+## 14. Commission Guidance 및 M/606 표준화 근거 추적 — 2026-11-17 추가
 
 - [Commission Guidance claim register](CRA_GUIDANCE_CLAIM_REGISTER_2026-11-17.csv)에 G-001~G-013의 비구속적 Commission 설명을 등록했다. 각 claim은 문서 locator, PDF page, 관련 CRA requirement/interface/SEC control ID와 연결한다.
 - Guidance claim은 CRA 법령상 독립 의무가 아니다. 모든 CSV 열의 claim ID는 해석 근거의 추적 링크이며, 법적 요구사항을 새로 만들거나 적합성을 입증하지 않는다.
@@ -300,10 +300,10 @@ Commission Implementing Decision C(2026) 7861 final Annex는 M/606의 41개 표�
 
 - [Commission Guidance claim register](CRA_GUIDANCE_CLAIM_REGISTER_2026-11-17.csv)에 G-001~G-013의 비구속적 설명, 원문 문단/페이지 locator 및 관련 CRA requirement/interface/SEC control 연결을 기록했다.
 
-## 12. M/606 Annex I 41개 항목의 서보 드라이브 관련성
+## 15. M/606 Annex I 41개 항목의 서보 드라이브 관련성
 
 - [M/606 Annex I 41-item relevance map](CRA_M606_ANNEX_I_SERVO_DRIVE_RELEVANCE_2026-11-17.csv)에 모든 항목의 paraphrased topic, ESO adoption deadline, PDF page locator, 관련 CRA requirement/SEC control/interface 후보 및 서보 드라이브 관련성 판단을 기록했다.
-- 항목 1–15는 horizontal standardisation topics로 분류했다. 이 ESO adoption deadline은 제조자의 CRA compliance deadline이 아니다.
+- 항목 1–14는 horizontal property 표준화 주제, 항목 15는 horizontal vulnerability-handling 주제로 분류했다. 두 범주 모두 수평 표준화 항목이며 ESO adoption deadline은 제조자의 CRA compliance deadline이 아니다.
 - 항목 16–27 및 31–36은 vertical product-type 항목이다. servo drive의 내장 기능·포트·웹뷰·부트로더 사용만으로 제품 전체가 해당 vertical product type으로 자동 분류되지 않는다. intended purpose, product boundary 및 core functionality로 판단한다.
 - 항목 28–30 및 37–39는 security-featured component 후보로 다뤘다. 실제 부품번호·기능·공급자 증거가 확인될 때 CRA-006/CRA-024 및 관련 SEC control의 component due diligence에 연결한다. 부품 포함만으로 완제품이 vertical category가 되지 않는다.
 - 항목 25(network interfaces), 36(industrial firewall/IDS/IPS), 41(secure elements)은 실제 제품 기능·의도된 목적에 따른 조건부 후보로 표시했다.
@@ -311,8 +311,11 @@ Commission Implementing Decision C(2026) 7861 final Annex는 M/606의 41개 표�
 - M/606은 표준화 요청이다. 이 결정만으로 해당 표준이 OJ에 인용된 harmonised standard가 되거나 presumption of conformity가 발생하지 않는다.
 
 
-## 13. 제품별 사실관계 및 증거 수집 — 미완료
+## 16. 제품별 사실관계 및 증거 수집 — 미완료
 
 - [CRA 제품 경계 및 증거 수집 기준서](CRA_PRODUCT_BOUNDARY_AND_EVIDENCE_INTAKE_2026-11-17.md)를 제품별 사실관계 입력 기준으로 추가했다.
 - 현재 저장소의 Guidance·M/606 매핑은 일반 서보 드라이브 평가 프레임워크다. 정확한 제조사·모델·사용설명서·데이터시트·BOM/SBOM·네트워크 구성·원격 처리 구조가 확보되지 않았으므로 특정 제품의 CRA 적용성, Annex III/IV 분류, RDPS 여부 또는 최종 적합성을 확정하지 않는다.
 - 제품별 증거가 제공되면 제품 경계부터 확정하고, 각 CRA requirement / interface / SEC control / M/606 candidate에 evidence ID와 원문 locator를 연결한다.
+
+
+- [통합 CRA 보고서 독립 검토 기록](CRA_INTEGRATED_REPORT_INDEPENDENT_AUDIT_2026-11-17.md): 보고서 구조, 분류 용어, 공식 근거의 한계 및 후속 2차 검토 항목.

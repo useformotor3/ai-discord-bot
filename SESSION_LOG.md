@@ -1415,3 +1415,28 @@
 - Run #781 success: 154 passed / 1 xfailed; CRA traceability, official PDF/HTML canaries and PDF artifact upload passed.
 - Pre/post safety refs 생성. Post ref와 merge SHA/main 비교 `identical` 확인.
 - 제품별 데이터시트/사용설명서가 없으므로 제품별 적용성/분류는 미확정으로 유지.
+
+
+## 2026-11-17 — 통합 CRA 보고서 독립 검토 시작
+
+- 보고서 추가 섹션의 중복 번호(§11–§13)를 확인하고 §14–§16으로 정정.
+- Annex III Important products와 Annex IV Critical products 용어를 구분.
+- 독립 검토 기록 추가, unique top-level section numbering validator와 negative test 추가.
+- 다음은 법령 locator와 Guidance PDF claim locator를 표본 대조한다.
+
+
+## 2026-11-17 — 독립 보고서 검토 1차 수정
+
+- §11–§13 중복을 §14–§16으로 정정, Annex III Important / Annex IV Critical 용어 구분.
+- CRA traceability에 중복 top-level section number 검증 및 negative test 추가.
+- Run #797: 155 passed / 1 xfailed, PDF/HTML canaries 통과.
+- EUR-Lex Article 6, 7(1), 10, 11, 14, 32, 69, 71 및 EHDS Regulation 2025/327 Article 104 적용일을 표본 대조.
+- 다음 단계: CRA-001~CRA-035 법령 locator 전수 대조 및 G-001~G-013 Guidance PDF locator 표본 대조.
+
+
+## 2026-11-17 — Guidance PDF locator 재대조
+
+- Run #702 artifact PDF를 내려받아 SHA-256 manifest와 대조하고, G-001~G-013 paragraph locator와 printed page number를 재확인.
+- G-002, G-005, G-006, G-008, G-009, G-010, G-012, G-013의 페이지 범위를 정정. 나머지 5개는 유지.
+- physical PDF page index와 printed page number를 분리해 기록.
+- Commission-hosted primary byte identity 미확인 한계는 그대로 공개.

@@ -828,7 +828,7 @@
 - Pre-merge ref `safety/pre-merge-main-pr30-2026-11-17` → `80245d9e132380a10581612c031f87869993b98d`; post-merge ref `safety/post-merge-main-pr30-2026-11-17` → `975ec6728988e43d9a1ebbf6f6d84288aa44c2fd`; readback compare에서 main과 post-merge ref 동일 확인.
 - PR #30 범위: 한국어 CRA 감사 보고서, 관리 문서·로그 동기화, 격리 테스트 workflow push branch allowlist 1줄. 운영 애플리케이션 코드, 운영 `run.yml`, state/history/archive, Gemini/Discord 외부 실행 및 SIL 3 과거 산출물은 변경하지 않았다.
 - M/606 Commission PDF 및 Guidance ANFR mirror raw-byte SHA-256 검증 완료. M/606 item 18 deadline 31/01/2027 시각 확인 완료. Guidance Commission primary byte identity는 미확인.
-- 현재 구현 작업 브랜치: 없음 (PR #39 병합 완료; PR #40은 문서 전용 사후 동기화).
+- 현재 구현 작업 브랜치: `cra/integrated-report-independent-audit-2026-11-17` (통합 CRA 보고서 2차 독립 검토 및 중복 섹션 번호 방지 테스트).
 
 
 ## 2026-11-17 — PR #31 사후 동기화 완료
@@ -965,3 +965,27 @@
 - Pre-merge `safety/pre-merge-main-pr39-2026-11-17` → `d212081d0f105fc2b293606d71f9b156f0c45c89`; post-merge `safety/post-merge-main-pr39-2026-11-17` → `aec679142bf8c12b1ce18b233956f9695d70ca21`. post ref와 merge SHA/main compare identical.
 - 제품별 모델 자료는 아직 미제공이므로 제품별 CRA 분류·적합성 결론은 미확정. 다음 실질 작업은 통합 CRA 보고서의 법령·요구사항·증거 연결을 독립 검토하고, 제품 자료가 들어오면 intake 기준서로 적용성 매핑을 수행하는 것이다.
 - 현재 구현 작업 브랜치 없음. PR #40은 이 상태판 동기화만 수행한다.
+
+
+## 2026-11-17 — 통합 CRA 보고서 2차 검토 착수
+
+- PR #39 제품 증거 intake 기준서 및 PR #40 사후 상태 동기화가 main에 병합되고 post-merge safety ref 검증을 완료했다.
+- 통합 보고서에서 추가된 §11–§13과 기존 §11–§13 번호 중복을 발견해 추가 섹션을 §14–§16으로 수정했다. Annex III Important products와 Annex IV Critical products 용어도 구분했다.
+- 독립 검토 기록 `reports/CRA_INTEGRATED_REPORT_INDEPENDENT_AUDIT_2026-11-17.md` 작성. Guidance mirror byte identity의 한계와 제품별 증거 미확보 상태를 명시했다.
+- `cra_traceability.py`에 top-level section number 중복 검증을 추가하고 negative test를 작성 중이다.
+
+
+## 2026-11-17 — 독립 검토 1차 수정 및 CI
+
+- 보고서 최상위 섹션 번호 중복을 §14–§16으로 정정하고 분류 용어를 정리했다.
+- traceability gate에 top-level section number uniqueness 검사를 추가하고 duplicate heading negative test를 추가했다.
+- [Run #797](https://github.com/useformotor3/ai-discord-bot/actions/runs/44059539968): **155 passed / 1 xfailed**; CRA traceability, official Guidance/M/606 PDF canaries, HTML canary 및 artifact upload 통과.
+- EUR-Lex 원문으로 Article 6, 7(1), 10, 11, 14, 32, 69(2)–(3), 71(2)와 Regulation (EU) 2025/327 Article 104의 적용 예정일을 표본 대조했다. 전체 35개 requirement 전수 대조는 계속 진행한다.
+- Guidance PDF의 Commission-hosted primary byte identity는 여전히 미확인으로 유지한다.
+
+
+## 2026-11-17 — Commission Guidance PDF locator 재대조
+
+- CI artifact Run #702의 Guidance PDF를 다운로드하고 SHA-256 manifest와 대조한 뒤 G-001~G-013의 paragraph/page locator를 PDF 추출 텍스트와 재대조했다.
+- G-002, G-005, G-006, G-008, G-009, G-010, G-012, G-013의 printed-page locator를 정정했다. G-001, G-003, G-004, G-007, G-011은 유지했다.
+- 정정 내역은 `reports/CRA_INTEGRATED_REPORT_INDEPENDENT_AUDIT_2026-11-17.md` §7에 기록했다. Commission-hosted primary PDF byte identity는 아직 미확인이다.
