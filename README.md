@@ -395,3 +395,5 @@ The CRA feature was merged only into the isolated integration branch, not main. 
 - [Correction #10](reports/CRA_CORRECTION_REPORT_10_2026-11-17.md): separates support period, update availability retention, free security updates and CVD policy; corrects the non-verbatim quotation.
 
 - [Correction #9](reports/CRA_CORRECTION_REPORT_9_2026-11-17.md): clarifies SBOM minimum top-level dependency coverage, format choice and remediation/disclosure timing.
+
+- [Correction #8](reports/CRA_CORRECTION_REPORT_8_2026-11-17.md): corrects SBOM technical-documentation, market-surveillance request and optional user-disclosure provisions.
