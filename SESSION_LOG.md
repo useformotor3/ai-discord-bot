@@ -1440,3 +1440,11 @@
 - G-002, G-005, G-006, G-008, G-009, G-010, G-012, G-013의 페이지 범위를 정정. 나머지 5개는 유지.
 - physical PDF page index와 printed page number를 분리해 기록.
 - Commission-hosted primary byte identity 미확인 한계는 그대로 공개.
+
+
+## 2026-11-17 — PR #41 merge / CRA locator audit 다음 단계
+
+- PR #41 merge `acfa2f583157ac541c4c60d71090197322bc8efb`; Run #806 155 passed / 1 xfailed.
+- Guidance claim G-001~G-013 PDF paragraph/page locator 8건 정정 및 독립 audit record 추가.
+- Pre/post safety refs 생성, post ref와 main compare identical.
+- 다음은 CRA-001~CRA-035 법령 locator와 각 row의 법적 설명·적용 주체·조건·예외를 공식 EUR-Lex 원문과 행 단위로 교차 검토한다.
