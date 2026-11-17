@@ -337,3 +337,8 @@
 - Run source SHA verification, compileall, full pytest and read-only official-source canaries on the merged integration tree.
 - A successful integration branch is not permission to merge main. Keep the validation PR Draft until deliverables and safety review are complete.
 - Keep CRA cybersecurity obligations separate from SIL 3 functional-safety requirements; cross-reference interfaces and hazards without treating one regulation as proof of the other.
+
+## 31. CRA logging and telemetry evidence
+- Use Annex I Part I (2)(l) for recording/monitoring relevant internal activity, Part I (2)(c) for security updates, and Part I (2)(h) for availability. Do not transpose these locators.
+- Do not treat every authentication failure, SIEM integration, circular buffer, remote telemetry protocol or tamper-proof storage design as a separately enumerated CRA requirement unless an exact source says so.
+- Design log events, retention, integrity, time synchronization, storage limits and export based on product risk and operational constraints; assess real-time control and functional-safety impact separately.
