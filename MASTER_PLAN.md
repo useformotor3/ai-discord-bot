@@ -415,7 +415,7 @@
 
 ## 2026-11-17 — 후속 법령 원문 source pack 확장 완료
 - CRA 통합본 외 EUR-Lex 공식 원문 3건(2025/327, 2025/1535, 2026/881)을 수집 대상으로 추가했다.
-- CI Run #141: 103 passed, 1 xfailed; EUR-Lex canary Run #26: 네 문서 220,715자 수집 성공.
+- CI Run #141: 103 passed, 1 xfailed; EUR-Lex canary Run #26: source pack 추출 텍스트 220,715자(2025/327은 Article 104 관련 발췌), 각 원문 HTML visible text 개별 길이는 196,076자 / 394,354자 / 6,246자 / 15,284자.
 - 제품 적용성을 추정하지 않고 EHR 적용 시기, L-category 제한적 제외, Article 16 통지 전파 지연을 분리한다.
 - 다음 우선순위: (1) claim-to-evidence 단위 검증 (2) Official Journal 정본/정오표 차이 대조 (3) 모델 출력 호환성 비운영 검증 (4) 게시 전 사람 검토 단계.
 - 운영 main 병합은 위 항목과 별도 검토 후 결정한다.
