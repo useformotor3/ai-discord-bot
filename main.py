@@ -212,7 +212,7 @@ prompt = f"""
 
     [작성 양식]
     1. 주제 요약: (핵심 내용 2줄)
-    2. 규격 근거 및 상세 내용: (CRA 조항 또는 산업 표준 기준의 구체적 설명)
+    2. 규격 근거 및 상세 내용: (CRA 조항의 구체적 설명; 외부 표준은 별도 공식 출처 확인 없이는 법적 근거로 인용하지 않음)
     3. 출처 자료(Source): Regulation (EU) 2024/2847, EUR-Lex 공식 URL을 정확히 기재
     4. 출처 원문 텍스트(Raw Text Quote): 위 공식 원문에서 50자 이상 연속된 실제 문장을 큰따옴표로 직접 인용
     """
@@ -269,7 +269,7 @@ if not success:
 
 # 5. 디스코드 분할 전송 (2000자 제한 방어)
 title_prefix = (
-    "🟢 **[12시간 시스템 생존신고 & 정기 헬스체크]**"
+    "🟢 **[12시간 시스템 생존신고]**\n🛡️ **[CRA 조사 초안: EUR-Lex 원문 인용 대조 통과 / 법률 해석 미검증]**"
     if is_health_check
     else "🛡️ **[CRA 조사 초안: EUR-Lex 원문 인용 대조 통과 / 법률 해석 미검증]**"
 )
@@ -412,7 +412,7 @@ archive_filename = (
     f"research_archive/{TODAY}_{NOW.strftime('%H%M%S%f')}_{uuid.uuid4().hex[:8]}.md"
 )
 archive_payload = (
-    f"# CRA Research Draft\n- **Evidence gate:** EUR-Lex official source fetched; Article/Annex locator and at least one verbatim quote matched. Legal interpretation and product applicability remain unverified.\n- **Source URL:** {cra_source['url']}\n- **Source checked at:** {NOW.isoformat()}\n- **Date:** {TODAY} {NOW.strftime('%H:%M:%S')}\n-"
+    f"# CRA Research Draft\n- **Evidence gate:** EUR-Lex official source fetched; Article/Annex locator and at least one verbatim quote matched. Legal interpretation and product applicability remain unverified.\n- **Source URL:** {cra_source['url']}\n- **Source version:** {cra_source['version']}\n- **Source checked at:** {NOW.isoformat()}\n- **Date:** {TODAY} {NOW.strftime('%H:%M:%S')}\n-"
     f" **Count:** {current_count + 1}\n\n{ai_message}"
 ).encode("utf-8")
 
