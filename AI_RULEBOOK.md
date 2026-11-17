@@ -384,3 +384,8 @@
 - Use Annex I Part I (2)(h) for availability of essential and basic functions and DoS resilience/mitigation; use (2)(f) for integrity.
 - Do not present dual-core isolation, packet rate limits, packet-drop policy or a specific network protocol as a universally mandated CRA implementation.
 - Do not infer STO/SS1 behavior from CRA DoS wording. Select safety response through hazard analysis and applicable functional-safety requirements.
+
+## 40. CRA physical/logical interface claims
+- Use Annex I Part I (2)(j) for limiting attack surfaces including external interfaces; use Recital 9 for the context that products can connect through physical and logical interfaces.
+- Do not attribute permanent JTAG/SWD/UART disablement, eFuse/OTP programming or a specific debug lifecycle to the CRA unless an exact provision says so.
+- Evaluate debug/service interfaces across manufacturing, commissioning, field service, recovery and RMA modes.
