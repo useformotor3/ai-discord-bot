@@ -136,6 +136,7 @@ def test_source_manifest_is_appended_and_every_record_is_verifiable():
             "id": "CRA-test",
             "version": "test source version",
             "url": "https://eur-lex.europa.eu/test",
+            "final_url": "https://eur-lex.europa.eu/test",
             "sha256": "abc123",
             "full_text_sha256": "full-abc123",
             "prompt_excerpt_sha256": "excerpt-abc123",
