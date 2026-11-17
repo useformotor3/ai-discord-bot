@@ -401,3 +401,5 @@ The CRA feature was merged only into the isolated integration branch, not main. 
 - [Correction #7](reports/CRA_CORRECTION_REPORT_7_2026-11-17.md): corrects the nonexistent CRA locator and separates risk-based access control from specific password implementation choices.
 
 - [Correction #6](reports/CRA_CORRECTION_REPORT_6_2026-11-17.md): corrects the final OJ DoS locator and separates availability requirements from implementation and functional-safety choices.
+
+- [Correction #5](reports/CRA_CORRECTION_REPORT_5_2026-11-17.md): corrects attack-surface locator and separates physical debug-port hardening from specific legal requirements.
