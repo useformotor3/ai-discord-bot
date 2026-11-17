@@ -1,6 +1,7 @@
 """Official-source retrieval and conservative validation for CRA research drafts."""
 from html.parser import HTMLParser
 import re
+from urllib.parse import urlparse
 
 import requests
 
@@ -47,6 +48,10 @@ def fetch_official_cra_source():
         timeout=SOURCE_TIMEOUT,
     )
     response.raise_for_status()
+    final_url = getattr(response, "url", CRA_SOURCE_URL)
+    parsed_url = urlparse(final_url)
+    if parsed_url.scheme != "https" or parsed_url.hostname != "eur-lex.europa.eu":
+        raise RuntimeError("EUR-Lex 이외의 도메인으로 리디렉션되어 원문 수집을 중단합니다.")
     parser = _VisibleText()
     parser.feed(response.text)
     source_text = normalize_source_text(" ".join(parser.parts))
