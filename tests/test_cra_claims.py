@@ -92,7 +92,7 @@ def test_rejects_unverifiable_legal_claim_fields(field, value, expected):
         "category": "legal_requirement",
         "statement": "제조자는 지원 기간 동안 취약점을 효과적으로 처리해야 한다.",
         "source_id": SOURCE_ID,
-        "locator": "Article 13",
+        "locator": "Article 13(8)",
         "quote": QUOTE,
     }
     claim[field] = value
@@ -107,7 +107,7 @@ def test_rejects_quote_shorter_than_minimum():
         "category": "legal_requirement",
         "statement": "제조자는 취약점을 처리해야 한다(Article 13(8)).",
         "source_id": SOURCE_ID,
-        "locator": "Article 13",
+        "locator": "Article 13(8)",
         "quote": "Too short",
     }
     valid, reason = validate_claim_evidence(make_report(claim), SOURCE)
@@ -184,7 +184,7 @@ def test_rejects_duplicate_claim_ids():
                 "category": "legal_requirement",
                 "statement": "첫 번째 법적 주장입니다.",
                 "source_id": SOURCE_ID,
-                "locator": "Article 13",
+                "locator": "Article 13(8)",
                 "quote": QUOTE,
             },
             {
@@ -192,7 +192,7 @@ def test_rejects_duplicate_claim_ids():
                 "category": "legal_requirement",
                 "statement": "두 번째 법적 주장입니다.",
                 "source_id": SOURCE_ID,
-                "locator": "Article 13",
+                "locator": "Article 13(8)",
                 "quote": QUOTE,
             },
         ]
