@@ -23,7 +23,7 @@
 
 ## 2. 논리 블록 구조
 
-\`\`\`mermaid
+```mermaid
 flowchart LR
   subgraph EXT["외부 환경 / 신뢰 경계"]
     PLC["PLC / 산업 네트워크"]
@@ -63,7 +63,7 @@ flowchart LR
   FW --> WDG
   SUP -. "취약점·업데이트 운영" .-> CLOUD
   SUP -. "서명된 업데이트/권고" .-> ENG
-\`\`\`
+```
 
 ### 2.1 블록별 책임
 
