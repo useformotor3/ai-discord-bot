@@ -12,3 +12,12 @@
 - PR #42는 CRA-001–CRA-035 법령 locator의 1차 인벤토리 검토 및 SBOM 의무 체계(Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9))를 명확히 했다.
 - 새 현재 상태 스냅샷 `PROJECT_STATUS_CURRENT.md`를 추가해 최신 main/PR/CI/복구 ref/미완료 사항을 한곳에 기록한다.
 - 다음 작업은 35개 요구사항의 법령 문언·의무 주체·조건·예외·기한을 행 단위로 심층 검토하고 관련 보고서/매트릭스를 함께 정합화하는 것이다.
+
+
+## CRA 법령 문언 심층 감사 Batch 1
+- EUR-Lex 공식 Regulation (EU) 2024/2847 원문을 기준으로 CRA-001–CRA-010을 행별 대조했다.
+- 신규 상세 감사: `reports/CRA_LEGAL_SEMANTICS_AUDIT_2026-11-18.md`.
+- 추적표 locator 수정: CRA-001(Article 3(8)–(10), Recital 9 보강), CRA-003(Article 13(2) 제거, Article 3(2)/Recital 11–12로 정정), CRA-006(Annex I Part II(1), Article 13(7), Annex VII(2)(b)/(8) 분리 및 Article 13(5) due diligence 구분).
+- CRA-008의 regular testing은 고정 법정 주기 숫자 미규정, CRA-009의 공개 지연 예외를 감사 문서와 통합 보고서에 기록했다.
+- 추적표·통합 보고서·독립 감사·상황판/세션 로그를 같은 작업 브랜치에서 정합화했다. exact-head CI 통과 전 병합하지 않는다.
+- 다음 대상은 CRA-011–CRA-020.

@@ -595,3 +595,10 @@
 5. 제품별 자료가 없으면 제품 분류·적합성·인증 경로는 Unknown/Conditional로 유지한다.
 
 최신 재개 기준 및 PR #42 검증/복구 정보는 [PROJECT_STATUS_CURRENT.md](PROJECT_STATUS_CURRENT.md)를 참조한다.
+
+
+## 법령 심층 감사 진행 상태 — 2026-11-18
+- CRA-001–CRA-010: EUR-Lex 원문 대조 1차 완료. locator 보완/정정 사항은 요구사항 CSV 및 통합 보고서/독립 감사에 반영 중.
+- CRA-011–CRA-020: 다음 검토 묶음.
+- CRA-021–CRA-035: 신고/전환, 기계류·표준화, 경제운영자, 적용 제외/중복 검토 대기.
+- 상세 Batch 1: `reports/CRA_LEGAL_SEMANTICS_AUDIT_2026-11-18.md`.
