@@ -1116,3 +1116,8 @@
 - 원본 archive #9의 Annex I Part II (1) raw quote는 대체로 정확하다. 다만 법령의 SBOM 최소 범위는 top-level dependencies이며, 모든 transitive dependency 또는 SPDX/CycloneDX 특정 포맷을 직접 강제하지 않는다.
 - Part II (2) without delay remediation과 Part II (4) patch availability 이후 fixed-vulnerability disclosure 및 정당한 지연 예외를 구분했다.
 - correction report #9 생성, 원본 archive 보존. correction reports #9–#19 완료.
+
+## 2026-11-17 — archive #8 정정
+- 원본 archive #8은 SBOM을 Annex VI로 잘못 인용했다. Annex VI는 simplified EU DoC이며 SBOM은 Annex I Part II (1), Annex VII 2(b)/8, Annex II point9에서 다룬다.
+- 사용자에게 SBOM을 반드시 제공해야 한다는 주장도 부정확하다. Annex II point9는 제조사가 SBOM 사용자 공개를 결정한 경우 접근 위치를 안내하도록 한다.
+- servo drive 자동 Important Class I/II 분류 및 모든 transitive dependency 강제 주장을 정정했다. correction report #8 생성, 원본 archive 보존.
