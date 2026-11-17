@@ -1,5 +1,7 @@
 """Official CRA source-pack retrieval and conservative provenance validation."""
+from datetime import datetime, timezone
 from html.parser import HTMLParser
+import hashlib
 import re
 from urllib.parse import urlparse
 
@@ -12,6 +14,8 @@ CRA_SOURCE_CATALOG = (
     {
         "id": "CRA-2024-2847-consolidated",
         "url": CRA_SOURCE_URL,
+        "allowed_hosts": ("eur-lex.europa.eu",),
+        "kind": "official_legal_text",
         "version": (
             "Regulation (EU) 2024/2847 consolidated text 20.11.2024; "
             "English corrigenda 5.12.2024, 2.7.2025 and 17.10.2025"
@@ -22,6 +26,8 @@ CRA_SOURCE_CATALOG = (
     {
         "id": "CRA-2024-2847-corrigendum-2024-12-05",
         "url": "https://eur-lex.europa.eu/eli/reg/2024/2847/corrigendum/2024-12-05/oj/eng",
+        "allowed_hosts": ("eur-lex.europa.eu",),
+        "kind": "official_corrigendum",
         "version": (
             "Official Journal corrigendum 2024/90780, 05.12.2024; "
             "corrects the CRA title by removing 'No' before 2019/1020"
@@ -36,6 +42,8 @@ CRA_SOURCE_CATALOG = (
     {
         "id": "CRA-2024-2847-corrigendum-2025-07-02",
         "url": "https://eur-lex.europa.eu/eli/reg/2024/2847/corrigendum/2025-07-02/oj/eng",
+        "allowed_hosts": ("eur-lex.europa.eu",),
+        "kind": "official_corrigendum",
         "version": (
             "Official Journal corrigendum 2025/90555, 02.07.2025; "
             "Article 64(10) changes the fine-derogation reference from paragraphs 3-9 to 2-9"
@@ -50,6 +58,8 @@ CRA_SOURCE_CATALOG = (
     {
         "id": "CRA-2024-2847-corrigendum-2025-10-17",
         "url": "https://eur-lex.europa.eu/eli/reg/2024/2847/corrigendum/2025-10-17/oj/eng",
+        "allowed_hosts": ("eur-lex.europa.eu",),
+        "kind": "official_corrigendum",
         "version": (
             "Official Journal corrigendum 2025/90828, 17.10.2025; "
             "Article 67 changes the referenced Regulation number from 69 to 72"
@@ -64,6 +74,8 @@ CRA_SOURCE_CATALOG = (
     {
         "id": "CRA-2025-327-EHDS-amendment",
         "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32025R0327",
+        "allowed_hosts": ("eur-lex.europa.eu",),
+        "kind": "official_amending_regulation",
         "version": (
             "Regulation (EU) 2025/327 Article 104 adds CRA Article 32(5a) "
             "for EHR systems; applies from 26.03.2027"
@@ -75,6 +87,8 @@ CRA_SOURCE_CATALOG = (
     {
         "id": "CRA-2025-1535-product-scope-delegated-act",
         "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32025R1535",
+        "allowed_hosts": ("eur-lex.europa.eu",),
+        "kind": "official_delegated_regulation",
         "version": (
             "Commission Delegated Regulation (EU) 2025/1535; in force 18.11.2025; "
             "limited exclusion for products within Regulation (EU) No 168/2013, "
@@ -86,6 +100,8 @@ CRA_SOURCE_CATALOG = (
     {
         "id": "CRA-2026-881-reporting-delay-delegated-act",
         "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32026R0881",
+        "allowed_hosts": ("eur-lex.europa.eu",),
+        "kind": "official_delegated_regulation",
         "version": (
             "Commission Delegated Regulation (EU) 2026/881; in force 10.05.2026; "
             "conditions for delaying dissemination of notifications under CRA Article 16"
@@ -93,11 +109,51 @@ CRA_SOURCE_CATALOG = (
         "min_chars": 1000,
         "required": ("2026/881", "Article 16", "notifications"),
     },
+    {
+        "id": "CRA-COMMISSION-GUIDANCE-2026-07-27",
+        "url": "https://digital-strategy.ec.europa.eu/en/library/commission-publishes-new-guidance-support-timely-cyber-resilience-act-implementation",
+        "allowed_hosts": ("digital-strategy.ec.europa.eu",),
+        "kind": "official_non_binding_guidance_publication_page",
+        "version": (
+            "European Commission CRA guidance publication page, 27.07.2026, C(2026) 5252; "
+            "page summary only, not the full guidance annex"
+        ),
+        "min_chars": 1000,
+        "required": (
+            "C(2026) 5252",
+            "27 July 2026",
+            "though non-binding",
+            "remote data processing solutions",
+        ),
+    },
+    {
+        "id": "CRA-M606-STANDARDISATION-2026-11-12",
+        "url": "https://digital-strategy.ec.europa.eu/en/policies/cra-standardisation",
+        "allowed_hosts": ("digital-strategy.ec.europa.eu",),
+        "kind": "official_standardisation_status_page",
+        "version": (
+            "European Commission CRA standardisation page, updated 12.11.2026; "
+            "confirms 10.11.2026 M/606 three-month extension; page does not provide item-level revised dates"
+        ),
+        "min_chars": 1000,
+        "required": (
+            "M/606",
+            "On 10 November 2026",
+            "by 3 months",
+            "41 standards",
+        ),
+    },
 )
 
 
 class _VisibleText(HTMLParser):
-    """Extract visible text while ignoring scripts, styles, and navigation noise."""
+    """Extract visible text while preserving block boundaries for legal locators."""
+
+    HIDDEN_TAGS = {"script", "style", "noscript", "svg", "nav", "header", "footer", "aside", "form"}
+    BLOCK_TAGS = {
+        "p", "div", "section", "article", "h1", "h2", "h3", "h4", "h5", "h6",
+        "li", "ol", "ul", "tr", "td", "th", "br", "table",
+    }
 
     def __init__(self):
         super().__init__(convert_charrefs=True)
@@ -105,49 +161,66 @@ class _VisibleText(HTMLParser):
         self.hidden_depth = 0
 
     def handle_starttag(self, tag, attrs):
-        if tag.lower() in {"script", "style", "noscript", "svg"}:
+        tag = tag.lower()
+        if tag in self.HIDDEN_TAGS:
             self.hidden_depth += 1
+            return
+        if not self.hidden_depth and tag in self.BLOCK_TAGS:
+            self.parts.append("\n")
 
     def handle_endtag(self, tag):
-        if tag.lower() in {"script", "style", "noscript", "svg"} and self.hidden_depth:
-            self.hidden_depth -= 1
+        tag = tag.lower()
+        if tag in self.HIDDEN_TAGS:
+            if self.hidden_depth:
+                self.hidden_depth -= 1
+            return
+        if not self.hidden_depth and tag in self.BLOCK_TAGS:
+            self.parts.append("\n")
 
     def handle_data(self, data):
         if not self.hidden_depth:
-            value = data.strip()
-            if value:
-                self.parts.append(value)
+            self.parts.append(data)
 
 
 def normalize_source_text(value):
-    """Normalize whitespace only; preserve words and punctuation for quote matching."""
-    return re.sub(r"\s+", " ", str(value or "")).strip()
+    """Normalize each visible block while retaining paragraph/point boundaries."""
+    lines = []
+    for raw_line in str(value or "").replace("\r", "\n").split("\n"):
+        normalized = re.sub(r"\s+", " ", raw_line).strip()
+        if normalized:
+            lines.append(normalized)
+    return "\n".join(lines)
 
 
 def _extract_visible_text(html):
     parser = _VisibleText()
     parser.feed(html)
-    return normalize_source_text(" ".join(parser.parts))
+    return normalize_source_text("".join(parser.parts))
 
 
 def _extract_relevant_excerpt(source_id, text):
     """Keep the CRA-amending EHDS Article 104 excerpt, not the unrelated full EHDS act."""
     if source_id != "CRA-2025-327-EHDS-amendment":
         return text
-    match = re.search(r"Article\s+104\b.*?(?=Article\s+105\b|$)", text, flags=re.IGNORECASE)
+    match = re.search(
+        r"Article\s+104\b.*?(?=Article\s+105\b|$)",
+        text,
+        flags=re.IGNORECASE | re.DOTALL,
+    )
     if not match:
         raise RuntimeError("Regulation (EU) 2025/327에서 CRA 개정 Article 104를 추출하지 못했습니다.")
     excerpt = match.group(0)[:12000]
     if "26 March 2027" not in text:
         raise RuntimeError("Regulation (EU) 2025/327의 적용 개시일 26 March 2027을 확인하지 못했습니다.")
-    return "EHDS application date: 26 March 2027. Relevant CRA amendment: " + excerpt
+    return "EHDS application date: 26 March 2027.\nRelevant CRA amendment:\n" + excerpt
 
 
 def fetch_official_cra_source():
-    """Fetch CRA base text plus official linked acts directly from EUR-Lex."""
+    """Fetch allowlisted official legal texts and Commission publication/status pages."""
     import requests
 
     source_items = []
+    retrieved_at = datetime.now(timezone.utc).isoformat()
     for definition in CRA_SOURCE_CATALOG:
         response = requests.get(
             definition["url"],
@@ -157,19 +230,21 @@ def fetch_official_cra_source():
         response.raise_for_status()
         final_url = getattr(response, "url", definition["url"])
         parsed_url = urlparse(final_url)
-        if parsed_url.scheme != "https" or parsed_url.hostname != "eur-lex.europa.eu":
+        allowed_hosts = definition.get("allowed_hosts", ("eur-lex.europa.eu",))
+        if parsed_url.scheme != "https" or parsed_url.hostname not in allowed_hosts:
             raise RuntimeError(
-                f"EUR-Lex 이외의 도메인으로 리디렉션되어 원문 수집을 중단합니다: {definition['id']}"
+                f"허용되지 않은 공식 도메인으로 리디렉션되어 원문 수집을 중단합니다: "
+                f"{definition['id']} / {final_url}"
             )
 
         full_text = _extract_visible_text(response.text)
         if len(full_text) < definition["min_chars"]:
-            raise RuntimeError(f"EUR-Lex 원문이 너무 짧습니다: {definition['id']}")
+            raise RuntimeError(f"공식 원문/페이지가 너무 짧습니다: {definition['id']}")
         folded = full_text.casefold()
         missing = [marker for marker in definition["required"] if marker.casefold() not in folded]
         if missing:
             raise RuntimeError(
-                f"EUR-Lex 후속 법령/원문 식별자를 확인하지 못했습니다: "
+                f"공식 원문 식별자를 확인하지 못했습니다: "
                 f"{definition['id']} / {', '.join(missing)}"
             )
 
@@ -185,9 +260,13 @@ def fetch_official_cra_source():
         source_items.append({
             "id": definition["id"],
             "url": definition["url"],
+            "final_url": final_url,
+            "kind": definition["kind"],
             "version": definition["version"],
             "text": relevant_text,
             "visible_text_chars": len(full_text),
+            "sha256": hashlib.sha256(relevant_text.encode("utf-8")).hexdigest(),
+            "retrieved_at": retrieved_at,
         })
 
     combined_text = "\n\n".join(
@@ -198,27 +277,47 @@ def fetch_official_cra_source():
     return {
         "url": CRA_SOURCE_URL,
         "version": version,
+        "retrieved_at": retrieved_at,
         "sources": source_items,
         "text": combined_text,
     }
 
 
 def append_source_manifest(report, source):
-    """Append machine-collected source URLs and versions so the model cannot omit them."""
+    """Append machine-collected source metadata and content hashes after validation."""
     lines = [
         "## 공식 출처 목록 (자동 수집)",
+        f"Source pack retrieved at: {source['retrieved_at']}",
         f"Source pack version: {source['version']}",
+        (
+            "주의: Commission guidance/standardisation 항목은 공식 설명·현황 페이지다. "
+            "해당 페이지에 수록되지 않은 Annex/PDF의 세부 내용을 입증하는 원문으로 취급하지 않는다."
+        ),
     ]
     for item in source["sources"]:
-        lines.append(f"- {item['id']}: {item['version']} — {item['url']}")
+        lines.append(
+            f"- {item['id']}: {item['version']} | URL: {item['url']} | "
+            f"SHA-256: {item['sha256']} | Retrieved: {item['retrieved_at']}"
+        )
     return report.rstrip() + "\n\n" + "\n".join(lines)
 
 
-def validate_research_report(report, source):
-    """Check report structure, source manifest, clause locator, and one verbatim quote.
+def validate_source_manifest(report, source):
+    """Verify that the final report contains every machine-appended source record."""
+    if not isinstance(report, str) or not isinstance(source, dict):
+        return False, "source manifest 입력 구조가 올바르지 않습니다."
+    if source.get("version") not in report or source.get("retrieved_at") not in report:
+        return False, "자동 출처 manifest의 version/retrieved_at이 누락되었습니다."
+    for item in source.get("sources", []):
+        for field in ("id", "version", "url", "sha256", "retrieved_at"):
+            value = item.get(field)
+            if not isinstance(value, str) or value not in report:
+                return False, f"자동 출처 manifest 항목이 누락되었습니다: {item.get('id')} / {field}"
+    return True, ""
 
-    This is a minimum provenance gate, not a full legal or semantic correctness review.
-    """
+
+def validate_research_report(report, source):
+    """Check minimum report structure and a verbatim quote; not a legal opinion."""
     if not isinstance(report, str):
         return False, "응답이 문자열이 아닙니다."
     if not isinstance(source, dict) or not source.get("text") or not source.get("sources"):
@@ -239,20 +338,14 @@ def validate_research_report(report, source):
         if not any(marker in lowered for marker in alternatives):
             return False, f"필수 보고서 항목 누락: {' / '.join(alternatives)}"
 
-    if source["version"] not in text:
-        return False, "출처 자료에 전체 official source pack version이 없습니다."
-    for item in source["sources"]:
-        if item["url"] not in text:
-            return False, f"공식 출처 URL이 누락됐습니다: {item['id']}"
-        if item["version"] not in text:
-            return False, f"공식 출처 버전/적용일이 누락됐습니다: {item['id']}"
-
+    if "eur-lex.europa.eu" not in lowered or "2024/2847" not in lowered:
+        return False, "CRA Official Journal 원문 링크/규정 번호가 누락됐습니다."
     if "관보" not in text or not any(
         marker in lowered for marker in ("문서화 도구", "documentation tool")
     ):
         return False, "EUR-Lex 통합본의 문서화 도구 지위와 관보 정본의 법적 효력 주의가 누락됐습니다."
 
-    source_text = normalize_source_text(source["text"]).casefold()
+    source_text = re.sub(r"\s+", " ", source["text"]).casefold()
     article_refs = re.findall(r"\bArticle\s+\d+\b", text, flags=re.IGNORECASE)
     annex_refs = re.findall(r"\bAnnex\s+[IVX]+\b", text, flags=re.IGNORECASE)
     if not article_refs and not annex_refs:
@@ -273,7 +366,10 @@ def validate_research_report(report, source):
     quote_candidates = [part for match in quoted for part in match if part]
     if not quote_candidates:
         return False, "50자 이상의 직접 인용문이 큰따옴표로 표시되지 않았습니다."
-    if not any(normalize_source_text(candidate).casefold() in source_text for candidate in quote_candidates):
+    if not any(
+        re.sub(r"\s+", " ", candidate).strip().casefold() in source_text
+        for candidate in quote_candidates
+    ):
         return False, "보고서의 직접 인용문이 수집한 official source pack과 일치하지 않습니다."
 
     error_markers = (
