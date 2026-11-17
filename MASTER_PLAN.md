@@ -563,3 +563,8 @@
 2. [완료] unique credential/first-use/password complexity 구현 후보와 CRA 직접 문언을 분리.
 3. [완료] IEC 62443 CR 1.1/1.5와 CRA 법적 근거를 별도 traceability로 분리.
 4. [진행] archive #6 이하 역순 감사.
+
+## 2026-11-17 — archive #6 correction audit
+1. [완료] DoS/availability locator를 final OJ Annex I Part I (2)(h)로 정정.
+2. [완료] dual-core, traffic shaping, packet filtering과 STO/SS1를 구현 후보/기능안전 판단으로 분리.
+3. [진행] archive #5 이하 역순 감사.
