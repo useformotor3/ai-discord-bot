@@ -872,3 +872,9 @@
 - final OJ는 Annex I Part I (2)(h)에 essential and basic functions availability 및 DoS resilience/mitigation을 규정. 원본의 (1)(f)/(h)는 구판/초안 구조와 혼합.
 - dual-core/MPU-DSP 분리, rate limiting, packet drop, STO/SS1 전이는 특정 법적 구현 의무가 아니며 제품 위험·기능안전 분석으로 결정.
 - correction report #6 생성: reports/CRA_CORRECTION_REPORT_6_2026-11-17.md. correction reports #6–#19 완료.
+
+## 2026-11-17 — archive #5 물리/논리 인터페이스 정정 감사
+- 원본 archive #5 SHA e6dfcf688a3859b9468dbe7a4ef28c2d7d3c94ad 확인, 원본 보존.
+- Annex I Part I point 3(f)는 final OJ locator가 아니다. 공격 표면 제한은 point (2)(j); secure-default는 (2)(b), access control은 (2)(d).
+- Recital 46로 인용한 ports/debug disable 문구는 final OJ와 일치하지 않음. Recital 9는 물리/논리 인터페이스의 연결 가능성을 설명하지만 JTAG/SWD/UART 영구 disable/eFuse 의무를 규정하지 않는다.
+- correction report #5 생성: reports/CRA_CORRECTION_REPORT_5_2026-11-17.md. correction reports #5–#19 완료.
