@@ -670,3 +670,14 @@
 - 최신 isolated CI Run #107: 103 passed, 1 xfailed; source SHA, compileall, full pytest 통과. 로그: https://github.com/useformotor3/ai-discord-bot/actions/runs/43987116390.
 - 보고서 validator는 EUR-Lex 통합본이 documentation tool이며 법적 효력은 Official Journal(관보) 정본 및 공식 corrigenda에 있음을 반드시 명시하도록 강화했다.
 - Canary는 EUR-Lex 읽기 전용 GET만 수행하며 Gemini, Discord, Git 저장/운영 workflow를 호출하지 않는다.
+
+
+## 2026-11-17 — CRA 공식 후속 법령 source pack 확장
+- source pack에 EUR-Lex 공식 원문 3건 추가: Regulation (EU) 2025/327 Article 104, Delegated Regulation (EU) 2025/1535, Delegated Regulation (EU) 2026/881.
+- 제품 적용 범위를 단정하지 않도록 프롬프트에 한계를 명시: EHR 관련 후속 개정, 특정 L-category 범위 제외, Article 16 통지 전파 지연을 각각 구분한다.
+- Isolated CI Run #141: **103 passed, 1 xfailed**; blob SHA·compileall·전체 pytest 성공. https://github.com/useformotor3/ai-discord-bot/actions/runs/43989211881
+- EUR-Lex canary Run #26: **success**; 네 공식 문서 총 220,715자 visible text, CRA 정오표 3개 날짜 확인. https://github.com/useformotor3/ai-discord-bot/actions/runs/43989211861
+- 작업 브랜치 head: b094a5d5c36bd66c2e7b21179f263f6b6d8a82ce. Draft PR #3 open; main 미병합.
+- 운영 main 최신 확인: ff599733d62a8926ee281a9958aa6e03f5ce75f4 (Auto-archive #10). 운영 main.py/run.yml 및 Gemini/Discord 실행 미변경.
+- 미완료: 주장별 조항·문단·인용 매핑, 관보 정본 차이 대조, 운영 모델 비실행 호환성 검증.
+- 상세 보고서: reports/CRA_SOURCE_PROVENANCE_GATE_2026-11-17.md.
