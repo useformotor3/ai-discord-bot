@@ -1111,3 +1111,8 @@
 - 원본 archive #10의 Raw Text Quote는 Article 13(8) support period와 Annex I Part II (8) free security update 내용을 결합한 요약문이며 최종 OJ verbatim quote가 아니다.
 - Article 13(8)은 support period, Article 13(9)는 각 security update의 availability retention, Annex I Part II (8)은 무상 보안 업데이트 제공, Part II (5)는 CVD policy다. 각각 독립 claim으로 분리했다.
 - correction report #10 생성, 원본 archive SHA 보존. correction reports #10–#19 완료.
+
+## 2026-11-17 — archive #9 정정
+- 원본 archive #9의 Annex I Part II (1) raw quote는 대체로 정확하다. 다만 법령의 SBOM 최소 범위는 top-level dependencies이며, 모든 transitive dependency 또는 SPDX/CycloneDX 특정 포맷을 직접 강제하지 않는다.
+- Part II (2) without delay remediation과 Part II (4) patch availability 이후 fixed-vulnerability disclosure 및 정당한 지연 예외를 구분했다.
+- correction report #9 생성, 원본 archive 보존. correction reports #9–#19 완료.
