@@ -257,9 +257,17 @@ def fetch_official_cra_source():
                 headers={"User-Agent": "CRA-Research-Bot/1.0 (+https://eur-lex.europa.eu/)"},
                 timeout=SOURCE_TIMEOUT,
             )
-        except requests.exceptions.RequestException as exc:
+        except requests.exceptions.SSLError as exc:
+            raise SourceValidationError(
+                f"공식 source TLS 인증 검증 실패: {definition['id']}"
+            ) from exc
+        except (requests.exceptions.Timeout, requests.exceptions.ConnectionError) as exc:
             raise SourceUnavailableError(
                 f"공식 source 일시 접근 실패: {definition['id']} / {type(exc).__name__}"
+            ) from exc
+        except requests.exceptions.RequestException as exc:
+            raise SourceValidationError(
+                f"공식 source 요청 형식/리디렉션 오류: {definition['id']} / {type(exc).__name__}"
             ) from exc
         try:
             response.raise_for_status()
