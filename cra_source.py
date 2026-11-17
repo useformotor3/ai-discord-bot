@@ -123,6 +123,10 @@ CRA_SOURCE_CATALOG = (
         "url": "https://digital-strategy.ec.europa.eu/en/library/commission-publishes-new-guidance-support-timely-cyber-resilience-act-implementation",
         "allowed_hosts": ("digital-strategy.ec.europa.eu",),
         "kind": "official_non_binding_guidance_publication_page",
+        "related_urls": (
+            "https://ec.europa.eu/newsroom/dae/redirection/document/131456",
+        ),
+        "related_note": "Commission PDF download link; PDF bytes/text are not fetched or parsed by this source pack.",
         "version": (
             "European Commission CRA guidance publication page, 27.07.2026, C(2026) 5252; "
             "page summary only, not the full guidance annex"
@@ -140,6 +144,10 @@ CRA_SOURCE_CATALOG = (
         "url": "https://digital-strategy.ec.europa.eu/en/policies/cra-standardisation",
         "allowed_hosts": ("digital-strategy.ec.europa.eu",),
         "kind": "official_standardisation_status_page",
+        "related_urls": (
+            "https://ec.europa.eu/transparency/documents-register/detail?ref=C(2026)7861&lang=en",
+        ),
+        "related_note": "Official document-register entry for C(2026) 7861; source pack currently verifies the Commission status page summary, not the decision Annex.",
         "version": (
             "European Commission CRA standardisation page, updated 12.11.2026; "
             "confirms 10.11.2026 M/606 three-month extension; page does not provide item-level revised dates"
@@ -297,6 +305,8 @@ def fetch_official_cra_source():
             "final_url": final_url,
             "kind": definition["kind"],
             "version": definition["version"],
+            "related_urls": list(definition.get("related_urls", ())),
+            "related_note": definition.get("related_note", ""),
             "text": relevant_text,
             "visible_text_chars": len(full_text),
             "full_text_sha256": hashlib.sha256(full_text.encode("utf-8")).hexdigest(),
@@ -337,6 +347,10 @@ def append_source_manifest(report, source):
             f"Prompt-excerpt SHA-256: {item['prompt_excerpt_sha256']} | "
             f"Retrieved: {item['retrieved_at']}"
         )
+        if item.get("related_note"):
+            lines.append(f"  Related-document note: {item['related_note']}")
+        for related_url in item.get("related_urls", []):
+            lines.append(f"  Related official document URL (not fetched/parsed): {related_url}")
     return report.rstrip() + "\n\n" + "\n".join(lines)
 
 
@@ -351,6 +365,11 @@ def validate_source_manifest(report, source):
             value = item.get(field)
             if not isinstance(value, str) or value not in report:
                 return False, f"자동 출처 manifest 항목이 누락되었습니다: {item.get('id')} / {field}"
+        if item.get("related_note") and item["related_note"] not in report:
+            return False, f"관련 문서 상태 설명이 누락되었습니다: {item.get('id')}"
+        for related_url in item.get("related_urls", []):
+            if related_url not in report:
+                return False, f"관련 공식 문서 URL이 누락되었습니다: {item.get('id')}"
     return True, ""
 
 
