@@ -1121,3 +1121,8 @@
 - 원본 archive #8은 SBOM을 Annex VI로 잘못 인용했다. Annex VI는 simplified EU DoC이며 SBOM은 Annex I Part II (1), Annex VII 2(b)/8, Annex II point9에서 다룬다.
 - 사용자에게 SBOM을 반드시 제공해야 한다는 주장도 부정확하다. Annex II point9는 제조사가 SBOM 사용자 공개를 결정한 경우 접근 위치를 안내하도록 한다.
 - servo drive 자동 Important Class I/II 분류 및 모든 transitive dependency 강제 주장을 정정했다. correction report #8 생성, 원본 archive 보존.
+
+## 2026-11-17 — archive #7 정정
+- 원본 archive #7은 존재하지 않는 Annex I Part I (1)(e)를 인용했다. 접근통제는 (2)(d), secure-by-default/original-state reset은 (2)(b)다.
+- Official Journal에서 “default passwords” 직접 문구는 확인되지 않는다. unique credential, first-use setup 및 password complexity는 위험평가 기반 구현 후보이지 CRA의 특정 일률적 구현 요구로 표현하지 않는다.
+- correction report #7 생성, 원본 보존. correction reports #7–#19 완료.
