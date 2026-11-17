@@ -127,25 +127,59 @@ def run_main(tmp_path, monkeypatch):
 
         requests_module.post = fake_post
 
-        source_response = {
-            "status_code": 200,
-            "text": (
-                "<html><body><h1>Regulation (EU) 2024/2847</h1>"
-                "<h2>Article 13</h2><p>Article 13(8)</p>"
-                "<p>Corrected by Corrigendum 5.12.2024, 2.7.2025 and 17.10.2025.</p>"
-                "<p>Manufacturers shall ensure that vulnerabilities of the product "
-                "with digital elements, including its components, are handled "
-                "effectively during the support period.</p>" + (" official legal text" * 1500) + "</body></html>"
-            ),
+        source_responses = {
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02024R2847-20241120": {
+                "status_code": 200,
+                "text": (
+                    "<html><body><h1>Regulation (EU) 2024/2847</h1>"
+                    "<h2>Article 13</h2><p>Article 13(8)</p>"
+                    "<p>Corrected by Corrigendum 5.12.2024, 2.7.2025 and 17.10.2025.</p>"
+                    "<p>Manufacturers shall ensure that vulnerabilities of the product "
+                    "with digital elements, including its components, are handled "
+                    "effectively during the support period.</p>"
+                    + (" official legal text" * 1500) + "</body></html>"
+                ),
+            },
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32025R0327": {
+                "status_code": 200,
+                "text": (
+                    "<html><body><h1>Regulation (EU) 2025/327</h1>"
+                    "<p>Application from 26 March 2027.</p>"
+                    "<h2>Article 104</h2><p>Article 32(5a): Manufacturers of products "
+                    "classified as EHR systems shall demonstrate conformity using the "
+                    "relevant EHDS conformity assessment procedure.</p>"
+                    "<h2>Article 105</h2></body></html>"
+                    + (" EHDS text" * 200)
+                ),
+            },
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32025R1535": {
+                "status_code": 200,
+                "text": (
+                    "<html><body><h1>Commission Delegated Regulation (EU) 2025/1535</h1>"
+                    "<p>In force 18 November 2025.</p><h2>Article 1</h2>"
+                    "<p>Exclusion for certain products within Regulation (EU) No 168/2013; "
+                    "the exclusion does not apply to L1e category vehicles designed to pedal.</p>"
+                    "</body></html>" + (" delegated act text" * 200)
+                ),
+            },
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32026R0881": {
+                "status_code": 200,
+                "text": (
+                    "<html><body><h1>Commission Delegated Regulation (EU) 2026/881</h1>"
+                    "<p>In force 10 May 2026. Conditions for delaying the dissemination "
+                    "of notifications under Article 16 of Regulation (EU) 2024/2847.</p>"
+                    "</body></html>" + (" reporting notification text" * 200)
+                ),
+            },
         }
 
         def fake_get(url, *, headers=None, timeout=None, **kwargs):
             captured["source_gets"].append({
                 "url": url, "timeout": timeout, "headers": headers,
             })
-            spec = source_response
-            if isinstance(spec, BaseException):
-                raise spec
+            spec = source_responses[url]
+            if source_response_override is not None and url == "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02024R2847-20241120":
+                spec = {**spec, **source_response_override}
             response = FakeResponse(
                 status_code=spec.get("status_code", 200),
                 text=spec.get("text", ""),
@@ -190,9 +224,6 @@ def run_main(tmp_path, monkeypatch):
             "DISCORD_WEBHOOK_URL",
             "https://example.invalid/mock-webhook",
         )
-
-        if source_response_override is not None:
-            source_response.update(source_response_override)
 
         target_script = (
             Path(script_path)
