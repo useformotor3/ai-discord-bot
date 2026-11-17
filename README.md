@@ -66,11 +66,11 @@
 
 ## 다음 작업
 
-- [완료] P1-B2 구현·보강 및 테스트 전용 CI 검증.
-- [완료] merge-base 기준 전체 tree 및 운영 archive/history/state 보존 분석.
-- [다음] 최신 main/feature ref를 재조회하고 PR Files changed에 예상 23개 경로 외의 데이터 변경·삭제가 없는지 확인한다.
-- [다음] PR CI와 GitHub conflict check를 검증한다.
-- PR 생성, merge, 운영 workflow 실행 및 배포는 별도 승인 전 수행하지 않는다. P1-B3/B4는 별도 범위다.
+1. CRA 통합 보고서 v0.1의 법령 조항·공식 가이드·M/606 일정을 교차 검증한다.
+2. 서보 드라이브 제품군별 통신 인터페이스·제품 경계·EU 공급 구조를 확인해 적용성/분류를 확정한다.
+3. CSV 추적표 28개 항목을 설계 통제·시험 케이스·증거 링크와 연결한다.
+4. 표준 OJ 공표 상태와 Commission/ENISA 최신 업데이트를 재확인한다.
+5. 문서 diff·CSV 파싱·JSONL 무결성을 검증한 후 PR을 열고, 확인 가능한 CI 결과를 기록한다.
 
 자세한 재개 지점과 검증 한계는 [PROJECT_STATUS.md](PROJECT_STATUS.md)를 기준으로 합니다.
 
