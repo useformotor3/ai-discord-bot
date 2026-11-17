@@ -217,6 +217,15 @@ def _extract_visible_text(html):
     return normalize_source_text("".join(parser.parts))
 
 
+def _missing_required_markers(text, markers):
+    """Match required phrases across HTML paragraph/line boundaries."""
+    normalized = re.sub(r"\s+", " ", str(text or "")).casefold()
+    return [
+        marker for marker in markers
+        if re.sub(r"\s+", " ", marker).casefold() not in normalized
+    ]
+
+
 def _extract_relevant_excerpt(source_id, text):
     """Keep operative CRA text and the CRA-specific EHDS amendment excerpt."""
     if source_id == "CRA-2024-2847-consolidated":
@@ -347,12 +356,11 @@ def fetch_official_cra_source():
                 f"(visible_text={len(full_text)}, html_chars={len(response_text)}, HTTP={response.status_code}, "
                 f"Content-Type={response.headers.get('Content-Type', 'unknown')})"
             )
-        folded = full_text.casefold()
-        missing = [marker for marker in definition["required"] if marker.casefold() not in folded]
+        missing = _missing_required_markers(full_text, definition["required"])
         if missing:
             raise SourceValidationError(
                 f"공식 원문 식별자를 확인하지 못했습니다: "
-                f"{definition['id']} / {', '.join(missing)}; excerpt={full_text[:1200]!r}"
+                f"{definition['id']} / {', '.join(missing)}"
             )
 
         if definition["id"] == "CRA-2024-2847-consolidated":
