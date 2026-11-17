@@ -329,3 +329,15 @@ def test_source_pack_and_claim_evidence_are_included_in_prompt_and_archive(run_m
     assert "CLAIM_EVIDENCE_JSON" in prompt
     assert "SHA-256: fixture-sha256-cra" in archived_text
     assert "Source pack retrieved at:" in archived_text
+
+
+
+def test_no_new_topic_response_is_safe_noop(run_main):
+    with pytest.raises(SystemExit) as exc:
+        run_main.execute(["추가로 검증할 신규 주제 없음"])
+
+    assert exc.value.code == 0
+    assert len(run_main.captured["model_calls"]) == 1
+    assert run_main.captured["discord_posts"] == []
+    assert run_main.captured["git_commands"] == []
+    assert not list((run_main.workdir / "research_archive").glob("*.md"))
