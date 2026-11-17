@@ -529,3 +529,8 @@
 2. [완료] Article 11/13/14와 Annex I Part II (1)–(8) 의무를 구분해 correction report #13 작성.
 3. [완료] CVD 정책, 제보 연락 주소, 수정 취약점 공개, Article 14 mandatory reporting을 분리.
 4. [진행] archive #12 이하 역순 감사. 기존 보고서의 proposal/draft 문구와 enacted OJ 문구를 구별.
+
+## 2026-11-17 — archive #12 correction audit
+1. [완료] Article 13(8)/(9)/(14)/(19) 및 Annex I Part II (2)/(8) 분리.
+2. [완료] support period 5년 원칙, security update availability 10년/잔여기간 중 긴 기간, 무상 제공 예외를 correction report #12에 반영.
+3. [진행] archive #11 이하 역순 감사.
