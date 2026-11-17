@@ -168,3 +168,33 @@ def test_rejects_duplicate_claim_ids():
     valid, reason = validate_claim_evidence(report, SOURCE)
     assert not valid
     assert "중복 claim_id" in reason
+
+
+
+def test_rejects_quote_from_a_different_article_even_when_locator_exists():
+    unrelated_quote = (
+        "The manufacturer shall provide a detailed report to the authority "
+        "within the required period after the incident has been identified."
+    )
+    source = {
+        "sources": [{
+            "id": SOURCE_ID,
+            "text": (
+                "Article 13 (8) Obligations of manufacturers. "
+                "This section contains a different requirement. "
+                "Article 14 Reporting obligations. "
+                + unrelated_quote
+            ),
+        }]
+    }
+    claim = {
+        "claim_id": "C-001",
+        "category": "legal_requirement",
+        "statement": "제조자는 지원 기간 동안 취약점을 처리해야 한다.",
+        "source_id": SOURCE_ID,
+        "locator": "Article 13(8)",
+        "quote": unrelated_quote,
+    }
+    valid, reason = validate_claim_evidence(make_report(claim), source)
+    assert not valid
+    assert "Article/Annex 범위" in reason
