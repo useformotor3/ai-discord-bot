@@ -999,3 +999,5 @@
 - 1축 기준 reference architecture이며 전압/출력/부하/엔코더/네트워크/안전 기능 범위가 미확정.
 - 제조사별 2026-10-30 IEC 61800-5-2 amendment 적용 인증서와 최신 firmware 범위를 직접 확인하지 않았다.
 - 최종 회로도/BOM/PFH 계산은 정격/부하/위험평가가 확정된 후 수행한다.
+
+- Rockwell Product Safety Advisory PSA 2017-01-001 추가 대조: 2198-S* ERS3 V7.001 이하 및 2198-D* ERS3 V7.002 이하의 hardwired STO 구성은 공표 SIL PFH 미달 가능. 수정 firmware V7.003 이상. Integrated network STO는 해당 공지의 영향 범위 밖. 설치 firmware 확인이 필요하며 ERS4에 일반화하지 않는다.
