@@ -1,5 +1,7 @@
 # CRA 서보 드라이브 프로젝트 상황판
 
+> **활성 범위 통제(2026-11-17): CRA만 진행한다.** SIL 3 산출물은 과거 자료로 보존하되 비활성·별도 범위로 분리한다. 사용자 명시 재개 요청 전에는 SIL 3 후속 조사·설계·문서 작업을 하지 않는다. 과거 로그의 SIL 3 '다음 단계' 문구는 본 결정으로 대체한다.
+
 - 최종 갱신: 2026-11-17 (KST)
 - 기준 저장소: `useformotor3/ai-discord-bot`
 - 운영 기준 브랜치: `main` (운영 자동화 및 데이터 보존)
@@ -26,7 +28,7 @@
 | P1-B3 Git sync 상태화 | 미구현 | 유일한 strict xfail; 별도 승인 필요 |
 | P1-B4 구조 개선 | 미구현 | import-time 실행 제거 등 후속 단계 |
 | CRA 요구사항 추적 | 후속 | 공식 조항-제품 적용성-통제-시험 증거 연결 |
-| SIL 기능안전 자료 | 별도 추적 | CRA 사이버보안 결론과 혼합 금지 |
+| 과거 SIL 3 기능안전 자료 | 보존·비활성 | 기존 파일/PR 이력은 유지. CRA 활성 작업·다음 단계에 포함하지 않음 |
 
 ## 2. P1-B1 이전 기준선에서 확인한 원본 코드 사실
 
@@ -668,7 +670,7 @@
 - PR #12: 실패 후에도 pre-run checkpoint 기반 operational guard 실행, uncommitted/unpublished 데이터 복원, guard 성공 시에만 checkpoint prune, GitHub 저장 후 Discord 전송. CI #470 **105 passed, 1 xfailed**. merge `bef260a29481320de3eae9cafe4a6f907e38ead0`.
 - 마지막 확인된 production state: count=38, history=2,431, state SHA `da086ea3ffb7ef0c76d7fa03a58e13a24aa8fe34`, history SHA `b9ea42fa437b2b3a5728db5d125d287fb746b46b`. Quota 장애 run #44016487535 이후에도 state/history/archive 변경 없음.
 - CRA archive #33–#38 정정 보고서가 main에 보존되어 있다. 원본 archive는 수정하지 않았다.
-- 다음 단계: 첫 3회 3-hourly production run의 실제 결과, quota handling, guard, pruning, archive 참조 무결성을 관찰한다. 그 후 CRA 통합 한국어 보고서와 SIL 3 servo-drive benchmarking/hardware block design을 진행한다.
+- 다음 단계: 첫 3회 3-hourly production run의 실제 결과, quota handling, guard, pruning, archive 참조 무결성을 관찰한다. 이후 CRA 통합 한국어 보고서와 CRA 요구사항 추적표를 작성·검증한다. SIL 3는 활성 다음 단계에서 제외.
 - 상세: `reports/PRODUCTION_AUTOMATION_QUALITY_AND_CADENCE_AUDIT_2026-11-17.md`.
 
 ## 2026-11-17 — CRA archive #1–#38 정정 감사 통합
@@ -704,3 +706,11 @@
 - CSV: `reports/SIL3_SERVO_DRIVE_BENCHMARK_MATRIX_2026-11-17.csv`.
 - 범위는 1축 reference architecture. 정격/부하/축 수/encoder/네트워크/안전 기능 확정 전 최종 회로도/BOM/PFH 계산은 보류.
 - 제조사별 2026-10-30 IEC 61800-5-2 AMD1 적용 인증서 및 실제 installed firmware/옵션은 공급사 확인 필요.
+
+
+## 범위 정정 기록 — 2026-11-17
+
+- README, 마스터 계획 및 세션 로그에 SIL 3를 CRA의 후속 작업으로 기재한 문구는 활성 프로젝트 범위와 불일치했다.
+- 현재 사용자 지시를 반영해 CRA만 활성 범위로 확정했다. SIL 3 산출물은 과거 자료로 링크와 커밋 이력을 보존하되 비활성 상태로 분리했다.
+- PR #16의 과거 병합 사실은 삭제·부정하지 않는다. 해당 병합은 CRA 범위 승인이나 CRA deliverable의 일부를 의미하지 않는다.
+- 재개 시 우선순위: (1) 이 범위 통제 확인, (2) GitHub 최신 상태/CI/미완료 작업 재검증, (3) CRA 통합 보고서 및 요구사항 추적 작업.

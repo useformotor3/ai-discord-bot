@@ -1013,3 +1013,13 @@
 - Benchmark includes Mitsubishi J5, Yaskawa Sigma-7 ASM7, Rockwell Kinetix 5700 ERS4 and Siemens S210. Rockwell ERS3 hardwired STO PSA 2017-01-001 is called out separately.
 - Standard revisions current as of 2026-11-17, including IEC 61800-5-2 AMD1:2026 and IEC 62061 AMD2:2026.
 - Deliverable is a reference architecture, not a final certified design. Exact ratings, load, encoder, network, safety functions and manufacturer 2026 amendment certificates remain open.
+
+
+## 2026-11-17 — 프로젝트 범위 정정 및 CRA-only 재개 기준 확정
+
+- 저장소의 README, PROJECT_STATUS, MASTER_PLAN, AI_RULEBOOK, SESSION_LOG, PROJECT_LOG를 main에서 다시 읽어 상호 대조했다.
+- 확인 결과 CRA가 프로젝트의 저장소 목적이지만, README 하단·상황판·마스터 계획·세션 로그·기계 로그에 SIL 3를 CRA 후속 작업처럼 적은 충돌이 존재했다.
+- PR #16과 SIL 3 산출물은 main에 실제 반영된 과거 작업이다. 이를 삭제하거나 사용자 입력 실수로 단정하지 않는다. 현재 활성 범위는 CRA만이며, SIL 3는 명시적 별도 재개 지시 전 비활성으로 취급한다.
+- 범위 정정은 작업 브랜치 `docs/cra-scope-governance-2026-11-17`에서 수행한다. 운영 코드, workflow, state/history, 원본 archive 및 기존 SIL 3 산출물은 변경하지 않는다.
+- README, PROJECT_STATUS, MASTER_PLAN, AI_RULEBOOK 및 PROJECT_LOG의 범위 문구를 동기화한다. 본 기록은 범위 정정 사실과 이후 재개 순서를 보존한다.
+- 검증 한계: 이 변경은 문서 거버넌스 정정이다. CRA 법적 적합성 평가나 제품 적합성 결론을 새로 내리지 않는다.
