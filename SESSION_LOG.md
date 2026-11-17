@@ -1048,3 +1048,14 @@
 - PROJECT_LOG.jsonl은 UTF-8 원문 전체를 보존한 채 빈 줄을 제거하고 1행 1 JSON 객체 형식으로 정리했으며, 수정 후 검증 event를 추가했다.
 - 마지막 compare 스냅샷: main 83bc2430842413080e73bc5b98a8a82c45d03909, feature 784c41a90bd77dd5776c1637f6abe646452e7175, 125 ahead / 10 behind. main 자동 archive가 계속 전진하므로 통합 직전 재조회한다.
 - Official Journal corrigenda 개별 원문 fetch/문구 검증은 미완료. PR #3 Draft 유지, main/운영 workflow/state/history/archive 변경 없음, production/Gemini live 호출 없음.
+
+## 2026-11-17 — Official Journal corrigenda 3건 개별 수집
+- CRA 통합본 안의 날짜만 확인하던 gate를 확장해 세 영어 Official Journal corrigenda를 개별 source로 수집한다.
+- 2024-12-05 OJ 2024/90780: 제목에서 “No 2019/1020”의 “No” 삭제.
+- 2025-07-02 OJ 2025/90555: Article 64(10) “paragraphs 3 to 9” → “paragraphs 2 to 9”.
+- 2025-10-17 OJ 2025/90828: Article 67 참조 “69” → “72”.
+- 세 ELI URL의 공식 EUR-Lex HTML을 실제 GET하고 Article/표제 및 for/read 정정 문구를 확인했다. Canary #115 success; 전체 7 source, 245,502 visible-text chars.
+- source manifest 증가로 Discord 보고서가 3청크가 됐다. CI #314(8 failed) 및 #319(2 failed)에서 기존 mock의 청크/대기 횟수 기대값 불일치를 확인하고 수정했다.
+- 최종 CI #323: 117 passed, 1 xfailed. Exact SHA, compileall, 전체 pytest 통과.
+- live Gemini/Discord API, production workflow 호출 없음. PR #3 Draft 유지.
+- 상세: reports/INTEGRATION_AND_CLAIM_SCOPE_AUDIT_2026-11-17.md.
