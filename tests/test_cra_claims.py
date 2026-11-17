@@ -56,7 +56,7 @@ def make_report(claim=None, *, body_ref="[C-001]", raw_json=None):
     claim = claim or {
         "claim_id": "C-001",
         "category": "legal_requirement",
-        "statement": "제조자는 지원 기간 동안 취약점을 효과적으로 처리해야 한다.",
+        "statement": "제조자는 지원 기간 동안 취약점을 효과적으로 처리해야 한다(Article 13(8)).",
         "source_id": SOURCE_ID,
         "locator": "Article 13(8)",
         "quote": QUOTE,
@@ -105,7 +105,7 @@ def test_rejects_quote_shorter_than_minimum():
     claim = {
         "claim_id": "C-001",
         "category": "legal_requirement",
-        "statement": "제조자는 취약점을 처리해야 한다.",
+        "statement": "제조자는 취약점을 처리해야 한다(Article 13(8)).",
         "source_id": SOURCE_ID,
         "locator": "Article 13",
         "quote": "Too short",
@@ -130,7 +130,7 @@ def test_rejects_missing_or_invalid_json_block():
 def test_rejects_claim_not_referenced_in_body_and_unknown_reference():
     valid, reason = validate_claim_evidence(make_report(body_ref=""), SOURCE)
     assert not valid
-    assert "본문에서 참조되지 않은" in reason
+    assert "claim ID가 없습니다" in reason
 
     valid, reason = validate_claim_evidence(make_report(body_ref="[C-999]"), SOURCE)
     assert not valid
@@ -199,9 +199,12 @@ def test_rejects_duplicate_claim_ids():
     }
     # Build a deterministic block rather than depending on serialized key order.
     report = (
-        "본문 [C-001]\nCLAIM_EVIDENCE_JSON\n```json\n"
+        "## 규격 근거 및 상세 내용\n"
+        + payload["claims"][0]["statement"] + " [C-001]\n"
+        + payload["claims"][1]["statement"] + " [C-001]\n"
+        + "## 출처 자료\nEUR-Lex\nCLAIM_EVIDENCE_JSON\n" + FENCE + "json\n"
         + json.dumps(payload, ensure_ascii=False)
-        + "\n```"
+        + "\n" + FENCE
     )
     valid, reason = validate_claim_evidence(report, SOURCE)
     assert not valid
@@ -217,18 +220,22 @@ def test_rejects_quote_from_a_different_article_even_when_locator_exists():
     source = {
         "sources": [{
             "id": SOURCE_ID,
-            "text": (
-                "Article 13 (8) Obligations of manufacturers. "
-                "This section contains a different requirement. "
-                "Article 14 Reporting obligations. "
-                + unrelated_quote
-            ),
+            "text": "\n".join([
+                "Article 13",
+                "Obligations of manufacturers",
+                "8.",
+                "This section contains a different requirement.",
+                "Article 14",
+                "Reporting obligations",
+                "1.",
+                unrelated_quote,
+            ]),
         }]
     }
     claim = {
         "claim_id": "C-001",
         "category": "legal_requirement",
-        "statement": "제조자는 지원 기간 동안 취약점을 처리해야 한다.",
+        "statement": "제조자는 지원 기간 동안 취약점을 처리해야 한다(Article 13(8)).",
         "source_id": SOURCE_ID,
         "locator": "Article 13(8)",
         "quote": unrelated_quote,
@@ -236,3 +243,74 @@ def test_rejects_quote_from_a_different_article_even_when_locator_exists():
     valid, reason = validate_claim_evidence(make_report(claim), source)
     assert not valid
     assert "paragraph/point 범위" in reason
+
+
+
+FENCE = chr(96) * 3
+
+
+def test_annex_part_i_point_locator_rejects_wrong_point_quote():
+    body_statement = "제품은 명령 및 설정 데이터의 무결성을 보호해야 한다(Annex I Part I (2)(f))."
+    claim = {
+        "claim_id": "C-001",
+        "category": "legal_requirement",
+        "statement": body_statement,
+        "source_id": SOURCE_ID,
+        "locator": "Annex I Part I (2)(f)",
+        "quote": "The product shall prevent unauthorized access to user data.",
+    }
+    report = (
+        "## 규격 근거 및 상세 내용\n"
+        + body_statement + " [C-001]\n"
+        + "## 출처 자료\nEUR-Lex\nCLAIM_EVIDENCE_JSON\n" + FENCE + "json\n"
+        + json.dumps({"claims": [claim]}, ensure_ascii=False)
+        + "\n" + FENCE
+    )
+    valid, reason = validate_claim_evidence(report, SOURCE)
+    assert not valid
+    assert "paragraph/point 범위" in reason
+
+
+def test_annex_part_i_point_locator_accepts_exact_point_quote():
+    body_statement = "제품은 명령 및 설정 데이터의 무결성을 보호해야 한다(Annex I Part I (2)(f))."
+    claim = {
+        "claim_id": "C-001",
+        "category": "legal_requirement",
+        "statement": body_statement,
+        "source_id": SOURCE_ID,
+        "locator": "Annex I Part I (2)(f)",
+        "quote": "The product shall protect the integrity of commands and configuration data.",
+    }
+    report = (
+        "## 규격 근거 및 상세 내용\n"
+        + body_statement + " [C-001]\n"
+        + "## 출처 자료\nEUR-Lex\nCLAIM_EVIDENCE_JSON\n" + FENCE + "json\n"
+        + json.dumps({"claims": [claim]}, ensure_ascii=False)
+        + "\n" + FENCE
+    )
+    valid, reason = validate_claim_evidence(report, SOURCE)
+    assert valid, reason
+
+
+def test_annex_part_ii_numbered_point_locator_accepts_exact_point_quote():
+    body_statement = "제조자는 조정된 취약점 공개 정책을 유지해야 한다(Annex I Part II (5))."
+    claim = {
+        "claim_id": "C-001",
+        "category": "legal_requirement",
+        "statement": body_statement,
+        "source_id": SOURCE_ID,
+        "locator": "Annex I Part II (5)",
+        "quote": (
+            "Manufacturers shall have appropriate policies and procedures, including "
+            "coordinated vulnerability disclosure policies."
+        ),
+    }
+    report = (
+        "## 규격 근거 및 상세 내용\n"
+        + body_statement + " [C-001]\n"
+        + "## 출처 자료\nEUR-Lex\nCLAIM_EVIDENCE_JSON\n" + FENCE + "json\n"
+        + json.dumps({"claims": [claim]}, ensure_ascii=False)
+        + "\n" + FENCE
+    )
+    valid, reason = validate_claim_evidence(report, SOURCE)
+    assert valid, reason
