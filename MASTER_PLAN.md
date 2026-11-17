@@ -574,3 +574,8 @@
 2. [완료] Recital 9의 물리/논리 인터페이스 설명과 디버그 포트 영구 비활성화 구현을 분리.
 3. [완료] JTAG/SWD/UART, eFuse/OTP 및 IEC 62443 요구를 구현 선택/별도 표준 traceability로 분류.
 4. [진행] archive #4 이하 역순 감사.
+
+## 2026-11-17 — source-pack 측정값 정정
+1. [완료] EUR-Lex Canary #209의 각 source visible-text 수치를 로그에서 재합산.
+2. [완료] 총합을 245,502자에서 **636,040자**로 정정. 2025/327 amendment 394,354자가 이전 합계에서 누락됐음.
+3. [완료] CI #441 117 passed, 1 xfailed 및 Canary #209 success 확인.
