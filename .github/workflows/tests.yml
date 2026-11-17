@@ -12,6 +12,8 @@ on:
       - ".github/workflows/run.yml"
       - "scripts/**"
       - "main.py"
+      - "cra_source.py"
+      - "cra_claims.py"
       - "persistence.py"
       - "tests/**"
       - "AI_RULEBOOK.md"
@@ -74,11 +76,15 @@ jobs:
             printf '%s  %s  expected=%s\n' "$actual" "$path" "$expected"
             test "$actual" = "$expected"
           }
-          verify_blob "main.py" "f0b0a34cf6ac0fe28be10d75690969683dd54ce2"
+          verify_blob "main.py" "ae8a3268713b9a1bf9b4e11f08191e44af9fc1bb"
+          verify_blob "cra_source.py" "5f835c6f75f78cf0397b80068b5b70306e4bccac"
+          verify_blob "cra_claims.py" "f44e45e91e0fac365da07babcc365cf80a5d614c"
           verify_blob "persistence.py" "953e2a52b7e6d6e619a4f43766e52d6835df50c8"
           verify_blob "tests/test_p1_b2_atomic_persistence.py" "f78d36164b5ac0d5d5eebe0c5eb5c1214c4e0671"
-          verify_blob "tests/conftest.py" "f465fa04f5c30bfa621bc910b2177d678c89fb64"
-          verify_blob "tests/test_main_characterization.py" "0036e2516812611164b67f162ab2aadc2d280b53"
+          verify_blob "tests/conftest.py" "9d4bbde6c4808816016d809d214e5710715a07bf"
+          verify_blob "tests/test_main_characterization.py" "56873fed8b2639624b88616495809ef2b57f6f9e"
+          verify_blob "tests/test_cra_source.py" "759f591a8c446f8e13e4f69a064ecd0a18925c37"
+          verify_blob "tests/test_cra_claims.py" "9f5536eac118b2a724a8f83f7ea99084e9559fe2"
           verify_blob "tests/test_mock_infrastructure.py" "05a92ff7ff3a6e4a0374d270770ecc6cf38e0a7f"
           verify_blob "tests/test_p1_reliability.py" "c5e3fbe2e75a6a08703117cb5de34571b5dc10c9"
           verify_blob "tests/test_external_failure_paths.py" "2c5b5c23e66a37a0dc3d1d8b324a023fb5146e13"
@@ -86,10 +92,10 @@ jobs:
           verify_blob "tests/test_operational_guard.py" "17d3ac3184e557d4337a753eae6a7a8688d24209"
 
       - name: Install test dependency
-        run: python -m pip install --disable-pip-version-check pytest
+        run: python -m pip install --disable-pip-version-check pytest requests
 
       - name: Compile source and tests
-        run: python -m compileall -q main.py scripts tests
+        run: python -m compileall -q main.py cra_source.py cra_claims.py scripts tests
 
       - name: Run complete repository test suite
         run: python -m pytest -q
