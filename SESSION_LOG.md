@@ -1301,3 +1301,14 @@
 - Run #618 (`44051283237`) success: 141 passed / 1 xfailed, compileall, source identity, 9 official source canary 통과.
 - Pre-merge `safety/pre-merge-main-pr31-2026-11-17` → `975ec6728988e43d9a1ebbf6f6d84288aa44c2fd`; post-merge `safety/post-merge-main-pr31-2026-11-17` → `24312166b892127e845721793b1abfee4d91f9c2`. post-merge ref and main compare identical.
 - README/PROJECT_STATUS에서 특정 시점의 main SHA를 현재 HEAD처럼 고정 표기하지 않도록 수정했다. 이후 세션 시작 시 main HEAD를 실시간 조회한다.
+
+
+## 2026-11-17 — Guidance claim mapping 및 PDF 원문 취득 자동화
+
+- 작업 브랜치 `cra/guidance-claim-mapping-2026-11-17` 생성.
+- 신규 `reports/CRA_GUIDANCE_CLAIM_REGISTER_2026-11-17.csv`: G-001~G-013 비구속적 Commission explanation, 문단/페이지 locator, 연결된 CRA requirements/interfaces/SEC controls.
+- 인터페이스 매트릭스 15행, 요구사항 추적표 35행, SEC control/test matrix 36행에 Guidance claim ID 및 M/606 Annex I candidate item columns를 추가했다. 후보 관련성은 제품 분류나 harmonised status를 의미하지 않는다.
+- `cra_pdf_sources.py` 및 `tests/test_cra_pdf_sources.py` 추가: Commission-hosted PDF fetch, host allowlist, PDF magic/identity marker/page count, raw byte SHA-256, extracted text SHA-256, optional ANFR mirror fallback, manifest/artifact output.
+- 테스트 workflow에 pypdf dependency, exact blob pins, live PDF canary, 7-day artifact upload를 추가했다. 운영 workflow는 변경하지 않았다.
+- CI와 실제 PDF binary 취득은 아직 확인 전이다. 성공·해시·artifact 보관을 선제 주장하지 않는다.
+- 다음: PR CI에서 mock test 및 live PDF canary 실행, artifact download/readback, PDF bytes/hash 검증, M/606 item18 시각 확인, matrix/report readback.
