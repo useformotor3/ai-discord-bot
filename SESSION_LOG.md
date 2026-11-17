@@ -1462,3 +1462,12 @@
 - CRA-001~CRA-035 조항 참조를 1차 검토. 잘못된 Article/Annex 번호는 발견되지 않았으나 문장·조건·예외의 전수 검토는 계속.
 - SBOM 의무의 Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9) 구분을 명확화.
 - Run #819: 155 passed / 1 xfailed; official PDF/HTML canaries 통과.
+
+
+## 2026-11-18 — CRA PR #42 병합 및 프로젝트 재개 상태 동기화
+
+- 상세 재개 기록: [SESSION_LOG_2026-11-18.md](SESSION_LOG_2026-11-18.md).
+- PR #42 exact head CI Run #824 success: 155 passed / 1 xfailed; source integrity, compile, traceability, PDF/HTML canaries 통과.
+- Merge commit `bc5f4a6adda081a58e0cbc2ba02a3bad8bcf3946`; pre/post safety refs 생성 및 post ref == main 확인.
+- Guidance PDF는 ANFR mirror fallback=True이며 Commission primary byte identity는 미확인.
+- 최신 재개 스냅샷 [PROJECT_STATUS_CURRENT.md](PROJECT_STATUS_CURRENT.md)에 활성 범위, 기준점, 검증, 한계 및 다음 작업을 정리했다.
