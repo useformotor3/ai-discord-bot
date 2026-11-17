@@ -389,3 +389,8 @@
 - Use Annex I Part I (2)(j) for limiting attack surfaces including external interfaces; use Recital 9 for the context that products can connect through physical and logical interfaces.
 - Do not attribute permanent JTAG/SWD/UART disablement, eFuse/OTP programming or a specific debug lifecycle to the CRA unless an exact provision says so.
 - Evaluate debug/service interfaces across manufacturing, commissioning, field service, recovery and RMA modes.
+
+## 41. CRA mandatory reporting vs user contact and CVD
+- Use Article 14 for mandatory reporting of actively exploited vulnerabilities and severe incidents; keep their separate 24h/72h/final-report clocks.
+- Use Article 16 for the single reporting platform, Article 13(17) for the manufacturer's user-facing single point of contact, and Annex I Part II (5)/(6) for CVD policy/contact facilitation.
+- Article 14(8) user notification is separate from regulator reporting and fixed-vulnerability disclosure under Annex I Part II (4).
