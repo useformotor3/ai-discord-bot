@@ -137,3 +137,14 @@ Merged-tree verification:
 - CI Run #366: **117 passed, 1 xfailed**, exact source SHA checks, compileall and full pytest passed.
 - EUR-Lex read-only Canary #134: success; seven sources, 245,502 visible-text characters, including all three individual English corrigenda and their required wording markers.
 - No production Gemini/Discord call and no main modification.
+
+## 10. Main archive #19 sync and correction — 2026-11-17
+
+Main advanced one archive-only commit after the #18 integration snapshot. The commit changed only `history.json`, `state.json`, and `research_archive/2026-11-17_113532369725_9840a64e.md`. PR #7 synchronized it into the integration branch (merge commit `01f4f797ac2689fcda425b02304685805272fd24`).
+
+Main/integration protected blob comparison:
+- state.json: `743ee4379421390c85203000cffe2fa0bc43a239`
+- history.json: `fee7cbe25f5a4881af35124c8a984f8c8d1a9b6d`
+- archive #19: `3d90ed95b47d6275e4d98d7c18cfbc5246ffa4e4`
+
+Archive #19 correction report: `reports/CRA_CORRECTION_REPORT_19_2026-11-17.md`. The original archive remains unchanged. The corrected legal locators are Annex I Part I (2)(l) for logging/monitoring, (2)(c) for security updates, and (2)(h) for availability.
