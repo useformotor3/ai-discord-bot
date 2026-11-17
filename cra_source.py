@@ -291,7 +291,10 @@ def fetch_official_cra_source():
 
         full_text = _extract_visible_text(response.text)
         if len(full_text) < definition["min_chars"]:
-            raise SourceValidationError(f"공식 원문/페이지가 너무 짧습니다: {definition['id']}")
+            raise SourceValidationError(
+                f"공식 원문/페이지가 너무 짧습니다: {definition['id']} "
+                f"(visible_text={len(full_text)}, html_bytes={len(response.text)})"
+            )
         folded = full_text.casefold()
         missing = [marker for marker in definition["required"] if marker.casefold() not in folded]
         if missing:
