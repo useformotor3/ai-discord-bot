@@ -10,22 +10,20 @@
 
 > **기록 원칙:** 프로젝트의 공식 진행 상태와 재개 지점은 이 저장소에 기록합니다. 대화창의 기억에만 의존하지 않습니다.
 
-## 현재 상태
+## 현재 상태 — 2026-11-17
 
-- 현재 작업 브랜치: 없음 (PR #18 병합 완료; 다음 변경은 최신 `main`에서 새 작업 브랜치를 생성해 수행)
-- CRA-only 범위 통제 병합 기준점: PR #18, merge commit `b7813ddd311bc51bfb0eb26458eace9ff82b621f` (2026-11-17)
-- 운영 기준 브랜치: `main` — 별도 승인 없이 수정·병합하지 않습니다.
-- P0 응답 검증/실패 차단, P1-A 상태·이력 검증, P1-B1 Discord 전송 신뢰성: 작업 브랜치 구현 완료
-- **P1-B2 로컬 다중 파일 저장 일관성: 사용자 승인 후 구현 및 테스트 CI 검증 완료**
-- **최신 테스트 전용 CI (Actions 43851438733): 70 passed, 1 xfailed; source SHA·compileall·전체 pytest 통과**
-- P1-B2는 durable journal, staged payload, backup/SHA 검증, idempotent roll-forward recovery, snapshot 충돌 방지 및 허용 target allowlist 적용
-- P1-B3 Git sync 상태화는 미구현(기존 strict xfail), P1-B4 import-time 구조 개선도 미구현
-- Discord exactly-once/outbox는 P1-B2 범위 밖이며 보장하지 않음
-- main 대비 작업 브랜치: diverged, 221 ahead / 678 behind (snapshot commit `02fde2489323f9f553405e014fac20d75d13a7fa`, 2026-11-16); merge-base 기준 통합 분석은 완료, PR/merge는 별도 승인 대기
-- 운영 main 최신 조회: HEAD `267d97478b785e6bb268e224a70dbad6631cf43e` (#131), state count=131, history=2,270, archive=2,270
-- 운영 main의 main.py와 run.yml은 각각 SHA `86a7731aad5de8d75581fc953bcea2c44adf2f2b`, `65a8cadc8eac593f551e390698e367b1d161ecf1`; 작업 브랜치 main.py만 개선했고 run.yml은 변경하지 않음
+- **활성 범위: CRA 대응만.** SIL 3 자료는 역사적 산출물로 보존하며 별도 명시적 재개 지시 전 비활성.
+- 현재 작업 브랜치: `cra/integrated-report-and-traceability-2026-11-17` (CRA 통합 보고서/요구사항 추적표 v0.1 초안 PR #19 open)
+- 범위 통제 기준점: PR #18 병합, `b7813ddd311bc51bfb0eb26458eace9ff82b621f`
+- CRA 정정 보고서 #1–#38 및 인덱스: main 보존 확인
+- [CRA 서보 드라이브 통합 규제·기술 준수 보고서 v0.1](reports/CRA_INTEGRATED_COMPLIANCE_REPORT_2026-11-17.md): 초안 작성, 제품별 적용성 확인 전
+- [CRA 요구사항 추적표 v0.1](reports/CRA_REQUIREMENTS_TRACEABILITY_2026-11-17.csv): 28개 요구사항 행, 제품 증거 미확인 상태
+- 최신 법적/이행 자료 반영: Commission Guidance C(2026) 5252 (2026-07-27), M/606 개정 C(2026) 7861 (2026-11-10), Regulation (EU) 2025/327 개정 범위 검토
+- 제품 모델/통신 프로토콜/시장 공급 구조가 미제공되어 CRA 적용성 및 Annex III/IV 분류는 잠정 판단으로 유지
+- 이번 브랜치는 문서만 변경하며 운영 코드, workflow, state/history 및 원본 archive는 수정하지 않음
+- CI: [Actions Run #500](https://github.com/useformotor3/ai-discord-bot/actions/runs/44028473103) 실행 중; 성공/실패 미확정
 
-Actions 성공은 자동화 실행 결과이지 CRA 법령 해석이나 출처의 사실 정확성을 보증하지 않습니다. 테스트 통과 숫자는 반드시 실행한 정확한 소스와 범위를 함께 표시합니다.
+자동화 신뢰성 개선(P0/P1-B1/P1-B2)의 과거 구현·CI 결과는 역사적 엔지니어링 기준선으로 보존한다. 해당 결과를 CRA 법령·제품 적합성 검증으로 해석하지 않는다.
 
 ## 프로젝트 관리 문서
 
@@ -38,10 +36,14 @@ Actions 성공은 자동화 실행 결과이지 CRA 법령 해석이나 출처�
 
 ## 주요 기술 자료
 
+- [CRA 통합 규제·기술 준수 보고서 v0.1](reports/CRA_INTEGRATED_COMPLIANCE_REPORT_2026-11-17.md)
+- [CRA 요구사항 추적표 v0.1 (CSV)](reports/CRA_REQUIREMENTS_TRACEABILITY_2026-11-17.csv)
+- [CRA 원문 정정 보고서 인덱스 (#1–#38)](reports/CRA_CORRECTION_INDEX_2026-11-17.md)
+- [운영 실행 관찰 및 데이터 무결성 확인](reports/PRODUCTION_RUN_OBSERVATION_2026-11-17.md)
 - [조사 품질 감사](reports/RESEARCH_QUALITY_AUDIT_2026-11-14.md)
 - [CRA 보고서 #28·#29 정정 기록](reports/CRA_CORRECTIONS_REPORTS_28_29_2026-11-14.md)
 - [자동화 코드 개선 설계 및 테스트 계획](reports/MAIN_PY_IMPROVEMENT_DESIGN_2026-11-14.md)
-- [테스트 실행 환경 감사 및 예비 검증 한계](reports/TEST_EXECUTION_ENVIRONMENT_AUDIT_2026-11-14.md)
+- [테스트 실행 환경 감사](reports/TEST_EXECUTION_ENVIRONMENT_AUDIT_2026-11-14.md)
 - [테스트 가이드](tests/README.md)
 
 ## 진행 원칙
@@ -64,11 +66,11 @@ Actions 성공은 자동화 실행 결과이지 CRA 법령 해석이나 출처�
 
 ## 다음 작업
 
-- [완료] P1-B2 구현·보강 및 테스트 전용 CI 검증.
-- [완료] merge-base 기준 전체 tree 및 운영 archive/history/state 보존 분석.
-- [다음] 최신 main/feature ref를 재조회하고 PR Files changed에 예상 23개 경로 외의 데이터 변경·삭제가 없는지 확인한다.
-- [다음] PR CI와 GitHub conflict check를 검증한다.
-- PR 생성, merge, 운영 workflow 실행 및 배포는 별도 승인 전 수행하지 않는다. P1-B3/B4는 별도 범위다.
+1. CRA 통합 보고서 v0.1의 법령 조항·공식 가이드·M/606 일정을 교차 검증한다.
+2. 서보 드라이브 제품군별 통신 인터페이스·제품 경계·EU 공급 구조를 확인해 적용성/분류를 확정한다.
+3. CSV 추적표 28개 항목을 설계 통제·시험 케이스·증거 링크와 연결한다.
+4. 표준 OJ 공표 상태와 Commission/ENISA 최신 업데이트를 재확인한다.
+5. 문서 diff·CSV 파싱·JSONL 무결성을 검증한 후 PR을 열고, 확인 가능한 CI 결과를 기록한다.
 
 자세한 재개 지점과 검증 한계는 [PROJECT_STATUS.md](PROJECT_STATUS.md)를 기준으로 합니다.
 

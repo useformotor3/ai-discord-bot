@@ -45,6 +45,19 @@
 | #37 | [CRA_CORRECTION_REPORT_37_2026-11-17.md](CRA_CORRECTION_REPORT_37_2026-11-17.md) | 지원기간·조항 인용 |
 | #38 | [CRA_CORRECTION_REPORT_38_2026-11-17.md](CRA_CORRECTION_REPORT_38_2026-11-17.md) | 지원기간·업데이트·제품 분류 |
 
+## 통합 보고서 및 요구사항 추적
+
+- [CRA 서보 드라이브 통합 규제·기술 준수 보고서 v0.1](CRA_INTEGRATED_COMPLIANCE_REPORT_2026-11-17.md)
+- [CRA 요구사항 추적표 v0.1 (CSV, 28개 항목)](CRA_REQUIREMENTS_TRACEABILITY_2026-11-17.csv)
+- 기존 #1–#38은 개별 원문 정정 이력이다. 위 통합 보고서/추적표는 이를 기반으로 제품 적용성·의무·증거를 통합하는 별도 산출물이며 아직 초안이다.
+
+## 2026-11-17 최신 규제 업데이트
+
+- Commission Guidance C(2026) 5252 final (2026-07-27): 데이터 연결, 하드웨어/소프트웨어 제품 경계, 복합 시스템, substantial modification, support period, core functionality, RDPS, Article 14 신고 및 Machinery Regulation 관계를 반영한다. 비구속적 공식 해석자료로 구분한다.
+- Commission Implementing Decision C(2026) 7861 final (2026-11-10): M/606 item 1 및 15 납품기한 2026-11-30, item 16–41 수직 표준 2027-01-31, item 2–14 2027-10-30으로 확인했다. CRA 법적 적용일은 변경되지 않는다.
+- Regulation (EU) 2025/327 Article 104: CRA Article 13(4), Article 31(3), Article 32(5a)의 일부 개정은 2027-03-26 적용. 고위험 AI/EHR 제품 범위의 특례이므로 일반 서보 드라이브에 자동 적용하지 않는다.
+- 기존 제품 관련 Article 14 신고 의무는 2026-09-11부터 적용된다. CRA 본격 적용 전 출시 제품 및 지원기간 종료 제품에 대한 신고 범위와 취약점 처리 의무를 구분한다.
+
 ## 핵심 법령 기준
 - 제조사 의무 및 위험평가: Article 13
 - 지원기간: Article 13(8), 기본 최소 5년이나 제품 예상 사용기간이 5년 미만이면 그 예상기간

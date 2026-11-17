@@ -76,23 +76,25 @@
 - 변경 이력과 검토 상태 유지
 - 한국어 최종 보고서, 매뉴얼, 발표자료, 표/데이터 파일 생성
 
-## 현재 진행 상태 — 2026-11-14
+## 현재 진행 상태 — 2026-11-17
 
 - Phase 1 표본 감사 및 #28/#29 정정본 작성: 수행
 - Phase 2 P0 모델 응답 검증/실패 차단: 작업 브랜치 구현 및 격리 mock 테스트 9 passed 기록
 - Phase 2 P1-A state/history 검증 및 datetime 호환: 작업 브랜치 구현, helper 독립 pytest 7 passed
 - Phase 3 기본 원본 테스트 실행 기반: 확보. 테스트 전용 GitHub Actions Run #1~#3 success, 최신 Run #3에서 SHA 5개 일치, compileall 통과, pytest 21 passed
 - Phase 2 P1-B1 Discord 전송 및 P1-B2 atomic persistence: 작업 브랜치 구현·CI 검증 완료; P1-B3 Git sync/P1-B4 구조 개선은 미구현
-- Phase 4~6: 후속 단계
+- Phase 4: CRA 요구사항 추적표 v0.1(28항목) 작성. 제품별 증거·설계 통제·시험 결과 연결은 진행 중.\n- Phase 6: CRA 통합 규제·기술 준수 보고서 v0.1 초안 작성. 2026-07 Commission Guidance 및 2026-11 M/606 개정 반영. 제품별 판정 전.
 
-## 다음 실행 순서 — 2026-11-16 최신 우선순위
+## 다음 실행 순서 — 2026-11-17 CRA 우선순위
 
-1. **통합 전 PR 사전 검사**: 최신 main/feature ref 재조회, PR 변경 경로와 merge-base 비교를 다시 확인한다.
-2. **PR CI 및 conflict check**: PR 전용 mock CI, exact source SHA, compileall, 전체 pytest 및 GitHub conflict check를 검증한다.
-3. **통합 승인 요청**: 코드 통합과 운영 실행/배포를 구분해 변경 범위·롤백·운영 영향과 함께 별도 승인받는다.
-4. **P1-B3 설계**: Git push 결과의 durable status 및 재동기화 정책을 별도 승인 대상으로 제안한다.
-5. **P1-B4 설계**: import-time execution 분리 및 테스트 가능한 구조를 별도 단계로 제안한다.
-6. **조사 품질 구조화 및 CRA 요구사항 추적**: 기존 보고서 검증·정정 후 조항→제품 요구사항→통제→시험 증거로 연결한다.
+1. **법적 기준 재검증**: Regulation (EU) 2024/2847 OJ 원문, Commission Guidance C(2026) 5252, M/606 개정 C(2026) 7861, Regulation (EU) 2025/327의 CRA 개정 범위를 교차 확인한다.
+2. **제품 적용성 확정**: 서보 드라이브 모델·통신 프로토콜·디지털 데이터 흐름·필수 소프트웨어·원격 데이터 처리·EU 공급 주체를 확인한다.
+3. **제품 분류/평가 경로**: Annex III/IV core functionality를 검토하고 Article 32 적합성 평가 경로를 근거와 함께 확정한다.
+4. **요구사항 추적표 보강**: 28개 항목을 설계 통제·검증 방법·시험 결과·문서 증거·상태와 연결한다.
+5. **통합 보고서 검증**: 기존 정정 보고서 #1–#38의 결론과 중복/충돌을 대조하고, 법적 의무·공식 해석·엔지니어링 권고·미확인 가설을 분리한다.
+6. **변경 통제**: 문서 diff, CSV/JSONL 파싱, 링크 및 출처 검증 후 PR을 생성한다. CI 실행이 확인되지 않으면 성공으로 기록하지 않는다.
+
+기능 코드나 운영 workflow 변경은 CRA 산출물에 실제 필요성이 확인된 경우에만 별도 영향분석·테스트·롤백 계획을 수립한다. 과거 P1-B3/P1-B4 계획은 현재 CRA 보고서의 선행 조건으로 취급하지 않는다.
 
 ## 완료 정의
 
