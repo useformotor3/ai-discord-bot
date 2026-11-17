@@ -65,6 +65,19 @@ def test_official_source_fetch_failure_stops_before_model_or_external_side_effec
     assert run_main.captured["git_commands"] == []
 
 
+def test_non_eurlex_redirect_stops_before_model_calls(run_main):
+    with pytest.raises(SystemExit) as exc:
+        run_main.execute(
+            [VALID_REPORT],
+            source_response_override={"url": "https://example.com/fake-cra"},
+        )
+
+    assert exc.value.code == 1
+    assert run_main.captured["model_calls"] == []
+    assert run_main.captured["discord_posts"] == []
+    assert run_main.captured["git_commands"] == []
+
+
 def test_report_with_unmatched_direct_quote_is_rejected(run_main):
     unrelated_source = (
         "<html><body><h2>Article 13</h2>"
