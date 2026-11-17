@@ -130,3 +130,10 @@ python -m pytest -q
 ## Latest exact-head verification — 2026-11-17
 - Isolated CI Run #154: 103 passed, 1 xfailed; exact blob SHA, compileall and complete pytest suite succeeded. https://github.com/useformotor3/ai-discord-bot/actions/runs/43995859144
 - EUR-Lex read-only canary Run #29: success. https://github.com/useformotor3/ai-discord-bot/actions/runs/43995859223
+
+
+## CRA claim evidence validation
+- `test_cra_claims.py` validates the structured `CLAIM_EVIDENCE_JSON` contract.
+- Covered cases: valid claim, source ID mismatch, Article locator mismatch, quote mismatch/short quote, missing or malformed JSON block, missing/undeclared body references, duplicate claim IDs, and explicit non-legal recommendation basis.
+- `test_main_characterization.py` uses a fully mocked report containing legal and engineering claim examples to exercise the main.py acceptance path without real Gemini/Discord calls.
+- These tests validate source traceability only; they do not certify legal interpretation or product applicability.
