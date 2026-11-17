@@ -523,3 +523,9 @@
 5. [진행] archive #13 이하 역순 감사 및 correction index.
 6. [후속] 검증된 claim을 통합 CRA 한국어 보고서와 서보 드라이브 보안 설계 추적표로 정리.
 7. [후속 별도 산출물] SIL 3 서보 드라이브 벤치마킹 및 하드웨어 블록 설계 보고서. 기능안전 규격과 CRA 사이버보안 규격을 분리 추적.
+
+## 2026-11-17 — archive #13 correction audit
+1. [완료] 원본 archive #13 blob SHA 확인 및 보존.
+2. [완료] Article 11/13/14와 Annex I Part II (1)–(8) 의무를 구분해 correction report #13 작성.
+3. [완료] CVD 정책, 제보 연락 주소, 수정 취약점 공개, Article 14 mandatory reporting을 분리.
+4. [진행] archive #12 이하 역순 감사. 기존 보고서의 proposal/draft 문구와 enacted OJ 문구를 구별.
