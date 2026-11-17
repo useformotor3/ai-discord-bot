@@ -15,6 +15,15 @@ from persistence import (
     read_optional_bytes,
     recover_pending_transactions,
 )
+from cra_source import (
+    SourceUnavailableError,
+    SourceValidationError,
+    append_source_manifest,
+    fetch_official_cra_source,
+    validate_research_report as validate_official_source_report,
+    validate_source_manifest,
+)
+from cra_claims import validate_claim_evidence
 
 # 0. 파일 경로 설정
 STATE_FILE = "state.json"
@@ -181,6 +190,23 @@ context_memory = (
     else "아직 초기 조사 단계입니다."
 )
 
+# 2-A. 공식 CRA source pack을 먼저 확보한다. 일시 장애면 안전 no-op, 원문/도메인 검증 실패면 fail-closed.
+try:
+  cra_source_pack = fetch_official_cra_source()
+  print(
+      f"📚 [공식 source gate] {len(cra_source_pack['sources'])}개 공식 source 확보, "
+      f"retrieved_at={cra_source_pack['retrieved_at']}"
+  )
+except SourceUnavailableError as exc:
+  print(f"⚠️ [source gate 일시 장애] {exc}. 모델 호출/Discord/저장 없이 이번 실행을 건너뜁니다.")
+  raise SystemExit(0)
+except SourceValidationError as exc:
+  print(f"❌ [source gate 검증 실패] {exc}. 모델 호출/Discord/저장 없이 종료합니다.")
+  raise SystemExit(1)
+except Exception as exc:
+  print(f"❌ [source gate 예기치 않은 오류] {type(exc).__name__}: {exc}")
+  raise SystemExit(1)
+
 # 3. Gemini 클라이언트 초기화 및 프롬프트
 client = genai.Client(api_key=os.environ.get("GEMINI_API_KEY"))
 
@@ -191,20 +217,33 @@ prompt = f"""
     [지금까지 깃허브 외부 메모리에 누적된 이전 조사 내용 (참고용 - 중복 조사 방지)]
     {context_memory}
 
-    위의 이전 내용들과 중복되지 않으면서, 아직 다루지 않은 더 발전되거나 세부적인 CRA 핵심 주제(예: 취약점 무상 패치, Secure by default, 기술 문서, SBOM, 생명주기 관리 등)를 깊이 있게 선정하여 아래 4가지 양식에 맞추어 엄격하게 조사하고 작성해 주세요.
-    추측성 내용은 절대 배제하고, 실제 EU 규정 조항이나 공식 가이드라인을 기반으로 높은 품질의 전문적인 내용을 작성하세요.
+    [이번 실행에서 실제 수집한 공식 source pack — 법령/정정/Commission 공식 설명 페이지]
+    {cra_source_pack["text"]}
+
+    위의 이전 내용들과 중복되지 않으면서, 아직 다루지 않은 더 발전되거나 세부적인 CRA 핵심 주제를 선정해 작성하세요.
+    추측성 내용은 절대 배제하고, 위 source pack에서 직접 확인되는 사실만 법적/공식 사실로 작성하세요.
+    source pack에 없는 Annex/PDF 세부 내용은 추정하지 말고 '원문 별도 확인 필요'로 표시하세요.
 
     [필수 출처·정확성 규칙]
-    - CRA 법적 주장에는 Regulation (EU) 2024/2847의 최종 Official Journal 원문을 우선 사용하세요.
-    - 출처 자료에 다음 공식 원문 링크를 반드시 포함하세요: https://eur-lex.europa.eu/eli/reg/2024/2847/oj/eng
+    - CRA 법적 주장에는 Regulation (EU) 2024/2847의 EUR-Lex consolidated text와 적용 가능한 corrigenda/amendments를 우선 사용하세요.
+    - source pack의 각 source ID, 버전, URL을 임의 변경하지 마세요. 전체 source manifest는 검증 후 시스템이 자동 첨부합니다.
     - 조항 번호와 제목을 확인하고, 원문에 없는 구현 방식을 법적 의무로 표현하지 마세요.
+    - Article/Annex 법적 주장은 단일 Article paragraph 또는 단일 Annex Part/point locator를 사용하고, 범위형 locator는 가능한 한 분리하세요.
+    - 규격 근거의 각 법적 주장 줄에 [C-001] 형식의 claim ID를 붙이고, 같은 문장을 CLAIM_EVIDENCE_JSON statement에 그대로 기록하세요.
+    - legal_requirement는 source_id, 정확한 locator(예: Article 13(8), Annex I Part I (2)(f)), 50자 이상의 원문 quote를 포함해야 합니다.
+    - official_explanation은 Commission 공식 페이지 source_id, 페이지 section locator, 50자 이상의 정확한 quote를 포함하되 비구속적 설명으로 분류하세요.
+    - interpretation/engineering_recommendation은 legal_requirement와 구분하고 근거 basis를 설명하세요.
     - 원문을 직접 확인하지 못한 문장은 직접 인용으로 꾸미지 말고 '요약/해석'으로 구분하세요.
+    - Commission guidance/standardisation 요약 페이지에 없는 PDF Annex 세부 항목을 해당 페이지로 입증했다고 주장하지 마세요.
     - 최근 조사 주제와 겹치면 억지로 새 주제를 만들지 말고 '추가로 검증할 신규 주제 없음'을 반환하세요.
     [작성 양식]
     1. 주제 요약: (핵심 내용 2줄)
-    2. 규격 근거 및 상세 내용: (CRA 조항 또는 산업 표준 기준의 구체적 설명)
+    2. 규격 근거 및 상세 내용: (각 법적 주장에 [C-###] claim ID)
     3. 출처 자료(Source): (참고한 공식 EU 규정 문서명, 웹사이트 이름 또는 표준 규격 명칭과 URL)
-    4. 출처 원문 텍스트(Raw Text Quote): (해당 출처에서 직접 확인한 실제 원문 문장. 직접 확인하지 못한 경우 인용문을 만들지 말 것)
+    4. 출처 원문 텍스트(Raw Text Quote): (source pack에서 직접 확인한 50자 이상의 정확한 원문 인용)
+    5. CLAIM_EVIDENCE_JSON: 아래 스키마의 JSON code block 하나만 작성
+       {"claims":[{"claim_id":"C-001","category":"legal_requirement","statement":"본문의 동일한 문장","source_id":"CRA-2024-2847-consolidated","locator":"Article 13(8)","quote":"원문 50자 이상"}]}
+    - CLAIM_EVIDENCE_JSON 블록은 보고서 맨 끝에 두고, 해설 문장이나 trailing text를 JSON 뒤에 추가하지 마세요.
     """
 
 def validate_research_report(text):
@@ -349,6 +388,16 @@ for model_name in models_to_try:
       candidate = response.text if response and response.text else ""
       is_valid, validation_reason = validate_research_report(candidate)
       if is_valid:
+        source_valid, source_reason = validate_official_source_report(candidate, cra_source_pack)
+        if not source_valid:
+          is_valid = False
+          validation_reason = source_reason
+      if is_valid:
+        claims_valid, claims_reason = validate_claim_evidence(candidate, cra_source_pack)
+        if not claims_valid:
+          is_valid = False
+          validation_reason = claims_reason
+      if is_valid:
         duplicate = find_duplicate_topic(candidate, history_data)
         if duplicate:
           print(
@@ -356,7 +405,10 @@ for model_name in models_to_try:
               f"Discord 전송 및 아카이브를 생략합니다: {duplicate}"
           )
           raise SystemExit(0)
-        ai_message = candidate.strip()
+        ai_message = append_source_manifest(candidate.strip(), cra_source_pack)
+        manifest_valid, manifest_reason = validate_source_manifest(ai_message, cra_source_pack)
+        if not manifest_valid:
+          raise SystemExit(f"❌ [source manifest 오류] {manifest_reason}")
         success = True
         break
       quality_rejected = True
