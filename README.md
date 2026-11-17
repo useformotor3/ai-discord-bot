@@ -504,3 +504,11 @@
 - [PR #41](https://github.com/useformotor3/ai-discord-bot/pull/41) squash merge: `acfa2f583157ac541c4c60d71090197322bc8efb`.
 - [Run #806](https://github.com/useformotor3/ai-discord-bot/actions/runs/44060186518): **155 passed / 1 xfailed**; Guidance/M/606 PDF, HTML canaries 통과.
 - Pre/post refs `safety/pre-merge-main-pr41-2026-11-17` / `safety/post-merge-main-pr41-2026-11-17`; post ref와 main 비교 identical.
+## 최신 재개 상태 — 2026-11-18
+
+- 최신 통합 상태 스냅샷: [PROJECT_STATUS_CURRENT.md](PROJECT_STATUS_CURRENT.md)
+- 최신 세션 기록: [SESSION_LOG_2026-11-18.md](SESSION_LOG_2026-11-18.md)
+- PR #42 병합: `bc5f4a6adda081a58e0cbc2ba02a3bad8bcf3946`; [PR #42](https://github.com/useformotor3/ai-discord-bot/pull/42)
+- exact PR-head CI [Run #824](https://github.com/useformotor3/ai-discord-bot/actions/runs/44061121932): 155 passed / 1 xfailed. PDF/HTML source canaries 및 traceability gate 통과.
+- 다음 작업: CRA-001–CRA-035 법령 문언·의무 주체·조건·예외·기한 행 단위 심층 감사. Guidance PDF Commission-primary byte identity는 미확인으로 유지.
+
