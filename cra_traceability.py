@@ -257,7 +257,7 @@ def validate_traceability(root="."):
 
     readme = data["readme"].read_text(encoding="utf-8")
     integrated = data["integrated_report"].read_text(encoding="utf-8")
-    section_numbers = re.findall(r"^##\\s+(\\d+)\\.", integrated, flags=re.MULTILINE)
+    section_numbers = re.findall(r"^##\s+(\d+)\.", integrated, flags=re.MULTILINE)
     _require(len(section_numbers) == len(set(section_numbers)),
              "integrated report contains duplicate top-level section numbers", errors)
     _require(FILES["claims"] in readme and FILES["provenance"] in readme and FILES["m606_map"] in readme and FILES["product_intake"] in readme,
