@@ -1251,3 +1251,18 @@
 - README, PROJECT_STATUS, MASTER_PLAN, AI_RULEBOOK에 PR #28 merge SHA와 복구 refs를 반영했다.
 - merge commit 자체의 별도 Actions run은 확인되지 않아 PR head Run #577만 검증 증거로 기록한다.
 - 운영 코드/workflow/state/history/archive 변경, 운영 Gemini/Discord 실행 및 외부 전송은 없었다.
+
+
+## 2026-11-17 — Commission Guidance C(2026) 5252 및 M/606 C(2026) 7861 Annex 1차 감사
+
+- main 최신 HEAD `80245d9e132380a10581612c031f87869993b98d`를 확인했다. PR #29 post-merge safety checkpoint `9c16724b8b72bd09d3492b19ff714602b235c66b` 대비 main은 README/PROJECT_STATUS/source provenance report 문서 전용 3개 커밋 ahead, 0 behind였다.
+- `cra/official-annex-audit-2026-11-17`를 main HEAD에서 생성하고 생성 직후 compare 결과 0 ahead / 0 behind를 확인했다.
+- Commission C(2026) 5252 publication page 및 PDF text layer를 확인했다. PDF 표제/날짜, 비구속적 지위(para. 8), 데이터 연결(§2.5 paras. 26–28), 복합 시스템/위험평가(§2.6), substantial modification(§4), support period(§5), core functionality(§6), risk assessment/due diligence(§7), RDPS(§8), Machinery Regulation 관계(§9.3.2)를 서보 드라이브 관점으로 정리했다.
+- §2.5는 단순 electrical trigger와 인코딩된 디지털 정보를 구분한다. 단순 0/1 상태만으로 data connection이 자동 성립하지 않으며 송신 측 encoding과 수신 측 decoding을 확인해야 한다.
+- §6은 제품의 실제 core functionality로 Annex III/IV 분류를 판단하고, 내장 부품 또는 ancillary function만으로 전체 제품 분류가 자동 결정되지 않는다고 설명한다.
+- §8 RDPS는 원격 처리 여부, 기능 수행에 대한 필수성, 제조자 개발/책임 여부를 누적 확인한다. Industrial robot example은 원격 처리에서 명령을 반환하고 해당 처리가 기능에 필수인 사례다.
+- Commission C(2026) 7861 Annex I에서 41개 표준 주제/ESO adoption deadline을 추출했다. 항목 1/15는 30.11.2026, 수평 항목 2–14는 30.10.2027, 수직 항목은 대부분 31.01.2027로 표시된다. 항목 18의 날짜는 text extraction에서 보이지 않아 미확인으로 남겼다.
+- 신규 보고서 `reports/CRA_OFFICIAL_GUIDANCE_AND_M606_ANNEX_AUDIT_2026-11-17.md` 생성.
+- **취득/무결성 제한:** PDF text layer는 확인했으나 직접 다운로드 도구가 Commission PDF 원본 bytes를 반환하지 않아 바이너리 SHA-256을 산출하지 못했다. Guidance PDF는 ANFR mirror의 text layer로 확인했으며 Commission 원본과 byte identity는 미검증. M/606 Annex도 Commission register PDF text layer로 확인했으나 원본 바이너리 해시 미검증.
+- 보고서/관리 문서 변경은 CRA 문서화 작업이다. 운영 main.py/workflow/state/history/archive, Gemini/Discord 호출, SIL 3 자료는 변경하지 않았다.
+- 다음: item 18 원본 PDF 이미지 확인, 원본 bytes/hash 취득, §2.5/§6/§8 내용을 기존 interface/requirements/SEC matrix에 claim-level로 연결, Annex I canary 확장.
