@@ -18,7 +18,7 @@ VALID_REPORT = """# CRA 심층 조사 보고서
 
 ## 2. 규격 근거 및 상세 내용
 [C-001] 제조자는 제품의 지원 기간 동안 제품 취약점을 효과적으로 처리해야 한다(Article 13(8)).
-이 설명은 Article 13(8)의 법적 요구사항을 요약한 것이며, 실제 제품 적용성은 별도 위험평가로 확인한다.
+이 설명은 Article 13(8)의 법적 요구사항을 요약한 것이며, 실제 제품 적용성은 별도 위험평가로 확인한다. [C-001]
 
 ## 3. 출처 자료(Source)
 EU 공식 법령 데이터베이스 EUR-Lex, Regulation (EU) 2024/2847 consolidated text.
@@ -183,14 +183,14 @@ def test_git_push_failure_fails_workflow_instead_of_logging_success(run_main):
 
 def test_report_without_official_eurlex_source_is_rejected(run_main):
     invalid = VALID_REPORT.replace(
-        "https://eur-lex.europa.eu/eli/reg/2024/2847/2024-11-20/eng",
+        "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02024R2847-20241120",
         "https://example.com/unknown-source",
     )
     with pytest.raises(SystemExit) as exc:
         run_main.execute([invalid] * 6)
 
     assert exc.value.code == 0
-    assert len(run_main.captured["model_calls"]) == 2
+    assert len(run_main.captured["model_calls"]) == 1
     assert run_main.captured["discord_posts"] == []
     assert run_main.captured["git_commands"] == []
     assert not (run_main.workdir / "research_archive").exists()
