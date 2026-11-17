@@ -122,3 +122,12 @@ CI artifact Run #702의 원본 PDF를 다운로드해 SHA-256 manifest와 대조
   - CRA-028~CRA-034: 경제운영자 및 제조자 책임 전이, 양산 적합성 유지, 식별·DoC·시정조치 의무
   - CRA-035: Article 2(2)–(7) 적용 제외/중첩 검토 범위
 - 이 결과는 35개 행의 모든 문장과 모든 적용 조건을 법률가 수준으로 확정했다는 의미가 아니다. 제품별 사실관계 및 세부 조건의 검토는 계속하며, 미확인 상태를 적합 판정으로 바꾸지 않는다.
+
+
+## 10. 독립 감사 추가 — CRA 법령 문언 Batch 1 (2026-11-18)
+
+- 검토 파일: [CRA_LEGAL_SEMANTICS_AUDIT_2026-11-18.md](CRA_LEGAL_SEMANTICS_AUDIT_2026-11-18.md), 대상 CRA-001–CRA-010.
+- 공식 원문: EUR-Lex Regulation (EU) 2024/2847, https://eur-lex.europa.eu/eli/reg/2024/2847/oj/eng.
+- 주요 locator 정정: CRA-003에서 Article 13(2)를 원격 데이터 처리 근거에서 제외하고 Article 3(2)/Recital 11–12로 교체. CRA-006에서 SBOM 근거를 Annex I Part II(1), Article 13(7), Annex VII(2)(b)/(8)로 세분화하고 Article 13(5)는 제3자 구성요소 due diligence로 분리. CRA-001은 Article 3(8)–(10)/Recital 9를 보강.
+- 해석 통제: Article 3(22) market-availability는 연결성 테스트와 별개. Annex VII(8) 당국 요청 제출은 SBOM 기본 작성 의무를 조건부로 만들지 않는다. Annex I Part II(3)의 regular testing은 법정 고정 주기를 특정하지 않는다. Part II(4)의 정당한 공개 지연 예외를 반영한다.
+- 범위 제한: 10개 행의 1차 문언 대조이며 exhaustive legal opinion이나 제품별 적합성 판정이 아니다. 미검증 제품 사실은 미확정으로 유지.
