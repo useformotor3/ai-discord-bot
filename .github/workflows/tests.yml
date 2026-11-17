@@ -14,7 +14,8 @@ on:
       - ".github/workflows/run.yml"
       - "scripts/**"
       - "main.py"
-      - "cra_source.py"\n      - "cra_claims.py"
+      - "cra_source.py"
+      - "cra_claims.py"
       - "persistence.py"
       - "tests/**"
       - "AI_RULEBOOK.md"
@@ -30,6 +31,8 @@ on:
     paths:
       - ".github/workflows/tests.yml"
       - "main.py"
+      - "cra_source.py"
+      - "cra_claims.py"
       - "persistence.py"
       - "tests/**"
       - "AI_RULEBOOK.md"
@@ -73,10 +76,13 @@ jobs:
             local expected="$2"
             local actual
             actual="$(git hash-object "$path")"
-            printf '%s  %s  expected=%s\n' "$actual" "$path" "$expected"
+            printf '%s  %s  expected=%s
+' "$actual" "$path" "$expected"
             test "$actual" = "$expected"
           }
-          verify_blob "main.py" "2152000b4efca23fea61818a7004ea584ae13769"\n          verify_blob "cra_claims.py" "58666a215bd6df64775065f88da7215a65cc026a"\n          verify_blob "tests/test_cra_claims.py" "692d2ce5c75c5fb53c6d6ec5eb18ba1bb6504fba"
+          verify_blob "main.py" "2152000b4efca23fea61818a7004ea584ae13769"
+          verify_blob "cra_claims.py" "58666a215bd6df64775065f88da7215a65cc026a"
+          verify_blob "tests/test_cra_claims.py" "692d2ce5c75c5fb53c6d6ec5eb18ba1bb6504fba"
           verify_blob "scripts/cra_source_canary.py" "0f5bd01ea4994874dcc0e6dfb177a740ec56820c"
           verify_blob "cra_source.py" "e12c62efe5c6cb2eec7a9a774f3b1cfdaa36d0ae"
           verify_blob "persistence.py" "953e2a52b7e6d6e619a4f43766e52d6835df50c8"
