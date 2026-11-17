@@ -1023,3 +1023,15 @@
 - 범위 정정은 작업 브랜치 `docs/cra-scope-governance-2026-11-17`에서 수행한다. 운영 코드, workflow, state/history, 원본 archive 및 기존 SIL 3 산출물은 변경하지 않는다.
 - README, PROJECT_STATUS, MASTER_PLAN, AI_RULEBOOK 및 PROJECT_LOG의 범위 문구를 동기화한다. 본 기록은 범위 정정 사실과 이후 재개 순서를 보존한다.
 - 검증 한계: 이 변경은 문서 거버넌스 정정이다. CRA 법적 적합성 평가나 제품 적합성 결론을 새로 내리지 않는다.
+
+
+## 2026-11-17 — CRA-only 범위 통제 PR #18 병합
+
+- PR #18 `Set CRA as the sole active project scope`를 main에 병합했다.
+- Merge commit: `b7813ddd311bc51bfb0eb26458eace9ff82b621f`.
+- 변경 파일: README.md, PROJECT_STATUS.md, MASTER_PLAN.md, AI_RULEBOOK.md, SESSION_LOG.md, PROJECT_LOG.jsonl (문서 6개만).
+- PR merge 시 충돌 없음(`mergeable=true`). 운영 코드/workflow/state/history/original archive 및 SIL 3 산출물은 변경하지 않았다.
+- SIL 3 산출물 4개 파일을 main에서 재조회해 모두 존재함을 확인했다. PR #16 및 기존 merge commit 이력도 유지.
+- PROJECT_LOG.jsonl은 58개 record 모두 JSON 파싱 성공.
+- CI 상태: merge commit의 combined status에 등록된 status check가 없고, PR-triggered workflow 조회도 비어 있었다. 따라서 이번 문서 PR의 CI 통과를 주장하지 않는다. 문서 범위 diff와 JSONL 구문 검증만 확인했다.
+- 다음 재개: CRA만 활성 범위로 유지한다. 운영 3시간 주기 첫 3회 관찰 상태를 최신 Actions에서 확인한 뒤 CRA 통합 한국어 보고서와 CRA 요구사항 추적표를 진행한다.
