@@ -371,3 +371,10 @@ The first Article/Annex quote-scope implementation failed CI (25 failed, 92 pass
 
 ### Official Journal corrigenda verification — 2026-11-17
 The CRA source pack now fetches the three English Official Journal corrigenda as separate official EUR-Lex sources and checks the target provision plus both the original and corrected wording. The live read-only canary succeeded with seven official sources and 245,502 visible-text characters. CI initially exposed stale Discord chunk-count and pacing expectations after the source manifest grew; those fixtures were corrected. Final isolated CI passed (**117 passed, 1 xfailed**). This verifies source retrieval and text markers, not legal interpretation or product conformity.
+
+### Archive legal-source correction audits — 2026-11-17
+Separate correction reports now audit the latest main auto-archives #14–#17 without altering the original archive files:
+- [Correction #14](reports/CRA_CORRECTION_REPORT_14_2026-11-17.md): CVD vs Article 14 reporting obligations.
+- [Correction #15](reports/CRA_CORRECTION_REPORT_15_2026-11-17.md): data integrity law vs implementation choices/STO behavior.
+- [Correction #16](reports/CRA_CORRECTION_REPORT_16_2026-11-17.md): non-verbatim quotations and digital-signature overclaim.
+- [Correction #17](reports/CRA_CORRECTION_REPORT_17_2026-11-17.md): unsupported RBAC/least-privilege quotation and access-control scope.
