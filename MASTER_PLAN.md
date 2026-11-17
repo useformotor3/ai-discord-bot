@@ -512,3 +512,6 @@
 - Pre/post safety refs `safety/pre-merge-main-pr30-2026-11-17` / `safety/post-merge-main-pr30-2026-11-17`를 생성했고, post-merge ref와 main이 동일함을 비교 확인했다.
 - 다음 우선순위는 (1) M/606 item 18 원본 표 이미지 확인 및 C(2026)7861 문서등록부 전체 확인, (2) PDF 원본 bytes와 SHA-256 취득, (3) Guidance §2.5/§6/§8을 interface/requirements/SEC matrix에 claim-level 연결, (4) Annex I live locator canary 확대다.
 - CI 성공은 PR head 기준이다. merge commit 자체의 별도 Actions run은 확인되기 전까지 미확인으로 표시한다.
+
+
+- PR #30 병합 후 구현 작업 브랜치는 없는 상태로 정리한다. PR #31은 README/PROJECT_STATUS/SESSION_LOG 및 기록의 사후 동기화만 수행하며, 다음 기능·자료 구현은 PR #31 병합 후 최신 main에서 새 작업 브랜치로 시작한다.
