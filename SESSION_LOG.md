@@ -1348,3 +1348,12 @@
 - 2 PDF sources, 9 HTML sources, Article 13(8) locator/quote, corrigenda, compileall and blob pins passed.
 - Artifact #14314174227 downloaded and SHA-256 reverified: ZIP `8fddbba46ccf9b0901b36d88ce27d79817ac620f9fabf37a8b6beefe5dfcaa82`; internal PDF hashes match provenance manifest.
 - PR #33 is ready for final diff/safety check.
+
+
+## 2026-11-17 — PR #33 merge 및 복구 확인
+
+- PR #33 squash merge 완료: `50e4784de60430bb2b8c70ca06b41627d75379ae`.
+- Run #713 success: 148 passed / 1 xfailed; 2 PDF sources and 9 HTML sources live canary passed.
+- Pre/post safety refs `safety/pre-merge-main-pr33-2026-11-17` / `safety/post-merge-main-pr33-2026-11-17`; post ref and main compare identical.
+- PR #33 diff는 18개 파일, isolated tests workflow + CRA source verifier/PDF fetcher/tests + 보고서/매트릭스/관리문서. main.py, production run.yml, state/history/archive, Gemini/Discord production execution, SIL 3 files unchanged.
+- Next implementation starts from latest main in a new branch after PR #34 documentation-only sync.
