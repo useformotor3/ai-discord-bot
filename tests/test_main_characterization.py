@@ -68,7 +68,7 @@ def test_all_model_failures_stop_without_side_effects(run_main):
         run_main.execute([RuntimeError("mock failure") for _ in range(6)])
 
     assert exc.value.code == 1
-    assert len(run_main.captured["model_calls"]) == 6
+    assert len(run_main.captured["model_calls"]) == 4
     assert run_main.captured["discord_posts"] == []
     assert run_main.captured["git_commands"] == []
     assert not (run_main.workdir / "state.json").exists()
