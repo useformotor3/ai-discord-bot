@@ -1188,3 +1188,40 @@
 - merge commit 자체의 별도 workflow run은 확인되지 않았다. PR Run #540 결과만 기록한다.
 - PROJECT_STATUS/AI_RULEBOOK/MASTER_PLAN/README/SESSION_LOG/PROJECT_LOG에 branch authority와 source-gate 통합 순서를 반영했다.
 - main을 canonical로 유지하고, diverged branches 전체 병합 금지. 다음 작업은 최신 main에서 source provenance gate를 선택 이식하는 것.
+
+
+## 2026-11-17 — CRA 공식 source provenance / claim validator 통합 및 PR #26 병합
+
+### 작업 시작 기준
+- canonical base: \`main\` @ \`f4bb159e164b00e4586868f335519cea3c4802ae\`.
+- 작업 목적: PR #24에서 남긴 source/claim gate 통합 계획을 최신 main의 보호 동작을 유지하면서 구현·검증한다.
+- 활성 범위는 CRA만이다. SIL 3 과거 파일/PR/커밋은 수정하거나 삭제하지 않는다.
+
+### 구현 및 검증 과정
+1. \`cra_source.py\` / \`cra_claims.py\`와 main.py source gate를 선택 통합하고 source/claim regression tests를 추가했다.
+2. 첫 CI에서 107 passed / 27 failed가 발생했다. 주요 원인은 typed source exception과 테스트 fixture의 claim ID/JSON 계약 불일치, manifest 추가 후 Discord 메시지 chunk 수 변화였다. 테스트를 느슨하게 하지 않고 운영 코드/fixture를 정합화했다.
+3. 다음 검증에서 134 passed / 1 xfailed까지 개선했으나 live EUR-Lex canary가 HTTP 202/빈 응답/자동화 접근 차단을 발견했다. 202 응답을 정상 원문으로 취급하지 않고 temporary unavailable로 분류했다.
+4. EUR-Lex HTML 직접 호출 대신 Publications Office의 공식 CELLAR REST API를 실험 브랜치에서 검증했다. CELLAR는 일부 CELEX URL을 HTTP로 redirect했으므로 동일 allowlist host 확인 후 HTTPS로 승격하는 redirect handler를 추가했다.
+5. Corrigendum CELEX suffix의 URL encoding 문제를 수정하고, Formex 원문에서 번호와 문장이 서로 다른 줄/블록으로 나뉘는 문제를 whitespace-normalized marker matching으로 해결했다.
+6. 실시간 canary에서 CRA 법령·정오표·위임규정 7건과 Commission 공식 페이지 2건, 총 9개 source fetch를 확인했다. Article 13(8) paragraph locator 안에서 기대 원문 quote가 일치하는지도 live 확인했다.
+7. 최종 PR head \`d1bda523c1b593bbd48bf4916dd7bbd741001894\`의 [Actions Run #573](https://github.com/useformotor3/ai-discord-bot/actions/runs/44039961078)은 **138 passed, 1 xfailed**. source blob identity, compileall, 전체 pytest, 9-source canary, Article 13(8) locator/quote canary 모두 통과했다.
+
+### 변경 및 병합
+- PR #26 [CRA: integrate CELLAR official-source retrieval and claim-level traceability](https://github.com/useformotor3/ai-discord-bot/pull/26) merge 완료.
+- Merge commit: \`8066c166ba01fbfb8d25f61ce0ce6ed72f151854\`.
+- 변경 파일: \`.github/workflows/tests.yml\`, \`cra_source.py\`, \`cra_claims.py\`, \`main.py\`, \`tests/conftest.py\`, \`tests/test_main_characterization.py\`, \`tests/test_cra_source.py\`, \`tests/test_cra_claims.py\`, \`tests/test_external_failure_paths.py\`.
+- PR #25는 PR #26에 전체 변경이 포함되어 중복 정리했다. 원래 branch는 감사/복구를 위해 유지했다.
+- pre-merge safety ref: \`safety/pre-merge-main-pr26-2026-11-17\` → \`f4bb159e164b00e4586868f335519cea3c4802ae\`.
+- post-merge safety ref: \`safety/post-merge-main-pr26-2026-11-17\` → \`8066c166ba01fbfb8d25f61ce0ce6ed72f151854\`. 두 ref 모두 GitHub에서 재조회해 SHA 일치 확인했다.
+
+### 결과 해석 및 제한
+- source manifest에는 요청/최종 URL, retrieval timestamp, visible text length, full-text SHA-256, prompt-excerpt SHA-256을 기록한다.
+- claim validator는 본문 claim ID/statement, source ID, exact quote, Article paragraph/Annex Part-point locator의 일치 여부를 검증한다. 법률 해석이나 제품별 적합성 자체를 자동 확정하지 않는다.
+- Commission Guidance C(2026) 5252 PDF/Annex와 M/606 C(2026) 7861 decision Annex는 관련 URL만 manifest에 기록했다. 실제 PDF/decision Annex 원문 다운로드·파싱은 미완료다.
+- 제품 모델/회로/펌웨어/프로토콜/EU 공급 구조가 없어 모델별 CRA 적용성·Annex III/IV 분류·Article 32 경로는 잠정이다.
+- PR head CI는 성공했으나 merge commit 자체의 별도 Actions run은 아직 확인되지 않았다.
+- 운영 Gemini/Discord workflow는 실행하지 않았으며 state.json/history.json/research_archive 데이터는 변경하지 않았다.
+
+### 관련 보고서와 다음 재개
+- [CRA source provenance pipeline 설계·검증 보고서](reports/CRA_SOURCE_PROVENANCE_PIPELINE_2026-11-17.md)
+- 다음: (1) Guidance PDF/Annex 및 M/606 decision Annex 수집·해시·페이지 locator, (2) Article 13(8) 외 Annex I/핵심 Article live canary 확대, (3) 35 requirements/15 interfaces/36 SEC controls를 claim IDs·설계 통제·시험·제품 증거와 연결, (4) merge commit CI 확인.
