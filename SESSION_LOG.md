@@ -1027,3 +1027,14 @@
 - head `d335612023398184c54b6b86e9c56e7668779a7c`: CI Run #266 **116 passed, 1 xfailed**.
 - Exact source SHA pin, compileall, full pytest 성공.
 - https://github.com/useformotor3/ai-discord-bot/actions/runs/43999131134
+
+## 2026-11-17 — 최신 main 통합 사전 감사 및 claim quote 범위 수정
+- 저장소 최신 상태를 재조회했다. main 9ad23da7136e3af7167048be51a0bf7f7c96d850, feature 감사 기준 3b1c2f3481e9b2e89288cbec80dfbff3d854c8b5, merge-base 0dde26ebac80a789c7a9d9e26560abad54606d32; compare는 116 ahead / 9 behind.
+- main의 main.py는 CRA source/claim validator를 import하지 않고, main tests workflow의 exact SHA pins도 기존 P1-B2 기준이다. feature workflow는 CRA 모듈과 테스트까지 pin한다.
+- 기존 claim validator는 quote가 source 전체에 존재하는지만 확인했다. Article locator가 존재하되 quote가 다른 Article에 있어도 통과할 수 있는 false-positive를 재현하는 테스트를 추가했다.
+- _quote_is_in_locator_scope를 추가해 Article/Annex scope 내 quote 여부를 검사한다. paragraph/point 정확 경계는 아직 미검증이며 추가 작업 대상이다.
+- validator commit 0706df175d23cef3f40eeccebb96a08a728bafec, regression test commit fee65c436a0a112f6415d01aca35a9ba7c72a83c, workflow pin commit 3b1c2f3481e9b2e89288cbec80dfbff3d854c8b5.
+- 기존 head CI #274 success 및 EUR-Lex Canary #93 success. 신규 CI #279 / Canary #95는 pending 상태로 시작했으며 최종 결과 재확인 필요.
+- EUR-Lex Official Journal에서 세 영어 corrigenda를 독립 확인: 2024-12-05 title의 “No” 삭제, 2025-07-02 Article 64(10) “paragraphs 3 to 9” → “paragraphs 2 to 9”, 2025-10-17 Article 67 “69” → “72”. 현재 source fetch는 날짜 인덱스만 확인하고 정정문 개별 fetch/대조는 하지 않는다.
+- 상세: reports/INTEGRATION_AND_CLAIM_SCOPE_AUDIT_2026-11-17.md.
+- main / 운영 run.yml / state / history / archive 변경 없음. merge/rebase/force-push/production 실행/Gemini live call 없음. PR #3 Draft 유지.
