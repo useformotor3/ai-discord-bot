@@ -386,3 +386,12 @@
 - PDF document number, legal title, page count, PDF raw SHA-256은 별도의 PDF source verifier에서 확인한다. HTML page에 PDF document number가 없다는 이유로 source page를 거부하지 않는다.
 - 두 검증 경로를 분리해도 문서 식별 수준은 낮아지지 않는다. page metadata와 PDF identity를 각자 적합한 source layer에서 검증한다.
 - Run #669에서 이 분리 기준과 회귀 테스트가 통과했다(148 passed / 1 xfailed, live PDF+HTML canary pass).
+
+
+## 55. CRA claim/matrix cross-reference integrity gate
+
+- Guidance claim register, interface matrix, requirements traceability, security-control matrix는 ID/row count/foreign-key cross-reference를 자동 검증한다.
+- Guidance claim ID는 register에 정의되어야 하고 모든 claim은 최소 한 matrix에서 참조되어야 한다. unknown/orphan claims는 CI fail.
+- M/606 Annex I item refs는 1–41 범위여야 하며, candidate relevance는 product classification 또는 harmonised status로 해석하지 않는다.
+- PDF raw-byte/text SHA-256, provenance scope, artifact readback, item18 visual verification 및 PROJECT_LOG.jsonl JSON/unique event_id를 확인한다.
+- 이 validator는 데이터 무결성 검사이지 CRA 법적 적합성 판정 도구가 아니다.
