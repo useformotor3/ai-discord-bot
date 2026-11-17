@@ -8,11 +8,13 @@ on:
       - test/failure-path-fixtures-2026-11-14
       - feature/p1-b2-atomic-persistence-2026-11-16
       - feature/cra-source-grounding-2026-11-17
+      - feature/cra-source-grounding-atomic-2026-11-17
     paths:
       - ".github/workflows/tests.yml"
       - ".github/workflows/run.yml"
       - "scripts/**"
       - "main.py"
+      - "cra_source.py"
       - "persistence.py"
       - "tests/**"
       - "AI_RULEBOOK.md"
