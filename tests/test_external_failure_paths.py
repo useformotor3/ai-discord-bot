@@ -29,7 +29,7 @@ def test_discord_429_retries_using_retry_after_header(run_main):
         ],
     )
     assert len(run_main.captured["discord_posts"]) == 3
-    assert run_main.captured["sleep_calls"] == [1.0]
+    assert run_main.captured["sleep_calls"] == [1.0, 1]
     assert namespace["discord_result"]["status"] == "sent"
 
 
@@ -42,7 +42,7 @@ def test_discord_429_uses_json_retry_after_when_header_missing(run_main):
         ],
     )
     assert len(run_main.captured["discord_posts"]) == 3
-    assert run_main.captured["sleep_calls"] == [2.5]
+    assert run_main.captured["sleep_calls"] == [2.5, 1]
     assert namespace["discord_result"]["status"] == "sent"
 
 
