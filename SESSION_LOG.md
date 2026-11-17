@@ -1136,3 +1136,8 @@
 - 원본 archive #5는 Annex I Part I point 3(f)라는 final OJ에 없는 locator를 사용했다. 공격 표면 제한은 point (2)(j), secure-default는 (2)(b), 접근통제는 (2)(d).
 - Recital 46로 인용한 debug port/disable 문구는 final OJ와 일치하지 않는다. Recital 9는 물리/논리 인터페이스 연결 가능성을 설명하지만 JTAG/SWD/UART 영구 disable 또는 eFuse/OTP를 직접 의무화하지 않는다.
 - correction report #5 생성, 원본 보존. correction reports #5–#19 완료.
+
+## 2026-11-17 — EUR-Lex source-pack 문자 수 정정
+- Canary #209 로그의 7개 source별 visible-text 길이를 다시 합산한 결과 총 636,040자다.
+- 이전 보고서/PR/로그의 245,502자는 2025/327 EHDS amendment 394,354자를 합계에서 누락한 계산 오류였다. 이전 event는 감사 이력으로 남기고 정정 event를 추가한다.
+- CI #441: 117 passed, 1 xfailed. Canary #209 success.
