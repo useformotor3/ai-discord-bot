@@ -488,3 +488,12 @@
 6. [후속] paragraph/point 수준 claim locator 정확도와 false-negative 테스트.
 7. [후속] 최신 main 및 운영 state/history/archive 보존 상태 immutable SHA 감사 후 별도 integration branch에서 검증.
 8. [보류] PR #3 Draft 유지. 최신 main 통합 CI 완료 전 merge 금지. Gemini live canary는 billing/data-use 확인 전 미실행.
+
+## 2026-11-17 — 자동 archive #14–#17 정정 감사
+1. [완료] 원본 archive #14–#17의 immutable blob SHA를 확인하고 원본 파일은 수정하지 않음.
+2. [완료] correction report #14: Article 11/13/14, Annex I Part II CVD·신고 요건 구분.
+3. [완료] correction report #15: Annex I Part I (2)(f)의 법적 요구와 서보 구현 후보, real-time/PLC/STO 의무 주장을 분리.
+4. [완료] correction report #16: 직접 인용 불일치, manufacturer/user 오기, cryptographic mechanisms 비원문 구절, 디지털 서명 의무 과장을 정정.
+5. [완료] correction report #17: RBAC/least privilege/MFA/session timeout 직접 의무 및 원문 인용 오류 정정.
+6. [진행] archive #13 이하를 원문/공식 OJ와 대조하고 정정 필요 항목을 누적한다.
+7. [후속] 정정 보고서를 master CRA report에 통합하고 claim-level source evidence와 engineering recommendation을 분리한다.
