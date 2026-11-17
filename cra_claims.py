@@ -160,7 +160,7 @@ def _article_scope(locator, lines):
             or bool(re.fullmatch(r"Annex\s+[IVX]+", line, re.IGNORECASE)),
         )
         if not paragraph_numbers:
-            return "\n".join(lines[start:end])
+            continue
         scopes = [
             _paragraph_scope(lines, start + 1, end, paragraph)
             for paragraph in paragraph_numbers
@@ -191,7 +191,7 @@ def _annex_scope(locator, lines):
         )
         if not part_match:
             if not paragraph_numbers:
-                return "\n".join(lines[annex_start:annex_end])
+                continue
             scopes = [
                 _parenthesized_scope(lines, annex_start + 1, annex_end, n)
                 for n in paragraph_numbers
@@ -230,7 +230,7 @@ def _annex_scope(locator, lines):
                 if scopes:
                     return "\n".join(scopes)
             else:
-                return "\n".join(lines[part_start:part_end])
+                continue
     return None
 
 
