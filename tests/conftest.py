@@ -134,7 +134,7 @@ def run_main(tmp_path, monkeypatch):
                 "<h2>Article 13</h2><p>Article 13(8)</p>"
                 "<p>Manufacturers shall ensure that vulnerabilities of the product "
                 "with digital elements, including its components, are handled "
-                "effectively during the support period.</p></body></html>"
+                "effectively during the support period.</p>" + (" official legal text" * 1500) + "</body></html>"
             ),
         }
 
