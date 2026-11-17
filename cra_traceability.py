@@ -211,7 +211,9 @@ def validate_traceability(root="."):
         "linked_claims": len(used_claims),
         "referenced_m606_items": sorted(referenced_items),
         "pdf_sources": len(sources),
-        "project_log_events": len(log_ids),
+        "project_log_events": len(log_lines),
+        "project_log_events_with_event_id": len(log_ids),
+        "legacy_project_log_events": len(legacy_keys),
         "pdf_artifact_run": workflow.get("run_number"),
     }
 
@@ -233,6 +235,8 @@ def main(argv=None):
         f"SEC={summary['security_controls']} "
         f"linked_claims={summary['linked_claims']} "
         f"project_log_events={summary['project_log_events']} "
+        f"modern_ids={summary['project_log_events_with_event_id']} "
+        f"legacy={summary['legacy_project_log_events']} "
         f"PDF_artifact_run={summary['pdf_artifact_run']}"
     )
     return 0
