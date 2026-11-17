@@ -92,7 +92,7 @@ jobs:
           verify_blob "cra_source.py" "039384c288d079afc36236ffae0eb3c49507a155"
           verify_blob "cra_claims.py" "74bbd6a5541f238213831ec2e06496745eebc1f0"
           verify_blob "cra_pdf_sources.py" "5738c4607f926ba2f22d629df94d5ae92e1b8ed9"
-          verify_blob "cra_traceability.py" "03e576b9bd4f3a640db4a79cda6168627ce2a143"
+          verify_blob "cra_traceability.py" "b0c68ca5a28d3b6a1b92b35dc33098e712004535"
           verify_blob "tests/test_cra_traceability.py" "de7160643525dc047c45215c5a937ea8c956193f"
           verify_blob "tests/test_cra_pdf_sources.py" "d64fe7dfb7b1bf921659f504797bc9e57e1cb923"
           verify_blob "persistence.py" "953e2a52b7e6d6e619a4f43766e52d6835df50c8"
