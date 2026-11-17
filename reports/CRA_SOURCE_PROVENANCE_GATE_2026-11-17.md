@@ -199,3 +199,10 @@ EUR-Lex 통합본은 documentation tool이며 법적 효력은 Official Journal(
 - GitHub `workflow_dispatch` 실행은 workflow 파일이 default branch에 존재해야 하므로, 이 PR이 main에 반영되기 전에는 live canary를 실행할 수 없다.
 - 이 제약은 의도된 안전 경계다. main에 workflow를 별도로 배포하거나 PR을 병합하지 않았고, 실제 Gemini API 요청은 수행하지 않았다.
 - 다음 단계는 최신 main과 PR 통합 검토, billing tier 확인, Free Tier 데이터 사용 조건 검토다.
+
+
+### Gemini canary 격리 CI 결과
+- 구현 및 문서 동기화 head `e2f3dbbc9e6cfb5bbd414cf410b5e23e506ed135`의 Isolated CI Run #247: **116 passed, 1 xfailed**.
+- 신규 Gemini canary의 mock request/response 검증, exact source blob pins, compileall, 전체 pytest 성공.
+- https://github.com/useformotor3/ai-discord-bot/actions/runs/43998889661
+- 이 CI는 실제 Gemini API를 호출하지 않았다. Live canary workflow는 default branch 반영 전까지 dispatch 불가하며, 실제 project billing tier 확인 전에는 실행하지 않는다.
