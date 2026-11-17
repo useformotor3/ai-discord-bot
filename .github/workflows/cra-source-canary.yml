@@ -1,0 +1,42 @@
+name: CRA Official Source Read-only Canary
+
+on:
+  push:
+    branches:
+      - feature/cra-source-grounding-atomic-2026-11-17
+    paths:
+      - "cra_source.py"
+      - "scripts/cra_source_canary.py"
+      - ".github/workflows/cra-source-canary.yml"
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "cra_source.py"
+      - "scripts/cra_source_canary.py"
+      - ".github/workflows/cra-source-canary.yml"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: cra-source-canary-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  eurlex-read-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install HTTP dependency
+        run: python -m pip install --disable-pip-version-check requests
+      - name: Fetch official EUR-Lex CRA text (read-only)
+        run: python scripts/cra_source_canary.py
