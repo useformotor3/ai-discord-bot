@@ -364,3 +364,8 @@
 - Do not combine Article 13(8) support-period determination, Article 13(9) update availability retention, Annex I Part II (8) free security-update delivery and Part II (5) CVD policy into one requirement.
 - A paraphrase that combines several provisions must not be presented as a verbatim legal quote.
 - Keep technically feasible conditions and tailor-made product agreement exceptions visible in the claim.
+
+## 36. SBOM minimum scope and vulnerability disclosure
+- CRA Annex I Part II (1) requires a commonly used machine-readable SBOM covering at least top-level dependencies; do not invent a mandatory SPDX/CycloneDX format or universal transitive-dependency requirement.
+- Keep remediation without delay under Part II (2) separate from fixed-vulnerability disclosure timing and justified delay under Part II (4).
+- Product/build/hardware-revision linkage is useful configuration management, not automatically a verbatim CRA requirement.
