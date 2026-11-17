@@ -16,7 +16,7 @@
 
 | 브랜치 | HEAD | main 대비 | 내용/판정 |
 |---|---|---:|---|
-| main | addfa63d1a7d2d1c77ec61444aaadf2b1f327389 | 기준 | 현재 운영 기준. PR #10–#14 및 #19–#23 병합 기록 |
+| main | addfa63d1a7d2d1c77ec61444aaadf2b1f327389 | 기준 | 현재 운영 기준. PR #10, #11, #12, #14 및 #19–#23 병합 기록 |
 | cra-project-foundation | da0e68b0edb0836f5604dd7a23bd11b20594ef10 | 1,159 ahead / 1,906 behind | START_HERE/AI_CONTINUITY_BOARD, MASTER_REPORT, 통합 traceability, archive audit queue 등 고유 자료. 자체 문서는 이 브랜치를 기본으로 선언하지만 main과 크게 분기. 전체 병합 금지; 자료 보존 후 별도 감사 |
 | integration/cra-source-grounding-2026-11-17 | 1cfac86db1772a3d07ce89a903ae9983a60f68ee | 272 ahead / 201 behind | cra_source.py, cra_claims.py, source manifest, fail-closed gate, claim-evidence validator, 테스트/Canary. 선택 이식 후보 |
 | feature/cra-source-grounding-atomic-2026-11-17 | 114dc1f1332bffc06409d67248a430ef024f6154 | 165 ahead / 218 behind | PR #3 관련 원본 feature branch. PR #3은 closed/unmerged; source gate 참고자료 보존 |
