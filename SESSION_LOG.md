@@ -1332,3 +1332,11 @@
 - PDF 2개 fetch/parse/hash/artifact upload 통과. Artifact ID 14315096266 다운로드 후 ZIP SHA-256 및 PDF별 SHA-256 재계산 일치.
 - 9개 공식 HTML sources, consolidated CRA corrigenda, Article 13(8) locator/quote live canary 통과.
 - M/606 item18 deadline 31/01/2027 시각 확인 완료. Guidance Commission primary binary identity는 미확인으로 남긴다.
+
+
+## 2026-11-17 — 최종 branch-head Run #690
+
+- 최신 branch HEAD `535300d60e1e943a867e3348c3c152832238b665`에서 Run #690 성공: 148 passed / 1 xfailed.
+- PDF 2종 fetch/parse/hash, artifact #14315106623 upload/download/re-hash, 9개 HTML sources, Article 13(8) live locator/quote 통과.
+- ZIP digest `da2f0e5fbfb5f5fa66360a2faa5af3d85821d3b7269885e34e1a3115f37cd3e2` GitHub metadata와 일치; 내부 PDF hashes도 manifest와 일치.
+- PR #33 최종 diff/safety checkpoint 검토 후 병합한다.
