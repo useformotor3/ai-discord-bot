@@ -5,17 +5,17 @@
 - 최종 갱신: 2026-11-17 (KST)
 - 기준 저장소: `useformotor3/ai-discord-bot`
 - 운영 기준 브랜치: `main` (운영 자동화 및 데이터 보존)
-- 현재 작업 브랜치: `docs/branch-reconciliation-2026-11-17` (병렬 브랜치 정합성/소스 검증 감사 중; PR 전)
+- 현재 작업 브랜치: 없음 (PR #24 병합 완료; 다음 작업은 최신 `main`에서 새 브랜치 생성)
 - CRA-only 범위 통제 병합 기준점: PR #18, merge commit `b7813ddd311bc51bfb0eb26458eace9ff82b621f` (2026-11-17)
-- 마지막 CRA 산출물 병합: PR #23 merge `b90a0ac07865c18d846323d843fef38b1123077a`. PR #23 Run #531 success; merge commit 자체의 별도 run은 미확인.
-- 이번 비교 기준: PR #23 병합으로 작업 브랜치 종료. 다음 작업 시작 시 main HEAD와 원격 브랜치를 다시 조회해 기준선을 설정
+- 마지막 CRA 거버넌스 산출물 병합: PR #24 merge `153033aa535775a0df568ad83876bff487d33404`. PR #24 Run #540 success; merge commit 자체의 별도 run은 미확인.
+- 이번 비교 기준: PR #24 병합으로 작업 브랜치 종료. 다음 작업 시작 시 main HEAD와 원격 브랜치를 다시 조회해 기준선을 설정
 - 프로젝트 상태: CRA 통합 보고서 v0.2 병합, 요구사항 추적표 35항목, 인터페이스 적용성 매트릭스 15항목 병합. 보안 통제·시험 매트릭스 36항목 초안 작업 중.
 - 주 문서 언어: 한국어
 - 안전 원칙: 법적 적합성·제품 분류·안전 관련 설계 판단은 근거와 인간 검토 없이 확정하지 않음
 
 ## 0. 2026-11-17 현재 브랜치 정합성 및 통합 판단
 
-- canonical 운영 브랜치: main, HEAD addfa63d1a7d2d1c77ec61444aaadf2b1f327389.
+- canonical 운영 브랜치: main, PR #24 merge commit 153033aa535775a0df568ad83876bff487d33404. 브랜치 비교 수치는 merge 직전 addfa63d1a7d2d1c77ec61444aaadf2b1f327389 기준 snapshot.
 - 병렬 브랜치 비교는 reports/BRANCH_RECONCILIATION_2026-11-17.md를 기준으로 한다. 이 보고서가 기존의 오래된 ahead/behind 스냅샷보다 우선한다.
 - cra-project-foundation: 1,159 ahead / 1,906 behind. 고유 보고서/249-item archive audit queue를 보존하되 전체 병합하지 않는다.
 - integration/cra-source-grounding-2026-11-17: 272 ahead / 201 behind. cra_source.py/cra_claims.py/source gate는 선택 이식 후보이며 branch 전체 또는 main.py 전체를 복사하지 않는다.
