@@ -29,6 +29,7 @@
 - PR #21 merge commit: `e11d376bab43ccc99bdf70549ad47eec57a01760`; PR #22: `20e503c1da2fe2f053630263a8c4942680ec1515`; PR #23: `b90a0ac07865c18d846323d843fef38b1123077a`; PR #24: `153033aa535775a0df568ad83876bff487d33404`; PR #26: `8066c166ba01fbfb8d25f61ce0ce6ed72f151854`
 - PR #26 CI: [Run #573](https://github.com/useformotor3/ai-discord-bot/actions/runs/44039961078), 138 passed / 1 xfailed; 9개 official source live fetch 및 Article 13(8) locator/quote canary 통과. merge commit 자체의 별도 run은 아직 미확인.
 - PR #27 [프로젝트 기록/행동강령 동기화](https://github.com/useformotor3/ai-discord-bot/pull/27) 병합 완료; [Run #575](https://github.com/useformotor3/ai-discord-bot/actions/runs/44040949610)에서 138 passed / 1 xfailed 및 live source canary 재통과.
+- PR #27 rollback refs: `safety/pre-merge-main-pr27-2026-11-17` → `8066c166ba01fbfb8d25f61ce0ce6ed72f151854`; `safety/post-merge-main-pr27-2026-11-17` → `5f0c54a018e18b3453b1c836a5a7d2e9a266331b` (readback SHA 확인)
 - 최신 법적/이행 자료 반영: Commission Guidance C(2026) 5252 (2026-07-27), M/606 개정 C(2026) 7861 (2026-11-10), Regulation (EU) 2025/327 개정 범위 검토
 - 제품 모델/통신 프로토콜/시장 공급 구조가 미제공되어 CRA 적용성 및 Annex III/IV 분류는 잠정 판단으로 유지
 - PR #19/#20은 문서·추적표 경로만 변경했으며 운영 코드, workflow, state/history 및 원본 archive는 수정하지 않음
