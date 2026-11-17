@@ -711,3 +711,10 @@
 - 실제 Gemini/Discord 및 production workflow는 호출하지 않았다. main과 운영 데이터도 수정하지 않았다.
 - PR #3은 Draft/open 유지. 최신 main HEAD `b0fcfa9b5325697652abfb1b30c932d3d1bb7391` 대비 feature 71 ahead / 8 behind, merge-base `0dde26ebac80a789c7a9d9e26560abad54606d32`. 최신 main 통합 CI 및 conflict 검증 전이므로 병합하지 않는다.
 - 다음 우선순위: (1) 격리된 실제 Gemini model compatibility canary (2) Official Journal authentic text/corrigenda 비교 (3) 본문 자연어 claim 누락에 대한 사람 검토 절차.
+
+
+### 문서 동기화 후 재검증
+- 문서/테스트 가이드/PROJECT_LOG 동기화 head: `7c9360ad6c4e833e0037e3fbc0756d736a15efd2`.
+- 이 head에서 Isolated CI Run #206: **112 passed, 1 xfailed**; source pin, compileall, full pytest 모두 통과.
+  https://github.com/useformotor3/ai-discord-bot/actions/runs/43998309434
+- 이전 코드 구현 head의 EUR-Lex canary Run #53 success 확인. 신규 문서 변경은 source retrieval code를 변경하지 않았다.
