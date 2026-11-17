@@ -403,3 +403,6 @@ The CRA feature was merged only into the isolated integration branch, not main. 
 - [Correction #6](reports/CRA_CORRECTION_REPORT_6_2026-11-17.md): corrects the final OJ DoS locator and separates availability requirements from implementation and functional-safety choices.
 
 - [Correction #5](reports/CRA_CORRECTION_REPORT_5_2026-11-17.md): corrects attack-surface locator and separates physical debug-port hardening from specific legal requirements.
+
+### Source-pack measurement correction — 2026-11-17
+The seven-source EUR-Lex canary output totals **636,040 visible-text characters**. Earlier 245,502-character summaries omitted the 394,354-character 2025/327 amendment source; the prior audit log is retained and this correction supersedes the earlier aggregate.
