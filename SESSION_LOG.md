@@ -1432,3 +1432,11 @@
 - Run #797: 155 passed / 1 xfailed, PDF/HTML canaries 통과.
 - EUR-Lex Article 6, 7(1), 10, 11, 14, 32, 69, 71 및 EHDS Regulation 2025/327 Article 104 적용일을 표본 대조.
 - 다음 단계: CRA-001~CRA-035 법령 locator 전수 대조 및 G-001~G-013 Guidance PDF locator 표본 대조.
+
+
+## 2026-11-17 — Guidance PDF locator 재대조
+
+- Run #702 artifact PDF를 내려받아 SHA-256 manifest와 대조하고, G-001~G-013 paragraph locator와 printed page number를 재확인.
+- G-002, G-005, G-006, G-008, G-009, G-010, G-012, G-013의 페이지 범위를 정정. 나머지 5개는 유지.
+- physical PDF page index와 printed page number를 분리해 기록.
+- Commission-hosted primary byte identity 미확인 한계는 그대로 공개.
