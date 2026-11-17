@@ -526,3 +526,6 @@
 
 
 - 35개 요구사항과 인터페이스/통제/Guidance/M/606 간 교차 정합성 감사: [CRA_CROSS_MATRIX_CONSISTENCY_AUDIT_2026-11-18.md](reports/CRA_CROSS_MATRIX_CONSISTENCY_AUDIT_2026-11-18.md).
+
+
+- 제품별 증거 수집·판정 기준: [CRA 제품 경계 및 증거 수집 기준서](reports/CRA_PRODUCT_BOUNDARY_AND_EVIDENCE_INTAKE_2026-11-17.md) (2026-11-18 법령 감사 보완 포함 예정).
