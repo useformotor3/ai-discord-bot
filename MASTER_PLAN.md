@@ -426,3 +426,11 @@
 - 최신 EUR-Lex source pack read-only canary: Run #29 success.
 - 보고서와 상황판은 위 최신 run ID와 작업 브랜치 SHA를 기준으로 동기화했다.
 - Draft PR #3은 open/mergeable 상태이나, claim-to-evidence, 관보 정본 대조, Gemini 호환성 canary가 미완료이므로 main 병합 전 상태로 유지한다.
+
+
+## CRA 보고서 신뢰성 개선 — claim-to-evidence 단계
+1. 구조화 claim_id와 source_id/locator/직접 인용 연결을 생성 단계의 필수 산출물로 만든다.
+2. 각 법적 주장마다 해당 원문 인용을 독립 검증하고, 실패 시 전송·아카이브·count 증가를 차단한다.
+3. legal requirement, official explanation, interpretation, engineering recommendation을 별도 유형으로 분류한다.
+4. mock CI 통과 후 격리된 실제 Gemini 모델 호환성 canary를 설계한다. 운영 Gemini/Discord workflow를 테스트에 사용하지 않는다.
+5. claim mapping 통과와 별개로 Official Journal 정본 및 corrigenda 대조, 제품 범위·적용성 검토를 완료하기 전 CRA 적합성 결론으로 승격하지 않는다.
