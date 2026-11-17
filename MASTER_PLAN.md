@@ -497,3 +497,8 @@
 5. [완료] correction report #17: RBAC/least privilege/MFA/session timeout 직접 의무 및 원문 인용 오류 정정.
 6. [진행] archive #13 이하를 원문/공식 OJ와 대조하고 정정 필요 항목을 누적한다.
 7. [후속] 정정 보고서를 master CRA report에 통합하고 claim-level source evidence와 engineering recommendation을 분리한다.
+
+## 2026-11-17 — archive #18 정정
+1. [완료] 원본 archive #18 blob SHA f986f2f2db5f74ca8dd072deb2fe90e013b4a63c 확인, 원본 보존.
+2. [완료] correction report #18 생성: Annex I Part I (2)(b)/(d)/(l) 분리, RBAC/least privilege 직접 인용 및 실패 인증 로그 의무 과장 정정.
+3. [진행] archive #13 이하 역순 감사 및 correction index 누적.
