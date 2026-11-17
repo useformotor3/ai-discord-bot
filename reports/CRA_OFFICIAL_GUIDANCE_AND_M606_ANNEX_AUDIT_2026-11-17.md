@@ -34,7 +34,7 @@
 
 - [기계 판독형 PDF provenance manifest](CRA_PDF_SOURCE_PROVENANCE_2026-11-17.json)에 요청 URL, 최종 URL, fallback 여부, 파일 크기, 페이지 수, raw-byte SHA-256, extracted-text SHA-256을 기록했다.
 - GitHub Actions Run #669 (`44052967754`) artifact ID `14315096266`에 PDF 2개, 추출 텍스트 2개, manifest를 업로드했다. ZIP SHA-256 `82e86c3347413bc6f210a7403939141679c34e5ad738822043af87fc5c2290c0`은 GitHub artifact metadata와 다운로드한 ZIP에서 재계산한 값이 일치하며, 내부 PDF raw hashes도 manifest와 재계산 값이 각각 일치한다.
-- 최신 Artifact는 2026-11-24 09:12:44 UTC까지 보존된다. 원본 PDF의 영구 보관 위치는 artifact가 만료되기 전 별도로 결정해야 한다.
+- 최신 Artifact는 2026-11-24 09:14:39 UTC까지 보존된다. 원본 PDF의 영구 보관 위치는 artifact가 만료되기 전 별도로 결정해야 한다.
 
 ## 2. C(2026) 5252 Guidance에서 확인한 서보 드라이브 관련 핵심
 
@@ -162,4 +162,4 @@ Annex I는 ESO(CEN/Cenelec/ETSI)가 작성할 신규 유럽표준의 주제와 a
 
 ---
 
-*감사 상태: 최종 Run #690에서 148 passed / 1 xfailed, PDF 2개 취득·해시·artifact readback, 9개 공식 HTML source canary, Article 13(8) locator/quote 검증 통과. M/606 Commission PDF 및 Guidance ANFR mirror raw-byte SHA-256, item 18 시각 확인, G-001~G-013 claim register 및 matrix 연결 완료. Guidance Commission-hosted original byte identity와 실제 서보 드라이브 제품별 증거 연결은 미완료.*
+*감사 상태: 최종 Run #702에서 148 passed / 1 xfailed, PDF 2개 취득·해시·artifact readback, 9개 공식 HTML source canary, Article 13(8) locator/quote 검증 통과. M/606 Commission PDF 및 Guidance ANFR mirror raw-byte SHA-256, item 18 시각 확인, G-001~G-013 claim register 및 matrix 연결 완료. Guidance Commission-hosted original byte identity와 실제 서보 드라이브 제품별 증거 연결은 미완료.*
