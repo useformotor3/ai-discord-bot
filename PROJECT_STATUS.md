@@ -821,3 +821,10 @@
 - main/integration protected blob 일치: state.json 743ee4379421390c85203000cffe2fa0bc43a239, history.json fee7cbe25f5a4881af35124c8a984f8c8d1a9b6d, archive #19 3d90ed95b47d6275e4d98d7c18cfbc5246ffa4e4.
 - archive #19의 logging quote 및 update locator 오류를 확인해 correction report #19 작성. 원본 archive 보존.
 - correction reports #14–#19 완료. 다음은 archive #13 이하 역순 감사.
+
+## 2026-11-17 — archive #13 취약점 처리/CVD 정정 감사
+- archive #13 원본 SHA 7523b68c1537b6ed4d2de197eeb6e5bd4698ea2e 확인, 원본 보존.
+- Article 11을 제조사 취약점/CVD 의무로 연결한 조항 오류, Annex I Part II 번호/인용 오류, 익명 제보 의무 단정, 모든 서보 드라이브의 Important Class I/II 자동 분류 오류를 확인.
+- CVD는 Annex I Part II (5)/(6), 공개 시점/예외는 (4), actively exploited vulnerability 및 severe incident 신고는 Article 14로 분리.
+- correction report #13 생성: reports/CRA_CORRECTION_REPORT_13_2026-11-17.md.
+- correction reports #13–#19 완료. 다음은 archive #12 이하 역순 감사.
