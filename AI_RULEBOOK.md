@@ -284,3 +284,11 @@
 - Annex I Part I는 제품 속성 요구, Part II는 vulnerability handling 요구다. CVD는 Part II (5)/(6), logging은 Part I (2)(l), data integrity는 Part I (2)(f).
 - 제품 Annex III Class I/II 분류는 목록에 열거된 카테고리와 core functionality를 대조한다. 산업용/서보 드라이브라는 명칭만으로 등급을 추정하지 않는다.
 - 법령 직접 의무와 구현 선택(PGP, security.txt, CVE/SLA, unique credentials, WORM/SIEM, digital signature 등)을 분리한다.
+
+## 46. 기능안전 제품 벤치마킹과 표준 판본
+- 제조사 제품군 이름만으로 SIL/PL 등급을 부여하지 않는다. 정확한 model, firmware, safety module, motor/encoder, safety controller, communication and license configuration을 명시한다.
+- Drive/module PFH와 complete safety function PFH를 구분한다. 서로 다른 certification scope의 PFH를 직접 순위화하지 않는다.
+- STO를 electrical isolation, controlled stop, mechanical holding brake와 동일시하지 않는다.
+- 최신 IEC 61800-5-2 amendment와 제조사 인증서 판본을 대조한다. 구판 매뉴얼의 proof-test/diagnostic interval을 최신 규격 요구로 자동 전용하지 않는다.
+- 전압/출력/부하/축 수/피드백/안전 기능이 미확정이면 parameterized reference architecture로 표시하고 최종 회로/BOM/PFH를 확정하지 않는다.
+- 기능안전 FS traceability와 CRA cybersecurity CYB traceability는 별도 요구사항 ID와 증거 체계로 유지한다.
