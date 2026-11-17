@@ -33,8 +33,8 @@
 ### 1.3 CI artifact 및 재현 가능한 provenance
 
 - [기계 판독형 PDF provenance manifest](CRA_PDF_SOURCE_PROVENANCE_2026-11-17.json)에 요청 URL, 최종 URL, fallback 여부, 파일 크기, 페이지 수, raw-byte SHA-256, extracted-text SHA-256을 기록했다.
-- GitHub Actions Run #642 (`44052336199`) artifact ID `14313359693`에 PDF 2개, 추출 텍스트 2개, manifest를 업로드했다. ZIP SHA-256 `150a687e4d4b13fdd20a432e99fc8ea9ec5bc847b8551dd3f157258dc41cd869`은 GitHub artifact metadata와 다운로드한 ZIP에서 재계산한 값이 일치한다.
-- Artifact는 2026-11-24 09:05:46 UTC까지 보존된다. 원본 PDF의 영구 보관 위치는 artifact가 만료되기 전 별도로 결정해야 한다.
+- GitHub Actions Run #669 (`44052967754`) artifact ID `14315096266`에 PDF 2개, 추출 텍스트 2개, manifest를 업로드했다. ZIP SHA-256 `82e86c3347413bc6f210a7403939141679c34e5ad738822043af87fc5c2290c0`은 GitHub artifact metadata와 다운로드한 ZIP에서 재계산한 값이 일치하며, 내부 PDF raw hashes도 manifest와 재계산 값이 각각 일치한다.
+- Artifact는 2026-11-24 09:09:59 UTC까지 보존된다. 원본 PDF의 영구 보관 위치는 artifact가 만료되기 전 별도로 결정해야 한다.
 
 ## 2. C(2026) 5252 Guidance에서 확인한 서보 드라이브 관련 핵심
 
@@ -144,7 +144,7 @@ Annex I는 ESO(CEN/Cenelec/ETSI)가 작성할 신규 유럽표준의 주제와 a
 
 ## 5. 확인되지 않은 사항과 후속 검증
 
-- C(2026) 5252는 ANFR mirror binary hash가 확인됐지만 Commission-hosted 원본 URL의 bytes는 취득되지 않아 byte identity가 미확인이다.
+- C(2026) 5252는 Run #669에서 Commission-hosted primary URL이 PDF로 확인되지 않아 allowlisted ANFR mirror fallback을 사용했다. Mirror binary hash는 확인됐지만 Commission-hosted 원본 URL과 byte identity는 미확인이다.
 - C(2026) 7861 Annex I PDF는 Commission document-register 원본 bytes 및 SHA-256 확인 완료. C(2026) 7861 본문 decision 및 Annex I 외 첨부가 있는지 document register 전체 항목은 추가 확인한다.
 - M/606 Annex I item 18 deadline `31/01/2027`은 PDF p.3(인쇄 페이지 2) 원본 이미지로 시각 확인 완료.
 - C(2026) 5252의 서보 드라이브 직접 사례는 없다. Industrial robot 사례는 RDPS의 원리 예시로만 사용한다.
@@ -162,4 +162,4 @@ Annex I는 ESO(CEN/Cenelec/ETSI)가 작성할 신규 유럽표준의 주제와 a
 
 ---
 
-*감사 상태: M/606 Commission PDF 및 Guidance ANFR mirror의 raw-byte SHA-256 확인, M/606 item 18 시각 검증, G-001~G-013 claim register 및 matrix 연결 완료. Guidance Commission-hosted original byte identity와 실제 서보 드라이브 제품별 증거 연결은 미완료.*
+*감사 상태: Run #669에서 148 passed / 1 xfailed, PDF 2개 취득·해시·artifact readback, 9개 공식 HTML source canary, Article 13(8) locator/quote 검증 통과. M/606 Commission PDF 및 Guidance ANFR mirror raw-byte SHA-256, item 18 시각 확인, G-001~G-013 claim register 및 matrix 연결 완료. Guidance Commission-hosted original byte identity와 실제 서보 드라이브 제품별 증거 연결은 미완료.*
