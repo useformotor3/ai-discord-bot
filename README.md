@@ -378,3 +378,5 @@ Separate correction reports now audit the latest main auto-archives #14–#17 wi
 - [Correction #15](reports/CRA_CORRECTION_REPORT_15_2026-11-17.md): data integrity law vs implementation choices/STO behavior.
 - [Correction #16](reports/CRA_CORRECTION_REPORT_16_2026-11-17.md): non-verbatim quotations and digital-signature overclaim.
 - [Correction #17](reports/CRA_CORRECTION_REPORT_17_2026-11-17.md): unsupported RBAC/least-privilege quotation and access-control scope.
+
+- [Correction #18](reports/CRA_CORRECTION_REPORT_18_2026-11-17.md): separates CRA access-control, secure-default and activity-monitoring provisions; corrects the unsupported least-privilege quotation.
