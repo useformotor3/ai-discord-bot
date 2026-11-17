@@ -718,3 +718,11 @@
 - 이 head에서 Isolated CI Run #206: **112 passed, 1 xfailed**; source pin, compileall, full pytest 모두 통과.
   https://github.com/useformotor3/ai-discord-bot/actions/runs/43998309434
 - 이전 코드 구현 head의 EUR-Lex canary Run #53 success 확인. 신규 문서 변경은 source retrieval code를 변경하지 않았다.
+
+
+## Gemini JSON compatibility canary — 준비 완료, 실제 호출은 수동 게이트
+- `scripts/cra_gemini_canary.py` 및 mock test를 추가했다. 고정 synthetic text 한 건만 전송하고, JSON claim schema와 원문 인용 일치를 확인한다.
+- `.github/workflows/cra-gemini-canary.yml`은 수동 `workflow_dispatch` 전용이며 `confirm_free_tier=false`가 기본값이다. Google API key는 GitHub Secret `GEMINI_API_KEY`에서만 가져오고 URL/로그에 노출하지 않는다.
+- Google 공식 가격표: Gemini 3.8 Flash Free Tier 입력/출력은 무료이나 Free Tier 데이터는 Google 제품 개선에 사용될 수 있고, Google Search Grounding은 Free Tier에서 이용할 수 없다. 계정별 billing tier는 저장소에서 확인 불가.
+- 따라서 actual Gemini API call은 아직 하지 않았다. 사용자가 실제 project가 Free Tier이고 유료 billing을 사용하지 않는다고 확인한 경우에만 수동 dispatch한다.
+- 공식 가격/정책: https://ai.google.dev/gemini-api/docs/pricing/
