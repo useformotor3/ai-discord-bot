@@ -379,3 +379,8 @@
 - Use Annex I Part I (2)(d) for appropriate access-control mechanisms and (2)(b) for secure-by-default/reset-to-original-state.
 - Do not cite a nonexistent Part I (1)(e) or claim the final OJ expressly bans all shared default passwords unless exact enacted text supports it.
 - Device-unique credentials, first-use enrollment, password complexity and MFA are implementation choices to assess against product risk; keep IEC 62443 requirements separate from CRA text.
+
+## 39. CRA availability and DoS claims
+- Use Annex I Part I (2)(h) for availability of essential and basic functions and DoS resilience/mitigation; use (2)(f) for integrity.
+- Do not present dual-core isolation, packet rate limits, packet-drop policy or a specific network protocol as a universally mandated CRA implementation.
+- Do not infer STO/SS1 behavior from CRA DoS wording. Select safety response through hazard analysis and applicable functional-safety requirements.
