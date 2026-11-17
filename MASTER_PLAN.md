@@ -458,3 +458,13 @@
 - [완료] manual workflow에 Free Tier 확인 boolean 기본값 false 적용. 자동 호출 없음.
 - [제약] workflow 파일은 Draft PR branch에만 있으므로 default branch 반영 전에는 workflow_dispatch 실행 불가.
 - [보류] default branch 반영 여부는 main 최신화, PR 검토, Free Tier/billing 상태 확인 후 결정한다. 현재 실제 Gemini API 요청은 하지 않는다.
+
+## 2026-11-17 — 통합 사전 감사 결과 및 다음 게이트
+1. [완료] 최신 원격 상태 재조회: main 9ad23da7, feature 감사 기준 3b1c2f3, 116 ahead / 9 behind, diverged.
+2. [완료] main과 feature의 main.py / tests workflow 차이 확인. main CI는 CRA gate를 포함하지 않으므로 통합 검증 대체 불가.
+3. [완료] claim quote가 다른 Article에 위치해도 통과할 수 있는 false-positive를 확인하고 Article/Annex 범위 검사와 regression test 추가.
+4. [진행] 신규 CI #279 및 EUR-Lex read-only Canary #95 결과/로그 확인.
+5. [우선] Official Journal corrigenda 2024-12-05, 2025-07-02, 2025-10-17의 개별 원문을 source pack에 추가하고 각 정정 대상·정정 문구를 검증한다. 현재는 consolidated text 내 날짜 존재 확인만 수행한다.
+6. [후속] claim locator의 paragraph/point 범위 검사 및 false-negative 테스트 추가. Article/Annex 범위 검사는 법률적 정확성 보증이 아니다.
+7. [후속] main의 9개 후속 커밋과 운영 데이터 보존 상태를 immutable SHA로 감사하고, 별도 integration branch에서만 통합·회귀 테스트한다.
+8. [보류] PR #3 Draft 유지. 최신 main 통합 CI/보호 경로/데이터 불변성 검증 전 merge 금지. Gemini live canary는 billing tier와 데이터 사용 조건 미확인으로 미실행.
