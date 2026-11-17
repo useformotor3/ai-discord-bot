@@ -802,3 +802,15 @@
 - Part I (2)(d)는 적절한 접근통제/인증/identity-access management 수단, (2)(b)는 secure-by-default, (2)(l)는 관련 내부 활동의 기록·모니터링을 각각 규정한다. 원본의 “including the principle of least privilege” 문구는 공식 OJ 직접 인용으로 확인되지 않는다.
 - correction report #18 생성: reports/CRA_CORRECTION_REPORT_18_2026-11-17.md. 원본 archive SHA f986f2f2db5f74ca8dd072deb2fe90e013b4a63c 보존.
 - 현재 별도 정정 보고서 #14–#18 완료. 다음은 #13 이하 역순 감사.
+
+## 2026-11-17 — latest-main integration branch 검증 완료
+- main 최신 기준: 92477fce1350cccb90a799f061b506461e9caff1. 당일 main 자동 archive #6–#18의 13개 후속 커밋은 history.json/state.json/research_archive 파일만 변경했다.
+- main의 state.json: count=18. history.json: 2,411 entries. 당일 마지막 18개 archive 참조 파일 존재를 확인했다.
+- PR #5(main → integration) merge 완료: 308bf4adc181ee6be5d866f3b4cd5ddf54ccf6cd.
+- PR #4(feature → integration) merge 완료: df854af3abc8c2aaf2e56381b0dcacfdbbd6c662.
+- 통합 후 main 대비 state.json SHA 1358aae57047127462dfce7938af99843bebf8fc, history.json SHA af79c5608a9789695e8f155ad0a91a260de7304e, archive #18 SHA f986f2f2db5f74ca8dd072deb2fe90e013b4a63c가 byte-for-byte 동일.
+- main은 수정하지 않았다. integration branch는 main의 자손이며 merge commit만 추가했다.
+- 통합 트리 PR #6 CI #366: 117 passed, 1 xfailed. Exact SHA, compileall, 전체 pytest 성공.
+- EUR-Lex read-only Canary #134: success. 7개 공식 source, 245,502 visible-text chars; 정오표 3건 개별 문구 확인.
+- PR #6은 검증 후 Draft로 되돌려 main 병합을 차단했다. PR #3도 Draft 유지.
+- CRA archive #14–#18 correction reports 완료. 다음은 #13 이하 역순 감사 및 통합 CRA 보고서 작성. SIL 3 서보 드라이브 벤치마킹/하드웨어 블록 설계 보고서는 별도 deliverable로 아직 완료되지 않았으며, CRA 조사 결과와 기능안전 근거를 혼합하지 않고 별도 구조로 작성한다.
