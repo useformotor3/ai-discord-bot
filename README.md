@@ -532,3 +532,11 @@
 
 
 - 최신 main 기준(2026-11-18): PR #48 merge `dc03173cd78f6efb6f46717850a107c8165b1d1a`; 현재 재개/다음 단계는 [PROJECT_STATUS_CURRENT.md](PROJECT_STATUS_CURRENT.md) 참조.
+
+
+## 최신 재개 기준 — 2026-11-18
+- 현재 기준 main: PR #48 병합 후. 최신 프로젝트 상황은 [PROJECT_STATUS_CURRENT.md](PROJECT_STATUS_CURRENT.md)를 기준으로 한다.
+- PR #48 merge commit: `dc03173cd78f6efb6f46717850a107c8165b1d1a`; 이후 main 기록 커밋: `c7b939a0fdfa559f9d68a11873c107186da423c3`.
+- PR #48 exact-head CI Run #834 success 및 pre/post safety refs는 상황판에 기록되어 있다.
+- 2026-11-18 통합 보고서 독립 감사는 작업 브랜치 `cra/integrated-report-audit-2026-11-18`에서 진행 중이며, [독립 감사 기록](reports/CRA_INTEGRATED_REPORT_INDEPENDENT_AUDIT_2026-11-18.md)과 제품별 판정 표현 보완을 포함한다.
+- 제품별 제조사/모델 증거가 제공되기 전 CRA scope/classification/conformity는 Unknown으로 유지한다.
