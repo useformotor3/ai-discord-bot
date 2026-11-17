@@ -26,6 +26,7 @@ on:
       - main
     paths:
       - ".github/workflows/tests.yml"
+      - ".github/workflows/run.yml"
       - "main.py"
       - "persistence.py"
       - "tests/**"
