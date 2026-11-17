@@ -196,3 +196,9 @@ The cited Annex I Part I point (1)(e) does not exist. Access control is point (2
 Original archive #6 blob: `34de32d788d55790606193b86c355d5d7a279845`. Correction report: `reports/CRA_CORRECTION_REPORT_6_2026-11-17.md`.
 
 The final OJ DoS/availability requirement is Annex I Part I (2)(h), protecting essential and basic functions; point (2)(f) is integrity. Dual-core isolation, rate limiting and packet filtering are implementation options, while STO/SS1 behavior requires separate functional-safety analysis. Original archive remains unchanged.
+
+## 19. Main archive #5 correction — 2026-11-17
+
+Original archive #5 blob: `e6dfcf688a3859b9468dbe7a4ef28c2d7d3c94ad`. Correction report: `reports/CRA_CORRECTION_REPORT_5_2026-11-17.md`.
+
+The cited Annex I Part I point 3(f) is not a final OJ locator; attack-surface limitation is point (2)(j). Recital 9 discusses physical and logical connectivity, but does not directly require permanent JTAG/SWD/UART disablement or eFuse/OTP. Original archive remains unchanged.
