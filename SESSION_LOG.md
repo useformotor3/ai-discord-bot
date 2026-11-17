@@ -1088,3 +1088,16 @@
 - Encoder feedback, vendor PC tool, cloud/RDPS는 제품 경계·기능·데이터 인코딩·필수성에 따라 조건부로 분류했다.
 - 근거는 Commission Guidance C(2026) 5252 §2.2, §2.4, §2.5, §2.6, §8 및 CRA Article 2/3에 연결했다. 공식 URL을 CSV 각 행에 포함했다.
 - 실제 모델 회로/프로토콜/설명서가 없으므로 15개 행 모두 제품별 미확인으로 표시했다. 이 매트릭스는 일반적 분류 도구이지 모델별 판정이 아니다.
+
+
+## 2026-11-17 — 인터페이스 적용성 매트릭스 PR #20 병합
+
+- PR #20 `Add servo drive interface-level CRA applicability matrix` squash merge 완료.
+- Merge commit: `951fc5ee0122b847b5e8f77bd5e0706db65efb76`.
+- 변경 경로 8개: 인터페이스 매트릭스 CSV 신규, 통합 보고서/인덱스/README/상황판/마스터 계획/세션 로그/기계 로그 갱신.
+- 병합 전 compare: 9 commits ahead / 0 behind, merge-base 동일. CSV 15행·9열·ID unique·모든 행에 EUR-Lex 및 Commission Guidance URL 확인.
+- 병합 후 main에서 매트릭스 CSV 15행, 통합 보고서, 추적표 28행, README/상황판/마스터 계획/세션 로그/PROJECT_LOG 및 SIL 3 역사적 산출물 존재 확인.
+- PROJECT_LOG.jsonl 64개 record는 병합 전 JSON 파싱 성공.
+- PR #20에 대한 PR-triggered 또는 merge commit Actions run은 조회 시점에 확인되지 않았다. 따라서 CI 통과를 주장하지 않는다. CSV 구조/ID/공식 URL 및 JSONL 구문 수동 검증만 확인했다.
+- 운영 코드, workflow, state/history, archive, SIL 3 파일은 변경하지 않았다.
+- 다음: 실제 서보 드라이브 제품군의 데이터시트/통신 매뉴얼/회로도에 따라 15개 인터페이스 잠정 분류를 확정하고, 28개 CRA 요구사항과 설계·시험 증거를 연결한다.
