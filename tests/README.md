@@ -137,3 +137,9 @@ python -m pytest -q
 - Covered cases: valid claim, source ID mismatch, Article locator mismatch, quote mismatch/short quote, missing or malformed JSON block, missing/undeclared body references, duplicate claim IDs, and explicit non-legal recommendation basis.
 - `test_main_characterization.py` uses a fully mocked report containing legal and engineering claim examples to exercise the main.py acceptance path without real Gemini/Discord calls.
 - These tests validate source traceability only; they do not certify legal interpretation or product applicability.
+
+
+## Gemini JSON compatibility canary
+- `test_cra_gemini_canary.py` tests the REST request contract, API-key header placement, one-call budget, JSON response parsing, synthetic quote matching, and missing-key fail-closed behavior.
+- All tests inject a mock opener; no live Gemini request is made.
+- The live workflow is manual-only and requires `confirm_free_tier=true`. It uses only a synthetic public sentence and does not include CRA sources or repository/user data.
