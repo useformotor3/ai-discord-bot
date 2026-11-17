@@ -540,3 +540,8 @@
 2. [완료] attack-surface/secure-by-default 법적 요구와 포트 disable/opt-in/least-privilege 구현 권고를 분리.
 3. [완료] factory reset의 안전 파라미터/보안 설정 영향 검토 항목을 correction report #11에 기록.
 4. [진행] archive #10 이하 역순 감사.
+
+## 2026-11-17 — archive #10 correction audit
+1. [완료] Article 13(8)/(9), Annex I Part II (1)–(8) 구분.
+2. [완료] non-verbatim quote 및 CVD/free update/support-period 혼합을 correction report #10에 반영.
+3. [진행] archive #9 이하 역순 감사.
