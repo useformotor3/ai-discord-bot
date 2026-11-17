@@ -741,3 +741,11 @@
 - 구현 및 문서 동기화 head `e2f3dbbc9e6cfb5bbd414cf410b5e23e506ed135`에서 Isolated CI Run #247: **116 passed, 1 xfailed**.
 - 정확한 source SHA pin, compileall, 전체 pytest 통과. https://github.com/useformotor3/ai-discord-bot/actions/runs/43998889661
 - 신규 Gemini canary 테스트는 전부 mock opener로 수행됐다. 실제 Gemini API 호출은 하지 않았다.
+
+
+### Gemini canary mock 검증 최종 결과
+- 최종 canary 코드/문서 head `173181265a157bb0086358ea0479c93941149dc6`에서 Isolated CI Run #257: **116 passed, 1 xfailed**.
+  https://github.com/useformotor3/ai-discord-bot/actions/runs/43999017790
+- 동일 head EUR-Lex read-only Canary Run #85: **success**.
+  https://github.com/useformotor3/ai-discord-bot/actions/runs/43999023906
+- Gemini canary 테스트는 mock only. 실제 Gemini API 호출은 여전히 0회.
