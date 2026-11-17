@@ -1112,3 +1112,14 @@
 - 보고서 v0.2에 Article 2(2)–(7) 명시적 제외, Article 13(14)–(23) 추가 제조사 의무, Article 15 자발적 신고, Article 18–23 EU 경제운영자 책임을 보강했다.
 - 요구사항 추적표를 28개에서 35개로 확장하고 각 행에 공식 근거 URL을 유지했다.
 - 다음: CSV 35행 파싱/ID 중복/URL 검증, 보고서와 38개 정정 보고서 간 locators 교차 점검, PR/CI 검증.
+
+
+## 2026-11-17 — CRA 보고서 v0.2 및 35항목 추적표 PR #21 병합
+
+- PR #21을 squash merge 완료. Merge commit `e11d376bab43ccc99bdf70549ad47eec57a01760`.
+- PR #21 Actions Run #517 (`44029412739`) success. 단, Run #517은 최종 2개 문서 수정(Article 32 절차 상세화 및 CRA-020 추적행 보강) 이전 커밋 `24984c447387cfad52d01d3b829b293ff2ecf8e5`에서 실행되었다.
+- 최종 head `f90bf728a0261aae9446c660676402b040d1812f` 및 merge commit에 대한 추가 workflow run/status는 조회 시점에 확인되지 않았다. 따라서 최종 변경 전체에 대한 CI success로 확대 주장하지 않는다.
+- 최종 CSV는 35 data rows, 8 columns, unique IDs, uniform columns, 각 행에 EUR-Lex URL 포함을 재검증했다. PROJECT_LOG.jsonl 66 records parse success.
+- 보고서 v0.2에 Article 2(2)-(7) exclusions, Article 13(14)-(23), Article 15 voluntary reporting, Articles 18-23 economic operator duties, Annex I Part I (2)(a)-(m), Article 32(1)-(4) conformity routes, #1–#38 correction synthesis를 반영했다.
+- PR #21은 문서만 변경했으며 운영 코드/workflow/state/history/archive/SIL3 파일 변경 없음.
+- 다음 단계는 제품별 인터페이스 사실을 확인하고, 35개 요구사항 및 15개 인터페이스 항목을 보안 통제·시험 케이스·증거에 연결하는 것이다.
