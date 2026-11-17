@@ -1126,3 +1126,8 @@
 - 원본 archive #7은 존재하지 않는 Annex I Part I (1)(e)를 인용했다. 접근통제는 (2)(d), secure-by-default/original-state reset은 (2)(b)다.
 - Official Journal에서 “default passwords” 직접 문구는 확인되지 않는다. unique credential, first-use setup 및 password complexity는 위험평가 기반 구현 후보이지 CRA의 특정 일률적 구현 요구로 표현하지 않는다.
 - correction report #7 생성, 원본 보존. correction reports #7–#19 완료.
+
+## 2026-11-17 — archive #6 정정
+- 원본 archive #6의 Annex I Part I Section 1 (f)/(h) 인용은 final OJ 구조와 맞지 않는다. 최종 DoS/availability 근거는 Part I (2)(h), integrity는 (2)(f)다.
+- dual-core 분리, rate limiting, packet drop은 구현 후보이지 법령이 지정한 특정 방식이 아니다. 통신 timeout 시 STO/SS1도 CRA가 직접 강제하지 않으며 hazard analysis와 기능안전 기준으로 결정해야 한다.
+- correction report #6 생성, 원본 보존. correction reports #6–#19 완료.
