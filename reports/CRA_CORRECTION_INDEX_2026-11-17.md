@@ -50,6 +50,7 @@
 - [CRA 서보 드라이브 통합 규제·기술 준수 보고서 v0.2](CRA_INTEGRATED_COMPLIANCE_REPORT_2026-11-17.md)
 - [CRA 요구사항 추적표 v0.2 (CSV, 35개 항목)](CRA_REQUIREMENTS_TRACEABILITY_2026-11-17.csv)
 - [서보 드라이브 인터페이스별 CRA 적용성 매트릭스 (CSV, 15개 항목)](CRA_SERVO_DRIVE_INTERFACE_APPLICABILITY_2026-11-17.csv)
+- [CRA 서보 드라이브 보안 통제·시험 매트릭스 (CSV, 36개 항목)](CRA_SERVO_DRIVE_SECURITY_CONTROL_TEST_MATRIX_2026-11-17.csv) — 35개 CRA 요구사항 ID와 교차 연결
 - 기존 #1–#38은 개별 원문 정정 이력이다. 위 통합 보고서/추적표는 이를 기반으로 제품 적용성·의무·증거를 통합하는 별도 산출물이며 아직 초안이다.
 - 2026-11-17 재검토에서 개별 정정 보고서 #1–#38의 주요 오류 유형·법적 locator·법적 의무와 구현 권고의 경계를 통합 보고서 §11에 반영했다.
 

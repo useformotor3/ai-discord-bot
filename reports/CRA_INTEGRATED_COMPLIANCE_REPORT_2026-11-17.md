@@ -212,6 +212,8 @@ Commission Implementing Decision C(2026) 7861 final Annex는 M/606의 41개 표�
 
 ## 10. 실행 권고 및 검증 순서
 
+기술 통제/시험의 세부 초안은 [CRA 서보 드라이브 보안 통제·시험 매트릭스 (36항목)](CRA_SERVO_DRIVE_SECURITY_CONTROL_TEST_MATRIX_2026-11-17.csv)에 정리했다. 매트릭스의 구현 후보는 위험기반 설계 선택지이며, CRA가 모든 제품에 동일한 특정 기술(예: MFA, RBAC, 디지털 서명, STO/SS1)을 직접 명령한다는 의미가 아니다.
+
 1. 제품군/모델별 데이터 연결 및 제품 경계 매트릭스 작성.
 2. Annex III/IV 핵심 기능 분류표와 Article 32 적합성 평가 경로 확정.
 3. 위협 모델과 Article 13 위험평가를 작성하고 Annex I Part I 요구사항별 적용성·대체 통제 근거를 기록.

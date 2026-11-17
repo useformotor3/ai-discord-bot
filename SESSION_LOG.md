@@ -1123,3 +1123,20 @@
 - 보고서 v0.2에 Article 2(2)-(7) exclusions, Article 13(14)-(23), Article 15 voluntary reporting, Articles 18-23 economic operator duties, Annex I Part I (2)(a)-(m), Article 32(1)-(4) conformity routes, #1–#38 correction synthesis를 반영했다.
 - PR #21은 문서만 변경했으며 운영 코드/workflow/state/history/archive/SIL3 파일 변경 없음.
 - 다음 단계는 제품별 인터페이스 사실을 확인하고, 35개 요구사항 및 15개 인터페이스 항목을 보안 통제·시험 케이스·증거에 연결하는 것이다.
+
+
+## 2026-11-17 — CRA 보안 통제·시험 매트릭스 36항목 작성
+
+- `reports/CRA_SERVO_DRIVE_SECURITY_CONTROL_TEST_MATRIX_2026-11-17.csv` 신규 작성: CRA 법적 근거, 공식 URL, 통제 목표, 위험 시나리오, 구현 후보, 시험 방법, 증거, 적용성, 상태를 포함한 36항목.
+- Annex I Part I (1), (2)(a)-(m)와 Part II (1)-(8), Articles 13-15, 18-23, 31-32, 69 및 RDPS/인터페이스 적용성에 연결했다.
+- MFA/RBAC/고유 비밀번호/디지털 서명/immutable logs/resource isolation/STO/SS1 등은 CRA의 일률적 직접 구현 명령이 아니라 위험기반 구현 후보로 구분했다.
+- 각 행에 EUR-Lex CRA 원문과 Commission Guidance 공식 URL을 포함했다.
+- 상태는 모두 미작성/증거 미확인으로 유지했다. 제품 모델·회로·펌웨어·프로토콜이 없는 상태에서 구현 또는 시험 완료를 주장하지 않는다.
+- 다음: CSV 36행/10열 파싱, ID unique, 공식 URL 확인 후 PR; 이후 모델별 설계/시험 증거로 갱신.
+
+
+## 2026-11-17 — 보안 통제·시험 매트릭스와 요구사항 추적 ID 연결
+
+- 36개 SEC 통제/시험 행에 CRA-001~CRA-035 요구사항 ID를 직접 연결했다.
+- CSV 최종 구조: 36 data rows × 11 columns, 법적 근거 URL, 관련 CRA requirement IDs, 통제 목표, 위험 시나리오, 구현 후보, 검증/시험, 증거, 잠정 적용성, 상태.
+- 구현 후보는 CRA가 특정 기술을 보편적으로 강제한다는 의미가 아니라 위험기반 설계 선택지임을 명시했다.
