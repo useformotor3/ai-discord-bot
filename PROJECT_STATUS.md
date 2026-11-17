@@ -5,7 +5,7 @@
 - 최종 갱신: 2026-11-17 (KST)
 - 기준 저장소: `useformotor3/ai-discord-bot`
 - 운영 기준 브랜치: `main` (운영 자동화 및 데이터 보존)
-- 현재 구현 작업 브랜치: 없음 (PR #30 병합 완료; PR #31은 문서 전용 사후 동기화이며, 다음 구현은 최신 main에서 새 작업 브랜치로 시작)
+- 현재 구현 작업 브랜치: `cra/guidance-claim-mapping-2026-11-17` (Guidance claim mapping 및 PDF binary acquisition 검증)
 - 최신 CRA source 기준점: PR #29 merge commit `9c16724b8b72bd09d3492b19ff714602b235c66b`; PR #28 recovery checkpoint `942e1e6b5f2887001279a96c21f94138d283a689`; 관리 문서 PR #27 `5f0c54a018e18b3453b1c836a5a7d2e9a266331b`; source provenance 코드 PR #26 `8066c166ba01fbfb8d25f61ce0ce6ed72f151854`
 - 최신 source gate PR #26 병합 완료: CELLAR 공식 법령 7건 + Commission 공식 페이지 2건, SHA manifest, claim-level validator, fail-closed source gate
 - CRA-only 범위 통제 병합 기준점: PR #18, merge commit `b7813ddd311bc51bfb0eb26458eace9ff82b621f` (2026-11-17)
@@ -837,3 +837,15 @@
 - [Actions Run #618](https://github.com/useformotor3/ai-discord-bot/actions/runs/44051283237): success, 141 passed / 1 xfailed; compileall, source blob identity, 9-source live canary 및 Article 13(8) locator/quote 통과.
 - Pre-merge ref `safety/pre-merge-main-pr31-2026-11-17` → `975ec6728988e43d9a1ebbf6f6d84288aa44c2fd`; post-merge ref `safety/post-merge-main-pr31-2026-11-17` → `24312166b892127e845721793b1abfee4d91f9c2`. post ref와 main compare identical 확인.
 - 현재 구현 작업 브랜치는 없음. 다음 구현은 세션 시작 시 최신 main을 다시 조회한 뒤 새 작업 브랜치에서 시작한다.
+
+
+## 2026-11-17 — Guidance claim mapping 및 PDF source acquisition 구현 중
+
+- 작업 브랜치 `cra/guidance-claim-mapping-2026-11-17`는 최신 main에서 생성했다.
+- 신규 [Guidance claim register](reports/CRA_GUIDANCE_CLAIM_REGISTER_2026-11-17.csv): G-001~G-013, 모두 `official_explanation`이며 법적 요구사항으로 취급하지 않는다.
+- 기존 매트릭스에 Guidance claim ID와 M/606 Annex I 조건부 후보 항목 열을 추가했다: 인터페이스 15행, CRA 요구사항 35행, SEC 통제·시험 36행.
+- G-002 (§2.5 paras. 26–28)는 인코딩된 디지털 데이터 연결과 단순 electrical trigger를 구분한다. G-007 (§6/6.1) core functionality, G-010/011 (§8) RDPS, G-006 support period, G-012 Machinery Regulation interplay 등을 연결했다.
+- `cra_pdf_sources.py`와 `tests/test_cra_pdf_sources.py`를 추가했다. Commission PDF URL에서 원본 bytes를 취득하고 PDF header/redirect host/document markers를 확인한 뒤 raw-byte SHA-256, page count, extracted-text SHA-256을 산출한다. Guidance primary source가 비-PDF/일시 unavailable이면 allowlist된 ANFR mirror만 fallback한다.
+- `.github/workflows/tests.yml`에 pypdf, source blob pins, PDF live canary 및 7일 artifact 업로드를 추가했다. CI가 성공하고 artifact hash를 readback하기 전에는 원본 PDF 취득·해시 완료라고 기록하지 않는다.
+- 상태: 구현·mock 테스트 추가 완료, GitHub CI/실제 PDF 취득 검증 대기.
+- 제품별 적용성/Annex III·IV 분류는 실제 모델·회로·펌웨어·통신·시장 공급 사실이 확보되기 전까지 잠정 상태를 유지한다.
