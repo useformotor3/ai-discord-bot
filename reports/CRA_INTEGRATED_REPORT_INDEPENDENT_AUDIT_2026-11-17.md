@@ -108,3 +108,17 @@ CI artifact Run #702의 원본 PDF를 다운로드해 SHA-256 manifest와 대조
 - Annex VII(8)은 해당되는 경우 시장감시당국의 합리적 요청 및 Annex I 적합성 확인에 필요한 경우 SBOM 추가 제출을 규정한다. 이 조항을 근거로 Annex I Part II(1)의 기본 SBOM 작성 의무를 선택사항으로 해석해서는 안 된다.
 - 사용자에 대한 일반 공개 의무와 제조자의 SBOM 작성/기술문서 보유 의무는 별개다. Annex II(9)는 제조자가 SBOM을 사용자에게 제공하기로 결정한 경우 접근 위치 정보를 제공하도록 규정한다.
 - 공식 근거: https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX%3A32024R2847 (Annex I Part II(1), Annex II(9), Annex VII(2)(b), (8)).
+
+
+## 9. CRA-001~CRA-035 법령 참조 1차 인벤토리 검토
+
+- 요구사항 CSV의 35개 행에 기재된 CRA Article/Annex 참조를 1차로 훑어, 조항 번호와 법령 구조가 맞지 않는 명백한 locator 오류는 현재까지 발견하지 못했다.
+- 특히 다음 묶음은 EUR-Lex 원문과 조항의 제목/핵심 문언을 대조했다.
+  - CRA-001~CRA-006: 적용범위·PDE/RDPS 정의·위험평가·Annex I Part I 및 SBOM/구성요소 의무
+  - CRA-007~CRA-018: Annex I Part II 취약점 처리, 지원기간, 업데이트 보존, 기술문서, 사용자 정보, 지원 종료일
+  - CRA-019~CRA-020 및 CRA-027: EU DoC/CE, Annex III/IV 분류, Article 32 평가 절차, harmonised standards의 OJ 인용 여부
+  - CRA-021~CRA-023 및 CRA-033: Article 14 의무 신고와 Article 15 자발적 신고의 시간표·범위 구분
+  - CRA-025~CRA-026: Article 69 전환 규칙과 Machinery Regulation Annex III §§1.1.9/1.2.1의 제한된 위험 범위
+  - CRA-028~CRA-034: 경제운영자 및 제조자 책임 전이, 양산 적합성 유지, 식별·DoC·시정조치 의무
+  - CRA-035: Article 2(2)–(7) 적용 제외/중첩 검토 범위
+- 이 결과는 35개 행의 모든 문장과 모든 적용 조건을 법률가 수준으로 확정했다는 의미가 아니다. 제품별 사실관계 및 세부 조건의 검토는 계속하며, 미확인 상태를 적합 판정으로 바꾸지 않는다.
