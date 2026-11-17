@@ -101,6 +101,10 @@ def validate_research_report(report, source):
         return False, "출처 자료에 수집한 EUR-Lex 공식 URL이 없습니다."
     if source.get("version") not in text:
         return False, "출처 자료에 법령 통합본 및 corrigenda 버전 정보가 없습니다."
+    if "관보" not in text or not any(
+        marker in lowered for marker in ("문서화 도구", "documentation tool")
+    ):
+        return False, "EUR-Lex 통합본의 문서화 도구 지위와 관보 정본의 법적 효력 주의가 누락됐습니다."
 
     source_text = normalize_source_text(source["text"]).casefold()
     article_refs = re.findall(r"\bArticle\s+\d+\b", text, flags=re.IGNORECASE)
