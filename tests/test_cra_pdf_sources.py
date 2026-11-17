@@ -21,9 +21,9 @@ class FakePage:
 class FakeReader:
     def __init__(self, _stream, strict=True):
         self.pages = [FakePage(
-            "C(2026) 5252 final This guidance is not binding data connection "
-            "remote data processing COMMISSION IMPLEMENTING DECISION "
-            "C(2026) 7861 final European standard 31/01/2027"
+            ("C(2026) 5252 final This guidance is not binding data connection "
+             "remote data processing COMMISSION IMPLEMENTING DECISION "
+             "C(2026) 7861 final European standard 31/01/2027 ") * 5
         )]
         self.is_encrypted = False
 
