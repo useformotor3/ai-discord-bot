@@ -76,8 +76,7 @@ jobs:
             local expected="$2"
             local actual
             actual="$(git hash-object "$path")"
-            printf '%s  %s  expected=%s
-' "$actual" "$path" "$expected"
+            printf '%s  %s  expected=%s\n' "$actual" "$path" "$expected"
             test "$actual" = "$expected"
           }
           verify_blob "main.py" "2152000b4efca23fea61818a7004ea584ae13769"
