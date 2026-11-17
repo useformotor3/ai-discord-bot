@@ -318,3 +318,10 @@
 - Fetch each applicable English Official Journal corrigendum from its official EUR-Lex ELI URL; verify the target provision and both the original and corrected wording.
 - Preserve each corrigendum as an independent source ID/URL/version in the source manifest and claim evidence pack.
 - A marker match confirms retrieved text only. It does not determine the legal effect of the correction, context, product applicability, or conformity; retain human review.
+
+## 28. Audit of legacy auto-archived research
+- Treat auto-archived reports as unverified research inputs until each claim has an official source, exact locator, and verbatim quote.
+- Never edit or delete an original archive. Publish a separate correction report linked to the immutable original blob SHA.
+- Distinguish legal requirements from product-specific engineering recommendations, safety behavior, selected protocols, cryptographic implementation, and operational design.
+- Recheck exact article/annex numbering and quoted wording against the Official Journal, including corrigenda. Proposal/compromise wording is not a substitute for the enacted OJ text.
+- Continue auditing legacy archives in reverse chronological order; integrate corrected findings into the consolidated report only after source verification.
