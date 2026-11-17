@@ -1170,3 +1170,12 @@
 - `reports/CRA_SERVO_DRIVE_REFERENCE_SECURITY_ARCHITECTURE_2026-11-17.md` main readback 완료; Mermaid block diagram, 6개 trust boundary, 10개 주요 block, 35 requirement/15 interface/36 SEC matrix 연결 확인.
 - PR #23은 문서 8개 경로만 변경; 운영 코드/workflow/state/history/archive/SIL3 산출물 변경 없음.
 - 다음: 실제 제품 모델/회로/MCU/프로토콜/업데이트 경로를 확인하고 참조 아키텍처를 제품별 설계로 구체화한다. 정보가 없으면 generic design/test cases를 계속 축적하되 모델별 결론으로 표현하지 않는다.
+
+
+## 2026-11-17 — branch reconciliation report 및 통합 규칙 보강
+
+- `reports/BRANCH_RECONCILIATION_2026-11-17.md` 작성. main canonical, divergent branch ahead/behind, merge-base, unique content, PR #3/#10-#14 상태를 기록했다.
+- PROJECT_STATUS Section 0에 현재 branch authority를 추가하고 2026-11-14의 72/50 스냅샷은 historical로 격하했다.
+- AI_RULEBOOK Section 48에 selective integration, main.py 보호 동작, exact paragraph/point quote scope, source host allowlist, no live Gemini/Discord canary 원칙을 추가했다.
+- MASTER_PLAN에 source provenance gate 통합을 P0로 지정했다.
+- 기능안전/SIL 관련 AI_RULEBOOK Sections 46-47은 historical reference only로 표시. 현재 활성 범위는 CRA-only이며 사용자 명시 재개 전에는 SIL 작업을 시작하지 않는다.
