@@ -1407,3 +1407,11 @@
 - CRA Guidance PDF 84 pages, M/606 Annex PDF 6 pages 및 HTML live canary 통과; PDF evidence artifact 업로드 성공.
 - Run #770의 validator 상대경로 오류를 수정하고 전체 CI를 재실행해 통과. 실패를 무시하거나 테스트를 생략하지 않음.
 - PR #39 merge 전 안전 체크포인트 생성 및 merge 예정.
+
+
+## 2026-11-17 — PR #39 merge 및 사후 검증
+
+- PR #39 squash merge `aec679142bf8c12b1ce18b233956f9695d70ca21`.
+- Run #781 success: 154 passed / 1 xfailed; CRA traceability, official PDF/HTML canaries and PDF artifact upload passed.
+- Pre/post safety refs 생성. Post ref와 merge SHA/main 비교 `identical` 확인.
+- 제품별 데이터시트/사용설명서가 없으므로 제품별 적용성/분류는 미확정으로 유지.
