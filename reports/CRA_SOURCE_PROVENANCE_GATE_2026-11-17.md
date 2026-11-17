@@ -206,3 +206,11 @@ EUR-Lex 통합본은 documentation tool이며 법적 효력은 Official Journal(
 - 신규 Gemini canary의 mock request/response 검증, exact source blob pins, compileall, 전체 pytest 성공.
 - https://github.com/useformotor3/ai-discord-bot/actions/runs/43998889661
 - 이 CI는 실제 Gemini API를 호출하지 않았다. Live canary workflow는 default branch 반영 전까지 dispatch 불가하며, 실제 project billing tier 확인 전에는 실행하지 않는다.
+
+
+### Gemini canary 최종 검증 head
+- 최종 canary 코드 및 문서 head `173181265a157bb0086358ea0479c93941149dc6`에서 Isolated CI Run #257: **116 passed, 1 xfailed**.
+- EUR-Lex read-only Canary Run #85: success.
+- https://github.com/useformotor3/ai-discord-bot/actions/runs/43999017790
+- https://github.com/useformotor3/ai-discord-bot/actions/runs/43999023906
+- 실제 Gemini API는 호출하지 않았다.
