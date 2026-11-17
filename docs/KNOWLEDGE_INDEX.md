@@ -353,3 +353,19 @@ ST와 비교할 기능 범위와 제품군을 먼저 정의한다. 동급 기능
 - [ENISA CRA SRP FAQ](https://www.enisa.europa.eu/topics/product-security/vulnerability-services/eu-incident-response-and-cyber-crisis-management/single-reporting-platform-srp/frequently-asked-questions), updated 15 October 2026, was opened for route/deadline details. The SRP page says version 1.3 upgrade on 4 November 2026 and supporting docs are being updated; verify the latest v1.3 instructions before operational use.
 - [European Commission C(2026) 5252 page](https://digital-strategy.ec.europa.eu/en/library/commission-publishes-new-guidance-support-timely-cyber-resilience-act-implementation), 27 July 2026, non-binding; Annex download failed Unicode decoding in this run, so no Annex paragraph-level verification.
 - Report #10 remains NEW / NOT_YET_AUDITED and UNVERIFIED at file level; see CRA_ARCHIVE_AUDIT_QUEUE.md. These are source pre-memos, not full Pass A/B/C.
+
+ 
+## 2026-11-17 CRA 원문 재확인 및 신규 아카이브 인덱스
+- 신규 대기열: 2026-11-16 #11–#254 및 2026-11-17 #1–#5, 총 249건. 원문 249개 모두 읽어 주제 요약을 추출했다. 중복 경로 0건.
+- 정본: [CRA_ARCHIVE_AUDIT_QUEUE.md](CRA_ARCHIVE_AUDIT_QUEUE.md). 모든 신규 파일 UNVERIFIED; Raw Text Quote/개별 주장 NOT_YET_AUDITED.
+- EUR-Lex Regulation (EU) 2024/2847: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R2847
+  - Article 13(1) 설계·개발·생산 의무; (2) 위험평가; (8) 지원기간은 예상 사용기간을 반영하고 일반적으로 최소 5년, 예상 사용이 5년 미만이면 예상 사용기간에 대응; (9) 보안 업데이트 가용성 최소 10년 또는 잔여 지원기간 중 긴 기간.
+  - Article 14(1)–(8): actively exploited vulnerability 및 product-security severe incident; 24h early warning, 72h notification, AEV final report 14일 after corrective/mitigating measure available, incident final report 1개월 after 72h notification; CSIRT coordinator/SRP/ENISA.
+  - Annex I Part I(2)(b),(c),(d),(e),(f),(j),(m)와 Part II(1)–(8)를 혼동하지 않는다. Part II(8) 무상 업데이트는 tailor-made product/business-user agreement 예외가 있다.
+  - Annex II(9) 사용자 SBOM 접근정보는 제조자가 SBOM을 사용자에게 제공하기로 결정한 경우에만 적용. Annex VII 2(b)는 SBOM/CVD/contact/secure update distribution 기술문서 정보.
+  - Annex III 중요 제품 분류는 core functionality 기준. 서보 드라이브라는 제품명만으로 Class I/II를 추정하지 않는다.
+- Commission C(2026) 5252 안내(2026-07-27): https://digital-strategy.ec.europa.eu/en/library/commission-publishes-new-guidance-support-timely-cyber-resilience-act-implementation — 비구속적 지침, 제품 범위·실질적 변경·지원기간·신고·위험평가 설명.
+- ENISA SRP: https://www.enisa.europa.eu/topics/product-security/vulnerability-services/eu-incident-response-and-cyber-crisis-management/single-reporting-platform-srp — 2026-11-04 v1.3 upgrade, 문서 갱신 중.
+- ENISA FAQ: https://www.enisa.europa.eu/topics/product-security/vulnerability-services/eu-incident-response-and-cyber-crisis-management/single-reporting-platform-srp/frequently-asked-questions — Updated 2026-10-15.
+- ST AN5156 Rev14 (June 2026): https://www.st.com/content/st_com/en/technical-documents/an5156-introduction-to-security-for-stm32-mcus-stmicroelectronics.html
+- ST AN4992 Rev19 (July 2026): https://www.st.com/content/st_com/en/technical-documents/an4992-introduction-to-secure-firmware-install-sfi-for-stm32-mcus-stmicroelectronics.html — supported MCU list 확인 전에는 SFI 기능을 특정 SKU에 적용하지 않는다.

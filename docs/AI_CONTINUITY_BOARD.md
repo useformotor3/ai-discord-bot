@@ -531,3 +531,15 @@
 - EUR-Lex confirms CVD policy Part II(5) and Annex VII point 2(b) technical-documentation entry; Part II(1) is SBOM, not update quote. Article 14 mandatory reporting covers AEV and severe incidents, not every vulnerability. ENISA SRP FAQ (updated 2026-10-15) confirms SRP route/deadlines; SRP page notes v1.3 upgrade on 2026-11-04 and documentation refresh in progress. Commission guidance page opened; official Annex download failed decoding.
 - Previous work-branch HEAD before #10 queue/doc update: `894988497e18c52d5c6bb783df25a72cb04ddd28`. Re-fetch current refs for final head/divergence. No merge/rebase/sync.
 - Next: full Pass A/B/C of #10, especially exact quote rejection/repair, CVD/Annex VII support, Article 14 scope and routing, hot-patching not a universal named mandate.
+
+ 
+## 2026-11-17 자동 CRA 아카이브 점검
+- main 확인 HEAD: `0dde26ebac80a789c7a9d9e26560abad54606d32`, 2026-11-17 Report #5.
+- 기준선: 2026-11-16 Report #10, `8c8faa1dd68273b2c7bdc47ff3589fa14b6994e7`.
+- 신규 main 아카이브: 2026-11-16 #11–#254 244건 + 2026-11-17 #1–#5 5건 = 249건. 모든 249개 원문 파일을 읽어 주제 요약을 추출했고, 기존 정본 대기열에서 중복 경로 0건을 확인했다.
+- history.json 2,149→2,398(+249); state.json 2026-11-17 count=5. last_health_check는 2026-11-16T21:25:35.167421로 신규 보고서 생성 전이다.
+- 대기열: [CRA_ARCHIVE_AUDIT_QUEUE.md](CRA_ARCHIVE_AUDIT_QUEUE.md). 전 항목 NEW/NOT_YET_AUDITED, 파일 UNVERIFIED. 1차 우선순위 P0 193 / P1 54 / P2 2 / P3 0.
+- 법령 사전 대조: Article 13(8)/(9), Article 14(1)–(8), Annex I Part I(2)(b),(c),(d),(e),(f),(j),(m), Part II(1)–(8), Annex II(1)–(9), Annex III, Annex VII 2(b), Annex VIII 원문 확인. 표본 보고서에 Article 11 오인용, Part I/II 혼동, synthetic quote, support-period 예외 역전, Class II 오분류 후보가 있음.
+- Commission C(2026) 5252 안내(2026-07-27), ENISA SRP/FAQ(FAQ 2026-10-15; SRP v1.3 2026-11-04 이후 문서 갱신 중), ST AN5156 Rev14 (2026-06), AN4992 Rev19 (2026-07) 확인. 제품 SKU/MCU order code 미확정으로 제품 적용성 UNVERIFIED.
+- main.py/run.yml은 main에서 기준선 이후 변경된 것을 관찰했으나 이번 실행에서 수정하지 않았다. main.py current SHA f28dbc540d56b313f0648d77c58734d27eb95d1a, run.yml current SHA 743c2300d9d5fd51f86b3bee3effaeb7ec456f71. 작업 브랜치 main.py SHA 997952702fdd9d2472468b82e6efdd65b2bb4376, run.yml SHA 65a8cadc8eac593f551e390698e367b1d161ecf1.
+- 다음: P0 193건 중 Article 14, 지원기간/무상 업데이트, SBOM, 제품 분류를 우선 Pass A→B→C. 보고서 인용·개별 주장·파일 판정·제품 적용성을 별도 기록. 테스트/CI 미실행.

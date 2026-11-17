@@ -1045,3 +1045,14 @@ VERIFIED / PARTIALLY_VERIFIED / UNVERIFIED / CONFLICT / OUTDATED / NOT_APPLICABL
 - ENISA SRP FAQ(2026-10-15 update)를 열어 신고 대상·기한·경로를 확인했다. SRP 메인 페이지는 2026-11-04 v1.3 업그레이드 및 문서 갱신 중이라고 안내하므로 FAQ의 최신성 한계를 함께 기록했다.
 - European Commission C(2026) 5252 안내 페이지(2026-07-27, non-binding)는 열었으나 Annex 다운로드는 Unicode decoding 오류로 열람하지 못했다. 섹션 단위 검증은 하지 않았다.
 - 상세 근거/링크/미확인 쟁점은 [CRA_ARCHIVE_AUDIT_QUEUE.md](CRA_ARCHIVE_AUDIT_QUEUE.md). 전체 Pass A/B/C는 미완료.
+
+ 
+## 2026-11-17 자동 CRA 아카이브 점검 스냅샷
+- main HEAD: `0dde26ebac80a789c7a9d9e26560abad54606d32` (Report #5). 기준선 #10: `8c8faa1dd68273b2c7bdc47ff3589fa14b6994e7`.
+- 신규 보고서 249건: 2026-11-16 #11–#254 (244), 2026-11-17 #1–#5 (5). 249개 원문 전부 fetch 성공 및 주제 요약 추출. 기존 대기열 경로 중복 0건.
+- history.json 2,149→2,398(+249); state.json 2026-11-17 count=5. last_health_check=2026-11-16T21:25:35.167421은 새 보고서 생성보다 앞서므로 최신 health check 증거 아님.
+- 정본 대기열 갱신: [docs/CRA_ARCHIVE_AUDIT_QUEUE.md](CRA_ARCHIVE_AUDIT_QUEUE.md). 249개 모두 NEW/NOT_YET_AUDITED, file UNVERIFIED. 우선순위 P0 193 / P1 54 / P2 2 / P3 0 (주제 기반 triage).
+- 표본 원문 대조에서 Article 11/13 혼동, Annex I Part I/II 위치 오류, 합성 인용, Article 13(8) 예외 왜곡, Article 14 범위 혼동, Annex I(2)(j) 오인용 및 서보 드라이브 Class II 단정 후보를 확인. 전체 Pass A/B/C 미완료.
+- 공식 자료: EUR-Lex Regulation (EU) 2024/2847; Commission C(2026) 5252 (2026-07-27, non-binding); ENISA SRP FAQ updated 2026-10-15, SRP v1.3 upgrade 2026-11-04 후 문서 갱신 중; ST AN5156 Rev14 (2026-06), AN4992 Rev19 (2026-07).
+- main.py 및 run.yml의 main branch blob이 #10 기준선 이후 변경됨: main.py `86a7731...`→`f28dbc5...`; run.yml `65a8cad...`→`743c230...`. 이번 실행은 main 파일을 읽기만 했고 변경하지 않았다. 작업 브랜치 main.py는 `9979527...`, run.yml은 `65a8cad...`.
+- 작업 브랜치의 문서만 갱신한다. main.py, Gemini prompt, run.yml, 운영 코드 변경 금지. merge/rebase/sync 금지. 테스트/CI 미실행.

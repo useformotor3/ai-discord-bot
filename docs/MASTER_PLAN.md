@@ -923,3 +923,14 @@ CRA 입문부터 서보 드라이브 설계·구현·시험·취약점 관리까
 - [ ] #10 전체 Pass A/B/C: CVD policy와 Annex VII technical documentation, Part II(1) SBOM vs (2)/(7)/(8) updates, Article 14 AEV/severe incident scope and recipient/deadlines, user notice, hot-patching claim.
 - [ ] Raw Text Quote/atomic claim/file verdict/product applicability를 별도 판정. 제품 SKU/업데이트 아키텍처 없이 hot-patching applicability 확정 금지.
 - main read-only; protected code/prompt/production workflow 변경 금지; merge/rebase/sync 금지. 테스트/CI는 실행하지 않았으며 PASS 기록 금지.
+
+ 
+## 2026-11-17 감사 대기열 후속 계획
+1. 신규 249건(#11–#254, 2026-11-16; #1–#5, 2026-11-17)은 정본 대기열에 모두 등록했다. 전부 NEW/NOT_YET_AUDITED이며 파일 UNVERIFIED.
+2. 1차 우선순위는 P0 193 / P1 54 / P2 2 / P3 0이다. P0는 법령 의무·신고·지원기간·무상 업데이트·SBOM·제품 분류 등 핵심 쟁점의 주제 기반 분류이며, 검증 결과가 아니다.
+3. Pass A에서 각 원문을 주장·Raw Text Quote·조항/표준·제품 적용성으로 분해한다. 중복 주제는 기존 claim ledger에 연결하고, 동일 요구사항을 중복 생성하지 않는다.
+4. Pass B에서 EUR-Lex 및 필요한 Commission/ENISA/제조사 원문을 직접 재개방해 조항·point·문서 revision·주변 문맥을 확인한다.
+5. Pass C에서 예외, 다른 조항, Annex I Part I/II, Article 13/14, Annex II/VII의 경계를 반증한다. 파일 단위 판정과 인용/개별 주장 판정을 분리한다.
+6. 우선순위: Article 14 신고 범위·기한/수신자 → Article 13(8)/(9) 지원기간·업데이트 보관 → Annex I Part II(8) 무상 업데이트 및 예외 → SBOM → Article 7/Annex III 분류.
+7. 기술 주장은 ST/TI 정확한 주문 코드, 데이터시트·RM·errata·보안/안전 매뉴얼로 검증한다. 제품 SKU가 없으면 적용성 UNVERIFIED.
+8. 코드·운영 workflow는 이번 범위 밖이다. main.py, Gemini prompt, run.yml, 운영 코드와 main branch를 수정하지 않는다. merge/rebase/sync 금지.

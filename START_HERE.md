@@ -572,3 +572,12 @@ Read [Cross-document Reconciliation](docs/CROSS_DOCUMENT_RECONCILIATION_2026-11-
 - #10 핵심 쟁점: CVD policy/Annex VII technical documentation은 법령 근거가 있음; Part II(1) SBOM vs (2)/(7)/(8) security updates; Article 11/14 mis-citation; Article 14 AEV/severe incident scope, SRP routing/deadlines; hot-patching is not a universal named mandate.
 - ENISA SRP FAQ 2026-10-15 update와 2026-11-04 v1.3 upgrade/documentation-refresh caveat 확인. Commission C(2026) 5252 page는 열었으나 Annex download decode failed.
 - 상세는 [CRA_ARCHIVE_AUDIT_QUEUE.md](docs/CRA_ARCHIVE_AUDIT_QUEUE.md). 다음은 #10 전체 Pass A/B/C.
+
+ 
+## 최신 실행 스냅샷 — 2026-11-17
+- 확인한 main: `0dde26ebac80a789c7a9d9e26560abad54606d32`, Report #5.
+- 마지막 기준선 #10 이후 신규 아카이브 249건: 2026-11-16 #11–#254 및 2026-11-17 #1–#5.
+- 정본 대기열의 최신 배치와 보고서별 SHA/경로/시각/주제/검증 쟁점: [docs/CRA_ARCHIVE_AUDIT_QUEUE.md](docs/CRA_ARCHIVE_AUDIT_QUEUE.md).
+- 전 항목 NEW/NOT_YET_AUDITED, 파일 UNVERIFIED. 전체 Pass A/B/C 미완료.
+- main.py/run.yml은 main에서 기준선 이후 변경이 관찰되었지만 이번 실행에서 수정하지 않았다. main 보호 파일 변경 내역은 PROJECT_STATUS와 2026-11-17 SESSION_LOG를 확인한다.
+- 다음 작업은 대기열 P0부터 Pass A→B→C. 제품별 적용성은 법령 문언 검증과 분리한다.
