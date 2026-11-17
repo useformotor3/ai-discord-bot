@@ -377,3 +377,12 @@
 - [완료] CI Run #59: 99 passed, 1 xfailed.
 - [대기] 다음 운영 실행에서 KST 날짜·일일 count, 실제 Gemini 모델 ID 성공, Git push와 operational_guard의 정상 완료 확인.
 - [대기] Discord 전송 이후 Git 저장 실패 시 재전송 중복 방지/outbox 설계.
+## 2026-11-17 — 반복 자동화 및 조사 품질 개선
+
+1. [완료] main의 최근 #33–#38을 EUR-Lex OJ 원문과 대조하고 원본 보존 정정 보고서 6건 추가.
+2. [완료] PR #10을 main에 merge. EUR-Lex CRA 공식 링크 누락 거부, 최근 30개 원문 기반 중복 주제 차단, 프롬프트 최근 15개 이력 확대.
+3. [완료] PR #10 CI Run #455: 101 passed, 1 xfailed.
+4. [진행] 외부 5분 repository_dispatch를 제거하고 hourly schedule로 전환하는 PR 검증 및 병합.
+5. [후속] 첫 3회 hourly production run의 checkpoint/guard/prune 및 archive 참조 무결성을 관찰.
+6. [후속] 중복탐지 false positive/negative를 로그로 검토하고 임계값을 근거 기반 조정.
+7. [핵심 산출물] CRA 통합 한국어 보고서 및 요구사항 추적표 작성 후 SIL 3 servo-drive benchmarking report와 hardware block design을 별도 기능안전 추적성으로 작성.
