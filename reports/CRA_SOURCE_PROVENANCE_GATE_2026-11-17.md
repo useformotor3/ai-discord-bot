@@ -94,3 +94,36 @@ EUR-Lex 통합본은 documentation tool이며 법적 효력은 Official Journal(
 3. 원문 hash/version 변화 및 새 corrigenda 감지 테스트를 추가한다.
 4. 검증 불확실 또는 인용 대조 실패 보고서를 게시하지 않고 검토 큐로 보내는 방식을 설계한다.
 5. 그 후에만 production workflow 적용 여부를 판단한다.
+
+
+## 9. 공식 후속 법령 source pack 확장 — 2026-11-17
+
+초기 구현은 CRA 통합본 한 건만 가져왔기 때문에, 통합본 밖에서 CRA의 범위·적용시기·신고 절차에 영향을 줄 수 있는 후속 법령을 놓칠 수 있었다. 이를 보완하기 위해 EUR-Lex 공식 HTML에서 아래 3건을 별도 원문으로 수집하도록 확장했다.
+
+| 공식 법령 | source pack에서 확인하는 관련성 | 적용상 주의 |
+|---|---|---|
+| Regulation (EU) 2025/327, Article 104 | EHR 시스템 관련 EHDS 규정과 CRA Article 32(5a)의 연결 | 2027-03-26 적용 예정인 후속 변경으로 기록하고, 일반 산업용 서보 드라이브 의무로 확대하지 않는다. |
+| Commission Delegated Regulation (EU) 2025/1535 | Regulation (EU) No 168/2013 적용 제품의 제한적 CRA 범위 제외 | 특정 L-category 제품 범위와 L1e 예외를 구분한다. 산업용 서보 드라이브에 자동 적용하지 않는다. |
+| Commission Delegated Regulation (EU) 2026/881 | CRA Article 16에 따른 통지 전파 지연 조건 | Article 14의 기본 취약점·중대 사고 신고 시한과 혼동하지 않는다. |
+
+공식 원문:
+- https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32025R0327
+- https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32025R1535
+- https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32026R0881
+
+이 세 법령의 수집 성공은 서보 드라이브에 적용된다는 법률 결론이 아니다. 실제 제품 분류·의도된 용도·관련 EU 법령 범위를 별도 검토해야 한다.
+
+## 10. 확장 source pack 검증 결과
+
+- Isolated CI Run #141: **103 passed, 1 xfailed**. 정확한 source blob SHA 검증, compileall, 전체 pytest 성공. [실행 로그](https://github.com/useformotor3/ai-discord-bot/actions/runs/43989211881).
+- EUR-Lex read-only canary Run #26: **success**. 네 공식 법령 HTML에서 총 220,715자 visible text 확인. CRA 통합본 196,076자, Regulation 2025/327 394,354자, Delegated Regulation 2025/1535 6,246자, Delegated Regulation 2026/881 15,284자. [실행 로그](https://github.com/useformotor3/ai-discord-bot/actions/runs/43989211861).
+- 기존 CRA 통합본의 정오표 인덱스 3개 날짜(2024-12-05, 2025-07-02, 2025-10-17)도 다시 확인했다.
+- 검증은 공개 EUR-Lex GET과 mock 기반 CI다. Gemini/Discord/운영 workflow 호출은 하지 않았다.
+
+## 11. 현재 상태 및 다음 검증
+
+- 코드 변경은 Draft PR #3에만 존재한다: https://github.com/useformotor3/ai-discord-bot/pull/3.
+- PR head: b094a5d5c36bd66c2e7b21179f263f6b6d8a82ce. 기준 main: 0dde26ebac80a789c7a9d9e26560abad54606d32.
+- 2026-11-17 현재 main은 자동 아카이브 #10으로 별도 전진했다. 이 PR은 해당 변경을 덮어쓰지 않았으며 main에 병합하지 않았다.
+- 아직 미완료: 모든 보고서 문장/주장을 개별 조항·문단·인용에 연결하는 claim-to-evidence 검증, 관보 정본과 통합본/정오표 차이의 체계적 대조, 실제 운영 Gemini 모델 응답 호환성 canary.
+- 따라서 이 변경은 자동 보고서의 출처 추적성을 개선하는 최소 gate이며, 법률 해석·제품 적용성·CRA 적합성 검증을 대체하지 않는다.
