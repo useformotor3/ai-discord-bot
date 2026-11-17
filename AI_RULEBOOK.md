@@ -354,3 +354,8 @@
 - Do not call the 10-year update availability period a universal 10-year support period.
 - Apply the tailor-made product/manufacturer-business user agreement exception only where its conditions are met.
 - Article 13(14) is not the free security-update provision.
+
+## 34. CRA attack-surface and secure-default claims
+- Annex I Part I (2)(d) requires limiting attack surfaces, including external interfaces; (2)(e) requires secure-by-default configuration and a possibility to reset to original state.
+- Do not convert these outcomes into a universal mandated port list, protocol prohibition, administrator opt-in flow, or exact service-disable implementation without product-specific evidence.
+- Evaluate service defaults against product risk, operational needs, recovery behavior and functional-safety impact.
