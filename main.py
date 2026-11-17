@@ -386,6 +386,9 @@ for model_name in models_to_try:
           model=model_name, contents=prompt
       )
       candidate = response.text if response and response.text else ""
+      if "추가로 검증할 신규 주제 없음" in candidate:
+        print("ℹ️ [중복/신규 주제 없음] Discord 전송, 아카이브 및 상태 변경 없이 이번 실행을 종료합니다.")
+        raise SystemExit(0)
       is_valid, validation_reason = validate_research_report(candidate)
       if is_valid:
         source_valid, source_reason = validate_official_source_report(candidate, cra_source_pack)
