@@ -5,6 +5,7 @@ on:
     branches:
       - main
       - cra/official-annex-audit-2026-11-17
+      - cra/guidance-claim-mapping-2026-11-17
       - docs/pr30-postmerge-status-sync-2026-11-17
       - docs/pr31-final-dashboard-sync-2026-11-17
       - docs/cra-audit-and-project-control-2026-11-14
@@ -84,6 +85,8 @@ jobs:
           verify_blob "main.py" "16393261529c36f2f0ec914e38002e6795ed9c71"
           verify_blob "cra_source.py" "62cd247b3286dabd60bc923acf792dddd93d622f"
           verify_blob "cra_claims.py" "74bbd6a5541f238213831ec2e06496745eebc1f0"
+          verify_blob "cra_pdf_sources.py" "5738c4607f926ba2f22d629df94d5ae92e1b8ed9"
+          verify_blob "tests/test_cra_pdf_sources.py" "6fa3225eac857b237a548d0065f2dfa1861249c5"
           verify_blob "persistence.py" "953e2a52b7e6d6e619a4f43766e52d6835df50c8"
           verify_blob "tests/test_p1_b2_atomic_persistence.py" "f78d36164b5ac0d5d5eebe0c5eb5c1214c4e0671"
           verify_blob "tests/conftest.py" "f0d390b8041bcafc126dca0d4bc6486cc5844db2"
@@ -97,13 +100,25 @@ jobs:
           verify_blob "tests/test_operational_guard.py" "17d3ac3184e557d4337a753eae6a7a8688d24209"
 
       - name: Install test dependency
-        run: python -m pip install --disable-pip-version-check pytest requests
+        run: python -m pip install --disable-pip-version-check pytest requests pypdf
 
       - name: Compile source and tests
-        run: python -m compileall -q main.py cra_source.py cra_claims.py scripts tests
+        run: python -m compileall -q main.py cra_source.py cra_claims.py cra_pdf_sources.py scripts tests
 
       - name: Run complete repository test suite
         run: python -m pytest -q
+
+      - name: Live official CRA PDF source read-only canary
+        run: python cra_pdf_sources.py --output-dir artifacts/cra-pdf-sources
+
+      - name: Upload CRA official PDF source evidence
+        if: always() && hashFiles('artifacts/cra-pdf-sources/**') != ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: cra-official-pdf-sources-${{ github.sha }}
+          path: artifacts/cra-pdf-sources/
+          if-no-files-found: error
+          retention-days: 7
 
       - name: Live official CRA source read-only canary
         shell: bash
