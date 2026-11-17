@@ -77,14 +77,15 @@ jobs:
             test "$actual" = "$expected"
           }
           verify_blob "main.py" "d4c955af591d28c1a92f74df087c9fc7f830de7f"
+          verify_blob "scripts/cra_source_canary.py" "0f5bd01ea4994874dcc0e6dfb177a740ec56820c"
           verify_blob "cra_source.py" "e12c62efe5c6cb2eec7a9a774f3b1cfdaa36d0ae"
           verify_blob "persistence.py" "953e2a52b7e6d6e619a4f43766e52d6835df50c8"
           verify_blob "tests/test_p1_b2_atomic_persistence.py" "f78d36164b5ac0d5d5eebe0c5eb5c1214c4e0671"
           verify_blob "tests/conftest.py" "d60a789aea13a25253fae105dda56f302f1d1014"
-          verify_blob "tests/test_main_characterization.py" "24c27ebeb0177ab219d0a7060f56093016503052"
+          verify_blob "tests/test_main_characterization.py" "4d237c44392fb3e93d2e695167bc9de731c1ead5"
           verify_blob "tests/test_mock_infrastructure.py" "bb6d5eb379ab83c16ec7cba5f4a8f3fb518dab36"
           verify_blob "tests/test_p1_reliability.py" "c5e3fbe2e75a6a08703117cb5de34571b5dc10c9"
-          verify_blob "tests/test_external_failure_paths.py" "2c5b5c23e66a37a0dc3d1d8b324a023fb5146e13"
+          verify_blob "tests/test_external_failure_paths.py" "715102d61ada4332fb15f7a2f1002c39d346e06e"
           verify_blob "scripts/operational_guard.py" "4a8d1bf7509bbbeb2653f9be3761661a9bc02b9e"
           verify_blob "tests/test_operational_guard.py" "2035b598bf77ffd8fe7dc7c19d2915367f0b354d"
 
