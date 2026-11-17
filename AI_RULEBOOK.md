@@ -315,8 +315,8 @@
 
 1. Main is the canonical operational branch. Current main HEAD, safety checkpoints and active work branch are recorded in PROJECT_STATUS.md.
 2. Never merge a divergent branch wholesale. Compare ahead/behind, merge-base, changed files, tests, workflows and state/history/archive effects before integration. Preserve parallel branches; no force-push or history rewrite.
-3. The historical \`integration/cra-source-grounding-2026-11-17\` branch remains a reference only. Its required source/claim features were selectively implemented and verified in PR #26; the branch itself was not wholesale merged.
-4. PR #26 is merged at \`8066c166ba01fbfb8d25f61ce0ce6ed72f151854\`. Pre/post merge checkpoints are \`safety/pre-merge-main-pr26-2026-11-17\` and \`safety/post-merge-main-pr26-2026-11-17\`; both refs were read back and SHA-verified.
+3. The historical `integration/cra-source-grounding-2026-11-17` branch remains a reference only. Its required source/claim features were selectively implemented and verified in PR #26; the branch itself was not wholesale merged.
+4. PR #26 is merged at `8066c166ba01fbfb8d25f61ce0ce6ed72f151854`. Pre/post merge checkpoints are `safety/pre-merge-main-pr26-2026-11-17` and `safety/post-merge-main-pr26-2026-11-17`; both refs were read back and SHA-verified.
 5. Preserve current main operational protections: 15-item history context, two model retries, quota/429/503 no-op behavior, duplicate-topic suppression, transactional persistence and rollback.
 6. Article paragraph and Annex Part/point claim locators must be tested against actual source structure. A quote from another paragraph/point in the same Article/Annex must fail.
 7. CRA legal source pack currently uses official Publications Office CELLAR retrieval for seven legal texts and two Commission official pages. Source-specific host allowlists, HTTPS-only redirects, source markers, full-text/prompt-excerpt hashes and retrieval timestamps are mandatory.
@@ -332,7 +332,7 @@
 - Requests start over HTTPS. Redirects are manually followed only on the same allowlisted host; same-host HTTP redirects are upgraded to HTTPS before the next request. Never relax host allowlists to make a failing fetch pass.
 - Preserve requested URL, final URL, retrieval timestamp, full visible-text SHA-256 and prompt-excerpt SHA-256. Hash the exact UTF-8 text used at each stage.
 - Treat HTTP 202, empty body, timeout, connection failure, HTTP 429 and 5xx as temporary unavailable only when classified by the source client. The caller must skip model/Discord/storage side effects on that path. TLS/host/content/marker/redirect validation errors fail closed.
-- Every legal claim must have a unique \`C-###\` reference, exact body statement, registered source ID, exact locator and a direct quote of at least 50 characters. The quote must occur inside the selected Article paragraph or Annex Part/point, not merely somewhere in the same document.
+- Every legal claim must have a unique `C-###` reference, exact body statement, registered source ID, exact locator and a direct quote of at least 50 characters. The quote must occur inside the selected Article paragraph or Annex Part/point, not merely somewhere in the same document.
 - Official explanation claims must be linked to the Commission source page and explicitly classified as non-binding explanation. Interpretations and engineering recommendations must not be represented as legal requirements.
 - The source validator proves source traceability and text/locator consistency; it does not establish the correctness of legal interpretation or product-specific CRA applicability.
 - CI live canary currently checks nine official sources and Article 13(8). Expand Article/Annex coverage before claiming complete legal locator coverage.
