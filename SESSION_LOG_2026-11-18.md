@@ -41,3 +41,12 @@
 - CRA-035에 Article 2(8)을 추가하고 Article 2(5)의 delegated-act 조건부 제한/제외를 명시했다.
 - 35개 요구사항의 1차 심층 문언 대조를 마쳤다. 제품별 사실 검증/적합성 결정 및 법률가 검토는 완료를 주장하지 않는다.
 - 다음 단계는 전체 35행 cross-matrix audit 및 누락/중복/표현 정합성 검증이다. exact-head CI 성공 전 병합하지 않는다.
+
+
+## 전체 교차 매트릭스 정합성 감사
+- CRA 35개 요구사항과 15 interfaces / 36 SEC controls / 13 Guidance claims / 41 M/606 items의 교차 참조를 검토했다.
+- 신규 감사 기록: `reports/CRA_CROSS_MATRIX_CONSISTENCY_AUDIT_2026-11-18.md`.
+- SEC-015 SBOM locator, SEC-018 공개 지연 예외, SEC-021 구현 후보 설명, SEC-031 RDPS 근거, SEC-032 데이터 연결 근거, SEC-034 경제운영자/추적성 링크, SEC-036 전환 조항 범위를 정정했다.
+- 제품별 구현/시험 증거는 없으므로 기존 evidence status를 완료로 올리지 않았다.
+- PR #46 merge commit `42aca53bb735d79292be59120fb868474e728073`, post-merge safety ref와 main 동일성 확인.
+- 현재 브랜치에서 교차 감사와 통합 보고서/독립 감사/상황판을 동기화하고 exact-head CI 후 병합한다.
