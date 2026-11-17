@@ -79,7 +79,7 @@ CELLAR의 consolidated text는 원본 통합본과 정오표 자료를 별도 �
 - 원문 그대로의 `full_text_sha256`는 변경하지 않는다. 수정/검증된 prompt excerpt를 기준으로 `prompt_excerpt_sha256`를 다시 계산한다.
 - 2024-12-05 R(01)은 영문 제목의 정정이다. operative excerpt는 Article 1부터 시작하므로 제목은 excerpt에 포함되지 않으며, R(01)은 별도 source로 보존한다.
 
-## 5. 주장·근거 검증
+## 6. 주장·근거 검증
 
 보고서는 단일 `CLAIM_EVIDENCE_JSON` 블록을 포함한다. 각 claim에는 고유 ID, 분류, 본문과 동일한 statement, source ID, locator, 직접 인용을 기록한다.
 
@@ -93,7 +93,7 @@ CELLAR의 consolidated text는 원본 통합본과 정오표 자료를 별도 �
 - legal requirement는 최소 1건 이상 포함해야 한다.
 - claim validator는 원문 추적성 검증 도구이며, 법률적 의미의 최종 판단을 대체하지 않는다.
 
-## 6. 실시간 검증 결과
+## 7. 실시간 검증 결과
 
 [GitHub Actions Run #593](https://github.com/useformotor3/ai-discord-bot/actions/runs/44043229559), PR #29 head `7b2d20b4770c38f944cfc68016df554dc1ecb459`:
 
@@ -121,7 +121,7 @@ CELLAR의 consolidated text는 원본 통합본과 정오표 자료를 별도 �
 
 실시간 canary는 Article 13(8)에서 paragraph scope를 추출하고, 제조자가 지원 기간 중 제품 취약점을 효과적으로 처리해야 한다는 source quote가 해당 paragraph 안에 존재하는지 확인했다.
 
-## 7. 변경 파일 및 병합
+## 8. 변경 파일 및 병합
 
 - `.github/workflows/tests.yml`
 - `cra_source.py`
@@ -135,7 +135,7 @@ CELLAR의 consolidated text는 원본 통합본과 정오표 자료를 별도 �
 
 PR #26은 merge commit 방식으로 main에 통합했다. merge commit: `8066c166ba01fbfb8d25f61ce0ce6ed72f151854`. 기존 운영 retry/quota/no-op, duplicate-topic suppression, transactional persistence/rollback 보호는 유지했다. 운영 Gemini/Discord 실행을 canary로 호출하지 않았다.
 
-## 8. 남은 작업과 제한
+## 9. 남은 작업과 제한
 
 1. Commission Guidance PDF 원문/Annex를 공식 URL에서 별도 수집하고 PDF text extraction, page locator, SHA-256을 추가한다.
 2. C(2026) 7861 결정문과 M/606 Annex를 별도 수집·파싱해 페이지 요약과 구분한다.
