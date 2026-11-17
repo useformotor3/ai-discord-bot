@@ -52,3 +52,24 @@
 - CRA official PDF: https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX%3A32024R2847
 - Regulation (EU) 2025/327: https://eur-lex.europa.eu/eli/reg/2025/327/oj/eng
 - CRA Article 14 / application dates are also recorded in the project source provenance and CI canary outputs.
+
+
+## 6. 공식 EUR-Lex 원문 표본 대조 — 2026-11-17
+
+다음 locator는 EUR-Lex CRA 원문/공식 PDF와 대조했다.
+
+| 조항 | 원문 제목/핵심 | 보고서 반영 상태 |
+|---|---|---|
+| Article 6 | PDE가 Annex I Part I 요구 및 제조자 프로세스 요구를 충족해야 하는 시장 공급 조건 | §1, §5에서 반영 |
+| Article 7(1) | Annex III 제품 카테고리의 core functionality로 Important product 판정; 통합 사실만으로 통합 제품이 자동 분류되지 않음 | §3.4의 제품 경계 원칙과 일치 |
+| Article 10 | Enhancing skills in a cyber resilient digital environment | §11.1의 기존 오인용 정정 설명과 일치 |
+| Article 11 | General product safety — CRA가 다루지 않는 위험에 대해 GPSR 일부 조항이 적용되는 조건 | §11.1의 기존 오인용 정정 설명과 일치 |
+| Article 14 / 71(2) | 신고 의무 2026-09-11 적용 | §1, §4, §6에서 반영 |
+| Article 69(2)–(3) | 2027-12-11 이전 출시 제품의 substantial modification 규칙 및 Article 14의 별도 적용 | §4.1에서 분리 반영 |
+| Article 32 | 일반/중요/핵심 제품에 따른 적합성 평가 경로 | §1, §5.4, §7에서 반영 |
+| Regulation (EU) 2025/327 Article 104 | CRA Article 13(4), 31(3), 32(5a) 관련 개정의 적용 예정일 2027-03-26 | §2.3에서 미래 적용일로 구분 |
+
+- EUR-Lex CRA: https://eur-lex.europa.eu/eli/reg/2024/2847/oj/eng
+- CRA 공식 PDF: https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX%3A32024R2847
+- EHDS Regulation (EU) 2025/327 공식 PDF: https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=OJ%3AL_202500327
+- 이 표본 검토는 전체 35개 requirement row의 전수 검토를 의미하지 않는다. 나머지 Article/Annex locator 및 Guidance PDF locator 대조는 계속한다.
