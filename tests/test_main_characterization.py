@@ -47,6 +47,39 @@ def test_successful_generation_uses_only_mocked_external_services(run_main):
     ]
 
 
+
+def test_official_source_fetch_failure_stops_before_model_or_external_side_effects(run_main):
+    with pytest.raises(SystemExit) as exc:
+        run_main.execute(
+            [VALID_REPORT],
+            source_response_override={"status_code": 503, "text": "temporarily unavailable"},
+        )
+
+    assert exc.value.code == 1
+    assert run_main.captured["source_gets"]
+    assert run_main.captured["model_calls"] == []
+    assert run_main.captured["discord_posts"] == []
+    assert run_main.captured["git_commands"] == []
+
+
+def test_report_with_unmatched_direct_quote_is_rejected(run_main):
+    unrelated_source = (
+        "<html><body><h2>Article 13</h2>"
+        "<p>This official source text deliberately does not contain the submitted quote.</p>"
+        + (" additional legal text" * 1500)
+        + "</body></html>"
+    )
+    with pytest.raises(SystemExit) as exc:
+        run_main.execute(
+            [VALID_REPORT] * 6,
+            source_response_override={"status_code": 200, "text": unrelated_source},
+        )
+
+    assert exc.value.code == 1
+    assert len(run_main.captured["model_calls"]) == 6
+    assert run_main.captured["discord_posts"] == []
+    assert run_main.captured["git_commands"] == []
+
 def test_model_fallback_is_exercised_without_real_api_calls(run_main):
     run_main.execute([
         RuntimeError("mock transient failure 1"),
