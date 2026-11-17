@@ -166,3 +166,9 @@ Findings: Article 13(14) was misused as the free security-update provision; the 
 Original archive #11 blob: `b7555b23da08ff49e50d862aa3ec5485c104338c`. Correction report: `reports/CRA_CORRECTION_REPORT_11_2026-11-17.md`.
 
 The source quotation for Annex I Part I (2)(d)/(e) is accurate. The overclaim is the interpretation: the CRA requires limiting attack surfaces (including external interfaces), secure-by-default configuration and a possibility to reset to original state; it does not prescribe a universal port-disable list, protocol ban or mandatory administrator opt-in workflow. Original archive remains unchanged.
+
+## 14. Main archive #10 correction — 2026-11-17
+
+Original archive #10 blob: `1457bf4c03af61e5c6d9e5ca22397d0dc7c37401`. Correction report: `reports/CRA_CORRECTION_REPORT_10_2026-11-17.md`.
+
+The raw quote combined Article 13(8) support period and Annex I Part II (8) free security update delivery and was not verbatim OJ text. Article 13(9) separately governs continued availability of each security update; Part II (5) is CVD policy. Original archive remains unchanged.
