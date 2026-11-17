@@ -331,9 +331,13 @@ def find_duplicate_topic(report, history, root="."):
 models_to_try = ["gemini-3.8-flash", "gemini-3.5-flash-lite"]
 ai_message = ""
 success = False
+quota_exhausted = False
+transient_unavailable = False
+quality_rejected = False
+fatal_model_error = False
 
 for model_name in models_to_try:
-  max_retries = 3
+  max_retries = 2
   retry_delay = 5
   print(f"🔍 모델 [{model_name}]으로 조사를 시도합니다.")
 
@@ -355,10 +359,14 @@ for model_name in models_to_try:
         ai_message = candidate.strip()
         success = True
         break
+      quality_rejected = True
       print(
           f"모델 {model_name} 시도 {attempt} 무효 응답: "
           f"{validation_reason}"
       )
+      # 공식 법령 링크 누락은 같은 모델에 반복 요청해도 보완되지 않는 경우가 많다.
+      if "EUR-Lex" in validation_reason:
+        break
       if attempt < max_retries:
         time.sleep(retry_delay)
     except Exception as e:
@@ -367,9 +375,25 @@ for model_name in models_to_try:
         status_code = getattr(e, "code", None)
       if status_code is None:
         status_code = getattr(getattr(e, "response", None), "status_code", None)
+      error_text = str(e).lower()
       if status_code == 404 or str(status_code).upper() in ("404", "NOT_FOUND"):
         print(f"모델 {model_name}을 사용할 수 없습니다(404). 재시도 없이 다음 모델로 전환합니다.")
         break
+      if status_code == 429 or "429 resource_exhausted" in error_text:
+        quota_exhausted = True
+        print(
+            f"⚠️ 모델 {model_name} 할당량/요청 제한(429). "
+            "동일 모델 재시도를 중단하고 대체 모델로 전환합니다."
+        )
+        break
+      if status_code == 503 or "503 unavailable" in error_text:
+        transient_unavailable = True
+        print(
+            f"⚠️ 모델 {model_name} 일시적 과부하(503). "
+            "동일 모델 재시도를 중단하고 대체 모델로 전환합니다."
+        )
+        break
+      fatal_model_error = True
       print(f"모델 {model_name} 시도 {attempt} 실패: {str(e)}")
       if attempt < max_retries:
         time.sleep(retry_delay)
@@ -378,9 +402,17 @@ for model_name in models_to_try:
     break
 
 if not success:
+  if not fatal_model_error and (
+      quota_exhausted or transient_unavailable or quality_rejected
+  ):
+    print(
+        "⚠️ [조사 보류] Gemini 할당량/일시 장애 또는 보고서 품질 검증 "
+        "실패로 이번 실행을 정상 건너뜁니다. 전송·아카이브·카운트는 변경하지 않습니다."
+    )
+    raise SystemExit(0)
   print(
-      "❌ [조사 실패] 모든 모델 호출이 실패했거나 응답 검증을 통과하지 "
-      "못했습니다. 이번 실행은 전송·아카이브·카운트 증가 없이 종료합니다."
+      "❌ [조사 실패] 인증/설정 등 복구가 필요한 오류로 모든 모델 호출이 "
+      "실패했습니다. 전송·아카이브·카운트 증가 없이 종료합니다."
   )
   raise SystemExit(1)
 
