@@ -374,3 +374,8 @@
 - Map SBOM requirements to Annex I Part II (1), Annex VII 2(b)/8, and Annex II point 9; Annex VI is the simplified EU declaration of conformity.
 - Do not state that SBOM must always be provided to every user. Annex II point 9 applies when the manufacturer decides to make it available to users.
 - Keep market-surveillance authority requests, technical-documentation retention, and optional user disclosure as separate audiences and processes.
+
+## 38. CRA password and credential claims
+- Use Annex I Part I (2)(d) for appropriate access-control mechanisms and (2)(b) for secure-by-default/reset-to-original-state.
+- Do not cite a nonexistent Part I (1)(e) or claim the final OJ expressly bans all shared default passwords unless exact enacted text supports it.
+- Device-unique credentials, first-use enrollment, password complexity and MFA are implementation choices to assess against product risk; keep IEC 62443 requirements separate from CRA text.
