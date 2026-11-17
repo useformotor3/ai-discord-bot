@@ -1,0 +1,76 @@
+{
+  "schema_version": "1.0",
+  "retrieved_at": "2026-11-17T09:05:46Z",
+  "workflow": {
+    "name": "Isolated Python Tests",
+    "run_number": 642,
+    "run_id": 44052336199,
+    "tested_head_sha": "0e36a7aaa238fcac3fee9ef9d9ee8546d2952fb0",
+    "artifact_id": 14313359693,
+    "artifact_name": "cra-official-pdf-sources-8abc2208f2ff494f6bba0c04d8f17198ddf9a2ed",
+    "artifact_url": "https://github.com/useformotor3/ai-discord-bot/actions/runs/44052336199/artifacts/14313359693",
+    "artifact_zip_sha256": "150a687e4d4b13fdd20a432e99fc8ea9ec5bc847b8551dd3f157258dc41cd869",
+    "artifact_size_bytes": 1312630,
+    "artifact_downloaded_and_sha256_reverified": true,
+    "expires_at": "2026-11-24T09:05:46Z"
+  },
+  "sources": [
+    {
+      "id": "CRA-GUIDANCE-2026-5252",
+      "document": "European Commission, Commission Guidance C(2026) 5252 final, Annex",
+      "requested_url": "https://ec.europa.eu/newsroom/dae/redirection/document/131456",
+      "final_url": "https://www.anfr.fr/fileadmin/CRA/Commission_guidance_on_the_application_of_Regulation__EU__20242847__Cyber_Resilience_Act_.pdf",
+      "retrieval_route": "allowlisted ANFR mirror fallback; Commission-hosted primary URL did not yield a verified PDF response in this run",
+      "fallback_used": true,
+      "byte_count": 1190726,
+      "sha256": "fe209c250e3d1f7599e42826d91963666951332927edcf511a2e79fe8d2f8234",
+      "page_count": 84,
+      "extracted_text_chars": 250162,
+      "extracted_text_sha256": "147f6649b5089cbc4d55c7af77abdcdbd04263b116960812c579fd25acda7425",
+      "markers_verified": [
+        "C(2026) 5252 final",
+        "This guidance is not binding",
+        "data connection",
+        "remote data processing"
+      ],
+      "binary_identity_scope": "ANFR mirror bytes only; byte-for-byte identity with Commission-hosted primary PDF not established"
+    },
+    {
+      "id": "CRA-M606-C2026-7861-ANNEX",
+      "document": "European Commission, Commission Implementing Decision C(2026) 7861 final, Annex I to M/606",
+      "requested_url": "https://ec.europa.eu/transparency/documents-register/api/files/C%282026%297861_1/de00000001090401",
+      "final_url": "https://ec.europa.eu/transparency/documents-register/api/files/C%282026%297861_1/de00000001090401",
+      "retrieval_route": "Commission document-register PDF",
+      "fallback_used": false,
+      "byte_count": 151267,
+      "sha256": "262b09596cb5cbe7d72a2c7789fb2512ee00db7f69082e7def2c8181b0f63276",
+      "page_count": 6,
+      "extracted_text_chars": 8058,
+      "extracted_text_sha256": "06409ee840550a4e602aa30b4f77a9eaf90a44735f820ce2b1239cccec6a54dd",
+      "markers_verified": [
+        "C(2026) 7861 final",
+        "COMMISSION IMPLEMENTING DECISION",
+        "European standard",
+        "31/01/2027"
+      ],
+      "binary_identity_scope": "Commission document-register bytes retrieved and SHA-256 verified"
+    }
+  ],
+  "visual_verification": [
+    {
+      "document_id": "CRA-M606-C2026-7861-ANNEX",
+      "annex_item": 18,
+      "subject": "European standard(s) on essential cybersecurity requirements for password managers",
+      "deadline": "31/01/2027",
+      "pdf_page_index_zero_based": 2,
+      "printed_page_number": 2,
+      "verification": "Right-hand deadline cell visually read from rendered PDF page image; description continues over page break.",
+      "status": "confirmed"
+    }
+  ],
+  "limitations": [
+    "The Commission-hosted C(2026) 5252 primary URL was not the final byte source in this run; the allowlisted ANFR mirror was used. Do not claim Commission-hosted byte identity.",
+    "The PDF artifact is retained for seven days by GitHub Actions; the durable record in this repository is the SHA-256 manifest and source URLs.",
+    "The existing CRA HTML source canary in Run #642 failed because the publication-page validator required the PDF document number C(2026) 5252 on the summary page. The PDF source canary itself passed. The HTML marker is being corrected to validate page metadata separately from PDF identity."
+  ]
+}
