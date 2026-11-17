@@ -1101,3 +1101,8 @@
 - Article 13(8) support period는 원칙적으로 최소 5년, 예상 사용기간이 더 짧으면 해당 기간. Article 13(9)의 10년은 각 security update의 availability 유지기간이다.
 - Article 13(19) 종료일 표시/알림과 Part II (8)의 tailor-made product 예외를 정정 보고서 #12에 기록했다. 원본 archive는 변경하지 않았다.
 - correction reports #12–#19 완료. 다음은 #11 이하 감사.
+
+## 2026-11-17 — archive #11 정정
+- 원본 archive #11의 Annex I Part I (2)(d)/(e) 인용은 정확하지만, 모든 비필수 포트 비활성화 및 모든 추가 기능의 관리자 opt-in을 법령이 직접 지정한 것처럼 과장한 부분을 확인했다.
+- 실제 요구는 attack surface 제한(외부 인터페이스 포함), secure-by-default configuration 및 original-state reset 가능성이다. 포트/서비스별 기본값과 opt-in 방식은 위험평가 기반 구현으로 분류한다.
+- correction report #11 생성, 원본 archive는 보존했다. correction reports #11–#19 완료.
