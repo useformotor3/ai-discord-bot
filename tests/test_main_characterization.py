@@ -58,7 +58,7 @@ def test_successful_generation_uses_only_mocked_external_services(run_main):
     assert len(archives) == 1
     archive_text = archives[0].read_text(encoding="utf-8")
     assert "CRA 심층 조사 보고서" in archive_text
-    assert "SHA-256: fixture-sha256-cra" in archive_text
+    assert "Prompt-excerpt SHA-256: fixture-prompt-sha-cra" in archive_text
     assert "CRA-COMMISSION-GUIDANCE-2026-07-27" in archive_text
     assert "CRA-2024-2847-consolidated" in run_main.captured["model_calls"][0]["prompt"]
     assert len(run_main.captured["model_calls"]) == 1
