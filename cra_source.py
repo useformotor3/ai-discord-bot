@@ -127,14 +127,13 @@ CRA_SOURCE_CATALOG = (
             "https://ec.europa.eu/newsroom/dae/redirection/document/131456",
         ),
         "related_allowed_hosts": ("ec.europa.eu",),
-        "related_note": "Commission PDF download link; PDF bytes/text are not fetched or parsed by this source pack.",
+        "related_note": "Commission PDF Annex is fetched and hashed separately by cra_pdf_sources.py; this page-only source record does not contain the PDF binary.",
         "version": (
             "European Commission CRA guidance publication page, 27.07.2026, C(2026) 5252; "
             "page summary only, not the full guidance annex"
         ),
         "min_chars": 1000,
         "required": (
-            "C(2026) 5252",
             "27 July 2026",
             "though non-binding",
             "remote data processing solutions",
@@ -149,7 +148,7 @@ CRA_SOURCE_CATALOG = (
             "https://ec.europa.eu/transparency/documents-register/detail?ref=C(2026)7861&lang=en",
         ),
         "related_allowed_hosts": ("ec.europa.eu",),
-        "related_note": "Official document-register entry for C(2026) 7861; source pack currently verifies the Commission status page summary, not the decision Annex.",
+        "related_note": "The C(2026) 7861 Annex PDF is fetched and hashed separately by cra_pdf_sources.py; this status-page source record does not contain the Annex binary.",
         "version": (
             "European Commission CRA standardisation page, updated 12.11.2026; "
             "confirms 10.11.2026 M/606 three-month extension; page does not provide item-level revised dates"
@@ -557,7 +556,7 @@ def fetch_official_cra_source():
             if item.get("applied_corrigenda") else ""
         )
         + (
-            "Related official documents (not fetched/parsed): "
+            "Related official documents (not fetched/parsed by this source pack): "
             + "; ".join(item.get("related_urls", []))
             + "\n" + item.get("related_note", "") + "\n"
             if item.get("related_urls") else ""
@@ -600,7 +599,7 @@ def append_source_manifest(report, source):
         if item.get("related_note"):
             lines.append(f"  Related-document note: {item['related_note']}")
         for related_url in item.get("related_urls", []):
-            lines.append(f"  Related official document URL (not fetched/parsed): {related_url}")
+            lines.append(f"  Related official document URL (not fetched/parsed by this source pack): {related_url}")
     return report.rstrip() + "\n\n" + "\n".join(lines)
 
 

@@ -5,7 +5,7 @@
 - 최종 갱신: 2026-11-17 (KST)
 - 기준 저장소: `useformotor3/ai-discord-bot`
 - 운영 기준 브랜치: `main` (운영 자동화 및 데이터 보존)
-- 현재 구현 작업 브랜치: 없음 (PR #30 병합 완료; PR #31은 문서 전용 사후 동기화이며, 다음 구현은 최신 main에서 새 작업 브랜치로 시작)
+- 현재 구현 작업 브랜치: `cra/guidance-claim-mapping-2026-11-17` (Guidance claim mapping 및 PDF binary acquisition 검증)
 - 최신 CRA source 기준점: PR #29 merge commit `9c16724b8b72bd09d3492b19ff714602b235c66b`; PR #28 recovery checkpoint `942e1e6b5f2887001279a96c21f94138d283a689`; 관리 문서 PR #27 `5f0c54a018e18b3453b1c836a5a7d2e9a266331b`; source provenance 코드 PR #26 `8066c166ba01fbfb8d25f61ce0ce6ed72f151854`
 - 최신 source gate PR #26 병합 완료: CELLAR 공식 법령 7건 + Commission 공식 페이지 2건, SHA manifest, claim-level validator, fail-closed source gate
 - CRA-only 범위 통제 병합 기준점: PR #18, merge commit `b7813ddd311bc51bfb0eb26458eace9ff82b621f` (2026-11-17)
@@ -827,8 +827,8 @@
 - [GitHub Actions Run #610](https://github.com/useformotor3/ai-discord-bot/actions/runs/44050954456): success — **141 passed, 1 xfailed**, compileall, exact source blob identity, 9개 공식 출처 live fetch, Article 64(10)/67 corrigenda 및 Article 13(8) locator/quote canary 통과.
 - Pre-merge ref `safety/pre-merge-main-pr30-2026-11-17` → `80245d9e132380a10581612c031f87869993b98d`; post-merge ref `safety/post-merge-main-pr30-2026-11-17` → `975ec6728988e43d9a1ebbf6f6d84288aa44c2fd`; readback compare에서 main과 post-merge ref 동일 확인.
 - PR #30 범위: 한국어 CRA 감사 보고서, 관리 문서·로그 동기화, 격리 테스트 workflow push branch allowlist 1줄. 운영 애플리케이션 코드, 운영 `run.yml`, state/history/archive, Gemini/Discord 외부 실행 및 SIL 3 과거 산출물은 변경하지 않았다.
-- PDF text-layer 내용 감사는 완료했으나 원본 PDF 바이너리 SHA-256은 미완료. M/606 item 18 날짜는 미확인 상태 유지.
-- 현재 구현 작업 브랜치: 없음. PR #31은 문서 전용 사후 동기화이며, 병합 후 다음 구현 작업은 최신 main에서 새 브랜치로 시작한다.
+- M/606 Commission PDF 및 Guidance ANFR mirror raw-byte SHA-256 검증 완료. M/606 item 18 deadline 31/01/2027 시각 확인 완료. Guidance Commission primary byte identity는 미확인.
+- 현재 구현 작업 브랜치: `cra/guidance-claim-mapping-2026-11-17` (PR #33; Run #669 success, merge 전 검토 중).
 
 
 ## 2026-11-17 — PR #31 사후 동기화 완료
@@ -836,4 +836,54 @@
 - PR #31 merge commit: `24312166b892127e845721793b1abfee4d91f9c2`.
 - [Actions Run #618](https://github.com/useformotor3/ai-discord-bot/actions/runs/44051283237): success, 141 passed / 1 xfailed; compileall, source blob identity, 9-source live canary 및 Article 13(8) locator/quote 통과.
 - Pre-merge ref `safety/pre-merge-main-pr31-2026-11-17` → `975ec6728988e43d9a1ebbf6f6d84288aa44c2fd`; post-merge ref `safety/post-merge-main-pr31-2026-11-17` → `24312166b892127e845721793b1abfee4d91f9c2`. post ref와 main compare identical 확인.
-- 현재 구현 작업 브랜치는 없음. 다음 구현은 세션 시작 시 최신 main을 다시 조회한 뒤 새 작업 브랜치에서 시작한다.
+- 현재 구현 작업 브랜치: `cra/guidance-claim-mapping-2026-11-17`; PR #33 병합 후 최신 main에서 다음 CRA 작업 브랜치를 생성한다.
+
+
+## 2026-11-17 — Guidance claim mapping 및 PDF source acquisition 구현 중
+
+- 작업 브랜치 `cra/guidance-claim-mapping-2026-11-17`는 최신 main에서 생성했다.
+- 신규 [Guidance claim register](reports/CRA_GUIDANCE_CLAIM_REGISTER_2026-11-17.csv): G-001~G-013, 모두 `official_explanation`이며 법적 요구사항으로 취급하지 않는다.
+- 기존 매트릭스에 Guidance claim ID와 M/606 Annex I 조건부 후보 항목 열을 추가했다: 인터페이스 15행, CRA 요구사항 35행, SEC 통제·시험 36행.
+- G-002 (§2.5 paras. 26–28)는 인코딩된 디지털 데이터 연결과 단순 electrical trigger를 구분한다. G-007 (§6/6.1) core functionality, G-010/011 (§8) RDPS, G-006 support period, G-012 Machinery Regulation interplay 등을 연결했다.
+- `cra_pdf_sources.py`와 `tests/test_cra_pdf_sources.py`를 추가했다. Commission PDF URL에서 원본 bytes를 취득하고 PDF header/redirect host/document markers를 확인한 뒤 raw-byte SHA-256, page count, extracted-text SHA-256을 산출한다. Guidance primary source가 비-PDF/일시 unavailable이면 allowlist된 ANFR mirror만 fallback한다.
+- `.github/workflows/tests.yml`에 pypdf, source blob pins, PDF live canary 및 7일 artifact 업로드를 추가했다. CI가 성공하고 artifact hash를 readback하기 전에는 원본 PDF 취득·해시 완료라고 기록하지 않는다.
+- 상태: 구현·mock 테스트 완료; Run #669에서 CI 148 passed / 1 xfailed 및 PDF binary fetch/hash/artifact readback 통과.
+- 제품별 적용성/Annex III·IV 분류는 실제 모델·회로·펌웨어·통신·시장 공급 사실이 확보되기 전까지 잠정 상태를 유지한다.
+
+
+## 2026-11-17 — CRA PDF binary provenance readback
+
+- GitHub Actions Run #642 (`44052336199`)의 PDF source canary에서 Guidance 및 M/606 Annex PDF 2개를 실제 취득하고 pypdf parse, document markers, page count, raw-byte SHA-256, extracted-text SHA-256을 계산했다.
+- Guidance: ANFR mirror fallback 사용, 1,190,726 bytes, 84 pages, SHA-256 `fe209c250e3d1f7599e42826d91963666951332927edcf511a2e79fe8d2f8234`; Commission-hosted original byte identity는 미확인.
+- M/606 Annex: Commission document-register direct fetch, 151,267 bytes, 6 pages, SHA-256 `262b09596cb5cbe7d72a2c7789fb2512ee00db7f69082e7def2c8181b0f63276`.
+- Artifact ID `14313359693`, ZIP SHA-256 `150a687e4d4b13fdd20a432e99fc8ea9ec5bc847b8551dd3f157258dc41cd869`; artifact ZIP를 다운로드하고 SHA-256 재계산하여 GitHub digest와 일치 확인.
+- M/606 Annex I item 18 password manager deadline은 PDF printed page 2의 원본 표 우측 셀에서 `31/01/2027`로 시각 확인. 텍스트 추출에서 행 설명이 페이지 경계를 넘어가며 날짜 셀을 놓쳤던 문제를 해결했다.
+- 상세 manifest: `reports/CRA_PDF_SOURCE_PROVENANCE_2026-11-17.json`.
+- Run #642에서 발견된 summary page marker 오류를 수정했고, Run #669에서 PDF·HTML source canary 모두 통과했다.
+
+
+## 2026-11-17 — PR #33 source validator correction 및 Run #669 성공
+
+- 기존 Run #642에서 발견된 오류: Commission guidance publication summary page에 PDF 문서번호 `C(2026) 5252`가 반드시 존재해야 한다고 잘못 요구했다. 해당 페이지는 PDF Annex 자체가 아니므로 문서번호 marker를 페이지 검증에 사용하지 않도록 분리했다. PDF Annex identity marker는 `cra_pdf_sources.py`에서 별도로 검증한다.
+- Regression test 추가 및 source blob pins 갱신 후 [Run #669](https://github.com/useformotor3/ai-discord-bot/actions/runs/44052967754) 성공: **148 passed / 1 xfailed**.
+- Compileall 및 exact source blob identity 통과.
+- PDF canary: C(2026)5252 ANFR mirror 84 pages / 1,190,726 bytes / SHA-256 `fe209c250e3d1f7599e42826d91963666951332927edcf511a2e79fe8d2f8234`; C(2026)7861 Annex Commission PDF 6 pages / 151,267 bytes / SHA-256 `262b09596cb5cbe7d72a2c7789fb2512ee00db7f69082e7def2c8181b0f63276`.
+- PDF artifact ID `14315096266` 다운로드 및 readback 완료; ZIP SHA-256 `82e86c3347413bc6f210a7403939141679c34e5ad738822043af87fc5c2290c`가 GitHub metadata와 일치하고 내부 PDF hashes도 재계산 결과와 일치.
+- 기존 HTML source canary도 9개 allowlisted official sources, Article 64(10)/67 corrigenda, Article 13(8) locator/quote 통과.
+- M/606 item18 deadline `31/01/2027` 시각 검증 완료. Guidance Commission primary byte identity만 미확인.
+
+
+## 2026-11-17 — 최종 branch-head Run #690 재검증
+
+- 최신 문서/로그 변경이 반영된 branch HEAD `535300d60e1e943a867e3348c3c152832238b665`에서 Run #690 성공: **148 passed / 1 xfailed**.
+- Exact source blob identity, compileall, PDF source canary 2종, artifact upload, 9개 official HTML source, consolidated corrigenda, Article 13(8) locator/quote 통과.
+- 최신 artifact ID `14315106623` 다운로드 후 ZIP SHA-256 `da2f0e5fbfb5f5fa66360a2faa5af3d85821d3b7269885e34e1a3115f37cd3e2` 재계산 일치. 내부 PDF SHA-256도 manifest와 재계산 결과 일치.
+- PR #33은 Run #690 검증 완료 상태로 병합 전 최종 diff 및 safety checkpoint 대기.
+
+
+## 2026-11-17 — Latest branch-head Run #702
+
+- Latest tested branch HEAD `3b895cb1411ada883b8df04972f929c1381f4053` Run #702 success: **148 passed / 1 xfailed**.
+- PDF canary (2 docs), HTML source canary (9 docs), compileall, exact source blob pins, Article 64(10)/67 corrigenda and Article 13(8) locator/quote all passed.
+- Artifact #14314174227 downloaded and rehashed; ZIP SHA-256 `8fddbba46ccf9b0901b36d88ce27d79817ac620f9fabf37a8b6beefe5dfcaa82` matches GitHub metadata; internal PDF hashes match manifest.
+- PR #33 remains open pending final diff review and pre-merge recovery checkpoint.

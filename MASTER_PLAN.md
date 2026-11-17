@@ -96,7 +96,7 @@
 - PR #26에서 source/claim gate 선택 이식과 CELLAR official source retrieval을 완료했다. [검증 보고서](reports/CRA_SOURCE_PROVENANCE_PIPELINE_2026-11-17.md)를 상세 근거로 사용한다.
 - PR #26 Actions Run #573: 138 passed / 1 xfailed; official source 9개 live fetch 및 Article 13(8) locator/quote canary 성공. PR head SHA는 `d1bda523c1b593bbd48bf4916dd7bbd741001894`; merge commit 자체의 별도 CI는 아직 확인되지 않았다.
 - 운영 main의 history 15, retry 2, quota/429/503 no-op, duplicate-topic suppression, transactional persistence/rollback은 유지했다.
-- Commission Guidance PDF/Annex 및 M/606 C(2026) 7861 decision Annex는 관련 URL만 manifest에 기록했다. 원문 다운로드·파싱은 미완료로 남긴다.
+- Commission Guidance C(2026)5252 ANFR mirror 및 M/606 C(2026)7861 Commission Annex PDF를 실제 다운로드·파싱·raw SHA-256 검증했다. Commission-hosted Guidance primary byte identity만 미확인.
 - 다음 우선순위는 PDF/decision Annex 수집, Article/Annex live locator 확대, 35 requirements/15 interfaces/36 SEC controls와 source claim 및 제품별 증거 연결이다.
 - divergent branches 전체 병합 금지, force-push/history rewrite 금지. 과거 SIL 3 산출물은 역사 기록으로 보존하고 CRA 계획에 포함하지 않는다.
 
@@ -494,7 +494,7 @@
 - [CRA 공식 Guidance 및 M/606 Annex 감사 보고서](reports/CRA_OFFICIAL_GUIDANCE_AND_M606_ANNEX_AUDIT_2026-11-17.md)를 추가했다. Commission Guidance C(2026) 5252의 주요 조항·페이지 locator와 C(2026) 7861 Annex I의 41개 표준 주제/ESO adoption deadline을 추출했다.
 - Guidance는 비구속적 Commission 해석이다. 법령 정본과 구분하고, 제품별 판단은 실제 모델·회로·통신·공급 구조를 기준으로 한다.
 - M/606 Annex의 ESO adoption deadline은 harmonised standard OJ citation 또는 CRA 제품 적용일과 동일하지 않다. 항목 18 날짜는 PDF text extraction에서 판독 불가로 미확인 처리한다.
-- 원본 PDF 바이너리 다운로드 및 SHA-256은 아직 미완료. 텍스트 추출/내용 검토 결과만 기록하고 byte identity 검증으로 과장하지 않는다.
+- M/606 Commission Annex 및 Guidance ANFR mirror PDF raw SHA-256 검증 완료. Commission-hosted Guidance primary byte identity는 미확인으로 구분한다.
 
 ### 다음 작업 순서 업데이트
 1. M/606 Annex 원본 PDF 이미지에서 항목 18 날짜와 병합 셀을 시각 확인하고, C(2026) 7861 본문 결정문 및 register 첨부 전체를 확인한다.
@@ -515,3 +515,32 @@
 
 
 - PR #30 병합 후 구현 작업 브랜치는 없는 상태로 정리한다. PR #31은 README/PROJECT_STATUS/SESSION_LOG 및 기록의 사후 동기화만 수행하며, 다음 기능·자료 구현은 PR #31 병합 후 최신 main에서 새 작업 브랜치로 시작한다.
+
+
+## 2026-11-17 — Guidance claim mapping 및 PDF binary provenance
+
+- G-001~G-013을 비구속적 Commission explanation으로 등록하고, 15 interface / 35 requirements / 36 SEC control matrix에 연결한다.
+- `cra_pdf_sources.py`는 Commission PDF bytes를 fetch하고 redirect allowlist, PDF magic, document markers, page count, raw-byte SHA-256 및 text SHA-256을 검증한다. Commission Guidance primary fetch가 unavailable/non-PDF일 때만 ANFR mirror fallback을 허용하며 final URL과 fallback status를 기록한다.
+- `tests/test_cra_pdf_sources.py`는 mirror fallback, redirect 차단, 임시 HTTP 오류, identity marker, artifact output을 mock으로 검증한다.
+- 테스트 전용 workflow에서 pypdf 설치, source blob pins, live PDF canary, artifact upload를 실행한다. 일시적 네트워크 장애는 SKIPPED로 표시하고, redirect/identity/파싱 검증 실패는 CI fail-closed한다.
+- 실제 PDF bytes, SHA-256, page count, M/606 item 18 날짜는 CI artifact를 readback하고 시각 검증한 후에만 확정한다.
+
+
+## 2026-11-17 — PDF 원문 취득 검증 결과
+
+- M/606 C(2026)7861 Annex Commission PDF: 151,267 bytes / 6 pages / SHA-256 `262b09596cb5cbe7d72a2c7789fb2512ee00db7f69082e7def2c8181b0f63276` verified.
+- C(2026)5252 Guidance: ANFR mirror fallback bytes 1,190,726 / 84 pages / SHA-256 `fe209c250e3d1f7599e42826d91963666951332927edcf511a2e79fe8d2f8234` verified. Commission-hosted primary byte identity remains unverified.
+- CI artifact #14313359693 downloaded; ZIP digest `150a687e4d4b13fdd20a432e99fc8ea9ec5bc847b8551dd3f157258dc41cd869` re-computed and matches GitHub metadata.
+- M/606 item 18 deadline visually confirmed from original PDF page image: `31/01/2027`.
+- Run #642's PDF source step and artifact upload passed; a separate existing HTML publication-page canary failed on an over-strict document-number marker. The marker is corrected to validate visible publication-page metadata separately from the PDF Annex identity; rerun required.
+
+
+## Run #669 — source marker correction 검증 완료
+
+- Commission guidance summary page와 PDF Annex 식별자 검증을 분리했다. Summary page는 실제 visible publication metadata만 확인하고, C(2026)5252 Annex의 document identity는 PDF binary canary가 확인한다.
+- Run #669: 148 passed / 1 xfailed; compileall, blob pins, 2 PDF sources/raw hashes/artifact upload, 9 official HTML sources, consolidated corrigenda, Article 13(8) live locator/quote 모두 통과.
+- PDF artifact #14315096266을 다운로드해 ZIP digest 및 PDF별 raw-byte hashes를 재계산하고 manifest와 일치시켰다.
+- 남은 원문 취득 한계는 Guidance Commission-hosted original bytes와 ANFR mirror의 byte identity뿐이다.
+
+
+- 최종 branch-head Run #690 성공(148 passed / 1 xfailed). PDF/HTML live canary, artifact download/readback 및 SHA-256 재검증을 포함한 최신 branch 상태 검증 완료. PR #33 병합 전 diff와 복구 체크포인트만 남음.

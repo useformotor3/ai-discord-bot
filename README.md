@@ -13,7 +13,7 @@
 ## 현재 상태 — 2026-11-17
 
 - **활성 범위: CRA 대응만.** SIL 3 자료는 역사적 산출물로 보존하며 별도 명시적 재개 지시 전 비활성.
-- 현재 구현 작업 브랜치: 없음 (PR #30 병합 완료; PR #31은 문서 전용 사후 동기화이며, 다음 구현은 최신 main에서 새 작업 브랜치로 시작)
+- 현재 구현 작업 브랜치: `cra/guidance-claim-mapping-2026-11-17` (PR #33; Run #669 성공, 병합 전 diff 검토/복구 기준점 대기)
 - 최신 운영 기준: GitHub `main` 브랜치 (정확한 HEAD는 세션 시작 시 저장소에서 실시간 조회; 과거 커밋 SHA를 현재 HEAD로 고정 표기하지 않음); 최신 CRA source 기준점: PR #29 merge commit `9c16724b8b72bd09d3492b19ff714602b235c66b`; PR #28 recovery checkpoint `942e1e6b5f2887001279a96c21f94138d283a689`; 관리 문서 PR #27 `5f0c54a018e18b3453b1c836a5a7d2e9a266331b`; source pipeline PR #26 `8066c166ba01fbfb8d25f61ce0ce6ed72f151854`
 - 최신 CRA source provenance 통합: [PR #26](https://github.com/useformotor3/ai-discord-bot/pull/26) 병합 완료; 공식 CELLAR 7개 법령 자료 + Commission 공식 페이지 2개 수집, claim-level validator 및 source manifest 반영
 - 정오표 우선순위 보강: [PR #29](https://github.com/useformotor3/ai-discord-bot/pull/29) 병합 완료; Article 64(10)/67의 영어 corrigenda를 prompt excerpt에서 적용/확인하고 raw text hash와 corrected excerpt hash를 분리
@@ -431,3 +431,25 @@
 
 
 - PR #31 사후 상황판 동기화 병합: `24312166b892127e845721793b1abfee4d91f9c2`; [Run #618](https://github.com/useformotor3/ai-discord-bot/actions/runs/44051283237) success, 141 passed / 1 xfailed. Pre/post refs: `safety/pre-merge-main-pr31-2026-11-17` → `975ec6728988e43d9a1ebbf6f6d84288aa44c2fd`; `safety/post-merge-main-pr31-2026-11-17` → `24312166b892127e845721793b1abfee4d91f9c2`; post ref and main compare identical.
+
+
+## CRA Guidance 추적 및 원문 PDF 검증 자동화 — 2026-11-17
+
+- [Commission Guidance claim register](reports/CRA_GUIDANCE_CLAIM_REGISTER_2026-11-17.csv): G-001~G-013 비구속적 설명과 문단/페이지·35개 요구사항·15개 인터페이스·36개 SEC 통제 연결.
+- [공식 Guidance/M/606 Annex 감사](reports/CRA_OFFICIAL_GUIDANCE_AND_M606_ANNEX_AUDIT_2026-11-17.md): 41개 M/606 표준화 주제와 CRA 관련 해석.
+- [PDF 원문 취득/해시 도구](cra_pdf_sources.py): Commission URL 우선, allowlist 검증된 ANFR mirror fallback, PDF magic/header/marker 검증, raw-byte SHA-256 및 page count, CI artifact 저장.
+- 현재 작업 브랜치: `cra/guidance-claim-mapping-2026-11-17`; PR/CI 검증 전. PDF binary hash 취득 결과는 CI artifact를 확인한 후에만 확정한다.
+
+
+- [PDF source provenance manifest](reports/CRA_PDF_SOURCE_PROVENANCE_2026-11-17.json): Guidance mirror SHA-256, Commission M/606 Annex SHA-256, PDF page counts, extracted-text hashes, CI artifact digest and M/606 item 18 visual confirmation.
+- M/606 item 18 deadline confirmed visually as `31/01/2027` on PDF printed page 2. Guidance binary is ANFR mirror (Commission primary byte identity remains unverified).
+
+
+- 최종 재검증 [Run #669](https://github.com/useformotor3/ai-discord-bot/actions/runs/44052967754): **148 passed / 1 xfailed**, compileall·source blob identity·PDF 2종 취득/해시·artifact upload·공식 HTML source 9건·Article 13(8) locator/quote 모두 통과.
+- 최신 PDF artifact ID `14315096266`, ZIP SHA-256 `82e86c3347413bc6f210a7403939141679c34e5ad738822043af87fc5c2290c`; PDF별 raw hashes는 provenance manifest 참조.
+
+
+- Final branch-head verification [Run #690](https://github.com/useformotor3/ai-discord-bot/actions/runs/44053390736): **148 passed / 1 xfailed**, compileall, source blob pins, PDF and HTML live canaries all pass. Latest artifact #14315106623 ZIP SHA-256 `da2f0e5fbfb5f5fa66360a2faa5af3d85821d3b7269885e34e1a3115f37cd3e2` reverified after download.
+
+
+- Latest branch-head CI [Run #702](https://github.com/useformotor3/ai-discord-bot/actions/runs/44053693177): 148 passed / 1 xfailed; all source and PDF/HTML canaries passed. Artifact #14314174227 was downloaded and rehashed; ZIP digest `8fddbba46ccf9b0901b36d88ce27d79817ac620f9fabf37a8b6beefe5dfcaa82` matches GitHub metadata.

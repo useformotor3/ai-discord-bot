@@ -59,6 +59,17 @@ def test_source_catalog_includes_official_guidance_and_m606_pages():
     assert "CRA-M606-STANDARDISATION-2026-11-12" in ids
 
 
+def test_guidance_publication_page_uses_page_markers_not_pdf_document_number():
+    guidance = next(
+        item for item in CRA_SOURCE_CATALOG
+        if item["id"] == "CRA-COMMISSION-GUIDANCE-2026-07-27"
+    )
+    assert "C(2026) 5252" not in guidance["required"]
+    assert "27 July 2026" in guidance["required"]
+    assert "remote data processing solutions" in guidance["required"]
+    assert "cra_pdf_sources.py" in guidance["related_note"]
+
+
 def test_fetch_source_pack_checks_each_allowlisted_official_host(monkeypatch):
     calls = []
 

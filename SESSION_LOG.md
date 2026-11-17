@@ -1301,3 +1301,50 @@
 - Run #618 (`44051283237`) success: 141 passed / 1 xfailed, compileall, source identity, 9 official source canary 통과.
 - Pre-merge `safety/pre-merge-main-pr31-2026-11-17` → `975ec6728988e43d9a1ebbf6f6d84288aa44c2fd`; post-merge `safety/post-merge-main-pr31-2026-11-17` → `24312166b892127e845721793b1abfee4d91f9c2`. post-merge ref and main compare identical.
 - README/PROJECT_STATUS에서 특정 시점의 main SHA를 현재 HEAD처럼 고정 표기하지 않도록 수정했다. 이후 세션 시작 시 main HEAD를 실시간 조회한다.
+
+
+## 2026-11-17 — Guidance claim mapping 및 PDF 원문 취득 자동화
+
+- 작업 브랜치 `cra/guidance-claim-mapping-2026-11-17` 생성.
+- 신규 `reports/CRA_GUIDANCE_CLAIM_REGISTER_2026-11-17.csv`: G-001~G-013 비구속적 Commission explanation, 문단/페이지 locator, 연결된 CRA requirements/interfaces/SEC controls.
+- 인터페이스 매트릭스 15행, 요구사항 추적표 35행, SEC control/test matrix 36행에 Guidance claim ID 및 M/606 Annex I candidate item columns를 추가했다. 후보 관련성은 제품 분류나 harmonised status를 의미하지 않는다.
+- `cra_pdf_sources.py` 및 `tests/test_cra_pdf_sources.py` 추가: Commission-hosted PDF fetch, host allowlist, PDF magic/identity marker/page count, raw byte SHA-256, extracted text SHA-256, optional ANFR mirror fallback, manifest/artifact output.
+- 테스트 workflow에 pypdf dependency, exact blob pins, live PDF canary, 7-day artifact upload를 추가했다. 운영 workflow는 변경하지 않았다.
+- CI와 실제 PDF binary 취득은 아직 확인 전이다. 성공·해시·artifact 보관을 선제 주장하지 않는다.
+- 다음: PR CI에서 mock test 및 live PDF canary 실행, artifact download/readback, PDF bytes/hash 검증, M/606 item18 시각 확인, matrix/report readback.
+
+
+## 2026-11-17 — CRA PDF 원문 바이너리 취득 및 표 이미지 검증
+
+- Run #642 (`44052336199`)에서 `cra_pdf_sources.py` PDF canary 성공, PDF 2개 다운로드·파싱·해시 산출.
+- Guidance C(2026)5252 ANFR mirror: 1,190,726 bytes, 84 pages, raw SHA-256 `fe209c250e3d1f7599e42826d91963666951332927edcf511a2e79fe8d2f8234`; fallback used=true. Commission-hosted original byte identity는 미확인.
+- M/606 C(2026)7861 Annex: Commission document-register PDF, 151,267 bytes, 6 pages, raw SHA-256 `262b09596cb5cbe7d72a2c7789fb2512ee00db7f69082e7def2c8181b0f63276`; fallback used=false.
+- Extracted-text SHA-256 및 page count는 `reports/CRA_PDF_SOURCE_PROVENANCE_2026-11-17.json`에 기록.
+- Artifact ID `14313359693` ZIP를 다운로드했고, ZIP SHA-256 `150a687e4d4b13fdd20a432e99fc8ea9ec5bc847b8551dd3f157258dc41cd869`가 GitHub metadata와 일치함을 확인.
+- M/606 item18 password manager deadline은 원본 PDF printed page 2, PDF page index 2의 표 우측 셀에서 `31/01/2027`로 시각 확인.
+- Run #642의 기존 CRA HTML source canary는 Commission summary page에 PDF document number `C(2026) 5252`를 요구해 실패했다. Summary page와 PDF Annex의 검증을 분리하도록 `cra_source.py`와 regression test를 수정했으며 재실행 대기.
+
+
+## 2026-11-17 — Run #669 최종 source canary 성공
+
+- Run #642가 발견한 Commission summary page marker 오류를 수정했다. `cra_source.py`는 page summary metadata만 검증하고, PDF document number는 `cra_pdf_sources.py`에서 raw PDF identity marker로 검증한다.
+- Regression test 추가, workflow blob pin 갱신 후 Run #669 성공: 148 passed / 1 xfailed.
+- PDF 2개 fetch/parse/hash/artifact upload 통과. Artifact ID 14315096266 다운로드 후 ZIP SHA-256 및 PDF별 SHA-256 재계산 일치.
+- 9개 공식 HTML sources, consolidated CRA corrigenda, Article 13(8) locator/quote live canary 통과.
+- M/606 item18 deadline 31/01/2027 시각 확인 완료. Guidance Commission primary binary identity는 미확인으로 남긴다.
+
+
+## 2026-11-17 — 최종 branch-head Run #690
+
+- 최신 branch HEAD `535300d60e1e943a867e3348c3c152832238b665`에서 Run #690 성공: 148 passed / 1 xfailed.
+- PDF 2종 fetch/parse/hash, artifact #14315106623 upload/download/re-hash, 9개 HTML sources, Article 13(8) live locator/quote 통과.
+- ZIP digest `da2f0e5fbfb5f5fa66360a2faa5af3d85821d3b7269885e34e1a3115f37cd3e2` GitHub metadata와 일치; 내부 PDF hashes도 manifest와 일치.
+- PR #33 최종 diff/safety checkpoint 검토 후 병합한다.
+
+
+## 2026-11-17 — Latest branch-head Run #702
+
+- Run #702 on HEAD `3b895cb1411ada883b8df04972f929c1381f4053`: success, 148 passed / 1 xfailed.
+- 2 PDF sources, 9 HTML sources, Article 13(8) locator/quote, corrigenda, compileall and blob pins passed.
+- Artifact #14314174227 downloaded and SHA-256 reverified: ZIP `8fddbba46ccf9b0901b36d88ce27d79817ac620f9fabf37a8b6beefe5dfcaa82`; internal PDF hashes match provenance manifest.
+- PR #33 is ready for final diff/safety check.
