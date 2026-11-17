@@ -232,24 +232,24 @@ prompt = f"""
 
     CLAIM_EVIDENCE_JSON
     ```json
-    {
+    {{
       "claims": [
-        {
+        {{
           "claim_id": "C-001",
           "category": "legal_requirement",
           "statement": "법적 주장 원문",
           "source_id": "CRA-2024-2847-consolidated",
           "locator": "Article 13",
           "quote": "공식 원문에서 복사한 50자 이상의 연속 인용문"
-        },
-        {
+        }},
+        {{
           "claim_id": "C-002",
           "category": "engineering_recommendation",
           "statement": "엔지니어링 권고",
           "basis": "제품 위험분석에 따른 권고이며 법령이 특정 구현을 직접 요구하지 않음"
-        }
+        }}
       ]
-    }
+    }}
     ```
     """
 
