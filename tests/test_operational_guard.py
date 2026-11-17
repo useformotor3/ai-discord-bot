@@ -1,3 +1,5 @@
+import json
+
 import pytest
 
 from scripts.operational_guard import GuardError, validate_transition
@@ -173,17 +175,41 @@ def test_git_integration_restores_invalid_data_with_new_commit(tmp_path):
     assert _git(work, "ls-remote", "origin", "refs/heads/main").stdout.split()[0] == restored
 
 
-def test_git_integration_refuses_restore_if_run_commit_was_not_pushed(tmp_path):
-    from scripts.operational_guard import GuardError, verify_and_recover
+def test_git_integration_resets_unpublished_local_commit_when_remote_is_baseline(tmp_path):
+    from scripts.operational_guard import verify_and_recover
 
     work, baseline = _git_repo(tmp_path)
     _write_one_report(work)
     _git(work, "add", "state.json", "history.json", "research_archive")
     _git(work, "commit", "-m", "local-only run")
 
-    with pytest.raises(GuardError, match="remote main does not point"):
-        verify_and_recover(work, "safety/pre-run-test", "main", "unpublished")
+    assert verify_and_recover(work, "safety/pre-run-test", "main", "unpublished") == 1
+    assert _git(work, "rev-parse", "HEAD").stdout.strip() == baseline
     assert _git(work, "ls-remote", "origin", "refs/heads/main").stdout.split()[0] == baseline
+    assert json.loads((work / "state.json").read_text(encoding="utf-8"))["count"] == 10
+    assert not (work / "research_archive/new.md").exists()
+
+
+def test_git_integration_restores_uncommitted_data_and_untracked_archive(tmp_path):
+    import json
+    from scripts.operational_guard import verify_and_recover
+
+    work, baseline = _git_repo(tmp_path)
+    (work / "state.json").write_text(
+        '{"date":"2026-11-16","count":99}', encoding="utf-8"
+    )
+    (work / "history.json").write_text("[]", encoding="utf-8")
+    (work / "research_archive/new.md").write_text("# partial report", encoding="utf-8")
+
+    assert verify_and_recover(work, "safety/pre-run-test", "main", "dirty-run") == 1
+    assert _git(work, "rev-parse", "HEAD").stdout.strip() == baseline
+    assert _git(work, "ls-remote", "origin", "refs/heads/main").stdout.split()[0] == baseline
+    assert json.loads((work / "state.json").read_text(encoding="utf-8"))["count"] == 10
+    history = json.loads((work / "history.json").read_text(encoding="utf-8"))
+    assert len(history) == 1
+    assert not (work / "research_archive/new.md").exists()
+    assert (work / "research_archive/old.md").exists()
+    assert not _git(work, "status", "--porcelain", "--", "state.json", "history.json", "research_archive/").stdout
 
 
 def test_git_integration_accepts_clean_noop_quota_skip(tmp_path):

@@ -553,9 +553,6 @@ def send_discord_chunked(text, webhook_url):
   }
 
 
-discord_result = send_discord_chunked(full_text, webhook_url)
-print(f"Discord 전송 결과: {discord_result['status']} ({discord_result['sent_chunks']}/{discord_result['total_chunks']} chunks 확인)")
-
 # 6. GitHub 백서버 저장 (폴더별 마크다운 아카이브 & 상태 업데이트)
 archive_filename = (
     f"research_archive/{TODAY}_{NOW.strftime('%H%M%S%f')}_{uuid.uuid4().hex[:8]}.md"
@@ -612,3 +609,11 @@ try:
 except Exception as e:
   print(f"❌ GitHub 운영 데이터 저장 실패: {str(e)}. 원격 저장 성공으로 처리하지 않고 실행을 실패시킵니다.")
   raise SystemExit(1) from e
+
+# Discord 전송은 원격 archive/state/history commit이 성공한 뒤 수행한다.
+# 전송 실패 시에도 보고서 원본은 GitHub에 안전하게 보존된다.
+discord_result = send_discord_chunked(full_text, webhook_url)
+print(
+    f"Discord 전송 결과: {discord_result['status']} "
+    f"({discord_result['sent_chunks']}/{discord_result['total_chunks']} chunks 확인)"
+)

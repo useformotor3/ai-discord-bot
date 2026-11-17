@@ -154,11 +154,50 @@ def _remote_head(root, branch):
     return result.stdout.split()[0]
 
 
+def _remove_untracked_archives(root):
+    """Remove only untracked top-level markdown archives created by this run."""
+    listing = _git(
+        root, "ls-files", "--others", "--exclude-standard", "--", "research_archive/"
+    ).stdout
+    for relative in listing.splitlines():
+        path = PurePosixPath(relative)
+        if (
+            path.is_absolute()
+            or ".." in path.parts
+            or len(path.parts) != 2
+            or path.parts[0] != "research_archive"
+            or path.suffix != ".md"
+        ):
+            raise GuardError(f"unexpected untracked operational path: {relative}")
+        target = root / relative
+        if target.is_symlink():
+            raise GuardError(f"untracked archive symlink is not allowed: {relative}")
+        if target.exists():
+            target.unlink()
+
+
+def _restore_uncommitted_data(root, baseline_ref):
+    """Restore local uncommitted operational data without changing remote main."""
+    _git(
+        root, "restore", "--source", baseline_ref, "--staged", "--worktree",
+        "--", *DATA_PATHS
+    )
+    _remove_untracked_archives(root)
+    dirty = _git(root, "status", "--porcelain", "--", *DATA_PATHS).stdout
+    remaining = _git(
+        root, "diff", "--quiet", baseline_ref, "--", *DATA_PATHS, check=False
+    )
+    if dirty or remaining.returncode != 0:
+        raise GuardError("uncommitted operational data restore verification failed")
+    return _git(root, "rev-parse", "HEAD").stdout.strip()
+
+
 def _restore_data(root, baseline_ref, branch, run_id):
     _git(
         root, "restore", "--source", baseline_ref, "--staged", "--worktree",
         "--", *DATA_PATHS
     )
+    _remove_untracked_archives(root)
     staged = _git(root, "diff", "--cached", "--quiet", check=False)
     if staged.returncode == 0:
         raise GuardError("restore found no staged data changes; refusing a no-op rollback")
@@ -186,20 +225,57 @@ def verify_and_recover(root, baseline_ref, branch="main", run_id="unknown"):
     parent_line = _git(root, "rev-list", "--parents", "-n", "1", "HEAD").stdout.split()
     remote_sha = _remote_head(root, branch)
 
-    # A quota guard may intentionally exit without creating a report commit.
-    # Accept only a clean no-op; local uncommitted data changes remain an error.
+    # A quota/quality guard may intentionally exit without creating a report commit.
+    # Accept only a clean no-op. If operational data is dirty, restore the local
+    # workspace from the immutable checkpoint and fail the run visibly.
     if current_sha == baseline_sha and remote_sha == baseline_sha:
         dirty = _git(root, "status", "--porcelain", "--", *DATA_PATHS).stdout
         if not dirty:
             print(json.dumps({"status": "no-op", "reason": "no operational data changes"}))
             return 0
-        raise GuardError("no report commit was created but operational data is dirty")
+        print("INTEGRITY FAILURE: uncommitted operational data is dirty", file=sys.stderr)
+        _restore_uncommitted_data(root, baseline_ref)
+        print("LOCAL DATA RESTORED FROM PRE-RUN CHECKPOINT", file=sys.stderr)
+        return 1
+
+    # A concurrent run may have advanced remote main while this run made no
+    # operational changes. Never push a rollback over that newer remote state.
+    if current_sha == baseline_sha and remote_sha != baseline_sha:
+        dirty = _git(root, "status", "--porcelain", "--", *DATA_PATHS).stdout
+        if not dirty:
+            print(json.dumps({
+                "status": "no-op",
+                "reason": "remote main advanced concurrently; local run made no changes",
+            }))
+            return 0
+        raise GuardError("remote main advanced concurrently while local data is dirty")
+
+    # A local run commit that was not pushed can be discarded only when remote
+    # main is still exactly the immutable baseline. This does not rewrite remote.
+    if current_sha != baseline_sha and remote_sha == baseline_sha:
+        if len(parent_line) != 2 or parent_line[1] != baseline_sha:
+            raise GuardError("unpublished local commit is not a single child of baseline")
+        changed_local = _git(
+            root, "diff-tree", "--no-commit-id", "--name-only", "-r", "HEAD"
+        ).stdout.splitlines()
+        if any(
+            not (name in ("state.json", "history.json") or name.startswith("research_archive/"))
+            for name in changed_local
+        ):
+            raise GuardError("unpublished local commit changed paths outside operational data")
+        _git(root, "reset", "--hard", baseline_ref)
+        _remove_untracked_archives(root)
+        dirty = _git(root, "status", "--porcelain", "--", *DATA_PATHS).stdout
+        if dirty:
+            raise GuardError("unpublished local data rollback left dirty paths")
+        print("UNPUSHED LOCAL DATA COMMIT RESET TO PRE-RUN CHECKPOINT", file=sys.stderr)
+        return 1
 
     if len(parent_line) != 2 or parent_line[1] != baseline_sha:
         raise GuardError("run commit is not a single child of the pre-run snapshot")
     if remote_sha != current_sha:
         raise GuardError(
-            "remote main does not point to this run commit; no automatic restore attempted"
+            "remote main advanced independently; refusing automatic restore or force-push"
         )
     changed = _git(
         root, "diff-tree", "--no-commit-id", "--name-only", "-r", "HEAD"
