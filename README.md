@@ -362,3 +362,6 @@ A separate manual workflow checks the current Gemini JSON response contract usin
 
 
 The Gemini canary workflow is present only on the Draft feature branch; GitHub manual dispatch becomes available after the workflow file is present on the default branch. It has not been dispatched and no live Gemini API call has been made.
+
+### Latest integration and evidence audit — 2026-11-17
+The current CRA branch is 116 commits ahead and 9 behind main (diverged). Main's current main.py and isolated-test workflow do not contain the CRA source/claim gate, so main CI results are not evidence of CRA integration. A cross-Article quotation false-positive was found and guarded with an Article/Annex-scope check plus a regression test. The new CI and EUR-Lex canary must be rechecked before treating the change as verified. Three English Official Journal corrigenda have been independently identified; the fetch gate still checks only their date index, not the correction texts themselves. See reports/INTEGRATION_AND_CLAIM_SCOPE_AUDIT_2026-11-17.md.
