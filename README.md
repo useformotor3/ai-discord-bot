@@ -365,3 +365,8 @@ Actions 성공은 자동화 실행 결과이지 CRA 법령 해석이나 출처�
 - Main merge head: `bef260a29481320de3eae9cafe4a6f907e38ead0`.
 - Production data unchanged after quota failure: state count 38, history 2,431; original archives preserved.
 - First three 3-hourly production runs remain the next live validation checkpoint.
+
+## CRA correction archive — #1–#38
+- [Master index](reports/CRA_CORRECTION_INDEX_2026-11-17.md)
+- 원본 archive는 보존하고 법령 근거·조항·인용 오류는 별도 correction report로 관리한다.
+- 이번 branch는 #5–#21 정정 문서 통합과 #22–#32 신규 정정을 포함한다. PR #14 CI/merge 대기.
