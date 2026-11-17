@@ -132,6 +132,7 @@ def run_main(tmp_path, monkeypatch):
             "text": (
                 "<html><body><h1>Regulation (EU) 2024/2847</h1>"
                 "<h2>Article 13</h2><p>Article 13(8)</p>"
+                "<p>Corrected by Corrigendum 5.12.2024, 2.7.2025 and 17.10.2025.</p>"
                 "<p>Manufacturers shall ensure that vulnerabilities of the product "
                 "with digital elements, including its components, are handled "
                 "effectively during the support period.</p>" + (" official legal text" * 1500) + "</body></html>"
