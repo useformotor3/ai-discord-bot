@@ -140,6 +140,41 @@ def run_main(tmp_path, monkeypatch):
                     + (" official legal text" * 1500) + "</body></html>"
                 ),
             },
+            "https://eur-lex.europa.eu/eli/reg/2024/2847/corrigendum/2024-12-05/oj/eng": {
+                "status_code": 200,
+                "text": (
+                    "<html><body><h1>Corrigendum 2024/90780</h1>"
+                    "<p>On page 1, in the title:</p>"
+                    "<p>for: Regulation (EU) 2024/2847 amending Regulations (EU) "
+                    "No 168/2013 and (EU) No 2019/1020 and Directive (EU) 2020/1828.</p>"
+                    "<p>read: Regulation (EU) 2024/2847 amending Regulations (EU) "
+                    "No 168/2013 and (EU) 2019/1020 and Directive (EU) 2020/1828.</p>"
+                    + (" Official Journal corrigendum publication metadata" * 8)
+                    + "</body></html>"
+                ),
+            },
+            "https://eur-lex.europa.eu/eli/reg/2024/2847/corrigendum/2025-07-02/oj/eng": {
+                "status_code": 200,
+                "text": (
+                    "<html><body><h1>Corrigendum 2025/90555</h1>"
+                    "<p>Page 65, Article 64(10), introductory wording:</p>"
+                    "<p>for: By way of derogation from paragraphs 3 to 9, the administrative fines.</p>"
+                    "<p>read: By way of derogation from paragraphs 2 to 9, the administrative fines.</p>"
+                    + (" Official Journal corrigendum publication metadata" * 8)
+                    + "</body></html>"
+                ),
+            },
+            "https://eur-lex.europa.eu/eli/reg/2024/2847/corrigendum/2025-10-17/oj/eng": {
+                "status_code": 200,
+                "text": (
+                    "<html><body><h1>Corrigendum 2025/90828</h1>"
+                    "<p>On page 66, in Article 67:</p>"
+                    "<p>for: 69. Regulation (EU) 2024/2847 of the European Parliament and of the Council.</p>"
+                    "<p>read: 72. Regulation (EU) 2024/2847 of the European Parliament and of the Council.</p>"
+                    + (" Official Journal corrigendum publication metadata" * 8)
+                    + "</body></html>"
+                ),
+            },
             "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32025R0327": {
                 "status_code": 200,
                 "text": (
