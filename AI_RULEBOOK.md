@@ -103,7 +103,7 @@
 - 로컬 테스트 사본은 GitHub에서 조회한 원본과 blob SHA가 일치할 때만 해당 브랜치 소스 테스트로 인정한다. 일치하지 않으면 예비 검증으로만 기록한다.
 - mock은 성공 응답만 흉내 내서는 안 된다. HTTP timeout/429/4xx/5xx/네트워크 오류, Git 명령의 non-zero exit와 check=True 예외, 부분 전송 및 재시도 경로를 별도 검증한다.
 - 테스트 fixture가 항상 성공을 반환하거나 실패 예외를 무시하면 그 경로는 검증되지 않은 것으로 명시한다.
-- 운영 workflow를 테스트 목적으로 실행하지 않는다. 별도 테스트 workflow 추가·기존 workflow 변경·PR 트리거 구성은 사용자에게 영향과 위험을 설명하고 별도 승인받는다.
+- 운영 workflow를 테스트 목적으로 실행하지 않는다. CRA 범위 내 테스트 전용 workflow/CI 변경은 반복 승인 질문 없이 격리 브랜치와 PR에서 진행할 수 있다. 운영 workflow의 실제 실행, Gemini/Discord 외부 부작용, 유료 API 비용 발생은 테스트와 분리하고 별도 안전 확인 없이 실행하지 않는다.
 - 정적 검토, helper 단위 테스트, 원본 전체 pytest, CI, 운영 실행을 서로 다른 검증 단계로 구분한다.
  
 ## 12. 이중 형식 프로젝트 로그
@@ -122,8 +122,9 @@
 - 커밋은 논리적 작업 단위로 묶고 `test:`, `fix:`, `ci:`, `docs:` 등 의미가 분명한 메시지를 사용한다. 파일 단위 API로 작은 커밋이 불가피하면 그 이유를 세션 로그에 명시한다.
 - CI는 실행 commit SHA와 핵심 소스 blob SHA를 대조한다. 단순히 최신 run이 성공했다는 이유로 다른 commit의 코드를 검증했다고 주장하지 않는다.
 - 작업 완료 후 기준점 대비 파일 diff, branch HEAD, CI run, main 대비 diverged 상태를 다시 조회한다.
-- 실패한 시도와 수정 내역도 감추지 않고 기록한다. 복구는 우선 revert commit으로 하며, 승인 없는 force push·history rewrite·merge·rebase는 금지한다.
-- 별도 승인 전 PR merge 및 운영 배포를 하지 않는다.
+- 실패한 시도와 수정 내역도 감추지 않고 기록한다. 복구는 우선 revert commit으로 하며, force push·history rewrite는 금지한다.
+- 사용자는 CRA 목표 달성에 필요한 통상적·가역적 코드/문서/CI 변경, PR 생성 및 검증 후 병합을 반복 승인 질문 없이 진행하도록 상시 승인했다. 단, 정확한 head SHA의 CI 성공, diff/readback, 충돌/보호 경로 확인 및 rollback ref를 확보한 경우에만 병합한다.
+- 삭제·비밀정보/권한 변경·운영 workflow 실행·외부 유료/비가역 효과 등은 이 상시 승인에 포함된다고 추정하지 말고 별도 안전 확인을 한다.
 
 
 ## 14. HTTP POST·재시도·부분 성공 안전 원칙
@@ -207,10 +208,10 @@
 - 매 세션 종료 시 기준/현재 SHA, 커밋, 파일 diff, CI 링크, 백업 ref, 복구 방법, 실행 여부 및 남은 위험을 README·PROJECT_STATUS·SESSION_LOG·PROJECT_LOG에 기록한다.
 
 ### 18.5 현재 안전 체크포인트
-- main pre-integration backup: safety/pre-merge-main-2622e332 → 2622e332d6a3defd2079ccad3af36970001de5c1.
-- feature pre-integration backup: safety/pre-merge-feature-eba3aeb → eba3aeb5710dcc6507623d56d586a619e9a4fc46.
-- 두 ref는 생성 완료했으며 별도 readback 및 SHA 검증을 다음 단계에서 완료해야 한다.
-- 코드 revert 경로는 마련됐지만 운영 데이터 snapshot/restore는 아직 미완료다. 따라서 main 통합과 신규 코드의 실제 운영 실행은 현재 이 문서만으로 안전하다고 간주하지 않는다.
+- PR #26 pre-merge main checkpoint: `safety/pre-merge-main-pr26-2026-11-17` → `f4bb159e164b00e4586868f335519cea3c4802ae` (readback verified).
+- PR #26 post-merge main checkpoint: `safety/post-merge-main-pr26-2026-11-17` → `8066c166ba01fbfb8d25f61ce0ce6ed72f151854` (readback verified).
+- 과거 pre-integration refs는 역사적 checkpoint로 보존한다.
+- PR #26은 코드/테스트/CI 통합이며 운영 Gemini/Discord 실행이나 state/history/archive 변경을 수행하지 않았다. 운영 데이터 snapshot/restore 검증은 별도 미완료이므로 새 코드를 실제 운영 실행하기 전에는 백업·복원 검증을 별도로 수행한다.
 
 ## 19. 운영 데이터 기준선 감사 결과 — 2026-11-16
 - immutable main snapshot 4cf0e708b28a343898af00d01521044dfb9a1987 기준 state count=158, history=2,297, archive=2,297, 참조 누락 0.
@@ -310,15 +311,29 @@
 - 특정 firmware/배선 구성에 한정된 안전 권고를 제품군 전체 또는 다른 모델/세대에 일반화하지 않는다.
 
 
-## 48. Branch authority and selective integration (2026-11-17)
+## 48. Branch authority and selective integration (2026-11-17, updated)
 
-1. Main is the canonical operational branch unless a later, explicit project decision changes it. Current main HEAD and branch comparisons are recorded in PROJECT_STATUS.md and reports/BRANCH_RECONCILIATION_2026-11-17.md.
-2. Never merge a divergent branch wholesale. Before integration, compare ahead/behind, merge-base, changed files, tests, workflows, and source/history/archive changes. Preserve all parallel branches and safety checkpoints; no force-push or history rewrite.
-3. cra-project-foundation is a parallel reference branch with unique project navigation/report/archive-audit material; it is not the canonical work branch while its graph remains 1,159 ahead / 1,906 behind main.
-4. integration/cra-source-grounding-2026-11-17 is a source-provenance implementation reference. Selectively port cra_source.py, cra_claims.py, tests, and canary support onto a fresh branch from latest main. Do not copy its entire main.py or workflow wholesale.
-5. Preserve current main operational protections during source-gate integration: 15-item history context, two model retries, quota/429/503 no-op behavior, duplicate-topic suppression, transactional persistence, checkpoint/rollback.
-6. Source claim validation must be tested against actual EUR-Lex structure. Article paragraphs may be rendered as 8. rather than (8); Annex Part/point locators must be scoped to the exact point, not merely the Annex. A quote from another paragraph/point in the same Article/Annex must fail.
-7. Source pack must include the official CRA consolidated text and applicable corrigenda/amendments. Add Commission Guidance C(2026) 5252 and M/606 Decision C(2026) 7861 only with source-specific official-host allowlists and tested text extraction. Do not claim a web-page summary proves details contained only in a PDF annex.
-8. Source/claim validation must fail closed before Gemini calls, Discord posting, or Git writes. Tests use mocks; live Gemini/Discord canaries are not automatic and may consume quota or create external effects.
-9. A prior branch CI pass does not validate later commits. Record the exact tested SHA and only claim success for that SHA.
-10. Sections 46–47 concerning functional safety/SIL are historical reference rules only. They are inactive under the current CRA-only scope and must not initiate SIL/functional-safety work unless the user explicitly reopens that scope.
+1. Main is the canonical operational branch. Current main HEAD, safety checkpoints and active work branch are recorded in PROJECT_STATUS.md.
+2. Never merge a divergent branch wholesale. Compare ahead/behind, merge-base, changed files, tests, workflows and state/history/archive effects before integration. Preserve parallel branches; no force-push or history rewrite.
+3. The historical `integration/cra-source-grounding-2026-11-17` branch remains a reference only. Its required source/claim features were selectively implemented and verified in PR #26; the branch itself was not wholesale merged.
+4. PR #26 is merged at `8066c166ba01fbfb8d25f61ce0ce6ed72f151854`. Pre/post merge checkpoints are `safety/pre-merge-main-pr26-2026-11-17` and `safety/post-merge-main-pr26-2026-11-17`; both refs were read back and SHA-verified.
+5. Preserve current main operational protections: 15-item history context, two model retries, quota/429/503 no-op behavior, duplicate-topic suppression, transactional persistence and rollback.
+6. Article paragraph and Annex Part/point claim locators must be tested against actual source structure. A quote from another paragraph/point in the same Article/Annex must fail.
+7. CRA legal source pack currently uses official Publications Office CELLAR retrieval for seven legal texts and two Commission official pages. Source-specific host allowlists, HTTPS-only redirects, source markers, full-text/prompt-excerpt hashes and retrieval timestamps are mandatory.
+8. Commission Guidance PDF/Annex and M/606 C(2026) 7861 decision Annex are related URLs only until their bytes/text have actually been retrieved, parsed and hashed. A summary page cannot prove details that exist only in an unparsed PDF/decision Annex.
+9. Source/claim validation must fail closed before Gemini calls, Discord posting or Git writes. Temporary source outage may safely skip; content/host/TLS validation failure must not be reported as a successful fetch.
+10. PR #26 Run #573 verified 138 passed / 1 xfailed, nine live sources and Article 13(8) locator/quote. This validates the tested PR head, not automatically a separate post-merge Actions run.
+11. Sections 46–47 concerning functional safety/SIL are historical reference rules only. They are inactive under the current CRA-only scope and must not initiate SIL/functional-safety work unless the user explicitly reopens that scope.
+
+## 49. CRA official source provenance and claim validation
+
+- Machine retrieval uses official Publications Office CELLAR REST URLs with CELEX identifiers. Human-facing report citations continue to use stable EUR-Lex Official Journal/consolidated-document links.
+- Each source definition must declare a source ID, type, version, minimum visible-text length, required markers and explicit allowed host.
+- Requests start over HTTPS. Redirects are manually followed only on the same allowlisted host; same-host HTTP redirects are upgraded to HTTPS before the next request. Never relax host allowlists to make a failing fetch pass.
+- Preserve requested URL, final URL, retrieval timestamp, full visible-text SHA-256 and prompt-excerpt SHA-256. Hash the exact UTF-8 text used at each stage.
+- Treat HTTP 202, empty body, timeout, connection failure, HTTP 429 and 5xx as temporary unavailable only when classified by the source client. The caller must skip model/Discord/storage side effects on that path. TLS/host/content/marker/redirect validation errors fail closed.
+- Every legal claim must have a unique `C-###` reference, exact body statement, registered source ID, exact locator and a direct quote of at least 50 characters. The quote must occur inside the selected Article paragraph or Annex Part/point, not merely somewhere in the same document.
+- Official explanation claims must be linked to the Commission source page and explicitly classified as non-binding explanation. Interpretations and engineering recommendations must not be represented as legal requirements.
+- The source validator proves source traceability and text/locator consistency; it does not establish the correctness of legal interpretation or product-specific CRA applicability.
+- CI live canary currently checks nine official sources and Article 13(8). Expand Article/Annex coverage before claiming complete legal locator coverage.
+- Do not claim that Commission Guidance PDF/Annex or M/606 decision Annex was read until its actual file has been fetched, parsed and hashed.

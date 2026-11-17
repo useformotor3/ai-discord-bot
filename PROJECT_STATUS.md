@@ -5,9 +5,11 @@
 - 최종 갱신: 2026-11-17 (KST)
 - 기준 저장소: `useformotor3/ai-discord-bot`
 - 운영 기준 브랜치: `main` (운영 자동화 및 데이터 보존)
-- 현재 작업 브랜치: 없음 (PR #24 병합 완료; 다음 작업은 최신 `main`에서 새 브랜치 생성)
+- 현재 작업 브랜치: `docs/cra-source-gate-status-and-session-rules-2026-11-17` (관리 문서 정합화)
+- 최신 main 기준점: PR #26 merge commit `8066c166ba01fbfb8d25f61ce0ce6ed72f151854`
+- 최신 source gate PR #26 병합 완료: CELLAR 공식 법령 7건 + Commission 공식 페이지 2건, SHA manifest, claim-level validator, fail-closed source gate
 - CRA-only 범위 통제 병합 기준점: PR #18, merge commit `b7813ddd311bc51bfb0eb26458eace9ff82b621f` (2026-11-17)
-- 마지막 CRA 거버넌스 산출물 병합: PR #24 merge `153033aa535775a0df568ad83876bff487d33404`. PR #24 Run #540 success; merge commit 자체의 별도 run은 미확인.
+- 마지막 CRA 코드/출처 검증 병합: PR #26 merge `8066c166ba01fbfb8d25f61ce0ce6ed72f151854`. PR head Run #573 success: 138 passed / 1 xfailed, 9개 live official source 및 Article 13(8) locator/quote 확인. merge commit 자체의 별도 run은 미확인.
 - 이번 비교 기준: PR #24 병합으로 작업 브랜치 종료. 다음 작업 시작 시 main HEAD와 원격 브랜치를 다시 조회해 기준선을 설정
 - 프로젝트 상태: CRA 통합 보고서 v0.2 병합, 요구사항 추적표 35항목, 인터페이스 적용성 매트릭스 15항목 병합. 보안 통제·시험 매트릭스 36항목 초안 작업 중.
 - 주 문서 언어: 한국어
@@ -18,9 +20,9 @@
 - canonical 운영 브랜치: main, PR #24 merge commit 153033aa535775a0df568ad83876bff487d33404. 브랜치 비교 수치는 merge 직전 addfa63d1a7d2d1c77ec61444aaadf2b1f327389 기준 snapshot.
 - 병렬 브랜치 비교는 reports/BRANCH_RECONCILIATION_2026-11-17.md를 기준으로 한다. 이 보고서가 기존의 오래된 ahead/behind 스냅샷보다 우선한다.
 - cra-project-foundation: 1,159 ahead / 1,906 behind. 고유 보고서/249-item archive audit queue를 보존하되 전체 병합하지 않는다.
-- integration/cra-source-grounding-2026-11-17: 272 ahead / 201 behind. cra_source.py/cra_claims.py/source gate는 선택 이식 후보이며 branch 전체 또는 main.py 전체를 복사하지 않는다.
+- integration/cra-source-grounding-2026-11-17: 과거 참조 브랜치로 보존한다. 필요한 source/claim 기능은 최신 main 기반 PR #26에서 CELLAR retrieval, redirect allowlist, exact locator 및 tests와 함께 선택 통합 완료. branch 전체는 병합하지 않았다.
 - feature/cra-source-grounding-atomic-2026-11-17: 165 ahead / 218 behind, PR #3 closed/unmerged. 원본 참고 브랜치로 보존한다.
-- integration branch의 source validator는 실제 EUR-Lex Article 13 paragraph 표기(예: 8.)와 paragraph/Annex point 단위 quote scope를 정확히 처리하지 못할 위험이 확인되었다. 최신 main 기반 별도 branch에서 수정·시험 후 이식한다.
+- PR #26에서 Formex/HTML 줄바꿈을 정규화하고 Article 13(8) paragraph scope의 quote 일치를 실시간 확인했다. Article 13(8) 외 Annex I 및 주요 Article의 live locator canary는 후속 확장 대상이다.
 - main.py의 최근 15개 history context, 2회 retry, 429/503/quota no-op, duplicate-topic suppression, transactional persistence/rollback을 보존한다.
 - divergent branches, safety checkpoint, archive/state/history를 삭제·force-push·전체 merge하지 않는다.
 
@@ -45,6 +47,7 @@
 | CRA 인터페이스 적용성 | 병합된 초안 15항목 | 필드버스/serial/analog/discrete/encoder/STO/PC tool/RDPS 구분; 모델별 증거 필요 |
 | CRA 보안 통제·시험 | 병합된 초안 36항목 | 35개 요구사항 ID와 교차 연결; Annex I/Articles 13-14/31-32/69 기반 통제·시험 후보; 구현/시험 미실시 |
 | CRA 참조 보안 아키텍처 | 병합된 초안 v0.1 | 논리 블록·신뢰 경계·데이터 흐름; 특정 MCU/보드/프로토콜 미확인 |
+| CRA 공식 source provenance | **PR #26 병합·CI 통과** | CELLAR 7개 법령 + Commission 2개 페이지, full/excerpt SHA-256, claim/locator validator, 9-source live canary |
 | 과거 SIL 3 기능안전 자료 | 보존·비활성 | 기존 파일/PR 이력은 유지. CRA 활성 작업·다음 단계에 포함하지 않음 |
 
 ## 2. P1-B1 이전 기준선에서 확인한 원본 코드 사실
@@ -116,16 +119,18 @@
 
 ## 6. 다음 재개 지점 — 2026-11-17
 
-1. 최신 main에서 source provenance 통합용 새 작업 branch를 생성하고, integration branch의 전체 merge 대신 cra_source.py/cra_claims.py와 관련 테스트만 선택 이식한다.
-2. 실제 EUR-Lex Article paragraph 표기(예: 8.)와 Annex Part/point 구조에 맞춰 locator/quote-scope validator를 수정하고 회귀 테스트를 추가한다.
-3. 공식 source catalog에 Commission Guidance C(2026) 5252 및 M/606 Decision C(2026) 7861을 추가하되, source별 official host allowlist와 text/PDF 추출 범위를 검증한다.
-4. 현재 main의 history 15, retry 2, quota/429/503 no-op, duplicate suppression, transactional persistence/rollback을 보존하고 mock 기반 전체 테스트/CI를 통과시킨다.
-5. source gate 병합 후 제품별 인터페이스·35개 요구사항·36개 SEC 통제·참조 아키텍처를 실제 모델 자료와 시험 증거에 연결한다.
+1. PR #26에서 통합한 CELLAR source gate의 운영 로그/다음 정기 실행 결과를 관찰하되, Gemini/Discord 운영 실행을 임의로 테스트하지 않는다.
+2. Commission Guidance C(2026) 5252 PDF 원문/Annex 및 M/606 결정 C(2026) 7861 Annex를 별도 수집·파싱하고, 페이지 locator와 SHA-256을 기록한다. 현재는 관련 URL만 기록하며 PDF/결정 Annex 본문은 미수집이다.
+3. Article 13(8) 외 Annex I Part I/Part II 및 핵심 Article의 실시간 locator/quote canary를 확대한다.
+4. CRA 35개 요구사항, 15개 인터페이스, 36개 SEC 통제/시험 항목을 source claim ID, 설계 통제, 시험 케이스 및 증거 링크와 교차 연결한다.
+5. 실제 제품 모델·회로·펌웨어·프로토콜·EU 공급 구조 자료가 확보되면 제품별 적용성, Annex III/IV 분류 및 Article 32 경로를 검증한다. 자료가 없으면 일반 참조 설계/잠정 판단으로 유지한다.
+6. main merge commit `8066c166ba01fbfb8d25f61ce0ce6ed72f151854`의 post-merge CI 여부를 확인하고, 관리 문서·기계 로그를 동기화한다.
 
 ## 7. 문서 진입점
 
 - [프로젝트 메인 페이지](README.md)
 - [브랜치 정합성 및 소스 검증 통합 감사](reports/BRANCH_RECONCILIATION_2026-11-17.md)
+- [CRA 공식 출처 수집·주장 추적 파이프라인](reports/CRA_SOURCE_PROVENANCE_PIPELINE_2026-11-17.md)
 - [CRA 통합 보고서 v0.2](reports/CRA_INTEGRATED_COMPLIANCE_REPORT_2026-11-17.md)
 - [CRA 보안 통제·시험 매트릭스](reports/CRA_SERVO_DRIVE_SECURITY_CONTROL_TEST_MATRIX_2026-11-17.csv)
 - [CRA 참조 보안 아키텍처](reports/CRA_SERVO_DRIVE_REFERENCE_SECURITY_ARCHITECTURE_2026-11-17.md)
@@ -735,3 +740,20 @@
 - 현재 사용자 지시를 반영해 CRA만 활성 범위로 확정했다. SIL 3 산출물은 과거 자료로 링크와 커밋 이력을 보존하되 비활성 상태로 분리했다.
 - PR #16의 과거 병합 사실은 삭제·부정하지 않는다. 해당 병합은 CRA 범위 승인이나 CRA deliverable의 일부를 의미하지 않는다.
 - 재개 시 우선순위: (1) 이 범위 통제 확인, (2) GitHub 최신 상태/CI/미완료 작업 재검증, (3) CRA 통합 보고서 및 요구사항 추적 작업.
+
+## 2026-11-17 — CRA 공식 source provenance 파이프라인 PR #26 병합
+
+- PR #26 [CRA: integrate CELLAR official-source retrieval and claim-level traceability](https://github.com/useformotor3/ai-discord-bot/pull/26) merge 완료.
+- Merge commit: `8066c166ba01fbfb8d25f61ce0ce6ed72f151854`; 구현 브랜치 `experiment/cellar-source-retrieval-2026-11-17`는 감사/복구를 위해 유지.
+- 기존 PR #25는 PR #26에 동일 변경과 후속 검증이 포함되어 중복 정리했다. 코드 변경은 PR #26에 모두 포함된다.
+- 변경 파일 9개: `.github/workflows/tests.yml`, `cra_source.py`, `cra_claims.py`, `main.py`, `tests/conftest.py`, `tests/test_main_characterization.py`, `tests/test_cra_source.py`, `tests/test_cra_claims.py`, `tests/test_external_failure_paths.py`.
+- EUR-Lex 직접 HTTP 202/자동화 접근 응답을 정상 원문으로 처리하지 않고, Publications Office 공식 CELLAR REST API로 법령·정오표·위임규정 7건 수집 경로를 전환했다. Commission 공식 안내/표준화 페이지 2건을 추가해 총 9개 source를 검증했다.
+- source별 요청/최종 URL, 수집 시각, visible text 길이, 전체 visible text SHA-256, prompt excerpt SHA-256을 manifest에 기록한다.
+- CELLAR redirect는 같은 allowlist host만 허용하고 HTTP redirect는 HTTPS로 승격한 뒤 재요청한다. source timeout/202/빈 응답은 외부 부작용 없는 safe no-op, TLS/host/content validation 오류는 fail-closed 처리한다.
+- claim validator는 claim ID/본문 statement/source ID/직접 quote/Article paragraph/Annex Part-point locator를 검증한다. 동일 Article의 다른 paragraph quote는 거부한다.
+- [Actions Run #573](https://github.com/useformotor3/ai-discord-bot/actions/runs/44039961078): **138 passed, 1 xfailed**. 9개 공식 source 실시간 수집 및 Article 13(8) paragraph locator/quote 일치 확인.
+- 테스트 실행 대상 PR head: `d1bda523c1b593bbd48bf4916dd7bbd741001894`. merge commit 자체의 별도 Actions run은 확인되지 않아 post-merge CI success로 확대 주장하지 않는다.
+- Commission Guidance PDF/Annex 및 M/606 결정 C(2026) 7861 Annex는 관련 URL만 manifest에 기록했다. PDF/결정문 원문 파싱은 미완료이며 source page summary로 Annex 내용을 입증했다고 주장하지 않는다.
+- 제품 모델/회로/펌웨어/프로토콜/시장 공급 구조가 없으므로 모델별 CRA 적용성·분류·적합성 결론은 여전히 잠정이다.
+- 상세 설계·source IDs·SHA-256·검증·한계: [CRA_SOURCE_PROVENANCE_PIPELINE_2026-11-17.md](reports/CRA_SOURCE_PROVENANCE_PIPELINE_2026-11-17.md).
+- 다음 재개: (1) PDF/decision Annex 수집·검증, (2) Article/Annex locator canary 확대, (3) 35 requirements/15 interfaces/36 SEC controls를 source claims 및 제품별 증거와 연결, (4) main merge commit CI 및 관리 문서 재확인.

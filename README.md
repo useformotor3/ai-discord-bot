@@ -13,7 +13,10 @@
 ## 현재 상태 — 2026-11-17
 
 - **활성 범위: CRA 대응만.** SIL 3 자료는 역사적 산출물로 보존하며 별도 명시적 재개 지시 전 비활성.
-- 현재 작업 브랜치: 없음 (PR #24 병합 완료; 다음 작업은 최신 `main`에서 새 브랜치로 시작)
+- 현재 작업 브랜치: `docs/cra-source-gate-status-and-session-rules-2026-11-17` (관리 문서 정합화 작업 중)
+- 최신 main 기준점: PR #26 merge commit `8066c166ba01fbfb8d25f61ce0ce6ed72f151854`
+- 최신 CRA source provenance 통합: [PR #26](https://github.com/useformotor3/ai-discord-bot/pull/26) 병합 완료; 공식 CELLAR 7개 법령 자료 + Commission 공식 페이지 2개 수집, claim-level validator 및 source manifest 반영
+- [CRA 공식 출처 수집·주장 추적 파이프라인 보고서](reports/CRA_SOURCE_PROVENANCE_PIPELINE_2026-11-17.md): Run #573, 138 passed / 1 xfailed, live 9-source canary 및 Article 13(8) quote 확인
 - CRA-only 범위 통제 기준점: PR #18 merge `b7813ddd311bc51bfb0eb26458eace9ff82b621f`; 통합 보고서 PR #19 merge `5776ca609130033bfff17ca62c9fabc3b9570b3b`; 인터페이스 매트릭스 PR #20 merge `951fc5ee0122b847b5e8f77bd5e0706db65efb76`
 - CRA 정정 보고서 #1–#38 및 인덱스: main 보존 확인
 - [CRA 서보 드라이브 통합 규제·기술 준수 보고서 v0.2](reports/CRA_INTEGRATED_COMPLIANCE_REPORT_2026-11-17.md): PR #21 병합 완료, 제품별 적용성 확인 전
@@ -23,7 +26,8 @@
 - [CRA 서보 드라이브 참조 보안 아키텍처 v0.1](reports/CRA_SERVO_DRIVE_REFERENCE_SECURITY_ARCHITECTURE_2026-11-17.md): 논리 블록·신뢰 경계·데이터 흐름 참조 설계, PR #23 병합 완료; 제품별 회로 확인 전
 - [브랜치 정합성 및 CRA 소스 검증 통합 감사](reports/BRANCH_RECONCILIATION_2026-11-17.md): divergent branches, source gate 선택 이식 계획, validator 결함 및 복구 원칙; PR #24 병합 완료
 - CRA 정정 보고서 #1–#38: 개별 원문·원본 SHA 보존, 주요 정정/정확한 조항 locator를 통합 보고서 v0.2에 반영
-- PR #21 merge commit: `e11d376bab43ccc99bdf70549ad47eec57a01760`; PR #22: `20e503c1da2fe2f053630263a8c4942680ec1515`; PR #23: `b90a0ac07865c18d846323d843fef38b1123077a`; PR #24: `153033aa535775a0df568ad83876bff487d33404`
+- PR #21 merge commit: `e11d376bab43ccc99bdf70549ad47eec57a01760`; PR #22: `20e503c1da2fe2f053630263a8c4942680ec1515`; PR #23: `b90a0ac07865c18d846323d843fef38b1123077a`; PR #24: `153033aa535775a0df568ad83876bff487d33404`; PR #26: `8066c166ba01fbfb8d25f61ce0ce6ed72f151854`
+- PR #26 CI: [Run #573](https://github.com/useformotor3/ai-discord-bot/actions/runs/44039961078), 138 passed / 1 xfailed; 9개 official source live fetch 및 Article 13(8) locator/quote canary 통과. merge commit 자체의 별도 run은 아직 미확인.
 - 최신 법적/이행 자료 반영: Commission Guidance C(2026) 5252 (2026-07-27), M/606 개정 C(2026) 7861 (2026-11-10), Regulation (EU) 2025/327 개정 범위 검토
 - 제품 모델/통신 프로토콜/시장 공급 구조가 미제공되어 CRA 적용성 및 Annex III/IV 분류는 잠정 판단으로 유지
 - PR #19/#20은 문서·추적표 경로만 변경했으며 운영 코드, workflow, state/history 및 원본 archive는 수정하지 않음
@@ -42,6 +46,7 @@
 
 ## 주요 기술 자료
 
+- [CRA 공식 출처 수집·주장 추적 파이프라인 보고서](reports/CRA_SOURCE_PROVENANCE_PIPELINE_2026-11-17.md)
 - [CRA 통합 규제·기술 준수 보고서 v0.1](reports/CRA_INTEGRATED_COMPLIANCE_REPORT_2026-11-17.md)
 - [CRA 요구사항 추적표 v0.1 (CSV)](reports/CRA_REQUIREMENTS_TRACEABILITY_2026-11-17.csv)
 - [서보 드라이브 인터페이스별 CRA 적용성 매트릭스 (CSV)](reports/CRA_SERVO_DRIVE_INTERFACE_APPLICABILITY_2026-11-17.csv)
@@ -59,7 +64,7 @@
 2. 법적 의무, 표준 요구사항, 공식 해석, 엔지니어링 권고, 미확인 가설을 분리합니다.
 3. 조사 초안 생성과 출처/내용 검증을 구분합니다.
 4. 중복 보고서를 양산하기보다 기존 자료를 검증·정정·통합합니다.
-5. 코드 변경은 작업 브랜치에서 mock 테스트부터 수행하고, 운영 코드·workflow·데이터 변경은 별도 승인 없이 하지 않습니다.
+5. 통상적인 CRA 범위 코드·테스트·문서·CI 변경은 반복 승인 질문 없이 작업 브랜치와 PR로 진행합니다. 변경 전 기준점·영향·테스트·복구 경로를 확보하고, CI와 readback이 확인된 경우 병합합니다. force-push/history rewrite, 삭제·secret 변경, 운영 workflow 실행, 외부 부작용이 있는 작업은 별도 안전 확인 대상으로 둡니다.
 6. 테스트 원본과 blob SHA가 일치하지 않으면 결과를 예비 검증으로만 기록합니다.
 7. 운영 workflow를 테스트 목적으로 실행하지 않습니다.
 8. 의미 있는 작업이 끝날 때 README, 상황판, 마스터 계획, 행동강령, 세션 로그와 관련 보고서를 동기화하고 GitHub에서 재조회합니다.
@@ -73,11 +78,11 @@
 
 ## 다음 작업
 
-1. CRA 통합 보고서 v0.1의 법령 조항·공식 가이드·M/606 일정을 교차 검증한다.
-2. 서보 드라이브 제품군별 통신 인터페이스·제품 경계·EU 공급 구조를 확인해 적용성/분류를 확정한다.
-3. CSV 추적표 28개 항목을 설계 통제·시험 케이스·증거 링크와 연결한다.
-4. 표준 OJ 공표 상태와 Commission/ENISA 최신 업데이트를 재확인한다.
-5. 문서 diff·CSV 파싱·JSONL 무결성을 검증한 후 PR을 열고, 확인 가능한 CI 결과를 기록한다.
+1. Commission Guidance C(2026) 5252 PDF 원문/Annex와 M/606 결정 C(2026) 7861 Annex를 별도 수집·파싱하고 페이지 locator 및 SHA-256을 기록한다. 현재 source pack은 관련 URL만 기록하며 PDF/결정 Annex 본문은 미수집이다.
+2. Article 13(8) 외에 Annex I Part I/Part II 및 핵심 Article의 실시간 locator·quote 검증을 추가한다.
+3. CRA 요구사항 35개, 인터페이스 15개, 보안 통제·시험 36개를 source claim ID, 설계 통제, 시험 케이스 및 증거 링크와 교차 연결한다.
+4. 실제 모델·회로·펌웨어·프로토콜·EU 공급 구조 자료가 확보되면 제품별 적용성, Annex III/IV 분류 및 Article 32 경로를 검증한다. 자료가 없으면 일반 참조 설계/잠정 판단으로 유지한다.
+5. main merge commit `8066c166ba01fbfb8d25f61ce0ce6ed72f151854`의 post-merge CI 여부를 확인하고, 문서·상황판·세션 로그·기계 로그를 최신 main에 맞춰 동기화한다.
 
 자세한 재개 지점과 검증 한계는 [PROJECT_STATUS.md](PROJECT_STATUS.md)를 기준으로 합니다.
 
