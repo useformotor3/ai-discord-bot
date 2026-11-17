@@ -431,3 +431,11 @@
 
 
 - PR #31 사후 상황판 동기화 병합: `24312166b892127e845721793b1abfee4d91f9c2`; [Run #618](https://github.com/useformotor3/ai-discord-bot/actions/runs/44051283237) success, 141 passed / 1 xfailed. Pre/post refs: `safety/pre-merge-main-pr31-2026-11-17` → `975ec6728988e43d9a1ebbf6f6d84288aa44c2fd`; `safety/post-merge-main-pr31-2026-11-17` → `24312166b892127e845721793b1abfee4d91f9c2`; post ref and main compare identical.
+
+
+## CRA Guidance 추적 및 원문 PDF 검증 자동화 — 2026-11-17
+
+- [Commission Guidance claim register](reports/CRA_GUIDANCE_CLAIM_REGISTER_2026-11-17.csv): G-001~G-013 비구속적 설명과 문단/페이지·35개 요구사항·15개 인터페이스·36개 SEC 통제 연결.
+- [공식 Guidance/M/606 Annex 감사](reports/CRA_OFFICIAL_GUIDANCE_AND_M606_ANNEX_AUDIT_2026-11-17.md): 41개 M/606 표준화 주제와 CRA 관련 해석.
+- [PDF 원문 취득/해시 도구](cra_pdf_sources.py): Commission URL 우선, allowlist 검증된 ANFR mirror fallback, PDF magic/header/marker 검증, raw-byte SHA-256 및 page count, CI artifact 저장.
+- 현재 작업 브랜치: `cra/guidance-claim-mapping-2026-11-17`; PR/CI 검증 전. PDF binary hash 취득 결과는 CI artifact를 확인한 후에만 확정한다.
