@@ -1225,3 +1225,18 @@
 ### 관련 보고서와 다음 재개
 - [CRA source provenance pipeline 설계·검증 보고서](reports/CRA_SOURCE_PROVENANCE_PIPELINE_2026-11-17.md)
 - 다음: (1) Guidance PDF/Annex 및 M/606 decision Annex 수집·해시·페이지 locator, (2) Article 13(8) 외 Annex I/핵심 Article live canary 확대, (3) 35 requirements/15 interfaces/36 SEC controls를 claim IDs·설계 통제·시험·제품 증거와 연결, (4) merge commit CI 확인.
+
+
+## 2026-11-17 — 프로젝트 상황판·행동강령·재개 기록 PR #27 병합
+
+- PR #27 [docs: synchronize CRA source provenance status, rules and resume point](https://github.com/useformotor3/ai-discord-bot/pull/27) merge 완료.
+- Merge commit: `5f0c54a018e18b3453b1c836a5a7d2e9a266331b`.
+- [Actions Run #575](https://github.com/useformotor3/ai-discord-bot/actions/runs/44040949610): 138 passed / 1 xfailed, 9개 official source live fetch 및 Article 13(8) locator/quote canary 성공.
+- README/PROJECT_STATUS/MASTER_PLAN의 현재 상태와 다음 재개 순서를 갱신하고, AI_RULEBOOK에 CELLAR source/claim validation 규칙과 반복 승인 없는 가역 작업 권한을 반영했다.
+- SESSION_LOG와 PROJECT_LOG.jsonl에 PR #26 구현·검증·실패 수정 과정과 PR #27 병합 결과를 추가했다.
+- JSONL 76개 record 전체 parse 성공, source excerpt SHA-256 9개 각각 64 hex 확인.
+- PR #27 pre-merge checkpoint: `safety/pre-merge-main-pr27-2026-11-17` → `8066c166ba01fbfb8d25f61ce0ce6ed72f151854`.
+- PR #27 post-merge checkpoint: `safety/post-merge-main-pr27-2026-11-17` → `5f0c54a018e18b3453b1c836a5a7d2e9a266331b`. 두 ref readback SHA 검증 완료.
+- merge commit 자체의 별도 Actions run은 확인되지 않았다. PR head Run #575 결과만 검증 증거로 기록한다.
+- 운영 Gemini/Discord workflow와 외부 전송은 실행하지 않았다. state/history/archive 및 SIL 3 과거 산출물도 변경하지 않았다.
+- 다음 작업: Guidance PDF/Annex 및 M/606 decision Annex 원문 수집, Article/Annex live locator canary 확대, 요구사항/인터페이스/SEC 통제의 source claim·제품 증거 연결.
