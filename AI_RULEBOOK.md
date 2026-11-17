@@ -342,3 +342,9 @@
 - Use Annex I Part I (2)(l) for recording/monitoring relevant internal activity, Part I (2)(c) for security updates, and Part I (2)(h) for availability. Do not transpose these locators.
 - Do not treat every authentication failure, SIEM integration, circular buffer, remote telemetry protocol or tamper-proof storage design as a separately enumerated CRA requirement unless an exact source says so.
 - Design log events, retention, integrity, time synchronization, storage limits and export based on product risk and operational constraints; assess real-time control and functional-safety impact separately.
+
+## 32. CRA vulnerability handling and product classification
+- Keep Article 13 manufacturer duties, Annex I Part II vulnerability-handling requirements, and Article 14 reporting obligations separate.
+- CVD policy is Annex I Part II (5); reporting contact/information sharing is (6); fixed-vulnerability disclosure and its exception are (4); mandatory reporting of actively exploited vulnerabilities/severe incidents is Article 14.
+- Do not classify all industrial servo drives as Important Class I/II by product name alone. Verify the actual product function against Annex III.
+- Do not infer anonymous disclosure, mandatory publication simultaneous with patch release, or a specific PSIRT workflow unless an exact provision requires it.
