@@ -406,3 +406,6 @@ The CRA feature was merged only into the isolated integration branch, not main. 
 
 ### Source-pack measurement correction — 2026-11-17
 The seven-source EUR-Lex canary output totals **636,040 visible-text characters**. Earlier 245,502-character summaries omitted the 394,354-character 2025/327 amendment source; the prior audit log is retained and this correction supersedes the earlier aggregate.
+
+- [Correction #20](reports/CRA_CORRECTION_REPORT_20_2026-11-17.md): separates Article 14 mandatory reporting, Article 16 platform, Article 13(17) manufacturer contact point and CVD.
+- [Correction #21](reports/CRA_CORRECTION_REPORT_21_2026-11-17.md): corrects the DoS/availability quote and separates resource isolation/STO implementation choices from CRA text.
