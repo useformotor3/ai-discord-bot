@@ -41,12 +41,22 @@ def test_successful_generation_uses_only_mocked_external_services(run_main):
     assert len(history) == 1
     assert len(archives) == 1
     assert "CRA 심층 조사 보고서" in archives[0].read_text(encoding="utf-8")
+    archive_text = archives[0].read_text(encoding="utf-8")
+    assert "CRA-2025-327-EHDS-amendment" in archive_text
+    assert "CRA-2025-1535-product-scope-delegated-act" in archive_text
+    assert "CRA-2026-881-reporting-delay-delegated-act" in archive_text
     assert len(run_main.captured["model_calls"]) == 1
-    assert len(run_main.captured["source_gets"]) == 1
+    assert len(run_main.captured["source_gets"]) == 4
     assert "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02024R2847-20241120" in run_main.captured["model_calls"][0]["prompt"]
     assert "Manufacturers shall ensure that vulnerabilities" in run_main.captured["model_calls"][0]["prompt"]
     assert "corrigenda 5.12.2024, 2.7.2025 and 17.10.2025" in run_main.captured["model_calls"][0]["prompt"]
     assert "Official Journal(관보)" in run_main.captured["model_calls"][0]["prompt"]
+    assert "Regulation (EU) 2025/327" in run_main.captured["model_calls"][0]["prompt"]
+    assert "26.03.2027" in run_main.captured["model_calls"][0]["prompt"]
+    assert "2025/1535" in run_main.captured["model_calls"][0]["prompt"]
+    assert "2026/881" in run_main.captured["model_calls"][0]["prompt"]
+    assert "18.11.2025" in run_main.captured["model_calls"][0]["prompt"]
+    assert "10.05.2026" in run_main.captured["model_calls"][0]["prompt"]
     assert len(run_main.captured["discord_posts"]) == 1
     assert [cmd[0] for cmd in run_main.captured["git_commands"]] == [
         "git", "git", "git", "git", "git"
