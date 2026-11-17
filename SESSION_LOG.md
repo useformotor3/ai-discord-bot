@@ -1365,3 +1365,12 @@
 - 13 Guidance claims / 15 interfaces / 35 CRA requirements / 36 SEC controls의 row count, unique IDs, claim foreign keys, orphan claim, M/606 item 1–41, provenance hashes, item18 confirmation, README/report links, PROJECT_LOG JSONL integrity를 검증한다.
 - Negative tests: unknown G-999 reference와 invalid M/606 item 42가 CI fail-closed하도록 검증.
 - tests workflow에 source blob pins, compileall 및 `python cra_traceability.py` step을 추가했다. CI 결과 대기.
+
+
+## 2026-11-17 — PR #35 traceability gate merge
+
+- PR #35 squash merge 완료: `2a347a60f2632bbe87044484187765adab45aee2`.
+- Run #738 success: 151 passed / 1 xfailed; traceability gate, PDF/HTML source canaries passed.
+- Traceability gate: 13/15/35/36 records, all Guidance claims linked, 89 project log events including legacy rows, M/606 1–41, PDF hashes and item18 confirmation passed.
+- Pre/post safety refs `safety/pre-merge-main-pr35-2026-11-17` / `safety/post-merge-main-pr35-2026-11-17`; post ref and main compare identical.
+- Next implementation starts from latest main after PR #36 documentation-only status sync.
