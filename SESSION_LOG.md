@@ -1001,3 +1001,15 @@
 - 최종 회로도/BOM/PFH 계산은 정격/부하/위험평가가 확정된 후 수행한다.
 
 - Rockwell Product Safety Advisory PSA 2017-01-001 추가 대조: 2198-S* ERS3 V7.001 이하 및 2198-D* ERS3 V7.002 이하의 hardwired STO 구성은 공표 SIL PFH 미달 가능. 수정 firmware V7.003 이상. Integrated network STO는 해당 공지의 영향 범위 밖. 설치 firmware 확인이 필요하며 ERS4에 일반화하지 않는다.
+
+## 2026-11-17 — SIL 3 servo-drive report PR #16 merged
+
+- Merge commit `34449753857c6ab004271f69aac19867a7aed1fa`; CI #488: 105 passed, 1 xfailed.
+- Main files:
+  - `reports/SIL3_SERVO_DRIVE_BENCHMARK_REPORT_2026-11-17.md`
+  - `design/SIL3_SERVO_DRIVE_HARDWARE_BLOCK_DESIGN_2026-11-17.md`
+  - `reports/SIL3_SERVO_DRIVE_REQUIREMENTS_TRACEABILITY_2026-11-17.md`
+  - `reports/SIL3_SERVO_DRIVE_BENCHMARK_MATRIX_2026-11-17.csv`
+- Benchmark includes Mitsubishi J5, Yaskawa Sigma-7 ASM7, Rockwell Kinetix 5700 ERS4 and Siemens S210. Rockwell ERS3 hardwired STO PSA 2017-01-001 is called out separately.
+- Standard revisions current as of 2026-11-17, including IEC 61800-5-2 AMD1:2026 and IEC 62061 AMD2:2026.
+- Deliverable is a reference architecture, not a final certified design. Exact ratings, load, encoder, network, safety functions and manufacturer 2026 amendment certificates remain open.
