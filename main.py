@@ -269,7 +269,7 @@ if not success:
 title_prefix = (
     "🟢 **[12시간 시스템 생존신고 & 정기 헬스체크]**"
     if is_health_check
-    else "🛡️ **[CRA 규격 심층 조사 및 근거 리포트]**"
+    else "🛡️ **[CRA 조사 초안: EUR-Lex 원문 인용 대조 통과 / 법률 해석 미검증]**"
 )
 
 full_text = (
@@ -410,7 +410,7 @@ archive_filename = (
     f"research_archive/{TODAY}_{NOW.strftime('%H%M%S%f')}_{uuid.uuid4().hex[:8]}.md"
 )
 archive_payload = (
-    f"# CRA Research Report\n- **Date:** {TODAY} {NOW.strftime('%H:%M:%S')}\n-"
+    f"# CRA Research Draft\n- **Evidence gate:** EUR-Lex official source fetched; Article/Annex locator and at least one verbatim quote matched. Legal interpretation and product applicability remain unverified.\n- **Source URL:** {cra_source['url']}\n- **Source checked at:** {NOW.isoformat()}\n- **Date:** {TODAY} {NOW.strftime('%H:%M:%S')}\n-"
     f" **Count:** {current_count + 1}\n\n{ai_message}"
 ).encode("utf-8")
 
