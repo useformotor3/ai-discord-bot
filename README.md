@@ -357,3 +357,11 @@ Actions 성공은 자동화 실행 결과이지 CRA 법령 해석이나 출처�
 - 외부 5분 dispatch를 hourly schedule로 바꾸는 cadence PR은 검증 후 병합 예정. 원본 state/history/archive는 보존한다.
 
 - 운영 Run `44016487535` 실패 원인: Gemini Free Tier 20 requests/day 초과(429) + fallback 503. cadence PR에서 3시간 schedule, 모델당 최대 2회, quota/503/품질 거부 no-op 처리를 추가했다.
+## 운영 안정화 최종 상태 — 2026-11-17
+
+- PR #10: official EUR-Lex link validation + duplicate-topic gate; CI 101 passed, 1 xfailed.
+- PR #11: repository_dispatch 제거, 3-hour cadence, quota-aware retries/no-op; CI 103 passed, 1 xfailed.
+- PR #12: failure-path recovery guard, checkpoint rollback, guard-gated pruning, persist-before-Discord; CI 105 passed, 1 xfailed.
+- Main merge head: `bef260a29481320de3eae9cafe4a6f907e38ead0`.
+- Production data unchanged after quota failure: state count 38, history 2,431; original archives preserved.
+- First three 3-hourly production runs remain the next live validation checkpoint.

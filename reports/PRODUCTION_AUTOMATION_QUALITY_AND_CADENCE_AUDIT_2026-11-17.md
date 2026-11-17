@@ -76,3 +76,26 @@ EUR-Lex 최종 Official Journal 원문을 확인했다.
 운영 Run `44016487535`의 job log에서 primary model의 Free Tier daily request limit 20 초과(429 RESOURCE_EXHAUSTED), fallback model의 503 UNAVAILABLE, EUR-Lex 링크 누락을 확인했다. 기존 5분 dispatch가 이 상황에서 재시도와 workflow 실패를 반복시켰다.
 
 cadence PR은 내부 schedule을 3시간마다(8회/일)로 조정하고 모델별 최대 2회 시도로 제한한다. 이론상 모델별 16회/일로 20/day 제한보다 낮다. 429/503은 동일 모델 재시도 없이 fallback으로 이동하고, quota/일시 장애/품질 거부로 유효 보고서를 얻지 못하면 경고를 남기고 no-op 종료한다. 이 경우 Discord 전송·아카이브·state/history 변경은 없다. 인증/설정 등 복구가 필요한 미분류 오류는 실패 종료한다.
+
+## 7. Failure-path recovery and persist-before-delivery — merged 2026-11-17
+
+PR #12: https://github.com/useformotor3/ai-discord-bot/pull/12
+- Merge commit: `bef260a29481320de3eae9cafe4a6f907e38ead0`
+- CI Run #470: **105 passed, 1 xfailed**.
+- The production workflow now runs the operational guard whenever the immutable pre-run checkpoint was successfully created, even if dependency installation or `main.py` fails.
+- If uncommitted state/history/archive data is dirty, the guard restores tracked files from the checkpoint and removes only safe, untracked top-level archive Markdown files. It reports failure after restoring, so the checkpoint is retained for investigation.
+- If a local operational-data commit was created but not pushed, and remote main is still exactly the baseline, the guard resets only the ephemeral local checkout to baseline. It does not push or force-push.
+- If remote main advanced independently, the guard refuses automatic overwrite. If an invalid single-child commit was already pushed, the existing data-only rollback commit path remains.
+- Old checkpoints are pruned only when the guard itself succeeds. Failed recovery keeps the checkpoint.
+- Discord delivery now happens after archive/state/history commit and push. A Git push failure cannot produce a Discord message for an unpersisted report.
+
+## 8. Final main status after PR #10–#12
+
+- Main merge head: `bef260a29481320de3eae9cafe4a6f907e38ead0`.
+- PR #10 CI #455: 101 passed, 1 xfailed.
+- PR #11 CI #467: 103 passed, 1 xfailed.
+- PR #12 CI #470: 105 passed, 1 xfailed.
+- Production schedule: `0 */3 * * *` UTC (every three hours); manual workflow_dispatch retained; external repository_dispatch no longer subscribed.
+- Model calls: max 2 attempts per model per scheduled run; 429/503 stops same-model retries and falls back; quota/service/quality rejection with no valid report is a clean no-op; authentication/configuration failures remain visible failures.
+- Last verified production data snapshot after quota failure: state count 38, history 2,431 entries, state blob `da086ea3ffb7ef0c76d7fa03a58e13a24aa8fe34`, history blob `b9ea42fa437b2b3a5728db5d125d287fb746b46b`. No operational data changed in the quota-failed run.
+- Actual live Gemini/Discord execution after these changes is not yet verified. Observe the first three scheduled production runs and record each workflow result, quota response, guard result, checkpoint pruning and state/history/archive hash comparison.

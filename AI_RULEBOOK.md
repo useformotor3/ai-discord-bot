@@ -267,3 +267,11 @@
 - 운영 workflow 변경 전 현재 실행이 완료됐는지 확인하고, 변경 후 isolated CI와 workflow trigger 회귀 테스트를 통과시킨다.
 - workflow의 동시성 `cancel-in-progress: false`, immutable pre-run checkpoint, operational guard, checkpoint pruning을 유지한다.
 - 운영 실행 결과가 성공이라고 해서 보고서의 법적 정확성까지 검증된 것으로 표현하지 않는다.
+## 44. 실패 경로 복구 및 외부 전송 순서
+- 각 production run은 immutable pre-run data checkpoint를 먼저 생성한다.
+- checkpoint 생성 성공 후 main.py의 성공/실패와 무관하게 operational guard를 실행한다.
+- dirty uncommitted data는 baseline checkpoint에서 복원하고, unpublished local data commit은 remote main이 baseline 그대로일 때만 local reset한다.
+- remote main이 독립적으로 전진했다면 force-push나 자동 덮어쓰기를 절대 수행하지 않는다.
+- 이미 원격에 잘못 push된 단일 child commit은 기존 rollback commit 경로로 복원하고 검증한다.
+- checkpoint pruning은 operational guard가 성공한 경우에만 수행한다. guard 실패 시 checkpoint를 보존한다.
+- Discord 등 외부 알림은 GitHub archive/state/history commit+push 성공 후 전송한다. 외부 전송 실패가 원본 데이터 손실로 이어지지 않게 한다.

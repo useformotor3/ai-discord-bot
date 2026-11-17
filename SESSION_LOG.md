@@ -926,3 +926,28 @@
 - PR #11 CI를 변경된 main.py/test blob SHA로 다시 실행해야 한다.
 - 기존 운영 state/history/archive는 quota 실패 실행에서 변경되지 않았음을 재조회한다.
 - 첫 3회 3-hourly production run을 관찰한다.
+## 2026-11-17 — 운영 안정화 PR #10–#12 main 병합 완료
+
+### PR #10 — 조사 품질 게이트
+- Merge: `2e583f5c7b24743fbb1bd7d375643e314cf3115d`
+- CI #455: 101 passed, 1 xfailed.
+- CRA 보고서에 EUR-Lex Regulation (EU) 2024/2847 공식 링크를 필수화하고, 최근 30개 archive 원문과 주제어를 비교해 중복 주제를 전송/저장 전에 차단.
+
+### PR #11 — quota 및 5분 반복 실행 원인 차단
+- Merge: `21c6add0c58de39fbc2755882885bffe2cd44394`
+- CI #467: 103 passed, 1 xfailed.
+- Production run #44016487535/job #133815553121 로그에서 Gemini Free Tier 20 requests/day 초과(429), fallback 503, EUR-Lex 링크 누락을 확인.
+- 외부 repository_dispatch 구독 제거, 내부 schedule을 3시간 간격(`0 */3 * * *`)으로 변경. 모델별 최대 2회, 429/503 즉시 fallback, quota/품질 거부 시 no-op.
+
+### PR #12 — 실패 경로 복구 및 외부 전송 순서
+- Merge: `bef260a29481320de3eae9cafe4a6f907e38ead0`
+- CI #470: 105 passed, 1 xfailed.
+- workflow는 pre-run checkpoint가 생성된 뒤 main.py가 실패해도 operational guard를 실행한다.
+- uncommitted operational data는 checkpoint에서 복원하고, remote main이 baseline이면 unpublished local data commit을 local reset으로 복구한다. remote가 전진한 경우 force-push/덮어쓰기를 거부한다.
+- checkpoint pruning은 guard 성공 후에만 실행한다.
+- main.py는 archive/state/history를 GitHub에 commit/push한 뒤 Discord 전송한다. Git 저장 실패 시 Discord 메시지를 보내지 않는다.
+
+### 데이터 무결성
+- quota 실패 run #44016487535 이후 state.json SHA `da086ea3ffb7ef0c76d7fa03a58e13a24aa8fe34`, history.json SHA `b9ea42fa437b2b3a5728db5d125d287fb746b46b` 및 count=38/2,431 entries가 유지됨.
+- 원본 archive #33–#38은 그대로 보존하고 correction reports #33–#38을 별도 추가.
+- 운영 실제 runtime 검증은 첫 3회 3-hourly run에서 진행한다. 현재까지 PR CI는 mock 기반이므로 실제 Gemini/Discord 전송 성공을 보장한다고 표현하지 않는다.
