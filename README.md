@@ -529,3 +529,6 @@
 
 
 - 제품별 증거 수집·판정 기준: [CRA 제품 경계 및 증거 수집 기준서](reports/CRA_PRODUCT_BOUNDARY_AND_EVIDENCE_INTAKE_2026-11-17.md) (2026-11-18 법령 감사 보완 포함 예정).
+
+
+- 최신 main 기준(2026-11-18): PR #48 merge `dc03173cd78f6efb6f46717850a107c8165b1d1a`; 현재 재개/다음 단계는 [PROJECT_STATUS_CURRENT.md](PROJECT_STATUS_CURRENT.md) 참조.
