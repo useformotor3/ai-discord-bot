@@ -7,6 +7,7 @@ on:
       - cra/official-annex-audit-2026-11-17
       - cra/guidance-claim-mapping-2026-11-17
       - cra/traceability-integrity-2026-11-17
+      - docs/pr35-postmerge-status-2026-11-17
       - docs/pr33-postmerge-status-2026-11-17
       - docs/pr30-postmerge-status-sync-2026-11-17
       - docs/pr31-final-dashboard-sync-2026-11-17
