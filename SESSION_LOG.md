@@ -1383,3 +1383,12 @@
 - ESO adoption deadlines를 제조자 compliance deadline과 구분하고, OJ citation 전 harmonised standard/presumption으로 주장하지 않도록 명시.
 - Item18 deadline locator를 PDF viewer page3 / printed EN3로 정정.
 - Next: extend traceability validator and tests to check all 41 mapping rows and foreign keys.
+
+
+## 2026-11-17 — PR #37 M/606 41-item map merge
+
+- PR #37 squash merge: `25e1c36cc61a3001b5045cb8a6e90473fe830459`.
+- Run #757 success: 154 passed / 1 xfailed; 41-item mapping traceability, PDF/HTML source canaries passed.
+- Pre/post safety refs `safety/pre-merge-main-pr37-2026-11-17` / `safety/post-merge-main-pr37-2026-11-17`; post ref and main compare identical.
+- M/606 item18 printed page EN3 locator and 31/01/2027 deadline validated.
+- Next implementation starts from latest main after PR #38 documentation-only status sync.
