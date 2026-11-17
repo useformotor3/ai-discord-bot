@@ -148,3 +148,9 @@ Main/integration protected blob comparison:
 - archive #19: `3d90ed95b47d6275e4d98d7c18cfbc5246ffa4e4`
 
 Archive #19 correction report: `reports/CRA_CORRECTION_REPORT_19_2026-11-17.md`. The original archive remains unchanged. The corrected legal locators are Annex I Part I (2)(l) for logging/monitoring, (2)(c) for security updates, and (2)(h) for availability.
+
+## 11. Main archive #13 correction — 2026-11-17
+
+Original archive #13 blob: `7523b68c1537b6ed4d2de197eeb6e5bd4698ea2e`. Correction report: `reports/CRA_CORRECTION_REPORT_13_2026-11-17.md`.
+
+Findings: Article 11 was incorrectly used as the manufacturer vulnerability-handling/CVD provision; Annex I Part II numbering and quotations were not the enacted OJ wording; anonymous intake and simultaneous publication were overstated; all servo drives were incorrectly treated as Important Class I/II. Correct mapping: Article 13 manufacturer duties and risk assessment; Annex I Part II (1)–(8) vulnerability handling; Article 14 mandatory reporting; Annex III classification only after product-category analysis. Original archive remains unchanged.
