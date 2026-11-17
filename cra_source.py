@@ -6,7 +6,7 @@ import re
 from urllib.parse import urlparse
 
 
-CRA_SOURCE_URL = "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02024R2847-20241120"
+CRA_SOURCE_URL = "https://publications.europa.eu/resource/celex/02024R2847-20241120?language=eng"
 REQUIRED_CORRIGENDA_DATES = ("5.12.2024", "2.7.2025", "17.10.2025")
 SOURCE_TIMEOUT = (3.05, 20)
 
@@ -23,7 +23,7 @@ CRA_SOURCE_CATALOG = (
     {
         "id": "CRA-2024-2847-consolidated",
         "url": CRA_SOURCE_URL,
-        "allowed_hosts": ("eur-lex.europa.eu",),
+        "allowed_hosts": ("publications.europa.eu",),
         "kind": "official_legal_text",
         "version": (
             "Regulation (EU) 2024/2847 consolidated text 20.11.2024; "
@@ -34,8 +34,8 @@ CRA_SOURCE_CATALOG = (
     },
     {
         "id": "CRA-2024-2847-corrigendum-2024-12-05",
-        "url": "https://eur-lex.europa.eu/eli/reg/2024/2847/corrigendum/2024-12-05/oj/eng",
-        "allowed_hosts": ("eur-lex.europa.eu",),
+        "url": "https://publications.europa.eu/resource/celex/32024R2847R(01)?language=eng",
+        "allowed_hosts": ("publications.europa.eu",),
         "kind": "official_corrigendum",
         "version": (
             "Official Journal corrigendum 2024/90780, 05.12.2024; "
@@ -50,8 +50,8 @@ CRA_SOURCE_CATALOG = (
     },
     {
         "id": "CRA-2024-2847-corrigendum-2025-07-02",
-        "url": "https://eur-lex.europa.eu/eli/reg/2024/2847/corrigendum/2025-07-02/oj/eng",
-        "allowed_hosts": ("eur-lex.europa.eu",),
+        "url": "https://publications.europa.eu/resource/celex/32024R2847R(02)?language=eng",
+        "allowed_hosts": ("publications.europa.eu",),
         "kind": "official_corrigendum",
         "version": (
             "Official Journal corrigendum 2025/90555, 02.07.2025; "
@@ -66,8 +66,8 @@ CRA_SOURCE_CATALOG = (
     },
     {
         "id": "CRA-2024-2847-corrigendum-2025-10-17",
-        "url": "https://eur-lex.europa.eu/eli/reg/2024/2847/corrigendum/2025-10-17/oj/eng",
-        "allowed_hosts": ("eur-lex.europa.eu",),
+        "url": "https://publications.europa.eu/resource/celex/32024R2847R(04)?language=eng",
+        "allowed_hosts": ("publications.europa.eu",),
         "kind": "official_corrigendum",
         "version": (
             "Official Journal corrigendum 2025/90828, 17.10.2025; "
@@ -82,8 +82,8 @@ CRA_SOURCE_CATALOG = (
     },
     {
         "id": "CRA-2025-327-EHDS-amendment",
-        "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32025R0327",
-        "allowed_hosts": ("eur-lex.europa.eu",),
+        "url": "https://publications.europa.eu/resource/celex/32025R0327?language=eng",
+        "allowed_hosts": ("publications.europa.eu",),
         "kind": "official_amending_regulation",
         "version": (
             "Regulation (EU) 2025/327 Article 104 adds CRA Article 32(5a) "
@@ -95,8 +95,8 @@ CRA_SOURCE_CATALOG = (
     },
     {
         "id": "CRA-2025-1535-product-scope-delegated-act",
-        "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32025R1535",
-        "allowed_hosts": ("eur-lex.europa.eu",),
+        "url": "https://publications.europa.eu/resource/celex/32025R1535?language=eng",
+        "allowed_hosts": ("publications.europa.eu",),
         "kind": "official_delegated_regulation",
         "version": (
             "Commission Delegated Regulation (EU) 2025/1535; in force 18.11.2025; "
@@ -108,8 +108,8 @@ CRA_SOURCE_CATALOG = (
     },
     {
         "id": "CRA-2026-881-reporting-delay-delegated-act",
-        "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32026R0881",
-        "allowed_hosts": ("eur-lex.europa.eu",),
+        "url": "https://publications.europa.eu/resource/celex/32026R0881?language=eng",
+        "allowed_hosts": ("publications.europa.eu",),
         "kind": "official_delegated_regulation",
         "version": (
             "Commission Delegated Regulation (EU) 2026/881; in force 10.05.2026; "
@@ -259,8 +259,8 @@ def fetch_official_cra_source():
                         "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
                         "(KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
                     ),
-                    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-                    "Accept-Language": "en-US,en;q=0.9",
+                    "Accept": "application/xhtml+xml,text/html;q=0.9,application/xml;q=0.8,*/*;q=0.7",
+                    "Accept-Language": "eng",
                     "Accept-Encoding": "gzip, deflate",
                 },
                 timeout=SOURCE_TIMEOUT,
