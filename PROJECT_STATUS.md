@@ -814,3 +814,10 @@
 - EUR-Lex read-only Canary #134: success. 7개 공식 source, 245,502 visible-text chars; 정오표 3건 개별 문구 확인.
 - PR #6은 검증 후 Draft로 되돌려 main 병합을 차단했다. PR #3도 Draft 유지.
 - CRA archive #14–#18 correction reports 완료. 다음은 #13 이하 역순 감사 및 통합 CRA 보고서 작성. SIL 3 서보 드라이브 벤치마킹/하드웨어 블록 설계 보고서는 별도 deliverable로 아직 완료되지 않았으며, CRA 조사 결과와 기능안전 근거를 혼합하지 않고 별도 구조로 작성한다.
+
+## 2026-11-17 — main archive #19 동기화 및 정정 감사
+- main은 archive #19까지 전진했다. latest main HEAD 4c9f6145a8f41567bfe5d69e3f397b552beb4591, state count=19, history.json 2,412 entries.
+- main의 #19 commit은 history.json/state.json/archive 파일만 변경했다. PR #7을 통해 integration branch에 동기화(merge commit 01f4f797ac2689fcda425b02304685805272fd24).
+- main/integration protected blob 일치: state.json 743ee4379421390c85203000cffe2fa0bc43a239, history.json fee7cbe25f5a4881af35124c8a984f8c8d1a9b6d, archive #19 3d90ed95b47d6275e4d98d7c18cfbc5246ffa4e4.
+- archive #19의 logging quote 및 update locator 오류를 확인해 correction report #19 작성. 원본 archive 보존.
+- correction reports #14–#19 완료. 다음은 archive #13 이하 역순 감사.
