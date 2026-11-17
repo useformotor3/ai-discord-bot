@@ -1007,3 +1007,9 @@
 - 고정 synthetic text 1건, 1회 REST 요청, 20초 timeout, JSON claim schema/quote matching, API key header-only. Search Grounding 없음.
 - Manual workflow only, `confirm_free_tier=false` default. 실제 project billing tier를 확인할 수 없어 live API 호출은 하지 않는다.
 - workflow는 현재 Draft PR branch에만 있으므로 default branch 반영 전 dispatch 불가. 운영 workflow에는 영향 없음.
+
+
+## Gemini canary mock tests 통과
+- head `e2f3dbbc9e6cfb5bbd414cf410b5e23e506ed135`, CI Run #247: **116 passed, 1 xfailed**.
+- Source SHA pin / compileall / full pytest 성공. https://github.com/useformotor3/ai-discord-bot/actions/runs/43998889661
+- Canary tests use mocked HTTP opener only; live Gemini API requests remain zero.
