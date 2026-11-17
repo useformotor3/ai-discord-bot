@@ -36,10 +36,14 @@
 
 ## 주요 기술 자료
 
+- [CRA 통합 규제·기술 준수 보고서 v0.1](reports/CRA_INTEGRATED_COMPLIANCE_REPORT_2026-11-17.md)
+- [CRA 요구사항 추적표 v0.1 (CSV)](reports/CRA_REQUIREMENTS_TRACEABILITY_2026-11-17.csv)
+- [CRA 원문 정정 보고서 인덱스 (#1–#38)](reports/CRA_CORRECTION_INDEX_2026-11-17.md)
+- [운영 실행 관찰 및 데이터 무결성 확인](reports/PRODUCTION_RUN_OBSERVATION_2026-11-17.md)
 - [조사 품질 감사](reports/RESEARCH_QUALITY_AUDIT_2026-11-14.md)
 - [CRA 보고서 #28·#29 정정 기록](reports/CRA_CORRECTIONS_REPORTS_28_29_2026-11-14.md)
 - [자동화 코드 개선 설계 및 테스트 계획](reports/MAIN_PY_IMPROVEMENT_DESIGN_2026-11-14.md)
-- [테스트 실행 환경 감사 및 예비 검증 한계](reports/TEST_EXECUTION_ENVIRONMENT_AUDIT_2026-11-14.md)
+- [테스트 실행 환경 감사](reports/TEST_EXECUTION_ENVIRONMENT_AUDIT_2026-11-14.md)
 - [테스트 가이드](tests/README.md)
 
 ## 진행 원칙
