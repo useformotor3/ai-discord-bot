@@ -1090,3 +1090,8 @@
 - archive #19는 logging 근거를 잘못된 point (h)에 연결하고, update 요건을 다시 (h)에 인용했으며, 계정 생성/변경/삭제를 포함하는 구판 문구를 최종 OJ 직접 인용처럼 사용했다.
 - 실제 logging 근거는 Annex I Part I (2)(l), update는 (2)(c), availability는 (2)(h)로 분리한다. Correction report #19 작성 완료, 원본 보존.
 - correction reports #14–#19 완료. 다음은 archive #13 이하 감사.
+
+## 2026-11-17 — archive #13 정정
+- 원본 archive #13 (SHA 7523b68c1537b6ed4d2de197eeb6e5bd4698ea2e)를 검토했다. Article 11을 manufacturer vulnerability handling 조항으로 쓴 오류, Annex I Part II 번호/인용 오류, 익명 제보 및 patch 동시 공개를 일률적 의무로 표현한 오류, servo drive 전체를 Annex III Class I/II로 분류한 오류를 확인했다.
+- Article 13은 제조사 의무/위험평가/지원기간, Annex I Part II는 취약점 처리, Article 14는 actively exploited vulnerability 및 severe incident mandatory reporting을 규정한다.
+- correction report #13 생성. 원본 archive는 변경하지 않았다. correction reports #13–#19 완료.
