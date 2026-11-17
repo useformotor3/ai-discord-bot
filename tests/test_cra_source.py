@@ -174,3 +174,12 @@ def test_consolidated_cra_excerpt_excludes_recitals_and_keeps_operative_articles
     assert "Recital (1)" not in excerpt
     assert excerpt.startswith("Article 1")
     assert "ANNEX I" in excerpt
+
+
+
+def test_source_tls_certificate_error_fails_closed(monkeypatch):
+    error = requests.exceptions.SSLError("certificate verification failed")
+    monkeypatch.setattr(requests, "get", lambda *args, **kwargs: (_ for _ in ()).throw(error))
+
+    with pytest.raises(SourceValidationError, match="TLS 인증 검증 실패"):
+        fetch_official_cra_source()
