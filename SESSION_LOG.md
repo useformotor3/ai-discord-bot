@@ -1160,3 +1160,13 @@
 - 36개 SEC control/test matrix, 35개 CRA requirements matrix, 15개 interface applicability matrix와 링크했다.
 - secure boot, secure element, signed update, debug lock, rate limiting, RBAC/MFA 등은 위험기반 구현 후보로 분류. CRA가 특정 기술을 일률 의무화한다고 표현하지 않았다.
 - STO/SS1 등 기능안전 동작은 CRA 자동 요구사항에서 제외하고 별도 hazard/safety analysis 대상으로 유지했다.
+
+
+## 2026-11-17 — CRA 참조 보안 아키텍처 PR #23 병합
+
+- PR #23 squash merge 완료. Merge commit `b90a0ac07865c18d846323d843fef38b1123077a`.
+- Actions Run #531 (`44030343837`) success: source blob identity, dependency install, compileall, complete repository pytest all success on PR head `9886b12aa140f0853487df3d5aa2f00af0fc5578`.
+- Merge commit 자체의 추가 workflow/status는 조회 시점에 확인되지 않았다. PR Run #531 결과만 기록한다.
+- `reports/CRA_SERVO_DRIVE_REFERENCE_SECURITY_ARCHITECTURE_2026-11-17.md` main readback 예정; Mermaid block diagram, 6개 trust boundary, 10개 주요 block, 35 requirement/15 interface/36 SEC matrix 연결.
+- PR #23은 문서 8개 경로만 변경; 운영 코드/workflow/state/history/archive/SIL3 산출물 변경 없음.
+- 다음: 실제 제품 모델/회로/MCU/프로토콜/업데이트 경로를 확인하고 참조 아키텍처를 제품별 설계로 구체화한다. 정보가 없으면 generic design/test cases를 계속 축적하되 모델별 결론으로 표현하지 않는다.
