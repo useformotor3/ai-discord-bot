@@ -871,3 +871,11 @@
 - PDF artifact ID `14315096266` 다운로드 및 readback 완료; ZIP SHA-256 `82e86c3347413bc6f210a7403939141679c34e5ad738822043af87fc5c2290c`가 GitHub metadata와 일치하고 내부 PDF hashes도 재계산 결과와 일치.
 - 기존 HTML source canary도 9개 allowlisted official sources, Article 64(10)/67 corrigenda, Article 13(8) locator/quote 통과.
 - M/606 item18 deadline `31/01/2027` 시각 검증 완료. Guidance Commission primary byte identity만 미확인.
+
+
+## 2026-11-17 — 최종 branch-head Run #690 재검증
+
+- 최신 문서/로그 변경이 반영된 branch HEAD `535300d60e1e943a867e3348c3c152832238b665`에서 Run #690 성공: **148 passed / 1 xfailed**.
+- Exact source blob identity, compileall, PDF source canary 2종, artifact upload, 9개 official HTML source, consolidated corrigenda, Article 13(8) locator/quote 통과.
+- 최신 artifact ID `14315106623` 다운로드 후 ZIP SHA-256 `da2f0e5fbfb5f5fa66360a2faa5af3d85821d3b7269885e34e1a3115f37cd3e2` 재계산 일치. 내부 PDF SHA-256도 manifest와 재계산 결과 일치.
+- PR #33은 Run #690 검증 완료 상태로 병합 전 최종 diff 및 safety checkpoint 대기.
