@@ -387,3 +387,5 @@ The CRA feature was merged only into the isolated integration branch, not main. 
 - [Correction #19](reports/CRA_CORRECTION_REPORT_19_2026-11-17.md): corrects CRA logging, update and availability locators and the non-verbatim account-audit quotation.
 
 - [Correction #13](reports/CRA_CORRECTION_REPORT_13_2026-11-17.md): corrects CVD, vulnerability-handling, Article 14 reporting and Important Class I/II classification claims.
+
+- [Correction #12](reports/CRA_CORRECTION_REPORT_12_2026-11-17.md): corrects support-period duration, security-update availability retention, free-update exception and Article 13(14) mis-citation.
