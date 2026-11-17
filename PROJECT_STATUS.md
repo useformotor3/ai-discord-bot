@@ -828,7 +828,7 @@
 - Pre-merge ref `safety/pre-merge-main-pr30-2026-11-17` → `80245d9e132380a10581612c031f87869993b98d`; post-merge ref `safety/post-merge-main-pr30-2026-11-17` → `975ec6728988e43d9a1ebbf6f6d84288aa44c2fd`; readback compare에서 main과 post-merge ref 동일 확인.
 - PR #30 범위: 한국어 CRA 감사 보고서, 관리 문서·로그 동기화, 격리 테스트 workflow push branch allowlist 1줄. 운영 애플리케이션 코드, 운영 `run.yml`, state/history/archive, Gemini/Discord 외부 실행 및 SIL 3 과거 산출물은 변경하지 않았다.
 - M/606 Commission PDF 및 Guidance ANFR mirror raw-byte SHA-256 검증 완료. M/606 item 18 deadline 31/01/2027 시각 확인 완료. Guidance Commission primary byte identity는 미확인.
-- 현재 구현 작업 브랜치: `cra/guidance-claim-mapping-2026-11-17` (PR #33; Run #669 success, merge 전 검토 중).
+- 현재 구현 작업 브랜치: 없음 (PR #33 병합 완료; PR #34는 문서 전용 사후 동기화).
 
 
 ## 2026-11-17 — PR #31 사후 동기화 완료
@@ -836,7 +836,7 @@
 - PR #31 merge commit: `24312166b892127e845721793b1abfee4d91f9c2`.
 - [Actions Run #618](https://github.com/useformotor3/ai-discord-bot/actions/runs/44051283237): success, 141 passed / 1 xfailed; compileall, source blob identity, 9-source live canary 및 Article 13(8) locator/quote 통과.
 - Pre-merge ref `safety/pre-merge-main-pr31-2026-11-17` → `975ec6728988e43d9a1ebbf6f6d84288aa44c2fd`; post-merge ref `safety/post-merge-main-pr31-2026-11-17` → `24312166b892127e845721793b1abfee4d91f9c2`. post ref와 main compare identical 확인.
-- 현재 구현 작업 브랜치: `cra/guidance-claim-mapping-2026-11-17`; PR #33 병합 후 최신 main에서 다음 CRA 작업 브랜치를 생성한다.
+- 현재 구현 작업 브랜치: 없음. 다음 구현은 PR #34 사후 동기화 후 최신 main을 조회하고 새 작업 브랜치에서 시작한다.
 
 
 ## 2026-11-17 — Guidance claim mapping 및 PDF source acquisition 구현 중
@@ -887,3 +887,13 @@
 - PDF canary (2 docs), HTML source canary (9 docs), compileall, exact source blob pins, Article 64(10)/67 corrigenda and Article 13(8) locator/quote all passed.
 - Artifact #14314174227 downloaded and rehashed; ZIP SHA-256 `8fddbba46ccf9b0901b36d88ce27d79817ac620f9fabf37a8b6beefe5dfcaa82` matches GitHub metadata; internal PDF hashes match manifest.
 - PR #33 remains open pending final diff review and pre-merge recovery checkpoint.
+
+
+## 2026-11-17 — PR #33 병합 완료
+
+- PR #33 squash merge: `50e4784de60430bb2b8c70ca06b41627d75379ae`.
+- [Run #713](https://github.com/useformotor3/ai-discord-bot/actions/runs/44054006627): success, **148 passed / 1 xfailed**, compileall, exact source pins, 2 PDF canaries, artifact upload, 9 official HTML sources, Article 64(10)/67 corrigenda, Article 13(8) locator/quote 통과.
+- Pre-merge `safety/pre-merge-main-pr33-2026-11-17` → `16b5d2e732e9f5f158d2b79aa9c0c62f0488fc92`; post-merge `safety/post-merge-main-pr33-2026-11-17` → `50e4784de60430bb2b8c70ca06b41627d75379ae`. Post ref와 main compare identical.
+- Guidance claim register G-001~G-013 및 15/35/36개 매트릭스 연결, PDF fetch/hash automation, provenance manifest가 main에 병합됨.
+- M/606 item 18 deadline `31/01/2027` 시각 확인. Guidance Commission-hosted primary byte identity만 미확인.
+- 현재 구현 작업 브랜치 없음. PR #34는 문서 전용 사후 동기화이며 다음 구현은 최신 main에서 새 branch로 시작한다.
