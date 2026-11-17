@@ -1106,3 +1106,8 @@
 - 원본 archive #11의 Annex I Part I (2)(d)/(e) 인용은 정확하지만, 모든 비필수 포트 비활성화 및 모든 추가 기능의 관리자 opt-in을 법령이 직접 지정한 것처럼 과장한 부분을 확인했다.
 - 실제 요구는 attack surface 제한(외부 인터페이스 포함), secure-by-default configuration 및 original-state reset 가능성이다. 포트/서비스별 기본값과 opt-in 방식은 위험평가 기반 구현으로 분류한다.
 - correction report #11 생성, 원본 archive는 보존했다. correction reports #11–#19 완료.
+
+## 2026-11-17 — archive #10 정정
+- 원본 archive #10의 Raw Text Quote는 Article 13(8) support period와 Annex I Part II (8) free security update 내용을 결합한 요약문이며 최종 OJ verbatim quote가 아니다.
+- Article 13(8)은 support period, Article 13(9)는 각 security update의 availability retention, Annex I Part II (8)은 무상 보안 업데이트 제공, Part II (5)는 CVD policy다. 각각 독립 claim으로 분리했다.
+- correction report #10 생성, 원본 archive SHA 보존. correction reports #10–#19 완료.
