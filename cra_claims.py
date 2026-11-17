@@ -318,22 +318,26 @@ def validate_claim_evidence(report, source):
             return False, f"{claim_id}: JSON statement가 본문에 그대로 연결되지 않습니다."
 
         if category in {"legal_requirement", "official_explanation"}:
-            legal_count += 1
+            if category == "legal_requirement":
+                legal_count += 1
             source_id = claim.get("source_id")
             locator = claim.get("locator")
             quote = claim.get("quote")
             if not isinstance(source_id, str) or source_id not in source_by_id:
                 return False, f"{claim_id}: 등록되지 않은 공식 source_id입니다."
+            if not isinstance(locator, str) or len(locator.strip()) < 3:
+                return False, f"{claim_id}: 근거 locator/페이지 위치가 없습니다."
             source_text = source_by_id[source_id].get("text", "")
-            scope = extract_locator_scope(locator, source_text)
-            if not scope:
-                return False, f"{claim_id}: 지정한 Article paragraph/Annex Part-point locator가 원문에서 확인되지 않습니다."
             if not isinstance(quote, str) or len(quote.strip()) < 50:
                 return False, f"{claim_id}: 직접 인용문은 50자 이상이어야 합니다."
             if _normalized(quote) not in _normalized(source_text):
                 return False, f"{claim_id}: 직접 인용문이 지정 source_id 원문과 일치하지 않습니다."
-            if _normalized(quote) not in _normalized(scope):
-                return False, f"{claim_id}: 직접 인용문이 지정한 paragraph/point 범위 안에서 확인되지 않습니다."
+            if category == "legal_requirement":
+                scope = extract_locator_scope(locator, source_text)
+                if not scope:
+                    return False, f"{claim_id}: 지정한 Article paragraph/Annex Part-point locator가 원문에서 확인되지 않습니다."
+                if _normalized(quote) not in _normalized(scope):
+                    return False, f"{claim_id}: 직접 인용문이 지정한 paragraph/point 범위 안에서 확인되지 않습니다."
         else:
             basis = claim.get("basis")
             if not isinstance(basis, str) or len(basis.strip()) < 10:
