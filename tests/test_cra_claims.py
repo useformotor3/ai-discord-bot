@@ -314,3 +314,95 @@ def test_annex_part_ii_numbered_point_locator_accepts_exact_point_quote():
     )
     valid, reason = validate_claim_evidence(report, SOURCE)
     assert valid, reason
+
+
+
+def test_article_locator_rejects_quote_from_another_paragraph_in_same_article():
+    statement = "제조자는 지원 기간 동안 취약점을 처리해야 한다(Article 13(8))."
+    claim = {
+        "claim_id": "C-001",
+        "category": "legal_requirement",
+        "statement": statement,
+        "source_id": SOURCE_ID,
+        "locator": "Article 13(8)",
+        "quote": "Manufacturers shall ensure that each security update remains available after it has been issued.",
+    }
+    report = (
+        "## 규격 근거 및 상세 내용\n"
+        + statement + " [C-001]\n"
+        + "## 출처 자료\nEUR-Lex\nCLAIM_EVIDENCE_JSON\n" + FENCE + "json\n"
+        + json.dumps({"claims": [claim]}, ensure_ascii=False)
+        + "\n" + FENCE
+    )
+    valid, reason = validate_claim_evidence(report, SOURCE)
+    assert not valid
+    assert "paragraph/point 범위" in reason
+
+
+def test_official_explanation_claim_uses_source_quote_without_article_locator():
+    guidance_source = {
+        "id": "CRA-GUIDANCE",
+        "text": (
+            "Today's guidance - though non-binding - gives companies the clarity "
+            "they need to prepare now, confidently and efficiently."
+        ),
+    }
+    source = {
+        "sources": SOURCE["sources"] + [guidance_source]
+    }
+    legal_statement = "제조자는 지원 기간 동안 취약점을 효과적으로 처리해야 한다(Article 13(8))."
+    guidance_statement = "Commission guidance is non-binding and gives companies implementation clarity."
+    claims = [
+        {
+            "claim_id": "C-001",
+            "category": "legal_requirement",
+            "statement": legal_statement,
+            "source_id": SOURCE_ID,
+            "locator": "Article 13(8)",
+            "quote": QUOTE,
+        },
+        {
+            "claim_id": "C-002",
+            "category": "official_explanation",
+            "statement": guidance_statement,
+            "source_id": "CRA-GUIDANCE",
+            "locator": "Publication page / Next steps",
+            "quote": (
+                "Today's guidance - though non-binding - gives companies the clarity "
+                "they need to prepare now, confidently and efficiently."
+            ),
+        },
+    ]
+    report = (
+        "## 규격 근거 및 상세 내용\n"
+        + legal_statement + " [C-001]\n"
+        + guidance_statement + " [C-002]\n"
+        + "## 출처 자료\nEUR-Lex and European Commission\n"
+        + "CLAIM_EVIDENCE_JSON\n" + FENCE + "json\n"
+        + json.dumps({"claims": claims}, ensure_ascii=False)
+        + "\n" + FENCE
+    )
+    valid, reason = validate_claim_evidence(report, source)
+    assert valid, reason
+
+
+def test_claim_statement_must_match_body_exactly():
+    body_statement = "제조자는 지원 기간 동안 취약점을 처리해야 한다(Article 13(8))."
+    claim = {
+        "claim_id": "C-001",
+        "category": "legal_requirement",
+        "statement": "본문에 없는 다른 주장으로 바꾸어 기록했습니다.",
+        "source_id": SOURCE_ID,
+        "locator": "Article 13(8)",
+        "quote": QUOTE,
+    }
+    report = (
+        "## 규격 근거 및 상세 내용\n"
+        + body_statement + " [C-001]\n"
+        + "## 출처 자료\nEUR-Lex\nCLAIM_EVIDENCE_JSON\n" + FENCE + "json\n"
+        + json.dumps({"claims": [claim]}, ensure_ascii=False)
+        + "\n" + FENCE
+    )
+    valid, reason = validate_claim_evidence(report, SOURCE)
+    assert not valid
+    assert "statement가 본문에" in reason
