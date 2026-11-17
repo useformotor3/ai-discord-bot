@@ -3,7 +3,7 @@ from datetime import datetime, timezone
 from html.parser import HTMLParser
 import hashlib
 import re
-from urllib.parse import urlparse
+from urllib.parse import urljoin, urlparse
 
 
 CRA_SOURCE_URL = "https://publications.europa.eu/resource/celex/02024R2847-20241120?language=eng"
@@ -244,6 +244,51 @@ def _extract_relevant_excerpt(source_id, text):
     return "EHDS application date: 26 March 2027.\nRelevant CRA amendment:\n" + excerpt
 
 
+def _request_with_safe_redirects(requests_module, definition):
+    """Follow only allowlisted HTTPS redirects; upgrade same-host HTTP redirects to HTTPS."""
+    allowed_hosts = definition.get("allowed_hosts", ())
+    current_url = definition["url"]
+    for _ in range(6):
+        current = urlparse(current_url)
+        if current.scheme != "https" or current.hostname not in allowed_hosts:
+            raise SourceValidationError(
+                f"공식 source 요청 URL이 HTTPS allowlist를 벗어났습니다: {definition['id']} / {current_url}"
+            )
+        response = requests_module.get(
+            current_url,
+            headers={
+                "User-Agent": (
+                    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
+                    "(KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+                ),
+                "Accept": "application/xhtml+xml,text/html;q=0.9,application/xml;q=0.8,*/*;q=0.7",
+                "Accept-Language": "eng",
+                "Accept-Encoding": "gzip, deflate",
+            },
+            timeout=SOURCE_TIMEOUT,
+            allow_redirects=False,
+        )
+        if response.status_code not in (301, 302, 303, 307, 308):
+            return response, getattr(response, "url", current_url)
+        location = response.headers.get("Location")
+        if not location:
+            raise SourceValidationError(
+                f"공식 source 리디렉션 응답에 Location이 없습니다: {definition['id']}"
+            )
+        target = urljoin(current_url, location)
+        parsed_target = urlparse(target)
+        if parsed_target.hostname not in allowed_hosts or parsed_target.scheme not in ("http", "https"):
+            raise SourceValidationError(
+                f"허용되지 않은 공식 source 리디렉션입니다: {definition['id']} / {target}"
+            )
+        if parsed_target.scheme == "http":
+            target = parsed_target._replace(scheme="https").geturl()
+        current_url = target
+    raise SourceValidationError(
+        f"공식 source 리디렉션 횟수가 제한을 초과했습니다: {definition['id']}"
+    )
+
+
 def fetch_official_cra_source():
     """Fetch allowlisted official legal texts and Commission publication/status pages."""
     import requests
@@ -252,19 +297,7 @@ def fetch_official_cra_source():
     retrieved_at = datetime.now(timezone.utc).isoformat()
     for definition in CRA_SOURCE_CATALOG:
         try:
-            response = requests.get(
-                definition["url"],
-                headers={
-                    "User-Agent": (
-                        "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
-                        "(KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
-                    ),
-                    "Accept": "application/xhtml+xml,text/html;q=0.9,application/xml;q=0.8,*/*;q=0.7",
-                    "Accept-Language": "eng",
-                    "Accept-Encoding": "gzip, deflate",
-                },
-                timeout=SOURCE_TIMEOUT,
-            )
+            response, final_url = _request_with_safe_redirects(requests, definition)
         except requests.exceptions.SSLError as exc:
             raise SourceValidationError(
                 f"공식 source TLS 인증 검증 실패: {definition['id']}"
@@ -293,7 +326,6 @@ def fetch_official_cra_source():
                 f"공식 source가 HTTP 202 비동기 수락 응답을 반환했습니다: {definition['id']} "
                 f"(Retry-After={response.headers.get('Retry-After', 'unknown')})"
             )
-        final_url = getattr(response, "url", definition["url"])
         response_text = response.text or ""
         if not response_text.strip():
             raise SourceUnavailableError(
