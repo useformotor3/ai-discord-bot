@@ -208,7 +208,17 @@ def _extract_visible_text(html):
 
 
 def _extract_relevant_excerpt(source_id, text):
-    """Keep the CRA-amending EHDS Article 104 excerpt, not the unrelated full EHDS act."""
+    """Keep operative CRA text and the CRA-specific EHDS amendment excerpt."""
+    if source_id == "CRA-2024-2847-consolidated":
+        lines = text.splitlines()
+        starts = [
+            index for index, line in enumerate(lines)
+            if re.fullmatch(r"Article\s+1", line, re.IGNORECASE)
+        ]
+        if not starts:
+            raise SourceValidationError("EUR-Lex consolidated text에서 Article 1 시작 위치를 찾지 못했습니다.")
+        # Exclude recitals/front matter; retain all operative Articles and Annexes with block boundaries.
+        return "\n".join(lines[starts[-1]:])
     if source_id != "CRA-2025-327-EHDS-amendment":
         return text
     match = re.search(
@@ -220,7 +230,7 @@ def _extract_relevant_excerpt(source_id, text):
         raise SourceValidationError("Regulation (EU) 2025/327에서 CRA 개정 Article 104를 추출하지 못했습니다.")
     excerpt = match.group(0)[:12000]
     if "26 March 2027" not in text:
-        raise RuntimeError("Regulation (EU) 2025/327의 적용 개시일 26 March 2027을 확인하지 못했습니다.")
+        raise SourceValidationError("Regulation (EU) 2025/327의 적용 개시일 26 March 2027을 확인하지 못했습니다.")
     return "EHDS application date: 26 March 2027.\nRelevant CRA amendment:\n" + excerpt
 
 
