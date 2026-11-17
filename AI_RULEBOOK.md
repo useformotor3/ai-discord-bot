@@ -210,6 +210,7 @@
 ### 18.5 현재 안전 체크포인트
 - PR #26 pre-merge main checkpoint: `safety/pre-merge-main-pr26-2026-11-17` → `f4bb159e164b00e4586868f335519cea3c4802ae` (readback verified).
 - PR #26 post-merge main checkpoint: `safety/post-merge-main-pr26-2026-11-17` → `8066c166ba01fbfb8d25f61ce0ce6ed72f151854` (readback verified).
+- PR #27 pre-merge main checkpoint: `safety/pre-merge-main-pr27-2026-11-17` → `8066c166ba01fbfb8d25f61ce0ce6ed72f151854`; post-merge checkpoint: `safety/post-merge-main-pr27-2026-11-17` → `5f0c54a018e18b3453b1c836a5a7d2e9a266331b` (both readback verified).
 - 과거 pre-integration refs는 역사적 checkpoint로 보존한다.
 - PR #26은 코드/테스트/CI 통합이며 운영 Gemini/Discord 실행이나 state/history/archive 변경을 수행하지 않았다. 운영 데이터 snapshot/restore 검증은 별도 미완료이므로 새 코드를 실제 운영 실행하기 전에는 백업·복원 검증을 별도로 수행한다.
 
