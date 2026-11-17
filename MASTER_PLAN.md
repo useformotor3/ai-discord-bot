@@ -545,3 +545,9 @@
 1. [완료] Article 13(8)/(9), Annex I Part II (1)–(8) 구분.
 2. [완료] non-verbatim quote 및 CVD/free update/support-period 혼합을 correction report #10에 반영.
 3. [진행] archive #9 이하 역순 감사.
+
+## 2026-11-17 — archive #9 correction audit
+1. [완료] Annex I Part II (1) SBOM minimum top-level dependency 범위 검증.
+2. [완료] SPDX/CycloneDX, transitive dependencies, hardware revision mapping을 법적 의무가 아닌 구현 선택/권고로 분리.
+3. [완료] vulnerability remediation (2)와 fixed-vulnerability disclosure (4) 구분.
+4. [진행] archive #8 이하 역순 감사.
