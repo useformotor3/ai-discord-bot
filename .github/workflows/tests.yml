@@ -83,8 +83,8 @@ jobs:
             test "$actual" = "$expected"
           }
           verify_blob "main.py" "1bdb99745c11fd731f2006f8b03d48e1d2aebdff"
-          verify_blob "cra_claims.py" "e6c63fdeeda8ae5c3320fac372f9973319ca1760"
-          verify_blob "tests/test_cra_claims.py" "d657be903844299e79a874bec991686962a80348"
+          verify_blob "cra_claims.py" "8a3302179c9234f085d7b66b2e9bbf2d22d6f71d"
+          verify_blob "tests/test_cra_claims.py" "c7c45cb6d23eb3ddae5e25ccbfc88f15865f7247"
           verify_blob "scripts/cra_gemini_canary.py" "0c95d97180881e54c8eee1e28e91b3ddd202695f"
           verify_blob "tests/test_cra_gemini_canary.py" "62b3b91d582b3aa8352292be5d20bb914fe1c11c"
           verify_blob "scripts/cra_source_canary.py" "0f5bd01ea4994874dcc0e6dfb177a740ec56820c"
