@@ -340,7 +340,7 @@
 - Official explanation claims must be linked to the Commission source page and explicitly classified as non-binding explanation. Interpretations and engineering recommendations must not be represented as legal requirements.
 - The source validator proves source traceability and text/locator consistency; it does not establish the correctness of legal interpretation or product-specific CRA applicability.
 - CI live canary currently checks nine official sources and Article 13(8). Expand Article/Annex coverage before claiming complete legal locator coverage.
-- Do not claim that Commission Guidance PDF/Annex or M/606 decision Annex was read until its actual file has been fetched, parsed and hashed.
+- Do not claim that the original Commission Guidance/M/606 PDF binary was downloaded, byte-verified or SHA-256 hashed until the bytes have actually been obtained and hashed. If only the PDF text layer is available through a document viewer, describe the work precisely as 'PDF text-layer review' and keep binary-integrity status unverified.
 
 ## 50. Commission PDF 및 부속문서 취득·해시 증거 규칙 (2026-11-17)
 
