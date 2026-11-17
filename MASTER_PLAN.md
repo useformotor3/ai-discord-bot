@@ -478,3 +478,13 @@
 6. [후속] paragraph/point 수준 locator 범위 검증과 false-negative fixture 추가.
 7. [후속] 최신 main과 다시 비교(마지막 스냅샷 125 ahead / 10 behind)하고 운영 state/history/archive 불변성 확인 후 별도 integration branch에서 검증한다.
 8. [보류] PR #3 Draft 유지. 최신 main 기준 통합 CI 및 보호 경로 검증 전 merge 금지. Gemini live canary는 billing tier 확인 전 미실행.
+
+## 2026-11-17 — Official Journal corrigenda source gate 확장
+1. [완료] CRA 영어 corrigenda 2024-12-05, 2025-07-02, 2025-10-17을 개별 공식 ELI URL로 source catalog에 추가.
+2. [완료] 각 정오표의 Article/표제와 원문 for/read 문구를 필수 marker로 검사. 누락/비공식 redirect/짧은 응답은 fail-closed.
+3. [완료] report manifest와 Gemini prompt에 3개 개별 정오표 source ID/URL/version 반영.
+4. [완료] EUR-Lex live read-only Canary #115 success; 7개 source, 245,502 visible-text chars 수집.
+5. [완료] 최종 격리 CI #323: 117 passed, 1 xfailed; source SHA, compileall, full pytest 통과.
+6. [후속] paragraph/point 수준 claim locator 정확도와 false-negative 테스트.
+7. [후속] 최신 main 및 운영 state/history/archive 보존 상태 immutable SHA 감사 후 별도 integration branch에서 검증.
+8. [보류] PR #3 Draft 유지. 최신 main 통합 CI 완료 전 merge 금지. Gemini live canary는 billing/data-use 확인 전 미실행.
