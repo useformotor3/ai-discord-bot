@@ -202,3 +202,7 @@ The final OJ DoS/availability requirement is Annex I Part I (2)(h), protecting e
 Original archive #5 blob: `e6dfcf688a3859b9468dbe7a4ef28c2d7d3c94ad`. Correction report: `reports/CRA_CORRECTION_REPORT_5_2026-11-17.md`.
 
 The cited Annex I Part I point 3(f) is not a final OJ locator; attack-surface limitation is point (2)(j). Recital 9 discusses physical and logical connectivity, but does not directly require permanent JTAG/SWD/UART disablement or eFuse/OTP. Original archive remains unchanged.
+
+## 20. EUR-Lex source-pack size correction — 2026-11-17
+
+A re-addition of the individual source lengths from Canary #209 corrected the previously reported aggregate. The exact total is **636,040 visible-text characters**, not 245,502. The omitted item was the 2025/327 EHDS amendment source (394,354 characters). Individual lengths: CRA consolidated 196,076; corrigenda 7,583 / 8,318 / 8,179; 2025/327 amendment 394,354; 2025/1535 delegated act 6,246; 2026/881 delegated act 15,284. Earlier aggregate records remain in the append-only log as superseded measurements.
