@@ -262,7 +262,7 @@ def validate_traceability(root="."):
     _require("CRA_GUIDANCE_CLAIM_REGISTER_2026-11-17.csv" in integrated
              and "CRA_PDF_SOURCE_PROVENANCE_2026-11-17.json" in integrated
              and "CRA_M606_ANNEX_I_SERVO_DRIVE_RELEVANCE_2026-11-17.csv" in integrated
-             and FILES["product_intake"] in integrated,
+             and Path(FILES["product_intake"]).name in integrated,
              "integrated report must link claim register and PDF provenance", errors)
 
     if errors:
