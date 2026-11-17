@@ -1,10 +1,10 @@
 # CRA 공식 Guidance 및 M/606 결정 Annex 감사 — 2026-11-17
 
 - 감사 기준: 2026-11-17 (KST)
-- 작업 브랜치: `cra/official-annex-audit-2026-11-17`
-- 기준 main: `80245d9e132380a10581612c031f87869993b98d`
+- 작업 브랜치: `cra/guidance-claim-mapping-2026-11-17`
+- 기준 main: `16b5d2e732e9f5f158d2b79aa9c0c62f0488fc92`
 - 범위: Commission Guidance C(2026) 5252 Annex 및 Commission Implementing Decision C(2026) 7861 Annex의 내용 확인, 서보 드라이브 CRA 적용성·설계·추적성 영향
-- 상태: **PDF 문서 텍스트 확인 및 1차 내용 감사 완료; 원본 바이너리 SHA-256 및 완전한 파일 보관은 미완료**
+- 상태: **M/606 Annex Commission PDF 원본 bytes/SHA-256 확인 완료; Guidance는 ANFR mirror bytes/SHA-256 확인 완료(Commission 원본과 byte identity 미확인); M/606 item 18 기한 시각 확인 완료**
 - 해석 원칙: C(2026) 5252는 비구속적 Commission guidance이며 CRA 법령/법원 판결을 대체하지 않는다. C(2026) 7861 Annex의 ESO 표준 초안 채택 기한을 harmonised standard 발행일, CRA 적용일 또는 제품 인증 기한으로 오해하지 않는다.
 
 ## 1. 출처 및 취득 상태
@@ -15,8 +15,8 @@
 - Commission PDF download URL (Annex): https://ec.europa.eu/newsroom/dae/redirection/document/131456
 - 확인 가능한 PDF mirror: https://www.anfr.fr/fileadmin/CRA/Commission_guidance_on_the_application_of_Regulation__EU__20242847__Cyber_Resilience_Act_.pdf
 - 문서 표제: Brussels, 27.7.2026; C(2026) 5252 final; Annex, Commission guidance on the application of Regulation (EU) 2024/2847.
-- PDF text extraction: 브라우저 PDF text layer로 문서의 목차, 문단 번호, 페이지 locator 및 주요 본문을 확인했다. 문서가 80여 쪽 분량이며 255개 이상의 numbered paragraphs와 예시를 포함한다.
-- 원본 파일 취득/해시: 현재 작업 실행환경의 직접 다운로드는 실패했다. 따라서 PDF 바이너리 SHA-256, 파일 크기, 페이지별 원본 byte identity는 아직 확인하지 않았다. ANFR mirror는 문서 표제·날짜·C(2026) 번호가 Commission publication page의 문서와 일치하지만, 원본 Commission download URL과의 byte-for-byte 동일성은 검증하지 않았다.
+- PDF binary: 1,190,726 bytes; 84 pages; raw-byte SHA-256 `fe209c250e3d1f7599e42826d91963666951332927edcf511a2e79fe8d2f8234`; extracted text 250,162 chars; text SHA-256 `147f6649b5089cbc4d55c7af77abdcdbd04263b116960812c579fd25acda7425`.
+- 취득 경로: Commission URL `https://ec.europa.eu/newsroom/dae/redirection/document/131456`를 우선 요청했으나 이 실행에서 PDF로 검증되지 않아 allowlist된 ANFR mirror를 fallback으로 사용했다. 최종 URL은 ANFR이며 mirror bytes의 hash를 확인했다. Commission-hosted 원본과 byte-for-byte 동일성은 아직 입증하지 않았다.
 - 법적 지위: Guidance paragraph 8은 guidance가 경제운영자 등에게 구속력이 없고 CRA의 권위 있는 해석은 EU 사법재판소만 할 수 있음을 명시한다. 개별 제품의 case-by-case 평가를 대체하지 않는다.
 
 ### 1.2 Commission Implementing Decision C(2026) 7861 Annex (M/606)
@@ -24,9 +24,17 @@
 - Commission document register record: https://ec.europa.eu/transparency/documents-register/detail?ref=C(2026)7861&lang=en
 - 직접 확인된 Annex PDF: https://ec.europa.eu/transparency/documents-register/api/files/C%282026%297861_1/de00000001090401
 - 문서 표제: Brussels, 10.11.2026; C(2026) 7861 final; Annex to the Commission Implementing Decision amending Implementing Decision C(2025)618 on a standardisation request to CEN, Cenelec and ETSI for products with digital elements supporting Regulation (EU) 2024/2847.
-- PDF text extraction: Commission document-register PDF text layer에서 Annex I의 신규 European Standards 목록 및 ESO adoption deadlines를 확인했다.
-- 원본 파일 취득/해시: 직접 다운로드가 실행환경에서 실패하여 바이너리 SHA-256 및 byte identity는 미확인이다. PDF 텍스트와 페이지 locator는 확인했으나, 저장소에 원본 PDF를 보관했다고 주장하지 않는다.
+- PDF binary: 151,267 bytes; 6 pages; raw-byte SHA-256 `262b09596cb5cbe7d72a2c7789fb2512ee00db7f69082e7def2c8181b0f63276`; extracted text 8,058 chars; text SHA-256 `06409ee840550a4e602aa30b4f77a9eaf90a44735f820ce2b1239cccec6a54dd`.
+- Commission document-register URL에서 PDF bytes를 직접 취득했고, PDF header, C(2026) 7861 document markers, page count, raw-byte/text SHA-256을 검증했다. 원본 파일은 7일 CI artifact로 보관되며 영구 저장소에 binary를 커밋했다고 주장하지 않는다.
 - 중요 해석: 표의 날짜는 각 ESO가 표준을 채택(adoption)해야 하는 기한이다. 해당 날짜만으로 OJ 인용, harmonised status, presumption of conformity 발생 또는 CRA 제품 적합성 완료를 의미하지 않는다.
+
+
+
+### 1.3 CI artifact 및 재현 가능한 provenance
+
+- [기계 판독형 PDF provenance manifest](CRA_PDF_SOURCE_PROVENANCE_2026-11-17.json)에 요청 URL, 최종 URL, fallback 여부, 파일 크기, 페이지 수, raw-byte SHA-256, extracted-text SHA-256을 기록했다.
+- GitHub Actions Run #642 (`44052336199`) artifact ID `14313359693`에 PDF 2개, 추출 텍스트 2개, manifest를 업로드했다. ZIP SHA-256 `150a687e4d4b13fdd20a432e99fc8ea9ec5bc847b8551dd3f157258dc41cd869`은 GitHub artifact metadata와 다운로드한 ZIP에서 재계산한 값이 일치한다.
+- Artifact는 2026-11-24 09:05:46 UTC까지 보존된다. 원본 PDF의 영구 보관 위치는 artifact가 만료되기 전 별도로 결정해야 한다.
 
 ## 2. C(2026) 5252 Guidance에서 확인한 서보 드라이브 관련 핵심
 
@@ -87,7 +95,7 @@ Annex I는 ESO(CEN/Cenelec/ETSI)가 작성할 신규 유럽표준의 주제와 a
 |---:|---|---|
 | 16 | ID 관리/PAM, 인증 및 접근제어 리더(생체인식 포함) | 31.01.2027 |
 | 17 | 독립형·내장형 브라우저 | 31.01.2027 |
-| 18 | 비밀번호 관리자 | PDF text extraction에서 날짜 셀 판독 불가 — 원본 표 시각 확인 필요 |
+| 18 | 비밀번호 관리자 | 31/01/2027 (PDF p.3, 인쇄 페이지 2의 우측 deadline 셀 시각 확인 완료; 설명은 다음 페이지로 이어짐) |
 | 19 | 악성코드 검색·제거·격리 소프트웨어 | 31.01.2027 |
 | 20 | VPN 기능 제품 | 31.01.2027 |
 | 21 | 네트워크 관리 시스템 | 31.01.2027 |
@@ -112,7 +120,7 @@ Annex I는 ESO(CEN/Cenelec/ETSI)가 작성할 신규 유럽표준의 주제와 a
 | 40 | Smart-meter gateway 및 고급 보안 목적 장치 | 31.01.2027 |
 | 41 | Smartcard 및 secure element 유사 장치 | 31.01.2027 |
 
-**추출 품질 주의:** 항목 18의 날짜 셀은 텍스트 추출에서 보이지 않는다. 주변 항목의 날짜를 근거로 31.01.2027이라고 단정하지 않는다. 최종 확정 전 PDF 원본 표의 해당 셀을 시각적으로 확인한다. 다른 행도 최종 배포 전 표 이미지와 텍스트를 교차 검증한다.
+**추출 품질 주의:** 항목 18의 날짜 셀은 PDF text extraction에서 행 분리로 누락됐으나, PDF p.3(인쇄 페이지 2) 원본 페이지 이미지의 우측 deadline 셀에서 `31/01/2027`을 시각적으로 확인했다. 행 설명은 페이지 경계에서 다음 페이지로 이어진다. 날짜는 이제 확인 상태다.
 
 ### 3.3 서보 드라이브에 대한 잠정적 관련성
 
@@ -136,9 +144,9 @@ Annex I는 ESO(CEN/Cenelec/ETSI)가 작성할 신규 유럽표준의 주제와 a
 
 ## 5. 확인되지 않은 사항과 후속 검증
 
-- C(2026) 5252 Commission-hosted PDF와 C(2026) 7861 Annex PDF의 원본 byte 다운로드 및 SHA-256은 실행환경에서 실패했다. 현재 기록은 PDF text layer의 문단·페이지 추출을 근거로 한 내용 감사이며, 원본 바이너리 무결성 검증은 아니다.
-- C(2026) 7861의 본문 decision 및 모든 첨부 파일이 Annex I 외에 존재하는지 document register 전체 항목을 추가 확인한다.
-- M/606 Annex I 항목 18의 날짜 셀 및 표의 줄바꿈/병합 셀은 원본 PDF 페이지 이미지로 확인한다.
+- C(2026) 5252는 ANFR mirror binary hash가 확인됐지만 Commission-hosted 원본 URL의 bytes는 취득되지 않아 byte identity가 미확인이다.
+- C(2026) 7861 Annex I PDF는 Commission document-register 원본 bytes 및 SHA-256 확인 완료. C(2026) 7861 본문 decision 및 Annex I 외 첨부가 있는지 document register 전체 항목은 추가 확인한다.
+- M/606 Annex I item 18 deadline `31/01/2027`은 PDF p.3(인쇄 페이지 2) 원본 이미지로 시각 확인 완료.
 - C(2026) 5252의 서보 드라이브 직접 사례는 없다. Industrial robot 사례는 RDPS의 원리 예시로만 사용한다.
 - 제품별 적용성/분류를 확정하려면 실제 모델, 회로도, MCU/FPGA, 통신 프로토콜, remote service architecture, firmware/update policy, EU supply chain facts가 필요하다.
 - Guidance는 비구속적이다. CRA Regulation (EU) 2024/2847 및 Official Journal 정본과 충돌할 경우 법령 정본을 우선하고, 불확실한 해석은 법률 검토 대상으로 남긴다.
@@ -154,4 +162,4 @@ Annex I는 ESO(CEN/Cenelec/ETSI)가 작성할 신규 유럽표준의 주제와 a
 
 ---
 
-*감사 상태: PDF text extraction 기반 1차 내용 확인. 원본 PDF 바이너리 SHA-256, 페이지 이미지 대조(특히 M/606 item 18), claim-level integration 및 제품별 증거 연결은 미완료.*
+*감사 상태: M/606 Commission PDF 및 Guidance ANFR mirror의 raw-byte SHA-256 확인, M/606 item 18 시각 검증, G-001~G-013 claim register 및 matrix 연결 완료. Guidance Commission-hosted original byte identity와 실제 서보 드라이브 제품별 증거 연결은 미완료.*
