@@ -399,12 +399,12 @@ def apply_consolidated_cra_corrigenda(source_items):
         "CRA-2024-2847-corrigendum-2025-10-17",
     ]
     base["applied_correction_notes"] = [
-        "Article 64(10): paragraphs 3 to 9 → paragraphs 2 to 9",
-        "Article 67: 69. Regulation (EU) 2024/2847 → 72. Regulation (EU) 2024/2847",
+        "Article 64(10): corrected reading verified as paragraphs 2 to 9 (stale text is patched if present)",
+        "Article 67: corrected reference verified as 72. Regulation (EU) 2024/2847 (stale text is patched if present)",
     ]
     base["version"] = (
         str(base.get("version", ""))
-        + "; English operative corrigenda R(02)/R(04) applied to prompt excerpt"
+        + "; English operative corrigenda R(02)/R(04) applied or verified in prompt excerpt"
     ).strip("; ")
     excerpt_hash = hashlib.sha256(corrected.encode("utf-8")).hexdigest()
     base["prompt_excerpt_sha256"] = excerpt_hash
@@ -552,7 +552,7 @@ def fetch_official_cra_source():
     combined_text = "\n\n".join(
         f"[{item['id']}]\n{item['url']}\n{item['version']}\n"
         + (
-            "Applied official corrigenda to prompt excerpt: "
+            "Official corrigenda applied/verified in prompt excerpt: "
             + "; ".join(item.get("applied_corrigenda", [])) + "\n"
             if item.get("applied_corrigenda") else ""
         )
@@ -594,7 +594,7 @@ def append_source_manifest(report, source):
             f"Retrieved: {item['retrieved_at']}"
         )
         if item.get("applied_corrigenda"):
-            lines.append("  Applied official corrigenda to prompt excerpt: " + "; ".join(item["applied_corrigenda"]))
+            lines.append("  Official corrigenda applied/verified in prompt excerpt: " + "; ".join(item["applied_corrigenda"]))
             for note in item.get("applied_correction_notes", []):
                 lines.append(f"  Applied correction: {note}")
         if item.get("related_note"):
@@ -616,7 +616,7 @@ def validate_source_manifest(report, source):
             if not isinstance(value, str) or value not in report:
                 return False, f"자동 출처 manifest 항목이 누락되었습니다: {item.get('id')} / {field}"
         if item.get("applied_corrigenda"):
-            applied_line = "Applied official corrigenda to prompt excerpt: " + "; ".join(item["applied_corrigenda"])
+            applied_line = "Official corrigenda applied/verified in prompt excerpt: " + "; ".join(item["applied_corrigenda"])
             if applied_line not in report:
                 return False, f"적용 정오표 manifest가 누락되었습니다: {item.get('id')}"
             for note in item.get("applied_correction_notes", []):
