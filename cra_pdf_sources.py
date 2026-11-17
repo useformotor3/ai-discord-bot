@@ -25,7 +25,11 @@ class PDFSourceUnavailableError(RuntimeError):
 
 
 class PDFSourceValidationError(RuntimeError):
-    """Unexpected redirect, content, document identity or PDF structure."""
+    """Unexpected redirect, document identity or PDF structure."""
+
+
+class PDFSourceFallbackError(PDFSourceValidationError):
+    """Primary source is unavailable/non-PDF; an explicitly allowlisted mirror may be tried."""
 
 
 PDF_SOURCE_CATALOG = (
@@ -70,6 +74,8 @@ def _download(url, allowed_hosts, *, get=None):
         raise PDFSourceUnavailableError(
             f"PDF source temporary HTTP status {status}: {url}"
         )
+    if status in (401, 403, 404):
+        raise PDFSourceFallbackError(f"PDF source unavailable at primary URL (HTTP {status}): {url}")
     if status < 200 or status >= 300:
         raise PDFSourceValidationError(f"PDF source HTTP status {status}: {url}")
 
@@ -102,7 +108,7 @@ def _download(url, allowed_hosts, *, get=None):
     if not data:
         raise PDFSourceUnavailableError(f"PDF source returned an empty body: {final_url}")
     if not data.startswith(b"%PDF-"):
-        raise PDFSourceValidationError(
+        raise PDFSourceFallbackError(
             f"PDF magic header missing (Content-Type={content_type or 'unknown'}): {final_url}"
         )
     return data, final_url, content_type
@@ -149,7 +155,7 @@ def fetch_pdf_source(definition, *, get=None):
             get=get,
         )
         fallback_used = True
-    except PDFSourceValidationError:
+    except PDFSourceFallbackError:
         if not definition.get("fallback_url"):
             raise
         data, final_url, content_type = _download(
