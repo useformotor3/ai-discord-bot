@@ -351,3 +351,7 @@
 - CVD 정책/제보 연락처/안전한 배포는 Annex I Part II (5)–(7), Article 13(17), Annex II (2).
 - 디지털 서명과 STO 연계 업데이트 설치는 특정 법정 구현 방식이 아니라 제품별 엔지니어링 검증 항목.
 - 상세: [CRA 보고서 #1 정정 및 기술 근거 감사](reports/CRA_CORRECTION_REPORT_1_2026-11-17.md).
+
+
+### CRA report evidence traceability
+CRA draft generation now requires a structured `CLAIM_EVIDENCE_JSON` block. Legal requirements and official explanations must identify a source-pack ID, clause locator, and a verbatim quotation of at least 50 characters. The body must reference each declared claim ID. Interpretations and engineering recommendations are kept separate and require an explanatory basis. This is a provenance/traceability gate, not a legal interpretation or product-conformity assessment. See [the source provenance report](reports/CRA_SOURCE_PROVENANCE_GATE_2026-11-17.md).
