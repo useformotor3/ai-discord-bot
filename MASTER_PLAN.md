@@ -96,7 +96,7 @@
 - PR #26에서 source/claim gate 선택 이식과 CELLAR official source retrieval을 완료했다. [검증 보고서](reports/CRA_SOURCE_PROVENANCE_PIPELINE_2026-11-17.md)를 상세 근거로 사용한다.
 - PR #26 Actions Run #573: 138 passed / 1 xfailed; official source 9개 live fetch 및 Article 13(8) locator/quote canary 성공. PR head SHA는 `d1bda523c1b593bbd48bf4916dd7bbd741001894`; merge commit 자체의 별도 CI는 아직 확인되지 않았다.
 - 운영 main의 history 15, retry 2, quota/429/503 no-op, duplicate-topic suppression, transactional persistence/rollback은 유지했다.
-- Commission Guidance PDF/Annex 및 M/606 C(2026) 7861 decision Annex는 관련 URL만 manifest에 기록했다. 원문 다운로드·파싱은 미완료로 남긴다.
+- Commission Guidance C(2026)5252 ANFR mirror 및 M/606 C(2026)7861 Commission Annex PDF를 실제 다운로드·파싱·raw SHA-256 검증했다. Commission-hosted Guidance primary byte identity만 미확인.
 - 다음 우선순위는 PDF/decision Annex 수집, Article/Annex live locator 확대, 35 requirements/15 interfaces/36 SEC controls와 source claim 및 제품별 증거 연결이다.
 - divergent branches 전체 병합 금지, force-push/history rewrite 금지. 과거 SIL 3 산출물은 역사 기록으로 보존하고 CRA 계획에 포함하지 않는다.
 
@@ -494,7 +494,7 @@
 - [CRA 공식 Guidance 및 M/606 Annex 감사 보고서](reports/CRA_OFFICIAL_GUIDANCE_AND_M606_ANNEX_AUDIT_2026-11-17.md)를 추가했다. Commission Guidance C(2026) 5252의 주요 조항·페이지 locator와 C(2026) 7861 Annex I의 41개 표준 주제/ESO adoption deadline을 추출했다.
 - Guidance는 비구속적 Commission 해석이다. 법령 정본과 구분하고, 제품별 판단은 실제 모델·회로·통신·공급 구조를 기준으로 한다.
 - M/606 Annex의 ESO adoption deadline은 harmonised standard OJ citation 또는 CRA 제품 적용일과 동일하지 않다. 항목 18 날짜는 PDF text extraction에서 판독 불가로 미확인 처리한다.
-- 원본 PDF 바이너리 다운로드 및 SHA-256은 아직 미완료. 텍스트 추출/내용 검토 결과만 기록하고 byte identity 검증으로 과장하지 않는다.
+- M/606 Commission Annex 및 Guidance ANFR mirror PDF raw SHA-256 검증 완료. Commission-hosted Guidance primary byte identity는 미확인으로 구분한다.
 
 ### 다음 작업 순서 업데이트
 1. M/606 Annex 원본 PDF 이미지에서 항목 18 날짜와 병합 셀을 시각 확인하고, C(2026) 7861 본문 결정문 및 register 첨부 전체를 확인한다.
