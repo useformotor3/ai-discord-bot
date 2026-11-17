@@ -13,15 +13,16 @@
 ## 현재 상태 — 2026-11-17
 
 - **활성 범위: CRA 대응만.** SIL 3 자료는 역사적 산출물로 보존하며 별도 명시적 재개 지시 전 비활성.
-- 현재 작업 브랜치: 없음 (PR #19 병합 완료; 다음 작업은 최신 `main`에서 새 브랜치로 시작)
-- 범위 통제 기준점: PR #18 병합, `b7813ddd311bc51bfb0eb26458eace9ff82b621f`
+- 현재 작업 브랜치: 없음 (PR #20 병합 완료; 다음 작업은 최신 `main`에서 새 브랜치로 시작)
+- CRA-only 범위 통제 기준점: PR #18 merge `b7813ddd311bc51bfb0eb26458eace9ff82b621f`; 통합 보고서 PR #19 merge `5776ca609130033bfff17ca62c9fabc3b9570b3b`; 인터페이스 매트릭스 PR #20 merge `951fc5ee0122b847b5e8f77bd5e0706db65efb76`
 - CRA 정정 보고서 #1–#38 및 인덱스: main 보존 확인
 - [CRA 서보 드라이브 통합 규제·기술 준수 보고서 v0.1](reports/CRA_INTEGRATED_COMPLIANCE_REPORT_2026-11-17.md): PR #19 병합 완료, 제품별 적용성 확인 전
 - [CRA 요구사항 추적표 v0.1](reports/CRA_REQUIREMENTS_TRACEABILITY_2026-11-17.csv): PR #19 병합 완료, 28개 요구사항 행, 제품 증거 미확인 상태
+- [서보 드라이브 인터페이스별 CRA 적용성 매트릭스](reports/CRA_SERVO_DRIVE_INTERFACE_APPLICABILITY_2026-11-17.csv): PR #20 병합 완료, 15개 인터페이스/기능 유형, 제품별 증거 확인 전 잠정
 - 최신 법적/이행 자료 반영: Commission Guidance C(2026) 5252 (2026-07-27), M/606 개정 C(2026) 7861 (2026-11-10), Regulation (EU) 2025/327 개정 범위 검토
 - 제품 모델/통신 프로토콜/시장 공급 구조가 미제공되어 CRA 적용성 및 Annex III/IV 분류는 잠정 판단으로 유지
-- PR #19는 문서 9개 경로만 변경했으며 운영 코드, workflow, state/history 및 원본 archive는 수정하지 않음
-- CI: [PR Run #500](https://github.com/useformotor3/ai-discord-bot/actions/runs/44028473103) 및 [main push Run #502](https://github.com/useformotor3/ai-discord-bot/actions/runs/44028536971) 모두 success
+- PR #19/#20은 문서·추적표 경로만 변경했으며 운영 코드, workflow, state/history 및 원본 archive는 수정하지 않음
+- CI: PR #19의 [Run #500](https://github.com/useformotor3/ai-discord-bot/actions/runs/44028473103) 및 [main push Run #502](https://github.com/useformotor3/ai-discord-bot/actions/runs/44028536971) success. PR #20은 조회 시점에 workflow run이 확인되지 않아 CI 미확정; CSV/JSONL 수동 파싱은 성공
 
 자동화 신뢰성 개선(P0/P1-B1/P1-B2)의 과거 구현·CI 결과는 역사적 엔지니어링 기준선으로 보존한다. 해당 결과를 CRA 법령·제품 적합성 검증으로 해석하지 않는다.
 
