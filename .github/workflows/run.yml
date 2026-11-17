@@ -5,9 +5,9 @@ concurrency:
   cancel-in-progress: false
 
 on:
-  repository_dispatch:     # 외부 API 신호를 받아 실행되도록 설정
-    types: [run-bot]       # 'run-bot'이라는 신호가 오면 작동
-  workflow_dispatch:      # 수동 실행 버튼도 유지
+  schedule:
+    - cron: "0 * * * *"   # 매시간 정각 UTC (한국시간 매시간 정각)
+  workflow_dispatch:      # 장애 점검/수동 실행용
 
 permissions:
   contents: write
