@@ -161,6 +161,8 @@ flowchart LR
 3. Reference architecture는 HFT 1을 목표로 독립 이중 채널과 진단/교차감시를 우선 검토한다. 최종 HFT, SFF, DCavg, Category 및 subsystem type은 표준과 인증서에 따라 결정한다.
 4. 각 안전 기능의 response time budget은 sensor detection + F-PLC scan + safety communication + drive safety task + gate disable + mechanical stop으로 분해한다.
 5. Mission time, diagnostic test interval 및 maintenance interval은 최신 IEC 61800-5-2 AMD1:2026과 제조사 최신 문서에 따라 결정한다. 2016판 문서의 “proof test” 문구를 자동으로 최신 규격 요구로 적용하지 않는다.
+**정기 점검 주의:** IEC 61800-5-2 AMD1:2026의 PDS(SR) proof-test 삭제가 기계 수준의 모든 정기 점검을 없애는 것은 아니다. IEC 62061 Ed.2.2 Clause 6.9 periodic testing, 제조사 diagnostic interval 및 기계 유지보수/validation 계획을 별도 적용한다.
+
 
 ## 7. 고장 반응 및 안전 상태 정의
 
