@@ -7,8 +7,8 @@
 - 운영 기준 브랜치: `main` (운영 자동화 및 데이터 보존)
 - 현재 작업 브랜치: 없음 (PR #19 병합 완료; 다음 작업은 최신 `main`에서 새 브랜치 생성)
 - CRA-only 범위 통제 병합 기준점: PR #18, merge commit `b7813ddd311bc51bfb0eb26458eace9ff82b621f` (2026-11-17)
-- 마지막 CRA 산출물 변경: PR #19 병합 완료, merge commit `5776ca609130033bfff17ca62c9fabc3b9570b3b`. PR CI Run #500 및 main push Run #502 모두 success.
-- 이번 비교 기준: PR #19 병합으로 작업 브랜치 종료. 다음 작업 시작 시 main HEAD와 원격 브랜치를 다시 조회해 기준선을 설정
+- 마지막 CRA 산출물 변경: PR #20 병합 완료, merge commit `951fc5ee0122b847b5e8f77bd5e0706db65efb76`. PR #19 CI Run #500 및 main push Run #502 success. PR #20은 workflow run 미확인; CSV/JSONL 수동 검증 성공.
+- 이번 비교 기준: PR #20 병합으로 작업 브랜치 종료. 다음 작업 시작 시 main HEAD와 원격 브랜치를 다시 조회해 기준선을 설정
 - 프로젝트 상태: CRA 통합 보고서 v0.1 및 28항목 요구사항 추적표 초안 작성. 모델별 적용성/분류 및 시험 증거 연결은 미완료.
 - 주 문서 언어: 한국어
 - 안전 원칙: 법적 적합성·제품 분류·안전 관련 설계 판단은 근거와 인간 검토 없이 확정하지 않음
