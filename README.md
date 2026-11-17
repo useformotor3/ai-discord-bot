@@ -393,3 +393,5 @@ The CRA feature was merged only into the isolated integration branch, not main. 
 - [Correction #11](reports/CRA_CORRECTION_REPORT_11_2026-11-17.md): separates attack-surface and secure-by-default requirements from port-disable and opt-in implementation choices.
 
 - [Correction #10](reports/CRA_CORRECTION_REPORT_10_2026-11-17.md): separates support period, update availability retention, free security updates and CVD policy; corrects the non-verbatim quotation.
+
+- [Correction #9](reports/CRA_CORRECTION_REPORT_9_2026-11-17.md): clarifies SBOM minimum top-level dependency coverage, format choice and remediation/disclosure timing.
