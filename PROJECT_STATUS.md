@@ -749,3 +749,11 @@
 - 동일 head EUR-Lex read-only Canary Run #85: **success**.
   https://github.com/useformotor3/ai-discord-bot/actions/runs/43999023906
 - Gemini canary 테스트는 mock only. 실제 Gemini API 호출은 여전히 0회.
+
+
+### 최종 head 재검증 — Gemini canary safeguards 포함
+- 최종 확인 head `d335612023398184c54b6b86e9c56e7668779a7c`: Isolated CI Run #266 **116 passed, 1 xfailed**.
+- Exact blob SHA, compileall, full pytest 성공.
+- https://github.com/useformotor3/ai-discord-bot/actions/runs/43999131134
+- EUR-Lex read-only Canary Run #85 success at prior code-equivalent head; 이후 변경은 문서/로그만이며 source fetch code는 바뀌지 않았다.
+- Live Gemini API 호출은 0회. 수동 workflow는 default branch에 반영되기 전까지 dispatch할 수 없다.
