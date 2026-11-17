@@ -368,3 +368,6 @@ The current CRA branch is 116 commits ahead and 9 behind main (diverged). Main's
 
 ### Claim-scope regression verification — 2026-11-17
 The first Article/Annex quote-scope implementation failed CI (25 failed, 92 passed, 1 xfailed) because regex tokens were double-escaped. The failure was diagnosed from the job log, corrected, and re-pinned. The corrected head passed Isolated CI Run #294 (**117 passed, 1 xfailed**) and EUR-Lex read-only Canary Run #101. The earlier failed run remains in the audit trail. The current integration comparison snapshot is 125 ahead / 10 behind; PR #3 remains Draft and unmerged.
+
+### Official Journal corrigenda verification — 2026-11-17
+The CRA source pack now fetches the three English Official Journal corrigenda as separate official EUR-Lex sources and checks the target provision plus both the original and corrected wording. The live read-only canary succeeded with seven official sources and 245,502 visible-text characters. CI initially exposed stale Discord chunk-count and pacing expectations after the source manifest grew; those fixtures were corrected. Final isolated CI passed (**117 passed, 1 xfailed**). This verifies source retrieval and text markers, not legal interpretation or product conformity.
