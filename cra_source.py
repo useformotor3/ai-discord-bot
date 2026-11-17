@@ -126,6 +126,7 @@ CRA_SOURCE_CATALOG = (
         "related_urls": (
             "https://ec.europa.eu/newsroom/dae/redirection/document/131456",
         ),
+        "related_allowed_hosts": ("ec.europa.eu",),
         "related_note": "Commission PDF download link; PDF bytes/text are not fetched or parsed by this source pack.",
         "version": (
             "European Commission CRA guidance publication page, 27.07.2026, C(2026) 5252; "
@@ -147,6 +148,7 @@ CRA_SOURCE_CATALOG = (
         "related_urls": (
             "https://ec.europa.eu/transparency/documents-register/detail?ref=C(2026)7861&lang=en",
         ),
+        "related_allowed_hosts": ("ec.europa.eu",),
         "related_note": "Official document-register entry for C(2026) 7861; source pack currently verifies the Commission status page summary, not the decision Annex.",
         "version": (
             "European Commission CRA standardisation page, updated 12.11.2026; "
@@ -296,6 +298,15 @@ def fetch_official_cra_source():
                 raise RuntimeError(
                     "EUR-Lex 통합본에서 알려진 CRA corrigenda 날짜를 모두 확인하지 못했습니다: "
                     + ", ".join(missing_dates)
+                )
+
+        related_urls = list(definition.get("related_urls", ()))
+        related_hosts = definition.get("related_allowed_hosts", ())
+        for related_url in related_urls:
+            related = urlparse(related_url)
+            if related.scheme != "https" or related.hostname not in related_hosts:
+                raise SourceValidationError(
+                    f"허용되지 않은 관련 공식 문서 URL입니다: {definition['id']} / {related_url}"
                 )
 
         relevant_text = _extract_relevant_excerpt(definition["id"], full_text)
