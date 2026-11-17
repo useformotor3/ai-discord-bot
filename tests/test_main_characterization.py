@@ -67,8 +67,11 @@ def test_successful_generation_uses_only_mocked_external_services(run_main):
     assert "CRA-2025-327-EHDS-amendment" in archive_text
     assert "CRA-2025-1535-product-scope-delegated-act" in archive_text
     assert "CRA-2026-881-reporting-delay-delegated-act" in archive_text
+    assert "CRA-2024-2847-corrigendum-2024-12-05" in archive_text
+    assert "CRA-2024-2847-corrigendum-2025-07-02" in archive_text
+    assert "CRA-2024-2847-corrigendum-2025-10-17" in archive_text
     assert len(run_main.captured["model_calls"]) == 1
-    assert len(run_main.captured["source_gets"]) == 4
+    assert len(run_main.captured["source_gets"]) == 7
     assert "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02024R2847-20241120" in run_main.captured["model_calls"][0]["prompt"]
     assert "Manufacturers shall ensure that vulnerabilities" in run_main.captured["model_calls"][0]["prompt"]
     assert "corrigenda 5.12.2024, 2.7.2025 and 17.10.2025" in run_main.captured["model_calls"][0]["prompt"]
