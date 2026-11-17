@@ -414,3 +414,11 @@
 - 정확한 모델, intended purpose, marketed functions, product boundary, firmware/software, interfaces, remote processing, BOM/SBOM, support/vulnerability evidence를 확보한다.
 - 제품 데이터시트와 사용설명서를 우선 확보하고 서로 교차 검증한다. 모델·구성품·기능을 추정하지 않는다.
 - 제품별 결론은 원문 증거 ID·문서 버전·페이지/절 locator·검토 상태를 연결한 후에만 확정한다.
+
+
+## 58. 통합 보고서 편집·번호 검증
+
+- 통합 보고서에 새 대형 섹션을 추가할 때 기존 최상위 섹션 번호와 중복되지 않는지 확인한다.
+- 최상위 `## N.` 번호는 문서 전체에서 유일해야 하며, 중복 번호는 traceability validator에서 fail-closed로 처리한다.
+- Annex III Important products(Class I/II)와 Annex IV Critical products를 혼용하지 않는다.
+- M/606 Annex I의 horizontal property(1–14), horizontal vulnerability-handling(15), vertical product type 및 security-component 주제를 구분하고, 표준화 요청/ESO deadline을 제조자 법적 의무나 OJ harmonised status로 표현하지 않는다.
