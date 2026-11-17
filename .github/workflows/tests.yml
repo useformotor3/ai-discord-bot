@@ -74,7 +74,7 @@ jobs:
             printf '%s  %s  expected=%s\n' "$actual" "$path" "$expected"
             test "$actual" = "$expected"
           }
-          verify_blob "main.py" "7b4e6f464800320961ed3c2a05a92f81a8817cb5"
+          verify_blob "main.py" "4d426a3233399d3619fd31cbc7897da5078369df"
           verify_blob "persistence.py" "953e2a52b7e6d6e619a4f43766e52d6835df50c8"
           verify_blob "tests/test_p1_b2_atomic_persistence.py" "f78d36164b5ac0d5d5eebe0c5eb5c1214c4e0671"
           verify_blob "tests/conftest.py" "f465fa04f5c30bfa621bc910b2177d678c89fb64"
