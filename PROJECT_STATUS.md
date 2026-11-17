@@ -787,3 +787,12 @@
 - 최종 CI #323: **117 passed, 1 xfailed**; exact SHA, compileall, full pytest 성공.
 - Gemini/Discord 실제 API 및 production workflow는 실행하지 않았다. Discord 전송 수 증가는 mock test fixture에만 반영.
 - 상세: reports/INTEGRATION_AND_CLAIM_SCOPE_AUDIT_2026-11-17.md.
+
+## 2026-11-17 — main 자동 archive 보고서 #14–#17 법령 대조 및 정정
+- main의 최신 자동 archive #14–#17을 원문 SHA 고정 후 개별 감사했다. 원본 archive는 수정하지 않았다.
+- #14: Article 11은 General product safety이며 제조사 의무/CVD 근거가 아니다. CVD는 Annex I Part II (5)/(6), actively exploited vulnerability 및 severe incident 신고는 Article 14.
+- #15: Annex I Part I (2)(f) 인용은 대체로 정확하나, real-time/상위 PLC 즉시 보고, 특정 MAC/HMAC/프로토콜, STO/Interlock 트리거를 법적 의무로 단정한 부분을 정정.
+- #16: 직접 인용에 문구 누락/재배열, “not authorised by the manufacturer” 오기, “including cryptographic mechanisms” 원문에 없는 구절 포함. 디지털 서명 특정 구현을 법적 의무로 단정한 부분 정정.
+- #17: least privilege/RBAC 직접 인용이 공식 OJ 원문에서 확인되지 않음. CRA는 Annex I Part I (2)(d)의 적절한 접근통제 메커니즘을 요구하지만 RBAC/MFA/session timeout을 일률적으로 직접 규정하지 않는다.
+- correction reports #14–#17을 별도 파일로 작성. 원본 archive는 그대로 보존.
+- 다음: #13 이하 자동 archive를 동일한 방식으로 순차 감사하고, corrected report index/claim evidence를 정리한다.
