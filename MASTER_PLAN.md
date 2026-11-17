@@ -473,8 +473,8 @@
 
 ## 2026-11-17 — CRA source provenance 관리 문서 동기화 완료
 
-- PR #27 merge commit: \`5f0c54a018e18b3453b1c836a5a7d2e9a266331b\`.
+- PR #27 merge commit: `5f0c54a018e18b3453b1c836a5a7d2e9a266331b`.
 - README, PROJECT_STATUS, MASTER_PLAN, AI_RULEBOOK, SESSION_LOG, PROJECT_LOG.jsonl 및 source provenance 상세 보고서를 PR #26 검증 결과에 맞춰 동기화했다.
 - PR #27 Run #575: 138 passed / 1 xfailed, 9개 live official source 및 Article 13(8) locator/quote canary 재통과.
-- PR #27 pre/post merge safety refs는 각각 \`safety/pre-merge-main-pr27-2026-11-17\` 및 \`safety/post-merge-main-pr27-2026-11-17\`; 두 ref의 SHA readback 검증 완료.
+- PR #27 pre/post merge safety refs는 각각 `safety/pre-merge-main-pr27-2026-11-17` 및 `safety/post-merge-main-pr27-2026-11-17`; 두 ref의 SHA readback 검증 완료.
 - merge commit 자체의 별도 Actions run은 확인되지 않았으므로 PR head CI 결과만 기록한다.
