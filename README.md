@@ -447,3 +447,6 @@
 
 - 최종 재검증 [Run #669](https://github.com/useformotor3/ai-discord-bot/actions/runs/44052967754): **148 passed / 1 xfailed**, compileall·source blob identity·PDF 2종 취득/해시·artifact upload·공식 HTML source 9건·Article 13(8) locator/quote 모두 통과.
 - 최신 PDF artifact ID `14315096266`, ZIP SHA-256 `82e86c3347413bc6f210a7403939141679c34e5ad738822043af87fc5c2290c`; PDF별 raw hashes는 provenance manifest 참조.
+
+
+- Final branch-head verification [Run #690](https://github.com/useformotor3/ai-discord-bot/actions/runs/44053390736): **148 passed / 1 xfailed**, compileall, source blob pins, PDF and HTML live canaries all pass. Latest artifact #14315106623 ZIP SHA-256 `da2f0e5fbfb5f5fa66360a2faa5af3d85821d3b7269885e34e1a3115f37cd3e2` reverified after download.
