@@ -178,3 +178,9 @@ The raw quote combined Article 13(8) support period and Annex I Part II (8) free
 Original archive #9 blob: `98e58f3a89ad7c9b2c8e30cea04f11fabb7d725f`. Correction report: `reports/CRA_CORRECTION_REPORT_9_2026-11-17.md`.
 
 The Annex I Part II (1) quote is substantially accurate. The legal minimum is a commonly used machine-readable SBOM covering at least top-level dependencies; no specific SPDX/CycloneDX format or universal transitive-dependency inclusion is mandated by that point. Remediation without delay (Part II (2)) and fixed-vulnerability disclosure timing/exception (Part II (4)) are separate. Original archive remains unchanged.
+
+## 16. Main archive #8 correction — 2026-11-17
+
+Original archive #8 blob: `38550036503c8d2dbb00e66a7625475e089b4cd7`. Correction report: `reports/CRA_CORRECTION_REPORT_8_2026-11-17.md`.
+
+The report mis-cited Annex VI for SBOM, overstated mandatory SBOM disclosure to all users, and treated all servo drives as Important Class I/II. Correct mapping: Annex I Part II (1), Annex VII 2(b)/8, and Annex II point 9; Annex VI is simplified EU DoC. Original archive remains unchanged.
