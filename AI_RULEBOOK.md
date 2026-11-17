@@ -312,3 +312,9 @@
 - Re-query main and feature immutable SHAs before integration. Never treat the feature branch's CI as proof that main contains the feature, or main's older CI as proof of CRA validation.
 - Keep PR #3 Draft until the latest-main integration branch passes exact source SHA checks, compileall, full pytest, CI, and operational data/path invariants.
 - Preserve main, production workflow, state/history/archive, and live Gemini/Discord boundaries during isolated verification.
+
+## 27. Official Journal corrigenda source handling
+- Do not treat the consolidated-text corrigenda date index as proof that corrigendum contents were checked.
+- Fetch each applicable English Official Journal corrigendum from its official EUR-Lex ELI URL; verify the target provision and both the original and corrected wording.
+- Preserve each corrigendum as an independent source ID/URL/version in the source manifest and claim evidence pack.
+- A marker match confirms retrieved text only. It does not determine the legal effect of the correction, context, product applicability, or conformity; retain human review.
