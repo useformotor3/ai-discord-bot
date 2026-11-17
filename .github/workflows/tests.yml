@@ -6,6 +6,7 @@ on:
       - main
       - cra/official-annex-audit-2026-11-17
       - cra/guidance-claim-mapping-2026-11-17
+      - cra/traceability-integrity-2026-11-17
       - docs/pr33-postmerge-status-2026-11-17
       - docs/pr30-postmerge-status-sync-2026-11-17
       - docs/pr31-final-dashboard-sync-2026-11-17
@@ -20,6 +21,7 @@ on:
       - "cra_source.py"
       - "cra_claims.py"
       - "cra_pdf_sources.py"
+      - "cra_traceability.py"
       - "persistence.py"
       - "tests/**"
       - "AI_RULEBOOK.md"
@@ -89,6 +91,8 @@ jobs:
           verify_blob "cra_source.py" "039384c288d079afc36236ffae0eb3c49507a155"
           verify_blob "cra_claims.py" "74bbd6a5541f238213831ec2e06496745eebc1f0"
           verify_blob "cra_pdf_sources.py" "5738c4607f926ba2f22d629df94d5ae92e1b8ed9"
+          verify_blob "cra_traceability.py" "c8c1a3428a45d8f5b730950eaaf9ea31c1434b9c"
+          verify_blob "tests/test_cra_traceability.py" "de7160643525dc047c45215c5a937ea8c956193f"
           verify_blob "tests/test_cra_pdf_sources.py" "d64fe7dfb7b1bf921659f504797bc9e57e1cb923"
           verify_blob "persistence.py" "953e2a52b7e6d6e619a4f43766e52d6835df50c8"
           verify_blob "tests/test_p1_b2_atomic_persistence.py" "f78d36164b5ac0d5d5eebe0c5eb5c1214c4e0671"
@@ -106,7 +110,10 @@ jobs:
         run: python -m pip install --disable-pip-version-check pytest requests pypdf
 
       - name: Compile source and tests
-        run: python -m compileall -q main.py cra_source.py cra_claims.py cra_pdf_sources.py scripts tests
+        run: python -m compileall -q main.py cra_source.py cra_claims.py cra_pdf_sources.py cra_traceability.py scripts tests
+
+      - name: Validate CRA cross-matrix traceability
+        run: python cra_traceability.py
 
       - name: Run complete repository test suite
         run: python -m pytest -q
