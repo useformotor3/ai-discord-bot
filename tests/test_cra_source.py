@@ -280,3 +280,82 @@ def test_required_source_markers_match_across_formex_line_breaks():
         text,
         ["Article 67", "69. Regulation", "72. Regulation"],
     ) == []
+
+
+
+def _corrigenda_fixture(base_article_64, base_article_67):
+    return [
+        {
+            "id": "CRA-2024-2847-consolidated",
+            "text": "\n".join([
+                "Article 64",
+                "Penalties",
+                "10.",
+                base_article_64,
+                "Article 65",
+                "Representative actions",
+                "Article 67",
+                "Amendment to Directive (EU) 2020/1828",
+                "1.",
+                base_article_67,
+                "Article 68",
+                "Amendment to Regulation (EU) No 168/2013",
+            ]),
+        },
+        {
+            "id": "CRA-2024-2847-corrigendum-2025-07-02",
+            "text": (
+                "Page 65, Article 64(10), for: paragraphs 3 to 9, "
+                "read: paragraphs 2 to 9."
+            ),
+        },
+        {
+            "id": "CRA-2024-2847-corrigendum-2025-10-17",
+            "text": (
+                "Page 66, Article 67, for: 69. Regulation (EU) 2024/2847, "
+                "read: 72. Regulation (EU) 2024/2847."
+            ),
+        },
+    ]
+
+
+def test_consolidated_source_must_reflect_both_operative_english_corrigenda():
+    source_items = _corrigenda_fixture(
+        "By way of derogation from paragraphs 2 to 9, the administrative fines do not apply.",
+        "In Annex I, point 72. Regulation (EU) 2024/2847 is added.",
+    )
+
+    assert cra_source.validate_consolidated_cra_corrections(source_items)
+
+
+@pytest.mark.parametrize(
+    ("article_64", "article_67", "expected"),
+    [
+        (
+            "By way of derogation from paragraphs 3 to 9, the administrative fines do not apply.",
+            "In Annex I, point 72. Regulation (EU) 2024/2847 is added.",
+            "Article 64(10)",
+        ),
+        (
+            "By way of derogation from paragraphs 2 to 9, the administrative fines do not apply.",
+            "In Annex I, point 69. Regulation (EU) 2024/2847 is added.",
+            "Article 67",
+        ),
+    ],
+)
+def test_consolidated_source_rejects_superseded_corrigendum_wording(article_64, article_67, expected):
+    source_items = _corrigenda_fixture(article_64, article_67)
+
+    with pytest.raises(SourceValidationError, match=expected):
+        cra_source.validate_consolidated_cra_corrections(source_items)
+
+
+def test_consolidated_source_rejects_missing_operative_corrigendum_source():
+    source_items = _corrigenda_fixture(
+        "By way of derogation from paragraphs 2 to 9, the administrative fines do not apply.",
+        "In Annex I, point 72. Regulation (EU) 2024/2847 is added.",
+    )
+    source_items.pop()
+
+    with pytest.raises(SourceValidationError, match="정오표 2건이 모두 필요"):
+        cra_source.validate_consolidated_cra_corrections(source_items)
