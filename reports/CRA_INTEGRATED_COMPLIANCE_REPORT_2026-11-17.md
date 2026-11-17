@@ -363,3 +363,12 @@ EUR-Lex 공식 CRA 원문 및 관련 Machinery Regulation/EHDS 원문 기준으�
 - Regulation (EU) 2025/327 Article 104는 EHR system에 한정된 CRA 개정이며 일반 PDE/서보 드라이브에 확대 적용하지 않는다.
 
 Article 14의 24h/72h/14일 및 24h/72h/1개월 기산점을 구분하고, 기존 출시 제품에 대한 Article 14의 예외 적용(Article 69(3))과 CRA 일반 적용일(Article 71(2))을 분리했다.
+
+
+## 20. 전체 교차 매트릭스 정합성 감사 (2026-11-18)
+
+CRA-001–CRA-035 법령 문언 감사 결과를 15개 인터페이스 적용성, 36개 보안 통제·시험, 13개 Commission Guidance claims, 41개 M/606 Annex I 항목과 교차 검토했다. 상세 불일치와 수정 내용은 [CRA 전체 교차 매트릭스 일관성 감사](CRA_CROSS_MATRIX_CONSISTENCY_AUDIT_2026-11-18.md)를 참조한다.
+
+주요 수정은 SEC-015(SBOM 근거), SEC-018(공개 지연 예외), SEC-021(법정 목표와 구현 후보 구분), SEC-031(RDPS locator), SEC-032(데이터 연결 locator), SEC-034(경제운영자 역할 및 Article 23 추적), SEC-036(전환 조항 범위)다.
+
+현재 매트릭스의 상태값은 제품별 구현/시험 증거가 아직 없다는 뜻이므로 '미작성/증거 미확인' 및 '제품별 미확인'을 유지한다. 법령 문언 대조 완료를 제품 적합성 증거로 해석하지 않는다.
