@@ -99,3 +99,15 @@ PR #12: https://github.com/useformotor3/ai-discord-bot/pull/12
 - Model calls: max 2 attempts per model per scheduled run; 429/503 stops same-model retries and falls back; quota/service/quality rejection with no valid report is a clean no-op; authentication/configuration failures remain visible failures.
 - Last verified production data snapshot after quota failure: state count 38, history 2,431 entries, state blob `da086ea3ffb7ef0c76d7fa03a58e13a24aa8fe34`, history blob `b9ea42fa437b2b3a5728db5d125d287fb746b46b`. No operational data changed in the quota-failed run.
 - Actual live Gemini/Discord execution after these changes is not yet verified. Observe the first three scheduled production runs and record each workflow result, quota response, guard result, checkpoint pruning and state/history/archive hash comparison.
+
+## 9. CRA archive #1–#38 correction coverage
+
+The main documentation integration branch now contains correction reports #1–#38:
+- #1–#4 were already on main.
+- #5–#21 were copied from the previously source-audited integration branch without modifying originals.
+- #22–#32 were newly checked against the final EUR-Lex Official Journal and corrected.
+- #33–#38 were already corrected in the preceding main integration.
+
+Master index: `CRA_CORRECTION_INDEX_2026-11-17.md`.
+
+High-impact corrections include Article 10/11/24 misidentification, Article 31/Annex VII technical documentation vs Annex II user instructions, Article 13(8)/(9) support period vs update availability, Annex I Part I vs Part II, CVD vs mandatory/voluntary reporting, Article 14 separate clocks, Annex III classification overclaims, and implementation choices falsely presented as verbatim CRA obligations. Original archive files remain unchanged.
