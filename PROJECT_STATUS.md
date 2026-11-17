@@ -696,3 +696,11 @@
 - 현재 문서는 v0.1 reference architecture다. 전압, 출력, 축 수, 모터/엔코더, 안전 기능 및 F-PLC/네트워크가 확정되기 전 최종 회로도/BOM/PFH를 단정하지 않는다.
 
 - 추가 발견: Rockwell PSA 2017-01-001은 특정 Kinetix 5700 ERS3 firmware의 hardwired STO에서 SIL PFH 미달 가능성을 공지한다. 영향 모델/firmware와 수정 버전 V7.003 이상을 보고서에 반영했으며 ERS4에 일반화하지 않는다.
+
+## 2026-11-17 — SIL 3 서보 드라이브 산출물 v0.1 main 병합
+- PR #16 merge commit: `34449753857c6ab004271f69aac19867a7aed1fa`.
+- CI Run #488: **105 passed, 1 xfailed**.
+- Main에 벤치마킹 보고서, 하드웨어 reference block design, FS/CYB traceability matrix 및 spreadsheet-ready CSV 비교표 반영.
+- CSV: `reports/SIL3_SERVO_DRIVE_BENCHMARK_MATRIX_2026-11-17.csv`.
+- 범위는 1축 reference architecture. 정격/부하/축 수/encoder/네트워크/안전 기능 확정 전 최종 회로도/BOM/PFH 계산은 보류.
+- 제조사별 2026-10-30 IEC 61800-5-2 AMD1 적용 인증서 및 실제 installed firmware/옵션은 공급사 확인 필요.
