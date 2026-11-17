@@ -256,3 +256,14 @@
 - Discord 전송 후 Git 저장이 실패할 수 있다. 이 경우 Discord 전달을 취소할 수 없으므로 archive 누락과 중복 전송 위험을 명시적으로 추적한다.
 
 - 2026-11-17 CI Run #59에서 KST/model/Git fail-closed 변경이 99 passed, 1 xfailed로 통과했다. 단, 실제 Gemini/Discord 운영 API 호출 결과와 KST 적용 후 첫 일일 경계는 별도 관찰 전까지 검증 완료로 주장하지 않는다.
+## 42. 자동 생성 보고서의 출처·중복 품질 게이트
+- CRA 법적 주장 보고서는 Regulation (EU) 2024/2847 공식 EUR-Lex OJ 링크를 포함해야 한다. 링크 존재는 원문 정확성 증명이 아니므로 중요한 인용·조항은 별도 원문 대조를 수행한다.
+- 최근 archive 원문과 주제 유사도를 비교해 중복 주제를 전송/아카이브 전에 차단한다. 휴리스틱 판정은 정기적으로 false positive/negative를 검토한다.
+- 주제 중복이거나 검증된 신규 주제가 없으면 새 보고서를 억지 생성하지 않는다.
+- 법령 조항 번호, 제목, 원문 인용은 EUR-Lex final OJ를 기준으로 한다. 초안·2차 자료 문언을 final OJ 직접 인용으로 표시하지 않는다.
+
+## 43. 운영 자동화 실행 주기 및 변경 안전
+- 외부 event dispatcher가 과도한 빈도로 호출해도 운영 workflow가 그대로 실행되도록 두지 않는다. production cadence는 명시된 schedule로 관리하고 운영 주기 변경은 상황판·세션 로그에 기록한다.
+- 운영 workflow 변경 전 현재 실행이 완료됐는지 확인하고, 변경 후 isolated CI와 workflow trigger 회귀 테스트를 통과시킨다.
+- workflow의 동시성 `cancel-in-progress: false`, immutable pre-run checkpoint, operational guard, checkpoint pruning을 유지한다.
+- 운영 실행 결과가 성공이라고 해서 보고서의 법적 정확성까지 검증된 것으로 표현하지 않는다.
