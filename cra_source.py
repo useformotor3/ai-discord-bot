@@ -288,6 +288,11 @@ def fetch_official_cra_source():
             raise SourceValidationError(
                 f"공식 source HTTP 오류: {definition['id']} / {status}"
             ) from exc
+        if response.status_code == 202:
+            raise SourceUnavailableError(
+                f"공식 source가 HTTP 202 비동기 수락 응답을 반환했습니다: {definition['id']} "
+                f"(Retry-After={response.headers.get('Retry-After', 'unknown')})"
+            )
         final_url = getattr(response, "url", definition["url"])
         response_text = response.text or ""
         if not response_text.strip():
