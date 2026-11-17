@@ -214,3 +214,9 @@ EUR-Lex 통합본은 documentation tool이며 법적 효력은 Official Journal(
 - https://github.com/useformotor3/ai-discord-bot/actions/runs/43999017790
 - https://github.com/useformotor3/ai-discord-bot/actions/runs/43999023906
 - 실제 Gemini API는 호출하지 않았다.
+
+
+### Gemini canary 최신 문서/로그 head 검증
+- head `d335612023398184c54b6b86e9c56e7668779a7c`에서 CI Run #266 **116 passed, 1 xfailed**.
+- https://github.com/useformotor3/ai-discord-bot/actions/runs/43999131134
+- source SHA pin / compileall / 전체 pytest 성공. 실제 Gemini API 호출은 하지 않았다.
