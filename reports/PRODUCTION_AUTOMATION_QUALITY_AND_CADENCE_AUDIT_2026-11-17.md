@@ -111,3 +111,7 @@ The main documentation integration branch now contains correction reports #1–#
 Master index: `CRA_CORRECTION_INDEX_2026-11-17.md`.
 
 High-impact corrections include Article 10/11/24 misidentification, Article 31/Annex VII technical documentation vs Annex II user instructions, Article 13(8)/(9) support period vs update availability, Annex I Part I vs Part II, CVD vs mandatory/voluntary reporting, Article 14 separate clocks, Annex III classification overclaims, and implementation choices falsely presented as verbatim CRA obligations. Original archive files remain unchanged.
+
+## 10. Final CRA correction integration
+
+PR #14 merged as `6994e4828a03482713f7990c7f82036bacfe4772`; CI #474: **105 passed, 1 xfailed**. All 38 correction files are present on main and the master index is `reports/CRA_CORRECTION_INDEX_2026-11-17.md`. Original archive blobs for #22–#32 were re-fetched and match their pre-correction hashes. State/history blobs remain unchanged. Draft PRs #3 and #6 were closed as superseded after their source-gate and correction content had been integrated through PRs #10–#14.
