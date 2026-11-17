@@ -316,7 +316,14 @@ def fetch_official_cra_source():
         })
 
     combined_text = "\n\n".join(
-        f"[{item['id']}]\n{item['url']}\n{item['version']}\n{item['text']}"
+        f"[{item['id']}]\n{item['url']}\n{item['version']}\n"
+        + (
+            "Related official documents (not fetched/parsed): "
+            + "; ".join(item.get("related_urls", []))
+            + "\n" + item.get("related_note", "") + "\n"
+            if item.get("related_urls") else ""
+        )
+        + item["text"]
         for item in source_items
     )
     version = f"CRA official source pack v2; sources={len(source_items)}"
