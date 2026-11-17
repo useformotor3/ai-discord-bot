@@ -984,3 +984,13 @@
 - 복구 ref: `safety/pre-claim-evidence-2026-11-17-d8870e3` → `d8870e32e16ba5ebd3a7670d12816324de3b485a`.
 - CI 첫 실행에서 85 passed / 27 failed / 1 xfailed. f-string JSON brace 충돌, fixture의 새 JSON contract 누락 및 assertion 우선순위 오류를 확인하고 수정했다.
 - 수정 후 최종 정확한 head SHA CI 결과는 별도 확인 전까지 미확정이다. 운영 main 및 production workflow는 변경하지 않았으며 실제 Gemini/Discord 호출도 없다.
+
+
+## 2026-11-17 — CRA claim-to-evidence gate 최종 격리 CI 통과
+- 최종 작업 브랜치 SHA: `b11f0dcb9bc8f41a0e82ac8062c75c1ca2d08143`.
+- Isolated CI Run #194: **112 passed, 1 xfailed**; source blob SHA pin, compileall, full pytest 모두 성공.
+- EUR-Lex read-only canary Run #53: success.
+- CI: https://github.com/useformotor3/ai-discord-bot/actions/runs/43998058880
+- Canary: https://github.com/useformotor3/ai-discord-bot/actions/runs/43998058856
+- CI 로그에서 85/27 실패 원인(f-string JSON brace 및 기존 mock contract)과 후속 blob pin mismatch를 확인하고 각각 수정했다. 최종 run에서 전체 검증 통과.
+- PR #3 Draft/open 유지. 최신 main과 8 commits behind이므로 병합하지 않았다. 실제 Gemini/Discord 및 production workflow 미실행.
