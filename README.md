@@ -512,3 +512,8 @@
 - exact PR-head CI [Run #824](https://github.com/useformotor3/ai-discord-bot/actions/runs/44061121932): 155 passed / 1 xfailed. PDF/HTML source canaries 및 traceability gate 통과.
 - 다음 작업: CRA-001–CRA-035 법령 문언·의무 주체·조건·예외·기한 행 단위 심층 감사. Guidance PDF Commission-primary byte identity는 미확인으로 유지.
 
+
+
+## CRA 법령 심층 감사 진행
+- Batch 1 (CRA-001–CRA-010) 상세 원문 대조: [감사 기록](reports/CRA_LEGAL_SEMANTICS_AUDIT_2026-11-18.md)
+- 최신 프로젝트 상황 및 남은 범위: [PROJECT_STATUS_CURRENT.md](PROJECT_STATUS_CURRENT.md)
