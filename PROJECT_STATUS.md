@@ -835,3 +835,9 @@
 - Article 13(8) 최소 지원 기간은 원칙적으로 5년(예상 사용기간이 더 짧으면 그 기간). Article 13(9)의 10년은 support period 자체가 아니라 각 security update의 availability 유지기간.
 - Article 13(19) 지원 종료일 표시/알림, tailor-made product의 무료 업데이트 합의 예외도 정정.
 - correction report #12 생성: reports/CRA_CORRECTION_REPORT_12_2026-11-17.md. correction reports #12–#19 완료.
+
+## 2026-11-17 — archive #11 Attack Surface/Secure-by-Default 정정 감사
+- 원본 archive #11 SHA b7555b23da08ff49e50d862aa3ec5485c104338c 확인, 원본 보존.
+- Annex I Part I (2)(d)/(e) 원문 인용 자체는 정확하나, 모든 비필수 포트 비활성화·모든 추가 기능 관리자 opt-in·프로토콜별 일괄 disable을 직접 법적 의무로 확장한 부분을 정정.
+- CRA는 attack surface 제한(외부 인터페이스 포함), secure-by-default 및 original-state reset 가능성을 요구한다. 구체 포트/서비스 기본값은 제품 위험평가와 운영 필요에 따라 설계.
+- correction report #11 생성: reports/CRA_CORRECTION_REPORT_11_2026-11-17.md. correction reports #11–#19 완료.
