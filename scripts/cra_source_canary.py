@@ -16,6 +16,9 @@ def main():
     print(f"Visible text characters: {len(text)}")
     for date in ("5.12.2024", "2.7.2025", "17.10.2025"):
         print(f"Corrigendum index {date}: present")
+    for item in source["sources"]:
+        print(f"Source {item['id']}: {item['visible_text_chars']} visible characters")
+        print(f"  {item['url']}")
 
 
 if __name__ == "__main__":
