@@ -160,3 +160,9 @@ Findings: Article 11 was incorrectly used as the manufacturer vulnerability-hand
 Original archive #12 blob: `fa7f687ecab1297436e5ced26983f8e622a0a0d9`. Correction report: `reports/CRA_CORRECTION_REPORT_12_2026-11-17.md`.
 
 Findings: Article 13(14) was misused as the free security-update provision; the actual free-update requirement is Annex I Part II (8). Article 13(8) support period is generally at least five years (or the shorter expected use period); Article 13(9)'s ten years concerns continued availability of each security update, not a universal support period. Article 13(19) covers end-date communication. Original archive remains unchanged.
+
+## 13. Main archive #11 correction — 2026-11-17
+
+Original archive #11 blob: `b7555b23da08ff49e50d862aa3ec5485c104338c`. Correction report: `reports/CRA_CORRECTION_REPORT_11_2026-11-17.md`.
+
+The source quotation for Annex I Part I (2)(d)/(e) is accurate. The overclaim is the interpretation: the CRA requires limiting attack surfaces (including external interfaces), secure-by-default configuration and a possibility to reset to original state; it does not prescribe a universal port-disable list, protocol ban or mandatory administrator opt-in workflow. Original archive remains unchanged.
