@@ -1285,3 +1285,11 @@
 - Pre-merge ref `safety/pre-merge-main-pr30-2026-11-17` → `80245d9e132380a10581612c031f87869993b98d`; post-merge ref `safety/post-merge-main-pr30-2026-11-17` → `975ec6728988e43d9a1ebbf6f6d84288aa44c2fd`. post-merge ref와 main compare identical 확인.
 - PR #30에서 수정한 파일은 `.github/workflows/tests.yml`, AI_RULEBOOK, MASTER_PLAN, PROJECT_LOG, PROJECT_STATUS, README, SESSION_LOG 및 신규 감사 보고서다. 운영 `run.yml`/런타임 코드/state/history/archive는 변경하지 않았다.
 - 원본 PDF 바이너리 SHA-256과 item 18 날짜는 미완료/미확인으로 남긴다.
+
+
+## 2026-11-17 — PR #30 사후 상황판 동기화
+
+- PR #30 merge `975ec6728988e43d9a1ebbf6f6d84288aa44c2fd` 및 Run #610 success를 README/PROJECT_STATUS/MASTER_PLAN/AI_RULEBOOK/SESSION_LOG/PROJECT_LOG에 반영했다.
+- `docs/pr30-postmerge-status-sync-2026-11-17`은 문서 전용 브랜치이며 구현 작업 브랜치로 취급하지 않는다.
+- 격리 tests workflow의 push allowlist에 이 문서 브랜치를 추가해 변경분도 CI 검증한다. 운영 workflow는 변경하지 않는다.
+- PR #30의 원본 PDF binary hash와 item 18 날짜 미확인 제한을 계속 유지한다.
