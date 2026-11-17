@@ -744,15 +744,15 @@
 ## 2026-11-17 — CRA 공식 source provenance 파이프라인 PR #26 병합
 
 - PR #26 [CRA: integrate CELLAR official-source retrieval and claim-level traceability](https://github.com/useformotor3/ai-discord-bot/pull/26) merge 완료.
-- Merge commit: \`8066c166ba01fbfb8d25f61ce0ce6ed72f151854\`; 구현 브랜치 \`experiment/cellar-source-retrieval-2026-11-17\`는 감사/복구를 위해 유지.
+- Merge commit: `8066c166ba01fbfb8d25f61ce0ce6ed72f151854`; 구현 브랜치 `experiment/cellar-source-retrieval-2026-11-17`는 감사/복구를 위해 유지.
 - 기존 PR #25는 PR #26에 동일 변경과 후속 검증이 포함되어 중복 정리했다. 코드 변경은 PR #26에 모두 포함된다.
-- 변경 파일 9개: \`.github/workflows/tests.yml\`, \`cra_source.py\`, \`cra_claims.py\`, \`main.py\`, \`tests/conftest.py\`, \`tests/test_main_characterization.py\`, \`tests/test_cra_source.py\`, \`tests/test_cra_claims.py\`, \`tests/test_external_failure_paths.py\`.
+- 변경 파일 9개: `.github/workflows/tests.yml`, `cra_source.py`, `cra_claims.py`, `main.py`, `tests/conftest.py`, `tests/test_main_characterization.py`, `tests/test_cra_source.py`, `tests/test_cra_claims.py`, `tests/test_external_failure_paths.py`.
 - EUR-Lex 직접 HTTP 202/자동화 접근 응답을 정상 원문으로 처리하지 않고, Publications Office 공식 CELLAR REST API로 법령·정오표·위임규정 7건 수집 경로를 전환했다. Commission 공식 안내/표준화 페이지 2건을 추가해 총 9개 source를 검증했다.
 - source별 요청/최종 URL, 수집 시각, visible text 길이, 전체 visible text SHA-256, prompt excerpt SHA-256을 manifest에 기록한다.
 - CELLAR redirect는 같은 allowlist host만 허용하고 HTTP redirect는 HTTPS로 승격한 뒤 재요청한다. source timeout/202/빈 응답은 외부 부작용 없는 safe no-op, TLS/host/content validation 오류는 fail-closed 처리한다.
 - claim validator는 claim ID/본문 statement/source ID/직접 quote/Article paragraph/Annex Part-point locator를 검증한다. 동일 Article의 다른 paragraph quote는 거부한다.
 - [Actions Run #573](https://github.com/useformotor3/ai-discord-bot/actions/runs/44039961078): **138 passed, 1 xfailed**. 9개 공식 source 실시간 수집 및 Article 13(8) paragraph locator/quote 일치 확인.
-- 테스트 실행 대상 PR head: \`d1bda523c1b593bbd48bf4916dd7bbd741001894\`. merge commit 자체의 별도 Actions run은 확인되지 않아 post-merge CI success로 확대 주장하지 않는다.
+- 테스트 실행 대상 PR head: `d1bda523c1b593bbd48bf4916dd7bbd741001894`. merge commit 자체의 별도 Actions run은 확인되지 않아 post-merge CI success로 확대 주장하지 않는다.
 - Commission Guidance PDF/Annex 및 M/606 결정 C(2026) 7861 Annex는 관련 URL만 manifest에 기록했다. PDF/결정문 원문 파싱은 미완료이며 source page summary로 Annex 내용을 입증했다고 주장하지 않는다.
 - 제품 모델/회로/펌웨어/프로토콜/시장 공급 구조가 없으므로 모델별 CRA 적용성·분류·적합성 결론은 여전히 잠정이다.
 - 상세 설계·source IDs·SHA-256·검증·한계: [CRA_SOURCE_PROVENANCE_PIPELINE_2026-11-17.md](reports/CRA_SOURCE_PROVENANCE_PIPELINE_2026-11-17.md).
