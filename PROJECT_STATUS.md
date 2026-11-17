@@ -866,3 +866,9 @@
 - Annex I Part I point (1)(e)는 존재하지 않는 locator. 접근통제는 Part I (2)(d), secure-by-default/reset은 (2)(b).
 - 최종 OJ에 “default passwords” 문구가 없으며, 공통 기본 비밀번호 금지·기기별 랜덤 비밀번호·최초 접속 복잡성 규칙은 특정 구현을 법적 의무로 단정할 수 없다.
 - correction report #7 생성: reports/CRA_CORRECTION_REPORT_7_2026-11-17.md. correction reports #7–#19 완료.
+
+## 2026-11-17 — archive #6 DoS/가용성 정정 감사
+- 원본 archive #6 SHA 34de32d788d55790606193b86c355d5d7a279845 확인, 원본 보존.
+- final OJ는 Annex I Part I (2)(h)에 essential and basic functions availability 및 DoS resilience/mitigation을 규정. 원본의 (1)(f)/(h)는 구판/초안 구조와 혼합.
+- dual-core/MPU-DSP 분리, rate limiting, packet drop, STO/SS1 전이는 특정 법적 구현 의무가 아니며 제품 위험·기능안전 분석으로 결정.
+- correction report #6 생성: reports/CRA_CORRECTION_REPORT_6_2026-11-17.md. correction reports #6–#19 완료.
