@@ -213,7 +213,7 @@ flowchart LR
 - IEC 61800-5-2:2016+AMD1:2026 CSV: https://webstore.iec.ch/en/publication/117563
 - IEC 62061:2021+AMD1:2024+AMD2:2026 CSV: https://webstore.iec.ch/en/publication/112847
 - ISO 13849-1:2023: https://www.iso.org/standard/73481.html
-- IEC 61508-1:2026 PRV: https://webstore.iec.ch/en/publication/117296
+- IEC 61508-1:2026 PRV(최종 발행 예정 2027-01-22): https://webstore.iec.ch/en/publication/117296
 - Mitsubishi MELSERVO-J5 safety sub-functions: https://www.mitsubishielectric.com/fa/products/drv/servo/pmerit/mr_j5/amp/safety_sub-functions.html
 - Yaskawa Sigma-7 ASM7 product page: https://www.yaskawa.ie/motion-control/option-modules/productdetail/product/advanced-safety-module_15806
 - Rockwell Kinetix 5700 safety reference manual: https://literature.rockwellautomation.com/idc/groups/literature/documents/rm/2198-rm001_-en-p.pdf
