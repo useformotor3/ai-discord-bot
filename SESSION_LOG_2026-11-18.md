@@ -21,3 +21,12 @@
 - CRA-008의 regular testing은 고정 법정 주기 숫자 미규정, CRA-009의 공개 지연 예외를 감사 문서와 통합 보고서에 기록했다.
 - 추적표·통합 보고서·독립 감사·상황판/세션 로그를 같은 작업 브랜치에서 정합화했다. exact-head CI 통과 전 병합하지 않는다.
 - 다음 대상은 CRA-011–CRA-020.
+
+
+## CRA 법령 문언 심층 감사 Batch 2
+- EUR-Lex 공식 Regulation (EU) 2024/2847 원문으로 CRA-011–CRA-020을 행별 대조했다.
+- 신규 상세 감사: `reports/CRA_LEGAL_SEMANTICS_AUDIT_BATCH2_2026-11-18.md`.
+- 요구사항 CSV에 연락창구의 비자동화 연락 수단 선택, 보안 업데이트의 무상 제공 예외, support period의 5년 미만 조건, 기술문서 작성/갱신과 보관 분리, Annex V/VI DoC, Article 32 평가경로 차이를 반영했다.
+- CRA-020의 중요 해석: Annex III/IV core functionality 기준, 통합만으로 host product 분류 전이 금지, Class I/II/Critical 평가경로 분리.
+- 통합 보고서·독립 감사·상황판을 같은 브랜치에서 동기화한다. exact-head CI 성공 전 병합 금지.
+- 다음 대상: CRA-021–CRA-035.

@@ -333,3 +333,19 @@ EUR-Lex 공식 Regulation (EU) 2024/2847 원문을 기준으로 CRA-001–CRA-01
 - CRA-009: 수정 취약점 공개는 보안 업데이트 제공 후가 원칙이며, 공개 위험이 이익보다 크다는 정당한 사유가 있는 경우 사용자의 패치 적용 기회까지 공개를 늦출 수 있는 예외를 반영한다.
 
 이 검토는 원문 locator/문언의 1차 심층 대조이며 법률가 의견서가 아니다. 제품별 적용성·적합성은 제품 사실 증거가 없으므로 미확정이다.
+
+
+## 18. 법령 문언 심층 대조 Batch 2 (CRA-011–CRA-020, 2026-11-18)
+
+EUR-Lex 공식 Regulation (EU) 2024/2847 원문 기준으로 CRA-011–CRA-020을 행별 대조했다. 상세 표는 [CRA 법령 문언 심층 감사 Batch 2](CRA_LEGAL_SEMANTICS_AUDIT_BATCH2_2026-11-18.md)를 참조한다.
+
+핵심 해석 보완:
+- CRA-011: Article 13(17) 단일 연락창구는 직접·신속한 소통, 쉽게 식별 가능, 사용자 선호 통신수단 선택, 자동화 도구만으로 제한 금지를 포함한다.
+- CRA-012: Annex I Part II(7)의 안전한 배포 메커니즘을 요구하되 서명/암호학적 무결성/전송 보호 등은 구현 증거 예시로 분리하고 법문에 직접 열거된 독립 요구로 과장하지 않는다.
+- CRA-013: 무상 제공 예외는 tailor-made PDE의 business user와 제조자 간 별도 합의로 한정한다.
+- CRA-014: 최소 5년 지원기간의 예외는 예상 사용기간이 5년 미만인 경우로 제한되며 객관적 근거와 Annex VII(4) 문서화를 요구한다.
+- CRA-016/017: 기술문서의 작성·갱신(Article 31)과 당국 제공 가능 보관(Article 13(13)), 사용자 정보의 제공·보존(Article 13(18))을 구분한다.
+- CRA-019: Full EU DoC(Annex V)와 simplified EU DoC(Annex VI)를 구분한다.
+- CRA-020: Important/Critical 분류는 Annex III/IV core functionality에 기초하며, 단순 통합만으로 host product에 분류가 전이되지 않는다. Article 32(2) Class I의 조건부 third-party route와 Article 32(3) Class II, Article 32(4) Critical 경로를 분리한다.
+
+제품별 적용성·분류·적합성은 제품 사실 증거가 없으므로 미확정이다.

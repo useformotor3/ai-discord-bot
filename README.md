@@ -517,3 +517,6 @@
 ## CRA 법령 심층 감사 진행
 - Batch 1 (CRA-001–CRA-010) 상세 원문 대조: [감사 기록](reports/CRA_LEGAL_SEMANTICS_AUDIT_2026-11-18.md)
 - 최신 프로젝트 상황 및 남은 범위: [PROJECT_STATUS_CURRENT.md](PROJECT_STATUS_CURRENT.md)
+
+
+- Batch 2 (CRA-011–CRA-020) 법령 문언 감사: [상세 기록](reports/CRA_LEGAL_SEMANTICS_AUDIT_BATCH2_2026-11-18.md).

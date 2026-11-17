@@ -131,3 +131,12 @@ CI artifact Run #702의 원본 PDF를 다운로드해 SHA-256 manifest와 대조
 - 주요 locator 정정: CRA-003에서 Article 13(2)를 원격 데이터 처리 근거에서 제외하고 Article 3(2)/Recital 11–12로 교체. CRA-006에서 SBOM 근거를 Annex I Part II(1), Article 13(7), Annex VII(2)(b)/(8)로 세분화하고 Article 13(5)는 제3자 구성요소 due diligence로 분리. CRA-001은 Article 3(8)–(10)/Recital 9를 보강.
 - 해석 통제: Article 3(22) market-availability는 연결성 테스트와 별개. Annex VII(8) 당국 요청 제출은 SBOM 기본 작성 의무를 조건부로 만들지 않는다. Annex I Part II(3)의 regular testing은 법정 고정 주기를 특정하지 않는다. Part II(4)의 정당한 공개 지연 예외를 반영한다.
 - 범위 제한: 10개 행의 1차 문언 대조이며 exhaustive legal opinion이나 제품별 적합성 판정이 아니다. 미검증 제품 사실은 미확정으로 유지.
+
+
+## 11. 독립 감사 추가 — CRA 법령 문언 Batch 2 (2026-11-18)
+
+- 검토 파일: [CRA_LEGAL_SEMANTICS_AUDIT_BATCH2_2026-11-18.md](CRA_LEGAL_SEMANTICS_AUDIT_BATCH2_2026-11-18.md), 대상 CRA-011–CRA-020.
+- 공식 근거: EUR-Lex Regulation (EU) 2024/2847, Articles 13(12)–(20), 28, 30–32, Annex I Part II(7)–(8), Annex II, Annex III–IV, Annex V–VII.
+- 확인된 중요 조건: single point of contact는 자동화 도구만으로 제한 불가; 무상 보안 업데이트 예외는 tailor-made PDE + business user + 제조자 합의; 5년 미만 support period는 예상 사용기간이 5년 미만인 경우; 기술문서 작성/갱신과 보관은 별도; full/simplified DoC는 Annex V/VI 구분.
+- 분류/평가: Annex III/IV core functionality 기준, 단순 통합만으로 host product에 Important 분류가 전이되지 않음. Article 32(2) Class I 조건부 평가와 (3) Class II, (4) Critical 절차를 분리했다.
+- 범위 제한: 10개 행의 1차 심층 대조이며 법률가 의견서나 특정 제품의 분류·적합성 판정이 아니다.
