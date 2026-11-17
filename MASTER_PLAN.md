@@ -576,3 +576,11 @@
 - 법령 Article/Annex locator를 원문과 대조하고, Guidance claim PDF locator를 표본 검증한다.
 - traceability gate에서 보고서 top-level section 번호 중복을 fail-closed로 검사한다.
 - 제품별 모델 자료가 없으면 적용성·Annex III/IV·RDPS·적합성 결론은 Unknown/Conditional로 유지한다.
+
+
+## CRA 요구사항 법령 locator 전수 대조 — 2026-11-17
+
+- CRA-001~CRA-035의 Article/Annex paragraph locator를 공식 EUR-Lex 법령 원문과 행 단위로 대조한다.
+- Article number만 맞는지 확인하지 않고 실제 법적 의무·적용 주체·조건·기한·예외가 매트릭스 설명과 일치하는지 확인한다.
+- 발견된 오류는 requirement CSV, 통합 보고서, 관련 SEC control 및 audit log를 함께 수정한다.
+- 근거가 불명확하면 '미확인'으로 유지하고 적합성 결론으로 확대하지 않는다.
