@@ -7,6 +7,8 @@ SEOUL = ZoneInfo("Asia/Seoul")
 
 import pytest
 
+from cra_source import SourceUnavailableError, SourceValidationError
+
 
 VALID_REPORT = """# CRA 심층 조사 보고서
 
@@ -15,18 +17,32 @@ VALID_REPORT = """# CRA 심층 조사 보고서
 제품의 의도된 용도와 위험평가 결과를 기준으로 요구사항 적용성을 판단한다.
 
 ## 2. 규격 근거 및 상세 내용
-규정 (EU) 2024/2847의 관련 조항과 부속서 요구사항을 구분해 검토한다.
-제조자는 제품 설계와 개발 단계에서 적절한 사이버보안 위험평가를 수행하고,
-식별된 위험을 기술문서와 제품 보안 설계에 반영해야 한다.
-본 설명은 적용성 검토를 위한 조사 초안이며 제품 분류는 별도 확인이 필요하다.
+[C-001] 제조자는 제품의 지원 기간 동안 제품 취약점을 효과적으로 처리해야 한다(Article 13(8)).
+이 설명은 Article 13(8)의 법적 요구사항을 요약한 것이며, 실제 제품 적용성은 별도 위험평가로 확인한다. [C-001]
 
 ## 3. 출처 자료(Source)
-EU 공식 법령 데이터베이스 EUR-Lex, Regulation (EU) 2024/2847.
-https://eur-lex.europa.eu/eli/reg/2024/2847/2024-11-20/eng
+EU 공식 법령 데이터베이스 EUR-Lex, Regulation (EU) 2024/2847 consolidated text.
+https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02024R2847-20241120
+EUR-Lex consolidated text는 문서화 도구이며, 법적 효력 판단은 관보(Official Journal) 정본을 기준으로 한다.
 
 ## 4. 출처 원문 텍스트(Raw Text Quote)
-원문 조항을 확인하고 제품에 적용되는 문구를 인용해 근거를 기록한다.
-인용은 원문과 대조해야 하며 요약 문구를 법령 직접 인용으로 표시하지 않는다.
+"Manufacturers shall ensure, when placing a product with digital elements on the market, and for the support period, that vulnerabilities of that product, including its components, are handled effectively and in accordance with the essential cybersecurity requirements set out in Part II of Annex I."
+
+CLAIM_EVIDENCE_JSON
+```json
+{
+  "claims": [
+    {
+      "claim_id": "C-001",
+      "category": "legal_requirement",
+      "statement": "제조자는 제품의 지원 기간 동안 제품 취약점을 효과적으로 처리해야 한다(Article 13(8)).",
+      "source_id": "CRA-2024-2847-consolidated",
+      "locator": "Article 13(8)",
+      "quote": "Manufacturers shall ensure, when placing a product with digital elements on the market, and for the support period, that vulnerabilities of that product, including its components, are handled effectively and in accordance with the essential cybersecurity requirements set out in Part II of Annex I."
+    }
+  ]
+}
+```
 """
 
 
@@ -40,9 +56,13 @@ def test_successful_generation_uses_only_mocked_external_services(run_main):
     assert state["count"] == 1
     assert len(history) == 1
     assert len(archives) == 1
-    assert "CRA 심층 조사 보고서" in archives[0].read_text(encoding="utf-8")
+    archive_text = archives[0].read_text(encoding="utf-8")
+    assert "CRA 심층 조사 보고서" in archive_text
+    assert "Prompt-excerpt SHA-256: fixture-prompt-sha-cra" in archive_text
+    assert "CRA-COMMISSION-GUIDANCE-2026-07-27" in archive_text
+    assert "CRA-2024-2847-consolidated" in run_main.captured["model_calls"][0]["prompt"]
     assert len(run_main.captured["model_calls"]) == 1
-    assert len(run_main.captured["discord_posts"]) == 1
+    assert len(run_main.captured["discord_posts"]) == 2
     assert [cmd[0] for cmd in run_main.captured["git_commands"]] == [
         "git", "git", "git", "git", "git"
     ]
@@ -60,7 +80,7 @@ def test_model_fallback_is_exercised_without_real_api_calls(run_main):
     assert len(calls) == 4
     assert calls[0]["model"] == "gemini-3.8-flash"
     assert calls[-1]["model"] == "gemini-3.5-flash-lite"
-    assert len(run_main.captured["discord_posts"]) == 1
+    assert len(run_main.captured["discord_posts"]) == 2
 
 
 def test_all_model_failures_stop_without_side_effects(run_main):
@@ -96,7 +116,7 @@ def test_invalid_first_model_response_falls_back_to_valid_second_model(run_main)
     assert len(calls) == 4
     assert all(call["model"] == "gemini-3.8-flash" for call in calls[:2])
     assert all(call["model"] == "gemini-3.5-flash-lite" for call in calls[2:])
-    assert len(run_main.captured["discord_posts"]) == 1
+    assert len(run_main.captured["discord_posts"]) == 2
 
 def test_error_text_inside_an_otherwise_structured_report_is_rejected(run_main):
     error_report = VALID_REPORT + "\n시스템 긴급 경고: 요청 처리에 실패했습니다."
@@ -146,7 +166,7 @@ def test_model_not_found_skips_retries_and_uses_fallback(run_main):
     assert len(calls) == 2
     assert calls[0]["model"] == "gemini-3.8-flash"
     assert calls[1]["model"] == "gemini-3.5-flash-lite"
-    assert len(run_main.captured["discord_posts"]) == 1
+    assert len(run_main.captured["discord_posts"]) == 2
 
 
 def test_git_push_failure_fails_workflow_instead_of_logging_success(run_main):
@@ -163,7 +183,7 @@ def test_git_push_failure_fails_workflow_instead_of_logging_success(run_main):
 
 def test_report_without_official_eurlex_source_is_rejected(run_main):
     invalid = VALID_REPORT.replace(
-        "https://eur-lex.europa.eu/eli/reg/2024/2847/2024-11-20/eng",
+        "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02024R2847-20241120",
         "https://example.com/unknown-source",
     )
     with pytest.raises(SystemExit) as exc:
@@ -266,3 +286,58 @@ def test_discord_delivery_failure_keeps_report_already_archived(run_main):
     assert len(archives) == 1
     assert len(run_main.captured["discord_posts"]) == 1
     assert run_main.captured["git_commands"][-1][0:2] == ["git", "push"]
+
+
+
+def test_temporary_official_source_outage_skips_before_model_and_side_effects(run_main):
+    with pytest.raises(SystemExit) as exc:
+        run_main.execute(
+            [VALID_REPORT],
+            source_result=SourceUnavailableError("mock official source timeout"),
+        )
+
+    assert exc.value.code == 0
+    assert run_main.captured["model_calls"] == []
+    assert run_main.captured["discord_posts"] == []
+    assert run_main.captured["git_commands"] == []
+    assert not (run_main.workdir / "state.json").exists()
+    assert not (run_main.workdir / "history.json").exists()
+
+
+def test_official_source_validation_failure_stops_before_model_and_side_effects(run_main):
+    with pytest.raises(SystemExit) as exc:
+        run_main.execute(
+            [VALID_REPORT],
+            source_result=SourceValidationError("mock source host mismatch"),
+        )
+
+    assert exc.value.code == 1
+    assert run_main.captured["model_calls"] == []
+    assert run_main.captured["discord_posts"] == []
+    assert run_main.captured["git_commands"] == []
+
+
+def test_source_pack_and_claim_evidence_are_included_in_prompt_and_archive(run_main):
+    run_main.execute([VALID_REPORT])
+
+    prompt = run_main.captured["model_calls"][0]["prompt"]
+    archive = next((run_main.workdir / "research_archive").glob("*.md"))
+    archived_text = archive.read_text(encoding="utf-8")
+
+    assert "실제 수집한 공식 source pack" in prompt
+    assert "Article 13" in prompt
+    assert "CLAIM_EVIDENCE_JSON" in prompt
+    assert "Prompt-excerpt SHA-256: fixture-prompt-sha-cra" in archived_text
+    assert "Source pack retrieved at:" in archived_text
+
+
+
+def test_no_new_topic_response_is_safe_noop(run_main):
+    with pytest.raises(SystemExit) as exc:
+        run_main.execute(["추가로 검증할 신규 주제 없음"])
+
+    assert exc.value.code == 0
+    assert len(run_main.captured["model_calls"]) == 1
+    assert run_main.captured["discord_posts"] == []
+    assert run_main.captured["git_commands"] == []
+    assert not list((run_main.workdir / "research_archive").glob("*.md"))

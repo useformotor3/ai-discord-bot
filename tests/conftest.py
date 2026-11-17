@@ -8,6 +8,86 @@ import types
 from types import SimpleNamespace
 
 import pytest
+import cra_source
+
+
+FAKE_ARTICLE_13_8_QUOTE = (
+    "Manufacturers shall ensure, when placing a product with digital elements on the market, "
+    "and for the support period, that vulnerabilities of that product, including its components, "
+    "are handled effectively and in accordance with the essential cybersecurity requirements "
+    "set out in Part II of Annex I."
+)
+FAKE_CRA_SOURCE_TEXT = "\n".join([
+    "Article 13",
+    "Obligations of manufacturers",
+    "8.",
+    FAKE_ARTICLE_13_8_QUOTE,
+    "9.",
+    "Manufacturers shall ensure that each security update remains available after it has been issued.",
+    "Article 14",
+    "Reporting obligations of manufacturers",
+    "1.",
+    "A manufacturer shall notify any actively exploited vulnerability.",
+    "ANNEX I",
+    "ESSENTIAL CYBERSECURITY REQUIREMENTS",
+    "Part I",
+    "(1)",
+    "Products with digital elements shall be designed and developed securely.",
+    "(2)",
+    "The product with digital elements shall protect the availability, authenticity, integrity and confidentiality of data.",
+    "(a)",
+    "The product shall protect stored data.",
+    "(b)",
+    "The product shall prevent unauthorized access to user data.",
+    "(f)",
+    "The product shall protect the integrity of commands and configuration data.",
+    "(g)",
+    "The product shall log security-relevant events.",
+    "Part II",
+    "(5)",
+    "Manufacturers shall have appropriate policies and procedures, including coordinated vulnerability disclosure policies.",
+    "(6)",
+    "Manufacturers shall facilitate the sharing of information about potential vulnerabilities.",
+])
+FAKE_SOURCE_PACK = {
+    "version": "fixture-source-pack-v1",
+    "retrieved_at": "2026-11-17T00:00:00+00:00",
+    "sources": [
+        {
+            "id": "CRA-2024-2847-consolidated",
+            "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02024R2847-20241120",
+            "final_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02024R2847-20241120",
+            "version": "Fixture Regulation (EU) 2024/2847 consolidated text",
+            "text": FAKE_CRA_SOURCE_TEXT,
+            "sha256": "fixture-sha256-cra",
+            "full_text_sha256": "fixture-full-sha-cra",
+            "prompt_excerpt_sha256": "fixture-prompt-sha-cra",
+            "retrieved_at": "2026-11-17T00:00:00+00:00",
+        },
+        {
+            "id": "CRA-COMMISSION-GUIDANCE-2026-07-27",
+            "url": "https://digital-strategy.ec.europa.eu/en/library/commission-publishes-new-guidance-support-timely-cyber-resilience-act-implementation",
+            "final_url": "https://digital-strategy.ec.europa.eu/en/library/commission-publishes-new-guidance-support-timely-cyber-resilience-act-implementation",
+            "version": "Fixture Commission guidance publication page",
+            "text": (
+                "Commission guidance C(2026) 5252 was published on 27 July 2026. "
+                "Today's guidance - though non-binding - includes practical examples "
+                "and discusses remote data processing solutions."
+            ),
+            "sha256": "fixture-sha256-guidance",
+            "full_text_sha256": "fixture-full-sha-guidance",
+            "prompt_excerpt_sha256": "fixture-prompt-sha-guidance",
+            "retrieved_at": "2026-11-17T00:00:00+00:00",
+        },
+    ],
+    "text": (
+        "[CRA-2024-2847-consolidated]\n" + FAKE_CRA_SOURCE_TEXT
+        + "\n[CRA-COMMISSION-GUIDANCE-2026-07-27]\n"
+        + "Commission guidance C(2026) 5252 was published on 27 July 2026. "
+        + "Today's guidance - though non-binding - includes practical examples "
+        + "and discusses remote data processing solutions."
+    ),
+}
 
 
 @pytest.fixture
@@ -67,6 +147,7 @@ def run_main(tmp_path, monkeypatch):
         script_path=None,
         discord_responses=None,
         git_responses=None,
+        source_result=None,
     ):
         genai_module = types.ModuleType("google.genai")
         genai_module.Client = lambda api_key=None: FakeClient(responses)
@@ -153,6 +234,13 @@ def run_main(tmp_path, monkeypatch):
             return completed
 
         monkeypatch.setattr(subprocess, "run", fake_subprocess_run)
+
+        def fake_source_fetch():
+            if isinstance(source_result, BaseException):
+                raise source_result
+            return source_result if source_result is not None else FAKE_SOURCE_PACK
+
+        monkeypatch.setattr(cra_source, "fetch_official_cra_source", fake_source_fetch)
         monkeypatch.chdir(tmp_path)
         monkeypatch.setenv("GEMINI_API_KEY", "TEST_ONLY_NOT_A_REAL_KEY")
         monkeypatch.setenv(
