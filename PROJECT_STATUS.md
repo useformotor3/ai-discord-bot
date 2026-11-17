@@ -1005,3 +1005,11 @@
 - EUR-Lex Annex I Part II(1)에서 최소 최상위 의존성을 포함한 기계 판독형 SBOM 작성이 제조자 기본 의무임을 확인했다.
 - Annex VII(2)(b)는 SBOM을 기술문서의 취약점 처리 프로세스 내용에 포함하며, Annex VII(8)은 시장감시당국의 합리적 요청 및 필요 시 추가 제출 규정이다. Annex VII(8)을 Annex I Part II(1)의 작성 의무 예외로 오독하지 않도록 보고서 문구를 명확히 했다.
 - Annex II(9)의 사용자 제공은 제조자가 SBOM을 사용자에게 공개하기로 결정한 경우의 접근 위치 안내와 구분했다.
+
+
+## 2026-11-17 — CRA 법령 locator 1차 인벤토리 검토
+
+- CRA-001~CRA-035의 Article/Annex locator를 1차로 검토했고, 명백한 잘못된 조항 번호는 현재까지 발견하지 못했다. 세부 문언·조건·예외의 전수 확정은 계속 진행한다.
+- Annex I Part II(1) SBOM 기본 작성 의무, Annex VII(2)(b) 기술문서 포함, Annex VII(8) 요청 제출, Annex II(9) 사용자 공개 조건을 구분해 보고서를 명확화했다.
+- Run #819 성공: **155 passed / 1 xfailed**; 13 claims, 15 interfaces, 35 requirements, 36 SEC controls, 41 M/606 rows, 102 project-log records; official PDF/HTML canaries 및 artifact upload 통과.
+- 제품별 제조사/모델 증거가 없으므로 제품별 분류 및 적합성은 여전히 미확정이다.
