@@ -18,7 +18,7 @@ def _html_for(definition):
     markers = list(definition["required"])
     if definition["id"] == "CRA-2024-2847-consolidated":
         markers.extend(cra_source.REQUIRED_CORRIGENDA_DATES)
-        markers.extend(["Article 13", "8.", "ANNEX I"])
+        markers.extend(["Article 1", "Article 13", "8.", "ANNEX I"])
     if definition.get("extract") == "article_104":
         markers.extend(["Article 104", "CRA Article 32", "26 March 2027", "Article 105"])
     text = " ".join(markers) + " " + ("official-source-content " * 2000)
@@ -133,3 +133,29 @@ def test_source_manifest_is_appended_and_every_record_is_verifiable():
     valid, reason = validate_source_manifest(report, source)
     assert valid, reason
     assert "SHA-256: abc123" in report
+
+
+
+def test_consolidated_cra_excerpt_excludes_recitals_and_keeps_operative_articles():
+    source_text = "\n".join([
+        "Recital (1)",
+        "This is recital text.",
+        "Article 1",
+        "Subject matter",
+        "1.",
+        "This Regulation lays down rules.",
+        "Article 2",
+        "Scope",
+        "1.",
+        "This Article defines the scope.",
+        "ANNEX I",
+        "ESSENTIAL CYBERSECURITY REQUIREMENTS",
+    ])
+    excerpt = cra_source._extract_relevant_excerpt(
+        "CRA-2024-2847-consolidated",
+        source_text,
+    )
+
+    assert "Recital (1)" not in excerpt
+    assert excerpt.startswith("Article 1")
+    assert "ANNEX I" in excerpt
