@@ -1095,3 +1095,9 @@
 - 원본 archive #13 (SHA 7523b68c1537b6ed4d2de197eeb6e5bd4698ea2e)를 검토했다. Article 11을 manufacturer vulnerability handling 조항으로 쓴 오류, Annex I Part II 번호/인용 오류, 익명 제보 및 patch 동시 공개를 일률적 의무로 표현한 오류, servo drive 전체를 Annex III Class I/II로 분류한 오류를 확인했다.
 - Article 13은 제조사 의무/위험평가/지원기간, Annex I Part II는 취약점 처리, Article 14는 actively exploited vulnerability 및 severe incident mandatory reporting을 규정한다.
 - correction report #13 생성. 원본 archive는 변경하지 않았다. correction reports #13–#19 완료.
+
+## 2026-11-17 — archive #12 정정
+- 원본 archive #12의 Article 13(14) 무상 업데이트 인용은 조항 오류다. Article 13(14)는 series production 지속 적합성 절차이며 무상 보안 업데이트는 Annex I Part II (8)에 있다.
+- Article 13(8) support period는 원칙적으로 최소 5년, 예상 사용기간이 더 짧으면 해당 기간. Article 13(9)의 10년은 각 security update의 availability 유지기간이다.
+- Article 13(19) 종료일 표시/알림과 Part II (8)의 tailor-made product 예외를 정정 보고서 #12에 기록했다. 원본 archive는 변경하지 않았다.
+- correction reports #12–#19 완료. 다음은 #11 이하 감사.
