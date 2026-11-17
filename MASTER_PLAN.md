@@ -568,3 +568,9 @@
 1. [완료] DoS/availability locator를 final OJ Annex I Part I (2)(h)로 정정.
 2. [완료] dual-core, traffic shaping, packet filtering과 STO/SS1를 구현 후보/기능안전 판단으로 분리.
 3. [진행] archive #5 이하 역순 감사.
+
+## 2026-11-17 — archive #5 correction audit
+1. [완료] attack surface locator를 Annex I Part I (2)(j)로 정정.
+2. [완료] Recital 9의 물리/논리 인터페이스 설명과 디버그 포트 영구 비활성화 구현을 분리.
+3. [완료] JTAG/SWD/UART, eFuse/OTP 및 IEC 62443 요구를 구현 선택/별도 표준 traceability로 분류.
+4. [진행] archive #4 이하 역순 감사.
