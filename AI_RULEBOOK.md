@@ -351,3 +351,11 @@
 - C(2026) 5252는 CRA Article 26에 따른 비구속적 Commission guidance다. 법령 또는 CJEU의 권위 있는 해석과 동일시하지 않고, 법적 의무·Commission interpretation·engineering recommendation을 분리한다.
 - C(2026) 7861 Annex의 날짜는 ESO의 표준 채택 기한이다. OJ harmonised standard citation, presumption of conformity, 제품별 conformity assessment 또는 CRA application date와 혼동하지 않는다.
 - 제품별 적용성/분류는 제품명만으로 결정하지 않는다. Guidance §2.5 data connection, §6 core functionality, §8 RDPS는 실제 회로·데이터 흐름·기능·제조자 책임 및 제품 경계를 확인하는 기준으로 사용한다.
+
+
+## 51. PR #30 검증 및 복구 기준
+
+- PR #30의 검증 증거는 PR head Actions Run #610 (`44050954456`) success, 141 passed / 1 xfailed, compileall, source blob identity 및 9-source live canary다.
+- merge commit `975ec6728988e43d9a1ebbf6f6d84288aa44c2fd` 자체의 별도 CI run을 확인하지 못했다면 PR head CI와 구분해 기록한다.
+- pre-merge safety ref `safety/pre-merge-main-pr30-2026-11-17`와 post-merge ref `safety/post-merge-main-pr30-2026-11-17`의 SHA를 기록하고, post-merge ref와 main이 동일한지 compare/readback한다.
+- 문서·테스트 전용 workflow 변경이 운영 `run.yml`, application runtime, state/history/archive 또는 외부 서비스 실행에 영향을 주지 않았는지 PR diff로 확인한다.

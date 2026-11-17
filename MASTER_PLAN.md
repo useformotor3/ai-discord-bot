@@ -503,3 +503,15 @@
 4. Guidance §6 core functionality와 §8 RDPS 기준을 35 requirements/36 SEC controls 및 통합 보고서에 claim-level로 연결한다.
 5. Annex I의 41개 표준 주제를 SEC control/설계/시험 후보에 매핑하되 ESO adoption deadline, harmonised status, presumption of conformity, CRA application date를 별도 필드로 관리한다.
 6. Article/Annex live locator canary를 Annex I Part I/II 및 핵심 Article로 확대하고 mock regression + CI를 검증한다.
+
+
+## 2026-11-17 — PR #30 병합 완료 및 다음 단계
+
+- 공식 Guidance/M/606 Annex 감사 보고서 `reports/CRA_OFFICIAL_GUIDANCE_AND_M606_ANNEX_AUDIT_2026-11-17.md`가 PR #30으로 main에 병합됐다.
+- Merge commit `975ec6728988e43d9a1ebbf6f6d84288aa44c2fd`; [Run #610](https://github.com/useformotor3/ai-discord-bot/actions/runs/44050954456) success: 141 passed / 1 xfailed, compileall/source identity/live official source canary 통과.
+- Pre/post safety refs `safety/pre-merge-main-pr30-2026-11-17` / `safety/post-merge-main-pr30-2026-11-17`를 생성했고, post-merge ref와 main이 동일함을 비교 확인했다.
+- 다음 우선순위는 (1) M/606 item 18 원본 표 이미지 확인 및 C(2026)7861 문서등록부 전체 확인, (2) PDF 원본 bytes와 SHA-256 취득, (3) Guidance §2.5/§6/§8을 interface/requirements/SEC matrix에 claim-level 연결, (4) Annex I live locator canary 확대다.
+- CI 성공은 PR head 기준이다. merge commit 자체의 별도 Actions run은 확인되기 전까지 미확인으로 표시한다.
+
+
+- PR #30 병합 후 구현 작업 브랜치는 없는 상태로 정리한다. PR #31은 README/PROJECT_STATUS/SESSION_LOG 및 기록의 사후 동기화만 수행하며, 다음 기능·자료 구현은 PR #31 병합 후 최신 main에서 새 작업 브랜치로 시작한다.
