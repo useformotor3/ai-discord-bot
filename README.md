@@ -478,3 +478,10 @@
 
 
 - [M/606 Annex I 41-item 서보 드라이브 관련성 매핑](reports/CRA_M606_ANNEX_I_SERVO_DRIVE_RELEVANCE_2026-11-17.csv): horizontal/vertical/component 표준화 주제, ESO 일정, 조건부 제품 관련성 및 후보 CRA/SEC/interface cross-reference.
+
+
+## PR #37 병합 — M/606 Annex I 41-item relevance map
+
+- [PR #37](https://github.com/useformotor3/ai-discord-bot/pull/37) squash merge 완료. Merge commit `25e1c36cc61a3001b5045cb8a6e90473fe830459`.
+- [Run #757](https://github.com/useformotor3/ai-discord-bot/actions/runs/44056704831): **154 passed / 1 xfailed**, 41-item mapping traceability, PDF/HTML canaries 통과.
+- Pre/post refs: `safety/pre-merge-main-pr37-2026-11-17` → `360b93a1b9fbf554607e8f258edbaa303c1fcb6f`; `safety/post-merge-main-pr37-2026-11-17` → `25e1c36cc61a3001b5045cb8a6e90473fe830459`; post ref와 main compare identical.
