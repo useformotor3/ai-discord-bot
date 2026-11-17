@@ -242,7 +242,7 @@ prompt = f"""
     3. 출처 자료(Source): (참고한 공식 EU 규정 문서명, 웹사이트 이름 또는 표준 규격 명칭과 URL)
     4. 출처 원문 텍스트(Raw Text Quote): (source pack에서 직접 확인한 50자 이상의 정확한 원문 인용)
     5. CLAIM_EVIDENCE_JSON: 아래 스키마의 JSON code block 하나만 작성
-       {"claims":[{"claim_id":"C-001","category":"legal_requirement","statement":"본문의 동일한 문장","source_id":"CRA-2024-2847-consolidated","locator":"Article 13(8)","quote":"원문 50자 이상"}]}
+       {{"claims":[{{"claim_id":"C-001","category":"legal_requirement","statement":"본문의 동일한 문장","source_id":"CRA-2024-2847-consolidated","locator":"Article 13(8)","quote":"원문 50자 이상"}}]}}
     - CLAIM_EVIDENCE_JSON 블록은 보고서 맨 끝에 두고, 해설 문장이나 trailing text를 JSON 뒤에 추가하지 마세요.
     """
 
