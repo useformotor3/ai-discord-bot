@@ -116,7 +116,7 @@ EUR-Lex 통합본은 documentation tool이며 법적 효력은 Official Journal(
 ## 10. 확장 source pack 검증 결과
 
 - Isolated CI Run #141: **103 passed, 1 xfailed**. 정확한 source blob SHA 검증, compileall, 전체 pytest 성공. [실행 로그](https://github.com/useformotor3/ai-discord-bot/actions/runs/43989211881).
-- EUR-Lex read-only canary Run #26: **success**. 네 공식 법령 HTML에서 총 220,715자 visible text 확인. CRA 통합본 196,076자, Regulation 2025/327 394,354자, Delegated Regulation 2025/1535 6,246자, Delegated Regulation 2026/881 15,284자. [실행 로그](https://github.com/useformotor3/ai-discord-bot/actions/runs/43989211861).
+- EUR-Lex read-only canary Run #26: **success**. 네 공식 법령 HTML에서 source pack에 전달된 추출 텍스트 220,715자 확인(2025/327은 관련 Article 104 발췌). 각 원문 HTML의 전체 visible text는 CRA 통합본 196,076자, Regulation 2025/327 394,354자, Delegated Regulation 2025/1535 6,246자, Delegated Regulation 2026/881 15,284자. [실행 로그](https://github.com/useformotor3/ai-discord-bot/actions/runs/43989211861).
 - 기존 CRA 통합본의 정오표 인덱스 3개 날짜(2024-12-05, 2025-07-02, 2025-10-17)도 다시 확인했다.
 - 검증은 공개 EUR-Lex GET과 mock 기반 CI다. Gemini/Discord/운영 workflow 호출은 하지 않았다.
 
