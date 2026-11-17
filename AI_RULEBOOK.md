@@ -422,3 +422,10 @@
 - 최상위 `## N.` 번호는 문서 전체에서 유일해야 하며, 중복 번호는 traceability validator에서 fail-closed로 처리한다.
 - Annex III Important products(Class I/II)와 Annex IV Critical products를 혼용하지 않는다.
 - M/606 Annex I의 horizontal property(1–14), horizontal vulnerability-handling(15), vertical product type 및 security-component 주제를 구분하고, 표준화 요청/ESO deadline을 제조자 법적 의무나 OJ harmonised status로 표현하지 않는다.
+
+
+## 최신 기록 기준 보완 — 2026-11-18
+- 세션 시작 시 최신 재개 스냅샷 [PROJECT_STATUS_CURRENT.md](PROJECT_STATUS_CURRENT.md)와 해당 날짜 세션 로그를 확인한다. 과거 본문에 남은 '현재 작업 브랜치'·'다음 단계'는 최신 스냅샷과 충돌하면 역사 기록으로 취급한다.
+- PR merge는 exact head SHA의 CI 성공, diff/review 상태 확인, pre-merge safety ref 및 expected-head merge를 조건으로 한다. 병합 후 post-merge safety ref와 main compare identical 여부를 확인한다.
+- CI 성공은 소스/테스트/추적성 검증이지 법률가 검토, 제품 적합성, 기능안전 인증 또는 현장 시험을 의미하지 않는다.
+- Commission Guidance PDF의 mirror fallback은 primary source byte identity가 확인되기 전까지 명시적으로 fallback으로 유지한다.
