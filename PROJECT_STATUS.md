@@ -849,3 +849,14 @@
 - `.github/workflows/tests.yml`에 pypdf, source blob pins, PDF live canary 및 7일 artifact 업로드를 추가했다. CI가 성공하고 artifact hash를 readback하기 전에는 원본 PDF 취득·해시 완료라고 기록하지 않는다.
 - 상태: 구현·mock 테스트 추가 완료, GitHub CI/실제 PDF 취득 검증 대기.
 - 제품별 적용성/Annex III·IV 분류는 실제 모델·회로·펌웨어·통신·시장 공급 사실이 확보되기 전까지 잠정 상태를 유지한다.
+
+
+## 2026-11-17 — CRA PDF binary provenance readback
+
+- GitHub Actions Run #642 (`44052336199`)의 PDF source canary에서 Guidance 및 M/606 Annex PDF 2개를 실제 취득하고 pypdf parse, document markers, page count, raw-byte SHA-256, extracted-text SHA-256을 계산했다.
+- Guidance: ANFR mirror fallback 사용, 1,190,726 bytes, 84 pages, SHA-256 `fe209c250e3d1f7599e42826d91963666951332927edcf511a2e79fe8d2f8234`; Commission-hosted original byte identity는 미확인.
+- M/606 Annex: Commission document-register direct fetch, 151,267 bytes, 6 pages, SHA-256 `262b09596cb5cbe7d72a2c7789fb2512ee00db7f69082e7def2c8181b0f63276`.
+- Artifact ID `14313359693`, ZIP SHA-256 `150a687e4d4b13fdd20a432e99fc8ea9ec5bc847b8551dd3f157258dc41cd869`; artifact ZIP를 다운로드하고 SHA-256 재계산하여 GitHub digest와 일치 확인.
+- M/606 Annex I item 18 password manager deadline은 PDF printed page 2의 원본 표 우측 셀에서 `31/01/2027`로 시각 확인. 텍스트 추출에서 행 설명이 페이지 경계를 넘어가며 날짜 셀을 놓쳤던 문제를 해결했다.
+- 상세 manifest: `reports/CRA_PDF_SOURCE_PROVENANCE_2026-11-17.json`.
+- Run #642의 PDF fetch/test 단계는 통과했지만 기존 HTML publication-page source canary는 `C(2026) 5252` marker를 summary page에서 요구해 실패했다. 페이지 요약과 Annex PDF의 식별자를 분리하도록 `cra_source.py` marker를 수정하고 regression test를 추가했다. 수정 후 CI 재검증 대기.
