@@ -6,11 +6,12 @@
 - 기준 저장소: `useformotor3/ai-discord-bot`
 - 운영 기준 브랜치: `main` (운영 자동화 및 데이터 보존)
 - 현재 작업 브랜치: 없음 (PR #28 최종 복구 체크포인트/상황판 동기화 병합 완료; 후속 재개는 최신 main에서 시작)
-- 최신 main 기준점: PR #28 merge commit `942e1e6b5f2887001279a96c21f94138d283a689`; 관리 문서 PR #27 `5f0c54a018e18b3453b1c836a5a7d2e9a266331b`; source provenance 코드 PR #26 `8066c166ba01fbfb8d25f61ce0ce6ed72f151854`
+- 최신 CRA source 기준점: PR #29 merge commit `9c16724b8b72bd09d3492b19ff714602b235c66b`; PR #28 recovery checkpoint `942e1e6b5f2887001279a96c21f94138d283a689`; 관리 문서 PR #27 `5f0c54a018e18b3453b1c836a5a7d2e9a266331b`; source provenance 코드 PR #26 `8066c166ba01fbfb8d25f61ce0ce6ed72f151854`
 - 최신 source gate PR #26 병합 완료: CELLAR 공식 법령 7건 + Commission 공식 페이지 2건, SHA manifest, claim-level validator, fail-closed source gate
 - CRA-only 범위 통제 병합 기준점: PR #18, merge commit `b7813ddd311bc51bfb0eb26458eace9ff82b621f` (2026-11-17)
 - 마지막 CRA 코드/출처 검증 병합: PR #26 merge `8066c166ba01fbfb8d25f61ce0ce6ed72f151854`. PR head Run #573 success: 138 passed / 1 xfailed, 9개 live official source 및 Article 13(8) locator/quote 확인. merge commit 자체의 별도 run은 미확인.
 - 마지막 관리 문서 동기화: PR #27 merge `5f0c54a018e18b3453b1c836a5a7d2e9a266331b`. Run #575 success: 138 passed / 1 xfailed 및 live source canary 재통과.
+- 정오표 우선순위 보강: PR #29 merge `9c16724b8b72bd09d3492b19ff714602b235c66b`. 최종 PR head Run #596: 141 passed / 1 xfailed, 9개 source, Article 64(10)/67 corrigenda 및 Article 13(8) live canary 통과.
 - 이번 비교 기준: PR #28 병합 후 활성 작업 브랜치 없음. 다음 작업 시작 시 main HEAD와 원격 브랜치를 다시 조회해 기준선을 설정
 - 프로젝트 상태: CRA 통합 보고서 v0.2 병합, 요구사항 추적표 35항목, 인터페이스 적용성 매트릭스 15항목 병합. 보안 통제·시험 매트릭스 36항목 초안 작업 중.
 - 주 문서 언어: 한국어
@@ -780,3 +781,18 @@
 - PR #28 pre-merge ref `safety/pre-merge-main-pr28-2026-11-17` → `5f0c54a018e18b3453b1c836a5a7d2e9a266331b`; post-merge ref `safety/post-merge-main-pr28-2026-11-17` → `942e1e6b5f2887001279a96c21f94138d283a689`. 두 ref 모두 SHA readback 검증 완료.
 - merge commit 자체의 별도 Actions run은 확인되지 않았다. PR head Run #577 결과만 기록한다.
 - 변경은 문서/로그/복구 기준점에 한정되며 운영 코드, workflow, state/history/archive, Gemini/Discord 외부 동작은 변경하지 않았다.
+
+
+## 2026-11-17 — CRA 정오표 우선순위 검증 PR #29 병합
+
+- PR #29 [fix: verify consolidated CRA text reflects operative corrigenda](https://github.com/useformotor3/ai-discord-bot/pull/29) merge 완료.
+- Merge commit: `9c16724b8b72bd09d3492b19ff714602b235c66b`.
+- Article 64(10): 2025-07-02 R(02)의 정정 후 문구 `paragraphs 2 to 9`를 prompt excerpt에서 확인하고, 정정 전 `paragraphs 3 to 9`가 남아 있으면 해당 Article block 안에서만 교체한다.
+- Article 67: 2025-10-17 R(04)의 정정 후 참조 `72. Regulation (EU) 2024/2847`를 확인하고, 정정 전 `69.`가 남아 있으면 해당 Article block 안에서만 교체한다.
+- 정오표 source ID의 전/후 문구, 대상 Article, 중복 여부를 확인한다. source 또는 문구가 누락·모호하면 fail-closed.
+- raw visible-text SHA-256은 수집 원문 그대로 유지하고, 적용/확인된 prompt excerpt SHA-256을 재계산한다. manifest에 적용/확인 정오표 ID와 변경 설명을 기록한다.
+- [Actions Run #596](https://github.com/useformotor3/ai-discord-bot/actions/runs/44043479661): **141 passed, 1 xfailed**; 9개 공식 source fetch, Article 64(10)/67 corrigenda precedence, Article 13(8) locator/quote canary 통과.
+- PR #29 pre-merge ref `safety/pre-merge-main-pr29-2026-11-17` → `9ad730c42de6451ce6942298e9b17e3e82a3ef62`; post-merge ref `safety/post-merge-main-pr29-2026-11-17` → `9c16724b8b72bd09d3492b19ff714602b235c66b`. 두 ref SHA readback 검증 완료.
+- PR head Run #596은 확인했으나 merge commit 자체의 별도 Actions run은 확인되지 않았다.
+- 운영 Gemini/Discord workflow, state/history/archive 및 SIL 3 과거 산출물은 변경하지 않았다.
+- 다음: Commission Guidance PDF/Annex 및 M/606 C(2026) 7861 decision Annex 원문 수집, Annex I live locator 확대, 35 requirements/15 interfaces/36 SEC controls의 source claim·제품 증거 연결.
