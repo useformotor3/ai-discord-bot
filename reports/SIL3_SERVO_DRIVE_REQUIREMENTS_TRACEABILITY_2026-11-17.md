@@ -35,7 +35,7 @@
 |---|---|---|---|---|
 | CYB-001 | Annex I Part I (2)(b): secure-by-default 및 초기 상태 reset | secure configuration, factory reset, role-based commissioning | default configuration audit, reset test | 법적 목표는 secure-by-default; 구체 credential 방법은 설계 선택 |
 | CYB-002 | Annex I Part I (2)(d): unauthorized access 방지 | authentication, identity/access management, service access control | brute-force/unauthorized access test | 법적 목표와 특정 MFA/TPM 구현을 구분 |
-| CYB-003 | Annex I Part I (2)(e): data/command/program/config integrity | signed firmware, secure boot, parameter CRC/signature | tampered image/parameter rejection | digital signature는 구현 선택 |
+| CYB-003 | Annex I Part I (2)(f): data/command/program/config integrity | signed firmware, secure boot, parameter CRC/signature | tampered image/parameter rejection | digital signature는 구현 선택 |
 | CYB-004 | Annex I Part I (2)(l): relevant internal activity logging | security event log, access/change audit, opt-out where required | access/config change log test, storage integrity | CRA 문언에 맞는 이벤트 범위와 opt-out 반영 |
 | CYB-005 | Annex I Part II (2)/(7)/(8): vulnerability remediation and secure/free security updates | signed update package, safe rollback/recovery, update channel | signature failure, rollback, interrupted update | update mechanism은 설계 선택, free security update는 별도 CRA 의무 |
 | CYB-006 | Annex I Part II (5)/(6): CVD policy/contact | PSIRT intake, vulnerability contact address, CVD process | public policy/contact and triage records | security.txt/PGP/SLA/CVE는 특정 형식으로 직접 강제되지 않음 |
