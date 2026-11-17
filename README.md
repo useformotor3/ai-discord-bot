@@ -495,3 +495,5 @@
 - [PR #39](https://github.com/useformotor3/ai-discord-bot/pull/39) squash merge 완료: `aec679142bf8c12b1ce18b233956f9695d70ca21`.
 - [Run #781](https://github.com/useformotor3/ai-discord-bot/actions/runs/44058504509): **154 passed / 1 xfailed**; traceability 41 M/606 rows, official PDF/HTML canaries 통과.
 - Pre-merge ref `safety/pre-merge-main-pr39-2026-11-17` → `d212081d0f105fc2b293606d71f9b156f0c45c89`; post-merge ref `safety/post-merge-main-pr39-2026-11-17` → `aec679142bf8c12b1ce18b233956f9695d70ca21`; merge SHA와 main 비교 identical.
+
+- [통합 CRA 보고서 독립 검토 기록](reports/CRA_INTEGRATED_REPORT_INDEPENDENT_AUDIT_2026-11-17.md): 섹션 번호·법적 분류 용어·근거 출처 한계·제품별 미확정 사항을 2차 검토.
