@@ -355,3 +355,7 @@
 
 ### CRA report evidence traceability
 CRA draft generation now requires a structured `CLAIM_EVIDENCE_JSON` block. Legal requirements and official explanations must identify a source-pack ID, clause locator, and a verbatim quotation of at least 50 characters. The body must reference each declared claim ID. Interpretations and engineering recommendations are kept separate and require an explanatory basis. This is a provenance/traceability gate, not a legal interpretation or product-conformity assessment. See [the source provenance report](reports/CRA_SOURCE_PROVENANCE_GATE_2026-11-17.md).
+
+
+### Gemini compatibility canary (manual, cost-gated)
+A separate manual workflow checks the current Gemini JSON response contract using one synthetic public sentence only. It is not part of production runs and is not triggered by pushes or pull requests. The dispatch input defaults to `confirm_free_tier=false`; a live request is not made unless the operator explicitly confirms the API project is on the no-cost Free Tier. Google states Free Tier content may be used to improve its products, and Google Search Grounding is not available for Gemini 3.8 Flash Free Tier. Do not send confidential or actual CRA research content through this canary. See [Google's pricing](https://ai.google.dev/gemini-api/docs/pricing/).
