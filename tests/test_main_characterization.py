@@ -22,6 +22,7 @@ VALID_REPORT = """# CRA 심층 조사 보고서
 
 ## 3. 출처 자료(Source)
 EU 공식 법령 데이터베이스 EUR-Lex, Regulation (EU) 2024/2847.
+EUR-Lex consolidated text 20.11.2024; corrigenda 5.12.2024, 2.7.2025 and 17.10.2025.
 https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02024R2847-20241120
 
 ## 4. 출처 원문 텍스트(Raw Text Quote)
@@ -44,6 +45,7 @@ def test_successful_generation_uses_only_mocked_external_services(run_main):
     assert len(run_main.captured["source_gets"]) == 1
     assert "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02024R2847-20241120" in run_main.captured["model_calls"][0]["prompt"]
     assert "Manufacturers shall ensure that vulnerabilities" in run_main.captured["model_calls"][0]["prompt"]
+    assert "corrigenda 5.12.2024, 2.7.2025 and 17.10.2025" in run_main.captured["model_calls"][0]["prompt"]
     assert len(run_main.captured["discord_posts"]) == 1
     assert [cmd[0] for cmd in run_main.captured["git_commands"]] == [
         "git", "git", "git", "git", "git"
@@ -65,6 +67,26 @@ def test_official_source_fetch_failure_stops_before_model_or_external_side_effec
     assert run_main.captured["git_commands"] == []
 
 
+def test_missing_known_corrigenda_index_stops_before_model_calls(run_main):
+    incomplete_source = (
+        "<html><body><h2>Article 13</h2>"
+        "<p>Manufacturers shall ensure that vulnerabilities of the product with digital elements, "
+        "including its components, are handled effectively during the support period.</p>"
+        + (" legal source text" * 1500)
+        + "</body></html>"
+    )
+    with pytest.raises(SystemExit) as exc:
+        run_main.execute(
+            [VALID_REPORT],
+            source_response_override={"text": incomplete_source},
+        )
+
+    assert exc.value.code == 1
+    assert run_main.captured["model_calls"] == []
+    assert run_main.captured["discord_posts"] == []
+    assert run_main.captured["git_commands"] == []
+
+
 def test_non_eurlex_redirect_stops_before_model_calls(run_main):
     with pytest.raises(SystemExit) as exc:
         run_main.execute(
@@ -81,6 +103,7 @@ def test_non_eurlex_redirect_stops_before_model_calls(run_main):
 def test_report_with_unmatched_direct_quote_is_rejected(run_main):
     unrelated_source = (
         "<html><body><h2>Article 13</h2>"
+        "<p>Corrected by Corrigendum 5.12.2024, 2.7.2025 and 17.10.2025.</p>"
         "<p>This official source text deliberately does not contain the submitted quote.</p>"
         + (" additional legal text" * 1500)
         + "</body></html>"
