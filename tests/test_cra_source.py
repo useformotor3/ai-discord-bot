@@ -183,3 +183,19 @@ def test_source_tls_certificate_error_fails_closed(monkeypatch):
 
     with pytest.raises(SourceValidationError, match="TLS 인증 검증 실패"):
         fetch_official_cra_source()
+
+
+
+def test_source_http_202_is_treated_as_temporary_unavailable(monkeypatch):
+    class FakeResponse:
+        status_code = 202
+        url = CRA_SOURCE_CATALOG[0]["url"]
+        text = "<html><body>Request accepted for processing</body></html>"
+        headers = {"Retry-After": "5"}
+
+        def raise_for_status(self):
+            return None
+
+    monkeypatch.setattr(requests, "get", lambda *args, **kwargs: FakeResponse())
+    with pytest.raises(SourceUnavailableError, match="HTTP 202 비동기 수락"):
+        fetch_official_cra_source()
