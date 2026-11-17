@@ -378,3 +378,11 @@
 - C(2026) 7861 Annex hash applies to the Commission document-register PDF bytes.
 - M/606 Annex I item 18 deadline is visually confirmed as `31/01/2027` from the PDF page image. Text extraction can omit table cells at page breaks; never infer the value from adjacent rows when image inspection is available.
 - Run #642's separate HTML source-page canary failed because a PDF document number was incorrectly required on the Commission summary page. Fix the source-page markers and preserve a regression test; do not weaken PDF identity checks.
+
+
+## 54. Guidance publication page와 PDF Annex 식별자 분리
+
+- Commission publication summary page는 PDF 문서번호를 반드시 노출하지 않을 수 있다. HTML page validator에는 페이지 자체의 visible title/date/summary marker만 사용한다.
+- PDF document number, legal title, page count, PDF raw SHA-256은 별도의 PDF source verifier에서 확인한다. HTML page에 PDF document number가 없다는 이유로 source page를 거부하지 않는다.
+- 두 검증 경로를 분리해도 문서 식별 수준은 낮아지지 않는다. page metadata와 PDF identity를 각자 적합한 source layer에서 검증한다.
+- Run #669에서 이 분리 기준과 회귀 테스트가 통과했다(148 passed / 1 xfailed, live PDF+HTML canary pass).
