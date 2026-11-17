@@ -94,8 +94,8 @@ def test_invalid_first_model_response_falls_back_to_valid_second_model(run_main)
 
     calls = run_main.captured["model_calls"]
     assert len(calls) == 4
-    assert all(call["model"] == "gemini-3.8-flash" for call in calls[:3])
-    assert calls[3]["model"] == "gemini-3.5-flash-lite"
+    assert all(call["model"] == "gemini-3.8-flash" for call in calls[:2])
+    assert all(call["model"] == "gemini-3.5-flash-lite" for call in calls[2:])
     assert len(run_main.captured["discord_posts"]) == 1
 
 def test_error_text_inside_an_otherwise_structured_report_is_rejected(run_main):
