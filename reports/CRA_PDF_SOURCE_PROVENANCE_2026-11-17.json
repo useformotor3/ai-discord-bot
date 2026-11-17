@@ -3,16 +3,21 @@
   "retrieved_at": "2026-11-17T09:05:46Z",
   "workflow": {
     "name": "Isolated Python Tests",
-    "run_number": 642,
-    "run_id": 44052336199,
-    "tested_head_sha": "0e36a7aaa238fcac3fee9ef9d9ee8546d2952fb0",
-    "artifact_id": 14313359693,
-    "artifact_name": "cra-official-pdf-sources-8abc2208f2ff494f6bba0c04d8f17198ddf9a2ed",
-    "artifact_url": "https://github.com/useformotor3/ai-discord-bot/actions/runs/44052336199/artifacts/14313359693",
-    "artifact_zip_sha256": "150a687e4d4b13fdd20a432e99fc8ea9ec5bc847b8551dd3f157258dc41cd869",
+    "run_number": 669,
+    "run_id": 44052967754,
+    "tested_head_sha": "40792aea57df1546191b37be17d08389ebfe3a34",
+    "pytest": "148 passed, 1 xfailed",
+    "compileall": "success",
+    "exact_source_blob_identity": "success",
+    "live_official_pdf_canary": "2 PDFs fetched, parsed and SHA-256 verified",
+    "live_official_html_canary": "9 allowlisted official sources fetched; consolidated corrections and Article 13(8) locator/quote passed",
+    "artifact_id": 14315096266,
+    "artifact_name": "cra-official-pdf-sources-a41267cf4fceca615c935e075ab161883bf024f3",
+    "artifact_url": "https://github.com/useformotor3/ai-discord-bot/actions/runs/44052967754/artifacts/14315096266",
+    "artifact_zip_sha256": "82e86c3347413bc6f210a7403939141679c34e5ad738822043af87fc5c2290c0",
     "artifact_size_bytes": 1312630,
     "artifact_downloaded_and_sha256_reverified": true,
-    "expires_at": "2026-11-24T09:05:46Z"
+    "expires_at": "2026-11-24T09:09:59Z"
   },
   "sources": [
     {
@@ -69,8 +74,17 @@
     }
   ],
   "limitations": [
-    "The Commission-hosted C(2026) 5252 primary URL was not the final byte source in this run; the allowlisted ANFR mirror was used. Do not claim Commission-hosted byte identity.",
-    "The PDF artifact is retained for seven days by GitHub Actions; the durable record in this repository is the SHA-256 manifest and source URLs.",
-    "The existing CRA HTML source canary in Run #642 failed because the publication-page validator required the PDF document number C(2026) 5252 on the summary page. The PDF source canary itself passed. The HTML marker is being corrected to validate page metadata separately from PDF identity."
+    "The Commission-hosted C(2026) 5252 primary URL did not yield the PDF in Run 669; the allowlisted ANFR mirror was used. The Guidance raw-byte hash is for the ANFR mirror only; byte-for-byte identity with Commission-hosted primary PDF is not established.",
+    "The PDF artifact is retained for seven days by GitHub Actions; the durable repository record is the SHA-256 manifest and source URLs.",
+    "M/606 Annex I item 18 deadline is visually confirmed as 31/01/2027 from the original PDF page image."
+  ],
+  "previous_verification_runs": [
+    {
+      "run_number": 642,
+      "run_id": 44052336199,
+      "artifact_id": 14313359693,
+      "artifact_zip_sha256": "150a687e4d4b13fdd20a432e99fc8ea9ec5bc847b8551dd3f157258dc41cd869",
+      "result": "PDF canary and artifact upload passed; HTML publication-page canary failed on over-strict C(2026)5252 marker, fixed in Run 669"
+    }
   ]
 }
