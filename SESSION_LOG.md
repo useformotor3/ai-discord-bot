@@ -999,3 +999,11 @@
 ### 문서 동기화 후 정확한 head 재검증
 - 문서/테스트 가이드/프로젝트 로그 동기화 head `7c9360ad6c4e833e0037e3fbc0756d736a15efd2`에서 Isolated CI Run #206 성공: **112 passed, 1 xfailed**.
 - Source SHA pin, compileall, full pytest 통과. https://github.com/useformotor3/ai-discord-bot/actions/runs/43998309434
+
+
+## 2026-11-17 — 수동 Free Tier 게이트 Gemini canary 구현
+- 안전 복구 ref: `safety/pre-gemini-json-canary-2026-11-17-198dfcc` → `198dfcc84b872e5ade7a58c673df335c7c97dcf9`.
+- 추가: `scripts/cra_gemini_canary.py`, `tests/test_cra_gemini_canary.py`, `.github/workflows/cra-gemini-canary.yml`.
+- 고정 synthetic text 1건, 1회 REST 요청, 20초 timeout, JSON claim schema/quote matching, API key header-only. Search Grounding 없음.
+- Manual workflow only, `confirm_free_tier=false` default. 실제 project billing tier를 확인할 수 없어 live API 호출은 하지 않는다.
+- workflow는 현재 Draft PR branch에만 있으므로 default branch 반영 전 dispatch 불가. 운영 workflow에는 영향 없음.
