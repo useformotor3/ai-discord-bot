@@ -13,7 +13,7 @@
 ## 현재 상태 — 2026-11-17
 
 - **활성 범위: CRA 대응만.** SIL 3 자료는 역사적 산출물로 보존하며 별도 명시적 재개 지시 전 비활성.
-- 현재 작업 브랜치: `docs/pr30-postmerge-status-sync-2026-11-17` (PR #30 병합 후 상황판 동기화 중; 기준 main @ `975ec6728988e43d9a1ebbf6f6d84288aa44c2fd`)
+- 현재 구현 작업 브랜치: 없음 (PR #30 병합 완료; PR #31은 문서 전용 사후 동기화이며, 다음 구현은 최신 main에서 새 작업 브랜치로 시작)
 - 최신 main HEAD: `975ec6728988e43d9a1ebbf6f6d84288aa44c2fd` (PR #30 merge); 최신 CRA source 기준점: PR #29 merge commit `9c16724b8b72bd09d3492b19ff714602b235c66b`; PR #28 recovery checkpoint `942e1e6b5f2887001279a96c21f94138d283a689`; 관리 문서 PR #27 `5f0c54a018e18b3453b1c836a5a7d2e9a266331b`; source pipeline PR #26 `8066c166ba01fbfb8d25f61ce0ce6ed72f151854`
 - 최신 CRA source provenance 통합: [PR #26](https://github.com/useformotor3/ai-discord-bot/pull/26) 병합 완료; 공식 CELLAR 7개 법령 자료 + Commission 공식 페이지 2개 수집, claim-level validator 및 source manifest 반영
 - 정오표 우선순위 보강: [PR #29](https://github.com/useformotor3/ai-discord-bot/pull/29) 병합 완료; Article 64(10)/67의 영어 corrigenda를 prompt excerpt에서 적용/확인하고 raw text hash와 corrected excerpt hash를 분리
