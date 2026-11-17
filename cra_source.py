@@ -94,7 +94,7 @@ def validate_research_report(report, source):
         return False, "보고서의 Annex 번호가 수집한 공식 원문에서 확인되지 않습니다."
 
     quote_match = re.search(
-        r"출처 원문(?: 텍스트)?\s*\(?(?:raw text quote)?\)?\s*[:：](.*)$",
+        r"출처 원문(?: 텍스트)?\s*(?:\(raw text quote\))?\s*[:：]?\s*(?:\n|$)(.*)$",
         text, flags=re.IGNORECASE | re.DOTALL,
     )
     if not quote_match:
