@@ -34,7 +34,7 @@ SIL 3 서보 드라이브를 비교할 때 제품군 전체를 하나의 “SIL 
 | IEC 62061:2021 + AMD1:2024 + AMD2:2026 CSV, Ed. 2.2 | 2026-03-20 발행, 유효 | 기계 안전 관련 제어시스템의 기능안전 계획, 설계, 검증, 검증/유효성 확인 및 주기적 시험 |
 | ISO 13849-1:2023, Ed. 4 | 2023-04 발행, 유효 | SRP/CS의 Category, PLr/PL, MTTFd, DCavg, CCF, 소프트웨어 및 검증 |
 | IEC 61508-1:2010, Ed. 2 | 공식 목록상 유효 | E/E/PE 안전 관련 시스템의 기본 기능안전 프레임워크 |
-| IEC 61508-1:2026 PRV, Ed. 3 | FDIS 사전 공개본, 최종 발행 예정일 2027-01-22로 표시 | 최종 발행 전 규범 기준으로 단정하지 말고 개정 영향 사전 검토에만 사용 |
+| IEC 61508-1:2026 PRV, Ed. 3 | FDIS 투표는 2026-11-13 종료, 프로젝트 단계 50.60, 최종 발행 예정일 2027-01-22 | 아직 발행 전이므로 현행 규범 기준은 2010 Ed.2; 개정 영향 사전 검토에만 사용 |
 
 ### 3.1 IEC 61800-5-2 AMD1:2026의 설계 영향
 
@@ -92,11 +92,11 @@ SIL 3 서보 드라이브를 비교할 때 제품군 전체를 하나의 “SIL 
 
 - Siemens 2025-09-30 Safety Manufacturer’s Declaration No. 668.DCO.B2N.40.2509.029은 S210 제품군의 Basic/Extended Safety Integrated functions가 SIL 3 및 PL e를 충족한다고 선언한다.
 - Basic: STO, SS1, SBC. Basic functions는 별도 Safety Extended Runtime license 없이 사용할 수 있다.
-- Extended: SLS, SDI, SSM, SOS, SLA, SS1E, SS2, SS2E, SBT 등. Extended functions는 장치별 runtime license가 필요하다.
-- 제조사 선언서 표에서 Basic functions는 Category 4, Extended functions는 Category 3로 구분된다. SBT는 별도 표에서 PL d Category 2/3로 표시되므로 모든 기능을 PLe로 뭉뚱그리지 않는다.
+- Extended: SLS, SDI, SSM, SOS, SLA, SS1E, SS2, SS2E, SBT 등. License 요구는 기능/제어 방식별로 다르다. 예를 들어 SS1-t/SS1E-t는 무라이선스 경로가 있으나 monitored/advanced variants 등은 Safety Extended Runtime license가 필요할 수 있으므로 정확한 기능표를 확인한다.
+- 제조사 선언서 표에서 Basic functions는 Category 4, Extended functions는 Category 3로 구분된다. SBT는 진단 기능으로 IEC 61800-5-2의 safety sub-function 범위 밖이며, 별도 표에서 PL d Category 2/3로 표시된다. 이를 다른 안전 서브기능과 같은 SIL 3 인증으로 뭉뚱그리지 않는다.
 - Basic 기능은 F-DI 또는 PROFIsafe로 제어할 수 있고 Extended 기능은 PROFIsafe 경로를 사용한다.
 - STO/SS1은 각각 stop category 0/1에 해당한다. STO는 토크 생성 에너지를 차단하지만 모터/드라이브 간 galvanic isolation을 제공하지 않는다.
-- 2025 선언서는 IEC 61508:2010 및 IEC 61800-5-2:2016, ISO 13849-1:2015를 인용한다. 2026-10-30 발행된 IEC 61800-5-2 AMD1:2026 및 ISO 13849-1:2023에 대한 갱신 선언/인증 적용 여부를 Siemens에 확인해야 한다.
+- 2025 선언서는 S210 firmware V6.4 HF4 등을 대상으로 IEC 61508:2010, IEC 61800-5-2:2016 및 ISO 13849-1:2015를 인용한다. 2026-10-30 발행된 IEC 61800-5-2 AMD1:2026 및 ISO 13849-1:2023에 대한 갱신 선언/인증 적용 여부를 Siemens에 확인해야 한다.
 
 **벤치마크 판단:** 기본 STO/SS1/SBC와 Extended motion monitoring 기능의 구분이 명확하고 PROFIsafe 통합이 강점이다. 다만 라이선스, F-DI/PROFIsafe, 안전 기능별 Category 및 최신 표준 판본을 구매/설계 기준서에 명시해야 한다.
 
@@ -140,7 +140,7 @@ SIL 3 서보 드라이브를 비교할 때 제품군 전체를 하나의 “SIL 
 - IEC 61800-5-2:2016+AMD1:2026 CSV Ed. 2.1 (2026-10-30): https://webstore.iec.ch/en/publication/117563
 - IEC 62061:2021+AMD1:2024+AMD2:2026 CSV Ed. 2.2 (2026-03-20): https://webstore.iec.ch/en/publication/112847
 - ISO 13849-1:2023 Ed. 4: https://www.iso.org/standard/73481.html
-- IEC 61508-1:2026 PRV Ed. 3 (FDIS 사전 공개, forecast publication 2027-01-22): https://webstore.iec.ch/en/publication/117296
+- IEC 61508-1:2026 PRV Ed. 3 (FDIS 투표 2026-11-13 종료, 최종 발행 예정 2027-01-22): https://webstore.iec.ch/en/publication/117296
 
 ### 제조사
 - Mitsubishi MELSERVO-J5 Safety Sub-Functions: https://www.mitsubishielectric.com/fa/products/drv/servo/pmerit/mr_j5/amp/safety_sub-functions.html
