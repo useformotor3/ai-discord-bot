@@ -7,6 +7,8 @@ SEOUL = ZoneInfo("Asia/Seoul")
 
 import pytest
 
+from cra_source import SourceUnavailableError, SourceValidationError
+
 
 VALID_REPORT = """# CRA 심층 조사 보고서
 
@@ -54,7 +56,11 @@ def test_successful_generation_uses_only_mocked_external_services(run_main):
     assert state["count"] == 1
     assert len(history) == 1
     assert len(archives) == 1
-    assert "CRA 심층 조사 보고서" in archives[0].read_text(encoding="utf-8")
+    archive_text = archives[0].read_text(encoding="utf-8")
+    assert "CRA 심층 조사 보고서" in archive_text
+    assert "SHA-256: fixture-sha256-cra" in archive_text
+    assert "CRA-COMMISSION-GUIDANCE-2026-07-27" in archive_text
+    assert "CRA-2024-2847-consolidated" in run_main.captured["model_calls"][0]["prompt"]
     assert len(run_main.captured["model_calls"]) == 1
     assert len(run_main.captured["discord_posts"]) == 1
     assert [cmd[0] for cmd in run_main.captured["git_commands"]] == [
@@ -280,3 +286,46 @@ def test_discord_delivery_failure_keeps_report_already_archived(run_main):
     assert len(archives) == 1
     assert len(run_main.captured["discord_posts"]) == 1
     assert run_main.captured["git_commands"][-1][0:2] == ["git", "push"]
+
+
+
+def test_temporary_official_source_outage_skips_before_model_and_side_effects(run_main):
+    with pytest.raises(SystemExit) as exc:
+        run_main.execute(
+            [VALID_REPORT],
+            source_result=SourceUnavailableError("mock official source timeout"),
+        )
+
+    assert exc.value.code == 0
+    assert run_main.captured["model_calls"] == []
+    assert run_main.captured["discord_posts"] == []
+    assert run_main.captured["git_commands"] == []
+    assert not (run_main.workdir / "state.json").exists()
+    assert not (run_main.workdir / "history.json").exists()
+
+
+def test_official_source_validation_failure_stops_before_model_and_side_effects(run_main):
+    with pytest.raises(SystemExit) as exc:
+        run_main.execute(
+            [VALID_REPORT],
+            source_result=SourceValidationError("mock source host mismatch"),
+        )
+
+    assert exc.value.code == 1
+    assert run_main.captured["model_calls"] == []
+    assert run_main.captured["discord_posts"] == []
+    assert run_main.captured["git_commands"] == []
+
+
+def test_source_pack_and_claim_evidence_are_included_in_prompt_and_archive(run_main):
+    run_main.execute([VALID_REPORT])
+
+    prompt = run_main.captured["model_calls"][0]["prompt"]
+    archive = next((run_main.workdir / "research_archive").glob("*.md"))
+    archived_text = archive.read_text(encoding="utf-8")
+
+    assert "실제 수집한 공식 source pack" in prompt
+    assert "Article 13" in prompt
+    assert "CLAIM_EVIDENCE_JSON" in prompt
+    assert "SHA-256: fixture-sha256-cra" in archived_text
+    assert "Source pack retrieved at:" in archived_text
