@@ -828,7 +828,7 @@
 - Pre-merge ref `safety/pre-merge-main-pr30-2026-11-17` → `80245d9e132380a10581612c031f87869993b98d`; post-merge ref `safety/post-merge-main-pr30-2026-11-17` → `975ec6728988e43d9a1ebbf6f6d84288aa44c2fd`; readback compare에서 main과 post-merge ref 동일 확인.
 - PR #30 범위: 한국어 CRA 감사 보고서, 관리 문서·로그 동기화, 격리 테스트 workflow push branch allowlist 1줄. 운영 애플리케이션 코드, 운영 `run.yml`, state/history/archive, Gemini/Discord 외부 실행 및 SIL 3 과거 산출물은 변경하지 않았다.
 - M/606 Commission PDF 및 Guidance ANFR mirror raw-byte SHA-256 검증 완료. M/606 item 18 deadline 31/01/2027 시각 확인 완료. Guidance Commission primary byte identity는 미확인.
-- 현재 구현 작업 브랜치: `cra/integrated-report-independent-audit-2026-11-17` (통합 CRA 보고서 2차 독립 검토 및 중복 섹션 번호 방지 테스트).
+- 현재 구현 작업 브랜치: `cra/requirements-legal-locator-audit-2026-11-17` (CRA-001~CRA-035 법령 Article/Annex locator 전수 대조).
 
 
 ## 2026-11-17 — PR #31 사후 동기화 완료
@@ -989,3 +989,12 @@
 - CI artifact Run #702의 Guidance PDF를 다운로드하고 SHA-256 manifest와 대조한 뒤 G-001~G-013의 paragraph/page locator를 PDF 추출 텍스트와 재대조했다.
 - G-002, G-005, G-006, G-008, G-009, G-010, G-012, G-013의 printed-page locator를 정정했다. G-001, G-003, G-004, G-007, G-011은 유지했다.
 - 정정 내역은 `reports/CRA_INTEGRATED_REPORT_INDEPENDENT_AUDIT_2026-11-17.md` §7에 기록했다. Commission-hosted primary PDF byte identity는 아직 미확인이다.
+
+
+## 2026-11-17 — PR #41 독립 검토 병합
+
+- PR #41 merge commit `acfa2f583157ac541c4c60d71090197322bc8efb`.
+- Run #806 success: **155 passed / 1 xfailed**; 13 claims, 15 interfaces, 35 requirements, 36 SEC controls, 41 M/606 rows, 100 project-log records.
+- G-001~G-013 Guidance PDF paragraph/page locator를 재대조하고 8개 printed-page range를 정정했다. 보고서 섹션 번호 중복 검증도 CI에 추가했다.
+- Pre-merge `safety/pre-merge-main-pr41-2026-11-17` → `576b3918e7f3e6013c59e49bf7e55d49d387217a`; post-merge `safety/post-merge-main-pr41-2026-11-17` → `acfa2f583157ac541c4c60d71090197322bc8efb`; post ref와 main compare identical.
+- 다음 단계는 CRA-001~CRA-035 법령 Article/Annex locator를 공식 EUR-Lex 원문과 대조하고, 근거 불일치가 있으면 매트릭스와 보고서를 함께 수정하는 것이다.
