@@ -1266,3 +1266,12 @@
 - **취득/무결성 제한:** PDF text layer는 확인했으나 직접 다운로드 도구가 Commission PDF 원본 bytes를 반환하지 않아 바이너리 SHA-256을 산출하지 못했다. Guidance PDF는 ANFR mirror의 text layer로 확인했으며 Commission 원본과 byte identity는 미검증. M/606 Annex도 Commission register PDF text layer로 확인했으나 원본 바이너리 해시 미검증.
 - 보고서/관리 문서 변경은 CRA 문서화 작업이다. 운영 main.py/workflow/state/history/archive, Gemini/Discord 호출, SIL 3 자료는 변경하지 않았다.
 - 다음: item 18 원본 PDF 이미지 확인, 원본 bytes/hash 취득, §2.5/§6/§8 내용을 기존 interface/requirements/SEC matrix에 claim-level로 연결, Annex I canary 확장.
+
+
+## 2026-11-17 — PR #30 및 격리 CI 트리거 준비
+
+- PR #30을 생성하고 draft에서 ready-for-review로 전환했다: https://github.com/useformotor3/ai-discord-bot/pull/30.
+- PR event 기반 CI가 connector readback에 나타나지 않아, 테스트 전용 `.github/workflows/tests.yml`의 push branch allowlist에 현재 감사 브랜치만 추가했다. 운영 `.github/workflows/run.yml`은 수정하지 않았다.
+- 최신 branch head `7311e569053d6816c0685b740a782881c56dfc2a` 이후 PROJECT_LOG 검증 메모를 추가했다. 현재 CI status 조회는 비어 있으므로 테스트 성공으로 기록하지 않는다.
+- PR #30은 9 commits ahead / 0 behind, 8 changed files. 문서/로그/격리 테스트 workflow만 변경했다.
+- 다음: GitHub Actions run/status 결과를 확인하고, 성공 시 PR merge 전후 readback 및 safety refs를 수행한다. 실패 시 로그를 분석하고 수정 후 재검증한다.
