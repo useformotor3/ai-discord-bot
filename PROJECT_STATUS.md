@@ -5,7 +5,7 @@
 - 최종 갱신: 2026-11-17 (KST)
 - 기준 저장소: `useformotor3/ai-discord-bot`
 - 운영 기준 브랜치: `main` (운영 자동화 및 데이터 보존)
-- 현재 작업 브랜치: `docs/pr30-postmerge-status-sync-2026-11-17` (PR #30 병합 후 상황판 동기화; 기준 main @ `975ec6728988e43d9a1ebbf6f6d84288aa44c2fd`)
+- 현재 구현 작업 브랜치: 없음 (PR #30 병합 완료; PR #31은 문서 전용 사후 동기화이며, 다음 구현은 최신 main에서 새 작업 브랜치로 시작)
 - 최신 CRA source 기준점: PR #29 merge commit `9c16724b8b72bd09d3492b19ff714602b235c66b`; PR #28 recovery checkpoint `942e1e6b5f2887001279a96c21f94138d283a689`; 관리 문서 PR #27 `5f0c54a018e18b3453b1c836a5a7d2e9a266331b`; source provenance 코드 PR #26 `8066c166ba01fbfb8d25f61ce0ce6ed72f151854`
 - 최신 source gate PR #26 병합 완료: CELLAR 공식 법령 7건 + Commission 공식 페이지 2건, SHA manifest, claim-level validator, fail-closed source gate
 - CRA-only 범위 통제 병합 기준점: PR #18, merge commit `b7813ddd311bc51bfb0eb26458eace9ff82b621f` (2026-11-17)
@@ -828,4 +828,4 @@
 - Pre-merge ref `safety/pre-merge-main-pr30-2026-11-17` → `80245d9e132380a10581612c031f87869993b98d`; post-merge ref `safety/post-merge-main-pr30-2026-11-17` → `975ec6728988e43d9a1ebbf6f6d84288aa44c2fd`; readback compare에서 main과 post-merge ref 동일 확인.
 - PR #30 범위: 한국어 CRA 감사 보고서, 관리 문서·로그 동기화, 격리 테스트 workflow push branch allowlist 1줄. 운영 애플리케이션 코드, 운영 `run.yml`, state/history/archive, Gemini/Discord 외부 실행 및 SIL 3 과거 산출물은 변경하지 않았다.
 - PDF text-layer 내용 감사는 완료했으나 원본 PDF 바이너리 SHA-256은 미완료. M/606 item 18 날짜는 미확인 상태 유지.
-- 현재 활성 작업 브랜치: `docs/pr30-postmerge-status-sync-2026-11-17`; PR #30 후속 상황판 동기화만 수행 중.
+- 현재 구현 작업 브랜치: 없음. PR #31은 문서 전용 사후 동기화이며, 병합 후 다음 구현 작업은 최신 main에서 새 브랜치로 시작한다.
