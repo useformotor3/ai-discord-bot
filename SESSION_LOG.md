@@ -952,3 +952,10 @@
 - Read-only EUR-Lex canary Run #10: success; 196,076자 visible text와 정오표 날짜 3개 확인. 로그: https://github.com/useformotor3/ai-discord-bot/actions/runs/43987552717.
 - Canary는 public EUR-Lex HTTPS GET만 수행한다. 실제 Gemini/Discord/production workflow 호출은 없다.
 - 운영 main 및 run.yml 미변경, PR #3은 Draft/open 상태.
+
+
+## 2026-11-17 — 최종 재실행 결과
+- 최신 isolated CI Run #111: 103 passed, 1 xfailed. source SHA, compileall, full pytest 성공. 로그: https://github.com/useformotor3/ai-discord-bot/actions/runs/43987722348.
+- 최신 EUR-Lex read-only canary Run #11: success. 공식 endpoint에서 196,076자 수집, 정오표 3개 날짜 확인. 로그: https://github.com/useformotor3/ai-discord-bot/actions/runs/43987730194.
+- EUR-Lex consolidated text의 법적 효력 caveat를 prompt/validator/archive에 반영했다.
+- 운영 Gemini/Discord/production workflow는 호출하지 않았고, PR #3은 Draft/open 유지.

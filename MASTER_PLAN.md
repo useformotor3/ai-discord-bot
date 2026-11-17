@@ -408,6 +408,6 @@
 
 ## 2026-11-17 — EUR-Lex 실제 endpoint canary 완료
 - Read-only canary workflow 및 스크립트를 추가했다. 실제 Gemini/Discord/운영 workflow와 분리된다.
-- Canary Run #5 성공: HTTPS EUR-Lex endpoint 응답, 최종 host, 196,076자 visible text, corrigenda 3개 날짜 확인.
+- Canary Run #11 성공: HTTPS EUR-Lex endpoint 응답, 최종 host, 196,076자 visible text, corrigenda 3개 날짜 확인.
 - 법적 효력 주의: EUR-Lex consolidated text는 documentation tool이며 Official Journal 정본 및 corrigenda가 법적 효력의 기준이다.
 - 다음 단계는 claim-to-evidence 매핑 및 원문 버전/hash 변경 감지다.
