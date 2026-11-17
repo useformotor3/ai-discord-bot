@@ -151,3 +151,12 @@ CI artifact Run #702의 원본 PDF를 다운로드해 SHA-256 manifest와 대조
 - Article 14 신고기한의 기산점을 별도 구분: actively exploited vulnerability final report는 corrective/mitigating measure available 후 14일, severe incident final report는 incident notification 제출 후 1개월.
 - Regulation 2025/327 Article 104 개정은 EHR systems 특칙으로 한정한다.
 - 범위 제한: 15개 행의 1차 심층 대조이며 법률가 의견서나 특정 제품의 적용/적합성 판정이 아니다.
+
+
+## 13. 독립 감사 추가 — 교차 매트릭스 정합성 (2026-11-18)
+
+- 감사 파일: [CRA_CROSS_MATRIX_CONSISTENCY_AUDIT_2026-11-18.md](CRA_CROSS_MATRIX_CONSISTENCY_AUDIT_2026-11-18.md).
+- 범위: 35 requirements, 15 interfaces, 36 SEC controls, 13 Guidance claims, 41 M/606 items.
+- 불일치 수정: SEC-015 SBOM 근거 보강, SEC-018 공개 지연 예외 추가, SEC-021 법적 목표/구현 수단 분리, SEC-031 Article 13(2) RDPS locator 제거, SEC-032 연결성 정의 보강, SEC-034 cross-cutting 역할/추적 링크 분리, SEC-036 Article 69(1) 오연결 제거.
+- 상태 통제: 제품별 구현/시험 증거가 없는 SEC controls는 '미작성/증거 미확인', 인터페이스는 '제품별 미확인'으로 유지. M/606은 표준화 요청이며 OJ harmonised standard publication이 아니다.
+- 이 감사는 문서/추적성 일관성 검토이며 제품별 적합성 평가나 법률가 의견서가 아니다.
