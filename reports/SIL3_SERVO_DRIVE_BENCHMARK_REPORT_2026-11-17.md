@@ -158,3 +158,7 @@ SIL 3 서보 드라이브를 비교할 때 제품군 전체를 하나의 “SIL 
 **검증 한계:** 공개 자료는 제조사 자료를 우선했지만, 제품별 최신 TÜV/UL 인증서 원본과 2026-10-30 표준 개정판에 대한 재인증 여부는 아직 제조사에 직접 확인하지 않았다. 따라서 이 보고서는 벤치마킹 근거자료이며, 인증 적합성 선언이나 최종 회로 설계 승인 문서가 아니다.
 
 - **제품 안전 권고 PSA 2017-01-001 추가 확인:** 2198-S* ERS3 단축 드라이브의 firmware V7.001 이하 및 2198-D* ERS3 양축 드라이브의 V7.002 이하에서 **hardwired STO를 사용하는 경우** 공표된 SIL PFH를 충족하지 못할 수 있다고 Rockwell이 공지했다. 수정 firmware는 V7.003 이상이다. 이 문제는 해당 hardwired STO 구성에 한정되며 integrated network STO는 공지상 영향 대상이 아니다. 명판의 출하 firmware와 현장 설치 firmware가 다를 수 있으므로 실제 설치 버전을 확인해야 한다. ERS4에 동일 문제를 일반화하지 않으며, 정확한 catalog number/firmware와 최신 안전 인증서를 대조한다.
+
+## Spreadsheet companion
+The comparison table is also available as CSV for Excel/Google Sheets:
+`reports/SIL3_SERVO_DRIVE_BENCHMARK_MATRIX_2026-11-17.csv`.
