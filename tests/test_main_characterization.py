@@ -41,6 +41,9 @@ def test_successful_generation_uses_only_mocked_external_services(run_main):
     assert len(archives) == 1
     assert "CRA 심층 조사 보고서" in archives[0].read_text(encoding="utf-8")
     assert len(run_main.captured["model_calls"]) == 1
+    assert len(run_main.captured["source_gets"]) == 1
+    assert "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02024R2847-20241120" in run_main.captured["model_calls"][0]["prompt"]
+    assert "Manufacturers shall ensure that vulnerabilities" in run_main.captured["model_calls"][0]["prompt"]
     assert len(run_main.captured["discord_posts"]) == 1
     assert [cmd[0] for cmd in run_main.captured["git_commands"]] == [
         "git", "git", "git", "git", "git"
