@@ -15,18 +15,40 @@ VALID_REPORT = """# CRA 심층 조사 보고서
 제품의 의도된 용도와 위험평가 결과를 기준으로 요구사항 적용성을 판단한다.
 
 ## 2. 규격 근거 및 상세 내용
-규정 (EU) 2024/2847 Article 13(8)의 제조자 취약점 처리 의무를 원문과 대조한다.
-제조자는 제품 설계와 개발 단계에서 적절한 사이버보안 위험평가를 수행하고,
-식별된 위험을 기술문서와 제품 보안 설계에 반영해야 한다.
+규정 (EU) 2024/2847 Article 13(8)의 제조자 취약점 처리 의무를 원문과 대조한다. [C-001]
+실무 검토 시 제품 설계와 개발 단계의 사이버보안 위험평가 여부도 별도 확인 항목으로 둔다. [C-002]
 본 설명은 적용성 검토를 위한 조사 초안이며 제품 분류는 별도 확인이 필요하다.
 
 ## 3. 출처 자료(Source)
 EU 공식 법령 데이터베이스 EUR-Lex, Regulation (EU) 2024/2847.
-EUR-Lex consolidated text 20.11.2024; corrigenda 5.12.2024, 2.7.2025 and 17.10.2025.\nEUR-Lex 통합본은 문서화 도구이며 법적 효력은 Official Journal(관보) 정본과 공식 정오표에 있다.
+EUR-Lex consolidated text 20.11.2024; corrigenda 5.12.2024, 2.7.2025 and 17.10.2025.
+EUR-Lex 통합본은 문서화 도구이며 법적 효력은 Official Journal(관보) 정본과 공식 정오표에 있다.
 https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02024R2847-20241120
 
 ## 4. 출처 원문 텍스트(Raw Text Quote)
 “Manufacturers shall ensure that vulnerabilities of the product with digital elements, including its components, are handled effectively during the support period.”
+
+CLAIM_EVIDENCE_JSON
+```json
+{
+  "claims": [
+    {
+      "claim_id": "C-001",
+      "category": "legal_requirement",
+      "statement": "제조자는 지원 기간 동안 제품 취약점을 효과적으로 처리해야 한다.",
+      "source_id": "CRA-2024-2847-consolidated",
+      "locator": "Article 13(8)",
+      "quote": "Manufacturers shall ensure that vulnerabilities of the product with digital elements, including its components, are handled effectively during the support period."
+    },
+    {
+      "claim_id": "C-002",
+      "category": "engineering_recommendation",
+      "statement": "제품 설계 및 개발 단계의 사이버보안 위험평가 여부를 별도 확인한다.",
+      "basis": "제품 적용성 검토를 위한 엔지니어링 확인 항목이며 이 문장은 독립된 CRA 법적 의무를 주장하지 않는다."
+    }
+  ]
+}
+```
 """
 
 
