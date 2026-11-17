@@ -1,6 +1,6 @@
 # CRA 서보 드라이브 통합 규제·기술 준수 보고서
 
-- 문서 버전: v0.1 (초안 / 제품별 적용성 확인 전)
+- 문서 버전: v0.2 (초안 / 제품별 적용성 확인 전)
 - 기준일: 2026-11-17
 - 프로젝트 범위: EU Cyber Resilience Act(CRA) 대응만
 - 기준 제품군: 산업용 서보 드라이브 및 필수 펌웨어·설정/진단 소프트웨어
@@ -13,7 +13,7 @@
 2. 일반적인 산업용 서보 드라이브는 펌웨어를 내장하고 EtherCAT, PROFINET, EtherNet/IP, Modbus, CANopen, USB 설정·진단 등 디지털 통신을 수행하는 경우 CRA 적용 대상일 가능성이 높다. 단, 특정 모델의 실제 인터페이스·프로토콜·사용 목적을 확인해야 한다.
 3. 전기 신호가 존재한다는 사실만으로 CRA의 데이터 연결이 성립하지는 않는다. Commission Guidance는 단순 전원/스위칭 신호와 송신자가 디지털 정보로 인코딩하고 수신자가 이를 해독하는 데이터 통신을 구분한다. 따라서 순수 아날로그 신호 또는 데이터로 인코딩되지 않은 단순 on/off 신호만 있는 구성은 적용 범위를 별도로 판단해야 한다.
 4. 현재 CRA Annex III/IV에는 일반 서보 드라이브라는 제품 카테고리가 직접 열거되어 있지 않다. 통신 포트나 일반 MCU를 포함한다는 사실만으로 중요 제품(Class I/II) 또는 중요 제품(Class II)/중요·핵심 제품으로 자동 분류하지 않는다. 제품 전체의 핵심 기능(core functionality)과 Annex III/IV 카테고리의 기능적 일치를 평가해야 한다. 통상적인 모터 제어가 핵심 기능인 서보 드라이브는 현재 자료상 기본(default) 제품 범주일 가능성이 높지만, 이는 모델별 검증 전 잠정 판단이다.
-5. 일반 제품 범주라면 Article 32(1)의 내부 생산 관리(Module A) 경로가 기본 출발점이다. Annex III/IV의 핵심 기능에 해당하는 제품은 Article 32의 별도 평가 절차를 적용하므로, 분류를 먼저 확정해야 한다.
+5. 일반 제품 범주라면 Article 32(1)이 허용하는 Module A, Module B+C, Module H 또는 가능한 경우 EU 사이버보안 인증 중 적절한 경로를 선택한다. Module A는 일반 제품에서 흔히 검토되는 내부 관리 경로지만 유일한 선택지는 아니다. Annex III/IV 핵심 기능 제품은 Article 32(2)–(4)의 추가 평가 절차를 적용하므로 분류를 먼저 확정해야 한다.
 6. Article 14 신고 의무는 2026-09-11부터 이미 적용 중이다. CRA 적용일(2027-12-11) 전 시장에 출시된 제품도 신고 대상이 될 수 있으며, 지원기간이 끝난 제품에도 신고 의무는 계속된다. 기존 설치 제품을 보유한 제조사는 취약점·심각한 사고 접수, triage, 신고 책임자 및 24/72시간 대응 절차를 지금 운영해야 한다.
 7. 지원기간은 일률적인 5년이 아니다. 제품의 예상 사용기간, 사용자 기대, 제품의 성격 및 관련 EU 법령을 반영해야 하며, 최소 5년이 원칙이나 실제 예상 사용기간이 5년보다 짧으면 그 기간에 맞춘다. 산업용 제어 제품은 장기간 사용되는 경우가 많으므로, 5년을 자동 기본값으로 두지 말고 근거를 문서화해야 한다.
 8. Commission Guidance(2026-07-27)는 비구속적 해석 자료지만 데이터 연결, 하드웨어·소프트웨어 결합, 복합 시스템, 실질적 변경, 지원기간, 핵심 기능, 원격 데이터 처리 및 신고 의무를 구체화한다. CRA 법령 원문과 함께 제품별 판단의 핵심 참고자료로 사용한다.
@@ -69,6 +69,15 @@ Regulation (EU) 2025/327 Article 104는 CRA Article 13(4), Article 31(3)을 수�
 - 일반 서보 드라이브는 목록에 명시된 제품 카테고리가 아니다. 드라이브의 핵심 기능이 모터 제어라면 단순히 내부에 보안 기능 MCU, Ethernet 포트 또는 방화벽 기능을 일부 포함한다는 이유만으로 해당 카테고리로 분류하지 않는다.
 - 별도 판매되는 보안 게이트웨이, 네트워크 관리 소프트웨어, 보안 기능 MCU 등은 각자의 제품 경계와 핵심 기능으로 별도 분류한다.
 
+### 3.5 명시적 적용 제외 및 다른 EU 법령과의 관계
+- Article 2(2): Regulation (EU) 2017/745(의료기기), Regulation (EU) 2017/746(체외진단 의료기기), Regulation (EU) 2019/2144(차량 형식승인 관련 제품)에 해당 EU 법령이 적용되는 PDE는 CRA 적용 제외 대상이다.
+- Article 2(3): Regulation (EU) 2018/1139에 따라 인증된 PDE는 제외된다.
+- Article 2(4): Directive 2014/90/EU(선박 장비) 적용 장비는 제외된다.
+- Article 2(6): 동일한 사양으로 제조되어 동일 부품을 대체하는 예비부품은 제외된다. 단순히 '부품'이라는 이유만으로 제외되는 것은 아니다.
+- Article 2(7): 국가안보·국방 목적만을 위해 개발/수정되거나 기밀정보 처리만을 위해 특별히 설계된 PDE는 제외된다.
+- Article 2(5): 다른 EU 법령이 Annex I의 일부/전체 위험을 다루는 경우에도 자동 면제가 아니다. 동일하거나 더 높은 보호수준 등 법정 조건을 충족하고 Commission delegated act가 구체적인 제한/제외를 명시해야 한다.
+- 따라서 일반 산업기계용 서보 드라이브는 Machinery Regulation이 존재한다는 이유만으로 CRA에서 자동 제외되지 않는다. 다만 드라이브가 의료·차량·항공·선박 제품에 통합되는 경우 제품 경계와 해당 sectoral law 적용 여부를 별도 검토한다.
+
 ## 4. 적용 일정과 전환 규칙
 
 | 날짜 | 법적/행정적 사건 | 제조사 영향 |
@@ -108,7 +117,26 @@ Regulation (EU) 2025/327 Article 104는 CRA Article 13(4), Article 31(3)을 수�
 - Article 31 및 Annex VII: 제품 설명, 소프트웨어 버전, 하드웨어/아키텍처, 설계·개발·생산·취약점 처리 프로세스, SBOM, CVD, 업데이트 배포 방식, 위험평가, 지원기간 근거, 적용 표준/기술사양, 시험 보고서, EU DoC를 기술문서에 포함한다.
 - Article 13(13): 기술문서와 EU DoC는 제품을 시장에 출시한 뒤 최소 10년 또는 지원기간 중 더 긴 기간 동안 시장감시당국이 열람할 수 있도록 보존한다. Article 13(18)도 Annex II 사용자 정보·지침의 보존 및 온라인 접근 기간에 같은 기준을 둔다.
 - Article 28/30: 적합성 평가 후 EU Declaration of Conformity(DoC)를 작성하고 CE marking을 부착한다.
-- Article 32: 기본 제품은 내부 생산 관리 절차가 가능하다. 중요/핵심 제품은 분류 및 표준 적용 범위에 따라 제3자 적합성 평가가 요구될 수 있다.
+- Article 32(1): 일반 제품은 제조자가 Module A(내부 관리), Module B+C(EU type examination + production control), Module H(full quality assurance) 또는 가능한 경우 EU 사이버보안 인증 절차 중 하나로 적합성을 입증한다. Module A는 통상 단순한 선택지지만 유일한 경로라고 단정하지 않는다.
+- Article 32(2): Annex III Class I 제품은 관련 조화표준/공통사양/실질적 보증 수준의 EU 인증을 전부 적용하지 않았거나 그러한 기준이 존재하지 않는 경우, 해당 요구사항에 대해 Module B+C 또는 Module H를 적용한다.
+- Article 32(3): Annex III Class II 제품은 Module B+C, Module H 또는 가능한 경우 실질적 보증 수준 이상의 EU 사이버보안 인증을 사용한다.
+- Article 32(4): Annex IV critical 제품은 Article 8(1)에 따른 EU 인증이 요구되는 경우 그 인증을 사용하고, 해당 조건이 충족되지 않으면 Article 32(3)의 절차를 적용한다.
+
+### 5.5 추가 제조사 의무 및 시장감시 대응
+- Article 13(14): series production 제품은 계속 적합성을 유지하는 절차를 갖추고, 개발/생산/설계/특성 및 적용 표준 변경을 적절히 반영한다.
+- Article 13(15)–(16): 제품의 type/batch/serial 등 식별정보와 제조자 명칭·상표·우편주소·이메일/디지털 연락처를 제품, 포장 또는 동봉 문서에 표시하고 사용자 정보에도 반영한다.
+- Article 13(20): 제품과 함께 EU DoC 사본 또는 간이 EU DoC를 제공한다. 간이 선언을 제공하면 전체 DoC의 정확한 인터넷 주소를 포함한다.
+- Article 13(21): 시장 출시 시점부터 지원기간 동안 제품 또는 제조사 프로세스가 Annex I 요구에 부합하지 않는다고 알거나 믿을 이유가 있으면 즉시 시정조치를 취하고, 필요하면 제품을 철회/리콜한다.
+- Article 13(22): 시장감시당국의 합리적 요청 시 적합성 입증에 필요한 문서·정보를 제공하고 위험 제거 조치에 협력한다.
+- Article 13(23): 제조사가 운영을 중단해 CRA 의무를 이행할 수 없게 되는 경우, 운영 중단 전에 관련 시장감시당국과 가능한 범위의 사용자에게 알린다.
+
+### 5.6 EU 경제운영자 역할 및 공급망 책임
+- Article 18: authorised representative는 서면 위임 범위 내에서 DoC/기술문서 보관·당국 요청 대응 등 위임된 업무를 수행한다. 제조자 책임 전체를 자동 이전받는 것은 아니다.
+- Article 19: EU importer는 시장 출시 전 제조자 적합성, CE/DoC, 사용자 정보, 식별/연락/지원 종료일 표시 등을 확인하고, 취약점 발견 시 제조자에게 알린다.
+- Article 20: distributor는 CE 표시, 제조자/수입자의 필수 표시·문서 제공 여부를 확인하고, 부적합/중대한 위험을 인지하면 공급 보류·통지·시정 조치를 수행한다.
+- Article 21–22: importer/distributor가 자기 이름/상표로 제품을 출시하거나 실질적 변경을 수행하는 경우, 또는 다른 자가 실질적 변경 후 시장에 공급하는 경우 제조자 의무가 적용될 수 있다.
+- Article 23: 경제운영자는 공급받은 자와 공급한 자의 식별정보를 각 거래 후 10년간 제공할 수 있도록 보관한다.
+- 한국 제조사는 EU 내 authorised representative, importer, distributor, 상표 표시 주체 및 실질적 변경자의 역할을 계약·라벨·공급 경로별로 구분해야 한다.
 
 ## 6. Article 14 신고 체계 — 이미 적용 중
 
@@ -131,6 +159,11 @@ Regulation (EU) 2025/327 Article 104는 CRA Article 13(4), Article 31(3)을 수�
 - SRP 등록 담당자(Assigned Representative)는 EU Login 및 MFA가 필요하다. 한국 제조사는 EU 내 주된 사업장/대리인/수입자/유통자 구조를 먼저 확정하고 해당 CSIRT를 선정해야 한다.
 - 적극 악용 취약점과 심각한 사고는 별도 사건 유형과 최종 보고 시한으로 관리한다.
 - Article 14는 지원기간 종료 후에도 계속 적용될 수 있으므로 설치 제품의 자산/고객 식별 및 연락 체계를 유지해야 한다.
+
+### 6.4 자발적 신고와 의무 신고 구분
+- Article 15는 Article 14의 의무 신고 대상이 아닌 취약점, 위협 또는 near miss 등에 대해 제조자/기타 자가 자발적으로 신고할 수 있는 체계를 둔다.
+- 모든 취약점 발견을 Article 14에 따라 강제 신고한다고 표현하지 않는다. 적극 악용 취약점 및 제품 보안에 영향을 주는 severe incident는 Article 14 의무 신고, 그 외는 Article 15 자발적 신고 가능성으로 분리한다.
+- 자발적 신고가 Article 14 의무 신고를 대체하거나 지연시키는 근거는 아니다.
 
 ## 7. 표준화 현황과 적합성 평가 전략
 
@@ -187,11 +220,51 @@ Commission Implementing Decision C(2026) 7861 final Annex는 M/606의 41개 표�
 6. 각 요구사항을 설계 산출물·시험 케이스·시험 결과·시정조치와 연결하고, 법령 직접 요구와 권고 구현을 분리.
 7. 2026-11-30 및 2027-01-31 M/606 표준 일정, OJ 공표 여부, CRA FAQ/Guidance 개정, Machinery Regulation 적용을 정기 점검.
 
-## 11. 법적 한계
+## 11. CRA 정정 보고서 #1–#38 통합 감사 결과
+
+저장소의 개별 정정 보고서 #1–#38을 모두 조회하고, 각 보고서의 주요 오류 유형·수정 조항·기술 권고와 법적 의무의 구분을 통합했다. 세부 원문, 원본 archive 경로 및 원본 blob SHA는 [정정 보고서 인덱스](CRA_CORRECTION_INDEX_2026-11-17.md)와 개별 보고서에 보존한다.
+
+### 11.1 반복적으로 발견된 법령 인용 오류
+1. Article 10/11을 제조사 의무 근거로 사용한 오류: Article 10은 회원국 역량 증진, Article 11은 General product safety이며, 제조사 일반 의무는 Article 13이다.
+2. Article 14를 취약점 처리/CVD 조항으로 혼동한 오류: Article 14는 제조자의 규제기관 신고, Article 15는 자발적 신고, Article 16은 단일 신고 플랫폼이다. CVD는 Article 13(8) 및 Annex I Part II (5), 제보 연락 주소는 Part II (6), 사용자 단일 연락 창구는 Article 13(17)/Annex II (2)다.
+3. Annex I Part I과 Part II의 혼합: Part I은 제품 속성의 필수 사이버보안 요구, Part II는 제조자의 취약점 처리 프로세스다. 최종 OJ Part II는 번호 (1)–(8)이며, 초안/타협안의 구문을 직접 인용하지 않는다.
+4. 기술문서는 Article 31/Annex VII, 사용자 정보·지침은 Article 13(18)/Annex II다. Annex VI는 간이 EU DoC이며 SBOM 또는 기술문서 부속서가 아니다.
+
+### 11.2 Annex I Part I의 정확한 기술 요구 locator
+- (1): 위험에 기반한 적절한 사이버보안 수준.
+- (2)(a): 알려진 악용 가능한 취약점 없이 시장 출시.
+- (2)(b): secure-by-default 및 원래 상태로 재설정 가능.
+- (2)(c): 취약점 보안 업데이트, 해당되는 경우 자동 업데이트 기본 설정·적절한 설치 시기·opt-out·업데이트 알림·임시 연기.
+- (2)(d): 적절한 통제 메커니즘, 인증/ID·접근관리 등을 통한 무단 접근 방지 및 가능한 무단 접근 보고.
+- (2)(e): 저장·전송·처리 데이터 기밀성 보호.
+- (2)(f): 데이터·명령·프로그램·설정 무결성 보호 및 corruption 보고. 원문은 “not authorised by the user”이며 manufacturer가 아니다.
+- (2)(g): intended purpose에 필요한 범위로 데이터 최소화.
+- (2)(h): 사고 이후를 포함한 essential/basic functions 가용성 및 DoS 완화.
+- (2)(i): 제품/연결 장치가 다른 장치·네트워크의 서비스 가용성에 미치는 부정적 영향 최소화.
+- (2)(j): 외부 인터페이스를 포함한 공격 표면 제한.
+- (2)(k): exploitation mitigation을 통한 사고 영향 최소화.
+- (2)(l): 관련 내부 활동의 기록·모니터링(데이터/서비스/기능 접근·변경 포함) 및 사용자 opt-out.
+- (2)(m): 사용자가 데이터·설정을 안전하고 쉽게 영구 삭제할 수 있는 기능 및 안전한 이전.
+
+### 11.3 취약점 처리·업데이트·지원기간 정정
+- SBOM은 commonly used machine-readable format이며 최소 top-level dependencies를 포함한다. 모든 transitive dependency 포함이나 일반 사용자에 대한 무조건 공개를 CRA가 일률 요구하지 않는다.
+- 지원기간은 Article 13(8)에 따라 예상 사용기간·사용자 기대·제품 성격 등을 반영하며 최소 5년 원칙, 예상 사용기간이 5년 미만이면 그 기간이다.
+- Article 13(9)의 10년은 지원기간 중 제공된 각 보안 업데이트의 발행 후 이용 가능 기간이며, 제조사 지원기간을 10년으로 정한 규정이 아니다.
+- 기능 업데이트와 보안 업데이트 분리는 Annex I Part II (2)의 “where technically feasible” 조건이 있고, 안전한 배포는 (7), 식별된 보안 이슈를 다루는 보안 업데이트의 무상 제공은 (8)이다. 맞춤형 제품/business user 합의 예외를 함께 표시한다.
+- 수정 취약점 공개는 Part II (4)의 업데이트 제공 이후 공개가 원칙이며 정당한 보안 사유에 따른 지연 예외가 있다. 모든 취약점의 즉시 공개 의무로 확대하지 않는다.
+
+### 11.4 신고·접근통제·설계 권고의 경계
+- Article 14의 24h/72h/최종 보고 기한은 적극 악용 취약점과 제품 보안에 영향을 주는 severe incident에 각각 적용되며, 두 유형의 최종 보고 기한은 다르다. 모든 취약점에 24h/72h가 적용되는 것은 아니다.
+- least privilege, RBAC, MFA, 장치별 고유 비밀번호, 디지털 서명, 특정 암호 알고리즘, immutable log, SIEM, hardware resource isolation, 자동 rollback, STO/SS1 전이, 특정 필드버스별 ACL은 CRA가 모든 서보 드라이브에 직접 지정한 구현이 아니다. 위험평가에 따라 선택할 수 있는 엔지니어링 통제/검증 후보로 분류한다.
+- CRA는 모든 서보 드라이브에 DoS 시 STO/SS1을 강제하지 않는다. 안전 상태·제어 연속성·브레이크 동작은 제품 hazard analysis 및 별도 기능안전 요구로 결정한다.
+- 일반 서보 드라이브가 Annex III Class I/II 또는 Annex IV에 자동 포함되지 않는다. 제품의 core functionality가 열거된 범주와 일치하는지 판단하며, 통합된 보안 MCU의 분류를 완제품에 자동 전이하지 않는다.
+- NIST SP 800-88 Rev.1은 2025-09-26 철회되고 Rev.2로 대체되었다. 매체 삭제 설계 참고자료로 사용할 때 현행 판본을 확인하고, CRA 직접 법적 요구와 구분한다. Flash/SSD에 과거식 multi-pass overwrite를 무조건 적용하지 않는다.
+
+## 12. 법적 한계
 
 이 문서는 공개 법령 및 공식 자료에 기초한 일반 기술·규제 조사 초안이다. 특정 모델의 실제 회로·펌웨어·프로토콜·시장 공급 구조를 검토하지 않았으므로 법률 자문, 적합성 선언, 인증 또는 시장 출시 승인으로 사용할 수 없다. 최종 적용성 및 적합성 평가는 제조자 책임하에 제품별 증거와 최신 법령을 기준으로 수행해야 한다.
 
-## 12. 주요 공식 출처
+## 13. 주요 공식 출처
 
 | 출처 | 용도 |
 |---|---|
@@ -205,6 +278,7 @@ Commission Implementing Decision C(2026) 7861 final Annex는 M/606의 41개 표�
 | https://digital-strategy.ec.europa.eu/en/policies/cra-standardisation | Commission 표준화 현황 및 M/606 |
 | https://ec.europa.eu/transparency/documents-register/api/files/C%282026%297861_1/de00000001090401 | C(2026) 7861 final Annex, M/606 개정 납품 기한 |
 | https://eur-lex.europa.eu/eli/reg/2025/327/oj/eng | EHDS Regulation 및 CRA 일부 개정 |
+| https://csrc.nist.gov/pubs/sp/800/88/r2/final | NIST SP 800-88 Rev.2 (2025-09-26), media sanitization 기술 참고자료; CRA 법령은 아님 |
 | https://www.enisa.europa.eu/topics/product-security/vulnerability-services/eu-incident-response-and-cyber-crisis-management/single-reporting-platform-srp/frequently-asked-questions | ENISA Single Reporting Platform FAQ (2026-10-15 갱신) |
 
 ---

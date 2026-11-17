@@ -1101,3 +1101,14 @@
 - PR #20에 대한 PR-triggered 또는 merge commit Actions run은 조회 시점에 확인되지 않았다. 따라서 CI 통과를 주장하지 않는다. CSV 구조/ID/공식 URL 및 JSONL 구문 수동 검증만 확인했다.
 - 운영 코드, workflow, state/history, archive, SIL 3 파일은 변경하지 않았다.
 - 다음: 실제 서보 드라이브 제품군의 데이터시트/통신 매뉴얼/회로도에 따라 15개 인터페이스 잠정 분류를 확정하고, 28개 CRA 요구사항과 설계·시험 증거를 연결한다.
+
+
+## 2026-11-17 — CRA 정정 보고서 #1–#38 통합 검토 및 보고서 v0.2 보강
+
+- 인덱스에 연결된 CRA correction reports #1–#38 개별 파일 38개 모두 fetch/read 가능함을 확인하고, 각 보고서의 주요 오류 유형·법적 locator·핵심 정정 사항을 추출해 상호 대조했다.
+- 통합 보고서 §11에 반복 오류와 정확한 최종 OJ locator를 통합했다: Article 10/11/13/14/15/16 역할, Annex I Part I vs Part II, Part I (2)(a)–(m), Part II (1)–(8), Article 13(8)/(9), SBOM 최소 범위, Annex II vs Annex VII, 신고 시한, 제품 core functionality 분류.
+- 엔지니어링 권고와 CRA 직접 의무를 분리했다. least privilege/RBAC/MFA/unique credentials/digital signatures/immutable logs/resource isolation/automatic rollback/STO/SS1 등을 CRA의 보편적 직접 의무로 표현하지 않는다.
+- #4 정정 내용에 따라 NIST SP 800-88 Rev.1은 2025-09-26 철회, Rev.2가 현행임을 NIST 공식 페이지에서 재확인하고, CRA 법령이 아닌 기술 참고자료로 구분했다.
+- 보고서 v0.2에 Article 2(2)–(7) 명시적 제외, Article 13(14)–(23) 추가 제조사 의무, Article 15 자발적 신고, Article 18–23 EU 경제운영자 책임을 보강했다.
+- 요구사항 추적표를 28개에서 35개로 확장하고 각 행에 공식 근거 URL을 유지했다.
+- 다음: CSV 35행 파싱/ID 중복/URL 검증, 보고서와 38개 정정 보고서 간 locators 교차 점검, PR/CI 검증.

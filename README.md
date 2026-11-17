@@ -13,12 +13,13 @@
 ## 현재 상태 — 2026-11-17
 
 - **활성 범위: CRA 대응만.** SIL 3 자료는 역사적 산출물로 보존하며 별도 명시적 재개 지시 전 비활성.
-- 현재 작업 브랜치: 없음 (PR #20 병합 완료; 다음 작업은 최신 `main`에서 새 브랜치로 시작)
+- 현재 작업 브랜치: `cra/correction-synthesis-2026-11-17` (CRA 정정 #1–#38 통합 및 보고서 v0.2/추적표 보강 중; PR 전)
 - CRA-only 범위 통제 기준점: PR #18 merge `b7813ddd311bc51bfb0eb26458eace9ff82b621f`; 통합 보고서 PR #19 merge `5776ca609130033bfff17ca62c9fabc3b9570b3b`; 인터페이스 매트릭스 PR #20 merge `951fc5ee0122b847b5e8f77bd5e0706db65efb76`
 - CRA 정정 보고서 #1–#38 및 인덱스: main 보존 확인
-- [CRA 서보 드라이브 통합 규제·기술 준수 보고서 v0.1](reports/CRA_INTEGRATED_COMPLIANCE_REPORT_2026-11-17.md): PR #19 병합 완료, 제품별 적용성 확인 전
-- [CRA 요구사항 추적표 v0.1](reports/CRA_REQUIREMENTS_TRACEABILITY_2026-11-17.csv): PR #19 병합 완료, 28개 요구사항 행, 제품 증거 미확인 상태
+- [CRA 서보 드라이브 통합 규제·기술 준수 보고서 v0.2](reports/CRA_INTEGRATED_COMPLIANCE_REPORT_2026-11-17.md): 보강 작업 브랜치 진행 중, 제품별 적용성 확인 전
+- [CRA 요구사항 추적표 v0.1](reports/CRA_REQUIREMENTS_TRACEABILITY_2026-11-17.csv): PR #19 병합 완료, 35개 요구사항 행, 제품 증거 미확인 상태
 - [서보 드라이브 인터페이스별 CRA 적용성 매트릭스](reports/CRA_SERVO_DRIVE_INTERFACE_APPLICABILITY_2026-11-17.csv): PR #20 병합 완료, 15개 인터페이스/기능 유형, 제품별 증거 확인 전 잠정
+- CRA 정정 보고서 #1–#38: 개별 원문·원본 SHA 보존, 통합 보고서 v0.2에서 반복 오류/정확한 조항 locator 통합
 - 최신 법적/이행 자료 반영: Commission Guidance C(2026) 5252 (2026-07-27), M/606 개정 C(2026) 7861 (2026-11-10), Regulation (EU) 2025/327 개정 범위 검토
 - 제품 모델/통신 프로토콜/시장 공급 구조가 미제공되어 CRA 적용성 및 Annex III/IV 분류는 잠정 판단으로 유지
 - PR #19/#20은 문서·추적표 경로만 변경했으며 운영 코드, workflow, state/history 및 원본 archive는 수정하지 않음
