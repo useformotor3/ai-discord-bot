@@ -1323,3 +1323,12 @@
 - Artifact ID `14313359693` ZIP를 다운로드했고, ZIP SHA-256 `150a687e4d4b13fdd20a432e99fc8ea9ec5bc847b8551dd3f157258dc41cd869`가 GitHub metadata와 일치함을 확인.
 - M/606 item18 password manager deadline은 원본 PDF printed page 2, PDF page index 2의 표 우측 셀에서 `31/01/2027`로 시각 확인.
 - Run #642의 기존 CRA HTML source canary는 Commission summary page에 PDF document number `C(2026) 5252`를 요구해 실패했다. Summary page와 PDF Annex의 검증을 분리하도록 `cra_source.py`와 regression test를 수정했으며 재실행 대기.
+
+
+## 2026-11-17 — Run #669 최종 source canary 성공
+
+- Run #642가 발견한 Commission summary page marker 오류를 수정했다. `cra_source.py`는 page summary metadata만 검증하고, PDF document number는 `cra_pdf_sources.py`에서 raw PDF identity marker로 검증한다.
+- Regression test 추가, workflow blob pin 갱신 후 Run #669 성공: 148 passed / 1 xfailed.
+- PDF 2개 fetch/parse/hash/artifact upload 통과. Artifact ID 14315096266 다운로드 후 ZIP SHA-256 및 PDF별 SHA-256 재계산 일치.
+- 9개 공식 HTML sources, consolidated CRA corrigenda, Article 13(8) locator/quote live canary 통과.
+- M/606 item18 deadline 31/01/2027 시각 확인 완료. Guidance Commission primary binary identity는 미확인으로 남긴다.
