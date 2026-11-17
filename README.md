@@ -355,3 +355,5 @@ Actions 성공은 자동화 실행 결과이지 CRA 법령 해석이나 출처�
 - CRA 원본 #33–#38 정정: [#33](reports/CRA_CORRECTION_REPORT_33_2026-11-17.md), [#34](reports/CRA_CORRECTION_REPORT_34_2026-11-17.md), [#35](reports/CRA_CORRECTION_REPORT_35_2026-11-17.md), [#36](reports/CRA_CORRECTION_REPORT_36_2026-11-17.md), [#37](reports/CRA_CORRECTION_REPORT_37_2026-11-17.md), [#38](reports/CRA_CORRECTION_REPORT_38_2026-11-17.md)
 - PR #10 merge: EUR-Lex official-link gate 및 최근 30개 archive 기반 duplicate-topic suppression. CI #455: 101 passed, 1 xfailed.
 - 외부 5분 dispatch를 hourly schedule로 바꾸는 cadence PR은 검증 후 병합 예정. 원본 state/history/archive는 보존한다.
+
+- 운영 Run `44016487535` 실패 원인: Gemini Free Tier 20 requests/day 초과(429) + fallback 503. cadence PR에서 3시간 schedule, 모델당 최대 2회, quota/503/품질 거부 no-op 처리를 추가했다.
