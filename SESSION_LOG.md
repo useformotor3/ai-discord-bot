@@ -1293,3 +1293,11 @@
 - `docs/pr30-postmerge-status-sync-2026-11-17`은 문서 전용 브랜치이며 구현 작업 브랜치로 취급하지 않는다.
 - 격리 tests workflow의 push allowlist에 이 문서 브랜치를 추가해 변경분도 CI 검증한다. 운영 workflow는 변경하지 않는다.
 - PR #30의 원본 PDF binary hash와 item 18 날짜 미확인 제한을 계속 유지한다.
+
+
+## 2026-11-17 — PR #31 최종 사후 확인
+
+- PR #31 merge commit `24312166b892127e845721793b1abfee4d91f9c2`.
+- Run #618 (`44051283237`) success: 141 passed / 1 xfailed, compileall, source identity, 9 official source canary 통과.
+- Pre-merge `safety/pre-merge-main-pr31-2026-11-17` → `975ec6728988e43d9a1ebbf6f6d84288aa44c2fd`; post-merge `safety/post-merge-main-pr31-2026-11-17` → `24312166b892127e845721793b1abfee4d91f9c2`. post-merge ref and main compare identical.
+- README/PROJECT_STATUS에서 특정 시점의 main SHA를 현재 HEAD처럼 고정 표기하지 않도록 수정했다. 이후 세션 시작 시 main HEAD를 실시간 조회한다.
