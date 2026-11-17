@@ -853,3 +853,10 @@
 - Annex I Part II (1)의 minimum SBOM scope는 commonly used machine-readable format의 top-level dependencies. SPDX/CycloneDX 특정 포맷이나 모든 transitive dependency 포함을 법령이 직접 지정하지 않는다.
 - Part II (2)의 without delay vulnerability handling과 Part II (4)의 fixed-vulnerability disclosure timing/exception을 분리.
 - correction report #9 생성: reports/CRA_CORRECTION_REPORT_9_2026-11-17.md. correction reports #9–#19 완료.
+
+## 2026-11-17 — archive #8 SBOM 공개/기술문서 정정 감사
+- 원본 archive #8 SHA 38550036503c8d2dbb00e66a7625475e089b4cd7 확인, 원본 보존.
+- SBOM 근거를 Annex VI로 잘못 연결한 오류 발견: Annex VI는 simplified EU DoC, SBOM은 Annex I Part II (1), Annex VII 2(b)/8, Annex II point9.
+- SBOM을 모든 사용자에게 의무 제공한다는 주장은 오류. Annex II point9는 제조사가 사용자 공개를 선택한 경우 접근 위치를 안내.
+- 모든 servo drive의 Important Class I/II 자동 분류 및 SBOM의 모든 transitive dependency 강제 주장을 정정.
+- correction report #8 생성: reports/CRA_CORRECTION_REPORT_8_2026-11-17.md. correction reports #8–#19 완료.
