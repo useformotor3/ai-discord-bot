@@ -125,3 +125,8 @@ python -m pytest -q
 - Isolated CI Run #141: 103 passed, 1 xfailed. [로그](https://github.com/useformotor3/ai-discord-bot/actions/runs/43989211881).
 - Read-only Canary Run #26: success; 네 문서 총 220,715자. [로그](https://github.com/useformotor3/ai-discord-bot/actions/runs/43989211861).
 - Canary는 EUR-Lex 공개 GET만 수행한다. 실제 Gemini/Discord/운영 workflow 호출은 없다.
+
+
+## Latest exact-head verification — 2026-11-17
+- Isolated CI Run #154: 103 passed, 1 xfailed; exact blob SHA, compileall and complete pytest suite succeeded. https://github.com/useformotor3/ai-discord-bot/actions/runs/43995859144
+- EUR-Lex read-only canary Run #29: success. https://github.com/useformotor3/ai-discord-bot/actions/runs/43995859223

@@ -681,3 +681,11 @@
 - 운영 main 최신 확인: ff599733d62a8926ee281a9958aa6e03f5ce75f4 (Auto-archive #10). 운영 main.py/run.yml 및 Gemini/Discord 실행 미변경.
 - 미완료: 주장별 조항·문단·인용 매핑, 관보 정본 차이 대조, 운영 모델 비실행 호환성 검증.
 - 상세 보고서: reports/CRA_SOURCE_PROVENANCE_GATE_2026-11-17.md.
+
+
+## 2026-11-17 — 문서 갱신 후 최종 SHA 검증
+- 최신 작업 브랜치 SHA: d564e91faf616d95c0ab91c269fcfc3315413c50.
+- 최신 isolated CI Run #154: **103 passed, 1 xfailed**. source blob SHA, compileall, 전체 pytest 성공. https://github.com/useformotor3/ai-discord-bot/actions/runs/43995859144
+- 최신 EUR-Lex read-only canary Run #29: **success**. 네 법령 원문 조회와 정오표 3개 날짜 확인. https://github.com/useformotor3/ai-discord-bot/actions/runs/43995859223
+- 보고서·README·상황판·마스터 계획·세션 로그·테스트 가이드·JSONL 프로젝트 로그를 동기화했다.
+- Draft PR #3 open/mergeable, 아직 main 미병합. 운영 main 최신 SHA ff599733d62a8926ee281a9958aa6e03f5ce75f4; 운영 main.py/run.yml, Gemini/Discord workflow 미변경.

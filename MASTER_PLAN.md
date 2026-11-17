@@ -419,3 +419,10 @@
 - 제품 적용성을 추정하지 않고 EHR 적용 시기, L-category 제한적 제외, Article 16 통지 전파 지연을 분리한다.
 - 다음 우선순위: (1) claim-to-evidence 단위 검증 (2) Official Journal 정본/정오표 차이 대조 (3) 모델 출력 호환성 비운영 검증 (4) 게시 전 사람 검토 단계.
 - 운영 main 병합은 위 항목과 별도 검토 후 결정한다.
+
+
+## 2026-11-17 — 최종 문서·코드 일치 검증
+- 최신 source blob SHA/compileall/전체 pytest: CI Run #154, 103 passed, 1 xfailed.
+- 최신 EUR-Lex source pack read-only canary: Run #29 success.
+- 보고서와 상황판은 위 최신 run ID와 작업 브랜치 SHA를 기준으로 동기화했다.
+- Draft PR #3은 open/mergeable 상태이나, claim-to-evidence, 관보 정본 대조, Gemini 호환성 canary가 미완료이므로 main 병합 전 상태로 유지한다.

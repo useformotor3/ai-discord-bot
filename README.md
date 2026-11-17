@@ -11,8 +11,8 @@
 - 원인 개선 브랜치에서 EUR-Lex CRA 통합본과 후속 법령 3건을 직접 수집하는 source pack을 구현했다.
 - 대상 원문: Regulation (EU) 2024/2847 통합본 및 정오표 3건, Regulation (EU) 2025/327, Delegated Regulation (EU) 2025/1535, Delegated Regulation (EU) 2026/881.
 - URL·버전·조항 locator·50자 이상 직접 인용의 최소 대조를 수행하고, 수집 실패 또는 인용 불일치 시 fail-closed한다.
-- Isolated CI Run #141: **103 passed, 1 xfailed**. [실행 로그](https://github.com/useformotor3/ai-discord-bot/actions/runs/43989211881).
-- EUR-Lex read-only canary Run #26: **success**, 네 법령 총 220,715자 visible text 및 정오표 3개 날짜 확인. [실행 로그](https://github.com/useformotor3/ai-discord-bot/actions/runs/43989211861).
+- Isolated CI Run #154: **103 passed, 1 xfailed**. [실행 로그](https://github.com/useformotor3/ai-discord-bot/actions/runs/43995859144).
+- EUR-Lex read-only canary Run #29: **success**, 네 법령 총 220,715자 visible text 및 정오표 3개 날짜 확인. [실행 로그](https://github.com/useformotor3/ai-discord-bot/actions/runs/43995859223).
 - 코드 변경은 [Draft PR #3](https://github.com/useformotor3/ai-discord-bot/pull/3)에만 존재하며 main 미병합. 실제 Gemini/Discord/운영 workflow 호출은 하지 않았다.
 - 상세 설계·검증·한계는 [CRA 공식 원문 출처검증 gate 보고서](reports/CRA_SOURCE_PROVENANCE_GATE_2026-11-17.md).
 - 기존 생성 보고서의 정정 감사: [#1](reports/CRA_CORRECTION_REPORT_1_2026-11-17.md), [#2](reports/CRA_CORRECTION_REPORT_2_2026-11-17.md), [#3](reports/CRA_CORRECTION_REPORT_3_2026-11-17.md), [#4](reports/CRA_CORRECTION_REPORT_4_2026-11-17.md).

@@ -968,3 +968,11 @@
 - EUR-Lex read-only canary Run #26: 성공. CRA 통합본과 후속 법령 3건 총 220,715자 visible text, 정오표 3개 날짜 확인. https://github.com/useformotor3/ai-discord-bot/actions/runs/43989211861
 - 코드 변경은 Draft PR #3에 존재하며 main 미병합. 운영 main.py/run.yml, Gemini/Discord 호출 없음.
 - 상세: reports/CRA_SOURCE_PROVENANCE_GATE_2026-11-17.md.
+
+
+## 2026-11-17 — 최종 문서·SHA·CI 동기화
+- 최신 작업 브랜치 SHA: d564e91faf616d95c0ab91c269fcfc3315413c50.
+- CI Run #154: 103 passed, 1 xfailed; source SHA, compileall, full pytest success. https://github.com/useformotor3/ai-discord-bot/actions/runs/43995859144
+- EUR-Lex canary Run #29: success; 4개 공식 법령 source pack 및 CRA 정오표 3개 날짜 확인. https://github.com/useformotor3/ai-discord-bot/actions/runs/43995859223
+- 보고서·README·PROJECT_STATUS·MASTER_PLAN·SESSION_LOG·tests README·PROJECT_LOG를 같은 실행 결과로 동기화했다.
+- Draft PR #3은 main에 미병합. 운영 main SHA ff599733d62a8926ee281a9958aa6e03f5ce75f4.

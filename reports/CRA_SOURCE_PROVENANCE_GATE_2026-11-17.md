@@ -115,15 +115,15 @@ EUR-Lex 통합본은 documentation tool이며 법적 효력은 Official Journal(
 
 ## 10. 확장 source pack 검증 결과
 
-- Isolated CI Run #141: **103 passed, 1 xfailed**. 정확한 source blob SHA 검증, compileall, 전체 pytest 성공. [실행 로그](https://github.com/useformotor3/ai-discord-bot/actions/runs/43989211881).
-- EUR-Lex read-only canary Run #26: **success**. 네 공식 법령 HTML에서 source pack에 전달된 추출 텍스트 220,715자 확인(2025/327은 관련 Article 104 발췌). 각 원문 HTML의 전체 visible text는 CRA 통합본 196,076자, Regulation 2025/327 394,354자, Delegated Regulation 2025/1535 6,246자, Delegated Regulation 2026/881 15,284자. [실행 로그](https://github.com/useformotor3/ai-discord-bot/actions/runs/43989211861).
+- Isolated CI Run #154: **103 passed, 1 xfailed**. 정확한 source blob SHA 검증, compileall, 전체 pytest 성공. [실행 로그](https://github.com/useformotor3/ai-discord-bot/actions/runs/43995859144).
+- EUR-Lex read-only canary Run #29: **success**. 네 공식 법령 HTML에서 source pack에 전달된 추출 텍스트 220,715자 확인(2025/327은 관련 Article 104 발췌). 각 원문 HTML의 전체 visible text는 CRA 통합본 196,076자, Regulation 2025/327 394,354자, Delegated Regulation 2025/1535 6,246자, Delegated Regulation 2026/881 15,284자. [실행 로그](https://github.com/useformotor3/ai-discord-bot/actions/runs/43995859223).
 - 기존 CRA 통합본의 정오표 인덱스 3개 날짜(2024-12-05, 2025-07-02, 2025-10-17)도 다시 확인했다.
 - 검증은 공개 EUR-Lex GET과 mock 기반 CI다. Gemini/Discord/운영 workflow 호출은 하지 않았다.
 
 ## 11. 현재 상태 및 다음 검증
 
 - 코드 변경은 Draft PR #3에만 존재한다: https://github.com/useformotor3/ai-discord-bot/pull/3.
-- PR head: b094a5d5c36bd66c2e7b21179f263f6b6d8a82ce. 기준 main: 0dde26ebac80a789c7a9d9e26560abad54606d32.
+- PR head: d564e91faf616d95c0ab91c269fcfc3315413c50. 기준 main: 0dde26ebac80a789c7a9d9e26560abad54606d32.
 - 2026-11-17 현재 main은 자동 아카이브 #10으로 별도 전진했다. 이 PR은 해당 변경을 덮어쓰지 않았으며 main에 병합하지 않았다.
 - 아직 미완료: 모든 보고서 문장/주장을 개별 조항·문단·인용에 연결하는 claim-to-evidence 검증, 관보 정본과 통합본/정오표 차이의 체계적 대조, 실제 운영 Gemini 모델 응답 호환성 canary.
 - 따라서 이 변경은 자동 보고서의 출처 추적성을 개선하는 최소 gate이며, 법률 해석·제품 적용성·CRA 적합성 검증을 대체하지 않는다.
