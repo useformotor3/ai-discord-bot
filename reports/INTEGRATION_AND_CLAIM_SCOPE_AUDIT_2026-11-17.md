@@ -93,3 +93,28 @@ EUR-Lex consolidated page는 자체적으로 documentation tool이며 법적 효
 문서 및 로그 갱신 전 마지막 원격 compare 스냅샷은 main `83bc2430842413080e73bc5b98a8a82c45d03909`, feature 최신 검증 head `784c41a90bd77dd5776c1637f6abe646452e7175`, 125 ahead / 10 behind, diverged였다. main의 자동 archive가 계속 전진하므로 다음 통합 단계 직전에 다시 비교한다.
 
 PROJECT_LOG.jsonl은 UTF-8 원문 전체를 보존해 빈 행을 제거하고 한 줄당 JSON 객체 형식으로 정리했다. 현재 로그 재검증은 다음 문서/코드 commit 이후 다시 수행한다.
+
+## 8. 개별 Official Journal corrigenda 수집 구현 및 실시간 확인 — 2026-11-17
+
+날짜 인덱스 확인에 그치던 기존 source gate를 보강해 CRA 기본 법령의 영어 Official Journal corrigenda 3건을 각각 독립 source로 추가했다.
+
+- 2024-12-05 / OJ 2024/90780 / CELEX 32024R2847R(01): 제목의 “No 2019/1020”을 “2019/1020”으로 정정.
+- 2025-07-02 / OJ 2025/90555 / CELEX 32024R2847R(02): Article 64(10)의 “paragraphs 3 to 9”를 “paragraphs 2 to 9”로 정정.
+- 2025-10-17 / OJ 2025/90828 / CELEX 32024R2847R(04): Article 67의 참조 번호 “69”를 “72”로 정정.
+
+각 공식 ELI URL을 직접 GET하고 HTTPS/EUR-Lex host, 최소 본문 길이, 대상 조항 및 for/read 양쪽 문구를 fail-closed로 확인한다. source manifest와 Gemini prompt에도 개별 문서 ID·URL·버전이 포함된다.
+
+실제 EUR-Lex read-only Canary Run #115 (ID `44003013739`) success:
+- 전체 source pack visible text 245,502자.
+- CRA 통합본 196,076자.
+- corrigenda: 7,583자 / 8,318자 / 8,179자.
+- 기존 후속 법령 3건도 모두 수집.
+- Gemini/Discord/production workflow 호출 없음.
+
+추가 테스트 결과:
+- source 확장 직후 CI #314: 8 failed, 109 passed, 1 xfailed. source manifest 증가로 Discord 분할 청크 수가 2→3으로 증가했는데 기존 테스트 기대값이 갱신되지 않은 문제.
+- 다음 CI #319: 2 failed, 115 passed, 1 xfailed. 429 재시도 후 chunk 간 대기 횟수 기대값이 한 건 부족했다.
+- 테스트 기대값을 실제 3청크 전송/대기 정책에 맞게 보강하고 workflow exact SHA를 갱신했다.
+- 최종 CI #323: **117 passed, 1 xfailed**, exact source SHA / compileall / full pytest 성공.
+
+이제 source gate는 날짜 인덱스뿐 아니라 개별 corrigenda의 정정 대상과 정정 문구까지 확인한다. 다만 문구 존재 검사는 법률 해석, 문맥상 적용 여부, 제품 적합성 판단을 대체하지 않는다.
