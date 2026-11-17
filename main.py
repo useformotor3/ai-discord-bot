@@ -8,7 +8,7 @@ from google import genai
 import requests
 import uuid
 
-from cra_source import fetch_official_cra_source, validate_research_report
+from cra_source import append_source_manifest, fetch_official_cra_source, validate_research_report
 
 from persistence import (
     commit_persistence_transaction,
@@ -198,17 +198,19 @@ prompt = f"""
     [지금까지 깃허브 외부 메모리에 누적된 이전 조사 내용 (참고용 - 중복 조사 방지)]
     {context_memory}
 
-    아래에 제공된 EUR-Lex 공식 CRA 원문만을 법적 근거의 기준으로 사용하세요. 원문에 없는 표준·가이드·제조사 관행을 법적 의무로 추가하지 마세요.
+    아래에 제공된 EUR-Lex 공식 CRA source pack만을 법적 근거의 기준으로 사용하세요. 원문에 없는 표준·가이드·제조사 관행을 법적 의무로 추가하지 마세요.
     원문에서 확인 가능한 조항을 주제로 선정하고, 원문에 근거가 부족하면 억지로 주제를 만들지 말고 조사 공백으로 명시하세요.
     각 법적 주장은 정확한 Article/Annex/point를 표시하고, 원문 인용은 아래 원문에서 연속된 문장을 50자 이상 그대로 복사해 큰따옴표로 감싸세요. 인용을 번역·요약·재구성하지 마세요.
     법적 의무, 공식 설명, 엔지니어링 권고를 명확히 구분하고 제품 적용성은 별도 확인이 필요하다고 표시하세요.
+    후속 법령의 적용 범위를 엄격히 구분하세요.
+    - Regulation (EU) 2025/327 Article 104는 EHR 시스템에 대한 CRA Article 32(5a) 관련 개정이며 2027-03-26부터 적용됩니다. 일반 산업용 서보 드라이브 의무로 확대 해석하지 마세요.
+    - Delegated Regulation (EU) 2025/1535는 Regulation (EU) No 168/2013 범위의 특정 L-category 제품에 한정된 제외이며, L1e pedal-assisted vehicle 예외가 있습니다. 산업용 서보 드라이브에 자동 적용하지 말고 제품 범위가 입증될 때만 검토하세요.
+    - Delegated Regulation (EU) 2026/881은 CRA Article 16 통지 전파 지연 조건에 관한 별도 법령이며 2026-05-10부터 시행됩니다. 이를 Article 14의 기본 신고 시한과 혼동하지 마세요.
     법적 효력 주의: 제공된 EUR-Lex 통합본은 documentation tool(문서화 도구)입니다. 법적 효력은 Official Journal(관보)에 게시된 정본과 공식 corrigenda에 있습니다. 보고서에 이 주의사항을 한국어로 명시하고, 통합본만으로 법적 결론을 확정하지 마세요.
 
-    [EUR-Lex 공식 원문 URL]
-    {cra_source['url']}
-    [EUR-Lex 통합본 및 정오표 버전]
+    [EUR-Lex 공식 source pack version]
     {cra_source['version']}
-    [공식 원문 텍스트]
+    [수집한 모든 공식 법령 URL 및 원문 텍스트]
     {cra_source['text']}
 
     [작성 양식]
@@ -234,6 +236,7 @@ for model_name in models_to_try:
           model=model_name, contents=prompt
       )
       candidate = response.text if response and response.text else ""
+      candidate = append_source_manifest(candidate, cra_source)
       is_valid, validation_reason = validate_research_report(candidate, cra_source)
       if is_valid:
         ai_message = candidate.strip()
@@ -413,7 +416,7 @@ archive_filename = (
     f"research_archive/{TODAY}_{NOW.strftime('%H%M%S%f')}_{uuid.uuid4().hex[:8]}.md"
 )
 archive_payload = (
-    f"# CRA Research Draft\n- **Evidence gate:** EUR-Lex official source fetched; Article/Annex locator and at least one verbatim quote matched. Legal interpretation and product applicability remain unverified.\n- **Source URL:** {cra_source['url']}\n- **Source version:** {cra_source['version']}\n- **Legal source caveat:** EUR-Lex consolidated text is a documentation tool; Official Journal authentic text and corrigenda govern.\n- **Source checked at:** {NOW.isoformat()}\n- **Date:** {TODAY} {NOW.strftime('%H:%M:%S')}\n-"
+    f"# CRA Research Draft\n- **Evidence gate:** EUR-Lex official source fetched; Article/Annex locator and at least one verbatim quote matched. Legal interpretation and product applicability remain unverified.\n- **Source URL:** {cra_source['url']}\n- **Source pack version:** {cra_source['version']}\n- **Source URLs:** {', '.join(item['url'] for item in cra_source['sources'])}\n- **Legal source caveat:** EUR-Lex consolidated text is a documentation tool; Official Journal authentic text and corrigenda govern.\n- **Source checked at:** {NOW.isoformat()}\n- **Date:** {TODAY} {NOW.strftime('%H:%M:%S')}\n-"
     f" **Count:** {current_count + 1}\n\n{ai_message}"
 ).encode("utf-8")
 
