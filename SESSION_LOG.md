@@ -881,3 +881,48 @@
 - 디지털 서명은 보안 무결성 구현 수단, STO 연계 설치는 제품별 안전 검증 권고로 분리.
 - 원본 archive는 보존하고 정정 문서를 별도 작성.
 - 상세: `reports/CRA_CORRECTION_REPORT_1_2026-11-17.md`.
+## 2026-11-17 — 5분 간격 반복 실행 원인 및 조사 품질 개선
+
+### 발견
+- 운영 `.github/workflows/run.yml`은 `repository_dispatch: run-bot` 및 `workflow_dispatch`만 구독하고 내부 schedule이 없었다. main의 #33–#38 archive commit은 약 5분 간격으로 반복됐다. 따라서 외부 dispatcher가 반복 호출한 정황이 확인되며, 외부 서비스 설정 자체는 이 저장소에서 직접 수정할 수 없다.
+- main의 기존 보고서 검사는 형식 중심이었다. 최근 6건에서 주제 중복, CRA 조항 오인용, Annex II/Annex VII 혼합, 신고 시한 혼합, EUR-Lex 링크 누락을 확인했다.
+
+### 코드/운영 변경
+- PR #10 `2e583f5c7b24743fbb1bd7d375643e314cf3115d`를 merge했다.
+- main.py는 EUR-Lex Regulation (EU) 2024/2847 공식 링크가 없는 CRA 보고서를 거부한다.
+- 최근 30개 archive 원문과 주제어를 비교해 중복 주제는 Discord/archive/state/history/Git 부작용 전에 no-op 처리한다.
+- 프롬프트 참고 이력을 최근 5개에서 15개로 늘리고, 공식 OJ URL·직접 확인한 원문만 인용·새 주제가 없으면 억지 생성 금지를 명시했다.
+- CI Run #455: 101 passed, 1 xfailed; exact blob SHA, compileall, 전체 pytest 통과.
+
+### 법령 감사
+- #33–#38 원본은 그대로 보존하고 정정 보고서 6건을 별도 작성했다.
+- Article 13(8) 최소 5년/예상 사용기간이 더 짧으면 예외, Article 13(9) 업데이트 10년 또는 지원기간 잔여기간 중 더 긴 이용 가능성, Annex I Part II (2)/(7)/(8)의 취약점 처리·안전 배포·무상 업데이트를 분리했다.
+- Article 14(2)(c) vulnerability final report는 조치 가용 후 14일, Article 14(4)(c) severe incident final report는 incident notification 제출 후 1개월로 정정했다.
+- Annex III Class I/II에 일반 산업용 서보 드라이브가 자동 포함된다고 단정하지 않도록 정정했다.
+
+### 다음 cadence PR
+- `fix/production-cadence-2026-11-17`에서 외부 repository_dispatch trigger를 제거하고 매시간 정각 UTC schedule과 workflow_dispatch를 유지한다.
+- 테스트 workflow가 run.yml PR 변경에도 실행되도록 경로 필터를 수정하고 cadence 회귀 테스트를 추가했다.
+- PR CI 통과 후 main 병합. 첫 3회 hourly run에서 guard/pruning 및 데이터 참조 무결성 확인.
+- 원본 state/history/archive는 이번 정정/코드 작업에서 수정하지 않았다.
+
+## 2026-11-17 — 운영 Run #44016487535 quota 장애 분석 및 재발 방지
+
+### 실제 실패 원인
+- production Run ID `44016487535`, job `133815553121` 로그를 확인했다.
+- `gemini-3.8-flash`: HTTP 429 `RESOURCE_EXHAUSTED`, Free Tier `generate_content_free_tier_requests` 일일 limit 20 초과. 응답은 약 3시간 39분 후 재시도를 제시했다.
+- `gemini-3.5-flash-lite`: HTTP 503 `UNAVAILABLE`, 이후 보고서도 EUR-Lex 공식 링크 검사를 통과하지 못했다.
+- 기존 main.py는 429/503을 모델별 3회 반복하고 모든 모델이 실패하면 workflow exit 1로 종료했다. 따라서 5분 외부 dispatch와 결합해 quota를 더 빨리 소진하고 실패를 반복시킬 수 있었다.
+
+### cadence PR 보강
+- 모델별 최대 시도를 2회로 낮췄다.
+- 429/503은 동일 모델 재시도를 중단하고 fallback으로 이동한다.
+- EUR-Lex 링크 누락 등 품질 거부는 같은 모델에 반복 요청하지 않는다.
+- quota/일시 장애/품질 거부 후 유효 보고서가 없으면 경고 로그와 함께 exit 0 no-op. Discord, archive, state/history, Git 저장 부작용은 발생하지 않는다.
+- 인증/설정 등 미분류 치명 오류는 exit 1을 유지한다.
+- schedule을 3시간마다 UTC 정각(8회/일)으로 변경했다. 모델별 2회 시도 시 이론상 16회/일로 Free Tier 20/day 한도에 여유를 둔다.
+
+### 검증
+- PR #11 CI를 변경된 main.py/test blob SHA로 다시 실행해야 한다.
+- 기존 운영 state/history/archive는 quota 실패 실행에서 변경되지 않았음을 재조회한다.
+- 첫 3회 3-hourly production run을 관찰한다.

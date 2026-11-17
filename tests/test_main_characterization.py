@@ -68,7 +68,7 @@ def test_all_model_failures_stop_without_side_effects(run_main):
         run_main.execute([RuntimeError("mock failure") for _ in range(6)])
 
     assert exc.value.code == 1
-    assert len(run_main.captured["model_calls"]) == 6
+    assert len(run_main.captured["model_calls"]) == 4
     assert run_main.captured["discord_posts"] == []
     assert run_main.captured["git_commands"] == []
     assert not (run_main.workdir / "state.json").exists()
@@ -81,8 +81,8 @@ def test_invalid_short_or_malformed_output_is_retried_and_rejected(run_main):
     with pytest.raises(SystemExit) as exc:
         run_main.execute([invalid] * 6)
 
-    assert exc.value.code == 1
-    assert len(run_main.captured["model_calls"]) == 6
+    assert exc.value.code == 0
+    assert len(run_main.captured["model_calls"]) == 4
     assert run_main.captured["discord_posts"] == []
     assert run_main.captured["git_commands"] == []
     assert not (run_main.workdir / "research_archive").exists()
@@ -94,8 +94,8 @@ def test_invalid_first_model_response_falls_back_to_valid_second_model(run_main)
 
     calls = run_main.captured["model_calls"]
     assert len(calls) == 4
-    assert all(call["model"] == "gemini-3.8-flash" for call in calls[:3])
-    assert calls[3]["model"] == "gemini-3.5-flash-lite"
+    assert all(call["model"] == "gemini-3.8-flash" for call in calls[:2])
+    assert all(call["model"] == "gemini-3.5-flash-lite" for call in calls[2:])
     assert len(run_main.captured["discord_posts"]) == 1
 
 def test_error_text_inside_an_otherwise_structured_report_is_rejected(run_main):
@@ -103,8 +103,8 @@ def test_error_text_inside_an_otherwise_structured_report_is_rejected(run_main):
     with pytest.raises(SystemExit) as exc:
         run_main.execute([error_report] * 6)
 
-    assert exc.value.code == 1
-    assert len(run_main.captured["model_calls"]) == 6
+    assert exc.value.code == 0
+    assert len(run_main.captured["model_calls"]) == 4
     assert run_main.captured["discord_posts"] == []
     assert run_main.captured["git_commands"] == []
     assert not (run_main.workdir / "research_archive").exists()
@@ -169,8 +169,8 @@ def test_report_without_official_eurlex_source_is_rejected(run_main):
     with pytest.raises(SystemExit) as exc:
         run_main.execute([invalid] * 6)
 
-    assert exc.value.code == 1
-    assert len(run_main.captured["model_calls"]) == 6
+    assert exc.value.code == 0
+    assert len(run_main.captured["model_calls"]) == 2
     assert run_main.captured["discord_posts"] == []
     assert run_main.captured["git_commands"] == []
     assert not (run_main.workdir / "research_archive").exists()
@@ -225,3 +225,27 @@ def test_duplicate_topic_is_blocked_before_discord_and_archive(run_main):
     assert history_path.read_bytes() == history_before
     assert old_archive.exists()
     assert len(list(archive_dir.glob("*.md"))) == 1
+
+
+def test_daily_quota_and_model_overload_skip_cleanly_without_side_effects(run_main):
+    class DailyQuotaExceeded(Exception):
+        status_code = 429
+
+    class ModelUnavailable(Exception):
+        status_code = 503
+
+    with pytest.raises(SystemExit) as exc:
+        run_main.execute([
+            DailyQuotaExceeded(
+                "429 RESOURCE_EXHAUSTED: Generate content requests per day limit exceeded"
+            ),
+            ModelUnavailable("503 UNAVAILABLE: temporary model overload"),
+        ])
+
+    assert exc.value.code == 0
+    assert len(run_main.captured["model_calls"]) == 2
+    assert run_main.captured["discord_posts"] == []
+    assert run_main.captured["git_commands"] == []
+    assert not (run_main.workdir / "state.json").exists()
+    assert not (run_main.workdir / "history.json").exists()
+    assert not (run_main.workdir / "research_archive").exists()

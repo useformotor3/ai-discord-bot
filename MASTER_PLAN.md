@@ -377,3 +377,19 @@
 - [완료] CI Run #59: 99 passed, 1 xfailed.
 - [대기] 다음 운영 실행에서 KST 날짜·일일 count, 실제 Gemini 모델 ID 성공, Git push와 operational_guard의 정상 완료 확인.
 - [대기] Discord 전송 이후 Git 저장 실패 시 재전송 중복 방지/outbox 설계.
+## 2026-11-17 — 반복 자동화 및 조사 품질 개선
+
+1. [완료] main의 최근 #33–#38을 EUR-Lex OJ 원문과 대조하고 원본 보존 정정 보고서 6건 추가.
+2. [완료] PR #10을 main에 merge. EUR-Lex CRA 공식 링크 누락 거부, 최근 30개 원문 기반 중복 주제 차단, 프롬프트 최근 15개 이력 확대.
+3. [완료] PR #10 CI Run #455: 101 passed, 1 xfailed.
+4. [진행] 외부 5분 repository_dispatch를 제거하고 hourly schedule로 전환하는 PR 검증 및 병합.
+5. [후속] 첫 3회 hourly production run의 checkpoint/guard/prune 및 archive 참조 무결성을 관찰.
+6. [후속] 중복탐지 false positive/negative를 로그로 검토하고 임계값을 근거 기반 조정.
+7. [핵심 산출물] CRA 통합 한국어 보고서 및 요구사항 추적표 작성 후 SIL 3 servo-drive benchmarking report와 hardware block design을 별도 기능안전 추적성으로 작성.
+
+## 2026-11-17 — Gemini 무료 할당량 장애 반영
+1. [완료] Production Run `44016487535` 로그에서 Gemini 429 daily quota 20/day와 fallback 503 UNAVAILABLE를 확인.
+2. [완료] 같은 모델의 429/503 반복 호출을 즉시 중단하고 대체 모델로 전환.
+3. [완료] quota/일시 장애/품질 검증 실패 시 외부 전송·아카이브·상태 변경 없이 no-op 종료. 인증/설정 오류는 실패 유지.
+4. [완료] Free Tier 일일 한도와 재시도 여유를 고려해 운영 schedule을 3시간마다(8회/일)로 조정; 모델당 최대 2회 시도 기준 최대 16회/일.
+5. [진행] PR #11 isolated CI 재검증 및 병합, 이후 첫 3회 production run 관찰.

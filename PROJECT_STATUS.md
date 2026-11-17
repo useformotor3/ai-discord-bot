@@ -3,7 +3,7 @@
 - 최종 갱신: 2026-11-17 (KST)
 - 기준 저장소: `useformotor3/ai-discord-bot`
 - 운영 기준 브랜치: `main` (운영 자동화 및 데이터 보존)
-- 현재 작업 브랜치: `feature/p1-b2-atomic-persistence-2026-11-16` (P1-B2 구현 전용)
+- 현재 작업 브랜치: `fix/production-cadence-2026-11-17` (운영 cadence/품질 후속)
 - 이번 비교 기준: main과 diverged 상태. ahead/behind 수치는 main 자동화 커밋에 따라 변동하므로 통합 직전에 재조회
 - 프로젝트 상태: 조사 품질 감사 및 자동화 신뢰성 개선 진행 중
 - 주 문서 언어: 한국어
@@ -644,3 +644,19 @@
 - 실시간 제어 중단 없는 설치 또는 STO 상태 설치도 법령의 보편적 설치 절차가 아니라 제품 위험분석·기능안전 영향평가 항목.
 - Annex I Part I(제품 속성)와 Part II(취약점 처리) 구조를 구분.
 - 상세: `reports/CRA_CORRECTION_REPORT_1_2026-11-17.md`.
+## 2026-11-17 — 운영 5분 반복 실행 및 조사 품질 게이트 개선
+
+- main 최신 기준 archive #38, state count=38, history/archive=2,431개. 최근 #33–#38의 원본을 직접 재조회하고 #33–#38 정정 보고서 작성.
+- #33/#35/#37/#38은 취약점 처리·무상 업데이트·지원기간 주제가 중복됐고, #34는 Annex II/Annex VII 및 제품 분류 혼합, #36은 Article 14의 final-report 시계 혼합을 확인.
+- PR #10 merge commit `2e583f5c7b24743fbb1bd7d375643e314cf3115d`: EUR-Lex 공식 링크 누락 거부, 최근 30개 archive 주제 중복 차단, 최근 15개 이력 프롬프트 제공.
+- PR #10 CI Run #455: **101 passed, 1 xfailed**; exact blob SHA/compileall/full pytest success.
+- 다음 cadence PR branch `fix/production-cadence-2026-11-17`: 외부 repository_dispatch trigger 제거, 매시간 정각 UTC schedule 및 manual dispatch 유지. PR CI 후 병합 대기.
+- 원본 archive/state/history는 변경하지 않았다. cadence 변경 후 첫 3회 hourly run을 별도 관찰한다.
+- 상세: `reports/PRODUCTION_AUTOMATION_QUALITY_AND_CADENCE_AUDIT_2026-11-17.md`.
+
+## 2026-11-17 — Gemini 무료 quota 장애 원인 및 cadence 재조정
+- 운영 Run ID `44016487535`의 실패 로그를 직접 확인했다. `gemini-3.8-flash`는 Free Tier `generate_content_free_tier_requests` 일일 한도 20회 초과(HTTP 429 RESOURCE_EXHAUSTED), fallback `gemini-3.5-flash-lite`는 HTTP 503 UNAVAILABLE 및 EUR-Lex 링크 누락 응답을 반환했다.
+- 기존 main.py는 quota/503을 동일 모델에서 3회 반복하고, 품질 거부 후에도 workflow 실패로 종료하는 문제가 있었다.
+- cadence PR에서 모델별 최대 2회 시도, 429/503은 즉시 같은 모델 재시도 중단 후 fallback, 품질 거부/할당량/일시 과부하는 부작용 없는 정상 no-op으로 처리하도록 보강했다. 인증/설정 등 미분류 치명 오류는 계속 exit 1.
+- 실행 주기는 매 3시간(UTC 정각)으로 조정했다. 8회/일 × 모델당 최대 2회 = 최대 16회/일/모델의 이론상 상한으로 20회 Free Tier 제한 아래에 여유를 둔다.
+- CI 재검증 대기 중이며 PR #11은 아직 main에 병합하지 않았다.

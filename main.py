@@ -194,11 +194,17 @@ prompt = f"""
     위의 이전 내용들과 중복되지 않으면서, 아직 다루지 않은 더 발전되거나 세부적인 CRA 핵심 주제(예: 취약점 무상 패치, Secure by default, 기술 문서, SBOM, 생명주기 관리 등)를 깊이 있게 선정하여 아래 4가지 양식에 맞추어 엄격하게 조사하고 작성해 주세요.
     추측성 내용은 절대 배제하고, 실제 EU 규정 조항이나 공식 가이드라인을 기반으로 높은 품질의 전문적인 내용을 작성하세요.
 
+    [필수 출처·정확성 규칙]
+    - CRA 법적 주장에는 Regulation (EU) 2024/2847의 최종 Official Journal 원문을 우선 사용하세요.
+    - 출처 자료에 다음 공식 원문 링크를 반드시 포함하세요: https://eur-lex.europa.eu/eli/reg/2024/2847/oj/eng
+    - 조항 번호와 제목을 확인하고, 원문에 없는 구현 방식을 법적 의무로 표현하지 마세요.
+    - 원문을 직접 확인하지 못한 문장은 직접 인용으로 꾸미지 말고 '요약/해석'으로 구분하세요.
+    - 최근 조사 주제와 겹치면 억지로 새 주제를 만들지 말고 '추가로 검증할 신규 주제 없음'을 반환하세요.
     [작성 양식]
     1. 주제 요약: (핵심 내용 2줄)
     2. 규격 근거 및 상세 내용: (CRA 조항 또는 산업 표준 기준의 구체적 설명)
-    3. 출처 자료(Source): (참고한 공식 EU 규정 문서명, 웹사이트 이름 또는 표준 규격 명칭)
-    4. 출처 원문 텍스트(Raw Text Quote): (해당 출처에서 인용하거나 근거로 삼은 실제 원문 문장 또는 규정 조항의 텍스트)
+    3. 출처 자료(Source): (참고한 공식 EU 규정 문서명, 웹사이트 이름 또는 표준 규격 명칭과 URL)
+    4. 출처 원문 텍스트(Raw Text Quote): (해당 출처에서 직접 확인한 실제 원문 문장. 직접 확인하지 못한 경우 인용문을 만들지 말 것)
     """
 
 def validate_research_report(text):
@@ -325,9 +331,13 @@ def find_duplicate_topic(report, history, root="."):
 models_to_try = ["gemini-3.8-flash", "gemini-3.5-flash-lite"]
 ai_message = ""
 success = False
+quota_exhausted = False
+transient_unavailable = False
+quality_rejected = False
+fatal_model_error = False
 
 for model_name in models_to_try:
-  max_retries = 3
+  max_retries = 2
   retry_delay = 5
   print(f"🔍 모델 [{model_name}]으로 조사를 시도합니다.")
 
@@ -349,10 +359,14 @@ for model_name in models_to_try:
         ai_message = candidate.strip()
         success = True
         break
+      quality_rejected = True
       print(
           f"모델 {model_name} 시도 {attempt} 무효 응답: "
           f"{validation_reason}"
       )
+      # 공식 법령 링크 누락은 같은 모델에 반복 요청해도 보완되지 않는 경우가 많다.
+      if "EUR-Lex" in validation_reason:
+        break
       if attempt < max_retries:
         time.sleep(retry_delay)
     except Exception as e:
@@ -361,9 +375,25 @@ for model_name in models_to_try:
         status_code = getattr(e, "code", None)
       if status_code is None:
         status_code = getattr(getattr(e, "response", None), "status_code", None)
+      error_text = str(e).lower()
       if status_code == 404 or str(status_code).upper() in ("404", "NOT_FOUND"):
         print(f"모델 {model_name}을 사용할 수 없습니다(404). 재시도 없이 다음 모델로 전환합니다.")
         break
+      if status_code == 429 or "429 resource_exhausted" in error_text:
+        quota_exhausted = True
+        print(
+            f"⚠️ 모델 {model_name} 할당량/요청 제한(429). "
+            "동일 모델 재시도를 중단하고 대체 모델로 전환합니다."
+        )
+        break
+      if status_code == 503 or "503 unavailable" in error_text:
+        transient_unavailable = True
+        print(
+            f"⚠️ 모델 {model_name} 일시적 과부하(503). "
+            "동일 모델 재시도를 중단하고 대체 모델로 전환합니다."
+        )
+        break
+      fatal_model_error = True
       print(f"모델 {model_name} 시도 {attempt} 실패: {str(e)}")
       if attempt < max_retries:
         time.sleep(retry_delay)
@@ -372,9 +402,17 @@ for model_name in models_to_try:
     break
 
 if not success:
+  if not fatal_model_error and (
+      quota_exhausted or transient_unavailable or quality_rejected
+  ):
+    print(
+        "⚠️ [조사 보류] Gemini 할당량/일시 장애 또는 보고서 품질 검증 "
+        "실패로 이번 실행을 정상 건너뜁니다. 전송·아카이브·카운트는 변경하지 않습니다."
+    )
+    raise SystemExit(0)
   print(
-      "❌ [조사 실패] 모든 모델 호출이 실패했거나 응답 검증을 통과하지 "
-      "못했습니다. 이번 실행은 전송·아카이브·카운트 증가 없이 종료합니다."
+      "❌ [조사 실패] 인증/설정 등 복구가 필요한 오류로 모든 모델 호출이 "
+      "실패했습니다. 전송·아카이브·카운트 증가 없이 종료합니다."
   )
   raise SystemExit(1)
 

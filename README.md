@@ -6,7 +6,7 @@
 
 ## 현재 상태
 
-- 현재 작업 브랜치: `feature/p1-b2-atomic-persistence-2026-11-16` (P1-B2 전용 구현 브랜치)
+- 현재 작업 브랜치: `fix/production-cadence-2026-11-17` (운영 cadence/품질 후속)
 - 운영 기준 브랜치: `main` — 별도 승인 없이 수정·병합하지 않습니다.
 - P0 응답 검증/실패 차단, P1-A 상태·이력 검증, P1-B1 Discord 전송 신뢰성: 작업 브랜치 구현 완료
 - **P1-B2 로컬 다중 파일 저장 일관성: 사용자 승인 후 구현 및 테스트 CI 검증 완료**
@@ -349,3 +349,11 @@ Actions 성공은 자동화 실행 결과이지 CRA 법령 해석이나 출처�
 - CVD 정책/제보 연락처/안전한 배포는 Annex I Part II (5)–(7), Article 13(17), Annex II (2).
 - 디지털 서명과 STO 연계 업데이트 설치는 특정 법정 구현 방식이 아니라 제품별 엔지니어링 검증 항목.
 - 상세: [CRA 보고서 #1 정정 및 기술 근거 감사](reports/CRA_CORRECTION_REPORT_1_2026-11-17.md).
+## 2026-11-17 최신 운영 안정화 및 조사 품질
+
+- [운영 자동화 품질·실행 주기 감사](reports/PRODUCTION_AUTOMATION_QUALITY_AND_CADENCE_AUDIT_2026-11-17.md)
+- CRA 원본 #33–#38 정정: [#33](reports/CRA_CORRECTION_REPORT_33_2026-11-17.md), [#34](reports/CRA_CORRECTION_REPORT_34_2026-11-17.md), [#35](reports/CRA_CORRECTION_REPORT_35_2026-11-17.md), [#36](reports/CRA_CORRECTION_REPORT_36_2026-11-17.md), [#37](reports/CRA_CORRECTION_REPORT_37_2026-11-17.md), [#38](reports/CRA_CORRECTION_REPORT_38_2026-11-17.md)
+- PR #10 merge: EUR-Lex official-link gate 및 최근 30개 archive 기반 duplicate-topic suppression. CI #455: 101 passed, 1 xfailed.
+- 외부 5분 dispatch를 hourly schedule로 바꾸는 cadence PR은 검증 후 병합 예정. 원본 state/history/archive는 보존한다.
+
+- 운영 Run `44016487535` 실패 원인: Gemini Free Tier 20 requests/day 초과(429) + fallback 503. cadence PR에서 3시간 schedule, 모델당 최대 2회, quota/503/품질 거부 no-op 처리를 추가했다.
