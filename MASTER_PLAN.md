@@ -514,3 +514,12 @@
 8. [후속] 검증된 claim을 통합 CRA 한국어 보고서로 정리하고, 서보 드라이브 설계 적용 항목/근거/권고를 분리.
 9. [후속 별도 산출물] SIL 3 서보 드라이브 벤치마킹 보고서 및 하드웨어 블록 설계 작성. IEC 61508/IEC 61800-5-2 등 기능안전 근거를 CRA 사이버보안 근거와 분리해 추적.
 10. [보류] PR #6 Draft 유지. main 병합은 통합 보고서/기능안전 산출물 검토 및 명시적 승인 전 수행하지 않는다.
+
+## 2026-11-17 — archive #19 감사 및 다음 우선순위
+1. [완료] main archive #19 snapshot을 PR #7로 integration에 동기화. main은 변경하지 않음.
+2. [완료] state/history/archive #19 exact blob SHA가 main과 integration에서 동일함을 확인.
+3. [완료] correction report #19 생성: Annex I Part I (2)(l) logging, (2)(c) update, (2)(h) availability locator/quote 오류 정정.
+4. [완료] correction reports #14–#19 누적, 원본 archive 모두 보존.
+5. [진행] archive #13 이하 역순 감사 및 correction index.
+6. [후속] 검증된 claim을 통합 CRA 한국어 보고서와 서보 드라이브 보안 설계 추적표로 정리.
+7. [후속 별도 산출물] SIL 3 서보 드라이브 벤치마킹 및 하드웨어 블록 설계 보고서. 기능안전 규격과 CRA 사이버보안 규격을 분리 추적.
