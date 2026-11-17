@@ -325,3 +325,8 @@
 - Distinguish legal requirements from product-specific engineering recommendations, safety behavior, selected protocols, cryptographic implementation, and operational design.
 - Recheck exact article/annex numbering and quoted wording against the Official Journal, including corrigenda. Proposal/compromise wording is not a substitute for the enacted OJ text.
 - Continue auditing legacy archives in reverse chronological order; integrate corrected findings into the consolidated report only after source verification.
+
+## 29. Separate adjacent legal provisions in quotations
+- Do not combine adjacent Annex I points into one synthetic direct quotation.
+- Keep secure-by-default (Part I (2)(b)), access control (Part I (2)(d)), and internal activity logging/monitoring (Part I (2)(l)) as separate claim locators.
+- Do not attribute RBAC, least privilege, MFA, password rotation or failed-login logging as direct CRA wording unless the exact Official Journal provision says so.
