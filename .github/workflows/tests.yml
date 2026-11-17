@@ -41,6 +41,7 @@ on:
       - "cra_source.py"
       - "cra_claims.py"
       - "cra_pdf_sources.py"
+      - "cra_traceability.py"
       - "persistence.py"
       - "tests/**"
       - "AI_RULEBOOK.md"
