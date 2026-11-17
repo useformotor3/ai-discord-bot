@@ -1141,3 +1141,9 @@
 - Canary #209 로그의 7개 source별 visible-text 길이를 다시 합산한 결과 총 636,040자다.
 - 이전 보고서/PR/로그의 245,502자는 2025/327 EHDS amendment 394,354자를 합계에서 누락한 계산 오류였다. 이전 event는 감사 이력으로 남기고 정정 event를 추가한다.
 - CI #441: 117 passed, 1 xfailed. Canary #209 success.
+
+## 2026-11-17 — archive #20–#21 정정
+- main의 자동 archive가 #21까지 전진해 PR #8로 integration branch에 동기화했다. state count 21, history 2,414 entries. protected state/history 및 archive #20/#21 blobs가 main과 integration에서 동일함을 확인했다.
+- #20은 Article 11을 reporting obligation으로 잘못 인용하고 Article 14/16 platform과 Article 13(17) manufacturer single point of contact를 혼합했다. actively exploited vulnerability와 severe incident의 별도 24h/72h/final-report clocks 및 Article 14(8) user notification을 정정했다.
+- #21은 Annex I Part I (2)(h)에 “resource isolation”을 직접 문언처럼 추가하고 STO를 의무화했다. 실제 CRA는 essential and basic functions availability와 DoS resilience/mitigation을 요구하지만 특정 isolation architecture나 STO/SS1을 지정하지 않는다.
+- correction reports #20/#21 생성, 원본 archive 보존. correction reports #1–#21 완료.
