@@ -22,7 +22,7 @@ VALID_REPORT = """# CRA 심층 조사 보고서
 
 ## 3. 출처 자료(Source)
 EU 공식 법령 데이터베이스 EUR-Lex, Regulation (EU) 2024/2847.
-EUR-Lex consolidated text 20.11.2024; corrigenda 5.12.2024, 2.7.2025 and 17.10.2025.
+EUR-Lex consolidated text 20.11.2024; corrigenda 5.12.2024, 2.7.2025 and 17.10.2025.\nEUR-Lex 통합본은 문서화 도구이며 법적 효력은 Official Journal(관보) 정본과 공식 정오표에 있다.
 https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02024R2847-20241120
 
 ## 4. 출처 원문 텍스트(Raw Text Quote)
@@ -46,6 +46,7 @@ def test_successful_generation_uses_only_mocked_external_services(run_main):
     assert "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02024R2847-20241120" in run_main.captured["model_calls"][0]["prompt"]
     assert "Manufacturers shall ensure that vulnerabilities" in run_main.captured["model_calls"][0]["prompt"]
     assert "corrigenda 5.12.2024, 2.7.2025 and 17.10.2025" in run_main.captured["model_calls"][0]["prompt"]
+    assert "Official Journal(관보)" in run_main.captured["model_calls"][0]["prompt"]
     assert len(run_main.captured["discord_posts"]) == 1
     assert [cmd[0] for cmd in run_main.captured["git_commands"]] == [
         "git", "git", "git", "git", "git"
