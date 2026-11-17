@@ -13,8 +13,8 @@
 ## 현재 상태 — 2026-11-17
 
 - **활성 범위: CRA 대응만.** SIL 3 자료는 역사적 산출물로 보존하며 별도 명시적 재개 지시 전 비활성.
-- 현재 작업 브랜치: `docs/cra-source-gate-status-and-session-rules-2026-11-17` (관리 문서 정합화 작업 중)
-- 최신 main 기준점: PR #26 merge commit `8066c166ba01fbfb8d25f61ce0ce6ed72f151854`
+- 현재 작업 브랜치: 없음 (PR #27 관리 문서 정합화 병합 완료)
+- 최신 main 기준점: PR #27 merge commit `5f0c54a018e18b3453b1c836a5a7d2e9a266331b`; source provenance 코드 병합은 PR #26 `8066c166ba01fbfb8d25f61ce0ce6ed72f151854`
 - 최신 CRA source provenance 통합: [PR #26](https://github.com/useformotor3/ai-discord-bot/pull/26) 병합 완료; 공식 CELLAR 7개 법령 자료 + Commission 공식 페이지 2개 수집, claim-level validator 및 source manifest 반영
 - [CRA 공식 출처 수집·주장 추적 파이프라인 보고서](reports/CRA_SOURCE_PROVENANCE_PIPELINE_2026-11-17.md): Run #573, 138 passed / 1 xfailed, live 9-source canary 및 Article 13(8) quote 확인
 - CRA-only 범위 통제 기준점: PR #18 merge `b7813ddd311bc51bfb0eb26458eace9ff82b621f`; 통합 보고서 PR #19 merge `5776ca609130033bfff17ca62c9fabc3b9570b3b`; 인터페이스 매트릭스 PR #20 merge `951fc5ee0122b847b5e8f77bd5e0706db65efb76`
@@ -28,6 +28,7 @@
 - CRA 정정 보고서 #1–#38: 개별 원문·원본 SHA 보존, 주요 정정/정확한 조항 locator를 통합 보고서 v0.2에 반영
 - PR #21 merge commit: `e11d376bab43ccc99bdf70549ad47eec57a01760`; PR #22: `20e503c1da2fe2f053630263a8c4942680ec1515`; PR #23: `b90a0ac07865c18d846323d843fef38b1123077a`; PR #24: `153033aa535775a0df568ad83876bff487d33404`; PR #26: `8066c166ba01fbfb8d25f61ce0ce6ed72f151854`
 - PR #26 CI: [Run #573](https://github.com/useformotor3/ai-discord-bot/actions/runs/44039961078), 138 passed / 1 xfailed; 9개 official source live fetch 및 Article 13(8) locator/quote canary 통과. merge commit 자체의 별도 run은 아직 미확인.
+- PR #27 [프로젝트 기록/행동강령 동기화](https://github.com/useformotor3/ai-discord-bot/pull/27) 병합 완료; [Run #575](https://github.com/useformotor3/ai-discord-bot/actions/runs/44040949610)에서 138 passed / 1 xfailed 및 live source canary 재통과.
 - 최신 법적/이행 자료 반영: Commission Guidance C(2026) 5252 (2026-07-27), M/606 개정 C(2026) 7861 (2026-11-10), Regulation (EU) 2025/327 개정 범위 검토
 - 제품 모델/통신 프로토콜/시장 공급 구조가 미제공되어 CRA 적용성 및 Annex III/IV 분류는 잠정 판단으로 유지
 - PR #19/#20은 문서·추적표 경로만 변경했으며 운영 코드, workflow, state/history 및 원본 archive는 수정하지 않음
