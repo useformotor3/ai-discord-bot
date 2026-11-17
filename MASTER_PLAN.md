@@ -434,3 +434,12 @@
 3. legal requirement, official explanation, interpretation, engineering recommendation을 별도 유형으로 분류한다.
 4. mock CI 통과 후 격리된 실제 Gemini 모델 호환성 canary를 설계한다. 운영 Gemini/Discord workflow를 테스트에 사용하지 않는다.
 5. claim mapping 통과와 별개로 Official Journal 정본 및 corrigenda 대조, 제품 범위·적용성 검토를 완료하기 전 CRA 적합성 결론으로 승격하지 않는다.
+
+
+### 진행 결과 — 2026-11-17
+- [완료] 구조화 claim-to-evidence validator 구현 및 main.py report acceptance gate 연결.
+- [완료] legal requirement / official explanation / interpretation / engineering recommendation 분리.
+- [완료] mock tests, 기존 main.py 통합 테스트, source SHA pin, compileall 및 전체 pytest 검증: 112 passed, 1 xfailed.
+- [완료] EUR-Lex read-only canary: success.
+- [미완료] 실제 Gemini 모델 JSON 출력 호환성 canary, Official Journal 정본/정오표 대조, 본문 claim 누락에 대한 사람 검토.
+- [보류] main 통합. PR #3는 main 최신화 및 통합 CI/보호 경로 검토 전까지 Draft로 유지.
