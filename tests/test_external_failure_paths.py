@@ -12,7 +12,7 @@ def test_discord_connect_timeout_retries_with_explicit_timeout_and_wait(run_main
             {"status_code": 200, "json": {"id": "discord-message-001"}},
         ],
     )
-    assert len(run_main.captured["discord_posts"]) == 2
+    assert len(run_main.captured["discord_posts"]) == 3
     for post in run_main.captured["discord_posts"]:
         assert post["timeout"] == (3.05, 10)
         assert post["params"] == {"wait": "true"}
