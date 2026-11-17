@@ -78,3 +78,18 @@ EUR-Lex consolidated page는 자체적으로 documentation tool이며 법적 효
 - merge/rebase/force-push 및 production execution 없음.
 - safety refs 및 기존 PR을 삭제하거나 이동하지 않았다.
 - 이 문서는 통합 승인이나 법률 적합성 결론이 아니다.
+
+## 7. 수정 후 재검증 — 2026-11-17
+
+초기 Article/Annex scope helper 구현에서 정규식 escape를 이중 처리한 결함이 있었다. 그 결과 CI Run #279는 **25 failed, 92 passed, 1 xfailed**로 실패했다. 실패 원인은 회귀 테스트와 main 통합 fixture의 quote를 locator scope 안에서 찾지 못한 것이며, 이를 성공으로 숨기지 않고 job log에서 원인을 확인했다.
+
+정규식 escape를 수정하고 workflow exact SHA pin을 갱신한 후:
+- correction commit: `7882aaf890e933dff988a0891f1a98b6cb3abeee`
+- exact pin update commit: `784c41a90bd77dd5776c1637f6abe646452e7175`
+- Isolated CI Run #294 (ID `44002223181`): **117 passed, 1 xfailed**; exact source SHA, compileall, full pytest 모두 성공.
+- EUR-Lex read-only Canary Run #101 (ID `44002223011`): success.
+- 이전 실패 Run #279는 실패 이력으로 보존한다. 수정 후 성공이 과거 실패를 지우는 것은 아니다.
+
+문서 및 로그 갱신 전 마지막 원격 compare 스냅샷은 main `83bc2430842413080e73bc5b98a8a82c45d03909`, feature 최신 검증 head `784c41a90bd77dd5776c1637f6abe646452e7175`, 125 ahead / 10 behind, diverged였다. main의 자동 archive가 계속 전진하므로 다음 통합 단계 직전에 다시 비교한다.
+
+PROJECT_LOG.jsonl은 UTF-8 원문 전체를 보존해 빈 행을 제거하고 한 줄당 JSON 객체 형식으로 정리했다. 현재 로그 재검증은 다음 문서/코드 commit 이후 다시 수행한다.
