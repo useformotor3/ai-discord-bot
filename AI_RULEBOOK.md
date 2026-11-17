@@ -395,3 +395,14 @@
 - M/606 Annex I item refs는 1–41 범위여야 하며, candidate relevance는 product classification 또는 harmonised status로 해석하지 않는다.
 - PDF raw-byte/text SHA-256, provenance scope, artifact readback, item18 visual verification 및 PROJECT_LOG.jsonl JSON/unique event_id를 확인한다.
 - 이 validator는 데이터 무결성 검사이지 CRA 법적 적합성 판정 도구가 아니다.
+
+
+## 56. M/606 Annex I 41-item relevance mapping
+
+- Every Annex I item 1–41 must have one unique mapping row with its ESO adoption deadline and source page locator.
+- Horizontal items 1–15 are standardisation topics; their ESO adoption dates are not manufacturer compliance deadlines.
+- Vertical product-type items require intended-purpose/product-boundary/core-functionality analysis. Embedded features, ports, browser views, bootloaders or use of external services do not automatically classify the complete servo drive as that vertical product.
+- Security-featured processors/controllers/ASICs/FPGAs/secure elements are component due-diligence candidates when actually integrated; they do not automatically reclassify the final product.
+- A standardisation request is not itself an OJ-cited harmonised standard and does not itself create presumption of conformity.
+- Candidate CRA/SEC/interface links must resolve to existing IDs and must be labelled conditional where the product type/component has not been confirmed.
+- ESO adoption deadlines must never be presented as direct manufacturer compliance deadlines.

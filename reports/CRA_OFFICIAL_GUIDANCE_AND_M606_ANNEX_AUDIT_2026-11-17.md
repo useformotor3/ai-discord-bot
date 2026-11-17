@@ -95,7 +95,7 @@ Annex I는 ESO(CEN/Cenelec/ETSI)가 작성할 신규 유럽표준의 주제와 a
 |---:|---|---|
 | 16 | ID 관리/PAM, 인증 및 접근제어 리더(생체인식 포함) | 31.01.2027 |
 | 17 | 독립형·내장형 브라우저 | 31.01.2027 |
-| 18 | 비밀번호 관리자 | 31/01/2027 (PDF p.3, 인쇄 페이지 2의 우측 deadline 셀 시각 확인 완료; 설명은 다음 페이지로 이어짐) |
+| 18 | 비밀번호 관리자 | 31/01/2027 (PDF p.3, 인쇄 페이지 3의 우측 deadline 셀 시각 확인 완료; 설명은 다음 페이지로 이어짐) |
 | 19 | 악성코드 검색·제거·격리 소프트웨어 | 31.01.2027 |
 | 20 | VPN 기능 제품 | 31.01.2027 |
 | 21 | 네트워크 관리 시스템 | 31.01.2027 |
@@ -120,7 +120,7 @@ Annex I는 ESO(CEN/Cenelec/ETSI)가 작성할 신규 유럽표준의 주제와 a
 | 40 | Smart-meter gateway 및 고급 보안 목적 장치 | 31.01.2027 |
 | 41 | Smartcard 및 secure element 유사 장치 | 31.01.2027 |
 
-**추출 품질 주의:** 항목 18의 날짜 셀은 PDF text extraction에서 행 분리로 누락됐으나, PDF p.3(인쇄 페이지 2) 원본 페이지 이미지의 우측 deadline 셀에서 `31/01/2027`을 시각적으로 확인했다. 행 설명은 페이지 경계에서 다음 페이지로 이어진다. 날짜는 이제 확인 상태다.
+**추출 품질 주의:** 항목 18의 날짜 셀은 PDF text extraction에서 행 분리로 누락됐으나, PDF p.3(인쇄 페이지 3) 원본 페이지 이미지의 우측 deadline 셀에서 `31/01/2027`을 시각적으로 확인했다. 행 설명은 페이지 경계에서 다음 페이지로 이어진다. 날짜는 이제 확인 상태다.
 
 ### 3.3 서보 드라이브에 대한 잠정적 관련성
 
@@ -146,7 +146,7 @@ Annex I는 ESO(CEN/Cenelec/ETSI)가 작성할 신규 유럽표준의 주제와 a
 
 - C(2026) 5252는 Run #669에서 Commission-hosted primary URL이 PDF로 확인되지 않아 allowlisted ANFR mirror fallback을 사용했다. Mirror binary hash는 확인됐지만 Commission-hosted 원본 URL과 byte identity는 미확인이다.
 - C(2026) 7861 Annex I PDF는 Commission document-register 원본 bytes 및 SHA-256 확인 완료. C(2026) 7861 본문 decision 및 Annex I 외 첨부가 있는지 document register 전체 항목은 추가 확인한다.
-- M/606 Annex I item 18 deadline `31/01/2027`은 PDF p.3(인쇄 페이지 2) 원본 이미지로 시각 확인 완료.
+- M/606 Annex I item 18 deadline `31/01/2027`은 PDF p.3(인쇄 페이지 3) 원본 이미지로 시각 확인 완료.
 - C(2026) 5252의 서보 드라이브 직접 사례는 없다. Industrial robot 사례는 RDPS의 원리 예시로만 사용한다.
 - 제품별 적용성/분류를 확정하려면 실제 모델, 회로도, MCU/FPGA, 통신 프로토콜, remote service architecture, firmware/update policy, EU supply chain facts가 필요하다.
 - Guidance는 비구속적이다. CRA Regulation (EU) 2024/2847 및 Official Journal 정본과 충돌할 경우 법령 정본을 우선하고, 불확실한 해석은 법률 검토 대상으로 남긴다.

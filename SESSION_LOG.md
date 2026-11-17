@@ -1321,7 +1321,7 @@
 - M/606 C(2026)7861 Annex: Commission document-register PDF, 151,267 bytes, 6 pages, raw SHA-256 `262b09596cb5cbe7d72a2c7789fb2512ee00db7f69082e7def2c8181b0f63276`; fallback used=false.
 - Extracted-text SHA-256 및 page count는 `reports/CRA_PDF_SOURCE_PROVENANCE_2026-11-17.json`에 기록.
 - Artifact ID `14313359693` ZIP를 다운로드했고, ZIP SHA-256 `150a687e4d4b13fdd20a432e99fc8ea9ec5bc847b8551dd3f157258dc41cd869`가 GitHub metadata와 일치함을 확인.
-- M/606 item18 password manager deadline은 원본 PDF printed page 2, PDF page index 2의 표 우측 셀에서 `31/01/2027`로 시각 확인.
+- M/606 item18 password manager deadline은 원본 PDF printed page 3, PDF page index 2의 표 우측 셀에서 `31/01/2027`로 시각 확인.
 - Run #642의 기존 CRA HTML source canary는 Commission summary page에 PDF document number `C(2026) 5252`를 요구해 실패했다. Summary page와 PDF Annex의 검증을 분리하도록 `cra_source.py`와 regression test를 수정했으며 재실행 대기.
 
 
@@ -1374,3 +1374,12 @@
 - Traceability gate: 13/15/35/36 records, all Guidance claims linked, 89 project log events including legacy rows, M/606 1–41, PDF hashes and item18 confirmation passed.
 - Pre/post safety refs `safety/pre-merge-main-pr35-2026-11-17` / `safety/post-merge-main-pr35-2026-11-17`; post ref and main compare identical.
 - Next implementation starts from latest main after PR #36 documentation-only status sync.
+
+
+## 2026-11-17 — M/606 Annex I 41-item mapping
+
+- `reports/CRA_M606_ANNEX_I_SERVO_DRIVE_RELEVANCE_2026-11-17.csv` 신규 작성: 41개 Annex I 항목의 paraphrased topic, ESO deadline, page locator, servo-drive relevance class, candidate CRA/SEC/interface IDs.
+- Horizontal items 1–15, vertical product types, component-dependent items를 구분하고 intended purpose/core functionality에 따른 조건부 판단을 기록.
+- ESO adoption deadlines를 제조자 compliance deadline과 구분하고, OJ citation 전 harmonised standard/presumption으로 주장하지 않도록 명시.
+- Item18 deadline locator를 PDF viewer page3 / printed EN3로 정정.
+- Next: extend traceability validator and tests to check all 41 mapping rows and foreign keys.

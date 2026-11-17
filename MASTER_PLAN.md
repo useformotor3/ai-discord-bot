@@ -552,3 +552,12 @@
 - M/606 Annex I item refs 1–41, non-binding Guidance category, source PDF raw/text hashes, artifact readback, item18 visual verification, README/report links 및 JSONL project log integrity를 검사한다.
 - negative tests는 unknown Guidance claim ID 및 invalid M/606 item 42를 fail-closed로 확인한다.
 - 이 검증은 법적 적합성을 판정하지 않는다. 문서·추적성 데이터의 내부 일관성만 검증한다.
+
+
+## M/606 Annex I 41-item product relevance crosswalk — 2026-11-17
+
+- 41개 표준화 항목을 모두 CSV로 정리하고 horizontal property (1–14), horizontal vulnerability handling (15), vertical product type (16–27, 31–36, 40), security component (28–30, 37–39, 41)로 구분한다.
+- 각 항목에 ESO adoption deadline, printed page locator, servo-drive relevance class, candidate CRA requirements/SEC controls/interface IDs를 연결한다.
+- Vertical product type은 intended purpose/product boundary/core functionality로 판단한다. component inclusion alone does not classify the complete servo drive.
+- M/606 adoption deadlines are ESO deadlines, not manufacturer compliance dates; no harmonised status/presumption until OJ citation.
+- Extend `cra_traceability.py` and CI to validate exactly 41 unique items, deadlines and all candidate foreign keys.

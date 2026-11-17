@@ -828,7 +828,7 @@
 - Pre-merge ref `safety/pre-merge-main-pr30-2026-11-17` → `80245d9e132380a10581612c031f87869993b98d`; post-merge ref `safety/post-merge-main-pr30-2026-11-17` → `975ec6728988e43d9a1ebbf6f6d84288aa44c2fd`; readback compare에서 main과 post-merge ref 동일 확인.
 - PR #30 범위: 한국어 CRA 감사 보고서, 관리 문서·로그 동기화, 격리 테스트 workflow push branch allowlist 1줄. 운영 애플리케이션 코드, 운영 `run.yml`, state/history/archive, Gemini/Discord 외부 실행 및 SIL 3 과거 산출물은 변경하지 않았다.
 - M/606 Commission PDF 및 Guidance ANFR mirror raw-byte SHA-256 검증 완료. M/606 item 18 deadline 31/01/2027 시각 확인 완료. Guidance Commission primary byte identity는 미확인.
-- 현재 구현 작업 브랜치: 없음 (PR #35 병합 완료; PR #36은 문서 전용 사후 동기화).
+- 현재 구현 작업 브랜치: `cra/m606-annex-item-mapping-2026-11-17` (M/606 Annex I 41개 항목의 서보 드라이브 관련성 매핑 및 traceability gate 확장).
 
 
 ## 2026-11-17 — PR #31 사후 동기화 완료
@@ -857,7 +857,7 @@
 - Guidance: ANFR mirror fallback 사용, 1,190,726 bytes, 84 pages, SHA-256 `fe209c250e3d1f7599e42826d91963666951332927edcf511a2e79fe8d2f8234`; Commission-hosted original byte identity는 미확인.
 - M/606 Annex: Commission document-register direct fetch, 151,267 bytes, 6 pages, SHA-256 `262b09596cb5cbe7d72a2c7789fb2512ee00db7f69082e7def2c8181b0f63276`.
 - Artifact ID `14313359693`, ZIP SHA-256 `150a687e4d4b13fdd20a432e99fc8ea9ec5bc847b8551dd3f157258dc41cd869`; artifact ZIP를 다운로드하고 SHA-256 재계산하여 GitHub digest와 일치 확인.
-- M/606 Annex I item 18 password manager deadline은 PDF printed page 2의 원본 표 우측 셀에서 `31/01/2027`로 시각 확인. 텍스트 추출에서 행 설명이 페이지 경계를 넘어가며 날짜 셀을 놓쳤던 문제를 해결했다.
+- M/606 Annex I item 18 password manager deadline은 PDF printed page 3의 원본 표 우측 셀에서 `31/01/2027`로 시각 확인. 텍스트 추출에서 행 설명이 페이지 경계를 넘어가며 날짜 셀을 놓쳤던 문제를 해결했다.
 - 상세 manifest: `reports/CRA_PDF_SOURCE_PROVENANCE_2026-11-17.json`.
 - Run #642에서 발견된 summary page marker 오류를 수정했고, Run #669에서 PDF·HTML source canary 모두 통과했다.
 
@@ -919,3 +919,13 @@
 - PDF canary 2건, HTML official sources 9건, Article 13(8) locator/quote 통과.
 - Pre-merge `safety/pre-merge-main-pr35-2026-11-17` → `cad8452b64f274ceeaa203c1b0de6ecea5e2baac`; post-merge `safety/post-merge-main-pr35-2026-11-17` → `2a347a60f2632bbe87044484187765adab45aee2`. post ref와 main compare identical.
 - 현재 구현 작업 브랜치 없음. PR #36은 문서 전용 사후 동기화이며 다음 구현은 최신 main에서 새 브랜치로 시작한다.
+
+
+## 2026-11-17 — M/606 Annex I 41-item relevance map
+
+- 신규 `reports/CRA_M606_ANNEX_I_SERVO_DRIVE_RELEVANCE_2026-11-17.csv`: Annex I 41개 전체 항목을 paraphrase하고 ESO adoption deadline, PDF printed page locator, candidate CRA requirement/SEC control/interface refs, servo-drive relevance class 및 판단 근거를 기록했다.
+- Horizontal items 1–15, vertical product-type items 16–27/31–36/40, component-dependent items 28–30/37–39/41로 구분했다.
+- 제품 자체의 intended purpose/core functionality가 확인되지 않으면 vertical category로 분류하지 않는다. 내장 MCU/FPGA/network interface/secure element는 supplier due diligence 후보이지 자동 완제품 분류가 아니다.
+- M/606 dates는 ESO adoption deadlines이며 manufacturer compliance dates가 아니다. OJ citation 전에는 harmonised standard/presumption of conformity로 취급하지 않는다.
+- Item18 deadline `31/01/2027` locator는 PDF viewer page 3 / printed `EN 3` 우측 셀로 정정했다.
+- `cra_traceability.py`에 41개 mapping row, unique item, deadline, candidate ID cross-reference 및 page locator 검증을 추가하는 중.

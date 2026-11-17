@@ -296,3 +296,14 @@ Commission Implementing Decision C(2026) 7861 final Annex는 M/606의 41개 표�
 - [보안 통제·시험 매트릭스](CRA_SERVO_DRIVE_SECURITY_CONTROL_TEST_MATRIX_2026-11-17.csv)에 Guidance claim ID와 M/606 Annex I 후보 항목을 연결했다. 항목 25, 28–30, 36–41은 구성요소/제품 유형의 실제 포함 및 intended purpose 확인을 전제로 하는 조건부 관련성이다.
 - M/606 Annex I 표준화 주제는 표준 개발·채택 계획으로 관리한다. 드라이브에 관련 MCU/FPGA/네트워크 인터페이스/secure element가 들어간다는 이유만으로 드라이브 전체가 해당 수직 제품 유형에 자동 분류되지 않는다.
 - Guidance PDF는 ANFR mirror raw-byte SHA-256 `fe209c250e3d1f7599e42826d91963666951332927edcf511a2e79fe8d2f8234`를 검증했으나 Commission-hosted primary byte identity는 미확인이다. M/606 Commission Annex raw-byte SHA-256 `262b09596cb5cbe7d72a2c7789fb2512ee00db7f69082e7def2c8181b0f63276` 및 6페이지를 확인했다. M/606 item 18 deadline `31/01/2027`은 원본 PDF page image에서 시각 확인했다. 세부 값은 [PDF provenance manifest](CRA_PDF_SOURCE_PROVENANCE_2026-11-17.json)를 참조한다.
+
+
+## 12. M/606 Annex I 41개 항목의 서보 드라이브 관련성
+
+- [M/606 Annex I 41-item relevance map](CRA_M606_ANNEX_I_SERVO_DRIVE_RELEVANCE_2026-11-17.csv)에 모든 항목의 paraphrased topic, ESO adoption deadline, PDF page locator, 관련 CRA requirement/SEC control/interface 후보 및 서보 드라이브 관련성 판단을 기록했다.
+- 항목 1–15는 horizontal standardisation topics로 분류했다. 이 ESO adoption deadline은 제조자의 CRA compliance deadline이 아니다.
+- 항목 16–27 및 31–36은 vertical product-type 항목이다. servo drive의 내장 기능·포트·웹뷰·부트로더 사용만으로 제품 전체가 해당 vertical product type으로 자동 분류되지 않는다. intended purpose, product boundary 및 core functionality로 판단한다.
+- 항목 28–30 및 37–39는 security-featured component 후보로 다뤘다. 실제 부품번호·기능·공급자 증거가 확인될 때 CRA-006/CRA-024 및 관련 SEC control의 component due diligence에 연결한다. 부품 포함만으로 완제품이 vertical category가 되지 않는다.
+- 항목 25(network interfaces), 36(industrial firewall/IDS/IPS), 41(secure elements)은 실제 제품 기능·의도된 목적에 따른 조건부 후보로 표시했다.
+- 항목 18 password-manager standard의 ESO adoption deadline `31/01/2027`은 PDF printed page EN 3의 우측 셀에서 시각 확인했다. 이 표의 날짜는 ESO 표준 채택 일정이지 servo-drive 제조자의 직접 compliance deadline이 아니다.
+- M/606은 표준화 요청이다. 이 결정만으로 해당 표준이 OJ에 인용된 harmonised standard가 되거나 presumption of conformity가 발생하지 않는다.

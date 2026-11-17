@@ -442,7 +442,7 @@
 
 
 - [PDF source provenance manifest](reports/CRA_PDF_SOURCE_PROVENANCE_2026-11-17.json): Guidance mirror SHA-256, Commission M/606 Annex SHA-256, PDF page counts, extracted-text hashes, CI artifact digest and M/606 item 18 visual confirmation.
-- M/606 item 18 deadline confirmed visually as `31/01/2027` on PDF printed page 2. Guidance binary is ANFR mirror (Commission primary byte identity remains unverified).
+- M/606 item 18 deadline confirmed visually as `31/01/2027` on PDF printed page 3. Guidance binary is ANFR mirror (Commission primary byte identity remains unverified).
 
 
 - 최종 재검증 [Run #669](https://github.com/useformotor3/ai-discord-bot/actions/runs/44052967754): **148 passed / 1 xfailed**, compileall·source blob identity·PDF 2종 취득/해시·artifact upload·공식 HTML source 9건·Article 13(8) locator/quote 모두 통과.
@@ -475,3 +475,6 @@
 - [PR #35](https://github.com/useformotor3/ai-discord-bot/pull/35) squash merge 완료. Merge commit `2a347a60f2632bbe87044484187765adab45aee2`.
 - [Run #738](https://github.com/useformotor3/ai-discord-bot/actions/runs/44055249482): **151 passed / 1 xfailed**, traceability gate, PDF/HTML canaries 통과.
 - Pre/post refs: `safety/pre-merge-main-pr35-2026-11-17` → `cad8452b64f274ceeaa203c1b0de6ecea5e2baac`; `safety/post-merge-main-pr35-2026-11-17` → `2a347a60f2632bbe87044484187765adab45aee2`; post ref와 main compare identical.
+
+
+- [M/606 Annex I 41-item 서보 드라이브 관련성 매핑](reports/CRA_M606_ANNEX_I_SERVO_DRIVE_RELEVANCE_2026-11-17.csv): horizontal/vertical/component 표준화 주제, ESO 일정, 조건부 제품 관련성 및 후보 CRA/SEC/interface cross-reference.

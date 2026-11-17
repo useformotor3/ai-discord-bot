@@ -11,6 +11,9 @@ class TraceabilityError(RuntimeError):
 
 
 CLAIM_RE = re.compile(r"\bG-\d{3}\b")
+REQUIREMENT_RE = re.compile(r"\bCRA-\d{3}\b")
+CONTROL_RE = re.compile(r"\bSEC-\d{3}\b")
+INTERFACE_RE = re.compile(r"\bIF-\d{3}\b")
 ITEM_RE = re.compile(r"(?<![A-Za-z])(?P<start>\d{1,2})(?:\s*[–-]\s*(?P<end>\d{1,2}))?")
 SHA_RE = re.compile(r"^[0-9a-f]{64}$")
 
@@ -19,6 +22,7 @@ FILES = {
     "interfaces": "reports/CRA_SERVO_DRIVE_INTERFACE_APPLICABILITY_2026-11-17.csv",
     "requirements": "reports/CRA_REQUIREMENTS_TRACEABILITY_2026-11-17.csv",
     "controls": "reports/CRA_SERVO_DRIVE_SECURITY_CONTROL_TEST_MATRIX_2026-11-17.csv",
+    "m606_map": "reports/CRA_M606_ANNEX_I_SERVO_DRIVE_RELEVANCE_2026-11-17.csv",
     "provenance": "reports/CRA_PDF_SOURCE_PROVENANCE_2026-11-17.json",
     "project_log": "PROJECT_LOG.jsonl",
     "readme": "README.md",
@@ -72,6 +76,7 @@ def validate_traceability(root="."):
     interfaces = _read_csv(data["interfaces"])
     requirements = _read_csv(data["requirements"])
     controls = _read_csv(data["controls"])
+    m606_map = _read_csv(data["m606_map"])
 
     expected_counts = {
         "claims": (claims, 13),
@@ -123,6 +128,61 @@ def validate_traceability(root="."):
     orphan_claims = sorted(id_sets.get("claims", set()) - used_claims)
     _require(not orphan_claims, f"Guidance claims not linked to any matrix: {orphan_claims}", errors)
 
+    # Validate the complete M/606 Annex I crosswalk and every candidate foreign key.
+    _require(len(m606_map) == 41,
+             f"M/606 mapping: expected 41 rows, found {len(m606_map)}", errors)
+    item_numbers = []
+    expected_categories = {}
+    for item in range(1, 42):
+        if item <= 14:
+            expected_categories[item] = ("horizontal_property", "horizontal_baseline", "30/11/2026" if item == 1 else "30/10/2027")
+        elif item == 15:
+            expected_categories[item] = ("horizontal_vulnerability_handling", "horizontal_baseline", "30/11/2026")
+        elif 28 <= item <= 30 or 37 <= item <= 39:
+            expected_categories[item] = ("security_component", "component_due_diligence_conditional", "31/01/2027")
+        elif item == 41:
+            expected_categories[item] = ("security_component_or_product_type", "component_or_product_type_conditional", "31/01/2027")
+        elif item in (16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 31, 32, 33, 34, 35, 36, 40):
+            category = "vertical_interface_conditional" if item == 25 else ("vertical_product_type_not_typical" if item in (31, 32, 33, 34, 40) else "vertical_product_type_conditional")
+            expected_categories[item] = ("vertical_product_type", category, "31/01/2027")
+    for row in m606_map:
+        try:
+            item = int(row.get("M/606 Annex I item", ""))
+        except ValueError:
+            errors.append("M/606 mapping contains a non-integer item number")
+            continue
+        item_numbers.append(item)
+        expected = expected_categories.get(item)
+        _require(expected is not None, f"M/606 mapping has out-of-range item {item}", errors)
+        if expected is None:
+            continue
+        expected_category, expected_class, expected_deadline = expected
+        _require(row.get("Category") == expected_category,
+                 f"M/606 item {item}: unexpected category {row.get('Category')}", errors)
+        _require(row.get("Servo-drive relevance class") == expected_class,
+                 f"M/606 item {item}: unexpected relevance class {row.get('Servo-drive relevance class')}", errors)
+        _require(row.get("ESO adoption deadline (not manufacturer compliance deadline)") == expected_deadline,
+                 f"M/606 item {item}: incorrect ESO adoption deadline", errors)
+        _require("does not make a draft standard harmonised" in row.get("Status note", ""),
+                 f"M/606 item {item}: missing non-harmonised-status caveat", errors)
+        req_refs = set(REQUIREMENT_RE.findall(row.get("Candidate CRA requirement IDs (conditional)", "")))
+        sec_refs = set(CONTROL_RE.findall(row.get("Candidate SEC control IDs (conditional)", "")))
+        if_refs = set(INTERFACE_RE.findall(row.get("Related interface IDs", "")))
+        _require(req_refs.issubset(id_sets.get("requirements", set())),
+                 f"M/606 item {item}: unknown CRA requirement refs {sorted(req_refs - id_sets.get('requirements', set()))}", errors)
+        _require(sec_refs.issubset(id_sets.get("controls", set())),
+                 f"M/606 item {item}: unknown SEC control refs {sorted(sec_refs - id_sets.get('controls', set()))}", errors)
+        _require(if_refs.issubset(id_sets.get("interfaces", set())),
+                 f"M/606 item {item}: unknown interface refs {sorted(if_refs - id_sets.get('interfaces', set()))}", errors)
+    _require(sorted(item_numbers) == list(range(1, 42)),
+             "M/606 mapping must contain each item 1–41 exactly once", errors)
+    _require(len(item_numbers) == len(set(item_numbers)),
+             "M/606 mapping contains duplicate item numbers", errors)
+    item18_map = next((row for row in m606_map if row.get("M/606 Annex I item") == "18"), {})
+    _require("EN 3" in item18_map.get("PDF printed page locator", "")
+             and "visually confirmed" in item18_map.get("PDF printed page locator", ""),
+             "M/606 item 18 must point to visually confirmed EN 3 deadline cell", errors)
+
     for row in claims:
         _require(row.get("Category") == "official_explanation",
                  f"{row.get('Claim ID')}: Guidance claim must be categorized as official_explanation", errors)
@@ -166,6 +226,8 @@ def validate_traceability(root="."):
                    if item.get("annex_item") == 18), {})
     _require(item18.get("deadline") == "31/01/2027" and item18.get("status") == "confirmed",
              "M/606 item 18 deadline visual confirmation missing", errors)
+    _require(item18.get("printed_page_number") == 3,
+             "M/606 item 18 provenance must locate deadline cell on printed EN 3", errors)
 
     log_lines = data["project_log"].read_text(encoding="utf-8").splitlines()
     log_ids = []
@@ -194,10 +256,11 @@ def validate_traceability(root="."):
 
     readme = data["readme"].read_text(encoding="utf-8")
     integrated = data["integrated_report"].read_text(encoding="utf-8")
-    _require(FILES["claims"] in readme and FILES["provenance"] in readme,
+    _require(FILES["claims"] in readme and FILES["provenance"] in readme and FILES["m606_map"] in readme,
              "README must link claim register and PDF provenance manifest", errors)
     _require("CRA_GUIDANCE_CLAIM_REGISTER_2026-11-17.csv" in integrated
-             and "CRA_PDF_SOURCE_PROVENANCE_2026-11-17.json" in integrated,
+             and "CRA_PDF_SOURCE_PROVENANCE_2026-11-17.json" in integrated
+             and "CRA_M606_ANNEX_I_SERVO_DRIVE_RELEVANCE_2026-11-17.csv" in integrated,
              "integrated report must link claim register and PDF provenance", errors)
 
     if errors:
@@ -210,6 +273,7 @@ def validate_traceability(root="."):
         "security_controls": len(controls),
         "linked_claims": len(used_claims),
         "referenced_m606_items": sorted(referenced_items),
+        "m606_mapping_items": len(m606_map),
         "pdf_sources": len(sources),
         "project_log_events": len(log_lines),
         "project_log_events_with_event_id": len(log_ids),
@@ -234,6 +298,7 @@ def main(argv=None):
         f"requirements={summary['requirements']} "
         f"SEC={summary['security_controls']} "
         f"linked_claims={summary['linked_claims']} "
+        f"M606_mapping_items={summary['m606_mapping_items']} "
         f"project_log_events={summary['project_log_events']} "
         f"modern_ids={summary['project_log_events_with_event_id']} "
         f"legacy={summary['legacy_project_log_events']} "
