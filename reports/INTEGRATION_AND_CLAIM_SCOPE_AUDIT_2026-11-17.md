@@ -184,3 +184,9 @@ The Annex I Part II (1) quote is substantially accurate. The legal minimum is a 
 Original archive #8 blob: `38550036503c8d2dbb00e66a7625475e089b4cd7`. Correction report: `reports/CRA_CORRECTION_REPORT_8_2026-11-17.md`.
 
 The report mis-cited Annex VI for SBOM, overstated mandatory SBOM disclosure to all users, and treated all servo drives as Important Class I/II. Correct mapping: Annex I Part II (1), Annex VII 2(b)/8, and Annex II point 9; Annex VI is simplified EU DoC. Original archive remains unchanged.
+
+## 17. Main archive #7 correction — 2026-11-17
+
+Original archive #7 blob: `ff4395ebe2f4e2f5c0b843b8b0a92942f542f6f2`. Correction report: `reports/CRA_CORRECTION_REPORT_7_2026-11-17.md`.
+
+The cited Annex I Part I point (1)(e) does not exist. Access control is point (2)(d); secure-by-default and reset-to-original-state are point (2)(b). The final OJ does not contain the phrase “default passwords”; unique credentials and first-use password enrollment are risk-based implementation choices, not a verbatim CRA mandate. Original archive remains unchanged.
