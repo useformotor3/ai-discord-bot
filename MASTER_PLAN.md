@@ -426,3 +426,12 @@
 4. [완료] FS/CYB 분리 traceability matrix 작성.
 5. [진행] PR CI/병합 및 링크/수치/모델 조합 검증.
 6. [다음] 정격 전압·출력·축 수·부하·엔코더·안전 기능 범위를 확정한 후 회로도/BOM/PFH 계산/시험 규격 상세화.
+
+## 2026-11-17 — SIL 3 서보 드라이브 기술 산출물 main 반영
+1. [완료] 4개 제조사 벤치마킹 보고서 v0.1.
+2. [완료] 1축 하드웨어 reference block design v0.1.
+3. [완료] FS/CYB 분리 요구사항 추적성 매트릭스.
+4. [완료] Excel/Google Sheets에서 열 수 있는 CSV 비교표.
+5. [완료] PR #16 merge `34449753857c6ab004271f69aac19867a7aed1fa`, CI #488 105 passed, 1 xfailed.
+6. [진행] 정격/부하/피드백/안전 기능 범위 확정 후 schematic, component selection/BOM, thermal/EMC, FMEDA/PFH calculation.
+7. [운영] 3시간 주기 첫 3회 production run 관찰.
