@@ -9,6 +9,7 @@ import requests
 import uuid
 
 from cra_source import append_source_manifest, fetch_official_cra_source, validate_research_report
+from cra_claims import validate_claim_evidence
 
 from persistence import (
     commit_persistence_transaction,
@@ -218,6 +219,38 @@ prompt = f"""
     2. 규격 근거 및 상세 내용: (CRA 조항의 구체적 설명; 외부 표준은 별도 공식 출처 확인 없이는 법적 근거로 인용하지 않음)
     3. 출처 자료(Source): Regulation (EU) 2024/2847, EUR-Lex 공식 URL을 정확히 기재
     4. 출처 원문 텍스트(Raw Text Quote): 위 공식 원문에서 50자 이상 연속된 실제 문장을 큰따옴표로 직접 인용
+
+    [필수 주장-근거 추적성]
+    - 본문에 포함하는 모든 법적 의무/공식 설명 문장 끝에 [C-001] 형식의 고유 claim_id를 붙이세요.
+    - 보고서 맨 마지막에 아래 형식의 단일 JSON 코드 블록을 정확히 추가하세요. 코드 블록 앞 표식은 CLAIM_EVIDENCE_JSON입니다.
+    - claims 배열의 각 항목은 claim_id, category, statement를 포함합니다.
+    - category는 legal_requirement, official_explanation, interpretation, engineering_recommendation 중 하나만 사용합니다.
+    - legal_requirement 및 official_explanation은 source_id, locator, quote를 반드시 포함합니다. source_id는 source pack의 정확한 ID, locator는 해당 원문에 실제 존재하는 Article/Annex/Part, quote는 해당 source_id 원문에서 연속된 50자 이상의 문장을 그대로 복사합니다.
+    - interpretation 및 engineering_recommendation은 basis에 근거와 법적 의무가 아닌 이유를 설명합니다. 법적 의무인 것처럼 표현하지 마세요.
+    - 모든 claim_id는 본문에서 참조되어야 하며, JSON에 선언하지 않은 claim_id를 본문에서 사용하지 마세요. ID는 중복 없이 사용하세요.
+    - JSON 예시의 내용은 형식 설명용이며 실제 주장·source_id·locator·quote는 반드시 제공된 원문으로 작성하세요.
+
+    CLAIM_EVIDENCE_JSON
+    ```json
+    {
+      "claims": [
+        {
+          "claim_id": "C-001",
+          "category": "legal_requirement",
+          "statement": "법적 주장 원문",
+          "source_id": "CRA-2024-2847-consolidated",
+          "locator": "Article 13",
+          "quote": "공식 원문에서 복사한 50자 이상의 연속 인용문"
+        },
+        {
+          "claim_id": "C-002",
+          "category": "engineering_recommendation",
+          "statement": "엔지니어링 권고",
+          "basis": "제품 위험분석에 따른 권고이며 법령이 특정 구현을 직접 요구하지 않음"
+        }
+      ]
+    }
+    ```
     """
 
 # 4. 모델 폴백 & 재시도 픽서 로직 (Latest ➔ Lite)
@@ -237,7 +270,9 @@ for model_name in models_to_try:
       )
       candidate = response.text if response and response.text else ""
       candidate = append_source_manifest(candidate, cra_source)
-      is_valid, validation_reason = validate_research_report(candidate, cra_source)
+      is_valid, validation_reason = validate_claim_evidence(candidate, cra_source)
+      if is_valid:
+        is_valid, validation_reason = validate_research_report(candidate, cra_source)
       if is_valid:
         ai_message = candidate.strip()
         success = True
