@@ -1357,3 +1357,11 @@
 - Pre/post safety refs `safety/pre-merge-main-pr33-2026-11-17` / `safety/post-merge-main-pr33-2026-11-17`; post ref and main compare identical.
 - PR #33 diff는 18개 파일, isolated tests workflow + CRA source verifier/PDF fetcher/tests + 보고서/매트릭스/관리문서. main.py, production run.yml, state/history/archive, Gemini/Discord production execution, SIL 3 files unchanged.
 - Next implementation starts from latest main in a new branch after PR #34 documentation-only sync.
+
+
+## 2026-11-17 — CRA traceability integrity gate
+
+- `cra_traceability.py`와 `tests/test_cra_traceability.py`를 추가했다.
+- 13 Guidance claims / 15 interfaces / 35 CRA requirements / 36 SEC controls의 row count, unique IDs, claim foreign keys, orphan claim, M/606 item 1–41, provenance hashes, item18 confirmation, README/report links, PROJECT_LOG JSONL integrity를 검증한다.
+- Negative tests: unknown G-999 reference와 invalid M/606 item 42가 CI fail-closed하도록 검증.
+- tests workflow에 source blob pins, compileall 및 `python cra_traceability.py` step을 추가했다. CI 결과 대기.
