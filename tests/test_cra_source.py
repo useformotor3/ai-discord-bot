@@ -23,6 +23,12 @@ def _html_for(definition):
             "<p>Article 1</p><p>Subject matter</p><p>1.</p>"
             "<p>Article 13</p><p>Obligations of manufacturers</p>"
             "<p>8.</p><p>Manufacturers shall ensure that vulnerabilities are handled effectively.</p>"
+            "<p>Article 64</p><p>Penalties</p><p>10.</p>"
+            "<p>By way of derogation from paragraphs 3 to 9, the administrative fines do not apply.</p>"
+            "<p>Article 65</p><p>Representative actions</p>"
+            "<p>Article 67</p><p>Amendment to Directive (EU) 2020/1828</p><p>1.</p>"
+            "<p>In Annex I, point 69. Regulation (EU) 2024/2847 is added.</p>"
+            "<p>Article 68</p><p>Amendment to Regulation (EU) No 168/2013</p>"
             "<p>ANNEX I</p><p>ESSENTIAL CYBERSECURITY REQUIREMENTS</p>"
         )
         return (
@@ -319,43 +325,49 @@ def _corrigenda_fixture(base_article_64, base_article_67):
     ]
 
 
-def test_consolidated_source_must_reflect_both_operative_english_corrigenda():
+def test_consolidated_source_applies_both_operative_english_corrigenda():
+    source_items = _corrigenda_fixture(
+        "By way of derogation from paragraphs 3 to 9, the administrative fines do not apply.",
+        "In Annex I, point 69. Regulation (EU) 2024/2847 is added.",
+    )
+
+    applied = cra_source.apply_consolidated_cra_corrigenda(source_items)
+    base = source_items[0]
+
+    assert applied == [
+        "CRA-2024-2847-corrigendum-2025-07-02",
+        "CRA-2024-2847-corrigendum-2025-10-17",
+    ]
+    assert "paragraphs 2 to 9" in base["text"]
+    assert "paragraphs 3 to 9" not in base["text"]
+    assert "72. Regulation (EU) 2024/2847" in base["text"]
+    assert "69. Regulation (EU) 2024/2847" not in base["text"]
+    assert base["applied_corrigenda"] == applied
+    assert base["prompt_excerpt_sha256"] == cra_source.hashlib.sha256(
+        base["text"].encode("utf-8")
+    ).hexdigest()
+    assert cra_source.validate_consolidated_cra_corrections(source_items)
+
+
+def test_consolidated_source_keeps_already_corrected_text_without_reapplying():
     source_items = _corrigenda_fixture(
         "By way of derogation from paragraphs 2 to 9, the administrative fines do not apply.",
         "In Annex I, point 72. Regulation (EU) 2024/2847 is added.",
     )
 
-    assert cra_source.validate_consolidated_cra_corrections(source_items)
+    cra_source.apply_consolidated_cra_corrigenda(source_items)
+    before = source_items[0]["text"]
+    cra_source.apply_consolidated_cra_corrigenda(source_items)
 
-
-@pytest.mark.parametrize(
-    ("article_64", "article_67", "expected"),
-    [
-        (
-            "By way of derogation from paragraphs 3 to 9, the administrative fines do not apply.",
-            "In Annex I, point 72. Regulation (EU) 2024/2847 is added.",
-            "Article 64(10)",
-        ),
-        (
-            "By way of derogation from paragraphs 2 to 9, the administrative fines do not apply.",
-            "In Annex I, point 69. Regulation (EU) 2024/2847 is added.",
-            "Article 67",
-        ),
-    ],
-)
-def test_consolidated_source_rejects_superseded_corrigendum_wording(article_64, article_67, expected):
-    source_items = _corrigenda_fixture(article_64, article_67)
-
-    with pytest.raises(SourceValidationError, match=expected):
-        cra_source.validate_consolidated_cra_corrections(source_items)
+    assert source_items[0]["text"] == before
 
 
 def test_consolidated_source_rejects_missing_operative_corrigendum_source():
     source_items = _corrigenda_fixture(
-        "By way of derogation from paragraphs 2 to 9, the administrative fines do not apply.",
-        "In Annex I, point 72. Regulation (EU) 2024/2847 is added.",
+        "By way of derogation from paragraphs 3 to 9, the administrative fines do not apply.",
+        "In Annex I, point 69. Regulation (EU) 2024/2847 is added.",
     )
     source_items.pop()
 
     with pytest.raises(SourceValidationError, match="정오표 2건이 모두 필요"):
-        cra_source.validate_consolidated_cra_corrections(source_items)
+        cra_source.apply_consolidated_cra_corrigenda(source_items)
