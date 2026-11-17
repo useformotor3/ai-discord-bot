@@ -1455,3 +1455,10 @@
 - EUR-Lex Annex I Part II(1), Annex II(9), Annex VII(2)(b), (8)을 대조.
 - 기계 판독형 SBOM(최소 top-level dependencies) 작성은 기본 의무, 기술문서 포함은 Annex VII(2)(b), 시장감시당국 요청에 따른 제출은 Annex VII(8), 사용자 제공은 Annex II(9) 조건부로 각각 분리.
 - 통합 보고서의 법적 해석 문구를 이 구분에 맞춰 보강.
+
+
+## 2026-11-17 — CRA 법령 locator 1차 인벤토리
+
+- CRA-001~CRA-035 조항 참조를 1차 검토. 잘못된 Article/Annex 번호는 발견되지 않았으나 문장·조건·예외의 전수 검토는 계속.
+- SBOM 의무의 Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9) 구분을 명확화.
+- Run #819: 155 passed / 1 xfailed; official PDF/HTML canaries 통과.
