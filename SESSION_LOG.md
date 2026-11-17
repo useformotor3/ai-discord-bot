@@ -1423,3 +1423,12 @@
 - Annex III Important products와 Annex IV Critical products 용어를 구분.
 - 독립 검토 기록 추가, unique top-level section numbering validator와 negative test 추가.
 - 다음은 법령 locator와 Guidance PDF claim locator를 표본 대조한다.
+
+
+## 2026-11-17 — 독립 보고서 검토 1차 수정
+
+- §11–§13 중복을 §14–§16으로 정정, Annex III Important / Annex IV Critical 용어 구분.
+- CRA traceability에 중복 top-level section number 검증 및 negative test 추가.
+- Run #797: 155 passed / 1 xfailed, PDF/HTML canaries 통과.
+- EUR-Lex Article 6, 7(1), 10, 11, 14, 32, 69, 71 및 EHDS Regulation 2025/327 Article 104 적용일을 표본 대조.
+- 다음 단계: CRA-001~CRA-035 법령 locator 전수 대조 및 G-001~G-013 Guidance PDF locator 표본 대조.
