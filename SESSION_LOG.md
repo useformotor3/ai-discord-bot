@@ -1179,3 +1179,12 @@
 - AI_RULEBOOK Section 48에 selective integration, main.py 보호 동작, exact paragraph/point quote scope, source host allowlist, no live Gemini/Discord canary 원칙을 추가했다.
 - MASTER_PLAN에 source provenance gate 통합을 P0로 지정했다.
 - 기능안전/SIL 관련 AI_RULEBOOK Sections 46-47은 historical reference only로 표시. 현재 활성 범위는 CRA-only이며 사용자 명시 재개 전에는 SIL 작업을 시작하지 않는다.
+
+
+## 2026-11-17 — 브랜치 정합성 감사 PR #24 병합
+
+- PR #24 squash merge 완료. Merge commit `153033aa535775a0df568ad83876bff487d33404`.
+- Actions Run #540 (`44031831729`) success: source blob identity, dependency installation, compileall, complete repository pytest all success on PR head `a661fe4604f3127b88ab20a48e04fd7f20779737`.
+- merge commit 자체의 별도 workflow run은 확인되지 않았다. PR Run #540 결과만 기록한다.
+- PROJECT_STATUS/AI_RULEBOOK/MASTER_PLAN/README/SESSION_LOG/PROJECT_LOG에 branch authority와 source-gate 통합 순서를 반영했다.
+- main을 canonical로 유지하고, diverged branches 전체 병합 금지. 다음 작업은 최신 main에서 source provenance gate를 선택 이식하는 것.
