@@ -982,3 +982,10 @@
 - [Run #797](https://github.com/useformotor3/ai-discord-bot/actions/runs/44059539968): **155 passed / 1 xfailed**; CRA traceability, official Guidance/M/606 PDF canaries, HTML canary 및 artifact upload 통과.
 - EUR-Lex 원문으로 Article 6, 7(1), 10, 11, 14, 32, 69(2)–(3), 71(2)와 Regulation (EU) 2025/327 Article 104의 적용 예정일을 표본 대조했다. 전체 35개 requirement 전수 대조는 계속 진행한다.
 - Guidance PDF의 Commission-hosted primary byte identity는 여전히 미확인으로 유지한다.
+
+
+## 2026-11-17 — Commission Guidance PDF locator 재대조
+
+- CI artifact Run #702의 Guidance PDF를 다운로드하고 SHA-256 manifest와 대조한 뒤 G-001~G-013의 paragraph/page locator를 PDF 추출 텍스트와 재대조했다.
+- G-002, G-005, G-006, G-008, G-009, G-010, G-012, G-013의 printed-page locator를 정정했다. G-001, G-003, G-004, G-007, G-011은 유지했다.
+- 정정 내역은 `reports/CRA_INTEGRATED_REPORT_INDEPENDENT_AUDIT_2026-11-17.md` §7에 기록했다. Commission-hosted primary PDF byte identity는 아직 미확인이다.
