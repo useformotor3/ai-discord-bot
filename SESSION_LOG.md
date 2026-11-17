@@ -1051,3 +1051,11 @@
 - 제품 모델, 통신 프로토콜, 공급 구조, cloud/RDPS 및 제품별 설계 증거가 제공되지 않아 적용성/분류 결론은 잠정 상태로 유지한다.
 - 운영 코드, workflow, state/history, 원본 archive 및 SIL 3 산출물은 변경하지 않았다.
 - 다음: 제품별 사실 자료 확보, Annex III/IV 분류, 28항목의 설계·시험 증거 연결, CSV/JSONL/링크/diff 검증 후 PR 생성. CI 결과가 확인되지 않으면 통과로 기록하지 않는다.
+
+
+## 2026-11-17 — CRA 통합 보고서 PR #19 및 CI 시작
+
+- PR #19 생성: https://github.com/useformotor3/ai-discord-bot/pull/19
+- 작업 브랜치 `cra/integrated-report-and-traceability-2026-11-17` → `main`; 변경 경로 9개, 16 commits ahead / 0 behind, merge-base 동일.
+- GitHub Actions isolated test workflow Run #500 (`44028473103`)이 PR 생성 후 시작됨. 첫 job의 source blob identity 검사는 성공했으며 dependency 설치 단계 진행 중; 전체 compile/pytest 결과는 미확정.
+- PR 생성 시 GitHub가 `mergeable=false`를 반환했으므로 아직 병합하지 않는다. CI 완료와 mergeability 재조회 후 진행한다.
