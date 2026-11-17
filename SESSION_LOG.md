@@ -1240,3 +1240,14 @@
 - merge commit 자체의 별도 Actions run은 확인되지 않았다. PR head Run #575 결과만 검증 증거로 기록한다.
 - 운영 Gemini/Discord workflow와 외부 전송은 실행하지 않았다. state/history/archive 및 SIL 3 과거 산출물도 변경하지 않았다.
 - 다음 작업: Guidance PDF/Annex 및 M/606 decision Annex 원문 수집, Article/Annex live locator canary 확대, 요구사항/인터페이스/SEC 통제의 source claim·제품 증거 연결.
+
+
+## 2026-11-17 — PR #28 복구 체크포인트 동기화 및 최종 main 상태 반영
+
+- PR #28 [docs: finalize PR27 rollback checkpoints and project readback](https://github.com/useformotor3/ai-discord-bot/pull/28) merge 완료.
+- Merge commit: `942e1e6b5f2887001279a96c21f94138d283a689`.
+- [Actions Run #577](https://github.com/useformotor3/ai-discord-bot/actions/runs/44041626911): 138 passed / 1 xfailed, 9개 official source live fetch 및 Article 13(8) locator/quote canary 통과.
+- PR #28 pre-merge ref `safety/pre-merge-main-pr28-2026-11-17` → `5f0c54a018e18b3453b1c836a5a7d2e9a266331b`; post-merge ref `safety/post-merge-main-pr28-2026-11-17` → `942e1e6b5f2887001279a96c21f94138d283a689`. 두 ref를 재조회해 SHA 일치 확인.
+- README, PROJECT_STATUS, MASTER_PLAN, AI_RULEBOOK에 PR #28 merge SHA와 복구 refs를 반영했다.
+- merge commit 자체의 별도 Actions run은 확인되지 않아 PR head Run #577만 검증 증거로 기록한다.
+- 운영 코드/workflow/state/history/archive 변경, 운영 Gemini/Discord 실행 및 외부 전송은 없었다.
