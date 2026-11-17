@@ -57,3 +57,11 @@
 - Merge commit `fd9733b31e5dffa382a82a420de6a195a714e98f`; pre/post safety refs 생성, post ref == main 비교 identical.
 - 35 requirements, 15 interfaces, 36 SEC controls, 13 Guidance claims, 41 M/606 items 교차 감사 및 SEC-015/018/021/031/032/034/036 정합화 완료.
 - 제품 증거 수집 기준서에 제품 범위/데이터 연결, RDPS 누적 기준, Annex III/IV core functionality, Machinery Regulation 관계, 신고 시한, 전환일 및 제출 우선순위를 보완하는 중.
+
+
+## PR #48 병합 — 제품 증거 수집 기준서 업데이트
+- PR #48 exact-head CI Run #834 성공 후 squash merge.
+- Merge commit `dc03173cd78f6efb6f46717850a107c8165b1d1a`; pre/post safety refs 생성 및 post ref == main identical 확인.
+- 제품 경계/증거 수집 기준서 Section 13–15에 데이터 연결·RDPS·Annex III/IV·Machinery Regulation·신고 시한·전환일 및 우선 증거 제출 목록 추가.
+- 제품별 사실은 아직 입력되지 않았으므로 적용/등급/적합성은 Unknown 유지. P0 자료는 정확한 모델 데이터시트/카탈로그와 사용설명서.
+- 다음: 통합 보고서 독립 재검토, Commission Guidance PDF primary byte identity 재확인, 제품 자료가 도착하면 evidence IDs와 35-row requirements를 모델별 연결.
