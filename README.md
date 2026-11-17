@@ -7,28 +7,20 @@
 ## 현재 상태
 
 ### 2026-11-17 최신 CRA 자동화 품질개선
-- 최근 보고서 4건의 법령 인용 오류를 EUR-Lex 원문과 대조해 정정 기록으로 보존했다.
-- 원인 개선: 기존 생성기는 Gemini 일반 텍스트 생성과 형식 검사만 사용했으며, 법령 원문 URL·조항·직접 인용의 사실 대조가 없었다.
-- 새 작업 브랜치 **feature/cra-source-grounding-atomic-2026-11-17**에서 EUR-Lex CRA 통합본을 직접 수집하고, 알려진 정오표 날짜(C1/C2/C3), 공식 도메인, Article/Annex 표기, 50자 이상 직접 인용을 최소 검증한다.
-- 원문 수집/정오표 인덱스/인용 대조 실패 시 Gemini 호출과 후속 Discord·Git 저장을 fail-closed한다.
-- 보고서에는 “원문 인용 대조 통과 / 법률 해석·제품 적용성 미검증” 초안 상태를 표시한다.
-- Google Search Grounding은 Gemini 3 계열 무료 등급에서 제공되지 않는 요금표 조건 때문에 사용하지 않고, EUR-Lex 직접 조회를 선택했다.
-- 읽기 전용 EUR-Lex canary #11: 성공. 196,076자 본문을 수집하고 2024/2025년 정오표 3개 날짜를 확인했다. [실행 로그](https://github.com/useformotor3/ai-discord-bot/actions/runs/43987091981).\n- Draft PR #3: https://github.com/useformotor3/ai-discord-bot/pull/3 (아직 main 미병합).
-- 상세 설계·제한·검증: [CRA 공식 원문 출처검증 gate 설계 및 구현 기록](reports/CRA_SOURCE_PROVENANCE_GATE_2026-11-17.md).
+- 11월 17일 생성 보고서 4건을 EUR-Lex 원문과 대조해 조항 오기·법적 의무와 권고 혼동·인용 오류를 정정 기록으로 보존했다.
+- 원인 개선 브랜치에서 EUR-Lex CRA 통합본과 후속 법령 3건을 직접 수집하는 source pack을 구현했다.
+- 대상 원문: Regulation (EU) 2024/2847 통합본 및 정오표 3건, Regulation (EU) 2025/327, Delegated Regulation (EU) 2025/1535, Delegated Regulation (EU) 2026/881.
+- URL·버전·조항 locator·50자 이상 직접 인용의 최소 대조를 수행하고, 수집 실패 또는 인용 불일치 시 fail-closed한다.
+- Isolated CI Run #141: **103 passed, 1 xfailed**. [실행 로그](https://github.com/useformotor3/ai-discord-bot/actions/runs/43989211881).
+- EUR-Lex read-only canary Run #26: **success**, 네 법령 총 220,715자 visible text 및 정오표 3개 날짜 확인. [실행 로그](https://github.com/useformotor3/ai-discord-bot/actions/runs/43989211861).
+- 코드 변경은 [Draft PR #3](https://github.com/useformotor3/ai-discord-bot/pull/3)에만 존재하며 main 미병합. 실제 Gemini/Discord/운영 workflow 호출은 하지 않았다.
+- 상세 설계·검증·한계는 [CRA 공식 원문 출처검증 gate 보고서](reports/CRA_SOURCE_PROVENANCE_GATE_2026-11-17.md).
+- 기존 생성 보고서의 정정 감사: [#1](reports/CRA_CORRECTION_REPORT_1_2026-11-17.md), [#2](reports/CRA_CORRECTION_REPORT_2_2026-11-17.md), [#3](reports/CRA_CORRECTION_REPORT_3_2026-11-17.md), [#4](reports/CRA_CORRECTION_REPORT_4_2026-11-17.md).
 
-- 현재 CRA 품질개선 브랜치: **feature/cra-source-grounding-atomic-2026-11-17** (공식 원문 출처검증 gate; Draft PR #3)
-- 운영 기준 브랜치: `main` — 별도 승인 없이 수정·병합하지 않습니다.
-- P0 응답 검증/실패 차단, P1-A 상태·이력 검증, P1-B1 Discord 전송 신뢰성: 작업 브랜치 구현 완료
-- **P1-B2 로컬 다중 파일 저장 일관성: 사용자 승인 후 구현 및 테스트 CI 검증 완료**
-- **최신 CRA 출처검증 CI (Actions 43987545006): 103 passed, 1 xfailed; source SHA·compileall·전체 pytest 통과**
-- P1-B2는 durable journal, staged payload, backup/SHA 검증, idempotent roll-forward recovery, snapshot 충돌 방지 및 허용 target allowlist 적용
-- P1-B3 Git sync 상태화는 미구현(기존 strict xfail), P1-B4 import-time 구조 개선도 미구현
-- Discord exactly-once/outbox는 P1-B2 범위 밖이며 보장하지 않음
-- CRA 작업 브랜치는 main SHA `0dde26ebac80a789c7a9d9e26560abad54606d32`에서 분기했다. 이후 main은 자동 아카이브 #6 한 건만 전진했고, PR #3은 mergeable=true로 확인됐으나 Draft 상태로 병합하지 않았다.
-- 운영 main 최신 조회: HEAD `be9b54236e34f019ecf9bd0ae3b4ac591efc7fdf` (#6), state count=6, history=2,399; latest archive #6 exists
-- 운영 main의 main.py와 run.yml은 각각 SHA `f28dbc540d56b313f0648d77c58734d27eb95d1a`, `743c2300d9d5fd51f86b3bee3effaeb7ec456f71`; 작업 브랜치 main.py만 개선했고 run.yml은 변경하지 않음
-
-Actions 성공은 자동화 실행 결과이지 CRA 법령 해석이나 출처의 사실 정확성을 보증하지 않습니다. 테스트 통과 숫자는 반드시 실행한 정확한 소스와 범위를 함께 표시합니다.
+- 현재 CRA 품질개선 브랜치: `feature/cra-source-grounding-atomic-2026-11-17`.
+- 운영 main 최신 확인 SHA: `ff599733d62a8926ee281a9958aa6e03f5ce75f4` (Auto-archive #10).
+- PR #3 기준 main SHA는 `0dde26ebac80a789c7a9d9e26560abad54606d32`; main의 이후 자동 아카이브를 덮어쓰지 않도록 Draft 상태로 유지한다.
+- 이 출처 gate는 법률 해석, 모든 주장 검증, 제품 분류 또는 적합성 평가를 보증하지 않는다. EUR-Lex 통합본은 documentation tool이며 Official Journal 정본 및 공식 corrigenda가 법적 효력의 기준이다.
 
 ## 프로젝트 관리 문서
 
