@@ -359,3 +359,8 @@
 - Annex I Part I (2)(d) requires limiting attack surfaces, including external interfaces; (2)(e) requires secure-by-default configuration and a possibility to reset to original state.
 - Do not convert these outcomes into a universal mandated port list, protocol prohibition, administrator opt-in flow, or exact service-disable implementation without product-specific evidence.
 - Evaluate service defaults against product risk, operational needs, recovery behavior and functional-safety impact.
+
+## 35. CRA support/CVD/update traceability
+- Do not combine Article 13(8) support-period determination, Article 13(9) update availability retention, Annex I Part II (8) free security-update delivery and Part II (5) CVD policy into one requirement.
+- A paraphrase that combines several provisions must not be presented as a verbatim legal quote.
+- Keep technically feasible conditions and tailor-made product agreement exceptions visible in the claim.
