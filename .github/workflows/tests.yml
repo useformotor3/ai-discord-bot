@@ -83,7 +83,7 @@ jobs:
           verify_blob "tests/test_p1_reliability.py" "c5e3fbe2e75a6a08703117cb5de34571b5dc10c9"
           verify_blob "tests/test_external_failure_paths.py" "2c5b5c23e66a37a0dc3d1d8b324a023fb5146e13"
           verify_blob "scripts/operational_guard.py" "97f34e11a4124ae5a84b444ffa1b42c5d6d42fda"
-          verify_blob "tests/test_operational_guard.py" "0915f6e68932ab68ecc23687bd97d0dc299f6ea9"
+          verify_blob "tests/test_operational_guard.py" "17d3ac3184e557d4337a753eae6a7a8688d24209"
 
       - name: Install test dependency
         run: python -m pip install --disable-pip-version-check pytest
