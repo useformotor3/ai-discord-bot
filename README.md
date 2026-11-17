@@ -443,3 +443,7 @@
 
 - [PDF source provenance manifest](reports/CRA_PDF_SOURCE_PROVENANCE_2026-11-17.json): Guidance mirror SHA-256, Commission M/606 Annex SHA-256, PDF page counts, extracted-text hashes, CI artifact digest and M/606 item 18 visual confirmation.
 - M/606 item 18 deadline confirmed visually as `31/01/2027` on PDF printed page 2. Guidance binary is ANFR mirror (Commission primary byte identity remains unverified).
+
+
+- 최종 재검증 [Run #669](https://github.com/useformotor3/ai-discord-bot/actions/runs/44052967754): **148 passed / 1 xfailed**, compileall·source blob identity·PDF 2종 취득/해시·artifact upload·공식 HTML source 9건·Article 13(8) locator/quote 모두 통과.
+- 최신 PDF artifact ID `14315096266`, ZIP SHA-256 `82e86c3347413bc6f210a7403939141679c34e5ad738822043af87fc5c2290c`; PDF별 raw hashes는 provenance manifest 참조.
