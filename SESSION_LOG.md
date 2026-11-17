@@ -1131,3 +1131,8 @@
 - 원본 archive #6의 Annex I Part I Section 1 (f)/(h) 인용은 final OJ 구조와 맞지 않는다. 최종 DoS/availability 근거는 Part I (2)(h), integrity는 (2)(f)다.
 - dual-core 분리, rate limiting, packet drop은 구현 후보이지 법령이 지정한 특정 방식이 아니다. 통신 timeout 시 STO/SS1도 CRA가 직접 강제하지 않으며 hazard analysis와 기능안전 기준으로 결정해야 한다.
 - correction report #6 생성, 원본 보존. correction reports #6–#19 완료.
+
+## 2026-11-17 — archive #5 정정
+- 원본 archive #5는 Annex I Part I point 3(f)라는 final OJ에 없는 locator를 사용했다. 공격 표면 제한은 point (2)(j), secure-default는 (2)(b), 접근통제는 (2)(d).
+- Recital 46로 인용한 debug port/disable 문구는 final OJ와 일치하지 않는다. Recital 9는 물리/논리 인터페이스 연결 가능성을 설명하지만 JTAG/SWD/UART 영구 disable 또는 eFuse/OTP를 직접 의무화하지 않는다.
+- correction report #5 생성, 원본 보존. correction reports #5–#19 완료.
