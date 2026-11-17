@@ -828,7 +828,7 @@
 - Pre-merge ref `safety/pre-merge-main-pr30-2026-11-17` → `80245d9e132380a10581612c031f87869993b98d`; post-merge ref `safety/post-merge-main-pr30-2026-11-17` → `975ec6728988e43d9a1ebbf6f6d84288aa44c2fd`; readback compare에서 main과 post-merge ref 동일 확인.
 - PR #30 범위: 한국어 CRA 감사 보고서, 관리 문서·로그 동기화, 격리 테스트 workflow push branch allowlist 1줄. 운영 애플리케이션 코드, 운영 `run.yml`, state/history/archive, Gemini/Discord 외부 실행 및 SIL 3 과거 산출물은 변경하지 않았다.
 - M/606 Commission PDF 및 Guidance ANFR mirror raw-byte SHA-256 검증 완료. M/606 item 18 deadline 31/01/2027 시각 확인 완료. Guidance Commission primary byte identity는 미확인.
-- 현재 구현 작업 브랜치: 없음 (PR #33 병합 완료; PR #34는 문서 전용 사후 동기화).
+- 현재 구현 작업 브랜치: `cra/traceability-integrity-2026-11-17` (CRA matrix cross-reference 무결성 자동화).
 
 
 ## 2026-11-17 — PR #31 사후 동기화 완료
@@ -897,3 +897,15 @@
 - Guidance claim register G-001~G-013 및 15/35/36개 매트릭스 연결, PDF fetch/hash automation, provenance manifest가 main에 병합됨.
 - M/606 item 18 deadline `31/01/2027` 시각 확인. Guidance Commission-hosted primary byte identity만 미확인.
 - 현재 구현 작업 브랜치 없음. PR #34는 문서 전용 사후 동기화이며 다음 구현은 최신 main에서 새 branch로 시작한다.
+
+
+## 2026-11-17 — CRA matrix traceability integrity automation
+
+- 최신 main에서 `cra/traceability-integrity-2026-11-17` 작업 브랜치 생성.
+- 신규 `cra_traceability.py`: claim register 13개, interface 15개, requirements 35개, SEC controls 36개 count/ID uniqueness를 확인한다.
+- 모든 matrix의 Guidance claim IDs가 register에 존재하고 orphan claim이 없는지 검사한다.
+- M/606 Annex I candidate refs가 1–41 범위인지, Guidance claims가 비구속적 explanation으로 분류됐는지, PDF provenance raw/text SHA-256·artifact readback·item18 confirmation이 기록됐는지 확인한다.
+- README/통합 보고서의 claim/provenance 링크 및 PROJECT_LOG.jsonl 전체 JSON/unique event_id를 검증한다.
+- `tests/test_cra_traceability.py`에 정상 저장소, unknown claim ID, M/606 item 42 오기재 fail-closed 회귀 테스트를 추가했다.
+- `.github/workflows/tests.yml`에서 compileall 후 `python cra_traceability.py`를 실행하고 전체 pytest에 포함한다.
+- 상태: 구현 및 CI wiring 완료, PR CI 검증 대기.
