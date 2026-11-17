@@ -1013,3 +1013,11 @@
 - head `e2f3dbbc9e6cfb5bbd414cf410b5e23e506ed135`, CI Run #247: **116 passed, 1 xfailed**.
 - Source SHA pin / compileall / full pytest 성공. https://github.com/useformotor3/ai-discord-bot/actions/runs/43998889661
 - Canary tests use mocked HTTP opener only; live Gemini API requests remain zero.
+
+
+### Gemini canary 최종 head CI
+- head `173181265a157bb0086358ea0479c93941149dc6`: Isolated CI Run #257 **116 passed, 1 xfailed**.
+- EUR-Lex read-only Canary Run #85 success.
+- CI: https://github.com/useformotor3/ai-discord-bot/actions/runs/43999017790
+- Canary: https://github.com/useformotor3/ai-discord-bot/actions/runs/43999023906
+- Live Gemini API 호출은 하지 않았으며 manual Free Tier gate는 유지.
