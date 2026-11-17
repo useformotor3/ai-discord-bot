@@ -369,3 +369,8 @@
 - CRA Annex I Part II (1) requires a commonly used machine-readable SBOM covering at least top-level dependencies; do not invent a mandatory SPDX/CycloneDX format or universal transitive-dependency requirement.
 - Keep remediation without delay under Part II (2) separate from fixed-vulnerability disclosure timing and justified delay under Part II (4).
 - Product/build/hardware-revision linkage is useful configuration management, not automatically a verbatim CRA requirement.
+
+## 37. SBOM technical documentation and disclosure
+- Map SBOM requirements to Annex I Part II (1), Annex VII 2(b)/8, and Annex II point 9; Annex VI is the simplified EU declaration of conformity.
+- Do not state that SBOM must always be provided to every user. Annex II point 9 applies when the manufacturer decides to make it available to users.
+- Keep market-surveillance authority requests, technical-documentation retention, and optional user disclosure as separate audiences and processes.
