@@ -726,3 +726,12 @@
 - Google 공식 가격표: Gemini 3.8 Flash Free Tier 입력/출력은 무료이나 Free Tier 데이터는 Google 제품 개선에 사용될 수 있고, Google Search Grounding은 Free Tier에서 이용할 수 없다. 계정별 billing tier는 저장소에서 확인 불가.
 - 따라서 actual Gemini API call은 아직 하지 않았다. 사용자가 실제 project가 Free Tier이고 유료 billing을 사용하지 않는다고 확인한 경우에만 수동 dispatch한다.
 - 공식 가격/정책: https://ai.google.dev/gemini-api/docs/pricing/
+
+
+## Gemini JSON compatibility canary — 구현/격리 테스트 완료
+- `scripts/cra_gemini_canary.py`: Google REST `generateContent` 1회 요청으로 JSON claim schema 및 synthetic quote exact match를 확인한다.
+- `tests/test_cra_gemini_canary.py`: API key header, 20초 timeout, grounding 미사용, missing key, malformed JSON, quote mismatch를 mock-only로 검사한다.
+- `.github/workflows/cra-gemini-canary.yml`: `workflow_dispatch` 전용, `confirm_free_tier=false` 기본값. 자동 실행 없음.
+- 이 workflow 파일은 현재 Draft PR 브랜치에만 있어 default branch에 존재하지 않는다. GitHub의 수동 dispatch는 default branch workflow 등록이 필요하므로 PR 병합 또는 별도 main 배포 전까지 실제 dispatch할 수 없다.
+- Google 공식 정책상 Gemini 3.8 Flash Free Tier token 가격은 무료지만 데이터는 제품 개선에 사용될 수 있고 Search Grounding은 Free Tier에서 사용할 수 없다. 실제 project billing tier는 확인 불가하므로 live call을 하지 않았다.
+- 안전 복구 기준: `safety/pre-gemini-json-canary-2026-11-17-198dfcc` → `198dfcc84b872e5ade7a58c673df335c7c97dcf9`.
