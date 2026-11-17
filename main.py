@@ -2,6 +2,8 @@ from datetime import datetime, timedelta, timezone
 from zoneinfo import ZoneInfo
 import json
 import os
+import re
+import unicodedata
 import subprocess
 import time
 from google import genai
@@ -172,7 +174,7 @@ elif (NOW - last_check_time) >= timedelta(hours=12):
   is_health_check = True
 
 # 2. 🧠 [외부 메모리] 검증된 이력의 최근 요약을 조사 프롬프트에 반영
-recent_snippets = [item.get("snippet", "") for item in history_data[-5:]]
+recent_snippets = [item.get("snippet", "") for item in history_data[-15:]]
 context_memory = (
     "\n".join([f"- {s}" for s in recent_snippets])
     if recent_snippets
@@ -236,7 +238,87 @@ def validate_research_report(text):
   if any(marker.lower() in lowered for marker in error_markers):
     return False, "오류 또는 서비스 장애 문구가 보고서에 포함되어 있습니다."
 
+  # CRA 관련 법적 주장은 공식 EUR-Lex 법령 링크를 포함해야 한다.
+  has_official_cra_source = (
+      "eur-lex.europa.eu" in lowered
+      and ("2024/2847" in lowered or "32024r2847" in lowered)
+  )
+  if not has_official_cra_source:
+    return False, "CRA 공식 EUR-Lex 원문 링크가 누락되었습니다."
+
   return True, ""
+
+
+def _topic_tokens(text):
+  """보고서 서두에서 주제어를 추출하고 한국어 조사/일반 용어를 정규화한다."""
+  normalized = unicodedata.normalize("NFKC", text[:1800]).lower()
+  raw_tokens = re.findall(r"[가-힣]{2,}|[a-z][a-z0-9_-]{1,}", normalized)
+  stopwords = {
+      "서보", "드라이브", "산업용", "제조사", "제품", "디지털", "요구사항",
+      "규정", "보안", "법적", "의무", "핵심", "관련", "기준", "통해",
+      "경우", "대한", "위한", "있다", "한다", "해야", "있으며", "포함",
+      "cra", "cyber", "resilience", "act", "european", "union", "digital",
+      "elements", "the", "and", "for", "with", "from", "this", "that",
+      "shall", "where", "such", "including", "section", "article",
+      "주제", "요약", "규격", "근거", "상세", "내용", "출처", "자료",
+      "원문", "텍스트", "문서", "제공", "사용자", "따라", "통해",
+  }
+  suffixes = (
+      "으로부터", "으로서", "으로", "에서", "에게", "부터", "까지",
+      "처럼", "에는", "에도", "이며", "이고", "은", "는", "이", "가",
+      "을", "를", "의", "에", "와", "과", "도", "로", "만", "적",
+  )
+  synonyms = {
+      "무료": "free", "무상": "free", "free-of-charge": "free",
+      "취약점": "vulnerability", "취약성": "vulnerability",
+      "처리": "handling", "관리": "handling", "핸들링": "handling",
+      "업데이트": "update", "업데이트들": "update", "패치": "patch",
+      "시정": "correction", "교정": "correction",
+  }
+  tokens = set()
+  for token in raw_tokens:
+    for suffix in suffixes:
+      if token.endswith(suffix) and len(token) - len(suffix) >= 2:
+        token = token[:-len(suffix)]
+        break
+    token = synonyms.get(token, token)
+    if len(token) >= 2 and token not in stopwords:
+      tokens.add(token)
+  return tokens
+
+
+def find_duplicate_topic(report, history, root="."):
+  """최근 30개 원문과 주제어 중복을 비교해 유사 보고서 저장을 차단한다."""
+  candidate = _topic_tokens(report)
+  if len(candidate) < 5:
+    return None
+  for item in reversed(history[-30:]):
+    relative = item.get("file") if isinstance(item, dict) else None
+    if not isinstance(relative, str):
+      continue
+    if relative.startswith("/") or ".." in relative.split("/"):
+      continue
+    if not relative.startswith("research_archive/") or not relative.endswith(".md"):
+      continue
+    try:
+      with open(relative, "r", encoding="utf-8") as stream:
+        previous = _topic_tokens(stream.read())
+    except (OSError, UnicodeError):
+      continue
+    if len(previous) < 5:
+      continue
+    overlap = candidate & previous
+    union = candidate | previous
+    similarity = len(overlap) / len(union) if union else 0.0
+    containment = len(overlap) / min(len(candidate), len(previous))
+    if len(overlap) >= 5 and (similarity >= 0.22 or containment >= 0.60):
+      return {
+          "file": relative,
+          "overlap_terms": sorted(overlap),
+          "jaccard": round(similarity, 3),
+          "containment": round(containment, 3),
+      }
+  return None
 
 
 # 4. 모델 폴백 & 재시도 픽서 로직 (Latest ➔ Lite)
@@ -257,6 +339,13 @@ for model_name in models_to_try:
       candidate = response.text if response and response.text else ""
       is_valid, validation_reason = validate_research_report(candidate)
       if is_valid:
+        duplicate = find_duplicate_topic(candidate, history_data)
+        if duplicate:
+          print(
+              "⚠️ [중복 주제 차단] 최근 보고서와 주제 중복이 감지되어 "
+              f"Discord 전송 및 아카이브를 생략합니다: {duplicate}"
+          )
+          raise SystemExit(0)
         ai_message = candidate.strip()
         success = True
         break
