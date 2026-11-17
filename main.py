@@ -202,6 +202,7 @@ prompt = f"""
     원문에서 확인 가능한 조항을 주제로 선정하고, 원문에 근거가 부족하면 억지로 주제를 만들지 말고 조사 공백으로 명시하세요.
     각 법적 주장은 정확한 Article/Annex/point를 표시하고, 원문 인용은 아래 원문에서 연속된 문장을 50자 이상 그대로 복사해 큰따옴표로 감싸세요. 인용을 번역·요약·재구성하지 마세요.
     법적 의무, 공식 설명, 엔지니어링 권고를 명확히 구분하고 제품 적용성은 별도 확인이 필요하다고 표시하세요.
+    법적 효력 주의: 제공된 EUR-Lex 통합본은 documentation tool(문서화 도구)입니다. 법적 효력은 Official Journal(관보)에 게시된 정본과 공식 corrigenda에 있습니다. 보고서에 이 주의사항을 한국어로 명시하고, 통합본만으로 법적 결론을 확정하지 마세요.
 
     [EUR-Lex 공식 원문 URL]
     {cra_source['url']}
@@ -412,7 +413,7 @@ archive_filename = (
     f"research_archive/{TODAY}_{NOW.strftime('%H%M%S%f')}_{uuid.uuid4().hex[:8]}.md"
 )
 archive_payload = (
-    f"# CRA Research Draft\n- **Evidence gate:** EUR-Lex official source fetched; Article/Annex locator and at least one verbatim quote matched. Legal interpretation and product applicability remain unverified.\n- **Source URL:** {cra_source['url']}\n- **Source version:** {cra_source['version']}\n- **Source checked at:** {NOW.isoformat()}\n- **Date:** {TODAY} {NOW.strftime('%H:%M:%S')}\n-"
+    f"# CRA Research Draft\n- **Evidence gate:** EUR-Lex official source fetched; Article/Annex locator and at least one verbatim quote matched. Legal interpretation and product applicability remain unverified.\n- **Source URL:** {cra_source['url']}\n- **Source version:** {cra_source['version']}\n- **Legal source caveat:** EUR-Lex consolidated text is a documentation tool; Official Journal authentic text and corrigenda govern.\n- **Source checked at:** {NOW.isoformat()}\n- **Date:** {TODAY} {NOW.strftime('%H:%M:%S')}\n-"
     f" **Count:** {current_count + 1}\n\n{ai_message}"
 ).encode("utf-8")
 
