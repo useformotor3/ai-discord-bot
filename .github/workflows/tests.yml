@@ -14,7 +14,6 @@ on:
       - ".github/workflows/run.yml"
       - ".github/workflows/cra-gemini-canary.yml"
       - "scripts/**"
-      - ".github/workflows/cra-gemini-canary.yml"
       - "main.py"
       - "cra_source.py"
       - "cra_claims.py"
