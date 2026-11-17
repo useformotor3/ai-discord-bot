@@ -23,6 +23,12 @@ def _html_for(definition):
             "<p>Article 1</p><p>Subject matter</p><p>1.</p>"
             "<p>Article 13</p><p>Obligations of manufacturers</p>"
             "<p>8.</p><p>Manufacturers shall ensure that vulnerabilities are handled effectively.</p>"
+            "<p>Article 64</p><p>Penalties</p><p>10.</p>"
+            "<p>By way of derogation from paragraphs 3 to 9, the administrative fines do not apply.</p>"
+            "<p>Article 65</p><p>Representative actions</p>"
+            "<p>Article 67</p><p>Amendment to Directive (EU) 2020/1828</p><p>1.</p>"
+            "<p>In Annex I, point 69. Regulation (EU) 2024/2847 is added.</p>"
+            "<p>Article 68</p><p>Amendment to Regulation (EU) No 168/2013</p>"
             "<p>ANNEX I</p><p>ESSENTIAL CYBERSECURITY REQUIREMENTS</p>"
         )
         return (
@@ -78,6 +84,13 @@ def test_fetch_source_pack_checks_each_allowlisted_official_host(monkeypatch):
     assert len(source["sources"]) == 9
     assert "CRA-COMMISSION-GUIDANCE-2026-07-27" in source["text"]
     assert "CRA-M606-STANDARDISATION-2026-11-12" in source["text"]
+    consolidated = next(item for item in source["sources"] if item["id"] == "CRA-2024-2847-consolidated")
+    assert "paragraphs 2 to 9" in consolidated["text"]
+    assert "paragraphs 3 to 9" not in consolidated["text"]
+    assert "72. Regulation (EU) 2024/2847" in consolidated["text"]
+    assert "69. Regulation (EU) 2024/2847" not in consolidated["text"]
+    assert "Official corrigenda applied/verified in prompt excerpt" in source["text"]
+    assert len(consolidated["applied_corrigenda"]) == 2
     assert all(len(item["full_text_sha256"]) == 64 for item in source["sources"])
     assert all(len(item["prompt_excerpt_sha256"]) == 64 for item in source["sources"])
     assert all(item["retrieved_at"] == source["retrieved_at"] for item in source["sources"])
@@ -280,3 +293,90 @@ def test_required_source_markers_match_across_formex_line_breaks():
         text,
         ["Article 67", "69. Regulation", "72. Regulation"],
     ) == []
+
+
+
+def _corrigenda_fixture(base_article_64, base_article_67):
+    return [
+        {
+            "id": "CRA-2024-2847-consolidated",
+            "full_text_sha256": "raw-base-sha256",
+            "text": "\n".join([
+                "Article 64",
+                "Penalties",
+                "10.",
+                base_article_64,
+                "Article 65",
+                "Representative actions",
+                "Article 67",
+                "Amendment to Directive (EU) 2020/1828",
+                "1.",
+                base_article_67,
+                "Article 68",
+                "Amendment to Regulation (EU) No 168/2013",
+            ]),
+        },
+        {
+            "id": "CRA-2024-2847-corrigendum-2025-07-02",
+            "text": (
+                "Page 65, Article 64(10), for: paragraphs 3 to 9, "
+                "read: paragraphs 2 to 9."
+            ),
+        },
+        {
+            "id": "CRA-2024-2847-corrigendum-2025-10-17",
+            "text": (
+                "Page 66, Article 67, for: 69. Regulation (EU) 2024/2847, "
+                "read: 72. Regulation (EU) 2024/2847."
+            ),
+        },
+    ]
+
+
+def test_consolidated_source_applies_both_operative_english_corrigenda():
+    source_items = _corrigenda_fixture(
+        "By way of derogation from paragraphs 3 to 9, the administrative fines do not apply.",
+        "In Annex I, point 69. Regulation (EU) 2024/2847 is added.",
+    )
+
+    applied = cra_source.apply_consolidated_cra_corrigenda(source_items)
+    base = source_items[0]
+
+    assert applied == [
+        "CRA-2024-2847-corrigendum-2025-07-02",
+        "CRA-2024-2847-corrigendum-2025-10-17",
+    ]
+    assert "paragraphs 2 to 9" in base["text"]
+    assert "paragraphs 3 to 9" not in base["text"]
+    assert "72. Regulation (EU) 2024/2847" in base["text"]
+    assert "69. Regulation (EU) 2024/2847" not in base["text"]
+    assert base["applied_corrigenda"] == applied
+    assert base["full_text_sha256"] == "raw-base-sha256"
+    assert base["prompt_excerpt_sha256"] == cra_source.hashlib.sha256(
+        base["text"].encode("utf-8")
+    ).hexdigest()
+    assert cra_source.validate_consolidated_cra_corrections(source_items)
+
+
+def test_consolidated_source_keeps_already_corrected_text_without_reapplying():
+    source_items = _corrigenda_fixture(
+        "By way of derogation from paragraphs 2 to 9, the administrative fines do not apply.",
+        "In Annex I, point 72. Regulation (EU) 2024/2847 is added.",
+    )
+
+    cra_source.apply_consolidated_cra_corrigenda(source_items)
+    before = source_items[0]["text"]
+    cra_source.apply_consolidated_cra_corrigenda(source_items)
+
+    assert source_items[0]["text"] == before
+
+
+def test_consolidated_source_rejects_missing_operative_corrigendum_source():
+    source_items = _corrigenda_fixture(
+        "By way of derogation from paragraphs 3 to 9, the administrative fines do not apply.",
+        "In Annex I, point 69. Regulation (EU) 2024/2847 is added.",
+    )
+    source_items.pop()
+
+    with pytest.raises(SourceValidationError, match="정오표 2건이 모두 필요"):
+        cra_source.apply_consolidated_cra_corrigenda(source_items)

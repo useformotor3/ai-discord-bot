@@ -1,11 +1,12 @@
 # CRA 공식 출처 수집·주장 추적 파이프라인 — 설계 및 검증 기록
 
 - 기준일: 2026-11-17 (KST)
-- 상태: **PR #26 병합 완료**
+- 상태: **PR #26 병합 완료; PR #29 정오표 우선순위 보강 CI 통과**
 - Main merge commit: `8066c166ba01fbfb8d25f61ce0ce6ed72f151854`
 - 구현 브랜치: `experiment/cellar-source-retrieval-2026-11-17`
 - 검증 PR: [#26](https://github.com/useformotor3/ai-discord-bot/pull/26)
-- 검증 CI: [GitHub Actions Run #573](https://github.com/useformotor3/ai-discord-bot/actions/runs/44039961078)
+- 기본 통합 CI: [GitHub Actions Run #573](https://github.com/useformotor3/ai-discord-bot/actions/runs/44039961078)
+- 정오표 적용/검증 CI: [GitHub Actions Run #593](https://github.com/useformotor3/ai-discord-bot/actions/runs/44043229559)
 
 ## 1. 목적과 경계
 
@@ -61,19 +62,30 @@ source별로 다음 값을 보존한다.
 - source ID, 문서 유형, 판본/버전 설명
 - 요청 URL 및 최종 응답 URL
 - 원문 visible text 길이
-- 전체 visible text의 SHA-256: `full_text_sha256`
-- 모델 prompt에 전달한 excerpt의 SHA-256: `prompt_excerpt_sha256`
+- 전체 visible text의 SHA-256: `full_text_sha256` (수집된 원문 그대로)
+- 모델 prompt에 전달한 excerpt의 SHA-256: `prompt_excerpt_sha256` (공식 정오표 적용/확인 후 재계산)
 - UTC 수집 시각
 - 관련 문서 URL 및 실제 미수집 상태 설명(해당 시)
 
 전체 원문 해시와 prompt excerpt 해시를 분리해, 원문을 줄여 모델에 제공하더라도 원문과 제공 텍스트의 무결성을 구분할 수 있게 했다.
 
-## 5. 주장·근거 검증
+## 5. English corrigenda 우선순위 검증
+
+CELLAR의 consolidated text는 원본 통합본과 정오표 자료를 별도 제공할 수 있으므로, 정오표 3건을 단순히 함께 prompt에 넣는 것만으로는 충분하지 않다. source pack은 Article 64(10)과 Article 67의 영어 정정 후 문구가 prompt excerpt에 반영되었는지 검증한다.
+
+- 2025-07-02 R(02), Article 64(10): `paragraphs 3 to 9`가 남아 있으면 `paragraphs 2 to 9`로 교체한다. 이미 정정 후 문구라면 확인만 한다.
+- 2025-10-17 R(04), Article 67: `69. Regulation (EU) 2024/2847`가 남아 있으면 `72. Regulation (EU) 2024/2847`로 교체한다. 이미 정정 후 문구라면 확인만 한다.
+- 해당 정오표 source ID의 전/후 원문 문구를 함께 확인한다. correction source가 없거나 대상 Article/문구가 없거나 중복이면 fail-closed 처리한다.
+- 원문 그대로의 `full_text_sha256`는 변경하지 않는다. 수정/검증된 prompt excerpt를 기준으로 `prompt_excerpt_sha256`를 다시 계산한다.
+- 2024-12-05 R(01)은 영문 제목의 정정이다. operative excerpt는 Article 1부터 시작하므로 제목은 excerpt에 포함되지 않으며, R(01)은 별도 source로 보존한다.
+
+## 6. 주장·근거 검증
 
 보고서는 단일 `CLAIM_EVIDENCE_JSON` 블록을 포함한다. 각 claim에는 고유 ID, 분류, 본문과 동일한 statement, source ID, locator, 직접 인용을 기록한다.
 
 - 허용 분류: `legal_requirement`, `official_explanation`, `interpretation`, `engineering_recommendation`
 - 법적 주장 및 공식 설명은 등록된 source ID에 연결해야 한다.
+- Article 64(10)/67은 정오표 전/후 문구를 확인하고 정정 후 문구를 사용해야 한다. source pack은 consolidated excerpt에 정정이 반영되었는지 검증하고, stale phrase가 있으면 안전하게 교체한다.
 - 법적 직접 인용은 최소 50자이며 지정 source의 실제 텍스트에 존재해야 한다.
 - Article 주장은 정확한 paragraph, Annex 주장은 Part/point 범위에서 인용문이 존재해야 한다.
 - 같은 Article의 다른 paragraph에만 있는 문장을 가져와 현재 locator의 인용인 것처럼 쓰는 것은 거부한다.
@@ -81,14 +93,17 @@ source별로 다음 값을 보존한다.
 - legal requirement는 최소 1건 이상 포함해야 한다.
 - claim validator는 원문 추적성 검증 도구이며, 법률적 의미의 최종 판단을 대체하지 않는다.
 
-## 6. 실시간 검증 결과
+## 7. 실시간 검증 결과
 
-[GitHub Actions Run #573](https://github.com/useformotor3/ai-discord-bot/actions/runs/44039961078), PR head `d1bda523c1b593bbd48bf4916dd7bbd741001894`:
+[GitHub Actions Run #593](https://github.com/useformotor3/ai-discord-bot/actions/runs/44043229559), PR #29 head `7b2d20b4770c38f944cfc68016df554dc1ecb459`:
 
-- 전체 저장소 테스트: **138 passed, 1 xfailed**
+- 전체 저장소 테스트: **141 passed, 1 xfailed**
 - 실시간 official source canary: **9개 출처 수집 성공**
+- Article 64(10)/Article 67 정오표 전/후 문구 및 consolidated prompt excerpt의 정정 후 상태 확인
 - 실시간 Article 13(8) paragraph locator 및 원문 quote 일치 확인
 - compileall 및 source blob identity 확인 통과
+
+기본 PR #26 Run #573도 138 passed / 1 xfailed로 통과했다. Run #593은 정오표 우선순위 테스트 3건을 추가한 최신 head 결과다.
 
 ### 6.1 수집 원문 길이 및 prompt excerpt SHA-256
 
@@ -106,7 +121,7 @@ source별로 다음 값을 보존한다.
 
 실시간 canary는 Article 13(8)에서 paragraph scope를 추출하고, 제조자가 지원 기간 중 제품 취약점을 효과적으로 처리해야 한다는 source quote가 해당 paragraph 안에 존재하는지 확인했다.
 
-## 7. 변경 파일 및 병합
+## 8. 변경 파일 및 병합
 
 - `.github/workflows/tests.yml`
 - `cra_source.py`
@@ -120,7 +135,7 @@ source별로 다음 값을 보존한다.
 
 PR #26은 merge commit 방식으로 main에 통합했다. merge commit: `8066c166ba01fbfb8d25f61ce0ce6ed72f151854`. 기존 운영 retry/quota/no-op, duplicate-topic suppression, transactional persistence/rollback 보호는 유지했다. 운영 Gemini/Discord 실행을 canary로 호출하지 않았다.
 
-## 8. 남은 작업과 제한
+## 9. 남은 작업과 제한
 
 1. Commission Guidance PDF 원문/Annex를 공식 URL에서 별도 수집하고 PDF text extraction, page locator, SHA-256을 추가한다.
 2. C(2026) 7861 결정문과 M/606 Annex를 별도 수집·파싱해 페이지 요약과 구분한다.

@@ -298,6 +298,156 @@ def _request_with_safe_redirects(requests_module, definition):
     )
 
 
+def _article_section_text(source_text, article_number):
+    """Extract one complete Article block from normalized official source text."""
+    lines = str(source_text or "").splitlines()
+    start = next(
+        (
+            index for index, line in enumerate(lines)
+            if re.fullmatch(rf"\s*Article\s+{article_number}\s*", line, re.IGNORECASE)
+        ),
+        None,
+    )
+    if start is None:
+        return ""
+    end = next(
+        (
+            index for index in range(start + 1, len(lines))
+            if re.fullmatch(r"\s*Article\s+\d+\s*", lines[index], re.IGNORECASE)
+        ),
+        len(lines),
+    )
+    return "\n".join(lines[start:end])
+
+
+def _replace_article_phrase(text, article_number, old_pattern, new_phrase, new_pattern, label):
+    lines = str(text or "").splitlines(keepends=True)
+    start = next(
+        (
+            index for index, line in enumerate(lines)
+            if re.fullmatch(rf"\s*Article\s+{article_number}\s*", line.strip(), re.IGNORECASE)
+        ),
+        None,
+    )
+    if start is None:
+        raise SourceValidationError(f"정오표 적용 대상 Article {article_number}를 찾지 못했습니다: {label}")
+    end = next(
+        (
+            index for index in range(start + 1, len(lines))
+            if re.fullmatch(r"\s*Article\s+\d+\s*", lines[index].strip(), re.IGNORECASE)
+        ),
+        len(lines),
+    )
+    block = "".join(lines[start:end])
+    old_matches = list(re.finditer(old_pattern, block, re.IGNORECASE))
+    new_matches = list(re.finditer(new_pattern, block, re.IGNORECASE))
+    if len(old_matches) == 1 and len(new_matches) == 0:
+        block = re.sub(old_pattern, new_phrase, block, count=1, flags=re.IGNORECASE)
+    elif len(old_matches) == 0 and len(new_matches) == 1:
+        pass
+    else:
+        raise SourceValidationError(
+            f"정오표 적용 대상 문구가 없거나 중복되어 안전하게 적용할 수 없습니다: {label} "
+            f"(old={len(old_matches)}, corrected={len(new_matches)})"
+        )
+    return "".join(lines[:start]) + block + "".join(lines[end:])
+
+
+def apply_consolidated_cra_corrigenda(source_items):
+    """Apply operative English corrigenda to the model-facing consolidated excerpt."""
+    if not isinstance(source_items, list):
+        raise SourceValidationError("CRA source 목록이 올바르지 않습니다.")
+    by_id = {
+        item.get("id"): item
+        for item in source_items
+        if isinstance(item, dict) and isinstance(item.get("id"), str)
+    }
+    base = by_id.get("CRA-2024-2847-consolidated")
+    july = by_id.get("CRA-2024-2847-corrigendum-2025-07-02")
+    october = by_id.get("CRA-2024-2847-corrigendum-2025-10-17")
+    if not all(isinstance(item, dict) for item in (base, july, october)):
+        raise SourceValidationError("CRA consolidated text와 2025년 정오표 2건이 모두 필요합니다.")
+
+    normalized = lambda value: re.sub(r"\s+", " ", str(value or "")).casefold()
+    july_text = normalized(july.get("text"))
+    october_text = normalized(october.get("text"))
+    if "paragraphs 3 to 9" not in july_text or "paragraphs 2 to 9" not in july_text:
+        raise SourceValidationError("2025-07-02 정오표의 Article 64(10) 전/후 문구를 확인하지 못했습니다.")
+    if "69. regulation" not in october_text or "72. regulation" not in october_text:
+        raise SourceValidationError("2025-10-17 정오표의 Article 67 전/후 문구를 확인하지 못했습니다.")
+
+    corrected = base.get("text", "")
+    corrected = _replace_article_phrase(
+        corrected,
+        64,
+        r"paragraphs\s+3\s+to\s+9",
+        "paragraphs 2 to 9",
+        r"paragraphs\s+2\s+to\s+9",
+        "2025-07-02 corrigendum / Article 64(10)",
+    )
+    corrected = _replace_article_phrase(
+        corrected,
+        67,
+        r"69\.\s*Regulation\s+\(EU\)\s+2024/2847",
+        "72. Regulation (EU) 2024/2847",
+        r"72\.\s*Regulation\s+\(EU\)\s+2024/2847",
+        "2025-10-17 corrigendum / Article 67",
+    )
+    base["text"] = corrected
+    base["applied_corrigenda"] = [
+        "CRA-2024-2847-corrigendum-2025-07-02",
+        "CRA-2024-2847-corrigendum-2025-10-17",
+    ]
+    base["applied_correction_notes"] = [
+        "Article 64(10): corrected reading verified as paragraphs 2 to 9 (stale text is patched if present)",
+        "Article 67: corrected reference verified as 72. Regulation (EU) 2024/2847 (stale text is patched if present)",
+    ]
+    base["version"] = (
+        str(base.get("version", ""))
+        + "; English operative corrigenda R(02)/R(04) applied or verified in prompt excerpt"
+    ).strip("; ")
+    excerpt_hash = hashlib.sha256(corrected.encode("utf-8")).hexdigest()
+    base["prompt_excerpt_sha256"] = excerpt_hash
+    base["sha256"] = excerpt_hash
+    validate_consolidated_cra_corrections(source_items)
+    return base["applied_corrigenda"]
+
+
+def validate_consolidated_cra_corrections(source_items):
+    """Verify corrected Article 64(10)/67 text and their official corrigendum sources."""
+    if not isinstance(source_items, list):
+        raise SourceValidationError("CRA source 목록이 올바르지 않습니다.")
+    by_id = {
+        item.get("id"): item
+        for item in source_items
+        if isinstance(item, dict) and isinstance(item.get("id"), str)
+    }
+    base = by_id.get("CRA-2024-2847-consolidated")
+    july = by_id.get("CRA-2024-2847-corrigendum-2025-07-02")
+    october = by_id.get("CRA-2024-2847-corrigendum-2025-10-17")
+    if not all(isinstance(item, dict) for item in (base, july, october)):
+        raise SourceValidationError("CRA consolidated text와 2025년 정오표 2건이 모두 필요합니다.")
+
+    normalized = lambda value: re.sub(r"\s+", " ", str(value or "")).casefold()
+    article_64 = normalized(_article_section_text(base.get("text"), 64))
+    article_67 = normalized(_article_section_text(base.get("text"), 67))
+    if "paragraphs 2 to 9" not in article_64 or "paragraphs 3 to 9" in article_64:
+        raise SourceValidationError(
+            "CRA consolidated Article 64(10)이 2025-07-02 정오표의 정정 후 문구와 일치하지 않습니다."
+        )
+    if "72. regulation (eu) 2024/2847" not in article_67 or "69. regulation (eu) 2024/2847" in article_67:
+        raise SourceValidationError(
+            "CRA consolidated Article 67이 2025-10-17 정오표의 정정 후 문구와 일치하지 않습니다."
+        )
+    if "paragraphs 3 to 9" not in normalized(july.get("text")) or "paragraphs 2 to 9" not in normalized(july.get("text")):
+        raise SourceValidationError("2025-07-02 정오표의 전/후 문구가 source pack에 없습니다.")
+    if "69. regulation" not in normalized(october.get("text")) or "72. regulation" not in normalized(october.get("text")):
+        raise SourceValidationError("2025-10-17 정오표의 전/후 문구가 source pack에 없습니다.")
+    if not base.get("applied_corrigenda"):
+        raise SourceValidationError("consolidated prompt excerpt에 적용된 정오표 기록이 없습니다.")
+    return True
+
+
 def fetch_official_cra_source():
     """Fetch allowlisted official legal texts and Commission publication/status pages."""
     import requests
@@ -397,8 +547,15 @@ def fetch_official_cra_source():
             "retrieved_at": retrieved_at,
         })
 
+    apply_consolidated_cra_corrigenda(source_items)
+
     combined_text = "\n\n".join(
         f"[{item['id']}]\n{item['url']}\n{item['version']}\n"
+        + (
+            "Official corrigenda applied/verified in prompt excerpt: "
+            + "; ".join(item.get("applied_corrigenda", [])) + "\n"
+            if item.get("applied_corrigenda") else ""
+        )
         + (
             "Related official documents (not fetched/parsed): "
             + "; ".join(item.get("related_urls", []))
@@ -408,7 +565,7 @@ def fetch_official_cra_source():
         + item["text"]
         for item in source_items
     )
-    version = f"CRA official source pack v2; sources={len(source_items)}"
+    version = f"CRA official source pack v3; sources={len(source_items)}; corrigenda_precedence=verified"
     return {
         "url": CRA_SOURCE_URL,
         "version": version,
@@ -436,6 +593,10 @@ def append_source_manifest(report, source):
             f"Prompt-excerpt SHA-256: {item['prompt_excerpt_sha256']} | "
             f"Retrieved: {item['retrieved_at']}"
         )
+        if item.get("applied_corrigenda"):
+            lines.append("  Official corrigenda applied/verified in prompt excerpt: " + "; ".join(item["applied_corrigenda"]))
+            for note in item.get("applied_correction_notes", []):
+                lines.append(f"  Applied correction: {note}")
         if item.get("related_note"):
             lines.append(f"  Related-document note: {item['related_note']}")
         for related_url in item.get("related_urls", []):
@@ -454,6 +615,13 @@ def validate_source_manifest(report, source):
             value = item.get(field)
             if not isinstance(value, str) or value not in report:
                 return False, f"자동 출처 manifest 항목이 누락되었습니다: {item.get('id')} / {field}"
+        if item.get("applied_corrigenda"):
+            applied_line = "Official corrigenda applied/verified in prompt excerpt: " + "; ".join(item["applied_corrigenda"])
+            if applied_line not in report:
+                return False, f"적용 정오표 manifest가 누락되었습니다: {item.get('id')}"
+            for note in item.get("applied_correction_notes", []):
+                if note not in report:
+                    return False, f"적용 정오표 설명이 누락되었습니다: {item.get('id')}"
         if item.get("related_note") and item["related_note"] not in report:
             return False, f"관련 문서 상태 설명이 누락되었습니다: {item.get('id')}"
         for related_url in item.get("related_urls", []):
