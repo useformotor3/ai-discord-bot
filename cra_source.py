@@ -20,6 +20,48 @@ CRA_SOURCE_CATALOG = (
         "required": ("Regulation (EU) 2024/2847",),
     },
     {
+        "id": "CRA-2024-2847-corrigendum-2024-12-05",
+        "url": "https://eur-lex.europa.eu/eli/reg/2024/2847/corrigendum/2024-12-05/oj/eng",
+        "version": (
+            "Official Journal corrigendum 2024/90780, 05.12.2024; "
+            "corrects the CRA title by removing 'No' before 2019/1020"
+        ),
+        "min_chars": 200,
+        "required": (
+            "On page 1, in the title",
+            "No 2019/1020",
+            "(EU) 2019/1020",
+        ),
+    },
+    {
+        "id": "CRA-2024-2847-corrigendum-2025-07-02",
+        "url": "https://eur-lex.europa.eu/eli/reg/2024/2847/corrigendum/2025-07-02/oj/eng",
+        "version": (
+            "Official Journal corrigendum 2025/90555, 02.07.2025; "
+            "Article 64(10) changes the fine-derogation reference from paragraphs 3-9 to 2-9"
+        ),
+        "min_chars": 200,
+        "required": (
+            "Article 64(10)",
+            "paragraphs 3 to 9",
+            "paragraphs 2 to 9",
+        ),
+    },
+    {
+        "id": "CRA-2024-2847-corrigendum-2025-10-17",
+        "url": "https://eur-lex.europa.eu/eli/reg/2024/2847/corrigendum/2025-10-17/oj/eng",
+        "version": (
+            "Official Journal corrigendum 2025/90828, 17.10.2025; "
+            "Article 67 changes the referenced Regulation number from 69 to 72"
+        ),
+        "min_chars": 200,
+        "required": (
+            "Article 67",
+            "69. Regulation",
+            "72. Regulation",
+        ),
+    },
+    {
         "id": "CRA-2025-327-EHDS-amendment",
         "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32025R0327",
         "version": (
