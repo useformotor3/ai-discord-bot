@@ -107,6 +107,7 @@ jobs:
         run: |
           python - <<'PY'
           from cra_source import SourceUnavailableError, fetch_official_cra_source
+          from cra_claims import extract_locator_scope
 
           try:
               source = fetch_official_cra_source()
@@ -117,4 +118,16 @@ jobs:
           print(f"PASS: fetched {len(source['sources'])} allowlisted official sources")
           for item in source["sources"]:
               print(f"- {item['id']}: {item['visible_text_chars']} visible chars; excerpt SHA-256={item['prompt_excerpt_sha256']}")
+
+          cra = next(item for item in source["sources"] if item["id"] == "CRA-2024-2847-consolidated")
+          article_13_8 = extract_locator_scope("Article 13(8)", cra["text"])
+          expected_quote = (
+              "Manufacturers shall ensure, when placing a product with digital elements on the market, "
+              "and for the support period, that vulnerabilities of that product, including its components, "
+              "are handled effectively and in accordance with the essential cybersecurity requirements "
+              "set out in Part II of Annex I."
+          )
+          if not article_13_8 or " ".join(expected_quote.split()).casefold() not in " ".join(article_13_8.split()).casefold():
+              raise SystemExit("FAIL: live Cellar source Article 13(8) locator/quote verification failed")
+          print("PASS: live Article 13(8) paragraph locator and source quote verified")
           PY
