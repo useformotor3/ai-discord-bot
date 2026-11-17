@@ -5,12 +5,13 @@
 - 최종 갱신: 2026-11-17 (KST)
 - 기준 저장소: `useformotor3/ai-discord-bot`
 - 운영 기준 브랜치: `main` (운영 자동화 및 데이터 보존)
-- 현재 작업 브랜치: `docs/cra-source-gate-status-and-session-rules-2026-11-17` (관리 문서 정합화)
-- 최신 main 기준점: PR #26 merge commit `8066c166ba01fbfb8d25f61ce0ce6ed72f151854`
+- 현재 작업 브랜치: 없음 (PR #27 관리 문서 정합화 병합 완료; 후속 재개는 최신 main에서 시작)
+- 최신 main 기준점: PR #27 merge commit `5f0c54a018e18b3453b1c836a5a7d2e9a266331b`; source provenance 코드 merge는 PR #26 `8066c166ba01fbfb8d25f61ce0ce6ed72f151854`
 - 최신 source gate PR #26 병합 완료: CELLAR 공식 법령 7건 + Commission 공식 페이지 2건, SHA manifest, claim-level validator, fail-closed source gate
 - CRA-only 범위 통제 병합 기준점: PR #18, merge commit `b7813ddd311bc51bfb0eb26458eace9ff82b621f` (2026-11-17)
 - 마지막 CRA 코드/출처 검증 병합: PR #26 merge `8066c166ba01fbfb8d25f61ce0ce6ed72f151854`. PR head Run #573 success: 138 passed / 1 xfailed, 9개 live official source 및 Article 13(8) locator/quote 확인. merge commit 자체의 별도 run은 미확인.
-- 이번 비교 기준: PR #24 병합으로 작업 브랜치 종료. 다음 작업 시작 시 main HEAD와 원격 브랜치를 다시 조회해 기준선을 설정
+- 마지막 관리 문서 동기화: PR #27 merge `5f0c54a018e18b3453b1c836a5a7d2e9a266331b`. Run #575 success: 138 passed / 1 xfailed 및 live source canary 재통과.
+- 이번 비교 기준: PR #27 병합 후 활성 작업 브랜치 없음. 다음 작업 시작 시 main HEAD와 원격 브랜치를 다시 조회해 기준선을 설정
 - 프로젝트 상태: CRA 통합 보고서 v0.2 병합, 요구사항 추적표 35항목, 인터페이스 적용성 매트릭스 15항목 병합. 보안 통제·시험 매트릭스 36항목 초안 작업 중.
 - 주 문서 언어: 한국어
 - 안전 원칙: 법적 적합성·제품 분류·안전 관련 설계 판단은 근거와 인간 검토 없이 확정하지 않음
@@ -757,3 +758,15 @@
 - 제품 모델/회로/펌웨어/프로토콜/시장 공급 구조가 없으므로 모델별 CRA 적용성·분류·적합성 결론은 여전히 잠정이다.
 - 상세 설계·source IDs·SHA-256·검증·한계: [CRA_SOURCE_PROVENANCE_PIPELINE_2026-11-17.md](reports/CRA_SOURCE_PROVENANCE_PIPELINE_2026-11-17.md).
 - 다음 재개: (1) PDF/decision Annex 수집·검증, (2) Article/Annex locator canary 확대, (3) 35 requirements/15 interfaces/36 SEC controls를 source claims 및 제품별 증거와 연결, (4) main merge commit CI 및 관리 문서 재확인.
+
+
+## 2026-11-17 — CRA 프로젝트 기록 동기화 PR #27 병합
+
+- PR #27 [docs: synchronize CRA source provenance status, rules and resume point](https://github.com/useformotor3/ai-discord-bot/pull/27) merge 완료.
+- Merge commit: `5f0c54a018e18b3453b1c836a5a7d2e9a266331b`.
+- [Actions Run #575](https://github.com/useformotor3/ai-discord-bot/actions/runs/44040949610): 138 passed / 1 xfailed, 9개 live official source 및 Article 13(8) locator/quote canary 재통과.
+- README, PROJECT_STATUS, MASTER_PLAN, AI_RULEBOOK, SESSION_LOG, PROJECT_LOG.jsonl과 source provenance 상세 보고서를 동기화했다.
+- JSONL 76개 레코드 parse success, 신규 event ID 확인, source excerpt SHA-256 9개가 각각 64 hex임을 readback했다.
+- PR #27 pre-merge ref `safety/pre-merge-main-pr27-2026-11-17` → `8066c166ba01fbfb8d25f61ce0ce6ed72f151854`; post-merge ref `safety/post-merge-main-pr27-2026-11-17` → `5f0c54a018e18b3453b1c836a5a7d2e9a266331b`. 두 ref 모두 SHA readback 검증 완료.
+- merge commit 자체의 별도 Actions run은 아직 확인되지 않았다. PR head Run #575 성공으로만 기록한다.
+- 다음 재개는 PDF/decision Annex 수집, Annex/Article locator canary 확대, 요구사항·통제·제품 증거 연결이다.
