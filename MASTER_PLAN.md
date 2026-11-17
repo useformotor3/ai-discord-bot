@@ -411,3 +411,11 @@
 - Canary Run #11 성공: HTTPS EUR-Lex endpoint 응답, 최종 host, 196,076자 visible text, corrigenda 3개 날짜 확인.
 - 법적 효력 주의: EUR-Lex consolidated text는 documentation tool이며 Official Journal 정본 및 corrigenda가 법적 효력의 기준이다.
 - 다음 단계는 claim-to-evidence 매핑 및 원문 버전/hash 변경 감지다.
+
+
+## 2026-11-17 — 후속 법령 원문 source pack 확장 완료
+- CRA 통합본 외 EUR-Lex 공식 원문 3건(2025/327, 2025/1535, 2026/881)을 수집 대상으로 추가했다.
+- CI Run #141: 103 passed, 1 xfailed; EUR-Lex canary Run #26: 네 문서 220,715자 수집 성공.
+- 제품 적용성을 추정하지 않고 EHR 적용 시기, L-category 제한적 제외, Article 16 통지 전파 지연을 분리한다.
+- 다음 우선순위: (1) claim-to-evidence 단위 검증 (2) Official Journal 정본/정오표 차이 대조 (3) 모델 출력 호환성 비운영 검증 (4) 게시 전 사람 검토 단계.
+- 운영 main 병합은 위 항목과 별도 검토 후 결정한다.
