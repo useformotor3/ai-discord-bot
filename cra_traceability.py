@@ -144,7 +144,7 @@ def validate_traceability(root="."):
         source = sources[source_id]
         _require(bool(SHA_RE.fullmatch(source.get("sha256", ""))),
                  f"{source_id}: invalid raw-byte SHA-256", errors)
-        _require(bool(SHA_RE.fullmatch(source.get("text_sha256", ""))),
+        _require(bool(SHA_RE.fullmatch(source.get("extracted_text_sha256", ""))),
                  f"{source_id}: invalid extracted-text SHA-256", errors)
         _require(source.get("byte_count", 0) > 0 and source.get("page_count", 0) > 0,
                  f"{source_id}: missing byte count or page count", errors)
@@ -169,15 +169,28 @@ def validate_traceability(root="."):
 
     log_lines = data["project_log"].read_text(encoding="utf-8").splitlines()
     log_ids = []
+    legacy_keys = []
     for line_number, line in enumerate(log_lines, start=1):
         try:
             event = json.loads(line)
         except json.JSONDecodeError as exc:
             errors.append(f"PROJECT_LOG.jsonl line {line_number}: invalid JSON ({exc})")
             continue
-        log_ids.append(event.get("event_id"))
+        event_id = event.get("event_id")
+        if event_id:
+            log_ids.append(event_id)
+        else:
+            # Historical records predate event_id and use timestamp/type.
+            timestamp = event.get("timestamp")
+            event_type = event.get("type")
+            if not timestamp or not event_type:
+                errors.append(f"PROJECT_LOG.jsonl line {line_number}: missing event_id and legacy timestamp/type")
+            else:
+                legacy_keys.append((timestamp, event_type))
     _require(len(log_ids) == len(set(log_ids)),
              "PROJECT_LOG.jsonl contains duplicate event_id values", errors)
+    _require(len(legacy_keys) == len(set(legacy_keys)),
+             "PROJECT_LOG.jsonl contains duplicate legacy timestamp/type keys", errors)
 
     readme = data["readme"].read_text(encoding="utf-8")
     integrated = data["integrated_report"].read_text(encoding="utf-8")
