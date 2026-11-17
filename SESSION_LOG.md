@@ -1140,3 +1140,14 @@
 - 36개 SEC 통제/시험 행에 CRA-001~CRA-035 요구사항 ID를 직접 연결했다.
 - CSV 최종 구조: 36 data rows × 11 columns, 법적 근거 URL, 관련 CRA requirement IDs, 통제 목표, 위험 시나리오, 구현 후보, 검증/시험, 증거, 잠정 적용성, 상태.
 - 구현 후보는 CRA가 특정 기술을 보편적으로 강제한다는 의미가 아니라 위험기반 설계 선택지임을 명시했다.
+
+
+## 2026-11-17 — CRA 보안 통제·시험 매트릭스 PR #22 병합
+
+- PR #22 squash merge 완료. Merge commit `20e503c1da2fe2f053630263a8c4942680ec1515`.
+- Actions Run #525 (`44029944407`) success: source blob identity, dependency install, compileall, complete repository pytest all success on PR head `697157b52023cc96d47e6d6b60b8551863597221`.
+- Merge commit 자체에 대한 추가 workflow/status는 조회 시점에 확인되지 않았으므로 PR Run #525 결과만 기록한다.
+- 36개 SEC control/test row × 11 columns, unique SEC IDs, each row has official EUR-Lex + Commission Guidance URLs, each row maps to one or more CRA-001..CRA-035 requirement IDs (unmapped=0).
+- 모든 행의 상태는 미작성/증거 미확인이다. 실제 제품 구현/시험이 수행되었다고 주장하지 않는다.
+- PR #22는 문서/CSV 8개 경로만 변경. 운영 코드/workflow/state/history/archive/SIL3 산출물 변경 없음.
+- 다음: 일반 reference security architecture를 작성하되 제품별 MCU/네트워크/저장장치/원격 처리 구성은 미확인으로 분리하고, 각 SEC 항목을 실제 회로/펌웨어/시험 결과에 연결한다.
