@@ -99,3 +99,14 @@ def test_wrong_m606_eso_deadline_fails_closed(tmp_path):
         writer.writerows(rows)
     with pytest.raises(TraceabilityError, match="incorrect ESO adoption deadline"):
         validate_traceability(tmp_path)
+
+
+def test_m606_item18_wrong_printed_page_fails_closed(tmp_path):
+    _copy_required_tree(tmp_path)
+    path = tmp_path / REQUIRED[5]
+    import json
+    provenance = json.loads(path.read_text(encoding="utf-8"))
+    provenance["visual_verification"][0]["printed_page_number"] = 2
+    path.write_text(json.dumps(provenance), encoding="utf-8")
+    with pytest.raises(TraceabilityError, match="printed EN 3"):
+        validate_traceability(tmp_path)
