@@ -298,6 +298,65 @@ def _request_with_safe_redirects(requests_module, definition):
     )
 
 
+def _article_section_text(source_text, article_number):
+    """Extract one complete Article block from normalized official source text."""
+    lines = str(source_text or "").splitlines()
+    start = next(
+        (
+            index for index, line in enumerate(lines)
+            if re.fullmatch(rf"\s*Article\s+{article_number}\s*", line, re.IGNORECASE)
+        ),
+        None,
+    )
+    if start is None:
+        return ""
+    end = next(
+        (
+            index for index in range(start + 1, len(lines))
+            if re.fullmatch(r"\s*Article\s+\d+\s*", lines[index], re.IGNORECASE)
+        ),
+        len(lines),
+    )
+    return "\n".join(lines[start:end])
+
+
+def validate_consolidated_cra_corrections(source_items):
+    """Ensure the consolidated excerpt reflects the latest English CRA corrigenda."""
+    if not isinstance(source_items, list):
+        raise SourceValidationError("CRA source 목록이 올바르지 않습니다.")
+    by_id = {
+        item.get("id"): item
+        for item in source_items
+        if isinstance(item, dict) and isinstance(item.get("id"), str)
+    }
+    base = by_id.get("CRA-2024-2847-consolidated")
+    july = by_id.get("CRA-2024-2847-corrigendum-2025-07-02")
+    october = by_id.get("CRA-2024-2847-corrigendum-2025-10-17")
+    if not all(isinstance(item, dict) for item in (base, july, october)):
+        raise SourceValidationError("CRA consolidated text와 2025년 정오표 2건이 모두 필요합니다.")
+
+    normalized = lambda value: re.sub(r"\s+", " ", str(value or "")).casefold()
+    july_text = normalized(july.get("text"))
+    october_text = normalized(october.get("text"))
+    if "paragraphs 3 to 9" not in july_text or "paragraphs 2 to 9" not in july_text:
+        raise SourceValidationError("2025-07-02 정오표의 Article 64(10) 전/후 문구를 확인하지 못했습니다.")
+    if "69. regulation" not in october_text or "72. regulation" not in october_text:
+        raise SourceValidationError("2025-10-17 정오표의 Article 67 전/후 문구를 확인하지 못했습니다.")
+
+    article_64 = normalized(_article_section_text(base.get("text"), 64))
+    if "paragraphs 2 to 9" not in article_64 or "paragraphs 3 to 9" in article_64:
+        raise SourceValidationError(
+            "CRA consolidated Article 64(10)이 2025-07-02 정오표의 정정 후 문구와 일치하지 않습니다."
+        )
+
+    article_67 = normalized(_article_section_text(base.get("text"), 67))
+    if "72. regulation (eu) 2024/2847" not in article_67 or "69. regulation (eu) 2024/2847" in article_67:
+        raise SourceValidationError(
+            "CRA consolidated Article 67이 2025-10-17 정오표의 정정 후 문구와 일치하지 않습니다."
+        )
+    return True
+
+
 def fetch_official_cra_source():
     """Fetch allowlisted official legal texts and Commission publication/status pages."""
     import requests
@@ -397,6 +456,8 @@ def fetch_official_cra_source():
             "retrieved_at": retrieved_at,
         })
 
+    validate_consolidated_cra_corrections(source_items)
+
     combined_text = "\n\n".join(
         f"[{item['id']}]\n{item['url']}\n{item['version']}\n"
         + (
@@ -408,7 +469,7 @@ def fetch_official_cra_source():
         + item["text"]
         for item in source_items
     )
-    version = f"CRA official source pack v2; sources={len(source_items)}"
+    version = f"CRA official source pack v3; sources={len(source_items)}; corrigenda_precedence=verified"
     return {
         "url": CRA_SOURCE_URL,
         "version": version,
