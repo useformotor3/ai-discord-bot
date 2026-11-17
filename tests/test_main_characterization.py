@@ -57,7 +57,7 @@ def test_successful_generation_uses_only_mocked_external_services(run_main):
     assert "2026/881" in run_main.captured["model_calls"][0]["prompt"]
     assert "18.11.2025" in run_main.captured["model_calls"][0]["prompt"]
     assert "10.05.2026" in run_main.captured["model_calls"][0]["prompt"]
-    assert len(run_main.captured["discord_posts"]) == 1
+    assert len(run_main.captured["discord_posts"]) == 2
     assert [cmd[0] for cmd in run_main.captured["git_commands"]] == [
         "git", "git", "git", "git", "git"
     ]
@@ -80,7 +80,7 @@ def test_official_source_fetch_failure_stops_before_model_or_external_side_effec
 
 def test_missing_known_corrigenda_index_stops_before_model_calls(run_main):
     incomplete_source = (
-        "<html><body><h2>Article 13</h2>"
+        "<html><body><h1>Regulation (EU) 2024/2847</h1><h2>Article 13</h2>"
         "<p>Manufacturers shall ensure that vulnerabilities of the product with digital elements, "
         "including its components, are handled effectively during the support period.</p>"
         + (" legal source text" * 1500)
@@ -113,7 +113,7 @@ def test_non_eurlex_redirect_stops_before_model_calls(run_main):
 
 def test_report_with_unmatched_direct_quote_is_rejected(run_main):
     unrelated_source = (
-        "<html><body><h2>Article 13</h2>"
+        "<html><body><h1>Regulation (EU) 2024/2847</h1><h2>Article 13</h2>"
         "<p>Corrected by Corrigendum 5.12.2024, 2.7.2025 and 17.10.2025.</p>"
         "<p>This official source text deliberately does not contain the submitted quote.</p>"
         + (" additional legal text" * 1500)
