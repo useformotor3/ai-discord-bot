@@ -1038,3 +1038,13 @@
 - EUR-Lex Official Journal에서 세 영어 corrigenda를 독립 확인: 2024-12-05 title의 “No” 삭제, 2025-07-02 Article 64(10) “paragraphs 3 to 9” → “paragraphs 2 to 9”, 2025-10-17 Article 67 “69” → “72”. 현재 source fetch는 날짜 인덱스만 확인하고 정정문 개별 fetch/대조는 하지 않는다.
 - 상세: reports/INTEGRATION_AND_CLAIM_SCOPE_AUDIT_2026-11-17.md.
 - main / 운영 run.yml / state / history / archive 변경 없음. merge/rebase/force-push/production 실행/Gemini live call 없음. PR #3 Draft 유지.
+
+## 2026-11-17 — CRA claim scope helper 수정 및 CI 회복
+- 최초 helper 구현에서 정규식 escape를 이중 처리해 CI #279가 실패했다: 25 failed, 92 passed, 1 xfailed. job log에서 주요 원인은 claim quote scope가 정상 fixture에서 false가 된 것이었고, 그 결과 main 통합 fixture들이 연쇄 실패했다.
+- 정규식 escape를 바로잡고 workflow SHA pin을 새 blob으로 갱신했다.
+- 수정 후 Isolated CI Run #294: **117 passed, 1 xfailed**. Exact blob SHA, compileall, 전체 pytest 성공.
+- EUR-Lex read-only Canary Run #101: success.
+- 실패 Run #279는 이력으로 유지하며, 수정 후 성공과 구분한다.
+- PROJECT_LOG.jsonl은 UTF-8 원문 전체를 보존한 채 빈 줄을 제거하고 1행 1 JSON 객체 형식으로 정리했으며, 수정 후 검증 event를 추가했다.
+- 마지막 compare 스냅샷: main 83bc2430842413080e73bc5b98a8a82c45d03909, feature 784c41a90bd77dd5776c1637f6abe646452e7175, 125 ahead / 10 behind. main 자동 archive가 계속 전진하므로 통합 직전 재조회한다.
+- Official Journal corrigenda 개별 원문 fetch/문구 검증은 미완료. PR #3 Draft 유지, main/운영 workflow/state/history/archive 변경 없음, production/Gemini live 호출 없음.
