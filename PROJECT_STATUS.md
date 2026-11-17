@@ -763,10 +763,10 @@
 ## 2026-11-17 — CRA 프로젝트 기록 동기화 PR #27 병합
 
 - PR #27 [docs: synchronize CRA source provenance status, rules and resume point](https://github.com/useformotor3/ai-discord-bot/pull/27) merge 완료.
-- Merge commit: \`5f0c54a018e18b3453b1c836a5a7d2e9a266331b\`.
+- Merge commit: `5f0c54a018e18b3453b1c836a5a7d2e9a266331b`.
 - [Actions Run #575](https://github.com/useformotor3/ai-discord-bot/actions/runs/44040949610): 138 passed / 1 xfailed, 9개 live official source 및 Article 13(8) locator/quote canary 재통과.
 - README, PROJECT_STATUS, MASTER_PLAN, AI_RULEBOOK, SESSION_LOG, PROJECT_LOG.jsonl과 source provenance 상세 보고서를 동기화했다.
 - JSONL 76개 레코드 parse success, 신규 event ID 확인, source excerpt SHA-256 9개가 각각 64 hex임을 readback했다.
-- PR #27 pre-merge ref \`safety/pre-merge-main-pr27-2026-11-17\` → \`8066c166ba01fbfb8d25f61ce0ce6ed72f151854\`; post-merge ref \`safety/post-merge-main-pr27-2026-11-17\` → \`5f0c54a018e18b3453b1c836a5a7d2e9a266331b\`. 두 ref 모두 SHA readback 검증 완료.
+- PR #27 pre-merge ref `safety/pre-merge-main-pr27-2026-11-17` → `8066c166ba01fbfb8d25f61ce0ce6ed72f151854`; post-merge ref `safety/post-merge-main-pr27-2026-11-17` → `5f0c54a018e18b3453b1c836a5a7d2e9a266331b`. 두 ref 모두 SHA readback 검증 완료.
 - merge commit 자체의 별도 Actions run은 아직 확인되지 않았다. PR head Run #575 성공으로만 기록한다.
 - 다음 재개는 PDF/decision Annex 수집, Annex/Article locator canary 확대, 요구사항·통제·제품 증거 연결이다.
