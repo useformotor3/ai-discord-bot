@@ -463,7 +463,7 @@
 
 ## 2026-11-17 — CRA source provenance pipeline 완료
 
-- PR #26 merge commit \`8066c166ba01fbfb8d25f61ce0ce6ed72f151854\`.
+- PR #26 merge commit `8066c166ba01fbfb8d25f61ce0ce6ed72f151854`.
 - CELLAR official source 7건, Commission official page 2건을 allowlist 기반으로 수집하고, 전체 visible text/prompt excerpt SHA-256과 retrieval metadata를 manifest에 남긴다.
 - Claim ID, 본문 statement, source ID, exact quote, Article paragraph/Annex Part-point locator 검증을 추가했다.
 - Run #573: 138 passed / 1 xfailed, 9개 live source fetch, Article 13(8) locator/quote canary 성공.
