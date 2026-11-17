@@ -568,3 +568,11 @@
 - 한국어 제품 경계 및 증거 수집 기준서를 추가했다.
 - 제품별 모델·의도된 목적·제품 경계·인터페이스·원격 데이터 처리·보안 기능·BOM/SBOM·취약점/지원 정책 증거가 확보되기 전에는 CRA 제품 분류·Annex III/IV·RDPS 여부·적합성을 단정하지 않는다.
 - 첫 입력 자료는 정확한 모델의 데이터시트와 사용설명서다. 그 후 architecture, network interface list, SBOM, security/vulnerability policy 순으로 증거를 확보한다.
+
+
+## 통합 CRA 보고서 독립 검토 — 2026-11-17
+
+- 보고서 번호 중복·제품 분류 용어 오류를 정정하고 독립 검토 기록을 추가한다.
+- 법령 Article/Annex locator를 원문과 대조하고, Guidance claim PDF locator를 표본 검증한다.
+- traceability gate에서 보고서 top-level section 번호 중복을 fail-closed로 검사한다.
+- 제품별 모델 자료가 없으면 적용성·Annex III/IV·RDPS·적합성 결론은 Unknown/Conditional로 유지한다.
