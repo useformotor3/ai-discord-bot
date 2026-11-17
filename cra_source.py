@@ -3,8 +3,6 @@ from html.parser import HTMLParser
 import re
 from urllib.parse import urlparse
 
-import requests
-
 
 CRA_SOURCE_URL = (
     "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02024R2847-20241120"
@@ -42,6 +40,9 @@ def normalize_source_text(value):
 
 def fetch_official_cra_source():
     """Fetch the official EUR-Lex act directly; no paid search-grounding service."""
+    # Resolve requests at call time so isolated tests can replace the HTTP boundary.
+    import requests
+
     response = requests.get(
         CRA_SOURCE_URL,
         headers={"User-Agent": "CRA-Research-Bot/1.0 (+https://eur-lex.europa.eu/)"},
