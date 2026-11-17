@@ -19,7 +19,7 @@
 - [CRA 서보 드라이브 통합 규제·기술 준수 보고서 v0.2](reports/CRA_INTEGRATED_COMPLIANCE_REPORT_2026-11-17.md): PR #21 병합 완료, 제품별 적용성 확인 전, 제품별 적용성 확인 전
 - [CRA 요구사항 추적표 v0.1](reports/CRA_REQUIREMENTS_TRACEABILITY_2026-11-17.csv): PR #19 병합 완료, 35개 요구사항 행, 제품 증거 미확인 상태
 - [서보 드라이브 인터페이스별 CRA 적용성 매트릭스](reports/CRA_SERVO_DRIVE_INTERFACE_APPLICABILITY_2026-11-17.csv): PR #20 병합 완료, 15개 인터페이스/기능 유형, 제품별 증거 확인 전 잠정
-- [CRA 서보 드라이브 보안 통제·시험 매트릭스](reports/CRA_SERVO_DRIVE_SECURITY_CONTROL_TEST_MATRIX_2026-11-17.csv): 36개 통제 목표/위험/시험/증거 초안, 모델별 검증 전
+- [CRA 서보 드라이브 보안 통제·시험 매트릭스](reports/CRA_SERVO_DRIVE_SECURITY_CONTROL_TEST_MATRIX_2026-11-17.csv): 36개 통제 목표/위험/시험/증거 초안, 35개 요구사항 ID와 교차 연결, 모델별 검증 전
 - CRA 정정 보고서 #1–#38: 개별 원문·원본 SHA 보존, 주요 정정/정확한 조항 locator를 통합 보고서 v0.2에 반영
 - PR #21 merge commit: `e11d376bab43ccc99bdf70549ad47eec57a01760`
 - 최신 법적/이행 자료 반영: Commission Guidance C(2026) 5252 (2026-07-27), M/606 개정 C(2026) 7861 (2026-11-10), Regulation (EU) 2025/327 개정 범위 검토
