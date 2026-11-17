@@ -841,3 +841,9 @@
 - Annex I Part I (2)(d)/(e) 원문 인용 자체는 정확하나, 모든 비필수 포트 비활성화·모든 추가 기능 관리자 opt-in·프로토콜별 일괄 disable을 직접 법적 의무로 확장한 부분을 정정.
 - CRA는 attack surface 제한(외부 인터페이스 포함), secure-by-default 및 original-state reset 가능성을 요구한다. 구체 포트/서비스 기본값은 제품 위험평가와 운영 필요에 따라 설계.
 - correction report #11 생성: reports/CRA_CORRECTION_REPORT_11_2026-11-17.md. correction reports #11–#19 완료.
+
+## 2026-11-17 — archive #10 지원 기간/CVD 정정 감사
+- 원본 archive #10 SHA 1457bf4c03af61e5c6d9e5ca22397d0dc7c37401 확인, 원본 보존.
+- Raw Text Quote가 Article 13(8) support period와 Annex I Part II (8) 무상 업데이트를 합친 요약문으로, 최종 OJ verbatim quote가 아님을 확인.
+- Article 13(8) support period와 Article 13(9) update availability retention, Part II (8) free security update delivery, Part II (5) CVD policy를 별도 요구로 분리.
+- correction report #10 생성: reports/CRA_CORRECTION_REPORT_10_2026-11-17.md. correction reports #10–#19 완료.
