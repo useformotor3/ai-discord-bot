@@ -2,8 +2,8 @@
 
 - 기준일: 2026-11-17 (KST)
 - 상태: **PR #26 병합 완료**
-- Main merge commit: \`8066c166ba01fbfb8d25f61ce0ce6ed72f151854\`
-- 구현 브랜치: \`experiment/cellar-source-retrieval-2026-11-17\`
+- Main merge commit: `8066c166ba01fbfb8d25f61ce0ce6ed72f151854`
+- 구현 브랜치: `experiment/cellar-source-retrieval-2026-11-17`
 - 검증 PR: [#26](https://github.com/useformotor3/ai-discord-bot/pull/26)
 - 검증 CI: [GitHub Actions Run #573](https://github.com/useformotor3/ai-discord-bot/actions/runs/44039961078)
 
@@ -61,8 +61,8 @@ source별로 다음 값을 보존한다.
 - source ID, 문서 유형, 판본/버전 설명
 - 요청 URL 및 최종 응답 URL
 - 원문 visible text 길이
-- 전체 visible text의 SHA-256: \`full_text_sha256\`
-- 모델 prompt에 전달한 excerpt의 SHA-256: \`prompt_excerpt_sha256\`
+- 전체 visible text의 SHA-256: `full_text_sha256`
+- 모델 prompt에 전달한 excerpt의 SHA-256: `prompt_excerpt_sha256`
 - UTC 수집 시각
 - 관련 문서 URL 및 실제 미수집 상태 설명(해당 시)
 
@@ -70,9 +70,9 @@ source별로 다음 값을 보존한다.
 
 ## 5. 주장·근거 검증
 
-보고서는 단일 \`CLAIM_EVIDENCE_JSON\` 블록을 포함한다. 각 claim에는 고유 ID, 분류, 본문과 동일한 statement, source ID, locator, 직접 인용을 기록한다.
+보고서는 단일 `CLAIM_EVIDENCE_JSON` 블록을 포함한다. 각 claim에는 고유 ID, 분류, 본문과 동일한 statement, source ID, locator, 직접 인용을 기록한다.
 
-- 허용 분류: \`legal_requirement\`, \`official_explanation\`, \`interpretation\`, \`engineering_recommendation\`
+- 허용 분류: `legal_requirement`, `official_explanation`, `interpretation`, `engineering_recommendation`
 - 법적 주장 및 공식 설명은 등록된 source ID에 연결해야 한다.
 - 법적 직접 인용은 최소 50자이며 지정 source의 실제 텍스트에 존재해야 한다.
 - Article 주장은 정확한 paragraph, Annex 주장은 Part/point 범위에서 인용문이 존재해야 한다.
@@ -83,7 +83,7 @@ source별로 다음 값을 보존한다.
 
 ## 6. 실시간 검증 결과
 
-[GitHub Actions Run #573](https://github.com/useformotor3/ai-discord-bot/actions/runs/44039961078), PR head \`d1bda523c1b593bbd48bf4916dd7bbd741001894\`:
+[GitHub Actions Run #573](https://github.com/useformotor3/ai-discord-bot/actions/runs/44039961078), PR head `d1bda523c1b593bbd48bf4916dd7bbd741001894`:
 
 - 전체 저장소 테스트: **138 passed, 1 xfailed**
 - 실시간 official source canary: **9개 출처 수집 성공**
@@ -94,31 +94,31 @@ source별로 다음 값을 보존한다.
 
 | Source ID | Visible text chars | Prompt excerpt SHA-256 |
 |---|---:|---|
-| CRA-2024-2847-consolidated | 196,071 | \`730cafdf7f450ea9e0e06805946fbbd8c1cfcded201cf5548189f9ee2d9dfc10\` |
-| CRA-2024-2847-corrigendum-2024-12-05 | 1,183 | \`3c571d13f24d66d38bb7f3caf9108dcbcbff7cdc4068c23a5afb68f54d2745ab\` |
-| CRA-2024-2847-corrigendum-2025-07-02 | 912 | \`49ed1db4abc2db47965235c6d54fedfb562993c27ccbdd6018467f16326d680f\` |
-| CRA-2024-2847-corrigendum-2025-10-17 | 783 | \`0d9f5bf6e6e00c399d6edda10fcdabfa9d955e8c65b72412b9e265a1c6f44733\` |
-| CRA-2025-327-EHDS-amendment | 394,101 | \`f9ecf4f4bcda5676db068428b248f5cc82ac3068d2ce9b70229d90bb577d1ee3\` |
-| CRA-2025-1535-product-scope-delegated-act | 6,213 | \`e4a6d9aba59124b39f31af63a4a5da989a92e187f59d6250a5a09c33a8817994\` |
-| CRA-2026-881-reporting-delay-delegated-act | 15,269 | \`a386f82e575e424831500d244ee1a6e6ac32846cb306eec4c4905af11916d9ee\` |
-| CRA-COMMISSION-GUIDANCE-2026-07-27 | 3,302 | \`d72a18e265f8708d5b353029d093fe33a6d0ac034e57b495981f7415c2ac7e02\` |
-| CRA-M606-STANDARDISATION-2026-11-12 | 3,282 | \`7090598b5a0941d0c65f7f1e2c3bb5e6744d1a2d3bccfd5f8187e0f058267942\` |
+| CRA-2024-2847-consolidated | 196,071 | `730cafdf7f450ea9e0e06805946fbbd8c1cfcded201cf5548189f9ee2d9dfc10` |
+| CRA-2024-2847-corrigendum-2024-12-05 | 1,183 | `3c571d13f24d66d38bb7f3caf9108dcbcbff7cdc4068c23a5afb68f54d2745ab` |
+| CRA-2024-2847-corrigendum-2025-07-02 | 912 | `49ed1db4abc2db47965235c6d54fedfb562993c27ccbdd6018467f16326d680f` |
+| CRA-2024-2847-corrigendum-2025-10-17 | 783 | `0d9f5bf6e6e00c399d6edda10fcdabfa9d955e8c65b72412b9e265a1c6f44733` |
+| CRA-2025-327-EHDS-amendment | 394,101 | `f9ecf4f4bcda5676db068428b248f5cc82ac3068d2ce9b70229d90bb577d1ee3` |
+| CRA-2025-1535-product-scope-delegated-act | 6,213 | `e4a6d9aba59124b39f31af63a4a5da989a92e187f59d6250a5a09c33a8817994` |
+| CRA-2026-881-reporting-delay-delegated-act | 15,269 | `a386f82e575e424831500d244ee1a6e6ac32846cb306eec4c4905af11916d9ee` |
+| CRA-COMMISSION-GUIDANCE-2026-07-27 | 3,302 | `d72a18e265f8708d5b353029d093fe33a6d0ac034e57b495981f7415c2ac7e02` |
+| CRA-M606-STANDARDISATION-2026-11-12 | 3,282 | `7090598b5a0941d0c65f7f1e2c3bb5e6744d1a2d3bccfd5f8187e0f058267942` |
 
 실시간 canary는 Article 13(8)에서 paragraph scope를 추출하고, 제조자가 지원 기간 중 제품 취약점을 효과적으로 처리해야 한다는 source quote가 해당 paragraph 안에 존재하는지 확인했다.
 
 ## 7. 변경 파일 및 병합
 
-- \`.github/workflows/tests.yml\`
-- \`cra_source.py\`
-- \`cra_claims.py\`
-- \`main.py\`
-- \`tests/conftest.py\`
-- \`tests/test_main_characterization.py\`
-- \`tests/test_cra_source.py\`
-- \`tests/test_cra_claims.py\`
-- \`tests/test_external_failure_paths.py\`
+- `.github/workflows/tests.yml`
+- `cra_source.py`
+- `cra_claims.py`
+- `main.py`
+- `tests/conftest.py`
+- `tests/test_main_characterization.py`
+- `tests/test_cra_source.py`
+- `tests/test_cra_claims.py`
+- `tests/test_external_failure_paths.py`
 
-PR #26은 merge commit 방식으로 main에 통합했다. merge commit: \`8066c166ba01fbfb8d25f61ce0ce6ed72f151854\`. 기존 운영 retry/quota/no-op, duplicate-topic suppression, transactional persistence/rollback 보호는 유지했다. 운영 Gemini/Discord 실행을 canary로 호출하지 않았다.
+PR #26은 merge commit 방식으로 main에 통합했다. merge commit: `8066c166ba01fbfb8d25f61ce0ce6ed72f151854`. 기존 운영 retry/quota/no-op, duplicate-topic suppression, transactional persistence/rollback 보호는 유지했다. 운영 Gemini/Discord 실행을 canary로 호출하지 않았다.
 
 ## 8. 남은 작업과 제한
 
