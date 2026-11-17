@@ -13,7 +13,7 @@
 ## 현재 상태 — 2026-11-17
 
 - **활성 범위: CRA 대응만.** SIL 3 자료는 역사적 산출물로 보존하며 별도 명시적 재개 지시 전 비활성.
-- 현재 구현 작업 브랜치: 없음 (PR #33 병합 완료; PR #34는 문서 전용 사후 동기화이며 다음 구현은 최신 main에서 새 브랜치로 시작)
+- 현재 구현 작업 브랜치: `cra/traceability-integrity-2026-11-17` (CRA 매트릭스 cross-reference 무결성 자동화)
 - 최신 운영 기준: GitHub `main` 브랜치 (정확한 HEAD는 세션 시작 시 저장소에서 실시간 조회; 과거 커밋 SHA를 현재 HEAD로 고정 표기하지 않음); 최신 CRA source 기준점: PR #29 merge commit `9c16724b8b72bd09d3492b19ff714602b235c66b`; PR #28 recovery checkpoint `942e1e6b5f2887001279a96c21f94138d283a689`; 관리 문서 PR #27 `5f0c54a018e18b3453b1c836a5a7d2e9a266331b`; source pipeline PR #26 `8066c166ba01fbfb8d25f61ce0ce6ed72f151854`
 - 최신 CRA source provenance 통합: [PR #26](https://github.com/useformotor3/ai-discord-bot/pull/26) 병합 완료; 공식 CELLAR 7개 법령 자료 + Commission 공식 페이지 2개 수집, claim-level validator 및 source manifest 반영
 - 정오표 우선순위 보강: [PR #29](https://github.com/useformotor3/ai-discord-bot/pull/29) 병합 완료; Article 64(10)/67의 영어 corrigenda를 prompt excerpt에서 적용/확인하고 raw text hash와 corrected excerpt hash를 분리
@@ -461,3 +461,10 @@
 - [Run #713](https://github.com/useformotor3/ai-discord-bot/actions/runs/44054006627): 148 passed / 1 xfailed; PDF 2종·HTML 공식 출처 9종 live canary 통과.
 - Pre/post refs: `safety/pre-merge-main-pr33-2026-11-17` → `16b5d2e732e9f5f158d2b79aa9c0c62f0488fc92`; `safety/post-merge-main-pr33-2026-11-17` → `50e4784de60430bb2b8c70ca06b41627d75379ae`; post ref와 main compare identical.
 - Guidance ANFR mirror SHA-256 `fe209c250e3d1f7599e42826d91963666951332927edcf511a2e79fe8d2f8234`; M/606 Commission Annex SHA-256 `262b09596cb5cbe7d72a2c7789fb2512ee00db7f69082e7def2c8181b0f63276`. Commission Guidance primary byte identity는 미확인.
+
+
+## CRA 추적성 무결성 자동 검증
+
+- `cra_traceability.py`는 G-001~G-013 claim register와 15 interface / 35 requirements / 36 SEC control matrix의 참조를 검사한다.
+- M/606 Annex I 후보 항목 범위(1–41), Guidance 비구속적 분류, PDF raw/text SHA-256 provenance, item 18 시각 검증, README/통합 보고서 링크, PROJECT_LOG.jsonl 구문·event ID 중복을 검증한다.
+- 로컬/CI 실행: `python cra_traceability.py`; 회귀 테스트 `tests/test_cra_traceability.py`.
