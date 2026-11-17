@@ -1,12 +1,12 @@
 # CRA 공식 출처 수집·주장 추적 파이프라인 — 설계 및 검증 기록
 
 - 기준일: 2026-11-17 (KST)
-- 상태: **PR #26 병합 완료; PR #29 정오표 우선순위 보강 CI 통과**
-- Main merge commit: `8066c166ba01fbfb8d25f61ce0ce6ed72f151854`
-- 구현 브랜치: `experiment/cellar-source-retrieval-2026-11-17`
-- 검증 PR: [#26](https://github.com/useformotor3/ai-discord-bot/pull/26)
+- 상태: **PR #26 source pipeline 및 PR #29 corrigenda precedence 보강 병합 완료**
+- Main merge commit: PR #29 `9c16724b8b72bd09d3492b19ff714602b235c66b`; base source pipeline PR #26 `8066c166ba01fbfb8d25f61ce0ce6ed72f151854`
+- 구현 브랜치: `experiment/cellar-source-retrieval-2026-11-17`; 정오표 보강 `fix/cra-corrigenda-precedence-canary-2026-11-17`
+- 검증 PR: [#26](https://github.com/useformotor3/ai-discord-bot/pull/26), [#29](https://github.com/useformotor3/ai-discord-bot/pull/29)
 - 기본 통합 CI: [GitHub Actions Run #573](https://github.com/useformotor3/ai-discord-bot/actions/runs/44039961078)
-- 정오표 적용/검증 CI: [GitHub Actions Run #593](https://github.com/useformotor3/ai-discord-bot/actions/runs/44043229559)
+- 정오표 적용/검증 CI: [Run #593](https://github.com/useformotor3/ai-discord-bot/actions/runs/44043229559), 최종 PR head [Run #596](https://github.com/useformotor3/ai-discord-bot/actions/runs/44043479661)
 
 ## 1. 목적과 경계
 
@@ -95,7 +95,7 @@ CELLAR의 consolidated text는 원본 통합본과 정오표 자료를 별도 �
 
 ## 7. 실시간 검증 결과
 
-[GitHub Actions Run #593](https://github.com/useformotor3/ai-discord-bot/actions/runs/44043229559), PR #29 head `7b2d20b4770c38f944cfc68016df554dc1ecb459`:
+[GitHub Actions Run #596](https://github.com/useformotor3/ai-discord-bot/actions/runs/44043479661), PR #29 final head `04368898a3b4ace935cd75bc801fd87c6a6b507d`:
 
 - 전체 저장소 테스트: **141 passed, 1 xfailed**
 - 실시간 official source canary: **9개 출처 수집 성공**
@@ -103,9 +103,9 @@ CELLAR의 consolidated text는 원본 통합본과 정오표 자료를 별도 �
 - 실시간 Article 13(8) paragraph locator 및 원문 quote 일치 확인
 - compileall 및 source blob identity 확인 통과
 
-기본 PR #26 Run #573도 138 passed / 1 xfailed로 통과했다. Run #593은 정오표 우선순위 테스트 3건을 추가한 최신 head 결과다.
+기본 PR #26 Run #573은 138 passed / 1 xfailed로 통과했다. PR #29 Run #593과 최종 head Run #596은 각각 141 passed / 1 xfailed로 통과했으며, Run #596에서 문서 변경을 포함한 최종 PR head를 재검증했다.
 
-### 6.1 수집 원문 길이 및 prompt excerpt SHA-256
+### 7.1 수집 원문 길이 및 prompt excerpt SHA-256
 
 | Source ID | Visible text chars | Prompt excerpt SHA-256 |
 |---|---:|---|
@@ -133,7 +133,8 @@ CELLAR의 consolidated text는 원본 통합본과 정오표 자료를 별도 �
 - `tests/test_cra_claims.py`
 - `tests/test_external_failure_paths.py`
 
-PR #26은 merge commit 방식으로 main에 통합했다. merge commit: `8066c166ba01fbfb8d25f61ce0ce6ed72f151854`. 기존 운영 retry/quota/no-op, duplicate-topic suppression, transactional persistence/rollback 보호는 유지했다. 운영 Gemini/Discord 실행을 canary로 호출하지 않았다.
+PR #26은 merge commit `8066c166ba01fbfb8d25f61ce0ce6ed72f151854`로 main에 통합했고, PR #29 정오표 우선순위 보강은 merge commit `9c16724b8b72bd09d3492b19ff714602b235c66b`로 추가 통합했다. PR #29는 Article 64(10)/67의 정오표 전/후 문구를 확인하고, stale 문구가 있을 때만 해당 Article block에서 교체한다. raw full-text hash는 유지하고 prompt excerpt hash를 재계산한다. 기존 운영 retry/quota/no-op, duplicate-topic suppression, transactional persistence/rollback 보호는 유지했다. 운영 Gemini/Discord 실행을 canary로 호출하지 않았다.
+- PR #29 pre-merge ref: `safety/pre-merge-main-pr29-2026-11-17` → `9ad730c42de6451ce6942298e9b17e3e82a3ef62`; post-merge ref: `safety/post-merge-main-pr29-2026-11-17` → `9c16724b8b72bd09d3492b19ff714602b235c66b` (readback SHA 확인).
 
 ## 9. 남은 작업과 제한
 
@@ -142,5 +143,5 @@ PR #26은 merge commit 방식으로 main에 통합했다. merge commit: `8066c16
 3. Article 13(8) 외에 Annex I Part I/Part II 및 주요 조항의 실시간 locator/quote canary를 확대한다.
 4. 35개 요구사항, 15개 인터페이스, 36개 보안 통제/시험 항목에 source claim ID와 제품별 증거 링크를 연결한다.
 5. 실제 제품 모델·회로·펌웨어·프로토콜·시장 공급 구조가 제공되기 전에는 모델별 적용성/분류/적합성을 확정하지 않는다.
-6. PR head CI는 확인했으나 merge commit 자체의 별도 Actions run은 이 기록 작성 시점에 확인되지 않았다.
+6. PR #26/#29의 PR head CI는 확인했으나 각 merge commit 자체의 별도 Actions run은 이 기록 작성 시점에 확인되지 않았다.
 
