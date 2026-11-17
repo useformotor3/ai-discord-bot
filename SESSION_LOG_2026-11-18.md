@@ -30,3 +30,14 @@
 - CRA-020의 중요 해석: Annex III/IV core functionality 기준, 통합만으로 host product 분류 전이 금지, Class I/II/Critical 평가경로 분리.
 - 통합 보고서·독립 감사·상황판을 같은 브랜치에서 동기화한다. exact-head CI 성공 전 병합 금지.
 - 다음 대상: CRA-021–CRA-035.
+
+
+## CRA 법령 문언 심층 감사 Batch 3
+- EUR-Lex CRA 및 관련 Machinery Regulation/EHDS 공식 원문을 기준으로 CRA-021–CRA-035를 행별 대조했다.
+- 신규 상세 감사: `reports/CRA_LEGAL_SEMANTICS_AUDIT_BATCH3_2026-11-18.md`.
+- CRA-023 사건 후 사용자 통지의 직접 근거를 Article 14(8)로 정정하고 Annex II를 제거했다.
+- CRA-026에서 CRA Article 69(1)을 일반 sectoral overlap 근거로 사용하지 않도록 정정. CRA Article 2(5), Machinery Regulation Article 9(9), Annex III §§1.1.9/1.2.1을 중심으로 상호작용을 기록했다.
+- CRA-028/034의 중복 범위를 경제운영자 역할(Articles 18–22)과 공급망 추적(Article 23)으로 분리했다.
+- CRA-035에 Article 2(8)을 추가하고 Article 2(5)의 delegated-act 조건부 제한/제외를 명시했다.
+- 35개 요구사항의 1차 심층 문언 대조를 마쳤다. 제품별 사실 검증/적합성 결정 및 법률가 검토는 완료를 주장하지 않는다.
+- 다음 단계는 전체 35행 cross-matrix audit 및 누락/중복/표현 정합성 검증이다. exact-head CI 성공 전 병합하지 않는다.
