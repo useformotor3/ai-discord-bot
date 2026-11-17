@@ -551,3 +551,9 @@
 2. [완료] SPDX/CycloneDX, transitive dependencies, hardware revision mapping을 법적 의무가 아닌 구현 선택/권고로 분리.
 3. [완료] vulnerability remediation (2)와 fixed-vulnerability disclosure (4) 구분.
 4. [진행] archive #8 이하 역순 감사.
+
+## 2026-11-17 — archive #8 correction audit
+1. [완료] SBOM Annex I Part II (1), Annex VII 2(b)/8, Annex II point9, Annex VI 구분.
+2. [완료] SBOM user disclosure는 선택 공개 시 접근 위치 안내라는 점을 명확화.
+3. [완료] servo drive 자동 Important Class I/II 분류 및 모든 transitive dependencies 의무 주장 정정.
+4. [진행] archive #7 이하 역순 감사.
