@@ -757,3 +757,15 @@
 - https://github.com/useformotor3/ai-discord-bot/actions/runs/43999131134
 - EUR-Lex read-only Canary Run #85 success at prior code-equivalent head; 이후 변경은 문서/로그만이며 source fetch code는 바뀌지 않았다.
 - Live Gemini API 호출은 0회. 수동 workflow는 default branch에 반영되기 전까지 dispatch할 수 없다.
+
+## 2026-11-17 — 최신 main 통합 사전 감사 및 CRA 근거 범위 보강
+- 최신 main HEAD 9ad23da7136e3af7167048be51a0bf7f7c96d850, CRA 작업 HEAD 감사 기준 3b1c2f3481e9b2e89288cbec80dfbff3d854c8b5, merge-base 0dde26ebac80a789c7a9d9e26560abad54606d32.
+- 최신 compare: **116 ahead / 9 behind**, diverged. 과거 113 ahead / 8 behind는 구 스냅샷이다.
+- main의 main.py 및 tests workflow는 CRA validator 변경을 포함하지 않는다. main CI 성공을 CRA 통합 검증으로 간주하지 않는다.
+- quote가 다른 Article에 있어도 통과할 수 있는 validator false-positive를 확인하고 Article/Annex 범위 내 quote 검증 및 교차 조항 거부 회귀 테스트를 추가했다.
+- 변경 commit: validator 0706df1, regression test fee65c4, exact SHA pin 3b1c2f3.
+- 이전 head CI #274 및 EUR-Lex Canary #93 성공. 신규 변경 CI #279 / Canary #95는 실행 상태 재확인 전까지 pending으로 취급한다.
+- Official Journal 직접 대조에서 영어 정오표 3건의 실제 정정사항을 확인했다. 현재 fetch gate는 날짜 존재만 확인하며 개별 corrigenda 내용 대조는 아직 구현되지 않았다.
+- 다음: #279/#95 결과 확인 → corrigenda 3건 독립 수집 및 문구 검증 → paragraph/point locator 강화 → main 9개 커밋/운영 데이터 불변성 감사 → 별도 integration branch 통합 테스트.
+- PR #3 Draft 유지. main, 운영 workflow, state/history/archive 변경 및 운영 실행 없음.
+- 상세 감사: reports/INTEGRATION_AND_CLAIM_SCOPE_AUDIT_2026-11-17.md.
