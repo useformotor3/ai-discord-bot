@@ -3,21 +3,21 @@
   "retrieved_at": "2026-11-17T09:05:46Z",
   "workflow": {
     "name": "Isolated Python Tests",
-    "run_number": 669,
-    "run_id": 44052967754,
-    "tested_head_sha": "40792aea57df1546191b37be17d08389ebfe3a34",
+    "run_number": 690,
+    "run_id": 44053390736,
+    "tested_head_sha": "535300d60e1e943a867e3348c3c152832238b665",
     "pytest": "148 passed, 1 xfailed",
     "compileall": "success",
     "exact_source_blob_identity": "success",
     "live_official_pdf_canary": "2 PDFs fetched, parsed and SHA-256 verified",
     "live_official_html_canary": "9 allowlisted official sources fetched; consolidated corrections and Article 13(8) locator/quote passed",
-    "artifact_id": 14315096266,
-    "artifact_name": "cra-official-pdf-sources-a41267cf4fceca615c935e075ab161883bf024f3",
-    "artifact_url": "https://github.com/useformotor3/ai-discord-bot/actions/runs/44052967754/artifacts/14315096266",
-    "artifact_zip_sha256": "82e86c3347413bc6f210a7403939141679c34e5ad738822043af87fc5c2290c0",
+    "artifact_id": 14315106623,
+    "artifact_name": "cra-official-pdf-sources-4f0058e4a3afc12efc72c09f5490a9b59edf8383",
+    "artifact_url": "https://github.com/useformotor3/ai-discord-bot/actions/runs/44053390736/artifacts/14315106623",
+    "artifact_zip_sha256": "da2f0e5fbfb5f5fa66360a2faa5af3d85821d3b7269885e34e1a3115f37cd3e2",
     "artifact_size_bytes": 1312630,
     "artifact_downloaded_and_sha256_reverified": true,
-    "expires_at": "2026-11-24T09:09:59Z"
+    "expires_at": "2026-11-24T09:12:44Z"
   },
   "sources": [
     {
@@ -84,7 +84,14 @@
       "run_id": 44052336199,
       "artifact_id": 14313359693,
       "artifact_zip_sha256": "150a687e4d4b13fdd20a432e99fc8ea9ec5bc847b8551dd3f157258dc41cd869",
-      "result": "PDF canary and artifact upload passed; HTML publication-page canary failed on over-strict C(2026)5252 marker, fixed in Run 669"
+      "result": "PDF canary and artifact upload passed; HTML page marker failed and was corrected"
+    },
+    {
+      "run_number": 669,
+      "run_id": 44052967754,
+      "artifact_id": 14315096266,
+      "artifact_zip_sha256": "82e86c3347413bc6f210a7403939141679c34e5ad738822043af87fc5c2290c",
+      "result": "Full CI success; 148 passed, 1 xfailed; PDF and HTML canaries passed"
     }
   ]
 }
