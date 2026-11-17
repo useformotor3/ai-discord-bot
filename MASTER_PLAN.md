@@ -83,7 +83,8 @@
 - Phase 2 P1-A state/history 검증 및 datetime 호환: 작업 브랜치 구현, helper 독립 pytest 7 passed
 - Phase 3 기본 원본 테스트 실행 기반: 확보. 테스트 전용 GitHub Actions Run #1~#3 success, 최신 Run #3에서 SHA 5개 일치, compileall 통과, pytest 21 passed
 - Phase 2 P1-B1 Discord 전송 및 P1-B2 atomic persistence: 작업 브랜치 구현·CI 검증 완료; P1-B3 Git sync/P1-B4 구조 개선은 미구현
-- Phase 4: CRA 요구사항 추적표 v0.1(28항목) 작성. 제품별 증거·설계 통제·시험 결과 연결은 진행 중.\n- Phase 6: CRA 통합 규제·기술 준수 보고서 v0.1 초안 작성. 2026-07 Commission Guidance 및 2026-11 M/606 개정 반영. 제품별 판정 전.
+- Phase 4: CRA 요구사항 추적표 v0.1(28항목) 작성. 제품별 증거·설계 통제·시험 결과 연결은 진행 중.
+- 서보 드라이브 인터페이스별 CRA 적용성 매트릭스 15항목 작성. 실제 모델 회로·프로토콜·의도된 사용 검증 전 잠정.\n- Phase 6: CRA 통합 규제·기술 준수 보고서 v0.1 초안 작성. 2026-07 Commission Guidance 및 2026-11 M/606 개정 반영. 제품별 판정 전.
 
 ## 다음 실행 순서 — 2026-11-17 CRA 우선순위
 
