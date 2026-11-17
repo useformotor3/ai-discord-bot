@@ -137,9 +137,9 @@ def validate_claim_evidence(report, source):
     if referenced_ids != declared_ids:
         missing = sorted(declared_ids - referenced_ids)
         unknown = sorted(referenced_ids - declared_ids)
-        if missing:
-            return False, "본문에서 참조되지 않은 claim_id가 있습니다: " + ", ".join(missing)
-        return False, "근거 JSON에 선언되지 않은 claim_id가 본문에 있습니다: " + ", ".join(unknown)
+        if unknown:
+            return False, "근거 JSON에 선언되지 않은 claim_id가 본문에 있습니다: " + ", ".join(unknown)
+        return False, "본문에서 참조되지 않은 claim_id가 있습니다: " + ", ".join(missing)
 
     return True, ""
 
