@@ -30,6 +30,8 @@ on:
       - ".github/workflows/tests.yml"
       - ".github/workflows/run.yml"
       - "main.py"
+      - "cra_source.py"
+      - "cra_claims.py"
       - "persistence.py"
       - "tests/**"
       - "AI_RULEBOOK.md"
