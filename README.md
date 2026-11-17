@@ -523,3 +523,6 @@
 
 
 - Batch 3 (CRA-021–CRA-035) 법령 문언 감사: [상세 기록](reports/CRA_LEGAL_SEMANTICS_AUDIT_BATCH3_2026-11-18.md).
+
+
+- 35개 요구사항과 인터페이스/통제/Guidance/M/606 간 교차 정합성 감사: [CRA_CROSS_MATRIX_CONSISTENCY_AUDIT_2026-11-18.md](reports/CRA_CROSS_MATRIX_CONSISTENCY_AUDIT_2026-11-18.md).
