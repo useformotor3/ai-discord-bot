@@ -211,6 +211,7 @@
 - PR #26 pre-merge main checkpoint: `safety/pre-merge-main-pr26-2026-11-17` → `f4bb159e164b00e4586868f335519cea3c4802ae` (readback verified).
 - PR #26 post-merge main checkpoint: `safety/post-merge-main-pr26-2026-11-17` → `8066c166ba01fbfb8d25f61ce0ce6ed72f151854` (readback verified).
 - PR #27 pre-merge main checkpoint: `safety/pre-merge-main-pr27-2026-11-17` → `8066c166ba01fbfb8d25f61ce0ce6ed72f151854`; post-merge checkpoint: `safety/post-merge-main-pr27-2026-11-17` → `5f0c54a018e18b3453b1c836a5a7d2e9a266331b` (both readback verified).
+- PR #28 pre-merge main checkpoint: `safety/pre-merge-main-pr28-2026-11-17` → `5f0c54a018e18b3453b1c836a5a7d2e9a266331b`; post-merge checkpoint: `safety/post-merge-main-pr28-2026-11-17` → `942e1e6b5f2887001279a96c21f94138d283a689` (both readback verified).
 - 과거 pre-integration refs는 역사적 checkpoint로 보존한다.
 - PR #26은 코드/테스트/CI 통합이며 운영 Gemini/Discord 실행이나 state/history/archive 변경을 수행하지 않았다. 운영 데이터 snapshot/restore 검증은 별도 미완료이므로 새 코드를 실제 운영 실행하기 전에는 백업·복원 검증을 별도로 수행한다.
 
@@ -317,7 +318,7 @@
 1. Main is the canonical operational branch. Current main HEAD, safety checkpoints and active work branch are recorded in PROJECT_STATUS.md.
 2. Never merge a divergent branch wholesale. Compare ahead/behind, merge-base, changed files, tests, workflows and state/history/archive effects before integration. Preserve parallel branches; no force-push or history rewrite.
 3. The historical `integration/cra-source-grounding-2026-11-17` branch remains a reference only. Its required source/claim features were selectively implemented and verified in PR #26; the branch itself was not wholesale merged.
-4. PR #26 is merged at `8066c166ba01fbfb8d25f61ce0ce6ed72f151854`; PR #27 project-record sync is merged at `5f0c54a018e18b3453b1c836a5a7d2e9a266331b`. Their pre/post merge safety refs are recorded in Sections 18.5 and were read back and SHA-verified.
+4. PR #26 source pipeline is merged at `8066c166ba01fbfb8d25f61ce0ce6ed72f151854`; PR #27 project-record sync at `5f0c54a018e18b3453b1c836a5a7d2e9a266331b`; PR #28 checkpoint synchronization at `942e1e6b5f2887001279a96c21f94138d283a689`. Their pre/post merge safety refs are recorded in Section 18.5 and were read back and SHA-verified.
 5. Preserve current main operational protections: 15-item history context, two model retries, quota/429/503 no-op behavior, duplicate-topic suppression, transactional persistence and rollback.
 6. Article paragraph and Annex Part/point claim locators must be tested against actual source structure. A quote from another paragraph/point in the same Article/Annex must fail.
 7. CRA legal source pack currently uses official Publications Office CELLAR retrieval for seven legal texts and two Commission official pages. Source-specific host allowlists, HTTPS-only redirects, source markers, full-text/prompt-excerpt hashes and retrieval timestamps are mandatory.
