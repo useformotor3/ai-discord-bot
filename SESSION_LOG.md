@@ -994,3 +994,8 @@
 - Canary: https://github.com/useformotor3/ai-discord-bot/actions/runs/43998058856
 - CI 로그에서 85/27 실패 원인(f-string JSON brace 및 기존 mock contract)과 후속 blob pin mismatch를 확인하고 각각 수정했다. 최종 run에서 전체 검증 통과.
 - PR #3 Draft/open 유지. 최신 main과 8 commits behind이므로 병합하지 않았다. 실제 Gemini/Discord 및 production workflow 미실행.
+
+
+### 문서 동기화 후 정확한 head 재검증
+- 문서/테스트 가이드/프로젝트 로그 동기화 head `7c9360ad6c4e833e0037e3fbc0756d736a15efd2`에서 Isolated CI Run #206 성공: **112 passed, 1 xfailed**.
+- Source SHA pin, compileall, full pytest 통과. https://github.com/useformotor3/ai-discord-bot/actions/runs/43998309434
