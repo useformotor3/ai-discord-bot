@@ -534,3 +534,9 @@
 1. [완료] Article 13(8)/(9)/(14)/(19) 및 Annex I Part II (2)/(8) 분리.
 2. [완료] support period 5년 원칙, security update availability 10년/잔여기간 중 긴 기간, 무상 제공 예외를 correction report #12에 반영.
 3. [진행] archive #11 이하 역순 감사.
+
+## 2026-11-17 — archive #11 correction audit
+1. [완료] Annex I Part I (2)(d)/(e) exact quote 대조.
+2. [완료] attack-surface/secure-by-default 법적 요구와 포트 disable/opt-in/least-privilege 구현 권고를 분리.
+3. [완료] factory reset의 안전 파라미터/보안 설정 영향 검토 항목을 correction report #11에 기록.
+4. [진행] archive #10 이하 역순 감사.
