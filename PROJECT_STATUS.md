@@ -884,3 +884,10 @@
 - 이전 기록 245,502자는 2025/327 EHDS amendment 394,354자 source를 합계에 포함하지 않은 계산 오류였다. 과거 로그를 지우지 않고 본 정정 기록을 추가한다.
 - 개별 source: CRA 통합본 196,076; 2024-12-05 정오표 7,583; 2025-07-02 정오표 8,318; 2025-10-17 정오표 8,179; 2025/327 amendment 394,354; 2025/1535 delegated act 6,246; 2026/881 delegated act 15,284.
 - CI #441: 117 passed, 1 xfailed. EUR-Lex Canary #209: success.
+
+## 2026-11-17 — main archive #20–#21 동기화 및 정정 감사
+- main은 archive #21까지 전진했다. main HEAD 9cb81659db6e9283a34263ad9f4a7f5de32c72b1, state count=21, history.json 2,414 entries.
+- PR #8로 archive #20/#21을 integration branch에 동기화. main과 integration의 state/history 및 archive #20/#21 blobs가 일치한다.
+- #20: Article 11을 신고 의무로 잘못 인용. 실제 mandatory reporting은 Article 14, platform은 Article 16, manufacturer single point of contact는 Article 13(17), CVD는 Annex I Part II (5)/(6).
+- #21: DoS/availability 조항 Annex I Part I (2)(h)에 resource isolation 문구를 추가한 잘못된 인용과 STO 강제 주장을 정정.
+- correction reports #20–#21 생성. correction reports #1–#21 완료.
