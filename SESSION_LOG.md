@@ -964,3 +964,13 @@
 - 정정 #22–#32 11건 작성. 기존 integration branch의 정정 #5–#21도 main 통합 후보 branch로 복사.
 - CRA 정정 #1–#38 master index 작성. 원본 archive는 수정/삭제하지 않았다.
 - 공식 기준: EUR-Lex Regulation (EU) 2024/2847 OJ https://eur-lex.europa.eu/eli/reg/2024/2847/oj/eng
+
+## 2026-11-17 — PR #14 병합 및 CRA 정정 #1–#38 main 검증
+
+- PR #14 merge commit `6994e4828a03482713f7990c7f82036bacfe4772`; CI Run #474: 105 passed, 1 xfailed.
+- main에서 correction report #1–#38을 개별 fetch해 모두 존재함을 확인.
+- #22–#32 original archive blob SHA 11개를 다시 조회해 기존과 일치함을 확인. #33–#38 원본도 보존.
+- state.json SHA `da086ea3ffb7ef0c76d7fa03a58e13a24aa8fe34`, history.json SHA `b9ea42fa437b2b3a5728db5d125d287fb746b46b` 유지; count=38, entries=2,431.
+- master index `reports/CRA_CORRECTION_INDEX_2026-11-17.md` main 반영.
+- 이전 Draft PR #3/#6은 후속 PR #10–#14가 해당 기능/자료를 main에 통합했으므로 close. correction #5–#21은 main에 보존.
+- 다음 실무 우선순위: 정정된 법적 근거를 한국어 CRA 통합 보고서/traceability matrix에 반영하고, 이후 SIL 3 servo-drive benchmarking report와 hardware block design을 작성.

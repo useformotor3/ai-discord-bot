@@ -409,3 +409,12 @@
 4. [완료] #1–#38 인덱스 생성.
 5. [진행] PR #14 CI 및 병합 후 정정 보고서/원본 archive SHA 무결성 확인.
 6. [다음] 정정된 근거를 CRA 한국어 통합 보고서 및 requirements traceability matrix에 반영.
+
+## 2026-11-17 — CRA correction coverage 완료
+1. [완료] 자동 생성 CRA archive #1–#38 각각에 correction report #1–#38을 main에 통합.
+2. [완료] master index `reports/CRA_CORRECTION_INDEX_2026-11-17.md` 작성.
+3. [완료] 원본 archive SHA 보존, state/history SHA 동일성 검증.
+4. [완료] PR #14 merge; CI #474 105 passed, 1 xfailed.
+5. [진행] CRA 한국어 통합 보고서와 조항-제품요구-검증증거 traceability matrix 작성.
+6. [다음] SIL 3 서보 드라이브 벤치마킹 보고서 및 하드웨어 블록 설계. 기능안전과 CRA cybersecurity 요구사항을 서로 다른 traceability chain으로 관리.
+7. [운영] 첫 3회 3-hourly production run을 관찰하고 실제 quota/Discord/guard/prune 결과를 기록.

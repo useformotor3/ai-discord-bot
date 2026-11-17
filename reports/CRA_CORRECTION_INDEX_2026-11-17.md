@@ -61,3 +61,9 @@ https://eur-lex.europa.eu/eli/reg/2024/2847/oj/eng
 
 ## 해석 원칙
 법령의 직접 문언, 별도 조화표준/기술표준 요구, 제조사 권고 구현을 구분한다. 디지털 서명, PGP, security.txt, CVE/SLA, 장치별 초기 credential, SIEM/WORM 로그, 특정 isolation architecture 등은 해당 조문이 직접 지정하지 않는 한 구현 선택사항으로 표시한다.
+
+## 통합 상태
+- PR #14를 통해 correction report #1–#38 및 본 인덱스가 main에 병합되었다.
+- 38개 정정 파일 존재 확인 완료.
+- 원본 archive는 수정·삭제하지 않았으며 #22–#32 원본 blob SHA도 재검증했다.
+- main merge: `6994e4828a03482713f7990c7f82036bacfe4772`; CI #474: 105 passed, 1 xfailed.

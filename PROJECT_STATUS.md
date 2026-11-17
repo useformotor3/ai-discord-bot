@@ -676,3 +676,13 @@
 - 정정 보고서 #1–#38 전체를 한 인덱스로 정리: `reports/CRA_CORRECTION_INDEX_2026-11-17.md`.
 - 주요 발견: Article 10/11을 제조사 의무로 오인, Article 24를 사용자 지침 조항으로 오인, Annex VI/VII 혼동, 기본 credential 문구의 비원문 인용, CVD와 mandatory reporting 혼합, Article13(8)/(9) 지원기간·업데이트 보존 혼합, Annex III 제품 등급 과장, logging/CVD 파트 혼합.
 - 모든 원본 archive는 수정하지 않았으며 정정 문서만 추가했다. PR #14에서 main 병합 전 검증한다.
+
+## 2026-11-17 — CRA 정정 #1–#38 main 통합 완료
+
+- PR #14 merge: `6994e4828a03482713f7990c7f82036bacfe4772`; CI #474 **105 passed, 1 xfailed**.
+- main에서 `CRA_CORRECTION_REPORT_1`부터 `CRA_CORRECTION_REPORT_38`까지 38개 파일의 존재를 개별 확인했다.
+- #22–#32 원본 archive 11개 blob SHA를 재조회해 감사 시점과 동일함을 확인했다. #33–#38도 기존 SHA 보존.
+- state.json SHA `da086ea3ffb7ef0c76d7fa03a58e13a24aa8fe34`, history.json SHA `b9ea42fa437b2b3a5728db5d125d287fb746b46b` 유지. state count=38, history entries=2,431.
+- [CRA 정정 인덱스](reports/CRA_CORRECTION_INDEX_2026-11-17.md) main 반영 완료.
+- 대체된 Draft PR #3/#6은 정정 문서와 기능이 PR #10–#14로 main에 통합되어 close 처리했다. 소스 작업은 버리지 않았으며 correction #5–#21도 main에 존재한다.
+- 남은 운영 검증: 3시간 주기 첫 3회 production run의 Gemini quota, clean no-op, recovery guard, checkpoint pruning 및 archive/state/history 무결성 확인.

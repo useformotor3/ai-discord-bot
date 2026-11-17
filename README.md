@@ -370,3 +370,8 @@ Actions 성공은 자동화 실행 결과이지 CRA 법령 해석이나 출처�
 - [Master index](reports/CRA_CORRECTION_INDEX_2026-11-17.md)
 - 원본 archive는 보존하고 법령 근거·조항·인용 오류는 별도 correction report로 관리한다.
 - 이번 branch는 #5–#21 정정 문서 통합과 #22–#32 신규 정정을 포함한다. PR #14 CI/merge 대기.
+
+## CRA source correction set — complete
+- [CRA correction index #1–#38](reports/CRA_CORRECTION_INDEX_2026-11-17.md)
+- All 38 correction reports are now present on main. Original auto-archive files remain unchanged.
+- PR #14 merged: `6994e4828a03482713f7990c7f82036bacfe4772`; CI #474: 105 passed, 1 xfailed.
