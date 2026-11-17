@@ -85,13 +85,14 @@ def validate_traceability(root="."):
 
     id_columns = {
         "claims": ("Claim ID", "G-"),
-        "interfaces": ("Interface ID", "IF-"),
-        "requirements": ("Requirement ID", "CRA-"),
-        "controls": ("Control ID", "SEC-"),
+        "interfaces": ("ID", "IF-"),
+        "requirements": ("ID", "CRA-"),
+        "controls": ("ID", "SEC-"),
     }
     id_sets = {}
-    for label, (rows, (column, prefix)) in expected_counts.items():
-        field = id_columns[label][0]
+    rows_by_label = {label: rows for label, (rows, _expected) in expected_counts.items()}
+    for label, rows in rows_by_label.items():
+        field, prefix = id_columns[label]
         ids = [row.get(field, "") for row in rows]
         _require(all(value.startswith(prefix) for value in ids),
                  f"{label}: missing/invalid {field}", errors)
