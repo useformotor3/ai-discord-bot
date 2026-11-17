@@ -47,7 +47,15 @@ def _locator_is_present(locator, source_text):
         components.append(re.escape("Part " + part.group(1)))
     if not components:
         return False
-    return all(re.search(component, source, re.IGNORECASE) for component in components)
+    if not all(re.search(component, source, re.IGNORECASE) for component in components):
+        return False
+    paragraph = re.search(r"\((\d+)\)", locator)
+    point = re.search(r"\(([a-z])\)", locator, re.IGNORECASE)
+    if paragraph and not re.search(r"\(" + re.escape(paragraph.group(1)) + r"\)", source):
+        return False
+    if point and not re.search(r"\(" + re.escape(point.group(1)) + r"\)", source, re.IGNORECASE):
+        return False
+    return True
 
 
 def validate_claim_evidence(report, source):
@@ -91,7 +99,7 @@ def validate_claim_evidence(report, source):
             return False, f"중복 claim_id가 있습니다: {claim_id}"
         seen_ids.add(claim_id)
         declared_ids.add(claim_id)
-        if category not in ALLOWED_CATEGORIES:
+        if not isinstance(category, str) or category not in ALLOWED_CATEGORIES:
             return False, f"{claim_id}: 허용되지 않은 주장 분류입니다."
         if not isinstance(statement, str) or len(statement.strip()) < 10:
             return False, f"{claim_id}: 주장 내용이 없거나 너무 짧습니다."
@@ -101,7 +109,7 @@ def validate_claim_evidence(report, source):
             source_id = claim.get("source_id")
             locator = claim.get("locator")
             quote = claim.get("quote")
-            if source_id not in source_by_id:
+            if not isinstance(source_id, str) or source_id not in source_by_id:
                 return False, f"{claim_id}: 등록되지 않은 공식 source_id입니다."
             source_text = source_by_id[source_id].get("text", "")
             if not _locator_is_present(locator, source_text):
@@ -114,7 +122,11 @@ def validate_claim_evidence(report, source):
             basis = claim.get("basis")
             if not isinstance(basis, str) or len(basis.strip()) < 10:
                 return False, f"{claim_id}: 해석/엔지니어링 권고의 근거 설명이 없습니다."
-            if claim.get("source_id") is not None and claim.get("source_id") not in source_by_id:
+            optional_source_id = claim.get("source_id")
+            if optional_source_id is not None and (
+                not isinstance(optional_source_id, str)
+                or optional_source_id not in source_by_id
+            ):
                 return False, f"{claim_id}: 등록되지 않은 source_id입니다."
 
     if legal_count == 0:
