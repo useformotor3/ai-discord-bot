@@ -8,6 +8,8 @@ from google import genai
 import requests
 import uuid
 
+from cra_source import fetch_official_cra_source, validate_research_report
+
 from persistence import (
     commit_persistence_transaction,
     read_optional_bytes,
@@ -179,7 +181,14 @@ context_memory = (
     else "아직 초기 조사 단계입니다."
 )
 
-# 3. Gemini 클라이언트 초기화 및 프롬프트
+# 3. 공식 CRA 원문을 직접 수집한다. 원문 확보 실패 시 보고서 생성·전송·저장을 중단한다.
+try:
+  cra_source = fetch_official_cra_source()
+except Exception as exc:
+  print(f"❌ [공식 원문 수집 실패] CRA 원문을 확인할 수 없어 안전 종료합니다: {exc}")
+  raise SystemExit(1) from exc
+
+# 4. Gemini 클라이언트 초기화 및 프롬프트
 client = genai.Client(api_key=os.environ.get("GEMINI_API_KEY"))
 
 prompt = f"""
@@ -189,55 +198,22 @@ prompt = f"""
     [지금까지 깃허브 외부 메모리에 누적된 이전 조사 내용 (참고용 - 중복 조사 방지)]
     {context_memory}
 
-    위의 이전 내용들과 중복되지 않으면서, 아직 다루지 않은 더 발전되거나 세부적인 CRA 핵심 주제(예: 취약점 무상 패치, Secure by default, 기술 문서, SBOM, 생명주기 관리 등)를 깊이 있게 선정하여 아래 4가지 양식에 맞추어 엄격하게 조사하고 작성해 주세요.
-    추측성 내용은 절대 배제하고, 실제 EU 규정 조항이나 공식 가이드라인을 기반으로 높은 품질의 전문적인 내용을 작성하세요.
+    아래에 제공된 EUR-Lex 공식 CRA 원문만을 법적 근거의 기준으로 사용하세요. 원문에 없는 표준·가이드·제조사 관행을 법적 의무로 추가하지 마세요.
+    원문에서 확인 가능한 조항을 주제로 선정하고, 원문에 근거가 부족하면 억지로 주제를 만들지 말고 조사 공백으로 명시하세요.
+    각 법적 주장은 정확한 Article/Annex/point를 표시하고, 원문 인용은 아래 원문에서 연속된 문장을 50자 이상 그대로 복사해 큰따옴표로 감싸세요. 인용을 번역·요약·재구성하지 마세요.
+    법적 의무, 공식 설명, 엔지니어링 권고를 명확히 구분하고 제품 적용성은 별도 확인이 필요하다고 표시하세요.
+
+    [EUR-Lex 공식 원문 URL]
+    {cra_source['url']}
+    [공식 원문 텍스트]
+    {cra_source['text']}
 
     [작성 양식]
     1. 주제 요약: (핵심 내용 2줄)
     2. 규격 근거 및 상세 내용: (CRA 조항 또는 산업 표준 기준의 구체적 설명)
-    3. 출처 자료(Source): (참고한 공식 EU 규정 문서명, 웹사이트 이름 또는 표준 규격 명칭)
-    4. 출처 원문 텍스트(Raw Text Quote): (해당 출처에서 인용하거나 근거로 삼은 실제 원문 문장 또는 규정 조항의 텍스트)
+    3. 출처 자료(Source): Regulation (EU) 2024/2847, EUR-Lex 공식 URL을 정확히 기재
+    4. 출처 원문 텍스트(Raw Text Quote): 위 공식 원문에서 50자 이상 연속된 실제 문장을 큰따옴표로 직접 인용
     """
-
-def validate_research_report(text):
-  """프롬프트가 요구한 최소 보고서 구조를 확인한다. 정확성 검증과는 별개다."""
-  if not isinstance(text, str):
-    return False, "응답이 문자열이 아닙니다."
-
-  report = text.strip()
-  if len(report) < 250:
-    return False, "응답 길이가 최소 기준(250자)에 미달합니다."
-
-  lowered = report.lower()
-  required_sections = [
-      ("주제 요약",),
-      ("규격 근거", "상세 내용"),
-      ("출처 자료", "source:"),
-      ("출처 원문", "raw text quote"),
-  ]
-  for alternatives in required_sections:
-    if not any(marker in lowered for marker in alternatives):
-      return False, f"필수 보고서 항목 누락: {' / '.join(alternatives)}"
-
-  error_markers = [
-      "시스템 긴급 경고",
-      "모든 ai 모델",
-      "temporarily unavailable",
-      "quota exceeded",
-      "rate limit exceeded",
-      "internal server error",
-      "resource_exhausted",
-      "permission_denied",
-      "service unavailable",
-      "요청 처리에 실패",
-      "응답 생성에 실패",
-      "조사를 완료하지 못했습니다",
-  ]
-  if any(marker.lower() in lowered for marker in error_markers):
-    return False, "오류 또는 서비스 장애 문구가 보고서에 포함되어 있습니다."
-
-  return True, ""
-
 
 # 4. 모델 폴백 & 재시도 픽서 로직 (Latest ➔ Lite)
 models_to_try = ["gemini-3.8-flash", "gemini-3.5-flash-lite"]
@@ -255,7 +231,7 @@ for model_name in models_to_try:
           model=model_name, contents=prompt
       )
       candidate = response.text if response and response.text else ""
-      is_valid, validation_reason = validate_research_report(candidate)
+      is_valid, validation_reason = validate_research_report(candidate, cra_source)
       if is_valid:
         ai_message = candidate.strip()
         success = True
