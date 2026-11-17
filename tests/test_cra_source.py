@@ -89,7 +89,7 @@ def test_fetch_source_pack_checks_each_allowlisted_official_host(monkeypatch):
     assert "paragraphs 3 to 9" not in consolidated["text"]
     assert "72. Regulation (EU) 2024/2847" in consolidated["text"]
     assert "69. Regulation (EU) 2024/2847" not in consolidated["text"]
-    assert "Applied official corrigenda to prompt excerpt" in source["text"]
+    assert "Official corrigenda applied/verified in prompt excerpt" in source["text"]
     assert len(consolidated["applied_corrigenda"]) == 2
     assert all(len(item["full_text_sha256"]) == 64 for item in source["sources"])
     assert all(len(item["prompt_excerpt_sha256"]) == 64 for item in source["sources"])
@@ -300,6 +300,7 @@ def _corrigenda_fixture(base_article_64, base_article_67):
     return [
         {
             "id": "CRA-2024-2847-consolidated",
+            "full_text_sha256": "raw-base-sha256",
             "text": "\n".join([
                 "Article 64",
                 "Penalties",
@@ -350,6 +351,7 @@ def test_consolidated_source_applies_both_operative_english_corrigenda():
     assert "72. Regulation (EU) 2024/2847" in base["text"]
     assert "69. Regulation (EU) 2024/2847" not in base["text"]
     assert base["applied_corrigenda"] == applied
+    assert base["full_text_sha256"] == "raw-base-sha256"
     assert base["prompt_excerpt_sha256"] == cra_source.hashlib.sha256(
         base["text"].encode("utf-8")
     ).hexdigest()
