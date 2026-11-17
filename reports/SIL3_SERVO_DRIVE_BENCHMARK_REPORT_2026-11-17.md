@@ -53,8 +53,8 @@ SIL 3 서보 드라이브를 비교할 때 제품군 전체를 하나의 “SIL 
 - 일반 MR-J5-G(4)/B/A 계열의 공개 표는 주로 STO 기능을 대상으로 하며 Category 3, PL e, SIL 3을 표시한다.
 - MR-J5-G(4)-RJ, MR-J5W-G, MR-J5D 계열 및 HS 계열은 연결 방식/안전 모터/펌웨어 조건에 따라 SS1, SS2, SOS, SBC, SLS, SSM, SDI, SLI, SLT 등 추가 안전 서브기능을 제공한다.
 - 공개 성능값: MTTFd ≥100년, DC Medium(약 96.5~97.6%), mission time 20년. PFH 예시는 일반 G 6.4×10⁻⁹/h, RJ 3.0×10⁻⁹/h, HS 7.7×10⁻⁹/h.
-- STO 응답은 입력 장치 사용 시 8 ms 이하, 네트워크 안전 서브기능 경로는 설정 조건에 따라 60 ms 이하로 기재된다.
-- HS/RJ 네트워크 안전 기능은 CC-Link IE TSN, EtherCAT/FSoE, EtherNet/IP 등 모델별 통신 및 cycle/watchdog 설정에 종속된다.
+- 제조사 표는 STO input-off→energy-shutoff 응답을 입력 장치 경로에서 8 ms 이하, 네트워크 경로에서 지정된 monitor/watchdog/cycle 조건을 만족할 때 60 ms 이하로 기재한다. 별도 safety communication response time 250 ms 및 network safety communication delay 60 ms 이하 항목도 있으므로 이를 혼동하지 않는다. 이 값들은 설정별 구성요소 응답값이며 전체 기계 정지시간을 뜻하지 않는다.
+- HS/RJ 네트워크 안전 기능은 CC-Link IE TSN, EtherCAT/FSoE, EtherNet/IP 등 모델별 통신 및 cycle/watchdog 설정에 종속된다. 예를 들어 일부 모델은 D8/F4/F5 등 펌웨어 조건이 다르며, 200 V 모델/fully closed-loop/CC-Link IE Field Network Basic 사용 여부에 따라 기능이 제한될 수 있다.
 - 안전 서브기능 등급은 서보 앰프/드라이브, 안전 기능 지원 모터 및 펌웨어 조합에 따라 달라진다. Fully closed-loop 구성에서는 SS1-r, SS2, SOS, SLS, SSM, SDI, SLI가 지원되지 않는 조합이 있다.
 - 직접 연결된 forced stop/safety/enable 스위치에 test-pulse 진단을 적용하지 않으면 Category 3 PL d SIL 2로 제한될 수 있다. Category 4 PL e SIL 3을 주장하려면 제조사 표에 명시된 test-pulse 진단과 해당 안전 CPU/컨트롤러 조합을 충족해야 한다.
 - SLT 등 일부 기능은 Cat. 3 PL d SIL 2로 표기되므로 “모든 기능 SIL 3”이라고 요약하면 안 된다.
