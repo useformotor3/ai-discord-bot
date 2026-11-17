@@ -533,3 +533,11 @@
 - CI artifact #14313359693 downloaded; ZIP digest `150a687e4d4b13fdd20a432e99fc8ea9ec5bc847b8551dd3f157258dc41cd869` re-computed and matches GitHub metadata.
 - M/606 item 18 deadline visually confirmed from original PDF page image: `31/01/2027`.
 - Run #642's PDF source step and artifact upload passed; a separate existing HTML publication-page canary failed on an over-strict document-number marker. The marker is corrected to validate visible publication-page metadata separately from the PDF Annex identity; rerun required.
+
+
+## Run #669 — source marker correction 검증 완료
+
+- Commission guidance summary page와 PDF Annex 식별자 검증을 분리했다. Summary page는 실제 visible publication metadata만 확인하고, C(2026)5252 Annex의 document identity는 PDF binary canary가 확인한다.
+- Run #669: 148 passed / 1 xfailed; compileall, blob pins, 2 PDF sources/raw hashes/artifact upload, 9 official HTML sources, consolidated corrigenda, Article 13(8) live locator/quote 모두 통과.
+- PDF artifact #14315096266을 다운로드해 ZIP digest 및 PDF별 raw-byte hashes를 재계산하고 manifest와 일치시켰다.
+- 남은 원문 취득 한계는 Guidance Commission-hosted original bytes와 ANFR mirror의 byte identity뿐이다.
