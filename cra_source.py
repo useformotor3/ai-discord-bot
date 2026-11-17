@@ -254,7 +254,15 @@ def fetch_official_cra_source():
         try:
             response = requests.get(
                 definition["url"],
-                headers={"User-Agent": "CRA-Research-Bot/1.0 (+https://eur-lex.europa.eu/)"},
+                headers={
+                    "User-Agent": (
+                        "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
+                        "(KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+                    ),
+                    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+                    "Accept-Language": "en-US,en;q=0.9",
+                    "Accept-Encoding": "gzip, deflate",
+                },
                 timeout=SOURCE_TIMEOUT,
             )
         except requests.exceptions.SSLError as exc:
@@ -281,6 +289,12 @@ def fetch_official_cra_source():
                 f"공식 source HTTP 오류: {definition['id']} / {status}"
             ) from exc
         final_url = getattr(response, "url", definition["url"])
+        response_text = response.text or ""
+        if not response_text.strip():
+            raise SourceUnavailableError(
+                f"공식 source가 빈 응답을 반환했습니다: {definition['id']} "
+                f"(HTTP {response.status_code}, Content-Length={response.headers.get('Content-Length', 'unknown')})"
+            )
         parsed_url = urlparse(final_url)
         allowed_hosts = definition.get("allowed_hosts", ("eur-lex.europa.eu",))
         if parsed_url.scheme != "https" or parsed_url.hostname not in allowed_hosts:
@@ -289,11 +303,12 @@ def fetch_official_cra_source():
                 f"{definition['id']} / {final_url}"
             )
 
-        full_text = _extract_visible_text(response.text)
+        full_text = _extract_visible_text(response_text)
         if len(full_text) < definition["min_chars"]:
             raise SourceValidationError(
                 f"공식 원문/페이지가 너무 짧습니다: {definition['id']} "
-                f"(visible_text={len(full_text)}, html_bytes={len(response.text)})"
+                f"(visible_text={len(full_text)}, html_chars={len(response_text)}, HTTP={response.status_code}, "
+                f"Content-Type={response.headers.get('Content-Type', 'unknown')})"
             )
         folded = full_text.casefold()
         missing = [marker for marker in definition["required"] if marker.casefold() not in folded]
