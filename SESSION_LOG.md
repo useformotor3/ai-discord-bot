@@ -1059,3 +1059,11 @@
 - 최종 CI #323: 117 passed, 1 xfailed. Exact SHA, compileall, 전체 pytest 통과.
 - live Gemini/Discord API, production workflow 호출 없음. PR #3 Draft 유지.
 - 상세: reports/INTEGRATION_AND_CLAIM_SCOPE_AUDIT_2026-11-17.md.
+
+## 2026-11-17 — 자동 archive #14–#17 법령 원문 감사
+- main의 오늘 자동 archive 14–17번을 원본 SHA로 식별해 개별 검토했다. 원본 archive 파일은 보존하고 별도 correction report를 생성했다.
+- #14는 Article 11을 제조사 의무/CVD 조항으로 인용한 오류를 발견했다. Article 11은 General product safety이며 CVD는 Annex I Part II (5)/(6), actively exploited vulnerability 및 severe incident 보고는 Article 14의 별도 의무다.
+- #15의 Annex I Part I (2)(f) 기본 인용은 맞지만, 실시간 상위 PLC 보고, 특정 프로토콜/암호기술, STO/Interlock 동작을 법령 의무로 확장한 부분은 근거가 없다.
+- #16은 원문 인용에서 자동 업데이트 요건 문구를 누락/재배열했고, “not authorised by the manufacturer”라고 잘못 썼다. 최종 OJ는 “not authorised by the user”이며, point (2)(f)에 “including cryptographic mechanisms” 문구가 없다. 디지털 서명은 구현 후보이지 명시적 일률 의무가 아니다.
+- #17의 least privilege/RBAC 직접 인용은 공식 OJ에서 확인되지 않았다. 실제 법적 근거는 Annex I Part I (2)(d)의 risk-based appropriate access-control mechanisms 및 authentication/identity/access management.
+- correction reports #14–#17 생성 완료. 다음으로 archive #13 이하를 같은 기준으로 감사한다.
