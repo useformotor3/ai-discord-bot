@@ -205,6 +205,8 @@ prompt = f"""
 
     [EUR-Lex 공식 원문 URL]
     {cra_source['url']}
+    [EUR-Lex 통합본 및 정오표 버전]
+    {cra_source['version']}
     [공식 원문 텍스트]
     {cra_source['text']}
 
