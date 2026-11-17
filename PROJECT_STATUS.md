@@ -828,7 +828,7 @@
 - Pre-merge ref `safety/pre-merge-main-pr30-2026-11-17` → `80245d9e132380a10581612c031f87869993b98d`; post-merge ref `safety/post-merge-main-pr30-2026-11-17` → `975ec6728988e43d9a1ebbf6f6d84288aa44c2fd`; readback compare에서 main과 post-merge ref 동일 확인.
 - PR #30 범위: 한국어 CRA 감사 보고서, 관리 문서·로그 동기화, 격리 테스트 workflow push branch allowlist 1줄. 운영 애플리케이션 코드, 운영 `run.yml`, state/history/archive, Gemini/Discord 외부 실행 및 SIL 3 과거 산출물은 변경하지 않았다.
 - M/606 Commission PDF 및 Guidance ANFR mirror raw-byte SHA-256 검증 완료. M/606 item 18 deadline 31/01/2027 시각 확인 완료. Guidance Commission primary byte identity는 미확인.
-- 현재 구현 작업 브랜치: `cra/traceability-integrity-2026-11-17` (CRA matrix cross-reference 무결성 자동화).
+- 현재 구현 작업 브랜치: 없음 (PR #35 병합 완료; PR #36은 문서 전용 사후 동기화).
 
 
 ## 2026-11-17 — PR #31 사후 동기화 완료
@@ -908,4 +908,14 @@
 - README/통합 보고서의 claim/provenance 링크 및 PROJECT_LOG.jsonl 전체 JSON/unique event_id를 검증한다.
 - `tests/test_cra_traceability.py`에 정상 저장소, unknown claim ID, M/606 item 42 오기재 fail-closed 회귀 테스트를 추가했다.
 - `.github/workflows/tests.yml`에서 compileall 후 `python cra_traceability.py`를 실행하고 전체 pytest에 포함한다.
-- 상태: 구현 및 CI wiring 완료, PR CI 검증 대기.
+- 상태: PR #35 병합 완료; Run #738에서 추적성 gate 및 전체 CI 통과.
+
+
+## 2026-11-17 — PR #35 병합 완료
+
+- PR #35 squash merge: `2a347a60f2632bbe87044484187765adab45aee2`.
+- [Run #738](https://github.com/useformotor3/ai-discord-bot/actions/runs/44055249482): success, **151 passed / 1 xfailed**.
+- Traceability gate: 13 claims, 15 interfaces, 35 requirements, 36 SEC controls, 13 linked claims, 89 project log events(84 modern IDs + 5 legacy rows), 41 M/606 items, PDF provenance 및 item18 verification 통과.
+- PDF canary 2건, HTML official sources 9건, Article 13(8) locator/quote 통과.
+- Pre-merge `safety/pre-merge-main-pr35-2026-11-17` → `cad8452b64f274ceeaa203c1b0de6ecea5e2baac`; post-merge `safety/post-merge-main-pr35-2026-11-17` → `2a347a60f2632bbe87044484187765adab45aee2`. post ref와 main compare identical.
+- 현재 구현 작업 브랜치 없음. PR #36은 문서 전용 사후 동기화이며 다음 구현은 최신 main에서 새 브랜치로 시작한다.
