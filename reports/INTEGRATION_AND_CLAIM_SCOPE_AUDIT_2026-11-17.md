@@ -206,3 +206,11 @@ The cited Annex I Part I point 3(f) is not a final OJ locator; attack-surface li
 ## 20. EUR-Lex source-pack size correction — 2026-11-17
 
 A re-addition of the individual source lengths from Canary #209 corrected the previously reported aggregate. The exact total is **636,040 visible-text characters**, not 245,502. The omitted item was the 2025/327 EHDS amendment source (394,354 characters). Individual lengths: CRA consolidated 196,076; corrigenda 7,583 / 8,318 / 8,179; 2025/327 amendment 394,354; 2025/1535 delegated act 6,246; 2026/881 delegated act 15,284. Earlier aggregate records remain in the append-only log as superseded measurements.
+
+## 21. Main archive #20–#21 correction — 2026-11-17
+
+Main snapshot through archive #21: `9cb81659db6e9283a34263ad9f4a7f5de32c72b1`, state count 21, history 2,414 entries. PR #8 synced the two new archive records into the integration branch; protected state/history/archive blobs were compared.
+
+- Archive #20 original blob: `ab5c4f1e4ac91e36d22734cb8da83c9c70cfe3e1`; correction: `reports/CRA_CORRECTION_REPORT_20_2026-11-17.md`. Article 14/16 reporting, Article 13(17) contact point, Annex I CVD and Article 14(8) user notification are distinct.
+- Archive #21 original blob: `e827b5396f655cb8d3fa4df3ee14a6e81d50ec09`; correction: `reports/CRA_CORRECTION_REPORT_21_2026-11-17.md`. Annex I Part I (2)(h) requires availability of essential and basic functions and DoS resilience/mitigation; it does not expressly require resource isolation or STO/SS1.
+- Original archive files remain unchanged. Correction reports #1–#21 now exist.
