@@ -12,7 +12,7 @@
 - 마지막 CRA 코드/출처 검증 병합: PR #26 merge `8066c166ba01fbfb8d25f61ce0ce6ed72f151854`. PR head Run #573 success: 138 passed / 1 xfailed, 9개 live official source 및 Article 13(8) locator/quote 확인. merge commit 자체의 별도 run은 미확인.
 - 마지막 관리 문서 동기화: PR #27 merge `5f0c54a018e18b3453b1c836a5a7d2e9a266331b`. Run #575 success: 138 passed / 1 xfailed 및 live source canary 재통과.
 - 정오표 우선순위 보강: PR #29 merge `9c16724b8b72bd09d3492b19ff714602b235c66b`. 최종 PR head Run #596: 141 passed / 1 xfailed, 9개 source, Article 64(10)/67 corrigenda 및 Article 13(8) live canary 통과.
-- 현재 기준선: `main` @ `975ec6728988e43d9a1ebbf6f6d84288aa44c2fd`; PR #30 병합 완료 및 post-merge safety ref readback 확인.
+- 현재 기준선: GitHub `main` 브랜치 (정확한 HEAD는 세션 시작 시 실시간 조회; 과거 SHA를 현재 HEAD로 고정 표기하지 않음). PR #31 병합 완료.
 - 프로젝트 상태: CRA 통합 보고서 v0.2 병합, 요구사항 추적표 35항목, 인터페이스 적용성 매트릭스 15항목 병합. 보안 통제·시험 매트릭스 36항목 초안 작업 중.
 - 주 문서 언어: 한국어
 - 안전 원칙: 법적 적합성·제품 분류·안전 관련 설계 판단은 근거와 인간 검토 없이 확정하지 않음
@@ -829,3 +829,11 @@
 - PR #30 범위: 한국어 CRA 감사 보고서, 관리 문서·로그 동기화, 격리 테스트 workflow push branch allowlist 1줄. 운영 애플리케이션 코드, 운영 `run.yml`, state/history/archive, Gemini/Discord 외부 실행 및 SIL 3 과거 산출물은 변경하지 않았다.
 - PDF text-layer 내용 감사는 완료했으나 원본 PDF 바이너리 SHA-256은 미완료. M/606 item 18 날짜는 미확인 상태 유지.
 - 현재 구현 작업 브랜치: 없음. PR #31은 문서 전용 사후 동기화이며, 병합 후 다음 구현 작업은 최신 main에서 새 브랜치로 시작한다.
+
+
+## 2026-11-17 — PR #31 사후 동기화 완료
+
+- PR #31 merge commit: `24312166b892127e845721793b1abfee4d91f9c2`.
+- [Actions Run #618](https://github.com/useformotor3/ai-discord-bot/actions/runs/44051283237): success, 141 passed / 1 xfailed; compileall, source blob identity, 9-source live canary 및 Article 13(8) locator/quote 통과.
+- Pre-merge ref `safety/pre-merge-main-pr31-2026-11-17` → `975ec6728988e43d9a1ebbf6f6d84288aa44c2fd`; post-merge ref `safety/post-merge-main-pr31-2026-11-17` → `24312166b892127e845721793b1abfee4d91f9c2`. post ref와 main compare identical 확인.
+- 현재 구현 작업 브랜치는 없음. 다음 구현은 세션 시작 시 최신 main을 다시 조회한 뒤 새 작업 브랜치에서 시작한다.
