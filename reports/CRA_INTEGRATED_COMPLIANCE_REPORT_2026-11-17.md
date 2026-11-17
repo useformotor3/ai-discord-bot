@@ -285,3 +285,14 @@ Commission Implementing Decision C(2026) 7861 final Annex는 M/606의 41개 표�
 
 ---
 작성 기준일: 2026-11-17. 본문에서 '가능성 높음', '잠정'으로 표시된 결론은 제품별 증거 확보 후 확정한다.
+
+
+## 11. Commission Guidance 및 M/606 표준화 근거 추적 — 2026-11-17 추가
+
+- [Commission Guidance claim register](CRA_GUIDANCE_CLAIM_REGISTER_2026-11-17.csv)에 G-001~G-013의 비구속적 Commission 설명을 등록했다. 각 claim은 문서 locator, PDF page, 관련 CRA requirement/interface/SEC control ID와 연결한다.
+- Guidance claim은 CRA 법령상 독립 의무가 아니다. 모든 CSV 열의 claim ID는 해석 근거의 추적 링크이며, 법적 요구사항을 새로 만들거나 적합성을 입증하지 않는다.
+- [인터페이스 적용성 매트릭스](CRA_SERVO_DRIVE_INTERFACE_APPLICABILITY_2026-11-17.csv)에 Guidance claim ID 및 M/606 Annex I의 조건부 후보 항목 열을 추가했다. IF-001~IF-013은 §2.5 data-connection 판단과 연결하고, IF-014는 §2.4 제품 경계, IF-015는 §8 RDPS 조건과 연결한다.
+- [요구사항 추적표](CRA_REQUIREMENTS_TRACEABILITY_2026-11-17.csv)에 §2.4/§2.5/§2.6/§4/§5/§6/§7/§8/§9의 관련 claim ID를 연결했다. CRA-027은 M/606 Annex I 항목 1–41 표준화 주제를 참조하되, 이는 OJ harmonised status나 presumption of conformity를 뜻하지 않는다.
+- [보안 통제·시험 매트릭스](CRA_SERVO_DRIVE_SECURITY_CONTROL_TEST_MATRIX_2026-11-17.csv)에 Guidance claim ID와 M/606 Annex I 후보 항목을 연결했다. 항목 25, 28–30, 36–41은 구성요소/제품 유형의 실제 포함 및 intended purpose 확인을 전제로 하는 조건부 관련성이다.
+- M/606 Annex I 표준화 주제는 표준 개발·채택 계획으로 관리한다. 드라이브에 관련 MCU/FPGA/네트워크 인터페이스/secure element가 들어간다는 이유만으로 드라이브 전체가 해당 수직 제품 유형에 자동 분류되지 않는다.
+- Guidance PDF와 M/606 PDF는 현재 PDF text-layer 기반으로 검토했으며, 원본 바이너리 SHA-256 및 item 18 날짜는 미확인 상태다. 해당 상태는 claim register의 Evidence status와 별도 감사 보고서에 유지한다.
