@@ -385,3 +385,5 @@ Separate correction reports now audit the latest main auto-archives #14–#17 wi
 The CRA feature was merged only into the isolated integration branch, not main. PR #5 synchronized main's latest auto-archive snapshot; PR #4 merged the feature. Protected blobs for state.json, history.json and archive #18 match main exactly. The merged integration tree passed CI (**117 passed, 1 xfailed**) and the EUR-Lex read-only canary (seven sources, 245,502 visible-text characters). PR #6 remains Draft; main has not been merged or modified.
 
 - [Correction #19](reports/CRA_CORRECTION_REPORT_19_2026-11-17.md): corrects CRA logging, update and availability locators and the non-verbatim account-audit quotation.
+
+- [Correction #13](reports/CRA_CORRECTION_REPORT_13_2026-11-17.md): corrects CVD, vulnerability-handling, Article 14 reporting and Important Class I/II classification claims.
