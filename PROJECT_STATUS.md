@@ -828,3 +828,10 @@
 - CVD는 Annex I Part II (5)/(6), 공개 시점/예외는 (4), actively exploited vulnerability 및 severe incident 신고는 Article 14로 분리.
 - correction report #13 생성: reports/CRA_CORRECTION_REPORT_13_2026-11-17.md.
 - correction reports #13–#19 완료. 다음은 archive #12 이하 역순 감사.
+
+## 2026-11-17 — archive #12 지원 기간/무상 업데이트 정정 감사
+- 원본 archive #12 SHA fa7f687ecab1297436e5ced26983f8e622a0a0d9 확인, 원본 보존.
+- Article 13(14)를 무상 업데이트 조항으로 인용한 오류 발견. 무상 보안 업데이트는 Annex I Part II (8), 기능 업데이트와 분리는 기술적으로 가능한 경우 Part II (2).
+- Article 13(8) 최소 지원 기간은 원칙적으로 5년(예상 사용기간이 더 짧으면 그 기간). Article 13(9)의 10년은 support period 자체가 아니라 각 security update의 availability 유지기간.
+- Article 13(19) 지원 종료일 표시/알림, tailor-made product의 무료 업데이트 합의 예외도 정정.
+- correction report #12 생성: reports/CRA_CORRECTION_REPORT_12_2026-11-17.md. correction reports #12–#19 완료.
