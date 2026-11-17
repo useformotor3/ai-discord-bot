@@ -1021,3 +1021,9 @@
 - CI: https://github.com/useformotor3/ai-discord-bot/actions/runs/43999017790
 - Canary: https://github.com/useformotor3/ai-discord-bot/actions/runs/43999023906
 - Live Gemini API 호출은 하지 않았으며 manual Free Tier gate는 유지.
+
+
+### Gemini canary 문서/로그 최신 head 재검증
+- head `d335612023398184c54b6b86e9c56e7668779a7c`: CI Run #266 **116 passed, 1 xfailed**.
+- Exact source SHA pin, compileall, full pytest 성공.
+- https://github.com/useformotor3/ai-discord-bot/actions/runs/43999131134
