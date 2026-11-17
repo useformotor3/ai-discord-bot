@@ -41,6 +41,8 @@ SIL 3 서보 드라이브를 비교할 때 제품군 전체를 하나의 “SIL 
 최신 통합판은 단순한 오탈자 정정이 아니다. 파라미터화, 시험 요구, 전자파 내성, 열 내성, 기계적 내성, 순차 작업표, 모션/위치 피드백 센서 및 저수요 모드 PFDavg 산정 부속서가 갱신됐다. 본 설계의 안전 엔코더, 파라미터 잠금/검증, EMC 시험 및 열/기계 환경 시험 계획은 2016판만 기준으로 고정하지 않는다.
 
 또한 개정판은 PDS(SR)에서 기존 “proof test” 용어/개념을 삭제하고 “safety function”보다 “safety sub-function”을 사용하도록 정비했다. 따라서 2022~2025년 제조사 문서의 “proof test interval” 문구를 그대로 최신 규격 요구로 취급하지 않는다. 제조사에 최신 인증서/기술문서의 개정판 적용 여부를 확인하고, diagnostic test interval과 maintenance interval은 최신 표준 및 해당 제품 매뉴얼에 맞춰 별도로 결정한다.
+이 삭제가 기계 수준의 모든 정기 점검을 없앤다는 뜻은 아니다. IEC 62061:2021+AMD1:2024+AMD2:2026의 periodic testing(Clause 6.9), 제조사 diagnostic interval, 안전 기능의 유지보수/유효성 확인 요구는 별도로 검토한다. PDS(SR) proof test와 기계 시스템의 periodic test/diagnostic test를 같은 용어로 혼합하지 않는다.
+
 
 ## 4. 제품별 벤치마킹
 
