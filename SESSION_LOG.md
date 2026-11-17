@@ -1321,7 +1321,7 @@
 - M/606 C(2026)7861 Annex: Commission document-register PDF, 151,267 bytes, 6 pages, raw SHA-256 `262b09596cb5cbe7d72a2c7789fb2512ee00db7f69082e7def2c8181b0f63276`; fallback used=false.
 - Extracted-text SHA-256 및 page count는 `reports/CRA_PDF_SOURCE_PROVENANCE_2026-11-17.json`에 기록.
 - Artifact ID `14313359693` ZIP를 다운로드했고, ZIP SHA-256 `150a687e4d4b13fdd20a432e99fc8ea9ec5bc847b8551dd3f157258dc41cd869`가 GitHub metadata와 일치함을 확인.
-- M/606 item18 password manager deadline은 원본 PDF printed page 2, PDF page index 2의 표 우측 셀에서 `31/01/2027`로 시각 확인.
+- M/606 item18 password manager deadline은 원본 PDF printed page 3, PDF page index 2의 표 우측 셀에서 `31/01/2027`로 시각 확인.
 - Run #642의 기존 CRA HTML source canary는 Commission summary page에 PDF document number `C(2026) 5252`를 요구해 실패했다. Summary page와 PDF Annex의 검증을 분리하도록 `cra_source.py`와 regression test를 수정했으며 재실행 대기.
 
 
