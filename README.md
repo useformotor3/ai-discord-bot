@@ -13,8 +13,8 @@
 ## 현재 상태 — 2026-11-17
 
 - **활성 범위: CRA 대응만.** SIL 3 자료는 역사적 산출물로 보존하며 별도 명시적 재개 지시 전 비활성.
-- 현재 작업 브랜치: `cra/official-annex-audit-2026-11-17` (기준 `main` @ `80245d9e132380a10581612c031f87869993b98d`; 공식 Guidance/M/606 Annex 감사 및 추적성 반영)
-- 최신 main 문서 HEAD: `80245d9e132380a10581612c031f87869993b98d` (PR #29 merge 이후 문서 전용 3개 커밋); 최신 CRA source 기준점: PR #29 merge commit `9c16724b8b72bd09d3492b19ff714602b235c66b`; PR #28 recovery checkpoint `942e1e6b5f2887001279a96c21f94138d283a689`; 관리 문서 PR #27 `5f0c54a018e18b3453b1c836a5a7d2e9a266331b`; source pipeline PR #26 `8066c166ba01fbfb8d25f61ce0ce6ed72f151854`
+- 현재 작업 브랜치: `docs/pr30-postmerge-status-sync-2026-11-17` (PR #30 병합 후 상황판 동기화 중; 기준 main @ `975ec6728988e43d9a1ebbf6f6d84288aa44c2fd`)
+- 최신 main HEAD: `975ec6728988e43d9a1ebbf6f6d84288aa44c2fd` (PR #30 merge); 최신 CRA source 기준점: PR #29 merge commit `9c16724b8b72bd09d3492b19ff714602b235c66b`; PR #28 recovery checkpoint `942e1e6b5f2887001279a96c21f94138d283a689`; 관리 문서 PR #27 `5f0c54a018e18b3453b1c836a5a7d2e9a266331b`; source pipeline PR #26 `8066c166ba01fbfb8d25f61ce0ce6ed72f151854`
 - 최신 CRA source provenance 통합: [PR #26](https://github.com/useformotor3/ai-discord-bot/pull/26) 병합 완료; 공식 CELLAR 7개 법령 자료 + Commission 공식 페이지 2개 수집, claim-level validator 및 source manifest 반영
 - 정오표 우선순위 보강: [PR #29](https://github.com/useformotor3/ai-discord-bot/pull/29) 병합 완료; Article 64(10)/67의 영어 corrigenda를 prompt excerpt에서 적용/확인하고 raw text hash와 corrected excerpt hash를 분리
 - [CRA 공식 출처 수집·주장 추적 파이프라인 보고서](reports/CRA_SOURCE_PROVENANCE_PIPELINE_2026-11-17.md): Run #573, 138 passed / 1 xfailed, live 9-source canary 및 Article 13(8) quote 확인
@@ -420,3 +420,11 @@
 - [Commission Guidance C(2026) 5252 및 M/606 C(2026) 7861 Annex 감사](reports/CRA_OFFICIAL_GUIDANCE_AND_M606_ANNEX_AUDIT_2026-11-17.md): PDF text layer의 주요 조항·페이지 locator 및 Annex I 41개 표준 주제/기한 1차 확인.
 - 원본 PDF 바이너리 다운로드 및 SHA-256은 아직 미확인이다. PDF 텍스트 내용 감사와 바이너리 무결성 검증을 구분한다.
 - 현재 작업 브랜치: `cra/official-annex-audit-2026-11-17`; 운영 `main.py`, workflow, state/history/archive, 운영 Gemini/Discord 실행은 변경하지 않았다.
+
+
+## PR #30 병합 및 검증
+
+- [PR #30 CRA Guidance/M/606 Annex 감사](https://github.com/useformotor3/ai-discord-bot/pull/30) 병합 완료. Merge commit: `975ec6728988e43d9a1ebbf6f6d84288aa44c2fd`.
+- [Actions Run #610](https://github.com/useformotor3/ai-discord-bot/actions/runs/44050954456): **141 passed, 1 xfailed**, compileall, exact source blob identity, 9개 official source live canary 및 Article 13(8) locator/quote 통과.
+- 복구 기준점: `safety/pre-merge-main-pr30-2026-11-17` → `80245d9e132380a10581612c031f87869993b98d`; `safety/post-merge-main-pr30-2026-11-17` → `975ec6728988e43d9a1ebbf6f6d84288aa44c2fd`. main과 post-merge ref는 compare 결과 identical.
+- 원본 Guidance/M/606 PDF 바이너리 SHA-256과 M/606 item 18 날짜는 미확인으로 남긴다.
