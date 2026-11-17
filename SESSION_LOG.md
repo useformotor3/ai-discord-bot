@@ -881,3 +881,36 @@
 - 디지털 서명은 보안 무결성 구현 수단, STO 연계 설치는 제품별 안전 검증 권고로 분리.
 - 원본 archive는 보존하고 정정 문서를 별도 작성.
 - 상세: `reports/CRA_CORRECTION_REPORT_1_2026-11-17.md`.
+
+
+## 2026-11-17 — CRA 공식 원문 출처검증 gate 구현 및 재검증
+
+### 배경 및 원인
+- 2026-11-17 생성된 CRA 보고서 4건을 공식 EUR-Lex 원문과 대조한 결과, 법령 조항 오인, 원문 인용 불일치, 의무/권고 혼동이 확인됐다.
+- 기존 생성기는 client.models.generate_content 일반 텍스트 생성만 사용했고, validator는 길이·필수 섹션·오류 문구만 검사했다. 출처 URL·조항·직접 인용의 사실 대조가 없었다.
+- Gemini 3 계열 Google Search Grounding은 Free tier에서 제공되지 않는 현재 요금표 조건을 확인해 무료 운영 경로로 선택하지 않았다.
+
+### 변경 및 안전 경계
+- 기준 main SHA: 0dde26ebac80a789c7a9d9e26560abad54606d32.
+- 복구 브랜치: safety/pre-cra-source-grounding-2026-11-17.
+- 작업 브랜치: feature/cra-source-grounding-atomic-2026-11-17.
+- Draft PR #3: https://github.com/useformotor3/ai-discord-bot/pull/3.
+- cra_source.py: EUR-Lex 공식 HTTPS HTML endpoint 직접 조회, 최종 호스트 검사, 최소 본문 길이, 통합본/정오표 날짜 검사, whitespace 정규화.
+- main.py: 공식 원문 수집 성공 후 Gemini 실행, URL/버전/Article/Annex/50자 이상 인용문 원문 대조, 실패 시 후속 처리 중단, 초안/미검증 상태 표시.
+- 테스트 fixture: EUR-Lex HTTP, Gemini, Discord, Git을 mock. 원문 503, 비공식 redirect, corrigenda 누락, 직접 인용 불일치 차단 테스트 추가.
+- 운영 main, .github/workflows/run.yml, 운영 state/history/archive 미변경. 실제 Gemini/Discord 호출 및 운영 workflow 실행 없음.
+
+### 검증
+- 최초 CI Run #79: 97 passed, 5 failed, 1 xfailed. 테스트 간 requests 모듈 캐시로 source mock이 현재 테스트 호출을 포착하지 못하는 문제를 확인.
+- HTTP 의존성을 호출 시점 import로 변경하고 fixture 기대 키를 갱신.
+- CI Run #83: 102 passed, 1 xfailed.
+- corrigenda C1/C2/C3 인덱스 날짜 검사 및 source version 메타데이터를 추가.
+- CI Run #89: 103 passed, 1 xfailed; blob SHA 확인·compileall·전체 pytest 모두 통과.
+- Run #89 로그: https://github.com/useformotor3/ai-discord-bot/actions/runs/43985975373.
+
+### 제한 및 다음 단계
+- 통합본은 문서화 도구이며 관보 정본/정오표의 법적 효력을 대체하지 않는다.
+- provenance gate는 최소 출처 추적성 및 직접 인용 대조일 뿐, 모든 주장·해석·제품 분류·적합성 결론을 검증하지 않는다.
+- 실제 EUR-Lex endpoint canary, 실제 Gemini/Discord, 운영 실행은 미수행.
+- 다음은 비운영 canary로 endpoint와 응답 구조를 확인하고, 주장별 조항·인용 연결 검증을 강화한다.
+- 상세: reports/CRA_SOURCE_PROVENANCE_GATE_2026-11-17.md.

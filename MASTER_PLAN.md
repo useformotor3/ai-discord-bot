@@ -377,3 +377,30 @@
 - [완료] CI Run #59: 99 passed, 1 xfailed.
 - [대기] 다음 운영 실행에서 KST 날짜·일일 count, 실제 Gemini 모델 ID 성공, Git push와 operational_guard의 정상 완료 확인.
 - [대기] Discord 전송 이후 Git 저장 실패 시 재전송 중복 방지/outbox 설계.
+
+
+## 2026-11-17 — CRA 자동 출처검증 gate (Phase 1/2 연결 단계)
+### 목적
+- 형식 검사만으로 사실 정확성을 추정하지 않는다.
+- 보고서 생성 전에 EUR-Lex 공식 CRA 통합본을 직접 확보하고, 원문·버전·조항·인용의 최소 추적성을 확보한다.
+
+### 구현 완료 기준
+- 공식 EUR-Lex HTTPS URL 직접 조회 및 최종 호스트 확인.
+- 통합본 버전 및 알려진 정오표 C1/C2/C3 날짜 확인.
+- 원문 확보 실패 또는 corrigenda index 누락 시 fail-closed.
+- 보고서에 정확한 공식 URL/버전, Article/Annex locator, 50자 이상 원문 직접 인용을 요구하고 수집 원문과 대조.
+- 모든 보고서를 법률 해석·제품 적용성 미검증 초안으로 명시.
+- 실제 Gemini/Discord 없이 전체 mock suite와 blob SHA/compileall CI 통과.
+
+### 완료 상태 및 경계
+- 작업 브랜치: feature/cra-source-grounding-atomic-2026-11-17, Draft PR #3.
+- CI Run #89: 103 passed, 1 xfailed.
+- 이 gate는 하나 이상의 직접 인용이 원문에 존재하는지 확인하는 provenance gate다. 본문 모든 문장에 대한 논리적 함의 검증, 규정 해석, 제품 분류, 법적 적합성 결론은 제공하지 않는다.
+- EUR-Lex consolidated text 자체는 documentation tool이며, 공식 관보 정본과 corrigenda가 법적 효력의 기준이다.
+- Google Search Grounding은 Gemini 3 계열 Free tier에서 제공되지 않는 현재 요금 조건 때문에 선택하지 않았다. EUR-Lex 직접 조회는 Gemini 검색 Grounding 과금과 분리된다.
+
+### 후속 우선순위
+1. 운영과 분리된 canary에서 EUR-Lex HTML endpoint 접근성·응답 길이·정오표 날짜 확인.
+2. Article/Annex/point별 claim-to-quote 매핑으로 검증 단위를 확대.
+3. 원문 버전·해시 변화 및 corrigenda 추가 시 경보/차단.
+4. 검증 실패·불확실 보고서는 게시하지 않고 검토 큐에 남기는 구조를 설계.

@@ -6,11 +6,21 @@
 
 ## 현재 상태
 
-- 현재 작업 브랜치: `feature/p1-b2-atomic-persistence-2026-11-16` (P1-B2 전용 구현 브랜치)
+### 2026-11-17 최신 CRA 자동화 품질개선
+- 최근 보고서 4건의 법령 인용 오류를 EUR-Lex 원문과 대조해 정정 기록으로 보존했다.
+- 원인 개선: 기존 생성기는 Gemini 일반 텍스트 생성과 형식 검사만 사용했으며, 법령 원문 URL·조항·직접 인용의 사실 대조가 없었다.
+- 새 작업 브랜치 **feature/cra-source-grounding-atomic-2026-11-17**에서 EUR-Lex CRA 통합본을 직접 수집하고, 알려진 정오표 날짜(C1/C2/C3), 공식 도메인, Article/Annex 표기, 50자 이상 직접 인용을 최소 검증한다.
+- 원문 수집/정오표 인덱스/인용 대조 실패 시 Gemini 호출과 후속 Discord·Git 저장을 fail-closed한다.
+- 보고서에는 “원문 인용 대조 통과 / 법률 해석·제품 적용성 미검증” 초안 상태를 표시한다.
+- Google Search Grounding은 Gemini 3 계열 무료 등급에서 제공되지 않는 요금표 조건 때문에 사용하지 않고, EUR-Lex 직접 조회를 선택했다.
+- Draft PR #3: https://github.com/useformotor3/ai-discord-bot/pull/3 (아직 main 미병합).
+- 상세 설계·제한·검증: [CRA 공식 원문 출처검증 gate 설계 및 구현 기록](reports/CRA_SOURCE_PROVENANCE_GATE_2026-11-17.md).
+
+- 현재 CRA 품질개선 브랜치: **feature/cra-source-grounding-atomic-2026-11-17** (공식 원문 출처검증 gate; Draft PR #3)
 - 운영 기준 브랜치: `main` — 별도 승인 없이 수정·병합하지 않습니다.
 - P0 응답 검증/실패 차단, P1-A 상태·이력 검증, P1-B1 Discord 전송 신뢰성: 작업 브랜치 구현 완료
 - **P1-B2 로컬 다중 파일 저장 일관성: 사용자 승인 후 구현 및 테스트 CI 검증 완료**
-- **최신 테스트 전용 CI (Actions 43851438733): 70 passed, 1 xfailed; source SHA·compileall·전체 pytest 통과**
+- **CRA 출처검증 CI (Actions 43985975373): 103 passed, 1 xfailed; source SHA·compileall·전체 pytest 통과**
 - P1-B2는 durable journal, staged payload, backup/SHA 검증, idempotent roll-forward recovery, snapshot 충돌 방지 및 허용 target allowlist 적용
 - P1-B3 Git sync 상태화는 미구현(기존 strict xfail), P1-B4 import-time 구조 개선도 미구현
 - Discord exactly-once/outbox는 P1-B2 범위 밖이며 보장하지 않음

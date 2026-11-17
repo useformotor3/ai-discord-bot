@@ -101,3 +101,12 @@ python -m pytest -q
 
 - persistence recovery target은 `state.json`, `history.json`, `research_archive/*.md`만 허용한다. README, 코드, workflow, .git 등 저장소 내 임의 경로를 지정하는 manifest는 fail-closed 한다.
 - 테스트 전용 workflow는 pull_request→main 및 main push에도 실행되도록 구성했다. 외부 API/secrets 없이 mock 테스트만 수행한다.
+
+
+## CRA 공식 원문 출처검증 gate
+- cra_source.py는 EUR-Lex CRA consolidated HTML을 직접 가져온다. HTTPS/최종 host, 최소 본문 길이, known corrigenda date(5.12.2024 / 2.7.2025 / 17.10.2025)를 확인한다.
+- main.py는 원문 수집 성공 후에만 Gemini를 호출한다. 보고서 공식 URL·source version·Article/Annex locator·50자 이상 direct quote를 source text와 대조한다.
+- 원문 HTTP 오류, 비공식 redirect, corrigenda 누락, quote mismatch는 fail-closed한다.
+- 테스트에는 source retrieval mock을 사용하며 실제 EUR-Lex/Gemini/Discord/Git은 호출하지 않는다.
+- CI Run #89: 103 passed, 1 xfailed; exact source blob SHA, compileall, full pytest success.
+- 이 검증은 최소 provenance gate이며 모든 법률 해석·제품 적용성·적합성 판단을 보증하지 않는다.

@@ -3,7 +3,7 @@
 - 최종 갱신: 2026-11-17 (KST)
 - 기준 저장소: `useformotor3/ai-discord-bot`
 - 운영 기준 브랜치: `main` (운영 자동화 및 데이터 보존)
-- 현재 작업 브랜치: `feature/p1-b2-atomic-persistence-2026-11-16` (P1-B2 구현 전용)
+- 현재 CRA 품질개선 브랜치: `feature/cra-source-grounding-atomic-2026-11-17` (Draft PR #3; main 미병합)
 - 이번 비교 기준: main과 diverged 상태. ahead/behind 수치는 main 자동화 커밋에 따라 변동하므로 통합 직전에 재조회
 - 프로젝트 상태: 조사 품질 감사 및 자동화 신뢰성 개선 진행 중
 - 주 문서 언어: 한국어
@@ -644,3 +644,19 @@
 - 실시간 제어 중단 없는 설치 또는 STO 상태 설치도 법령의 보편적 설치 절차가 아니라 제품 위험분석·기능안전 영향평가 항목.
 - Annex I Part I(제품 속성)와 Part II(취약점 처리) 구조를 구분.
 - 상세: `reports/CRA_CORRECTION_REPORT_1_2026-11-17.md`.
+
+
+## 2026-11-17 — CRA 공식 원문 출처검증 gate 구현 및 CI
+- 상태: 구현 완료, 전체 mock CI 통과, Draft PR #3 검토 대기. 운영 main과 .github/workflows/run.yml은 미변경.
+- 기준 main SHA: 0dde26ebac80a789c7a9d9e26560abad54606d32.
+- 복구 기준: safety/pre-cra-source-grounding-2026-11-17 (기준 main SHA에서 생성).
+- 작업 브랜치: feature/cra-source-grounding-atomic-2026-11-17; PR #3 head 당시 93d84be849838fb75766e6be9466c9ae1d1b2625.
+- 변경 파일: cra_source.py, main.py, tests/conftest.py, tests/test_main_characterization.py, tests/test_mock_infrastructure.py, .github/workflows/tests.yml.
+- 기능: EUR-Lex 공식 도메인 직접 조회, HTTPS/최종 호스트 검사, 법령 통합본 버전 및 알려진 corrigenda 3개 날짜 확인, Article/Annex 존재 확인, 50자 이상 직접 인용의 원문 포함 여부 확인.
+- 실패 처리: 원문 HTTP 오류, 비공식 redirect, 알려진 corrigenda 누락, 출처 URL/버전 누락, 조항 locator 누락, 직접 인용 불일치 시 보고서 생성 및 외부 후속처리 중단.
+- CI Run #89: 103 passed, 1 xfailed. 정확한 source blob SHA, compileall, 전체 pytest 통과.
+- 이전 CI Run #79: 97 passed, 5 failed, 1 xfailed. 원인은 테스트 간 requests mock 모듈 재사용. 호출 시점 import로 수정하고 Run #83/#89에서 통과.
+- 한계: 최소 출처/인용 대조이며 모든 법적 주장, 번역, 해석, 제품 적용성, 적합성 평가를 증명하지 않는다. EUR-Lex 통합본은 문서화 도구이며 법적 효력은 관보의 정본 및 정오표에 있다.
+- 미수행: 실제 EUR-Lex 운영 네트워크 canary, 실제 Gemini/Discord 호출, 운영 workflow 실행, main 병합.
+- 다음 단계: 공식 원문 네트워크 canary를 별도 비운영 환경에서 검증하고, 법적 주장의 조항별 다중 인용 대조 및 원문 변경 감지 테스트를 보강한다.
+- 상세: reports/CRA_SOURCE_PROVENANCE_GATE_2026-11-17.md.
