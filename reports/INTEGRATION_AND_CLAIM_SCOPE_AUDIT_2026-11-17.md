@@ -172,3 +172,9 @@ The source quotation for Annex I Part I (2)(d)/(e) is accurate. The overclaim is
 Original archive #10 blob: `1457bf4c03af61e5c6d9e5ca22397d0dc7c37401`. Correction report: `reports/CRA_CORRECTION_REPORT_10_2026-11-17.md`.
 
 The raw quote combined Article 13(8) support period and Annex I Part II (8) free security update delivery and was not verbatim OJ text. Article 13(9) separately governs continued availability of each security update; Part II (5) is CVD policy. Original archive remains unchanged.
+
+## 15. Main archive #9 correction — 2026-11-17
+
+Original archive #9 blob: `98e58f3a89ad7c9b2c8e30cea04f11fabb7d725f`. Correction report: `reports/CRA_CORRECTION_REPORT_9_2026-11-17.md`.
+
+The Annex I Part II (1) quote is substantially accurate. The legal minimum is a commonly used machine-readable SBOM covering at least top-level dependencies; no specific SPDX/CycloneDX format or universal transitive-dependency inclusion is mandated by that point. Remediation without delay (Part II (2)) and fixed-vulnerability disclosure timing/exception (Part II (4)) are separate. Original archive remains unchanged.
