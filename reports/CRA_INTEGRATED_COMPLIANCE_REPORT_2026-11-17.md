@@ -316,3 +316,6 @@ Commission Implementing Decision C(2026) 7861 final Annex는 M/606의 41개 표�
 - [CRA 제품 경계 및 증거 수집 기준서](CRA_PRODUCT_BOUNDARY_AND_EVIDENCE_INTAKE_2026-11-17.md)를 제품별 사실관계 입력 기준으로 추가했다.
 - 현재 저장소의 Guidance·M/606 매핑은 일반 서보 드라이브 평가 프레임워크다. 정확한 제조사·모델·사용설명서·데이터시트·BOM/SBOM·네트워크 구성·원격 처리 구조가 확보되지 않았으므로 특정 제품의 CRA 적용성, Annex III/IV 분류, RDPS 여부 또는 최종 적합성을 확정하지 않는다.
 - 제품별 증거가 제공되면 제품 경계부터 확정하고, 각 CRA requirement / interface / SEC control / M/606 candidate에 evidence ID와 원문 locator를 연결한다.
+
+
+- [통합 CRA 보고서 독립 검토 기록](CRA_INTEGRATED_REPORT_INDEPENDENT_AUDIT_2026-11-17.md): 보고서 구조, 분류 용어, 공식 근거의 한계 및 후속 2차 검토 항목.
