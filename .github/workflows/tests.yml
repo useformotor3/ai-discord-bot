@@ -79,7 +79,7 @@ jobs:
             test "$actual" = "$expected"
           }
           verify_blob "main.py" "16393261529c36f2f0ec914e38002e6795ed9c71"
-          verify_blob "cra_source.py" "f3290d9ff1c5e3ac1692feea5250705085d21f75"
+          verify_blob "cra_source.py" "ae195b55813028dd8352255c90526ab638ed6b3e"
           verify_blob "cra_claims.py" "74bbd6a5541f238213831ec2e06496745eebc1f0"
           verify_blob "persistence.py" "953e2a52b7e6d6e619a4f43766e52d6835df50c8"
           verify_blob "tests/test_p1_b2_atomic_persistence.py" "f78d36164b5ac0d5d5eebe0c5eb5c1214c4e0671"
