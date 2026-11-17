@@ -103,17 +103,36 @@ def test_rejects_claim_not_referenced_in_body_and_unknown_reference():
 
 
 def test_nonlegal_recommendation_must_be_explicitly_classified_and_explained():
-    claim = {
+    legal_claim = {
         "claim_id": "C-001",
+        "category": "legal_requirement",
+        "statement": "제조자는 지원 기간 동안 취약점을 효과적으로 처리해야 한다.",
+        "source_id": SOURCE_ID,
+        "locator": "Article 13(8)",
+        "quote": QUOTE,
+    }
+    recommendation = {
+        "claim_id": "C-002",
         "category": "engineering_recommendation",
         "statement": "보안 업데이트의 서명 검증을 구현한다.",
         "basis": "제품 위협 모델과 업데이트 무결성 위험을 낮추기 위한 엔지니어링 권고이며 CRA가 특정 알고리즘을 지정한 것은 아니다.",
     }
-    valid, reason = validate_claim_evidence(make_report(claim), SOURCE)
+
+    def report_for_claims():
+        payload = json.dumps(
+            {"claims": [legal_claim, recommendation]}, ensure_ascii=False
+        )
+        return (
+            "본문 [C-001] [C-002]\nCLAIM_EVIDENCE_JSON\n```json\n"
+            + payload
+            + "\n```"
+        )
+
+    valid, reason = validate_claim_evidence(report_for_claims(), SOURCE)
     assert valid, reason
 
-    claim["basis"] = "짧음"
-    valid, reason = validate_claim_evidence(make_report(claim), SOURCE)
+    recommendation["basis"] = "짧음"
+    valid, reason = validate_claim_evidence(report_for_claims(), SOURCE)
     assert not valid
     assert "근거 설명" in reason
 
