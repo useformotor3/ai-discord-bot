@@ -99,3 +99,20 @@ jobs:
 
       - name: Run complete repository test suite
         run: python -m pytest -q
+
+      - name: Live official CRA source read-only canary
+        shell: bash
+        run: |
+          python - <<'PY'
+          from cra_source import SourceUnavailableError, fetch_official_cra_source
+
+          try:
+              source = fetch_official_cra_source()
+          except SourceUnavailableError as exc:
+              print(f"SKIPPED: temporary official source outage: {exc}")
+              raise SystemExit(0)
+
+          print(f"PASS: fetched {len(source['sources'])} allowlisted official sources")
+          for item in source["sources"]:
+              print(f"- {item['id']}: {item['visible_text_chars']} visible chars; excerpt SHA-256={item['prompt_excerpt_sha256']}")
+          PY
