@@ -878,3 +878,9 @@
 - Annex I Part I point 3(f)는 final OJ locator가 아니다. 공격 표면 제한은 point (2)(j); secure-default는 (2)(b), access control은 (2)(d).
 - Recital 46로 인용한 ports/debug disable 문구는 final OJ와 일치하지 않음. Recital 9는 물리/논리 인터페이스의 연결 가능성을 설명하지만 JTAG/SWD/UART 영구 disable/eFuse 의무를 규정하지 않는다.
 - correction report #5 생성: reports/CRA_CORRECTION_REPORT_5_2026-11-17.md. correction reports #5–#19 완료.
+
+## 2026-11-17 — EUR-Lex source-pack character count 재검증
+- Canary #209 원문 로그에서 7개 source의 visible-text 길이를 각각 다시 취합했다. 정확한 합계는 **636,040자**다.
+- 이전 기록 245,502자는 2025/327 EHDS amendment 394,354자 source를 합계에 포함하지 않은 계산 오류였다. 과거 로그를 지우지 않고 본 정정 기록을 추가한다.
+- 개별 source: CRA 통합본 196,076; 2024-12-05 정오표 7,583; 2025-07-02 정오표 8,318; 2025-10-17 정오표 8,179; 2025/327 amendment 394,354; 2025/1535 delegated act 6,246; 2026/881 delegated act 15,284.
+- CI #441: 117 passed, 1 xfailed. EUR-Lex Canary #209: success.
