@@ -270,3 +270,13 @@ def test_official_source_redirect_to_unapproved_host_is_rejected():
                 "allowed_hosts": ("publications.europa.eu",),
             },
         )
+
+
+
+def test_required_source_markers_match_across_formex_line_breaks():
+    text = "On page 66, in Article 67:\nfor:\n‘69.\nRegulation (EU) 2024/2847’\nread:\n‘72.\nRegulation (EU) 2024/2847’"
+
+    assert cra_source._missing_required_markers(
+        text,
+        ["Article 67", "69. Regulation", "72. Regulation"],
+    ) == []
