@@ -163,3 +163,32 @@ EUR-Lex 통합본은 documentation tool이며 법적 효력은 Official Journal(
 ### 문서 동기화 head 최종 CI
 - 문서 및 테스트 가이드 동기화 head `7c9360ad6c4e833e0037e3fbc0756d736a15efd2`에서 CI Run #206: **112 passed, 1 xfailed**.
 - https://github.com/useformotor3/ai-discord-bot/actions/runs/43998309434
+
+
+## 2026-11-17 — Gemini JSON compatibility canary 및 비용/데이터 경계
+
+### 공식 정책 확인
+- Google Gemini API 가격표는 `gemini-3.8-flash` Standard Free Tier의 입력/출력 토큰을 무료로 표시한다. 다만 Free Tier의 콘텐츠는 Google 제품 개선에 사용될 수 있다고 명시한다.
+- 같은 가격표에서 Gemini 3.8 Flash의 Google Search Grounding은 Free Tier에서 제공되지 않는다. 따라서 이 프로젝트는 유료 grounding을 호출하지 않고 EUR-Lex 공식 HTML 직접 수집을 유지한다.
+- Free Tier rate limit은 모델/프로젝트별로 달라지고 AI Studio에서 현재 quota를 확인해야 한다. 계정/프로젝트의 실제 billing tier는 이 저장소에서 확인할 수 없다.
+- Google API reference는 REST `generateContent`에 `x-goog-api-key` 헤더 사용을 명시한다. Google은 2026년 6월 이후 신규 개발에 Interactions API를 권장하고 `generateContent`를 legacy로 분류하므로, 현재 운영 코드를 바꾸기 전에 별도 migration 평가가 필요하다.
+
+공식 자료:
+- Pricing: https://ai.google.dev/gemini-api/docs/pricing/
+- Rate limits: https://ai.google.dev/gemini-api/docs/rate-limits
+- API reference/authentication: https://ai.google.dev/api
+- GenerateContent: https://ai.google.dev/api/generate-content
+
+### 구현
+- `scripts/cra_gemini_canary.py`: `gemini-3.8-flash`에 단 한 번의 제한된 REST 요청을 보내고 JSON claim shape 및 synthetic quote 일치를 확인한다.
+- 입력은 코드에 고정된 공개 합성 문장뿐이다. CRA 법령 원문, 보고서, 저장소 파일, Discord 정보, 운영 상태는 전송하지 않는다.
+- Google Search grounding/tools는 요청에 포함하지 않는다. API key는 URL이 아닌 `x-goog-api-key` header로 전달하며 로그에 출력하지 않는다.
+- `.github/workflows/cra-gemini-canary.yml`은 `workflow_dispatch` 전용이며 `confirm_free_tier` boolean 기본값은 false다. 확인을 명시하지 않으면 API 호출 job은 실행되지 않는다.
+- workflow dispatch 시에도 GitHub Secret `GEMINI_API_KEY`가 필요하다. 사용자가 실제 프로젝트가 Free Tier인지, 유료 결제가 활성화되어 있지 않은지 확인한 경우에만 수동 실행한다.
+- `tests/test_cra_gemini_canary.py`는 mock opener를 사용해 성공/오류 경로를 검증하며 실제 Gemini API를 호출하지 않는다.
+
+### 안전 경계 / 상태
+- canary workflow는 자동 push/PR 트리거가 없고 아직 dispatch하지 않았다. 실제 Gemini API 호출은 0회.
+- Google 가격표상 무료 토큰은 확인되지만, 특정 사용자의 프로젝트 tier/billing 상태는 알 수 없으므로 무조건 무료라고 단정하지 않는다.
+- Free Tier 데이터는 제품 개선에 사용될 수 있으므로 실제 CRA 조사 자료나 개인정보/기밀을 canary에 넣지 않는다.
+- REST generateContent compatibility test는 현행 main.py 호출과의 호환성을 확인하는 임시 단계다. Interactions API migration은 별도 검토 과제로 남긴다.
