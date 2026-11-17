@@ -397,3 +397,5 @@ The CRA feature was merged only into the isolated integration branch, not main. 
 - [Correction #9](reports/CRA_CORRECTION_REPORT_9_2026-11-17.md): clarifies SBOM minimum top-level dependency coverage, format choice and remediation/disclosure timing.
 
 - [Correction #8](reports/CRA_CORRECTION_REPORT_8_2026-11-17.md): corrects SBOM technical-documentation, market-surveillance request and optional user-disclosure provisions.
+
+- [Correction #7](reports/CRA_CORRECTION_REPORT_7_2026-11-17.md): corrects the nonexistent CRA locator and separates risk-based access control from specific password implementation choices.
