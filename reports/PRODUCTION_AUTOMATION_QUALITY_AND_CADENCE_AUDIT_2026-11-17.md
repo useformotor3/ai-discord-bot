@@ -22,12 +22,12 @@
 ### 별도 PR — 실행 cadence 개선 (현재 작업 브랜치)
 - 브랜치: `fix/production-cadence-2026-11-17`
 - 외부 5분 간격 repository_dispatch를 운영 workflow trigger에서 제거.
-- 내부 GitHub Actions schedule을 매시간 정각 UTC(한국시간 매시간 정각)으로 전환하고 workflow_dispatch는 유지.
+- 내부 GitHub Actions schedule을 매 3시간 UTC 정각(한국시간 매시간 정각)으로 전환하고 workflow_dispatch는 유지.
 - 운영 동시성 `cra-production-run`, `cancel-in-progress: false` 및 실행별 immutable pre-run checkpoint/operational guard/pruning을 유지.
 - 테스트 workflow가 run.yml 변경 PR에도 실행되도록 경로 필터를 보완하고 cadence 회귀 테스트를 추가.
 - main.py 조사 프롬프트에 공식 OJ 링크, 실제 확인한 원문만 직접 인용, 신규 주제 없으면 억지 생성 금지 규칙을 추가.
 
-외부 dispatcher의 설정 자체를 이 저장소에서 중단할 수는 없지만, workflow에서 해당 event를 더 이상 구독하지 않으므로 merge 후에는 5분 repository_dispatch가 운영 workflow를 실행하지 않는다. 내부 hourly schedule만 운영 실행을 시작한다.
+외부 dispatcher의 설정 자체를 이 저장소에서 중단할 수는 없지만, workflow에서 해당 event를 더 이상 구독하지 않으므로 merge 후에는 5분 repository_dispatch가 운영 workflow를 실행하지 않는다. 내부 3-hourly schedule만 운영 실행을 시작한다.
 
 ## 3. 최근 보고서 #33–#38 법령 감사
 
@@ -61,7 +61,7 @@ EUR-Lex 최종 Official Journal 원문을 확인했다.
 - 기존 원본 아카이브 #33–#38, state.json, history.json은 변경하지 않았다.
 - PR #10 merge 전 최신 production run #44015895884는 success였고, archive #38 저장까지 확인했다.
 - PR #10 CI는 테스트 전용이다. Gemini/Discord 실 API를 호출하지 않았다.
-- cadence PR은 아직 main에 병합하지 않았다. PR CI 통과 및 main 최신화 후 병합하고, 첫 hourly run에서 checkpoint, guard, prune 및 state/history/archive 참조 무결성을 재확인한다.
+- cadence PR은 아직 main에 병합하지 않았다. PR CI 통과 및 main 최신화 후 병합하고, 첫 3-hourly run에서 checkpoint, guard, prune 및 state/history/archive 참조 무결성을 재확인한다.
 - hourly schedule이 운영 run 빈도를 낮추는 조치이며, 향후 필요하면 운영 데이터 추세를 근거로 조정한다.
 
 ## 5. 한계 및 다음 단계
@@ -70,3 +70,9 @@ EUR-Lex 최종 Official Journal 원문을 확인했다.
 - EUR-Lex URL 존재 여부는 출처 링크 유무만 확인한다. 인용문이 실제 원문과 일치하는지 자동 증명하지 않는다. 별도 원문 대조 및 정정 감사가 계속 필요하다.
 - cadence 변경 merge 후 첫 3회 hourly run을 관찰한다. 실패가 발생하면 run/job log와 단계별 원인을 확인하고, 반복 원인이면 수정 PR을 추가한다.
 - 다음 핵심 산출물: CRA 통합 한국어 보고서, 요구사항 추적표, SIL 3 서보 드라이브 벤치마킹 보고서, 하드웨어 블록 설계. CRA와 기능안전의 추적성은 분리 유지한다.
+
+## 6. Gemini Free Tier quota 장애 후속 — 2026-11-17
+
+운영 Run `44016487535`의 job log에서 primary model의 Free Tier daily request limit 20 초과(429 RESOURCE_EXHAUSTED), fallback model의 503 UNAVAILABLE, EUR-Lex 링크 누락을 확인했다. 기존 5분 dispatch가 이 상황에서 재시도와 workflow 실패를 반복시켰다.
+
+cadence PR은 내부 schedule을 3시간마다(8회/일)로 조정하고 모델별 최대 2회 시도로 제한한다. 이론상 모델별 16회/일로 20/day 제한보다 낮다. 429/503은 동일 모델 재시도 없이 fallback으로 이동하고, quota/일시 장애/품질 거부로 유효 보고서를 얻지 못하면 경고를 남기고 no-op 종료한다. 이 경우 Discord 전송·아카이브·state/history 변경은 없다. 인증/설정 등 복구가 필요한 미분류 오류는 실패 종료한다.
