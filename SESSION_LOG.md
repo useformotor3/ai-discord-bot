@@ -1448,3 +1448,10 @@
 - Guidance claim G-001~G-013 PDF paragraph/page locator 8건 정정 및 독립 audit record 추가.
 - Pre/post safety refs 생성, post ref와 main compare identical.
 - 다음은 CRA-001~CRA-035 법령 locator와 각 row의 법적 설명·적용 주체·조건·예외를 공식 EUR-Lex 원문과 행 단위로 교차 검토한다.
+
+
+## 2026-11-17 — SBOM 의무 원문 대조
+
+- EUR-Lex Annex I Part II(1), Annex II(9), Annex VII(2)(b), (8)을 대조.
+- 기계 판독형 SBOM(최소 top-level dependencies) 작성은 기본 의무, 기술문서 포함은 Annex VII(2)(b), 시장감시당국 요청에 따른 제출은 Annex VII(8), 사용자 제공은 Annex II(9) 조건부로 각각 분리.
+- 통합 보고서의 법적 해석 문구를 이 구분에 맞춰 보강.
