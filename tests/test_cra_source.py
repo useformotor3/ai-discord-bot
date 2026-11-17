@@ -78,7 +78,8 @@ def test_fetch_source_pack_checks_each_allowlisted_official_host(monkeypatch):
     assert len(source["sources"]) == 9
     assert "CRA-COMMISSION-GUIDANCE-2026-07-27" in source["text"]
     assert "CRA-M606-STANDARDISATION-2026-11-12" in source["text"]
-    assert all(len(item["sha256"]) == 64 for item in source["sources"])
+    assert all(len(item["full_text_sha256"]) == 64 for item in source["sources"])
+    assert all(len(item["prompt_excerpt_sha256"]) == 64 for item in source["sources"])
     assert all(item["retrieved_at"] == source["retrieved_at"] for item in source["sources"])
 
 
@@ -136,13 +137,16 @@ def test_source_manifest_is_appended_and_every_record_is_verifiable():
             "version": "test source version",
             "url": "https://eur-lex.europa.eu/test",
             "sha256": "abc123",
+            "full_text_sha256": "full-abc123",
+            "prompt_excerpt_sha256": "excerpt-abc123",
             "retrieved_at": "2026-11-17T00:00:00+00:00",
         }],
     }
     report = append_source_manifest("draft report", source)
     valid, reason = validate_source_manifest(report, source)
     assert valid, reason
-    assert "SHA-256: abc123" in report
+    assert "Visible-text SHA-256: full-abc123" in report
+    assert "Prompt-excerpt SHA-256: excerpt-abc123" in report
 
 
 
