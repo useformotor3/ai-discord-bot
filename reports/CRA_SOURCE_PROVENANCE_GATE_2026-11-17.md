@@ -158,3 +158,8 @@ EUR-Lex 통합본은 documentation tool이며 법적 효력은 Official Journal(
   https://github.com/useformotor3/ai-discord-bot/actions/runs/43998058856
 - CI는 mock 격리 테스트이며 실제 Gemini/Discord 호출은 포함하지 않는다. Canary는 EUR-Lex read-only GET만 수행한다.
 - 다음 미완료 게이트: 실제 Gemini 출력의 JSON 계약 호환성을 비운영 canary로 확인, Official Journal 정본/정오표와 통합본 대조, claim 본문 누락에 대한 사람 검토, 제품 적용성 평가.
+
+
+### 문서 동기화 head 최종 CI
+- 문서 및 테스트 가이드 동기화 head `7c9360ad6c4e833e0037e3fbc0756d736a15efd2`에서 CI Run #206: **112 passed, 1 xfailed**.
+- https://github.com/useformotor3/ai-discord-bot/actions/runs/43998309434
