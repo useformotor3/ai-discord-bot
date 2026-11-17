@@ -84,6 +84,13 @@ def test_fetch_source_pack_checks_each_allowlisted_official_host(monkeypatch):
     assert len(source["sources"]) == 9
     assert "CRA-COMMISSION-GUIDANCE-2026-07-27" in source["text"]
     assert "CRA-M606-STANDARDISATION-2026-11-12" in source["text"]
+    consolidated = next(item for item in source["sources"] if item["id"] == "CRA-2024-2847-consolidated")
+    assert "paragraphs 2 to 9" in consolidated["text"]
+    assert "paragraphs 3 to 9" not in consolidated["text"]
+    assert "72. Regulation (EU) 2024/2847" in consolidated["text"]
+    assert "69. Regulation (EU) 2024/2847" not in consolidated["text"]
+    assert "Applied official corrigenda to prompt excerpt" in source["text"]
+    assert len(consolidated["applied_corrigenda"]) == 2
     assert all(len(item["full_text_sha256"]) == 64 for item in source["sources"])
     assert all(len(item["prompt_excerpt_sha256"]) == 64 for item in source["sources"])
     assert all(item["retrieved_at"] == source["retrieved_at"] for item in source["sources"])
