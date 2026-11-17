@@ -296,3 +296,11 @@
 - Free Tier content may be used to improve Google's products. Confidential/sensitive data must not be sent through this tier.
 - API key는 GitHub Secret으로만 전달하고 `x-goog-api-key` header에 넣는다. URL, stdout, logs에 출력하지 않는다.
 - Google Gemini API pricing and rate limits are dynamic; check official docs before any live call.
+
+
+## 25. Gemini live canary 실행 제한
+- Gemini live canary는 합성 문장 한 건만 보낸다. 실제 CRA 법령, 보고서, 저장소 파일, 개인정보, 기밀 및 Discord 운영 정보를 포함하지 않는다.
+- 자동 push/PR 트리거는 금지한다. manual workflow의 `confirm_free_tier`는 false가 기본이다.
+- workflow가 default branch에 등록되기 전에는 수동 dispatch가 불가능하므로 main에 자동 복사/병합하지 않는다.
+- 계정/프로젝트의 실제 billing tier가 확인되지 않으면 live API를 호출하지 않는다.
+- Free Tier data-use notice 및 rate limits를 실행 전에 다시 확인한다.
