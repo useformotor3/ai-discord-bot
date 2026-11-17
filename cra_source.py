@@ -10,6 +10,15 @@ CRA_SOURCE_URL = "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX
 REQUIRED_CORRIGENDA_DATES = ("5.12.2024", "2.7.2025", "17.10.2025")
 SOURCE_TIMEOUT = (3.05, 20)
 
+
+class SourceUnavailableError(RuntimeError):
+    """Temporary network/service failure; caller should safely skip this run."""
+
+
+class SourceValidationError(RuntimeError):
+    """Unexpected host/content/version; caller must stop before model execution."""
+
+
 CRA_SOURCE_CATALOG = (
     {
         "id": "CRA-2024-2847-consolidated",
@@ -208,7 +217,7 @@ def _extract_relevant_excerpt(source_id, text):
         flags=re.IGNORECASE | re.DOTALL,
     )
     if not match:
-        raise RuntimeError("Regulation (EU) 2025/327에서 CRA 개정 Article 104를 추출하지 못했습니다.")
+        raise SourceValidationError("Regulation (EU) 2025/327에서 CRA 개정 Article 104를 추출하지 못했습니다.")
     excerpt = match.group(0)[:12000]
     if "26 March 2027" not in text:
         raise RuntimeError("Regulation (EU) 2025/327의 적용 개시일 26 March 2027을 확인하지 못했습니다.")
@@ -222,12 +231,27 @@ def fetch_official_cra_source():
     source_items = []
     retrieved_at = datetime.now(timezone.utc).isoformat()
     for definition in CRA_SOURCE_CATALOG:
-        response = requests.get(
-            definition["url"],
-            headers={"User-Agent": "CRA-Research-Bot/1.0 (+https://eur-lex.europa.eu/)"},
-            timeout=SOURCE_TIMEOUT,
-        )
-        response.raise_for_status()
+        try:
+            response = requests.get(
+                definition["url"],
+                headers={"User-Agent": "CRA-Research-Bot/1.0 (+https://eur-lex.europa.eu/)"},
+                timeout=SOURCE_TIMEOUT,
+            )
+        except requests.exceptions.RequestException as exc:
+            raise SourceUnavailableError(
+                f"공식 source 일시 접근 실패: {definition['id']} / {type(exc).__name__}"
+            ) from exc
+        try:
+            response.raise_for_status()
+        except requests.exceptions.HTTPError as exc:
+            status = getattr(getattr(exc, "response", None), "status_code", None)
+            if status == 429 or (isinstance(status, int) and status >= 500):
+                raise SourceUnavailableError(
+                    f"공식 source 일시 HTTP 오류: {definition['id']} / {status}"
+                ) from exc
+            raise SourceValidationError(
+                f"공식 source HTTP 오류: {definition['id']} / {status}"
+            ) from exc
         final_url = getattr(response, "url", definition["url"])
         parsed_url = urlparse(final_url)
         allowed_hosts = definition.get("allowed_hosts", ("eur-lex.europa.eu",))
