@@ -148,3 +148,13 @@ EUR-Lex 통합본은 documentation tool이며 법적 효력은 Official Journal(
 - 인용의 원문 일치도 법률 해석의 정확성, 제품 분류, 제품 적용성, CRA 적합성을 증명하지 않는다.
 - 실제 Gemini/Discord 및 운영 workflow는 호출하지 않는다. 실제 모델이 새 JSON 계약을 일관되게 출력하는지는 별도 격리 canary가 필요하다.
 - 작업 전 복구 기준: `safety/pre-claim-evidence-2026-11-17-d8870e3` (기준 SHA `d8870e32e16ba5ebd3a7670d12816324de3b485a`).
+
+
+### 최종 격리 검증 결과 — 2026-11-17
+- 최종 feature head: `b11f0dcb9bc8f41a0e82ac8062c75c1ca2d08143`.
+- Isolated CI Run #194: **112 passed, 1 xfailed**. 정확한 source blob SHA, compileall, 전체 pytest 모두 성공.
+  https://github.com/useformotor3/ai-discord-bot/actions/runs/43998058880
+- EUR-Lex read-only canary Run #53: **success**, 동일 feature head 기준.
+  https://github.com/useformotor3/ai-discord-bot/actions/runs/43998058856
+- CI는 mock 격리 테스트이며 실제 Gemini/Discord 호출은 포함하지 않는다. Canary는 EUR-Lex read-only GET만 수행한다.
+- 다음 미완료 게이트: 실제 Gemini 출력의 JSON 계약 호환성을 비운영 canary로 확인, Official Journal 정본/정오표와 통합본 대조, claim 본문 누락에 대한 사람 검토, 제품 적용성 평가.
