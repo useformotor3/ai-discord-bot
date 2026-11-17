@@ -316,7 +316,7 @@
 1. Main is the canonical operational branch. Current main HEAD, safety checkpoints and active work branch are recorded in PROJECT_STATUS.md.
 2. Never merge a divergent branch wholesale. Compare ahead/behind, merge-base, changed files, tests, workflows and state/history/archive effects before integration. Preserve parallel branches; no force-push or history rewrite.
 3. The historical `integration/cra-source-grounding-2026-11-17` branch remains a reference only. Its required source/claim features were selectively implemented and verified in PR #26; the branch itself was not wholesale merged.
-4. PR #26 is merged at `8066c166ba01fbfb8d25f61ce0ce6ed72f151854`. Pre/post merge checkpoints are `safety/pre-merge-main-pr26-2026-11-17` and `safety/post-merge-main-pr26-2026-11-17`; both refs were read back and SHA-verified.
+4. PR #26 is merged at `8066c166ba01fbfb8d25f61ce0ce6ed72f151854`; PR #27 project-record sync is merged at `5f0c54a018e18b3453b1c836a5a7d2e9a266331b`. Their pre/post merge safety refs are recorded in Sections 18.5 and were read back and SHA-verified.
 5. Preserve current main operational protections: 15-item history context, two model retries, quota/429/503 no-op behavior, duplicate-topic suppression, transactional persistence and rollback.
 6. Article paragraph and Annex Part/point claim locators must be tested against actual source structure. A quote from another paragraph/point in the same Article/Annex must fail.
 7. CRA legal source pack currently uses official Publications Office CELLAR retrieval for seven legal texts and two Commission official pages. Source-specific host allowlists, HTTPS-only redirects, source markers, full-text/prompt-excerpt hashes and retrieval timestamps are mandatory.
