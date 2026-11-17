@@ -65,3 +65,15 @@
 - 제품 경계/증거 수집 기준서 Section 13–15에 데이터 연결·RDPS·Annex III/IV·Machinery Regulation·신고 시한·전환일 및 우선 증거 제출 목록 추가.
 - 제품별 사실은 아직 입력되지 않았으므로 적용/등급/적합성은 Unknown 유지. P0 자료는 정확한 모델 데이터시트/카탈로그와 사용설명서.
 - 다음: 통합 보고서 독립 재검토, Commission Guidance PDF primary byte identity 재확인, 제품 자료가 도착하면 evidence IDs와 35-row requirements를 모델별 연결.
+
+
+## 통합 CRA 보고서 독립 재검토 — 2026-11-18
+- 저장소의 행동강령, 현재 상황판, 마스터 계획, 최근 세션 로그 및 프로젝트 로그를 확인하고 main 기준에서 재개했다.
+- EUR-Lex 공식 OJ HTML에서 CRA Articles 7, 8, 13(8)–(9), 14, 15, 69, 71 및 관련 Annex 문언을 열람해 통합 보고서의 핵심 법적 설명을 표본 대조했다.
+- 새 독립 감사 기록: `reports/CRA_INTEGRATED_REPORT_INDEPENDENT_AUDIT_2026-11-18.md`.
+- 감사 중 확인한 제품별 적용 가능성/기본 분류 문구의 과도한 확정 인상을 줄이기 위해 통합 보고서 요약을 수정했다. 전형적 디지털 서보 드라이브에 대한 사전 스크리닝 가설과 개별 모델의 법적 판정을 분리했다.
+- 제품 증거가 없는 상태는 그대로 유지: 제품별 scope/classification/conformity Unknown, interfaces 미확인, SEC controls 미작성/증거 미확인.
+- Guidance PDF Commission-primary byte identity 및 M/606 결정의 raw-byte 재취득은 이번 회차 완료로 주장하지 않는다.
+- 변경 브랜치: `cra/integrated-report-audit-2026-11-18`; 기준 main commit: `c7b939a0fdfa559f9d68a11873c107186da423c3`.
+- 운영 main.py, production workflow, secrets, state/history/archive, Gemini/Discord 운영 실행은 변경하지 않았다.
+- 다음: 관리 문서/프로젝트 로그 동기화, 동일 브랜치 readback, exact-head CI, PR 및 safety-ref/main 비교.
