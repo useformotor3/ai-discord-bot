@@ -56,14 +56,17 @@ def _next_section_boundary(lines, start, pattern):
 
 
 def _number_range(locator):
-    match = re.search(r"\((\d+)\)\s*(?:[-–]\s*\((\d+)\))?", str(locator or ""))
+    match = re.search(r"\((\d+[a-z]?)\)\s*(?:[-–]\s*\((\d+[a-z]?)\))?", str(locator or ""), re.IGNORECASE)
     if not match:
         return []
-    first = int(match.group(1))
-    last = int(match.group(2) or first)
-    if last < first or last - first > 30:
-        return []
-    return list(range(first, last + 1))
+    first = match.group(1).lower()
+    last = (match.group(2) or first).lower()
+    if first.isdigit() and last.isdigit():
+        first_num, last_num = int(first), int(last)
+        if last_num < first_num or last_num - first_num > 30:
+            return []
+        return [str(value) for value in range(first_num, last_num + 1)]
+    return [first] if first == last else [first, last]
 
 
 def _letter_range(locator):
@@ -78,7 +81,7 @@ def _letter_range(locator):
 
 
 def _paragraph_scope(lines, section_start, section_end, number):
-    marker = re.compile(rf"^\s*{number}\.\s*(.*)$")
+    marker = re.compile(rf"^\s*{re.escape(str(number))}\.\s*(.*)$")
     starts = [
         index for index in range(section_start, section_end)
         if marker.match(lines[index])
@@ -88,14 +91,14 @@ def _paragraph_scope(lines, section_start, section_end, number):
     start = starts[-1]
     end = section_end
     for index in range(start + 1, section_end):
-        if re.match(r"^\s*\d+\.\s*(?:.*)$", lines[index]):
+        if re.match(r"^\s*\d+[a-z]?\.\s*(?:.*)$", lines[index], re.IGNORECASE):
             end = index
             break
     return "\n".join(lines[start:end])
 
 
 def _parenthesized_scope(lines, section_start, section_end, number):
-    marker = re.compile(rf"^\s*\({number}\)\s*(.*)$", re.IGNORECASE)
+    marker = re.compile(rf"^\s*\({re.escape(str(number))}\)\s*(.*)$", re.IGNORECASE)
     starts = [
         index for index in range(section_start, section_end)
         if marker.match(lines[index])
@@ -197,6 +200,12 @@ def _annex_scope(locator, lines):
                 for n in paragraph_numbers
             ]
             scopes = [scope for scope in scopes if scope]
+            if not scopes:
+                scopes = [
+                    _paragraph_scope(lines, annex_start + 1, annex_end, n)
+                    for n in paragraph_numbers
+                ]
+                scopes = [scope for scope in scopes if scope]
             if scopes:
                 return "\n".join(scopes)
             continue
@@ -227,6 +236,12 @@ def _annex_scope(locator, lines):
                     for n in paragraph_numbers
                 ]
                 scopes = [scope for scope in scopes if scope]
+                if not scopes:
+                    scopes = [
+                        _paragraph_scope(lines, part_start + 1, part_end, n)
+                        for n in paragraph_numbers
+                    ]
+                    scopes = [scope for scope in scopes if scope]
                 if scopes:
                     return "\n".join(scopes)
             else:
