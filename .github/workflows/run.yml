@@ -24,6 +24,7 @@ jobs:
           persist-credentials: true
 
       - name: Create immutable pre-run data checkpoint
+        id: pre_run_checkpoint
         env:
           BASELINE_REF: safety/data-pre-run-${{ github.run_id }}-${{ github.run_attempt }}
         run: |
@@ -49,14 +50,16 @@ jobs:
           python main.py
 
       - name: Verify run and automatically restore invalid data
+        id: operational_guard
+        if: ${{ always() && steps.pre_run_checkpoint.outcome == 'success' }}
         env:
           BASELINE_REF: safety/data-pre-run-${{ github.run_id }}-${{ github.run_attempt }}
         run: |
           set -euo pipefail
           python scripts/operational_guard.py --baseline-ref "${BASELINE_REF}" --branch main --run-id "${GITHUB_RUN_ID}"
 
-      - name: Prune old successful pre-run checkpoints
-        if: ${{ success() }}
+      - name: Prune old pre-run checkpoints after successful guard
+        if: ${{ always() && steps.operational_guard.outcome == 'success' }}
         env:
           BASELINE_REF: safety/data-pre-run-${{ github.run_id }}-${{ github.run_attempt }}
         run: |
