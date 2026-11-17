@@ -579,3 +579,10 @@
 1. [완료] EUR-Lex Canary #209의 각 source visible-text 수치를 로그에서 재합산.
 2. [완료] 총합을 245,502자에서 **636,040자**로 정정. 2025/327 amendment 394,354자가 이전 합계에서 누락됐음.
 3. [완료] CI #441 117 passed, 1 xfailed 및 Canary #209 success 확인.
+
+## 2026-11-17 — archive #20–#21 correction audit
+1. [완료] main #20/#21 archive snapshot을 PR #8로 integration에 동기화.
+2. [완료] Article 14/16 mandatory reporting, Article 13(17) single point of contact, CVD를 별도 요구로 분리.
+3. [완료] Annex I Part I (2)(h)의 실제 DoS/availability 문언과 resource isolation 구현 후보를 분리.
+4. [완료] correction reports #20/#21 작성. #1–#21 전체 correction audit 보유.
+5. [진행] archive #22 이후 신규 보고서가 생성되면 동일한 source gate로 검토; 기존 #1–#21은 master report에 통합.
