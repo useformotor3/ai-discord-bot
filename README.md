@@ -14,8 +14,9 @@
 
 - **활성 범위: CRA 대응만.** SIL 3 자료는 역사적 산출물로 보존하며 별도 명시적 재개 지시 전 비활성.
 - 현재 작업 브랜치: 없음 (PR #28 최종 복구 체크포인트/상황판 동기화 병합 완료)
-- 최신 main 기준점: PR #28 merge commit `942e1e6b5f2887001279a96c21f94138d283a689`; 관리 문서 PR #27 `5f0c54a018e18b3453b1c836a5a7d2e9a266331b`; source provenance 코드 PR #26 `8066c166ba01fbfb8d25f61ce0ce6ed72f151854`
+- 최신 CRA source 기준점: PR #29 merge commit `9c16724b8b72bd09d3492b19ff714602b235c66b`; PR #28 recovery checkpoint `942e1e6b5f2887001279a96c21f94138d283a689`; 관리 문서 PR #27 `5f0c54a018e18b3453b1c836a5a7d2e9a266331b`; source pipeline PR #26 `8066c166ba01fbfb8d25f61ce0ce6ed72f151854`
 - 최신 CRA source provenance 통합: [PR #26](https://github.com/useformotor3/ai-discord-bot/pull/26) 병합 완료; 공식 CELLAR 7개 법령 자료 + Commission 공식 페이지 2개 수집, claim-level validator 및 source manifest 반영
+- 정오표 우선순위 보강: [PR #29](https://github.com/useformotor3/ai-discord-bot/pull/29) 병합 완료; Article 64(10)/67의 영어 corrigenda를 prompt excerpt에서 적용/확인하고 raw text hash와 corrected excerpt hash를 분리
 - [CRA 공식 출처 수집·주장 추적 파이프라인 보고서](reports/CRA_SOURCE_PROVENANCE_PIPELINE_2026-11-17.md): Run #573, 138 passed / 1 xfailed, live 9-source canary 및 Article 13(8) quote 확인
 - CRA-only 범위 통제 기준점: PR #18 merge `b7813ddd311bc51bfb0eb26458eace9ff82b621f`; 통합 보고서 PR #19 merge `5776ca609130033bfff17ca62c9fabc3b9570b3b`; 인터페이스 매트릭스 PR #20 merge `951fc5ee0122b847b5e8f77bd5e0706db65efb76`
 - CRA 정정 보고서 #1–#38 및 인덱스: main 보존 확인
@@ -32,6 +33,8 @@
 - PR #27 rollback refs: `safety/pre-merge-main-pr27-2026-11-17` → `8066c166ba01fbfb8d25f61ce0ce6ed72f151854`; `safety/post-merge-main-pr27-2026-11-17` → `5f0c54a018e18b3453b1c836a5a7d2e9a266331b` (readback SHA 확인)
 - PR #28 [최종 복구 체크포인트 동기화](https://github.com/useformotor3/ai-discord-bot/pull/28) 병합 완료; [Run #577](https://github.com/useformotor3/ai-discord-bot/actions/runs/44041626911) 138 passed / 1 xfailed 및 live source canary 통과
 - PR #28 rollback refs: `safety/pre-merge-main-pr28-2026-11-17` → `5f0c54a018e18b3453b1c836a5a7d2e9a266331b`; `safety/post-merge-main-pr28-2026-11-17` → `942e1e6b5f2887001279a96c21f94138d283a689` (readback SHA 확인)
+- PR #29 [정오표 우선순위 검증](https://github.com/useformotor3/ai-discord-bot/pull/29) 병합 완료; [Run #596](https://github.com/useformotor3/ai-discord-bot/actions/runs/44043479661) 141 passed / 1 xfailed, 9개 source 및 Article 64(10)/67/13(8) live canary 통과
+- PR #29 rollback refs: `safety/pre-merge-main-pr29-2026-11-17` → `9ad730c42de6451ce6942298e9b17e3e82a3ef62`; `safety/post-merge-main-pr29-2026-11-17` → `9c16724b8b72bd09d3492b19ff714602b235c66b` (readback SHA 확인)
 - 최신 법적/이행 자료 반영: Commission Guidance C(2026) 5252 (2026-07-27), M/606 개정 C(2026) 7861 (2026-11-10), Regulation (EU) 2025/327 개정 범위 검토
 - 제품 모델/통신 프로토콜/시장 공급 구조가 미제공되어 CRA 적용성 및 Annex III/IV 분류는 잠정 판단으로 유지
 - PR #19/#20은 문서·추적표 경로만 변경했으며 운영 코드, workflow, state/history 및 원본 archive는 수정하지 않음
