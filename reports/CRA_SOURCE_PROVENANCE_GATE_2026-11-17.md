@@ -53,8 +53,8 @@ Gemini 3 계열 Google Search Grounding은 현재 Gemini API 가격표상 Free t
 - CI Run #83: 102 passed, 1 xfailed.
 - corrigenda version check 및 archive metadata 추가 후 CI Run #93: **103 passed, 1 xfailed**.
 - Run #89: https://github.com/useformotor3/ai-discord-bot/actions/runs/43986520995
-- blob SHA 검증, compileall, 전체 pytest가 성공했다. 최신 CI Run #107: 103 passed, 1 xfailed. Evidence: https://github.com/useformotor3/ai-discord-bot/actions/runs/43987116390.
-- 별도 read-only canary Run #5는 실제 EUR-Lex HTTPS endpoint를 호출해 196,076자 visible text와 corrigenda 3개 날짜를 확인했다. Evidence: https://github.com/useformotor3/ai-discord-bot/actions/runs/43987091981.
+- blob SHA 검증, compileall, 전체 pytest가 성공했다. 최신 CI Run #109: 103 passed, 1 xfailed. Evidence: https://github.com/useformotor3/ai-discord-bot/actions/runs/43987545006.
+- 별도 read-only canary Run #5는 실제 EUR-Lex HTTPS endpoint를 호출해 196,076자 visible text와 corrigenda 3개 날짜를 확인했다. Evidence: https://github.com/useformotor3/ai-discord-bot/actions/runs/43987552717.
 - canary는 EUR-Lex GET만 수행했으며 Gemini/Discord/production workflow/운영 Git write는 호출하지 않았다.
 
 ## 6. 검증 한계 및 위험

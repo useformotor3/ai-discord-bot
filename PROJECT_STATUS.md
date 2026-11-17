@@ -25,7 +25,7 @@
 | P1-B2 저장 원자성 | 구현·보강 및 CI 검증 완료 | durable journal, SHA 보호, roll-forward, target allowlist; Actions 43851438733: 70 passed / 1 xfailed |
 | P1-B3 Git sync 상태화 | 미구현 | 유일한 strict xfail; 별도 승인 필요 |
 | P1-B4 구조 개선 | 미구현 | import-time 실행 제거 등 후속 단계 |
-| CRA 자동 출처검증 gate | 구현·mock CI·실제 EUR-Lex canary 통과 | CI #107: 103 passed, 1 xfailed; canary #5: 196,076자, corrigenda 3개 확인 |\n| CRA 요구사항 추적 | 후속 | 주장별 공식 조항-원문-제품 적용성-통제-시험 증거 연결 |
+| CRA 자동 출처검증 gate | 구현·mock CI·실제 EUR-Lex canary 통과 | CI #109: 103 passed, 1 xfailed; canary #10: 196,076자, corrigenda 3개 확인 |\n| CRA 요구사항 추적 | 후속 | 주장별 공식 조항-원문-제품 적용성-통제-시험 증거 연결 |
 | SIL 기능안전 자료 | 별도 추적 | CRA 사이버보안 결론과 혼합 금지 |
 
 ## 2. P1-B1 이전 기준선에서 확인한 원본 코드 사실
@@ -657,7 +657,7 @@
 - CI Run #93: 103 passed, 1 xfailed. 정확한 source blob SHA, compileall, 전체 pytest 통과. [실행 로그](https://github.com/useformotor3/ai-discord-bot/actions/runs/43986520995).
 - 이전 CI Run #79: 97 passed, 5 failed, 1 xfailed. 원인은 테스트 간 requests mock 모듈 재사용. 호출 시점 import로 수정하고 Run #83/#89에서 통과.
 - 한계: 최소 출처/인용 대조이며 모든 법적 주장, 번역, 해석, 제품 적용성, 적합성 평가를 증명하지 않는다. EUR-Lex 통합본은 문서화 도구이며 법적 효력은 관보의 정본 및 정오표에 있다.
-- 완료: 비운영 read-only EUR-Lex canary #5. 실제 EUR-Lex endpoint에서 196,076자 수집, 정오표 3개 날짜 확인.\n- 미수행: 실제 Gemini/Discord 호출, 운영 workflow 실행, main 병합.
+- 완료: 비운영 read-only EUR-Lex canary #10. 실제 EUR-Lex endpoint에서 196,076자 수집, 정오표 3개 날짜 확인.\n- 미수행: 실제 Gemini/Discord 호출, 운영 workflow 실행, main 병합.
 - 다음 단계: 주장별 Article/Annex/point-to-quote 매핑, 원문 해시/변경 감지, 검증 실패 보고서의 게시 차단/검토 큐를 설계한다.
 - 상세: reports/CRA_SOURCE_PROVENANCE_GATE_2026-11-17.md.
 
@@ -666,7 +666,7 @@
 - Canary workflow: .github/workflows/cra-source-canary.yml; 스크립트: scripts/cra_source_canary.py.
 - CI Canary Run #5: success. EUR-Lex 공식 HTTPS URL에서 visible text 196,076 characters 수집.
 - 확인한 통합본: EUR-Lex consolidated text 20.11.2024; corrigenda 5.12.2024, 2.7.2025, 17.10.2025 모두 본문에 존재.
-- 로그: https://github.com/useformotor3/ai-discord-bot/actions/runs/43987091981.
+- 로그: https://github.com/useformotor3/ai-discord-bot/actions/runs/43987552717.
 - 최신 isolated CI Run #107: 103 passed, 1 xfailed; source SHA, compileall, full pytest 통과. 로그: https://github.com/useformotor3/ai-discord-bot/actions/runs/43987116390.
 - 보고서 validator는 EUR-Lex 통합본이 documentation tool이며 법적 효력은 Official Journal(관보) 정본 및 공식 corrigenda에 있음을 반드시 명시하도록 강화했다.
 - Canary는 EUR-Lex 읽기 전용 GET만 수행하며 Gemini, Discord, Git 저장/운영 workflow를 호출하지 않는다.

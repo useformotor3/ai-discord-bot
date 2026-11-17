@@ -13,14 +13,14 @@
 - 원문 수집/정오표 인덱스/인용 대조 실패 시 Gemini 호출과 후속 Discord·Git 저장을 fail-closed한다.
 - 보고서에는 “원문 인용 대조 통과 / 법률 해석·제품 적용성 미검증” 초안 상태를 표시한다.
 - Google Search Grounding은 Gemini 3 계열 무료 등급에서 제공되지 않는 요금표 조건 때문에 사용하지 않고, EUR-Lex 직접 조회를 선택했다.
-- 읽기 전용 EUR-Lex canary #5: 성공. 196,076자 본문을 수집하고 2024/2025년 정오표 3개 날짜를 확인했다. [실행 로그](https://github.com/useformotor3/ai-discord-bot/actions/runs/43987091981).\n- Draft PR #3: https://github.com/useformotor3/ai-discord-bot/pull/3 (아직 main 미병합).
+- 읽기 전용 EUR-Lex canary #10: 성공. 196,076자 본문을 수집하고 2024/2025년 정오표 3개 날짜를 확인했다. [실행 로그](https://github.com/useformotor3/ai-discord-bot/actions/runs/43987091981).\n- Draft PR #3: https://github.com/useformotor3/ai-discord-bot/pull/3 (아직 main 미병합).
 - 상세 설계·제한·검증: [CRA 공식 원문 출처검증 gate 설계 및 구현 기록](reports/CRA_SOURCE_PROVENANCE_GATE_2026-11-17.md).
 
 - 현재 CRA 품질개선 브랜치: **feature/cra-source-grounding-atomic-2026-11-17** (공식 원문 출처검증 gate; Draft PR #3)
 - 운영 기준 브랜치: `main` — 별도 승인 없이 수정·병합하지 않습니다.
 - P0 응답 검증/실패 차단, P1-A 상태·이력 검증, P1-B1 Discord 전송 신뢰성: 작업 브랜치 구현 완료
 - **P1-B2 로컬 다중 파일 저장 일관성: 사용자 승인 후 구현 및 테스트 CI 검증 완료**
-- **최신 CRA 출처검증 CI (Actions 43987116390): 103 passed, 1 xfailed; source SHA·compileall·전체 pytest 통과**
+- **최신 CRA 출처검증 CI (Actions 43987545006): 103 passed, 1 xfailed; source SHA·compileall·전체 pytest 통과**
 - P1-B2는 durable journal, staged payload, backup/SHA 검증, idempotent roll-forward recovery, snapshot 충돌 방지 및 허용 target allowlist 적용
 - P1-B3 Git sync 상태화는 미구현(기존 strict xfail), P1-B4 import-time 구조 개선도 미구현
 - Discord exactly-once/outbox는 P1-B2 범위 밖이며 보장하지 않음

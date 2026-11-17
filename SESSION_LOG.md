@@ -944,3 +944,11 @@
 - Isolated CI Run #107: 103 passed, 1 xfailed; blob SHA, compileall, full pytest 성공. 로그: https://github.com/useformotor3/ai-discord-bot/actions/runs/43987116390.
 - 실제 Gemini/Discord/production workflow는 실행하지 않았다. Canary는 EUR-Lex read-only GET만 수행했다.
 - 다음 단계: 주장별 근거 매핑, 원문 hash/version change detection, 검증 실패 시 review queue.
+
+
+## 2026-11-17 — 법적 효력 caveat 포함 최종 코드 및 canary 재검증
+- Validator는 EUR-Lex 통합본이 documentation tool이며 Official Journal(관보) 정본과 공식 corrigenda가 법적 효력의 기준임을 보고서에 명시하도록 요구한다.
+- Isolated CI Run #109: 103 passed, 1 xfailed; source blob SHA, compileall, 전체 pytest 성공. 로그: https://github.com/useformotor3/ai-discord-bot/actions/runs/43987545006.
+- Read-only EUR-Lex canary Run #10: success; 196,076자 visible text와 정오표 날짜 3개 확인. 로그: https://github.com/useformotor3/ai-discord-bot/actions/runs/43987552717.
+- Canary는 public EUR-Lex HTTPS GET만 수행한다. 실제 Gemini/Discord/production workflow 호출은 없다.
+- 운영 main 및 run.yml 미변경, PR #3은 Draft/open 상태.
