@@ -976,3 +976,11 @@
 - EUR-Lex canary Run #29: success; 4개 공식 법령 source pack 및 CRA 정오표 3개 날짜 확인. https://github.com/useformotor3/ai-discord-bot/actions/runs/43995859223
 - 보고서·README·PROJECT_STATUS·MASTER_PLAN·SESSION_LOG·tests README·PROJECT_LOG를 같은 실행 결과로 동기화했다.
 - Draft PR #3은 main에 미병합. 운영 main SHA ff599733d62a8926ee281a9958aa6e03f5ce75f4.
+
+
+## 2026-11-17 — CRA 주장별 근거 추적성 구현
+- 작업 브랜치: `feature/cra-source-grounding-atomic-2026-11-17`.
+- 변경: `cra_claims.py` 신규, `main.py` prompt/validation 연결, `tests/test_cra_claims.py` 신규 및 기존 mock report fixture 보강, isolated tests workflow source pin/경로 보강.
+- 복구 ref: `safety/pre-claim-evidence-2026-11-17-d8870e3` → `d8870e32e16ba5ebd3a7670d12816324de3b485a`.
+- CI 첫 실행에서 85 passed / 27 failed / 1 xfailed. f-string JSON brace 충돌, fixture의 새 JSON contract 누락 및 assertion 우선순위 오류를 확인하고 수정했다.
+- 수정 후 최종 정확한 head SHA CI 결과는 별도 확인 전까지 미확정이다. 운영 main 및 production workflow는 변경하지 않았으며 실제 Gemini/Discord 호출도 없다.
