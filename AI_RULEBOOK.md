@@ -275,3 +275,12 @@
 - 이미 원격에 잘못 push된 단일 child commit은 기존 rollback commit 경로로 복원하고 검증한다.
 - checkpoint pruning은 operational guard가 성공한 경우에만 수행한다. guard 실패 시 checkpoint를 보존한다.
 - Discord 등 외부 알림은 GitHub archive/state/history commit+push 성공 후 전송한다. 외부 전송 실패가 원본 데이터 손실로 이어지지 않게 한다.
+
+## 45. CRA 법령 인용·조항 식별 기준
+- 최종 기준은 Regulation (EU) 2024/2847 Official Journal이다. 이전 초안/최종 타협안의 번호·문구를 final OJ 직접 인용으로 사용하지 않는다.
+- Article 10은 cybersecurity skills, Article 11은 general product safety, Article 13은 manufacturer obligations, Article 14 mandatory reporting, Article 15 voluntary reporting, Article 16 single reporting platform이다.
+- 기술문서는 Article 31/Annex VII, 사용자 지침은 Article 13(18)/Annex II, support-period end-date 표시 Article 13(19)로 추적한다.
+- Article 13(8) support period와 Article 13(9) security update availability는 다른 기간이다.
+- Annex I Part I는 제품 속성 요구, Part II는 vulnerability handling 요구다. CVD는 Part II (5)/(6), logging은 Part I (2)(l), data integrity는 Part I (2)(f).
+- 제품 Annex III Class I/II 분류는 목록에 열거된 카테고리와 core functionality를 대조한다. 산업용/서보 드라이브라는 명칭만으로 등급을 추정하지 않는다.
+- 법령 직접 의무와 구현 선택(PGP, security.txt, CVE/SLA, unique credentials, WORM/SIEM, digital signature 등)을 분리한다.
