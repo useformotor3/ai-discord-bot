@@ -1340,3 +1340,11 @@
 - PDF 2종 fetch/parse/hash, artifact #14315106623 upload/download/re-hash, 9개 HTML sources, Article 13(8) live locator/quote 통과.
 - ZIP digest `da2f0e5fbfb5f5fa66360a2faa5af3d85821d3b7269885e34e1a3115f37cd3e2` GitHub metadata와 일치; 내부 PDF hashes도 manifest와 일치.
 - PR #33 최종 diff/safety checkpoint 검토 후 병합한다.
+
+
+## 2026-11-17 — Latest branch-head Run #702
+
+- Run #702 on HEAD `3b895cb1411ada883b8df04972f929c1381f4053`: success, 148 passed / 1 xfailed.
+- 2 PDF sources, 9 HTML sources, Article 13(8) locator/quote, corrigenda, compileall and blob pins passed.
+- Artifact #14314174227 downloaded and SHA-256 reverified: ZIP `8fddbba46ccf9b0901b36d88ce27d79817ac620f9fabf37a8b6beefe5dfcaa82`; internal PDF hashes match provenance manifest.
+- PR #33 is ready for final diff/safety check.
