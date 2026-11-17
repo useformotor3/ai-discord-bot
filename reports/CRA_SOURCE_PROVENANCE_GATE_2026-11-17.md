@@ -127,3 +127,24 @@ EUR-Lex 통합본은 documentation tool이며 법적 효력은 Official Journal(
 - 2026-11-17 현재 main은 자동 아카이브 #10으로 별도 전진했다. 이 PR은 해당 변경을 덮어쓰지 않았으며 main에 병합하지 않았다.
 - 아직 미완료: 모든 보고서 문장/주장을 개별 조항·문단·인용에 연결하는 claim-to-evidence 검증, 관보 정본과 통합본/정오표 차이의 체계적 대조, 실제 운영 Gemini 모델 응답 호환성 canary.
 - 따라서 이 변경은 자동 보고서의 출처 추적성을 개선하는 최소 gate이며, 법률 해석·제품 적용성·CRA 적합성 검증을 대체하지 않는다.
+
+
+## 2026-11-17 — 주장별 근거 연결 및 fail-closed 검증 추가
+
+### 구현 범위
+- `cra_claims.py`에 구조화된 claim-to-evidence validator를 추가했다.
+- 보고서 마지막에 단일 `CLAIM_EVIDENCE_JSON` JSON 블록을 요구한다.
+- 주장 분류는 `legal_requirement`, `official_explanation`, `interpretation`, `engineering_recommendation`으로 분리한다.
+- 법적 의무/공식 설명은 source pack에 등록된 정확한 source_id, Article/Annex locator, 해당 원문에서 복사한 50자 이상 직접 인용을 요구한다.
+- 본문에는 각 claim_id(`[C-001]`)를 표시해야 하며, 중복 ID, 본문 미참조 ID, JSON 미선언 ID, 미등록 source_id, 원문과 다른 인용, 확인되지 않는 locator는 fail-closed 한다.
+- 해석 및 엔지니어링 권고는 법적 의무와 분리하고 별도의 basis 설명을 요구한다.
+- `main.py`는 기존 최소 provenance validator 전에 새 claim evidence validator를 실행한다. 두 검증 중 하나라도 실패하면 보고서 승인/전송/저장 단계로 진행하지 않는다.
+- `.github/workflows/tests.yml`은 신규 모듈·테스트의 정확한 blob SHA를 고정하고 pull_request 경로에도 CRA source/claim 파일을 포함한다.
+
+### 검증 범위와 제한
+- 신규 테스트는 정상 legal claim, source_id 누락/오류, Article locator 오류, quote mismatch/길이 부족, JSON 누락·문법 오류, 본문 claim_id 연결, 중복 ID, 엔지니어링 권고 분류/근거를 다룬다.
+- 이 gate는 **선언된 주장**의 추적성을 검증한다. 본문 자연어 전체를 완전하게 파싱해 누락된 모든 법률 주장을 자동 발견하는 NLP 검증은 아니다. 따라서 모델 프롬프트에서 모든 법적 문장에 claim_id를 붙이도록 요구하고, 최종 사람 검토를 유지한다.
+- locator 검사는 해당 source_id 원문에서 명시된 Article/Annex/Part 및 paragraph/point 토큰 존재를 확인하는 보수적 기계 검사다. locator가 법률상 주장과 정확히 같은 의미인지, 문맥상 예외/단서가 적용되는지는 검증하지 않는다.
+- 인용의 원문 일치도 법률 해석의 정확성, 제품 분류, 제품 적용성, CRA 적합성을 증명하지 않는다.
+- 실제 Gemini/Discord 및 운영 workflow는 호출하지 않는다. 실제 모델이 새 JSON 계약을 일관되게 출력하는지는 별도 격리 canary가 필요하다.
+- 작업 전 복구 기준: `safety/pre-claim-evidence-2026-11-17-d8870e3` (기준 SHA `d8870e32e16ba5ebd3a7670d12816324de3b485a`).
