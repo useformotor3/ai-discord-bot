@@ -3,21 +3,21 @@
   "retrieved_at": "2026-11-17T09:05:46Z",
   "workflow": {
     "name": "Isolated Python Tests",
-    "run_number": 690,
-    "run_id": 44053390736,
-    "tested_head_sha": "535300d60e1e943a867e3348c3c152832238b665",
+    "run_number": 702,
+    "run_id": 44053693177,
+    "tested_head_sha": "3b895cb1411ada883b8df04972f929c1381f4053",
     "pytest": "148 passed, 1 xfailed",
     "compileall": "success",
     "exact_source_blob_identity": "success",
     "live_official_pdf_canary": "2 PDFs fetched, parsed and SHA-256 verified",
     "live_official_html_canary": "9 allowlisted official sources fetched; consolidated corrections and Article 13(8) locator/quote passed",
-    "artifact_id": 14315106623,
-    "artifact_name": "cra-official-pdf-sources-4f0058e4a3afc12efc72c09f5490a9b59edf8383",
-    "artifact_url": "https://github.com/useformotor3/ai-discord-bot/actions/runs/44053390736/artifacts/14315106623",
-    "artifact_zip_sha256": "da2f0e5fbfb5f5fa66360a2faa5af3d85821d3b7269885e34e1a3115f37cd3e2",
+    "artifact_id": 14314174227,
+    "artifact_name": "cra-official-pdf-sources-cb6fec33e40f272433c1449b658b68a7a17e53c7",
+    "artifact_url": "https://github.com/useformotor3/ai-discord-bot/actions/runs/44053693177/artifacts/14314174227",
+    "artifact_zip_sha256": "8fddbba46ccf9b0901b36d88ce27d79817ac620f9fabf37a8b6beefe5dfcaa82",
     "artifact_size_bytes": 1312630,
     "artifact_downloaded_and_sha256_reverified": true,
-    "expires_at": "2026-11-24T09:12:44Z"
+    "expires_at": "2026-11-24T09:14:39Z"
   },
   "sources": [
     {
@@ -92,6 +92,13 @@
       "artifact_id": 14315096266,
       "artifact_zip_sha256": "82e86c3347413bc6f210a7403939141679c34e5ad738822043af87fc5c2290c",
       "result": "Full CI success; 148 passed, 1 xfailed; PDF and HTML canaries passed"
+    },
+    {
+      "run_number": 690,
+      "run_id": 44053390736,
+      "artifact_id": 14315106623,
+      "artifact_zip_sha256": "da2f0e5fbfb5f5fa66360a2faa5af3d85821d3b7269885e34e1a3115f37cd3e2",
+      "result": "Full CI success; 148 passed, 1 xfailed; artifact downloaded and hashes reverified"
     }
   ]
 }
