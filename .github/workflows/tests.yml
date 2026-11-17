@@ -11,7 +11,7 @@ on:
       - feature/cra-source-grounding-atomic-2026-11-17
     paths:
       - ".github/workflows/tests.yml"
-      - ".github/workflows/run.yml"
+      - ".github/workflows/run.yml"\n      - ".github/workflows/cra-gemini-canary.yml"
       - "scripts/**"
       - "main.py"
       - "cra_source.py"
@@ -82,7 +82,7 @@ jobs:
           verify_blob "main.py" "1bdb99745c11fd731f2006f8b03d48e1d2aebdff"
           verify_blob "cra_claims.py" "e6c63fdeeda8ae5c3320fac372f9973319ca1760"
           verify_blob "tests/test_cra_claims.py" "d657be903844299e79a874bec991686962a80348"
-          verify_blob "scripts/cra_source_canary.py" "0f5bd01ea4994874dcc0e6dfb177a740ec56820c"
+          verify_blob "scripts/cra_gemini_canary.py" "0c95d97180881e54c8eee1e28e91b3ddd202695f"\n          verify_blob "tests/test_cra_gemini_canary.py" "62b3b91d582b3aa8352292be5d20bb914fe1c11c"\n          verify_blob "scripts/cra_source_canary.py" "0f5bd01ea4994874dcc0e6dfb177a740ec56820c"
           verify_blob "cra_source.py" "e12c62efe5c6cb2eec7a9a774f3b1cfdaa36d0ae"
           verify_blob "persistence.py" "953e2a52b7e6d6e619a4f43766e52d6835df50c8"
           verify_blob "tests/test_p1_b2_atomic_persistence.py" "f78d36164b5ac0d5d5eebe0c5eb5c1214c4e0671"
