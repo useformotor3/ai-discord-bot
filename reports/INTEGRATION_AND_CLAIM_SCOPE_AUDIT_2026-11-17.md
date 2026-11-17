@@ -190,3 +190,9 @@ The report mis-cited Annex VI for SBOM, overstated mandatory SBOM disclosure to 
 Original archive #7 blob: `ff4395ebe2f4e2f5c0b843b8b0a92942f542f6f2`. Correction report: `reports/CRA_CORRECTION_REPORT_7_2026-11-17.md`.
 
 The cited Annex I Part I point (1)(e) does not exist. Access control is point (2)(d); secure-by-default and reset-to-original-state are point (2)(b). The final OJ does not contain the phrase “default passwords”; unique credentials and first-use password enrollment are risk-based implementation choices, not a verbatim CRA mandate. Original archive remains unchanged.
+
+## 18. Main archive #6 correction — 2026-11-17
+
+Original archive #6 blob: `34de32d788d55790606193b86c355d5d7a279845`. Correction report: `reports/CRA_CORRECTION_REPORT_6_2026-11-17.md`.
+
+The final OJ DoS/availability requirement is Annex I Part I (2)(h), protecting essential and basic functions; point (2)(f) is integrity. Dual-core isolation, rate limiting and packet filtering are implementation options, while STO/SS1 behavior requires separate functional-safety analysis. Original archive remains unchanged.
