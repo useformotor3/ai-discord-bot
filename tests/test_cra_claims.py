@@ -13,7 +13,7 @@ QUOTE = (
 SOURCE = {
     "sources": [{
         "id": SOURCE_ID,
-        "text": "Article 13 Obligations of manufacturers " + QUOTE,
+        "text": "Article 13 (8) Obligations of manufacturers " + QUOTE,
     }]
 }
 
@@ -24,7 +24,7 @@ def make_report(claim=None, *, body_ref="[C-001]", raw_json=None):
         "category": "legal_requirement",
         "statement": "제조자는 지원 기간 동안 취약점을 효과적으로 처리해야 한다.",
         "source_id": SOURCE_ID,
-        "locator": "Article 13",
+        "locator": "Article 13(8)",
         "quote": QUOTE,
     }
     encoded = raw_json if raw_json is not None else json.dumps(
@@ -47,7 +47,7 @@ def test_accepts_legal_claim_with_matching_source_locator_and_quote():
     ("field", "value", "expected"),
     [
         ("source_id", "UNKNOWN-SOURCE", "등록되지 않은 공식 source_id"),
-        ("locator", "Article 99", "locator"),
+        ("locator", "Article 13(9)", "locator"),
         ("quote", "This quotation is not present in the retrieved official source text and is longer than fifty characters.", "일치하지 않습니다"),
     ],
 )
@@ -140,10 +140,6 @@ def test_rejects_duplicate_claim_ids():
             },
         ]
     }
-    report = report.replace(
-        json.dumps({"claims": [json.loads(report.split("```json\n")[1].split("\n```")[0])["claims"][0]]}, ensure_ascii=False),
-        json.dumps(payload, ensure_ascii=False),
-    )
     # Build a deterministic block rather than depending on serialized key order.
     report = (
         "본문 [C-001]\nCLAIM_EVIDENCE_JSON\n```json\n"
