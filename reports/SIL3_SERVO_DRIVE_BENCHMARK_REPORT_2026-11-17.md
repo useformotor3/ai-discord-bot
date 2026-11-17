@@ -149,6 +149,7 @@ SIL 3 서보 드라이브를 비교할 때 제품군 전체를 하나의 “SIL 
 - Yaskawa ASM7 Product Manual: https://www.yaskawa.it/Global%20Assets/Downloads/Technical_Documentation/Servo_Drives/Sigma7_Series/S7_OptionsAccessories/SIEP%20YEUOS7S%2001B%20ASM7%20Product%20Manual.pdf
 - Rockwell Kinetix 5700 Safe Monitor Functions Safety Reference Manual 2198-RM001: https://literature.rockwellautomation.com/idc/groups/literature/documents/rm/2198-rm001_-en-p.pdf
 - Rockwell Kinetix 5700 User Manual 2198-UM002Q-EN-P (June 2026): https://literature.rockwellautomation.com/idc/groups/literature/documents/um/2198-um002_-en-p.pdf
+- Rockwell Product Safety Advisory PSA 2017-01-001 (Kinetix 5700 ERS3 hardwired STO firmware limits): https://support.rockwellautomation.com/cc/okcsFattachCustom/get/1011053_9
 - Siemens S210 Safety Manufacturer’s Declaration 668.DCO.B2N.40.2509.029 (2025-09-30): https://cache.industry.siemens.com/dl/files/250/109996250/att_1346004/v1/Safety_Manufacturers_Declaration_-_SINAMICS_S210_668.DCO.B2N.40.2509.029.pdf
 - Siemens S210 Operating Instructions (03/2023, FW V6.1): https://support.industry.siemens.com/cs/attachments/109818069/S210_S-1FK2_S-1FT2_op_instr_0323_en-US.pdf
 
