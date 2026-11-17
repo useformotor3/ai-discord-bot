@@ -284,18 +284,18 @@ def fetch_official_cra_source():
         parsed_url = urlparse(final_url)
         allowed_hosts = definition.get("allowed_hosts", ("eur-lex.europa.eu",))
         if parsed_url.scheme != "https" or parsed_url.hostname not in allowed_hosts:
-            raise RuntimeError(
+            raise SourceValidationError(
                 f"허용되지 않은 공식 도메인으로 리디렉션되어 원문 수집을 중단합니다: "
                 f"{definition['id']} / {final_url}"
             )
 
         full_text = _extract_visible_text(response.text)
         if len(full_text) < definition["min_chars"]:
-            raise RuntimeError(f"공식 원문/페이지가 너무 짧습니다: {definition['id']}")
+            raise SourceValidationError(f"공식 원문/페이지가 너무 짧습니다: {definition['id']}")
         folded = full_text.casefold()
         missing = [marker for marker in definition["required"] if marker.casefold() not in folded]
         if missing:
-            raise RuntimeError(
+            raise SourceValidationError(
                 f"공식 원문 식별자를 확인하지 못했습니다: "
                 f"{definition['id']} / {', '.join(missing)}"
             )
@@ -303,7 +303,7 @@ def fetch_official_cra_source():
         if definition["id"] == "CRA-2024-2847-consolidated":
             missing_dates = [date for date in REQUIRED_CORRIGENDA_DATES if date not in full_text]
             if missing_dates:
-                raise RuntimeError(
+                raise SourceValidationError(
                     "EUR-Lex 통합본에서 알려진 CRA corrigenda 날짜를 모두 확인하지 못했습니다: "
                     + ", ".join(missing_dates)
                 )
