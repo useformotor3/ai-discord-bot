@@ -67,13 +67,13 @@ def _quote_is_in_locator_scope(locator, quote, source_text):
         return False
 
     locator_text = str(locator or "")
-    article = re.search(r"\\bArticle\\s+(\\d+)\\b", locator_text, re.IGNORECASE)
-    annex = re.search(r"\\bAnnex\\s+([IVX]+)\\b", locator_text, re.IGNORECASE)
+    article = re.search(r"\bArticle\s+(\d+)\b", locator_text, re.IGNORECASE)
+    annex = re.search(r"\bAnnex\s+([IVX]+)\b", locator_text, re.IGNORECASE)
     if article:
-        heading_pattern = re.compile(r"\\bArticle\\s+(\\d+)\\b", re.IGNORECASE)
+        heading_pattern = re.compile(r"\bArticle\s+(\d+)\b", re.IGNORECASE)
         target_kind, target_value = "article", article.group(1)
     elif annex:
-        heading_pattern = re.compile(r"\\bAnnex\\s+([IVX]+)\\b", re.IGNORECASE)
+        heading_pattern = re.compile(r"\bAnnex\s+([IVX]+)\b", re.IGNORECASE)
         target_kind, target_value = "annex", annex.group(1)
     else:
         return False
@@ -85,13 +85,13 @@ def _quote_is_in_locator_scope(locator, quote, source_text):
         end = len(normalized_source)
         if target_kind == "article":
             boundary = re.search(
-                r"\\b(?:Article\\s+\\d+|Annex\\s+[IVX]+)\\b",
+                r"\b(?:Article\s+\d+|Annex\s+[IVX]+)\b",
                 normalized_source[match.end():],
                 re.IGNORECASE,
             )
         else:
             boundary = re.search(
-                r"\\bAnnex\\s+[IVX]+\\b",
+                r"\bAnnex\s+[IVX]+\b",
                 normalized_source[match.end():],
                 re.IGNORECASE,
             )
