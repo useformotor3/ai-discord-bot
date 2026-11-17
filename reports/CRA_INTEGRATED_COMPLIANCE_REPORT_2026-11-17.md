@@ -54,6 +54,7 @@ Regulation (EU) 2025/327 Article 104는 CRA Article 13(4), Article 31(3)을 수�
 - USB, Ethernet 서비스 포트, 시리얼 진단 인터페이스: 실제 사용 목적·통신 프로토콜·데이터 교환 여부 확인.
 - 아날로그 지령(예: ±10 V) 및 단순 디지털 입력/출력: 단순 신호인지 디지털 정보 통신인지 Commission Guidance의 기준에 따라 구분.
 - 내부 MCU/FPGA/메모리 존재만으로 제품 전체의 CRA 적용 또는 Annex III Class I/II 분류가 자동 결정되지는 않는다.
+- [서보 드라이브 인터페이스별 CRA 적용성 증거 매트릭스](CRA_SERVO_DRIVE_INTERFACE_APPLICABILITY_2026-11-17.csv)는 EtherCAT/PROFINET/CANopen/Modbus/USB/serial/아날로그/24V DI/DO/엔코더/STO/무선/PC 도구/클라우드 등 15개 항목을 구분한다. 각 항목은 제품별 실제 회로·프로토콜·사용 목적 확인 전까지 잠정이다.
 
 ### 3.3 제품 경계와 원격 데이터 처리
 - 하드웨어와 제조사가 제공하는 필수 펌웨어/소프트웨어가 의도된 기능을 수행하기 위해 함께 작동하면 단일 PDE로 평가할 수 있다. 소프트웨어의 전달 채널이 별도 다운로드라는 사실만으로 제품 경계에서 제외되지 않는다.
