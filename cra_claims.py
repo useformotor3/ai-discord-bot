@@ -58,6 +58,50 @@ def _locator_is_present(locator, source_text):
     return True
 
 
+
+def _quote_is_in_locator_scope(locator, quote, source_text):
+    """Require the verbatim quote to occur inside the selected Article/Annex section."""
+    normalized_source = _normalized(source_text)
+    normalized_quote = _normalized(quote)
+    if not normalized_quote:
+        return False
+
+    locator_text = str(locator or "")
+    article = re.search(r"\\bArticle\\s+(\\d+)\\b", locator_text, re.IGNORECASE)
+    annex = re.search(r"\\bAnnex\\s+([IVX]+)\\b", locator_text, re.IGNORECASE)
+    if article:
+        heading_pattern = re.compile(r"\\bArticle\\s+(\\d+)\\b", re.IGNORECASE)
+        target_kind, target_value = "article", article.group(1)
+    elif annex:
+        heading_pattern = re.compile(r"\\bAnnex\\s+([IVX]+)\\b", re.IGNORECASE)
+        target_kind, target_value = "annex", annex.group(1)
+    else:
+        return False
+
+    matches = list(heading_pattern.finditer(normalized_source))
+    for match in matches:
+        if match.group(1).casefold() != target_value.casefold():
+            continue
+        end = len(normalized_source)
+        if target_kind == "article":
+            boundary = re.search(
+                r"\\b(?:Article\\s+\\d+|Annex\\s+[IVX]+)\\b",
+                normalized_source[match.end():],
+                re.IGNORECASE,
+            )
+        else:
+            boundary = re.search(
+                r"\\bAnnex\\s+[IVX]+\\b",
+                normalized_source[match.end():],
+                re.IGNORECASE,
+            )
+        if boundary:
+            end = match.end() + boundary.start()
+        section = normalized_source[match.start():end]
+        if normalized_quote in section:
+            return True
+    return False
+
 def validate_claim_evidence(report, source):
     """Validate every declared claim and its in-body reference; fail closed."""
     if not isinstance(report, str):
@@ -118,6 +162,8 @@ def validate_claim_evidence(report, source):
                 return False, f"{claim_id}: 직접 인용문은 50자 이상이어야 합니다."
             if _normalized(quote) not in _normalized(source_text):
                 return False, f"{claim_id}: 직접 인용문이 지정 source_id 원문과 일치하지 않습니다."
+            if not _quote_is_in_locator_scope(locator, quote, source_text):
+                return False, f"{claim_id}: 직접 인용문이 지정한 Article/Annex 범위 안에서 확인되지 않습니다."
         else:
             basis = claim.get("basis")
             if not isinstance(basis, str) or len(basis.strip()) < 10:
