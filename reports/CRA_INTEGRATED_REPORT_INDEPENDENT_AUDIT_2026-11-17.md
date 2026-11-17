@@ -140,3 +140,14 @@ CI artifact Run #702의 원본 PDF를 다운로드해 SHA-256 manifest와 대조
 - 확인된 중요 조건: single point of contact는 자동화 도구만으로 제한 불가; 무상 보안 업데이트 예외는 tailor-made PDE + business user + 제조자 합의; 5년 미만 support period는 예상 사용기간이 5년 미만인 경우; 기술문서 작성/갱신과 보관은 별도; full/simplified DoC는 Annex V/VI 구분.
 - 분류/평가: Annex III/IV core functionality 기준, 단순 통합만으로 host product에 Important 분류가 전이되지 않음. Article 32(2) Class I 조건부 평가와 (3) Class II, (4) Critical 절차를 분리했다.
 - 범위 제한: 10개 행의 1차 심층 대조이며 법률가 의견서나 특정 제품의 분류·적합성 판정이 아니다.
+
+
+## 12. 독립 감사 추가 — CRA 법령 문언 Batch 3 (2026-11-18)
+
+- 검토 파일: [CRA_LEGAL_SEMANTICS_AUDIT_BATCH3_2026-11-18.md](CRA_LEGAL_SEMANTICS_AUDIT_BATCH3_2026-11-18.md), 대상 CRA-021–CRA-035.
+- 공식 CRA 근거: Articles 14–17, 18–23, 27, 69, 71, Article 2(2)–(8).
+- 관련 sectoral 근거: Regulation (EU) 2023/1230 Article 9(9), Annex III §§1.1.9/1.2.1; Regulation (EU) 2025/327 Article 104/105.
+- 주요 정정: CRA-023의 Annex II locator 제거(사건 후 사용자 통지 직접 근거는 Article 14(8)); CRA-026에서 CRA Article 69(1)을 일반 중복 근거로 사용하지 않도록 정정(기존 certificate/approval decision 전환 조항); CRA-028/034를 Articles 18–22 역할 책임과 Article 23 공급망 추적으로 분리; CRA-035에 Article 2(8) 추가 및 Article 2(5) delegated-act 조건부 제한을 명시.
+- Article 14 신고기한의 기산점을 별도 구분: actively exploited vulnerability final report는 corrective/mitigating measure available 후 14일, severe incident final report는 incident notification 제출 후 1개월.
+- Regulation 2025/327 Article 104 개정은 EHR systems 특칙으로 한정한다.
+- 범위 제한: 15개 행의 1차 심층 대조이며 법률가 의견서나 특정 제품의 적용/적합성 판정이 아니다.
