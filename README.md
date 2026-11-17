@@ -2,6 +2,12 @@
 
 산업용 서보 드라이브의 EU Cyber Resilience Act(CRA) 대응을 위한 조사·설계·검증·문서화 프로젝트입니다. 문서의 기본 언어는 한국어이며, 법령·표준·제조사 원문은 원어와 출처를 보존합니다.
 
+## 공식 프로젝트 범위 — 2026-11-17 확정
+
+- **현재 활성 프로젝트는 CRA 대응만**입니다. 조사, 법령 적용성 분석, 요구사항 추적, 설계 통제, 검증 증거 및 한국어 통합 보고서를 CRA 기준으로 진행합니다.
+- SIL 3 기능안전 벤치마킹·하드웨어 설계 자료는 과거에 저장소에 반영된 별도 산출물로 보존합니다. CRA 작업의 후속 단계가 아니며, 사용자가 별도로 명시적으로 재개 요청하기 전에는 조사·수정·확장하지 않습니다.
+- 과거 SIL 3 파일과 PR/커밋은 삭제하거나 이력을 재작성하지 않습니다. CRA 사이버보안 요구사항과 기능안전 요구사항을 동일시하지 않습니다.
+
 > **기록 원칙:** 프로젝트의 공식 진행 상태와 재개 지점은 이 저장소에 기록합니다. 대화창의 기억에만 의존하지 않습니다.
 
 ## 현재 상태
@@ -376,17 +382,12 @@ Actions 성공은 자동화 실행 결과이지 CRA 법령 해석이나 출처�
 - All 38 correction reports are now present on main. Original auto-archive files remain unchanged.
 - PR #14 merged: `6994e4828a03482713f7990c7f82036bacfe4772`; CI #474: 105 passed, 1 xfailed.
 
-## SIL 3 servo drive engineering documents — v0.1
-- [Benchmark report](reports/SIL3_SERVO_DRIVE_BENCHMARK_REPORT_2026-11-17.md)
-- [Hardware block design](design/SIL3_SERVO_DRIVE_HARDWARE_BLOCK_DESIGN_2026-11-17.md)
-- [Requirements traceability matrix](reports/SIL3_SERVO_DRIVE_REQUIREMENTS_TRACEABILITY_2026-11-17.md)
-- Current standard editions and product-specific limitations are recorded. This is a reference architecture, not a certified final design.
+## 보존된 과거 산출물 — 기능안전 (현재 비활성 범위)
 
-- 벤치마킹 시 Rockwell PSA 2017-01-001의 ERS3 hardwired STO firmware 제한도 별도 기록했다. 자세한 영향 범위와 수정 firmware는 벤치마킹 보고서에 기재.
+아래 파일은 2026-11-17 과거 작업의 기록 보존을 위해 main에 남아 있습니다. 현재 CRA 프로젝트의 활성 작업 범위에는 포함되지 않으며, 별도 재개 지시 전에는 후속 작업하지 않습니다.
 
-## SIL 3 servo-drive deliverables — main
-- [Benchmark report](reports/SIL3_SERVO_DRIVE_BENCHMARK_REPORT_2026-11-17.md)
-- [Spreadsheet-ready comparison matrix](reports/SIL3_SERVO_DRIVE_BENCHMARK_MATRIX_2026-11-17.csv)
-- [Hardware block design](design/SIL3_SERVO_DRIVE_HARDWARE_BLOCK_DESIGN_2026-11-17.md)
-- [Requirements traceability matrix](reports/SIL3_SERVO_DRIVE_REQUIREMENTS_TRACEABILITY_2026-11-17.md)
-- PR #16 merged; CI #488 105 passed, 1 xfailed.
+- [SIL 3 벤치마킹 보고서](reports/SIL3_SERVO_DRIVE_BENCHMARK_REPORT_2026-11-17.md)
+- [비교 매트릭스 CSV](reports/SIL3_SERVO_DRIVE_BENCHMARK_MATRIX_2026-11-17.csv)
+- [하드웨어 블록 설계](design/SIL3_SERVO_DRIVE_HARDWARE_BLOCK_DESIGN_2026-11-17.md)
+- [요구사항 추적성 매트릭스](reports/SIL3_SERVO_DRIVE_REQUIREMENTS_TRACEABILITY_2026-11-17.md)
+- 역사적 반영 기록: PR #16, merge commit `34449753857c6ab004271f69aac19867a7aed1fa`, CI Run #488 (105 passed, 1 xfailed). 이는 당시 자동화 CI 결과이며 기능안전 인증이나 설계 적합성 승인을 뜻하지 않습니다.
