@@ -5,7 +5,7 @@
 - 최종 갱신: 2026-11-17 (KST)
 - 기준 저장소: `useformotor3/ai-discord-bot`
 - 운영 기준 브랜치: `main` (운영 자동화 및 데이터 보존)
-- 현재 작업 브랜치: 없음 (PR #22 병합 완료; 다음 작업은 최신 `main`에서 새 브랜치 생성)
+- 현재 작업 브랜치: `cra/reference-security-architecture-2026-11-17` (참조 보안 아키텍처 v0.1 작성; PR 전)
 - CRA-only 범위 통제 병합 기준점: PR #18, merge commit `b7813ddd311bc51bfb0eb26458eace9ff82b621f` (2026-11-17)
 - 마지막 CRA 산출물 병합: PR #22 merge `20e503c1da2fe2f053630263a8c4942680ec1515`. PR #22 Run #525 success; merge commit 자체의 별도 run은 미확인. PR #21의 CI 범위 제한도 세션 로그에 기록.
 - 이번 비교 기준: PR #22 병합으로 작업 브랜치 종료. 다음 작업 시작 시 main HEAD와 원격 브랜치를 다시 조회해 기준선을 설정
