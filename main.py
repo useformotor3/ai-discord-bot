@@ -235,7 +235,7 @@ prompt = f"""
     - legal_requirement는 source_id, 정확한 locator(예: Article 13(8), Annex I Part I (2)(f)), 50자 이상의 원문 quote를 포함해야 합니다.
     - official_explanation은 Commission 공식 페이지 source_id, 페이지 section locator, 50자 이상의 정확한 quote를 포함하되 비구속적 설명으로 분류하세요.
     - interpretation/engineering_recommendation은 legal_requirement와 구분하고 근거 basis를 설명하세요.
-    - 원문을 직접 확인하지 못한 문장은 직접 인용으로 꾸미지 말고 '요약/해석'으로 구분하세요.
+    - 출처 원문 구역에는 source pack에서 복사한 50자 이상의 원문을 큰따옴표로 감싸서 넣으세요.\n    - 원문을 직접 확인하지 못한 문장은 직접 인용으로 꾸미지 말고 '요약/해석'으로 구분하세요.
     - Commission guidance/standardisation 요약 페이지에 없는 PDF Annex 세부 항목을 해당 페이지로 입증했다고 주장하지 마세요.
     - 최근 조사 주제와 겹치면 억지로 새 주제를 만들지 말고 '추가로 검증할 신규 주제 없음'을 반환하세요.
     [작성 양식]
