@@ -478,3 +478,11 @@
 - PR #27 Run #575: 138 passed / 1 xfailed, 9개 live official source 및 Article 13(8) locator/quote canary 재통과.
 - PR #27 pre/post merge safety refs는 각각 `safety/pre-merge-main-pr27-2026-11-17` 및 `safety/post-merge-main-pr27-2026-11-17`; 두 ref의 SHA readback 검증 완료.
 - merge commit 자체의 별도 Actions run은 확인되지 않았으므로 PR head CI 결과만 기록한다.
+
+
+## 2026-11-17 — PR #28 main recovery checkpoint synchronization
+
+- PR #28 merge commit: `942e1e6b5f2887001279a96c21f94138d283a689`.
+- Run #577: 138 passed / 1 xfailed; 9 official sources and live Article 13(8) locator/quote canary passed on PR head.
+- Pre/post merge safety refs: `safety/pre-merge-main-pr28-2026-11-17` → `5f0c54a018e18b3453b1c836a5a7d2e9a266331b`; `safety/post-merge-main-pr28-2026-11-17` → `942e1e6b5f2887001279a96c21f94138d283a689`; both verified by readback.
+- Merge commit-specific Actions run was not confirmed; only PR head CI is claimed.
