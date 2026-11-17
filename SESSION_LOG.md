@@ -1067,3 +1067,9 @@
 - #16은 원문 인용에서 자동 업데이트 요건 문구를 누락/재배열했고, “not authorised by the manufacturer”라고 잘못 썼다. 최종 OJ는 “not authorised by the user”이며, point (2)(f)에 “including cryptographic mechanisms” 문구가 없다. 디지털 서명은 구현 후보이지 명시적 일률 의무가 아니다.
 - #17의 least privilege/RBAC 직접 인용은 공식 OJ에서 확인되지 않았다. 실제 법적 근거는 Annex I Part I (2)(d)의 risk-based appropriate access-control mechanisms 및 authentication/identity/access management.
 - correction reports #14–#17 생성 완료. 다음으로 archive #13 이하를 같은 기준으로 감사한다.
+
+## 2026-11-17 — 자동 archive #18 정정
+- 최신 main archive #18의 raw quote가 Annex I Part I (2)(b), (2)(d), (2)(l) 내용을 혼합하고 “including the principle of least privilege”를 CRA 직접 문언처럼 추가한 것을 확인했다.
+- 실제 법령은 secure-by-default, 접근통제, 내부 활동 기록/모니터링을 각각 별도 point로 규정한다. RBAC/least privilege/MFA 및 실패 인증 로그는 위험 기반 구현 후보이지 이 문구 그대로의 일률적 법적 의무가 아니다.
+- correction report #18을 생성하고 원본 archive는 SHA f986f2f2db5f74ca8dd072deb2fe90e013b4a63c 그대로 보존했다.
+- correction reports #14–#18 완료. 다음은 archive #13 이하를 검토한다.
