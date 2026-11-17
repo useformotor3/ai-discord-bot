@@ -1083,3 +1083,10 @@
 - 통합 트리 CI #366: 117 passed, 1 xfailed; exact source SHA, compileall, full pytest 통과. EUR-Lex Canary #134 success; 7 source, 245,502 visible chars, corrigenda 3건 문구 검증.
 - PR #6은 integration branch를 main 대상으로 검증하는 Draft PR로 열었다가 CI 실행을 위해 Ready로 전환했으며, 검증 후 다시 Draft로 되돌렸다. merge하지 않았다. PR #3도 Draft 유지.
 - correction reports #14–#18 완료. 다음은 archive #13 이하 감사, CRA master report 통합, 별도 SIL 3 benchmarking 및 hardware block design 산출물 작성이다. 기능안전과 사이버보안 요구를 하나의 법적 요구로 혼합하지 않는다.
+
+## 2026-11-17 — main archive #19 및 로깅 보고서 정정
+- main이 archive #19까지 전진해 PR #7을 통해 integration branch에 동기화했다. merge commit 01f4f797ac2689fcda425b02304685805272fd24.
+- 최신 main: 4c9f6145a8f41567bfe5d69e3f397b552beb4591, state count 19, history 2,412 entries. #19까지의 protected blobs가 main과 integration에서 동일함을 확인했다.
+- archive #19는 logging 근거를 잘못된 point (h)에 연결하고, update 요건을 다시 (h)에 인용했으며, 계정 생성/변경/삭제를 포함하는 구판 문구를 최종 OJ 직접 인용처럼 사용했다.
+- 실제 logging 근거는 Annex I Part I (2)(l), update는 (2)(c), availability는 (2)(h)로 분리한다. Correction report #19 작성 완료, 원본 보존.
+- correction reports #14–#19 완료. 다음은 archive #13 이하 감사.
