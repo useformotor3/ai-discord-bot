@@ -735,3 +735,9 @@
 - 이 workflow 파일은 현재 Draft PR 브랜치에만 있어 default branch에 존재하지 않는다. GitHub의 수동 dispatch는 default branch workflow 등록이 필요하므로 PR 병합 또는 별도 main 배포 전까지 실제 dispatch할 수 없다.
 - Google 공식 정책상 Gemini 3.8 Flash Free Tier token 가격은 무료지만 데이터는 제품 개선에 사용될 수 있고 Search Grounding은 Free Tier에서 사용할 수 없다. 실제 project billing tier는 확인 불가하므로 live call을 하지 않았다.
 - 안전 복구 기준: `safety/pre-gemini-json-canary-2026-11-17-198dfcc` → `198dfcc84b872e5ade7a58c673df335c7c97dcf9`.
+
+
+### Gemini canary mock 검증 결과
+- 구현 및 문서 동기화 head `e2f3dbbc9e6cfb5bbd414cf410b5e23e506ed135`에서 Isolated CI Run #247: **116 passed, 1 xfailed**.
+- 정확한 source SHA pin, compileall, 전체 pytest 통과. https://github.com/useformotor3/ai-discord-bot/actions/runs/43998889661
+- 신규 Gemini canary 테스트는 전부 mock opener로 수행됐다. 실제 Gemini API 호출은 하지 않았다.
