@@ -226,6 +226,8 @@ def validate_traceability(root="."):
                    if item.get("annex_item") == 18), {})
     _require(item18.get("deadline") == "31/01/2027" and item18.get("status") == "confirmed",
              "M/606 item 18 deadline visual confirmation missing", errors)
+    _require(item18.get("printed_page_number") == 3,
+             "M/606 item 18 provenance must locate deadline cell on printed EN 3", errors)
 
     log_lines = data["project_log"].read_text(encoding="utf-8").splitlines()
     log_ids = []
