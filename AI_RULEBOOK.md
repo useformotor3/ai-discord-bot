@@ -330,3 +330,10 @@
 - Do not combine adjacent Annex I points into one synthetic direct quotation.
 - Keep secure-by-default (Part I (2)(b)), access control (Part I (2)(d)), and internal activity logging/monitoring (Part I (2)(l)) as separate claim locators.
 - Do not attribute RBAC, least privilege, MFA, password rotation or failed-login logging as direct CRA wording unless the exact Official Journal provision says so.
+
+## 30. Latest-main integration and release gate
+- Synchronize current main into an isolated integration branch before combining long-lived feature work.
+- Preserve state.json, history.json and every referenced research_archive file by exact blob SHA comparison.
+- Run source SHA verification, compileall, full pytest and read-only official-source canaries on the merged integration tree.
+- A successful integration branch is not permission to merge main. Keep the validation PR Draft until deliverables and safety review are complete.
+- Keep CRA cybersecurity obligations separate from SIL 3 functional-safety requirements; cross-reference interfaces and hazards without treating one regulation as proof of the other.
