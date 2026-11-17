@@ -439,3 +439,7 @@
 - [공식 Guidance/M/606 Annex 감사](reports/CRA_OFFICIAL_GUIDANCE_AND_M606_ANNEX_AUDIT_2026-11-17.md): 41개 M/606 표준화 주제와 CRA 관련 해석.
 - [PDF 원문 취득/해시 도구](cra_pdf_sources.py): Commission URL 우선, allowlist 검증된 ANFR mirror fallback, PDF magic/header/marker 검증, raw-byte SHA-256 및 page count, CI artifact 저장.
 - 현재 작업 브랜치: `cra/guidance-claim-mapping-2026-11-17`; PR/CI 검증 전. PDF binary hash 취득 결과는 CI artifact를 확인한 후에만 확정한다.
+
+
+- [PDF source provenance manifest](reports/CRA_PDF_SOURCE_PROVENANCE_2026-11-17.json): Guidance mirror SHA-256, Commission M/606 Annex SHA-256, PDF page counts, extracted-text hashes, CI artifact digest and M/606 item 18 visual confirmation.
+- M/606 item 18 deadline confirmed visually as `31/01/2027` on PDF printed page 2. Guidance binary is ANFR mirror (Commission primary byte identity remains unverified).
