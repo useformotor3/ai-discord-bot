@@ -524,3 +524,12 @@
 - `tests/test_cra_pdf_sources.py`는 mirror fallback, redirect 차단, 임시 HTTP 오류, identity marker, artifact output을 mock으로 검증한다.
 - 테스트 전용 workflow에서 pypdf 설치, source blob pins, live PDF canary, artifact upload를 실행한다. 일시적 네트워크 장애는 SKIPPED로 표시하고, redirect/identity/파싱 검증 실패는 CI fail-closed한다.
 - 실제 PDF bytes, SHA-256, page count, M/606 item 18 날짜는 CI artifact를 readback하고 시각 검증한 후에만 확정한다.
+
+
+## 2026-11-17 — PDF 원문 취득 검증 결과
+
+- M/606 C(2026)7861 Annex Commission PDF: 151,267 bytes / 6 pages / SHA-256 `262b09596cb5cbe7d72a2c7789fb2512ee00db7f69082e7def2c8181b0f63276` verified.
+- C(2026)5252 Guidance: ANFR mirror fallback bytes 1,190,726 / 84 pages / SHA-256 `fe209c250e3d1f7599e42826d91963666951332927edcf511a2e79fe8d2f8234` verified. Commission-hosted primary byte identity remains unverified.
+- CI artifact #14313359693 downloaded; ZIP digest `150a687e4d4b13fdd20a432e99fc8ea9ec5bc847b8551dd3f157258dc41cd869` re-computed and matches GitHub metadata.
+- M/606 item 18 deadline visually confirmed from original PDF page image: `31/01/2027`.
+- Run #642's PDF source step and artifact upload passed; a separate existing HTML publication-page canary failed on an over-strict document-number marker. The marker is corrected to validate visible publication-page metadata separately from the PDF Annex identity; rerun required.
