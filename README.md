@@ -391,3 +391,5 @@ The CRA feature was merged only into the isolated integration branch, not main. 
 - [Correction #12](reports/CRA_CORRECTION_REPORT_12_2026-11-17.md): corrects support-period duration, security-update availability retention, free-update exception and Article 13(14) mis-citation.
 
 - [Correction #11](reports/CRA_CORRECTION_REPORT_11_2026-11-17.md): separates attack-surface and secure-by-default requirements from port-disable and opt-in implementation choices.
+
+- [Correction #10](reports/CRA_CORRECTION_REPORT_10_2026-11-17.md): separates support period, update availability retention, free security updates and CVD policy; corrects the non-verbatim quotation.
