@@ -226,9 +226,11 @@ prompt = f"""
 
     [필수 출처·정확성 규칙]
     - CRA 법적 주장에는 Regulation (EU) 2024/2847의 EUR-Lex consolidated text와 적용 가능한 corrigenda/amendments를 우선 사용하세요.
+    - EUR-Lex consolidated text는 문서화 도구임을 밝히고, 법적 효력의 기준은 Official Journal(관보) 정본임을 명시하세요.
+    - 보고서에는 최소 1개 이상의 legal_requirement claim을 포함하세요.
     - source pack의 각 source ID, 버전, URL을 임의 변경하지 마세요. 전체 source manifest는 검증 후 시스템이 자동 첨부합니다.
     - 조항 번호와 제목을 확인하고, 원문에 없는 구현 방식을 법적 의무로 표현하지 마세요.
-    - Article/Annex 법적 주장은 단일 Article paragraph 또는 단일 Annex Part/point locator를 사용하고, 범위형 locator는 가능한 한 분리하세요.
+    - Article/Annex 법적 주장은 단일 Article paragraph 또는 단일 Annex Part/point locator만 사용하고, 범위형 locator는 금지하며 각각 분리하세요.
     - 규격 근거의 각 법적 주장 줄에 [C-001] 형식의 claim ID를 붙이고, 같은 문장을 CLAIM_EVIDENCE_JSON statement에 그대로 기록하세요.
     - legal_requirement는 source_id, 정확한 locator(예: Article 13(8), Annex I Part I (2)(f)), 50자 이상의 원문 quote를 포함해야 합니다.
     - official_explanation은 Commission 공식 페이지 source_id, 페이지 section locator, 50자 이상의 정확한 quote를 포함하되 비구속적 설명으로 분류하세요.
