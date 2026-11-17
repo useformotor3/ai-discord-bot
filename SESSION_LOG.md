@@ -1151,3 +1151,12 @@
 - 모든 행의 상태는 미작성/증거 미확인이다. 실제 제품 구현/시험이 수행되었다고 주장하지 않는다.
 - PR #22는 문서/CSV 8개 경로만 변경. 운영 코드/workflow/state/history/archive/SIL3 산출물 변경 없음.
 - 다음: 일반 reference security architecture를 작성하되 제품별 MCU/네트워크/저장장치/원격 처리 구성은 미확인으로 분리하고, 각 SEC 항목을 실제 회로/펌웨어/시험 결과에 연결한다.
+
+
+## 2026-11-17 — CRA 참조 보안 아키텍처 v0.1 작성
+
+- `reports/CRA_SERVO_DRIVE_REFERENCE_SECURITY_ARCHITECTURE_2026-11-17.md` 신규 작성: 논리 블록, trust boundary, data flow, HW/boot, firmware, communication, NVM/key store, optional RDPS, manufacturer operations 구조를 정리했다.
+- Mermaid block diagram source 포함. 실제 회로/MCU/fieldbus/flash/cloud 구성은 미제공이므로 모든 블록은 reference option이며 제품별 구현 완료로 간주하지 않는다.
+- 36개 SEC control/test matrix, 35개 CRA requirements matrix, 15개 interface applicability matrix와 링크했다.
+- secure boot, secure element, signed update, debug lock, rate limiting, RBAC/MFA 등은 위험기반 구현 후보로 분류. CRA가 특정 기술을 일률 의무화한다고 표현하지 않았다.
+- STO/SS1 등 기능안전 동작은 CRA 자동 요구사항에서 제외하고 별도 hazard/safety analysis 대상으로 유지했다.
