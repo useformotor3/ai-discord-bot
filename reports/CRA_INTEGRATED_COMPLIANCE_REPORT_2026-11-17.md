@@ -29,7 +29,8 @@
 
 ### 2.2 공식 해석·이행자료
 - European Commission, Commission Guidance C(2026) 5252 final, Annex, 2026-07-27. 비구속적이며 개별 제품에 대한 사례별 판단을 대체하지 않는다.
-- European Commission CRA implementation page 및 CRA standardisation page. 진행 일정과 정책 업데이트 확인에 사용한다.
+- European Commission CRA implementation page, CRA implementation FAQs(마지막 갱신 2026-09-04), CRA standardisation page. 진행 일정과 정책 업데이트 확인에 사용한다.
+- ENISA CRA SRP FAQ(마지막 갱신 2026-10-15). 플랫폼 등록·신고 단계·기존 제품 적용 및 사용 제한을 확인한다.
 - ENISA CRA Single Reporting Platform FAQ. 신고 플랫폼 운영 절차 확인에 사용한다.
 - Commission Implementing Decision C(2026) 7861 final, 2026-11-10. M/606 표준화 납품 기한 개정의 공식 근거다.
 
@@ -123,6 +124,7 @@ Regulation (EU) 2025/327 Article 104는 CRA Article 13(4), Article 31(3)을 수�
 
 ### 6.3 운영 통제
 - 단일 신고 플랫폼은 ENISA가 설치·운영한다(Article 16). ENISA SRP FAQ에 따르면 2026-09-11부터 운영 중이다.
+- SRP 접속: https://portal.cra-srp.enisa.europa.eu. 2026-10-15 ENISA FAQ 기준 초기 플랫폼은 영어 UI이며, 초기 릴리스에는 API가 제공되지 않아 웹 인터페이스 제출을 전제로 내부 절차를 준비한다. 플랫폼 기능은 변경될 수 있으므로 신고 시점에 최신 FAQ를 재확인한다.
 - 제조사는 인지 시각을 남기는 취약점 접수 채널, 담당자·대체 담당자, 심각도 분류, 영향받는 모델/국가 식별, 신고 초안, 사용자 통지, 수정·완화 조치 및 최종 보고의 증거를 준비해야 한다.
 - 적극 악용 취약점과 심각한 사고는 별도 사건 유형과 최종 보고 시한으로 관리한다.
 - Article 14는 지원기간 종료 후에도 계속 적용될 수 있으므로 설치 제품의 자산/고객 식별 및 연락 체계를 유지해야 한다.
@@ -195,10 +197,12 @@ Commission Implementing Decision C(2026) 7861 final Annex는 M/606의 41개 표�
 | Commission Guidance C(2026) 5252 final, Annex (2026-07-27) | 적용 범위, 데이터 연결, 제품 경계, 핵심 기능, 지원기간, 신고, 기계류 규정 관계 해석 |
 | https://www.anfr.fr/fileadmin/CRA/Commission_guidance_on_the_application_of_Regulation__EU__20242847__Cyber_Resilience_Act_.pdf | Commission Guidance PDF 사본 |
 | https://digital-strategy.ec.europa.eu/en/factpages/cyber-resilience-act-implementation | Commission CRA 이행 일정 |
+| https://digital-strategy.ec.europa.eu/en/library/cyber-resilience-act-implementation-frequently-asked-questions | Commission CRA FAQ (마지막 갱신 2026-09-04) |
+| https://digital-strategy.ec.europa.eu/en/policies/cra-reporting | Commission 신고 의무·SRP 설명 (2026-09-11 갱신) |
 | https://digital-strategy.ec.europa.eu/en/policies/cra-standardisation | Commission 표준화 현황 및 M/606 |
 | https://ec.europa.eu/transparency/documents-register/api/files/C%282026%297861_1/de00000001090401 | C(2026) 7861 final Annex, M/606 개정 납품 기한 |
 | https://eur-lex.europa.eu/eli/reg/2025/327/oj/eng | EHDS Regulation 및 CRA 일부 개정 |
-| https://www.enisa.europa.eu/topics/product-security/vulnerability-services/eu-incident-response-and-cyber-crisis-management/single-reporting-platform-srp/frequently-asked-questions | ENISA Single Reporting Platform FAQ |
+| https://www.enisa.europa.eu/topics/product-security/vulnerability-services/eu-incident-response-and-cyber-crisis-management/single-reporting-platform-srp/frequently-asked-questions | ENISA Single Reporting Platform FAQ (2026-10-15 갱신) |
 
 ---
 작성 기준일: 2026-11-17. 본문에서 '가능성 높음', '잠정'으로 표시된 결론은 제품별 증거 확보 후 확정한다.
