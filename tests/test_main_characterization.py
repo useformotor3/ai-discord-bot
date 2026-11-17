@@ -25,8 +25,7 @@ EU 공식 법령 데이터베이스 EUR-Lex, Regulation (EU) 2024/2847.
 https://eur-lex.europa.eu/eli/reg/2024/2847/2024-11-20/eng
 
 ## 4. 출처 원문 텍스트(Raw Text Quote)
-원문 조항을 확인하고 제품에 적용되는 문구를 인용해 근거를 기록한다.
-인용은 원문과 대조해야 하며 요약 문구를 법령 직접 인용으로 표시하지 않는다.
+“Manufacturers shall ensure that vulnerabilities of the product with digital elements, including its components, are handled effectively during the support period.”
 """
 
 
