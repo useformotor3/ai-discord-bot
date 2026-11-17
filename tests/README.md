@@ -118,3 +118,10 @@ python -m pytest -q
 - Canary Run #11: success; 196,076 visible-text characters; all known corrigenda dates (5.12.2024, 2.7.2025, 17.10.2025) present.
 - Evidence: https://github.com/useformotor3/ai-discord-bot/actions/runs/43987730194.
 - This verifies endpoint reachability and source-index preconditions, not legal interpretation or product conformity.
+
+
+## 확장 CRA source pack 검증 — 2026-11-17
+- 공식 EUR-Lex 원문: CRA 2024/2847 consolidated + Regulation 2025/327 + Delegated Regulations 2025/1535, 2026/881.
+- Isolated CI Run #141: 103 passed, 1 xfailed. [로그](https://github.com/useformotor3/ai-discord-bot/actions/runs/43989211881).
+- Read-only Canary Run #26: success; 네 문서 총 220,715자. [로그](https://github.com/useformotor3/ai-discord-bot/actions/runs/43989211861).
+- Canary는 EUR-Lex 공개 GET만 수행한다. 실제 Gemini/Discord/운영 workflow 호출은 없다.
