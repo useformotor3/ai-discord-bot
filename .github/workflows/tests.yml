@@ -10,6 +10,7 @@ on:
       - cra/m606-annex-item-mapping-2026-11-17
       - cra/product-boundary-evidence-intake-2026-11-17
       - docs/pr39-postmerge-status-2026-11-17
+      - cra/integrated-report-independent-audit-2026-11-17
       - docs/pr37-postmerge-status-2026-11-17
       - docs/pr35-postmerge-status-2026-11-17
       - docs/pr33-postmerge-status-2026-11-17
