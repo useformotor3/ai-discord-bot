@@ -298,6 +298,8 @@ Commission Implementing Decision C(2026) 7861 final Annex는 M/606의 41개 표�
 - Guidance PDF는 ANFR mirror raw-byte SHA-256 `fe209c250e3d1f7599e42826d91963666951332927edcf511a2e79fe8d2f8234`를 검증했으나 Commission-hosted primary byte identity는 미확인이다. M/606 Commission Annex raw-byte SHA-256 `262b09596cb5cbe7d72a2c7789fb2512ee00db7f69082e7def2c8181b0f63276` 및 6페이지를 확인했다. M/606 item 18 deadline `31/01/2027`은 원본 PDF page image에서 시각 확인했다. 세부 값은 [PDF provenance manifest](CRA_PDF_SOURCE_PROVENANCE_2026-11-17.json)를 참조한다.
 
 
+- [Commission Guidance claim register](CRA_GUIDANCE_CLAIM_REGISTER_2026-11-17.csv)에 G-001~G-013의 비구속적 설명, 원문 문단/페이지 locator 및 관련 CRA requirement/interface/SEC control 연결을 기록했다.
+
 ## 12. M/606 Annex I 41개 항목의 서보 드라이브 관련성
 
 - [M/606 Annex I 41-item relevance map](CRA_M606_ANNEX_I_SERVO_DRIVE_RELEVANCE_2026-11-17.csv)에 모든 항목의 paraphrased topic, ESO adoption deadline, PDF page locator, 관련 CRA requirement/SEC control/interface 후보 및 서보 드라이브 관련성 판단을 기록했다.
@@ -307,3 +309,10 @@ Commission Implementing Decision C(2026) 7861 final Annex는 M/606의 41개 표�
 - 항목 25(network interfaces), 36(industrial firewall/IDS/IPS), 41(secure elements)은 실제 제품 기능·의도된 목적에 따른 조건부 후보로 표시했다.
 - 항목 18 password-manager standard의 ESO adoption deadline `31/01/2027`은 PDF printed page EN 3의 우측 셀에서 시각 확인했다. 이 표의 날짜는 ESO 표준 채택 일정이지 servo-drive 제조자의 직접 compliance deadline이 아니다.
 - M/606은 표준화 요청이다. 이 결정만으로 해당 표준이 OJ에 인용된 harmonised standard가 되거나 presumption of conformity가 발생하지 않는다.
+
+
+## 13. 제품별 사실관계 및 증거 수집 — 미완료
+
+- [CRA 제품 경계 및 증거 수집 기준서](CRA_PRODUCT_BOUNDARY_AND_EVIDENCE_INTAKE_2026-11-17.md)를 제품별 사실관계 입력 기준으로 추가했다.
+- 현재 저장소의 Guidance·M/606 매핑은 일반 서보 드라이브 평가 프레임워크다. 정확한 제조사·모델·사용설명서·데이터시트·BOM/SBOM·네트워크 구성·원격 처리 구조가 확보되지 않았으므로 특정 제품의 CRA 적용성, Annex III/IV 분류, RDPS 여부 또는 최종 적합성을 확정하지 않는다.
+- 제품별 증거가 제공되면 제품 경계부터 확정하고, 각 CRA requirement / interface / SEC control / M/606 candidate에 evidence ID와 원문 locator를 연결한다.

@@ -828,7 +828,7 @@
 - Pre-merge ref `safety/pre-merge-main-pr30-2026-11-17` → `80245d9e132380a10581612c031f87869993b98d`; post-merge ref `safety/post-merge-main-pr30-2026-11-17` → `975ec6728988e43d9a1ebbf6f6d84288aa44c2fd`; readback compare에서 main과 post-merge ref 동일 확인.
 - PR #30 범위: 한국어 CRA 감사 보고서, 관리 문서·로그 동기화, 격리 테스트 workflow push branch allowlist 1줄. 운영 애플리케이션 코드, 운영 `run.yml`, state/history/archive, Gemini/Discord 외부 실행 및 SIL 3 과거 산출물은 변경하지 않았다.
 - M/606 Commission PDF 및 Guidance ANFR mirror raw-byte SHA-256 검증 완료. M/606 item 18 deadline 31/01/2027 시각 확인 완료. Guidance Commission primary byte identity는 미확인.
-- 현재 구현 작업 브랜치: 없음 (PR #37 병합 완료; PR #38은 문서 전용 사후 동기화).
+- 현재 구현 작업 브랜치: `cra/product-boundary-evidence-intake-2026-11-17` (제품별 CRA 증거 수집 템플릿 작성).
 
 
 ## 2026-11-17 — PR #31 사후 동기화 완료
@@ -939,3 +939,19 @@
 - PDF 2-source canary, HTML 9-source canary, Article 13(8) locator/quote 통과.
 - Pre-merge `safety/pre-merge-main-pr37-2026-11-17` → `360b93a1b9fbf554607e8f258edbaa303c1fcb6f`; post-merge `safety/post-merge-main-pr37-2026-11-17` → `25e1c36cc61a3001b5045cb8a6e90473fe830459`. post ref와 main compare identical.
 - 현재 구현 작업 브랜치 없음. PR #38은 문서 전용 사후 동기화이며 다음 구현은 최신 main에서 새 branch로 시작한다.
+
+
+## 2026-11-17 — 제품 경계 및 증거 수집 기준서
+
+- 신규 `reports/CRA_PRODUCT_BOUNDARY_AND_EVIDENCE_INTAKE_2026-11-17.md` 작성: 제품 식별, intended purpose, product boundary, interfaces, RDPS, 보안 기능, BOM/SBOM, vulnerability handling, support period, 안전·규제 중첩 및 evidence inventory를 포함한다.
+- 현재 제품별 제조사/모델/데이터시트/사용설명서/BOM/SBOM/네트워크 구조는 저장소에 확인되지 않으므로 제품별 법적 분류·적합성 판정은 보류한다.
+- 다음은 정확한 제품 모델 데이터시트와 사용설명서를 확보해 product boundary를 먼저 확정하는 것이다. 확인되지 않은 사실을 추정하지 않는다.
+
+
+## 2026-11-17 — PR #39 제품 경계·증거 수집 기준서 CI 검증
+
+- [PR #39](https://github.com/useformotor3/ai-discord-bot/pull/39) Run #776 성공: **154 passed / 1 xfailed**.
+- Traceability: 13 claims, 15 interfaces, 35 requirements, 36 SEC controls, 41 M/606 rows, 95 project-log records(90 modern IDs + 5 legacy).
+- 공식 CRA Guidance PDF(84 pages) 및 M/606 Annex PDF(6 pages) canary와 HTML canary 통과. PDF artifact upload 성공.
+- 초기 Run #770은 integrated report 내 intake 링크의 상대경로 검사 오류를 정확히 검출했다. validator를 report-relative basename 검사로 수정하고 source blob pin을 갱신했으며, Run #776 전체 검증에서 통과했다.
+- 현재 PR #39는 CI 성공, merge 전 검토 상태다. 제품별 제조사/모델 자료가 없어 특정 제품 분류·적합성은 여전히 미확정.

@@ -561,3 +561,10 @@
 - Vertical product type은 intended purpose/product boundary/core functionality로 판단한다. component inclusion alone does not classify the complete servo drive.
 - M/606 adoption deadlines are ESO deadlines, not manufacturer compliance dates; no harmonised status/presumption until OJ citation.
 - Extend `cra_traceability.py` and CI to validate exactly 41 unique items, deadlines and all candidate foreign keys.
+
+
+## 제품별 증거 수집 단계 — 2026-11-17
+
+- 한국어 제품 경계 및 증거 수집 기준서를 추가했다.
+- 제품별 모델·의도된 목적·제품 경계·인터페이스·원격 데이터 처리·보안 기능·BOM/SBOM·취약점/지원 정책 증거가 확보되기 전에는 CRA 제품 분류·Annex III/IV·RDPS 여부·적합성을 단정하지 않는다.
+- 첫 입력 자료는 정확한 모델의 데이터시트와 사용설명서다. 그 후 architecture, network interface list, SBOM, security/vulnerability policy 순으로 증거를 확보한다.

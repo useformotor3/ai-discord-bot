@@ -406,3 +406,11 @@
 - A standardisation request is not itself an OJ-cited harmonised standard and does not itself create presumption of conformity.
 - Candidate CRA/SEC/interface links must resolve to existing IDs and must be labelled conditional where the product type/component has not been confirmed.
 - ESO adoption deadlines must never be presented as direct manufacturer compliance deadlines.
+
+
+## 57. 제품별 CRA 분류 및 적합성 판정 전 증거 게이트
+
+- 일반 매트릭스·Guidance·M/606 crosswalk만으로 특정 서보 드라이브의 CRA 적용성, Annex III/IV 분류, RDPS 여부 또는 적합성을 단정하지 않는다.
+- 정확한 모델, intended purpose, marketed functions, product boundary, firmware/software, interfaces, remote processing, BOM/SBOM, support/vulnerability evidence를 확보한다.
+- 제품 데이터시트와 사용설명서를 우선 확보하고 서로 교차 검증한다. 모델·구성품·기능을 추정하지 않는다.
+- 제품별 결론은 원문 증거 ID·문서 버전·페이지/절 locator·검토 상태를 연결한 후에만 확정한다.

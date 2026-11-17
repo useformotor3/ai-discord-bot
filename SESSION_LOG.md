@@ -1392,3 +1392,18 @@
 - Pre/post safety refs `safety/pre-merge-main-pr37-2026-11-17` / `safety/post-merge-main-pr37-2026-11-17`; post ref and main compare identical.
 - M/606 item18 printed page EN3 locator and 31/01/2027 deadline validated.
 - Next implementation starts from latest main after PR #38 documentation-only status sync.
+
+
+## 2026-11-17 — CRA 제품 경계 및 증거 수집 기준서
+
+- `reports/CRA_PRODUCT_BOUNDARY_AND_EVIDENCE_INTAKE_2026-11-17.md` 작성.
+- 제품 식별·intended purpose·product boundary·network interfaces·RDPS·security functions·BOM/SBOM·vulnerability handling·support period·evidence inventory를 한국어 템플릿으로 정리.
+- 실제 제조사/모델 자료가 없어 제품별 CRA 분류·적합성은 확정하지 않는다. 첫 자료는 정확한 모델 데이터시트와 사용설명서.
+
+
+## 2026-11-17 — PR #39 CI 통과
+
+- Run #776 성공: 154 passed / 1 xfailed. Traceability 13/15/35/36/41 및 PROJECT_LOG 95 records 통과.
+- CRA Guidance PDF 84 pages, M/606 Annex PDF 6 pages 및 HTML live canary 통과; PDF evidence artifact 업로드 성공.
+- Run #770의 validator 상대경로 오류를 수정하고 전체 CI를 재실행해 통과. 실패를 무시하거나 테스트를 생략하지 않음.
+- PR #39 merge 전 안전 체크포인트 생성 및 merge 예정.

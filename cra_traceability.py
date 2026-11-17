@@ -27,6 +27,7 @@ FILES = {
     "project_log": "PROJECT_LOG.jsonl",
     "readme": "README.md",
     "integrated_report": "reports/CRA_INTEGRATED_COMPLIANCE_REPORT_2026-11-17.md",
+    "product_intake": "reports/CRA_PRODUCT_BOUNDARY_AND_EVIDENCE_INTAKE_2026-11-17.md",
 }
 
 
@@ -256,11 +257,12 @@ def validate_traceability(root="."):
 
     readme = data["readme"].read_text(encoding="utf-8")
     integrated = data["integrated_report"].read_text(encoding="utf-8")
-    _require(FILES["claims"] in readme and FILES["provenance"] in readme and FILES["m606_map"] in readme,
+    _require(FILES["claims"] in readme and FILES["provenance"] in readme and FILES["m606_map"] in readme and FILES["product_intake"] in readme,
              "README must link claim register and PDF provenance manifest", errors)
     _require("CRA_GUIDANCE_CLAIM_REGISTER_2026-11-17.csv" in integrated
              and "CRA_PDF_SOURCE_PROVENANCE_2026-11-17.json" in integrated
-             and "CRA_M606_ANNEX_I_SERVO_DRIVE_RELEVANCE_2026-11-17.csv" in integrated,
+             and "CRA_M606_ANNEX_I_SERVO_DRIVE_RELEVANCE_2026-11-17.csv" in integrated
+             and Path(FILES["product_intake"]).name in integrated,
              "integrated report must link claim register and PDF provenance", errors)
 
     if errors:

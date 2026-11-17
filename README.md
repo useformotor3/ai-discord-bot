@@ -485,3 +485,6 @@
 - [PR #37](https://github.com/useformotor3/ai-discord-bot/pull/37) squash merge 완료. Merge commit `25e1c36cc61a3001b5045cb8a6e90473fe830459`.
 - [Run #757](https://github.com/useformotor3/ai-discord-bot/actions/runs/44056704831): **154 passed / 1 xfailed**, 41-item mapping traceability, PDF/HTML canaries 통과.
 - Pre/post refs: `safety/pre-merge-main-pr37-2026-11-17` → `360b93a1b9fbf554607e8f258edbaa303c1fcb6f`; `safety/post-merge-main-pr37-2026-11-17` → `25e1c36cc61a3001b5045cb8a6e90473fe830459`; post ref와 main compare identical.
+
+
+- [CRA 제품 경계 및 증거 수집 기준서](reports/CRA_PRODUCT_BOUNDARY_AND_EVIDENCE_INTAKE_2026-11-17.md): 모델·의도된 목적·제품 경계·인터페이스·RDPS·BOM/SBOM·취약점/지원 정책을 제품 증거로 확정하기 위한 한국어 입력 템플릿.
