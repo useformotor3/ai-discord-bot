@@ -369,3 +369,12 @@
 - CI artifact는 원본 PDF, 추출 텍스트, manifest를 포함하며 7일 보존한다. artifact를 실제로 다운로드/readback하기 전에는 repository에 원본 파일을 보관했다고 주장하지 않는다.
 - source timeout/429/5xx 등 일시 장애는 `SKIPPED`로 기록할 수 있지만, 문서 식별자 불일치, 비허용 redirect, 손상된 PDF, 필수 marker 누락은 성공 처리하지 않는다.
 - M/606 Annex 표의 항목 18 등 PDF text extraction이 놓친 셀은 PDF page image로 확인할 때까지 미확인으로 유지한다.
+
+
+## 53. 2026-11-17 PDF provenance result and table-cell verification
+
+- Run #642 successfully fetched both CRA PDFs, parsed them and generated raw-byte and extracted-text SHA-256. The artifact ZIP was downloaded and its SHA-256 re-computed to match GitHub artifact metadata.
+- C(2026) 5252 hash applies to the ANFR mirror bytes only; never claim byte identity with the Commission-hosted primary URL without a direct matching hash.
+- C(2026) 7861 Annex hash applies to the Commission document-register PDF bytes.
+- M/606 Annex I item 18 deadline is visually confirmed as `31/01/2027` from the PDF page image. Text extraction can omit table cells at page breaks; never infer the value from adjacent rows when image inspection is available.
+- Run #642's separate HTML source-page canary failed because a PDF document number was incorrectly required on the Commission summary page. Fix the source-page markers and preserve a regression test; do not weaken PDF identity checks.
