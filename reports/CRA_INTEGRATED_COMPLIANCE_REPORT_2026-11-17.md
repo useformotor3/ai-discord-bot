@@ -319,3 +319,17 @@ Commission Implementing Decision C(2026) 7861 final Annex는 M/606의 41개 표�
 
 
 - [통합 CRA 보고서 독립 검토 기록](CRA_INTEGRATED_REPORT_INDEPENDENT_AUDIT_2026-11-17.md): 보고서 구조, 분류 용어, 공식 근거의 한계 및 후속 2차 검토 항목.
+
+
+## 17. 법령 문언 심층 대조 Batch 1 (CRA-001–CRA-010, 2026-11-18)
+
+EUR-Lex 공식 Regulation (EU) 2024/2847 원문을 기준으로 CRA-001–CRA-010의 locator와 요구사항 설명을 재검토했다. 상세 행별 근거·한계는 [CRA 법령 문언 심층 감사 Batch 1](CRA_LEGAL_SEMANTICS_AUDIT_2026-11-18.md)을 참조한다.
+
+핵심 정합화 사항:
+- CRA-001: Article 2(1)의 연결성 범위, Article 3(1)의 PDE 정의, Article 3(22)의 상업활동상 시장 공급 정의를 분리한다. 연결 유형 정의(Article 3(8)–(10))와 Recital 9를 추가 근거로 연결한다.
+- CRA-003: Article 13(2)는 원격 데이터 처리 정의 조항이 아니므로 해당 locator에서 제외한다. Article 3(2), Recital 11–12를 중심으로 제조자 설계/책임 및 기능 필수성 기준을 적용한다.
+- CRA-006: SBOM 직접 근거는 Annex I Part II(1), 기술문서 포함 근거는 Annex VII(2)(b), 체계적 기록은 Article 13(7)로 정리한다. Article 13(5)는 제3자 구성요소 due diligence 문맥으로 구분한다. Annex VII(8)의 합리적 당국 요청 제출을 기본 SBOM 작성 의무의 조건으로 오해하지 않는다.
+- CRA-008: 효과적·정기적 테스트/검토는 요구되나 이 조항 자체에 법정 고정 주기 숫자는 없다.
+- CRA-009: 수정 취약점 공개는 보안 업데이트 제공 후가 원칙이며, 공개 위험이 이익보다 크다는 정당한 사유가 있는 경우 사용자의 패치 적용 기회까지 공개를 늦출 수 있는 예외를 반영한다.
+
+이 검토는 원문 locator/문언의 1차 심층 대조이며 법률가 의견서가 아니다. 제품별 적용성·적합성은 제품 사실 증거가 없으므로 미확정이다.
