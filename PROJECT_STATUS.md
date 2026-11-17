@@ -660,3 +660,13 @@
 - cadence PR에서 모델별 최대 2회 시도, 429/503은 즉시 같은 모델 재시도 중단 후 fallback, 품질 거부/할당량/일시 과부하는 부작용 없는 정상 no-op으로 처리하도록 보강했다. 인증/설정 등 미분류 치명 오류는 계속 exit 1.
 - 실행 주기는 매 3시간(UTC 정각)으로 조정했다. 8회/일 × 모델당 최대 2회 = 최대 16회/일/모델의 이론상 상한으로 20회 Free Tier 제한 아래에 여유를 둔다.
 - CI 재검증 대기 중이며 PR #11은 아직 main에 병합하지 않았다.
+## 2026-11-17 — 운영 cadence·quota·복구 체계 최종 반영
+
+- 운영 main 최신 기준: merge commit `bef260a29481320de3eae9cafe4a6f907e38ead0`.
+- PR #10: 공식 EUR-Lex 링크 누락 거부 + 최근 30개 원문 기반 중복 주제 차단. CI #455 **101 passed, 1 xfailed**.
+- PR #11: 외부 `repository_dispatch` 제거, 내부 schedule `0 */3 * * *`(3시간 간격, 8회/일), Gemini 모델별 최대 2회, 429/503/품질 거부 clean no-op. CI #467 **103 passed, 1 xfailed**. merge `21c6add0c58de39fbc2755882885bffe2cd44394`.
+- PR #12: 실패 후에도 pre-run checkpoint 기반 operational guard 실행, uncommitted/unpublished 데이터 복원, guard 성공 시에만 checkpoint prune, GitHub 저장 후 Discord 전송. CI #470 **105 passed, 1 xfailed**. merge `bef260a29481320de3eae9cafe4a6f907e38ead0`.
+- 마지막 확인된 production state: count=38, history=2,431, state SHA `da086ea3ffb7ef0c76d7fa03a58e13a24aa8fe34`, history SHA `b9ea42fa437b2b3a5728db5d125d287fb746b46b`. Quota 장애 run #44016487535 이후에도 state/history/archive 변경 없음.
+- CRA archive #33–#38 정정 보고서가 main에 보존되어 있다. 원본 archive는 수정하지 않았다.
+- 다음 단계: 첫 3회 3-hourly production run의 실제 결과, quota handling, guard, pruning, archive 참조 무결성을 관찰한다. 그 후 CRA 통합 한국어 보고서와 SIL 3 servo-drive benchmarking/hardware block design을 진행한다.
+- 상세: `reports/PRODUCTION_AUTOMATION_QUALITY_AND_CADENCE_AUDIT_2026-11-17.md`.
