@@ -624,3 +624,12 @@
 - 35행 법령 문언 및 전체 cross-matrix 1차 검토 완료.
 - 제품 증거 수집 기준서를 최신 법령 해석에 맞게 보완한다. 우선 P0: 정확한 모델 데이터시트/카탈로그 및 사용설명서; P1: 제품/통신 block diagram, 인터페이스 사양, SW/FW 구성표/SBOM, EU 공급망/출시 정보; P2: 보안 정책/지원기간 및 Machinery/기타 인증 자료.
 - 증거가 없으면 Unknown 유지. 일반 인터페이스 예시를 실제 제품에 있다고 추정하지 않는다.
+
+
+## 2026-11-18 재개 순서 갱신 — 통합 보고서 독립 감사
+1. 통합 보고서의 제품 적용 가능성 및 Annex III/IV 표현을 제품별 판정과 분리하고, evidence gate 미충족 시 Unknown을 유지한다.
+2. EUR-Lex OJ 원문 기준 Articles 7/8/13/14/15/69/71 및 Annex 핵심 항목을 표본 대조한 독립 감사 기록을 보존한다.
+3. 보고서·요구사항 CSV·SEC/IF/Guidance/M/606 매트릭스 및 상황판 간 상태와 근거 링크를 동기화한다.
+4. Commission Guidance C(2026) 5252 Commission-primary byte identity를 별도 검증하고, mirror fallback을 원본 검증으로 표현하지 않는다.
+5. PR exact-head isolated CI와 readback, pre/post safety refs, main compare를 통과한 문서 변경만 병합한다.
+6. P0 제조사/정확한 모델 데이터시트·카탈로그 및 사용설명서가 확보되면 모델별 evidence IDs를 CRA-001–035 및 IF/SEC 매트릭스에 연결한다.
