@@ -1440,3 +1440,25 @@
 - G-002, G-005, G-006, G-008, G-009, G-010, G-012, G-013의 페이지 범위를 정정. 나머지 5개는 유지.
 - physical PDF page index와 printed page number를 분리해 기록.
 - Commission-hosted primary byte identity 미확인 한계는 그대로 공개.
+
+
+## 2026-11-17 — PR #41 merge / CRA locator audit 다음 단계
+
+- PR #41 merge `acfa2f583157ac541c4c60d71090197322bc8efb`; Run #806 155 passed / 1 xfailed.
+- Guidance claim G-001~G-013 PDF paragraph/page locator 8건 정정 및 독립 audit record 추가.
+- Pre/post safety refs 생성, post ref와 main compare identical.
+- 다음은 CRA-001~CRA-035 법령 locator와 각 row의 법적 설명·적용 주체·조건·예외를 공식 EUR-Lex 원문과 행 단위로 교차 검토한다.
+
+
+## 2026-11-17 — SBOM 의무 원문 대조
+
+- EUR-Lex Annex I Part II(1), Annex II(9), Annex VII(2)(b), (8)을 대조.
+- 기계 판독형 SBOM(최소 top-level dependencies) 작성은 기본 의무, 기술문서 포함은 Annex VII(2)(b), 시장감시당국 요청에 따른 제출은 Annex VII(8), 사용자 제공은 Annex II(9) 조건부로 각각 분리.
+- 통합 보고서의 법적 해석 문구를 이 구분에 맞춰 보강.
+
+
+## 2026-11-17 — CRA 법령 locator 1차 인벤토리
+
+- CRA-001~CRA-035 조항 참조를 1차 검토. 잘못된 Article/Annex 번호는 발견되지 않았으나 문장·조건·예외의 전수 검토는 계속.
+- SBOM 의무의 Annex I Part II(1), Annex VII(2)(b)/(8), Annex II(9) 구분을 명확화.
+- Run #819: 155 passed / 1 xfailed; official PDF/HTML canaries 통과.

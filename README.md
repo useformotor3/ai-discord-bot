@@ -497,3 +497,10 @@
 - Pre-merge ref `safety/pre-merge-main-pr39-2026-11-17` → `d212081d0f105fc2b293606d71f9b156f0c45c89`; post-merge ref `safety/post-merge-main-pr39-2026-11-17` → `aec679142bf8c12b1ce18b233956f9695d70ca21`; merge SHA와 main 비교 identical.
 
 - [통합 CRA 보고서 독립 검토 기록](reports/CRA_INTEGRATED_REPORT_INDEPENDENT_AUDIT_2026-11-17.md): 섹션 번호·법적 분류 용어·근거 출처 한계·제품별 미확정 사항을 2차 검토.
+
+
+## PR #41 병합 — 통합 CRA 보고서 독립 검토
+
+- [PR #41](https://github.com/useformotor3/ai-discord-bot/pull/41) squash merge: `acfa2f583157ac541c4c60d71090197322bc8efb`.
+- [Run #806](https://github.com/useformotor3/ai-discord-bot/actions/runs/44060186518): **155 passed / 1 xfailed**; Guidance/M/606 PDF, HTML canaries 통과.
+- Pre/post refs `safety/pre-merge-main-pr41-2026-11-17` / `safety/post-merge-main-pr41-2026-11-17`; post ref와 main 비교 identical.
