@@ -15,18 +15,17 @@ VALID_REPORT = """# CRA 심층 조사 보고서
 제품의 의도된 용도와 위험평가 결과를 기준으로 요구사항 적용성을 판단한다.
 
 ## 2. 규격 근거 및 상세 내용
-규정 (EU) 2024/2847의 관련 조항과 부속서 요구사항을 구분해 검토한다.
+규정 (EU) 2024/2847 Article 13(8)의 제조자 취약점 처리 의무를 원문과 대조한다.
 제조자는 제품 설계와 개발 단계에서 적절한 사이버보안 위험평가를 수행하고,
 식별된 위험을 기술문서와 제품 보안 설계에 반영해야 한다.
 본 설명은 적용성 검토를 위한 조사 초안이며 제품 분류는 별도 확인이 필요하다.
 
 ## 3. 출처 자료(Source)
 EU 공식 법령 데이터베이스 EUR-Lex, Regulation (EU) 2024/2847.
-https://eur-lex.europa.eu/eli/reg/2024/2847/2024-11-20/eng
+https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02024R2847-20241120
 
 ## 4. 출처 원문 텍스트(Raw Text Quote)
-원문 조항을 확인하고 제품에 적용되는 문구를 인용해 근거를 기록한다.
-인용은 원문과 대조해야 하며 요약 문구를 법령 직접 인용으로 표시하지 않는다.
+“Manufacturers shall ensure that vulnerabilities of the product with digital elements, including its components, are handled effectively during the support period.”
 """
 
 
@@ -42,11 +41,60 @@ def test_successful_generation_uses_only_mocked_external_services(run_main):
     assert len(archives) == 1
     assert "CRA 심층 조사 보고서" in archives[0].read_text(encoding="utf-8")
     assert len(run_main.captured["model_calls"]) == 1
+    assert len(run_main.captured["source_gets"]) == 1
+    assert "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02024R2847-20241120" in run_main.captured["model_calls"][0]["prompt"]
+    assert "Manufacturers shall ensure that vulnerabilities" in run_main.captured["model_calls"][0]["prompt"]
     assert len(run_main.captured["discord_posts"]) == 1
     assert [cmd[0] for cmd in run_main.captured["git_commands"]] == [
         "git", "git", "git", "git", "git"
     ]
 
+
+
+def test_official_source_fetch_failure_stops_before_model_or_external_side_effects(run_main):
+    with pytest.raises(SystemExit) as exc:
+        run_main.execute(
+            [VALID_REPORT],
+            source_response_override={"status_code": 503, "text": "temporarily unavailable"},
+        )
+
+    assert exc.value.code == 1
+    assert run_main.captured["source_gets"]
+    assert run_main.captured["model_calls"] == []
+    assert run_main.captured["discord_posts"] == []
+    assert run_main.captured["git_commands"] == []
+
+
+def test_non_eurlex_redirect_stops_before_model_calls(run_main):
+    with pytest.raises(SystemExit) as exc:
+        run_main.execute(
+            [VALID_REPORT],
+            source_response_override={"url": "https://example.com/fake-cra"},
+        )
+
+    assert exc.value.code == 1
+    assert run_main.captured["model_calls"] == []
+    assert run_main.captured["discord_posts"] == []
+    assert run_main.captured["git_commands"] == []
+
+
+def test_report_with_unmatched_direct_quote_is_rejected(run_main):
+    unrelated_source = (
+        "<html><body><h2>Article 13</h2>"
+        "<p>This official source text deliberately does not contain the submitted quote.</p>"
+        + (" additional legal text" * 1500)
+        + "</body></html>"
+    )
+    with pytest.raises(SystemExit) as exc:
+        run_main.execute(
+            [VALID_REPORT] * 6,
+            source_response_override={"status_code": 200, "text": unrelated_source},
+        )
+
+    assert exc.value.code == 1
+    assert len(run_main.captured["model_calls"]) == 6
+    assert run_main.captured["discord_posts"] == []
+    assert run_main.captured["git_commands"] == []
 
 def test_model_fallback_is_exercised_without_real_api_calls(run_main):
     run_main.execute([

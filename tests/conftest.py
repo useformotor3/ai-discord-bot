@@ -16,6 +16,7 @@ def run_main(tmp_path, monkeypatch):
     repo_root = Path(__file__).resolve().parents[1]
     captured = {
         "model_calls": [],
+        "source_gets": [],
         "discord_posts": [],
         "git_commands": [],
         "git_options": [],
@@ -67,6 +68,7 @@ def run_main(tmp_path, monkeypatch):
         script_path=None,
         discord_responses=None,
         git_responses=None,
+        source_response_override=None,
     ):
         genai_module = types.ModuleType("google.genai")
         genai_module.Client = lambda api_key=None: FakeClient(responses)
@@ -124,6 +126,34 @@ def run_main(tmp_path, monkeypatch):
             return response_spec
 
         requests_module.post = fake_post
+
+        source_response = {
+            "status_code": 200,
+            "text": (
+                "<html><body><h1>Regulation (EU) 2024/2847</h1>"
+                "<h2>Article 13</h2><p>Article 13(8)</p>"
+                "<p>Manufacturers shall ensure that vulnerabilities of the product "
+                "with digital elements, including its components, are handled "
+                "effectively during the support period.</p>" + (" official legal text" * 1500) + "</body></html>"
+            ),
+        }
+
+        def fake_get(url, *, headers=None, timeout=None, **kwargs):
+            captured["source_gets"].append({
+                "url": url, "timeout": timeout, "headers": headers,
+            })
+            spec = source_response
+            if isinstance(spec, BaseException):
+                raise spec
+            response = FakeResponse(
+                status_code=spec.get("status_code", 200),
+                text=spec.get("text", ""),
+                body=spec.get("json", {}),
+            )
+            response.url = spec.get("url", url)
+            return response
+
+        requests_module.get = fake_get
         requests_module.Timeout = Timeout
         requests_module.ConnectionError = ConnectionError
         requests_module.exceptions = exception_types
@@ -159,6 +189,9 @@ def run_main(tmp_path, monkeypatch):
             "DISCORD_WEBHOOK_URL",
             "https://example.invalid/mock-webhook",
         )
+
+        if source_response_override is not None:
+            source_response.update(source_response_override)
 
         target_script = (
             Path(script_path)

@@ -9,6 +9,7 @@ from test_main_characterization import VALID_REPORT
 def test_fixture_exposes_separate_external_call_captures(run_main):
     assert set(run_main.captured) == {
         "model_calls",
+        "source_gets",
         "discord_posts",
         "git_commands",
         "git_options",
