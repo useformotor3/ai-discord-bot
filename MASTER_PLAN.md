@@ -557,3 +557,9 @@
 2. [완료] SBOM user disclosure는 선택 공개 시 접근 위치 안내라는 점을 명확화.
 3. [완료] servo drive 자동 Important Class I/II 분류 및 모든 transitive dependencies 의무 주장 정정.
 4. [진행] archive #7 이하 역순 감사.
+
+## 2026-11-17 — archive #7 correction audit
+1. [완료] 접근통제 locator를 Annex I Part I (2)(d), secure-default/reset을 (2)(b)로 정정.
+2. [완료] unique credential/first-use/password complexity 구현 후보와 CRA 직접 문언을 분리.
+3. [완료] IEC 62443 CR 1.1/1.5와 CRA 법적 근거를 별도 traceability로 분리.
+4. [진행] archive #6 이하 역순 감사.
