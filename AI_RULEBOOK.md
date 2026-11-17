@@ -340,4 +340,14 @@
 - Official explanation claims must be linked to the Commission source page and explicitly classified as non-binding explanation. Interpretations and engineering recommendations must not be represented as legal requirements.
 - The source validator proves source traceability and text/locator consistency; it does not establish the correctness of legal interpretation or product-specific CRA applicability.
 - CI live canary currently checks nine official sources and Article 13(8). Expand Article/Annex coverage before claiming complete legal locator coverage.
-- Do not claim that Commission Guidance PDF/Annex or M/606 decision Annex was read until its actual file has been fetched, parsed and hashed.
+- Do not claim that the original Commission Guidance/M/606 PDF binary was downloaded, byte-verified or SHA-256 hashed until the bytes have actually been obtained and hashed. If only the PDF text layer is available through a document viewer, describe the work precisely as 'PDF text-layer review' and keep binary-integrity status unverified.
+
+## 50. Commission PDF 및 부속문서 취득·해시 증거 규칙 (2026-11-17)
+
+- Commission Guidance C(2026) 5252 및 M/606 C(2026) 7861 Annex의 웹 PDF text layer를 읽어 문단/페이지 locator를 검토한 것은 **텍스트 내용 감사**로 기록한다.
+- 실제 PDF 바이너리를 확보하고 SHA-256을 계산하기 전에는 '원본 PDF 다운로드 완료', '바이너리 무결성 검증 완료', '파일 보관 완료'라고 표현하지 않는다.
+- Commission 원본 URL과 기관/규제기관 mirror URL을 분리 기록한다. mirror에서 읽은 문서는 표제·날짜·문서번호가 일치하는지 확인하되, byte-for-byte 동일성을 입증하지 않으면 동일 파일 해시를 주장하지 않는다.
+- PDF text extraction에서 날짜/표 셀/병합 셀/페이지 locator가 누락되면 주변 행을 근거로 값을 추정하지 않는다. 해당 셀을 미확인으로 남기고 원본 페이지 이미지에서 확인한다.
+- C(2026) 5252는 CRA Article 26에 따른 비구속적 Commission guidance다. 법령 또는 CJEU의 권위 있는 해석과 동일시하지 않고, 법적 의무·Commission interpretation·engineering recommendation을 분리한다.
+- C(2026) 7861 Annex의 날짜는 ESO의 표준 채택 기한이다. OJ harmonised standard citation, presumption of conformity, 제품별 conformity assessment 또는 CRA application date와 혼동하지 않는다.
+- 제품별 적용성/분류는 제품명만으로 결정하지 않는다. Guidance §2.5 data connection, §6 core functionality, §8 RDPS는 실제 회로·데이터 흐름·기능·제조자 책임 및 제품 경계를 확인하는 기준으로 사용한다.

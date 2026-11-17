@@ -5,14 +5,14 @@
 - 최종 갱신: 2026-11-17 (KST)
 - 기준 저장소: `useformotor3/ai-discord-bot`
 - 운영 기준 브랜치: `main` (운영 자동화 및 데이터 보존)
-- 현재 작업 브랜치: 없음 (PR #28 최종 복구 체크포인트/상황판 동기화 병합 완료; 후속 재개는 최신 main에서 시작)
+- 현재 작업 브랜치: `cra/official-annex-audit-2026-11-17` (기준 `main` @ `80245d9e132380a10581612c031f87869993b98d`; 공식 Guidance/M/606 Annex 감사)
 - 최신 CRA source 기준점: PR #29 merge commit `9c16724b8b72bd09d3492b19ff714602b235c66b`; PR #28 recovery checkpoint `942e1e6b5f2887001279a96c21f94138d283a689`; 관리 문서 PR #27 `5f0c54a018e18b3453b1c836a5a7d2e9a266331b`; source provenance 코드 PR #26 `8066c166ba01fbfb8d25f61ce0ce6ed72f151854`
 - 최신 source gate PR #26 병합 완료: CELLAR 공식 법령 7건 + Commission 공식 페이지 2건, SHA manifest, claim-level validator, fail-closed source gate
 - CRA-only 범위 통제 병합 기준점: PR #18, merge commit `b7813ddd311bc51bfb0eb26458eace9ff82b621f` (2026-11-17)
 - 마지막 CRA 코드/출처 검증 병합: PR #26 merge `8066c166ba01fbfb8d25f61ce0ce6ed72f151854`. PR head Run #573 success: 138 passed / 1 xfailed, 9개 live official source 및 Article 13(8) locator/quote 확인. merge commit 자체의 별도 run은 미확인.
 - 마지막 관리 문서 동기화: PR #27 merge `5f0c54a018e18b3453b1c836a5a7d2e9a266331b`. Run #575 success: 138 passed / 1 xfailed 및 live source canary 재통과.
 - 정오표 우선순위 보강: PR #29 merge `9c16724b8b72bd09d3492b19ff714602b235c66b`. 최종 PR head Run #596: 141 passed / 1 xfailed, 9개 source, Article 64(10)/67 corrigenda 및 Article 13(8) live canary 통과.
-- 이번 비교 기준: PR #28 병합 후 활성 작업 브랜치 없음. 다음 작업 시작 시 main HEAD와 원격 브랜치를 다시 조회해 기준선을 설정
+- 현재 기준선: `main` @ `80245d9e132380a10581612c031f87869993b98d`; PR #29 post-merge safety ref와 비교 시 main에 문서 전용 3개 커밋 추가. 작업 브랜치는 main과 동일한 SHA에서 생성.
 - 프로젝트 상태: CRA 통합 보고서 v0.2 병합, 요구사항 추적표 35항목, 인터페이스 적용성 매트릭스 15항목 병합. 보안 통제·시험 매트릭스 36항목 초안 작업 중.
 - 주 문서 언어: 한국어
 - 안전 원칙: 법적 적합성·제품 분류·안전 관련 설계 판단은 근거와 인간 검토 없이 확정하지 않음
@@ -796,3 +796,25 @@
 - PR head Run #596은 확인했으나 merge commit 자체의 별도 Actions run은 확인되지 않았다.
 - 운영 Gemini/Discord workflow, state/history/archive 및 SIL 3 과거 산출물은 변경하지 않았다.
 - 다음: Commission Guidance PDF/Annex 및 M/606 C(2026) 7861 decision Annex 원문 수집, Annex I live locator 확대, 35 requirements/15 interfaces/36 SEC controls의 source claim·제품 증거 연결.
+
+
+## 2026-11-17 — Commission Guidance 및 M/606 Annex 1차 감사
+
+- 작업 브랜치: `cra/official-annex-audit-2026-11-17`; 생성 기준 main SHA `80245d9e132380a10581612c031f87869993b98d`.
+- 신규 보고서: `reports/CRA_OFFICIAL_GUIDANCE_AND_M606_ANNEX_AUDIT_2026-11-17.md`.
+- Commission Guidance C(2026) 5252 Annex의 PDF text layer를 확인하고 §2.4–2.7, §4, §5, §6, §7, §8, §9.3.2의 서보 드라이브 관련 locator/해석을 정리했다.
+- Guidance §2.5 paras. 26–28은 encoded digital information을 데이터 연결 기준으로 설명한다. 단순 전기 신호/trigger와 디지털 정보 교환을 구분하도록 인터페이스 매트릭스 보강 근거를 확보했다.
+- Guidance §6은 Annex III/IV 분류가 제품명/내장 구성요소가 아니라 제품 전체 core functionality에 달렸음을 확인했다. §8은 RDPS 3개 누적 조건과 industrial robot 예시를 제공한다.
+- C(2026) 7861 Annex I에서 41개 표준 주제와 ESO adoption deadline을 추출했다. 항목 18의 날짜 셀은 text extraction에서 판독 불가로 미확인 유지.
+- **검증 한계:** Commission-hosted C(2026) 5252 PDF와 C(2026) 7861 Annex PDF의 원본 바이너리 다운로드 및 SHA-256은 실행환경에서 실패했다. PDF text layer 내용 감사는 완료했으나 원본 byte identity/해시는 미검증이다. Guidance PDF는 ANFR mirror를 통한 text layer를 확인했으며 Commission download와 byte-for-byte 동일성은 확인하지 않았다.
+- 법적 구속력, ESO adoption deadline, harmonised standard OJ citation, CRA application date를 구분한다. 표준화 기한을 제품 적합성 완료 기한으로 해석하지 않는다.
+- 운영 코드/workflow/state/history/archive, 운영 Gemini/Discord는 변경·실행하지 않았다. SIL 3 과거 자료도 변경하지 않았다.
+- 다음: M/606 item 18 PDF 시각 확인, 원본 PDF 바이너리/해시 취득 경로 확보, Guidance §2.5/§6/§8을 15개 interface/35개 requirement/36개 SEC control에 claim-level 연결, Annex I locator canary 확대.
+
+
+## 2026-11-17 — PR #30 격리 CI 트리거 준비
+
+- PR #30 `https://github.com/useformotor3/ai-discord-bot/pull/30`을 생성하고 ready-for-review 상태로 전환했다.
+- PR branch의 `.github/workflows/tests.yml` push branch allowlist에 `cra/official-annex-audit-2026-11-17`만 추가했다. 이 workflow는 `permissions: contents: read`의 격리 테스트 전용이며 운영 `run.yml`은 변경하지 않았다.
+- 변경 후 main 대비 9 commits ahead / 0 behind, 8개 변경 경로이며 변경 범위는 보고서·관리 문서·JSONL 및 테스트 workflow 1줄이다.
+- GitHub workflow run/status 조회에서는 현재 head의 CI 결과가 아직 보이지 않는다. 따라서 CI 통과나 merge 완료를 주장하지 않으며 PR #30은 미병합 상태로 유지한다.
