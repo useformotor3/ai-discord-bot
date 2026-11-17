@@ -418,3 +418,11 @@
 5. [진행] CRA 한국어 통합 보고서와 조항-제품요구-검증증거 traceability matrix 작성.
 6. [다음] SIL 3 서보 드라이브 벤치마킹 보고서 및 하드웨어 블록 설계. 기능안전과 CRA cybersecurity 요구사항을 서로 다른 traceability chain으로 관리.
 7. [운영] 첫 3회 3-hourly production run을 관찰하고 실제 quota/Discord/guard/prune 결과를 기록.
+
+## 2026-11-17 — SIL 3 서보 드라이브 기술 산출물 v0.1
+1. [완료] 제조사 4개 제품군(Mitsubishi J5, Yaskawa Sigma-7 ASM7, Rockwell Kinetix 5700, Siemens S210) 공식 자료 기반 벤치마킹.
+2. [완료] 2026-11-17 현재 IEC 61800-5-2 AMD1:2026 및 IEC 62061 AMD2:2026 최신판 반영.
+3. [완료] 1축 기준 하드웨어 reference block design 및 안전 기능별 구현 경로 작성.
+4. [완료] FS/CYB 분리 traceability matrix 작성.
+5. [진행] PR CI/병합 및 링크/수치/모델 조합 검증.
+6. [다음] 정격 전압·출력·축 수·부하·엔코더·안전 기능 범위를 확정한 후 회로도/BOM/PFH 계산/시험 규격 상세화.
