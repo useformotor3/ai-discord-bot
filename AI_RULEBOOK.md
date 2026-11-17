@@ -359,3 +359,13 @@
 - merge commit `975ec6728988e43d9a1ebbf6f6d84288aa44c2fd` 자체의 별도 CI run을 확인하지 못했다면 PR head CI와 구분해 기록한다.
 - pre-merge safety ref `safety/pre-merge-main-pr30-2026-11-17`와 post-merge ref `safety/post-merge-main-pr30-2026-11-17`의 SHA를 기록하고, post-merge ref와 main이 동일한지 compare/readback한다.
 - 문서·테스트 전용 workflow 변경이 운영 `run.yml`, application runtime, state/history/archive 또는 외부 서비스 실행에 영향을 주지 않았는지 PR diff로 확인한다.
+
+
+## 52. CRA PDF 원문 바이너리 취득 및 CI artifact 검증
+
+- PDF source fetch는 HTTPS host allowlist, redirect final host, `%PDF-` magic, maximum size, pypdf parse, page-count bound, document identity markers를 검증한 뒤 성공으로 기록한다.
+- Commission-hosted URL을 우선한다. Guidance PDF에 한해 primary URL이 401/403/404 또는 비-PDF 응답/일시 장애일 때 allowlist된 ANFR mirror를 fallback으로 사용할 수 있다. unexpected redirect host는 mirror fallback 없이 fail-closed한다.
+- SHA-256은 **원본 PDF bytes**의 digest와 추출 텍스트 digest를 별도 필드로 기록한다. 이전 웹 PDF text-layer review 기록과 binary SHA-256을 혼동하지 않는다.
+- CI artifact는 원본 PDF, 추출 텍스트, manifest를 포함하며 7일 보존한다. artifact를 실제로 다운로드/readback하기 전에는 repository에 원본 파일을 보관했다고 주장하지 않는다.
+- source timeout/429/5xx 등 일시 장애는 `SKIPPED`로 기록할 수 있지만, 문서 식별자 불일치, 비허용 redirect, 손상된 PDF, 필수 marker 누락은 성공 처리하지 않는다.
+- M/606 Annex 표의 항목 18 등 PDF text extraction이 놓친 셀은 PDF page image로 확인할 때까지 미확인으로 유지한다.
