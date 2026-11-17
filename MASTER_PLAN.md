@@ -613,3 +613,8 @@
 - CRA-001–CRA-035: EUR-Lex 공식 원문 및 관련 sectoral act 기준 1차 심층 문언 대조 완료.
 - 후속 우선순위: 35행 전체 cross-matrix audit, 법령 locator/의무주체/조건/예외/기한의 중복·누락 확인, Guidance/M/606/engineering control 구분, 제품별 evidence intake 설계.
 - 상세 Batch 1/2/3 감사 파일은 `reports/CRA_LEGAL_SEMANTICS_AUDIT_2026-11-18.md`, `reports/CRA_LEGAL_SEMANTICS_AUDIT_BATCH2_2026-11-18.md`, `reports/CRA_LEGAL_SEMANTICS_AUDIT_BATCH3_2026-11-18.md` 참조.
+
+
+## 다음 단계 업데이트 — 2026-11-18
+- CRA-001–CRA-035 법령 문언 1차 대조 및 15/36/13/41 cross-matrix 정합성 감사 진행.
+- 다음: 통합 보고서 독립 재검토(법령 locator·주장·표/그림·제품별 unknown 분리), 제품 evidence intake 필수 항목 확정, Guidance PDF primary byte identity 검증.
