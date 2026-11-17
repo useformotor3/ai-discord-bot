@@ -633,3 +633,14 @@
 4. Commission Guidance C(2026) 5252 Commission-primary byte identity를 별도 검증하고, mirror fallback을 원본 검증으로 표현하지 않는다.
 5. PR exact-head isolated CI와 readback, pre/post safety refs, main compare를 통과한 문서 변경만 병합한다.
 6. P0 제조사/정확한 모델 데이터시트·카탈로그 및 사용설명서가 확보되면 모델별 evidence IDs를 CRA-001–035 및 IF/SEC 매트릭스에 연결한다.
+
+
+## PR #50 병합 완료 및 다음 재개 순서 — 2026-11-18
+- PR #50 `137d096123ccf5ee478292002d2c528b41981fc7` 병합 완료. Exact-head Run #840 success; pre/post safety refs 생성 및 변경 범위 비교 확인.
+- 통합 보고서의 전형적 서보 드라이브 CRA 적용 가능성 및 Annex III/IV 표현은 제품별 결론이 아닌 사전 스크리닝 가설로 제한했다. 정확한 모델 증거 전 Unknown 유지.
+- 다음 우선순위:
+  1. Commission-hosted CRA Guidance PDF의 원본 bytes를 확보하고 공식 Commission source와 mirror fallback의 SHA-256을 직접 비교한다.
+  2. Commission Implementing Decision C(2026) 7861 및 M/606 Annex의 원문/부속서 provenance, 발행·채택·인용 상태를 공식 출처에서 재확인한다.
+  3. Guidance claim register 13개 및 M/606 41개 항목의 source locator/version/hash/claim mapping을 갱신하고 독립 재검증한다.
+  4. 제조사/정확한 서보 드라이브 모델 P0 자료가 들어오면 CRA-001–035, 15 interfaces, 36 SEC controls를 model-specific evidence IDs로 연결한다.
+- 제품 증거가 없는 동안 개별 scope/classification/conformity 및 구현/시험 상태를 임의로 확정하지 않는다.
