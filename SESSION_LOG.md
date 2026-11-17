@@ -959,3 +959,12 @@
 - 최신 EUR-Lex read-only canary Run #11: success. 공식 endpoint에서 196,076자 수집, 정오표 3개 날짜 확인. 로그: https://github.com/useformotor3/ai-discord-bot/actions/runs/43987730194.
 - EUR-Lex consolidated text의 법적 효력 caveat를 prompt/validator/archive에 반영했다.
 - 운영 Gemini/Discord/production workflow는 호출하지 않았고, PR #3은 Draft/open 유지.
+
+
+## 2026-11-17 — CRA 후속 법령 source pack 구현 및 검증
+- cra_source.py에 EUR-Lex 공식 후속 법령 3건을 추가하고, main.py 프롬프트에서 적용 범위를 구분했다.
+- tests/conftest.py 및 tests/test_main_characterization.py mock을 네 원문으로 확장하고, 전체 테스트 및 blob SHA pin을 갱신했다.
+- CI Run #141: 103 passed, 1 xfailed; compileall 및 전체 pytest 성공. https://github.com/useformotor3/ai-discord-bot/actions/runs/43989211881
+- EUR-Lex read-only canary Run #26: 성공. CRA 통합본과 후속 법령 3건 총 220,715자 visible text, 정오표 3개 날짜 확인. https://github.com/useformotor3/ai-discord-bot/actions/runs/43989211861
+- 코드 변경은 Draft PR #3에 존재하며 main 미병합. 운영 main.py/run.yml, Gemini/Discord 호출 없음.
+- 상세: reports/CRA_SOURCE_PROVENANCE_GATE_2026-11-17.md.
