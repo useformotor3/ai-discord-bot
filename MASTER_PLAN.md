@@ -88,24 +88,27 @@
 - CRA 보안 통제·시험 매트릭스 36항목 작성, 35개 요구사항 추적 ID와 연결. 각 구현 후보는 법정 단일 구현방식이 아닌 위험기반 선택지로 표시; 제품별 시험은 미실시.
 - CRA 서보 드라이브 참조 보안 아키텍처 v0.1 PR #23 병합 및 main readback 완료: 논리 블록, trust boundary, data flow, HW/FW/network control candidates. 실제 부품/회로에 맞춘 설계는 제품 자료 확보 후 진행.
 - Phase 6: CRA 통합 규제·기술 준수 보고서 v0.2 보강 및 PR #21 병합 완료. 2026-07 Commission Guidance 및 2026-11 M/606 개정 반영. 제품별 판정 전.
+- Phase 2/3 CRA source provenance: PR #26 병합 완료. CELLAR official source 7건 + Commission page 2건, source SHA manifest, claim/paragraph/Annex locator validator, fail-closed source gate. Run #573: 138 passed / 1 xfailed; live 9-source canary와 Article 13(8) quote 확인.
 
-## 2026-11-17 최신 재개 지점 — branch/source provenance audit
+## 2026-11-17 최신 재개 지점 — CRA source provenance 통합 완료
 
-- main을 canonical 운영 브랜치로 유지한다. divergent branch 전체 병합 금지.
-- [BRANCH_RECONCILIATION_2026-11-17.md](reports/BRANCH_RECONCILIATION_2026-11-17.md)를 branch authority 기준으로 사용한다.
-- 최우선 P0: integration/cra-source-grounding의 source/claim gate를 최신 main에 선택 이식한다. Article 13 paragraph 8. 표기와 Annex Part/point quote scope 결함을 먼저 수정하고, main.py의 retry/quota/dedup/persistence 보호를 유지한다.
-- Commission Guidance C(2026) 5252 및 M/606 Decision C(2026) 7861 공식 source entry를 보강하되, 공식 host allowlist와 PDF/page 추출을 별도 검증한다.
-- PR/CI 통과 후 source gate를 main에 병합한다. 이후 제품별 회로/펌웨어/프로토콜 증거를 확보해 reference architecture와 36 SEC test 항목을 구체화한다.
+- canonical 운영 브랜치는 `main`이다. 최신 source provenance merge commit은 `8066c166ba01fbfb8d25f61ce0ce6ed72f151854`.
+- PR #26에서 source/claim gate 선택 이식과 CELLAR official source retrieval을 완료했다. [검증 보고서](reports/CRA_SOURCE_PROVENANCE_PIPELINE_2026-11-17.md)를 상세 근거로 사용한다.
+- PR #26 Actions Run #573: 138 passed / 1 xfailed; official source 9개 live fetch 및 Article 13(8) locator/quote canary 성공. PR head SHA는 `d1bda523c1b593bbd48bf4916dd7bbd741001894`; merge commit 자체의 별도 CI는 아직 확인되지 않았다.
+- 운영 main의 history 15, retry 2, quota/429/503 no-op, duplicate-topic suppression, transactional persistence/rollback은 유지했다.
+- Commission Guidance PDF/Annex 및 M/606 C(2026) 7861 decision Annex는 관련 URL만 manifest에 기록했다. 원문 다운로드·파싱은 미완료로 남긴다.
+- 다음 우선순위는 PDF/decision Annex 수집, Article/Annex live locator 확대, 35 requirements/15 interfaces/36 SEC controls와 source claim 및 제품별 증거 연결이다.
+- divergent branches 전체 병합 금지, force-push/history rewrite 금지. 과거 SIL 3 산출물은 역사 기록으로 보존하고 CRA 계획에 포함하지 않는다.
 
 ## 다음 실행 순서 — 2026-11-17 CRA 우선순위
 
-1. **법적 기준 재검증**: Regulation (EU) 2024/2847 OJ 원문, Commission Guidance C(2026) 5252, M/606 개정 C(2026) 7861, Regulation (EU) 2025/327의 CRA 개정 범위를 교차 확인한다.
-2. **제품 적용성 확정**: 서보 드라이브 모델·통신 프로토콜·디지털 데이터 흐름·필수 소프트웨어·원격 데이터 처리·EU 공급 주체를 확인한다.
-3. **제품 분류/평가 경로**: Annex III/IV core functionality를 검토하고 Article 32 적합성 평가 경로를 근거와 함께 확정한다.
-4. **요구사항 추적표 보강**: 35개 항목을 설계 통제·검증 방법·시험 결과·문서 증거·상태와 연결한다.
-5. **통합 보고서 유지**: 정정 보고서 #1–#38의 주요 결론과 locator를 v0.2에 통합했다. 이후 신규 근거/법령 변경이 발생하면 법적 의무·공식 해석·엔지니어링 권고·미확인 가설을 분리해 갱신한다.
-6. **제품별 설계·검증**: 35개 요구사항, 15개 인터페이스, 36개 SEC 통제/시험 항목을 실제 제품 회로·펌웨어·시험 증거에 연결한다.
-7. **변경 통제**: 문서 diff, CSV/JSONL 파싱, 링크 및 출처 검증 후 PR을 생성한다. CI 실행이 확인되지 않으면 성공으로 기록하지 않는다.
+1. **공식 부속문서 수집**: Commission Guidance C(2026) 5252 PDF 원문/Annex 및 M/606 결정 C(2026) 7861 Annex를 별도 수집·파싱하고 페이지 locator, source URL, retrieval time, SHA-256을 기록한다. 현재 source pack은 관련 URL만 기록하며 PDF/decision Annex 본문은 미수집이다.
+2. **locator 검증 범위 확대**: Article 13(8) 외 Article 주요 paragraph, Annex I Part I/Part II point를 live source text에서 검증하는 canary와 regression test를 추가한다.
+3. **요구사항·통제 추적 통합**: 35개 CRA 요구사항, 15개 인터페이스, 36개 SEC 통제/시험 항목에 source claim ID, 설계 통제, 검증 방법, 시험 결과, 증거 링크를 연결한다.
+4. **제품 적용성·분류**: 실제 모델·회로·펌웨어·프로토콜·디지털 데이터 흐름·원격 처리·EU 공급 주체 자료가 확보되면 Annex III/IV core functionality 및 Article 32 경로를 검증한다. 미제공 사항은 잠정으로 유지한다.
+5. **통합 보고서·매뉴얼**: 기존 v0.2 보고서와 38개 정정 보고서를 기준으로 신규 근거를 통합하고, 법적 의무·공식 해석·엔지니어링 권고·미확인 가설을 구분한다.
+6. **CI/운영 관찰**: main merge commit `8066c166ba01fbfb8d25f61ce0ce6ed72f151854`의 post-merge CI를 확인한다. 운영 Gemini/Discord 실행은 운영 모니터링 범위에서만 관찰하며 테스트 목적으로 실행하지 않는다.
+7. **문서 정합성**: README, PROJECT_STATUS, MASTER_PLAN, AI_RULEBOOK, SESSION_LOG, PROJECT_LOG.jsonl을 같은 사건 ID/commit 기준으로 갱신하고 JSONL·CSV·문서 링크를 재검증한다.
 
 기능 코드나 운영 workflow 변경은 CRA 산출물에 실제 필요성이 확인된 경우에만 별도 영향분석·테스트·롤백 계획을 수립한다. 과거 P1-B3/P1-B4 계획은 현재 CRA 보고서의 선행 조건으로 취급하지 않는다.
 
@@ -456,3 +459,13 @@
 5. [완료] PR #16 merge `34449753857c6ab004271f69aac19867a7aed1fa`, CI #488 105 passed, 1 xfailed.
 6. [진행] 정격/부하/피드백/안전 기능 범위 확정 후 schematic, component selection/BOM, thermal/EMC, FMEDA/PFH calculation.
 7. [운영] 3시간 주기 첫 3회 production run 관찰.
+
+
+## 2026-11-17 — CRA source provenance pipeline 완료
+
+- PR #26 merge commit \`8066c166ba01fbfb8d25f61ce0ce6ed72f151854\`.
+- CELLAR official source 7건, Commission official page 2건을 allowlist 기반으로 수집하고, 전체 visible text/prompt excerpt SHA-256과 retrieval metadata를 manifest에 남긴다.
+- Claim ID, 본문 statement, source ID, exact quote, Article paragraph/Annex Part-point locator 검증을 추가했다.
+- Run #573: 138 passed / 1 xfailed, 9개 live source fetch, Article 13(8) locator/quote canary 성공.
+- 상세: [CRA_SOURCE_PROVENANCE_PIPELINE_2026-11-17.md](reports/CRA_SOURCE_PROVENANCE_PIPELINE_2026-11-17.md).
+- 제한: Guidance PDF/Annex와 M/606 decision Annex 미수집; 제품별 적용성/설계/시험 증거 미확정; merge commit 자체의 별도 CI는 미확인.
