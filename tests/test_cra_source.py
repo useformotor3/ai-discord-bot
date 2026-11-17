@@ -199,3 +199,74 @@ def test_source_http_202_is_treated_as_temporary_unavailable(monkeypatch):
     monkeypatch.setattr(requests, "get", lambda *args, **kwargs: FakeResponse())
     with pytest.raises(SourceUnavailableError, match="HTTP 202 비동기 수락"):
         fetch_official_cra_source()
+
+
+
+def test_cellar_http_redirect_is_upgraded_to_https_before_following():
+    calls = []
+
+    class FakeResponse:
+        def __init__(self, status_code, url, headers=None, text=""):
+            self.status_code = status_code
+            self.url = url
+            self.headers = headers or {}
+            self.text = text
+
+        def raise_for_status(self):
+            return None
+
+    class FakeRequests:
+        def __init__(self):
+            self.responses = [
+                FakeResponse(
+                    302,
+                    "https://publications.europa.eu/resource/celex/02024R2847-20241120?language=eng",
+                    {"Location": "http://publications.europa.eu/resource/cellar/test/DOC_1"},
+                ),
+                FakeResponse(
+                    200,
+                    "https://publications.europa.eu/resource/cellar/test/DOC_1",
+                    text="<html><body>official legal content</body></html>",
+                ),
+            ]
+
+        def get(self, url, **kwargs):
+            calls.append((url, kwargs.get("allow_redirects")))
+            return self.responses.pop(0)
+
+    response, final_url = cra_source._request_with_safe_redirects(
+        FakeRequests(),
+        {
+            "id": "CRA-test",
+            "url": "https://publications.europa.eu/resource/celex/test?language=eng",
+            "allowed_hosts": ("publications.europa.eu",),
+        },
+    )
+
+    assert calls == [
+        ("https://publications.europa.eu/resource/celex/test?language=eng", False),
+        ("https://publications.europa.eu/resource/cellar/test/DOC_1", False),
+    ]
+    assert response.status_code == 200
+    assert final_url.startswith("https://")
+
+
+def test_official_source_redirect_to_unapproved_host_is_rejected():
+    class FakeResponse:
+        status_code = 302
+        url = "https://publications.europa.eu/resource/celex/test"
+        headers = {"Location": "https://example.invalid/fake"}
+
+    class FakeRequests:
+        def get(self, url, **kwargs):
+            return FakeResponse()
+
+    with pytest.raises(SourceValidationError, match="허용되지 않은 공식 source 리디렉션"):
+        cra_source._request_with_safe_redirects(
+            FakeRequests(),
+            {
+                "id": "CRA-test",
+                "url": "https://publications.europa.eu/resource/celex/test",
+                "allowed_hosts": ("publications.europa.eu",),
+            },
+        )
