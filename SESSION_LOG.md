@@ -881,3 +881,27 @@
 - 디지털 서명은 보안 무결성 구현 수단, STO 연계 설치는 제품별 안전 검증 권고로 분리.
 - 원본 archive는 보존하고 정정 문서를 별도 작성.
 - 상세: `reports/CRA_CORRECTION_REPORT_1_2026-11-17.md`.
+## 2026-11-17 — 5분 간격 반복 실행 원인 및 조사 품질 개선
+
+### 발견
+- 운영 `.github/workflows/run.yml`은 `repository_dispatch: run-bot` 및 `workflow_dispatch`만 구독하고 내부 schedule이 없었다. main의 #33–#38 archive commit은 약 5분 간격으로 반복됐다. 따라서 외부 dispatcher가 반복 호출한 정황이 확인되며, 외부 서비스 설정 자체는 이 저장소에서 직접 수정할 수 없다.
+- main의 기존 보고서 검사는 형식 중심이었다. 최근 6건에서 주제 중복, CRA 조항 오인용, Annex II/Annex VII 혼합, 신고 시한 혼합, EUR-Lex 링크 누락을 확인했다.
+
+### 코드/운영 변경
+- PR #10 `2e583f5c7b24743fbb1bd7d375643e314cf3115d`를 merge했다.
+- main.py는 EUR-Lex Regulation (EU) 2024/2847 공식 링크가 없는 CRA 보고서를 거부한다.
+- 최근 30개 archive 원문과 주제어를 비교해 중복 주제는 Discord/archive/state/history/Git 부작용 전에 no-op 처리한다.
+- 프롬프트 참고 이력을 최근 5개에서 15개로 늘리고, 공식 OJ URL·직접 확인한 원문만 인용·새 주제가 없으면 억지 생성 금지를 명시했다.
+- CI Run #455: 101 passed, 1 xfailed; exact blob SHA, compileall, 전체 pytest 통과.
+
+### 법령 감사
+- #33–#38 원본은 그대로 보존하고 정정 보고서 6건을 별도 작성했다.
+- Article 13(8) 최소 5년/예상 사용기간이 더 짧으면 예외, Article 13(9) 업데이트 10년 또는 지원기간 잔여기간 중 더 긴 이용 가능성, Annex I Part II (2)/(7)/(8)의 취약점 처리·안전 배포·무상 업데이트를 분리했다.
+- Article 14(2)(c) vulnerability final report는 조치 가용 후 14일, Article 14(4)(c) severe incident final report는 incident notification 제출 후 1개월로 정정했다.
+- Annex III Class I/II에 일반 산업용 서보 드라이브가 자동 포함된다고 단정하지 않도록 정정했다.
+
+### 다음 cadence PR
+- `fix/production-cadence-2026-11-17`에서 외부 repository_dispatch trigger를 제거하고 매시간 정각 UTC schedule과 workflow_dispatch를 유지한다.
+- 테스트 workflow가 run.yml PR 변경에도 실행되도록 경로 필터를 수정하고 cadence 회귀 테스트를 추가했다.
+- PR CI 통과 후 main 병합. 첫 3회 hourly run에서 guard/pruning 및 데이터 참조 무결성 확인.
+- 원본 state/history/archive는 이번 정정/코드 작업에서 수정하지 않았다.
