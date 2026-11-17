@@ -1193,26 +1193,26 @@
 ## 2026-11-17 — CRA 공식 source provenance / claim validator 통합 및 PR #26 병합
 
 ### 작업 시작 기준
-- canonical base: \`main\` @ \`f4bb159e164b00e4586868f335519cea3c4802ae\`.
+- canonical base: `main` @ `f4bb159e164b00e4586868f335519cea3c4802ae`.
 - 작업 목적: PR #24에서 남긴 source/claim gate 통합 계획을 최신 main의 보호 동작을 유지하면서 구현·검증한다.
 - 활성 범위는 CRA만이다. SIL 3 과거 파일/PR/커밋은 수정하거나 삭제하지 않는다.
 
 ### 구현 및 검증 과정
-1. \`cra_source.py\` / \`cra_claims.py\`와 main.py source gate를 선택 통합하고 source/claim regression tests를 추가했다.
+1. `cra_source.py` / `cra_claims.py`와 main.py source gate를 선택 통합하고 source/claim regression tests를 추가했다.
 2. 첫 CI에서 107 passed / 27 failed가 발생했다. 주요 원인은 typed source exception과 테스트 fixture의 claim ID/JSON 계약 불일치, manifest 추가 후 Discord 메시지 chunk 수 변화였다. 테스트를 느슨하게 하지 않고 운영 코드/fixture를 정합화했다.
 3. 다음 검증에서 134 passed / 1 xfailed까지 개선했으나 live EUR-Lex canary가 HTTP 202/빈 응답/자동화 접근 차단을 발견했다. 202 응답을 정상 원문으로 취급하지 않고 temporary unavailable로 분류했다.
 4. EUR-Lex HTML 직접 호출 대신 Publications Office의 공식 CELLAR REST API를 실험 브랜치에서 검증했다. CELLAR는 일부 CELEX URL을 HTTP로 redirect했으므로 동일 allowlist host 확인 후 HTTPS로 승격하는 redirect handler를 추가했다.
 5. Corrigendum CELEX suffix의 URL encoding 문제를 수정하고, Formex 원문에서 번호와 문장이 서로 다른 줄/블록으로 나뉘는 문제를 whitespace-normalized marker matching으로 해결했다.
 6. 실시간 canary에서 CRA 법령·정오표·위임규정 7건과 Commission 공식 페이지 2건, 총 9개 source fetch를 확인했다. Article 13(8) paragraph locator 안에서 기대 원문 quote가 일치하는지도 live 확인했다.
-7. 최종 PR head \`d1bda523c1b593bbd48bf4916dd7bbd741001894\`의 [Actions Run #573](https://github.com/useformotor3/ai-discord-bot/actions/runs/44039961078)은 **138 passed, 1 xfailed**. source blob identity, compileall, 전체 pytest, 9-source canary, Article 13(8) locator/quote canary 모두 통과했다.
+7. 최종 PR head `d1bda523c1b593bbd48bf4916dd7bbd741001894`의 [Actions Run #573](https://github.com/useformotor3/ai-discord-bot/actions/runs/44039961078)은 **138 passed, 1 xfailed**. source blob identity, compileall, 전체 pytest, 9-source canary, Article 13(8) locator/quote canary 모두 통과했다.
 
 ### 변경 및 병합
 - PR #26 [CRA: integrate CELLAR official-source retrieval and claim-level traceability](https://github.com/useformotor3/ai-discord-bot/pull/26) merge 완료.
-- Merge commit: \`8066c166ba01fbfb8d25f61ce0ce6ed72f151854\`.
-- 변경 파일: \`.github/workflows/tests.yml\`, \`cra_source.py\`, \`cra_claims.py\`, \`main.py\`, \`tests/conftest.py\`, \`tests/test_main_characterization.py\`, \`tests/test_cra_source.py\`, \`tests/test_cra_claims.py\`, \`tests/test_external_failure_paths.py\`.
+- Merge commit: `8066c166ba01fbfb8d25f61ce0ce6ed72f151854`.
+- 변경 파일: `.github/workflows/tests.yml`, `cra_source.py`, `cra_claims.py`, `main.py`, `tests/conftest.py`, `tests/test_main_characterization.py`, `tests/test_cra_source.py`, `tests/test_cra_claims.py`, `tests/test_external_failure_paths.py`.
 - PR #25는 PR #26에 전체 변경이 포함되어 중복 정리했다. 원래 branch는 감사/복구를 위해 유지했다.
-- pre-merge safety ref: \`safety/pre-merge-main-pr26-2026-11-17\` → \`f4bb159e164b00e4586868f335519cea3c4802ae\`.
-- post-merge safety ref: \`safety/post-merge-main-pr26-2026-11-17\` → \`8066c166ba01fbfb8d25f61ce0ce6ed72f151854\`. 두 ref 모두 GitHub에서 재조회해 SHA 일치 확인했다.
+- pre-merge safety ref: `safety/pre-merge-main-pr26-2026-11-17` → `f4bb159e164b00e4586868f335519cea3c4802ae`.
+- post-merge safety ref: `safety/post-merge-main-pr26-2026-11-17` → `8066c166ba01fbfb8d25f61ce0ce6ed72f151854`. 두 ref 모두 GitHub에서 재조회해 SHA 일치 확인했다.
 
 ### 결과 해석 및 제한
 - source manifest에는 요청/최종 URL, retrieval timestamp, visible text length, full-text SHA-256, prompt-excerpt SHA-256을 기록한다.
