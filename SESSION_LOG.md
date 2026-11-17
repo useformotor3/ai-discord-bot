@@ -1073,3 +1073,13 @@
 - 실제 법령은 secure-by-default, 접근통제, 내부 활동 기록/모니터링을 각각 별도 point로 규정한다. RBAC/least privilege/MFA 및 실패 인증 로그는 위험 기반 구현 후보이지 이 문구 그대로의 일률적 법적 의무가 아니다.
 - correction report #18을 생성하고 원본 archive는 SHA f986f2f2db5f74ca8dd072deb2fe90e013b4a63c 그대로 보존했다.
 - correction reports #14–#18 완료. 다음은 archive #13 이하를 검토한다.
+
+## 2026-11-17 — latest-main integration merge 및 데이터 불변성 확인
+- main 최신 HEAD 92477fce1350cccb90a799f061b506461e9caff1까지 13개 후속 커밋을 확인했다. 모든 커밋은 history.json, state.json 및 research_archive 파일만 변경했다.
+- main 상태: state count 18, history 2,411 entries. 오늘의 마지막 archive #18까지 history 참조 파일이 존재함을 확인했다.
+- PR #5를 통해 main의 #18 archive snapshot을 integration branch에 먼저 merge했다(merge commit 308bf4a).
+- PR #4를 통해 feature branch를 integration branch에 merge했다(merge commit df854af). main branch는 수정하지 않았다.
+- main과 integration의 protected blobs가 일치한다: state.json 1358aae57047127462dfce7938af99843bebf8fc, history.json af79c5608a9789695e8f155ad0a91a260de7304e, archive #18 f986f2f2db5f74ca8dd072deb2fe90e013b4a63c.
+- 통합 트리 CI #366: 117 passed, 1 xfailed; exact source SHA, compileall, full pytest 통과. EUR-Lex Canary #134 success; 7 source, 245,502 visible chars, corrigenda 3건 문구 검증.
+- PR #6은 integration branch를 main 대상으로 검증하는 Draft PR로 열었다가 CI 실행을 위해 Ready로 전환했으며, 검증 후 다시 Draft로 되돌렸다. merge하지 않았다. PR #3도 Draft 유지.
+- correction reports #14–#18 완료. 다음은 archive #13 이하 감사, CRA master report 통합, 별도 SIL 3 benchmarking 및 hardware block design 산출물 작성이다. 기능안전과 사이버보안 요구를 하나의 법적 요구로 혼합하지 않는다.
