@@ -292,3 +292,8 @@
 - 최신 IEC 61800-5-2 amendment와 제조사 인증서 판본을 대조한다. 구판 매뉴얼의 proof-test/diagnostic interval을 최신 규격 요구로 자동 전용하지 않는다.
 - 전압/출력/부하/축 수/피드백/안전 기능이 미확정이면 parameterized reference architecture로 표시하고 최종 회로/BOM/PFH를 확정하지 않는다.
 - 기능안전 FS traceability와 CRA cybersecurity CYB traceability는 별도 요구사항 ID와 증거 체계로 유지한다.
+
+## 47. 제조사 안전 권고와 firmware revision
+- SIL/PL 인증 주장을 검토할 때 제품 안전 권고(PSA/PCN), affected catalog numbers, installed firmware 및 safety-path configuration을 함께 조회한다.
+- 출하 시 명판 firmware와 현장 설치 firmware가 다를 수 있으므로 실제 설치 버전 확인을 요구한다.
+- 특정 firmware/배선 구성에 한정된 안전 권고를 제품군 전체 또는 다른 모델/세대에 일반화하지 않는다.
