@@ -5,10 +5,10 @@
 - 최종 갱신: 2026-11-17 (KST)
 - 기준 저장소: `useformotor3/ai-discord-bot`
 - 운영 기준 브랜치: `main` (운영 자동화 및 데이터 보존)
-- 현재 작업 브랜치: `cra/integrated-report-and-traceability-2026-11-17` (CRA 통합 보고서/요구사항 추적표 v0.1 PR #19 open; CI Run #500 in progress)
+- 현재 작업 브랜치: 없음 (PR #19 병합 완료; 다음 작업은 최신 `main`에서 새 브랜치 생성)
 - CRA-only 범위 통제 병합 기준점: PR #18, merge commit `b7813ddd311bc51bfb0eb26458eace9ff82b621f` (2026-11-17)
-- 마지막 범위 통제 변경: PR #18 병합 완료. 현재 브랜치에서 통합 보고서/추적표 초안 추가. PR #19 open, CI Run #500 실행 중.
-- 이번 비교 기준: PR #18 병합으로 작업 브랜치 종료. 다음 작업 시작 시 main HEAD와 원격 브랜치를 다시 조회해 기준선을 설정
+- 마지막 CRA 산출물 변경: PR #19 병합 완료, merge commit `5776ca609130033bfff17ca62c9fabc3b9570b3b`. PR CI Run #500 및 main push Run #502 모두 success.
+- 이번 비교 기준: PR #19 병합으로 작업 브랜치 종료. 다음 작업 시작 시 main HEAD와 원격 브랜치를 다시 조회해 기준선을 설정
 - 프로젝트 상태: CRA 통합 보고서 v0.1 및 28항목 요구사항 추적표 초안 작성. 모델별 적용성/분류 및 시험 증거 연결은 미완료.
 - 주 문서 언어: 한국어
 - 안전 원칙: 법적 적합성·제품 분류·안전 관련 설계 판단은 근거와 인간 검토 없이 확정하지 않음
@@ -29,7 +29,8 @@
 | P1-B2 저장 원자성 | 구현·보강 및 CI 검증 완료 | durable journal, SHA 보호, roll-forward, target allowlist; Actions 43851438733: 70 passed / 1 xfailed |
 | P1-B3 Git sync 상태화 | 미구현 | 유일한 strict xfail; 별도 승인 필요 |
 | P1-B4 구조 개선 | 미구현 | import-time 실행 제거 등 후속 단계 |
-| CRA 통합 보고서 | 초안 v0.1 | 2026-07 Commission Guidance 및 2026-11 M/606 개정 반영; 모델별 적용성 검증 전 |\n| CRA 요구사항 추적 | 초안 v0.1 | CSV 28항목 작성; 제품 증거·설계 통제·시험 결과 연결 필요 |
+| CRA 통합 보고서 | 병합된 초안 v0.1 | 2026-07 Commission Guidance 및 2026-11 M/606 개정 반영; 모델별 적용성 검증 전 |
+| CRA 요구사항 추적 | 병합된 초안 v0.1 | CSV 28항목 작성; 제품 증거·설계 통제·시험 결과 연결 필요 |
 | 과거 SIL 3 기능안전 자료 | 보존·비활성 | 기존 파일/PR 이력은 유지. CRA 활성 작업·다음 단계에 포함하지 않음 |
 
 ## 2. P1-B1 이전 기준선에서 확인한 원본 코드 사실
