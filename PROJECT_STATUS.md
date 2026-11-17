@@ -973,3 +973,12 @@
 - 통합 보고서에서 추가된 §11–§13과 기존 §11–§13 번호 중복을 발견해 추가 섹션을 §14–§16으로 수정했다. Annex III Important products와 Annex IV Critical products 용어도 구분했다.
 - 독립 검토 기록 `reports/CRA_INTEGRATED_REPORT_INDEPENDENT_AUDIT_2026-11-17.md` 작성. Guidance mirror byte identity의 한계와 제품별 증거 미확보 상태를 명시했다.
 - `cra_traceability.py`에 top-level section number 중복 검증을 추가하고 negative test를 작성 중이다.
+
+
+## 2026-11-17 — 독립 검토 1차 수정 및 CI
+
+- 보고서 최상위 섹션 번호 중복을 §14–§16으로 정정하고 분류 용어를 정리했다.
+- traceability gate에 top-level section number uniqueness 검사를 추가하고 duplicate heading negative test를 추가했다.
+- [Run #797](https://github.com/useformotor3/ai-discord-bot/actions/runs/44059539968): **155 passed / 1 xfailed**; CRA traceability, official Guidance/M/606 PDF canaries, HTML canary 및 artifact upload 통과.
+- EUR-Lex 원문으로 Article 6, 7(1), 10, 11, 14, 32, 69(2)–(3), 71(2)와 Regulation (EU) 2025/327 Article 104의 적용 예정일을 표본 대조했다. 전체 35개 requirement 전수 대조는 계속 진행한다.
+- Guidance PDF의 Commission-hosted primary byte identity는 여전히 미확인으로 유지한다.
