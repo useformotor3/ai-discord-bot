@@ -8,7 +8,7 @@
 - SIL 3/PL e 목표는 기계 위험평가와 안전 요구사항 명세서(SRS)에서 각 안전 기능별로 확정한다.
 - 드라이브/모듈의 인증값을 완성된 기계 안전 기능의 인증값으로 대체하지 않는다.
 - 각 제품의 safety sub-function, encoder, controller, firmware, license 및 communication 조건을 형번 단위로 고정한다.
-- 표준 기준은 IEC 61800-5-2:2016+AMD1:2026, IEC 62061:2021+AMD1:2024+AMD2:2026, ISO 13849-1:2023, IEC 61508-1:2010 Ed.2(2026 FDIS는 미발행 draft)이다.
+- 표준 기준은 IEC 61800-5-2:2016+AMD1:2026, IEC 62061:2021+AMD1:2024+AMD2:2026, ISO 13849-1:2023, IEC 61508-1:2010 Ed.2(IEC 61508-1:2026 Ed.3 PRV는 FDIS 투표 2026-11-13 종료, 최종 발행 전)이다.
 
 ## 2. 기능안전 요구사항
 
@@ -73,7 +73,7 @@
 - IEC 61800-5-2:2016+AMD1:2026: https://webstore.iec.ch/en/publication/117563
 - IEC 62061:2021+AMD1:2024+AMD2:2026: https://webstore.iec.ch/en/publication/112847
 - ISO 13849-1:2023: https://www.iso.org/standard/73481.html
-- IEC 61508-1:2010 / 2026 PRV: https://webstore.iec.ch/en/publication/117296
+- IEC 61508-1:2010 / 2026 PRV(최종 발행 예정 2027-01-22): https://webstore.iec.ch/en/publication/117296
 - CRA final OJ: https://eur-lex.europa.eu/eli/reg/2024/2847/oj/eng
 
 **주의:** 이 매트릭스는 설계 추적성의 시작점이다. SIL 3 인증서, FMEDA, PFH 계산 및 최종 회로 검증을 대체하지 않는다.
