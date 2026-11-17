@@ -59,6 +59,8 @@ FAKE_SOURCE_PACK = {
             "version": "Fixture Regulation (EU) 2024/2847 consolidated text",
             "text": FAKE_CRA_SOURCE_TEXT,
             "sha256": "fixture-sha256-cra",
+            "full_text_sha256": "fixture-full-sha-cra",
+            "prompt_excerpt_sha256": "fixture-prompt-sha-cra",
             "retrieved_at": "2026-11-17T00:00:00+00:00",
         },
         {
@@ -71,6 +73,8 @@ FAKE_SOURCE_PACK = {
                 "and discusses remote data processing solutions."
             ),
             "sha256": "fixture-sha256-guidance",
+            "full_text_sha256": "fixture-full-sha-guidance",
+            "prompt_excerpt_sha256": "fixture-prompt-sha-guidance",
             "retrieved_at": "2026-11-17T00:00:00+00:00",
         },
     ],
