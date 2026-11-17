@@ -905,3 +905,24 @@
 - 테스트 workflow가 run.yml PR 변경에도 실행되도록 경로 필터를 수정하고 cadence 회귀 테스트를 추가했다.
 - PR CI 통과 후 main 병합. 첫 3회 hourly run에서 guard/pruning 및 데이터 참조 무결성 확인.
 - 원본 state/history/archive는 이번 정정/코드 작업에서 수정하지 않았다.
+
+## 2026-11-17 — 운영 Run #44016487535 quota 장애 분석 및 재발 방지
+
+### 실제 실패 원인
+- production Run ID `44016487535`, job `133815553121` 로그를 확인했다.
+- `gemini-3.8-flash`: HTTP 429 `RESOURCE_EXHAUSTED`, Free Tier `generate_content_free_tier_requests` 일일 limit 20 초과. 응답은 약 3시간 39분 후 재시도를 제시했다.
+- `gemini-3.5-flash-lite`: HTTP 503 `UNAVAILABLE`, 이후 보고서도 EUR-Lex 공식 링크 검사를 통과하지 못했다.
+- 기존 main.py는 429/503을 모델별 3회 반복하고 모든 모델이 실패하면 workflow exit 1로 종료했다. 따라서 5분 외부 dispatch와 결합해 quota를 더 빨리 소진하고 실패를 반복시킬 수 있었다.
+
+### cadence PR 보강
+- 모델별 최대 시도를 2회로 낮췄다.
+- 429/503은 동일 모델 재시도를 중단하고 fallback으로 이동한다.
+- EUR-Lex 링크 누락 등 품질 거부는 같은 모델에 반복 요청하지 않는다.
+- quota/일시 장애/품질 거부 후 유효 보고서가 없으면 경고 로그와 함께 exit 0 no-op. Discord, archive, state/history, Git 저장 부작용은 발생하지 않는다.
+- 인증/설정 등 미분류 치명 오류는 exit 1을 유지한다.
+- schedule을 3시간마다 UTC 정각(8회/일)으로 변경했다. 모델별 2회 시도 시 이론상 16회/일로 Free Tier 20/day 한도에 여유를 둔다.
+
+### 검증
+- PR #11 CI를 변경된 main.py/test blob SHA로 다시 실행해야 한다.
+- 기존 운영 state/history/archive는 quota 실패 실행에서 변경되지 않았음을 재조회한다.
+- 첫 3회 3-hourly production run을 관찰한다.
