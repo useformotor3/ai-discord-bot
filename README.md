@@ -520,3 +520,6 @@
 
 
 - Batch 2 (CRA-011–CRA-020) 법령 문언 감사: [상세 기록](reports/CRA_LEGAL_SEMANTICS_AUDIT_BATCH2_2026-11-18.md).
+
+
+- Batch 3 (CRA-021–CRA-035) 법령 문언 감사: [상세 기록](reports/CRA_LEGAL_SEMANTICS_AUDIT_BATCH3_2026-11-18.md).

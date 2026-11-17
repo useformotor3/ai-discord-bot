@@ -349,3 +349,17 @@ EUR-Lex 공식 Regulation (EU) 2024/2847 원문 기준으로 CRA-011–CRA-020�
 - CRA-020: Important/Critical 분류는 Annex III/IV core functionality에 기초하며, 단순 통합만으로 host product에 분류가 전이되지 않는다. Article 32(2) Class I의 조건부 third-party route와 Article 32(3) Class II, Article 32(4) Critical 경로를 분리한다.
 
 제품별 적용성·분류·적합성은 제품 사실 증거가 없으므로 미확정이다.
+
+
+## 19. 법령 문언 심층 대조 Batch 3 (CRA-021–CRA-035, 2026-11-18)
+
+EUR-Lex 공식 CRA 원문 및 관련 Machinery Regulation/EHDS 원문 기준으로 CRA-021–CRA-035를 행별 대조했다. 상세 행별 근거는 [CRA 법령 문언 심층 감사 Batch 3](CRA_LEGAL_SEMANTICS_AUDIT_BATCH3_2026-11-18.md)를 참조한다.
+
+핵심 교정:
+- CRA-023의 사건 후 사용자 통지는 Article 14(8)이 직접 근거이며 Annex II는 직접 locator에서 제외했다.
+- CRA-026의 기계류 규정 상호작용은 CRA Article 2(5), Machinery Regulation Article 9(9), Annex III §§1.1.9/1.2.1을 중심으로 정리했다. CRA Article 69(1)은 일반적인 중복/면제 근거가 아니라 기존 타 EU 법령상 certificate/approval decision의 2028-06-11까지의 유효성 전환이다.
+- CRA-028은 Articles 18–22의 경제운영자 역할 및 제조자 책임 전이, CRA-034는 Article 23의 양방향 공급망 추적으로 분리했다.
+- CRA-035에 Article 2(8) 정보공개 예외를 추가하고, Article 2(5)는 자동 면제가 아니라 Commission delegated act에 의한 조건부 제한/제외로 명확히 했다.
+- Regulation (EU) 2025/327 Article 104는 EHR system에 한정된 CRA 개정이며 일반 PDE/서보 드라이브에 확대 적용하지 않는다.
+
+Article 14의 24h/72h/14일 및 24h/72h/1개월 기산점을 구분하고, 기존 출시 제품에 대한 Article 14의 예외 적용(Article 69(3))과 CRA 일반 적용일(Article 71(2))을 분리했다.

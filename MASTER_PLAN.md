@@ -607,3 +607,9 @@
 ## 법령 심층 감사 업데이트 — 2026-11-18
 - CRA-001–CRA-020: EUR-Lex 원문 기준 1차 심층 대조 완료. 세부 보완은 Batch 1/2 감사 파일 및 추적표에 반영.
 - 다음 묶음 CRA-021–CRA-035: 신고·자발신고, 적용일/전환, 기계류 규정 상호작용, 표준화/추정 적합성, 경제운영자, 적용 제외·중복.
+
+
+## CRA 법령 심층 감사 — 35행 1차 대조 완료 (2026-11-18)
+- CRA-001–CRA-035: EUR-Lex 공식 원문 및 관련 sectoral act 기준 1차 심층 문언 대조 완료.
+- 후속 우선순위: 35행 전체 cross-matrix audit, 법령 locator/의무주체/조건/예외/기한의 중복·누락 확인, Guidance/M/606/engineering control 구분, 제품별 evidence intake 설계.
+- 상세 Batch 1/2/3 감사 파일은 `reports/CRA_LEGAL_SEMANTICS_AUDIT_2026-11-18.md`, `reports/CRA_LEGAL_SEMANTICS_AUDIT_BATCH2_2026-11-18.md`, `reports/CRA_LEGAL_SEMANTICS_AUDIT_BATCH3_2026-11-18.md` 참조.
