@@ -1,5 +1,7 @@
 # CRA 서보 드라이브 마스터 계획서
 
+> **활성 범위 통제(2026-11-17): 본 계획은 CRA 대응만 다룬다.** SIL 3 기능안전 자료는 과거 산출물로 보존하지만 활성 단계·완료 기준·다음 작업에 포함하지 않는다. 별도 명시적 재개 지시가 있을 때만 독립 계획으로 다룬다.
+
 ## 목표
 
 산업용 서보 드라이브 제조사가 EU CRA에 대응할 수 있도록 적용성 분석, 보안 요구사항 추적, 하드웨어·펌웨어·개발 프로세스 설계, 검증 증거, 한국어 보고서와 매뉴얼을 하나의 추적 가능한 체계로 만든다.
@@ -385,7 +387,7 @@
 4. [진행] 외부 5분 repository_dispatch를 제거하고 hourly schedule로 전환하는 PR 검증 및 병합.
 5. [후속] 첫 3회 hourly production run의 checkpoint/guard/prune 및 archive 참조 무결성을 관찰.
 6. [후속] 중복탐지 false positive/negative를 로그로 검토하고 임계값을 근거 기반 조정.
-7. [핵심 산출물] CRA 통합 한국어 보고서 및 요구사항 추적표 작성 후 SIL 3 servo-drive benchmarking report와 hardware block design을 별도 기능안전 추적성으로 작성.
+7. [핵심 산출물] CRA 통합 한국어 보고서 및 CRA 요구사항 추적표를 작성·검증한다. SIL 3 기능안전 자료는 과거 산출물로 보존하며 본 프로젝트의 후속 작업으로 진행하지 않는다.
 
 ## 2026-11-17 — Gemini 무료 할당량 장애 반영
 1. [완료] Production Run `44016487535` 로그에서 Gemini 429 daily quota 20/day와 fallback 503 UNAVAILABLE를 확인.
@@ -400,7 +402,7 @@
 3. [완료] PR #12: 실패 후 guard always, dirty/unpublished data restore, guard 성공 후에만 checkpoint pruning, persist-before-Discord. CI #470: 105 passed, 1 xfailed.
 4. [진행] 첫 3회 3-hourly production run을 관찰하고 actual quota/Discord/guard/prune 결과 확인.
 5. [다음] CRA 한국어 통합 보고서와 requirements traceability matrix 작성. 법령 직접 의무와 제조사 권고 구현을 구분.
-6. [다음] SIL 3 servo drive benchmarking report 및 hardware block design 작성. IEC 61508/IEC 61800-5-2 기능안전 추적성과 CRA cybersecurity traceability를 별도 관리.
+6. [다음] CRA 통합 한국어 보고서와 CRA cybersecurity 요구사항 추적표 작성·검증. 기능안전(SIL 3)은 별도 재개 지시 전 비활성.
 
 ## 2026-11-17 — CRA 자동 보관 #1–#38 원문 정정
 1. [완료] CRA 정정 보고서 #1–#4 및 #33–#38 main의 기존 정정 확인.
@@ -416,8 +418,12 @@
 3. [완료] 원본 archive SHA 보존, state/history SHA 동일성 검증.
 4. [완료] PR #14 merge; CI #474 105 passed, 1 xfailed.
 5. [진행] CRA 한국어 통합 보고서와 조항-제품요구-검증증거 traceability matrix 작성.
-6. [다음] SIL 3 서보 드라이브 벤치마킹 보고서 및 하드웨어 블록 설계. 기능안전과 CRA cybersecurity 요구사항을 서로 다른 traceability chain으로 관리.
+6. [다음] CRA 통합 보고서 및 CRA 요구사항 추적표를 완성하고 각 주장·조항·제품 적용성·통제·시험 증거를 교차 검증한다. SIL 3는 활성 범위에서 제외.
 7. [운영] 첫 3회 3-hourly production run을 관찰하고 실제 quota/Discord/guard/prune 결과를 기록.
+
+## 과거 산출물 기록 — SIL 3 기능안전 (비활성 범위)
+
+아래 날짜별 기록은 과거 작업 이력 보존용이다. 활성 CRA 계획의 단계·우선순위·재개 지점으로 해석하지 않는다.
 
 ## 2026-11-17 — SIL 3 서보 드라이브 기술 산출물 v0.1
 1. [완료] 제조사 4개 제품군(Mitsubishi J5, Yaskawa Sigma-7 ASM7, Rockwell Kinetix 5700, Siemens S210) 공식 자료 기반 벤치마킹.
