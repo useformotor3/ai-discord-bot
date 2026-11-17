@@ -1312,3 +1312,14 @@
 - 테스트 workflow에 pypdf dependency, exact blob pins, live PDF canary, 7-day artifact upload를 추가했다. 운영 workflow는 변경하지 않았다.
 - CI와 실제 PDF binary 취득은 아직 확인 전이다. 성공·해시·artifact 보관을 선제 주장하지 않는다.
 - 다음: PR CI에서 mock test 및 live PDF canary 실행, artifact download/readback, PDF bytes/hash 검증, M/606 item18 시각 확인, matrix/report readback.
+
+
+## 2026-11-17 — CRA PDF 원문 바이너리 취득 및 표 이미지 검증
+
+- Run #642 (`44052336199`)에서 `cra_pdf_sources.py` PDF canary 성공, PDF 2개 다운로드·파싱·해시 산출.
+- Guidance C(2026)5252 ANFR mirror: 1,190,726 bytes, 84 pages, raw SHA-256 `fe209c250e3d1f7599e42826d91963666951332927edcf511a2e79fe8d2f8234`; fallback used=true. Commission-hosted original byte identity는 미확인.
+- M/606 C(2026)7861 Annex: Commission document-register PDF, 151,267 bytes, 6 pages, raw SHA-256 `262b09596cb5cbe7d72a2c7789fb2512ee00db7f69082e7def2c8181b0f63276`; fallback used=false.
+- Extracted-text SHA-256 및 page count는 `reports/CRA_PDF_SOURCE_PROVENANCE_2026-11-17.json`에 기록.
+- Artifact ID `14313359693` ZIP를 다운로드했고, ZIP SHA-256 `150a687e4d4b13fdd20a432e99fc8ea9ec5bc847b8551dd3f157258dc41cd869`가 GitHub metadata와 일치함을 확인.
+- M/606 item18 password manager deadline은 원본 PDF printed page 2, PDF page index 2의 표 우측 셀에서 `31/01/2027`로 시각 확인.
+- Run #642의 기존 CRA HTML source canary는 Commission summary page에 PDF document number `C(2026) 5252`를 요구해 실패했다. Summary page와 PDF Annex의 검증을 분리하도록 `cra_source.py`와 regression test를 수정했으며 재실행 대기.
