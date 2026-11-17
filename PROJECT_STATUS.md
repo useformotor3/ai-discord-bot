@@ -699,3 +699,15 @@
 - 작업 전 복구 기준: `safety/pre-claim-evidence-2026-11-17-d8870e3` → `d8870e32e16ba5ebd3a7670d12816324de3b485a`.
 - 운영 main, production run.yml, 실제 Gemini/Discord 호출은 변경/실행하지 않았다.
 - 한계: gate는 선언된 claim의 추적성 검사이며 본문 자연어 전체에서 빠진 법적 주장을 자동 탐지하는 완전한 NLP 검증이 아니다. 법률 해석·제품 적용성·적합성은 사람 검토 대상이다.
+
+
+## 2026-11-17 — CRA claim-to-evidence gate 격리 검증 완료
+- 최종 작업 브랜치 head: `b11f0dcb9bc8f41a0e82ac8062c75c1ca2d08143`.
+- Isolated CI Run #194: **112 passed, 1 xfailed**. source blob SHA pin, compileall, 전체 pytest 성공.
+  https://github.com/useformotor3/ai-discord-bot/actions/runs/43998058880
+- EUR-Lex read-only canary Run #53: **success**.
+  https://github.com/useformotor3/ai-discord-bot/actions/runs/43998058856
+- claim validator 정상/실패 경로, 기존 main.py mock 통합, Discord/Git 외부 경계의 기존 테스트까지 모두 통과했다.
+- 실제 Gemini/Discord 및 production workflow는 호출하지 않았다. main과 운영 데이터도 수정하지 않았다.
+- PR #3은 Draft/open 유지. 최신 main HEAD `b0fcfa9b5325697652abfb1b30c932d3d1bb7391` 대비 feature 71 ahead / 8 behind, merge-base `0dde26ebac80a789c7a9d9e26560abad54606d32`. 최신 main 통합 CI 및 conflict 검증 전이므로 병합하지 않는다.
+- 다음 우선순위: (1) 격리된 실제 Gemini model compatibility canary (2) Official Journal authentic text/corrigenda 비교 (3) 본문 자연어 claim 누락에 대한 사람 검토 절차.
