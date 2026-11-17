@@ -80,7 +80,7 @@ def test_model_fallback_is_exercised_without_real_api_calls(run_main):
     assert len(calls) == 4
     assert calls[0]["model"] == "gemini-3.8-flash"
     assert calls[-1]["model"] == "gemini-3.5-flash-lite"
-    assert len(run_main.captured["discord_posts"]) == 1
+    assert len(run_main.captured["discord_posts"]) == 2
 
 
 def test_all_model_failures_stop_without_side_effects(run_main):
@@ -116,7 +116,7 @@ def test_invalid_first_model_response_falls_back_to_valid_second_model(run_main)
     assert len(calls) == 4
     assert all(call["model"] == "gemini-3.8-flash" for call in calls[:2])
     assert all(call["model"] == "gemini-3.5-flash-lite" for call in calls[2:])
-    assert len(run_main.captured["discord_posts"]) == 1
+    assert len(run_main.captured["discord_posts"]) == 2
 
 def test_error_text_inside_an_otherwise_structured_report_is_rejected(run_main):
     error_report = VALID_REPORT + "\n시스템 긴급 경고: 요청 처리에 실패했습니다."
@@ -166,7 +166,7 @@ def test_model_not_found_skips_retries_and_uses_fallback(run_main):
     assert len(calls) == 2
     assert calls[0]["model"] == "gemini-3.8-flash"
     assert calls[1]["model"] == "gemini-3.5-flash-lite"
-    assert len(run_main.captured["discord_posts"]) == 1
+    assert len(run_main.captured["discord_posts"]) == 2
 
 
 def test_git_push_failure_fails_workflow_instead_of_logging_success(run_main):
