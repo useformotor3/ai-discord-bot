@@ -502,3 +502,15 @@
 1. [완료] 원본 archive #18 blob SHA f986f2f2db5f74ca8dd072deb2fe90e013b4a63c 확인, 원본 보존.
 2. [완료] correction report #18 생성: Annex I Part I (2)(b)/(d)/(l) 분리, RBAC/least privilege 직접 인용 및 실패 인증 로그 의무 과장 정정.
 3. [진행] archive #13 이하 역순 감사 및 correction index 누적.
+
+## 2026-11-17 — latest-main integration 및 다음 보고서 우선순위
+1. [완료] main의 13개 후속 자동 archive 커밋(#6–#18)이 state/history/archive만 변경함을 확인.
+2. [완료] PR #5로 최신 main snapshot을 integration branch에 동기화.
+3. [완료] PR #4로 CRA source/claim gate를 integration branch에 병합. main은 변경하지 않음.
+4. [완료] state.json/history.json/archive #18 blob SHA가 main과 integration에서 동일함을 검증.
+5. [완료] 통합 트리 CI #366: 117 passed, 1 xfailed; EUR-Lex Canary #134 success.
+6. [완료] correction reports #14–#18 작성, 원본 archive SHA 보존.
+7. [진행] archive #13 이하 역순 감사, 공식 OJ/정오표 대조 및 correction index 축적.
+8. [후속] 검증된 claim을 통합 CRA 한국어 보고서로 정리하고, 서보 드라이브 설계 적용 항목/근거/권고를 분리.
+9. [후속 별도 산출물] SIL 3 서보 드라이브 벤치마킹 보고서 및 하드웨어 블록 설계 작성. IEC 61508/IEC 61800-5-2 등 기능안전 근거를 CRA 사이버보안 근거와 분리해 추적.
+10. [보류] PR #6 Draft 유지. main 병합은 통합 보고서/기능안전 산출물 검토 및 명시적 승인 전 수행하지 않는다.
