@@ -95,7 +95,7 @@ jobs:
           verify_blob "tests/test_main_characterization.py" "a17b8e4be7d3ceb69baff68ed1311dcd33a36505"
           verify_blob "tests/test_mock_infrastructure.py" "bb6d5eb379ab83c16ec7cba5f4a8f3fb518dab36"
           verify_blob "tests/test_p1_reliability.py" "c5e3fbe2e75a6a08703117cb5de34571b5dc10c9"
-          verify_blob "tests/test_external_failure_paths.py" "a562f0c976c5222665d04068a8ffb5fa61f32e15"
+          verify_blob "tests/test_external_failure_paths.py" "f792ef15024420152de898e48cc12c2ed4b4325e"
           verify_blob "scripts/operational_guard.py" "4a8d1bf7509bbbeb2653f9be3761661a9bc02b9e"
           verify_blob "tests/test_operational_guard.py" "2035b598bf77ffd8fe7dc7c19d2915367f0b354d"
 
