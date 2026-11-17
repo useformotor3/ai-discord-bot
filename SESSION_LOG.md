@@ -1035,3 +1035,19 @@
 - PROJECT_LOG.jsonl은 58개 record 모두 JSON 파싱 성공.
 - CI 상태: merge commit의 combined status에 등록된 status check가 없고, PR-triggered workflow 조회도 비어 있었다. 따라서 이번 문서 PR의 CI 통과를 주장하지 않는다. 문서 범위 diff와 JSONL 구문 검증만 확인했다.
 - 다음 재개: CRA만 활성 범위로 유지한다. 운영 3시간 주기 첫 3회 관찰 상태를 최신 Actions에서 확인한 뒤 CRA 통합 한국어 보고서와 CRA 요구사항 추적표를 진행한다.
+
+
+## 2026-11-17 — CRA 통합 보고서/요구사항 추적표 v0.1 작성
+
+- 활성 범위 CRA-only 통제(PR #18 merge commit `b7813ddd311bc51bfb0eb26458eace9ff82b621f`) 이후, 최신 `main`에서 `cra/integrated-report-and-traceability-2026-11-17` 작업 브랜치를 생성했다.
+- `reports/CRA_INTEGRATED_COMPLIANCE_REPORT_2026-11-17.md` 초안과 `reports/CRA_REQUIREMENTS_TRACEABILITY_2026-11-17.csv` 28항목을 작성했다.
+- 기존 CRA 정정 인덱스 #1–#38과 운영 실행 관찰 보고서를 읽고, 기존 정정 내용과 중복/충돌을 줄이는 방향으로 통합했다.
+- 최신 공식 자료 교차 확인: CRA OJ Regulation (EU) 2024/2847; Commission Guidance C(2026) 5252 final (2026-07-27); Commission Implementing Decision C(2026) 7861 final Annex (2026-11-10); Regulation (EU) 2025/327 Article 104/105; Commission CRA implementation/FAQ/standardisation/reporting pages; ENISA SRP FAQ (updated 2026-10-15).
+- 중요 확인: 일반 서보 드라이브 카테고리는 Annex III/IV에 직접 열거되지 않는다. 디지털 데이터 연결과 제품 핵심 기능을 기준으로 제품별 판단이 필요하며, 통신 포트/일반 MCU 존재만으로 Class I/II를 단정하지 않는다.
+- CRA Article 14 신고 의무는 2026-09-11부터 이미 적용 중이며, 2027-12-11 이전 출시 제품도 포함된다. 지원기간 종료 후에도 신고 의무는 지속될 수 있다는 Commission Guidance 해석을 보고서에 반영했다.
+- M/606 개정 기한을 공식 C(2026) 7861 Annex와 Commission standardisation page에서 확인했다: 항목 1/15 2026-11-30, 항목 16–41 2027-01-31, 항목 2–14 2027-10-30. 표준 납품 일정과 CRA 적용일을 구분했다.
+- Regulation (EU) 2025/327의 CRA 개정은 Article 12 고위험 AI 제품 및 Article 32(5a) EHR 시스템에 한정된 특례이며 2027-03-26 적용이다. 일반 서보 드라이브에 자동 확장하지 않는다.
+- ENISA SRP FAQ(2026-10-15)를 확인해 초기 플랫폼의 영어 UI 및 API 미제공 상태를 운영 참고사항으로 기록했다.
+- 제품 모델, 통신 프로토콜, 공급 구조, cloud/RDPS 및 제품별 설계 증거가 제공되지 않아 적용성/분류 결론은 잠정 상태로 유지한다.
+- 운영 코드, workflow, state/history, 원본 archive 및 SIL 3 산출물은 변경하지 않았다.
+- 다음: 제품별 사실 자료 확보, Annex III/IV 분류, 28항목의 설계·시험 증거 연결, CSV/JSONL/링크/diff 검증 후 PR 생성. CI 결과가 확인되지 않으면 통과로 기록하지 않는다.
