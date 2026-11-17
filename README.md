@@ -359,3 +359,6 @@ CRA draft generation now requires a structured `CLAIM_EVIDENCE_JSON` block. Lega
 
 ### Gemini compatibility canary (manual, cost-gated)
 A separate manual workflow checks the current Gemini JSON response contract using one synthetic public sentence only. It is not part of production runs and is not triggered by pushes or pull requests. The dispatch input defaults to `confirm_free_tier=false`; a live request is not made unless the operator explicitly confirms the API project is on the no-cost Free Tier. Google states Free Tier content may be used to improve its products, and Google Search Grounding is not available for Gemini 3.8 Flash Free Tier. Do not send confidential or actual CRA research content through this canary. See [Google's pricing](https://ai.google.dev/gemini-api/docs/pricing/).
+
+
+The Gemini canary workflow is present only on the Draft feature branch; GitHub manual dispatch becomes available after the workflow file is present on the default branch. It has not been dispatched and no live Gemini API call has been made.
