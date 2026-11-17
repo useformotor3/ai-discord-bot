@@ -277,3 +277,12 @@
 - 2025/1535의 특정 Regulation 168/2013 제품 범위 제외를 서보 드라이브에 자동 적용하지 않는다.
 - 2026/881의 Article 16 통지 전파 지연 조건을 Article 14의 신고 시한과 혼동하지 않는다.
 - 자동 검증 통과는 원문 수집·최소 인용 대조를 의미한다. 법률 해석·제품 분류·적합성 결론은 독립 검토 전까지 미확정으로 유지한다.
+
+
+## 23. CRA claim-to-evidence 필수 통제
+- 법적 의무 및 공식 설명은 개별 claim_id를 갖고, 본문에서 해당 ID를 참조해야 한다.
+- 구조화 JSON의 각 법적 주장에는 source pack에 등록된 source_id, 해당 원문에서 확인되는 Article/Annex locator, 50자 이상의 원문 직접 인용을 포함한다.
+- 해석 및 엔지니어링 권고는 법적 의무와 분리하고 근거 및 비법적 성격을 명시한다.
+- 중복/누락/미등록 claim_id, source_id, locator, quote 오류는 fail-closed한다. 실패한 보고서는 Discord 전송·archive·history/state count 반영으로 진행하지 않는다.
+- 자동 gate는 선언된 주장에 대한 추적성 검사다. 본문 내 모든 잠재적 법률 주장을 완전하게 자동 추출하는 기능이나 법률 해석·제품 적합성 인증으로 과장하지 않는다.
+- 새 claim validator는 isolated mock CI에서 검증한다. 운영 workflow 또는 실제 Gemini/Discord 호출을 테스트 경로로 사용하지 않는다.
