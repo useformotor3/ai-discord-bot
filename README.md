@@ -381,3 +381,5 @@ Actions 성공은 자동화 실행 결과이지 CRA 법령 해석이나 출처�
 - [Hardware block design](design/SIL3_SERVO_DRIVE_HARDWARE_BLOCK_DESIGN_2026-11-17.md)
 - [Requirements traceability matrix](reports/SIL3_SERVO_DRIVE_REQUIREMENTS_TRACEABILITY_2026-11-17.md)
 - Current standard editions and product-specific limitations are recorded. This is a reference architecture, not a certified final design.
+
+- 벤치마킹 시 Rockwell PSA 2017-01-001의 ERS3 hardwired STO firmware 제한도 별도 기록했다. 자세한 영향 범위와 수정 firmware는 벤치마킹 보고서에 기재.
