@@ -384,10 +384,16 @@ def validate_research_report(report, source):
     annex_refs = re.findall(r"\bAnnex\s+[IVX]+\b", text, flags=re.IGNORECASE)
     if not article_refs and not annex_refs:
         return False, "확인 가능한 CRA Article 또는 Annex 번호가 없습니다."
-    if article_refs and not any(ref.casefold() in source_text for ref in article_refs):
-        return False, "보고서의 Article 번호가 수집한 official source pack에서 확인되지 않습니다."
-    if annex_refs and not any(ref.casefold() in source_text for ref in annex_refs):
-        return False, "보고서의 Annex 번호가 수집한 official source pack에서 확인되지 않습니다."
+    missing_articles = [
+        ref for ref in set(article_refs) if ref.casefold() not in source_text
+    ]
+    missing_annexes = [
+        ref for ref in set(annex_refs) if ref.casefold() not in source_text
+    ]
+    if missing_articles:
+        return False, "보고서의 Article 번호가 수집한 official source pack에서 확인되지 않습니다: " + ", ".join(sorted(missing_articles))
+    if missing_annexes:
+        return False, "보고서의 Annex 번호가 수집한 official source pack에서 확인되지 않습니다: " + ", ".join(sorted(missing_annexes))
 
     quote_match = re.search(
         r"출처 원문(?: 텍스트)?\s*(?:\(raw text quote\))?\s*[:：]?\s*(?:\n|$)(.*)$",
