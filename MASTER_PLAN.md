@@ -515,3 +515,12 @@
 
 
 - PR #30 병합 후 구현 작업 브랜치는 없는 상태로 정리한다. PR #31은 README/PROJECT_STATUS/SESSION_LOG 및 기록의 사후 동기화만 수행하며, 다음 기능·자료 구현은 PR #31 병합 후 최신 main에서 새 작업 브랜치로 시작한다.
+
+
+## 2026-11-17 — Guidance claim mapping 및 PDF binary provenance
+
+- G-001~G-013을 비구속적 Commission explanation으로 등록하고, 15 interface / 35 requirements / 36 SEC control matrix에 연결한다.
+- `cra_pdf_sources.py`는 Commission PDF bytes를 fetch하고 redirect allowlist, PDF magic, document markers, page count, raw-byte SHA-256 및 text SHA-256을 검증한다. Commission Guidance primary fetch가 unavailable/non-PDF일 때만 ANFR mirror fallback을 허용하며 final URL과 fallback status를 기록한다.
+- `tests/test_cra_pdf_sources.py`는 mirror fallback, redirect 차단, 임시 HTTP 오류, identity marker, artifact output을 mock으로 검증한다.
+- 테스트 전용 workflow에서 pypdf 설치, source blob pins, live PDF canary, artifact upload를 실행한다. 일시적 네트워크 장애는 SKIPPED로 표시하고, redirect/identity/파싱 검증 실패는 CI fail-closed한다.
+- 실제 PDF bytes, SHA-256, page count, M/606 item 18 날짜는 CI artifact를 readback하고 시각 검증한 후에만 확정한다.
