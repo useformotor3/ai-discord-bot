@@ -810,3 +810,11 @@
 - 법적 구속력, ESO adoption deadline, harmonised standard OJ citation, CRA application date를 구분한다. 표준화 기한을 제품 적합성 완료 기한으로 해석하지 않는다.
 - 운영 코드/workflow/state/history/archive, 운영 Gemini/Discord는 변경·실행하지 않았다. SIL 3 과거 자료도 변경하지 않았다.
 - 다음: M/606 item 18 PDF 시각 확인, 원본 PDF 바이너리/해시 취득 경로 확보, Guidance §2.5/§6/§8을 15개 interface/35개 requirement/36개 SEC control에 claim-level 연결, Annex I locator canary 확대.
+
+
+## 2026-11-17 — PR #30 격리 CI 트리거 준비
+
+- PR #30 `https://github.com/useformotor3/ai-discord-bot/pull/30`을 생성하고 ready-for-review 상태로 전환했다.
+- PR branch의 `.github/workflows/tests.yml` push branch allowlist에 `cra/official-annex-audit-2026-11-17`만 추가했다. 이 workflow는 `permissions: contents: read`의 격리 테스트 전용이며 운영 `run.yml`은 변경하지 않았다.
+- 변경 후 main 대비 9 commits ahead / 0 behind, 8개 변경 경로이며 변경 범위는 보고서·관리 문서·JSONL 및 테스트 workflow 1줄이다.
+- GitHub workflow run/status 조회에서는 현재 head의 CI 결과가 아직 보이지 않는다. 따라서 CI 통과나 merge 완료를 주장하지 않으며 PR #30은 미병합 상태로 유지한다.
