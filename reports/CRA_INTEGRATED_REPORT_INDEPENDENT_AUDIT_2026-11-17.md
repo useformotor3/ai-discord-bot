@@ -73,3 +73,29 @@
 - CRA 공식 PDF: https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX%3A32024R2847
 - EHDS Regulation (EU) 2025/327 공식 PDF: https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=OJ%3AL_202500327
 - 이 표본 검토는 전체 35개 requirement row의 전수 검토를 의미하지 않는다. 나머지 Article/Annex locator 및 Guidance PDF locator 대조는 계속한다.
+
+
+## 7. Commission Guidance PDF paragraph/page locator 재대조
+
+CI artifact Run #702의 원본 PDF를 다운로드해 SHA-256 manifest와 대조한 뒤, PDF 본문 추출 텍스트에서 각 claim의 paragraph number 및 인쇄 페이지 번호를 다시 확인했다. PDF physical page index와 문서에 인쇄된 page number를 혼동하지 않도록 인쇄 페이지 번호를 CSV에 기록했다.
+
+| Claim | Paragraph/use case | 이전 CSV page | 재대조 결과 | 조치 |
+|---|---|---|---|---|
+| G-001 | §2.4 paras. 25–26 | pp.10–11 | pp.10–11 | 유지 |
+| G-002 | §2.5 paras. 26–28 | pp.11–12 | p.11 | 수정 |
+| G-003 | §2.6 paras. 29–32 | pp.11–12 | pp.11–12 | 유지 |
+| G-004 | §2.7 paras. 33–39 | pp.13–15 | pp.13–15 | 유지 |
+| G-005 | §4.3 paras. 104–107 | pp.34–37 | pp.34–35 | 수정 |
+| G-006 | §5 paras. 126–128 | pp.42–43 | p.42 | 수정 |
+| G-007 | §6/§6.1 paras. 136–144 | pp.47–50 | pp.47–50 | 유지 |
+| G-008 | §7.1–§7.3 paras. 163–173 | pp.57–60 | pp.58–61 | 수정 |
+| G-009 | §7.4 paras. 174–177 | pp.60–61 | p.61 | 수정 |
+| G-010 | §8.1 paras. 178–190 | pp.63–67 | pp.63–65 | 수정 |
+| G-011 | §8.3.4 Industrial robot use case | p.73 | p.73 | 유지 |
+| G-012 | §9.3.2 paras. 255–257 | pp.81–82 | p.83 | 수정 |
+| G-013 | §4.1–§4.2 Example 39 | pp.30–33 | p.33 | 수정 |
+
+- 8개 claim의 page locator를 좁히거나 정정했다. paragraph locator 자체는 모두 PDF 추출 텍스트에서 확인됐다.
+- G-008/G-009 및 G-012는 PDF physical page index가 아니라 인쇄된 페이지 번호로 변환했을 때 기존 값과 차이가 확인됐다.
+- 이 변경은 해석 내용 자체를 새로 확장한 것이 아니라 기존 paraphrase가 가리키는 원문 위치를 정확히 하는 조치다.
+- Commission-hosted primary PDF byte identity는 여전히 미확인이다. 이번 재대조는 검증된 ANFR mirror byte identity의 artifact에 한정된다.
