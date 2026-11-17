@@ -18,7 +18,17 @@ def _html_for(definition):
     markers = list(definition["required"])
     if definition["id"] == "CRA-2024-2847-consolidated":
         markers.extend(cra_source.REQUIRED_CORRIGENDA_DATES)
-        markers.extend(["Article 1", "Article 13", "8.", "ANNEX I"])
+        intro = " ".join(markers)
+        operative = (
+            "<p>Article 1</p><p>Subject matter</p><p>1.</p>"
+            "<p>Article 13</p><p>Obligations of manufacturers</p>"
+            "<p>8.</p><p>Manufacturers shall ensure that vulnerabilities are handled effectively.</p>"
+            "<p>ANNEX I</p><p>ESSENTIAL CYBERSECURITY REQUIREMENTS</p>"
+        )
+        return (
+            "<html><body><h1>Official source</h1><p>" + intro + "</p>"
+            + operative + "<p>" + ("official-source-content " * 2000) + "</p></body></html>"
+        )
     if definition.get("extract") == "article_104":
         markers.extend(["Article 104", "CRA Article 32", "26 March 2027", "Article 105"])
     text = " ".join(markers) + " " + ("official-source-content " * 2000)
