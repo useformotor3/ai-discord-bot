@@ -14,12 +14,12 @@ ALLOWED_CATEGORIES = {
     "engineering_recommendation",
 }
 CLAIM_BLOCK_PATTERN = re.compile(
-    r"CLAIM_EVIDENCE_JSON\s*\x60\x60\x60json\s*(.*?)\x60\x60\x60",
+    r"CLAIM_EVIDENCE_JSON\s*[:：]?\s*\x60\x60\x60json\s*(.*?)\x60\x60\x60",
     re.IGNORECASE | re.DOTALL,
 )
 CLAIM_REFERENCE_PATTERN = re.compile(r"\[(C-\d{3,})\]")
 CLAIM_EVIDENCE_JSON_BLOCK_REMOVER = re.compile(
-    r"CLAIM_EVIDENCE_JSON\s*\x60\x60\x60json\s*.*?\x60\x60\x60",
+    r"CLAIM_EVIDENCE_JSON\s*[:：]?\s*\x60\x60\x60json\s*.*?\x60\x60\x60",
     re.IGNORECASE | re.DOTALL,
 )
 
