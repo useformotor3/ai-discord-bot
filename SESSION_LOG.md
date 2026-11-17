@@ -974,3 +974,30 @@
 - master index `reports/CRA_CORRECTION_INDEX_2026-11-17.md` main 반영.
 - 이전 Draft PR #3/#6은 후속 PR #10–#14가 해당 기능/자료를 main에 통합했으므로 close. correction #5–#21은 main에 보존.
 - 다음 실무 우선순위: 정정된 법적 근거를 한국어 CRA 통합 보고서/traceability matrix에 반영하고, 이후 SIL 3 servo-drive benchmarking report와 hardware block design을 작성.
+
+## 2026-11-17 — SIL 3 서보 드라이브 벤치마킹 및 하드웨어 설계 초안
+
+### 조사 표준
+- IEC 61800-5-2:2016+AMD1:2026 CSV Ed.2.1(2026-10-30 발행)을 현재 제품 안전 서브기능 기준으로 반영.
+- IEC 62061:2021+AMD1:2024+AMD2:2026 CSV Ed.2.2(2026-03-20), ISO 13849-1:2023 반영.
+- IEC 61508-1:2010 Ed.2는 현재 유효. IEC 61508-1:2026 Ed.3 PRV는 FDIS 투표가 2026-11-13 종료됐지만 최종 발행 전(예정 2027-01-22)이므로 규범 기준으로 사용하지 않는다.
+- IEC 61800-5-2 AMD1:2026은 시험/파라미터/EMC/열/기계 내성/피드백 관련 내용을 갱신하고 PDS(SR) proof-test 용어/개념을 삭제했다. 2016판 제조사 매뉴얼의 proof-test interval을 최신 규격 요구로 자동 적용하지 않도록 주의사항 추가.
+
+### 제조사 벤치마킹
+- Mitsubishi MELSERVO-J5: 모델별 STO/SS1/SS2/SOS/SBC/SLS/SSM/SDI/SLI/SLT, PFH 및 encoder/test-pulse 조건 차이 확인. 일부 기능은 SIL2/PLd.
+- Yaskawa Sigma-7 ASM7: OSB01A/OSB02A, FSoE/physical I/O, 최대 16개 기능, module PFH와 전체 drive PFH 범위 차이, encoder configuration dependency 확인.
+- Rockwell Kinetix 5700 ERS4: drive-based Monitored/Timed SS1, 일부 motion monitoring SIL3/PLe, position-based functions 일부 SIL2/PLd, dual feedback 필요성 및 PFH 범위 확인.
+- Siemens S210: 2025 Safety Manufacturer Declaration 기준 SIL3/PLe, Basic/Extended 및 Cat3/Cat4 구분, runtime license 조건 및 2026 amendment 재확인 필요.
+- PFH 수치는 component scope가 달라 단순 제조사 순위로 사용하지 않음.
+
+### 생성 문서
+- `reports/SIL3_SERVO_DRIVE_BENCHMARK_REPORT_2026-11-17.md`
+- `design/SIL3_SERVO_DRIVE_HARDWARE_BLOCK_DESIGN_2026-11-17.md`
+- `reports/SIL3_SERVO_DRIVE_REQUIREMENTS_TRACEABILITY_2026-11-17.md`
+
+### 제한
+- 1축 기준 reference architecture이며 전압/출력/부하/엔코더/네트워크/안전 기능 범위가 미확정.
+- 제조사별 2026-10-30 IEC 61800-5-2 amendment 적용 인증서와 최신 firmware 범위를 직접 확인하지 않았다.
+- 최종 회로도/BOM/PFH 계산은 정격/부하/위험평가가 확정된 후 수행한다.
+
+- Rockwell Product Safety Advisory PSA 2017-01-001 추가 대조: 2198-S* ERS3 V7.001 이하 및 2198-D* ERS3 V7.002 이하의 hardwired STO 구성은 공표 SIL PFH 미달 가능. 수정 firmware V7.003 이상. Integrated network STO는 해당 공지의 영향 범위 밖. 설치 firmware 확인이 필요하며 ERS4에 일반화하지 않는다.

@@ -686,3 +686,13 @@
 - [CRA 정정 인덱스](reports/CRA_CORRECTION_INDEX_2026-11-17.md) main 반영 완료.
 - 대체된 Draft PR #3/#6은 정정 문서와 기능이 PR #10–#14로 main에 통합되어 close 처리했다. 소스 작업은 버리지 않았으며 correction #5–#21도 main에 존재한다.
 - 남은 운영 검증: 3시간 주기 첫 3회 production run의 Gemini quota, clean no-op, recovery guard, checkpoint pruning 및 archive/state/history 무결성 확인.
+
+## 2026-11-17 — SIL 3 서보 드라이브 벤치마킹/하드웨어 설계 v0.1 작성
+- [벤치마킹 보고서](reports/SIL3_SERVO_DRIVE_BENCHMARK_REPORT_2026-11-17.md): Mitsubishi MELSERVO-J5, Yaskawa Sigma-7 ASM7, Rockwell Kinetix 5700, Siemens SINAMICS S210을 공식 제조사 자료로 비교.
+- [하드웨어 블록 설계](design/SIL3_SERVO_DRIVE_HARDWARE_BLOCK_DESIGN_2026-11-17.md): 전력 스테이지, 독립 safety CPU/FPGA, 이중 STO, 안전 피드백, SBC/기계 브레이크, 안전 통신, 보안 경계, 시험 계획.
+- [요구사항 추적성 매트릭스](reports/SIL3_SERVO_DRIVE_REQUIREMENTS_TRACEABILITY_2026-11-17.md): 기능안전 FS와 CRA 사이버보안 CYB 요구사항을 분리.
+- 표준 업데이트: IEC 61800-5-2 AMD1:2026(2026-10-30), IEC 62061 AMD2:2026(2026-03-20), ISO 13849-1:2023 확인. IEC 61508-1 Ed.3 PRV는 최종 발행 전.
+- 제품 PFH 값은 범위가 서로 달라 직접 순위화하지 않았다. 드라이브/모듈 PFH와 전체 안전 기능 PFH를 구분했다.
+- 현재 문서는 v0.1 reference architecture다. 전압, 출력, 축 수, 모터/엔코더, 안전 기능 및 F-PLC/네트워크가 확정되기 전 최종 회로도/BOM/PFH를 단정하지 않는다.
+
+- 추가 발견: Rockwell PSA 2017-01-001은 특정 Kinetix 5700 ERS3 firmware의 hardwired STO에서 SIL PFH 미달 가능성을 공지한다. 영향 모델/firmware와 수정 버전 V7.003 이상을 보고서에 반영했으며 ERS4에 일반화하지 않는다.

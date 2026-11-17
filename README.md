@@ -375,3 +375,11 @@ Actions 성공은 자동화 실행 결과이지 CRA 법령 해석이나 출처�
 - [CRA correction index #1–#38](reports/CRA_CORRECTION_INDEX_2026-11-17.md)
 - All 38 correction reports are now present on main. Original auto-archive files remain unchanged.
 - PR #14 merged: `6994e4828a03482713f7990c7f82036bacfe4772`; CI #474: 105 passed, 1 xfailed.
+
+## SIL 3 servo drive engineering documents — v0.1
+- [Benchmark report](reports/SIL3_SERVO_DRIVE_BENCHMARK_REPORT_2026-11-17.md)
+- [Hardware block design](design/SIL3_SERVO_DRIVE_HARDWARE_BLOCK_DESIGN_2026-11-17.md)
+- [Requirements traceability matrix](reports/SIL3_SERVO_DRIVE_REQUIREMENTS_TRACEABILITY_2026-11-17.md)
+- Current standard editions and product-specific limitations are recorded. This is a reference architecture, not a certified final design.
+
+- 벤치마킹 시 Rockwell PSA 2017-01-001의 ERS3 hardwired STO firmware 제한도 별도 기록했다. 자세한 영향 범위와 수정 firmware는 벤치마킹 보고서에 기재.
