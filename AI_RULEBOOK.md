@@ -304,3 +304,11 @@
 - workflow가 default branch에 등록되기 전에는 수동 dispatch가 불가능하므로 main에 자동 복사/병합하지 않는다.
 - 계정/프로젝트의 실제 billing tier가 확인되지 않으면 live API를 호출하지 않는다.
 - Free Tier data-use notice 및 rate limits를 실행 전에 다시 확인한다.
+
+## 26. CRA claim evidence scope and integration safeguards
+- A legal claim's quote must be present in the selected source and within the declared Article/Annex scope; source-wide quote existence alone is insufficient.
+- This mechanical scope check does not establish paragraph/point accuracy, legal interpretation, applicability, or conformity. Keep those as explicit human-review items.
+- Distinguish corrigenda date-index detection from fetching and verifying each Official Journal corrigendum's corrected wording.
+- Re-query main and feature immutable SHAs before integration. Never treat the feature branch's CI as proof that main contains the feature, or main's older CI as proof of CRA validation.
+- Keep PR #3 Draft until the latest-main integration branch passes exact source SHA checks, compileall, full pytest, CI, and operational data/path invariants.
+- Preserve main, production workflow, state/history/archive, and live Gemini/Discord boundaries during isolated verification.
