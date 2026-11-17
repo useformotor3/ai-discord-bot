@@ -1415,3 +1415,11 @@
 - Run #781 success: 154 passed / 1 xfailed; CRA traceability, official PDF/HTML canaries and PDF artifact upload passed.
 - Pre/post safety refs 생성. Post ref와 merge SHA/main 비교 `identical` 확인.
 - 제품별 데이터시트/사용설명서가 없으므로 제품별 적용성/분류는 미확정으로 유지.
+
+
+## 2026-11-17 — 통합 CRA 보고서 독립 검토 시작
+
+- 보고서 추가 섹션의 중복 번호(§11–§13)를 확인하고 §14–§16으로 정정.
+- Annex III Important products와 Annex IV Critical products 용어를 구분.
+- 독립 검토 기록 추가, unique top-level section numbering validator와 negative test 추가.
+- 다음은 법령 locator와 Guidance PDF claim locator를 표본 대조한다.
