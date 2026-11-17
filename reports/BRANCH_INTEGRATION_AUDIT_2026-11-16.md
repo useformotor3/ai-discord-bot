@@ -116,3 +116,50 @@ main의 운영 코드는 merge-base 이후 변경되지 않았다. P0/P1-A/P1-B1
 ## 문서 커밋 이후 브랜치 포인터 해석
 - 위 153 ahead / 658 behind는 감사 스냅샷 작업 브랜치 HEAD `c43abc3315d8d7c8a3d5f4fc209465428a7e8aff` 기준이다.
 - 감사 결과를 기록·정정하는 후속 문서 커밋은 작업 브랜치만 전진시키며 운영 main에는 영향을 주지 않는다. 따라서 이후 ahead 수는 문서 커밋 수만큼 증가한다. 이 문서의 운영 main 기준 tree/데이터 수치는 main HEAD `31e0f8137630630ee30ea55add039b571f2c6801` 스냅샷이다.
+
+
+## 8. 2026-11-17 09:09 KST — 최신 읽기 전용 스냅샷
+조회 시각: 2026-11-17T09:09:39+09:00
+
+### 8.1 Ref 및 commit 관계
+- 운영 main HEAD: `0dde26ebac80a789c7a9d9e26560abad54606d32`
+- 작업 브랜치 HEAD: `7ae3b251861b9a3de9981bd7202e346d05ca9430`
+- merge-base: `7ae3b251861b9a3de9981bd7202e346d05ca9430`
+- compare API: `status=behind`, ahead=0, behind=919. 작업 브랜치는 main의 조상이며 branch-only commit은 없다.
+- compare API의 파일 목록은 변경 파일 전체 판정에 사용하지 않았다. 양쪽 recursive Git tree를 직접 비교했다.
+
+### 8.2 Recursive tree
+| 항목 | main | 작업 브랜치 |
+|---|---:|---:|
+| Tree SHA | `d606a8f03ba1db6cfb292e4087ae696234ea7ce0` | `5d40aa70d81faf7602c077e1ba440c7a166fa1c2` |
+| Blob 수 | 2,438 | 1,617 |
+| research_archive 파일 | 2,398 | 1,592 |
+| truncated | false | false |
+
+전체 blob path 비교: main-only 821, branch-only 0, 동일 경로 blob 변경 16.
+
+### 8.3 운영 데이터 비교
+| 항목 | main | 작업 브랜치 | 차이 |
+|---|---:|---:|---:|
+| state.json date | 2026-11-17 | 2026-11-14 | 변경 |
+| state.json count 필드 | 5 | 29 | 변경 |
+| history.json 항목 | 2,398 | 1,592 | main +806 |
+| research_archive 파일 | 2,398 | 1,592 | main +806 |
+
+- 데이터 관련 path 차이는 총 808개: main-only archive 806개, branch-only archive 0개, archive blob 변경 0개, state.json/history.json 변경 2개.
+- history.json은 양쪽 모두 배열이며 branch의 1,592개 항목이 main 배열의 정확한 prefix다. main이 뒤에 806개를 추가했다.
+- state count는 history/archive 누적 건수가 아니라 state 파일 내부 별도 카운터다.
+- state SHA: main `c94cc82a55ad64555fe1c946a4acc163c98da2d5`, branch `172963125a28bcdc51f3bfc4504866505d7626c2`.
+- history SHA: main `dbf719321a8fc27f7d910df5767734a1e2120964`, branch `4dc2d720418944be1dea42841933199247417864`.
+
+### 8.4 주요 코드 및 workflow
+- main.py: main `f28dbc540d56b313f0648d77c58734d27eb95d1a`, branch `4b631c04e34b2b3bbade0aa9301e7d48578a1e03`.
+- .github/workflows/run.yml: main `743c2300d9d5fd51f86b3bee3effaeb7ec456f71`, branch `65a8cadc8eac593f551e390698e367b1d161ecf1`.
+- 두 파일 모두 blob SHA가 달라 내용이 다르다. 이번 작업은 해당 파일을 열거나 수정/실행하지 않았으며, SHA 차이만 기록한다.
+
+### 8.5 결론 및 실행 범위
+- 작업 브랜치는 main보다 919 commits 뒤처져 있고 고유 커밋이 없다. 이 브랜치를 main에 병합할 이유가 없으며, 통합 후보로 취급하지 않는다.
+- main의 자동 생성 데이터 806건 증가가 확인됐다. 운영 데이터는 main 원본을 보존해야 한다.
+- README, PROJECT_STATUS, MASTER_PLAN, SESSION_LOG, PROJECT_LOG 및 본 감사 보고서만 작업 브랜치에 기록한다.
+- main, main.py, 운영 run.yml, state.json, history.json, research_archive 원본은 수정하지 않았다. merge/rebase/PR merge, workflow 실행, Gemini/Discord 외부 호출은 하지 않았다.
+- 테스트는 실행하지 않았다. 따라서 테스트 PASS 판정은 없다.

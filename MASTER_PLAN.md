@@ -253,3 +253,25 @@
 
 ## 최신 작업 브랜치 포인터
 - P1-B2 설계/감사 문서 커밋 이후 작업 브랜치 HEAD는 `38bb00c815eee3e754bff14f67bcab2f23172a92`이며, main HEAD `036334dd2665752c2e6ddb024001771cff4064c5` 대비 156 ahead / 660 behind다. 앞선 155/660 수치는 설계 문서 커밋 직전의 감사 기준 HEAD `227e3298066af4bda83fb0713fc1d57c749ee8c6` 기준 스냅샷이다.
+
+
+## 2026-11-17 09:09 KST — 매일 통합 상태 점검
+- 조회 시각: 2026-11-17T09:09:39+09:00
+- 감사 기준 main HEAD: `0dde26ebac80a789c7a9d9e26560abad54606d32`
+- 감사 기준 작업 브랜치 HEAD: `7ae3b251861b9a3de9981bd7202e346d05ca9430`
+- merge-base: `7ae3b251861b9a3de9981bd7202e346d05ca9430`; compare: **0 ahead / 919 behind** (branch is an ancestor of main; no branch-only commits).
+- recursive tree: main `d606a8f03ba1db6cfb292e4087ae696234ea7ce0`, 2,438 blobs, truncated=false; branch `5d40aa70d81faf7602c077e1ba440c7a166fa1c2`, 1,617 blobs, truncated=false.
+- 전체 blob 경로 차이: main-only 821, branch-only 0, same-path modified 16.
+- 데이터: main archive 2,398 / branch archive 1,592; main-only archive 806, branch-only 0, modified archive 0. state.json 및 history.json은 각각 변경되어 데이터 차이 총 808 paths.
+- history.json: main 2,398개 / branch 1,592개. branch의 1,592개 항목은 main history의 정확한 prefix이며 main에 806개가 추가됨.
+- state.json: main date/count=`2026-11-17 / 5`; branch date/count=`2026-11-14 / 29`. count는 state의 실행 카운터 필드이며 history/archive 전체 개수와 같은 의미가 아님.
+- blob SHA: main state `c94cc82a55ad64555fe1c946a4acc163c98da2d5`, branch state `172963125a28bcdc51f3bfc4504866505d7626c2`; main history `dbf719321a8fc27f7d910df5767734a1e2120964`, branch history `4dc2d720418944be1dea42841933199247417864`.
+- 코드/운영 workflow 차이도 존재: main.py main `f28dbc540d56b313f0648d77c58734d27eb95d1a` vs branch `4b631c04e34b2b3bbade0aa9301e7d48578a1e03`; run.yml main `743c2300d9d5fd51f86b3bee3effaeb7ec456f71` vs branch `65a8cadc8eac593f551e390698e367b1d161ecf1`.
+- JSONL 기존 25행은 모두 유효했고, 이번 감사 이벤트 1행을 추가함.
+- 문서만 작업 브랜치에 갱신. main, main.py, 운영 run.yml, state/history/archive 원본은 수정하지 않음. merge/rebase/PR merge, workflow 실행, Gemini/Discord 외부 호출 없음.
+- 테스트는 실행하지 않았으며 PASS로 기록하지 않음.
+
+### 통합 판단
+- 이 감사 기준에서 작업 브랜치는 main의 조상이며 ahead=0이다. 따라서 main에 없는 작업 브랜치 고유 커밋은 없다.
+- 작업 브랜치를 main에 병합하는 것은 새로운 기능 반영 경로가 아니며, 현재 데이터 및 코드 차이를 해결하지 않는다. 이 브랜치를 기준으로 통합하지 않는다.
+- 실패 경로 fixture가 필요한 경우 main에 존재하는 테스트 경로와 해당 이력을 별도로 확인한 뒤, 최신 main에서 새 작업 브랜치를 만드는 편이 안전하다. 이번 감사에서는 이를 구현하거나 변경하지 않았다.
