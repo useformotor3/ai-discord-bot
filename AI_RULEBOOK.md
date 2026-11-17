@@ -286,3 +286,13 @@
 - 중복/누락/미등록 claim_id, source_id, locator, quote 오류는 fail-closed한다. 실패한 보고서는 Discord 전송·archive·history/state count 반영으로 진행하지 않는다.
 - 자동 gate는 선언된 주장에 대한 추적성 검사다. 본문 내 모든 잠재적 법률 주장을 완전하게 자동 추출하는 기능이나 법률 해석·제품 적합성 인증으로 과장하지 않는다.
 - 새 claim validator는 isolated mock CI에서 검증한다. 운영 workflow 또는 실제 Gemini/Discord 호출을 테스트 경로로 사용하지 않는다.
+
+
+## 24. Gemini API 비용 및 데이터 처리 통제
+- Gemini API live test는 자동 push/PR/production workflow에서 실행하지 않는다.
+- Free Tier 확인이 없는 상태에서 실제 API를 호출하지 않는다. Manual canary는 `confirm_free_tier` 기본 false로 둔다.
+- Canary에 보내는 입력은 고정된 synthetic public sentence 1건만 허용한다. 실제 CRA source text, user content, repository files, secrets, Discord payload, production state/history/archive는 전송 금지.
+- Search Grounding은 Free Tier에서 이용 불가하므로 무료 운영 의존성으로 추가하지 않는다. EUR-Lex 공식 원문 직접 수집을 사용한다.
+- Free Tier content may be used to improve Google's products. Confidential/sensitive data must not be sent through this tier.
+- API key는 GitHub Secret으로만 전달하고 `x-goog-api-key` header에 넣는다. URL, stdout, logs에 출력하지 않는다.
+- Google Gemini API pricing and rate limits are dynamic; check official docs before any live call.
