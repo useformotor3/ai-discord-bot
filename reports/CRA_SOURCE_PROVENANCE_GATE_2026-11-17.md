@@ -51,8 +51,8 @@ Gemini 3 계열 Google Search Grounding은 현재 Gemini API 가격표상 Free t
 - CI Run #79: 97 passed, 5 failed, 1 xfailed. 실패 원인은 테스트 간 requests module cache로 source mock이 현재 테스트에 연결되지 않은 것이었다.
 - HTTP import를 함수 호출 시점으로 이동해 mock 격리를 보완했다.
 - CI Run #83: 102 passed, 1 xfailed.
-- corrigenda version check 및 archive metadata 추가 후 CI Run #91: **103 passed, 1 xfailed**.
-- Run #89: https://github.com/useformotor3/ai-discord-bot/actions/runs/43986374463
+- corrigenda version check 및 archive metadata 추가 후 CI Run #93: **103 passed, 1 xfailed**.
+- Run #89: https://github.com/useformotor3/ai-discord-bot/actions/runs/43986520995
 - blob SHA 검증, compileall, 전체 pytest가 성공했다.
 - 테스트에서 EUR-Lex/Gemini/Discord/Git은 mock 처리했다. 실제 네트워크·운영 API는 호출하지 않았다.
 

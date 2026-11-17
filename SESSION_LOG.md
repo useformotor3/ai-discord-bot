@@ -923,3 +923,13 @@
 - CI 링크: https://github.com/useformotor3/ai-discord-bot/actions/runs/43986374463.
 - 코드 검증은 Run #89와 #91 모두 성공. 문서 변경은 기존 코드 동작을 바꾸지 않는다.
 - 운영 main 및 production workflow 미변경, Draft PR #3 유지.
+
+
+## 2026-11-17 — 최종 PR 및 복구 상태 정리
+- PR #2는 PR #3으로 대체되어 closed (not merged) 처리했다. 원 브랜치와 커밋은 감사 추적을 위해 유지한다.
+- 최종 작업 PR #3은 Draft/open 상태이며 mergeable=true, 아직 main에 병합하지 않았다.
+- 최종 작업 브랜치: feature/cra-source-grounding-atomic-2026-11-17.
+- 기준 main SHA: 0dde26ebac80a789c7a9d9e26560abad54606d32. 안전 복구 브랜치 safety/pre-cra-source-grounding-2026-11-17도 동일 SHA를 보존한다.
+- 최신 CI Run #93: 103 passed, 1 xfailed; source SHA, compileall, 전체 pytest 성공. 로그: https://github.com/useformotor3/ai-discord-bot/actions/runs/43986520995.
+- 운영 main은 자동 archive로 별도 전진할 수 있으므로 병합 시점에는 main 최신 SHA와 diff를 다시 확인해야 한다.
+- 운영 main, production run.yml, state/history/archive는 이번 작업에서 수정하지 않았다.

@@ -20,7 +20,7 @@
 - 운영 기준 브랜치: `main` — 별도 승인 없이 수정·병합하지 않습니다.
 - P0 응답 검증/실패 차단, P1-A 상태·이력 검증, P1-B1 Discord 전송 신뢰성: 작업 브랜치 구현 완료
 - **P1-B2 로컬 다중 파일 저장 일관성: 사용자 승인 후 구현 및 테스트 CI 검증 완료**
-- **CRA 출처검증 CI (Actions 43986374463): 103 passed, 1 xfailed; source SHA·compileall·전체 pytest 통과**
+- **CRA 출처검증 CI (Actions 43986520995): 103 passed, 1 xfailed; source SHA·compileall·전체 pytest 통과**
 - P1-B2는 durable journal, staged payload, backup/SHA 검증, idempotent roll-forward recovery, snapshot 충돌 방지 및 허용 target allowlist 적용
 - P1-B3 Git sync 상태화는 미구현(기존 strict xfail), P1-B4 import-time 구조 개선도 미구현
 - Discord exactly-once/outbox는 P1-B2 범위 밖이며 보장하지 않음
