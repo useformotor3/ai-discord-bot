@@ -106,7 +106,11 @@ jobs:
         shell: bash
         run: |
           python - <<'PY'
-          from cra_source import SourceUnavailableError, fetch_official_cra_source
+          from cra_source import (
+              SourceUnavailableError,
+              fetch_official_cra_source,
+              validate_consolidated_cra_corrections,
+          )
           from cra_claims import extract_locator_scope
 
           try:
@@ -118,6 +122,9 @@ jobs:
           print(f"PASS: fetched {len(source['sources'])} allowlisted official sources")
           for item in source["sources"]:
               print(f"- {item['id']}: {item['visible_text_chars']} visible chars; excerpt SHA-256={item['prompt_excerpt_sha256']}")
+
+          validate_consolidated_cra_corrections(source["sources"])
+          print("PASS: consolidated CRA text reflects Article 64(10) and Article 67 corrigenda")
 
           cra = next(item for item in source["sources"] if item["id"] == "CRA-2024-2847-consolidated")
           article_13_8 = extract_locator_scope("Article 13(8)", cra["text"])
