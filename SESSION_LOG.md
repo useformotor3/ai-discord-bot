@@ -881,3 +881,195 @@
 - 디지털 서명은 보안 무결성 구현 수단, STO 연계 설치는 제품별 안전 검증 권고로 분리.
 - 원본 archive는 보존하고 정정 문서를 별도 작성.
 - 상세: `reports/CRA_CORRECTION_REPORT_1_2026-11-17.md`.
+
+
+## 2026-11-17 — CRA 공식 원문 출처검증 gate 구현 및 재검증
+
+### 배경 및 원인
+- 2026-11-17 생성된 CRA 보고서 4건을 공식 EUR-Lex 원문과 대조한 결과, 법령 조항 오인, 원문 인용 불일치, 의무/권고 혼동이 확인됐다.
+- 기존 생성기는 client.models.generate_content 일반 텍스트 생성만 사용했고, validator는 길이·필수 섹션·오류 문구만 검사했다. 출처 URL·조항·직접 인용의 사실 대조가 없었다.
+- Gemini 3 계열 Google Search Grounding은 Free tier에서 제공되지 않는 현재 요금표 조건을 확인해 무료 운영 경로로 선택하지 않았다.
+
+### 변경 및 안전 경계
+- 기준 main SHA: 0dde26ebac80a789c7a9d9e26560abad54606d32.
+- 복구 브랜치: safety/pre-cra-source-grounding-2026-11-17.
+- 작업 브랜치: feature/cra-source-grounding-atomic-2026-11-17.
+- Draft PR #3: https://github.com/useformotor3/ai-discord-bot/pull/3.
+- cra_source.py: EUR-Lex 공식 HTTPS HTML endpoint 직접 조회, 최종 호스트 검사, 최소 본문 길이, 통합본/정오표 날짜 검사, whitespace 정규화.
+- main.py: 공식 원문 수집 성공 후 Gemini 실행, URL/버전/Article/Annex/50자 이상 인용문 원문 대조, 실패 시 후속 처리 중단, 초안/미검증 상태 표시.
+- 테스트 fixture: EUR-Lex HTTP, Gemini, Discord, Git을 mock. 원문 503, 비공식 redirect, corrigenda 누락, 직접 인용 불일치 차단 테스트 추가.
+- 운영 main, .github/workflows/run.yml, 운영 state/history/archive 미변경. 실제 Gemini/Discord 호출 및 운영 workflow 실행 없음.
+
+### 검증
+- 최초 CI Run #79: 97 passed, 5 failed, 1 xfailed. 테스트 간 requests 모듈 캐시로 source mock이 현재 테스트 호출을 포착하지 못하는 문제를 확인.
+- HTTP 의존성을 호출 시점 import로 변경하고 fixture 기대 키를 갱신.
+- CI Run #83: 102 passed, 1 xfailed.
+- corrigenda C1/C2/C3 인덱스 날짜 검사 및 source version 메타데이터를 추가.
+- CI Run #89: 103 passed, 1 xfailed; blob SHA 확인·compileall·전체 pytest 모두 통과.
+- Run #89 로그: https://github.com/useformotor3/ai-discord-bot/actions/runs/43985975373.
+
+### 제한 및 다음 단계
+- 통합본은 문서화 도구이며 관보 정본/정오표의 법적 효력을 대체하지 않는다.
+- provenance gate는 최소 출처 추적성 및 직접 인용 대조일 뿐, 모든 주장·해석·제품 분류·적합성 결론을 검증하지 않는다.
+- 실제 EUR-Lex endpoint canary, 실제 Gemini/Discord, 운영 실행은 미수행.
+- 다음은 비운영 canary로 endpoint와 응답 구조를 확인하고, 주장별 조항·인용 연결 검증을 강화한다.
+- 상세: reports/CRA_SOURCE_PROVENANCE_GATE_2026-11-17.md.
+
+
+## 2026-11-17 — 상황판·행동강령·테스트 문서 동기화
+- README, PROJECT_STATUS, MASTER_PLAN, AI_RULEBOOK, SESSION_LOG, PROJECT_LOG.jsonl, tests/README 및 CRA 출처검증 설계 보고서를 작업 브랜치에 기록했다.
+- 테스트 workflow push branch/path 필터에 현재 source-gate 브랜치와 cra_source.py를 추가했다.
+- 최신 CI Run #91: 103 passed, 1 xfailed; blob SHA, compileall, 전체 pytest 성공.
+- CI 링크: https://github.com/useformotor3/ai-discord-bot/actions/runs/43986374463.
+- 코드 검증은 Run #89와 #91 모두 성공. 문서 변경은 기존 코드 동작을 바꾸지 않는다.
+- 운영 main 및 production workflow 미변경, Draft PR #3 유지.
+
+
+## 2026-11-17 — 최종 PR 및 복구 상태 정리
+- PR #2는 PR #3으로 대체되어 closed (not merged) 처리했다. 원 브랜치와 커밋은 감사 추적을 위해 유지한다.
+- 최종 작업 PR #3은 Draft/open 상태이며 mergeable=true, 아직 main에 병합하지 않았다.
+- 최종 작업 브랜치: feature/cra-source-grounding-atomic-2026-11-17.
+- 기준 main SHA: 0dde26ebac80a789c7a9d9e26560abad54606d32. 안전 복구 브랜치 safety/pre-cra-source-grounding-2026-11-17도 동일 SHA를 보존한다.
+- 최신 CI Run #93: 103 passed, 1 xfailed; source SHA, compileall, 전체 pytest 성공. 로그: https://github.com/useformotor3/ai-discord-bot/actions/runs/43986520995.
+- 운영 main은 자동 archive로 별도 전진할 수 있으므로 병합 시점에는 main 최신 SHA와 diff를 다시 확인해야 한다.
+- 운영 main, production run.yml, state/history/archive는 이번 작업에서 수정하지 않았다.
+
+
+## 2026-11-17 — EUR-Lex 실제 endpoint canary 성공 및 법적 효력 주의 강화
+- Read-only canary workflow .github/workflows/cra-source-canary.yml 및 scripts/cra_source_canary.py 추가.
+- 최초 canary #1은 스크립트 실행 시 repo root import 경로가 없어 실패. 스크립트에서 저장소 root를 sys.path에 추가해 해결.
+- Canary Run #3 / #5 success: 공식 EUR-Lex HTTPS URL fetch, final host 확인, visible text 196,076 characters, corrigenda 날짜 5.12.2024 / 2.7.2025 / 17.10.2025 확인.
+- Canary Run #5 로그: https://github.com/useformotor3/ai-discord-bot/actions/runs/43987091981.
+- Validator 강화: EUR-Lex consolidated text는 documentation tool이며 Official Journal(관보) 정본 및 공식 corrigenda가 법적 효력의 기준이라는 문구가 보고서에 없으면 reject.
+- Isolated CI Run #107: 103 passed, 1 xfailed; blob SHA, compileall, full pytest 성공. 로그: https://github.com/useformotor3/ai-discord-bot/actions/runs/43987116390.
+- 실제 Gemini/Discord/production workflow는 실행하지 않았다. Canary는 EUR-Lex read-only GET만 수행했다.
+- 다음 단계: 주장별 근거 매핑, 원문 hash/version change detection, 검증 실패 시 review queue.
+
+
+## 2026-11-17 — 법적 효력 caveat 포함 최종 코드 및 canary 재검증
+- Validator는 EUR-Lex 통합본이 documentation tool이며 Official Journal(관보) 정본과 공식 corrigenda가 법적 효력의 기준임을 보고서에 명시하도록 요구한다.
+- Isolated CI Run #109: 103 passed, 1 xfailed; source blob SHA, compileall, 전체 pytest 성공. 로그: https://github.com/useformotor3/ai-discord-bot/actions/runs/43987545006.
+- Read-only EUR-Lex canary Run #10: success; 196,076자 visible text와 정오표 날짜 3개 확인. 로그: https://github.com/useformotor3/ai-discord-bot/actions/runs/43987552717.
+- Canary는 public EUR-Lex HTTPS GET만 수행한다. 실제 Gemini/Discord/production workflow 호출은 없다.
+- 운영 main 및 run.yml 미변경, PR #3은 Draft/open 상태.
+
+
+## 2026-11-17 — 최종 재실행 결과
+- 최신 isolated CI Run #111: 103 passed, 1 xfailed. source SHA, compileall, full pytest 성공. 로그: https://github.com/useformotor3/ai-discord-bot/actions/runs/43987722348.
+- 최신 EUR-Lex read-only canary Run #11: success. 공식 endpoint에서 196,076자 수집, 정오표 3개 날짜 확인. 로그: https://github.com/useformotor3/ai-discord-bot/actions/runs/43987730194.
+- EUR-Lex consolidated text의 법적 효력 caveat를 prompt/validator/archive에 반영했다.
+- 운영 Gemini/Discord/production workflow는 호출하지 않았고, PR #3은 Draft/open 유지.
+
+
+## 2026-11-17 — CRA 후속 법령 source pack 구현 및 검증
+- cra_source.py에 EUR-Lex 공식 후속 법령 3건을 추가하고, main.py 프롬프트에서 적용 범위를 구분했다.
+- tests/conftest.py 및 tests/test_main_characterization.py mock을 네 원문으로 확장하고, 전체 테스트 및 blob SHA pin을 갱신했다.
+- CI Run #141: 103 passed, 1 xfailed; compileall 및 전체 pytest 성공. https://github.com/useformotor3/ai-discord-bot/actions/runs/43989211881
+- EUR-Lex read-only canary Run #26: 성공. CRA 통합본과 후속 법령 3건 총 220,715자 visible text, 정오표 3개 날짜 확인. https://github.com/useformotor3/ai-discord-bot/actions/runs/43989211861
+- 코드 변경은 Draft PR #3에 존재하며 main 미병합. 운영 main.py/run.yml, Gemini/Discord 호출 없음.
+- 상세: reports/CRA_SOURCE_PROVENANCE_GATE_2026-11-17.md.
+
+
+## 2026-11-17 — 최종 문서·SHA·CI 동기화
+- 최신 작업 브랜치 SHA: d564e91faf616d95c0ab91c269fcfc3315413c50.
+- CI Run #154: 103 passed, 1 xfailed; source SHA, compileall, full pytest success. https://github.com/useformotor3/ai-discord-bot/actions/runs/43995859144
+- EUR-Lex canary Run #29: success; 4개 공식 법령 source pack 및 CRA 정오표 3개 날짜 확인. https://github.com/useformotor3/ai-discord-bot/actions/runs/43995859223
+- 보고서·README·PROJECT_STATUS·MASTER_PLAN·SESSION_LOG·tests README·PROJECT_LOG를 같은 실행 결과로 동기화했다.
+- Draft PR #3은 main에 미병합. 운영 main SHA ff599733d62a8926ee281a9958aa6e03f5ce75f4.
+
+
+## 2026-11-17 — CRA 주장별 근거 추적성 구현
+- 작업 브랜치: `feature/cra-source-grounding-atomic-2026-11-17`.
+- 변경: `cra_claims.py` 신규, `main.py` prompt/validation 연결, `tests/test_cra_claims.py` 신규 및 기존 mock report fixture 보강, isolated tests workflow source pin/경로 보강.
+- 복구 ref: `safety/pre-claim-evidence-2026-11-17-d8870e3` → `d8870e32e16ba5ebd3a7670d12816324de3b485a`.
+- CI 첫 실행에서 85 passed / 27 failed / 1 xfailed. f-string JSON brace 충돌, fixture의 새 JSON contract 누락 및 assertion 우선순위 오류를 확인하고 수정했다.
+- 수정 후 최종 정확한 head SHA CI 결과는 별도 확인 전까지 미확정이다. 운영 main 및 production workflow는 변경하지 않았으며 실제 Gemini/Discord 호출도 없다.
+
+
+## 2026-11-17 — CRA claim-to-evidence gate 최종 격리 CI 통과
+- 최종 작업 브랜치 SHA: `b11f0dcb9bc8f41a0e82ac8062c75c1ca2d08143`.
+- Isolated CI Run #194: **112 passed, 1 xfailed**; source blob SHA pin, compileall, full pytest 모두 성공.
+- EUR-Lex read-only canary Run #53: success.
+- CI: https://github.com/useformotor3/ai-discord-bot/actions/runs/43998058880
+- Canary: https://github.com/useformotor3/ai-discord-bot/actions/runs/43998058856
+- CI 로그에서 85/27 실패 원인(f-string JSON brace 및 기존 mock contract)과 후속 blob pin mismatch를 확인하고 각각 수정했다. 최종 run에서 전체 검증 통과.
+- PR #3 Draft/open 유지. 최신 main과 8 commits behind이므로 병합하지 않았다. 실제 Gemini/Discord 및 production workflow 미실행.
+
+
+### 문서 동기화 후 정확한 head 재검증
+- 문서/테스트 가이드/프로젝트 로그 동기화 head `7c9360ad6c4e833e0037e3fbc0756d736a15efd2`에서 Isolated CI Run #206 성공: **112 passed, 1 xfailed**.
+- Source SHA pin, compileall, full pytest 통과. https://github.com/useformotor3/ai-discord-bot/actions/runs/43998309434
+
+
+## 2026-11-17 — 수동 Free Tier 게이트 Gemini canary 구현
+- 안전 복구 ref: `safety/pre-gemini-json-canary-2026-11-17-198dfcc` → `198dfcc84b872e5ade7a58c673df335c7c97dcf9`.
+- 추가: `scripts/cra_gemini_canary.py`, `tests/test_cra_gemini_canary.py`, `.github/workflows/cra-gemini-canary.yml`.
+- 고정 synthetic text 1건, 1회 REST 요청, 20초 timeout, JSON claim schema/quote matching, API key header-only. Search Grounding 없음.
+- Manual workflow only, `confirm_free_tier=false` default. 실제 project billing tier를 확인할 수 없어 live API 호출은 하지 않는다.
+- workflow는 현재 Draft PR branch에만 있으므로 default branch 반영 전 dispatch 불가. 운영 workflow에는 영향 없음.
+
+
+## Gemini canary mock tests 통과
+- head `e2f3dbbc9e6cfb5bbd414cf410b5e23e506ed135`, CI Run #247: **116 passed, 1 xfailed**.
+- Source SHA pin / compileall / full pytest 성공. https://github.com/useformotor3/ai-discord-bot/actions/runs/43998889661
+- Canary tests use mocked HTTP opener only; live Gemini API requests remain zero.
+
+
+### Gemini canary 최종 head CI
+- head `173181265a157bb0086358ea0479c93941149dc6`: Isolated CI Run #257 **116 passed, 1 xfailed**.
+- EUR-Lex read-only Canary Run #85 success.
+- CI: https://github.com/useformotor3/ai-discord-bot/actions/runs/43999017790
+- Canary: https://github.com/useformotor3/ai-discord-bot/actions/runs/43999023906
+- Live Gemini API 호출은 하지 않았으며 manual Free Tier gate는 유지.
+
+
+### Gemini canary 문서/로그 최신 head 재검증
+- head `d335612023398184c54b6b86e9c56e7668779a7c`: CI Run #266 **116 passed, 1 xfailed**.
+- Exact source SHA pin, compileall, full pytest 성공.
+- https://github.com/useformotor3/ai-discord-bot/actions/runs/43999131134
+
+## 2026-11-17 — 최신 main 통합 사전 감사 및 claim quote 범위 수정
+- 저장소 최신 상태를 재조회했다. main 9ad23da7136e3af7167048be51a0bf7f7c96d850, feature 감사 기준 3b1c2f3481e9b2e89288cbec80dfbff3d854c8b5, merge-base 0dde26ebac80a789c7a9d9e26560abad54606d32; compare는 116 ahead / 9 behind.
+- main의 main.py는 CRA source/claim validator를 import하지 않고, main tests workflow의 exact SHA pins도 기존 P1-B2 기준이다. feature workflow는 CRA 모듈과 테스트까지 pin한다.
+- 기존 claim validator는 quote가 source 전체에 존재하는지만 확인했다. Article locator가 존재하되 quote가 다른 Article에 있어도 통과할 수 있는 false-positive를 재현하는 테스트를 추가했다.
+- _quote_is_in_locator_scope를 추가해 Article/Annex scope 내 quote 여부를 검사한다. paragraph/point 정확 경계는 아직 미검증이며 추가 작업 대상이다.
+- validator commit 0706df175d23cef3f40eeccebb96a08a728bafec, regression test commit fee65c436a0a112f6415d01aca35a9ba7c72a83c, workflow pin commit 3b1c2f3481e9b2e89288cbec80dfbff3d854c8b5.
+- 기존 head CI #274 success 및 EUR-Lex Canary #93 success. 신규 CI #279 / Canary #95는 pending 상태로 시작했으며 최종 결과 재확인 필요.
+- EUR-Lex Official Journal에서 세 영어 corrigenda를 독립 확인: 2024-12-05 title의 “No” 삭제, 2025-07-02 Article 64(10) “paragraphs 3 to 9” → “paragraphs 2 to 9”, 2025-10-17 Article 67 “69” → “72”. 현재 source fetch는 날짜 인덱스만 확인하고 정정문 개별 fetch/대조는 하지 않는다.
+- 상세: reports/INTEGRATION_AND_CLAIM_SCOPE_AUDIT_2026-11-17.md.
+- main / 운영 run.yml / state / history / archive 변경 없음. merge/rebase/force-push/production 실행/Gemini live call 없음. PR #3 Draft 유지.
+
+## 2026-11-17 — CRA claim scope helper 수정 및 CI 회복
+- 최초 helper 구현에서 정규식 escape를 이중 처리해 CI #279가 실패했다: 25 failed, 92 passed, 1 xfailed. job log에서 주요 원인은 claim quote scope가 정상 fixture에서 false가 된 것이었고, 그 결과 main 통합 fixture들이 연쇄 실패했다.
+- 정규식 escape를 바로잡고 workflow SHA pin을 새 blob으로 갱신했다.
+- 수정 후 Isolated CI Run #294: **117 passed, 1 xfailed**. Exact blob SHA, compileall, 전체 pytest 성공.
+- EUR-Lex read-only Canary Run #101: success.
+- 실패 Run #279는 이력으로 유지하며, 수정 후 성공과 구분한다.
+- PROJECT_LOG.jsonl은 UTF-8 원문 전체를 보존한 채 빈 줄을 제거하고 1행 1 JSON 객체 형식으로 정리했으며, 수정 후 검증 event를 추가했다.
+- 마지막 compare 스냅샷: main 83bc2430842413080e73bc5b98a8a82c45d03909, feature 784c41a90bd77dd5776c1637f6abe646452e7175, 125 ahead / 10 behind. main 자동 archive가 계속 전진하므로 통합 직전 재조회한다.
+- Official Journal corrigenda 개별 원문 fetch/문구 검증은 미완료. PR #3 Draft 유지, main/운영 workflow/state/history/archive 변경 없음, production/Gemini live 호출 없음.
+
+## 2026-11-17 — Official Journal corrigenda 3건 개별 수집
+- CRA 통합본 안의 날짜만 확인하던 gate를 확장해 세 영어 Official Journal corrigenda를 개별 source로 수집한다.
+- 2024-12-05 OJ 2024/90780: 제목에서 “No 2019/1020”의 “No” 삭제.
+- 2025-07-02 OJ 2025/90555: Article 64(10) “paragraphs 3 to 9” → “paragraphs 2 to 9”.
+- 2025-10-17 OJ 2025/90828: Article 67 참조 “69” → “72”.
+- 세 ELI URL의 공식 EUR-Lex HTML을 실제 GET하고 Article/표제 및 for/read 정정 문구를 확인했다. Canary #115 success; 전체 7 source, 245,502 visible-text chars.
+- source manifest 증가로 Discord 보고서가 3청크가 됐다. CI #314(8 failed) 및 #319(2 failed)에서 기존 mock의 청크/대기 횟수 기대값 불일치를 확인하고 수정했다.
+- 최종 CI #323: 117 passed, 1 xfailed. Exact SHA, compileall, 전체 pytest 통과.
+- live Gemini/Discord API, production workflow 호출 없음. PR #3 Draft 유지.
+- 상세: reports/INTEGRATION_AND_CLAIM_SCOPE_AUDIT_2026-11-17.md.
+
+## 2026-11-17 — 자동 archive #14–#17 법령 원문 감사
+- main의 오늘 자동 archive 14–17번을 원본 SHA로 식별해 개별 검토했다. 원본 archive 파일은 보존하고 별도 correction report를 생성했다.
+- #14는 Article 11을 제조사 의무/CVD 조항으로 인용한 오류를 발견했다. Article 11은 General product safety이며 CVD는 Annex I Part II (5)/(6), actively exploited vulnerability 및 severe incident 보고는 Article 14의 별도 의무다.
+- #15의 Annex I Part I (2)(f) 기본 인용은 맞지만, 실시간 상위 PLC 보고, 특정 프로토콜/암호기술, STO/Interlock 동작을 법령 의무로 확장한 부분은 근거가 없다.
+- #16은 원문 인용에서 자동 업데이트 요건 문구를 누락/재배열했고, “not authorised by the manufacturer”라고 잘못 썼다. 최종 OJ는 “not authorised by the user”이며, point (2)(f)에 “including cryptographic mechanisms” 문구가 없다. 디지털 서명은 구현 후보이지 명시적 일률 의무가 아니다.
+- #17의 least privilege/RBAC 직접 인용은 공식 OJ에서 확인되지 않았다. 실제 법적 근거는 Annex I Part I (2)(d)의 risk-based appropriate access-control mechanisms 및 authentication/identity/access management.
+- correction reports #14–#17 생성 완료. 다음으로 archive #13 이하를 같은 기준으로 감사한다.
+
+## 2026-11-17 — 자동 archive #18 정정
+- 최신 main archive #18의 raw quote가 Annex I Part I (2)(b), (2)(d), (2)(l) 내용을 혼합하고 “including the principle of least privilege”를 CRA 직접 문언처럼 추가한 것을 확인했다.
+- 실제 법령은 secure-by-default, 접근통제, 내부 활동 기록/모니터링을 각각 별도 point로 규정한다. RBAC/least privilege/MFA 및 실패 인증 로그는 위험 기반 구현 후보이지 이 문구 그대로의 일률적 법적 의무가 아니다.
+- correction report #18을 생성하고 원본 archive는 SHA f986f2f2db5f74ca8dd072deb2fe90e013b4a63c 그대로 보존했다.
+- correction reports #14–#18 완료. 다음은 archive #13 이하를 검토한다.

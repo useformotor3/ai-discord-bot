@@ -101,3 +101,45 @@ python -m pytest -q
 
 - persistence recovery target은 `state.json`, `history.json`, `research_archive/*.md`만 허용한다. README, 코드, workflow, .git 등 저장소 내 임의 경로를 지정하는 manifest는 fail-closed 한다.
 - 테스트 전용 workflow는 pull_request→main 및 main push에도 실행되도록 구성했다. 외부 API/secrets 없이 mock 테스트만 수행한다.
+
+
+## CRA 공식 원문 출처검증 gate
+- cra_source.py는 EUR-Lex CRA consolidated HTML을 직접 가져온다. HTTPS/최종 host, 최소 본문 길이, known corrigenda date(5.12.2024 / 2.7.2025 / 17.10.2025)를 확인한다.
+- main.py는 원문 수집 성공 후에만 Gemini를 호출한다. 보고서 공식 URL·source version·Article/Annex locator·50자 이상 direct quote를 source text와 대조한다.
+- 원문 HTTP 오류, 비공식 redirect, corrigenda 누락, quote mismatch는 fail-closed한다.
+- 테스트에는 source retrieval mock을 사용하며 실제 EUR-Lex/Gemini/Discord/Git은 호출하지 않는다.
+- CI Run #111: 103 passed, 1 xfailed; exact source blob SHA, compileall, full pytest success. Evidence: https://github.com/useformotor3/ai-discord-bot/actions/runs/43987722348.
+- 이 검증은 최소 provenance gate이며 모든 법률 해석·제품 적용성·적합성 판단을 보증하지 않는다.
+
+
+## EUR-Lex read-only live canary
+- Workflow: .github/workflows/cra-source-canary.yml; script: scripts/cra_source_canary.py.
+- The canary performs only a public HTTPS GET to the official EUR-Lex CRA consolidated text. It does not call Gemini, Discord, production workflow, or Git write APIs.
+- Canary Run #11: success; 196,076 visible-text characters; all known corrigenda dates (5.12.2024, 2.7.2025, 17.10.2025) present.
+- Evidence: https://github.com/useformotor3/ai-discord-bot/actions/runs/43987730194.
+- This verifies endpoint reachability and source-index preconditions, not legal interpretation or product conformity.
+
+
+## 확장 CRA source pack 검증 — 2026-11-17
+- 공식 EUR-Lex 원문: CRA 2024/2847 consolidated + Regulation 2025/327 + Delegated Regulations 2025/1535, 2026/881.
+- Isolated CI Run #141: 103 passed, 1 xfailed. [로그](https://github.com/useformotor3/ai-discord-bot/actions/runs/43989211881).
+- Read-only Canary Run #26: success; 네 문서 총 220,715자. [로그](https://github.com/useformotor3/ai-discord-bot/actions/runs/43989211861).
+- Canary는 EUR-Lex 공개 GET만 수행한다. 실제 Gemini/Discord/운영 workflow 호출은 없다.
+
+
+## Latest exact-head verification — 2026-11-17
+- Isolated CI Run #154: 103 passed, 1 xfailed; exact blob SHA, compileall and complete pytest suite succeeded. https://github.com/useformotor3/ai-discord-bot/actions/runs/43995859144
+- EUR-Lex read-only canary Run #29: success. https://github.com/useformotor3/ai-discord-bot/actions/runs/43995859223
+
+
+## CRA claim evidence validation
+- `test_cra_claims.py` validates the structured `CLAIM_EVIDENCE_JSON` contract.
+- Covered cases: valid claim, source ID mismatch, Article locator mismatch, quote mismatch/short quote, missing or malformed JSON block, missing/undeclared body references, duplicate claim IDs, and explicit non-legal recommendation basis.
+- `test_main_characterization.py` uses a fully mocked report containing legal and engineering claim examples to exercise the main.py acceptance path without real Gemini/Discord calls.
+- These tests validate source traceability only; they do not certify legal interpretation or product applicability.
+
+
+## Gemini JSON compatibility canary
+- `test_cra_gemini_canary.py` tests the REST request contract, API-key header placement, one-call budget, JSON response parsing, synthetic quote matching, and missing-key fail-closed behavior.
+- All tests inject a mock opener; no live Gemini request is made.
+- The live workflow is manual-only and requires `confirm_free_tier=true`. It uses only a synthetic public sentence and does not include CRA sources or repository/user data.

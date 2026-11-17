@@ -256,3 +256,77 @@
 - Discord 전송 후 Git 저장이 실패할 수 있다. 이 경우 Discord 전달을 취소할 수 없으므로 archive 누락과 중복 전송 위험을 명시적으로 추적한다.
 
 - 2026-11-17 CI Run #59에서 KST/model/Git fail-closed 변경이 99 passed, 1 xfailed로 통과했다. 단, 실제 Gemini/Discord 운영 API 호출 결과와 KST 적용 후 첫 일일 경계는 별도 관찰 전까지 검증 완료로 주장하지 않는다.
+
+
+## 10. CRA 자동 출처검증 gate
+- 보고서 생성 전에 EUR-Lex 공식 CRA 원문을 직접 수집한다. 수집 실패, 비공식 도메인 redirect, 알려진 정오표 인덱스 누락 시 fail-closed한다.
+- 사용 중인 통합본의 버전 문자열과 corrigenda 날짜를 보고서에 남긴다. 2026-11-17 구현 기준 확인 대상은 2024-12-05, 2025-07-02, 2025-10-17 정오표다.
+- 보고서는 공식 URL, 통합본 버전, Article/Annex locator, 원문에서 연속된 50자 이상 직접 인용을 포함해야 한다.
+- 자동 검증은 URL·버전·locator의 최소 확인 및 한 개 이상의 직접 인용 대조다. 모든 법률 주장이나 제품 적용성의 정확성을 보증하지 않는다.
+- 따라서 모든 자동 생성물은 “원문 인용 대조 통과 / 법률 해석·제품 적용성 미검증” 초안으로 표시한다. 사람의 법령·정오표·제품 적용성 검토 전 최종 적합성 결론으로 승격하지 않는다.
+- EUR-Lex 통합본은 문서화 도구로 취급한다. 관보의 정본 및 corrigenda가 법적 효력의 기준임을 보고서에 명시하고, validator에서 해당 주의사항 누락을 거부한다.
+- Google Search Grounding 등 유료/무료 tier가 변동하는 기능을 무료 운영의 전제로 삼지 않는다. 공식 1차 출처 직접 조회를 우선하고, 비용/쿼터 변경 시 재평가한다.
+
+- 실제 endpoint canary는 별도 read-only workflow에서만 수행한다. 이 workflow는 EUR-Lex GET만 허용하고 Gemini/Discord/운영 Git 저장을 호출하지 않는다.
+
+
+## 11. CRA 후속 법령 및 적용범위 관리
+- CRA 통합본 하나만으로 후속 개정·위임법령의 적용시기와 범위를 모두 판단하지 않는다.
+- 현재 source pack은 Regulation (EU) 2024/2847 및 2025/327, 2025/1535, 2026/881을 개별 URL·버전으로 추적한다.
+- 2025/327의 EHR 관련 적용 내용을 일반 산업용 제품에 확대하지 않는다.
+- 2025/1535의 특정 Regulation 168/2013 제품 범위 제외를 서보 드라이브에 자동 적용하지 않는다.
+- 2026/881의 Article 16 통지 전파 지연 조건을 Article 14의 신고 시한과 혼동하지 않는다.
+- 자동 검증 통과는 원문 수집·최소 인용 대조를 의미한다. 법률 해석·제품 분류·적합성 결론은 독립 검토 전까지 미확정으로 유지한다.
+
+
+## 23. CRA claim-to-evidence 필수 통제
+- 법적 의무 및 공식 설명은 개별 claim_id를 갖고, 본문에서 해당 ID를 참조해야 한다.
+- 구조화 JSON의 각 법적 주장에는 source pack에 등록된 source_id, 해당 원문에서 확인되는 Article/Annex locator, 50자 이상의 원문 직접 인용을 포함한다.
+- 해석 및 엔지니어링 권고는 법적 의무와 분리하고 근거 및 비법적 성격을 명시한다.
+- 중복/누락/미등록 claim_id, source_id, locator, quote 오류는 fail-closed한다. 실패한 보고서는 Discord 전송·archive·history/state count 반영으로 진행하지 않는다.
+- 자동 gate는 선언된 주장에 대한 추적성 검사다. 본문 내 모든 잠재적 법률 주장을 완전하게 자동 추출하는 기능이나 법률 해석·제품 적합성 인증으로 과장하지 않는다.
+- 새 claim validator는 isolated mock CI에서 검증한다. 운영 workflow 또는 실제 Gemini/Discord 호출을 테스트 경로로 사용하지 않는다.
+
+
+## 24. Gemini API 비용 및 데이터 처리 통제
+- Gemini API live test는 자동 push/PR/production workflow에서 실행하지 않는다.
+- Free Tier 확인이 없는 상태에서 실제 API를 호출하지 않는다. Manual canary는 `confirm_free_tier` 기본 false로 둔다.
+- Canary에 보내는 입력은 고정된 synthetic public sentence 1건만 허용한다. 실제 CRA source text, user content, repository files, secrets, Discord payload, production state/history/archive는 전송 금지.
+- Search Grounding은 Free Tier에서 이용 불가하므로 무료 운영 의존성으로 추가하지 않는다. EUR-Lex 공식 원문 직접 수집을 사용한다.
+- Free Tier content may be used to improve Google's products. Confidential/sensitive data must not be sent through this tier.
+- API key는 GitHub Secret으로만 전달하고 `x-goog-api-key` header에 넣는다. URL, stdout, logs에 출력하지 않는다.
+- Google Gemini API pricing and rate limits are dynamic; check official docs before any live call.
+
+
+## 25. Gemini live canary 실행 제한
+- Gemini live canary는 합성 문장 한 건만 보낸다. 실제 CRA 법령, 보고서, 저장소 파일, 개인정보, 기밀 및 Discord 운영 정보를 포함하지 않는다.
+- 자동 push/PR 트리거는 금지한다. manual workflow의 `confirm_free_tier`는 false가 기본이다.
+- workflow가 default branch에 등록되기 전에는 수동 dispatch가 불가능하므로 main에 자동 복사/병합하지 않는다.
+- 계정/프로젝트의 실제 billing tier가 확인되지 않으면 live API를 호출하지 않는다.
+- Free Tier data-use notice 및 rate limits를 실행 전에 다시 확인한다.
+
+## 26. CRA claim evidence scope and integration safeguards
+- A legal claim's quote must be present in the selected source and within the declared Article/Annex scope; source-wide quote existence alone is insufficient.
+- This mechanical scope check does not establish paragraph/point accuracy, legal interpretation, applicability, or conformity. Keep those as explicit human-review items.
+- Distinguish corrigenda date-index detection from fetching and verifying each Official Journal corrigendum's corrected wording.
+- Re-query main and feature immutable SHAs before integration. Never treat the feature branch's CI as proof that main contains the feature, or main's older CI as proof of CRA validation.
+- Keep PR #3 Draft until the latest-main integration branch passes exact source SHA checks, compileall, full pytest, CI, and operational data/path invariants.
+- Preserve main, production workflow, state/history/archive, and live Gemini/Discord boundaries during isolated verification.
+
+## 27. Official Journal corrigenda source handling
+- Do not treat the consolidated-text corrigenda date index as proof that corrigendum contents were checked.
+- Fetch each applicable English Official Journal corrigendum from its official EUR-Lex ELI URL; verify the target provision and both the original and corrected wording.
+- Preserve each corrigendum as an independent source ID/URL/version in the source manifest and claim evidence pack.
+- A marker match confirms retrieved text only. It does not determine the legal effect of the correction, context, product applicability, or conformity; retain human review.
+
+## 28. Audit of legacy auto-archived research
+- Treat auto-archived reports as unverified research inputs until each claim has an official source, exact locator, and verbatim quote.
+- Never edit or delete an original archive. Publish a separate correction report linked to the immutable original blob SHA.
+- Distinguish legal requirements from product-specific engineering recommendations, safety behavior, selected protocols, cryptographic implementation, and operational design.
+- Recheck exact article/annex numbering and quoted wording against the Official Journal, including corrigenda. Proposal/compromise wording is not a substitute for the enacted OJ text.
+- Continue auditing legacy archives in reverse chronological order; integrate corrected findings into the consolidated report only after source verification.
+
+## 29. Separate adjacent legal provisions in quotations
+- Do not combine adjacent Annex I points into one synthetic direct quotation.
+- Keep secure-by-default (Part I (2)(b)), access control (Part I (2)(d)), and internal activity logging/monitoring (Part I (2)(l)) as separate claim locators.
+- Do not attribute RBAC, least privilege, MFA, password rotation or failed-login logging as direct CRA wording unless the exact Official Journal provision says so.

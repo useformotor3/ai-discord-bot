@@ -3,8 +3,8 @@
 - 최종 갱신: 2026-11-17 (KST)
 - 기준 저장소: `useformotor3/ai-discord-bot`
 - 운영 기준 브랜치: `main` (운영 자동화 및 데이터 보존)
-- 현재 작업 브랜치: `feature/p1-b2-atomic-persistence-2026-11-16` (P1-B2 구현 전용)
-- 이번 비교 기준: main과 diverged 상태. ahead/behind 수치는 main 자동화 커밋에 따라 변동하므로 통합 직전에 재조회
+- 현재 CRA 품질개선 브랜치: `feature/cra-source-grounding-atomic-2026-11-17` (Draft PR #3; main 미병합)
+- 작업 기준 main SHA: 0dde26ebac80a789c7a9d9e26560abad54606d32; 이후 main은 자동 아카이브 #6 한 건만 전진
 - 프로젝트 상태: 조사 품질 감사 및 자동화 신뢰성 개선 진행 중
 - 주 문서 언어: 한국어
 - 안전 원칙: 법적 적합성·제품 분류·안전 관련 설계 판단은 근거와 인간 검토 없이 확정하지 않음
@@ -14,7 +14,7 @@
 | 영역 | 상태 | 확인된 사실 / 다음 조치 |
 |---|---|---|
 | 프로젝트 관리 체계 | 반영 | README, 행동강령, 상황판, 마스터 계획, 세션 로그를 GitHub에서 유지 |
-| CRA 조사 품질 감사 | 표본 감사 및 정정본 작성 | #27~#29 표본에서 인용·분류·시한 표현의 위험 식별 |
+| CRA 조사 품질 감사 | 표본 감사 및 정정본 작성 | #27~#29 및 2026-11-17 최신 4건 정정 기록 유지 |
 | P0 모델 실패 처리 | 작업 브랜치 구현 | 응답 구조 검사, 모든 모델 실패 시 비정상 종료 |
 | P1-A 상태·이력 안전성 | 작업 브랜치 구현 | 손상 JSON/스키마 fail-closed, 날짜·시간 호환 |
 | helper 독립 테스트 | 이전 독립 실행 7 passed | 실제 저장소 전체 suite 아님 |
@@ -25,7 +25,7 @@
 | P1-B2 저장 원자성 | 구현·보강 및 CI 검증 완료 | durable journal, SHA 보호, roll-forward, target allowlist; Actions 43851438733: 70 passed / 1 xfailed |
 | P1-B3 Git sync 상태화 | 미구현 | 유일한 strict xfail; 별도 승인 필요 |
 | P1-B4 구조 개선 | 미구현 | import-time 실행 제거 등 후속 단계 |
-| CRA 요구사항 추적 | 후속 | 공식 조항-제품 적용성-통제-시험 증거 연결 |
+| CRA 자동 출처검증 gate | 구현·mock CI·실제 EUR-Lex canary 통과 | CI #111: 103 passed, 1 xfailed; canary #11: 196,076자, corrigenda 3개 확인 |\n| CRA 요구사항 추적 | 후속 | 주장별 공식 조항-원문-제품 적용성-통제-시험 증거 연결 |
 | SIL 기능안전 자료 | 별도 추적 | CRA 사이버보안 결론과 혼합 금지 |
 
 ## 2. P1-B1 이전 기준선에서 확인한 원본 코드 사실
@@ -644,3 +644,161 @@
 - 실시간 제어 중단 없는 설치 또는 STO 상태 설치도 법령의 보편적 설치 절차가 아니라 제품 위험분석·기능안전 영향평가 항목.
 - Annex I Part I(제품 속성)와 Part II(취약점 처리) 구조를 구분.
 - 상세: `reports/CRA_CORRECTION_REPORT_1_2026-11-17.md`.
+
+
+## 2026-11-17 — CRA 공식 원문 출처검증 gate 구현 및 CI
+- 상태: 구현 완료, 전체 mock CI 통과, Draft PR #3 검토 대기. 운영 main과 .github/workflows/run.yml은 미변경.
+- 기준 main SHA: 0dde26ebac80a789c7a9d9e26560abad54606d32.
+- 복구 기준: safety/pre-cra-source-grounding-2026-11-17 (기준 main SHA에서 생성).
+- 작업 브랜치: feature/cra-source-grounding-atomic-2026-11-17; PR #3 head 당시 93d84be849838fb75766e6be9466c9ae1d1b2625.
+- 변경 파일: cra_source.py, main.py, tests/conftest.py, tests/test_main_characterization.py, tests/test_mock_infrastructure.py, .github/workflows/tests.yml.
+- 기능: EUR-Lex 공식 도메인 직접 조회, HTTPS/최종 호스트 검사, 법령 통합본 버전 및 알려진 corrigenda 3개 날짜 확인, Article/Annex 존재 확인, 50자 이상 직접 인용의 원문 포함 여부 확인.
+- 실패 처리: 원문 HTTP 오류, 비공식 redirect, 알려진 corrigenda 누락, 출처 URL/버전 누락, 조항 locator 누락, 직접 인용 불일치 시 보고서 생성 및 외부 후속처리 중단.
+- CI Run #93: 103 passed, 1 xfailed. 정확한 source blob SHA, compileall, 전체 pytest 통과. [실행 로그](https://github.com/useformotor3/ai-discord-bot/actions/runs/43986520995).
+- 이전 CI Run #79: 97 passed, 5 failed, 1 xfailed. 원인은 테스트 간 requests mock 모듈 재사용. 호출 시점 import로 수정하고 Run #83/#89에서 통과.
+- 한계: 최소 출처/인용 대조이며 모든 법적 주장, 번역, 해석, 제품 적용성, 적합성 평가를 증명하지 않는다. EUR-Lex 통합본은 문서화 도구이며 법적 효력은 관보의 정본 및 정오표에 있다.
+- 완료: 비운영 read-only EUR-Lex canary #11. 실제 EUR-Lex endpoint에서 196,076자 수집, 정오표 3개 날짜 확인.\n- 미수행: 실제 Gemini/Discord 호출, 운영 workflow 실행, main 병합.
+- 다음 단계: 주장별 Article/Annex/point-to-quote 매핑, 원문 해시/변경 감지, 검증 실패 보고서의 게시 차단/검토 큐를 설계한다.
+- 상세: reports/CRA_SOURCE_PROVENANCE_GATE_2026-11-17.md.
+
+
+## 2026-11-17 — 실제 EUR-Lex read-only canary 및 법적 효력 주의 추가
+- Canary workflow: .github/workflows/cra-source-canary.yml; 스크립트: scripts/cra_source_canary.py.
+- CI Canary Run #5: success. EUR-Lex 공식 HTTPS URL에서 visible text 196,076 characters 수집.
+- 확인한 통합본: EUR-Lex consolidated text 20.11.2024; corrigenda 5.12.2024, 2.7.2025, 17.10.2025 모두 본문에 존재.
+- 로그: https://github.com/useformotor3/ai-discord-bot/actions/runs/43987730194.
+- 최신 isolated CI Run #107: 103 passed, 1 xfailed; source SHA, compileall, full pytest 통과. 로그: https://github.com/useformotor3/ai-discord-bot/actions/runs/43987116390.
+- 보고서 validator는 EUR-Lex 통합본이 documentation tool이며 법적 효력은 Official Journal(관보) 정본 및 공식 corrigenda에 있음을 반드시 명시하도록 강화했다.
+- Canary는 EUR-Lex 읽기 전용 GET만 수행하며 Gemini, Discord, Git 저장/운영 workflow를 호출하지 않는다.
+
+
+## 2026-11-17 — CRA 공식 후속 법령 source pack 확장
+- source pack에 EUR-Lex 공식 원문 3건 추가: Regulation (EU) 2025/327 Article 104, Delegated Regulation (EU) 2025/1535, Delegated Regulation (EU) 2026/881.
+- 제품 적용 범위를 단정하지 않도록 프롬프트에 한계를 명시: EHR 관련 후속 개정, 특정 L-category 범위 제외, Article 16 통지 전파 지연을 각각 구분한다.
+- Isolated CI Run #141: **103 passed, 1 xfailed**; blob SHA·compileall·전체 pytest 성공. https://github.com/useformotor3/ai-discord-bot/actions/runs/43989211881
+- EUR-Lex canary Run #26: **success**; 네 공식 문서 총 220,715자 visible text, CRA 정오표 3개 날짜 확인. https://github.com/useformotor3/ai-discord-bot/actions/runs/43989211861
+- 작업 브랜치 head: b094a5d5c36bd66c2e7b21179f263f6b6d8a82ce. Draft PR #3 open; main 미병합.
+- 운영 main 최신 확인: ff599733d62a8926ee281a9958aa6e03f5ce75f4 (Auto-archive #10). 운영 main.py/run.yml 및 Gemini/Discord 실행 미변경.
+- 미완료: 주장별 조항·문단·인용 매핑, 관보 정본 차이 대조, 운영 모델 비실행 호환성 검증.
+- 상세 보고서: reports/CRA_SOURCE_PROVENANCE_GATE_2026-11-17.md.
+
+
+## 2026-11-17 — 문서 갱신 후 최종 SHA 검증
+- 최신 작업 브랜치 SHA: d564e91faf616d95c0ab91c269fcfc3315413c50.
+- 최신 isolated CI Run #154: **103 passed, 1 xfailed**. source blob SHA, compileall, 전체 pytest 성공. https://github.com/useformotor3/ai-discord-bot/actions/runs/43995859144
+- 최신 EUR-Lex read-only canary Run #29: **success**. 네 법령 원문 조회와 정오표 3개 날짜 확인. https://github.com/useformotor3/ai-discord-bot/actions/runs/43995859223
+- 보고서·README·상황판·마스터 계획·세션 로그·테스트 가이드·JSONL 프로젝트 로그를 동기화했다.
+- Draft PR #3 open/mergeable, 아직 main 미병합. 운영 main 최신 SHA ff599733d62a8926ee281a9958aa6e03f5ce75f4; 운영 main.py/run.yml, Gemini/Discord workflow 미변경.
+
+
+## 2026-11-17 — CRA claim-to-evidence gate 구현 중
+- 작업 브랜치에 `cra_claims.py` 구조화 주장-근거 validator를 추가했다. 법적 의무/공식 설명은 개별 claim_id, 정확한 source_id, Article/Annex locator, 해당 원문과 일치하는 50자 이상 직접 인용을 요구한다.
+- 본문 claim_id 참조와 JSON 근거 목록의 일치, 중복 ID, 등록되지 않은 출처, locator/quote 불일치, 해석·엔지니어링 권고의 별도 분류 및 basis를 검사한다.
+- `main.py`는 새 validator를 기존 EUR-Lex provenance validator 앞에 실행한다. 프롬프트도 구조화 JSON 출력을 요구한다.
+- 격리 테스트에서 첫 실패(85 passed / 27 failed / 1 xfailed)를 확인했다. 주요 원인은 f-string JSON 예시 중괄호, 기존 mock 보고서의 새 claim contract 미반영, 테스트 기대 메시지였다. 해당 수정 후 새 정확한 SHA의 CI 재검증이 필요하다.
+- 작업 전 복구 기준: `safety/pre-claim-evidence-2026-11-17-d8870e3` → `d8870e32e16ba5ebd3a7670d12816324de3b485a`.
+- 운영 main, production run.yml, 실제 Gemini/Discord 호출은 변경/실행하지 않았다.
+- 한계: gate는 선언된 claim의 추적성 검사이며 본문 자연어 전체에서 빠진 법적 주장을 자동 탐지하는 완전한 NLP 검증이 아니다. 법률 해석·제품 적용성·적합성은 사람 검토 대상이다.
+
+
+## 2026-11-17 — CRA claim-to-evidence gate 격리 검증 완료
+- 최종 작업 브랜치 head: `b11f0dcb9bc8f41a0e82ac8062c75c1ca2d08143`.
+- Isolated CI Run #194: **112 passed, 1 xfailed**. source blob SHA pin, compileall, 전체 pytest 성공.
+  https://github.com/useformotor3/ai-discord-bot/actions/runs/43998058880
+- EUR-Lex read-only canary Run #53: **success**.
+  https://github.com/useformotor3/ai-discord-bot/actions/runs/43998058856
+- claim validator 정상/실패 경로, 기존 main.py mock 통합, Discord/Git 외부 경계의 기존 테스트까지 모두 통과했다.
+- 실제 Gemini/Discord 및 production workflow는 호출하지 않았다. main과 운영 데이터도 수정하지 않았다.
+- PR #3은 Draft/open 유지. 최신 main HEAD `b0fcfa9b5325697652abfb1b30c932d3d1bb7391` 대비 feature 71 ahead / 8 behind, merge-base `0dde26ebac80a789c7a9d9e26560abad54606d32`. 최신 main 통합 CI 및 conflict 검증 전이므로 병합하지 않는다.
+- 다음 우선순위: (1) 격리된 실제 Gemini model compatibility canary (2) Official Journal authentic text/corrigenda 비교 (3) 본문 자연어 claim 누락에 대한 사람 검토 절차.
+
+
+### 문서 동기화 후 재검증
+- 문서/테스트 가이드/PROJECT_LOG 동기화 head: `7c9360ad6c4e833e0037e3fbc0756d736a15efd2`.
+- 이 head에서 Isolated CI Run #206: **112 passed, 1 xfailed**; source pin, compileall, full pytest 모두 통과.
+  https://github.com/useformotor3/ai-discord-bot/actions/runs/43998309434
+- 이전 코드 구현 head의 EUR-Lex canary Run #53 success 확인. 신규 문서 변경은 source retrieval code를 변경하지 않았다.
+
+
+## Gemini JSON compatibility canary — 준비 완료, 실제 호출은 수동 게이트
+- `scripts/cra_gemini_canary.py` 및 mock test를 추가했다. 고정 synthetic text 한 건만 전송하고, JSON claim schema와 원문 인용 일치를 확인한다.
+- `.github/workflows/cra-gemini-canary.yml`은 수동 `workflow_dispatch` 전용이며 `confirm_free_tier=false`가 기본값이다. Google API key는 GitHub Secret `GEMINI_API_KEY`에서만 가져오고 URL/로그에 노출하지 않는다.
+- Google 공식 가격표: Gemini 3.8 Flash Free Tier 입력/출력은 무료이나 Free Tier 데이터는 Google 제품 개선에 사용될 수 있고, Google Search Grounding은 Free Tier에서 이용할 수 없다. 계정별 billing tier는 저장소에서 확인 불가.
+- 따라서 actual Gemini API call은 아직 하지 않았다. 사용자가 실제 project가 Free Tier이고 유료 billing을 사용하지 않는다고 확인한 경우에만 수동 dispatch한다.
+- 공식 가격/정책: https://ai.google.dev/gemini-api/docs/pricing/
+
+
+## Gemini JSON compatibility canary — 구현/격리 테스트 완료
+- `scripts/cra_gemini_canary.py`: Google REST `generateContent` 1회 요청으로 JSON claim schema 및 synthetic quote exact match를 확인한다.
+- `tests/test_cra_gemini_canary.py`: API key header, 20초 timeout, grounding 미사용, missing key, malformed JSON, quote mismatch를 mock-only로 검사한다.
+- `.github/workflows/cra-gemini-canary.yml`: `workflow_dispatch` 전용, `confirm_free_tier=false` 기본값. 자동 실행 없음.
+- 이 workflow 파일은 현재 Draft PR 브랜치에만 있어 default branch에 존재하지 않는다. GitHub의 수동 dispatch는 default branch workflow 등록이 필요하므로 PR 병합 또는 별도 main 배포 전까지 실제 dispatch할 수 없다.
+- Google 공식 정책상 Gemini 3.8 Flash Free Tier token 가격은 무료지만 데이터는 제품 개선에 사용될 수 있고 Search Grounding은 Free Tier에서 사용할 수 없다. 실제 project billing tier는 확인 불가하므로 live call을 하지 않았다.
+- 안전 복구 기준: `safety/pre-gemini-json-canary-2026-11-17-198dfcc` → `198dfcc84b872e5ade7a58c673df335c7c97dcf9`.
+
+
+### Gemini canary mock 검증 결과
+- 구현 및 문서 동기화 head `e2f3dbbc9e6cfb5bbd414cf410b5e23e506ed135`에서 Isolated CI Run #247: **116 passed, 1 xfailed**.
+- 정확한 source SHA pin, compileall, 전체 pytest 통과. https://github.com/useformotor3/ai-discord-bot/actions/runs/43998889661
+- 신규 Gemini canary 테스트는 전부 mock opener로 수행됐다. 실제 Gemini API 호출은 하지 않았다.
+
+
+### Gemini canary mock 검증 최종 결과
+- 최종 canary 코드/문서 head `173181265a157bb0086358ea0479c93941149dc6`에서 Isolated CI Run #257: **116 passed, 1 xfailed**.
+  https://github.com/useformotor3/ai-discord-bot/actions/runs/43999017790
+- 동일 head EUR-Lex read-only Canary Run #85: **success**.
+  https://github.com/useformotor3/ai-discord-bot/actions/runs/43999023906
+- Gemini canary 테스트는 mock only. 실제 Gemini API 호출은 여전히 0회.
+
+
+### 최종 head 재검증 — Gemini canary safeguards 포함
+- 최종 확인 head `d335612023398184c54b6b86e9c56e7668779a7c`: Isolated CI Run #266 **116 passed, 1 xfailed**.
+- Exact blob SHA, compileall, full pytest 성공.
+- https://github.com/useformotor3/ai-discord-bot/actions/runs/43999131134
+- EUR-Lex read-only Canary Run #85 success at prior code-equivalent head; 이후 변경은 문서/로그만이며 source fetch code는 바뀌지 않았다.
+- Live Gemini API 호출은 0회. 수동 workflow는 default branch에 반영되기 전까지 dispatch할 수 없다.
+
+## 2026-11-17 — 최신 main 통합 사전 감사 및 CRA 근거 범위 보강
+- 최신 main HEAD 9ad23da7136e3af7167048be51a0bf7f7c96d850, CRA 작업 HEAD 감사 기준 3b1c2f3481e9b2e89288cbec80dfbff3d854c8b5, merge-base 0dde26ebac80a789c7a9d9e26560abad54606d32.
+- 최신 compare: **116 ahead / 9 behind**, diverged. 과거 113 ahead / 8 behind는 구 스냅샷이다.
+- main의 main.py 및 tests workflow는 CRA validator 변경을 포함하지 않는다. main CI 성공을 CRA 통합 검증으로 간주하지 않는다.
+- quote가 다른 Article에 있어도 통과할 수 있는 validator false-positive를 확인하고 Article/Annex 범위 내 quote 검증 및 교차 조항 거부 회귀 테스트를 추가했다.
+- 변경 commit: validator 0706df1, regression test fee65c4, exact SHA pin 3b1c2f3.
+- 이전 head CI #274 및 EUR-Lex Canary #93 성공. 신규 변경 CI #279 / Canary #95는 실행 상태 재확인 전까지 pending으로 취급한다.
+- Official Journal 직접 대조에서 영어 정오표 3건의 실제 정정사항을 확인했다. 현재 fetch gate는 날짜 존재만 확인하며 개별 corrigenda 내용 대조는 아직 구현되지 않았다.
+- 다음: #279/#95 결과 확인 → corrigenda 3건 독립 수집 및 문구 검증 → paragraph/point locator 강화 → main 9개 커밋/운영 데이터 불변성 감사 → 별도 integration branch 통합 테스트.
+- PR #3 Draft 유지. main, 운영 workflow, state/history/archive 변경 및 운영 실행 없음.
+- 상세 감사: reports/INTEGRATION_AND_CLAIM_SCOPE_AUDIT_2026-11-17.md.
+
+## 2026-11-17 — claim scope 수정 후 회귀검증 완료
+- 최초 CI #279는 **25 failed, 92 passed, 1 xfailed**로 실패했다. 원인은 새 helper의 정규식 이중 escape였으며, job log로 원인을 확인했다.
+- 정규식 수정 commit 7882aaf 및 exact SHA pin 갱신 후 CI #294: **117 passed, 1 xfailed**. Source SHA / compileall / full pytest 모두 통과.
+- EUR-Lex read-only Canary #101: success.
+- 실패 Run #279는 감사 기록으로 유지하며, 성공 Run #294와 혼동하지 않는다.
+- 마지막 compare 스냅샷: main 83bc2430842413080e73bc5b98a8a82c45d03909, feature 784c41a90bd77dd5776c1637f6abe646452e7175, **125 ahead / 10 behind**. 문서 갱신 후 다시 조회한다.
+- PROJECT_LOG.jsonl은 UTF-8 전체를 보존해 빈 행 제거 및 1행 1 JSON 객체로 정리했다.
+- 다음 우선순위는 개별 Official Journal corrigenda 원문 수집/정정 문구 검증이며, 그다음 최신 main 10개 후속 커밋 및 운영 데이터 불변성 감사다.
+
+## 2026-11-17 — Official Journal 정오표 3건 개별 수집 구현
+- CRA 기본 법령의 영어 Official Journal corrigenda 3건을 각각 공식 ELI URL로 source pack에 추가했다.
+- 각 문서에서 대상 Article/표제와 for/read 정정 문구를 모두 확인하도록 fail-closed marker 검사 적용.
+- Canary #115 success: 총 7개 공식 source 수집, visible text 245,502자. 정오표 원문 3건은 7,583 / 8,318 / 8,179자.
+- source manifest 확장으로 Discord 보고서가 3청크가 됐다. CI #314(8 failed), #319(2 failed)는 청크/대기 횟수 기대값 문제로 실패했고 테스트를 수정했다.
+- 최종 CI #323: **117 passed, 1 xfailed**; exact SHA, compileall, full pytest 성공.
+- Gemini/Discord 실제 API 및 production workflow는 실행하지 않았다. Discord 전송 수 증가는 mock test fixture에만 반영.
+- 상세: reports/INTEGRATION_AND_CLAIM_SCOPE_AUDIT_2026-11-17.md.
+
+## 2026-11-17 — main 자동 archive 보고서 #14–#17 법령 대조 및 정정
+- main의 최신 자동 archive #14–#17을 원문 SHA 고정 후 개별 감사했다. 원본 archive는 수정하지 않았다.
+- #14: Article 11은 General product safety이며 제조사 의무/CVD 근거가 아니다. CVD는 Annex I Part II (5)/(6), actively exploited vulnerability 및 severe incident 신고는 Article 14.
+- #15: Annex I Part I (2)(f) 인용은 대체로 정확하나, real-time/상위 PLC 즉시 보고, 특정 MAC/HMAC/프로토콜, STO/Interlock 트리거를 법적 의무로 단정한 부분을 정정.
+- #16: 직접 인용에 문구 누락/재배열, “not authorised by the manufacturer” 오기, “including cryptographic mechanisms” 원문에 없는 구절 포함. 디지털 서명 특정 구현을 법적 의무로 단정한 부분 정정.
+- #17: least privilege/RBAC 직접 인용이 공식 OJ 원문에서 확인되지 않음. CRA는 Annex I Part I (2)(d)의 적절한 접근통제 메커니즘을 요구하지만 RBAC/MFA/session timeout을 일률적으로 직접 규정하지 않는다.
+- correction reports #14–#17을 별도 파일로 작성. 원본 archive는 그대로 보존.
+- 다음: #13 이하 자동 archive를 동일한 방식으로 순차 감사하고, corrected report index/claim evidence를 정리한다.
+
+## 2026-11-17 — 최신 자동 archive #18 정정 감사
+- main의 최신 자동 archive #18도 검토했다. RBAC/least privilege를 CRA 직접 의무로 제시하고, 여러 Annex I point를 한 문장 raw quote로 혼합한 문제를 확인했다.
+- Part I (2)(d)는 적절한 접근통제/인증/identity-access management 수단, (2)(b)는 secure-by-default, (2)(l)는 관련 내부 활동의 기록·모니터링을 각각 규정한다. 원본의 “including the principle of least privilege” 문구는 공식 OJ 직접 인용으로 확인되지 않는다.
+- correction report #18 생성: reports/CRA_CORRECTION_REPORT_18_2026-11-17.md. 원본 archive SHA f986f2f2db5f74ca8dd072deb2fe90e013b4a63c 보존.
+- 현재 별도 정정 보고서 #14–#18 완료. 다음은 #13 이하 역순 감사.

@@ -1,0 +1,38 @@
+name: CRA Gemini JSON Compatibility Canary
+
+on:
+  workflow_dispatch:
+    inputs:
+      confirm_free_tier:
+        description: "Confirm this API key/project is on the no-cost Free Tier and no paid billing will be used"
+        required: true
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: cra-gemini-canary-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  synthetic-json-canary:
+    if: ${{ inputs.confirm_free_tier == true }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Verify Gemini JSON response contract using synthetic public text only
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python scripts/cra_gemini_canary.py

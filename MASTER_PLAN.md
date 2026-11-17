@@ -377,3 +377,128 @@
 - [완료] CI Run #59: 99 passed, 1 xfailed.
 - [대기] 다음 운영 실행에서 KST 날짜·일일 count, 실제 Gemini 모델 ID 성공, Git push와 operational_guard의 정상 완료 확인.
 - [대기] Discord 전송 이후 Git 저장 실패 시 재전송 중복 방지/outbox 설계.
+
+
+## 2026-11-17 — CRA 자동 출처검증 gate (Phase 1/2 연결 단계)
+### 목적
+- 형식 검사만으로 사실 정확성을 추정하지 않는다.
+- 보고서 생성 전에 EUR-Lex 공식 CRA 통합본을 직접 확보하고, 원문·버전·조항·인용의 최소 추적성을 확보한다.
+
+### 구현 완료 기준
+- 공식 EUR-Lex HTTPS URL 직접 조회 및 최종 호스트 확인.
+- 통합본 버전 및 알려진 정오표 C1/C2/C3 날짜 확인.
+- 원문 확보 실패 또는 corrigenda index 누락 시 fail-closed.
+- 보고서에 정확한 공식 URL/버전, Article/Annex locator, 50자 이상 원문 직접 인용을 요구하고 수집 원문과 대조.
+- 모든 보고서를 법률 해석·제품 적용성 미검증 초안으로 명시.
+- 실제 Gemini/Discord 없이 전체 mock suite와 blob SHA/compileall CI 통과.
+
+### 완료 상태 및 경계
+- 작업 브랜치: feature/cra-source-grounding-atomic-2026-11-17, Draft PR #3.
+- CI Run #89: 103 passed, 1 xfailed.
+- 이 gate는 하나 이상의 직접 인용이 원문에 존재하는지 확인하는 provenance gate다. 본문 모든 문장에 대한 논리적 함의 검증, 규정 해석, 제품 분류, 법적 적합성 결론은 제공하지 않는다.
+- EUR-Lex consolidated text 자체는 documentation tool이며, 공식 관보 정본과 corrigenda가 법적 효력의 기준이다.
+- Google Search Grounding은 Gemini 3 계열 Free tier에서 제공되지 않는 현재 요금 조건 때문에 선택하지 않았다. EUR-Lex 직접 조회는 Gemini 검색 Grounding 과금과 분리된다.
+
+### 후속 우선순위
+1. 운영과 분리된 canary에서 EUR-Lex HTML endpoint 접근성·응답 길이·정오표 날짜 확인.
+2. Article/Annex/point별 claim-to-quote 매핑으로 검증 단위를 확대.
+3. 원문 버전·해시 변화 및 corrigenda 추가 시 경보/차단.
+4. 검증 실패·불확실 보고서는 게시하지 않고 검토 큐에 남기는 구조를 설계.
+
+
+## 2026-11-17 — EUR-Lex 실제 endpoint canary 완료
+- Read-only canary workflow 및 스크립트를 추가했다. 실제 Gemini/Discord/운영 workflow와 분리된다.
+- Canary Run #11 성공: HTTPS EUR-Lex endpoint 응답, 최종 host, 196,076자 visible text, corrigenda 3개 날짜 확인.
+- 법적 효력 주의: EUR-Lex consolidated text는 documentation tool이며 Official Journal 정본 및 corrigenda가 법적 효력의 기준이다.
+- 다음 단계는 claim-to-evidence 매핑 및 원문 버전/hash 변경 감지다.
+
+
+## 2026-11-17 — 후속 법령 원문 source pack 확장 완료
+- CRA 통합본 외 EUR-Lex 공식 원문 3건(2025/327, 2025/1535, 2026/881)을 수집 대상으로 추가했다.
+- CI Run #141: 103 passed, 1 xfailed; EUR-Lex canary Run #26: source pack 추출 텍스트 220,715자(2025/327은 Article 104 관련 발췌), 각 원문 HTML visible text 개별 길이는 196,076자 / 394,354자 / 6,246자 / 15,284자.
+- 제품 적용성을 추정하지 않고 EHR 적용 시기, L-category 제한적 제외, Article 16 통지 전파 지연을 분리한다.
+- 다음 우선순위: (1) claim-to-evidence 단위 검증 (2) Official Journal 정본/정오표 차이 대조 (3) 모델 출력 호환성 비운영 검증 (4) 게시 전 사람 검토 단계.
+- 운영 main 병합은 위 항목과 별도 검토 후 결정한다.
+
+
+## 2026-11-17 — 최종 문서·코드 일치 검증
+- 최신 source blob SHA/compileall/전체 pytest: CI Run #154, 103 passed, 1 xfailed.
+- 최신 EUR-Lex source pack read-only canary: Run #29 success.
+- 보고서와 상황판은 위 최신 run ID와 작업 브랜치 SHA를 기준으로 동기화했다.
+- Draft PR #3은 open/mergeable 상태이나, claim-to-evidence, 관보 정본 대조, Gemini 호환성 canary가 미완료이므로 main 병합 전 상태로 유지한다.
+
+
+## CRA 보고서 신뢰성 개선 — claim-to-evidence 단계
+1. 구조화 claim_id와 source_id/locator/직접 인용 연결을 생성 단계의 필수 산출물로 만든다.
+2. 각 법적 주장마다 해당 원문 인용을 독립 검증하고, 실패 시 전송·아카이브·count 증가를 차단한다.
+3. legal requirement, official explanation, interpretation, engineering recommendation을 별도 유형으로 분류한다.
+4. mock CI 통과 후 격리된 실제 Gemini 모델 호환성 canary를 설계한다. 운영 Gemini/Discord workflow를 테스트에 사용하지 않는다.
+5. claim mapping 통과와 별개로 Official Journal 정본 및 corrigenda 대조, 제품 범위·적용성 검토를 완료하기 전 CRA 적합성 결론으로 승격하지 않는다.
+
+
+### 진행 결과 — 2026-11-17
+- [완료] 구조화 claim-to-evidence validator 구현 및 main.py report acceptance gate 연결.
+- [완료] legal requirement / official explanation / interpretation / engineering recommendation 분리.
+- [완료] mock tests, 기존 main.py 통합 테스트, source SHA pin, compileall 및 전체 pytest 검증: 112 passed, 1 xfailed.
+- [완료] EUR-Lex read-only canary: success.
+- [미완료] 실제 Gemini 모델 JSON 출력 호환성 canary, Official Journal 정본/정오표 대조, 본문 claim 누락에 대한 사람 검토.
+- [보류] main 통합. PR #3는 main 최신화 및 통합 CI/보호 경로 검토 전까지 Draft로 유지.
+
+
+## Gemini model compatibility canary — 수동 비용 게이트
+1. [완료] 공식 가격표에서 Gemini 3.8 Flash Free Tier의 token 가격, data-use 조건, Search Grounding 제한을 확인했다.
+2. [완료] 공개 합성 문장 1건만 사용하는 opt-in JSON compatibility script와 manual workflow를 추가했다.
+3. [완료] mock-only tests를 추가하고 실제 API 요청이 없는 CI로 검증한다.
+4. [보류] 실제 API canary는 project billing tier 확인 전 dispatch하지 않는다. 실행 전 Free Tier/no paid billing을 명시 확인해야 한다.
+5. [후속] generateContent가 legacy로 분류되어 Interactions API 권장 상태이므로, 현행 코드 호환성 확인 후 migration 비용/영향을 별도 검토한다.
+
+
+### Gemini canary 구현 상태
+- [완료] 합성 입력 전용 REST canary script 및 mock-only tests 추가.
+- [완료] manual workflow에 Free Tier 확인 boolean 기본값 false 적용. 자동 호출 없음.
+- [제약] workflow 파일은 Draft PR branch에만 있으므로 default branch 반영 전에는 workflow_dispatch 실행 불가.
+- [보류] default branch 반영 여부는 main 최신화, PR 검토, Free Tier/billing 상태 확인 후 결정한다. 현재 실제 Gemini API 요청은 하지 않는다.
+
+## 2026-11-17 — 통합 사전 감사 결과 및 다음 게이트
+1. [완료] 최신 원격 상태 재조회: main 9ad23da7, feature 감사 기준 3b1c2f3, 116 ahead / 9 behind, diverged.
+2. [완료] main과 feature의 main.py / tests workflow 차이 확인. main CI는 CRA gate를 포함하지 않으므로 통합 검증 대체 불가.
+3. [완료] claim quote가 다른 Article에 위치해도 통과할 수 있는 false-positive를 확인하고 Article/Annex 범위 검사와 regression test 추가.
+4. [진행] 신규 CI #279 및 EUR-Lex read-only Canary #95 결과/로그 확인.
+5. [우선] Official Journal corrigenda 2024-12-05, 2025-07-02, 2025-10-17의 개별 원문을 source pack에 추가하고 각 정정 대상·정정 문구를 검증한다. 현재는 consolidated text 내 날짜 존재 확인만 수행한다.
+6. [후속] claim locator의 paragraph/point 범위 검사 및 false-negative 테스트 추가. Article/Annex 범위 검사는 법률적 정확성 보증이 아니다.
+7. [후속] main의 9개 후속 커밋과 운영 데이터 보존 상태를 immutable SHA로 감사하고, 별도 integration branch에서만 통합·회귀 테스트한다.
+8. [보류] PR #3 Draft 유지. 최신 main 통합 CI/보호 경로/데이터 불변성 검증 전 merge 금지. Gemini live canary는 billing tier와 데이터 사용 조건 미확인으로 미실행.
+
+## 2026-11-17 — claim scope 회귀검증 및 후속 우선순위
+1. [완료] Article/Annex scope quote gate 추가 및 교차 조항 quote 거부 회귀 테스트.
+2. [완료] 첫 CI #279 실패(25 failed, 92 passed, 1 xfailed)의 원인을 regex double-escape로 특정하고 수정.
+3. [완료] 수정 head CI #294: 117 passed, 1 xfailed; exact SHA, compileall, full pytest 통과.
+4. [완료] EUR-Lex read-only Canary #101 success.
+5. [우선] 개별 Official Journal corrigenda 3건을 source pack에 추가하고 정정 대상·정정 문구를 기계 검증한다. 날짜 인덱스만 확인하는 현 상태를 개선한다.
+6. [후속] paragraph/point 수준 locator 범위 검증과 false-negative fixture 추가.
+7. [후속] 최신 main과 다시 비교(마지막 스냅샷 125 ahead / 10 behind)하고 운영 state/history/archive 불변성 확인 후 별도 integration branch에서 검증한다.
+8. [보류] PR #3 Draft 유지. 최신 main 기준 통합 CI 및 보호 경로 검증 전 merge 금지. Gemini live canary는 billing tier 확인 전 미실행.
+
+## 2026-11-17 — Official Journal corrigenda source gate 확장
+1. [완료] CRA 영어 corrigenda 2024-12-05, 2025-07-02, 2025-10-17을 개별 공식 ELI URL로 source catalog에 추가.
+2. [완료] 각 정오표의 Article/표제와 원문 for/read 문구를 필수 marker로 검사. 누락/비공식 redirect/짧은 응답은 fail-closed.
+3. [완료] report manifest와 Gemini prompt에 3개 개별 정오표 source ID/URL/version 반영.
+4. [완료] EUR-Lex live read-only Canary #115 success; 7개 source, 245,502 visible-text chars 수집.
+5. [완료] 최종 격리 CI #323: 117 passed, 1 xfailed; source SHA, compileall, full pytest 통과.
+6. [후속] paragraph/point 수준 claim locator 정확도와 false-negative 테스트.
+7. [후속] 최신 main 및 운영 state/history/archive 보존 상태 immutable SHA 감사 후 별도 integration branch에서 검증.
+8. [보류] PR #3 Draft 유지. 최신 main 통합 CI 완료 전 merge 금지. Gemini live canary는 billing/data-use 확인 전 미실행.
+
+## 2026-11-17 — 자동 archive #14–#17 정정 감사
+1. [완료] 원본 archive #14–#17의 immutable blob SHA를 확인하고 원본 파일은 수정하지 않음.
+2. [완료] correction report #14: Article 11/13/14, Annex I Part II CVD·신고 요건 구분.
+3. [완료] correction report #15: Annex I Part I (2)(f)의 법적 요구와 서보 구현 후보, real-time/PLC/STO 의무 주장을 분리.
+4. [완료] correction report #16: 직접 인용 불일치, manufacturer/user 오기, cryptographic mechanisms 비원문 구절, 디지털 서명 의무 과장을 정정.
+5. [완료] correction report #17: RBAC/least privilege/MFA/session timeout 직접 의무 및 원문 인용 오류 정정.
+6. [진행] archive #13 이하를 원문/공식 OJ와 대조하고 정정 필요 항목을 누적한다.
+7. [후속] 정정 보고서를 master CRA report에 통합하고 claim-level source evidence와 engineering recommendation을 분리한다.
+
+## 2026-11-17 — archive #18 정정
+1. [완료] 원본 archive #18 blob SHA f986f2f2db5f74ca8dd072deb2fe90e013b4a63c 확인, 원본 보존.
+2. [완료] correction report #18 생성: Annex I Part I (2)(b)/(d)/(l) 분리, RBAC/least privilege 직접 인용 및 실패 인증 로그 의무 과장 정정.
+3. [진행] archive #13 이하 역순 감사 및 correction index 누적.

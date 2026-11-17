@@ -7,11 +7,16 @@ on:
       - docs/cra-audit-and-project-control-2026-11-14
       - test/failure-path-fixtures-2026-11-14
       - feature/p1-b2-atomic-persistence-2026-11-16
+      - feature/cra-source-grounding-2026-11-17
+      - feature/cra-source-grounding-atomic-2026-11-17
     paths:
       - ".github/workflows/tests.yml"
       - ".github/workflows/run.yml"
+      - ".github/workflows/cra-gemini-canary.yml"
       - "scripts/**"
       - "main.py"
+      - "cra_source.py"
+      - "cra_claims.py"
       - "persistence.py"
       - "tests/**"
       - "AI_RULEBOOK.md"
@@ -26,7 +31,11 @@ on:
       - main
     paths:
       - ".github/workflows/tests.yml"
+      - ".github/workflows/cra-gemini-canary.yml"
+      - "scripts/cra_gemini_canary.py"
       - "main.py"
+      - "cra_source.py"
+      - "cra_claims.py"
       - "persistence.py"
       - "tests/**"
       - "AI_RULEBOOK.md"
@@ -73,14 +82,20 @@ jobs:
             printf '%s  %s  expected=%s\n' "$actual" "$path" "$expected"
             test "$actual" = "$expected"
           }
-          verify_blob "main.py" "f28dbc540d56b313f0648d77c58734d27eb95d1a"
+          verify_blob "main.py" "1bdb99745c11fd731f2006f8b03d48e1d2aebdff"
+          verify_blob "cra_claims.py" "8b2d0531a58a52c017ab7306aece9887d1280e6b"
+          verify_blob "tests/test_cra_claims.py" "c7c45cb6d23eb3ddae5e25ccbfc88f15865f7247"
+          verify_blob "scripts/cra_gemini_canary.py" "0c95d97180881e54c8eee1e28e91b3ddd202695f"
+          verify_blob "tests/test_cra_gemini_canary.py" "62b3b91d582b3aa8352292be5d20bb914fe1c11c"
+          verify_blob "scripts/cra_source_canary.py" "0f5bd01ea4994874dcc0e6dfb177a740ec56820c"
+          verify_blob "cra_source.py" "bdc9bada8754edfb5cb821a06210a47de068fbce"
           verify_blob "persistence.py" "953e2a52b7e6d6e619a4f43766e52d6835df50c8"
           verify_blob "tests/test_p1_b2_atomic_persistence.py" "f78d36164b5ac0d5d5eebe0c5eb5c1214c4e0671"
-          verify_blob "tests/conftest.py" "f465fa04f5c30bfa621bc910b2177d678c89fb64"
-          verify_blob "tests/test_main_characterization.py" "09e03b589e2c8ba2ebb250d07db1b429f06204cb"
-          verify_blob "tests/test_mock_infrastructure.py" "05a92ff7ff3a6e4a0374d270770ecc6cf38e0a7f"
+          verify_blob "tests/conftest.py" "467f1de142bf00b8312344e983d7e70589ce7804"
+          verify_blob "tests/test_main_characterization.py" "a17b8e4be7d3ceb69baff68ed1311dcd33a36505"
+          verify_blob "tests/test_mock_infrastructure.py" "bb6d5eb379ab83c16ec7cba5f4a8f3fb518dab36"
           verify_blob "tests/test_p1_reliability.py" "c5e3fbe2e75a6a08703117cb5de34571b5dc10c9"
-          verify_blob "tests/test_external_failure_paths.py" "2c5b5c23e66a37a0dc3d1d8b324a023fb5146e13"
+          verify_blob "tests/test_external_failure_paths.py" "f792ef15024420152de898e48cc12c2ed4b4325e"
           verify_blob "scripts/operational_guard.py" "4a8d1bf7509bbbeb2653f9be3761661a9bc02b9e"
           verify_blob "tests/test_operational_guard.py" "2035b598bf77ffd8fe7dc7c19d2915367f0b354d"
 
@@ -88,7 +103,7 @@ jobs:
         run: python -m pip install --disable-pip-version-check pytest
 
       - name: Compile source and tests
-        run: python -m compileall -q main.py scripts tests
+        run: python -m compileall -q main.py cra_claims.py cra_source.py scripts tests
 
       - name: Run complete repository test suite
         run: python -m pytest -q

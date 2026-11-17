@@ -6,19 +6,21 @@
 
 ## 현재 상태
 
-- 현재 작업 브랜치: `feature/p1-b2-atomic-persistence-2026-11-16` (P1-B2 전용 구현 브랜치)
-- 운영 기준 브랜치: `main` — 별도 승인 없이 수정·병합하지 않습니다.
-- P0 응답 검증/실패 차단, P1-A 상태·이력 검증, P1-B1 Discord 전송 신뢰성: 작업 브랜치 구현 완료
-- **P1-B2 로컬 다중 파일 저장 일관성: 사용자 승인 후 구현 및 테스트 CI 검증 완료**
-- **최신 테스트 전용 CI (Actions 43851438733): 70 passed, 1 xfailed; source SHA·compileall·전체 pytest 통과**
-- P1-B2는 durable journal, staged payload, backup/SHA 검증, idempotent roll-forward recovery, snapshot 충돌 방지 및 허용 target allowlist 적용
-- P1-B3 Git sync 상태화는 미구현(기존 strict xfail), P1-B4 import-time 구조 개선도 미구현
-- Discord exactly-once/outbox는 P1-B2 범위 밖이며 보장하지 않음
-- main 대비 작업 브랜치: diverged, 221 ahead / 678 behind (snapshot commit `02fde2489323f9f553405e014fac20d75d13a7fa`, 2026-11-16); merge-base 기준 통합 분석은 완료, PR/merge는 별도 승인 대기
-- 운영 main 최신 조회: HEAD `267d97478b785e6bb268e224a70dbad6631cf43e` (#131), state count=131, history=2,270, archive=2,270
-- 운영 main의 main.py와 run.yml은 각각 SHA `86a7731aad5de8d75581fc953bcea2c44adf2f2b`, `65a8cadc8eac593f551e390698e367b1d161ecf1`; 작업 브랜치 main.py만 개선했고 run.yml은 변경하지 않음
+### 2026-11-17 최신 CRA 자동화 품질개선
+- 11월 17일 생성 보고서 4건을 EUR-Lex 원문과 대조해 조항 오기·법적 의무와 권고 혼동·인용 오류를 정정 기록으로 보존했다.
+- 원인 개선 브랜치에서 EUR-Lex CRA 통합본과 후속 법령 3건을 직접 수집하는 source pack을 구현했다.
+- 대상 원문: Regulation (EU) 2024/2847 통합본 및 정오표 3건, Regulation (EU) 2025/327, Delegated Regulation (EU) 2025/1535, Delegated Regulation (EU) 2026/881.
+- URL·버전·조항 locator·50자 이상 직접 인용의 최소 대조를 수행하고, 수집 실패 또는 인용 불일치 시 fail-closed한다.
+- Isolated CI Run #154: **103 passed, 1 xfailed**. [실행 로그](https://github.com/useformotor3/ai-discord-bot/actions/runs/43995859144).
+- EUR-Lex read-only canary Run #29: **success**, 네 법령 총 220,715자 visible text 및 정오표 3개 날짜 확인. [실행 로그](https://github.com/useformotor3/ai-discord-bot/actions/runs/43995859223).
+- 코드 변경은 [Draft PR #3](https://github.com/useformotor3/ai-discord-bot/pull/3)에만 존재하며 main 미병합. 실제 Gemini/Discord/운영 workflow 호출은 하지 않았다.
+- 상세 설계·검증·한계는 [CRA 공식 원문 출처검증 gate 보고서](reports/CRA_SOURCE_PROVENANCE_GATE_2026-11-17.md).
+- 기존 생성 보고서의 정정 감사: [#1](reports/CRA_CORRECTION_REPORT_1_2026-11-17.md), [#2](reports/CRA_CORRECTION_REPORT_2_2026-11-17.md), [#3](reports/CRA_CORRECTION_REPORT_3_2026-11-17.md), [#4](reports/CRA_CORRECTION_REPORT_4_2026-11-17.md).
 
-Actions 성공은 자동화 실행 결과이지 CRA 법령 해석이나 출처의 사실 정확성을 보증하지 않습니다. 테스트 통과 숫자는 반드시 실행한 정확한 소스와 범위를 함께 표시합니다.
+- 현재 CRA 품질개선 브랜치: `feature/cra-source-grounding-atomic-2026-11-17`.
+- 운영 main 최신 확인 SHA: `ff599733d62a8926ee281a9958aa6e03f5ce75f4` (Auto-archive #10).
+- PR #3 기준 main SHA는 `0dde26ebac80a789c7a9d9e26560abad54606d32`; main의 이후 자동 아카이브를 덮어쓰지 않도록 Draft 상태로 유지한다.
+- 이 출처 gate는 법률 해석, 모든 주장 검증, 제품 분류 또는 적합성 평가를 보증하지 않는다. EUR-Lex 통합본은 documentation tool이며 Official Journal 정본 및 공식 corrigenda가 법적 효력의 기준이다.
 
 ## 프로젝트 관리 문서
 
@@ -349,3 +351,32 @@ Actions 성공은 자동화 실행 결과이지 CRA 법령 해석이나 출처�
 - CVD 정책/제보 연락처/안전한 배포는 Annex I Part II (5)–(7), Article 13(17), Annex II (2).
 - 디지털 서명과 STO 연계 업데이트 설치는 특정 법정 구현 방식이 아니라 제품별 엔지니어링 검증 항목.
 - 상세: [CRA 보고서 #1 정정 및 기술 근거 감사](reports/CRA_CORRECTION_REPORT_1_2026-11-17.md).
+
+
+### CRA report evidence traceability
+CRA draft generation now requires a structured `CLAIM_EVIDENCE_JSON` block. Legal requirements and official explanations must identify a source-pack ID, clause locator, and a verbatim quotation of at least 50 characters. The body must reference each declared claim ID. Interpretations and engineering recommendations are kept separate and require an explanatory basis. This is a provenance/traceability gate, not a legal interpretation or product-conformity assessment. See [the source provenance report](reports/CRA_SOURCE_PROVENANCE_GATE_2026-11-17.md).
+
+
+### Gemini compatibility canary (manual, cost-gated)
+A separate manual workflow checks the current Gemini JSON response contract using one synthetic public sentence only. It is not part of production runs and is not triggered by pushes or pull requests. The dispatch input defaults to `confirm_free_tier=false`; a live request is not made unless the operator explicitly confirms the API project is on the no-cost Free Tier. Google states Free Tier content may be used to improve its products, and Google Search Grounding is not available for Gemini 3.8 Flash Free Tier. Do not send confidential or actual CRA research content through this canary. See [Google's pricing](https://ai.google.dev/gemini-api/docs/pricing/).
+
+
+The Gemini canary workflow is present only on the Draft feature branch; GitHub manual dispatch becomes available after the workflow file is present on the default branch. It has not been dispatched and no live Gemini API call has been made.
+
+### Latest integration and evidence audit — 2026-11-17
+The current CRA branch is 116 commits ahead and 9 behind main (diverged). Main's current main.py and isolated-test workflow do not contain the CRA source/claim gate, so main CI results are not evidence of CRA integration. A cross-Article quotation false-positive was found and guarded with an Article/Annex-scope check plus a regression test. The new CI and EUR-Lex canary must be rechecked before treating the change as verified. Three English Official Journal corrigenda have been independently identified; the fetch gate still checks only their date index, not the correction texts themselves. See reports/INTEGRATION_AND_CLAIM_SCOPE_AUDIT_2026-11-17.md.
+
+### Claim-scope regression verification — 2026-11-17
+The first Article/Annex quote-scope implementation failed CI (25 failed, 92 passed, 1 xfailed) because regex tokens were double-escaped. The failure was diagnosed from the job log, corrected, and re-pinned. The corrected head passed Isolated CI Run #294 (**117 passed, 1 xfailed**) and EUR-Lex read-only Canary Run #101. The earlier failed run remains in the audit trail. The current integration comparison snapshot is 125 ahead / 10 behind; PR #3 remains Draft and unmerged.
+
+### Official Journal corrigenda verification — 2026-11-17
+The CRA source pack now fetches the three English Official Journal corrigenda as separate official EUR-Lex sources and checks the target provision plus both the original and corrected wording. The live read-only canary succeeded with seven official sources and 245,502 visible-text characters. CI initially exposed stale Discord chunk-count and pacing expectations after the source manifest grew; those fixtures were corrected. Final isolated CI passed (**117 passed, 1 xfailed**). This verifies source retrieval and text markers, not legal interpretation or product conformity.
+
+### Archive legal-source correction audits — 2026-11-17
+Separate correction reports now audit the latest main auto-archives #14–#17 without altering the original archive files:
+- [Correction #14](reports/CRA_CORRECTION_REPORT_14_2026-11-17.md): CVD vs Article 14 reporting obligations.
+- [Correction #15](reports/CRA_CORRECTION_REPORT_15_2026-11-17.md): data integrity law vs implementation choices/STO behavior.
+- [Correction #16](reports/CRA_CORRECTION_REPORT_16_2026-11-17.md): non-verbatim quotations and digital-signature overclaim.
+- [Correction #17](reports/CRA_CORRECTION_REPORT_17_2026-11-17.md): unsupported RBAC/least-privilege quotation and access-control scope.
+
+- [Correction #18](reports/CRA_CORRECTION_REPORT_18_2026-11-17.md): separates CRA access-control, secure-default and activity-monitoring provisions; corrects the unsupported least-privilege quotation.
