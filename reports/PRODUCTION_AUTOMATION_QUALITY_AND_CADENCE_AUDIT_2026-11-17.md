@@ -1,0 +1,72 @@
+# 운영 자동화 품질·실행 주기 감사 및 개선 — 2026-11-17
+
+## 1. 발견한 문제
+
+운영 main의 최근 아카이브 #33–#38을 직접 확인했다. #33, #35, #37, #38은 취약점 처리/무상 보안 업데이트/지원기간 주제가 중복됐고, #36은 취약점·심각한 사고 신고 타임라인을 일부 혼합했다. #34는 사용자 정보·지침을 다루었으나 Annex II와 Annex VII, 제품 분류를 혼합했다.
+
+기존 `run.yml`은 `repository_dispatch: run-bot`와 `workflow_dispatch`만 허용했고 내부 `schedule`은 없었다. 운영 main의 최근 자동 archive commit들이 약 5분 간격으로 반복 생성된 것은 외부 dispatch가 반복된 정황과 일치한다. workflow에 schedule이 없으므로 5분 주기의 발생원은 외부 dispatcher이며, 해당 외부 설정은 이 저장소에서 직접 변경할 수 없다.
+
+또한 기존 `validate_research_report`는 최소 길이·섹션·오류 문구를 확인했지만 공식 EUR-Lex 링크와 주제 중복을 검증하지 않았다.
+
+## 2. 실제 개선
+
+### PR #10 — 이미 main에 병합
+- PR: https://github.com/useformotor3/ai-discord-bot/pull/10
+- merge commit: `2e583f5c7b24743fbb1bd7d375643e314cf3115d`
+- CI Run #455: **101 passed, 1 xfailed**; exact blob SHA, compileall, 전체 pytest 통과.
+- CRA 보고서 검증에서 EUR-Lex Regulation (EU) 2024/2847 공식 링크가 없으면 거부.
+- 최근 30개 원문 archive의 주제어를 비교해 중복 주제면 Discord 전송, archive 생성, state/history 변경 및 Git 저장 전에 정상 no-op 처리.
+- 최근 5개였던 프롬프트 이력 참고 범위를 최근 15개로 확대.
+- 기존 state/history/archive는 byte-for-byte 보존.
+
+### 별도 PR — 실행 cadence 개선 (현재 작업 브랜치)
+- 브랜치: `fix/production-cadence-2026-11-17`
+- 외부 5분 간격 repository_dispatch를 운영 workflow trigger에서 제거.
+- 내부 GitHub Actions schedule을 매시간 정각 UTC(한국시간 매시간 정각)으로 전환하고 workflow_dispatch는 유지.
+- 운영 동시성 `cra-production-run`, `cancel-in-progress: false` 및 실행별 immutable pre-run checkpoint/operational guard/pruning을 유지.
+- 테스트 workflow가 run.yml 변경 PR에도 실행되도록 경로 필터를 보완하고 cadence 회귀 테스트를 추가.
+- main.py 조사 프롬프트에 공식 OJ 링크, 실제 확인한 원문만 직접 인용, 신규 주제 없으면 억지 생성 금지 규칙을 추가.
+
+외부 dispatcher의 설정 자체를 이 저장소에서 중단할 수는 없지만, workflow에서 해당 event를 더 이상 구독하지 않으므로 merge 후에는 5분 repository_dispatch가 운영 workflow를 실행하지 않는다. 내부 hourly schedule만 운영 실행을 시작한다.
+
+## 3. 최근 보고서 #33–#38 법령 감사
+
+각 원본은 수정·삭제하지 않고 별도 정정 보고서로 보존했다.
+
+| 원본 | 정정 문서 | 주요 정정 |
+|---|---|---|
+| #33 | [정정 #33](CRA_CORRECTION_REPORT_33_2026-11-17.md) | Article 13(8)/(9), Annex I Part II (2)/(7)/(8), 지원기간 5년 예외, 업데이트 10년 보유 |
+| #34 | [정정 #34](CRA_CORRECTION_REPORT_34_2026-11-17.md) | Article 13(18)/(19), Annex II 사용자 지침과 Annex VII 기술문서 구분 |
+| #35 | [정정 #35](CRA_CORRECTION_REPORT_35_2026-11-17.md) | Article 10/11 오인용, Article 13 제조사 의무, Article 14 신고 트리거 분리 |
+| #36 | [정정 #36](CRA_CORRECTION_REPORT_36_2026-11-17.md) | vulnerability와 severe incident의 서로 다른 final-report clock, 초안 인용 제거 |
+| #37 | [정정 #37](CRA_CORRECTION_REPORT_37_2026-11-17.md) | Article 10/11 오인용, Annex I Part II 번호/문언, Annex III 분류 과장 |
+| #38 | [정정 #38](CRA_CORRECTION_REPORT_38_2026-11-17.md) | 지원기간 예외, 무상 업데이트 예외, 10년 업데이트 이용 가능성, 제품 등급 과장 |
+
+### 법령 원문 교차 확인
+
+EUR-Lex 최종 Official Journal 원문을 확인했다.
+- Article 13(8): support period, 최소 5년. 제품 예상 사용기간이 5년 미만이면 그 예상 사용기간에 맞춘다.
+- Article 13(9): 지원기간 중 제공된 각 security update는 발행 후 최소 10년 또는 지원기간 잔여기간 중 더 긴 기간 동안 이용 가능해야 한다.
+- Annex I Part II (2): 취약점을 지체 없이 처리·시정, 기술적으로 가능한 경우 보안 업데이트를 기능 업데이트와 분리.
+- Annex I Part II (7): 취약점의 적시 수정/완화를 위한 안전한 업데이트 배포 메커니즘.
+- Annex I Part II (8): 보안 업데이트의 지체 없는 무상 배포. 맞춤형 제품과 business user의 달리 합의한 예외.
+- Article 14(2)(c): actively exploited vulnerability final report는 corrective/mitigating measure available 후 14일 이내.
+- Article 14(4)(c): severe incident final report는 incident notification 제출 후 1개월 이내.
+- Annex III는 열거 카테고리다. 산업용 서보 드라이브 전체를 자동으로 Class I/II로 분류할 수 없다.
+
+공식 출처: https://eur-lex.europa.eu/eli/reg/2024/2847/oj/eng
+
+## 4. 운영 안전성
+
+- 기존 원본 아카이브 #33–#38, state.json, history.json은 변경하지 않았다.
+- PR #10 merge 전 최신 production run #44015895884는 success였고, archive #38 저장까지 확인했다.
+- PR #10 CI는 테스트 전용이다. Gemini/Discord 실 API를 호출하지 않았다.
+- cadence PR은 아직 main에 병합하지 않았다. PR CI 통과 및 main 최신화 후 병합하고, 첫 hourly run에서 checkpoint, guard, prune 및 state/history/archive 참조 무결성을 재확인한다.
+- hourly schedule이 운영 run 빈도를 낮추는 조치이며, 향후 필요하면 운영 데이터 추세를 근거로 조정한다.
+
+## 5. 한계 및 다음 단계
+
+- 중복 주제 탐지는 주제어 기반 휴리스틱이며 법적 정확성을 증명하지 않는다. false positive/negative를 운영 로그로 검토해야 한다.
+- EUR-Lex URL 존재 여부는 출처 링크 유무만 확인한다. 인용문이 실제 원문과 일치하는지 자동 증명하지 않는다. 별도 원문 대조 및 정정 감사가 계속 필요하다.
+- cadence 변경 merge 후 첫 3회 hourly run을 관찰한다. 실패가 발생하면 run/job log와 단계별 원인을 확인하고, 반복 원인이면 수정 PR을 추가한다.
+- 다음 핵심 산출물: CRA 통합 한국어 보고서, 요구사항 추적표, SIL 3 서보 드라이브 벤치마킹 보고서, 하드웨어 블록 설계. CRA와 기능안전의 추적성은 분리 유지한다.
