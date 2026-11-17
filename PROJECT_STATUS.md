@@ -653,3 +653,10 @@
 - 다음 cadence PR branch `fix/production-cadence-2026-11-17`: 외부 repository_dispatch trigger 제거, 매시간 정각 UTC schedule 및 manual dispatch 유지. PR CI 후 병합 대기.
 - 원본 archive/state/history는 변경하지 않았다. cadence 변경 후 첫 3회 hourly run을 별도 관찰한다.
 - 상세: `reports/PRODUCTION_AUTOMATION_QUALITY_AND_CADENCE_AUDIT_2026-11-17.md`.
+
+## 2026-11-17 — Gemini 무료 quota 장애 원인 및 cadence 재조정
+- 운영 Run ID `44016487535`의 실패 로그를 직접 확인했다. `gemini-3.8-flash`는 Free Tier `generate_content_free_tier_requests` 일일 한도 20회 초과(HTTP 429 RESOURCE_EXHAUSTED), fallback `gemini-3.5-flash-lite`는 HTTP 503 UNAVAILABLE 및 EUR-Lex 링크 누락 응답을 반환했다.
+- 기존 main.py는 quota/503을 동일 모델에서 3회 반복하고, 품질 거부 후에도 workflow 실패로 종료하는 문제가 있었다.
+- cadence PR에서 모델별 최대 2회 시도, 429/503은 즉시 같은 모델 재시도 중단 후 fallback, 품질 거부/할당량/일시 과부하는 부작용 없는 정상 no-op으로 처리하도록 보강했다. 인증/설정 등 미분류 치명 오류는 계속 exit 1.
+- 실행 주기는 매 3시간(UTC 정각)으로 조정했다. 8회/일 × 모델당 최대 2회 = 최대 16회/일/모델의 이론상 상한으로 20회 Free Tier 제한 아래에 여유를 둔다.
+- CI 재검증 대기 중이며 PR #11은 아직 main에 병합하지 않았다.
