@@ -933,3 +933,14 @@
 - 최신 CI Run #93: 103 passed, 1 xfailed; source SHA, compileall, 전체 pytest 성공. 로그: https://github.com/useformotor3/ai-discord-bot/actions/runs/43986520995.
 - 운영 main은 자동 archive로 별도 전진할 수 있으므로 병합 시점에는 main 최신 SHA와 diff를 다시 확인해야 한다.
 - 운영 main, production run.yml, state/history/archive는 이번 작업에서 수정하지 않았다.
+
+
+## 2026-11-17 — EUR-Lex 실제 endpoint canary 성공 및 법적 효력 주의 강화
+- Read-only canary workflow .github/workflows/cra-source-canary.yml 및 scripts/cra_source_canary.py 추가.
+- 최초 canary #1은 스크립트 실행 시 repo root import 경로가 없어 실패. 스크립트에서 저장소 root를 sys.path에 추가해 해결.
+- Canary Run #3 / #5 success: 공식 EUR-Lex HTTPS URL fetch, final host 확인, visible text 196,076 characters, corrigenda 날짜 5.12.2024 / 2.7.2025 / 17.10.2025 확인.
+- Canary Run #5 로그: https://github.com/useformotor3/ai-discord-bot/actions/runs/43987091981.
+- Validator 강화: EUR-Lex consolidated text는 documentation tool이며 Official Journal(관보) 정본 및 공식 corrigenda가 법적 효력의 기준이라는 문구가 보고서에 없으면 reject.
+- Isolated CI Run #107: 103 passed, 1 xfailed; blob SHA, compileall, full pytest 성공. 로그: https://github.com/useformotor3/ai-discord-bot/actions/runs/43987116390.
+- 실제 Gemini/Discord/production workflow는 실행하지 않았다. Canary는 EUR-Lex read-only GET만 수행했다.
+- 다음 단계: 주장별 근거 매핑, 원문 hash/version change detection, 검증 실패 시 review queue.

@@ -53,8 +53,9 @@ Gemini 3 계열 Google Search Grounding은 현재 Gemini API 가격표상 Free t
 - CI Run #83: 102 passed, 1 xfailed.
 - corrigenda version check 및 archive metadata 추가 후 CI Run #93: **103 passed, 1 xfailed**.
 - Run #89: https://github.com/useformotor3/ai-discord-bot/actions/runs/43986520995
-- blob SHA 검증, compileall, 전체 pytest가 성공했다.
-- 테스트에서 EUR-Lex/Gemini/Discord/Git은 mock 처리했다. 실제 네트워크·운영 API는 호출하지 않았다.
+- blob SHA 검증, compileall, 전체 pytest가 성공했다. 최신 CI Run #107: 103 passed, 1 xfailed. Evidence: https://github.com/useformotor3/ai-discord-bot/actions/runs/43987116390.
+- 별도 read-only canary Run #5는 실제 EUR-Lex HTTPS endpoint를 호출해 196,076자 visible text와 corrigenda 3개 날짜를 확인했다. Evidence: https://github.com/useformotor3/ai-discord-bot/actions/runs/43987091981.
+- canary는 EUR-Lex GET만 수행했으며 Gemini/Discord/production workflow/운영 Git write는 호출하지 않았다.
 
 ## 6. 검증 한계 및 위험
 
@@ -75,7 +76,7 @@ Gemini 3 계열 Google Search Grounding은 현재 Gemini API 가격표상 Free t
 - 제품 안전·기능안전·실시간 제어 영향이 적절히 평가됐는지
 - 공식 관보 정본과 통합본/정오표의 모든 차이를 자동 판별하는지
 
-따라서 모든 생성 보고서는 **“EUR-Lex 원문 인용 대조 통과 / 법률 해석·제품 적용성 미검증 초안”**으로 표시한다. 사람의 독립 검토 없이 최종 적합성 결론으로 사용하지 않는다.
+EUR-Lex 통합본은 documentation tool이며 법적 효력은 Official Journal(관보) 정본 및 공식 corrigenda에 있다. Validator는 이 주의사항이 보고서에 없으면 거부한다.\n\n따라서 모든 생성 보고서는 **“EUR-Lex 원문 인용 대조 통과 / 법률 해석·제품 적용성 미검증 초안”**으로 표시한다. 사람의 독립 검토 없이 최종 적합성 결론으로 사용하지 않는다.
 
 ## 7. 안전 및 롤백
 
@@ -88,7 +89,7 @@ Gemini 3 계열 Google Search Grounding은 현재 Gemini API 가격표상 Free t
 
 ## 8. 다음 단계
 
-1. 운영과 분리된 canary 환경에서 EUR-Lex HTML endpoint의 실제 HTTP 상태·최종 URL·본문 길이·정오표 날짜를 확인한다.
+1. [완료] 운영과 분리된 canary 환경에서 EUR-Lex HTML endpoint의 실제 HTTP 상태·최종 URL·본문 길이·정오표 날짜를 확인했다.
 2. 보고서의 각 법적 주장마다 개별 Article/Annex/point와 근거 인용을 연결하는 claim-to-evidence 구조로 확장한다.
 3. 원문 hash/version 변화 및 새 corrigenda 감지 테스트를 추가한다.
 4. 검증 불확실 또는 인용 대조 실패 보고서를 게시하지 않고 검토 큐로 보내는 방식을 설계한다.
