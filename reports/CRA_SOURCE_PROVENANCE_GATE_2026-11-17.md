@@ -192,3 +192,10 @@ EUR-Lex 통합본은 documentation tool이며 법적 효력은 Official Journal(
 - Google 가격표상 무료 토큰은 확인되지만, 특정 사용자의 프로젝트 tier/billing 상태는 알 수 없으므로 무조건 무료라고 단정하지 않는다.
 - Free Tier 데이터는 제품 개선에 사용될 수 있으므로 실제 CRA 조사 자료나 개인정보/기밀을 canary에 넣지 않는다.
 - REST generateContent compatibility test는 현행 main.py 호출과의 호환성을 확인하는 임시 단계다. Interactions API migration은 별도 검토 과제로 남긴다.
+
+
+### Live Gemini canary의 배포 제약
+- `.github/workflows/cra-gemini-canary.yml`은 현재 feature/Draft PR 브랜치에만 존재한다.
+- GitHub `workflow_dispatch` 실행은 workflow 파일이 default branch에 존재해야 하므로, 이 PR이 main에 반영되기 전에는 live canary를 실행할 수 없다.
+- 이 제약은 의도된 안전 경계다. main에 workflow를 별도로 배포하거나 PR을 병합하지 않았고, 실제 Gemini API 요청은 수행하지 않았다.
+- 다음 단계는 최신 main과 PR 통합 검토, billing tier 확인, Free Tier 데이터 사용 조건 검토다.
