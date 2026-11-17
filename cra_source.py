@@ -352,7 +352,7 @@ def fetch_official_cra_source():
         if missing:
             raise SourceValidationError(
                 f"공식 원문 식별자를 확인하지 못했습니다: "
-                f"{definition['id']} / {', '.join(missing)}"
+                f"{definition['id']} / {', '.join(missing)}; excerpt={full_text[:1200]!r}"
             )
 
         if definition["id"] == "CRA-2024-2847-consolidated":
