@@ -154,3 +154,9 @@ Archive #19 correction report: `reports/CRA_CORRECTION_REPORT_19_2026-11-17.md`.
 Original archive #13 blob: `7523b68c1537b6ed4d2de197eeb6e5bd4698ea2e`. Correction report: `reports/CRA_CORRECTION_REPORT_13_2026-11-17.md`.
 
 Findings: Article 11 was incorrectly used as the manufacturer vulnerability-handling/CVD provision; Annex I Part II numbering and quotations were not the enacted OJ wording; anonymous intake and simultaneous publication were overstated; all servo drives were incorrectly treated as Important Class I/II. Correct mapping: Article 13 manufacturer duties and risk assessment; Annex I Part II (1)–(8) vulnerability handling; Article 14 mandatory reporting; Annex III classification only after product-category analysis. Original archive remains unchanged.
+
+## 12. Main archive #12 correction — 2026-11-17
+
+Original archive #12 blob: `fa7f687ecab1297436e5ced26983f8e622a0a0d9`. Correction report: `reports/CRA_CORRECTION_REPORT_12_2026-11-17.md`.
+
+Findings: Article 13(14) was misused as the free security-update provision; the actual free-update requirement is Annex I Part II (8). Article 13(8) support period is generally at least five years (or the shorter expected use period); Article 13(9)'s ten years concerns continued availability of each security update, not a universal support period. Article 13(19) covers end-date communication. Original archive remains unchanged.
