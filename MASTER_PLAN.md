@@ -544,3 +544,11 @@
 
 
 - 최종 branch-head Run #690 성공(148 passed / 1 xfailed). PDF/HTML live canary, artifact download/readback 및 SHA-256 재검증을 포함한 최신 branch 상태 검증 완료. PR #33 병합 전 diff와 복구 체크포인트만 남음.
+
+
+## CRA 추적성 무결성 자동화 — 2026-11-17
+
+- `cra_traceability.py`를 CI gate로 추가해 Guidance claim register(13), interface matrix(15), CRA requirements(35), SEC controls(36)의 row count, unique ID, cross-reference integrity를 검증한다.
+- M/606 Annex I item refs 1–41, non-binding Guidance category, source PDF raw/text hashes, artifact readback, item18 visual verification, README/report links 및 JSONL project log integrity를 검사한다.
+- negative tests는 unknown Guidance claim ID 및 invalid M/606 item 42를 fail-closed로 확인한다.
+- 이 검증은 법적 적합성을 판정하지 않는다. 문서·추적성 데이터의 내부 일관성만 검증한다.
