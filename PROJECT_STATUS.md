@@ -778,3 +778,12 @@
 - 마지막 compare 스냅샷: main 83bc2430842413080e73bc5b98a8a82c45d03909, feature 784c41a90bd77dd5776c1637f6abe646452e7175, **125 ahead / 10 behind**. 문서 갱신 후 다시 조회한다.
 - PROJECT_LOG.jsonl은 UTF-8 전체를 보존해 빈 행 제거 및 1행 1 JSON 객체로 정리했다.
 - 다음 우선순위는 개별 Official Journal corrigenda 원문 수집/정정 문구 검증이며, 그다음 최신 main 10개 후속 커밋 및 운영 데이터 불변성 감사다.
+
+## 2026-11-17 — Official Journal 정오표 3건 개별 수집 구현
+- CRA 기본 법령의 영어 Official Journal corrigenda 3건을 각각 공식 ELI URL로 source pack에 추가했다.
+- 각 문서에서 대상 Article/표제와 for/read 정정 문구를 모두 확인하도록 fail-closed marker 검사 적용.
+- Canary #115 success: 총 7개 공식 source 수집, visible text 245,502자. 정오표 원문 3건은 7,583 / 8,318 / 8,179자.
+- source manifest 확장으로 Discord 보고서가 3청크가 됐다. CI #314(8 failed), #319(2 failed)는 청크/대기 횟수 기대값 문제로 실패했고 테스트를 수정했다.
+- 최종 CI #323: **117 passed, 1 xfailed**; exact SHA, compileall, full pytest 성공.
+- Gemini/Discord 실제 API 및 production workflow는 실행하지 않았다. Discord 전송 수 증가는 mock test fixture에만 반영.
+- 상세: reports/INTEGRATION_AND_CLAIM_SCOPE_AUDIT_2026-11-17.md.
