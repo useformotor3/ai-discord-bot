@@ -14,11 +14,10 @@ on:
       - ".github/workflows/run.yml"
       - ".github/workflows/cra-gemini-canary.yml"
       - "scripts/**"
+      - ".github/workflows/cra-gemini-canary.yml"
       - "main.py"
       - "cra_source.py"
       - "cra_claims.py"
-      - "scripts/cra_gemini_canary.py"
-      - ".github/workflows/cra-gemini-canary.yml"
       - "persistence.py"
       - "tests/**"
       - "AI_RULEBOOK.md"
@@ -33,6 +32,8 @@ on:
       - main
     paths:
       - ".github/workflows/tests.yml"
+      - ".github/workflows/cra-gemini-canary.yml"
+      - "scripts/cra_gemini_canary.py"
       - "main.py"
       - "cra_source.py"
       - "cra_claims.py"
