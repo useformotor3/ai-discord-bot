@@ -670,3 +670,9 @@
 - CRA archive #33–#38 정정 보고서가 main에 보존되어 있다. 원본 archive는 수정하지 않았다.
 - 다음 단계: 첫 3회 3-hourly production run의 실제 결과, quota handling, guard, pruning, archive 참조 무결성을 관찰한다. 그 후 CRA 통합 한국어 보고서와 SIL 3 servo-drive benchmarking/hardware block design을 진행한다.
 - 상세: `reports/PRODUCTION_AUTOMATION_QUALITY_AND_CADENCE_AUDIT_2026-11-17.md`.
+
+## 2026-11-17 — CRA archive #1–#38 정정 감사 통합
+- 기존 main의 정정 #1–#4와 #33–#38에 더해, 이전 integration branch의 정정 #5–#21을 main 통합 후보로 복사하고 #22–#32를 EUR-Lex 최종 OJ와 대조해 신규 작성했다.
+- 정정 보고서 #1–#38 전체를 한 인덱스로 정리: `reports/CRA_CORRECTION_INDEX_2026-11-17.md`.
+- 주요 발견: Article 10/11을 제조사 의무로 오인, Article 24를 사용자 지침 조항으로 오인, Annex VI/VII 혼동, 기본 credential 문구의 비원문 인용, CVD와 mandatory reporting 혼합, Article13(8)/(9) 지원기간·업데이트 보존 혼합, Annex III 제품 등급 과장, logging/CVD 파트 혼합.
+- 모든 원본 archive는 수정하지 않았으며 정정 문서만 추가했다. PR #14에서 main 병합 전 검증한다.

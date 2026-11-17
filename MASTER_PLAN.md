@@ -401,3 +401,11 @@
 4. [진행] 첫 3회 3-hourly production run을 관찰하고 actual quota/Discord/guard/prune 결과 확인.
 5. [다음] CRA 한국어 통합 보고서와 requirements traceability matrix 작성. 법령 직접 의무와 제조사 권고 구현을 구분.
 6. [다음] SIL 3 servo drive benchmarking report 및 hardware block design 작성. IEC 61508/IEC 61800-5-2 기능안전 추적성과 CRA cybersecurity traceability를 별도 관리.
+
+## 2026-11-17 — CRA 자동 보관 #1–#38 원문 정정
+1. [완료] CRA 정정 보고서 #1–#4 및 #33–#38 main의 기존 정정 확인.
+2. [완료] #5–#21 정정 보고서를 이전 source-audit branch에서 main 통합 후보로 복사.
+3. [완료] #22–#32 원본을 EUR-Lex final OJ와 대조해 11개 정정 보고서 작성.
+4. [완료] #1–#38 인덱스 생성.
+5. [진행] PR #14 CI 및 병합 후 정정 보고서/원본 archive SHA 무결성 확인.
+6. [다음] 정정된 근거를 CRA 한국어 통합 보고서 및 requirements traceability matrix에 반영.
