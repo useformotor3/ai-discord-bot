@@ -998,3 +998,10 @@
 - G-001~G-013 Guidance PDF paragraph/page locator를 재대조하고 8개 printed-page range를 정정했다. 보고서 섹션 번호 중복 검증도 CI에 추가했다.
 - Pre-merge `safety/pre-merge-main-pr41-2026-11-17` → `576b3918e7f3e6013c59e49bf7e55d49d387217a`; post-merge `safety/post-merge-main-pr41-2026-11-17` → `acfa2f583157ac541c4c60d71090197322bc8efb`; post ref와 main compare identical.
 - 다음 단계는 CRA-001~CRA-035 법령 Article/Annex locator를 공식 EUR-Lex 원문과 대조하고, 근거 불일치가 있으면 매트릭스와 보고서를 함께 수정하는 것이다.
+
+
+## 2026-11-17 — SBOM 조항 교차 확인
+
+- EUR-Lex Annex I Part II(1)에서 최소 최상위 의존성을 포함한 기계 판독형 SBOM 작성이 제조자 기본 의무임을 확인했다.
+- Annex VII(2)(b)는 SBOM을 기술문서의 취약점 처리 프로세스 내용에 포함하며, Annex VII(8)은 시장감시당국의 합리적 요청 및 필요 시 추가 제출 규정이다. Annex VII(8)을 Annex I Part II(1)의 작성 의무 예외로 오독하지 않도록 보고서 문구를 명확히 했다.
+- Annex II(9)의 사용자 제공은 제조자가 SBOM을 사용자에게 공개하기로 결정한 경우의 접근 위치 안내와 구분했다.
