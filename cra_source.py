@@ -307,7 +307,7 @@ def fetch_official_cra_source():
         f"[{item['id']}]\n{item['url']}\n{item['version']}\n{item['text']}"
         for item in source_items
     )
-    version = " | ".join(item["version"] for item in source_items)
+    version = f"CRA official source pack v2; sources={len(source_items)}"
     return {
         "url": CRA_SOURCE_URL,
         "version": version,
