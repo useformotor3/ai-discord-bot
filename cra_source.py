@@ -7,6 +7,11 @@ from urllib.parse import urlparse
 CRA_SOURCE_URL = (
     "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02024R2847-20241120"
 )
+CRA_SOURCE_VERSION = (
+    "EUR-Lex consolidated text 20.11.2024; corrigenda 5.12.2024, "
+    "2.7.2025 and 17.10.2025"
+)
+REQUIRED_CORRIGENDA_DATES = ("5.12.2024", "2.7.2025", "17.10.2025")
 SOURCE_TIMEOUT = (3.05, 20)
 
 
@@ -58,7 +63,13 @@ def fetch_official_cra_source():
     source_text = normalize_source_text(" ".join(parser.parts))
     if len(source_text) < 10000:
         raise RuntimeError("EUR-Lex 응답이 비어 있거나 공식 법령 본문으로 보기에는 너무 짧습니다.")
-    return {"url": CRA_SOURCE_URL, "text": source_text}
+    missing_corrigenda = [date for date in REQUIRED_CORRIGENDA_DATES if date not in source_text]
+    if missing_corrigenda:
+        raise RuntimeError(
+            "EUR-Lex 본문에서 알려진 CRA corrigenda 날짜를 모두 확인하지 못했습니다: "
+            + ", ".join(missing_corrigenda)
+        )
+    return {"url": CRA_SOURCE_URL, "version": CRA_SOURCE_VERSION, "text": source_text}
 
 
 def validate_research_report(report, source):
@@ -88,6 +99,8 @@ def validate_research_report(report, source):
 
     if source["url"] not in text:
         return False, "출처 자료에 수집한 EUR-Lex 공식 URL이 없습니다."
+    if source.get("version") not in text:
+        return False, "출처 자료에 법령 통합본 및 corrigenda 버전 정보가 없습니다."
 
     source_text = normalize_source_text(source["text"]).casefold()
     article_refs = re.findall(r"\bArticle\s+\d+\b", text, flags=re.IGNORECASE)
