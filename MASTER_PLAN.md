@@ -451,3 +451,10 @@
 3. [완료] mock-only tests를 추가하고 실제 API 요청이 없는 CI로 검증한다.
 4. [보류] 실제 API canary는 project billing tier 확인 전 dispatch하지 않는다. 실행 전 Free Tier/no paid billing을 명시 확인해야 한다.
 5. [후속] generateContent가 legacy로 분류되어 Interactions API 권장 상태이므로, 현행 코드 호환성 확인 후 migration 비용/영향을 별도 검토한다.
+
+
+### Gemini canary 구현 상태
+- [완료] 합성 입력 전용 REST canary script 및 mock-only tests 추가.
+- [완료] manual workflow에 Free Tier 확인 boolean 기본값 false 적용. 자동 호출 없음.
+- [제약] workflow 파일은 Draft PR branch에만 있으므로 default branch 반영 전에는 workflow_dispatch 실행 불가.
+- [보류] default branch 반영 여부는 main 최신화, PR 검토, Free Tier/billing 상태 확인 후 결정한다. 현재 실제 Gemini API 요청은 하지 않는다.
