@@ -1013,3 +1013,5 @@
 - Annex I Part II(1) SBOM 기본 작성 의무, Annex VII(2)(b) 기술문서 포함, Annex VII(8) 요청 제출, Annex II(9) 사용자 공개 조건을 구분해 보고서를 명확화했다.
 - Run #819 성공: **155 passed / 1 xfailed**; 13 claims, 15 interfaces, 35 requirements, 36 SEC controls, 41 M/606 rows, 102 project-log records; official PDF/HTML canaries 및 artifact upload 통과.
 - 제품별 제조사/모델 증거가 없으므로 제품별 분류 및 적합성은 여전히 미확정이다.
+> **최신 재개 상태(2026-11-18):** 현재 기준 스냅샷은 [PROJECT_STATUS_CURRENT.md](PROJECT_STATUS_CURRENT.md)를 우선 참조한다. PR #42 merge `bc5f4a6adda081a58e0cbc2ba02a3bad8bcf3946`, exact head Run #824 success (155 passed / 1 xfailed). pre/post safety refs 및 main 동등성 검증 완료. 다음은 CRA-001–CRA-035 법령 문언·조건·예외 심층 감사다.
+

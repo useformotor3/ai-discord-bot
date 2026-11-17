@@ -584,3 +584,14 @@
 - Article number만 맞는지 확인하지 않고 실제 법적 의무·적용 주체·조건·기한·예외가 매트릭스 설명과 일치하는지 확인한다.
 - 발견된 오류는 requirement CSV, 통합 보고서, 관련 SEC control 및 audit log를 함께 수정한다.
 - 근거가 불명확하면 '미확인'으로 유지하고 적합성 결론으로 확대하지 않는다.
+
+
+## 최신 실행 순서 — 2026-11-18
+
+1. CRA-001–CRA-035 각 행을 EUR-Lex 원문과 대조해 법적 의무 주체, 행위, 조건, 예외, 기한, 보존기간 및 제품 사실 전제를 확인한다.
+2. 검토 결과를 요구사항 CSV, 한국어 통합 보고서, SEC 통제/시험 매트릭스 및 독립 감사 기록에 한 번에 반영한다.
+3. 법령 의무, Commission Guidance 해석, M/606 표준화 요청/ESO 일정, 엔지니어링 권고를 분리한다.
+4. Commission Guidance PDF primary byte identity 취득을 계속 시도하되 ANFR fallback은 fallback으로 표시한다.
+5. 제품별 자료가 없으면 제품 분류·적합성·인증 경로는 Unknown/Conditional로 유지한다.
+
+최신 재개 기준 및 PR #42 검증/복구 정보는 [PROJECT_STATUS_CURRENT.md](PROJECT_STATUS_CURRENT.md)를 참조한다.
