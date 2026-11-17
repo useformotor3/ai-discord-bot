@@ -1,3 +1,5 @@
+import json
+
 import pytest
 
 from scripts.operational_guard import GuardError, validate_transition
