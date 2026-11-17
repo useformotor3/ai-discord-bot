@@ -154,7 +154,7 @@ def test_git_push_failure_fails_workflow_instead_of_logging_success(run_main):
         run_main.execute([VALID_REPORT], git_responses=[0, 0, 0, 0, 1])
 
     assert exc.value.code == 1
-    assert len(run_main.captured["discord_posts"]) == 1
+    assert run_main.captured["discord_posts"] == []
     assert run_main.captured["git_commands"][-1][0:2] == ["git", "push"]
     assert (run_main.workdir / "state.json").exists()
     assert (run_main.workdir / "history.json").exists()
@@ -249,3 +249,20 @@ def test_daily_quota_and_model_overload_skip_cleanly_without_side_effects(run_ma
     assert not (run_main.workdir / "state.json").exists()
     assert not (run_main.workdir / "history.json").exists()
     assert not (run_main.workdir / "research_archive").exists()
+
+
+def test_discord_delivery_failure_keeps_report_already_archived(run_main):
+    run_main.execute(
+        [VALID_REPORT],
+        discord_responses=[{"status_code": 403}],
+    )
+
+    state = json.loads((run_main.workdir / "state.json").read_text(encoding="utf-8"))
+    history = json.loads((run_main.workdir / "history.json").read_text(encoding="utf-8"))
+    archives = list((run_main.workdir / "research_archive").glob("*.md"))
+
+    assert state["count"] == 1
+    assert len(history) == 1
+    assert len(archives) == 1
+    assert len(run_main.captured["discord_posts"]) == 1
+    assert run_main.captured["git_commands"][-1][0:2] == ["git", "push"]
