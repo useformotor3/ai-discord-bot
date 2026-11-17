@@ -541,3 +541,6 @@
 - Run #669: 148 passed / 1 xfailed; compileall, blob pins, 2 PDF sources/raw hashes/artifact upload, 9 official HTML sources, consolidated corrigenda, Article 13(8) live locator/quote 모두 통과.
 - PDF artifact #14315096266을 다운로드해 ZIP digest 및 PDF별 raw-byte hashes를 재계산하고 manifest와 일치시켰다.
 - 남은 원문 취득 한계는 Guidance Commission-hosted original bytes와 ANFR mirror의 byte identity뿐이다.
+
+
+- 최종 branch-head Run #690 성공(148 passed / 1 xfailed). PDF/HTML live canary, artifact download/readback 및 SHA-256 재검증을 포함한 최신 branch 상태 검증 완료. PR #33 병합 전 diff와 복구 체크포인트만 남음.
