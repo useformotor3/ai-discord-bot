@@ -118,3 +118,22 @@ PROJECT_LOG.jsonl은 UTF-8 원문 전체를 보존해 빈 행을 제거하고 �
 - 최종 CI #323: **117 passed, 1 xfailed**, exact source SHA / compileall / full pytest 성공.
 
 이제 source gate는 날짜 인덱스뿐 아니라 개별 corrigenda의 정정 대상과 정정 문구까지 확인한다. 다만 문구 존재 검사는 법률 해석, 문맥상 적용 여부, 제품 적합성 판단을 대체하지 않는다.
+
+## 9. Latest-main integration branch result — 2026-11-17
+
+Main advanced through 13 auto-archive commits (#6–#18) after the original merge-base. A compare of main HEAD `92477fce1350cccb90a799f061b506461e9caff1` against the prior integration base `48521f877c5db114e9066180f5a2f721a26222c4` showed exactly three changed paths: `history.json`, `state.json`, and archive #18. The 13 commits were archive-only.
+
+Integration sequence:
+- PR #5 merged latest main into integration branch: `308bf4adc181ee6be5d866f3b4cd5ddf54ccf6cd`.
+- PR #4 merged CRA feature into integration branch: `df854af3abc8c2aaf2e56381b0dcacfdbbd6c662`.
+- PR #6 opened as a validation PR to main, run to completion, then returned to Draft. It remains unmerged.
+
+Protected blob checks after integration:
+- state.json: main and integration both `1358aae57047127462dfce7938af99843bebf8fc`.
+- history.json: main and integration both `af79c5608a9789695e8f155ad0a91a260de7304e`.
+- archive #18: main and integration both `f986f2f2db5f74ca8dd072deb2fe90e013b4a63c`.
+
+Merged-tree verification:
+- CI Run #366: **117 passed, 1 xfailed**, exact source SHA checks, compileall and full pytest passed.
+- EUR-Lex read-only Canary #134: success; seven sources, 245,502 visible-text characters, including all three individual English corrigenda and their required wording markers.
+- No production Gemini/Discord call and no main modification.
