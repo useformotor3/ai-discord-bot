@@ -5,13 +5,24 @@
 - 최종 갱신: 2026-11-17 (KST)
 - 기준 저장소: `useformotor3/ai-discord-bot`
 - 운영 기준 브랜치: `main` (운영 자동화 및 데이터 보존)
-- 현재 작업 브랜치: 없음 (PR #23 병합 완료; 다음 작업은 최신 `main`에서 새 브랜치 생성)
+- 현재 작업 브랜치: `docs/branch-reconciliation-2026-11-17` (병렬 브랜치 정합성/소스 검증 감사 중; PR 전)
 - CRA-only 범위 통제 병합 기준점: PR #18, merge commit `b7813ddd311bc51bfb0eb26458eace9ff82b621f` (2026-11-17)
 - 마지막 CRA 산출물 병합: PR #23 merge `b90a0ac07865c18d846323d843fef38b1123077a`. PR #23 Run #531 success; merge commit 자체의 별도 run은 미확인.
 - 이번 비교 기준: PR #23 병합으로 작업 브랜치 종료. 다음 작업 시작 시 main HEAD와 원격 브랜치를 다시 조회해 기준선을 설정
 - 프로젝트 상태: CRA 통합 보고서 v0.2 병합, 요구사항 추적표 35항목, 인터페이스 적용성 매트릭스 15항목 병합. 보안 통제·시험 매트릭스 36항목 초안 작업 중.
 - 주 문서 언어: 한국어
 - 안전 원칙: 법적 적합성·제품 분류·안전 관련 설계 판단은 근거와 인간 검토 없이 확정하지 않음
+
+## 0. 2026-11-17 현재 브랜치 정합성 및 통합 판단
+
+- canonical 운영 브랜치: main, HEAD addfa63d1a7d2d1c77ec61444aaadf2b1f327389.
+- 병렬 브랜치 비교는 reports/BRANCH_RECONCILIATION_2026-11-17.md를 기준으로 한다. 이 보고서가 기존의 오래된 ahead/behind 스냅샷보다 우선한다.
+- cra-project-foundation: 1,159 ahead / 1,906 behind. 고유 보고서/249-item archive audit queue를 보존하되 전체 병합하지 않는다.
+- integration/cra-source-grounding-2026-11-17: 272 ahead / 201 behind. cra_source.py/cra_claims.py/source gate는 선택 이식 후보이며 branch 전체 또는 main.py 전체를 복사하지 않는다.
+- feature/cra-source-grounding-atomic-2026-11-17: 165 ahead / 218 behind, PR #3 closed/unmerged. 원본 참고 브랜치로 보존한다.
+- integration branch의 source validator는 실제 EUR-Lex Article 13 paragraph 표기(예: 8.)와 paragraph/Annex point 단위 quote scope를 정확히 처리하지 못할 위험이 확인되었다. 최신 main 기반 별도 branch에서 수정·시험 후 이식한다.
+- main.py의 최근 15개 history context, 2회 retry, 429/503/quota no-op, duplicate-topic suppression, transactional persistence/rollback을 보존한다.
+- divergent branches, safety checkpoint, archive/state/history를 삭제·force-push·전체 merge하지 않는다.
 
 ## 1. 한눈에 보는 현재 상태
 
@@ -98,22 +109,26 @@
 
 ## 5. 브랜치 보호 및 운영 영향
 
-- 이전 비교 기록(61 ahead / 49 behind)은 과거 스냅샷이다. 2026-11-14 15:31 KST 재조회 결과는 72 ahead / 50 behind이며 diverged 상태다.
-- main의 자동 생성 자료와 작업 변경의 충돌 여부를 확인하기 전까지 merge/rebase하지 않는다.
-- 운영 `main`, `.github/workflows/run.yml`, `state.json`, `history.json`은 변경하지 않았다.
+- 2026-11-14의 61/49 및 72/50 ahead/behind 값은 과거 스냅샷이다. 현재 분기 상태는 Section 0 및 reports/BRANCH_RECONCILIATION_2026-11-17.md를 기준으로 한다.
+- 병렬 branch의 전체 merge/rebase는 하지 않는다. 필요한 source-gate 기능만 최신 main에서 별도 branch로 선택 이식한다.
+- 위 문장은 2026-11-14 당시 작업 범위의 역사 기록이다. 이후 PR #19–#23은 문서/CSV만 변경했고 운영 코드/workflow/state/history는 변경하지 않았다.
 - 실제 Gemini/Discord/Git push 및 운영 workflow를 실행하지 않았다.
 
 ## 6. 다음 재개 지점 — 2026-11-17
 
-1. PR #19 병합 보고서 v0.1과 CSV 28항목을 main 기준으로 보존하고, 법령·Commission Guidance·M/606 공식 원문을 최신 상태로 재확인한다.
-2. 서보 드라이브 제품군별 통신 인터페이스·디지털 데이터 흐름·펌웨어/설정도구·원격 처리·EU 시장 공급 구조를 표로 정리한다.
-3. 제품의 core functionality와 Annex III/IV 분류를 증거 기반으로 판단하고 Article 32 적합성 평가 경로를 확정한다.
-4. 요구사항 28개 각각에 설계 통제·시험 케이스·객관적 증거 링크를 연결하고 법적 의무/공식 해석/권고를 구분한다.
-5. CRA 사이버보안 아키텍처 및 구현·검증 매뉴얼 초안을 작성하고, 보고서 v0.2로 기존 #1–#38 정정 결과와 상호 검토한다.
+1. 최신 main에서 source provenance 통합용 새 작업 branch를 생성하고, integration branch의 전체 merge 대신 cra_source.py/cra_claims.py와 관련 테스트만 선택 이식한다.
+2. 실제 EUR-Lex Article paragraph 표기(예: 8.)와 Annex Part/point 구조에 맞춰 locator/quote-scope validator를 수정하고 회귀 테스트를 추가한다.
+3. 공식 source catalog에 Commission Guidance C(2026) 5252 및 M/606 Decision C(2026) 7861을 추가하되, source별 official host allowlist와 text/PDF 추출 범위를 검증한다.
+4. 현재 main의 history 15, retry 2, quota/429/503 no-op, duplicate suppression, transactional persistence/rollback을 보존하고 mock 기반 전체 테스트/CI를 통과시킨다.
+5. source gate 병합 후 제품별 인터페이스·35개 요구사항·36개 SEC 통제·참조 아키텍처를 실제 모델 자료와 시험 증거에 연결한다.
 
 ## 7. 문서 진입점
 
 - [프로젝트 메인 페이지](README.md)
+- [브랜치 정합성 및 소스 검증 통합 감사](reports/BRANCH_RECONCILIATION_2026-11-17.md)
+- [CRA 통합 보고서 v0.2](reports/CRA_INTEGRATED_COMPLIANCE_REPORT_2026-11-17.md)
+- [CRA 보안 통제·시험 매트릭스](reports/CRA_SERVO_DRIVE_SECURITY_CONTROL_TEST_MATRIX_2026-11-17.csv)
+- [CRA 참조 보안 아키텍처](reports/CRA_SERVO_DRIVE_REFERENCE_SECURITY_ARCHITECTURE_2026-11-17.md)
 - [AI 행동강령](AI_RULEBOOK.md)
 - [마스터 계획](MASTER_PLAN.md)
 - [작업 이력](SESSION_LOG.md)
@@ -128,7 +143,7 @@
 
 - 작업 브랜치 HEAD: `8813eb53b186b25e72ac157d664d636be6d68fd8`
 - 운영 main HEAD: `c9b5bff8ee851b6baa86bbe4073353c9303bb432`
-- GitHub compare 결과: diverged, 72 commits ahead / 50 commits behind
+- GitHub compare 결과: diverged, Historical snapshot 2026-11-14: 72 commits ahead / 50 behind; superseded by Section 0
 - GitHub Actions runs API 조회 결과: 해당 작업 브랜치의 workflow run 0건
 - 해석: 이 브랜치에서 확인 가능한 CI 성공 증거가 없다. CI 통과 또는 테스트 완료로 표시하지 않는다.
 - 이번 조회는 GitHub API GET만 수행했다. workflow dispatch, 운영 자동화, 코드 실행은 하지 않았다.

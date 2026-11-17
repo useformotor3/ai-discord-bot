@@ -89,6 +89,14 @@
 - CRA 서보 드라이브 참조 보안 아키텍처 v0.1 PR #23 병합 및 main readback 완료: 논리 블록, trust boundary, data flow, HW/FW/network control candidates. 실제 부품/회로에 맞춘 설계는 제품 자료 확보 후 진행.
 - Phase 6: CRA 통합 규제·기술 준수 보고서 v0.2 보강 및 PR #21 병합 완료. 2026-07 Commission Guidance 및 2026-11 M/606 개정 반영. 제품별 판정 전.
 
+## 2026-11-17 최신 재개 지점 — branch/source provenance audit
+
+- main을 canonical 운영 브랜치로 유지한다. divergent branch 전체 병합 금지.
+- [BRANCH_RECONCILIATION_2026-11-17.md](reports/BRANCH_RECONCILIATION_2026-11-17.md)를 branch authority 기준으로 사용한다.
+- 최우선 P0: integration/cra-source-grounding의 source/claim gate를 최신 main에 선택 이식한다. Article 13 paragraph 8. 표기와 Annex Part/point quote scope 결함을 먼저 수정하고, main.py의 retry/quota/dedup/persistence 보호를 유지한다.
+- Commission Guidance C(2026) 5252 및 M/606 Decision C(2026) 7861 공식 source entry를 보강하되, 공식 host allowlist와 PDF/page 추출을 별도 검증한다.
+- PR/CI 통과 후 source gate를 main에 병합한다. 이후 제품별 회로/펌웨어/프로토콜 증거를 확보해 reference architecture와 36 SEC test 항목을 구체화한다.
+
 ## 다음 실행 순서 — 2026-11-17 CRA 우선순위
 
 1. **법적 기준 재검증**: Regulation (EU) 2024/2847 OJ 원문, Commission Guidance C(2026) 5252, M/606 개정 C(2026) 7861, Regulation (EU) 2025/327의 CRA 개정 범위를 교차 확인한다.

@@ -308,3 +308,17 @@
 - SIL/PL 인증 주장을 검토할 때 제품 안전 권고(PSA/PCN), affected catalog numbers, installed firmware 및 safety-path configuration을 함께 조회한다.
 - 출하 시 명판 firmware와 현장 설치 firmware가 다를 수 있으므로 실제 설치 버전 확인을 요구한다.
 - 특정 firmware/배선 구성에 한정된 안전 권고를 제품군 전체 또는 다른 모델/세대에 일반화하지 않는다.
+
+
+## 48. Branch authority and selective integration (2026-11-17)
+
+1. Main is the canonical operational branch unless a later, explicit project decision changes it. Current main HEAD and branch comparisons are recorded in PROJECT_STATUS.md and reports/BRANCH_RECONCILIATION_2026-11-17.md.
+2. Never merge a divergent branch wholesale. Before integration, compare ahead/behind, merge-base, changed files, tests, workflows, and source/history/archive changes. Preserve all parallel branches and safety checkpoints; no force-push or history rewrite.
+3. cra-project-foundation is a parallel reference branch with unique project navigation/report/archive-audit material; it is not the canonical work branch while its graph remains 1,159 ahead / 1,906 behind main.
+4. integration/cra-source-grounding-2026-11-17 is a source-provenance implementation reference. Selectively port cra_source.py, cra_claims.py, tests, and canary support onto a fresh branch from latest main. Do not copy its entire main.py or workflow wholesale.
+5. Preserve current main operational protections during source-gate integration: 15-item history context, two model retries, quota/429/503 no-op behavior, duplicate-topic suppression, transactional persistence, checkpoint/rollback.
+6. Source claim validation must be tested against actual EUR-Lex structure. Article paragraphs may be rendered as 8. rather than (8); Annex Part/point locators must be scoped to the exact point, not merely the Annex. A quote from another paragraph/point in the same Article/Annex must fail.
+7. Source pack must include the official CRA consolidated text and applicable corrigenda/amendments. Add Commission Guidance C(2026) 5252 and M/606 Decision C(2026) 7861 only with source-specific official-host allowlists and tested text extraction. Do not claim a web-page summary proves details contained only in a PDF annex.
+8. Source/claim validation must fail closed before Gemini calls, Discord posting, or Git writes. Tests use mocks; live Gemini/Discord canaries are not automatic and may consume quota or create external effects.
+9. A prior branch CI pass does not validate later commits. Record the exact tested SHA and only claim success for that SHA.
+10. Sections 46–47 concerning functional safety/SIL are historical reference rules only. They are inactive under the current CRA-only scope and must not initiate SIL/functional-safety work unless the user explicitly reopens that scope.
