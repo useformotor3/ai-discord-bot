@@ -99,3 +99,12 @@ CI artifact Run #702의 원본 PDF를 다운로드해 SHA-256 manifest와 대조
 - G-008/G-009 및 G-012는 PDF physical page index가 아니라 인쇄된 페이지 번호로 변환했을 때 기존 값과 차이가 확인됐다.
 - 이 변경은 해석 내용 자체를 새로 확장한 것이 아니라 기존 paraphrase가 가리키는 원문 위치를 정확히 하는 조치다.
 - Commission-hosted primary PDF byte identity는 여전히 미확인이다. 이번 재대조는 검증된 ANFR mirror byte identity의 artifact에 한정된다.
+
+
+## 8. SBOM 의무 — Annex I와 Annex VII의 구분
+
+- EUR-Lex 원문 Annex I Part II(1)은 제조자에게 제품의 취약점·구성요소 식별/문서화와 함께 통상 사용되는 기계 판독 형식의 SBOM 작성(최소 최상위 의존성)을 요구한다.
+- Annex VII(2)(b)는 SBOM을 취약점 처리 프로세스에 관한 기술문서 내용에 포함한다.
+- Annex VII(8)은 해당되는 경우 시장감시당국의 합리적 요청 및 Annex I 적합성 확인에 필요한 경우 SBOM 추가 제출을 규정한다. 이 조항을 근거로 Annex I Part II(1)의 기본 SBOM 작성 의무를 선택사항으로 해석해서는 안 된다.
+- 사용자에 대한 일반 공개 의무와 제조자의 SBOM 작성/기술문서 보유 의무는 별개다. Annex II(9)는 제조자가 SBOM을 사용자에게 제공하기로 결정한 경우 접근 위치 정보를 제공하도록 규정한다.
+- 공식 근거: https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX%3A32024R2847 (Annex I Part II(1), Annex II(9), Annex VII(2)(b), (8)).
