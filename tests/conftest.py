@@ -56,6 +56,7 @@ FAKE_SOURCE_PACK = {
         {
             "id": "CRA-2024-2847-consolidated",
             "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02024R2847-20241120",
+            "final_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02024R2847-20241120",
             "version": "Fixture Regulation (EU) 2024/2847 consolidated text",
             "text": FAKE_CRA_SOURCE_TEXT,
             "sha256": "fixture-sha256-cra",
@@ -66,6 +67,7 @@ FAKE_SOURCE_PACK = {
         {
             "id": "CRA-COMMISSION-GUIDANCE-2026-07-27",
             "url": "https://digital-strategy.ec.europa.eu/en/library/commission-publishes-new-guidance-support-timely-cyber-resilience-act-implementation",
+            "final_url": "https://digital-strategy.ec.europa.eu/en/library/commission-publishes-new-guidance-support-timely-cyber-resilience-act-implementation",
             "version": "Fixture Commission guidance publication page",
             "text": (
                 "Commission guidance C(2026) 5252 was published on 27 July 2026. "
