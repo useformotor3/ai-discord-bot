@@ -654,7 +654,7 @@
 - 변경 파일: cra_source.py, main.py, tests/conftest.py, tests/test_main_characterization.py, tests/test_mock_infrastructure.py, .github/workflows/tests.yml.
 - 기능: EUR-Lex 공식 도메인 직접 조회, HTTPS/최종 호스트 검사, 법령 통합본 버전 및 알려진 corrigenda 3개 날짜 확인, Article/Annex 존재 확인, 50자 이상 직접 인용의 원문 포함 여부 확인.
 - 실패 처리: 원문 HTTP 오류, 비공식 redirect, 알려진 corrigenda 누락, 출처 URL/버전 누락, 조항 locator 누락, 직접 인용 불일치 시 보고서 생성 및 외부 후속처리 중단.
-- CI Run #89: 103 passed, 1 xfailed. 정확한 source blob SHA, compileall, 전체 pytest 통과.
+- CI Run #91: 103 passed, 1 xfailed. 정확한 source blob SHA, compileall, 전체 pytest 통과. [실행 로그](https://github.com/useformotor3/ai-discord-bot/actions/runs/43986374463).
 - 이전 CI Run #79: 97 passed, 5 failed, 1 xfailed. 원인은 테스트 간 requests mock 모듈 재사용. 호출 시점 import로 수정하고 Run #83/#89에서 통과.
 - 한계: 최소 출처/인용 대조이며 모든 법적 주장, 번역, 해석, 제품 적용성, 적합성 평가를 증명하지 않는다. EUR-Lex 통합본은 문서화 도구이며 법적 효력은 관보의 정본 및 정오표에 있다.
 - 미수행: 실제 EUR-Lex 운영 네트워크 canary, 실제 Gemini/Discord 호출, 운영 workflow 실행, main 병합.

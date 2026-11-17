@@ -108,5 +108,5 @@ python -m pytest -q
 - main.py는 원문 수집 성공 후에만 Gemini를 호출한다. 보고서 공식 URL·source version·Article/Annex locator·50자 이상 direct quote를 source text와 대조한다.
 - 원문 HTTP 오류, 비공식 redirect, corrigenda 누락, quote mismatch는 fail-closed한다.
 - 테스트에는 source retrieval mock을 사용하며 실제 EUR-Lex/Gemini/Discord/Git은 호출하지 않는다.
-- CI Run #89: 103 passed, 1 xfailed; exact source blob SHA, compileall, full pytest success.
+- CI Run #91: 103 passed, 1 xfailed; exact source blob SHA, compileall, full pytest success. Evidence: https://github.com/useformotor3/ai-discord-bot/actions/runs/43986374463.
 - 이 검증은 최소 provenance gate이며 모든 법률 해석·제품 적용성·적합성 판단을 보증하지 않는다.

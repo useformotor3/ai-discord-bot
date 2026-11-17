@@ -914,3 +914,12 @@
 - 실제 EUR-Lex endpoint canary, 실제 Gemini/Discord, 운영 실행은 미수행.
 - 다음은 비운영 canary로 endpoint와 응답 구조를 확인하고, 주장별 조항·인용 연결 검증을 강화한다.
 - 상세: reports/CRA_SOURCE_PROVENANCE_GATE_2026-11-17.md.
+
+
+## 2026-11-17 — 상황판·행동강령·테스트 문서 동기화
+- README, PROJECT_STATUS, MASTER_PLAN, AI_RULEBOOK, SESSION_LOG, PROJECT_LOG.jsonl, tests/README 및 CRA 출처검증 설계 보고서를 작업 브랜치에 기록했다.
+- 테스트 workflow push branch/path 필터에 현재 source-gate 브랜치와 cra_source.py를 추가했다.
+- 최신 CI Run #91: 103 passed, 1 xfailed; blob SHA, compileall, 전체 pytest 성공.
+- CI 링크: https://github.com/useformotor3/ai-discord-bot/actions/runs/43986374463.
+- 코드 검증은 Run #89와 #91 모두 성공. 문서 변경은 기존 코드 동작을 바꾸지 않는다.
+- 운영 main 및 production workflow 미변경, Draft PR #3 유지.
