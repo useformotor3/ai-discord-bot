@@ -488,3 +488,10 @@
 
 
 - [CRA 제품 경계 및 증거 수집 기준서](reports/CRA_PRODUCT_BOUNDARY_AND_EVIDENCE_INTAKE_2026-11-17.md): 모델·의도된 목적·제품 경계·인터페이스·RDPS·BOM/SBOM·취약점/지원 정책을 제품 증거로 확정하기 위한 한국어 입력 템플릿.
+
+
+## PR #39 병합 — CRA 제품 경계 및 증거 수집 기준서
+
+- [PR #39](https://github.com/useformotor3/ai-discord-bot/pull/39) squash merge 완료: `aec679142bf8c12b1ce18b233956f9695d70ca21`.
+- [Run #781](https://github.com/useformotor3/ai-discord-bot/actions/runs/44058504509): **154 passed / 1 xfailed**; traceability 41 M/606 rows, official PDF/HTML canaries 통과.
+- Pre-merge ref `safety/pre-merge-main-pr39-2026-11-17` → `d212081d0f105fc2b293606d71f9b156f0c45c89`; post-merge ref `safety/post-merge-main-pr39-2026-11-17` → `aec679142bf8c12b1ce18b233956f9695d70ca21`; merge SHA와 main 비교 identical.
