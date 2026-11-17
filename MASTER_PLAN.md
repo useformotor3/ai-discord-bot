@@ -443,3 +443,11 @@
 - [완료] EUR-Lex read-only canary: success.
 - [미완료] 실제 Gemini 모델 JSON 출력 호환성 canary, Official Journal 정본/정오표 대조, 본문 claim 누락에 대한 사람 검토.
 - [보류] main 통합. PR #3는 main 최신화 및 통합 CI/보호 경로 검토 전까지 Draft로 유지.
+
+
+## Gemini model compatibility canary — 수동 비용 게이트
+1. [완료] 공식 가격표에서 Gemini 3.8 Flash Free Tier의 token 가격, data-use 조건, Search Grounding 제한을 확인했다.
+2. [완료] 공개 합성 문장 1건만 사용하는 opt-in JSON compatibility script와 manual workflow를 추가했다.
+3. [완료] mock-only tests를 추가하고 실제 API 요청이 없는 CI로 검증한다.
+4. [보류] 실제 API canary는 project billing tier 확인 전 dispatch하지 않는다. 실행 전 Free Tier/no paid billing을 명시 확인해야 한다.
+5. [후속] generateContent가 legacy로 분류되어 Interactions API 권장 상태이므로, 현행 코드 호환성 확인 후 migration 비용/영향을 별도 검토한다.
