@@ -540,3 +540,12 @@
 - PR #48 exact-head CI Run #834 success 및 pre/post safety refs는 상황판에 기록되어 있다.
 - 2026-11-18 통합 보고서 독립 감사는 작업 브랜치 `cra/integrated-report-audit-2026-11-18`에서 진행 중이며, [독립 감사 기록](reports/CRA_INTEGRATED_REPORT_INDEPENDENT_AUDIT_2026-11-18.md)과 제품별 판정 표현 보완을 포함한다.
 - 제품별 제조사/모델 증거가 제공되기 전 CRA scope/classification/conformity는 Unknown으로 유지한다.
+
+
+## 최신 main 기준점 — PR #50 병합 완료 (2026-11-18)
+- PR #50 독립 CRA 통합 보고서 감사 및 요약 문구 보완 병합: `137d096123ccf5ee478292002d2c528b41981fc7`.
+- Exact-head isolated CI Run #840 success (source integrity, compile, CRA traceability, complete pytest, official PDF/HTML canaries, evidence artifact upload).
+- Pre-merge safety ref: `safety/pre-merge-cra-integrated-report-audit-2026-11-18`; post-merge safety ref: `safety/post-merge-pr50-2026-11-18`.
+- 독립 감사 기록: [CRA 통합 보고서 독립 감사](reports/CRA_INTEGRATED_REPORT_INDEPENDENT_AUDIT_2026-11-18.md).
+- 제품별 scope/classification/conformity는 제조사·정확한 모델 증거 확보 전 Unknown. Commission Guidance PDF Commission-primary byte identity는 여전히 미확인.
+- 최신 재개 기준과 미완료 항목은 [PROJECT_STATUS_CURRENT.md](PROJECT_STATUS_CURRENT.md)를 따른다.

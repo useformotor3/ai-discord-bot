@@ -77,3 +77,14 @@
 - 변경 브랜치: `cra/integrated-report-audit-2026-11-18`; 기준 main commit: `c7b939a0fdfa559f9d68a11873c107186da423c3`.
 - 운영 main.py, production workflow, secrets, state/history/archive, Gemini/Discord 운영 실행은 변경하지 않았다.
 - 다음: 관리 문서/프로젝트 로그 동기화, 동일 브랜치 readback, exact-head CI, PR 및 safety-ref/main 비교.
+
+
+## PR #50 병합 및 사후 검증 — 2026-11-18
+- PR #50 `docs: independently audit and qualify CRA report conclusions` exact head `49e98df9a7fef8f47cabe7b036b45cc150b88b91`에 대해 Run #840 (ID `44200596113`) 성공 확인.
+- 성공 단계: exact source blob identity, compile, CRA cross-matrix traceability, complete pytest, official CRA PDF read-only canary/artifact upload, live official CRA source read-only canary.
+- Pre-merge safety ref `safety/pre-merge-cra-integrated-report-audit-2026-11-18`는 PR 전 main `c7b939a0fdfa559f9d68a11873c107186da423c3`와 identical.
+- PR #50 squash merge 성공: `137d096123ccf5ee478292002d2c528b41981fc7`.
+- Merge 후 compare: post-merge safety ref는 main 기준점에서 생성되며, main은 pre-merge safety ref 대비 정확히 1 commit ahead. 변경된 8개 파일은 PR #50 범위와 일치.
+- 사후 safety ref: `safety/post-merge-pr50-2026-11-18`.
+- 다음 동기화 PR에서 PROJECT_STATUS_CURRENT/README/MASTER_PLAN/SESSION_LOG/PROJECT_LOG에 PR #50 결과와 정확한 main 기준점을 기록한다.
+- 운영 코드/production workflow/secrets/state/history/archive/Gemini·Discord 실행은 변경하지 않았다.
