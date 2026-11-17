@@ -860,3 +860,9 @@
 - SBOM을 모든 사용자에게 의무 제공한다는 주장은 오류. Annex II point9는 제조사가 사용자 공개를 선택한 경우 접근 위치를 안내.
 - 모든 servo drive의 Important Class I/II 자동 분류 및 SBOM의 모든 transitive dependency 강제 주장을 정정.
 - correction report #8 생성: reports/CRA_CORRECTION_REPORT_8_2026-11-17.md. correction reports #8–#19 완료.
+
+## 2026-11-17 — archive #7 기본 자격증명 정정 감사
+- 원본 archive #7 SHA ff4395ebe2f4e2f5c0b843b8b0a92942f542f6f2 확인, 원본 보존.
+- Annex I Part I point (1)(e)는 존재하지 않는 locator. 접근통제는 Part I (2)(d), secure-by-default/reset은 (2)(b).
+- 최종 OJ에 “default passwords” 문구가 없으며, 공통 기본 비밀번호 금지·기기별 랜덤 비밀번호·최초 접속 복잡성 규칙은 특정 구현을 법적 의무로 단정할 수 없다.
+- correction report #7 생성: reports/CRA_CORRECTION_REPORT_7_2026-11-17.md. correction reports #7–#19 완료.
