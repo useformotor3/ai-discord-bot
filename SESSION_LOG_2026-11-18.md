@@ -50,3 +50,10 @@
 - 제품별 구현/시험 증거는 없으므로 기존 evidence status를 완료로 올리지 않았다.
 - PR #46 merge commit `42aca53bb735d79292be59120fb868474e728073`, post-merge safety ref와 main 동일성 확인.
 - 현재 브랜치에서 교차 감사와 통합 보고서/독립 감사/상황판을 동기화하고 exact-head CI 후 병합한다.
+
+
+## PR #47 병합 및 제품 증거 수집 기준 보완
+- PR #47 `docs: reconcile CRA requirements and evidence cross-matrices` exact-head CI Run #832 성공 후 squash merge.
+- Merge commit `fd9733b31e5dffa382a82a420de6a195a714e98f`; pre/post safety refs 생성, post ref == main 비교 identical.
+- 35 requirements, 15 interfaces, 36 SEC controls, 13 Guidance claims, 41 M/606 items 교차 감사 및 SEC-015/018/021/031/032/034/036 정합화 완료.
+- 제품 증거 수집 기준서에 제품 범위/데이터 연결, RDPS 누적 기준, Annex III/IV core functionality, Machinery Regulation 관계, 신고 시한, 전환일 및 제출 우선순위를 보완하는 중.
