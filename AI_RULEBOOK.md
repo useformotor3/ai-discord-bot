@@ -348,3 +348,9 @@
 - CVD policy is Annex I Part II (5); reporting contact/information sharing is (6); fixed-vulnerability disclosure and its exception are (4); mandatory reporting of actively exploited vulnerabilities/severe incidents is Article 14.
 - Do not classify all industrial servo drives as Important Class I/II by product name alone. Verify the actual product function against Annex III.
 - Do not infer anonymous disclosure, mandatory publication simultaneous with patch release, or a specific PSIRT workflow unless an exact provision requires it.
+
+## 33. CRA support period and free security updates
+- Keep Article 13(8) support-period determination, Article 13(9) security-update availability retention, Article 13(19) end-date communication, and Annex I Part II (8) free security-update delivery separate.
+- Do not call the 10-year update availability period a universal 10-year support period.
+- Apply the tailor-made product/manufacturer-business user agreement exception only where its conditions are met.
+- Article 13(14) is not the free security-update provision.
