@@ -951,3 +951,16 @@
 - quota 실패 run #44016487535 이후 state.json SHA `da086ea3ffb7ef0c76d7fa03a58e13a24aa8fe34`, history.json SHA `b9ea42fa437b2b3a5728db5d125d287fb746b46b` 및 count=38/2,431 entries가 유지됨.
 - 원본 archive #33–#38은 그대로 보존하고 correction reports #33–#38을 별도 추가.
 - 운영 실제 runtime 검증은 첫 3회 3-hourly run에서 진행한다. 현재까지 PR CI는 mock 기반이므로 실제 Gemini/Discord 전송 성공을 보장한다고 표현하지 않는다.
+
+## 2026-11-17 — CRA archive #22–#32 감사 및 #1–#38 정정 인덱스
+
+- main의 2026-11-17 archive #22–#32 원문 11건을 직접 fetch해 전체 내용과 blob SHA를 확인했다.
+- #22: secure-by-default broad requirement는 존재하지만 default credential을 특정 방식으로 바꾸라는 원문 인용은 final OJ에서 확인되지 않음.
+- #23: 기술문서는 Article 31/Annex VII, 보존은 Article 13(13); Annex VI 오인용 및 서보 드라이브 Class I/II 자동 분류를 정정.
+- #24: 사용자 정보/지침은 Article 13(18)/Annex II이며 Article 24는 open-source software stewards 조항.
+- #25–#28: Article 10 제조사 의무 오인용, CVD 정책(Annex I Part II (5)), contact address ((6)), Article 13(17) single point of contact, Article14/15 mandatory/voluntary reporting 혼합, PGP/security.txt/CVE/SLA의 직접 의무 과장을 정정.
+- #29: security logging은 Annex I Part I (2)(l), integrity는 (2)(f), CVD는 Part II (5)/(6)으로 분리. Immutable log retention/WORM/SIEM은 구현 선택.
+- #30–#32: Article 13(8) support period, Article13(9) update availability, Annex I Part II (2)/(7)/(8) vulnerability remediation/secure distribution/free updates 및 tailor-made product/business user 예외를 정정.
+- 정정 #22–#32 11건 작성. 기존 integration branch의 정정 #5–#21도 main 통합 후보 branch로 복사.
+- CRA 정정 #1–#38 master index 작성. 원본 archive는 수정/삭제하지 않았다.
+- 공식 기준: EUR-Lex Regulation (EU) 2024/2847 OJ https://eur-lex.europa.eu/eli/reg/2024/2847/oj/eng
