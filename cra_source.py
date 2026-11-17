@@ -6,7 +6,7 @@ import requests
 
 
 CRA_SOURCE_URL = (
-    "https://eur-lex.europa.eu/eli/reg/2024/2847/2024-11-20/eng"
+    "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02024R2847-20241120"
 )
 SOURCE_TIMEOUT = (3.05, 20)
 
