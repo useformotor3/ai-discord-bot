@@ -7,7 +7,7 @@
 - 운영 기준 브랜치: `main` (운영 자동화 및 데이터 보존)
 - 현재 작업 브랜치: 없음 (PR #19 병합 완료; 다음 작업은 최신 `main`에서 새 브랜치 생성)
 - CRA-only 범위 통제 병합 기준점: PR #18, merge commit `b7813ddd311bc51bfb0eb26458eace9ff82b621f` (2026-11-17)
-- 마지막 CRA 산출물 변경: PR #20 병합 완료, merge commit `951fc5ee0122b847b5e8f77bd5e0706db65efb76`. PR #19 CI Run #500 및 main push Run #502 success. PR #20은 workflow run 미확인; CSV/JSONL 수동 검증 성공.
+- 마지막 CRA 산출물 병합: PR #20 merge `951fc5ee0122b847b5e8f77bd5e0706db65efb76`. 현재 브랜치에서 정정 #1–#38 통합 및 요구사항 범위 확장 중; PR/CI 미확정.
 - 이번 비교 기준: PR #20 병합으로 작업 브랜치 종료. 다음 작업 시작 시 main HEAD와 원격 브랜치를 다시 조회해 기준선을 설정
 - 프로젝트 상태: CRA 통합 보고서 v0.1 및 28항목 요구사항 추적표 초안 작성. 모델별 적용성/분류 및 시험 증거 연결은 미완료.
 - 주 문서 언어: 한국어
@@ -29,9 +29,9 @@
 | P1-B2 저장 원자성 | 구현·보강 및 CI 검증 완료 | durable journal, SHA 보호, roll-forward, target allowlist; Actions 43851438733: 70 passed / 1 xfailed |
 | P1-B3 Git sync 상태화 | 미구현 | 유일한 strict xfail; 별도 승인 필요 |
 | P1-B4 구조 개선 | 미구현 | import-time 실행 제거 등 후속 단계 |
-| CRA 통합 보고서 | 병합된 초안 v0.1 | 2026-07 Commission Guidance 및 2026-11 M/606 개정 반영; 모델별 적용성 검증 전 |
-| CRA 요구사항 추적 | 병합된 초안 v0.1 | CSV 28항목 작성; 제품 증거·설계 통제·시험 결과 연결 필요 |
-| CRA 인터페이스 적용성 | 초안 15항목 | 필드버스/serial/analog/discrete/encoder/STO/PC tool/RDPS 구분; 모델별 증거 필요 |
+| CRA 통합 보고서 | v0.2 보강 중 | 2026-07 Commission Guidance 및 2026-11 M/606 개정 반영; 모델별 적용성 검증 전 |
+| CRA 요구사항 추적 | v0.2 보강 중 | CSV 35항목 작성; 제품 증거·설계 통제·시험 결과 연결 필요 |
+| CRA 인터페이스 적용성 | 병합된 초안 15항목 | 필드버스/serial/analog/discrete/encoder/STO/PC tool/RDPS 구분; 모델별 증거 필요 |
 | 과거 SIL 3 기능안전 자료 | 보존·비활성 | 기존 파일/PR 이력은 유지. CRA 활성 작업·다음 단계에 포함하지 않음 |
 
 ## 2. P1-B1 이전 기준선에서 확인한 원본 코드 사실
