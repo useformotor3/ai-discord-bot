@@ -34,7 +34,7 @@ CRA_SOURCE_CATALOG = (
     },
     {
         "id": "CRA-2024-2847-corrigendum-2024-12-05",
-        "url": "https://publications.europa.eu/resource/celex/32024R2847R(01)?language=eng",
+        "url": "https://publications.europa.eu/resource/celex/32024R2847R%2801%29?language=eng",
         "allowed_hosts": ("publications.europa.eu",),
         "kind": "official_corrigendum",
         "version": (
@@ -50,7 +50,7 @@ CRA_SOURCE_CATALOG = (
     },
     {
         "id": "CRA-2024-2847-corrigendum-2025-07-02",
-        "url": "https://publications.europa.eu/resource/celex/32024R2847R(02)?language=eng",
+        "url": "https://publications.europa.eu/resource/celex/32024R2847R%2802%29?language=eng",
         "allowed_hosts": ("publications.europa.eu",),
         "kind": "official_corrigendum",
         "version": (
@@ -66,7 +66,7 @@ CRA_SOURCE_CATALOG = (
     },
     {
         "id": "CRA-2024-2847-corrigendum-2025-10-17",
-        "url": "https://publications.europa.eu/resource/celex/32024R2847R(04)?language=eng",
+        "url": "https://publications.europa.eu/resource/celex/32024R2847R%2804%29?language=eng",
         "allowed_hosts": ("publications.europa.eu",),
         "kind": "official_corrigendum",
         "version": (
