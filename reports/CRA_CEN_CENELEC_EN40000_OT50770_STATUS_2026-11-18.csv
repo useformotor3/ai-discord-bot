@@ -1,0 +1,11 @@
+body,reference,work_item,scope,official_stage_as_of_2026-11-18,DOR,DAV,DOA,DOP,OJ_citation_field,actual_OJ_citation_verified,servo_drive_relevance
+CEN,EN 40000-1-1:2026,JT013095,Vocabulary,Published,2026-11-02,2026-11-18,2027-02-28,2027-05-31,No citation expected,No,Horizontal vocabulary; supports interpretation only
+CEN,EN 40000-1-2:2026,JT013089,Principles risk management lifecycle,Ratification completed / publishing (official record fetch failed; secondary corroboration),2026-11-02,,,,No citation expected (tracker and secondary corroboration),No,Horizontal framework relevant to all PDE; not a product-specific presumption route
+CEN,FprEN 40000-1-3:2026,JT013090,Vulnerability handling,Under Approval,,,,,Citation expected,No,Horizontal vulnerability handling; process evidence relevant
+CEN,prEN 40000-1-4,JT013091,Generic security requirements,Work item / drafting,,,,,No citation expected (tracker),No,Horizontal requirement development; monitor
+CENELEC,prEN 50770-1,81649,OT firewalls and IDS/IPS,Committee stage,,,,,Citation expected,No,Conditional only if marketed product is firewall or IDS/IPS
+CENELEC,prEN 50770-2,81650,OT network management systems,Committee stage,,,,,Citation expected,No,Not direct product category for ordinary servo drive
+CENELEC,prEN 50770-3,81651,OT physical and virtual network interfaces,Committee stage,,,,,Citation expected,No,Conditional; Ethernet/fieldbus port alone insufficient
+CENELEC,prEN 50770-4,81652,OT VPN products,Committee stage,,,,,Citation expected,No,Conditional only if product itself has VPN function/intended purpose
+CENELEC,prEN 50770-5,81653,OT routers internet-connected modems and switches,Committee stage,,,,,Citation expected,No,Conditional; embedded port/switch alone insufficient
+CENELEC,prEN 50770-6,81654,OT SIEM systems,Committee stage,,,,,Citation expected,No,Not direct product category for ordinary servo drive
