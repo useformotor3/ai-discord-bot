@@ -265,3 +265,10 @@
 - Commission Implementing Regulation (EU) 2025/2392 기술 설명을 포함하고, 네트워크 포트/부가 기능만으로 제품군을 단정하지 않는 분류 안전장치를 추가.
 - 데이터시트, 매뉴얼, 블록도, 통신/원격접속, 펌웨어/업데이트, SBOM, 시험·기술문서 등을 P0 제출 패키지로 정리.
 - 모델 자료가 없으므로 개별 모델 결론과 EVD 상태는 Unknown 유지.
+
+
+## PR #65/#66 및 제품 분류 원문 재검토
+- PR #65 merge `d1f96fa6bba297e31ed47ae1b96f59421c55b774`, Run #908: 161 passed, 1 xfailed; post-merge safety ref와 main identical.
+- PR #66 merge `9cb62579e4f45ebf57587cc19644c370cbe80ebb`, Run #910: 161 passed, 1 xfailed; traceability/source canaries 통과; post-merge safety ref와 main identical.
+- 2025/2392 EUR-Lex OJ 원문 recital (2)–(6), Annex I 기술 설명과 Article 8(1)을 재대조해 제품 분류 보고서의 통합 구성요소·core functionality·Annex IV 인증 관련 한계를 보완.
+- 제품별 증거가 아직 없으므로 적용성/분류/EVD-01~16 Unknown 유지.
