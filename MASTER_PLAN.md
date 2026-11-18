@@ -676,3 +676,8 @@
 - Added fail-closed bidirectional foreign-key validation between the 13 Guidance claims and the 35 CRA requirements, 15 IF interfaces and 36 SEC controls.
 - Added regression tests for missing reverse links, dangling matrix claim IDs and unknown related IDs.
 - Next independent source task: M/606 C(2026) 7861 Annex provenance, ESO adoption dates and current OJ harmonised-standard references.
+
+## PR #54 merged — 2026-11-18
+- OJ Guidance claim redline, matrix source updates, bidirectional cross-link validator and regression tests merged in `cd291c5161e7c3fdd9e494fe76749291a20b98de`.
+- Exact-head Run #868 success (161 passed, 1 xfailed); post-merge safety ref identical to main.
+- Next: M/606 C(2026) 7861 Annex provenance, ESO adoption date verification and current OJ harmonised-standard citations.
