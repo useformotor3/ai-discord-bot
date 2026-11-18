@@ -180,3 +180,11 @@
 - CSV claim register and audit report §8 updated. All claims remain non-binding Commission explanations, not new legal requirements.
 - Product-specific scope/classification/conformity remains Unknown; 15 interfaces remain product-unverified; 36 SEC controls remain unimplemented/unverified.
 - Next: recheck cross-links from Guidance claims to CRA requirements, IF matrix and SEC matrix; then independently revalidate M/606 C(2026) 7861 and its Annex/ESO adoption and OJ citation status.
+
+## Guidance–matrix 양방향 링크 검증 완료 — 2026-11-18
+- 13 Guidance claims ↔ 35 requirements ↔ 15 interfaces ↔ 36 SEC controls를 프로그램으로 양방향 대조: 누락 링크 0, dangling claim ID 0.
+- G-002의 IF-001–IF-013 범위 표기를 machine-readable 개별 ID 목록으로 확장.
+- G-005 ↔ IF-015 reverse link 추가: remote diagnostics/management의 interface/dependency 변경이 substantial-modification 평가에 관련될 수 있음.
+- 요구사항/IF/SEC matrix의 Commission Guidance source URL에 EUR-Lex OJ C/2026/6013 ELI를 primary로 추가하고 기존 Commission page URL은 보조/게시 이력으로 보존.
+- 상세 결과: `reports/CRA_CROSS_MATRIX_CONSISTENCY_AUDIT_2026-11-18.md` 최신 섹션.
+- 다음 최우선: M/606 C(2026) 7861 Annex 원문 provenance, ESO adoption dates, OJ harmonised-standard citation status 독립 검증.
