@@ -330,3 +330,10 @@
 - 포트/통신 기능만으로 Annex III Class I/II 또는 Annex IV 분류를 자동 결론내리지 않도록 경계 판단표를 포함.
 - 모델별 증거 미제공이므로 CRA 적용성/분류/EVD-01~16은 Unknown 유지. 데이터시트·매뉴얼·블록도·통신/원격접속 구성도 등을 P0 intake로 정의.
 - 다음: 문서·CSV·요구사항 추적성 CI 검증 및 PR merge. Article 2 M/606 ESO 비수락 조건은 별도 열린 조사 항목.
+
+
+## PR #65/#66 병합 및 제품 분류 법령 재대조 — 2026-11-18
+- PR #65 병합 커밋 `d1f96fa6bba297e31ed47ae1b96f59421c55b774`; exact-head Run #908 / ID `44221151662`: 161 passed, 1 xfailed; CRA traceability 13/15/35/36/41, bidirectional links true; JSONL event log 133 events. Artifact #14391145990, digest `sha256:f2a2f83b19d0488c874a032e83a41fcc4140dde1817d2a9c2fc171fdbd0b6c0f`, expires 2026-11-25 02:09:41 UTC. Post-merge safety `safety/post-merge-pr65-2026-11-18` identical to main.
+- PR #66 병합 커밋 `9cb62579e4f45ebf57587cc19644c370cbe80ebb`; exact-head Run #910 / ID `44221522135`: 161 passed, 1 xfailed; source integrity, compile, CRA traceability 13 claims/15 interfaces/35 requirements/36 SEC/41 M606 items, bidirectional links true, PDF/HTML canaries passed. Artifact #14391145990, digest `sha256:f2a2f83b19d0488c874a032e83a41fcc4140dde1817d2a9c2fc171fdbd0b6c0f`, expires 2026-11-25 02:09:41 UTC. Post-merge safety `safety/post-merge-pr66-2026-11-18` identical to main.
+- EUR-Lex 2025/2392 공식 OJ 본문 재대조: recital (2)–(6), Annex I의 #10 interface/#11 OS/#12 router-switch 기술 설명 및 Article 8(1) critical product 인증 절차를 보고서에 보완. Annex IV 카테고리 해당과 인증 의무 자동 발생을 구분.
+- 다음: M/606 Article 2의 ESO 수령일/비수락 사실은 공개 확인 자료를 계속 찾되 미확인 상태 유지. P0 모델 자료가 오면 제품 경계·intended purpose·연결성·core functionality부터 검증.
