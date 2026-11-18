@@ -743,3 +743,11 @@
 - 공식 Commission 안내 페이지가 개정 사실을 확인. Article 2의 1개월 비수락 조건과 ESO 수령일은 미확인.
 - OJ citation/Article 27 추정 적합성과 별도 단계임을 보고서/상황판에 명시한다.
 - 상세: `reports/CRA_M606_AMENDMENT_C2026_7861_DEADLINES_2026-11-18.md`.
+
+
+## PR #64 초기 CI 검증 기록 — 2026-11-18
+- Initial exact-head Run #900 / ID `44219718958` success: 161 passed, 1 xfailed.
+- CRA traceability: 13 claims / 15 interfaces / 35 requirements / 36 SEC / 41 M/606 items; bidirectional links true.
+- 9 official CRA PDF sources canary, artifact upload and official HTML canary passed.
+- Artifact #14390620457, digest `sha256:b7ced7629ab9e88bf44190d6d4f5fd50fc91f45bfc33a83ae09a02c1833e2f20`.
+- Record this result then rerun exact-head CI before merge.
