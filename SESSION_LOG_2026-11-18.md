@@ -259,3 +259,9 @@
 - Artifact #14388899741, SHA-256 `ecd0f1181457270eb5d3d9fd5e60c2271aafc730ac1250a025499aa614f5cb8b`.
 - Pre-merge `safety/pre-m606-amendment-2026-11-18`; post-merge `safety/post-merge-pr64-2026-11-18`, main과 identical.
 - 다음 단계는 Article 2 절차 확인, 제품 P0 intake checklist 및 제품 분류 매트릭스.
+
+## CRA 제품 적용성·분류 intake 초안 작성
+- 서보 드라이브 제품 경계, intended purpose, reasonably foreseeable use, Article 2 연결성/제외, Annex III/IV core functionality를 구분하는 intake 보고서 작성.
+- Commission Implementing Regulation (EU) 2025/2392 기술 설명을 포함하고, 네트워크 포트/부가 기능만으로 제품군을 단정하지 않는 분류 안전장치를 추가.
+- 데이터시트, 매뉴얼, 블록도, 통신/원격접속, 펌웨어/업데이트, SBOM, 시험·기술문서 등을 P0 제출 패키지로 정리.
+- 모델 자료가 없으므로 개별 모델 결론과 EVD 상태는 Unknown 유지.
