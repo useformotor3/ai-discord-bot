@@ -700,3 +700,11 @@
 - Exact-head Run #883 성공: 161 passed, 1 xfailed; 공식 CRA PDF 3종 hash canary 및 공식 HTML 9개 source canary 성공.
 - Pre/post safety refs 검증 완료; post-merge ref와 main identical.
 - 다음: CEN/CENELEC EN 40000 수평 표준 및 산업용 OT prEN 50770 작업의 최신 상태를 공식 기록과 대조한다. 제3자 카탈로그는 보조 자료로만 취급한다.
+
+
+## 2026-11-18 — CEN/CENELEC EN 40000 및 OT prEN 50770 상태 갱신
+- CEN 공식 레코드상 EN 40000-1-1:2026 Published (DOR 2026-11-02, DAV 2026-11-18); OJ citation은 No citation expected. 따라서 “CRA 표준 미발행” 같은 포괄적 표현을 제거하고 ESO publication과 OJ citation을 별도 상태로 관리한다.
+- FprEN 40000-1-3 Under Approval / Citation expected, prEN 40000-1-4 Work item. EN 40000-1-2는 ratification 2026-11-02 확인, 공식 상세 페이지 500 오류로 개별 원문 확인 미완료.
+- CENELEC 공식 레코드 prEN 50770-1~6은 Committee stage / Citation expected; DOR/DAV 미기재.
+- 상세 보고서 및 CSV 추적표: `reports/CRA_CEN_CENELEC_EN40000_OT50770_STATUS_2026-11-18.md`, `reports/CRA_CEN_CENELEC_EN40000_OT50770_STATUS_2026-11-18.csv`.
+- 다음: EN 40000-1-1/1-2 발행본 및 scope 확보, CENELEC OT 작업의 최신 stage 재조회, CRA OJ index 재확인.
