@@ -10,12 +10,18 @@
 
 > **기록 원칙:** 프로젝트의 공식 진행 상태와 재개 지점은 이 저장소에 기록합니다. 대화창의 기억에만 의존하지 않습니다.
 
-### 현재 기준점 — main / PR #88 사후 검증 완료 (2026-11-19)
-- main `16cdec76def2e8920d8fc2ca3b6a43e497d41d83`; exact-main Run #957 success, 162 passed / 0 xfailed.
-- PR #87에서 stale xfail을 수정해 162 passed / 0 xfailed를 확인했고 PR #88에서 상황판·계획·로그를 동기화했다. 참조 보안 아키텍처 및 MCU 예비 벤치마킹은 제품 입력 전 참고자료다.
+### 현재 기준점 — main / PR #89 사후 검증 완료 (2026-11-19)
+- main `9ac0b32189cdeb7789dc6993eccb0b5f3dc4b4cf`; exact-main Run #959 success, 162 passed / 0 xfailed.
+- PR #89에서 Annex III/IV core-functionality 분류와 제품 경계별 G1–G5 증거 게이트를 기존 보고서 및 EVD 매트릭스에 통합했다. 참조 보안 아키텍처 및 MCU 예비 벤치마킹은 제품 입력 전 참고자료다.
 - 실제 ST MCU part number 및 제어 사양은 미확인. 제품별 선정·교체 결론은 동일 조건 실측 후 결정.
 
 ## 현재 상태 — 2026-11-19
+
+- 최신 main: PR #89 merge 9ac0b32189cdeb7789dc6993eccb0b5f3dc4b4cf; exact-main Run #959 success, 162 passed / 0 xfailed.
+- 적용성 보고서에 Annex III/IV core-functionality 분류 게이트가 반영됨. 다음 작업은 EVD-01~EVD-16 책임·검증·합격 기준 강화.
+- 제품별 모델/SKU, 실제 MCU part number 및 제어 사양은 미확인.
+
+## 이전 상태 — 2026-11-18
 
 - 최신 main 기준: PR #88 merge 16cdec76def2e8920d8fc2ca3b6a43e497d41d83; exact-main Run #957 success, 162 passed / 0 xfailed.
 - 현재 CRA 제품 분류 심화 감사 브랜치: cra/applicability-core-functionality-audit-2026-11-19 (PR/CI 전). 적용성 보고서와 EVD 매트릭스에 Annex III/IV core-functionality 및 제품 경계 게이트를 통합 중.

@@ -88,3 +88,34 @@ EN 40000-1-2의 공개 scope는 제품 생애주기 전반의 일반 사이버�
 5. 제품별 분류 승인 전에는 EVD-01~EVD-16을 Verified/Pass로 변경하지 않는다. 문서 존재와 요구 충족은 다른 상태다.
 
 공식 근거: Regulation (EU) 2024/2847 Articles 2, 3, 6–8, 13, 32 및 Annexes I, III, IV; Commission Implementing Regulation (EU) 2025/2392 recitals (2)–(6), Annex I/II. 원문: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R2847 ; https://eur-lex.europa.eu/eli/reg_impl/2025/2392/oj/eng
+
+## 8. EVD별 책임 역할·생애주기·검증 방법·합격 게이트 — 2026-11-19
+
+이 절의 owner는 제조사가 조직을 구성할 때 사용할 **권고 책임 역할**이며 CRA가 특정 직책명을 법적으로 강제한다는 뜻이 아니다. Acceptance criterion은 법령 문구를 대체하는 규제 기준이 아니라 내부 설계·검증 완료를 위한 프로젝트 게이트다. 제품 사양·위험평가에 따라 수치 기준을 추가해야 하며, 증거가 없으면 Pass로 처리하지 않는다.
+
+| ID | 권고 책임 역할 | 주요 생애주기 | 검증 방법 | 내부 완료/합격 게이트 | 현재 상태 |
+|---|---|---|---|---|---|
+| EVD-01 | Product Owner + Regulatory/Compliance Lead | 기획·제품 정의·변경 | 모델/SKU·상표·공급 단위·구성요소·원격처리 목록을 계약/카탈로그/매뉴얼과 대조 | 시장 제공 단위와 제조사/수입자 등 역할이 전부 식별되고, 제품 경계·intended purpose에 승인 기록 존재 | Unknown |
+| EVD-02 | Cybersecurity Risk Owner + System/Safety Architect | 기획·설계·변경·운영 | 위험평가 방법 검토, 위협 시나리오 워크숍, 잔여위험 독립 검토 | 자산·위협·취약점·영향·처리·잔여위험이 연결되고 각 잔여위험에 승인/수용 주체가 기록됨 | Unknown |
+| EVD-03 | System Architect | 요구분석·설계·변경 | 포트/프로토콜 스캔, 구성자료 대조, 데이터흐름·신뢰경계 리뷰 | 모든 외부·내부 인터페이스와 서비스 접근경로에 목적·주체·방향·경계·자산이 지정됨 | Unknown |
+| EVD-04 | Security Architect + Firmware Lead | 설계·구현·생산 설정 | 보안 설계 리뷰, 공장 초기값/기본 구성 점검, hardening 시험 | 불필요 서비스·계정·포트가 비활성 또는 근거 있는 예외로 통제되고, 기본 설정과 변경 절차가 제품 버전별 검증됨 | Unknown |
+| EVD-05 | IAM/Security Engineer + Product Software Lead | 설계·구현·서비스·운영 | 역할별 positive/negative 접근시험, 세션·계정 폐기·권한변경 시험 | 권한표의 각 역할을 시험하고 비인가 동작은 거부되며, 계정 생성·변경·폐기 및 원격접근이 추적 가능 | Unknown |
+| EVD-06 | Network/Communications Engineer | 설계·구현·통합·현장 운영 | 프로토콜/포트 인벤토리, 패킷 분석, 인증·암호화 설정검사, protocol robustness 시험 | 모든 지원 프로토콜·평문 경로·관리 채널이 문서화되고, 보안 미적용 경로는 위험·보상통제·승인 근거가 존재 | Unknown |
+| EVD-07 | Firmware Lead + Verification Engineer | 구현·통합·회귀 | 경계값/비정상 입력·명령 시험, parser fuzzing, 파라미터 권한·무결성 시험 | 정의된 입력 클래스와 공격 경로가 시험되고, 비정상 입력에서 문서화된 fail-safe/error state 외 임의 상태변화가 발생하지 않음 | Unknown |
+| EVD-08 | Secure Update/Release Engineer | 설계·생산·배포·운영 | 서명/무결성 검증, 변조 이미지 거부, 전원차단·통신중단·저장공간 부족 복구 시험 | 승인된 이미지 검증과 실패 복구가 시험되고, 버전/설치결과 확인 및 롤백 정책이 문서화됨 | Unknown |
+| EVD-09 | SBOM/Supply-chain Lead + Build/Release Engineer | 빌드·릴리스·유지보수 | 독립 SBOM 파서/스캐너, lockfile·빌드 산출물·릴리스 버전 대조 | 직접·전이 의존성이 제품 릴리스와 연결된 기계판독 SBOM에 포함되고, 미식별/미해결 구성요소가 예외 승인 없이 남지 않음 | Unknown |
+| EVD-10 | PSIRT/Vulnerability Manager | 출시 전 준비·지원기간 전체 | 접수 채널 시험, triage 샘플 추적, 영향 버전·심각도·악용 가능성 재검토 | 모든 접수 건이 고유 ID·접수시각·영향 버전·분류·담당자·처리결정·상태를 갖고 추적됨 | Unknown |
+| EVD-11 | Product Security Engineer + QA/Regression Lead | 수정·검증·릴리스 | 취약점 재현, 수정 diff/code review, 회귀·호환성·관련 안전 영향 시험 | 원 취약점 재현/수정 확인과 회귀시험이 모두 통과하고, 수정 릴리스와 영향 제품 버전이 연결됨 | Unknown |
+| EVD-12 | PSIRT + Product Communications/Legal | 지원기간·공개·운영 | 공개 정책 tabletop, 보안 공지 정확성 및 연락채널 접근성 검토 | 연구자 연락·조정 공개·사용자 통지·보안 권고 흐름과 승인/기록이 준비되고 실제 채널이 작동 확인됨 | Unknown |
+| EVD-13 | Product Support Owner + Regulatory/Legal | 기획·출시·지원 종료 | 예상 사용기간·산업 유지주기·시장 약속·지원 리소스 근거 검토 | 지원기간 산정 근거, 보안 업데이트 약속, 지원 종료일/정책이 일관되고 사용자 제공 정보와 일치 | Unknown |
+| EVD-14 | Verification & Validation Lead + Compliance Lead | 검증·출시·변경 | 요구-통제-시험-결과-제품버전 양방향 추적 감사, 미검증 항목 샘플링 | 적용 요구사항마다 검증 방법·기준·결과·버전·승인자가 연결되고 제외/미시험은 근거와 잔여위험 승인 기록을 가짐 | Unknown |
+| EVD-15 | Incident Response Coordinator + Regulatory Reporting Owner | 출시 준비·시장 후 감시 | 모의 사고/취약점 분류 및 신고 의사결정 훈련, 시간기록 추적 | Art. 14/15 트리거·인지시각·책임자·보고경로·기한 산정이 훈련되고 증거 로그가 보존됨 | Unknown |
+| EVD-16 | Supplier Quality + Product Security + Change Control Owner | 조달·설계·생산·유지보수 | 공급자 자료·SBOM·취약점 공지 대조, 변경 영향분석, 대체부품 검토 | 중요 구성요소의 공급자/버전/취약점/업데이트 경로가 추적되고 변경이 위험평가·시험·기술문서에 반영됨 | Unknown |
+
+### 8.1 완료 판정 규칙
+- **문서 존재 ≠ 구현 확인 ≠ 시험 통과**다. 각 EVD는 evidence received, implemented/unverified, tested/pass 또는 tested/fail 상태를 구분한다.
+- 시험 기록에는 최소한 제품 모델·HW/FW 버전, 시험 환경, 절차/도구 버전, 입력/전제조건, 예상 결과, 실제 결과, 로그/원본 증거, 시험자·검토자, 날짜를 기록한다.
+- Acceptance criterion은 사전에 승인하고 시험 후 결과에 맞춰 소급 변경하지 않는다. 변경이 필요하면 변경 사유·영향평가·재승인을 기록한다.
+- 제품별 정량 임계값(예: 허용 지연, 복구 시간, 지원기간, 취약점 처리 SLA)은 현재 자료가 없어 임의 숫자를 부여하지 않는다. 제조사 사양·위험분석·법적 기한을 근거로 제품별로 정한다.
+- EVD 책임자는 조직 설계 권고일 뿐 법적 제조사 책임을 이전하지 않는다. 제조사 및 경제운영자의 법적 의무 주체는 CRA 원문으로 판단한다.
+

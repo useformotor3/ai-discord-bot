@@ -1,13 +1,19 @@
 # CRA 프로젝트 현재 상태 — 2026-11-19 KST
 
-> 이 문서는 2026-11-19 재개 시점의 최신 상태 스냅샷이다. 기존 날짜별 SESSION_LOG 및 PROJECT_LOG의 역사 기록을 대체하지 않는다. 충돌 시 본 문서의 최신 main 기준 사실과 원본 PR/Actions 증거를 우선한다.
+> 최신 상태 스냅샷. 역사 기록은 SESSION_LOG 및 PROJECT_LOG에 append-only로 보존한다.
 
-## 최신 main 기준점 — PR #88 및 사후 CI 완료 (2026-11-18)
-- PR #88 문서/상황판 동기화 squash merge: `16cdec76def2e8920d8fc2ca3b6a43e497d41d83`; PR #88 exact-head Run #956 success.
-- Pre-merge safety `safety/pre-pr88-merge-checkpoint-2026-11-18`; post-merge safety `safety/post-merge-pr88-2026-11-18`; post-merge safety == main.
-- Exact-main Run #957 / ID `44247025757` on merge SHA: **success**, 162 passed / 0 xfailed; source integrity, compile, CRA traceability (13/15/35/36/41), 9 official sources, corrigenda and Article 13(8) locator/quote canaries passed.
-- Run #957 artifact #14402396030, SHA-256 `e5b888f929acf1340a4954e3646c52aa09a03e4f33b249854adb70e355176fc4`, expires 2026-11-25 05:50:54 UTC.
-- PR #87 test-only xfail 정정으로 162 passed / 0 xfailed 기준을 확립했다. PR #88은 문서 전용 동기화였다. Production `main.py` 및 production `.github/workflows/run.yml`은 변경하지 않았다.
+## 최신 main 기준점 — PR #89 / Run #959 완료
+- PR #89 merge: 9ac0b32189cdeb7789dc6993eccb0b5f3dc4b4cf; exact PR head 592ebf0df9d5e92d0c6dceff64197b3a6a605840.
+- Exact-head Run #958 / ID 44414623512: success, 162 passed / 0 xfailed; source integrity, compile, CRA traceability, official PDF and live source canaries passed.
+- Exact-main Run #959 / ID 44414766515 on merge SHA: success, 162 passed / 0 xfailed. Artifact #14477664489, SHA-256 afe38aebeb327d67f3222093c16f278cc0f84f5a5ca77f3de45c496bca1364f5, expires 2026-11-25 22:47:10 UTC.
+- Pre-merge safety safety/pre-pr89-merge-checkpoint-2026-11-19 points to prior main 16cdec76def2e8920d8fc2ca3b6a43e497d41d83. Post-merge safety safety/post-merge-pr89-2026-11-19 equals main at 9ac0b32189cdeb7789dc6993eccb0b5f3dc4b4cf.
+- PR #89 documentation-only; production main.py and production workflow unchanged.
+
+## 현재 기술 게이트
+- Annex III/IV classification is based on the product's core functionality as a whole under Implementing Regulation (EU) 2025/2392. Integrated components do not automatically classify the complete drive.
+- CRA applicability under Article 2 and category classification under Articles 7–8 are separate decisions. Annex III/IV non-listing does not mean CRA exclusion.
+- Product-specific model/SKU, manuals, network topology, remote-processing dependencies and actual MCU part number remain unknown. Individual product classification remains Unknown / Not assessed.
+- Next: strengthen EVD-01–EVD-16 with role ownership, lifecycle phase, verification method and acceptance gates; then obtain product-specific P0 inputs and map EVD/SEC evidence.
 
 ## 추가 프로젝트 기록 — PR #86 및 PR #87
 - PR #86 current-status/evidence-gate documentation sync merge `7ef3ecb44837826f53c2cad5a38787172ee430ab`; exact-head Run #951 and exact-main Run #952 success, 161 passed / 1 xfailed. Artifacts: #14401607639 (`sha256:41428d58615f76f6aee7010ff96ab91bc6d77ce84bb13e025220678d45a9b352`) and #14400948497 (`sha256:84c4a8855d7b254361438551e4489df75d477cc7431cc5c1a12a3a813d97ad42`).

@@ -451,3 +451,11 @@
 - 기존 적용성 보고서에 제품 경계별 분류표와 G1–G5 승인 게이트를 추가하고, EVD 매트릭스에 분류/통합 구성요소/평가 경로 연결을 추가했다.
 - 모델·SKU·매뉴얼·통신 토폴로지·실제 MCU 부품번호가 없어 개별 제품 판정은 Unknown / Not assessed로 유지한다. 표준 전문 조항별 검증이나 제품 시험 완료를 주장하지 않는다.
 - 작업 브랜치 cra/applicability-core-functionality-audit-2026-11-19; PR/CI/병합 전. 기준 main 16cdec76def2e8920d8fc2ca3b6a43e497d41d83. production main.py 및 production workflow 변경 없음.
+
+## PR #89 병합 및 main 사후 검증 — 2026-11-19
+- PR #89 exact-head SHA 592ebf0df9d5e92d0c6dceff64197b3a6a605840, Run #958 / ID 44414623512: success, 162 passed / 0 xfailed; source integrity, compile, CRA cross-matrix traceability, live official CRA PDF/source canaries passed.
+- Run #958 artifact #14477414754, digest sha256:56c383a69a1282d41614fcd405d5d71056f025963a67b0ff95e47928a939bc78.
+- PR #89 squash merge 9ac0b32189cdeb7789dc6993eccb0b5f3dc4b4cf. Pre-merge safety safety/pre-pr89-merge-checkpoint-2026-11-19; post-merge safety safety/post-merge-pr89-2026-11-19; post ref == main.
+- Exact-main Run #959 / ID 44414766515: success, 162 passed / 0 xfailed; source integrity, compile, CRA traceability, 9 official sources, corrigenda and Article 13(8) locator/quote canaries passed.
+- Run #959 artifact #14477664489, digest sha256:afe38aebeb327d67f3222093c16f278cc0f84f5a5ca77f3de45c496bca1364f5.
+- Next substantive work: expand EVD-01~EVD-16 with accountable roles, lifecycle stage, verification method and acceptance gates. Product-specific facts remain missing; no product-specific pass/classification claim.
