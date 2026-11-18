@@ -328,3 +328,11 @@
 - 단일 MCU + MPU/RTOS isolation vs communication/control dual-MCU 분리 선택 기준을 비교했다. 특정 아키텍처·부품을 CRA 의무로 단정하지 않는다.
 - 설계 후보와 수용 기준을 EVD-01~16 및 SEC-001~036에 연결하고, malformed frame, unauthorized write, image tampering, downgrade, power-loss, interrupt/resource exhaustion, key lifecycle, log integrity 등 검증 시나리오를 명시했다.
 - 제품별 회로/부품/펌웨어/프로토콜 증거 및 시험 결과가 없으므로 문서 상태는 reference design only / implementation unverified.
+
+
+## PR #73 병합 및 사후 exact-main 검증 완료 — 2026-11-18
+- PR #73 exact head `cd78b6694384d550ef68d7f1b7ec2972a02a663e`, Run #925 success.
+- Merge `16ab607a919c6bfa4fee8dc90ab5af2ea2f53352`; pre/post safety refs `safety/pre-pr73-merge-checkpoint-2026-11-18`, `safety/post-merge-pr73-2026-11-18`.
+- Main exact Run #926 / ID `44230997446`: success, 161 passed / 1 xfailed; source integrity, compile, 13/15/35/36/41 traceability, 9 official sources, corrigenda and Article 13(8) locator/quote canaries passed.
+- Artifact #14394634118, SHA-256 `cf7d6d6ef7020d5381a4a2f201f50bf3171251155459505420ffce16998ef027`.
+- Main and post-merge safety ref are identical. Reference architecture v0.2 work was then started on a separate CRA branch; product-specific implementation remains unverified.
