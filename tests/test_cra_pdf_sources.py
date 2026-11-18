@@ -23,7 +23,7 @@ class FakeReader:
         self.pages = [FakePage(
             ("C(2026) 5252 final This guidance is not binding data connection "
              "remote data processing C/2026/6013 Cyber Resilience Act "             "remote data processing COMMISSION IMPLEMENTING DECISION "
-             "C(2026) 7861 final European standard 31/01/2027 ") * 5
+             "C(2026) 7861 final European standard 31/01/2027 Version: V 2.0 Date: 2026-06-03 M/606 Publication forecast ") * 5
         )]
         self.is_encrypted = False
 
@@ -97,6 +97,7 @@ def test_fetch_all_writes_pdf_text_and_manifest(tmp_path):
         FakeResponse(url=pdf.PDF_SOURCE_CATALOG[0]["url"]),
         FakeResponse(url=pdf.PDF_SOURCE_CATALOG[1]["url"]),
         FakeResponse(url=pdf.PDF_SOURCE_CATALOG[2]["url"]),
+        FakeResponse(url=pdf.PDF_SOURCE_CATALOG[3]["url"]),
     ])
     with patch.object(pdf, "PdfReader", FakeReader):
         results = pdf.fetch_all_pdf_sources(
