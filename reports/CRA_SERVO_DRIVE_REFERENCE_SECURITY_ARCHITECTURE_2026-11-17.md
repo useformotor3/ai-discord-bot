@@ -1,7 +1,7 @@
 # CRA 산업용 서보 드라이브 참조 보안 아키텍처
 
-- 문서 버전: v0.1 (일반 참조 설계 / 특정 제품 구현 전)
-- 기준일: 2026-11-17
+- 문서 버전: v0.2 (일반 참조 설계 / 설계 검토 반영 / 특정 제품 구현 전)
+- 기준일: 2026-11-18
 - 활성 범위: CRA 사이버보안 요구사항
 - 관련 문서:
   - [CRA 통합 규제·기술 준수 보고서 v0.2](CRA_INTEGRATED_COMPLIANCE_REPORT_2026-11-17.md)
@@ -25,44 +25,54 @@
 
 ```mermaid
 flowchart LR
-  subgraph EXT["외부 환경 / 신뢰 경계"]
+  subgraph EXT["외부 환경 / 제품 경계 밖"]
     PLC["PLC / 산업 네트워크"]
-    ENG["Engineering PC / Commissioning Tool"]
+    ENG["Engineering PC / Service Tool"]
     CLOUD["선택적 Cloud / RDPS"]
-    SUP["제조사 보안 운영\nSBOM · CVD · 패치 · SRP"]
+    OPS["제조사 운영\nSBOM · CVD · PSIRT · 릴리스"]
   end
 
   subgraph DRIVE["서보 드라이브 제품 경계"]
-    NET["Ethernet / Fieldbus\nEtherCAT · PROFINET · EtherNet/IP"]
-    SVC["Service Interface\nUSB · UART · RS-232 · Debug"]
-    COMM["통신·관리 처리\nProtocol Stack · Command Parser"]
-    AUTH["접근통제·인증\nIdentity · Authorization"]
-    BOOT["Boot ROM / Bootloader\nRoot of Trust (선택 설계)"]
-    VERIFY["Firmware Verification\nImage Integrity · Version Policy"]
-    FW["Control Firmware"]
-    CTRL["Real-time Control MCU/SoC\nCurrent / Speed / Position Loop"]
-    PWM["PWM / Gate Driver Interface"]
+    NET["Ethernet / Fieldbus / Serial"]
+    SVC["USB / Service / Debug"]
+    PARSER["통신 수신·파서\nFrame / Length / State checks"]
+    INGRESS["프로토콜·세션·경계 통제\n지원되는 보안 기능 + 네트워크 경계"]
+    CMDGATE["명령·파라미터 게이트\n권한 · 범위 · 상태 · Rate"]
+    MGR["관리 서비스\n설정 · 진단 · 계정 · 업데이트"]
+    AUTH["인증·권한 정책"]
+    UPDATE["업데이트 관리자"]
+    STAGE["비휘발성 staging / A-B slots"]
+    ROM["Boot ROM / 초기 신뢰점"]
+    VERIFY["이미지·Manifest 검증\n제품/버전 정책"]
+    APP["검증된 Firmware"]
+    RT["실시간 제어 영역\nCurrent / Speed / Position loop"]
+    PWM["PWM / Gate Driver"]
     MOTOR["Motor / Encoder"]
-    NVM["Non-volatile Storage\nConfig · Logs · Update Slots"]
-    KEY["Protected Key / Device Identity\nSecure Element or Protected MCU Storage"]
-    WDG["Watchdog / Health Monitor"]
+    NVM["보호된 설정·보정·로그 저장소"]
+    KEY["기기 ID / 키 보호\nMCU 보호영역 또는 별도 보안소자"]
+    MON["보안 이벤트·상태 모니터"]
   end
 
-  PLC --> NET --> COMM
-  ENG --> SVC --> COMM
-  CLOUD -. "필수 RDPS인 경우만" .-> COMM
-  COMM --> AUTH
-  AUTH --> FW
-  BOOT --> VERIFY --> FW
+  PLC --> NET --> PARSER --> INGRESS --> CMDGATE --> RT
+  ENG --> SVC --> MGR
+  CLOUD -. "제품 기능에 필수인 RDPS인 경우" .-> MGR
+  MGR --> AUTH
+  AUTH --> CMDGATE
+  AUTH --> UPDATE
+  UPDATE --> STAGE --> VERIFY
+  ROM --> VERIFY --> APP
   KEY --> VERIFY
   KEY --> AUTH
-  FW <--> NVM
-  FW --> CTRL --> PWM --> MOTOR
-  MOTOR --> CTRL
-  CTRL --> WDG
-  FW --> WDG
-  SUP -. "취약점·업데이트 운영" .-> CLOUD
-  SUP -. "서명된 업데이트/권고" .-> ENG
+  APP --> RT
+  APP <--> NVM
+  RT --> PWM --> MOTOR
+  MOTOR --> RT
+  PARSER --> MON
+  AUTH --> MON
+  UPDATE --> MON
+  APP --> MON
+  OPS -. "SBOM / 취약점 / 릴리스 증거" .-> MGR
+  OPS -. "서명된 패키지 / 공지" .-> ENG
 ```
 
 ### 2.1 블록별 책임
@@ -170,7 +180,74 @@ flowchart LR
 9. SBOM, vulnerability handling/CVD, support period, security update release process.
 10. Machinery/기타 EU 법령 인증서가 있다면 해당 인증서의 제품·위험 범위.
 
-## 7. 제한사항 및 다음 단계
+
+## 7. v0.2 설계 검토 — 데이터 경로와 관리 경로 분리
+
+기존 도식의 `COMM → AUTH → FW` 연결은 실시간 cyclic command, 특권 설정 변경, 펌웨어 업데이트를 같은 처리 흐름으로 오해할 수 있어 위 도식에서 구분했다.
+
+- **실시간 데이터 경로**: Ethernet/fieldbus/serial 수신 → 길이·형식·상태 검증 → 프로토콜/세션 및 네트워크 경계 통제(지원되는 범위) → 명령/파라미터 게이트 → 실시간 제어 루프.
+- **관리 경로**: engineering/service/cloud(제품에 실제 존재하는 경우) → 관리 서비스 → 인증·권한 정책 → 설정/진단/업데이트 기능.
+- **부팅·업데이트 경로**: 제조사 릴리스 패키지 → staging → manifest·서명·제품모델·버전 검증 → boot chain 재검증 → 실행. 실제 부트 ROM/보호 키 기능은 선택 MCU의 reference manual과 silicon revision으로 확인한다.
+- **감사·관찰 경로**: 통신·인증·업데이트·설정·보안 상태 이벤트를 제품 위험에 필요한 범위로 기록하되, 저장공간 고갈·로그 변조·민감정보 과수집을 함께 시험한다.
+
+중요한 제한: 모든 필드버스 cyclic frame마다 별도 사용자 인증이나 암호화를 강제하는 설계를 가정하지 않는다. 프로토콜이 제공하는 인증/보안 기능, 네트워크 분할, 관리 명령의 권한통제, 제품 위험평가를 함께 검토한다. 실시간 루프에 비결정적 네트워크/암호화 작업을 직접 배치하지 않는다.
+
+## 8. 단일 MCU와 분리형 제어 구조 선택 기준
+
+| 구조 후보 | 장점 | 위험/검증 부담 | 채택 판단 기준 |
+|---|---|---|---|
+| 단일 MCU + 하드웨어/RTOS 격리 | BOM·전력·통신 지연·개발 복잡도 절감 가능 | 공유 CPU/RAM/DMA/interrupt/flash가 공격·오류 영향을 전파할 수 있음 | MPU/privilege, 메모리·DMA 경계, watchdog, 자원 예산, 실시간 WCET/jitter 측정으로 격리 목표를 입증할 수 있을 때 |
+| 통신/관리 MCU + 실시간 제어 MCU 분리 | 외부 입력 처리와 제어 루프의 장애·공격 영역을 구조적으로 분리 가능 | BOM·전력·보드 공간·공급망·펌웨어 이중화 및 inter-processor protocol 검증 비용 증가 | 외부 노출·복잡한 프로토콜·원격관리·실시간 영향 위험이 단일 MCU 격리로 충분히 낮아지지 않을 때 |
+| 별도 보안 소자 추가 | 기기 identity/키 저장 및 특정 암호 작업을 분리할 수 있음 | 공급/수명주기/프로비저닝/복구·인증서 관리 복잡성 | MCU 내 보호영역으로 키 수명주기와 공격자 모델을 충족하지 못한다는 근거가 있을 때 |
+
+**선택 원칙:** 이 표는 특정 MCU나 보안소자 채택 권고가 아니라 설계 의사결정 기준이다. CRA가 dual-MCU, secure element, TPM, 특정 암호 알고리즘을 일률적으로 요구한다고 해석하지 않는다. ST/TI 등 부품 비교는 정확한 part number, silicon revision, 보안 기능 reference manual, errata, 수명주기/공급 자료를 확보한 뒤 수행한다.
+
+## 9. 핵심 설계 통제와 수용 기준
+
+| 영역 | 설계 후보 및 수용 기준 | 최소 검증 시나리오 | 연결 추적 |
+|---|---|---|---|
+| 입력·프로토콜 | length/format/state validation, parser bounds, 명령별 read/write 분류, 지원하지 않는 기능·포트 비활성화 | malformed/truncated/oversized frame, fuzz, replay/sequence, parser crash, protocol downgrade | EVD-03/06/07; SEC-009/010/011/032 |
+| 특권 명령·파라미터 | 관리 write는 인증·권한·범위·운전상태 검증을 통과. cyclic setpoint는 프로토콜/네트워크 경계와 실시간 수용 정책을 별도 정의 | 무권한 parameter write, 경계값, 상태전이 위반, flood, 계정 만료/취소 | EVD-05/06/07; SEC-005/007/009/012 |
+| 부팅 신뢰 | boot chain 각 단계에서 다음 단계의 진위·무결성 확인; root key 보호와 key rotation/revocation 계획; 복구 이미지도 동일 검증 | 변조 이미지, 잘못된 모델 이미지, 손상된 manifest, 키 만료/취소, 전원 차단 | EVD-08; SEC-007/021 |
+| 업데이트·복구 | 제품/하드웨어 revision/버전/의존성 확인, 안전한 staging, 원자적 전환, 복구 가능성, 지원기간 내 업데이트 제공; anti-rollback은 복구 불능을 만들지 않도록 정책화 | 서명 오류, downgrade, 중간 전원 차단, 저장공간 부족, 구버전 복구, A/B slot 손상 | EVD-08/11; SEC-004/021/024 |
+| 디버그·서비스 | 양산 모드에서 불필요 debug 경로 잠금/비활성화; 서비스 개방은 승인·시간 제한·감사 가능하도록 위험기반 설계 | SWD/JTAG/UART unlock, 공용 credential, 서비스 종료 후 재잠금, 물리 접근 가정 | EVD-03/05; SEC-003/005/011 |
+| 키·기기 ID | 제조 시 고유 ID/키 프로비저닝, 제조·서비스·폐기 단계의 접근 통제, 비밀정보 로그/백업 유출 방지 | 키 추출/복제, 초기화, 교체, 취소, 생산라인 권한 및 폐기 절차 | EVD-03/05/06; SEC-005/006/007 |
+| 실시간 격리 | security processing이 control loop의 deadline/jitter/CPU budget을 침해하지 않음; 오류 시 명시적 bounded behaviour 정의 | worst-case packet load, interrupt storm, DMA contention, task starvation, CPU/RAM/flash exhaustion | EVD-02/03/07; SEC-009/010/012 |
+| 로깅·삭제 | 접근·설정·업데이트·보안 이벤트를 최소 수집, 보호·용량관리, 사용자 opt-out 해당 여부 검토, 안전한 삭제 | 로그 변조/삭제, clock skew, storage full, 개인정보/credential 누출, factory reset | EVD-03/14; SEC-013/014 |
+| 공급망·빌드 | 릴리스 버전과 SBOM/소스/빌드 산출물 연결, third-party component due diligence, signing key separation | SBOM-to-image reconciliation, 취약 dependency, build compromise, 서명키 접근 감사 | EVD-09/10/16; SEC-015/016/030 |
+
+수용 기준은 법령 문언을 대체하지 않는다. 법적 목표는 CRA 조항 및 Annex I의 제품 위험/특성에 따라 판정하고, 위 기술 항목은 이를 입증하기 위한 위험기반 구현·검증 후보로 관리한다.
+
+## 10. 업데이트·부팅 검증 순서
+
+1. 제조사 release pipeline에서 제품 모델, HW revision, firmware version, dependency/SBOM, build provenance를 하나의 release identity로 묶는다.
+2. update manifest에 대상 제품·버전·필요한 전제조건·패키지 digest를 포함하고, 신뢰된 서명 검증을 수행한다. 구체 암호 알고리즘과 키 길이는 부품 지원·위협모델·표준/정책에 따라 결정한다.
+3. 장치에서 패키지 진위·무결성·대상 모델·버전 정책을 검증한 후 비활성 slot 또는 안전한 staging에 기록한다.
+4. 부팅 시 ROM/bootloader가 다음 단계의 무결성을 검증하고, 실패 시 승인된 recovery path만 실행한다.
+5. 성공 부팅·자가진단·버전 확인 뒤 active slot을 확정하고, 실패/전원 차단 시 일관된 복구 상태를 검증한다.
+6. 보안 업데이트 제공 이력과 사용자 안내, 각 업데이트의 장기 이용 가능 기간을 별도 관리한다(Article 13(9) 기준).
+
+## 11. 제품별 설계 확정에 필요한 추가 입력
+
+현재 참조 설계의 미확정 항목은 다음과 같다. 자료가 없으므로 임의로 부품·기능을 가정하지 않는다.
+
+- MCU/SoC 정확한 part number, silicon revision, security feature/errata, lifecycle status.
+- single/dual MCU 여부, CPU/MPU/RTOS/task/interrupt/DMA/memory partitioning.
+- boot ROM, secure boot, debug lifecycle, key storage/provisioning 지원.
+- flash topology, update slot, recovery image, power-loss behaviour, rollback/anti-rollback policy.
+- fieldbus/ethernet/serial/USB/wireless 실제 포트, 프로토콜/stack 버전 및 명령 권한 구조.
+- engineering tool, remote service, cloud/RDPS의 intended purpose, 계약/책임 주체 및 기능 필수성.
+- parameter map, safety-related boundary, real-time WCET/jitter/CPU/RAM budget.
+- 제조/서비스 key lifecycle, SBOM, PSIRT/CVD, support period, update archive 운영 증거.
+
+## 12. v0.2 검토 상태 및 다음 단계
+
+- 문서 수준: 참조 아키텍처의 경로 구분과 설계 수용 기준을 구체화했다.
+- 제품 수준: 미검증. 실제 회로/부품/펌웨어/프로토콜/시장 공급 증거가 없어 특정 설계의 적합성·보안성·실시간성·기능안전성을 승인하지 않는다.
+- 시험 수준: 미실시. 위 시나리오는 시험 계획 후보이며 pass/fail 결과가 아니다.
+- 다음: 제품 자료 intake 이후 block-to-component mapping, MCU 후보 비교(ST/TI), real-time resource budget, update boot chain, interface threat model을 실제 제품 variant별로 작성한다.
+
+## 13. 제한사항 및 다음 단계
 
 - 이 문서는 제품별 회로도/펌웨어를 분석하지 않은 참조 아키텍처다.
 - 특정 MCU/secure element/암호 알고리즘/필드버스 보안 기능을 CRA가 직접 의무화한다고 주장하지 않는다.

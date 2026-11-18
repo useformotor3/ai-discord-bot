@@ -813,3 +813,16 @@
 - PR #72 merge `293a27a8ea2a8e03f58db50bbe27d2aaea194c8d`; exact-head Run #923 and exact-main Run #924 both success.
 - Run #924: 161 passed / 1 xfailed; CRA traceability and live official source canaries passed. Artifact #14394119675, digest `sha256:43a5e60b947890886baeee6c355beae857928f3c47deb9d76489244199accb3a`.
 - Pre/post safety refs preserved; post-merge ref == main. Continue with independent product-agnostic architecture verification and standards status updates; no model-specific claims without product evidence.
+
+
+## 참조 아키텍처 v0.2 설계 보강 — 2026-11-18
+- 실시간 cyclic data path, privileged management path, secure update/boot path 및 event logging path를 분리한다.
+- 단일 MCU + MPU/RTOS isolation과 dual-MCU split은 위험·실시간성·BOM·복구·공급망을 기준으로 비교하며, 특정 구성을 선결하지 않는다.
+- secure boot, signed update, key storage 등은 MCU 기능/부품 revision 검증 전 확정하지 않는다. 기술 선택은 CRA 결과 요구와 구체 구현 후보를 분리한다.
+- 설계 수용 기준을 EVD-01~16 및 SEC-001~036에 연결하고, 모델별 회로·부품·시험 증거 확보 전에는 모든 제품별 상태를 Unknown/미검증으로 유지한다.
+
+
+## PR #73 병합 완료 및 exact-main 검증 — 2026-11-18
+- Merge `16ab607a919c6bfa4fee8dc90ab5af2ea2f53352`; exact-head Run #925 및 exact-main Run #926 success.
+- Run #926: 161 passed / 1 xfailed; source integrity, compile, CRA traceability, 9 official sources and Article 13(8) canaries passed. Artifact #14394634118, digest `sha256:cf7d6d6ef7020d5381a4a2f201f50bf3171251155459505420ffce16998ef027`.
+- Pre/post safety refs preserved; post-merge ref == main. Next architecture update is in `cra/servo-drive-security-architecture-v02-2026-11-18` and must pass exact-head CI before merge.
