@@ -563,3 +563,9 @@
 
 - Latest pre-metadata exact-head validation: Run #857 (ID `44205723336`), 158 passed / 1 xfailed, all stages successful; artifact #14383167818.
 - Provenance manifest updated to Run #857; final PR head requires one fresh CI before merge.
+
+## PR #52 병합 완료 — 2026-11-18
+- OJ C/2026/6013 guidance source integration and 13 claim locator migration merged as `d3956b7b364c507b8d59dcfc056763f2829ea867`.
+- Exact-head Run #861 success: 158 passed, 1 xfailed; official EUR-Lex OJ PDF primary acquisition fallback=False.
+- Pre-merge ref: `safety/pre-merge-cra-guidance-oj-6013-2026-11-18`; post-merge ref: `safety/post-merge-cra-guidance-oj-6013-2026-11-18`.
+- Latest status and next steps: [PROJECT_STATUS_CURRENT.md](PROJECT_STATUS_CURRENT.md). Claim/page crosswalk and provenance: `reports/CRA_OFFICIAL_GUIDANCE_AND_M606_ANNEX_AUDIT_2026-11-17.md` §7.

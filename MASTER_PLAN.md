@@ -651,3 +651,9 @@
 3. G-001–G-013의 page locator는 OJ 61-page PDF 기준으로 갱신했다. 다음에는 claim-by-claim substantive redline을 수행하고 문언 차이를 해결한다.
 4. ANFR mirror는 historical copy로 보존하며 OJ PDF와 byte/text identity를 주장하지 않는다.
 5. M/606 C(2026) 7861 및 Annex 최신 provenance, ESO adoption dates와 OJ harmonised-standard citation status를 별도 공식 출처에서 재검증한다.
+
+## PR #52 병합 완료 및 다음 단계 — 2026-11-18
+- OJ C/2026/6013 source acquisition, OJ page locator migration for 13 Guidance claims, provenance validator and CI updates merged in `d3956b7b364c507b8d59dcfc056763f2829ea867`.
+- Exact-head Run #861 success: 158 passed, 1 xfailed; three PDF sources and official CRA HTML canary succeeded.
+- Pre/post safety refs recorded in PROJECT_STATUS_CURRENT.
+- Next: G-001–G-013 claim-by-claim substantive redline against OJ text; inspect claim-specific conditions, exceptions and footnotes, and verify relevant OJ page images. Then reconcile interface, requirement and SEC cross-links without converting non-binding Guidance into legal requirements.
