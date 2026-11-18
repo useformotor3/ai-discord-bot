@@ -17,6 +17,11 @@
 - Artifact #14394119675, SHA-256 `43a5e60b947890886baeee6c355beae857928f3c47deb9d76489244199accb3a`, expires 2026-11-25 03:29:17 UTC. PDF provenance hashes match Run #922; Guidance remains ANFR fallback=True, OJ Guidance and M/606 Annex fallback=False.
 - PR #72 changed project-control documents only; runtime/workflow/secrets/state/history/archive/legacy SIL 3 materials untouched.
 
+## 최신 설계 산출물 — 참조 보안 아키텍처 v0.2 (2026-11-18)
+- `reports/CRA_SERVO_DRIVE_REFERENCE_SECURITY_ARCHITECTURE_2026-11-17.md`를 v0.2로 보강하는 작업 브랜치 `cra/servo-drive-security-architecture-v02-2026-11-18`에서 작성 중.
+- 실시간 데이터 경로와 관리/업데이트 경로 분리, 단일 MCU vs 통신·제어 MCU 분리 선택 기준, 부팅/업데이트 검증 순서, 설계 수용 기준 및 EVD/SEC 추적을 추가.
+- 제품별 부품/회로/펌웨어가 없으므로 참조 설계일 뿐 제품 구현·시험·적합성 판정은 미완료.
+
 ## 활성 범위
 - 활성 프로젝트: EU Cyber Resilience Act(CRA) 조사·요구사항 추적·제품 적용성/기술 설계·보고서 검증.
 - SIL 3 기능안전 자료는 과거 산출물로 보존하며 비활성이다. 별도 명시적 재개 지시 전까지 후속 작업하지 않는다.
