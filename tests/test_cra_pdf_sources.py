@@ -23,7 +23,7 @@ class FakeReader:
         self.pages = [FakePage(
             ("C(2026) 5252 final This guidance is not binding data connection "
              "remote data processing C/2026/6013 Cyber Resilience Act "             "remote data processing COMMISSION IMPLEMENTING DECISION "
-             "C(2026) 7861 final European standard 31/01/2027 ") * 5
+             "C(2026) 7861 final European standard 31/01/2027 Version: V 2.0 Date: 2026-06-03 M/606 Publication forecast ") * 5
         )]
         self.is_encrypted = False
 
@@ -122,3 +122,4 @@ def test_guidance_oj_c6013_is_fetched_from_eurlex_primary_without_fallback():
     assert item["id"] == "CRA-GUIDANCE-OJ-2026-6013"
     assert item["fallback_used"] is False
     assert item["final_url"] == definition["url"]
+

@@ -207,9 +207,9 @@ def validate_traceability(root="."):
     _require(len(item_numbers) == len(set(item_numbers)),
              "M/606 mapping contains duplicate item numbers", errors)
     item18_map = next((row for row in m606_map if row.get("M/606 Annex I item") == "18"), {})
-    _require("EN 3" in item18_map.get("PDF printed page locator", "")
+    _require("deadline cell on EN 2" in item18_map.get("PDF printed page locator", "")
              and "visually confirmed" in item18_map.get("PDF printed page locator", ""),
-             "M/606 item 18 must point to visually confirmed EN 3 deadline cell", errors)
+             "M/606 item 18 must point to visually confirmed EN 2 deadline cell", errors)
 
     for row in claims:
         _require(row.get("Category") == "official_explanation",
@@ -261,8 +261,8 @@ def validate_traceability(root="."):
                    if item.get("annex_item") == 18), {})
     _require(item18.get("deadline") == "31/01/2027" and item18.get("status") == "confirmed",
              "M/606 item 18 deadline visual confirmation missing", errors)
-    _require(item18.get("printed_page_number") == 3,
-             "M/606 item 18 provenance must locate deadline cell on printed EN 3", errors)
+    _require(item18.get("printed_page_number") == 2,
+             "M/606 item 18 provenance must locate deadline cell on printed EN 2", errors)
 
     log_lines = data["project_log"].read_text(encoding="utf-8").splitlines()
     log_ids = []
