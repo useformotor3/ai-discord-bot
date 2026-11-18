@@ -682,3 +682,10 @@
 ### M/606 수락 상태 구분
 - 원래 M/606은 CEN-CENELEC 공식 발표상 2025-04-03 CEN, CENELEC, ETSI 수락 확인.
 - 개정 결정 C(2026)7861의 Article 2 절차(각 ESO 수령일 및 1개월 내 비수락 통지)는 별도 사실이며 아직 공개자료로 확인하지 못했다. 두 상태를 혼동하지 않는다.
+
+
+### PR #69 병합 완료
+- PR #69 merge `8089cb96fdeba390dafe6991b19abfa1bc5b3e25`; Run #916 success: source integrity, compile, CRA traceability, full tests and official PDF/HTML canaries passed.
+- Artifact #14391159512, digest `sha256:a71b8d12c9c1bb627da1b8d771ed2fda04ea179a721a1c55add3d5e28e16a1da`.
+- Original M/606 accepted 2025-04-03; C(2026)7861 amendment Article 2 separate condition still unconfirmed.
+- Post-merge safety ref `safety/post-merge-pr69-2026-11-18` == main.
