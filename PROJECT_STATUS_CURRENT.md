@@ -268,3 +268,13 @@
 - Corrected key fact: EN 40000-1-1:2026 is CEN Published (DAV 2026-11-18) but CEN says no CRA OJ citation expected. This does not create Article 27 presumption.
 - Detailed report/CSV: `reports/CRA_CEN_CENELEC_EN40000_OT50770_STATUS_2026-11-18.md/.csv`.
 - Next: obtain/inspect EN 40000-1-1 and 1-2 final texts, retry CEN 1-2 official record, and refresh CENELEC OT project stages/OJ index.
+
+
+
+## 최신 작업 — CRA 요구사항–증거 추적 매트릭스 (2026-11-18)
+- 작업 브랜치: `cra/requirements-to-evidence-matrix-2026-11-18`; 기준 main: `e461c6246a90f3a6035ba2044da800ba349352f7`.
+- 신규 산출물: `reports/CRA_REQUIREMENTS_TO_EVIDENCE_MATRIX_2026-11-18.md` 및 동반 CSV.
+- CRA 법적 근거와 제품별 통제·시험·최소 증거를 16개 EVD 항목으로 연결했다. 범위는 제품 경계, 위험평가, 자산/공격면, 보안 설계, 접근통제, 통신, 입력 무결성, 업데이트, SBOM, 취약점 처리, 공개, 지원기간, 기술문서, 신고, 공급망/변경관리다.
+- EN 40000-1-2는 공개 scope만 사용하고 final text/clause 확인 전 normative clause mapping을 하지 않았다. EN 40000-1-3은 Under Approval scope만 참고한다. EN 40000-1-1 Published는 용어 정합성에만 활용한다.
+- 제품별 모델/설계/시험 자료가 없으므로 16개 행은 모두 Unknown / evidence pending. 이 표는 적합성 판정 또는 법률 의견이 아니다.
+- 다음: CSV/보고서 정합성 검증 및 기존 CRA traceability validator/CI 범위 확인 후 exact-head CI, PR, merge 안전절차 수행.
