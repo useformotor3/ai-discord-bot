@@ -88,3 +88,13 @@
 - 사후 safety ref: `safety/post-merge-pr50-2026-11-18`.
 - 다음 동기화 PR에서 PROJECT_STATUS_CURRENT/README/MASTER_PLAN/SESSION_LOG/PROJECT_LOG에 PR #50 결과와 정확한 main 기준점을 기록한다.
 - 운영 코드/production workflow/secrets/state/history/archive/Gemini·Discord 실행은 변경하지 않았다.
+
+## CRA Guidance 공식 관보 원문 확보 — 2026-11-18
+- Commission Guidance가 2026-11-17 OJ에 C/2026/6013 (CELEX 52026XC06013)으로 게재된 사실을 확인했다.
+- 기존 Commission PDF download document 131456는 2026-11-18 현재 HTTP 404. 기존 C(2026)5252 ANFR mirror는 별도 historical copy로 보존.
+- EUR-Lex OJ PDF를 CI Run #844에서 primary source로 직접 취득: 2,709,282 bytes, 61 pages, SHA-256 `40ca76caeb0108f5b97c8f373a95f590b453fe92bd45a483addf3326e48c1dc2`, fallback=False.
+- OJ extracted text 255,974 chars, SHA-256 `384724af44e399cb997771e9e65ea4a5fe1dd264131d0754921bd691dd1f7720`.
+- C(2026)5252 mirror와 OJ PDF 모두 numbered paragraph IDs 1–257 확인. 정규화 token multiset overlap 99.50% / 99.66%; exact byte/text identity는 주장하지 않는다.
+- G-001–G-013 claim register의 source ID 및 page locator를 OJ pagination으로 이관했다. 상세 비교 및 limitations는 Guidance/M606 audit report §7과 provenance JSON을 참조.
+- Run #844 (44204376214), exact head `0957ad4b3e85a8bb245c6b3adc62b7daec1a09de`: 156 passed, 1 xfailed; compile, source blob pins, CRA traceability, three PDF sources, official HTML canary success. Artifact ID 14381529964, digest sha256:a55dba42db13ed7c350c39e62a158bf512686b6892857870056212e8b3a7a6ae.
+- 다음: claim-by-claim substantive redline, OJ page/image locator spot-check, matrix cross-link review, M/606 latest source provenance review.
