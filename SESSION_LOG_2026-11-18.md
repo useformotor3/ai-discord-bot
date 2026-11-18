@@ -442,3 +442,12 @@
 - PR #87 exact-head Run #954: success, 162 passed / 0 xfailed; artifact #14402226873 digest `sha256:7d523a97b922d1b7bf2f5ef383ef615bf73e4a2406e1219b805e08ef06a8741d`.
 - Merge `d5d9ec2ac42ac8ffe7c745de0e8d3421aa77ab0a`; pre/post safety refs `safety/pre-pr87-merge-checkpoint-2026-11-18`, `safety/post-merge-pr87-2026-11-18`; post ref == main.
 - Exact-main Run #955 / ID `44246724674`: success, 162 passed / 0 xfailed; source integrity, compile, CRA traceability, 9 official sources and Article 13(8) locator/quote passed. Artifact #14401722431 digest `sha256:b94e1484bddf3652f579e09fc83f3cfed6a9358bc3e75b7af2506151a8c8f921`.
+
+
+## 2026-11-19 — Annex III/IV core-functionality 공식 원문 대조
+- EUR-Lex 공식 CRA Regulation (EU) 2024/2847 및 Commission Implementing Regulation (EU) 2025/2392 원문을 재대조했다.
+- 2025/2392 recital (2)–(5)는 Annex III/IV 분류를 제품 전체의 core functionality로 결정하며, listed 기능의 구성요소를 통합했다는 이유만으로 완제품이 해당 카테고리가 되는 것은 아님을 명확히 한다. recital (6)은 중요/핵심 제품 여부와 무관하게 CRA 적용 제품의 포괄적 위험평가 및 본질적 요구사항 구현·시험·assurance 기록을 요구한다.
+- Annex I Class I #10은 Fieldbus 어댑터 등을 포함하는 물리/가상 네트워크 인터페이스 기술 설명을, #11은 RTOS를 포함하는 OS 기술 설명을, #12는 라우팅/관리 plane을 갖는 네트워크 제품을 구분한다. #13–#15는 보안 기능 MCU/MPU/ASIC/FPGA, Class II #2는 firewall/IDS/IPS를 다룬다. Annex II는 security box, smart-meter gateway/advanced security devices, secure elements를 설명한다.
+- 기존 적용성 보고서에 제품 경계별 분류표와 G1–G5 승인 게이트를 추가하고, EVD 매트릭스에 분류/통합 구성요소/평가 경로 연결을 추가했다.
+- 모델·SKU·매뉴얼·통신 토폴로지·실제 MCU 부품번호가 없어 개별 제품 판정은 Unknown / Not assessed로 유지한다. 표준 전문 조항별 검증이나 제품 시험 완료를 주장하지 않는다.
+- 작업 브랜치 cra/applicability-core-functionality-audit-2026-11-19; PR/CI/병합 전. 기준 main 16cdec76def2e8920d8fc2ca3b6a43e497d41d83. production main.py 및 production workflow 변경 없음.

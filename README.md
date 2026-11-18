@@ -10,12 +10,18 @@
 
 > **기록 원칙:** 프로젝트의 공식 진행 상태와 재개 지점은 이 저장소에 기록합니다. 대화창의 기억에만 의존하지 않습니다.
 
-### 현재 기준점 — main / PR #74 사후 검증 완료 (2026-11-18)
-- main `48dd8f7bc0617ec0c67eadf80a7e7cc364b862c0`; exact-main Run #928 success, 161 passed / 1 xfailed.
-- 참조 보안 아키텍처 v0.2 병합 완료. [ST 기준 / TI 비교 MCU 예비 벤치마킹](reports/CRA_SERVO_DRIVE_MCU_PLATFORM_BENCHMARK_2026-11-18.md) 작성.
+### 현재 기준점 — main / PR #88 사후 검증 완료 (2026-11-19)
+- main `16cdec76def2e8920d8fc2ca3b6a43e497d41d83`; exact-main Run #957 success, 162 passed / 0 xfailed.
+- PR #87에서 stale xfail을 수정해 162 passed / 0 xfailed를 확인했고 PR #88에서 상황판·계획·로그를 동기화했다. 참조 보안 아키텍처 및 MCU 예비 벤치마킹은 제품 입력 전 참고자료다.
 - 실제 ST MCU part number 및 제어 사양은 미확인. 제품별 선정·교체 결론은 동일 조건 실측 후 결정.
 
-## 현재 상태 — 2026-11-18
+## 현재 상태 — 2026-11-19
+
+- 최신 main 기준: PR #88 merge 16cdec76def2e8920d8fc2ca3b6a43e497d41d83; exact-main Run #957 success, 162 passed / 0 xfailed.
+- 현재 CRA 제품 분류 심화 감사 브랜치: cra/applicability-core-functionality-audit-2026-11-19 (PR/CI 전). 적용성 보고서와 EVD 매트릭스에 Annex III/IV core-functionality 및 제품 경계 게이트를 통합 중.
+- 제품별 모델/SKU 및 실제 MCU 식별은 여전히 미확인. 개별 분류·MCU 선정 결론 금지.
+
+## 이전 상태 기록 — 2026-11-18
 
 - **활성 범위: CRA 대응만.** SIL 3 자료는 역사적 산출물로 보존하며 별도 명시적 재개 지시 전 비활성.
 - 현재 구현 작업 브랜치: 없음 (PR #35 병합 완료; PR #36은 문서 전용 사후 동기화, 다음 구현은 최신 main에서 새 브랜치로 시작)

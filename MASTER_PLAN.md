@@ -923,3 +923,10 @@
 - PR #87에서 stale xfail을 실제 현재 동작을 검증하는 통과 테스트로 교체했다. git push 실패 시 subprocess check=True → 명시적 오류 로그 → SystemExit(1), 성공 동기화 메시지는 출력하지 않는다.
 - 격리 테스트 workflow의 exact blob pin만 갱신했으며 production main.py / production run.yml은 미변경.
 - Exact PR and exact-main CI: 162 passed / 0 xfailed. 향후 P1-B3 관련 변경은 이 실패 종료 계약을 회귀 기준으로 유지한다.
+
+
+## 2026-11-19 우선순위 보완 — 제품 분류의 선행 게이트
+- 제품별 EVD 추적 및 Article 32 경로 확정 전에 G1 제품 단위 → G2 intended purpose → G3 연결성/원격처리 → G4 Annex III/IV core functionality → G5 평가 경로 순으로 증거를 승인한다.
+- Annex III/IV 분류는 제품 전체의 core functionality와 Regulation (EU) 2025/2392 기술 설명에 근거한다. 통합 구성요소의 존재만으로 완제품을 자동 분류하지 않으며, 구성요소 보안 위험은 완제품 위험평가에 계속 반영한다.
+- Annex III/IV 비해당을 CRA 비적용으로 오인하지 않는다. Article 2 적용성과 Articles 7–8 분류는 별도 판정한다.
+- 다음 기술 우선순위: (1) 분류 게이트 독립 검토 및 매트릭스 정합성 확인, (2) 제품별 P0 자료 수집, (3) EVD/SEC 추적, (4) 실제 MCU/드라이브 시험. 제품 식별 자료가 확보되기 전까지 제품별 점수·Pass·선정 결론을 만들지 않는다.
