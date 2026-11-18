@@ -97,7 +97,6 @@ def test_fetch_all_writes_pdf_text_and_manifest(tmp_path):
         FakeResponse(url=pdf.PDF_SOURCE_CATALOG[0]["url"]),
         FakeResponse(url=pdf.PDF_SOURCE_CATALOG[1]["url"]),
         FakeResponse(url=pdf.PDF_SOURCE_CATALOG[2]["url"]),
-        FakeResponse(url=pdf.PDF_SOURCE_CATALOG[3]["url"]),
     ])
     with patch.object(pdf, "PdfReader", FakeReader):
         results = pdf.fetch_all_pdf_sources(
