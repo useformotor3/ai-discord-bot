@@ -146,7 +146,7 @@ Annex I는 ESO(CEN/Cenelec/ETSI)가 작성할 신규 유럽표준의 주제와 a
 
 - C(2026) 5252는 Run #669에서 Commission-hosted primary URL이 PDF로 확인되지 않아 allowlisted ANFR mirror fallback을 사용했다. Mirror binary hash는 확인됐지만 Commission-hosted 원본 URL과 byte identity는 미확인이다.
 - C(2026) 7861 Annex I PDF는 Commission document-register 원본 bytes 및 SHA-256 확인 완료. C(2026) 7861 본문 decision 및 Annex I 외 첨부가 있는지 document register 전체 항목은 추가 확인한다.
-- M/606 Annex I item 18 deadline `31/01/2027`은 PDF p.3(인쇄 페이지 3) 원본 이미지로 시각 확인 완료.
+- M/606 Annex I item 18 deadline `31/01/2027`은 PDF p.3(인쇄 페이지 EN 2) 원본 이미지로 시각 확인 완료. 행의 설명은 EN 3으로 이어지지만 오른쪽 기한 셀은 EN 2에 있다.
 - C(2026) 5252의 서보 드라이브 직접 사례는 없다. Industrial robot 사례는 RDPS의 원리 예시로만 사용한다.
 - 제품별 적용성/분류를 확정하려면 실제 모델, 회로도, MCU/FPGA, 통신 프로토콜, remote service architecture, firmware/update policy, EU supply chain facts가 필요하다.
 - Guidance는 비구속적이다. CRA Regulation (EU) 2024/2847 및 Official Journal 정본과 충돌할 경우 법령 정본을 우선하고, 불확실한 해석은 법률 검토 대상으로 남긴다.
@@ -301,3 +301,83 @@ The rendered OJ page images were checked for the claim-bearing paragraphs/exampl
 - The redline validates the 13 selected claims and locators; it is not a full legal opinion or exhaustive review of every sentence in the 61-page Guidance.
 - This work does not determine whether a specific servo drive is in scope, which Annex category applies, or which conformity route is required. Manufacturer/model evidence remains necessary.
 - The product-specific Unknown gates remain unchanged.
+
+
+## 9. M/606 C(2026) 7861 — 최신 Annex, ESO 진행상황 및 OJ harmonised status 재검증 (2026-11-18)
+
+### 9.1 공식 Commission Annex 원본
+
+- 문서: Commission Implementing Decision C(2026) 7861 final, Annex, Brussels 10.11.2026; amends Implementing Decision C(2025) 618 (M/606).
+- Official Commission document-register Annex API: https://ec.europa.eu/transparency/documents-register/api/files/C%282026%297861_1/de00000001090401
+- PDF: 151,267 bytes; 6 pages; SHA-256 `262b09596cb5cbe7d72a2c7789fb2512ee00db7f69082e7def2c8181b0f63276`.
+- Extracted text: 8,058 chars; SHA-256 `06409ee840550a4e602aa30b4f77a9eaf90a44735f820ce2b1239cccec6a54dd`.
+- CI artifact Run #870 readback confirmed the same bytes/hash; direct Commission register source, fallback=False.
+- All six PDF pages were visually inspected. The annex is headed “List of new European Standards to be drafted”; it is a standardisation request, not a published harmonised standard.
+
+### 9.2 Correct ESO adoption deadlines — all 41 items
+
+The Annex column is expressly “Deadline for the adoption by the ESOs”. The validated deadline groups are:
+- Item 1: 30/11/2026.
+- Items 2–14: 30/10/2027.
+- Item 15: 30/11/2026.
+- Items 16–41: 31/01/2027.
+
+These are CEN/CENELEC/ETSI adoption deadlines, not manufacturer CRA compliance deadlines, CRA application dates or OJ publication dates.
+
+#### Item 18 page-locator correction
+
+A full visual recheck of the six-page Annex found that the item 18 row crosses a page break:
+- PDF page 3 is printed page EN 2. The right-hand deadline cell `31/01/2027` is visible on EN 2.
+- The description “requirements for password managers” continues onto printed page EN 3 (PDF page 4).
+- The previous crosswalk/validator incorrectly attributed the deadline cell to EN 3 because the extracted text emitted the continuation after the page break.
+- Correct locator: `EN 2–3 (item description continues on EN 3; deadline cell on EN 2, visually confirmed)`.
+- `reports/CRA_PDF_SOURCE_PROVENANCE_2026-11-17.json` visual_verification now records zero-based PDF page index 2 and printed page number 2; the validator and negative test are corrected accordingly.
+
+Other split rows were also rechecked:
+- Item 8: description continues EN 1–2; deadline cell on EN 1.
+- Item 31: description continues EN 3–4; deadline cell on EN 3.
+- Item 40: description continues EN 4–5; deadline cell on EN 4.
+The 41-row crosswalk page locators have been made row-specific to the printed pages.
+
+### 9.3 Commission confirmation and current harmonised-standard status
+
+- Commission CRA standardisation page (last updated 12.11.2026): https://digital-strategy.ec.europa.eu/en/policies/cra-standardisation
+  - It states that M/606 contains 41 standards.
+  - It confirms that on 10.11.2026 the request was amended to extend the deadline for all vertical standards and some horizontal standards by three months.
+  - This is consistent with the amended Annex deadline groups above.
+- Commission harmonised-standards index: https://single-market-economy.ec.europa.eu/single-market/goods/european-standards/harmonised-standards_en
+  - The Commission explains that harmonised-standard references must be published in the OJ and that the index provides the latest OJ reference lists.
+  - As checked on 18.11.2026, the index contains no CRA-specific entry (the Digital Single Market list includes AI and DPP, but not CRA). Exact EUR-Lex searches for `EN 40000-1-2`, `EN 40000-1-3` and `EN 304 617` did not surface a CRA OJ citation.
+  - Conclusion is deliberately bounded: no CRA-specific harmonised-standard OJ reference was identified in the Commission index/EUR-Lex search as of this check. Do not claim a presumption of conformity from an M/606 request, draft prEN, ESO work item or publication forecast.
+- This is a source-check conclusion, not a claim that the Commission can never publish a reference later. Recheck the index and OJ before any conformity assessment or market-placement decision.
+
+### 9.4 Latest publicly linked ESO work-programme snapshot
+
+- STAN4CR shared CEN/CENELEC/ETSI work programme, “Second Joint ESO semestrial report M/606”, Version V2.0, dated 03.06.2026, 4 pages: https://www.stan4cra.eu/_files/ugd/d3d362_20e5bfebe8bf47b1998caf05c5799333.pdf
+- The Commission CRA standardisation page links to STAN4CR as the ESO activity portal. The report is an ESO progress snapshot, not a legal act or OJ citation.
+- Selected June 2026 stage/forecast observations:
+  - Item 1 (prEN 40000-1-2): ENQ closed 01.01.2026; preparation for FV in 08/2026; publication forecast 30.09.2026.
+  - Items 2–14 (prEN 40000-1-4): Early Draft; publication forecast 30.10.2027.
+  - Item 15 (prEN 40000-1-3): ENQ closed 05.03.2026; preparation for FV in 10/2026; publication forecast 30.11.2026.
+  - Items 28–29: ENQ passed 10.04.2026; preparation for FV; publication forecast 30.11.2026.
+  - Items 37–38: ENQ passed 10.04.2026; preparation for FV; publication forecast 15.11.2026.
+  - Item 39: submitted to ENQ 21.05.2026; publication forecast 15.02.2027.
+  - Item 40: mature draft; publication forecast 30.10.2026.
+  - Item 41a/41b: ENQ passed 10.04.2026 / 09.04.2026; preparation for FV; publication forecast 15.11.2026 / 30.11.2026.
+- Important distinction: the ESO report column is “Publication forecast”; the Commission Annex column is “Deadline for adoption by the ESOs”. These are different milestones. A publication forecast later than an adoption deadline is not, by itself, proof that the ESO missed the adoption deadline. The June snapshot also predates the 10 November amendment. Treat it as progress context only, not a current compliance status.
+- The publicly linked V2.0 report is the latest ESO status document located in this check; no later public M/606 progress report was found on the STAN4CR site. Its raw-byte hash will be recorded separately by the live CI source canary before relying on it as a retained evidence artifact.
+
+### 9.5 Servo-drive relevance boundaries
+
+- Horizontal items 1–15 remain relevant to product-level risk management, vulnerability handling, secure configuration, access control, data protection, integrity, availability and updates as determined by actual product evidence.
+- Item 25 (physical/virtual network interfaces) is conditional on the marketed product itself being a network-interface product; Ethernet/fieldbus ports alone do not automatically classify the complete drive.
+- Items 28–30 and 37–39 may be component due-diligence topics where security-capable processors/MCUs/ASICs/FPGAs or tamper-resistant components/security boxes are integrated; component presence does not automatically classify the whole drive.
+- Item 36 applies vertically only if the product itself is an industrial firewall/IDS/IPS, not merely because the drive has network filtering or hardening.
+- Item 41 is conditional for smartcards/secure elements; an integrated secure element may be a supplier-evidence issue without making the whole drive a smartcard product.
+- Existing conditional mappings remain unchanged unless exact product BOM, part numbers, datasheets and intended-purpose evidence justify a model-specific change.
+
+### 9.6 Required follow-up
+
+1. Retain the June ESO report as a separate supplementary source with its own raw-byte hash and extraction metadata.
+2. Keep M/606 adoption dates, ESO publication forecasts and OJ harmonised-standard citations as three separate fields in the standardisation status tracker.
+3. Recheck the Commission OJ index at each standards update; only add a presumption-of-conformity claim after the exact standard reference is published in the OJ and its scope matches the product.
