@@ -124,22 +124,22 @@
   "latest_verification": {
     "workflow": {
       "name": "Isolated Python Tests",
-      "run_number": 844,
-      "run_id": 44204376214,
-      "tested_head_sha": "0957ad4b3e85a8bb245c6b3adc62b7daec1a09de",
+      "run_number": 854,
+      "run_id": 44205498935,
+      "tested_head_sha": "0ab0fc4d9b217a4994fd6e7a1b32607c854bb693",
       "conclusion": "success",
-      "pytest": "156 passed, 1 xfailed",
+      "pytest": "158 passed, 1 xfailed",
       "compileall": "success",
       "exact_source_blob_identity": "success",
       "cra_cross_matrix_traceability": "success",
       "live_official_pdf_canary": "3 PDFs fetched, parsed and SHA-256 verified",
       "live_official_html_canary": "success",
-      "artifact_id": 14381529964,
-      "artifact_name": "cra-official-pdf-sources-3d569da6c45368f2647db6aa92d147378ddac83d",
-      "artifact_url": "https://github.com/useformotor3/ai-discord-bot/actions/runs/44204376214/artifacts/14381529964",
-      "artifact_digest": "sha256:a55dba42db13ed7c350c39e62a158bf512686b6892857870056212e8b3a7a6ae",
+      "artifact_id": 14382388555,
+      "artifact_name": "cra-official-pdf-sources-1f8f51fada6d2ea92ec131148be48bb2f88d32c1",
+      "artifact_url": "https://github.com/useformotor3/ai-discord-bot/actions/runs/44205498935/artifacts/14382388555",
+      "artifact_digest": "sha256:9e8dc7f1c1d90015b7738263155ca9d6b1170aaea75ea6bd17350aeff7d36af7",
       "artifact_size_bytes": 3070500,
-      "expires_at": "2026-11-25T00:02:11Z"
+      "expires_at": "2026-11-25T00:09:59Z"
     },
     "official_journal_guidance": {
       "id": "CRA-GUIDANCE-OJ-2026-6013",
@@ -158,7 +158,7 @@
         "Cyber Resilience Act",
         "remote data processing"
       ],
-      "retrieved_at": "2026-11-18T00:02:11.019794Z"
+      "retrieved_at": "2026-11-18T00:09:59Z"
     },
     "comparison": {
       "historical_C_2026_5252_ANFR_mirror_sha256": "fe209c250e3d1f7599e42826d91963666951332927edcf511a2e79fe8d2f8234",
