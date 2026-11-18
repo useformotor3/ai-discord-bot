@@ -681,3 +681,8 @@
 - OJ Guidance claim redline, matrix source updates, bidirectional cross-link validator and regression tests merged in `cd291c5161e7c3fdd9e494fe76749291a20b98de`.
 - Exact-head Run #868 success (161 passed, 1 xfailed); post-merge safety ref identical to main.
 - Next: M/606 C(2026) 7861 Annex provenance, ESO adoption date verification and current OJ harmonised-standard citations.
+
+## PR #56 merged — 2026-11-18
+- M/606 Annex I 41-item page locators corrected, including item 18 deadline cell on EN 2; ESO report and OJ citation status audited.
+- Exact-head Run #879 success (161 passed, 1 xfailed); post-merge safety ref identical to main.
+- Next: refresh ESO standards-stage evidence and Commission OJ harmonised-standard index; retain distinction between ESO adoption deadlines, publication forecasts and OJ citation.

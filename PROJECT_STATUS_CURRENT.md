@@ -212,3 +212,12 @@
 - Post-merge safety ref `safety/post-merge-cra-guidance-claim-redline-2026-11-18` is identical to main at `cd291c5161e7c3fdd9e494fe76749291a20b98de`.
 - Guidance claim redline G-001–G-013 and bidirectional link validator are now in main.
 - Next priority: M/606 C(2026) 7861 Annex provenance, ESO adoption dates and OJ harmonised-standard citation status.
+
+## PR #56 M/606 Annex + ESO status checkpoint — 2026-11-18
+- PR #56 merged to main: `9e42dbd790816b4669793f5bbb9edc4b4686e195`.
+- Exact-head Run #879 (ID `44209828986`) on `3e455c63013b895bce977ac1734b0e939827418b`: success; 161 passed, 1 xfailed; source integrity, compile, bidirectional CRA traceability, full pytest, official PDF canary and live official-source canary passed.
+- Evidence artifact #14384958566; digest `sha256:84f27e218042e278bbea0157b68f7251f17c2752bda227972c67c890959a8188`; expires 2026-11-25 00:41:24 UTC.
+- Pre-merge safety ref `safety/pre-merge-m606-annex-eso-2026-11-18` matched main at base `adc22e3087009db51acff53ec29054f971fa508a`; post-merge safety ref `safety/post-merge-m606-annex-eso-2026-11-18` is identical to main at `9e42dbd790816b4669793f5bbb9edc4b4686e195`.
+- M/606 item 18 deadline cell corrected to printed EN 2; row description continues EN 3. All 41 item locators are row-specific.
+- June 2026 ESO report is image-based (3 text-layer chars) and intentionally excluded from text-layer CI; no weakened validation threshold.
+- Next: independently verify standards-stage changes after the June ESO snapshot and refresh Commission OJ harmonised-standard index before any presumption-of-conformity statement.

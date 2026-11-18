@@ -591,3 +591,8 @@
 - Guidance claim redline and bidirectional matrix validator merged: `cd291c5161e7c3fdd9e494fe76749291a20b98de`.
 - Exact-head Run #868 passed: 161 passed, 1 xfailed; pre/post safety refs verified.
 - Next research priority: M/606 C(2026) 7861 Annex source provenance and current ESO/OJ standard status.
+
+## PR #56 merge checkpoint — 2026-11-18
+- M/606 Annex 41-item locator correction and ESO/OJ status audit merged: `9e42dbd790816b4669793f5bbb9edc4b4686e195`.
+- Exact-head Run #879 passed: 161 passed, 1 xfailed; all CI and live-source canaries passed.
+- Post-merge safety ref `safety/post-merge-m606-annex-eso-2026-11-18` identical to main.

@@ -156,3 +156,10 @@
 - Run #868 / ID `44207582798` exact-head success: 161 passed, 1 xfailed; source blob identity, compile, bidirectional CRA traceability, full pytest, PDF/HTML canaries passed.
 - Pre-merge safety ref matched main at base `d92f14f6c275bf6b3fa0c8243ac696dca0358d50`; post-merge ref `safety/post-merge-cra-guidance-claim-redline-2026-11-18` identical to main.
 - Next: M/606 C(2026) 7861 Annex raw source provenance, ESO adoption dates and OJ harmonised-standard status.
+
+## PR #56 merge and recovery checkpoint — 2026-11-18
+- PR #56 squash merge: `9e42dbd790816b4669793f5bbb9edc4b4686e195`.
+- Run #879 / ID `44209828986` exact-head success: 161 passed, 1 xfailed; source blob integrity, compile, CRA traceability, full pytest, official PDF and live official-source canaries passed.
+- Pre-merge safety ref matched main at `adc22e3087009db51acff53ec29054f971fa508a`; post-merge safety ref `safety/post-merge-m606-annex-eso-2026-11-18` identical to main.
+- June ESO PDF is scanned/image-based and excluded from text-layer CI; visual findings remain supplementary and not CI-hashed evidence.
+- Next: current ESO stage evidence and OJ index refresh.
