@@ -351,3 +351,11 @@
 - CEN-CENELEC 공식 발표(2025-05-01)는 원래 M/606이 2025-04-03 CEN, CENELEC, ETSI에 의해 수락되었음을 명시. Commission Interoperable Europe 2026 rolling plan도 세 ESO가 요청을 수락했고 작업 중이라고 재확인.
 - 단, 원래 요청 수락은 2026-11-10 개정 결정 C(2026)7861 Article 2의 개정 통지/수령 및 1개월 비수락 조건 충족을 증명하지 않는다. 개정 결정의 개별 수령일·비수락 통지는 미확인으로 유지.
 - M/606 보고서에 원래 요청과 개정 결정의 수락 상태를 분리 기록. 공개 증거 없는 개정 수락을 추정하지 않는다.
+
+
+## PR #69 병합 및 M/606 수락 상태 분리 검증 — 2026-11-18
+- PR #69 merge `8089cb96fdeba390dafe6991b19abfa1bc5b3e25`.
+- Exact-head `d60eb20100e682fe13ba0c5fac3f9724d9add842`, Run #916 / ID `44223566124`: success; source integrity, compile, CRA traceability, full test suite, official CRA PDF/HTML canaries passed.
+- Artifact #14391159512, digest `sha256:a71b8d12c9c1bb627da1b8d771ed2fda04ea179a721a1c55add3d5e28e16a1da`, expires 2026-11-25 02:29:24 UTC.
+- Post-merge safety ref `safety/post-merge-pr69-2026-11-18` == main (0 ahead/0 behind).
+- Regulatory fact distinction: original M/606 accepted by CEN/CENELEC/ETSI on 2025-04-03 (official CEN-CENELEC announcement); C(2026)7861 amendment-specific Article 2 notification/receipt and non-acceptance status remain unconfirmed.
