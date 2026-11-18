@@ -188,3 +188,10 @@
 - 요구사항/IF/SEC matrix의 Commission Guidance source URL에 EUR-Lex OJ C/2026/6013 ELI를 primary로 추가하고 기존 Commission page URL은 보조/게시 이력으로 보존.
 - 상세 결과: `reports/CRA_CROSS_MATRIX_CONSISTENCY_AUDIT_2026-11-18.md` 최신 섹션.
 - 다음 최우선: M/606 C(2026) 7861 Annex 원문 provenance, ESO adoption dates, OJ harmonised-standard citation status 독립 검증.
+
+### 교차 매트릭스 검증 자동화 강화 — 2026-11-18
+- `cra_traceability.py`에 claim register ↔ requirements/interfaces/SEC 양방향 foreign-key 검증 추가.
+- 존재하지 않는 related IDs, matrix의 dangling Guidance claim IDs, reverse link 누락을 CI에서 fail-closed 처리.
+- 회귀 테스트 3개 추가: reverse link 누락, dangling matrix claim, unknown related interface ID.
+- G-002의 IF range를 명시적 ID로 확장했고 G-005↔IF-015를 양방향 연결.
+- 최신 변경은 exact-head CI 통과 후에만 병합한다.
