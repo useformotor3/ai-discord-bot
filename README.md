@@ -569,3 +569,20 @@
 - Exact-head Run #861 success: 158 passed, 1 xfailed; official EUR-Lex OJ PDF primary acquisition fallback=False.
 - Pre-merge ref: `safety/pre-merge-cra-guidance-oj-6013-2026-11-18`; post-merge ref: `safety/post-merge-cra-guidance-oj-6013-2026-11-18`.
 - Latest status and next steps: [PROJECT_STATUS_CURRENT.md](PROJECT_STATUS_CURRENT.md). Claim/page crosswalk and provenance: `reports/CRA_OFFICIAL_GUIDANCE_AND_M606_ANNEX_AUDIT_2026-11-17.md` §7.
+
+## Guidance claim redline — 2026-11-18
+- G-001–G-013 have been substantively checked against OJ C/2026/6013. G-003/G-008/G-013 wording was narrowed/refined; G-001/G-013 locators corrected; G-004 obligations clarified.
+- PDF page images were visually checked for all cited locator ranges. Full findings: `reports/CRA_OFFICIAL_GUIDANCE_AND_M606_ANNEX_AUDIT_2026-11-17.md` §8.
+- All Guidance claims remain non-binding explanations; product-specific conclusions remain Unknown until model evidence exists.
+
+## Guidance–matrix link verification — 2026-11-18
+- Bidirectional check passed: 13 Guidance claims, 35 CRA requirements, 15 interfaces, 36 SEC controls; zero missing reverse links and zero dangling claim IDs.
+- OJ C/2026/6013 ELI is now the primary Guidance URL in the three cross-matrices; historic Commission publication page retained as secondary.
+- Full results and corrections: `reports/CRA_CROSS_MATRIX_CONSISTENCY_AUDIT_2026-11-18.md`.
+
+- The isolated CI validator now enforces bidirectional foreign-key consistency between each Guidance claim and its linked CRA requirement, interface and SEC rows, including reverse links; regression tests reject missing and dangling references.
+
+### PR #54 validator/claim redline CI
+- Run #865 passed on head `1d5ae716cc6683365f4da6236d15bb9b32be1e52`: 161 passed, 1 xfailed; all source, traceability, pytest and live canary stages succeeded.
+- Artifact #14383728315, digest `sha256:03b260173f643a68841f54c9f9ac1b3d99c9064762a677ed310160618170f8bb`.
+- Final exact-head CI required after status/log metadata update.

@@ -149,3 +149,50 @@ def test_oj_guidance_fallback_is_rejected(tmp_path):
     path.write_text(json.dumps(provenance), encoding="utf-8")
     with pytest.raises(TraceabilityError, match="fetched directly from EUR-Lex"):
         validate_traceability(tmp_path)
+
+def test_claim_to_matrix_link_requires_reverse_link(tmp_path):
+    _copy_required_tree(tmp_path)
+    path = tmp_path / REQUIRED[1]
+    with path.open("r", encoding="utf-8-sig", newline="") as stream:
+        rows = list(csv.DictReader(stream))
+        fieldnames = list(rows[0])
+    row = next(row for row in rows if row["ID"] == "IF-015")
+    row["Commission Guidance claim IDs (non-binding)"] = "G-010; G-011"
+    with path.open("w", encoding="utf-8", newline="") as stream:
+        writer = csv.DictWriter(stream, fieldnames=fieldnames)
+        writer.writeheader()
+        writer.writerows(rows)
+    with pytest.raises(TraceabilityError, match="G-005: IF-015 missing reverse Guidance link"):
+        validate_traceability(tmp_path)
+
+
+def test_matrix_claim_link_requires_claim_register_reverse_link(tmp_path):
+    _copy_required_tree(tmp_path)
+    path = tmp_path / REQUIRED[1]
+    with path.open("r", encoding="utf-8-sig", newline="") as stream:
+        rows = list(csv.DictReader(stream))
+        fieldnames = list(rows[0])
+    row = next(row for row in rows if row["ID"] == "IF-015")
+    row["Commission Guidance claim IDs (non-binding)"] = "G-005; G-010; G-011; G-013"
+    with path.open("w", encoding="utf-8", newline="") as stream:
+        writer = csv.DictWriter(stream, fieldnames=fieldnames)
+        writer.writeheader()
+        writer.writerows(rows)
+    with pytest.raises(TraceabilityError, match="IF-015: G-013 missing claim-register reverse link"):
+        validate_traceability(tmp_path)
+
+
+def test_claim_related_foreign_key_must_exist(tmp_path):
+    _copy_required_tree(tmp_path)
+    path = tmp_path / REQUIRED[0]
+    with path.open("r", encoding="utf-8-sig", newline="") as stream:
+        rows = list(csv.DictReader(stream))
+        fieldnames = list(rows[0])
+    row = next(row for row in rows if row["Claim ID"] == "G-005")
+    row["Related interface IDs"] = "IF-999"
+    with path.open("w", encoding="utf-8", newline="") as stream:
+        writer = csv.DictWriter(stream, fieldnames=fieldnames)
+        writer.writeheader()
+        writer.writerows(rows)
+    with pytest.raises(TraceabilityError, match="G-005: unknown interface ID IF-999"):
+        validate_traceability(tmp_path)

@@ -129,6 +129,33 @@ def validate_traceability(root="."):
     orphan_claims = sorted(id_sets.get("claims", set()) - used_claims)
     _require(not orphan_claims, f"Guidance claims not linked to any matrix: {orphan_claims}", errors)
 
+    # Validate every claim-to-matrix foreign key in both directions.
+    claim_rows = {row.get("Claim ID", ""): row for row in claims}
+    matrix_specs = (
+        ("requirements", requirements, "ID", "Related requirement IDs", REQUIREMENT_RE),
+        ("interfaces", interfaces, "ID", "Related interface IDs", INTERFACE_RE),
+        ("controls", controls, "ID", "Related security control IDs", CONTROL_RE),
+    )
+    for label, matrix_rows, id_field, claim_link_field, id_pattern in matrix_specs:
+        matrix_by_id = {row.get(id_field, ""): row for row in matrix_rows}
+        for claim_id, claim_row in claim_rows.items():
+            linked_ids = set(id_pattern.findall(claim_row.get(claim_link_field, "") or ""))
+            for linked_id in linked_ids:
+                _require(linked_id in matrix_by_id,
+                         f"{claim_id}: unknown {label[:-1] if label.endswith('s') else label} ID {linked_id}", errors)
+                matrix_row = matrix_by_id.get(linked_id)
+                if matrix_row is not None:
+                    _require(claim_id in _claim_ids(matrix_row.get(guidance_col, "")),
+                             f"{claim_id}: {linked_id} missing reverse Guidance link", errors)
+        for matrix_id, matrix_row in matrix_by_id.items():
+            for claim_id in _claim_ids(matrix_row.get(guidance_col, "")):
+                claim_row = claim_rows.get(claim_id)
+                if claim_row is None:
+                    continue
+                linked_ids = set(id_pattern.findall(claim_row.get(claim_link_field, "") or ""))
+                _require(matrix_id in linked_ids,
+                         f"{matrix_id}: {claim_id} missing claim-register reverse link", errors)
+
     # Validate the complete M/606 Annex I crosswalk and every candidate foreign key.
     _require(len(m606_map) == 41,
              f"M/606 mapping: expected 41 rows, found {len(m606_map)}", errors)
@@ -284,6 +311,7 @@ def validate_traceability(root="."):
         "requirements": len(requirements),
         "security_controls": len(controls),
         "linked_claims": len(used_claims),
+        "bidirectional_links": True,
         "referenced_m606_items": sorted(referenced_items),
         "m606_mapping_items": len(m606_map),
         "pdf_sources": len(sources),
@@ -310,6 +338,7 @@ def main(argv=None):
         f"requirements={summary['requirements']} "
         f"SEC={summary['security_controls']} "
         f"linked_claims={summary['linked_claims']} "
+        f"bidirectional_links={summary['bidirectional_links']} "
         f"M606_mapping_items={summary['m606_mapping_items']} "
         f"project_log_events={summary['project_log_events']} "
         f"modern_ids={summary['project_log_events_with_event_id']} "

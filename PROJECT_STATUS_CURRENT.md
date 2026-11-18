@@ -172,3 +172,34 @@
 - Post-merge safety ref `safety/post-merge-cra-guidance-oj-6013-2026-11-18` is identical to main at merge commit `d3956b7b364c507b8d59dcfc056763f2829ea867` (post-merge compare: identical).
 - Current Guidance source is OJ C/2026/6013, EUR-Lex primary PDF, fallback=False; historical C(2026) 5252 ANFR mirror remains separate and is not claimed byte-identical.
 - Next priority: substantive claim-by-claim redline for G-001–G-013 against OJ text, then update relevant interface/requirements/SEC evidence mappings. M/606 provenance review follows.
+
+## CRA Guidance substantive redline complete — 2026-11-18
+- OJ C/2026/6013 claim-by-claim review completed for G-001–G-013.
+- 9 claims confirmed without substantive change; G-001 locator corrected; G-003/G-008/G-013 wording refined; G-004 expanded to make ongoing conformity/DoC/CE/vulnerability obligations explicit.
+- Visual page-image checks completed for OJ pages 7–10, 24–25, 30, 32–35, 42–46, 53 and 61.
+- CSV claim register and audit report §8 updated. All claims remain non-binding Commission explanations, not new legal requirements.
+- Product-specific scope/classification/conformity remains Unknown; 15 interfaces remain product-unverified; 36 SEC controls remain unimplemented/unverified.
+- Next: recheck cross-links from Guidance claims to CRA requirements, IF matrix and SEC matrix; then independently revalidate M/606 C(2026) 7861 and its Annex/ESO adoption and OJ citation status.
+
+## Guidance–matrix 양방향 링크 검증 완료 — 2026-11-18
+- 13 Guidance claims ↔ 35 requirements ↔ 15 interfaces ↔ 36 SEC controls를 프로그램으로 양방향 대조: 누락 링크 0, dangling claim ID 0.
+- G-002의 IF-001–IF-013 범위 표기를 machine-readable 개별 ID 목록으로 확장.
+- G-005 ↔ IF-015 reverse link 추가: remote diagnostics/management의 interface/dependency 변경이 substantial-modification 평가에 관련될 수 있음.
+- 요구사항/IF/SEC matrix의 Commission Guidance source URL에 EUR-Lex OJ C/2026/6013 ELI를 primary로 추가하고 기존 Commission page URL은 보조/게시 이력으로 보존.
+- 상세 결과: `reports/CRA_CROSS_MATRIX_CONSISTENCY_AUDIT_2026-11-18.md` 최신 섹션.
+- 다음 최우선: M/606 C(2026) 7861 Annex 원문 provenance, ESO adoption dates, OJ harmonised-standard citation status 독립 검증.
+
+### 교차 매트릭스 검증 자동화 강화 — 2026-11-18
+- `cra_traceability.py`에 claim register ↔ requirements/interfaces/SEC 양방향 foreign-key 검증 추가.
+- 존재하지 않는 related IDs, matrix의 dangling Guidance claim IDs, reverse link 누락을 CI에서 fail-closed 처리.
+- 회귀 테스트 3개 추가: reverse link 누락, dangling matrix claim, unknown related interface ID.
+- G-002의 IF range를 명시적 ID로 확장했고 G-005↔IF-015를 양방향 연결.
+- 최신 변경은 exact-head CI 통과 후에만 병합한다.
+
+### PR #54 exact-head CI result — Run #865
+- Tested head `1d5ae716cc6683365f4da6236d15bb9b32be1e52`; Run #865 / ID `44207426703`: success.
+- 161 passed, 1 xfailed; exact source blob identity, compile, CRA traceability (including bidirectional link checks), full pytest, three-PDF live canary, artifact upload and official HTML canary all passed.
+- OJ C/2026/6013 primary PDF fallback=False, SHA-256 unchanged.
+- Artifact #14383728315; digest `sha256:03b260173f643a68841f54c9f9ac1b3d99c9064762a677ed310160618170f8bb`; expires 2026-11-25 00:23:53 UTC.
+- Pre-merge safety ref `safety/pre-merge-cra-guidance-claim-redline-2026-11-18` was identical to main at base `d92f14f6c275bf6b3fa0c8243ac696dca0358d50`.
+- Status/project log metadata appended after Run #865; final head needs a fresh exact-head CI before merge.

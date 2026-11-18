@@ -657,3 +657,22 @@
 - Exact-head Run #861 success: 158 passed, 1 xfailed; three PDF sources and official CRA HTML canary succeeded.
 - Pre/post safety refs recorded in PROJECT_STATUS_CURRENT.
 - Next: G-001–G-013 claim-by-claim substantive redline against OJ text; inspect claim-specific conditions, exceptions and footnotes, and verify relevant OJ page images. Then reconcile interface, requirement and SEC cross-links without converting non-binding Guidance into legal requirements.
+
+## 2026-11-18 — Guidance substantive redline completed
+- Completed claim-by-claim review of G-001–G-013 against OJ C/2026/6013 and visually checked the relevant PDF pages.
+- Narrowed G-003 to the actual complex-system/interoperability text; distinguished external dependency risk from integrated-component due diligence in G-008; made identical spare-part conditions explicit for G-013; expanded G-004 continuing obligations.
+- Next:
+  1. Validate claim-to-CRA requirement IDs, IF interface IDs and SEC control IDs for semantic fit; do not treat non-binding guidance as a new requirement.
+  2. Review M/606 C(2026) 7861 Annex source provenance and current ESO/OJ standard status.
+  3. Continue evidence intake for exact servo-drive models; keep product-level determinations Unknown until evidence arrives.
+
+## 2026-11-18 — Guidance claim redline 및 matrix link 검증 완료
+- G-001–G-013 OJ C/2026/6013 substantive redline 및 page-image spot-check 완료.
+- 13 claims ↔ 35 requirements ↔ 15 IF ↔ 36 SEC bidirectional link audit: 0 missing, 0 dangling. G-002 range notation을 명시적 ID로 확장하고 G-005↔IF-015 reverse link를 보완.
+- 요구사항/IF/SEC matrix의 primary Guidance source URL을 EUR-Lex OJ ELI로 갱신.
+- 다음 작업은 M/606 C(2026) 7861 Annex provenance, ESO adoption dates 및 OJ harmonised-standard citation 상태의 독립 원문 검증이다.
+
+## 2026-11-18 — Cross-matrix validation gate hardened
+- Added fail-closed bidirectional foreign-key validation between the 13 Guidance claims and the 35 CRA requirements, 15 IF interfaces and 36 SEC controls.
+- Added regression tests for missing reverse links, dangling matrix claim IDs and unknown related IDs.
+- Next independent source task: M/606 C(2026) 7861 Annex provenance, ESO adoption dates and current OJ harmonised-standard references.

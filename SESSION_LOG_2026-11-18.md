@@ -120,3 +120,33 @@
 - Tested head: `dee79027a49dfbb1fdd7cf1036bc0ae39e83b518`; artifact #14384061014, digest `sha256:2b70d0f09f620c83a531f2ec9be9de6a1ec9a669ee861e16704804fe036eb3d3`.
 - Pre-merge safety ref matched main `854d66fa6c145ca264dbd768c2c75fcf9f117153`; main after merge was one commit ahead with exactly PR #52's 15 files. Post-merge ref created at merged main.
 - Next: substantive redline of all 13 Guidance claims against OJ C/2026/6013; then matrix link and page-image recheck.
+
+## OJ C/2026/6013 Guidance claim substantive redline — 2026-11-18
+- Reviewed G-001–G-013 against official OJ PDF text and rendered page images.
+- Visually checked pages 7–10, 24–25, 30, 32–35, 42–46, 53 and 61.
+- Confirmed 9 claims; corrected G-001 locator to §2.4 para.25/p.7; refined G-003 (remove unsupported “interfaces/product-level mitigations” from §2.6 locator), G-008 (separate external risks from integrated-component due diligence), and G-013 (identical spare-part conditions/examples 37–39); expanded G-004 to note continuing conformity/DoC/CE/vulnerability obligations.
+- Claim register and audit report §8 updated. Guidance remains non-binding; legal duties are derived from the Regulation, not the Guidance paraphrase.
+- No product-specific classification or conformity conclusions changed. Unknown gates preserved.
+- Next: semantic review of G-001–G-013 links to CRA-001–035, 15 IF interfaces and 36 SEC controls; then M/606 source/provenance review.
+
+## Guidance–matrix 양방향 링크 감사 — 2026-11-18
+- 13 claims, 35 requirements, 15 interfaces, 36 SEC controls의 claim-to-matrix references를 프로그램으로 대조.
+- 첫 검사에서 G-002의 IF-001–IF-013 범위 shorthand와 G-005→IF-015의 reverse link 누락을 발견.
+- G-002는 explicit IDs로 확장, IF-015는 G-005를 포함하도록 보완.
+- 재검사 결과 누락 링크 0, dangling Guidance claim IDs 0.
+- Requirements/IF/SEC matrices의 Commission Guidance URL을 EUR-Lex OJ C/2026/6013 ELI primary link + 기존 Commission page secondary link로 정합화.
+- 교차 매트릭스 감사 보고서 최신 섹션 갱신.
+- 다음: M/606 C(2026) 7861 Annex raw provenance, ESO adoption dates 및 OJ harmonised-standard citation status 독립 검증.
+
+## CRA Guidance cross-matrix validator 강화 — 2026-11-18
+- Manual bidirectional audit found G-002 IF range shorthand and G-005/IF-015 reverse-link inconsistency; both corrected.
+- Extended `cra_traceability.py` to verify every claim-register related requirement/interface/SEC ID exists and has a reverse Guidance claim ID, and every matrix Guidance claim ID links back to the corresponding claim row.
+- Added three regression tests for missing reverse link, dangling matrix claim ID and unknown related interface ID.
+- Workflow exact blob pins updated for validator and tests. New PR exact-head CI required.
+
+## PR #54 Guidance redline/validator CI — 2026-11-18
+- Exact head `1d5ae716cc6683365f4da6236d15bb9b32be1e52`, Run #865 / ID `44207426703`: success.
+- 161 passed, 1 xfailed; source blob identity, compile, CRA traceability with bidirectional links, full pytest, three-PDF live canary, artifact upload and official HTML canary passed.
+- Artifact #14383728315, digest `sha256:03b260173f643a68841f54c9f9ac1b3d99c9064762a677ed310160618170f8bb`.
+- Pre-merge safety ref identical to main at base `d92f14f6c275bf6b3fa0c8243ac696dca0358d50`.
+- Metadata updated after Run #865; rerun exact-head CI before merge.
