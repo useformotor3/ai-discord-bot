@@ -53,4 +53,31 @@ CRA-001–CRA-035 법령 문언 심층 감사(Batch 1–3) 결과가 제품 인�
 ## 다음 단계
 - 전체 보고서 본문과 35-row CSV의 용어/조항/날짜/예외/조건이 15/36/13/41 매트릭스와 일치하는지 독립 재검토.
 - 제품 evidence intake 문서에 manufacturer/model/variants, intended purpose, connection/protocol, RDPS, software components/SBOM, market placement/supply chain, support period, Annex III/IV core function, sectoral certificates를 증거 단위로 요청.
-- Commission-hosted Guidance PDF primary byte identity를 재확인하고 fallback 상태 유지.
+- G-001–G-013의 OJ claim redline 및 matrix cross-link consistency를 완료했으므로 다음은 M/606 C(2026) 7861 Annex provenance, ESO adoption dates, OJ harmonised-standard citation status의 공식 원문 재검증.
+
+
+## 최신 OJ Guidance redline 및 cross-link 검증 — 2026-11-18
+
+### 공식 출처
+- Current official citation: OJ C/2026/6013, CELEX 52026XC06013, 17.11.2026.
+- EUR-Lex primary PDF SHA-256: `40ca76caeb0108f5b97c8f373a95f590b453fe92bd45a483addf3326e48c1dc2`, 61 pages, fallback=False.
+- C(2026) 5252 ANFR mirror SHA-256: `fe209c250e3d1f7599e42826d91963666951332927edcf511a2e79fe8d2f8234`; historical mirror-only. Do not conflate with OJ source.
+
+### Claim-to-matrix consistency
+- Programmatic bidirectional check across 13 claims, 35 requirements, 15 interfaces and 36 SEC controls: **zero missing links and zero dangling Guidance claim IDs** after correction.
+- G-002's shorthand range `IF-001–IF-013` was expanded into explicit semicolon-separated interface IDs for machine-readable consistency.
+- G-005's related interface IF-015 was added as a reverse link because material changes to remote diagnostics/management connectivity can affect the substantial-modification assessment; G-005 remains linked to CRA-025 and SEC-036.
+- G-001–G-013 are all non-binding Commission explanations. Requirement IDs and SEC controls remain based on binding CRA articles/annexes, not created by Guidance.
+
+### OJ locator and wording corrections
+- G-001: §2.4 para.25 only, OJ p.7 (para.26 belongs to §2.5).
+- G-003: narrowed to complex systems, legacy components, interoperability constraints and risk-based assessment; unsupported “interfaces/product-level mitigations” removed from the §2.6 paraphrase.
+- G-004: expressly retains applicable conformity assessment, EU DoC, CE marking, vulnerability handling and other obligations even where redesign is unnecessary.
+- G-008: separates external dependency/environmental risk and product-level mitigation from due diligence for integrated third-party components.
+- G-013: §4.2 Examples 37–39, OJ p.24; makes the identical replacement condition explicit and contrasts non-identical Example 37 with Examples 38–39.
+- Rendered page-image checks: OJ pages 7–10, 24–25, 30, 32–35, 42–46, 53 and 61.
+
+### Current boundaries
+- Product scope/classification/conformity remains Unknown without exact manufacturer/model evidence.
+- All 15 interface examples remain product-unverified; all 36 SEC controls remain unimplemented/unverified.
+- Next priority: independently verify M/606 C(2026) 7861 Annex provenance and the current ESO/OJ harmonised-standard status.
