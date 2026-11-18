@@ -750,3 +750,9 @@
 - Merge `caa32ed9ac6679b21b619155cdf28d1b75d81c33`; exact-main Run #934 success, 161 passed / 1 xfailed.
 - Artifact #14395218493, SHA-256 `8c827f786583bb5d2f8d14224e990b194ae50bf7f1393b4b9009925d123773da`.
 - Post-merge safety ref equals main. MCU benchmark and MCU-T01–T12 test protocol are merged; actual ST MCU identity and control requirements remain P0 inputs.
+
+
+### PR #78 병합 및 main 사후 검증 완료 — 2026-11-18
+- Merge `441b0198bcd695752d1adb053d8e077f91426a0a`; exact-main Run #936 success, 161 passed / 1 xfailed.
+- Artifact #14396500899, SHA-256 `6ef8037213259261dd57bcc3b1229d50f58947092a953bbc12ffc106ee4c8a05`.
+- Post-merge safety ref equals main. CRA legal/evidence matrix, reference architecture, ST/TI MCU benchmark and MCU-T01~T12 test protocol are synchronized.
