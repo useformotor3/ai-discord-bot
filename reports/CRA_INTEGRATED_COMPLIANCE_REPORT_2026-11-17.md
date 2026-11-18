@@ -28,7 +28,7 @@
 - 공식 조화표준의 추정 적합성(presumption of conformity)은 해당 표준의 참조가 EU Official Journal에 공표된 범위에서만 인정된다(Article 27). 표준 초안, CEN/CENELEC/ETSI 내부 승인, M/606 납품 자체를 OJ 공표와 동일시하지 않는다.
 
 ### 2.2 공식 해석·이행자료
-- European Commission, Commission Guidance C(2026) 5252 final, Annex, 2026-07-27. 비구속적이며 개별 제품에 대한 사례별 판단을 대체하지 않는다.
+- European Commission, Commission Guidance (C(2026) 5252, 2026-07-27 승인/게시), Official Journal Communication C/2026/6013, 2026-11-17 게재, CELEX 52026XC06013. 비구속적이며 개별 제품에 대한 사례별 판단을 대체하지 않는다. 최신 인용 및 페이지 기준은 EUR-Lex OJ C/2026/6013 PDF를 우선한다.
 - European Commission CRA implementation page, CRA implementation FAQs(마지막 갱신 2026-09-04), CRA standardisation page. 진행 일정과 정책 업데이트 확인에 사용한다.
 - ENISA CRA SRP FAQ(마지막 갱신 2026-10-15). 플랫폼 등록·신고 단계·기존 제품 적용 및 사용 제한을 확인한다.
 - ENISA CRA Single Reporting Platform FAQ. 신고 플랫폼 운영 절차 확인에 사용한다.
@@ -272,8 +272,9 @@ Commission Implementing Decision C(2026) 7861 final Annex는 M/606의 41개 표�
 |---|---|
 | Regulation (EU) 2024/2847, EUR-Lex / OJ | CRA 구속력 있는 법령·Annex 원문 |
 | https://eur-lex.europa.eu/eli/reg/2024/2847/oj/eng | CRA 공식 ELI |
-| Commission Guidance C(2026) 5252 final, Annex (2026-07-27) | 적용 범위, 데이터 연결, 제품 경계, 핵심 기능, 지원기간, 신고, 기계류 규정 관계 해석 |
-| https://www.anfr.fr/fileadmin/CRA/Commission_guidance_on_the_application_of_Regulation__EU__20242847__Cyber_Resilience_Act_.pdf | Commission Guidance PDF 사본 |
+| Commission Guidance C(2026) 5252 (2026-07-27), OJ Communication C/2026/6013 (17.11.2026) | 적용 범위, 데이터 연결, 제품 경계, 핵심 기능, 지원기간, 신고, 기계류 규정 관계 해석; 현재 공식 인용 기준 |
+| https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX%3A52026XC06013 | Commission Guidance 공식 관보 PDF (OJ C/2026/6013); 61 pages; SHA-256 `40ca76caeb0108f5b97c8f373a95f590b453fe92bd45a483addf3326e48c1dc2` |
+| https://www.anfr.fr/fileadmin/CRA/Commission_guidance_on_the_application_of_Regulation__EU__20242847__Cyber_Resilience_Act_.pdf | C(2026) 5252 historical mirror copy; mirror-only SHA-256 `fe209c250e3d1f7599e42826d91963666951332927edcf511a2e79fe8d2f8234`; not claimed byte-identical to OJ PDF |
 | https://digital-strategy.ec.europa.eu/en/factpages/cyber-resilience-act-implementation | Commission CRA 이행 일정 |
 | https://digital-strategy.ec.europa.eu/en/library/cyber-resilience-act-implementation-frequently-asked-questions | Commission CRA FAQ (마지막 갱신 2026-09-04) |
 | https://digital-strategy.ec.europa.eu/en/policies/cra-reporting | Commission 신고 의무·SRP 설명 (2026-09-11 갱신) |
