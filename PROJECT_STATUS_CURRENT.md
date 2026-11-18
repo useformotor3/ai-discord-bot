@@ -313,3 +313,13 @@
 - CRA traceability: 13 claims, 15 interfaces, 35 requirements, 36 SEC, 41 M/606 items; bidirectional links true.
 - Artifact #14390620457; digest `sha256:b7ced7629ab9e88bf44190d6d4f5fd50fc91f45bfc33a83ae09a02c1833e2f20`; expires 2026-11-25 01:58:08 UTC.
 - CI metadata를 이 문서에 기록했으므로 변경된 최종 head에서 exact-head CI를 재실행한 후 병합한다.
+
+
+## PR #64 병합 및 사후 안전 검증 — 2026-11-18
+- PR #64 `docs: update CRA M606 deadlines from C(2026) 7861` squash merge 완료: `41229486baded6336aa43cd3b5de375476fe92f3`.
+- 최종 exact-head `ae896286ee63916679afa4c6cc44655f1c125a4f`, Run #905 / ID `44219914781`: success; **161 passed, 1 xfailed**.
+- Source blob identity, compile, CRA cross-matrix traceability, 공식 CRA PDF/HTML read-only canary 통과. Traceability: 13 claims / 15 interfaces / 35 requirements / 36 SEC / 41 M/606 items, bidirectional links true.
+- 공식 PDF canary에서 C(2026)7861 Annex 사본: 6 pages, SHA-256 `262b09596cb5cbe7d72a2c7789fb2512ee00db7f69082e7def2c8181b0f63276` 확인.
+- Artifact #14388899741, SHA-256 `ecd0f1181457270eb5d3d9fd5e60c2271aafc730ac1250a025499aa614f5cb8b`, expires 2026-11-25 02:00:03 UTC.
+- Pre-merge safety ref `safety/pre-m606-amendment-2026-11-18`; post-merge `safety/post-merge-pr64-2026-11-18`와 main identical (0 ahead / 0 behind).
+- 다음: Article 2 비수락 조건의 ESO receipt/notice 확인은 계속 열어둔다. 제품 모델별 P0 evidence intake checklist 및 CRA applicability/classification decision matrix 작성.
