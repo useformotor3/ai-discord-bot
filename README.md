@@ -17,6 +17,12 @@
 
 ## 현재 상태 — 2026-11-19
 
+- 최신 main: PR #89 merge 9ac0b32189cdeb7789dc6993eccb0b5f3dc4b4cf; exact-main Run #959 success, 162 passed / 0 xfailed.
+- 적용성 보고서에 Annex III/IV core-functionality 분류 게이트가 반영됨. 다음 작업은 EVD-01~EVD-16 책임·검증·합격 기준 강화.
+- 제품별 모델/SKU, 실제 MCU part number 및 제어 사양은 미확인.
+
+## 이전 상태 — 2026-11-18
+
 - 최신 main 기준: PR #88 merge 16cdec76def2e8920d8fc2ca3b6a43e497d41d83; exact-main Run #957 success, 162 passed / 0 xfailed.
 - 현재 CRA 제품 분류 심화 감사 브랜치: cra/applicability-core-functionality-audit-2026-11-19 (PR/CI 전). 적용성 보고서와 EVD 매트릭스에 Annex III/IV core-functionality 및 제품 경계 게이트를 통합 중.
 - 제품별 모델/SKU 및 실제 MCU 식별은 여전히 미확인. 개별 분류·MCU 선정 결론 금지.
