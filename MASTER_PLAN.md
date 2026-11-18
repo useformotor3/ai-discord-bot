@@ -826,3 +826,16 @@
 - Merge `16ab607a919c6bfa4fee8dc90ab5af2ea2f53352`; exact-head Run #925 및 exact-main Run #926 success.
 - Run #926: 161 passed / 1 xfailed; source integrity, compile, CRA traceability, 9 official sources and Article 13(8) canaries passed. Artifact #14394634118, digest `sha256:cf7d6d6ef7020d5381a4a2f201f50bf3171251155459505420ffce16998ef027`.
 - Pre/post safety refs preserved; post-merge ref == main. Next architecture update is in `cra/servo-drive-security-architecture-v02-2026-11-18` and must pass exact-head CI before merge.
+
+
+## PR #74 병합 완료 및 exact-main 검증 — 2026-11-18
+- PR #74 merge `48dd8f7bc0617ec0c67eadf80a7e7cc364b862c0`; exact-head Run #927 및 exact-main Run #928 success.
+- Run #928: 161 passed / 1 xfailed; source integrity, compile, CRA traceability, 9 official sources and Article 13(8) canaries passed. Artifact #14395476337, digest `sha256:6aaf8fc76f87121e42f8190fec9568121fbd8a0005695ce8de87ff776f0d1d93`.
+- Pre/post safety refs preserved; post-merge ref == main.
+- Next: source-backed ST-vs-TI MCU candidate benchmark. Actual ST part number and motor/control constraints remain P0 unknowns; do not declare G474RE/H753XI as the installed MCU.
+
+
+## MCU 후보 벤치마킹 — ST 기준 / TI 비교 (2026-11-18)
+- 예비 비교 문서 `reports/CRA_SERVO_DRIVE_MCU_PLATFORM_BENCHMARK_2026-11-18.md` 생성. ST 후보 STM32G474RE(모터제어 주변장치), STM32H753XI(고성능/crypto)와 TI MSPM0G3529-Q1(보안 기능 통합)을 비교한다.
+- 실제 ST 부품번호 미확정. 제품 marking/BOM, FOC/current-loop timing, PWM/ADC/encoder, fieldbus, CPU/RAM budget 확보 전에는 동급성·승자·교체 가능성을 판단하지 않는다.
+- 동일 조건 실측(WCET/jitter, ADC/PWM sync, comms+crypto load, update recovery) 후에만 가중치 평가를 수행한다.

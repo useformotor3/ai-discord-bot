@@ -2,7 +2,15 @@
 
 > 이 문서는 2026-11-18 재개 시점의 최신 상태 스냅샷이다. 기존 날짜별 SESSION_LOG 및 PROJECT_LOG의 역사 기록을 대체하지 않는다. 충돌 시 본 문서의 최신 main 기준 사실과 원본 PR/Actions 증거를 우선한다.
 
-## 최신 main 기준점 — PR #71 및 사후 CI 완료 (2026-11-18)
+## 현재 기준점 — main / PR #74 사후 검증 완료 (2026-11-18)
+- `main` HEAD: `48dd8f7bc0617ec0c67eadf80a7e7cc364b862c0`; exact-main Run #928 / ID `44231392940` success (161 passed, 1 xfailed).
+- main 사후 안전 브랜치 `safety/post-merge-pr74-2026-11-18`가 main과 동일 SHA. PR #74 exact-head Run #927도 success.
+- 현재 기술 산출물: 참조 보안 아키텍처 v0.2와 MCU 예비 벤치마킹 문서 `reports/CRA_SERVO_DRIVE_MCU_PLATFORM_BENCHMARK_2026-11-18.md`.
+- 현재 작업 브랜치: `cra/servo-drive-mcu-benchmark-st-standards-2026-11-18`; 다음 문서 PR은 정확한 ST MCU 식별 없이 비교 후보만 정리하며 제품별 선정은 보류한다.
+- P0 미확인: 실제 ST MCU 주문 코드/마킹·silicon revision, motor/control loop 사양, PWM/ADC/encoder 구성, fieldbus, BOM/firmware resource budget.
+- 다음 게이트: 해당 입력 확보 후 동일 조건 WCET/jitter·ADC/PWM sync·encoder·통신+암호 부하·업데이트 복구 벤치마크. 실측 전 점수/승자/교체 결론 금지.
+
+## 이전 main checkpoint — PR #71 (2026-11-18)
 - PR #71 `docs: record PR70 merge and exact-main verification` squash merge 완료: `adcec0a0cb94a326e6b7d9b8c242c4ae3dab4152`.
 - PR #71 exact head `bb5cb36598c5a6daa7982781a6db2726d81f9530`, Run #921 / ID `44228810756`: success. Source integrity, compile, CRA cross-matrix traceability, full pytest, official CRA PDF/HTML canaries 통과. Artifact #14394585712, SHA-256 `cff5e21b032fd5f7de923e080de3b7b133b214da697a185efb2318ab04fbf0bc`.
 - Pre-merge safety ref `safety/pre-pr71-merge-checkpoint-2026-11-18`; post-merge safety ref `safety/post-merge-pr71-2026-11-18`.
@@ -10,7 +18,7 @@
 - Run #922 artifact #14393784949, SHA-256 `db75a58638b43fbe1798c70b7c4dad5951cb1b1f98bfa013fa771184e6cf2126`, expires 2026-11-25 03:26:21 UTC. Official PDF hashes: Guidance Annex mirror fallback=True `fe209c250e3d1f7599e42826d91963666951332927edcf511a2e79fe8d2f8234`; OJ C/2026/6013 fallback=False `40ca76caeb0108f5b97c8f373a95f590b453fe92bd45a483addf3326e48c1dc2`; M/606 C(2026)7861 Annex fallback=False `262b09596cb5cbe7d72a2c7789fb2512ee00db7f69082e7def2c8181b0f63276`.
 - Confirmed `main` == `safety/post-merge-pr71-2026-11-18` at the merge SHA. PR #71 touched only project-control documentation/log files; production runtime, production workflows, secrets, state/history/archive and legacy SIL 3 files were not modified.
 
-## 최신 main 기준점 — PR #72 및 사후 CI 완료 (2026-11-18)
+## 이전 main checkpoint — PR #72 (2026-11-18)
 - PR #72 문서/로그 checkpoint squash merge: `293a27a8ea2a8e03f58db50bbe27d2aaea194c8d`; PR head `0f85cc04eb64efe961e514a59a28386b5527708c`, Run #923 success.
 - Pre-merge safety `safety/pre-pr72-merge-checkpoint-2026-11-18`; post-merge safety `safety/post-merge-pr72-2026-11-18`; post-merge safety == main at merge SHA.
 - Exact-main Run #924 / ID `44230705429` on `293a27a8ea2a8e03f58db50bbe27d2aaea194c8d`: **success**, 161 passed / 1 xfailed; source integrity, compile, CRA traceability, 9 official sources, corrigenda and Article 13(8) locator/quote canaries passed.
@@ -18,16 +26,27 @@
 - PR #72 changed project-control documents only; runtime/workflow/secrets/state/history/archive/legacy SIL 3 materials untouched.
 
 ## 최신 설계 산출물 — 참조 보안 아키텍처 v0.2 (2026-11-18)
-- `reports/CRA_SERVO_DRIVE_REFERENCE_SECURITY_ARCHITECTURE_2026-11-17.md`를 v0.2로 보강한 작업 브랜치 `cra/servo-drive-security-architecture-v02-2026-11-18`에서 PR #74 exact-head CI 검증 대기.
+- `reports/CRA_SERVO_DRIVE_REFERENCE_SECURITY_ARCHITECTURE_2026-11-17.md`를 v0.2로 보강한 작업 브랜치 `cra/servo-drive-security-architecture-v02-2026-11-18`에서 PR #74 병합 완료; exact-head Run #927 및 exact-main Run #928 성공.
 - 실시간 데이터 경로와 관리/업데이트 경로 분리, 단일 MCU vs 통신·제어 MCU 분리 선택 기준, 부팅/업데이트 검증 순서, 설계 수용 기준 및 EVD/SEC 추적을 추가.
 - 제품별 부품/회로/펌웨어가 없으므로 참조 설계일 뿐 제품 구현·시험·적합성 판정은 미완료.
 
-## 최신 main 기준점 — PR #73 및 사후 CI 완료 (2026-11-18)
+## 이전 main checkpoint — PR #73 (2026-11-18)
 - PR #73 문서/로그 checkpoint squash merge: `16ab607a919c6bfa4fee8dc90ab5af2ea2f53352`; PR head `cd78b6694384d550ef68d7f1b7ec2972a02a663e`, Run #925 success.
 - Pre-merge safety `safety/pre-pr73-merge-checkpoint-2026-11-18`; post-merge safety `safety/post-merge-pr73-2026-11-18`; post-merge safety == main.
 - Exact-main Run #926 / ID `44230997446` on `16ab607a919c6bfa4fee8dc90ab5af2ea2f53352`: **success**, 161 passed / 1 xfailed; source integrity, compile, CRA traceability (13/15/35/36/41), 9 official sources, corrigenda and Article 13(8) locator/quote canaries passed.
 - Artifact #14394634118, SHA-256 `cf7d6d6ef7020d5381a4a2f201f50bf3171251155459505420ffce16998ef027`, expires 2026-11-25 03:31:37 UTC.
 - PR #73 touched only project-control documents; no runtime/workflow/secrets/state/history/archive/legacy SIL 3 files changed.
+
+## 이전 main checkpoint — PR #74 (2026-11-18)
+- PR #74 참조 아키텍처 v0.2 문서 변경 squash merge: `48dd8f7bc0617ec0c67eadf80a7e7cc364b862c0`; PR head `4ee2d73bf7bc5826c001011b17133d4a6a8071ec`, Run #927 success.
+- Pre-merge safety `safety/pre-pr74-merge-checkpoint-2026-11-18`; post-merge safety `safety/post-merge-pr74-2026-11-18`; post-merge safety == main.
+- Exact-main Run #928 / ID `44231392940` on `48dd8f7bc0617ec0c67eadf80a7e7cc364b862c0`: **success**, 161 passed / 1 xfailed; source integrity, compile, CRA traceability (13/15/35/36/41), 9 official sources, corrigenda and Article 13(8) locator/quote canaries passed.
+- Run #927 artifact #14395142564, SHA-256 `64c359db2e764f2506345e3fee3c5e20bbacacdf3e3e67d095f02caa7126b528`; Run #928 artifact #14395476337, SHA-256 `6aaf8fc76f87121e42f8190fec9568121fbd8a0005695ce8de87ff776f0d1d93`, expires 2026-11-25 03:34:56 UTC.
+- PR #74 changed only documentation/log files; production runtime/workflows/secrets/state/history/archive/legacy SIL 3 files untouched.
+
+## 다음 하드웨어 조사 — MCU 후보 기술 벤치마킹 (2026-11-18)
+- `reports/CRA_SERVO_DRIVE_MCU_PLATFORM_BENCHMARK_2026-11-18.md` 초안: ST 기준 후보 STM32G474RE/H753XI, TI 비교 후보 MSPM0G3529-Q1을 공식 제조사 자료로 대조.
+- 실제 ST MCU 부품번호와 제어 사양이 미확정이므로 선정/대체 결론은 보류. CPU MHz/DMIPS는 동일 조건 벤치마크가 아님.
 
 ## 활성 범위
 - 활성 프로젝트: EU Cyber Resilience Act(CRA) 조사·요구사항 추적·제품 적용성/기술 설계·보고서 검증.

@@ -10,6 +10,11 @@
 
 > **기록 원칙:** 프로젝트의 공식 진행 상태와 재개 지점은 이 저장소에 기록합니다. 대화창의 기억에만 의존하지 않습니다.
 
+### 현재 기준점 — main / PR #74 사후 검증 완료 (2026-11-18)
+- main `48dd8f7bc0617ec0c67eadf80a7e7cc364b862c0`; exact-main Run #928 success, 161 passed / 1 xfailed.
+- 참조 보안 아키텍처 v0.2 병합 완료. [ST 기준 / TI 비교 MCU 예비 벤치마킹](reports/CRA_SERVO_DRIVE_MCU_PLATFORM_BENCHMARK_2026-11-18.md) 작성.
+- 실제 ST MCU part number 및 제어 사양은 미확인. 제품별 선정·교체 결론은 동일 조건 실측 후 결정.
+
 ## 현재 상태 — 2026-11-18
 
 - **활성 범위: CRA 대응만.** SIL 3 자료는 역사적 산출물로 보존하며 별도 명시적 재개 지시 전 비활성.
@@ -721,3 +726,9 @@
 - Merge `16ab607a919c6bfa4fee8dc90ab5af2ea2f53352`; exact-main Run #926 success, 161 passed / 1 xfailed.
 - Artifact #14394634118, SHA-256 `cf7d6d6ef7020d5381a4a2f201f50bf3171251155459505420ffce16998ef027`.
 - Post-merge safety ref equals main. 참조 보안 아키텍처 v0.2 설계 보강은 PR #74 작업 브랜치에서 검증 중.
+
+
+### PR #74 병합 및 main 사후 검증 완료 — 2026-11-18
+- Merge `48dd8f7bc0617ec0c67eadf80a7e7cc364b862c0`; exact-main Run #928 success, 161 passed / 1 xfailed.
+- Artifact #14395476337, SHA-256 `6aaf8fc76f87121e42f8190fec9568121fbd8a0005695ce8de87ff776f0d1d93`.
+- Post-merge safety ref equals main. 참조 보안 아키텍처 v0.2는 병합됐고, MCU 후보 기술 벤치마킹 초안은 [여기](reports/CRA_SERVO_DRIVE_MCU_PLATFORM_BENCHMARK_2026-11-18.md)에 정리 중.
