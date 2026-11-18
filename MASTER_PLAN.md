@@ -792,3 +792,11 @@
 - 원래 M/606의 2025-04-03 수락과 C(2026)7861 amendment Article 2 절차를 구분하여 관리한다.
 - 개정 결정의 개별 수령일·비수락 통지는 미확인으로 유지.
 - 사후 안전 ref `safety/post-merge-pr69-2026-11-18`와 main 동일.
+
+
+## PR #70 병합 완료 — 2026-11-18
+- Merge commit `ca65475db4ca53d23ee55308c9c9616a054ea756`; PR #70 documents PR #69 merge and M/606 acceptance-status distinction.
+- PR head `b5fb2adc3eeba9d9839ff3d3519b128743cc6878`, Run #918 success: 161 passed, 1 xfailed; source integrity, compile, CRA traceability and official PDF/HTML canaries passed.
+- Artifact #14391727520, digest `sha256:f737a27f61f2b6cd153731941c9e615e4379912d03ccfc3696f0eea7b2ad0d09`.
+- Pre/post safety refs: `safety/pre-pr70-merge-checkpoint-2026-11-18`, `safety/post-merge-pr70-2026-11-18`; post-merge ref == main at merge.
+- Post-merge exact-main Run #919 / ID `44228633470` on merge SHA `ca65475db4ca53d23ee55308c9c9616a054ea756` succeeded: 161 passed, 1 xfailed; source integrity, compile, CRA traceability and official CRA PDF/HTML source canaries passed. Artifact #14393668052, digest `sha256:3d6314562d9ac4f34d645ef3191be6e499ae2d25e829968e17658717bdf2ae22`.

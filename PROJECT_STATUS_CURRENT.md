@@ -359,3 +359,13 @@
 - Artifact #14391159512, digest `sha256:a71b8d12c9c1bb627da1b8d771ed2fda04ea179a721a1c55add3d5e28e16a1da`, expires 2026-11-25 02:29:24 UTC.
 - Post-merge safety ref `safety/post-merge-pr69-2026-11-18` == main (0 ahead/0 behind).
 - Regulatory fact distinction: original M/606 accepted by CEN/CENELEC/ETSI on 2025-04-03 (official CEN-CENELEC announcement); C(2026)7861 amendment-specific Article 2 notification/receipt and non-acceptance status remain unconfirmed.
+
+
+## PR #70 병합 및 사후 검증 — 2026-11-18
+- PR #70 `docs: record PR69 merge and M606 status verification` squash merge: `ca65475db4ca53d23ee55308c9c9616a054ea756`.
+- PR #70 exact head `b5fb2adc3eeba9d9839ff3d3519b128743cc6878`, Run #918 / ID `44223777837`: success; source blob identity, compile, CRA cross-matrix traceability, full pytest (**161 passed, 1 xfailed**), official CRA PDF/HTML canaries passed.
+- Traceability: 13 claims / 15 interfaces / 35 requirements / 36 SEC / 41 M/606 items; bidirectional links true; JSONL 138 events (133 modern IDs, 5 legacy IDs).
+- Artifact #14391727520, SHA-256 `f737a27f61f2b6cd153731941c9e615e4379912d03ccfc3696f0eea7b2ad0d09`, expires 2026-11-25 02:31:30 UTC.
+- Pre-merge safety ref `safety/pre-pr70-merge-checkpoint-2026-11-18`; post-merge `safety/post-merge-pr70-2026-11-18` identical to main at merge SHA.
+- PR #70 scope: documentation/log synchronization only; no runtime/workflow/secrets/state/history/archive or SIL 3 files changed.
+- Post-merge exact-main CI Run #919 / ID `44228633470` on merge SHA `ca65475db4ca53d23ee55308c9c9616a054ea756`: **success**; 161 passed, 1 xfailed; source integrity, compile, CRA traceability, 9 official sources canary, corrigenda validation and Article 13(8) locator/quote canary passed. Artifact #14393668052, SHA-256 `3d6314562d9ac4f34d645ef3191be6e499ae2d25e829968e17658717bdf2ae22`, expires 2026-11-25 03:11:50 UTC.
