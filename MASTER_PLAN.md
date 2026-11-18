@@ -751,3 +751,11 @@
 - 9 official CRA PDF sources canary, artifact upload and official HTML canary passed.
 - Artifact #14390620457, digest `sha256:b7ced7629ab9e88bf44190d6d4f5fd50fc91f45bfc33a83ae09a02c1833e2f20`.
 - Record this result then rerun exact-head CI before merge.
+
+
+## PR #64 병합 완료 및 다음 작업 — 2026-11-18
+- C(2026)7861 일정 정정 PR #64가 `41229486baded6336aa43cd3b5de375476fe92f3`로 squash merge됨.
+- 최종 exact-head Run #905 success: 161 passed, 1 xfailed; source integrity, compile, CRA cross-matrix traceability, official CRA PDF/HTML canaries 통과.
+- Artifact #14388899741, digest `sha256:ecd0f1181457270eb5d3d9fd5e60c2271aafc730ac1250a025499aa614f5cb8b`.
+- Post-merge safety ref `safety/post-merge-pr64-2026-11-18` == main.
+- 후속 우선순위: (1) M/606 Article 2 ESO receipt/non-acceptance 사실 확인, (2) 제품 P0 자료 intake checklist, (3) CRA 적용성/제품 분류 decision matrix. 제품 데이터가 없으므로 모델별 결론/증거 상태는 Unknown 유지.

@@ -652,3 +652,10 @@
 ### PR #64 초기 exact-head CI
 - Run #900 success: **161 passed, 1 xfailed**; CRA cross-matrix traceability(13/15/35/36/41) 및 공식 CRA PDF/HTML canary 통과.
 - Artifact #14390620457, SHA-256 `b7ced7629ab9e88bf44190d6d4f5fd50fc91f45bfc33a83ae09a02c1833e2f20`. CI 메타데이터 기록 후 최종 head 재검증 예정.
+
+
+### PR #64 병합 완료 — M/606 일정 정정
+- PR #64 merge commit `41229486baded6336aa43cd3b5de375476fe92f3`.
+- Final exact-head Run #905: **161 passed, 1 xfailed**; CRA traceability 및 공식 PDF/HTML canary 통과.
+- [M/606 개정 추적 보고서](reports/CRA_M606_AMENDMENT_C2026_7861_DEADLINES_2026-11-18.md)가 main에 반영됨.
+- Post-merge safety ref `safety/post-merge-pr64-2026-11-18`와 main identical.

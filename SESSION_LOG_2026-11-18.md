@@ -250,3 +250,12 @@
 - Traceability summary: 13 claims, 15 interfaces, 35 requirements, 36 SEC, 41 M/606 items; bidirectional_links=true.
 - Artifact #14390620457; SHA-256 `b7ced7629ab9e88bf44190d6d4f5fd50fc91f45bfc33a83ae09a02c1833e2f20`; expires 2026-11-25 01:58:08 UTC.
 - CI metadata recorded in status/docs; rerun exact-head CI after this update before merge.
+
+
+## PR #64 병합 및 사후 검증
+- PR #64 squash merge: `41229486baded6336aa43cd3b5de375476fe92f3`.
+- 최종 exact-head `ae896286ee63916679afa4c6cc44655f1c125a4f`, Run #905 / ID `44219914781`: success, 161 passed, 1 xfailed.
+- CRA traceability 13/15/35/36/41 및 bidirectional links true; 공식 CRA PDF/HTML canary 모두 통과.
+- Artifact #14388899741, SHA-256 `ecd0f1181457270eb5d3d9fd5e60c2271aafc730ac1250a025499aa614f5cb8b`.
+- Pre-merge `safety/pre-m606-amendment-2026-11-18`; post-merge `safety/post-merge-pr64-2026-11-18`, main과 identical.
+- 다음 단계는 Article 2 절차 확인, 제품 P0 intake checklist 및 제품 분류 매트릭스.
