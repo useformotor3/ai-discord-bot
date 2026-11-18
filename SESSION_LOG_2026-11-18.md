@@ -410,3 +410,11 @@
 - Main exact Run #944 / ID `44234505453`: success, 161 passed / 1 xfailed; source integrity, compile, 13/15/35/36/41 traceability, 9 official sources, corrigenda and Article 13(8) canaries passed.
 - Run #943 artifact #14395849674 digest `sha256:b978bbe302f3d9e68aa8ef2a2a4643c69fdb485e80e9ec14514642645724f2bd`; Run #944 artifact #14396972010 digest `sha256:f23e616d121c61d5825774f1098f213b40cff65e858a527807060d71b02734c4`.
 - PR #82 only records prior checkpoint. The remaining product-specific blocker is exact ST MCU marking/order code and drive control requirements; MCU-T01~T12 remain Not Run.
+
+
+## PR #83 병합 및 exact-main 사후 검증 완료 — 2026-11-18
+- PR #83 exact head `7a6ecd85b786ad2fefc1422edaf9d904bcc2a758`, Run #945 success; merge `0255e50f003792fa8f5d0d3a130e45dda3491c3d`.
+- Pre/post safety refs `safety/pre-pr83-merge-checkpoint-2026-11-18`, `safety/post-merge-pr83-2026-11-18`; main and post-merge ref identical.
+- Main exact Run #946 / ID `44234852177`: success, 161 passed / 1 xfailed; source integrity, compile, 13/15/35/36/41 traceability, 9 official sources, corrigenda and Article 13(8) canaries passed.
+- Run #945 artifact #14395674978 digest `sha256:8fac91a19e3eedcdb99dea22c2bda49dc650f3cfe1a39582d172f2ff0f6af9fb`; Run #946 artifact #14396926567 digest `sha256:0da05816f553bfbe1f541df001f2f487bd66176e3b454eb04ee47cffd3330a33`.
+- PR #83 only records prior checkpoint. Product-specific MCU benchmark remains blocked on actual ST part number and control requirements; tests remain Not Run.
