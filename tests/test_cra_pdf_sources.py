@@ -103,12 +103,13 @@ def test_fetch_all_writes_pdf_text_and_manifest(tmp_path):
             tmp_path,
             get=lambda *a, **k: next(responses),
         )
-    assert len(results) == 3
+    assert len(results) == 4
     assert (tmp_path / "C2026_5252_guidance_annex.pdf").read_bytes().startswith(b"%PDF-")
     assert (tmp_path / "C_2026_6013_cra_guidance_oj.pdf").read_bytes().startswith(b"%PDF-")
+    assert (tmp_path / "DG-GoSR-2026-06_Second_Joint_ESO_semestrial_report_M606.pdf").read_bytes().startswith(b"%PDF-")
     assert (tmp_path / "C2026_7861_m606_annex.pdf.txt").exists()
     manifest = json.loads((tmp_path / "manifest.json").read_text(encoding="utf-8"))
-    assert len(manifest) == 3
+    assert len(manifest) == 4
     assert all(len(item["sha256"]) == 64 for item in manifest)
 
 def test_guidance_oj_c6013_is_fetched_from_eurlex_primary_without_fallback():
@@ -120,5 +121,17 @@ def test_guidance_oj_c6013_is_fetched_from_eurlex_primary_without_fallback():
     with patch.object(pdf, "PdfReader", FakeReader):
         item = pdf.fetch_pdf_source(definition, get=lambda *a, **k: response)
     assert item["id"] == "CRA-GUIDANCE-OJ-2026-6013"
+    assert item["fallback_used"] is False
+    assert item["final_url"] == definition["url"]
+
+def test_eso_m606_progress_report_is_fetched_from_stan4cra_primary():
+    definition = next(
+        item for item in pdf.PDF_SOURCE_CATALOG
+        if item["id"] == "CRA-ESO-M606-REPORT-2026-06"
+    )
+    response = FakeResponse(url=definition["url"])
+    with patch.object(pdf, "PdfReader", FakeReader):
+        item = pdf.fetch_pdf_source(definition, get=lambda *a, **k: response)
+    assert item["id"] == "CRA-ESO-M606-REPORT-2026-06"
     assert item["fallback_used"] is False
     assert item["final_url"] == definition["url"]
