@@ -224,3 +224,12 @@
 - Steps: source blob integrity, compile, CRA cross-matrix traceability, full pytest, 3 Commission official PDF fetch/hash, artifact upload, 9-source official HTML canary 모두 성공.
 - Artifact #14388303196; SHA-256 digest `47528b6e72af65dd95130a86a1442ac8f795a6eb3c34d93656369bf94734a2c2`; expiry 2026-11-25 01:40:17 UTC.
 - 이 CI 결과 metadata를 관리 문서에 추가했으므로 최종 변경 head에서 CI를 재실행한다. 아직 merge하지 않았다.
+
+
+## PR #62 병합 및 사후 복구 검증
+- PR #62 squash merge commit: `612285ed720310cebd82340dc2e3b150e2c6f80a`.
+- Final exact-head `3947e25ba1717caea3e4099404da800ba349352f7`, Run #896 / ID `44217724257`: success; **161 passed, 1 xfailed**.
+- Source blob identity, compile, CRA traceability, 3 official Commission PDF fetch/hash, 9-source official HTML canary 통과.
+- Artifact #14389685192; digest `sha256:e11bcbf277f32b7386e72fb063fdfac2b19e896473e30c8e775522b7f6c55d85`; expiry 2026-11-25 01:41:53 UTC.
+- Pre-merge safety ref `safety/pre-cra-evidence-matrix-2026-11-18`; post-merge ref `safety/post-merge-pr62-2026-11-18`; post-ref와 main identical 확인.
+- 제품별 EVD 상태는 모두 Unknown / evidence pending 유지. 다음 작업은 제품 P0 자료 intake 및 표준 최종본 clause redline.
