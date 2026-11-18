@@ -569,3 +569,8 @@
 - Exact-head Run #861 success: 158 passed, 1 xfailed; official EUR-Lex OJ PDF primary acquisition fallback=False.
 - Pre-merge ref: `safety/pre-merge-cra-guidance-oj-6013-2026-11-18`; post-merge ref: `safety/post-merge-cra-guidance-oj-6013-2026-11-18`.
 - Latest status and next steps: [PROJECT_STATUS_CURRENT.md](PROJECT_STATUS_CURRENT.md). Claim/page crosswalk and provenance: `reports/CRA_OFFICIAL_GUIDANCE_AND_M606_ANNEX_AUDIT_2026-11-17.md` §7.
+
+## Guidance claim redline — 2026-11-18
+- G-001–G-013 have been substantively checked against OJ C/2026/6013. G-003/G-008/G-013 wording was narrowed/refined; G-001/G-013 locators corrected; G-004 obligations clarified.
+- PDF page images were visually checked for all cited locator ranges. Full findings: `reports/CRA_OFFICIAL_GUIDANCE_AND_M606_ANNEX_AUDIT_2026-11-17.md` §8.
+- All Guidance claims remain non-binding explanations; product-specific conclusions remain Unknown until model evidence exists.
