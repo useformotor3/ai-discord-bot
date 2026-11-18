@@ -866,3 +866,10 @@
 - Run #934: 161 passed / 1 xfailed; source integrity, compile, CRA traceability 13/15/35/36/41, 9 official sources and Article 13(8) canaries passed. Artifact #14395218493, digest `sha256:8c827f786583bb5d2f8d14224e990b194ae50bf7f1393b4b9009925d123773da`.
 - Pre/post safety refs preserved; post-merge ref == main.
 - The next blocker is product-specific input: exact ST MCU part number/marking and drive control requirements. Existing MCU benchmark and MCU-T01–T12 plan are ready for product-specific completion; do not invent hardware values or report tests as executed.
+
+
+## PR #78 병합 및 Run #936 완료 — 2026-11-18
+- PR #78 merge `441b0198bcd695752d1adb053d8e077f91426a0a`; exact-head Run #935 및 exact-main Run #936 success.
+- Run #936: 161 passed / 1 xfailed; source integrity, compile, CRA traceability 13/15/35/36/41, 9 official sources and Article 13(8) canaries passed. Artifact #14396500899, digest `sha256:6ef8037213259261dd57bcc3b1229d50f58947092a953bbc12ffc106ee4c8a05`.
+- Pre/post safety refs preserved; post-merge ref == main.
+- Documentation checkpoint is current. The next blocker is exact installed ST MCU identification and drive control requirements; ask for chip top-marking/BOM before any product-specific benchmark or recommendation.
