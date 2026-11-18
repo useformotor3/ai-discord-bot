@@ -2,7 +2,22 @@
 
 > 이 문서는 2026-11-18 재개 시점의 최신 상태 스냅샷이다. 기존 날짜별 SESSION_LOG 및 PROJECT_LOG의 역사 기록을 대체하지 않는다. 충돌 시 본 문서의 최신 main 기준 사실과 원본 PR/Actions 증거를 우선한다.
 
-## 최신 main 기준점 — PR #84 및 사후 CI 완료 (2026-11-18)
+## 최신 main 기준점 — PR #85 및 사후 CI 완료 (2026-11-18)
+- PR #85 PR #84 merge/Run #948 checkpoint squash merge: `db05c57103fc9039347b61a29f473fe1af1c7082`; PR head `68599373a5bcfe7bae0ea3240c3a0598b4e8d700`, Run #949 success.
+- Pre-merge safety `safety/pre-pr85-merge-checkpoint-2026-11-18`; post-merge safety `safety/post-merge-pr85-2026-11-18`; post-merge safety == main.
+- Exact-main Run #950 / ID `44235614741` on merge SHA: **success**, 161 passed / 1 xfailed; source integrity, compile, CRA traceability (13/15/35/36/41), 9 official sources, corrigenda and Article 13(8) locator/quote canaries passed.
+- Run #949 artifact #14396114166, SHA-256 `a936ebf9dd3313dfe02294fddc4251edbbbbf392979afa9cbaf739741f7705a4`; Run #950 artifact #14397720052, SHA-256 `3db5dd4335c9e224aa46abc2e2cd4c3560801b7b5483678b89ec8b012b6d31fb`, expires 2026-11-25 04:12:03 UTC.
+- PR #85 documentation/log-only; runtime/workflow/secrets/state/history/archive/legacy SIL 3 files untouched.
+
+## 현재 기술 작업 상태 및 다음 게이트 — 2026-11-18
+- CRA 통합 보고서 v0.2, 적용성/P0 intake, EVD-01~16 증거 매트릭스, 참조 보안 아키텍처 v0.2, ST/TI MCU 후보 비교 및 MCU-T01~T12 시험 프로토콜이 main에 존재한다.
+- 법령/표준 측: M/606 C(2026)7861 일정 변경을 반영했으나 ESO의 개정 결정 수령일·Article 2 비수락 통지 여부와 각 표준 최종 전문/OJ 인용은 별도 확인 전까지 미확정. 표준 납기와 CRA 법적 적용일을 혼동하지 않는다.
+- 제품별 판정: 제조사/정확한 드라이브 모델·SKU, BOM/회로도, 실제 ST MCU 마킹/주문코드, 펌웨어·프로토콜·원격처리 경계가 없으므로 적용성/Annex III·IV 분류 및 MCU 적합성은 Unknown/보류.
+- 시험: MCU-T01~T12는 계획·기록 양식만 준비된 상태이며 전부 Not Run. 측정 결과·점수·승자·교체 권고를 만들지 않는다.
+- 다음 우선순위: (1) 제품 라벨/BOM에서 ST MCU 정확한 part number와 silicon revision 확보, (2) 제어 주기·PWM/ADC·encoder·fieldbus·WCET/jitter 요구 수집, (3) 실제 제품 변형별 Article 2 및 Annex III/IV core-functionality 판정, (4) EVD/SEC 요구-통제-시험-증거를 제품별 연결, (5) 동일 조건 bench 실행.
+- 독립 품질 감사 결과: 현재 문서는 공통 프레임워크/예비 설계로 올바르게 한계를 표시하고 있으며, 제품별 실증·적합성 완료로 오인하지 않도록 Unknown/Not Run 게이트를 유지해야 한다.
+
+## 이전 main 기준점 — PR #84 및 사후 CI 완료 (2026-11-18)
 - PR #84 PR #83 merge/Run #946 checkpoint squash merge: `774551f378f59c82ce34342f63fd595d4c743852`; PR head `ba5e6e6179d6259cb5088d110e352f316ddcb589`, Run #947 success.
 - Pre-merge safety `safety/pre-pr84-merge-checkpoint-2026-11-18`; post-merge safety `safety/post-merge-pr84-2026-11-18`; post-merge safety == main.
 - Exact-main Run #948 / ID `44235249125` on merge SHA: **success**, 161 passed / 1 xfailed; source integrity, compile, CRA traceability (13/15/35/36/41), 9 official sources, corrigenda and Article 13(8) locator/quote canaries passed.

@@ -909,3 +909,11 @@
 - PR #84 merge `774551f378f59c82ce34342f63fd595d4c743852`; exact-head Run #947 및 exact-main Run #948 success.
 - Run #948: 161 passed / 1 xfailed; source integrity, compile, CRA traceability 13/15/35/36/41, 9 official sources and Article 13(8) canaries passed. Artifact #14397286074, digest `sha256:1cd7be5fcd710e5fc193595602c974a701f1242f32ec5a549ea61a11c9eec388`.
 - Pre/post safety refs preserved; post-merge ref == main. Product-specific MCU work requires actual ST part number/marking and drive control requirements.
+
+
+## 현재 게이트 재확인 — 2026-11-18
+- Main 최신 기준: PR #85 merge `db05c57103fc9039347b61a29f473fe1af1c7082`; exact-main Run #950 success (161 passed / 1 xfailed), 9 official CRA source canaries and Article 13(8) locator/quote passed.
+- 공통 산출물은 존재하나 제품별 입력은 비어 있다. 정확한 드라이브 모델/SKU, 실제 ST MCU 주문코드·silicon revision, control-loop/PWM/ADC/encoder/fieldbus 요구를 확보하기 전 제품별 CRA 판정 및 MCU 점수화 금지.
+- MCU-T01~T12는 시험 프로토콜만 준비됐고 전부 Not Run. 측정 전 pass/fail·승자·대체 결론 금지.
+- M/606 개정 납기는 ESO delivery schedule이다. CRA 2027-12-11 일반 적용일 또는 OJ 인용/Article 27 presumption과 혼동하지 않는다. 개정 C(2026)7861 Article 2의 수령일·비수락 여부는 미확정.
+- 다음 우선순위는 제품별 증거 intake → 적용성/core functionality 판정 → EVD/SEC 연결 → 실제 bench 시험이며, 반복적인 문서 checkpoint만으로 기술 작업이 완료된 것처럼 표시하지 않는다.

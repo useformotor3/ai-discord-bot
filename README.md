@@ -792,3 +792,9 @@
 - Merge `774551f378f59c82ce34342f63fd595d4c743852`; exact-main Run #948 success, 161 passed / 1 xfailed.
 - Artifact #14397286074, SHA-256 `1cd7be5fcd710e5fc193595602c974a701f1242f32ec5a549ea61a11c9eec388`.
 - Post-merge safety ref equals main. 다음 제품별 MCU 단계는 실제 ST 부품번호 확인 후 진행.
+
+
+### 최신 상태 — PR #85 / 2026-11-18
+- Main `db05c57103fc9039347b61a29f473fe1af1c7082`; exact-main Run #950 success (161 passed / 1 xfailed).
+- 제품별 증거 intake는 미완료. 실제 drive model/SKU와 ST MCU part marking/BOM, control requirements를 확보하기 전 CRA 분류 및 MCU selection 보류.
+- MCU-T01~T12는 시험 계획만 존재하며 전부 Not Run. 자세한 현재 상태는 [PROJECT_STATUS_CURRENT.md](PROJECT_STATUS_CURRENT.md)를 참조.
