@@ -917,3 +917,9 @@
 - MCU-T01~T12는 시험 프로토콜만 준비됐고 전부 Not Run. 측정 전 pass/fail·승자·대체 결론 금지.
 - M/606 개정 납기는 ESO delivery schedule이다. CRA 2027-12-11 일반 적용일 또는 OJ 인용/Article 27 presumption과 혼동하지 않는다. 개정 C(2026)7861 Article 2의 수령일·비수락 여부는 미확정.
 - 다음 우선순위는 제품별 증거 intake → 적용성/core functionality 판정 → EVD/SEC 연결 → 실제 bench 시험이며, 반복적인 문서 checkpoint만으로 기술 작업이 완료된 것처럼 표시하지 않는다.
+
+
+## 자동화 신뢰성 회귀시험 — Git push fail-fast (2026-11-18)
+- PR #87에서 stale xfail을 실제 현재 동작을 검증하는 통과 테스트로 교체했다. git push 실패 시 subprocess check=True → 명시적 오류 로그 → SystemExit(1), 성공 동기화 메시지는 출력하지 않는다.
+- 격리 테스트 workflow의 exact blob pin만 갱신했으며 production main.py / production run.yml은 미변경.
+- Exact PR and exact-main CI: 162 passed / 0 xfailed. 향후 P1-B3 관련 변경은 이 실패 종료 계약을 회귀 기준으로 유지한다.

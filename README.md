@@ -798,3 +798,9 @@
 - Main `db05c57103fc9039347b61a29f473fe1af1c7082`; exact-main Run #950 success (161 passed / 1 xfailed).
 - 제품별 증거 intake는 미완료. 실제 drive model/SKU와 ST MCU part marking/BOM, control requirements를 확보하기 전 CRA 분류 및 MCU selection 보류.
 - MCU-T01~T12는 시험 계획만 존재하며 전부 Not Run. 자세한 현재 상태는 [PROJECT_STATUS_CURRENT.md](PROJECT_STATUS_CURRENT.md)를 참조.
+
+
+### 자동화 테스트 상태 — 2026-11-18
+- PR #87 merge 이후 exact-main CI: **162 passed / 0 xfailed**.
+- Git push 실패 시 실패 종료·오류 로그·성공 메시지 미출력을 테스트로 고정했다. 운영 main.py 및 운영 workflow는 변경하지 않았다.
+- 최신 main 기준과 제품별 evidence gate는 [PROJECT_STATUS_CURRENT.md](PROJECT_STATUS_CURRENT.md)를 참조.

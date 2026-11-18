@@ -2,7 +2,19 @@
 
 > 이 문서는 2026-11-18 재개 시점의 최신 상태 스냅샷이다. 기존 날짜별 SESSION_LOG 및 PROJECT_LOG의 역사 기록을 대체하지 않는다. 충돌 시 본 문서의 최신 main 기준 사실과 원본 PR/Actions 증거를 우선한다.
 
-## 최신 main 기준점 — PR #85 및 사후 CI 완료 (2026-11-18)
+## 최신 main 기준점 — PR #87 및 사후 CI 완료 (2026-11-18)
+- PR #87 test-only xfail 정정 squash merge: `d5d9ec2ac42ac8ffe7c745de0e8d3421aa77ab0a`; exact PR head `4dced68d6e5c4edbc1627a4b0be0d5af015a52df`, Run #954 success.
+- Pre-merge safety `safety/pre-pr87-merge-checkpoint-2026-11-18`; post-merge safety `safety/post-merge-pr87-2026-11-18`; post-merge safety == main.
+- Exact-main Run #955 / ID `44246724674` on merge SHA: **success**, 162 passed / 0 xfailed; source integrity, compile, CRA traceability (13/15/35/36/41), 9 official sources, corrigenda and Article 13(8) locator/quote canaries passed.
+- Run #954 artifact #14402226873, SHA-256 `7d523a97b922d1b7bf2f5ef383ef615bf73e4a2406e1219b805e08ef06a8741d`; Run #955 artifact #14401722431, SHA-256 `b94e1484bddf3652f579e09fc83f3cfed6a9358bc3e75b7af2506151a8c8f921`, expires 2026-11-25 05:48:19 UTC.
+- PR #87 modified only a failure-path test and the isolated test workflow's expected source blob hash. Production `main.py` and production `.github/workflows/run.yml` remain unchanged.
+
+## 추가 프로젝트 기록 — PR #86 및 PR #87
+- PR #86 current-status/evidence-gate documentation sync merge `7ef3ecb44837826f53c2cad5a38787172ee430ab`; exact-head Run #951 and exact-main Run #952 success, 161 passed / 1 xfailed. Artifacts: #14401607639 (`sha256:41428d58615f76f6aee7010ff96ab91bc6d77ce84bb13e025220678d45a9b352`) and #14400948497 (`sha256:84c4a8855d7b254361438551e4489df75d477cc7431cc5c1a12a3a813d97ad42`).
+- PR #87 removes the stale expected failure: production code already fails closed on git push error; the prior test expected a nonexistent namespace state instead of asserting SystemExit(1). New test asserts nonzero exit, checked git push, failure log, and absence of success message.
+- Test suite improved from 161 passed / 1 xfailed to **162 passed / 0 xfailed**. No production runtime or production workflow change.
+
+## 이전 main 기준점 — PR #85 및 사후 CI 완료 (2026-11-18)
 - PR #85 PR #84 merge/Run #948 checkpoint squash merge: `db05c57103fc9039347b61a29f473fe1af1c7082`; PR head `68599373a5bcfe7bae0ea3240c3a0598b4e8d700`, Run #949 success.
 - Pre-merge safety `safety/pre-pr85-merge-checkpoint-2026-11-18`; post-merge safety `safety/post-merge-pr85-2026-11-18`; post-merge safety == main.
 - Exact-main Run #950 / ID `44235614741` on merge SHA: **success**, 161 passed / 1 xfailed; source integrity, compile, CRA traceability (13/15/35/36/41), 9 official sources, corrigenda and Article 13(8) locator/quote canaries passed.

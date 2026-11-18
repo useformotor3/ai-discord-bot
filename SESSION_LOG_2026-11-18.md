@@ -434,3 +434,11 @@
 - Exact-main Run #950 / ID `44235614741`: success, 161 passed / 1 xfailed; source integrity, compile, CRA traceability, 9 official sources, corrigenda and Article 13(8) locator/quote passed.
 - Run #949 artifact #14396114166 digest `sha256:a936ebf9dd3313dfe02294fddc4251edbbbbf392979afa9cbaf739741f7705a4`; Run #950 artifact #14397720052 digest `sha256:3db5dd4335c9e224aa46abc2e2cd4c3560801b7b5483678b89ec8b012b6d31fb`.
 - Technical audit: integrated CRA report, applicability intake, EVD matrix, security architecture v0.2, MCU benchmark and T01~T12 test protocol exist. All remain provisional/reference-only pending product facts. Actual ST MCU part number/revision and drive control requirements unknown; MCU tests Not Run. No product conformity or MCU selection conclusion asserted.
+
+
+## PR #87 — stale xfail 정정 및 main 검증 — 2026-11-18
+- 분석: sole xfail은 production main.py의 git push 실패 처리 결함이 아니었다. 현재 main.py는 git push를 check=True로 실행하고 예외 시 실패 로그와 SystemExit(1)을 발생시킨다. 기존 테스트가 존재하지 않는 git_sync_status 변수를 기대해 stale xfail이 됐다.
+- PR #87은 테스트를 SystemExit(1), git push check=True, failure log, success message absent 조건으로 수정하고 isolated tests.yml의 exact blob pin만 갱신했다. production main.py와 production run.yml은 수정하지 않았다.
+- PR #87 exact-head Run #954: success, 162 passed / 0 xfailed; artifact #14402226873 digest `sha256:7d523a97b922d1b7bf2f5ef383ef615bf73e4a2406e1219b805e08ef06a8741d`.
+- Merge `d5d9ec2ac42ac8ffe7c745de0e8d3421aa77ab0a`; pre/post safety refs `safety/pre-pr87-merge-checkpoint-2026-11-18`, `safety/post-merge-pr87-2026-11-18`; post ref == main.
+- Exact-main Run #955 / ID `44246724674`: success, 162 passed / 0 xfailed; source integrity, compile, CRA traceability, 9 official sources and Article 13(8) locator/quote passed. Artifact #14401722431 digest `sha256:b94e1484bddf3652f579e09fc83f3cfed6a9358bc3e75b7af2506151a8c8f921`.
