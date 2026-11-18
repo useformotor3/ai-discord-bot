@@ -40,7 +40,7 @@ class FakeResponse:
 
 
 def test_fetch_pdf_source_records_binary_hash_and_page_count():
-    definition = pdf.PDF_SOURCE_CATALOG[1]
+    definition = next(item for item in pdf.PDF_SOURCE_CATALOG if item["id"] == "CRA-M606-C2026-7861-ANNEX")
     response = FakeResponse(url=definition["url"])
     with patch.object(pdf, "PdfReader", FakeReader):
         item = pdf.fetch_pdf_source(definition, get=lambda *a, **k: response)
@@ -72,14 +72,14 @@ def test_untrusted_redirect_fails_closed_without_mirror_fallback():
 
 
 def test_temporary_http_outage_is_distinguished_from_validation_failure():
-    definition = pdf.PDF_SOURCE_CATALOG[1]
+    definition = next(item for item in pdf.PDF_SOURCE_CATALOG if item["id"] == "CRA-M606-C2026-7861-ANNEX")
     response = FakeResponse(status=503, url=definition["url"])
     with pytest.raises(pdf.PDFSourceUnavailableError, match="temporary HTTP status"):
         pdf.fetch_pdf_source(definition, get=lambda *a, **k: response)
 
 
 def test_missing_document_identity_marker_fails_validation():
-    definition = pdf.PDF_SOURCE_CATALOG[1]
+    definition = next(item for item in pdf.PDF_SOURCE_CATALOG if item["id"] == "CRA-M606-C2026-7861-ANNEX")
     response = FakeResponse(url=definition["url"])
 
     class WrongReader:
@@ -96,6 +96,7 @@ def test_fetch_all_writes_pdf_text_and_manifest(tmp_path):
     responses = iter([
         FakeResponse(url=pdf.PDF_SOURCE_CATALOG[0]["url"]),
         FakeResponse(url=pdf.PDF_SOURCE_CATALOG[1]["url"]),
+        FakeResponse(url=pdf.PDF_SOURCE_CATALOG[2]["url"]),
     ])
     with patch.object(pdf, "PdfReader", FakeReader):
         results = pdf.fetch_all_pdf_sources(
