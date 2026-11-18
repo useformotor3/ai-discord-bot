@@ -635,3 +635,10 @@
 ### PR #62 검증 진행
 - 초기 PR head의 Run #891 성공: **161 passed, 1 xfailed**.
 - CRA 공식 PDF 3종 hash canary 및 9개 공식 HTML source canary 성공. 최종 CI metadata 갱신 후 재검증 대기.
+
+
+### PR #62 병합 완료 — CRA 요구사항 증거 추적
+- PR #62 merge commit: `612285ed720310cebd82340dc2e3b150e2c6f80a`.
+- Exact-head Run #896 성공: **161 passed, 1 xfailed**; 공식 CRA PDF 3종과 9개 HTML 출처 canary 통과.
+- Post-merge safety ref `safety/post-merge-pr62-2026-11-18`와 main identical 확인.
+- EVD-01–EVD-16 [상세 매트릭스](reports/CRA_REQUIREMENTS_TO_EVIDENCE_MATRIX_2026-11-18.md) / [CSV](reports/CRA_REQUIREMENTS_TO_EVIDENCE_MATRIX_2026-11-18.csv) main 반영 완료.
