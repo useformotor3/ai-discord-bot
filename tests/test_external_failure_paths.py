@@ -128,15 +128,16 @@ def test_connect_timeout_retry_limit_is_bounded(run_main):
     assert namespace["discord_result"]["status"] == "failed"
 
 
-@pytest.mark.xfail(
-    strict=True,
-    reason="P1-B3: Git push 실패를 삼키지 말고 sync 실패로 노출해야 함",
-)
-def test_git_push_failure_is_not_reported_as_full_success(run_main):
-    run_main.execute(
-        [VALID_REPORT],
-        git_responses=[0, 0, 0, 0, 1],
-    )
+def test_git_push_failure_is_not_reported_as_full_success(run_main, capsys):
+    with pytest.raises(SystemExit) as exc:
+        run_main.execute(
+            [VALID_REPORT],
+            git_responses=[0, 0, 0, 0, 1],
+        )
+
+    assert exc.value.code == 1
     assert run_main.captured["git_commands"][-1] == ["git", "push"]
     assert run_main.captured["git_options"][-1]["check"] is True
-    assert run_main.captured["git_sync_status"] == "failed"
+    output = capsys.readouterr().out
+    assert "GitHub 운영 데이터 저장 실패" in output
+    assert "깃허브 백서버에 아카이브가 성공적으로 동기화되었습니다." not in output
