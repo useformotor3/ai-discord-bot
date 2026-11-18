@@ -247,3 +247,14 @@
 - Pre-merge safety ref `safety/pre-merge-etsi-m606-status-2026-11-18` matched main at base `ff3c5b7875131ef92e3fe4a7974f4420ddfcc84c`; post-merge ref `safety/post-merge-pr58-2026-11-18` is identical to main at merge commit.
 - Latest ETSI Work Programme v2.3.3 (2026-11-17) status and bounded OJ index finding are in `reports/CRA_ETSI_M606_LIVE_STATUS_2026-11-18.md`.
 - Next: independently validate CEN/CENELEC EN 40000 horizontal standards and industrial OT prEN 50770 work. Treat third-party catalog status as secondary until official CEN/CENELEC records or published EN texts are obtained.
+
+
+## CEN/CENELEC 공식 EN 40000 및 OT prEN 50770 점검 — 2026-11-18
+- 중요 정정: CEN 공식 프로젝트 레코드에서 **EN 40000-1-1:2026은 Published**로 확인됐다. DOR 2026-11-02, DAV 2026-11-18, DOA 2027-02-28, DOP/DOW 2027-05-31. 같은 레코드의 CRA OJ 필드는 **No citation expected**다. 따라서 “CRA 표준은 아직 발행되지 않았다”는 포괄적 표현을 쓰지 않는다. “CEN 발행은 완료됐으나 CRA OJ 인용은 예상되지 않는다”가 정확하다.
+- EN 40000-1-2:2026은 DOR 2026-11-02 / publishing 상태 및 No citation expected가 tracker·2차 카탈로그에서 확인됐다. 공식 개별 CEN 레코드 링크는 HTTP 500으로 본문 readback에 실패했으므로 원문 직접 확인 미완료로 남긴다.
+- FprEN 40000-1-3:2026은 CEN 공식 레코드 Under Approval / Citation expected. prEN 40000-1-4는 Work item/drafting.
+- CENELEC 공식 레코드에서 prEN 50770-1~6은 모두 Committee stage, OJ citation expected. 각 scope는 OT firewall/IDS-IPS, network management, physical/virtual network interfaces, VPN, routers/modems/switches, SIEM. 아직 DOR/DAV가 없어 발행된 표준이 아니다.
+- OJ citation expected는 실제 OJ 인용이 아니다. 2026-11-18 Commission harmonised standards index 확인 범위에서 CRA OJ citation은 식별되지 않았다. Article 27 추정 적합성은 실제 OJ citation과 scope를 확인하기 전 주장하지 않는다.
+- 서보 드라이브는 제품 intended purpose/core functionality 기준으로 분류한다. Ethernet/fieldbus 포트 또는 내장 필터링만으로 network-interface/firewall 제품으로 분류하지 않는다. 제품 모델/BOM/데이터시트 미확보로 drive-level classification은 Unknown.
+- 상세: `reports/CRA_CEN_CENELEC_EN40000_OT50770_STATUS_2026-11-18.md`; 구조화 추적표: `reports/CRA_CEN_CENELEC_EN40000_OT50770_STATUS_2026-11-18.csv`.
+- 다음: EN 40000-1-1 발행본 및 EN 40000-1-2 원문 확보/검증, 50770-1~6의 최신 committee status 재확인, OJ index 재조회.
