@@ -87,8 +87,8 @@
       "subject": "European standard(s) on essential cybersecurity requirements for password managers",
       "deadline": "31/01/2027",
       "pdf_page_index_zero_based": 2,
-      "printed_page_number": 3,
-      "verification": "Right-hand deadline cell visually read from rendered PDF page image; description continues over page break.",
+      "printed_page_number": 2,
+      "verification": "Right-hand deadline cell visually read from rendered PDF page image; the row description continues onto the following printed page.",
       "status": "confirmed"
     }
   ],
