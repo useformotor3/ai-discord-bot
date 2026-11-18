@@ -246,3 +246,10 @@ Machine-readable details are in `reports/CRA_PDF_SOURCE_PROVENANCE_2026-11-17.js
 - OJ C/2026/6013 hash remained `40ca76caeb0108f5b97c8f373a95f590b453fe92bd45a483addf3326e48c1dc2`; 61 pages.
 - Artifact ID `14382388555`, digest `sha256:9e8dc7f1c1d90015b7738263155ca9d6b1170aaea75ea6bd17350aeff7d36af7`, expires 2026-11-25 00:09:59 UTC.
 - The earlier Run #851 failure was a traceability-validator assumption requiring the explicit ANFR mirror-scope phrase in every claim row. The phrase is now retained as historical mirror-only provenance, while the validator also requires the OJ source and rejects OJ fallback. Run #854 passed this updated gate.
+
+## 7.7 최종 PR head 확인 — Run #857 (2026-11-18)
+- Tested head: `152fe0bfe00c16ab32f7cc030efcde3258b73525`; GitHub Actions Run #857 (ID `44205723336`) success.
+- Source blob identity, compileall, CRA traceability, full pytest (158 passed, 1 xfailed), three-PDF acquisition, artifact upload and live official CRA HTML canary all passed.
+- OJ C/2026/6013 remained EUR-Lex primary, fallback=False, 2,709,282 bytes, 61 pages, SHA-256 `40ca76caeb0108f5b97c8f373a95f590b453fe92bd45a483addf3326e48c1dc2`.
+- Artifact #14383167818, digest `sha256:a2f05428d57897a20a485cabaab17cbb976dcb91f6e5628ece0953ddfe22140d`, expires 2026-11-25 00:11:31 UTC.
+- Run #857 validates the PR head before this metadata append; a new exact-head CI is required after the provenance record update.
