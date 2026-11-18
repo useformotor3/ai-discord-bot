@@ -370,3 +370,11 @@
 - Main exact Run #934 / ID `44232761348`: success, 161 passed / 1 xfailed; source integrity, compile, 13/15/35/36/41 traceability, 9 official sources, corrigenda and Article 13(8) canaries passed.
 - Run #933 artifact #14395517878 digest `sha256:b6218e7153590ed63f52b35dc6013e79bd38af098dafb3b0cc2149afe419138d`; Run #934 artifact #14395218493 digest `sha256:8c827f786583bb5d2f8d14224e990b194ae50bf7f1393b4b9009925d123773da`.
 - PR #77 only records prior checkpoint. MCU-T01–T12 test protocol is merged, but all hardware test cases remain Not Run. Next P0: actual ST MCU part number and product control requirements.
+
+
+## PR #78 병합 및 exact-main 사후 검증 완료 — 2026-11-18
+- PR #78 exact head `6610ee297b00c0717863daa4734141a519b78008`, Run #935 success; merge `441b0198bcd695752d1adb053d8e077f91426a0a`.
+- Pre/post safety refs `safety/pre-pr78-merge-checkpoint-2026-11-18`, `safety/post-merge-pr78-2026-11-18`; main and post-merge ref identical.
+- Main exact Run #936 / ID `44233080095`: success, 161 passed / 1 xfailed; source integrity, compile, 13/15/35/36/41 traceability, 9 official sources, corrigenda and Article 13(8) canaries passed.
+- Run #936 artifact #14396500899 digest `sha256:6ef8037213259261dd57bcc3b1229d50f58947092a953bbc12ffc106ee4c8a05`.
+- PR #78 only records prior checkpoint. The next product-specific work requires actual ST MCU marking/order code and drive control specifications; until then MCU candidates remain preliminary and all MCU-T01~T12 tests remain Not Run.
