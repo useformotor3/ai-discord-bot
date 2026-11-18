@@ -98,3 +98,11 @@
 - G-001–G-013 claim register의 source ID 및 page locator를 OJ pagination으로 이관했다. 상세 비교 및 limitations는 Guidance/M606 audit report §7과 provenance JSON을 참조.
 - Run #844 (44204376214), exact head `0957ad4b3e85a8bb245c6b3adc62b7daec1a09de`: 156 passed, 1 xfailed; compile, source blob pins, CRA traceability, three PDF sources, official HTML canary success. Artifact ID 14381529964, digest sha256:a55dba42db13ed7c350c39e62a158bf512686b6892857870056212e8b3a7a6ae.
 - 다음: claim-by-claim substantive redline, OJ page/image locator spot-check, matrix cross-link review, M/606 latest source provenance review.
+
+## PR #52 validator 보정 및 최종 exact-head CI — 2026-11-18
+- Run #851에서 CRA traceability validator가 G-001–G-013 evidence status에 기존 문자열 `ANFR mirror raw-byte SHA-256 verified`를 요구해 실패했다. 이는 새로운 OJ source를 추가한 뒤에도 historical mirror provenance phrase를 유지해야 하는 기존 검증 계약을 반영하지 못한 문서 변경 문제였다.
+- CSV에 historical mirror-only hash scope 문구를 보존하고, `cra_traceability.py`가 기존 mirror source와 신규 OJ source를 각각 검증하도록 개선했다. OJ source 누락 및 OJ fallback 사용을 거부하는 회귀 테스트 2개 추가.
+- Workflow source blob pin 갱신 후 PR #52 exact-head Run #854 success: 158 passed, 1 xfailed; source identity, compile, CRA traceability, full pytest, PDF/HTML canaries 모두 성공.
+- Run #854 tested head: `0ab0fc4d9b217a4994fd6e7a1b32607c854bb693`.
+- Artifact #14382388555, digest `sha256:9e8dc7f1c1d90015b7738263155ca9d6b1170aaea75ea6bd17350aeff7d36af7`, expiry 2026-11-25 00:09:59 UTC.
+- 다음: Run #854 검증 후 provenance/status metadata 업데이트를 포함한 최종 PR head를 다시 CI로 검증한 다음 병합한다.
