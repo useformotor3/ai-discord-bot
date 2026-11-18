@@ -723,3 +723,9 @@
 - EN 40000-1-2/1-3 최종 전문·조항을 확보하기 전에는 조항 번호 또는 normative shall 문장을 추정하지 않는다.
 - 완료 기준: CSV 16행과 Markdown 표의 ID·내용 일치, 모든 행에 법적 locator/증거 패키지/상태 존재, 제품별 미확인 상태 유지, exact-head CI 성공, PR merge 후 safety ref와 main 동일.
 - 후속 우선순위: 제품 P0 자료 확보 → EVD-01~07 제품 위험평가/아키텍처 → EVD-08~12 업데이트·취약점 프로세스 → EVD-13~16 기술문서·공급망 증거 → 표준 최종본 clause-by-clause redline.
+
+## PR #62 1차 CI 및 최종 검증 게이트 — 2026-11-18
+- PR #62 초기 head `360e83bba86a01bc83731ecd5ea5d0a6b975a8f6`, Run #891 success: 161 passed, 1 xfailed.
+- Source blob identity, compile, CRA cross-matrix traceability, 3 Commission PDF fetch/hash, 9 official HTML source canary 성공.
+- Artifact #14388303196, digest `sha256:47528b6e72af65dd95130a86a1442ac8f795a6eb3c34d93656369bf94734a2c2`.
+- 검증 메타데이터를 문서에 반영한 뒤 변경된 최종 head에서 CI를 재실행하고 merge한다.
