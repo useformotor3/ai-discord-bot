@@ -1,0 +1,73 @@
+# CEN/CENELEC EN 40000 및 산업용 OT prEN 50770 공식 상태 감사 — 2026-11-18
+
+## 1. 요약 및 중요 정정
+
+2026-11-18 확인 결과, CEN 공식 프로젝트 레코드는 **EN 40000-1-1:2026을 Published**로 표시한다. 따라서 “CRA 표준이 아직 발행되지 않았다”는 포괄적 문장은 부정확하다. 정확한 구분은 다음과 같다.
+
+- EN 40000-1-1:2026: CEN 발행 상태(Published), DAV 2026-11-18, DOR 2026-11-02. CEN 레코드는 CRA에 대해 “No citation expected”라고 명시한다.
+- EN 40000-1-2:2026: CEN-CENELEC Work Item tracker와 독립 표준 카탈로그는 2026-11-02 ratification 완료 및 publication/publishing 단계로 표시한다. CRA OJ citation은 “No citation expected”로 기록된다. CEN-CENELEC 개별 레코드 링크는 이번 열람에서 서버 오류(500)로 본문을 읽지 못했으므로, 공식 원문 직접 readback은 미완료로 표시한다.
+- FprEN 40000-1-3:2026: CEN 공식 프로젝트 레코드는 Under Approval, OJ citation expected. 아직 발행·OJ 인용 완료가 아니다.
+- prEN 40000-1-4: CEN-CENELEC tracker에서 Work item / drafting 단계로 표시되며, OJ citation은 예상하지 않는 것으로 기록되어 있다.
+- prEN 50770-1~6: CENELEC 공식 프로젝트 레코드에서 모두 Committee stage. 각각 OT 방화벽/IDS·IPS, 네트워크 관리, 네트워크 인터페이스, VPN, 라우터/모뎀/스위치, SIEM이다. 각 레코드는 CRA OJ citation expected라고 표시하지만, 아직 DOR/DAV가 없어 발행된 표준이 아니다.
+
+**핵심 법적 해석:** CEN/CENELEC가 EN을 비준하거나 발행한 것과 Commission이 그 표준 참조를 CRA 조화표준으로 EU 관보(OJ)에 공표하는 것은 별도 절차다. EN 40000-1-1은 CEN에서 발행됐지만 “No citation expected”이므로 CRA Article 27(1) 추정 적합성을 주지 않는다. EN 40000-1-2 역시 OJ citation not expected로 표시된다. EN 40000-1-3 및 OT prEN 50770 계열은 OJ citation expected라는 작업 메타데이터일 뿐, 실제 OJ citation을 의미하지 않는다.
+
+## 2. 공식 CEN/CENELEC 레코드
+
+| 표준 | 공식 상태(2026-11-18 조회) | 날짜·OJ 필드 | 의미 |
+|---|---|---|---|
+| EN 40000-1-1:2026 | Published | DOR 2026-11-02; DAV 2026-11-18; DOA 2027-02-28; DOP/DOW 2027-05-31; OJ: No citation expected | 용어 표준. 발행 확인, CRA 추정 적합성은 제공하지 않음 |
+| EN 40000-1-2:2026 | Ratification completed / publishing (2차 카탈로그 corroboration; CEN project record fetch failed) | DOR 2026-11-02; OJ: No citation expected (tracker 및 2차 카탈로그) | 전 제품의 사이버보안 원칙·위험관리·수명주기 프레임워크. OJ 인용 기대 없음 |
+| FprEN 40000-1-3:2026 | Under Approval | DOR/DAV 미기재; OJ: Citation expected | 취약점 처리 프로세스. 아직 EN 발행/OJ citation 아님 |
+| prEN 40000-1-4 | Work item / drafting | M/606 adoption deadline 30-10-2027; OJ: No citation expected (tracker) | 일반 보안 요구사항. 아직 초안 작업 |
+| prEN 50770-1 | Committee stage | DOR/DAV 미기재; OJ: Citation expected | OT 방화벽 및 IDS/IPS 보안 프로파일 |
+| prEN 50770-2 | Committee stage | DOR/DAV 미기재; OJ: Citation expected | OT 네트워크 관리 시스템 보안 프로파일 |
+| prEN 50770-3 | Committee stage | DOR/DAV 미기재; OJ: Citation expected | OT 물리·가상 네트워크 인터페이스 보안 프로파일 |
+| prEN 50770-4 | Committee stage | DOR/DAV 미기재; OJ: Citation expected | OT VPN 제품 보안 프로파일 |
+| prEN 50770-5 | Committee stage | DOR/DAV 미기재; OJ: Citation expected | OT 라우터·인터넷 연결 모뎀·스위치 보안 프로파일 |
+| prEN 50770-6 | Committee stage | DOR/DAV 미기재; OJ: Citation expected | OT SIEM 시스템 보안 프로파일 |
+
+CEN 공식 EN 40000-1-1 레코드에서 DAV는 승인된 공식 언어 버전이 중앙사무국에서 배포되는 날이고, DOP는 국가표준으로 동일 채택/발행을 완료해야 하는 최종일이다. 서로 혼동하지 않는다.
+
+## 3. CENELEC OT 범위와 서보 드라이브 관련성
+
+| CENELEC 프로젝트 | 공식 scope | 서보 드라이브 관련성 판단 |
+|---|---|---|
+| prEN 50770-1 | OT 환경용 방화벽 및 IDS/IPS | 드라이브 자체가 독립 판매되는 방화벽/IDS/IPS가 아닌 이상 직접 제품 분류로 적용하지 않는다. 내장 packet filtering이나 통신 보호는 자체 요구사항/통제 증거일 수 있지만 드라이브 전체를 방화벽으로 만들지 않는다. |
+| prEN 50770-2 | OT 네트워크 관리 시스템 | 드라이브가 네트워크 관리 시스템 제품이 아닌 경우 직접 제품 표준이 아니다. 관리 기능/상위 시스템 연계는 인터페이스 위험 검토로 처리한다. |
+| prEN 50770-3 | OT 물리·가상 네트워크 인터페이스 | 완제품 드라이브가 네트워크 인터페이스 제품으로 시장에 제공되는지 intended purpose와 core functionality로 판정한다. Ethernet/fieldbus 포트만으로 분류하지 않는다. |
+| prEN 50770-4 | OT VPN 기능 제품 | 드라이브 자체가 VPN 제품 기능을 제공/판매하는지 확인. 단순 원격 유지보수 경로 존재만으로 자동 분류하지 않는다. |
+| prEN 50770-5 | OT 라우터·인터넷 연결 모뎀·스위치 | 드라이브의 내장 이더넷 스위치/포트 존재만으로 제품 전체를 라우터·스위치로 분류하지 않는다. 독립 제품의 intended purpose 확인 필요. |
+| prEN 50770-6 | OT SIEM 시스템 | 드라이브는 일반적으로 SIEM 제품이 아니므로 직접 분류하지 않는다. 로그 제공/연동은 시스템 통합 및 증거 연결 이슈다. |
+
+제품 모델, 데이터시트, intended purpose, 네트워크 아키텍처, BOM이 없는 현 시점에서는 drive-level product classification은 **Unknown / evidence pending**으로 유지한다. 보안 기능이 포함된 구성품의 공급자 증거 요구와 완제품의 Annex III 제품 카테고리 분류는 구분한다.
+
+## 4. 출처와 확인 한계
+
+1. CEN 공식 EN 40000-1-1 프로젝트 레코드:
+   https://standards.cencenelec.eu/ords/f?cs=16635E5B87CB4221D8FFC1A74EC94EC6B&p=205:110:::::FSP_PROJECT,FSP_LANG_ID:82349,25
+2. CEN 공식 FprEN 40000-1-3 프로젝트 레코드:
+   https://standards.cencenelec.eu/ords/f?cs=15781C8F1FFD5C2E76320E51B347858F5&p=205:110:::::FSP_PROJECT,FSP_LANG_ID:81343,25
+3. CENELEC 공식 prEN 50770-1~6 프로젝트 레코드:
+   - https://standards.cencenelec.eu/ords/f?cs=13322EAD4BB9270452A937D8259179562&p=305:110:::::FSP_PROJECT,FSP_LANG_ID:81649,25
+   - https://standards.cencenelec.eu/ords/f?cs=104E404C05717FFC5BCCAD860A2799EC6&p=305:110:::::FSP_PROJECT,FSP_LANG_ID:81650,25
+   - https://standards.cencenelec.eu/ords/f?cs=1837AABAB3786CCFE6D25A2AB9BB4C78D&p=305:110:::::FSP_PROJECT,FSP_LANG_ID:81651,25
+   - https://standards.cencenelec.eu/ords/f?cs=17583FCAF37D99F9A7028E7956E422300&p=305:110:::::FSP_PROJECT,FSP_LANG_ID:81652,25
+   - https://standards.cencenelec.eu/ords/f?cs=1942B619B9CF8CEF79834DF9A4E0D3234&p=305:110:::::FSP_PROJECT,FSP_LANG_ID:81653,25
+   - https://standards.cencenelec.eu/ords/f?cs=1D9131DB1242FEC8D93BF297195E8A2A0&p=305:110:::::FSP_PROJECT,FSP_LANG_ID:81654,25
+4. CEN-CENELEC Work Item Plan tracker (2차 요약; 행별 공식 레코드 링크 포함):
+   https://www.edge-sdn.com/regulations/cyber-resilience-act/standards/
+5. EN 40000-1-2 개별 CEN-CENELEC 링크는 이번 점검에서 HTTP 500 오류로 본문 readback에 실패했다. Ratification date 2026-11-02 및 “No citation expected” 상태는 tracker와 독립 카탈로그에서 교차 확인했으나, 공식 개별 페이지의 성공적인 readback이 완료될 때까지 원문 확인 미완료로 표시한다.
+6. European Commission Harmonised Standards index:
+   https://single-market-economy.ec.europa.eu/single-market/goods/european-standards/harmonised-standards_en
+   2026-11-18 확인 범위에서 CRA 전용 OJ 인용을 찾지 못했다. 이 결론은 조회 범위에 한정하며 신규 OJ publication은 추후 재확인한다.
+
+## 5. 보고서 및 검증 규칙 변경
+
+- 문서 상태값을 Draft / Under Approval / Ratified / Published by ESO / Cited in OJ로 분리한다.
+- 각 행에 DOR, DAV, DOA, DOP, M/606 ESO adoption deadline, ESO publication forecast, actual OJ citation reference/date를 독립 필드로 둔다.
+- “CRA standards not yet published” 같은 포괄적 표현은 제거하고 “EN 40000-1-1 is published by CEN but no CRA OJ citation is expected; no CRA OJ-cited reference identified in the checked index”로 정정한다.
+- EN 40000-1-1 vocabulary part는 용어 일관성용이며 단독 기술 통제/적합성 표준으로 취급하지 않는다.
+- EN 40000-1-2 risk-management framework와 EN 40000-1-3 vulnerability handling의 요구사항은 제품 증거·프로세스와 연결해 후속 분석한다.
+- OT prEN 50770는 IEC 62443 기반 OT 제품 프로파일로 추적하되, 드라이브가 해당 제품 카테고리에 해당하는지는 intended purpose와 core functionality를 기준으로 한다.
+- OJ citation expected는 실제 OJ citation이 아니다. Article 27 presumption of conformity는 정확한 OJ 참조 및 해당 표준의 적용 범위가 확인될 때만 주장한다.
