@@ -10,7 +10,7 @@
 - P0 미확인: 실제 ST MCU 주문 코드/마킹·silicon revision, motor/control loop 사양, PWM/ADC/encoder 구성, fieldbus, BOM/firmware resource budget.
 - 다음 게이트: 해당 입력 확보 후 동일 조건 WCET/jitter·ADC/PWM sync·encoder·통신+암호 부하·업데이트 복구 벤치마크. 실측 전 점수/승자/교체 결론 금지.
 
-## 이전 main checkpoint — PR #71 (2026-11-18) (2026-11-18)
+## 이전 main checkpoint — PR #71 (2026-11-18)
 - PR #71 `docs: record PR70 merge and exact-main verification` squash merge 완료: `adcec0a0cb94a326e6b7d9b8c242c4ae3dab4152`.
 - PR #71 exact head `bb5cb36598c5a6daa7982781a6db2726d81f9530`, Run #921 / ID `44228810756`: success. Source integrity, compile, CRA cross-matrix traceability, full pytest, official CRA PDF/HTML canaries 통과. Artifact #14394585712, SHA-256 `cff5e21b032fd5f7de923e080de3b7b133b214da697a185efb2318ab04fbf0bc`.
 - Pre-merge safety ref `safety/pre-pr71-merge-checkpoint-2026-11-18`; post-merge safety ref `safety/post-merge-pr71-2026-11-18`.
@@ -18,7 +18,7 @@
 - Run #922 artifact #14393784949, SHA-256 `db75a58638b43fbe1798c70b7c4dad5951cb1b1f98bfa013fa771184e6cf2126`, expires 2026-11-25 03:26:21 UTC. Official PDF hashes: Guidance Annex mirror fallback=True `fe209c250e3d1f7599e42826d91963666951332927edcf511a2e79fe8d2f8234`; OJ C/2026/6013 fallback=False `40ca76caeb0108f5b97c8f373a95f590b453fe92bd45a483addf3326e48c1dc2`; M/606 C(2026)7861 Annex fallback=False `262b09596cb5cbe7d72a2c7789fb2512ee00db7f69082e7def2c8181b0f63276`.
 - Confirmed `main` == `safety/post-merge-pr71-2026-11-18` at the merge SHA. PR #71 touched only project-control documentation/log files; production runtime, production workflows, secrets, state/history/archive and legacy SIL 3 files were not modified.
 
-## 이전 main checkpoint — PR #72 (2026-11-18) (2026-11-18)
+## 이전 main checkpoint — PR #72 (2026-11-18)
 - PR #72 문서/로그 checkpoint squash merge: `293a27a8ea2a8e03f58db50bbe27d2aaea194c8d`; PR head `0f85cc04eb64efe961e514a59a28386b5527708c`, Run #923 success.
 - Pre-merge safety `safety/pre-pr72-merge-checkpoint-2026-11-18`; post-merge safety `safety/post-merge-pr72-2026-11-18`; post-merge safety == main at merge SHA.
 - Exact-main Run #924 / ID `44230705429` on `293a27a8ea2a8e03f58db50bbe27d2aaea194c8d`: **success**, 161 passed / 1 xfailed; source integrity, compile, CRA traceability, 9 official sources, corrigenda and Article 13(8) locator/quote canaries passed.
@@ -30,14 +30,14 @@
 - 실시간 데이터 경로와 관리/업데이트 경로 분리, 단일 MCU vs 통신·제어 MCU 분리 선택 기준, 부팅/업데이트 검증 순서, 설계 수용 기준 및 EVD/SEC 추적을 추가.
 - 제품별 부품/회로/펌웨어가 없으므로 참조 설계일 뿐 제품 구현·시험·적합성 판정은 미완료.
 
-## 이전 main checkpoint — PR #73 (2026-11-18) (2026-11-18)
+## 이전 main checkpoint — PR #73 (2026-11-18)
 - PR #73 문서/로그 checkpoint squash merge: `16ab607a919c6bfa4fee8dc90ab5af2ea2f53352`; PR head `cd78b6694384d550ef68d7f1b7ec2972a02a663e`, Run #925 success.
 - Pre-merge safety `safety/pre-pr73-merge-checkpoint-2026-11-18`; post-merge safety `safety/post-merge-pr73-2026-11-18`; post-merge safety == main.
 - Exact-main Run #926 / ID `44230997446` on `16ab607a919c6bfa4fee8dc90ab5af2ea2f53352`: **success**, 161 passed / 1 xfailed; source integrity, compile, CRA traceability (13/15/35/36/41), 9 official sources, corrigenda and Article 13(8) locator/quote canaries passed.
 - Artifact #14394634118, SHA-256 `cf7d6d6ef7020d5381a4a2f201f50bf3171251155459505420ffce16998ef027`, expires 2026-11-25 03:31:37 UTC.
 - PR #73 touched only project-control documents; no runtime/workflow/secrets/state/history/archive/legacy SIL 3 files changed.
 
-## 이전 main checkpoint — PR #74 (2026-11-18) (2026-11-18)
+## 이전 main checkpoint — PR #74 (2026-11-18)
 - PR #74 참조 아키텍처 v0.2 문서 변경 squash merge: `48dd8f7bc0617ec0c67eadf80a7e7cc364b862c0`; PR head `4ee2d73bf7bc5826c001011b17133d4a6a8071ec`, Run #927 success.
 - Pre-merge safety `safety/pre-pr74-merge-checkpoint-2026-11-18`; post-merge safety `safety/post-merge-pr74-2026-11-18`; post-merge safety == main.
 - Exact-main Run #928 / ID `44231392940` on `48dd8f7bc0617ec0c67eadf80a7e7cc364b862c0`: **success**, 161 passed / 1 xfailed; source integrity, compile, CRA traceability (13/15/35/36/41), 9 official sources, corrigenda and Article 13(8) locator/quote canaries passed.
