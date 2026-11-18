@@ -852,3 +852,10 @@
 - 동일 조건으로 current/speed/position loop WCET, ADC/PWM sync, encoder/QEI, interrupt/DMA contention, fieldbus load, crypto load, secure boot/update, fault injection, memory/debug protection, power/reset, environment/endurance를 검증한다.
 - 합격 기준은 제품의 실제 제어 주기/성능 요구에서 도출한다. 문서가 임의의 loop period/jitter limit을 만들지 않는다.
 - 모든 미실시 시험은 Not Run, 미확인 입력은 Unknown으로 유지하고, 결과에는 part number/silicon revision/board/firmware/toolchain/source hash를 기록한다.
+
+
+## PR #76 병합 및 Run #932 완료 — 2026-11-18
+- PR #76 merge `48afedaf8114688a51a7e6ed695c514277bd6407`; exact-head Run #931 및 exact-main Run #932 모두 success.
+- Run #932: 161 passed / 1 xfailed; source integrity, compile, CRA traceability 13/15/35/36/41, 9 official sources and Article 13(8) canaries passed. Artifact #14395691349, digest `sha256:ec315a8b305f9b572452d42846de38a3698d431256faff36162ddb733303385a`.
+- Pre/post safety refs preserved; post-merge ref == main.
+- MCU-T01–T12 test protocol and result capture fields are merged. Next P0 input is the exact ST MCU order code/marking and product control requirements. Keep tests Not Run until hardware/product evidence exists.
