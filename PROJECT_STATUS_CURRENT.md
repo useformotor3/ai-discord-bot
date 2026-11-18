@@ -1,4 +1,4 @@
-# CRA 프로젝트 현재 상태 — 2026-11-18 KST
+# CRA 프로젝트 현재 상태 — 2026-11-19 KST
 
 > 이 문서는 2026-11-18 재개 시점의 최신 상태 스냅샷이다. 기존 날짜별 SESSION_LOG 및 PROJECT_LOG의 역사 기록을 대체하지 않는다. 충돌 시 본 문서의 최신 main 기준 사실과 원본 PR/Actions 증거를 우선한다.
 
@@ -513,3 +513,12 @@
 - Pre-merge safety ref `safety/pre-pr70-merge-checkpoint-2026-11-18`; post-merge `safety/post-merge-pr70-2026-11-18` identical to main at merge SHA.
 - PR #70 scope: documentation/log synchronization only; no runtime/workflow/secrets/state/history/archive or SIL 3 files changed.
 - Post-merge exact-main CI Run #919 / ID `44228633470` on merge SHA `ca65475db4ca53d23ee55308c9c9616a054ea756`: **success**; 161 passed, 1 xfailed; source integrity, compile, CRA traceability, 9 official sources canary, corrigenda validation and Article 13(8) locator/quote canary passed. Artifact #14393668052, SHA-256 `3d6314562d9ac4f34d645ef3191be6e499ae2d25e829968e17658717bdf2ae22`, expires 2026-11-25 03:11:50 UTC.
+
+
+## 2026-11-19 재개 — Annex III/IV core-functionality 감사 작업
+- 재개 기준 main: PR #88 merge 16cdec76def2e8920d8fc2ca3b6a43e497d41d83; PR #88 사후 exact-main Run #957 success, 162 passed / 0 xfailed.
+- 현재 작업 브랜치: cra/applicability-core-functionality-audit-2026-11-19 (PR 생성/CI 대기 전 단계). 기준 main은 변경하지 않았다.
+- EUR-Lex 공식 Regulation (EU) 2024/2847 및 Commission Implementing Regulation (EU) 2025/2392의 recital (2)–(6), Annex I/II 기술 설명을 재대조했다.
+- Annex III/IV 분류는 제품 전체의 core functionality로 판단하며, 통합 구성요소만으로 완제품 카테고리를 자동 확정하지 않는다. Annex III/IV 비해당과 CRA 비적용을 분리하고, 구성요소 보안은 완제품 위험평가에 계속 반영한다.
+- 기존 제품 분류/intake 보고서와 EVD 매트릭스에 제품 단위별 판정 게이트 및 증거 조건을 통합했다. 특정 제조사·모델·SKU 입력이 없어 개별 제품 결론은 계속 Unknown / Not assessed.
+- PR #88/Run #957는 직전 검증 기준점이며, 이번 변경은 아직 PR exact-head CI 및 main 병합 전이다. CI·병합·사후 검증 결과는 확인 후에만 추가한다.
