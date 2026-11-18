@@ -560,3 +560,6 @@
 - Run #854 (ID `44205498935`): success; 158 passed, 1 xfailed; OJ PDF primary fetch and all validation stages passed.
 - Artifact #14382388555; SHA-256 digest `9e8dc7f1c1d90015b7738263155ca9d6b1170aaea75ea6bd17350aeff7d36af7`.
 - Provenance/status metadata and session/project logs were updated after Run #854; a fresh exact-head CI is required before PR #52 merge.
+
+- Latest pre-metadata exact-head validation: Run #857 (ID `44205723336`), 158 passed / 1 xfailed, all stages successful; artifact #14383167818.
+- Provenance manifest updated to Run #857; final PR head requires one fresh CI before merge.
