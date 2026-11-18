@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "retrieved_at": "2026-11-17T09:05:46Z",
+  "retrieved_at": "2026-11-18T00:02:11Z",
   "workflow": {
     "name": "Isolated Python Tests",
     "run_number": 702,
@@ -59,6 +59,25 @@
         "31/01/2027"
       ],
       "binary_identity_scope": "Commission document-register bytes retrieved and SHA-256 verified"
+    },
+    {
+      "id": "CRA-GUIDANCE-OJ-2026-6013",
+      "document": "European Commission, Communication C/2026/6013, Commission guidance on the application of Regulation (EU) 2024/2847, OJ C, 17.11.2026",
+      "requested_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX%3A52026XC06013",
+      "final_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX%3A52026XC06013",
+      "retrieval_route": "EUR-Lex Official Journal PDF",
+      "fallback_used": false,
+      "byte_count": 2709282,
+      "sha256": "40ca76caeb0108f5b97c8f373a95f590b453fe92bd45a483addf3326e48c1dc2",
+      "page_count": 61,
+      "extracted_text_chars": 255974,
+      "extracted_text_sha256": "384724af44e399cb997771e9e65ea4a5fe1dd264131d0754921bd691dd1f7720",
+      "markers_verified": [
+        "C/2026/6013",
+        "Cyber Resilience Act",
+        "remote data processing"
+      ],
+      "binary_identity_scope": "EUR-Lex Official Journal PDF bytes retrieved and SHA-256 verified"
     }
   ],
   "visual_verification": [
@@ -74,9 +93,10 @@
     }
   ],
   "limitations": [
-    "The Commission-hosted C(2026) 5252 primary URL did not yield the PDF in Run 669; the allowlisted ANFR mirror was used. The Guidance raw-byte hash is for the ANFR mirror only; byte-for-byte identity with Commission-hosted primary PDF is not established.",
     "The PDF artifact is retained for seven days by GitHub Actions; the durable repository record is the SHA-256 manifest and source URLs.",
-    "M/606 Annex I item 18 deadline is visually confirmed as 31/01/2027 from the original PDF page image."
+    "M/606 Annex I item 18 deadline is visually confirmed as 31/01/2027 from the original PDF page image.",
+    "The July 2026 Commission download endpoint document 131456 returned HTTP 404 on 2026-11-18. The official OJ publication C/2026/6013 was independently retrieved from EUR-Lex; the older ANFR mirror remains a separate historical copy.",
+    "The OJ C/2026/6013 PDF and C(2026) 5252 ANFR mirror have different raw-byte and extracted-text hashes. All numbered paragraph IDs 1–257 are present in both and normalized token multiset overlap is 99.50% / 99.66%; this is not an assertion of exact textual identity. Claim locators now cite the OJ pagination."
   ],
   "previous_verification_runs": [
     {
@@ -100,5 +120,62 @@
       "artifact_zip_sha256": "da2f0e5fbfb5f5fa66360a2faa5af3d85821d3b7269885e34e1a3115f37cd3e2",
       "result": "Full CI success; 148 passed, 1 xfailed; artifact downloaded and hashes reverified"
     }
-  ]
+  ],
+  "latest_verification": {
+    "workflow": {
+      "name": "Isolated Python Tests",
+      "run_number": 844,
+      "run_id": 44204376214,
+      "tested_head_sha": "0957ad4b3e85a8bb245c6b3adc62b7daec1a09de",
+      "conclusion": "success",
+      "pytest": "156 passed, 1 xfailed",
+      "compileall": "success",
+      "exact_source_blob_identity": "success",
+      "cra_cross_matrix_traceability": "success",
+      "live_official_pdf_canary": "3 PDFs fetched, parsed and SHA-256 verified",
+      "live_official_html_canary": "success",
+      "artifact_id": 14381529964,
+      "artifact_name": "cra-official-pdf-sources-3d569da6c45368f2647db6aa92d147378ddac83d",
+      "artifact_url": "https://github.com/useformotor3/ai-discord-bot/actions/runs/44204376214/artifacts/14381529964",
+      "artifact_digest": "sha256:a55dba42db13ed7c350c39e62a158bf512686b6892857870056212e8b3a7a6ae",
+      "artifact_size_bytes": 3070500,
+      "expires_at": "2026-11-25T00:02:11Z"
+    },
+    "official_journal_guidance": {
+      "id": "CRA-GUIDANCE-OJ-2026-6013",
+      "document": "Commission Communication C/2026/6013, OJ C, 17.11.2026; CELEX 52026XC06013",
+      "requested_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX%3A52026XC06013",
+      "final_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX%3A52026XC06013",
+      "retrieval_route": "EUR-Lex Official Journal PDF; primary official source; fallback=False",
+      "fallback_used": false,
+      "byte_count": 2709282,
+      "sha256": "40ca76caeb0108f5b97c8f373a95f590b453fe92bd45a483addf3326e48c1dc2",
+      "page_count": 61,
+      "extracted_text_chars": 255974,
+      "extracted_text_sha256": "384724af44e399cb997771e9e65ea4a5fe1dd264131d0754921bd691dd1f7720",
+      "markers_verified": [
+        "C/2026/6013",
+        "Cyber Resilience Act",
+        "remote data processing"
+      ],
+      "retrieved_at": "2026-11-18T00:02:11.019794Z"
+    },
+    "comparison": {
+      "historical_C_2026_5252_ANFR_mirror_sha256": "fe209c250e3d1f7599e42826d91963666951332927edcf511a2e79fe8d2f8234",
+      "official_OJ_C_2026_6013_sha256": "40ca76caeb0108f5b97c8f373a95f590b453fe92bd45a483addf3326e48c1dc2",
+      "numbered_paragraph_ids_present_in_both": "1-257 (all)",
+      "normalized_token_multiset_common": 36467,
+      "mirror_normalized_token_count": 36649,
+      "oj_normalized_token_count": 36591,
+      "mirror_token_overlap": 0.9950339709132582,
+      "oj_token_overlap": 0.996611188543631,
+      "interpretation": "Strong textual overlap; not exact byte identity or exact extracted-text equality. Differences include official-journal layout, pagination, footnote formatting and extraction differences; targeted substantive redline remains required."
+    },
+    "legacy_download_url_check": {
+      "url": "https://ec.europa.eu/newsroom/dae/redirection/document/131456",
+      "observed_status": 404,
+      "checked_at": "2026-11-18",
+      "interpretation": "Historical Commission download endpoint no longer returned the PDF. Preserve ANFR hash as mirror-only provenance; use EUR-Lex OJ C/2026/6013 as current official citation source."
+    }
+  }
 }
