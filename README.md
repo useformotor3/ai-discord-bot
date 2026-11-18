@@ -10,9 +10,9 @@
 
 > **기록 원칙:** 프로젝트의 공식 진행 상태와 재개 지점은 이 저장소에 기록합니다. 대화창의 기억에만 의존하지 않습니다.
 
-### 현재 기준점 — main / PR #88 사후 검증 완료 (2026-11-19)
-- main `16cdec76def2e8920d8fc2ca3b6a43e497d41d83`; exact-main Run #957 success, 162 passed / 0 xfailed.
-- PR #87에서 stale xfail을 수정해 162 passed / 0 xfailed를 확인했고 PR #88에서 상황판·계획·로그를 동기화했다. 참조 보안 아키텍처 및 MCU 예비 벤치마킹은 제품 입력 전 참고자료다.
+### 현재 기준점 — main / PR #89 사후 검증 완료 (2026-11-19)
+- main `9ac0b32189cdeb7789dc6993eccb0b5f3dc4b4cf`; exact-main Run #959 success, 162 passed / 0 xfailed.
+- PR #89에서 Annex III/IV core-functionality 분류와 제품 경계별 G1–G5 증거 게이트를 기존 보고서 및 EVD 매트릭스에 통합했다. 참조 보안 아키텍처 및 MCU 예비 벤치마킹은 제품 입력 전 참고자료다.
 - 실제 ST MCU part number 및 제어 사양은 미확인. 제품별 선정·교체 결론은 동일 조건 실측 후 결정.
 
 ## 현재 상태 — 2026-11-19
