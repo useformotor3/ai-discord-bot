@@ -59,6 +59,18 @@ PDF_SOURCE_CATALOG = (
         ),
     },
     {
+        "id": "CRA-ESO-M606-REPORT-2026-06",
+        "filename": "DG-GoSR-2026-06_Second_Joint_ESO_semestrial_report_M606.pdf",
+        "url": "https://www.stan4cra.eu/_files/ugd/d3d362_20e5bfebe8bf47b1998caf05c5799333.pdf",
+        "allowed_hosts": ("www.stan4cra.eu",),
+        "required_markers": (
+            "Version: V 2.0",
+            "Date: 2026-06-03",
+            "M/606",
+            "Publication forecast",
+        ),
+    },
+    {
         "id": "CRA-M606-C2026-7861-ANNEX",
         "filename": "C2026_7861_m606_annex.pdf",
         "url": "https://ec.europa.eu/transparency/documents-register/api/files/C%282026%297861_1/de00000001090401",
