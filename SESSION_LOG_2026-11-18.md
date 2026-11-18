@@ -378,3 +378,11 @@
 - Main exact Run #936 / ID `44233080095`: success, 161 passed / 1 xfailed; source integrity, compile, 13/15/35/36/41 traceability, 9 official sources, corrigenda and Article 13(8) canaries passed.
 - Run #936 artifact #14396500899 digest `sha256:6ef8037213259261dd57bcc3b1229d50f58947092a953bbc12ffc106ee4c8a05`.
 - PR #78 only records prior checkpoint. The next product-specific work requires actual ST MCU marking/order code and drive control specifications; until then MCU candidates remain preliminary and all MCU-T01~T12 tests remain Not Run.
+
+
+## PR #79 병합 및 exact-main 사후 검증 완료 — 2026-11-18
+- PR #79 exact head `15b834717e94476a22f2b05719377eb356e9db29`, Run #937 success; merge `2e377127a26d3d9c0232089cad583ff6f2d328ca`.
+- Pre/post safety refs `safety/pre-pr79-merge-checkpoint-2026-11-18`, `safety/post-merge-pr79-2026-11-18`; main and post-merge ref identical.
+- Main exact Run #938 / ID `44233403451`: success, 161 passed / 1 xfailed; source integrity, compile, 13/15/35/36/41 traceability, 9 official sources, corrigenda and Article 13(8) canaries passed.
+- Artifact #14396566514 digest `sha256:d9f1c96ecab857a65c699b18489315fcf5edbe0892234dc5c42157dceb2dd156`.
+- PR #79 only records prior checkpoint. Product-specific MCU benchmarking remains blocked on exact ST part number and actual drive control requirements; tests remain Not Run.
