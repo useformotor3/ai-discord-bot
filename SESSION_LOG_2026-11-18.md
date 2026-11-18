@@ -128,3 +128,12 @@
 - Claim register and audit report §8 updated. Guidance remains non-binding; legal duties are derived from the Regulation, not the Guidance paraphrase.
 - No product-specific classification or conformity conclusions changed. Unknown gates preserved.
 - Next: semantic review of G-001–G-013 links to CRA-001–035, 15 IF interfaces and 36 SEC controls; then M/606 source/provenance review.
+
+## Guidance–matrix 양방향 링크 감사 — 2026-11-18
+- 13 claims, 35 requirements, 15 interfaces, 36 SEC controls의 claim-to-matrix references를 프로그램으로 대조.
+- 첫 검사에서 G-002의 IF-001–IF-013 범위 shorthand와 G-005→IF-015의 reverse link 누락을 발견.
+- G-002는 explicit IDs로 확장, IF-015는 G-005를 포함하도록 보완.
+- 재검사 결과 누락 링크 0, dangling Guidance claim IDs 0.
+- Requirements/IF/SEC matrices의 Commission Guidance URL을 EUR-Lex OJ C/2026/6013 ELI primary link + 기존 Commission page secondary link로 정합화.
+- 교차 매트릭스 감사 보고서 최신 섹션 갱신.
+- 다음: M/606 C(2026) 7861 Annex raw provenance, ESO adoption dates 및 OJ harmonised-standard citation status 독립 검증.
