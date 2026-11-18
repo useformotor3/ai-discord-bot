@@ -106,3 +106,10 @@
 - Run #854 tested head: `0ab0fc4d9b217a4994fd6e7a1b32607c854bb693`.
 - Artifact #14382388555, digest `sha256:9e8dc7f1c1d90015b7738263155ca9d6b1170aaea75ea6bd17350aeff7d36af7`, expiry 2026-11-25 00:09:59 UTC.
 - 다음: Run #854 검증 후 provenance/status metadata 업데이트를 포함한 최종 PR head를 다시 CI로 검증한 다음 병합한다.
+
+## PR #52 Run #857 성공 및 provenance readback — 2026-11-18
+- Exact head `152fe0bfe00c16ab32f7cc030efcde3258b73525`의 Run #857 / ID `44205723336` success 확인.
+- 158 passed, 1 xfailed; source blob identity, compile, CRA traceability, complete pytest, three-PDF canary, artifact upload, official HTML canary 모두 성공.
+- OJ PDF raw hash/bytes/pages는 Run #844/#854와 동일; EUR-Lex primary fallback=False.
+- Artifact #14383167818, digest `sha256:a2f05428d57897a20a485cabaab17cbb976dcb91f6e5628ece0953ddfe22140d`.
+- Provenance JSON의 latest_verification을 Run #857로 갱신했다. 이 metadata 변경 후 새 exact-head CI를 수행한 뒤 PR #52 병합한다.
