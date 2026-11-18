@@ -345,3 +345,9 @@
 - Artifact #14391457563, digest `sha256:f172ed1762a693f626e8c5781638c557e9d5471d6750b5315a54cae9398d919c`, expires 2026-11-25 02:25:41 UTC.
 - Post-merge safety ref `safety/post-merge-pr67-2026-11-18`와 main identical (0 ahead/0 behind).
 - 다음: C(2026)7861 Article 2 ESO receipt/non-acceptance 공개 증거 확인 계속. 현 시점 receipt/notice 원문 확인 불가이므로 acceptance를 추정하지 않는다.
+
+
+## M/606 수락 상태 추가 검증 — 2026-11-18
+- CEN-CENELEC 공식 발표(2025-05-01)는 원래 M/606이 2025-04-03 CEN, CENELEC, ETSI에 의해 수락되었음을 명시. Commission Interoperable Europe 2026 rolling plan도 세 ESO가 요청을 수락했고 작업 중이라고 재확인.
+- 단, 원래 요청 수락은 2026-11-10 개정 결정 C(2026)7861 Article 2의 개정 통지/수령 및 1개월 비수락 조건 충족을 증명하지 않는다. 개정 결정의 개별 수령일·비수락 통지는 미확인으로 유지.
+- M/606 보고서에 원래 요청과 개정 결정의 수락 상태를 분리 기록. 공개 증거 없는 개정 수락을 추정하지 않는다.
