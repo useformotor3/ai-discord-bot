@@ -659,3 +659,8 @@
 - Final exact-head Run #905: **161 passed, 1 xfailed**; CRA traceability 및 공식 PDF/HTML canary 통과.
 - [M/606 개정 추적 보고서](reports/CRA_M606_AMENDMENT_C2026_7861_DEADLINES_2026-11-18.md)가 main에 반영됨.
 - Post-merge safety ref `safety/post-merge-pr64-2026-11-18`와 main identical.
+
+### CRA 서보 드라이브 적용성·제품 분류 intake
+- [P0 증거 intake 및 CRA 제품 분류 기준](reports/CRA_SERVO_DRIVE_APPLICABILITY_CLASSIFICATION_AND_P0_INTAKE_2026-11-18.md) 추가.
+- Article 2 적용성과 Annex III/IV core functionality 분류를 분리하고, Commission Implementing Regulation (EU) 2025/2392 기술 설명을 기준으로 제품 경계 검토 절차를 정리.
+- 제품 모델 자료 미제공 상태에서 개별 모델의 CRA 적용/제외 또는 Class I/II/Critical을 추정하지 않도록 명시.
