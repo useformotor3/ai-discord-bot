@@ -721,3 +721,9 @@
 - Merge `16ab607a919c6bfa4fee8dc90ab5af2ea2f53352`; exact-main Run #926 success, 161 passed / 1 xfailed.
 - Artifact #14394634118, SHA-256 `cf7d6d6ef7020d5381a4a2f201f50bf3171251155459505420ffce16998ef027`.
 - Post-merge safety ref equals main. 참조 보안 아키텍처 v0.2 설계 보강은 PR #74 작업 브랜치에서 검증 중.
+
+
+### PR #74 병합 및 main 사후 검증 완료 — 2026-11-18
+- Merge `48dd8f7bc0617ec0c67eadf80a7e7cc364b862c0`; exact-main Run #928 success, 161 passed / 1 xfailed.
+- Artifact #14395476337, SHA-256 `6aaf8fc76f87121e42f8190fec9568121fbd8a0005695ce8de87ff776f0d1d93`.
+- Post-merge safety ref equals main. 참조 보안 아키텍처 v0.2는 병합됐고, MCU 후보 기술 벤치마킹 초안은 [여기](reports/CRA_SERVO_DRIVE_MCU_PLATFORM_BENCHMARK_2026-11-18.md)에 정리 중.
