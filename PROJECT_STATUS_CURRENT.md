@@ -2,7 +2,14 @@
 
 > 이 문서는 2026-11-18 재개 시점의 최신 상태 스냅샷이다. 기존 날짜별 SESSION_LOG 및 PROJECT_LOG의 역사 기록을 대체하지 않는다. 충돌 시 본 문서의 최신 main 기준 사실과 원본 PR/Actions 증거를 우선한다.
 
-## 최신 main 기준점 — PR #83 및 사후 CI 완료 (2026-11-18)
+## 최신 main 기준점 — PR #84 및 사후 CI 완료 (2026-11-18)
+- PR #84 PR #83 merge/Run #946 checkpoint squash merge: `774551f378f59c82ce34342f63fd595d4c743852`; PR head `ba5e6e6179d6259cb5088d110e352f316ddcb589`, Run #947 success.
+- Pre-merge safety `safety/pre-pr84-merge-checkpoint-2026-11-18`; post-merge safety `safety/post-merge-pr84-2026-11-18`; post-merge safety == main.
+- Exact-main Run #948 / ID `44235249125` on merge SHA: **success**, 161 passed / 1 xfailed; source integrity, compile, CRA traceability (13/15/35/36/41), 9 official sources, corrigenda and Article 13(8) locator/quote canaries passed.
+- Run #947 artifact #14396088675, SHA-256 `9c164a7f550bc2f2c1f6292f971e9d4db250dcfa0bdb06ef0c6187da116b65ae`; Run #948 artifact #14397286074, SHA-256 `1cd7be5fcd710e5fc193595602c974a701f1242f32ec5a549ea61a11c9eec388`, expires 2026-11-25 04:08:57 UTC.
+- PR #84 documentation/log-only; runtime/workflow/secrets/state/history/archive/legacy SIL 3 files untouched.
+
+## 이전 main 기준점 — PR #83 및 사후 CI 완료 (2026-11-18)
 - PR #83 PR #82 merge/Run #944 checkpoint squash merge: `0255e50f003792fa8f5d0d3a130e45dda3491c3d`; PR head `7a6ecd85b786ad2fefc1422edaf9d904bcc2a758`, Run #945 success.
 - Pre-merge safety `safety/pre-pr83-merge-checkpoint-2026-11-18`; post-merge safety `safety/post-merge-pr83-2026-11-18`; post-merge safety == main.
 - Exact-main Run #946 / ID `44234852177` on merge SHA: **success**, 161 passed / 1 xfailed; source integrity, compile, CRA traceability (13/15/35/36/41), 9 official sources, corrigenda and Article 13(8) locator/quote canaries passed.
