@@ -368,4 +368,4 @@
 - Artifact #14391727520, SHA-256 `f737a27f61f2b6cd153731941c9e615e4379912d03ccfc3696f0eea7b2ad0d09`, expires 2026-11-25 02:31:30 UTC.
 - Pre-merge safety ref `safety/pre-pr70-merge-checkpoint-2026-11-18`; post-merge `safety/post-merge-pr70-2026-11-18` identical to main at merge SHA.
 - PR #70 scope: documentation/log synchronization only; no runtime/workflow/secrets/state/history/archive or SIL 3 files changed.
-- Post-merge exact-main CI Run #919 / ID `44228633470` is pending at time of this checkpoint; record final conclusion before closing this checkpoint.
+- Post-merge exact-main CI Run #919 / ID `44228633470` on merge SHA `ca65475db4ca53d23ee55308c9c9616a054ea756`: **success**; 161 passed, 1 xfailed; source integrity, compile, CRA traceability, 9 official sources canary, corrigenda validation and Article 13(8) locator/quote canary passed. Artifact #14393668052, SHA-256 `3d6314562d9ac4f34d645ef3191be6e499ae2d25e829968e17658717bdf2ae22`, expires 2026-11-25 03:11:50 UTC.
