@@ -337,3 +337,11 @@
 - PR #66 병합 커밋 `9cb62579e4f45ebf57587cc19644c370cbe80ebb`; exact-head Run #910 / ID `44221522135`: 161 passed, 1 xfailed; source integrity, compile, CRA traceability 13 claims/15 interfaces/35 requirements/36 SEC/41 M606 items, bidirectional links true, PDF/HTML canaries passed. Artifact #14391145990, digest `sha256:f2a2f83b19d0488c874a032e83a41fcc4140dde1817d2a9c2fc171fdbd0b6c0f`, expires 2026-11-25 02:09:41 UTC. Post-merge safety `safety/post-merge-pr66-2026-11-18` identical to main.
 - EUR-Lex 2025/2392 공식 OJ 본문 재대조: recital (2)–(6), Annex I의 #10 interface/#11 OS/#12 router-switch 기술 설명 및 Article 8(1) critical product 인증 절차를 보고서에 보완. Annex IV 카테고리 해당과 인증 의무 자동 발생을 구분.
 - 다음: M/606 Article 2의 ESO 수령일/비수락 사실은 공개 확인 자료를 계속 찾되 미확인 상태 유지. P0 모델 자료가 오면 제품 경계·intended purpose·연결성·core functionality부터 검증.
+
+
+## PR #67 병합 및 exact-head 검증 — 2026-11-18
+- PR #67 `docs: record PR65 PR66 and CRA legal recheck` squash merge: `86af2db5fadf5098b22b39d2d6c07710ed0033ee`.
+- Exact-head `58e2dc8608fc097dad87fa3ec614cb108d184fad`, CI Run #912 / ID `44223114411`: success. Source blob identity, compile, CRA cross-matrix traceability, 전체 pytest, 공식 CRA PDF/HTML read-only canaries 및 artifact upload 단계 모두 성공.
+- Artifact #14391457563, digest `sha256:f172ed1762a693f626e8c5781638c557e9d5471d6750b5315a54cae9398d919c`, expires 2026-11-25 02:25:41 UTC.
+- Post-merge safety ref `safety/post-merge-pr67-2026-11-18`와 main identical (0 ahead/0 behind).
+- 다음: C(2026)7861 Article 2 ESO receipt/non-acceptance 공개 증거 확인 계속. 현 시점 receipt/notice 원문 확인 불가이므로 acceptance를 추정하지 않는다.

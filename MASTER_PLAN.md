@@ -772,3 +772,10 @@
 - Annex IV critical category 해당과 Article 8(1)의 delegated-act 기반 인증 의무를 구분한다. 제품 범위·적용 가능한 delegated act 확인 전 인증 의무를 단정하지 않는다.
 - CRA Article 6 및 Annex I 요구사항은 중요한/핵심 제품 분류와 무관하게 적용성 있는 제품에 대해 별도로 검토한다.
 - PR #65/#66 병합·CI 및 사후 안전 refs는 상황판과 세션 로그에 기록.
+
+
+## PR #67 완료 — CRA 분류 기준 보완 및 기록 정합성
+- PR #67 merge `86af2db5fadf5098b22b39d2d6c07710ed0033ee`; exact-head Run #912 success, source integrity/compile/traceability/full tests/official PDF+HTML canaries 통과.
+- Artifact #14391457563, digest `sha256:f172ed1762a693f626e8c5781638c557e9d5471d6750b5315a54cae9398d919c`.
+- Post-merge safety ref `safety/post-merge-pr67-2026-11-18`와 main 동일.
+- C(2026)7861 Article 2 ESO 수령일·비수락 통지는 공개 원문 확인이 남아 있어 미확인 상태 유지.

@@ -670,3 +670,10 @@
 - PR #65 merge `d1f96fa6bba297e31ed47ae1b96f59421c55b774`; Run #908: 161 passed, 1 xfailed. Post-merge safety ref `safety/post-merge-pr65-2026-11-18` == main.
 - PR #66 merge `9cb62579e4f45ebf57587cc19644c370cbe80ebb`; Run #910: 161 passed, 1 xfailed. Post-merge safety ref `safety/post-merge-pr66-2026-11-18` == main.
 - EUR-Lex Implementing Regulation (EU) 2025/2392 원문에 따라 core functionality/통합 구성요소 구분, Annex I 기술 설명, Annex IV와 Article 8 인증 의무를 구분해 보고서를 보완.
+
+
+### PR #67 병합 완료
+- PR #67 merge `86af2db5fadf5098b22b39d2d6c07710ed0033ee`.
+- Final exact-head Run #912 / ID `44223114411`: success; source integrity, compile, CRA traceability, full test suite, official CRA PDF/HTML canaries passed.
+- Artifact #14391457563, digest `sha256:f172ed1762a693f626e8c5781638c557e9d5471d6750b5315a54cae9398d919c`.
+- Post-merge safety ref `safety/post-merge-pr67-2026-11-18` == main.

@@ -272,3 +272,11 @@
 - PR #66 merge `9cb62579e4f45ebf57587cc19644c370cbe80ebb`, Run #910: 161 passed, 1 xfailed; traceability/source canaries 통과; post-merge safety ref와 main identical.
 - 2025/2392 EUR-Lex OJ 원문 recital (2)–(6), Annex I 기술 설명과 Article 8(1)을 재대조해 제품 분류 보고서의 통합 구성요소·core functionality·Annex IV 인증 관련 한계를 보완.
 - 제품별 증거가 아직 없으므로 적용성/분류/EVD-01~16 Unknown 유지.
+
+
+## PR #67 병합 및 사후 검증
+- PR #67 merge commit `86af2db5fadf5098b22b39d2d6c07710ed0033ee`.
+- Exact-head `58e2dc8608fc097dad87fa3ec614cb108d184fad`, Run #912 / ID `44223114411`: success; source integrity, compile, CRA traceability, full pytest, official PDF/HTML canaries 통과.
+- Artifact #14391457563, SHA-256 `f172ed1762a693f626e8c5781638c557e9d5471d6750b5315a54cae9398d919c`.
+- Post-merge safety `safety/post-merge-pr67-2026-11-18` == main.
+- Article 2 ESO receipt/non-acceptance notice는 미확인 상태로 유지하고 추가 공식 확인을 진행.
