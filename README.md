@@ -732,3 +732,9 @@
 - Merge `48dd8f7bc0617ec0c67eadf80a7e7cc364b862c0`; exact-main Run #928 success, 161 passed / 1 xfailed.
 - Artifact #14395476337, SHA-256 `6aaf8fc76f87121e42f8190fec9568121fbd8a0005695ce8de87ff776f0d1d93`.
 - Post-merge safety ref equals main. 참조 보안 아키텍처 v0.2는 병합됐고, MCU 후보 기술 벤치마킹 초안은 [여기](reports/CRA_SERVO_DRIVE_MCU_PLATFORM_BENCHMARK_2026-11-18.md)에 정리 중.
+
+
+### PR #75 병합 및 main 사후 검증 완료 — 2026-11-18
+- Merge `1d7325baa592b35585fde850cf5a155988ba4cde`; exact-main Run #930 success, 161 passed / 1 xfailed.
+- Artifact #14395188271, SHA-256 `63017368ac7db313f298b23c24d288f9c6781c27cc26472baa6d408abb244695`.
+- [MCU 후보 기술 벤치마킹](reports/CRA_SERVO_DRIVE_MCU_PLATFORM_BENCHMARK_2026-11-18.md) 병합. MCU-T01–T12 시험 매트릭스·결과 기록 양식은 후속 PR에서 보강 중.
