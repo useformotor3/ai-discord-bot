@@ -22,7 +22,7 @@ class FakeReader:
     def __init__(self, _stream, strict=True):
         self.pages = [FakePage(
             ("C(2026) 5252 final This guidance is not binding data connection "
-             "remote data processing COMMISSION IMPLEMENTING DECISION "
+             "remote data processing C/2026/6013 Cyber Resilience Act "             "remote data processing COMMISSION IMPLEMENTING DECISION "
              "C(2026) 7861 final European standard 31/01/2027 ") * 5
         )]
         self.is_encrypted = False
@@ -40,7 +40,7 @@ class FakeResponse:
 
 
 def test_fetch_pdf_source_records_binary_hash_and_page_count():
-    definition = pdf.PDF_SOURCE_CATALOG[1]
+    definition = next(item for item in pdf.PDF_SOURCE_CATALOG if item["id"] == "CRA-M606-C2026-7861-ANNEX")
     response = FakeResponse(url=definition["url"])
     with patch.object(pdf, "PdfReader", FakeReader):
         item = pdf.fetch_pdf_source(definition, get=lambda *a, **k: response)
@@ -72,14 +72,14 @@ def test_untrusted_redirect_fails_closed_without_mirror_fallback():
 
 
 def test_temporary_http_outage_is_distinguished_from_validation_failure():
-    definition = pdf.PDF_SOURCE_CATALOG[1]
+    definition = next(item for item in pdf.PDF_SOURCE_CATALOG if item["id"] == "CRA-M606-C2026-7861-ANNEX")
     response = FakeResponse(status=503, url=definition["url"])
     with pytest.raises(pdf.PDFSourceUnavailableError, match="temporary HTTP status"):
         pdf.fetch_pdf_source(definition, get=lambda *a, **k: response)
 
 
 def test_missing_document_identity_marker_fails_validation():
-    definition = pdf.PDF_SOURCE_CATALOG[1]
+    definition = next(item for item in pdf.PDF_SOURCE_CATALOG if item["id"] == "CRA-M606-C2026-7861-ANNEX")
     response = FakeResponse(url=definition["url"])
 
     class WrongReader:
@@ -96,15 +96,29 @@ def test_fetch_all_writes_pdf_text_and_manifest(tmp_path):
     responses = iter([
         FakeResponse(url=pdf.PDF_SOURCE_CATALOG[0]["url"]),
         FakeResponse(url=pdf.PDF_SOURCE_CATALOG[1]["url"]),
+        FakeResponse(url=pdf.PDF_SOURCE_CATALOG[2]["url"]),
     ])
     with patch.object(pdf, "PdfReader", FakeReader):
         results = pdf.fetch_all_pdf_sources(
             tmp_path,
             get=lambda *a, **k: next(responses),
         )
-    assert len(results) == 2
+    assert len(results) == 3
     assert (tmp_path / "C2026_5252_guidance_annex.pdf").read_bytes().startswith(b"%PDF-")
+    assert (tmp_path / "C_2026_6013_cra_guidance_oj.pdf").read_bytes().startswith(b"%PDF-")
     assert (tmp_path / "C2026_7861_m606_annex.pdf.txt").exists()
     manifest = json.loads((tmp_path / "manifest.json").read_text(encoding="utf-8"))
-    assert len(manifest) == 2
+    assert len(manifest) == 3
     assert all(len(item["sha256"]) == 64 for item in manifest)
+
+def test_guidance_oj_c6013_is_fetched_from_eurlex_primary_without_fallback():
+    definition = next(
+        item for item in pdf.PDF_SOURCE_CATALOG
+        if item["id"] == "CRA-GUIDANCE-OJ-2026-6013"
+    )
+    response = FakeResponse(url=definition["url"])
+    with patch.object(pdf, "PdfReader", FakeReader):
+        item = pdf.fetch_pdf_source(definition, get=lambda *a, **k: response)
+    assert item["id"] == "CRA-GUIDANCE-OJ-2026-6013"
+    assert item["fallback_used"] is False
+    assert item["final_url"] == definition["url"]

@@ -163,3 +163,93 @@ Annex I는 ESO(CEN/Cenelec/ETSI)가 작성할 신규 유럽표준의 주제와 a
 ---
 
 *감사 상태: 최종 Run #702에서 148 passed / 1 xfailed, PDF 2개 취득·해시·artifact readback, 9개 공식 HTML source canary, Article 13(8) locator/quote 검증 통과. M/606 Commission PDF 및 Guidance ANFR mirror raw-byte SHA-256, item 18 시각 확인, G-001~G-013 claim register 및 matrix 연결 완료. Guidance Commission-hosted original byte identity와 실제 서보 드라이브 제품별 증거 연결은 미완료.*
+
+
+## 7. 최신 공식 관보 원문 재기준화 — C/2026/6013 (2026-11-18)
+
+### 7.1 출처 상태 변경
+
+2026-11-18 재확인 결과, Commission의 2026-07-27 게시 페이지는 Guidance를 C(2026) 5252로 표시하지만, 공식 관보에는 같은 CRA Guidance가 **Communication C/2026/6013**로 2026-11-17 게재되었다. 공식 관보의 CELEX 식별자는 `52026XC06013`이다.
+
+- Commission 2026-07-27 게시 페이지: https://digital-strategy.ec.europa.eu/en/library/commission-publishes-new-guidance-support-timely-cyber-resilience-act-implementation
+- EUR-Lex Official Journal PDF: https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX%3A52026XC06013
+- EUR-Lex ELI: https://eur-lex.europa.eu/eli/C/2026/6013/oj/eng
+- 기존 Commission PDF 다운로드 URL `https://ec.europa.eu/newsroom/dae/redirection/document/131456`는 2026-11-18 현재 HTTP 404를 반환했다.
+- 따라서 C(2026) 5252는 2026-07-27 승인/게시 문서 참조로 역사 기록에 남기되, 현재 보고서의 공식 관보 인용과 page locator 기준은 C/2026/6013으로 전환한다.
+- 기존 ANFR mirror는 삭제·재명명하지 않는다. 기존 bytes의 SHA는 mirror-only provenance로 유지한다.
+
+### 7.2 EUR-Lex OJ PDF 원본 무결성
+
+- Source ID: `CRA-GUIDANCE-OJ-2026-6013`
+- 문서: Commission Communication C/2026/6013, OJ C, 17.11.2026.
+- 취득 URL: https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX%3A52026XC06013
+- 최종 URL: 동일, EUR-Lex 공식 호스트.
+- fallback: false.
+- PDF binary: 2,709,282 bytes; 61 pages.
+- Raw-byte SHA-256: `40ca76caeb0108f5b97c8f373a95f590b453fe92bd45a483addf3326e48c1dc2`.
+- Extracted text: 255,974 chars.
+- Extracted-text SHA-256: `384724af44e399cb997771e9e65ea4a5fe1dd264131d0754921bd691dd1f7720`.
+- Identity markers: `C/2026/6013`, `Cyber Resilience Act`, `remote data processing`.
+- CI: Run #844 (ID `44204376214`), exact head `0957ad4b3e85a8bb245c6b3adc62b7daec1a09de`, success; 156 passed, 1 xfailed; compile, traceability and three-PDF live canary passed.
+- Artifact ID `14381529964`, digest `sha256:a55dba42db13ed7c350c39e62a158bf512686b6892857870056212e8b3a7a6ae`, retained until 2026-11-25 00:02:11 UTC.
+
+### 7.3 C(2026) 5252 mirror와 OJ C/2026/6013 비교
+
+| 비교 항목 | C(2026) 5252 ANFR mirror | C/2026/6013 EUR-Lex OJ |
+|---|---:|---:|
+| Raw bytes | 1,190,726 | 2,709,282 |
+| Pages | 84 | 61 |
+| Raw SHA-256 | `fe209c250e3d1f7599e42826d91963666951332927edcf511a2e79fe8d2f8234` | `40ca76caeb0108f5b97c8f373a95f590b453fe92bd45a483addf3326e48c1dc2` |
+| Extracted chars | 250,162 | 255,974 |
+| Extracted-text SHA-256 | `147f6649b5089cbc4d55c7af77abdcdbd04263b116960812c579fd25acda7425` | `384724af44e399cb997771e9e65ea4a5fe1dd264131d0754921bd691dd1f7720` |
+
+- Numbered paragraph identifiers 1–257 were all found in both extracted documents.
+- After whitespace normalization, case-folding, punctuation/footnote-marker normalization and word tokenization, the common token multiset was 36,467 tokens: 99.50% of mirror tokens and 99.66% of OJ tokens.
+- This is strong evidence of substantial textual overlap, but **not** byte identity or exact extracted-text equality. Pagination, OJ headers/footers, footnote formatting and some extraction differences exist. Do not describe the two PDFs as byte-identical or word-for-word identical.
+- The OJ document is the primary citation source. The mirror remains an independently hashed historical copy. Any substantive difference found in a claim-relevant paragraph must be resolved against the OJ wording.
+
+### 7.4 Guidance claim register — OJ page locator migration
+
+All 13 Guidance claims retain their claim IDs and cross-matrix links, but their source ID is now `CRA-GUIDANCE-OJ-2026-6013`. PDF page references are migrated to OJ pagination:
+
+| Claim | Locator | OJ PDF pages |
+|---|---|---:|
+| G-001 | §2.4 paras. 25–26 | 7–8 |
+| G-002 | §2.5 paras. 26–28 | 8 |
+| G-003 | §2.6 paras. 29–32 | 8–9 |
+| G-004 | §2.7 paras. 33–39 | 9–10 |
+| G-005 | §4.3 paras. 104–107 | 24–25 |
+| G-006 | §5 paras. 126–128 | 30 |
+| G-007 | §6/§6.1 paras. 136–144 | 32–35 |
+| G-008 | §7.1–§7.3 paras. 163–173 | 42–43 |
+| G-009 | §7.4 paras. 174–177 | 44 |
+| G-010 | §8.1 paras. 178–190 | 44–46 |
+| G-011 | §8.3.4 industrial robot example | 53 |
+| G-012 | §9.3.2 paras. 255–257 | 61 |
+| G-013 | §4.1–§4.2 Example 39 | 24 |
+
+Machine-readable details are in `reports/CRA_PDF_SOURCE_PROVENANCE_2026-11-17.json`; claim rows are in `reports/CRA_GUIDANCE_CLAIM_REGISTER_2026-11-17.csv`.
+
+### 7.5 Remaining verification
+
+1. Perform a claim-by-claim substantive redline for G-001–G-013 against OJ C/2026/6013, prioritising scope/data connection, support period, core functionality, RDPS and reporting.
+2. Reconfirm all page locators in the OJ pagination from the PDF page images where tables/figures or page breaks affect extraction.
+3. Ensure integrated report, interface matrix, requirements matrix and SEC controls cite the OJ source ID and distinguish binding CRA law from non-binding Commission guidance.
+4. Keep C(2026) 5252 mirror provenance and OJ C/2026/6013 provenance separate; never overwrite one hash with the other.
+
+## 7.6 최종 PR head 재검증 — Run #854 (2026-11-18)
+
+- PR #52 final code/document head at this checkpoint: `0ab0fc4d9b217a4994fd6e7a1b32607c854bb693`.
+- GitHub Actions Run #854 (ID `44205498935`): **success**.
+- Exact source blob identity: success; compileall: success; CRA cross-matrix traceability: success; full pytest: **158 passed, 1 xfailed**.
+- Live PDF canary: three sources fetched and SHA-256 verified. C(2026) 5252 mirror used fallback=True; OJ C/2026/6013 retrieved directly from EUR-Lex with fallback=False; M/606 C(2026) 7861 retrieved directly from Commission register with fallback=False.
+- OJ C/2026/6013 hash remained `40ca76caeb0108f5b97c8f373a95f590b453fe92bd45a483addf3326e48c1dc2`; 61 pages.
+- Artifact ID `14382388555`, digest `sha256:9e8dc7f1c1d90015b7738263155ca9d6b1170aaea75ea6bd17350aeff7d36af7`, expires 2026-11-25 00:09:59 UTC.
+- The earlier Run #851 failure was a traceability-validator assumption requiring the explicit ANFR mirror-scope phrase in every claim row. The phrase is now retained as historical mirror-only provenance, while the validator also requires the OJ source and rejects OJ fallback. Run #854 passed this updated gate.
+
+## 7.7 최종 PR head 확인 — Run #857 (2026-11-18)
+- Tested head: `152fe0bfe00c16ab32f7cc030efcde3258b73525`; GitHub Actions Run #857 (ID `44205723336`) success.
+- Source blob identity, compileall, CRA traceability, full pytest (158 passed, 1 xfailed), three-PDF acquisition, artifact upload and live official CRA HTML canary all passed.
+- OJ C/2026/6013 remained EUR-Lex primary, fallback=False, 2,709,282 bytes, 61 pages, SHA-256 `40ca76caeb0108f5b97c8f373a95f590b453fe92bd45a483addf3326e48c1dc2`.
+- Artifact #14383167818, digest `sha256:a2f05428d57897a20a485cabaab17cbb976dcb91f6e5628ece0953ddfe22140d`, expires 2026-11-25 00:11:31 UTC.
+- Run #857 validates the PR head before this metadata append; a new exact-head CI is required after the provenance record update.

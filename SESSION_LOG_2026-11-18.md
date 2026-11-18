@@ -88,3 +88,28 @@
 - 사후 safety ref: `safety/post-merge-pr50-2026-11-18`.
 - 다음 동기화 PR에서 PROJECT_STATUS_CURRENT/README/MASTER_PLAN/SESSION_LOG/PROJECT_LOG에 PR #50 결과와 정확한 main 기준점을 기록한다.
 - 운영 코드/production workflow/secrets/state/history/archive/Gemini·Discord 실행은 변경하지 않았다.
+
+## CRA Guidance 공식 관보 원문 확보 — 2026-11-18
+- Commission Guidance가 2026-11-17 OJ에 C/2026/6013 (CELEX 52026XC06013)으로 게재된 사실을 확인했다.
+- 기존 Commission PDF download document 131456는 2026-11-18 현재 HTTP 404. 기존 C(2026)5252 ANFR mirror는 별도 historical copy로 보존.
+- EUR-Lex OJ PDF를 CI Run #844에서 primary source로 직접 취득: 2,709,282 bytes, 61 pages, SHA-256 `40ca76caeb0108f5b97c8f373a95f590b453fe92bd45a483addf3326e48c1dc2`, fallback=False.
+- OJ extracted text 255,974 chars, SHA-256 `384724af44e399cb997771e9e65ea4a5fe1dd264131d0754921bd691dd1f7720`.
+- C(2026)5252 mirror와 OJ PDF 모두 numbered paragraph IDs 1–257 확인. 정규화 token multiset overlap 99.50% / 99.66%; exact byte/text identity는 주장하지 않는다.
+- G-001–G-013 claim register의 source ID 및 page locator를 OJ pagination으로 이관했다. 상세 비교 및 limitations는 Guidance/M606 audit report §7과 provenance JSON을 참조.
+- Run #844 (44204376214), exact head `0957ad4b3e85a8bb245c6b3adc62b7daec1a09de`: 156 passed, 1 xfailed; compile, source blob pins, CRA traceability, three PDF sources, official HTML canary success. Artifact ID 14381529964, digest sha256:a55dba42db13ed7c350c39e62a158bf512686b6892857870056212e8b3a7a6ae.
+- 다음: claim-by-claim substantive redline, OJ page/image locator spot-check, matrix cross-link review, M/606 latest source provenance review.
+
+## PR #52 validator 보정 및 최종 exact-head CI — 2026-11-18
+- Run #851에서 CRA traceability validator가 G-001–G-013 evidence status에 기존 문자열 `ANFR mirror raw-byte SHA-256 verified`를 요구해 실패했다. 이는 새로운 OJ source를 추가한 뒤에도 historical mirror provenance phrase를 유지해야 하는 기존 검증 계약을 반영하지 못한 문서 변경 문제였다.
+- CSV에 historical mirror-only hash scope 문구를 보존하고, `cra_traceability.py`가 기존 mirror source와 신규 OJ source를 각각 검증하도록 개선했다. OJ source 누락 및 OJ fallback 사용을 거부하는 회귀 테스트 2개 추가.
+- Workflow source blob pin 갱신 후 PR #52 exact-head Run #854 success: 158 passed, 1 xfailed; source identity, compile, CRA traceability, full pytest, PDF/HTML canaries 모두 성공.
+- Run #854 tested head: `0ab0fc4d9b217a4994fd6e7a1b32607c854bb693`.
+- Artifact #14382388555, digest `sha256:9e8dc7f1c1d90015b7738263155ca9d6b1170aaea75ea6bd17350aeff7d36af7`, expiry 2026-11-25 00:09:59 UTC.
+- 다음: Run #854 검증 후 provenance/status metadata 업데이트를 포함한 최종 PR head를 다시 CI로 검증한 다음 병합한다.
+
+## PR #52 Run #857 성공 및 provenance readback — 2026-11-18
+- Exact head `152fe0bfe00c16ab32f7cc030efcde3258b73525`의 Run #857 / ID `44205723336` success 확인.
+- 158 passed, 1 xfailed; source blob identity, compile, CRA traceability, complete pytest, three-PDF canary, artifact upload, official HTML canary 모두 성공.
+- OJ PDF raw hash/bytes/pages는 Run #844/#854와 동일; EUR-Lex primary fallback=False.
+- Artifact #14383167818, digest `sha256:a2f05428d57897a20a485cabaab17cbb976dcb91f6e5628ece0953ddfe22140d`.
+- Provenance JSON의 latest_verification을 Run #857로 갱신했다. 이 metadata 변경 후 새 exact-head CI를 수행한 뒤 PR #52 병합한다.

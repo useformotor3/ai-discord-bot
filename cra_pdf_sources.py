@@ -48,6 +48,17 @@ PDF_SOURCE_CATALOG = (
         ),
     },
     {
+        "id": "CRA-GUIDANCE-OJ-2026-6013",
+        "filename": "C_2026_6013_cra_guidance_oj.pdf",
+        "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX%3A52026XC06013",
+        "allowed_hosts": ("eur-lex.europa.eu",),
+        "required_markers": (
+            "C/2026/6013",
+            "Cyber Resilience Act",
+            "remote data processing",
+        ),
+    },
+    {
         "id": "CRA-M606-C2026-7861-ANNEX",
         "filename": "C2026_7861_m606_annex.pdf",
         "url": "https://ec.europa.eu/transparency/documents-register/api/files/C%282026%297861_1/de00000001090401",

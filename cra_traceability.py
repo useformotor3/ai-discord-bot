@@ -198,7 +198,7 @@ def validate_traceability(root="."):
         raise TraceabilityError(f"invalid PDF provenance JSON: {exc}") from exc
 
     sources = {item.get("id"): item for item in provenance.get("sources", [])}
-    required_sources = {"CRA-GUIDANCE-2026-5252", "CRA-M606-C2026-7861-ANNEX"}
+    required_sources = {"CRA-GUIDANCE-2026-5252", "CRA-GUIDANCE-OJ-2026-6013", "CRA-M606-C2026-7861-ANNEX"}
     _require(required_sources.issubset(sources),
              "PDF provenance missing one or more required source IDs", errors)
     for source_id in required_sources & set(sources):
@@ -212,7 +212,14 @@ def validate_traceability(root="."):
 
     guidance = sources.get("CRA-GUIDANCE-2026-5252", {})
     _require("ANFR mirror bytes only" in guidance.get("binary_identity_scope", ""),
-             "Guidance provenance must not claim Commission-primary byte identity", errors)
+             "Historical C(2026) 5252 provenance must remain mirror-only", errors)
+    oj_guidance = sources.get("CRA-GUIDANCE-OJ-2026-6013", {})
+    _require(oj_guidance.get("fallback_used") is False,
+             "OJ C/2026/6013 guidance must be fetched directly from EUR-Lex", errors)
+    _require("EUR-Lex Official Journal PDF bytes" in oj_guidance.get("binary_identity_scope", ""),
+             "OJ guidance provenance must identify EUR-Lex Official Journal bytes", errors)
+    _require("C/2026/6013" in oj_guidance.get("document", ""),
+             "OJ guidance source must identify C/2026/6013", errors)
     m606 = sources.get("CRA-M606-C2026-7861-ANNEX", {})
     _require(m606.get("fallback_used") is False,
              "M/606 Annex should be sourced directly from Commission register", errors)

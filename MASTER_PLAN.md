@@ -644,3 +644,10 @@
   3. Guidance claim register 13개 및 M/606 41개 항목의 source locator/version/hash/claim mapping을 갱신하고 독립 재검증한다.
   4. 제조사/정확한 서보 드라이브 모델 P0 자료가 들어오면 CRA-001–035, 15 interfaces, 36 SEC controls를 model-specific evidence IDs로 연결한다.
 - 제품 증거가 없는 동안 개별 scope/classification/conformity 및 구현/시험 상태를 임의로 확정하지 않는다.
+
+## 2026-11-18 — Guidance 공식 관보 기준 전환
+1. Commission Guidance의 현재 공식 인용은 OJ Communication C/2026/6013 (17.11.2026; CELEX 52026XC06013)으로 한다. C(2026) 5252는 27.07.2026 승인/게시 이력으로 보존한다.
+2. EUR-Lex OJ PDF의 raw SHA-256, extracted-text SHA-256, page count 및 CI artifact provenance를 유지한다.
+3. G-001–G-013의 page locator는 OJ 61-page PDF 기준으로 갱신했다. 다음에는 claim-by-claim substantive redline을 수행하고 문언 차이를 해결한다.
+4. ANFR mirror는 historical copy로 보존하며 OJ PDF와 byte/text identity를 주장하지 않는다.
+5. M/606 C(2026) 7861 및 Annex 최신 provenance, ESO adoption dates와 OJ harmonised-standard citation status를 별도 공식 출처에서 재검증한다.
