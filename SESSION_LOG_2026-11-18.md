@@ -217,3 +217,10 @@
 - 법적 요구와 제안된 구현 예시를 분리하고, 최종 표준 조항을 추정하지 않았다. 제품별 증거 미제공으로 구현 상태를 모두 Unknown / evidence pending으로 유지.
 - 상세: `reports/CRA_REQUIREMENTS_TO_EVIDENCE_MATRIX_2026-11-18.md`, `reports/CRA_REQUIREMENTS_TO_EVIDENCE_MATRIX_2026-11-18.csv`.
 - 후속: Markdown/CSV ID 및 행 수 검증, 관리 문서 readback, exact-head isolated CI, PR merge 및 safety ref 정합성 확인.
+
+## PR #62 1차 exact-head CI
+- PR #62 초기 head: `360e83bba86a01bc83731ecd5ea5d0a6b975a8f6`.
+- Run #891 / ID `44217500114`: success; **161 passed, 1 xfailed**.
+- Steps: source blob integrity, compile, CRA cross-matrix traceability, full pytest, 3 Commission official PDF fetch/hash, artifact upload, 9-source official HTML canary 모두 성공.
+- Artifact #14388303196; SHA-256 digest `47528b6e72af65dd95130a86a1442ac8f795a6eb3c34d93656369bf94734a2c2`; expiry 2026-11-25 01:40:17 UTC.
+- 이 CI 결과 metadata를 관리 문서에 추가했으므로 최종 변경 head에서 CI를 재실행한다. 아직 merge하지 않았다.
