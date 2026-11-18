@@ -376,3 +376,16 @@ CRA-001–CRA-035 법령 문언 감사 결과를 15개 인터페이스 적용성
 주요 수정은 SEC-015(SBOM 근거), SEC-018(공개 지연 예외), SEC-021(법정 목표와 구현 후보 구분), SEC-031(RDPS locator), SEC-032(데이터 연결 locator), SEC-034(경제운영자 역할 및 Article 23 추적), SEC-036(전환 조항 범위)다.
 
 현재 매트릭스의 상태값은 제품별 구현/시험 증거가 아직 없다는 뜻이므로 '미작성/증거 미확인' 및 '제품별 미확인'을 유지한다. 법령 문언 대조 완료를 제품 적합성 증거로 해석하지 않는다.
+
+
+## 21. CEN/CENELEC EN 40000 및 OT 표준 상태 정정 (2026-11-18)
+
+중요 정정: 이전에 작성된 “CRA 표준이 아직 발행되지 않았다”는 포괄적 문장은 더 이상 정확하지 않다. CEN 공식 프로젝트 레코드는 EN 40000-1-1:2026을 **Published**로 표시하며 DOR 2026-11-02, DAV 2026-11-18, DOA 2027-02-28, DOP/DOW 2027-05-31을 기록한다. 다만 해당 CEN 레코드의 CRA OJ citation 필드는 **No citation expected**이므로, 발행 완료가 CRA Article 27(1) 추정 적합성을 의미하지 않는다.
+
+EN 40000-1-2:2026은 2026-11-02 ratification 및 publishing 상태가 tracker/2차 카탈로그에서 확인됐으나, 개별 CEN 공식 페이지의 본문 readback은 HTTP 500으로 실패했다. No citation expected도 tracker/2차 자료에서 확인했으며, 공식 개별 원문 확인 미완료로 기록한다. FprEN 40000-1-3:2026은 CEN 공식 레코드상 Under Approval / Citation expected이고, prEN 40000-1-4는 Work item 단계다.
+
+CENELEC 공식 프로젝트 레코드는 prEN 50770-1~6 모두 Committee stage로 표시한다. 범위는 OT 방화벽/IDS·IPS, 네트워크 관리, 네트워크 인터페이스, VPN, 라우터·모뎀·스위치, SIEM이다. OJ citation expected는 향후 인용 예상 메타데이터일 뿐 실제 OJ 공표가 아니다. 현재 확인된 DOR/DAV는 없으므로 발행 완료로 간주하지 않는다.
+
+서보 드라이브 적용성은 intended purpose/core functionality에 따라 판단한다. Ethernet/fieldbus 포트나 단순 필터링 기능만으로 완제품을 네트워크 인터페이스/방화벽 제품으로 분류하지 않는다. 모델/BOM/데이터시트 미확보 상태에서는 drive-level classification을 Unknown으로 유지한다.
+
+상세 원문 감사: [CEN/CENELEC EN 40000 및 OT prEN 50770 공식 상태 감사](CRA_CEN_CENELEC_EN40000_OT50770_STATUS_2026-11-18.md), [구조화 상태 추적표](CRA_CEN_CENELEC_EN40000_OT50770_STATUS_2026-11-18.csv).
