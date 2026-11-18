@@ -280,3 +280,8 @@
 - Artifact #14391457563, SHA-256 `f172ed1762a693f626e8c5781638c557e9d5471d6750b5315a54cae9398d919c`.
 - Post-merge safety `safety/post-merge-pr67-2026-11-18` == main.
 - Article 2 ESO receipt/non-acceptance notice는 미확인 상태로 유지하고 추가 공식 확인을 진행.
+
+
+## M/606 수락 절차 추가 검증
+- CEN-CENELEC 공식 발표에 따라 원래 M/606은 2025-04-03 CEN/CENELEC/ETSI가 수락했다.
+- 2026-11-10 개정 결정 C(2026)7861 Article 2의 통지/수령일 및 1개월 비수락 여부는 별도이며 확인되지 않았다. 원래 요청 수락을 개정 결정 수락으로 확대 해석하지 않도록 보고서와 상황판에 반영.
