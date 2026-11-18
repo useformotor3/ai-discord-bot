@@ -354,3 +354,11 @@
 - Run #929 artifact #14396015379 digest `sha256:58e88c05c8501aba2d82c8345d0f1e5222843e15c9939c174e8beaad7a55f4da`; Run #930 artifact #14395188271 digest `sha256:63017368ac7db313f298b23c24d288f9c6781c27cc26472baa6d408abb244695`.
 - ST baseline candidates STM32G474RE/H753XI and TI MSPM0G3529-Q1 were compared using official manufacturer sources; actual installed ST part number remains unknown and no replacement/selection is made.
 - Next: add MCU-T01–T12 same-condition measurement plan and evidence capture sheet; tests are not executed until actual board/product constraints are available.
+
+
+## PR #76 병합 및 exact-main 사후 검증 완료 — 2026-11-18
+- PR #76 exact head `30340417bf8440292c1397c3d5afb77e017f5a20`, Run #931 success; merge `48afedaf8114688a51a7e6ed695c514277bd6407`.
+- Pre/post safety refs `safety/pre-pr76-merge-checkpoint-2026-11-18`, `safety/post-merge-pr76-2026-11-18`; main and post-merge ref identical.
+- Main exact Run #932 / ID `44232432357`: success, 161 passed / 1 xfailed; source integrity, compile, 13/15/35/36/41 traceability, 9 official sources, corrigenda and Article 13(8) canaries passed.
+- Run #931 artifact #14395881347 digest `sha256:11d970dd8d64782fe5c62b12d5cea11cde231f28811c5470226ab6d126a31e4a`; Run #932 artifact #14395691349 digest `sha256:ec315a8b305f9b572452d42846de38a3698d431256faff36162ddb733303385a`.
+- MCU-T01~T12 test cases and result recording fields merged; all are planning items and Not Run. Next required input: actual ST MCU marking/order code and product control requirements.
