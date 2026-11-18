@@ -143,3 +143,10 @@
 - Extended `cra_traceability.py` to verify every claim-register related requirement/interface/SEC ID exists and has a reverse Guidance claim ID, and every matrix Guidance claim ID links back to the corresponding claim row.
 - Added three regression tests for missing reverse link, dangling matrix claim ID and unknown related interface ID.
 - Workflow exact blob pins updated for validator and tests. New PR exact-head CI required.
+
+## PR #54 Guidance redline/validator CI — 2026-11-18
+- Exact head `1d5ae716cc6683365f4da6236d15bb9b32be1e52`, Run #865 / ID `44207426703`: success.
+- 161 passed, 1 xfailed; source blob identity, compile, CRA traceability with bidirectional links, full pytest, three-PDF live canary, artifact upload and official HTML canary passed.
+- Artifact #14383728315, digest `sha256:03b260173f643a68841f54c9f9ac1b3d99c9064762a677ed310160618170f8bb`.
+- Pre-merge safety ref identical to main at base `d92f14f6c275bf6b3fa0c8243ac696dca0358d50`.
+- Metadata updated after Run #865; rerun exact-head CI before merge.
