@@ -800,3 +800,10 @@
 - Artifact #14391727520, digest `sha256:f737a27f61f2b6cd153731941c9e615e4379912d03ccfc3696f0eea7b2ad0d09`.
 - Pre/post safety refs: `safety/pre-pr70-merge-checkpoint-2026-11-18`, `safety/post-merge-pr70-2026-11-18`; post-merge ref == main at merge.
 - Post-merge exact-main Run #919 / ID `44228633470` on merge SHA `ca65475db4ca53d23ee55308c9c9616a054ea756` succeeded: 161 passed, 1 xfailed; source integrity, compile, CRA traceability and official CRA PDF/HTML source canaries passed. Artifact #14393668052, digest `sha256:3d6314562d9ac4f34d645ef3191be6e499ae2d25e829968e17658717bdf2ae22`.
+
+
+## PR #71 병합 완료 및 재개 기준 — 2026-11-18
+- PR #71 문서/로그 동기화가 exact-head Run #921 성공 후 squash merge되었다. Merge SHA: `adcec0a0cb94a326e6b7d9b8c242c4ae3dab4152`.
+- Main exact commit Run #922 성공: 161 passed, 1 xfailed; source integrity, compile, CRA traceability, official PDF and 9-source live canaries passed.
+- Pre/post safety refs are preserved; post-merge ref equals main. Artifact #14393784949, digest `sha256:db75a58638b43fbe1798c70b7c4dad5951cb1b1f98bfa013fa771184e6cf2126`.
+- 다음 우선순위는 CRA-001–CRA-035 행 단위 법령 의미 감사 및 근거 provenance 검증을 완료하고, 통합 보고서·요구사항/SEC 매트릭스·독립 감사 간 불일치를 정정하는 것이다. 제품별 입력이 없으므로 적용성·분류는 Unknown으로 유지한다.
