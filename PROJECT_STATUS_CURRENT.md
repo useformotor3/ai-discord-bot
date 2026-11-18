@@ -172,3 +172,11 @@
 - Post-merge safety ref `safety/post-merge-cra-guidance-oj-6013-2026-11-18` is identical to main at merge commit `d3956b7b364c507b8d59dcfc056763f2829ea867` (post-merge compare: identical).
 - Current Guidance source is OJ C/2026/6013, EUR-Lex primary PDF, fallback=False; historical C(2026) 5252 ANFR mirror remains separate and is not claimed byte-identical.
 - Next priority: substantive claim-by-claim redline for G-001–G-013 against OJ text, then update relevant interface/requirements/SEC evidence mappings. M/606 provenance review follows.
+
+## CRA Guidance substantive redline complete — 2026-11-18
+- OJ C/2026/6013 claim-by-claim review completed for G-001–G-013.
+- 9 claims confirmed without substantive change; G-001 locator corrected; G-003/G-008/G-013 wording refined; G-004 expanded to make ongoing conformity/DoC/CE/vulnerability obligations explicit.
+- Visual page-image checks completed for OJ pages 7–10, 24–25, 30, 32–35, 42–46, 53 and 61.
+- CSV claim register and audit report §8 updated. All claims remain non-binding Commission explanations, not new legal requirements.
+- Product-specific scope/classification/conformity remains Unknown; 15 interfaces remain product-unverified; 36 SEC controls remain unimplemented/unverified.
+- Next: recheck cross-links from Guidance claims to CRA requirements, IF matrix and SEC matrix; then independently revalidate M/606 C(2026) 7861 and its Annex/ESO adoption and OJ citation status.
