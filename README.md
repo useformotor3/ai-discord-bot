@@ -696,4 +696,4 @@
 - CRA traceability: 13 claims / 15 interfaces / 35 requirements / 36 SEC / 41 M/606 items; bidirectional links true.
 - Artifact #14391727520, SHA-256 `f737a27f61f2b6cd153731941c9e615e4379912d03ccfc3696f0eea7b2ad0d09`.
 - Pre/post safety refs recorded; post-merge safety ref identical to main.
-- Run #919 on the resulting main commit is pending; its result will be recorded after completion.
+- Run #919 / ID `44228633470` on the resulting main commit succeeded: 161 passed, 1 xfailed; CRA traceability, source integrity, compile and official PDF/HTML canaries passed. Artifact #14393668052, SHA-256 `3d6314562d9ac4f34d645ef3191be6e499ae2d25e829968e17658717bdf2ae22`.
