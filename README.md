@@ -555,3 +555,8 @@
 - OJ PDF raw SHA-256: `40ca76caeb0108f5b97c8f373a95f590b453fe92bd45a483addf3326e48c1dc2` (61 pages, fallback=False).
 - C(2026) 5252 ANFR mirror hash는 별도 historical provenance로 보존하며 OJ PDF와 byte identity를 주장하지 않는다.
 - G-001–G-013 claim register는 OJ page locator로 이관되었다. 상세 crosswalk와 비교 한계는 `reports/CRA_OFFICIAL_GUIDANCE_AND_M606_ANNEX_AUDIT_2026-11-17.md` §7 참조.
+
+### PR #52 검증 결과 — 2026-11-18
+- Run #854 (ID `44205498935`): success; 158 passed, 1 xfailed; OJ PDF primary fetch and all validation stages passed.
+- Artifact #14382388555; SHA-256 digest `9e8dc7f1c1d90015b7738263155ca9d6b1170aaea75ea6bd17350aeff7d36af7`.
+- Provenance/status metadata and session/project logs were updated after Run #854; a fresh exact-head CI is required before PR #52 merge.
