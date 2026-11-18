@@ -759,3 +759,9 @@
 - Artifact #14388899741, digest `sha256:ecd0f1181457270eb5d3d9fd5e60c2271aafc730ac1250a025499aa614f5cb8b`.
 - Post-merge safety ref `safety/post-merge-pr64-2026-11-18` == main.
 - 후속 우선순위: (1) M/606 Article 2 ESO receipt/non-acceptance 사실 확인, (2) 제품 P0 자료 intake checklist, (3) CRA 적용성/제품 분류 decision matrix. 제품 데이터가 없으므로 모델별 결론/증거 상태는 Unknown 유지.
+
+## 다음 실행 단계 — 제품 적용성 및 P0 evidence intake
+- CRA Article 2 적용성(제품 경계·연결성·제외)과 Annex III/IV 제품 분류(core functionality)는 별도 판정으로 관리한다.
+- Commission Implementing Regulation (EU) 2025/2392의 기술 설명을 Annex III/IV 판단 기준에 포함한다. 네트워크 포트·부가 기능만으로 분류하지 않는다.
+- 서보 드라이브 P0 intake 보고서: `reports/CRA_SERVO_DRIVE_APPLICABILITY_CLASSIFICATION_AND_P0_INTAKE_2026-11-18.md`.
+- 다음 완료 기준: 자료 intake 항목과 EVD-01~16 연결 검증, 법적 locator/제품 경계/분류 근거의 상호 추적, exact-head CI 성공.

@@ -323,3 +323,10 @@
 - Artifact #14388899741, SHA-256 `ecd0f1181457270eb5d3d9fd5e60c2271aafc730ac1250a025499aa614f5cb8b`, expires 2026-11-25 02:00:03 UTC.
 - Pre-merge safety ref `safety/pre-m606-amendment-2026-11-18`; post-merge `safety/post-merge-pr64-2026-11-18`와 main identical (0 ahead / 0 behind).
 - 다음: Article 2 비수락 조건의 ESO receipt/notice 확인은 계속 열어둔다. 제품 모델별 P0 evidence intake checklist 및 CRA applicability/classification decision matrix 작성.
+
+## CRA 제품 적용성·분류 및 P0 intake 기준 초안
+- `reports/CRA_SERVO_DRIVE_APPLICABILITY_CLASSIFICATION_AND_P0_INTAKE_2026-11-18.md` 추가.
+- CRA Article 2 적용성, Article 3 제품/원격 데이터 처리 정의, Annex III/IV 및 Implementing Regulation (EU) 2025/2392 core functionality 기준을 분리해 정리.
+- 포트/통신 기능만으로 Annex III Class I/II 또는 Annex IV 분류를 자동 결론내리지 않도록 경계 판단표를 포함.
+- 모델별 증거 미제공이므로 CRA 적용성/분류/EVD-01~16은 Unknown 유지. 데이터시트·매뉴얼·블록도·통신/원격접속 구성도 등을 P0 intake로 정의.
+- 다음: 문서·CSV·요구사항 추적성 CI 검증 및 PR merge. Article 2 M/606 ESO 비수락 조건은 별도 열린 조사 항목.
