@@ -144,3 +144,51 @@
 - Commission Implementing Regulation (EU) 2025/2392, recital (2)–(6), Article 2, Annex I #1/#6/#10/#11/#12, Annex II: https://eur-lex.europa.eu/eli/reg_impl/2025/2392/oj/eng
 
 이 보완에도 제품 모델·판매 단위·매뉴얼·통신 구조가 없는 현 상태의 개별 모델 분류는 **Unknown**으로 유지한다.
+
+## 11. Annex III/IV core-functionality 판정 게이트 — 2026-11-19 공식 원문 재대조
+
+### 11.1 법적 판단 순서
+1. **CRA 제품 범위(Article 2(1), Article 3(1)–(2))**: 시장에 제공되는 하드웨어·소프트웨어 제품, 별도 판매 디지털 구성요소, 제조사 책임의 원격 데이터 처리 구성을 제품 단위별로 식별하고 intended purpose / reasonably foreseeable use에 따른 직접·간접 데이터 연결 여부를 확인한다.
+2. **제외·특례(Article 2(2)–(7))**: 해당 제품과 법령별 적용범위 및 법정 조건을 개별 검토한다. 산업용/기계용/안전 관련 제품이라는 사실이나 다른 EU 법령 적용 사실만으로 CRA 제외를 단정하지 않는다.
+3. **중요 제품(Article 7 + Annex III)**: 식별된 제품 전체의 core functionality가 Annex III 카테고리와 Implementing Regulation (EU) 2025/2392 Annex I 기술 설명에 해당하는지 판단한다.
+4. **핵심 제품(Article 8 + Annex IV)**: 제품 전체의 core functionality를 Annex IV 및 2025/2392 Annex II 기술 설명에 대조한다. Article 8(1)의 delegated act, 인증 scheme의 채택·가용성 및 Article 32 절차를 별도로 확인한다.
+5. **기본 CRA 요구사항(Article 6, Article 13, Annex I)**: 중요/핵심 제품 여부와 무관하게 CRA 적용 제품의 위험평가와 본질적 사이버보안 요구사항을 검토한다.
+6. **적합성평가 경로(Article 32)**: 제품 경계·분류·적용 법령·표준 OJ 인용 상태를 입력으로 최종 경로를 결정한다.
+
+### 11.2 서보 드라이브 제품 경계별 판정표
+| 시장 제공 단위 | 분리해서 확인할 핵심 사실 | Annex III/IV 스크리닝 포인트 | 현재 결론 |
+|---|---|---|---|
+| 서보 드라이브 완제품 | 주 기능이 모터 토크/속도/위치 제어인지, 네트워크/보안 제품 기능이 제품 전체의 핵심 기능인지 | 네트워크 연결·데이터 송수신과 네트워크 인터페이스/OS/라우터/보안 제품 자체가 핵심 기능인지 구별 | 모델·설명서 미제공: Unknown |
+| 내장 Ethernet/Fieldbus 인터페이스 | 내부 부품인지, 별도 판매/별도 SKU/옵션 제품인지, 드라이버 API·어댑터·펌웨어 구조 | Annex III Class I #10의 드라이버 API를 통한 직접/간접 연결 제품 기술 설명과 대조. 내장 포트만으로 완제품 전체를 자동 분류하지 않음 | 제품 경계·부품 SKU 미확인 |
+| 별도 판매 통신 어댑터/옵션 카드 | 독립 SKU, 상표, 주문/판매 문서, 독립 사용 가능성, 통신 매체 및 드라이버·펌웨어 | Fieldbus/Ethernet 어댑터 자체가 네트워크 인터페이스 제품의 기술 설명을 충족하는지 별도 판단 | 옵션 판매자료 미확인 |
+| RTOS/부트로더/펌웨어 | 별도 제품으로 시장 제공되는지, 완제품 통합 여부, 실행·하드웨어 추상화·부팅 기능의 제품 경계 | RTOS는 Class I #11 OS 예시에 포함되나 RTOS 사용만으로 드라이브 전체가 OS 제품이 되지 않음. 별도 제공 부트 관리자도 Class I #8 검토 | OS·라이선스·판매 단위 미확인 |
+| 보안 기능 포함 MCU/ASIC/FPGA | 정확한 part number, 보안 기능, 목적, 별도 시장 제공 여부, tamper resistance/AVA_VAN 근거 | Class I #13–#15의 보안 기능이 다른 제품·네트워크·서비스를 보호하는지 대조. Class II tamper-resistant MCU/MPU는 AVA_VAN 기준까지 검증. 칩이 BOM에 있다는 사실만으로 드라이브 전체를 분류하지 않음 | 실제 칩 part number 및 보안 기능 미확인 |
+| 엔지니어링 툴/네트워크 관리 소프트웨어 | 단일 드라이브 설정 도구인지, 다수 네트워크 요소 관리 독립 제품인지, 별도 판매·배포 여부 | Class I #6의 연결된 네트워크 요소 모니터링·운영·구성 관리가 핵심 기능인지 확인. 단일 드라이브 파라미터 도구는 자동 포함 아님 | 툴·기능·공급 단위 미확인 |
+| 라우터/스위치/방화벽 기능 게이트웨이 | 네트워크 간 경로 선택, packet forwarding/management plane, 보안 경계 정책 집행이 핵심인지 | Class I #12 routing/managed switching과 Class II #2 firewall/IDS/IPS 기술 설명을 구분. 단순 IP 설정·필터·로그는 자동 분류 근거가 아님 | 토폴로지·기능 구현 미확인 |
+| 제조사 원격 서비스/클라우드 | 제조사 설계·개발 책임의 원격 데이터 처리인지, 부재 시 제품 기능 수행이 막히는지, 계약·데이터 경계 | Article 3(2) remote data processing 정의와 제품 경계를 대조 | 서비스 존재·의존성 미확인 |
+
+### 11.3 해석 원칙
+- Implementing Regulation (EU) 2025/2392 recital (2)–(5)에 따라 중요/핵심 카테고리 기술 설명은 **제품 전체의 핵심 기능**을 기준으로 한다. 해당 기능의 구성요소가 통합되었다는 사실만으로 제품 전체에 그 카테고리의 적합성평가 절차를 자동 적용하지 않는다.
+- 반대로 제품 전체가 listed category의 핵심 기능을 실제로 가지면서 부가 기능을 더 제공한다는 이유만으로 카테고리에서 벗어나지 않는다.
+- 내장 구성요소의 보안은 완제품의 Article 6/Annex I 위험평가에서 무시할 수 없다. 완제품 분류가 일반 제품이어도 구성요소의 취약점·업데이트·인증·공급망 위험을 반영한다.
+- Annex III/IV 비해당은 CRA 비적용을 뜻하지 않는다. CRA 적용 제품이면 Article 6 및 Article 13 기본 의무를 계속 검토한다.
+- Annex IV category 해당 판정과 실제 EUCC 인증/제3자 평가 의무는 동일하지 않다. Article 8(1)의 delegated act, 적용 가능한 인증 scheme의 채택·가용성 및 Article 32 절차를 확인한 뒤 의무를 특정한다.
+- SIL/PL 기능안전 등급, 산업용 용도, 물리적 위험성만으로 CRA Annex III/IV 카테고리를 추정하지 않는다. 기능안전과 사이버보안은 별도 평가 축이다.
+
+### 11.4 분류 결론 증거·승인 게이트
+| 게이트 | 필수 증거 | 승인 조건 |
+|---|---|---|
+| G1 제품 단위 고정 | 제조사/상표, 모델/SKU, 옵션코드, 별도 판매 단위, 시스템 구성도 | 모든 판매·공급 단위와 책임 주체 식별 |
+| G2 intended purpose | 데이터시트, 매뉴얼, 제품 웹 설명, 사용환경·합리적 예상 사용 | 원문 페이지/절·제품 버전 기록 및 상충 문구 해소 |
+| G3 연결성/원격처리 | 포트·프로토콜·토폴로지·데이터흐름·원격서비스 의존성 | 인터페이스 목적·방향·접근주체·업데이트 경로 확인 |
+| G4 카테고리 대조 | Annex III/IV 및 2025/2392 Annex I/II 기술 설명, core-function rationale | 포함/배제 양쪽 근거와 경계 사례, 독립 검토 완료 |
+| G5 평가 경로 | Article 32, Article 8(1) delegated act/scheme 상태, Article 27 OJ 표준 인용 상태 | 평가 경로·근거·유효일·검토자 기록 |
+
+제품 증거가 없는 현재 G1–G5는 모두 **Not assessed / evidence pending**이다. 본 문서는 사전 스크리닝 기준이며 특정 드라이브의 법률적 분류 결론이 아니다.
+
+### 11.5 공식 원문
+- Regulation (EU) 2024/2847: Articles 2, 3, 6, 7, 8, 13, 32; Annexes I, III, IV. https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R2847
+- Commission Implementing Regulation (EU) 2025/2392: recitals (2)–(8), Article 2, Annex I Class I #6/#8/#10/#11/#12/#13–#15, Class II #2–#4, Annex II #1–#3. https://eur-lex.europa.eu/eli/reg_impl/2025/2392/oj/eng
+- Commission CRA standardisation status, updated 12 November 2026: https://digital-strategy.ec.europa.eu/en/policies/cra-standardisation
+
+재검증 범위는 EUR-Lex 공식 법령 HTML 및 Commission 표준화 페이지다. 표준 전문의 clause-level 검증이나 특정 제품의 시험·적합성 판정을 수행한 것은 아니다.
