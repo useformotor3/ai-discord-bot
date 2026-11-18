@@ -278,3 +278,9 @@
 - EN 40000-1-2는 공개 scope만 사용하고 final text/clause 확인 전 normative clause mapping을 하지 않았다. EN 40000-1-3은 Under Approval scope만 참고한다. EN 40000-1-1 Published는 용어 정합성에만 활용한다.
 - 제품별 모델/설계/시험 자료가 없으므로 16개 행은 모두 Unknown / evidence pending. 이 표는 적합성 판정 또는 법률 의견이 아니다.
 - 다음: CSV/보고서 정합성 검증 및 기존 CRA traceability validator/CI 범위 확인 후 exact-head CI, PR, merge 안전절차 수행.
+
+### PR #62 1차 exact-head CI 결과 — metadata 반영 후 재검증 필요
+- PR #62 head `360e83bba86a01bc83731ecd5ea5d0a6b975a8f6`, Run #891 / ID `44217500114`: success.
+- pytest **161 passed, 1 xfailed**; source blob integrity, compile, CRA cross-matrix traceability, official CRA PDF 3종 fetch/hash, 9-source live official HTML canary 모두 성공.
+- Artifact #14388303196; digest `sha256:47528b6e72af65dd95130a86a1442ac8f795a6eb3c34d93656369bf94734a2c2`; expiry 2026-11-25 01:40:17 UTC.
+- 이 CI 결과를 상황판/세션 로그/프로젝트 로그에 추가했으므로 해당 metadata 변경이 포함된 새 PR head에서 exact-head CI를 다시 실행한 뒤 병합한다.
