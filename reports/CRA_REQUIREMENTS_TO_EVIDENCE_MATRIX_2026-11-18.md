@@ -67,3 +67,24 @@ EN 40000-1-2의 공개 scope는 제품 생애주기 전반의 일반 사이버�
 - EN 40000-1-3은 Under Approval이며, 공개 scope를 최종 표준 요구사항으로 오인하지 않는다.
 - 제품별 증거가 없으므로 EVD 행의 제품 구현 상태는 전부 Unknown / evidence pending이다.
 - 이 매핑은 법률 자문, 인증 결과, Article 27 presumption of conformity 또는 제품 시험 완료를 의미하지 않는다.
+
+## 7. 제품 분류와 증거 매트릭스 연결 게이트 — 2026-11-19
+
+제품별 EVD 추적 및 Article 32 경로 확정 전에 EVD-01 제품 경계와 적용성 판정을 별도 승인 게이트로 둔다. Annex III/IV 분류는 제품명·산업분야·내장 부품 목록이 아니라 제품 전체의 core functionality와 Implementing Regulation (EU) 2025/2392 기술 설명을 기준으로 한다.
+
+| 연결 게이트 | 관련 EVD | 필수 입력/증거 | 검증 결과 기록 | 현재 |
+|---|---|---|---|---|
+| 판매 단위·제품 경계 | EVD-01, EVD-16 | 완제품, 별도 판매 통신모듈, 펌웨어/툴, 원격처리 서비스별 SKU·상표·공급 주체 | 제품 단위 ID, 제조사 역할, 경계 다이어그램, 포함/제외 이유 | Unknown |
+| 적용성·연결성 | EVD-01~03 | intended purpose, reasonably foreseeable use, 포트/프로토콜/데이터 흐름, Article 2 제외 검토 | Art. 2(1) 적용 판단과 Art. 2(2)–(7) 제외 근거 분리 | Unknown |
+| Annex III/IV core functionality | EVD-01~04, EVD-13 | 제품 전체 핵심 기능, Annex III/IV 및 2025/2392 Annex I/II 기술 설명 | 후보 카테고리별 포함·배제 근거와 독립 검토 | Not assessed |
+| 통합 구성요소 보안 | EVD-03~12, EVD-16 | MCU/OS/네트워크 어댑터/부트로더/옵션카드의 버전·보안 기능·취약점·업데이트 | 완제품 분류와 별도로 구성요소 위험을 완제품 위험평가에 연결 | Unknown |
+| 평가 경로 | EVD-13~14 | Article 32 경로, Article 8(1) delegated act/scheme 상태, OJ harmonised standard 인용 | 평가 경로·근거·유효일·검토자 | Not assessed |
+
+### 분류 판정 오판 방지 규칙
+1. Annex III/IV 비해당은 CRA 비적용이 아니다. CRA 적용성은 Article 2, 카테고리 분류는 Articles 7–8로 분리한다.
+2. 내장 RTOS/네트워크 어댑터/보안 MCU가 있다는 사실만으로 완제품 드라이브 전체를 OS·network interface·security MCU 제품군으로 자동 분류하지 않는다.
+3. 별도 판매되는 통신 어댑터·MCU·소프트웨어는 독립 제품 단위로 별도 평가한다.
+4. 구성요소가 완제품 분류를 결정하지 않더라도 취약점·업데이트·접근통제·공급망 위험은 완제품의 Article 13 위험평가와 Annex I 통제에 반영한다.
+5. 제품별 분류 승인 전에는 EVD-01~EVD-16을 Verified/Pass로 변경하지 않는다. 문서 존재와 요구 충족은 다른 상태다.
+
+공식 근거: Regulation (EU) 2024/2847 Articles 2, 3, 6–8, 13, 32 및 Annexes I, III, IV; Commission Implementing Regulation (EU) 2025/2392 recitals (2)–(6), Annex I/II. 원문: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R2847 ; https://eur-lex.europa.eu/eli/reg_impl/2025/2392/oj/eng
