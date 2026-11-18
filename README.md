@@ -647,3 +647,8 @@
 ### CRA M/606 일정 정정 — C(2026) 7861 final
 - Commission은 2026-11-10 M/606을 개정했다. 새 ESO adoption deadline은 item 1/15: 2026-11-30, items 2–14: 2027-10-30, vertical items 16–41: 2027-01-31.
 - [개정 결정 추적 보고서](reports/CRA_M606_AMENDMENT_C2026_7861_DEADLINES_2026-11-18.md). 날짜를 OJ citation/Article 27 presumption과 혼동하지 않는다.
+
+
+### PR #64 초기 exact-head CI
+- Run #900 success: **161 passed, 1 xfailed**; CRA cross-matrix traceability(13/15/35/36/41) 및 공식 CRA PDF/HTML canary 통과.
+- Artifact #14390620457, SHA-256 `b7ced7629ab9e88bf44190d6d4f5fd50fc91f45bfc33a83ae09a02c1833e2f20`. CI 메타데이터 기록 후 최종 head 재검증 예정.
