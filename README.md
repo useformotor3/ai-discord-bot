@@ -574,3 +574,8 @@
 - G-001–G-013 have been substantively checked against OJ C/2026/6013. G-003/G-008/G-013 wording was narrowed/refined; G-001/G-013 locators corrected; G-004 obligations clarified.
 - PDF page images were visually checked for all cited locator ranges. Full findings: `reports/CRA_OFFICIAL_GUIDANCE_AND_M606_ANNEX_AUDIT_2026-11-17.md` §8.
 - All Guidance claims remain non-binding explanations; product-specific conclusions remain Unknown until model evidence exists.
+
+## Guidance–matrix link verification — 2026-11-18
+- Bidirectional check passed: 13 Guidance claims, 35 CRA requirements, 15 interfaces, 36 SEC controls; zero missing reverse links and zero dangling claim IDs.
+- OJ C/2026/6013 ELI is now the primary Guidance URL in the three cross-matrices; historic Commission publication page retained as secondary.
+- Full results and corrections: `reports/CRA_CROSS_MATRIX_CONSISTENCY_AUDIT_2026-11-18.md`.
