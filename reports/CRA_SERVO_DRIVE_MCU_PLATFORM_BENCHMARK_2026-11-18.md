@@ -10,7 +10,7 @@
 
 1. 사용 중인 ST MCU의 정확한 부품번호가 확인되지 않았다. ST가 실제 제품의 기준 플랫폼이며, 아래 STM32G474RE와 STM32H753XI는 공개 자료를 바탕으로 한 **비교 후보**이지 실제 탑재 부품이라고 단정하지 않는다.
 2. TI 비교 후보는 이전에 특정한 **MSPM0G3529-Q1**이다. TI 공식 데이터시트 Rev. B는 80 MHz Cortex-M0+, 512 KB Flash, 128 KB SRAM 및 보안 부트·업데이트·AES·키 저장·TRNG 등을 기재한다.
-3. STM32G474RE는 고해상도 PWM, 다중 ADC, CORDIC/FM​​AC 등 모터제어 주변장치 밀도가 강점이다. STM32H753XI는 훨씬 높은 CPU 성능·메모리·암호 가속과 보안 펌웨어 업데이트 기능이 강점이다.
+3. STM32G474RE는 고해상도 PWM, 다중 ADC, CORDIC/FMAC 등 모터제어 주변장치 밀도가 강점이다. STM32H753XI는 훨씬 높은 CPU 성능·메모리·암호 가속과 보안 펌웨어 업데이트 기능이 강점이다.
 4. MSPM0G3529-Q1은 보안 기능 통합도가 높지만 80 MHz Cortex-M0+ 제품이므로 G474/H753과 동급 CPU 성능의 직접 대체품이라고 간주하지 않는다. 저·중급 제어 또는 통신/보안 보조 MCU 역할도 포함해 실제 제어 부하로 검증한다.
 5. 최종 선택 전에는 실제 제품의 제어 주기·PWM/ADC 동기화·엔코더·필드버스·실시간 jitter·메모리·업데이트 요구를 고정하고 동일 시험을 수행해야 한다.
 
@@ -18,7 +18,7 @@
 
 | 후보 | 제조사 자료 기준 상태 | 주요 범위 | 비교에서의 역할 |
 |---|---|---|---|
-| ST STM32G474RE | ST 제품 페이지: Active / volume production | Cortex-M4 170 MHz, FPU/DSP, 모터제어 타이머·HRTIM·ADC·CORDIC/FM​​AC | 모터 제어 주변장치 중심 ST 후보 |
+| ST STM32G474RE | ST 제품 페이지: Active / volume production | Cortex-M4 170 MHz, FPU/DSP, 모터제어 타이머·HRTIM·ADC·CORDIC/FMAC | 모터 제어 주변장치 중심 ST 후보 |
 | ST STM32H753XI | ST 제품 페이지: Active / volume production | Cortex-M7 480 MHz, 2 MB Flash, 1 MB RAM, HW crypto, secure firmware upgrade | 고성능 제어/통신 통합 ST 후보 |
 | TI MSPM0G3529-Q1 | TI 제품 페이지: Active; 데이터시트 Rev. B, 2025-10 개정 | Cortex-M0+ 80 MHz, 512 KB Flash, 128 KB SRAM, CAN-FD, 보안 부트/업데이트/키 저장 | 보안 통합형 TI 비교 후보; 동급 성능 대체 여부 미확정 |
 
