@@ -108,9 +108,9 @@ def test_m606_item18_wrong_printed_page_fails_closed(tmp_path):
     path = tmp_path / REQUIRED[5]
     import json
     provenance = json.loads(path.read_text(encoding="utf-8"))
-    provenance["visual_verification"][0]["printed_page_number"] = 2
+    provenance["visual_verification"][0]["printed_page_number"] = 3
     path.write_text(json.dumps(provenance), encoding="utf-8")
-    with pytest.raises(TraceabilityError, match="printed EN 3"):
+    with pytest.raises(TraceabilityError, match="printed EN 2"):
         validate_traceability(tmp_path)
 
 
