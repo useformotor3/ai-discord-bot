@@ -305,3 +305,11 @@
 - 결정 Article 2는 ESO가 수령 후 1개월 이내 개정 비수락을 통지하면 결정이 중단되는 조건을 둔다. ESO 수령일/비수락 여부는 미확인 후속 항목이다.
 - 상세 보고서: `reports/CRA_M606_AMENDMENT_C2026_7861_DEADLINES_2026-11-18.md`. CEN/OT 상태 보고서에도 일정 정정 추가.
 - 기존 자료의 2026-10-30 수평/수직 deadline 설명은 개정 결정으로 superseded. 이전 역사 기록은 삭제하지 않고 정정 링크를 추가한다.
+
+
+### PR #64 exact-head CI 검증
+- PR #64 head `ff548d64b109e95c9f63fa0666ba419f9545e11f`, Run #900 / ID `44219718958`: success.
+- pytest **161 passed, 1 xfailed**; source blob integrity, compile, CRA cross-matrix traceability, official CRA PDF source canary 9종, artifact upload, official HTML source canary 모두 통과.
+- CRA traceability: 13 claims, 15 interfaces, 35 requirements, 36 SEC, 41 M/606 items; bidirectional links true.
+- Artifact #14390620457; digest `sha256:b7ced7629ab9e88bf44190d6d4f5fd50fc91f45bfc33a83ae09a02c1833e2f20`; expires 2026-11-25 01:58:08 UTC.
+- CI metadata를 이 문서에 기록했으므로 변경된 최종 head에서 exact-head CI를 재실행한 후 병합한다.
