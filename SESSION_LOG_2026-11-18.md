@@ -186,3 +186,13 @@
 - Artifact #14385358813, digest `sha256:407da234ac5ad37821bd5d00b7e0872f8abddc28932b1db9f32a14b76aacf1d4`, expires 2026-11-25 00:48:28 UTC.
 - Pre-merge safety ref `safety/pre-merge-etsi-m606-status-2026-11-18` matched main at base; post-merge ref `safety/post-merge-pr58-2026-11-18` identical to main.
 - Next: CEN/CENELEC EN 40000 and industrial OT prEN 50770 status review; distinguish official catalogue evidence from secondary aggregators.
+
+
+## CEN/CENELEC 공식 EN 40000 / OT prEN 50770 점검 및 정정
+- CEN 공식 EN 40000-1-1:2026 레코드를 직접 확인: Status Published, DOR 2026-11-02, DAV 2026-11-18, OJ field “No citation expected”. 발행 완료와 CRA Article 27 추정 적합성을 분리하도록 기존 포괄 표현을 정정했다.
+- EN 40000-1-2:2026은 2026-11-02 ratification 및 No citation expected가 tracker/2차 카탈로그에서 확인됐지만, 공식 개별 레코드 fetch는 HTTP 500으로 실패해 직접 readback 미완료.
+- CEN FprEN 40000-1-3:2026 공식 레코드: Under Approval / Citation expected.
+- CENELEC 공식 레코드 prEN 50770-1~6: 모두 Committee stage, Citation expected. 각 제품 scope와 서보 드라이브 직접 적용 경계를 상세 보고서에 기록.
+- CRA OJ citation은 조회한 Commission index에서 미식별. “Citation expected”는 actual OJ citation이 아니다.
+- 산출물: `reports/CRA_CEN_CENELEC_EN40000_OT50770_STATUS_2026-11-18.md`, CSV 추적표, 통합 보고서 및 상태판 갱신.
+- 다음: EN 40000-1-1/1-2 발행본 확보·검증, CENELEC OT 표준 stage 재조회 및 OJ 재검증.
