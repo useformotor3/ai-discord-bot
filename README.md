@@ -603,3 +603,10 @@
 - 목표 일정은 실제 채택/발행/OJ 게재와 구분한다. CRA Article 27 추정 적합성은 정확한 표준 참조의 OJ 공표 확인 전 주장하지 않는다.
 - 상세: [ETSI M/606 최신 작업계획 및 OJ 상태 점검](reports/CRA_ETSI_M606_LIVE_STATUS_2026-11-18.md).
 - 최신 프로젝트 재개 기준: [PROJECT_STATUS_CURRENT.md](PROJECT_STATUS_CURRENT.md).
+
+
+### PR #58 병합 완료 — ETSI M/606 최신 상태
+- ETSI M/606 Work Programme v2.3.3 및 EN 304 636 / EN 304 625의 최신 상태·목표 일정, Commission OJ index 확인 결과를 기록했다.
+- PR #58 merge: `88d5eacd71c4267f64f674f0e990a25ed6fafd3a`; exact-head Run #883 성공(161 passed, 1 xfailed).
+- Post-merge safety ref `safety/post-merge-pr58-2026-11-18`와 main은 identical.
+- 상세: [ETSI M/606 최신 상태 보고서](reports/CRA_ETSI_M606_LIVE_STATUS_2026-11-18.md). 다음 작업은 CEN/CENELEC EN 40000 및 OT prEN 50770 상태의 공식 원문 검증이다.

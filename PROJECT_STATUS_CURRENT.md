@@ -238,3 +238,12 @@
 - PR #57 docs-only merge commit: `ff3c5b7875131ef92e3fe4a7974f4420ddfcc84c`.
 - Post-merge safety ref `safety/post-merge-pr57-2026-11-18`는 merge commit에서 생성되었고 main과 identical(0 ahead/0 behind)로 확인되었다.
 - PR #57은 관리 문서만 변경했으며 해당 커밋에 연결된 PR CI run은 확인되지 않았다. 따라서 CI 통과로 표현하지 않는다. 이번 ETSI 연구 변경은 별도 feature branch에서 exact-head CI를 실행한다.
+
+
+## PR #58 ETSI M/606 상태 갱신 병합 완료 — 2026-11-18
+- PR #58 squash merge commit: `88d5eacd71c4267f64f674f0e990a25ed6fafd3a`.
+- Exact-head CI Run #883 / ID `44210773892`, tested head `da1b0dce8460b84ddae5d58bd744d382d4b07e7d`: success; **161 passed, 1 xfailed**. Source blob identity, compile, CRA traceability, full pytest, three official CRA PDF fetch/hash checks, evidence upload and nine-source official HTML canary passed.
+- Evidence artifact #14385358813; digest `sha256:407da234ac5ad37821bd5d00b7e0872f8abddc28932b1db9f32a14b76aacf1d4`; expires 2026-11-25 00:48:28 UTC.
+- Pre-merge safety ref `safety/pre-merge-etsi-m606-status-2026-11-18` matched main at base `ff3c5b7875131ef92e3fe4a7974f4420ddfcc84c`; post-merge ref `safety/post-merge-pr58-2026-11-18` is identical to main at merge commit.
+- Latest ETSI Work Programme v2.3.3 (2026-11-17) status and bounded OJ index finding are in `reports/CRA_ETSI_M606_LIVE_STATUS_2026-11-18.md`.
+- Next: independently validate CEN/CENELEC EN 40000 horizontal standards and industrial OT prEN 50770 work. Treat third-party catalog status as secondary until official CEN/CENELEC records or published EN texts are obtained.

@@ -177,3 +177,12 @@
 ## PR #57 관리 문서 merge readback
 - PR #57 merge commit `ff3c5b7875131ef92e3fe4a7974f4420ddfcc84c` 및 `safety/post-merge-pr57-2026-11-18`를 확인했다. safety ref와 main은 identical.
 - PR #57은 docs-only이며 해당 merge commit에 연결된 CI run은 확인되지 않았다. 성공 CI라고 기록하지 않는다.
+
+
+## PR #58 병합 및 CI 확인
+- PR #58 `docs: refresh ETSI M606 work item and OJ status` squash merge: `88d5eacd71c4267f64f674f0e990a25ed6fafd3a`.
+- Exact-head Run #883 / ID `44210773892` success; tested head `da1b0dce8460b84ddae5d58bd744d382d4b07e7d`; 161 passed, 1 xfailed.
+- Source blob identity, compile, CRA cross-matrix, full pytest, three official CRA PDF source hashes, evidence artifact upload, nine-source official HTML canary 모두 통과.
+- Artifact #14385358813, digest `sha256:407da234ac5ad37821bd5d00b7e0872f8abddc28932b1db9f32a14b76aacf1d4`, expires 2026-11-25 00:48:28 UTC.
+- Pre-merge safety ref `safety/pre-merge-etsi-m606-status-2026-11-18` matched main at base; post-merge ref `safety/post-merge-pr58-2026-11-18` identical to main.
+- Next: CEN/CENELEC EN 40000 and industrial OT prEN 50770 status review; distinguish official catalogue evidence from secondary aggregators.
