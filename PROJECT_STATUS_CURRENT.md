@@ -169,6 +169,6 @@
 - Final exact-head Run #861 (ID `44205897044`) success; tested head `dee79027a49dfbb1fdd7cf1036bc0ae39e83b518`; 158 passed, 1 xfailed; source identity, compile, traceability, PDF/HTML live canaries passed.
 - Final artifact #14384061014; digest `sha256:2b70d0f09f620c83a531f2ec9be9de6a1ec9a669ee861e16704804fe036eb3d3`; expires 2026-11-25 00:13:02 UTC.
 - Pre-merge safety ref `safety/pre-merge-cra-guidance-oj-6013-2026-11-18` matched main at `854d66fa6c145ca264dbd768c2c75fcf9f117153`. After merge, main is exactly one commit ahead of that ref and the diff is PR #52's 15 files.
-- Post-merge safety ref `safety/post-merge-cra-guidance-oj-6013-2026-11-18` was created at the merged main head; verify it remains identical to main.
+- Post-merge safety ref `safety/post-merge-cra-guidance-oj-6013-2026-11-18` is identical to main at merge commit `d3956b7b364c507b8d59dcfc056763f2829ea867` (post-merge compare: identical).
 - Current Guidance source is OJ C/2026/6013, EUR-Lex primary PDF, fallback=False; historical C(2026) 5252 ANFR mirror remains separate and is not claimed byte-identical.
 - Next priority: substantive claim-by-claim redline for G-001–G-013 against OJ text, then update relevant interface/requirements/SEC evidence mappings. M/606 provenance review follows.
