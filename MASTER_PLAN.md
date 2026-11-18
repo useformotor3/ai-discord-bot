@@ -879,3 +879,9 @@
 - PR #79 merge `2e377127a26d3d9c0232089cad583ff6f2d328ca`; exact-head Run #937 및 exact-main Run #938 success.
 - Run #938: 161 passed / 1 xfailed; source integrity, compile, CRA traceability 13/15/35/36/41, 9 official sources and Article 13(8) canaries passed. Artifact #14396566514, digest `sha256:d9f1c96ecab857a65c699b18489315fcf5edbe0892234dc5c42157dceb2dd156`.
 - Pre/post safety refs preserved; post-merge ref == main. Current product-specific blocker: actual ST MCU order code/marking and drive control requirements.
+
+
+## PR #80 병합 및 Run #940 완료 — 2026-11-18
+- PR #80 merge `950cacef2ea4ed2bb4062f09ef0180a5621375a5`; exact-head Run #939 및 exact-main Run #940 success.
+- Run #940: 161 passed / 1 xfailed; source integrity, compile, CRA traceability 13/15/35/36/41, 9 official sources and Article 13(8) canaries passed. Artifact #14396950302, digest `sha256:dca34e12cfea64f9f6a5676a084910e465bf2f8bb415eee4173681683ea9a9cb`.
+- Pre/post safety refs preserved; post-merge ref == main. Next action requires user-supplied exact ST MCU part number/marking and drive control requirements; avoid fabricated product-specific assumptions.
