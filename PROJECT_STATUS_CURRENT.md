@@ -29,6 +29,17 @@
 - Artifact #14394634118, SHA-256 `cf7d6d6ef7020d5381a4a2f201f50bf3171251155459505420ffce16998ef027`, expires 2026-11-25 03:31:37 UTC.
 - PR #73 touched only project-control documents; no runtime/workflow/secrets/state/history/archive/legacy SIL 3 files changed.
 
+## 최신 main 기준점 — PR #74 및 사후 CI 완료 (2026-11-18)
+- PR #74 참조 아키텍처 v0.2 문서 변경 squash merge: `48dd8f7bc0617ec0c67eadf80a7e7cc364b862c0`; PR head `4ee2d73bf7bc5826c001011b17133d4a6a8071ec`, Run #927 success.
+- Pre-merge safety `safety/pre-pr74-merge-checkpoint-2026-11-18`; post-merge safety `safety/post-merge-pr74-2026-11-18`; post-merge safety == main.
+- Exact-main Run #928 / ID `44231392940` on `48dd8f7bc0617ec0c67eadf80a7e7cc364b862c0`: **success**, 161 passed / 1 xfailed; source integrity, compile, CRA traceability (13/15/35/36/41), 9 official sources, corrigenda and Article 13(8) locator/quote canaries passed.
+- Run #927 artifact #14395142564, SHA-256 `64c359db2e764f2506345e3fee3c5e20bbacacdf3e3e67d095f02caa7126b528`; Run #928 artifact #14395476337, SHA-256 `6aaf8fc76f87121e42f8190fec9568121fbd8a0005695ce8de87ff776f0d1d93`, expires 2026-11-25 03:34:56 UTC.
+- PR #74 changed only documentation/log files; production runtime/workflows/secrets/state/history/archive/legacy SIL 3 files untouched.
+
+## 다음 하드웨어 조사 — MCU 후보 기술 벤치마킹 (2026-11-18)
+- `reports/CRA_SERVO_DRIVE_MCU_PLATFORM_BENCHMARK_2026-11-18.md` 초안: ST 기준 후보 STM32G474RE/H753XI, TI 비교 후보 MSPM0G3529-Q1을 공식 제조사 자료로 대조.
+- 실제 ST MCU 부품번호와 제어 사양이 미확정이므로 선정/대체 결론은 보류. CPU MHz/DMIPS는 동일 조건 벤치마크가 아님.
+
 ## 활성 범위
 - 활성 프로젝트: EU Cyber Resilience Act(CRA) 조사·요구사항 추적·제품 적용성/기술 설계·보고서 검증.
 - SIL 3 기능안전 자료는 과거 산출물로 보존하며 비활성이다. 별도 명시적 재개 지시 전까지 후속 작업하지 않는다.
