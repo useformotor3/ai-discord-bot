@@ -616,3 +616,10 @@
 - CEN 공식 레코드에서 EN 40000-1-1:2026은 Published (DAV 2026-11-18)로 확인됐다. 그러나 CRA OJ citation은 “No citation expected”이므로 Article 27 추정 적합성 근거가 아니다.
 - FprEN 40000-1-3은 Under Approval, prEN 50770-1~6은 CENELEC 공식 레코드상 Committee stage다. 각 상태와 OJ 필드를 분리해 추적한다.
 - 상세: [CEN/CENELEC EN 40000 및 OT prEN 50770 공식 상태 감사](reports/CRA_CEN_CENELEC_EN40000_OT50770_STATUS_2026-11-18.md), [CSV 상태표](reports/CRA_CEN_CENELEC_EN40000_OT50770_STATUS_2026-11-18.csv).
+
+
+### PR #60 병합 및 CI checkpoint
+- CEN EN 40000-1-1:2026 CEN Published 상태와 “No citation expected”를 분리 기록했고, CENELEC prEN 50770-1~6 공식 Committee stage 기록을 추가했다.
+- PR #60 merge: `1f39cb31d7f5e3466f1b22b798e9fc51971542da`; exact-head Run #887 성공(161 passed, 1 xfailed).
+- Post-merge safety ref `safety/post-merge-pr60-2026-11-18`와 main은 identical.
+- 상세 보고서: [EN 40000 / OT prEN 50770 상태 감사](reports/CRA_CEN_CENELEC_EN40000_OT50770_STATUS_2026-11-18.md).

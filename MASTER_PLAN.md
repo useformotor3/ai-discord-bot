@@ -708,3 +708,9 @@
 - CENELEC 공식 레코드 prEN 50770-1~6은 Committee stage / Citation expected; DOR/DAV 미기재.
 - 상세 보고서 및 CSV 추적표: `reports/CRA_CEN_CENELEC_EN40000_OT50770_STATUS_2026-11-18.md`, `reports/CRA_CEN_CENELEC_EN40000_OT50770_STATUS_2026-11-18.csv`.
 - 다음: EN 40000-1-1/1-2 발행본 및 scope 확보, CENELEC OT 작업의 최신 stage 재조회, CRA OJ index 재확인.
+
+
+## PR #60 병합 완료 — 2026-11-18
+- CEN EN 40000-1-1 발행 상태와 CRA OJ citation 미예상 상태를 구분하고, CENELEC prEN 50770-1~6 공식 상태를 추가한 변경이 `1f39cb31d7f5e3466f1b22b798e9fc51971542da`로 병합되었다.
+- Exact-head Run #887 성공: 161 passed, 1 xfailed. Pre/post safety refs 확인 완료.
+- 다음: EN 40000-1-1/1-2 final text 확보·검증, CEN 1-2 개별 공식 레코드 재조회, CENELEC OT stage 및 OJ index 재확인.
