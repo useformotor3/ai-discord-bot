@@ -312,3 +312,11 @@
 - Guidance Annex PDF remains mirror fallback=True; Commission OJ C/2026/6013 and M/606 Annex PDFs were fetched fallback=False. Do not describe the Guidance mirror bytes as Commission-primary identity.
 - Post-merge safety ref and main are identical. PR #71 was documentation/log-only; production runtime/workflows/secrets/state/history/archive/legacy SIL 3 materials untouched.
 - Next: complete row-level legal semantics/provenance audit of CRA-001–CRA-035, then synchronize the integrated report, traceability matrix, SEC matrix and independent audit. Keep model-specific applicability Unknown until product evidence arrives.
+
+
+## PR #72 병합 및 사후 exact-main 검증 완료 — 2026-11-18
+- PR #72 exact head `0f85cc04eb64efe961e514a59a28386b5527708c`, Run #923 success.
+- Merge `293a27a8ea2a8e03f58db50bbe27d2aaea194c8d`; pre/post safety refs `safety/pre-pr72-merge-checkpoint-2026-11-18`, `safety/post-merge-pr72-2026-11-18`.
+- Main exact Run #924 / ID `44230705429`: success, 161 passed / 1 xfailed; source integrity, compile, traceability, official PDF and 9-source live CRA canaries passed.
+- Artifact #14394119675, digest `sha256:43a5e60b947890886baeee6c355beae857928f3c47deb9d76489244199accb3a`.
+- Main and post-merge safety ref are identical. Continue by tightening product-agnostic servo-drive security architecture and its evidence links; product-specific implementation remains Unknown pending manufacturer/model evidence.

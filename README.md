@@ -704,3 +704,9 @@
 - Main exact commit Run #922 / ID `44230377812`: **success**, 161 passed / 1 xfailed; source integrity, compile, traceability, official PDF and 9-source live CRA canaries passed.
 - Artifact #14393784949, SHA-256 `db75a58638b43fbe1798c70b7c4dad5951cb1b1f98bfa013fa771184e6cf2126`.
 - Pre/post safety refs are preserved; `safety/post-merge-pr71-2026-11-18` == main. 다음 우선순위: 35개 CRA 요구사항 행 단위 법령 의미 감사 및 통합 보고서/매트릭스/독립 감사 정합화.
+
+
+### PR #72 병합 및 main 사후 검증 완료 — 2026-11-18
+- Merge `293a27a8ea2a8e03f58db50bbe27d2aaea194c8d`; exact-main Run #924 success, 161 passed / 1 xfailed.
+- Artifact #14394119675, SHA-256 `43a5e60b947890886baeee6c355beae857928f3c47deb9d76489244199accb3a`.
+- Post-merge safety ref equals main. CRA-001–035 semantics and cross-matrix mapping are audited; next technical work is reference architecture control-to-evidence refinement.
