@@ -71,3 +71,22 @@ CEN 공식 EN 40000-1-1 레코드에서 DAV는 승인된 공식 언어 버전이
 - EN 40000-1-2 risk-management framework와 EN 40000-1-3 vulnerability handling의 요구사항은 제품 증거·프로세스와 연결해 후속 분석한다.
 - OT prEN 50770는 IEC 62443 기반 OT 제품 프로파일로 추적하되, 드라이브가 해당 제품 카테고리에 해당하는지는 intended purpose와 core functionality를 기준으로 한다.
 - OJ citation expected는 실제 OJ citation이 아니다. Article 27 presumption of conformity는 정확한 OJ 참조 및 해당 표준의 적용 범위가 확인될 때만 주장한다.
+
+
+## 중요 일정 정정 — C(2026) 7861 final (2026-11-10)
+
+2026-11-10 Commission Implementing Decision C(2026) 7861 final이 M/606 Annex I을 대체했다. Commission CRA 표준화 페이지(최종 업데이트 2026-11-12)가 개정 사실을 명시한다. 기존 표/문장에 남아 있는 2026-10-30 납기는 아래 새 일정으로 읽어야 한다.
+
+| M/606 Annex item | 범위 | 새 ESO adoption deadline |
+|---|---|---|
+| 1 | 위험기반 설계·개발·생산(framework, EN 40000-1-2 work) | 2026-11-30 |
+| 15 | 취약점 처리(EN 40000-1-3 work) | 2026-11-30 |
+| 2–14 | 일반 보안 요구 | 2027-10-30 |
+| 16–41 | 수직 제품별 표준 | 2027-01-31 |
+
+이 날짜는 ESO adoption deadline이며 발행일, OJ citation 또는 Article 27 추정 적합성 발생일이 아니다. 결정 Article 2에 따라 ESO가 수령 후 1개월 이내 개정사항을 수락하지 않는다고 통지하면 결정이 적용을 중단하는 조건이 있으므로, ESO 수령일/비수락 통지는 별도 확인 대상으로 둔다.
+
+상세 근거와 영향 분석: [CRA M/606 개정 결정 추적](CRA_M606_AMENDMENT_C2026_7861_DEADLINES_2026-11-18.md).
+
+공식 Commission 페이지: https://digital-strategy.ec.europa.eu/en/policies/cra-standardisation
+결정문 사본: https://www.ibf-solutions.com/fileadmin/dateidownloads/c-2026-7861-main-document-annex-cra-standards.pdf
