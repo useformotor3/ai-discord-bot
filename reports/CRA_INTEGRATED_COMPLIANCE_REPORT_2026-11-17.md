@@ -397,3 +397,9 @@ CENELEC 공식 프로젝트 레코드는 prEN 50770-1~6 모두 Committee stage�
 CRA 요구사항과 서보 드라이브 설계·시험·기술문서 간의 provisional mapping을 별도 관리한다. EVD-01–EVD-16의 법적 locator, 통제·시험 제안, 최소 증거 패키지, 표준 scope 연결 및 제품별 상태는 [CRA 요구사항–증거 추적 매트릭스](CRA_REQUIREMENTS_TO_EVIDENCE_MATRIX_2026-11-18.md)와 [CSV](CRA_REQUIREMENTS_TO_EVIDENCE_MATRIX_2026-11-18.csv)를 참조한다.
 
 이 매트릭스는 CRA 법문을 대체하지 않으며, 표준 최종본의 확인되지 않은 조항을 인용하지 않는다. 제품별 증거가 없으므로 모든 EVD 상태는 Unknown / evidence pending이다.
+
+## 최신 M/606 일정 변경 (2026-11-18 정정)
+
+Commission은 2026-11-10 C(2026) 7861 final로 M/606 Annex I을 개정했다. 새 ESO adoption deadline은 item 1(framework) 및 item 15(vulnerability handling) 2026-11-30, items 2–14 일반 보안 요구 2027-10-30, items 16–41 수직 제품별 표준 2027-01-31이다. 이는 표준화기구의 채택 납기이며 발행일, OJ citation, CRA 적용일 또는 Article 27 추정 적합성 발생일이 아니다. Article 2의 1개월 비수락 조건 및 ESO 수령일 확인은 남은 조사 항목이다.
+
+상세: [M/606 개정 결정 일정 추적](CRA_M606_AMENDMENT_C2026_7861_DEADLINES_2026-11-18.md). 공식 Commission 안내: https://digital-strategy.ec.europa.eu/en/policies/cra-standardisation
