@@ -320,3 +320,11 @@
 - Main exact Run #924 / ID `44230705429`: success, 161 passed / 1 xfailed; source integrity, compile, traceability, official PDF and 9-source live CRA canaries passed.
 - Artifact #14394119675, digest `sha256:43a5e60b947890886baeee6c355beae857928f3c47deb9d76489244199accb3a`.
 - Main and post-merge safety ref are identical. Continue by tightening product-agnostic servo-drive security architecture and its evidence links; product-specific implementation remains Unknown pending manufacturer/model evidence.
+
+
+## CRA 서보 드라이브 참조 보안 아키텍처 v0.2 설계 검토 — 2026-11-18
+- 기존 v0.1 도식에서 통신 입력·실시간 제어 경로와 인증/관리/업데이트 경로가 같은 흐름으로 보일 수 있는 점을 발견해 논리 경계를 분리했다.
+- v0.2에 cyclic data ingress, privileged command/parameter gate, management service, secure update staging/boot verification, event monitoring을 구분했다.
+- 단일 MCU + MPU/RTOS isolation vs communication/control dual-MCU 분리 선택 기준을 비교했다. 특정 아키텍처·부품을 CRA 의무로 단정하지 않는다.
+- 설계 후보와 수용 기준을 EVD-01~16 및 SEC-001~036에 연결하고, malformed frame, unauthorized write, image tampering, downgrade, power-loss, interrupt/resource exhaustion, key lifecycle, log integrity 등 검증 시나리오를 명시했다.
+- 제품별 회로/부품/펌웨어/프로토콜 증거 및 시험 결과가 없으므로 문서 상태는 reference design only / implementation unverified.
