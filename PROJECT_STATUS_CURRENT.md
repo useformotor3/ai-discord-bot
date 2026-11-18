@@ -284,3 +284,15 @@
 - pytest **161 passed, 1 xfailed**; source blob integrity, compile, CRA cross-matrix traceability, official CRA PDF 3종 fetch/hash, 9-source live official HTML canary 모두 성공.
 - Artifact #14388303196; digest `sha256:47528b6e72af65dd95130a86a1442ac8f795a6eb3c34d93656369bf94734a2c2`; expiry 2026-11-25 01:40:17 UTC.
 - 이 CI 결과를 상황판/세션 로그/프로젝트 로그에 추가했으므로 해당 metadata 변경이 포함된 새 PR head에서 exact-head CI를 다시 실행한 뒤 병합한다.
+
+
+## PR #62 병합 및 복구 검증 완료 — 2026-11-18
+- PR #62: https://github.com/useformotor3/ai-discord-bot/pull/62 — squash merged.
+- Merge commit / 현재 main 기준: `612285ed720310cebd82340dc2e3b150e2c6f80a`.
+- 최종 exact-head `3947e25ba1717caea3e4099404da800ba349352f7`의 Run #896 / ID `44217724257`: success; **161 passed, 1 xfailed**.
+- 검증: source blob identity, compile, CRA cross-matrix traceability(13 claims/15 interfaces/35 requirements/36 SEC/41 M/606 items), full pytest, Commission 공식 PDF 3종 fetch/hash, 9-source official HTML canary.
+- Artifact #14389685192; digest `sha256:e11bcbf277f32b7386e72fb063fdfac2b19e896473e30c8e775522b7f6c55d85`; expiry 2026-11-25 01:41:53 UTC.
+- Pre-merge safety ref: `safety/pre-cra-evidence-matrix-2026-11-18`; post-merge safety ref: `safety/post-merge-pr62-2026-11-18`. Post-merge ref와 main은 0 ahead / 0 behind, identical 확인.
+- 신규 EVD-01–EVD-16 보고서/CSV 및 통합 보고서·README·상황판·마스터 계획·세션 로그·JSONL 기록이 main에 반영됨.
+- 운영 코드/workflow, secrets, state/history/archive, Gemini/Discord 실행 및 SIL 3 자료는 변경하지 않았다.
+- 다음: 제품 P0 자료(정확한 모델 데이터시트·사용설명서·통신/원격접속 구조) 확보 후 EVD-01부터 모델별 evidence mapping. 표준 최종 전문 취득 시 clause-by-clause 검증.
