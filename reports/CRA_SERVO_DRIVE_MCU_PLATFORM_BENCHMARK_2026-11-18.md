@@ -139,3 +139,53 @@ TI 페이지의 functional-safety target/ASIL 정보는 CRA 적합성 또는 서
 - ST 실제 사용 부품번호, 회로도, firmware, motor/drive ratings, protocol stack이 미확인이다.
 - secure boot, secure update, key storage, hardware crypto의 구현 가능성은 MCU 제품명만으로 확정할 수 없다. SKU, silicon revision, option bytes, software package, provisioning, lifecycle 조건을 확인해야 한다.
 - CRA 요구사항은 제품 위험평가와 Regulation (EU) 2024/2847에 따라 판정한다. 특정 MCU 기능이나 기능안전 표기가 CRA 적합성을 자동 증명하지 않는다.
+
+
+## 10. 동일 조건 시험 케이스 — 실행 전 준비용
+
+아래 케이스는 ST/TI 후보를 같은 보드 조건·동일 알고리즘·동일 컴파일 정책으로 비교하기 위한 **시험 계획**이다. 시험 결과가 없는 현재 상태는 전부 Not Run이다. 수치 합격 기준은 제품 요구사항과 실제 제어 사양에서 정하며, 임의의 PWM 주파수·loop period·jitter 한계를 이 문서가 만들지 않는다.
+
+| Test ID | 시험 목적 / 부하 | 측정값·관찰값 | 합격 게이트(제품 요구사항 기준) | 증거 |
+|---|---|---|---|---|
+| MCU-T01 | current loop 단독 실행 및 최악 입력 | WCET, 평균/최대 cycle, deadline miss, CPU load | 최악 실행시간과 interrupt latency가 지정된 제어 주기·여유 예산 안에 있어야 함 | cycle trace, GPIO timing capture, profiler log |
+| MCU-T02 | speed/position loop 및 multi-axis 부하 | loop execution, update latency, axis-to-axis skew | 모든 루프가 요구된 주기·동기·추종 오차를 만족 | control trace, position/speed error log |
+| MCU-T03 | ADC/PWM 동기화 | ADC trigger phase, sample skew, conversion latency, PWM update boundary | sampling window와 제어 알고리즘의 오차/지연 예산을 만족 | oscilloscope capture, ADC DMA trace |
+| MCU-T04 | encoder/QEI 최대 입력 | max pulse rate, missed count, timestamp jitter, direction reversal | 요구 최대 속도/분해능에서 count 누락·방향 오류 없음 | encoder simulator/capture, counter log |
+| MCU-T05 | interrupt/DMA/bus contention | interrupt latency, priority inversion, DMA arbitration, jitter | 통신·DMA 부하 중에도 control deadline 유지 | trace recorder, bus/DMA utilization |
+| MCU-T06 | 실제 fieldbus 및 service 통신 부하 | packet rate, stack CPU/RAM, packet loss, command latency | 요구 네트워크 부하·장애 조건에서 control deadline 및 명령 정책 유지 | packet capture, stack statistics, CPU trace |
+| MCU-T07 | crypto/authentication 병행 부하 | signature verification/AES/hash time, CPU load, memory, control jitter | 인증·업데이트 작업이 실시간 루프의 deadline을 침해하지 않음 | crypto benchmark, profiler, control trace |
+| MCU-T08 | secure boot 및 update 정상/비정상 | boot time, image verification, model/version check, update duration | 승인된 이미지·제품만 실행/업데이트되고 실패는 정의된 복구 경로로 전환 | boot log, manifest, signature result |
+| MCU-T09 | 업데이트 fault injection | power loss, corrupt image, downgrade, wrong model, full flash, damaged slot | 장치가 무결성 검증 없는 이미지를 실행하지 않고 복구 가능한 상태를 유지 | fault matrix, recovery log, image hashes |
+| MCU-T10 | memory/debug protection | unauthorized read/write/execute, debug unlock, privilege boundary | 보호영역 우회 및 권한 없는 debug access가 차단되고 이벤트가 기록됨 | negative test report, option-byte/config dump |
+| MCU-T11 | 전원·리셋·watchdog | brownout/reset sequence, watchdog recovery, parameter/log atomicity | 재기동 후 설정/펌웨어 손상·불명확 상태가 없고 복구 동작이 요구와 일치 | power profile, reset reason, NVM integrity check |
+| MCU-T12 | 환경·열·EMC·장기 운용 | temperature drift, ADC noise, clock stability, communication errors, flash endurance | 제품 사양 및 부품 데이터시트 한계 안에서 성능·보안 통제가 유지 | chamber/EMC report, long-run log, errata review |
+
+### 10.1 재현성 확보 규칙
+
+- 후보별 동일 알고리즘, 동일 control-loop 기능, 동일 protocol feature set, 동일 compiler optimization 및 동일 logging 조건을 적용한다.
+- 각 결과에 MCU 주문 코드, package, silicon revision, board revision, clock tree, memory wait-state/cache, compiler/toolchain/SDK 버전, source commit, firmware hash를 기록한다.
+- 실제 전력단/모터를 사용하는 시험은 승인된 시험설비와 적절한 전기·기계 보호 조건에서 수행한다. 보드 단독 시험 결과를 실제 모터/전력단 실시간 성능으로 일반화하지 않는다.
+- 최소 반복 횟수와 worst-case 추출 방법은 시험계획에서 사전 정의하고, 평균값만으로 deadline 보장을 주장하지 않는다.
+- 보안 기능은 enabled/disabled, key provisioning state, debug lifecycle 및 boot/update policy를 기록한다. 기능 이름만 확인하고 구현 pass로 처리하지 않는다.
+
+## 11. 시험 결과 기록 양식
+
+각 후보·시험 실행마다 아래 항목을 채우고 원시 로그/파형/소스 commit을 함께 보관한다.
+
+| 기록 필드 | 입력 |
+|---|---|
+| Candidate / exact order code | 미입력 |
+| Silicon revision / package / temperature grade | 미입력 |
+| Board revision / power stage / motor | 미입력 |
+| Source commit / firmware hash / compiler / SDK | 미입력 |
+| Clock tree / memory/cache / RTOS configuration | 미입력 |
+| PWM frequency / current-loop period / speed & position-loop periods | 제품 사양 입력 필요 |
+| ADC trigger / sampling point / encoder type & max rate | 제품 사양 입력 필요 |
+| Fieldbus/protocol stack and traffic profile | 제품 사양 입력 필요 |
+| Security configuration (boot, keys, debug, crypto, update) | 제품 사양 입력 필요 |
+| Ambient/device temperature / supply / instrumentation | 시험 실행 시 기록 |
+| Test ID / repetition / raw evidence path | 시험 실행 시 기록 |
+| WCET / jitter / CPU/RAM/DMA utilization / errors | 시험 실행 시 측정 |
+| Result / deviation / defect ID / retest | 시험 실행 후 기록 |
+
+**판정 게이트:** actual ST MCU part number와 control requirements가 채워지기 전에는 후보 점수를 계산하지 않는다. MCU-T01~T12 중 제품 기능과 무관한 케이스는 N/A 사유를 남기고, 실행하지 않은 케이스는 Not Run으로 유지한다. 제품별 pass/fail, CRA conformity 또는 안전 인증 결과로 오인하지 않는다.
