@@ -714,3 +714,12 @@
 - CEN EN 40000-1-1 발행 상태와 CRA OJ citation 미예상 상태를 구분하고, CENELEC prEN 50770-1~6 공식 상태를 추가한 변경이 `1f39cb31d7f5e3466f1b22b798e9fc51971542da`로 병합되었다.
 - Exact-head Run #887 성공: 161 passed, 1 xfailed. Pre/post safety refs 확인 완료.
 - 다음: EN 40000-1-1/1-2 final text 확보·검증, CEN 1-2 개별 공식 레코드 재조회, CENELEC OT stage 및 OJ index 재확인.
+
+
+
+## 2026-11-18 — CRA 요구사항–증거 추적 매트릭스
+- 법적 요구사항에서 제품 통제·시험·최소 증거로 이어지는 EVD-01–EVD-16 provisional mapping을 생성한다.
+- CRA 법적 의무 / 표준 공개 scope / 엔지니어링 제안 / 제품별 실제 증거 상태를 구분한다.
+- EN 40000-1-2/1-3 최종 전문·조항을 확보하기 전에는 조항 번호 또는 normative shall 문장을 추정하지 않는다.
+- 완료 기준: CSV 16행과 Markdown 표의 ID·내용 일치, 모든 행에 법적 locator/증거 패키지/상태 존재, 제품별 미확인 상태 유지, exact-head CI 성공, PR merge 후 safety ref와 main 동일.
+- 후속 우선순위: 제품 P0 자료 확보 → EVD-01~07 제품 위험평가/아키텍처 → EVD-08~12 업데이트·취약점 프로세스 → EVD-13~16 기술문서·공급망 증거 → 표준 최종본 clause-by-clause redline.
