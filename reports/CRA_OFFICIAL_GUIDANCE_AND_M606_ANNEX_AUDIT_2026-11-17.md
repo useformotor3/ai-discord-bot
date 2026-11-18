@@ -236,3 +236,13 @@ Machine-readable details are in `reports/CRA_PDF_SOURCE_PROVENANCE_2026-11-17.js
 2. Reconfirm all page locators in the OJ pagination from the PDF page images where tables/figures or page breaks affect extraction.
 3. Ensure integrated report, interface matrix, requirements matrix and SEC controls cite the OJ source ID and distinguish binding CRA law from non-binding Commission guidance.
 4. Keep C(2026) 5252 mirror provenance and OJ C/2026/6013 provenance separate; never overwrite one hash with the other.
+
+## 7.6 최종 PR head 재검증 — Run #854 (2026-11-18)
+
+- PR #52 final code/document head at this checkpoint: `0ab0fc4d9b217a4994fd6e7a1b32607c854bb693`.
+- GitHub Actions Run #854 (ID `44205498935`): **success**.
+- Exact source blob identity: success; compileall: success; CRA cross-matrix traceability: success; full pytest: **158 passed, 1 xfailed**.
+- Live PDF canary: three sources fetched and SHA-256 verified. C(2026) 5252 mirror used fallback=True; OJ C/2026/6013 retrieved directly from EUR-Lex with fallback=False; M/606 C(2026) 7861 retrieved directly from Commission register with fallback=False.
+- OJ C/2026/6013 hash remained `40ca76caeb0108f5b97c8f373a95f590b453fe92bd45a483addf3326e48c1dc2`; 61 pages.
+- Artifact ID `14382388555`, digest `sha256:9e8dc7f1c1d90015b7738263155ca9d6b1170aaea75ea6bd17350aeff7d36af7`, expires 2026-11-25 00:09:59 UTC.
+- The earlier Run #851 failure was a traceability-validator assumption requiring the explicit ANFR mirror-scope phrase in every claim row. The phrase is now retained as historical mirror-only provenance, while the validator also requires the OJ source and rejects OJ fallback. Run #854 passed this updated gate.
