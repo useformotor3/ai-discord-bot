@@ -113,3 +113,10 @@
 - OJ PDF raw hash/bytes/pages는 Run #844/#854와 동일; EUR-Lex primary fallback=False.
 - Artifact #14383167818, digest `sha256:a2f05428d57897a20a485cabaab17cbb976dcb91f6e5628ece0953ddfe22140d`.
 - Provenance JSON의 latest_verification을 Run #857로 갱신했다. 이 metadata 변경 후 새 exact-head CI를 수행한 뒤 PR #52 병합한다.
+
+## PR #52 병합 및 사후 기준점 — 2026-11-18
+- PR #52 merged squash: `d3956b7b364c507b8d59dcfc056763f2829ea867`.
+- Exact head Run #861 / ID `44205897044`: success; 158 passed, 1 xfailed; source blob integrity, compile, CRA traceability, full pytest, three-PDF acquisition, artifact upload, official HTML canary passed.
+- Tested head: `dee79027a49dfbb1fdd7cf1036bc0ae39e83b518`; artifact #14384061014, digest `sha256:2b70d0f09f620c83a531f2ec9be9de6a1ec9a669ee861e16704804fe036eb3d3`.
+- Pre-merge safety ref matched main `854d66fa6c145ca264dbd768c2c75fcf9f117153`; main after merge was one commit ahead with exactly PR #52's 15 files. Post-merge ref created at merged main.
+- Next: substantive redline of all 13 Guidance claims against OJ C/2026/6013; then matrix link and page-image recheck.
