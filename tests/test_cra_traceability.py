@@ -39,7 +39,7 @@ def test_repository_guidance_and_m606_traceability_is_consistent():
     assert summary["security_controls"] == 36
     assert summary["linked_claims"] == 13
     assert 41 in summary["referenced_m606_items"]
-    assert summary["pdf_sources"] == 2
+    assert summary["pdf_sources"] == 3
     assert summary["m606_mapping_items"] == 41
 
 
@@ -120,4 +120,32 @@ def test_duplicate_integrated_report_section_number_fails_closed(tmp_path):
     with path.open("a", encoding="utf-8") as stream:
         stream.write("\n\n## 14. Duplicate section number regression\n")
     with pytest.raises(TraceabilityError, match="duplicate top-level section numbers"):
+        validate_traceability(tmp_path)
+
+def test_missing_official_oj_guidance_source_fails_closed(tmp_path):
+    _copy_required_tree(tmp_path)
+    path = tmp_path / REQUIRED[5]
+    import json
+    provenance = json.loads(path.read_text(encoding="utf-8"))
+    provenance["sources"] = [
+        item for item in provenance["sources"]
+        if item.get("id") != "CRA-GUIDANCE-OJ-2026-6013"
+    ]
+    path.write_text(json.dumps(provenance), encoding="utf-8")
+    with pytest.raises(TraceabilityError, match="PDF provenance missing"):
+        validate_traceability(tmp_path)
+
+
+def test_oj_guidance_fallback_is_rejected(tmp_path):
+    _copy_required_tree(tmp_path)
+    path = tmp_path / REQUIRED[5]
+    import json
+    provenance = json.loads(path.read_text(encoding="utf-8"))
+    source = next(
+        item for item in provenance["sources"]
+        if item.get("id") == "CRA-GUIDANCE-OJ-2026-6013"
+    )
+    source["fallback_used"] = True
+    path.write_text(json.dumps(provenance), encoding="utf-8")
+    with pytest.raises(TraceabilityError, match="fetched directly from EUR-Lex"):
         validate_traceability(tmp_path)
