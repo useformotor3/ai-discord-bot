@@ -2,15 +2,22 @@
 
 > 이 문서는 2026-11-18 재개 시점의 최신 상태 스냅샷이다. 기존 날짜별 SESSION_LOG 및 PROJECT_LOG의 역사 기록을 대체하지 않는다. 충돌 시 본 문서의 최신 main 기준 사실과 원본 PR/Actions 증거를 우선한다.
 
-## 최신 main 기준점 — PR #75 및 사후 CI 완료 (2026-11-18)
+## 최신 main 기준점 — PR #76 및 사후 CI 완료 (2026-11-18)
+- PR #76 MCU-T01~T12 시험 매트릭스·기록 양식 squash merge: `48afedaf8114688a51a7e6ed695c514277bd6407`; PR head `30340417bf8440292c1397c3d5afb77e017f5a20`, Run #931 success.
+- Pre-merge safety `safety/pre-pr76-merge-checkpoint-2026-11-18`; post-merge safety `safety/post-merge-pr76-2026-11-18`; post-merge safety == main.
+- Exact-main Run #932 / ID `44232432357` on merge SHA: **success**, 161 passed / 1 xfailed; source integrity, compile, CRA traceability (13/15/35/36/41), 9 official sources, corrigenda and Article 13(8) locator/quote canaries passed.
+- Run #931 artifact #14395881347, SHA-256 `11d970dd8d64782fe5c62b12d5cea11cde231f28811c5470226ab6d126a31e4a`; Run #932 artifact #14395691349, SHA-256 `ec315a8b305f9b572452d42846de38a3698d431256faff36162ddb733303385a`, expires 2026-11-25 03:44:07 UTC.
+- PR #76 documentation-only; production runtime/workflows/secrets/state/history/archive/legacy SIL 3 files untouched.
+
+## 이전 main 기준점 — PR #75 및 사후 CI 완료 (2026-11-18)
 - PR #75 MCU 예비 벤치마킹·상황판 업데이트 squash merge: `1d7325baa592b35585fde850cf5a155988ba4cde`; PR head `c809e834e6290dbe96f9c6e88d5615efb2765373`, Run #929 success.
 - Pre-merge safety `safety/pre-pr75-merge-checkpoint-2026-11-18`; post-merge safety `safety/post-merge-pr75-2026-11-18`; post-merge safety == main.
 - Exact-main Run #930 / ID `44231956995` on merge SHA: **success**, 161 passed / 1 xfailed; source integrity, compile, CRA traceability (13/15/35/36/41), 9 official sources, corrigenda and Article 13(8) locator/quote canaries passed.
 - Run #929 artifact #14396015379, SHA-256 `58e88c05c8501aba2d82c8345d0f1e5222843e15c9939c174e8beaad7a55f4da`; Run #930 artifact #14395188271, SHA-256 `63017368ac7db313f298b23c24d288f9c6781c27cc26472baa6d408abb244695`, expires 2026-11-25 03:39:52 UTC.
 - PR #75 문서/로그 변경만 포함; runtime/workflow/secrets/state/history/archive/legacy SIL 3 자료 미변경.
-- 현재 작업 브랜치: `cra/servo-drive-mcu-benchmark-test-matrix-2026-11-18`; MCU-T01~T12 시험 케이스·재현성 기록 양식 보강 후 PR #76 exact-head CI 대기.
+- MCU-T01~T12 시험 케이스·재현성 기록 양식은 PR #76으로 병합 완료.
 - P0 미확인: 실제 ST MCU 주문 코드/마킹·silicon revision, motor/control loop 사양, PWM/ADC/encoder 구성, fieldbus, BOM/firmware resource budget.
-- 다음 게이트: 실제 제품 입력 확보 후 MCU-T01~T12 동일 조건 실측. 실행 전 점수/승자/교체 결론 금지.
+- 다음 게이트: 실제 ST MCU 부품번호와 제어 사양을 확보해 MCU-T01~T12를 제품별로 구체화하고 동일 조건 실측. 실행 전 점수/승자/교체 결론 금지.
 
 ## 이전 main 기준점 — PR #74 사후 검증 완료 (2026-11-18)
 - `main` HEAD: `48dd8f7bc0617ec0c67eadf80a7e7cc364b862c0`; exact-main Run #928 / ID `44231392940` success (161 passed, 1 xfailed).

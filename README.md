@@ -738,3 +738,9 @@
 - Merge `1d7325baa592b35585fde850cf5a155988ba4cde`; exact-main Run #930 success, 161 passed / 1 xfailed.
 - Artifact #14395188271, SHA-256 `63017368ac7db313f298b23c24d288f9c6781c27cc26472baa6d408abb244695`.
 - [MCU 후보 기술 벤치마킹](reports/CRA_SERVO_DRIVE_MCU_PLATFORM_BENCHMARK_2026-11-18.md) 병합. MCU-T01–T12 시험 매트릭스·결과 기록 양식은 후속 PR에서 보강 중.
+
+
+### PR #76 병합 및 main 사후 검증 완료 — 2026-11-18
+- Merge `48afedaf8114688a51a7e6ed695c514277bd6407`; exact-main Run #932 success, 161 passed / 1 xfailed.
+- Artifact #14395691349, SHA-256 `ec315a8b305f9b572452d42846de38a3698d431256faff36162ddb733303385a`.
+- MCU-T01–T12 시험 매트릭스와 결과 기록 양식 병합. 실제 ST MCU part number 및 제어 사양 확인 전 시험 결과/선정 결론은 보류.
