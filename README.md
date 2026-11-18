@@ -579,3 +579,5 @@
 - Bidirectional check passed: 13 Guidance claims, 35 CRA requirements, 15 interfaces, 36 SEC controls; zero missing reverse links and zero dangling claim IDs.
 - OJ C/2026/6013 ELI is now the primary Guidance URL in the three cross-matrices; historic Commission publication page retained as secondary.
 - Full results and corrections: `reports/CRA_CROSS_MATRIX_CONSISTENCY_AUDIT_2026-11-18.md`.
+
+- The isolated CI validator now enforces bidirectional foreign-key consistency between each Guidance claim and its linked CRA requirement, interface and SEC rows, including reverse links; regression tests reject missing and dangling references.
