@@ -150,3 +150,9 @@
 - Artifact #14383728315, digest `sha256:03b260173f643a68841f54c9f9ac1b3d99c9064762a677ed310160618170f8bb`.
 - Pre-merge safety ref identical to main at base `d92f14f6c275bf6b3fa0c8243ac696dca0358d50`.
 - Metadata updated after Run #865; rerun exact-head CI before merge.
+
+## PR #54 병합 및 복구 기준점 — 2026-11-18
+- PR #54 merged squash: `cd291c5161e7c3fdd9e494fe76749291a20b98de`.
+- Run #868 / ID `44207582798` exact-head success: 161 passed, 1 xfailed; source blob identity, compile, bidirectional CRA traceability, full pytest, PDF/HTML canaries passed.
+- Pre-merge safety ref matched main at base `d92f14f6c275bf6b3fa0c8243ac696dca0358d50`; post-merge ref `safety/post-merge-cra-guidance-claim-redline-2026-11-18` identical to main.
+- Next: M/606 C(2026) 7861 Annex raw source provenance, ESO adoption dates and OJ harmonised-standard status.
