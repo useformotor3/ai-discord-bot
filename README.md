@@ -677,3 +677,8 @@
 - Final exact-head Run #912 / ID `44223114411`: success; source integrity, compile, CRA traceability, full test suite, official CRA PDF/HTML canaries passed.
 - Artifact #14391457563, digest `sha256:f172ed1762a693f626e8c5781638c557e9d5471d6750b5315a54cae9398d919c`.
 - Post-merge safety ref `safety/post-merge-pr67-2026-11-18` == main.
+
+
+### M/606 수락 상태 구분
+- 원래 M/606은 CEN-CENELEC 공식 발표상 2025-04-03 CEN, CENELEC, ETSI 수락 확인.
+- 개정 결정 C(2026)7861의 Article 2 절차(각 ESO 수령일 및 1개월 내 비수락 통지)는 별도 사실이며 아직 공개자료로 확인하지 못했다. 두 상태를 혼동하지 않는다.
