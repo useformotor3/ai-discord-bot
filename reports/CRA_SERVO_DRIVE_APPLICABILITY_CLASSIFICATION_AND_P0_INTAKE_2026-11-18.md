@@ -125,3 +125,22 @@
 
 ## 한계
 이 문서는 제품군 intake/스크리닝 기준이지 개별 모델의 법률 의견서·적합성 선언이 아니다. 제품 자료가 없으므로 CRA 적용성 및 Annex III/IV 분류는 미판정이며 EVD-01~EVD-16 상태는 Unknown / evidence pending으로 유지한다.
+
+## 10. 법령 원문 재대조 보완 — 2025/2392 기술 설명과 Annex IV 절차
+
+2026-11-18 EUR-Lex 공식 OJ 본문을 다시 대조했다. Commission Implementing Regulation (EU) 2025/2392는 2025-12-01 OJ L에 게재되어 현재 시행 중이다. 특히 recital (2)–(6), Annex I, Annex II를 분류 판단의 직접 근거로 사용한다.
+
+### 핵심 보완
+- **Annex III/IV 분류는 제품 전체의 core functionality**로 결정한다. 통합 구성요소가 별도 Annex III/IV 제품군 기술 설명에 해당하더라도, 그 구성요소를 포함한 완제품 전체가 그 제품군의 core functionality를 갖는 것은 자동으로 아니다(recital (3), (5)).
+- 반대로 다른 부수 기능이 함께 있더라도 제품 전체가 listed category의 core functionality를 가지면 분류에서 벗어나지 않는다(recital (4)).
+- 물리/가상 네트워크 인터페이스(Class I #10)의 공식 기술 설명은 드라이버 API를 통해 장치를 네트워크에 직접 연결하는 인터페이스 제품을 대상으로 하며, 물리 제품은 통상 데이터링크/물리 계층의 어댑터와 펌웨어를 포함한다. 유선·무선 NIC, controller, adapter 및 독립 가상 NIC 등이 예시다(2025/2392 Annex I #10). 따라서 드라이브 내부의 네트워크 기능 블록과 별도 시장에 제공되는 인터페이스 제품을 제품 경계와 core functionality 기준으로 구분한다.
+- 라우터는 서로 다른 네트워크 사이에서 routing protocol/algorithm으로 경로를 선택해 데이터 흐름을 제어하는 제품이다. 스위치는 packet forwarding과 management plane을 제공하는 제품이다(Annex I #12). 단순 IP 설정/필터/로그와는 기술적으로 구분한다.
+- 운영체제 기술 설명은 하드웨어 추상화 및 소프트웨어 실행 통제를 제공하는 제품이며 RTOS도 예시로 포함한다(Annex I #11). 그러나 RTOS가 사용된다는 사실만으로 드라이브 완제품의 core functionality가 OS가 되는 것은 아니다.
+- **Annex IV의 critical category 해당 여부와 인증 의무는 구분**한다. Article 8(1)은 Annex IV category 중 Commission delegated act로 특정된 제품에 대해, 적용 가능한 유럽 사이버보안 인증 scheme이 채택·가용한 경우 assurance level ‘substantial’ 이상의 인증을 요구할 수 있도록 한다. Annex IV라는 명칭만으로 모든 해당 제품에 동일 인증 의무가 자동 발생한다고 쓰지 않는다. Article 8(1) 및 Article 32(3) 등 구체 절차를 제품 범위와 시행 중인 delegated act에 대조한다.
+- 중요/핵심 제품 여부와 무관하게 모든 CRA 적용 제품은 Article 6 및 Annex I의 본질적 사이버보안 요구사항을 검토해야 하며, Article 13(2)–(3)의 위험평가·비례성·시험/assurance 설명을 수행해야 한다(2025/2392 recital (6)).
+
+### 공식 근거
+- Regulation (EU) 2024/2847, Articles 2, 3, 6, 7, 8, 13, 32; Annexes III–IV: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R2847
+- Commission Implementing Regulation (EU) 2025/2392, recital (2)–(6), Article 2, Annex I #1/#6/#10/#11/#12, Annex II: https://eur-lex.europa.eu/eli/reg_impl/2025/2392/oj/eng
+
+이 보완에도 제품 모델·판매 단위·매뉴얼·통신 구조가 없는 현 상태의 개별 모델 분류는 **Unknown**으로 유지한다.
