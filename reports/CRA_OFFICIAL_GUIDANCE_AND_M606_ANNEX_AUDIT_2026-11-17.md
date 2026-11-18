@@ -253,3 +253,51 @@ Machine-readable details are in `reports/CRA_PDF_SOURCE_PROVENANCE_2026-11-17.js
 - OJ C/2026/6013 remained EUR-Lex primary, fallback=False, 2,709,282 bytes, 61 pages, SHA-256 `40ca76caeb0108f5b97c8f373a95f590b453fe92bd45a483addf3326e48c1dc2`.
 - Artifact #14383167818, digest `sha256:a2f05428d57897a20a485cabaab17cbb976dcb91f6e5628ece0953ddfe22140d`, expires 2026-11-25 00:11:31 UTC.
 - Run #857 validates the PR head before this metadata append; a new exact-head CI is required after the provenance record update.
+
+
+## 8. Claim-by-claim substantive redline against OJ C/2026/6013 — 2026-11-18
+
+### 8.1 Method and outcome
+
+- Reviewed all 13 rows G-001–G-013 in `reports/CRA_GUIDANCE_CLAIM_REGISTER_2026-11-17.csv` against the EUR-Lex OJ PDF text and the relevant rendered page images.
+- Visual page-image checks: OJ pages 7–10, 24–25, 30, 32–35, 42–46, 53 and 61 (18 pages).
+- All 13 claims remain interpretations of non-binding Commission Guidance, not independent legal requirements. Binding legal requirements remain those in Regulation (EU) 2024/2847 and other applicable legislation.
+- Result: 9 claims confirmed without substantive change; G-001 locator corrected; G-003, G-008 and G-013 paraphrases refined; G-004 expanded to make continuing conformity/CE/vulnerability obligations explicit.
+- No CRA requirement IDs, interface IDs or SEC control IDs were deleted or reclassified as completed. The source locator corrections do not establish product-specific applicability.
+
+### 8.2 Detailed redline register
+
+| Claim | OJ locator | Result | Substantive finding / action |
+|---|---|---|---|
+| G-001 | §2.4 para. 25, p.7 | Confirmed; locator corrected | Paragraph 25 says software belongs to the product where it is necessary for intended functions in light of intended purpose and reasonably foreseeable use, regardless of how/when delivered. The old locator incorrectly included para.26, which begins §2.5 Data connection. Corrected to para.25 only. |
+| G-002 | §2.5 paras. 26–28, p.8 | Confirmed | Paras. 26–28 anchor scope to capacity to exchange digital information. Para.28 expressly distinguishes deliberately encoded/decoded information from signals used only to trigger or power a function. The paraphrase is supported. |
+| G-003 | §2.6 paras. 29–32, pp.8–9 | Wording narrowed | These paragraphs address complex systems placed on the market as one product, legacy components, established architectures, interoperability constraints and the risk-based approach. They do not, within this locator, expressly support the previous broad phrase “interfaces and product-level mitigations”. Removed that overreach and tied the paraphrase to the actual text. |
+| G-004 | §2.7 paras. 33–39, pp.9–10 | Expanded | Pre-application designs placed on the market after 11 December 2027 still require risk assessment and applicable conformity assessment, EU declaration of conformity and CE marking. Existing effective measures can be relied upon where they address the risks; no automatic redesign/new features. Vulnerability handling and other CRA obligations remain. |
+| G-005 | §4.3 paras. 104–107, pp.24–25 | Confirmed | Substantial modification turns on new/increased cybersecurity risk not considered in the risk assessment. Para.107 expressly says the scale or complexity of the change is not decisive; even a limited feature may materially alter the risk profile. |
+| G-006 | §5 paras. 126–128, p.30 | Confirmed | Five years is a safeguard, not a universal default; support period follows expected use time and Article 13(8) criteria. Substantially modified software versions may require a new declared support period. |
+| G-007 | §6 and §6.1 paras. 136–144, pp.32–35 | Confirmed | Core functionality is the product’s main features/capabilities needed for intended purpose. Ancillary functionality does not automatically change classification; mere integration of an important/critical component does not itself make the host product important/critical. |
+| G-008 | §7.1–§7.3 paras. 163–173, pp.42–43 | Wording refined | The OJ text distinguishes (i) external risks/dependencies, which must be assessed and mitigated through product-level measures where relevant, from (ii) integrated third-party components that form part of the product, for which risk-based due diligence is required. The paraphrase now states this distinction explicitly. |
+| G-009 | §7.4 paras. 174–177, p.44 | Confirmed | Reuse across product families is conditional on shared architecture, security-relevant design, intended purpose and exposure to the same risks. Security-relevant differences in communication interfaces, software stacks, update mechanisms or remote connectivity must be reflected. |
+| G-010 | §8.1 paras. 178–190, pp.44–46 | Confirmed | RDPS is software-based processing at a distance, designed/developed by or under manufacturer responsibility, whose absence prevents one product function. Paragraph 184 lists the three elements; paragraphs 188–190 clarify cumulative assessment and function scope. |
+| G-011 | §8.3.4 Industrial robot, p.53 | Confirmed | The example explicitly treats manufacturer-developed cloud software that processes camera feeds and returns robot commands as RDPS where its absence prevents a robot function. Third-party IaaS infrastructure is documented and considered in risk assessment; due diligence when selecting the IaaS provider is also expected. |
+| G-012 | §9.3.2 paras. 255–257, p.61 | Confirmed | Machinery Regulation certificates/approval decisions remain valid for the cybersecurity risks they cover, subject to their validity and the 11 June 2028 outer limit. Additional risks not covered by the certificate remain the manufacturer’s responsibility under the CRA. |
+| G-013 | §4.2 Examples 37–39, p.24 | Wording refined; locator corrected | Example 37 shows a replacement chip with different cryptographic implementation/secure boot is not identical and is not exempt. Example 38 shows a different chipset can still be considered identical where cybersecurity-relevant characteristics are unchanged. Example 39 applies Article 2(6) to an identical replacement CPU or whole PLC supplied as a spare part through after-sales service for a clearly identified existing industrial automation system. The claim now states the identity and service-channel conditions rather than implying a generic replacement-part exemption. |
+
+### 8.3 Page-image and locator verification
+
+The rendered OJ page images were checked for the claim-bearing paragraphs/examples and their printed page numbers. This includes:
+- p.7 para.25; p.8 paras.26–32; pp.9–10 paras.33–39;
+- pp.24–25 Examples 37–39 and paras.104–107;
+- p.30 paras.126–128;
+- pp.32–35 paras.136–144 and the core-functionality figures;
+- pp.42–43 paras.163–173;
+- pp.44–46 paras.174–190;
+- p.53 industrial robot example; and
+- p.61 paras.255–257.
+
+### 8.4 Residual boundaries
+
+- Commission Guidance is non-binding. Where a paraphrase appears to extend beyond the Regulation, the Regulation text controls.
+- The redline validates the 13 selected claims and locators; it is not a full legal opinion or exhaustive review of every sentence in the 61-page Guidance.
+- This work does not determine whether a specific servo drive is in scope, which Annex category applies, or which conformity route is required. Manufacturer/model evidence remains necessary.
+- The product-specific Unknown gates remain unchanged.
