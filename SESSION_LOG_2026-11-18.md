@@ -233,3 +233,20 @@
 - Artifact #14389685192; digest `sha256:e11bcbf277f32b7386e72fb063fdfac2b19e896473e30c8e775522b7f6c55d85`; expiry 2026-11-25 01:41:53 UTC.
 - Pre-merge safety ref `safety/pre-cra-evidence-matrix-2026-11-18`; post-merge ref `safety/post-merge-pr62-2026-11-18`; post-ref와 main identical 확인.
 - 제품별 EVD 상태는 모두 Unknown / evidence pending 유지. 다음 작업은 제품 P0 자료 intake 및 표준 최종본 clause redline.
+
+
+## M/606 개정 결정 조사 및 기존 일정 정정
+- 새 공식 자료 확인: European Commission CRA standardisation 페이지는 2026-11-10 M/606 개정을 명시(페이지 최종 업데이트 2026-11-12).
+- C(2026) 7861 final 본문: 2026-11-10, Article 1은 Annex I 대체; Article 2는 ESO 수령 후 1개월 이내 비수락 통지 시 개정 결정 중단 조건.
+- 새 Annex I adoption deadline: item 1/15 = 2026-11-30; items 2–14 = 2027-10-30; vertical items 16–41 = 2027-01-31.
+- 기존 2026-10-30 납기 서술은 최신 상태로 superseded. 기존 이력은 유지하되 정정 링크/현재 일정 추가.
+- 결정문 공개 PDF 사본은 비공식 도메인에서 확보했으며 Commission 공식 CRA 표준화 페이지에서 개정 사실을 교차 확인했다. ESO receipt/non-acceptance 상태는 미확인.
+- 보고서: `reports/CRA_M606_AMENDMENT_C2026_7861_DEADLINES_2026-11-18.md`; CEN/OT 상태 보고서도 개정 일정 주석 추가.
+
+
+## PR #64 initial exact-head CI
+- PR #64 initial head `ff548d64b109e95c9f63fa0666ba419f9545e11f`, Run #900 / ID `44219718958`: success.
+- pytest: **161 passed, 1 xfailed**. Source blob identity, compile, CRA cross-matrix traceability, 9 official CRA PDF source read-only canaries, artifact upload, 9-source official HTML canary passed.
+- Traceability summary: 13 claims, 15 interfaces, 35 requirements, 36 SEC, 41 M/606 items; bidirectional_links=true.
+- Artifact #14390620457; SHA-256 `b7ced7629ab9e88bf44190d6d4f5fd50fc91f45bfc33a83ae09a02c1833e2f20`; expires 2026-11-25 01:58:08 UTC.
+- CI metadata recorded in status/docs; rerun exact-head CI after this update before merge.

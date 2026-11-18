@@ -736,3 +736,18 @@
 - Final exact-head Run #896 success: 161 passed, 1 xfailed; source integrity, compile, CRA traceability, full pytest, official PDF/HTML canaries passed.
 - Post-merge safety ref `safety/post-merge-pr62-2026-11-18` == main, 0 ahead / 0 behind.
 - 다음 단계는 제품 P0 증거 intake 및 모델별 EVD 상태 갱신. 표준 전문이 확보되기 전 clause-level conformity mapping은 금지한다.
+
+
+## 2026-11-18 — M/606 개정 결정 일정 반영
+- C(2026) 7861 final(2026-11-10)이 C(2025)618 Annex I을 대체. 새 ESO adoption deadline: item 1 framework 및 item 15 vulnerability handling 2026-11-30; items 2–14 generic requirements 2027-10-30; items 16–41 vertical standards 2027-01-31.
+- 공식 Commission 안내 페이지가 개정 사실을 확인. Article 2의 1개월 비수락 조건과 ESO 수령일은 미확인.
+- OJ citation/Article 27 추정 적합성과 별도 단계임을 보고서/상황판에 명시한다.
+- 상세: `reports/CRA_M606_AMENDMENT_C2026_7861_DEADLINES_2026-11-18.md`.
+
+
+## PR #64 초기 CI 검증 기록 — 2026-11-18
+- Initial exact-head Run #900 / ID `44219718958` success: 161 passed, 1 xfailed.
+- CRA traceability: 13 claims / 15 interfaces / 35 requirements / 36 SEC / 41 M/606 items; bidirectional links true.
+- 9 official CRA PDF sources canary, artifact upload and official HTML canary passed.
+- Artifact #14390620457, digest `sha256:b7ced7629ab9e88bf44190d6d4f5fd50fc91f45bfc33a83ae09a02c1833e2f20`.
+- Record this result then rerun exact-head CI before merge.
