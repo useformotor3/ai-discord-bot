@@ -631,3 +631,7 @@
 - 법적 근거, 공개된 표준 scope, 엔지니어링 제안, 제품별 미확인 상태를 구분한다. EN 40000-1-2/1-3의 미확인 최종 조항을 인용하거나 만들어내지 않는다.
 - [상세 보고서](reports/CRA_REQUIREMENTS_TO_EVIDENCE_MATRIX_2026-11-18.md) / [CSV 추적표](reports/CRA_REQUIREMENTS_TO_EVIDENCE_MATRIX_2026-11-18.csv).
 - 제품별 증거 미제공 상태이므로 16개 항목 모두 Unknown / evidence pending이다.
+
+### PR #62 검증 진행
+- 초기 PR head의 Run #891 성공: **161 passed, 1 xfailed**.
+- CRA 공식 PDF 3종 hash canary 및 9개 공식 HTML source canary 성공. 최종 CI metadata 갱신 후 재검증 대기.
