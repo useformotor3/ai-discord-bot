@@ -381,3 +381,10 @@ The 41-row crosswalk page locators have been made row-specific to the printed pa
 1. Retain the June ESO report as a separate supplementary source with its own raw-byte hash and extraction metadata.
 2. Keep M/606 adoption dates, ESO publication forecasts and OJ harmonised-standard citations as three separate fields in the standardisation status tracker.
 3. Recheck the Commission OJ index at each standards update; only add a presumption-of-conformity claim after the exact standard reference is published in the OJ and its scope matches the product.
+
+
+### 9.7 CEN/CENELEC 발행 상태 업데이트 (2026-11-18)
+
+이전 OJ 조회 결론(확인 범위에서 CRA OJ 인용 미식별)은 유지하되, 이를 “CRA 관련 EN이 하나도 발행되지 않았다”는 뜻으로 해석하지 않는다. CEN 공식 레코드에서 EN 40000-1-1:2026은 Published, DAV 2026-11-18로 확인됐으나 OJ citation 필드는 No citation expected다. EN 40000-1-2는 2026-11-02 ratification 및 No citation expected가 tracker/2차 자료에서 확인됐지만 공식 개별 레코드 readback은 HTTP 500으로 미완료다. FprEN 40000-1-3은 Under Approval / Citation expected. CENELEC prEN 50770-1~6은 모두 Committee stage / Citation expected이며 아직 발행된 표준이 아니다.
+
+정확한 차이는 **ESO Published ≠ OJ-cited harmonised standard**다. Article 27(1) 추정 적합성은 정확한 참조가 OJ에 실제 공표되고 그 범위가 제품에 적용될 때에만 주장한다. 상세: [CEN/CENELEC 공식 상태 감사](CRA_CEN_CENELEC_EN40000_OT50770_STATUS_2026-11-18.md).
