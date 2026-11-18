@@ -111,7 +111,7 @@ jobs:
           verify_blob "tests/test_cra_claims.py" "9f5536eac118b2a724a8f83f7ea99084e9559fe2"
           verify_blob "tests/test_mock_infrastructure.py" "05a92ff7ff3a6e4a0374d270770ecc6cf38e0a7f"
           verify_blob "tests/test_p1_reliability.py" "c5e3fbe2e75a6a08703117cb5de34571b5dc10c9"
-          verify_blob "tests/test_external_failure_paths.py" "5a49d0a6867a272581ca790ef0eee1104f11fc6e"
+          verify_blob "tests/test_external_failure_paths.py" "0a84b013b4ffe5f5675092087d40cdc7f1e4bb88"
           verify_blob "scripts/operational_guard.py" "97f34e11a4124ae5a84b444ffa1b42c5d6d42fda"
           verify_blob "tests/test_operational_guard.py" "17d3ac3184e557d4337a753eae6a7a8688d24209"
 
