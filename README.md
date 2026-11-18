@@ -642,3 +642,8 @@
 - Exact-head Run #896 성공: **161 passed, 1 xfailed**; 공식 CRA PDF 3종과 9개 HTML 출처 canary 통과.
 - Post-merge safety ref `safety/post-merge-pr62-2026-11-18`와 main identical 확인.
 - EVD-01–EVD-16 [상세 매트릭스](reports/CRA_REQUIREMENTS_TO_EVIDENCE_MATRIX_2026-11-18.md) / [CSV](reports/CRA_REQUIREMENTS_TO_EVIDENCE_MATRIX_2026-11-18.csv) main 반영 완료.
+
+
+### CRA M/606 일정 정정 — C(2026) 7861 final
+- Commission은 2026-11-10 M/606을 개정했다. 새 ESO adoption deadline은 item 1/15: 2026-11-30, items 2–14: 2027-10-30, vertical items 16–41: 2027-01-31.
+- [개정 결정 추적 보고서](reports/CRA_M606_AMENDMENT_C2026_7861_DEADLINES_2026-11-18.md). 날짜를 OJ citation/Article 27 presumption과 혼동하지 않는다.
