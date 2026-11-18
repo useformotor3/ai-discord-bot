@@ -710,3 +710,8 @@
 - Merge `293a27a8ea2a8e03f58db50bbe27d2aaea194c8d`; exact-main Run #924 success, 161 passed / 1 xfailed.
 - Artifact #14394119675, SHA-256 `43a5e60b947890886baeee6c355beae857928f3c47deb9d76489244199accb3a`.
 - Post-merge safety ref equals main. CRA-001–035 semantics and cross-matrix mapping are audited; next technical work is reference architecture control-to-evidence refinement.
+
+
+### 참조 보안 아키텍처 v0.2 설계 보강 — 2026-11-18
+- [CRA 산업용 서보 드라이브 참조 보안 아키텍처](reports/CRA_SERVO_DRIVE_REFERENCE_SECURITY_ARCHITECTURE_2026-11-17.md): 실시간 데이터 경로와 관리/업데이트 경로, 단일/분리 MCU 선택 기준, secure boot/update 검증, 설계 수용 기준 및 EVD/SEC 추적을 구체화하는 중.
+- 제품별 회로/부품/펌웨어/시험 증거가 없어 참조 설계이며 제품 구현 완료나 적합성 판정이 아님.
