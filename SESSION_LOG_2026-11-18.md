@@ -137,3 +137,9 @@
 - Requirements/IF/SEC matrices의 Commission Guidance URL을 EUR-Lex OJ C/2026/6013 ELI primary link + 기존 Commission page secondary link로 정합화.
 - 교차 매트릭스 감사 보고서 최신 섹션 갱신.
 - 다음: M/606 C(2026) 7861 Annex raw provenance, ESO adoption dates 및 OJ harmonised-standard citation status 독립 검증.
+
+## CRA Guidance cross-matrix validator 강화 — 2026-11-18
+- Manual bidirectional audit found G-002 IF range shorthand and G-005/IF-015 reverse-link inconsistency; both corrected.
+- Extended `cra_traceability.py` to verify every claim-register related requirement/interface/SEC ID exists and has a reverse Guidance claim ID, and every matrix Guidance claim ID links back to the corresponding claim row.
+- Added three regression tests for missing reverse link, dangling matrix claim ID and unknown related interface ID.
+- Workflow exact blob pins updated for validator and tests. New PR exact-head CI required.
