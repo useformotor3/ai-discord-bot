@@ -839,3 +839,16 @@
 - 예비 비교 문서 `reports/CRA_SERVO_DRIVE_MCU_PLATFORM_BENCHMARK_2026-11-18.md` 생성. ST 후보 STM32G474RE(모터제어 주변장치), STM32H753XI(고성능/crypto)와 TI MSPM0G3529-Q1(보안 기능 통합)을 비교한다.
 - 실제 ST 부품번호 미확정. 제품 marking/BOM, FOC/current-loop timing, PWM/ADC/encoder, fieldbus, CPU/RAM budget 확보 전에는 동급성·승자·교체 가능성을 판단하지 않는다.
 - 동일 조건 실측(WCET/jitter, ADC/PWM sync, comms+crypto load, update recovery) 후에만 가중치 평가를 수행한다.
+
+
+## PR #75 병합 및 Run #930 완료 — 2026-11-18
+- PR #75 merge `1d7325baa592b35585fde850cf5a155988ba4cde`; exact-head Run #929 및 exact-main Run #930 모두 success.
+- Run #930: 161 passed / 1 xfailed; source integrity, compile, CRA traceability 13/15/35/36/41, 9 official sources and Article 13(8) canaries passed. Artifact #14395188271, digest `sha256:63017368ac7db313f298b23c24d288f9c6781c27cc26472baa6d408abb244695`.
+- Pre/post safety refs preserved; post-merge ref == main.
+- MCU benchmark preliminary comparison is merged; next add MCU-T01–T12 measurement protocol and result-recording gates. Do not score/select before actual ST part number and control requirements are supplied.
+
+
+## MCU-T01–T12 시험 매트릭스 — 2026-11-18
+- 동일 조건으로 current/speed/position loop WCET, ADC/PWM sync, encoder/QEI, interrupt/DMA contention, fieldbus load, crypto load, secure boot/update, fault injection, memory/debug protection, power/reset, environment/endurance를 검증한다.
+- 합격 기준은 제품의 실제 제어 주기/성능 요구에서 도출한다. 문서가 임의의 loop period/jitter limit을 만들지 않는다.
+- 모든 미실시 시험은 Not Run, 미확인 입력은 Unknown으로 유지하고, 결과에는 part number/silicon revision/board/firmware/toolchain/source hash를 기록한다.
