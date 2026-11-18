@@ -693,3 +693,10 @@
 - ETSI의 adoption/publication/OJ publication 날짜는 계획 목표로만 취급한다. 실제 OJ 게재 확인 전 Article 27 추정 적합성 주장을 금지한다.
 - 다음: CEN/CENELEC의 EN 40000 수평 표준 및 산업용 OT prEN 50770 작업의 최신 공식 상태를 별도 확인하고 41개 M/606 목록과 교차 대조한다.
 - 상세: `reports/CRA_ETSI_M606_LIVE_STATUS_2026-11-18.md`.
+
+
+## PR #58 병합 완료 — 2026-11-18
+- ETSI M/606 Work Programme v2.3.3 상태 점검과 EN 304 636 / EN 304 625의 적용 경계 및 목표 일정이 `88d5eacd71c4267f64f674f0e990a25ed6fafd3a`로 병합되었다.
+- Exact-head Run #883 성공: 161 passed, 1 xfailed; 공식 CRA PDF 3종 hash canary 및 공식 HTML 9개 source canary 성공.
+- Pre/post safety refs 검증 완료; post-merge ref와 main identical.
+- 다음: CEN/CENELEC EN 40000 수평 표준 및 산업용 OT prEN 50770 작업의 최신 상태를 공식 기록과 대조한다. 제3자 카탈로그는 보조 자료로만 취급한다.
