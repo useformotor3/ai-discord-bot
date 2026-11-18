@@ -345,3 +345,12 @@
 - Run #927 artifact #14395142564 digest `sha256:64c359db2e764f2506345e3fee3c5e20bbacacdf3e3e67d095f02caa7126b528`; Run #928 artifact #14395476337 digest `sha256:6aaf8fc76f87121e42f8190fec9568121fbd8a0005695ce8de87ff776f0d1d93`.
 - 참조 보안 아키텍처 v0.2에서 실시간 데이터/관리 경로 분리, single/dual MCU 선택 기준, update/boot 검증 및 EVD/SEC 추적을 추가했다.
 - 후속 MCU 벤치마킹에서는 실제 ST 부품번호가 없음을 명시하고 ST G474RE/H753XI와 TI MSPM0G3529-Q1을 공식 자료 기준 예비 비교한다. 성능 실측·최종 선정은 보류.
+
+
+## PR #75 병합 및 exact-main 사후 검증 완료 — 2026-11-18
+- PR #75 exact head `c809e834e6290dbe96f9c6e88d5615efb2765373`, Run #929 success; merge `1d7325baa592b35585fde850cf5a155988ba4cde`.
+- Pre/post safety refs `safety/pre-pr75-merge-checkpoint-2026-11-18`, `safety/post-merge-pr75-2026-11-18`; main and post-merge ref identical.
+- Main exact Run #930 / ID `44231956995`: success, 161 passed / 1 xfailed; source integrity, compile, 13/15/35/36/41 traceability, 9 official sources, corrigenda and Article 13(8) canaries passed.
+- Run #929 artifact #14396015379 digest `sha256:58e88c05c8501aba2d82c8345d0f1e5222843e15c9939c174e8beaad7a55f4da`; Run #930 artifact #14395188271 digest `sha256:63017368ac7db313f298b23c24d288f9c6781c27cc26472baa6d408abb244695`.
+- ST baseline candidates STM32G474RE/H753XI and TI MSPM0G3529-Q1 were compared using official manufacturer sources; actual installed ST part number remains unknown and no replacement/selection is made.
+- Next: add MCU-T01–T12 same-condition measurement plan and evidence capture sheet; tests are not executed until actual board/product constraints are available.
