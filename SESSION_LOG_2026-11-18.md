@@ -242,3 +242,11 @@
 - 기존 2026-10-30 납기 서술은 최신 상태로 superseded. 기존 이력은 유지하되 정정 링크/현재 일정 추가.
 - 결정문 공개 PDF 사본은 비공식 도메인에서 확보했으며 Commission 공식 CRA 표준화 페이지에서 개정 사실을 교차 확인했다. ESO receipt/non-acceptance 상태는 미확인.
 - 보고서: `reports/CRA_M606_AMENDMENT_C2026_7861_DEADLINES_2026-11-18.md`; CEN/OT 상태 보고서도 개정 일정 주석 추가.
+
+
+## PR #64 initial exact-head CI
+- PR #64 initial head `ff548d64b109e95c9f63fa0666ba419f9545e11f`, Run #900 / ID `44219718958`: success.
+- pytest: **161 passed, 1 xfailed**. Source blob identity, compile, CRA cross-matrix traceability, 9 official CRA PDF source read-only canaries, artifact upload, 9-source official HTML canary passed.
+- Traceability summary: 13 claims, 15 interfaces, 35 requirements, 36 SEC, 41 M/606 items; bidirectional_links=true.
+- Artifact #14390620457; SHA-256 `b7ced7629ab9e88bf44190d6d4f5fd50fc91f45bfc33a83ae09a02c1833e2f20`; expires 2026-11-25 01:58:08 UTC.
+- CI metadata recorded in status/docs; rerun exact-head CI after this update before merge.
