@@ -120,3 +120,11 @@
 - Tested head: `dee79027a49dfbb1fdd7cf1036bc0ae39e83b518`; artifact #14384061014, digest `sha256:2b70d0f09f620c83a531f2ec9be9de6a1ec9a669ee861e16704804fe036eb3d3`.
 - Pre-merge safety ref matched main `854d66fa6c145ca264dbd768c2c75fcf9f117153`; main after merge was one commit ahead with exactly PR #52's 15 files. Post-merge ref created at merged main.
 - Next: substantive redline of all 13 Guidance claims against OJ C/2026/6013; then matrix link and page-image recheck.
+
+## OJ C/2026/6013 Guidance claim substantive redline — 2026-11-18
+- Reviewed G-001–G-013 against official OJ PDF text and rendered page images.
+- Visually checked pages 7–10, 24–25, 30, 32–35, 42–46, 53 and 61.
+- Confirmed 9 claims; corrected G-001 locator to §2.4 para.25/p.7; refined G-003 (remove unsupported “interfaces/product-level mitigations” from §2.6 locator), G-008 (separate external risks from integrated-component due diligence), and G-013 (identical spare-part conditions/examples 37–39); expanded G-004 to note continuing conformity/DoC/CE/vulnerability obligations.
+- Claim register and audit report §8 updated. Guidance remains non-binding; legal duties are derived from the Regulation, not the Guidance paraphrase.
+- No product-specific classification or conformity conclusions changed. Unknown gates preserved.
+- Next: semantic review of G-001–G-013 links to CRA-001–035, 15 IF interfaces and 36 SEC controls; then M/606 source/provenance review.
