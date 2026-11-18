@@ -765,3 +765,10 @@
 - Commission Implementing Regulation (EU) 2025/2392의 기술 설명을 Annex III/IV 판단 기준에 포함한다. 네트워크 포트·부가 기능만으로 분류하지 않는다.
 - 서보 드라이브 P0 intake 보고서: `reports/CRA_SERVO_DRIVE_APPLICABILITY_CLASSIFICATION_AND_P0_INTAKE_2026-11-18.md`.
 - 다음 완료 기준: 자료 intake 항목과 EVD-01~16 연결 검증, 법적 locator/제품 경계/분류 근거의 상호 추적, exact-head CI 성공.
+
+
+## 2026-11-18 — 제품 분류 법령 원문 재대조
+- EUR-Lex 2025/2392 recital (2)–(6), Annex I #10/#11/#12를 직접 대조하여 인터페이스/OS/라우터·스위치 경계를 더 정확히 명시한다.
+- Annex IV critical category 해당과 Article 8(1)의 delegated-act 기반 인증 의무를 구분한다. 제품 범위·적용 가능한 delegated act 확인 전 인증 의무를 단정하지 않는다.
+- CRA Article 6 및 Annex I 요구사항은 중요한/핵심 제품 분류와 무관하게 적용성 있는 제품에 대해 별도로 검토한다.
+- PR #65/#66 병합·CI 및 사후 안전 refs는 상황판과 세션 로그에 기록.
