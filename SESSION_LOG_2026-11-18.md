@@ -196,3 +196,11 @@
 - CRA OJ citation은 조회한 Commission index에서 미식별. “Citation expected”는 actual OJ citation이 아니다.
 - 산출물: `reports/CRA_CEN_CENELEC_EN40000_OT50770_STATUS_2026-11-18.md`, CSV 추적표, 통합 보고서 및 상태판 갱신.
 - 다음: EN 40000-1-1/1-2 발행본 확보·검증, CENELEC OT 표준 stage 재조회 및 OJ 재검증.
+
+
+## PR #60 병합 및 검증
+- PR #60 squash merge: `1f39cb31d7f5e3466f1b22b798e9fc51971542da`.
+- Exact-head Run #887 / ID `44214446339` success; tested head `1707d49cdc7d24d5f3de43606e4bc31451e9bf8f`; **161 passed, 1 xfailed**.
+- Official PDF 3종 fetch/hash, nine-source HTML canary, source blob integrity, compile 및 CRA traceability 통과.
+- Artifact #14386734709; digest `sha256:aa960c3ecc5e9e89a2f64fc038ccc92cb77a9b7180e58eb5788152752ccd949c`.
+- Pre-merge ref `safety/pre-merge-cen-ot-status-2026-11-18`와 base main 동일; post-merge ref `safety/post-merge-pr60-2026-11-18`와 main 동일.
