@@ -81,3 +81,9 @@ CRA-001–CRA-035 법령 문언 심층 감사(Batch 1–3) 결과가 제품 인�
 - Product scope/classification/conformity remains Unknown without exact manufacturer/model evidence.
 - All 15 interface examples remain product-unverified; all 36 SEC controls remain unimplemented/unverified.
 - Next priority: independently verify M/606 C(2026) 7861 Annex provenance and the current ESO/OJ harmonised-standard status.
+
+### Automated regression gate added
+- `cra_traceability.py` now validates each claim-register foreign key against its target requirement/interface/SEC row and checks the reverse claim ID in that matrix row.
+- It also rejects matrix-to-claim references that are absent from the claim register and related IDs that do not exist.
+- Regression tests cover missing reverse links, dangling matrix claim IDs and unknown related interface IDs.
+- This closes the gap found in the manual audit: G-002 range shorthand was not machine-readable and G-005→IF-015 lacked a reverse link. Both were corrected before enabling the gate.
