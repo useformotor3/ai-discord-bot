@@ -426,3 +426,11 @@
 - Main exact Run #948 / ID `44235249125`: success, 161 passed / 1 xfailed; source integrity, compile, 13/15/35/36/41 traceability, 9 official sources, corrigenda and Article 13(8) canaries passed.
 - Run #947 artifact #14396088675 digest `sha256:9c164a7f550bc2f2c1f6292f971e9d4db250dcfa0bdb06ef0c6187da116b65ae`; Run #948 artifact #14397286074 digest `sha256:1cd7be5fcd710e5fc193595602c974a701f1242f32ec5a549ea61a11c9eec388`.
 - PR #84 only records prior checkpoint. Product-specific MCU selection remains blocked on actual ST MCU marking/order code and drive control requirements; all MCU-T01~T12 remain Not Run.
+
+
+## PR #85 병합·main 사후 검증 및 기술 상태 감사 — 2026-11-18
+- PR #85 exact-head Run #949 success; merge `db05c57103fc9039347b61a29f473fe1af1c7082`.
+- Pre/post safety refs `safety/pre-pr85-merge-checkpoint-2026-11-18`, `safety/post-merge-pr85-2026-11-18`; post-merge ref equals main.
+- Exact-main Run #950 / ID `44235614741`: success, 161 passed / 1 xfailed; source integrity, compile, CRA traceability, 9 official sources, corrigenda and Article 13(8) locator/quote passed.
+- Run #949 artifact #14396114166 digest `sha256:a936ebf9dd3313dfe02294fddc4251edbbbbf392979afa9cbaf739741f7705a4`; Run #950 artifact #14397720052 digest `sha256:3db5dd4335c9e224aa46abc2e2cd4c3560801b7b5483678b89ec8b012b6d31fb`.
+- Technical audit: integrated CRA report, applicability intake, EVD matrix, security architecture v0.2, MCU benchmark and T01~T12 test protocol exist. All remain provisional/reference-only pending product facts. Actual ST MCU part number/revision and drive control requirements unknown; MCU tests Not Run. No product conformity or MCU selection conclusion asserted.
