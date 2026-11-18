@@ -664,3 +664,9 @@
 - [P0 증거 intake 및 CRA 제품 분류 기준](reports/CRA_SERVO_DRIVE_APPLICABILITY_CLASSIFICATION_AND_P0_INTAKE_2026-11-18.md) 추가.
 - Article 2 적용성과 Annex III/IV core functionality 분류를 분리하고, Commission Implementing Regulation (EU) 2025/2392 기술 설명을 기준으로 제품 경계 검토 절차를 정리.
 - 제품 모델 자료 미제공 상태에서 개별 모델의 CRA 적용/제외 또는 Class I/II/Critical을 추정하지 않도록 명시.
+
+
+### PR #65/#66 결과 및 분류 기준 보완
+- PR #65 merge `d1f96fa6bba297e31ed47ae1b96f59421c55b774`; Run #908: 161 passed, 1 xfailed. Post-merge safety ref `safety/post-merge-pr65-2026-11-18` == main.
+- PR #66 merge `9cb62579e4f45ebf57587cc19644c370cbe80ebb`; Run #910: 161 passed, 1 xfailed. Post-merge safety ref `safety/post-merge-pr66-2026-11-18` == main.
+- EUR-Lex Implementing Regulation (EU) 2025/2392 원문에 따라 core functionality/통합 구성요소 구분, Annex I 기술 설명, Annex IV와 Article 8 인증 의무를 구분해 보고서를 보완.
