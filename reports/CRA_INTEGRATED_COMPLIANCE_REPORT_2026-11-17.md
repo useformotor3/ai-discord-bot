@@ -389,3 +389,11 @@ CENELEC 공식 프로젝트 레코드는 prEN 50770-1~6 모두 Committee stage�
 서보 드라이브 적용성은 intended purpose/core functionality에 따라 판단한다. Ethernet/fieldbus 포트나 단순 필터링 기능만으로 완제품을 네트워크 인터페이스/방화벽 제품으로 분류하지 않는다. 모델/BOM/데이터시트 미확보 상태에서는 drive-level classification을 Unknown으로 유지한다.
 
 상세 원문 감사: [CEN/CENELEC EN 40000 및 OT prEN 50770 공식 상태 감사](CRA_CEN_CENELEC_EN40000_OT50770_STATUS_2026-11-18.md), [구조화 상태 추적표](CRA_CEN_CENELEC_EN40000_OT50770_STATUS_2026-11-18.csv).
+
+
+
+## 요구사항–제품 증거 연결의 신규 작업 산출물 (2026-11-18)
+
+CRA 요구사항과 서보 드라이브 설계·시험·기술문서 간의 provisional mapping을 별도 관리한다. EVD-01–EVD-16의 법적 locator, 통제·시험 제안, 최소 증거 패키지, 표준 scope 연결 및 제품별 상태는 [CRA 요구사항–증거 추적 매트릭스](CRA_REQUIREMENTS_TO_EVIDENCE_MATRIX_2026-11-18.md)와 [CSV](CRA_REQUIREMENTS_TO_EVIDENCE_MATRIX_2026-11-18.csv)를 참조한다.
+
+이 매트릭스는 CRA 법문을 대체하지 않으며, 표준 최종본의 확인되지 않은 조항을 인용하지 않는다. 제품별 증거가 없으므로 모든 EVD 상태는 Unknown / evidence pending이다.
