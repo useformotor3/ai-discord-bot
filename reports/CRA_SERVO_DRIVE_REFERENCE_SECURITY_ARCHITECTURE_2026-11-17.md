@@ -247,7 +247,7 @@ flowchart LR
 - 시험 수준: 미실시. 위 시나리오는 시험 계획 후보이며 pass/fail 결과가 아니다.
 - 다음: 제품 자료 intake 이후 block-to-component mapping, MCU 후보 비교(ST/TI), real-time resource budget, update boot chain, interface threat model을 실제 제품 variant별로 작성한다.
 
-## 7. 제한사항 및 다음 단계
+## 14. 제한사항 및 다음 단계
 
 - 이 문서는 제품별 회로도/펌웨어를 분석하지 않은 참조 아키텍처다.
 - 특정 MCU/secure element/암호 알고리즘/필드버스 보안 기능을 CRA가 직접 의무화한다고 주장하지 않는다.
