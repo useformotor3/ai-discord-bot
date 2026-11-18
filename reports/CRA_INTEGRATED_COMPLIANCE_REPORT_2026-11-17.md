@@ -308,9 +308,12 @@ Commission Implementing Decision C(2026) 7861 final Annex는 M/606의 41개 표�
 - 항목 16–27 및 31–36은 vertical product-type 항목이다. servo drive의 내장 기능·포트·웹뷰·부트로더 사용만으로 제품 전체가 해당 vertical product type으로 자동 분류되지 않는다. intended purpose, product boundary 및 core functionality로 판단한다.
 - 항목 28–30 및 37–39는 security-featured component 후보로 다뤘다. 실제 부품번호·기능·공급자 증거가 확인될 때 CRA-006/CRA-024 및 관련 SEC control의 component due diligence에 연결한다. 부품 포함만으로 완제품이 vertical category가 되지 않는다.
 - 항목 25(network interfaces), 36(industrial firewall/IDS/IPS), 41(secure elements)은 실제 제품 기능·의도된 목적에 따른 조건부 후보로 표시했다.
-- 항목 18 password-manager standard의 ESO adoption deadline `31/01/2027`은 PDF printed page EN 3의 우측 셀에서 시각 확인했다. 이 표의 날짜는 ESO 표준 채택 일정이지 servo-drive 제조자의 직접 compliance deadline이 아니다.
+- 항목 18 password-manager standard의 ESO adoption deadline `31/01/2027`은 PDF printed page EN 2의 우측 셀에서 시각 확인했다. 행의 설명은 EN 3으로 이어지지만 기한 셀은 EN 2에 있다. 이 표의 날짜는 ESO 표준 채택 일정이지 servo-drive 제조자의 직접 compliance deadline이 아니다.
 - M/606은 표준화 요청이다. 이 결정만으로 해당 표준이 OJ에 인용된 harmonised standard가 되거나 presumption of conformity가 발생하지 않는다.
 
+
+
+- 2026-11-18 기준 Commission의 공식 harmonised-standards index 및 EUR-Lex exact search에서 CRA-specific OJ citation은 확인되지 않았다. M/606 Annex와 ESO draft/work-programme는 harmonised-standard OJ reference가 아니므로, Article 27 presumption of conformity를 주장하지 않는다. 최신 확인 결과와 한계는 `reports/CRA_OFFICIAL_GUIDANCE_AND_M606_ANNEX_AUDIT_2026-11-17.md` §9를 참조한다.
 
 ## 16. 제품별 사실관계 및 증거 수집 — 미완료
 
