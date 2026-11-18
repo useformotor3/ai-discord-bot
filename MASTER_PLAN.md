@@ -665,3 +665,9 @@
   1. Validate claim-to-CRA requirement IDs, IF interface IDs and SEC control IDs for semantic fit; do not treat non-binding guidance as a new requirement.
   2. Review M/606 C(2026) 7861 Annex source provenance and current ESO/OJ standard status.
   3. Continue evidence intake for exact servo-drive models; keep product-level determinations Unknown until evidence arrives.
+
+## 2026-11-18 — Guidance claim redline 및 matrix link 검증 완료
+- G-001–G-013 OJ C/2026/6013 substantive redline 및 page-image spot-check 완료.
+- 13 claims ↔ 35 requirements ↔ 15 IF ↔ 36 SEC bidirectional link audit: 0 missing, 0 dangling. G-002 range notation을 명시적 ID로 확장하고 G-005↔IF-015 reverse link를 보완.
+- 요구사항/IF/SEC matrix의 primary Guidance source URL을 EUR-Lex OJ ELI로 갱신.
+- 다음 작업은 M/606 C(2026) 7861 Annex provenance, ESO adoption dates 및 OJ harmonised-standard citation 상태의 독립 원문 검증이다.
