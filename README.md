@@ -780,3 +780,9 @@
 - Merge `572de72c8bfab7a1e1e144527783c1508bb26cae`; exact-main Run #944 success, 161 passed / 1 xfailed.
 - Artifact #14396972010, SHA-256 `f23e616d121c61d5825774f1098f213b40cff65e858a527807060d71b02734c4`.
 - Post-merge safety ref equals main. CRA evidence, architecture, MCU candidate benchmark and test plan are synced; actual ST MCU identification remains outstanding.
+
+
+### PR #83 병합 및 main 사후 검증 완료 — 2026-11-18
+- Merge `0255e50f003792fa8f5d0d3a130e45dda3491c3d`; exact-main Run #946 success, 161 passed / 1 xfailed.
+- Artifact #14396926567, SHA-256 `0da05816f553bfbe1f541df001f2f487bd66176e3b454eb04ee47cffd3330a33`.
+- Post-merge safety ref equals main. 현재 CRA 산출물과 진행상황 checkpoint 최신화 완료.
