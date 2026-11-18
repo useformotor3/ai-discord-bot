@@ -623,3 +623,15 @@
 - PR #60 merge: `1f39cb31d7f5e3466f1b22b798e9fc51971542da`; exact-head Run #887 성공(161 passed, 1 xfailed).
 - Post-merge safety ref `safety/post-merge-pr60-2026-11-18`와 main은 identical.
 - 상세 보고서: [EN 40000 / OT prEN 50770 상태 감사](reports/CRA_CEN_CENELEC_EN40000_OT50770_STATUS_2026-11-18.md).
+
+
+
+### CRA 요구사항–증거 추적 매트릭스 — 2026-11-18
+- CRA 법적 요구사항을 서보 드라이브의 위험평가·설계통제·시험·기술문서 증거로 연결한 provisional matrix 16개 항목을 추가했다.
+- 법적 근거, 공개된 표준 scope, 엔지니어링 제안, 제품별 미확인 상태를 구분한다. EN 40000-1-2/1-3의 미확인 최종 조항을 인용하거나 만들어내지 않는다.
+- [상세 보고서](reports/CRA_REQUIREMENTS_TO_EVIDENCE_MATRIX_2026-11-18.md) / [CSV 추적표](reports/CRA_REQUIREMENTS_TO_EVIDENCE_MATRIX_2026-11-18.csv).
+- 제품별 증거 미제공 상태이므로 16개 항목 모두 Unknown / evidence pending이다.
+
+### PR #62 검증 진행
+- 초기 PR head의 Run #891 성공: **161 passed, 1 xfailed**.
+- CRA 공식 PDF 3종 hash canary 및 9개 공식 HTML source canary 성공. 최종 CI metadata 갱신 후 재검증 대기.
