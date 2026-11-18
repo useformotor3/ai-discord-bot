@@ -2,6 +2,14 @@
 
 > 이 문서는 2026-11-18 재개 시점의 최신 상태 스냅샷이다. 기존 날짜별 SESSION_LOG 및 PROJECT_LOG의 역사 기록을 대체하지 않는다. 충돌 시 본 문서의 최신 main 기준 사실과 원본 PR/Actions 증거를 우선한다.
 
+## 최신 main 기준점 — PR #71 및 사후 CI 완료 (2026-11-18)
+- PR #71 `docs: record PR70 merge and exact-main verification` squash merge 완료: `adcec0a0cb94a326e6b7d9b8c242c4ae3dab4152`.
+- PR #71 exact head `bb5cb36598c5a6daa7982781a6db2726d81f9530`, Run #921 / ID `44228810756`: success. Source integrity, compile, CRA cross-matrix traceability, full pytest, official CRA PDF/HTML canaries 통과. Artifact #14394585712, SHA-256 `cff5e21b032fd5f7de923e080de3b7b133b214da697a185efb2318ab04fbf0bc`.
+- Pre-merge safety ref `safety/pre-pr71-merge-checkpoint-2026-11-18`; post-merge safety ref `safety/post-merge-pr71-2026-11-18`.
+- Exact-main Run #922 / ID `44230377812`, head `adcec0a0cb94a326e6b7d9b8c242c4ae3dab4152`: **success**; 161 passed, 1 xfailed. Source blob integrity, compile, CRA traceability (13 claims / 15 interfaces / 35 requirements / 36 SEC / 41 M/606 items; bidirectional links true), official PDF source canary and 9-source live official CRA canary/corrigenda/Article 13(8) locator-quote verification all passed.
+- Run #922 artifact #14393784949, SHA-256 `db75a58638b43fbe1798c70b7c4dad5951cb1b1f98bfa013fa771184e6cf2126`, expires 2026-11-25 03:26:21 UTC. Official PDF hashes: Guidance Annex mirror fallback=True `fe209c250e3d1f7599e42826d91963666951332927edcf511a2e79fe8d2f8234`; OJ C/2026/6013 fallback=False `40ca76caeb0108f5b97c8f373a95f590b453fe92bd45a483addf3326e48c1dc2`; M/606 C(2026)7861 Annex fallback=False `262b09596cb5cbe7d72a2c7789fb2512ee00db7f69082e7def2c8181b0f63276`.
+- Confirmed `main` == `safety/post-merge-pr71-2026-11-18` at the merge SHA. PR #71 touched only project-control documentation/log files; production runtime, production workflows, secrets, state/history/archive and legacy SIL 3 files were not modified.
+
 ## 활성 범위
 - 활성 프로젝트: EU Cyber Resilience Act(CRA) 조사·요구사항 추적·제품 적용성/기술 설계·보고서 검증.
 - SIL 3 기능안전 자료는 과거 산출물로 보존하며 비활성이다. 별도 명시적 재개 지시 전까지 후속 작업하지 않는다.

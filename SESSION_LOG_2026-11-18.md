@@ -301,3 +301,14 @@
 - Artifact #14391727520, digest `f737a27f61f2b6cd153731941c9e615e4379912d03ccfc3696f0eea7b2ad0d09`.
 - Pre-merge safety `safety/pre-pr70-merge-checkpoint-2026-11-18`; post-merge `safety/post-merge-pr70-2026-11-18` == main.
 - Post-merge exact-main Run #919 / ID `44228633470` on merge SHA `ca65475db4ca53d23ee55308c9c9616a054ea756`: success, 161 passed, 1 xfailed; source integrity, compile, CRA traceability, official PDF/HTML canaries passed. Artifact #14393668052, SHA-256 `3d6314562d9ac4f34d645ef3191be6e499ae2d25e829968e17658717bdf2ae22`.
+
+
+## PR #71 병합 및 exact-main 사후 검증 완료 — 2026-11-18
+- PR #71 exact head `bb5cb36598c5a6daa7982781a6db2726d81f9530`, Run #921 / ID `44228810756`: success; source integrity, compile, CRA traceability, full pytest, official CRA PDF/HTML canaries 통과.
+- Artifact #14394585712, SHA-256 `cff5e21b032fd5f7de923e080de3b7b133b214da697a185efb2318ab04fbf0bc`.
+- PR #71 squash merge: `adcec0a0cb94a326e6b7d9b8c242c4ae3dab4152`; pre-merge ref `safety/pre-pr71-merge-checkpoint-2026-11-18`, post-merge ref `safety/post-merge-pr71-2026-11-18`.
+- Exact-main Run #922 / ID `44230377812` on merge SHA: **success**, 161 passed / 1 xfailed. Source integrity, compile, 13/15/35/36/41 CRA traceability, official PDF source canary, 9 official HTML sources, corrigenda and Article 13(8) locator/quote canaries passed.
+- Artifact #14393784949, SHA-256 `db75a58638b43fbe1798c70b7c4dad5951cb1b1f98bfa013fa771184e6cf2126`.
+- Guidance Annex PDF remains mirror fallback=True; Commission OJ C/2026/6013 and M/606 Annex PDFs were fetched fallback=False. Do not describe the Guidance mirror bytes as Commission-primary identity.
+- Post-merge safety ref and main are identical. PR #71 was documentation/log-only; production runtime/workflows/secrets/state/history/archive/legacy SIL 3 materials untouched.
+- Next: complete row-level legal semantics/provenance audit of CRA-001–CRA-035, then synchronize the integrated report, traceability matrix, SEC matrix and independent audit. Keep model-specific applicability Unknown until product evidence arrives.

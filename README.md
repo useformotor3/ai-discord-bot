@@ -10,7 +10,7 @@
 
 > **기록 원칙:** 프로젝트의 공식 진행 상태와 재개 지점은 이 저장소에 기록합니다. 대화창의 기억에만 의존하지 않습니다.
 
-## 현재 상태 — 2026-11-17
+## 현재 상태 — 2026-11-18
 
 - **활성 범위: CRA 대응만.** SIL 3 자료는 역사적 산출물로 보존하며 별도 명시적 재개 지시 전 비활성.
 - 현재 구현 작업 브랜치: 없음 (PR #35 병합 완료; PR #36은 문서 전용 사후 동기화, 다음 구현은 최신 main에서 새 브랜치로 시작)
@@ -697,3 +697,10 @@
 - Artifact #14391727520, SHA-256 `f737a27f61f2b6cd153731941c9e615e4379912d03ccfc3696f0eea7b2ad0d09`.
 - Pre/post safety refs recorded; post-merge safety ref identical to main.
 - Run #919 / ID `44228633470` on the resulting main commit succeeded: 161 passed, 1 xfailed; CRA traceability, source integrity, compile and official PDF/HTML canaries passed. Artifact #14393668052, SHA-256 `3d6314562d9ac4f34d645ef3191be6e499ae2d25e829968e17658717bdf2ae22`.
+
+
+### PR #71 병합 및 main 사후 검증 완료 — 2026-11-18
+- PR #71 merge: `adcec0a0cb94a326e6b7d9b8c242c4ae3dab4152`; exact-head Run #921 success.
+- Main exact commit Run #922 / ID `44230377812`: **success**, 161 passed / 1 xfailed; source integrity, compile, traceability, official PDF and 9-source live CRA canaries passed.
+- Artifact #14393784949, SHA-256 `db75a58638b43fbe1798c70b7c4dad5951cb1b1f98bfa013fa771184e6cf2126`.
+- Pre/post safety refs are preserved; `safety/post-merge-pr71-2026-11-18` == main. 다음 우선순위: 35개 CRA 요구사항 행 단위 법령 의미 감사 및 통합 보고서/매트릭스/독립 감사 정합화.
