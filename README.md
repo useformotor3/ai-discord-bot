@@ -549,3 +549,9 @@
 - 독립 감사 기록: [CRA 통합 보고서 독립 감사](reports/CRA_INTEGRATED_REPORT_INDEPENDENT_AUDIT_2026-11-18.md).
 - 제품별 scope/classification/conformity는 제조사·정확한 모델 증거 확보 전 Unknown. Commission Guidance PDF Commission-primary byte identity는 여전히 미확인.
 - 최신 재개 기준과 미완료 항목은 [PROJECT_STATUS_CURRENT.md](PROJECT_STATUS_CURRENT.md)를 따른다.
+
+## 최신 Guidance 원문 기준 — OJ C/2026/6013 (2026-11-18)
+- CRA Guidance는 2026-11-17 Official Journal에 C/2026/6013 (CELEX 52026XC06013)으로 게재되었다. 최신 공식 PDF: https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX%3A52026XC06013
+- OJ PDF raw SHA-256: `40ca76caeb0108f5b97c8f373a95f590b453fe92bd45a483addf3326e48c1dc2` (61 pages, fallback=False).
+- C(2026) 5252 ANFR mirror hash는 별도 historical provenance로 보존하며 OJ PDF와 byte identity를 주장하지 않는다.
+- G-001–G-013 claim register는 OJ page locator로 이관되었다. 상세 crosswalk와 비교 한계는 `reports/CRA_OFFICIAL_GUIDANCE_AND_M606_ANNEX_AUDIT_2026-11-17.md` §7 참조.
