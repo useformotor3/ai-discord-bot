@@ -686,3 +686,10 @@
 - M/606 Annex I 41-item page locators corrected, including item 18 deadline cell on EN 2; ESO report and OJ citation status audited.
 - Exact-head Run #879 success (161 passed, 1 xfailed); post-merge safety ref identical to main.
 - Next: refresh ESO standards-stage evidence and Commission OJ harmonised-standard index; retain distinction between ESO adoption deadlines, publication forecasts and OJ citation.
+
+
+## 2026-11-18 — ETSI M/606 최신 상태 점검
+- ETSI Work Programme v2.3.3 (2026-11-17) 기준 M/606 활성 18개 work items를 확인하고, 서보 드라이브와 잠재적으로 직접 관련될 수 있는 EN 304 636(방화벽/IDS/IPS), EN 304 625(네트워크 인터페이스)를 상세 기록했다.
+- ETSI의 adoption/publication/OJ publication 날짜는 계획 목표로만 취급한다. 실제 OJ 게재 확인 전 Article 27 추정 적합성 주장을 금지한다.
+- 다음: CEN/CENELEC의 EN 40000 수평 표준 및 산업용 OT prEN 50770 작업의 최신 공식 상태를 별도 확인하고 41개 M/606 목록과 교차 대조한다.
+- 상세: `reports/CRA_ETSI_M606_LIVE_STATUS_2026-11-18.md`.

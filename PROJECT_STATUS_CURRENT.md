@@ -221,3 +221,20 @@
 - M/606 item 18 deadline cell corrected to printed EN 2; row description continues EN 3. All 41 item locators are row-specific.
 - June 2026 ESO report is image-based (3 text-layer chars) and intentionally excluded from text-layer CI; no weakened validation threshold.
 - Next: independently verify standards-stage changes after the June ESO snapshot and refresh Commission OJ harmonised-standard index before any presumption-of-conformity statement.
+ 
+
+## 최신 ETSI M/606 작업계획 확인 — 2026-11-18
+- 최신 확인 자료: ETSI Work Item Plan, M/606 활성 work items, 2026-11-17 표시 / Work Programme v2.3.3 / 18 items. 상세 원문 대조: [ETSI M/606 live status audit](reports/CRA_ETSI_M606_LIVE_STATUS_2026-11-18.md).
+- 서보 드라이브와 잠재적으로 직접 관련되는 EN 304 636(방화벽/IDS/IPS) 및 EN 304 625(물리·가상 네트워크 인터페이스)의 상태/목표 일정을 별도 기록했다. 두 항목의 ETSI OJ Publication 날짜는 목표 일정이지 실제 OJ 게재 증거가 아니다.
+- EN 304 636: Comments categorisation assessed (2026-10-06); adoption 목표 2027-02-11, publication 목표 2027-02-19, OJ publication 목표 2027-05-15.
+- EN 304 625: 7 VR – EC assessment before EV received (2026-09-28); adoption 목표 2027-03-08, publication 목표 2027-03-15, OJ publication 목표 2027-06-23.
+- 제품 자체가 방화벽/IDS/IPS 또는 네트워크 인터페이스 제품인지 intended purpose/core functionality 기준으로 판정한다. 드라이브의 Ethernet/fieldbus 포트 또는 내장 필터링만으로 제품 카테고리를 확정하지 않는다.
+- Commission harmonised standards index(2026-11-18 조회)는 OJ 참조 목록을 제공하며 CRA 전용 카테고리는 보이지 않았다. 결론은 “현재 조회 범위에서 CRA OJ 참조를 식별하지 못함”으로 제한한다. Article 27 추정 적합성은 정확한 OJ 참조·범위 확인 후에만 주장한다.
+- ETSI 18개 활성 항목은 M/606 41개 전체가 아니다. CEN/CENELEC 작업과 분리 추적한다. 6월 STAN4CR 공동 보고서를 ETSI 개별 item의 최신 자료로 취급하지 않도록 갱신했다.
+- 다음: CEN/CENELEC의 수평 표준(EN 40000 계열) 및 산업용 OT 작업(prEN 50770 계열) 최신 공식 진행 상태를 독립 확인하고, OJ index/EUR-Lex를 재조회한다.
+
+
+## PR #57 관리 문서 병합 확인 — 2026-11-18
+- PR #57 docs-only merge commit: `ff3c5b7875131ef92e3fe4a7974f4420ddfcc84c`.
+- Post-merge safety ref `safety/post-merge-pr57-2026-11-18`는 merge commit에서 생성되었고 main과 identical(0 ahead/0 behind)로 확인되었다.
+- PR #57은 관리 문서만 변경했으며 해당 커밋에 연결된 PR CI run은 확인되지 않았다. 따라서 CI 통과로 표현하지 않는다. 이번 ETSI 연구 변경은 별도 feature branch에서 exact-head CI를 실행한다.

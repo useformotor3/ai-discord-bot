@@ -163,3 +163,17 @@
 - Pre-merge safety ref matched main at `adc22e3087009db51acff53ec29054f971fa508a`; post-merge safety ref `safety/post-merge-m606-annex-eso-2026-11-18` identical to main.
 - June ESO PDF is scanned/image-based and excluded from text-layer CI; visual findings remain supplementary and not CI-hashed evidence.
 - Next: current ESO stage evidence and OJ index refresh.
+
+
+## ETSI M/606 최신 Work Programme 점검
+- ETSI 공식 Work Item Plan의 2026-11-17 / Version 2.3.3 스냅샷을 확인했다. M/606 활성 work items는 18개로 표시된다.
+- EN 304 636 방화벽/IDS/IPS와 EN 304 625 물리·가상 네트워크 인터페이스의 상태 및 adoption/publication/OJ 목표 일정을 상세 보고서에 기록했다.
+- Commission harmonised standards index를 재조회했다. OJ 참조는 실제 게재되어야 하며, 현재 페이지에서 CRA 전용 항목을 식별하지 못했다. 검색 범위를 넘는 절대적 부재 주장이나 추정 적합성 주장은 하지 않는다.
+- ETSI 계획의 OJ publication date는 미래 목표 일정이지 실제 OJ 인용이 아니다. 네트워크 포트가 있는 서보 드라이브가 자동으로 네트워크 인터페이스 제품이 되지 않으며, 내장 필터링만으로 방화벽 제품이 되지 않는다.
+- 상세 기록: `reports/CRA_ETSI_M606_LIVE_STATUS_2026-11-18.md`.
+- 후속: CEN/CENELEC EN 40000 및 산업용 OT prEN 50770 작업의 최신 공식 상태를 확인한다.
+
+
+## PR #57 관리 문서 merge readback
+- PR #57 merge commit `ff3c5b7875131ef92e3fe4a7974f4420ddfcc84c` 및 `safety/post-merge-pr57-2026-11-18`를 확인했다. safety ref와 main은 identical.
+- PR #57은 docs-only이며 해당 merge commit에 연결된 CI run은 확인되지 않았다. 성공 CI라고 기록하지 않는다.

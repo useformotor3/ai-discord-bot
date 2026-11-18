@@ -596,3 +596,10 @@
 - M/606 Annex 41-item locator correction and ESO/OJ status audit merged: `9e42dbd790816b4669793f5bbb9edc4b4686e195`.
 - Exact-head Run #879 passed: 161 passed, 1 xfailed; all CI and live-source canaries passed.
 - Post-merge safety ref `safety/post-merge-m606-annex-eso-2026-11-18` identical to main.
+
+
+### 최신 ETSI M/606 작업계획 — 2026-11-18
+- ETSI의 2026-11-17 M/606 Work Item Plan v2.3.3을 추가 확인했다. EN 304 636(방화벽/IDS/IPS), EN 304 625(네트워크 인터페이스)의 상태 및 목표 일정을 별도 기록했다.
+- 목표 일정은 실제 채택/발행/OJ 게재와 구분한다. CRA Article 27 추정 적합성은 정확한 표준 참조의 OJ 공표 확인 전 주장하지 않는다.
+- 상세: [ETSI M/606 최신 작업계획 및 OJ 상태 점검](reports/CRA_ETSI_M606_LIVE_STATUS_2026-11-18.md).
+- 최신 프로젝트 재개 기준: [PROJECT_STATUS_CURRENT.md](PROJECT_STATUS_CURRENT.md).
