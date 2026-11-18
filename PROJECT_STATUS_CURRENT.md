@@ -258,3 +258,13 @@
 - 서보 드라이브는 제품 intended purpose/core functionality 기준으로 분류한다. Ethernet/fieldbus 포트 또는 내장 필터링만으로 network-interface/firewall 제품으로 분류하지 않는다. 제품 모델/BOM/데이터시트 미확보로 drive-level classification은 Unknown.
 - 상세: `reports/CRA_CEN_CENELEC_EN40000_OT50770_STATUS_2026-11-18.md`; 구조화 추적표: `reports/CRA_CEN_CENELEC_EN40000_OT50770_STATUS_2026-11-18.csv`.
 - 다음: EN 40000-1-1 발행본 및 EN 40000-1-2 원문 확보/검증, 50770-1~6의 최신 committee status 재확인, OJ index 재조회.
+
+
+## PR #60 CEN/CENELEC 상태 정정 병합 완료 — 2026-11-18
+- PR #60 merge commit: `1f39cb31d7f5e3466f1b22b798e9fc51971542da`.
+- Exact-head CI Run #887 / ID `44214446339`, tested head `1707d49cdc7d24d5f3de43606e4bc31451e9bf8f`: success; **161 passed, 1 xfailed**. Source blob identity, compile, CRA traceability, full pytest, three official Commission PDF fetch/hash checks, evidence upload and nine-source official HTML canary passed.
+- Artifact #14386734709; digest `sha256:aa960c3ecc5e9e89a2f64fc038ccc92cb77a9b7180e58eb5788152752ccd949c`; expires 2026-11-25 01:16:15 UTC.
+- Pre-merge safety ref `safety/pre-merge-cen-ot-status-2026-11-18` matched base main; post-merge `safety/post-merge-pr60-2026-11-18` is identical to main at merge commit.
+- Corrected key fact: EN 40000-1-1:2026 is CEN Published (DAV 2026-11-18) but CEN says no CRA OJ citation expected. This does not create Article 27 presumption.
+- Detailed report/CSV: `reports/CRA_CEN_CENELEC_EN40000_OT50770_STATUS_2026-11-18.md/.csv`.
+- Next: obtain/inspect EN 40000-1-1 and 1-2 final texts, retry CEN 1-2 official record, and refresh CENELEC OT project stages/OJ index.
