@@ -891,3 +891,9 @@
 - PR #81 merge `11b7ccac639501b98e9a9f6c76dfac473d6e0535`; exact-head Run #941 및 exact-main Run #942 success.
 - Run #942: 161 passed / 1 xfailed; source integrity, compile, CRA traceability 13/15/35/36/41, 9 official sources and Article 13(8) canaries passed. Artifact #14397065458, digest `sha256:0d5a340c3ac3e0435704d5543f38ab35bd883ea7a5c30adfe1b3983db24882bf`.
 - Pre/post safety refs preserved; post-merge ref == main. Next technical decision cannot be made until actual ST MCU part number/marking and drive control requirements are supplied.
+
+
+## PR #82 병합 및 Run #944 완료 — 2026-11-18
+- PR #82 merge `572de72c8bfab7a1e1e144527783c1508bb26cae`; exact-head Run #943 및 exact-main Run #944 success.
+- Run #944: 161 passed / 1 xfailed; source integrity, compile, CRA traceability 13/15/35/36/41, 9 official sources and Article 13(8) canaries passed. Artifact #14396972010, digest `sha256:f23e616d121c61d5825774f1098f213b40cff65e858a527807060d71b02734c4`.
+- Pre/post safety refs preserved; post-merge ref == main. Product-specific MCU work is paused at the evidence gate: exact ST MCU order code/marking and control requirements must be identified before scoring or hardware tests.
