@@ -45,6 +45,23 @@ https://www.ibf-solutions.com/fileadmin/dateidownloads/c-2026-7861-main-document
 - CEN/CENELEC/ETSI의 수령일 및 Article 2에 따른 비수락 통지 여부는 별도 확인 과제다.
 - 이 결정은 표준이 OJ에 인용되었다는 뜻이 아니다.
 
+
+
+## 5A. 원래 M/606 수락과 2026 개정 수락 조건의 구분 (2026-11-18 재확인)
+
+공식 CEN-CENELEC 발표에 따르면 **원래 M/606 표준화 요청은 2025-04-03 CEN, CENELEC, ETSI가 공식 수락**했다(2025-05-01 게시). European Commission의 Interoperable Europe 2026 rolling plan도 세 ESO가 요청을 수락했고 작업이 진행 중이라고 재확인한다.
+
+다만 이 사실은 **2026-11-10 개정 결정 C(2026)7861의 별도 Article 2 조건이 충족되었는지**를 증명하지 않는다. 개정 결정의 통지일/각 ESO 수령일 및 그로부터 1개월 이내 비수락 통지 여부는 현재 확인된 공개 자료에서 개별적으로 확인하지 못했다. 따라서 기록을 다음처럼 구분한다.
+
+- 원래 M/606 (C(2025)618): 수락 확인 — 2025-04-03 (CEN-CENELEC 공식 발표).
+- 개정 결정 C(2026)7861: Article 2의 개정 결정 수령일·비수락 통지 여부 미확인.
+- 현재 보고서의 개정 Annex I 일정은 Commission 공식 CRA standardisation 안내와 공개된 결정문 사본에 근거해 기록하되, 개정 Article 2 조건의 절차적 상태는 미확정으로 남긴다.
+- 원래 요청의 수락 사실을 근거로 개정 요청까지 자동 수락되었다고 추정하지 않는다.
+
+추가 공식 출처:
+- CEN-CENELEC, “Cyber Resilience Act: Standardization Request Officially Accepted by CEN, CENELEC, and ETSI”, posted 1 May 2025: https://www.cencenelec.eu/news-events/news/2025/newsletter/ots-62-cra/
+- European Commission / Interoperable Europe, ICT Standardisation Rolling Plan 2026, CRA action: https://interoperable-europe.ec.europa.eu/collection/rolling-plan-ict-standardisation/cybersecurity-network-and-information-security-rp-2026
+
 ## 6. 출처
 
 - European Commission, Cyber Resilience Act — Standardisation (last update 12 November 2026): https://digital-strategy.ec.europa.eu/en/policies/cra-standardisation
