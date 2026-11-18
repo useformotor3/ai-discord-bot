@@ -365,7 +365,7 @@ The 41-row crosswalk page locators have been made row-specific to the printed pa
   - Item 40: mature draft; publication forecast 30.10.2026.
   - Item 41a/41b: ENQ passed 10.04.2026 / 09.04.2026; preparation for FV; publication forecast 15.11.2026 / 30.11.2026.
 - Important distinction: the ESO report column is “Publication forecast”; the Commission Annex column is “Deadline for adoption by the ESOs”. These are different milestones. A publication forecast later than an adoption deadline is not, by itself, proof that the ESO missed the adoption deadline. The June snapshot also predates the 10 November amendment. Treat it as progress context only, not a current compliance status.
-- The publicly linked V2.0 report is the latest ESO status document located in this check; no later public M/606 progress report was found on the STAN4CR site. Its raw-byte hash will be recorded separately by the live CI source canary before relying on it as a retained evidence artifact.
+- The publicly linked V2.0 report is the latest ESO status document located in this check; no later public M/606 progress report was found on the STAN4CR site. It is image-based (the PDF text layer yields only 3 characters), so it is deliberately excluded from the text-layer PDF CI canary. Do not treat it as a machine-verified evidence artifact until its downloaded raw-byte hash, page count and visual/OCR review are separately recorded.
 
 ### 9.5 Servo-drive relevance boundaries
 
