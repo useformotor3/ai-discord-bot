@@ -657,3 +657,11 @@
 - Exact-head Run #861 success: 158 passed, 1 xfailed; three PDF sources and official CRA HTML canary succeeded.
 - Pre/post safety refs recorded in PROJECT_STATUS_CURRENT.
 - Next: G-001–G-013 claim-by-claim substantive redline against OJ text; inspect claim-specific conditions, exceptions and footnotes, and verify relevant OJ page images. Then reconcile interface, requirement and SEC cross-links without converting non-binding Guidance into legal requirements.
+
+## 2026-11-18 — Guidance substantive redline completed
+- Completed claim-by-claim review of G-001–G-013 against OJ C/2026/6013 and visually checked the relevant PDF pages.
+- Narrowed G-003 to the actual complex-system/interoperability text; distinguished external dependency risk from integrated-component due diligence in G-008; made identical spare-part conditions explicit for G-013; expanded G-004 continuing obligations.
+- Next:
+  1. Validate claim-to-CRA requirement IDs, IF interface IDs and SEC control IDs for semantic fit; do not treat non-binding guidance as a new requirement.
+  2. Review M/606 C(2026) 7861 Annex source provenance and current ESO/OJ standard status.
+  3. Continue evidence intake for exact servo-drive models; keep product-level determinations Unknown until evidence arrives.
