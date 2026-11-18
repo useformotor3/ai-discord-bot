@@ -10,6 +10,13 @@
 - Run #922 artifact #14393784949, SHA-256 `db75a58638b43fbe1798c70b7c4dad5951cb1b1f98bfa013fa771184e6cf2126`, expires 2026-11-25 03:26:21 UTC. Official PDF hashes: Guidance Annex mirror fallback=True `fe209c250e3d1f7599e42826d91963666951332927edcf511a2e79fe8d2f8234`; OJ C/2026/6013 fallback=False `40ca76caeb0108f5b97c8f373a95f590b453fe92bd45a483addf3326e48c1dc2`; M/606 C(2026)7861 Annex fallback=False `262b09596cb5cbe7d72a2c7789fb2512ee00db7f69082e7def2c8181b0f63276`.
 - Confirmed `main` == `safety/post-merge-pr71-2026-11-18` at the merge SHA. PR #71 touched only project-control documentation/log files; production runtime, production workflows, secrets, state/history/archive and legacy SIL 3 files were not modified.
 
+## 최신 main 기준점 — PR #72 및 사후 CI 완료 (2026-11-18)
+- PR #72 문서/로그 checkpoint squash merge: `293a27a8ea2a8e03f58db50bbe27d2aaea194c8d`; PR head `0f85cc04eb64efe961e514a59a28386b5527708c`, Run #923 success.
+- Pre-merge safety `safety/pre-pr72-merge-checkpoint-2026-11-18`; post-merge safety `safety/post-merge-pr72-2026-11-18`; post-merge safety == main at merge SHA.
+- Exact-main Run #924 / ID `44230705429` on `293a27a8ea2a8e03f58db50bbe27d2aaea194c8d`: **success**, 161 passed / 1 xfailed; source integrity, compile, CRA traceability, 9 official sources, corrigenda and Article 13(8) locator/quote canaries passed.
+- Artifact #14394119675, SHA-256 `43a5e60b947890886baeee6c355beae857928f3c47deb9d76489244199accb3a`, expires 2026-11-25 03:29:17 UTC. PDF provenance hashes match Run #922; Guidance remains ANFR fallback=True, OJ Guidance and M/606 Annex fallback=False.
+- PR #72 changed project-control documents only; runtime/workflow/secrets/state/history/archive/legacy SIL 3 materials untouched.
+
 ## 활성 범위
 - 활성 프로젝트: EU Cyber Resilience Act(CRA) 조사·요구사항 추적·제품 적용성/기술 설계·보고서 검증.
 - SIL 3 기능안전 자료는 과거 산출물로 보존하며 비활성이다. 별도 명시적 재개 지시 전까지 후속 작업하지 않는다.
