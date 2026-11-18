@@ -23,6 +23,7 @@
 - 제조사 문서·블로그·2차 자료는 보조자료로 구분한다.
 - 근거를 찾지 못하면 '미확인'으로 표시하고 의무라고 단정하지 않는다.
 - 중요한 법적·기술적 결론은 가능한 경우 독립된 공식 자료 또는 별도 근거로 교차 확인한다.
+- Commission Guidance처럼 내부 승인 문서번호와 Official Journal 게재번호가 다른 경우 둘을 구분해 기록한다. 현재 공식 인용은 OJ C/2026/6013 (CELEX 52026XC06013), C(2026) 5252는 2026-07-27 승인/게시 이력이다. OJ PDF를 최신 인용·page locator의 primary source로 사용하고, 과거 mirror/초안은 별도 source ID·hash로 보존한다. raw-byte 또는 extracted-text hash가 다르면 byte/text identity를 주장하지 않는다.
 - CRA 법적 보고서를 작성/갱신하기 전에는 EUR-Lex OJ 원문과 현재 consolidated/amending acts, Commission CRA implementation/guidance/FAQ, 표준화 현황 및 OJ 조화표준 공표, ENISA 신고 플랫폼 자료의 최신 상태를 확인한다. 표준화기구 납품 일정과 법령 적용일을 혼동하지 않는다.
 - 법령 개정의 적용일과 대상 제품 범위를 확인한다. 고위험 AI/EHR 등 특정 제품군에 한정된 개정은 일반 산업용 서보 드라이브에 자동 확장하지 않는다.
 
