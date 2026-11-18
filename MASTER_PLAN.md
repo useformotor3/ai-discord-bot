@@ -859,3 +859,10 @@
 - Run #932: 161 passed / 1 xfailed; source integrity, compile, CRA traceability 13/15/35/36/41, 9 official sources and Article 13(8) canaries passed. Artifact #14395691349, digest `sha256:ec315a8b305f9b572452d42846de38a3698d431256faff36162ddb733303385a`.
 - Pre/post safety refs preserved; post-merge ref == main.
 - MCU-T01–T12 test protocol and result capture fields are merged. Next P0 input is the exact ST MCU order code/marking and product control requirements. Keep tests Not Run until hardware/product evidence exists.
+
+
+## PR #77 병합 및 Run #934 완료 — 2026-11-18
+- PR #77 merge `caa32ed9ac6679b21b619155cdf28d1b75d81c33`; exact-head Run #933 및 exact-main Run #934 success.
+- Run #934: 161 passed / 1 xfailed; source integrity, compile, CRA traceability 13/15/35/36/41, 9 official sources and Article 13(8) canaries passed. Artifact #14395218493, digest `sha256:8c827f786583bb5d2f8d14224e990b194ae50bf7f1393b4b9009925d123773da`.
+- Pre/post safety refs preserved; post-merge ref == main.
+- The next blocker is product-specific input: exact ST MCU part number/marking and drive control requirements. Existing MCU benchmark and MCU-T01–T12 plan are ready for product-specific completion; do not invent hardware values or report tests as executed.

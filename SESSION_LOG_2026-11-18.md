@@ -362,3 +362,11 @@
 - Main exact Run #932 / ID `44232432357`: success, 161 passed / 1 xfailed; source integrity, compile, 13/15/35/36/41 traceability, 9 official sources, corrigenda and Article 13(8) canaries passed.
 - Run #931 artifact #14395881347 digest `sha256:11d970dd8d64782fe5c62b12d5cea11cde231f28811c5470226ab6d126a31e4a`; Run #932 artifact #14395691349 digest `sha256:ec315a8b305f9b572452d42846de38a3698d431256faff36162ddb733303385a`.
 - MCU-T01~T12 test cases and result recording fields merged; all are planning items and Not Run. Next required input: actual ST MCU marking/order code and product control requirements.
+
+
+## PR #77 병합 및 exact-main 사후 검증 완료 — 2026-11-18
+- PR #77 exact head `e3a8efcd33c601eccea1d1e1c1e054d07f946f9b`, Run #933 success; merge `caa32ed9ac6679b21b619155cdf28d1b75d81c33`.
+- Pre/post safety refs `safety/pre-pr77-merge-checkpoint-2026-11-18`, `safety/post-merge-pr77-2026-11-18`; main and post-merge ref identical.
+- Main exact Run #934 / ID `44232761348`: success, 161 passed / 1 xfailed; source integrity, compile, 13/15/35/36/41 traceability, 9 official sources, corrigenda and Article 13(8) canaries passed.
+- Run #933 artifact #14395517878 digest `sha256:b6218e7153590ed63f52b35dc6013e79bd38af098dafb3b0cc2149afe419138d`; Run #934 artifact #14395218493 digest `sha256:8c827f786583bb5d2f8d14224e990b194ae50bf7f1393b4b9009925d123773da`.
+- PR #77 only records prior checkpoint. MCU-T01–T12 test protocol is merged, but all hardware test cases remain Not Run. Next P0: actual ST MCU part number and product control requirements.
