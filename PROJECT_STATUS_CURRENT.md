@@ -195,3 +195,11 @@
 - 회귀 테스트 3개 추가: reverse link 누락, dangling matrix claim, unknown related interface ID.
 - G-002의 IF range를 명시적 ID로 확장했고 G-005↔IF-015를 양방향 연결.
 - 최신 변경은 exact-head CI 통과 후에만 병합한다.
+
+### PR #54 exact-head CI result — Run #865
+- Tested head `1d5ae716cc6683365f4da6236d15bb9b32be1e52`; Run #865 / ID `44207426703`: success.
+- 161 passed, 1 xfailed; exact source blob identity, compile, CRA traceability (including bidirectional link checks), full pytest, three-PDF live canary, artifact upload and official HTML canary all passed.
+- OJ C/2026/6013 primary PDF fallback=False, SHA-256 unchanged.
+- Artifact #14383728315; digest `sha256:03b260173f643a68841f54c9f9ac1b3d99c9064762a677ed310160618170f8bb`; expires 2026-11-25 00:23:53 UTC.
+- Pre-merge safety ref `safety/pre-merge-cra-guidance-claim-redline-2026-11-18` was identical to main at base `d92f14f6c275bf6b3fa0c8243ac696dca0358d50`.
+- Status/project log metadata appended after Run #865; final head needs a fresh exact-head CI before merge.
