@@ -2,19 +2,23 @@
 
 > 최신 상태 스냅샷. 역사 기록은 SESSION_LOG 및 PROJECT_LOG에 append-only로 보존한다.
 
-## 최신 main 기준점 — PR #97 병합 및 사후 CI 완료 (2026-11-19)
-- PR #97 merge SHA / main: `9ebab690b6cbbf0f3588bfeab16c622dca4d65e9`.
-- PR #97 exact-head Run #983: success, **172 passed / 0 failed**.
-- Exact-main Run #984 / ID 44450311535: success, **172 passed / 0 failed**. Source blob integrity, compile, CRA traceability, full pytest, official CRA PDF live canary, artifact upload, live EUR-Lex canary 모두 통과.
-- Pre-merge safety ref `safety/pre-pr97-merge-checkpoint-2026-11-19`; post-merge safety ref `safety/post-merge-pr97-2026-11-19`는 main과 동일성 확인.
-- PR #97은 PR #96의 상태 기록 동기화 PR이며 운영 `main.py`, `.github/workflows/run.yml`을 변경하지 않았다.
-- EVD-01~16 ↔ CRA ↔ SEC-001~036 후보 추적표와 E-001~E-015 제품 증거 register가 main에 반영되어 있다. 실제 제품별 증거는 모두 `not_provided`; 제품별 적용성·분류·구현·시험 결과는 Unknown / Not assessed로 유지한다.
+## 최신 main 기준점 — PR #99 병합 및 exact-head CI 완료 (2026-11-19)
+- PR #99 merge SHA / main: `b5e6982270a4b3b913e5ae584786340ce58755f3`; PR #98 상태 문서 정합화도 병합 완료.
+- PR #99 exact-head Run #993 / ID 44454970377: success, **173 passed / 0 failed**.
+- Source integrity, compile, CRA traceability, full pytest, official CRA PDF canary, artifact upload, live official source canary 모두 통과.
+- Live source pack v4: 10개 공식 출처. Commission Implementing Regulation (EU) 2025/2392 visible text 33,865 chars; prompt excerpt SHA-256 `9c9715a1c463dca7ccf499e5f901ac642426b70a2aba89eb479525fbb78a1702`.
+- Live locator canary: Article 13(8), 2025/2392 core-functionality marker, Annex I category 10 및 Annex II category 1 통과.
+- PDF artifact #14496564799, SHA-256 `c19aaf7465041fd21def6d634daaea08f897ec32ca1892452e6d18bce71d44c2`, expires 2026-11-26 03:57:52 UTC. Guidance PDF fallback=True; OJ guidance PDF/M/606 Annex PDF fallback=False.
+- Pre-merge safety ref `safety/pre-cra-2392-source-canary-2026-11-19`; post-merge safety ref `safety/post-merge-pr99-2026-11-19`는 main과 identical.
+- Exact-main push CI는 별도 확인 전이며 성공으로 간주하지 않는다. PR exact-head CI 결과만 위에 기록한다.
+- PR #99는 source pack/parser/test workflow 변경. 운영 `main.py` 및 `.github/workflows/run.yml`은 변경하지 않았다.
 
 
 ## 현재 기술 게이트
 - Annex III/IV classification is based on the product's core functionality as a whole under Implementing Regulation (EU) 2025/2392. Integrated components do not automatically classify the complete drive.
 - CRA applicability under Article 2 and category classification under Articles 7–8 are separate decisions. Annex III/IV non-listing does not mean CRA exclusion.
 - Product-specific model/SKU, manuals, network topology, remote-processing dependencies and actual MCU part number remain unknown. Individual product classification remains Unknown / Not assessed.
+- Official source pack v4 now includes Commission Implementing Regulation (EU) 2025/2392 with live Annex I category 10 / Annex II category 1 locator checks.
 - Next: collect product-specific P0 inputs and approve each candidate EVD/SEC link as applicable, not applicable or conditional. Product-specific classification, implementation and test evidence remain Unknown until source material and versioned test records are received.
 
 ## 추가 프로젝트 기록 — PR #86 및 PR #87
