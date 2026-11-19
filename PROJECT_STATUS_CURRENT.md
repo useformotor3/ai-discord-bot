@@ -17,7 +17,18 @@
 - 제품별 scope/classification/conformity = Unknown; security tests = Not Run. 이번 작업으로 이 상태를 승격하지 않는다.
 
 
-## 최신 main 기준점 — PR #104 LS메카피온 제품군 예비 분석 보고서 병합 (2026-11-19)
+## 최신 main 기준점 — PR #116 M/606·EN 40000 최신 상태 갱신 병합 (2026-11-20)
+
+- PR #116 squash merge 완료: `6092ca1c61c696a716583e6bc0f7d5150cbee269`; 현재 main 기준점은 이 SHA다.
+- Pre-work safety: `safety/pre-m606-live-status-audit-2026-11-20`; post-merge safety: `safety/post-merge-pr116-2026-11-20`. post-merge ref는 merge SHA에서 생성했다.
+- PR exact-head Run #1032 / ID `44638812806`: success. Source blob integrity, compile, CRA traceability, full pytest, live official CRA HTML provenance manifest 단계 통과.
+- Provenance artifact #14584442966, 2,566 bytes, SHA-256 `408714c0be46f9238250aaff678191a86ac0ff35112370132d679f59ba591836`, expires 2026-11-26 23:35:10 UTC.
+- PDF artifact upload 단계는 skipped이며 PDF 파일 artifact가 생성되지 않았다. 이 run에서 PDF 원문 확보 성공으로 간주하지 않는다.
+- PR #116은 보고서 §23 및 상황판/마스터 계획/README/로그만 변경. 운영 runtime/workflow/secrets/state/history/legacy SIL 3 자료는 변경하지 않았다.
+- Exact-main push CI는 현재 연결된 조회에서 독립 확인되지 않았다. PR exact-head CI 성공과 구분해 기록한다.
+- 제품별 CRA scope/classification/conformity = Unknown; security tests = Not Run. M/606 41개 전수 상태/OJ 감사와 LS메카피온 원본 파일 확보는 미완료.
+
+## 이전 main 기준점 — PR #104 LS메카피온 제품군 예비 분석 보고서 병합 (2026-11-19)
 - PR #104 merge SHA / main: `c3d234240d342d82cf9402ef0b07b82531ddee03`.
 - PR #104 exact-head Run #1004 / ID 44485297107: success, **174 passed / 0 failed**.
 - Source blob integrity, compile, CRA traceability (claims 13, interfaces 15, requirements 35, SEC 36, EVD crosswalk 16, product evidence 15, M/606 41), full pytest 통과.
