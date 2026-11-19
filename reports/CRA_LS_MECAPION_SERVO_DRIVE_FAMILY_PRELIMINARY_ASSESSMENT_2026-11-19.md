@@ -1345,6 +1345,6 @@ LS메카피온 서보드라이브에는 다음 판정 규칙을 적용한다.
 - CI source bundle artifact #14584269836; 3,070,504 bytes; SHA-256 `0c77f3ae2546927fd2ae37da024b1b398e0d58a0be08fde50581a984f685c94f`; expiry 2026-11-26 23:39:21 UTC.
 - OJ guidance PDF SHA-256: `40ca76caeb0108f5b97c8f373a95f590b453fe92bd45a483addf3326e48c1dc2`; 61 pages; 2,709,282 bytes.
 - C(2026) 7861 Annex SHA-256: `262b09596cb5cbe7d72a2c7789fb2512ee00db7f69082e7def2c8181b0f63276`; 6 pages; 151,267 bytes.
-- A machine-readable copy of the source manifest is committed separately under `sources/official/`.
+- Machine-readable source manifest: `sources/official/CRA_2026-11-19_SOURCE_MANIFEST.json`.
 
 **검증 한계:** 이 해설 분석은 공개된 최종 관보 문서를 기반으로 한 제품 적용 프레임이다. LS메카피온의 실제 모델별 설계, 지원정책, 업데이트 구조, 판매 단위 및 원격 서비스 증거를 확보하기 전까지 제품 적합성 또는 Annex III/IV 분류를 확정하지 않는다.
