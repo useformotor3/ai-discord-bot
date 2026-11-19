@@ -588,3 +588,14 @@
 - 보고서 v0.3 추가 조사: Delegated Regulation (EU) 2025/1535의 L-category 차량 범위 제외(페달 보조 L1e 예외), Delegated Regulation (EU) 2026/881의 CSIRT 신고 전파 지연 조건, ENISA SME maturity model, Secure by Design playbook, SBOM advisory, secure update advisory, CRA Single Reporting Platform을 설명한다.
 - ENISA 실무자료는 비구속 참고자료이며 조화표준/OJ 인용이나 Article 27 presumption을 대체하지 않는다.
 - 제품별 scope/classification/conformity Unknown, 보안 시험 Not Run. 법령·표준 전수 감사는 미완료.
+
+
+## 2026-11-19 — PR #107 병합 및 Machinery Regulation 상호작용 분석
+- PR #107 merge SHA: 0682d83f891a20438d6d37eb231c3b20ca72c67e; post-merge safety ref safety/post-merge-pr107-2026-11-19 생성.
+- PR #107 exact-head Run #1010 / ID 44490148586: success, 174 passed / 0 failed. CRA traceability 13/15/35/36/16/15/41 통과.
+- Live official CRA HTML 10-source canary 및 JSON provenance manifest parse/round-trip 통과. Artifact #14511858034, SHA-256 dd4305ae872aec9cf208228f8924ed06a2cf2a2c3b9cabd7b063babbe3c2c69e, 2,566 bytes, expires 2026-11-26 08:45:00 UTC.
+- PDF canary는 EUR-Lex C(2026) 6013 endpoint empty body로 SKIPPED; PDF artifact 없음.
+- Exact-main push CI는 독립 확인 전이므로 미확인. Post-merge safety ref는 main merge SHA에서 생성됨.
+- Commission CRA FAQ(2026-09-04)와 Regulation (EU) 2023/1230을 확인했다. FAQ는 CRA와 Machinery Regulation이 함께 적용되는 제품은 두 규정의 요구사항 및 적합성 평가 절차를 각각 검토해야 하며, CRA 적합성이 MR 적합성을 자동 대체하지 않는다고 설명한다.
+- Machinery Regulation Annex III 1.1.9/1.2.1의 corruption protection 및 control-system security 내용을 보고서 v0.4에 반영했다. 적용일 2027-01-20.
+- 제품별 공급 경계·EU 공급·무선 variant·기계/부분완성기계 지위가 미확인이라 적용성/책임분담은 Unknown. 제품별 보안 시험 Not Run.

@@ -1031,3 +1031,12 @@
 - ENISA 2026 자료: SME Cyber Resilience Maturity Assessment Model, Secure by Design and Default Playbook, SBOM Technical Advisory, Secure Update Mechanisms Technical Advisory, Single Reporting Platform 안내를 제조사 절차에 연결했다.
 - ENISA 자료는 비구속 참고자료로 구분하고 CRA 법적 요구·OJ harmonised-standard citation·Article 27 presumption과 혼동하지 않는다.
 - 다음 단계: M/606 41개 개별 표준별 진행·최종안·OJ citation 상태, 제품별 적용 가능한 sectoral legislation, Commission FAQ 최신판, ENISA reporting/SRP 최신 매뉴얼을 근거·날짜·locator와 함께 감사한다.
+
+
+## 2026-11-19 — CRA/Machinery Regulation 병행 적용 및 제품법령 스크리닝
+- PR #107 merged: 0682d83f891a20438d6d37eb231c3b20ca72c67e; exact-head Run #1010 success, 174 passed / 0 failed; 10-source HTML canary + manifest round-trip success; PDF canary skipped on empty EUR-Lex body.
+- Commission CRA FAQ (last updated 2026-09-04) states products simultaneously within CRA and Machinery Regulation (EU) 2023/1230 must consider both sets of requirements and both conformity assessment procedures. Compliance with one does not automatically satisfy the other.
+- Machinery Regulation applies from 2027-01-20; Annex III 1.1.9 Protection against corruption and 1.2.1 Safety and reliability of control systems have direct relevance to machine safety/cybersecurity interactions.
+- LS Mecapion report v0.4 separates drive component boundary from final machine / partly completed machinery boundary and adds a conditional screen for EMC, LVD, RED, RoHS, WEEE and Product Liability Directive.
+- Do not infer that every drive is machinery, or that machinery rules automatically exclude CRA. Product variant, intended use, supply form, wireless option and economic-operator roles remain unknown.
+- Next: model-by-model legal applicability table with exact product evidence; M/606 41-standard status/OJ citation audit; sector-law amendments and harmonised standards verification.

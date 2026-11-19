@@ -1557,3 +1557,12 @@
 - 2025/1535의 L-category 차량 제외를 일반 서보드라이브 면제로 확대하지 않는다. 2026/881은 CSIRT 전파 지연 규정이지 제조자 신고기한 연장 규정이 아니다.
 - ENISA 기술자료는 법적 의무나 Article 27 적합성 추정을 부여하지 않는 실무 참고자료다.
 - Exact-main push CI는 독립 확인 전이므로 미확인. 제품별 판정 Unknown, 시험 Not Run 유지.
+
+
+## 2026-11-19 — PR #107 병합 및 기계류 규정 상호작용 검토
+- PR #107 squash merge 0682d83f891a20438d6d37eb231c3b20ca72c67e; post-merge safety ref safety/post-merge-pr107-2026-11-19.
+- Exact-head Run #1010 / ID 44490148586 success: 174 passed / 0 failed. CRA traceability, 10 official HTML sources, JSON provenance manifest round-trip 통과.
+- Manifest artifact #14511858034 SHA-256 dd4305ae872aec9cf208228f8924ed06a2cf2a2c3b9cabd7b063babbe3c2c69e. PDF canary는 EUR-Lex C(2026) 6013 empty body로 SKIPPED.
+- Official Commission CRA FAQ 2026-09-04 및 Machinery Regulation (EU) 2023/1230을 검토했다. 양 규정 동시 적용 제품은 양쪽 요구와 적합성 평가 절차를 각각 확인해야 한다.
+- 보고서 v0.4에 Machinery Regulation Annex III 1.1.9/1.2.1, 적용일 2027-01-20, EMC/LVD/RED/RoHS/WEEE/PLD 1차 스크리닝 및 제품 경계 질문을 추가했다.
+- Exact-main push CI는 별도 확인 전. 제품별 적용성·책임분담 Unknown, 시험 Not Run 유지.
