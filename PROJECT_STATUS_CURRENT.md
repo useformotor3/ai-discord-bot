@@ -654,3 +654,13 @@
 - ESI v0.98의 적용 목록에 iX700M은 명시되지 않는다. 별도 ESI 제공 여부와 실제 모델/SKU 매핑 확인 필요.
 - report v0.8은 13개 제품군별 연결 경로와 도구·ESI·업데이트 증거 공백을 표로 정리한다.
 - 제조사 PDF·설치 파일·ESI XML 원본을 다운로드·해시·검토한 것은 아님. 제품별 CRA scope/classification/conformity Unknown, 시험 Not Run.
+
+
+## 2026-11-19 — PR #113 병합 및 ESO M/606 진행보고서 검토
+- PR #113 merge SHA: 5273e6da25862a8ad1e92b2473a11a63b0d8015f; post-merge safety ref safety/post-merge-pr113-2026-11-19 생성.
+- PR #113 exact-head Run #1022 / ID 44492219721: success, 174 passed / 0 failed. CRA traceability 13/15/35/36/16/15/41 통과.
+- Live official CRA HTML 10-source canary 및 JSON provenance manifest parse/round-trip 통과. Artifact #14513586428, SHA-256 bc438c098ff591da5690070adcc417d3f440adcf4a6635df87b00b05ed9b7d95, 2,566 bytes, expires 2026-11-26 08:59:19 UTC.
+- PDF canary는 EUR-Lex C(2026) 6013 empty body로 SKIPPED. Exact-main push CI는 독립 확인 전.
+- STAN4CR/CEN-CENELEC/ETSI 공동 M/606 진행보고서 V2.0(2026-06-03)을 4페이지 전체 검토했다. 개별 M/606 표준의 2026-06-03 단계와 publication forecast, 산업용 OT/IACS 지원 deliverables(EN IEC 62443-4-1/-4-2/-3-3)를 보고서 v0.9에 반영.
+- 2026-06-03 forecast는 2026-11-10 C(2026) 7861 Annex I 개정 이전의 과거 예측이므로 현재 제출기한으로 사용하지 않는다. C(2026) 7861 Annex I를 제출기한 기준으로 유지한다.
+- IEC 62443 지원 deliverables는 M/606 41개 Annex I 표준 및 CRA OJ 조화표준 인용과 구분한다.
