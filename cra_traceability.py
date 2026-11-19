@@ -211,12 +211,12 @@ def validate_traceability(root="."):
         "cross_checked", "accepted", "rejected", "not_applicable_with_rationale",
     }
     required_by_state = {
-        "received": ("Evidence_File_Name", "Collection_Date"),
-        "source_verified": ("Evidence_File_Name", "Issuer", "Document_Version", "Collection_Date", "SHA256"),
-        "content_reviewed": ("Evidence_File_Name", "Issuer", "Document_Version", "Collection_Date", "SHA256", "Page_Section_Locator", "Reviewer", "Review_Date"),
-        "cross_checked": ("Evidence_File_Name", "Issuer", "Document_Version", "Collection_Date", "SHA256", "Page_Section_Locator", "Reviewer", "Review_Date", "Cross_Check_Reference"),
-        "accepted": ("Evidence_File_Name", "Issuer", "Document_Version", "Collection_Date", "SHA256", "Page_Section_Locator", "Reviewer", "Review_Date", "Cross_Check_Reference", "Decision", "Decision_Rationale"),
-        "rejected": ("Evidence_File_Name", "Issuer", "Document_Version", "Collection_Date", "SHA256", "Page_Section_Locator", "Reviewer", "Review_Date", "Decision", "Decision_Rationale"),
+        "received": ("Product_Variant_ID", "Evidence_File_Name", "Collection_Date"),
+        "source_verified": ("Product_Variant_ID", "Evidence_File_Name", "Issuer", "Document_Version", "Collection_Date", "SHA256", "Original_Language"),
+        "content_reviewed": ("Product_Variant_ID", "Evidence_File_Name", "Issuer", "Document_Version", "Collection_Date", "SHA256", "Original_Language", "Page_Section_Locator", "Reviewer", "Review_Date"),
+        "cross_checked": ("Product_Variant_ID", "Evidence_File_Name", "Issuer", "Document_Version", "Collection_Date", "SHA256", "Original_Language", "Page_Section_Locator", "Reviewer", "Review_Date", "Cross_Check_Reference"),
+        "accepted": ("Product_Variant_ID", "Evidence_File_Name", "Issuer", "Document_Version", "Collection_Date", "SHA256", "Original_Language", "Page_Section_Locator", "Reviewer", "Review_Date", "Cross_Check_Reference", "Decision", "Decision_Rationale"),
+        "rejected": ("Product_Variant_ID", "Evidence_File_Name", "Issuer", "Document_Version", "Collection_Date", "SHA256", "Original_Language", "Page_Section_Locator", "Reviewer", "Review_Date", "Decision", "Decision_Rationale"),
         "not_applicable_with_rationale": ("Product_Variant_ID", "Reviewer", "Review_Date", "Decision_Rationale"),
     }
     evidence_states = set()
@@ -234,7 +234,7 @@ def validate_traceability(root="."):
             _require(bool((row.get(field) or "").strip()),
                      f"{record_id}: {state} requires {field}", errors)
         if state == "not_provided":
-            for field in ("Evidence_File_Name", "Source_URL", "SHA256", "Reviewer", "Review_Date", "Decision", "Decision_Rationale"):
+            for field in ("Product_Variant_ID", "Evidence_File_Name", "Source_URL", "Issuer", "Document_Version", "Issue_Date", "Collection_Date", "SHA256", "Page_Section_Locator", "Original_Language", "Reviewer", "Review_Date", "Cross_Check_Reference", "Decision", "Decision_Rationale"):
                 _require(not (row.get(field) or "").strip(),
                          f"{record_id}: not_provided must not contain {field}", errors)
         if (row.get("SHA256") or "").strip():
@@ -388,14 +388,15 @@ def validate_traceability(root="."):
     section_numbers = re.findall(r"^##\s+(\d+)\.", integrated, flags=re.MULTILINE)
     _require(len(section_numbers) == len(set(section_numbers)),
              "integrated report contains duplicate top-level section numbers", errors)
-    _require(FILES["claims"] in readme and FILES["provenance"] in readme and FILES["m606_map"] in readme and FILES["product_intake"] in readme and FILES["evd_sec_crosswalk"] in readme,
-             "README must link claim register, PDF provenance, product intake and EVD/SEC crosswalk", errors)
+    _require(FILES["claims"] in readme and FILES["provenance"] in readme and FILES["m606_map"] in readme and FILES["product_intake"] in readme and FILES["evd_sec_crosswalk"] in readme and FILES["evidence_register"] in readme,
+             "README must link claim register, PDF provenance, product intake, EVD/SEC crosswalk and product evidence register", errors)
     _require("CRA_GUIDANCE_CLAIM_REGISTER_2026-11-17.csv" in integrated
              and "CRA_PDF_SOURCE_PROVENANCE_2026-11-17.json" in integrated
              and "CRA_M606_ANNEX_I_SERVO_DRIVE_RELEVANCE_2026-11-17.csv" in integrated
              and Path(FILES["product_intake"]).name in integrated
-             and Path(FILES["evd_sec_crosswalk"]).name in integrated,
-             "integrated report must link claim register, PDF provenance and EVD/SEC crosswalk", errors)
+             and Path(FILES["evd_sec_crosswalk"]).name in integrated
+             and Path(FILES["evidence_register"]).name in integrated,
+             "integrated report must link claim register, PDF provenance, EVD/SEC crosswalk and product evidence register", errors)
 
     if errors:
         raise TraceabilityError("\n".join(errors))
