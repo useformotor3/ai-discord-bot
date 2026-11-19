@@ -42,7 +42,7 @@
 - [CRA 공식 출처 수집·주장 추적 파이프라인 보고서](reports/CRA_SOURCE_PROVENANCE_PIPELINE_2026-11-17.md): Run #573, 138 passed / 1 xfailed, live 9-source canary 및 Article 13(8) quote 확인
 - CRA-only 범위 통제 기준점: PR #18 merge `b7813ddd311bc51bfb0eb26458eace9ff82b621f`; 통합 보고서 PR #19 merge `5776ca609130033bfff17ca62c9fabc3b9570b3b`; 인터페이스 매트릭스 PR #20 merge `951fc5ee0122b847b5e8f77bd5e0706db65efb76`
 - CRA 정정 보고서 #1–#38 및 인덱스: main 보존 확인
-- [CRA 서보 드라이브 통합 규제·기술 준수 보고서 v0.4](reports/CRA_INTEGRATED_COMPLIANCE_REPORT_2026-11-17.md): PR #21 병합 완료, 제품별 적용성 확인 전
+- [CRA 서보 드라이브 통합 규제·기술 준수 보고서 v0.5](reports/CRA_INTEGRATED_COMPLIANCE_REPORT_2026-11-17.md): PR #21 병합 완료, 제품별 적용성 확인 전
 - [CRA 요구사항 추적표 v0.2](reports/CRA_REQUIREMENTS_TRACEABILITY_2026-11-17.csv): PR #19 병합 완료, 35개 요구사항 행, 제품 증거 미확인 상태
 - [서보 드라이브 인터페이스별 CRA 적용성 매트릭스](reports/CRA_SERVO_DRIVE_INTERFACE_APPLICABILITY_2026-11-17.csv): PR #20 병합 완료, 15개 인터페이스/기능 유형, 제품별 증거 확인 전 잠정
 - [CRA 서보 드라이브 보안 통제·시험 매트릭스](reports/CRA_SERVO_DRIVE_SECURITY_CONTROL_TEST_MATRIX_2026-11-17.csv): 36개 통제 목표/위험/시험/증거 초안, 35개 요구사항 ID와 교차 연결, PR #22 병합 완료; 모델별 검증 전
@@ -846,3 +846,8 @@
 ## CRA와 Machinery Regulation 병행 검토
 - LS메카피온 CRA 보고서 v0.4는 Regulation (EU) 2023/1230의 Annex III 1.1.9/1.2.1과 CRA의 병행 적용, 제품 경계, EMC/LVD/RED 등 관련 제품법령을 별도로 스크리닝한다.
 - 제품별 공급 형태와 정확한 모델·무선 옵션·기계 내 역할이 확인되기 전에는 법령 적용 여부 및 책임 주체를 확정하지 않는다.
+
+
+## CRA 표준화 추가 트랙
+- LS메카피온 CRA 보고서 v0.5는 M/606 41개 표준과 Commission Notice C/2026/1695 Action 5(Annex III/IV 밖의 기계류 등 제품을 위한 추가 표준화 계획)를 구분한다.
+- 연간 작업계획에 포함된 사실은 최종 조화표준 또는 CRA Article 27 적합성 추정이 아니다. 실제 OJ 인용 상태를 별도 확인한다.
