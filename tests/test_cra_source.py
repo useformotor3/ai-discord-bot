@@ -9,6 +9,7 @@ from cra_source import (
     SourceUnavailableError,
     SourceValidationError,
     append_source_manifest,
+    build_source_provenance_manifest,
     fetch_official_cra_source,
     validate_source_manifest,
 )
@@ -113,6 +114,18 @@ def test_fetch_source_pack_checks_each_allowlisted_official_host(monkeypatch):
     assert all(len(item["full_text_sha256"]) == 64 for item in source["sources"])
     assert all(len(item["prompt_excerpt_sha256"]) == 64 for item in source["sources"])
     assert all(item["retrieved_at"] == source["retrieved_at"] for item in source["sources"])
+    manifest = build_source_provenance_manifest(source)
+    assert manifest["schema_version"] == "1.0"
+    assert manifest["source_pack_version"] == source["version"]
+    assert manifest["source_count"] == 10
+    assert len(manifest["sources"]) == 10
+    assert all(len(item["full_text_sha256"]) == 64 for item in manifest["sources"])
+    assert all(len(item["prompt_excerpt_sha256"]) == 64 for item in manifest["sources"])
+    assert any(
+        item["id"] == "CRA-2025-2392-important-critical-product-descriptions"
+        for item in manifest["sources"]
+    )
+
 
 
 def test_source_fetch_rejects_redirect_to_non_allowlisted_host(monkeypatch):
@@ -399,3 +412,24 @@ def test_consolidated_source_rejects_missing_operative_corrigendum_source():
 
     with pytest.raises(SourceValidationError, match="정오표 2건이 모두 필요"):
         cra_source.apply_consolidated_cra_corrigenda(source_items)
+
+
+
+def test_source_provenance_manifest_fails_closed_on_invalid_hash():
+    source = {
+        "version": "CRA official source pack v4",
+        "retrieved_at": "2026-11-19T00:00:00+00:00",
+        "sources": [{
+            "id": "CRA-test",
+            "url": "https://eur-lex.europa.eu/test",
+            "final_url": "https://eur-lex.europa.eu/test",
+            "kind": "official_legal_text",
+            "version": "test",
+            "full_text_sha256": "not-a-sha",
+            "prompt_excerpt_sha256": "a" * 64,
+            "retrieved_at": "2026-11-19T00:00:00+00:00",
+            "visible_text_chars": 100,
+        }],
+    }
+    with pytest.raises(SourceValidationError, match="SHA-256 형식 오류"):
+        build_source_provenance_manifest(source)
