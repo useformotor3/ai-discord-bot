@@ -42,7 +42,7 @@
 - [CRA 공식 출처 수집·주장 추적 파이프라인 보고서](reports/CRA_SOURCE_PROVENANCE_PIPELINE_2026-11-17.md): Run #573, 138 passed / 1 xfailed, live 9-source canary 및 Article 13(8) quote 확인
 - CRA-only 범위 통제 기준점: PR #18 merge `b7813ddd311bc51bfb0eb26458eace9ff82b621f`; 통합 보고서 PR #19 merge `5776ca609130033bfff17ca62c9fabc3b9570b3b`; 인터페이스 매트릭스 PR #20 merge `951fc5ee0122b847b5e8f77bd5e0706db65efb76`
 - CRA 정정 보고서 #1–#38 및 인덱스: main 보존 확인
-- [CRA 서보 드라이브 통합 규제·기술 준수 보고서 v0.7](reports/CRA_INTEGRATED_COMPLIANCE_REPORT_2026-11-17.md): PR #21 병합 완료, 제품별 적용성 확인 전
+- [CRA 서보 드라이브 통합 규제·기술 준수 보고서 v0.8](reports/CRA_INTEGRATED_COMPLIANCE_REPORT_2026-11-17.md): PR #21 병합 완료, 제품별 적용성 확인 전
 - [CRA 요구사항 추적표 v0.2](reports/CRA_REQUIREMENTS_TRACEABILITY_2026-11-17.csv): PR #19 병합 완료, 35개 요구사항 행, 제품 증거 미확인 상태
 - [서보 드라이브 인터페이스별 CRA 적용성 매트릭스](reports/CRA_SERVO_DRIVE_INTERFACE_APPLICABILITY_2026-11-17.csv): PR #20 병합 완료, 15개 인터페이스/기능 유형, 제품별 증거 확인 전 잠정
 - [CRA 서보 드라이브 보안 통제·시험 매트릭스](reports/CRA_SERVO_DRIVE_SECURITY_CONTROL_TEST_MATRIX_2026-11-17.csv): 36개 통제 목표/위험/시험/증거 초안, 35개 요구사항 ID와 교차 연결, PR #22 병합 완료; 모델별 검증 전
@@ -861,3 +861,8 @@
 ## CRA 신고 운영 준비
 - 보고서 v0.7은 ENISA SRP FAQ 2026-10-15와 SRP/User Manual v1.3을 반영해 실제 신고 절차·담당자·기한·UI 제약을 설명한다.
 - SRP의 72시간 카운터 표시와 AEV 최종보고서 카운터에는 한계가 있으므로 법정 기한은 제조자 내부 기록의 인지시각과 패치 제공시각을 기준으로 별도 관리한다.
+
+
+## LS메카피온 제품·도구·ESI 매핑
+- 보고서 v0.8은 13개 제품군의 공개 인터페이스, DriveCM Ver1.03.2 지원 모델, EtherCAT ESI Ver0.98 적용 모델을 교차 비교한다.
+- 공개 지원 목록에 없는 모델은 미지원으로 단정하지 않고 제조사 확인 필요/Unknown으로 유지한다. 도구·ESI·매뉴얼 원본의 해시·내용 검토는 다음 단계다.
