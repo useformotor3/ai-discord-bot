@@ -223,14 +223,8 @@ def test_evd_sec_crosswalk_rejects_unknown_control_reference(tmp_path):
 def test_evd_sec_crosswalk_rejects_missing_evidence_row(tmp_path):
     _copy_required_tree(tmp_path)
     path = tmp_path / REQUIRED[-1]
-    with path.open("r", encoding="utf-8-sig", newline="") as stream:
-        rows = list(csv.DictReader(stream))
-        fieldnames = list(rows[0])
-    rows = rows[:-1]
-    with path.open("w", encoding="utf-8", newline="") as stream:
-        writer = csv.DictWriter(stream, fieldnames=fieldnames)
-        writer.writeheader()
-        writer.writerows(rows)
+    lines = path.read_text(encoding="utf-8-sig").splitlines()
+    path.write_text("\n".join(lines[:-1]) + "\n", encoding="utf-8")
     with pytest.raises(TraceabilityError, match="expected 16 rows|cover EVD-01"):
         validate_traceability(tmp_path)
 
@@ -241,7 +235,8 @@ def test_evd_sec_crosswalk_rejects_orphaned_control(tmp_path):
     with path.open("r", encoding="utf-8-sig", newline="") as stream:
         rows = list(csv.DictReader(stream))
         fieldnames = list(rows[0])
-    rows[0]["Related_SEC_control_IDs"] = rows[0]["Related_SEC_control_IDs"].replace("SEC-035", "")
+    row = next(row for row in rows if row["Evidence_ID"] == "EVD-03")
+    row["Related_SEC_control_IDs"] = row["Related_SEC_control_IDs"].replace("SEC-008", "")
     with path.open("w", encoding="utf-8", newline="") as stream:
         writer = csv.DictWriter(stream, fieldnames=fieldnames)
         writer.writeheader()
