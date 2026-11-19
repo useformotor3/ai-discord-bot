@@ -222,7 +222,7 @@ def test_evd_sec_crosswalk_rejects_unknown_control_reference(tmp_path):
 
 def test_evd_sec_crosswalk_rejects_missing_evidence_row(tmp_path):
     _copy_required_tree(tmp_path)
-    path = tmp_path / REQUIRED[-1]
+    path = tmp_path / "reports/CRA_EVD_SEC_TRACEABILITY_CROSSWALK_2026-11-19.csv"
     lines = path.read_text(encoding="utf-8-sig").splitlines()
     path.write_text("\n".join(lines[:-1]) + "\n", encoding="utf-8")
     with pytest.raises(TraceabilityError, match="expected 16 rows|cover EVD-01"):
