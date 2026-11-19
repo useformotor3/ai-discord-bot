@@ -1632,3 +1632,20 @@
 - 보고서 v0.9에 2026-06-03 ESO M/606 progress snapshot과 산업용 IEC 62443-4-1/-4-2/-3-3 supporting deliverables를 추가했다.
 - 다음 작업은 2026-11-19 현재의 개별 M/606 진행상태·최종 발행·OJ citation 확인, LS메카피온 공식 매뉴얼·ESI·DriveCM 원본 파일 확보 및 해시·페이지 검토다.
 - Exact-main push CI는 독립 확인 전.
+
+
+---
+
+## 2026-11-20 — M/606 ETSI 공개 진행상태 부분 최신화
+
+- 시작 기준 main: `82e9bbf31124b840fa560f7a9e45b1fe84c53ce7`.
+- 작업 브랜치: `cra/m606-live-etsi-status-audit-2026-11-20`.
+- 복구 기준: `safety/pre-m606-live-status-audit-2026-11-20`.
+- 공식 유럽위원회 CRA 표준화 페이지, C(2026) 7861 Annex I, ETSI M/606 Work Programme v2.3.3 및 개별 작업 페이지를 확인했다.
+- ETSI 활성 M/606 작업 18개 확인(2026-11-17). EN 304 625 승인 절차 종료(11-02), EN 304 626 종료(11-05), EN 304 636 의견 분류 평가 완료(10-06)를 기록했다.
+- 채택/발행/OJ 일정은 계획값으로 구분. Article 27 적합성 추정은 OJ 실제 게재 전에는 주장하지 않는다.
+- 보고서 §23 addendum, 상황판, 마스터 계획 및 README를 갱신했다.
+- 법령/표준 전수감사 완료로 표시하지 않음. 41개 전체 개별 상태/OJ, CEN/CENELEC 상세, 제조사 파일 원본·해시·페이지 검토는 미완료.
+- 제품별 scope/classification/conformity = Unknown; security tests = Not Run.
+- 이 세션에서 운영 코드, 운영 workflow, secrets, state/history, legacy SIL 3 자료는 변경하지 않았다.
+- 검증 결과는 PR exact-head CI 실행 후 기록한다.
