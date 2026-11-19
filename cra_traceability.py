@@ -332,13 +332,14 @@ def validate_traceability(root="."):
     section_numbers = re.findall(r"^##\s+(\d+)\.", integrated, flags=re.MULTILINE)
     _require(len(section_numbers) == len(set(section_numbers)),
              "integrated report contains duplicate top-level section numbers", errors)
-    _require(FILES["claims"] in readme and FILES["provenance"] in readme and FILES["m606_map"] in readme and FILES["product_intake"] in readme,
-             "README must link claim register and PDF provenance manifest", errors)
+    _require(FILES["claims"] in readme and FILES["provenance"] in readme and FILES["m606_map"] in readme and FILES["product_intake"] in readme and FILES["evd_sec_crosswalk"] in readme,
+             "README must link claim register, PDF provenance, product intake and EVD/SEC crosswalk", errors)
     _require("CRA_GUIDANCE_CLAIM_REGISTER_2026-11-17.csv" in integrated
              and "CRA_PDF_SOURCE_PROVENANCE_2026-11-17.json" in integrated
              and "CRA_M606_ANNEX_I_SERVO_DRIVE_RELEVANCE_2026-11-17.csv" in integrated
-             and Path(FILES["product_intake"]).name in integrated,
-             "integrated report must link claim register and PDF provenance", errors)
+             and Path(FILES["product_intake"]).name in integrated
+             and Path(FILES["evd_sec_crosswalk"]).name in integrated,
+             "integrated report must link claim register, PDF provenance and EVD/SEC crosswalk", errors)
 
     if errors:
         raise TraceabilityError("\n".join(errors))
@@ -377,6 +378,8 @@ def main(argv=None):
         f"interfaces={summary['interfaces']} "
         f"requirements={summary['requirements']} "
         f"SEC={summary['security_controls']} "
+        f"EVD_SEC_crosswalk={summary['evd_sec_crosswalk_rows']} "
+        f"crosswalk_SEC_linked={summary['crosswalk_sec_controls_linked']} "
         f"linked_claims={summary['linked_claims']} "
         f"bidirectional_links={summary['bidirectional_links']} "
         f"M606_mapping_items={summary['m606_mapping_items']} "
