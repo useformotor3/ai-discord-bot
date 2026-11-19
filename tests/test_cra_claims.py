@@ -438,12 +438,14 @@ def test_extracts_multiple_high_value_cra_article_and_annex_locators():
         "ANNEX III",
         "IMPORTANT PRODUCTS WITH DIGITAL ELEMENTS",
         "Class I",
+        "(1) A footnote about category descriptions.",
         "10. Physical and virtual network interfaces",
         "Technical description: interfaces connect a device to a network.",
         "11. Operating systems",
         "Technical description: software controls execution.",
         "ANNEX IV",
         "CRITICAL PRODUCTS WITH DIGITAL ELEMENTS",
+        "(1) A footnote about critical product categories.",
         "1. Hardware Devices with Security Boxes",
         "Technical description: hardware securely stores sensitive data.",
         "2. Smart meter gateways",
@@ -453,8 +455,8 @@ def test_extracts_multiple_high_value_cra_article_and_annex_locators():
         "Article 7(1)": "core functionality",
         "Annex I Part I (2)(j)": "limit attack surfaces",
         "Annex I Part II (1)": "software bill of materials",
-        "Annex III(10)": "physical and virtual network interfaces",
-        "Annex IV(1)": "hardware devices with security boxes",
+        "Annex III category 10": "physical and virtual network interfaces",
+        "Annex IV category 1": "hardware devices with security boxes",
     }
     for locator, expected in checks.items():
         scope = extract_locator_scope(locator, text)
