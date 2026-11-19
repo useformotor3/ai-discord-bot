@@ -2,13 +2,13 @@
 
 > 최신 상태 스냅샷. 역사 기록은 SESSION_LOG 및 PROJECT_LOG에 append-only로 보존한다.
 
-## 최신 main 기준점 — PR #95 병합 및 사후 CI 완료 (2026-11-19)
-- PR #95 exact-head SHA fc4bffc89cc741055243d75389ad0a0da33898ba; Run #979 / ID 44449515567: success, **172 passed / 0 failed**.
-- PR #95 squash merge SHA / main: 33fd8d409667cfa2c78e8e998d843d85f60cf3f0.
-- Exact-main Run #980 / ID 44449631620: success, **172 passed / 0 failed**; source integrity, compile, CRA traceability, official CRA PDF and live EUR-Lex canaries passed.
-- Exact-main artifact #14495245880, digest sha256:3ad730233356927770e310227a36e7478688b34260f6c928e22e18da69b8e830, expires 2026-11-26 03:11:27 UTC.
-- Pre-merge safety ref safety/pre-pr95-merge-checkpoint-2026-11-19 points to main 6f6a0908d15e6ed9ef9e0043e9f7f2ed3961d64c. Post-merge safety ref safety/post-merge-pr95-2026-11-19 equals main at 33fd8d409667cfa2c78e8e998d843d85f60cf3f0; compare identical (0 ahead / 0 behind).
-- PR #95 was documentation/status sync only. Production main.py and .github/workflows/run.yml unchanged.
+## 최신 main 기준점 — PR #96 병합 및 사후 CI 완료 (2026-11-19)
+- PR #96 exact-head SHA fc9e2341cee5ae1f586c4f6d554c2d841f189922; Run #981 / ID 44449830415: success, **172 passed / 0 failed**.
+- PR #96 squash merge SHA / main: 68e09b18196f26a995d72eccbcf3af6ec0b2718e.
+- Exact-main Run #982 / ID 44449949865: success, **172 passed / 0 failed**; source integrity, compile, CRA traceability, official CRA PDF and live EUR-Lex canaries passed.
+- Exact-main artifact #14495251382, digest sha256:9f59d4e87eb9c0743b49823f8479e23be5e4f4c4d04152025863224b5044b535, expires 2026-11-26 03:14:15 UTC.
+- Pre-merge safety ref safety/pre-pr96-merge-checkpoint-2026-11-19 points to main 33fd8d409667cfa2c78e8e998d843d85f60cf3f0. Post-merge safety ref safety/post-merge-pr96-2026-11-19 equals main at 68e09b18196f26a995d72eccbcf3af6ec0b2718e; compare identical (0 ahead / 0 behind).
+- PR #96 was documentation/status sync only. Production main.py and .github/workflows/run.yml unchanged.
 
 ## 현재 기술 게이트
 - Annex III/IV classification is based on the product's core functionality as a whole under Implementing Regulation (EU) 2025/2392. Integrated components do not automatically classify the complete drive.
