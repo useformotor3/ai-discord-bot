@@ -978,3 +978,12 @@
 - PR #97 사후 안전 ref `safety/post-merge-pr97-2026-11-19`와 main의 동일성을 확인했다.
 - 다음 실질 우선순위는 이미 구축된 E-001~E-015 증거 수집 체계에 실제 제품 자료를 투입하는 것이다. 제조사/정확한 모델·SKU, 데이터시트, 설치·사용 매뉴얼이 없으면 제품별 Article 2 및 Annex III/IV 판정은 보류한다.
 - 문서 동기화만을 위한 반복 PR을 양산하지 않는다. 다음 문서 갱신은 법령/제품 증거/코드의 실질 변경과 함께 수행한다.
+
+
+## 2026-11-19 — PR #99: 2025/2392 공식 출처 및 Annex locator 검증
+- Official CRA source pack을 v4로 올리고 Commission Implementing Regulation (EU) 2025/2392를 공식 Publications Office/Cellar source catalog에 추가했다.
+- 2025/2392 원문 33,865 visible chars를 수집하고 excerpt SHA-256 `9c9715a1c463dca7ccf499e5f901ac642426b70a2aba89eb479525fbb78a1702`를 기록했다.
+- live canary가 core-functionality recital marker와 Annex I category 10 / Annex II category 1을 실제 원문에서 추출·검증한다.
+- Annex category 번호 1.과 각주 (1) 혼동을 재현하고 명시적 Annex II category 1 locator와 회귀 테스트로 해결했다.
+- PR #99 exact-head Run #993: 173 passed / 0 failed; source pack 10, PDF sources 3개 수집·해시 및 live canary 통과.
+- 특정 서보 드라이브의 제품별 분류·적합성 판정은 제품 자료가 없으므로 계속 Unknown. 다음 단계는 실제 모델/SKU와 데이터시트·매뉴얼 수집이다.

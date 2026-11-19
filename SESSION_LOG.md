@@ -1481,3 +1481,19 @@
 - 기존 분기 브랜치 `cra/applicability-core-functionality-audit-2026-11-19`는 main 대비 9 ahead / 9 behind이며 merge-base가 오래되어 통합하지 않았다. 필요한 작업은 최신 main 기반 새 브랜치에서 진행한다.
 - CRA 제품별 실제 자료는 여전히 미제공. E-001~E-015는 not_provided 상태를 유지하며 제품별 적합성/분류/시험 Pass를 주장하지 않는다.
 - 운영 `main.py`, `.github/workflows/run.yml`, secrets, `state.json`, `history.json`은 변경하지 않았다.
+
+
+## 2026-11-19 — PR #98 상태 문서 정합성 병합
+- PR #98 merge fa97e00b4f6ba1c31d175efcd0a48e68fe926347; README/PROJECT_STATUS_CURRENT/MASTER_PLAN/SESSION_LOG/PROJECT_LOG를 PR #97 기준으로 동기화하고 PROJECT_STATUS.md를 역사 스냅샷으로 명시.
+- Exact-head Run #986 / ID 44454415836: success, 172 passed / 0 failed. Official HTML live canary 9개 출처 및 Article 13(8) 확인.
+- PDF source canary는 EUR-Lex PDF endpoint empty body로 SKIPPED; artifact upload도 skip. 이를 통과로 기록하지 않았다.
+- Post-merge safety ref safety/post-merge-pr98-2026-11-19와 main identical.
+
+## 2026-11-19 — PR #99 2025/2392 공식 source pack 및 locator parser 개선
+- 공식 source catalog에 Commission Implementing Regulation (EU) 2025/2392 추가; source pack v4 / 10 official sources.
+- cra_claims.py에 명시적 Annex category locator를 추가해 footnote (1)와 category 1.의 혼동을 방지.
+- tests/test_cra_claims.py, tests/test_cra_source.py에 Annex/Article locator 및 source catalog 회귀 검증을 추가하고 tests workflow blob pins 갱신.
+- PR #99 exact-head Run #993 / ID 44454970377: success, **173 passed / 0 failed**. Live source pack 10개, 2025/2392 33,865 chars, Annex I category 10 / Annex II category 1 locator canary 통과.
+- Commission PDF 3개 수집/해시 성공; artifact #14496564799 SHA-256 c19aaf7465041fd21def6d634daaea08f897ec32ca1892452e6d18bce71d44c2. Guidance PDF는 fallback=True, 나머지 2개는 fallback=False.
+- PR #99 merge b5e6982270a4b3b913e5ae584786340ce58755f3; post-merge safety ref safety/post-merge-pr99-2026-11-19와 main identical.
+- Exact-main push CI는 아직 독립 확인하지 않았으며 성공으로 기록하지 않는다. 운영 main.py 및 .github/workflows/run.yml 미변경.
