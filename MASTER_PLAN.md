@@ -1006,3 +1006,12 @@
 - 법령 수집은 전수 완료가 아니다. HTML source pack 10개 및 PDF source pipeline 3개는 주요 CRA 법령·공식자료를 다루지만, 관련 제품법령, 최신 ENISA FAQ, M/606 41개 표준 상태, 최종 표준 전문 및 OJ 조화표준 인용 감사가 남아 있다.
 - 모델별 EU 공급, exact SKU/HW/FW, 실제 인터페이스·프로토콜, SBOM, PSIRT, 지원기간, 시험 증거가 없으므로 제품별 판정 Unknown, 시험 Not Run 유지.
 - 다음 P0: 제조사 카탈로그·모델 매뉴얼 원본 수집/해시 → 모델/variant 매핑 → Article 2 적용성 및 Annex III/IV 판정 → EVD/SEC/시험 연결.
+
+
+## 2026-11-19 — PR #104 LS메카피온 제품군 예비 분석 병합
+- PR #104 merge SHA / main: `c3d234240d342d82cf9402ef0b07b82531ddee03`; post-merge safety ref `safety/post-merge-pr104-2026-11-19`와 main identical.
+- 신규 보고서 `reports/CRA_LS_MECAPION_SERVO_DRIVE_FAMILY_PRELIMINARY_ASSESSMENT_2026-11-19.md` v0.1, 542 lines. LS메카피온 공개 13개 제품 계열, CRA 입문 설명, Article 2 데이터 연결, 제품 경계, Annex III/IV 핵심 기능, Article 13/14, 위협 시나리오, 참조 아키텍처, 12개 시험 후보, E-001~E-015, 용어집 포함.
+- Exact-head Run #1004 / ID 44485297107: success, **174 passed / 0 failed**. Source integrity, compile, CRA traceability, full pytest 통과.
+- Live CRA HTML 10-source canary 통과. JSON provenance manifest 10 records parse + round-trip 통과. Artifact #14509668548 SHA-256 `1d3ac8ea2e049780161766ef158fecfa3ab2a7d795b477424b339e5004772bf6`.
+- PDF canary는 EUR-Lex C/2026/6013 endpoint empty body로 temporary outage / SKIPPED; PDF artifact 없음. PDF canary 성공으로 주장하지 않는다.
+- 법령 전수 수집·분석, 모델별 CRA 적용성/분류, 실제 보안 구현 및 시험은 미완료. 정확한 SKU/HW/FW와 EU 공급 증거 확보가 다음 단계.
