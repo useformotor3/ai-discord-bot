@@ -2,17 +2,16 @@
 
 > 최신 상태 스냅샷. 역사 기록은 SESSION_LOG 및 PROJECT_LOG에 append-only로 보존한다.
 
-## 최신 main 기준점 — PR #103 main 반영 및 LS메카피온 제품군 예비 분석 착수 (2026-11-19)
-- PR #103 merge SHA / main: `1baea7b034a0b49eb42c433f2edc9d5d2d1d7d73`; PR #100~#103 결과와 source manifest 검증 기록이 main에 반영됨.
-- PR #103 exact-head Run #1002 / ID 44456036996: success, **174 passed / 0 failed**.
-- CRA traceability, compile, full pytest, official PDF source canary, 10-source live official canary, source manifest upload 모두 통과.
-- Source provenance manifest: 10 records, json.loads parse + object round-trip equality 통과. Artifact #14496534452, SHA-256 `7f2836072bdfa38b7857c47bdac4c6fdb2b71c38bd29b987889aad0646e78cc7`, 2,566 bytes, expires 2026-11-26 04:05:17 UTC.
-- PDF artifact #14497431708, SHA-256 `b4090a51f855b1d6f391b82942e6301d91119e651fe528848eaa77e66b5ac4ee`, expires 2026-11-26 04:05:06 UTC.
-- Official source pack v4: 10 official sources; Article 13(8), 2025/2392 core-functionality marker, Annex I category 10 and Annex II category 1 live locator checks passed.
-- PR #101's initial artifact is superseded; use PR #102's round-trip-validated manifest artifact above.
-- Pre-merge safety ref `safety/pre-pr102-json-manifest-fix-2026-11-19`; post-merge safety ref `safety/post-merge-pr102-2026-11-19` is identical to main.
-- Exact-main push CI has not been independently confirmed; do not report it as passed. PR exact-head CI is verified.
-- Product-specific evidence remains `not_provided`; product applicability/category/compliance remain Unknown pending exact model/SKU and primary evidence.
+## 최신 main 기준점 — PR #104 LS메카피온 제품군 예비 분석 보고서 병합 (2026-11-19)
+- PR #104 merge SHA / main: `c3d234240d342d82cf9402ef0b07b82531ddee03`.
+- PR #104 exact-head Run #1004 / ID 44485297107: success, **174 passed / 0 failed**.
+- Source blob integrity, compile, CRA traceability (claims 13, interfaces 15, requirements 35, SEC 36, EVD crosswalk 16, product evidence 15, M/606 41), full pytest 통과.
+- Live official CRA HTML source pack 10개 fetch 성공. 10-record provenance manifest JSON parse + object round-trip 성공.
+- Manifest artifact #14509668548, 2,566 bytes, SHA-256 `1d3ac8ea2e049780161766ef158fecfa3ab2a7d795b477424b339e5004772bf6`, expires 2026-11-26 08:10:28 UTC.
+- PDF canary: EUR-Lex C/2026/6013 PDF endpoint empty body로 temporary source outage / SKIPPED. PDF artifact 없음. PDF canary를 성공으로 표시하지 않는다.
+- Pre-merge safety `safety/pre-lsmecapion-family-assessment-2026-11-19`; post-merge safety `safety/post-merge-pr104-2026-11-19`와 main identical.
+- Exact-main push CI는 독립 확인 전이므로 성공으로 기록하지 않는다.
+- LS메카피온 제품군 예비 보고서 v0.1이 main에 추가됨. 정확한 모델/SKU, HW/FW revision, EU 공급 경로, 모델별 매뉴얼·SBOM·보안 설계·시험 증거는 미확인. 제품별 scope/classification/conformity Unknown, 시험 Not Run.
 
 
 ## LS메카피온 제품군 예비 분석 — 2026-11-19
@@ -20,11 +19,13 @@
 - 제조사 공개 제품 페이지에서 13개 계열(iX700M, iX7M, iX7NH, L7NHA, L7NHB, L7NHF, L7PA, L7PB, PHOX, L7C, L7SA, L7SB, GEM)을 확인했다.
 - 제품군별 전압/용량/통신형·펄스형 정보는 공개 페이지 수준에서만 확인. 각 모델 PDF 매뉴얼·카탈로그의 원본 다운로드, SHA-256, 페이지별 검토는 아직 미완료.
 - DriveCM 안내는 L7P/L7NH/L7NHF/PEGA/PHOX/iX7NH/L7C/iX7M 지원과 L7S/L7N 구형 도구 사용 구분을 보여준다. 이를 HW/FW 동일성이나 현재 지원기간의 증거로 확대하지 않는다.
-- 보고서 `reports/CRA_LS_MECAPION_SERVO_DRIVE_FAMILY_PRELIMINARY_ASSESSMENT_2026-11-19.md` 작성 중/초안: 초보자용 CRA 설명, 제품군 표, Article 2 데이터 연결, Annex III/IV 핵심 기능, 제조사 의무, Article 14, 위협 시나리오, 참조 아키텍처, 시험·증거 계획 포함.
+- 보고서 `reports/CRA_LS_MECAPION_SERVO_DRIVE_FAMILY_PRELIMINARY_ASSESSMENT_2026-11-19.md` v0.1이 PR #104로 main에 병합됨: 초보자용 CRA 설명, 제품군 표, Article 2 데이터 연결, Annex III/IV 핵심 기능, 제조사 의무, Article 14, 위협 시나리오, 참조 아키텍처, 시험·증거 계획 포함.
 - 잠정 결론: EtherCAT 계열은 데이터 연결이 포함될 가능성이 높다. 펄스/아날로그 계열도 디지털 서비스·설정 인터페이스 및 지령의 성격에 따라 판단한다. EtherCAT/RTOS/MCU 존재만으로 Annex III/IV 분류를 자동 확정하지 않는다.
 - EU 시장 공급·모델별 intended purpose·HW/FW revision·프로토콜·제품 경계·RDPS·지원기간 자료가 없으므로 제품별 CRA scope/classification/conformity는 Unknown.
 - 법령 전수 수집·분석은 미완료. 현재 HTML 10 source + PDF 3 source 파이프라인은 주요 CRA 법령·공식자료를 다루지만 관련 제품법령·표준 전문·OJ 조화표준 인용·최신 ENISA FAQ 전수 감사가 남아 있다.
 - 보안 시험은 모두 Not Run. 이 보고서는 예비 분석이며 최종 적합성 평가가 아니다.
+
+- PR #104 exact-head CI Run #1004: 174 passed / 0 failed. PDF canary는 EUR-Lex endpoint empty body로 SKIPPED이며 PDF artifact 없음. HTML 10-source manifest는 JSON round-trip 검증 및 artifact 업로드 성공.
 
 ## 현재 기술 게이트
 - Annex III/IV classification is based on the product's core functionality as a whole under Implementing Regulation (EU) 2025/2392. Integrated components do not automatically classify the complete drive.
