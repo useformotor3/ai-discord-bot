@@ -1649,3 +1649,10 @@
 - 제품별 scope/classification/conformity = Unknown; security tests = Not Run.
 - 이 세션에서 운영 코드, 운영 workflow, secrets, state/history, legacy SIL 3 자료는 변경하지 않았다.
 - 검증 결과는 PR exact-head CI 실행 후 기록한다.
+
+
+### 추가 공식 상태 확인 — CEN-CENELEC EN 40000 발행 (2026-11-20)
+- CEN-CENELEC 공식 뉴스룸의 2026-11-19 발표에서 EN 40000-1-1(용어) 및 EN 40000-1-2(원칙·제품 위험관리·생애주기 활동) 발행 사실을 확인했다.
+- EN 40000-1-2를 LS메카피온 제품 위험평가·개발·생산·유지보수·지원종료 프로세스 검토의 우선 참고표준으로 기록했다.
+- 표준 발행과 CRA Article 27 OJ 인용은 별개다. OJ 참조 게재가 확인되기 전에는 적합성 추정을 주장하지 않는다.
+- 통합 보고서 §23 및 상황판/마스터 계획/README에 반영했다.
