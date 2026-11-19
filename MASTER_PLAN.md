@@ -1,5 +1,13 @@
 # CRA 서보 드라이브 마스터 계획서
 
+## 최신 우선순위 — 2026-11-20: OJ CRA Guidance C/2026/6013
+
+- 2026-11-17 EU 관보 C/2026/6013 최종본(61p)을 확보하고 §24에 LS메카피온 제품 적용 해설을 통합했다.
+- 핵심 적용: 제품 경계/데이터 연결, core functionality, firmware substantial modification, support period, external dependencies/due diligence, family reuse, RDPS, Article 14 reporting.
+- 모델별 증거가 없으므로 scope/classification/RDPS는 Unknown 유지. Article 14의 2026-09-11 적용 시점과 지원기간 종료 후에도 계속되는 보고 의무는 즉시 확인할 우선 항목이다.
+- 다음 단계: 제조사 원본 매뉴얼/DriveCM/ESI 및 제품 SKU 증거를 확보해 §24의 각 Unknown을 모델별로 해소하고, 지원기간·업데이트·보고 절차 증거를 연결한다.
+
+
 ## PR #116 병합 확인 — 2026-11-20
 
 - Main merge SHA: `6092ca1c61c696a716583e6bc0f7d5150cbee269`; post-merge safety ref: `safety/post-merge-pr116-2026-11-20`.
