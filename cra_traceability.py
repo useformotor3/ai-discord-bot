@@ -28,6 +28,7 @@ FILES = {
     "readme": "README.md",
     "integrated_report": "reports/CRA_INTEGRATED_COMPLIANCE_REPORT_2026-11-17.md",
     "product_intake": "reports/CRA_PRODUCT_BOUNDARY_AND_EVIDENCE_INTAKE_2026-11-17.md",
+    "evd_sec_crosswalk": "reports/CRA_EVD_SEC_TRACEABILITY_CROSSWALK_2026-11-19.csv",
 }
 
 
@@ -78,6 +79,7 @@ def validate_traceability(root="."):
     requirements = _read_csv(data["requirements"])
     controls = _read_csv(data["controls"])
     m606_map = _read_csv(data["m606_map"])
+    evd_sec_crosswalk = _read_csv(data["evd_sec_crosswalk"])
 
     expected_counts = {
         "claims": (claims, 13),
@@ -155,6 +157,42 @@ def validate_traceability(root="."):
                 linked_ids = set(id_pattern.findall(claim_row.get(claim_link_field, "") or ""))
                 _require(matrix_id in linked_ids,
                          f"{matrix_id}: {claim_id} missing claim-register reverse link", errors)
+
+    # Validate the EVD-to-SEC-to-CRA evidence crosswalk. These are candidate links,
+    # not product applicability decisions or evidence of implementation/pass.
+    evd_ids = {f"EVD-{number:02d}" for number in range(1, 17)}
+    crosswalk_evd_ids = [row.get("Evidence_ID", "") for row in evd_sec_crosswalk]
+    _require(len(evd_sec_crosswalk) == 16,
+             f"EVD/SEC crosswalk: expected 16 rows, found {len(evd_sec_crosswalk)}", errors)
+    _require(set(crosswalk_evd_ids) == evd_ids,
+             "EVD/SEC crosswalk must cover EVD-01 through EVD-16 exactly", errors)
+    _require(len(crosswalk_evd_ids) == len(set(crosswalk_evd_ids)),
+             "EVD/SEC crosswalk contains duplicate Evidence_ID values", errors)
+    crosswalk_sec_refs = set()
+    crosswalk_req_refs = set()
+    for row_number, row in enumerate(evd_sec_crosswalk, start=2):
+        evidence_id = row.get("Evidence_ID", "")
+        req_refs = set(REQUIREMENT_RE.findall(row.get("Related_CRA_requirement_IDs", "") or ""))
+        sec_refs = set(CONTROL_RE.findall(row.get("Related_SEC_control_IDs", "") or ""))
+        crosswalk_req_refs.update(req_refs)
+        crosswalk_sec_refs.update(sec_refs)
+        _require(bool(req_refs),
+                 f"EVD/SEC crosswalk row {row_number} ({evidence_id}): no CRA requirement links", errors)
+        _require(bool(sec_refs),
+                 f"EVD/SEC crosswalk row {row_number} ({evidence_id}): no SEC control links", errors)
+        _require(req_refs.issubset(id_sets.get("requirements", set())),
+                 f"{evidence_id}: unknown CRA requirement refs {sorted(req_refs - id_sets.get('requirements', set()))}", errors)
+        _require(sec_refs.issubset(id_sets.get("controls", set())),
+                 f"{evidence_id}: unknown SEC control refs {sorted(sec_refs - id_sets.get('controls', set()))}", errors)
+        _require(bool(row.get("Mapping_rationale_ko", "").strip()),
+                 f"{evidence_id}: mapping rationale is required", errors)
+        _require(bool(row.get("Applicability_and_status", "").strip()),
+                 f"{evidence_id}: applicability/status caveat is required", errors)
+    orphan_sec_refs = sorted(id_sets.get("controls", set()) - crosswalk_sec_refs)
+    _require(not orphan_sec_refs,
+             f"SEC controls missing from EVD/SEC crosswalk: {orphan_sec_refs}", errors)
+    _require(crosswalk_req_refs.issubset(id_sets.get("requirements", set())),
+             "EVD/SEC crosswalk contains unknown CRA requirement references", errors)
 
     # Validate the complete M/606 Annex I crosswalk and every candidate foreign key.
     _require(len(m606_map) == 41,
@@ -310,6 +348,8 @@ def validate_traceability(root="."):
         "interfaces": len(interfaces),
         "requirements": len(requirements),
         "security_controls": len(controls),
+        "evd_sec_crosswalk_rows": len(evd_sec_crosswalk),
+        "crosswalk_sec_controls_linked": len(crosswalk_sec_refs),
         "linked_claims": len(used_claims),
         "bidirectional_links": True,
         "referenced_m606_items": sorted(referenced_items),
