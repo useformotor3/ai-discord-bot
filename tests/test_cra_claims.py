@@ -2,7 +2,7 @@ import json
 
 import pytest
 
-from cra_claims import validate_claim_evidence
+from cra_claims import extract_locator_scope, validate_claim_evidence
 
 
 SOURCE_ID = "CRA-2024-2847-consolidated"
@@ -406,3 +406,57 @@ def test_claim_statement_must_match_body_exactly():
     valid, reason = validate_claim_evidence(report, SOURCE)
     assert not valid
     assert "statement가 본문에" in reason
+
+
+
+def test_extracts_multiple_high_value_cra_article_and_annex_locators():
+    text = "\n".join([
+        "Article 2",
+        "Scope",
+        "1.",
+        "This Regulation applies to products whose intended purpose includes a direct or indirect logical or physical data connection to a device or network.",
+        "2.",
+        "This Regulation does not apply to certain excluded products.",
+        "Article 7",
+        "Important products with digital elements",
+        "1.",
+        "Products with the core functionality of a product category set out in Annex III shall be considered important products.",
+        "2.",
+        "The categories meet specified criteria.",
+        "ANNEX I",
+        "ESSENTIAL CYBERSECURITY REQUIREMENTS",
+        "Part I",
+        "(1)",
+        "Products shall be designed and developed securely.",
+        "(2)",
+        "Products shall protect security properties.",
+        "(j)",
+        "Products shall be designed to limit attack surfaces, including external interfaces.",
+        "Part II",
+        "(1)",
+        "Manufacturers shall draw up a software bill of materials.",
+        "ANNEX III",
+        "IMPORTANT PRODUCTS WITH DIGITAL ELEMENTS",
+        "Class I",
+        "10. Physical and virtual network interfaces",
+        "Technical description: interfaces connect a device to a network.",
+        "11. Operating systems",
+        "Technical description: software controls execution.",
+        "ANNEX IV",
+        "CRITICAL PRODUCTS WITH DIGITAL ELEMENTS",
+        "1. Hardware Devices with Security Boxes",
+        "Technical description: hardware securely stores sensitive data.",
+        "2. Smart meter gateways",
+    ])
+    checks = {
+        "Article 2(1)": "direct or indirect logical or physical data connection",
+        "Article 7(1)": "core functionality",
+        "Annex I Part I (2)(j)": "limit attack surfaces",
+        "Annex I Part II (1)": "software bill of materials",
+        "Annex III(10)": "physical and virtual network interfaces",
+        "Annex IV(1)": "hardware devices with security boxes",
+    }
+    for locator, expected in checks.items():
+        scope = extract_locator_scope(locator, text)
+        assert scope is not None, locator
+        assert expected in " ".join(scope.split()).casefold(), locator
