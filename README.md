@@ -10,18 +10,20 @@
 
 > **기록 원칙:** 프로젝트의 공식 진행 상태와 재개 지점은 이 저장소에 기록합니다. 대화창의 기억에만 의존하지 않습니다.
 
-### 현재 기준점 — main / PR #97 병합 및 사후 검증 완료 (2026-11-19)
-- main / PR #97 merge SHA: `9ebab690b6cbbf0f3588bfeab16c622dca4d65e9`.
-- PR #97 exact-head Run #983: success, **172 passed / 0 failed**.
-- Exact-main Run #984 / ID 44450311535: success, **172 passed / 0 failed**; source blob integrity, compile, CRA traceability, full pytest, official CRA PDF live canary, artifact upload, live EUR-Lex canary 모두 통과.
-- Pre-merge safety ref: `safety/pre-pr97-merge-checkpoint-2026-11-19`; post-merge safety ref: `safety/post-merge-pr97-2026-11-19`, main과 동일성 확인.
-- PR #94의 E-001~E-015 product evidence register 및 fail-closed provenance gates, EVD-01~16 ↔ CRA ↔ SEC-001~036 후보 추적 체계가 main에 존재한다. 실제 제품 증거는 여전히 `not_provided`; 제품별 결론은 Unknown 유지.
+### 현재 기준점 — main / PR #99 병합 및 exact-head 검증 완료 (2026-11-19)
+- main / PR #99 merge SHA: `b5e6982270a4b3b913e5ae584786340ce58755f3`; PR #98 status-sync도 main에 병합됨.
+- PR #99 exact-head Run #993 / ID 44454970377: success, **173 passed / 0 failed**.
+- Live official source pack v4: 10개 공식 출처 검증. Implementing Regulation (EU) 2025/2392 33,865 visible chars, excerpt SHA-256 `9c9715a1c463dca7ccf499e5f901ac642426b70a2aba89eb479525fbb78a1702`.
+- Live canary: CRA Article 13(8), 2025/2392 core-functionality marker, Annex I category 10 및 Annex II category 1 locator 검증 통과.
+- PDF artifact #14496564799, SHA-256 `c19aaf7465041fd21def6d634daaea08f897ec32ca1892452e6d18bce71d44c2`; expires 2026-11-26 03:57:52 UTC. Guidance PDF는 fallback=True, OJ guidance 및 M/606 Annex PDF는 fallback=False.
+- Pre-merge ref `safety/pre-cra-2392-source-canary-2026-11-19`; post-merge ref `safety/post-merge-pr99-2026-11-19`는 main과 동일.
+- 제품별 증거는 여전히 `not_provided`; 모델별 적용성·분류·구현·시험 판정은 Unknown 유지.
 
 
 ## 현재 상태 — 2026-11-19
 
-- 최신 main: PR #97 merge `9ebab690b6cbbf0f3588bfeab16c622dca4d65e9`; exact-main Run #984 success, 172 passed / 0 failed.
-- EVD-01~16 ↔ CRA ↔ SEC-001~036 추적표와 E-001~E-015 제품 증거 register가 main에 반영됨.
+- 최신 main: PR #99 merge `b5e6982270a4b3b913e5ae584786340ce58755f3`; PR #99 exact-head Run #993 success, 173 passed / 0 failed. Post-merge main CI 별도 실행은 아직 확인 전.
+- EVD-01~16 ↔ CRA ↔ SEC-001~036 추적표와 E-001~E-015 제품 증거 register가 main에 반영됨. Official source pack v4에는 2025/2392 기술 설명이 포함됨.
 - 실제 제품 자료는 모두 not_provided. accepted/비적용 판정은 provenance·SHA-256·locator·검토자·근거 검증을 통과해야 한다.
 - 다음 단계는 정확한 모델 데이터시트와 사용설명서 확보 후 제품 variant별 CRA scope/core-functionality 및 증거 적용성 검토.
 
