@@ -3,6 +3,11 @@
 > 최신 상태 스냅샷. 역사 기록은 SESSION_LOG 및 PROJECT_LOG에 append-only로 보존한다.
 
 
+## 인용 정정 — CRA 공식 지침 문서번호 (2026-11-20)
+
+- 보고서 §15.1의 이전 표기 `C(2026) 6013`을 정정한다. 최종 공식 관보 인용은 `OJ C/2026/6013` (17.11.2026)이며, `C(2026) 5252 final`은 초안 지침 승인 문서다.
+- 최종 해설 근거는 EUR-Lex OJ C/2026/6013 PDF와 committed source manifest를 사용한다. C(2026) 5252 ANFR fallback copy는 non-primary로만 기록한다.
+
 ## 최신 main 기준점 — PR #119 CRA 공식 관보 해설 분석 병합 (2026-11-20)
 
 - PR #119 squash merge / main SHA: `46feea8fab4924889be30f8ae5afb7a072673055`; post-merge safety ref: `safety/post-merge-pr119-2026-11-20`.
