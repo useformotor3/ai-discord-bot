@@ -408,3 +408,8 @@ Commission은 2026-11-10 C(2026) 7861 final로 M/606 Annex I을 개정했다. �
 ## EVD–CRA–SEC 교차 추적 부속서 — 2026-11-19
 
 EVD-01~16과 CRA 요구사항·SEC-001~036 통제의 후보 연결은 [`CRA_EVD_SEC_TRACEABILITY_CROSSWALK_2026-11-19.csv`](CRA_EVD_SEC_TRACEABILITY_CROSSWALK_2026-11-19.csv)에 기록한다. 이는 제품별 적용성 판정이나 구현·시험 Pass가 아니며, 제품 모델·SKU·BOM·펌웨어·통신 경계 확인 후 각 링크의 적용성을 승인해야 한다. 세부 책임·검증·합격 게이트는 [`CRA_REQUIREMENTS_TO_EVIDENCE_MATRIX_2026-11-18.md`](CRA_REQUIREMENTS_TO_EVIDENCE_MATRIX_2026-11-18.md)를 기준으로 한다.
+
+
+## 제품별 증거 register 부속서 — 2026-11-19
+
+제품별 E-001~E-015 자료는 [CRA_PRODUCT_EVIDENCE_REGISTER_TEMPLATE_2026-11-19.csv](CRA_PRODUCT_EVIDENCE_REGISTER_TEMPLATE_2026-11-19.csv)에 기록하고 EVD-01~16에 연결한다. 이 register는 제출·검토·승인 provenance를 추적하는 양식이며 제품별 적합성 결론이 아니다. 모든 항목은 자료가 수령·검증되기 전까지 not_provided로 유지한다. accepted 및 not-applicable 판정은 hash, source/locator, reviewer/date, rationale 등 필수 메타데이터가 있어야 하며 validator가 이를 fail-closed로 검사한다.
