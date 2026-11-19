@@ -621,3 +621,14 @@
 - 기존 M/606 41행 CSV와 validator의 날짜 기대값이 원문과 일치함을 대조했다. 날짜 불일치 수정은 불필요.
 - 보고서 v0.6은 제출기한이 제조자 CRA 준수기한이 아님을 강조하고, EtherCAT 포트·MCU/FPGA 존재가 Annex III/IV 제품분류를 자동 결정하지 않는다는 주의사항을 강화한다.
 - 개별 표준 진행 상태·OJ citation 전수 감사는 미완료. 제품별 CRA 판정 Unknown, 시험 Not Run.
+
+
+## 2026-11-19 — PR #110 병합 및 M/606 Annex 원문 검증 완료
+- PR #110 merge SHA: 57c7734d59b5046598e67aefd5d74a2ea29d3e2b; post-merge safety ref safety/post-merge-pr110-2026-11-19 생성.
+- PR #110 exact-head Run #1016 / ID 44491245339: success, 174 passed / 0 failed. CRA traceability 13/15/35/36/16/15/41 통과.
+- Live official CRA HTML 10-source canary 및 JSON manifest round-trip 통과. Artifact #14512063867, SHA-256 b2630ffa5f6d6cd71026faf31422e2365a836c51c50225c6ccdd51f2b1f55b09, 2,566 bytes, expires 2026-11-26 08:52:34 UTC.
+- PDF canary는 EUR-Lex C(2026) 6013 empty body로 SKIPPED; PDF artifact 없음. Exact-main push CI는 독립 확인 전.
+- 보고서 v0.7에서 ENISA SRP FAQ 2026-10-15, 플랫폼 v1.3(2026-11-04), AR User Manual v1.3을 반영한다.
+- 신고 기한(24h/72h/AEV 14d/SI 1 month), Primary AR 1명·Secondary AR 최대 20명, EU Login/MFA, 영어 UI, 초기 API 미제공, 장애 대응, SRP v1.3 카운터 한계를 설명한다.
+- SRP 72h 카운터는 현재 Early Warning 제출 이후 48h를 더하는 표시 로직으로 실제 인지시각 기준 기한보다 일찍 overdue 표시될 수 있다. AEV Final Report 카운터도 미구현. 화면 알림이 법정 기한을 변경하지 않으므로 내부 tracker를 유지해야 한다.
+- 과거 출시 제품의 Article 14 신고, 통합 부품 취약점의 완제품/부품 제조자 신고 책임도 보고서에 추가했다.
