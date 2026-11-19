@@ -495,3 +495,12 @@
 - cra_traceability.py에 15개 Evidence ID, EVD foreign keys, 상태 전이별 필수 메타데이터, SHA-256 형식, accepted/rejected/not-applicable decision gate 검증을 추가했다.
 - 회귀 테스트 4개 추가: 템플릿 15행, provenance 없는 accepted 거부, unknown EVD ref 거부, rationale 없는 not-applicable 거부.
 - 테스트 workflow의 exact blob pins를 새 validator/test/template에 맞춰 갱신했다. PR/CI 전이며 제품별 자료·판정은 여전히 Unknown.
+
+
+## 2026-11-19 — PR #94 제품별 증거 register 병합 및 사후 검증
+- PR #94 exact-head SHA c1ec49e44ce0cc8c20b6f836409c21a5aad3306b; Run #977 / ID 44449116189: success, 172 passed / 0 failed.
+- PR #94 squash merge 6f6a0908d15e6ed9ef9e0043e9f7f2ed3961d64c. Pre-merge ref safety/pre-pr94-merge-checkpoint-2026-11-19; post-merge ref safety/post-merge-pr94-2026-11-19; post ref == main.
+- Exact-main Run #978 / ID 44449237270: success, 172 passed / 0 failed; source integrity, compile, CRA traceability, official PDF and live EUR-Lex canaries passed.
+- Artifact #14493789671, SHA-256 6159e27808ace502b0e504cef88f977ddb87c1f2aa85c17d93c58e812c568679, expires 2026-11-26 03:08:25 UTC.
+- E-001~E-015 evidence register template now on main and mapped to EVD-01~16. Validator enforces provenance/state promotion gates; negative tests reject unproven accepted, unknown EVD, unsupported N/A, invalid SHA-256 and partial not_provided metadata.
+- Actual product documents are not provided. All template rows remain not_provided; no product-specific applicability, implementation or compliance pass is asserted. Production main.py and .github/workflows/run.yml unchanged.
