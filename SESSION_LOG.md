@@ -1603,3 +1603,13 @@
 - LS메카피온 report v0.7에 SRP v1.3 FAQ/User Manual, reporting timelines, Primary/Secondary AR, MFA, no API, outage process, counter caveats 반영.
 - 다음은 모델별 매뉴얼 PDF 원본 확보·해시·페이지 검토, M/606 41개 표준 개별 진행상태 및 OJ citation 감사, C/2026/1695 Action 5 후속 요청 추적.
 - Exact-main push CI는 독립 확인 전이므로 미확인.
+
+
+## 2026-11-19 — PR #112 병합 및 제품/도구/ESI 공개목록 매핑
+- PR #112 squash merge 4507bc5dc2a8c189073ab0728a2b271063c4bf5c; post-merge safety ref safety/post-merge-pr112-2026-11-19.
+- Exact-head Run #1020 / ID 44491849633 success: 174 passed / 0 failed. CRA traceability, 10 official HTML sources, JSON manifest round-trip 통과.
+- Artifact #14513316478 SHA-256 a57834f4e1cf07fb42be120cb50090badb86acb3e4a8626503d2ed7747afd5c4. PDF canary는 C(2026) 6013 empty body로 SKIPPED.
+- 제품표 13개군, DriveCM v1.03.2 지원 목록, ESI v0.98 11개 적용 모델을 대조해 보고서 v0.8에 제품별 인터페이스/도구 매핑을 추가했다.
+- iX700M은 ESI v0.98 공개 적용 모델에 명시되지 않으며, iX700M/L7NHA/B/L7SA/B/GEM의 DriveCM 지원 여부도 공개 게시물만으로 확정하지 않는다.
+- 도구의 펌웨어 다운로드 프로그램 언급은 확인했지만 서명·무결성·인증·롤백 등 보안 통제는 검증하지 않았다.
+- 원본 PDF/설치 파일/ESI XML의 다운로드·SHA-256·내용 검토는 미완료. Exact-main push CI는 독립 확인 전.
