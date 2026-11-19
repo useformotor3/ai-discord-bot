@@ -1683,3 +1683,18 @@
 - EN 304 636 = Comments categorisation assessed (2026-10-06), 다음 상태 목표 2026-12-22 / 예정 절차 2027-01-11 VA.
 - 이전 계획표의 승인 종료·2027-03 OJ 목표 일정은 현재값으로 유지하지 않고, 최신 요약 목록에 표시된 다음 상태/절차로 교체했다. 예정일은 실적이 아니며 OJ 인용 여부는 별도 확인 대상이다.
 - 통합 보고서 §23.3, 상황판, 마스터 계획, README에 정정사항을 반영한다.
+
+
+---
+
+## 2026-11-20 — CRA 공식 관보 해설 C/2026/6013 확보·분석
+
+- OJ C/2026/6013 (17.11.2026) 최종본 61페이지 PDF를 EUR-Lex에서 확보했다.
+- PDF 2,709,282 bytes; SHA-256 `40ca76caeb0108f5b97c8f373a95f590b453fe92bd45a483addf3326e48c1dc2`.
+- C(2026)7861 Annex I 6페이지 PDF도 확보: SHA-256 `262b09596cb5cbe7d72a2c7789fb2512ee00db7f69082e7def2c8181b0f63276`.
+- CI artifact #14584269836, 3,070,504 bytes, SHA-256 `0c77f3ae2546927fd2ae37da024b1b398e0d58a0be08fde50581a984f685c94f`. Artifact expiry 2026-11-26 23:39:21 UTC.
+- C(2026)5252 draft PDF는 원래 EC redirect에서 fallback으로 ANFR mirror를 사용한 사실을 manifest에 기록하고, 최종 해석의 주 근거로 사용하지 않는다.
+- OJ guidance §2.4–2.6, §4.3, §5, §6.1, §7.1–7.4, §8, §9.1을 검토해 제품 경계, 디지털 데이터 연결, core functionality, 업데이트 substantial modification, 지원기간, 구성요소 due diligence, 제품군 재사용, RDPS 및 Article 14 보고 의무를 LS메카피온 적용표로 정리했다.
+- Article 14 reporting: 2026-09-11부터 CRA 적용범위 제품에 적용되며, 제품 지원기간 종료 후에도 보고 의무가 지속된다는 공식 해설을 확인했다.
+- 통합 보고서 §24 및 상황판/마스터 계획/README/로그를 갱신한다.
+- 제품별 판정은 SKU·설계·판매경계·지원정책 증거 확보 전까지 Unknown; security tests Not Run.
