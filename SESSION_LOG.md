@@ -1711,3 +1711,14 @@
 - PDF artifact #14584694804, 3,070,503 bytes, SHA-256 `a45396f7bc6d0d8abd29c1e0b3ee3655197e23f005fe5e3fbe6df16768a7f0c2`; individual PDF hashes matched the committed source manifest.
 - OJ C/2026/6013 final guidance analysis and LS Mecapion product application map are in report §24.
 - Exact-main push CI remains not independently confirmed; product scope/classification/RDPS remain Unknown; security tests Not Run.
+
+
+---
+
+## 2026-11-20 — CRA 지침 식별자 정정
+
+- 기존 §15.1의 “C(2026) 6013” 표기는 문서 유형과 관보 인용번호를 혼동한 것이므로 정정한다.
+- 최종 공식 지침의 관보 인용은 OJ C/2026/6013 (17.11.2026).
+- C(2026) 5252 final은 Commission draft-guidance approval document이며 OJ citation이 아니다.
+- 법적 해설은 EUR-Lex 최종 OJ PDF를 기준으로 하고, C(2026) 5252 ANFR fallback은 non-primary provenance로만 남긴다.
+- 통합 보고서 §15.1 및 §24.1, 상황판, README, project log에 정정 기록을 추가한다.
