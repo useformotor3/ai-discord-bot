@@ -610,3 +610,14 @@
 - Commission Notice C/2026/1695 (OJ C, 19.3.2026)의 CRA standardisation Action 5를 확인했다. M/606을 보완해 Annex III/IV 밖 제품, 특히 기계류·철도·승강기·농업기계·AI·태양광 인버터 분야에 대한 추가 표준화 요청을 계획한다.
 - 연간 작업계획은 표준화 방향이지 최종 표준이나 OJ 조화표준 인용이 아니다. CRA Article 27 presumption은 실제 OJ citation 확인 전 주장하지 않는다.
 - 보고서 v0.5에서 M/606 41개 표준과 C/2026/1695 Action 5를 별도 감사 트랙으로 구분한다.
+
+
+## 2026-11-19 — PR #109 병합 및 M/606 개정 Annex 원문 대조
+- PR #109 merge SHA: 172caa7427dd7af412d555bf2a82660537c0e16f; post-merge safety ref safety/post-merge-pr109-2026-11-19 생성.
+- PR #109 exact-head Run #1014 / ID 44490815716: success, 174 passed / 0 failed. CRA traceability 13/15/35/36/16/15/41 통과.
+- Live official CRA HTML 10-source canary 및 JSON provenance manifest parse/round-trip 통과. Artifact #14511964662, SHA-256 16f516e1bb84f2267327318d70994b1e77f7eb1029c5a40685763e67cc882dfe, 2,566 bytes, expires 2026-11-26 08:49:33 UTC.
+- PDF canary는 EUR-Lex C(2026) 6013 endpoint empty body로 SKIPPED; PDF artifact 없음. Exact-main push CI는 독립 확인 전이므로 미확인.
+- Commission Implementing Decision C(2026) 7861 final Annex I 원문을 문서 등록소에서 직접 열어 41개 ESO 제출기한을 확인했다: item 1·15 = 2026-11-30, items 2–14 = 2027-10-30, items 16–41 = 2027-01-31.
+- 기존 M/606 41행 CSV와 validator의 날짜 기대값이 원문과 일치함을 대조했다. 날짜 불일치 수정은 불필요.
+- 보고서 v0.6은 제출기한이 제조자 CRA 준수기한이 아님을 강조하고, EtherCAT 포트·MCU/FPGA 존재가 Annex III/IV 제품분류를 자동 결정하지 않는다는 주의사항을 강화한다.
+- 개별 표준 진행 상태·OJ citation 전수 감사는 미완료. 제품별 CRA 판정 Unknown, 시험 Not Run.
