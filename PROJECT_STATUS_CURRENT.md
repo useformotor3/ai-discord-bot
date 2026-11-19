@@ -569,3 +569,12 @@
 - validator는 15개 Evidence ID, EVD foreign keys, variant별 provenance, SHA-256, locator, reviewer/date, cross-check, accepted/rejected/not-applicable rationale gates를 검사.
 - Negative regression tests: provenance 없는 accepted, unknown EVD, rationale 없는 not-applicable, invalid SHA-256, not_provided partial metadata.
 - 모든 제품별 항목은 여전히 not_provided. 제품별 적합성·구현·시험 Pass는 주장하지 않는다.
+
+
+## 2026-11-19 추가 진행 — Commission guidance / M/606 개정 / LS 매뉴얼 재확인
+- 작업 기준 main: `d314a9c07ad336497948ae0d049d700d8e88b1e2`; safety ref `safety/pre-cra-guidance-m606-update-2026-11-19`, 작업 브랜치 `cra/commission-guidance-m606-update-2026-11-19`.
+- Commission CRA guidance C(2026) 6013의 공식 랜딩 페이지를 검토했다. 적용 범위(RDPS/FOSS 포함), substantial modification, support period, reporting 및 risk assessment를 다루는 비구속적 실무 지침이며, 67개 사례를 포함한다.
+- Commission CRA standardisation page(최종 업데이트 2026-11-12)는 M/606이 2026-11-10 개정되었고 일부 수평 표준 및 모든 수직 표준 제출 기한이 3개월 연장됐음을 명시한다. 표준 제출 일정과 CRA 적용일, OJ 조화표준 인용, Article 27 적합성 추정을 구분한다.
+- LS메카피온 공식 매뉴얼 메타데이터 재확인: iX700M Ver1.4 첨부파일명 260915, iX7M Ver1.3 파일명 260605, iX7NH Ver1.7 파일명 260605. 첨부파일 다운로드 엔드포인트는 “잘못된 접근”을 반환했으므로 PDF 본문 확보·SHA-256·페이지 검토는 미완료.
+- LS메카피온 보고서 v0.2에 최신 지침·M/606 개정 및 매뉴얼 수집 한계를 반영한다. 제품별 증거 상태는 승격하지 않는다.
+- 현재 CRA 법령 전수 조사, 41개 표준/OJ 상태별 검증, ENISA 최신 자료, 제품별 매뉴얼 PDF 원본 검토는 미완료. 제품별 scope/classification/conformity Unknown, 시험 Not Run.

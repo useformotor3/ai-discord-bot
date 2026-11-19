@@ -1540,3 +1540,10 @@
 - Pre-merge ref `safety/pre-lsmecapion-family-assessment-2026-11-19`, post-merge ref `safety/post-merge-pr104-2026-11-19`; post ref와 main identical.
 - No production main.py, .github/workflows/run.yml, secrets, state/history, legacy SIL 3 assets changed.
 - 제품별 scope/classification/conformity Unknown, 모든 보안 시험 Not Run. 법령 전수 수집 및 모델별 원본 매뉴얼 분석은 후속 작업.
+
+
+## 2026-11-19 — 최신 CRA 지침 및 M/606 개정 확인
+- Commission CRA guidance C(2026) 6013 공식 페이지와 Commission CRA standardisation 페이지를 재확인했다. guidance는 비구속적이며 적용 범위/RDPS/FOSS/substantial modification/support period/reporting/risk assessment를 설명한다. M/606은 2026-11-10 개정되어 일부 수평 및 모든 수직 표준 제출 일정이 3개월 연장됐다.
+- 이 일정 변경을 CRA 적용일 변경이나 Article 27 적합성 추정 발생으로 오해하지 않도록 LS메카피온 보고서에 별도 설명을 추가했다.
+- iX700M Ver1.4, iX7M Ver1.3, iX7NH Ver1.7의 공식 매뉴얼 첨부 메타데이터를 재확인했다. 첨부파일 다운로드 링크는 제조사 사이트에서 “잘못된 접근”을 반환했다. PDF 원본 확보·해시·페이지 검토는 완료되지 않았으며 증거 accepted로 승격하지 않는다.
+- 다음 작업은 모델별 매뉴얼 원본 확보 및 41개 표준/OJ 인용 상태·ENISA/Commission 최신 자료의 출처별 감사다.

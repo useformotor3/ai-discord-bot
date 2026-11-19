@@ -1,7 +1,7 @@
 # LS메카피온 서보드라이브 CRA 제품군 예비 분석 보고서
 
 - 문서 ID: CRA-LSM-FA-001
-- 버전: 0.1 (제품군 예비 분석 / 모델별 판정 전)
+- 버전: 0.2 (최신 CRA 지침·표준화 일정 반영 / 제품군 예비 분석)
 - 기준일: 2026-11-19 (KST)
 - 작성 언어: 한국어
 - 대상 제조사/브랜드: LS메카피온 (LS MECAPION)
@@ -538,5 +538,76 @@ STO(Safe Torque Off) 등 기능안전 기능이 존재하더라도 CRA 사이버
 | 버전 | 날짜 | 변경 |
 |---|---|---|
 | 0.1 | 2026-11-19 | LS메카피온 공식 공개 제품 목록과 자료실을 바탕으로 제품군 범위, CRA 적용성, Annex III/IV 예비 분류, 제조사 의무, 위협·시험·증거 계획을 정리 |
+| 0.2 | 2026-11-19 | Commission CRA guidance C(2026) 6013 및 M/606 2026-11-10 개정 반영; iX700M/iX7M/iX7NH 매뉴얼 첨부파일 목록 재확인 및 다운로드·해시 검증 한계 명시 |
 
 **최종 판정:** 본 문서는 LS메카피온 서보드라이브 제품군의 CRA 대응을 시작하기 위한 예비 분석이다. 법령 전수 수집·분석 완료본도 아니고, 특정 모델의 CRA 적합성 평가 완료본도 아니다. 모델별 원본 자료와 EU 공급 증거를 확보한 후 후속 판정·보고서 개정이 필요하다.
+
+
+---
+
+## 15. 2026-11-19 추가 조사 — 최신 CRA 지침 및 표준화 일정
+
+### 15.1 유럽위원회 CRA 적용 지침 C(2026) 6013
+
+유럽위원회는 CRA 적용을 돕기 위한 공식 지침을 공개했다. 지침은 CRA Article 26에 따른 해석·실무 안내이며, CRA 규정 자체와 동일한 법적 구속력을 갖는 법령으로 취급하지 않는다.
+
+주요 설명 범위는 다음과 같다.
+
+- 제품이 CRA 적용 범위에 들어오는지 판단하는 방법(원격 데이터 처리 솔루션 포함)
+- 자유·오픈소스 소프트웨어 관련 쟁점
+- 제품의 실질적 변경(substantial modification)
+- 제품 지원기간을 정하고 적용하는 방법
+- 위험평가와 Article 14 신고 의무의 실무 적용
+- 소규모 사업자도 활용할 수 있는 67개 실무 사례, 흐름도 및 그래프
+
+**LS메카피온 적용 포인트:** 드라이브 펌웨어·설정 도구·서비스 도구·외부 처리 서비스의 제품 경계를 먼저 정리하고, 펌웨어 교체·기능 추가·보안 업데이트가 실질적 변경에 해당하는지 변경 이력과 기능 영향으로 평가해야 한다. 제품별 지원기간은 단순히 판매 종료일이나 보증기간과 같다고 가정하지 말고, 보안 업데이트 제공 능력과 제품 수명·사용 환경을 근거로 정해야 한다.
+
+공식 출처:
+- Commission guidance landing page: https://digital-strategy.ec.europa.eu/en/library/commission-publishes-new-guidance-support-timely-cyber-resilience-act-implementation
+- Commission communication identifier: C(2026) 6013
+- Commission page states the guidance is non-binding and the main CRA obligations apply from 2027-12-11, while Article 14 reporting has applied since 2026-09-11.
+
+### 15.2 CRA 표준화 요청 M/606 개정 — 2026-11-10
+
+유럽위원회 CRA 표준화 공식 페이지는 2026-11-10에 표준화 요청 M/606이 개정되었으며, 일부 수평 표준과 모든 수직(제품별) 표준의 제출 기한이 3개월 연장되었다고 명시한다. M/606은 CRA 지원을 위한 41개 표준을 포함한다.
+
+이 변경은 표준 개발기관에 대한 산출물 제출 일정이다. 다음을 혼동하지 않는다.
+
+1. 표준 초안·최종안의 제출 일정
+2. 표준이 유럽조화표준으로 채택되고 EU 관보(OJ)에 인용되는 절차
+3. CRA Article 27에 따른 적합성 추정(presumption of conformity)의 발생
+4. CRA 자체의 법적 적용일
+
+**표준 개발 일정이 연장됐다는 이유로 CRA의 2026-09-11 신고 의무나 2027-12-11 일반 적용일이 연장된 것은 아니다.** 또한 M/606의 표준 개발 요청에 포함된 표준을 적용했다는 사실만으로 Article 27 적합성 추정이 자동 발생하지 않는다. 해당 표준이 최종 조화표준으로 OJ에 인용되었는지, 인용 범위와 제한사항이 무엇인지 별도 확인해야 한다.
+
+공식 출처:
+- Commission CRA standardisation page: https://digital-strategy.ec.europa.eu/en/policies/cra-standardisation
+- 해당 페이지 최종 업데이트: 2026-11-12
+- Commission Documents Register: C(2026) 7861 (M/606 amendment; 2026-11-10)
+
+### 15.3 LS메카피온 공식 매뉴얼 인덱스 재확인 결과
+
+| 제품군 | 공식 자료실에 표시된 자료 | 페이지/첨부파일 메타데이터 | 검토 상태 |
+|---|---|---|---|
+| iX700M | DRIVE 400[V] 매뉴얼 Ver1.4 | 게시글 작성 2026-05-26; 첨부파일 `[LSMecapion] iX700M_KOR_Ver1.4_260915.pdf.pdf`, 첨부 DATE 2026-09-16 | 게시글·첨부명 확인. PDF 본문 미확인 |
+| iX7M | DRIVE 매뉴얼 Ver1.3 | 제조사 검색 결과에 `iX7M_KOR_Ver1.3_260605.pdf`, 첨부 DATE 2026-06-05로 표시. 별도 구형 상세 게시글에는 Ver1.1 파일도 남아 있음 | 버전/첨부 메타데이터 확인. 최신 PDF 본문 미확인 |
+| iX7NH | DRIVE 200[V] 매뉴얼 Ver1.7 | 제조사 검색 결과에 `iX7NH_KOR_Ver1.7_260605.pdf`, 첨부 DATE 2026-06-05로 표시 | 버전/첨부 메타데이터 확인. PDF 본문 미확인 |
+
+**중요한 수집 한계:** 제조사 웹페이지의 첨부파일 링크를 열었을 때 다운로드 엔드포인트가 “잘못된 접근” 오류를 반환했다. 따라서 이 세 PDF를 내려받았거나 SHA-256을 계산했다고 기록하지 않는다. 페이지의 파일명·버전·게시 메타데이터는 원본 PDF 내용 검토와 다르다. 공식 첨부파일을 정상적으로 확보한 뒤 파일 크기, SHA-256, 페이지 수, 문서 개정 이력, 인터페이스/업데이트/보안 관련 페이지 locator를 별도 기록해야 한다.
+
+공식 자료 페이지:
+- iX700M: https://lsmecapion.com/bbs/board.php?bo_table=manual&wr_id=12652
+- iX7M: https://lsmecapion.com/bbs/board.php?bo_table=manual&page=1&sca=%EC%84%9C%EB%B3%B4%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B8%8C&spt=-12629&wr_id=12633
+- iX7NH: https://lsmecapion.com/bbs/board.php?bo_table=manual&sca=%EC%84%9C%EB%B3%B4%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B8%8C&wr_id=12433
+
+### 15.4 이번 업데이트 이후에도 미완료인 항목
+
+- CRA 및 관련 EU 법령의 전수 목록·개정 이력·적용 관계 감사
+- M/606 41개 표준 각각의 최신 상태, 최종 전문 확보 가능성, OJ 인용 여부와 인용 범위
+- ENISA 최신 자료 및 Commission FAQ 전수 점검
+- LS메카피온 매뉴얼·카탈로그 원본 PDF 확보, 해시, 페이지별 검토
+- 정확한 SKU/HW/FW revision, EU 공급 경로, 제품 경계와 지원기간 확인
+- 제품별 Article 2 적용성 및 Annex III/IV 핵심 기능 판정
+- 구현 증거·SBOM·취약점 처리·보안 업데이트·시험 결과 검증
+
+따라서 본 보고서의 버전 0.2도 **제품군 예비 분석**이며, 법령 전수 조사 완료본이나 제품별 CRA 적합성 판정서가 아니다.
