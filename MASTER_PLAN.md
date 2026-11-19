@@ -78,8 +78,10 @@
 
 ## 현재 진행 상태 — 2026-11-19
 
-- PR #90에서 EVD-01~16 책임 역할·생애주기·검증 방법·내부 합격 게이트를 추가했다. exact-head Run #960은 162 passed / 0 xfailed이며 병합 SHA의 post-merge CI는 별도 확인 전이다.
-- 다음 추적성 작업은 EVD→CRA→SEC 후보 교차표와 자동 fail-closed 검증이다. 모든 EVD와 SEC 통제가 연결되어야 하며, 링크는 제품 적용성/구현/시험 Pass를 의미하지 않는다.
+- PR #90에서 EVD-01~16 책임 역할·생애주기·검증 방법·내부 합격 게이트를 반영했다.
+- PR #91에서 EVD→CRA→SEC 후보 교차표 및 fail-closed validator를 main에 통합했다. PR exact-head Run #971 및 exact-main Run #972 모두 success, 166 passed / 0 failed.
+- SEC-001~036 전체 연결, CRA/SEC 외래키, EVD-01~16 누락/중복 및 orphaned control을 자동 검사한다. 연결 자체는 제품 적용성·구현·시험 Pass를 의미하지 않는다.
+- 다음 단계는 제품별 P0 자료 확보 후 각 후보 링크를 적용/비적용/조건부로 판정하고 제품 버전별 증거를 수집하는 것이다.
 - 제품별 모델/SKU, BOM, 매뉴얼, 실제 MCU 부품번호 및 제어 사양은 미확인으로 유지한다.
 
 ## 현재 진행 상태 — 2026-11-17
