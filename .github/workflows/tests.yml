@@ -141,15 +141,6 @@ jobs:
           if-no-files-found: error
           retention-days: 7
 
-      - name: Upload official CRA source provenance manifest
-        if: always() && hashFiles('artifacts/cra-source-pack-manifest.json') != ''
-        uses: actions/upload-artifact@v4
-        with:
-          name: cra-source-provenance-${{ github.sha }}
-          path: artifacts/cra-source-pack-manifest.json
-          if-no-files-found: error
-          retention-days: 7
-
       - name: Live official CRA source read-only canary
         shell: bash
         run: |
@@ -212,3 +203,12 @@ jobs:
           )
           print(f"PASS: wrote source provenance manifest with {manifest['source_count']} records: {manifest_path}")
           PY
+
+      - name: Upload official CRA source provenance manifest
+        if: always() && hashFiles('artifacts/cra-source-pack-manifest.json') != ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: cra-source-provenance-${{ github.sha }}
+          path: artifacts/cra-source-pack-manifest.json
+          if-no-files-found: error
+          retention-days: 7
