@@ -84,6 +84,7 @@
 - SEC-001~036 전체 연결, CRA/SEC 외래키, EVD-01~16 누락/중복 및 orphaned control을 자동 검사한다. 연결 자체는 제품 적용성·구현·시험 Pass를 의미하지 않는다.
 - 다음 단계는 제품별 P0 자료 확보 후 각 후보 링크를 적용/비적용/조건부로 판정하고 제품 버전별 증거를 수집하는 것이다.
 - 제품별 모델/SKU, BOM, 매뉴얼, 실제 MCU 부품번호 및 제어 사양은 미확인으로 유지한다.
+- PR #93 status-sync exact-head Run #975 및 exact-main Run #976 모두 success, 166 passed / 0 failed. 다음 구현은 E-001~E-015 제품 증거 register와 provenance/state promotion gates.
 
 ## 현재 진행 상태 — 2026-11-17
 
@@ -951,3 +952,11 @@
 - EVD-01~16 각 행에 관련 CRA 요구사항 및 SEC 통제의 후보 링크를 유지한다.
 - validator가 모든 EVD/SEC ID의 존재·중복·누락·외래키를 fail-closed로 검사한다.
 - 교차 링크는 후보 추적일 뿐 제품별 적용성 또는 구현·시험 적합성의 증거가 아니다.
+
+
+### Phase 4 추가 완료 기준 — 제품 증거 register
+- E-001~E-015 제출 자료를 EVD-01~16과 연결하고 제품 variant별로 독립 관리한다.
+- 원본 provenance(SHA-256, 발행자, 버전/일자, 수집일, 페이지/절 locator, 언어)를 기록한다.
+- 증거 상태는 not_provided → received → source_verified → content_reviewed → cross_checked → accepted/rejected로 관리하며, not_applicable_with_rationale는 별도 근거 게이트를 적용한다.
+- accepted/비적용 판정은 필수 메타데이터와 검토자·일자·근거가 없으면 validator가 fail-closed 한다.
+- 템플릿은 자료 수집 양식일 뿐 제품별 적합성 판단을 의미하지 않는다.
