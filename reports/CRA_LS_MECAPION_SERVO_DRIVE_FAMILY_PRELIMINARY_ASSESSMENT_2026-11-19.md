@@ -1,7 +1,7 @@
 # LS메카피온 서보드라이브 CRA 제품군 예비 분석 보고서
 
 - 문서 ID: CRA-LSM-FA-001
-- 버전: 0.8 (제조사 DriveCM·EtherCAT ESI 공개 지원 목록과 제품군 인터페이스 매핑 추가 / 제품군 예비 분석)
+- 버전: 0.9 (ESO 2026-06 M/606 진행 현황 및 산업용 OT 지원표준 검토 추가 / 제품군 예비 분석)
 - 기준일: 2026-11-19 (KST)
 - 작성 언어: 한국어
 - 대상 제조사/브랜드: LS메카피온 (LS MECAPION)
@@ -545,6 +545,7 @@ STO(Safe Torque Off) 등 기능안전 기능이 존재하더라도 CRA 사이버
 | 0.6 | 2026-11-19 | Commission Implementing Decision C(2026) 7861 final Annex I 원문에서 M/606 41개 표준별 ESO 제출기한을 확인하고 1·15·16~41번의 변경기한을 상세화 |
 | 0.7 | 2026-11-19 | ENISA SRP FAQ(2026-10-15)와 SRP User Manual v1.3·플랫폼 v1.3(2026-11-04)로 실제 신고자·기한·UI 제약·카운터 주의사항 보강 |
 | 0.8 | 2026-11-19 | LS메카피온 DriveCM v1.03.2·EtherCAT ESI v0.98 공개 지원 목록과 13개 제품군의 인터페이스/도구/업데이트 증거 공백을 교차 매핑 |
+| 0.9 | 2026-11-19 | STAN4CR/CEN-CENELEC/ETSI 공동 M/606 현황보고서 V2.0(2026-06-03)의 개별 표준 단계·OT 지원 deliverables를 검토하고 산업용 IEC 62443 연계 및 시점 한계를 기록 |
 
 **최종 판정:** 본 문서는 LS메카피온 서보드라이브 제품군의 CRA 대응을 시작하기 위한 예비 분석이다. 법령 전수 수집·분석 완료본도 아니고, 특정 모델의 CRA 적합성 평가 완료본도 아니다. 모델별 원본 자료와 EU 공급 증거를 확보한 후 후속 판정·보고서 개정이 필요하다.
 
@@ -1033,3 +1034,74 @@ CRA Article 2의 데이터 연결 판단과 Annex I 위험평가를 위해서는
 - ESI Ver0.96(이전 버전): https://lsmecapion.com/bbs/board.php?bo_table=software&wr_id=12980
 
 이번 버전은 자료실의 공개 메타데이터·지원 목록을 대조한 것이다. 설치 파일과 ESI XML 원본을 내려받아 해시·파일 내용·실제 장비 연결 시험을 한 것은 아니다. 따라서 지원 목록은 제조사의 게시 내용으로만 인용하고, 보안 통제 구현이나 제품별 적합성 증거로 승격하지 않는다.
+
+
+---
+
+## 22. M/606 표준 개발 실제 진행상태 — ESO 공동 보고서 V2.0 (2026-06-03)
+
+### 22.1 출처와 시간 범위
+
+STAN4CR 프로젝트의 CEN, CENELEC, ETSI 공동 작업계획 페이지에서 M/606 두 번째 반기 진행 보고서 V2.0을 확인했다.
+
+- 문서명: DG-GoSR-2026-06_Second_Joint_ESO_semestrial_report_M606.pdf
+- 버전: V2.0
+- 보고서 기준일: 2026-06-03
+- 공식 배포 경로: https://www.stan4cra.eu/_files/ugd/d3d362_20e5bfebe8bf47b1998caf05c5799333.pdf
+
+이 문서는 **2026-06-03 시점의 표준 개발 단계 스냅샷**이다. 2026-11-10 M/606 개정 결정 C(2026) 7861보다 앞선 자료이므로, 표에 기재된 publication forecast를 현재 일정으로 사용하지 않는다. 표준 개발 단계 확인에만 쓰고, 개정된 ESO 제출기한은 C(2026) 7861 Annex I 원문을 우선한다.
+
+### 22.2 제품·산업 제어 관점에서 특히 관련 있는 M/606 작업
+
+| M/606 항목 | 표준/작업 | 2026-06-03 보고서의 단계 | 보고서상 당시 publication forecast | 서보드라이브 관점 |
+|---|---|---|---|---|
+| 1 | prEN 40000-1-2 — Principles for cyber resilience | Closed ENQ 2026-01-01; FV 준비 예정 | 2026-09-30 | 위험기반 제품 설계·개발·생산의 수평 기반 |
+| 2–14 | prEN 40000-1-4 — Generic Security Requirements | Early Draft | 2027-10-30 | 모든 제품군의 일반 보안 속성에 관한 수평 작업 |
+| 15 | prEN 40000-1-3 — Vulnerability Handling | Closed ENQ 2026-03-05; FV 준비 예정 | 2026-11-30 | 제조자의 취약점 접수·평가·조치·공개 프로세스 |
+| 25a | EN 304 625 — Physical and virtual network interfaces | Stable Draft | 2027-03-15 | EtherCAT/네트워크 인터페이스의 위험을 다룰 때 참고. 드라이브 전체를 인터페이스 제품으로 자동 분류하지 않음 |
+| 25b | IEC 62443 기반 physical/virtual network interface security profile | Early Draft | 2026-12-31 | OT 네트워크 환경에서 인터페이스 보안 프로파일 참고 |
+| 28–29 | 보안 기능이 있는 microprocessor/microcontroller | 2026-04-10 ENQ 통과, FV 준비 | 2026-11-30 | MCU가 들어 있다는 사실만으로 수직 제품 카테고리 적용 아님. 부품의 core functionality 확인 |
+| 30 | 보안 기능이 있는 ASIC/FPGA | Mature Draft; ENQ 준비 예정 | 2027-11-30 | FPGA/ASIC가 보안 기능을 core functionality로 제공하는지 별도 판정 |
+| 36a | EN 304 636 — Firewalls, IDS/IPS | Stable Draft | 2027-02-19 | 산업용 방화벽/IDS/IPS 제품군. 일반 서보드라이브의 통신 포트와 구분 |
+| 36b | IEC 62443 기반 industrial firewall/IDS/IPS security profile | Mature Draft, 2026-05-03 EC assessment 제출 | 2027-03-15 | OT 네트워크 방어 장비·환경의 보안 프로파일 참고 |
+| 37–38 | Tamper-resistant microprocessors/microcontrollers | 2026-04-10 ENQ 통과, FV 준비 | 2026-11-15 | 변조방지 보안 부품이 실제 제품의 core functionality인지 확인 |
+| 41a–41b | Smartcards/secure elements | 2026-04-09/10 ENQ 통과, FV 준비 | 2026-11-15 / 2026-11-30 | Secure element 부품 사용 여부와 완제품의 제품분류를 분리 |
+
+**날짜 주의:** 위 publication forecast는 2026-06-03 보고서의 예측치이며, 개정된 M/606의 ESO 제출기한과 같은 날짜가 아니다. 현재 제출기한은 별도 섹션 19의 C(2026) 7861 Annex I 표를 사용한다.
+
+### 22.3 산업 자동화·제어시스템(OT/IACS) 지원 deliverables
+
+공동 보고서의 "Complementary/Supporting deliverables"에는 산업용 자동화·제어시스템을 위한 IEC 62443 계열 작업이 별도 표기되어 있다.
+
+| 표준/기술보고서 | 문서상 주제 | 2026-06-03 상태 | LS메카피온에 대한 활용 |
+|---|---|---|---|
+| EN IEC 62443-4-1:2018/prAA | Secure product development lifecycle requirements | 2026-03-13 ENQ 제출(12주) | 드라이브 펌웨어·PC 설정도구의 보안 개발 생애주기 절차를 검토할 때 참고 |
+| EN IEC 62443-4-2:2019/prAA | Technical security requirements for IACS components | 2026-03-13 ENQ 제출(12주) | 드라이브를 IACS 구성요소로 사용하는 환경에서 구성요소 보안 기능을 검토할 때 참고 |
+| EN IEC 62443-3-3:2019/prAA | System security requirements and security levels | Early Draft | 드라이브 단품이 아닌 드라이브·PLC·산업용 네트워크가 구성하는 시스템 수준 위험 검토에 참고 |
+
+이들은 보고서에서 M/606 Annex I의 41개 제품별 표준과 구분된 **보완·지원 deliverables**로 표시되어 있다. 따라서 다음을 혼동하지 않는다.
+
+- IEC 62443 기술문서를 참고했다는 사실
+- IEC 62443 표준 또는 개정안의 적용 여부
+- CRA M/606 표준화 요청의 개별 항목
+- CRA Article 27 조화표준 OJ 인용 및 적합성 추정
+
+산업용 서보드라이브의 제품 위험평가·보안 개발 프로세스에 IEC 62443을 활용할 수 있지만, 그 자체로 CRA 적합성 선언이나 Article 27 적합성 추정이 되지는 않는다.
+
+### 22.4 산업용 드라이브에 대한 실무 결론
+
+1. 제품 단품의 CRA core functionality 분류와, PLC·네트워크·기계 전체의 OT 보안 요구를 분리한다.
+2. EtherCAT/네트워크 포트가 있는 제품은 연결성·명령 무결성·인증·가용성 위험을 평가하되, 네트워크 인터페이스 제품 카테고리로 자동 분류하지 않는다.
+3. 드라이브의 펌웨어·PC 설정 도구·ESI·PLC 통합 구성은 서로 다른 소프트웨어/데이터 경계로 관리한다.
+4. IEC 62443-4-1/4-2는 제품 개발·구성요소 통제 검토에, IEC 62443-3-3은 완성 OT 시스템 위험평가에 참고할 수 있다.
+5. 실제 표준 개정·발행·적용 범위와 CRA OJ 인용 상태는 각 원문을 확보해 별도로 확인한다.
+
+### 22.5 미확인 및 후속 확인
+
+- 2026-06-03 이후의 개별 표준 ENQ/FV/최종 채택 상태
+- C(2026) 7861 이후 각 ESO의 개정 제출기한 수용 및 최신 작업계획
+- 2026-11-19 현재 실제 최종 표준 발행 및 CRA OJ 인용 상태
+- IEC 62443 지원 deliverables의 최종 문서 번호·개정판·발행 상태
+- 서보드라이브 SKU별로 적용할 IEC 62443 조항·시험 기준과 제품별 증거
+
+현재 공개된 2026-06-03 공동 보고서만으로 2026-11-19의 최종 표준 상태나 CRA 적합성 추정을 확정하지 않는다.
