@@ -15,6 +15,7 @@ REQUIREMENT_RE = re.compile(r"\bCRA-\d{3}\b")
 CONTROL_RE = re.compile(r"\bSEC-\d{3}\b")
 INTERFACE_RE = re.compile(r"\bIF-\d{3}\b")
 ITEM_RE = re.compile(r"(?<![A-Za-z])(?P<start>\d{1,2})(?:\s*[–-]\s*(?P<end>\d{1,2}))?")
+EVD_ID_RE = re.compile(r"\bEVD-\d{2}\b")
 SHA_RE = re.compile(r"^[0-9a-f]{64}$")
 
 FILES = {
@@ -29,6 +30,7 @@ FILES = {
     "integrated_report": "reports/CRA_INTEGRATED_COMPLIANCE_REPORT_2026-11-17.md",
     "product_intake": "reports/CRA_PRODUCT_BOUNDARY_AND_EVIDENCE_INTAKE_2026-11-17.md",
     "evd_sec_crosswalk": "reports/CRA_EVD_SEC_TRACEABILITY_CROSSWALK_2026-11-19.csv",
+    "evidence_register": "reports/CRA_PRODUCT_EVIDENCE_REGISTER_TEMPLATE_2026-11-19.csv",
 }
 
 
@@ -80,6 +82,7 @@ def validate_traceability(root="."):
     controls = _read_csv(data["controls"])
     m606_map = _read_csv(data["m606_map"])
     evd_sec_crosswalk = _read_csv(data["evd_sec_crosswalk"])
+    evidence_register = _read_csv(data["evidence_register"])
 
     expected_counts = {
         "claims": (claims, 13),
@@ -193,6 +196,59 @@ def validate_traceability(root="."):
              f"SEC controls missing from EVD/SEC crosswalk: {orphan_sec_refs}", errors)
     _require(crosswalk_req_refs.issubset(id_sets.get("requirements", set())),
              "EVD/SEC crosswalk contains unknown CRA requirement references", errors)
+
+    # Validate product evidence register and evidence-state promotion gates.
+    expected_evidence_records = {f"E-{number:03d}" for number in range(1, 16)}
+    evidence_record_ids = [row.get("Evidence_Record_ID", "") for row in evidence_register]
+    _require(len(evidence_register) == 15,
+             f"product evidence register: expected 15 rows, found {len(evidence_register)}", errors)
+    _require(set(evidence_record_ids) == expected_evidence_records,
+             "product evidence register must cover E-001 through E-015 exactly", errors)
+    _require(len(evidence_record_ids) == len(set(evidence_record_ids)),
+             "product evidence register contains duplicate Evidence_Record_ID values", errors)
+    allowed_evidence_states = {
+        "not_provided", "received", "source_verified", "content_reviewed",
+        "cross_checked", "accepted", "rejected", "not_applicable_with_rationale",
+    }
+    required_by_state = {
+        "received": ("Evidence_File_Name", "Collection_Date"),
+        "source_verified": ("Evidence_File_Name", "Issuer", "Document_Version", "Collection_Date", "SHA256"),
+        "content_reviewed": ("Evidence_File_Name", "Issuer", "Document_Version", "Collection_Date", "SHA256", "Page_Section_Locator", "Reviewer", "Review_Date"),
+        "cross_checked": ("Evidence_File_Name", "Issuer", "Document_Version", "Collection_Date", "SHA256", "Page_Section_Locator", "Reviewer", "Review_Date", "Cross_Check_Reference"),
+        "accepted": ("Evidence_File_Name", "Issuer", "Document_Version", "Collection_Date", "SHA256", "Page_Section_Locator", "Reviewer", "Review_Date", "Cross_Check_Reference", "Decision", "Decision_Rationale"),
+        "rejected": ("Evidence_File_Name", "Issuer", "Document_Version", "Collection_Date", "SHA256", "Page_Section_Locator", "Reviewer", "Review_Date", "Decision", "Decision_Rationale"),
+        "not_applicable_with_rationale": ("Product_Variant_ID", "Reviewer", "Review_Date", "Decision_Rationale"),
+    }
+    evidence_states = set()
+    for row in evidence_register:
+        record_id = row.get("Evidence_Record_ID", "")
+        state = row.get("Evidence_Record_State", "")
+        evidence_states.add(state)
+        related_evd = set(EVD_ID_RE.findall(row.get("Related_EVD_IDs", "") or ""))
+        _require(bool(related_evd), f"{record_id}: no related EVD IDs", errors)
+        _require(related_evd.issubset(evd_ids),
+                 f"{record_id}: unknown EVD refs {sorted(related_evd - evd_ids)}", errors)
+        _require(state in allowed_evidence_states,
+                 f"{record_id}: invalid evidence state {state!r}", errors)
+        for field in required_by_state.get(state, ()):
+            _require(bool((row.get(field) or "").strip()),
+                     f"{record_id}: {state} requires {field}", errors)
+        if state == "not_provided":
+            for field in ("Evidence_File_Name", "Source_URL", "SHA256", "Reviewer", "Review_Date", "Decision", "Decision_Rationale"):
+                _require(not (row.get(field) or "").strip(),
+                         f"{record_id}: not_provided must not contain {field}", errors)
+        if (row.get("SHA256") or "").strip():
+            _require(bool(SHA_RE.fullmatch(row["SHA256"].strip().lower())),
+                     f"{record_id}: SHA256 must be 64 hexadecimal characters", errors)
+        if state == "accepted":
+            _require(row.get("Decision", "").strip().lower() == "accepted",
+                     f"{record_id}: accepted state requires Decision=accepted", errors)
+        if state == "rejected":
+            _require(row.get("Decision", "").strip().lower() == "rejected",
+                     f"{record_id}: rejected state requires Decision=rejected", errors)
+        if state == "not_applicable_with_rationale":
+            _require(row.get("Decision", "").strip().lower() == "not_applicable",
+                     f"{record_id}: not_applicable_with_rationale requires Decision=not_applicable", errors)
 
     # Validate the complete M/606 Annex I crosswalk and every candidate foreign key.
     _require(len(m606_map) == 41,
@@ -351,6 +407,8 @@ def validate_traceability(root="."):
         "security_controls": len(controls),
         "evd_sec_crosswalk_rows": len(evd_sec_crosswalk),
         "crosswalk_sec_controls_linked": len(crosswalk_sec_refs),
+        "product_evidence_register_rows": len(evidence_register),
+        "product_evidence_register_states": sorted(evidence_states),
         "linked_claims": len(used_claims),
         "bidirectional_links": True,
         "referenced_m606_items": sorted(referenced_items),
@@ -380,6 +438,7 @@ def main(argv=None):
         f"SEC={summary['security_controls']} "
         f"EVD_SEC_crosswalk={summary['evd_sec_crosswalk_rows']} "
         f"crosswalk_SEC_linked={summary['crosswalk_sec_controls_linked']} "
+        f"product_evidence_records={summary['product_evidence_register_rows']} "
         f"linked_claims={summary['linked_claims']} "
         f"bidirectional_links={summary['bidirectional_links']} "
         f"M606_mapping_items={summary['m606_mapping_items']} "
