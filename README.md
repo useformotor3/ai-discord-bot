@@ -1,5 +1,7 @@
 # CRA Servo Drive Compliance & Engineering Project
 
+> **최신 재개 상태 — 2026-11-20:** M/606 개정 납기, CEN-CENELEC EN 40000-1-1/-1-2 발행 및 ETSI 공개 작업계획 일부를 재확인했다. 상세 addendum은 [LS메카피온 예비 분석 보고서 §23](reports/CRA_LS_MECAPION_SERVO_DRIVE_FAMILY_PRELIMINARY_ASSESSMENT_2026-11-19.md)에 기록. 41개 표준 전체의 개별 상태/OJ 전수감사는 미완료이며, 제품별 CRA 판정은 Unknown / 보안시험 Not Run.
+
 산업용 서보 드라이브의 EU Cyber Resilience Act(CRA) 대응을 위한 조사·설계·검증·문서화 프로젝트입니다. 문서의 기본 언어는 한국어이며, 법령·표준·제조사 원문은 원어와 출처를 보존합니다.
 
 ## 공식 프로젝트 범위 — 2026-11-17 확정

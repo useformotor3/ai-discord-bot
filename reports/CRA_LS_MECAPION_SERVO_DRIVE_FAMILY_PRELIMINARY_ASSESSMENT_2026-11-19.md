@@ -1105,3 +1105,86 @@ STAN4CR 프로젝트의 CEN, CENELEC, ETSI 공동 작업계획 페이지에서 M
 - 서보드라이브 SKU별로 적용할 IEC 62443 조항·시험 기준과 제품별 증거
 
 현재 공개된 2026-06-03 공동 보고서만으로 2026-11-19의 최종 표준 상태나 CRA 적합성 추정을 확정하지 않는다.
+
+
+---
+
+## 23. M/606 ETSI 작업의 최신 공개 진행상태 확인 — 2026-11-20
+
+### 23.1 확인 범위와 기준일
+
+이번 확인은 2026-11-20 기준으로 공개 접근 가능한 유럽위원회 및 ETSI 공식 페이지를 다시 조회한 **부분 최신화**다. M/606 전체 41개 항목을 모두 개별 상태·최종 발행·OJ 인용까지 확인한 완료 감사가 아니다.
+
+- 유럽위원회 CRA 표준화 페이지: 41개 표준이 M/606에 포함되며, 2026-11-10 C(2026) 7861로 일부 수평 표준 및 모든 수직 표준의 ESO 납기 3개월 연장이 공지됨. 페이지 최종 업데이트: 2026-11-12.
+- C(2026) 7861 final Annex I 원문: 항목 1 및 15는 2026-11-30, 항목 2–14는 2027-10-30, 항목 16–41은 2027-01-31을 ESO 채택 기한으로 지정함.
+- ETSI Work Programme의 M/606 활성 작업 목록: 2026-11-17 기준 Version 2.3.3, 활성 작업 18개로 표시됨. 이는 M/606의 전체 41개 항목이 아니라 ETSI가 관리하는 해당 작업 목록이다.
+
+
+### 23.2 CEN/CENELEC 수평 표준 발행 확인 — 2026-11-19
+
+CEN-CENELEC 공식 뉴스룸은 2026-11-19자로 다음 두 유럽표준의 발행을 발표했다.
+
+| 표준 | 공식 발표에서 확인한 제목/범위 | CRA 실무상 의미 | Article 27 상태 |
+|---|---|---|---|
+| EN 40000-1-1 | Cybersecurity requirements for products with digital elements — Part 1-1: Vocabulary | EN 40000 시리즈 전반의 용어·정의를 통일하는 기반 문서 | 실제 OJ 참조 게재를 별도 확인하지 못했으므로 적합성 추정을 주장하지 않음 |
+| EN 40000-1-2 | Cybersecurity requirements for products with digital elements — Part 1-2: Principles, product risk management, and lifecycle activities | 제품 설계부터 개발·생산·유지보수 및 지원 종료까지 위험기반 사이버보안 활동의 공통 기반 | 실제 OJ 참조 게재를 별도 확인하지 못했으므로 적합성 추정을 주장하지 않음 |
+
+CEN-CENELEC는 두 문서를 국가 표준 카탈로그를 통해 구입할 수 있다고 안내한다. EN 40000-1-2는 LS메카피온 서보드라이브의 제품 위험평가, 개발 프로세스, 변경관리, 생산 및 지원기간 절차를 정리할 때 우선 검토할 가치가 있다. 다만 표준을 발행·구입할 수 있다는 사실은 특정 LS 제품이 그 표준에 적합하다는 증거가 아니며, 적용 조항별 gap analysis와 제품 증거가 필요하다.
+
+**법적 구분:** CEN-CENELEC의 발행 발표는 유럽표준의 발행 상태를 확인하는 근거다. CRA Article 27(1)의 적합성 추정은 표준 참조가 EU 관보에 실제 게재된 범위에서만 발생한다. 이번 조사에서는 해당 두 표준의 CRA OJ 인용을 확인하지 못했으므로 적합성 추정이 발생했다고 기록하지 않는다. 다만 OJ 검색 결과만으로 장래 인용 여부 또는 다른 형식의 참조 가능성을 단정하지 않는다.
+
+공식 출처:
+- CEN-CENELEC, “CRA Milestone Unlocked: First European standards supporting CRA are now available!”, 2026-11-19: https://www.cencenelec.eu/news-events/news/2026/en-in-the-spotlight/2026-11-19-cra-standards-en-40000-1-1-and-en-40000-1-2/
+
+### 23.3 서보드라이브와 직접 관련성이 높은 ETSI 항목
+
+| ETSI 표준 | 주제 | ETSI 공식 Work Programme에 표시된 최신 상태 | 계획 일정(실적 아님) | 서보드라이브 분석상 의미 |
+|---|---|---|---|---|
+| EN 304 625 | 물리·가상 네트워크 인터페이스 | 승인 절차 종료(2026-11-02) | 채택 2027-03-08, 발행 2027-03-15, OJ 게재 목표 2027-06-23 | EtherCAT 등 네트워크 인터페이스의 보안 요구를 검토할 때 참고. 이 표준의 존재만으로 서보드라이브 전체가 Annex III Category 10 제품이라고 결론 내리지 않음 |
+| EN 304 626 | 운영체제 | 승인 절차 종료(2026-11-05) | 채택 2027-03-11, 발행 2027-03-15, OJ 게재 목표 2027-06-23 | 제품 내 OS/RTOS 구성요소와 독립 운영체제 제품의 핵심 기능 경계를 구분 |
+| EN 304 636 | 방화벽·IDS/IPS | 의견 분류 평가 완료(2026-10-06) | 채택 2027-02-11, 발행 2027-02-19, OJ 게재 목표 2027-05-15 | 산업용 방화벽/IDS/IPS 제품의 기준. 일반 서보드라이브 통신 포트와 동일시하지 않음 |
+
+**해석 시 주의:** ETSI Work Programme의 Adoption, Publication, OJ Publication 열은 예정 일정이다. 예정일이 도래했거나 승인 절차가 끝났다는 사실은 최종 채택·발행·EU 관보 게재가 실제로 완료되었다는 증거가 아니다. 해당 작업 상세 페이지의 Official Journal 항목 및 EUR-Lex OJ 문서를 다시 확인해야 한다.
+
+### 23.4 Article 27 적합성 추정과의 구분
+
+CRA Article 27(1)은 관련 조화표준의 참조가 EU 관보(Official Journal of the European Union)에 게재된 범위에서 적합성 추정을 인정한다.
+
+따라서 다음 상태를 별도 필드로 관리한다.
+
+1. 초안 공개 또는 Public Enquiry 진행
+2. ETSI 승인 절차 진행/종료
+3. ETSI 최종 채택 및 발행
+4. 유럽위원회 조화표준 평가
+5. EU 관보(OJ)에 CRA 조화표준 참조 실제 게재
+6. 게재된 표준의 적용 범위와 Annex I 요구사항 매핑
+
+이번에 직접 확인한 ETSI 작업계획의 EN 304 625 및 EN 304 636 상세 페이지에서는 OJ 게재를 입증하는 참조가 확인되지 않았다. 그러므로 이 두 항목에 대해 Article 27 적합성 추정을 이미 확보했다고 표시하지 않는다. 이 확인 결과를 M/606 전체 41개 항목의 OJ 인용 부재로 일반화하지 않는다.
+
+### 23.5 C/2026/1695 Action 5의 범위
+
+2026년 연합 표준화 작업 프로그램 C/2026/1695의 Action 5는 M/606을 보완하며, Annex III/IV 밖의 제품군 중 철도, 기계류, 승강기, 농업기계, AI 시스템, 태양광 인버터 등의 CRA 표준화 공백을 다룬다.
+
+이는 M/606 41개 항목의 일부로 합산하거나, 이미 발행된 조화표준으로 취급하지 않는다. LS메카피온 제품이 기계류 제조사의 완성 기계에 통합되는 경우에도, 드라이브 단품 CRA 적용성과 기계류·완성기계 관련 법령 및 Action 5 후속 표준의 범위를 별도로 검토한다.
+
+### 23.6 이번 확인에서 갱신한 결론 및 남은 작업
+
+- M/606 41개 항목의 개정 ESO 납기표는 C(2026) 7861 Annex I를 기준으로 유지한다.
+- ETSI의 18개 활성 작업 목록은 2026-11-17 버전 2.3.3 스냅샷으로 기록한다. ETSI 외 CEN/CENELEC 작업의 개별 최신 상태를 대신하지 않는다.
+- 서보드라이브 관련성이 높은 EN 304 625의 승인 절차 종료 사실을 반영하되, 최종 채택·발행·OJ 게재 완료로 오인하지 않는다.
+- EN 304 626 및 EN 304 636은 비교·경계 검토용으로 상태를 갱신한다. 서보드라이브 자체의 제품 분류를 결정하는 근거로 사용하지 않는다.
+- 다음 단계는 (1) EN 40000-1-1/-1-2의 OJ 참조 상태 및 EN 40000-1-3/-1-4 개발상태, (2) ETSI 18개 작업 각각의 최신 상태 및 OJ 필드, (3) M/606 41개 전체의 OJ 실제 게재 여부를 항목별로 교차 확인하는 것이다.
+- LS메카피온 제품별 CRA 적용성·Annex III/IV 분류는 정확한 SKU, 제품 경계 및 제조사 원본 증거가 확보되기 전까지 Unknown으로 유지한다. 보안 시험은 Not Run이다.
+
+### 23.7 공식 출처 및 재현 링크
+
+- European Commission, CRA Standardisation (last update 2026-11-12): https://digital-strategy.ec.europa.eu/en/policies/cra-standardisation
+- Commission Implementing Decision C(2026) 7861 final, Annex I (10 November 2026): https://ec.europa.eu/transparency/documents-register/api/files/C%282026%297861_1/de00000001090401
+- CEN-CENELEC official publication notice (2026-11-19): https://www.cencenelec.eu/news-events/news/2026/en-in-the-spotlight/2026-11-19-cra-standards-en-40000-1-1-and-en-40000-1-2/
+- ETSI Work Programme, active M/606 work items (Version 2.3.3, 2026-11-17): https://portal.etsi.org/webapp/WorkProgram/WorkItemPlan.asp?SearchPage=TRUE&butExpertSearch=Search&includeNonActiveTB=FALSE&includeSubProjectCode=FALSE&optDisplay=10&qCLUSTER_BOOLEAN=OR&qETSI_ALL=&qFREQUENCIES_BOOLEAN=OR&qINCLUDE_MOVED_ON=&qINCLUDE_SUB_TB=True&qKEYWORD_BOOLEAN=OR&qMandate_List=%27M%2F606%27&qREPORT_TYPE=SUMMARY&qSORT=HIGHVERSION&qSTOPPING_OUTDATED=&qSTOP_FLG=N
+- ETSI EN 304 625 work item: https://portal.etsi.org/webapp/WorkProgram/Report_WorkItem.asp?SearchPage=TRUE&WKI_ID=74860
+- ETSI EN 304 636 work item: https://portal.etsi.org/webapp/WorkProgram/Report_WorkItem.asp?SearchPage=TRUE&WKI_ID=74859
+- Commission Notice C/2026/1695, Action 5: https://eur-lex.europa.eu/eli/C/2026/1695/oj/eng
+- CRA Regulation (EU) 2024/2847, Article 27: https://eur-lex.europa.eu/eli/reg/2024/2847/oj/eng
+
+**검증 한계:** 이 addendum은 공식 공개 작업계획의 부분 최신화이며, 41개 전체 표준의 원문 전문·개별 최종 상태·OJ 게재를 전수 확인한 최종 법령/표준 감사가 아니다.
