@@ -2,18 +2,17 @@
 
 > 최신 상태 스냅샷. 역사 기록은 SESSION_LOG 및 PROJECT_LOG에 append-only로 보존한다.
 
-## 최신 main 기준점 — PR #89 / Run #959 완료
-- PR #89 merge: 9ac0b32189cdeb7789dc6993eccb0b5f3dc4b4cf; exact PR head 592ebf0df9d5e92d0c6dceff64197b3a6a605840.
-- Exact-head Run #958 / ID 44414623512: success, 162 passed / 0 xfailed; source integrity, compile, CRA traceability, official PDF and live source canaries passed.
-- Exact-main Run #959 / ID 44414766515 on merge SHA: success, 162 passed / 0 xfailed. Artifact #14477664489, SHA-256 afe38aebeb327d67f3222093c16f278cc0f84f5a5ca77f3de45c496bca1364f5, expires 2026-11-25 22:47:10 UTC.
-- Pre-merge safety safety/pre-pr89-merge-checkpoint-2026-11-19 points to prior main 16cdec76def2e8920d8fc2ca3b6a43e497d41d83. Post-merge safety safety/post-merge-pr89-2026-11-19 equals main at 9ac0b32189cdeb7789dc6993eccb0b5f3dc4b4cf.
-- PR #89 documentation-only; production main.py and production workflow unchanged.
+## 최신 main 기준점 — PR #90 병합 완료 (2026-11-19)
+- PR #90 exact-head SHA `02bfdf1217b0568e781a91a0932375d6544a8116`; Run #960 / ID `44415133377`: success. PR #90 변경에 대한 테스트 결과는 162 passed / 0 xfailed.
+- PR #90 squash merge SHA `732f5167ed1a272afc10bb66d4aceb68ccb96b79`; main은 PR #89 merge `9ac0b321...`에서 1 commit ahead, 0 behind임을 compare로 확인.
+- PR #90은 EVD-01~16 책임 역할·생애주기·검증 방법·내부 합격 게이트를 문서화했다. 병합 SHA에 대한 별도 post-merge Actions 실행/상태는 아직 확인되지 않음.
+- PR #90의 사후 safety ref 및 exact-main CI 결과는 미확인. main.py 및 production workflow 변경은 PR #90 변경 파일 목록에 없음.
 
 ## 현재 기술 게이트
 - Annex III/IV classification is based on the product's core functionality as a whole under Implementing Regulation (EU) 2025/2392. Integrated components do not automatically classify the complete drive.
 - CRA applicability under Article 2 and category classification under Articles 7–8 are separate decisions. Annex III/IV non-listing does not mean CRA exclusion.
 - Product-specific model/SKU, manuals, network topology, remote-processing dependencies and actual MCU part number remain unknown. Individual product classification remains Unknown / Not assessed.
-- Next: strengthen EVD-01–EVD-16 with role ownership, lifecycle phase, verification method and acceptance gates; then obtain product-specific P0 inputs and map EVD/SEC evidence.
+- Next: EVD→CRA→SEC crosswalk and validator; then collect product-specific P0 inputs. Product-specific classification and evidence remain Unknown until source material is received.
 
 ## 추가 프로젝트 기록 — PR #86 및 PR #87
 - PR #86 current-status/evidence-gate documentation sync merge `7ef3ecb44837826f53c2cad5a38787172ee430ab`; exact-head Run #951 and exact-main Run #952 success, 161 passed / 1 xfailed. Artifacts: #14401607639 (`sha256:41428d58615f76f6aee7010ff96ab91bc6d77ce84bb13e025220678d45a9b352`) and #14400948497 (`sha256:84c4a8855d7b254361438551e4489df75d477cc7431cc5c1a12a3a813d97ad42`).
@@ -528,3 +527,10 @@
 - Annex III/IV 분류는 제품 전체의 core functionality로 판단하며, 통합 구성요소만으로 완제품 카테고리를 자동 확정하지 않는다. Annex III/IV 비해당과 CRA 비적용을 분리하고, 구성요소 보안은 완제품 위험평가에 계속 반영한다.
 - 기존 제품 분류/intake 보고서와 EVD 매트릭스에 제품 단위별 판정 게이트 및 증거 조건을 통합했다. 특정 제조사·모델·SKU 입력이 없어 개별 제품 결론은 계속 Unknown / Not assessed.
 - PR #88/Run #957는 직전 검증 기준점이며, 이번 변경은 아직 PR exact-head CI 및 main 병합 전이다. CI·병합·사후 검증 결과는 확인 후에만 추가한다.
+
+
+## 진행 중 작업 — EVD–CRA–SEC 교차 추적 (2026-11-19)
+- 작업 브랜치: `cra/evd-sec-crosswalk-2026-11-19`, 기준 main `732f5167ed1a272afc10bb66d4aceb68ccb96b79`.
+- 신규 CSV: `reports/CRA_EVD_SEC_TRACEABILITY_CROSSWALK_2026-11-19.csv` — EVD-01~16을 CRA 요구사항 및 SEC 통제에 연결하는 후보 매핑. 각 행에 근거 설명과 제품별 적용성 한계를 기록.
+- validator에 16개 EVD 전체, CRA/SEC 외래키, SEC-001~036 전체 연결, 중복/누락 및 근거/상태 필드 검증을 추가. Negative tests: unknown SEC reference, missing EVD row.
+- PR/CI 전 상태. 제품별 적용성·구현·시험 Pass는 주장하지 않는다.
