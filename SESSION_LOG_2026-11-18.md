@@ -459,3 +459,11 @@
 - Exact-main Run #959 / ID 44414766515: success, 162 passed / 0 xfailed; source integrity, compile, CRA traceability, 9 official sources, corrigenda and Article 13(8) locator/quote canaries passed.
 - Run #959 artifact #14477664489, digest sha256:afe38aebeb327d67f3222093c16f278cc0f84f5a5ca77f3de45c496bca1364f5.
 - Next substantive work: expand EVD-01~EVD-16 with accountable roles, lifecycle stage, verification method and acceptance gates. Product-specific facts remain missing; no product-specific pass/classification claim.
+
+
+## 2026-11-19 — EVD–CRA–SEC 교차 추적 자동화 작업
+- PR #90 병합 커밋 `732f5167ed1a272afc10bb66d4aceb68ccb96b79` 및 PR #90 exact-head Run #960 success(162 passed / 0 xfailed)를 확인했다. 병합 SHA의 post-merge CI는 별도 확인되지 않아 완료로 기록하지 않는다.
+- 작업 브랜치 `cra/evd-sec-crosswalk-2026-11-19`를 main SHA `732f5167...`에서 생성했다.
+- 신규 `reports/CRA_EVD_SEC_TRACEABILITY_CROSSWALK_2026-11-19.csv`: EVD-01~16을 CRA 요구사항 및 SEC-001~036 통제에 연결하는 후보 링크와 한국어 매핑 근거·적용성 caveat를 기록.
+- `cra_traceability.py`에 EVD 16행 완전성, CRA/SEC foreign key, SEC 36개 전체 연결, 중복·누락·근거 필드 검사를 추가. tests에 unknown SEC ref 및 missing EVD row negative tests 추가.
+- 아직 로컬/CI 테스트 전이며 PR 전. 모든 제품별 상태는 Unknown; crosswalk 링크를 구현/시험 Pass로 간주하지 않는다.

@@ -403,3 +403,8 @@ CRA 요구사항과 서보 드라이브 설계·시험·기술문서 간의 prov
 Commission은 2026-11-10 C(2026) 7861 final로 M/606 Annex I을 개정했다. 새 ESO adoption deadline은 item 1(framework) 및 item 15(vulnerability handling) 2026-11-30, items 2–14 일반 보안 요구 2027-10-30, items 16–41 수직 제품별 표준 2027-01-31이다. 이는 표준화기구의 채택 납기이며 발행일, OJ citation, CRA 적용일 또는 Article 27 추정 적합성 발생일이 아니다. Article 2의 1개월 비수락 조건 및 ESO 수령일 확인은 남은 조사 항목이다.
 
 상세: [M/606 개정 결정 일정 추적](CRA_M606_AMENDMENT_C2026_7861_DEADLINES_2026-11-18.md). 공식 Commission 안내: https://digital-strategy.ec.europa.eu/en/policies/cra-standardisation
+
+
+## EVD–CRA–SEC 교차 추적 부속서 — 2026-11-19
+
+EVD-01~16과 CRA 요구사항·SEC-001~036 통제의 후보 연결은 [`CRA_EVD_SEC_TRACEABILITY_CROSSWALK_2026-11-19.csv`](CRA_EVD_SEC_TRACEABILITY_CROSSWALK_2026-11-19.csv)에 기록한다. 이는 제품별 적용성 판정이나 구현·시험 Pass가 아니며, 제품 모델·SKU·BOM·펌웨어·통신 경계 확인 후 각 링크의 적용성을 승인해야 한다. 세부 책임·검증·합격 게이트는 [`CRA_REQUIREMENTS_TO_EVIDENCE_MATRIX_2026-11-18.md`](CRA_REQUIREMENTS_TO_EVIDENCE_MATRIX_2026-11-18.md)를 기준으로 한다.

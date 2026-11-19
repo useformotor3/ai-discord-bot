@@ -18,6 +18,7 @@ REQUIRED = (
     "PROJECT_LOG.jsonl",
     "README.md",
     "reports/CRA_INTEGRATED_COMPLIANCE_REPORT_2026-11-17.md",
+    "reports/CRA_EVD_SEC_TRACEABILITY_CROSSWALK_2026-11-19.csv",
     "reports/CRA_PRODUCT_BOUNDARY_AND_EVIDENCE_INTAKE_2026-11-17.md",
     "reports/CRA_INTEGRATED_REPORT_INDEPENDENT_AUDIT_2026-11-17.md",
 )
@@ -195,4 +196,50 @@ def test_claim_related_foreign_key_must_exist(tmp_path):
         writer.writeheader()
         writer.writerows(rows)
     with pytest.raises(TraceabilityError, match="G-005: unknown interface ID IF-999"):
+        validate_traceability(tmp_path)
+
+
+def test_evd_sec_crosswalk_covers_all_evidence_and_controls():
+    summary = validate_traceability(ROOT)
+    assert summary["evd_sec_crosswalk_rows"] == 16
+    assert summary["crosswalk_sec_controls_linked"] == 36
+
+
+def test_evd_sec_crosswalk_rejects_unknown_control_reference(tmp_path):
+    _copy_required_tree(tmp_path)
+    path = tmp_path / "reports/CRA_EVD_SEC_TRACEABILITY_CROSSWALK_2026-11-19.csv"
+    with path.open("r", encoding="utf-8-sig", newline="") as stream:
+        rows = list(csv.DictReader(stream))
+        fieldnames = list(rows[0])
+    rows[0]["Related_SEC_control_IDs"] = "SEC-999"
+    with path.open("w", encoding="utf-8", newline="") as stream:
+        writer = csv.DictWriter(stream, fieldnames=fieldnames)
+        writer.writeheader()
+        writer.writerows(rows)
+    with pytest.raises(TraceabilityError, match="unknown SEC control refs"):
+        validate_traceability(tmp_path)
+
+
+def test_evd_sec_crosswalk_rejects_missing_evidence_row(tmp_path):
+    _copy_required_tree(tmp_path)
+    path = tmp_path / "reports/CRA_EVD_SEC_TRACEABILITY_CROSSWALK_2026-11-19.csv"
+    lines = path.read_text(encoding="utf-8-sig").splitlines()
+    path.write_text("\n".join(lines[:-1]) + "\n", encoding="utf-8")
+    with pytest.raises(TraceabilityError, match="expected 16 rows|cover EVD-01"):
+        validate_traceability(tmp_path)
+
+
+def test_evd_sec_crosswalk_rejects_orphaned_control(tmp_path):
+    _copy_required_tree(tmp_path)
+    path = tmp_path / "reports/CRA_EVD_SEC_TRACEABILITY_CROSSWALK_2026-11-19.csv"
+    with path.open("r", encoding="utf-8-sig", newline="") as stream:
+        rows = list(csv.DictReader(stream))
+        fieldnames = list(rows[0])
+    row = next(row for row in rows if row["Evidence_ID"] == "EVD-03")
+    row["Related_SEC_control_IDs"] = row["Related_SEC_control_IDs"].replace("SEC-008", "")
+    with path.open("w", encoding="utf-8", newline="") as stream:
+        writer = csv.DictWriter(stream, fieldnames=fieldnames)
+        writer.writeheader()
+        writer.writerows(rows)
+    with pytest.raises(TraceabilityError, match="SEC controls missing from EVD/SEC crosswalk"):
         validate_traceability(tmp_path)
