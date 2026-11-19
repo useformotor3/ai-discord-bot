@@ -538,7 +538,7 @@ STO(Safe Torque Off) 등 기능안전 기능이 존재하더라도 CRA 사이버
 | 버전 | 날짜 | 변경 |
 |---|---|---|
 | 0.1 | 2026-11-19 | LS메카피온 공식 공개 제품 목록과 자료실을 바탕으로 제품군 범위, CRA 적용성, Annex III/IV 예비 분류, 제조사 의무, 위협·시험·증거 계획을 정리 |
-| 0.2 | 2026-11-19 | Commission CRA guidance C(2026) 6013 및 M/606 2026-11-10 개정 반영; iX700M/iX7M/iX7NH 매뉴얼 첨부파일 목록 재확인 및 다운로드·해시 검증 한계 명시 |
+| 0.2 | 2026-11-19 | Commission CRA guidance OJ C/2026/6013 (draft approval file C(2026) 5252) 및 M/606 2026-11-10 개정 반영; iX700M/iX7M/iX7NH 매뉴얼 첨부파일 목록 재확인 및 다운로드·해시 검증 한계 명시 |
 | 0.3 | 2026-11-19 | CRA 위임규정 (EU) 2025/1535·2026/881의 적용 범위/신고 전파 지연 효과와 ENISA 2026 SBOM·보안 업데이트·Secure by Design·SME 지원 자료 반영 |
 | 0.4 | 2026-11-19 | Commission CRA FAQ(2026-09-04)와 Machinery Regulation (EU) 2023/1230의 동시 적용, Annex III 1.1.9/1.2.1 및 관련 제품법령 경계 분석 추가 |
 | 0.5 | 2026-11-19 | Commission Notice C/2026/1695의 CRA 표준화 Action 5를 반영하고 M/606과 Annex III/IV 외 제품(기계류 포함)의 추가 표준화 경로를 구분 |
@@ -554,7 +554,7 @@ STO(Safe Torque Off) 등 기능안전 기능이 존재하더라도 CRA 사이버
 
 ## 15. 2026-11-19 추가 조사 — 최신 CRA 지침 및 표준화 일정
 
-### 15.1 유럽위원회 CRA 적용 지침 C(2026) 6013
+### 15.1 유럽위원회 CRA 적용 지침 — OJ C/2026/6013 (승인 문서 C(2026) 5252)
 
 유럽위원회는 CRA 적용을 돕기 위한 공식 지침을 공개했다. 지침은 CRA Article 26에 따른 해석·실무 안내이며, CRA 규정 자체와 동일한 법적 구속력을 갖는 법령으로 취급하지 않는다.
 
@@ -571,7 +571,8 @@ STO(Safe Torque Off) 등 기능안전 기능이 존재하더라도 CRA 사이버
 
 공식 출처:
 - Commission guidance landing page: https://digital-strategy.ec.europa.eu/en/library/commission-publishes-new-guidance-support-timely-cyber-resilience-act-implementation
-- Commission communication identifier: C(2026) 6013
+- Official Journal citation: OJ C/2026/6013, 17.11.2026.
+- Commission draft-guidance approval document: C(2026) 5252 final. 이는 OJ 인용번호가 아니다.
 - Commission page states the guidance is non-binding and the main CRA obligations apply from 2027-12-11, while Article 14 reporting has applied since 2026-09-11.
 
 ### 15.2 CRA 표준화 요청 M/606 개정 — 2026-11-10
@@ -1207,6 +1208,8 @@ CRA Article 27(1)은 관련 조화표준의 참조가 EU 관보(Official Journal
 - 파일 크기: 2,709,282 bytes.
 - SHA-256: `40ca76caeb0108f5b97c8f373a95f590b453fe92bd45a483addf3326e48c1dc2`.
 - 이 문서는 CRA 조항의 적용을 설명하는 유럽위원회 지침이다. 문서 자체가 구속력 있는 규정은 아니며, 규정(EU) 2024/2847 원문이 우선한다. 해설과 규정이 충돌하는 것처럼 보이면 규정 문언·체계·목적을 기준으로 재검토한다.
+
+이전 §15.1에서 지침 식별자를 C(2026) 6013으로 표기한 것은 부정확했다. 정확한 관보 인용은 OJ C/2026/6013이며, C(2026) 5252 final은 지침 초안의 승인 문서다. 본 보고서의 법적 해설은 최종 관보본을 기준으로 한다.
 
 같은 CI 원문 수집 묶음에는 C(2026) 7861 M/606 Annex I(6 pages, SHA-256 `262b09596cb5cbe7d72a2c7789fb2512ee00db7f69082e7def2c8181b0f63276`)도 포함한다. 별도로 수집된 C(2026) 5252 초안 파일은 요청 URL에서 공식 PDF 본문을 직접 받지 못해 ANFR 미러로 fallback된 파일이므로, 최종 법적 해석의 주 근거로 사용하지 않는다. 이 초안의 존재와 fallback 사실은 출처 manifest에 남기고, 최종 해설 인용은 EUR-Lex의 C/2026/6013을 사용한다.
 
