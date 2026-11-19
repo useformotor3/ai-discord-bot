@@ -19,10 +19,10 @@
 
 ## 현재 상태 — 2026-11-19
 
-- 최신 main: PR #95 merge 33fd8d409667cfa2c78e8e998d843d85f60cf3f0; exact-main Run #980 success, 172 passed / 0 failed.
+- 최신 main: PR #96 merge 68e09b18196f26a995d72eccbcf3af6ec0b2718e; exact-main Run #982 success, 172 passed / 0 failed.
 - EVD-01~16 ↔ CRA ↔ SEC-001~036 추적표와 E-001~E-015 제품 증거 register가 main에 반영됨.
-- 제품 증거 register의 모든 실제 자료는 not_provided. accepted/비적용 판정은 provenance·SHA-256·locator·검토자·근거 검증을 통과해야 한다.
-- 제품별 모델/SKU, 매뉴얼, BOM/SBOM, 실제 MCU 부품번호 및 제어 사양은 미확인. 제품별 적용성·구현·시험 상태는 Unknown 유지.
+- 실제 제품 자료는 모두 not_provided. accepted/비적용 판정은 provenance·SHA-256·locator·검토자·근거 검증을 통과해야 한다.
+- 다음 단계는 정확한 모델 데이터시트와 사용설명서 확보 후 제품 variant별 CRA scope/core-functionality 및 증거 적용성 검토.
 
 ## 이전 상태 — 2026-11-18
 
