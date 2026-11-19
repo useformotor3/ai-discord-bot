@@ -87,6 +87,7 @@
 - PR #93 status-sync exact-head Run #975 및 exact-main Run #976 모두 success, 166 passed / 0 failed.
 - PR #94에서 E-001~E-015 제품 증거 register 및 provenance/state promotion gates를 main에 통합했다. Exact-head Run #977 및 exact-main Run #978 모두 success, 172 passed / 0 failed.
 - PR #95 status-sync exact-head Run #979 및 exact-main Run #980 모두 success, 172 passed / 0 failed; safety post-ref와 main 동일성을 확인했다.
+- PR #96 status-sync exact-head Run #981 및 exact-main Run #982 모두 success, 172 passed / 0 failed.
 
 ## 현재 진행 상태 — 2026-11-17
 
