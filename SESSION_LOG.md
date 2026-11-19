@@ -1585,3 +1585,12 @@
 - 기존 41행 매핑 CSV와 validator 일정 값이 원문과 일치하여 날짜 수정 없이 보고서 v0.6에 상세 설명을 추가한다.
 - OJ citation 상태는 별도 전수 감사가 필요하며, M/606 Annex는 그 자체로 Article 27 presumption을 주지 않는다.
 - Exact-main push CI는 별도 확인 전.
+
+
+## 2026-11-19 — PR #110 병합 및 SRP v1.3 신고 운영 상세화
+- PR #110 squash merge 57c7734d59b5046598e67aefd5d74a2ea29d3e2b; post-merge safety ref safety/post-merge-pr110-2026-11-19.
+- Exact-head Run #1016 / ID 44491245339 success: 174 passed / 0 failed. CRA traceability, 10 official HTML sources, JSON manifest round-trip 통과.
+- Artifact #14512063867 SHA-256 b2630ffa5f6d6cd71026faf31422e2365a836c51c50225c6ccdd51f2b1f55b09. PDF canary는 C(2026) 6013 empty body로 SKIPPED.
+- ENISA SRP FAQ 2026-10-15 및 platform/User Manual v1.3(2026-11-04)을 확인하고 보고서 v0.7에 신고 시계, AR 역할, EU Login/MFA, no API, English-only UI, outage workflow, CDaC 선택, 과거 출시 제품·통합 부품 신고 범위를 상세화했다.
+- SRP v1.3 72h counter 표시가 인지 시각 기준과 다를 수 있고 AEV Final Report counter가 미구현임을 확인. 내부 deadline tracker를 별도 운영해야 한다.
+- Exact-main push CI는 별도 확인 전.
