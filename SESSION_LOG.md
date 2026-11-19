@@ -1528,3 +1528,15 @@
 - EtherCAT 제품은 데이터 연결 가능성이 높다는 제품군 스크리닝을 기록하되, 인터페이스 존재만으로 Annex III Class I/IV 분류를 자동 확정하지 않는다. 펄스/아날로그 제품은 신호 의미와 서비스/설정 데이터 통신을 모델별로 확인해야 한다.
 - 현재 HTML source pack 10개 + PDF source pipeline 3개는 CRA 주요 법령·공식자료의 수집 체계이지 모든 관련 제품법령·표준·FAQ의 전수 완료를 의미하지 않는다.
 - 모델별 적용성·분류·적합성 Unknown, 보안 시험 Not Run 유지. 개별 매뉴얼 PDF 원본 확보·SHA-256·페이지 검토, 정확한 SKU/HW/FW 확인이 다음 단계다.
+
+
+## 2026-11-19 — PR #104 LS메카피온 제품군 예비 분석 병합 및 CI 검증
+- PR #104 merge `c3d234240d342d82cf9402ef0b07b82531ddee03`; 신규 LS메카피온 제품군 예비 분석 보고서 및 README/상황판/마스터 계획/세션 로그/기계 로그를 main에 반영.
+- Exact-head Run #1004 / ID 44485297107: success, **174 passed / 0 failed**.
+- CRA traceability: claims 13, interfaces 15, requirements 35, SEC 36, EVD crosswalk 16, product evidence 15, M/606 41 통과.
+- Live official CRA HTML source pack 10개 fetch 성공. JSON provenance manifest 10 records 생성·parse·object round-trip 성공.
+- Manifest artifact #14509668548, SHA-256 `1d3ac8ea2e049780161766ef158fecfa3ab2a7d795b477424b339e5004772bf6`, 2,566 bytes; expires 2026-11-26 08:10:28 UTC.
+- PDF canary는 EUR-Lex C/2026/6013 endpoint empty body로 temporary source outage / SKIPPED. PDF artifact는 생성되지 않았고 성공으로 기록하지 않음.
+- Pre-merge ref `safety/pre-lsmecapion-family-assessment-2026-11-19`, post-merge ref `safety/post-merge-pr104-2026-11-19`; post ref와 main identical.
+- No production main.py, .github/workflows/run.yml, secrets, state/history, legacy SIL 3 assets changed.
+- 제품별 scope/classification/conformity Unknown, 모든 보안 시험 Not Run. 법령 전수 수집 및 모델별 원본 매뉴얼 분석은 후속 작업.
