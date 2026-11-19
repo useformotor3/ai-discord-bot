@@ -1074,3 +1074,14 @@
 - Next P0: obtain official LS Mecapion model manuals as original PDF bytes, compute SHA-256, review page-by-page, record exact revision and locators; source download endpoints currently fail from available retrieval route.
 - Next P1: audit M/606 41 standards individually (draft/vote/adoption status), search OJ for actual CRA harmonised-standard citations, and track C/2026/1695 Action 5 follow-up.
 - Exact-main push CI is not independently confirmed; do not mark as passed.
+
+
+## 2026-11-19 — LS메카피온 제품군·DriveCM·ESI 매핑
+- PR #112 merged: 4507bc5dc2a8c189073ab0728a2b271063c4bf5c; exact-head Run #1020 success, 174 passed / 0 failed; live 10-source HTML and manifest round-trip passed; PDF canary skipped.
+- Manufacturer public product list reviewed for 13 drive families, voltage/power ranges and communication type.
+- DriveCM Ver1.03.2 (2026-07-07 post; file date 2026-08-11) support list: L7P, L7NH, L7NHF, PEGA, PHOX, iX7NH, L7C, iX7M, PEGA2; L7S/L7N discontinued and use LIVE i.C.E. Do not assume near-identical model names are equivalent.
+- EtherCAT ESI Ver0.98 (2025-07-15) public applicability list: L7NH, Pegasus, PHOX, L7NHF, L7N, GEM, SMT, L7MMT, iX7NH, iX7M, iX7MD.
+- iX700M is absent from public ESI v0.98 list; current DriveCM post does not list iX700M, L7NHA/B, L7SA/B, GEM. Absence from these lists is a gap requiring manufacturer confirmation, not proof of unsupported status.
+- Firmware update functionality is mentioned in DriveCM release history; actual signature/integrity/authentication/rollback/recovery controls remain unverified.
+- Report v0.8 includes a family-level interface/tool/ESI/update matrix. Product-specific conformity remains Unknown and tests Not Run.
+- Next P0: obtain official PDF manuals, DriveCM installer/release note and ESI XML bytes, hash and inspect; validate actual model/variant support with manufacturer.
