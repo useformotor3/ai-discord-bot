@@ -1,5 +1,12 @@
 # CRA 서보 드라이브 마스터 계획서
 
+## PR #119 병합 확인 — 2026-11-20
+
+- Main merge SHA: `46feea8fab4924889be30f8ae5afb7a072673055`; post-merge safety ref: `safety/post-merge-pr119-2026-11-20`.
+- Exact-head Run #1038 success; final OJ C/2026/6013 guidance analysis and durable PDF source manifest are in report §24 and sources/official/CRA_2026-11-19_SOURCE_MANIFEST.json.
+- Next: collect LS Mecapion model-specific manuals, firmware, DriveCM/ESI original evidence; resolve product boundary, support period, update lifecycle, component due diligence and Article 14 process per §24.
+
+
 ## 최신 우선순위 — 2026-11-20: OJ CRA Guidance C/2026/6013
 
 - 2026-11-17 EU 관보 C/2026/6013 최종본(61p)을 확보하고 §24에 LS메카피온 제품 적용 해설을 통합했다.

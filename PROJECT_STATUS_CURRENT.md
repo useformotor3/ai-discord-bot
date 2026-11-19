@@ -3,7 +3,16 @@
 > 최신 상태 스냅샷. 역사 기록은 SESSION_LOG 및 PROJECT_LOG에 append-only로 보존한다.
 
 
-## 최신 main 기준점 — PR #118 ETSI 상태 정정 병합 (2026-11-20)
+## 최신 main 기준점 — PR #119 CRA 공식 관보 해설 분석 병합 (2026-11-20)
+
+- PR #119 squash merge / main SHA: `46feea8fab4924889be30f8ae5afb7a072673055`; post-merge safety ref: `safety/post-merge-pr119-2026-11-20`.
+- PR exact-head Run #1038 / ID `44639933454`: success. Source integrity, compile, CRA traceability, full pytest, official PDF source retrieval and provenance manifest upload passed.
+- PDF source artifact #14584694804, 3,070,503 bytes, SHA-256 `a45396f7bc6d0d8abd29c1e0b3ee3655197e23f005fe5e3fbe6df16768a7f0c2`; official PDF byte hashes matched the durable manifest committed under `sources/official/`.
+- OJ C/2026/6013 final guidance: 61 pages, SHA-256 `40ca76caeb0108f5b97c8f373a95f590b453fe92bd45a483addf3326e48c1dc2`. M/606 Annex: 6 pages, SHA-256 `262b09596cb5cbe7d72a2c7789fb2512ee00db7f69082e7def2c8181b0f63276`.
+- C(2026)5252 draft fallback via ANFR is marked non-primary. Final interpretive source is EUR-Lex OJ C/2026/6013; the regulation prevails over non-binding guidance.
+- Exact-main push CI remains not independently confirmed. Product-specific scope/classification/RDPS remain Unknown; security tests Not Run.
+
+## 이전 main 기준점 — PR #118 ETSI 상태 정정 병합 (2026-11-20)
 
 - PR #118 merge SHA / main: `ee30bdccbc719cce46999a9c9df4ee3fc0609144`; post-merge safety ref: `safety/post-merge-pr118-2026-11-20`.
 - PR #118 exact-head Run #1036 / ID `44639411922`: success; source integrity, compile, CRA traceability, full pytest, official PDF source acquisition, HTML provenance manifest 단계 통과.
