@@ -2,13 +2,13 @@
 
 > 최신 상태 스냅샷. 역사 기록은 SESSION_LOG 및 PROJECT_LOG에 append-only로 보존한다.
 
-## 최신 main 기준점 — PR #94 병합 및 사후 CI 완료 (2026-11-19)
-- PR #94 exact-head SHA c1ec49e44ce0cc8c20b6f836409c21a5aad3306b; Run #977 / ID 44449116189: success, **172 passed / 0 failed**.
-- PR #94 squash merge SHA / main: 6f6a0908d15e6ed9ef9e0043e9f7f2ed3961d64c.
-- Exact-main Run #978 / ID 44449237270: success, **172 passed / 0 failed**; source integrity, compile, CRA traceability, official CRA PDF and live EUR-Lex canaries passed.
-- Exact-main artifact #14493789671, digest sha256:6159e27808ace502b0e504cef88f977ddb87c1f2aa85c17d93c58e812c568679, expires 2026-11-26 03:08:25 UTC.
-- Pre-merge safety ref safety/pre-pr94-merge-checkpoint-2026-11-19 points to main 84e246c3abb78191300ba13cc7e1b4b75ac3a643. Post-merge safety ref safety/post-merge-pr94-2026-11-19 equals main at 6f6a0908d15e6ed9ef9e0043e9f7f2ed3961d64c; compare identical (0 ahead / 0 behind).
-- PR #94 added the E-001~E-015 product evidence register template, state-promotion validator and negative tests. Production main.py and .github/workflows/run.yml unchanged; only isolated tests workflow source pins updated.
+## 최신 main 기준점 — PR #95 병합 및 사후 CI 완료 (2026-11-19)
+- PR #95 exact-head SHA fc4bffc89cc741055243d75389ad0a0da33898ba; Run #979 / ID 44449515567: success, **172 passed / 0 failed**.
+- PR #95 squash merge SHA / main: 33fd8d409667cfa2c78e8e998d843d85f60cf3f0.
+- Exact-main Run #980 / ID 44449631620: success, **172 passed / 0 failed**; source integrity, compile, CRA traceability, official CRA PDF and live EUR-Lex canaries passed.
+- Exact-main artifact #14495245880, digest sha256:3ad730233356927770e310227a36e7478688b34260f6c928e22e18da69b8e830, expires 2026-11-26 03:11:27 UTC.
+- Pre-merge safety ref safety/pre-pr95-merge-checkpoint-2026-11-19 points to main 6f6a0908d15e6ed9ef9e0043e9f7f2ed3961d64c. Post-merge safety ref safety/post-merge-pr95-2026-11-19 equals main at 33fd8d409667cfa2c78e8e998d843d85f60cf3f0; compare identical (0 ahead / 0 behind).
+- PR #95 was documentation/status sync only. Production main.py and .github/workflows/run.yml unchanged.
 
 ## 현재 기술 게이트
 - Annex III/IV classification is based on the product's core functionality as a whole under Implementing Regulation (EU) 2025/2392. Integrated components do not automatically classify the complete drive.
