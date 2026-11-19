@@ -1613,3 +1613,13 @@
 - iX700M은 ESI v0.98 공개 적용 모델에 명시되지 않으며, iX700M/L7NHA/B/L7SA/B/GEM의 DriveCM 지원 여부도 공개 게시물만으로 확정하지 않는다.
 - 도구의 펌웨어 다운로드 프로그램 언급은 확인했지만 서명·무결성·인증·롤백 등 보안 통제는 검증하지 않았다.
 - 원본 PDF/설치 파일/ESI XML의 다운로드·SHA-256·내용 검토는 미완료. Exact-main push CI는 독립 확인 전.
+
+
+## 2026-11-19 — PR #113 병합 및 M/606 ESO 진행상태·OT/IACS 표준 조사
+- PR #113 squash merge 5273e6da25862a8ad1e92b2473a11a63b0d8015f; post-merge safety ref safety/post-merge-pr113-2026-11-19.
+- Exact-head Run #1022 / ID 44492219721 success: 174 passed / 0 failed. CRA traceability, 10 official HTML sources, JSON manifest round-trip 통과.
+- Artifact #14513586428 SHA-256 bc438c098ff591da5690070adcc417d3f440adcf4a6635df87b00b05ed9b7d95. PDF canary는 C(2026) 6013 empty body로 SKIPPED.
+- STAN4CR/CEN-CENELEC/ETSI joint M/606 report V2.0 (2026-06-03) 4페이지를 검토하고 개별 표준 단계 및 OT/IACS supporting deliverables를 보고서 v0.9에 반영했다.
+- EN IEC 62443-4-1/-4-2/-3-3은 M/606 41개 Annex I 표준 및 CRA OJ citation과 구분되는 supporting deliverables다.
+- 2026-06-03 publication forecast는 과거 snapshot이며 C(2026)7861 개정 이후의 현재 제출기한으로 사용하지 않는다.
+- Exact-main push CI는 독립 확인 전.
