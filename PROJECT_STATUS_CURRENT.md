@@ -632,3 +632,13 @@
 - 신고 기한(24h/72h/AEV 14d/SI 1 month), Primary AR 1명·Secondary AR 최대 20명, EU Login/MFA, 영어 UI, 초기 API 미제공, 장애 대응, SRP v1.3 카운터 한계를 설명한다.
 - SRP 72h 카운터는 현재 Early Warning 제출 이후 48h를 더하는 표시 로직으로 실제 인지시각 기준 기한보다 일찍 overdue 표시될 수 있다. AEV Final Report 카운터도 미구현. 화면 알림이 법정 기한을 변경하지 않으므로 내부 tracker를 유지해야 한다.
 - 과거 출시 제품의 Article 14 신고, 통합 부품 취약점의 완제품/부품 제조자 신고 책임도 보고서에 추가했다.
+
+
+## 2026-11-19 — PR #111 병합 및 최신 CRA 신고 운영자료 반영
+- PR #111 merge SHA: 26e6cc348f0e4207fe04a4d789ace38b7434b8ea; post-merge safety ref safety/post-merge-pr111-2026-11-19 생성.
+- PR #111 exact-head Run #1018 / ID 44491554033: success, 174 passed / 0 failed. CRA traceability 13/15/35/36/16/15/41 통과.
+- Live official CRA HTML 10-source canary 및 JSON manifest parse/round-trip 통과. Artifact #14512443373, SHA-256 6354a013d1753e4b67dae2fb87071b330f6b591097b8946ce7ec95f050e29dea, 2,566 bytes, expires 2026-11-26 08:54:31 UTC.
+- PDF canary는 EUR-Lex C(2026) 6013 empty body로 SKIPPED. Exact-main push CI는 독립 확인 전.
+- LS메카피온 보고서 최신 v0.7: CRA 법령·Commission 지침·M/606·기계류 규정·ENISA 자료·SRP v1.3 신고 운영을 통합한 제품군 예비 분석.
+- 미완료 P0: 모델별 제조사 PDF 원본 다운로드·해시·페이지 검토, M/606 41개 개별 표준의 실제 개발 상태 및 CRA OJ 인용 전수 감사, C/2026/1695 Action 5 후속 표준화 요청 추적.
+- 제품별 CRA scope/classification/conformity는 Unknown, 보안시험 Not Run. 보고서는 최종 적합성 평가서가 아니다.

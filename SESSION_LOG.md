@@ -1594,3 +1594,12 @@
 - ENISA SRP FAQ 2026-10-15 및 platform/User Manual v1.3(2026-11-04)을 확인하고 보고서 v0.7에 신고 시계, AR 역할, EU Login/MFA, no API, English-only UI, outage workflow, CDaC 선택, 과거 출시 제품·통합 부품 신고 범위를 상세화했다.
 - SRP v1.3 72h counter 표시가 인지 시각 기준과 다를 수 있고 AEV Final Report counter가 미구현임을 확인. 내부 deadline tracker를 별도 운영해야 한다.
 - Exact-main push CI는 별도 확인 전.
+
+
+## 2026-11-19 — PR #111 병합 및 SRP v1.3 신고 운영자료 반영
+- PR #111 squash merge 26e6cc348f0e4207fe04a4d789ace38b7434b8ea; post-merge safety ref safety/post-merge-pr111-2026-11-19.
+- Exact-head Run #1018 / ID 44491554033 success: 174 passed / 0 failed. CRA traceability 13/15/35/36/16/15/41, 10 official HTML sources, JSON manifest round-trip 통과.
+- Manifest artifact #14512443373 SHA-256 6354a013d1753e4b67dae2fb87071b330f6b591097b8946ce7ec95f050e29dea. PDF canary는 EUR-Lex C(2026) 6013 empty body로 SKIPPED.
+- LS메카피온 report v0.7에 SRP v1.3 FAQ/User Manual, reporting timelines, Primary/Secondary AR, MFA, no API, outage process, counter caveats 반영.
+- 다음은 모델별 매뉴얼 PDF 원본 확보·해시·페이지 검토, M/606 41개 표준 개별 진행상태 및 OJ citation 감사, C/2026/1695 Action 5 후속 요청 추적.
+- Exact-main push CI는 독립 확인 전이므로 미확인.

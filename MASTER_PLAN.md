@@ -1066,3 +1066,11 @@
 - Critical operational issue: SRP v1.3 FAQ says the current 72h counter may display overdue early because it adds 48h after Early Warning submission rather than calculating from original awareness time; AEV Final Report counter is not implemented. Internal legal deadline tracker is mandatory.
 - Article 14 reporting applies from 2026-09-11 to all in-scope products, including products placed on the market before 2027-12-11, when the manufacturer becomes aware after reporting obligations apply. Integrated-component AEV reporting responsibilities are assessed at both finished-product and separately marketed component level.
 - Next: incorporate SRP v1.3 manual into internal SOP / exercise; continue M/606 per-standard status and OJ citation audit; acquire manufacturer manual PDFs.
+
+
+## 2026-11-19 — PR #111 신고 운영자료 반영 및 다음 우선순위
+- PR #111 merged: 26e6cc348f0e4207fe04a4d789ace38b7434b8ea; exact-head Run #1018 success, 174 passed / 0 failed; 10-source HTML canary and manifest round-trip passed; PDF canary skipped on empty EUR-Lex response.
+- LS메카피온 report v0.7 now contains CRA SRP FAQ 2026-10-15 and SRP/User Manual v1.3 operations, including deadline counters limitations.
+- Next P0: obtain official LS Mecapion model manuals as original PDF bytes, compute SHA-256, review page-by-page, record exact revision and locators; source download endpoints currently fail from available retrieval route.
+- Next P1: audit M/606 41 standards individually (draft/vote/adoption status), search OJ for actual CRA harmonised-standard citations, and track C/2026/1695 Action 5 follow-up.
+- Exact-main push CI is not independently confirmed; do not mark as passed.
