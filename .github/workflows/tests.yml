@@ -110,7 +110,7 @@ jobs:
           verify_blob "tests/conftest.py" "f0d390b8041bcafc126dca0d4bc6486cc5844db2"
           verify_blob "tests/test_main_characterization.py" "e9dc712e4440c651628ae107ef9cc0939cc8228c"
           verify_blob "tests/test_cra_source.py" "746d61d4f5c75c6f49d742d2d27006ba4488a8a9"
-          verify_blob "tests/test_cra_claims.py" "d557df937780a266f0cda07660c9de7c477952c0"
+          verify_blob "tests/test_cra_claims.py" "45a9057414cc53c1187da6f67ac4a8e0d4134505"
           verify_blob "tests/test_mock_infrastructure.py" "05a92ff7ff3a6e4a0374d270770ecc6cf38e0a7f"
           verify_blob "tests/test_p1_reliability.py" "c5e3fbe2e75a6a08703117cb5de34571b5dc10c9"
           verify_blob "tests/test_external_failure_paths.py" "0a84b013b4ffe5f5675092087d40cdc7f1e4bb88"
