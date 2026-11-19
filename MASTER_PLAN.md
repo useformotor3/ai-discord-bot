@@ -969,3 +969,11 @@
 - E-001~E-015와 EVD-01~16 연결 템플릿을 main에 반영했다.
 - variant별 provenance, SHA-256, locator, reviewer/date, cross-check, decision rationale를 기록한다.
 - 상태 승격은 validator가 fail-closed로 검사한다. 현재 모든 항목은 not_provided이며 실제 제품 증거 수령 후에만 상태를 갱신한다.
+
+
+## 2026-11-19 — PR #97 최신 기준점 동기화
+- main 기준점: PR #97 merge `9ebab690b6cbbf0f3588bfeab16c622dca4d65e9`.
+- PR #97 exact-head Run #983 및 exact-main Run #984 모두 success, 172 passed / 0 failed. Exact-main Run #984는 source integrity, compile, CRA traceability, full pytest, official CRA PDF canary, artifact upload, live EUR-Lex canary를 통과했다.
+- PR #97 사후 안전 ref `safety/post-merge-pr97-2026-11-19`와 main의 동일성을 확인했다.
+- 다음 실질 우선순위는 이미 구축된 E-001~E-015 증거 수집 체계에 실제 제품 자료를 투입하는 것이다. 제조사/정확한 모델·SKU, 데이터시트, 설치·사용 매뉴얼이 없으면 제품별 Article 2 및 Annex III/IV 판정은 보류한다.
+- 문서 동기화만을 위한 반복 PR을 양산하지 않는다. 다음 문서 갱신은 법령/제품 증거/코드의 실질 변경과 함께 수행한다.
