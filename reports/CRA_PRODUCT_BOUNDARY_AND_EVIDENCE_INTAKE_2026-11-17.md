@@ -283,3 +283,15 @@ CRA 사이버보안 요구와 기계·전기 안전 요구를 혼합하지 않�
 - Open issues, missing evidence, reviewer and date
 
 'No evidence'는 'No'가 아니며, 제품별 판단을 내릴 수 없는 경우 Unknown을 유지한다.
+
+
+## 16. 제품별 증거 register — 2026-11-19
+
+기존 E-001~E-015 제출 목록을 기계판독형 register로 관리한다: [제품 증거 register 템플릿](CRA_PRODUCT_EVIDENCE_REGISTER_TEMPLATE_2026-11-19.csv).
+
+- 각 E-ID는 관련 EVD-01~16에 연결된다. 제품 variant가 여러 개인 경우 variant별 행/복사본으로 분리하고, 모델 간 증거를 혼용하지 않는다.
+- 원본 파일명, 출처 URL(해당 시), 발행자, 문서 버전·발행일, 수집일, SHA-256, 페이지/절 locator, 원문 언어, 검토자·검토일, 교차검증 참조 및 판정 근거를 기록한다.
+- 상태는 not_provided, received, source_verified, content_reviewed, cross_checked, accepted, rejected, not_applicable_with_rationale 중 하나다.
+- accepted는 파일·출처 provenance·SHA-256·locator·검토자/일자·교차검증 참조·결정 근거가 모두 있어야 한다. not_applicable_with_rationale는 제품 variant, 검토자/일자, 명시적 사유가 필요하다.
+- 상태 이름만 바꾸거나 교차표 링크만 존재한다고 증거를 accepted/Pass로 승격하지 않는다. 현재 모든 E-ID는 제품 자료 미제공으로 not_provided다.
+- 자동 검증: cra_traceability.py; 부정 테스트는 provenance 없는 accepted, 알 수 없는 EVD 링크, 근거 없는 비적용 판정을 거부한다.
