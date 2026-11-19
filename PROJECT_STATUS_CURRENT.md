@@ -2,17 +2,19 @@
 
 > 최신 상태 스냅샷. 역사 기록은 SESSION_LOG 및 PROJECT_LOG에 append-only로 보존한다.
 
-## 최신 main 기준점 — PR #90 병합 완료 (2026-11-19)
-- PR #90 exact-head SHA `02bfdf1217b0568e781a91a0932375d6544a8116`; Run #960 / ID `44415133377`: success. PR #90 변경에 대한 테스트 결과는 162 passed / 0 xfailed.
-- PR #90 squash merge SHA `732f5167ed1a272afc10bb66d4aceb68ccb96b79`; main은 PR #89 merge `9ac0b321...`에서 1 commit ahead, 0 behind임을 compare로 확인.
-- PR #90은 EVD-01~16 책임 역할·생애주기·검증 방법·내부 합격 게이트를 문서화했다. 병합 SHA에 대한 별도 post-merge Actions 실행/상태는 아직 확인되지 않음.
-- PR #90의 사후 safety ref 및 exact-main CI 결과는 미확인. main.py 및 production workflow 변경은 PR #90 변경 파일 목록에 없음.
+## 최신 main 기준점 — PR #91 병합 및 사후 CI 완료 (2026-11-19)
+- PR #91 exact-head SHA `dc35c9a176f4e0f7476eba718c9fb870cd27bb04`; Run #971 / ID `44447380699`: success, **166 passed / 0 failed**.
+- PR #91 squash merge SHA / main: `a3b21e86342f098ff6d81a139de6e89a1626a174`.
+- Exact-main Run #972 / ID `44447539193`: success, **166 passed / 0 failed**; source integrity, compile, CRA traceability, official CRA PDF and live EUR-Lex canaries passed.
+- Exact-main artifact #14493334026, digest `sha256:a54d683e78974b8615c48b6dc9831e169aaa1c27e0073ef627f7e7ca8400fe70`, expires 2026-11-26 02:53:52 UTC.
+- Pre-merge safety ref `safety/pre-pr91-merge-checkpoint-2026-11-19` points to main `732f5167ed1a272afc10bb66d4aceb68ccb96b79`. Post-merge safety ref `safety/post-merge-pr91-2026-11-19` equals main at `a3b21e86342f098ff6d81a139de6e89a1626a174`; compare status identical (0 ahead / 0 behind).
+- PR #91 modified the isolated test workflow `.github/workflows/tests.yml` to pin reviewed source blobs; production `.github/workflows/run.yml`, `main.py`, secrets, state/history and legacy SIL 3 files were not changed.
 
 ## 현재 기술 게이트
 - Annex III/IV classification is based on the product's core functionality as a whole under Implementing Regulation (EU) 2025/2392. Integrated components do not automatically classify the complete drive.
 - CRA applicability under Article 2 and category classification under Articles 7–8 are separate decisions. Annex III/IV non-listing does not mean CRA exclusion.
 - Product-specific model/SKU, manuals, network topology, remote-processing dependencies and actual MCU part number remain unknown. Individual product classification remains Unknown / Not assessed.
-- Next: EVD→CRA→SEC crosswalk and validator; then collect product-specific P0 inputs. Product-specific classification and evidence remain Unknown until source material is received.
+- Next: collect product-specific P0 inputs and approve each candidate EVD/SEC link as applicable, not applicable or conditional. Product-specific classification, implementation and test evidence remain Unknown until source material and versioned test records are received.
 
 ## 추가 프로젝트 기록 — PR #86 및 PR #87
 - PR #86 current-status/evidence-gate documentation sync merge `7ef3ecb44837826f53c2cad5a38787172ee430ab`; exact-head Run #951 and exact-main Run #952 success, 161 passed / 1 xfailed. Artifacts: #14401607639 (`sha256:41428d58615f76f6aee7010ff96ab91bc6d77ce84bb13e025220678d45a9b352`) and #14400948497 (`sha256:84c4a8855d7b254361438551e4489df75d477cc7431cc5c1a12a3a813d97ad42`).
@@ -534,3 +536,10 @@
 - 신규 CSV: `reports/CRA_EVD_SEC_TRACEABILITY_CROSSWALK_2026-11-19.csv` — EVD-01~16을 CRA 요구사항 및 SEC 통제에 연결하는 후보 매핑. 각 행에 근거 설명과 제품별 적용성 한계를 기록.
 - validator에 16개 EVD 전체, CRA/SEC 외래키, SEC-001~036 전체 연결, 중복/누락 및 근거/상태 필드 검증을 추가. Negative tests: unknown SEC reference, missing EVD row.
 - PR/CI 전 상태. 제품별 적용성·구현·시험 Pass는 주장하지 않는다.
+
+
+## PR #91 — EVD–CRA–SEC 추적 자동화 완료 (2026-11-19)
+- 신규 `reports/CRA_EVD_SEC_TRACEABILITY_CROSSWALK_2026-11-19.csv`: EVD-01~16 ↔ CRA 요구사항 ↔ SEC-001~036 후보 연결. SEC-008/014/036 누락을 CI에서 발견해 보완했다.
+- `cra_traceability.py`는 EVD 16행, CRA/SEC foreign keys, SEC 전체 커버리지, 중복/누락, rationale/applicability 필드를 fail-closed로 검사한다.
+- Negative regression tests는 unknown SEC ID, missing EVD row, orphaned SEC control을 검증한다. Full suite: 166 passed / 0 failed.
+- PR #91 exact-head Run #971 success; exact-main Run #972 success. 제품별 적용성/구현/시험 Pass는 여전히 Unknown.
