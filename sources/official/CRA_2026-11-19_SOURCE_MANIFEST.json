@@ -1,0 +1,63 @@
+{
+  "retrieval_run": {
+    "workflow": "Isolated Python Tests",
+    "run_number": 1036,
+    "run_id": 44639411922,
+    "head_sha": "5535ca2f7b326da9db7538a12129dc346564eb95"
+  },
+  "artifact": {
+    "id": 14584269836,
+    "name": "cra-official-pdf-sources-4e4835150ae267d9d4152a91d76bf0a41bed168a",
+    "size_bytes": 3070504,
+    "sha256": "0c77f3ae2546927fd2ae37da024b1b398e0d58a0be08fde50581a984f685c94f",
+    "expires_at": "2026-11-26T23:39:21Z"
+  },
+  "documents": [
+    {
+      "id": "CRA-GUIDANCE-OJ-2026-6013",
+      "title": "Commission guidance on the application of Regulation (EU) 2024/2847 (Cyber Resilience Act)",
+      "publication": "OJ C/2026/6013, 17.11.2026",
+      "requested_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX%3A52026XC06013",
+      "final_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX%3A52026XC06013",
+      "primary_authority": true,
+      "content_type": "application/pdf",
+      "bytes": 2709282,
+      "sha256": "40ca76caeb0108f5b97c8f373a95f590b453fe92bd45a483addf3326e48c1dc2",
+      "pages": 61,
+      "text_sha256": "384724af44e399cb997771e9e65ea4a5fe1dd264131d0754921bd691dd1f7720"
+    },
+    {
+      "id": "CRA-M606-C2026-7861-ANNEX",
+      "title": "Commission Implementing Decision C(2026) 7861 final, Annex I",
+      "publication": "10.11.2026",
+      "requested_url": "https://ec.europa.eu/transparency/documents-register/api/files/C%282026%297861_1/de00000001090401",
+      "final_url": "https://ec.europa.eu/transparency/documents-register/api/files/C%282026%297861_1/de00000001090401",
+      "primary_authority": true,
+      "content_type": "application/pdf",
+      "bytes": 151267,
+      "sha256": "262b09596cb5cbe7d72a2c7789fb2512ee00db7f69082e7def2c8181b0f63276",
+      "pages": 6,
+      "text_sha256": "06409ee840550a4e602aa30b4f77a9eaf90a44735f820ce2b1239cccec6a54dd"
+    },
+    {
+      "id": "CRA-GUIDANCE-2026-5252",
+      "title": "Draft Commission guidance content approval annex",
+      "requested_url": "https://ec.europa.eu/newsroom/dae/redirection/document/131456",
+      "final_url": "https://www.anfr.fr/fileadmin/CRA/Commission_guidance_on_the_application_of_Regulation__EU__20242847__Cyber_Resilience_Act_.pdf",
+      "primary_authority": false,
+      "fallback_used": true,
+      "fallback_reason": "EC redirect did not yield the PDF body; ANFR mirror was used for source comparison only",
+      "content_type": "application/pdf",
+      "bytes": 1190726,
+      "sha256": "fe209c250e3d1f7599e42826d91963666951332927edcf511a2e79fe8d2f8234",
+      "pages": 84,
+      "text_sha256": "147f6649b5089cbc4d55c7af77abdcdbd04263b116960812c579fd25acda7425",
+      "treatment": "Do not use as primary legal authority; final OJ C/2026/6013 is authoritative guidance source"
+    }
+  ],
+  "notes": [
+    "Hashes are SHA-256 of the downloaded PDF bytes.",
+    "Text extraction hashes are separate from PDF byte hashes.",
+    "The CI artifact expires after 7 days; this manifest is intended as durable provenance metadata."
+  ]
+}
