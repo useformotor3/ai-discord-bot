@@ -467,3 +467,13 @@
 - 신규 `reports/CRA_EVD_SEC_TRACEABILITY_CROSSWALK_2026-11-19.csv`: EVD-01~16을 CRA 요구사항 및 SEC-001~036 통제에 연결하는 후보 링크와 한국어 매핑 근거·적용성 caveat를 기록.
 - `cra_traceability.py`에 EVD 16행 완전성, CRA/SEC foreign key, SEC 36개 전체 연결, 중복·누락·근거 필드 검사를 추가. tests에 unknown SEC ref 및 missing EVD row negative tests 추가.
 - 아직 로컬/CI 테스트 전이며 PR 전. 모든 제품별 상태는 Unknown; crosswalk 링크를 구현/시험 Pass로 간주하지 않는다.
+
+
+## 2026-11-19 — PR #91 EVD–CRA–SEC 추적 자동화 병합 및 사후 검증
+- PR #91 exact-head `dc35c9a176f4e0f7476eba718c9fb870cd27bb04`, Run #971 / ID `44447380699`: success, 166 passed / 0 failed.
+- CI에서 처음 발견된 source-blob pin 불일치, SEC-008/014/036 링크 누락, JSONL blank/duplicate records, negative-test fixture 경로 문제를 각각 수정했다. 실패한 검사를 비활성화하지 않고 재실행해 최종 통과시켰다.
+- PR #91 squash merge `a3b21e86342f098ff6d81a139de6e89a1626a174`. Pre-merge ref `safety/pre-pr91-merge-checkpoint-2026-11-19`; post-merge ref `safety/post-merge-pr91-2026-11-19`; post ref == main (0 ahead / 0 behind).
+- Exact-main Run #972 / ID `44447539193`: success, 166 passed / 0 failed; source integrity, compile, CRA cross-matrix traceability, official CRA PDF canary, live EUR-Lex canary and Article 13(8) locator/quote passed.
+- Artifact #14493334026, SHA-256 `a54d683e78974b8615c48b6dc9831e169aaa1c27e0073ef627f7e7ca8400fe70`, expiry 2026-11-26 02:53:52 UTC.
+- PR #91 changes `.github/workflows/tests.yml` (isolated validation only); production `.github/workflows/run.yml` and `main.py` unchanged. Secrets/state/history and SIL 3 legacy artifacts untouched.
+- Main next step: product-specific P0 evidence intake and explicit applicability review for each EVD/SEC candidate link; no product-specific Pass or MCU selection without actual inputs and bench evidence.
