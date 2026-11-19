@@ -1698,3 +1698,16 @@
 - Article 14 reporting: 2026-09-11부터 CRA 적용범위 제품에 적용되며, 제품 지원기간 종료 후에도 보고 의무가 지속된다는 공식 해설을 확인했다.
 - 통합 보고서 §24 및 상황판/마스터 계획/README/로그를 갱신한다.
 - 제품별 판정은 SKU·설계·판매경계·지원정책 증거 확보 전까지 Unknown; security tests Not Run.
+
+
+---
+
+## 2026-11-20 — PR #119 병합 및 공식 관보 해설 분석 반영
+
+- PR #119 `docs(cra): analyze OJ C/2026/6013 guidance for LS Mecapion` squash merge 완료.
+- Merge SHA / main: `46feea8fab4924889be30f8ae5afb7a072673055`.
+- Pre-work safety: `safety/post-merge-pr118-2026-11-20`; post-merge safety: `safety/post-merge-pr119-2026-11-20`.
+- Exact-head Run #1038 / ID `44639933454`: success; source integrity, compile, CRA traceability, full pytest, official PDF source retrieval, HTML canary and manifest upload.
+- PDF artifact #14584694804, 3,070,503 bytes, SHA-256 `a45396f7bc6d0d8abd29c1e0b3ee3655197e23f005fe5e3fbe6df16768a7f0c2`; individual PDF hashes matched the committed source manifest.
+- OJ C/2026/6013 final guidance analysis and LS Mecapion product application map are in report §24.
+- Exact-main push CI remains not independently confirmed; product scope/classification/RDPS remain Unknown; security tests Not Run.
