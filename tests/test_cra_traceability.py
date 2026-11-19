@@ -207,7 +207,7 @@ def test_evd_sec_crosswalk_covers_all_evidence_and_controls():
 
 def test_evd_sec_crosswalk_rejects_unknown_control_reference(tmp_path):
     _copy_required_tree(tmp_path)
-    path = tmp_path / REQUIRED[-1]
+    path = tmp_path / "reports/CRA_EVD_SEC_TRACEABILITY_CROSSWALK_2026-11-19.csv"
     with path.open("r", encoding="utf-8-sig", newline="") as stream:
         rows = list(csv.DictReader(stream))
         fieldnames = list(rows[0])
