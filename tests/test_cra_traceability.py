@@ -259,6 +259,7 @@ def test_product_evidence_register_rejects_accepted_without_provenance(tmp_path)
         rows = list(csv.DictReader(stream))
         fieldnames = list(rows[0])
     rows[0]["Evidence_Record_State"] = "accepted"
+    rows[0]["Product_Variant_ID"] = "MODEL-VARIANT-1"
     rows[0]["Decision"] = "accepted"
     with path.open("w", encoding="utf-8", newline="") as stream:
         writer = csv.DictWriter(stream, fieldnames=fieldnames)
@@ -296,4 +297,44 @@ def test_product_evidence_register_requires_reasoned_not_applicable(tmp_path):
         writer.writeheader()
         writer.writerows(rows)
     with pytest.raises(TraceabilityError, match="E-001: not_applicable_with_rationale requires Product_Variant_ID"):
+        validate_traceability(tmp_path)
+
+
+def test_product_evidence_register_rejects_invalid_sha256(tmp_path):
+    _copy_required_tree(tmp_path)
+    path = tmp_path / "reports/CRA_PRODUCT_EVIDENCE_REGISTER_TEMPLATE_2026-11-19.csv"
+    with path.open("r", encoding="utf-8-sig", newline="") as stream:
+        rows = list(csv.DictReader(stream))
+        fieldnames = list(rows[0])
+    row = rows[0]
+    row.update({
+        "Evidence_Record_State": "source_verified",
+        "Product_Variant_ID": "MODEL-VARIANT-1",
+        "Evidence_File_Name": "datasheet.pdf",
+        "Issuer": "Manufacturer",
+        "Document_Version": "1.0",
+        "Collection_Date": "2026-11-19",
+        "SHA256": "not-a-sha256",
+        "Original_Language": "en",
+    })
+    with path.open("w", encoding="utf-8", newline="") as stream:
+        writer = csv.DictWriter(stream, fieldnames=fieldnames)
+        writer.writeheader()
+        writer.writerows(rows)
+    with pytest.raises(TraceabilityError, match="E-001: SHA256 must be 64 hexadecimal characters"):
+        validate_traceability(tmp_path)
+
+
+def test_not_provided_rejects_partial_provenance(tmp_path):
+    _copy_required_tree(tmp_path)
+    path = tmp_path / "reports/CRA_PRODUCT_EVIDENCE_REGISTER_TEMPLATE_2026-11-19.csv"
+    with path.open("r", encoding="utf-8-sig", newline="") as stream:
+        rows = list(csv.DictReader(stream))
+        fieldnames = list(rows[0])
+    rows[0]["Issuer"] = "Manufacturer"
+    with path.open("w", encoding="utf-8", newline="") as stream:
+        writer = csv.DictWriter(stream, fieldnames=fieldnames)
+        writer.writeheader()
+        writer.writerows(rows)
+    with pytest.raises(TraceabilityError, match="E-001: not_provided must not contain Issuer"):
         validate_traceability(tmp_path)
