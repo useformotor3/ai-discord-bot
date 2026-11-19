@@ -186,6 +186,11 @@ jobs:
           if not annex_i_10 or "physical and virtual network interfaces" not in " ".join(annex_i_10.split()).casefold():
               raise SystemExit("FAIL: live 2025/2392 Annex I category 10 locator failed")
           if not annex_ii_1 or "hardware devices with security boxes" not in " ".join(annex_ii_1.split()).casefold():
+              lines = implementing["text"].splitlines()
+              for index, line in enumerate(lines):
+                  if any(marker in line.casefold() for marker in ("annex ii", "hardware", "security boxes")):
+                      print("DEBUG 2025/2392 Annex II source:", " | ".join(lines[max(0, index - 2):min(len(lines), index + 6)]))
+              print(f"DEBUG Annex II(1) extracted scope: {annex_ii_1!r}")
               raise SystemExit("FAIL: live 2025/2392 Annex II category 1 locator failed")
           if "core functionality" not in " ".join(implementing["text"].split()).casefold():
               raise SystemExit("FAIL: live 2025/2392 core-functionality recital marker missing")
