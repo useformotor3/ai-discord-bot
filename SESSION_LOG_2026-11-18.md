@@ -486,3 +486,12 @@
 - Exact-main Run #974 / ID `44447909706`: success, 166 passed / 0 failed; CRA traceability, source integrity, compile, official PDF and live EUR-Lex canaries passed.
 - Artifact #14494142424, SHA-256 `f0def08f1188b819fba061728a092dbf5ef0a340bbdd75200f0aff2edb5d500a`, expires 2026-11-26 02:57:02 UTC.
 - Production `main.py` and `.github/workflows/run.yml` remain unchanged. Next: product-specific P0 evidence intake and approval of candidate applicability links; all product-specific states remain Unknown.
+
+
+## 2026-11-19 — 제품별 증거 register 및 provenance gate 작업 시작
+- PR #93 exact-head Run #975 및 exact-main Run #976 모두 success, 166 passed / 0 failed. Main SHA 84e246c3abb78191300ba13cc7e1b4b75ac3a643; pre/post safety refs safety/pre-pr93-merge-checkpoint-2026-11-19 / safety/post-merge-pr93-2026-11-19, post ref == main.
+- 작업 브랜치 cra/product-evidence-register-2026-11-19를 위 main SHA에서 생성했다.
+- 신규 CSV reports/CRA_PRODUCT_EVIDENCE_REGISTER_TEMPLATE_2026-11-19.csv: E-001~E-015 제출자료를 EVD-01~16에 연결하고 provenance·검토·교차확인·결정 근거를 제품 variant별로 기록하도록 구성. 모든 항목 초기 상태는 not_provided.
+- cra_traceability.py에 15개 Evidence ID, EVD foreign keys, 상태 전이별 필수 메타데이터, SHA-256 형식, accepted/rejected/not-applicable decision gate 검증을 추가했다.
+- 회귀 테스트 4개 추가: 템플릿 15행, provenance 없는 accepted 거부, unknown EVD ref 거부, rationale 없는 not-applicable 거부.
+- 테스트 workflow의 exact blob pins를 새 validator/test/template에 맞춰 갱신했다. PR/CI 전이며 제품별 자료·판정은 여전히 Unknown.
