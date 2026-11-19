@@ -1048,3 +1048,12 @@
 - 이는 연간 작업계획 및 향후 요청 방향이며, 이미 발행된 조화표준이나 Article 27 presumption을 뜻하지 않는다.
 - 보고서 v0.5는 M/606 41개 표준과 C/2026/1695 Action 5를 별도 추적하도록 업데이트한다.
 - 다음: 41개 M/606 개별 표준 현황, C(2026) 7861 상세 납기, Action 5 후속 요청 채택 여부, CRA 관련 OJ 인용 상태를 개별 레코드로 검증한다.
+
+
+## 2026-11-19 — M/606 개정 Annex I 원문 검증
+- PR #109 merged: 172caa7427dd7af412d555bf2a82660537c0e16f; exact-head Run #1014 success, 174 passed / 0 failed; 10-source HTML canary + manifest round-trip passed; PDF canary skipped on empty EUR-Lex response.
+- Commission Implementing Decision C(2026) 7861 final Annex I 원문을 직접 검토했다. ESO adoption deadlines: item 1 and 15 = 30/11/2026; items 2–14 = 30/10/2027; items 16–41 = 31/01/2027.
+- 기존 M/606 41행 CSV와 cra_traceability.py validator의 deadline 기대값이 개정 원문과 일치한다. 날짜 수정은 필요하지 않았다.
+- 이 날짜는 ESO 표준 채택기한이지 제조자의 CRA compliance deadline이 아니다. OJ citation 전까지 Article 27 presumption을 주장하지 않는다.
+- 보고서 v0.6에 41개 일정, 제품군 관련 항목 25/36/28–30/37–38 해석, 검증 범위를 반영한다.
+- 다음: M/606 개별 41개 표준의 실제 진행 상태 및 OJ citation audit, C/2026/1695 Action 5의 후속 표준화 요청 발행 여부 확인.
