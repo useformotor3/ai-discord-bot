@@ -1656,3 +1656,17 @@
 - EN 40000-1-2를 LS메카피온 제품 위험평가·개발·생산·유지보수·지원종료 프로세스 검토의 우선 참고표준으로 기록했다.
 - 표준 발행과 CRA Article 27 OJ 인용은 별개다. OJ 참조 게재가 확인되기 전에는 적합성 추정을 주장하지 않는다.
 - 통합 보고서 §23 및 상황판/마스터 계획/README에 반영했다.
+
+
+---
+
+## 2026-11-20 — PR #116 병합 및 사후 안전 기준점
+
+- PR #116 `docs(cra): refresh M/606 status and EN 40000 publication` squash merge 완료.
+- Merge SHA / main: `6092ca1c61c696a716583e6bc0f7d5150cbee269`.
+- Pre-work safety: `safety/pre-m606-live-status-audit-2026-11-20`; post-merge safety: `safety/post-merge-pr116-2026-11-20` (merge SHA에서 생성).
+- Exact-head Run #1032 / ID `44638812806`: success. Source blob identity, compile, CRA traceability, full pytest, live official CRA HTML source canary and manifest upload succeeded.
+- Provenance artifact #14584442966, 2,566 bytes, SHA-256 `408714c0be46f9238250aaff678191a86ac0ff35112370132d679f59ba591836`, expires 2026-11-26 23:35:10 UTC.
+- PDF artifact upload skipped; PDF 원문 확보 성공으로 기록하지 않는다.
+- Exact-main push CI는 연결된 조회로 독립 확인되지 않아 미확인으로 유지한다.
+- PR #116은 문서/로그 6개만 변경. runtime/workflow/secrets/state/history/legacy SIL 3 자산 미변경.
