@@ -664,3 +664,13 @@
 - STAN4CR/CEN-CENELEC/ETSI 공동 M/606 진행보고서 V2.0(2026-06-03)을 4페이지 전체 검토했다. 개별 M/606 표준의 2026-06-03 단계와 publication forecast, 산업용 OT/IACS 지원 deliverables(EN IEC 62443-4-1/-4-2/-3-3)를 보고서 v0.9에 반영.
 - 2026-06-03 forecast는 2026-11-10 C(2026) 7861 Annex I 개정 이전의 과거 예측이므로 현재 제출기한으로 사용하지 않는다. C(2026) 7861 Annex I를 제출기한 기준으로 유지한다.
 - IEC 62443 지원 deliverables는 M/606 41개 Annex I 표준 및 CRA OJ 조화표준 인용과 구분한다.
+
+
+## 2026-11-19 — PR #114 병합 및 M/606/OT 표준화 진행 스냅샷
+- PR #114 merge SHA: 88a3c3b29ecf7af2884e6df288075a0ce48f73f2; post-merge safety ref safety/post-merge-pr114-2026-11-19 생성.
+- PR #114 exact-head Run #1024 / ID 44492644455: success, 174 passed / 0 failed. CRA traceability 13/15/35/36/16/15/41 통과.
+- Live official CRA HTML 10-source canary 및 JSON manifest parse/round-trip 통과. Artifact #14514585121, SHA-256 bd7e0fe6244c8d9ad0bd312ec3e4016836bfc1c738a0a685a8d5c3696bc6a198, 2,566 bytes, expires 2026-11-26 09:02:15 UTC.
+- PDF canary는 EUR-Lex C(2026) 6013 empty body로 SKIPPED. Exact-main push CI는 독립 확인 전.
+- 보고서 v0.9는 STAN4CR/CEN-CENELEC/ETSI 공동 M/606 진행보고서 V2.0(2026-06-03)의 개별 표준 개발 단계와 OT/IACS 지원 deliverables(EN IEC 62443-4-1/-4-2/-3-3)를 추가했다.
+- 2026-06-03 개발단계·publication forecast는 역사적 스냅샷이다. 현재 ESO 제출기한은 C(2026) 7861 Annex I 기준이며, 실제 2026-11-19 표준 상태·최종 발행·OJ citation은 미확인이다.
+- 제품별 CRA scope/classification/conformity Unknown, 보안시험 Not Run. 제조사 PDF/ESI/설치파일 원본 확보·해시·페이지 검토 미완료.

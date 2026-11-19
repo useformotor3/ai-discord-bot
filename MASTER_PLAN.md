@@ -1095,3 +1095,12 @@
 - IEC 62443 supporting deliverables are not automatically M/606 Annex I harmonised standards or CRA Article 27 OJ citations.
 - Report v0.9 maps relevant work to servo-drive product and industrial system boundaries.
 - Next: update status after June snapshot using ESO live work programme / new progress reports, verify final publications and OJ citations; acquire manufacturer original PDF/ESI/installer bytes.
+
+
+## 2026-11-19 — PR #114 M/606/OT 표준화 검토 반영 및 다음 우선순위
+- PR #114 merged: 88a3c3b29ecf7af2884e6df288075a0ce48f73f2; exact-head Run #1024 success, 174 passed / 0 failed; 10-source HTML canary and manifest round-trip passed; PDF canary skipped.
+- Report v0.9 includes 2026-06-03 ESO joint M/606 progress snapshot and complementary IEC 62443 OT/IACS deliverables.
+- Next P0: obtain 2026-11-19 current status of each M/606 work item, final publications and OJ harmonised-standard citations. The June report is only historical stage evidence.
+- Next P0: obtain official LS Mecapion manuals, DriveCM release notes/installer and ESI XML original bytes, hash and inspect. Current official download route remains blocked in the available runtime.
+- Next P1: model-specific product boundary, EU supply chain, exact SKU/HW/FW revision, firmware update security controls, SBOM and product-level CRA applicability.
+- Exact-main push CI remains unconfirmed; do not claim success.

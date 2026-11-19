@@ -1623,3 +1623,12 @@
 - EN IEC 62443-4-1/-4-2/-3-3은 M/606 41개 Annex I 표준 및 CRA OJ citation과 구분되는 supporting deliverables다.
 - 2026-06-03 publication forecast는 과거 snapshot이며 C(2026)7861 개정 이후의 현재 제출기한으로 사용하지 않는다.
 - Exact-main push CI는 독립 확인 전.
+
+
+## 2026-11-19 — PR #114 병합 및 M/606/OT 진행현황 반영
+- PR #114 squash merge 88a3c3b29ecf7af2884e6df288075a0ce48f73f2; post-merge safety ref safety/post-merge-pr114-2026-11-19.
+- Exact-head Run #1024 / ID 44492644455 success: 174 passed / 0 failed. CRA traceability, 10 official HTML sources, JSON manifest round-trip 통과.
+- Artifact #14514585121 SHA-256 bd7e0fe6244c8d9ad0bd312ec3e4016836bfc1c738a0a685a8d5c3696bc6a198. PDF canary는 C(2026) 6013 empty body로 SKIPPED.
+- 보고서 v0.9에 2026-06-03 ESO M/606 progress snapshot과 산업용 IEC 62443-4-1/-4-2/-3-3 supporting deliverables를 추가했다.
+- 다음 작업은 2026-11-19 현재의 개별 M/606 진행상태·최종 발행·OJ citation 확인, LS메카피온 공식 매뉴얼·ESI·DriveCM 원본 파일 확보 및 해시·페이지 검토다.
+- Exact-main push CI는 독립 확인 전.
