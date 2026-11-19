@@ -233,3 +233,18 @@ def test_evd_sec_crosswalk_rejects_missing_evidence_row(tmp_path):
         writer.writerows(rows)
     with pytest.raises(TraceabilityError, match="expected 16 rows|cover EVD-01"):
         validate_traceability(tmp_path)
+
+
+def test_evd_sec_crosswalk_rejects_orphaned_control(tmp_path):
+    _copy_required_tree(tmp_path)
+    path = tmp_path / "reports/CRA_EVD_SEC_TRACEABILITY_CROSSWALK_2026-11-19.csv"
+    with path.open("r", encoding="utf-8-sig", newline="") as stream:
+        rows = list(csv.DictReader(stream))
+        fieldnames = list(rows[0])
+    rows[0]["Related_SEC_control_IDs"] = rows[0]["Related_SEC_control_IDs"].replace("SEC-035", "")
+    with path.open("w", encoding="utf-8", newline="") as stream:
+        writer = csv.DictWriter(stream, fieldnames=fieldnames)
+        writer.writeheader()
+        writer.writerows(rows)
+    with pytest.raises(TraceabilityError, match="SEC controls missing from EVD/SEC crosswalk"):
+        validate_traceability(tmp_path)
