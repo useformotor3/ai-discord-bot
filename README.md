@@ -10,9 +10,9 @@
 
 > **기록 원칙:** 프로젝트의 공식 진행 상태와 재개 지점은 이 저장소에 기록합니다. 대화창의 기억에만 의존하지 않습니다.
 
-### 현재 기준점 — main / PR #102 병합 및 manifest JSON 검증 완료 (2026-11-19)
-- 최신 main: PR #102 merge SHA `84101bcc8871e41f8a25de3edf892666b1650b8c`; PR #100/101/102 후속 변경이 모두 main에 병합됨.
-- PR #102 exact-head Run #1000 / ID 44455799462: success, **174 passed / 0 failed**.
+### 현재 기준점 — PR #103 main 반영 및 LS메카피온 제품군 예비 분석 착수 (2026-11-19)
+- 최신 main: PR #103 merge SHA `1baea7b034a0b49eb42c433f2edc9d5d2d1d7d73`; PR #100~#103 후속 변경이 모두 main에 반영됨.
+- PR #103 exact-head Run #1002 / ID 44456036996: success, **174 passed / 0 failed**.
 - CRA traceability: claims 13, interfaces 15, requirements 35, SEC 36, EVD crosswalk 16, product evidence 15, M/606 41 통과.
 - Official source pack v4: 10개 공식 출처, Article 13(8), 2025/2392 core-functionality 및 Annex I category 10 / Annex II category 1 live canary 통과.
 - JSON provenance manifest 10 records 생성 후 json.loads + object round-trip 검증 통과. Artifact #14496534452, SHA-256 `7f2836072bdfa38b7857c47bdac4c6fdb2b71c38bd29b987889aad0646e78cc7`, 2,566 bytes; expires 2026-11-26 04:05:17 UTC.
@@ -20,6 +20,7 @@
 - Pre/post safety refs: PR #102 `safety/pre-pr102-json-manifest-fix-2026-11-19` / `safety/post-merge-pr102-2026-11-19`; post ref와 main identical.
 - PR #101의 초기 manifest artifact는 JSON 개행 round-trip 검증이 없어 PR #102 artifact로 대체한다.
 - 제품별 증거는 여전히 `not_provided`; 제품별 CRA 적용성·Annex 분류·적합성은 Unknown 유지. Exact-main push CI는 별도 확인 전.
+- LS메카피온 제품군(13개 공개 계열) 예비 분석 착수. 상세 보고서: [LS메카피온 서보드라이브 CRA 제품군 예비 분석](reports/CRA_LS_MECAPION_SERVO_DRIVE_FAMILY_PRELIMINARY_ASSESSMENT_2026-11-19.md).
 
 
 ## 현재 상태 — 2026-11-19
@@ -77,6 +78,8 @@
 | [세션 로그](SESSION_LOG.md) | 날짜별 실제 작업, 변경 범위, 테스트 결과 |
 
 ## 주요 기술 자료
+
+- [LS메카피온 서보드라이브 CRA 제품군 예비 분석 보고서 v0.1](reports/CRA_LS_MECAPION_SERVO_DRIVE_FAMILY_PRELIMINARY_ASSESSMENT_2026-11-19.md) — 제품군 13개, CRA 적용성·Annex III/IV 예비 검토, 보안 위협·시험·증거 계획
 
 - [CRA 공식 출처 수집·주장 추적 파이프라인 보고서](reports/CRA_SOURCE_PROVENANCE_PIPELINE_2026-11-17.md)
 - [CRA 통합 규제·기술 준수 보고서 v0.1](reports/CRA_INTEGRATED_COMPLIANCE_REPORT_2026-11-17.md)
