@@ -2,9 +2,9 @@
 
 > 최신 상태 스냅샷. 역사 기록은 SESSION_LOG 및 PROJECT_LOG에 append-only로 보존한다.
 
-## 최신 main 기준점 — PR #102 병합 및 manifest JSON 검증 완료 (2026-11-19)
-- PR #102 merge SHA / main: `84101bcc8871e41f8a25de3edf892666b1650b8c`; PR #100 status sync, PR #101 provenance manifest, PR #102 JSON serialization fix가 main에 반영됨.
-- PR #102 exact-head Run #1000 / ID 44455799462: success, **174 passed / 0 failed**.
+## 최신 main 기준점 — PR #103 main 반영 및 LS메카피온 제품군 예비 분석 착수 (2026-11-19)
+- PR #103 merge SHA / main: `1baea7b034a0b49eb42c433f2edc9d5d2d1d7d73`; PR #100~#103 결과와 source manifest 검증 기록이 main에 반영됨.
+- PR #103 exact-head Run #1002 / ID 44456036996: success, **174 passed / 0 failed**.
 - CRA traceability, compile, full pytest, official PDF source canary, 10-source live official canary, source manifest upload 모두 통과.
 - Source provenance manifest: 10 records, json.loads parse + object round-trip equality 통과. Artifact #14496534452, SHA-256 `7f2836072bdfa38b7857c47bdac4c6fdb2b71c38bd29b987889aad0646e78cc7`, 2,566 bytes, expires 2026-11-26 04:05:17 UTC.
 - PDF artifact #14497431708, SHA-256 `b4090a51f855b1d6f391b82942e6301d91119e651fe528848eaa77e66b5ac4ee`, expires 2026-11-26 04:05:06 UTC.
@@ -15,13 +15,24 @@
 - Product-specific evidence remains `not_provided`; product applicability/category/compliance remain Unknown pending exact model/SKU and primary evidence.
 
 
+## LS메카피온 제품군 예비 분석 — 2026-11-19
+- 사용자 지시에 따라 분석 대상을 LS메카피온 서보드라이브 제품군으로 설정했다. 정확한 SKU/model은 아직 미지정.
+- 제조사 공개 제품 페이지에서 13개 계열(iX700M, iX7M, iX7NH, L7NHA, L7NHB, L7NHF, L7PA, L7PB, PHOX, L7C, L7SA, L7SB, GEM)을 확인했다.
+- 제품군별 전압/용량/통신형·펄스형 정보는 공개 페이지 수준에서만 확인. 각 모델 PDF 매뉴얼·카탈로그의 원본 다운로드, SHA-256, 페이지별 검토는 아직 미완료.
+- DriveCM 안내는 L7P/L7NH/L7NHF/PEGA/PHOX/iX7NH/L7C/iX7M 지원과 L7S/L7N 구형 도구 사용 구분을 보여준다. 이를 HW/FW 동일성이나 현재 지원기간의 증거로 확대하지 않는다.
+- 보고서 `reports/CRA_LS_MECAPION_SERVO_DRIVE_FAMILY_PRELIMINARY_ASSESSMENT_2026-11-19.md` 작성 중/초안: 초보자용 CRA 설명, 제품군 표, Article 2 데이터 연결, Annex III/IV 핵심 기능, 제조사 의무, Article 14, 위협 시나리오, 참조 아키텍처, 시험·증거 계획 포함.
+- 잠정 결론: EtherCAT 계열은 데이터 연결이 포함될 가능성이 높다. 펄스/아날로그 계열도 디지털 서비스·설정 인터페이스 및 지령의 성격에 따라 판단한다. EtherCAT/RTOS/MCU 존재만으로 Annex III/IV 분류를 자동 확정하지 않는다.
+- EU 시장 공급·모델별 intended purpose·HW/FW revision·프로토콜·제품 경계·RDPS·지원기간 자료가 없으므로 제품별 CRA scope/classification/conformity는 Unknown.
+- 법령 전수 수집·분석은 미완료. 현재 HTML 10 source + PDF 3 source 파이프라인은 주요 CRA 법령·공식자료를 다루지만 관련 제품법령·표준 전문·OJ 조화표준 인용·최신 ENISA FAQ 전수 감사가 남아 있다.
+- 보안 시험은 모두 Not Run. 이 보고서는 예비 분석이며 최종 적합성 평가가 아니다.
+
 ## 현재 기술 게이트
 - Annex III/IV classification is based on the product's core functionality as a whole under Implementing Regulation (EU) 2025/2392. Integrated components do not automatically classify the complete drive.
 - CRA applicability under Article 2 and category classification under Articles 7–8 are separate decisions. Annex III/IV non-listing does not mean CRA exclusion.
 - Product-specific model/SKU, manuals, network topology, remote-processing dependencies and actual MCU part number remain unknown. Individual product classification remains Unknown / Not assessed.
 - Official source pack v4 includes Commission Implementing Regulation (EU) 2025/2392 with live Annex I category 10 / Annex II category 1 locator checks.
 - The 10-source provenance manifest is now persisted as a GitHub Actions artifact and validated with JSON parse + round-trip equality.
-- Next: collect product-specific P0 inputs and approve each candidate EVD/SEC link as applicable, not applicable or conditional. Product-specific classification, implementation and test evidence remain Unknown until source material and versioned test records are received.
+- Next: LS메카피온 각 제품군별 P0 매뉴얼·카탈로그를 확보하고, 정확한 SKU/variant가 정해진 모델부터 E-001/E-002 증거를 검증한 뒤 EVD/SEC link를 적용/비적용/조건부로 판정. Product-specific classification, implementation and test evidence remain Unknown until source material and versioned test records are received.
 
 ## 추가 프로젝트 기록 — PR #86 및 PR #87
 - PR #86 current-status/evidence-gate documentation sync merge `7ef3ecb44837826f53c2cad5a38787172ee430ab`; exact-head Run #951 and exact-main Run #952 success, 161 passed / 1 xfailed. Artifacts: #14401607639 (`sha256:41428d58615f76f6aee7010ff96ab91bc6d77ce84bb13e025220678d45a9b352`) and #14400948497 (`sha256:84c4a8855d7b254361438551e4489df75d477cc7431cc5c1a12a3a813d97ad42`).

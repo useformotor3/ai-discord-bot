@@ -1517,3 +1517,14 @@
 - Manifest 10 records 생성·JSON parse·round-trip 성공. Artifact #14496534452 SHA-256 `7f2836072bdfa38b7857c47bdac4c6fdb2b71c38bd29b987889aad0646e78cc7`.
 - PDF artifact #14497431708 SHA-256 `b4090a51f855b1d6f391b82942e6301d91119e651fe528848eaa77e66b5ac4ee`.
 - Post-merge safety ref `safety/post-merge-pr102-2026-11-19`와 main identical. Exact-main push CI는 별도 확인 전.
+
+
+## 2026-11-19 — LS메카피온 서보드라이브 제품군 예비 분석 착수
+- 최신 main 기준점 `1baea7b034a0b49eb42c433f2edc9d5d2d1d7d73`에서 safety ref `safety/pre-lsmecapion-family-assessment-2026-11-19` 및 작업 브랜치 `cra/lsmecapion-family-assessment-2026-11-19`를 생성했다.
+- LS메카피온 공식 제품 목록에서 13개 드라이브 계열, 입력전압/용량/통신형·펄스형 구분을 확인했다.
+- 공식 매뉴얼 목록에서 iX700M Ver1.4(2026-05-26), iX7M Ver1.3, iX7NH Ver1.7 및 L7C/PHOX/L7NHF/L7P 등의 자료 목록을 확인했다.
+- 제조사 DriveCM 페이지에서 지원 계열과 L7S/L7N 구형 제품의 LIVE i.C.E 사용 안내를 확인했다. 제품 목록·매뉴얼 목록·설정 도구 안내는 개별 제품의 HW/FW revision, 현재 판매 상태, 지원기간을 입증하지 않으므로 이를 추정하지 않는다.
+- 보고서 초안 `reports/CRA_LS_MECAPION_SERVO_DRIVE_FAMILY_PRELIMINARY_ASSESSMENT_2026-11-19.md` 작성. CRA 입문 설명, 13개 제품군 표, Article 2 데이터 연결, 제품 경계, Annex III/IV 핵심 기능, Article 13/14 의무, 위협 시나리오, 참조 보안 아키텍처, 시험 계획, E-001~E-015 증거 게이트, 용어집 포함.
+- EtherCAT 제품은 데이터 연결 가능성이 높다는 제품군 스크리닝을 기록하되, 인터페이스 존재만으로 Annex III Class I/IV 분류를 자동 확정하지 않는다. 펄스/아날로그 제품은 신호 의미와 서비스/설정 데이터 통신을 모델별로 확인해야 한다.
+- 현재 HTML source pack 10개 + PDF source pipeline 3개는 CRA 주요 법령·공식자료의 수집 체계이지 모든 관련 제품법령·표준·FAQ의 전수 완료를 의미하지 않는다.
+- 모델별 적용성·분류·적합성 Unknown, 보안 시험 Not Run 유지. 개별 매뉴얼 PDF 원본 확보·SHA-256·페이지 검토, 정확한 SKU/HW/FW 확인이 다음 단계다.
