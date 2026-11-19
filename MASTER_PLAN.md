@@ -22,7 +22,8 @@
 | 문서 | 책임 |
 |---|---|
 | `README.md` | 메인 페이지, 현황 요약, 주요 자료 링크 |
-| `PROJECT_STATUS.md` | 현재 사실·상태·위험·다음 재개 지점 |
+| `PROJECT_STATUS_CURRENT.md` | 현재 사실·상태·위험·다음 재개 지점 (최신 기준) |
+| `PROJECT_STATUS.md` | 2026-11-17 이전의 역사적 스냅샷 보존; 현재 상태의 기준으로 사용하지 않음 |
 | `MASTER_PLAN.md` | 목표·우선순위·단계·완료 기준 |
 | `AI_RULEBOOK.md` | 조사·검증·코드·기록 행동강령 |
 | `SESSION_LOG.md` | 작업별 변경·검증·미완료 기록 |
