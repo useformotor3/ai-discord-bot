@@ -504,3 +504,12 @@
 - Artifact #14493789671, SHA-256 6159e27808ace502b0e504cef88f977ddb87c1f2aa85c17d93c58e812c568679, expires 2026-11-26 03:08:25 UTC.
 - E-001~E-015 evidence register template now on main and mapped to EVD-01~16. Validator enforces provenance/state promotion gates; negative tests reject unproven accepted, unknown EVD, unsupported N/A, invalid SHA-256 and partial not_provided metadata.
 - Actual product documents are not provided. All template rows remain not_provided; no product-specific applicability, implementation or compliance pass is asserted. Production main.py and .github/workflows/run.yml unchanged.
+
+
+## 2026-11-19 — PR #95 사후 상태 동기화
+- PR #95는 PR #94 제품 증거 register 병합/검증 결과를 README, PROJECT_STATUS_CURRENT, MASTER_PLAN, SESSION_LOG, PROJECT_LOG에 반영한 문서 전용 PR이다.
+- PR #95 exact-head Run #979 / ID 44449515567: success, 172 passed / 0 failed.
+- PR #95 squash merge 33fd8d409667cfa2c78e8e998d843d85f60cf3f0. Pre-merge ref safety/pre-pr95-merge-checkpoint-2026-11-19; post-merge ref safety/post-merge-pr95-2026-11-19; post ref == main.
+- Exact-main Run #980 / ID 44449631620: success, 172 passed / 0 failed; source integrity, compile, CRA traceability, official PDF and live EUR-Lex canaries passed.
+- Artifact #14495245880, SHA-256 3ad730233356927770e310227a36e7478688b34260f6c928e22e18da69b8e830, expires 2026-11-26 03:11:27 UTC.
+- 제품별 증거는 실제 자료 미제공으로 모두 not_provided. 다음 선행 조건은 정확한 모델 데이터시트와 사용설명서 수령이다.

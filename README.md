@@ -10,18 +10,18 @@
 
 > **기록 원칙:** 프로젝트의 공식 진행 상태와 재개 지점은 이 저장소에 기록합니다. 대화창의 기억에만 의존하지 않습니다.
 
-### 현재 기준점 — main / PR #94 사후 검증 완료 (2026-11-19)
-- main 6f6a0908d15e6ed9ef9e0043e9f7f2ed3961d64c; PR #94 product evidence register merged.
-- PR #94 exact-head Run #977: 172 passed / 0 failed; exact-main Run #978: 172 passed / 0 failed. Source integrity, compile, CRA traceability, official PDF and live EUR-Lex canaries passed.
-- Run #978 artifact #14493789671, SHA-256 6159e27808ace502b0e504cef88f977ddb87c1f2aa85c17d93c58e812c568679, expires 2026-11-26 03:08:25 UTC.
-- Pre-merge ref safety/pre-pr94-merge-checkpoint-2026-11-19; post-merge ref safety/post-merge-pr94-2026-11-19; post ref and main identical.
-- E-001~E-015 evidence register template and fail-closed provenance gates are on main. Actual product evidence remains not_provided; product-specific conclusions remain Unknown.
+### 현재 기준점 — main / PR #95 사후 검증 완료 (2026-11-19)
+- main 33fd8d409667cfa2c78e8e998d843d85f60cf3f0; PR #95 status sync merged.
+- PR #95 exact-head Run #979: 172 passed / 0 failed; exact-main Run #980: 172 passed / 0 failed. Source integrity, compile, CRA traceability, official PDF and live EUR-Lex canaries passed.
+- Run #980 artifact #14495245880, SHA-256 3ad730233356927770e310227a36e7478688b34260f6c928e22e18da69b8e830, expires 2026-11-26 03:11:27 UTC.
+- Pre-merge ref safety/pre-pr95-merge-checkpoint-2026-11-19; post-merge ref safety/post-merge-pr95-2026-11-19; post ref and main identical.
+- E-001~E-015 product evidence register and fail-closed provenance gates are on main. All real product evidence remains not_provided; product-specific conclusions remain Unknown.
 
 ## 현재 상태 — 2026-11-19
 
-- 최신 main: PR #94 merge 6f6a0908d15e6ed9ef9e0043e9f7f2ed3961d64c; exact-main Run #978 success, 172 passed / 0 failed.
-- EVD-01~16 ↔ CRA 요구사항 ↔ SEC-001~036 후보 추적표와 validator가 main에 반영됨.
-- E-001~E-015 제품 증거 register 템플릿도 main에 반영됨. 모든 행은 실제 자료 미제공으로 not_provided이며, accepted/비적용 승격은 provenance·SHA-256·locator·검토자·근거 게이트를 통과해야 함.
+- 최신 main: PR #95 merge 33fd8d409667cfa2c78e8e998d843d85f60cf3f0; exact-main Run #980 success, 172 passed / 0 failed.
+- EVD-01~16 ↔ CRA ↔ SEC-001~036 추적표와 E-001~E-015 제품 증거 register가 main에 반영됨.
+- 제품 증거 register의 모든 실제 자료는 not_provided. accepted/비적용 판정은 provenance·SHA-256·locator·검토자·근거 검증을 통과해야 한다.
 - 제품별 모델/SKU, 매뉴얼, BOM/SBOM, 실제 MCU 부품번호 및 제어 사양은 미확인. 제품별 적용성·구현·시험 상태는 Unknown 유지.
 
 ## 이전 상태 — 2026-11-18
