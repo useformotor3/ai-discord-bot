@@ -1117,7 +1117,7 @@ STAN4CR 프로젝트의 CEN, CENELEC, ETSI 공동 작업계획 페이지에서 M
 
 - 유럽위원회 CRA 표준화 페이지: 41개 표준이 M/606에 포함되며, 2026-11-10 C(2026) 7861로 일부 수평 표준 및 모든 수직 표준의 ESO 납기 3개월 연장이 공지됨. 페이지 최종 업데이트: 2026-11-12.
 - C(2026) 7861 final Annex I 원문: 항목 1 및 15는 2026-11-30, 항목 2–14는 2027-10-30, 항목 16–41은 2027-01-31을 ESO 채택 기한으로 지정함.
-- ETSI Work Programme의 M/606 활성 작업 목록: 2026-11-17 기준 Version 2.3.3, 활성 작업 18개로 표시됨. 이는 M/606의 전체 41개 항목이 아니라 ETSI가 관리하는 해당 작업 목록이다.
+- ETSI Work Programme의 M/606 활성 작업 목록: 2026-11-19 기준 Version 2.3.3, 활성 작업 18개로 표시됨. 이는 M/606의 전체 41개 항목이 아니라 ETSI가 관리하는 해당 작업 목록이다.
 
 
 ### 23.2 CEN/CENELEC 수평 표준 발행 확인 — 2026-11-19
@@ -1140,11 +1140,13 @@ CEN-CENELEC는 두 문서를 국가 표준 카탈로그를 통해 구입할 수 
 
 | ETSI 표준 | 주제 | ETSI 공식 Work Programme에 표시된 최신 상태 | 계획 일정(실적 아님) | 서보드라이브 분석상 의미 |
 |---|---|---|---|---|
-| EN 304 625 | 물리·가상 네트워크 인터페이스 | 승인 절차 종료(2026-11-02) | 채택 2027-03-08, 발행 2027-03-15, OJ 게재 목표 2027-06-23 | EtherCAT 등 네트워크 인터페이스의 보안 요구를 검토할 때 참고. 이 표준의 존재만으로 서보드라이브 전체가 Annex III Category 10 제품이라고 결론 내리지 않음 |
-| EN 304 626 | 운영체제 | 승인 절차 종료(2026-11-05) | 채택 2027-03-11, 발행 2027-03-15, OJ 게재 목표 2027-06-23 | 제품 내 OS/RTOS 구성요소와 독립 운영체제 제품의 핵심 기능 경계를 구분 |
-| EN 304 636 | 방화벽·IDS/IPS | 의견 분류 평가 완료(2026-10-06) | 채택 2027-02-11, 발행 2027-02-19, OJ 게재 목표 2027-05-15 | 산업용 방화벽/IDS/IPS 제품의 기준. 일반 서보드라이브 통신 포트와 동일시하지 않음 |
+| EN 304 625 | 물리·가상 네트워크 인터페이스 | 의견 분류 평가 완료(2026-11-05) | 다음 상태 목표: 최종 산출물 등록 승인 2027-01-15; 예정 절차 코드 VA, 2027-02-08 | EtherCAT 등 네트워크 인터페이스의 보안 요구를 검토할 때 참고. 이 표준의 존재만으로 서보드라이브 전체가 Annex III Category 10 제품이라고 결론 내리지 않음 |
+| EN 304 626 | 운영체제 | 의견 분류 평가 완료(2026-11-06) | 다음 상태 목표: 최종 산출물 등록 승인 2027-01-21; 예정 절차 코드 VA, 2027-02-17 | 제품 내 OS/RTOS 구성요소와 독립 운영체제 제품의 핵심 기능 경계를 구분 |
+| EN 304 636 | 방화벽·IDS/IPS | 의견 분류 평가 완료(2026-10-06) | 다음 상태 목표: 최종 산출물 등록 승인 2026-12-22; 예정 절차 코드 VA, 2027-01-11 | 산업용 방화벽/IDS/IPS 제품의 기준. 일반 서보드라이브 통신 포트와 동일시하지 않음 |
 
-**해석 시 주의:** ETSI Work Programme의 Adoption, Publication, OJ Publication 열은 예정 일정이다. 예정일이 도래했거나 승인 절차가 끝났다는 사실은 최종 채택·발행·EU 관보 게재가 실제로 완료되었다는 증거가 아니다. 해당 작업 상세 페이지의 Official Journal 항목 및 EUR-Lex OJ 문서를 다시 확인해야 한다.
+**최신 스냅샷 및 불일치 처리:** 위 표는 ETSI Work Programme 전체 M/606 요약 목록 Version 2.3.3, 2026-11-19 조회본의 Current Status / Planned Next Status / Planned Procedure 열을 기준으로 갱신했다. EN 304 625 및 EN 304 626의 개별 상세 페이지는 각각 2026-11-11 및 2026-11-09 화면에서 더 이른 단계(승인 절차 종료)를 표시하고 있어 요약 목록과 시점 차이가 있었다. 이 보고서에서는 더 최신 날짜가 표시된 11-19 요약 목록을 우선하고, 상세 페이지의 이전 상태를 현재 상태로 사용하지 않는다.
+
+ETSI 요약 목록의 다음 상태 및 절차 날짜는 예정값이다. 예정일이 도래했거나 의견 분류가 끝났다는 사실은 최종 채택·발행·EU 관보 게재가 실제로 완료되었다는 증거가 아니다. 각 표준의 상세 기록과 EUR-Lex OJ를 다시 확인해야 한다.
 
 ### 23.4 Article 27 적합성 추정과의 구분
 
@@ -1170,7 +1172,7 @@ CRA Article 27(1)은 관련 조화표준의 참조가 EU 관보(Official Journal
 ### 23.6 이번 확인에서 갱신한 결론 및 남은 작업
 
 - M/606 41개 항목의 개정 ESO 납기표는 C(2026) 7861 Annex I를 기준으로 유지한다.
-- ETSI의 18개 활성 작업 목록은 2026-11-17 버전 2.3.3 스냅샷으로 기록한다. ETSI 외 CEN/CENELEC 작업의 개별 최신 상태를 대신하지 않는다.
+- ETSI의 18개 활성 작업 목록은 2026-11-19 버전 2.3.3 스냅샷으로 기록한다. ETSI 외 CEN/CENELEC 작업의 개별 최신 상태를 대신하지 않는다.
 - 서보드라이브 관련성이 높은 EN 304 625의 승인 절차 종료 사실을 반영하되, 최종 채택·발행·OJ 게재 완료로 오인하지 않는다.
 - EN 304 626 및 EN 304 636은 비교·경계 검토용으로 상태를 갱신한다. 서보드라이브 자체의 제품 분류를 결정하는 근거로 사용하지 않는다.
 - 다음 단계는 (1) EN 40000-1-1/-1-2의 OJ 참조 상태 및 EN 40000-1-3/-1-4 개발상태, (2) ETSI 18개 작업 각각의 최신 상태 및 OJ 필드, (3) M/606 41개 전체의 OJ 실제 게재 여부를 항목별로 교차 확인하는 것이다.
@@ -1181,10 +1183,12 @@ CRA Article 27(1)은 관련 조화표준의 참조가 EU 관보(Official Journal
 - European Commission, CRA Standardisation (last update 2026-11-12): https://digital-strategy.ec.europa.eu/en/policies/cra-standardisation
 - Commission Implementing Decision C(2026) 7861 final, Annex I (10 November 2026): https://ec.europa.eu/transparency/documents-register/api/files/C%282026%297861_1/de00000001090401
 - CEN-CENELEC official publication notice (2026-11-19): https://www.cencenelec.eu/news-events/news/2026/en-in-the-spotlight/2026-11-19-cra-standards-en-40000-1-1-and-en-40000-1-2/
-- ETSI Work Programme, active M/606 work items (Version 2.3.3, 2026-11-17): https://portal.etsi.org/webapp/WorkProgram/WorkItemPlan.asp?SearchPage=TRUE&butExpertSearch=Search&includeNonActiveTB=FALSE&includeSubProjectCode=FALSE&optDisplay=10&qCLUSTER_BOOLEAN=OR&qETSI_ALL=&qFREQUENCIES_BOOLEAN=OR&qINCLUDE_MOVED_ON=&qINCLUDE_SUB_TB=True&qKEYWORD_BOOLEAN=OR&qMandate_List=%27M%2F606%27&qREPORT_TYPE=SUMMARY&qSORT=HIGHVERSION&qSTOPPING_OUTDATED=&qSTOP_FLG=N
+- ETSI Work Programme, active M/606 work items (Version 2.3.3, 2026-11-19): https://portal.etsi.org/webapp/WorkProgram/WorkItemPlan.asp?SearchPage=TRUE&butExpertSearch=Search&includeNonActiveTB=FALSE&includeSubProjectCode=FALSE&optDisplay=10&qCLUSTER_BOOLEAN=OR&qETSI_ALL=&qFREQUENCIES_BOOLEAN=OR&qINCLUDE_MOVED_ON=&qINCLUDE_SUB_TB=True&qKEYWORD_BOOLEAN=OR&qMandate_List=%27M%2F606%27&qREPORT_TYPE=SUMMARY&qSORT=HIGHVERSION&qSTOPPING_OUTDATED=&qSTOP_FLG=N
 - ETSI EN 304 625 work item: https://portal.etsi.org/webapp/WorkProgram/Report_WorkItem.asp?SearchPage=TRUE&WKI_ID=74860
 - ETSI EN 304 636 work item: https://portal.etsi.org/webapp/WorkProgram/Report_WorkItem.asp?SearchPage=TRUE&WKI_ID=74859
 - Commission Notice C/2026/1695, Action 5: https://eur-lex.europa.eu/eli/C/2026/1695/oj/eng
 - CRA Regulation (EU) 2024/2847, Article 27: https://eur-lex.europa.eu/eli/reg/2024/2847/oj/eng
+
+**정정 이력(2026-11-20):** PR #116에 처음 기록한 EN 304 625/626의 상태와 예정일은 11-11/11-09 개별 상세 페이지를 기준으로 했으나, 11-19 요약 목록의 더 최신 상태와 달랐다. 이번 정정에서 최신 요약 목록 값으로 교체하고 이전 값은 현재 상태로 사용하지 않도록 명시했다.
 
 **검증 한계:** 이 addendum은 공식 공개 작업계획의 부분 최신화이며, 41개 전체 표준의 원문 전문·개별 최종 상태·OJ 게재를 전수 확인한 최종 법령/표준 감사가 아니다.
