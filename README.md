@@ -10,19 +10,19 @@
 
 > **기록 원칙:** 프로젝트의 공식 진행 상태와 재개 지점은 이 저장소에 기록합니다. 대화창의 기억에만 의존하지 않습니다.
 
-### 현재 기준점 — main / PR #92 사후 검증 완료 (2026-11-19)
-- main `0e06f5672f2477f95f7b1088ee0299a7c336082e`; PR #92 documentation/status sync merged.
-- PR #92 exact-head Run #973: **166 passed / 0 failed**. Exact-main Run #974: **166 passed / 0 failed**; source integrity, compile, CRA traceability, official PDF and live EUR-Lex canaries passed.
-- Run #974 artifact #14494142424, SHA-256 `f0def08f1188b819fba061728a092dbf5ef0a340bbdd75200f0aff2edb5d500a`, expires 2026-11-26 02:57:02 UTC.
-- Pre-merge ref `safety/pre-pr92-merge-checkpoint-2026-11-19`; post-merge ref `safety/post-merge-pr92-2026-11-19`; post ref and main identical.
+### 현재 기준점 — main / PR #93 사후 검증 완료 (2026-11-19)
+- main 84e246c3abb78191300ba13cc7e1b4b75ac3a643; PR #93 status sync merged.
+- PR #93 exact-head Run #975: 166 passed / 0 failed; exact-main Run #976: 166 passed / 0 failed. Source integrity, compile, CRA traceability, official PDF and live EUR-Lex canaries passed.
+- Run #976 artifact #14493802639, SHA-256 8ca9556fe0f8c945cbfed724216f1149fbdfad87e5f0b8a441d9f0e5b4ec3e59, expires 2026-11-26 03:00:10 UTC.
+- Pre-merge ref safety/pre-pr93-merge-checkpoint-2026-11-19; post-merge ref safety/post-merge-pr93-2026-11-19; post ref and main identical.
 - EVD–CRA–SEC candidate crosswalk and fail-closed validator are on main. Product-specific applicability/implementation/test status remains Unknown.
 
 ## 현재 상태 — 2026-11-19
 
-- 최신 main: PR #92 merge `0e06f5672f2477f95f7b1088ee0299a7c336082e`; exact-main Run #974 success, 166 passed / 0 failed.
-- EVD-01~16 책임·검증·합격 게이트 및 EVD→CRA→SEC 후보 교차표가 main에 반영됨. Validator는 EVD 16행, CRA/SEC foreign keys, SEC-001~036 전체 연결, 누락/중복을 검사.
-- 교차 링크는 제품별 적용성 판정·구현 완료·시험 Pass를 의미하지 않음. 제품 모델/SKU, BOM, 매뉴얼, 네트워크/원격처리 경계, 실제 MCU 부품번호 및 제어 사양은 미확인.
-- 다음 우선순위: 제품별 P0 자료 수집 및 EVD/SEC 후보 링크의 적용성 승인, 이후 제품 버전별 시험 증거 확보.
+- 최신 main: PR #93 merge 84e246c3abb78191300ba13cc7e1b4b75ac3a643; exact-main Run #976 success, 166 passed / 0 failed.
+- EVD-01~16과 CRA 요구사항·SEC-001~036 후보 교차표 및 자동 검증이 main에 반영됨.
+- 신규 제품 증거 register 템플릿/검증은 작업 브랜치 cra/product-evidence-register-2026-11-19에서 구현 중. E-001~E-015와 EVD를 연결하고 원본 provenance·검토 상태를 기록할 예정.
+- 실제 제품 자료가 없으므로 제품별 적용성·구현·시험 상태는 Unknown 유지.
 
 ## 이전 상태 — 2026-11-18
 
@@ -825,3 +825,4 @@
 
 - [EVD–CRA–SEC 교차 추적표](reports/CRA_EVD_SEC_TRACEABILITY_CROSSWALK_2026-11-19.csv): 16개 EVD와 35개 CRA 요구사항·36개 SEC 통제 간 후보 링크. 제품별 적용성은 별도 판정.
 - [요구사항–증거 매트릭스](reports/CRA_REQUIREMENTS_TO_EVIDENCE_MATRIX_2026-11-18.md): EVD별 책임·생애주기·검증·내부 합격 게이트 및 추적 원칙.
+- [제품 증거 register 템플릿](reports/CRA_PRODUCT_EVIDENCE_REGISTER_TEMPLATE_2026-11-19.csv): E-001~E-015 자료의 원본 provenance, EVD 연결, 검토 상태 및 승인 근거 입력 양식.
