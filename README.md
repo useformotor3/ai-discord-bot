@@ -10,18 +10,14 @@
 
 > **기록 원칙:** 프로젝트의 공식 진행 상태와 재개 지점은 이 저장소에 기록합니다. 대화창의 기억에만 의존하지 않습니다.
 
-### 현재 기준점 — PR #103 main 반영 및 LS메카피온 제품군 예비 분석 착수 (2026-11-19)
-- 최신 main: PR #103 merge SHA `1baea7b034a0b49eb42c433f2edc9d5d2d1d7d73`; PR #100~#103 후속 변경이 모두 main에 반영됨.
-- PR #103 exact-head Run #1002 / ID 44456036996: success, **174 passed / 0 failed**.
-- CRA traceability: claims 13, interfaces 15, requirements 35, SEC 36, EVD crosswalk 16, product evidence 15, M/606 41 통과.
-- Official source pack v4: 10개 공식 출처, Article 13(8), 2025/2392 core-functionality 및 Annex I category 10 / Annex II category 1 live canary 통과.
-- JSON provenance manifest 10 records 생성 후 json.loads + object round-trip 검증 통과. Artifact #14496534452, SHA-256 `7f2836072bdfa38b7857c47bdac4c6fdb2b71c38bd29b987889aad0646e78cc7`, 2,566 bytes; expires 2026-11-26 04:05:17 UTC.
-- PDF evidence artifact #14497431708, SHA-256 `b4090a51f855b1d6f391b82942e6301d91119e651fe528848eaa77e66b5ac4ee`, expires 2026-11-26 04:05:06 UTC.
-- Pre/post safety refs: PR #102 `safety/pre-pr102-json-manifest-fix-2026-11-19` / `safety/post-merge-pr102-2026-11-19`; post ref와 main identical.
-- PR #101의 초기 manifest artifact는 JSON 개행 round-trip 검증이 없어 PR #102 artifact로 대체한다.
-- 제품별 증거는 여전히 `not_provided`; 제품별 CRA 적용성·Annex 분류·적합성은 Unknown 유지. Exact-main push CI는 별도 확인 전.
-- LS메카피온 제품군(13개 공개 계열) 예비 분석 착수. 상세 보고서: [LS메카피온 서보드라이브 CRA 제품군 예비 분석](reports/CRA_LS_MECAPION_SERVO_DRIVE_FAMILY_PRELIMINARY_ASSESSMENT_2026-11-19.md).
-
+### 현재 기준점 — PR #104 LS메카피온 제품군 예비 분석 보고서 병합 (2026-11-19)
+- 최신 main: PR #104 merge SHA `c3d234240d342d82cf9402ef0b07b82531ddee03`.
+- PR #104 exact-head Run #1004 / ID 44485297107: success, **174 passed / 0 failed**.
+- CRA traceability 통과: claims 13, interfaces 15, requirements 35, SEC 36, EVD crosswalk 16, product evidence 15, M/606 41.
+- Official CRA HTML source pack 10개 fetch 및 10-record JSON provenance manifest parse/round-trip 통과. Artifact #14509668548, SHA-256 `1d3ac8ea2e049780161766ef158fecfa3ab2a7d795b477424b339e5004772bf6`, expires 2026-11-26 08:10:28 UTC.
+- PDF canary는 EUR-Lex C/2026/6013 endpoint empty body로 temporary outage / SKIPPED; PDF artifact 없음. PDF 검증 성공으로 기록하지 않음.
+- Post-merge safety ref `safety/post-merge-pr104-2026-11-19`와 main identical. Exact-main push CI는 별도 확인 전.
+- LS메카피온 13개 제품군 예비 분석 보고서 v0.1이 main에 추가됨. 모델별 CRA 판정과 법령 전수 수집은 미완료.
 
 ## 현재 상태 — 2026-11-19
 
