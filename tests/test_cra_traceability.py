@@ -19,6 +19,7 @@ REQUIRED = (
     "README.md",
     "reports/CRA_INTEGRATED_COMPLIANCE_REPORT_2026-11-17.md",
     "reports/CRA_EVD_SEC_TRACEABILITY_CROSSWALK_2026-11-19.csv",
+    "reports/CRA_PRODUCT_EVIDENCE_REGISTER_TEMPLATE_2026-11-19.csv",
     "reports/CRA_PRODUCT_BOUNDARY_AND_EVIDENCE_INTAKE_2026-11-17.md",
     "reports/CRA_INTEGRATED_REPORT_INDEPENDENT_AUDIT_2026-11-17.md",
 )
@@ -242,4 +243,57 @@ def test_evd_sec_crosswalk_rejects_orphaned_control(tmp_path):
         writer.writeheader()
         writer.writerows(rows)
     with pytest.raises(TraceabilityError, match="SEC controls missing from EVD/SEC crosswalk"):
+        validate_traceability(tmp_path)
+
+
+def test_product_evidence_register_template_has_15_unprovided_records():
+    summary = validate_traceability(ROOT)
+    assert summary["product_evidence_register_rows"] == 15
+    assert summary["product_evidence_register_states"] == ["not_provided"]
+
+
+def test_product_evidence_register_rejects_accepted_without_provenance(tmp_path):
+    _copy_required_tree(tmp_path)
+    path = tmp_path / "reports/CRA_PRODUCT_EVIDENCE_REGISTER_TEMPLATE_2026-11-19.csv"
+    with path.open("r", encoding="utf-8-sig", newline="") as stream:
+        rows = list(csv.DictReader(stream))
+        fieldnames = list(rows[0])
+    rows[0]["Evidence_Record_State"] = "accepted"
+    rows[0]["Decision"] = "accepted"
+    with path.open("w", encoding="utf-8", newline="") as stream:
+        writer = csv.DictWriter(stream, fieldnames=fieldnames)
+        writer.writeheader()
+        writer.writerows(rows)
+    with pytest.raises(TraceabilityError, match="E-001: accepted requires Evidence_File_Name"):
+        validate_traceability(tmp_path)
+
+
+def test_product_evidence_register_rejects_unknown_evd_reference(tmp_path):
+    _copy_required_tree(tmp_path)
+    path = tmp_path / "reports/CRA_PRODUCT_EVIDENCE_REGISTER_TEMPLATE_2026-11-19.csv"
+    with path.open("r", encoding="utf-8-sig", newline="") as stream:
+        rows = list(csv.DictReader(stream))
+        fieldnames = list(rows[0])
+    rows[0]["Related_EVD_IDs"] = "EVD-99"
+    with path.open("w", encoding="utf-8", newline="") as stream:
+        writer = csv.DictWriter(stream, fieldnames=fieldnames)
+        writer.writeheader()
+        writer.writerows(rows)
+    with pytest.raises(TraceabilityError, match="E-001: unknown EVD refs"):
+        validate_traceability(tmp_path)
+
+
+def test_product_evidence_register_requires_reasoned_not_applicable(tmp_path):
+    _copy_required_tree(tmp_path)
+    path = tmp_path / "reports/CRA_PRODUCT_EVIDENCE_REGISTER_TEMPLATE_2026-11-19.csv"
+    with path.open("r", encoding="utf-8-sig", newline="") as stream:
+        rows = list(csv.DictReader(stream))
+        fieldnames = list(rows[0])
+    rows[0]["Evidence_Record_State"] = "not_applicable_with_rationale"
+    rows[0]["Decision"] = "not_applicable"
+    with path.open("w", encoding="utf-8", newline="") as stream:
+        writer = csv.DictWriter(stream, fieldnames=fieldnames)
+        writer.writeheader()
+        writer.writerows(rows)
+    with pytest.raises(TraceabilityError, match="E-001: not_applicable_with_rationale requires Product_Variant_ID"):
         validate_traceability(tmp_path)
