@@ -1,5 +1,13 @@
 # CRA 서보 드라이브 마스터 계획서
 
+## PR #116 병합 확인 — 2026-11-20
+
+- Main merge SHA: `6092ca1c61c696a716583e6bc0f7d5150cbee269`; post-merge safety ref: `safety/post-merge-pr116-2026-11-20`.
+- PR #116 exact-head Run #1032 success: source integrity, compile, CRA traceability, pytest, live official CRA source manifest.
+- PDF artifact는 생성/업로드되지 않았으므로 원문 PDF 확보 완료로 표시하지 않는다. Exact-main push CI는 독립 확인 전이다.
+- 다음 우선순위는 EN 40000-1-1/-1-2의 OJ 상태와 -1-3/-1-4의 개발 상태, ETSI 18개별 최신 단계, M/606 41개 전체 OJ 인용, LS메카피온 원본 매뉴얼/DriveCM/ESI 확보다.
+
+
 ## 최신 진행 업데이트 — 2026-11-20
 
 - M/606의 2026-11-10 개정 Annex I 납기를 C(2026) 7861 원문과 재확인했다.
