@@ -1575,3 +1575,13 @@
 - Commission Notice C/2026/1695의 CRA standardisation Action 5가 M/606을 보완하며 Annex III/IV 밖의 machinery, rail, lifts, agricultural machinery, AI, solar inverters에 대한 추가 표준화 요청을 계획함을 확인했다.
 - Action 5는 계획이며, 실제 표준 발행·OJ 인용·Article 27 적합성 추정으로 확대 해석하지 않는다.
 - 보고서 v0.5에 M/606과 Action 5의 차이, OJ 인용 확인 게이트를 추가한다. Exact-main push CI는 별도 확인 전.
+
+
+## 2026-11-19 — PR #109 병합 및 M/606 개정 Annex 원문 대조
+- PR #109 squash merge 172caa7427dd7af412d555bf2a82660537c0e16f; post-merge safety ref safety/post-merge-pr109-2026-11-19.
+- Exact-head Run #1014 / ID 44490815716 success: 174 passed / 0 failed. CRA traceability, 10 official HTML sources, JSON manifest round-trip 통과.
+- Artifact #14511964662 SHA-256 16f516e1bb84f2267327318d70994b1e77f7eb1029c5a40685763e67cc882dfe. PDF canary는 C(2026) 6013 empty body로 SKIPPED.
+- C(2026) 7861 final Annex I 원문을 직접 확인했다. M/606 41개 제출기한: 1·15번 2026-11-30, 2–14번 2027-10-30, 16–41번 2027-01-31.
+- 기존 41행 매핑 CSV와 validator 일정 값이 원문과 일치하여 날짜 수정 없이 보고서 v0.6에 상세 설명을 추가한다.
+- OJ citation 상태는 별도 전수 감사가 필요하며, M/606 Annex는 그 자체로 Article 27 presumption을 주지 않는다.
+- Exact-main push CI는 별도 확인 전.
