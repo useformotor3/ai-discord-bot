@@ -592,6 +592,54 @@ def fetch_official_cra_source():
     }
 
 
+
+def build_source_provenance_manifest(source):
+    """Return a minimal, hash-verifiable JSON manifest for an official source pack."""
+    if not isinstance(source, dict) or not isinstance(source.get("sources"), list) or not source["sources"]:
+        raise SourceValidationError("공식 source pack manifest 입력 구조가 올바르지 않습니다.")
+    pack_version = source.get("version")
+    retrieved_at = source.get("retrieved_at")
+    if not isinstance(pack_version, str) or not pack_version.strip():
+        raise SourceValidationError("공식 source pack version이 없습니다.")
+    if not isinstance(retrieved_at, str) or not retrieved_at.strip():
+        raise SourceValidationError("공식 source pack retrieved_at이 없습니다.")
+
+    records = []
+    required_text_fields = (
+        "id", "url", "final_url", "kind", "version", "full_text_sha256",
+        "prompt_excerpt_sha256", "retrieved_at",
+    )
+    for index, item in enumerate(source["sources"], start=1):
+        if not isinstance(item, dict):
+            raise SourceValidationError(f"공식 source manifest 항목 {index} 구조가 올바르지 않습니다.")
+        for field in required_text_fields:
+            value = item.get(field)
+            if not isinstance(value, str) or not value.strip():
+                raise SourceValidationError(f"공식 source manifest 필드가 없습니다: {item.get('id', index)} / {field}")
+        for field in ("full_text_sha256", "prompt_excerpt_sha256"):
+            if not re.fullmatch(r"[0-9a-f]{64}", item[field]):
+                raise SourceValidationError(f"공식 source manifest SHA-256 형식 오류: {item['id']} / {field}")
+        visible_chars = item.get("visible_text_chars")
+        if not isinstance(visible_chars, int) or visible_chars <= 0:
+            raise SourceValidationError(f"공식 source manifest visible_text_chars 오류: {item['id']}")
+        if item["retrieved_at"] != retrieved_at:
+            raise SourceValidationError(f"공식 source manifest retrieved_at 불일치: {item['id']}")
+        record = {field: item[field] for field in required_text_fields}
+        record["visible_text_chars"] = visible_chars
+        record["related_urls"] = list(item.get("related_urls", []))
+        record["related_note"] = item.get("related_note", "")
+        record["applied_corrigenda"] = list(item.get("applied_corrigenda", []))
+        records.append(record)
+
+    return {
+        "schema_version": "1.0",
+        "source_pack_version": pack_version,
+        "retrieved_at": retrieved_at,
+        "source_count": len(records),
+        "sources": records,
+    }
+
+
 def append_source_manifest(report, source):
     """Append machine-collected source metadata and content hashes after validation."""
     lines = [
