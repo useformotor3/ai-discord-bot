@@ -198,10 +198,12 @@ jobs:
           manifest_path = Path("artifacts/cra-source-pack-manifest.json")
           manifest_path.parent.mkdir(parents=True, exist_ok=True)
           manifest_path.write_text(
-              json.dumps(manifest, ensure_ascii=False, indent=2) + "\\n",
+              json.dumps(manifest, ensure_ascii=False, indent=2) + "\n",
               encoding="utf-8",
           )
-          print(f"PASS: wrote source provenance manifest with {manifest['source_count']} records: {manifest_path}")
+          if json.loads(manifest_path.read_text(encoding="utf-8")) != manifest:
+              raise SystemExit("FAIL: generated source provenance manifest JSON round-trip mismatch")
+          print(f"PASS: wrote and parsed source provenance manifest with {manifest['source_count']} records: {manifest_path}")
           PY
 
       - name: Upload official CRA source provenance manifest
