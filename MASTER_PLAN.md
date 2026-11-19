@@ -1015,3 +1015,11 @@
 - Live CRA HTML 10-source canary 통과. JSON provenance manifest 10 records parse + round-trip 통과. Artifact #14509668548 SHA-256 `1d3ac8ea2e049780161766ef158fecfa3ab2a7d795b477424b339e5004772bf6`.
 - PDF canary는 EUR-Lex C/2026/6013 endpoint empty body로 temporary outage / SKIPPED; PDF artifact 없음. PDF canary 성공으로 주장하지 않는다.
 - 법령 전수 수집·분석, 모델별 CRA 적용성/분류, 실제 보안 구현 및 시험은 미완료. 정확한 SKU/HW/FW와 EU 공급 증거 확보가 다음 단계.
+
+
+## 2026-11-19 — CRA 공식 지침·M/606 개정 반영 및 제조사 매뉴얼 수집
+- Commission guidance C(2026) 6013 및 Commission CRA standardisation page의 2026-11-10 M/606 개정 사실을 LS메카피온 예비 보고서 v0.2에 반영한다.
+- M/606 41개 표준의 제출 일정은 CRA 법적 적용일이나 OJ 조화표준 인용과 별개로 관리한다. Article 27 presumption은 OJ 인용 상태·범위 확인 전 부여하지 않는다.
+- LS메카피온 iX700M/iX7M/iX7NH 매뉴얼의 최신 공개 첨부 메타데이터를 확인했으나 공식 download endpoint가 접근 오류를 반환했다. PDF 본문/해시/페이지 분석은 미완료이며 증거 register 상태를 승격하지 않는다.
+- 다음 P0: 공식 PDF 원본 확보 경로를 정상화하거나 제조사에 원본 제공을 요청하고, 수령한 파일을 SHA-256·페이지 수·개정·인터페이스·업데이트·보안 관련 locator와 함께 검토한다.
+- 다음 법령 트랙: M/606 41개 개별 표준의 진행 상태 및 OJ 인용 여부, Commission guidance/FAQ, ENISA 자료, CRA와 연관 제품법령을 각각 1차 출처 기준으로 대조한다.
