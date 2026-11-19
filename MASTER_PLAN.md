@@ -996,3 +996,13 @@
 - PR #102 exact-head Run #1000: 174 passed / 0 failed. 10-record manifest artifact #14496534452, SHA-256 `7f2836072bdfa38b7857c47bdac4c6fdb2b71c38bd29b987889aad0646e78cc7`; PDF artifact #14497431708.
 - 최신 main: `84101bcc8871e41f8a25de3edf892666b1650b8c`; post-merge safety ref `safety/post-merge-pr102-2026-11-19`와 main identical.
 - 제품별 평가를 시작하려면 정확한 제조사/모델/SKU와 데이터시트·사용/설치 매뉴얼이 여전히 필요하다. 증거가 없으면 모델별 판정은 Unknown 유지.
+
+
+## 2026-11-19 — LS메카피온 서보드라이브 제품군 예비 분석
+- 사용자 지정 대상: LS메카피온 서보드라이브 제품군. 정확한 모델/SKU는 아직 미지정.
+- 제조사 제품 목록 기준 13개 계열을 1차 인벤토리화했다: iX700M, iX7M, iX7NH, L7NHA, L7NHB, L7NHF, L7PA, L7PB, PHOX, L7C, L7SA, L7SB, GEM.
+- 제조사 자료실의 iX700M/iX7M/iX7NH 등 매뉴얼 목록, DriveCM, ESI 파일, CAD, 가이드북 인덱스를 확인했다. 개별 PDF/설치파일 원본 다운로드·해시·페이지 분석은 다음 단계.
+- 새 보고서: `reports/CRA_LS_MECAPION_SERVO_DRIVE_FAMILY_PRELIMINARY_ASSESSMENT_2026-11-19.md`. 초보자용 CRA 개요, 제품군별 스펙 요약, 데이터 연결, 제품 경계, Annex III/IV 예비 분류, Article 13/14 의무, 위협 시나리오, 참조 아키텍처, 시험·증거 계획 및 용어집을 포함.
+- 법령 수집은 전수 완료가 아니다. HTML source pack 10개 및 PDF source pipeline 3개는 주요 CRA 법령·공식자료를 다루지만, 관련 제품법령, 최신 ENISA FAQ, M/606 41개 표준 상태, 최종 표준 전문 및 OJ 조화표준 인용 감사가 남아 있다.
+- 모델별 EU 공급, exact SKU/HW/FW, 실제 인터페이스·프로토콜, SBOM, PSIRT, 지원기간, 시험 증거가 없으므로 제품별 판정 Unknown, 시험 Not Run 유지.
+- 다음 P0: 제조사 카탈로그·모델 매뉴얼 원본 수집/해시 → 모델/variant 매핑 → Article 2 적용성 및 Annex III/IV 판정 → EVD/SEC/시험 연결.
