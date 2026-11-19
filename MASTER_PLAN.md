@@ -987,3 +987,12 @@
 - Annex category 번호 1.과 각주 (1) 혼동을 재현하고 명시적 Annex II category 1 locator와 회귀 테스트로 해결했다.
 - PR #99 exact-head Run #993: 173 passed / 0 failed; source pack 10, PDF sources 3개 수집·해시 및 live canary 통과.
 - 특정 서보 드라이브의 제품별 분류·적합성 판정은 제품 자료가 없으므로 계속 Unknown. 다음 단계는 실제 모델/SKU와 데이터시트·매뉴얼 수집이다.
+
+
+## 2026-11-19 — PR #101/#102: 공식 source pack provenance artifact 영속화
+- 10개 공식 CRA HTML source의 ID, URL/final URL, kind/version, visible-text 길이, full-text SHA-256, prompt-excerpt SHA-256, retrieval timestamp, related URL/corrigenda metadata를 JSON manifest로 생성한다.
+- PR #101 exact-head Run #998에서 174 passed / 0 failed 및 artifact 업로드를 확인했다. 개행 escape를 재검토해 JSON parse 검증 공백을 발견했고, 초기 artifact는 authoritative evidence로 사용하지 않도록 기록했다.
+- PR #102에서 실제 newline serialization 및 json.loads + object round-trip fail-closed 검증을 추가했다.
+- PR #102 exact-head Run #1000: 174 passed / 0 failed. 10-record manifest artifact #14496534452, SHA-256 `7f2836072bdfa38b7857c47bdac4c6fdb2b71c38bd29b987889aad0646e78cc7`; PDF artifact #14497431708.
+- 최신 main: `84101bcc8871e41f8a25de3edf892666b1650b8c`; post-merge safety ref `safety/post-merge-pr102-2026-11-19`와 main identical.
+- 제품별 평가를 시작하려면 정확한 제조사/모델/SKU와 데이터시트·사용/설치 매뉴얼이 여전히 필요하다. 증거가 없으면 모델별 판정은 Unknown 유지.
