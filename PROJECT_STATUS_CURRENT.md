@@ -2,13 +2,13 @@
 
 > 최신 상태 스냅샷. 역사 기록은 SESSION_LOG 및 PROJECT_LOG에 append-only로 보존한다.
 
-## 최신 main 기준점 — PR #91 병합 및 사후 CI 완료 (2026-11-19)
-- PR #91 exact-head SHA `dc35c9a176f4e0f7476eba718c9fb870cd27bb04`; Run #971 / ID `44447380699`: success, **166 passed / 0 failed**.
-- PR #91 squash merge SHA / main: `a3b21e86342f098ff6d81a139de6e89a1626a174`.
-- Exact-main Run #972 / ID `44447539193`: success, **166 passed / 0 failed**; source integrity, compile, CRA traceability, official CRA PDF and live EUR-Lex canaries passed.
-- Exact-main artifact #14493334026, digest `sha256:a54d683e78974b8615c48b6dc9831e169aaa1c27e0073ef627f7e7ca8400fe70`, expires 2026-11-26 02:53:52 UTC.
-- Pre-merge safety ref `safety/pre-pr91-merge-checkpoint-2026-11-19` points to main `732f5167ed1a272afc10bb66d4aceb68ccb96b79`. Post-merge safety ref `safety/post-merge-pr91-2026-11-19` equals main at `a3b21e86342f098ff6d81a139de6e89a1626a174`; compare status identical (0 ahead / 0 behind).
-- PR #91 modified the isolated test workflow `.github/workflows/tests.yml` to pin reviewed source blobs; production `.github/workflows/run.yml`, `main.py`, secrets, state/history and legacy SIL 3 files were not changed.
+## 최신 main 기준점 — PR #92 병합 및 사후 CI 완료 (2026-11-19)
+- PR #92 exact-head SHA `3398f0dabecaf518ea8c56c7c328c9fcdf5c2499`; Run #973 / ID `44447781287`: success, **166 passed / 0 failed**.
+- PR #92 squash merge SHA / main: `0e06f5672f2477f95f7b1088ee0299a7c336082e`.
+- Exact-main Run #974 / ID `44447909706`: success, **166 passed / 0 failed**; source integrity, compile, CRA traceability, official CRA PDF and live EUR-Lex canaries passed.
+- Exact-main artifact #14494142424, digest `sha256:f0def08f1188b819fba061728a092dbf5ef0a340bbdd75200f0aff2edb5d500a`, expires 2026-11-26 02:57:02 UTC.
+- Pre-merge safety ref `safety/pre-pr92-merge-checkpoint-2026-11-19` points to main `a3b21e86342f098ff6d81a139de6e89a1626a174`. Post-merge safety ref `safety/post-merge-pr92-2026-11-19` equals main at `0e06f5672f2477f95f7b1088ee0299a7c336082e`; compare identical (0 ahead / 0 behind).
+- PR #92 was documentation/status sync only. Production `main.py` and `.github/workflows/run.yml` unchanged; secrets/state/history and legacy SIL 3 artifacts untouched.
 
 ## 현재 기술 게이트
 - Annex III/IV classification is based on the product's core functionality as a whole under Implementing Regulation (EU) 2025/2392. Integrated components do not automatically classify the complete drive.
