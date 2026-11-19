@@ -1040,3 +1040,11 @@
 - LS Mecapion report v0.4 separates drive component boundary from final machine / partly completed machinery boundary and adds a conditional screen for EMC, LVD, RED, RoHS, WEEE and Product Liability Directive.
 - Do not infer that every drive is machinery, or that machinery rules automatically exclude CRA. Product variant, intended use, supply form, wireless option and economic-operator roles remain unknown.
 - Next: model-by-model legal applicability table with exact product evidence; M/606 41-standard status/OJ citation audit; sector-law amendments and harmonised standards verification.
+
+
+## 2026-11-19 — CRA 표준화 작업계획 확장
+- PR #108 merged: 4a1b44501dec629ae2f42106d6b8d200f177765a; exact-head Run #1012 success, 174 passed / 0 failed; live 10-source HTML and manifest round-trip passed; PDF canary skipped on empty EUR-Lex response.
+- Commission Notice C/2026/1695 (OJ C, 19.3.2026) Action 5는 M/606을 보완해 CRA Annex III/IV 밖 제품, 특히 machinery, rail, lifts, agricultural machinery, AI systems, solar inverters에 대한 추가 표준화 요청을 계획한다.
+- 이는 연간 작업계획 및 향후 요청 방향이며, 이미 발행된 조화표준이나 Article 27 presumption을 뜻하지 않는다.
+- 보고서 v0.5는 M/606 41개 표준과 C/2026/1695 Action 5를 별도 추적하도록 업데이트한다.
+- 다음: 41개 M/606 개별 표준 현황, C(2026) 7861 상세 납기, Action 5 후속 요청 채택 여부, CRA 관련 OJ 인용 상태를 개별 레코드로 검증한다.
