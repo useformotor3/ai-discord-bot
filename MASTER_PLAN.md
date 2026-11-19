@@ -1057,3 +1057,12 @@
 - 이 날짜는 ESO 표준 채택기한이지 제조자의 CRA compliance deadline이 아니다. OJ citation 전까지 Article 27 presumption을 주장하지 않는다.
 - 보고서 v0.6에 41개 일정, 제품군 관련 항목 25/36/28–30/37–38 해석, 검증 범위를 반영한다.
 - 다음: M/606 개별 41개 표준의 실제 진행 상태 및 OJ citation audit, C/2026/1695 Action 5의 후속 표준화 요청 발행 여부 확인.
+
+
+## 2026-11-19 — CRA SRP v1.3 운영 준비 트랙
+- PR #110 merged: 57c7734d59b5046598e67aefd5d74a2ea29d3e2b; exact-head Run #1016 success, 174 passed / 0 failed; 10-source live HTML canary and manifest round-trip passed; PDF canary skipped on empty EUR-Lex response.
+- ENISA SRP FAQ (2026-10-15), SRP platform v1.3 (2026-11-04), AR User Manual v1.3 reviewed.
+- Reporting readiness: AEV / severe incident definitions; 24h/72h/AEV 14d/SI 1 month deadlines; Primary AR=1, Secondary AR<=20; EU Login/MFA; no initial API; English UI; outage fallback; CDaC selection and integrated-component notification.
+- Critical operational issue: SRP v1.3 FAQ says the current 72h counter may display overdue early because it adds 48h after Early Warning submission rather than calculating from original awareness time; AEV Final Report counter is not implemented. Internal legal deadline tracker is mandatory.
+- Article 14 reporting applies from 2026-09-11 to all in-scope products, including products placed on the market before 2027-12-11, when the manufacturer becomes aware after reporting obligations apply. Integrated-component AEV reporting responsibilities are assessed at both finished-product and separately marketed component level.
+- Next: incorporate SRP v1.3 manual into internal SOP / exercise; continue M/606 per-standard status and OJ citation audit; acquire manufacturer manual PDFs.
