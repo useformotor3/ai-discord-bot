@@ -1547,3 +1547,13 @@
 - 이 일정 변경을 CRA 적용일 변경이나 Article 27 적합성 추정 발생으로 오해하지 않도록 LS메카피온 보고서에 별도 설명을 추가했다.
 - iX700M Ver1.4, iX7M Ver1.3, iX7NH Ver1.7의 공식 매뉴얼 첨부 메타데이터를 재확인했다. 첨부파일 다운로드 링크는 제조사 사이트에서 “잘못된 접근”을 반환했다. PDF 원본 확보·해시·페이지 검토는 완료되지 않았으며 증거 accepted로 승격하지 않는다.
 - 다음 작업은 모델별 매뉴얼 원본 확보 및 41개 표준/OJ 인용 상태·ENISA/Commission 최신 자료의 출처별 감사다.
+
+
+## 2026-11-19 — PR #106 병합 및 ENISA/위임규정 추가 조사
+- PR #106 squash merge 2c24b16ede905009f2a2f07edb4072bb9c244316; post-merge safety ref safety/post-merge-pr106-2026-11-19.
+- Exact-head Run #1008 / ID 44489742051 success: 174 passed / 0 failed. Source integrity, compile, CRA traceability, full pytest, live 10-source HTML canary, JSON manifest round-trip 통과. PDF canary는 C(2026) 6013 PDF endpoint empty body로 SKIPPED, artifact 없음.
+- 공식 source manifest artifact #14511852597, SHA-256 a34bd69a01bfe18f4967c1982e7ade0e959d0e9ae6f7740cfc9e94b5c566304a, 2,565 bytes.
+- 보고서 v0.3에 Delegated Regulations (EU) 2025/1535 및 2026/881의 범위·효과와 ENISA의 SME maturity, secure-by-design, SBOM, secure update, SRP 자료를 추가했다.
+- 2025/1535의 L-category 차량 제외를 일반 서보드라이브 면제로 확대하지 않는다. 2026/881은 CSIRT 전파 지연 규정이지 제조자 신고기한 연장 규정이 아니다.
+- ENISA 기술자료는 법적 의무나 Article 27 적합성 추정을 부여하지 않는 실무 참고자료다.
+- Exact-main push CI는 독립 확인 전이므로 미확인. 제품별 판정 Unknown, 시험 Not Run 유지.

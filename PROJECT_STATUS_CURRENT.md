@@ -578,3 +578,13 @@
 - LS메카피온 공식 매뉴얼 메타데이터 재확인: iX700M Ver1.4 첨부파일명 260915, iX7M Ver1.3 파일명 260605, iX7NH Ver1.7 파일명 260605. 첨부파일 다운로드 엔드포인트는 “잘못된 접근”을 반환했으므로 PDF 본문 확보·SHA-256·페이지 검토는 미완료.
 - LS메카피온 보고서 v0.2에 최신 지침·M/606 개정 및 매뉴얼 수집 한계를 반영한다. 제품별 증거 상태는 승격하지 않는다.
 - 현재 CRA 법령 전수 조사, 41개 표준/OJ 상태별 검증, ENISA 최신 자료, 제품별 매뉴얼 PDF 원본 검토는 미완료. 제품별 scope/classification/conformity Unknown, 시험 Not Run.
+
+
+## 2026-11-19 — PR #106 병합 및 ENISA/위임규정 추가 감사
+- PR #106 병합 SHA: 2c24b16ede905009f2a2f07edb4072bb9c244316; post-merge safety ref safety/post-merge-pr106-2026-11-19 생성.
+- PR #106 exact-head Run #1008 / ID 44489742051: success, 174 passed / 0 failed. CRA traceability 13/15/35/36/16/15/41 통과.
+- Live official CRA HTML source 10개 수집·canary 통과, provenance manifest JSON parse + object round-trip 통과. Artifact #14511852597, SHA-256 a34bd69a01bfe18f4967c1982e7ade0e959d0e9ae6f7740cfc9e94b5c566304a, 2,565 bytes, expires 2026-11-26 08:42:02 UTC.
+- PDF canary는 EUR-Lex C(2026) 6013 PDF endpoint empty body로 SKIPPED. PDF artifact 없음. 정확한 main push CI는 별도 확인 전이므로 성공으로 기록하지 않는다.
+- 보고서 v0.3 추가 조사: Delegated Regulation (EU) 2025/1535의 L-category 차량 범위 제외(페달 보조 L1e 예외), Delegated Regulation (EU) 2026/881의 CSIRT 신고 전파 지연 조건, ENISA SME maturity model, Secure by Design playbook, SBOM advisory, secure update advisory, CRA Single Reporting Platform을 설명한다.
+- ENISA 실무자료는 비구속 참고자료이며 조화표준/OJ 인용이나 Article 27 presumption을 대체하지 않는다.
+- 제품별 scope/classification/conformity Unknown, 보안 시험 Not Run. 법령·표준 전수 감사는 미완료.

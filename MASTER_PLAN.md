@@ -1023,3 +1023,11 @@
 - LS메카피온 iX700M/iX7M/iX7NH 매뉴얼의 최신 공개 첨부 메타데이터를 확인했으나 공식 download endpoint가 접근 오류를 반환했다. PDF 본문/해시/페이지 분석은 미완료이며 증거 register 상태를 승격하지 않는다.
 - 다음 P0: 공식 PDF 원본 확보 경로를 정상화하거나 제조사에 원본 제공을 요청하고, 수령한 파일을 SHA-256·페이지 수·개정·인터페이스·업데이트·보안 관련 locator와 함께 검토한다.
 - 다음 법령 트랙: M/606 41개 개별 표준의 진행 상태 및 OJ 인용 여부, Commission guidance/FAQ, ENISA 자료, CRA와 연관 제품법령을 각각 1차 출처 기준으로 대조한다.
+
+
+## 2026-11-19 — CRA 위임규정·ENISA 이행자료 조사 확장
+- PR #106 merged: 2c24b16ede905009f2a2f07edb4072bb9c244316; exact-head Run #1008 success, 174 passed / 0 failed; 10-source live HTML canary and manifest round-trip passed; PDF canary skipped on empty EUR-Lex response.
+- LS메카피온 보고서 v0.3에 Delegated Regulation (EU) 2025/1535(특정 L-category vehicle 제품의 CRA 제외 및 pedal-assisted L1e 예외), Delegated Regulation (EU) 2026/881(Article 14 신고 수신 후 CSIRT 전파 지연)을 반영했다.
+- ENISA 2026 자료: SME Cyber Resilience Maturity Assessment Model, Secure by Design and Default Playbook, SBOM Technical Advisory, Secure Update Mechanisms Technical Advisory, Single Reporting Platform 안내를 제조사 절차에 연결했다.
+- ENISA 자료는 비구속 참고자료로 구분하고 CRA 법적 요구·OJ harmonised-standard citation·Article 27 presumption과 혼동하지 않는다.
+- 다음 단계: M/606 41개 개별 표준별 진행·최종안·OJ citation 상태, 제품별 적용 가능한 sectoral legislation, Commission FAQ 최신판, ENISA reporting/SRP 최신 매뉴얼을 근거·날짜·locator와 함께 감사한다.

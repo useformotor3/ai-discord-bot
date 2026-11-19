@@ -1,7 +1,7 @@
 # LS메카피온 서보드라이브 CRA 제품군 예비 분석 보고서
 
 - 문서 ID: CRA-LSM-FA-001
-- 버전: 0.2 (최신 CRA 지침·표준화 일정 반영 / 제품군 예비 분석)
+- 버전: 0.3 (최신 CRA 법령·ENISA 이행자료 추가 / 제품군 예비 분석)
 - 기준일: 2026-11-19 (KST)
 - 작성 언어: 한국어
 - 대상 제조사/브랜드: LS메카피온 (LS MECAPION)
@@ -539,6 +539,7 @@ STO(Safe Torque Off) 등 기능안전 기능이 존재하더라도 CRA 사이버
 |---|---|---|
 | 0.1 | 2026-11-19 | LS메카피온 공식 공개 제품 목록과 자료실을 바탕으로 제품군 범위, CRA 적용성, Annex III/IV 예비 분류, 제조사 의무, 위협·시험·증거 계획을 정리 |
 | 0.2 | 2026-11-19 | Commission CRA guidance C(2026) 6013 및 M/606 2026-11-10 개정 반영; iX700M/iX7M/iX7NH 매뉴얼 첨부파일 목록 재확인 및 다운로드·해시 검증 한계 명시 |
+| 0.3 | 2026-11-19 | CRA 위임규정 (EU) 2025/1535·2026/881의 적용 범위/신고 전파 지연 효과와 ENISA 2026 SBOM·보안 업데이트·Secure by Design·SME 지원 자료 반영 |
 
 **최종 판정:** 본 문서는 LS메카피온 서보드라이브 제품군의 CRA 대응을 시작하기 위한 예비 분석이다. 법령 전수 수집·분석 완료본도 아니고, 특정 모델의 CRA 적합성 평가 완료본도 아니다. 모델별 원본 자료와 EU 공급 증거를 확보한 후 후속 판정·보고서 개정이 필요하다.
 
@@ -611,3 +612,64 @@ STO(Safe Torque Off) 등 기능안전 기능이 존재하더라도 CRA 사이버
 - 구현 증거·SBOM·취약점 처리·보안 업데이트·시험 결과 검증
 
 따라서 본 보고서의 버전 0.2도 **제품군 예비 분석**이며, 법령 전수 조사 완료본이나 제품별 CRA 적합성 판정서가 아니다.
+
+
+---
+
+## 16. CRA 관련 위임규정 및 ENISA 최신 실무자료 추가 검토
+
+### 16.1 Commission Delegated Regulation (EU) 2025/1535 — 특정 L-category 차량 제품의 CRA 제외
+
+이 위임규정은 Regulation (EU) No 168/2013의 적용을 받는 특정 L-category 차량의 디지털 제품에 대해 CRA 적용을 제외한다. 다만 페달 보조형 L1e 차량은 이 제외에서 다시 예외로 둔다. 이 규정은 2025-10-29 관보에 게재되었고 2025-11-18 발효했다.
+
+**서보드라이브에 대한 의미:** 일반 산업용 서보드라이브가 이 규정 때문에 CRA에서 제외되는 것은 아니다. 드라이브가 L-category 차량의 형식승인 체계에 속하는 제품인지, 차량용 시스템·부품으로 어떤 법적 지위로 공급되는지에 대한 구체적 근거가 있을 때만 검토한다. 단순히 모터나 차량 자동화에 사용된다는 이유로 제외를 적용하지 않는다.
+
+공식 원문: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32025R1535
+
+### 16.2 Commission Delegated Regulation (EU) 2026/881 — 신고의 전파 지연 조건
+
+이 위임규정은 CRA Article 14에 따른 취약점·중대 사고 신고를 받은 조정 CSIRT가 사이버보안상 사유로 다른 CSIRT에 정보를 전파하는 것을 지연할 수 있는 조건과 절차를 구체화한다. 2026-04-20 관보 게재, 2026-05-10 발효 상태다.
+
+**중요한 구분:** 이는 제조자가 Article 14에 따라 최초 신고를 해야 하는 기한을 연장하거나 면제하는 규정이 아니다. 제조자의 신고 의무와 기한은 CRA Article 14 원문 및 공식 이행 지침에 따라 별도로 관리하고, 2026/881은 신고 수신 후 CSIRT 간 정보 전파 지연에 관한 규칙으로 구분한다.
+
+공식 원문: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32026R0881
+
+### 16.3 ENISA의 2026년 제품 보안 지원자료
+
+ENISA 자료는 제품 제조사가 CRA 요구사항을 실제 엔지니어링·운영 프로세스로 옮길 때 참고할 수 있는 실무 자료다. 법령이나 조화표준과 법적 지위를 혼동하지 않는다.
+
+| 자료 | 발행일 | 핵심 내용 | LS메카피온 적용 검토 |
+|---|---|---|---|
+| SME Cyber Resilience Maturity Assessment Model | 2026-07-13 | CRA 대상 제품 제조 SME가 조직·제품 보안 성숙도를 평가하는 모델과 도구 | 조직의 현재 상태와 개선 과제를 파악하는 보조 도구. 제품 적합성 인증이나 법적 판정은 아님 |
+| Secure by Design and Default Playbook | 2026-07-30 | 22개 실무 playbook으로 제품 생애주기 전반의 secure-by-design/default 원칙을 반복 가능한 작업으로 설명 | 요구사항 도출, 설계 검토, 기본 설정, 릴리스 검증 체크리스트에 활용 |
+| Technical Advisory for Software Bill of Materials | 2026-10-22 | SBOM 생애주기·데이터 흐름·위협 모델 및 SBOM 생태계 보호조치 | 드라이브 펌웨어, RTOS, 통신 스택, 암호 라이브러리, PC 도구의 구성요소 목록·공급망 추적에 활용 |
+| Technical Advisory on Secure Update Mechanisms | 2026-11-04 | 업데이트 생애주기의 위협과 안전한 업데이트 배포를 위한 통제 | 펌웨어 서명·무결성, 배포 경로, 업데이트 권한, 사용자 알림, 실패 복구·롤백 시험에 활용 |
+
+공식 자료:
+- ENISA SME Cyber Resilience Maturity Assessment Model: https://www.enisa.europa.eu/publications/sme-cyber-resilience-maturity-assessment-model
+- ENISA Secure by Design and Default Playbook: https://www.enisa.europa.eu/publications/enisa-secure-by-design-and-default-playbook
+- ENISA Technical Advisory for Software Bill of Materials: https://www.enisa.europa.eu/publications/enisa-technical-advisory-for-software-bill-of-materials
+- ENISA Technical Advisory on Secure Update Mechanisms: https://www.enisa.europa.eu/publications/enisa-technical-advisory-on-secure-update-mechanisms
+
+**법적 효력:** ENISA 기술 자문·플레이북·성숙도 모델은 실무 참고자료다. 그 자체가 CRA 법적 의무를 새로 만들거나 Article 27 적합성 추정을 부여하지 않는다. 실제 적합성은 CRA 법령, 적용 가능한 조화표준의 OJ 인용 상태, 제품별 위험평가 및 검증 증거로 판단한다.
+
+### 16.4 CRA Single Reporting Platform — 현재 운영상 중요한 신고 경로
+
+ENISA는 CRA 신고 의무가 적용되기 시작한 2026-09-11에 Single Reporting Platform(SRP)의 초기 운영 기능을 배포했다. 제조자는 해당 신고 의무에 따라 적극 악용 중인 취약점과 제품 보안에 영향을 미치는 중대 사고를 신고해야 하며, SRP는 한 번의 신고로 관련 당국에 정보를 전달할 수 있도록 설계됐다.
+
+- 공식 안내: https://www.enisa.europa.eu/news/the-cra-single-reporting-platform-is-launched
+- 제조사 내부 절차에는 취약점 인지 시각, 평가·분류, 신고 책임자, 24시간/72시간 등 법정 시점 관리, 제출 자료 승인, 고객 통지 및 사후 보고 기록을 포함해야 한다.
+- SRP 계정·권한·대리 신고 절차, 담당 조직, 비상 연락망을 사전에 확인한다.
+- SRP가 있다는 사실만으로 제조자의 신고 판단·기한 관리 책임이 ENISA로 이전되는 것은 아니다.
+
+### 16.5 이번 추가 조사에서 확인한 CRA 법령·자료 범위
+
+기존 CI source pack은 다음을 포함하며, live canary에서 10개 공식 출처를 읽고 provenance manifest의 JSON parse/round-trip을 검증했다.
+
+- Regulation (EU) 2024/2847 및 관보 corrigenda
+- Commission Implementing Regulation (EU) 2025/2392 (Annex III/IV 제품 기술 설명)
+- Commission Delegated Regulation (EU) 2025/1535 (특정 L-category 차량 제품 제외)
+- Commission Delegated Regulation (EU) 2026/881 (Article 14 신고 전파 지연)
+- Commission CRA guidance 및 M/606 표준화 공식 페이지
+
+그러나 이 10개 source pack이 CRA와 연관된 모든 EU 법령·제품별 법률·FAQ·ENISA 자료·표준 전문을 망라하는 것은 아니다. 법령 전수 감사와 M/606 41개 개별 표준의 OJ 인용 여부·범위 확인은 계속 진행한다.
