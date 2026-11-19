@@ -176,4 +176,18 @@ jobs:
           if not article_13_8 or " ".join(expected_quote.split()).casefold() not in " ".join(article_13_8.split()).casefold():
               raise SystemExit("FAIL: live Cellar source Article 13(8) locator/quote verification failed")
           print("PASS: live Article 13(8) paragraph locator and source quote verified")
+
+          implementing = next(
+              item for item in source["sources"]
+              if item["id"] == "CRA-2025-2392-important-critical-product-descriptions"
+          )
+          annex_i_10 = extract_locator_scope("Annex I(10)", implementing["text"])
+          annex_ii_1 = extract_locator_scope("Annex II(1)", implementing["text"])
+          if not annex_i_10 or "physical and virtual network interfaces" not in " ".join(annex_i_10.split()).casefold():
+              raise SystemExit("FAIL: live 2025/2392 Annex I category 10 locator failed")
+          if not annex_ii_1 or "hardware devices with security boxes" not in " ".join(annex_ii_1.split()).casefold():
+              raise SystemExit("FAIL: live 2025/2392 Annex II category 1 locator failed")
+          if "core functionality" not in " ".join(implementing["text"].split()).casefold():
+              raise SystemExit("FAIL: live 2025/2392 core-functionality recital marker missing")
+          print("PASS: live 2025/2392 core-functionality marker and Annex I(10)/Annex II(1) locators verified")
           PY
