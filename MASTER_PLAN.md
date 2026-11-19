@@ -275,3 +275,12 @@
 - 이 감사 기준에서 작업 브랜치는 main의 조상이며 ahead=0이다. 따라서 main에 없는 작업 브랜치 고유 커밋은 없다.
 - 작업 브랜치를 main에 병합하는 것은 새로운 기능 반영 경로가 아니며, 현재 데이터 및 코드 차이를 해결하지 않는다. 이 브랜치를 기준으로 통합하지 않는다.
 - 실패 경로 fixture가 필요한 경우 main에 존재하는 테스트 경로와 해당 이력을 별도로 확인한 뒤, 최신 main에서 새 작업 브랜치를 만드는 편이 안전하다. 이번 감사에서는 이를 구현하거나 변경하지 않았다.
+
+
+## 2026-11-19 — 통합 판단 갱신
+- test/failure-path-fixtures-2026-11-14는 감사 기준 main 대비 1 ahead / 1,357 behind이며 merge-base는 7ae3b251861b9a3de9981bd7202e346d05ca9430이다.
+- 전체 recursive tree 비교(truncated=false): main 2,548 blobs, 작업 브랜치 1,617 blobs; main-only 931, branch-only 0, modified 19.
+- 운영 데이터 차이: main archive/history 각 2,431, 작업 브랜치 각 1,592; main에 archive 839개와 history 항목 839개가 추가됐다. branch history는 main history의 정확한 prefix다. state.json도 별도 값으로 변경됐다.
+- main.py, 운영 run.yml, 테스트 workflow/코드 및 관리 문서도 SHA 차이가 있다. 전체 코드 의미 검토나 테스트는 이번 감사 범위에서 수행하지 않았다.
+- 결론: 해당 브랜치를 main에 직접 통합하지 않는다. 고유 1개 커밋의 내용과 필요한 fixture만 최신 main 기준 별도 작업으로 재검토한다. 운영 데이터는 main 원본을 보존한다.
+- 감사 기준: 2026-11-19T09:34:27+09:00; main 732f5167ed1a272afc10bb66d4aceb68ccb96b79, 작업 브랜치(문서 갱신 전) ca3f6ee8c917da8e2485cf75cd9c90ee7fb03a85.

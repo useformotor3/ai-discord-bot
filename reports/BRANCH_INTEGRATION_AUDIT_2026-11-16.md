@@ -163,3 +163,23 @@ main의 운영 코드는 merge-base 이후 변경되지 않았다. P0/P1-A/P1-B1
 - README, PROJECT_STATUS, MASTER_PLAN, SESSION_LOG, PROJECT_LOG 및 본 감사 보고서만 작업 브랜치에 기록한다.
 - main, main.py, 운영 run.yml, state.json, history.json, research_archive 원본은 수정하지 않았다. merge/rebase/PR merge, workflow 실행, Gemini/Discord 외부 호출은 하지 않았다.
 - 테스트는 실행하지 않았다. 따라서 테스트 PASS 판정은 없다.
+
+## 2026-11-19 09:34 KST — 매일 통합 상태 점검 (읽기 전용 비교)
+
+- 조회 기준 시각: 2026-11-19T09:34:27+09:00
+- 운영 main HEAD: `732f5167ed1a272afc10bb66d4aceb68ccb96b79`
+- 작업 브랜치 HEAD (문서 갱신 전): `ca3f6ee8c917da8e2485cf75cd9c90ee7fb03a85`
+- merge-base: `7ae3b251861b9a3de9981bd7202e346d05ca9430`
+- GitHub compare API: status=`diverged`, **ahead=1 / behind=1,357**. 작업 브랜치에는 main에 없는 고유 커밋 1개가 있다.
+- compare API wrapper의 파일 통계는 6개만 반환했으므로 전체 파일 경로 판정에 사용하지 않았다. 양쪽 recursive Git tree 전체를 조회하고 `truncated=false`를 확인한 뒤 path/blob SHA를 비교했다.
+- recursive tree: main tree `d1281ea188b7313ee4923c2e9df5ab88a1014561`, 2,548 blobs; branch tree `9bed5aa6d39e210ac564fcaea9d744d086d5ce21`, 1,617 blobs.
+- 전체 blob 경로 차이: main-only 931, branch-only 0, 동일 경로 blob 변경 19. main-only 중 archive 839, 비-archive 92.
+- 변경 경로 19개: `.github/workflows/run.yml`, `.github/workflows/tests.yml`, `AI_RULEBOOK.md`, `MASTER_PLAN.md`, `PROJECT_LOG.jsonl`, `PROJECT_STATUS.md`, `README.md`, `SESSION_LOG.md`, `history.json`, `main.py`, `reports/BRANCH_INTEGRATION_AUDIT_2026-11-16.md`, `reports/BRANCH_INTEGRATION_AUDIT_2026-11-16_REFRESH.md`, `reports/P1_B2_ATOMIC_PERSISTENCE_DESIGN_2026-11-16.md`, `state.json`, `tests/README.md`, `tests/conftest.py`, `tests/test_external_failure_paths.py`, `tests/test_main_characterization.py`, `tests/test_p1_reliability.py`.
+- 데이터 경로: main archive 2,431 / branch archive 1,592; main-only archive 839, branch-only 0, modified archive 0. 즉 archive 원본은 추가분 외에 동일 경로 내용 변경이 없다.
+- `history.json`: main 2,431개 / branch 1,592개. branch 배열 1,592개 항목은 main 배열의 정확한 prefix이며 main에 839개가 추가됐다. main SHA `b9ea42fa437b2b3a5728db5d125d287fb746b46b`, branch SHA `4dc2d720418944be1dea42841933199247417864`.
+- `state.json`: main date/count=`2026-11-17 / 38`, branch date/count=`2026-11-14 / 29`. main SHA `da086ea3ffb7ef0c76d7fa03a58e13a24aa8fe34`, branch SHA `172963125a28bcdc51f3bfc4504866505d7626c2`. count는 상태 파일 내부 실행 카운터이며 history/archive 누적 개수와 별개다.
+- 주요 코드/워크플로 SHA도 다르다: `main.py`와 `.github/workflows/run.yml`은 양쪽 blob SHA가 각각 다르다. 이번 감사에서는 파일 내용을 변경하거나 실행하지 않았다.
+- 작업 브랜치의 README, PROJECT_STATUS, MASTER_PLAN, SESSION_LOG, PROJECT_LOG, 본 감사 보고서를 읽었다. 기존 PROJECT_LOG.jsonl 26행 모두 유효 JSON이었다.
+- 판단: 작업 브랜치는 main보다 1,357 commits 뒤처져 있고 main에 없는 커밋은 1개다. 운영 데이터 839건 누적 차이와 코드/workflow/test 변경이 공존하므로 이 브랜치를 main에 직접 통합하지 않는다. 고유 1개 커밋의 내용은 별도 검토 대상이다.
+- 이번 실행은 문서 기록만 작업 브랜치에 추가한다. main, main.py, 운영 run.yml, state/history/archive 원본은 수정하지 않는다. merge/rebase/PR merge, 운영 workflow 실행, Gemini/Discord 외부 호출은 하지 않는다.
+- 테스트는 실행하지 않았으므로 PASS 판정은 없다.
