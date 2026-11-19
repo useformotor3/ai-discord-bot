@@ -10,20 +10,22 @@
 
 > **기록 원칙:** 프로젝트의 공식 진행 상태와 재개 지점은 이 저장소에 기록합니다. 대화창의 기억에만 의존하지 않습니다.
 
-### 현재 기준점 — main / PR #99 병합 및 exact-head 검증 완료 (2026-11-19)
-- main / PR #99 merge SHA: `b5e6982270a4b3b913e5ae584786340ce58755f3`; PR #98 status-sync도 main에 병합됨.
-- PR #99 exact-head Run #993 / ID 44454970377: success, **173 passed / 0 failed**.
-- Live official source pack v4: 10개 공식 출처 검증. Implementing Regulation (EU) 2025/2392 33,865 visible chars, excerpt SHA-256 `9c9715a1c463dca7ccf499e5f901ac642426b70a2aba89eb479525fbb78a1702`.
-- Live canary: CRA Article 13(8), 2025/2392 core-functionality marker, Annex I category 10 및 Annex II category 1 locator 검증 통과.
-- PDF artifact #14496564799, SHA-256 `c19aaf7465041fd21def6d634daaea08f897ec32ca1892452e6d18bce71d44c2`; expires 2026-11-26 03:57:52 UTC. Guidance PDF는 fallback=True, OJ guidance 및 M/606 Annex PDF는 fallback=False.
-- Pre-merge ref `safety/pre-cra-2392-source-canary-2026-11-19`; post-merge ref `safety/post-merge-pr99-2026-11-19`는 main과 동일.
-- 제품별 증거는 여전히 `not_provided`; 모델별 적용성·분류·구현·시험 판정은 Unknown 유지.
+### 현재 기준점 — main / PR #102 병합 및 manifest JSON 검증 완료 (2026-11-19)
+- 최신 main: PR #102 merge SHA `84101bcc8871e41f8a25de3edf892666b1650b8c`; PR #100/101/102 후속 변경이 모두 main에 병합됨.
+- PR #102 exact-head Run #1000 / ID 44455799462: success, **174 passed / 0 failed**.
+- CRA traceability: claims 13, interfaces 15, requirements 35, SEC 36, EVD crosswalk 16, product evidence 15, M/606 41 통과.
+- Official source pack v4: 10개 공식 출처, Article 13(8), 2025/2392 core-functionality 및 Annex I category 10 / Annex II category 1 live canary 통과.
+- JSON provenance manifest 10 records 생성 후 json.loads + object round-trip 검증 통과. Artifact #14496534452, SHA-256 `7f2836072bdfa38b7857c47bdac4c6fdb2b71c38bd29b987889aad0646e78cc7`, 2,566 bytes; expires 2026-11-26 04:05:17 UTC.
+- PDF evidence artifact #14497431708, SHA-256 `b4090a51f855b1d6f391b82942e6301d91119e651fe528848eaa77e66b5ac4ee`, expires 2026-11-26 04:05:06 UTC.
+- Pre/post safety refs: PR #102 `safety/pre-pr102-json-manifest-fix-2026-11-19` / `safety/post-merge-pr102-2026-11-19`; post ref와 main identical.
+- PR #101의 초기 manifest artifact는 JSON 개행 round-trip 검증이 없어 PR #102 artifact로 대체한다.
+- 제품별 증거는 여전히 `not_provided`; 제품별 CRA 적용성·Annex 분류·적합성은 Unknown 유지. Exact-main push CI는 별도 확인 전.
 
 
 ## 현재 상태 — 2026-11-19
 
-- 최신 main: PR #99 merge `b5e6982270a4b3b913e5ae584786340ce58755f3`; PR #99 exact-head Run #993 success, 173 passed / 0 failed. Post-merge main CI 별도 실행은 아직 확인 전.
-- EVD-01~16 ↔ CRA ↔ SEC-001~036 추적표와 E-001~E-015 제품 증거 register가 main에 반영됨. Official source pack v4에는 2025/2392 기술 설명이 포함됨.
+- 최신 main: PR #102 merge `84101bcc8871e41f8a25de3edf892666b1650b8c`; PR #102 exact-head Run #1000 success, 174 passed / 0 failed. Official source provenance manifest artifact now JSON-round-trip verified.
+- EVD-01~16 ↔ CRA ↔ SEC-001~036 추적표와 E-001~E-015 제품 증거 register가 main에 반영됨. Official source pack v4에는 2025/2392 기술 설명이 포함되며, 10-source provenance manifest가 GitHub Actions artifact로 보존됨.
 - 실제 제품 자료는 모두 not_provided. accepted/비적용 판정은 provenance·SHA-256·locator·검토자·근거 검증을 통과해야 한다.
 - 다음 단계는 정확한 모델 데이터시트와 사용설명서 확보 후 제품 variant별 CRA scope/core-functionality 및 증거 적용성 검토.
 
