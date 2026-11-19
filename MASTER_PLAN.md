@@ -1085,3 +1085,13 @@
 - Firmware update functionality is mentioned in DriveCM release history; actual signature/integrity/authentication/rollback/recovery controls remain unverified.
 - Report v0.8 includes a family-level interface/tool/ESI/update matrix. Product-specific conformity remains Unknown and tests Not Run.
 - Next P0: obtain official PDF manuals, DriveCM installer/release note and ESI XML bytes, hash and inspect; validate actual model/variant support with manufacturer.
+
+
+## 2026-11-19 — ESO M/606 개발단계 및 OT/IACS 지원표준 조사
+- PR #113 merged: 5273e6da25862a8ad1e92b2473a11a63b0d8015f; exact-head Run #1022 success, 174 passed / 0 failed; live 10-source HTML and manifest round-trip passed; PDF canary skipped.
+- STAN4CR/CEN-CENELEC/ETSI joint M/606 progress report V2.0 dated 2026-06-03 reviewed (4 pages).
+- Report contains per-item ESO status and historical publication forecasts for M/606 entries, plus complementary OT/IACS deliverables based on EN IEC 62443-4-1/-4-2/-3-3.
+- Treat 2026-06-03 status/forecasts as historical snapshot, not current state; M/606 delivery dates follow C(2026) 7861 Annex I (2026-11-10).
+- IEC 62443 supporting deliverables are not automatically M/606 Annex I harmonised standards or CRA Article 27 OJ citations.
+- Report v0.9 maps relevant work to servo-drive product and industrial system boundaries.
+- Next: update status after June snapshot using ESO live work programme / new progress reports, verify final publications and OJ citations; acquire manufacturer original PDF/ESI/installer bytes.
