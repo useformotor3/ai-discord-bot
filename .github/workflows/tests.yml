@@ -96,7 +96,7 @@ jobs:
             test "$actual" = "$expected"
           }
           verify_blob "main.py" "16393261529c36f2f0ec914e38002e6795ed9c71"
-          verify_blob "cra_source.py" "d86c28c648a6bb206d3187cbdcd2b4ef737a4a98"
+          verify_blob "cra_source.py" "d283c233c5fdc149373de9fdbd95e6822a81d5af"
           verify_blob "cra_claims.py" "e786d0c6a6059490465ec08c866b529f72b71660"
           verify_blob "cra_pdf_sources.py" "225be9f9a155cfb4f9c8b54f69d7cd2201061333"
           verify_blob "cra_traceability.py" "5eba8374b3e2c4e683e4d9522cf5fae4116bff28"
@@ -109,7 +109,7 @@ jobs:
           verify_blob "tests/test_p1_b2_atomic_persistence.py" "f78d36164b5ac0d5d5eebe0c5eb5c1214c4e0671"
           verify_blob "tests/conftest.py" "f0d390b8041bcafc126dca0d4bc6486cc5844db2"
           verify_blob "tests/test_main_characterization.py" "e9dc712e4440c651628ae107ef9cc0939cc8228c"
-          verify_blob "tests/test_cra_source.py" "746d61d4f5c75c6f49d742d2d27006ba4488a8a9"
+          verify_blob "tests/test_cra_source.py" "768914a9c5bbd49d28133f801c93e62d1a87526e"
           verify_blob "tests/test_cra_claims.py" "45a9057414cc53c1187da6f67ac4a8e0d4134505"
           verify_blob "tests/test_mock_infrastructure.py" "05a92ff7ff3a6e4a0374d270770ecc6cf38e0a7f"
           verify_blob "tests/test_p1_reliability.py" "c5e3fbe2e75a6a08703117cb5de34571b5dc10c9"
@@ -141,12 +141,22 @@ jobs:
           if-no-files-found: error
           retention-days: 7
 
+      - name: Upload official CRA source provenance manifest
+        if: always() && hashFiles('artifacts/cra-source-pack-manifest.json') != ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: cra-source-provenance-${{ github.sha }}
+          path: artifacts/cra-source-pack-manifest.json
+          if-no-files-found: error
+          retention-days: 7
+
       - name: Live official CRA source read-only canary
         shell: bash
         run: |
           python - <<'PY'
           from cra_source import (
               SourceUnavailableError,
+              build_source_provenance_manifest,
               fetch_official_cra_source,
               validate_consolidated_cra_corrections,
           )
@@ -190,4 +200,15 @@ jobs:
           if "core functionality" not in " ".join(implementing["text"].split()).casefold():
               raise SystemExit("FAIL: live 2025/2392 core-functionality recital marker missing")
           print("PASS: live 2025/2392 core-functionality marker and Annex I(10)/Annex II(1) locators verified")
+
+          manifest = build_source_provenance_manifest(source)
+          from pathlib import Path
+          import json
+          manifest_path = Path("artifacts/cra-source-pack-manifest.json")
+          manifest_path.parent.mkdir(parents=True, exist_ok=True)
+          manifest_path.write_text(
+              json.dumps(manifest, ensure_ascii=False, indent=2) + "\\n",
+              encoding="utf-8",
+          )
+          print(f"PASS: wrote source provenance manifest with {manifest['source_count']} records: {manifest_path}")
           PY
