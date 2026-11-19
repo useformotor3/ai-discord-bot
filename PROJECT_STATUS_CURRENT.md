@@ -3,6 +3,15 @@
 > 최신 상태 스냅샷. 역사 기록은 SESSION_LOG 및 PROJECT_LOG에 append-only로 보존한다.
 
 
+## 최신 main 기준점 — PR #118 ETSI 상태 정정 병합 (2026-11-20)
+
+- PR #118 merge SHA / main: `ee30bdccbc719cce46999a9c9df4ee3fc0609144`; post-merge safety ref: `safety/post-merge-pr118-2026-11-20`.
+- PR #118 exact-head Run #1036 / ID `44639411922`: success; source integrity, compile, CRA traceability, full pytest, official PDF source acquisition, HTML provenance manifest 단계 통과.
+- PDF source artifact #14584269836, 3,070,504 bytes, SHA-256 `0c77f3ae2546927fd2ae37da024b1b398e0d58a0be08fde50581a984f685c94f`. EUR-Lex OJ C/2026/6013 final PDF (61 pages) SHA-256 `40ca76caeb0108f5b97c8f373a95f590b453fe92bd45a483addf3326e48c1dc2`; C(2026)7861 Annex (6 pages) SHA-256 `262b09596cb5cbe7d72a2c7789fb2512ee00db7f69082e7def2c8181b0f63276`.
+- Artifact includes one C(2026)5252 draft PDF fetched via ANFR fallback; that mirror is flagged as non-primary and not used for final legal interpretation.
+- Exact-main push CI remains not independently confirmed. Product-specific scope/classification remain Unknown; security tests Not Run.
+- CRA official guidance analysis is in integrated report §24. It is interpretive guidance, not a binding regulation.
+
 ## 최신 재개 업데이트 — 2026-11-20
 
 - 작업 기준 main: `82e9bbf31124b840fa560f7a9e45b1fe84c53ce7` (세션 시작 시 실시간 조회).
@@ -17,7 +26,7 @@
 - 제품별 scope/classification/conformity = Unknown; security tests = Not Run. 이번 작업으로 이 상태를 승격하지 않는다.
 
 
-## 최신 main 기준점 — PR #116 M/606·EN 40000 최신 상태 갱신 병합 (2026-11-20)
+## 이전 main 기준점 — PR #116 M/606·EN 40000 최신 상태 갱신 병합 (2026-11-20)
 
 - PR #116 squash merge 완료: `6092ca1c61c696a716583e6bc0f7d5150cbee269`; 현재 main 기준점은 이 SHA다.
 - Pre-work safety: `safety/pre-m606-live-status-audit-2026-11-20`; post-merge safety: `safety/post-merge-pr116-2026-11-20`. post-merge ref는 merge SHA에서 생성했다.
