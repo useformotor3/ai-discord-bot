@@ -2,13 +2,14 @@
 
 > 최신 상태 스냅샷. 역사 기록은 SESSION_LOG 및 PROJECT_LOG에 append-only로 보존한다.
 
-## 최신 main 기준점 — PR #96 병합 및 사후 CI 완료 (2026-11-19)
-- PR #96 exact-head SHA fc9e2341cee5ae1f586c4f6d554c2d841f189922; Run #981 / ID 44449830415: success, **172 passed / 0 failed**.
-- PR #96 squash merge SHA / main: 68e09b18196f26a995d72eccbcf3af6ec0b2718e.
-- Exact-main Run #982 / ID 44449949865: success, **172 passed / 0 failed**; source integrity, compile, CRA traceability, official CRA PDF and live EUR-Lex canaries passed.
-- Exact-main artifact #14495251382, digest sha256:9f59d4e87eb9c0743b49823f8479e23be5e4f4c4d04152025863224b5044b535, expires 2026-11-26 03:14:15 UTC.
-- Pre-merge safety ref safety/pre-pr96-merge-checkpoint-2026-11-19 points to main 33fd8d409667cfa2c78e8e998d843d85f60cf3f0. Post-merge safety ref safety/post-merge-pr96-2026-11-19 equals main at 68e09b18196f26a995d72eccbcf3af6ec0b2718e; compare identical (0 ahead / 0 behind).
-- PR #96 was documentation/status sync only. Production main.py and .github/workflows/run.yml unchanged.
+## 최신 main 기준점 — PR #97 병합 및 사후 CI 완료 (2026-11-19)
+- PR #97 merge SHA / main: `9ebab690b6cbbf0f3588bfeab16c622dca4d65e9`.
+- PR #97 exact-head Run #983: success, **172 passed / 0 failed**.
+- Exact-main Run #984 / ID 44450311535: success, **172 passed / 0 failed**. Source blob integrity, compile, CRA traceability, full pytest, official CRA PDF live canary, artifact upload, live EUR-Lex canary 모두 통과.
+- Pre-merge safety ref `safety/pre-pr97-merge-checkpoint-2026-11-19`; post-merge safety ref `safety/post-merge-pr97-2026-11-19`는 main과 동일성 확인.
+- PR #97은 PR #96의 상태 기록 동기화 PR이며 운영 `main.py`, `.github/workflows/run.yml`을 변경하지 않았다.
+- EVD-01~16 ↔ CRA ↔ SEC-001~036 후보 추적표와 E-001~E-015 제품 증거 register가 main에 반영되어 있다. 실제 제품별 증거는 모두 `not_provided`; 제품별 적용성·분류·구현·시험 결과는 Unknown / Not assessed로 유지한다.
+
 
 ## 현재 기술 게이트
 - Annex III/IV classification is based on the product's core functionality as a whole under Implementing Regulation (EU) 2025/2392. Integrated components do not automatically classify the complete drive.

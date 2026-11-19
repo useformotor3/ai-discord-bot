@@ -10,21 +10,22 @@
 
 > **기록 원칙:** 프로젝트의 공식 진행 상태와 재개 지점은 이 저장소에 기록합니다. 대화창의 기억에만 의존하지 않습니다.
 
-### 현재 기준점 — main / PR #95 사후 검증 완료 (2026-11-19)
-- main 33fd8d409667cfa2c78e8e998d843d85f60cf3f0; PR #95 status sync merged.
-- PR #95 exact-head Run #979: 172 passed / 0 failed; exact-main Run #980: 172 passed / 0 failed. Source integrity, compile, CRA traceability, official PDF and live EUR-Lex canaries passed.
-- Run #980 artifact #14495245880, SHA-256 3ad730233356927770e310227a36e7478688b34260f6c928e22e18da69b8e830, expires 2026-11-26 03:11:27 UTC.
-- Pre-merge ref safety/pre-pr95-merge-checkpoint-2026-11-19; post-merge ref safety/post-merge-pr95-2026-11-19; post ref and main identical.
-- E-001~E-015 product evidence register and fail-closed provenance gates are on main. All real product evidence remains not_provided; product-specific conclusions remain Unknown.
+### 현재 기준점 — main / PR #97 병합 및 사후 검증 완료 (2026-11-19)
+- main / PR #97 merge SHA: `9ebab690b6cbbf0f3588bfeab16c622dca4d65e9`.
+- PR #97 exact-head Run #983: success, **172 passed / 0 failed**.
+- Exact-main Run #984 / ID 44450311535: success, **172 passed / 0 failed**; source blob integrity, compile, CRA traceability, full pytest, official CRA PDF live canary, artifact upload, live EUR-Lex canary 모두 통과.
+- Pre-merge safety ref: `safety/pre-pr97-merge-checkpoint-2026-11-19`; post-merge safety ref: `safety/post-merge-pr97-2026-11-19`, main과 동일성 확인.
+- PR #94의 E-001~E-015 product evidence register 및 fail-closed provenance gates, EVD-01~16 ↔ CRA ↔ SEC-001~036 후보 추적 체계가 main에 존재한다. 실제 제품 증거는 여전히 `not_provided`; 제품별 결론은 Unknown 유지.
+
 
 ## 현재 상태 — 2026-11-19
 
-- 최신 main: PR #96 merge 68e09b18196f26a995d72eccbcf3af6ec0b2718e; exact-main Run #982 success, 172 passed / 0 failed.
+- 최신 main: PR #97 merge `9ebab690b6cbbf0f3588bfeab16c622dca4d65e9`; exact-main Run #984 success, 172 passed / 0 failed.
 - EVD-01~16 ↔ CRA ↔ SEC-001~036 추적표와 E-001~E-015 제품 증거 register가 main에 반영됨.
 - 실제 제품 자료는 모두 not_provided. accepted/비적용 판정은 provenance·SHA-256·locator·검토자·근거 검증을 통과해야 한다.
 - 다음 단계는 정확한 모델 데이터시트와 사용설명서 확보 후 제품 variant별 CRA scope/core-functionality 및 증거 적용성 검토.
 
-## 이전 상태 — 2026-11-18
+## 과거 상태 기록 — 2026-11-18
 
 - 최신 main 기준: PR #88 merge 16cdec76def2e8920d8fc2ca3b6a43e497d41d83; exact-main Run #957 success, 162 passed / 0 xfailed.
 - 현재 CRA 제품 분류 심화 감사 브랜치: cra/applicability-core-functionality-audit-2026-11-19 (PR/CI 전). 적용성 보고서와 EVD 매트릭스에 Annex III/IV core-functionality 및 제품 경계 게이트를 통합 중.
@@ -66,7 +67,7 @@
 
 | 문서 | 목적 |
 |---|---|
-| [상황판](PROJECT_STATUS.md) | 현재 상태, 위험, 실제 검증 결과, 다음 재개 지점 |
+| [현재 상황판](PROJECT_STATUS_CURRENT.md) | 현재 상태, 위험, 실제 검증 결과, 다음 재개 지점 |
 | [마스터 계획](MASTER_PLAN.md) | 전체 단계, 우선순위, 완료 기준 |
 | [AI 행동강령](AI_RULEBOOK.md) | 조사·근거·코드·테스트·기록 규칙 |
 | [세션 로그](SESSION_LOG.md) | 날짜별 실제 작업, 변경 범위, 테스트 결과 |

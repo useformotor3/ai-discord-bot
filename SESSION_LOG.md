@@ -1471,3 +1471,13 @@
 - Merge commit `bc5f4a6adda081a58e0cbc2ba02a3bad8bcf3946`; pre/post safety refs 생성 및 post ref == main 확인.
 - Guidance PDF는 ANFR mirror fallback=True이며 Commission primary byte identity는 미확인.
 - 최신 재개 스냅샷 [PROJECT_STATUS_CURRENT.md](PROJECT_STATUS_CURRENT.md)에 활성 범위, 기준점, 검증, 한계 및 다음 작업을 정리했다.
+
+
+## 2026-11-19 — PR #97 기준점 확인 및 프로젝트 관리 문서 정합성 점검
+- 최신 main commit `9ebab690b6cbbf0f3588bfeab16c622dca4d65e9`의 commit message와 GitHub ref를 재확인했다.
+- PR #97 exact-head Run #983 success, 172 passed / 0 failed; exact-main Run #984 (ID 44450311535) success, 172 passed / 0 failed을 확인했다.
+- Exact-main workflow의 source blob integrity, compile, CRA traceability, full pytest, official CRA PDF live canary, artifact upload, live EUR-Lex canary가 모두 통과한 기록을 대조했다.
+- 관리 문서 간 최신성 차이를 확인했다: README와 MASTER_PLAN은 PR #95/#96 수준, PROJECT_STATUS_CURRENT는 PR #96 수준, PROJECT_STATUS.md는 2026-11-17 역사 스냅샷이었다. 이번 PR에서 현재 진입점과 최신 기준점을 명확히 동기화한다.
+- 기존 분기 브랜치 `cra/applicability-core-functionality-audit-2026-11-19`는 main 대비 9 ahead / 9 behind이며 merge-base가 오래되어 통합하지 않았다. 필요한 작업은 최신 main 기반 새 브랜치에서 진행한다.
+- CRA 제품별 실제 자료는 여전히 미제공. E-001~E-015는 not_provided 상태를 유지하며 제품별 적합성/분류/시험 Pass를 주장하지 않는다.
+- 운영 `main.py`, `.github/workflows/run.yml`, secrets, `state.json`, `history.json`은 변경하지 않았다.
