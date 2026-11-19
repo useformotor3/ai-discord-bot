@@ -642,3 +642,15 @@
 - LS메카피온 보고서 최신 v0.7: CRA 법령·Commission 지침·M/606·기계류 규정·ENISA 자료·SRP v1.3 신고 운영을 통합한 제품군 예비 분석.
 - 미완료 P0: 모델별 제조사 PDF 원본 다운로드·해시·페이지 검토, M/606 41개 개별 표준의 실제 개발 상태 및 CRA OJ 인용 전수 감사, C/2026/1695 Action 5 후속 표준화 요청 추적.
 - 제품별 CRA scope/classification/conformity는 Unknown, 보안시험 Not Run. 보고서는 최종 적합성 평가서가 아니다.
+
+
+## 2026-11-19 — PR #112 병합 및 LS 제품/도구/ESI 매핑
+- PR #112 merge SHA: 4507bc5dc2a8c189073ab0728a2b271063c4bf5c; post-merge safety ref safety/post-merge-pr112-2026-11-19 생성.
+- PR #112 exact-head Run #1020 / ID 44491849633: success, 174 passed / 0 failed. CRA traceability 13/15/35/36/16/15/41 통과.
+- Live official CRA HTML 10-source canary 및 JSON manifest parse/round-trip 통과. Artifact #14513316478, SHA-256 a57834f4e1cf07fb42be120cb50090badb86acb3e4a8626503d2ed7747afd5c4, 2,566 bytes, expires 2026-11-26 08:56:37 UTC.
+- PDF canary는 EUR-Lex C(2026) 6013 empty body로 SKIPPED. Exact-main push CI는 독립 확인 전.
+- 제조사 공개 자료 대조: DriveCM Ver1.03.2(2026-07-07 게시, 2026-08-11 파일 날짜) 지원 목록 및 EtherCAT ESI Ver0.98(2025-07-15) 11개 적용 모델 확인.
+- iX700M, L7NHA/B, L7SA/B, GEM의 DriveCM 지원은 공개 게시물에서 명시되지 않거나 명칭 대응이 불명확하다. 지원하지 않는다고 단정하지 않고 Unknown으로 둔다.
+- ESI v0.98의 적용 목록에 iX700M은 명시되지 않는다. 별도 ESI 제공 여부와 실제 모델/SKU 매핑 확인 필요.
+- report v0.8은 13개 제품군별 연결 경로와 도구·ESI·업데이트 증거 공백을 표로 정리한다.
+- 제조사 PDF·설치 파일·ESI XML 원본을 다운로드·해시·검토한 것은 아님. 제품별 CRA scope/classification/conformity Unknown, 시험 Not Run.
