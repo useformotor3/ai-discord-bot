@@ -599,3 +599,14 @@
 - Commission CRA FAQ(2026-09-04)와 Regulation (EU) 2023/1230을 확인했다. FAQ는 CRA와 Machinery Regulation이 함께 적용되는 제품은 두 규정의 요구사항 및 적합성 평가 절차를 각각 검토해야 하며, CRA 적합성이 MR 적합성을 자동 대체하지 않는다고 설명한다.
 - Machinery Regulation Annex III 1.1.9/1.2.1의 corruption protection 및 control-system security 내용을 보고서 v0.4에 반영했다. 적용일 2027-01-20.
 - 제품별 공급 경계·EU 공급·무선 variant·기계/부분완성기계 지위가 미확인이라 적용성/책임분담은 Unknown. 제품별 보안 시험 Not Run.
+
+
+## 2026-11-19 — PR #108 병합 및 CRA 표준화 작업계획 확장
+- PR #108 merge SHA: 4a1b44501dec629ae2f42106d6b8d200f177765a; post-merge safety ref safety/post-merge-pr108-2026-11-19 생성.
+- PR #108 exact-head Run #1012 / ID 44490507909: success, 174 passed / 0 failed. CRA traceability 13/15/35/36/16/15/41 통과.
+- Live official CRA HTML 10-source canary 및 JSON manifest round-trip 통과. Artifact #14512183573, SHA-256 8e3b3883bc2b3b3f0c9c0d002efb2d794e1610883f186ccab16ebb0eb8f51c05, 2,567 bytes, expires 2026-11-26 08:47:23 UTC.
+- PDF canary는 EUR-Lex C(2026) 6013 empty body로 SKIPPED. PDF artifact 없음.
+- Exact-main push CI는 독립 확인 전이므로 미확인.
+- Commission Notice C/2026/1695 (OJ C, 19.3.2026)의 CRA standardisation Action 5를 확인했다. M/606을 보완해 Annex III/IV 밖 제품, 특히 기계류·철도·승강기·농업기계·AI·태양광 인버터 분야에 대한 추가 표준화 요청을 계획한다.
+- 연간 작업계획은 표준화 방향이지 최종 표준이나 OJ 조화표준 인용이 아니다. CRA Article 27 presumption은 실제 OJ citation 확인 전 주장하지 않는다.
+- 보고서 v0.5에서 M/606 41개 표준과 C/2026/1695 Action 5를 별도 감사 트랙으로 구분한다.

@@ -1566,3 +1566,12 @@
 - Official Commission CRA FAQ 2026-09-04 및 Machinery Regulation (EU) 2023/1230을 검토했다. 양 규정 동시 적용 제품은 양쪽 요구와 적합성 평가 절차를 각각 확인해야 한다.
 - 보고서 v0.4에 Machinery Regulation Annex III 1.1.9/1.2.1, 적용일 2027-01-20, EMC/LVD/RED/RoHS/WEEE/PLD 1차 스크리닝 및 제품 경계 질문을 추가했다.
 - Exact-main push CI는 별도 확인 전. 제품별 적용성·책임분담 Unknown, 시험 Not Run 유지.
+
+
+## 2026-11-19 — PR #108 병합 및 추가 CRA 표준화 경로 조사
+- PR #108 squash merge 4a1b44501dec629ae2f42106d6b8d200f177765a; post-merge safety ref safety/post-merge-pr108-2026-11-19.
+- Exact-head Run #1012 / ID 44490507909 success: 174 passed / 0 failed. CRA traceability, 10 official HTML sources, JSON manifest round-trip 통과.
+- Manifest artifact #14512183573 SHA-256 8e3b3883bc2b3b3f0c9c0d002efb2d794e1610883f186ccab16ebb0eb8f51c05. PDF canary는 C(2026) 6013 empty body로 SKIPPED.
+- Commission Notice C/2026/1695의 CRA standardisation Action 5가 M/606을 보완하며 Annex III/IV 밖의 machinery, rail, lifts, agricultural machinery, AI, solar inverters에 대한 추가 표준화 요청을 계획함을 확인했다.
+- Action 5는 계획이며, 실제 표준 발행·OJ 인용·Article 27 적합성 추정으로 확대 해석하지 않는다.
+- 보고서 v0.5에 M/606과 Action 5의 차이, OJ 인용 확인 게이트를 추가한다. Exact-main push CI는 별도 확인 전.
