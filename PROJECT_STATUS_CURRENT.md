@@ -2,13 +2,13 @@
 
 > 최신 상태 스냅샷. 역사 기록은 SESSION_LOG 및 PROJECT_LOG에 append-only로 보존한다.
 
-## 최신 main 기준점 — PR #93 병합 및 사후 CI 완료 (2026-11-19)
-- PR #93 exact-head SHA 89aff95155ae16dfd0d91e2fda99d3665c92941e; Run #975 / ID 44448152358: success, 166 passed / 0 failed.
-- PR #93 squash merge SHA / main: 84e246c3abb78191300ba13cc7e1b4b75ac3a643.
-- Exact-main Run #976 / ID 44448246505: success, 166 passed / 0 failed; source integrity, compile, CRA traceability, official CRA PDF and live EUR-Lex canaries passed.
-- Exact-main artifact #14493802639, digest sha256:8ca9556fe0f8c945cbfed724216f1149fbdfad87e5f0b8a441d9f0e5b4ec3e59, expires 2026-11-26 03:00:10 UTC.
-- Pre-merge safety ref safety/pre-pr93-merge-checkpoint-2026-11-19 points to main 0e06f5672f2477f95f7b1088ee0299a7c336082e. Post-merge safety ref safety/post-merge-pr93-2026-11-19 equals main at 84e246c3abb78191300ba13cc7e1b4b75ac3a643; compare identical (0 ahead / 0 behind).
-- PR #93 was documentation/status sync only. Production main.py and .github/workflows/run.yml unchanged; secrets/state/history and legacy SIL 3 artifacts untouched.
+## 최신 main 기준점 — PR #94 병합 및 사후 CI 완료 (2026-11-19)
+- PR #94 exact-head SHA c1ec49e44ce0cc8c20b6f836409c21a5aad3306b; Run #977 / ID 44449116189: success, **172 passed / 0 failed**.
+- PR #94 squash merge SHA / main: 6f6a0908d15e6ed9ef9e0043e9f7f2ed3961d64c.
+- Exact-main Run #978 / ID 44449237270: success, **172 passed / 0 failed**; source integrity, compile, CRA traceability, official CRA PDF and live EUR-Lex canaries passed.
+- Exact-main artifact #14493789671, digest sha256:6159e27808ace502b0e504cef88f977ddb87c1f2aa85c17d93c58e812c568679, expires 2026-11-26 03:08:25 UTC.
+- Pre-merge safety ref safety/pre-pr94-merge-checkpoint-2026-11-19 points to main 84e246c3abb78191300ba13cc7e1b4b75ac3a643. Post-merge safety ref safety/post-merge-pr94-2026-11-19 equals main at 6f6a0908d15e6ed9ef9e0043e9f7f2ed3961d64c; compare identical (0 ahead / 0 behind).
+- PR #94 added the E-001~E-015 product evidence register template, state-promotion validator and negative tests. Production main.py and .github/workflows/run.yml unchanged; only isolated tests workflow source pins updated.
 
 ## 현재 기술 게이트
 - Annex III/IV classification is based on the product's core functionality as a whole under Implementing Regulation (EU) 2025/2392. Integrated components do not automatically classify the complete drive.
@@ -545,8 +545,8 @@
 - PR #91 exact-head Run #971 success; exact-main Run #972 success. 제품별 적용성/구현/시험 Pass는 여전히 Unknown.
 
 
-## 진행 중 — 제품별 증거 register (2026-11-19)
-- 작업 브랜치 cra/product-evidence-register-2026-11-19, 기준 main 84e246c3abb78191300ba13cc7e1b4b75ac3a643.
-- 신규 템플릿 reports/CRA_PRODUCT_EVIDENCE_REGISTER_TEMPLATE_2026-11-19.csv: 기존 E-001~E-015 제출 목록을 EVD-01~16과 연결하고 원본 파일명, 출처, 발행자, 문서 버전/일자, 수집일, SHA-256, 페이지/절 locator, 언어, 검토자, 교차검증 및 판정 근거를 기록한다.
-- validator는 증거 상태 승격 게이트를 검사한다. accepted는 provenance/hash/locator/reviewer/cross-check/decision rationale가 없으면 거부하고, not_applicable_with_rationale는 제품 variant·검토자·일자·근거를 요구한다.
-- 제품별 자료는 아직 미제공. 템플릿 행은 모두 not_provided이며 제품별 적합성·구현·시험 Pass를 주장하지 않는다. CI 전.
+## 제품별 증거 register — PR #94 병합 완료 (2026-11-19)
+- reports/CRA_PRODUCT_EVIDENCE_REGISTER_TEMPLATE_2026-11-19.csv가 main에 반영됨. E-001~E-015를 EVD-01~16과 연결.
+- validator는 15개 Evidence ID, EVD foreign keys, variant별 provenance, SHA-256, locator, reviewer/date, cross-check, accepted/rejected/not-applicable rationale gates를 검사.
+- Negative regression tests: provenance 없는 accepted, unknown EVD, rationale 없는 not-applicable, invalid SHA-256, not_provided partial metadata.
+- 모든 제품별 항목은 여전히 not_provided. 제품별 적합성·구현·시험 Pass는 주장하지 않는다.
