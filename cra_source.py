@@ -33,6 +33,24 @@ CRA_SOURCE_CATALOG = (
         "required": ("Regulation (EU) 2024/2847",),
     },
     {
+        "id": "CRA-2025-2392-important-critical-product-descriptions",
+        "url": "https://publications.europa.eu/resource/celex/32025R2392?language=eng",
+        "allowed_hosts": ("publications.europa.eu",),
+        "kind": "official_implementing_regulation",
+        "version": (
+            "Commission Implementing Regulation (EU) 2025/2392, OJ L 2025/2392, 01.12.2025; "
+            "technical descriptions for Annex III important and Annex IV critical product categories"
+        ),
+        "min_chars": 5000,
+        "required": (
+            "Commission Implementing Regulation (EU) 2025/2392",
+            "core functionality",
+            "Physical and virtual network interfaces",
+            "Hardware Devices with Security Boxes",
+            "Smartcards or similar devices",
+        ),
+    },
+    {
         "id": "CRA-2024-2847-corrigendum-2024-12-05",
         "url": "https://publications.europa.eu/resource/celex/32024R2847R%2801%29?language=eng",
         "allowed_hosts": ("publications.europa.eu",),

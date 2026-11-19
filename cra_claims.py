@@ -186,6 +186,18 @@ def _annex_scope(locator, lines):
     part_match = re.search(r"\bPart\s+(I{1,3}|IV|V)\b", locator, re.IGNORECASE)
     paragraph_numbers = _number_range(locator)
     letter_points = _letter_range(locator) if part_match and part_match.group(1).upper() == "I" else []
+    category_match = re.search(r"\bcategory\s+#?(\d+)\b", locator, re.IGNORECASE)
+    if category_match:
+        category_number = category_match.group(1)
+        for annex_start in headings:
+            annex_end = _next_section_boundary(
+                lines, annex_start,
+                lambda line: bool(re.fullmatch(r"Annex\s+[IVX]+", line, re.IGNORECASE)),
+            )
+            scope = _paragraph_scope(lines, annex_start + 1, annex_end, category_number)
+            if scope:
+                return scope
+        return None
 
     for annex_start in headings:
         annex_end = _next_section_boundary(

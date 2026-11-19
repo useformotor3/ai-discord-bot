@@ -57,6 +57,7 @@ def test_source_catalog_includes_official_guidance_and_m606_pages():
     ids = {item["id"] for item in CRA_SOURCE_CATALOG}
     assert "CRA-COMMISSION-GUIDANCE-2026-07-27" in ids
     assert "CRA-M606-STANDARDISATION-2026-11-12" in ids
+    assert "CRA-2025-2392-important-critical-product-descriptions" in ids
 
 
 def test_guidance_publication_page_uses_page_markers_not_pdf_document_number():
@@ -91,10 +92,17 @@ def test_fetch_source_pack_checks_each_allowlisted_official_host(monkeypatch):
     monkeypatch.setattr(requests, "get", fake_get)
     source = fetch_official_cra_source()
 
-    assert len(calls) == len(CRA_SOURCE_CATALOG) == 9
-    assert len(source["sources"]) == 9
+    assert len(calls) == len(CRA_SOURCE_CATALOG) == 10
+    assert len(source["sources"]) == 10
     assert "CRA-COMMISSION-GUIDANCE-2026-07-27" in source["text"]
     assert "CRA-M606-STANDARDISATION-2026-11-12" in source["text"]
+    assert "CRA-2025-2392-important-critical-product-descriptions" in source["text"]
+    implementing = next(
+        item for item in source["sources"]
+        if item["id"] == "CRA-2025-2392-important-critical-product-descriptions"
+    )
+    assert "Physical and virtual network interfaces" in implementing["text"]
+    assert "Hardware Devices with Security Boxes" in implementing["text"]
     consolidated = next(item for item in source["sources"] if item["id"] == "CRA-2024-2847-consolidated")
     assert "paragraphs 2 to 9" in consolidated["text"]
     assert "paragraphs 3 to 9" not in consolidated["text"]
