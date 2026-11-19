@@ -830,3 +830,9 @@
 - [EVD–CRA–SEC 교차 추적표](reports/CRA_EVD_SEC_TRACEABILITY_CROSSWALK_2026-11-19.csv): 16개 EVD와 35개 CRA 요구사항·36개 SEC 통제 간 후보 링크. 제품별 적용성은 별도 판정.
 - [요구사항–증거 매트릭스](reports/CRA_REQUIREMENTS_TO_EVIDENCE_MATRIX_2026-11-18.md): EVD별 책임·생애주기·검증·내부 합격 게이트 및 추적 원칙.
 - [제품 증거 register 템플릿](reports/CRA_PRODUCT_EVIDENCE_REGISTER_TEMPLATE_2026-11-19.csv): E-001~E-015 자료의 원본 provenance, EVD 연결, 검토 상태 및 승인 근거 입력 양식.
+
+
+## LS메카피온 CRA 예비 평가
+- [제품군 예비 분석 보고서](reports/CRA_LS_MECAPION_SERVO_DRIVE_FAMILY_PRELIMINARY_ASSESSMENT_2026-11-19.md): 13개 제품군 스크리닝 및 2026-11-19 Commission CRA guidance/M/606 개정 반영. v0.2도 제품군 예비 분석이며 모델별 적합성 판정은 아님.
+- 공식 매뉴얼 첨부 메타데이터는 확인 중이나 원본 PDF 다운로드·해시·페이지 검토가 완료되지 않은 항목은 제품 증거로 승인하지 않는다.
+- 최신 기준과 미완료 게이트는 [현재 상황판](PROJECT_STATUS_CURRENT.md) 및 [마스터 계획](MASTER_PLAN.md)을 참조.
