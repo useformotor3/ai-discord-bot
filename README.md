@@ -10,20 +10,19 @@
 
 > **기록 원칙:** 프로젝트의 공식 진행 상태와 재개 지점은 이 저장소에 기록합니다. 대화창의 기억에만 의존하지 않습니다.
 
-### 현재 기준점 — main / PR #91 사후 검증 완료 (2026-11-19)
-- main `a3b21e86342f098ff6d81a139de6e89a1626a174`; PR #91 squash merge 완료.
-- PR #91 exact-head Run #971: **166 passed / 0 failed**; CRA traceability, source integrity, compile, official PDF and live EUR-Lex canaries passed.
-- Exact-main Run #972: **166 passed / 0 failed**. Artifact #14493334026, SHA-256 `a54d683e78974b8615c48b6dc9831e169aaa1c27e0073ef627f7e7ca8400fe70`, expires 2026-11-26 02:53:52 UTC.
-- Pre-merge ref `safety/pre-pr91-merge-checkpoint-2026-11-19`; post-merge ref `safety/post-merge-pr91-2026-11-19`; post ref and main are identical.
-- EVD–CRA–SEC candidate crosswalk and fail-closed validator are now on main. Product-specific applicability/implementation/test status remains Unknown.
-- Actual ST MCU part number and control specifications remain unknown; no product-specific selection or replacement conclusion.
+### 현재 기준점 — main / PR #92 사후 검증 완료 (2026-11-19)
+- main `0e06f5672f2477f95f7b1088ee0299a7c336082e`; PR #92 documentation/status sync merged.
+- PR #92 exact-head Run #973: **166 passed / 0 failed**. Exact-main Run #974: **166 passed / 0 failed**; source integrity, compile, CRA traceability, official PDF and live EUR-Lex canaries passed.
+- Run #974 artifact #14494142424, SHA-256 `f0def08f1188b819fba061728a092dbf5ef0a340bbdd75200f0aff2edb5d500a`, expires 2026-11-26 02:57:02 UTC.
+- Pre-merge ref `safety/pre-pr92-merge-checkpoint-2026-11-19`; post-merge ref `safety/post-merge-pr92-2026-11-19`; post ref and main identical.
+- EVD–CRA–SEC candidate crosswalk and fail-closed validator are on main. Product-specific applicability/implementation/test status remains Unknown.
 
 ## 현재 상태 — 2026-11-19
 
-- 최신 main: PR #91 merge `a3b21e86342f098ff6d81a139de6e89a1626a174`; exact-main Run #972 success, 166 passed / 0 failed.
-- EVD-01~16 책임·생애주기·검증·합격 게이트 및 EVD→CRA→SEC 후보 교차표가 반영됨. validator는 EVD 16행, CRA/SEC foreign keys, SEC-001~036 전체 연결, 누락/중복을 검사.
-- 교차 링크는 제품별 적용성 판정·구현 완료·시험 Pass를 의미하지 않음. 모델/SKU, BOM, 매뉴얼, 네트워크/원격처리 경계, 실제 MCU 부품번호 및 제어 사양은 여전히 미확인.
-- 다음 우선순위: 제품별 P0 자료 수집 및 각 EVD/SEC 링크의 적용/비적용/조건부 승인, 이후 제품 버전별 시험 증거 확보.
+- 최신 main: PR #92 merge `0e06f5672f2477f95f7b1088ee0299a7c336082e`; exact-main Run #974 success, 166 passed / 0 failed.
+- EVD-01~16 책임·검증·합격 게이트 및 EVD→CRA→SEC 후보 교차표가 main에 반영됨. Validator는 EVD 16행, CRA/SEC foreign keys, SEC-001~036 전체 연결, 누락/중복을 검사.
+- 교차 링크는 제품별 적용성 판정·구현 완료·시험 Pass를 의미하지 않음. 제품 모델/SKU, BOM, 매뉴얼, 네트워크/원격처리 경계, 실제 MCU 부품번호 및 제어 사양은 미확인.
+- 다음 우선순위: 제품별 P0 자료 수집 및 EVD/SEC 후보 링크의 적용성 승인, 이후 제품 버전별 시험 증거 확보.
 
 ## 이전 상태 — 2026-11-18
 
