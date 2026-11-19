@@ -1497,3 +1497,23 @@
 - Commission PDF 3개 수집/해시 성공; artifact #14496564799 SHA-256 c19aaf7465041fd21def6d634daaea08f897ec32ca1892452e6d18bce71d44c2. Guidance PDF는 fallback=True, 나머지 2개는 fallback=False.
 - PR #99 merge b5e6982270a4b3b913e5ae584786340ce58755f3; post-merge safety ref safety/post-merge-pr99-2026-11-19와 main identical.
 - Exact-main push CI는 아직 독립 확인하지 않았으며 성공으로 기록하지 않는다. 운영 main.py 및 .github/workflows/run.yml 미변경.
+
+
+## 2026-11-19 — PR #100 상태 동기화
+- PR #100 merge `6342ba3238c32b88d5c33e6cd0b60ad2178c7738`; PR #99 source pack v4와 live locator 결과를 README/현재 상황판/마스터 계획/로그에 동기화.
+- Exact-head Run #995 / ID 44455231426: success, 173 passed / 0 failed; CRA traceability, 10 official sources, 3 PDF sources 및 Annex locator canary 통과.
+- PROJECT_LOG.jsonl 188행 JSON parse, 183 unique event IDs 확인.
+- Post-merge safety ref `safety/post-merge-pr100-2026-11-19`와 main identical.
+
+## 2026-11-19 — PR #101 공식 source provenance artifact
+- PR #101 merge `a47c1d4e8a85803778f87318535583fa83e1d5cf`; source provenance manifest builder, validation tests, CI artifact upload 추가.
+- Exact-head Run #998 / ID 44455595307: success, 174 passed / 0 failed; 10 source records manifest artifact #14497541325 생성.
+- Post-merge review에서 JSON newline escape가 실제 newline인지 확실하지 않고 CI가 parse를 검증하지 않는 점을 발견. PR #101 artifact는 superseded 처리하고 후속 PR #102에서 수정·검증.
+
+## 2026-11-19 — PR #102 JSON serialization fail-closed fix
+- PR #102 merge `84101bcc8871e41f8a25de3edf892666b1650b8c`; tests workflow에 실제 newline 및 json.loads + object equality round-trip 검증 추가.
+- Exact-head Run #1000 / ID 44455799462: success, **174 passed / 0 failed**.
+- Live official source pack 10개 및 Article 13(8), 2025/2392 core-functionality, Annex I category 10 / Annex II category 1 canary 통과.
+- Manifest 10 records 생성·JSON parse·round-trip 성공. Artifact #14496534452 SHA-256 `7f2836072bdfa38b7857c47bdac4c6fdb2b71c38bd29b987889aad0646e78cc7`.
+- PDF artifact #14497431708 SHA-256 `b4090a51f855b1d6f391b82942e6301d91119e651fe528848eaa77e66b5ac4ee`.
+- Post-merge safety ref `safety/post-merge-pr102-2026-11-19`와 main identical. Exact-main push CI는 별도 확인 전.
