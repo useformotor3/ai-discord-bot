@@ -1,3 +1,17 @@
+## 최신 main 기준점 — PR #134 병합 및 PR #133 후속 CI 동기화 (2026-11-20)
+
+- 최신 main SHA: 7162664b29554a01d2694cd027efb0191a6c3344 (PR #134 squash merge).
+- PR #134 exact head 7a560c3d6db33f3d553f7fa9cd3596f9c7c6cd02; Actions Run #1072 / ID 44660976790 success; 174 passed / 0 failed.
+- Run #1072: source blob integrity, compileall, CRA traceability, full pytest, official CRA PDF and 10-source HTML canaries, provenance manifest upload 모두 성공.
+- PDF artifact #14594883481: 3,070,503 bytes; ZIP SHA-256 b78ae81c852f64e47167ccccf05420d5480a086cb6a1888e0992c40d5a66e2d7; expires 2026-11-27 02:28:13 UTC.
+- Provenance artifact #14594828906: 2,567 bytes; ZIP SHA-256 73fca113ee234b576051b14454b8934c545742be616ecbef831cb020d15c849e; expires 2026-11-27 02:28:25 UTC.
+- PR #134 pre-merge safety ref safety/pre-pr134-merge-2026-11-20; post-merge safety ref safety/post-merge-pr134-2026-11-20. Post ref와 main merge SHA identical.
+- PR #132의 OT/IACS 수직 프로파일 분석 및 PR #133/#134 상황판 동기화가 main에 반영됨. 보고서 §31, M/606 41-item audit 6행, vertical profile matrix 6행 유지.
+- main push CI는 별도 조회에서 독립 확인되지 않았으므로 PR exact-head CI 성공과 구분해 미확인으로 유지.
+- 제품별 CRA scope/classification/Annex III·IV/RDPS = Unknown; security tests = Not Run. 제조사 원본 manual/DriveCM/ESI bytes와 SHA-256 미확보.
+- 다음 P0: LS메카피온 정확한 SKU/HW/FW와 EU 판매구성 확정, 모델별 원본 매뉴얼·데이터시트·DriveCM·ESI/XML 확보 및 SHA-256/페이지 검토, 인터페이스별 데이터 흐름·보안기능 증거 수집. 이후 41개 실제 EN/ETSI 매핑·OJ 전수감사와 Article 2 ESO 통지 원본 확인.
+
+---
 ## 최신 main 기준점 — PR #133 병합 및 PR #132 후속 CI 동기화 (2026-11-20)
 
 - 최신 main SHA: a889b03855e3c7683aa140220352510ab4c4c116 (PR #133 squash merge).
