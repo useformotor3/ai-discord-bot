@@ -2176,3 +2176,14 @@
 - RW 제어 코일, Control Word 0x6040/Modbus 0x6001, Target Position 0x607A/0x6025, Procedure Command 0x2700/0x2701 및 JOG/Software Reset 등의 제어면을 확인.
 - 제조사 Ver1.7/API 원본 다운로드는 TimeoutError로 미확보. 2차 가이드 내용의 현행 펌웨어/SKU 적용성은 미검증.
 - 보고서 v0.20 §40–§41, 인벤토리 2차 자료 별도 행 추가. 실기기/네트워크/쓰기 시험 미수행.
+
+
+## 2026-11-20 — PR #173 병합 및 사후 검증
+
+- PR #173 exact head `2e536ed1cd893e433b0aab6b98185c40bff3ff8a`; Actions Run #1148 / ID `44702831239` success, **174 passed / 0 failed**.
+- Traceability: claims 13, interfaces 15, requirements 35, SEC 36, EVD-SEC 16, product evidence 15, bidirectional true, M/606 41, JSONL 266 events.
+- Official source canary: 10 allowlisted sources fetched; one separate PDF empty-body response skipped as temporary outage; workflow success.
+- Provenance artifact #14613259125, SHA-256 `22b402eeb9c351c65210a80c47d7f0deb6cc2526383138b12c2c96d892ca73c1`.
+- Squash merge SHA `634c3178471ff20c99e97ba48fc4c5e187afb28d`; pre-work ref `safety/pre-ix7nh-v17-api-audit-2026-11-20`; post ref `safety/post-merge-pr173-2026-11-20`; post ref == main 확인.
+- Report v0.20 §40–§41 and inventory 27 rows in main. Ver1.7/API official attachments still metadata_only; AutomationDirect guide is secondary evidence only.
+- Product CRA scope/classification/Annex III-IV/RDPS Unknown; security tests Not Run; no live device/network/write/motion tests.
