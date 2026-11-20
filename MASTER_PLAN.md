@@ -1,7 +1,7 @@
 ## ETSI 18-item master matrix / class mismatch — 2026-11-20
 
 - Full 18-item M/606 matrix committed in current research branch. 17 map to Annex I vertical items 17–27 and 31–36; EN304642 is additional telecom support item without direct 41-topic mapping.
-- Critical discrepancy: EN304635/636 ETSI page class label I vs legal Class II category1/2 under Regulation 2025/2392. Earlier public drafts checked: EN304636 V0.0.9 says Class II; EN304635 V0.0.8 has no class label. Acquire latest v1.0.0/v1.0.1 drafts and seek ETSI metadata clarification.
+- Critical discrepancy: EN304635/636 ETSI page class label I vs legal Class II category1/2 under Regulation 2025/2392. Latest EN304636 V1.0.0 page 9 confirms Class II; Work Item page Class I label is stale. EN304635 V1.0.1 is listed in DocBox but fetch timed out; retry its acquisition and seek ETSI metadata clarification.
 - Industrial OT exclusions: EN304620 VPN, EN304621 NMS, EN304622 SIEM, EN304627 routers/modems/switches.
 - All 18 Work Programme HEN metadata Yes, OJ field blank; actual OJ citation not established.
 
