@@ -2145,3 +2145,13 @@
 - Pre-main ref `safety/pre-main-pr170-merge-2026-11-20`; post ref `safety/post-merge-pr170-2026-11-20`; post ref == main 확인.
 - 보고서 v0.18 §39 및 제조사 인벤토리 26행 main 반영. 제품별 CRA scope/classification/Annex III-IV/RDPS Unknown, security tests Not Run 유지.
 - 운영 코드/workflow/secrets/state/history 및 SIL 3 보존 자료 미변경.
+
+
+## 2026-11-20 — PR #171 상태 동기화 병합 및 사후 검증
+
+- PR #171 exact head `19d296c154115d47ef3b30be25c8700b53fa745f`; Run #1144 / ID `44701518420` success, **174 passed / 0 failed**.
+- Traceability: claims 13, interfaces 15, requirements 35, SEC 36, EVD-SEC 16, product evidence 15, bidirectional true, M/606 41, project log 263 events.
+- Provenance artifact #14613405592, SHA-256 `f14e2ad608899ec53d999aa0dda87178fbf87494bdee4de9a7fb9f7477b74d27`.
+- Squash merge SHA `a8db31bd2c7a1e0127ef226a432183633e66eb76`; pre-merge safety ref `safety/pre-pr171-merge-2026-11-20`; post ref `safety/post-merge-pr171-2026-11-20`; post ref == main 확인.
+- PR #170 연구 산출물 v0.18 §39 및 인벤토리 26행 main 반영 상태 유지.
+- 제품별 CRA scope/classification/Annex III-IV/RDPS Unknown, security tests Not Run 유지.
