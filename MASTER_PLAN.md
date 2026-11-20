@@ -1,3 +1,9 @@
+## 2026-11-20 — PR #152 병합 및 상태 동기화
+
+- PR #152 merge SHA 8f2fa6af11be627dc3926dc46a28eb70c1ec23a0; pre/post safety refs retained; post ref identical to main.
+- Exact PR head 95e8b887d41b7e33aa988ad83166184bb523c28c; Run #1108 success, 174 passed / 0 failed.
+- Official CRA PDF/HTML canaries, compile, traceability, pytest, provenance upload success; provenance artifact #14597237413. PDF source artifact upload skipped because unchanged.
+- Next P0: obtain original manufacturer PDF/XML/MSI/API ZIP/CE DoC bytes, compute SHA-256, inspect exact SKU ports/protocols/security controls; verify iX7NH dual protocol and L7P RS-422 scope.
 ## 2026-11-20 — PR #151 병합 및 상태 동기화
 
 - PR #151 merge SHA 05d95d7760aacd1b608e85b583069507c0b4a369; pre/post safety refs retained; post ref identical to main.
