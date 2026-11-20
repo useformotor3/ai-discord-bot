@@ -2426,3 +2426,12 @@
 - Run #1234 / 44718762561 completed success: 174 passed / 0 failed.
 - Source blob identities, compile, CRA cross-matrix traceability, official CRA PDF and HTML read-only canaries, and provenance manifest upload all succeeded. CRA PDF evidence upload step was skipped by workflow condition; no test failure.
 - Branch was advanced afterward only to persist this CI result in the status board/logs; a fresh exact-head CI run is required before merge.
+
+
+## 2026-11-20 — PR #184 squash merge 및 post-merge readback
+
+- PR #184 merged to main via squash: `9dbe6e92c358d0361f9640651152e4d1e8b1ec6b`.
+- Final exact-head CI Run #1238 on `3dc3af115769ef2380a8895d41b0eced04b67fff`: success, 174 passed / 0 failed; official CRA PDF/HTML canaries and provenance upload succeeded.
+- Created `safety/pre-merge-pr184-2026-11-20` from pre-merge main and `safety/post-merge-pr184-2026-11-20` from merge SHA. Post-merge safety ref compares identical to main (0 ahead/0 behind).
+- Main readback verified README, status board, AI_RULEBOOK, 18-item matrix (18 rows), integrated report §38, OT mapping report, and PROJECT_LOG (290 valid JSONL events).
+- Self-review found README's temporary “PR #184 open” banner had become stale after merge; this follow-up branch corrects README and updates status board with the merge SHA and safety refs.
