@@ -1,6 +1,6 @@
 # CRA Servo Drive Compliance & Engineering Project
 
-> **최신 재개 상태 — 2026-11-20:** 보고서 v0.18 §39에서 iX7NH Ver1.1 웹서버·Modbus TCP·업데이트 경로를 1차 매뉴얼 근거로 분석 중. 최신 Ver1.7 현행성·제품별 CRA 판정·보안시험은 미확인. main branch protection은 별도 관리자 설정이 필요한 상태.
+> **최신 재개 상태 — 2026-11-20:** PR #170 병합 완료, main SHA `cad75135996c129bc576d83ce5b7ed968ca6a63b`. 보고서 v0.18 §39, iX7NH Ver1.1 웹서버·Modbus TCP·업데이트 경로 검토 반영. Run #1142 성공(174 passed / 0 failed). 최신 Ver1.7 보안 설정과 제품별 CRA 판정은 미확인.
 
 산업용 서보 드라이브의 EU Cyber Resilience Act(CRA) 대응을 위한 조사·설계·검증·문서화 프로젝트입니다. 문서의 기본 언어는 한국어이며, 법령·표준·제조사 원문은 원어와 출처를 보존합니다.
 
