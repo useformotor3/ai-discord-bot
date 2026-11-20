@@ -1,3 +1,16 @@
+## 최신 main 기준점 — PR #164 사후 상태 동기화 완료 (2026-11-20)
+
+- PR #164 merge SHA: `77e3050558869cab2624880bb1d5bfe8a9d5685c`; exact head `f0f7a51883bd66ad73f2252d8933067840c3d4c8`.
+- Actions Run #1132 / ID `44691510530`: success. Source blob integrity, compileall, CRA traceability, full pytest **174 passed / 0 failed**, official CRA PDF/10-source HTML canaries, provenance manifest upload 통과. PDF 업로드는 unchanged로 skipped.
+- CRA traceability: claims 13, interfaces 15, requirements 35, SEC 36, EVD crosswalk 16, product evidence 15, bidirectional links true, M/606 41, project log 256 events.
+- Provenance artifact #14609395254, 2,567 bytes, SHA-256 `da47c2cf1d99bca2b067fb4836e9a7b3320d435e05cd7cf1e7859ab6ee566e0b` (7일 보존).
+- 사전 복구 ref `safety/pre-pr164-merge-2026-11-20`; 사후 복구 ref `safety/post-merge-pr164-2026-11-20`; 사후 ref와 main identical 확인.
+- PR #164는 PR #163의 사후 병합 상태를 동기화한 문서 전용 PR이다.
+- 보고서 v0.16 §36~§37, 제조사 인벤토리 20개 데이터 행 유지. JSONL에는 PR #164 검증 이벤트를 추가하여 257건으로 갱신한다.
+- 제품별 CRA scope/classification/Annex III·IV/RDPS는 Unknown, security tests는 Not Run 유지.
+
+---
+
 ## 최신 main 기준점 — PR #163 사후 상태 동기화 완료 (2026-11-20)
 
 - PR #163 merge SHA: `814cc6309e72461f0649b1b6d34109894cff4810`; exact head `3d1f28acb57078c59bcb3d634674f8ac279358fd`.

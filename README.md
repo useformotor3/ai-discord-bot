@@ -1,6 +1,6 @@
 # CRA Servo Drive Compliance & Engineering Project
 
-> **최신 재개 상태 — 2026-11-20:** PR #132~#163 병합 완료. main SHA `814cc6309e72461f0649b1b6d34109894cff4810`. PR #163 exact-head CI Run #1130 성공(174 passed / 0 failed), 사전/사후 safety ref와 main 동일성 확인. 보고서 v0.16 §37, 제조사 인벤토리 20개 데이터 행, JSONL 255건 main 반영. iX7NH 구판 Ver1.1에 4개 업데이트 경로 및 FoE/Webserver 기본 인증정보가 기재되지만, 최신 Ver1.7과의 동일성은 미확인.
+> **최신 재개 상태 — 2026-11-20:** PR #132~#164 병합 완료. main SHA `77e3050558869cab2624880bb1d5bfe8a9d5685c`. PR #164 exact-head CI Run #1132 성공(174 passed / 0 failed), 사전/사후 safety ref와 main 동일성 확인. 보고서 v0.16 §36~§37, 제조사 인벤토리 20개 데이터 행, JSONL 257건(이번 status sync 이벤트 포함) 반영. iX7NH 구판 Ver1.1의 업데이트 경로 및 인증정보 단서는 최신 Ver1.7과의 동일성 미확인.
 
 산업용 서보 드라이브의 EU Cyber Resilience Act(CRA) 대응을 위한 조사·설계·검증·문서화 프로젝트입니다. 문서의 기본 언어는 한국어이며, 법령·표준·제조사 원문은 원어와 출처를 보존합니다.
 
