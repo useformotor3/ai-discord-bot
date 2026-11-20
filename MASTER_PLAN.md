@@ -1200,3 +1200,10 @@
 4. 미완료: C(2026) 7861 Article 2에 따른 ESO별 실제 수령일과 1개월 내 비수락 통지 원본. 발송일을 수령일로 간주하지 않는다.
 5. 후속: ESO별 수령/통지 확인, JT013090 CEN record/OJ 필드, 41개 개별 EN/ETSI mapping/OJ audit.
 6. 제품 CRA scope/classification/Annex III·IV/RDPS는 증거 전까지 Unknown, security tests Not Run.
+
+
+## 2026-11-20 PR #130 사후 검증 및 다음 분석
+- 완료: PR #130 exact-head Run #1064 success, squash merge SHA `bfcc2e61fc07b2148fca7a162349af40aa84bc47`, pre/post safety refs 생성, main read-back 확인.
+- 완료: main push Run #1065 (`44658780153`) success; full tests, traceability, official source canaries, provenance manifest upload 통과.
+- 다음 P0: M/606 Work Programme의 산업용 OT/IACS Work Items 20b/21b/22b/25b/27b/36b가 실제로 어떤 제품기능에 한정되는지와 LS메카피온 서보드라이브의 증거상 인터페이스/기능을 비교. 기능이 입증되지 않으면 적용대상이라고 추정하지 않는다.
+- 제품별 CRA scope/classification/Annex III·IV/RDPS는 Unknown 유지; 보안시험 Not Run.
