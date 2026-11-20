@@ -1,3 +1,25 @@
+## CRA 전체 프로젝트 우선순위 갱신 — 2026-11-20
+
+### 프로젝트 범위 원칙
+- CRA 법령·공식 가이드·표준화/OJ 상태·제조자 의무·제품 분류·적합성 평가·취약점/사고 신고가 핵심 트랙이다.
+- LS메카피온 iX7NH는 일반 서보드라이브 제품군의 적용성/기술 증거를 확보하기 위한 하나의 사례다. CRA 핵심 규제조사와 동등하거나 상위 우선순위를 차지하지 않는다.
+
+### 다음 P0 — CRA 전체 이행 최신화
+1. Commission Guidance OJ C/2026/6013 및 최신 Commission FAQ/implementation/reporting 페이지의 변경점 확인.
+2. ENISA SRP FAQ/Glossary/User Manual/Status 변경 감시와 Article 14 운영 절차 갱신.
+3. M/606 41개 주제의 actual EN/ETSI mapping, 최신 CEN/CENELEC/ETSI stage, OJ citation/Article 27 상태 및 C(2026) 7861 Article 2 acceptance notice 전수 확인.
+4. CRA Annex I Part I/II 요구사항과 claim register·requirements traceability·SEC controls·product evidence crosswalk 간 정합성 감사.
+5. Annex III/IV core functionality 및 conformity assessment routes에 대한 독립 법률 검토를 계속하되, 정확한 SKU/BOM/market purpose 없이는 제품별 판정을 Unknown으로 둔다.
+6. 이후 LS메카피온 사례연구는 제조사 1차 자료 확보와 정확한 SKU/firmware boundary 확인에 한정해 병행한다.
+
+### 품질 게이트
+- 모든 법률·표준 주장은 source version/date, retrieval date, exact locator, acquisition state, legal status를 기록.
+- 2차 자료만 있는 claim은 잠정/미확인 유지.
+- ENISA UI counter를 Article 14 statutory deadline로 사용하지 않음; 최초 인지 UTC 기준으로 독립 계산.
+- CI/pytest 성공은 문서 구조와 추적성 검증이며 법률적 100% 정확성/제품 적합성 판정이 아님.
+
+---
+
 ## 최신 재개 상태 — PR #173 병합 및 iX7NH Ver1.7/API 증거 갱신 완료 (2026-11-20)
 
 - PR #173 squash 병합: main SHA `634c3178471ff20c99e97ba48fc4c5e187afb28d`; 연구 브랜치 exact head `2e536ed1cd893e433b0aab6b98185c40bff3ff8a`.
