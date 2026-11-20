@@ -2248,3 +2248,8 @@
 - 제품 적용성 경계: drive port/feature만으로 Annex III Class I product category를 자동 분류하지 않음. OJ actual citation은 개별 record에서 미확인.
 - 신규 보고서 §26 및 ETSI/CEN 상태보고서 addendum 반영.
 - 한계: CEN prEN50770-1~6 20 Nov 재열람 미완료, ETSI 18개 중 미검토 8개, 표준 본문 미취득.
+
+## 2026-11-20 — ETSI EN 304 620 추가 최신상태 정정
+- 2026-11-20 ETSI direct record for EN 304 620 shows Comments categorisation assessed (2026-11-06), v1.0.0; 2026-11-19 remark says EC second assessment received for comment batches dated 2026-09-28 and 2026-10-22.
+- 기존 2026-09-28 “7 VR – EC assessment before EV received”는 현재 상태가 아니므로 보고서 §26 및 ETSI 상태 addendum에서 수정.
+- ETSI EN 304 620/621/622/627 scope에 industrial OT domain exclusion을 개별 record에서 확인; 각 OJ field는 비어 있음.
