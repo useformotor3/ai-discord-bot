@@ -1,3 +1,11 @@
+## 2026-11-20 — PR #160 병합 후 기준점 및 다음 작업
+- PR #160 merge SHA `8bc9762efbd20ca9c7aaaddc3832745d4e6dc53e`; exact head `4f56e9b24354d25f03363127e8167a46049c5ded`; Run #1124 success, **174 passed / 0 failed**.
+- Source integrity, compileall, CRA traceability, official CRA PDF/10-source HTML canaries, provenance upload 통과. Provenance artifact #14606367087, SHA-256 `57dba2ea061de40faec834b3794e102e414fa2f0e13a8fd72a0af2ede1447a80`.
+- Pre/post safety refs 보존, post ref == main 확인.
+- 다음 P0: DriveCM Ver1.02.2 릴리스 노트의 downgrade 동작 단서를 보안 업데이트 검증 질문으로 편입; DFU/펌웨어 원본 확보와 ESI·SKU 매핑 확인 지속.
+
+---
+
 ## 2026-11-20 — PR #159 병합 및 검증 완료
 - PR #159 squash merge SHA `c43b35df267c30facbc8c8f62677e48189d24127`; exact-head Run #1122 success, **174 passed / 0 failed**.
 - Source integrity, compileall, CRA traceability, official CRA PDF/10-source HTML canaries, provenance manifest upload 통과. PDF source upload은 unchanged로 skipped.
