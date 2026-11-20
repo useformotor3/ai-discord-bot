@@ -1,6 +1,6 @@
 # CRA 서보 드라이브 통합 규제·기술 준수 보고서
 
-- 문서 버전: v0.8 (ETSI M/606 active 18개 master matrix 및 Class I/II metadata mismatch 감사) (ETSI M/606, CLC/TC 65X OT, C(2026)7861 Article 2, Annex III/IV 및 Article 32 분석 통합)
+- 문서 버전: v0.8 (ETSI M/606 18개 master matrix, Class I/II metadata mismatch, OT 표준화, Article 2 및 Article 32 분석)
 - 기준일: 2026-11-20
 - 프로젝트 범위: EU Cyber Resilience Act(CRA) 대응만
 - 기준 제품군: 산업용 서보 드라이브 및 필수 펌웨어·설정/진단 소프트웨어
