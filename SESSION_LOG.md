@@ -2059,3 +2059,12 @@
 - 구판 매뉴얼에 FoE 업데이트 password '00000000', 웹서버 object 0x2420/0x2421의 기본 ID/PASSWORD 값과 RW 설정 가능성이 기재됨. 현행 Ver1.7에도 동일한지, 기본값 변경/기기별 고유성/암호화 여부는 미확인.
 - 최신 공식 매뉴얼 Ver1.7 파일명·19.5MB·첨부일 2026-06-05 확인. 첨부 다운로드는 '잘못된 접근'으로 실패하여 최신 본문은 검토하지 못함.
 - 보고서 §37 및 자료 인벤토리에 구판 본문 검토와 최신판 메타데이터를 분리해 기록. 기본 인증정보를 실제 취약점이나 현행 제품 상태로 단정하지 않음.
+
+
+## 2026-11-20 — PR #162 병합 및 사후 검증
+- PR #162 exact head `903fd90709636b37f2b4ebd1abec893555955a8e`; Actions Run #1128 / ID `44691140978` success, **174 passed / 0 failed**.
+- CRA traceability: claims 13, interfaces 15, requirements 35, SEC 36, EVD crosswalk 16, product evidence 15, bidirectional links true, M/606 41, project log 254.
+- Provenance artifact #14609085450, SHA-256 `0407e5069a4f5d9698f6d9be994ffecbbc62c9dbae54b29b52cb96c39873cf4c`.
+- Merge SHA `1d6110236984ee11387aaf2be99f239fa2f2ec1e`; pre/post safety refs 생성 및 post == main 확인.
+- 보고서 v0.16 §37, 인벤토리 20개 데이터 행, JSONL 254건 반영.
+
