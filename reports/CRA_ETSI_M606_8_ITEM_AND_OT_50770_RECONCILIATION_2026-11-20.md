@@ -142,3 +142,10 @@ Sources:
 5. Recheck actual OJ references; forecasts and “Harmonised Standard: Yes” metadata do not establish Article 27 presumption.
 6. Recheck the ETSI 18-item list after the 2026-11-23 meeting and consolidate all 18.
 7. Keep servo-drive product classification Unknown until exact SKU, intended purpose, core functionality, BOM and firmware evidence are obtained.
+
+
+## 2026-11-20 follow-up — full 18-item matrix and class-label mismatch
+
+The new full 18-item ETSI master matrix supersedes the limited 8-item-only status snapshot for current overview. It confirms that EN 304 627 (routers/modems/switches) also explicitly excludes industrial OT. It also records two legal-class metadata mismatches: ETSI Work Item pages for EN 304 635 (hypervisors) and EN 304 636 (firewalls/IDS/IPS) say Annex III Class I, while Regulation 2025/2392 classifies both as Class II. The discrepancy is confirmed only in ETSI page scope metadata; normative draft bytes were not acquired.
+
+See reports/CRA_ETSI_M606_18_ACTIVE_WORK_ITEM_MASTER_MATRIX_2026-11-20.md and CSV.
