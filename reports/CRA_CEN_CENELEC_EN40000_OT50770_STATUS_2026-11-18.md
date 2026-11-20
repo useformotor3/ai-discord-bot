@@ -115,3 +115,19 @@ CEN 공식 EN 40000-1-1 레코드에서 DAV는 승인된 공식 언어 버전이
 - https://www.cencenelec.eu/news-events/news/2026/en-in-the-spotlight/2026-11-19-cra-standards-en-40000-1-1-and-en-40000-1-2/
 
 **정정:** 이전 문서에서 EN 40000-1-2의 개별 CEN 페이지 직접 확인이 미완료라고 한 부분은 이 addendum으로 해소됐다. 두 EN의 OJ field는 No citation expected다.
+
+
+## 2026-11-20 추가 상태 정합성 감사 — prEN 50770 split 및 national-member records conflict
+
+DKE 2026년 10월 CRA 표준화 상태 PDF는 기존 prEN 50770-1이 firewall용 prEN 50770-1-1과 IDS/IPS용 prEN 50770-1-2로 분할되었음을 명시한다. 따라서 기존 6개 시리즈 항목은 7개 deliverable로 추적한다.
+
+DKE 표는 7개 deliverable 모두 Start NWI 및 Drafting prEN marker를 표시하고, Voting prEN 이후 단계 및 Citation hEN marker는 표시하지 않는다. 그러나 BSI national project records는 prEN 50770-2 (9025-12804)와 prEN 50770-3 (9025-12805)를 PWI로 표시하고 target dates가 알려지지 않았다고 설명한다. LVS CLC/TC 65X list는 WIID 81649–81654를 In development로 표시한다. DKE Drafting prEN, BSI PWI, LVS In development는 stage granularity가 일치하지 않는다.
+
+이번 재조회에서는 CEN-CENELEC 중앙 project record를 성공적으로 다시 열지 못했다. 따라서 -2/-3의 정확한 중앙 stage, forecast 및 OJ citation field는 Unknown/Conflict로 유지한다. DKE Citation hEN 열은 비어 있고 actual OJ reference는 확인되지 않았다. 과거 “Citation expected” 표현은 실제 OJ citation으로 오인하지 않는다.
+
+새 매핑: 36b → 50770-1-1 + 50770-1-2; 21b → -2; 25b → -3; 20b → -4; 27b → -5; 22b → -6. 기존 6-row matrix는 역사적 snapshot이며 새 7-deliverable CSV를 현행 기준으로 사용한다.
+
+- DKE October 2026 PDF: https://www.dke.de/resource/blob/2435170/215c8695b21563a904c94beeb62214e9/normungsprojekte-zum-cra-data.pdf
+- BSI -2 PWI: https://standardsdevelopment.bsigroup.com/projects/9025-12804
+- BSI -3 PWI: https://standardsdevelopment.bsigroup.com/projects/9025-12805
+- LVS CLC/TC 65X list: https://www.lvs.lv/en/committees/projects/10907?Projects_page=12&Projects_sort=pr_number.desc
