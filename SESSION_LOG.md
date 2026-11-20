@@ -2377,3 +2377,11 @@
 - ETSI DocBox directory listing에서 최신 EN304636 V1.0.0 (2026-07-09) PDF 확인 및 열람.
 - PDF page 9 Introduction이 firewalls/IDS/IPS를 Annex III Class II point 2로 명시. 최신 공개 draft는 법령과 일치하며 Work Item page의 Class I label이 stale metadata임을 확인.
 - EN304635 V1.0.1 (2026-06-24)은 DocBox에 존재하지만 fetch timeout. 이전 V0.0.8은 class label 미포함; 최신 본문은 미확인.
+
+
+## 2026-11-20 — CSV 무결성 자체검토 및 복구
+
+- M/606 41-item CSV의 row 35/36 수정 과정에서 단일 행 parser를 전체 CSV parser처럼 사용해 두 행의 열 구조가 손상된 것을 readback/roundtrip 검사에서 발견.
+- 손상본을 기준으로 덮어쓰지 않고, 손상 직전 커밋 85a03faefa87b024ebf378a629cca00d0f4d46d5의 정상 CSV를 복원 기준으로 사용한 뒤 Class II/draft 검증 메모를 재적용.
+- 복구 후 전체 CSV를 RFC4180-style quote-aware parser로 재검증: header+41 data rows = 42 rows, 모든 row 10 columns. row35/36 원래 필드와 기존 CLC mapping 보존 확인.
+- 재발 방지: CSV 수정 시 항상 전체 파일 parse → row/column count → serialize → reparse roundtrip을 수행하고, 단일-line parsing과 full-file parsing 함수를 구분한다.
