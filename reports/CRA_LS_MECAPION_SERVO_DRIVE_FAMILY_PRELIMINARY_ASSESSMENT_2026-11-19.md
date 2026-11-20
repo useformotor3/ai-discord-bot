@@ -1,8 +1,8 @@
 # LS메카피온 서보드라이브 CRA 제품군 예비 분석 보고서
 
 - 문서 ID: CRA-LSM-FA-001
-- 버전: 0.9 (ESO 2026-06 M/606 진행 현황 및 산업용 OT 지원표준 검토 추가 / 제품군 예비 분석)
-- 기준일: 2026-11-19 (KST)
+- 버전: 0.10 (M/606 OT/IACS 6개 수직 프로파일의 CENELEC 최신 카탈로그 상태 및 제품기능 경계 분석 추가)
+- 기준일: 2026-11-20 (KST)
 - 작성 언어: 한국어
 - 대상 제조사/브랜드: LS메카피온 (LS MECAPION)
 - 분석 대상: 제조사 공개 제품 목록에 등재된 서보드라이브 계열 및 관련 설정·진단 소프트웨어
@@ -1569,3 +1569,71 @@ Article 2는 CEN, CENELEC 또는 ETSI가 **결정을 수령한 날부터 1개월
 4. Commission Implementing Decision C(2026) 7861 final, 2026-11-10, Articles 1–3, especially Article 2: https://www.ibf-solutions.com/fileadmin/dateidownloads/c-2026-7861-main-document-annex-cra-standards.pdf .
 5. Regulation (EU) 2024/2847, Article 27(1): https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R2847 .
 
+
+
+## 31. M/606 OT/IACS 수직 프로파일 6종의 최신 CENELEC 상태 및 LS메카피온 서보드라이브 기능 경계 (2026-11-20)
+
+### 31.1 조사 목적과 판단 원칙
+
+CEN-CENELEC 2026 Work Programme은 CLC/TC 65X가 CRA 표준화 요청 M/606에 따라 산업 자동화·제어 시스템(IACS) 및 연결된 산업 제품을 위한 수직 프로파일을 개발한다고 설명한다. 해당 작업은 CRA 수평 요구사항을 산업용 OT 환경에 구체화하는 지원 작업이다. CLC/TC 65X의 공식 업무범위도 산업 공정 계측·제어·자동화 장비와 시스템, 구성요소 및 기능의 통합, 안전·보안 측면의 조정을 포함한다.
+
+다만 **산업용 서보드라이브라는 이유만으로 아래 여섯 제품 유형에 자동 포함되는 것은 아니다.** 실제 제품이 VPN, 네트워크 관리 시스템, SIEM, 네트워크 인터페이스 제품, 라우터/모뎀/스위치, 방화벽/IDS/IPS 중 어떤 기능을 의도된 용도로 제공하는지 확인해야 한다. 이 검토는 기능 경계와 후속 증거 수집 우선순위를 정하는 것이며, 법적 분류나 적합성 판정이 아니다.
+
+### 31.2 CLC/TC 65X WG 3의 6개 M/606 작업과 공식 프로젝트 식별
+
+CEN-CENELEC의 현재 CLC/TC 65X Work Programme 및 개별 프로젝트 레코드(2026-11-20 조회)에서 다음 연결을 확인했다.
+
+| M/606 항목 | CLC 프로젝트 번호 | 현재 프로젝트 표기 | 작업 범위(공식 제목/요약) |
+|---|---:|---|---|
+| 20b | 81652 | prEN 50770-4 | OT 환경에서 사용하는 VPN 기능 제품의 보안 프로파일 |
+| 21b | 81650 | prEN 50770-2 | OT 환경에서 사용하는 네트워크 관리 시스템의 보안 프로파일 |
+| 22b | 81654 | prEN 50770-6 | OT 환경에서 사용하는 SIEM 시스템의 보안 프로파일 |
+| 25b | 81651 | prEN 50770-3 | OT 환경에서 사용하는 물리·가상 네트워크 인터페이스의 보안 프로파일 |
+| 27b | 81653 | prEN 50770-5 | OT 환경에서 사용하는 인터넷 연결용 라우터·모뎀·스위치의 보안 프로파일 |
+| 36b | 81649 | prEN 50770-1 | OT 환경에서 사용하는 방화벽 및 침입탐지·방지 시스템의 보안 프로파일 |
+
+각 프로젝트 개별 레코드는 Directive 2024/2847 및 M/606과의 연결, 프로젝트 상태 “Committee stage”, OJEU 필드 “Citation expected for Directive 2024/2847”를 표시한다. 현재 CLC/TC 65X Work Programme 목록의 상태는 여섯 항목 모두 “Under Drafting”이다. 목록상 예상 투표일은 2027-08-03으로 표시되며, 다음 단계 목표일은 프로젝트별로 2026-02-17 또는 2026-03-22로 남아 있다. 이 다음 단계 목표일은 기준일 현재 이미 지난 날짜인데도 프로젝트 상태가 “Under Drafting”으로 표시되므로, 목표일 경과를 단계 완료로 해석하지 않는다. 일정은 계획·예측치이며 최종 발행일을 보장하지 않는다.
+
+**중요한 OJ 해석:** 개별 프로젝트 레코드의 “Citation expected”는 향후 OJEU 인용을 기대한다는 프로젝트 메타데이터이지, 이미 OJEU에 참조가 게시되었다는 뜻이 아니다. 현재 개별 레코드에는 DOR/DAV/DOA/DOP가 없고 실제 OJ citation 번호도 없다. 따라서 현재 시점에 이 여섯 초안으로 CRA 제27조 적합성 추정을 주장하지 않는다.
+
+### 31.3 서보드라이브 제품 기능과의 조건부 대조
+
+| 작업 | 서보드라이브와의 기능 경계 | 현재 LS메카피온 증거 기준 판단 |
+|---|---|---|
+| 20b VPN | 제품 자체가 VPN 터널·VPN 종단 기능을 제공하는 경우의 보안 프로파일이다. 단순 Ethernet/EtherCAT, PC 연결 또는 원격 유지보수 가능성만으로 VPN 기능이 입증되지는 않는다. | VPN 기능이 제품에 내장·제공된다는 제조사 원문을 확보하지 못했다. **현재 적용 증거 없음 / 기능 확인 전 Unknown** |
+| 21b 네트워크 관리 시스템 | 네트워크 장비·노드·구성·상태를 관리하는 시스템 기능을 대상으로 한다. 드라이브 파라미터 설정·상태 모니터링용 PC 도구가 있다는 사실만으로 네트워크 관리 시스템이 되지는 않는다. | DriveCM은 설정·시운전 도구로 확인되지만, 네트워크 관리 시스템 기능·제품 경계는 입증되지 않았다. **현재 적용 증거 없음 / 기능 확인 전 Unknown** |
+| 22b SIEM | 여러 장치·보안 로그를 수집·정규화·상관분석하고 보안 이벤트를 관리하는 SIEM 제품 기능을 대상으로 한다. 드라이브 내부 알람·고장 이력·진단 로그는 그 자체로 SIEM이 아니다. | 서보드라이브가 SIEM 기능을 제공한다는 자료가 없다. **현재 적용 증거 없음 / 기능 확인 전 Unknown** |
+| 25b 물리·가상 네트워크 인터페이스 | OT 환경에서 사용되는 물리·가상 네트워크 인터페이스의 보안 프로파일이다. 드라이브에 Ethernet/EtherCAT 등 통신 인터페이스가 실제 탑재되면 여섯 항목 중 기술적으로 가장 먼저 대조할 후보지만, 표준의 최종 적용범위가 인터페이스 단품·통합 인터페이스 중 어디까지인지 본문 확인이 필요하다. | 제조사 공개 제품군 자료에는 EtherCAT 계열 및 기타 통신형 제품이 있으나, 정확한 모델/SKU별 매뉴얼 원본과 포트·프로토콜 구성이 미확보다. **우선 검토 후보 / 모델별 증거 필요** |
+| 27b 라우터·모뎀·스위치 | 인터넷 연결을 위한 라우팅, 모뎀 또는 스위칭 기능을 제품의 의도된 기능으로 제공하는 장비를 대상으로 한다. Ethernet 포트나 EtherCAT 슬레이브 인터페이스가 있다는 사실만으로 라우터·스위치가 되는 것은 아니다. | 드라이브 자체가 IP 라우팅, 인터넷 연결 모뎀 또는 이더넷 스위칭을 제공한다는 증거가 없다. **현재 적용 증거 없음 / 기능 확인 전 Unknown** |
+| 36b 방화벽·IDS/IPS | 네트워크 트래픽 정책 집행, 공격 탐지 또는 침입 방지 기능을 제공하는 OT 보안 제품을 대상으로 한다. 통신 포트, 비밀번호, 알람, 통신 오류 감지는 그 자체로 방화벽/IDS/IPS 기능이 아니다. | 드라이브가 방화벽·IDS/IPS 기능을 제공한다는 증거가 없다. **현재 적용 증거 없음 / 기능 확인 전 Unknown** |
+
+위 표의 “현재 적용 증거 없음”은 제조사가 해당 기능을 절대로 제공하지 않는다는 확인이 아니다. 매뉴얼·제품 사양·설치파일 원본이 확보되지 않은 상태에서 공개된 자료로 확인되지 않았다는 뜻이다. 특히 제품군 단위 공개 목록을 특정 모델의 포트·프로토콜·기능으로 일반화하지 않는다.
+
+### 31.4 CRA 법적 효과와 표준 사용 방법
+
+1. 여섯 prEN은 CENELEC 카탈로그에서 아직 프로젝트/위원회 단계로 표시된다. 발행된 EN 또는 OJEU 인용 표준으로 표현하지 않는다.
+2. CENELEC 카탈로그의 “Citation expected”만으로 CRA Article 27의 적합성 추정이 발생하지 않는다. 실제 OJEU에 게시된 정확한 표준 참조, 적용 범위 및 제한사항을 별도 확인해야 한다.
+3. 해당 프로파일은 최종 발행·인용 전에도 설계 위험분석의 참고 후보로 검토할 수 있으나, 초안의 내용이나 일정만으로 법적 의무·인증·적합성을 단정하지 않는다.
+4. 이 여섯 프로파일은 M/606의 수직 표준화 작업이다. Annex III 중요·핵심 제품 등급을 자동 부여하거나, 서보드라이브를 방화벽·라우터·SIEM으로 재분류하는 근거가 아니다.
+
+### 31.5 모델별 판단을 위해 필요한 제조사 증거
+
+- 정확한 제품 모델/SKU, 하드웨어·펌웨어 리비전 및 EU 판매 구성
+- 모델별 사용설명서·데이터시트 원본 PDF bytes, SHA-256, 표지/개정 이력 및 통신 사양 페이지
+- Ethernet/EtherCAT/USB/RS-485/serial 포트별 물리 계층, 프로토콜, 역할, 기본 활성화 상태 및 외부 연결 구조
+- VPN 종단·라우팅·브리징·스위칭·네트워크 관리·SIEM·방화벽/IDS/IPS 기능의 존재 여부를 명시한 제조사 답변
+- DriveCM 설치파일·릴리스 노트, ESI/XML, 펌웨어 업데이트·복구 절차와 보안 기능 자료
+
+### 31.6 1차 출처 및 확인 범위
+
+- CEN-CENELEC, CLC/TC 65X Work Programme (현재 공개 목록; 여섯 프로젝트의 상태·다음 단계·예상 투표일): https://standards.cencenelec.eu/ords/f?cs=13BBE5D228A21B7B3279EACC2D208AB42&p=305:22:::::FSP_ORG_ID,FSP_LANG_ID:1257871,25
+- CEN-CENELEC, CLC/TC 65X 업무범위: https://standards.cencenelec.eu/ords/f?cs=12FF42C6E75751D098D789E57AB78311C&p=305:7:::::FSP_ORG_ID:1257871
+- prEN 50770-1 / project 81649: https://standards.cencenelec.eu/ords/f?cs=13322EAD4BB9270452A937D8259179562&p=305:110:::::FSP_PROJECT,FSP_LANG_ID:81649,25
+- prEN 50770-2 / project 81650: https://standards.cencenelec.eu/ords/f?cs=104E404C05717FFC5BCCAD860A2799EC6&p=305:110:::::FSP_PROJECT,FSP_LANG_ID:81650,25
+- prEN 50770-3 / project 81651: https://standards.cencenelec.eu/ords/f?cs=1837AABAB3786CCFE6D25A2AB9BB4C78D&p=305:110:::::FSP_PROJECT,FSP_LANG_ID:81651,25
+- prEN 50770-4 / project 81652: https://standards.cencenelec.eu/ords/f?cs=17583FCAF37D99F9A7028E7956E422300&p=305:110:::::FSP_PROJECT,FSP_LANG_ID:81652,25
+- prEN 50770-5 / project 81653: https://standards.cencenelec.eu/ords/f?cs=1942B619B9CF8CEF79834DF9A4E0D3234&p=305:110:::::FSP_PROJECT,FSP_LANG_ID:81653,25
+- prEN 50770-6 / project 81654: https://standards.cencenelec.eu/ords/f?cs=1D9131DB1242FEC8D93BF297195E8A2A0&p=305:110:::::FSP_PROJECT,FSP_LANG_ID:81654,25
+- CEN-CENELEC Work Programme 2026, Digital Society — CLC/TC 65X의 여섯 CRA 수직 프로파일 설명: https://wp2026.cencenelec.eu/sectors-list/digital-society/
+
+**검증 한계:** 공개 CENELEC 카탈로그의 프로젝트 요약·상태 필드까지 확인했다. 여섯 표준의 비공개/유료 초안 전문은 확보하지 못했으며, 개별 표준의 최종 조항·적용범위·시험방법을 검토한 것은 아니다. LS메카피온 원본 매뉴얼과 모델별 기능 증거도 미확보다. 따라서 제품별 CRA scope/classification/Annex III·IV/RDPS는 Unknown, 보안시험은 Not Run으로 유지한다.
