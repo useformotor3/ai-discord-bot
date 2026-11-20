@@ -79,3 +79,22 @@ EN 304 635 V1.0.1 public sample preview (15 pages) explicitly states Annex III C
 - ETSI DocBox directory: https://docbox.etsi.org/CYBER/EUSR/Open/
 - EN 304 636 V1.0.0: https://docbox.etsi.org/CYBER/EUSR/Open/EN_304-636_V1.0.0_2026-07-09_Firewalls_Enquiry-draft.pdf
 - EN 304 635 V1.0.1: https://docbox.etsi.org/CYBER/EUSR/Open/EN_304-635_V1.0.1_2026-06-24_Virtualization_Container_Enquiry-draft.pdf
+
+
+## 2026-11-21 live status correction — EN 304 635 V1.0.9
+
+The previous table's EN 304 635 row (V1.0.1 / 2026-09-17) is a historical snapshot and must not be treated as the current live status.
+
+- ETSI live Work Programme query + Work Item Monitoring: DEN/CYBER-EUS-0016 / EN 304 635 **V1.0.9**.
+- Current status: EC assessment before WNV requested (2026-11-19).
+- Next status: EC assessment before WNV received (2026-11-28).
+- Remark: V1.0.9 uploaded 2026-11-20; Draft Review after PE; CYBER-EUSR-endorsed version resolving Enquiry and EC HAS2 comments.
+- Conflicting cached detail page still showed V1.0.1 / 2026-09-17. Retain this as a source freshness/cache discrepancy.
+- ETSI free download page lists V1.0.1 (2026-06), 2,700,830 bytes. Do not mistake this for V1.0.9.
+- V1.0.9 original PDF bytes, page count, content and SHA-256: **not acquired / not verified**.
+- Legal class remains **Class II, category 1** under Regulation (EU) 2024/2847 Annex III and Implementing Regulation (EU) 2025/2392 Annex I. ETSI Work Item scope wording does not override binding law.
+
+Sources:
+- Live Work Programme query: https://portal.etsi.org/webapp/WorkProgram/Frame_WorkItemList.asp?SearchPage=TRUE&butSimple=Search&includeNonActiveTB=FALSE&optDisplay=10&qINCLUDE_SUB_TB=True&qREPORT_TYPE=SUMMARY&qSORT=HIGHVERSION&qTB_ID=824%3BCYBER
+- Work Item Monitoring: https://portal.etsi.org/Portal_WI/Form1.asp?NbToDisplay=30&PersonId=0&SubTB=&SupCrit=CYBER+++++++++++++++++++++18878249&TabId=&TbId=0&WIcritID=18
+- Free download area (V1.0.1 only): https://portal.etsi.org/webapp/ewp/copy_file.asp?wki_id=74858

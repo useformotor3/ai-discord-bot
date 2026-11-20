@@ -1574,3 +1574,15 @@
 - main read-back/compare는 merge SHA와 동일. 복구 기준점 `safety/pre-pr176-merge-2026-11-20`, `safety/post-merge-pr176-2026-11-20` 유지.
 - 통합 보고서 v0.21 §42, 제조사 인벤토리 28행 반영. 2026-09-08~09-14 iX7NH/DriveCM 가이드북은 목록 메타데이터만 확인; 첨부 원문 미확보.
 - 제품별 CRA scope/classification/Annex III·IV/RDPS Unknown, security tests Not Run.
+
+
+## 2026-11-21 최신 운영·ETSI 원문 상태 추가 검증
+
+- Production Run #2526 / ID `44825006768`: job success이나 조사 결과는 **DEFERRED**. 공식 source 10개 확보 후 Gemini 3.8 Flash 503, Gemini 3.5 Flash Lite 응답은 EUR-Lex 공식 원문 링크 누락으로 품질 검증 거절. 신규 보고서·archive·Discord 변경 없음; operational guard no-op 및 checkpoint pruning 성공. Actions Summary step은 completed/success이나 job success를 조사 완료로 계산하지 않는다.
+- Run #2526 시작: 2026-11-20 21:58:47 UTC (2026-11-21 06:58:47 KST). cron 예상 슬롯 21:17 UTC 대비 약 41분 47초 지연. :17 offset은 punctuality guarantee가 아님.
+- ETSI live Work Programme query 및 Work Item Monitoring에서 EN 304 635 (DEN/CYBER-EUS-0016) 최신 version **V1.0.9** 확인. Current status: EC assessment before WNV requested (2026-11-19); next status: EC assessment before WNV received (2026-11-28). 2026-11-20 V1.0.9 draft upload remark: Draft Review after PE, Enquiry 및 EC HAS2 comments resolution을 포함한 CYBER-EUSR 승인본.
+- 일부 cached individual Work Item detail snapshot은 여전히 V1.0.1 / 2026-09-17을 표시한다. Live query + Monitoring의 V1.0.9와 불일치하므로 stale cache discrepancy를 기록하고, V1.0.9 원문 PDF 확보 전 본문/페이지 수/SHA를 주장하지 않는다.
+- ETSI free download area에는 V1.0.1 (2026-06), 2,700,830 bytes가 표시된다. 이는 V1.0.9 다운로드 가능성이나 원본 확보를 증명하지 않는다.
+- 2026-11-23 GoSRSReq006-M/606 AMD 1 examination meeting은 예정 상태. 회의록/결정/ESO 통지 확인은 회의 후 수행.
+- 상세 증거 및 후속 P0: `reports/CRA_ETSI_EN304635_V109_LIVE_STATUS_AND_RUN2526_AUDIT_2026-11-21.md`.
+- 변경 범위: 문서·감사로그만. main.py, 운영 workflow, secrets, Gemini/Discord 호출 빈도 및 운영 데이터 미변경.
