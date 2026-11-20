@@ -1,3 +1,15 @@
+## 최신 main 기준점 — PR #159 병합 및 CI 검증 (2026-11-20)
+
+- PR #159 squash merge SHA: `c43b35df267c30facbc8c8f62677e48189d24127`; exact-head `cc91056b674e54d80dfdd59f412b140caec4e6ed`.
+- Actions Run #1122 / ID `44685551882`: success. Source blob integrity, compileall, CRA traceability, full pytest **174 passed / 0 failed**, official CRA PDF/10-source HTML canaries, provenance manifest upload all passed. PDF upload skipped as unchanged.
+- CRA traceability: claims 13, interfaces 15, requirements 35, SEC 36, EVD crosswalk 16, product evidence 15, bidirectional links true, M/606 mapping 41, project log 250 events.
+- Pre-merge safety ref `safety/pre-pr159-merge-2026-11-20`; post-merge safety ref `safety/post-merge-pr159-2026-11-20`; post ref == main verified.
+- Report v0.14 §35 and manufacturer inventory 17 data rows merged. ESI 0.98 published list 11 models; DriveCM 1.03.2 support list includes PEGA2 and notes EtherCAT/RS-485 variants. PEGA2/iX700M absent from ESI 0.98 public applicability list; separate ESI possibility remains open.
+- ESI/MSI/PDF attachment bytes and SHA-256 remain unacquired. Product CRA scope/classification/Annex III·IV/RDPS Unknown; security tests Not Run.
+- Next P0: obtain PEGA2 EtherCAT/iX700M ESI and exact Vendor ID/Product Code/Revision; verify DFU signature/authentication/rollback/recovery and L7N/L7S security support policy.
+
+---
+
 ## 최신 main 기준점 — PR #158 병합 및 CI 검증 (2026-11-20)
 
 - PR #158 squash merge SHA: `422e20d59f22bb66fade70e2b7df144e5b032384`; exact-head Run #1120 / ID `44678458799` success.

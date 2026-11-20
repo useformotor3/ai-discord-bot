@@ -1,3 +1,12 @@
+## 2026-11-20 — PR #159 병합 및 검증 완료
+- PR #159 squash merge SHA `c43b35df267c30facbc8c8f62677e48189d24127`; exact-head Run #1122 success, **174 passed / 0 failed**.
+- Source integrity, compileall, CRA traceability, official CRA PDF/10-source HTML canaries, provenance manifest upload 통과. PDF source upload은 unchanged로 skipped.
+- Pre/post safety refs 생성 및 post ref == main 확인.
+- Report v0.14 §35, manufacturer inventory 17 data rows, project log 250 valid JSON events main 반영.
+- 다음 P0: PEGA2 EtherCAT/iX700M ESI 원본과 Vendor ID/Product Code/Revision 확보, DFU 보안 업데이트 메커니즘, L7N/L7S 지원정책 검증.
+
+---
+
 ## 2026-11-20 — ESI·DriveCM·제품 SKU 교차검증
 - 완료: ESI Ver0.98의 11개 적용 모델과 DriveCM Ver1.03.2의 지원 제품 및 PEGA2 EtherCAT/RS-485 신규 모델 변경내역을 제조사 상세 게시물에서 대조.
 - 핵심 갭: ESI 공개 적용목록에는 PEGA2/iX700M 미기재, DriveCM 지원목록에는 PEGA2 포함, 제품 카탈로그에는 iX700M EtherCAT 명시. 별도 ESI 또는 controller package 존재 가능성을 열어두고 제조사 확인 전 호환/비호환 단정 금지.
