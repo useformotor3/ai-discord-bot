@@ -5,7 +5,8 @@ def test_no_new_topic_is_not_reported_as_research_completion():
     result = classify_run(
         "[공식 source gate] 10개 공식 source 확보\n"
         "🔍 모델 [gemini-3.8-flash]으로 조사를 시도합니다.\n"
-        "⚠️ 모델 gemini-3.8-flash 일시적 과부하(503). 대체 모델 전환\n"
+        "⚠️ 모델 gemini-3.8-flash 일시적 과부하(503). 동일 모델 재시도를 중단하고 대체 모델로 전환합니다.\n"
+        "🔍 모델 [gemini-3.5-flash-lite]으로 조사를 시도합니다.\n"
         "ℹ️ [중복/신규 주제 없음] Discord 전송, 아카이브 및 상태 변경 없이 종료",
         0,
         "success",
@@ -76,10 +77,10 @@ def test_missing_log_is_unknown_not_success():
 
 def test_quality_rejection_then_alternate_model_is_detected_as_fallback():
     result = classify_run(
-        "[공식 source gate] 10개 공식 source 확보\\n"
-        "🔍 모델 [gemini-3.8-flash]으로 조사를 시도합니다.\\n"
-        "모델 gemini-3.8-flash 시도 1 무효 응답: CRA 공식 EUR-Lex 원문 링크가 누락되었습니다.\\n"
-        "🔍 모델 [gemini-3.5-flash-lite]으로 조사를 시도합니다.\\n"
+        "[공식 source gate] 10개 공식 source 확보\n"
+        "🔍 모델 [gemini-3.8-flash]으로 조사를 시도합니다.\n"
+        "모델 gemini-3.8-flash 시도 1 무효 응답: CRA 공식 EUR-Lex 원문 링크가 누락되었습니다.\n"
+        "🔍 모델 [gemini-3.5-flash-lite]으로 조사를 시도합니다.\n"
         "ℹ️ [중복/신규 주제 없음] Discord 전송, 아카이브 및 상태 변경 없이 종료",
         0,
         "success",
