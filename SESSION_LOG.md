@@ -2520,3 +2520,22 @@
 - 최신 HEAD `0238f456d3c3087a91e5b94b8b649d0cd39c3634`, Run #1285 / ID `44742487474`: success, **183 passed / 0 failed**.
 - Source blob identity, compileall, CRA traceability, official PDF/HTML canaries, provenance manifest upload 성공. PDF evidence upload은 unchanged/condition skipped.
 - PR #189 main 미병합. merge 후 다음 :17 scheduled production run에서 Step Summary 실제 분류 확인 필요.
+
+
+## 2026-11-20 — PR #189 자동화 관측성 개선 병합 및 사후 검증
+
+### 병합
+- PR #189 squash merge: `1683b5ec780c7396309d85b86cba100a021194e4`; main read-back 동일.
+- Pre-merge safety ref `safety/pre-merge-pr189-automation-observability-2026-11-20`; post-merge safety ref `safety/post-merge-pr189-automation-observability-2026-11-20`. 두 ref 모두 merge point main SHA와 동일 확인.
+- Exact PR HEAD Run #1289 success, 183 passed / 0 failed. Main push Run #1290 / ID `44742940672` success, 183 passed / 0 failed; source identity, compileall, CRA traceability, official PDF/HTML canaries, provenance manifest upload success. PDF evidence upload skipped by unchanged condition.
+
+### 운영 변경
+- 기존 `0 */3 * * *` → `17 */3 * * *`. 3시간 cadence와 API 호출량은 그대로이며 UTC 정각 부하를 회피하도록 minute offset만 변경.
+- main.py output tee, 원래 exit code 보존, Actions Step Summary에 조사 결과 분류/모델 폴백 사유/source count/archive/Discord 상태 기록.
+- main.py, secrets, Gemini/Discord 호출 횟수, checkpoint/guard/pruning 로직은 변경하지 않음.
+- Production Run #2523 실제 결과: 공식 source 10개, Gemini 3.8 Flash는 EUR-Lex 링크 누락으로 품질 거절, 3.5 Flash Lite 대체 모델, 신규 주제 없음, archive/Discord 변경 없음; guard/pruning success.
+
+### 남은 검증
+- 최근 26회 schedule run은 job success이나 예정 슬롯 대비 평균 59분(중앙값 58분, 범위 49~71분) 지연. :17 offset은 위험 완화이지 정시 보장이 아님.
+- 첫 post-merge scheduled run 예상 슬롯 2026-11-20 15:17 UTC / 2026-11-21 00:17 KST. 실제 실행에서 Actions Summary가 quality-based fallback 및 NO_NEW_TOPIC을 올바르게 분류하는지 확인해야 함.
+- 5분 production Gemini run은 설정하지 않음. 필요 시 read-only heartbeat 별도 설계.
