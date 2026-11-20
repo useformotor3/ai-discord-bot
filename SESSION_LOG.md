@@ -2092,3 +2092,12 @@
 - iX7NH Ver1.7 첨부 다운로드는 제조사 페이지에서 '잘못된 접근'을 반환. 최신 본문, 업데이트 영상, API 코드 원본은 미검토 상태.
 - 출처: https://sol.ls-electric.com/uploads/document/16389370233610/iX7NH%20Series_KR_202104.pdf ; https://lsmecapion.com/bbs/board.php?bo_table=software&page=2&sca=Servo ; https://lsmecapion.com/bbs/board.php?bo_table=guidebook ; https://lsmecapion.com/bbs/board.php?bo_table=certificate&sca=CE ; https://lsmecapion.com/bbs/board.php?bo_table=certificate&sca=UL
 
+
+
+## 2026-11-20 — PR #166 병합 및 사후 검증
+- PR #166 exact head `fa7120c73cbe6fe244319a8d1b1e7bc699b47259`; Actions Run #1136 / ID `44692817817` success, **174 passed / 0 failed**.
+- CRA traceability: claims 13, interfaces 15, requirements 35, SEC 36, EVD crosswalk 16, product evidence 15, bidirectional links true, M/606 41, project log 259.
+- Provenance artifact #14609257372, SHA-256 `e23c851495214060b6749de728888f6b7ea662fa1bf0ced9b42eb1179427d851`.
+- Merge SHA `761b3ccffc142f11cbfe0d0dfb0e905b5d368ecb`; pre/post safety refs 생성 및 post == main 확인.
+- 보고서 v0.17 §38, 제조사 인벤토리 26행, JSONL 259건 반영.
+
