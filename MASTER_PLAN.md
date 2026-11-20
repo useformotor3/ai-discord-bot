@@ -1,3 +1,10 @@
+## CENELEC 중앙 레코드 추가 확인 — 2026-11-20
+
+- CENELEC project 81649는 direct readback 성공: parent prEN 50770-1, Committee stage, Citation expected, DOR/DAV 미기재. DKE Oct-2026의 -1-1/-1-2 split과 중앙 parent record가 불일치하므로 하위 ID/record synchronization 확인 필요.
+- CENELEC 81650–81654는 direct readback 실패. -2/-3의 DKE Drafting prEN vs BSI PWI 충돌을 유지하고, -4/-5/-6은 prior central snapshot을 현재 직접 확인 상태로 오인하지 않는다.
+
+---
+
 ## 최신 CRA 표준화 조사 기준점 — ETSI 8개 및 CLC/TC 65X OT 재조사 (2026-11-20)
 
 - ETSI M/606 미검토 8개 work item 상세 레코드 조사 완료. 18개 전체 consolidated matrix는 기존 10개와 결합하고 OJ/status 날짜를 재검증해야 한다.
