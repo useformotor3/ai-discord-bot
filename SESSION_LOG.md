@@ -1878,3 +1878,10 @@
 - 공식 iX7NH Modbus TCP API 가이드 및 L7P Modbus RS-422 API 가이드 확인. iX7NH EtherCAT+Modbus TCP 동시지원/옵션은 미확정; L7P RS-422의 prEN 50770-3 범위 포함 여부도 Unknown.
 - iX700MD1-B-150B CE DoC 등록정보와 모델코드 구조를 확인; CE DoC 본문은 미검토.
 - 보고서 §33, 14행 model-interface matrix, manufacturer source inventory, M/606 item 25 및 25b 매트릭스 갱신. 원본 PDF/XML/MSI/API ZIP bytes 및 SHA-256 미확보, content review metadata-only.
+
+## 2026-11-20 — PR #138 병합 및 사후 검증
+- PR #138 exact head 0ca7cfb745884ba8c7a1f3f383974286d0e88fd8; Run #1080 / ID 44662266977 success, 174 passed / 0 failed.
+- Compile, traceability, full pytest, official CRA PDF/HTML canaries, provenance manifest upload 성공.
+- PDF artifact #14595309514 (3,070,503 bytes; SHA-256 bf73016cdd73cba8daab1c7108e5c469f4ac5bcfdd4648d43e9cc56d705f4f1e); provenance artifact #14595489037 (2,567 bytes; SHA-256 8175503c2935119183cd810fd287028b288d36e837af79608de56c64883b27c9).
+- Pre-merge safety safety/pre-pr138-merge-2026-11-20; squash merge SHA 372860cfb1a149bc5d5a7bf993e11dbf68217478; post-merge safety safety/post-merge-pr138-2026-11-20 생성 및 main과 identical 확인.
+- Main push CI는 독립 확인되지 않아 미확인으로 유지.
