@@ -1,3 +1,16 @@
+## 최신 재개 상태 — iX7NH Ver1.7·Modbus TCP API 공식 자료실 재감사 (2026-11-20)
+
+- 기준 main: `1d66302539d7d0cbb33780590251898ac76bb1ea`; 문서 전용 작업 브랜치 `research/ix7nh-v17-api-source-audit-2026-11-20`.
+- 통합 보고서 v0.19 §40 추가: LS메카피온 공식 Ver1.7 매뉴얼 게시물 및 Modbus TCP API 자료실 첨부 메타데이터 재검증.
+- Ver1.7 첨부: `iX7NH_KOR_Ver1.7_260605.pdf`, 19.5 MB, 게시물 작성일 2021-05-14 / 첨부 표시일 2026-06-05.
+- API 게시물 첨부: 테스트 가이드 PDF 1.3 MB, `iX7NH_TCP_API.zip` 69.8 MB, `x64.zip` 44.6 KB, `APIv1.02_20210505 1.pdf` 1.5 MB (첨부 표시일 2026-01-20).
+- 공식 HTML 게시물/파일명/크기/날짜 확인 완료. 첨부 다운로드는 이번 세션에서 TimeoutError; 원본 bytes·SHA-256·본문/API 코드 미확보. 따라서 report/inventory status는 metadata_only, bytes_acquired=false, sha256=not_computed.
+- Ver1.1 증거를 Ver1.7 현행 동작으로 전이하지 않음. 제품 CRA scope/classification/Annex III·IV/RDPS Unknown, security tests Not Run.
+- 다음 P0: 제조사 고객지원에 Ver1.7 및 API 원본의 대체 다운로드 URL 요청, 원본 취득 후 SHA-256/페이지·개정표 기록, Ver1.1 대비 페이지별 차이 분석.
+- 운영 코드/workflow/secrets/state/history/SIL 3 보존 산출물 미변경.
+
+---
+
 ## 최신 재개 상태 — PR #170 연구 병합 및 PR #171 상태 동기화 완료 (2026-11-20)
 
 - 연구 변경 main 병합: PR #170 squash SHA `cad75135996c129bc576d83ce5b7ed968ca6a63b`; iX7NH Ver1.1 원문 감사 보고서 v0.18 §39 및 제조사 인벤토리 26행 반영.
