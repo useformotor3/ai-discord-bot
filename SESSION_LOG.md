@@ -2355,3 +2355,11 @@
 - EN304627 routers/modems/switches의 industrial OT exclusion도 확인. OT exclusions 4개로 통합.
 - 18개 HEN metadata Yes / OJ field blank; actual OJ citation 미확인.
 - 신규 18-item master report/CSV, integrated report v0.8, Annex III/IV legal report, status/plan/README/session/project log/AI rulebook 갱신.
+
+
+## 2026-11-20 — ETSI 18개 matrix 저장 및 문서 인덱스 정합성
+
+- ETSI 18개 active work item master report/CSV 생성 및 README index 추가.
+- EN304635/636 Work Programme class label과 Regulation 2025/2392 legal class 간 mismatch를 status/plan/rulebook/integrated report에 기록.
+- README project title와 조사 산출물 진입점 readback 확인.
+- 후속: EN304635/636 normative draft 원문 취득, metadata-only 여부 확인, ETSI correction tracking.
