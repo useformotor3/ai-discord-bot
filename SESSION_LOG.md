@@ -2487,3 +2487,8 @@
 - Source blob identity, compileall, CRA cross-matrix traceability, official CRA PDF/HTML canaries, provenance manifest upload 성공.
 - PDF source artifact upload은 unchanged 조건으로 skipped. 실제 production workflow dispatch/Gemini/Discord 호출은 하지 않음.
 - CI는 테스트 브랜치에서 summary classifier를 검증한 결과이며 main 배포 또는 다음 production run에서의 실제 summary 검증은 아직 아님.
+
+
+### 스케줄 조정 후 재검증 상태
+- 운영 cadence는 3시간으로 유지하고 cron minute만 UTC :00 → :17로 변경. 호출 빈도·Gemini/Discord 요청 수는 늘리지 않음.
+- 최초 PR HEAD Run #1247: 182 passed / 0 failed. 이후 workflow cron 및 관리 문서가 변경되었으므로 최신 HEAD에 대한 CI 재실행을 기다림. 최초 CI를 최신 HEAD 검증으로 오인하지 않음.
