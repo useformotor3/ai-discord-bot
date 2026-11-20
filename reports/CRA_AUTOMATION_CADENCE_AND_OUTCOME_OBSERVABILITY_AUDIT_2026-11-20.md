@@ -86,3 +86,11 @@
 2. diff에서 cron, secrets, main.py, Discord/Gemini 실행 빈도, operational guard가 의도치 않게 변경되지 않았는지 확인.
 3. 병합 승인/기존 change-control에 따라 반영한 뒤, 다음 예약 실행에서 Summary가 실제 결과를 정확히 분류하는지 확인.
 4. 별도 5분 read-only heartbeat의 효용과 무료 실행량을 평가한 후 필요할 때만 별도 PR로 제안.
+
+
+### CI 검증 결과 — 2026-11-20
+- PR #189 exact HEAD `434819fde00e1f72b7ff158cc4893e0fc1d2e367`, Actions Run #1247 / ID `44741088582`: success.
+- 전체 pytest: **182 passed / 0 failed** (기존 174개 + 자동화 outcome 분류 테스트 8개).
+- source blob identity, compileall, CRA cross-matrix traceability, official CRA PDF canary, live official CRA HTML canary, provenance manifest upload: success.
+- PDF source artifact upload 단계는 unchanged/condition에 따라 skipped; workflow 실패가 아니다.
+- 실제 production run/Discord/Gemini 호출은 하지 않았다. CI 결과는 테스트 브랜치의 classifier 검증이며 production 배포 검증이 아니다.
