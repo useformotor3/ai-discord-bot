@@ -1,3 +1,15 @@
+## 최신 CRA 표준화 조사 기준점 — ETSI 8개 및 CLC/TC 65X OT 재조사 (2026-11-20)
+
+- ETSI M/606 미검토 8개 work item 상세 레코드 조사 완료. 18개 전체 consolidated matrix는 기존 10개와 결합하고 OJ/status 날짜를 재검증해야 한다.
+- EN 304 620 VPN, EN 304 621 NMS, EN 304 622 SIEM은 industrial OT domain exclusion이 명시됨. ETSI Harmonised Standard=Yes metadata만으로 OJ citation 또는 Article 27 presumption을 주장하지 않는다.
+- prEN 50770-1은 -1-1 firewall과 -1-2 IDS/IPS로 분할되어 7개 deliverable로 재추적. DKE Oct-2026 Drafting prEN과 BSI -2/-3 PWI/target dates unknown이 충돌하므로 central CENELEC project record 확인을 P0로 유지.
+- C(2026)7861 Article 2 acceptance/receipt evidence: CEN/CENELEC/ETSI 각각 수령일 및 non-acceptance/acceptance notice 원문 미확보. ETSI 2026-11-23 examination meeting 이후 즉시 재확인.
+- Annex I deadline groups: 1/15 = 2026-11-30; 2–14 = 2027-10-30; 16–41 = 2027-01-31. ESO deadline과 제조자 의무/표준 OJ citation은 분리.
+- 다음 P0: 11/23 ETSI meeting minutes/decision; CEN/CENELEC central record + BSI/DKE conflict resolution; ESO receipt evidence; OJ index 41-item crosswalk; Annex III/IV and Article 32 product core-functionality mapping.
+- 상세: reports/CRA_ETSI_M606_8_ITEM_AND_OT_50770_RECONCILIATION_2026-11-20.md 및 관련 CSV 2개.
+
+---
+
 ## 최신 기준점 — PR #180 AI 운영 기준 병합 (2026-11-20)
 
 - Main merge SHA `3ded54116b3ecfa77645c50ada45575fbe656aea`; exact-head Run #1162 success, 174 passed / 0 failed.
