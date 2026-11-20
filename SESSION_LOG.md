@@ -1781,3 +1781,5 @@
 - 2026-11-20: PR #126 merged; exact-head Actions Run #1052 success; main SHA 9b61f1d9b177454c3530fa5339883e6434d01df3. Post-merge main read-back and safety refs completed. Official CEN-CENELEC publication of EN 40000-1-1/-1-2 confirmed; CEN individual catalogue citation field remains unverified; secondary tracker indication remains provisional. M/606 41-item OJ audit still open.
 
 - 후속 1차 출처 검증: CEN 공식 카탈로그 개별 레코드 두 건에서 EN 40000-1-1(JT013095), EN 40000-1-2(JT013089) 모두 Published, DAV 2026-11-18, OJEU citation field “No citation expected for Directive 2024/2847” 직접 확인. 기존 잠정/미확인 표기는 종료하고 보고서 §28.4에 1차 근거 반영.
+
+- M/606 41개 항목 1차 출처 대조: C(2026) 7861 final replacement Annex I의 항목번호·주제·ESO 기한을 기존 매트릭스와 41/41 비교. 기한 분포 2/13/26건(2026-11-30 / 2027-10-30 / 2027-01-31). Annex I에 EN/ETSI 번호와 OJ reference는 없으므로 actual standard mapping/OJ status는 별도 미완료. Article 2의 ESO 1개월 비수락 조건도 후속 검증으로 등록.
