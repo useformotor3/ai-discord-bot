@@ -123,3 +123,10 @@
 - 대체 모델은 “중복/신규 주제 없음”으로 종료. 신규 archive commit/Discord 전송/상태 변경 없음; operational guard와 checkpoint pruning은 success.
 - 이는 API 503/429가 아닌 **품질 검증 기반 모델 폴백** 사례다. outcome classifier가 여러 모델 시도만으로도 fallback을 표시하고 원인을 `quality_rejected_missing_eur_lex_link`로 구분하도록 개선했다.
 - 해당 실제 로그를 재현하는 9번째 fixture test를 추가했다. 기존 Run #1271의 182 passed는 이 추가 테스트 전 결과이며, 최신 HEAD CI 재검증 대기.
+
+
+### 최신 HEAD CI 최종 결과 및 fixture 정정 이력
+- Run #1282: **181 passed / 2 failed**. 첫 실패는 503 fallback fixture에 두 번째 모델 시도 로그/실제 전환 문구가 빠진 것, 둘째는 quality-fallback fixture의 newline이 이중 escape되어 모델 시도 로그가 한 줄로 합쳐진 테스트 데이터 문제였다.
+- 두 fixture를 production log 형식에 맞게 정정했다. xfail/skip 없이 정상 assertion으로 유지.
+- 최신 PR HEAD `0238f456d3c3087a91e5b94b8b649d0cd39c3634`, Run #1285 / ID `44742487474`: success, **183 passed / 0 failed**.
+- source blob identity, compileall, CRA traceability, official CRA PDF/HTML canaries, provenance manifest upload: success. PDF evidence upload은 unchanged/condition으로 skipped.
