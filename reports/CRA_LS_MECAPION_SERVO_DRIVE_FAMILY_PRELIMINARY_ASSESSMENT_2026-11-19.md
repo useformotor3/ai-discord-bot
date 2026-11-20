@@ -1521,3 +1521,51 @@ Annex I는 각 항목의 표준화 주제와 기한을 제시하지만 최종 EN
 C(2026) 7861 final Article 2는 CEN/CENELEC/ETSI 중 하나라도 통지 후 1개월 이내 개정사항을 수락하지 않는다고 표시하면 결정이 적용을 중단한다고 규정한다. 공식 Commission 표준화 페이지는 개정 사실을 공지하지만, 수락/거부 통지 원본은 별도 확인 대상으로 남긴다.
 
 근거: Commission Implementing Decision C(2026) 7861 final (2026-11-10), Articles 1–3 및 replacement Annex I, pp.1–5; Commission CRA standardisation page (last updated 2026-11-12): https://digital-strategy.ec.europa.eu/en/policies/cra-standardisation ; 공식 등록부: https://ec.europa.eu/transparency/documents-register/detail?lang=en&ref=C(2026)7861 .
+
+
+## §30. M/606 수평표준의 공식 Work Item 연결 및 개정 결정 Article 2 검토 (2026-11-20)
+
+### 30.1 Annex I item ↔ ESO Work Item 매핑
+
+CEN/CENELEC 공식 문서 *CEN, CENELEC and ETSI Work Programme — M/604/M/606 Cyber Resilience Act*, Version 1, 2025-04-02는 다음과 같이 명시한다.
+
+| C(2026) 7861 대체 Annex I | CEN Work Item | Work Programme의 제목 |
+|---|---|---|
+| Item 1 | JT013089 | Principles for cyber resilience |
+| Items 2–14 | JT013091 | Generic Security Requirements |
+| Item 15 | JT013090 | Vulnerability Handling |
+
+이 표는 **Work Item 연결**을 확정하는 자료다. 표준의 최종 번호, 발행상태, OJ 인용까지 이 문서만으로 확정하는 것은 아니다. 해당 Work Programme은 2025-04-02 버전이므로 이후 단계 변경은 최신 자료로 별도 확인해야 한다.
+
+CEN-CENELEC의 2026-02-23 공식 CRA webinar는 JT013090을 prEN 40000-1-3 Vulnerability handling으로 연결한다. 다만 발표 슬라이드에는 JT013091의 표준번호가 중복 오기된 부분이 있으므로, JT013091의 실제 표준번호를 이 슬라이드만으로 확정하지 않는다. 2026-11-19 CEN-CENELEC 공식 발표는 FprEN 40000-1-3의 공개가 임박했다고 알리지만, 세부 카탈로그 단계나 OJ citation field는 제시하지 않는다.
+
+### 30.2 JT013090의 현 단계와 Article 27
+
+현재 확보한 1차 자료로 확정 가능한 것은 다음과 같다.
+- M/606 item 15 ↔ JT013090 ↔ Vulnerability Handling 연결.
+- CEN-CENELEC 공식 2026-02-23 발표자료에서 JT013090은 prEN 40000-1-3으로 표기.
+- CEN-CENELEC 2026-11-19 발표는 FprEN 40000-1-3이 곧 공개될 예정이라고 설명.
+
+아직 직접 확보하지 못한 사항:
+- JT013090의 최신 CEN 개별 카탈로그 레코드 및 stage code.
+- 2026-11-19 Formal Vote 개시 여부의 1차 확인.
+- JT013090의 공식 OJ citation 기대/비기대 필드.
+- CRA 제27조상 presumption을 부여할 OJEU 게시 reference.
+
+따라서 FprEN/투표 단계와 “citation expected”는 2차 추적자료의 lead로만 관리하고, 1차 확인 전에는 법적 효과를 확정하지 않는다. CRA 제27조 제1항은 OJEU에 reference가 게시된 조화표준 또는 그 일부에 대해서만 적합성 추정을 인정한다.
+
+### 30.3 C(2026) 7861 Article 2의 1개월 조건
+
+Article 2는 CEN, CENELEC 또는 ETSI가 **결정을 수령한 날부터 1개월 이내** Article 1의 개정사항을 수락하지 않는다고 표시하면 해당 결정의 적용이 중단되고 2025-02-03 버전의 C(2025)618이 계속 적용된다고 규정한다.
+
+따라서 2026-11-10 결정일을 곧바로 수령일 또는 기간 기산일로 간주해서는 안 된다. 현재 확인된 1차 자료에서 ESO별 수령일 및 비수락 통지 원본은 확보되지 않았다. Commission 결정 전문 Recital (2)는 ESO들이 2025년 원 표준화 요청을 수락했다는 사실을 설명할 뿐, 2026년 개정에 대한 Article 2상 비수락 통지 여부를 증명하지 않는다.
+
+현재 결론은 **“개정결정 존재 확인; Article 2 조건부 중단 가능성 존재; ESO별 수령일/비수락 통지 미확인”**이다. 1개월 기간이 이미 종료됐거나 비수락 통지가 없었다고 단정하지 않는다.
+
+### 30.4 1차 출처
+1. CEN-CENELEC, *CEN, CENELEC and ETSI Work Programme — M/604/M/606 Cyber Resilience Act*, Version 1, 2025-04-02: https://www.cencenelec.eu/media/CEN-CENELEC/News/Newsletters/2025/m_606_work_programme_final.pdf (item 1, 2–14, 15 work item mapping).
+2. CEN-CENELEC, *CRA Standards Unlocked: Cybersecurity Requirements for Smart Meter Gateways*, webinar slides, 2026-02-23, p.36: https://www.cencenelec.eu/media/CEN-CENELEC/Events/Webinars/2026/2026-02-23_cra-standards-unlocked-cybersecurity-requirements-for-smgw_final.pdf (JT013090 ↔ prEN 40000-1-3).
+3. CEN-CENELEC, “CRA Milestone Unlocked: First European standards supporting CRA are now available!”, 2026-11-19: https://www.cencenelec.eu/news-events/news/2026/en-in-the-spotlight/2026-11-19-cra-standards-en-40000-1-1-and-en-40000-1-2/ (FprEN 40000-1-3 publication forthcoming).
+4. Commission Implementing Decision C(2026) 7861 final, 2026-11-10, Articles 1–3, especially Article 2: https://www.ibf-solutions.com/fileadmin/dateidownloads/c-2026-7861-main-document-annex-cra-standards.pdf .
+5. Regulation (EU) 2024/2847, Article 27(1): https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R2847 .
+
