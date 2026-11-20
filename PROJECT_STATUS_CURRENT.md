@@ -779,3 +779,11 @@
 - CEN-CENELEC 공식 카탈로그 개별 레코드를 직접 열람했다. EN 40000-1-1:2026(JT013095) 및 EN 40000-1-2:2026(JT013089) 모두 Published, DOR 2026-11-02, DAV 2026-11-18이며 OJEU citation 필드는 **“No citation expected for Directive 2024/2847”**로 확인됐다.
 - 공식 레코드: https://standards.cencenelec.eu/ords/f?p=CEN:110::::::FSP_PROJECT,FSP_ORG_ID:82349,2307986 및 https://standards.cencenelec.eu/ords/f?p=CEN:110::::::FSP_PROJECT,FSP_ORG_ID:81335,2307986
 - 따라서 두 EN은 발행 사실과 별개로 CRA 제27조 적합성 추정의 근거로 취급하지 않는다. §28.2의 이전 “직접 확인 미완료” 상태는 이 검증으로 종료.
+
+
+## 2026-11-20 M/606 41개 항목 감사
+- C(2026) 7861 final replacement Annex I 기준 항목번호·주제·ESO 채택기한 41/41 대조 완료.
+- 기한: 1·15 = 2026-11-30 (2건); 2–14 = 2027-10-30 (13건); 16–41 = 2027-01-31 (26건). ESO 표준 채택기한이며 제조사 CRA 준수기한이 아님.
+- Annex I에 각 항목의 최종 EN/ETSI 번호 및 OJ 인용번호가 없으므로 실제 표준번호 매핑과 OJ 상태는 별도 작업. 41개 모두의 OJ 상태를 확인한 것은 아님.
+- C(2026) 7861 Article 2의 1개월 내 ESO 비수락 통지 조건이 있으므로 수락/거부 통지 원본을 추가 확인해야 함.
+- 감사대장: reports/CRA_M606_41_ITEM_PRIMARY_SOURCE_AUDIT_2026-11-20.csv 및 .md.
