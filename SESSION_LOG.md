@@ -2013,3 +2013,11 @@
 - 보고서 §34에 CRA 업데이트 진위성·인증·권한·anti-rollback·복구·지원기간 검증 질문을 추가했다.
 - 공식 소프트웨어/가이드북 목록: https://lsmecapion.com/bbs/board.php?bo_table=software&sca= / https://lsmecapion.com/bbs/board.php?bo_table=guidebook
 - 다운로드 링크 열람 일부 실패. 후속 작업은 첨부파일 원본 확보와 SHA-256/서명/본문 검토를 우선한다.
+
+
+## 2026-11-20 — PR #157 병합 및 사후 검증
+- PR #157 exact head `5210f9f11f1898f3dc83173df7a1a352d889c696`; Run #1118 / ID `44678289573` success, **174 passed / 0 failed**.
+- Source integrity, compileall, CRA traceability, full pytest, official CRA PDF/10-source HTML canaries, provenance manifest upload 성공. PDF source artifact upload은 unchanged로 skipped.
+- Provenance artifact #14602977168 (2,567 bytes; ZIP SHA-256 `aeb27bb37f157d6d3de8dcde48d4cfad56caae112ec4d5637a470eca325a4f17`).
+- Pre-merge safety `safety/pre-pr157-merge-2026-11-20`; squash merge SHA `0ea0fba1fb37504f9d11b5c12d562c0d68f1d190`; post-merge safety `safety/post-merge-pr157-2026-11-20` 생성 및 main과 identical 확인.
+- 제품별 CRA scope/classification/Annex III·IV/RDPS Unknown, security tests Not Run. Main push CI는 독립 확인되지 않아 미확인.
