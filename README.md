@@ -1,6 +1,6 @@
 # CRA Servo Drive Compliance & Engineering Project
 
-> **자동화 운영 점검 — 2026-11-20:** [실제 운영은 3시간 주기이며, 최근 실행의 no-op/모델 장애와 결과 가시성 개선을 기록](reports/CRA_AUTOMATION_CADENCE_AND_OUTCOME_OBSERVABILITY_AUDIT_2026-11-20.md). 5분 주기 Gemini 실행은 설정하지 않음.
+> **자동화 운영 점검 — 2026-11-20:** [실제 운영은 3시간 주기이며, 최근 실행의 no-op/모델 장애와 결과 가시성 개선을 기록](reports/CRA_AUTOMATION_CADENCE_AND_OUTCOME_OBSERVABILITY_AUDIT_2026-11-20.md). 5분 주기 Gemini 실행은 설정하지 않음. PR #189 exact-head CI: 182 passed / 0 failed; main 미병합.
 
 > **최근 병합 — 2026-11-20:** PR #184 merged to main as `9dbe6e92c358d0361f9640651152e4d1e8b1ec6b`. Exact-head CI Run #1238 succeeded (174 passed / 0 failed). M/606 18-item matrix, latest EN304635/636 Class II draft checks, CENELEC 50770 WIID crosswalk and AI session self-review protocol are in main. See PROJECT_STATUS_CURRENT.md and PR #184.
 
