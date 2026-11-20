@@ -35,7 +35,7 @@ ETSI Work Item scope text는 EN 304 635와 EN 304 636을 Annex III Class I이라
 - EN 304 635: DEN/CYBER-EUS-0016, WKI 74858. ETSI page says Class I; legal class is Class II.
 - EN 304 636: DEN/CYBER-EUS-0020, WKI 74859. ETSI page says Class I; legal class is Class II. M/606 item 36 includes industrial-use systems.
 - 법령이 우선하며 해당 제품의 core functionality가 이 범주에 해당하면 Article 32(3) Class II route를 적용한다.
-- Normative draft bytes는 확보하지 못했다. 따라서 오류는 ETSI Work Programme metadata/scope text에서 확인된 것으로 한정하고 실제 draft 본문 오류라고 단정하지 않는다.
+- 공개된 이전 interim draft를 확인했다. EN 304 635 V0.0.8에는 Annex III/Class I/Class II label이 추출되지 않았고, EN 304 636 V0.0.9는 Introduction/Scope에서 Annex III Class II point 2를 명시한다. 최신 Work Item version인 1.0.1/1.0.0 draft bytes는 아직 미취득이므로 최신 draft 상태는 별도 미확인이다.
 
 ## 산업용 OT 경계
 
@@ -53,7 +53,7 @@ ETSI Work Item scope text는 EN 304 635와 EN 304 636을 Annex III Class I이라
 
 ## 한계
 
-다음 milestone은 ETSI Work Programme forecast이며 ESO 법정 adoption deadline과 다르다. OJ field blank는 해당 record에서 조회 당시 reference가 표시되지 않았다는 의미다. EN 304 635/636의 normative draft 본문은 미취득 상태다.
+다음 milestone은 ETSI Work Programme forecast이며 ESO 법정 adoption deadline과 다르다. OJ field blank는 해당 record에서 조회 당시 reference가 표시되지 않았다는 의미다. EN 304 635/636은 이전 공개 draft를 확인했으나 최신 v1.0.1/v1.0.0 draft는 미취득 상태다.
 
 
 ## 추가 초안 대조 — EN 304 635/636 공개 interim draft
