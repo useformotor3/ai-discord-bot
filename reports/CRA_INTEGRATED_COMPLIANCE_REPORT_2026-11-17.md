@@ -697,3 +697,21 @@ ETSI 개별 Work Item scope text는 EN 304 635 hypervisors/container runtime과 
 ETSI DocBox의 최신 EN 304 636 V1.0.0 (2026-07-09) PDF page 9 Introduction은 firewalls/IDS/IPS가 CRA Annex III Class II point 2에 해당한다고 명시한다. 따라서 최신 공개 normative draft는 법령과 일치하며, ETSI Work Item 상세 페이지의 Class I 표기가 stale/incorrect metadata다.
 
 EN 304 635 V1.0.1 (2026-06) public preview document p.15 Scope explicitly identifies Annex III Class II point 1. The preview covers 15 pages of a 386-page document; full original PDF remains unacquired.
+
+
+## 38. CENELEC 공식 WG3 발표로 prEN 50770 Work Item 매핑 교차확인 — 2026-11-20
+
+CENELEC 공식 CLC/TC65X WG3 발표자료(2026-05-07, rapporteur 발표)는 M/606 OT topics와 CENELEC WIID/deliverable 매핑을 명시한다. 기존 matrix를 다음과 같이 1차 출처로 교차확인했다.
+
+| M/606 topic | WIID | prEN | 범위 |
+|---|---:|---|---|
+| 36b | 81649 | prEN 50770-1 | Firewalls, IDS/IPS (DKE Oct-2026은 -1-1/-1-2로 분리 표기) |
+| 21b | 81650 | prEN 50770-2 | Network management systems |
+| 25b | 81651 | prEN 50770-3 | Physical/virtual network interfaces |
+| 20b | 81652 | prEN 50770-4 | VPN-function products |
+| 27b | 81653 | prEN 50770-5 | Routers, internet modems and switches |
+| 22b | 81654 | prEN 50770-6 | SIEM systems |
+
+공식 CENELEC WG3 자료: https://www.cencenelec.eu/media/CEN-CENELEC/Events/Webinars/2026/2026-05-07_cra_unlocked_clc-tc65x-wg3-acs-technical-requirements.pdf (PDF page 5 / slide listing). DKE October 2026 status PDF independently shows all seven deliverables at Start NWI and Drafting prEN; the 81649 project is split nationally into -1-1 and -1-2. DKE national status is corroboration, not central CENELEC status.
+
+This confirms mapping only. Central direct readback of individual 81650–81654 records, current stage/DOR/DAV, and 81649 parent-child record synchronization remain open. DKE source: https://www.dke.de/resource/blob/2435170/ee96d0e14ab1fe1af45708de66510607/normungsprojekte-zum-cra-data.pdf. No actual OJ citation or Article 27 presumption is established.
