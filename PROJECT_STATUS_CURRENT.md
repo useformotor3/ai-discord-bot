@@ -4,7 +4,7 @@
 - Actions job success와 CRA 신규 조사·원격 아카이브·Discord 전송은 별도 결과로 구분해야 한다.
 - 개선 브랜치: `fix/automation-outcome-visibility-2026-11-20`; 시작 main SHA: `2f8aac8d2d61e217e06be21d36afe857e8bdf2d0`.
 - 추가: `scripts/automation_outcome_summary.py`, `tests/test_automation_outcome_summary.py`, `reports/CRA_AUTOMATION_CADENCE_AND_OUTCOME_OBSERVABILITY_AUDIT_2026-11-20.md`.
-- 운영 workflow는 main.py 로그를 임시 파일로 tee하고 실제 outcome summary를 GitHub Actions Summary에 게시하도록 개선 중. 3시간 cadence는 유지하며 cron을 UTC 정각(:00)에서 :17로 이동해 정각 부하를 피한다. Gemini/Discord 호출 빈도, secrets, main.py, checkpoint/guard는 변경하지 않았다. Run #2523은 기존 12:00 UTC 슬롯보다 약 63분 늦게 시작했다.
+- 운영 workflow는 main.py 로그를 임시 파일로 tee하고 실제 outcome summary를 GitHub Actions Summary에 게시하도록 개선 중. 3시간 cadence는 유지하며 cron을 UTC 정각(:00)에서 :17로 이동해 정각 부하를 피한다. Gemini/Discord 호출 빈도, secrets, main.py, checkpoint/guard는 변경하지 않았다. 최근 26회 run은 평균 59분(중앙값 58분, 범위 49~71분) 지연됐으며, Run #2523은 12:00 UTC 슬롯보다 약 63분 늦게 생성됐다.
 - 초기 PR #189 HEAD `434819fde00e1f72b7ff158cc4893e0fc1d2e367`의 Run #1247에서 182 passed / 0 failed 및 공식 source canary 성공. 이후 UTC cron :17 offset 변경과 문서 갱신으로 HEAD가 바뀌어 최신 HEAD CI 재검증 대기; main 미병합.
 - 5분마다 production Gemini 실행은 비용·quota·중복·queue 위험 때문에 채택하지 않는다. 필요하면 별도 read-only heartbeat로 분리 검토한다.
 - ChatGPT 예약 작업 확인: 주간 CRA·MCU 공식자료 점검 enabled; 일일 Git 브랜치 통합 상태 점검 및 CRA 보고서 대기열 점검 disabled. 5분 자동화는 확인되지 않았다.
