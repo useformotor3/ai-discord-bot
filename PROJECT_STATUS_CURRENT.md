@@ -1,3 +1,20 @@
+## 최신 main 기준점 — PR #158 병합 및 CI 검증 (2026-11-20)
+
+- PR #158 squash merge SHA: `422e20d59f22bb66fade70e2b7df144e5b032384`; exact-head Run #1120 / ID `44678458799` success.
+- 소스 무결성, compileall, CRA traceability, 전체 pytest, 공식 CRA PDF/HTML canary, provenance manifest 업로드 성공. PDF 업로드는 unchanged로 skipped.
+- 사전 복구 ref `safety/pre-pr158-merge-2026-11-20`, 사후 복구 ref `safety/post-merge-pr158-2026-11-20`; 사후 ref와 main identical.
+- 보고서 v0.13 및 PR #157 사후 상태동기화 반영. 다음 분석은 ESI·DriveCM·제품 SKU 적용범위 교차검증.
+
+## 2026-11-20 추가 조사 — ESI·DriveCM·신형 모델 교차검증
+- ESI Ver0.98 (2025-07-15) 상세 게시물의 적용 모델 11개 확인: L7NH, Pegasus, PHOX, L7NHF, L7N, GEM, SMT, L7MMT, iX7NH, iX7M, iX7MD.
+- DriveCM Ver1.03.2 (2026-07-07) 지원제품 목록에 PEGA2 포함. Ver1.03.0 변경내역에 PEGA2 EtherCAT 및 RS-485 신규 모델 2종 명시; L7S/L7N 단종 제품은 LIVE i.C.E 사용 안내.
+- PEGA2 매뉴얼 Ver1.3 첨부명/크기/날짜 확인. iX700M Ver1.4 매뉴얼 목록 항목과 제품 카탈로그상 EtherCAT 확인.
+- ESI 0.98 적용목록에 PEGA2/iX700M이 없는 반면 DriveCM에 PEGA2가 포함되는 적용범위 차이를 발견. 별도 ESI 유무·SKU/컨트롤러 패키지 확인 필요. 부재를 단정하지 않는다.
+- 첨부 원본 bytes·SHA-256은 미확보. 제품 CRA scope/classification/Annex III·IV/RDPS Unknown, security tests Not Run.
+- 다음 P0: PEGA2 EtherCAT 및 iX700M ESI 정확한 파일/버전/Vendor ID/Product Code/Revision 확보, DFU 업데이트 보안 메커니즘, L7N/L7S 지원 종료·취약점 처리 정책 확인.
+
+---
+
 ## 최신 main 기준점 — PR #157 병합 및 사후 검증 (2026-11-20)
 
 - main merge SHA: `0ea0fba1fb37504f9d11b5c12d562c0d68f1d190`; PR #157 exact head `5210f9f11f1898f3dc83173df7a1a352d889c696`.
