@@ -1,6 +1,6 @@
 # CRA 서보 드라이브 통합 규제·기술 준수 보고서
 
-- 문서 버전: v0.3 (CRA 핵심 규제·이행 최신정보 갱신 / 제품별 적용성 확인 전)
+- 문서 버전: v0.4 (CRA 핵심 규제·이행 및 CEN/ETSI 표준화 최신정보 갱신 / 제품별 적용성 확인 전)
 - 기준일: 2026-11-20
 - 프로젝트 범위: EU Cyber Resilience Act(CRA) 대응만
 - 기준 제품군: 산업용 서보 드라이브 및 필수 펌웨어·설정/진단 소프트웨어
@@ -485,3 +485,57 @@ ENISA의 2026-10-15 SRP FAQ, 2026-10-21 Glossary v1.6 및 2026-11-04 AR User Man
 - ENISA HTML pages were parsed and reviewed; binary PDF/HTML downloads, raw bytes and SHA-256 for SRP FAQ/Glossary/User Manual were not acquired in this session. No account registration, notification submission, or live platform workflow test was performed.
 
 **판정:** 신고의 법적 기한과 SRP 운영 현실을 분리해 관리한다. 플랫폼의 현재 UI·기능·언어·카운터는 변경될 수 있으므로 실제 신고 시점에 ENISA 최신 문서를 재확인한다.
+
+## 26. 2026-11-20 CEN/ETSI 표준화 최신상태 정정 — 발행과 OJ 인용의 엄격한 분리
+
+### 26.1 CEN/CENELEC 수평표준 2종은 실제 Published로 갱신
+
+CEN-CENELEC가 2026-11-19 공식 발표를 게시했고, 개별 CEN 카탈로그 레코드를 직접 다시 열람했다.
+
+| 표준 | Work Item | 공식 상태 | DOR | DAV | DOA | DOP/DOW | CRA OJ citation 필드 |
+|---|---|---|---|---|---|---|---|
+| EN 40000-1-1:2026 Vocabulary | JT013095 | Published | 2026-11-02 | 2026-11-18 | 2027-02-28 | 2027-05-31 | No citation expected for Directive 2024/2847 |
+| EN 40000-1-2:2026 Principles, product risk management and lifecycle activities | JT013089 | Published | 2026-11-02 | 2026-11-18 | 2027-02-28 | 2027-05-31 | No citation expected for Directive 2024/2847 |
+
+- EN 40000-1-1은 EN 40000 시리즈의 용어·정의·약어를 제공한다.
+- EN 40000-1-2는 PDE의 사이버보안 위험관리와 제품 수명주기(설계~지원 종료·폐기) 활동에 대한 일반 프레임워크다.
+- 두 표준은 M/606에 따라 CEN/CENELEC에서 발행되었으나, 개별 공식 카탈로그의 OJ 필드는 CRA Directive 2024/2847에 대해 **“No citation expected”**다. 따라서 Article 27 추정 적합성의 근거로 제시하지 않는다.
+- DOR/DAV/DOA/DOP/DOW는 서로 다른 날짜 개념이다. DAV 2026-11-18은 승인된 공식 언어판의 배포 가능일이고, DOP/DOW 2027-05-31은 국가표준 구현/충돌 표준 철회 최종기한이다. 이를 CRA 제조자 준수기한으로 오인하지 않는다.
+
+공식 근거:
+- CEN-CENELEC announcement (2026-11-19): https://www.cencenelec.eu/news-events/news/2026/en-in-the-spotlight/2026-11-19-cra-standards-en-40000-1-1-and-en-40000-1-2/
+- EN 40000-1-1 CEN record: https://standards.cencenelec.eu/ords/f?p=CEN:110::::::FSP_PROJECT,FSP_ORG_ID:82349,2307986
+- EN 40000-1-2 CEN record: https://standards.cencenelec.eu/ords/f?p=CEN:110::::::FSP_PROJECT,FSP_ORG_ID:81335,2307986
+
+### 26.2 ETSI M/606 활성 작업 및 서보 드라이브 관련 범위
+
+ETSI Work Programme Version 2.3.3의 M/606 조회 결과는 활성 작업 18개를 표시한다. 이는 3개 ESO가 수행하는 M/606 Annex I 전체 41개 항목과 동일하지 않으며, ETSI 작업만의 일부다. 목록 화면은 18개 중 10개만 표시하므로, 18개 전부를 개별 검토 완료했다고 주장하지 않는다.
+
+| ETSI EN / Work Item | 제품 유형 및 현재 확인 상태 | 산업용 OT/서보드라이브 경계 | 증거 상태 |
+|---|---|---|---|
+| EN 304 636 / DEN/CYBER-EUS-0020 | Firewalls, IDS/IPS; Comments categorisation assessed (2026-10-06); next milestone target 2026-12-22 | 제품 자체의 핵심 기능이 방화벽/IDS/IPS인 경우. 서보드라이브의 단순 패킷 필터·포트 보호만으로 분류하지 않음. 조회된 scope에는 OT exclusion 문구가 보이지 않음 | ETSI individual record metadata/scope read |
+| EN 304 625 / DEN/CYBER-EUS-0017 | Physical/virtual network interfaces; Comments categorisation assessed (2026-11-05); 1.0.0; 2026-11-19 remark: EC second assessment received in batches dated 2026-09-28 and 2026-11-16 | CRA Annex III Class I의 network interfaces scope. Ethernet/EtherCAT/Modbus 포트 존재만으로 완제품 드라이브가 이 제품 유형이 되는 것은 아님. 최종 scope와 marketed product core functionality 확인 필요 | ETSI record read 2026-11-20; OJ field blank |
+| EN 304 627 / DEN/CYBER-EUS-0013 | Routers, internet-connected modems, switches; Comments categorisation assessed (2026-10-01) | scope에 industrial OT domain 제외 명시. 단순 Ethernet switch/port 또는 EtherCAT 통신을 라우터/모뎀/스위치 제품 기능으로 확대하지 않음 | ETSI record scope reviewed; OJ field blank |
+| EN 304 621 / DEN/CYBER-EUS-009 | Network Management Systems; Comments categorisation assessed (2026-11-06) | scope에 industrial OT domain 제외 명시. DriveCM 파라미터/commissioning 도구를 NMS로 자동 분류하지 않음 | ETSI record scope reviewed; OJ field blank |
+| EN 304 620 / DEN/CYBER-EUS-005 | VPN products; 7 VR – EC assessment before EV received (2026-09-28) | scope에 industrial OT domain 제외 명시. 원격 유지보수 VPN을 제공하는 별도 제품/솔루션과 드라이브 자체를 구분 | ETSI record scope reviewed; current status snapshot 2026-09-12 |
+| EN 304 622 / DEN/CYBER-EUS-0010 | SIEM systems; Comments categorisation assessed (2026-11-06) | scope에 industrial OT domain 제외 명시. 서보 알람/이력만으로 SIEM 제품이 되지 않음 | ETSI record read 2026-11-20; OJ field blank |
+
+ETSI 개별 레코드의 Harmonised Standard: Yes 메타데이터는 향후 조화표준 후보/의도에 대한 Work Programme 필드다. 해당 필드만으로 OJ 실제 게재를 증명하지 않는다. 조회한 관련 work item의 Official Journal 필드는 비어 있거나 실제 참조번호가 확인되지 않았다. 따라서 Article 27 presumption은 이 자료만으로 주장하지 않는다.
+
+특히 EN 304 620(VPN), EN 304 621(NMS), EN 304 622(SIEM), EN 304 627(router/modem/switch)은 각 ETSI scope description에 industrial OT domain 제외 문구가 확인된다. 이 점은 산업용 OT용 CENELEC prEN 50770 work items와 구분해야 한다. CENELEC prEN 50770-1~6의 별도 진행상태는 2026-11-18 감사 기준으로 유지하며, 이번 확인에서 모든 CENELEC 레코드를 다시 읽은 것은 아니다.
+
+### 26.3 기존 상태표에 대한 정정
+
+- `CRA_CEN_CENELEC_EN40000_OT50770_STATUS_2026-11-18.md`의 2026-11-18 시점 EN 40000-1-2 개별 CEN 레코드 미확인 문장은 이번 직접 readback으로 해소됐다. 현재 둘 다 Published이며 OJ citation 필드는 No citation expected다.
+- `CRA_ETSI_M606_LIVE_STATUS_2026-11-18.md`에서 EN 304 625의 2026-09-28 “7 VR – EC assessment before EV received” 상태를 현재 상태처럼 읽으면 안 된다. 2026-11-20 조회한 ETSI 상세 레코드는 Comments categorisation assessed (2026-11-05), 그리고 2026-11-19 EC second-assessment remark를 표시한다.
+- 2026-11-10 C(2026) 7861 Annex I 41개 항목/ESO 기한 감사는 그대로 유지한다. ETSI 18개 active work item의 진행상태와 M/606 41개 전체 표준의 매핑·발행·OJ 상태는 별도 계층이다.
+
+### 26.4 후속 조사
+
+1. ETSI 활성 work item 18개 중 미검토 8개를 모두 개별 레코드로 읽고 제품유형·scope·OT exclusion·stage·planned milestone·OJ field를 추출한다.
+2. CEN/CENELEC prEN 50770-1~6의 개별 카탈로그를 다시 읽고 2026-11-20 현재 stage/forecast/OT scope를 확인한다.
+3. EN 40000-1-1/-1-2는 발행 텍스트의 구매/접근 가능성 및 표준 본문 검토 가능 범위를 확인하되, 현재 확인된 No citation expected 상태를 유지한다.
+4. OJ harmonised standards index 및 EUR-Lex를 재조회하여 Article 27 인용이 실제 추가되었는지 확인한다.
+5. 표준 본문을 유료로 구매/열람하지 못한 경우 제목·카탈로그·요약만으로 조항별 요구사항을 추정하지 않는다.
+
+**현재 판정:** CEN EN 40000-1-1/-1-2 Published but no CRA OJ citation expected; ETSI related standards remain work programme items with no OJ citation established in this audit; industrial OT CENELEC work items tracked separately; servo-drive product classification remains Unknown.
