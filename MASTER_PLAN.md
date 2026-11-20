@@ -1167,3 +1167,10 @@
 - Next P0: obtain official LS Mecapion manuals, DriveCM release notes/installer and ESI XML original bytes, hash and inspect. Current official download route remains blocked in the available runtime.
 - Next P1: model-specific product boundary, EU supply chain, exact SKU/HW/FW revision, firmware update security controls, SBOM and product-level CRA applicability.
 - Exact-main push CI remains unconfirmed; do not claim success.
+
+
+## 2026-11-20 진행상태 갱신
+- 완료: PR #126 문서 동기화 병합 및 정확한 head CI Run #1052 성공. main SHA `9b61f1d9b177454c3530fa5339883e6434d01df3`.
+- 완료: EN 40000-1-1/-1-2 발행 공식 공지 확인, OJ 게시와 Article 27 presumption의 구분을 보고서에 명시.
+- P1 계속: CEN 개별 카탈로그 citation 필드 직접 확인 및 OJ/EUR-Lex CRA 참조 대조. 2차 tracker의 "No citation expected" 주장은 잠정으로 유지.
+- P1 계속: M/606 Annex I 41개 항목 전수감사. 각 항목에서 개발단계와 OJ citation을 분리하고 근거·날짜·상태를 기록.
