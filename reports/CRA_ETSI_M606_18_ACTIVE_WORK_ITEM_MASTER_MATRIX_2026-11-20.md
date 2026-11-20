@@ -54,3 +54,16 @@ ETSI Work Item scope text는 EN 304 635와 EN 304 636을 Annex III Class I이라
 ## 한계
 
 다음 milestone은 ETSI Work Programme forecast이며 ESO 법정 adoption deadline과 다르다. OJ field blank는 해당 record에서 조회 당시 reference가 표시되지 않았다는 의미다. EN 304 635/636의 normative draft 본문은 미취득 상태다.
+
+
+## 추가 초안 대조 — EN 304 635/636 공개 interim draft
+
+ETSI DocBox에서 최신 Work Item version보다 이전의 공개 interim draft를 확보해 class-label mismatch를 더 세분화했다.
+
+- EN 304 636 V0.0.9 (2025-12-15): Introduction 및 Scope에서 CRA Annex III Class II point 2를 명시한다. 이는 Regulation 2025/2392 Annex III Class II category 2와 일치한다. 따라서 현재 Work Item page의 Class I scope label은 stale metadata일 가능성이 높다.
+- EN 304 635 V0.0.8 (2025-11-10): 추출된 본문에서 “Class I”, “Class II”, “Annex III” 표기를 찾지 못했다. 이 문서는 법적 class를 잘못 명시한 것으로 확인되지 않았다.
+- EN 304 635 current Work Item version 1.0.1 및 EN 304 636 current version 1.0.0의 actual draft bytes는 아직 취득하지 못했다. 최신 draft까지 동일하다고 확대 주장하지 않는다.
+
+Sources:
+- EN 304 635 V0.0.8: https://docbox.etsi.org/CYBER/EUSR/Open/EN-304-635_V0.0.8_2025-11-10_Virtualisation_Containers.pdf
+- EN 304 636 V0.0.9: https://docbox.etsi.org/cyber/CYBER/Open/EN-304-636_V0.0.9_2025-12-15_Firewalls_Mature-draft.pdf
