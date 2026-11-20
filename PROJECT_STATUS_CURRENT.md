@@ -2,7 +2,7 @@
 
 - 활성 프로젝트는 CRA 전체 규제·표준화·제품 적용성·보안·신고 체계. LS메카피온 iX7NH는 사례연구일 뿐 핵심 CRA 조사 우선순위를 대체하지 않는다.
 - 기준 main SHA `07d6d3b1d8f91637da7b6a9a023b2f4ec64e7efd`; 작업 브랜치 `research/cra-core-implementation-refresh-2026-11-20`; pre-safety ref `safety/pre-cra-core-implementation-refresh-2026-11-20`.
-- 통합 보고서 v0.4 §25–§26 작업 브랜치 반영: ENISA SRP FAQ/Glossary/AR Manual 최신 운영 제약, CEN EN 40000-1-1/-1-2 Published but no CRA OJ citation, ETSI M/606 active 18 work items 및 관련 work item scope/status를 반영.
+- 통합 보고서 v0.5 §25–§28 작업 브랜치 반영: ENISA SRP FAQ/Glossary/AR Manual 최신 운영 제약, CEN EN 40000-1-1/-1-2 Published but no CRA OJ citation, ETSI M/606 active 18 work items 및 관련 work item scope/status를 반영.
 - 중요 정정: ETSI EN 304 625의 기존 2026-09-28 “7 VR” 상태는 outdated; 2026-11-20 상세 레코드는 Comments categorisation assessed (2026-11-05), 2026-11-19 EC second-assessment remark 확인.
 - 신규 문서: `CRA_SRP_OPERATIONAL_READINESS_2026-11-20.md`, `CRA_LIVE_SOURCE_FRESHNESS_REGISTER_2026-11-20.csv`; ETSI/CEN 상태 보고서에 Nov20 addendum.
 - 검증 한계: ENISA HTML parsed; raw hash 미확보. AR Manual metadata only. ETSI active 18 중 list 10 visible, selected records only. CEN prEN50770-1~6 Nov20 individual re-read not completed. OJ actual reference not found in these work-item records.
