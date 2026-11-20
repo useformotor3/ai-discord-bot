@@ -1,3 +1,18 @@
+## 최신 main 기준점 — PR #132 병합 및 OT/IACS 수직 프로파일 감사 (2026-11-20)
+
+- 최신 main merge SHA: f3a8fc06b2a0c5fdaa98d98ad8bc0f21abee22df (PR #132 squash merge).
+- PR #132 exact head: 15df2eae8b3a5eea809496e46a412f67f0f3576e; GitHub Actions Run #1068 / ID 44660527456 success; 174 passed / 0 failed.
+- Run #1068 단계: source blob integrity, compileall, CRA cross-matrix traceability, 전체 pytest, official CRA PDF read-only canary, 10-source official CRA HTML canary, JSON provenance manifest round-trip 및 artifact upload 모두 성공.
+- PDF artifact #14595995557: 3,070,503 bytes; ZIP SHA-256 2d3848ab2c7046b53154e3c304bee5dca5ad33bd23a00c4a5396b020922bb6ef; 만료 2026-11-27 02:24:36 UTC.
+- Provenance artifact #14595062566: 2,567 bytes; ZIP SHA-256 657f92dd556ac2dc56ccb68278452a2e9f9422eeaec366098117c1ef52d47bc9; 만료 2026-11-27 02:24:49 UTC.
+- 사전 복구 ref safety/pre-pr132-merge-2026-11-20; 병합 후 복구 ref safety/post-merge-pr132-2026-11-20. Post-merge ref와 merge SHA compare 결과 identical.
+- 반영 산출물: 통합 예비 보고서 §31 (v0.10), M/606 41-item 감사대장 행 20/21/22/25/27/36 보완, OT/IACS 6개 수직 프로파일 별도 6행 매트릭스, 상황판/계획/README/세션 로그/JSONL 동기화.
+- M/606 여섯 프로젝트는 CENELEC Work Programme Under Drafting / 개별 Committee stage, OJEU Citation expected. 실제 OJ 인용은 미확인, Article 27 presumption 없음.
+- 제품별 CRA scope/classification/Annex III·IV/RDPS = Unknown; security tests = Not Run. 제조사 매뉴얼/DriveCM/ESI 원본 bytes 및 SHA-256 미확보.
+- main push CI는 현재 연결된 조회에서 독립 확인되지 않음. PR exact-head CI 성공과 main push CI를 혼동하지 않는다.
+- 다음 우선순위: LS메카피온 모델별 원본 매뉴얼/데이터시트 bytes·SHA-256·페이지 검토, 정확한 SKU/HW/FW/EU 공급경로 확보, 인터페이스별 데이터 흐름 및 보안통제 확인, 41개 실제 EN/ETSI 매핑·OJ 전수감사, Article 2 ESO 통지 증거 확인.
+
+---
 # 최신 재개 기준점 — 2026-11-20 (OT/IACS 수직 프로파일 감사)
 
 - GitHub 저장소: useformotor3/ai-discord-bot (Public); 기준 main HEAD 36f170de199d2fc23e4e40969584e56c37dbebe7 (PR #131 사후 문서 동기화).

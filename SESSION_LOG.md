@@ -1834,3 +1834,11 @@
 - 작업 브랜치 변경사항은 아직 CI로 검증하지 않았다. PR 생성 전 diff/readback과 JSONL/CSV/추적성 검증을 수행하고 exact-head CI 결과를 별도 기록한다.
 - 모델별 제품 기능, CRA scope/classification/Annex III·IV/RDPS는 Unknown; security tests Not Run.
 - 운영 코드/workflow/secrets/state/history, legacy SIL 3 산출물은 변경하지 않았다.
+
+## 2026-11-20 — PR #132 병합 및 exact-head CI 검증
+- PR #132 exact head 15df2eae8b3a5eea809496e46a412f67f0f3576e; Run #1068 / ID 44660527456 success, 174 passed / 0 failed.
+- Source blob integrity, compileall, CRA cross-matrix traceability, full pytest, official CRA PDF canary, 10-source HTML canary, provenance manifest JSON round-trip/upload 모두 성공.
+- PDF artifact #14595995557 (3,070,503 bytes; ZIP SHA-256 2d3848ab2c7046b53154e3c304bee5dca5ad33bd23a00c4a5396b020922bb6ef), provenance artifact #14595062566 (2,567 bytes; ZIP SHA-256 657f92dd556ac2dc56ccb68278452a2e9f9422eeaec366098117c1ef52d47bc9). 둘 다 7일 보존.
+- Pre-merge safety ref safety/pre-pr132-merge-2026-11-20; squash merge SHA f3a8fc06b2a0c5fdaa98d98ad8bc0f21abee22df; post-merge safety ref safety/post-merge-pr132-2026-11-20 생성 및 main과 identical 확인.
+- main push CI는 연결된 도구 조회로 독립 확인하지 못했으므로 성공으로 기록하지 않는다.
+- 보고서 §31 및 6-row matrix, 41-item audit CSV, PROJECT_STATUS_CURRENT, MASTER_PLAN, README, SESSION_LOG, PROJECT_LOG 동기화 완료.

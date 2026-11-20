@@ -1,3 +1,12 @@
+## 2026-11-20 — PR #132 병합 및 exact-head CI 검증 완료
+
+- PR #132 squash merge SHA: f3a8fc06b2a0c5fdaa98d98ad8bc0f21abee22df; pre-merge safety: safety/pre-pr132-merge-2026-11-20; post-merge safety: safety/post-merge-pr132-2026-11-20 (main과 identical).
+- Exact PR head 15df2eae8b3a5eea809496e46a412f67f0f3576e; Actions Run #1068 success, 174 passed / 0 failed.
+- Source blob identity, compileall, CRA cross-matrix traceability, full pytest, official CRA PDF canary, 10-source HTML canary, manifest JSON round-trip 및 artifact upload 통과.
+- Artifact #14595995557 (PDF sources, 3,070,503 bytes, SHA-256 2d3848ab2c7046b53154e3c304bee5dca5ad33bd23a00c4a5396b020922bb6ef) 및 #14595062566 (provenance, 2,567 bytes, SHA-256 657f92dd556ac2dc56ccb68278452a2e9f9422eeaec366098117c1ef52d47bc9), 7일 보존.
+- PR #132에서 통합 보고서 §31, M/606 41-item 감사대장 6행, OT/IACS vertical-profile matrix 6행 및 관리 문서를 반영했다.
+- main push CI는 별도 조회에서 확인되지 않았으므로 exact-head CI와 구분해 미확인으로 유지한다.
+- 다음 P0: 모델별 제조사 원본 PDF/설치파일/ESI 확보와 SHA-256·페이지 검토, 제품 경계·통신 기능 증거 확보, 41개 실제 EN/ETSI/OJ 매핑 전수감사.
 ## 2026-11-20 — OT/IACS 수직 프로파일 6종 및 서보드라이브 경계 분석
 
 - 기준 main HEAD: 36f170de199d2fc23e4e40969584e56c37dbebe7; 작업 브랜치 cra/ot-iacs-vertical-profile-boundary-2026-11-20; pre-work safety ref safety/pre-ot-iacs-vertical-audit-2026-11-20.
