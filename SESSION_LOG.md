@@ -2345,3 +2345,13 @@
 - PR #182 merged the ETSI 8-item audit, OT 7-deliverable reconciliation, C(2026)7861 Article2/Annex I deadline condition, and Annex III/IV + Article32 legal product-boundary matrix.
 - Product-level Annex III/IV classification and Article32 route remain Unknown pending exact SKU/BOM/FW/marketed component evidence; security tests Not Run.
 - Pre/post safety refs: safety/pre-merge-pr182-cra-standardization-classification-2026-11-20; safety/post-merge-pr182-cra-standardization-classification-2026-11-20.
+
+
+## 2026-11-20 — ETSI M/606 18개 통합 및 Class I/II metadata mismatch
+
+- ETSI Work Programme v2.3.3 active 18개 개별 record를 통합 matrix로 구성: 17개 Annex I vertical topics 17–27/31–36 및 추가 telecom support item EN304642.
+- EN304635 hypervisors 및 EN304636 firewalls/IDS/IPS의 ETSI scope text가 Class I로 표시되지만 Regulation 2025/2392는 각각 Class II category1/2로 분류함을 발견. 법령이 우선하며 Article32(3) route 적용 대상임을 기록.
+- Normative draft bytes는 미취득이므로 오류 범위는 ETSI Work Programme metadata/scope text로 한정. 실제 draft 본문 오류라고 단정하지 않음.
+- EN304627 routers/modems/switches의 industrial OT exclusion도 확인. OT exclusions 4개로 통합.
+- 18개 HEN metadata Yes / OJ field blank; actual OJ citation 미확인.
+- 신규 18-item master report/CSV, integrated report v0.8, Annex III/IV legal report, status/plan/README/session/project log/AI rulebook 갱신.
