@@ -1,3 +1,16 @@
+# 최신 재개 기준점 — 2026-11-20 (OT/IACS 수직 프로파일 감사)
+
+- GitHub 저장소: useformotor3/ai-discord-bot (Public); 기준 main HEAD 36f170de199d2fc23e4e40969584e56c37dbebe7 (PR #131 사후 문서 동기화).
+- PR #130 merge SHA bfcc2e61fc07b2148fca7a162349af40aa84bc47; main push CI Run #1065 / ID 44658780153 success. Source integrity, compile, CRA traceability, full pytest, official CRA PDF/HTML canaries, provenance upload 모두 success.
+- 사전 복구 ref: safety/pre-ot-iacs-vertical-audit-2026-11-20; 작업 브랜치: cra/ot-iacs-vertical-profile-boundary-2026-11-20 (base 36f170de199d2fc23e4e40969584e56c37dbebe7).
+- 이번 1차 출처 확인: CLC/TC 65X 공식 Work Programme에서 M/606 20b/21b/22b/25b/27b/36b ↔ prEN 50770-4/-2/-6/-3/-5/-1 (project 81652/81650/81654/81651/81653/81649) 연결 및 각 개별 CENELEC 레코드 확인.
+- 여섯 프로젝트 모두 Work Programme Under Drafting, 개별 레코드 Committee stage; OJEU 필드는 Citation expected이나 실제 OJ 인용번호·발행일은 없음. Article 27 presumption 없음.
+- 서보드라이브 기능 경계: 25b 물리·가상 네트워크 인터페이스가 우선 기술 검토 후보. VPN/NMS/SIEM/router-modem-switch/firewall-IDS-IPS 기능은 현재 제조사 증거로 확인되지 않음. 기능 미확인은 미지원의 증명이 아니며, 모델별 매뉴얼 미확보 상태를 유지.
+- 제품별 CRA scope/classification/Annex III·IV/RDPS = Unknown; 보안시험 = Not Run. 원본 매뉴얼/DriveCM/ESI bytes와 SHA-256 미확보.
+- 산출물: 통합 예비 보고서 §31, 6행 OT/IACS vertical-profile matrix, 41-item 감사대장 행 20/21/22/25/27/36 보완. PR/CI 검증 전.
+- 다음: 문서 readback·JSONL/CSV/추적성 검증, exact-head CI, PR review/diff 및 복구 ref 유지. main 직접 수정 금지.
+
+---
 ## 최신 main 기준점 — PR #125 병합 및 M/606 감사 후속 (2026-11-20)
 
 - 현재 main merge SHA: `0a5f5140e323303d6a960ca73edd8ec8c05f55f2` (PR #125 squash merge 확인).
