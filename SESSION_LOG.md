@@ -2512,3 +2512,11 @@
 - 대체 모델은 신규 주제 없음으로 종료. archive/Discord/state 변경 없음. operational guard 및 checkpoint pruning 성공.
 - 기존 classifier는 503/429 로그가 없으면 quality rejection으로 인한 대체 모델 전환을 놓칠 수 있었음. 두 개 이상 모델 시도를 폴백으로 탐지하고 사유를 분류하도록 수정; 9번째 fixture test 추가.
 - Run #1271의 182 passed는 새 fixture 추가 전 결과. 최신 HEAD CI 재실행 대기.
+
+
+### PR #189 최신 CI 및 테스트 fixture 최종 정정
+- Run #1282: 181 passed / 2 failed. 원인은 fallback fixture의 실제 대체 모델 로그 누락과 quality-fallback fixture의 newline 이중 escape.
+- 실제 production log (#2523)의 두 모델 시도/품질 거절 문구를 재현하도록 테스트 fixture를 정정. xfail/skip 처리하지 않음.
+- 최신 HEAD `0238f456d3c3087a91e5b94b8b649d0cd39c3634`, Run #1285 / ID `44742487474`: success, **183 passed / 0 failed**.
+- Source blob identity, compileall, CRA traceability, official PDF/HTML canaries, provenance manifest upload 성공. PDF evidence upload은 unchanged/condition skipped.
+- PR #189 main 미병합. merge 후 다음 :17 scheduled production run에서 Step Summary 실제 분류 확인 필요.
