@@ -1,3 +1,17 @@
+## 최신 재개 상태 — PR #178 CRA 핵심 업데이트 병합 완료 (2026-11-20)
+
+- PR #178 squash merge 완료. merge SHA `8abf70a68add7f0e7a38283da3dd3d78c160829c`; exact head `21b11774933e9b3a6c67922eddbb6bbb907439d4`.
+- main read-back/compare: merge SHA와 identical. post-merge safety ref `safety/post-merge-pr178-2026-11-20`; pre-work safety ref `safety/pre-cra-core-implementation-refresh-2026-11-20`.
+- Exact-head Actions Run #1158 / ID `44709421086`: success. Full pytest **174 passed / 0 failed**, source integrity, compile, CRA traceability, official source canary and provenance manifest upload passed.
+- Traceability: claims 13, interfaces 15, requirements 35, SEC 36, EVD-SEC 16, product evidence 15, bidirectional links true, M/606 mapping 41, PROJECT_LOG 274 events (269 modern IDs + 5 legacy).
+- Provenance artifact #14616666445, 2,567 bytes, SHA-256 `77061f3b46331afb3ce9c1f8b60ce116754f4f4bb6c817ccdc8af1f4fa58ab54`. PDF evidence upload step skipped; original PDF acquisition must not be inferred.
+- CRA 통합 보고서 v0.5 §§25–28, SRP 운영 기준서, 21-source freshness register, ETSI/CEN status addenda 반영.
+- 핵심 다음 작업: ETSI M/606 미검토 8개 work item 상세 전수 확인, CEN/CENELEC prEN 50770-1~6 개별 최신상태 확인, C(2026)7861 Annex I 41개 기한/ESO 수락 통지 대조, CRA Annex III/IV 분류·Article 32 route 검토.
+- 제품별 CRA scope/classification/Annex III·IV/RDPS Unknown, security tests Not Run.
+- 현재 CRA 전체 프로젝트가 중심이며 LS메카피온 iX7NH는 하나의 사례연구다.
+
+---
+
 ## 최신 재개 상태 — CRA 핵심 규제·표준화 최신정보 갱신 (2026-11-20)
 
 - 활성 프로젝트는 CRA 전체 규제·표준화·제품 적용성·보안·신고 체계. LS메카피온 iX7NH는 사례연구일 뿐 핵심 CRA 조사 우선순위를 대체하지 않는다.
