@@ -787,3 +787,14 @@
 - Annex I에 각 항목의 최종 EN/ETSI 번호 및 OJ 인용번호가 없으므로 실제 표준번호 매핑과 OJ 상태는 별도 작업. 41개 모두의 OJ 상태를 확인한 것은 아님.
 - C(2026) 7861 Article 2의 1개월 내 ESO 비수락 통지 조건이 있으므로 수락/거부 통지 원본을 추가 확인해야 함.
 - 감사대장: reports/CRA_M606_41_ITEM_PRIMARY_SOURCE_AUDIT_2026-11-20.csv 및 .md.
+
+
+## 최신 main 기준점 — PR #128 병합 및 사후 검증 (2026-11-20)
+
+- PR #128 `docs(cra): audit all 41 M606 Annex I items against C(2026) 7861` 병합 완료. PR exact-head `25ad1721045d489d8d0ce2b8689511c7b5776e9d`; Run #1060 (`44656220445`) 성공.
+- main merge SHA: `6733f37201117cb5744215d9deb337b0810acc49`; main branch 재조회로 동일 SHA 확인.
+- 복구 기준점: `safety/pre-pr128-merge-2026-11-20` (기준 main `ec9823cd9d1831a3a1047743d43496db76524ce1`), `safety/post-merge-pr128-2026-11-20` (병합 SHA).
+- 41개 Annex I 항목의 주제·기한 감사대장 및 보고서/README/계획/로그 반영 완료. main의 `PROJECT_LOG.jsonl`은 218줄이며 전 줄 JSON 파싱 통과.
+- 병합 후 main push CI Run #1061 (`44657049974`) 성공. 전체 단계 완료.
+- 후속 우선순위: CEN JT013090/prEN 40000-1-3 1차 카탈로그 레코드 및 Article 2 ESO 비수락 통지 확인. 실제 개별 EN/ETSI 매핑·OJ 상태 41개 전수검증은 미완료.
+- 제품별 CRA scope/classification/Annex III·IV/RDPS Unknown, 보안시험 Not Run. 제조사 매뉴얼 원본 PDF bytes 및 SHA-256 미확보.

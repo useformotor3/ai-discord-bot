@@ -1783,3 +1783,11 @@
 - 후속 1차 출처 검증: CEN 공식 카탈로그 개별 레코드 두 건에서 EN 40000-1-1(JT013095), EN 40000-1-2(JT013089) 모두 Published, DAV 2026-11-18, OJEU citation field “No citation expected for Directive 2024/2847” 직접 확인. 기존 잠정/미확인 표기는 종료하고 보고서 §28.4에 1차 근거 반영.
 
 - M/606 41개 항목 1차 출처 대조: C(2026) 7861 final replacement Annex I의 항목번호·주제·ESO 기한을 기존 매트릭스와 41/41 비교. 기한 분포 2/13/26건(2026-11-30 / 2027-10-30 / 2027-01-31). Annex I에 EN/ETSI 번호와 OJ reference는 없으므로 actual standard mapping/OJ status는 별도 미완료. Article 2의 ESO 1개월 비수락 조건도 후속 검증으로 등록.
+
+
+## 2026-11-20 — PR #128 병합 및 사후 검증
+- PR #128 exact-head `25ad1721045d489d8d0ce2b8689511c7b5776e9d`, Actions Run #1060 success (전체 테스트·추적성·컴파일·공식 출처 canary/manifest 업로드).
+- 사전 복구 브랜치 `safety/pre-pr128-merge-2026-11-20`; squash merge SHA `6733f37201117cb5744215d9deb337b0810acc49`; 사후 복구 브랜치 `safety/post-merge-pr128-2026-11-20`.
+- main read-back 및 PR 병합상태 확인. 41개 Annex I 항목 감사대장 반영. `PROJECT_LOG.jsonl` 218줄 JSON parse 218 success / 0 invalid.
+- main push CI Run #1061 (`44657049974`) success. 전체 단계 완료.
+- 후속: JT013090 공식 카탈로그/OJ 필드, C(2026) 7861 Article 2 비수락 통지 확인.

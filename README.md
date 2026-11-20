@@ -885,3 +885,10 @@ CEN 공식 카탈로그에서 EN 40000-1-1:2026(JT013095) 및 EN 40000-1-2:2026(
 
 ### M/606 Annex I 감사 (2026-11-20)
 C(2026) 7861 final 대체 Annex I 기준 41개 항목의 번호·주제·ESO 채택기한을 41/41 대조했다. 1·15: 2026-11-30; 2–14: 2027-10-30; 16–41: 2027-01-31. ESO 작업기한은 제조사 준수기한이 아니다. 각 행의 실제 EN/ETSI 번호와 OJ 인용 상태는 별도 매핑이 필요하며, 41개 모두의 OJ 상태를 확인한 것은 아니다. 자세한 감사대장은 reports/CRA_M606_41_ITEM_PRIMARY_SOURCE_AUDIT_2026-11-20.csv 참조.
+
+
+### 최신 CRA 진행 기준점 (2026-11-20)
+- PR #128 병합 완료: `6733f37201117cb5744215d9deb337b0810acc49` (41개 M/606 Annex I 항목 1차 출처 감사대장 추가).
+- PR exact-head Run #1060 성공. main push CI Run #1061은 사후 확인 중.
+- 감사대장 `reports/CRA_M606_41_ITEM_PRIMARY_SOURCE_AUDIT_2026-11-20.csv` / `.md`; Annex I 항목번호·주제·ESO 채택기한 41/41 확인. 개별 표준 매핑 및 OJ 인용 전수감사와 동일한 작업은 아님.
+- 상황판 `PROJECT_STATUS_CURRENT.md`, 마스터 계획 `MASTER_PLAN.md`, 세션 로그 `SESSION_LOG.md`, append-only 이력 `PROJECT_LOG.jsonl` 참조.
