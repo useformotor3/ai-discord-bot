@@ -1,6 +1,6 @@
 # CRA 서보 드라이브 통합 규제·기술 준수 보고서
 
-- 문서 버전: v0.6 (ETSI 8개 Work Item 및 CLC/TC 65X OT profile 상태 정합성 / C(2026)7861 Article 2 보강) (CRA 핵심 규제·이행, CEN/ETSI 및 EU 표준화 법체계 최신정보 갱신 / 제품별 적용성 확인 전)
+- 문서 버전: v0.7 (Annex III/IV core functionality 및 Article 32 경로 분석 보강) (ETSI 8개 Work Item 및 CLC/TC 65X OT profile 상태 정합성 / C(2026)7861 Article 2 보강) (CRA 핵심 규제·이행, CEN/ETSI 및 EU 표준화 법체계 최신정보 갱신 / 제품별 적용성 확인 전)
 - 기준일: 2026-11-20
 - 프로젝트 범위: EU Cyber Resilience Act(CRA) 대응만
 - 기준 제품군: 산업용 서보 드라이브 및 필수 펌웨어·설정/진단 소프트웨어
@@ -635,3 +635,29 @@ Certified-copy PDF mirror: https://www.ibf-solutions.com/fileadmin/dateidownload
 중앙 81650–81654 record는 이번 pass에서 direct readback에 실패했다. -2/-3은 BSI PWI 및 DKE Drafting prEN 충돌을 유지하고, -4/-5/-6은 이전 2026-11-18 central snapshot과 DKE/LVS 자료를 분리해 기록한다. Citation expected는 actual OJ citation이 아니다.
 
 CENELEC record 81649: https://standards.cencenelec.eu/ords/f?cs=13322EAD4BB9270452A937D8259179562&p=305:110:::::FSP_PROJECT,FSP_LANG_ID:81649,25
+
+
+## 33. Annex III/IV core functionality 및 Article 32 경로 — 산업용 서보 드라이브
+
+CRA Article 2(1)은 intended purpose 또는 reasonably foreseeable use에 direct/indirect logical/physical data connection to a device or network가 포함되는 제품에 적용한다. Article 3(1)은 hardware/software 제품 및 별도 판매 구성품을 product with digital elements로 정의한다. 네트워크/필드버스 연결을 사용하는 서보 드라이브는 scope 가능성이 높으나 exact SKU, intended purpose, EU market configuration으로 확정한다.
+
+Article 7(1)은 Annex III category의 core functionality를 가진 완제품을 important product로 분류하고, 그러한 기능을 가진 구성품이 다른 제품에 통합되었다는 사실만으로 host product가 Article 32(2)/(3) 평가 대상이 되지는 않는다고 명시한다. Commission Implementing Regulation (EU) 2025/2392 recital (2)–(3) 및 Annex I/II는 이 core-functionality/component-boundary 원칙과 각 category의 기술 설명을 구체화한다.
+
+**서보 드라이브에서 우선 확인할 범주:**
+- Annex III Class I category 10 physical/virtual network interfaces: 기술 설명에 Fieldbus controllers/adapters가 포함된다. 내장 EtherCAT/Ethernet/Fieldbus port는 검토 대상이지만, 완제품 드라이브의 core function이 motor control인지 별도 판매 interface card/controller가 network-interface product인지 구분한다.
+- Annex III Class I category 14 security-function MCU: encryption, authentication, key storage, RNG, TEE 등의 보안기능이 MCU 자체를 넘어 다른 제품/네트워크/서비스를 보호하도록 설계되었는지 exact part number와 security manual로 확인한다.
+- Annex III Class I category 11 OS/RTOS: 내장 RTOS는 완제품을 자동으로 OS product로 만들지 않는다. 별도 판매/공급 경계와 core function을 확인한다.
+- VPN/NMS/SIEM, router/switch는 각각 encrypted tunnel, network-element monitoring/control, multi-source security data correlation, routing/packet forwarding의 core functionality가 필요하다. 단순 원격접속·설정·알람·Ethernet port로 분류하지 않는다. ETSI EN 304 620/621/622의 industrial OT exclusion도 고려한다.
+- Annex III Class II firewall/IDS/IPS는 완제품의 core function이 security appliance인지 확인한다. 내장 filtering/diagnostics만으로 Class II가 되지 않는다.
+- Annex IV hardware security box는 multi-component secure crypto/data device 및 tamper-protective physical envelope가 필요하다. 일반 drive enclosure는 충분하지 않다. Smart meter gateway와 smartcard/secure element도 각각 기술 설명과 assurance criteria를 확인한다.
+
+| 분류 | Article 32 route |
+|---|---|
+| 일반 제품(Annex III/IV core function 없음) | 32(1): Module A, B+C, H 또는 available/applicable EUCC |
+| Important Class I | 32(2): 관련 HEN/CS/EUCC(assurance ≥ substantial)를 미적용·부분 적용하거나 부재 시 B+C 또는 H. 완전 적용 조건 충족 시 32(1) route 가능 |
+| Important Class II | 32(3): B+C, H 또는 available/applicable EUCC at least substantial |
+| Critical Annex IV | 32(4)/8(1): Article 8(1) delegated act가 요구하면 EUCC; 해당 act/조건이 없으면 32(3) route |
+
+Article 13(5) component integration due diligence와 13(6) 통합 구성품 취약점 보고·처리 의무는 host product가 Annex III/IV에 속하지 않아도 적용 분석에 포함한다. 제품별 분류와 Article 32 route는 exact SKU/BOM/firmware 및 별도 판매 구성품 증거 확보 전까지 Unknown이다.
+
+상세 category/route matrix: reports/CRA_ANNEX_III_IV_ART32_SERVO_DRIVE_CLASSIFICATION_MATRIX_2026-11-20.md 및 동명 CSV.
