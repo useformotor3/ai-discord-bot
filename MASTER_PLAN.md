@@ -1182,3 +1182,11 @@
 - P1: 41개 M/606 topic → 실제 CEN/CENELEC/ETSI work item 및 EN/ETSI reference 매핑. OJ citation/Article 27 상태는 개별 실제 표준 단위로 확인.
 - P1: C(2026) 7861 Article 2에 따른 CEN/CENELEC/ETSI 수락/거부 통지 원본 확인(통지 후 1개월 조건).
 - 기한 요약: items 1,15 2026-11-30; items 2–14 2027-10-30; items 16–41 2027-01-31. ESO adoption deadlines, not manufacturer CRA deadlines.
+
+
+## 2026-11-20 실행상태 동기화 — PR #128
+1. 완료: C(2026) 7861 replacement Annex I의 M/606 41개 항목 주제·ESO 채택기한 41/41 1차 출처 대조 및 감사대장 반영.
+2. 완료: PR #128 exact-head Run #1060 성공 후 squash merge; main SHA `6733f37201117cb5744215d9deb337b0810acc49`; 사전·사후 복구 브랜치 생성.
+3. 검증중: main push CI Run #1061. 성공 여부를 확인하기 전 최종 완료로 표시하지 않는다.
+4. 다음 P0: (a) CEN JT013090/prEN 40000-1-3의 공식 카탈로그 상태 및 OJ citation 필드 직접 확인, (b) C(2026) 7861 Article 2에 따른 ESO 1개월 비수락 통지 유무를 Commission/CEN/CENELEC/ETSI 1차 자료로 확인.
+5. 범위 주의: 41개 항목의 Annex I 대조는 완료했으나 41개 개별 표준번호 매핑·OJ 인용상태 전수감사는 미완료. 제조사 제품별 CRA scope/classification/RDPS Unknown, 보안시험 Not Run.
