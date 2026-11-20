@@ -795,6 +795,6 @@
 - main merge SHA: `6733f37201117cb5744215d9deb337b0810acc49`; main branch 재조회로 동일 SHA 확인.
 - 복구 기준점: `safety/pre-pr128-merge-2026-11-20` (기준 main `ec9823cd9d1831a3a1047743d43496db76524ce1`), `safety/post-merge-pr128-2026-11-20` (병합 SHA).
 - 41개 Annex I 항목의 주제·기한 감사대장 및 보고서/README/계획/로그 반영 완료. main의 `PROJECT_LOG.jsonl`은 218줄이며 전 줄 JSON 파싱 통과.
-- 병합 후 main push CI Run #1061 (`44657049974`) 실행 중이며 결과 확인 후 상태를 갱신한다.
+- 병합 후 main push CI Run #1061 (`44657049974`) 성공. 전체 단계 완료.
 - 후속 우선순위: CEN JT013090/prEN 40000-1-3 1차 카탈로그 레코드 및 Article 2 ESO 비수락 통지 확인. 실제 개별 EN/ETSI 매핑·OJ 상태 41개 전수검증은 미완료.
 - 제품별 CRA scope/classification/Annex III·IV/RDPS Unknown, 보안시험 Not Run. 제조사 매뉴얼 원본 PDF bytes 및 SHA-256 미확보.
