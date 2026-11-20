@@ -67,3 +67,14 @@ ETSI DocBox에서 최신 Work Item version보다 이전의 공개 interim draft�
 Sources:
 - EN 304 635 V0.0.8: https://docbox.etsi.org/CYBER/EUSR/Open/EN-304-635_V0.0.8_2025-11-10_Virtualisation_Containers.pdf
 - EN 304 636 V0.0.9: https://docbox.etsi.org/cyber/CYBER/Open/EN-304-636_V0.0.9_2025-12-15_Firewalls_Mature-draft.pdf
+
+
+### 최신 EN 304 636 V1.0.0 직접 확인
+
+ETSI DocBox directory listing shows EN_304-636_V1.0.0_2026-07-09_Firewalls_Enquiry-draft.pdf. The PDF was opened successfully. Page 9 (PDF zero-index page 8), Introduction, explicitly states that firewalls, intrusion detection systems and intrusion prevention systems are identified in Annex III, Class II, point 2 of Regulation (EU) 2024/2847. This confirms the latest public draft itself is legally aligned; the Work Item detail page's Class I label is stale/incorrect metadata.
+
+EN 304 635 V1.0.1 file is listed in the same directory as EN_304-635_V1.0.1_2026-06-24_Virtualization_Container_Enquiry-draft.pdf, but fetching it timed out. The earlier V0.0.8 draft had no class label in extracted text. Latest V1.0.1 content remains unverified.
+
+- ETSI DocBox directory: https://docbox.etsi.org/CYBER/EUSR/Open/
+- EN 304 636 V1.0.0: https://docbox.etsi.org/CYBER/EUSR/Open/EN_304-636_V1.0.0_2026-07-09_Firewalls_Enquiry-draft.pdf
+- EN 304 635 V1.0.1: https://docbox.etsi.org/CYBER/EUSR/Open/EN_304-635_V1.0.1_2026-06-24_Virtualization_Container_Enquiry-draft.pdf
