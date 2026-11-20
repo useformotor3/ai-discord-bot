@@ -2110,3 +2110,26 @@
 - Merge SHA `7f9c35c54f93505f541198f3ceef723540f4df72`; pre/post safety refs 생성 및 post == main 확인.
 - GitHub branch API에서 main `protected=false` 확인. 서버 측 required checks 미강제 상태를 위험으로 기록; 현재 연결 도구는 보호 설정 변경 불가.
 
+
+## 2026-11-20 — iX7NH Ver1.1 웹서버·Modbus TCP 원문 감사
+
+### 수행
+- LS ELECTRIC 공식 iX7NH Ver1.1 매뉴얼의 웹서버 제12장, Modbus TCP 제13장, 펌웨어 업데이트 제15장 추출 본문을 직접 검토.
+- 웹서버 ID/PW Object 0x2420/0x2421, 로그인 및 웹 업데이트 흐름 확인.
+- Modbus TCP Server의 EtherCAT IN 접속, 예시 TCP/502, Function Code 1/2/3/4/5/6/15/16 확인. 읽기/쓰기 기능을 구분하고 실제 위험 주소 범위는 추가 매핑 대상으로 남김.
+- USB OTG/FoE/DriveCM/Webserver 업데이트 절차 및 구판 문서의 제한사항을 정리.
+- 보고서 §39 추가, 제조사 인벤토리의 Ver1.1 매뉴얼 항목을 보강.
+
+### 판단 및 제한
+- Ver1.1은 역사적 매뉴얼이며 Ver1.7/현행 펌웨어 설정을 입증하지 않는다.
+- 공개 저장소에는 구판 기본 인증정보의 정확한 문자열을 재게시하지 않는다.
+- 문서상 HTTPS/TLS, 인증 강제, 서명/해시 검증, anti-rollback, 복구 기능을 확인하지 못했으나, 문서 미기재를 기능 부재로 해석하지 않는다.
+- PDF 원본 bytes/SHA-256 미확보, 실기기·네트워크·자격증명 시험 미수행.
+- 제품 CRA scope/classification/Annex III-IV/RDPS Unknown, security tests Not Run 유지.
+- 운영 코드/workflow/secrets/state/history 및 SIL 3 보존 자료 미변경.
+
+### 다음 단계
+1. iX7NH Ver1.7 PDF 원본과 2025-12-24 업데이트 영상 확보.
+2. Modbus TCP API PDF/ZIP 첨부 확보 및 코드·명령·쓰기 주소 검토.
+3. 최신 SKU/펌웨어 기준 인증·권한·TLS·서명·anti-rollback·복구의 제조사 증거 확보.
+4. PR exact-head CI 통과 후 main 병합, pre/post safety ref 및 main read-back 검증.
