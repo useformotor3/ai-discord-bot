@@ -1,3 +1,17 @@
+## 최신 재개 상태 — PR #167 사후 동기화 완료 (2026-11-20)
+
+- 기준 main SHA(PR #167 병합 시점): `7f9c35c54f93505f541198f3ceef723540f4df72`; PR #167은 PR #166 결과를 상황판·계획·README·세션/JSONL에 동기화한 문서 전용 PR이다.
+- PR #167 exact head `dace5c2b1c61e295e8aea6fef18d08fc4c09236d`; Actions Run #1138 / ID `44693025760` success, **174 passed / 0 failed**.
+- CRA traceability: claims 13, interfaces 15, requirements 35, SEC 36, EVD crosswalk 16, product evidence 15, bidirectional links true, M/606 41, JSONL 260 events.
+- Provenance artifact #14609352656, 2,567 bytes, SHA-256 `1c9f5f187223cb6d9b8b4780eedc04cb1739bc9433d153ed38abb309e7517c63`.
+- 사전 복구 ref `safety/pre-pr167-merge-2026-11-20`; 사후 복구 ref `safety/post-merge-pr167-2026-11-20`; 사후 ref와 PR #167 병합 시점 main identical 확인.
+- 실질 조사 최신 기준: PR #166 보고서 v0.17 §38, 제조사 인벤토리 26개 데이터 행, JSONL 259건(이후 PR #166 merge 검증 이벤트를 포함한 status sync 후 260건).
+- iX7NH 공식 시리즈 자료에서 USB OTG/FoE/EoE/Modbus TCP/웹서버/백업·복원/STO 기능 확인. 최신 Ver1.7 매뉴얼과 현행 보안 설정은 미확인.
+- **저장소 보호 설정:** GitHub API에서 main `protected=false` 확인. 현재는 PR exact-head CI, 수동 병합 게이트, pre/post safety refs에 의존하며 서버 측 required checks/branch protection은 강제되지 않는다. 관리 권한으로 main ruleset/branch protection 설정 필요; 현재 연결 도구는 해당 설정 변경을 지원하지 않아 변경하지 않았다.
+- 제품별 CRA scope/classification/Annex III·IV/RDPS Unknown, security tests Not Run.
+
+---
+
 ## 최신 재개 상태 — PR #166 병합 및 iX7NH 통신면 분석 완료 (2026-11-20)
 
 - 현재 main SHA: `761b3ccffc142f11cbfe0d0dfb0e905b5d368ecb`; PR #166 병합 완료.
