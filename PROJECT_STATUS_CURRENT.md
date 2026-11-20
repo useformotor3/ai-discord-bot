@@ -810,3 +810,12 @@
 - 41개 item의 Annex I 주제·기한 41/41 검증은 유지. Work Item 매핑을 item 1, 2–14, 15까지 15개 행에 연결했으나, 개별 EN/ETSI 문서의 최신 상태·OJ 인용 전수감사는 미완료.
 - CRA Article 27 적합성 추정은 해당 표준 참조가 OJEU에 게시된 경우에만 발생한다. EN 40000-1-2는 CEN 카탈로그의 “No citation expected” 기록에 따라 presumption 근거로 사용하지 않는다. JT013090은 OJ 필드 미확인으로 presumption 미확정.
 - PR #129 main push CI Run #1063 전체 단계 성공. 복구 기준점: `safety/pre-pr129-merge-2026-11-20` 및 `safety/post-merge-pr129-2026-11-20`.
+
+
+## PR #130 병합 후 검증 (2026-11-20)
+- PR #130 exact-head `accf11726771374f632bb66783ce0fefaf400daa`, Run #1064 (`44658682554`) success.
+- Squash merge SHA `bfcc2e61fc07b2148fca7a162349af40aa84bc47`; main read-back 일치.
+- 사전/사후 복구 ref: `safety/pre-pr130-merge-2026-11-20`, `safety/post-merge-pr130-2026-11-20`.
+- main push CI Run #1065 (`44658780153`) success. Compile, full pytest, CRA traceability, official CRA source canaries and provenance upload all passed.
+- main `PROJECT_LOG.jsonl` 221 records, 221 valid JSON; 41-item audit CSV has 41 data rows.
+- 다음 조사: CEN M/606 Work Programme의 OT/IACS 관련 work items 20b,21b,22b,25b,27b,36b와 서보드라이브 기능 경계 비교. 제품기능 증거 없이 해당 vertical scope에 포함된다고 결론 내리지 않는다.
