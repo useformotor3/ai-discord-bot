@@ -74,3 +74,11 @@
 - CEN/CENELEC prEN 50770-1~6 개별 레코드는 이번 addendum에서 전부 재조회하지 않았다. 기존 2026-11-18 snapshot과 별도 관리한다.
 - 표준 본문 유료 원문은 취득/검토하지 않았고, 카탈로그/작업계획/공지 정보만 검토했다.
 - Article 27 OJ index는 별도 재조회가 필요하다. 이 addendum의 OJ 상태는 확인한 ETSI/CEN 개별 레코드의 field 기준이다.
+
+### 5. EN 304 620 상태도 최신 레코드로 정정
+- 기존 2026-09-28 “7 VR – EC assessment before EV received”는 과거 상태다.
+- 2026-11-20 조회한 ETSI 개별 레코드: EN 304 620 v1.0.0, Comments categorisation assessed (2026-11-06).
+- 2026-11-19 remarks: EC second assessment received in two batches of comments, on 28 September 2026 and 22 October 2026.
+- Scope description: VPN product with industrial OT domain VPNs excluded.
+- Official Journal field는 비어 있다. Work Programme의 Harmonised Standard metadata만으로 CRA OJ citation/Article 27 presumption을 주장하지 않는다.
+- Record: https://portal.etsi.org/webapp/WorkProgram/Report_WorkItem.asp?WKI_ID=74409
