@@ -1,6 +1,6 @@
 # CRA Servo Drive Compliance & Engineering Project
 
-> **최신 재개 상태 — 2026-11-20:** iX7M/iX7NH 공식 매뉴얼 첨부 메타데이터 확인, 원본 PDF 다운로드는 502/timeout으로 미확보. iX700M Ver1.4 목록 확인. 세부 내용은 보고서 §25 및 `sources/manufacturer/LS_MECAPION_MANUAL_INTAKE_2026-11-20.json`.  CRA 지침 문서번호를 정정: 최종 관보 인용 OJ C/2026/6013, C(2026) 5252 final은 초안 승인 문서.  PR #119이 main에 병합됨 (`46feea8fab4924889be30f8ae5afb7a072673055`, exact-head CI Run #1038 성공). EU 관보 CRA Guidance C/2026/6013 분석은 보고서 §24, 원문 해시 manifest는 sources/official/CRA_2026-11-19_SOURCE_MANIFEST.json에 저장.  EU 관보 CRA Guidance C/2026/6013(17.11.2026, 61p) 확보·해시 검증 및 LS메카피온 적용 분석을 통합 보고서 §24에 추가했다.  PR #116이 main에 병합됨 (`6092ca1c61c696a716583e6bc0f7d5150cbee269`, exact-head CI Run #1032 성공). PDF artifact는 미생성이고 exact-main push CI는 별도 확인 전이다.  M/606 개정 납기, CEN-CENELEC EN 40000-1-1/-1-2 발행 및 ETSI 공개 작업계획을 2026-11-19 요약 스냅샷 기준으로 재확인하고 이전 상세 페이지와의 상태 차이를 정정했다. 상세 addendum은 [LS메카피온 예비 분석 보고서 §23](reports/CRA_LS_MECAPION_SERVO_DRIVE_FAMILY_PRELIMINARY_ASSESSMENT_2026-11-19.md)에 기록. 41개 표준 전체의 개별 상태/OJ 전수감사는 미완료이며, 제품별 CRA 판정은 Unknown / 보안시험 Not Run.
+> **최신 재개 상태 — 2026-11-20:** main `3aebf09e6786fa9ee451b027ed83756f37bd89b3` (PR #124 사후 동기화). CEN-CENELEC의 EN 40000-1-1/-1-2 발행 발표를 확인했으며 CRA Article 27 OJ 인용은 별도 게이트로 관리한다. M/606 41개 개별 표준의 OJ 전수감사는 미완료. LS메카피온 매뉴얼/DoC 원본 파일 미확보, 제품별 CRA 판정 Unknown / 보안시험 Not Run.
 
 산업용 서보 드라이브의 EU Cyber Resilience Act(CRA) 대응을 위한 조사·설계·검증·문서화 프로젝트입니다. 문서의 기본 언어는 한국어이며, 법령·표준·제조사 원문은 원어와 출처를 보존합니다.
 

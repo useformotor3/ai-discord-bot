@@ -1755,3 +1755,14 @@
 - PR #123 report §26 documents iX700MD1-B-150B manufacturer code definitions and CE/LVD/EMC listing metadata; PDF bytes were not acquired, and no CRA conformity inference is made.
 - PR #122 merge `8a18856a677ccbab4117c0ea35524116ac5ad70a`, Run #1044 success; report §25 and 4-record manufacturer intake register document iX7M/iX7NH manual metadata, not original PDF content.
 - Product scope/classification/RDPS Unknown; security tests Not Run; exact-main push CI not independently confirmed.
+
+
+## 2026-11-20 — M/606 표준 발행 및 OJ 인용 게이트 부분 감사
+
+- GitHub main 최근 커밋을 재조회해 현재 기준 SHA가 `3aebf09e6786fa9ee451b027ed83756f37bd89b3`임을 확인했다.
+- CEN-CENELEC 2026-11-19 공식 발표에서 EN 40000-1-1 및 EN 40000-1-2 발행을 확인했다. European Commission 2026-11-19 뉴스는 첫 CRA 지원 유럽표준이 2026-11-18 발행됐다고 설명한다. 표준별 표지상 개별 발행일은 별도 확인 전까지 미확정으로 둔다.
+- EUR-Lex CRA Regulation Article 27(1) 원문을 재확인했다. 조화표준 참조가 OJ에 게재된 범위에서 적합성 추정이 발생한다.
+- EN 40000-1-1/-1-2 및 EN 304 625를 대상으로 한 초기 검색에서는 CRA OJ 참조를 직접 확인하지 못했다. 검색 결과 없음은 OJ 미게재 확정이 아니므로 미확인으로 기록한다.
+- 통합 보고서 §27, PROJECT_STATUS_CURRENT.md, README.md, MASTER_PLAN.md를 갱신하고 PROJECT_LOG.jsonl에 사건을 append한다.
+- M/606 41개 전수감사는 미완료. 제품별 scope/classification/RDPS Unknown, security tests Not Run 유지.
+- main.py, 운영 workflow, secrets, state/history, legacy SIL 3 자산 미변경.
