@@ -1,3 +1,16 @@
+# 최신 재개 상태 — OT 표준화 및 ETSI M/606 일정 재확인 (2026-11-20)
+
+- 기준 시작 main SHA: `2f8aac8d2d61e217e06be21d36afe857e8bdf2d0`; 조사 브랜치: `research/cra-ot-standards-live-recheck-2026-11-20`.
+- 보고서: [CRA OT 표준화·ETSI M/606 회의 일정 재확인](reports/CRA_OT_STANDARDS_AND_ETSI_M606_MEETING_RECHECK_2026-11-20.md).
+- CENELEC 공식 2026-05-07 WG3 발표자료와 LVS CLC/TC 65X 공개목록을 교차 대조해 WIID 81650–81654 ↔ prEN 50770-2~6 매핑을 재확인했다. LVS는 5개 모두 “In development”로 표시하나 중앙 CENELEC stage/DOR/DAV 증거는 아니다.
+- ETSI 공식 TB 일정표는 “GoSRSReq006-M/606 AMD 1 - examination meeting”을 2026-11-23 Online으로 표시한다. 2026-11-20 현재 미래 일정이며 회의 결과·수락·ESO 수령/비수락 통지는 미확인이다.
+- 미해결: DKE/BSI stage 차이, CENELEC 81650–81654 중앙 개별 레코드, 81649 parent/child 동기화, C(2026)7861 Article 2 receipt/acceptance, 41개 실제 OJ citation.
+- 제품별 CRA scope/classification/Annex III·IV/RDPS는 Unknown, security tests Not Run 유지. OJ citation 확인 전 Article 27 presumption 주장 금지.
+- 다음: 11/23 이후 ETSI 회의 결과/Work Programme 재조회 → ESO receipt/notice 원문 → CENELEC 중앙 레코드 재확인 → 41개 OJ crosswalk.
+- 이번 조사 보고서는 PR/CI 병합 전 작업 브랜치 기록이다. PR 생성·CI·merge 여부를 사전 성공으로 기록하지 않는다.
+
+---
+
 ## 최신 기준점 — ETSI M/606 18개 조사 및 최신 draft 재검증 (2026-11-20)
 
 - 기준 main SHA: 8adf72f3bbda24165479f7aa4d4246d48e4acd99; PR #184, #185, #186 merged 2026-11-20. PR #185/#186 are post-merge documentation synchronization and self-review correction. 조사 브랜치: research/cra-etsi-18-active-matrix-class-audit-2026-11-20 (merged); pre-merge safety: safety/pre-merge-pr184-2026-11-20; post-merge safety refs: safety/post-merge-pr184-2026-11-20 (main as of PR184), safety/post-merge-pr185-2026-11-20, safety/post-merge-pr186-2026-11-20 (latest verified identical to main).

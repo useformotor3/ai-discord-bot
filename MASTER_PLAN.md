@@ -1,3 +1,15 @@
+## 최신 재개 — OT 표준화 및 ETSI M/606 회의 일정 재확인 (2026-11-20)
+
+- 조사 브랜치 `research/cra-ot-standards-live-recheck-2026-11-20`; 기준 main `2f8aac8d2d61e217e06be21d36afe857e8bdf2d0`.
+- WIID 81650–81654와 prEN 50770-2~6 매핑은 CENELEC 2026-05-07 공식 WG3 발표자료 및 LVS 공개 프로젝트 목록으로 재확인. LVS 상태 “In development”는 중앙 CENELEC stage/DOR/DAV로 승격하지 않는다.
+- ETSI 공식 TB calendar에 GoSRSReq006-M/606 AMD 1 examination meeting이 2026-11-23 Online으로 표시됨. 회의 결과나 amendment acceptance는 아직 Unknown.
+- P0: 11/23 이후 회의 결과, ESO별 C(2026)7861 수령/수락/비수락 통지, CENELEC 81650–81654 중앙 live records, 81649 parent/child synchronization, 실제 OJ citation 41개 crosswalk.
+- DKE/BSI stage discrepancy는 미해결로 유지. OJ reference 확인 전 CRA Article 27 presumption of conformity를 주장하지 않는다.
+- 제품별 분류/적합성 Unknown, security tests Not Run 유지.
+- 상세 증거·한계: `reports/CRA_OT_STANDARDS_AND_ETSI_M606_MEETING_RECHECK_2026-11-20.md`.
+
+---
+
 ## ETSI 18-item master matrix / class mismatch — 2026-11-20
 
 - Full 18-item M/606 matrix committed in current research branch. 17 map to Annex I vertical items 17–27 and 31–36; EN304642 is additional telecom support item without direct 41-topic mapping.

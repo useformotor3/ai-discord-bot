@@ -1,5 +1,7 @@
 # CRA Servo Drive Compliance & Engineering Project
 
+> **최신 재조사 — 2026-11-20:** [OT 표준화 WIID 매핑 및 ETSI M/606 11월 23일 회의 일정 재확인](reports/CRA_OT_STANDARDS_AND_ETSI_M606_MEETING_RECHECK_2026-11-20.md). 회의 결과·중앙 CENELEC stage·OJ citation은 아직 미확인.
+
 > **최근 병합 — 2026-11-20:** PR #184 merged to main as `9dbe6e92c358d0361f9640651152e4d1e8b1ec6b`. Exact-head CI Run #1238 succeeded (174 passed / 0 failed). M/606 18-item matrix, latest EN304635/636 Class II draft checks, CENELEC 50770 WIID crosswalk and AI session self-review protocol are in main. See PROJECT_STATUS_CURRENT.md and PR #184.
 
 ## 최신 ETSI 조사 — 2026-11-20

@@ -2451,3 +2451,31 @@
 - PR #186 merged via squash as `8adf72f3bbda24165479f7aa4d4246d48e4acd99`; exact-head CI #1242 success, 174 passed / 0 failed. It corrected README's stale PR #184 open banner and added the no-op replacement guard to AI_RULEBOOK.
 - `safety/post-merge-pr185-2026-11-20` and `safety/post-merge-pr186-2026-11-20` each read back identical to main at their respective merge points; latest PR186 safety ref is identical to current main.
 - Final main SHA updated to `8adf72f3bbda24165479f7aa4d4246d48e4acd99`; this branch synchronizes the situation board and logs the follow-up merge chain.
+
+## 2026-11-20 — OT 표준화·ETSI M/606 일정 재확인
+
+### 수행
+- 최신 main 및 관리문서, PR #184–#186 병합, safety ref, 최근 Actions run을 확인한 뒤 main 기준 조사 브랜치 `research/cra-ot-standards-live-recheck-2026-11-20` 생성.
+- CENELEC 공식 2026-05-07 WG3 발표자료와 LVS CLC/TC 65X 공개목록을 교차 대조해 WIID 81650–81654 ↔ prEN 50770-2~6 매핑 재확인.
+- ETSI 공식 TB calendar에서 GoSRSReq006-M/606 AMD 1 examination meeting이 2026-11-23 Online으로 표시되는 사실 확인.
+- 증거 한계와 미확인 항목을 별도 보고서로 작성.
+
+### 핵심 판단
+- LVS “In development”는 개별 중앙 CENELEC stage, DOR, DAV 또는 투표 일정의 증거가 아니다. DKE/BSI 충돌은 해소하지 않았다.
+- 11/23 회의는 11/20 현재 미래 일정이다. 회의 결과, amendment acceptance, ESO 수령일/통지 원문을 확인하지 못했다.
+- 실제 OJ citation이 없으므로 Article 27 presumption은 미확정. 제품별 CRA 분류도 Unknown 유지.
+
+### 산출물
+- `reports/CRA_OT_STANDARDS_AND_ETSI_M606_MEETING_RECHECK_2026-11-20.md`
+
+### 다음 단계
+1. 2026-11-23 이후 ETSI 회의 결과/회의록/Work Programme 변경 확인.
+2. CEN/CENELEC/ETSI별 C(2026)7861 receipt 및 acceptance/non-acceptance notice 확보.
+3. CENELEC 81650–81654 중앙 개별 records와 81649 parent/child synchronization 재확인.
+4. 41개 Annex I 주제의 실제 OJ citation crosswalk 지속.
+
+### 변경/검증 경계
+- 조사 브랜치에서 보고서 및 관리문서만 변경.
+- 이 기록 작성 시점에는 PR/CI/merge 미완료. main 반영을 주장하지 않음.
+- 제품 적합성 또는 보안시험 수행으로 해석하지 않음.
+
