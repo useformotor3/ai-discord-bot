@@ -10,10 +10,10 @@
 ## 최신 재개 상태 — ETSI M/606 18개 통합 매트릭스 및 법령 분류 오류 발견 (2026-11-20)
 
 - ETSI Work Programme v2.3.3 M/606 active 18개 Work Item 상세 레코드를 통합 매트릭스로 정리. 17개는 Annex I vertical topics 17–27,31–36; EN 304 642는 telecom supporting work item으로 직접 41-topic mapping 미확인.
-- EN 304 635(hypervisors) 및 EN 304 636(firewalls/IDS/IPS)의 ETSI scope text는 Class I로 표시하지만 Regulation 2025/2392는 각각 Class II category 1/2로 분류한다. 법령이 우선. Normative draft 본문은 미취득이므로 metadata mismatch로만 확정.
+- EN 304 635(hypervisors) 및 EN 304 636(firewalls/IDS/IPS)의 ETSI scope text는 Class I로 표시하지만 Regulation 2025/2392는 각각 Class II category 1/2로 분류한다. 법령이 우선. 최신 공개 draft sample/full preview를 확인해 EN304635 V1.0.1 p.15 Class II point 1, EN304636 V1.0.0 p.9 Class II point 2를 확인했다. Work Item page metadata discrepancy로 범위를 좁힌다.
 - EN 304 627 routers/modems/switches도 industrial OT 장비를 ETSI scope에서 제외한다. EN 304 620/621/622와 함께 OT exclusion 4개를 관리.
 - 18개 모두 Harmonised Standard metadata Yes이나 OJ field blank; actual OJ citation/Article27 presumption 미확인.
-- 다음 P0: EN304635 V1.0.1 draft 재취득; EN304636 V1.0.0 Class II 확인 완료; ETSI metadata correction tracking; 2026-11-23 ETSI M/606 AMD1 meeting; ESO Article2 receipt/acceptance; CENELEC 81650–81654 direct records; OJ index crosswalk.
+- 다음 P0: EN304635 V1.0.1 전체 386쪽 원본 확보 가능성 확인; 두 최신 draft Class II 본문 근거로 ETSI metadata correction tracking; 2026-11-23 ETSI M/606 AMD1 meeting; ESO Article2 receipt/acceptance; CENELEC 81650–81654 direct records; OJ index crosswalk.
 - 상세: reports/CRA_ETSI_M606_18_ACTIVE_WORK_ITEM_MASTER_MATRIX_2026-11-20.md 및 CSV.
 
 ---
