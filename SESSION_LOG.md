@@ -2385,3 +2385,12 @@
 - 손상본을 기준으로 덮어쓰지 않고, 손상 직전 커밋 85a03faefa87b024ebf378a629cca00d0f4d46d5의 정상 CSV를 복원 기준으로 사용한 뒤 Class II/draft 검증 메모를 재적용.
 - 복구 후 전체 CSV를 RFC4180-style quote-aware parser로 재검증: header+41 data rows = 42 rows, 모든 row 10 columns. row35/36 원래 필드와 기존 CLC mapping 보존 확인.
 - 재발 방지: CSV 수정 시 항상 전체 파일 parse → row/column count → serialize → reparse roundtrip을 수행하고, 단일-line parsing과 full-file parsing 함수를 구분한다.
+
+
+## 2026-11-20 — PR #184 자체검토 및 상태 문서 동기화
+
+- PR #184 head eba04e6d1b71c4024cb03ac4a909fd9734e0c121; PR-triggered Isolated Python Tests run #1197 completed success.
+- 재검토에서 matrix/integrated report/Annex III legal report/status/plan/README 간 최신 EN304636 V1.0.0 사실과 이전 초안 상태가 일부 불일치한 점 발견. 최신 EN304636 V1.0.0 Class II 표기를 기준으로 통합하고, EN304635 V1.0.1은 DocBox 등록·fetch timeout·본문 미검증으로 통일.
+- Integrated report version label duplicate text, README stale v0.7 link, status/plan stale “latest drafts not acquired” statements identified for correction.
+- AI_RULEBOOK section 18 added: session resume, source-first self-review, persisted error/root-cause/recovery/prevention loop, structured-file validation, token/tool efficiency, branch/safety/CI discipline.
+- Safety snapshot branch: safety/pre-pr184-doc-reconciliation-2026-11-20 (from PR head before cleanup).
