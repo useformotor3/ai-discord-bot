@@ -1592,3 +1592,12 @@
 - CRA traceability: claims 13, interfaces 15, requirements 35, SEC 36, EVD-SEC 16, product evidence 15, bidirectional links true, M/606 41, JSONL 268 events.
 - Official source canary 10 sources 및 법령 locator 검증 성공; PDF evidence upload 단계 skipped. Provenance artifact #14615596751, SHA-256 `25c5c192aa96544b5e41c8cac6eeda0d629f3c95af6755e090be6d34ae506a70`.
 - Squash merge SHA `850e2c851630239140e9a39d5f0978204b2ee025`; main 동일 확인. Pre/post safety refs 유지.
+
+
+## 2026-11-20 — PR #176 병합 후 상태 및 다음 우선순위
+- 완료: PR #176 exact-head Run #1154 success, 174 passed / 0 failed; merge SHA `8f19a8b9fcf8e4582a9470e5483ff08019d1711f`; main 동일 확인.
+- 완료: 보고서 v0.21 §42 및 제조사 인벤토리 28행에 2026-07~09 공식 가이드북 인덱스 메타데이터 반영.
+- Provenance artifact #14614954168, SHA-256 `067e43ccfc1c5b438f719489dc44f3e2ead4e152a2294d2c9b5031ca6bc192dd`; PDF evidence upload skipped.
+- 다음 P0: LS메카피온 공식 게시물 상세 페이지/첨부 원본 확보(특히 iX7NH 교육자료, DriveCM V1.03.1, 게인 튜닝 가이드). 확보 후 SHA-256·개정·모델/FW 적용범위 검토.
+- 다음 P0: 제조사 1차 근거로 DriveCM 펌웨어 다운로드/검증, 인증·권한, 업데이트 서명·anti-rollback·복구 및 Node 98/99·Modbus timeout을 확인.
+- 제품 CRA scope/classification/Annex III·IV/RDPS Unknown, security tests Not Run 유지.
