@@ -1,7 +1,7 @@
 # LS메카피온 서보드라이브 CRA 제품군 예비 분석 보고서
 
 - 문서 ID: CRA-LSM-FA-001
-- 버전: 0.13 (제조사 펌웨어·업데이트·설정 도구 자료실 목록 스크리닝 추가)
+- 버전: 0.14 (ESI·DriveCM·신형 모델 적용범위 교차검증 추가)
 - 기준일: 2026-11-20 (KST)
 - 작성 언어: 한국어
 - 대상 제조사/브랜드: LS메카피온 (LS MECAPION)
@@ -1785,3 +1785,56 @@ LS메카피온 공식 드라이브 카탈로그는 EtherCAT 통신형과 펄스�
 목록 페이지는 신규 항목의 존재·게시일을 확인하는 용도로만 사용했다. 일부 상세 게시물/첨부 다운로드는 외부 열람 경로에서 오류가 발생하여 원본 확보에 실패했다. 후속 단계에서 상세 게시물 URL과 첨부 원본을 다시 확보하고, 파일별 SHA-256·서명·버전·내용 검토를 수행한다.
 
 **현재 판정:** 펌웨어 업데이트 경로와 설정 도구의 존재는 조사 단서로 추가되었으나, 보안 업데이트 메커니즘과 제품별 지원기간은 미확인이다. Product CRA scope/classification/Annex III·IV/RDPS는 Unknown, security tests는 Not Run으로 유지한다.
+
+
+## 35. ESI·DriveCM·신형 모델 적용범위 교차검증 (2026-11-20)
+
+### 35.1 제조사 공식 자료에서 확인된 사실
+
+이번 단계에서는 단순 자료실 제목이 아니라 ESI 상세 게시물과 DriveCM 상세 게시물의 본문에 기재된 버전·적용 모델·릴리스 항목을 교차 확인했다.
+
+| 자료 | 제조사 공개 정보 | 증거 수준 |
+|---|---|---|
+| EtherCAT ESI Ver0.98 | 2025-07-15 게시. 영문/국문/중문 XML 각 6.4/6.3/6.2 MB. 적용 모델은 L7NH, Pegasus, PHOX, L7NHF, L7N, GEM, SMT, L7MMT, iX7NH, iX7M, iX7MD | 상세 게시물의 본문·파일명·크기·모델 목록 확인. XML 원본 bytes는 미확보 |
+| DriveCM Ver1.03.2 | 2026-07-07 게시. 32/64bit 설치파일과 릴리스 노트 제공. 지원 제품 L7P, L7NH, L7NHF, PEGA, PHOX, iX7NH, L7C, iX7M, PEGA2. L7S/L7N(단종)은 LIVE i.C.E 사용으로 안내 | 상세 게시물 본문·첨부명·크기·지원목록 확인. MSI/PDF 원본 bytes는 미확보 |
+| DriveCM Ver1.03.2 변경 내용 | Ver1.03.0에서 PEGA2 신규 모델 2종(EtherCAT, RS-485), 자동 모델 선택, iX7M 축 간 파라미터 복사, Object Monitor 축 필터 추가. Ver1.03.1은 L7NF 연결 오류 수정. Ver1.03.2는 시작 시 오류창 표시 문제 수정 | 릴리스 설명문 확인. 개별 버전별 바이너리 차이 및 보안 영향은 미검토 |
+| PEGA2 매뉴얼 Ver1.3 | 공식 매뉴얼 게시물에서 파일명 PEGA2_KOR_Ver1.3_260826.pdf, 6.6 MB, 첨부 DATE 2026-08-28 확인 | 게시물 본문·첨부 메타데이터 확인. PDF bytes 미확보 |
+| iX700M DRIVE 400[V] 매뉴얼 Ver1.4 | 공식 Servo 매뉴얼 목록에 2026-05-26 게시 항목 확인 | 목록 메타데이터만 확인. 상세 게시물·첨부 미확보 |
+
+### 35.2 핵심 교차검증 결과 — ESI 적용범위와 제품군이 완전히 일치한다고 가정하면 안 됨
+
+제조사 ESI Ver0.98의 공개 적용 모델 11개 목록에는 **PEGA2와 iX700M이 기재되어 있지 않다.** 반면 DriveCM Ver1.03.2 지원 제품에는 PEGA2가 명시되어 있고, 릴리스 설명에는 PEGA2 EtherCAT 및 RS-485 신규 모델 2종이 명시되어 있다. 제조사 제품 카탈로그는 iX700M을 다축 EtherCAT 통신형 드라이브로 소개한다.
+
+이 차이는 중요한 조사 포인트다. DriveCM 지원은 설정 도구의 모델 지원을 뜻하며, 해당 모델의 ESI 파일이 Ver0.98의 공통 XML에 포함되어 있다는 뜻은 아니다. 반대로 ESI 공개 목록에 PEGA2/iX700M이 없다는 사실만으로 해당 모델에 ESI가 전혀 없다고 단정할 수도 없다. 별도 XML, 별도 프로파일, 컨트롤러 패키지 또는 비공개 배포 가능성을 제조사에 확인해야 한다.
+
+**현재 증거 기반 판정:**
+- PEGA2: EtherCAT 및 RS-485 두 변형의 존재와 DriveCM 지원은 확인. EtherCAT 변형의 ESI 파일명·버전·적용 여부는 미확인.
+- iX700M: 제품 카탈로그상 EtherCAT 통신형 및 400V 매뉴얼 Ver1.4는 확인. 공개 ESI Ver0.98 적용 모델 목록에는 없음. iX700M 전용 ESI 또는 별도 설정 파일 존재 여부는 미확인.
+- iX7MD: ESI Ver0.98 공개 적용 목록에 명시됨. 정확한 하드웨어 리비전·펌웨어·컨트롤러 조합은 별도 확인 필요.
+- L7S/L7N: DriveCM이 아닌 LIVE i.C.E 사용으로 안내되고 L7N은 단종 표시. CRA 지원기간·보안 업데이트 지원 여부는 이 문구만으로 판정할 수 없음.
+
+### 35.3 CRA 관점에서 왜 중요한가?
+
+1. **제품 식별 및 기술문서 완전성:** 제품명만이 아니라 정확한 SKU, 하드웨어 리비전, 펌웨어, 통신 옵션, ESI/설정도구 버전을 연결해야 기술문서가 실제 판매 제품과 일치한다.
+2. **공급·업데이트 경계:** DriveCM MSI, ESI XML, DFU, 펌웨어 이미지가 서로 다른 배포물이다. 각각의 배포 주체, 무결성 검증, 서명, 버전 호환성, 취약점 수정 이력을 별도로 추적해야 한다.
+3. **취약점 대응:** 릴리스 노트의 연결 오류 수정이나 시작 오류 수정은 소프트웨어 변경 증거일 뿐, 보안 취약점 수정이라고 볼 수 없다. 보안 권고문·CVE·수정 내역과 연결되는지 확인해야 한다.
+4. **사용자 안내와 지원기간:** L7S/L7N 단종 안내는 제품 지원정책을 추가 확인해야 할 단서다. 단종 여부만으로 CRA 지원기간의 종료일 또는 취약점 처리 의무 종료를 추정하지 않는다.
+5. **공급망 및 무결성:** ESI XML/MSI/PDF의 게시 파일명·크기 확인과 실제 bytes·SHA-256·전자서명 검증은 별도 단계다. 현재 원본 다운로드가 실패하여 파일 무결성 검증은 미수행이다.
+
+### 35.4 제조사에 요청할 구체 질문 (증거 확보용)
+
+- PEGA2 EtherCAT SKU 및 iX700M 각 축/모듈별 공식 ESI 파일명, 버전, XML, Vendor ID/Product Code/Revision 및 적용 가능한 펌웨어 범위는 무엇인가?
+- ESI Ver0.98 이후 최신 ESI가 있는가? iX700M/PEGA2는 별도 ESI 또는 컨트롤러별 패키지로 배포되는가?
+- DriveCM 1.03.2의 PEGA2 EtherCAT·RS-485 변형별 파라미터/진단 기능 차이와 지원되는 펌웨어 버전은 무엇인가?
+- DFU Downloader가 지원하는 모델, 업데이트 전송 경로, 이미지 서명/무결성 검증, 권한 확인, 실패 복구 및 downgrade 차단 방식은 무엇인가?
+- L7N/L7S 단종 제품의 취약점 접수, 보안 수정, 지원 종료일 및 고객 통지 정책은 무엇인가?
+
+### 35.5 공식 1차 출처
+
+- ESI Ver0.98 상세 게시물: https://lsmecapion.com/bbs/board.php?bo_table=software&sca=Servo&wr_id=13005
+- DriveCM Ver1.03.2 상세 게시물: https://lsmecapion.com/bbs/board.php?bo_table=software&wr_id=13110
+- PEGA2 매뉴얼 Ver1.3: https://lsmecapion.com/bbs/board.php?bo_table=manual&wr_id=12651
+- Servo 매뉴얼 목록(iX700M Ver1.4): https://lsmecapion.com/bbs/board.php?bo_table=manual&sca=Servo
+- 드라이브 제품 목록(iX700M EtherCAT): https://www.lsmecapion.com/bbs/board.php?bo_table=pd_drive
+
+**증거 제한:** ESI·MSI·PDF 첨부 원본 bytes 및 SHA-256은 아직 확보하지 못했다. 이번 단계는 공식 게시물의 상세 텍스트/메타데이터와 모델 적용범위의 교차검증이다. Product CRA scope/classification/Annex III·IV/RDPS는 Unknown, security tests는 Not Run으로 유지한다.
