@@ -1774,3 +1774,11 @@
 - 대화 단위 결과 검토/AI 행동 점검/개선 선별/효과 검증 기준을 AI_RULEBOOK §71 및 세션 운영 문서 §8에 반영.
 - 개선은 근거·반복 가능성·실질 효과가 있을 때만 영구 규칙/테스트로 반영. 단순 대화나 일회성 수정은 중복 문서화하지 않는다.
 - PR #191 post-merge main CI #1294 success, 183 passed / 0 failed. 이번 개선의 장기 효과는 후속 세션에서 확인한다.
+
+
+## 2026-11-21 — 일일 재귀개선 모방 알고리즘 기준선
+- PR #192 main post-merge CI Run 44839652639 확인: source integrity, compile, CRA traceability, 전체 pytest, 공식 CRA PDF/HTML read-only canary, provenance upload 모두 success.
+- KST 날짜 경계에서 전일 작업 결과와 AI 행동을 감사하고, 근거·반복성·효과·비중복성·검증 가능성을 통과한 개선만 GitHub 규칙/절차/테스트에 반영하는 단일 프로토콜을 추가.
+- 기준 문서: `AI_RECURSIVE_IMPROVEMENT_PROTOCOL.md`; 실행 규칙: AI_RULEBOOK §72; 세션 운영 보충: self-review 문서 §9.
+- 날짜 트리거는 세션 시작/재개 시점이다. 별도 background scheduler/agent는 만들지 않았으며 모델 자체 재학습을 의미하지 않는다.
+- 효과 상태는 문서화/테스트/후속 운영 관찰을 분리. 다음 KST 날짜 경계에서 실제 적용 후 장기 효과를 평가한다.
