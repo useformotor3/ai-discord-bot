@@ -94,3 +94,9 @@
 - source blob identity, compileall, CRA cross-matrix traceability, official CRA PDF canary, live official CRA HTML canary, provenance manifest upload: success.
 - PDF source artifact upload 단계는 unchanged/condition에 따라 skipped; workflow 실패가 아니다.
 - 실제 production run/Discord/Gemini 호출은 하지 않았다. CI 결과는 테스트 브랜치의 classifier 검증이며 production 배포 검증이 아니다.
+
+
+### 후속 스케줄 조정
+- GitHub 공식 문서에 따라 정각 부하 회피를 위해 cron을 `0 */3 * * *`에서 `17 */3 * * *`로 이동했다. 간격은 여전히 3시간이며, 일일 Gemini/Discord 호출 횟수는 증가하지 않는다.
+- Run #2523의 관측 지연은 기존 12:00 UTC 슬롯 대비 약 63분이다. :17 조정은 위험 완화이지 정시 실행 보장이 아니다.
+- 최초 PR HEAD Run #1247은 182 passed / 0 failed. cron 변경 이후 최신 HEAD는 재검증 CI 대기 중.
