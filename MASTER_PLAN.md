@@ -1,3 +1,18 @@
+## 최신 재개 상태 — PR #170 병합 및 iX7NH Ver1.1 보안면 원문 감사 완료 (2026-11-20)
+
+- 현재 main SHA: `cad75135996c129bc576d83ce5b7ed968ca6a63b`; PR #170 squash 병합 완료.
+- PR #170 exact head `8af0834e56c8ec8cd4c13d900a5fe77c0b788424`; Actions Run #1142 / ID `44701241693` success, **174 passed / 0 failed**.
+- CI: source blob integrity, compileall, CRA traceability, full pytest, official CRA PDF/HTML canaries, provenance manifest upload 모두 통과.
+- Traceability: claims 13, interfaces 15, requirements 35, SEC 36, EVD-SEC crosswalk 16, product evidence 15, bidirectional links true, M/606 41, project log 262 events (257 modern IDs + 5 legacy records).
+- Provenance artifact #14611894438, 2,567 bytes, SHA-256 `0563c2493e7d19acf7e0cddee34c91e4c4b0339cfc696e52f8d27c79de373ad6`.
+- 보고서 v0.18 §39, 제조사 원본 인벤토리 26개 데이터 행 반영. iX7NH Ver1.1 구판 매뉴얼에서 웹서버 로그인·Object 0x2420/0x2421, Modbus TCP Server 및 TCP/502 예시·쓰기 기능 코드, USB OTG/FoE/DriveCM/Webserver 업데이트 경로를 확인.
+- 사전 main 복구 ref `safety/pre-main-pr170-merge-2026-11-20`; 사후 ref `safety/post-merge-pr170-2026-11-20`; post ref와 main 동일성 확인.
+- 구판 Ver1.1은 현행 Ver1.7 보안 설정의 증거가 아님. 제품별 CRA scope/classification/Annex III·IV/RDPS Unknown, security tests Not Run.
+- main `protected=false` 상태는 유지. 서버 측 branch protection/ruleset은 저장소 관리자 설정 필요.
+- 운영 코드, workflow, secrets, state/history, 기존 SIL 3 보존 산출물은 변경하지 않음.
+
+---
+
 ## 최신 재개 상태 — iX7NH Ver1.1 웹서버·Modbus TCP 1차 원문 감사 (2026-11-20)
 
 - 기준 main SHA: `2368b20ad90b40d473bd3cf86eac1310283ccb3f`; 최신 main에서 분기한 작업 브랜치 `research/ix7nh-v11-web-modbus-audit-v2-2026-11-20`.

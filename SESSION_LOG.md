@@ -2133,3 +2133,15 @@
 2. Modbus TCP API PDF/ZIP 첨부 확보 및 코드·명령·쓰기 주소 검토.
 3. 최신 SKU/펌웨어 기준 인증·권한·TLS·서명·anti-rollback·복구의 제조사 증거 확보.
 4. PR exact-head CI 통과 후 main 병합, pre/post safety ref 및 main read-back 검증.
+
+
+## 2026-11-20 — PR #170 병합 및 사후 검증
+
+- PR #170 exact head `8af0834e56c8ec8cd4c13d900a5fe77c0b788424`; Actions Run #1142 / ID `44701241693` success.
+- Full pytest **174 passed / 0 failed**; source integrity, compileall, CRA traceability, official CRA PDF/HTML canaries 및 provenance upload 통과.
+- Traceability: claims 13, interfaces 15, requirements 35, SEC 36, EVD-SEC 16, product evidence 15, bidirectional true, M/606 41, JSONL 262 events.
+- Provenance artifact #14611894438, SHA-256 `0563c2493e7d19acf7e0cddee34c91e4c4b0339cfc696e52f8d27c79de373ad6`.
+- Squash merge SHA `cad75135996c129bc576d83ce5b7ed968ca6a63b`.
+- Pre-main ref `safety/pre-main-pr170-merge-2026-11-20`; post ref `safety/post-merge-pr170-2026-11-20`; post ref == main 확인.
+- 보고서 v0.18 §39 및 제조사 인벤토리 26행 main 반영. 제품별 CRA scope/classification/Annex III-IV/RDPS Unknown, security tests Not Run 유지.
+- 운영 코드/workflow/secrets/state/history 및 SIL 3 보존 자료 미변경.
