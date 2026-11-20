@@ -1,13 +1,14 @@
 # 자동화 운영 점검 최신 상태 — 2026-11-20
 
-- GitHub 운영 `.github/workflows/run.yml`은 5분 주기가 아니라 UTC 3시간 간격(`0 */3 * * *`)이다. 최근 26개 schedule run은 job success였지만, 최근 3개 로그는 신규 보고서 생성 완료가 아니라 모델 503/조사 보류/신규 주제 없음 no-op 사례를 포함했다.
-- Actions job success와 CRA 신규 조사·원격 아카이브·Discord 전송은 별도 결과로 구분해야 한다.
-- 개선 브랜치: `fix/automation-outcome-visibility-2026-11-20`; 시작 main SHA: `2f8aac8d2d61e217e06be21d36afe857e8bdf2d0`.
-- 추가: `scripts/automation_outcome_summary.py`, `tests/test_automation_outcome_summary.py`, `reports/CRA_AUTOMATION_CADENCE_AND_OUTCOME_OBSERVABILITY_AUDIT_2026-11-20.md`.
-- 운영 workflow는 main.py 로그를 임시 파일로 tee하고 실제 outcome summary를 GitHub Actions Summary에 게시하도록 개선 중. 3시간 cadence는 유지하며 cron을 UTC 정각(:00)에서 :17로 이동해 정각 부하를 피한다. Gemini/Discord 호출 빈도, secrets, main.py, checkpoint/guard는 변경하지 않았다. 최근 26회 run은 평균 59분(중앙값 58분, 범위 49~71분) 지연됐으며, Run #2523은 12:00 UTC 슬롯보다 약 63분 늦게 생성됐다.
-- 초기 PR #189 HEAD `434819fde00e1f72b7ff158cc4893e0fc1d2e367`의 Run #1247에서 182 passed / 0 failed. 이후 cron offset 변경 HEAD Run #1262는 기존 cadence 테스트의 옛 문자열 고정으로 181 passed / 1 failed; 해당 테스트 기대값을 :17로 정정. code HEAD Run #1271 success, 182 passed / 0 failed(추가 quality-fallback fixture 반영 전). Run #2523 실제 로그: 10개 공식 source, Gemini 3.8 Flash는 EUR-Lex 링크 누락으로 품질 탈락, 3.5 Flash Lite 전환 후 신규 주제 없음; 저장/Discord 전송 없음, guard 성공. 품질 기반 폴백 탐지 fixture 및 summary reason 반영. Run #1282는 fixture의 2개 실패(폴백 marker/newline escape)로 181 passed / 2 failed; fixture를 실제 로그와 맞게 수정. 최신 HEAD `0238f456d3c3087a91e5b94b8b649d0cd39c3634` Run #1285 success, **183 passed / 0 failed**, source identity/compile/traceability/official PDF·HTML canary/manifest upload 성공. main 미병합.
-- 5분마다 production Gemini 실행은 비용·quota·중복·queue 위험 때문에 채택하지 않는다. 필요하면 별도 read-only heartbeat로 분리 검토한다.
-- ChatGPT 예약 작업 확인: 주간 CRA·MCU 공식자료 점검 enabled; 일일 Git 브랜치 통합 상태 점검 및 CRA 보고서 대기열 점검 disabled. 5분 자동화는 확인되지 않았다.
+- **PR #189 병합 완료:** `1683b5ec780c7396309d85b86cba100a021194e4` (squash). main read-back 동일.
+- **현재 운영 schedule:** `17 */3 * * *` — UTC 매 3시간 17분. 기존 3시간 간격을 유지하고 정각(:00) 부하를 피하도록 이동. 5분 주기 아님.
+- **관측성 개선:** `main.py` stdout/stderr runner 임시 로그 tee, 원래 exit code 보존, GitHub Actions Step Summary에 조사 결과·공식 source count·모델 폴백 사유·archive·Discord 상태를 분리 표시.
+- **검증:** PR exact-head Run #1289 success, 183 passed / 0 failed. main push Run #1290 / ID `44742940672` success, **183 passed / 0 failed**. Source identity, compileall, CRA traceability, official PDF/HTML canaries, provenance manifest upload 성공. PDF evidence upload은 unchanged 조건으로 skipped.
+- **복구 기준:** pre-merge `safety/pre-merge-pr189-automation-observability-2026-11-20` 및 post-merge `safety/post-merge-pr189-automation-observability-2026-11-20` 모두 merge point main SHA와 동일.
+- **기존 실행 품질:** 최근 26개 schedule job은 모두 success였지만 실제 시작 지연은 49~71분(평균 59분, 중앙값 58분). Run #2523은 공식 source 10개를 확보했으나 Gemini 3.8 Flash가 EUR-Lex 링크 누락으로 품질 탈락, 3.5 Flash Lite 전환 후 신규 주제 없음으로 종료. 보고서·archive·Discord 변경은 없었고 guard/pruning은 성공.
+- **다음 운영 확인:** 새 cron 첫 예상 슬롯은 2026-11-20 15:17 UTC (한국시간 2026-11-21 00:17). 실제 GitHub schedule은 지연될 수 있으므로 다음 실행에서 새 Step Summary가 `NO_NEW_TOPIC`/폴백 사유를 정확히 표시하는지 확인한다. 아직 새 summary를 production에서 검증한 것은 아님.
+- **5분 자동화:** GitHub Actions에 5분 production Gemini 실행을 설정하지 않았다. 하루 최대 288회 호출과 quota/중복/queue 위험 때문에 현 3시간 주기를 유지. 5분 모니터가 필요하면 Gemini/Discord/운영 데이터 쓰기 없는 read-only heartbeat로 별도 설계한다.
+- **ChatGPT 예약 작업:** 주간 CRA·MCU 공식자료 점검 enabled; 일일 Git 브랜치 통합 점검과 CRA 보고서 대기열 점검 disabled. 5분 task는 확인되지 않았다.
 
 ---
 

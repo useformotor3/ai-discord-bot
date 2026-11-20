@@ -1,12 +1,15 @@
-## 자동화 주기·실행 품질 개선 — 2026-11-20
+## 자동화 주기·실행 품질 개선 — 2026-11-20 (PR #189 merged)
 
-- 실제 운영 cron은 `0 */3 * * *`(UTC 3시간 간격). 5분 주기 아님.
-- 최근 26개 schedule run의 GitHub job은 success이나, 최근 3개 실제 로그에는 503 폴백 후 신규 주제 없음, 조사 보류, no-op이 있어 신규 조사 성공과 workflow success를 구분해야 함.
-- `fix/automation-outcome-visibility-2026-11-20`에서 run summary classifier 및 9개 fixture tests 추가. Actions Summary에 source count, model attempts/fallback, archive, Discord delivery를 명시.
-- 3시간 실행 빈도는 유지하고 cron minute를 UTC :00에서 :17로 이동해 GitHub 정각 부하를 피함. main.py, secrets, Gemini/Discord 호출 빈도, checkpoint/operational guard는 변경하지 않음. 최근 26회 run의 지연 통계(평균 59분, 중앙값 58분, 범위 49~71분)와 Run #2523의 63분 지연을 근거로 함.
-- 5분마다 production Gemini를 실행하는 방식은 호출량·quota·중복·queue 위험으로 부적절. 별도 read-only heartbeat는 후속 평가.
-- 초기 exact-head CI 통과: PR #189 Run #1247 success, 182 passed / 0 failed. cron :00→:17 변경 후 Run #1262에서 cadence test의 옛 문자열 고정 문제로 181 passed / 1 failed; 기대값 수정. 최신 code HEAD `2b3522b1a95256901636afae8ee1af92e68bc35a` Run #1271 success, 182 passed / 0 failed; source identity, compile, CRA traceability, official PDF/HTML canaries, manifest upload 성공. 이후 문서 전용 동기화로 HEAD가 갱신되어 최신 HEAD 확인 CI가 재실행될 수 있음. 다음: 최신 CI → diff/safety review → PR merge 절차 → 다음 scheduled run summary 검증.
-- 상세: `reports/CRA_AUTOMATION_CADENCE_AND_OUTCOME_OBSERVABILITY_AUDIT_2026-11-20.md`.
+- PR #189 squash merge SHA `1683b5ec780c7396309d85b86cba100a021194e4`; main read-back 동일.
+- 운영 cron: `17 */3 * * *` (UTC 매 3시간 17분). 3시간 cadence 유지, 정각 :00에서 :17로 이동. 5분 production run은 아님.
+- Actions Step Summary가 `RESEARCH_ARCHIVED_AND_DELIVERED`, `ARCHIVED_DELIVERY_DEFERRED`, `NO_NEW_TOPIC`, `DUPLICATE_BLOCKED`, `DEFERRED`, `FAILED`, `SUCCESS_UNCLASSIFIED`, `NOT_RUN_OR_UNKNOWN` 구분. Source count, models attempted/fallback reason, archive, Discord delivery 표시.
+- Recent 26 schedule runs: job success 26/26 but scheduled-slot delay 49–71 min (mean 59, median 58). GitHub documents best-effort delay near top of hour; :17 is risk reduction only, punctuality not guaranteed.
+- Production Run #2523: 10 official sources, Gemini 3.8 Flash rejected for missing EUR-Lex link, Gemini 3.5 Flash Lite fallback, no new topic, no report/archive/Discord changes; guard/pruning success.
+- PR exact-head Run #1289 and main push Run #1290 success; both 183 passed / 0 failed. Main Run #1290 ID `44742940672`; source identity, compile, CRA traceability, official PDF/HTML canaries and provenance upload passed.
+- Safety refs: pre-merge and post-merge refs both match main at merge point.
+- Next P0: first scheduled run after merge (expected 2026-11-20 15:17 UTC / 2026-11-21 00:17 KST) and verify summary classification from actual production logs.
+- 5-minute production Gemini schedule intentionally not configured (up to 288 calls/day). If needed, design separate read-only heartbeat without Gemini/Discord/data writes.
+- Detailed evidence: `reports/CRA_AUTOMATION_CADENCE_AND_OUTCOME_OBSERVABILITY_AUDIT_2026-11-20.md`.
 
 ---
 

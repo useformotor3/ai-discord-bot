@@ -130,3 +130,13 @@
 - 두 fixture를 production log 형식에 맞게 정정했다. xfail/skip 없이 정상 assertion으로 유지.
 - 최신 PR HEAD `0238f456d3c3087a91e5b94b8b649d0cd39c3634`, Run #1285 / ID `44742487474`: success, **183 passed / 0 failed**.
 - source blob identity, compileall, CRA traceability, official CRA PDF/HTML canaries, provenance manifest upload: success. PDF evidence upload은 unchanged/condition으로 skipped.
+
+
+## 7. 병합 및 main 사후 검증 — 2026-11-20
+
+- PR #189 squash merged: `1683b5ec780c7396309d85b86cba100a021194e4`.
+- Pre-merge and post-merge safety refs both read back identical to the merge-point main SHA.
+- Exact PR HEAD Run #1289: 183 passed / 0 failed.
+- Main push Run #1290 / ID `44742940672`: success, **183 passed / 0 failed**; source identity, compileall, CRA traceability, official PDF/HTML canaries, provenance manifest upload all passed. PDF evidence upload skipped by unchanged condition.
+- Production workflow now uses `17 */3 * * *` and the outcome summary step is merged. No production dispatch was initiated during this work.
+- First expected post-merge schedule slot: 2026-11-20 15:17 UTC (2026-11-21 00:17 KST). The new summary has not yet been validated against a post-merge production run. GitHub schedule remains best-effort and can still be delayed.
