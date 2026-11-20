@@ -1088,3 +1088,10 @@ CLC/TC 65X의 M/606 20b/21b/22b/25b/27b/36b를 prEN 50770-4/-2/-6/-3/-5/-1에 �
 - Merge SHA `850e2c851630239140e9a39d5f0978204b2ee025`; exact-head Run #1152 success, 174 passed / 0 failed.
 - Provenance artifact #14615596751, SHA-256 `25c5c192aa96544b5e41c8cac6eeda0d629f3c95af6755e090be6d34ae506a70`; pre/post safety refs retained.
 - PDF evidence upload skipped; no claim of original PDF acquisition.
+
+
+### PR #176 병합 및 검증 — 2026-11-20
+- Merge SHA `8f19a8b9fcf8e4582a9470e5483ff08019d1711f`; exact-head Run #1154 success, 174 passed / 0 failed.
+- Report v0.21 §42; manufacturer inventory 28 data rows.
+- Provenance artifact #14614954168, SHA-256 `067e43ccfc1c5b438f719489dc44f3e2ead4e152a2294d2c9b5031ca6bc192dd`; official HTML canary 10 sources passed. PDF evidence upload skipped.
+- Pre/post safety refs: `safety/pre-pr176-merge-2026-11-20`, `safety/post-merge-pr176-2026-11-20`; main compared identical to merge SHA.
