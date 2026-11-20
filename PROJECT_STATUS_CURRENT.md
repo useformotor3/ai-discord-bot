@@ -1,3 +1,12 @@
+
+
+## 2026-11-20 추가 조사 — 제조사 펌웨어·도구 자료 목록 스크리닝
+- PR #156 main 기준 SHA: `af7fa899dd0e7c31871387befef62979ad032283` (PR #156 exact-head Run #1116 success, 174 passed / 0 failed).
+- 공식 소프트웨어 목록에서 DFU Downloader_Ver1.00.4 (2026-09-16), L7NH 특주 O/S (2026-08-31)를 확인. 공식 가이드북 목록에서 DriveCM V1.03.1 및 게인 튜닝 가이드(2026-09-08), iX7NH 교육자료(2026-09-14)를 확인.
+- 위 자료는 목록 메타데이터만 확인. 개별 첨부 bytes·파일명·해시·본문은 미확보. secure boot, signed firmware, authenticated update, anti-rollback, vulnerability fix 또는 support period를 입증하지 않는다.
+- 보고서 §34 및 제조사 원본 자료 인벤토리 신규 행 5개에 반영. 신규 행은 listing_metadata_only로 분류.
+- 다음 P0: 상세 게시물/첨부 URL 확보, DFU·펌웨어·DriveCM 원본 bytes 다운로드, SHA-256 및 서명/게시자/버전/본문 검토, SKU별 업데이트 경로·권한·복구·롤백·지원기간 확인.
+- 제품 CRA scope/classification/Annex III·IV/RDPS Unknown, security tests Not Run 유지.
 ## 최신 main 기준점 — PR #155 병합 및 프로젝트 상태 동기화 (2026-11-20)
 
 - 최신 main SHA: cd5976403f91c79beca845d8efd3f4e5f1930e23 (PR #155 squash merge).
