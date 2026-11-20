@@ -2451,3 +2451,32 @@
 - PR #186 merged via squash as `8adf72f3bbda24165479f7aa4d4246d48e4acd99`; exact-head CI #1242 success, 174 passed / 0 failed. It corrected README's stale PR #184 open banner and added the no-op replacement guard to AI_RULEBOOK.
 - `safety/post-merge-pr185-2026-11-20` and `safety/post-merge-pr186-2026-11-20` each read back identical to main at their respective merge points; latest PR186 safety ref is identical to current main.
 - Final main SHA updated to `8adf72f3bbda24165479f7aa4d4246d48e4acd99`; this branch synchronizes the situation board and logs the follow-up merge chain.
+
+## 2026-11-20 — 운영 자동화 주기·실행 품질 감사 및 관측성 개선
+
+### 수행
+- `.github/workflows/run.yml` 확인: 실제 schedule은 `0 */3 * * *`(UTC 3시간 간격), 5분 주기가 아님.
+- GitHub schedule event 최근 26건의 job conclusion은 모두 success. 과거 오래된 실패 이력은 최근 실행과 구분.
+- 최근 3개 production job 로그를 직접 열어 실제 실행 결과를 분리 확인.
+  - Run #2522: 공식 source 10개 확보, Gemini 3.8 Flash 503, 3.5 Flash Lite fallback, 신규 주제 없음, 아카이브/Discord 변경 없음.
+  - Run #2521: 조사 보류, 원격 main 동시 변경으로 no-op.
+  - Run #2520: 조사 보류, 운영 데이터 변경 없음.
+- Actions success가 신규 CRA 보고서 생성 완료를 뜻하지 않는 관측성 문제 확인.
+- 개선 브랜치 `fix/automation-outcome-visibility-2026-11-20` 생성. 운영 cron·main.py·secrets·외부 호출 빈도는 변경하지 않고 결과 분류/요약만 추가.
+
+### 변경
+- `scripts/automation_outcome_summary.py`: 실행 로그를 보수적으로 분류해 GitHub Step Summary 출력.
+- `tests/test_automation_outcome_summary.py`: 8개 fixture case.
+- `.github/workflows/run.yml`: main.py output tee, 원래 exit code 보존, always summary step 추가.
+- `reports/CRA_AUTOMATION_CADENCE_AND_OUTCOME_OBSERVABILITY_AUDIT_2026-11-20.md`.
+
+### 판단
+- 5분마다 Gemini production workflow를 돌리면 일 최대 288회 호출 시도, quota/비용/중복/queue/동시성 위험이 커진다. 현 3시간 간격 유지.
+- 5분 상태 확인이 실제 요구라면 Gemini/Discord/운영 데이터 쓰기 없는 별도 read-only heartbeat로 분리해야 한다.
+- ChatGPT 예약 작업은 주간 CRA·MCU 공식자료 점검만 enabled; 일일 Git 통합 점검 및 보고서 대기열 점검은 disabled. 5분 task는 확인되지 않음.
+
+### 검증 경계 및 다음 단계
+- CI 실행 전. 테스트 통과·PR 병합·main 반영 주장 금지.
+- PR exact-head CI → diff/safety 검토 → 다음 production schedule에서 summary가 실제 결과를 정확히 분류하는지 확인.
+- workflow 변경은 summary/로그 수집만 추가하며 cron, secrets, Gemini/Discord 실행 빈도, checkpoint 및 operational guard를 바꾸지 않음.
+
