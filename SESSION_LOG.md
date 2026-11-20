@@ -2155,3 +2155,13 @@
 - Squash merge SHA `a8db31bd2c7a1e0127ef226a432183633e66eb76`; pre-merge safety ref `safety/pre-pr171-merge-2026-11-20`; post ref `safety/post-merge-pr171-2026-11-20`; post ref == main 확인.
 - PR #170 연구 산출물 v0.18 §39 및 인벤토리 26행 main 반영 상태 유지.
 - 제품별 CRA scope/classification/Annex III-IV/RDPS Unknown, security tests Not Run 유지.
+
+
+## 2026-11-20 — iX7NH Ver1.7·Modbus TCP API 공식 자료실 재감사
+
+- 공식 Ver1.7 상세 게시물 확인: `iX7NH_KOR_Ver1.7_260605.pdf`, 19.5 MB, 게시물 작성 2021-05-14 / 첨부 표시 2026-06-05.
+- 공식 API 가이드 게시물에서 테스트 가이드 PDF(1.3 MB), `iX7NH_TCP_API.zip`(69.8 MB), `x64.zip`(44.6 KB), `APIv1.02_20210505 1.pdf`(1.5 MB; 2026-01-20 표시) 확인.
+- 공식 게시물 HTML은 확인했으나 첨부 다운로드 링크는 TimeoutError. 원본 바이트/SHA-256/본문/API 코드 미확보. metadata_only로 상태 유지.
+- 보고서 v0.19 §40, 제조사 인벤토리 MANUAL-IX7NH-V1.7 및 GUIDE-IX7NH-MODBUS-TCP-API 레코드 업데이트.
+- Ver1.1 기능을 Ver1.7에 전이하지 않으며 제품 CRA scope/classification/Annex III-IV/RDPS Unknown, security tests Not Run 유지.
+- 다음 P0는 제조사 고객지원으로부터 원본/대체 다운로드 URL 확보 후 해시·개정·본문 비교.
