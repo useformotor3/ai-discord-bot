@@ -12,8 +12,8 @@
 
 ### Workflow 설정
 
-- 파일: `.github/workflows/run.yml`
-- Cron: `0 */3 * * *` (UTC 기준 3시간 간격)
+- 감사 시점 main 설정: `0 */3 * * *` (UTC 정각, 3시간 간격)
+- PR #189 제안 설정: `17 */3 * * *` (UTC 매 3시간 17분, 동일한 3시간 간격으로 정각 부하 회피)
 - Job timeout: 15분
 - concurrency: `cra-production-run`, `cancel-in-progress: false`
 - Gemini API 및 Discord webhook 사용
@@ -27,7 +27,7 @@
 | #2521 | 2026-11-20 07:10 | success | 조사 보류(모델/품질 관련) → 원격 main 동시 변경으로 no-op |
 | #2520 | 2026-11-20 03:52 | success | 조사 보류(할당량/일시 장애 또는 품질 검증) → 운영 데이터 변경 없음 |
 
-최근 26개 schedule event의 GitHub job conclusion은 모두 success다. 이는 workflow 단계와 guard가 정상 종료했다는 의미이지, 매 실행마다 신규 보고서가 생성됐다는 뜻은 아니다.
+최근 26개 schedule event의 GitHub job conclusion은 모두 success다. 이는 workflow 단계와 guard가 정상 종료했다는 의미이지, 매 실행마다 신규 보고서가 생성됐다는 뜻은 아니다. 추가로 Run #2523은 기존 12:00 UTC cron 슬롯보다 약 63분 늦은 13:03 UTC에 시작했다. GitHub 공식 문서는 정각 부하 시 schedule 지연/누락 가능성을 명시한다.
 
 ### 예약 작업과의 구분
 
@@ -40,7 +40,7 @@
 
 5분마다 현재 production workflow 전체를 실행하면 하루 최대 288회 Gemini 호출 시도가 된다. 현재 job은 실행마다 공식 source fetch, Gemini 요청, Git checkpoint 및 필요 시 GitHub/Discord 쓰기를 수행한다. 일부 실행은 3분 이상 소요되고 timeout은 15분이다. 따라서 5분 cron은 queue 누적, 모델 rate/quota 소진, 중복 조사, Discord 과다전송 및 데이터 동시성 위험을 키운다.
 
-현재 3시간 주기를 유지한다. 5분 확인이 필요하다면 Gemini/Discord/운영 데이터 쓰기가 전혀 없는 별도 read-only heartbeat로 분리해 설계해야 한다. 이번 변경에서는 heartbeat를 새로 배포하거나 production cadence를 변경하지 않는다.
+현재 3시간 주기는 유지하되, 정각 집중을 피하도록 PR에서 cron minute를 0에서 17로 이동한다. 호출 빈도는 그대로이며 5분 확인이 필요하다면 Gemini/Discord/운영 데이터 쓰기가 전혀 없는 별도 read-only heartbeat로 분리해 설계해야 한다. 이번 변경에서는 heartbeat를 새로 배포하지 않는다.
 
 ## 4. 이번 관측성 개선
 
