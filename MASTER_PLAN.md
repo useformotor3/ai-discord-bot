@@ -1,3 +1,12 @@
+## 2026-11-20 — PR #162 병합 및 다음 P0
+- PR #162 merge SHA `1d6110236984ee11387aaf2be99f239fa2f2ec1e`; exact head `903fd90709636b37f2b4ebd1abec893555955a8e`; Run #1128 success, **174 passed / 0 failed**.
+- Source integrity, compileall, CRA traceability, official CRA PDF/10-source HTML canaries, provenance upload 통과. Artifact #14609085450 SHA-256 `0407e5069a4f5d9698f6d9be994ffecbbc62c9dbae54b29b52cb96c39873cf4c`.
+- Pre/post safety refs 생성 및 post ref == main 확인.
+- 보고서 v0.16 §37, 제조사 인벤토리 20개 행, JSONL 254건 main 반영.
+- 다음 P0: iX7NH Ver1.7 원본 확보 및 Ver1.1 대비 변경점 검토; FoE/Webserver 초기 인증정보의 현행 여부·기기별 고유성·변경 강제·TLS·권한·로그·서명·anti-rollback·복구 확인. 제조사 증거 확보 전 취약점 판정 금지.
+
+---
+
 ## 2026-11-20 — PR #161 병합 및 iX7NH 업데이트 보안 P0 조사
 - PR #161 merge SHA `3e633d1b1b8312f5cb6665b44ee8a6fac43ee694`; exact head `66ed22f9ab16576b607fb70c898f71f82f860ea1`; Run #1126 success, **174 passed / 0 failed**.
 - Source integrity, compileall, CRA traceability, official CRA PDF/10-source HTML canaries, provenance upload 통과. Artifact #14608053214 SHA-256 `758aded424447f0d6fb74729a699ac9f856fa403d128a1db04883d9afb48ff42`.
