@@ -1,10 +1,10 @@
 ## 최신 기준점 — ETSI M/606 18개 조사 및 최신 draft 재검증 (2026-11-20)
 
-- 기준 main SHA: b54360ffefaf732d101c12ac49f1846041110c83; 조사 브랜치: research/cra-etsi-18-active-matrix-class-audit-2026-11-20; post-PR183 safety ref: safety/post-merge-pr183-postmerge-status-sync-2026-11-20.
+- 기준 main SHA: 9dbe6e92c358d0361f9640651152e4d1e8b1ec6b; PR #184 merged 2026-11-20. 조사 브랜치: research/cra-etsi-18-active-matrix-class-audit-2026-11-20 (merged); pre-merge safety: safety/pre-merge-pr184-2026-11-20; post-merge safety: safety/post-merge-pr184-2026-11-20 (verified identical to main).
 - Full 18-item M/606 master matrix added. EN 304 635 and EN 304 636 ETSI page metadata says Class I but Regulation 2025/2392 classifies both Class II. Latest EN304636 V1.0.0 PDF page 9 explicitly says Class II point 2; current Work Item page Class I label is stale metadata. EN304635 V1.0.1 public 15-page sample inspected: document p.15 Scope explicitly says Class II point 1. Latest public drafts for both EN304635/636 align with law; full 386-page EN304635 PDF not acquired.
 - EN 304 627 industrial OT exclusion added; total OT exclusions tracked: EN 304 620/621/622/627.
 - Next P0: obtain the complete 386-page EN304635 V1.0.1 PDF from the official ETSI download service if access permits; current 15-page sample already confirms Class II point 1. Then prepare an evidence-backed ETSI metadata clarification request, monitor official ETSI calendar event GoSRSReq006-M/606 AMD 1 - examination meeting on 2026-11-23; minutes/decision and ESO acceptance remain pending, CENELEC official WG3 mapping 81650–81654 is now cross-checked against the 2026-05-07 CENELEC presentation; direct individual catalogue stage/DOR/DAV readback remains pending, as does 81649 parent/child sync and actual OJ citations. Do not use Class I Article32 route for these categories.
-- PR #184 latest exact-head CI Run #1234 (commit a391c039837a1219591dead58d962013dee788b1): success; 174 passed / 0 failed; source integrity, compile, CRA traceability, live official CRA PDF/HTML canaries and provenance manifest upload succeeded.
+- PR #184 final exact-head CI Run #1238 (commit 3dc3af115769ef2380a8895d41b0eced04b67fff): success; 174 passed / 0 failed; source integrity, compile, CRA traceability, live official CRA PDF/HTML canaries and provenance manifest upload succeeded. Squash merge commit: 9dbe6e92c358d0361f9640651152e4d1e8b1ec6b.
 
 ---
 
