@@ -798,3 +798,15 @@
 - 병합 후 main push CI Run #1061 (`44657049974`) 성공. 전체 단계 완료.
 - 후속 우선순위: CEN JT013090/prEN 40000-1-3 1차 카탈로그 레코드 및 Article 2 ESO 비수락 통지 확인. 실제 개별 EN/ETSI 매핑·OJ 상태 41개 전수검증은 미완료.
 - 제품별 CRA scope/classification/Annex III·IV/RDPS Unknown, 보안시험 Not Run. 제조사 매뉴얼 원본 PDF bytes 및 SHA-256 미확보.
+
+
+## 2026-11-20 추가 1차 출처 확인 — M/606 수평표준 Work Item 연결
+
+- PR #129 병합: `da3cbc4b68ba92b8512f08740c02eefc415a616e`; main push CI Run #1063 (`44657325405`) 전체 성공. PR #129의 Run #1062도 성공.
+- CEN/CENELEC 공식 M/606 Work Programme V1 (2025-04-02)에서 Annex I item 1 → JT013089 (Principles for cyber resilience), items 2–14 → JT013091 (Generic Security Requirements), item 15 → JT013090 (Vulnerability Handling) 연결을 확인.
+- CEN-CENELEC 공식 2026-02-23 CRA webinar는 JT013090을 prEN 40000-1-3 Vulnerability handling과 연결한다. CEN 공식 2026-11-19 발표는 FprEN 40000-1-3이 곧 공개될 예정이라고만 밝힌다.
+- 따라서 item 1, items 2–14, item 15의 ESO work-item 연결은 1차 자료로 확인되어 감사대장에 반영. 단, JT013090의 최신 공식 카탈로그 세부 레코드(현 단계, 날짜, OJ citation 필드)는 직접 확보하지 못했다. Formal Vote 19 Nov 개시 및 OJ citation expected는 현재 2차 자료에서만 확인되므로 공식 확정으로 승격하지 않는다.
+- Article 2는 개정 결정을 ESO가 수령한 날부터 1개월 이내 비수락 통지를 할 경우 결정이 중단된다고 규정한다. 수령일은 발송일(10 Nov)과 동일하다고 가정할 수 없으며, ESO별 수령일/통지 원본을 찾지 못했다. 따라서 정확한 종료일 또는 비수락 통지 부재를 확정하지 않는다. 결정 전문의 Recital (2)는 2025년 원 요청의 수락만 확인하며 2026년 개정의 수락 증거가 아니다.
+- 41개 item의 Annex I 주제·기한 41/41 검증은 유지. Work Item 매핑을 item 1, 2–14, 15까지 15개 행에 연결했으나, 개별 EN/ETSI 문서의 최신 상태·OJ 인용 전수감사는 미완료.
+- CRA Article 27 적합성 추정은 해당 표준 참조가 OJEU에 게시된 경우에만 발생한다. EN 40000-1-2는 CEN 카탈로그의 “No citation expected” 기록에 따라 presumption 근거로 사용하지 않는다. JT013090은 OJ 필드 미확인으로 presumption 미확정.
+- PR #129 main push CI Run #1063 전체 단계 성공. 복구 기준점: `safety/pre-pr129-merge-2026-11-20` 및 `safety/post-merge-pr129-2026-11-20`.
