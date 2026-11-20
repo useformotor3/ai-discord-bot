@@ -446,7 +446,7 @@
 - 모든 자동화 산출물에는 원본 출처, 버전/날짜, 조회일, 파일 hash 또는 hash 미확보 사유, page/paragraph locator, 검토 상태를 연결한다. 미확인 데이터는 Unknown으로 fail-closed 처리한다.
 
 
-## 11. 자기검토·세션 연속성·토큰 효율 (2026-11-20 보강)
+## 60. 자기검토·세션 연속성·토큰 효율 (2026-11-20 보강)
 - 상세 운영 기준은 [AI 세션 연속성·자기검토·토큰 효율 운영 기준](reports/AI_SESSION_CONTINUITY_SELF_REVIEW_AND_TOKEN_EFFICIENCY_2026-11-20.md)을 따른다.
 - 모델 자체의 자율 재학습/영구 기억을 주장하지 않는다. 기준 확인 → 작업 → 독립 검증 → 오류 분석 → 규칙/테스트 개선 → GitHub 영속화 → 다음 세션 재현의 명시적 루프로 운영한다.
 - 세션 시작 시 과거 기억에 있는 브랜치명을 현재로 가정하지 말고 main HEAD, 활성 브랜치, PR, CI를 실시간 재조회한다. `PROJECT_STATUS.md`가 역사 문서이면 `PROJECT_STATUS_CURRENT.md`를 최신 기준으로 사용한다.
@@ -457,7 +457,7 @@
 - 의미 있는 변경 후 GitHub read-back 전에는 저장 완료로 보고하지 않는다.
 
 
-## 12. 동적 표준화 상태 및 상충 출처 처리 (2026-11-20)
+## 61. 동적 표준화 상태 및 상충 출처 처리 (2026-11-20)
 - ETSI Work Programme의 active count, 화면에 표시된 10개, 개별 상세 record 8개, M/606 Annex I 41개는 서로 다른 모집단이다. 8개 개별감사를 18개 전체 전수감사로 표현하지 않는다.
 - Work Programme의 Harmonised Standard=Yes, CENELEC의 Citation expected, forecast OJ date는 실제 OJ citation이 아니다. Article 27 presumption은 실제 OJ reference와 scope fit가 확인된 경우만 주장한다.
 - 표준 stage가 national member body 간 다르면 단일 상태로 임의 통합하지 않는다. 출처·조회일·표시 단계·충돌·중앙 ESO record readback 여부를 각각 기록하고 Unknown/Conflict를 유지한다.
@@ -467,13 +467,13 @@
 - Commission Register 원본을 취득하지 못하고 certified-copy mirror만 읽었다면 acquisition limitation과 hash 미확보를 명시한다.
 
 
-## 13. Central catalogue readback precision
+## 62. Central catalogue readback precision
 - CENELEC project records must be reported by exact WIID and direct readback status. A parent project page does not establish that split child deliverables have separate catalogue records.
 - If one central record is read successfully but sibling records fail, state exactly which WIID was verified and which were not. Do not generalize one page's status to the entire series.
 - National-member status tables (DKE, BSI, LVS) are useful evidence but do not replace the CENELEC central record. Conflicts remain visible until reconciled.
 
 
-## 14. Annex III/IV core-functionality and Article 32 route discipline
+## 63. Annex III/IV core-functionality and Article 32 route discipline
 - Apply CRA Article 2(1) connection scope before product-category analysis; intended purpose and reasonably foreseeable use are separate evidence fields.
 - Apply Article 7(1) core functionality to the complete product. Do not classify the host product solely because an Annex III/IV component is integrated; separately marketed components may be products in their own right.
 - Use Commission Implementing Regulation (EU) 2025/2392 technical descriptions, not Annex category names alone. Fieldbus controllers/adapters are expressly included in physical/virtual network interfaces; treat this as a product-boundary evidence gate, not an automatic host-product classification.
@@ -482,31 +482,31 @@
 - For Class I, distinguish full application from non-/partial application of relevant HEN/CS/EUCC; for Class II do not offer Module A as a default route; for Annex IV check Article 8(1) delegated-act status.
 
 
-## 15. ETSI metadata vs legally binding product class
+## 64. ETSI metadata vs legally binding product class
 - Never copy the Annex III Class I/II label from an ETSI Work Programme scope page without checking Regulation (EU) 2024/2847 Annex III and Implementing Regulation (EU) 2025/2392 technical descriptions.
 - Store “ETSI page class label” and “legal Annex III class” separately. If they conflict, mark critical discrepancy; law controls conformity route.
 - Distinguish an ETSI Work Item metadata/scope-text error from a normative EN draft error. Do not claim the draft is wrong until draft bytes and relevant clauses are acquired and inspected.
 - Article 32 route mapping must use the legal class, not a Work Programme label.
 
 
-## 16. Draft version provenance when checking ETSI class labels
+## 65. Draft version provenance when checking ETSI class labels
 - A public interim draft from an earlier version may help distinguish Work Item metadata from normative text, but it does not establish the content of the current latest version.
 - Record exact draft version/date and distinguish: Work Item page scope text, earlier public draft, latest current draft, approved/published EN.
 - If an older draft is legally correct but current page metadata is wrong, record “metadata discrepancy; older draft aligned; latest draft unverified” rather than claiming the standard itself is wrong.
 
 
-## 17. Latest draft retrieval vs Work Item metadata
+## 66. Latest draft retrieval vs Work Item metadata
 - Prefer the latest public normative draft from ETSI DocBox over a stale Work Item scope description when checking a class label; record exact version/date/page and compare to the legally binding regulation.
 - A successfully opened latest draft can resolve a metadata mismatch. If a sibling PDF fetch times out, record the directory listing and timeout separately; do not claim its contents were checked.
 
 
-## 18. CSV edit integrity gate
+## 67. CSV edit integrity gate
 - For CSV changes, use a quote-aware full-file parser; do not reuse a full-file parser on a single line unless the return shape is explicitly handled.
 - Before saving, verify expected row count and uniform column count. After saving, read back, parse the entire CSV again, and verify critical rows/columns.
 - If a structural corruption occurs, restore from a known pre-edit commit and reapply the minimal change; never attempt to repair from a corrupted row alone.
 
 
-## 18. AI 세션 재개·자기검토·토큰 효율 프로토콜
+## 68. AI 세션 재개·자기검토·토큰 효율 프로토콜
 
 ### 세션 시작 시 최소 읽기 순서
 1. README에서 최신 진입 링크와 기준 브랜치/PR 확인.
@@ -533,15 +533,26 @@
 - 문자열 치환/자동 문서 편집은 대상 문구가 실제로 존재하는지 확인하고, 치환 후 기대 문구가 정확히 1회 존재하며 구문상 모순이 없는지 검사한다. `replace()`가 no-op이어도 도구가 성공처럼 보일 수 있으므로, commit success만으로 수정 완료를 간주하지 않는다. 저장 후 해당 파일을 다시 읽어 최종 문구를 검증한다.
 
 
-## 19. ETSI Work Item metadata discrepancy — resolved by latest draft text
-- For EN304635 V1.0.1 and EN304636 V1.0.0, latest publicly viewable draft text explicitly states Annex III Class II point 1 and point 2 respectively. Work Item page scope labels saying Class I are stale/incorrect metadata.
-- Record source type and coverage: EN304635 evidence is a 15-page public sample preview (Scope at document p.15), not the complete 386-page PDF; EN304636 evidence is the publicly opened latest draft PDF, document p.9.
-- Do not describe either latest draft as legally misclassified. Preserve the metadata discrepancy and use the legal Class II route.
+## 69. Historical ETSI draft evidence and current-version retrieval gate (updated 2026-11-21)
+- Historical evidence only: the EN 304 635 V1.0.1 public sample preview (15-page sample; Scope at document p.15) showed Annex III Class II point 1. This does **not** establish the contents of the current V1.0.9 draft. EN 304 636 V1.0.0 public draft evidence (document p.9) is a separate version-specific record.
+- As of 2026-11-21, ETSI live Work Programme query and Work Item Monitoring identify EN 304 635 V1.0.9 as the latest work-item version, while the free download area still lists V1.0.1. The V1.0.9 full PDF bytes, page count, clauses and SHA-256 have **not** been acquired/verified.
+- Therefore phrase the conclusion precisely: legal Annex III Class II point 1 applies to the hypervisor/container-runtime category under the binding CRA/Implementing Regulation; V1.0.1 sample text is historical supporting evidence; V1.0.9 normative text remains unverified. Do not say the current V1.0.9 draft itself was checked or that a metadata discrepancy was resolved by that version.
+- Preserve source type/version/date/locator for each draft and separate Work Item metadata, earlier public sample, current draft, approved EN and OJ citation status.
 
 
-## 14. 자동화 실행 결과와 CI 성공 분리
+## 70. 자동화 실행 결과와 CI 성공 분리
 - GitHub Actions job conclusion=success는 workflow step들이 정상 종료했다는 뜻일 뿐, 신규 조사 보고서 생성·원격 아카이브·Discord 전송 성공을 의미하지 않는다.
 - 자동화 실행 결과는 최소한 `RESEARCH_ARCHIVED_AND_DELIVERED`, `ARCHIVED_DELIVERY_DEFERRED`, `NO_NEW_TOPIC`, `DUPLICATE_BLOCKED`, `DEFERRED`, `FAILED`, `SUCCESS_UNCLASSIFIED`, `NOT_RUN_OR_UNKNOWN`으로 구분한다.
 - 신규 보고서 생성 완료로 집계하려면 원격 archive commit과 Discord 전송의 명시적 증거가 모두 있어야 한다. Discord가 보류되면 archive 완료와 delivery 보류를 분리한다.
 - no-op, 모델 503/429, 품질 검증 보류는 Actions job success와 별개로 실제 조사 미완료 상태로 기록한다.
 - production cron은 API 호출량·quota·중복·동시성 영향 분석 없이 단축하지 않는다. 5분 상태 감시가 필요하면 Gemini/Discord/운영 데이터 쓰기 없는 read-only heartbeat로 분리한다.
+
+
+## 71. 대화별 결과 검토와 개선 선별 (2026-11-21)
+- 각 대화/작업 단위 종료 시 사용자의 목표·제약, 실제 수행, 산출물, 검증 결과, 미완료/차단 사항, AI의 오류·누락·과장·비효율을 짧게 대조한다. 대화가 단순 확인·진행 지시이고 새로운 작업 결과가 없으면 별도 장문 기록을 만들지 않는다.
+- 개선 후보는 정확성, 최신성, 재현성, 안전성, 추적성, 비용/시간/토큰 효율 중 하나 이상을 실질적으로 개선하고 근거로 검증할 수 있을 때만 영구 기준에 반영한다. 개인적 취향, 일회성 우연, 근거 없는 일반화, 중복 설명, 측정 불가능한 '더 잘하기'는 행동강령에 넣지 않는다.
+- 개선 수준을 구분한다: (A) 일회성 문장/작업 교정은 해당 산출물만 수정, (B) 반복 가능한 절차 개선은 체크리스트/운영 문서에 반영, (C) 반복되는 기계적 오류는 테스트·검사기로 자동화, (D) 구조적/고위험 문제는 별도 이슈·PR 및 복구 기준으로 관리한다.
+- 규칙을 추가하기 전에 기존 규칙과 중복/충돌 여부, 적용 범위, 예상 부작용, 검증 방법을 확인한다. 규칙이 너무 세분화되어 번호/의미가 중복되면 통합·정리한다.
+- 각 개선 기록에는 관찰된 근거, 원인, 예상 효과, 적용 위치, 검증 결과, 잔여 한계를 포함한다. 제안/작성/테스트 통과/운영에서 효과 확인을 구분하고, 효과가 확인되지 않은 개선을 성공으로 선언하지 않는다.
+- 세션별 검토는 모든 대화 내용을 무차별 영구 저장하는 것이 아니다. 프로젝트에 장기적으로 유효한 결정·오류·재발 방지·검증된 개선만 선택적으로 보존한다.
+- 기존 개선의 효과도 다음 작업에서 재평가한다. 불필요하거나 부작용이 확인된 규칙은 근거를 남겨 수정·폐기하고, 과거 기준과 현재 기준의 적용 시점을 보존한다.
