@@ -1,3 +1,15 @@
+## 최신 재개 상태 — CRA 핵심 이행 최신정보 갱신 작업 (2026-11-20)
+
+- 현재 활성 목표는 CRA 전체 규제·표준화·제품 적용성·보안·신고 체계다. LS메카피온 iX7NH는 제품 사례연구이며 CRA 조사 우선순위를 대체하지 않는다.
+- 기준 main SHA: `07d6d3b1d8f91637da7b6a9a023b2f4ec64e7efd`; 작업 브랜치: `research/cra-core-implementation-refresh-2026-11-20`; 사전 복구 ref: `safety/pre-cra-core-implementation-refresh-2026-11-20`.
+- CRA 통합 보고서 v0.3로 갱신 중. 신규 §25는 2026-11-20 기준 Commission/ENISA 최신 이행자료를 대조하고 SRP 실제 운영 제약을 정리한다.
+- 신규 ENISA 공식 확인: SRP FAQ 2026-10-15, Glossary v1.6 2026-10-21, AR User Manual v1.3 2026-11-04. API 미제공, 영어 UI, Article 15 미구현, 72h UI counter와 법정 시한 불일치 가능성 등 반영.
+- 신규 산출물: `reports/CRA_SRP_OPERATIONAL_READINESS_2026-11-20.md`, `reports/CRA_LIVE_SOURCE_FRESHNESS_REGISTER_2026-11-20.csv`.
+- 검증 제한: ENISA FAQ/Glossary HTML parsed; raw bytes/hash 미확보. AR User Manual은 버전/날짜 메타데이터만 확인, PDF 본문 미검토. SRP status endpoint 열람 실패; live platform test 미실시.
+- 제품별 CRA scope/classification/Annex III·IV/RDPS Unknown, 보안시험 Not Run. 법적 정확성 100% 또는 제품 적합성 완료를 주장하지 않는다.
+
+---
+
 ## 최신 재개 상태 — PR #173 병합 및 iX7NH Ver1.7/API 증거 갱신 완료 (2026-11-20)
 
 - PR #173 squash 병합: main SHA `634c3178471ff20c99e97ba48fc4c5e187afb28d`; 연구 브랜치 exact head `2e536ed1cd893e433b0aab6b98185c40bff3ff8a`.
