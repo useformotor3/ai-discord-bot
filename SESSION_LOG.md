@@ -2492,3 +2492,9 @@
 ### 스케줄 조정 후 재검증 상태
 - 운영 cadence는 3시간으로 유지하고 cron minute만 UTC :00 → :17로 변경. 호출 빈도·Gemini/Discord 요청 수는 늘리지 않음.
 - 최초 PR HEAD Run #1247: 182 passed / 0 failed. 이후 workflow cron 및 관리 문서가 변경되었으므로 최신 HEAD에 대한 CI 재실행을 기다림. 최초 CI를 최신 HEAD 검증으로 오인하지 않음.
+
+
+### 자동화 cadence 테스트 회귀 정정
+- PR #189 중간 HEAD Run #1262 실패: **181 passed / 1 failed**.
+- 유일한 실패는 기존 `tests/test_production_workflow_cadence.py`가 옛 cron 문자열 `0 */3 * * *`를 고정 assert한 테스트였다. 실제 3시간 cadence를 검증하는 테스트가 offset 변경과 동기화되지 않은 상태.
+- 작업 브랜치에서 기대 cron을 `17 */3 * * *`로 수정. 실패를 숨기거나 xfail 처리하지 않았다. 최신 HEAD CI로 재검증 예정.
