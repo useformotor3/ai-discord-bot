@@ -35,7 +35,7 @@ ETSI Work Item scope text는 EN 304 635와 EN 304 636을 Annex III Class I이라
 - EN 304 635: DEN/CYBER-EUS-0016, WKI 74858. ETSI page says Class I; legal class is Class II.
 - EN 304 636: DEN/CYBER-EUS-0020, WKI 74859. ETSI page says Class I; legal class is Class II. M/606 item 36 includes industrial-use systems.
 - 법령이 우선하며 해당 제품의 core functionality가 이 범주에 해당하면 Article 32(3) Class II route를 적용한다.
-- 공개 draft를 추가 대조했다. EN 304 636 최신 V1.0.0 (2026-07-09)은 PDF page 9 Introduction에서 Annex III Class II point 2를 명시한다. EN 304 635 최신 V1.0.1 파일은 DocBox에 등록되어 있으나 fetch timeout으로 본문 미확인이다. 이전 V0.0.8에는 class label이 없었다.
+- 최신 draft 대조: EN 304 636 V1.0.0 (2026-07-09) PDF document p.9 Introduction은 Annex III Class II point 2를 명시한다. EN 304 635 V1.0.1 (2026-06) 공개 sample preview document p.15 Scope는 Annex III Class II point 1을 명시한다. 두 최신 공개 draft의 확인 가능한 본문은 법령과 일치한다. EN304635는 15-page sample only; full 386-page PDF 미확보.
 
 ## 산업용 OT 경계
 
@@ -62,7 +62,7 @@ ETSI DocBox에서 최신 Work Item version보다 이전의 공개 interim draft�
 
 - EN 304 636 V1.0.0 (2026-07-09): 최신 public draft PDF page 9 Introduction에서 CRA Annex III Class II point 2를 명시한다. 이는 Regulation 2025/2392와 일치하며, 현재 Work Item page의 Class I scope label은 stale/incorrect metadata다. 이전 V0.0.9도 Class II로 일치한다.
 - EN 304 635 V0.0.8 (2025-11-10): 추출된 본문에서 “Class I”, “Class II”, “Annex III” 표기를 찾지 못했다. 이 문서는 법적 class를 잘못 명시한 것으로 확인되지 않았다.
-- EN 304 635 current Work Item version 1.0.1 파일은 DocBox에 등록되어 있으나 fetch timeout으로 본문을 읽지 못했다. 최신 V1.0.1의 class 표기는 미확인이다.
+- EN 304 635 V1.0.1: 공개 preview 15쪽 Scope에서 Class II point 1 확인. 전체 원본 386쪽 미확보라는 열람 범위 제한은 유지한다.
 
 Sources:
 - EN 304 635 V0.0.8: https://docbox.etsi.org/CYBER/EUSR/Open/EN-304-635_V0.0.8_2025-11-10_Virtualisation_Containers.pdf
@@ -74,7 +74,7 @@ Sources:
 
 ETSI DocBox directory listing shows EN_304-636_V1.0.0_2026-07-09_Firewalls_Enquiry-draft.pdf. The PDF was opened successfully. Page 9 (PDF zero-index page 8), Introduction, explicitly states that firewalls, intrusion detection systems and intrusion prevention systems are identified in Annex III, Class II, point 2 of Regulation (EU) 2024/2847. This confirms the latest public draft itself is legally aligned; the Work Item detail page's Class I label is stale/incorrect metadata.
 
-EN 304 635 V1.0.1 file is listed in the same directory as EN_304-635_V1.0.1_2026-06-24_Virtualization_Container_Enquiry-draft.pdf, but fetching it timed out. The earlier V0.0.8 draft had no class label in extracted text. Latest V1.0.1 content remains unverified.
+EN 304 635 V1.0.1 public sample preview (15 pages) explicitly states Annex III Class II point 1 in document p.15 Scope. Full 386-page original was not acquired; this is a sample-coverage limitation, not an unresolved class-label question. Source: https://standards.iteh.ai/catalog/standards/etsi/9277aaff-7da2-4e37-81c4-8dc2b472b2b4/etsi-en-304-635
 
 - ETSI DocBox directory: https://docbox.etsi.org/CYBER/EUSR/Open/
 - EN 304 636 V1.0.0: https://docbox.etsi.org/CYBER/EUSR/Open/EN_304-636_V1.0.0_2026-07-09_Firewalls_Enquiry-draft.pdf
