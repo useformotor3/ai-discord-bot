@@ -114,3 +114,12 @@
 - source blob identity, compileall, CRA cross-matrix traceability, official CRA PDF/HTML canaries, provenance manifest upload: success.
 - PDF source artifact upload은 unchanged/condition으로 skipped.
 - 이후 상태판/계획/README 문서 전용 갱신으로 HEAD가 변경되었으므로, 최종 제출 HEAD 확인은 추가 CI 결과를 기준으로 한다.
+
+
+### Production Run #2523 사후 로그 분석
+- Run #2523 / ID `44740952326`: 2026-11-20 13:03:25–13:11:06 UTC, job success, 약 7분 41초.
+- 공식 source gate 10개 확보.
+- Gemini 3.8 Flash 응답은 “CRA 공식 EUR-Lex 원문 링크 누락”으로 quality validation reject; Gemini 3.5 Flash Lite로 전환.
+- 대체 모델은 “중복/신규 주제 없음”으로 종료. 신규 archive commit/Discord 전송/상태 변경 없음; operational guard와 checkpoint pruning은 success.
+- 이는 API 503/429가 아닌 **품질 검증 기반 모델 폴백** 사례다. outcome classifier가 여러 모델 시도만으로도 fallback을 표시하고 원인을 `quality_rejected_missing_eur_lex_link`로 구분하도록 개선했다.
+- 해당 실제 로그를 재현하는 9번째 fixture test를 추가했다. 기존 Run #1271의 182 passed는 이 추가 테스트 전 결과이며, 최신 HEAD CI 재검증 대기.
