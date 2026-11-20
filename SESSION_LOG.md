@@ -2402,3 +2402,11 @@
 - Sample PDF document p.15 Scope explicitly says the product is in CRA Annex III Class II point 1 and cites Commission Implementing Regulation (EU) 2025/2392. This resolves the latest-version class text question; it aligns with law.
 - Limitation: preview is 15 pages of a 386-page draft; full original not obtained. EN304636 V1.0.0 full public draft had already been inspected at document p.9 for Class II point 2.
 - Conclusion: both latest public drafts align with law; ETSI Work Item page Class I scope labels are stale/incorrect metadata. Corrected matrix, CSV, legal report and status accordingly.
+
+
+## 2026-11-20 — PR #184 exact-head CI Run #1223 success / next ETSI meeting source
+
+- Exact head `7d9d300a017bfc6d68b247b3a5de56c8a744e1c8` CI Run #1223 completed success: 174 passed / 0 failed.
+- Source blob identity, compile, CRA traceability, live official CRA PDF canary, live official CRA HTML canary and provenance manifest upload all succeeded; PDF artifact upload step was skipped because the workflow's source artifact condition was empty, not because the tests failed.
+- ETSI official portal calendar lists `GoSRSReq006-M/606 AMD 1 - examination meeting` on 2026-11-23. Calendar listing proves scheduled event only; agenda, decision, minutes and ESO acceptance remain pending.
+- Next: monitor meeting output; do not infer an AMD1 amendment or acceptance before official decision/receipt evidence.
