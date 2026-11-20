@@ -1,3 +1,12 @@
+## 2026-11-20 — ESI·DriveCM·제품 SKU 교차검증
+- 완료: ESI Ver0.98의 11개 적용 모델과 DriveCM Ver1.03.2의 지원 제품 및 PEGA2 EtherCAT/RS-485 신규 모델 변경내역을 제조사 상세 게시물에서 대조.
+- 핵심 갭: ESI 공개 적용목록에는 PEGA2/iX700M 미기재, DriveCM 지원목록에는 PEGA2 포함, 제품 카탈로그에는 iX700M EtherCAT 명시. 별도 ESI 또는 controller package 존재 가능성을 열어두고 제조사 확인 전 호환/비호환 단정 금지.
+- P0: PEGA2 EtherCAT·iX700M 전용 ESI 원본, Vendor ID/Product Code/Revision 및 firmware compatibility matrix 확보.
+- P0: DFU update authentication/signature/integrity/rollback/recovery, L7N/L7S end-of-support 및 vulnerability handling 정책 확보.
+- 첨부 원본 bytes·SHA-256 미확보; CRA scope/classification/Annex III·IV/RDPS Unknown, security tests Not Run 유지.
+
+---
+
 ## 2026-11-20 — PR #157 병합 및 사후 검증
 - PR #157 squash merge SHA `0ea0fba1fb37504f9d11b5c12d562c0d68f1d190`; exact-head Run #1118 success, 174 passed / 0 failed.
 - Source integrity, compileall, CRA traceability, full pytest, official PDF/10-source HTML canaries, provenance upload 통과. PDF artifact 업로드는 동일 원본으로 skipped.
