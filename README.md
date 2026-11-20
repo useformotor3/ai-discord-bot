@@ -1,8 +1,8 @@
 # CRA Servo Drive Compliance & Engineering Project
 
-> **최신 재개 상태 — 2026-11-20:** PR #173 병합, main `634c3178`. CRA 보고서 v0.20 §40–§41. Ver1.7/API 공식 첨부 메타데이터만 확인(다운로드 시간 초과); AutomationDirect 2026 Modbus TCP 보충 가이드 2차 검토. 제조사 원문 확인 및 Node 98/99·timeout 검증 대기.
+> **최신 재개 상태 — 2026-11-20 CRA 중심 갱신:** 기준 main `07d6d3b1`; CRA 통합 보고서 v0.3 §25 및 ENISA SRP 운영 최신정보 갱신 작업 중. SRP FAQ(2026-10-15), Glossary v1.6(2026-10-21), AR Manual v1.3(2026-11-04) 확인. LS메카피온 iX7NH는 제품 사례연구이며 CRA 전체 규제·표준화·신고·적합성 트랙이 최우선.
 
-산업용 서보 드라이브의 EU Cyber Resilience Act(CRA) 대응을 위한 조사·설계·검증·문서화 프로젝트입니다. 문서의 기본 언어는 한국어이며, 법령·표준·제조사 원문은 원어와 출처를 보존합니다.
+산업용 서보 드라이브를 사례로 EU Cyber Resilience Act(CRA) 전체 규제·표준화·제품 적용성·설계·검증·문서화를 수행하는 프로젝트입니다. CRA 법령과 공통 이행체계가 중심이며 특정 제조사 조사는 사례연구로 관리합니다. 문서의 기본 언어는 한국어이며, 법령·표준·제조사 원문은 원어와 출처를 보존합니다.
 
 ## 공식 프로젝트 범위 — 2026-11-17 확정
 
@@ -1095,3 +1095,9 @@ CLC/TC 65X의 M/606 20b/21b/22b/25b/27b/36b를 prEN 50770-4/-2/-6/-3/-5/-1에 �
 - Report v0.21 §42; manufacturer inventory 28 data rows.
 - Provenance artifact #14614954168, SHA-256 `067e43ccfc1c5b438f719489dc44f3e2ead4e152a2294d2c9b5031ca6bc192dd`; official HTML canary 10 sources passed. PDF evidence upload skipped.
 - Pre/post safety refs: `safety/pre-pr176-merge-2026-11-20`, `safety/post-merge-pr176-2026-11-20`; main compared identical to merge SHA.
+
+
+## 2026-11-20 CRA 최신 이행자료
+- [CRA 통합 규제·기술 준수 보고서 v0.3](reports/CRA_INTEGRATED_COMPLIANCE_REPORT_2026-11-17.md) §25에 Commission/ENISA 최신 이행자료와 SRP 운영상 주의사항을 반영 중.
+- [SRP 운영 준비 기준서](reports/CRA_SRP_OPERATIONAL_READINESS_2026-11-20.md) 및 [공식 출처 최신성 대장](reports/CRA_LIVE_SOURCE_FRESHNESS_REGISTER_2026-11-20.csv) 참조.
+- ENISA SRP FAQ의 UI 카운터는 Article 14 법정기한과 다를 수 있으므로 최초 인지 UTC 기준으로 별도 계산한다.
