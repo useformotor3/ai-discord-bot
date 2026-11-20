@@ -2046,3 +2046,16 @@
 - Provenance artifact #14606367087 (2,566 bytes; SHA-256 `57dba2ea061de40faec834b3794e102e414fa2f0e13a8fd72a0af2ede1447a80`).
 - Squash merge SHA `8bc9762efbd20ca9c7aaaddc3832745d4e6dc53e`; pre/post safety refs 생성, post ref와 main identical 확인.
 - PR #160은 PR #159 결과를 상황판·계획·README·세션/JSONL에 동기화한 문서 전용 PR이다.
+
+
+## 2026-11-20 — PR #161 병합 및 사후 검증
+- PR #161 exact head `66ed22f9ab16576b607fb70c898f71f82f860ea1`; Actions Run #1126 / ID `44690800297` success, **174 passed / 0 failed**.
+- CRA traceability: claims 13, interfaces 15, requirements 35, SEC 36, EVD crosswalk 16, product evidence 15, bidirectional links true, M/606 41, project log 252.
+- Provenance artifact #14608053214, SHA-256 `758aded424447f0d6fb74729a699ac9f856fa403d128a1db04883d9afb48ff42`.
+- Merge SHA `3e633d1b1b8312f5cb6665b44ee8a6fac43ee694`; pre/post safety refs 생성 및 post == main 확인.
+
+## 2026-11-20 — iX7NH 펌웨어 업데이트 경로 및 인증정보 단서 조사
+- LS ELECTRIC 공식 호스트의 iX7NH 매뉴얼 Ver1.1 텍스트를 검토하여 USB OTG, EtherCAT FoE, DriveCM USB, 내장 웹서버/Ethernet의 4개 업데이트 경로를 확인.
+- 구판 매뉴얼에 FoE 업데이트 password '00000000', 웹서버 object 0x2420/0x2421의 기본 ID/PASSWORD 값과 RW 설정 가능성이 기재됨. 현행 Ver1.7에도 동일한지, 기본값 변경/기기별 고유성/암호화 여부는 미확인.
+- 최신 공식 매뉴얼 Ver1.7 파일명·19.5MB·첨부일 2026-06-05 확인. 첨부 다운로드는 '잘못된 접근'으로 실패하여 최신 본문은 검토하지 못함.
+- 보고서 §37 및 자료 인벤토리에 구판 본문 검토와 최신판 메타데이터를 분리해 기록. 기본 인증정보를 실제 취약점이나 현행 제품 상태로 단정하지 않음.
