@@ -1,6 +1,6 @@
 # CRA Servo Drive Compliance & Engineering Project
 
-> **현재 진행 PR — 2026-11-20:** PR #184 is open (not merged); M/606 18-item matrix and CRA class-route audit are under review. Latest EN304635 V1.0.1 sample p.15 and EN304636 V1.0.0 p.9 both confirm Annex III Class II. Exact-head CI is running; see PROJECT_STATUS_CURRENT.md and PR #184 for current verification.
+> **현재 진행 PR — 2026-11-20:** PR #184 is open (not merged); M/606 18-item matrix and CRA class-route audit are under review. Latest EN304635 V1.0.1 sample p.15 and EN304636 V1.0.0 p.9 both confirm Annex III Class II. Exact-head CI Run #1223 succeeded (174 passed); see PROJECT_STATUS_CURRENT.md and PR #184.
 
 ## 최신 ETSI 조사 — 2026-11-20
 - [M/606 active 18개 Work Item master matrix](reports/CRA_ETSI_M606_18_ACTIVE_WORK_ITEM_MASTER_MATRIX_2026-11-20.md)
