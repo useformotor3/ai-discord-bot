@@ -1767,3 +1767,10 @@
 - Production Run #2526 success is operational only: 10 official sources; Gemini 3.8 Flash 503; Gemini 3.5 Flash Lite rejected for missing EUR-Lex official link; DEFERRED; no report/archive/Discord changes. Summary step completed; raw log and classifier logic establish the deferred outcome, but GitHub Jobs API does not expose rendered Step Summary body.
 - Next P0: acquire V1.0.9 through an official route; compare against V1.0.1; inspect 2026-11-23 M/606 AMD 1 meeting minutes/decision and subsequent ETSI/ESO status; continue 41-topic standard/OJ audit and Article 2 receipt/non-acceptance evidence.
 - Evidence: `reports/CRA_ETSI_EN304635_V109_LIVE_STATUS_AND_RUN2526_AUDIT_2026-11-21.md`.
+
+
+## 2026-11-21 — AI 세션 자기검토 개선 및 문서 정합성
+- 행동강령 후행 규칙을 60~71번으로 재번호화하고, ETSI EN 304 635 V1.0.1 sample을 역사적 증거로 명시. V1.0.9 최신 Work Item과 공개 다운로드 판본을 분리하며 원문 미확보 상태를 유지.
+- 대화 단위 결과 검토/AI 행동 점검/개선 선별/효과 검증 기준을 AI_RULEBOOK §71 및 세션 운영 문서 §8에 반영.
+- 개선은 근거·반복 가능성·실질 효과가 있을 때만 영구 규칙/테스트로 반영. 단순 대화나 일회성 수정은 중복 문서화하지 않는다.
+- PR #191 post-merge main CI #1294 success, 183 passed / 0 failed. 이번 개선의 장기 효과는 후속 세션에서 확인한다.
