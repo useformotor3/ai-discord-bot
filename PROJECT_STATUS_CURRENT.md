@@ -1421,3 +1421,15 @@
 - Provenance artifact #14613952433, 2,567 bytes, SHA-256 `84a6cab72e1403f205d03151a9259a8ac101244d95fafdd3e87b5c5fca05b718`.
 - main read-back/compare 결과 main == merge SHA. 복구 기준점 `safety/pre-pr174-merge-2026-11-20` 및 `safety/post-merge-pr174-2026-11-20`; post ref는 merge SHA 기준.
 - 제품별 CRA scope/classification/Annex III·IV/RDPS Unknown, 보안시험 Not Run. iX7NH Ver1.7/API 공식 첨부 원본 bytes/SHA-256 미확보; AutomationDirect 가이드는 2차 자료로만 사용.
+
+## 2026-11-20 최신 가이드북 목록 추가 감사
+- 공식 LS메카피온 가이드북 인덱스에서 iX7NH 교육자료(2026-09-14), DriveCM V1.03.1 가이드 및 게인 튜닝 가이드(2026-09-08), PN8B+L7NH(iX7NH) CSV 동기제어 및 EtherCAT 0x211F 외부 IO 가이드(2026-07-06) 확인.
+- 목록 메타데이터만 확인; 상세 첨부 파일명/크기/본문/SHA-256 미확보. 보고서 §42 및 인벤토리 GUIDEBOOK-INDEX-SERVO-2026-09 행에 반영.
+- 공식 제품 목록은 iX7NH를 AC 100–120/200–240 V, 0.1–15 kW EtherCAT 드라이브로 표기. 이는 제품군 범위 참고이며 특정 SKU/CRA 분류 근거가 아님.
+- 제품별 CRA scope/classification/Annex III·IV/RDPS Unknown, 보안시험 Not Run 유지.
+
+## PR #175 병합 및 사후 검증 (2026-11-20)
+- PR #175 exact head `65f0a5f136e0a37797710f485dcdc478b9cf45b0`, Run #1152 / ID `44707031513` success, 174 passed / 0 failed.
+- Merge SHA `850e2c851630239140e9a39d5f0978204b2ee025`; main read-back/compare identical.
+- Provenance artifact #14615596751, SHA-256 `25c5c192aa96544b5e41c8cac6eeda0d629f3c95af6755e090be6d34ae506a70`.
+- Pre-merge ref `safety/pre-pr176-merge-2026-11-20`; post-merge ref `safety/post-merge-pr175-2026-11-20`.
