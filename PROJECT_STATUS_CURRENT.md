@@ -1,3 +1,10 @@
+## 최신 재개 업데이트 — 제조사 매뉴얼 첨부 메타데이터 재확인 (2026-11-20)
+
+- iX7M Ver1.3 및 iX7NH 200V Ver1.7 공식 게시물의 첨부파일명·표시 용량·첨부 표시시각을 확인했다. 파일은 각각 `iX7M_KOR_Ver1.3_260605.pdf`(12.4 MB), `iX7NH_KOR_Ver1.7_260605.pdf`(19.5 MB)로 표시된다.
+- iX700M 400V DRIVE 매뉴얼 Ver1.4가 공식 Servo 매뉴얼 목록에 2026-05-26 게시물로 표시된다. 세부 첨부파일명/크기는 미확인.
+- iX7M/iX7NH 직접 첨부 다운로드는 timeout/HTTP 502. PDF 원본 바이트, SHA-256, 페이지 수, 본문 검토는 미완료이며 METADATA_ONLY/METADATA_VERIFIED로만 기록한다.
+- 보고서 §25 및 `sources/manufacturer/LS_MECAPION_MANUAL_INTAKE_2026-11-20.json` 참조. 제품별 scope/classification/RDPS Unknown, security tests Not Run.
+
 # CRA 프로젝트 현재 상태 — 2026-11-20 KST
 
 > 최신 상태 스냅샷. 역사 기록은 SESSION_LOG 및 PROJECT_LOG에 append-only로 보존한다.
