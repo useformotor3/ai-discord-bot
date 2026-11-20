@@ -1,3 +1,10 @@
+## 2026-11-20 — PR #140 병합 및 모델 인터페이스 상태 동기화
+
+- PR #140 merge SHA 2edae2463e04b5d4280aa9d04c48f7805b554707; pre/post safety refs retained; post ref identical to main.
+- Exact PR head 1f859f5431917e8202ffdcaf7141376c8712eb8e; Run #1084 success, 174 passed / 0 failed.
+- Official CRA PDF/HTML canaries, compile, traceability, pytest, provenance upload success; artifacts #14595564027 and #14595579119.
+- Main에 보고서 §31~§33, M/606 audit, vertical profile matrix, manufacturer source inventory, 14-row model-interface matrix 반영.
+- Next P0: obtain original manufacturer PDF/XML/MSI/API ZIP/CE DoC bytes, compute SHA-256, inspect exact SKU ports/protocols/security controls; verify iX7NH dual protocol and L7P RS-422 scope.
 ## 2026-11-20 — PR #139 병합 및 모델 인터페이스 작업 상태 동기화
 
 - PR #139 merge SHA 7545a771ce16f362cf5b911cd8c850efc91c2e92; pre/post safety refs retained; post ref identical to main.
