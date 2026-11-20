@@ -2435,3 +2435,11 @@
 - Created `safety/pre-merge-pr184-2026-11-20` from pre-merge main and `safety/post-merge-pr184-2026-11-20` from merge SHA. Post-merge safety ref compares identical to main (0 ahead/0 behind).
 - Main readback verified README, status board, AI_RULEBOOK, 18-item matrix (18 rows), integrated report §38, OT mapping report, and PROJECT_LOG (290 valid JSONL events).
 - Self-review found README's temporary “PR #184 open” banner had become stale after merge; this follow-up branch corrects README and updates status board with the merge SHA and safety refs.
+
+
+## 2026-11-20 — README merge-banner no-op 발견 및 재발방지
+
+- PR #185 post-merge readback에서 README 첫 배너가 여전히 “PR #184 is open”이라고 표시됨을 발견했다. 이전 수정은 실제 문자열이 아닌 다른 CI-run 문구를 대상으로 `replace()`하여 no-op이 발생했지만 commit 자체는 정상 생성되었다.
+- 원인: 치환 대상 문자열을 최신 파일 readback으로 확인하지 않고 이전 대화 상태에서 추정했다. 저장 성공을 내용 수정 성공으로 오인했다.
+- 복구: README 정확한 3번째 줄을 readback한 뒤 해당 줄 전체를 병합 완료 상태로 교체. AI_RULEBOOK에 no-op 치환 탐지, 기대 문구 횟수 확인, 저장 후 readback 규칙 추가.
+- 교훈: update_file commit 성공은 파일 변경의 의미적 성공을 보증하지 않는다. 매 수정 후 정확한 파일 readback과 기대 문자열 검증을 수행한다.
