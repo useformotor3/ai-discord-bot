@@ -90,3 +90,28 @@ CEN 공식 EN 40000-1-1 레코드에서 DAV는 승인된 공식 언어 버전이
 
 공식 Commission 페이지: https://digital-strategy.ec.europa.eu/en/policies/cra-standardisation
 결정문 사본: https://www.ibf-solutions.com/fileadmin/dateidownloads/c-2026-7861-main-document-annex-cra-standards.pdf
+
+---
+
+
+## 2026-11-20 공식 CEN 카탈로그 재조회 — EN 40000-1-1/-1-2 직접 readback
+
+2026-11-19 CEN-CENELEC 공식 공지 이후 개별 CEN 카탈로그 레코드를 다시 열었다. 2026-11-18 본문에 남아 있던 EN 40000-1-2 공식 레코드 readback 미완료 상태를 종료한다.
+
+| 표준 | CEN Work Item | Status | DOR | DAV | DOA | DOP/DOW | Citation in OJEU |
+|---|---|---|---|---|---|---|---|
+| EN 40000-1-1:2026 | JT013095 | Published | 2026-11-02 | 2026-11-18 | 2027-02-28 | 2027-05-31 | No citation expected for Directive 2024/2847 |
+| EN 40000-1-2:2026 | JT013089 | Published | 2026-11-02 | 2026-11-18 | 2027-02-28 | 2027-05-31 | No citation expected for Directive 2024/2847 |
+
+- EN 40000-1-1은 EN 40000 series vocabulary.
+- EN 40000-1-2는 generic cybersecurity principles, product risk management, lifecycle activities를 다룬다.
+- 두 EN은 CEN에서 Published이나 해당 CRA 지침에 대한 OJ citation을 기대하지 않는다고 CEN 레코드가 명시한다. 따라서 Article 27 presumption of conformity 근거로 사용하지 않는다.
+- DAV는 official-language definitive text의 중앙 배포 가능일이다. DOA/DOP/DOW는 national announcement/publication/withdrawal implementation dates다.
+- 표준 본문 자체는 구매·취득·검토하지 않았으며, 이번 검증은 CEN catalog metadata 및 CEN-CENELEC announcement에 한정한다.
+
+공식 레코드:
+- https://standards.cencenelec.eu/ords/f?p=CEN:110::::::FSP_PROJECT,FSP_ORG_ID:82349,2307986
+- https://standards.cencenelec.eu/ords/f?p=CEN:110::::::FSP_PROJECT,FSP_ORG_ID:81335,2307986
+- https://www.cencenelec.eu/news-events/news/2026/en-in-the-spotlight/2026-11-19-cra-standards-en-40000-1-1-and-en-40000-1-2/
+
+**정정:** 이전 문서에서 EN 40000-1-2의 개별 CEN 페이지 직접 확인이 미완료라고 한 부분은 이 addendum으로 해소됐다. 두 EN의 OJ field는 No citation expected다.
