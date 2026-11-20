@@ -2370,3 +2370,10 @@
 - ETSI DocBox 공개 interim draft EN304636 V0.0.9 (2025-12-15) 확보. Introduction/Scope에서 Annex III Class II point 2를 명시해 법령과 일치함을 확인.
 - EN304635 V0.0.8 (2025-11-10) 확보. 추출된 본문에서 Annex III/Class I/Class II label을 찾지 못함.
 - 따라서 Work Item page metadata의 Class I 표기는 discrepancy로 유지하되, 실제 normative draft의 오류라고 단정하지 않도록 정정. 최신 v1.0.0/v1.0.1 draft는 아직 미취득.
+
+
+## 2026-11-20 — 최신 EN304636 V1.0.0 draft 검증
+
+- ETSI DocBox directory listing에서 최신 EN304636 V1.0.0 (2026-07-09) PDF 확인 및 열람.
+- PDF page 9 Introduction이 firewalls/IDS/IPS를 Annex III Class II point 2로 명시. 최신 공개 draft는 법령과 일치하며 Work Item page의 Class I label이 stale metadata임을 확인.
+- EN304635 V1.0.1 (2026-06-24)은 DocBox에 존재하지만 fetch timeout. 이전 V0.0.8은 class label 미포함; 최신 본문은 미확인.
