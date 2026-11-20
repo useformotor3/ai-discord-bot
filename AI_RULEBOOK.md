@@ -487,3 +487,9 @@
 - Store “ETSI page class label” and “legal Annex III class” separately. If they conflict, mark critical discrepancy; law controls conformity route.
 - Distinguish an ETSI Work Item metadata/scope-text error from a normative EN draft error. Do not claim the draft is wrong until draft bytes and relevant clauses are acquired and inspected.
 - Article 32 route mapping must use the legal class, not a Work Programme label.
+
+
+## 16. Draft version provenance when checking ETSI class labels
+- A public interim draft from an earlier version may help distinguish Work Item metadata from normative text, but it does not establish the content of the current latest version.
+- Record exact draft version/date and distinguish: Work Item page scope text, earlier public draft, latest current draft, approved/published EN.
+- If an older draft is legally correct but current page metadata is wrong, record “metadata discrepancy; older draft aligned; latest draft unverified” rather than claiming the standard itself is wrong.
