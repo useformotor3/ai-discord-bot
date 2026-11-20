@@ -1,6 +1,6 @@
 # CRA 서보 드라이브 통합 규제·기술 준수 보고서
 
-- 문서 버전: v0.7 (Annex III/IV core functionality 및 Article 32 경로 분석 보강) (ETSI 8개 Work Item 및 CLC/TC 65X OT profile 상태 정합성 / C(2026)7861 Article 2 보강) (CRA 핵심 규제·이행, CEN/ETSI 및 EU 표준화 법체계 최신정보 갱신 / 제품별 적용성 확인 전)
+- 문서 버전: v0.7 (ETSI M/606, CLC/TC 65X OT, C(2026)7861 Article 2, Annex III/IV 및 Article 32 분석 통합)
 - 기준일: 2026-11-20
 - 프로젝트 범위: EU Cyber Resilience Act(CRA) 대응만
 - 기준 제품군: 산업용 서보 드라이브 및 필수 펌웨어·설정/진단 소프트웨어
