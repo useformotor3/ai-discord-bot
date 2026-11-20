@@ -2363,3 +2363,10 @@
 - EN304635/636 Work Programme class label과 Regulation 2025/2392 legal class 간 mismatch를 status/plan/rulebook/integrated report에 기록.
 - README project title와 조사 산출물 진입점 readback 확인.
 - 후속: EN304635/636 normative draft 원문 취득, metadata-only 여부 확인, ETSI correction tracking.
+
+
+## 2026-11-20 — EN304635/636 공개 interim draft 대조
+
+- ETSI DocBox 공개 interim draft EN304636 V0.0.9 (2025-12-15) 확보. Introduction/Scope에서 Annex III Class II point 2를 명시해 법령과 일치함을 확인.
+- EN304635 V0.0.8 (2025-11-10) 확보. 추출된 본문에서 Annex III/Class I/Class II label을 찾지 못함.
+- 따라서 Work Item page metadata의 Class I 표기는 discrepancy로 유지하되, 실제 normative draft의 오류라고 단정하지 않도록 정정. 최신 v1.0.0/v1.0.1 draft는 아직 미취득.
