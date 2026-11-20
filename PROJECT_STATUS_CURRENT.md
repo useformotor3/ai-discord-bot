@@ -1,3 +1,17 @@
+## 최신 main 기준점 — PR #141 병합 및 모델 인터페이스 작업 CI 동기화 (2026-11-20)
+
+- 최신 main SHA: f798d9d16d74e399124c207c45ee6bdb6c1339a7 (PR #141 squash merge).
+- PR #141 exact head 468eba3d10c9d76279dfa2f64c445b11db25d288; Actions Run #1086 / ID 44662805428 success; 174 passed / 0 failed.
+- Run #1086: source blob integrity, compileall, CRA traceability, full pytest, official CRA PDF/10-source HTML canaries, provenance upload 모두 성공.
+- PDF artifact #14596955128 (3,070,501 bytes; SHA-256 257c1f95b42c6b4122386e2bc34bb1a2de6789ead07ac85e77b25c250c4311a0); provenance #14595634151 (2,567 bytes; SHA-256 12ff89b7934e7fdf5d4cbc107d65e35acfe2bf755f65f29231922a5c872b0f78); 7일 보존.
+- PR #141 pre-merge safety safety/pre-pr141-merge-2026-11-20; post-merge safety safety/post-merge-pr141-2026-11-20. Post ref와 main merge SHA identical.
+- main 반영 산출물: 보고서 §31~§33 (v0.12), 41-item CRA audit, 6개 OT/IACS profile matrix, manufacturer source inventory, 14행 model/interface matrix.
+- 25b 기술 관련성은 EtherCAT/Modbus TCP 모델에서 강함. 최종 표준 범위·SKU별 적용·iX7NH 듀얼 프로토콜·L7P RS-422 범위는 Unknown.
+- 제조사 PDF/XML/MSI/API ZIP/CE DoC 원본 bytes 미확보, SHA-256 미계산, content review metadata-only. Product scope/classification/Annex III·IV/RDPS Unknown; security tests Not Run.
+- main push CI는 독립 조회에서 확인되지 않아 미확인으로 유지.
+- 다음 P0: 제조사 원본 파일 확보/해시/본문 검토, exact SKU/옵션별 포트·프로토콜, 취약점·업데이트·지원기간 증거 수집.
+
+---
 ## 최신 main 기준점 — PR #140 병합 및 모델 인터페이스 상태 동기화 (2026-11-20)
 
 - 최신 main SHA: 2edae2463e04b5d4280aa9d04c48f7805b554707 (PR #140 squash merge).
