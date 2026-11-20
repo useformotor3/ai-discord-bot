@@ -1,3 +1,17 @@
+## 최신 재개 상태 — iX7NH Ver1.7/API 메타데이터 및 2026 Modbus TCP 보충 가이드 검토 (2026-11-20)
+
+- 기준 main: `1d66302539d7d0cbb33780590251898ac76bb1ea`; 작업 브랜치 `research/ix7nh-v17-api-source-audit-2026-11-20`; 문서 전용.
+- 통합 보고서 v0.20 §40–§41 반영. §40: LS메카피온 공식 Ver1.7 매뉴얼/API 첨부파일 메타데이터 확인. 공식 다운로드는 TimeoutError로 원본 bytes·SHA-256·본문 미확보.
+- §41: AutomationDirect의 2026-05-05 iX7NH Modbus TCP Communication Guide(1st Ed Rev B) 14페이지 웹 파싱 본문 검토. 제조사 매뉴얼을 대체하지 않는 2차 자료로 분리 기록.
+- 2차 가이드 주요 주장: Node 99=Modbus TCP+내장 웹서버, Node 98=Modbus TCP without webserver (firmware >=1.15), 내장 Modbus TCP timeout 없음(PLC 측 감시 권고), 제어 코일/Control Word/Target Position/Procedure Command의 RW 제어면. 실제 SKU·펌웨어 적용성과 모든 내용은 LS메카피온 공식 원문/기기에서 미검증.
+- 제조사 인벤토리: Ver1.7 및 API 첨부는 metadata_only; AutomationDirect 보충 가이드는 web_parsed_text_reviewed, source_type=distributor_technical_guide_pdf로 별도 분리.
+- 어떤 실기기·네트워크 시험도 하지 않았으며 쓰기/운전 명령을 실행하지 않음. 500 ms는 2차 가이드 예시일 뿐 안전 반응시간/안전기능으로 채택 금지.
+- 제품별 CRA scope/classification/Annex III·IV/RDPS Unknown, security tests Not Run.
+- 다음 P0: LS메카피온에 Node 98/99, timeout 동작, Modbus 쓰기 권한, Ver1.7 적용 펌웨어/SKU 및 공식 첨부 대체 다운로드를 서면 확인. 원본 확보 후 SHA-256 및 Ver1.1 대비 분석.
+- 운영 코드/workflow/secrets/state/history/SIL 3 보존 산출물 미변경.
+
+---
+
 ## 최신 재개 상태 — iX7NH Ver1.7·Modbus TCP API 공식 자료실 재감사 (2026-11-20)
 
 - 기준 main: `1d66302539d7d0cbb33780590251898ac76bb1ea`; 문서 전용 작업 브랜치 `research/ix7nh-v17-api-source-audit-2026-11-20`.
