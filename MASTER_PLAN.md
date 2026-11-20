@@ -1,3 +1,10 @@
+## 2026-11-20 — PR #136 병합 및 제조사 자료 인벤토리 CI
+
+- PR #136 squash merge SHA d7e921f5a6db04d20ce06778f6ea384dbd9c63fe; pre/post safety refs retained; post ref identical to main.
+- Exact head 25215700a415b094c6c187278183b8ca15e4e4ca; Run #1076 success, 174 passed / 0 failed.
+- Official CRA PDF/HTML canaries, source integrity, compile, traceability, pytest, provenance upload success; artifacts #14595209202 and #14595972121.
+- §32 manufacturer source inventory is now in main. ESI 0.98 and PEGA2 EtherCAT variant strengthen 25b technical review, but legal applicability remains Unknown.
+- Next: acquire original PDF/XML/MSI bytes, compute SHA-256, inspect model-specific communication and security functions, verify installer signature/dependencies.
 ## 2026-11-20 — 제조사 원본 자료 인벤토리 및 모델별 통신 경계
 
 - PR #135 merge SHA 4299fd7301c22898cab8291dcb1a54d2a767d0cf; exact-head Run #1074 success (174 passed / 0 failed); pre/post safety refs retained.
