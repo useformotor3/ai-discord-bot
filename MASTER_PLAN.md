@@ -1,3 +1,13 @@
+## 최신 조사 기준점 — ETSI 18개 Work Item 및 Class I/II 오류 감사 (2026-11-20)
+
+- M/606 active 18개 Work Item 상세 master matrix 작성. 17개 Annex I topics 17–27/31–36, EN304642는 추가 telecom supporting item.
+- Critical metadata mismatch: ETSI EN304635/636 scope text says Class I; Regulation 2025/2392 says Class II categories 1/2. Legal source controls; normative draft bytes still needed to determine whether mismatch is metadata-only or in draft text.
+- Industrial OT exclusions confirmed for EN304620 VPN, EN304621 NMS, EN304622 SIEM and EN304627 routers/modems/switches.
+- 18 records: Harmonised Standard metadata Yes, OJ field blank; actual OJ citation not established.
+- Next P0: acquire and inspect EN304635/636 draft; track ETSI metadata correction; 2026-11-23 M/606 AMD1 meeting; obtain ESO receipt/acceptance; central CENELEC 81650–81654; OJ index; complete Annex III/IV product evidence.
+
+---
+
 ## 최신 기준점 — PR #182 CRA 표준화·분류 분석 병합 (2026-11-20)
 
 - Main SHA 904b2ed0897331ced9dedfcbd25afd608f92f951; PR #182 Exact-head Run #1177 success, 174 passed / 0 failed; traceability 13 claims/15 interfaces/35 requirements/36 SEC/16 EVD-SEC/41 M606/279 project events.
