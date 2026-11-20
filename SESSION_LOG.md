@@ -1766,3 +1766,14 @@
 - 통합 보고서 §27, PROJECT_STATUS_CURRENT.md, README.md, MASTER_PLAN.md를 갱신하고 PROJECT_LOG.jsonl에 사건을 append한다.
 - M/606 41개 전수감사는 미완료. 제품별 scope/classification/RDPS Unknown, security tests Not Run 유지.
 - main.py, 운영 workflow, secrets, state/history, legacy SIL 3 자산 미변경.
+
+
+## 2026-11-20 — PR #125 병합 및 exact-head CI 사후 확인
+
+- PR #125 `docs(cra): record EN 40000 publication and M/606 OJ gate`를 exact head SHA `e940663da113dedcd8071f5781f1bcf78f449ccf`로 확인 후 squash merge했다.
+- Merge SHA: `0a5f5140e323303d6a960ca73edd8ec8c05f55f2`; GitHub는 merged=true를 반환했다.
+- Exact-head CI Run #1050 (run ID `44647390136`) 성공. Source blob identity, compile, CRA cross-matrix traceability, full pytest, live official CRA PDF/source read-only canaries 및 provenance manifest 업로드 성공. PDF evidence upload 단계는 skipped로 보고되었으며, 원본 PDF bytes 확보로 오인하지 않는다.
+- Post-merge safety ref: `safety/post-merge-pr125-2026-11-20`; pre-work safety ref `safety/pre-m606-oj-audit-2026-11-20`.
+- CEN-CENELEC 발표에서 EN 40000-1-1/-1-2 발행 확인. 추가 2차 추적 사이트는 CEN catalogue가 두 표준의 OJ citation을 기대하지 않는다고 표시한다고 보고한다. 이번 세션에서는 CEN catalogue 개별 레코드를 직접 열람하지 못했으므로, 잠정 2차 자료로만 관리하고 최종 OJ 판정은 CEN catalogue 및 EUR-Lex/OJ 직접 확인이 필요하다.
+- 상황판, README, SESSION_LOG, PROJECT_LOG.jsonl을 PR #125 및 현재 main SHA 기준으로 동기화한다.
+- M/606 41개 전수감사는 미완료. 제품별 scope/classification/RDPS Unknown, security tests Not Run 유지. main push CI는 별도 확인되지 않았다.

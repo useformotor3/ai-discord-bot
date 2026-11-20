@@ -1,3 +1,11 @@
+## 2026-11-20 — PR #125 병합 후 OJ 감사 정밀화
+
+- PR #125 merge SHA `0a5f5140e323303d6a960ca73edd8ec8c05f55f2`, exact-head CI Run #1050 success.
+- EN 40000-1-1/-1-2 발행 확인과 CRA OJ citation 상태를 구분한다.
+- 2차 CRA standards tracker는 CEN catalogue의 두 표준 OJ citation 기대 없음 정보를 보고하나, CEN catalogue 개별 레코드 직접 열람 전까지 잠정 2차 근거로만 관리한다.
+- 다음 단계: CEN standards catalogue 개별 레코드 직접 확인, European Commission OJ harmonised standards dataset 및 EUR-Lex/OJ에서 CRA 표준 참조 확인, 이후 M/606 41개 행별 근거 업데이트.
+- 상세 분석: 통합 보고서 §27.
+
 ## 2026-11-20 — M/606 표준 발행과 OJ 적합성 추정 분리
 
 - CEN-CENELEC 2026-11-19 공식 발표에서 EN 40000-1-1/-1-2 발행을 확인했다.

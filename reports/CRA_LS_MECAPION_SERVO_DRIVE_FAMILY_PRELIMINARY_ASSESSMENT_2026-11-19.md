@@ -1452,3 +1452,22 @@ CEN-CENELEC의 2026-11-19 공식 발표는 다음 두 유럽표준의 발행을 
 - Regulation (EU) 2024/2847, Article 27: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R2847
 
 **검증 한계:** 이번 업데이트는 두 EN 40000 표준의 발행 발표와 Article 27 OJ 게이트를 명확히 한 부분 업데이트다. M/606 41개 개별 표준의 개발단계·최종 발행·OJ 인용·제한사항 전수감사는 아직 완료되지 않았다.
+
+
+### 27.4 EN 40000-1-1/-1-2의 OJ 상태 — 2차 자료 교차확인 (2026-11-20)
+
+CRA 표준 상태를 추적하는 2차 자료인 CRA Evidence tracker(검색 확인일 표시: 2026-11-17)는 EN 40000-1-1/-1-2가 2026-11-02 승인(ratified)되었고, 2026-11-18부터 이용 가능하며, 두 표준에 대해 CEN catalogue가 CRA 법령(Directive 2024/2847로 표기한 페이지의 법령 연결) OJ citation을 기대하지 않는다고 보고한다. 해당 자료는 두 표준을 “Approved (EN ratified)”로 구분하고, OJ citation이 없으므로 Article 27(1) 적합성 추정이 없다고 설명한다.
+
+**증거 수준과 법령 표기 주의:** 이 정보는 CRA Evidence라는 2차 추적 자료를 통해 확인한 것이다. 본 세션에서 CEN/CENELEC catalogue의 각 표준 개별 레코드 원문을 직접 열람하지 못했으므로, “CEN catalogue에 no citation expected가 명시됨”은 2차 자료가 전달하는 내용으로 한정한다. CEN-CENELEC 공식 뉴스는 발행 사실을 확인하지만 OJ 인용 기대 여부를 명시하지 않는다. 최종 기록 전 CEN catalogue 개별 레코드와 European Commission OJ harmonised standards 목록/EUR-Lex를 직접 대조해야 한다.
+
+따라서 현재 결론은 다음과 같다.
+
+- EN 40000-1-1/-1-2 발행: **확인됨** (CEN-CENELEC 공식 발표)
+- 2026-11-02 ratification 및 2026-11-18 availability: **2차 자료에 의한 잠정 확인**
+- 두 표준의 OJ citation 기대 없음: **2차 자료에 의한 잠정 확인, 1차 자료 직접 검증 필요**
+- Article 27(1) 적합성 추정: **현 단계에서 주장하지 않음**
+- M/606 41개 표준 전체의 OJ 인용 현황: **전수감사 미완료**
+
+추가 출처:
+- CRA Evidence, “What Are CRA Harmonised Standards? Status and Tracker” (검색 결과 기준 2026-11-17 상태 설명): https://craevidence.com/cra-compliance/harmonised-standards-status
+- European Commission, Harmonised Standards portal (OJ 참조 목록의 공식 접근점): https://single-market-economy.ec.europa.eu/single-market/goods/european-standards/harmonised-standards_en
