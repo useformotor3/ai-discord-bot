@@ -1,4 +1,7 @@
-# CRA Servo Drive Compliance & Engineering Project
+## 최신 ETSI 조사 — 2026-11-20
+- [M/606 active 18개 Work Item master matrix](reports/CRA_ETSI_M606_18_ACTIVE_WORK_ITEM_MASTER_MATRIX_2026-11-20.md)
+- [18개 Work Item CSV](reports/CRA_ETSI_M606_18_ACTIVE_WORK_ITEM_MASTER_MATRIX_2026-11-20.csv)
+
 
 > **최신 재개 상태 — 2026-11-20:** PR #182 merged to main (904b2ed0897331ced9dedfcbd25afd608f92f951). Exact-head Run #1177 success, 174 passed / 0 failed. Integrated report v0.7: ETSI M/606 8-item audit, OT 7-deliverable profile reconciliation, C(2026)7861 Article 2/deadlines, Annex III/IV core-functionality and Article 32 route matrix. Product classification remains Unknown pending exact SKU/BOM/FW evidence.
 
