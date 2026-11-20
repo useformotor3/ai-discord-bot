@@ -2410,3 +2410,11 @@
 - Source blob identity, compile, CRA traceability, live official CRA PDF canary, live official CRA HTML canary and provenance manifest upload all succeeded; PDF artifact upload step was skipped because the workflow's source artifact condition was empty, not because the tests failed.
 - ETSI official portal calendar lists `GoSRSReq006-M/606 AMD 1 - examination meeting` on 2026-11-23. Calendar listing proves scheduled event only; agenda, decision, minutes and ESO acceptance remain pending.
 - Next: monitor meeting output; do not infer an AMD1 amendment or acceptance before official decision/receipt evidence.
+
+
+## 2026-11-20 — CENELEC official WG3 mapping cross-check
+
+- CENELEC CLC/TC65X WG3 official presentation dated 2026-05-07 explicitly maps M/606 topics to WIIDs/prEN deliverables: 36b→81649/prEN 50770-1; 21b→81650/-2; 25b→81651/-3; 20b→81652/-4; 27b→81653/-5; 22b→81654/-6.
+- DKE October 2026 national tracker corroborates all seven deliverables at Start NWI and Drafting prEN, with 81649 split into -1-1 firewall and -1-2 IDS/IPS.
+- Mapping is now source-verified; individual central CENELEC stages/DOR/DAV for 81650–81654 and 81649 parent/child record synchronization remain open. No OJ citation inferred.
+- Updated integrated report §38, OT reconciliation report §5, status, plan and project log.
