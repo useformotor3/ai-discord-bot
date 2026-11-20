@@ -1,3 +1,18 @@
+## 최신 main 기준점 — PR #138 병합 및 모델별 통신 인터페이스 증거 (2026-11-20)
+
+- 최신 main SHA: 372860cfb1a149bc5d5a7bf993e11dbf68217478 (PR #138 squash merge).
+- PR #138 exact head 0ca7cfb745884ba8c7a1f3f383974286d0e88fd8; Actions Run #1080 / ID 44662266977 success; 174 passed / 0 failed.
+- Run #1080: source integrity, compileall, CRA traceability, full pytest, official CRA PDF/10-source HTML canaries, provenance upload 모두 성공.
+- PDF artifact #14595309514 (3,070,503 bytes; SHA-256 bf73016cdd73cba8daab1c7108e5c469f4ac5bcfdd4648d43e9cc56d705f4f1e); provenance #14595489037 (2,567 bytes; SHA-256 8175503c2935119183cd810fd287028b288d36e837af79608de56c64883b27c9); 7일 보존.
+- PR #138 pre-merge safety safety/pre-pr138-merge-2026-11-20; post-merge safety safety/post-merge-pr138-2026-11-20. Post ref와 main merge SHA identical.
+- main 반영 산출물: 통합 보고서 §33 (v0.12), 14행 model/interface evidence matrix, manufacturer source inventory 보강, M/606 item25 및 25b matrix 갱신.
+- 제조사 카탈로그는 EtherCAT 통신형과 펄스형을 구분. iX7NH Modbus TCP API, L7P Modbus RS-422 API, iX700MD1-B-150B CE DoC 모델코드 메타데이터 확인.
+- 25b 기술적 관련성은 EtherCAT/Modbus TCP 모델에서 강함. 그러나 최종 표준 범위, exact SKU/port/option, iX7NH 동시 프로토콜, L7P RS-422 포함 여부는 Unknown.
+- PDF/XML/MSI/API ZIP/CE DoC 원본 bytes 미확보, SHA-256 미계산, content review metadata-only. Product scope/classification/Annex III·IV/RDPS Unknown; security tests Not Run.
+- main push CI는 독립 조회에서 확인되지 않아 미확인으로 유지.
+- 다음: SKU별 원본 파일 확보, ESI/API/매뉴얼 본문 검토, iX7NH EtherCAT+Modbus TCP 동시지원 확인, 인터페이스 보안 통제·업데이트·취약점 대응 정책 증거 수집.
+
+---
 ## 최신 main 기준점 — PR #137 병합 후 모델별 인터페이스 증거 분석 (2026-11-20)
 
 - main SHA: 71db8880502bbd5be083e297e39acc338ea0d13a (PR #137 squash merge).
