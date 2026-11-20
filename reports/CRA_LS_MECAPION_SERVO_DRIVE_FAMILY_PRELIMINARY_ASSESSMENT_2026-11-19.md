@@ -1,7 +1,7 @@
 # LS메카피온 서보드라이브 CRA 제품군 예비 분석 보고서
 
 - 문서 ID: CRA-LSM-FA-001
-- 버전: 0.11 (LS메카피온 제조사 공식 매뉴얼·DriveCM·EtherCAT ESI 자료 인벤토리 및 모델별 인터페이스 경계 추가)
+- 버전: 0.12 (제조사 공식 드라이브 카탈로그·Modbus TCP/RS-422 가이드·CE 모델코드 증거 및 모델별 통신 매트릭스 추가)
 - 기준일: 2026-11-20 (KST)
 - 작성 언어: 한국어
 - 대상 제조사/브랜드: LS메카피온 (LS MECAPION)
@@ -1696,3 +1696,55 @@ LS메카피온 공식 자료실에서 Servo 매뉴얼 목록, PEGA2/iX700M 매�
 - Step EtherCAT 기능 매뉴얼(별도 Step 제품군): https://lsmecapion.com/bbs/board.php?bo_table=manual&page=1&sca=Step&spt=-12644&wr_id=12648
 
 **판정 제한:** 제조사 게시물의 메타데이터와 적용 모델 목록은 확인했지만, PDF/XML/MSI 원본 내용은 아직 검증하지 못했다. 따라서 제품별 CRA scope/classification/Annex III·IV/RDPS는 Unknown, security tests는 Not Run으로 유지한다.
+
+
+## 33. 제조사 공식 드라이브 카탈로그 및 모델별 통신 인터페이스 분류 (2026-11-20)
+
+LS메카피온 공식 드라이브 카탈로그는 EtherCAT 통신형과 펄스형 제품을 구분한다. 별도 공식 가이드북은 iX7NH의 Modbus TCP 통신 테스트 API와 L7P의 Modbus RS-422 통신 테스트 API를 각각 제공한다. 따라서 제품군 전체에 동일한 통신 구성이 있다고 일반화하지 않는다.
+
+| 모델 | 제조사 카탈로그 표기 | 통신 관련 판단 |
+|---|---|---|
+| iX700M | 다축 모듈러 EtherCAT | EtherCAT 통신형 |
+| iX7M | 다축 EtherCAT | EtherCAT 통신형 |
+| iX7NH | 개선형 EtherCAT | EtherCAT 표기 및 별도 Modbus TCP API 가이드 |
+| L7NHA / L7NHB | EtherCAT 200/400 V | EtherCAT 통신형 |
+| L7NHF | EtherCAT Full-Closed | EtherCAT 통신형 |
+| L7PA / L7PB | 인덱스형 펄스 200/400 V | 펄스/Indexer형 |
+| L7C | 경제형 펄스/아날로그 지령 | 펄스형 |
+| L7SA / L7SB | 펄스/아날로그 지령 200/400 V | 펄스형 |
+| PHOX | 저전압 DC | 카탈로그상 통신형, 프로토콜 확인 필요 |
+| GEM | 2축 보드형 제어기 | 카탈로그상 통신형, 인터페이스 확인 필요 |
+
+### 33.1 통신 가이드와 모델코드 증거
+
+- **iX7NH — Modbus TCP:** 공식 가이드북 “iX7NH Modbus_TCP 통신 테스트(API)”가 등록되어 있다. PDF 1.3 MB, iX7NH_TCP_API.zip 69.8 MB, x64.zip 44.6 KB 및 APIv1.02 PDF 1.5 MB(2026-01-20 파일일)가 게시되어 있다. EtherCAT과 Modbus TCP가 동일 SKU에서 동시 지원되는지, 별도 옵션/펌웨어인지, 물리 포트가 공용/전용인지는 미확정이다.
+- **L7P — Modbus RS-422:** 공식 가이드북은 L7P Modbus_RS-422 통신 테스트 API를 명시한다. PDF 1.2 MB(2025-05-14), L7P_RS422_API.zip 69.9 MB 및 x64.zip 44.6 KB가 등록되어 있다. 이는 RS-422 직렬 통신/API 증거다. RS-422만으로 라우터·스위치·VPN 제품으로 재분류하지 않으며, prEN 50770-3의 물리·가상 네트워크 인터페이스 정의에 포함되는지는 최종 전문 확인이 필요하다.
+- **iX700M — CE 모델코드 예시:** 제조사 인증서 목록은 iX700MD1-B-150B를 예시로 든다. D1은 1축 Drive Unit, B는 480 Vac, 150은 15 kW, 마지막 B는 BiSS-C 엔코더 유형이다. CE DoC 첨부 메타데이터만 확인했으며 PDF 본문은 검토하지 않았다.
+
+### 33.2 ESI 0.98과 제품 카탈로그의 모델명 차이
+
+2025-07-15 게시된 ESI 0.98은 L7NH, Pegasus, PHOX, L7NHF, L7N, GEM, SMT, L7MMT, iX7NH, iX7M, iX7MD를 열거한다. 현재 카탈로그에는 iX700M 및 L7NHA/L7NHB도 EtherCAT 통신형으로 표시되지만 ESI 0.98의 세부 모델명과 완전히 일치하지 않는다. ESI 게시 이후 모델코드 변경, 계열 공용 파일 또는 별도 ESI 버전 가능성이 있으므로 ESI 목록 부재를 미지원 증거로 삼지 않고, 카탈로그 표기만으로 특정 SKU의 ESI 호환성을 단정하지도 않는다. 제조사에 판매 SKU별 최신 ESI와 Vendor ID/Product Code/Revision 호환표를 요청한다.
+
+### 33.3 CRA M/606 25b 판단 업데이트
+
+- iX700M, iX7M, iX7NH, L7NHA, L7NHB, L7NHF는 OT 네트워크 인터페이스 기능의 기술적 검토 대상이다.
+- iX7NH Modbus TCP 가이드는 별도 TCP 통신 경로의 추가 증거지만 동일 SKU 동시 지원 여부는 미확정이다.
+- PEGA2 EtherCAT 변형은 DriveCM 변경 이력에 근거한 후보이며 SKU/옵션 확인이 필요하다.
+- L7P Modbus RS-422는 직렬 통신 증거로 별도 기록한다. prEN 50770-3 범위 포함 여부는 Unknown이다.
+- L7PA/L7PB/L7C/L7SA/L7SB 펄스형 제품은 EtherCAT 통신형과 같은 경로로 묶지 않는다.
+- VPN, NMS, SIEM, router/modem/switch, firewall/IDS/IPS 기능은 이번 자료에서 입증되지 않았다.
+
+### 33.4 후속 확인 및 공식 출처
+
+1. EtherCAT 모델별 SKU·매뉴얼·ESI·펌웨어·포트표 확보
+2. iX7NH EtherCAT 및 Modbus TCP 동시 지원 여부, 포트/옵션/펌웨어 차이 확인
+3. L7P RS-422 물리계층·Modbus RTU/ASCII 여부·접근제어 확인
+4. PEGA2 EtherCAT/RS-485 모델코드와 옵션별 차이 확인
+5. iX700MD1-B-150B CE DoC 본문 및 주요 SKU 인증서 원본 확보
+
+- 공식 드라이브 제품군 카탈로그: https://www.lsmecapion.com/bbs/board.php?bo_table=pd_drive
+- iX7NH Modbus TCP API 가이드북: https://lsmecapion.com/bbs/board.php?bo_table=guidebook&wr_id=12682
+- L7P Modbus RS-422 API 가이드북: https://lsmecapion.com/bbs/board.php?bo_table=guidebook&wr_id=12681
+- iX700MD1-B-150B CE DoC 등록정보: https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&page=4&wr_id=12888
+
+**판정 제한:** 공식 게시물의 제품 분류·가이드 등록정보·모델코드 메타데이터에 근거한다. PDF/API ZIP/CE DoC/ESI 원본 bytes 및 SHA-256은 아직 확보하지 못했다. 정확한 SKU별 interface scope와 CRA 법적 적용은 Unknown, 보안시험은 Not Run으로 유지한다.
