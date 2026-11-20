@@ -467,7 +467,7 @@ ENISA의 2026-10-15 SRP FAQ, 2026-10-21 Glossary v1.6 및 2026-11-04 AR User Man
 ### 25.5 최신성·정확성 관리 원칙
 
 - 법적 결론은 모델 내부 지식이나 과거 대화 요약이 아니라 현행 EUR-Lex/OJ 원문 및 공식 기관의 최신 자료에서만 도출한다.
-- 공식 출처별로 source ID, 발행/개정일, 조회일(KST), 문서 버전, 원문 URL, 파일 bytes/hash 또는 HTML-parsed 상태, 확인한 locator, 법적 지위, 미확인 사항을 freshness register에 기록한다.
+- 공식 출처별로 source ID, 발행/개정일, 조회일(KST), 문서 버전, 원문 URL, 파일 bytes/hash 또는 HTML-parsed 상태, 확인한 locator, 법적 지위, 미확인 사항을 [CRA 공식 출처 최신성 대장](CRA_LIVE_SOURCE_FRESHNESS_REGISTER_2026-11-20.csv)에 기록한다.
 - 동적 운영 자료(ENISA SRP FAQ/Glossary/Manual/Status, Commission implementation/reporting/FAQ)는 최소 주 1회 또는 새 공지·문서 버전 감지 시 재조회한다. 표준화·OJ 상태는 최소 주 1회 및 신규 OJ/CEN/CLC/ETSI 공지 시 재조회한다. 이는 프로젝트 내부 관리 주기이지 법적 의무가 아니다.
 - 공식 원문을 읽지 못했으면 제목/검색 snippet/목록 메타데이터만으로 본문 확인을 주장하지 않는다. HTML parsed text는 raw PDF bytes/hash 확보와 구분한다.
 - 2차 자료는 탐색·교차검토용이며, 법령·표준·제품 기능에 대한 최종 근거로 단독 사용하지 않는다.
