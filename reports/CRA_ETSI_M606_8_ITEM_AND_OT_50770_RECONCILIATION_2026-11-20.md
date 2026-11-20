@@ -149,3 +149,23 @@ Sources:
 The new full 18-item ETSI master matrix supersedes the limited 8-item-only status snapshot for current overview. It confirms that EN 304 627 (routers/modems/switches) also explicitly excludes industrial OT. It also records two legal-class metadata mismatches: ETSI Work Item pages for EN 304 635 (hypervisors) and EN 304 636 (firewalls/IDS/IPS) say Annex III Class I, while Regulation 2025/2392 classifies both as Class II. The discrepancy is confirmed only in ETSI page scope metadata; normative draft bytes were not acquired.
 
 See reports/CRA_ETSI_M606_18_ACTIVE_WORK_ITEM_MASTER_MATRIX_2026-11-20.md and CSV.
+
+
+## 5. CENELEC 공식 WG3 자료로 WIID ↔ prEN 50770 mapping 교차확인 (2026-11-20)
+
+CENELEC 공식 webinar 자료(2026-05-07, CLC/TC65X WG3 rapporteur presentation)는 M/606 OT topics와 CENELEC Work Item ID 및 deliverable을 다음과 같이 명시한다. 이는 2026-11-20 프로젝트 matrix의 기존 mapping과 일치한다.
+
+| M/606 topic | CENELEC WIID | Deliverable | OT product/function |
+|---|---:|---|---|
+| 36b | 81649 | prEN 50770-1 | Firewalls, IDS/IPS (DKE Oct-2026에서는 -1-1/-1-2로 분리 표시) |
+| 21b | 81650 | prEN 50770-2 | Network management systems |
+| 25b | 81651 | prEN 50770-3 | Physical/virtual network interfaces |
+| 20b | 81652 | prEN 50770-4 | VPN-function products |
+| 27b | 81653 | prEN 50770-5 | Routers, internet modems and switches |
+| 22b | 81654 | prEN 50770-6 | SIEM systems |
+
+**Source:** CENELEC, *CLC/TC65X WG3-Vertical Standards — ACS Technical Requirements*, 2026-05-07, PDF page 5 (document page shown as 5), lines/slide content explicitly list topics, WIIDs and deliverables: https://www.cencenelec.eu/media/CEN-CENELEC/Events/Webinars/2026/2026-05-07_cra_unlocked_clc-tc65x-wg3-acs-technical-requirements.pdf
+
+DKE October 2026 national status PDF independently marks all seven deliverables (including the -1-1/-1-2 split) as Start NWI and Drafting prEN, with no later voting/adoption/HAS/citation marker. This is a national mirror status, not a substitute for central CENELEC project records. The official CENELEC webinar establishes the mapping, but does not establish current individual project stage, DOR/DAV, or OJ citation. Central direct readback of 81650–81654 remains open; 81649 parent/child synchronization also remains open.
+
+DKE source: https://www.dke.de/resource/blob/2435170/ee96d0e14ab1fe1af45708de66510607/normungsprojekte-zum-cra-data.pdf
