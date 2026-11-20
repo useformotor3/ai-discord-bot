@@ -1,3 +1,15 @@
+## 최신 main 기준점 — PR #160 병합 및 PR #159 사후 상태 동기화 (2026-11-20)
+
+- PR #160 squash merge SHA: `8bc9762efbd20ca9c7aaaddc3832745d4e6dc53e`; PR #160 exact head: `4f56e9b24354d25f03363127e8167a46049c5ded`.
+- PR #160 Actions Run #1124 / ID `44685715888`: success. Source blob identity, compileall, CRA traceability, full pytest **174 passed / 0 failed**, official CRA PDF/10-source HTML canaries, provenance manifest upload 성공. PDF 업로드는 unchanged로 skipped.
+- Provenance artifact #14606367087, 2,566 bytes, SHA-256 `57dba2ea061de40faec834b3794e102e414fa2f0e13a8fd72a0af2ede1447a80` (7일 보존).
+- 사전 복구 ref `safety/pre-pr160-merge-2026-11-20`; 사후 복구 ref `safety/post-merge-pr160-2026-11-20`; 사후 ref와 main은 identical (ahead 0 / behind 0).
+- PR #160은 PR #159 병합 결과를 상황판·계획·README·세션/JSONL 로그에 동기화한 문서 전용 변경이다. 현재 main은 위 merge SHA.
+- 보고서 v0.14 §35, 제조사 인벤토리 17개 데이터 행, JSONL 251개 유효 이벤트를 기준으로 후속 조사 진행.
+- 제품별 CRA scope/classification/Annex III·IV/RDPS는 Unknown, security tests는 Not Run 유지.
+
+---
+
 ## 최신 main 기준점 — PR #159 병합 및 CI 검증 (2026-11-20)
 
 - PR #159 squash merge SHA: `c43b35df267c30facbc8c8f62677e48189d24127`; exact-head `cc91056b674e54d80dfdd59f412b140caec4e6ed`.

@@ -2038,3 +2038,11 @@
 - CRA traceability summary: claims 13, interfaces 15, requirements 35, SEC 36, EVD crosswalk 16, product evidence 15, M/606 41, project log 250.
 - Squash merge SHA `c43b35df267c30facbc8c8f62677e48189d24127`; pre safety `safety/pre-pr159-merge-2026-11-20`, post safety `safety/post-merge-pr159-2026-11-20` and post == main verified.
 - Report §35/v0.14 and inventory 17 rows merged. Product scope/classification/Annex III·IV/RDPS Unknown; security tests Not Run.
+
+
+## 2026-11-20 — PR #160 병합 및 기준점 재확인
+- PR #160 exact head `4f56e9b24354d25f03363127e8167a46049c5ded`; Actions Run #1124 / ID `44685715888` success, **174 passed / 0 failed**.
+- Source blob identity, compileall, CRA traceability, official CRA PDF/10-source HTML canaries, provenance manifest upload 통과. PDF 업로드 unchanged skipped.
+- Provenance artifact #14606367087 (2,566 bytes; SHA-256 `57dba2ea061de40faec834b3794e102e414fa2f0e13a8fd72a0af2ede1447a80`).
+- Squash merge SHA `8bc9762efbd20ca9c7aaaddc3832745d4e6dc53e`; pre/post safety refs 생성, post ref와 main identical 확인.
+- PR #160은 PR #159 결과를 상황판·계획·README·세션/JSONL에 동기화한 문서 전용 PR이다.

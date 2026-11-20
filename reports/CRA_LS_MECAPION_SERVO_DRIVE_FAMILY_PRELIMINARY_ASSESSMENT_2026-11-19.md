@@ -1,7 +1,7 @@
 # LS메카피온 서보드라이브 CRA 제품군 예비 분석 보고서
 
 - 문서 ID: CRA-LSM-FA-001
-- 버전: 0.14 (ESI·DriveCM·신형 모델 적용범위 교차검증 추가)
+- 버전: 0.15 (DriveCM 펌웨어 downgrade 동작 관련 증거 추가)
 - 기준일: 2026-11-20 (KST)
 - 작성 언어: 한국어
 - 대상 제조사/브랜드: LS메카피온 (LS MECAPION)
@@ -1838,3 +1838,51 @@ LS메카피온 공식 드라이브 카탈로그는 EtherCAT 통신형과 펄스�
 - 드라이브 제품 목록(iX700M EtherCAT): https://www.lsmecapion.com/bbs/board.php?bo_table=pd_drive
 
 **증거 제한:** ESI·MSI·PDF 첨부 원본 bytes 및 SHA-256은 아직 확보하지 못했다. 이번 단계는 공식 게시물의 상세 텍스트/메타데이터와 모델 적용범위의 교차검증이다. Product CRA scope/classification/Annex III·IV/RDPS는 Unknown, security tests는 Not Run으로 유지한다.
+
+
+## 36. DriveCM 펌웨어 downgrade 관련 릴리스 노트 증거 (2026-11-20)
+
+### 36.1 제조사 공식 게시물에서 확인한 사실
+
+LS메카피온의 DriveCM Ver1.02.2 상세 게시물(2025-03-28)은 지원 제품을 L7P, L7NH, L7NHF, PEGA, PHOX, iX7NH, L7C, iX7M으로 열거한다. 주요 변경 내용 중 하나로 **“FW 다운로드 프로그램 튕김 현상 수정 — 다운그레이드 시 간헐적 프로그램 튕김 현상 수정”**을 명시한다.
+
+공식 출처: https://www.lsmecapion.com/bbs/board.php?bo_table=software&wr_id=12983
+
+이는 DriveCM의 펌웨어 다운로드/변경 과정에서 downgrade 상황이 실제 릴리스 노트의 수정 대상으로 다뤄졌다는 직접적인 제조사 문서 단서다. 따라서 CRA 업데이트 분석에서 단순히 “업데이트 제공 여부”만 확인할 것이 아니라, **이전 버전으로의 변경이 어떤 조건에서 허용되는지와 그 보안 통제**를 별도로 확인해야 한다.
+
+### 36.2 이 자료로 말할 수 있는 것과 없는 것
+
+| 구분 | 판단 |
+|---|---|
+| 제조사 릴리스 노트에 downgrade 시 FW 다운로드 프로그램 오류 수정이 기재됨 | 확인 |
+| DriveCM 펌웨어 변경 절차에 downgrade 경로/상황이 존재했음 | 릴리스 노트의 표현으로 확인되는 기능 동작 단서 |
+| 모든 모델·펌웨어에서 downgrade가 허용됨 | 미확인 |
+| downgrade가 인증된 사용자만 수행할 수 있음 | 미확인 |
+| 펌웨어 이미지의 전자서명·암호학적 무결성을 검증함 | 미확인 |
+| 취약 버전 또는 금지 버전으로의 downgrade를 차단하는 anti-rollback 정책이 있음 | 미확인 |
+| 이 오류 수정이 보안 취약점 패치임 | 근거 없음. 일반 기능 오류 수정으로만 기록 |
+
+**중요한 구분:** downgrade 자체가 항상 금지되어야 한다고 단정하지 않는다. 현장 복구·호환성 때문에 이전 버전 복귀가 필요할 수 있다. 핵심은 제조자가 승인한 버전 범위, 권한, 이미지 진위성·무결성 검증, 취약 버전 차단, 실패 복구와 감사 추적을 위험평가에 맞게 설계했는지 확인하는 것이다.
+
+### 36.3 CRA 검증 항목으로 전환
+
+1. **허용 버전 정책:** 모델·하드웨어 리비전별 허용 펌웨어 버전과 금지/취약 버전 목록이 있는가?
+2. **downgrade 승인:** downgrade에 별도 인증·권한·물리적 접근 또는 서비스 모드가 필요한가? 기본 설정은 무엇인가?
+3. **이미지 검증:** 구버전 이미지도 전자서명 또는 MAC 검증을 통과해야 하는가? 서명 검증 실패 시 설치를 거부하는가?
+4. **anti-rollback 예외:** 복구 목적 downgrade와 알려진 취약 버전으로의 복귀를 어떻게 구분하는가? 예외 승인·기록은 남는가?
+5. **복구 및 감사:** 전원 차단·통신 단절·잘못된 이미지에서 복구가 가능한가? 누가 어떤 버전을 설치했는지 로그가 남는가?
+6. **도구/드라이브 경계:** 이 동작은 DriveCM, 별도 DFU Downloader, 드라이브 부트로더 중 어느 구성요소가 수행하는가? 각 도구 버전과 지원 SKU는 무엇인가?
+
+이 질문은 CRA Annex I Part I의 취약점 처리·보안 업데이트 요구를 제품별로 검증하기 위한 증거 요청이다. 릴리스 노트 하나만으로 해당 요구의 충족 또는 미충족을 판정하지 않는다.
+
+### 36.4 기존 자료와의 연결 및 증거 한계
+
+DriveCM Ver1.03.2 게시물(2026-07-07)은 PEGA2를 지원 제품에 포함하고 EtherCAT/RS-485 신규 모델을 언급한다. 반면 Ver1.02.2의 지원목록에는 PEGA2가 기재되어 있지 않다. 이는 버전별 지원 범위가 변했음을 보여주는 공개 자료이므로, 펌웨어 업데이트·downgrade 정책을 분석할 때 도구 버전과 제품 SKU를 반드시 함께 기록해야 한다.
+
+- DriveCM Ver1.02.2 공식 게시물: https://lsmecapion.com/bbs/board.php?bo_table=software&wr_id=12983
+- DriveCM Ver1.03.2 공식 게시물: https://lsmecapion.com/bbs/board.php?bo_table=software&wr_id=13110
+- DFU Downloader_Ver1.00.4 목록 항목은 기존 §34 및 자료 인벤토리 참조. DFU 상세 게시물·첨부 원본은 여전히 미확보.
+
+이번 확인도 제조사 상세 게시물의 텍스트·메타데이터 검토다. MSI·릴리스 노트 PDF·DFU·펌웨어 원본 bytes와 SHA-256은 확보하지 못했다. downgrade 실행 시험, 서명 검증 시험, anti-rollback 시험은 수행하지 않았다.
+
+**현재 판정:** DriveCM의 downgrade 관련 동작 단서는 확인되었으나, 보안 정책·인증·서명·anti-rollback·복구 메커니즘은 Unknown이다. Product CRA scope/classification/Annex III·IV/RDPS는 Unknown, security tests는 Not Run으로 유지한다.
