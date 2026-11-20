@@ -1,3 +1,11 @@
+## 2026-11-20 — OT/IACS 수직 프로파일 6종 및 서보드라이브 경계 분석
+
+- 기준 main HEAD: 36f170de199d2fc23e4e40969584e56c37dbebe7; 작업 브랜치 cra/ot-iacs-vertical-profile-boundary-2026-11-20; pre-work safety ref safety/pre-ot-iacs-vertical-audit-2026-11-20.
+- CLC/TC 65X Work Programme과 개별 CENELEC 레코드에서 M/606 20b/21b/22b/25b/27b/36b가 prEN 50770-4/-2/-6/-3/-5/-1, project 81652/81650/81654/81651/81653/81649에 연결됨을 확인.
+- 6개 프로젝트 모두 Under Drafting / Committee stage; CENELEC OJEU 필드는 Citation expected이나 actual OJ citation number/date는 없음. Article 27 presumption 없음.
+- 서보드라이브 기능 경계는 보고서 §31 및 6-row CSV에 기록. 25b network interface는 조건부 우선 검토 후보. 나머지 VPN/NMS/SIEM/router-modem-switch/firewall-IDS-IPS는 현 증거로 기능 확인되지 않음.
+- 제품 CRA scope/classification/Annex III·IV/RDPS Unknown, security tests Not Run 유지. 모델별 원본 매뉴얼·설치파일·ESI 확보 전 기능 부재를 확정하지 않는다.
+- 다음: exact-head CI, PR review/diff, pre/post safety refs 및 main readback. 후속 우선순위는 모델별 매뉴얼 bytes/SHA-256/페이지 검토, 인터페이스별 기능·데이터흐름 증거 확보, 41개 실제 EN/ETSI 매핑·OJ 전수감사와 Article 2 ESO 통지 증거 확인.
 ## 2026-11-20 — PR #125 병합 후 OJ 감사 정밀화
 
 - PR #125 merge SHA `0a5f5140e323303d6a960ca73edd8ec8c05f55f2`, exact-head CI Run #1050 success.
