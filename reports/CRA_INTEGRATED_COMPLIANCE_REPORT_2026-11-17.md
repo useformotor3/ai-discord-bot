@@ -682,3 +682,11 @@ ETSI 개별 Work Item scope text는 EN 304 635 hypervisors/container runtime과 
 - 내부 matrix에는 “ETSI page class”와 “legal Annex III class”를 별도 필드로 보존하고, ETSI에 metadata correction/clarification을 요청할 증거 항목으로 관리한다.
 
 공식 법적 근거: Regulation 2025/2392 Annex I Class II categories 1 and 2. 상세 비교 및 원문 링크는 reports/CRA_ETSI_M606_18_ACTIVE_WORK_ITEM_MASTER_MATRIX_2026-11-20.md.
+
+
+## 36. EN 304 635/636 공개 interim draft와 Work Item metadata 대조
+
+추가로 공개된 이전 ETSI interim draft를 확보했다. EN 304 636 V0.0.9 (2025-12-15)는 Introduction/Scope에서 Annex III Class II point 2를 명시하여 법령과 일치한다. EN 304 635 V0.0.8 (2025-11-10)은 추출된 본문에서 Annex III/Class I/Class II label을 확인하지 못했다. 따라서 현재 Work Item page의 Class I 표기는 metadata discrepancy로 기록하되, 최신 v1.0.0/v1.0.1 normative draft까지 오류가 있다고 단정하지 않는다.
+
+- EN 304 635 V0.0.8: https://docbox.etsi.org/CYBER/EUSR/Open/EN-304-635_V0.0.8_2025-11-10_Virtualisation_Containers.pdf
+- EN 304 636 V0.0.9: https://docbox.etsi.org/cyber/CYBER/Open/EN-304-636_V0.0.9_2025-12-15_Firewalls_Mature-draft.pdf
