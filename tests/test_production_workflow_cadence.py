@@ -7,7 +7,7 @@ def test_production_workflow_uses_three_hour_schedule_not_external_dispatch():
     ).read_text(encoding="utf-8")
 
     assert "schedule:" in workflow
-    assert '- cron: "0 */3 * * *"' in workflow
+    assert '- cron: "17 */3 * * *"' in workflow
     assert "workflow_dispatch:" in workflow
     assert "repository_dispatch:" not in workflow
     assert "group: cra-production-run" in workflow
