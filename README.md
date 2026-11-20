@@ -1,5 +1,13 @@
 # CRA Servo Drive Compliance & Engineering Project
 
+> **최신 재개 상태 — 2026-11-20:** PR #182 merged to main (904b2ed0897331ced9dedfcbd25afd608f92f951). Exact-head Run #1177 success, 174 passed / 0 failed. Integrated report v0.7: ETSI M/606 8-item audit, OT 7-deliverable profile reconciliation, C(2026)7861 Article 2/deadlines, Annex III/IV core-functionality and Article 32 route matrix. Product classification remains Unknown pending exact SKU/BOM/FW evidence.
+
+## 최신 조사 산출물
+- [통합 CRA 보고서 v0.7](reports/CRA_INTEGRATED_COMPLIANCE_REPORT_2026-11-17.md)
+- [ETSI 8개 Work Item 및 OT 50770 재조사](reports/CRA_ETSI_M606_8_ITEM_AND_OT_50770_RECONCILIATION_2026-11-20.md)
+- [Annex III/IV 및 Article 32 제품분류·경로 분석](reports/CRA_ANNEX_III_IV_ART32_SERVO_DRIVE_CLASSIFICATION_MATRIX_2026-11-20.md)
+
+
 ## 최신 법적 분류 산출물 — 2026-11-20
 - [Annex III/IV 및 Article 32 서보 드라이브 분류·경로 분석](reports/CRA_ANNEX_III_IV_ART32_SERVO_DRIVE_CLASSIFICATION_MATRIX_2026-11-20.md)
 - [제품 분류 및 Article 32 route matrix CSV](reports/CRA_ANNEX_III_IV_ART32_SERVO_DRIVE_CLASSIFICATION_MATRIX_2026-11-20.csv)
