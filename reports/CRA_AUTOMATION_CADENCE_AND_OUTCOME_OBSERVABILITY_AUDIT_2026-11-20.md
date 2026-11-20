@@ -27,7 +27,7 @@
 | #2521 | 2026-11-20 07:10 | success | 조사 보류(모델/품질 관련) → 원격 main 동시 변경으로 no-op |
 | #2520 | 2026-11-20 03:52 | success | 조사 보류(할당량/일시 장애 또는 품질 검증) → 운영 데이터 변경 없음 |
 
-최근 26개 schedule event의 GitHub job conclusion은 모두 success다. 이는 workflow 단계와 guard가 정상 종료했다는 의미이지, 매 실행마다 신규 보고서가 생성됐다는 뜻은 아니다. 추가로 Run #2523은 기존 12:00 UTC cron 슬롯보다 약 63분 늦은 13:03 UTC에 시작했다. GitHub 공식 문서는 정각 부하 시 schedule 지연/누락 가능성을 명시한다.
+최근 26개 schedule event의 GitHub job conclusion은 모두 success다. 각 run의 created_at을 기존 cron의 예정 UTC 슬롯과 비교하면 시작 지연은 49~71분, 평균 59분, 중앙값 58분이다. 이는 workflow 단계와 guard가 정상 종료했다는 의미이지, 매 실행마다 신규 보고서가 생성됐다는 뜻은 아니다. Run #2523도 기존 12:00 UTC 슬롯보다 약 63분 늦은 13:03 UTC에 생성됐다. GitHub 공식 문서는 정각 부하 시 schedule 지연/누락 가능성을 명시한다.
 
 ### 예약 작업과의 구분
 
