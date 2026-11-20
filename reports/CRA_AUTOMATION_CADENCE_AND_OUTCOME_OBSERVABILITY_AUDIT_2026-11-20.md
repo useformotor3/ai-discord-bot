@@ -106,3 +106,11 @@
 - cron offset 변경 직후 PR HEAD `f42b06270266935b70551b69b55d2066477b0c4a`의 Run #1262에서 **181 passed / 1 failed**.
 - 실패 원인: 기존 `tests/test_production_workflow_cadence.py`가 정확한 옛 문자열 `0 */3 * * *`를 고정 기대해, 3시간 주기는 같고 minute만 :17로 이동한 변경을 거부했다.
 - 실패를 무시하지 않고 해당 테스트의 기대값을 새 :17 오프셋으로 갱신했다. 최신 HEAD exact-head CI 재실행 대기.
+
+
+### 최신 code HEAD CI 결과
+- PR #189 code HEAD `2b3522b1a95256901636afae8ee1af92e68bc35a`, Run #1271 / ID `44741902473`: success.
+- 전체 pytest **182 passed / 0 failed**.
+- source blob identity, compileall, CRA cross-matrix traceability, official CRA PDF/HTML canaries, provenance manifest upload: success.
+- PDF source artifact upload은 unchanged/condition으로 skipped.
+- 이후 상태판/계획/README 문서 전용 갱신으로 HEAD가 변경되었으므로, 최종 제출 HEAD 확인은 추가 CI 결과를 기준으로 한다.
