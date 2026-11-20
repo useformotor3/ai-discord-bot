@@ -677,7 +677,7 @@ ETSI 개별 Work Item scope text는 EN 304 635 hypervisors/container runtime과 
 
 - EN 304 635: ETSI DEN/CYBER-EUS-0016 / WKI 74858 / v1.0.1. Legal Class II category 1.
 - EN 304 636: ETSI DEN/CYBER-EUS-0020 / WKI 74859 / v1.0.0. Legal Class II category 2. M/606 item 36은 industrial-use systems도 명시한다.
-- 이는 ETSI Work Programme metadata/scope text의 불일치다. 이전 공개 draft 대조 결과 EN 304 636 V0.0.9는 Class II point 2를 명시하고, EN 304 635 V0.0.8에는 class label이 없다. 최신 Work Item versions v1.0.0/v1.0.1 draft는 미취득이므로 최신 본문까지 같은 오류가 있다고 단정하지 않는다.
+- 이는 ETSI Work Programme metadata/scope text의 불일치다. 이전 공개 draft 대조 결과 EN 304 636 V0.0.9는 Class II point 2를 명시하고, EN 304 635 V0.0.8에는 class label이 없다. 최신 EN 304 636 V1.0.0은 PDF page 9에서 Class II point 2를 확인했다. EN 304 635 V1.0.1은 DocBox에 등록되어 있으나 fetch timeout으로 최신 본문은 미확인이다.
 - 법령이 우선한다. 이 제품군의 core functionality가 실제 제품에 해당하면 Article 32(3) Class II route를 적용한다. Class I Article 32(2) 경로로 잘못 매핑하지 않는다.
 - 내부 matrix에는 “ETSI page class”와 “legal Annex III class”를 별도 필드로 보존하고, ETSI에 metadata correction/clarification을 요청할 증거 항목으로 관리한다.
 
