@@ -1,3 +1,12 @@
+## 추가 기준점 — ETSI 18개 class-label cross-check (2026-11-20)
+
+- 기준 main SHA: b54360ffefaf732d101c12ac49f1846041110c83; 조사 브랜치: research/cra-etsi-18-active-matrix-class-audit-2026-11-20; post-PR183 safety ref: safety/post-merge-pr183-postmerge-status-sync-2026-11-20.
+- Full 18-item M/606 master matrix added. EN 304 635 and EN 304 636 ETSI page metadata says Class I but Regulation 2025/2392 classifies both Class II. Draft body not acquired; mismatch confirmed only in ETSI page scope metadata.
+- EN 304 627 industrial OT exclusion added; total OT exclusions tracked: EN 304 620/621/622/627.
+- Next action: acquire normative drafts EN 304 635/636 and verify whether class mismatch is metadata-only; track ETSI correction. Do not use Class I Article32 route for these categories.
+
+---
+
 ## 최신 재개 상태 — ETSI M/606 18개 통합 매트릭스 및 법령 분류 오류 발견 (2026-11-20)
 
 - ETSI Work Programme v2.3.3 M/606 active 18개 Work Item 상세 레코드를 통합 매트릭스로 정리. 17개는 Annex I vertical topics 17–27,31–36; EN 304 642는 telecom supporting work item으로 직접 41-topic mapping 미확인.
