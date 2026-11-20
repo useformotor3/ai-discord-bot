@@ -1,6 +1,6 @@
 # CRA Servo Drive Compliance & Engineering Project
 
-> **최신 재개 상태 — 2026-11-20 CRA 중심 갱신:** 기준 main `07d6d3b1`; CRA 통합 보고서 v0.5 §25–§28 작업 중. ENISA SRP 운영 제약, CEN EN 40000-1-1/-1-2 발행(단 CRA OJ citation 기대 없음), ETSI M/606 18개 active item, C(2026)7861 M/606 deadline amendment, COM(2026)780 표준화 법제 개편 제안 반영. LS메카피온은 사례연구이며 CRA 전체 규제·표준화·신고·적합성 트랙이 최우선.
+> **최신 재개 상태 — 2026-11-20 CRA 중심 갱신:** main `8abf70a68add7f0e7a38283da3dd3d78c160829c`; PR #178 병합 완료; CRA 통합 보고서 v0.5 §§25–§28 main 반영. ENISA SRP 운영 제약, CEN EN 40000-1-1/-1-2 발행(단 CRA OJ citation 기대 없음), ETSI M/606 18개 active item, C(2026)7861 M/606 deadline amendment, COM(2026)780 표준화 법제 개편 제안 반영. LS메카피온은 사례연구이며 CRA 전체 규제·표준화·신고·적합성 트랙이 최우선.
 
 산업용 서보 드라이브를 사례로 EU Cyber Resilience Act(CRA) 전체 규제·표준화·제품 적용성·설계·검증·문서화를 수행하는 프로젝트입니다. CRA 법령과 공통 이행체계가 중심이며 특정 제조사 조사는 사례연구로 관리합니다. 문서의 기본 언어는 한국어이며, 법령·표준·제조사 원문은 원어와 출처를 보존합니다.
 
