@@ -1791,3 +1791,12 @@
 - main read-back 및 PR 병합상태 확인. 41개 Annex I 항목 감사대장 반영. `PROJECT_LOG.jsonl` 218줄 JSON parse 218 success / 0 invalid.
 - main push CI Run #1061 (`44657049974`) success. 전체 단계 완료.
 - 후속: JT013090 공식 카탈로그/OJ 필드, C(2026) 7861 Article 2 비수락 통지 확인.
+
+
+## 2026-11-20 — M/606 Work Item 1차 출처 연결 및 Article 2 법률검토
+- PR #129 merge SHA `da3cbc4b68ba92b8512f08740c02eefc415a616e`; PR #129 Run #1062 success, main push Run #1063 (`44657325405`) success. Pre/post safety refs 생성 완료.
+- CEN/CENELEC M/606 Work Programme V1 (2025-04-02) pp.1–2: item 1 → JT013089 (Principles for cyber resilience); items 2–14 → JT013091 (Generic Security Requirements); item 15 → JT013090 (Vulnerability Handling).
+- CEN-CENELEC 2026-02-23 webinar p.36: JT013090 = prEN 40000-1-3 Vulnerability handling. 2026-11-19 CEN-CENELEC announcement: FprEN 40000-1-3 publication forthcoming.
+- 공식 카탈로그 JT013090의 최신 단계 및 OJ citation 필드는 직접 미확인. Formal Vote 19 Nov / citation expected는 secondary-only lead.
+- C(2026) 7861 Article 2: 1개월은 각 ESO가 결정을 수령한 날부터 계산. ESO별 수령일 및 비수락 통지 원본 미확보. Recital (2)의 기존 C(2025)618 수락을 amendment acceptance로 오인하지 않음.
+- 감사대장 1·2–14·15 Work Item 매핑 갱신. 41개 Annex I 행의 topic/deadline 검증과 41개 실제 EN/ETSI/OJ 전수확인은 별개임.
