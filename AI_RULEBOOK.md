@@ -471,3 +471,12 @@
 - CENELEC project records must be reported by exact WIID and direct readback status. A parent project page does not establish that split child deliverables have separate catalogue records.
 - If one central record is read successfully but sibling records fail, state exactly which WIID was verified and which were not. Do not generalize one page's status to the entire series.
 - National-member status tables (DKE, BSI, LVS) are useful evidence but do not replace the CENELEC central record. Conflicts remain visible until reconciled.
+
+
+## 14. Annex III/IV core-functionality and Article 32 route discipline
+- Apply CRA Article 2(1) connection scope before product-category analysis; intended purpose and reasonably foreseeable use are separate evidence fields.
+- Apply Article 7(1) core functionality to the complete product. Do not classify the host product solely because an Annex III/IV component is integrated; separately marketed components may be products in their own right.
+- Use Commission Implementing Regulation (EU) 2025/2392 technical descriptions, not Annex category names alone. Fieldbus controllers/adapters are expressly included in physical/virtual network interfaces; treat this as a product-boundary evidence gate, not an automatic host-product classification.
+- Record separate classifications for host product, separately marketed board/module, MCU/secure element, OS and software tools where each is placed on the market separately.
+- Do not assign Article 32 route until class/core function and actual applicable OJ-cited HEN, common specification or EUCC assurance state are confirmed.
+- For Class I, distinguish full application from non-/partial application of relevant HEN/CS/EUCC; for Class II do not offer Module A as a default route; for Annex IV check Article 8(1) delegated-act status.
