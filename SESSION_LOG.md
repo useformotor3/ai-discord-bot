@@ -2462,7 +2462,8 @@
   - Run #2521: 조사 보류, 원격 main 동시 변경으로 no-op.
   - Run #2520: 조사 보류, 운영 데이터 변경 없음.
 - Actions success가 신규 CRA 보고서 생성 완료를 뜻하지 않는 관측성 문제 확인.
-- 개선 브랜치 `fix/automation-outcome-visibility-2026-11-20` 생성. 운영 cron·main.py·secrets·외부 호출 빈도는 변경하지 않고 결과 분류/요약만 추가.
+- 개선 브랜치 `fix/automation-outcome-visibility-2026-11-20` 생성. 3시간 간격은 유지하되 정각 부하 회피를 위해 cron minute를 :00에서 :17로 이동하는 변경을 PR에 포함. main.py·secrets·외부 호출 빈도는 변경하지 않고 결과 분류/요약 추가.
+- Run #2523은 기존 12:00 UTC cron 슬롯보다 약 63분 늦은 13:03 UTC에 시작. GitHub 공식 문서는 정각 고부하 시 지연/누락 가능성을 안내하므로 :17 offset을 적용하되, 지연 제거를 보장하지 않음.
 
 ### 변경
 - `scripts/automation_outcome_summary.py`: 실행 로그를 보수적으로 분류해 GitHub Step Summary 출력.
