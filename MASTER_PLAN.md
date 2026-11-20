@@ -5,7 +5,7 @@
 - `fix/automation-outcome-visibility-2026-11-20`에서 run summary classifier 및 8개 fixture tests 추가. Actions Summary에 source count, model attempts/fallback, archive, Discord delivery를 명시.
 - 3시간 실행 빈도는 유지하고 cron minute를 UTC :00에서 :17로 이동해 GitHub 정각 부하를 피함. main.py, secrets, Gemini/Discord 호출 빈도, checkpoint/operational guard는 변경하지 않음. 최근 26회 run의 지연 통계(평균 59분, 중앙값 58분, 범위 49~71분)와 Run #2523의 63분 지연을 근거로 함.
 - 5분마다 production Gemini를 실행하는 방식은 호출량·quota·중복·queue 위험으로 부적절. 별도 read-only heartbeat는 후속 평가.
-- 초기 exact-head CI 통과: PR #189 Run #1247 success, 182 passed / 0 failed. cron :00→:17 변경 후 Run #1262에서 cadence test의 옛 문자열 고정 문제로 181 passed / 1 failed; 기대값 수정. 최신 HEAD Run #1270 재검증 진행 중. 다음: 최신 CI → diff/safety review → PR merge 절차 → 다음 scheduled run summary 검증.
+- 초기 exact-head CI 통과: PR #189 Run #1247 success, 182 passed / 0 failed. cron :00→:17 변경 후 Run #1262에서 cadence test의 옛 문자열 고정 문제로 181 passed / 1 failed; 기대값 수정. 최신 code HEAD `2b3522b1a95256901636afae8ee1af92e68bc35a` Run #1271 success, 182 passed / 0 failed; source identity, compile, CRA traceability, official PDF/HTML canaries, manifest upload 성공. 이후 문서 전용 동기화로 HEAD가 갱신되어 최신 HEAD 확인 CI가 재실행될 수 있음. 다음: 최신 CI → diff/safety review → PR merge 절차 → 다음 scheduled run summary 검증.
 - 상세: `reports/CRA_AUTOMATION_CADENCE_AND_OUTCOME_OBSERVABILITY_AUDIT_2026-11-20.md`.
 
 ---
