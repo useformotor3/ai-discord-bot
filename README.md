@@ -1,5 +1,13 @@
 # CRA Servo Drive Compliance & Engineering Project
 
+> **최신 재개 상태 — 2026-11-20:** ETSI M/606 미검토 8개 work item 개별 감사 및 CLC/TC 65X prEN 50770 split/status reconciliation 진행. prEN 50770-1은 -1-1 firewall / -1-2 IDS/IPS로 분할되어 7개 deliverable. C(2026)7861 Annex I deadline groups: 1/15=2026-11-30, 2–14=2027-10-30, 16–41=2027-01-31; Article 2 ESO receipt/acceptance condition remains unverified. CRA 전체 규제·표준화가 핵심이며 LS메카피온은 사례연구.
+
+## 최신 조사 산출물 — 2026-11-20
+- [ETSI 8개 Work Item 및 OT 50770 통합 재조사](reports/CRA_ETSI_M606_8_ITEM_AND_OT_50770_RECONCILIATION_2026-11-20.md)
+- [ETSI 8개 상태 감사 CSV](reports/CRA_ETSI_M606_8_ITEM_STATUS_2026-11-20.csv)
+- [OT 7개 deliverable 및 서보드라이브 경계 CSV](reports/CRA_M606_OT_IACS_7_VERTICAL_PROFILES_SERVO_DRIVE_BOUNDARY_2026-11-20.csv)
+
+
 > **최신 재개 상태 — 2026-11-20:** PR #180 AI 자기검토·세션 연속성·토큰 효율 기준 병합 완료. Main merge SHA `3ded54116b3ecfa77645c50ada45575fbe656aea`; exact-head Run #1162 success (174 passed / 0 failed). CRA 전체 규제·표준화·제품 적용성 조사가 핵심이며 LS메카피온은 사례연구다. 다음 P0는 ETSI M/606 18개 개별 레코드, CEN/CENELEC OT prEN 50770 project records, C(2026)7861 Article 2 ESO acceptance evidence, 41-row deadline/OJ mapping이다.
 
 
