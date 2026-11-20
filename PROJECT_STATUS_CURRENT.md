@@ -1,3 +1,16 @@
+## 최신 main 기준점 — PR #133 병합 및 PR #132 후속 CI 동기화 (2026-11-20)
+
+- 최신 main SHA: a889b03855e3c7683aa140220352510ab4c4c116 (PR #133 squash merge).
+- PR #133 exact head 466b3d93db6119c3a73c8cef6bc2e55cf698294d; Actions Run #1070 / ID 44660790965 success; 174 passed / 0 failed.
+- Run #1070: source blob integrity, compileall, CRA traceability, full pytest, official CRA PDF and 10-source HTML canaries, provenance manifest upload 모두 성공.
+- PDF artifact #14596185499: 3,070,503 bytes; ZIP SHA-256 5a84aeb59f8d960d80d611be7ee4b978d808e84b68255c489633fc94af84ca18; expires 2026-11-27 02:26:42 UTC.
+- Provenance artifact #14595641444: 2,567 bytes; ZIP SHA-256 81bcba6e53025759610218c9d66334710919510c1b8d623c7e880af72d9501d5; expires 2026-11-27 02:26:53 UTC.
+- PR #133 pre-merge safety ref safety/pre-pr133-merge-2026-11-20; post-merge safety ref safety/post-merge-pr133-2026-11-20. Post ref와 main merge SHA identical.
+- PR #132 보고서 §31 / 6-row vertical-profile matrix / 41-item audit CSV updates는 main에 반영됨. Product scope/classification/Annex III·IV/RDPS Unknown, security tests Not Run.
+- main push CI는 별도 조회에서 독립 확인되지 않았으므로 PR exact-head CI 성공과 구분해 미확인으로 유지.
+- 다음: 모델별 제조사 원본 매뉴얼·데이터시트·DriveCM 설치파일·ESI/XML bytes 및 SHA-256 확보, 모델/SKU/HW/FW와 EU 공급경로 확인, 인터페이스 데이터 흐름·보안통제 증거 검토. 이후 41개 실제 EN/ETSI 매핑 및 OJ 전수감사와 Article 2 ESO 통지 원본 확인.
+
+---
 ## 최신 main 기준점 — PR #132 병합 및 OT/IACS 수직 프로파일 감사 (2026-11-20)
 
 - 최신 main merge SHA: f3a8fc06b2a0c5fdaa98d98ad8bc0f21abee22df (PR #132 squash merge).
