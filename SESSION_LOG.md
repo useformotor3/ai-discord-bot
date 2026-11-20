@@ -2443,3 +2443,11 @@
 - 원인: 치환 대상 문자열을 최신 파일 readback으로 확인하지 않고 이전 대화 상태에서 추정했다. 저장 성공을 내용 수정 성공으로 오인했다.
 - 복구: README 정확한 3번째 줄을 readback한 뒤 해당 줄 전체를 병합 완료 상태로 교체. AI_RULEBOOK에 no-op 치환 탐지, 기대 문구 횟수 확인, 저장 후 readback 규칙 추가.
 - 교훈: update_file commit 성공은 파일 변경의 의미적 성공을 보증하지 않는다. 매 수정 후 정확한 파일 readback과 기대 문자열 검증을 수행한다.
+
+
+## 2026-11-20 — PR185/186 follow-up merge chain and final situation-board sync
+
+- PR #185 merged via squash as `ebc6fda0f2a89be0e5306a00fb12ac7b0d2802bf`; exact-head CI #1240 success, 174 passed / 0 failed.
+- PR #186 merged via squash as `8adf72f3bbda24165479f7aa4d4246d48e4acd99`; exact-head CI #1242 success, 174 passed / 0 failed. It corrected README's stale PR #184 open banner and added the no-op replacement guard to AI_RULEBOOK.
+- `safety/post-merge-pr185-2026-11-20` and `safety/post-merge-pr186-2026-11-20` each read back identical to main at their respective merge points; latest PR186 safety ref is identical to current main.
+- Final main SHA updated to `8adf72f3bbda24165479f7aa4d4246d48e4acd99`; this branch synchronizes the situation board and logs the follow-up merge chain.
