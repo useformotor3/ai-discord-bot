@@ -1,3 +1,15 @@
+## 자동화 주기·실행 품질 개선 — 2026-11-20
+
+- 실제 운영 cron은 `0 */3 * * *`(UTC 3시간 간격). 5분 주기 아님.
+- 최근 26개 schedule run의 GitHub job은 success이나, 최근 3개 실제 로그에는 503 폴백 후 신규 주제 없음, 조사 보류, no-op이 있어 신규 조사 성공과 workflow success를 구분해야 함.
+- `fix/automation-outcome-visibility-2026-11-20`에서 run summary classifier 및 8개 fixture tests 추가. Actions Summary에 source count, model attempts/fallback, archive, Discord delivery를 명시.
+- cron, main.py, secrets, Gemini/Discord 호출 빈도, checkpoint/operational guard는 변경하지 않음.
+- 5분마다 production Gemini를 실행하는 방식은 호출량·quota·중복·queue 위험으로 부적절. 별도 read-only heartbeat는 후속 평가.
+- 완료 기준: exact-head CI pass → workflow diff/safety review → PR merge 절차 → 다음 scheduled run에서 summary classification 확인.
+- 상세: `reports/CRA_AUTOMATION_CADENCE_AND_OUTCOME_OBSERVABILITY_AUDIT_2026-11-20.md`.
+
+---
+
 ## ETSI 18-item master matrix / class mismatch — 2026-11-20
 
 - Full 18-item M/606 matrix committed in current research branch. 17 map to Annex I vertical items 17–27 and 31–36; EN304642 is additional telecom support item without direct 41-topic mapping.
