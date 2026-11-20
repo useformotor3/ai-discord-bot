@@ -530,3 +530,9 @@
 - 검색은 핵심 질문과 공식 1차 출처를 우선한다. 중복 검색보다 출처 간 차이 확인에 토큰을 사용한다.
 - 확실하지 않은 사실은 추정으로 채우지 않고 Unknown/Not verified로 남긴다. 완료·검증·병합을 실제 결과가 확인되기 전에 주장하지 않는다.
 - 세션 종료 시 다음 작업 1~3개, 차단 요인, 마지막 확인 SHA/PR/CI를 상황판에 기록해 다음 세션의 재탐색 비용을 줄인다.
+
+
+## 19. ETSI Work Item metadata discrepancy — resolved by latest draft text
+- For EN304635 V1.0.1 and EN304636 V1.0.0, latest publicly viewable draft text explicitly states Annex III Class II point 1 and point 2 respectively. Work Item page scope labels saying Class I are stale/incorrect metadata.
+- Record source type and coverage: EN304635 evidence is a 15-page public sample preview (Scope at document p.15), not the complete 386-page PDF; EN304636 evidence is the publicly opened latest draft PDF, document p.9.
+- Do not describe either latest draft as legally misclassified. Preserve the metadata discrepancy and use the legal Class II route.
