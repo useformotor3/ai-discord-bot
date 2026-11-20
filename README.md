@@ -1,6 +1,6 @@
 # CRA Servo Drive Compliance & Engineering Project
 
-> **최신 재개 상태 — 2026-11-20:** PR #132~#159 병합 완료. 보고서 §31~§35(v0.14), 6개 OT/IACS profile matrix, 제조사 자료 인벤토리(17개 데이터 행) 및 14행 모델별 인터페이스 매트릭스 main 반영. PR #159 exact-head CI Run #1122 성공(174 passed / 0 failed). PEGA2/iX700M ESI 적용범위 확인 갭은 제조사 원본 확인 대기 중.
+> **최신 재개 상태 — 2026-11-20:** PR #132~#160 병합 완료. main SHA `8bc9762efbd20ca9c7aaaddc3832745d4e6dc53e`. PR #160 exact-head CI Run #1124 성공(174 passed / 0 failed), 사전/사후 safety ref 및 main 동일성 확인. 보고서 v0.14 §35, 제조사 인벤토리 17개 행 기준. PEGA2/iX700M ESI 적용범위와 펌웨어 downgrade 보안정책은 제조사 원본·SKU 확인 대기 중.
 
 산업용 서보 드라이브의 EU Cyber Resilience Act(CRA) 대응을 위한 조사·설계·검증·문서화 프로젝트입니다. 문서의 기본 언어는 한국어이며, 법령·표준·제조사 원문은 원어와 출처를 보존합니다.
 
