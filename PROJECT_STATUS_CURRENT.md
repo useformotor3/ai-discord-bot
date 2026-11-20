@@ -1433,3 +1433,12 @@
 - Merge SHA `850e2c851630239140e9a39d5f0978204b2ee025`; main read-back/compare identical.
 - Provenance artifact #14615596751, SHA-256 `25c5c192aa96544b5e41c8cac6eeda0d629f3c95af6755e090be6d34ae506a70`.
 - Pre-merge ref `safety/pre-pr176-merge-2026-11-20`; post-merge ref `safety/post-merge-pr175-2026-11-20`.
+
+
+## 최신 main 기준점 — PR #176 병합 및 사후 검증 (2026-11-20)
+- PR #176 `docs(cra): audit latest iX7NH and DriveCM guidebook index` 병합 완료. exact head `788d5aea88d12a7bdb1087d264173ac0f487caf8`, squash merge SHA `8f19a8b9fcf8e4582a9470e5483ff08019d1711f`.
+- Exact-head Actions Run #1154 / ID `44707491717` success; full pytest 174 passed / 0 failed, source integrity, compile, CRA traceability, official source canary 및 provenance manifest 업로드 성공.
+- Provenance artifact #14614954168, 2,567 bytes, SHA-256 `067e43ccfc1c5b438f719489dc44f3e2ead4e152a2294d2c9b5031ca6bc192dd`. 공식 PDF evidence upload 단계는 skipped; 원본 PDF 취득으로 간주하지 않음.
+- main read-back/compare는 merge SHA와 동일. 복구 기준점 `safety/pre-pr176-merge-2026-11-20`, `safety/post-merge-pr176-2026-11-20` 유지.
+- 통합 보고서 v0.21 §42, 제조사 인벤토리 28행 반영. 2026-09-08~09-14 iX7NH/DriveCM 가이드북은 목록 메타데이터만 확인; 첨부 원문 미확보.
+- 제품별 CRA scope/classification/Annex III·IV/RDPS Unknown, security tests Not Run.
