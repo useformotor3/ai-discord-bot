@@ -2239,3 +2239,12 @@
 - Commission/ENISA 공식 동적 페이지와 OJ/CEN/CLC/ETSI 상태를 주기적으로 재확인.
 - M/606 41개 actual standard mapping/OJ 상태 및 C(2026) 7861 Article 2 acceptance notice 조사 지속.
 - 제품별 CRA scope/classification/RDPS Unknown, security tests Not Run 유지.
+
+## 2026-11-20 — CRA 핵심 표준화 최신상태 확인
+- CEN-CENELEC 2026-11-19 공지 및 CEN 개별 레코드 직접 확인: EN 40000-1-1:2026 (JT013095), EN 40000-1-2:2026 (JT013089) Published, DAV 2026-11-18. 두 레코드 모두 CRA Directive 2024/2847에 대해 “No citation expected”; Article 27 presumption 근거로 사용하지 않음.
+- ETSI Work Programme Version 2.3.3은 M/606 active 18 items를 표시. 조회 목록은 10개만 노출하므로 18개 전수 상세 검토를 완료했다고 주장하지 않음.
+- EN 304 625 개별 레코드 최신 상태는 Comments categorisation assessed (2026-11-05); 2026-11-19 remark에 EC second assessment received in batches dated 2026-09-28 and 2026-11-16. 이전 2026-09-28 “7 VR” 상태는 outdated.
+- EN 304 620 VPN, EN 304 621 NMS, EN 304 622 SIEM, EN 304 627 router/modem/switch scope에 industrial OT domain exclusion 확인. CENELEC prEN 50770 OT work items와 별도 관리.
+- 제품 적용성 경계: drive port/feature만으로 Annex III Class I product category를 자동 분류하지 않음. OJ actual citation은 개별 record에서 미확인.
+- 신규 보고서 §26 및 ETSI/CEN 상태보고서 addendum 반영.
+- 한계: CEN prEN50770-1~6 20 Nov 재열람 미완료, ETSI 18개 중 미검토 8개, 표준 본문 미취득.
