@@ -465,3 +465,9 @@
 - C(2026)7861 Article 2의 one-month period는 ESO actual receipt date 기준이다. Commission adoption date나 web page update date로 receipt/acceptance를 추정하지 않는다.
 - 동적 milestone 예정일과 ESO adoption deadline, standard publication forecast, actual OJ citation date를 별도 필드로 유지한다.
 - Commission Register 원본을 취득하지 못하고 certified-copy mirror만 읽었다면 acquisition limitation과 hash 미확보를 명시한다.
+
+
+## 13. Central catalogue readback precision
+- CENELEC project records must be reported by exact WIID and direct readback status. A parent project page does not establish that split child deliverables have separate catalogue records.
+- If one central record is read successfully but sibling records fail, state exactly which WIID was verified and which were not. Do not generalize one page's status to the entire series.
+- National-member status tables (DKE, BSI, LVS) are useful evidence but do not replace the CENELEC central record. Conflicts remain visible until reconciled.
