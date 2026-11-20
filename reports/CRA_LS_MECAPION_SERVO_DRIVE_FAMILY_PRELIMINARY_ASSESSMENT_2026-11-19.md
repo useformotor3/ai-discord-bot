@@ -1510,3 +1510,14 @@ CRA 표준 상태를 추적하는 2차 자료인 CRA Evidence tracker(검색 확
 - 유럽위원회는 조화표준 참조의 OJEU 게시가 필요하다고 명시한다: https://single-market-economy.ec.europa.eu/single-market/goods/european-standards/harmonised-standards_en
 
 **해석:** 두 표준은 M/606 및 CRA Regulation (EU) 2024/2847와 연계된 CEN EN으로 발행됐으나, CEN 자체의 OJEU 필드가 “No citation expected”이므로 CRA 제27조의 적합성 추정을 발생시키는 조화표준으로 주장하지 않는다. EN 40000-1-2의 제품위험관리·수명주기 활동은 제조사의 내부 설계·개발 프로세스에 참고할 수 있지만, CRA Annex I의 직접 요구사항, 제품별 적합성평가 또는 인증을 대체하지 않는다. EN 40000-1-1은 용어집이며 독립적인 제품 보안 통제 요구사항으로 오해하지 않는다.
+
+
+## 29. M/606 Annex I 41개 항목 1차 출처 전수 대조 (2026-11-20)
+
+C(2026) 7861 final의 대체 Annex I를 기준으로 기존 매트릭스 41개 항목의 번호·주제·ESO 채택기한을 전수 대조했다. 41/41 대조 완료다. 항목 1·15는 2026-11-30, 항목 2~14는 2027-10-30, 항목 16~41은 2027-01-31이다. 이 기한은 ESO가 표준을 채택·전달하는 기한이지 제조사의 CRA 준수기한이 아니다.
+
+Annex I는 각 항목의 표준화 주제와 기한을 제시하지만 최종 EN/ETSI 표준번호나 OJ 인용번호를 각 행에 기재하지 않는다. 따라서 41개 항목 번호와 실제 표준번호/OJ 인용 상태는 별도 매핑해야 한다. 신규 감사대장 CSV에서 Annex I 대조, ESO work-item 매핑, OJ 상태, Article 27 효과를 분리했다. 실제 표준번호가 확인되지 않은 항목은 OJ 상태를 추정하지 않고 미확인으로 유지한다.
+
+C(2026) 7861 final Article 2는 CEN/CENELEC/ETSI 중 하나라도 통지 후 1개월 이내 개정사항을 수락하지 않는다고 표시하면 결정이 적용을 중단한다고 규정한다. 공식 Commission 표준화 페이지는 개정 사실을 공지하지만, 수락/거부 통지 원본은 별도 확인 대상으로 남긴다.
+
+근거: Commission Implementing Decision C(2026) 7861 final (2026-11-10), Articles 1–3 및 replacement Annex I, pp.1–5; Commission CRA standardisation page (last updated 2026-11-12): https://digital-strategy.ec.europa.eu/en/policies/cra-standardisation ; 공식 등록부: https://ec.europa.eu/transparency/documents-register/detail?lang=en&ref=C(2026)7861 .
