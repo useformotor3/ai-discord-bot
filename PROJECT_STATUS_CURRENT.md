@@ -1,3 +1,14 @@
+## 최신 재개 상태 — ETSI M/606 18개 통합 매트릭스 및 법령 분류 오류 발견 (2026-11-20)
+
+- ETSI Work Programme v2.3.3 M/606 active 18개 Work Item 상세 레코드를 통합 매트릭스로 정리. 17개는 Annex I vertical topics 17–27,31–36; EN 304 642는 telecom supporting work item으로 직접 41-topic mapping 미확인.
+- EN 304 635(hypervisors) 및 EN 304 636(firewalls/IDS/IPS)의 ETSI scope text는 Class I로 표시하지만 Regulation 2025/2392는 각각 Class II category 1/2로 분류한다. 법령이 우선. Normative draft 본문은 미취득이므로 metadata mismatch로만 확정.
+- EN 304 627 routers/modems/switches도 industrial OT 장비를 ETSI scope에서 제외한다. EN 304 620/621/622와 함께 OT exclusion 4개를 관리.
+- 18개 모두 Harmonised Standard metadata Yes이나 OJ field blank; actual OJ citation/Article27 presumption 미확인.
+- 다음 P0: EN304635/636 normative draft 확보·검증 및 ETSI metadata correction; 2026-11-23 ETSI M/606 AMD1 meeting; ESO Article2 receipt/acceptance; CENELEC 81650–81654 direct records; OJ index crosswalk.
+- 상세: reports/CRA_ETSI_M606_18_ACTIVE_WORK_ITEM_MASTER_MATRIX_2026-11-20.md 및 CSV.
+
+---
+
 ## 최신 재개 상태 — PR #182 CRA 표준화·제품분류 분석 병합 완료 (2026-11-20)
 
 - Main merge SHA: 904b2ed0897331ced9dedfcbd25afd608f92f951; PR #182 head ad57c7cc2595be0a42d1686fde5870fb2ab5cec8; post-merge safety ref safety/post-merge-pr182-cra-standardization-classification-2026-11-20.
