@@ -607,7 +607,7 @@ DKE 2026-10 표준화 상태 PDF에서 기존 prEN 50770-1이 firewall용 prEN 5
 | 27b | 81653 | prEN 50770-5 | OT routers/modems/switches |
 | 22b | 81654 | prEN 50770-6 | OT SIEM |
 
-DKE 2026-10 national tracker는 7개 deliverable에 Start NWI 및 Drafting prEN marker를 표시한다. BSI national records는 prEN 50770-2/-3을 PWI 및 target dates unknown으로 표시하고, LVS CLC/TC 65X 목록은 WIID 81649–81654를 In development로 표시한다. 이 stage 표현은 일치하지 않으며 이번 pass에서 CEN-CENELEC 중앙 project record를 성공적으로 재열람하지 못했다. 따라서 -2/-3의 정확한 중앙 stage/date는 Conflict/Unknown으로 유지한다. DKE Citation hEN 열은 비어 있고 actual OJ reference는 확인되지 않았다. 과거 Citation expected 메타데이터는 OJ citation이 아니다.
+DKE 2026-10 national tracker는 7개 deliverable에 Start NWI 및 Drafting prEN marker를 표시한다. BSI national records는 prEN 50770-2/-3을 PWI 및 target dates unknown으로 표시하고, LVS CLC/TC 65X 목록은 WIID 81649–81654를 In development로 표시한다. CENELEC 중앙 81649 record는 직접 재열람되어 부모 prEN 50770-1(방화벽+IDS/IPS 통합 scope), Committee stage, Citation expected, DOR/DAV 미기재를 확인했으나 -1-1/-1-2 분할 child는 표시하지 않는다. 81650–81654는 이번 pass에서 direct readback하지 못했다. 따라서 -2/-3의 정확한 중앙 stage/date는 Conflict/Unknown으로 유지한다. DKE Citation hEN 열은 비어 있고 actual OJ reference는 확인되지 않았다. 과거 Citation expected 메타데이터는 OJ citation이 아니다.
 
 드라이브의 통신 포트, 파라미터 설정, 원격 유지보수, 알람만으로 NMS/network-interface/VPN/router/SIEM/firewall 제품으로 자동 분류하지 않는다. 정확한 core functionality와 product boundary를 확인한다.
 
@@ -626,3 +626,12 @@ ETSI calendar에는 2026-11-23 “GoSRSReq006-M/606 AMD 1 - examination meeting�
 공식 Commission 페이지: https://digital-strategy.ec.europa.eu/en/policies/cra-standardisation
 Commission Register: https://ec.europa.eu/transparency/documents-register/detail?lang=en&ref=C(2026)7861
 Certified-copy PDF mirror: https://www.ibf-solutions.com/fileadmin/dateidownloads/c-2026-7861-main-document-annex-cra-standards.pdf
+
+
+## 32. CENELEC 중앙 project 81649 직접 readback — 부모/하위 deliverable 불일치
+
+2026-11-20 CENELEC 중앙 record 81649를 직접 재열람했다. record는 prEN 50770-1 단일 project, firewalls 및 IDS/IPS 통합 scope, Committee stage, Citation expected, DOR/DAV 미기재로 표시한다. 반면 DKE October 2026 national status table은 이를 prEN 50770-1-1 firewalls와 prEN 50770-1-2 IDS/IPS로 분리해 표시한다. 이는 표준 scope가 바뀌었다는 결론보다 project naming/record synchronization discrepancy로 관리한다.
+
+중앙 81650–81654 record는 이번 pass에서 direct readback에 실패했다. -2/-3은 BSI PWI 및 DKE Drafting prEN 충돌을 유지하고, -4/-5/-6은 이전 2026-11-18 central snapshot과 DKE/LVS 자료를 분리해 기록한다. Citation expected는 actual OJ citation이 아니다.
+
+CENELEC record 81649: https://standards.cencenelec.eu/ords/f?cs=13322EAD4BB9270452A937D8259179562&p=305:110:::::FSP_PROJECT,FSP_LANG_ID:81649,25
