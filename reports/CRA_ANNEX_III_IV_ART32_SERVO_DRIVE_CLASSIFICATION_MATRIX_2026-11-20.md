@@ -127,25 +127,21 @@ ETSI Work Item scope pages for EN 304 635 (hypervisors/container runtime) and EN
 - Hypervisors/container runtime systems: Annex III Class II category 1.
 - Firewalls/IDS/IPS: Annex III Class II category 2.
 
-The discrepancy is confirmed at the ETSI Work Programme metadata/scope-text layer. The latest EN 304 636 V1.0.0 draft explicitly states Class II point 2 on PDF page 9 and aligns with the law. The latest EN 304 635 V1.0.1 file is listed in DocBox but fetch timed out; its content remains unverified. The official regulation controls the product class and conformity route.
+The regulation controls legal product class and conformity route. A matching product core functionality therefore follows Article 32(3), not Article 32(2).
 
-ETSI pages: https://portal.etsi.org/webapp/WorkProgram/Report_WorkItem.asp?WKI_ID=74858 and https://portal.etsi.org/webapp/WorkProgram/Report_WorkItem.asp?WKI_ID=74859
-Official legal source: https://eur-lex.europa.eu/eli/reg_impl/2025/2392/oj/eng
+### 9.1 Latest public draft reconciliation
 
+- **EN 304 636 V1.0.0 (2026-07-09):** ETSI DocBox PDF page 9, Introduction, explicitly identifies firewalls, IDS and IPS as Annex III Class II point 2. The latest public draft aligns with the regulation. The Work Item page's Class I label is stale/incorrect metadata.
+- **EN 304 635 V1.0.1 (2026-06-24):** file is listed in ETSI DocBox, but fetching timed out. Its latest draft content remains unverified. Earlier V0.0.8 (2025-11-10) contains no Annex III/Class I/Class II label in extracted text.
+- Do not state that EN 304 635 V1.0.1 contains an error until the actual latest PDF is acquired and inspected.
 
-### 9.1 Earlier public draft reconciliation
-
-- EN 304 636 V0.0.9 (2025-12-15) explicitly cites Annex III Class II point 2 in Introduction and Scope. The public draft is aligned with Regulation 2025/2392; the current Work Item page's Class I label appears stale.
-- EN 304 635 V0.0.8 (2025-11-10) has no Annex III/Class I/Class II label in the extracted draft text. No normative draft misclassification is established.
-- Latest EN 304 636 v1.0.0 was acquired and inspected; latest EN 304 635 v1.0.1 is listed in DocBox but fetch timed out, so only its current draft content remains unverified.
+ETSI Work Item pages:
+- https://portal.etsi.org/webapp/WorkProgram/Report_WorkItem.asp?WKI_ID=74858
+- https://portal.etsi.org/webapp/WorkProgram/Report_WorkItem.asp?WKI_ID=74859
 
 Draft sources:
-- https://docbox.etsi.org/CYBER/EUSR/Open/EN-304-635_V0.0.8_2025-11-10_Virtualisation_Containers.pdf
-- https://docbox.etsi.org/cyber/CYBER/Open/EN-304-636_V0.0.9_2025-12-15_Firewalls_Mature-draft.pdf
+- EN 304 636 V1.0.0: https://docbox.etsi.org/CYBER/EUSR/Open/EN_304-636_V1.0.0_2026-07-09_Firewalls_Enquiry-draft.pdf
+- EN 304 635 V1.0.1 (listed; fetch timed out): https://docbox.etsi.org/CYBER/EUSR/Open/EN_304-635_V1.0.1_2026-06-24_Virtualization_Container_Enquiry-draft.pdf
+- Earlier EN 304 635 V0.0.8: https://docbox.etsi.org/CYBER/EUSR/Open/EN-304-635_V0.0.8_2025-11-10_Virtualisation_Containers.pdf
 
-
-### 9.2 Latest EN 304 636 V1.0.0 confirms Class II
-
-The latest public EN 304 636 V1.0.0 (2026-07-09) PDF was opened from ETSI DocBox. Page 9 Introduction explicitly identifies firewalls, IDS and IPS as Annex III Class II point 2. This is direct evidence that the latest public draft aligns with the legal class; the current Work Item page's Class I label is stale/incorrect metadata.
-
-The latest EN 304 635 V1.0.1 file is present in the DocBox directory (2026-06-24) but fetching timed out. Its current draft content remains unverified; earlier V0.0.8 contains no class label in extracted text.
+Official legal source: https://eur-lex.europa.eu/eli/reg_impl/2025/2392/oj/eng
