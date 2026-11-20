@@ -1187,6 +1187,16 @@
 ## 2026-11-20 실행상태 동기화 — PR #128
 1. 완료: C(2026) 7861 replacement Annex I의 M/606 41개 항목 주제·ESO 채택기한 41/41 1차 출처 대조 및 감사대장 반영.
 2. 완료: PR #128 exact-head Run #1060 성공 후 squash merge; main SHA `6733f37201117cb5744215d9deb337b0810acc49`; 사전·사후 복구 브랜치 생성.
-3. 검증중: main push CI Run #1061. 성공 여부를 확인하기 전 최종 완료로 표시하지 않는다.
+3. 완료: main push CI Run #1061 success. PR #129의 상황판 동기화 후 main push CI Run #1063도 success.
 4. 다음 P0: (a) CEN JT013090/prEN 40000-1-3의 공식 카탈로그 상태 및 OJ citation 필드 직접 확인, (b) C(2026) 7861 Article 2에 따른 ESO 1개월 비수락 통지 유무를 Commission/CEN/CENELEC/ETSI 1차 자료로 확인.
 5. 범위 주의: 41개 항목의 Annex I 대조는 완료했으나 41개 개별 표준번호 매핑·OJ 인용상태 전수감사는 미완료. 제조사 제품별 CRA scope/classification/RDPS Unknown, 보안시험 Not Run.
+
+
+## 2026-11-20 후속 1차 출처 조사 — Work Item 매핑 및 Article 2
+
+1. 완료: CEN/CENELEC 공식 M/606 Work Programme에서 item 1 → JT013089, items 2–14 → JT013091, item 15 → JT013090 연결 확인.
+2. 완료: CEN 공식 webinar에서 JT013090 ↔ prEN 40000-1-3 Vulnerability Handling 연결 확인. CEN 2026-11-19 발표에서 FprEN 40000-1-3 publication forthcoming 확인.
+3. 미완료: JT013090 공식 개별 카탈로그의 현재 단계·공식 투표 일정·OJ citation 필드 직접 확인. Formal Vote 19 Nov 및 citation expected는 2차 자료에만 있어 검증된 사실로 승격 금지.
+4. 미완료: C(2026) 7861 Article 2에 따른 ESO별 실제 수령일과 1개월 내 비수락 통지 원본. 발송일을 수령일로 간주하지 않는다.
+5. 후속: ESO별 수령/통지 확인, JT013090 CEN record/OJ 필드, 41개 개별 EN/ETSI mapping/OJ audit.
+6. 제품 CRA scope/classification/Annex III·IV/RDPS는 증거 전까지 Unknown, security tests Not Run.
