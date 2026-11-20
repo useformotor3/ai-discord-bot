@@ -1,6 +1,6 @@
 # CRA Servo Drive Compliance & Engineering Project
 
-> **최신 재개 상태 — 2026-11-20:** PR #132~#136 병합 완료. 보고서 §31~§32 및 제조사 1차 자료 인벤토리 반영. PR #136 exact-head CI Run #1076 성공(174 passed / 0 failed). ESI 0.98 및 PEGA2 EtherCAT 변형으로 25b 기술 후보 강화; 법적 적용은 Unknown.
+> **최신 재개 상태 — 2026-11-20:** PR #132~#137 병합 완료. 제조사 공식 카탈로그·통신 가이드 기반 모델별 인터페이스 증거 매트릭스 작성 중. PR #137 exact-head CI Run #1078 성공(174 passed / 0 failed). EtherCAT/Modbus TCP 후보와 펄스형 모델을 분리; 법적 CRA 적용은 Unknown.
 
 산업용 서보 드라이브의 EU Cyber Resilience Act(CRA) 대응을 위한 조사·설계·검증·문서화 프로젝트입니다. 문서의 기본 언어는 한국어이며, 법령·표준·제조사 원문은 원어와 출처를 보존합니다.
 
@@ -936,3 +936,7 @@ CLC/TC 65X의 M/606 20b/21b/22b/25b/27b/36b를 prEN 50770-4/-2/-6/-3/-5/-1에 �
 - Merge SHA `d7e921f5a6db04d20ce06778f6ea384dbd9c63fe`; exact-head Run #1076 success, 174 passed / 0 failed.
 - PDF artifact #14595209202, provenance artifact #14595972121; official canaries and provenance upload passed.
 - Pre/post safety refs: `safety/pre-pr136-merge-2026-11-20`, `safety/post-merge-pr136-2026-11-20`; post ref identical to main.
+
+
+### 2026-11-20 — 모델별 통신 인터페이스 분류
+공식 카탈로그에서 EtherCAT 통신형과 펄스형을 분리하고, iX7NH Modbus TCP 및 L7P Modbus RS-422 가이드, iX700M CE 모델코드 메타데이터를 확인했다. 상세는 통합 보고서 §33 및 `reports/LS_MECAPION_SERVO_MODEL_INTERFACE_EVIDENCE_2026-11-20.csv` 참조.
