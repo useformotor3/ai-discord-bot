@@ -2272,3 +2272,25 @@
 - CRA report v0.5 §§25–28, SRP readiness, 21-source freshness register, CEN/ETSI corrections, rulebook freshness requirements all main.
 - Evidence limits retained: ENISA HTML parsed/no raw hash, AR Manual metadata only, ETSI 18 items list only shows 10 with 8 detailed records pending, CEN prEN50770-1..6 not fully re-read, standard full text not acquired.
 - Product scope/classification/Annex III-IV/RDPS Unknown; security tests Not Run.
+
+
+## 2026-11-20 — AI 세션 연속성·자기검토·토큰 효율 기준 보강
+
+### 수행
+- 저장소/브랜치 상태를 재조회하고, 과거 기록의 `cra-project-foundation`이 현재 활성 기준이 아님을 확인.
+- `PROJECT_STATUS.md`는 역사 기록이며 `PROJECT_STATUS_CURRENT.md`가 최신 재개 기준임을 확인.
+- CRA 전체 프로젝트 우선순위를 재확인하고 LS메카피온/iX7NH는 사례연구로 유지.
+- 신규 기준서 `reports/AI_SESSION_CONTINUITY_SELF_REVIEW_AND_TOKEN_EFFICIENCY_2026-11-20.md` 작성.
+- `AI_RULEBOOK.md`에 실시간 브랜치 재확인, 오류/개선 기록, 독립 검증, 토큰 효율, read-back 규칙 추가.
+- `MASTER_PLAN.md`에 운영 품질 개선 트랙 및 다음 CRA P0 게이트 추가.
+
+### 자체 오류·교훈
+- 이전 세션 요약의 오래된 브랜치명을 현재 브랜치처럼 취급하면 재개 기준을 잘못 잡을 수 있다. 앞으로 과거 branch/commit을 신뢰하지 않고 매 세션 GitHub에서 HEAD/branch/PR/CI를 재조회한다.
+- 오래된 `PROJECT_STATUS.md`와 `PROJECT_STATUS_CURRENT.md`의 역할을 혼동하지 않는다.
+- 사례연구의 세부 작업이 CRA 전체 법령·표준화·OJ 핵심 트랙을 가리지 않도록 우선순위를 명시한다.
+- 모델 자체가 재귀 학습하는 것처럼 표현하지 않는다. GitHub 문서·검증·규칙·테스트를 통한 외부화된 개선 루프라고 정확히 설명한다.
+
+### 검증 및 한계
+- 문서 변경은 작업 브랜치에서 수행. 운영 코드, workflow, secrets, state/history 및 SIL 3 보존 자료는 변경하지 않음.
+- 이번 세션에서는 CRA 최신 외부 원문을 새로 전수 검증하지 않았다. 관리 체계 보강을 CRA 법적 사실 최신화로 표현하지 않는다.
+- 저장 후 동일 브랜치 read-back과 PR exact-head CI는 다음 단계에서 확인한다.
