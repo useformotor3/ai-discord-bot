@@ -2260,3 +2260,15 @@
 - COM(2026)780 proposal (2026-10-06) to repeal/replace Regulation 1025/2012 recorded as proposal only, not current law.
 - Commission Harmonised Standards index accessed 2026-11-20; page explains OJ publication requirement and currently lists no CRA entry. Cross-check against OJ/Article 27 maintained.
 - Integrated report v0.5 §27–§28 and source freshness register updated.
+
+## 2026-11-20 — PR #178 CRA 핵심 이행·표준화 업데이트 병합
+
+- PR #178 exact head `21b11774933e9b3a6c67922eddbb6bbb907439d4`; squash merge SHA `8abf70a68add7f0e7a38283da3dd3d78c160829c`.
+- Actions Run #1158 / ID `44709421086`: success; full pytest **174 passed / 0 failed**.
+- Traceability: claims 13, interfaces 15, requirements 35, SEC 36, EVD-SEC crosswalk 16, product evidence 15, bidirectional links true, M/606 mapping 41, JSONL 274 events (269 modern IDs + 5 legacy).
+- Official source canary fetched 10 allowlisted sources; CRA Article 13(8) and 2025/2392 Annex I(10)/Annex II(1) locators passed. PDF evidence upload step skipped.
+- Provenance artifact #14616666445, 2,567 bytes, SHA-256 `77061f3b46331afb3ce9c1f8b60ce116754f4f4bb6c817ccdc8af1f4fa58ab54`.
+- Merge SHA readback identical to main; pre-work safety ref `safety/pre-cra-core-implementation-refresh-2026-11-20`; post-merge ref `safety/post-merge-pr178-2026-11-20`.
+- CRA report v0.5 §§25–28, SRP readiness, 21-source freshness register, CEN/ETSI corrections, rulebook freshness requirements all main.
+- Evidence limits retained: ENISA HTML parsed/no raw hash, AR Manual metadata only, ETSI 18 items list only shows 10 with 8 detailed records pending, CEN prEN50770-1..6 not fully re-read, standard full text not acquired.
+- Product scope/classification/Annex III-IV/RDPS Unknown; security tests Not Run.
