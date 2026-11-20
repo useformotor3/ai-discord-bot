@@ -119,3 +119,15 @@ Commission Implementing Regulation (EU) 2025/2392 recital (2)–(3)은 기술적
 - Regulation (EU) 2024/2847, consolidated EUR-Lex text: https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX%3A02024R2847-20241120
 - Commission Implementing Regulation (EU) 2025/2392: https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX%3A32025R2392
 - ELI / OJ text 2025/2392: https://eur-lex.europa.eu/eli/reg_impl/2025/2392/oj/eng
+
+
+## 9. ETSI Work Programme class-label mismatch — legal source controls
+
+ETSI Work Item scope pages for EN 304 635 (hypervisors/container runtime) and EN 304 636 (firewalls/IDS/IPS) currently describe the categories as CRA Annex III Class I. This conflicts with the legally binding technical descriptions in Commission Implementing Regulation (EU) 2025/2392 Annex I:
+- Hypervisors/container runtime systems: Annex III Class II category 1.
+- Firewalls/IDS/IPS: Annex III Class II category 2.
+
+The discrepancy is confirmed at the ETSI Work Programme metadata/scope-text layer. The normative draft bytes were not acquired, so do not state that the draft itself contains the same error. The official regulation controls the product class and conformity route. If a product's core functionality matches either category, use the Article 32(3) Class II route, not Article 32(2) Class I.
+
+ETSI pages: https://portal.etsi.org/webapp/WorkProgram/Report_WorkItem.asp?WKI_ID=74858 and https://portal.etsi.org/webapp/WorkProgram/Report_WorkItem.asp?WKI_ID=74859
+Official legal source: https://eur-lex.europa.eu/eli/reg_impl/2025/2392/oj/eng
