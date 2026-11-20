@@ -1,3 +1,12 @@
+## 최신 main 기준점 — PR #123 iX700M 제품 식별 증거 병합 (2026-11-20)
+
+- Main merge SHA: `2f09103fa5efe23374458ddf49de7c0fd4febddb`; post-merge safety ref: `safety/post-merge-pr123-2026-11-20`.
+- PR #123 exact-head CI Run #1046 / ID `44644308627`: success (source identity, compile, CRA traceability, full pytest, official CRA PDF retrieval, provenance manifest upload).
+- PR #123 adds report §26: manufacturer-listed iX700MD1-B-150B code definitions (D1=1-axis, B=480 Vac, 150=15 kW, encoder B=BiSS-C) and CE/LVD/EMC listing metadata. Attached DoC PDF bytes not acquired; this is not CRA conformity evidence.
+- PR #122 remains the previous intake checkpoint: merge `8a18856a677ccbab4117c0ea35524116ac5ad70a`, exact-head CI Run #1044 success; report §25 and manufacturer intake register with iX7M/iX7NH metadata, original PDFs not acquired.
+- Latest manufacturer intake register: `sources/manufacturer/LS_MECAPION_MANUAL_INTAKE_2026-11-20.json` (4 records; no unverified SHA-256 claims).
+- Product scope/classification/RDPS remain Unknown; security tests Not Run. Exact-main push CI not independently confirmed.
+
 ## 추가 제품 식별 증거 — iX700M CE/LVD/EMC 게시물 (2026-11-20)
 
 - 제조사 게시물에서 `iX700MD1-B-150B` 모델 코드 및 코드 체계(D1=1축, B=480 Vac, 150=15 kW, 인코더 B=BiSS-C)를 확인했다.

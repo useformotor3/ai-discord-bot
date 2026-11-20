@@ -1743,3 +1743,15 @@
 - CE_DoC-LVDEMC 첨부 238.9 KB, 게시 2026-04-30. 첨부 원본은 HTTP 502로 미확보; DoC 본문은 검증하지 않음.
 - CE/LVD/EMC 게시 메타데이터를 CRA 적합성 또는 사이버보안 증거로 오인하지 않도록 보고서 §26과 intake JSON에 한계를 기록.
 - 제품별 CRA 판정 Unknown, 보안시험 Not Run 유지.
+
+
+---
+
+## 2026-11-20 — PR #123 병합 및 iX700M 식별 증거 동기화
+
+- PR #123 squash merge: `2f09103fa5efe23374458ddf49de7c0fd4febddb`.
+- Pre-merge safety: `safety/pre-ix700m-doc-metadata-2026-11-20`; post-merge safety: `safety/post-merge-pr123-2026-11-20`.
+- Exact-head CI Run #1046 / ID `44644308627`: success. Source identity, compile, CRA traceability, full pytest, official CRA PDF source retrieval and manifest upload passed.
+- PR #123 report §26 documents iX700MD1-B-150B manufacturer code definitions and CE/LVD/EMC listing metadata; PDF bytes were not acquired, and no CRA conformity inference is made.
+- PR #122 merge `8a18856a677ccbab4117c0ea35524116ac5ad70a`, Run #1044 success; report §25 and 4-record manufacturer intake register document iX7M/iX7NH manual metadata, not original PDF content.
+- Product scope/classification/RDPS Unknown; security tests Not Run; exact-main push CI not independently confirmed.
