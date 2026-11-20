@@ -1,3 +1,18 @@
+## 최신 재개 상태 — PR #173 병합 및 iX7NH Ver1.7/API 증거 갱신 완료 (2026-11-20)
+
+- PR #173 squash 병합: main SHA `634c3178471ff20c99e97ba48fc4c5e187afb28d`; 연구 브랜치 exact head `2e536ed1cd893e433b0aab6b98185c40bff3ff8a`.
+- Exact-head Actions Run #1148 / ID `44702831239`: success. Source blob integrity, compileall, CRA traceability 통과; full pytest **174 passed / 0 failed**.
+- Traceability: claims 13, interfaces 15, requirements 35, SEC 36, EVD-SEC 16, product evidence 15, bidirectional links true, M/606 41, PROJECT_LOG 266 events (261 modern IDs + 5 legacy).
+- Official live source canary fetched 10 allowlisted official sources and verified CRA text/locators. One separate CRA PDF URL returned empty body and was explicitly skipped as temporary outage; overall workflow succeeded.
+- Provenance artifact #14613259125, 2,567 bytes, SHA-256 `22b402eeb9c351c65210a80c47d7f0deb6cc2526383138b12c2c96d892ca73c1`.
+- 통합 보고서 v0.20 §40–§41 main 반영. §40: LS메카피온 Ver1.7/API 공식 첨부 메타데이터 확인; 첨부 다운로드 TimeoutError로 원본 bytes·SHA-256·본문 미확보. §41: AutomationDirect 2026 Modbus TCP 가이드 14페이지 본문을 2차 자료로 검토.
+- 2차 자료의 Node 98/99, Modbus timeout, 쓰기 제어면은 LS메카피온 최신 원문/정확 SKU·펌웨어로 확인 전까지 제조사 확정사양 아님.
+- 사전 복구 ref `safety/pre-ix7nh-v17-api-audit-2026-11-20`; 사후 ref `safety/post-merge-pr173-2026-11-20`; post ref == main 확인.
+- 제품별 CRA scope/classification/Annex III·IV/RDPS Unknown, security tests Not Run. 실기기/네트워크 시험 및 쓰기/운전 명령 미수행.
+- main `protected=false` 상태 유지. 운영 코드/workflow/secrets/state/history/SIL 3 보존 산출물 미변경.
+
+---
+
 ## 최신 재개 상태 — iX7NH Ver1.7/API 메타데이터 및 2026 Modbus TCP 보충 가이드 검토 (2026-11-20)
 
 - 기준 main: `1d66302539d7d0cbb33780590251898ac76bb1ea`; 작업 브랜치 `research/ix7nh-v17-api-source-audit-2026-11-20`; 문서 전용.
