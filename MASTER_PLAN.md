@@ -1,3 +1,13 @@
+## 운영 품질 개선 트랙 — 2026-11-20
+
+- 상세 기준: [AI 세션 연속성·자기검토·토큰 효율 운영 기준](reports/AI_SESSION_CONTINUITY_SELF_REVIEW_AND_TOKEN_EFFICIENCY_2026-11-20.md).
+- 완료: 현재 main/브랜치 상태 재조회, 과거 `cra-project-foundation` 고정 참조 오류 식별, 역사 문서 `PROJECT_STATUS.md`와 최신 `PROJECT_STATUS_CURRENT.md` 역할 재확인, AI 행동강령 보강.
+- 지속 수행: 매 세션 오류·누락·실패 원인 및 교정·재발방지 기록, 공식 1차 출처/locator/독립 교차검증, 검색·토큰 중복 최소화, GitHub read-back.
+- 다음 게이트: 이 운영 기준을 최신 상황판/세션 로그 진입점에 연결하고, CRA 핵심 P0(ETSI 미검토 8개, CEN/CENELEC prEN 50770-1~6, M/606 41개 기한·ESO 통지, OJ citation, Annex III/IV·Article 32 공통 매트릭스)를 순서대로 재검증한다.
+- 이 관리문서 변경 자체는 CRA 법령·표준의 최신 사실을 새로 확인한 것이 아니며, 제품 적합성 판정이나 법률 검토 완료를 뜻하지 않는다.
+
+---
+
 ## 최신 기준점 — PR #178 CRA 핵심 이행·표준화 업데이트 병합 (2026-11-20)
 
 - main SHA: `8abf70a68add7f0e7a38283da3dd3d78c160829c`; PR #178 merge; exact-head Run #1158 success, 174 passed / 0 failed.
