@@ -2581,3 +2581,21 @@
 1. PR exact-head CI 및 main CI에서 전체 테스트/traceability/source canary 확인.
 2. 다음 대화부터 결과 대비 요청, 근거·검증, AI의 오류·비효율을 선택적으로 점검하고 유효한 개선만 반영.
 3. 다음 ETSI 조회에서 V1.0.9 full draft official route를 재탐색하되, 검색 목록과 실제 PDF 취득을 구분.
+
+
+## 2026-11-21 — KST 일일 재귀개선 모방 알고리즘 정립
+
+### 관찰/요구
+- 사용자는 날짜가 바뀔 때 최신 검증된 재귀개선 구조를 GitHub에 적용하고, 재귀개선 모방 알고리즘도 갱신하도록 요청.
+- 직전 세션의 자기검토 기준은 있었으나, KST 날짜 경계 트리거, 일일 검토 파이프라인, 효과 상태, NO_CHANGE 처리, 자동화 한계가 단일 프로토콜로 정리되어 있지 않았음.
+
+### 조치
+- `AI_RECURSIVE_IMPROVEMENT_PROTOCOL.md` 신규 작성: 날짜 경계 감지, 기준 상태 동기화, 결과/행동 감사, 후보 평가, A~D 반영, 검증/복구, 효과 상태, 토큰 효율 가드.
+- AI_RULEBOOK §72, 세션 운영 문서 §9, MASTER_PLAN 및 PROJECT_STATUS_CURRENT에 기준선과 재개 절차 반영.
+- 기준일은 2026-11-21 KST. 다음 날짜 경계에서 세션 시작/재개 시 실제 실행하도록 정의.
+- 별도 자동 스케줄러/백그라운드 감시/모델 가중치 재학습은 구현하지 않았으며, 이를 구현했다고 주장하지 않도록 명시.
+
+### 검증
+- PR #192 main post-merge CI Run 44839652639: success. Source integrity, compile, CRA traceability, full pytest, official CRA PDF/HTML read-only canaries, provenance upload 통과.
+- 이번 신규 알고리즘 자체의 테스트 및 read-back/PR CI는 이번 작업 브랜치에서 별도 검증 예정.
+- 장기 운영 효과는 다음 KST 날짜 경계 이후 관찰 전까지 미검증.
