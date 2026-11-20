@@ -1808,3 +1808,29 @@
 - main push Run #1065 (`44658780153`) success; full test suite, traceability, source canary and provenance manifest upload all passed.
 - main JSONL 221/221 valid; audit CSV 41 data rows.
 - 후속: OT/IACS 관련 M/606 Work Items와 서보드라이브 제품기능의 적용 경계 분석.
+
+## 2026-11-20 — M/606 OT/IACS 6개 수직 프로파일 1차 출처 대조 및 서보드라이브 경계 분석
+
+### 재개 기준
+- main HEAD 36f170de199d2fc23e4e40969584e56c37dbebe7 (PR #131 이후).
+- PR #130 merge bfcc2e61fc07b2148fca7a162349af40aa84bc47; main push Run #1065 (44658780153) success.
+- 작업 브랜치 cra/ot-iacs-vertical-profile-boundary-2026-11-20; pre-work safety ref safety/pre-ot-iacs-vertical-audit-2026-11-20.
+
+### 수행한 조사
+- CEN-CENELEC CLC/TC 65X 공식 Work Programme의 여섯 프로젝트와 개별 CENELEC 프로젝트 레코드를 직접 확인했다.
+- M/606 20b→prEN 50770-4 (81652, VPN), 21b→prEN 50770-2 (81650, network management), 22b→prEN 50770-6 (81654, SIEM), 25b→prEN 50770-3 (81651, physical/virtual interfaces), 27b→prEN 50770-5 (81653, routers/modems/switches), 36b→prEN 50770-1 (81649, firewalls/IDS/IPS).
+- 6개 모두 Work Programme 상태 Under Drafting, 개별 프로젝트 상태 Committee stage. 각 레코드의 OJEU 필드는 Citation expected; 실제 OJ citation number/date와 DOR/DAV/DOA/DOP는 확인되지 않았다.
+- CLC/TC 65X의 공식 scope는 산업 공정 계측·제어·자동화 장비·시스템 및 통합 구성요소/기능의 안전·보안 표준화다. 이것만으로 개별 서보드라이브가 여섯 수직 제품 유형에 속한다고 판단하지 않는다.
+- 25b는 모델에 실제 OT 네트워크 인터페이스가 존재할 때 조건부 우선 검토 후보. VPN/NMS/SIEM/router-modem-switch/firewall-IDS-IPS 기능은 현재 확보된 LS메카피온 자료에서 확인되지 않았으나, 원본 매뉴얼 미확보 상태이므로 기능 없음으로 단정하지 않았다.
+
+### 산출물 변경
+- 통합 보고서 §31 및 버전 0.10 반영.
+- M/606 41-item 감사 CSV의 행 20/21/22/25/27/36에 CENELEC project, 상태, OJ 필드, 제품 기능 경계 추가.
+- 6개 수직 프로파일의 상세 6-row CSV 추가.
+- PROJECT_STATUS_CURRENT, MASTER_PLAN, README, SESSION_LOG, PROJECT_LOG.jsonl 동기화.
+
+### 검증 및 한계
+- 공식 출처: CLC/TC 65X Work Programme, 여섯 개 개별 CENELEC 프로젝트 레코드, CEN-CENELEC Work Programme 2026 Digital Society 페이지.
+- 작업 브랜치 변경사항은 아직 CI로 검증하지 않았다. PR 생성 전 diff/readback과 JSONL/CSV/추적성 검증을 수행하고 exact-head CI 결과를 별도 기록한다.
+- 모델별 제품 기능, CRA scope/classification/Annex III·IV/RDPS는 Unknown; security tests Not Run.
+- 운영 코드/workflow/secrets/state/history, legacy SIL 3 산출물은 변경하지 않았다.
