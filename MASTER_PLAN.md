@@ -1,3 +1,10 @@
+## 2026-11-20 — 모델별 통신 인터페이스 증거 분석
+
+- PR #137 merge SHA 71db8880502bbd5be083e297e39acc338ea0d13a; exact-head Run #1078 success (174 passed / 0 failed); safety refs retained.
+- 공식 드라이브 카탈로그에서 EtherCAT 통신형·펄스형 모델군을 분리; iX7NH Modbus TCP API guide, L7P Modbus RS-422 guide, iX700M CE model code evidence 확인.
+- 모델별 인터페이스 evidence matrix 생성. ESI 0.98와 제품 카탈로그 명칭 불일치는 그대로 기록하고, 모델코드/ESI 호환성을 추정하지 않는다.
+- 25b technical relevance is strong for EtherCAT/Modbus TCP interfaces; final standard scope and exact SKU applicability remain Unknown. L7P RS-422 scope requires interpretation.
+- Next: exact SKU/HW/FW options, original manual/ESI/API bytes + SHA-256, port/protocol/security-function evidence, iX7NH dual-protocol configuration check.
 ## 2026-11-20 — PR #136 병합 및 제조사 자료 인벤토리 CI
 
 - PR #136 squash merge SHA d7e921f5a6db04d20ce06778f6ea384dbd9c63fe; pre/post safety refs retained; post ref identical to main.
