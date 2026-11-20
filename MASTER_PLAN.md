@@ -5,6 +5,7 @@
 - LS메카피온 iX7NH는 사례연구이며, CRA 전체 규제/표준화 분석과 병렬 또는 후순위로 수행한다.
 
 ### 다음 P0
+0. Track COM(2026)780 European standardisation framework proposal as proposal only; monitor Council/Parliament/adoption/transition, do not treat as current law. C(2026)7861 final is the official 2026-11-10 M/606 deadline amendment; maintain its Annex row-level schedule.
 1. CEN/ETSI/Commission/OJ 표준화 상태를 source-by-source로 계속 갱신. CEN EN 40000-1-1/-1-2는 Published but no CRA OJ citation; ETSI M/606 18 active items 중 미검토 개별 레코드 8개와 OJ 상태를 전수 확인.
 2. CEN/CENELEC prEN 50770-1~6의 개별 레코드 2026-11-20 재조회 및 산업 OT 범위/기한 확인.
 3. C(2026) 7861 Article 2에 따른 CEN/CENELEC/ETSI 수락/비수락 통지 및 수령일 증거 확보.
