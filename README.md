@@ -1,6 +1,6 @@
 # CRA Servo Drive Compliance & Engineering Project
 
-> **최신 재개 상태 — 2026-11-20:** PR #166 병합 완료, main SHA `761b3ccffc142f11cbfe0d0dfb0e905b5d368ecb`. PR #166 exact-head CI Run #1136 성공(174 passed / 0 failed), 사전·사후 safety ref와 main 동일성 확인. 보고서 v0.17 §38, 제조사 자료 인벤토리 26개 데이터 행, JSONL 260건(이번 사후 동기화 기록 포함). iX7NH USB OTG/FoE/EoE/Modbus TCP/웹서버/백업·복원 기능을 공격면별 검증 질문으로 정리했으며, 현행 Ver1.7의 보안 설정은 아직 미확인.
+> **최신 재개 상태 — 2026-11-20:** PR #167 사후 동기화 완료(기준 main SHA `7f9c35c54f93505f541198f3ceef723540f4df72`), CI Run #1138 성공(174 passed / 0 failed). 최신 연구 PR #166의 보고서 v0.17 §38과 제조사 인벤토리 26개 데이터 행을 main에 반영. iX7NH USB OTG/FoE/EoE/Modbus TCP/웹서버/백업·복원 기능을 공격면별 검증 질문으로 정리했으며, 현행 Ver1.7의 보안 설정은 아직 미확인. main branch protection은 현재 꺼져 있어 별도 관리자 설정이 필요.
 
 산업용 서보 드라이브의 EU Cyber Resilience Act(CRA) 대응을 위한 조사·설계·검증·문서화 프로젝트입니다. 문서의 기본 언어는 한국어이며, 법령·표준·제조사 원문은 원어와 출처를 보존합니다.
 
