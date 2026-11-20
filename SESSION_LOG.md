@@ -2325,3 +2325,13 @@
 - DKE Oct-2026의 -1-1/-1-2 split과 central parent record가 일치하지 않음을 기록. split child project IDs는 확정하지 않음.
 - 81650–81654 central records는 이번 pass에서 direct readback 실패. -2/-3 DKE/BSI conflict, -4/-5/-6 historical central snapshot status를 구분.
 - CSV와 integrated report §32, CEN audit addendum, situation board, plan, README, session log, AI rulebook에 반영.
+
+
+## 2026-11-20 — Annex III/IV core functionality 및 Article 32 route matrix
+
+- EUR-Lex CRA consolidated text 및 Commission Implementing Regulation (EU) 2025/2392 공식 OJ PDF를 대조.
+- Article 2(1) scope, Article 7(1) core functionality/integrated component boundary, Annex III/IV technical descriptions, Article 32(1)–(4) conformity routes를 정리.
+- Fieldbus controllers/adapters가 Annex III Class I network-interface category 기술 설명에 포함됨을 확인. 내장 포트와 별도 판매 interface module을 분리 분석하도록 기준화.
+- Security MCU, RTOS, NMS/VPN/SIEM, router/switch, firewall/IDS/IPS, Annex IV security box/secure element에 대한 product boundary 및 evidence checklist 작성.
+- Article 13(5)/(6) third-party component due diligence 및 component vulnerability handling 연결.
+- 제품별 Annex III/IV classification 및 conformity route는 exact SKU/BOM/FW/market configuration evidence 부족으로 Unknown 유지.
