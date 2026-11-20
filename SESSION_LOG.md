@@ -1871,3 +1871,10 @@
 - PDF artifact #14595209202 (3,070,503 bytes; SHA-256 6356c21834522bcb9f90de5e903679d02b18ced0c49fe2287f7ae065a1b8e9ff); provenance artifact #14595972121 (2,567 bytes; SHA-256 752e408af313d26b37d184b22180aea597b57058fc65e6a4d9398b9019c6638e).
 - Pre-merge safety safety/pre-pr136-merge-2026-11-20; squash merge SHA d7e921f5a6db04d20ce06778f6ea384dbd9c63fe; post-merge safety safety/post-merge-pr136-2026-11-20 생성 및 main과 identical 확인.
 - Main push CI는 독립 확인되지 않아 미확인으로 유지.
+
+## 2026-11-20 — 모델별 통신 인터페이스 증거 대조
+- PR #137 exact-head Run #1078 / ID 44661804214 success, 174 passed / 0 failed; official CRA source canaries/provenance upload success.
+- LS메카피온 공식 드라이브 카탈로그에서 iX700M/iX7M/iX7NH/L7NHA/L7NHB/L7NHF EtherCAT 통신형, L7PA/L7PB/L7C/L7SA/L7SB pulse/analog 계열을 분리 확인.
+- 공식 iX7NH Modbus TCP API 가이드 및 L7P Modbus RS-422 API 가이드 확인. iX7NH EtherCAT+Modbus TCP 동시지원/옵션은 미확정; L7P RS-422의 prEN 50770-3 범위 포함 여부도 Unknown.
+- iX700MD1-B-150B CE DoC 등록정보와 모델코드 구조를 확인; CE DoC 본문은 미검토.
+- 보고서 §33, 14행 model-interface matrix, manufacturer source inventory, M/606 item 25 및 25b 매트릭스 갱신. 원본 PDF/XML/MSI/API ZIP bytes 및 SHA-256 미확보, content review metadata-only.

@@ -1,3 +1,17 @@
+## 최신 main 기준점 — PR #137 병합 후 모델별 인터페이스 증거 분석 (2026-11-20)
+
+- main SHA: 71db8880502bbd5be083e297e39acc338ea0d13a (PR #137 squash merge).
+- PR #137 exact head f99d0cccc13a52744882a5869aab920aae0b036e; Actions Run #1078 / ID 44661804214 success; 174 passed / 0 failed.
+- Run #1078: source integrity, compileall, CRA traceability, full pytest, official CRA PDF/10-source HTML canaries, provenance upload 모두 성공.
+- PDF artifact #14595852559 (3,070,500 bytes; SHA-256 f8093f9b25dff09e971b2f312fef8617d620c9b690208729fb7dc2276cf270a5); provenance #14595338956 (2,566 bytes; SHA-256 361d32f0bf155851e352f977f31c242b1c3df47950466e2a5cf9ebc84813213c); 7일 보존.
+- PR #137 pre-merge safety safety/pre-pr137-merge-2026-11-20; post-merge safety safety/post-merge-pr137-2026-11-20 (main과 identical).
+- 새 작업 브랜치 cra/servo-model-interface-evidence-2026-11-20. 공식 드라이브 카탈로그에서 EtherCAT 통신형과 펄스형을 분리하고, iX7NH Modbus TCP 및 L7P Modbus RS-422 가이드, iX700M CE 모델코드 등록정보를 확인.
+- 25b는 EtherCAT/Modbus TCP 통신 모델에 대해 기술적 후보가 명확해졌으나, 통합 인터페이스의 최종 표준 적용범위와 SKU/포트 옵션은 Unknown. L7P RS-422 포함 여부도 표준 정의 확인 필요.
+- 제조사 첨부 PDF/XML/MSI/API ZIP 원본 bytes 미확보, SHA-256 미계산, content review metadata-only. Product scope/classification/Annex III·IV/RDPS Unknown; security tests Not Run.
+- main push CI는 별도 확인되지 않아 미확인으로 유지.
+- 다음: 정확한 SKU/HW/FW/옵션별 매뉴얼·ESI/API bytes 확보, 포트/프로토콜/보안 기능 매핑, iX7NH EtherCAT+Modbus TCP 동시지원 여부 및 ESI 호환성 확인.
+
+---
 ## 최신 main 기준점 — PR #136 병합 및 제조사 자료 인벤토리 (2026-11-20)
 
 - 최신 main SHA: d7e921f5a6db04d20ce06778f6ea384dbd9c63fe (PR #136 squash merge).
