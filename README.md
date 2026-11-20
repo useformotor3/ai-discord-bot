@@ -5,7 +5,7 @@
 - [18개 Work Item CSV](reports/CRA_ETSI_M606_18_ACTIVE_WORK_ITEM_MASTER_MATRIX_2026-11-20.csv)
 
 
-> **최신 재개 상태 — 2026-11-20:** PR #182 merged to main (904b2ed0897331ced9dedfcbd25afd608f92f951). Exact-head Run #1177 success, 174 passed / 0 failed. Integrated report v0.9: full ETSI M/606 18-item matrix, two critical Class I/II metadata mismatches, OT 7-deliverable profile reconciliation, C(2026)7861 Article 2/deadlines, Annex III/IV and Article 32 route matrix. Product classification remains Unknown pending exact SKU/BOM/FW evidence.
+> **최신 재개 상태 — 2026-11-20:** PR #182 merged to main (904b2ed0897331ced9dedfcbd25afd608f92f951). Exact-head Run #1177 success, 174 passed / 0 failed. Integrated report v0.9: full ETSI M/606 18-item matrix, two ETSI Work Item metadata discrepancies; latest EN304636 draft confirms legal Class II, EN304635 latest draft pending, OT 7-deliverable profile reconciliation, C(2026)7861 Article 2/deadlines, Annex III/IV and Article 32 route matrix. Product classification remains Unknown pending exact SKU/BOM/FW evidence.
 
 ## 최신 조사 산출물
 - [통합 CRA 보고서 v0.9](reports/CRA_INTEGRATED_COMPLIANCE_REPORT_2026-11-17.md)
