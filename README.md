@@ -896,3 +896,10 @@ C(2026) 7861 final 대체 Annex I 기준 41개 항목의 번호·주제·ESO 채
 
 ### 2026-11-20 M/606 Work Item 매핑 업데이트
 CEN/CENELEC 공식 M/606 Work Programme V1(2025-04-02)에서 item 1 → JT013089, items 2–14 → JT013091, item 15 → JT013090 연결을 확인했다. CEN 공식 2026-02-23 webinar는 JT013090을 prEN 40000-1-3 Vulnerability Handling과 연결한다. CEN 2026-11-19 발표는 FprEN 40000-1-3 공개가 임박했다고 설명하지만 세부 카탈로그 단계/OJ 필드는 직접 확인되지 않았다. Article 2의 1개월은 ESO가 개정 결정을 수령한 날부터 계산하므로 10 November를 자동으로 종료일로 간주하지 않는다. 자세한 범위와 미확인 사항은 통합 보고서 §30 및 감사대장을 참조.
+
+
+### PR #130 최신 검증 상태 (2026-11-20)
+- PR #130 병합 완료: `bfcc2e61fc07b2148fca7a162349af40aa84bc47`.
+- Exact-head Run #1064 및 main push Run #1065 모두 성공.
+- 41-item Annex I audit CSV 41개 데이터행 유지, `PROJECT_LOG.jsonl` 221개 레코드 전부 JSON 파싱 통과.
+- 다음 조사: M/606 OT/IACS 보조 Work Item과 서보드라이브 제품기능·제품경계의 관계를 별도 분석하되, 단순히 산업용 장비라는 이유로 Annex III 분류를 확대하지 않는다.
