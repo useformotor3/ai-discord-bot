@@ -1,5 +1,12 @@
 # CRA 서보 드라이브 마스터 계획서
 
+## 2026-11-20 — iX700M 모델 코드 추적 단서
+
+- 제조사 CE/LVD/EMC 게시물에 `iX700MD1-B-150B`가 명시되고 코드 정의는 D1=1축, B=480 Vac, 150=15 kW, encoder B=BiSS-C.
+- 이는 SKU identification lead only. DoC PDF bytes are not acquired; do not claim CRA compliance or cybersecurity evidence from CE/LVD/EMC metadata.
+- 보고서 §26 및 `sources/manufacturer/LS_MECAPION_MANUAL_INTAKE_2026-11-20.json` 기록 참조.
+
+
 ## 2026-11-20 — 제조사 매뉴얼 증거 수집 재시도
 
 - iX7M/iX7NH 첨부파일 메타데이터는 확인했으나 실제 PDF 다운로드는 HTTP 502/timeout으로 실패. iX700M Ver1.4 목록도 확인했으나 첨부 상세 미확인.
