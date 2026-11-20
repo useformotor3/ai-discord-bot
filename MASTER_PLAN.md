@@ -1,3 +1,10 @@
+## 2026-11-20 — PR #138 병합 및 모델 인터페이스 증거 검증
+
+- PR #138 merge SHA 372860cfb1a149bc5d5a7bf993e11dbf68217478; pre/post safety refs retained; post ref identical to main.
+- Exact PR head 0ca7cfb745884ba8c7a1f3f383974286d0e88fd8; Run #1080 success, 174 passed / 0 failed.
+- Official CRA PDF/HTML canaries, compile, traceability, pytest, provenance upload success; artifacts #14595309514 and #14595489037.
+- Report §33, 14-row model/interface matrix, source inventory, M/606 25b evidence updates merged.
+- Next: acquire original manufacturer PDFs/XML/MSI/API ZIP, hash, inspect SKU-specific ports/protocols/security controls; verify iX7NH dual protocol and L7P RS-422 scope.
 ## 2026-11-20 — 모델별 통신 인터페이스 증거 분석
 
 - PR #137 merge SHA 71db8880502bbd5be083e297e39acc338ea0d13a; exact-head Run #1078 success (174 passed / 0 failed); safety refs retained.
