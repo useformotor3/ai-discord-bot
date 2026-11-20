@@ -1,6 +1,6 @@
 # CRA 서보 드라이브 통합 규제·기술 준수 보고서
 
-- 문서 버전: v0.9 (ETSI 18-item master matrix, legal class mismatch 및 공개 draft 대조 보강) (ETSI M/606 18개 master matrix, Class I/II metadata mismatch, OT 표준화, Article 2 및 Article 32 분석)
+- 문서 버전: v0.9 (ETSI 18-item master matrix, legal class mismatch 및 최신 EN 304 636 draft 대조 보강)
 - 기준일: 2026-11-20
 - 프로젝트 범위: EU Cyber Resilience Act(CRA) 대응만
 - 기준 제품군: 산업용 서보 드라이브 및 필수 펌웨어·설정/진단 소프트웨어
@@ -686,7 +686,7 @@ ETSI 개별 Work Item scope text는 EN 304 635 hypervisors/container runtime과 
 
 ## 36. EN 304 635/636 공개 interim draft와 Work Item metadata 대조
 
-추가로 공개된 이전 ETSI interim draft를 확보했다. EN 304 636 V0.0.9 (2025-12-15)는 Introduction/Scope에서 Annex III Class II point 2를 명시하여 법령과 일치한다. EN 304 635 V0.0.8 (2025-11-10)은 추출된 본문에서 Annex III/Class I/Class II label을 확인하지 못했다. 따라서 현재 Work Item page의 Class I 표기는 metadata discrepancy로 기록하되, 최신 v1.0.0/v1.0.1 normative draft까지 오류가 있다고 단정하지 않는다.
+추가로 공개된 이전 ETSI interim draft를 확보했다. EN 304 636 V0.0.9 (2025-12-15)는 Introduction/Scope에서 Annex III Class II point 2를 명시하여 법령과 일치한다. EN 304 635 V0.0.8 (2025-11-10)은 추출된 본문에서 Annex III/Class I/Class II label을 확인하지 못했다. 따라서 현재 Work Item page의 Class I 표기는 metadata discrepancy로 기록하되, 최신 EN 304 636 V1.0.0은 page 9에서 Class II point 2를 확인해 법령과 일치한다. EN 304 635 V1.0.1은 DocBox에 등록되어 있으나 fetch timeout으로 본문 미확인이다.
 
 - EN 304 635 V0.0.8: https://docbox.etsi.org/CYBER/EUSR/Open/EN-304-635_V0.0.8_2025-11-10_Virtualisation_Containers.pdf
 - EN 304 636 V0.0.9: https://docbox.etsi.org/cyber/CYBER/Open/EN-304-636_V0.0.9_2025-12-15_Firewalls_Mature-draft.pdf
