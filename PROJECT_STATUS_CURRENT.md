@@ -1,3 +1,18 @@
+## 최신 재개 상태 — PR #182 CRA 표준화·제품분류 분석 병합 완료 (2026-11-20)
+
+- Main merge SHA: 904b2ed0897331ced9dedfcbd25afd608f92f951; PR #182 head ad57c7cc2595be0a42d1686fde5870fb2ab5cec8; post-merge safety ref safety/post-merge-pr182-cra-standardization-classification-2026-11-20.
+- Exact-head Actions Run #1177 / ID 44713888650: success; 174 passed / 0 failed; source blob integrity, compile, CRA traceability and full pytest passed.
+- Traceability readback: claims 13, interfaces 15, requirements 35, SEC 36, EVD-SEC 16, M/606 mapping 41, PROJECT_LOG 279 events (274 modern IDs + 5 legacy), bidirectional links true.
+- Official CRA HTML source canary and provenance manifest upload passed. CRA Guidance PDF canary returned empty body and was explicitly skipped; no PDF verification claimed.
+- Integrated report v0.7 includes ETSI 8-item audit, CLC/TC 65X OT 7-deliverable reconciliation, C(2026)7861 Article 2/Annex I deadlines, Annex III/IV core-functionality and Article 32 route analysis.
+- ETSI EN 304 620/621/622 explicitly exclude industrial OT in scope. 8 reviewed records have blank OJ fields; no Article 27 presumption claimed.
+- CENELEC 81649 parent record direct readback: prEN 50770-1, Committee stage, Citation expected, no DOR/DAV; DKE -1-1/-1-2 split differs. Central 81650–81654 direct readback not completed; DKE/BSI/LVS stage conflicts remain.
+- C(2026)7861 Annex I deadlines: 1/15=2026-11-30; 2–14=2027-10-30; 16–41=2027-01-31. Article 2 receipt-based one-month non-acceptance condition remains Unknown pending ESO receipt/notice evidence.
+- Annex III/IV and Article 32 matrix completed; product-level classification/route remains Unknown pending exact SKU, BOM, firmware and separately marketed interface/MCU evidence. Security tests Not Run.
+- Main push-triggered CI after merge was not separately verified through the available GitHub connector; PR exact-head CI #1177 is verified.
+
+---
+
 ## 최신 법률 분석 — Annex III/IV 및 Article 32 서보 드라이브 분류 기준 (2026-11-20)
 
 - Article 2(1) data connection scope, Article 7(1) core functionality/component integration, Reg. (EU) 2025/2392 category technical descriptions, Article 32 conformity routes를 공식 EUR-Lex 원문으로 분석.
