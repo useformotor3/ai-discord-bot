@@ -3,7 +3,8 @@
 - 기준 main SHA: b54360ffefaf732d101c12ac49f1846041110c83; 조사 브랜치: research/cra-etsi-18-active-matrix-class-audit-2026-11-20; post-PR183 safety ref: safety/post-merge-pr183-postmerge-status-sync-2026-11-20.
 - Full 18-item M/606 master matrix added. EN 304 635 and EN 304 636 ETSI page metadata says Class I but Regulation 2025/2392 classifies both Class II. Latest EN304636 V1.0.0 PDF page 9 explicitly says Class II point 2; current Work Item page Class I label is stale metadata. EN304635 V1.0.1 public 15-page sample inspected: document p.15 Scope explicitly says Class II point 1. Latest public drafts for both EN304635/636 align with law; full 386-page EN304635 PDF not acquired.
 - EN 304 627 industrial OT exclusion added; total OT exclusions tracked: EN 304 620/621/622/627.
-- Next P0: obtain the complete 386-page EN304635 V1.0.1 PDF from the official ETSI download service if access permits; current 15-page sample already confirms Class II point 1. Then prepare an evidence-backed ETSI metadata clarification request, recheck the 2026-11-23 M/606 AMD1 meeting, ESO acceptance, CENELEC 81650–81654 and actual OJ citations. Do not use Class I Article32 route for these categories.
+- Next P0: obtain the complete 386-page EN304635 V1.0.1 PDF from the official ETSI download service if access permits; current 15-page sample already confirms Class II point 1. Then prepare an evidence-backed ETSI metadata clarification request, monitor official ETSI calendar event GoSRSReq006-M/606 AMD 1 - examination meeting on 2026-11-23; minutes/decision and ESO acceptance remain pending, CENELEC 81650–81654 and actual OJ citations. Do not use Class I Article32 route for these categories.
+- PR #184 exact-head CI Run #1223 (commit 7d9d300a017bfc6d68b247b3a5de56c8a744e1c8): success; 174 passed / 0 failed; source integrity, compile, CRA traceability, live official CRA PDF/HTML canaries and provenance manifest upload succeeded.
 
 ---
 
