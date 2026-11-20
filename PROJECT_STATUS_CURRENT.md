@@ -1,3 +1,17 @@
+## 최신 main 기준점 — PR #136 병합 및 제조사 자료 인벤토리 (2026-11-20)
+
+- 최신 main SHA: d7e921f5a6db04d20ce06778f6ea384dbd9c63fe (PR #136 squash merge).
+- PR #136 exact head 25215700a415b094c6c187278183b8ca15e4e4ca; Actions Run #1076 / ID 44661598986 success; 174 passed / 0 failed.
+- Run #1076: source blob integrity, compileall, CRA traceability, full pytest, official CRA PDF/10-source HTML canaries, provenance manifest upload 모두 성공.
+- PDF artifact #14595209202: 3,070,503 bytes; ZIP SHA-256 6356c21834522bcb9f90de5e903679d02b18ced0c49fe2287f7ae065a1b8e9ff; expires 2026-11-27 02:33:31 UTC.
+- Provenance artifact #14595972121: 2,567 bytes; ZIP SHA-256 752e408af313d26b37d184b22180aea597b57058fc65e6a4d9398b9019c6638e; expires 2026-11-27 02:33:44 UTC.
+- PR #136 pre-merge safety safety/pre-pr136-merge-2026-11-20; post-merge safety safety/post-merge-pr136-2026-11-20. Post ref와 main merge SHA identical.
+- 보고서 §32 및 제조사 source inventory 반영: DriveCM 1.03.2, EtherCAT ESI 0.98/0.96, PEGA2/iX700M 매뉴얼 등록정보. ESI 0.98 11개 모델, PEGA2 EtherCAT/RS-485 변형 확인.
+- 25b 기술적 후보 강화; 단, PDF/XML/MSI bytes 미확보·SHA-256 미계산·content review metadata-only. 법적 적용/제품분류 Unknown, security tests Not Run.
+- main push CI는 독립 조회에서 확인되지 않음; PR exact-head CI와 구분하여 미확인 유지.
+- 다음 P0: 모델별 원본 PDF/XML/MSI 다운로드 및 해시, 정확한 SKU/HW/FW/옵션 확인, ESI Vendor ID/Product Code/Revision/PDO/CoE 및 manual 통신표 분석, DriveCM 서명·의존성 검토.
+
+---
 ## 최신 재개 기준점 — PR #135 병합 후 제조사 원본 자료 인벤토리 진행 (2026-11-20)
 
 - main 기준 SHA: 4299fd7301c22898cab8291dcb1a54d2a767d0cf (PR #135 squash merge).
