@@ -1,6 +1,6 @@
 # CRA 서보 드라이브 통합 규제·기술 준수 보고서
 
-- 문서 버전: v0.4 (CRA 핵심 규제·이행 및 CEN/ETSI 표준화 최신정보 갱신 / 제품별 적용성 확인 전)
+- 문서 버전: v0.5 (CRA 핵심 규제·이행, CEN/ETSI 및 EU 표준화 법체계 최신정보 갱신 / 제품별 적용성 확인 전)
 - 기준일: 2026-11-20
 - 프로젝트 범위: EU Cyber Resilience Act(CRA) 대응만
 - 기준 제품군: 산업용 서보 드라이브 및 필수 펌웨어·설정/진단 소프트웨어
@@ -541,3 +541,33 @@ ETSI 개별 레코드의 Harmonised Standard: Yes 메타데이터는 향후 조�
 5. 표준 본문을 유료로 구매/열람하지 못한 경우 제목·카탈로그·요약만으로 조항별 요구사항을 추정하지 않는다.
 
 **현재 판정:** CEN EN 40000-1-1/-1-2 Published but no CRA OJ citation expected; ETSI related standards remain work programme items with no OJ citation established in this audit; industrial OT CENELEC work items tracked separately; servo-drive product classification remains Unknown.
+
+## 27. EU 표준화 법체계 개편 제안 — COM(2026)780 (현행법 아님)
+
+2026-10-06 European Commission은 Regulation (EU) No 1025/2012를 폐지·대체하려는 **Proposal for a Regulation on European standardisation, COM(2026)780**을 공개했다. 제안서와 영향평가 문서가 게시되어 있으나, 이 문서는 제안 단계 자료이며 채택·발효된 현행법으로 취급하지 않는다.
+
+- 제안 식별: COM(2026)780; SWD(2026)785, SWD(2026)786, SWD(2026)787.
+- 게시일: 2026-10-06.
+- 공식 출처: https://single-market-economy.ec.europa.eu/publications/proposal-regulation-european-standardisation_en
+- 현재 CRA 분석에서의 의미: ESO 요청·표준 채택·위원회 평가·OJ citation 등 유럽 표준화 거버넌스의 향후 구조에 영향을 줄 수 있으므로 입법 진행을 모니터링한다. 그러나 제안이 채택되기 전에는 Regulation 1025/2012 및 현행 CRA/M/606 절차를 대체하는 법적 근거로 사용하지 않는다.
+- 후속 확인: Council/Parliament procedure, amendments, adopted text, entry-into-force/application dates, transition clauses 및 기존 M/606/C(2026)7861에 대한 경과조치를 확인한다.
+
+## 28. M/606 기한 개정과 출처 충돌 처리 — C(2026)7861 final
+
+### 28.1 공식 Commission 근거
+- European Commission CRA standardisation page (last update 2026-11-12)는 2026-11-10에 M/606 standardisation request가 amendment 되었으며, 모든 vertical standards와 일부 horizontal standards의 ESO delivery deadlines가 3개월 연장되었다고 명시한다.
+- Commission Register 문서 C(2026)7861 final 및 Annex는 Brussels, 2026-11-10 날짜로 확인된다. 이 문서는 Implementing Decision C(2025)618을 개정하는 Commission Implementing Decision이다.
+- 공식 페이지: https://digital-strategy.ec.europa.eu/en/policies/cra-standardisation
+- 공식 register document: https://ec.europa.eu/transparency/documents-register/detail?lang=en&ref=C(2026)7861
+- Annex search/document record: https://ec.europa.eu/transparency/documents-register/api/files/C%282026%297861_1/de00000001090401
+
+### 28.2 상충하는 2차 자료 처리
+2026-11-11 기준으로 “아직 amendment가 채택되지 않았다”고 기술한 일부 2차 표준화 추적자료가 검색된다. 그러나 현재 조회 가능한 Commission의 공식 standardisation page는 2026-11-12 업데이트에서 2026-11-10 amendment 완료를 명시하고, Commission Register에는 C(2026)7861 final 문서가 존재한다. 이 충돌에서는 날짜가 더 늦고 권한 있는 공식 Commission 자료를 우선한다. 2차 추적자료의 이전 상태를 현재 법적 상태로 복사하지 않는다.
+
+### 28.3 기한의 적용 범위
+- +3개월 연장은 Commission request에 따른 ESO 표준/표준화 deliverable 납품 일정의 변경이다.
+- 이 날짜를 CRA 제조자의 Article 14 신고 의무, 2027-12-11 전면 적용일, 제품의 적합성 평가 기한과 혼동하지 않는다.
+- 개별 41개 항목별 이전/수정 기한은 C(2026)7861 Annex I master mapping에서 관리한다. 이 보고서 §26의 ETSI work programme 일정은 ESO 내부 단계/예정일이므로 Annex I의 공식 기한이나 OJ citation을 대체하지 않는다.
+- CEN/ETSI 표준이 발행·채택되더라도 CRA Article 27 추정 적합성은 해당 표준 참조가 OJ에 실제 게재되고 제품/요구사항 범위가 맞을 때만 주장한다.
+
+**판정:** COM(2026)780은 proposal; C(2026)7861은 2026-11-10 공식 Commission amendment. 법적 지위와 적용 대상을 구분해 추적한다.
