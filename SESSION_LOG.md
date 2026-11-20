@@ -2504,3 +2504,11 @@
 - code HEAD `2b3522b1a95256901636afae8ee1af92e68bc35a`, Run #1271 / ID `44741902473`: success, 전체 pytest **182 passed / 0 failed**.
 - Source blob identity, compileall, CRA traceability, official PDF/HTML canaries, provenance manifest upload 성공.
 - 이후 문서 전용 갱신으로 HEAD가 바뀌어 최신 HEAD 확인은 별도 CI를 기준으로 함. main 미병합.
+
+
+### Production Run #2523 사후 로그 검증 및 폴백 분류 보강
+- Run #2523 / ID `44740952326` success; 약 7분 41초 실행.
+- 공식 source gate 10개. Gemini 3.8 Flash 응답은 EUR-Lex 공식 링크 누락으로 quality validation reject, 3.5 Flash Lite 대체 모델로 전환.
+- 대체 모델은 신규 주제 없음으로 종료. archive/Discord/state 변경 없음. operational guard 및 checkpoint pruning 성공.
+- 기존 classifier는 503/429 로그가 없으면 quality rejection으로 인한 대체 모델 전환을 놓칠 수 있었음. 두 개 이상 모델 시도를 폴백으로 탐지하고 사유를 분류하도록 수정; 9번째 fixture test 추가.
+- Run #1271의 182 passed는 새 fixture 추가 전 결과. 최신 HEAD CI 재실행 대기.
