@@ -1,3 +1,13 @@
+## 2026-11-20 — PR #166 병합 및 iX7NH 통신면 분석 기준점
+- PR #166 merge SHA `761b3ccffc142f11cbfe0d0dfb0e905b5d368ecb`; exact head `fa7120c73cbe6fe244319a8d1b1e7bc699b47259`; Run #1136 success, **174 passed / 0 failed**.
+- Traceability: claims 13, interfaces 15, requirements 35, SEC 36, EVD crosswalk 16, product evidence 15, bidirectional true, M/606 41, JSONL 259.
+- Provenance artifact #14609257372 SHA-256 `e23c851495214060b6749de728888f6b7ea662fa1bf0ced9b42eb1179427d851`.
+- Pre/post safety refs 생성 및 post ref == main 확인.
+- 보고서 v0.17 §38, 제조사 인벤토리 26행, JSONL 259건 main 반영.
+- 다음 P0: iX7NH Ver1.7 매뉴얼 및 2025-12-24 표준 O/S 업데이트 영상 원본 확보; Modbus TCP API PDF/ZIP 내용 확인; USB OTG/FoE/EoE/Modbus TCP/웹서버별 인증·권한·TLS·서명·anti-rollback·복구 증거 확보. 현행 제품 보안상태는 Unknown 유지.
+
+---
+
 ## 2026-11-20 — iX7NH 통신·원격설정 공격면 분석 P0
 - 공식 iX7NH Series PDF (문서 하단 2021.05)를 텍스트 검토: USB OTG firmware update/parameter backup-restore/alarm-history export; EtherCAT FoE; EoE/UDP parameter configuration/copy; CoE/CiA402; Modbus TCP; built-in webserver/remote commissioning; STO1/STO2 + EDM.
 - 이 기능들을 USB update, FoE, EoE, Modbus TCP, web, backup/restore, log/export 별 보안 검증질문으로 분해해 보고서 §38에 반영한다.
