@@ -1,3 +1,14 @@
+## 최신 기준점 — PR #180 AI 운영 기준 병합 (2026-11-20)
+
+- Main merge SHA `3ded54116b3ecfa77645c50ada45575fbe656aea`; exact-head Run #1162 success, 174 passed / 0 failed.
+- AI 자기검토·세션 연속성·토큰 효율 기준이 main에 반영됨. 상세 기준서 및 safety refs는 README/상황판 참조.
+- 다음 CRA P0: ETSI 18개 M/606 active work item의 상세 개별 레코드 전수 확인(기존 미검토 8개 우선), CEN/CENELEC prEN 50770 project-by-project 확인, C(2026)7861 Article 2 ESO non-acceptance/receipt evidence 확인, Annex I 41-row deadline crosswalk 및 OJ citation 확인.
+- C(2026)7861 Annex I의 기한은 1·15번 2026-11-30, 2~14번 2027-10-30, 16~41번 2027-01-31. Article 2의 1개월 내 ESO non-acceptance 통지 시 개정 결정은 적용 중단될 수 있으므로 수락/수령 증거 없이는 무조건적 효력으로 표현하지 않는다.
+- CEN/CENELEC prEN 50770 OT series의 번호·분할·PWI/drafting status는 secondary tracker로 확정하지 않는다. CEN/CENELEC official catalogue와 national standards body project records를 각각 확인한다.
+- 이 문서 동기화는 외부 법령·표준 원문을 새로 검증한 결과를 main report에 반영한 것이 아니다. 최신 연구는 별도 evidence PR로 기록한다.
+
+---
+
 ## 운영 품질 개선 트랙 — 2026-11-20
 
 - 상세 기준: [AI 세션 연속성·자기검토·토큰 효율 운영 기준](reports/AI_SESSION_CONTINUITY_SELF_REVIEW_AND_TOKEN_EFFICIENCY_2026-11-20.md).
