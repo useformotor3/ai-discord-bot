@@ -1,3 +1,10 @@
+## 추가 재개 메모 — CENELEC project 81649 직접 확인 (2026-11-20)
+
+- CENELEC 중앙 record 81649 direct readback: prEN 50770-1 단일 부모 project, combined firewall + IDS/IPS scope, Committee stage, Citation expected, DOR/DAV 미기재. DKE Oct-2026의 -1-1/-1-2 분할과 central record가 다르므로 naming/record synchronization discrepancy 유지.
+- CENELEC 81650–81654 direct readback는 이번 pass에서 실패. 81650/81651은 DKE Drafting prEN vs BSI PWI conflict, 81652–81654는 prior 2026-11-18 central snapshot 외 신규 direct confirmation 없음.
+
+---
+
 ## 최신 재개 상태 — ETSI 8개 M/606 상세 감사 및 OT 표준화 상태 정정 (2026-11-20)
 
 - 기준 main: PR #181 status-sync merge SHA 2239298939e6e5908a18cece796ab0da7250d219; 현재 조사 브랜치 research/cra-etsi-m606-8items-cen-ot-audit-2026-11-20.
