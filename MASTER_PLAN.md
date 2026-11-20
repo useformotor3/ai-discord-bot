@@ -1,7 +1,7 @@
 ## ETSI 18-item master matrix / class mismatch — 2026-11-20
 
 - Full 18-item M/606 matrix committed in current research branch. 17 map to Annex I vertical items 17–27 and 31–36; EN304642 is additional telecom support item without direct 41-topic mapping.
-- Critical discrepancy: EN304635/636 ETSI page class label I vs legal Class II category1/2 under Regulation 2025/2392. Normative draft not yet acquired. Verify draft and seek ETSI metadata correction.
+- Critical discrepancy: EN304635/636 ETSI page class label I vs legal Class II category1/2 under Regulation 2025/2392. Earlier public drafts checked: EN304636 V0.0.9 says Class II; EN304635 V0.0.8 has no class label. Acquire latest v1.0.0/v1.0.1 drafts and seek ETSI metadata clarification.
 - Industrial OT exclusions: EN304620 VPN, EN304621 NMS, EN304622 SIEM, EN304627 routers/modems/switches.
 - All 18 Work Programme HEN metadata Yes, OJ field blank; actual OJ citation not established.
 
@@ -13,7 +13,7 @@
 - Critical metadata mismatch: ETSI EN304635/636 scope text says Class I; Regulation 2025/2392 says Class II categories 1/2. Legal source controls; normative draft bytes still needed to determine whether mismatch is metadata-only or in draft text.
 - Industrial OT exclusions confirmed for EN304620 VPN, EN304621 NMS, EN304622 SIEM and EN304627 routers/modems/switches.
 - 18 records: Harmonised Standard metadata Yes, OJ field blank; actual OJ citation not established.
-- Next P0: acquire and inspect EN304635/636 draft; track ETSI metadata correction; 2026-11-23 M/606 AMD1 meeting; obtain ESO receipt/acceptance; central CENELEC 81650–81654; OJ index; complete Annex III/IV product evidence.
+- Next P0: acquire and inspect latest EN304635 v1.0.1 / EN304636 v1.0.0 drafts; track ETSI metadata correction; 2026-11-23 M/606 AMD1 meeting; obtain ESO receipt/acceptance; central CENELEC 81650–81654; OJ index; complete Annex III/IV product evidence.
 
 ---
 
