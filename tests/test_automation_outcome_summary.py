@@ -72,3 +72,19 @@ def test_unrecognized_zero_exit_is_not_promoted_to_research_complete():
 def test_missing_log_is_unknown_not_success():
     result = classify_run("", None, "skipped")
     assert result["outcome"] == "NOT_RUN_OR_UNKNOWN"
+
+
+def test_quality_rejection_then_alternate_model_is_detected_as_fallback():
+    result = classify_run(
+        "[공식 source gate] 10개 공식 source 확보\\n"
+        "🔍 모델 [gemini-3.8-flash]으로 조사를 시도합니다.\\n"
+        "모델 gemini-3.8-flash 시도 1 무효 응답: CRA 공식 EUR-Lex 원문 링크가 누락되었습니다.\\n"
+        "🔍 모델 [gemini-3.5-flash-lite]으로 조사를 시도합니다.\\n"
+        "ℹ️ [중복/신규 주제 없음] Discord 전송, 아카이브 및 상태 변경 없이 종료",
+        0,
+        "success",
+    )
+    assert result["outcome"] == "NO_NEW_TOPIC"
+    assert result["model_fallback_observed"] is True
+    assert result["model_fallback_reason"] == "quality_rejected_missing_eur_lex_link"
+    assert len(result["models_attempted"]) == 2
