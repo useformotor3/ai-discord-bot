@@ -21,7 +21,7 @@
 
 - Main SHA 904b2ed0897331ced9dedfcbd25afd608f92f951; PR #182 Exact-head Run #1177 success, 174 passed / 0 failed; traceability 13 claims/15 interfaces/35 requirements/36 SEC/16 EVD-SEC/41 M606/279 project events.
 - Report v0.7 and ETSI 8-item / OT 7-deliverable / Annex III-IV Article32 matrices are in main.
-- Next P0: (1) 2026-11-23 ETSI GoSRSReq006-M/606 AMD 1 meeting minutes and actual decision; (2) CEN/CENELEC/ETSI receipt dates and Article2 acceptance/non-acceptance notices; (3) central CENELEC 81650–81654 record readback and 81649 parent vs DKE split reconciliation; (4) full 18-item ETSI consolidated matrix; (5) actual OJ citation 41-item crosswalk; (6) check Article8(1) delegated act status; (7) exact SKU/BOM/FW, Fieldbus interface board and security MCU evidence to determine Annex III/IV core functionality and Article32 route.
+- Next P0: (1) 2026-11-23 ETSI GoSRSReq006-M/606 AMD 1 meeting minutes and actual decision; (2) CEN/CENELEC/ETSI receipt dates and Article2 acceptance/non-acceptance notices; (3) central CENELEC 81650–81654 individual stage/DOR/DAV readback and 81649 parent vs DKE split reconciliation (mapping already verified from official CENELEC WG3 presentation); (4) full 18-item ETSI consolidated matrix; (5) actual OJ citation 41-item crosswalk; (6) check Article8(1) delegated act status; (7) exact SKU/BOM/FW, Fieldbus interface board and security MCU evidence to determine Annex III/IV core functionality and Article32 route.
 - Do not convert ETSI Harmonised Standard metadata, CENELEC Citation expected, or OJ forecast dates into actual Article27 citation.
 - Product classification remains Unknown; security testing Not Run.
 
