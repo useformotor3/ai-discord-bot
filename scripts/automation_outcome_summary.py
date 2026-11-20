@@ -24,7 +24,19 @@ def classify_run(log_text: str, exit_code: int | None, step_outcome: str = "succ
             break
 
     model_lines = [line.strip() for line in log.splitlines() if "모델 [" in line and "]으로 조사를 시도합니다" in line]
-    fallback = any(term in log for term in ("일시적 과부하(503)", "할당량/요청 제한(429)", "동일 모델 재시도를 중단하고 대체 모델로 전환"))
+    model_fallback_observed = len(model_lines) > 1 or "동일 모델 재시도를 중단하고 대체 모델로 전환" in log
+    if "할당량/요청 제한(429)" in log or "429 resource_exhausted" in lowered:
+        model_fallback_reason = "rate_limit_429"
+    elif "일시적 과부하(503)" in log or "503 unavailable" in lowered:
+        model_fallback_reason = "service_unavailable_503"
+    elif "EUR-Lex" in log and "무효 응답" in log:
+        model_fallback_reason = "quality_rejected_missing_eur_lex_link"
+    elif "무효 응답" in log:
+        model_fallback_reason = "quality_validation_rejected"
+    elif model_fallback_observed:
+        model_fallback_reason = "alternate_model_attempted"
+    else:
+        model_fallback_reason = None
     archive_synced = "깃허브 백서버에 아카이브가 성공적으로 동기화되었습니다." in log
     discord_sent = "Discord 전송 결과: sent" in log
     discord_deferred = "Discord 전송 결과: deferred" in log or "Discord 전송 결과: delivery_unknown" in log
@@ -61,7 +73,8 @@ def classify_run(log_text: str, exit_code: int | None, step_outcome: str = "succ
         "step_outcome": step_outcome,
         "official_source_count": source_count,
         "models_attempted": model_lines,
-        "model_fallback_observed": fallback,
+        "model_fallback_observed": model_fallback_observed,
+        "model_fallback_reason": model_fallback_reason,
         "archive_synced": archive_synced,
         "discord_sent": discord_sent,
         "discord_deferred_or_unknown": discord_deferred,
