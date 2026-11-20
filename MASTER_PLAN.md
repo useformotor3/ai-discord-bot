@@ -1571,3 +1571,12 @@
 - 완료: main push Run #1065 (`44658780153`) success; full tests, traceability, official source canaries, provenance manifest upload 통과.
 - 다음 P0: M/606 Work Programme의 산업용 OT/IACS Work Items 20b/21b/22b/25b/27b/36b가 실제로 어떤 제품기능에 한정되는지와 LS메카피온 서보드라이브의 증거상 인터페이스/기능을 비교. 기능이 입증되지 않으면 적용대상이라고 추정하지 않는다.
 - 제품별 CRA scope/classification/Annex III·IV/RDPS는 Unknown 유지; 보안시험 Not Run.
+
+## 2026-11-20 — PR #174 병합 후 상태 및 다음 우선순위
+- 완료: PR #174 exact-head Run #1150 success, 174 passed / 0 failed; squash merge SHA `090c78bfa0edc759641a8dd30f9156038fa86a82`; main read-back 동일.
+- 완료: official HTML source canary 10건, CRA Article 13(8), Implementing Regulation 2025/2392 Annex I(10)/II(1) locator 확인, provenance artifact #14613952433 업로드 및 SHA 기록.
+- 제한: 별도 CRA PDF evidence upload 단계 skipped. HTML 원문 확인을 PDF bytes 확보로 오인하지 않는다.
+- 다음 P0: LS메카피온에 iX7NH Ver1.7 및 Modbus TCP API PDF/ZIP 원본 또는 대체 다운로드 링크 요청. 확보 시 bytes, SHA-256, 문서 개정, 정확한 SKU/FW 적용성 검증.
+- 다음 P0: AutomationDirect 2026 Rev B에서 확인한 Node 98/99, FW >=1.15, Modbus TCP timeout, writable registers/commands를 제조사 1차 자료로 대조. 500ms는 안전 반응시간으로 사용 금지.
+- 다음 P1: 보안 업데이트 서명·무결성·anti-rollback·복구·인증/권한·지원기간 및 SBOM 관련 제조사 증거 확보. 실기기/네트워크/쓰기/모션 시험은 별도 안전 승인 없이는 수행하지 않는다.
+- 제품 CRA scope/classification/Annex III·IV/RDPS Unknown, security tests Not Run 유지.
