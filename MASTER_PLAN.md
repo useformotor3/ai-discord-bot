@@ -1,3 +1,12 @@
+## 2026-11-20 — PR #167 사후 동기화 및 저장소 보호 점검
+- PR #167 merge SHA `7f9c35c54f93505f541198f3ceef723540f4df72`; exact head `dace5c2b1c61e295e8aea6fef18d08fc4c09236d`; Run #1138 success, **174 passed / 0 failed**.
+- Provenance artifact #14609352656 SHA-256 `1c9f5f187223cb6d9b8b4780eedc04cb1739bc9433d153ed38abb309e7517c63`; pre/post safety refs 생성 및 post == main 확인.
+- PR #166 연구 결과: 보고서 v0.17 §38, 인벤토리 26행, JSONL 260건.
+- **거버넌스 리스크:** GitHub main branch API reports `protected=false`; required checks are not server-enforced. Continue exact-head CI/manual merge/pre-post safety refs. Repository admin should configure a main ruleset requiring PR and the CI workflow. Current connected GitHub tools expose read-only ruleset/branch-protection endpoints, so no server-side setting was changed.
+- 다음 P0: iX7NH Ver1.7/OS update guide/Modbus API originals; per-path auth/TLS/authorization/signature/anti-rollback/recovery evidence; PEGA2/iX700M ESI & SKU mapping.
+
+---
+
 ## 2026-11-20 — PR #166 병합 및 iX7NH 통신면 분석 기준점
 - PR #166 merge SHA `761b3ccffc142f11cbfe0d0dfb0e905b5d368ecb`; exact head `fa7120c73cbe6fe244319a8d1b1e7bc699b47259`; Run #1136 success, **174 passed / 0 failed**.
 - Traceability: claims 13, interfaces 15, requirements 35, SEC 36, EVD crosswalk 16, product evidence 15, bidirectional true, M/606 41, JSONL 259.

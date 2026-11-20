@@ -2101,3 +2101,12 @@
 - Merge SHA `761b3ccffc142f11cbfe0d0dfb0e905b5d368ecb`; pre/post safety refs 생성 및 post == main 확인.
 - 보고서 v0.17 §38, 제조사 인벤토리 26행, JSONL 259건 반영.
 
+
+
+## 2026-11-20 — PR #167 사후 상태 동기화
+- PR #167 exact head `dace5c2b1c61e295e8aea6fef18d08fc4c09236d`; Actions Run #1138 / ID `44693025760` success, **174 passed / 0 failed**.
+- CRA traceability: claims 13, interfaces 15, requirements 35, SEC 36, EVD crosswalk 16, product evidence 15, bidirectional links true, M/606 41, project log 260.
+- Provenance artifact #14609352656 SHA-256 `1c9f5f187223cb6d9b8b4780eedc04cb1739bc9433d153ed38abb309e7517c63`.
+- Merge SHA `7f9c35c54f93505f541198f3ceef723540f4df72`; pre/post safety refs 생성 및 post == main 확인.
+- GitHub branch API에서 main `protected=false` 확인. 서버 측 required checks 미강제 상태를 위험으로 기록; 현재 연결 도구는 보호 설정 변경 불가.
+
