@@ -131,3 +131,21 @@ DKE 표는 7개 deliverable 모두 Start NWI 및 Drafting prEN marker를 표시�
 - BSI -2 PWI: https://standardsdevelopment.bsigroup.com/projects/9025-12804
 - BSI -3 PWI: https://standardsdevelopment.bsigroup.com/projects/9025-12805
 - LVS CLC/TC 65X list: https://www.lvs.lv/en/committees/projects/10907?Projects_page=12&Projects_sort=pr_number.desc
+
+
+## 2026-11-20 추가 직접 readback — CENELEC project 81649
+
+CENELEC 중앙 프로젝트 링크(Work Item 81649)를 직접 다시 열었다. 현재 레코드에는 다음이 표시된다.
+- Project Reference: prEN 50770-1
+- Title: Security for Operational Technologies - Part 1: Security Profile for firewalls and intrusion detection and prevention systems (based on EN IEC 62443)
+- Project Number: 81649
+- Status: Committee stage
+- Directive: 2024/2847; Mandate: M/606
+- Citation in OJEU: Citation expected for Directive 2024/2847
+- DOR/DAV/DOA/DOP/DOW: 모두 미기재
+
+중요한 점은 중앙 CENELEC record가 여전히 단일 부모 참조 prEN 50770-1로 firewalls와 IDS/IPS를 함께 설명하며, DKE October 2026 status PDF의 -1-1/-1-2 분할 deliverable을 별도 project record로 표시하지 않는다는 것이다. 따라서 DKE가 표시한 split과 중앙 project page의 parent reference 간에 명명/record synchronization 차이가 있다. 이번 pass에서 중앙 81650–81654 페이지는 direct readback에 실패했다. 81650/81651은 DKE vs BSI PWI conflict를 유지하고, 81652–81654는 2026-11-18 prior snapshot 외 신규 central verification을 주장하지 않는다.
+
+“Citation expected”는 향후 OJ citation 예상 메타데이터일 뿐 실제 OJ citation number/date가 아니다. Article 27 presumption은 실제 OJ reference가 확인될 때까지 미확정이다.
+
+- CENELEC central record 81649: https://standards.cencenelec.eu/ords/f?cs=13322EAD4BB9270452A937D8259179562&p=305:110:::::FSP_PROJECT,FSP_LANG_ID:81649,25
