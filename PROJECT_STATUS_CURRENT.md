@@ -1586,3 +1586,11 @@
 - 2026-11-23 GoSRSReq006-M/606 AMD 1 examination meeting은 예정 상태. 회의록/결정/ESO 통지 확인은 회의 후 수행.
 - 상세 증거 및 후속 P0: `reports/CRA_ETSI_EN304635_V109_LIVE_STATUS_AND_RUN2526_AUDIT_2026-11-21.md`.
 - 변경 범위: 문서·감사로그만. main.py, 운영 workflow, secrets, Gemini/Discord 호출 빈도 및 운영 데이터 미변경.
+
+
+## 2026-11-21 — AI 자기검토 및 개선 선별 기준 정비
+- AI_RULEBOOK의 자기검토·동적 표준화·ETSI·자동화 결과 관련 후행 섹션을 60~71번으로 재번호화해 기존 1~59번과의 중복을 해소.
+- Section 69를 과거 EN 304 635 V1.0.1 sample evidence로 명확히 한정. 최신 Work Item V1.0.9와 무료 다운로드 V1.0.1을 구분하고, V1.0.9 원문/페이지 수/본문/hash 미확보를 명시.
+- Section 71 및 세션 연속성 운영 문서 §8에 대화별 결과 검토, AI 행동 점검, 개선 선별 기준, 반영 수준(A~D), 효과 검증을 추가. 모든 대화를 무차별 저장하지 않고 반복 가능·근거 있는 개선만 영구 반영.
+- PR #191 post-merge main CI #1294 / Run ID 44838660060: success. PR #191 merge SHA/main `c813b7d6b48890b87c099d5a3f7c322170c3baf3`.
+- 이번 작업은 운영 행동 기준 정비이며 실제 장기 효과는 후속 세션/운영 실행에서 검증 예정.

@@ -2562,3 +2562,22 @@
 2. V1.0.1과 V1.0.9 차이점 및 Enquiry/EC HAS2 comment resolution 변경 분석.
 3. 11/23 M/606 AMD 1 회의 후 공식 minutes/decision, ESO 수령·수락·비수락 증거 추적.
 4. M/606 18개 Work Item live status와 41개 Annex I topic → EN/ETSI/OJ citation matrix 갱신.
+
+
+## 2026-11-21 — AI 행동 자기검토 및 개선 선별 기준 정비
+
+### 확인한 상태
+- main SHA `c813b7d6b48890b87c099d5a3f7c322170c3baf3` 확인. PR #191 merge 후 main CI Run #1294 / ID `44838660060` success, 183 passed / 0 failed.
+- AI_RULEBOOK에는 이미 세션 연속성/자기검토 기준이 있었으나, 후행 섹션 번호가 기존 1~59와 중복되어 11~19, 14 등이 재사용되고 있었음.
+- EN 304 635 관련 후행 규칙이 V1.0.1 sample preview를 'latest publicly viewable draft'로 표현해 2026-11-21 live Work Programme의 V1.0.9와 혼동될 여지가 있었음. V1.0.9 full PDF는 미확보 상태.
+
+### 반영 내용
+- 후행 규칙 번호를 60~71로 재정렬.
+- Section 69에서 V1.0.1 sample을 역사적 증거로 한정하고, V1.0.9 본문/페이지/hash는 미확보라고 명시.
+- Section 71 및 세션 운영 문서 §8에 대화 단위 결과 검토, AI 행동 점검, 개선 선별(A~D 반영 수준), 효과 검증 원칙을 추가.
+- 이번 반영은 문서 운영 기준 정비이며, 장기 효과는 아직 미검증으로 남김.
+
+### 다음 확인
+1. PR exact-head CI 및 main CI에서 전체 테스트/traceability/source canary 확인.
+2. 다음 대화부터 결과 대비 요청, 근거·검증, AI의 오류·비효율을 선택적으로 점검하고 유효한 개선만 반영.
+3. 다음 ETSI 조회에서 V1.0.9 full draft official route를 재탐색하되, 검색 목록과 실제 PDF 취득을 구분.
