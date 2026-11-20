@@ -1,6 +1,6 @@
 # CRA Servo Drive Compliance & Engineering Project
 
-> **최신 재개 상태 — 2026-11-20:** CRA 보고서 v0.19 §40. LS메카피온 공식 iX7NH Ver1.7 및 Modbus TCP API 첨부 메타데이터 확인. 첨부 다운로드 시간 초과로 원본 바이트·SHA-256·본문 미확보. Ver1.7/API 원본 확보가 다음 P0.
+> **최신 재개 상태 — 2026-11-20:** CRA 보고서 v0.20 §40–§41. iX7NH Ver1.7/API 공식 첨부 메타데이터 확인(다운로드 실패), AutomationDirect 2026 Modbus TCP 보충 가이드 검토. Node 98/99 및 timeout 주장은 2차 자료이며 제조사 확인 대기.
 
 산업용 서보 드라이브의 EU Cyber Resilience Act(CRA) 대응을 위한 조사·설계·검증·문서화 프로젝트입니다. 문서의 기본 언어는 한국어이며, 법령·표준·제조사 원문은 원어와 출처를 보존합니다.
 
