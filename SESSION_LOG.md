@@ -1864,3 +1864,10 @@
 - 25b 기술 후보를 열거된 EtherCAT 모델 및 PEGA2 EtherCAT 변형에 대해 강화. ESI 목록과 DriveCM 지원목록은 동일하지 않으며, L7P 등은 ESI 0.98 목록만으로 EtherCAT 기능을 추정하지 않음.
 - 공식 첨부 PDF/XML/MSI 원본 bytes 미확보, SHA-256 미계산, 본문 content review metadata-only. Step 카테고리 EtherCAT 매뉴얼은 Servo 제품군과 별도 유지.
 - 통합 보고서 §32, 제조사 source inventory CSV, M/606 41-item audit row 25 및 6-profile matrix row 25b 갱신. Product classification Unknown, security tests Not Run.
+
+## 2026-11-20 — PR #136 병합 및 사후 검증
+- PR #136 exact head 25215700a415b094c6c187278183b8ca15e4e4ca; Run #1076 / ID 44661598986 success, 174 passed / 0 failed.
+- Compile, traceability, full pytest, official CRA PDF/HTML canaries, provenance manifest upload 성공.
+- PDF artifact #14595209202 (3,070,503 bytes; SHA-256 6356c21834522bcb9f90de5e903679d02b18ced0c49fe2287f7ae065a1b8e9ff); provenance artifact #14595972121 (2,567 bytes; SHA-256 752e408af313d26b37d184b22180aea597b57058fc65e6a4d9398b9019c6638e).
+- Pre-merge safety safety/pre-pr136-merge-2026-11-20; squash merge SHA d7e921f5a6db04d20ce06778f6ea384dbd9c63fe; post-merge safety safety/post-merge-pr136-2026-11-20 생성 및 main과 identical 확인.
+- Main push CI는 독립 확인되지 않아 미확인으로 유지.
