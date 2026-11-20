@@ -1078,3 +1078,13 @@ CLC/TC 65X의 M/606 20b/21b/22b/25b/27b/36b를 prEN 50770-4/-2/-6/-3/-5/-1에 �
 - Official HTML canary 10 sources and key CRA legal locators passed; provenance artifact #14613952433, SHA-256 `84a6cab72e1403f205d03151a9259a8ac101244d95fafdd3e87b5c5fca05b718`.
 - PDF evidence upload step skipped; this does not establish acquisition of original PDF bytes.
 - Pre/post safety refs: `safety/pre-pr174-merge-2026-11-20`, `safety/post-merge-pr174-2026-11-20`; main compared identical to merge SHA.
+
+### 2026-11-20 — 최신 iX7NH/DriveCM 자료실 인덱스 추가 감사
+- 공식 인덱스에서 iX7NH 교육자료(2026-09-14), DriveCM V1.03.1 및 게인 튜닝 가이드(2026-09-08), PN8B+iX7NH CSV 동기제어와 EtherCAT 0x211F 외부 IO 가이드(2026-07-06) 확인.
+- 상세 첨부 원문은 미확보. 목록 메타데이터만 기록; 보고서 §42 및 인벤토리 snapshot row 참조.
+- 제품군 목록: iX7NH AC 100–120/200–240 V, 0.1–15 kW; 특정 SKU 적용성/CRA classification 근거로 확대하지 않음.
+
+### PR #175 병합 및 CI 검증 — 2026-11-20
+- Merge SHA `850e2c851630239140e9a39d5f0978204b2ee025`; exact-head Run #1152 success, 174 passed / 0 failed.
+- Provenance artifact #14615596751, SHA-256 `25c5c192aa96544b5e41c8cac6eeda0d629f3c95af6755e090be6d34ae506a70`; pre/post safety refs retained.
+- PDF evidence upload skipped; no claim of original PDF acquisition.

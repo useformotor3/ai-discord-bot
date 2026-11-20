@@ -1580,3 +1580,15 @@
 - 다음 P0: AutomationDirect 2026 Rev B에서 확인한 Node 98/99, FW >=1.15, Modbus TCP timeout, writable registers/commands를 제조사 1차 자료로 대조. 500ms는 안전 반응시간으로 사용 금지.
 - 다음 P1: 보안 업데이트 서명·무결성·anti-rollback·복구·인증/권한·지원기간 및 SBOM 관련 제조사 증거 확보. 실기기/네트워크/쓰기/모션 시험은 별도 안전 승인 없이는 수행하지 않는다.
 - 제품 CRA scope/classification/Annex III·IV/RDPS Unknown, security tests Not Run 유지.
+
+## 2026-11-20 — 최신 iX7NH/DriveCM 가이드북 인덱스 확인
+- 공식 가이드북 인덱스에서 iX7NH 교육자료(2026-09-14), DriveCM V1.03.1 및 게인 튜닝 가이드(2026-09-08), PN8B+L7NH(iX7NH) CSV 동기제어 및 EtherCAT 0x211F 외부 IO 가이드(2026-07-06)를 식별.
+- 자료 상세/첨부 원문은 아직 미확보. 목록 메타데이터만 근거로 보고서 §42와 인벤토리에 반영.
+- 공식 제품 목록의 iX7NH 계열 전원/용량 범위(AC 100–120/200–240 V, 0.1–15 kW)는 제품군 설명으로만 사용하며 개별 SKU를 확정하지 않음.
+- 후속 P0: DriveCM V1.03.1 가이드와 iX7NH 교육자료 원본 확보 후 업데이트/인증/권한/펌웨어 범위 검토.
+
+## 2026-11-20 — PR #175 병합 및 사후 검증
+- PR #175 exact head `65f0a5f136e0a37797710f485dcdc478b9cf45b0`; Run #1152 / ID `44707031513` success, **174 passed / 0 failed**.
+- CRA traceability: claims 13, interfaces 15, requirements 35, SEC 36, EVD-SEC 16, product evidence 15, bidirectional links true, M/606 41, JSONL 268 events.
+- Official source canary 10 sources 및 법령 locator 검증 성공; PDF evidence upload 단계 skipped. Provenance artifact #14615596751, SHA-256 `25c5c192aa96544b5e41c8cac6eeda0d629f3c95af6755e090be6d34ae506a70`.
+- Squash merge SHA `850e2c851630239140e9a39d5f0978204b2ee025`; main 동일 확인. Pre/post safety refs 유지.

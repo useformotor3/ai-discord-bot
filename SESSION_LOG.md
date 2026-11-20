@@ -2197,3 +2197,14 @@
 - Squash merge SHA `090c78bfa0edc759641a8dd30f9156038fa86a82`; main read-back and compare identical.
 - Pre-merge safety ref `safety/pre-pr174-merge-2026-11-20`; post-merge safety ref `safety/post-merge-pr174-2026-11-20`.
 - Ver1.7/API official attachment bytes/SHA-256 remain unavailable. AutomationDirect Modbus TCP guide remains secondary source only. Product CRA scope/classification/Annex III-IV/RDPS Unknown; security tests Not Run.
+
+## 2026-11-20 — PR #175 병합 및 최신 제조사 자료실 인덱스 조사
+
+- PR #175 exact head `65f0a5f136e0a37797710f485dcdc478b9cf45b0`; Actions Run #1152 / ID `44707031513` success; full pytest **174 passed / 0 failed**.
+- Traceability: claims 13, interfaces 15, requirements 35, SEC 36, EVD-SEC crosswalk 16, product evidence 15, bidirectional links true, M/606 41, JSONL 268 events.
+- Official CRA HTML canary fetched 10 sources and verified Article 13(8), 2025/2392 Annex I(10)/Annex II(1); PDF evidence upload step skipped.
+- Provenance artifact #14615596751, 2,567 bytes, SHA-256 `25c5c192aa96544b5e41c8cac6eeda0d629f3c95af6755e090be6d34ae506a70`.
+- Squash merge SHA `850e2c851630239140e9a39d5f0978204b2ee025`; main read-back identical. Pre-merge safety ref `safety/pre-pr176-merge-2026-11-20`; post-merge ref `safety/post-merge-pr175-2026-11-20`.
+- Official guidebook index: iX7NH training 2026-09-14; DriveCM V1.03.1 and gain-tuning guides 2026-09-08; PN8B+L7NH(iX7NH) CSV synchronous control and EtherCAT 0x211F external IO guides 2026-07-06. Metadata only; detailed attachments and bytes not acquired.
+- Official drive catalogue lists iX7NH 100–120/200–240 V, 0.1–15 kW; product family range only, not an exact SKU.
+- Report §42 and inventory snapshot row added. Product CRA scope/classification/Annex III-IV/RDPS Unknown; security tests Not Run.
