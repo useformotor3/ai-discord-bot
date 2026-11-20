@@ -455,3 +455,28 @@
 - 토큰 절약은 중복 재독·중복 설명·광범위 검색을 줄여 달성하되, 공식 1차 출처·반대 근거·locator·검증·한계는 생략하지 않는다.
 - CI 성공은 실제 실행된 검사만 증명한다. PR-head CI/main CI, 메타데이터/원문 취득, 보고서 구조/법적 정확성, 제품 기능/보안 검증을 혼동하지 않는다.
 - 의미 있는 변경 후 GitHub read-back 전에는 저장 완료로 보고하지 않는다.
+
+
+## 12. 동적 표준화 상태 및 상충 출처 처리 (2026-11-20)
+- ETSI Work Programme의 active count, 화면에 표시된 10개, 개별 상세 record 8개, M/606 Annex I 41개는 서로 다른 모집단이다. 8개 개별감사를 18개 전체 전수감사로 표현하지 않는다.
+- Work Programme의 Harmonised Standard=Yes, CENELEC의 Citation expected, forecast OJ date는 실제 OJ citation이 아니다. Article 27 presumption은 실제 OJ reference와 scope fit가 확인된 경우만 주장한다.
+- 표준 stage가 national member body 간 다르면 단일 상태로 임의 통합하지 않는다. 출처·조회일·표시 단계·충돌·중앙 ESO record readback 여부를 각각 기록하고 Unknown/Conflict를 유지한다.
+- 분할/번호 변경이 발견되면 기존 matrix를 무음으로 덮어쓰지 않는다. 부모 project, 하위 deliverable, M/606 item mapping 및 역사적 CSV를 함께 추적한다.
+- C(2026)7861 Article 2의 one-month period는 ESO actual receipt date 기준이다. Commission adoption date나 web page update date로 receipt/acceptance를 추정하지 않는다.
+- 동적 milestone 예정일과 ESO adoption deadline, standard publication forecast, actual OJ citation date를 별도 필드로 유지한다.
+- Commission Register 원본을 취득하지 못하고 certified-copy mirror만 읽었다면 acquisition limitation과 hash 미확보를 명시한다.
+
+
+## 13. Central catalogue readback precision
+- CENELEC project records must be reported by exact WIID and direct readback status. A parent project page does not establish that split child deliverables have separate catalogue records.
+- If one central record is read successfully but sibling records fail, state exactly which WIID was verified and which were not. Do not generalize one page's status to the entire series.
+- National-member status tables (DKE, BSI, LVS) are useful evidence but do not replace the CENELEC central record. Conflicts remain visible until reconciled.
+
+
+## 14. Annex III/IV core-functionality and Article 32 route discipline
+- Apply CRA Article 2(1) connection scope before product-category analysis; intended purpose and reasonably foreseeable use are separate evidence fields.
+- Apply Article 7(1) core functionality to the complete product. Do not classify the host product solely because an Annex III/IV component is integrated; separately marketed components may be products in their own right.
+- Use Commission Implementing Regulation (EU) 2025/2392 technical descriptions, not Annex category names alone. Fieldbus controllers/adapters are expressly included in physical/virtual network interfaces; treat this as a product-boundary evidence gate, not an automatic host-product classification.
+- Record separate classifications for host product, separately marketed board/module, MCU/secure element, OS and software tools where each is placed on the market separately.
+- Do not assign Article 32 route until class/core function and actual applicable OJ-cited HEN, common specification or EUCC assurance state are confirmed.
+- For Class I, distinguish full application from non-/partial application of relevant HEN/CS/EUCC; for Class II do not offer Module A as a default route; for Annex IV check Article 8(1) delegated-act status.

@@ -1,6 +1,6 @@
 # CRA 서보 드라이브 통합 규제·기술 준수 보고서
 
-- 문서 버전: v0.5 (CRA 핵심 규제·이행, CEN/ETSI 및 EU 표준화 법체계 최신정보 갱신 / 제품별 적용성 확인 전)
+- 문서 버전: v0.7 (ETSI M/606, CLC/TC 65X OT, C(2026)7861 Article 2, Annex III/IV 및 Article 32 분석 통합)
 - 기준일: 2026-11-20
 - 프로젝트 범위: EU Cyber Resilience Act(CRA) 대응만
 - 기준 제품군: 산업용 서보 드라이브 및 필수 펌웨어·설정/진단 소프트웨어
@@ -571,3 +571,93 @@ ETSI 개별 레코드의 Harmonised Standard: Yes 메타데이터는 향후 조�
 - CEN/ETSI 표준이 발행·채택되더라도 CRA Article 27 추정 적합성은 해당 표준 참조가 OJ에 실제 게재되고 제품/요구사항 범위가 맞을 때만 주장한다.
 
 **판정:** COM(2026)780은 proposal; C(2026)7861은 2026-11-10 공식 Commission amendment. 법적 지위와 적용 대상을 구분해 추적한다.
+
+
+## 29. ETSI M/606 미검토 8개 Work Item 개별 감사 — 2026-11-20
+
+기존 재개 계획에서 미검토로 남아 있던 EN 304 617–624 관련 8개 Work Item을 ETSI Work Programme v2.3.3의 개별 상세 레코드로 확인했다. 이는 ETSI M/606 active 18개 전체의 신규 전수 재감사를 의미하지 않는다.
+
+| ETSI EN / Work Item | 최신 상태 / 버전 | 다음 상태 예정 | scope 및 경계 |
+|---|---|---|---|
+| EN 304 617 / EUS-006 | Comments categorisation assessed 2026-11-06 / 1.0.0 | 2026-12-21 | Stand-alone browsers; Annex III Class I |
+| EN 304 618 / EUS-007 | Comments categorisation assessed 2026-09-22 / 0.2.2 | 2026-11-23 | ICT common-use password managers |
+| EN 304 619 / EUS-0018 | Comments categorisation assessed 2026-10-14 / 1.0.2 | 2026-11-23 | Anti-malware search/remove/quarantine software |
+| EN 304 620 / EUS-005 | Comments categorisation assessed 2026-11-06 / 1.0.0 | 2027-01-15 | VPN products; industrial OT VPNs excluded |
+| EN 304 621 / EUS-009 | Comments categorisation assessed 2026-11-06 / 1.0.5 | 2027-01-15 | NMS; industrial OT NMS excluded |
+| EN 304 622 / EUS-0010 | Comments categorisation assessed 2026-11-06 / 1.0.0 | 2027-01-15 | SIEM; industrial OT SIEM excluded |
+| EN 304 623 / EUS-008 | Comments categorisation assessed 2026-09-16 / 0.1.3 | 2026-12-05 | Boot managers |
+| EN 304 624 / EUS-0015 | Work Item Plan 2026-11-16: Comments categorisation assessed 2026-11-05 / 1.0.0 | Next status date not shown | PKI and digital certificate issuance; CEN/TC224 and ETSI TC ESI cooperation |
+
+- EN 304 620/621/622의 industrial OT exclusion을 확인했다. 산업용 드라이브/OT 시스템을 일반 IT 제품 표준에 자동 포함하지 않는다.
+- 8개 record 모두 Harmonised Standard metadata는 Yes이나 Official Journal field는 비어 있었다. Article 27 presumption은 확인되지 않았다.
+- EN 304 624는 개별 상세 페이지의 2026-10-29 approval-closure와 Work Item Plan의 2026-11-05 comment categorisation 상태가 불일치한다. 최신 Work Item Plan 값을 잠정 기준으로 사용하고 이력 확인이 필요하다.
+- 상세: reports/CRA_ETSI_M606_8_ITEM_AND_OT_50770_RECONCILIATION_2026-11-20.md 및 동명 CSV.
+
+## 30. CLC/TC 65X OT profile 재조정 — prEN 50770-1 split 및 상태 충돌
+
+DKE 2026-10 표준화 상태 PDF에서 기존 prEN 50770-1이 firewall용 prEN 50770-1-1과 IDS/IPS용 prEN 50770-1-2로 분할된 사실을 확인했다. 기존 6개 profile 표기는 7개 deliverable로 수정한다.
+
+| M/606 item | WIID | deliverable | scope |
+|---|---:|---|---|
+| 36b | 81649 | prEN 50770-1-1 | OT firewalls |
+| 36b | 81649 parent; child ID 확인 필요 | prEN 50770-1-2 | OT IDS/IPS |
+| 21b | 81650 | prEN 50770-2 | OT NMS |
+| 25b | 81651 | prEN 50770-3 | OT physical/virtual network interfaces |
+| 20b | 81652 | prEN 50770-4 | OT VPN |
+| 27b | 81653 | prEN 50770-5 | OT routers/modems/switches |
+| 22b | 81654 | prEN 50770-6 | OT SIEM |
+
+DKE 2026-10 national tracker는 7개 deliverable에 Start NWI 및 Drafting prEN marker를 표시한다. BSI national records는 prEN 50770-2/-3을 PWI 및 target dates unknown으로 표시하고, LVS CLC/TC 65X 목록은 WIID 81649–81654를 In development로 표시한다. CENELEC 중앙 81649 record는 직접 재열람되어 부모 prEN 50770-1(방화벽+IDS/IPS 통합 scope), Committee stage, Citation expected, DOR/DAV 미기재를 확인했으나 -1-1/-1-2 분할 child는 표시하지 않는다. 81650–81654는 이번 pass에서 direct readback하지 못했다. 따라서 -2/-3의 정확한 중앙 stage/date는 Conflict/Unknown으로 유지한다. DKE Citation hEN 열은 비어 있고 actual OJ reference는 확인되지 않았다. 과거 Citation expected 메타데이터는 OJ citation이 아니다.
+
+드라이브의 통신 포트, 파라미터 설정, 원격 유지보수, 알람만으로 NMS/network-interface/VPN/router/SIEM/firewall 제품으로 자동 분류하지 않는다. 정확한 core functionality와 product boundary를 확인한다.
+
+상세: reports/CRA_ETSI_M606_8_ITEM_AND_OT_50770_RECONCILIATION_2026-11-20.md 및 CRA_M606_OT_IACS_7_VERTICAL_PROFILES_SERVO_DRIVE_BOUNDARY_2026-11-20.csv.
+
+## 31. C(2026)7861 Annex I 일정 및 Article 2 조건
+
+Commission CRA standardisation page(최종 업데이트 2026-11-12)는 2026-11-10 M/606 개정 및 모든 vertical standards와 일부 horizontal standards의 3개월 연장을 확인한다. Annex I의 ESO adoption deadline은 1번·15번 2026-11-30, 2–14번 2027-10-30, 16–41번 2027-01-31이다. 이는 ESO 채택기한이지 제조자 CRA 준수기한 또는 실제 OJ publication 날짜가 아니다.
+
+Article 2는 CEN, CENELEC 또는 ETSI가 결정 수령 후 1개월 이내 개정사항을 수락하지 않는다고 통지하면 C(2026)7861이 적용을 중단하고 2025-02-03 버전 C(2025)618이 계속 적용된다고 규정한다. 1개월은 각 ESO의 실제 수령일을 기준으로 하며, 결정일 2026-11-10으로 자동 계산하지 않는다. 이번 공개자료 확인에서는 ESO별 수령일 및 acceptance/non-acceptance notice 원문을 확보하지 못했다. Recital (2)의 기존 C(2025)618 수락 사실을 2026 amendment acceptance로 오인하지 않는다.
+
+ETSI calendar에는 2026-11-23 “GoSRSReq006-M/606 AMD 1 - examination meeting”이 예정되어 있다. 2026-11-20 현재 미래 일정이므로 acceptance 결과가 아니다. 회의 후 minutes/decision/receipt evidence를 재확인한다.
+
+**Provenance 한계:** Commission Register entry는 확인했으나 원본 PDF bytes는 취득하지 못했다. Article 2와 Annex I 문구는 Commission certified-copy stamp가 포함된 제3자 호스팅 PDF 사본에서 확인하고 Commission 공식 페이지와 대조했다. 원본 Register PDF bytes/hash를 취득했다고 주장하지 않는다.
+
+공식 Commission 페이지: https://digital-strategy.ec.europa.eu/en/policies/cra-standardisation
+Commission Register: https://ec.europa.eu/transparency/documents-register/detail?lang=en&ref=C(2026)7861
+Certified-copy PDF mirror: https://www.ibf-solutions.com/fileadmin/dateidownloads/c-2026-7861-main-document-annex-cra-standards.pdf
+
+
+## 32. CENELEC 중앙 project 81649 직접 readback — 부모/하위 deliverable 불일치
+
+2026-11-20 CENELEC 중앙 record 81649를 직접 재열람했다. record는 prEN 50770-1 단일 project, firewalls 및 IDS/IPS 통합 scope, Committee stage, Citation expected, DOR/DAV 미기재로 표시한다. 반면 DKE October 2026 national status table은 이를 prEN 50770-1-1 firewalls와 prEN 50770-1-2 IDS/IPS로 분리해 표시한다. 이는 표준 scope가 바뀌었다는 결론보다 project naming/record synchronization discrepancy로 관리한다.
+
+중앙 81650–81654 record는 이번 pass에서 direct readback에 실패했다. -2/-3은 BSI PWI 및 DKE Drafting prEN 충돌을 유지하고, -4/-5/-6은 이전 2026-11-18 central snapshot과 DKE/LVS 자료를 분리해 기록한다. Citation expected는 actual OJ citation이 아니다.
+
+CENELEC record 81649: https://standards.cencenelec.eu/ords/f?cs=13322EAD4BB9270452A937D8259179562&p=305:110:::::FSP_PROJECT,FSP_LANG_ID:81649,25
+
+
+## 33. Annex III/IV core functionality 및 Article 32 경로 — 산업용 서보 드라이브
+
+CRA Article 2(1)은 intended purpose 또는 reasonably foreseeable use에 direct/indirect logical/physical data connection to a device or network가 포함되는 제품에 적용한다. Article 3(1)은 hardware/software 제품 및 별도 판매 구성품을 product with digital elements로 정의한다. 네트워크/필드버스 연결을 사용하는 서보 드라이브는 scope 가능성이 높으나 exact SKU, intended purpose, EU market configuration으로 확정한다.
+
+Article 7(1)은 Annex III category의 core functionality를 가진 완제품을 important product로 분류하고, 그러한 기능을 가진 구성품이 다른 제품에 통합되었다는 사실만으로 host product가 Article 32(2)/(3) 평가 대상이 되지는 않는다고 명시한다. Commission Implementing Regulation (EU) 2025/2392 recital (2)–(3) 및 Annex I/II는 이 core-functionality/component-boundary 원칙과 각 category의 기술 설명을 구체화한다.
+
+**서보 드라이브에서 우선 확인할 범주:**
+- Annex III Class I category 10 physical/virtual network interfaces: 기술 설명에 Fieldbus controllers/adapters가 포함된다. 내장 EtherCAT/Ethernet/Fieldbus port는 검토 대상이지만, 완제품 드라이브의 core function이 motor control인지 별도 판매 interface card/controller가 network-interface product인지 구분한다.
+- Annex III Class I category 14 security-function MCU: encryption, authentication, key storage, RNG, TEE 등의 보안기능이 MCU 자체를 넘어 다른 제품/네트워크/서비스를 보호하도록 설계되었는지 exact part number와 security manual로 확인한다.
+- Annex III Class I category 11 OS/RTOS: 내장 RTOS는 완제품을 자동으로 OS product로 만들지 않는다. 별도 판매/공급 경계와 core function을 확인한다.
+- VPN/NMS/SIEM, router/switch는 각각 encrypted tunnel, network-element monitoring/control, multi-source security data correlation, routing/packet forwarding의 core functionality가 필요하다. 단순 원격접속·설정·알람·Ethernet port로 분류하지 않는다. ETSI EN 304 620/621/622의 industrial OT exclusion도 고려한다.
+- Annex III Class II firewall/IDS/IPS는 완제품의 core function이 security appliance인지 확인한다. 내장 filtering/diagnostics만으로 Class II가 되지 않는다.
+- Annex IV hardware security box는 multi-component secure crypto/data device 및 tamper-protective physical envelope가 필요하다. 일반 drive enclosure는 충분하지 않다. Smart meter gateway와 smartcard/secure element도 각각 기술 설명과 assurance criteria를 확인한다.
+
+| 분류 | Article 32 route |
+|---|---|
+| 일반 제품(Annex III/IV core function 없음) | 32(1): Module A, B+C, H 또는 available/applicable EUCC |
+| Important Class I | 32(2): 관련 HEN/CS/EUCC(assurance ≥ substantial)를 미적용·부분 적용하거나 부재 시 B+C 또는 H. 완전 적용 조건 충족 시 32(1) route 가능 |
+| Important Class II | 32(3): B+C, H 또는 available/applicable EUCC at least substantial |
+| Critical Annex IV | 32(4)/8(1): Article 8(1) delegated act가 요구하면 EUCC; 해당 act/조건이 없으면 32(3) route |
+
+Article 13(5) component integration due diligence와 13(6) 통합 구성품 취약점 보고·처리 의무는 host product가 Annex III/IV에 속하지 않아도 적용 분석에 포함한다. 제품별 분류와 Article 32 route는 exact SKU/BOM/firmware 및 별도 판매 구성품 증거 확보 전까지 Unknown이다.
+
+상세 category/route matrix: reports/CRA_ANNEX_III_IV_ART32_SERVO_DRIVE_CLASSIFICATION_MATRIX_2026-11-20.md 및 동명 CSV.

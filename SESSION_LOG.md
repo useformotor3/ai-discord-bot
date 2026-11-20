@@ -2304,3 +2304,34 @@
 - Four documentation files and 140 insertions merged: AI_RULEBOOK, MASTER_PLAN, SESSION_LOG, new AI continuity/self-review/token-efficiency standard.
 - Main merge post-ref and project status synchronization are being recorded in this documentation-only PR.
 - CRA regulatory research remains separate; PR #180 does not mean current CRA law/standards or product conformity have been revalidated.
+
+
+## 2026-11-20 — ETSI 8개 상세 감사 및 CLC/TC 65X OT 표준 정합성
+
+- ETSI Work Programme v2.3.3 M/606 active list에서 기존 미검토 8개 EN 304 617–624 상세 레코드를 개별 열람. scope, version, status, next milestone, Harmonised Standard metadata, OJ field를 CSV로 기록.
+- EN 304 620/621/622 scope에서 industrial OT exclusion 확인. 8개 record의 OJ field는 비어 있어 Article 27 presumption은 주장하지 않음.
+- CLC/TC 65X OT profile에서 prEN 50770-1이 1-1 firewalls와 1-2 IDS/IPS로 분할된 사실을 DKE Oct-2026 national tracker에서 확인. 기존 6개 표기를 7개 deliverable로 정정.
+- DKE Drafting prEN, BSI -2/-3 PWI/target dates unknown, LVS In development 간 status discrepancy 발견. Central CENELEC record는 이번 pass에서 재열람 실패; stage/forecast Unknown/Conflict 유지.
+- C(2026)7861 Annex I deadline group 확인: 1/15 2026-11-30; 2–14 2027-10-30; 16–41 2027-01-31. Article 2 one-month non-acceptance condition은 ESO receipt date 기준. ESO별 receipt/notice evidence 미확보.
+- ETSI calendar에 GoSRSReq006-M/606 AMD 1 examination meeting 2026-11-23 예정 확인; 11/20 현재 회의 결과 아님.
+- 통합 보고서 v0.6, ETSI/CEN audit, 2 CSV 및 M/606 41-item row36 mapping 갱신.
+- 한계: Commission Register 원본 PDF bytes/hash 미취득. Article2/Annex text는 Commission certified-copy stamp가 있는 제3자 호스팅 PDF copy에서 읽고 Commission official page와 대조. CENELEC central record 및 ESO receipt/acceptance 미검증.
+- 제품별 CRA classification Unknown; physical/security testing Not Run.
+
+
+## 2026-11-20 — CENELEC 81649 central record 추가 직접 확인
+
+- CENELEC central project 81649를 다시 열어 parent prEN 50770-1, combined firewall+IDS/IPS scope, Committee stage, Citation expected, DOR/DAV 미기재 확인.
+- DKE Oct-2026의 -1-1/-1-2 split과 central parent record가 일치하지 않음을 기록. split child project IDs는 확정하지 않음.
+- 81650–81654 central records는 이번 pass에서 direct readback 실패. -2/-3 DKE/BSI conflict, -4/-5/-6 historical central snapshot status를 구분.
+- CSV와 integrated report §32, CEN audit addendum, situation board, plan, README, session log, AI rulebook에 반영.
+
+
+## 2026-11-20 — Annex III/IV core functionality 및 Article 32 route matrix
+
+- EUR-Lex CRA consolidated text 및 Commission Implementing Regulation (EU) 2025/2392 공식 OJ PDF를 대조.
+- Article 2(1) scope, Article 7(1) core functionality/integrated component boundary, Annex III/IV technical descriptions, Article 32(1)–(4) conformity routes를 정리.
+- Fieldbus controllers/adapters가 Annex III Class I network-interface category 기술 설명에 포함됨을 확인. 내장 포트와 별도 판매 interface module을 분리 분석하도록 기준화.
+- Security MCU, RTOS, NMS/VPN/SIEM, router/switch, firewall/IDS/IPS, Annex IV security box/secure element에 대한 product boundary 및 evidence checklist 작성.
+- Article 13(5)/(6) third-party component due diligence 및 component vulnerability handling 연결.
+- 제품별 Annex III/IV classification 및 conformity route는 exact SKU/BOM/FW/market configuration evidence 부족으로 Unknown 유지.

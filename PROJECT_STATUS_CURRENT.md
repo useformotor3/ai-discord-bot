@@ -1,3 +1,34 @@
+## 최신 법률 분석 — Annex III/IV 및 Article 32 서보 드라이브 분류 기준 (2026-11-20)
+
+- Article 2(1) data connection scope, Article 7(1) core functionality/component integration, Reg. (EU) 2025/2392 category technical descriptions, Article 32 conformity routes를 공식 EUR-Lex 원문으로 분석.
+- Fieldbus/network-interface controller/adapter는 Annex III Class I category 10 기술 설명에 포함된다. 내장 포트만으로 완제품 드라이브를 자동 Class I로 분류하지 않지만, 별도 판매 interface module은 별도 제품 경계로 검토한다.
+- Security-function MCU, RTOS, NMS/VPN/SIEM, router/switch, firewall/IDS/IPS, Annex IV security box/secure element는 각 기술 설명과 완제품 core function을 구분한다.
+- Article 32: 일반제품 32(1), Class I 32(2), Class II 32(3), critical Annex IV 32(4)/Article 8(1) 조건부 경로를 matrix로 정리.
+- 정확한 SKU/BOM/FW/별도 판매 interface board/MCU 증거 미확보로 제품별 Annex III/IV 및 Module route는 Unknown 유지.
+
+---
+
+## 추가 재개 메모 — CENELEC project 81649 직접 확인 (2026-11-20)
+
+- CENELEC 중앙 record 81649 direct readback: prEN 50770-1 단일 부모 project, combined firewall + IDS/IPS scope, Committee stage, Citation expected, DOR/DAV 미기재. DKE Oct-2026의 -1-1/-1-2 분할과 central record가 다르므로 naming/record synchronization discrepancy 유지.
+- CENELEC 81650–81654 direct readback는 이번 pass에서 실패. 81650/81651은 DKE Drafting prEN vs BSI PWI conflict, 81652–81654는 prior 2026-11-18 central snapshot 외 신규 direct confirmation 없음.
+
+---
+
+## 최신 재개 상태 — ETSI 8개 M/606 상세 감사 및 OT 표준화 상태 정정 (2026-11-20)
+
+- 기준 main: PR #181 status-sync merge SHA 2239298939e6e5908a18cece796ab0da7250d219; 현재 조사 브랜치 research/cra-etsi-m606-8items-cen-ot-audit-2026-11-20.
+- ETSI Work Programme v2.3.3에서 기존 미검토 8개 EN 304 617–624 상세 레코드를 개별 확인. scope/version/status/next milestone/Harmonised Standard metadata/OJ field 기록 완료.
+- EN 304 620(VPN), EN 304 621(NMS), EN 304 622(SIEM)은 industrial OT domain 제외가 scope에 명시됨. 8개 모두 OJ field blank; Harmonised Standard=Yes는 후보 metadata이지 OJ citation이 아님.
+- CLC/TC 65X prEN 50770-1은 -1-1 firewall / -1-2 IDS/IPS로 분할되어 7개 deliverable. DKE Oct-2026은 Drafting prEN, BSI는 -2/-3 PWI/target dates unknown, LVS는 In development로 표시. 중앙 CENELEC record 재확인 실패; stage conflict 유지.
+- C(2026)7861 Annex I: 1/15=2026-11-30; 2–14=2027-10-30; 16–41=2027-01-31. Article 2 one-month non-acceptance condition은 ESO 실제 수령일 기준이며 receipt/acceptance evidence Unknown.
+- ETSI GoSRSReq006-M/606 AMD 1 examination meeting 2026-11-23 예정; 11/20 현재 미래 일정.
+- 신규 통합 감사 보고서와 2개 CSV 추가; 통합 보고서 v0.6, CEN 상태 감사, M/606 41-item item36 mapping 갱신.
+- 다음 P0: 11/23 ETSI meeting minutes/decision; CEN/CENELEC central record로 DKE/BSI stage conflict 해소; ESO receipt/acceptance notice 확보; 18개 전체 consolidated matrix; 41개 OJ citation crosswalk; Annex III/IV 및 Article 32 route mapping.
+- 제품별 CRA scope/classification/Annex III·IV/RDPS Unknown, security tests Not Run.
+
+---
+
 ## 최신 재개 상태 — PR #180 AI 자기검토·연속성 기준 병합 완료 (2026-11-20)
 
 - PR #180 squash merge SHA: `3ded54116b3ecfa77645c50ada45575fbe656aea`; head `0b0f13b9b7844857c30e724e2f44691b76d92a66`; 변경 4 files / +140 lines.

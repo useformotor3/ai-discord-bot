@@ -1,3 +1,31 @@
+## CRA 제품 분류 및 Article 32 경로 분석 — 2026-11-20
+
+- Article 2(1) scope, Article 7(1) core functionality, Implementing Regulation (EU) 2025/2392 Annex III/IV technical descriptions 및 Article 32(1)–(4) route matrix 작성.
+- P0 증거: exact SKU/HW rev/FW; separately marketed fieldbus/network interface board; interface driver/API/layer; MCU part numbers/security manuals; RTOS licensing/supply boundary; firewall/VPN/NMS/SIEM/router functions; Annex IV tamper/security box/secure element evidence.
+- Network interface category는 Fieldbus controllers/adapters를 포함하므로 별도 interface module의 product boundary를 중점 검토. 내장 포트만으로 완제품 드라이브를 Class I로 자동 분류하지 않는다.
+- Article 32 route는 최종 core-functionality 분류 및 actual OJ/HEN/CS/EUCC 상태 확인 후 확정한다.
+
+---
+
+## CENELEC 중앙 레코드 추가 확인 — 2026-11-20
+
+- CENELEC project 81649는 direct readback 성공: parent prEN 50770-1, Committee stage, Citation expected, DOR/DAV 미기재. DKE Oct-2026의 -1-1/-1-2 split과 중앙 parent record가 불일치하므로 하위 ID/record synchronization 확인 필요.
+- CENELEC 81650–81654는 direct readback 실패. -2/-3의 DKE Drafting prEN vs BSI PWI 충돌을 유지하고, -4/-5/-6은 prior central snapshot을 현재 직접 확인 상태로 오인하지 않는다.
+
+---
+
+## 최신 CRA 표준화 조사 기준점 — ETSI 8개 및 CLC/TC 65X OT 재조사 (2026-11-20)
+
+- ETSI M/606 미검토 8개 work item 상세 레코드 조사 완료. 18개 전체 consolidated matrix는 기존 10개와 결합하고 OJ/status 날짜를 재검증해야 한다.
+- EN 304 620 VPN, EN 304 621 NMS, EN 304 622 SIEM은 industrial OT domain exclusion이 명시됨. ETSI Harmonised Standard=Yes metadata만으로 OJ citation 또는 Article 27 presumption을 주장하지 않는다.
+- prEN 50770-1은 -1-1 firewall과 -1-2 IDS/IPS로 분할되어 7개 deliverable로 재추적. DKE Oct-2026 Drafting prEN과 BSI -2/-3 PWI/target dates unknown이 충돌하므로 central CENELEC project record 확인을 P0로 유지.
+- C(2026)7861 Article 2 acceptance/receipt evidence: CEN/CENELEC/ETSI 각각 수령일 및 non-acceptance/acceptance notice 원문 미확보. ETSI 2026-11-23 examination meeting 이후 즉시 재확인.
+- Annex I deadline groups: 1/15 = 2026-11-30; 2–14 = 2027-10-30; 16–41 = 2027-01-31. ESO deadline과 제조자 의무/표준 OJ citation은 분리.
+- 다음 P0: 11/23 ETSI meeting minutes/decision; CEN/CENELEC central record + BSI/DKE conflict resolution; ESO receipt evidence; OJ index 41-item crosswalk; Annex III/IV and Article 32 product core-functionality mapping.
+- 상세: reports/CRA_ETSI_M606_8_ITEM_AND_OT_50770_RECONCILIATION_2026-11-20.md 및 관련 CSV 2개.
+
+---
+
 ## 최신 기준점 — PR #180 AI 운영 기준 병합 (2026-11-20)
 
 - Main merge SHA `3ded54116b3ecfa77645c50ada45575fbe656aea`; exact-head Run #1162 success, 174 passed / 0 failed.
