@@ -1,6 +1,6 @@
 # CRA Servo Drive Compliance & Engineering Project
 
-> **최신 재개 상태 — 2026-11-20:** PR #132~#134 병합 완료. M/606 OT/IACS 6개 수직 프로파일 및 서보드라이브 기능 경계가 보고서 §31에 반영됨. PR #134 exact-head CI Run #1072 성공(174 passed / 0 failed). main push CI는 별도 확인 전까지 미확인. 제품별 CRA 판정 Unknown / 보안시험 Not Run.
+> **최신 재개 상태 — 2026-11-20:** PR #132~#135 병합 완료. M/606 OT/IACS 6개 수직 프로파일 및 제조사 자료 인벤토리 §32 반영 중. PR #135 exact-head CI Run #1074 성공(174 passed / 0 failed). 25b는 ESI 0.98 및 PEGA2 EtherCAT 변형으로 기술 후보 강화; 법적 적용·제품 분류는 Unknown.
 
 산업용 서보 드라이브의 EU Cyber Resilience Act(CRA) 대응을 위한 조사·설계·검증·문서화 프로젝트입니다. 문서의 기본 언어는 한국어이며, 법령·표준·제조사 원문은 원어와 출처를 보존합니다.
 
@@ -926,3 +926,7 @@ CLC/TC 65X의 M/606 20b/21b/22b/25b/27b/36b를 prEN 50770-4/-2/-6/-3/-5/-1에 �
 - Merge SHA `7162664b29554a01d2694cd027efb0191a6c3344`; exact-head Run #1072 success, 174 passed / 0 failed.
 - PDF artifact #14594883481, provenance artifact #14594828906; official PDF/HTML canaries 및 provenance upload 성공.
 - Pre/post safety refs: `safety/pre-pr134-merge-2026-11-20`, `safety/post-merge-pr134-2026-11-20`; post ref와 main 동일.
+
+
+### 2026-11-20 — 제조사 1차 자료 인벤토리
+공식 자료실에서 DriveCM 1.03.2 지원모델, EtherCAT ESI 0.98 적용모델, PEGA2/iX700M 매뉴얼 등록정보를 확인했다. 상세 내용은 통합 보고서 §32 및 `reports/LS_MECAPION_MANUFACTURER_PRIMARY_SOURCE_INVENTORY_2026-11-20.csv` 참조. 첨부 원본 bytes 및 SHA-256은 아직 미확보.
