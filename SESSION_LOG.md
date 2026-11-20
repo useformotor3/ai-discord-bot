@@ -2030,3 +2030,11 @@
 - ESI Ver0.98의 공개 적용목록에 PEGA2/iX700M이 없는 반면 DriveCM에는 PEGA2가 있어 적용범위 차이를 기록했다. 별도 ESI/컨트롤러 패키지 존재 가능성이 있어 비호환/부재를 단정하지 않는다.
 - 첨부 원본 bytes·SHA-256은 다운로드 경로 오류/시간초과로 확보하지 못했다. 보고서 §35, 인벤토리 및 상황판에 반영.
 - 출처: https://lsmecapion.com/bbs/board.php?bo_table=software&sca=Servo&wr_id=13005 ; https://lsmecapion.com/bbs/board.php?bo_table=software&wr_id=13110 ; https://lsmecapion.com/bbs/board.php?bo_table=manual&wr_id=12651 ; https://www.lsmecapion.com/bbs/board.php?bo_table=pd_drive
+
+
+## 2026-11-20 — PR #159 병합 및 사후 검증
+- PR #159 exact head `cc91056b674e54d80dfdd59f412b140caec4e6ed`; Actions Run #1122 / ID `44685551882` success.
+- Source blob integrity, compileall, CRA traceability, full pytest **174 passed / 0 failed**, official CRA PDF and 10-source HTML canaries, provenance manifest upload success. PDF upload skipped as unchanged.
+- CRA traceability summary: claims 13, interfaces 15, requirements 35, SEC 36, EVD crosswalk 16, product evidence 15, M/606 41, project log 250.
+- Squash merge SHA `c43b35df267c30facbc8c8f62677e48189d24127`; pre safety `safety/pre-pr159-merge-2026-11-20`, post safety `safety/post-merge-pr159-2026-11-20` and post == main verified.
+- Report §35/v0.14 and inventory 17 rows merged. Product scope/classification/Annex III·IV/RDPS Unknown; security tests Not Run.
