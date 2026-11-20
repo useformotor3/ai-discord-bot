@@ -2317,3 +2317,11 @@
 - 통합 보고서 v0.6, ETSI/CEN audit, 2 CSV 및 M/606 41-item row36 mapping 갱신.
 - 한계: Commission Register 원본 PDF bytes/hash 미취득. Article2/Annex text는 Commission certified-copy stamp가 있는 제3자 호스팅 PDF copy에서 읽고 Commission official page와 대조. CENELEC central record 및 ESO receipt/acceptance 미검증.
 - 제품별 CRA classification Unknown; physical/security testing Not Run.
+
+
+## 2026-11-20 — CENELEC 81649 central record 추가 직접 확인
+
+- CENELEC central project 81649를 다시 열어 parent prEN 50770-1, combined firewall+IDS/IPS scope, Committee stage, Citation expected, DOR/DAV 미기재 확인.
+- DKE Oct-2026의 -1-1/-1-2 split과 central parent record가 일치하지 않음을 기록. split child project IDs는 확정하지 않음.
+- 81650–81654 central records는 이번 pass에서 direct readback 실패. -2/-3 DKE/BSI conflict, -4/-5/-6 historical central snapshot status를 구분.
+- CSV와 integrated report §32, CEN audit addendum, situation board, plan, README, session log, AI rulebook에 반영.
