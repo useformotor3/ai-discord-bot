@@ -2294,3 +2294,13 @@
 - 문서 변경은 작업 브랜치에서 수행. 운영 코드, workflow, secrets, state/history 및 SIL 3 보존 자료는 변경하지 않음.
 - 이번 세션에서는 CRA 최신 외부 원문을 새로 전수 검증하지 않았다. 관리 체계 보강을 CRA 법적 사실 최신화로 표현하지 않는다.
 - 저장 후 동일 브랜치 read-back과 PR exact-head CI는 다음 단계에서 확인한다.
+
+
+## 2026-11-20 — PR #180 병합 및 AI 운영 기준 사후 검증
+
+- PR #180 squash merge SHA `3ded54116b3ecfa77645c50ada45575fbe656aea`; Exact-head Run #1162 success; source integrity/compile/traceability/full pytest **174 passed / 0 failed**.
+- Official CRA HTML source canary 및 provenance manifest upload success. CRA Guidance PDF canary returned empty body; PDF upload skipped, no PDF evidence claimed.
+- Pre/post safety refs: `safety/pre-merge-pr180-ai-self-review-2026-11-20`, `safety/post-merge-pr180-ai-self-review-2026-11-20`.
+- Four documentation files and 140 insertions merged: AI_RULEBOOK, MASTER_PLAN, SESSION_LOG, new AI continuity/self-review/token-efficiency standard.
+- Main merge post-ref and project status synchronization are being recorded in this documentation-only PR.
+- CRA regulatory research remains separate; PR #180 does not mean current CRA law/standards or product conformity have been revalidated.
