@@ -86,7 +86,7 @@ DKE의 2026년 10월 CRA 표준화 상태 PDF는 기존 prEN 50770-1이 다음 �
 **현재 판정**
 - 7개 deliverable이 CLC/TC 65X OT profile work programme에서 추적되고 있음을 확인했다.
 - DKE는 Drafting prEN, BSI는 -2/-3을 PWI/target dates unknown, LVS는 In development로 표시한다.
-- 이번 pass에서 CEN-CENELEC 중앙 project record를 성공적으로 다시 열지 못했다. 따라서 중앙 stage/date와 forecast는 확정하지 않는다.
+- CENELEC 중앙 프로젝트 81649는 직접 재열람했다. 공식 record는 여전히 단일 부모 참조 prEN 50770-1(방화벽 및 IDS/IPS 통합 scope), Committee stage, Citation expected, DOR/DAV 미기재로 표시하며 -1-1/-1-2 분할 child를 표시하지 않는다. 81650–81654 개별 중앙 record는 이번 pass에서 직접 readback에 실패했다. 따라서 -2/-3은 DKE/BSI status conflict를 유지하고 -4/-5/-6은 2026-11-18 이전 중앙 snapshot 외에는 신규 직접확인하지 않았다.
 - DKE의 Citation hEN 열은 비어 있다. actual OJ reference는 이번 자료에서 확인되지 않았다. 기존 “Citation expected”는 실제 OJ citation이 아니다.
 
 ### 2.3 Servo-drive 경계
