@@ -1,3 +1,12 @@
+## 2026-11-20 — PR #163 사후 상태 동기화 검증
+- PR #163 merge SHA `814cc6309e72461f0649b1b6d34109894cff4810`; exact head `3d1f28acb57078c59bcb3d634674f8ac279358fd`; Run #1130 success, **174 passed / 0 failed**.
+- Source integrity, compileall, CRA traceability, official CRA PDF/10-source HTML canaries, provenance upload 통과. Artifact #14609280243 SHA-256 `3bd36d529e45b20de019c783128a8f221bfd3debd895c65ddc640e11caf1f946`.
+- Pre/post safety refs 생성 및 post ref == main 확인.
+- 현재 기준 보고서 v0.16 §37, 제조사 인벤토리 20개 데이터 행, JSONL 255건.
+- 다음 P0: iX7NH Ver1.7 매뉴얼 원본 확보 및 구판 대비 변경점 확인; FoE/Webserver 초기 인증정보의 현행 여부, 기기별 고유성·변경 강제·TLS·권한·로그·펌웨어 서명·anti-rollback·복구 확인.
+
+---
+
 ## 2026-11-20 — PR #162 병합 및 다음 P0
 - PR #162 merge SHA `1d6110236984ee11387aaf2be99f239fa2f2ec1e`; exact head `903fd90709636b37f2b4ebd1abec893555955a8e`; Run #1128 success, **174 passed / 0 failed**.
 - Source integrity, compileall, CRA traceability, official CRA PDF/10-source HTML canaries, provenance upload 통과. Artifact #14609085450 SHA-256 `0407e5069a4f5d9698f6d9be994ffecbbc62c9dbae54b29b52cb96c39873cf4c`.
