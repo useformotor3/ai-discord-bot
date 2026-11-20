@@ -2451,3 +2451,72 @@
 - PR #186 merged via squash as `8adf72f3bbda24165479f7aa4d4246d48e4acd99`; exact-head CI #1242 success, 174 passed / 0 failed. It corrected README's stale PR #184 open banner and added the no-op replacement guard to AI_RULEBOOK.
 - `safety/post-merge-pr185-2026-11-20` and `safety/post-merge-pr186-2026-11-20` each read back identical to main at their respective merge points; latest PR186 safety ref is identical to current main.
 - Final main SHA updated to `8adf72f3bbda24165479f7aa4d4246d48e4acd99`; this branch synchronizes the situation board and logs the follow-up merge chain.
+
+## 2026-11-20 — 운영 자동화 주기·실행 품질 감사 및 관측성 개선
+
+### 수행
+- `.github/workflows/run.yml` 확인: 실제 schedule은 `0 */3 * * *`(UTC 3시간 간격), 5분 주기가 아님.
+- GitHub schedule event 최근 26건의 job conclusion은 모두 success. 과거 오래된 실패 이력은 최근 실행과 구분.
+- 최근 3개 production job 로그를 직접 열어 실제 실행 결과를 분리 확인.
+  - Run #2522: 공식 source 10개 확보, Gemini 3.8 Flash 503, 3.5 Flash Lite fallback, 신규 주제 없음, 아카이브/Discord 변경 없음.
+  - Run #2521: 조사 보류, 원격 main 동시 변경으로 no-op.
+  - Run #2520: 조사 보류, 운영 데이터 변경 없음.
+- Actions success가 신규 CRA 보고서 생성 완료를 뜻하지 않는 관측성 문제 확인.
+- 개선 브랜치 `fix/automation-outcome-visibility-2026-11-20` 생성. 3시간 간격은 유지하되 정각 부하 회피를 위해 cron minute를 :00에서 :17로 이동하는 변경을 PR에 포함. main.py·secrets·외부 호출 빈도는 변경하지 않고 결과 분류/요약 추가.
+- 최근 26개 schedule run created_at을 예정 슬롯과 비교: 평균 59분, 중앙값 58분, 범위 49~71분 지연. Run #2523은 기존 12:00 UTC cron 슬롯보다 약 63분 늦은 13:03 UTC에 생성. GitHub 공식 문서는 정각 고부하 시 지연/누락 가능성을 안내하므로 :17 offset을 적용하되, 지연 제거를 보장하지 않음.
+
+### 변경
+- `scripts/automation_outcome_summary.py`: 실행 로그를 보수적으로 분류해 GitHub Step Summary 출력.
+- `tests/test_automation_outcome_summary.py`: 8개 fixture case.
+- `.github/workflows/run.yml`: main.py output tee, 원래 exit code 보존, always summary step 추가.
+- `reports/CRA_AUTOMATION_CADENCE_AND_OUTCOME_OBSERVABILITY_AUDIT_2026-11-20.md`.
+
+### 판단
+- 5분마다 Gemini production workflow를 돌리면 일 최대 288회 호출 시도, quota/비용/중복/queue/동시성 위험이 커진다. 현 3시간 간격 유지.
+- 5분 상태 확인이 실제 요구라면 Gemini/Discord/운영 데이터 쓰기 없는 별도 read-only heartbeat로 분리해야 한다.
+- ChatGPT 예약 작업은 주간 CRA·MCU 공식자료 점검만 enabled; 일일 Git 통합 점검 및 보고서 대기열 점검은 disabled. 5분 task는 확인되지 않음.
+
+### 검증 경계 및 다음 단계
+- CI 실행 전. 테스트 통과·PR 병합·main 반영 주장 금지.
+- PR exact-head CI → diff/safety 검토 → 다음 production schedule에서 summary가 실제 결과를 정확히 분류하는지 확인.
+- workflow 변경은 summary/로그 수집만 추가하며 cron, secrets, Gemini/Discord 실행 빈도, checkpoint 및 operational guard를 바꾸지 않음.
+
+
+### 후속 CI 결과 — PR #189
+- Exact-head Run #1247 / ID `44741088582` success; pytest **182 passed / 0 failed**.
+- Source blob identity, compileall, CRA cross-matrix traceability, official CRA PDF/HTML canaries, provenance manifest upload 성공.
+- PDF source artifact upload은 unchanged 조건으로 skipped. 실제 production workflow dispatch/Gemini/Discord 호출은 하지 않음.
+- CI는 테스트 브랜치에서 summary classifier를 검증한 결과이며 main 배포 또는 다음 production run에서의 실제 summary 검증은 아직 아님.
+
+
+### 스케줄 조정 후 재검증 상태
+- 운영 cadence는 3시간으로 유지하고 cron minute만 UTC :00 → :17로 변경. 호출 빈도·Gemini/Discord 요청 수는 늘리지 않음.
+- 최초 PR HEAD Run #1247: 182 passed / 0 failed. 이후 workflow cron 및 관리 문서가 변경되었으므로 최신 HEAD에 대한 CI 재실행을 기다림. 최초 CI를 최신 HEAD 검증으로 오인하지 않음.
+
+
+### 자동화 cadence 테스트 회귀 정정
+- PR #189 중간 HEAD Run #1262 실패: **181 passed / 1 failed**.
+- 유일한 실패는 기존 `tests/test_production_workflow_cadence.py`가 옛 cron 문자열 `0 */3 * * *`를 고정 assert한 테스트였다. 실제 3시간 cadence를 검증하는 테스트가 offset 변경과 동기화되지 않은 상태.
+- 작업 브랜치에서 기대 cron을 `17 */3 * * *`로 수정. 실패를 숨기거나 xfail 처리하지 않았다. 최신 HEAD CI로 재검증 예정.
+
+
+### PR #189 code HEAD CI 결과
+- code HEAD `2b3522b1a95256901636afae8ee1af92e68bc35a`, Run #1271 / ID `44741902473`: success, 전체 pytest **182 passed / 0 failed**.
+- Source blob identity, compileall, CRA traceability, official PDF/HTML canaries, provenance manifest upload 성공.
+- 이후 문서 전용 갱신으로 HEAD가 바뀌어 최신 HEAD 확인은 별도 CI를 기준으로 함. main 미병합.
+
+
+### Production Run #2523 사후 로그 검증 및 폴백 분류 보강
+- Run #2523 / ID `44740952326` success; 약 7분 41초 실행.
+- 공식 source gate 10개. Gemini 3.8 Flash 응답은 EUR-Lex 공식 링크 누락으로 quality validation reject, 3.5 Flash Lite 대체 모델로 전환.
+- 대체 모델은 신규 주제 없음으로 종료. archive/Discord/state 변경 없음. operational guard 및 checkpoint pruning 성공.
+- 기존 classifier는 503/429 로그가 없으면 quality rejection으로 인한 대체 모델 전환을 놓칠 수 있었음. 두 개 이상 모델 시도를 폴백으로 탐지하고 사유를 분류하도록 수정; 9번째 fixture test 추가.
+- Run #1271의 182 passed는 새 fixture 추가 전 결과. 최신 HEAD CI 재실행 대기.
+
+
+### PR #189 최신 CI 및 테스트 fixture 최종 정정
+- Run #1282: 181 passed / 2 failed. 원인은 fallback fixture의 실제 대체 모델 로그 누락과 quality-fallback fixture의 newline 이중 escape.
+- 실제 production log (#2523)의 두 모델 시도/품질 거절 문구를 재현하도록 테스트 fixture를 정정. xfail/skip 처리하지 않음.
+- 최신 HEAD `0238f456d3c3087a91e5b94b8b649d0cd39c3634`, Run #1285 / ID `44742487474`: success, **183 passed / 0 failed**.
+- Source blob identity, compileall, CRA traceability, official PDF/HTML canaries, provenance manifest upload 성공. PDF evidence upload은 unchanged/condition skipped.
+- PR #189 main 미병합. merge 후 다음 :17 scheduled production run에서 Step Summary 실제 분류 확인 필요.

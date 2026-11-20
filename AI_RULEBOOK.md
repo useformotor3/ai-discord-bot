@@ -537,3 +537,11 @@
 - For EN304635 V1.0.1 and EN304636 V1.0.0, latest publicly viewable draft text explicitly states Annex III Class II point 1 and point 2 respectively. Work Item page scope labels saying Class I are stale/incorrect metadata.
 - Record source type and coverage: EN304635 evidence is a 15-page public sample preview (Scope at document p.15), not the complete 386-page PDF; EN304636 evidence is the publicly opened latest draft PDF, document p.9.
 - Do not describe either latest draft as legally misclassified. Preserve the metadata discrepancy and use the legal Class II route.
+
+
+## 14. 자동화 실행 결과와 CI 성공 분리
+- GitHub Actions job conclusion=success는 workflow step들이 정상 종료했다는 뜻일 뿐, 신규 조사 보고서 생성·원격 아카이브·Discord 전송 성공을 의미하지 않는다.
+- 자동화 실행 결과는 최소한 `RESEARCH_ARCHIVED_AND_DELIVERED`, `ARCHIVED_DELIVERY_DEFERRED`, `NO_NEW_TOPIC`, `DUPLICATE_BLOCKED`, `DEFERRED`, `FAILED`, `SUCCESS_UNCLASSIFIED`, `NOT_RUN_OR_UNKNOWN`으로 구분한다.
+- 신규 보고서 생성 완료로 집계하려면 원격 archive commit과 Discord 전송의 명시적 증거가 모두 있어야 한다. Discord가 보류되면 archive 완료와 delivery 보류를 분리한다.
+- no-op, 모델 503/429, 품질 검증 보류는 Actions job success와 별개로 실제 조사 미완료 상태로 기록한다.
+- production cron은 API 호출량·quota·중복·동시성 영향 분석 없이 단축하지 않는다. 5분 상태 감시가 필요하면 Gemini/Discord/운영 데이터 쓰기 없는 read-only heartbeat로 분리한다.

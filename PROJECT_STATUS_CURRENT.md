@@ -1,3 +1,16 @@
+# 자동화 운영 점검 최신 상태 — 2026-11-20
+
+- GitHub 운영 `.github/workflows/run.yml`은 5분 주기가 아니라 UTC 3시간 간격(`0 */3 * * *`)이다. 최근 26개 schedule run은 job success였지만, 최근 3개 로그는 신규 보고서 생성 완료가 아니라 모델 503/조사 보류/신규 주제 없음 no-op 사례를 포함했다.
+- Actions job success와 CRA 신규 조사·원격 아카이브·Discord 전송은 별도 결과로 구분해야 한다.
+- 개선 브랜치: `fix/automation-outcome-visibility-2026-11-20`; 시작 main SHA: `2f8aac8d2d61e217e06be21d36afe857e8bdf2d0`.
+- 추가: `scripts/automation_outcome_summary.py`, `tests/test_automation_outcome_summary.py`, `reports/CRA_AUTOMATION_CADENCE_AND_OUTCOME_OBSERVABILITY_AUDIT_2026-11-20.md`.
+- 운영 workflow는 main.py 로그를 임시 파일로 tee하고 실제 outcome summary를 GitHub Actions Summary에 게시하도록 개선 중. 3시간 cadence는 유지하며 cron을 UTC 정각(:00)에서 :17로 이동해 정각 부하를 피한다. Gemini/Discord 호출 빈도, secrets, main.py, checkpoint/guard는 변경하지 않았다. 최근 26회 run은 평균 59분(중앙값 58분, 범위 49~71분) 지연됐으며, Run #2523은 12:00 UTC 슬롯보다 약 63분 늦게 생성됐다.
+- 초기 PR #189 HEAD `434819fde00e1f72b7ff158cc4893e0fc1d2e367`의 Run #1247에서 182 passed / 0 failed. 이후 cron offset 변경 HEAD Run #1262는 기존 cadence 테스트의 옛 문자열 고정으로 181 passed / 1 failed; 해당 테스트 기대값을 :17로 정정. code HEAD Run #1271 success, 182 passed / 0 failed(추가 quality-fallback fixture 반영 전). Run #2523 실제 로그: 10개 공식 source, Gemini 3.8 Flash는 EUR-Lex 링크 누락으로 품질 탈락, 3.5 Flash Lite 전환 후 신규 주제 없음; 저장/Discord 전송 없음, guard 성공. 품질 기반 폴백 탐지 fixture 및 summary reason 반영. Run #1282는 fixture의 2개 실패(폴백 marker/newline escape)로 181 passed / 2 failed; fixture를 실제 로그와 맞게 수정. 최신 HEAD `0238f456d3c3087a91e5b94b8b649d0cd39c3634` Run #1285 success, **183 passed / 0 failed**, source identity/compile/traceability/official PDF·HTML canary/manifest upload 성공. main 미병합.
+- 5분마다 production Gemini 실행은 비용·quota·중복·queue 위험 때문에 채택하지 않는다. 필요하면 별도 read-only heartbeat로 분리 검토한다.
+- ChatGPT 예약 작업 확인: 주간 CRA·MCU 공식자료 점검 enabled; 일일 Git 브랜치 통합 상태 점검 및 CRA 보고서 대기열 점검 disabled. 5분 자동화는 확인되지 않았다.
+
+---
+
 ## 최신 기준점 — ETSI M/606 18개 조사 및 최신 draft 재검증 (2026-11-20)
 
 - 기준 main SHA: 8adf72f3bbda24165479f7aa4d4246d48e4acd99; PR #184, #185, #186 merged 2026-11-20. PR #185/#186 are post-merge documentation synchronization and self-review correction. 조사 브랜치: research/cra-etsi-18-active-matrix-class-audit-2026-11-20 (merged); pre-merge safety: safety/pre-merge-pr184-2026-11-20; post-merge safety refs: safety/post-merge-pr184-2026-11-20 (main as of PR184), safety/post-merge-pr185-2026-11-20, safety/post-merge-pr186-2026-11-20 (latest verified identical to main).
