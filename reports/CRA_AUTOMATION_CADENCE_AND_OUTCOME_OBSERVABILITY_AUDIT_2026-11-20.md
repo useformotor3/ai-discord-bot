@@ -100,3 +100,9 @@
 - GitHub 공식 문서에 따라 정각 부하 회피를 위해 cron을 `0 */3 * * *`에서 `17 */3 * * *`로 이동했다. 간격은 여전히 3시간이며, 일일 Gemini/Discord 호출 횟수는 증가하지 않는다.
 - Run #2523의 관측 지연은 기존 12:00 UTC 슬롯 대비 약 63분이다. :17 조정은 위험 완화이지 정시 실행 보장이 아니다.
 - 최초 PR HEAD Run #1247은 182 passed / 0 failed. cron 변경 이후 최신 HEAD는 재검증 CI 대기 중.
+
+
+### 테스트 회귀 발견 및 정정
+- cron offset 변경 직후 PR HEAD `f42b06270266935b70551b69b55d2066477b0c4a`의 Run #1262에서 **181 passed / 1 failed**.
+- 실패 원인: 기존 `tests/test_production_workflow_cadence.py`가 정확한 옛 문자열 `0 */3 * * *`를 고정 기대해, 3시간 주기는 같고 minute만 :17로 이동한 변경을 거부했다.
+- 실패를 무시하지 않고 해당 테스트의 기대값을 새 :17 오프셋으로 갱신했다. 최신 HEAD exact-head CI 재실행 대기.
