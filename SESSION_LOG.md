@@ -1800,3 +1800,11 @@
 - 공식 카탈로그 JT013090의 최신 단계 및 OJ citation 필드는 직접 미확인. Formal Vote 19 Nov / citation expected는 secondary-only lead.
 - C(2026) 7861 Article 2: 1개월은 각 ESO가 결정을 수령한 날부터 계산. ESO별 수령일 및 비수락 통지 원본 미확보. Recital (2)의 기존 C(2025)618 수락을 amendment acceptance로 오인하지 않음.
 - 감사대장 1·2–14·15 Work Item 매핑 갱신. 41개 Annex I 행의 topic/deadline 검증과 41개 실제 EN/ETSI/OJ 전수확인은 별개임.
+
+
+## 2026-11-20 — PR #130 병합 및 main CI
+- PR #130 exact-head `accf11726771374f632bb66783ce0fefaf400daa`, Run #1064 success.
+- Pre-merge safety ref `safety/pre-pr130-merge-2026-11-20`; squash merge SHA `bfcc2e61fc07b2148fca7a162349af40aa84bc47`; post-merge safety ref `safety/post-merge-pr130-2026-11-20`.
+- main push Run #1065 (`44658780153`) success; full test suite, traceability, source canary and provenance manifest upload all passed.
+- main JSONL 221/221 valid; audit CSV 41 data rows.
+- 후속: OT/IACS 관련 M/606 Work Items와 서보드라이브 제품기능의 적용 경계 분석.
