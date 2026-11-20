@@ -1757,3 +1757,13 @@
 - 다음 P0: LS메카피온 공식 게시물 상세 페이지/첨부 원본 확보(특히 iX7NH 교육자료, DriveCM V1.03.1, 게인 튜닝 가이드). 확보 후 SHA-256·개정·모델/FW 적용범위 검토.
 - 다음 P0: 제조사 1차 근거로 DriveCM 펌웨어 다운로드/검증, 인증·권한, 업데이트 서명·anti-rollback·복구 및 Node 98/99·Modbus timeout을 확인.
 - 제품 CRA scope/classification/Annex III·IV/RDPS Unknown, security tests Not Run 유지.
+
+
+## 2026-11-21 — EN 304 635 live status correction and production outcome verification
+
+- EN 304 635 latest live Work Programme version is V1.0.9, not V1.0.1. Current status: EC assessment before WNV requested (2026-11-19); next status: EC assessment before WNV received (2026-11-28). New draft uploaded 2026-11-20 after Enquiry and EC HAS2 comment resolution.
+- A cached individual Work Item page still showed V1.0.1. Preserve the stale-cache discrepancy; use live query + Work Item Monitoring as current status evidence. Do not claim V1.0.9 PDF acquisition.
+- ETSI free download area currently exposes V1.0.1 listing (2,700,830 bytes); it is not the V1.0.9 draft. Full V1.0.9 bytes/page count/hash remain unverified.
+- Production Run #2526 success is operational only: 10 official sources; Gemini 3.8 Flash 503; Gemini 3.5 Flash Lite rejected for missing EUR-Lex official link; DEFERRED; no report/archive/Discord changes. Summary step completed; raw log and classifier logic establish the deferred outcome, but GitHub Jobs API does not expose rendered Step Summary body.
+- Next P0: acquire V1.0.9 through an official route; compare against V1.0.1; inspect 2026-11-23 M/606 AMD 1 meeting minutes/decision and subsequent ETSI/ESO status; continue 41-topic standard/OJ audit and Article 2 receipt/non-acceptance evidence.
+- Evidence: `reports/CRA_ETSI_EN304635_V109_LIVE_STATUS_AND_RUN2526_AUDIT_2026-11-21.md`.
