@@ -2021,3 +2021,12 @@
 - Provenance artifact #14602977168 (2,567 bytes; ZIP SHA-256 `aeb27bb37f157d6d3de8dcde48d4cfad56caae112ec4d5637a470eca325a4f17`).
 - Pre-merge safety `safety/pre-pr157-merge-2026-11-20`; squash merge SHA `0ea0fba1fb37504f9d11b5c12d562c0d68f1d190`; post-merge safety `safety/post-merge-pr157-2026-11-20` 생성 및 main과 identical 확인.
 - 제품별 CRA scope/classification/Annex III·IV/RDPS Unknown, security tests Not Run. Main push CI는 독립 확인되지 않아 미확인.
+
+
+## 2026-11-20 — ESI·DriveCM·신형 모델 적용범위 교차검증
+- 공식 ESI Ver0.98 게시물에서 게시일 2025-07-15, 3개 언어 XML 파일명/크기, 11개 적용 모델을 확인했다.
+- DriveCM Ver1.03.2 게시물에서 지원 모델, .NET Framework 4.8 요구, 첨부 MSI/릴리스 노트, PEGA2 EtherCAT 및 RS-485 두 신규 변형, L7S/L7N 단종 제품의 LIVE i.C.E 사용 안내를 확인했다.
+- PEGA2 Ver1.3 매뉴얼 첨부 메타데이터와 iX700M Ver1.4 매뉴얼 목록, iX700M 제품 카탈로그상 EtherCAT을 확인했다.
+- ESI Ver0.98의 공개 적용목록에 PEGA2/iX700M이 없는 반면 DriveCM에는 PEGA2가 있어 적용범위 차이를 기록했다. 별도 ESI/컨트롤러 패키지 존재 가능성이 있어 비호환/부재를 단정하지 않는다.
+- 첨부 원본 bytes·SHA-256은 다운로드 경로 오류/시간초과로 확보하지 못했다. 보고서 §35, 인벤토리 및 상황판에 반영.
+- 출처: https://lsmecapion.com/bbs/board.php?bo_table=software&sca=Servo&wr_id=13005 ; https://lsmecapion.com/bbs/board.php?bo_table=software&wr_id=13110 ; https://lsmecapion.com/bbs/board.php?bo_table=manual&wr_id=12651 ; https://www.lsmecapion.com/bbs/board.php?bo_table=pd_drive
