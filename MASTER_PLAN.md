@@ -1,3 +1,19 @@
+## 2026-11-20 — iX7NH 통신·원격설정 공격면 분석 P0
+- 공식 iX7NH Series PDF (문서 하단 2021.05)를 텍스트 검토: USB OTG firmware update/parameter backup-restore/alarm-history export; EtherCAT FoE; EoE/UDP parameter configuration/copy; CoE/CiA402; Modbus TCP; built-in webserver/remote commissioning; STO1/STO2 + EDM.
+- 이 기능들을 USB update, FoE, EoE, Modbus TCP, web, backup/restore, log/export 별 보안 검증질문으로 분해해 보고서 §38에 반영한다.
+- STO 존재를 SIL/PL 등급 또는 CRA 사이버보안 통제로 해석하지 않는다. CE LVD/EMC 및 UL 인증 목록도 CRA conformity evidence가 아니다.
+- 제조사 listing-only 자료: iX7NH standard O/S update video (2025-12-24), iX7NH training (2026-09-14), Modbus TCP API guide, CE LVD/EMC and UL certificate listings. 첨부 원본 미확보는 명시한다.
+- P0: Ver1.7 manual, update video, Modbus API source package, per-path authentication/TLS/authorization/signature/anti-rollback/recovery evidence 확보.
+- 제품 CRA scope/classification/Annex III-IV/RDPS Unknown; security tests Not Run.
+
+## 2026-11-20 — PR #165 병합 기준점
+- PR #165 exact head `cbdad281756ab906003e174ecaa9183270b1d41e`; Run #1134 success, **174 passed / 0 failed**.
+- Traceability: claims 13, interfaces 15, requirements 35, SEC 36, crosswalk 16, product evidence 15, bidirectional true, M/606 41, JSONL 257.
+- Provenance artifact #14608029442 SHA-256 `65dfbda197494eddcbad0abd6ef3d190ba8420f107c043c3ecb61423f29456d0`.
+- Merge SHA `1b2a027162c45cb45b656bf4c01098c137a7183b`; pre/post safety refs created and post == main verified.
+
+---
+
 ## 2026-11-20 — PR #164 사후 상태 동기화 검증
 - PR #164 merge SHA `77e3050558869cab2624880bb1d5bfe8a9d5685c`; exact head `f0f7a51883bd66ad73f2252d8933067840c3d4c8`; Run #1132 success, **174 passed / 0 failed**.
 - Source integrity, compileall, CRA traceability, official CRA PDF/10-source HTML canaries, provenance upload 통과. Artifact #14609395254 SHA-256 `da47c2cf1d99bca2b067fb4836e9a7b3320d435e05cd7cf1e7859ab6ee566e0b`.
