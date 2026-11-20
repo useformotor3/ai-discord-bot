@@ -2394,3 +2394,11 @@
 - Integrated report version label duplicate text, README stale v0.7 link, status/plan stale “latest drafts not acquired” statements identified for correction.
 - AI_RULEBOOK section 18 added: session resume, source-first self-review, persisted error/root-cause/recovery/prevention loop, structured-file validation, token/tool efficiency, branch/safety/CI discipline.
 - Safety snapshot branch: safety/pre-pr184-doc-reconciliation-2026-11-20 (from PR head before cleanup).
+
+
+## 2026-11-20 — EN304635 V1.0.1 latest draft sample resolves legal class
+
+- ETSI DocBox latest EN304635 V1.0.1 PDF fetch timed out, but iTeh publicly indexed 15-page sample preview for the exact ETSI title/version.
+- Sample PDF document p.15 Scope explicitly says the product is in CRA Annex III Class II point 1 and cites Commission Implementing Regulation (EU) 2025/2392. This resolves the latest-version class text question; it aligns with law.
+- Limitation: preview is 15 pages of a 386-page draft; full original not obtained. EN304636 V1.0.0 full public draft had already been inspected at document p.9 for Class II point 2.
+- Conclusion: both latest public drafts align with law; ETSI Work Item page Class I scope labels are stale/incorrect metadata. Corrected matrix, CSV, legal report and status accordingly.
