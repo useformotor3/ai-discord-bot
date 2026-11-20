@@ -1722,3 +1722,14 @@
 - C(2026) 5252 final은 Commission draft-guidance approval document이며 OJ citation이 아니다.
 - 법적 해설은 EUR-Lex 최종 OJ PDF를 기준으로 하고, C(2026) 5252 ANFR fallback은 non-primary provenance로만 남긴다.
 - 통합 보고서 §15.1 및 §24.1, 상황판, README, project log에 정정 기록을 추가한다.
+
+
+---
+
+## 2026-11-20 — LS메카피온 매뉴얼 원본 수집 재시도
+
+- 공식 Servo 자료실에서 iX7M Ver1.3 및 iX7NH 200V Ver1.7 첨부파일명/용량/표시시각을 재확인: 각각 12.4 MB / 19.5 MB, 첨부 표시일 2026-06-05.
+- iX700M 400V DRIVE 매뉴얼 Ver1.4가 공식 매뉴얼 목록에 2026-05-26 게시물로 표시됨. 첨부파일 상세는 아직 확인되지 않음.
+- iX7M/iX7NH 첨부 다운로드는 브라우저/검색 경유 timeout 또는 HTTP 502. 원본 PDF bytes/해시/페이지 수/본문 분석은 미완료.
+- 보고서 §25와 manufacturer intake JSON에 metadata-only 상태로 기록. 제품별 분류 Unknown, 보안시험 Not Run 유지.
+- 다음 조치: 제조사 기술지원 채널을 통한 원본 파일 요청 또는 다운로드 경로 복구 후 SHA-256 및 페이지별 증거 검토.
