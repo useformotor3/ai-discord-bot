@@ -1,6 +1,6 @@
 # CRA Servo Drive Compliance & Engineering Project
 
-> **최신 재개 상태 — 2026-11-20:** PR #132~#158 병합 완료. 보고서 §31~§35(v0.14), 6개 OT/IACS profile matrix, 제조사 자료 인벤토리 및 14행 모델별 인터페이스 매트릭스 main 반영. PR #158 사후 상태동기화 CI Run #1120 성공. ESI 0.98·DriveCM 1.03.2 모델 적용범위 교차검증에서 PEGA2/iX700M ESI 확인 필요 갭을 식별했으며, 첨부 원본 bytes·SHA-256 확보는 진행 중.
+> **최신 재개 상태 — 2026-11-20:** PR #132~#159 병합 완료. 보고서 §31~§35(v0.14), 6개 OT/IACS profile matrix, 제조사 자료 인벤토리(17개 데이터 행) 및 14행 모델별 인터페이스 매트릭스 main 반영. PR #159 exact-head CI Run #1122 성공(174 passed / 0 failed). PEGA2/iX700M ESI 적용범위 확인 갭은 제조사 원본 확인 대기 중.
 
 산업용 서보 드라이브의 EU Cyber Resilience Act(CRA) 대응을 위한 조사·설계·검증·문서화 프로젝트입니다. 문서의 기본 언어는 한국어이며, 법령·표준·제조사 원문은 원어와 출처를 보존합니다.
 
@@ -1066,3 +1066,9 @@ CLC/TC 65X의 M/606 20b/21b/22b/25b/27b/36b를 prEN 50770-4/-2/-6/-3/-5/-1에 �
 - ESI Ver0.98 공식 적용목록 11개 모델과 DriveCM 1.03.2 지원 모델·PEGA2 EtherCAT/RS-485 변경내역 대조.
 - ESI 목록에는 PEGA2/iX700M 미기재, DriveCM에는 PEGA2 지원 명시. 별도 ESI 여부는 미확인으로 두고 호환/비호환 단정하지 않음.
 - 상세 내용은 통합 보고서 §35 및 제조사 원본 자료 인벤토리 참조.
+
+
+### PR #159 병합 및 검증 — 2026-11-20
+- Merge SHA `c43b35df267c30facbc8c8f62677e48189d24127`; exact-head Run #1122 success, 174 passed / 0 failed.
+- CRA traceability and official source canaries passed; provenance manifest uploaded.
+- Pre/post safety refs retained; post ref identical to main.
