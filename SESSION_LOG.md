@@ -2498,3 +2498,9 @@
 - PR #189 중간 HEAD Run #1262 실패: **181 passed / 1 failed**.
 - 유일한 실패는 기존 `tests/test_production_workflow_cadence.py`가 옛 cron 문자열 `0 */3 * * *`를 고정 assert한 테스트였다. 실제 3시간 cadence를 검증하는 테스트가 offset 변경과 동기화되지 않은 상태.
 - 작업 브랜치에서 기대 cron을 `17 */3 * * *`로 수정. 실패를 숨기거나 xfail 처리하지 않았다. 최신 HEAD CI로 재검증 예정.
+
+
+### PR #189 code HEAD CI 결과
+- code HEAD `2b3522b1a95256901636afae8ee1af92e68bc35a`, Run #1271 / ID `44741902473`: success, 전체 pytest **182 passed / 0 failed**.
+- Source blob identity, compileall, CRA traceability, official PDF/HTML canaries, provenance manifest upload 성공.
+- 이후 문서 전용 갱신으로 HEAD가 바뀌어 최신 HEAD 확인은 별도 CI를 기준으로 함. main 미병합.
