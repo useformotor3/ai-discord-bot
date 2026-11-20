@@ -1,7 +1,7 @@
 # CRA 서보 드라이브 통합 규제·기술 준수 보고서
 
-- 문서 버전: v0.2 (초안 / 제품별 적용성 확인 전)
-- 기준일: 2026-11-17
+- 문서 버전: v0.5 (CRA 핵심 규제·이행, CEN/ETSI 및 EU 표준화 법체계 최신정보 갱신 / 제품별 적용성 확인 전)
+- 기준일: 2026-11-20
 - 프로젝트 범위: EU Cyber Resilience Act(CRA) 대응만
 - 기준 제품군: 산업용 서보 드라이브 및 필수 펌웨어·설정/진단 소프트웨어
 - 법적 기준 원문: Regulation (EU) 2024/2847, Official Journal OJ L 2024/2847, 20.11.2024
@@ -153,12 +153,13 @@ Regulation (EU) 2025/327 Article 104는 CRA Article 13(4), Article 31(3)을 수�
 - 심각성 판단은 민감/중요 데이터 또는 기능의 가용성·진정성·무결성·기밀성 보호에 대한 부정적 영향 가능성, 또는 악성 코드의 제품/사용자 시스템 내 유입·실행 가능성 등을 고려한다.
 
 ### 6.3 운영 통제
-- 단일 신고 플랫폼은 ENISA가 설치·운영한다(Article 16). ENISA SRP FAQ에 따르면 2026-09-11부터 운영 중이다.
-- SRP 접속: https://portal.cra-srp.enisa.europa.eu. 2026-10-15 ENISA FAQ 기준 초기 플랫폼은 영어 UI이며, 초기 릴리스에는 API가 제공되지 않아 웹 인터페이스 제출을 전제로 내부 절차를 준비한다. 플랫폼 기능은 변경될 수 있으므로 신고 시점에 최신 FAQ를 재확인한다.
-- 신고할 CSIRT는 Article 14(7)에 따라 제조자의 EU 내 주된 사업장 소재국을 기준으로 정한다. 주된 사업장은 제품 사이버보안 관련 의사결정이 주로 이루어지는 곳이며, 이를 특정할 수 없으면 EU 내 직원 수가 가장 많은 사업장 소재국을 적용한다. EU 내 주된 사업장이 없는 제조자는 authorised representative, importer, distributor 및 제품 사용자가 가장 많은 회원국 순으로 법정 기준을 확인한다.
-- SRP 등록 담당자(Assigned Representative)는 EU Login 및 MFA가 필요하다. 한국 제조사는 EU 내 주된 사업장/대리인/수입자/유통자 구조를 먼저 확정하고 해당 CSIRT를 선정해야 한다.
-- 적극 악용 취약점과 심각한 사고는 별도 사건 유형과 최종 보고 시한으로 관리한다.
-- Article 14는 지원기간 종료 후에도 계속 적용될 수 있으므로 설치 제품의 자산/고객 식별 및 연락 체계를 유지해야 한다.
+- 단일 신고 플랫폼은 ENISA가 설치·운영한다(Article 16). ENISA SRP FAQ는 2026-09-11부터 운영 중임을 확인한다.
+- SRP 접속: https://portal.cra-srp.enisa.europa.eu. 2026-10-15 FAQ 기준 API 미제공 및 영어 UI 전용이다. 초기 운영상 기능 제한과 카운터 주의사항은 §25 및 [SRP 운영 준비 기준서](CRA_SRP_OPERATIONAL_READINESS_2026-11-20.md)를 따른다.
+- 신고할 CSIRT는 Article 14(7)에 따라 제조자의 EU 내 주된 사업장 소재국을 기준으로 한다. 주된 사업장은 제품 사이버보안 관련 의사결정이 주로 이루어지는 곳이며, 이를 특정할 수 없으면 EU 내 직원 수가 가장 많은 사업장 소재국을 적용한다. EU 내 주된 사업장이 없는 제조자는 authorised representative, importer, distributor 및 제품 사용자가 가장 많은 회원국 순으로 법정 기준을 확인한다.
+- Assigned Representative(AR)는 개인 EU Login 계정과 MFA를 사용한다. Primary AR 1명과 최대 20명의 Secondary AR 구조, AR 연계 검증 및 권한은 ENISA FAQ 최신판에서 재확인한다.
+- Article 14 의무 AEV/SI 신고와 Article 15 자발적 신고를 분리한다. 2026-10-15 FAQ 기준 SRP의 Article 15 자발적 신고 기능은 아직 구현되지 않았다.
+- SRP 장애 시 직접 CDaC 연락이 필요할 수 있으나, 복구 후 SRP 제출 의무는 남는다. 내부 절차는 최초 인지시각 UTC 기준으로 24h/72h/최종보고를 독립 계산하며 UI 카운터를 법정 시한으로 사용하지 않는다.
+- Article 14는 지원기간 종료 후에도 적용될 수 있으므로 설치 제품의 자산/고객 식별 및 연락 체계를 유지한다.
 
 ### 6.4 자발적 신고와 의무 신고 구분
 - Article 15는 Article 14의 의무 신고 대상이 아닌 취약점, 위협 또는 near miss 등에 대해 제조자/기타 자가 자발적으로 신고할 수 있는 체계를 둔다.
@@ -413,3 +414,160 @@ EVD-01~16과 CRA 요구사항·SEC-001~036 통제의 후보 연결은 [`CRA_EVD_
 ## 제품별 증거 register 부속서 — 2026-11-19
 
 제품별 E-001~E-015 자료는 [CRA_PRODUCT_EVIDENCE_REGISTER_TEMPLATE_2026-11-19.csv](CRA_PRODUCT_EVIDENCE_REGISTER_TEMPLATE_2026-11-19.csv)에 기록하고 EVD-01~16에 연결한다. 이 register는 제출·검토·승인 provenance를 추적하는 양식이며 제품별 적합성 결론이 아니다. 모든 항목은 자료가 수령·검증되기 전까지 not_provided로 유지한다. accepted 및 not-applicable 판정은 hash, source/locator, reviewer/date, rationale 등 필수 메타데이터가 있어야 하며 validator가 이를 fail-closed로 검사한다.
+
+
+## 25. CRA 핵심 이행 최신정보 재검증 — 2026-11-20 (LS 제품조사와 별도 트랙)
+
+### 25.1 프로젝트 범위 재확인
+
+CRA 프로젝트의 중심은 특정 서보드라이브 제조사 조사가 아니라 Regulation (EU) 2024/2847의 전 제품 공통 의무, Commission 해석, 표준화/OJ 상태, 제품 분류·적합성 평가, 취약점·사고 신고, 기술문서 및 증거체계다. LS메카피온 iX7NH는 이 공통 프레임워크를 적용해 보는 사례 연구이며, CRA 법령·표준화·공식 이행정보 조사와 우선순위를 대체하지 않는다.
+
+### 25.2 2026-11-20 현재 공식 출처 최신성 대조
+
+| 공식 출처 | 최신 확인된 버전/날짜 | 2026-11-20 확인 결과 | 법적·증거상 지위 |
+|---|---|---|---|
+| Regulation (EU) 2024/2847 | OJ L 2024/2847, 2024-11-20 | 기본 구속력 있는 법령. 개정법령과 적용일 별도 확인 | Binding law |
+| Commission Guidance C(2026) 5252 / OJ C/2026/6013 | 2026-07-27 guidance; OJ 2026-11-17 | 61페이지 OJ PDF와 기존 claim register를 기준으로 해석. 비구속적 | Official non-binding guidance |
+| Commission CRA implementation timeline | 페이지 last update 2026-07-27 | 2026-09-11 Article 14 신고 적용, 2027-12-11 전면 적용 일정 재확인 | Official implementation page |
+| Commission CRA reporting obligations page | last update 2026-09-11 | 24h/72h/final report와 SRP 운영 경로 재확인 | Official operational explanation |
+| Commission CRA FAQ | Version 1.4, 2026-09-04 | FAQ 자체가 Commission services 작성·비권위적·비구속적임을 명시. 법령/Guidance와 구분 | Official services FAQ, non-binding |
+| ENISA CRA SRP FAQ | updated 2026-10-15 | 플랫폼 운영상 제약·절차·카운터 동작·미구현 기능 확인 | Official agency operational guidance |
+| ENISA SRP Glossary | Version 1.6, last update 2026-10-21 | 신고 필드·단계별 필수/선택·AEV/SI 구분 확인 | Official agency operational guidance |
+| ENISA SRP AR User Manual | Version 1.3, last update 2026-11-04 | AR 등록·신고 제출·수정·연결 관리 절차 문서 존재 확인 | Official agency user manual; page metadata checked |
+| Commission Implementing Decision C(2026) 7861 | 2026-11-10 | M/606 Annex I의 41개 표준화 주제·ESO 기한 기준 유지 | Official standardisation request decision |
+
+### 25.3 ENISA Single Reporting Platform의 실제 운영상 주의사항
+
+ENISA의 2026-10-15 SRP FAQ, 2026-10-21 Glossary v1.6 및 2026-11-04 AR User Manual v1.3를 교차 확인했다. 법령의 신고기한과 플랫폼 UI 편의기능을 구분해야 한다.
+
+1. **신고 대상과 기한:** 제조자는 적극 악용 취약점(AEV) 및 제품 보안에 영향을 미치는 심각한 사고(SI)를 인지하면 부당한 지체 없이, 최대 24시간 내 early warning, 최대 72시간 내 notification을 제출한다. AEV final report는 시정/완화 조치가 제공된 뒤 최대 14일, SI final report는 72시간 신고 뒤 1개월이다. 이는 제품 지원기간 종료나 2027-12-11 전면 적용 전 출시 여부만으로 배제되지 않는다(Article 69(3), 71(2); Commission FAQ 5.3; ENISA FAQ 7, 29).
+2. **신고 플랫폼:** SRP는 2026-09-11부터 운영 중이다. 제조자는 해당 제조자의 EU 내 주된 사업장 등 Article 14(7) 기준에 맞는 CSIRT designated as coordinator(CDaC)를 선정한다. 하나의 사건에 대해 한 번 제출하고, 해당 CSIRT 및 ENISA에 전달되는 구조다.
+3. **담당자·계정:** Assigned Representative(AR)는 개인 EU Login 계정과 MFA를 사용한다. 제조자별 Primary AR 1명과 최대 20명의 Secondary AR를 둘 수 있다. CSIRT의 AR-제조자 연계 검증은 신고와 병행되며, 미검증 상태에서도 최대 20건까지 제출 가능하다는 ENISA FAQ 설명이 있다. 이는 제조자 등록 준비를 늦춰도 된다는 뜻이 아니다.
+4. **API 미제공:** ENISA FAQ 15 기준 SRP 초기 릴리스는 API를 제공하지 않는다. 제조자 내부 티켓·취약점 관리·제품 자산·고객 통지 워크플로는 자동화할 수 있지만, 규제 신고 제출은 SRP 웹 인터페이스를 전제로 운영 절차를 준비해야 한다. 향후 API 제공 여부는 재확인한다.
+5. **영어 전용:** ENISA FAQ 24 기준 플랫폼 UI는 출시 시점에 영어만 제공된다. Factsheet 번역과 플랫폼 다국어화는 별도 상태다. 한국어 내부 프로세스만 준비해서는 실제 제출 운영이 불충분할 수 있다.
+6. **Art. 15 자발적 신고 미구현:** ENISA FAQ 27 기준 현재 SRP는 Article 14의 의무 AEV/SI 신고를 지원하며 Article 15의 자발적 신고 기능은 아직 구현되지 않았다. 모든 취약점을 Article 14로 신고하는 것으로 혼동하지 말고, Art. 15 신고 경로가 실제 제공되는지 추후 재확인한다.
+7. **SRP 장애 시:** ENISA FAQ 25는 플랫폼이 일시적으로 unavailable이면 복구 후 SRP에 제출하도록 안내한다. 즉시 연락이 필요하다고 판단하면 지정 CSIRT에 직접 연락할 수 있지만, SRP 복구 후 플랫폼 제출 의무는 남는다. 내부 장애 기록·인지 시각·시도 기록을 남긴다.
+8. **UI 카운터를 법정기한으로 오인 금지:** ENISA FAQ 26에 따르면 현재 72시간 카운터는 24시간 Early Warning 제출 후 48시간을 표시하므로, 제조자가 처음 인지한 시각부터 72시간이 지나기 전에 UI가 overdue로 표시될 수 있다. AEV final report 카운터는 현재 구현되지 않았고, SI final report 카운터는 72시간 신고 제출 뒤 1개월로 표시된다. 카운터는 알림·참고용이며 Article 14 법정기한을 대체하지 않는다. 내부 시스템은 최초 인지 시각(UTC)을 기준으로 독립 계산한다.
+9. **신고 필드:** Glossary v1.6은 AEV/SI 유형, 제품명·정확한 제품 버전/빌드/모델/FW, 제품 공급 회원국, 관련 구성요소, 인지 시각, 발생 시각, 영향·심각성, 조치, 공격경로 및 PEC 근거 등 필드를 신고 단계별로 구분한다. 초기에 확인되지 않은 사실을 추정해 채우지 않고, 각 단계에서 요구되는 필드와 추후 보완 필드를 구분한다.
+10. **PEC 및 정보 공개:** 특히 예외적 상황(PEC)은 CRA Article 16(2)의 법정 조건에 맞는 경우에 한정한다. 단순한 영업비밀 또는 일반적 비공개 요청을 자동으로 PEC로 취급하지 않는다. 근거와 요청 사유를 구체적으로 작성한다.
+11. **EUVD/CVE 후속:** ENISA FAQ 35는 Article 17(5)에 따라 제조자 동의를 전제로 공개적으로 알려진 신고 취약점을 EUVD에 추가할 수 있으며, CVE ID 지정 관련 연락이 올 수 있음을 설명한다. 취약점 공개·CVE/EUVD 커뮤니케이션을 incident response 계획에 포함한다.
+
+### 25.4 제조자 내부 운영 준비 체크리스트
+
+- [ ] 취약점/사고 최초 인지 시각을 UTC로 자동·수동 기록하고, 인지 주체·증거·제품 버전을 보존한다.
+- [ ] AEV와 SI를 분리 분류하고, 24h/72h/최종보고 시한을 법령 기준으로 별도 계산한다. ENISA UI 카운터만 신뢰하지 않는다.
+- [ ] EU 내 주된 사업장 및 Article 14(7) fallback 기준을 법무·사업·보안 책임자가 공동 확정하고 CDaC 목록을 재확인한다.
+- [ ] Primary/Secondary AR, EU Login MFA, 제조자 등록정보, 제품 공급 회원국 및 제출권한을 사전 준비한다.
+- [ ] API가 없고 UI가 영어 전용인 현행 SRP에 맞춰 영문 보고 템플릿, 승인·번역·제출 절차를 준비한다.
+- [ ] SRP 장애 시 직접 CSIRT 연락과 복구 후 SRP 재제출을 포함한 비상 절차를 준비한다.
+- [ ] 제품명, SKU, HW/FW/bootloader, 영향 버전, 구성요소/SBOM, 공격경로, 영향, 완화조치의 증거 저장소를 마련한다.
+- [ ] Article 16(2) PEC 검토는 법적 조건별 근거와 승인 절차를 두고, 단순 기밀 표시는 PEC와 분리한다.
+- [ ] Article 15 자발적 신고 기능, Glossary, User Manual, SRP Status를 신고 직전 다시 확인한다.
+
+### 25.5 최신성·정확성 관리 원칙
+
+- 법적 결론은 모델 내부 지식이나 과거 대화 요약이 아니라 현행 EUR-Lex/OJ 원문 및 공식 기관의 최신 자료에서만 도출한다.
+- 공식 출처별로 source ID, 발행/개정일, 조회일(KST), 문서 버전, 원문 URL, 파일 bytes/hash 또는 HTML-parsed 상태, 확인한 locator, 법적 지위, 미확인 사항을 [CRA 공식 출처 최신성 대장](CRA_LIVE_SOURCE_FRESHNESS_REGISTER_2026-11-20.csv)에 기록한다.
+- 동적 운영 자료(ENISA SRP FAQ/Glossary/Manual/Status, Commission implementation/reporting/FAQ)는 최소 주 1회 또는 새 공지·문서 버전 감지 시 재조회한다. 표준화·OJ 상태는 최소 주 1회 및 신규 OJ/CEN/CLC/ETSI 공지 시 재조회한다. 이는 프로젝트 내부 관리 주기이지 법적 의무가 아니다.
+- 공식 원문을 읽지 못했으면 제목/검색 snippet/목록 메타데이터만으로 본문 확인을 주장하지 않는다. HTML parsed text는 raw PDF bytes/hash 확보와 구분한다.
+- 2차 자료는 탐색·교차검토용이며, 법령·표준·제품 기능에 대한 최종 근거로 단독 사용하지 않는다.
+- 자동화/pytest/CI 성공은 문서 구조·코드·추적성 검증일 뿐, 법적 해석의 100% 정확성이나 제품 적합성 인증을 의미하지 않는다.
+
+### 25.6 출처 및 열람 한계
+
+- Commission reporting page: https://digital-strategy.ec.europa.eu/en/policies/cra-reporting (last update 2026-09-11; read 2026-11-20).
+- Commission implementation page: https://digital-strategy.ec.europa.eu/en/factpages/cyber-resilience-act-implementation (last update 2026-07-27; read 2026-11-20).
+- Commission CRA FAQ page: https://digital-strategy.ec.europa.eu/en/library/cyber-resilience-act-implementation-frequently-asked-questions (FAQ v1.4, 2026-09-04; Commission services FAQ disclaimer applies).
+- ENISA SRP FAQ: https://www.enisa.europa.eu/topics/product-security/vulnerability-services/eu-incident-response-and-cyber-crisis-management/single-reporting-platform-srp/frequently-asked-questions (updated 2026-10-15).
+- ENISA SRP Glossary: https://www.enisa.europa.eu/topics/product-security/single-reporting-platform-srp/cra-srp-glossary2 (v1.6, 2026-10-21).
+- ENISA AR User Manual page: https://www.enisa.europa.eu/topics/product-security/vulnerability-services/eu-incident-response-and-cyber-crisis-management/single-reporting-platform-srp/cra-srp-ar-user-manual (v1.3, 2026-11-04).
+- ENISA SRP Status page is listed by ENISA but direct page retrieval failed during this audit; check live status at incident time.
+- ENISA HTML pages were parsed and reviewed; binary PDF/HTML downloads, raw bytes and SHA-256 for SRP FAQ/Glossary/User Manual were not acquired in this session. No account registration, notification submission, or live platform workflow test was performed.
+
+**판정:** 신고의 법적 기한과 SRP 운영 현실을 분리해 관리한다. 플랫폼의 현재 UI·기능·언어·카운터는 변경될 수 있으므로 실제 신고 시점에 ENISA 최신 문서를 재확인한다.
+
+## 26. 2026-11-20 CEN/ETSI 표준화 최신상태 정정 — 발행과 OJ 인용의 엄격한 분리
+
+### 26.1 CEN/CENELEC 수평표준 2종은 실제 Published로 갱신
+
+CEN-CENELEC가 2026-11-19 공식 발표를 게시했고, 개별 CEN 카탈로그 레코드를 직접 다시 열람했다.
+
+| 표준 | Work Item | 공식 상태 | DOR | DAV | DOA | DOP/DOW | CRA OJ citation 필드 |
+|---|---|---|---|---|---|---|---|
+| EN 40000-1-1:2026 Vocabulary | JT013095 | Published | 2026-11-02 | 2026-11-18 | 2027-02-28 | 2027-05-31 | No citation expected for Directive 2024/2847 |
+| EN 40000-1-2:2026 Principles, product risk management and lifecycle activities | JT013089 | Published | 2026-11-02 | 2026-11-18 | 2027-02-28 | 2027-05-31 | No citation expected for Directive 2024/2847 |
+
+- EN 40000-1-1은 EN 40000 시리즈의 용어·정의·약어를 제공한다.
+- EN 40000-1-2는 PDE의 사이버보안 위험관리와 제품 수명주기(설계~지원 종료·폐기) 활동에 대한 일반 프레임워크다.
+- 두 표준은 M/606에 따라 CEN/CENELEC에서 발행되었으나, 개별 공식 카탈로그의 OJ 필드는 CRA Directive 2024/2847에 대해 **“No citation expected”**다. 따라서 Article 27 추정 적합성의 근거로 제시하지 않는다.
+- DOR/DAV/DOA/DOP/DOW는 서로 다른 날짜 개념이다. DAV 2026-11-18은 승인된 공식 언어판의 배포 가능일이고, DOP/DOW 2027-05-31은 국가표준 구현/충돌 표준 철회 최종기한이다. 이를 CRA 제조자 준수기한으로 오인하지 않는다.
+
+공식 근거:
+- CEN-CENELEC announcement (2026-11-19): https://www.cencenelec.eu/news-events/news/2026/en-in-the-spotlight/2026-11-19-cra-standards-en-40000-1-1-and-en-40000-1-2/
+- EN 40000-1-1 CEN record: https://standards.cencenelec.eu/ords/f?p=CEN:110::::::FSP_PROJECT,FSP_ORG_ID:82349,2307986
+- EN 40000-1-2 CEN record: https://standards.cencenelec.eu/ords/f?p=CEN:110::::::FSP_PROJECT,FSP_ORG_ID:81335,2307986
+
+### 26.2 ETSI M/606 활성 작업 및 서보 드라이브 관련 범위
+
+ETSI Work Programme Version 2.3.3의 M/606 조회 결과는 활성 작업 18개를 표시한다. 이는 3개 ESO가 수행하는 M/606 Annex I 전체 41개 항목과 동일하지 않으며, ETSI 작업만의 일부다. 목록 화면은 18개 중 10개만 표시하므로, 18개 전부를 개별 검토 완료했다고 주장하지 않는다.
+
+| ETSI EN / Work Item | 제품 유형 및 현재 확인 상태 | 산업용 OT/서보드라이브 경계 | 증거 상태 |
+|---|---|---|---|
+| EN 304 636 / DEN/CYBER-EUS-0020 | Firewalls, IDS/IPS; Comments categorisation assessed (2026-10-06); next milestone target 2026-12-22 | 제품 자체의 핵심 기능이 방화벽/IDS/IPS인 경우. 서보드라이브의 단순 패킷 필터·포트 보호만으로 분류하지 않음. 조회된 scope에는 OT exclusion 문구가 보이지 않음 | ETSI individual record metadata/scope read |
+| EN 304 625 / DEN/CYBER-EUS-0017 | Physical/virtual network interfaces; Comments categorisation assessed (2026-11-05); 1.0.0; 2026-11-19 remark: EC second assessment received in batches dated 2026-09-28 and 2026-11-16 | CRA Annex III Class I의 network interfaces scope. Ethernet/EtherCAT/Modbus 포트 존재만으로 완제품 드라이브가 이 제품 유형이 되는 것은 아님. 최종 scope와 marketed product core functionality 확인 필요 | ETSI record read 2026-11-20; OJ field blank |
+| EN 304 627 / DEN/CYBER-EUS-0013 | Routers, internet-connected modems, switches; Comments categorisation assessed (2026-10-01) | scope에 industrial OT domain 제외 명시. 단순 Ethernet switch/port 또는 EtherCAT 통신을 라우터/모뎀/스위치 제품 기능으로 확대하지 않음 | ETSI record scope reviewed; OJ field blank |
+| EN 304 621 / DEN/CYBER-EUS-009 | Network Management Systems; Comments categorisation assessed (2026-11-06) | scope에 industrial OT domain 제외 명시. DriveCM 파라미터/commissioning 도구를 NMS로 자동 분류하지 않음 | ETSI record scope reviewed; OJ field blank |
+| EN 304 620 / DEN/CYBER-EUS-005 | VPN products; Comments categorisation assessed (2026-11-06); 1.0.0; 2026-11-19 remark: EC second assessment received in batches dated 2026-09-28 and 2026-10-22 | scope에 industrial OT domain 제외 명시. 원격 유지보수 VPN을 제공하는 별도 제품/솔루션과 드라이브 자체를 구분 | ETSI record scope reviewed; ETSI record read 2026-11-20; OJ field blank |
+| EN 304 622 / DEN/CYBER-EUS-0010 | SIEM systems; Comments categorisation assessed (2026-11-06) | scope에 industrial OT domain 제외 명시. 서보 알람/이력만으로 SIEM 제품이 되지 않음 | ETSI record read 2026-11-20; OJ field blank |
+
+ETSI 개별 레코드의 Harmonised Standard: Yes 메타데이터는 향후 조화표준 후보/의도에 대한 Work Programme 필드다. 해당 필드만으로 OJ 실제 게재를 증명하지 않는다. 조회한 관련 work item의 Official Journal 필드는 비어 있거나 실제 참조번호가 확인되지 않았다. 따라서 Article 27 presumption은 이 자료만으로 주장하지 않는다.
+
+특히 EN 304 620(VPN), EN 304 621(NMS), EN 304 622(SIEM), EN 304 627(router/modem/switch)은 각 ETSI scope description에 industrial OT domain 제외 문구가 확인된다. 이 점은 산업용 OT용 CENELEC prEN 50770 work items와 구분해야 한다. CENELEC prEN 50770-1~6의 별도 진행상태는 2026-11-18 감사 기준으로 유지하며, 이번 확인에서 모든 CENELEC 레코드를 다시 읽은 것은 아니다.
+
+### 26.3 기존 상태표에 대한 정정
+
+- EN 304 620의 2026-09-28 “7 VR – EC assessment before EV received” 역시 과거 상태다. 2026-11-20 조회한 개별 ETSI 레코드는 Comments categorisation assessed (2026-11-06), 2026-11-19 EC second-assessment remark(2026-09-28 및 2026-10-22 코멘트 묶음 수신)를 표시한다.
+
+- `CRA_CEN_CENELEC_EN40000_OT50770_STATUS_2026-11-18.md`의 2026-11-18 시점 EN 40000-1-2 개별 CEN 레코드 미확인 문장은 이번 직접 readback으로 해소됐다. 현재 둘 다 Published이며 OJ citation 필드는 No citation expected다.
+- `CRA_ETSI_M606_LIVE_STATUS_2026-11-18.md`에서 EN 304 625의 2026-09-28 “7 VR – EC assessment before EV received” 상태를 현재 상태처럼 읽으면 안 된다. 2026-11-20 조회한 ETSI 상세 레코드는 Comments categorisation assessed (2026-11-05), 그리고 2026-11-19 EC second-assessment remark를 표시한다.
+- 2026-11-10 C(2026) 7861 Annex I 41개 항목/ESO 기한 감사는 그대로 유지한다. ETSI 18개 active work item의 진행상태와 M/606 41개 전체 표준의 매핑·발행·OJ 상태는 별도 계층이다.
+
+### 26.4 후속 조사
+
+1. ETSI 활성 work item 18개 중 미검토 8개를 모두 개별 레코드로 읽고 제품유형·scope·OT exclusion·stage·planned milestone·OJ field를 추출한다.
+2. CEN/CENELEC prEN 50770-1~6의 개별 카탈로그를 다시 읽고 2026-11-20 현재 stage/forecast/OT scope를 확인한다.
+3. EN 40000-1-1/-1-2는 발행 텍스트의 구매/접근 가능성 및 표준 본문 검토 가능 범위를 확인하되, 현재 확인된 No citation expected 상태를 유지한다.
+4. OJ harmonised standards index 및 EUR-Lex를 재조회하여 Article 27 인용이 실제 추가되었는지 확인한다.
+5. 표준 본문을 유료로 구매/열람하지 못한 경우 제목·카탈로그·요약만으로 조항별 요구사항을 추정하지 않는다.
+
+**현재 판정:** CEN EN 40000-1-1/-1-2 Published but no CRA OJ citation expected; ETSI related standards remain work programme items with no OJ citation established in this audit; industrial OT CENELEC work items tracked separately; servo-drive product classification remains Unknown.
+
+## 27. EU 표준화 법체계 개편 제안 — COM(2026)780 (현행법 아님)
+
+2026-10-06 European Commission은 Regulation (EU) No 1025/2012를 폐지·대체하려는 **Proposal for a Regulation on European standardisation, COM(2026)780**을 공개했다. 제안서와 영향평가 문서가 게시되어 있으나, 이 문서는 제안 단계 자료이며 채택·발효된 현행법으로 취급하지 않는다.
+
+- 제안 식별: COM(2026)780; SWD(2026)785, SWD(2026)786, SWD(2026)787.
+- 게시일: 2026-10-06.
+- 공식 출처: https://single-market-economy.ec.europa.eu/publications/proposal-regulation-european-standardisation_en
+- 현재 CRA 분석에서의 의미: ESO 요청·표준 채택·위원회 평가·OJ citation 등 유럽 표준화 거버넌스의 향후 구조에 영향을 줄 수 있으므로 입법 진행을 모니터링한다. 그러나 제안이 채택되기 전에는 Regulation 1025/2012 및 현행 CRA/M/606 절차를 대체하는 법적 근거로 사용하지 않는다.
+- 후속 확인: Council/Parliament procedure, amendments, adopted text, entry-into-force/application dates, transition clauses 및 기존 M/606/C(2026)7861에 대한 경과조치를 확인한다.
+
+## 28. M/606 기한 개정과 출처 충돌 처리 — C(2026)7861 final
+
+### 28.1 공식 Commission 근거
+- European Commission CRA standardisation page (last update 2026-11-12)는 2026-11-10에 M/606 standardisation request가 amendment 되었으며, 모든 vertical standards와 일부 horizontal standards의 ESO delivery deadlines가 3개월 연장되었다고 명시한다.
+- Commission Register 문서 C(2026)7861 final 및 Annex는 Brussels, 2026-11-10 날짜로 확인된다. 이 문서는 Implementing Decision C(2025)618을 개정하는 Commission Implementing Decision이다.
+- 공식 페이지: https://digital-strategy.ec.europa.eu/en/policies/cra-standardisation
+- 공식 register document: https://ec.europa.eu/transparency/documents-register/detail?lang=en&ref=C(2026)7861
+- Annex search/document record: https://ec.europa.eu/transparency/documents-register/api/files/C%282026%297861_1/de00000001090401
+
+### 28.2 상충하는 2차 자료 처리
+2026-11-11 기준으로 “아직 amendment가 채택되지 않았다”고 기술한 일부 2차 표준화 추적자료가 검색된다. 그러나 현재 조회 가능한 Commission의 공식 standardisation page는 2026-11-12 업데이트에서 2026-11-10 amendment 완료를 명시하고, Commission Register에는 C(2026)7861 final 문서가 존재한다. 이 충돌에서는 날짜가 더 늦고 권한 있는 공식 Commission 자료를 우선한다. 2차 추적자료의 이전 상태를 현재 법적 상태로 복사하지 않는다.
+
+### 28.3 기한의 적용 범위
+- +3개월 연장은 Commission request에 따른 ESO 표준/표준화 deliverable 납품 일정의 변경이다.
+- 이 날짜를 CRA 제조자의 Article 14 신고 의무, 2027-12-11 전면 적용일, 제품의 적합성 평가 기한과 혼동하지 않는다.
+- 개별 41개 항목별 이전/수정 기한은 C(2026)7861 Annex I master mapping에서 관리한다. 이 보고서 §26의 ETSI work programme 일정은 ESO 내부 단계/예정일이므로 Annex I의 공식 기한이나 OJ citation을 대체하지 않는다.
+- CEN/ETSI 표준이 발행·채택되더라도 CRA Article 27 추정 적합성은 해당 표준 참조가 OJ에 실제 게재되고 제품/요구사항 범위가 맞을 때만 주장한다.
+
+**판정:** COM(2026)780은 proposal; C(2026)7861은 2026-11-10 공식 Commission amendment. 법적 지위와 적용 대상을 구분해 추적한다.

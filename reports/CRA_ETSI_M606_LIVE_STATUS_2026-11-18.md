@@ -34,3 +34,51 @@
 - CEN/CENELEC의 수평 표준 및 산업용 OT 표준(prEN 50770 계열 등)은 ETSI 작업계획과 별도 추적해야 한다. ETSI의 18개 활성 item을 M/606 41개 전체로 오인하지 않는다.
 - OJ 참조가 실제 공표되기 전에는 CRA Article 27의 추정 적합성을 주장하지 않는다. Commission index와 EUR-Lex OJ를 매 업데이트 시 다시 확인한다.
 - 제품별 BOM/모델 증거가 없는 현재, drive-level classification은 Unknown 유지한다. 네트워크 포트 존재만으로 item 25 또는 EN 304 625 적용을 확정하지 않는다.
+
+---
+
+
+## 2026-11-20 최신상태 추가 감사 및 기존 기록 정정
+
+### 1. ETSI M/606 Work Programme 재조회
+- 2026-11-20에 조회한 ETSI Work Programme Version 2.3.3은 M/606 활성 work item 18개를 표시한다. 목록 화면은 10개만 표시하므로 전체 18개 개별 상세 레코드의 전수검토를 완료했다고 주장하지 않는다.
+- 기존 2026-11-18 표에서 EN 304 625의 2026-09-28 “7 VR – EC assessment before EV received”는 과거 상태다. 2026-11-20 개별 상세 레코드에는 현재 상태가 **Comments categorisation assessed (2026-11-05)**로 표시되며, 2026-11-19 비고에는 EC second assessment가 2026-09-28 및 2026-11-16 제출 코멘트 2개 묶음으로 수신됐다고 기록돼 있다.
+- EN 304 636 firewall/IDS/IPS: Comments categorisation assessed (2026-10-06), 다음 milestone은 2026-12-22 final deliverable endorsed for registration 목표.
+- EN 304 622 SIEM: Comments categorisation assessed (2026-11-06). Industrial OT domain은 scope에서 제외.
+- EN 304 621 NMS: industrial OT domain 제외.
+- EN 304 620 VPN: industrial OT domain 제외.
+- EN 304 627 router/modem/switch: industrial OT domain 제외.
+- EN 304 625 physical/virtual network interfaces는 Annex III Class I 제품 범주의 network-interface 제품을 위한 작업으로 기재돼 있다. EtherCAT/Ethernet/Modbus 포트만으로 드라이브 완제품을 이 범주로 자동 분류하지 않는다.
+- 관련 work item의 OJ 필드는 실제 OJ reference를 제공하지 않는다. Work Programme의 “Harmonised Standard: Yes” 메타데이터는 실제 OJ citation 또는 Article 27 presumption을 입증하지 않는다.
+
+### 2. CEN/CENELEC 수평 EN 2종 신규 발행 — 2026-11-19 발표
+- EN 40000-1-1:2026 (JT013095) 및 EN 40000-1-2:2026 (JT013089)는 모두 Published, DOR 2026-11-02, DAV 2026-11-18.
+- 두 개별 CEN 카탈로그 레코드는 “No citation expected for Directive 2024/2847”로 표시한다.
+- 따라서 두 표준은 CEN 발행 표준이지만, 이 레코드에 근거한 CRA Article 27 추정 적합성은 성립한다고 주장하지 않는다.
+- EN 40000-1-2는 제품 위험관리와 lifecycle activities를 포괄하는 수평 프레임워크다. EN 40000-1-1은 용어·정의 표준이다.
+
+### 3. 공식 출처
+- ETSI active M/606 work items (18): https://portal.etsi.org/webapp/WorkProgram/Frame_WorkItemList.asp?SearchPage=TRUE&butExpertSearch=Search&includeNonActiveTB=FALSE&includeSubProjectCode=FALSE&qCLUSTER_BOOLEAN=OR&qFREQUENCIES_BOOLEAN=OR&qINCLUDE_SUB_TB=True&qKEYWORD_BOOLEAN=OR&qMandate_List=%27M%2F606%27&qREPORT_TYPE=SUMMARY&qSORT=HIGHVERSION&qSTOP_FLG=N&titleType=all
+- EN 304 625 individual record: https://portal.etsi.org/webapp/WorkProgram/Report_WorkItem.asp?WKI_ID=74860
+- EN 304 636 individual record: https://portal.etsi.org/webapp/WorkProgram/Report_WorkItem.asp?WKI_ID=74859
+- EN 304 622 individual record: https://portal.etsi.org/webapp/WorkProgram/Report_WorkItem.asp?WKI_ID=74413
+- EN 304 621 individual record: https://portal.etsi.org/webapp/WorkProgram/Report_WorkItem.asp?WKI_ID=74412
+- EN 304 620 individual record: https://portal.etsi.org/webapp/WorkProgram/Report_WorkItem.asp?WKI_ID=74409
+- EN 304 627 individual record: https://portal.etsi.org/webapp/WorkProgram/Report_WorkItem.asp?WKI_ID=74416
+- CEN EN 40000-1-1: https://standards.cencenelec.eu/ords/f?p=CEN:110::::::FSP_PROJECT,FSP_ORG_ID:82349,2307986
+- CEN EN 40000-1-2: https://standards.cencenelec.eu/ords/f?p=CEN:110::::::FSP_PROJECT,FSP_ORG_ID:81335,2307986
+- CEN-CENELEC announcement 2026-11-19: https://www.cencenelec.eu/news-events/news/2026/en-in-the-spotlight/2026-11-19-cra-standards-en-40000-1-1-and-en-40000-1-2/
+
+### 4. 한계
+- ETSI 목록은 18개 중 10개 표시이며, 18개 모든 상세 레코드 전수감사는 미완료.
+- CEN/CENELEC prEN 50770-1~6 개별 레코드는 이번 addendum에서 전부 재조회하지 않았다. 기존 2026-11-18 snapshot과 별도 관리한다.
+- 표준 본문 유료 원문은 취득/검토하지 않았고, 카탈로그/작업계획/공지 정보만 검토했다.
+- Article 27 OJ index는 별도 재조회가 필요하다. 이 addendum의 OJ 상태는 확인한 ETSI/CEN 개별 레코드의 field 기준이다.
+
+### 5. EN 304 620 상태도 최신 레코드로 정정
+- 기존 2026-09-28 “7 VR – EC assessment before EV received”는 과거 상태다.
+- 2026-11-20 조회한 ETSI 개별 레코드: EN 304 620 v1.0.0, Comments categorisation assessed (2026-11-06).
+- 2026-11-19 remarks: EC second assessment received in two batches of comments, on 28 September 2026 and 22 October 2026.
+- Scope description: VPN product with industrial OT domain VPNs excluded.
+- Official Journal field는 비어 있다. Work Programme의 Harmonised Standard metadata만으로 CRA OJ citation/Article 27 presumption을 주장하지 않는다.
+- Record: https://portal.etsi.org/webapp/WorkProgram/Report_WorkItem.asp?WKI_ID=74409

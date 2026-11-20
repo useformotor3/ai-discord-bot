@@ -2219,3 +2219,44 @@
 - Squash merge SHA `8f19a8b9fcf8e4582a9470e5483ff08019d1711f`; main read-back identical. Pre/post safety refs retained.
 - Report v0.21 §42 and inventory 28 rows in main. New guidebook index entries are metadata-only; detailed attachments and bytes not acquired.
 - Product CRA scope/classification/Annex III-IV/RDPS Unknown; security tests Not Run.
+
+## 2026-11-20 — CRA 핵심 이행 최신정보 재검증 및 정확성 관리 강화
+
+### 수행
+- main SHA `07d6d3b1d8f91637da7b6a9a023b2f4ec64e7efd` 및 열린 PR 없음 확인.
+- 기존 CRA 통합 보고서가 2026-11-17 기준 v0.2였고 README 상단 재개 문구가 PR #173에 머물러 있음을 확인. 이는 최신성/관리 문서 불일치로 기록.
+- Commission reporting page (2026-09-11), implementation page (2026-07-27), Commission FAQ v1.4 (2026-09-04), ENISA SRP FAQ (2026-10-15), Glossary v1.6 (2026-10-21), AR User Manual v1.3 (2026-11-04) 공식 페이지/본문 재조회.
+- ENISA SRP 운영상 API 미제공, 영어 UI, Article 15 미구현, 장애 복구 후 SRP 제출, 72h 카운터 불일치 가능성, AEV final counter 미구현, Primary/Secondary AR 및 EU Login MFA, EUVD/CVE 후속을 보고서 §25 및 운영 기준서에 기록.
+- 보고서 v0.3 및 freshness register, AI_RULEBOOK §59 업데이트를 작업 브랜치에 반영.
+
+### 검증 한계
+- ENISA FAQ/Glossary는 HTML parsed text; raw bytes/SHA-256 미확보.
+- AR User Manual은 v1.3/2026-11-04 page metadata만 확인; PDF 원본 본문/bytes/hash 미검토.
+- ENISA SRP Status endpoint 열람 실패; live platform login/submit 테스트 미실시.
+- CI 성공은 법률적 100% 정확성이나 제품 적합성 판정을 뜻하지 않음.
+
+### 다음 단계
+- Commission/ENISA 공식 동적 페이지와 OJ/CEN/CLC/ETSI 상태를 주기적으로 재확인.
+- M/606 41개 actual standard mapping/OJ 상태 및 C(2026) 7861 Article 2 acceptance notice 조사 지속.
+- 제품별 CRA scope/classification/RDPS Unknown, security tests Not Run 유지.
+
+## 2026-11-20 — CRA 핵심 표준화 최신상태 확인
+- CEN-CENELEC 2026-11-19 공지 및 CEN 개별 레코드 직접 확인: EN 40000-1-1:2026 (JT013095), EN 40000-1-2:2026 (JT013089) Published, DAV 2026-11-18. 두 레코드 모두 CRA Directive 2024/2847에 대해 “No citation expected”; Article 27 presumption 근거로 사용하지 않음.
+- ETSI Work Programme Version 2.3.3은 M/606 active 18 items를 표시. 조회 목록은 10개만 노출하므로 18개 전수 상세 검토를 완료했다고 주장하지 않음.
+- EN 304 625 개별 레코드 최신 상태는 Comments categorisation assessed (2026-11-05); 2026-11-19 remark에 EC second assessment received in batches dated 2026-09-28 and 2026-11-16. 이전 2026-09-28 “7 VR” 상태는 outdated.
+- EN 304 620 VPN, EN 304 621 NMS, EN 304 622 SIEM, EN 304 627 router/modem/switch scope에 industrial OT domain exclusion 확인. CENELEC prEN 50770 OT work items와 별도 관리.
+- 제품 적용성 경계: drive port/feature만으로 Annex III Class I product category를 자동 분류하지 않음. OJ actual citation은 개별 record에서 미확인.
+- 신규 보고서 §26 및 ETSI/CEN 상태보고서 addendum 반영.
+- 한계: CEN prEN50770-1~6 20 Nov 재열람 미완료, ETSI 18개 중 미검토 8개, 표준 본문 미취득.
+
+## 2026-11-20 — ETSI EN 304 620 추가 최신상태 정정
+- 2026-11-20 ETSI direct record for EN 304 620 shows Comments categorisation assessed (2026-11-06), v1.0.0; 2026-11-19 remark says EC second assessment received for comment batches dated 2026-09-28 and 2026-10-22.
+- 기존 2026-09-28 “7 VR – EC assessment before EV received”는 현재 상태가 아니므로 보고서 §26 및 ETSI 상태 addendum에서 수정.
+- ETSI EN 304 620/621/622/627 scope에 industrial OT domain exclusion을 개별 record에서 확인; 각 OJ field는 비어 있음.
+
+## 2026-11-20 — EU 표준화 법체계 제안 및 M/606 개정 근거 확인
+- Commission CRA standardisation page last update 2026-11-12 states M/606 amended on 2026-11-10, extending all vertical and some horizontal ESO delivery deadlines by 3 months.
+- Commission Register C(2026)7861 final (Brussels 2026-11-10) and Annex source record checked. Conflicting 2026-11-11 secondary tracker statement was not adopted is superseded by later official Commission page/document evidence.
+- COM(2026)780 proposal (2026-10-06) to repeal/replace Regulation 1025/2012 recorded as proposal only, not current law.
+- Commission Harmonised Standards index accessed 2026-11-20; page explains OJ publication requirement and currently lists no CRA entry. Cross-check against OJ/Article 27 maintained.
+- Integrated report v0.5 §27–§28 and source freshness register updated.
