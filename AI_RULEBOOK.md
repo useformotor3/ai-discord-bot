@@ -498,3 +498,9 @@
 ## 17. Latest draft retrieval vs Work Item metadata
 - Prefer the latest public normative draft from ETSI DocBox over a stale Work Item scope description when checking a class label; record exact version/date/page and compare to the legally binding regulation.
 - A successfully opened latest draft can resolve a metadata mismatch. If a sibling PDF fetch times out, record the directory listing and timeout separately; do not claim its contents were checked.
+
+
+## 18. CSV edit integrity gate
+- For CSV changes, use a quote-aware full-file parser; do not reuse a full-file parser on a single line unless the return shape is explicitly handled.
+- Before saving, verify expected row count and uniform column count. After saving, read back, parse the entire CSV again, and verify critical rows/columns.
+- If a structural corruption occurs, restore from a known pre-edit commit and reapply the minimal change; never attempt to repair from a corrupted row alone.
