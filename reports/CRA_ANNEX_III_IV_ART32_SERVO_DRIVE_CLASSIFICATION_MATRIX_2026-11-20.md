@@ -137,7 +137,7 @@ Official legal source: https://eur-lex.europa.eu/eli/reg_impl/2025/2392/oj/eng
 
 - EN 304 636 V0.0.9 (2025-12-15) explicitly cites Annex III Class II point 2 in Introduction and Scope. The public draft is aligned with Regulation 2025/2392; the current Work Item page's Class I label appears stale.
 - EN 304 635 V0.0.8 (2025-11-10) has no Annex III/Class I/Class II label in the extracted draft text. No normative draft misclassification is established.
-- Latest Work Item versions (EN 304 635 v1.0.1 and EN 304 636 v1.0.0) have not been acquired; current-version draft status remains unverified.
+- Latest EN 304 636 v1.0.0 was acquired and inspected; latest EN 304 635 v1.0.1 is listed in DocBox but fetch timed out, so only its current draft content remains unverified.
 
 Draft sources:
 - https://docbox.etsi.org/CYBER/EUSR/Open/EN-304-635_V0.0.8_2025-11-10_Virtualisation_Containers.pdf
