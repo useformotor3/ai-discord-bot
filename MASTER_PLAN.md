@@ -1,3 +1,11 @@
+
+
+## 2026-11-20 — 제조사 펌웨어·업데이트 증거 수집 후속
+- 완료: 공식 소프트웨어/가이드북 목록에서 DFU Downloader 1.00.4, L7NH 특주 O/S, DriveCM 1.03.1 가이드, DriveCM 게인 튜닝 가이드, iX7NH 교육자료의 제목·게시일을 확인하고 기존 LS메카피온 보고서 §34와 원본 자료 인벤토리에 listing-only로 추가.
+- 미완료: 개별 상세 게시물 URL·첨부파일명·바이너리 bytes·SHA-256·전자서명·본문 검토.
+- 우선순위 P0: DFU 업데이트 대상 SKU와 통신경로, 이미지 서명/검증, 업데이트 인증·권한, downgrade/anti-rollback, 전원차단 복구, 펌웨어 버전·지원기간 및 취약점 패치 릴리스 노트를 제조사 1차 자료로 확인.
+- DriveCM 가이드에서 파라미터 쓰기권한·인증·진단로그·설정파일 처리 확인. 단, 설정 도구를 NMS/SIEM 또는 보안 통제로 확대 해석하지 않는다.
+- 모든 제품별 CRA scope/classification/Annex III·IV/RDPS는 실제 SKU 및 제품 경계 증거 전까지 Unknown; security tests Not Run.
 ## 2026-11-20 — PR #155 병합 및 상태 동기화
 
 - PR #155 merge SHA cd5976403f91c79beca845d8efd3f4e5f1930e23; pre/post safety refs retained; post ref identical to main.
