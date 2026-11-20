@@ -431,3 +431,16 @@
 - PR merge는 exact head SHA의 CI 성공, diff/review 상태 확인, pre-merge safety ref 및 expected-head merge를 조건으로 한다. 병합 후 post-merge safety ref와 main compare identical 여부를 확인한다.
 - CI 성공은 소스/테스트/추적성 검증이지 법률가 검토, 제품 적합성, 기능안전 인증 또는 현장 시험을 의미하지 않는다.
 - Commission Guidance PDF의 mirror fallback은 primary source byte identity가 확인되기 전까지 명시적으로 fallback으로 유지한다.
+
+
+## 59. 최신성·정확성·근거 provenance 통제 — 2026-11-20 추가
+
+- 모델 내부 지식, 대화 요약, 이전 세션의 기억은 최신 법령·표준·운영 상태의 증거로 사용하지 않는다. 각 중요 결론 전에 공식 원문을 현재 시점에 다시 조회한다.
+- 최신성은 source-by-source로 관리한다. 각 출처에 publication/update date, version, retrieval date/time (KST), exact URL, acquisition state (raw bytes/hash vs HTML parsed vs metadata only), locator, legal status, next recheck trigger를 기록한다.
+- 구속력 있는 법령은 EUR-Lex OJ 및 개정/정정 원문, Commission guidance는 비구속 해석, Commission FAQ는 그 자체의 disclaimer를 반영, ENISA는 플랫폼 운영자료, ESO/CEN/CLC/ETSI 카탈로그는 표준 개발 상태, OJ index는 Article 27 인용 여부의 증거로 각각 분리한다.
+- 검색 snippet·검색 결과 날짜·자료실 목록 메타데이터만으로 문서 본문 검토를 주장하지 않는다. HTML parsed text와 PDF raw bytes/page image review를 구분하고, 원문 취득 실패는 그대로 기록한다.
+- 핵심 법률 해석은 가능하면 (1) 법령 원문, (2) Commission guidance/FAQ, (3) ENISA/ESO 등 담당기관 운영·표준 자료의 상호 일치 여부를 점검한다. 2차 출처는 discovery/triage 용도로만 사용한다.
+- Dynamic Commission/ENISA reporting/FAQ/Glossary/Manual/Status 및 표준화/OJ 현황은 최소 주 1회, 또는 새 버전·공지 발생 시 즉시 재조회한다. 이는 프로젝트 내부 점검주기이며 법적 기한이 아니다.
+- 사실/해석/가설/미확인/권고를 구분하고, 반대 근거·예외·적용 범위·기준일을 함께 기록한다. 불일치가 있으면 강제로 하나로 합치지 않고 conflict/unknown으로 유지한다.
+- GitHub CI, pytest, traceability validator 성공은 코드·문서 구조 검증일 뿐 법적 정확성 100%, 최신성 100%, 제품 적합성 또는 인증을 의미하지 않는다.
+- 모든 자동화 산출물에는 원본 출처, 버전/날짜, 조회일, 파일 hash 또는 hash 미확보 사유, page/paragraph locator, 검토 상태를 연결한다. 미확인 데이터는 Unknown으로 fail-closed 처리한다.
