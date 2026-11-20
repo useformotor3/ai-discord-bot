@@ -1,6 +1,6 @@
 # CRA Servo Drive Compliance & Engineering Project
 
-> **최신 재개 상태 — 2026-11-20:** main `3aebf09e6786fa9ee451b027ed83756f37bd89b3` (PR #124 사후 동기화). CEN-CENELEC의 EN 40000-1-1/-1-2 발행 발표를 확인했으며 CRA Article 27 OJ 인용은 별도 게이트로 관리한다. M/606 41개 개별 표준의 OJ 전수감사는 미완료. LS메카피온 매뉴얼/DoC 원본 파일 미확보, 제품별 CRA 판정 Unknown / 보안시험 Not Run.
+> **최신 재개 상태 — 2026-11-20:** PR #125 병합(main `0a5f5140e323303d6a960ca73edd8ec8c05f55f2`), exact-head CI Run #1050 성공. EN 40000-1-1/-1-2 발행 확인, CRA OJ 상태는 직접 원문 대조 중이며 Article 27 추정 주장 없음. M/606 41개 전수감사 미완료. 제조사 원본 매뉴얼/DoC 미확보, 제품별 CRA 판정 Unknown / 보안시험 Not Run.
 
 산업용 서보 드라이브의 EU Cyber Resilience Act(CRA) 대응을 위한 조사·설계·검증·문서화 프로젝트입니다. 문서의 기본 언어는 한국어이며, 법령·표준·제조사 원문은 원어와 출처를 보존합니다.
 
