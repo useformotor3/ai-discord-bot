@@ -1,3 +1,12 @@
+## CRA 제품 분류 및 Article 32 경로 분석 — 2026-11-20
+
+- Article 2(1) scope, Article 7(1) core functionality, Implementing Regulation (EU) 2025/2392 Annex III/IV technical descriptions 및 Article 32(1)–(4) route matrix 작성.
+- P0 증거: exact SKU/HW rev/FW; separately marketed fieldbus/network interface board; interface driver/API/layer; MCU part numbers/security manuals; RTOS licensing/supply boundary; firewall/VPN/NMS/SIEM/router functions; Annex IV tamper/security box/secure element evidence.
+- Network interface category는 Fieldbus controllers/adapters를 포함하므로 별도 interface module의 product boundary를 중점 검토. 내장 포트만으로 완제품 드라이브를 Class I로 자동 분류하지 않는다.
+- Article 32 route는 최종 core-functionality 분류 및 actual OJ/HEN/CS/EUCC 상태 확인 후 확정한다.
+
+---
+
 ## CENELEC 중앙 레코드 추가 확인 — 2026-11-20
 
 - CENELEC project 81649는 direct readback 성공: parent prEN 50770-1, Committee stage, Citation expected, DOR/DAV 미기재. DKE Oct-2026의 -1-1/-1-2 split과 중앙 parent record가 불일치하므로 하위 ID/record synchronization 확인 필요.
