@@ -2004,3 +2004,12 @@
 - Provenance artifact #14597677644 (2,567 bytes; SHA-256 39c4c43327a6ecc2da82dd8adba0a2b99b4d7245e54ecfc410d56a017bacc9cd).
 - Pre-merge safety safety/pre-pr155-merge-2026-11-20; squash merge SHA cd5976403f91c79beca845d8efd3f4e5f1930e23; post-merge safety safety/post-merge-pr155-2026-11-20 생성 및 main과 identical 확인.
 - Main push CI는 독립 확인되지 않아 미확인으로 유지.
+
+
+## 2026-11-20 — 제조사 펌웨어·도구 자료 목록 추가 조사
+- 공식 LS메카피온 소프트웨어 목록에서 DFU Downloader_Ver1.00.4 (2026-09-16), L7NH 특주 O/S (2026-08-31) 게시 항목을 확인했다.
+- 공식 가이드북 목록에서 DriveCM V1.03.1 가이드 및 DriveCM 게인 튜닝 가이드(2026-09-08), iX7NH 교육자료(2026-09-14)를 확인했다.
+- 상세 게시물/첨부파일의 원본 bytes와 SHA-256은 확보하지 못했다. 목록 메타데이터만 인벤토리에 기록했으며, 파일 내용·서명·보안 업데이트 기능을 검증한 것으로 취급하지 않는다.
+- 보고서 §34에 CRA 업데이트 진위성·인증·권한·anti-rollback·복구·지원기간 검증 질문을 추가했다.
+- 공식 소프트웨어/가이드북 목록: https://lsmecapion.com/bbs/board.php?bo_table=software&sca= / https://lsmecapion.com/bbs/board.php?bo_table=guidebook
+- 다운로드 링크 열람 일부 실패. 후속 작업은 첨부파일 원본 확보와 SHA-256/서명/본문 검토를 우선한다.
