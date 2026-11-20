@@ -1414,3 +1414,41 @@ LS메카피온 공식 제품인증서 게시물은 다음 개별 모델을 명�
 - D1/D2/D3 축수, 480 Vac 입력, 15 kW 정격, BiSS-C 인코더의 제조사 정의를 모델 식별 필드로 보존한다.
 - DoC 원본 PDF 및 iX700M Ver1.4 매뉴얼을 확보한 뒤 서로 다른 SKU의 범위가 일치하는지 확인한다.
 - CRA 적용성·Annex 분류·RDPS는 여전히 Unknown, 보안시험은 Not Run.
+
+
+## 27. CRA 표준 실제 발행과 OJ 인용 상태 — 2026-11-20 추가 확인
+
+### 27.1 EN 40000-1-1 및 EN 40000-1-2의 발행 확인
+
+CEN-CENELEC의 2026-11-19 공식 발표는 다음 두 유럽표준의 발행을 명시한다.
+
+- **EN 40000-1-1** — Cybersecurity requirements for products with digital elements — Part 1-1: Vocabulary (용어·정의)
+- **EN 40000-1-2** — Cybersecurity requirements for products with digital elements — Part 1-2: Principles, product risk management, and lifecycle activities (사이버보안 원칙, 제품 위험관리, 생애주기 활동)
+
+유럽위원회 뉴스(2026-11-19)는 CRA 지원 첫 유럽표준이 2026-11-18 발행됐다고 설명하고, CEN-CENELEC 발표는 위 두 표준의 발행을 함께 알린다. 따라서 두 표준의 발행 사실은 확인하되, 표준별 표지상 개별 발행일은 별도 원문 확인 전까지 미확정으로 둔다.
+
+### 27.2 발행과 CRA Article 27 적합성 추정은 별도 게이트
+
+표준이 CEN/CENELEC에 의해 발행되었다는 사실만으로 CRA 조화표준이 되거나 Article 27 적합성 추정이 발생하지 않는다. CRA Article 27(1)은 해당 조화표준 참조가 EU 관보(OJ)에 게재된 범위에 대해 적합성 추정을 규정한다.
+
+| 대상 | 유럽표준 발행 | CRA OJ 참조 | Article 27 추정 |
+|---|---|---|---|
+| EN 40000-1-1 | CEN-CENELEC 발표로 확인 | 이번 검색에서 직접 확인되지 않음 | 주장하지 않음 |
+| EN 40000-1-2 | CEN-CENELEC 발표로 확인 | 이번 검색에서 직접 확인되지 않음 | 주장하지 않음 |
+| EN 304 625 | ETSI 2026-11-19 작업계획상 의견 분류 평가 단계 | 이번 검색에서 직접 확인되지 않음 | 주장하지 않음 |
+
+“이번 검색에서 직접 확인되지 않음”은 OJ 전체의 부재를 확정했다는 뜻이 아니다. 정확한 표준번호·판·발행기관·OJ 문서번호·게재일·제한사항을 EUR-Lex 및 OJ 원문으로 항목별 확인하기 전에는 “OJ 미게재 확정”으로 승격하지 않는다.
+
+### 27.3 M/606 41개 OJ 전수감사 수행 기준
+
+기존 41행 매핑 `reports/CRA_M606_ANNEX_I_SERVO_DRIVE_RELEVANCE_2026-11-17.csv`는 M/606 Annex I 항목, 제품 관련성 및 ESO 제출기한을 관리한다. 이것은 41개 개별 표준의 최신 개발단계 또는 OJ 게재 증거를 대신하지 않는다. 전수감사에서는 각 항목별로 (1) M/606 item, (2) 정확한 표준번호·제목·판, (3) 담당 ESO/TC, (4) 개발기관 최신 상태와 확인일, (5) 발행일, (6) EUR-Lex/OJ 인용 원문·CELEX/OJ 번호, (7) 인용 제한·철회·대체 여부, (8) CRA Annex I 요구사항 커버 범위를 분리해 기록한다.
+
+검색 결과는 “확인됨 / 미확인 / 검색 결과 없음(추가 검증 필요) / 해당 없음”으로 구분한다. 계획일, stable draft, public enquiry, 승인 또는 ESO 발행만으로 OJ 인용이나 Article 27 추정을 주장하지 않는다. EN 40000-1-1/-1-2 발행은 수평기반 자료로 우선 검토하되, LS메카피온 개별 모델의 적합성·제품분류를 증명하지 않는다.
+
+**공식 출처**
+- CEN-CENELEC, 2026-11-19: https://www.cencenelec.eu/news-events/news/2026/en-in-the-spotlight/2026-11-19-cra-standards-en-40000-1-1-and-en-40000-1-2/
+- European Commission CRA standardisation: https://digital-strategy.ec.europa.eu/en/policies/cra-standardisation
+- European Commission news, 2026-11-19: https://digital-strategy.ec.europa.eu/en/news/first-european-standard-published-support-cyber-resilience-act
+- Regulation (EU) 2024/2847, Article 27: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R2847
+
+**검증 한계:** 이번 업데이트는 두 EN 40000 표준의 발행 발표와 Article 27 OJ 게이트를 명확히 한 부분 업데이트다. M/606 41개 개별 표준의 개발단계·최종 발행·OJ 인용·제한사항 전수감사는 아직 완료되지 않았다.
