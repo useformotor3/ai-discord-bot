@@ -1,6 +1,6 @@
 # CRA Servo Drive Compliance & Engineering Project
 
-> **자동화 운영 점검 — 2026-11-20:** [실제 운영은 3시간 주기이며, 정각 지연을 줄이기 위해 UTC :17로 이동하고 no-op/모델 장애 결과를 별도 표시하도록 개선](reports/CRA_AUTOMATION_CADENCE_AND_OUTCOME_OBSERVABILITY_AUDIT_2026-11-20.md). 5분 주기 Gemini 실행은 설정하지 않음. 초기 PR #189 HEAD CI 182 passed / 0 failed. cron 변경 후 cadence 테스트의 구 설정값 고정 문제를 발견·수정했고 code HEAD Run #1271에서 182 passed / 0 failed; 이후 문서 동기화 후 최신 HEAD 재확인 대기, main 미병합.
+> **자동화 운영 점검 — 2026-11-20:** [실제 운영은 3시간 주기이며, 정각 지연을 줄이기 위해 UTC :17로 이동하고 no-op/모델 장애 결과를 별도 표시하도록 개선](reports/CRA_AUTOMATION_CADENCE_AND_OUTCOME_OBSERVABILITY_AUDIT_2026-11-20.md). 5분 주기 Gemini 실행은 설정하지 않음. 초기 PR #189 HEAD CI 182 passed / 0 failed. cron 변경 후 cadence 테스트의 구 설정값 고정 문제를 발견·수정했고 code HEAD Run #1271에서 182 passed / 0 failed; fallback fixture의 2개 실패를 수정했고 최신 HEAD Run #1285에서 183 passed / 0 failed; main 미병합.
 
 > **최근 병합 — 2026-11-20:** PR #184 merged to main as `9dbe6e92c358d0361f9640651152e4d1e8b1ec6b`. Exact-head CI Run #1238 succeeded (174 passed / 0 failed). M/606 18-item matrix, latest EN304635/636 Class II draft checks, CENELEC 50770 WIID crosswalk and AI session self-review protocol are in main. See PROJECT_STATUS_CURRENT.md and PR #184.
 
