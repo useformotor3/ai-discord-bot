@@ -889,6 +889,10 @@ C(2026) 7861 final 대체 Annex I 기준 41개 항목의 번호·주제·ESO 채
 
 ### 최신 CRA 진행 기준점 (2026-11-20)
 - PR #128 병합 완료: `6733f37201117cb5744215d9deb337b0810acc49` (41개 M/606 Annex I 항목 1차 출처 감사대장 추가).
-- PR exact-head Run #1060 성공. main push CI Run #1061은 사후 확인 중.
+- PR exact-head Run #1060 성공. main push CI Run #1061 성공. PR #129 병합 및 main push CI Run #1063도 성공.
 - 감사대장 `reports/CRA_M606_41_ITEM_PRIMARY_SOURCE_AUDIT_2026-11-20.csv` / `.md`; Annex I 항목번호·주제·ESO 채택기한 41/41 확인. 개별 표준 매핑 및 OJ 인용 전수감사와 동일한 작업은 아님.
 - 상황판 `PROJECT_STATUS_CURRENT.md`, 마스터 계획 `MASTER_PLAN.md`, 세션 로그 `SESSION_LOG.md`, append-only 이력 `PROJECT_LOG.jsonl` 참조.
+
+
+### 2026-11-20 M/606 Work Item 매핑 업데이트
+CEN/CENELEC 공식 M/606 Work Programme V1(2025-04-02)에서 item 1 → JT013089, items 2–14 → JT013091, item 15 → JT013090 연결을 확인했다. CEN 공식 2026-02-23 webinar는 JT013090을 prEN 40000-1-3 Vulnerability Handling과 연결한다. CEN 2026-11-19 발표는 FprEN 40000-1-3 공개가 임박했다고 설명하지만 세부 카탈로그 단계/OJ 필드는 직접 확인되지 않았다. Article 2의 1개월은 ESO가 개정 결정을 수령한 날부터 계산하므로 10 November를 자동으로 종료일로 간주하지 않는다. 자세한 범위와 미확인 사항은 통합 보고서 §30 및 감사대장을 참조.
