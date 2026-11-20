@@ -2539,3 +2539,26 @@
 - 최근 26회 schedule run은 job success이나 예정 슬롯 대비 평균 59분(중앙값 58분, 범위 49~71분) 지연. :17 offset은 위험 완화이지 정시 보장이 아님.
 - 첫 post-merge scheduled run 예상 슬롯 2026-11-20 15:17 UTC / 2026-11-21 00:17 KST. 실제 실행에서 Actions Summary가 quality-based fallback 및 NO_NEW_TOPIC을 올바르게 분류하는지 확인해야 함.
 - 5분 production Gemini run은 설정하지 않음. 필요 시 read-only heartbeat 별도 설계.
+
+
+## 2026-11-21 — EN 304 635 live status correction and Run #2526 post-merge verification
+
+### 수행 및 검증
+- Production schedule Run #2526 / ID 44825006768, head main 5be75068b7413e39bd1b2509d65e715d96907ae5, job success. 10 official sources 확보.
+- Gemini 3.8 Flash 503 후 Gemini 3.5 Flash Lite로 전환했으나, 대체 모델 응답에 CRA 공식 EUR-Lex 원문 링크가 없어 quality gate에서 거절. 조사 보류(DEFERRED), 보고서/원격 archive/Discord 변경 없음. operational guard no-op, checkpoint pruning success.
+- run start 2026-11-20 21:58:47 UTC; expected :17 UTC slot 대비 약 41m47s 지연. cadence 3시간, no five-minute production loop.
+- Summary step completed/success. Jobs API는 GITHUB_STEP_SUMMARY 본문을 반환하지 않으므로 원시 로그와 classifier logic로 DEFERRED 판정; 렌더링 summary text를 직접 read-back했다고 주장하지 않음.
+
+### CRA 원문 조사 — EN 304 635
+- ETSI live Work Programme query result 및 Work Item Monitoring은 DEN/CYBER-EUS-0016 / EN 304 635 V1.0.9, status EC assessment before WNV requested (2026-11-19), next EC assessment before WNV received (2026-11-28)로 표시.
+- 2026-11-20 remark: V1.0.9 새 draft 업로드, Draft Review after PE, Enquiry 및 EC HAS2 comments 해결을 포함한 CYBER-EUSR 승인 버전.
+- cached individual Work Item page는 V1.0.1 / 2026-09-17 상태를 유지. live query/Monitoring과 충돌하므로 stale cache issue로 기록.
+- 공식 free download area는 V1.0.1 (2026-06), 2,700,830 bytes만 노출. V1.0.9 full draft bytes/hash/page count는 미확보.
+- ETSI calendar의 GoSRSReq006-M/606 AMD 1 examination meeting은 2026-11-23 예정. 회의 전 단계이므로 minutes/decision을 추정하지 않는다.
+- 법적 class: EN 304 635 범주의 hypervisors/container runtime systems는 Regulation 2024/2847 Annex III Class II point 1 및 Implementing Regulation 2025/2392 Annex I에 따라 Class II. ETSI Work Item scope의 Class I 표현은 법령을 대체하지 않는다.
+
+### 다음 작업
+1. V1.0.9 공식 PDF/원문 확보 가능성 확인 후 bytes, SHA-256, page count, version metadata 보존.
+2. V1.0.1과 V1.0.9 차이점 및 Enquiry/EC HAS2 comment resolution 변경 분석.
+3. 11/23 M/606 AMD 1 회의 후 공식 minutes/decision, ESO 수령·수락·비수락 증거 추적.
+4. M/606 18개 Work Item live status와 41개 Annex I topic → EN/ETSI/OJ citation matrix 갱신.
