@@ -1,3 +1,21 @@
+## 최신 기준점 — PR #178 CRA 핵심 이행·표준화 업데이트 병합 (2026-11-20)
+
+- main SHA: `8abf70a68add7f0e7a38283da3dd3d78c160829c`; PR #178 merge; exact-head Run #1158 success, 174 passed / 0 failed.
+- Report v0.5 §§25–28: ENISA SRP operational update, CEN EN40000-1-1/-1-2 published but no CRA OJ citation, ETSI selected work item corrections, C(2026)7861 M/606 amendment, COM(2026)780 proposal.
+- Post-merge safety ref: `safety/post-merge-pr178-2026-11-20`.
+- CRA remains primary project. LS Mecapion iX7NH is a product case study only.
+
+### 다음 P0
+1. ETSI M/606 active work item 18개 중 미검토 8개 상세 개별 레코드 전수 확인.
+2. CEN/CENELEC prEN 50770-1~6 개별 카탈로그 최신상태, 산업 OT scope, stage, forecast 확인.
+3. C(2026)7861 Annex I의 41개 항목별 기존/개정 ESO 기한과 CEN/CENELEC/ETSI acceptance/non-acceptance notices 수령일을 전수 대조.
+4. OJ harmonised standards index/EUR-Lex를 재조회하고 Article 27 citation이 실제 추가되었는지 확인.
+5. CRA Annex III/IV core functionality, product category/class, Article 32 conformity routes의 법적 매핑을 공통 매트릭스로 완성.
+6. Commission/ENISA 동적 문서의 주간 freshness check 수행.
+7. 이후 LS메카피온 제조사 1차 원본/정확 SKU/FW 증거 확보를 사례연구로 진행.
+
+---
+
 ## CRA 전체 프로젝트 우선순위 갱신 — 2026-11-20
 
 ### 핵심 트랙
