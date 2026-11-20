@@ -873,3 +873,11 @@
 ## M/606 표준 개발 단계 및 OT/IACS 지원자료
 - 보고서 v0.9는 STAN4CR/CEN-CENELEC/ETSI 공동 M/606 진행보고서 V2.0(2026-06-03)의 개발 단계 스냅샷과 EN IEC 62443-4-1/-4-2/-3-3 산업용 OT 지원 deliverables를 검토한다.
 - 2026-06-03의 publication forecast는 과거 자료이며, 최신 M/606 제출기한은 C(2026) 7861 Annex I로 별도 관리한다. OT 지원 deliverables는 CRA 조화표준/OJ citation과 구분한다.
+
+
+### 최신 CRA 진행상태 (2026-11-20)
+PR #126 병합 완료(`9b61f1d9b177454c3530fa5339883e6434d01df3`), 정확한 PR head CI Run #1052 성공. EN 40000-1-1/-1-2 발행은 CEN-CENELEC 공식 공지로 확인했으나, OJ 인용 기대 여부에 대한 CEN 개별 카탈로그 필드 직접 검증은 미완료이며 2차 자료의 "No citation expected"는 잠정 정보로만 취급한다. M/606 41개 항목별 OJ 전수감사 및 모델별 CRA 판정은 계속 진행 중.
+
+
+### EN 40000 OJ citation 확인 (2026-11-20)
+CEN 공식 카탈로그에서 EN 40000-1-1:2026(JT013095) 및 EN 40000-1-2:2026(JT013089)의 citation 필드를 직접 확인했다. 두 항목 모두 “No citation expected for Directive 2024/2847”이며, CRA 제27조 적합성 추정 근거로 사용하지 않는다. 발행·가용일은 2026-11-18.

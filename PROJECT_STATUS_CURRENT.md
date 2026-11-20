@@ -764,3 +764,18 @@
 - 보고서 v0.9는 STAN4CR/CEN-CENELEC/ETSI 공동 M/606 진행보고서 V2.0(2026-06-03)의 개별 표준 개발 단계와 OT/IACS 지원 deliverables(EN IEC 62443-4-1/-4-2/-3-3)를 추가했다.
 - 2026-06-03 개발단계·publication forecast는 역사적 스냅샷이다. 현재 ESO 제출기한은 C(2026) 7861 Annex I 기준이며, 실제 2026-11-19 표준 상태·최종 발행·OJ citation은 미확인이다.
 - 제품별 CRA scope/classification/conformity Unknown, 보안시험 Not Run. 제조사 PDF/ESI/설치파일 원본 확보·해시·페이지 검토 미완료.
+
+
+## 2026-11-20 추가 진행 기록 (PR #126)
+- PR #126 병합 완료: `9b61f1d9b177454c3530fa5339883e6434d01df3`; 정확한 PR head `8bea10c55e2158a1c22c880c025a6ec9662cf857`, Actions Run #1052 성공.
+- 병합 전/후 복구 브랜치: `safety/pre-pr126-merge-sync-2026-11-20`, `safety/post-merge-pr126-2026-11-20`.
+- main read-back: 핵심 6개 문서 재조회 완료.
+- EN 40000-1-1/-1-2의 발행은 CEN-CENELEC 2026-11-19 공식 공지로 확인. OJ 참조 게시가 CRA 제27조 적합성 추정의 별도 전제임은 EC 공식 페이지 및 CRA 법령으로 확인.
+- CEN 개별 카탈로그의 "citation expected" 필드는 직접 열람하지 못함. "No citation expected"는 현재 2차 추적자료에 근거한 잠정 판단으로 유지.
+- M/606 41개 전수 표준별 OJ 감사는 계속 미완료. 제품별 CRA scope/classification/RDPS는 Unknown, security tests는 Not Run.
+
+
+## 2026-11-20 추가 1차 출처 검증 완료
+- CEN-CENELEC 공식 카탈로그 개별 레코드를 직접 열람했다. EN 40000-1-1:2026(JT013095) 및 EN 40000-1-2:2026(JT013089) 모두 Published, DOR 2026-11-02, DAV 2026-11-18이며 OJEU citation 필드는 **“No citation expected for Directive 2024/2847”**로 확인됐다.
+- 공식 레코드: https://standards.cencenelec.eu/ords/f?p=CEN:110::::::FSP_PROJECT,FSP_ORG_ID:82349,2307986 및 https://standards.cencenelec.eu/ords/f?p=CEN:110::::::FSP_PROJECT,FSP_ORG_ID:81335,2307986
+- 따라서 두 EN은 발행 사실과 별개로 CRA 제27조 적합성 추정의 근거로 취급하지 않는다. §28.2의 이전 “직접 확인 미완료” 상태는 이 검증으로 종료.

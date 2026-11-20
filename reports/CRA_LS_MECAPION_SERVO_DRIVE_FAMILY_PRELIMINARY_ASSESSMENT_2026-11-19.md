@@ -1471,3 +1471,42 @@ CRA 표준 상태를 추적하는 2차 자료인 CRA Evidence tracker(검색 확
 추가 출처:
 - CRA Evidence, “What Are CRA Harmonised Standards? Status and Tracker” (검색 결과 기준 2026-11-17 상태 설명): https://craevidence.com/cra-compliance/harmonised-standards-status
 - European Commission, Harmonised Standards portal (OJ 참조 목록의 공식 접근점): https://single-market-economy.ec.europa.eu/single-market/goods/european-standards/harmonised-standards_en
+
+
+## 28. 2026-11-20 업데이트: PR #126 병합 및 EN 40000 OJ 인용 게이트 재검토
+
+### 28.1 GitHub 상태 및 검증
+- PR #126(`docs(status): sync PR #125 merge and OJ evidence`)은 정확한 head SHA `8bea10c55e2158a1c22c880c025a6ec9662cf857`에서 실행된 Actions Run #1052가 성공한 뒤 squash 병합되었다.
+- 병합 커밋: `9b61f1d9b177454c3530fa5339883e6434d01df3`. 병합 직후 main을 재조회해 SHA를 확인했고, 상황판·README·세션 로그·프로젝트 로그·마스터 계획·본 보고서 6개 파일의 main 내용을 다시 읽었다.
+- 복구 기준: `safety/pre-pr126-merge-sync-2026-11-20`(병합 전 main) 및 `safety/post-merge-pr126-2026-11-20`(병합 후 main).
+- PR #126 변경은 문서 동기화이며 운영 코드·운영 workflow·secret·state/history 및 SIL 3 자료를 변경하지 않았다.
+
+### 28.2 EN 40000-1-1/-1-2: 공개·발행과 OJ 인용은 별도 판단
+- **1차 출처로 확인:** CEN-CENELEC는 2026-11-19 공지에서 EN 40000-1-1(용어) 및 EN 40000-1-2(사이버보안 원칙·제품 위험관리·수명주기 활동)의 발행을 발표했다. 두 문서는 M/606에 따른 수평 표준 작업의 일부다.
+- **법적 효과:** 유럽위원회는 조화표준의 참조가 OJEU(관보)에 게시되어야 한다고 설명한다. CRA 제27조의 적합성 추정은 단순한 EN 발행·승인만으로 자동 발생하지 않고, 관련 참조의 OJ 게시를 확인해야 한다.
+- **OJ/CEN catalogue 필드:** 현재 공개 검색에서 CEN 개별 프로젝트 레코드의 "citation expected" 필드를 직접 열어 검증하지 못했다. CRA Evidence 등 2차 추적자료는 CEN 데이터베이스가 두 표준 모두 "No citation expected for Directive 2024/2847"로 기록한다고 보고한다. 이 문구는 아직 **2차 출처 기반 잠정 상태**로만 유지한다.
+- **현재 결론:** EN 40000-1-1/-1-2의 발행은 공식 확인됐지만, 그 사실만으로 CRA 조화표준 또는 제27조 적합성 추정이 성립한다고 쓰지 않는다. CEN 개별 카탈로그의 citation 필드 직접 확인 및 OJ/EUR-Lex의 CRA 관련 참조 재검색이 남아 있다.
+- **서보드라이브 영향:** EN 40000-1-2는 수평적인 제품 사이버보안 원칙·위험관리·수명주기 활동 자료로서 설계 프로세스 참고에 유용하다. 그러나 모델별 적합성 판정, 특정 Annex I 요구 충족, 적합성 추정 또는 인증을 대신하지 않는다. EN 40000-1-1은 용어 표준이므로 직접적인 제품 보안 요구사항으로 취급하지 않는다.
+
+### 28.3 근거 및 다음 작업
+- CEN-CENELEC, 2026-11-19, “CRA Milestone Unlocked: First European standards supporting CRA are now available!” https://www.cencenelec.eu/news-events/news/2026/en-in-the-spotlight/2026-11-19-cra-standards-en-40000-1-1-and-en-40000-1-2/
+- European Commission, “Harmonised Standards” (OJEU 참조 게시 요건 및 최신 게시목록 접근점) https://single-market-economy.ec.europa.eu/single-market/goods/european-standards/harmonised-standards_en
+- EUR-Lex, Regulation (EU) 2024/2847 (CRA) https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R2847
+- 2차 출처(잠정): CRA Evidence, https://craevidence.com/cra-compliance/harmonised-standards-status (2026-11-17 기준으로 소개된 CEN catalogue 상태; 1차 레코드 직접 검증 전)
+- 다음 우선순위: (1) CEN search standards에서 JT013095 및 EN 40000-1-2의 개별 레코드 확인, (2) 41개 M/606 Annex I 항목을 각각 표준번호·ESO/TC·개발단계·최종 발행·OJ CELEX/OJ번호·제한/대체·근거 URL로 감사, (3) 누락·불확실 항목을 별도 상태로 유지.
+
+
+### 28.4 1차 출처 직접 검증 완료: CEN catalogue citation field
+2026-11-20에 CEN-CENELEC 공식 카탈로그의 두 프로젝트 레코드를 직접 열람했다. 이에 따라 §28.2의 “직접 열람하지 못했다”는 문장은 이 후속 검증으로 대체한다.
+
+| 표준 | CEN Work Item | CEN 상태 / 발행 | OJEU citation field | 기타 일정 |
+|---|---|---|---|---|
+| EN 40000-1-1:2026 | JT013095 | Published; DAV 2026-11-18; DOR 2026-11-02 | **No citation expected for Directive 2024/2847** | DOA 2027-02-28; DOP/DOW 2027-05-31 |
+| EN 40000-1-2:2026 | JT013089 | Published; DAV 2026-11-18; DOR 2026-11-02 | **No citation expected for Directive 2024/2847** | DOA 2027-02-28; DOP/DOW 2027-05-31 |
+
+- 1차 출처: CEN 공식 레코드 EN 40000-1-1:2026 / JT013095: https://standards.cencenelec.eu/ords/f?p=CEN:110::::::FSP_PROJECT,FSP_ORG_ID:82349,2307986
+- 1차 출처: CEN 공식 레코드 EN 40000-1-2:2026 / JT013089: https://standards.cencenelec.eu/ords/f?p=CEN:110::::::FSP_PROJECT,FSP_ORG_ID:81335,2307986
+- CEN-CENELEC 공식 발표는 두 표준의 발행일·범위·수평 기반 성격을 확인한다: https://www.cencenelec.eu/news-events/news/2026/en-in-the-spotlight/2026-11-19-cra-standards-en-40000-1-1-and-en-40000-1-2/
+- 유럽위원회는 조화표준 참조의 OJEU 게시가 필요하다고 명시한다: https://single-market-economy.ec.europa.eu/single-market/goods/european-standards/harmonised-standards_en
+
+**해석:** 두 표준은 M/606 및 CRA Regulation (EU) 2024/2847와 연계된 CEN EN으로 발행됐으나, CEN 자체의 OJEU 필드가 “No citation expected”이므로 CRA 제27조의 적합성 추정을 발생시키는 조화표준으로 주장하지 않는다. EN 40000-1-2의 제품위험관리·수명주기 활동은 제조사의 내부 설계·개발 프로세스에 참고할 수 있지만, CRA Annex I의 직접 요구사항, 제품별 적합성평가 또는 인증을 대체하지 않는다. EN 40000-1-1은 용어집이며 독립적인 제품 보안 통제 요구사항으로 오해하지 않는다.

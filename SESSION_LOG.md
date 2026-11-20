@@ -1777,3 +1777,7 @@
 - CEN-CENELEC 발표에서 EN 40000-1-1/-1-2 발행 확인. 추가 2차 추적 사이트는 CEN catalogue가 두 표준의 OJ citation을 기대하지 않는다고 표시한다고 보고한다. 이번 세션에서는 CEN catalogue 개별 레코드를 직접 열람하지 못했으므로, 잠정 2차 자료로만 관리하고 최종 OJ 판정은 CEN catalogue 및 EUR-Lex/OJ 직접 확인이 필요하다.
 - 상황판, README, SESSION_LOG, PROJECT_LOG.jsonl을 PR #125 및 현재 main SHA 기준으로 동기화한다.
 - M/606 41개 전수감사는 미완료. 제품별 scope/classification/RDPS Unknown, security tests Not Run 유지. main push CI는 별도 확인되지 않았다.
+
+- 2026-11-20: PR #126 merged; exact-head Actions Run #1052 success; main SHA 9b61f1d9b177454c3530fa5339883e6434d01df3. Post-merge main read-back and safety refs completed. Official CEN-CENELEC publication of EN 40000-1-1/-1-2 confirmed; CEN individual catalogue citation field remains unverified; secondary tracker indication remains provisional. M/606 41-item OJ audit still open.
+
+- 후속 1차 출처 검증: CEN 공식 카탈로그 개별 레코드 두 건에서 EN 40000-1-1(JT013095), EN 40000-1-2(JT013089) 모두 Published, DAV 2026-11-18, OJEU citation field “No citation expected for Directive 2024/2847” 직접 확인. 기존 잠정/미확인 표기는 종료하고 보고서 §28.4에 1차 근거 반영.
