@@ -1,6 +1,6 @@
 # CRA Servo Drive Compliance & Engineering Project
 
-> **최신 재개 상태 — 2026-11-20:** PR #132~#143 병합 완료. 보고서 §31~§33, 6개 OT/IACS profile matrix, 제조사 자료 인벤토리, 14행 모델별 인터페이스 매트릭스 main 반영. PR #143 exact-head CI Run #1090 성공(174 passed / 0 failed). 제조사 원본 파일 확보 및 SKU별 상세 검증 진행 중.
+> **최신 재개 상태 — 2026-11-20:** PR #132~#144 병합 완료. 보고서 §31~§33, 6개 OT/IACS profile matrix, 제조사 자료 인벤토리, 14행 모델별 인터페이스 매트릭스 main 반영. PR #144 exact-head CI Run #1092 성공(174 passed / 0 failed). 제조사 원본 파일 확보 및 SKU별 상세 검증 진행 중.
 
 산업용 서보 드라이브의 EU Cyber Resilience Act(CRA) 대응을 위한 조사·설계·검증·문서화 프로젝트입니다. 문서의 기본 언어는 한국어이며, 법령·표준·제조사 원문은 원어와 출처를 보존합니다.
 
@@ -976,3 +976,9 @@ CLC/TC 65X의 M/606 20b/21b/22b/25b/27b/36b를 prEN 50770-4/-2/-6/-3/-5/-1에 �
 - Merge SHA `f1157fb1b5581f55b1f192c15b1822386ce3ed1e`; exact-head Run #1090 success, 174 passed / 0 failed.
 - PDF artifact #14596188740, provenance artifact #14595554868; official canaries and provenance upload passed.
 - Pre/post safety refs: `safety/pre-pr143-merge-2026-11-20`, `safety/post-merge-pr143-2026-11-20`; post ref identical to main.
+
+
+### PR #144 검증 및 병합 상태 (2026-11-20)
+- Merge SHA `c616169b4300521459cc3ae78d631fcd739103fb`; exact-head Run #1092 success, 174 passed / 0 failed.
+- PDF artifact #14597230119, provenance artifact #14596691436; official canaries and provenance upload passed.
+- Pre/post safety refs: `safety/pre-pr144-merge-2026-11-20`, `safety/post-merge-pr144-2026-11-20`; post ref identical to main.
