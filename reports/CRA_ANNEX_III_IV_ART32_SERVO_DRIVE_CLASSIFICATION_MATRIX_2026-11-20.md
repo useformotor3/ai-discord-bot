@@ -142,3 +142,10 @@ Official legal source: https://eur-lex.europa.eu/eli/reg_impl/2025/2392/oj/eng
 Draft sources:
 - https://docbox.etsi.org/CYBER/EUSR/Open/EN-304-635_V0.0.8_2025-11-10_Virtualisation_Containers.pdf
 - https://docbox.etsi.org/cyber/CYBER/Open/EN-304-636_V0.0.9_2025-12-15_Firewalls_Mature-draft.pdf
+
+
+### 9.2 Latest EN 304 636 V1.0.0 confirms Class II
+
+The latest public EN 304 636 V1.0.0 (2026-07-09) PDF was opened from ETSI DocBox. Page 9 Introduction explicitly identifies firewalls, IDS and IPS as Annex III Class II point 2. This is direct evidence that the latest public draft aligns with the legal class; the current Work Item page's Class I label is stale/incorrect metadata.
+
+The latest EN 304 635 V1.0.1 file is present in the DocBox directory (2026-06-24) but fetching timed out. Its current draft content remains unverified; earlier V0.0.8 contains no class label in extracted text.
