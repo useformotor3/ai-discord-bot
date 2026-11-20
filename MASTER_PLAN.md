@@ -1,3 +1,18 @@
+## 최신 재개 상태 — PR #170 연구 병합 및 PR #171 상태 동기화 완료 (2026-11-20)
+
+- 연구 변경 main 병합: PR #170 squash SHA `cad75135996c129bc576d83ce5b7ed968ca6a63b`; iX7NH Ver1.1 원문 감사 보고서 v0.18 §39 및 제조사 인벤토리 26행 반영.
+- PR #170 exact head `8af0834e56c8ec8cd4c13d900a5fe77c0b788424`; Actions Run #1142 / ID `44701241693` success, **174 passed / 0 failed**.
+- PR #171 상태 동기화 병합 SHA `a8db31bd2c7a1e0127ef226a432183633e66eb76`; exact head `19d296c154115d47ef3b30be25c8700b53fa745f`; Run #1144 / ID `44701518420` success, **174 passed / 0 failed**.
+- PR #171 CI: source blob integrity, compileall, CRA traceability, full pytest, official CRA PDF/HTML canaries, provenance upload 통과.
+- PR #171 provenance artifact #14613405592, 2,567 bytes, SHA-256 `f14e2ad608899ec53d999aa0dda87178fbf87494bdee4de9a7fb9f7477b74d27`.
+- Traceability: claims 13, interfaces 15, requirements 35, SEC 36, EVD-SEC 16, product evidence 15, bidirectional true, M/606 41, JSONL 263 events (258 modern IDs + 5 legacy records).
+- PR #170 pre-main ref `safety/pre-main-pr170-merge-2026-11-20`; post ref `safety/post-merge-pr170-2026-11-20`; PR #171 post ref `safety/post-merge-pr171-2026-11-20`; 각 post ref와 해당 main merge 시점 동일성 확인.
+- 최신 Ver1.7/현행 펌웨어 보안 상태 및 제품별 CRA scope/classification/Annex III·IV/RDPS Unknown, security tests Not Run.
+- main `protected=false` 리스크 유지. 서버 측 branch protection/ruleset은 저장소 관리자 설정 필요.
+- 운영 코드, workflow, secrets, state/history 및 기존 SIL 3 보존 산출물 미변경.
+
+---
+
 ## 최신 재개 상태 — PR #170 병합 및 iX7NH Ver1.1 보안면 원문 감사 완료 (2026-11-20)
 
 - 현재 main SHA: `cad75135996c129bc576d83ce5b7ed968ca6a63b`; PR #170 squash 병합 완료.
