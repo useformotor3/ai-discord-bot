@@ -2219,3 +2219,23 @@
 - Squash merge SHA `8f19a8b9fcf8e4582a9470e5483ff08019d1711f`; main read-back identical. Pre/post safety refs retained.
 - Report v0.21 §42 and inventory 28 rows in main. New guidebook index entries are metadata-only; detailed attachments and bytes not acquired.
 - Product CRA scope/classification/Annex III-IV/RDPS Unknown; security tests Not Run.
+
+## 2026-11-20 — CRA 핵심 이행 최신정보 재검증 및 정확성 관리 강화
+
+### 수행
+- main SHA `07d6d3b1d8f91637da7b6a9a023b2f4ec64e7efd` 및 열린 PR 없음 확인.
+- 기존 CRA 통합 보고서가 2026-11-17 기준 v0.2였고 README 상단 재개 문구가 PR #173에 머물러 있음을 확인. 이는 최신성/관리 문서 불일치로 기록.
+- Commission reporting page (2026-09-11), implementation page (2026-07-27), Commission FAQ v1.4 (2026-09-04), ENISA SRP FAQ (2026-10-15), Glossary v1.6 (2026-10-21), AR User Manual v1.3 (2026-11-04) 공식 페이지/본문 재조회.
+- ENISA SRP 운영상 API 미제공, 영어 UI, Article 15 미구현, 장애 복구 후 SRP 제출, 72h 카운터 불일치 가능성, AEV final counter 미구현, Primary/Secondary AR 및 EU Login MFA, EUVD/CVE 후속을 보고서 §25 및 운영 기준서에 기록.
+- 보고서 v0.3 및 freshness register, AI_RULEBOOK §59 업데이트를 작업 브랜치에 반영.
+
+### 검증 한계
+- ENISA FAQ/Glossary는 HTML parsed text; raw bytes/SHA-256 미확보.
+- AR User Manual은 v1.3/2026-11-04 page metadata만 확인; PDF 원본 본문/bytes/hash 미검토.
+- ENISA SRP Status endpoint 열람 실패; live platform login/submit 테스트 미실시.
+- CI 성공은 법률적 100% 정확성이나 제품 적합성 판정을 뜻하지 않음.
+
+### 다음 단계
+- Commission/ENISA 공식 동적 페이지와 OJ/CEN/CLC/ETSI 상태를 주기적으로 재확인.
+- M/606 41개 actual standard mapping/OJ 상태 및 C(2026) 7861 Article 2 acceptance notice 조사 지속.
+- 제품별 CRA scope/classification/RDPS Unknown, security tests Not Run 유지.
