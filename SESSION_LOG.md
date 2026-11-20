@@ -2165,3 +2165,14 @@
 - 보고서 v0.19 §40, 제조사 인벤토리 MANUAL-IX7NH-V1.7 및 GUIDE-IX7NH-MODBUS-TCP-API 레코드 업데이트.
 - Ver1.1 기능을 Ver1.7에 전이하지 않으며 제품 CRA scope/classification/Annex III-IV/RDPS Unknown, security tests Not Run 유지.
 - 다음 P0는 제조사 고객지원으로부터 원본/대체 다운로드 URL 확보 후 해시·개정·본문 비교.
+
+
+## 2026-11-20 — iX7NH Modbus TCP 2026 보충 가이드 2차 자료 검토
+
+- AutomationDirect `iX7NH Modbus TCP Communication Guide`, 1st Ed Rev B, 2026-05-05, 14 pages parsed text reviewed.
+- 문서가 LS Electric User Manual을 대체하지 않는 보충 자료임을 명시하므로 제조사 1차 자료와 분리.
+- Node 99는 Modbus TCP + built-in webserver, Node 98은 firmware >=1.15에서 Modbus TCP without webserver로 기술.
+- 가이드는 내장 Modbus TCP communication timeout이 없다고 기술하며 PLC 측 상태 감시/통신 상실 시 SV_ON 제거를 권고. 500ms는 예시값이지 안전 반응시간이 아님.
+- RW 제어 코일, Control Word 0x6040/Modbus 0x6001, Target Position 0x607A/0x6025, Procedure Command 0x2700/0x2701 및 JOG/Software Reset 등의 제어면을 확인.
+- 제조사 Ver1.7/API 원본 다운로드는 TimeoutError로 미확보. 2차 가이드 내용의 현행 펌웨어/SKU 적용성은 미검증.
+- 보고서 v0.20 §40–§41, 인벤토리 2차 자료 별도 행 추가. 실기기/네트워크/쓰기 시험 미수행.
