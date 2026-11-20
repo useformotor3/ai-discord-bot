@@ -1,3 +1,13 @@
+## 최신 법률 분석 — Annex III/IV 및 Article 32 서보 드라이브 분류 기준 (2026-11-20)
+
+- Article 2(1) data connection scope, Article 7(1) core functionality/component integration, Reg. (EU) 2025/2392 category technical descriptions, Article 32 conformity routes를 공식 EUR-Lex 원문으로 분석.
+- Fieldbus/network-interface controller/adapter는 Annex III Class I category 10 기술 설명에 포함된다. 내장 포트만으로 완제품 드라이브를 자동 Class I로 분류하지 않지만, 별도 판매 interface module은 별도 제품 경계로 검토한다.
+- Security-function MCU, RTOS, NMS/VPN/SIEM, router/switch, firewall/IDS/IPS, Annex IV security box/secure element는 각 기술 설명과 완제품 core function을 구분한다.
+- Article 32: 일반제품 32(1), Class I 32(2), Class II 32(3), critical Annex IV 32(4)/Article 8(1) 조건부 경로를 matrix로 정리.
+- 정확한 SKU/BOM/FW/별도 판매 interface board/MCU 증거 미확보로 제품별 Annex III/IV 및 Module route는 Unknown 유지.
+
+---
+
 ## 추가 재개 메모 — CENELEC project 81649 직접 확인 (2026-11-20)
 
 - CENELEC 중앙 record 81649 direct readback: prEN 50770-1 단일 부모 project, combined firewall + IDS/IPS scope, Committee stage, Citation expected, DOR/DAV 미기재. DKE Oct-2026의 -1-1/-1-2 분할과 central record가 다르므로 naming/record synchronization discrepancy 유지.
