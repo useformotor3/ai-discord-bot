@@ -1,3 +1,13 @@
+## 2026-11-20 — PR #161 병합 및 iX7NH 업데이트 보안 P0 조사
+- PR #161 merge SHA `3e633d1b1b8312f5cb6665b44ee8a6fac43ee694`; exact head `66ed22f9ab16576b607fb70c898f71f82f860ea1`; Run #1126 success, **174 passed / 0 failed**.
+- Source integrity, compileall, CRA traceability, official CRA PDF/10-source HTML canaries, provenance upload 통과. Artifact #14608053214 SHA-256 `758aded424447f0d6fb74729a699ac9f856fa403d128a1db04883d9afb48ff42`.
+- Pre/post safety refs 생성 및 post ref == main 확인.
+- P0: iX7NH 현행 Ver1.7 매뉴얼 본문 확보. 구판 Ver1.1에는 USB OTG/FoE/DriveCM/웹서버 4개 업데이트 경로, FoE password '00000000', 웹서버 ID/PASSWORD 기본값이 기재되어 있어 현행 펌웨어·SKU에서 유지되는지 제조사 확인.
+- P0: FoE/Webserver 인증정보의 기기별 고유성/변경강제/전송 보호, HTTPS/TLS, 권한·로그·잠금·노출 경계, 펌웨어 서명/무결성/anti-rollback/복구 검증.
+- Ver1.7 공식 첨부는 파일명·19.5MB·2026-06-05 첨부일 메타데이터만 확인. 다운로드는 '잘못된 접근'으로 실패. 구판 Ver1.1 내용을 현행 버전 사실로 일반화하지 않는다.
+
+---
+
 ## 2026-11-20 — PR #160 병합 후 기준점 및 다음 작업
 - PR #160 merge SHA `8bc9762efbd20ca9c7aaaddc3832745d4e6dc53e`; exact head `4f56e9b24354d25f03363127e8167a46049c5ded`; Run #1124 success, **174 passed / 0 failed**.
 - Source integrity, compileall, CRA traceability, official CRA PDF/10-source HTML canaries, provenance upload 통과. Provenance artifact #14606367087, SHA-256 `57dba2ea061de40faec834b3794e102e414fa2f0e13a8fd72a0af2ede1447a80`.
