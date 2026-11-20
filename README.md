@@ -1,6 +1,6 @@
 # CRA Servo Drive Compliance & Engineering Project
 
-> **최신 재개 상태 — 2026-11-20:** PR #132~#155 병합 완료. 보고서 §31~§33, 6개 OT/IACS profile matrix, 제조사 자료 인벤토리, 14행 모델별 인터페이스 매트릭스 main 반영. PR #155 exact-head CI Run #1114 성공(174 passed / 0 failed). 제조사 원본 파일 확보 및 SKU별 상세 검증 진행 중.
+> **최신 재개 상태 — 2026-11-20:** PR #132~#156 병합 완료. 보고서 §31~§34, 6개 OT/IACS profile matrix, 제조사 자료 인벤토리(펌웨어·도구 목록 신규 5건 포함), 14행 모델별 인터페이스 매트릭스 main 반영. PR #156 exact-head CI Run #1116 성공(174 passed / 0 failed). 신규 항목은 목록 메타데이터만 확인했으며 제조사 원본 확보·SKU별 상세 검증 진행 중.
 
 산업용 서보 드라이브의 EU Cyber Resilience Act(CRA) 대응을 위한 조사·설계·검증·문서화 프로젝트입니다. 문서의 기본 언어는 한국어이며, 법령·표준·제조사 원문은 원어와 출처를 보존합니다.
 
@@ -1048,3 +1048,9 @@ CLC/TC 65X의 M/606 20b/21b/22b/25b/27b/36b를 prEN 50770-4/-2/-6/-3/-5/-1에 �
 - Merge SHA `cd5976403f91c79beca845d8efd3f4e5f1930e23`; exact-head Run #1114 success, 174 passed / 0 failed.
 - Provenance artifact #14597677644; official PDF/HTML canaries passed. PDF source artifact upload was skipped because content was unchanged.
 - Pre/post safety refs: `safety/pre-pr155-merge-2026-11-20`, `safety/post-merge-pr155-2026-11-20`; post ref identical to main.
+
+
+### 2026-11-20 — 제조사 펌웨어·업데이트 자료 목록 스크리닝
+- 공식 소프트웨어/가이드북 목록에서 DFU Downloader 1.00.4, L7NH 특주 O/S, DriveCM 1.03.1/게인 튜닝 가이드, iX7NH 교육자료 5건을 추가 식별.
+- 상세 첨부 원본·SHA-256·본문은 미확보. 목록 메타데이터만 확인했으며 secure update·서명·anti-rollback을 입증하지 않는다.
+- 보고서 §34 및 제조사 원본 인벤토리 참조.
