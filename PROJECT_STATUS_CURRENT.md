@@ -1413,3 +1413,11 @@
 - main push CI Run #1065 (`44658780153`) success. Compile, full pytest, CRA traceability, official CRA source canaries and provenance upload all passed.
 - main `PROJECT_LOG.jsonl` 221 records, 221 valid JSON; 41-item audit CSV has 41 data rows.
 - 다음 조사: CEN M/606 Work Programme의 OT/IACS 관련 work items 20b,21b,22b,25b,27b,36b와 서보드라이브 기능 경계 비교. 제품기능 증거 없이 해당 vertical scope에 포함된다고 결론 내리지 않는다.
+
+## 최신 main 기준점 — PR #174 병합 및 사후 검증 (2026-11-20)
+- PR #174 `docs(status): record PR173 merge, CI and evidence boundaries` 병합 완료. exact head `779474728cb39501991dff7846b52a5bbae83ec4`, squash merge SHA `090c78bfa0edc759641a8dd30f9156038fa86a82`.
+- PR #174 exact-head Actions Run #1150 / ID `44703086698`: success. 전체 pytest 174 passed / 0 failed, compile, source integrity, CRA traceability, 공식 HTML source canary 및 provenance manifest 생성/업로드 성공.
+- 공식 CRA PDF canary의 별도 증거 업로드 단계는 skipped. HTML canary에서 allowlisted official sources 10건을 읽고 주요 Article 13(8), 2025/2392 Annex I(10)/Annex II(1) locator 확인. PDF 파일 원본 확보로 간주하지 않음.
+- Provenance artifact #14613952433, 2,567 bytes, SHA-256 `84a6cab72e1403f205d03151a9259a8ac101244d95fafdd3e87b5c5fca05b718`.
+- main read-back/compare 결과 main == merge SHA. 복구 기준점 `safety/pre-pr174-merge-2026-11-20` 및 `safety/post-merge-pr174-2026-11-20`; post ref는 merge SHA 기준.
+- 제품별 CRA scope/classification/Annex III·IV/RDPS Unknown, 보안시험 Not Run. iX7NH Ver1.7/API 공식 첨부 원본 bytes/SHA-256 미확보; AutomationDirect 가이드는 2차 자료로만 사용.
