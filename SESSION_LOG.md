@@ -2480,3 +2480,9 @@
 - PR exact-head CI → diff/safety 검토 → 다음 production schedule에서 summary가 실제 결과를 정확히 분류하는지 확인.
 - workflow 변경은 summary/로그 수집만 추가하며 cron, secrets, Gemini/Discord 실행 빈도, checkpoint 및 operational guard를 바꾸지 않음.
 
+
+### 후속 CI 결과 — PR #189
+- Exact-head Run #1247 / ID `44741088582` success; pytest **182 passed / 0 failed**.
+- Source blob identity, compileall, CRA cross-matrix traceability, official CRA PDF/HTML canaries, provenance manifest upload 성공.
+- PDF source artifact upload은 unchanged 조건으로 skipped. 실제 production workflow dispatch/Gemini/Discord 호출은 하지 않음.
+- CI는 테스트 브랜치에서 summary classifier를 검증한 결과이며 main 배포 또는 다음 production run에서의 실제 summary 검증은 아직 아님.
