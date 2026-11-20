@@ -493,3 +493,8 @@
 - A public interim draft from an earlier version may help distinguish Work Item metadata from normative text, but it does not establish the content of the current latest version.
 - Record exact draft version/date and distinguish: Work Item page scope text, earlier public draft, latest current draft, approved/published EN.
 - If an older draft is legally correct but current page metadata is wrong, record “metadata discrepancy; older draft aligned; latest draft unverified” rather than claiming the standard itself is wrong.
+
+
+## 17. Latest draft retrieval vs Work Item metadata
+- Prefer the latest public normative draft from ETSI DocBox over a stale Work Item scope description when checking a class label; record exact version/date/page and compare to the legally binding regulation.
+- A successfully opened latest draft can resolve a metadata mismatch. If a sibling PDF fetch times out, record the directory listing and timeout separately; do not claim its contents were checked.
