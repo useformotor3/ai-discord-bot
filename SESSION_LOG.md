@@ -2335,3 +2335,13 @@
 - Security MCU, RTOS, NMS/VPN/SIEM, router/switch, firewall/IDS/IPS, Annex IV security box/secure element에 대한 product boundary 및 evidence checklist 작성.
 - Article 13(5)/(6) third-party component due diligence 및 component vulnerability handling 연결.
 - 제품별 Annex III/IV classification 및 conformity route는 exact SKU/BOM/FW/market configuration evidence 부족으로 Unknown 유지.
+
+
+## 2026-11-20 — PR #182 병합 및 CRA 제품분류 분석 사후 검증
+
+- PR #182 squash merge SHA 904b2ed0897331ced9dedfcbd25afd608f92f951; exact-head Run #1177 success; 174 passed / 0 failed.
+- Source blob integrity, compile, CRA traceability, full pytest, official HTML source canary, provenance manifest upload passed. Traceability counts: 13 claims, 15 interfaces, 35 requirements, 36 SEC, 16 EVD-SEC, 41 M/606 mappings, 279 project log events; bidirectional links true.
+- CRA Guidance PDF canary returned empty body; skipped explicitly. Main push CI was not separately verified through the available connector.
+- PR #182 merged the ETSI 8-item audit, OT 7-deliverable reconciliation, C(2026)7861 Article2/Annex I deadline condition, and Annex III/IV + Article32 legal product-boundary matrix.
+- Product-level Annex III/IV classification and Article32 route remain Unknown pending exact SKU/BOM/FW/marketed component evidence; security tests Not Run.
+- Pre/post safety refs: safety/pre-merge-pr182-cra-standardization-classification-2026-11-20; safety/post-merge-pr182-cra-standardization-classification-2026-11-20.
