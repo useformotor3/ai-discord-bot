@@ -1842,3 +1842,10 @@
 - Pre-merge safety ref safety/pre-pr132-merge-2026-11-20; squash merge SHA f3a8fc06b2a0c5fdaa98d98ad8bc0f21abee22df; post-merge safety ref safety/post-merge-pr132-2026-11-20 생성 및 main과 identical 확인.
 - main push CI는 연결된 도구 조회로 독립 확인하지 못했으므로 성공으로 기록하지 않는다.
 - 보고서 §31 및 6-row matrix, 41-item audit CSV, PROJECT_STATUS_CURRENT, MASTER_PLAN, README, SESSION_LOG, PROJECT_LOG 동기화 완료.
+
+## 2026-11-20 — PR #133 병합 및 사후 검증
+- PR #133 exact head 466b3d93db6119c3a73c8cef6bc2e55cf698294d; Actions Run #1070 / ID 44660790965 success, 174 passed / 0 failed.
+- Compile, traceability, full pytest, official CRA PDF/HTML canaries, provenance manifest upload 성공.
+- PDF artifact #14596185499 (3,070,503 bytes; SHA-256 5a84aeb59f8d960d80d611be7ee4b978d808e84b68255c489633fc94af84ca18); provenance artifact #14595641444 (2,567 bytes; SHA-256 81bcba6e53025759610218c9d66334710919510c1b8d623c7e880af72d9501d5).
+- Pre-merge safety safety/pre-pr133-merge-2026-11-20; squash merge SHA a889b03855e3c7683aa140220352510ab4c4c116; post-merge safety safety/post-merge-pr133-2026-11-20 생성 및 main과 identical 확인.
+- Main push CI는 별도 조회에서 독립 확인되지 않아 미확인으로 유지.
