@@ -1,3 +1,17 @@
+## 최신 main 기준점 — PR #161 병합 및 downgrade 증거 반영 (2026-11-20)
+
+- PR #161 squash merge SHA: `3e633d1b1b8312f5cb6665b44ee8a6fac43ee694`; exact head `66ed22f9ab16576b607fb70c898f71f82f860ea1`.
+- Actions Run #1126 / ID `44690800297`: success. Source blob integrity, compileall, CRA traceability, full pytest **174 passed / 0 failed**, official CRA PDF/10-source HTML canaries, provenance manifest upload 통과. PDF 업로드는 unchanged로 skipped.
+- CRA traceability: claims 13, interfaces 15, requirements 35, SEC 36, EVD crosswalk 16, product evidence 15, bidirectional links true, M/606 41, project log 252 events.
+- Provenance artifact #14608053214, 2,567 bytes, SHA-256 `758aded424447f0d6fb74729a699ac9f856fa403d128a1db04883d9afb48ff42` (7일 보존).
+- 사전 복구 ref `safety/pre-pr161-merge-2026-11-20`; 사후 복구 ref `safety/post-merge-pr161-2026-11-20`; 사후 ref와 main identical 확인.
+- 보고서 v0.15 §36에서 DriveCM Ver1.02.2의 downgrade 관련 릴리스 노트를 기록. downgrade 동작 단서는 확인했으나 인증·서명·anti-rollback은 Unknown.
+- 후속 조사에서 iX7NH 구판 Ver1.1 매뉴얼의 4개 펌웨어 업데이트 경로와 FoE/Webserver 인증정보 초기값 단서를 확인. 최신 Ver1.7 첨부는 다운로드 오류로 본문 확인 전이며, 구판 내용을 최신 버전에 일반화하지 않는다.
+- PR #162 작업 브랜치에서 보고서 v0.16 §37, 제조사 인벤토리 20개 데이터 행, JSONL 254개 이벤트를 준비 중이다.
+- 제품별 CRA scope/classification/Annex III·IV/RDPS는 Unknown, security tests는 Not Run 유지.
+
+---
+
 ## 최신 main 기준점 — PR #160 병합 및 PR #159 사후 상태 동기화 (2026-11-20)
 
 - PR #160 squash merge SHA: `8bc9762efbd20ca9c7aaaddc3832745d4e6dc53e`; PR #160 exact head: `4f56e9b24354d25f03363127e8167a46049c5ded`.
