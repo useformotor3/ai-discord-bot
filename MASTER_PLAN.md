@@ -1,3 +1,12 @@
+## 2026-11-20 — PR #157 병합 및 사후 검증
+- PR #157 squash merge SHA `0ea0fba1fb37504f9d11b5c12d562c0d68f1d190`; exact-head Run #1118 success, 174 passed / 0 failed.
+- Source integrity, compileall, CRA traceability, full pytest, official PDF/10-source HTML canaries, provenance upload 통과. PDF artifact 업로드는 동일 원본으로 skipped.
+- Provenance artifact #14602977168; ZIP SHA-256 `aeb27bb37f157d6d3de8dcde48d4cfad56caae112ec4d5637a470eca325a4f17`.
+- Pre/post safety refs 생성 및 post ref == main 확인.
+- 다음 P0: 제조사 DFU/펌웨어/DriveCM 상세 첨부 원본 bytes 확보·SHA-256·서명·본문 검토 및 SKU별 업데이트/복구/지원기간 확인. 제품 CRA 판정 Unknown, 보안시험 Not Run 유지.
+
+---
+
 
 
 ## 2026-11-20 — 제조사 펌웨어·업데이트 증거 수집 후속
