@@ -2082,3 +2082,13 @@
 - CRA traceability: claims 13, interfaces 15, requirements 35, SEC 36, EVD crosswalk 16, product evidence 15, bidirectional links true, M/606 41, project log 256.
 - Provenance artifact #14609395254, SHA-256 `da47c2cf1d99bca2b067fb4836e9a7b3320d435e05cd7cf1e7859ab6ee566e0b`.
 - Merge SHA `77e3050558869cab2624880bb1d5bfe8a9d5685c`; pre/post safety refs 생성 및 post == main 확인.
+
+
+## 2026-11-20 — iX7NH 통신·원격설정 공격면 조사
+- LS ELECTRIC 공식 iX7NH Series PDF(문서 하단 2021.05) 본문을 확인: USB OTG 펌웨어 업데이트/파라미터 백업·복원/알람이력 백업, EtherCAT FoE, EoE/UDP 파라미터 설정·조정·복사, CoE/CiA402, Modbus TCP, 내장 웹서버 및 Ethernet 원격 시운전, STO1/STO2 입력 및 EDM 출력.
+- 기능 존재와 보안 통제의 존재를 구분하여 USB OTG, FoE, EoE, Modbus TCP, 웹서버, 백업/복원, 로그별 검증 질문을 보고서 §38에 작성.
+- STO 표기만으로 SIL/PL 인증·등급 또는 CRA 사이버보안 적합성을 확정하지 않는다. CE LVD/EMC 및 UL 목록 역시 CRA conformity evidence로 간주하지 않는다.
+- 추가 listing-only 자료: iX7NH 표준 O/S 업데이트 가이드영상(2025-12-24), iX7NH 교육자료(2026-09-14), Modbus TCP API 가이드(2024-01-29; 일부 첨부 갱신 2026-01-20), CE LVD/EMC 및 UL certificate listings.
+- iX7NH Ver1.7 첨부 다운로드는 제조사 페이지에서 '잘못된 접근'을 반환. 최신 본문, 업데이트 영상, API 코드 원본은 미검토 상태.
+- 출처: https://sol.ls-electric.com/uploads/document/16389370233610/iX7NH%20Series_KR_202104.pdf ; https://lsmecapion.com/bbs/board.php?bo_table=software&page=2&sca=Servo ; https://lsmecapion.com/bbs/board.php?bo_table=guidebook ; https://lsmecapion.com/bbs/board.php?bo_table=certificate&sca=CE ; https://lsmecapion.com/bbs/board.php?bo_table=certificate&sca=UL
+

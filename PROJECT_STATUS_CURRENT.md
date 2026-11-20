@@ -1,3 +1,17 @@
+## 최신 재개 상태 — PR #165 병합 및 iX7NH 통신면 조사 착수 (2026-11-20)
+
+- 현재 main SHA: `1b2a027162c45cb45b656bf4c01098c137a7183b`; PR #165 merge, open PR 없음.
+- PR #165 exact head `cbdad281756ab906003e174ecaa9183270b1d41e`; Actions Run #1134 / ID `44691706437` success, **174 passed / 0 failed**.
+- Run #1134 CRA traceability: claims 13, interfaces 15, requirements 35, SEC 36, EVD crosswalk 16, product evidence 15, bidirectional links true, M/606 41, JSONL events 257.
+- Provenance artifact #14608029442, 2,568 bytes, SHA-256 `65dfbda197494eddcbad0abd6ef3d190ba8420f107c043c3ecb61423f29456d0`.
+- PR #165 merge SHA `1b2a027162c45cb45b656bf4c01098c137a7183b`; pre safety `safety/pre-pr165-merge-2026-11-20`, post safety `safety/post-merge-pr165-2026-11-20`; post ref == main 확인.
+- 보고서 v0.17 §38 초안: iX7NH USB OTG/FoE/EoE/Modbus TCP/웹서버/백업·알람이력/STO 기능을 2021 공식 시리즈 자료에서 확인하고 보안 공격면별 미검증 질문을 구조화. 최신 Ver1.7 본문과 현행 펌웨어 설정은 여전히 미확인.
+- 제조사 자료 인벤토리 26개 데이터 행 예상(이번 PR에서 6개 추가); JSONL 259건 예상(PR165 merge 이벤트 + §38 조사 이벤트 추가).
+- 현재 제품별 CRA scope/classification/Annex III·IV/RDPS Unknown, security tests Not Run. CE LVD/EMC 및 UL 목록은 CRA 적합성 증거로 취급하지 않는다.
+- 작업 브랜치: `research/ix7nh-communication-surface-2026-11-20`; PR #166 생성 전 문서/인벤토리 검증 중.
+
+---
+
 ## 최신 main 기준점 — PR #164 사후 상태 동기화 완료 (2026-11-20)
 
 - PR #164 merge SHA: `77e3050558869cab2624880bb1d5bfe8a9d5685c`; exact head `f0f7a51883bd66ad73f2252d8933067840c3d4c8`.
