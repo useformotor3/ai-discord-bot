@@ -1,6 +1,6 @@
 # CRA Servo Drive Compliance & Engineering Project
 
-> **최신 재개 상태 — 2026-11-20 CRA 중심 갱신:** 기준 main `07d6d3b1`; CRA 통합 보고서 v0.3 §25 및 ENISA SRP 운영 최신정보 갱신 작업 중. SRP FAQ(2026-10-15), Glossary v1.6(2026-10-21), AR Manual v1.3(2026-11-04) 확인. LS메카피온 iX7NH는 제품 사례연구이며 CRA 전체 규제·표준화·신고·적합성 트랙이 최우선.
+> **최신 재개 상태 — 2026-11-20 CRA 중심 갱신:** 기준 main `07d6d3b1`; CRA 통합 보고서 v0.5 §25–§28 작업 중. ENISA SRP 운영 제약, CEN EN 40000-1-1/-1-2 발행(단 CRA OJ citation 기대 없음), ETSI M/606 18개 active item, C(2026)7861 M/606 deadline amendment, COM(2026)780 표준화 법제 개편 제안 반영. LS메카피온은 사례연구이며 CRA 전체 규제·표준화·신고·적합성 트랙이 최우선.
 
 산업용 서보 드라이브를 사례로 EU Cyber Resilience Act(CRA) 전체 규제·표준화·제품 적용성·설계·검증·문서화를 수행하는 프로젝트입니다. CRA 법령과 공통 이행체계가 중심이며 특정 제조사 조사는 사례연구로 관리합니다. 문서의 기본 언어는 한국어이며, 법령·표준·제조사 원문은 원어와 출처를 보존합니다.
 
@@ -1101,3 +1101,11 @@ CLC/TC 65X의 M/606 20b/21b/22b/25b/27b/36b를 prEN 50770-4/-2/-6/-3/-5/-1에 �
 - [CRA 통합 규제·기술 준수 보고서 v0.3](reports/CRA_INTEGRATED_COMPLIANCE_REPORT_2026-11-17.md) §25에 Commission/ENISA 최신 이행자료와 SRP 운영상 주의사항을 반영 중.
 - [SRP 운영 준비 기준서](reports/CRA_SRP_OPERATIONAL_READINESS_2026-11-20.md) 및 [공식 출처 최신성 대장](reports/CRA_LIVE_SOURCE_FRESHNESS_REGISTER_2026-11-20.csv) 참조.
 - ENISA SRP FAQ의 UI 카운터는 Article 14 법정기한과 다를 수 있으므로 최초 인지 UTC 기준으로 별도 계산한다.
+
+
+## CRA 중심 최신 자료 — 2026-11-20
+- [통합 규제·기술 준수 보고서 v0.5](reports/CRA_INTEGRATED_COMPLIANCE_REPORT_2026-11-17.md) §25–§28.
+- [SRP 운영 준비 기준서](reports/CRA_SRP_OPERATIONAL_READINESS_2026-11-20.md).
+- [공식 출처 최신성 대장](reports/CRA_LIVE_SOURCE_FRESHNESS_REGISTER_2026-11-20.csv).
+- [ETSI M/606 상태 감사](reports/CRA_ETSI_M606_LIVE_STATUS_2026-11-18.md), [CEN/CENELEC EN 40000 및 OT 상태 감사](reports/CRA_CEN_CENELEC_EN40000_OT50770_STATUS_2026-11-18.md).
+- Article 27 추정 적합성은 실제 OJ citation과 제품/표준 범위가 확인된 경우에만 주장한다. CEN 발행 또는 ETSI Work Programme의 Harmonised Standard 메타데이터만으로 추정 적합성을 주장하지 않는다.
