@@ -1,3 +1,13 @@
+## 최신 main 기준점 — PR #125 병합 및 M/606 감사 후속 (2026-11-20)
+
+- 현재 main merge SHA: `0a5f5140e323303d6a960ca73edd8ec8c05f55f2` (PR #125 squash merge 확인).
+- PR #125 exact-head SHA: `e940663da113dedcd8071f5781f1bcf78f449ccf`; CI Run #1050 성공. 전체 pytest, CRA cross-matrix, 공식 CRA PDF/source read-only canary, provenance manifest 업로드 단계 성공.
+- 사전 복구 ref: `safety/pre-m606-oj-audit-2026-11-20`; 병합 후 복구 ref: `safety/post-merge-pr125-2026-11-20`.
+- PR #125는 EN 40000-1-1/-1-2 발행 발표와 Article 27 OJ 게이트를 보고서 §27에 반영하고 상황판·계획서·로그를 동기화했다.
+- 최신 추가 조사: CEN-CENELEC 발표는 두 EN의 발행 사실을 확인한다. CRA harmonised-standard tracker(2차 자료)는 CEN catalogue가 두 표준 모두 OJ citation을 기대하지 않는다고 표시한다고 보고한다. 다만 이번 세션에서는 CEN catalogue의 해당 개별 레코드를 직접 열람하지 못했으므로, 이를 **2차 자료에 의한 잠정 정보**로만 기록하고 OJ 상태의 최종 증거는 CEN catalogue 및 EUR-Lex/OJ 원문 직접 대조로 남긴다. Article 27 추정을 주장하지 않는다.
+- M/606 41개 표준의 개별 개발상태·발행·OJ 인용·제한사항 전수감사는 미완료. OJ 검색 결과 없음은 미게재 확정이 아니다.
+- 제조사 매뉴얼/DoC 원본 PDF bytes 미확보, SHA-256 미확인. 제품별 CRA scope/classification/RDPS Unknown, security tests Not Run. PR merge SHA에 대한 별도 main push CI는 독립 확인되지 않음.
+
 ## 최신 main 기준점 — PR #124 사후 동기화 및 M/606 OJ 감사 재개 (2026-11-20)
 
 - 현재 main SHA: `3aebf09e6786fa9ee451b027ed83756f37bd89b3` (GitHub 최근 커밋 검색 및 PR #124 비교로 확인).
