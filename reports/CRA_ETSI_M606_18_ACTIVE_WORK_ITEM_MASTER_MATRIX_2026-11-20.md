@@ -35,7 +35,7 @@ ETSI Work Item scope text는 EN 304 635와 EN 304 636을 Annex III Class I이라
 - EN 304 635: DEN/CYBER-EUS-0016, WKI 74858. ETSI page says Class I; legal class is Class II.
 - EN 304 636: DEN/CYBER-EUS-0020, WKI 74859. ETSI page says Class I; legal class is Class II. M/606 item 36 includes industrial-use systems.
 - 법령이 우선하며 해당 제품의 core functionality가 이 범주에 해당하면 Article 32(3) Class II route를 적용한다.
-- 공개된 이전 interim draft를 확인했다. EN 304 635 V0.0.8에는 Annex III/Class I/Class II label이 추출되지 않았고, EN 304 636 V0.0.9는 Introduction/Scope에서 Annex III Class II point 2를 명시한다. 최신 Work Item version인 1.0.1/1.0.0 draft bytes는 아직 미취득이므로 최신 draft 상태는 별도 미확인이다.
+- 공개 draft를 추가 대조했다. EN 304 636 최신 V1.0.0 (2026-07-09)은 PDF page 9 Introduction에서 Annex III Class II point 2를 명시한다. EN 304 635 최신 V1.0.1 파일은 DocBox에 등록되어 있으나 fetch timeout으로 본문 미확인이다. 이전 V0.0.8에는 class label이 없었다.
 
 ## 산업용 OT 경계
 
@@ -53,20 +53,21 @@ ETSI Work Item scope text는 EN 304 635와 EN 304 636을 Annex III Class I이라
 
 ## 한계
 
-다음 milestone은 ETSI Work Programme forecast이며 ESO 법정 adoption deadline과 다르다. OJ field blank는 해당 record에서 조회 당시 reference가 표시되지 않았다는 의미다. EN 304 635/636은 이전 공개 draft를 확인했으나 최신 v1.0.1/v1.0.0 draft는 미취득 상태다.
+다음 milestone은 ETSI Work Programme forecast이며 ESO 법정 adoption deadline과 다르다. OJ field blank는 해당 record에서 조회 당시 reference가 표시되지 않았다는 의미다. EN 304 636 최신 V1.0.0은 확보·검토해 Class II point 2를 확인했다. EN 304 635 최신 V1.0.1은 DocBox에 등록되어 있으나 fetch timeout으로 본문은 미확인이다.
 
 
 ## 추가 초안 대조 — EN 304 635/636 공개 interim draft
 
 ETSI DocBox에서 최신 Work Item version보다 이전의 공개 interim draft를 확보해 class-label mismatch를 더 세분화했다.
 
-- EN 304 636 V0.0.9 (2025-12-15): Introduction 및 Scope에서 CRA Annex III Class II point 2를 명시한다. 이는 Regulation 2025/2392 Annex III Class II category 2와 일치한다. 따라서 현재 Work Item page의 Class I scope label은 stale metadata일 가능성이 높다.
+- EN 304 636 V1.0.0 (2026-07-09): 최신 public draft PDF page 9 Introduction에서 CRA Annex III Class II point 2를 명시한다. 이는 Regulation 2025/2392와 일치하며, 현재 Work Item page의 Class I scope label은 stale/incorrect metadata다. 이전 V0.0.9도 Class II로 일치한다.
 - EN 304 635 V0.0.8 (2025-11-10): 추출된 본문에서 “Class I”, “Class II”, “Annex III” 표기를 찾지 못했다. 이 문서는 법적 class를 잘못 명시한 것으로 확인되지 않았다.
-- EN 304 635 current Work Item version 1.0.1 및 EN 304 636 current version 1.0.0의 actual draft bytes는 아직 취득하지 못했다. 최신 draft까지 동일하다고 확대 주장하지 않는다.
+- EN 304 635 current Work Item version 1.0.1 파일은 DocBox에 등록되어 있으나 fetch timeout으로 본문을 읽지 못했다. 최신 V1.0.1의 class 표기는 미확인이다.
 
 Sources:
 - EN 304 635 V0.0.8: https://docbox.etsi.org/CYBER/EUSR/Open/EN-304-635_V0.0.8_2025-11-10_Virtualisation_Containers.pdf
 - EN 304 636 V0.0.9: https://docbox.etsi.org/cyber/CYBER/Open/EN-304-636_V0.0.9_2025-12-15_Firewalls_Mature-draft.pdf
+- EN 304 636 V1.0.0 latest public draft: https://docbox.etsi.org/CYBER/EUSR/Open/EN_304-636_V1.0.0_2026-07-09_Firewalls_Enquiry-draft.pdf
 
 
 ### 최신 EN 304 636 V1.0.0 직접 확인
