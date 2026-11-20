@@ -1,4 +1,7 @@
-# CRA Servo Drive Compliance & Engineering Project
+## 최신 법적 분류 산출물 — 2026-11-20
+- [Annex III/IV 및 Article 32 서보 드라이브 분류·경로 분석](reports/CRA_ANNEX_III_IV_ART32_SERVO_DRIVE_CLASSIFICATION_MATRIX_2026-11-20.md)
+- [제품 분류 및 Article 32 route matrix CSV](reports/CRA_ANNEX_III_IV_ART32_SERVO_DRIVE_CLASSIFICATION_MATRIX_2026-11-20.csv)
+
 
 > **최신 재개 상태 — 2026-11-20:** ETSI M/606 미검토 8개 work item 개별 감사 및 CLC/TC 65X prEN 50770 split/status reconciliation 진행. prEN 50770-1은 -1-1 firewall / -1-2 IDS/IPS로 분할되어 7개 deliverable. C(2026)7861 Annex I deadline groups: 1/15=2026-11-30, 2–14=2027-10-30, 16–41=2027-01-31; Article 2 ESO receipt/acceptance condition remains unverified. CRA 전체 규제·표준화가 핵심이며 LS메카피온은 사례연구.
 
