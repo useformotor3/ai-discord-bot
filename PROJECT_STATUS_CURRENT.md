@@ -1,3 +1,12 @@
+## 최신 main 기준점 — PR #124 사후 동기화 및 M/606 OJ 감사 재개 (2026-11-20)
+
+- 현재 main SHA: `3aebf09e6786fa9ee451b027ed83756f37bd89b3` (GitHub 최근 커밋 검색 및 PR #124 비교로 확인).
+- PR #124: `docs(status): sync PR #123 merge and evidence intake`; main에 squash merge 반영, exact-head CI Run #1048 success. Post-merge safety ref: `safety/post-merge-pr124-2026-11-20`.
+- 이번 작업 브랜치: `docs/m606-oj-citation-audit-2026-11-20`; 기준 SHA `3aebf09e6786fa9ee451b027ed83756f37bd89b3`; 사전 복구 ref `safety/pre-m606-oj-audit-2026-11-20`.
+- CEN-CENELEC 2026-11-19 발표에서 EN 40000-1-1/-1-2 발행 확인. CRA Article 27 추정은 OJ 참조 게재 범위에 한정되며, 이번 검색에서 두 표준의 OJ 인용은 직접 확인되지 않아 추정 주장을 하지 않는다. 상세 보고서 §27.
+- M/606 41개 표준의 개별 개발상태·발행·OJ 인용·제한사항 전수감사는 미완료. 초기 검색에서 결과가 없다는 사실을 OJ 미게재 확정으로 해석하지 않는다.
+- 제조사 매뉴얼/DoC 원본 PDF bytes 미확보, SHA-256 미확인. 제품별 CRA scope/classification/RDPS Unknown, security tests Not Run. Exact-main push CI는 독립 확인되지 않음.
+
 ## 최신 main 기준점 — PR #123 iX700M 제품 식별 증거 병합 (2026-11-20)
 
 - Main merge SHA: `2f09103fa5efe23374458ddf49de7c0fd4febddb`; post-merge safety ref: `safety/post-merge-pr123-2026-11-20`.
