@@ -517,7 +517,7 @@ ETSI Work Programme Version 2.3.3의 M/606 조회 결과는 활성 작업 18개�
 | EN 304 625 / DEN/CYBER-EUS-0017 | Physical/virtual network interfaces; Comments categorisation assessed (2026-11-05); 1.0.0; 2026-11-19 remark: EC second assessment received in batches dated 2026-09-28 and 2026-11-16 | CRA Annex III Class I의 network interfaces scope. Ethernet/EtherCAT/Modbus 포트 존재만으로 완제품 드라이브가 이 제품 유형이 되는 것은 아님. 최종 scope와 marketed product core functionality 확인 필요 | ETSI record read 2026-11-20; OJ field blank |
 | EN 304 627 / DEN/CYBER-EUS-0013 | Routers, internet-connected modems, switches; Comments categorisation assessed (2026-10-01) | scope에 industrial OT domain 제외 명시. 단순 Ethernet switch/port 또는 EtherCAT 통신을 라우터/모뎀/스위치 제품 기능으로 확대하지 않음 | ETSI record scope reviewed; OJ field blank |
 | EN 304 621 / DEN/CYBER-EUS-009 | Network Management Systems; Comments categorisation assessed (2026-11-06) | scope에 industrial OT domain 제외 명시. DriveCM 파라미터/commissioning 도구를 NMS로 자동 분류하지 않음 | ETSI record scope reviewed; OJ field blank |
-| EN 304 620 / DEN/CYBER-EUS-005 | VPN products; 7 VR – EC assessment before EV received (2026-09-28) | scope에 industrial OT domain 제외 명시. 원격 유지보수 VPN을 제공하는 별도 제품/솔루션과 드라이브 자체를 구분 | ETSI record scope reviewed; current status snapshot 2026-09-12 |
+| EN 304 620 / DEN/CYBER-EUS-005 | VPN products; Comments categorisation assessed (2026-11-06); 1.0.0; 2026-11-19 remark: EC second assessment received in batches dated 2026-09-28 and 2026-10-22 | scope에 industrial OT domain 제외 명시. 원격 유지보수 VPN을 제공하는 별도 제품/솔루션과 드라이브 자체를 구분 | ETSI record scope reviewed; ETSI record read 2026-11-20; OJ field blank |
 | EN 304 622 / DEN/CYBER-EUS-0010 | SIEM systems; Comments categorisation assessed (2026-11-06) | scope에 industrial OT domain 제외 명시. 서보 알람/이력만으로 SIEM 제품이 되지 않음 | ETSI record read 2026-11-20; OJ field blank |
 
 ETSI 개별 레코드의 Harmonised Standard: Yes 메타데이터는 향후 조화표준 후보/의도에 대한 Work Programme 필드다. 해당 필드만으로 OJ 실제 게재를 증명하지 않는다. 조회한 관련 work item의 Official Journal 필드는 비어 있거나 실제 참조번호가 확인되지 않았다. 따라서 Article 27 presumption은 이 자료만으로 주장하지 않는다.
@@ -525,6 +525,8 @@ ETSI 개별 레코드의 Harmonised Standard: Yes 메타데이터는 향후 조�
 특히 EN 304 620(VPN), EN 304 621(NMS), EN 304 622(SIEM), EN 304 627(router/modem/switch)은 각 ETSI scope description에 industrial OT domain 제외 문구가 확인된다. 이 점은 산업용 OT용 CENELEC prEN 50770 work items와 구분해야 한다. CENELEC prEN 50770-1~6의 별도 진행상태는 2026-11-18 감사 기준으로 유지하며, 이번 확인에서 모든 CENELEC 레코드를 다시 읽은 것은 아니다.
 
 ### 26.3 기존 상태표에 대한 정정
+
+- EN 304 620의 2026-09-28 “7 VR – EC assessment before EV received” 역시 과거 상태다. 2026-11-20 조회한 개별 ETSI 레코드는 Comments categorisation assessed (2026-11-06), 2026-11-19 EC second-assessment remark(2026-09-28 및 2026-10-22 코멘트 묶음 수신)를 표시한다.
 
 - `CRA_CEN_CENELEC_EN40000_OT50770_STATUS_2026-11-18.md`의 2026-11-18 시점 EN 40000-1-2 개별 CEN 레코드 미확인 문장은 이번 직접 readback으로 해소됐다. 현재 둘 다 Published이며 OJ citation 필드는 No citation expected다.
 - `CRA_ETSI_M606_LIVE_STATUS_2026-11-18.md`에서 EN 304 625의 2026-09-28 “7 VR – EC assessment before EV received” 상태를 현재 상태처럼 읽으면 안 된다. 2026-11-20 조회한 ETSI 상세 레코드는 Comments categorisation assessed (2026-11-05), 그리고 2026-11-19 EC second-assessment remark를 표시한다.
