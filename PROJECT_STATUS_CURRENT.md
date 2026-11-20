@@ -1,3 +1,16 @@
+## 최신 main 기준점 — PR #162 병합 및 iX7NH 업데이트 보안 조사 (2026-11-20)
+
+- PR #162 squash merge SHA: `1d6110236984ee11387aaf2be99f239fa2f2ec1e`; exact head `903fd90709636b37f2b4ebd1abec893555955a8e`.
+- Actions Run #1128 / ID `44691140978`: success. Source blob integrity, compileall, CRA traceability, full pytest **174 passed / 0 failed**, official CRA PDF/10-source HTML canaries, provenance manifest upload 통과. PDF 업로드는 unchanged로 skipped.
+- CRA traceability: claims 13, interfaces 15, requirements 35, SEC 36, EVD crosswalk 16, product evidence 15, bidirectional links true, M/606 41, project log 254 events.
+- Provenance artifact #14609085450, 2,567 bytes, SHA-256 `0407e5069a4f5d9698f6d9be994ffecbbc62c9dbae54b29b52cb96c39873cf4c` (7일 보존).
+- 사전 복구 ref `safety/pre-pr162-merge-2026-11-20`; 사후 복구 ref `safety/post-merge-pr162-2026-11-20`; 사후 ref와 main identical 확인.
+- 보고서 v0.16 §37, 제조사 인벤토리 20개 데이터 행, JSONL 254개 이벤트 main 반영.
+- iX7NH 구판 Ver1.1 매뉴얼은 USB OTG/FoE/DriveCM/Webserver 네 업데이트 경로와 FoE/Webserver 초기 인증정보 단서를 문서화한다. 최신 Ver1.7 첨부는 메타데이터만 확인되고 본문 다운로드는 실패했으므로, 구판 기본값을 현행 취약점으로 단정하지 않는다.
+- 제품별 CRA scope/classification/Annex III·IV/RDPS는 Unknown, security tests는 Not Run 유지.
+
+---
+
 ## 최신 main 기준점 — PR #161 병합 및 downgrade 증거 반영 (2026-11-20)
 
 - PR #161 squash merge SHA: `3e633d1b1b8312f5cb6665b44ee8a6fac43ee694`; exact head `66ed22f9ab16576b607fb70c898f71f82f860ea1`.
