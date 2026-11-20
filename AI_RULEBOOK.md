@@ -480,3 +480,59 @@
 - Record separate classifications for host product, separately marketed board/module, MCU/secure element, OS and software tools where each is placed on the market separately.
 - Do not assign Article 32 route until class/core function and actual applicable OJ-cited HEN, common specification or EUCC assurance state are confirmed.
 - For Class I, distinguish full application from non-/partial application of relevant HEN/CS/EUCC; for Class II do not offer Module A as a default route; for Annex IV check Article 8(1) delegated-act status.
+
+
+## 15. ETSI metadata vs legally binding product class
+- Never copy the Annex III Class I/II label from an ETSI Work Programme scope page without checking Regulation (EU) 2024/2847 Annex III and Implementing Regulation (EU) 2025/2392 technical descriptions.
+- Store “ETSI page class label” and “legal Annex III class” separately. If they conflict, mark critical discrepancy; law controls conformity route.
+- Distinguish an ETSI Work Item metadata/scope-text error from a normative EN draft error. Do not claim the draft is wrong until draft bytes and relevant clauses are acquired and inspected.
+- Article 32 route mapping must use the legal class, not a Work Programme label.
+
+
+## 16. Draft version provenance when checking ETSI class labels
+- A public interim draft from an earlier version may help distinguish Work Item metadata from normative text, but it does not establish the content of the current latest version.
+- Record exact draft version/date and distinguish: Work Item page scope text, earlier public draft, latest current draft, approved/published EN.
+- If an older draft is legally correct but current page metadata is wrong, record “metadata discrepancy; older draft aligned; latest draft unverified” rather than claiming the standard itself is wrong.
+
+
+## 17. Latest draft retrieval vs Work Item metadata
+- Prefer the latest public normative draft from ETSI DocBox over a stale Work Item scope description when checking a class label; record exact version/date/page and compare to the legally binding regulation.
+- A successfully opened latest draft can resolve a metadata mismatch. If a sibling PDF fetch times out, record the directory listing and timeout separately; do not claim its contents were checked.
+
+
+## 18. CSV edit integrity gate
+- For CSV changes, use a quote-aware full-file parser; do not reuse a full-file parser on a single line unless the return shape is explicitly handled.
+- Before saving, verify expected row count and uniform column count. After saving, read back, parse the entire CSV again, and verify critical rows/columns.
+- If a structural corruption occurs, restore from a known pre-edit commit and reapply the minimal change; never attempt to repair from a corrupted row alone.
+
+
+## 18. AI 세션 재개·자기검토·토큰 효율 프로토콜
+
+### 세션 시작 시 최소 읽기 순서
+1. README에서 최신 진입 링크와 기준 브랜치/PR 확인.
+2. AI_RULEBOOK에서 범위·안전·출처·검증 규칙 확인.
+3. PROJECT_STATUS_CURRENT와 MASTER_PLAN에서 현재 상태/P0 다음 작업 확인.
+4. 최근 SESSION_LOG와 PROJECT_LOG tail을 읽어 직전 작업, 오류, 복구 및 미완료 항목 확인.
+5. 열린 PR이 있으면 head SHA, base SHA, CI run, 변경 파일 및 main 대비 diff를 확인한다. 과거 대화의 기억만으로 작업 상태를 가정하지 않는다.
+
+### 각 작업의 자기검토 루프
+- 계획 → 공식 원문/1차 자료 확보 → 사실 추출 → 독립 교차검증 → 보고서/데이터 반영 → 저장 후 재조회(readback) → 구조·링크·수치·인용 검증 → 로그 기록 순서로 수행한다.
+- 조사 도중 발견한 AI의 오류·누락·과장·잘못된 도구 사용·코드/문서 수정 실수는 숨기거나 대화에만 남기지 않는다. 원인, 영향 범위, 복구 기준, 검증 결과, 재발 방지 규칙을 이 문서와 SESSION_LOG/PROJECT_LOG에 기록한다.
+- 과거 상태가 틀렸다면 최신 근거를 기준으로 수정하고, 낡은 문구가 남은 README/상황판/마스터계획/보고서/CSV를 검색해 동기화한다.
+- 문서 수정은 기존 파일을 우선 정리·통합한다. 단순한 업데이트를 위해 새 파일을 무분별하게 분리 생성하지 않는다.
+- CSV/JSONL 등 구조화 자료는 저장 전후 전체 파일 파싱, 행·열/필드 수, schema, round-trip을 확인한다. 단일 행 parser를 전체 파일 parser처럼 사용하지 않는다.
+- 모든 수정은 작업 브랜치에서 수행한다. 기존 정상본을 보존할 수 있는 safety ref 또는 이전 commit을 확인하고, main 직접 수정은 금지한다. PR 병합 후 exact-head CI 및 main readback을 확인한다.
+
+### 토큰·도구 효율
+- 세션마다 필요한 기준 문서와 최근 tail만 우선 읽고, 전체 대화/대형 보고서를 반복 덤프하지 않는다. 필요 구간은 start/end line으로 가져온다.
+- 동일한 파일·출처는 한 번 읽고 재사용한다. 병렬 읽기는 가능하되 동일 경로의 write는 순차 처리한다.
+- 도구 출력은 핵심 상태, SHA, 실패 원인, 검증 결과만 추출한다. 거대한 diff/로그는 요약 후 문제가 있는 구간만 다시 연다.
+- 검색은 핵심 질문과 공식 1차 출처를 우선한다. 중복 검색보다 출처 간 차이 확인에 토큰을 사용한다.
+- 확실하지 않은 사실은 추정으로 채우지 않고 Unknown/Not verified로 남긴다. 완료·검증·병합을 실제 결과가 확인되기 전에 주장하지 않는다.
+- 세션 종료 시 다음 작업 1~3개, 차단 요인, 마지막 확인 SHA/PR/CI를 상황판에 기록해 다음 세션의 재탐색 비용을 줄인다.
+
+
+## 19. ETSI Work Item metadata discrepancy — resolved by latest draft text
+- For EN304635 V1.0.1 and EN304636 V1.0.0, latest publicly viewable draft text explicitly states Annex III Class II point 1 and point 2 respectively. Work Item page scope labels saying Class I are stale/incorrect metadata.
+- Record source type and coverage: EN304635 evidence is a 15-page public sample preview (Scope at document p.15), not the complete 386-page PDF; EN304636 evidence is the publicly opened latest draft PDF, document p.9.
+- Do not describe either latest draft as legally misclassified. Preserve the metadata discrepancy and use the legal Class II route.

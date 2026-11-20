@@ -1,6 +1,6 @@
 # CRA 서보 드라이브 통합 규제·기술 준수 보고서
 
-- 문서 버전: v0.7 (ETSI M/606, CLC/TC 65X OT, C(2026)7861 Article 2, Annex III/IV 및 Article 32 분석 통합)
+- 문서 버전: v0.9 (ETSI 18-item master matrix, legal class mismatch 및 최신 EN 304 636 draft 대조 보강)
 - 기준일: 2026-11-20
 - 프로젝트 범위: EU Cyber Resilience Act(CRA) 대응만
 - 기준 제품군: 산업용 서보 드라이브 및 필수 펌웨어·설정/진단 소프트웨어
@@ -661,3 +661,57 @@ Article 7(1)은 Annex III category의 core functionality를 가진 완제품을 
 Article 13(5) component integration due diligence와 13(6) 통합 구성품 취약점 보고·처리 의무는 host product가 Annex III/IV에 속하지 않아도 적용 분석에 포함한다. 제품별 분류와 Article 32 route는 exact SKU/BOM/firmware 및 별도 판매 구성품 증거 확보 전까지 Unknown이다.
 
 상세 category/route matrix: reports/CRA_ANNEX_III_IV_ART32_SERVO_DRIVE_CLASSIFICATION_MATRIX_2026-11-20.md 및 동명 CSV.
+
+
+## 34. ETSI M/606 active 18개 Work Item 통합 master matrix — 2026-11-20
+
+ETSI Work Programme v2.3.3에서 M/606 active work item 18개를 개별 record 기준으로 통합했다. 17개는 Annex I vertical topics 17–27 및 31–36에 대응하고, EN 304 642는 telecom network functions를 위한 추가 supporting/sectoral work item으로 Annex I 41 topics와 1:1 직접 매핑을 확인하지 못했다.
+
+- 18개 모두 Harmonised Standard metadata는 Yes로 표시되지만, 18개 개별 record의 Official Journal field는 비어 있었다. 따라서 actual OJ citation 또는 Article 27 presumption을 주장하지 않는다.
+- EN 304 620/621/622 및 EN 304 627은 industrial OT 사용 제품/시스템을 scope에서 제외한다. EN 304 625 physical/virtual network interface는 Fieldbus controller/adapter를 포함하는 technical description과 대조한다.
+- 전체 18개 상태/버전/next milestone/WKI ID/Work Item Reference/ETSI class label/legal class/OJ field는 reports/CRA_ETSI_M606_18_ACTIVE_WORK_ITEM_MASTER_MATRIX_2026-11-20.csv 참조.
+
+## 35. ETSI Work Programme class label의 중대한 법령 불일치 — EN 304 635 및 EN 304 636
+
+ETSI 개별 Work Item scope text는 EN 304 635 hypervisors/container runtime과 EN 304 636 firewalls/IDS/IPS를 “CRA Annex III Class I important products”라고 표시한다. 그러나 Regulation (EU) 2024/2847 Annex III 및 Commission Implementing Regulation (EU) 2025/2392 Annex I는 각각 **Class II category 1** 및 **Class II category 2**로 분류한다.
+
+- EN 304 635: ETSI DEN/CYBER-EUS-0016 / WKI 74858 / v1.0.1. Legal Class II category 1.
+- EN 304 636: ETSI DEN/CYBER-EUS-0020 / WKI 74859 / v1.0.0. Legal Class II category 2. M/606 item 36은 industrial-use systems도 명시한다.
+- 이는 ETSI Work Programme metadata/scope text의 불일치다. 이전 공개 draft 대조 결과 EN 304 636 V0.0.9는 Class II point 2를 명시하고, EN 304 635 V0.0.8에는 class label이 없다. 최신 EN 304 636 V1.0.0은 PDF page 9에서 Class II point 2를 확인했다. EN 304 635 V1.0.1 공개 sample PDF의 문서상 15쪽 Scope에서 Annex III Class II point 1을 직접 확인했다. EN 304 636 V1.0.0도 문서 9쪽에서 Class II point 2를 명시한다. 두 최신 공개 draft는 법령과 일치한다. EN 304 635는 iTeh preview 15쪽 sample만 열람했으며 전체 386쪽 원본을 확보한 것은 아니다.
+- 법령이 우선한다. 이 제품군의 core functionality가 실제 제품에 해당하면 Article 32(3) Class II route를 적용한다. Class I Article 32(2) 경로로 잘못 매핑하지 않는다.
+- 내부 matrix에는 “ETSI page class”와 “legal Annex III class”를 별도 필드로 보존하고, ETSI에 metadata correction/clarification을 요청할 증거 항목으로 관리한다.
+
+공식 법적 근거: Regulation 2025/2392 Annex I Class II categories 1 and 2. 상세 비교 및 원문 링크는 reports/CRA_ETSI_M606_18_ACTIVE_WORK_ITEM_MASTER_MATRIX_2026-11-20.md.
+
+
+## 36. EN 304 635/636 공개 interim draft와 Work Item metadata 대조
+
+이전 공개 draft뿐 아니라 최신 공개 draft의 확인 가능한 본문을 대조했다. EN 304 636 V1.0.0 document p.9 Introduction은 Annex III Class II point 2를, EN 304 635 V1.0.1 public sample document p.15 Scope는 Annex III Class II point 1을 각각 명시한다. 따라서 두 최신 공개 draft 모두 법령과 일치하며 ETSI Work Item page의 Class I 표기가 stale/incorrect metadata다. EN304635 preview는 15 pages of 386; 전체 원본은 미확보.
+
+- EN 304 635 V0.0.8: https://docbox.etsi.org/CYBER/EUSR/Open/EN-304-635_V0.0.8_2025-11-10_Virtualisation_Containers.pdf
+- EN 304 636 V0.0.9: https://docbox.etsi.org/cyber/CYBER/Open/EN-304-636_V0.0.9_2025-12-15_Firewalls_Mature-draft.pdf
+
+
+## 37. 최신 EN 304 636 V1.0.0 초안 직접 확인 — metadata 오류 범위 확정
+
+ETSI DocBox의 최신 EN 304 636 V1.0.0 (2026-07-09) PDF page 9 Introduction은 firewalls/IDS/IPS가 CRA Annex III Class II point 2에 해당한다고 명시한다. 따라서 최신 공개 normative draft는 법령과 일치하며, ETSI Work Item 상세 페이지의 Class I 표기가 stale/incorrect metadata다.
+
+EN 304 635 V1.0.1 (2026-06) public preview document p.15 Scope explicitly identifies Annex III Class II point 1. The preview covers 15 pages of a 386-page document; full original PDF remains unacquired.
+
+
+## 38. CENELEC 공식 WG3 발표로 prEN 50770 Work Item 매핑 교차확인 — 2026-11-20
+
+CENELEC 공식 CLC/TC65X WG3 발표자료(2026-05-07, rapporteur 발표)는 M/606 OT topics와 CENELEC WIID/deliverable 매핑을 명시한다. 기존 matrix를 다음과 같이 1차 출처로 교차확인했다.
+
+| M/606 topic | WIID | prEN | 범위 |
+|---|---:|---|---|
+| 36b | 81649 | prEN 50770-1 | Firewalls, IDS/IPS (DKE Oct-2026은 -1-1/-1-2로 분리 표기) |
+| 21b | 81650 | prEN 50770-2 | Network management systems |
+| 25b | 81651 | prEN 50770-3 | Physical/virtual network interfaces |
+| 20b | 81652 | prEN 50770-4 | VPN-function products |
+| 27b | 81653 | prEN 50770-5 | Routers, internet modems and switches |
+| 22b | 81654 | prEN 50770-6 | SIEM systems |
+
+공식 CENELEC WG3 자료: https://www.cencenelec.eu/media/CEN-CENELEC/Events/Webinars/2026/2026-05-07_cra_unlocked_clc-tc65x-wg3-acs-technical-requirements.pdf (PDF page 5 / slide listing). DKE October 2026 status PDF independently shows all seven deliverables at Start NWI and Drafting prEN; the 81649 project is split nationally into -1-1 and -1-2. DKE national status is corroboration, not central CENELEC status.
+
+This confirms mapping only. Central direct readback of individual 81650–81654 records, current stage/DOR/DAV, and 81649 parent-child record synchronization remain open. DKE source: https://www.dke.de/resource/blob/2435170/ee96d0e14ab1fe1af45708de66510607/normungsprojekte-zum-cra-data.pdf. No actual OJ citation or Article 27 presumption is established.

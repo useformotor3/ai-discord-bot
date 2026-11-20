@@ -1,8 +1,27 @@
+## ETSI 18-item master matrix / class mismatch — 2026-11-20
+
+- Full 18-item M/606 matrix committed in current research branch. 17 map to Annex I vertical items 17–27 and 31–36; EN304642 is additional telecom support item without direct 41-topic mapping.
+- Critical discrepancy: EN304635/636 ETSI page class label I vs legal Class II category1/2 under Regulation 2025/2392. Latest EN304636 V1.0.0 page 9 confirms Class II; Work Item page Class I label is stale. EN304635 V1.0.1 public sample p.15 confirms Class II point 1; EN304636 V1.0.0 p.9 confirms Class II point 2. Both drafts align with law; Work Item page labels remain stale. Next: prepare ETSI metadata clarification; monitor ETSI calendar event GoSRSReq006-M/606 AMD 1 - examination meeting scheduled 2026-11-23 and capture minutes/decision/ESO acceptance evidence.
+- Industrial OT exclusions: EN304620 VPN, EN304621 NMS, EN304622 SIEM, EN304627 routers/modems/switches.
+- All 18 Work Programme HEN metadata Yes, OJ field blank; actual OJ citation not established.
+
+---
+
+## 최신 조사 기준점 — ETSI 18개 Work Item 및 Class I/II 오류 감사 (2026-11-20)
+
+- M/606 active 18개 Work Item 상세 master matrix 작성. 17개 Annex I topics 17–27/31–36, EN304642는 추가 telecom supporting item.
+- ETSI Work Item metadata says Class I for EN304635/636; law assigns Class II categories 1/2. Latest EN304636 V1.0.0 draft itself confirms Class II. EN304635 V1.0.1 public sample p.15 confirms Class II point 1; full 386-page original not acquired.
+- Industrial OT exclusions confirmed for EN304620 VPN, EN304621 NMS, EN304622 SIEM and EN304627 routers/modems/switches.
+- 18 records: Harmonised Standard metadata Yes, OJ field blank; actual OJ citation not established.
+- Next P0: obtain complete EN304635 V1.0.1 PDF if possible; prepare ETSI metadata clarification using both latest draft excerpts; 2026-11-23 M/606 AMD1 meeting; obtain ESO receipt/acceptance; central CENELEC 81650–81654; OJ index; complete Annex III/IV product evidence.
+
+---
+
 ## 최신 기준점 — PR #182 CRA 표준화·분류 분석 병합 (2026-11-20)
 
 - Main SHA 904b2ed0897331ced9dedfcbd25afd608f92f951; PR #182 Exact-head Run #1177 success, 174 passed / 0 failed; traceability 13 claims/15 interfaces/35 requirements/36 SEC/16 EVD-SEC/41 M606/279 project events.
 - Report v0.7 and ETSI 8-item / OT 7-deliverable / Annex III-IV Article32 matrices are in main.
-- Next P0: (1) 2026-11-23 ETSI GoSRSReq006-M/606 AMD 1 meeting minutes and actual decision; (2) CEN/CENELEC/ETSI receipt dates and Article2 acceptance/non-acceptance notices; (3) central CENELEC 81650–81654 record readback and 81649 parent vs DKE split reconciliation; (4) full 18-item ETSI consolidated matrix; (5) actual OJ citation 41-item crosswalk; (6) check Article8(1) delegated act status; (7) exact SKU/BOM/FW, Fieldbus interface board and security MCU evidence to determine Annex III/IV core functionality and Article32 route.
+- Next P0: (1) 2026-11-23 ETSI GoSRSReq006-M/606 AMD 1 meeting minutes and actual decision; (2) CEN/CENELEC/ETSI receipt dates and Article2 acceptance/non-acceptance notices; (3) central CENELEC 81650–81654 individual stage/DOR/DAV readback and 81649 parent vs DKE split reconciliation (mapping already verified from official CENELEC WG3 presentation); (4) full 18-item ETSI consolidated matrix; (5) actual OJ citation 41-item crosswalk; (6) check Article8(1) delegated act status; (7) exact SKU/BOM/FW, Fieldbus interface board and security MCU evidence to determine Annex III/IV core functionality and Article32 route.
 - Do not convert ETSI Harmonised Standard metadata, CENELEC Citation expected, or OJ forecast dates into actual Article27 citation.
 - Product classification remains Unknown; security testing Not Run.
 

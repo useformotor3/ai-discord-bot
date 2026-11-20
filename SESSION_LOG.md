@@ -2345,3 +2345,84 @@
 - PR #182 merged the ETSI 8-item audit, OT 7-deliverable reconciliation, C(2026)7861 Article2/Annex I deadline condition, and Annex III/IV + Article32 legal product-boundary matrix.
 - Product-level Annex III/IV classification and Article32 route remain Unknown pending exact SKU/BOM/FW/marketed component evidence; security tests Not Run.
 - Pre/post safety refs: safety/pre-merge-pr182-cra-standardization-classification-2026-11-20; safety/post-merge-pr182-cra-standardization-classification-2026-11-20.
+
+
+## 2026-11-20 — ETSI M/606 18개 통합 및 Class I/II metadata mismatch
+
+- ETSI Work Programme v2.3.3 active 18개 개별 record를 통합 matrix로 구성: 17개 Annex I vertical topics 17–27/31–36 및 추가 telecom support item EN304642.
+- EN304635 hypervisors 및 EN304636 firewalls/IDS/IPS의 ETSI scope text가 Class I로 표시되지만 Regulation 2025/2392는 각각 Class II category1/2로 분류함을 발견. 법령이 우선하며 Article32(3) route 적용 대상임을 기록.
+- Normative draft bytes는 미취득이므로 오류 범위는 ETSI Work Programme metadata/scope text로 한정. 실제 draft 본문 오류라고 단정하지 않음.
+- EN304627 routers/modems/switches의 industrial OT exclusion도 확인. OT exclusions 4개로 통합.
+- 18개 HEN metadata Yes / OJ field blank; actual OJ citation 미확인.
+- 신규 18-item master report/CSV, integrated report v0.8, Annex III/IV legal report, status/plan/README/session/project log/AI rulebook 갱신.
+
+
+## 2026-11-20 — ETSI 18개 matrix 저장 및 문서 인덱스 정합성
+
+- ETSI 18개 active work item master report/CSV 생성 및 README index 추가.
+- EN304635/636 Work Programme class label과 Regulation 2025/2392 legal class 간 mismatch를 status/plan/rulebook/integrated report에 기록.
+- README project title와 조사 산출물 진입점 readback 확인.
+- 후속: EN304635/636 normative draft 원문 취득, metadata-only 여부 확인, ETSI correction tracking.
+
+
+## 2026-11-20 — EN304635/636 공개 interim draft 대조
+
+- ETSI DocBox 공개 interim draft EN304636 V0.0.9 (2025-12-15) 확보. Introduction/Scope에서 Annex III Class II point 2를 명시해 법령과 일치함을 확인.
+- EN304635 V0.0.8 (2025-11-10) 확보. 추출된 본문에서 Annex III/Class I/Class II label을 찾지 못함.
+- 따라서 Work Item page metadata의 Class I 표기는 discrepancy로 유지하되, 실제 normative draft의 오류라고 단정하지 않도록 정정. 최신 v1.0.0/v1.0.1 draft는 아직 미취득.
+
+
+## 2026-11-20 — 최신 EN304636 V1.0.0 draft 검증
+
+- ETSI DocBox directory listing에서 최신 EN304636 V1.0.0 (2026-07-09) PDF 확인 및 열람.
+- PDF page 9 Introduction이 firewalls/IDS/IPS를 Annex III Class II point 2로 명시. 최신 공개 draft는 법령과 일치하며 Work Item page의 Class I label이 stale metadata임을 확인.
+- EN304635 V1.0.1 (2026-06-24)은 DocBox에 존재하지만 fetch timeout. 이전 V0.0.8은 class label 미포함; 최신 본문은 미확인.
+
+
+## 2026-11-20 — CSV 무결성 자체검토 및 복구
+
+- M/606 41-item CSV의 row 35/36 수정 과정에서 단일 행 parser를 전체 CSV parser처럼 사용해 두 행의 열 구조가 손상된 것을 readback/roundtrip 검사에서 발견.
+- 손상본을 기준으로 덮어쓰지 않고, 손상 직전 커밋 85a03faefa87b024ebf378a629cca00d0f4d46d5의 정상 CSV를 복원 기준으로 사용한 뒤 Class II/draft 검증 메모를 재적용.
+- 복구 후 전체 CSV를 RFC4180-style quote-aware parser로 재검증: header+41 data rows = 42 rows, 모든 row 10 columns. row35/36 원래 필드와 기존 CLC mapping 보존 확인.
+- 재발 방지: CSV 수정 시 항상 전체 파일 parse → row/column count → serialize → reparse roundtrip을 수행하고, 단일-line parsing과 full-file parsing 함수를 구분한다.
+
+
+## 2026-11-20 — PR #184 자체검토 및 상태 문서 동기화
+
+- PR #184 head eba04e6d1b71c4024cb03ac4a909fd9734e0c121; PR-triggered Isolated Python Tests run #1197 completed success.
+- 재검토에서 matrix/integrated report/Annex III legal report/status/plan/README 간 최신 EN304636 V1.0.0 사실과 이전 초안 상태가 일부 불일치한 점 발견. 최신 EN304636 V1.0.0 Class II 표기를 기준으로 통합하고, EN304635 V1.0.1은 DocBox 등록·fetch timeout·본문 미검증으로 통일.
+- Integrated report version label duplicate text, README stale v0.7 link, status/plan stale “latest drafts not acquired” statements identified for correction.
+- AI_RULEBOOK section 18 added: session resume, source-first self-review, persisted error/root-cause/recovery/prevention loop, structured-file validation, token/tool efficiency, branch/safety/CI discipline.
+- Safety snapshot branch: safety/pre-pr184-doc-reconciliation-2026-11-20 (from PR head before cleanup).
+
+
+## 2026-11-20 — EN304635 V1.0.1 latest draft sample resolves legal class
+
+- ETSI DocBox latest EN304635 V1.0.1 PDF fetch timed out, but iTeh publicly indexed 15-page sample preview for the exact ETSI title/version.
+- Sample PDF document p.15 Scope explicitly says the product is in CRA Annex III Class II point 1 and cites Commission Implementing Regulation (EU) 2025/2392. This resolves the latest-version class text question; it aligns with law.
+- Limitation: preview is 15 pages of a 386-page draft; full original not obtained. EN304636 V1.0.0 full public draft had already been inspected at document p.9 for Class II point 2.
+- Conclusion: both latest public drafts align with law; ETSI Work Item page Class I scope labels are stale/incorrect metadata. Corrected matrix, CSV, legal report and status accordingly.
+
+
+## 2026-11-20 — PR #184 exact-head CI Run #1223 success / next ETSI meeting source
+
+- Exact head `7d9d300a017bfc6d68b247b3a5de56c8a744e1c8` CI Run #1223 completed success: 174 passed / 0 failed.
+- Source blob identity, compile, CRA traceability, live official CRA PDF canary, live official CRA HTML canary and provenance manifest upload all succeeded; PDF artifact upload step was skipped because the workflow's source artifact condition was empty, not because the tests failed.
+- ETSI official portal calendar lists `GoSRSReq006-M/606 AMD 1 - examination meeting` on 2026-11-23. Calendar listing proves scheduled event only; agenda, decision, minutes and ESO acceptance remain pending.
+- Next: monitor meeting output; do not infer an AMD1 amendment or acceptance before official decision/receipt evidence.
+
+
+## 2026-11-20 — CENELEC official WG3 mapping cross-check
+
+- CENELEC CLC/TC65X WG3 official presentation dated 2026-05-07 explicitly maps M/606 topics to WIIDs/prEN deliverables: 36b→81649/prEN 50770-1; 21b→81650/-2; 25b→81651/-3; 20b→81652/-4; 27b→81653/-5; 22b→81654/-6.
+- DKE October 2026 national tracker corroborates all seven deliverables at Start NWI and Drafting prEN, with 81649 split into -1-1 firewall and -1-2 IDS/IPS.
+- Mapping is now source-verified; individual central CENELEC stages/DOR/DAV for 81650–81654 and 81649 parent/child record synchronization remain open. No OJ citation inferred.
+- Updated integrated report §38, OT reconciliation report §5, status, plan and project log.
+
+
+## 2026-11-20 — PR #184 latest exact-head CI Run #1234
+
+- Final documentation head before merge: `a391c039837a1219591dead58d962013dee788b1`.
+- Run #1234 / 44718762561 completed success: 174 passed / 0 failed.
+- Source blob identities, compile, CRA cross-matrix traceability, official CRA PDF and HTML read-only canaries, and provenance manifest upload all succeeded. CRA PDF evidence upload step was skipped by workflow condition; no test failure.
+- Branch was advanced afterward only to persist this CI result in the status board/logs; a fresh exact-head CI run is required before merge.

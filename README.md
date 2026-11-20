@@ -1,9 +1,16 @@
 # CRA Servo Drive Compliance & Engineering Project
 
-> **최신 재개 상태 — 2026-11-20:** PR #182 merged to main (904b2ed0897331ced9dedfcbd25afd608f92f951). Exact-head Run #1177 success, 174 passed / 0 failed. Integrated report v0.7: ETSI M/606 8-item audit, OT 7-deliverable profile reconciliation, C(2026)7861 Article 2/deadlines, Annex III/IV core-functionality and Article 32 route matrix. Product classification remains Unknown pending exact SKU/BOM/FW evidence.
+> **현재 진행 PR — 2026-11-20:** PR #184 is open (not merged); M/606 18-item matrix and CRA class-route audit are under review. Latest EN304635 V1.0.1 sample p.15 and EN304636 V1.0.0 p.9 both confirm Annex III Class II. Latest exact-head CI Run #1234 succeeded (174 passed); see PROJECT_STATUS_CURRENT.md and PR #184.
+
+## 최신 ETSI 조사 — 2026-11-20
+- [M/606 active 18개 Work Item master matrix](reports/CRA_ETSI_M606_18_ACTIVE_WORK_ITEM_MASTER_MATRIX_2026-11-20.md)
+- [18개 Work Item CSV](reports/CRA_ETSI_M606_18_ACTIVE_WORK_ITEM_MASTER_MATRIX_2026-11-20.csv)
+
+
+> **최신 재개 상태 — 2026-11-20:** PR #182 merged to main (904b2ed0897331ced9dedfcbd25afd608f92f951). Exact-head Run #1177 success, 174 passed / 0 failed. Integrated report v0.9: full ETSI M/606 18-item matrix, two ETSI Work Item metadata discrepancies; latest EN304636 draft confirms legal Class II, EN304635 V1.0.1 public sample confirms Class II; both latest drafts align with law, OT 7-deliverable profile reconciliation, C(2026)7861 Article 2/deadlines, Annex III/IV and Article 32 route matrix. Product classification remains Unknown pending exact SKU/BOM/FW evidence.
 
 ## 최신 조사 산출물
-- [통합 CRA 보고서 v0.7](reports/CRA_INTEGRATED_COMPLIANCE_REPORT_2026-11-17.md)
+- [통합 CRA 보고서 v0.9](reports/CRA_INTEGRATED_COMPLIANCE_REPORT_2026-11-17.md)
 - [ETSI 8개 Work Item 및 OT 50770 재조사](reports/CRA_ETSI_M606_8_ITEM_AND_OT_50770_RECONCILIATION_2026-11-20.md)
 - [Annex III/IV 및 Article 32 제품분류·경로 분석](reports/CRA_ANNEX_III_IV_ART32_SERVO_DRIVE_CLASSIFICATION_MATRIX_2026-11-20.md)
 

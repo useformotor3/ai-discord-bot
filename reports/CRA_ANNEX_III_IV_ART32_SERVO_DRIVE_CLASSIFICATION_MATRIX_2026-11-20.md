@@ -119,3 +119,29 @@ Commission Implementing Regulation (EU) 2025/2392 recital (2)–(3)은 기술적
 - Regulation (EU) 2024/2847, consolidated EUR-Lex text: https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX%3A02024R2847-20241120
 - Commission Implementing Regulation (EU) 2025/2392: https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX%3A32025R2392
 - ELI / OJ text 2025/2392: https://eur-lex.europa.eu/eli/reg_impl/2025/2392/oj/eng
+
+
+## 9. ETSI Work Programme class-label mismatch — legal source controls
+
+ETSI Work Item scope pages for EN 304 635 (hypervisors/container runtime) and EN 304 636 (firewalls/IDS/IPS) currently describe the categories as CRA Annex III Class I. This conflicts with the legally binding technical descriptions in Commission Implementing Regulation (EU) 2025/2392 Annex I:
+- Hypervisors/container runtime systems: Annex III Class II category 1.
+- Firewalls/IDS/IPS: Annex III Class II category 2.
+
+The regulation controls legal product class and conformity route. A matching product core functionality therefore follows Article 32(3), not Article 32(2).
+
+### 9.1 Latest public draft reconciliation
+
+- **EN 304 636 V1.0.0 (2026-07-09):** ETSI DocBox PDF page 9, Introduction, explicitly identifies firewalls, IDS and IPS as Annex III Class II point 2. The latest public draft aligns with the regulation. The Work Item page's Class I label is stale/incorrect metadata.
+- **EN 304 635 V1.0.1 (2026-06):** publicly accessible 15-page sample preview, document page 15 Scope, explicitly states that in-scope products are within CRA Annex III Class II point 1 and cites Commission Implementing Regulation (EU) 2025/2392. This aligns with the legal category; the Work Item page's Class I label is stale/incorrect metadata.
+- Limitation: only the 15-page preview sample was inspected, not the full 386-page original PDF. The classification statement itself is directly visible in the sample.
+
+ETSI Work Item pages:
+- https://portal.etsi.org/webapp/WorkProgram/Report_WorkItem.asp?WKI_ID=74858
+- https://portal.etsi.org/webapp/WorkProgram/Report_WorkItem.asp?WKI_ID=74859
+
+Draft sources:
+- EN 304 636 V1.0.0: https://docbox.etsi.org/CYBER/EUSR/Open/EN_304-636_V1.0.0_2026-07-09_Firewalls_Enquiry-draft.pdf
+- EN 304 635 V1.0.1 (listed; fetch timed out): https://docbox.etsi.org/CYBER/EUSR/Open/EN_304-635_V1.0.1_2026-06-24_Virtualization_Container_Enquiry-draft.pdf
+- Earlier EN 304 635 V0.0.8: https://docbox.etsi.org/CYBER/EUSR/Open/EN-304-635_V0.0.8_2025-11-10_Virtualisation_Containers.pdf
+
+Official legal source: https://eur-lex.europa.eu/eli/reg_impl/2025/2392/oj/eng
