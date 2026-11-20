@@ -132,8 +132,8 @@ The regulation controls legal product class and conformity route. A matching pro
 ### 9.1 Latest public draft reconciliation
 
 - **EN 304 636 V1.0.0 (2026-07-09):** ETSI DocBox PDF page 9, Introduction, explicitly identifies firewalls, IDS and IPS as Annex III Class II point 2. The latest public draft aligns with the regulation. The Work Item page's Class I label is stale/incorrect metadata.
-- **EN 304 635 V1.0.1 (2026-06-24):** file is listed in ETSI DocBox, but fetching timed out. Its latest draft content remains unverified. Earlier V0.0.8 (2025-11-10) contains no Annex III/Class I/Class II label in extracted text.
-- Do not state that EN 304 635 V1.0.1 contains an error until the actual latest PDF is acquired and inspected.
+- **EN 304 635 V1.0.1 (2026-06):** publicly accessible 15-page sample preview, document page 15 Scope, explicitly states that in-scope products are within CRA Annex III Class II point 1 and cites Commission Implementing Regulation (EU) 2025/2392. This aligns with the legal category; the Work Item page's Class I label is stale/incorrect metadata.
+- Limitation: only the 15-page preview sample was inspected, not the full 386-page original PDF. The classification statement itself is directly visible in the sample.
 
 ETSI Work Item pages:
 - https://portal.etsi.org/webapp/WorkProgram/Report_WorkItem.asp?WKI_ID=74858
