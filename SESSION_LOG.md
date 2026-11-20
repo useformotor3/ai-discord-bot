@@ -2253,3 +2253,10 @@
 - 2026-11-20 ETSI direct record for EN 304 620 shows Comments categorisation assessed (2026-11-06), v1.0.0; 2026-11-19 remark says EC second assessment received for comment batches dated 2026-09-28 and 2026-10-22.
 - 기존 2026-09-28 “7 VR – EC assessment before EV received”는 현재 상태가 아니므로 보고서 §26 및 ETSI 상태 addendum에서 수정.
 - ETSI EN 304 620/621/622/627 scope에 industrial OT domain exclusion을 개별 record에서 확인; 각 OJ field는 비어 있음.
+
+## 2026-11-20 — EU 표준화 법체계 제안 및 M/606 개정 근거 확인
+- Commission CRA standardisation page last update 2026-11-12 states M/606 amended on 2026-11-10, extending all vertical and some horizontal ESO delivery deadlines by 3 months.
+- Commission Register C(2026)7861 final (Brussels 2026-11-10) and Annex source record checked. Conflicting 2026-11-11 secondary tracker statement was not adopted is superseded by later official Commission page/document evidence.
+- COM(2026)780 proposal (2026-10-06) to repeal/replace Regulation 1025/2012 recorded as proposal only, not current law.
+- Commission Harmonised Standards index accessed 2026-11-20; page explains OJ publication requirement and currently lists no CRA entry. Cross-check against OJ/Article 27 maintained.
+- Integrated report v0.5 §27–§28 and source freshness register updated.
