@@ -480,3 +480,10 @@
 - Record separate classifications for host product, separately marketed board/module, MCU/secure element, OS and software tools where each is placed on the market separately.
 - Do not assign Article 32 route until class/core function and actual applicable OJ-cited HEN, common specification or EUCC assurance state are confirmed.
 - For Class I, distinguish full application from non-/partial application of relevant HEN/CS/EUCC; for Class II do not offer Module A as a default route; for Annex IV check Article 8(1) delegated-act status.
+
+
+## 15. ETSI metadata vs legally binding product class
+- Never copy the Annex III Class I/II label from an ETSI Work Programme scope page without checking Regulation (EU) 2024/2847 Annex III and Implementing Regulation (EU) 2025/2392 technical descriptions.
+- Store “ETSI page class label” and “legal Annex III class” separately. If they conflict, mark critical discrepancy; law controls conformity route.
+- Distinguish an ETSI Work Item metadata/scope-text error from a normative EN draft error. Do not claim the draft is wrong until draft bytes and relevant clauses are acquired and inspected.
+- Article 32 route mapping must use the legal class, not a Work Programme label.
