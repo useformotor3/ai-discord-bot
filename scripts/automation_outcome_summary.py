@@ -91,7 +91,7 @@ def render_summary(result: dict[str, Any]) -> str:
         f"- **프로세스:** exit={result['exit_code']}; step={result['step_outcome']}\n"
         f"- **공식 출처 확보:** {source_text}개\n"
         f"- **시도 모델:** {models}\n"
-        f"- **모델 폴백 관찰:** {'예' if result['model_fallback_observed'] else '아니오'}\n"
+        f"- **모델 폴백 관찰:** {'예' if result['model_fallback_observed'] else '아니오'} ({result['model_fallback_reason'] or '없음'})\n"
         f"- **원격 아카이브 확인:** {'예' if result['archive_synced'] else '아니오'}\n"
         f"- **Discord 전송 확인:** {'예' if result['discord_sent'] else ('보류/미확인' if result['discord_deferred_or_unknown'] else '아니오/미실행')}\n"
         "\n> GitHub Actions의 job success는 이 분류와 별개다. `NO_NEW_TOPIC` 및 `DEFERRED`는 신규 보고서 생성 완료로 계산하지 않는다.\n"
