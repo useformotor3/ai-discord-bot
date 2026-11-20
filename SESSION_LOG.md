@@ -1920,3 +1920,10 @@
 - PDF artifact #14596188740 (3,070,503 bytes; SHA-256 2105504b4942f21db41a38eaca9b548e3a94a6696593238b3bf2cbf8e2b85c57); provenance artifact #14595554868 (2,567 bytes; SHA-256 c3f7cf7311772cfa4687cef25c13790d3e302a916c2c847badf0589fa0457c63).
 - Pre-merge safety safety/pre-pr143-merge-2026-11-20; squash merge SHA f1157fb1b5581f55b1f192c15b1822386ce3ed1e; post-merge safety safety/post-merge-pr143-2026-11-20 생성 및 main과 identical 확인.
 - Main push CI는 독립 확인되지 않아 미확인으로 유지.
+
+## 2026-11-20 — PR #144 병합 및 사후 검증
+- PR #144 exact head 09ac041dbb3df72e8c3cf3dd01e53bbc80d9ff7f; Run #1092 / ID 44663374900 success, 174 passed / 0 failed.
+- Compile, traceability, full pytest, official CRA PDF/HTML canaries, provenance manifest upload 성공.
+- PDF artifact #14597230119 (3,070,502 bytes; SHA-256 b8ff2c79732ee37e0bb625d84c66abf1026863bf229f85883ccc7b3d3036876b); provenance artifact #14596691436 (2,567 bytes; SHA-256 3640500172144d9754c6dffbf5fe46af153ee6928376ede0ce947291172e4a34).
+- Pre-merge safety safety/pre-pr144-merge-2026-11-20; squash merge SHA c616169b4300521459cc3ae78d631fcd739103fb; post-merge safety safety/post-merge-pr144-2026-11-20 생성 및 main과 identical 확인.
+- Main push CI는 독립 확인되지 않아 미확인으로 유지.
