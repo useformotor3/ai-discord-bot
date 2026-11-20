@@ -5,7 +5,7 @@
 - 개선 브랜치: `fix/automation-outcome-visibility-2026-11-20`; 시작 main SHA: `2f8aac8d2d61e217e06be21d36afe857e8bdf2d0`.
 - 추가: `scripts/automation_outcome_summary.py`, `tests/test_automation_outcome_summary.py`, `reports/CRA_AUTOMATION_CADENCE_AND_OUTCOME_OBSERVABILITY_AUDIT_2026-11-20.md`.
 - 운영 workflow는 main.py 로그를 임시 파일로 tee하고 실제 outcome summary를 GitHub Actions Summary에 게시하도록 변경 중. cron(3시간), Gemini/Discord 호출 빈도, secrets, main.py, checkpoint/guard는 변경하지 않았다.
-- 테스트는 fixture 기반 8개 분류 케이스. PR CI 전이므로 아직 통과/병합을 주장하지 않는다.
+- fixture 기반 8개 분류 케이스 포함 전체 pytest **182 passed / 0 failed**. PR #189 exact-head Run #1247 success; main 미병합.
 - 5분마다 production Gemini 실행은 비용·quota·중복·queue 위험 때문에 채택하지 않는다. 필요하면 별도 read-only heartbeat로 분리 검토한다.
 - ChatGPT 예약 작업 확인: 주간 CRA·MCU 공식자료 점검 enabled; 일일 Git 브랜치 통합 상태 점검 및 CRA 보고서 대기열 점검 disabled. 5분 자동화는 확인되지 않았다.
 
