@@ -690,3 +690,10 @@ ETSI 개별 Work Item scope text는 EN 304 635 hypervisors/container runtime과 
 
 - EN 304 635 V0.0.8: https://docbox.etsi.org/CYBER/EUSR/Open/EN-304-635_V0.0.8_2025-11-10_Virtualisation_Containers.pdf
 - EN 304 636 V0.0.9: https://docbox.etsi.org/cyber/CYBER/Open/EN-304-636_V0.0.9_2025-12-15_Firewalls_Mature-draft.pdf
+
+
+## 37. 최신 EN 304 636 V1.0.0 초안 직접 확인 — metadata 오류 범위 확정
+
+ETSI DocBox의 최신 EN 304 636 V1.0.0 (2026-07-09) PDF page 9 Introduction은 firewalls/IDS/IPS가 CRA Annex III Class II point 2에 해당한다고 명시한다. 따라서 최신 공개 normative draft는 법령과 일치하며, ETSI Work Item 상세 페이지의 Class I 표기가 stale/incorrect metadata다.
+
+EN 304 635 V1.0.1 (2026-06-24)은 ETSI DocBox directory listing에서 파일 존재를 확인했으나 fetch timeout으로 본문을 읽지 못했다. 이전 V0.0.8에서는 class label을 찾지 못했으며 최신 본문은 미확인이다.
