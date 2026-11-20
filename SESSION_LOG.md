@@ -2187,3 +2187,13 @@
 - Squash merge SHA `634c3178471ff20c99e97ba48fc4c5e187afb28d`; pre-work ref `safety/pre-ix7nh-v17-api-audit-2026-11-20`; post ref `safety/post-merge-pr173-2026-11-20`; post ref == main 확인.
 - Report v0.20 §40–§41 and inventory 27 rows in main. Ver1.7/API official attachments still metadata_only; AutomationDirect guide is secondary evidence only.
 - Product CRA scope/classification/Annex III-IV/RDPS Unknown; security tests Not Run; no live device/network/write/motion tests.
+
+## 2026-11-20 — PR #174 병합 및 사후 검증
+
+- PR #174 exact head `779474728cb39501991dff7846b52a5bbae83ec4`; Actions Run #1150 / ID `44703086698` success.
+- Full pytest **174 passed / 0 failed**; exact source integrity, compile, CRA cross-matrix traceability, live official HTML source canary and provenance manifest round-trip/upload passed.
+- Official source canary fetched 10 allowlisted records; verified consolidated CRA Article 13(8) locator/quote and Implementing Regulation 2025/2392 Annex I category 10 / Annex II category 1 locators.
+- CRA PDF source evidence upload step skipped; do not treat this as original PDF acquisition. Provenance artifact #14613952433, 2,567 bytes, SHA-256 `84a6cab72e1403f205d03151a9259a8ac101244d95fafdd3e87b5c5fca05b718`.
+- Squash merge SHA `090c78bfa0edc759641a8dd30f9156038fa86a82`; main read-back and compare identical.
+- Pre-merge safety ref `safety/pre-pr174-merge-2026-11-20`; post-merge safety ref `safety/post-merge-pr174-2026-11-20`.
+- Ver1.7/API official attachment bytes/SHA-256 remain unavailable. AutomationDirect Modbus TCP guide remains secondary source only. Product CRA scope/classification/Annex III-IV/RDPS Unknown; security tests Not Run.

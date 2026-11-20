@@ -1072,3 +1072,9 @@ CLC/TC 65X의 M/606 20b/21b/22b/25b/27b/36b를 prEN 50770-4/-2/-6/-3/-5/-1에 �
 - Merge SHA `c43b35df267c30facbc8c8f62677e48189d24127`; exact-head Run #1122 success, 174 passed / 0 failed.
 - CRA traceability and official source canaries passed; provenance manifest uploaded.
 - Pre/post safety refs retained; post ref identical to main.
+
+### PR #174 병합 및 검증 — 2026-11-20
+- Merge SHA `090c78bfa0edc759641a8dd30f9156038fa86a82`; exact-head Run #1150 success, 174 passed / 0 failed.
+- Official HTML canary 10 sources and key CRA legal locators passed; provenance artifact #14613952433, SHA-256 `84a6cab72e1403f205d03151a9259a8ac101244d95fafdd3e87b5c5fca05b718`.
+- PDF evidence upload step skipped; this does not establish acquisition of original PDF bytes.
+- Pre/post safety refs: `safety/pre-pr174-merge-2026-11-20`, `safety/post-merge-pr174-2026-11-20`; main compared identical to merge SHA.
