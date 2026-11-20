@@ -1,6 +1,6 @@
 # CRA Servo Drive Compliance & Engineering Project
 
-> **최신 재개 상태 — 2026-11-20:** main `36f170de199d2fc23e4e40969584e56c37dbebe7` (PR #131 이후). PR #130 exact-head Run #1064 및 main push Run #1065 성공. M/606 41개 Annex I 항목 주제·기한 감사 41/41, OT/IACS 수직 프로파일 6종의 CENELEC 프로젝트·상태 확인 및 LS메카피온 기능 경계 분석 진행 중. 제품별 CRA 판정 Unknown / 보안시험 Not Run.
+> **최신 재개 상태 — 2026-11-20:** PR #132 병합(main `f3a8fc06b2a0c5fdaa98d98ad8bc0f21abee22df`), exact-head CI Run #1068 성공(174 passed / 0 failed). M/606 OT/IACS 수직 프로파일 6종을 CENELEC 개별 레코드까지 확인하고 보고서 §31 및 제품 기능 경계 매트릭스 반영. 제품별 CRA 판정 Unknown / 보안시험 Not Run.
 
 산업용 서보 드라이브의 EU Cyber Resilience Act(CRA) 대응을 위한 조사·설계·검증·문서화 프로젝트입니다. 문서의 기본 언어는 한국어이며, 법령·표준·제조사 원문은 원어와 출처를 보존합니다.
 
@@ -907,3 +907,10 @@ CEN/CENELEC 공식 M/606 Work Programme V1(2025-04-02)에서 item 1 → JT013089
 
 ### 2026-11-20 — OT/IACS 수직 프로파일 6종 검토
 CLC/TC 65X의 M/606 20b/21b/22b/25b/27b/36b를 prEN 50770-4/-2/-6/-3/-5/-1에 연결하고 개별 CENELEC 카탈로그 상태를 확인했다. 모두 Under Drafting / Committee stage이며 OJEU 필드는 Citation expected로 실제 인용은 아직 확인되지 않았다. 서보드라이브 기능경계 분석은 보고서 §31 및 `reports/CRA_M606_OT_IACS_6_VERTICAL_PROFILES_SERVO_DRIVE_BOUNDARY_2026-11-20.csv` 참조. 25b는 조건부 우선 검토 후보이며, 나머지 VPN/NMS/SIEM/router/switch/firewall/IDS/IPS 기능은 현재 제조사 증거에서 확인되지 않았다. 기능 미확인을 미지원으로 단정하지 않는다.
+
+
+### PR #132 검증 및 병합 상태 (2026-11-20)
+- PR #132 merge SHA `f3a8fc06b2a0c5fdaa98d98ad8bc0f21abee22df`; exact-head Run #1068 success, 174 passed / 0 failed.
+- Source integrity, compileall, traceability, full pytest, official CRA PDF/HTML canaries, provenance manifest upload 통과.
+- Pre/post safety refs: `safety/pre-pr132-merge-2026-11-20`, `safety/post-merge-pr132-2026-11-20`; post ref와 main 동일.
+- Main push CI는 별도 확인 전까지 미확인으로 표시한다.
