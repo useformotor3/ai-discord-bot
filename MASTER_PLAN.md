@@ -1,3 +1,17 @@
+## 최신 재개 상태 — iX7NH Ver1.1 웹서버·Modbus TCP 1차 원문 감사 (2026-11-20)
+
+- 기준 브랜치: `main` 병합 기준점 `7f9c35c54f93505f541198f3ceef723540f4df72`; 작업 브랜치 `research/ix7nh-v11-web-modbus-audit-2026-11-20`.
+- 실질 조사: 공식 LS ELECTRIC iX7NH Ver1.1 PDF의 제12장 웹서버, 제13장 Modbus TCP, 제15장 업데이트 절차를 직접 검토하여 통합 보고서 §39 추가.
+- 확인 범위: 웹서버 ID/PW Object(0x2420/0x2421) 및 로그인·웹 업데이트, Modbus TCP Server(EtherCAT IN, 예시 TCP/502, 읽기/쓰기 기능 코드), USB OTG/FoE/DriveCM/Webserver 업데이트 경로.
+- 제조사 원문 증거: https://sol.ls-electric.com/uploads/document/16401412453260/_LSMecapion_%20iX7NH_KOR_Ver1.1_210830.pdf (추출 본문 검토; 원본 bytes/SHA-256 미확보).
+- 보고서 §39는 구판 Ver1.1의 증거로만 한정. 기본 인증정보 문자열은 공개 저장소에 재게시하지 않았으며, Ver1.7 현행성·취약점·TLS/서명/anti-rollback/복구는 Unknown.
+- 제조사 인벤토리의 MANUAL-IX7NH-V1.1-UPDATE-SECURITY 행을 확장해 Modbus/Webserver 범위를 기록.
+- 변경은 문서 전용. 운영 코드, workflow, secrets, state/history, 기존 SIL 3 보존 산출물은 수정하지 않음.
+- 검증 전 상태: 보고서·인벤토리 수정 및 재조회 후 PR/CI 진행 예정. 제품별 CRA scope/classification/Annex III·IV/RDPS Unknown, security tests Not Run.
+- 저장소 거버넌스: main `protected=false` 리스크 지속. PR exact-head CI 및 pre/post safety refs로 보완; 서버 보호 설정은 관리자 권한 작업 필요.
+
+---
+
 ## 2026-11-20 — PR #166 병합 및 iX7NH 통신면 분석 기준점
 - PR #166 merge SHA `761b3ccffc142f11cbfe0d0dfb0e905b5d368ecb`; exact head `fa7120c73cbe6fe244319a8d1b1e7bc699b47259`; Run #1136 success, **174 passed / 0 failed**.
 - Traceability: claims 13, interfaces 15, requirements 35, SEC 36, EVD crosswalk 16, product evidence 15, bidirectional true, M/606 41, JSONL 259.
