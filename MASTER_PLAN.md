@@ -1177,3 +1177,8 @@
 
 - 완료(2026-11-20): CEN catalogue primary citation field direct verification for EN 40000-1-1 (JT013095) and EN 40000-1-2 (JT013089); both explicitly “No citation expected for Directive 2024/2847”. Keep Article 27 presumption unavailable from these two standards.
 - P1 remains: M/606 Annex I 41-item standard-by-standard audit, including each item's actual candidate standards and OJ reference state.
+
+- 완료: M/606 replacement Annex I 41개 항목의 항목번호·주제·ESO 채택기한 41/41 대조.
+- P1: 41개 M/606 topic → 실제 CEN/CENELEC/ETSI work item 및 EN/ETSI reference 매핑. OJ citation/Article 27 상태는 개별 실제 표준 단위로 확인.
+- P1: C(2026) 7861 Article 2에 따른 CEN/CENELEC/ETSI 수락/거부 통지 원본 확인(통지 후 1개월 조건).
+- 기한 요약: items 1,15 2026-11-30; items 2–14 2027-10-30; items 16–41 2027-01-31. ESO adoption deadlines, not manufacturer CRA deadlines.
