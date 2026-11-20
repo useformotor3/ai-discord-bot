@@ -1,5 +1,12 @@
 # CRA 서보 드라이브 마스터 계획서
 
+## 2026-11-20 — 제조사 매뉴얼 증거 수집 재시도
+
+- iX7M/iX7NH 첨부파일 메타데이터는 확인했으나 실제 PDF 다운로드는 HTTP 502/timeout으로 실패. iX700M Ver1.4 목록도 확인했으나 첨부 상세 미확인.
+- 다음은 제조사 기술지원으로 원본 PDF 요청 또는 정상 다운로드 경로 확보. PDF bytes + SHA-256 + 페이지 수 + 개정표지 확인 전 본문 내용을 인용하지 않는다.
+- 증거 register: `sources/manufacturer/LS_MECAPION_MANUAL_INTAKE_2026-11-20.json`; 상세 분석은 보고서 §25.
+
+
 ## PR #119 병합 확인 — 2026-11-20
 
 - Main merge SHA: `46feea8fab4924889be30f8ae5afb7a072673055`; post-merge safety ref: `safety/post-merge-pr119-2026-11-20`.

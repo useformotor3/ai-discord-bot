@@ -1,0 +1,59 @@
+{
+  "schema_version": "1.0",
+  "recorded_at": "2026-11-20",
+  "manufacturer": "LS Mecapion",
+  "purpose": "CRA product evidence intake; metadata is not a substitute for original PDF bytes",
+  "records": [
+    {
+      "product": "iX700M 400V",
+      "document": "DRIVE manual Ver1.4",
+      "post_date": "2026-05-26",
+      "listing_url": "https://www.lsmecapion.com/bbs/board.php?bo_table=manual&sca=Servo",
+      "attachment_filename": null,
+      "attachment_size": null,
+      "attachment_timestamp": null,
+      "metadata_status": "METADATA_ONLY",
+      "bytes_status": "NOT_ACQUIRED",
+      "sha256": null,
+      "page_count": null,
+      "notes": "Official Servo manual index search result lists Ver1.4; individual post attachment details not verified."
+    },
+    {
+      "product": "iX7M",
+      "document": "DRIVE manual Ver1.3",
+      "post_date": "2023-10-24",
+      "post_url": "https://lsmecapion.com/bbs/board.php?bo_table=manual&page=1&sca=Servo&spt=-12645&wr_id=12633",
+      "attachment_filename": "iX7M_KOR_Ver1.3_260605.pdf",
+      "attachment_size_display": "12.4 MB",
+      "attachment_timestamp_display": "2026-06-05 11:48:11",
+      "download_url": "https://lsmecapion.com/bbs/download.php?bo_table=manual&no=1&page=1&sca=Servo&spt=-12645&wr_id=12633",
+      "metadata_status": "METADATA_VERIFIED",
+      "bytes_status": "NOT_ACQUIRED",
+      "download_observation": "Browser/search retrieval timeout or HTTP 502",
+      "sha256": null,
+      "page_count": null
+    },
+    {
+      "product": "iX7NH 200V",
+      "document": "DRIVE manual Ver1.7",
+      "post_date": "2021-05-14",
+      "post_url": "https://lsmecapion.com/bbs/board.php?bo_table=manual&sca=Servo&wr_id=12433",
+      "attachment_filename": "iX7NH_KOR_Ver1.7_260605.pdf",
+      "attachment_size_display": "19.5 MB",
+      "attachment_timestamp_display": "2026-06-05 11:47:26",
+      "download_url": "https://lsmecapion.com/bbs/download.php?bo_table=manual&no=0&sca=Servo&wr_id=12433",
+      "metadata_status": "METADATA_VERIFIED",
+      "bytes_status": "NOT_ACQUIRED",
+      "download_observation": "Browser/search retrieval timeout or HTTP 502",
+      "sha256": null,
+      "page_count": null
+    }
+  ],
+  "evidence_rules": {
+    "never_promote_metadata_to_original_document": true,
+    "sha256_required_for_original_bytes": true,
+    "page_level_review_required": true,
+    "product_specific_scope_classification_rdps": "Unknown",
+    "security_tests": "Not Run"
+  }
+}
