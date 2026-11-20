@@ -1,3 +1,10 @@
+## 2026-11-20 — PR #133 사후 문서 동기화 및 exact-head CI
+
+- PR #133 squash merge SHA a889b03855e3c7683aa140220352510ab4c4c116; pre-merge safety safety/pre-pr133-merge-2026-11-20; post-merge safety safety/post-merge-pr133-2026-11-20 (main과 identical).
+- Exact PR head 466b3d93db6119c3a73c8cef6bc2e55cf698294d; Actions Run #1070 success, 174 passed / 0 failed.
+- Official CRA PDF/HTML canaries, compile, traceability, pytest, provenance upload success. PDF artifact #14596185499, provenance artifact #14595641444; 7-day retention.
+- Main push CI는 독립 확인되지 않아 미확인으로 유지.
+- 다음 P0: 제조사 원본 manual/datasheet/DriveCM/ESI bytes 확보 및 SHA-256, exact SKU/HW/FW, 통신 인터페이스·데이터 흐름·보안기능 증거 수집.
 ## 2026-11-20 — PR #132 병합 및 exact-head CI 검증 완료
 
 - PR #132 squash merge SHA: f3a8fc06b2a0c5fdaa98d98ad8bc0f21abee22df; pre-merge safety: safety/pre-pr132-merge-2026-11-20; post-merge safety: safety/post-merge-pr132-2026-11-20 (main과 identical).
