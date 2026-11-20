@@ -2208,3 +2208,14 @@
 - Official guidebook index: iX7NH training 2026-09-14; DriveCM V1.03.1 and gain-tuning guides 2026-09-08; PN8B+L7NH(iX7NH) CSV synchronous control and EtherCAT 0x211F external IO guides 2026-07-06. Metadata only; detailed attachments and bytes not acquired.
 - Official drive catalogue lists iX7NH 100–120/200–240 V, 0.1–15 kW; product family range only, not an exact SKU.
 - Report §42 and inventory snapshot row added. Product CRA scope/classification/Annex III-IV/RDPS Unknown; security tests Not Run.
+
+
+## 2026-11-20 — PR #176 병합 및 사후 검증
+
+- PR #176 exact head `788d5aea88d12a7bdb1087d264173ac0f487caf8`; Actions Run #1154 / ID `44707491717` success, full pytest **174 passed / 0 failed**.
+- Traceability: claims 13, interfaces 15, requirements 35, SEC 36, EVD-SEC 16, product evidence 15, bidirectional true, M/606 41, JSONL 269 events.
+- Official source canary fetched 10 sources; Article 13(8), Implementing Regulation 2025/2392 Annex I(10)/Annex II(1) locators verified. PDF evidence upload skipped.
+- Provenance artifact #14614954168, 2,567 bytes, SHA-256 `067e43ccfc1c5b438f719489dc44f3e2ead4e152a2294d2c9b5031ca6bc192dd`.
+- Squash merge SHA `8f19a8b9fcf8e4582a9470e5483ff08019d1711f`; main read-back identical. Pre/post safety refs retained.
+- Report v0.21 §42 and inventory 28 rows in main. New guidebook index entries are metadata-only; detailed attachments and bytes not acquired.
+- Product CRA scope/classification/Annex III-IV/RDPS Unknown; security tests Not Run.
