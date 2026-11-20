@@ -1856,3 +1856,11 @@
 - PDF artifact #14594883481 (3,070,503 bytes; SHA-256 b78ae81c852f64e47167ccccf05420d5480a086cb6a1888e0992c40d5a66e2d7); provenance artifact #14594828906 (2,567 bytes; SHA-256 73fca113ee234b576051b14454b8934c545742be616ecbef831cb020d15c849e).
 - Pre-merge safety safety/pre-pr134-merge-2026-11-20; squash merge SHA 7162664b29554a01d2694cd027efb0191a6c3344; post-merge safety safety/post-merge-pr134-2026-11-20 생성 및 main과 identical 확인.
 - Main push CI는 별도 조회에서 독립 확인되지 않아 미확인으로 유지.
+
+## 2026-11-20 — 제조사 공식 자료실 인벤토리 및 인터페이스 증거
+- PR #135 exact-head Run #1074 / ID 44661159895 success, 174 passed / 0 failed; PDF/HTML canaries와 provenance artifact 업로드 성공.
+- LS메카피온 공식 자료실에서 DriveCM 1.03.2, EtherCAT Drive ESI 0.98 및 0.96, PEGA2 Ver1.3, iX700M 400V Ver1.4, Step EtherCAT 기능 매뉴얼 등록정보를 확인.
+- ESI 0.98은 L7NH/Pegasus/PHOX/L7NHF/L7N/GEM/SMT/L7MMT/iX7NH/iX7M/iX7MD 11개 모델을 열거. DriveCM 1.03.2 게시물은 L7P/L7NH/L7NHF/PEGA/PHOX/iX7NH/L7C/iX7M/PEGA2 지원과 PEGA2 EtherCAT/RS-485 신규 변형을 기재.
+- 25b 기술 후보를 열거된 EtherCAT 모델 및 PEGA2 EtherCAT 변형에 대해 강화. ESI 목록과 DriveCM 지원목록은 동일하지 않으며, L7P 등은 ESI 0.98 목록만으로 EtherCAT 기능을 추정하지 않음.
+- 공식 첨부 PDF/XML/MSI 원본 bytes 미확보, SHA-256 미계산, 본문 content review metadata-only. Step 카테고리 EtherCAT 매뉴얼은 Servo 제품군과 별도 유지.
+- 통합 보고서 §32, 제조사 source inventory CSV, M/606 41-item audit row 25 및 6-profile matrix row 25b 갱신. Product classification Unknown, security tests Not Run.

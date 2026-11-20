@@ -1,3 +1,17 @@
+## 최신 재개 기준점 — PR #135 병합 후 제조사 원본 자료 인벤토리 진행 (2026-11-20)
+
+- main 기준 SHA: 4299fd7301c22898cab8291dcb1a54d2a767d0cf (PR #135 squash merge).
+- PR #135 exact head 90f352bcf0219beb330839d97626937a776b7893; Actions Run #1074 / ID 44661159895 success; 174 passed / 0 failed.
+- Run #1074: source integrity, compileall, CRA traceability, full pytest, official PDF/10-source HTML canaries, provenance artifact upload 성공.
+- PDF artifact #14596121187 (3,070,503 bytes; SHA-256 df36911183a53d2147acef0cf5911a1fe72abe4e400a913594378ffcce3d5331); provenance #14595303097 (2,567 bytes; SHA-256 9bc61e239e2e4ab0dd8658145e8dd91e30c6da25796bcae371f07c9d97c865fa); 7일 보존.
+- pre-merge safety safety/pre-pr135-merge-2026-11-20; post-merge safety safety/post-merge-pr135-2026-11-20 (main과 identical).
+- 새 작업 브랜치 cra/manufacturer-source-inventory-2026-11-20; 제조사 공식 게시물에서 DriveCM 1.03.2, EtherCAT ESI 0.98/0.96, PEGA2/iX700M 매뉴얼 등록정보 확인.
+- ESI 0.98은 11개 모델의 EtherCAT Drive XML 적용목록을 제시. DriveCM 1.03.2 변경이력은 PEGA2 EtherCAT 및 RS-485 두 모델 변형을 명시. 25b 기술적 검토 우선순위 강화; 법적 적용은 표준 전문/SKU 확인 전 Unknown.
+- 제조사 첨부 원본 PDF/XML/MSI bytes 미확보, SHA-256 미계산, 본문 검토 metadata-only. Product scope/classification/Annex III·IV/RDPS Unknown; security tests Not Run.
+- main push CI는 독립 확인되지 않아 미확인으로 유지.
+- 다음: 제조사 첨부 bytes 확보, 정확한 SKU/HW/FW/옵션 확인, ESI XML과 매뉴얼 통신표/보안기능 분석, 설치파일 서명·의존성 검증.
+
+---
 ## 최신 main 기준점 — PR #134 병합 및 PR #133 후속 CI 동기화 (2026-11-20)
 
 - 최신 main SHA: 7162664b29554a01d2694cd027efb0191a6c3344 (PR #134 squash merge).

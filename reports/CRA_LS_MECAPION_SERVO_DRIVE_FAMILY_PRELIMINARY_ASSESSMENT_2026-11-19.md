@@ -1,7 +1,7 @@
 # LS메카피온 서보드라이브 CRA 제품군 예비 분석 보고서
 
 - 문서 ID: CRA-LSM-FA-001
-- 버전: 0.10 (M/606 OT/IACS 6개 수직 프로파일의 CENELEC 최신 카탈로그 상태 및 제품기능 경계 분석 추가)
+- 버전: 0.11 (LS메카피온 제조사 공식 매뉴얼·DriveCM·EtherCAT ESI 자료 인벤토리 및 모델별 인터페이스 경계 추가)
 - 기준일: 2026-11-20 (KST)
 - 작성 언어: 한국어
 - 대상 제조사/브랜드: LS메카피온 (LS MECAPION)
@@ -1637,3 +1637,62 @@ CEN-CENELEC의 현재 CLC/TC 65X Work Programme 및 개별 프로젝트 레코�
 - CEN-CENELEC Work Programme 2026, Digital Society — CLC/TC 65X의 여섯 CRA 수직 프로파일 설명: https://wp2026.cencenelec.eu/sectors-list/digital-society/
 
 **검증 한계:** 공개 CENELEC 카탈로그의 프로젝트 요약·상태 필드까지 확인했다. 여섯 표준의 비공개/유료 초안 전문은 확보하지 못했으며, 개별 표준의 최종 조항·적용범위·시험방법을 검토한 것은 아니다. LS메카피온 원본 매뉴얼과 모델별 기능 증거도 미확보다. 따라서 제품별 CRA scope/classification/Annex III·IV/RDPS는 Unknown, 보안시험은 Not Run으로 유지한다.
+
+
+## 32. LS메카피온 제조사 1차 자료 인벤토리 및 모델별 인터페이스 증거 (2026-11-20)
+
+### 32.1 조사 결과 요약
+
+LS메카피온 공식 자료실에서 Servo 매뉴얼 목록, PEGA2/iX700M 매뉴얼 등록정보, DriveCM 1.03.2 설치자료, EtherCAT ESI 0.98 게시물 및 이전 ESI 0.96 게시물을 확인했다. 이 자료는 제품군 전체가 동일한 통신 구성을 가진다는 뜻이 아니다. 특히 DriveCM 지원 모델 목록과 EtherCAT ESI 적용 모델 목록은 서로 다르므로 별도 관리한다.
+
+**핵심 증거 업데이트:** ESI 0.98 게시물은 EtherCAT Drive XML을 명시하고 적용 모델 11개를 열거한다. 또한 DriveCM 1.03.2 게시물의 변경 이력은 PEGA2 신규 모델 2종을 EtherCAT 및 RS-485로 구분한다. 따라서 25b(OT 물리·가상 네트워크 인터페이스)는 이전의 단순 제품군 추정이 아니라, **열거된 모델과 EtherCAT/PEGA2 EtherCAT 변형에 대해 기술적 우선 검토 후보로 확인**한다. 다만 prEN 50770-3의 최종 적용범위 전문과 각 SKU의 실제 하드웨어 구성은 확보되지 않았으므로 법적 적용 여부는 여전히 Unknown이다.
+
+### 32.2 제조사 공식 자료 목록과 증거 경계
+
+| 자료 | 공식 게시 정보 | 게시물에서 직접 확인한 내용 | 현재 증거의 한계 |
+|---|---|---|---|
+| Servo 매뉴얼 목록 | 공식 매뉴얼 자료실; 2026-11-20 조회 | iX700M DRIVE 400[V] Ver1.4 (2026-05-26), PEGA2 Ver1.3 (2026-04-01), 기존 iX7M/iX7NH/L7C/PHOX/L7NHF/PEGASUS/L7P 매뉴얼 등록 | 목록만으로 본문 회로·포트·보안기능을 입증하지 않음 |
+| PEGA2 매뉴얼 | PEGA2 Ver1.3; 첨부 PEGA2_KOR_Ver1.3_260826.pdf, 6.6 MB; 파일일 2026-08-28 | 제조사 공식 게시물 및 파일명/버전/크기 확인 | PDF 원본 bytes와 SHA-256, 본문 페이지 검토 미완료 |
+| iX700M 매뉴얼 | iX700M DRIVE 400[V] Ver1.4; 2026-05-26 목록 | 모델·전압 등급·매뉴얼 버전 확인 | 상세 게시물/첨부 파일명·본문 bytes 미확보 |
+| DriveCM | Servo Tool Ver1.03.2; 게시물 2026-07-07, 첨부 파일 타임스탬프 2026-08-11 | L7P, L7NH, L7NHF, PEGA, PHOX, iX7NH, L7C, iX7M, PEGA2 지원; L7S/L7N은 단종 제품으로 LIVE i.C.E 사용 안내. 32/64-bit MSI 및 .NET Framework 4.8 요구 | 설정용 PC 도구라는 사실만으로 NMS가 되지 않음. MSI·릴리스 노트 원본 bytes, 서명, 해시 미확보 |
+| EtherCAT Drive ESI 0.98 | 게시일 2025-07-15; V0.98e_20250711 / V0.98k_20250711 / V0.98c_20250711 XML | 적용 모델: L7NH, Pegasus, PHOX, L7NHF, L7N, GEM, SMT(Actuator), L7MMT, iX7NH, iX7M, iX7MD | ESI XML은 EtherCAT 장치 설명 자료다. 각 모델의 실제 판매 SKU·하드웨어 옵션·포트 배치와 동일하다고 단정하지 않음 |
+| EtherCAT Drive ESI 0.96 | 게시일 2025-03-05; V0.96e/k/c_20250225 XML | 이전 ESI 버전과 적용 모델 목록 확인; 버전 이력 대조용 | 0.98이 확인된 후속 게시물이며, 현재 판매 모델별 최신성은 제조사 확인 필요 |
+| Step EtherCAT 기능 매뉴얼 | Step 카테고리; 2026-02-04; EtherCAT Step_KOR_V1.1_260202.pdf, 6.5 MB | CoE, CiA 402 모션제어, 드라이브 응용기능, 알람, 원점복귀 상세 설명 | Step 카테고리 자료이므로 Servo 제품군의 직접 증거로 혼합하지 않음 |
+
+### 32.3 모델별 기능 경계 — CRA M/606 6개 수직 프로파일 재평가
+
+| 모델/자료 범위 | 확인된 기능 또는 자료 | 25b 인터페이스 판단 | 다른 수직 프로파일 판단 |
+|---|---|---|---|
+| ESI 0.98 적용 모델 11종 | EtherCAT Drive ESI XML 게시 및 적용 모델 열거 | EtherCAT 네트워크 인터페이스에 대한 기술적 검토 우선순위 높음. 정확한 SKU·포트·옵션·ESI bytes 대조 필요 | ESI 게시물은 VPN/NMS/SIEM/router/firewall/IDS/IPS 기능을 입증하지 않음 |
+| PEGA2 | DriveCM 지원; DriveCM 변경 이력에서 EtherCAT 및 RS-485 신규 모델 2종 명시; PEGA2 Ver1.3 매뉴얼 등록 | EtherCAT 변형은 25b 우선 검토 후보. RS-485 변형은 물리 인터페이스 존재만으로 이더넷 기반 네트워크 인터페이스 범위에 포함된다고 단정하지 않음 | DriveCM은 설정 도구 증거이며 NMS 증거가 아님. VPN/SIEM/router/firewall 기능은 미확인 |
+| iX700M DRIVE 400[V] | Ver1.4 매뉴얼 등록 확인 | 상세 통신 사양 본문과 모델별 포트표 확보 전 Unknown | 다른 5개 수직 제품 기능도 미확인 |
+| L7P, L7C 등 DriveCM 지원 모델 | DriveCM 지원 목록에서 확인 | DriveCM 지원만으로 EtherCAT 포트나 네트워크 인터페이스를 추정하지 않음. ESI 0.98 목록에 없는 모델은 별도 증거 필요 | DriveCM을 네트워크 관리 시스템으로 분류하지 않음 |
+| Step SDO EtherCAT 제품 | Step 카테고리 매뉴얼에서 CoE/CiA402 및 EtherCAT 기능 설명 | EtherCAT 기술의 비교 참고자료로만 사용 | Servo 제품군 분류·적용성 표에는 별도 제품군으로 유지 |
+
+**M/606 항목별 현재 결론**
+- 25b / prEN 50770-3: ESI 0.98의 적용 모델 목록 및 PEGA2 EtherCAT 변형 자료로 기술적 후보가 강화됐다. 단, 통합 인터페이스가 최종 표준 적용범위에 포함되는지, 각 모델별 SKU/포트/하드웨어가 일치하는지 검증 전까지 법적 적용 판정은 Unknown.
+- 20b VPN, 21b NMS, 22b SIEM, 27b router/modem/switch, 36b firewall/IDS/IPS: 이번에 확보한 자료는 해당 기능을 입증하지 않는다. 특히 DriveCM은 제조사가 “servo tool”로 설명하는 설정 도구이며, 네트워크 관리 시스템이라는 증거는 없다.
+- EtherCAT ESI XML의 존재는 EtherCAT 구성·장치 설명 증거이지, VPN·방화벽·IDS/IPS 또는 보안 적합성 증거가 아니다.
+
+### 32.4 원본 확보 및 무결성 상태
+
+공식 게시물에서 첨부 파일명·버전·파일 크기·적용 모델 메타데이터를 확인했으나, 첨부 바이너리 원본을 안정적으로 수집하지 못했다. 따라서 아래 항목은 모두 미완료다.
+1. PEGA2 및 iX700M 매뉴얼 PDF bytes 다운로드, SHA-256, PDF 메타데이터 및 개정 페이지 검토
+2. ESI 0.98 영문·국문 XML bytes 다운로드, SHA-256, XML 구조·Vendor ID/Product Code/Revision·PDO/CoE 항목 검토
+3. DriveCM 1.03.2 32/64-bit MSI와 release note PDF bytes, SHA-256, Authenticode 서명·게시자·설치 구성요소 검토
+4. 정확한 SKU별 EtherCAT/RS-485/기타 통신 옵션과 기본 활성화 상태, 네트워크 역할 및 외부 연결 구조 확인
+5. 제조사에 모델별 지원 인터페이스·보안 기능·유지보수 지원기간·취약점 공지/패치 정책 확인
+
+파일을 확보하기 전까지 해시를 추정하거나, 게시물의 파일 크기를 실제 내려받은 크기로 간주하지 않는다. 별도 CSV에는 bytes_acquired=false, sha256=not_computed, content_review=metadata_only로 기록한다.
+
+### 32.5 공식 제조사 출처
+
+- LS메카피온 공식 Servo 매뉴얼 목록: https://lsmecapion.com/bbs/board.php?bo_table=manual
+- PEGA2 매뉴얼 Ver1.3 게시물: https://lsmecapion.com/bbs/board.php?bo_table=manual&sca=Servo&wr_id=12651
+- iX700M DRIVE 400[V] 매뉴얼 Ver1.4 게시물: https://lsmecapion.com/bbs/board.php?bo_table=manual&sca=Servo&wr_id=12652
+- DriveCM Ver1.03.2 설치파일 및 지원 모델/변경 이력: https://lsmecapion.com/bbs/board.php?bo_table=software&sca=Servo&wr_id=13110
+- EtherCAT Drive ESI Ver0.98 게시물: https://lsmecapion.com/bbs/board.php?bo_table=software&wr_id=13005
+- EtherCAT Drive ESI Ver0.96 게시물(이전 버전 비교): https://lsmecapion.com/bbs/board.php?bo_table=software&page=3&wr_id=12980
+- Step EtherCAT 기능 매뉴얼(별도 Step 제품군): https://lsmecapion.com/bbs/board.php?bo_table=manual&page=1&sca=Step&spt=-12644&wr_id=12648
+
+**판정 제한:** 제조사 게시물의 메타데이터와 적용 모델 목록은 확인했지만, PDF/XML/MSI 원본 내용은 아직 검증하지 못했다. 따라서 제품별 CRA scope/classification/Annex III·IV/RDPS는 Unknown, security tests는 Not Run으로 유지한다.

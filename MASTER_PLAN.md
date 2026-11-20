@@ -1,3 +1,10 @@
+## 2026-11-20 — 제조사 원본 자료 인벤토리 및 모델별 통신 경계
+
+- PR #135 merge SHA 4299fd7301c22898cab8291dcb1a54d2a767d0cf; exact-head Run #1074 success (174 passed / 0 failed); pre/post safety refs retained.
+- 제조사 공식 출처에서 DriveCM 1.03.2 지원모델, EtherCAT ESI 0.98/0.96 적용모델, PEGA2/iX700M 매뉴얼 등록정보를 확인하고 보고서 §32 및 source inventory CSV에 기록.
+- ESI 0.98 model list + PEGA2 EtherCAT/RS-485 variant note로 25b technical candidate strengthened. This is not an automatic legal scope decision.
+- PDF/XML/MSI bytes, SHA-256 and content-level manual/ESI review remain pending; keep all CRA classification and test statuses Unknown/Not Run.
+- Next: exact model/SKU/HW/FW, download original files, hash and inspect interface/communication/security sections; inspect DriveCM installer signature and dependencies.
 ## 2026-11-20 — PR #134 사후 문서 동기화 및 exact-head CI
 
 - PR #134 squash merge SHA 7162664b29554a01d2694cd027efb0191a6c3344; pre-merge safety safety/pre-pr134-merge-2026-11-20; post-merge safety safety/post-merge-pr134-2026-11-20 (main과 identical).
