@@ -686,7 +686,7 @@ ETSI 개별 Work Item scope text는 EN 304 635 hypervisors/container runtime과 
 
 ## 36. EN 304 635/636 공개 interim draft와 Work Item metadata 대조
 
-추가로 공개된 이전 ETSI interim draft를 확보했다. EN 304 636 V0.0.9 (2025-12-15)는 Introduction/Scope에서 Annex III Class II point 2를 명시하여 법령과 일치한다. EN 304 635 V0.0.8 (2025-11-10)은 추출된 본문에서 Annex III/Class I/Class II label을 확인하지 못했다. 따라서 현재 Work Item page의 Class I 표기는 metadata discrepancy로 기록하되, 최신 EN 304 636 V1.0.0은 page 9에서 Class II point 2를 확인해 법령과 일치한다. EN 304 635 V1.0.1은 DocBox에 등록되어 있으나 fetch timeout으로 본문 미확인이다.
+이전 공개 draft뿐 아니라 최신 공개 draft의 확인 가능한 본문을 대조했다. EN 304 636 V1.0.0 document p.9 Introduction은 Annex III Class II point 2를, EN 304 635 V1.0.1 public sample document p.15 Scope는 Annex III Class II point 1을 각각 명시한다. 따라서 두 최신 공개 draft 모두 법령과 일치하며 ETSI Work Item page의 Class I 표기가 stale/incorrect metadata다. EN304635 preview는 15 pages of 386; 전체 원본은 미확보.
 
 - EN 304 635 V0.0.8: https://docbox.etsi.org/CYBER/EUSR/Open/EN-304-635_V0.0.8_2025-11-10_Virtualisation_Containers.pdf
 - EN 304 636 V0.0.9: https://docbox.etsi.org/cyber/CYBER/Open/EN-304-636_V0.0.9_2025-12-15_Firewalls_Mature-draft.pdf
@@ -696,4 +696,4 @@ ETSI 개별 Work Item scope text는 EN 304 635 hypervisors/container runtime과 
 
 ETSI DocBox의 최신 EN 304 636 V1.0.0 (2026-07-09) PDF page 9 Introduction은 firewalls/IDS/IPS가 CRA Annex III Class II point 2에 해당한다고 명시한다. 따라서 최신 공개 normative draft는 법령과 일치하며, ETSI Work Item 상세 페이지의 Class I 표기가 stale/incorrect metadata다.
 
-EN 304 635 V1.0.1 (2026-06-24)은 ETSI DocBox directory listing에서 파일 존재를 확인했으나 fetch timeout으로 본문을 읽지 못했다. 이전 V0.0.8에서는 class label을 찾지 못했으며 최신 본문은 미확인이다.
+EN 304 635 V1.0.1 (2026-06) public preview document p.15 Scope explicitly identifies Annex III Class II point 1. The preview covers 15 pages of a 386-page document; full original PDF remains unacquired.
