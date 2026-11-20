@@ -1351,3 +1351,39 @@ LS메카피온 서보드라이브에는 다음 판정 규칙을 적용한다.
 - Machine-readable source manifest: `sources/official/CRA_2026-11-19_SOURCE_MANIFEST.json`.
 
 **검증 한계:** 이 해설 분석은 공개된 최종 관보 문서를 기반으로 한 제품 적용 프레임이다. LS메카피온의 실제 모델별 설계, 지원정책, 업데이트 구조, 판매 단위 및 원격 서비스 증거를 확보하기 전까지 제품 적합성 또는 Annex III/IV 분류를 확정하지 않는다.
+
+
+## 25. 제조사 매뉴얼 원본 확보 — 재검증 및 증거 상태 (2026-11-20)
+
+### 25.1 이번 조사에서 새로 확인한 제조사 자료실 메타데이터
+
+2026-11-20 재검색에서 LS메카피온 공식 자료실의 검색 색인과 첨부 링크를 재확인했다. 이는 이전 조사에서 단순히 “다운로드 불가”로 끝났던 상태를 보완하지만, PDF 원본 바이트를 확보했다는 뜻은 아니다.
+
+| 제품 | 제조사 게시물/버전 | 첨부파일 메타데이터 | 현재 증거 상태 |
+|---|---|---|---|
+| iX700M 400V | DRIVE 매뉴얼 Ver1.4, 게시물 목록에 2026-05-26 표시 | 검색 색인에서 첨부파일명·크기 미확인 | METADATA_ONLY; attachment detail pending |
+| iX7M | DRIVE 매뉴얼 Ver1.3, 게시물 작성일 2023-10-24 | `iX7M_KOR_Ver1.3_260605.pdf`, 12.4 MB, 첨부 표시 2026-06-05 11:48:11 | METADATA_VERIFIED; PDF_BYTES_NOT_ACQUIRED |
+| iX7NH 200V | DRIVE 매뉴얼 Ver1.7, 게시물 작성일 2021-05-14 | `iX7NH_KOR_Ver1.7_260605.pdf`, 19.5 MB, 첨부 표시 2026-06-05 11:47:26 | METADATA_VERIFIED; PDF_BYTES_NOT_ACQUIRED |
+
+공식 원문 게시물:
+- iX7M: https://lsmecapion.com/bbs/board.php?bo_table=manual&page=1&sca=Servo&spt=-12645&wr_id=12633
+- iX7NH: https://lsmecapion.com/bbs/board.php?bo_table=manual&sca=Servo&wr_id=12433
+- Servo 매뉴얼 목록: https://www.lsmecapion.com/bbs/board.php?bo_table=manual&sca=Servo
+
+### 25.2 다운로드 재시도 결과와 증거 한계
+
+- iX7M 첨부 링크: `/bbs/download.php?bo_table=manual&no=1&page=1&sca=Servo&spt=-12645&wr_id=12633` — 공개 검색/브라우저 경유에서 timeout/HTTP 502.
+- iX7NH 첨부 링크: `/bbs/download.php?bo_table=manual&no=0&sca=Servo&wr_id=12433` — 공개 검색/브라우저 경유에서 timeout/HTTP 502.
+- 파일명이 검색 색인에 노출된 것과 파일 본문 확보는 구분한다. PDF byte stream, page count, SHA-256, revision 내부 표지, 본문 locator는 아직 확인하지 못했다.
+- 따라서 해당 매뉴얼의 회로, 단자, 프로토콜, 인증/암호화, 접근통제, 펌웨어 업데이트, 취약점 처리, SBOM 관련 내용은 아직 검증하지 않았다. 추정으로 채우지 않는다.
+- iX700M Ver1.4는 목록의 최신 게시 메타데이터만 확인했다. 세부 첨부파일명/크기 및 원본 바이트를 추가로 확보해야 한다.
+
+### 25.3 다음 수집·검증 절차
+
+1. 제조사 포털의 첨부 다운로드 정상화 또는 제조사 기술지원/영업 채널을 통한 원본 PDF 제공 요청.
+2. 수령 직후 파일명·크기·수신시각·원본 URL·SHA-256·PDF 페이지 수를 기록하고 변경 불가능한 증거 원본으로 보존.
+3. 표지/개정이력/적용 모델과 SKU 범위를 먼저 확인한 후 페이지별 전원·제어·통신·서비스 포트·PC 도구·펌웨어 다운로드·복구 절차를 인용.
+4. 각 사실을 EVD-01~16 및 SEC-001~036과 양방향 연결하고, 해당 없는 항목도 근거와 함께 N/A로 판정.
+5. 실제 SKU/HW/FW 및 EU 공급 증거가 없으면 Article 2 적용성, Annex III/IV 분류, RDPS 및 적합성은 Unknown으로 유지.
+
+**현재 게이트:** iX7M/iX7NH = 공식 첨부 메타데이터 확인, 원본 PDF 미확보; iX700M = 공식 목록의 Ver1.4 확인, 첨부 세부 미확인. 제품별 보안시험은 Not Run.
