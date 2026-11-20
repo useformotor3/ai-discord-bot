@@ -773,3 +773,9 @@
 - EN 40000-1-1/-1-2의 발행은 CEN-CENELEC 2026-11-19 공식 공지로 확인. OJ 참조 게시가 CRA 제27조 적합성 추정의 별도 전제임은 EC 공식 페이지 및 CRA 법령으로 확인.
 - CEN 개별 카탈로그의 "citation expected" 필드는 직접 열람하지 못함. "No citation expected"는 현재 2차 추적자료에 근거한 잠정 판단으로 유지.
 - M/606 41개 전수 표준별 OJ 감사는 계속 미완료. 제품별 CRA scope/classification/RDPS는 Unknown, security tests는 Not Run.
+
+
+## 2026-11-20 추가 1차 출처 검증 완료
+- CEN-CENELEC 공식 카탈로그 개별 레코드를 직접 열람했다. EN 40000-1-1:2026(JT013095) 및 EN 40000-1-2:2026(JT013089) 모두 Published, DOR 2026-11-02, DAV 2026-11-18이며 OJEU citation 필드는 **“No citation expected for Directive 2024/2847”**로 확인됐다.
+- 공식 레코드: https://standards.cencenelec.eu/ords/f?p=CEN:110::::::FSP_PROJECT,FSP_ORG_ID:82349,2307986 및 https://standards.cencenelec.eu/ords/f?p=CEN:110::::::FSP_PROJECT,FSP_ORG_ID:81335,2307986
+- 따라서 두 EN은 발행 사실과 별개로 CRA 제27조 적합성 추정의 근거로 취급하지 않는다. §28.2의 이전 “직접 확인 미완료” 상태는 이 검증으로 종료.
