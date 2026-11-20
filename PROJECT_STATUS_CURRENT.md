@@ -13,7 +13,7 @@
 - EN 304 635(hypervisors) 및 EN 304 636(firewalls/IDS/IPS)의 ETSI scope text는 Class I로 표시하지만 Regulation 2025/2392는 각각 Class II category 1/2로 분류한다. 법령이 우선. Normative draft 본문은 미취득이므로 metadata mismatch로만 확정.
 - EN 304 627 routers/modems/switches도 industrial OT 장비를 ETSI scope에서 제외한다. EN 304 620/621/622와 함께 OT exclusion 4개를 관리.
 - 18개 모두 Harmonised Standard metadata Yes이나 OJ field blank; actual OJ citation/Article27 presumption 미확인.
-- 다음 P0: EN304635/636 normative draft 확보·검증 및 ETSI metadata correction; 2026-11-23 ETSI M/606 AMD1 meeting; ESO Article2 receipt/acceptance; CENELEC 81650–81654 direct records; OJ index crosswalk.
+- 다음 P0: EN304635 V1.0.1 draft 재취득; EN304636 V1.0.0 Class II 확인 완료; ETSI metadata correction tracking; 2026-11-23 ETSI M/606 AMD1 meeting; ESO Article2 receipt/acceptance; CENELEC 81650–81654 direct records; OJ index crosswalk.
 - 상세: reports/CRA_ETSI_M606_18_ACTIVE_WORK_ITEM_MASTER_MATRIX_2026-11-20.md 및 CSV.
 
 ---
@@ -24,7 +24,7 @@
 - Exact-head Actions Run #1177 / ID 44713888650: success; 174 passed / 0 failed; source blob integrity, compile, CRA traceability and full pytest passed.
 - Traceability readback: claims 13, interfaces 15, requirements 35, SEC 36, EVD-SEC 16, M/606 mapping 41, PROJECT_LOG 279 events (274 modern IDs + 5 legacy), bidirectional links true.
 - Official CRA HTML source canary and provenance manifest upload passed. CRA Guidance PDF canary returned empty body and was explicitly skipped; no PDF verification claimed.
-- Integrated report v0.7 includes ETSI 8-item audit, CLC/TC 65X OT 7-deliverable reconciliation, C(2026)7861 Article 2/Annex I deadlines, Annex III/IV core-functionality and Article 32 route analysis.
+- Integrated report v0.9 includes ETSI 8-item audit, CLC/TC 65X OT 7-deliverable reconciliation, C(2026)7861 Article 2/Annex I deadlines, Annex III/IV core-functionality and Article 32 route analysis.
 - ETSI EN 304 620/621/622 explicitly exclude industrial OT in scope. 8 reviewed records have blank OJ fields; no Article 27 presumption claimed.
 - CENELEC 81649 parent record direct readback: prEN 50770-1, Committee stage, Citation expected, no DOR/DAV; DKE -1-1/-1-2 split differs. Central 81650–81654 direct readback not completed; DKE/BSI/LVS stage conflicts remain.
 - C(2026)7861 Annex I deadlines: 1/15=2026-11-30; 2–14=2027-10-30; 16–41=2027-01-31. Article 2 receipt-based one-month non-acceptance condition remains Unknown pending ESO receipt/notice evidence.
