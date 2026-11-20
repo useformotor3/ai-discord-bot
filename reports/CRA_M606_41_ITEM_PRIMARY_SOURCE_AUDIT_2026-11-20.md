@@ -40,3 +40,21 @@ C(2026) 7861 final 제1조는 C(2025)618의 Annex I를 새 Annex로 대체한다
 - 실제 표준번호가 식별되면 CEN/CENELEC/ETSI 원본 카탈로그에서 단계·버전·발행일·withdrawal/replacement·OJ CELEX/OJ reference·제한/철회 결정을 확인한다.
 - OJ 게시 전인 초안/승인 EN은 제27조 적합성 추정을 제공하지 않는다.
 - 제품 관련성은 SKU·제품경계·인터페이스·펌웨어 증거 확보 전까지 조건부 기술분석이며 법적 분류가 아니다.
+
+
+## 추가 Work Item 매핑 확인 (2026-11-20)
+
+CEN/CENELEC 공식 M/606 Work Programme V1 (2025-04-02)에서 다음 Annex I 연결을 확인했다.
+- Item 1 → JT013089, Principles for cyber resilience.
+- Items 2–14 → JT013091, Generic Security Requirements.
+- Item 15 → JT013090, Vulnerability Handling.
+
+CEN-CENELEC 공식 2026-02-23 CRA webinar p.36는 JT013090을 prEN 40000-1-3 Vulnerability handling으로 연결한다. CEN-CENELEC 2026-11-19 공식 발표는 FprEN 40000-1-3 공개가 임박했다고 설명한다. 단, JT013090의 최신 개별 카탈로그 단계 및 OJ citation field는 직접 확인하지 못했다. Formal Vote 19 Nov 및 “citation expected”는 secondary-only 정보로 관리한다.
+
+Article 2 기간은 결정일이 아니라 각 ESO의 수령일부터 1개월이다. 수령일 및 비수락 통지 원본은 확인되지 않았다. Commission 결정 Recital (2)의 기존 M/606 수락은 amendment acceptance를 증명하지 않는다.
+
+### 1차 출처 추가
+- CEN-CENELEC M/606 Work Programme V1 (2025-04-02): https://www.cencenelec.eu/media/CEN-CENELEC/News/Newsletters/2025/m_606_work_programme_final.pdf
+- CEN-CENELEC webinar slides (2026-02-23), p.36: https://www.cencenelec.eu/media/CEN-CENELEC/Events/Webinars/2026/2026-02-23_cra-standards-unlocked-cybersecurity-requirements-for-smgw_final.pdf
+- CEN-CENELEC official announcement (2026-11-19): https://www.cencenelec.eu/news-events/news/2026/en-in-the-spotlight/2026-11-19-cra-standards-en-40000-1-1-and-en-40000-1-2/
+- Commission Implementing Decision C(2026) 7861 final: https://www.ibf-solutions.com/fileadmin/dateidownloads/c-2026-7861-main-document-annex-cra-standards.pdf
