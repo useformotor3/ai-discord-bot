@@ -1387,3 +1387,30 @@ LS메카피온 서보드라이브에는 다음 판정 규칙을 적용한다.
 5. 실제 SKU/HW/FW 및 EU 공급 증거가 없으면 Article 2 적용성, Annex III/IV 분류, RDPS 및 적합성은 Unknown으로 유지.
 
 **현재 게이트:** iX7M/iX7NH = 공식 첨부 메타데이터 확인, 원본 PDF 미확보; iX700M = 공식 목록의 Ver1.4 확인, 첨부 세부 미확인. 제품별 보안시험은 Not Run.
+
+
+## 26. iX700M 모델 코드 및 CE 문서 메타데이터 — CRA 증거와의 구분 (2026-11-20)
+
+### 26.1 제조사 제품인증서 게시물에서 확인한 사실
+
+LS메카피온 공식 제품인증서 게시물은 다음 개별 모델을 명시한다.
+
+- 게시물 제목: `CE [드라이브] [iX700M Series] Drive Unit _ iX700MD1-B-150B`
+- 게시일: 2026-04-30.
+- 첨부 표시: `[CE_DoC-LVDEMC] iX700MD1-B-150B.pdf`, 238.9 KB.
+- 제조사 게시물의 모델 코드 설명: `iX700M` = Servo Series; `D1/D2/D3` = 1/2/3-axis Drive Unit; `B` input rating = 480 Vac; `150` rated wattage = 15 kW; encoder type `B` = BiSS-C; option code는 표준형 공란 또는 사용자 지정 코드.
+- 원문: https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&page=4&wr_id=12888
+
+### 26.2 해석상 제한
+
+1. 이는 제조사 자료실의 CE/LVD/EMC 문서 게시 메타데이터와 모델 코드 설명이다. 첨부 PDF 본문은 다운로드 경로에서 HTTP 502가 발생해 확보하지 못했다.
+2. 따라서 DoC 서명·적용 법령·표준·제품 식별 범위·발행자·날짜 등 문서 본문 세부는 검증되지 않았다.
+3. CE/LVD/EMC 문서가 존재한다는 사실만으로 CRA 적합성, CRA Annex III/IV 분류, secure-by-design, 취약점 처리, SBOM, 보안 업데이트 또는 Article 14 절차가 입증되는 것은 아니다.
+4. 해당 모델 코드는 SKU 추적의 출발점으로만 사용한다. 실제 EU 공급 SKU, HW/FW revision, 옵션 코드, 다축 구성 및 판매 단위를 확인하기 전 제품별 CRA 결론을 확정하지 않는다.
+
+### 26.3 제품 증거 수집에 반영할 내용
+
+- iX700M 제품 매트릭스에 `iX700MD1-B-150B`를 제조사 게시물에서 확인된 예시 모델 코드로 추가하되, 전체 시리즈를 대표한다고 가정하지 않는다.
+- D1/D2/D3 축수, 480 Vac 입력, 15 kW 정격, BiSS-C 인코더의 제조사 정의를 모델 식별 필드로 보존한다.
+- DoC 원본 PDF 및 iX700M Ver1.4 매뉴얼을 확보한 뒤 서로 다른 SKU의 범위가 일치하는지 확인한다.
+- CRA 적용성·Annex 분류·RDPS는 여전히 Unknown, 보안시험은 Not Run.

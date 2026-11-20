@@ -1733,3 +1733,13 @@
 - iX7M/iX7NH 첨부 다운로드는 브라우저/검색 경유 timeout 또는 HTTP 502. 원본 PDF bytes/해시/페이지 수/본문 분석은 미완료.
 - 보고서 §25와 manufacturer intake JSON에 metadata-only 상태로 기록. 제품별 분류 Unknown, 보안시험 Not Run 유지.
 - 다음 조치: 제조사 기술지원 채널을 통한 원본 파일 요청 또는 다운로드 경로 복구 후 SHA-256 및 페이지별 증거 검토.
+
+
+---
+
+## 2026-11-20 — iX700M 모델 코드 및 CE 문서 메타데이터
+
+- LS메카피온 공식 인증서 게시물에서 iX700MD1-B-150B 모델 코드와 제조사 정의(D1=1축, B=480 Vac, 150=15 kW, encoder B=BiSS-C)를 확인.
+- CE_DoC-LVDEMC 첨부 238.9 KB, 게시 2026-04-30. 첨부 원본은 HTTP 502로 미확보; DoC 본문은 검증하지 않음.
+- CE/LVD/EMC 게시 메타데이터를 CRA 적합성 또는 사이버보안 증거로 오인하지 않도록 보고서 §26과 intake JSON에 한계를 기록.
+- 제품별 CRA 판정 Unknown, 보안시험 Not Run 유지.

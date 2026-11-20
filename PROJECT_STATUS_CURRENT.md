@@ -1,3 +1,9 @@
+## 추가 제품 식별 증거 — iX700M CE/LVD/EMC 게시물 (2026-11-20)
+
+- 제조사 게시물에서 `iX700MD1-B-150B` 모델 코드 및 코드 체계(D1=1축, B=480 Vac, 150=15 kW, 인코더 B=BiSS-C)를 확인했다.
+- CE_DoC-LVDEMC PDF 게시 메타데이터(238.9 KB, 2026-04-30)는 확인했으나 원본 PDF는 HTTP 502로 미확보. CE/LVD/EMC 게시물은 CRA 적합성이나 보안통제 증거로 취급하지 않는다.
+- 상세 분석: 보고서 §26 및 manufacturer intake register. 제품별 CRA scope/classification/RDPS Unknown, security tests Not Run.
+
 ## 최신 재개 업데이트 — 제조사 매뉴얼 첨부 메타데이터 재확인 (2026-11-20)
 
 - iX7M Ver1.3 및 iX7NH 200V Ver1.7 공식 게시물의 첨부파일명·표시 용량·첨부 표시시각을 확인했다. 파일은 각각 `iX7M_KOR_Ver1.3_260605.pdf`(12.4 MB), `iX7NH_KOR_Ver1.7_260605.pdf`(19.5 MB)로 표시된다.

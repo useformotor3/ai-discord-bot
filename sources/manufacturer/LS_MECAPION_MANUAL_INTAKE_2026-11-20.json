@@ -47,6 +47,29 @@
       "download_observation": "Browser/search retrieval timeout or HTTP 502",
       "sha256": null,
       "page_count": null
+    },
+    {
+      "product": "iX700M Series / example SKU iX700MD1-B-150B",
+      "document": "CE DoC-LVD/EMC listing metadata",
+      "post_date": "2026-04-30",
+      "post_url": "https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&page=4&wr_id=12888",
+      "attachment_filename": "[CE_DoC-LVDEMC] iX700MD1-B-150B.pdf",
+      "attachment_size_display": "238.9 KB",
+      "download_url": "https://www.lsmecapion.com/bbs/download.php?bo_table=certificate&no=0&page=4&wr_id=12888",
+      "metadata_status": "METADATA_VERIFIED",
+      "bytes_status": "NOT_ACQUIRED",
+      "download_observation": "Browser retrieval HTTP 502",
+      "sha256": null,
+      "page_count": null,
+      "manufacturer_model_code": {
+        "series": "iX700M",
+        "drive_unit": "D1 (1-axis)",
+        "input_rating": "B (480 Vac)",
+        "rated_wattage": "150 (15 kW)",
+        "encoder_type": "B (BiSS-C)",
+        "option": "blank standard or custom code"
+      },
+      "interpretation_limit": "CE/LVD/EMC listing metadata is not evidence of CRA conformity or cybersecurity controls."
     }
   ],
   "evidence_rules": {
