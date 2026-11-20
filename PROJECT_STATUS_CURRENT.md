@@ -1,3 +1,16 @@
+## 최신 main 기준점 — PR #157 병합 및 사후 검증 (2026-11-20)
+
+- main merge SHA: `0ea0fba1fb37504f9d11b5c12d562c0d68f1d190`; PR #157 exact head `5210f9f11f1898f3dc83173df7a1a352d889c696`.
+- PR #157 Actions Run #1118 / ID `44678289573`: success. Compileall, CRA traceability, full pytest **174 passed / 0 failed**, official CRA PDF and 10-source HTML canaries, provenance manifest upload all passed. PDF source artifact upload skipped as unchanged.
+- Provenance artifact #14602977168, 2,567 bytes, ZIP SHA-256 `aeb27bb37f157d6d3de8dcde48d4cfad56caae112ec4d5637a470eca325a4f17` (7-day retention).
+- 복구 기준점: `safety/pre-pr157-merge-2026-11-20` → `af7fa899dd0e7c31871387befef62979ad032283`; `safety/post-merge-pr157-2026-11-20` → merge SHA. Post ref와 main 동일 확인.
+- 보고서 §34, 제조사 자료 인벤토리 신규 5행, 상황판·계획·로그 반영. 인벤토리 총 16개 데이터 행, PROJECT_LOG.jsonl 248개 유효 JSON 레코드.
+- 신규 제조사 항목은 목록 메타데이터만 확인. DFU/특주 OS/DriveCM/iX7NH 첨부 원본 bytes·SHA-256·본문 미확보. Signed firmware, Secure Boot, authenticated update, anti-rollback, support period 또는 CRA 적합성을 입증하지 않음.
+- 제품별 CRA scope/classification/Annex III·IV/RDPS는 Unknown, security tests Not Run. Main push CI는 별도 조회 범위에서 독립 확인되지 않아 미확인으로 유지.
+- 다음 P0: 제조사 상세 게시물·첨부 원본 확보, SKU별 업데이트 경로/인증/서명/복구/롤백/지원기간 및 취약점 처리 증거 검증.
+
+---
+
 
 
 ## 2026-11-20 추가 조사 — 제조사 펌웨어·도구 자료 목록 스크리닝
