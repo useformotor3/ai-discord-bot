@@ -1,6 +1,6 @@
 # CRA Servo Drive Compliance & Engineering Project
 
-> **최신 재개 상태 — 2026-11-20:** PR #132~#138 병합 완료. 보고서 §31~§33 및 14행 모델별 인터페이스 매트릭스 반영. PR #138 exact-head CI Run #1080 성공(174 passed / 0 failed). EtherCAT/Modbus TCP 인터페이스의 25b 기술적 관련성은 강하지만 법적 적용·SKU 범위는 Unknown.
+> **최신 재개 상태 — 2026-11-20:** PR #132~#139 병합 완료. 통합 보고서 §31~§33, 6개 OT/IACS profile matrix, 11개 제조사 자료, 14행 모델별 인터페이스 매트릭스 main 반영. PR #139 exact-head CI Run #1082 성공(174 passed / 0 failed). 제조사 원본 파일 및 SKU별 상세 검증은 계속 진행 중.
 
 산업용 서보 드라이브의 EU Cyber Resilience Act(CRA) 대응을 위한 조사·설계·검증·문서화 프로젝트입니다. 문서의 기본 언어는 한국어이며, 법령·표준·제조사 원문은 원어와 출처를 보존합니다.
 
@@ -946,3 +946,9 @@ CLC/TC 65X의 M/606 20b/21b/22b/25b/27b/36b를 prEN 50770-4/-2/-6/-3/-5/-1에 �
 - Merge SHA `372860cfb1a149bc5d5a7bf993e11dbf68217478`; exact-head Run #1080 success, 174 passed / 0 failed.
 - PDF artifact #14595309514, provenance artifact #14595489037; official canaries and provenance upload passed.
 - Pre/post safety refs: `safety/pre-pr138-merge-2026-11-20`, `safety/post-merge-pr138-2026-11-20`; post ref identical to main.
+
+
+### PR #139 검증 및 병합 상태 (2026-11-20)
+- Merge SHA `7545a771ce16f362cf5b911cd8c850efc91c2e92`; exact-head Run #1082 success, 174 passed / 0 failed.
+- PDF artifact #14596455559, provenance artifact #14596296397; official canaries and provenance upload passed.
+- Pre/post safety refs: `safety/pre-pr139-merge-2026-11-20`, `safety/post-merge-pr139-2026-11-20`; post ref identical to main.
