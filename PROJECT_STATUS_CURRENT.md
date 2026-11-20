@@ -5,7 +5,7 @@
 - 개선 브랜치: `fix/automation-outcome-visibility-2026-11-20`; 시작 main SHA: `2f8aac8d2d61e217e06be21d36afe857e8bdf2d0`.
 - 추가: `scripts/automation_outcome_summary.py`, `tests/test_automation_outcome_summary.py`, `reports/CRA_AUTOMATION_CADENCE_AND_OUTCOME_OBSERVABILITY_AUDIT_2026-11-20.md`.
 - 운영 workflow는 main.py 로그를 임시 파일로 tee하고 실제 outcome summary를 GitHub Actions Summary에 게시하도록 개선 중. 3시간 cadence는 유지하며 cron을 UTC 정각(:00)에서 :17로 이동해 정각 부하를 피한다. Gemini/Discord 호출 빈도, secrets, main.py, checkpoint/guard는 변경하지 않았다. 최근 26회 run은 평균 59분(중앙값 58분, 범위 49~71분) 지연됐으며, Run #2523은 12:00 UTC 슬롯보다 약 63분 늦게 생성됐다.
-- 초기 PR #189 HEAD `434819fde00e1f72b7ff158cc4893e0fc1d2e367`의 Run #1247에서 182 passed / 0 failed. 이후 cron offset 변경 HEAD Run #1262는 기존 cadence 테스트의 옛 문자열 고정으로 181 passed / 1 failed; 해당 테스트 기대값을 :17로 정정. 최신 HEAD Run #1270 재검증 진행 중; main 미병합.
+- 초기 PR #189 HEAD `434819fde00e1f72b7ff158cc4893e0fc1d2e367`의 Run #1247에서 182 passed / 0 failed. 이후 cron offset 변경 HEAD Run #1262는 기존 cadence 테스트의 옛 문자열 고정으로 181 passed / 1 failed; 해당 테스트 기대값을 :17로 정정. 최신 HEAD `2b3522b1a95256901636afae8ee1af92e68bc35a`의 Run #1271 success; 전체 pytest **182 passed / 0 failed**, source identity/compile/CRA traceability/official PDF·HTML canary/manifest upload 성공. main 미병합; 다음 production run에서 Summary 실제 동작 확인 필요.
 - 5분마다 production Gemini 실행은 비용·quota·중복·queue 위험 때문에 채택하지 않는다. 필요하면 별도 read-only heartbeat로 분리 검토한다.
 - ChatGPT 예약 작업 확인: 주간 CRA·MCU 공식자료 점검 enabled; 일일 Git 브랜치 통합 상태 점검 및 CRA 보고서 대기열 점검 disabled. 5분 자동화는 확인되지 않았다.
 
