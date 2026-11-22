@@ -1,5 +1,7 @@
 # CRA Servo Drive Compliance & Engineering Project
 
+> **보고서 독자 안내 — 2026-11-22:** [CRA 통합 보고서 v0.10](reports/CRA_INTEGRATED_COMPLIANCE_REPORT_2026-11-17.md)의 첫 부분에 읽는 순서, 서보 드라이브 작동 원리, CRA 판단 흐름, 핵심 용어 및 회사 내 활용 방법을 추가했습니다. 작성 기준은 [CRA 기업용 보고서 작성·설명 표준](REPORT_WRITING_STANDARD_CRA.md)을 따릅니다. 전문적인 법률·기술 세부사항은 생략하지 않고 비전문 독자도 따라갈 수 있도록 설명 계층을 추가합니다.
+
 > **자동화 운영 점검 — 2026-11-20:** [실제 운영은 3시간 주기이며, 정각 지연을 줄이기 위해 UTC :17로 이동하고 no-op/모델 장애 결과를 별도 표시하도록 개선](reports/CRA_AUTOMATION_CADENCE_AND_OUTCOME_OBSERVABILITY_AUDIT_2026-11-20.md). 5분 주기 Gemini 실행은 설정하지 않음. 초기 PR #189 HEAD CI 182 passed / 0 failed. cron 변경 후 cadence 테스트의 구 설정값 고정 문제를 발견·수정했고 code HEAD Run #1271에서 182 passed / 0 failed; fallback fixture의 2개 실패를 수정했고 최신 HEAD Run #1285에서 183 passed / 0 failed; main 미병합.
 
 > **최근 병합 — 2026-11-20:** PR #184 merged to main as `9dbe6e92c358d0361f9640651152e4d1e8b1ec6b`. Exact-head CI Run #1238 succeeded (174 passed / 0 failed). M/606 18-item matrix, latest EN304635/636 Class II draft checks, CENELEC 50770 WIID crosswalk and AI session self-review protocol are in main. See PROJECT_STATUS_CURRENT.md and PR #184.
@@ -12,7 +14,7 @@
 > **최신 재개 상태 — 2026-11-20:** PR #182 merged to main (904b2ed0897331ced9dedfcbd25afd608f92f951). Exact-head Run #1177 success, 174 passed / 0 failed. Integrated report v0.9: full ETSI M/606 18-item matrix, two ETSI Work Item metadata discrepancies; latest EN304636 draft confirms legal Class II, EN304635 V1.0.1 public sample confirms Class II; both latest drafts align with law, OT 7-deliverable profile reconciliation, C(2026)7861 Article 2/deadlines, Annex III/IV and Article 32 route matrix. Product classification remains Unknown pending exact SKU/BOM/FW evidence.
 
 ## 최신 조사 산출물
-- [통합 CRA 보고서 v0.9](reports/CRA_INTEGRATED_COMPLIANCE_REPORT_2026-11-17.md)
+- [통합 CRA 보고서 v0.10](reports/CRA_INTEGRATED_COMPLIANCE_REPORT_2026-11-17.md)
 - [ETSI 8개 Work Item 및 OT 50770 재조사](reports/CRA_ETSI_M606_8_ITEM_AND_OT_50770_RECONCILIATION_2026-11-20.md)
 - [Annex III/IV 및 Article 32 제품분류·경로 분석](reports/CRA_ANNEX_III_IV_ART32_SERVO_DRIVE_CLASSIFICATION_MATRIX_2026-11-20.md)
 
