@@ -2878,3 +2878,14 @@
 - Pre/post merge safety refs: safety/pre-pr206-merge-2026-11-23 / safety/post-merge-pr206-2026-11-23.
 - main read-back: report v0.18 §49, product evidence register §10, PROJECT_LOG 326 records/0 invalid.
 - Next: exact iX700M Solution Square file/version; iX700M/PEGA2 PDF bytes, hashes and revision comparison; actual SKU/HW/FW/ST MCU part number.
+
+
+## 2026-11-23 — M/606 및 EN 304 625 재확인 / main push CI
+
+- Live GitHub main branch SHA: 5197ad352cdd79fdacf9c4e4cc20fedb8ae085c6 (PR #206 merge 이후).
+- Main push Actions Run #1365 / ID 45137633064 completed success, head SHA 일치. PR exact-head Run #1364와 구분해 기록.
+- PR #207은 현재 main branch API에서 확인되지 않아 병합 사실로 기록하지 않음. 기존 요약과 실시간 GitHub 상태가 불일치할 경우 live API를 우선한다.
+- Commission 공식 페이지는 M/606 2026-11-10 amendment와 vertical 및 일부 horizontal deliverable의 3개월 연장을 명시.
+- ETSI 캘린더는 2026-11-23 examination meeting 일정을 표시하지만 공개 minutes/decision 및 ESO별 수령·비수락 통지는 확보되지 않아 Unknown 유지.
+- EN 304 625 work item은 “Draft Review after PE” 상태의 candidate for harmonisation. 네트워크 포트가 있다는 사실만으로 iX700M 전체의 분류/적용을 단정하지 않음.
+- 통합 보고서 v0.19 §50 및 제품 증거 등록부 §11에 반영. 운영 코드/workflow/secrets/API cadence 변경 없음.
