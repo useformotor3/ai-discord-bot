@@ -2652,3 +2652,25 @@
 - 복구: 기존 이벤트는 보존하고 이번 세션 이벤트만 1개 유지했으며, 파일 중간 빈 행/JSON 오류가 없는지 전 행 재검증. 현재 309 records, invalid JSON 0, interior blank line 0, 신규 event ID 1개.
 - 재발 방지: JSONL append 전 마지막 문자의 개행 여부를 확인하고, 빈 행을 허용하지 않는 전체 파일 파서를 실행한 후 CI를 재실행한다.
 - 상태: 최초 CI 실패는 숨기지 않고 기록. 수정된 HEAD의 재실행 결과 확인 전까지 CI 통과로 간주하지 않음.
+ 
+## 2026-11-23 — 통합 보고서 v0.12 §5~§10 설명 보강 및 M/606 후속 확인
+
+### 변경
+- 사용자 요구에 따라 기업용 전문 문서의 기술·법률 깊이를 유지하면서 비전문 독자도 이해할 수 있도록 통합 보고서 v0.12를 작성.
+- §5~§10에 실무 해설 추가: 제조사 의무를 제품 생애주기/부서별 역할로 연결, Article 14 신고 접수·최초 인지시각·triage 흐름, 표준 초안/Work Item/OJ citation 구분, CRA와 기계류 규정의 위험·증거 경계, SKU/HW/FW 단위 증거 추적, 단계별 완료 게이트.
+- §39~§42에 §5~§10 통합 해설, M/606 회의 상태, ST MCU Category 14 증거 분리, PR #196 CI 결과 기록.
+- 보고서 기준일 2026-11-23, 버전 v0.12.
+
+### 새로 확인한 사실과 한계
+- ETSI 공식 회의 캘린더는 GoSRSReq006-M/606 AMD 1 examination meeting을 2026-11-23 Online으로 표시. 일정 게시만 확인했으며 실제 개최/결과/표결/ESO 수락 여부는 공개 1차 증거를 확보하지 못함. Unknown 유지.
+- PR #196 exact-head Run #1308 / 45094691796 success: source integrity, compile, CRA traceability, full pytest, official CRA PDF/HTML canaries, PDF evidence and provenance uploads 모두 성공.
+- Run #1307은 JSONL 중간 빈 행으로 CRA traceability 단계 실패. 빈 행/중복 이벤트를 수정한 뒤 Run #1308 전체 성공. 최초 실패는 숨기지 않고 유지.
+- ST MCU 전체 order code와 LS메카피온 정확한 SKU/HW/FW/BOM은 미확보. Category 14/Annex III·IV/Article 32 제품별 결론은 Unknown.
+
+### 다음 작업
+1. M/606 공식 minutes/contribution/decision 및 ESO receipt/acceptance/non-acceptance 확인.
+2. ST 전체 주문 코드와 security feature/configuration 원문 확보.
+3. LS메카피온 모델별 SKU/HW/FW/BOM/매뉴얼/통신 구조 확보.
+4. §5~§10 비전문 독자 검토 및 CRA 법률·제품 기술 전문가 교차검토.
+5. 문서 변경은 PR #196에 유지하고 exact-head/main CI와 merge read-back 전에는 병합 완료로 기록하지 않는다.
+
