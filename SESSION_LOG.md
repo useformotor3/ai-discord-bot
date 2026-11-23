@@ -2802,3 +2802,34 @@
 4. 원본 매뉴얼·카탈로그 PDF를 확보할 수 있으면 파일 해시·개정·모델 적용범위를 확인.
 
 범위: CRA only. SIL 3 제외.
+
+
+
+## 2026-11-23 — EU 관보 Commission CRA Guidance C/2026/6013 분석
+
+### 원문 확인
+- EUR-Lex ELI: https://eur-lex.europa.eu/eli/C/2026/6013/oj
+- OJ C, 17.11.2026, 61 pages.
+- 지침 §8은 문서가 경제운영자에게 구속력이 없으며 CRA의 권위 있는 해석은 CJEU에 있다고 명시한다. 보고서에서 법령과 공식 해석 지침을 구분했다.
+
+### 핵심 분석
+- §§141~145: 제품 전체 core functionality가 중요/핵심 제품 분류 및 conformity assessment route를 결정한다. 별도 판매 모듈은 독립 PDE로, 통합 제품에만 포함된 모듈은 통합 제품 수준으로 본다.
+- §§147~151: 제품 전체 위험평가는 계속 필요하며, OJ 인용 표준의 범위 밖 추가 기능 위험은 별도 조치·문서화한다.
+- §§156~163: 잔여 위험은 충분히 처리되어야 하며 제조자 내부 risk appetite·상업 전략·비용만으로 미처리 위험을 정당화할 수 없다.
+- §§170~173: 외부 통합 부품은 risk-based due diligence 대상이며 제조사 기술/보안 문서 및 필요 시 시험 증거를 활용한다.
+- §§125~127: support period는 예상 사용기간 기준. 최소 5년은 자동 기본값이 아니며 5년보다 긴 제품 사용기간은 더 긴 지원기간을 요구할 수 있다.
+- §108 및 §§122~124: 보안 업데이트는 intended purpose 변경/새 위험 도입 여부에 따라 substantial modification 여부를 판단하고, 변경되지 않은 영역의 기존 증거 재사용 가능성을 구분한다.
+
+### 서보드라이브 영향
+- ST MCU의 기능 보유 여부와 완제품 내 실제 활성화·구성·검증을 분리한다.
+- iX700M Converter Unit/Drive Unit의 별도 판매 여부와 통합 다축 제품의 경계를 확인한다.
+- EtherCAT/RS-485 포트나 MCU 보안기능만으로 Annex III 카테고리를 확정하지 않는다.
+- 산업 설비의 실제 예상 사용기간, 서비스 계약, 부품 지원기간을 수집한다.
+- 잔여 위험을 폐쇄망/고객 책임/비용만으로 종결하지 않는다.
+
+### 문서 변경
+- 통합 보고서 v0.17 §48 추가.
+- LS메카피온 제품 증거 등록부 §9 추가.
+- PROJECT_STATUS_CURRENT, MASTER_PLAN, SESSION_LOG, README, PROJECT_LOG 갱신.
+- 이전 PR #204 exact-head CI Run #1352는 success. 이번 문서 변경 후의 새 head는 별도 CI가 필요하다.
+- 운영 코드, workflow, secrets, API cadence 변경 없음. CRA only; SIL 3 제외.
