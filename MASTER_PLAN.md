@@ -1,3 +1,26 @@
+## 2026-11-24 — LS메카피온 서보 드라이브 CRA 적용 범위·제품 분류 정밀 분석
+
+
+### 수행 및 판단
+1. CRA Article 2(1)의 데이터 연결 요건과 Article 3 제품 정의를 Guidance §§26–31과 교차검토한다.
+2. 실제 통신형 서보드라이브가 EU 시장에 공급되는 경우 CRA 적용 가능성이 높다는 잠정 결론을 내리되, SKU·판매단위·intended purpose는 Unknown으로 유지한다.
+3. 완제품 핵심 기능이 모터 제어인 경우 Default category 가능성이 높다고 판단한다. Annex III category 10 Fieldbus/network interface, category 14 security MCU, Class II category 4 MCU는 독립 제품 경계 및 core functionality에 따라 별도 검토한다.
+4. Guidance §145의 별도 판매 모듈 원칙과 §§167–173의 통합 구성품 due diligence를 적용한다.
+5. EN 40000-1-1/-1-2 공개를 반영하되 OJ citation/Article 27 presumption 미확인으로 기록한다.
+
+### 다음 P0
+- 실제 대상 SKU/nameplate 및 EU 판매 단위 확정.
+- Converter Unit/Drive Unit 독립 판매 여부 및 계약/주문 SKU 확인.
+- ST MCU full order code, silicon revision, security manual/errata 및 실제 보안기능 활성화 증거 확보.
+- EtherCAT/RS-485/USB/Ethernet/pulse/I/O별 회로·프로토콜·driver/API 자료 확보.
+- EN 40000 표준 원문 확보 및 조항별 요구사항 매핑, OJ 인용 상태 재확인.
+- 제품별 Annex III/IV 분류와 Article 32 route는 증거 확보 전 최종 확정 금지.
+
+### 통제
+- 신규 문서: reports/CRA_MECAPION_SERVO_DRIVE_SCOPE_CLASSIFICATION_2026-11-24.md
+- 통합 보고서: v0.23 §54; 제품 증거 등록부 §15.
+- 문서 전용 변경. 운영 코드/workflow/secrets/API cadence 변경 없음. CRA only; SIL 3 제외.
+
 ## 2026-11-23 — PR #214 병합 및 공식 Annex 원문 근거 반영
 
 - PR #214: https://github.com/useformotor3/ai-discord-bot/pull/214 — squash merge 완료.
