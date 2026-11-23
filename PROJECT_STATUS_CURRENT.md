@@ -1,3 +1,15 @@
+## 2026-11-23 — PR #200 병합 및 CRA Annex III MCU 분류 정밀화
+
+- PR #200: https://github.com/useformotor3/ai-discord-bot/pull/200 — squash merge 완료.
+- merge SHA: `53d91ee5beb16f703bbaddc3ec64dd238989d55a`; exact PR head: `bced199d83a1f6ee9a9948951851d2dafb2f5740`.
+- 보고서 `reports/CRA_INTEGRATED_COMPLIANCE_REPORT_2026-11-17.md` main read-back: **v0.14**, §44 확인. Annex III Class I point 14 / Class II point 4와 M/606 item 29 / 38 번호 체계, Reg. (EU) 2025/2392 MCU technical descriptions, Article 7 core-functionality/component-integration 경계를 추가.
+- PR exact-head Actions Run #1331 / ID `45114851876`: success. Source integrity, compile, CRA traceability, full pytest, official PDF/HTML canaries, PDF evidence upload 및 provenance manifest upload 성공.
+- post-merge safety ref: `safety/post-merge-pr200-2026-11-23` (merge SHA 기준).
+- main push Actions Run #1332 / ID `45123598545`: **진행 중(마지막 확인 시점)**. 테스트와 CRA traceability 성공, PDF canary 성공; PDF evidence upload은 변경 없음 조건으로 skipped. HTML canary가 진행 중이어서 main push 최종 성공으로 기록하지 않는다.
+- 제품 판정 경계: ST MCU 정확한 order code·보안 구성 및 LS메카피온 정확한 SKU/HW/FW/BOM이 확보되지 않아 MCU/완제품 Annex III 분류는 Unknown. 부품 내장만으로 완제품 분류가 자동 승계되지 않지만 완제품 CRA 기본 의무는 유지.
+- ETSI GoSRSReq006-M/606 AMD 1 examination meeting은 공식 ETSI calendar에서 2026-11-23 온라인 일정으로 재확인. 일정 게시만 확인되며 회의 결과·회의록·ESO 수령일/비수락 통지는 여전히 Unknown.
+- 범위: CRA only. SIL 3 제외. 운영 코드, 운영 workflow, secrets, API 호출 주기 변경 없음.
+
 # 프로젝트 상황판 — 2026-11-23 (운영 자동화 기준 상세 기록: 2026-11-20)
 
 - **PR #189 병합 완료:** `1683b5ec780c7396309d85b86cba100a021194e4` (squash). main read-back 동일.
