@@ -1,6 +1,6 @@
 # CRA 서보 드라이브 통합 규제·기술 준수 보고서
 
-- 문서 버전: v0.13 (M/606 개정 결정 C(2026)7861 원문 및 항목별 기한 반영)
+- 문서 버전: v0.14 (Annex III MCU 분류 및 core functionality 법적 기준 정밀화)
 - 기준일: 2026-11-23
 - 프로젝트 범위: EU Cyber Resilience Act(CRA) 대응만
 - 기준 제품군: 산업용 서보 드라이브 및 필수 펌웨어·설정/진단 소프트웨어
@@ -1004,3 +1004,70 @@ M/606 일정은 표준화기구의 납품 일정이지 제조자의 CRA 적용�
 - C(2026) 7861 final, Annex I: https://ec.europa.eu/transparency/documents-register/api/files/C%282026%297861_1/de00000001090401
 - European Commission, CRA standardisation: https://digital-strategy.ec.europa.eu/en/policies/cra-standardisation
 - ETSI M/606 Work Programme, version 2.3.3 (2026-11-22): https://portal.etsi.org/webapp/WorkProgram/WorkItemPlan.asp?SearchPage=TRUE&butExpertSearch=Search&includeNonActiveTB=FALSE&includeSubProjectCode=FALSE&optDisplay=10&qCLUSTER_BOOLEAN=OR&qETSI_ALL=&qFREQUENCIES_BOOLEAN=OR&qINCLUDE_MOVED_ON=&qINCLUDE_SUB_TB=True&qKEYWORD_BOOLEAN=OR&qMandate_List=%27M/606%27&qREPORT_TYPE=SUMMARY&qSORT=HIGHVERSION&qSTOPPING_OUTDATED=&qSTOP_FLG=N
+
+
+## §44. ST MCU와 서보 드라이브의 Annex III 분류 — core functionality 기준 정밀 분석
+
+### 44.1 먼저 구분할 두 가지 분류
+
+CRA Annex III에는 MCU 관련 중요 제품 범주가 두 가지 있다.
+
+| CRA Annex III 범주 | 등급 | 표준화 요청 M/606 항목 | 법적·기술적 기준 |
+|---|---|---:|---|
+| Microcontrollers with security-related functionalities | Class I, point 14 | 29 | 보안 관련 기능을 갖춘 마이크로컨트롤러 |
+| Tamper-resistant microcontrollers | Class II, point 4 | 38 | 위 Class I point 14의 MCU에 변조 흔적 감지·저항·대응 기능을 더하고 AVA_VAN 2 또는 3 수준 보호를 제공하도록 설계된 MCU |
+
+**주의:** M/606 번호와 CRA Annex III 번호는 서로 다르다. M/606 항목 29는 CRA Annex III Class I point 14와 대응하고, M/606 항목 38은 CRA Annex III Class II point 4와 대응한다. 문서·표에서 번호 체계를 섞지 않는다.
+
+### 44.2 Class I — 보안 관련 기능을 갖춘 MCU
+
+Commission Implementing Regulation (EU) 2025/2392 Annex I의 기술 설명에 따르면, 해당 범주는 다음 요소를 함께 검토한다.
+
+1. 집적회로가 중앙 처리 기능을 수행한다.
+2. MCU가 프로그램 가능하도록 메모리를 통합하며, 일반적으로 주변장치도 통합한다. 마이크로코드와 저수준 펌웨어도 기술 설명에 포함된다.
+3. 여기에 암호화, 인증, 보안 키 저장, 난수 생성, 신뢰 실행 환경(TEE), 기타 하드웨어 기반 보호 메커니즘과 같은 보안 관련 기능이 추가된다.
+4. 그 보안 기능은 MCU 자체만을 보호하는 데 그치지 않고, 보안 부팅 체인, 가상화, 보안 통신 인터페이스 등의 예처럼 다른 제품·네트워크·서비스를 보호하려는 목적을 가진다.
+
+따라서 데이터시트에 AES, RNG, secure boot, key storage 등의 항목이 있다는 사실만으로 최종 분류를 자동 확정하지 않는다. 해당 기능의 정확한 구현, 목적, 제품에서의 실제 사용·활성화, 해당 MCU가 어떤 제품으로 시장에 제공되는지까지 증거로 연결해야 한다. 반대로 MCU의 보안 기능이 사용되지 않는다고 해서 법적 범주에서 자동 제외된다고 단정해서도 안 된다. 기술 설명과 제품의 객관적 설계·기능을 함께 평가한다.
+
+### 44.3 Class II — 변조 저항형 MCU
+
+Commission Implementing Regulation (EU) 2025/2392 Annex I Class II point 4는 Class I point 14의 보안 기능을 갖춘 MCU에 다음 조건을 추가한다.
+
+- 변조 흔적 감지(tamper evidence), 변조 저항(tamper resistance) 또는 변조 대응(tamper response)을 포함하고,
+- Common Criteria 및 Common Evaluation Methodology에 규정된 AVA_VAN level 2 또는 3 보호를 제공하도록 설계되어야 한다.
+
+따라서 단순히 패키지에 tamper pin이 있거나, 보안 관련 데이터시트 문구가 있다는 것만으로 Class II 판정을 내리지 않는다. 제조사 보안 매뉴얼, 보안 타깃·인증서, AVA_VAN 평가 범위, 해당 부품과 실제 구성의 일치 여부를 확인해야 한다.
+
+### 44.4 MCU가 들어간 서보 드라이브 완제품 — 통합만으로 상위 제품 분류가 자동 승계되지 않음
+
+CRA Article 7(1)과 Commission Implementing Regulation (EU) 2025/2392의 전문 (2)~(5)는 중요 제품 여부를 제품의 **핵심 기능(core functionality)** 및 Annex III의 기술 설명에 따라 판단하도록 한다.
+
+- Annex III 범주에 해당하는 MCU가 서보 드라이브 안에 통합되었다는 사실만으로 서보 드라이브 완제품이 MCU 범주의 중요 제품이 되는 것은 아니다.
+- 부품을 통합한 완제품은 완제품 자체의 핵심 기능이 Annex III 범주의 기술 설명에 해당하는지 따로 판단한다.
+- 다만 완제품이 Class I/II 중요 제품으로 분류되지 않는다고 해서 CRA 의무가 사라지는 것은 아니다. 제품 전체는 CRA Article 6 및 Article 13에 따른 필수 사이버보안 요구사항과 위험평가를 충족해야 하며, 통합 MCU의 취약점·보안 설정·업데이트 가능성은 완제품 위험평가와 기술문서에 반영한다.
+- 예를 들어 서보 드라이브의 핵심 기능이 모터의 속도·토크·위치 제어와 전력 변환이라면, 보안 기능을 가진 MCU를 사용했다는 이유만으로 완제품을 MCU 범주로 분류하지 않는다. 다만 실제 제품의 핵심 기능·시장 제공 형태·통신 및 보안 기능을 확인한 뒤 결론을 내려야 한다.
+
+### 44.5 제품별 증거 수집표 — ST MCU 및 LS메카피온 서보 드라이브
+
+| 증거 | ST MCU 부품 분류에 필요한 이유 | 서보 드라이브 완제품 판단에 필요한 이유 |
+|---|---|---|
+| 전체 주문 코드 및 silicon revision | 정확한 부품과 기능 차이 확인 | BOM·제품 구성과 연결 |
+| 공식 데이터시트·reference manual·security manual | 보안 기능의 존재·구조 확인 | 통합 부품의 보안 설계 확인 |
+| secure boot·암호화·인증·키 저장·RNG·TEE 구성 및 활성화 상태 | 기술 설명과 실제 구현 비교 | 부팅·통신·업데이트 경로의 위험 분석 |
+| tamper detection/response 사양과 AVA_VAN 근거 | Class II point 4 검토 | 통합 MCU가 완제품에 주는 보안 영향 |
+| 펌웨어 버전·부트로더·디버그 잠금·키 프로비저닝 기록 | 기능이 실제 제품에서 어떻게 사용되는지 검증 | 제품 전체의 공격면과 보안 업데이트 검증 |
+| MCU 단독 판매 여부·시장 제공 형태 | MCU 자체가 별도 제품으로 시장에 제공되는지 판단 | 부품과 완제품의 경제적·기술적 제품 경계 확인 |
+| 서보 드라이브 SKU·HW/FW/BOM·매뉴얼·통신 구성 | MCU 부품과 완제품 식별자 연결 | 완제품의 intended purpose와 core functionality 판단 |
+
+### 44.6 현재 결론 및 금지해야 할 추정
+
+- 사용자가 ST MCU를 사용한다고 알려준 사실만으로 ST 부품의 Annex III Class I point 14 또는 Class II point 4 해당 여부를 확정할 수 없다.
+- 정확한 ST order code, 공식 기술문서, 보안 기능 및 해당 기능의 설계·구현 증거가 아직 확보되지 않았다. 따라서 부품 분류는 **Unknown**으로 유지한다.
+- LS메카피온 서보 드라이브의 정확한 SKU, HW/FW, BOM, 제품 매뉴얼 및 통신 토폴로지가 미확보이므로 완제품의 Annex III/IV 분류도 **Unknown**으로 유지한다.
+- MCU의 보안 기능이 있다는 이유만으로 서보 드라이브 전체가 중요 제품이라고 단정하지 않는다. 반대로 서보 드라이브라는 제품명만으로 Annex III/IV 범주에서 제외한다고 단정하지도 않는다.
+- 제품별 판정은 증거 매트릭스가 채워진 뒤 core functionality와 시장 제공 단위를 기준으로 검토하고, 미확인 사항은 미확인으로 남긴다.
+
+**공식 1차 출처**
+- Regulation (EU) 2024/2847, Article 7 및 Annex III: https://eur-lex.europa.eu/eli/reg/2024/2847/oj/eng
+- Commission Implementing Regulation (EU) 2025/2392, Article 2 및 Annex I: https://eur-lex.europa.eu/eli/reg_impl/2025/2392/oj/eng
