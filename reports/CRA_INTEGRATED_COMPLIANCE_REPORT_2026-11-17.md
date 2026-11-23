@@ -1531,3 +1531,8 @@ LS메카피온의 최신 제품군 페이지는 iX700M을 다축 모듈러 Ether
 KC 목록의 `iX700MCB-B-8K` 및 CE 목록의 `iX700MCB` 항목을 확인했으나 코드 의미·기능은 공개 정의가 없어 Unknown이다. 프로젝트에서 ST MCU를 사용한다는 사용자 제공 정보는 iX700M 내부 MCU 탑재 증거가 아니다. iX700M의 MCU·BOM·보안 설정은 Unknown이다.
 
 독립 보고서 §14 및 제품 증거 등록부 §18에 세부 근거와 증거 한계를 기록한다. Converter/Drive 독립 판매 및 EU 개별 PDE 공급 여부는 Unknown으로 유지한다.
+
+
+## §57. 2026-11-24 — CRA 공식 지침 PDF 수집 endpoint 보완
+
+PR #218 Run #1395에서 컴파일·추적성·pytest 184개는 성공했으나, C/2026/6013 PDF의 EUR-Lex endpoint가 CI에서 sorry.ec.europa.eu로 리디렉션되어 PDF canary가 실패했다. 공식 Publications Office의 직접 OJ PDF URL(https://publications.europa.eu/resource/cellar/dcbc848b-e227-11f1-aefc-01aa75ed71a1.0006.01/DOC_1)을 브라우저에서 확인한 결과 61페이지의 C/2026/6013 관보 PDF다. 수집기 primary URL과 정확한 호스트 allowlist를 Publications Office로 변경하고 테스트에서 URL/host를 고정했다. PDF magic·문서 식별 문구·본문·SHA-256 검증은 유지한다. 새 exact-head CI 통과 전 PR #218은 병합하지 않는다.
