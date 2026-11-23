@@ -1,3 +1,5 @@
+> **2026-11-23:** PR #200 병합 완료(merge SHA `53d91ee5beb16f703bbaddc3ec64dd238989d55a`). 보고서 v0.14 §44가 main에 반영되었습니다. Exact-head Run #1331 성공. Main push Run #1332는 마지막 확인 시점에 HTML canary 진행 중이므로 최종 성공 여부는 별도 확인 대상입니다. 사후 복구 기준점: `safety/post-merge-pr200-2026-11-23`. CRA only; SIL 3 제외.
+
 # CRA Servo Drive Compliance & Engineering Project
 
 > **2026-11-23:** PR #198 병합 완료(merge SHA `447fd178fc0068c7616444485d75e639d9edc8f2`). 보고서 v0.13 §43 및 M/606 deadline crosswalk가 main에 반영되었습니다. Exact-head Run #1324 성공; duplicate Run #1325 cancelled. Main push Run #1326 성공: 전체 테스트·CRA traceability·공식 PDF/HTML 확인·PDF evidence 및 provenance 업로드 모두 성공. 사후 복구 기준점: `safety/post-merge-pr198-2026-11-23`.
