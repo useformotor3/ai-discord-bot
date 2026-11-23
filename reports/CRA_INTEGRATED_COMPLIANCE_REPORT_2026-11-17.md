@@ -1536,3 +1536,8 @@ KC 목록의 `iX700MCB-B-8K` 및 CE 목록의 `iX700MCB` 항목을 확인했으�
 ## §57. 2026-11-24 — CRA 공식 지침 PDF 수집 endpoint 보완
 
 PR #218 Run #1395에서 컴파일·추적성·pytest 184개는 성공했으나, C/2026/6013 PDF의 EUR-Lex endpoint가 CI에서 sorry.ec.europa.eu로 리디렉션되어 PDF canary가 실패했다. 공식 Publications Office의 직접 OJ PDF URL(https://publications.europa.eu/resource/cellar/dcbc848b-e227-11f1-aefc-01aa75ed71a1.0006.01/DOC_1)을 브라우저에서 확인한 결과 61페이지의 C/2026/6013 관보 PDF다. 수집기 primary URL과 정확한 호스트 allowlist를 Publications Office로 변경하고 테스트에서 URL/host를 고정했다. PDF magic·문서 식별 문구·본문·SHA-256 검증은 유지한다. 새 exact-head CI 통과 전 PR #218은 병합하지 않는다.
+
+
+## §58. 2026-11-24 — C(2026)7861 PDF 자동 수집 제한 기록
+
+PR #218 Run #1404에서 컴파일·추적성·pytest 184개는 통과했으나, Commission document-register의 C(2026)7861 Annex PDF API가 CI runner를 sorry.ec.europa.eu 차단 안내로 리디렉션했다. C/2026/6013은 이미 Publications Office 공식 OJ PDF 직접 주소로 전환했지만, C(2026)7861은 OJ 게재 문서가 아니므로 OJ PDF 대체 경로를 임의로 만들지 않는다. 해당 정확한 Commission interstitial은 이제 source-unavailable로 처리하고 외부 mirror를 자동 허용하지 않는다. PDF batch는 SKIPPED 처리될 수 있으며 C(2026)7861 PDF 바이너리/hash를 확보했다고 주장하지 않는다. 공식 Commission register 내용은 브라우저로 확인했고 HTML canary는 별도 검증한다.
