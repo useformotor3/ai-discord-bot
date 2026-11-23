@@ -1,3 +1,5 @@
+> **최신 CRA 공식 지침 — 2026-11-23:** [통합 보고서 v0.17 §48](reports/CRA_INTEGRATED_COMPLIANCE_REPORT_2026-11-17.md) 및 [LS메카피온 제품 증거 등록부 §9](reports/CRA_LS_MECAPION_PRODUCT_EVIDENCE_REGISTER_2026-11-23.md)에 Commission Guidance C/2026/6013 (OJ C, 17.11.2026)을 반영했습니다. 지침은 비구속적 Commission 해석 자료이며, 제품의 core functionality, 별도 판매 모듈 경계, ST MCU due diligence, 예상 사용기간 기반 support period, firmware substantial modification 판단을 구체화합니다. PR #204 문서 추가 커밋의 최신 head CI는 별도 재검증 대상입니다.
+
 > **2026-11-23:** PR #203 병합 완료(merge SHA `584a7c092ea434d52f7794452ca85b0cbe981210`). Exact-head Run #1343 및 main push Run #1344 모두 성공. 복구 기준점: `safety/post-merge-pr203-2026-11-23`. LS메카피온 공식 제품군 목록과 iX700M 예시 모델코드를 증거 등록부에 추가하고, 통합 보고서 v0.16 §46을 작업 브랜치에 작성했습니다. 실제 대상 SKU와 ST MCU 전체 주문코드는 아직 Unknown.
 
 > **2026-11-23:** PR #202 병합 완료(merge SHA `794d2d69c6a46e85d5cc64c7c0c337a7493ebcc4`). CRA 통합 보고서 v0.15 §45/§45.7 및 ETSI M/606 18개 최신 매트릭스(18 rows, 21 columns)가 main에 반영되었습니다. PR exact-head Run #1341 및 main push Run #1342 모두 성공. PDF evidence upload은 unchanged 조건으로 skipped. 복구 기준점: `safety/post-merge-pr202-2026-11-23`. CRA only; SIL 3 제외.
