@@ -1,3 +1,5 @@
+> **2026-11-23:** PR #201 병합 완료(merge SHA `0643c656b7801fcaf4453042e97623f2e57d73cd`); post-merge safety ref `safety/post-merge-pr201-2026-11-23`. PR #201 exact-head Run #1337 성공. Main push Run #1338은 마지막 확인 시점에 진행 중. ETSI M/606 18개 active work item 최신 상태를 2026-11-23 / Work Programme v2.3.3 기준으로 재점검했고, 통합 보고서 v0.15 §45 및 별도 Markdown/CSV 스냅샷을 작업 브랜치에 추가했습니다. EN 304 619 V1.0.3 및 EN 304 635 V1.0.9 변경 확인. CRA only; SIL 3 제외.
+
 > **2026-11-23:** PR #200 병합 완료(merge SHA `53d91ee5beb16f703bbaddc3ec64dd238989d55a`). 보고서 v0.14 §44가 main에 반영되었습니다. Exact-head Run #1331 성공. Main push Run #1332 성공: source integrity, compile, CRA traceability, full pytest, 공식 PDF/HTML canary 및 provenance manifest upload 성공. PDF evidence upload은 unchanged 조건으로 skipped. 사후 복구 기준점: `safety/post-merge-pr200-2026-11-23`. CRA only; SIL 3 제외.
 
 # CRA Servo Drive Compliance & Engineering Project
