@@ -96,9 +96,9 @@ def _download(url, allowed_hosts, *, get=None):
     # anti-bot interstitial. Never accept that page as source content; use
     # only the explicitly allowlisted archival mirror and validate its PDF.
     if parsed.scheme == "https" and parsed.hostname == "sorry.ec.europa.eu":
-        raise PDFSourceFallbackError(
-            "Commission newsroom redirected to its official anti-bot/interstitial host; "
-            "use only the explicitly allowlisted archival mirror"
+        raise PDFSourceUnavailableError(
+            "Commission document service redirected to its official anti-bot/interstitial host; "
+            "no trusted PDF response is available to this unauthenticated runner"
         )
     if parsed.scheme != "https" or parsed.hostname not in allowed_hosts:
         raise PDFSourceValidationError(
