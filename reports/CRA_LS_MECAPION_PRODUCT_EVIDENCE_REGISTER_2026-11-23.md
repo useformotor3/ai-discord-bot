@@ -354,3 +354,27 @@ ESO별 C(2026)7861 실제 수령일과 Article 2 비수락 통지는 여전히 U
 4. LS메카피온 매뉴얼 목록: https://www.lsmecapion.com/bbs/board.php?bo_table=manual
 5. LS메카피온 카탈로그 목록: https://www.lsmecapion.com/bbs/board.php?bo_table=catalog&wr_id=12110
 6. LS ELECTRIC Solution Square manufacturer PDF: https://ssq.ls-electric.com/uploads/document/17120093352290/%5BLS%2BELECTRIC%2B%EC%98%A4%ED%94%88%EC%84%B8%EB%AF%B8%EB%82%98%5D%2B%EC%84%9C%EB%B3%B4%2B%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B8%8C%2B%EC%8B%A0%EC%A0%9C%ED%92%88%2B%EC%86%8C%EA%B0%9C%2BiX7M_iX700M_LS%EB%A9%94%EC%B9%B4%ED%94%BC%EC%98%A8.pdf
+
+
+## 18. 2026-11-24 — 추가 제조사 증거와 CI 원인
+
+| ID | 공식 자료 | 확인된 사실 | 한계 |
+|---|---|---|---|
+| MFG-IX7M-07 | iX700M 드라이브 제품군 페이지 | 다축 모듈러 EtherCAT, AC 380–480V, 4.5–75kW, 16.1–168A/축 | 제품군 사양, SKU별 사양 아님 |
+| MFG-IX7M-08 | Servo 매뉴얼 목록, 게시물 12652 | iX700M DRIVE 400[V] Ver1.4, 2026-05-26 | PDF 본문/해시 미확보; 검색 캐시 Ver1.3은 최신 목록과 불일치 |
+| MFG-IX7M-09 | Servo Drive 도면 목록, 게시물 12455 | 2D CAD/3D STEP 외형도, 2026-04-21 | 첨부 파일 미확보; 회로도/BOM/PCB 아님 |
+| MFG-IX7M-10 | KC 및 CE 목록 | `iX700MCB-B-8K` / `iX700MCB` 항목 존재 | MCB/8K 코드 의미는 Unknown |
+| MFG-IX7M-11 | 해외 대리점 페이지 | 해외 창구 LS ELECTRIC 자동화, `automation@ls-electric.com` | EU 판매/수입/개별 주문 증거 아님 |
+
+- 별도 모델코드와 CE DoC 게시 사실은 문서상 제품 구분 증거이나 상업 판매 증거는 아니다.
+- Converter/Drive 개별 견적·발주 및 EU 개별 PDE 공급: Unknown.
+- 실제 사용자 SKU: Unknown.
+- 내부 회로도, PCB, BOM, MCU order code 및 보안 설정: Unknown/not publicly acquired.
+- 사용자가 프로젝트에서 ST MCU를 사용한다고 알린 사실을 iX700M BOM에 전용하지 않는다. iX700M의 ST MCU 탑재 여부는 Unknown.
+- 외형 CAD 게시를 내부 설계 증거로 오인하지 않는다.
+
+### CI failure / correction
+- PR #218 Run #1388 attempt 1: source identity, compile, CRA traceability, 183 pytest passed.
+- Failure: Commission newsroom PDF request redirected to `https://sorry.ec.europa.eu/`; strict host allowlist rejected the interstitial.
+- Remediation: only this exact Commission interstitial becomes a fallback trigger; arbitrary non-allowlisted redirects remain fail-closed. Use only configured ANFR mirror and validate PDF magic, identity markers and extracted text. Added regression test and refreshed workflow blob pins.
+- PR #218 remains unmerged pending exact-head full CI success.
