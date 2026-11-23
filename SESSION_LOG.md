@@ -1,3 +1,28 @@
+## 2026-11-23 — CRA 최신 공개자료 재점검 (PR #212 준비)
+
+### 수행
+- main 기준 SHA `324570b64affdfc03866df792eabfd67033db6b6` 및 기존 보고서/제품 증거 등록부/상황판/로그를 다시 읽음.
+- 작업 브랜치 `research/cra-2026-11-23-live-recheck`와 복구 기준점 `safety/pre-pr212-cra-live-recheck-2026-11-23` 생성.
+- ETSI EN 304 625 최신 Work Item 상태, GoSRSReq006-M/606 AMD 1 회의 일정, C(2026)7861 Article 2의 미확인 조건, iX700M 매뉴얼 인덱스, CRA 자동 조사 Run #2546 확인.
+- 통합 보고서 §52, 제품 증거 등록부 §13에 확인사항과 Unknown 경계를 기록.
+
+### 검증 결과 / 제한
+- EN 304 625: `Draft Review after PE (2026-11-19)`; 최종 발행·OJ 인용과 혼동하지 않음.
+- ETSI meeting은 일정 게시만 확인. 회의 결과·회의록 및 ESO별 결정 수령/비수락 통지 Unknown.
+- iX700M 매뉴얼은 인덱스 날짜만 확인. 실제 PDF 바이너리·revision·SHA-256 미확보.
+- Run #2546 success는 자동화 실행 성공이지 조사 품질 보증이 아님. artifact 없음.
+- 정확한 SKU/HW/FW/BOM/ST MCU order code 확보 전 제품별 분류는 Unknown.
+
+### 다음
+1. 공식 ETSI 회의 결과 및 ESO 통지 자료 탐색.
+2. C(2026)7861 Annex I 원본표 확보.
+3. iX700M 실제 PDF 파일 식별·다운로드·해시/개정 이력 비교.
+4. 문서 PR exact-head CI 후 merge 및 main read-back.
+
+### 변경 범위
+- 문서만 변경. 운영 코드, workflow, secrets, API cadence 변경 없음.
+- CRA only; SIL 3 제외.
+
 ## 2026-11-23 — LS메카피온 제품군 증거 등록 및 PR #203 검증 동기화
 
 - PR #203 병합 완료: merge SHA `584a7c092ea434d52f7794452ca85b0cbe981210`.
