@@ -1954,3 +1954,13 @@
 - P0: 실제 LS메카피온 SKU/HW/FW/BOM 및 ST MCU full order code 확보.
 - P1: 매뉴얼 EtherCAT/Modbus-RTU, firmware, maintenance, parameter access 장을 페이지·절 단위로 CRA 공격면/업데이트/접근통제 증거와 연결.
 - CRA only. SIL 3 제외. 운영 코드/workflow/secrets/API cadence 변경 금지.
+
+
+## 2026-11-23 — M/606 및 EN 304 625 후속 확인
+
+1. Commission 공식 standardisation page의 M/606 2026-11-10 amendment 및 3개월 기한 연장을 보고서 §50에 반영한다. ESO 제출기한과 OJ citation/Article 27 presumption을 구분한다.
+2. ETSI GoSRSReq006-M/606 AMD 1 examination meeting의 공개 결과·minutes 및 ESO별 receipt/non-acceptance notice를 계속 추적한다. 공개 일정만으로 회의 결과를 추정하지 않는다.
+3. EN 304 625 work item “Draft Review after PE” 상태와 scope를 검토한다. 서보드라이브 내부 포트의 존재만으로 제품 분류나 표준 적용을 단정하지 않는다.
+4. iX700M 정확한 manual PDF/file version 및 PEGA2/iX700M PDF 원문·SHA-256 확보를 계속 최우선으로 둔다.
+5. actual SKU/HW/FW/BOM, Converter/Drive Unit 판매 경계, ST MCU full order code 확보 전 제품별 Annex III/IV 및 Article 32 route는 Unknown 유지.
+6. CRA only; SIL 3 제외; 운영 코드/workflow/secrets/API cadence 변경 금지.

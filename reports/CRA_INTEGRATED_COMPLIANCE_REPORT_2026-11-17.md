@@ -1,6 +1,6 @@
 # CRA 서보 드라이브 통합 규제·기술 준수 보고서
 
-- 문서 버전: v0.18 (LS ELECTRIC Solution Square 최신 매뉴얼 인덱스 교차검증)
+- 문서 버전: v0.19 (M/606 및 EN 304 625 표준화 상태 재확인)
 - 기준일: 2026-11-23
 - 프로젝트 범위: EU Cyber Resilience Act(CRA) 대응만
 - 기준 제품군: 산업용 서보 드라이브 및 필수 펌웨어·설정/진단 소프트웨어
@@ -1272,3 +1272,37 @@ CRA Article 7(1)과 Commission Implementing Regulation (EU) 2025/2392의 전문 
 5. LS메카피온 공식 드라이브 제품군: https://www.lsmecapion.com/bbs/board.php?bo_table=pd_drive
 
 **현재 결론:** 공식 포털을 교차 확인해 기존 매뉴얼 인덱스보다 늦은 update date가 있는 것을 발견했으나, iX700M 최신 문서의 버전/파일 및 두 제품의 PDF 원문을 모두 확보한 것은 아니다. 문서 최신성은 “인덱스 수준 확인, 본문 미검증”으로 기록한다.
+
+
+## 50. 2026-11-23 표준화 상태 재확인 — M/606 AMD 1 및 네트워크 인터페이스 표준
+
+### 50.1 M/606 개정 진행 상태
+
+- European Commission CRA standardisation 공식 페이지는 2026-11-10에 M/606이 개정되었고, 모든 vertical 표준 및 일부 horizontal 표준의 Commission 제출 기한이 3개월 연장되었다고 명시한다.
+- ETSI 공식 회의 일정에는 `GoSRSReq006-M/606 AMD 1 - examination meeting`이 2026-11-23 Online으로 표시된다. 이번 확인에서 공개 회의록, 결정문, 공식 결과 공지 또는 ESO별 수령·수락·비수락 통지는 확보하지 못했다.
+- 따라서 회의가 실제 개최되었는지, amendment에 대한 최종 examination 결과가 무엇인지, CEN/CENELEC/ETSI 각각 Article 2에 따른 수령일과 1개월 내 비수락 통지가 있었는지는 **Unknown**으로 유지한다. 일정표 등록을 회의 결과나 개정 효력 확정으로 표현하지 않는다.
+- Commission 페이지의 “3개월 연장”은 표준화 deliverable의 Commission 제출 일정에 관한 것이다. 표준의 발행일, Official Journal(OJ) 인용일, CRA Article 27 적합성 추정 발생일과 동일하지 않다. OJ에 관련 조화표준이 인용되었는지 제품별로 별도 확인한다.
+
+### 50.2 ETSI EN 304 625 — 물리적·가상 네트워크 인터페이스 표준 후보
+
+- ETSI Work Programme의 EN 304 625 work item은 “Cybersecurity requirements for physical and virtual network interfaces”로 표시되고, CRA Annex I Part 1의 필수 사이버보안 요구사항을 물리적·가상 네트워크 인터페이스에 적용하는 표준 후보로 설명된다. ETSI 기록은 2026-11-19 이후 상태를 “Draft Review after PE”로 표시한다.
+- 이는 M/606에 따른 표준 개발 진행의 공식 work-item 상태이지, 완성·발행·OJ 인용 또는 Article 27 presumption을 의미하지 않는다.
+- **서보드라이브 적용 한계:** EtherCAT, RS-485, USB 또는 Ethernet 포트가 존재한다는 사실만으로 iX700M 전체가 네트워크 인터페이스 제품으로 분류되거나 EN 304 625가 자동 적용된다고 결론 내리지 않는다. 실제 제품의 핵심 기능, 제품 경계, 해당 표준의 최종 scope 및 위험 커버리지를 확인해야 한다. 네트워크 인터페이스가 독립 제품으로 제공되는 경우와 드라이브 내부 통신 포트인 경우를 구분한다.
+
+### 50.3 현재 판정 및 증거 공백
+
+| 항목 | 확인 결과 | CRA 프로젝트 처리 |
+|---|---|---|
+| Commission M/606 개정 | 공식 Commission 페이지에서 2026-11-10 개정 및 3개월 연장 확인 | 표준화 일정으로만 반영 |
+| 2026-11-23 ETSI examination meeting | 공식 캘린더 일정 확인 | 결과·minutes Unknown |
+| ESO별 Article 2 수령일/비수락 통지 | 공개 1차 증거 미확보 | 효력 관련 확정 표현 금지 |
+| EN 304 625 work item | ETSI 상태 “Draft Review after PE”; candidate for harmonisation | 최종 scope·발행·OJ citation 미확정 |
+| iX700M에 EN 304 625 직접 적용 | 제품 core functionality 및 표준 scope 판단 자료 부족 | Unknown |
+
+**공식 출처**
+1. European Commission, Cyber Resilience Act — Standardisation (공식 현행 페이지): https://digital-strategy.ec.europa.eu/en/policies/cra-standardisation
+2. ETSI, GoSRSReq006-M/606 AMD 1 examination meeting calendar: https://portal.etsi.org/tb.aspx?TBID=162&subTB=162
+3. ETSI Work Programme, EN 304 625 (DEN/CYBER-EUS-0017): https://portal.etsi.org/webapp/WorkProgram/Report_WorkItem.asp?SearchPage=TRUE&WKI_ID=74860&butExpertSearch=Search&curItemNr=10&includeNonActiveTB=FALSE&includeSubProjectCode=FALSE&optDisplay=10&qCLUSTER_BOOLEAN=OR&qETSI_ALL=&qFREQUENCIES_BOOLEAN=OR&qINCLUDE_MOVED_ON=&qINCLUDE_SUB_TB=True&qKEYWORD_BOOLEAN=OR&qMandate_List=%27M%2F606%27&qREPORT_TYPE=SUMMARY&qSORT=HIGHVERSION&qSTOPPING_OUTDATED=&qSTOP_FLG=N&titleType=all&totalNrItems=18
+
+**검증 한계:** 회의 결과·ESO 통지·OJ citation은 이번 조사에서 확보하지 못했다. 따라서 M/606 개정의 효력에 대한 독립적인 법률 결론이나 iX700M의 제품별 적합성 결론을 내리지 않는다.
+
