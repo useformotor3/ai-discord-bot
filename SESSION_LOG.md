@@ -2644,3 +2644,11 @@
 - ST MCU 정확한 부품번호, LS메카피온 모델별 BOM/FW/회로도는 미확보. 특정 MCU의 category 14 해당 여부 및 완제품 Annex III/IV·Article 32 경로는 확정하지 않음.
 - 회의 후 공식 minutes/decision, M/606 AMD 1 최종 문서, ESO receipt/acceptance/non-acceptance evidence를 확인.
 - 문서 변경은 CRA 조사 메모와 진행 기록에 한정. 운영 코드, workflow, secrets, Gemini/Discord 호출 빈도는 변경하지 않음.
+
+
+### 검증 오류 및 복구 기록 — 2026-11-23
+- PR #196 최초 CI Run #1303에서 CRA traceability가 PROJECT_LOG.jsonl line 309의 빈 행으로 실패했고, pytest 및 후속 canary는 실행되지 않음.
+- 원인: JSONL 파일이 이미 개행으로 끝나는 상태에서 새 레코드 앞에 추가 개행을 한 번 더 넣음. 사전 검사는 빈 행을 필터링한 뒤 JSON 파싱하여 이 결함을 놓침.
+- 복구: 기존 이벤트는 보존하고 이번 세션 이벤트만 1개 유지했으며, 파일 중간 빈 행/JSON 오류가 없는지 전 행 재검증. 현재 309 records, invalid JSON 0, interior blank line 0, 신규 event ID 1개.
+- 재발 방지: JSONL append 전 마지막 문자의 개행 여부를 확인하고, 빈 행을 허용하지 않는 전체 파일 파서를 실행한 후 CI를 재실행한다.
+- 상태: 최초 CI 실패는 숨기지 않고 기록. 수정된 HEAD의 재실행 결과 확인 전까지 CI 통과로 간주하지 않음.
