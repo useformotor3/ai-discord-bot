@@ -1108,6 +1108,8 @@ CRA Article 7(1)과 Commission Implementing Regulation (EU) 2025/2392의 전문 
 - EN 304 619: 11월 20일 기준으로 저장된 1.0.2에서 최신 ETSI active list의 **1.0.3**으로 변경 확인.
 - EN 304 635: 기존 1.0.1 snapshot에서 최신 ETSI active list의 **1.0.9**로 변경 확인. 현재 상태는 2026-11-19 EC assessment before WNV requested이며, 다음 단계는 2026-11-28 EC assessment before WNV received로 표시된다.
 - EN 304 635는 CRA Annex III Class II category 1, EN 304 636은 Class II category 2라는 법적 분류를 유지한다. ETSI Work Item의 오래된 Class I 표기 또는 metadata는 법령상 분류를 바꾸지 않는다.
+- EN 304 635 상세 Work Item 기록은 V1.0.9가 2026-11-20 업로드되었고, Enquiry 및 EC HAS2 comments resolution을 포함해 CYBER-EUSR가 승인한 버전이라고 설명한다. 다만 현재 단계는 여전히 EC assessment before WNV requested로 표시된다.
+- EN 304 625 상세 Work Item 기록은 2026-11-19에 EC second assessment를 받았고, 2026-09-28 및 2026-11-16 두 차례로 나누어 comments를 받았다고 기록한다. 이 기록은 인터페이스 표준의 기술적 관련성을 보여주지만, 실제 서보 드라이브에 대한 적용 여부는 제품 인터페이스 구조와 제품 경계로 판단해야 한다.
 
 ### 45.4 M/606 개정 결정 및 11월 23일 회의 후속
 
@@ -1125,6 +1127,14 @@ CRA Article 7(1)과 Commission Implementing Regulation (EU) 2025/2392의 전문 
 4. ETSI, Technical Bodies meeting calendar: https://portal.etsi.org/tb.aspx?TBID=162
 5. Commission Implementing Decision C(2026) 7861 final and Annex I: https://ec.europa.eu/transparency/documents-register/api/files/C%282026%297861_0/de00000001090398 ; https://ec.europa.eu/transparency/documents-register/api/files/C%282026%297861_1/de00000001090401
 6. Regulation (EU) 2024/2847 and Commission Implementing Regulation (EU) 2025/2392 remain the controlling legal classification sources.
+
+
+
+### 45.7 개별 Work Item 상세 이력의 추가 검증
+
+- **EN 304 635 (WKI 74858):** ETSI 상세 레코드는 V1.0.9가 2026-11-20 새로 업로드되었고, Enquiry 및 EC HAS2 comments resolution을 포함해 CYBER-EUSR가 승인한 버전이라고 기록한다. 최신 버전이 등록되었다는 사실은 확인되지만, 이 시점의 상태는 “EC assessment before WNV requested (2026-11-19)”로 남아 있으므로 WNV 수령 또는 표준 최종 채택으로 오해하면 안 된다. ETSI 상세 페이지 scope의 Class I 문구는 CRA 법령상 Class II category 1 분류를 변경하지 않는다.
+- **EN 304 625 (WKI 74860):** ETSI 상세 레코드는 2026-11-19 EC second assessment를 받았으며, comments가 2026-09-28 및 2026-11-16 두 차례로 접수되었다고 기록한다. 상세 레코드의 Official Journal field는 비어 있다. 따라서 “Harmonised Standard: Yes” metadata만으로 OJ citation 또는 Article 27 추정 적합성을 주장할 수 없다.
+- EN 304 625의 제품 영향은 Fieldbus/physical/virtual network interface module이 독립적으로 공급되는지, 서보 드라이브에 통합되는지, host drive의 core functionality가 무엇인지 확인한 뒤 판단한다. 네트워크 인터페이스를 포함한다는 사실만으로 드라이브 전체가 Annex III Class I category 10 제품이 되는 것은 아니다.
 
 ### 45.6 다음 확인 작업
 
