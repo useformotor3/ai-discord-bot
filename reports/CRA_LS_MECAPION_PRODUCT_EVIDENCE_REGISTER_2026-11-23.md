@@ -259,3 +259,36 @@ https://ec.europa.eu/transparency/documents-register/api/files/C%282026%297861_1
 보고서 §51~§52는 Annex 원문 미확보 당시 세부 날짜를 교차확인값으로 표시했다. 이번 공식 Annex 별첨 확보로 일정 근거를 1차 자료 직접 확인으로 상향한다. 이전 스냅샷은 과거 상태 기록으로 보존하되, 현재 일정 인용은 이 §14와 보고서 §53을 기준으로 한다.
 
 ESO별 C(2026)7861 실제 수령일과 Article 2 비수락 통지는 여전히 Unknown. Annex 일정으로 결정의 최종 적용 상태를 추정하지 않는다.
+
+
+## 15. 2026-11-24 — CRA 적용 범위 및 제품 분류 정밀 분석
+
+### 15.1 조사 기준과 공식 근거
+- Regulation (EU) 2024/2847 Article 2(1), Article 3(1), (5)~(8), Articles 6–8, 13, 31, 32 및 Annex III/IV.
+- Commission Guidance C/2026/6013, OJ C 17.11.2026, 61 pages. 2026-07-27 Commission announcement와 구별하고 최신 관보 지침을 해석 기준으로 사용.
+- Commission Implementing Regulation (EU) 2025/2392 Annex I category 10, 14, Class II category 4 및 Annex II critical products.
+- CEN/CENELEC 2026-11-19 EN 40000-1-1 및 EN 40000-1-2 publication announcement.
+
+### 15.2 제품별 잠정 판정
+| 대상 | 현재 판정 | 보류 근거 |
+|---|---|---|
+| 통신형 서보 드라이브(예: iX700M 제품군) | 실제 EU 공급·데이터 연결 확인 시 CRA 적용 가능성 높음 | 실제 SKU, 판매 단위, intended purpose |
+| 통합 서보 드라이브 완제품 | Default category 가능성 높음 | 모터 토크/속도/위치 제어가 실제 core functionality인지 기술문서 확인 |
+| 독립 판매 EtherCAT/Fieldbus interface | Annex III Class I category 10 가능성 | 별도 PDE로 시장 공급되는지, driver/API/network-interface 기능이 핵심인지 |
+| ST MCU | Class I category 14 가능성은 MCU별 검토 | 전체 주문코드, security functionality, separate placing on market |
+| tamper-resistant MCU | Class II category 4 가능성 | tamper evidence/resistance/response 및 AVA_VAN 2/3 설계 근거 |
+| 통합 제품 내 MCU | host 제품 등급 자동 승계 없음 | Article 7(1), Guidance §§141–145; component due diligence는 별도 |
+
+### 15.3 주요 해석
+- 단순 전자회로/전원/ON-OFF 신호와 디지털 정보 교환을 구별한다. Guidance §§26–28에 따라 송신 측의 정보 부호화와 수신 측의 정보 해석 여부를 확인한다.
+- EtherCAT/Fieldbus는 2025/2392 category 10 기술 설명에 포함되는 인터페이스 유형이지만, 통합 드라이브 전체의 core functionality가 모터 제어라면 interface 존재만으로 완제품 Class I을 자동 부여하지 않는다.
+- ST MCU의 secure boot, encryption, authentication, secure key storage, RNG, TEE 등 기능은 category 14 검토에 중요하나, 제조사·모델명만으로 판정하지 않는다.
+- Category 4는 category 14에 더해 tamper evidence/resistance/response 및 AVA_VAN 2/3 설계가 요구된다. 단순 secure boot 또는 debug lock은 충분하지 않다.
+- 제조자는 통합 MCU/통신칩의 due diligence를 수행하고, 제품 전체 위험평가와 구성품 실사를 구분한다(Guidance §§167–173).
+- 별도 판매·구매·라이선스되는 모듈은 각자의 core functionality로 독립 분류할 수 있고, 통합 제품 전용 구성품은 통합 제품 수준에서 판단한다(Guidance §145).
+- EN 40000-1-1/-1-2는 발행 확인. CRA Article 27 OJ 인용은 이번 조사에서 확인되지 않아 적합성 추정을 주장하지 않는다.
+
+### 15.4 미확인 자료
+실제 SKU/nameplate, Converter/Drive Unit 공급·판매 경계, HW/FW revision, BOM, ST MCU full order code, 보안 설정, interface driver/API, 제품 수명 및 지원정책은 모두 Unknown으로 유지한다. 보고서 v1.0을 참조하고 자료가 확보되면 갱신한다.
+
+상세 보고서: reports/CRA_MECAPION_SERVO_DRIVE_SCOPE_CLASSIFICATION_2026-11-24.md
