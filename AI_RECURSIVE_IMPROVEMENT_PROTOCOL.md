@@ -147,3 +147,16 @@ next_review:
   trigger: next Asia/Seoul date rollover
   priority: <one to three items>
 ```
+
+
+
+## 9. 2026-11-23 KST 날짜 경계 검토 결과
+
+- 이전 검토 기준일: 2026-11-21 KST. 이번 세션 재개일은 2026-11-23 KST이므로 날짜 경계 검토를 실행했다.
+- 기준 main SHA: 584a7c092ea434d52f7794452ca85b0cbe981210.
+- 관찰 1: 열린 PR #204는 main 대비 7 ahead / 0 behind이며 7개 문서를 변경한다. 정확한 PR head CI를 확인하기 전에는 병합하지 않는다.
+- 관찰 2: 제조사 카탈로그 목록 제목의 날짜와 첨부파일 메타데이터 날짜가 다를 수 있다. 개선: 목록 제목·상세 페이지·첨부파일명/날짜·PDF 본문 개정 이력을 분리해 기록한다. 상태: DOCUMENTED; 후속 원본 확보/검증 필요.
+- 관찰 3: ETSI 회의 캘린더는 2026-11-23 일정만 확인시킨다. 공개 회의록/결정/ESO 통지 원문은 확보되지 않았다. 개선: 일정, 개최, 결정, 수령, 수락, OJ citation을 별도 상태로 유지한다. 상태: DOCUMENTED.
+- 규칙 변경 여부: 기존 증거 우선·Unknown 보존·정확한 head CI 게이트 규칙이 이미 이 문제를 다루므로 AI_RULEBOOK 신규 규칙은 추가하지 않았다(NO_CHANGE).
+- 검증 경계: 이번 검토와 문서 read-back은 장기 운영 효과를 입증하지 않는다. PR #204의 exact-head CI 및 main 병합 후 효과는 별도 확인한다.
+- 다음 검토: 다음 Asia/Seoul 날짜 변경 후 수행.
