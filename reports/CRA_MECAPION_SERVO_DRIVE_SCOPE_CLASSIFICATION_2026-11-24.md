@@ -51,7 +51,7 @@
 
 ### 2.2 Commission Guidance의 날짜 및 법적 지위
 
-2026-07-27 Commission 보도자료는 CRA 적용범위, substantial modification, support period, reporting 및 risk assessment에 관한 지침 공개를 공지했다. 현재 확인 가능한 더 구체적인 관보 게재 해석 문서는 Commission Guidance C/2026/6013이며 2026-11-17 OJ C에 게재된 61페이지 문서다.
+2026-07-27 Commission이 발표한 실무 지침의 문서 식별자는 C(2026) 6013이다. Commission 페이지는 이 안내를 2026-07-27 공개 자료로 설명하고, 해당 Communication C(2026) 6013을 연결한다. 동일한 지침이 2026-11-17 OJ C에 C/2026/6013으로 게재되었으며, 서로 다른 두 개의 지침이 아니다. 관보판은 61페이지 공식 문서다.
 
 C/2026/6013은 Commission의 공식 해석 지침이지만 Regulation과 같은 구속력 있는 법령은 아니다. 법령과 충돌하는 경우 Regulation 원문이 우선한다. 제품 적용성 및 분류 판단에는 이 지침의 구체적 해석을 참고하되, 지침 자체를 법령 조문처럼 인용하지 않는다.
 
@@ -236,6 +236,9 @@ CEN/CENELEC는 2026-11-19 CRA 지원 유럽표준 두 종의 공개를 발표했
 CEN/CENELEC 발표는 EN 40000-1-1이 EN 40000 시리즈의 공통 용어를 정하고, EN 40000-1-2가 제품 위험관리 및 제품 수명주기 활동의 공통 기반을 제공한다고 설명한다.
 
 공식 발표: https://www.cencenelec.eu/news-events/news/2026/en-in-the-spotlight/2026-11-19-cra-standards-en-40000-1-1-and-en-40000-1-2/
+- EN 40000-1-1:2026 CEN catalogue: DAV 2026-11-18; OJEU citation expected: No.
+- EN 40000-1-2:2026 CEN catalogue: DAV 2026-11-18; OJEU citation expected: No.
+- Catalogue metadata: https://standards.cencenelec.eu/ (CEN/CLC/JTC 13 published standards; references EN 40000-1-1:2026 and EN 40000-1-2:2026).
 
 ### 7.2 실무 적용
 
@@ -248,7 +251,7 @@ CEN/CENELEC 발표는 EN 40000-1-1이 EN 40000 시리즈의 공통 용어를 정
 
 CRA Article 27의 적합성 추정은 관련 조화표준의 참조가 OJ에 공표된 범위에서 판단한다. EN이라는 표준 번호가 붙었거나 CEN/CENELEC에서 발행되었다는 사실만으로 Article 27 적합성 추정이 발생하는 것은 아니다.
 
-이번 조사에서는 EN 40000-1-1 및 EN 40000-1-2의 발행 사실은 공식 CEN/CENELEC 자료로 확인했지만, 2026-11-24 기준 CRA Article 27에 따른 OJ 인용을 입증하는 별도 공식 OJ 참조는 확보하지 못했다. 따라서 현재는 위험관리와 문서화의 기준으로 활용하되, 적합성 추정이 있다고 선언하지 않는다.
+이번 조사에서 CEN/CENELEC 공식 카탈로그의 각 표준 메타데이터를 직접 확인했다. EN 40000-1-1:2026과 EN 40000-1-2:2026 모두 Legal 항목의 “Citation in OJEU”에 “No citation expected for Directive 2024/2847”라고 표시한다. 따라서 단순히 OJ 참조를 아직 찾지 못한 상태가 아니라, 현재 카탈로그상 CRA에 대한 OJ 인용을 기대하지 않는 표준이다. 이 두 표준을 CRA Article 27 조화표준 적합성 추정의 근거로 사용해서는 안 된다. 대신 공통 용어와 위험관리·제품 수명주기 활동의 설계·문서화 기준으로 활용한다.
 
 또한 두 표준의 전문을 구매·확보해 조항별 요구사항을 대조하기 전에는 세부 조항 번호나 시험방법을 추정해 작성하지 않는다.
 
