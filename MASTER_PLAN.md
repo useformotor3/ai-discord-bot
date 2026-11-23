@@ -1831,3 +1831,10 @@
 5. ST MCU 항목 29/38의 제품·부품 적용성은 정확한 주문 코드, 데이터시트, 보안 기능 활성화, 제품 통합 및 별도 시장 출시 여부 증거 확보 후 판단한다.
 6. LS메카피온 서보 드라이브의 SKU/HW/FW/BOM/매뉴얼/통신 인터페이스 자료를 확보하여 제품별 Annex III/IV 및 CRA 요구사항 추적표를 완성한다.
 7. PR #197은 merge SHA b69710cf1eb3c17c1e99fc2ecd57e86c23053fde, exact-head Run 45095286445 success, post-merge safety ref safety/post-merge-pr197-status-2026-11-23. Main push CI는 별도 확인한다.
+
+
+### Main push CI 사후 확인 — 2026-11-23
+- PR #196 merge SHA e82683964413ca2c5922477e9755c62ae7b21064: main push Run #1313 / ID 45095198162 success.
+- PR #197 merge SHA b69710cf1eb3c17c1e99fc2ecd57e86c23053fde: main push Run #1317 / ID 45104679354 success.
+- 두 main push run 모두 source identity, compile, CRA traceability, full pytest, official PDF/HTML canary, provenance manifest upload success. PDF evidence upload step은 skipped.
+- 이 결과는 PR exact-head CI와 별도로 검증한 main push CI다.
