@@ -160,3 +160,16 @@ next_review:
 - 규칙 변경 여부: 기존 증거 우선·Unknown 보존·정확한 head CI 게이트 규칙이 이미 이 문제를 다루므로 AI_RULEBOOK 신규 규칙은 추가하지 않았다(NO_CHANGE).
 - 검증 경계: 이번 검토와 문서 read-back은 장기 운영 효과를 입증하지 않는다. PR #204의 exact-head CI 및 main 병합 후 효과는 별도 확인한다.
 - 다음 검토: 다음 Asia/Seoul 날짜 변경 후 수행.
+
+
+
+## 10. 2026-11-23 신규 공식 지침의 우선 반영 및 증거 수준 개선
+
+- 새로 확인한 1차 출처: OJ C/2026/6013 (17.11.2026), Commission CRA Guidance 61p.
+- 개선: 2025 FAQ와 2026 guidance를 동일 문서/동일 법적 지위로 취급하지 않는다. guidance는 Commission 공식 해석이나 비구속적임을 보고서에 명시하고 binding Regulation (EU) 2024/2847과 구분한다.
+- 개선: 제품 분류에서 component category와 finished product core functionality를 혼동하지 않으며, 독립 판매 모듈과 통합 구성품의 분류 단위를 구분한다.
+- 개선: 외부 MCU/통신칩 실사는 부품 데이터시트 수집에 그치지 않고 실제 제품의 기능 활성화·설정·시험 증거까지 연결한다.
+- 개선: support period를 5년 고정값으로 처리하지 않고 예상 사용기간·사용자 기대·부품 지원기간·서비스 정책에 근거해 정한다.
+- 개선: residual risk가 회사 risk appetite나 비용 사유만으로 닫히지 않도록 위험 등록부에 처리 근거·검증 결과를 요구한다.
+- 검증 상태: 문서·원문 분석 및 GitHub read-back 후속 수행. 새 문서 head CI가 성공하기 전까지는 문서 변경의 CI 검증 완료를 주장하지 않는다.
+- 규칙 중복 검토: 기존 CRA evidence-first 및 report-writing 규칙을 구체화하는 사례로 반영; AI_RULEBOOK 신규 번호 추가는 보류(NO_CHANGE).
