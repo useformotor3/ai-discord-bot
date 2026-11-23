@@ -1906,3 +1906,15 @@
 3. 2026-11-23 ETSI M/606 AMD 1 일정은 공식 캘린더에서 재확인했으나 회의록·결정·ESO 수령/수락/비수락 원문은 확보하지 못했다. Unknown 유지.
 4. 다음 P0: PR #204 exact-head CI 확인 및 병합 안전 게이트; M/606 official minutes/ESO receipt notices; 실제 LS메카피온 SKU/HW/FW/BOM 및 ST MCU full order code 확보.
 5. CRA only. SIL 3 제외. 운영 코드/workflow/secrets/API cadence 변경 금지.
+
+
+
+## 2026-11-23 — Commission Guidance C/2026/6013 반영 후속
+
+1. 통합 보고서 v0.17 §48 및 LS메카피온 제품 증거 등록부 §9에 2026-11-17 OJ C/2026/6013 해석 지침을 반영했다. 비구속적 guidance와 CRA binding regulation을 구분한다.
+2. P0: iX700M Converter Unit/Drive Unit 및 통합 다축 제품의 별도 판매·공급 경계와 각 SKU를 확인한다. core functionality 및 Article 32 경로는 실제 제품 경계 확정 전 Unknown.
+3. P0: ST MCU full order code, silicon revision, security documentation, secure boot/debug/key/update 기능의 제품 내 활성화 증거를 확보한다.
+4. P1: 실제 산업 설비 예상 사용기간·서비스 정책을 수집해 Article 13(8) support period를 산정한다. 5년을 일률적 기본값으로 쓰지 않는다.
+5. P1: 펌웨어 릴리스별 보안 수정/기능 변경/새 위험을 구분해 substantial modification 영향평가 기록을 만든다.
+6. PR #204 이전 exact-head CI Run #1352 성공은 확인했으나 §48/§9 추가 커밋 후에는 새 exact-head CI가 필요하다. 새 CI 성공 전 병합하지 않는다.
+7. CRA only. SIL 3 제외. 운영 코드/workflow/secrets/API cadence 변경 금지.
