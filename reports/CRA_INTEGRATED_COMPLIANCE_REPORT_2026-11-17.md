@@ -1,6 +1,6 @@
 # CRA 서보 드라이브 통합 규제·기술 준수 보고서
 
-- 문서 버전: v0.12 (비전문 독자용 안내 및 §1~§10 단계별 설명 보강)
+- 문서 버전: v0.13 (M/606 개정 결정 C(2026)7861 원문 및 항목별 기한 반영)
 - 기준일: 2026-11-23
 - 프로젝트 범위: EU Cyber Resilience Act(CRA) 대응만
 - 기준 제품군: 산업용 서보 드라이브 및 필수 펌웨어·설정/진단 소프트웨어
@@ -953,3 +953,54 @@ M/606 일정은 표준화기구의 납품 일정이지 제조자의 CRA 적용�
 - Source integrity, Python compile, CRA cross-matrix traceability, 전체 repository pytest, 공식 CRA PDF read-only canary, CRA PDF evidence upload, 공식 CRA HTML read-only canary, provenance manifest upload가 모두 성공으로 종료되었다.
 - 동일 exact head의 Run #1307은 JSONL 중간 빈 행 때문에 CRA traceability 단계에서 실패했고 pytest/공식 canary는 실행되지 않았다. JSONL 정정 후 Run #1308 전체 단계가 성공했으므로 최초 실패를 삭제하거나 성공으로 바꾸지 않고 복구 이력으로 보존한다.
 - PR #196은 문서 변경 PR이며 운영 코드/운영 workflow/secret/Gemini·Discord 호출 빈도는 변경하지 않았다. 병합 전 PR 상태를 유지하고, 병합 후 main CI 및 read-back 검증을 별도로 수행한다.
+
+
+## §43. M/606 개정 결정 C(2026) 7861 final — 2026-11-23 공식 원문 재검증
+
+### 43.1 무엇이 바뀌었는가
+
+유럽연합 집행위원회는 2026년 11월 10일 Commission Implementing Decision C(2026) 7861 final을 채택하여, 기존 CRA 표준화 요청 C(2025) 618(M/606)의 Annex I를 대체했다. 개정 이유는 CEN, CENELEC, ETSI가 2026년 6월 3일 공동 반기 보고서에서 일부 활동 일정에 영향을 주는 사정을 통지했고, 위원회가 후속 협의를 거쳐 2026년 기한을 조정할 필요가 있다고 판단했기 때문이다.
+
+### 43.2 개정된 항목별 ESO 채택 기한
+
+| M/606 항목 | 범위 | 개정된 ESO 채택 기한 |
+|---|---|---:|
+| 1 | 제품의 설계·개발·생산에 관한 수평 보안 요구사항 | 2026-11-30 |
+| 15 | 제품 취약점 처리에 관한 수평 표준 | 2026-11-30 |
+| 16~41 | CRA 중요·핵심 제품군 관련 수직(제품별) 표준 | 2027-01-31 |
+| 2~14 | 나머지 수평 보안 요구사항 | 2027-10-30 |
+
+이 표는 개정 결정 부속서 Annex I의 날짜를 그대로 구조화한 것이다. 기존 M/606의 2026-08-30 및 2026-10-30 기한을 그대로 최신 일정으로 사용하면 안 된다. 단, 항목 2~14의 2027-10-30 기한은 이번 개정에서 변경되지 않았다.
+
+### 43.3 반드시 구분해야 할 법적 의미
+
+1. ESO 채택 기한은 CEN/CENELEC/ETSI가 표준을 채택해야 하는 일정이다. 표준 초안 작성 완료일, 실제 공개·판매일 또는 OJ 게재일과 같은 의미가 아니다.
+2. OJ 인용은 별도 절차다. M/606 작업항목에 Harmonised Standard: Yes가 표시되거나 ESO가 표준을 채택했다는 사실만으로 CRA Article 27의 적합성 추정이 발생하지 않는다. 해당 표준의 참조가 OJ에 공표되었는지, 공표 범위·제한이 무엇인지 별도로 확인해야 한다.
+3. CRA 법정 적용일은 변경되지 않았다. 이번 C(2026) 7861 결정은 표준화 요청의 기한을 조정한 것이며 Regulation (EU) 2024/2847의 Article 14 신고 적용 및 전체 적용 시점을 연기하는 개정이 아니다.
+4. 개정 결정 제2조의 조건을 별도 추적한다. CEN, CENELEC 또는 ETSI가 결정 제1조의 개정사항을 수령한 날부터 1개월 이내 수락하지 않는다고 통지하면, 개정 결정은 적용을 중단하고 2025-02-03 버전의 C(2025) 618이 계속 적용된다. 현재 확보한 공식 문서만으로 각 ESO의 수령일이나 비수락 통지 여부를 확정하지 않는다. 따라서 수령일, 공식 회신, 개정 효력 유지 여부는 추가 증거가 필요한 항목이다.
+5. ETSI Work Programme은 개별 작업 진행상태의 보조 증거다. 2026-11-22 버전 2.3.3의 18개 작업항목 표에서 상태·예정일을 확인할 수 있지만, 이 자료도 OJ 인용이나 Article 27 추정을 대신하지 않는다.
+
+### 43.4 서보 드라이브 및 ST MCU 분석에 미치는 영향
+
+- M/606 항목 29는 보안 관련 기능을 갖춘 마이크로컨트롤러를 대상으로 하며, 항목 38은 변조 저항형(tamper-resistant) 마이크로컨트롤러를 대상으로 한다. 두 항목의 존재만으로 특정 ST MCU 또는 서보 드라이브 완제품이 해당 범주에 속한다고 단정하지 않는다.
+- 실제 판정에는 ST MCU의 전체 주문 코드, 데이터시트/보안 매뉴얼, 보안 기능의 하드웨어 지원 여부와 제품에서의 활성화 설정, 펌웨어 사용 방식, 해당 MCU가 독립적으로 시장에 출시되는지 또는 완제품에 통합되는지에 대한 증거가 필요하다.
+- 서보 드라이브 완제품의 Annex III/IV 분류는 완제품의 의도된 목적, 핵심 기능, 합리적으로 예견 가능한 사용, 기술 설명 및 구성 증거를 기준으로 별도 판단한다. 부품 분류와 완제품 분류를 혼동하지 않는다.
+- 이번 표준 기한 연장은 제품별 위험평가, 취약점 처리, 보안 업데이트, 기술문서 및 시험 증거 준비를 늦출 근거가 아니다.
+
+### 43.5 증거 및 후속 확인 목록
+
+| 확인 대상 | 현재 상태 | 다음 증거 |
+|---|---|---|
+| C(2026) 7861 본문 | 공식 원문 확인 | 보존된 원문·해시 및 번역 대조 |
+| 개정 Annex I | 공식 원문 확인 | 41개 항목별 기한 crosswalk 유지 |
+| ESO별 수령일 | Unknown | CEN/CENELEC/ETSI 공식 접수 확인 |
+| ESO 비수락 통지 여부 | Unknown | 공식 회신/통지 원문 |
+| ETSI 2026-11-23 M/606 AMD 1 회의 결과 | Unknown | 회의록·결정·공식 contribution |
+| CRA 표준 OJ 인용 | 개별 표준별 확인 필요 | EUR-Lex OJ 및 집행위원회 harmonised standards index |
+| ST MCU / LS메카피온 제품별 분류 | Unknown | 정확한 부품·제품 식별 및 설계 증거 |
+
+**공식 1차 출처**
+- Commission Implementing Decision C(2026) 7861 final (2026-11-10), 본문: https://ec.europa.eu/transparency/documents-register/api/files/C%282026%297861_0/de00000001090398
+- C(2026) 7861 final, Annex I: https://ec.europa.eu/transparency/documents-register/api/files/C%282026%297861_1/de00000001090401
+- European Commission, CRA standardisation: https://digital-strategy.ec.europa.eu/en/policies/cra-standardisation
+- ETSI M/606 Work Programme, version 2.3.3 (2026-11-22): https://portal.etsi.org/webapp/WorkProgram/WorkItemPlan.asp?SearchPage=TRUE&butExpertSearch=Search&includeNonActiveTB=FALSE&includeSubProjectCode=FALSE&optDisplay=10&qCLUSTER_BOOLEAN=OR&qETSI_ALL=&qFREQUENCIES_BOOLEAN=OR&qINCLUDE_MOVED_ON=&qINCLUDE_SUB_TB=True&qKEYWORD_BOOLEAN=OR&qMandate_List=%27M/606%27&qREPORT_TYPE=SUMMARY&qSORT=HIGHVERSION&qSTOPPING_OUTDATED=&qSTOP_FLG=N
