@@ -1,3 +1,15 @@
+## 2026-11-23 — PR #212 병합 및 main CI 검증 완료
+
+- PR #212: https://github.com/useformotor3/ai-discord-bot/pull/212 — squash merge 완료.
+- merge SHA: `9b74581d43991a3430b4c6c84250a1ff0d6d5695`; exact PR head: `c241ebf5329bcb478895873f57c7c3f2b1f83950`.
+- PR exact-head Actions Run #1374 / ID `45157569997`: success.
+- main push Actions Run #1375 / ID `45157714476`: success.
+- 검증: source identity, compile, CRA traceability, full pytest, official PDF/HTML canaries, provenance manifest upload success. PDF evidence upload은 unchanged 조건으로 skipped.
+- 보고서 v0.21 §52 및 제품 증거 등록부 §13 main read-back 확인. §52는 EN 304 625 draft review 상태, M/606 회의 결과/ESO 수령·비수락 상태 Unknown, iX700M PDF 본문 미확보를 명시.
+- PROJECT_LOG.jsonl은 이전 332 records에서 이번 merge 기록 추가 후 333 records, invalid JSON 0.
+- 복구 기준: pre-PR213 `safety/pre-pr213-status-sync-2026-11-23`; PR212 post-merge `safety/post-merge-pr212-2026-11-23`.
+- 문서 변경만 수행. 운영 코드, workflow, secrets, API cadence 변경 없음. CRA only; SIL 3 제외.
+
 ## 2026-11-23 — CRA 최신 공개자료 재점검 (PR #212 준비)
 
 ### 수행
