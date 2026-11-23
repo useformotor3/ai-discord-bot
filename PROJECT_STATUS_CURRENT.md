@@ -1732,3 +1732,16 @@
 - ETSI 공식 캘린더는 GoSRSReq006-M/606 AMD 1 examination meeting을 2026-11-23 Online으로 계속 표시한다. 공개 회의록/결정/ESO receipt·acceptance·non-acceptance 원문은 이번 재조회에서 확보하지 못했다. 회의 개최 여부·결과·Article 2 수령일은 Unknown 유지; 보고서 §47 추가.
 - 범위 CRA only. SIL 3 제외. 운영 코드, 운영 workflow, secrets, Gemini/Discord 호출 주기 변경 없음.
 - 다음: PR #204 exact-head CI 및 최종 diff 확인, M/606 회의록·ESO 통지 추적, LS메카피온 실제 SKU/HW/FW/BOM 및 ST MCU 주문 코드 증거 확보.
+
+
+
+## 2026-11-23 — Commission CRA Guidance C/2026/6013 반영
+
+- EU 관보 OJ C, 17.11.2026에 게재된 Commission Guidance C/2026/6013 원문 61페이지를 확보·검토했다.
+- 법적 지위: Commission 공식 해석 지침이나 비구속적 문서. Regulation (EU) 2024/2847 원문과 구분한다.
+- 보고서 v0.17 §48 추가: core functionality와 별도 판매 모듈의 제품 경계, ST MCU 등 외부 부품 due diligence, risk appetite/비용만으로 잔여 위험 정당화 불가, 예상 사용기간 기반 지원기간, 보안 업데이트/실질적 변경 구분.
+- 제품 증거 등록부 §9 추가: iX700M Converter/Drive Unit의 별도 판매 여부, 정확한 SKU, ST MCU 보안 기능 활성화, 제품 수명 및 지원기간, 펌웨어 변경 기록을 추가 증거 항목으로 등록. 모두 Unknown 유지.
+- 공식 Commission CRA standardisation 페이지(2026-11-12 갱신)는 2026-11-10 M/606 개정 및 모든 vertical/일부 horizontal deliverable 기한 3개월 연장을 명시한다. C/2026/6013 guidance와 C(2026) 7861 implementing decision의 기능을 분리한다.
+- PR #204 latest head dc9f6674f0a2e7cdeb3953776f3c573c7304272b exact-head Actions Run #1352 / ID 45135630033 success. Source identity, compile, CRA traceability, full pytest, PDF/HTML live canary 및 provenance manifest upload 성공. PDF evidence upload step은 unchanged 조건으로 skipped.
+- 새 §48/§9 문서 변경은 별도 커밋으로 추가되므로 최신 head CI를 다시 수행해야 한다. 이전 Run #1352 성공을 새 커밋의 CI 성공으로 오인하지 않는다.
+- 범위 CRA only. SIL 3 제외. 운영 코드/workflow/secrets/API cadence 변경 없음.
