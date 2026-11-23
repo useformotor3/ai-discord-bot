@@ -1926,3 +1926,10 @@
 - Ver1.4 매뉴얼 목록(2026-05-26), 외형 CAD 2D/3D 목록(2026-04-21), KC `iX700MCB-B-8K`, 해외 영업 창구 확인.
 - 매뉴얼/CAD 본문, 회로도/BOM/PCB/MCU 미확보. MCB 의미 Unknown. 사용자 ST MCU 정보는 iX700M 탑재 증거가 아님.
 - Converter/Drive 독립 판매·EU 개별 공급 및 실제 사용자 SKU는 Unknown. PR #218 미병합.
+
+
+## 2026-11-24 — PR #218 PDF canary 2차 원인 및 endpoint 수정
+- Run #1395: source integrity, compile, CRA traceability, pytest 184 passed; live PDF canary failed.
+- C/2026/6013 EUR-Lex PDF URL redirected to sorry.ec.europa.eu; no fallback existed, so strict host validation failed closed.
+- Corrected primary source to the official Publications Office direct OJ PDF URL, verified as a 61-page C/2026/6013 PDF dated 17.11.2026. Host allowlist restricted to publications.europa.eu; exact URL/host regression assertion added.
+- PDF content identity and hash validation retained. Exact new HEAD CI required; PR not merged.
