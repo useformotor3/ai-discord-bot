@@ -292,3 +292,12 @@ ESO별 C(2026)7861 실제 수령일과 Article 2 비수락 통지는 여전히 U
 실제 SKU/nameplate, Converter/Drive Unit 공급·판매 경계, HW/FW revision, BOM, ST MCU full order code, 보안 설정, interface driver/API, 제품 수명 및 지원정책은 모두 Unknown으로 유지한다. 보고서 v1.0을 참조하고 자료가 확보되면 갱신한다.
 
 상세 보고서: reports/CRA_MECAPION_SERVO_DRIVE_SCOPE_CLASSIFICATION_2026-11-24.md
+
+
+## 16. 2026-11-24 — C/2026/6013 및 EN 40000 OJ citation 메타데이터 정밀 정정
+
+- 2026-07-27 Commission guidance announcement는 C(2026) 6013 Communication을 가리킨다. 2026-11-17 OJ C/2026/6013은 동일 지침의 관보 게재본이며 별개의 후속 지침이 아니다.
+- CEN/CENELEC 공식 카탈로그에서 EN 40000-1-1:2026 및 EN 40000-1-2:2026 개별 metadata를 확인했다. 두 표준 모두 DAV 2026-11-18이며, Legal > Citation in OJEU는 “No citation expected for Directive 2024/2847”로 표시한다.
+- 따라서 두 표준의 CRA Article 27 조화표준 적합성 추정은 기대하거나 주장하지 않는다. 두 표준은 공통 용어 및 위험관리/수명주기 설계 기준으로 활용한다.
+- 공식 CEN/CENELEC news: https://www.cencenelec.eu/news-events/news/2026/en-in-the-spotlight/2026-11-19-cra-standards-en-40000-1-1-and-en-40000-1-2/
+- Official CEN catalogue: https://standards.cencenelec.eu/ (CEN/CLC/JTC 13 published standards; EN 40000-1-1:2026 / EN 40000-1-2:2026).
