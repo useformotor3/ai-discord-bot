@@ -2704,3 +2704,12 @@
 2. 개정 Annex I 기준 41개 항목의 마스터 매트릭스 기한을 재검증·동기화.
 3. ST MCU 전체 order code/보안기능/활성화 증거와 LS메카피온 모델별 SKU/HW/FW/BOM 확보.
 4. 보고서 §1~§10을 비전문 독자 관점에서 읽고 법률·기술 전문가 교차검토를 위한 쟁점 목록을 정리.
+
+
+## 2026-11-23 — PR #196/#197 main push CI 사후 확인
+
+- GitHub Actions를 merge SHA 기준으로 조회해 PR #196 main push Run #1313 / ID 45095198162 success 확인.
+- PR #197 main push Run #1317 / ID 45104679354 success 확인.
+- 두 실행 모두 source integrity, compile, CRA traceability, 전체 pytest, official CRA PDF/HTML canary, provenance manifest upload 성공.
+- PDF evidence upload은 두 실행 모두 skipped. 따라서 PDF 원문 파일을 새로 확보한 것으로 기록하지 않는다.
+- PR exact-head 검증과 main push 검증을 별도 항목으로 유지한다.
