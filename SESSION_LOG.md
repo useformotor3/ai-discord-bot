@@ -1,3 +1,15 @@
+## 2026-11-23 — LS메카피온 제품군 증거 등록 및 PR #203 검증 동기화
+
+- PR #203 병합 완료: merge SHA `584a7c092ea434d52f7794452ca85b0cbe981210`.
+- PR exact-head Run #1343 / ID `45133630273`: success. Main push Run #1344 / ID `45133730871`: success. 전체 테스트·CRA traceability·공식 PDF/HTML canary·provenance manifest upload 성공. PDF evidence upload은 unchanged 조건으로 skipped.
+- 복구 기준점: `safety/post-merge-pr203-2026-11-23`.
+- LS메카피온 공식 드라이브 페이지에서 iX700M, iX7M, iX7NH, L7NHA/B, L7NHF, L7PA/B, PHOX, L7C, L7SA/B, GEM 제품군을 확인. 제품군별 전압·용량·통신 유형이 달라 단일 SKU처럼 다루지 않음.
+- iX700M 공개 모델코드 예시 `iX700MD1-B-150B`의 코드 구성은 제조사 인증서 페이지에서 확인. 실제 대상 모델이라고 단정하지 않음.
+- 통합 보고서 작업 브랜치 v0.15 → v0.16, §46 추가. 상세 증거 등록부 `reports/CRA_LS_MECAPION_PRODUCT_EVIDENCE_REGISTER_2026-11-23.md` 작성.
+- iX700M Ver1.4 매뉴얼 및 PEGA2 Ver1.3 매뉴얼의 제조사 목록 메타데이터는 확인했으나, iX700M Ver1.4 본문 PDF는 확보하지 못함. 미열람 내용을 검증된 사실처럼 쓰지 않음.
+- 제품별 Annex III/IV 분류는 정확한 실제 SKU, HW/FW, ST MCU order code 미확보로 Unknown 유지.
+- 범위: CRA only. SIL 3 제외. 운영 코드, workflow, secrets, API cadence 변경 없음.
+
 ## 2026-11-23 — PR #202 병합 및 main 검증 완료
 
 - PR #202 병합 완료: https://github.com/useformotor3/ai-discord-bot/pull/202
@@ -2762,3 +2774,73 @@
 - main push Run #1326 / ID 45114580241은 in_progress 시점 기록. 최종 결론은 후속 확인.
 
 - PR #198 merge SHA의 main push Run #1326 / ID 45114580241 최종 success 확인. Source integrity, compile, CRA traceability, full pytest, PDF/HTML canary, PDF evidence upload, provenance manifest upload 모두 success. PR exact-head Run #1324의 PDF upload skipped와 구분한다.
+
+
+
+## 2026-11-23 — PR #204 제품 증거 등록부 검토 및 M/606 회의 후속 재조회
+
+### 기준 상태
+- main 기준 commit: 584a7c092ea434d52f7794452ca85b0cbe981210.
+- 열린 PR #204 브랜치: research/cra-lsmecapion-product-evidence-2026-11-23; main 대비 7 ahead / 0 behind.
+- 변경 파일 7개: 보고서, 제품 증거 등록부, README, 상황판, 마스터 계획, 세션 로그, JSONL.
+
+### 조사·검토
+- PR #204의 보고서 v0.16 §46과 제품 증거 등록부를 읽고, 13개 제품군·예시 모델코드가 실제 사용자 대상 SKU로 오인되지 않도록 하는 경계와 미확인 증거 상태를 확인했다.
+- LS메카피온 공식 Servo 카탈로그 목록과 iX700M 상세 게시물을 대조했다. 목록 제목은 2025년 7월을 표시하지만 상세 첨부파일의 파일 날짜는 2025-12-05다. 이 차이를 문서 개정일로 단정하지 않고 register §8에 별도 기록했다. PDF 원문은 아직 확보·검토하지 않았다.
+- ETSI 공식 회의 캘린더를 재조회했다. GoSRSReq006-M/606 AMD 1은 2026-11-23 Online 일정으로 게시되어 있으나, 회의록/결정/공식 contribution 및 ESO receipt/acceptance/non-acceptance notice는 공개 근거로 확보하지 못했다.
+- 따라서 회의가 열리지 않았다고 판단하지 않는다. 회의 개최 여부·결과·개정안 채택·ESO 수령일은 Unknown으로 유지하고 통합 보고서 §47에 기록했다.
+
+### 개선 및 검증 원칙
+- 목록 제목, 첨부파일 메타데이터, 원문 PDF 개정 이력을 별도 필드로 관리한다.
+- 일정 게시와 회의 결과, ESO 수령과 수락, ESO 채택과 OJ citation/Article 27 presumption을 혼동하지 않는다.
+- PR #204는 exact-head CI 확인 전 병합하지 않는다. 이번 점검은 운영 코드/workflow/secrets/API cadence를 변경하지 않았다.
+
+### 다음 작업
+1. PR #204 exact-head CI, 파일 read-back 및 diff 확인.
+2. M/606 minutes/decision/contribution과 ESO별 수령·수락/비수락 통지 추적.
+3. 실제 LS메카피온 SKU/HW/FW/BOM 및 ST MCU full order code 확보.
+4. 원본 매뉴얼·카탈로그 PDF를 확보할 수 있으면 파일 해시·개정·모델 적용범위를 확인.
+
+범위: CRA only. SIL 3 제외.
+
+
+
+## 2026-11-23 — EU 관보 Commission CRA Guidance C/2026/6013 분석
+
+### 원문 확인
+- EUR-Lex ELI: https://eur-lex.europa.eu/eli/C/2026/6013/oj
+- OJ C, 17.11.2026, 61 pages.
+- 지침 §8은 문서가 경제운영자에게 구속력이 없으며 CRA의 권위 있는 해석은 CJEU에 있다고 명시한다. 보고서에서 법령과 공식 해석 지침을 구분했다.
+
+### 핵심 분석
+- §§141~145: 제품 전체 core functionality가 중요/핵심 제품 분류 및 conformity assessment route를 결정한다. 별도 판매 모듈은 독립 PDE로, 통합 제품에만 포함된 모듈은 통합 제품 수준으로 본다.
+- §§147~151: 제품 전체 위험평가는 계속 필요하며, OJ 인용 표준의 범위 밖 추가 기능 위험은 별도 조치·문서화한다.
+- §§156~163: 잔여 위험은 충분히 처리되어야 하며 제조자 내부 risk appetite·상업 전략·비용만으로 미처리 위험을 정당화할 수 없다.
+- §§170~173: 외부 통합 부품은 risk-based due diligence 대상이며 제조사 기술/보안 문서 및 필요 시 시험 증거를 활용한다.
+- §§125~127: support period는 예상 사용기간 기준. 최소 5년은 자동 기본값이 아니며 5년보다 긴 제품 사용기간은 더 긴 지원기간을 요구할 수 있다.
+- §108 및 §§122~124: 보안 업데이트는 intended purpose 변경/새 위험 도입 여부에 따라 substantial modification 여부를 판단하고, 변경되지 않은 영역의 기존 증거 재사용 가능성을 구분한다.
+
+### 서보드라이브 영향
+- ST MCU의 기능 보유 여부와 완제품 내 실제 활성화·구성·검증을 분리한다.
+- iX700M Converter Unit/Drive Unit의 별도 판매 여부와 통합 다축 제품의 경계를 확인한다.
+- EtherCAT/RS-485 포트나 MCU 보안기능만으로 Annex III 카테고리를 확정하지 않는다.
+- 산업 설비의 실제 예상 사용기간, 서비스 계약, 부품 지원기간을 수집한다.
+- 잔여 위험을 폐쇄망/고객 책임/비용만으로 종결하지 않는다.
+
+### 문서 변경
+- 통합 보고서 v0.17 §48 추가.
+- LS메카피온 제품 증거 등록부 §9 추가.
+- PROJECT_STATUS_CURRENT, MASTER_PLAN, SESSION_LOG, README, PROJECT_LOG 갱신.
+- 이전 PR #204 exact-head CI Run #1352는 success. 이번 문서 변경 후의 새 head는 별도 CI가 필요하다.
+- 운영 코드, workflow, secrets, API cadence 변경 없음. CRA only; SIL 3 제외.
+
+## 2026-11-23 — PR #204 최종 브랜치 스냅샷 및 새 CI 게이트
+
+- 작업 브랜치: research/cra-lsmecapion-product-evidence-2026-11-23.
+- 기준 main: 584a7c092ea434d52f7794452ca85b0cbe981210.
+- C/2026/6013 guidance 분석 추가 후 브랜치 비교: 27 commits ahead / 0 behind; 변경 파일 8개.
+- 최신 문서 커밋: 36a3dd41236ee03df0dacf407d9117c5ab317cf7.
+- GitHub read-back: 통합 보고서 v0.17 및 §48, 제품 증거 등록부 §9 확인; PROJECT_LOG 323 records, JSONL parse invalid 0.
+- PR #204 exact-head Run #1352 (commit dc9f6674f0a2e7cdeb3953776f3c573c7304272b) success. 이후 C/2026/6013 반영으로 문서 전용 커밋이 추가되어 현재 최신 head 36a3dd41236ee03df0dacf407d9117c5ab317cf7에 연결된 PR CI run은 확인되지 않음.
+- 최신 문서 커밋은 소스 코드·workflow 변경 없이 Markdown/JSONL만 변경했다. JSONL 전체 파싱과 핵심 문서 read-back은 통과했지만, 최신 head CI가 확인되기 전에는 PR 병합하지 않는다.
+- CRA only; SIL 3 제외. 운영 코드/workflow/secrets/API cadence 변경 없음.

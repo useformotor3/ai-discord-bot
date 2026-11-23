@@ -1,3 +1,15 @@
+## 2026-11-23 — LS메카피온 제품군 증거 등록 및 PR #203 검증 동기화
+
+- PR #203 병합 완료: merge SHA `584a7c092ea434d52f7794452ca85b0cbe981210`.
+- PR exact-head Run #1343 / ID `45133630273`: success. Main push Run #1344 / ID `45133730871`: success. 전체 테스트·CRA traceability·공식 PDF/HTML canary·provenance manifest upload 성공. PDF evidence upload은 unchanged 조건으로 skipped.
+- 복구 기준점: `safety/post-merge-pr203-2026-11-23`.
+- LS메카피온 공식 드라이브 페이지에서 iX700M, iX7M, iX7NH, L7NHA/B, L7NHF, L7PA/B, PHOX, L7C, L7SA/B, GEM 제품군을 확인. 제품군별 전압·용량·통신 유형이 달라 단일 SKU처럼 다루지 않음.
+- iX700M 공개 모델코드 예시 `iX700MD1-B-150B`의 코드 구성은 제조사 인증서 페이지에서 확인. 실제 대상 모델이라고 단정하지 않음.
+- 통합 보고서 작업 브랜치 v0.15 → v0.16, §46 추가. 상세 증거 등록부 `reports/CRA_LS_MECAPION_PRODUCT_EVIDENCE_REGISTER_2026-11-23.md` 작성.
+- iX700M Ver1.4 매뉴얼 및 PEGA2 Ver1.3 매뉴얼의 제조사 목록 메타데이터는 확인했으나, iX700M Ver1.4 본문 PDF는 확보하지 못함. 미열람 내용을 검증된 사실처럼 쓰지 않음.
+- 제품별 Annex III/IV 분류는 정확한 실제 SKU, HW/FW, ST MCU order code 미확보로 Unknown 유지.
+- 범위: CRA only. SIL 3 제외. 운영 코드, workflow, secrets, API cadence 변경 없음.
+
 ## 2026-11-23 — PR #202 병합 및 main 검증 완료
 
 - PR #202 병합 완료: https://github.com/useformotor3/ai-discord-bot/pull/202
@@ -1708,3 +1720,28 @@
 - main read-back: 보고서 v0.13 및 §43 존재, M/606 matrix Markdown/CSV 변경 반영, PROJECT_LOG.jsonl 314 records, invalid JSON 0, interior blank 0.
 - Post-merge safety ref: safety/post-merge-pr198-2026-11-23.
 - Main push CI Run #1326 / ID 45114580241 success. Source integrity, compile, CRA traceability, full pytest, official PDF/HTML canaries, PDF evidence upload 및 provenance manifest upload 모두 성공. PR exact-head Run #1324에서는 PDF evidence upload이 skipped였으나 main push에서는 실제 업로드 성공.
+
+
+
+## 2026-11-23 17:00 KST — 일일 재개 점검 및 M/606 회의 후속 재조회
+
+- 기준 main SHA: 584a7c092ea434d52f7794452ca85b0cbe981210 (PR #203 상태 동기화 기준).
+- 열린 PR #204: research/cra-lsmecapion-product-evidence-2026-11-23, main 대비 27 commits ahead / 0 behind (2026-11-23 C/2026/6013 guidance 추가 문서 8개 반영 후), 변경 파일 7개. 현재 열린 PR로 유지하며 exact-head CI를 확인하기 전에는 병합하지 않는다.
+- PR #204 보고서 v0.16 §46 및 LS메카피온 제품 증거 등록부를 검토. 제조사 13개 제품군과 예시 모델코드를 실제 사용자 대상 SKU와 구분하고, SKU/HW/FW/BOM 및 ST MCU full order code 미확보 상태를 Unknown으로 유지한다.
+- 제조사 공식 카탈로그 상세 페이지를 추가 확인: iX700M 카탈로그 목록 제목은 2025년 7월을 표시하지만 상세 첨부파일 메타데이터는 2025-12-05 파일 날짜를 표시한다. 문서 개정일로 단정하지 않고 register §8에 메타데이터 차이와 PDF 본문 미확보 한계를 기록했다.
+- ETSI 공식 캘린더는 GoSRSReq006-M/606 AMD 1 examination meeting을 2026-11-23 Online으로 계속 표시한다. 공개 회의록/결정/ESO receipt·acceptance·non-acceptance 원문은 이번 재조회에서 확보하지 못했다. 회의 개최 여부·결과·Article 2 수령일은 Unknown 유지; 보고서 §47 추가.
+- 범위 CRA only. SIL 3 제외. 운영 코드, 운영 workflow, secrets, Gemini/Discord 호출 주기 변경 없음.
+- 다음: PR #204 exact-head CI 및 최종 diff 확인, M/606 회의록·ESO 통지 추적, LS메카피온 실제 SKU/HW/FW/BOM 및 ST MCU 주문 코드 증거 확보.
+
+
+
+## 2026-11-23 — Commission CRA Guidance C/2026/6013 반영
+
+- EU 관보 OJ C, 17.11.2026에 게재된 Commission Guidance C/2026/6013 원문 61페이지를 확보·검토했다.
+- 법적 지위: Commission 공식 해석 지침이나 비구속적 문서. Regulation (EU) 2024/2847 원문과 구분한다.
+- 보고서 v0.17 §48 추가: core functionality와 별도 판매 모듈의 제품 경계, ST MCU 등 외부 부품 due diligence, risk appetite/비용만으로 잔여 위험 정당화 불가, 예상 사용기간 기반 지원기간, 보안 업데이트/실질적 변경 구분.
+- 제품 증거 등록부 §9 추가: iX700M Converter/Drive Unit의 별도 판매 여부, 정확한 SKU, ST MCU 보안 기능 활성화, 제품 수명 및 지원기간, 펌웨어 변경 기록을 추가 증거 항목으로 등록. 모두 Unknown 유지.
+- 공식 Commission CRA standardisation 페이지(2026-11-12 갱신)는 2026-11-10 M/606 개정 및 모든 vertical/일부 horizontal deliverable 기한 3개월 연장을 명시한다. C/2026/6013 guidance와 C(2026) 7861 implementing decision의 기능을 분리한다.
+- PR #204 latest head dc9f6674f0a2e7cdeb3953776f3c573c7304272b exact-head Actions Run #1352 / ID 45135630033 success. Source identity, compile, CRA traceability, full pytest, PDF/HTML live canary 및 provenance manifest upload 성공. PDF evidence upload step은 unchanged 조건으로 skipped.
+- 새 §48/§9 문서 변경은 별도 커밋으로 추가되므로 최신 head CI를 다시 수행해야 한다. 이전 Run #1352 성공을 새 커밋의 CI 성공으로 오인하지 않는다.
+- 범위 CRA only. SIL 3 제외. 운영 코드/workflow/secrets/API cadence 변경 없음.
