@@ -1,3 +1,8 @@
+## 2026-11-24 — 공식 Guidance·EN 40000 OJ citation 정정
+- 2026-07-27 Commission release와 2026-11-17 OJ C/2026/6013이 동일한 C(2026)6013 guidance임을 확인하고 표현을 정정했다.
+- EN 40000-1-1/-1-2 CEN catalogue metadata를 직접 열람: DAV 2026-11-18, Citation in OJEU = No citation expected for Directive 2024/2847. Article 27 적합성 추정이 발생하는 조화표준으로 사용하지 않는다.
+- 독립 보고서 §7.3, 통합 보고서 §54.5 및 증거 등록부 §16에 반영.
+
 ## 2026-11-24 — LS메카피온 서보 드라이브 CRA 적용 범위·제품 분류 정밀 분석
 
 ### 수행
