@@ -463,3 +463,7 @@ PR #218 exact HEAD의 Run #1395에서 184개 pytest 및 코드/추적성 검사�
 해결을 위해 동일한 공식 관보 PDF를 제공하는 Publications Office의 직접 PDF URL로 변경했다: https://publications.europa.eu/resource/cellar/dcbc848b-e227-11f1-aefc-01aa75ed71a1.0006.01/DOC_1. 브라우저에서 PDF 형식, 61페이지, 제목, C/2026/6013 및 17.11.2026 관보 날짜를 확인했다. 다운로드 도구의 허용 호스트도 publications.europa.eu로 한정했고, 회귀 테스트에서 정확한 URL과 호스트를 확인하도록 했다. PDF magic, 필수 identity markers 및 본문 텍스트 검증은 그대로 유지한다.
 
 새 exact HEAD CI가 이 URL에서 실제 PDF를 받아 marker/hash 검증까지 성공하기 전에는 PR을 병합하지 않는다.
+
+
+### 14.10 M/606 문서의 자동화 접근 제한과 보수적 처리
+Run #1404에서 C(2026)7861 M/606 Annex의 Commission document-register API가 CI runner를 sorry.ec.europa.eu interstitial로 리디렉션했다. 앞서 C/2026/6013은 공식 Publications Office 직접 OJ PDF로 전환해 별도 해결했다. C(2026)7861은 OJ에 게재된 문서가 아니므로 동일한 OJ URL로 대체할 수 없다. 이번 수정은 해당 Commission anti-bot interstitial을 유효 PDF가 아닌 source-unavailable 상태로 기록하고, 미허용 외부 mirror를 자동 사용하지 않도록 한다. 스크립트는 다른 PDF source를 무결하게 검증하되, 하나의 공식 문서가 접근 제한이면 PDF batch를 SKIPPED 처리한다. HTML canary와 별도 공식 브라우저 확인은 계속 유지한다. 따라서 CI 성공 후에도 C(2026)7861 PDF의 automated artifact가 확보되었다고 주장하지 않는다. 문서 내용 자체는 공식 Commission register의 브라우저 검색 결과에서 확인했으며, PDF 바이너리/hash는 runner에서 확보하지 못했다.
