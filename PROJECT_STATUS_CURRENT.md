@@ -1,3 +1,16 @@
+## 2026-11-23 — PR #214 병합 및 공식 Annex 원문 근거 반영
+
+- PR #214: https://github.com/useformotor3/ai-discord-bot/pull/214 — squash merge 완료.
+- merge SHA: `1451339e39c0b5588214caea4668b7bd838d7e04`; exact PR head: `23db4df0b9d681601e98206dd043f2298d3a649b`.
+- PR exact-head Actions Run #1378 / ID `45158477423`: success.
+- main push Actions Run #1379 / ID `45158597548`: success.
+- 보고서 v0.22 §53, 제품 증거 등록부 §14 main 반영. C(2026)7861 Annex I 별도 공식 PDF를 확보하여 M/606 목표일을 1차 자료에서 직접 확인.
+- 공식 Annex 일정: Item 1/15 2026-11-30; Items 2–14 2027-10-30; Items 16–41 2027-01-31.
+- ESO 실제 수령일·Article 2 비수락 통지·결정 최종 적용 상태는 Unknown 유지. ESO 목표일과 제조사 CRA 의무 및 OJ 인용을 구분.
+- PROJECT_LOG.jsonl은 이전 334 records에서 335 records, invalid JSON 0.
+- 복구 기준: pre-PR215 `safety/pre-pr215-status-sync-2026-11-23`; post-merge `safety/post-merge-pr214-2026-11-23`.
+- 문서 변경만. 운영 코드/workflow/secrets/API cadence 변경 없음. CRA only; SIL 3 제외.
+
 ## 2026-11-23 — C(2026)7861 Annex I 공식 별첨 원문 확보
 
 - 공식 Commission document register의 별도 Annex PDF를 확보: https://ec.europa.eu/transparency/documents-register/api/files/C%282026%297861_1/de00000001090401
