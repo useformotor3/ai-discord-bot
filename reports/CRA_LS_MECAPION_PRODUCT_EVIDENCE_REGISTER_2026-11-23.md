@@ -301,3 +301,56 @@ ESO별 C(2026)7861 실제 수령일과 Article 2 비수락 통지는 여전히 U
 - 따라서 두 표준의 CRA Article 27 조화표준 적합성 추정은 기대하거나 주장하지 않는다. 두 표준은 공통 용어 및 위험관리/수명주기 설계 기준으로 활용한다.
 - 공식 CEN/CENELEC news: https://www.cencenelec.eu/news-events/news/2026/en-in-the-spotlight/2026-11-19-cra-standards-en-40000-1-1-and-en-40000-1-2/
 - Official CEN catalogue: https://standards.cencenelec.eu/ (CEN/CLC/JTC 13 published standards; EN 40000-1-1:2026 / EN 40000-1-2:2026).
+
+
+## 17. 2026-11-24 — iX700M Converter Unit / Drive Unit 공식 제조사 증거 추가
+
+### 공식 제조사 출처 및 확인 항목
+
+| ID | 제조사 자료 | 확인된 사실 | 증거 한계 |
+|---|---|---|---|
+| MFG-IX7M-01 | LS ELECTRIC Solution Square, LS메카피온 「서보 드라이브 신제품 소개(iX7M, iX700M)」 PDF, iX700M section | Converter Unit/Drive Unit 외관·유닛 구분, Bus-Bar, DC Link, RS-485 Cross Communication, EtherCAT IN/OUT, 각 유닛 기능 및 용량표 | 문서 하단 제작일 표기는 2024-04-01; 이후 SKU 변경을 모두 반영한다고 보지 않음 |
+| MFG-IX7M-02 | LS메카피온 공식 CE 제품인증서 페이지 — Converter Unit | `iX700MCV` 코드 체계, CV=Converter Unit, B=480 Vac, 150/370/550/750=15/37/55/75 kW; 별도 CE DoC 파일 게시 | PDF 본문 미확보; 별도 판매 증명은 아님 |
+| MFG-IX7M-03 | LS메카피온 공식 CE 제품인증서 페이지 — Drive Unit `iX700MD1-B-150B` | D1/D2/D3=1/2/3축, B=480 Vac, 150=15 kW, Encoder B=BiSS-C, 옵션 코드; 별도 CE DoC 게시 | 대표 예시 SKU이지 사용자 실제 모델 아님; PDF 본문 미확보 |
+| MFG-IX7M-04 | LS메카피온 공식 CE 목록 및 KC 목록 | 여러 용량별 Drive Unit 및 Converter Unit 코드가 개별 항목으로 게시됨 | 목록·문서 단위 식별이지 가격·계약·독립 판매의 직접 증거는 아님 |
+| MFG-IX7M-05 | LS메카피온 공식 매뉴얼 목록 | iX700M DRIVE 400[V] 매뉴얼 Ver1.4, 2026-05-26 게시 | 목록 메타데이터만 확인; PDF 본문·hash 미확보 |
+| MFG-IX7M-06 | LS메카피온 공식 카탈로그 게시판 | iX700M 국문/영문 카탈로그 항목; 파일명 KR/EN `251205` 표기 | 게시판 항목 2025-11-17, 파일 날짜 2025-12-05; 본문·hash 미확보 |
+
+### 모델코드 예시(실제 대상 SKU 아님)
+
+- Converter: `iX700MCV-B-150`, `iX700MCV-B-370`, `iX700MCV-B-550`, `iX700MCV-B-750`.
+- Drive: `iX700MD1-B-150B` (CE page model code definition); official listing also shows D1/D2 and multiple power ratings, including 075B, 050B, 045B, 220B, 300B, 370B, 450B, 550B, 750B variants.
+
+### 제품 구조에서 확인된 내용
+
+- Converter Unit: AC 380–480 V 3상 입력을 DC 535–675 V로 정류·평활, Bus-Bar를 통해 Drive Unit 공급; 회생제동 회로 내장, DC24V 제어전원 Bypass.
+- Drive Unit: DC Bus 전원으로 모터 구동, Dynamic brake, 모터브레이크 출력, BiSS 및 Universal 2nd encoder.
+- 연결: PE Bus-Bar, DC Link Bus-Bar, DC24V, 내부 RS-485 Cross Communication; Drive Unit에는 EtherCAT IN/OUT 표기.
+- 제조사 자료는 Power/Converter 부분과 Drive Power 부분을 분리하고 필요한 용량의 Drive를 다중 연결하는 modular architecture로 설명.
+
+### 공급 경계 판정
+
+- 기능적 유닛 분리: **Confirmed**.
+- 별도 모델코드/용량 체계: **Confirmed**.
+- 유닛별 별도 CE DoC 게시: **Confirmed (게시판/첨부파일 식별 수준)**.
+- 실제 독립 주문·상업 판매: **Unknown**.
+- EU 시장에서 개별 PDE로 각각 공급: **Unknown**.
+- 사용자의 실제 대상 SKU: **Unknown**.
+
+별도 DoC 및 SKU는 독립 제품으로 공급될 가능성을 높이는 자료이지만, 계약·주문·판매 증거를 대신하지 않는다. DoC PDF 본문도 확보 전이므로 발행 내용과 CRA 관련성을 추정하지 않는다.
+
+### CRA 영향
+
+- Converter+Drive를 하나의 통합 시스템으로 공급하면 시스템 제품의 intended purpose/core functionality를 중심으로 평가.
+- Converter 및/또는 Drive를 독립 제품으로 공급하면 각 공급 단위의 PDE 정의, 데이터 연결, intended purpose, core functionality를 개별 평가.
+- 혼합 공급이면 계약·주문·라벨·EU 수입자 문서와 실제 공급 흐름으로 시장 공급 단위를 판정.
+- EtherCAT IN/OUT 및 RS-485는 데이터 연결 분석 근거이나 그 자체로 Annex III category 10 또는 host system classification을 자동 결정하지 않는다.
+- CE/LVD/EMC 문서 게시 사실은 CRA 준수·CRA 적합성 추정의 증거가 아니다.
+
+### 공식 링크
+1. LS메카피온 드라이브 제품군: https://www.lsmecapion.com/bbs/board.php?bo_table=pd_drive
+2. LS메카피온 CE Converter Unit page: https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&sca=CE&wr_id=12886
+3. LS메카피온 CE Drive Unit page: https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&page=4&wr_id=12888
+4. LS메카피온 매뉴얼 목록: https://www.lsmecapion.com/bbs/board.php?bo_table=manual
+5. LS메카피온 카탈로그 목록: https://www.lsmecapion.com/bbs/board.php?bo_table=catalog&wr_id=12110
+6. LS ELECTRIC Solution Square manufacturer PDF: https://ssq.ls-electric.com/uploads/document/17120093352290/%5BLS%2BELECTRIC%2B%EC%98%A4%ED%94%88%EC%84%B8%EB%AF%B8%EB%82%98%5D%2B%EC%84%9C%EB%B3%B4%2B%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B8%8C%2B%EC%8B%A0%EC%A0%9C%ED%92%88%2B%EC%86%8C%EA%B0%9C%2BiX7M_iX700M_LS%EB%A9%94%EC%B9%B4%ED%94%BC%EC%98%A8.pdf
