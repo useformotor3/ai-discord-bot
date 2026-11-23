@@ -1651,7 +1651,7 @@
 - PR #197 병합: squash merge SHA b69710cf1eb3c17c1e99fc2ecd57e86c23053fde. PR #196 병합 사후 상태·로그를 main에 반영.
 - PR #197 exact-head CI: head 556d74a5133f092581d059e2ae37456793f7102f, Run ID 45095286445: success. Source identity, compile, CRA traceability, 전체 pytest, 공식 CRA PDF/HTML canary, provenance manifest 업로드 성공. PDF evidence upload 단계는 skipped이므로 PDF 원문 파일 확보로 기록하지 않는다.
 - main read-back: PROJECT_LOG.jsonl 311 records, invalid JSON 0, interior blank lines 0. PR #197 post-merge safety ref: safety/post-merge-pr197-status-2026-11-23.
-- main push CI: merge SHA에 대한 별도 main push workflow run은 아직 검증하지 못했다. PR exact-head 성공과 구분해 추적한다.
+- main push CI 추가 검증 완료: PR #196 merge SHA e82683964413ca2c5922477e9755c62ae7b21064의 Run #1313 / ID 45095198162 success, PR #197 merge SHA b69710cf1eb3c17c1e99fc2ecd57e86c23053fde의 Run #1317 / ID 45104679354 success. 두 run 모두 source integrity, compile, CRA traceability, 전체 pytest, PDF/HTML canary, provenance manifest 업로드 성공; PDF evidence upload은 skipped. PR exact-head CI와 main push CI를 각각 기록한다.
 - M/606 개정 원문: Commission Implementing Decision C(2026) 7861 final (2026-11-10) 및 Annex I 공식 문서 확보. 항목 1·15는 2026-11-30, 16~41은 2027-01-31, 2~14는 2027-10-30 ESO 채택 기한.
 - 개정 제2조 조건: 각 ESO 수령일로부터 1개월 이내 비수락 통지 시 개정 결정이 적용 중단될 수 있다. 각 ESO 수령일과 비수락 여부는 아직 확인되지 않아 효력 관련 후속 검증을 유지한다.
 - 법적 경계: 표준 ESO 채택 기한은 OJ 인용일이나 CRA Article 27 적합성 추정 발생일이 아니다. CRA Regulation 자체의 신고/전체 적용일도 이번 M/606 개정으로 바뀌지 않는다.
