@@ -1149,3 +1149,31 @@ CRA Article 7(1)과 Commission Implementing Regulation (EU) 2025/2392의 전문 
 본 절의 상세 증거 목록은 별도 등록부 `reports/CRA_LS_MECAPION_PRODUCT_EVIDENCE_REGISTER_2026-11-23.md`를 참조한다. 핵심 결론은 LS메카피온 제품군을 하나의 동일한 제품으로 가정할 수 없다는 것이다. 공식 제품 페이지는 iX700M, iX7M, iX7NH, L7NHA/B, L7NHF, L7PA/B, PHOX, L7C, L7SA/B, GEM 등 전압·용량·통신 방식이 다른 여러 계열을 구분한다. iX700M Drive Unit의 예시 full model code `iX700MD1-B-150B`도 확인했지만 이는 공개된 예시 SKU일 뿐 실제 대상 모델로 확정되지 않았다.
 
 제품 분류를 위해서는 정확한 모델코드, HW revision, FW version, 통신 구성 및 ST MCU 전체 주문코드가 필요하다. EtherCAT 포트 보유만으로 Annex III의 네트워크 인터페이스·라우터/스위치 카테고리로 자동 분류하지 않는다. CE 자료가 존재하더라도 CRA Annex I 충족이나 Article 27 추정 적합성을 대신 증명하지 않는다. 증거 미확보 항목은 Unknown으로 유지한다.
+
+
+
+## 47. 2026-11-23 M/606 AMD 1 회의 후속 재조회 및 증거 상태 갱신
+
+### 47.1 재조회 결과
+
+- 기준 시각: 2026-11-23 17:00 KST.
+- ETSI 공식 Technical Bodies 회의 캘린더를 재조회한 결과, “GoSRSReq006-M/606 AMD 1 - examination meeting” 항목은 2026-11-23 / Online 일정으로 계속 표시된다.
+- 별도 검색으로 ETSI 공식 포털의 회의록, 결정문, 공식 contribution 및 Commission/ESO의 수령·수락·비수락 통지 원문을 확인하려 했으나, 공개적으로 검증 가능한 결과 문서를 확보하지 못했다.
+- 따라서 이번 재조회는 ‘회의가 열리지 않았다’는 증거가 아니다. 회의 개최 여부, 논의 결과, 표결/결정, 개정안 채택, ESO 전달·수락, C(2026) 7861 Article 2의 수령일은 계속 **Unknown / not evidenced**로 유지한다.
+
+### 47.2 법적 해석에 미치는 영향
+
+- 회의 캘린더의 일정은 예정 사실만 증명한다. 회의 결과 또는 M/606 개정안의 법적 효력 상태를 증명하지 않는다.
+- C(2026) 7861 Article 2의 1개월 조건은 각 ESO의 실제 수령일을 기준으로 하므로, 회의일이나 Commission 결정일을 수령일로 대체할 수 없다.
+- ESO 채택, Commission assessment, 최종 EN 발행, OJ 인용 및 CRA Article 27 추정 적합성은 각각 독립된 증거 단계다. 어느 하나를 다른 단계의 완료 증거로 사용하지 않는다.
+- 기존 C(2026) 7861 Annex I의 기한표(항목 1·15: 2026-11-30; 16~41: 2027-01-31; 2~14: 2027-10-30)는 공식 원문 기준으로 유지하되, Article 2 조건의 실제 효력 상태는 별도 미확인으로 관리한다.
+
+### 47.3 다음 확인 게이트
+
+1. GoSRSReq006 공식 contribution/minutes/decision 또는 후속 회의 기록의 문서번호·개정번호·발행일 확보.
+2. Commission의 개정 M/606 송부 문서와 CEN/CENELEC/ETSI별 실제 수령 확인 확보.
+3. 각 ESO의 수락 또는 1개월 이내 비수락 통지 원문 확인.
+4. 개정 Work Programme 및 Annex I topic별 기한의 변경 여부 재대조.
+5. OJ citation은 EUR-Lex/Commission 공식 harmonised standards index에서 표준별로 독립 확인.
+
+**공식 확인 출처:** ETSI Technical Bodies meeting calendar, https://portal.etsi.org/tb.aspx?TBID=287&subTB=287 ; ETSI CYBER group calendar, https://portal.etsi.org/tb.aspx?TBID=162 ; Commission Implementing Decision C(2026) 7861 final 및 Annex I(§43 출처 참조).
