@@ -582,3 +582,9 @@
 - 제품 SKU/HW/FW/BOM/MCU order code/보안 설정이 없으면 Unknown으로 유지한다. 제품 구조를 상상으로 채우지 않는다.
 - EN 표준 발행 사실과 CRA Article 27 OJ 인용/적합성 추정을 분리한다. OJ 근거가 없으면 presumption을 주장하지 않는다.
 - Commission guidance는 공식 해석자료지만 binding regulation과 구별한다. 최신 관보판과 publication date를 기록한다.
+
+
+## 2026-11-24 — EN 40000 legal status verification
+- EN 40000 publication status, DAV, OJEU citation expectation must be checked from the individual CEN catalogue records, not inferred from the standard's EN prefix or M/606 link.
+- If CEN metadata states “No citation expected for Directive 2024/2847”, do not claim CRA Article 27 presumption of conformity. Use the standard only within its stated technical scope unless binding legal sources establish otherwise.
+- Treat the 2026-07-27 C(2026)6013 announcement and 2026-11-17 OJ C/2026/6013 publication as the same guidance document.
