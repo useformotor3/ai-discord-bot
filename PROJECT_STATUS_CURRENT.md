@@ -1827,3 +1827,10 @@
 - 보고서 v0.20 §51, 제품 증거 등록부 §12 추가 예정.
 - iX700M Solution Square 매뉴얼은 2026-09-16 인덱스 등록까지 확인. 정확한 파일/버전/PDF bytes는 미확보. 최신 날짜를 새 버전이라고 추정하지 않는다.
 - CRA only; SIL 3 제외; 운영 코드/workflow/secrets/API cadence 변경 없음.
+
+
+## PR #210 CI 상태 — 2026-11-23 확인
+
+- PR #210 head `eb51d03a60cbb4cfb4341a88ef7ed2fa4331e06a` 기준으로 GitHub Actions의 pull_request run 목록과 commit check-runs를 조회했으나, exact-head run/check가 아직 생성되지 않은 상태를 확인했다.
+- PR #210은 open이며, exact-head CI 결과가 없으므로 병합하지 않는다.
+- 다음 확인: Actions run/check 생성 여부를 다시 조회한다. run이 끝나면 source identity, compile, CRA traceability, 전체 pytest, 공식 CRA PDF/HTML canary, provenance manifest 결과를 각각 확인한다.
