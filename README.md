@@ -1,3 +1,5 @@
+> **2026-11-24 추가 조사:** iX700M 공식 제품군 사양, Ver1.4 매뉴얼 목록, 외형 CAD 2D/3D 게시, 해외 영업 창구 및 미해석 `iX700MCB-B-8K`를 확인했습니다. 매뉴얼/CAD 본문, 회로도/BOM/MCU는 미확보이며 독립 판매·EU 개별 공급은 Unknown입니다. PR #218 CI Run #1388은 Commission PDF newsroom interstitial redirect로 실패해 보완·재검증 중이며 미병합입니다. [상세 보고서 §14](reports/CRA_MECAPION_SERVO_DRIVE_SCOPE_CLASSIFICATION_2026-11-24.md), [증거 등록부 §18](reports/CRA_LS_MECAPION_PRODUCT_EVIDENCE_REGISTER_2026-11-23.md), [통합 보고서 §56](reports/CRA_INTEGRATED_COMPLIANCE_REPORT_2026-11-17.md).
+
 
 
 > **2026-11-24 iX700M 제품경계 조사:** 제조사 자료로 Converter Unit/Drive Unit의 기능 분리, `iX700MCV...` / `iX700MD...` 별도 모델코드 및 유닛별 CE DoC 게시를 확인했습니다. 실제 독립 판매·EU 개별 공급 및 사용자 실제 SKU는 아직 Unknown입니다. [상세 보고서 §13](reports/CRA_MECAPION_SERVO_DRIVE_SCOPE_CLASSIFICATION_2026-11-24.md), [제품 증거 등록부 §17](reports/CRA_LS_MECAPION_PRODUCT_EVIDENCE_REGISTER_2026-11-23.md), [통합 보고서 §55](reports/CRA_INTEGRATED_COMPLIANCE_REPORT_2026-11-17.md). PR #217 merge SHA: `5ea2f500dc69bd7c946895aeb3141df8fd8d1f99`.
