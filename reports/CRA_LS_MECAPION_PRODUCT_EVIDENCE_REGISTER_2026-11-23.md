@@ -226,3 +226,36 @@ CRA schedule Run #2546 (ID 45155788066)은 success. 조사·요약·검증 guard
 ### 13.6 제품별 판정의 보류 사항
 
 정확한 iX700M SKU/nameplate, Converter/Drive Unit 공급·판매 경계, HW/FW revision, BOM, ST MCU 전체 order code 및 보안 설정이 확보되기 전까지 제품별 CRA 분류·Annex III 등급·적합성 평가 경로는 Unknown이다.
+
+## 14. C(2026)7861 Annex I — 공식 별첨 원문 확보 (2026-11-23)
+
+### 14.1 1차 자료
+
+별도 Annex PDF를 European Commission document register에서 직접 확보했다:
+https://ec.europa.eu/transparency/documents-register/api/files/C%282026%297861_1/de00000001090401
+
+문서명: C(2026) 7861 final — ANNEX, 2026-11-10. Annex I 제목은 “List of new European Standards to be drafted”이며, 기한 열은 “Deadline for the adoption by the ESOs”로 표시한다.
+
+### 14.2 공식 원문에서 확인한 날짜
+
+| Item | ESO 채택 목표일 |
+|---|---:|
+| 1 | 2026-11-30 |
+| 2–14 | 2027-10-30 |
+| 15 | 2026-11-30 |
+| 16–41 | 2027-01-31 |
+
+주요 서보/MCU 관련 항목:
+- Item 25: physical and virtual network interfaces.
+- Item 28: microprocessors with security-related functionalities.
+- Item 29: microcontrollers with security-related functionalities.
+- Item 37: tamper-resistant microprocessors.
+- Item 38: tamper-resistant microcontrollers.
+
+이는 ESO 표준 채택 목표일이지 제조사 CRA 준수기한이 아니다. 표준 채택과 OJ 인용도 구분한다. CRA Article 27 적합성 추정은 OJ 공표된 표준 참조의 범위에 따라 판단한다.
+
+### 14.3 앞선 증거 수준 표기의 정정·승격
+
+보고서 §51~§52는 Annex 원문 미확보 당시 세부 날짜를 교차확인값으로 표시했다. 이번 공식 Annex 별첨 확보로 일정 근거를 1차 자료 직접 확인으로 상향한다. 이전 스냅샷은 과거 상태 기록으로 보존하되, 현재 일정 인용은 이 §14와 보고서 §53을 기준으로 한다.
+
+ESO별 C(2026)7861 실제 수령일과 Article 2 비수락 통지는 여전히 Unknown. Annex 일정으로 결정의 최종 적용 상태를 추정하지 않는다.
