@@ -1820,3 +1820,14 @@
 - main report v0.12, M/606/ST MCU follow-up note 및 프로젝트 상태 read-back 확인. JSONL 310 records, 0 invalid, 0 interior blank.
 - Safety refs: pre-pr196 및 post-merge-pr196. Main push CI는 확인 시점에 아직 조회되지 않아 별도 확인 대상으로 남김.
 
+
+
+## CRA P0 업데이트 — M/606 개정 결정 C(2026) 7861 및 PR #197 후속 (2026-11-23)
+
+1. M/606 원문 Annex I 기한표를 v0.13 보고서와 표준 추적 매트릭스에 동기화한다: 항목 1·15=2026-11-30, 16~41=2027-01-31, 2~14=2027-10-30.
+2. ESO별 C(2026) 7861 수령일과 Article 2의 1개월 비수락 통지 여부를 1차 출처로 확인한다. 수령일을 추정하거나 단순히 공개 통지가 없다는 이유로 효력 유지가 확정됐다고 표현하지 않는다.
+3. 2026-11-23 ETSI M/606 AMD 1 회의록/결정/공식 contribution을 추적한다. 캘린더 일정과 회의 결과를 구분한다.
+4. 개별 표준은 ESO 채택, Commission assessment, OJ citation 및 citation restriction을 분리해 확인한다. M/606 기한을 Article 27 presumption으로 오해하지 않는다.
+5. ST MCU 항목 29/38의 제품·부품 적용성은 정확한 주문 코드, 데이터시트, 보안 기능 활성화, 제품 통합 및 별도 시장 출시 여부 증거 확보 후 판단한다.
+6. LS메카피온 서보 드라이브의 SKU/HW/FW/BOM/매뉴얼/통신 인터페이스 자료를 확보하여 제품별 Annex III/IV 및 CRA 요구사항 추적표를 완성한다.
+7. PR #197은 merge SHA b69710cf1eb3c17c1e99fc2ecd57e86c23053fde, exact-head Run 45095286445 success, post-merge safety ref safety/post-merge-pr197-status-2026-11-23. Main push CI는 별도 확인한다.
