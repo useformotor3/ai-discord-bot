@@ -1,3 +1,5 @@
+> **CI 원문 수집 수정:** C/2026/6013 PDF의 EUR-Lex endpoint가 CI에서 interstitial로 리디렉션되어 실패한 것을 확인하고, 공식 Publications Office 직접 OJ PDF(61 pages)로 변경했습니다. exact host allowlist와 회귀 테스트를 추가했으며 새 HEAD CI 검증 전 PR #218은 미병합입니다.
+
 > **2026-11-24 추가 조사:** iX700M 공식 제품군 사양, Ver1.4 매뉴얼 목록, 외형 CAD 2D/3D 게시, 해외 영업 창구 및 미해석 `iX700MCB-B-8K`를 확인했습니다. 매뉴얼/CAD 본문, 회로도/BOM/MCU는 미확보이며 독립 판매·EU 개별 공급은 Unknown입니다. PR #218 CI Run #1388은 Commission PDF newsroom interstitial redirect로 실패해 보완·재검증 중이며 미병합입니다. [상세 보고서 §14](reports/CRA_MECAPION_SERVO_DRIVE_SCOPE_CLASSIFICATION_2026-11-24.md), [증거 등록부 §18](reports/CRA_LS_MECAPION_PRODUCT_EVIDENCE_REGISTER_2026-11-23.md), [통합 보고서 §56](reports/CRA_INTEGRATED_COMPLIANCE_REPORT_2026-11-17.md).
 
 
