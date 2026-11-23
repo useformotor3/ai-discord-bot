@@ -2856,3 +2856,14 @@
 - main read-back: report v0.17 §48, LS Mecapion evidence register §9, JSONL 324 records/0 invalid.
 - main push CI: commit status context 미확인. PR exact-head CI와 구분해 별도 확인.
 - Next: actual LS Mecapion SKU/product boundary, ST MCU order code/configuration evidence, M/606 ESO receipt and meeting outcome.
+
+
+
+## 2026-11-23 — LS ELECTRIC Solution Square와 LS메카피온 매뉴얼 인덱스 교차검증
+
+- Solution Square 공식 Motion & Servo 목록은 iX700M 사용 설명서 update 2026-09-16, PEGA2 사용 설명서 update 2026-08-28을 표시.
+- PEGA2 영문 상세 결과는 update 2026-09-23, PEGA2_ENG_Ver1.3_260831.pdf, 6.0 MB, 적용 제품 PEGA2 series. 목차에 EtherCAT Communication, CiA402, Safety Functions, Object Dictionary, Modbus-RTU, Maintenance, Test Drive 등 포함.
+- LS메카피온 자체 PEGA2 게시물은 Ver1.3 한국어 첨부 PEGA2_KOR_Ver1.3_260826.pdf, file date 2026-08-28.
+- iX700M Solution Square 목록은 더 늦은 update date를 제공하지만 version/file name 미확인. Ver1.5 등으로 추정하지 않는다.
+- PDF 본문·hash·페이지 수는 미확보. 목차의 Safety Functions는 CRA cybersecurity/SIL 적합성 증거가 아니다.
+- 통합 보고서 v0.18 §49, 제품 증거 등록부 §10, 상태판·계획·세션로그·AI 프로토콜·README·JSONL 갱신.
