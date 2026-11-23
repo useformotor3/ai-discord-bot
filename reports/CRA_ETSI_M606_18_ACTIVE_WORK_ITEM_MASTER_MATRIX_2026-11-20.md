@@ -98,3 +98,25 @@ Sources:
 - Live Work Programme query: https://portal.etsi.org/webapp/WorkProgram/Frame_WorkItemList.asp?SearchPage=TRUE&butSimple=Search&includeNonActiveTB=FALSE&optDisplay=10&qINCLUDE_SUB_TB=True&qREPORT_TYPE=SUMMARY&qSORT=HIGHVERSION&qTB_ID=824%3BCYBER
 - Work Item Monitoring: https://portal.etsi.org/Portal_WI/Form1.asp?NbToDisplay=30&PersonId=0&SubTB=&SupCrit=CYBER+++++++++++++++++++++18878249&TabId=&TbId=0&WIcritID=18
 - Free download area (V1.0.1 only): https://portal.etsi.org/webapp/ewp/copy_file.asp?wki_id=74858
+
+
+## 2026-11-23 — M/606 amended deadlines crosswalk (C(2026) 7861 final)
+
+The live ETSI status table above remains a 2026-11-20 snapshot of work-item status and technical milestones. The Commission's later Implementing Decision C(2026) 7861 final (2026-11-10) replaces Annex I to C(2025) 618 and changes the M/606 ESO adoption deadlines. These are distinct data fields: an ETSI work-item milestone such as final-deliverable endorsement is not itself the M/606 final adoption deadline.
+
+| ETSI work item mapping | M/606 Annex I item | Amended ESO adoption deadline | Notes |
+|---|---:|---:|---|
+| EN 304 617–636 (18 ETSI work items EN 304 617–636) | 17–36 | 2027-01-31 | Vertical standards; each work item retains its own ETSI stage and forecast milestone |
+| EN 304 642 | No direct Annex I mapping identified | Not assigned in this crosswalk | Supporting telecom work item; do not infer a vertical-item deadline without a direct mapping |
+| Non-ETSI / remaining vertical items | 16, 37–41 | 2027-01-31 | Check CEN/CENELEC/other ESO assignments separately |
+| Horizontal item 1 | 1 | 2026-11-30 | Product design/development/production security requirements |
+| Horizontal item 15 | 15 | 2026-11-30 | Vulnerability handling |
+| Horizontal items 2–14 | 2–14 | 2027-10-30 | Unchanged by C(2026) 7861 |
+
+**Article 2 condition:** If CEN, CENELEC or ETSI indicates non-acceptance of the amendments within one month after receiving the decision, C(2026) 7861 ceases to apply and the 2025-02-03 version of C(2025) 618 continues to apply. ESO receipt dates and any non-acceptance notice remain Unknown until supported by primary evidence.
+
+**Legal boundary:** ESO adoption deadlines do not establish OJ citation or CRA Article 27 presumption of conformity. The CRA Regulation's own application dates are unchanged.
+
+**Primary sources:**
+- C(2026) 7861 final: https://ec.europa.eu/transparency/documents-register/api/files/C%282026%297861_0/de00000001090398
+- Annex I: https://ec.europa.eu/transparency/documents-register/api/files/C%282026%297861_1/de00000001090401
