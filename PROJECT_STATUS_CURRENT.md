@@ -1,4 +1,4 @@
-# 자동화 운영 점검 최신 상태 — 2026-11-20
+# 프로젝트 상황판 — 2026-11-23 (운영 자동화 기준 상세 기록: 2026-11-20)
 
 - **PR #189 병합 완료:** `1683b5ec780c7396309d85b86cba100a021194e4` (squash). main read-back 동일.
 - **현재 운영 schedule:** `17 */3 * * *` — UTC 매 3시간 17분. 기존 3시간 간격을 유지하고 정각(:00) 부하를 피하도록 이동. 5분 주기 아님.
@@ -1642,3 +1642,20 @@
 - 복구 refs: safety/pre-pr196-merge-2026-11-23 (pre-merge base), safety/post-merge-pr196-2026-11-23 (merge SHA).
 - PR merge commit의 main push CI run은 확인 시점에 아직 조회되지 않음. PR exact-head CI 성공과 main push CI 실행/결과를 구분한다.
 
+
+
+---
+
+## 최신 CRA 상태 — M/606 개정 결정 및 PR #197 병합 (2026-11-23)
+
+- PR #197 병합: squash merge SHA b69710cf1eb3c17c1e99fc2ecd57e86c23053fde. PR #196 병합 사후 상태·로그를 main에 반영.
+- PR #197 exact-head CI: head 556d74a5133f092581d059e2ae37456793f7102f, Run ID 45095286445: success. Source identity, compile, CRA traceability, 전체 pytest, 공식 CRA PDF/HTML canary, provenance manifest 업로드 성공. PDF evidence upload 단계는 skipped이므로 PDF 원문 파일 확보로 기록하지 않는다.
+- main read-back: PROJECT_LOG.jsonl 311 records, invalid JSON 0, interior blank lines 0. PR #197 post-merge safety ref: safety/post-merge-pr197-status-2026-11-23.
+- main push CI: merge SHA에 대한 별도 main push workflow run은 아직 검증하지 못했다. PR exact-head 성공과 구분해 추적한다.
+- M/606 개정 원문: Commission Implementing Decision C(2026) 7861 final (2026-11-10) 및 Annex I 공식 문서 확보. 항목 1·15는 2026-11-30, 16~41은 2027-01-31, 2~14는 2027-10-30 ESO 채택 기한.
+- 개정 제2조 조건: 각 ESO 수령일로부터 1개월 이내 비수락 통지 시 개정 결정이 적용 중단될 수 있다. 각 ESO 수령일과 비수락 여부는 아직 확인되지 않아 효력 관련 후속 검증을 유지한다.
+- 법적 경계: 표준 ESO 채택 기한은 OJ 인용일이나 CRA Article 27 적합성 추정 발생일이 아니다. CRA Regulation 자체의 신고/전체 적용일도 이번 M/606 개정으로 바뀌지 않는다.
+- ETSI 회의: 2026-11-23 M/606 AMD 1 examination meeting은 공식 캘린더 일정만 확인. 회의 결과·minutes·ESO 공식 통지는 Unknown.
+- 제품별 한계: ST MCU 전체 주문 코드 및 보안 기능/활성화 증거, LS메카피온 정확한 SKU/HW/FW/BOM은 미확보. Category 14 또는 Annex III/IV 제품별 판정은 Unknown.
+- 범위: CRA only. SIL 3 제외. 운영 코드, 운영 workflow, secrets 및 API 실행 주기 변경 없음.
+- 보고서: CRA 통합 보고서 v0.13, §43에 개정 원문·기한·Article 2 조건·서보 드라이브/ST MCU 영향 반영.
