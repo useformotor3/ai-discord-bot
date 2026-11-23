@@ -1,6 +1,6 @@
 # CRA 서보 드라이브 통합 규제·기술 준수 보고서
 
-- 문서 버전: v0.15 (ETSI M/606 18개 Work Item 2026-11-23 최신 상태 재점검)
+- 문서 버전: v0.16 (LS메카피온 제품군 증거 등록 및 제품별 분류 경계)
 - 기준일: 2026-11-23
 - 프로젝트 범위: EU Cyber Resilience Act(CRA) 대응만
 - 기준 제품군: 산업용 서보 드라이브 및 필수 펌웨어·설정/진단 소프트웨어
@@ -1144,3 +1144,8 @@ CRA Article 7(1)과 Commission Implementing Regulation (EU) 2025/2392의 전문 
 - P1: exact LS Mecapion model, hardware revision, firmware version and ST MCU order code; until evidence arrives, product category remains Unknown.
 - P1: verify actual OJ citation status independently before any Article 27 presumption claim.
 
+## 46. LS메카피온 서보 드라이브 제품군 증거와 제품 경계
+
+본 절의 상세 증거 목록은 별도 등록부 `reports/CRA_LS_MECAPION_PRODUCT_EVIDENCE_REGISTER_2026-11-23.md`를 참조한다. 핵심 결론은 LS메카피온 제품군을 하나의 동일한 제품으로 가정할 수 없다는 것이다. 공식 제품 페이지는 iX700M, iX7M, iX7NH, L7NHA/B, L7NHF, L7PA/B, PHOX, L7C, L7SA/B, GEM 등 전압·용량·통신 방식이 다른 여러 계열을 구분한다. iX700M Drive Unit의 예시 full model code `iX700MD1-B-150B`도 확인했지만 이는 공개된 예시 SKU일 뿐 실제 대상 모델로 확정되지 않았다.
+
+제품 분류를 위해서는 정확한 모델코드, HW revision, FW version, 통신 구성 및 ST MCU 전체 주문코드가 필요하다. EtherCAT 포트 보유만으로 Annex III의 네트워크 인터페이스·라우터/스위치 카테고리로 자동 분류하지 않는다. CE 자료가 존재하더라도 CRA Annex I 충족이나 Article 27 추정 적합성을 대신 증명하지 않는다. 증거 미확보 항목은 Unknown으로 유지한다.
