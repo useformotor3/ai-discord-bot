@@ -1,6 +1,6 @@
 # CRA Servo Drive Compliance & Engineering Project
 
-> **2026-11-23:** PR #198 병합 완료(merge SHA `447fd178fc0068c7616444485d75e639d9edc8f2`). 보고서 v0.13 §43 및 M/606 deadline crosswalk가 main에 반영되었습니다. Exact-head Run #1324 성공; duplicate Run #1325 cancelled. Main push Run #1326은 후속 검증 중입니다. 사후 복구 기준점: `safety/post-merge-pr198-2026-11-23`.
+> **2026-11-23:** PR #198 병합 완료(merge SHA `447fd178fc0068c7616444485d75e639d9edc8f2`). 보고서 v0.13 §43 및 M/606 deadline crosswalk가 main에 반영되었습니다. Exact-head Run #1324 성공; duplicate Run #1325 cancelled. Main push Run #1326 성공: 전체 테스트·CRA traceability·공식 PDF/HTML 확인·PDF evidence 및 provenance 업로드 모두 성공. 사후 복구 기준점: `safety/post-merge-pr198-2026-11-23`.
 
 > **최신 규제·보고서 갱신 — 2026-11-23:** [CRA 통합 보고서 v0.13](reports/CRA_INTEGRATED_COMPLIANCE_REPORT_2026-11-17.md)의 §43에 Commission Implementing Decision C(2026) 7861 final 원문을 반영했습니다. M/606 ESO 채택 기한은 항목 1·15: 2026-11-30, 항목 16~41: 2027-01-31, 항목 2~14: 2027-10-30입니다. Article 2의 ESO 수령 후 1개월 비수락 조건은 별도 추적하며, ESO 채택과 OJ 인용/CRA Article 27 적합성 추정을 혼동하지 않습니다. PR #197은 b69710cf1eb3c17c1e99fc2ecd57e86c23053fde로 병합되었습니다.
 
