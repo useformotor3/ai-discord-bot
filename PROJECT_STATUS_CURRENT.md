@@ -1792,3 +1792,14 @@
 - iX700M Solution Square update 2026-09-16 확인, 버전/파일명 미확보. PEGA2 영문 Ver1.3 update 2026-09-23 및 한국어 Ver1.3 file date 2026-08-28 확인; 파일 동일성은 PDF hash/본문 비교 전 Unknown.
 - 다음 P0: iX700M 최신 PDF 파일/버전 확보, iX700M·PEGA2 PDF 원문 및 hash 검증, 실제 SKU/HW/FW/ST MCU 주문코드 확보.
 - 범위 CRA only. SIL 3 제외. 운영 코드/workflow/secrets/API cadence 변경 없음.
+
+
+## 2026-11-23 — M/606 및 EN 304 625 재확인 / main CI 확인
+
+- 최신 main SHA 재확인: 5197ad352cdd79fdacf9c4e4cc20fedb8ae085c6. 이전 요약에서 언급된 PR #207 병합은 현재 GitHub branch API로 확인되지 않으며, main은 PR #206 merge 후의 이 SHA다. 확인되지 않은 PR #207은 진행 이력으로 사용하지 않는다.
+- Main push Actions Run #1365 / ID 45137633064: success (main SHA와 일치). PR exact-head CI와 구분해 main push 검증 성공으로 기록.
+- Commission CRA standardisation 공식 페이지: M/606은 2026-11-10 개정, 모든 vertical 및 일부 horizontal 표준 제출 기한 3개월 연장. 제출 기한과 OJ 인용/Article 27 presumption은 별개.
+- ETSI 공식 캘린더: GoSRSReq006-M/606 AMD 1 examination meeting 일정 2026-11-23 Online. 공개 minutes/decision 및 ESO별 receipt/non-acceptance notice는 이번 확인에서 확보하지 못함; 결과·Article 2 효력 판단은 Unknown.
+- ETSI EN 304 625 work item: 2026-11-19 이후 “Draft Review after PE”, candidate for harmonisation. 물리적·가상 네트워크 인터페이스 요구사항 표준 후보이나 iX700M 적용성은 제품 core functionality/최종 scope 미확정으로 Unknown. EtherCAT/RS-485 포트만으로 자동 분류하지 않는다.
+- 통합 보고서 v0.19 §50, 제품 증거 등록부 §11 추가.
+- CRA only. SIL 3 제외. 운영 코드/workflow/secrets/API cadence 변경 없음.
