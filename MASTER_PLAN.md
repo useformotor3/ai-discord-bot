@@ -1838,3 +1838,12 @@
 - PR #197 merge SHA b69710cf1eb3c17c1e99fc2ecd57e86c23053fde: main push Run #1317 / ID 45104679354 success.
 - 두 main push run 모두 source identity, compile, CRA traceability, full pytest, official PDF/HTML canary, provenance manifest upload success. PDF evidence upload step은 skipped.
 - 이 결과는 PR exact-head CI와 별도로 검증한 main push CI다.
+
+
+### PR #198 병합 및 후속 검증
+- PR #198 merge SHA 447fd178fc0068c7616444485d75e639d9edc8f2, squash merge.
+- Exact-head Run #1324 success; duplicate Run #1325 cancelled. PDF evidence upload skipped.
+- Post-merge safety ref: safety/post-merge-pr198-2026-11-23.
+- Main push Run #1326 / ID 45114580241은 별도 CI 검증 중. 성공 전까지 main CI 완료로 표기하지 않는다.
+
+- Main push Run #1326 / ID 45114580241: success. PDF evidence upload도 성공했으므로 PR exact-head 단계의 skipped와 분리해 기록한다.

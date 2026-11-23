@@ -1659,3 +1659,15 @@
 - 제품별 한계: ST MCU 전체 주문 코드 및 보안 기능/활성화 증거, LS메카피온 정확한 SKU/HW/FW/BOM은 미확보. Category 14 또는 Annex III/IV 제품별 판정은 Unknown.
 - 범위: CRA only. SIL 3 제외. 운영 코드, 운영 workflow, secrets 및 API 실행 주기 변경 없음.
 - 보고서: CRA 통합 보고서 v0.13, §43에 개정 원문·기한·Article 2 조건·서보 드라이브/ST MCU 영향 반영.
+
+
+---
+
+## 2026-11-23 — PR #198 병합 후 상태
+
+- PR #198 squash merge SHA: 447fd178fc0068c7616444485d75e639d9edc8f2.
+- PR #198 exact-head: d67423bde5c3cbc5dc6f9601e28a1cf494a46d4d, Run #1324 / ID 45105031988 success. Source integrity, compile, CRA traceability, full pytest, official PDF/HTML canaries, provenance manifest upload success. PDF evidence upload step skipped.
+- 동일 head의 Run #1325 / ID 45105052195는 cancelled. 취소 실행은 성공 건수에 포함하지 않으며, 앞선 #1324 success를 근거로 병합했다.
+- main read-back: 보고서 v0.13 및 §43 존재, M/606 matrix Markdown/CSV 변경 반영, PROJECT_LOG.jsonl 314 records, invalid JSON 0, interior blank 0.
+- Post-merge safety ref: safety/post-merge-pr198-2026-11-23.
+- Main push CI Run #1326 / ID 45114580241 success. Source integrity, compile, CRA traceability, full pytest, official PDF/HTML canaries, PDF evidence upload 및 provenance manifest upload 모두 성공. PR exact-head Run #1324에서는 PDF evidence upload이 skipped였으나 main push에서는 실제 업로드 성공.

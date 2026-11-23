@@ -2713,3 +2713,15 @@
 - 두 실행 모두 source integrity, compile, CRA traceability, 전체 pytest, official CRA PDF/HTML canary, provenance manifest upload 성공.
 - PDF evidence upload은 두 실행 모두 skipped. 따라서 PDF 원문 파일을 새로 확보한 것으로 기록하지 않는다.
 - PR exact-head 검증과 main push 검증을 별도 항목으로 유지한다.
+
+
+## 2026-11-23 — PR #198 병합 및 M/606 매트릭스 반영
+
+- PR #198은 exact head d67423bde5c3cbc5dc6f9601e28a1cf494a46d4d에서 Run #1324 / ID 45105031988 전체 성공 확인 후 squash merge.
+- Merge SHA: 447fd178fc0068c7616444485d75e639d9edc8f2.
+- 동일 head의 Run #1325 / ID 45105052195는 cancelled. 별도 성공 실행 #1324와 혼동하지 않음.
+- main read-back: 보고서 v0.13 §43, M/606 matrix Markdown/CSV, JSONL 314 records, invalid 0, interior blank 0.
+- safety ref: safety/post-merge-pr198-2026-11-23.
+- main push Run #1326 / ID 45114580241은 in_progress 시점 기록. 최종 결론은 후속 확인.
+
+- PR #198 merge SHA의 main push Run #1326 / ID 45114580241 최종 success 확인. Source integrity, compile, CRA traceability, full pytest, PDF/HTML canary, PDF evidence upload, provenance manifest upload 모두 success. PR exact-head Run #1324의 PDF upload skipped와 구분한다.
