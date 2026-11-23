@@ -1942,3 +1942,15 @@
 4. P0: PDF bytes/문서번호/개정 이력/SHA-256 확보. 통신·펌웨어·유지보수·접근통제 관련 장을 페이지/조항별로 추출한다.
 5. Safety Functions 목차를 CRA cybersecurity 또는 SIL 증거로 혼동하지 않는다.
 6. CRA only. SIL 3 제외. 운영 코드/workflow/secrets/API cadence 변경 금지.
+
+
+
+## 2026-11-23 — PR #206 병합 후 매뉴얼 원문 확보 우선순위
+
+- PR #206 squash merge acd932fb70bb2e881fdd35b6b9e75f2c829ac59e; exact-head Run #1362 success; pre/post safety refs 생성.
+- 통합 보고서 v0.18 §49, 제품 증거 등록부 §10 main read-back 완료.
+- P0: Solution Square iX700M 2026-09-16 항목의 정확한 파일/버전 식별.
+- P0: iX700M Ver1.4 및 Solution Square 최신 파일, PEGA2 한국어/영어 Ver1.3 PDF 원문 확보; 문서번호·개정 이력·페이지 수·SHA-256 및 언어별 내용 차이 비교.
+- P0: 실제 LS메카피온 SKU/HW/FW/BOM 및 ST MCU full order code 확보.
+- P1: 매뉴얼 EtherCAT/Modbus-RTU, firmware, maintenance, parameter access 장을 페이지·절 단위로 CRA 공격면/업데이트/접근통제 증거와 연결.
+- CRA only. SIL 3 제외. 운영 코드/workflow/secrets/API cadence 변경 금지.

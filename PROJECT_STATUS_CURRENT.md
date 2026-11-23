@@ -1775,3 +1775,20 @@
 - 보고서 v0.18 §49 및 제품 증거 등록부 §10 추가. PDF 원문·SHA-256·페이지별 본문은 아직 미확보/미검증.
 - 다음 P0: Solution Square iX700M 정확한 파일 식별; iX700M/PEGA2 PDF 원문 확보 및 hash/버전/언어 비교; 통신·업데이트·접근통제 장의 조항별 추출.
 - 범위 CRA only. SIL 3 제외. 운영 코드/workflow/secrets/API cadence 변경 없음.
+
+
+
+## 2026-11-23 — PR #206 제조사 매뉴얼 교차검증 병합 완료
+
+- PR #206: https://github.com/useformotor3/ai-discord-bot/pull/206
+- squash merge SHA: acd932fb70bb2e881fdd35b6b9e75f2c829ac59e
+- Exact-head CI Run #1362 / ID 45137336327: success.
+  - Source identity, compile, CRA traceability, full pytest: success.
+  - Official CRA PDF/HTML live canary: success.
+  - Provenance manifest upload: success.
+  - PDF evidence upload: skipped (unchanged); 신규 PDF 원문 확보로 간주하지 않음.
+- main read-back: 통합 보고서 v0.18 §49, 제품 증거 등록부 §10 확인. PROJECT_LOG 326 records, invalid JSON 0.
+- 복구 refs: safety/pre-pr206-merge-2026-11-23 (merge 전 main SHA 369926f4e064bf675556135184dbabe22ec0888a), safety/post-merge-pr206-2026-11-23 (merge SHA acd932fb70bb2e881fdd35b6b9e75f2c829ac59e).
+- iX700M Solution Square update 2026-09-16 확인, 버전/파일명 미확보. PEGA2 영문 Ver1.3 update 2026-09-23 및 한국어 Ver1.3 file date 2026-08-28 확인; 파일 동일성은 PDF hash/본문 비교 전 Unknown.
+- 다음 P0: iX700M 최신 PDF 파일/버전 확보, iX700M·PEGA2 PDF 원문 및 hash 검증, 실제 SKU/HW/FW/ST MCU 주문코드 확보.
+- 범위 CRA only. SIL 3 제외. 운영 코드/workflow/secrets/API cadence 변경 없음.
