@@ -1,5 +1,7 @@
 # CRA Servo Drive Compliance & Engineering Project
 
+> **최신 규제·보고서 갱신 — 2026-11-23:** [CRA 통합 보고서 v0.13](reports/CRA_INTEGRATED_COMPLIANCE_REPORT_2026-11-17.md)의 §43에 Commission Implementing Decision C(2026) 7861 final 원문을 반영했습니다. M/606 ESO 채택 기한은 항목 1·15: 2026-11-30, 항목 16~41: 2027-01-31, 항목 2~14: 2027-10-30입니다. Article 2의 ESO 수령 후 1개월 비수락 조건은 별도 추적하며, ESO 채택과 OJ 인용/CRA Article 27 적합성 추정을 혼동하지 않습니다. PR #197은 b69710cf1eb3c17c1e99fc2ecd57e86c23053fde로 병합되었습니다.
+
 
 > **CRA 조사 갱신 — 2026-11-23:** [ST MCU 통합 제품 분류 및 ETSI M/606 AMD 1 후속 메모](reports/CRA_ST_MCU_INTEGRATION_AND_M606_FOLLOWUP_2026-11-23.md). ST MCU 사용만으로 서보 드라이브 완제품을 Annex III Class I category 14로 자동 분류하지 않으며, 제품 전체 core functionality와 정확한 MCU/제품 증거를 별도로 확인합니다. ETSI 공식 캘린더의 11월 23일 회의 일정은 확인했으나 회의 결과 및 ESO 수락은 미확인입니다.
 
