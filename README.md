@@ -1151,3 +1151,6 @@ CLC/TC 65X의 M/606 20b/21b/22b/25b/27b/36b를 prEN 50770-4/-2/-6/-3/-5/-1에 �
  
 > **CRA 보고서 갱신 — 2026-11-23:** 통합 보고서 v0.12에서 §5~§10의 제조사 의무, Article 14 신고 운영, 표준/OJ, 기계류 관계, 제품 증거, 실행 게이트 설명을 보강했습니다. M/606 AMD 1 회의는 ETSI 캘린더상 11월 23일 Online 일정으로 확인했으나 회의 결과/ESO 수락은 미확인입니다. [보고서 보기](reports/CRA_INTEGRATED_COMPLIANCE_REPORT_2026-11-17.md)
 
+
+> **2026-11-23 병합 기록:** CRA 보고서 v0.12 및 ST MCU/M/606 조사 메모가 PR #196으로 병합되었습니다. [PR #196](https://github.com/useformotor3/ai-discord-bot/pull/196)
+
