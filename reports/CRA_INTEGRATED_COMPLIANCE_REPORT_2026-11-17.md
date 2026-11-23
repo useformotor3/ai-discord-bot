@@ -1,6 +1,6 @@
 # CRA 서보 드라이브 통합 규제·기술 준수 보고서
 
-- 문서 버전: v0.17 (2026-11-17 EU 관보 CRA 공식 지침 반영)
+- 문서 버전: v0.18 (LS ELECTRIC Solution Square 최신 매뉴얼 인덱스 교차검증)
 - 기준일: 2026-11-23
 - 프로젝트 범위: EU Cyber Resilience Act(CRA) 대응만
 - 기준 제품군: 산업용 서보 드라이브 및 필수 펌웨어·설정/진단 소프트웨어
@@ -1238,3 +1238,37 @@ CRA Article 7(1)과 Commission Implementing Regulation (EU) 2025/2392의 전문 
 2. European Commission, Cyber Resilience Act — Standardisation, last update 12.11.2026: https://digital-strategy.ec.europa.eu/en/policies/cra-standardisation
 3. Regulation (EU) 2024/2847, 특히 Articles 7, 13, 14, 27, 32 및 Annex I/VII: 구속력 있는 법령 원문을 우선한다.
 4. Commission guidance는 비구속적 해석 자료다. 특정 LS메카피온 제품의 core functionality, support period, conformity route를 확정하려면 실제 SKU, 판매·공급 경계, HW/FW, 사용환경 및 제조사 증거가 필요하다.
+
+
+
+## 49. LS ELECTRIC Solution Square와 LS메카피온 매뉴얼 인덱스 교차검증
+
+### 49.1 확인된 최신 인덱스 정보
+
+- LS메카피온 자체 매뉴얼 인덱스는 iX700M DRIVE 400[V] 매뉴얼 Ver1.4를 2026-05-26 게시로, PEGA2 매뉴얼 Ver1.3을 2026-04-01 게시로 표시한다. PEGA2 상세 첨부파일 메타데이터는 PEGA2_KOR_Ver1.3_260826.pdf, 파일 날짜 2026-08-28을 표시한다.
+- 별도의 LS ELECTRIC Solution Square Motion & Servo 공식 자료 목록은 iX700M 사용 설명서 업데이트일을 2026-09-16, PEGA2 사용 설명서 업데이트일을 2026-08-28로 표시한다. 이 목록은 최신 자료 항목의 존재와 update date를 증명하지만 iX700M의 정확한 파일명·버전·개정 이력을 검색 결과에서 확인하지 못했다.
+- Solution Square의 PEGA2 User Manual 상세 결과는 업데이트일 2026-09-23, 적용 제품 PEGA2 series, 파일명 PEGA2_ENG_Ver1.3_260831.pdf, 언어 English, 파일 크기 6.0 MB를 표시한다. 목차에는 Product Configuration, Wiring and Connection, EtherCAT Communication, CiA402 Drive Profile, Drive Application Functions, Safety Functions, Tuning, Procedure Function, Indexing Position operation, Object Dictionary, Maintenance and Inspection, Modbus-RTU Communication Protocol, Test Drive, Appendix가 있다.
+- 이 메타데이터는 제조사 포털이 게시한 문서 인덱스/파일 정보를 보여준다. PDF 본문 전체를 취득·해시·검토한 것은 아니므로 해당 문서의 상세 요구사항·기능을 읽은 것으로 표현하지 않는다.
+
+### 49.2 날짜·버전 해석 원칙
+
+- iX700M: LS메카피온 인덱스에는 Ver1.4 / 2026-05-26, Solution Square 인덱스에는 iX700M 사용 설명서 / 2026-09-16이 표시된다. 후자의 update date가 더 늦지만 버전·파일명이 공개 검색 결과에서 확인되지 않으므로 **Ver1.5 또는 Ver1.4 개정판이라고 추정하지 않는다.** 파일 식별자·버전·PDF 본문을 확보할 때까지 최신 파일의 내용과 버전은 Unknown.
+- PEGA2: LS메카피온 자체 페이지는 Ver1.3, 한국어 첨부파일 파일 날짜 2026-08-28을 표시한다. Solution Square 영문 상세 결과는 Ver1.3, 파일명에 260831이 포함되고 update date 2026-09-23을 표시한다. 이는 동일 Ver1.3의 언어별 파일 또는 별도 게시 시점일 수 있으나, 파일 hash/본문 비교 전에는 동일 개정본으로 확정하지 않는다.
+- 웹 게시물 생성일, 첨부파일 메타데이터 날짜, 파일명 내 날짜, 포털 update date, PDF 표지의 문서번호·개정일은 각각 다른 필드로 관리한다. 어느 하나를 다른 하나의 대체 증거로 쓰지 않는다.
+
+### 49.3 CRA 분석에 필요한 후속 원문 검토
+
+- iX700M: Solution Square의 2026-09-16 항목에 연결된 정확한 파일명, 버전, 언어, 문서번호, PDF bytes, SHA-256, PDF 표지·개정 이력을 확보한다. LS메카피온 Ver1.4 원문과 동일/상이 여부를 비교한다.
+- PEGA2: PEGA2_KOR_Ver1.3_260826.pdf와 PEGA2_ENG_Ver1.3_260831.pdf를 확보해 문서번호, 개정이력, 페이지 수, 언어별 차이 및 SHA-256을 비교한다.
+- 통신 관련 장(예: EtherCAT, Modbus-RTU), 유지보수, 펌웨어/파라미터 설정, safety function 장은 인터페이스·구성·운영환경을 파악하는 자료로 활용한다. **Safety Functions가 문서 목차에 있다는 사실은 CRA cybersecurity 기능이나 IEC 61508/SIL 적합성을 증명하지 않는다.** 기능의 목적과 구현을 각각 확인해야 한다.
+- PDF 본문을 취득한 뒤에만 인증/업데이트/진단/접근통제/통신 보안 요구를 문서 조항·페이지와 함께 인용한다. 매뉴얼에 해당 내용이 없다는 사실만으로 제품에 기능이 없다고 결론 내리지 않는다.
+
+### 49.4 공식 출처
+
+1. LS ELECTRIC Solution Square, Motion & Servo document listing (접속일 2026-11-23): https://sol.ls-electric.com/kr/ko/product/category/4?pageNumber=4
+2. LS ELECTRIC Solution Square, PEGA2 User Manual detail (English): https://sol.ls-electric.com/us/en/product/document/32720
+3. LS메카피온 공식 매뉴얼 목록: https://www.lsmecapion.com/bbs/board.php?bo_table=manual
+4. LS메카피온 PEGA2 Ver1.3 상세 게시물: https://lsmecapion.com/bbs/board.php?bo_table=manual&sca=Servo&wr_id=12651
+5. LS메카피온 공식 드라이브 제품군: https://www.lsmecapion.com/bbs/board.php?bo_table=pd_drive
+
+**현재 결론:** 공식 포털을 교차 확인해 기존 매뉴얼 인덱스보다 늦은 update date가 있는 것을 발견했으나, iX700M 최신 문서의 버전/파일 및 두 제품의 PDF 원문을 모두 확보한 것은 아니다. 문서 최신성은 “인덱스 수준 확인, 본문 미검증”으로 기록한다.
