@@ -1,6 +1,6 @@
 # CRA 서보 드라이브 통합 규제·기술 준수 보고서
 
-- 문서 버전: v0.19 (M/606 및 EN 304 625 표준화 상태 재확인)
+- 문서 버전: v0.20 (C(2026) 7861 Article 2 조건 및 M/606 세부 일정 교차검증)
 - 기준일: 2026-11-23
 - 프로젝트 범위: EU Cyber Resilience Act(CRA) 대응만
 - 기준 제품군: 산업용 서보 드라이브 및 필수 펌웨어·설정/진단 소프트웨어
@@ -1306,3 +1306,54 @@ CRA Article 7(1)과 Commission Implementing Regulation (EU) 2025/2392의 전문 
 
 **검증 한계:** 회의 결과·ESO 통지·OJ citation은 이번 조사에서 확보하지 못했다. 따라서 M/606 개정의 효력에 대한 독립적인 법률 결론이나 iX700M의 제품별 적합성 결론을 내리지 않는다.
 
+## 51. Commission Implementing Decision C(2026) 7861 — M/606 개정의 법적 조건과 세부 일정
+
+### 51.1 1차 원문에서 직접 확인한 내용
+
+European Commission 문서등록부에서 2026-11-10자 **Commission Implementing Decision C(2026) 7861 final**의 공식 PDF 본문을 확인했다. 이 결정은 CRA Regulation (EU) 2024/2847을 지원하기 위한 표준화 요청 C(2025) 618(M/606)을 개정한다.
+
+- **제1조:** 기존 C(2025) 618의 Annex I를 이번 결정의 Annex로 대체한다.
+- **제2조:** CEN, CENELEC 또는 ETSI 중 어느 한 기관이라도 결정을 수령한 날부터 1개월 안에 개정 내용을 수락하지 않는다고 Commission에 통지하면, C(2026) 7861은 적용을 중단하고 2025-02-03 버전의 C(2025) 618이 계속 적용된다.
+- **제3조:** 결정의 수신 대상은 CEN, CENELEC, ETSI다.
+
+**중요한 법적 유보:** 결정문 날짜인 2026-11-10은 각 ESO의 실제 수령일과 같다고 입증되지 않았다. 따라서 1개월의 기산일과 만료일을 12월 10일로 확정하지 않는다. 2026-11-23 현재, 각 ESO의 수령일과 비수락 통지 여부에 관한 공개 1차 증거를 확보하지 못했다. 따라서 “개정이 최종 확정되어 조건 없이 계속 적용된다”고 단정하지 않고, **Article 2 조건 및 통지 상태 확인 필요**로 관리한다.
+
+### 51.2 개정 일정 — 항목별 구분
+
+Commission의 공식 표준화 페이지는 2026-11-10 개정으로 모든 vertical 표준 및 일부 horizontal 표준의 제출 기한이 3개월 연장됐다고 설명한다. 세부 항목별 날짜는 개정 결정 Annex에 기재되는 내용이다. 현재 확보한 공식 PDF 사본에는 제1~3조 본문은 확인되나 Annex의 표 형식 세부 일정은 포함되어 있지 않아, 아래 세부 날짜는 공식 페이지의 개요와 별도의 표준화 추적자료를 대조한 **교차확인 값**으로 기록한다. Annex 원문 파일을 별도 확보하면 재검증한다.
+
+| M/606 항목 | 대상 | 개정 후 ESO deliverable 일정 | 기존 일정 대비 |
+|---|---|---:|---|
+| Item 1 | 위험 기반 보안 설계·개발·생산 horizontal standard | 2026-11-30 | 2026-08-30에서 3개월 연장 |
+| Item 15 | 취약점 처리 horizontal standard | 2026-11-30 | 2026-08-30에서 3개월 연장 |
+| Items 16–41 | 26개 제품별(vertical) 표준 | 2027-01-31 | 2026-10-30에서 3개월 연장 |
+| Items 2–14 | 나머지 horizontal 표준 | 2027-10-30 | 변경 없음 |
+
+이 날짜는 CEN/CENELEC/ETSI가 표준 deliverable을 완성·제출하는 일정이다. 제조사에 직접 부과되는 CRA 의무 이행일, 표준의 실제 발행일, Official Journal(OJ) 인용일이 아니다. CRA Article 27의 적합성 추정은 관련 조화표준의 참조가 OJ에 공표된 범위에서만 검토한다. M/606 일정 변경은 CRA 자체 적용일을 변경하지 않는다.
+
+### 51.3 iX700M 조사에 미치는 영향
+
+- EN 304 625(physical and virtual network interfaces)는 ETSI의 M/606 vertical 후보 작업항목으로 추적한다. 2026-11-19 상태는 “Draft Review after PE”다.
+- 해당 작업항목의 진행 또는 M/606 일정만으로 iX700M이 Annex III Class I에 해당한다고 판단할 수 없다. 제품의 core functionality, 독립 판매 여부, 최종 표준 scope와 OJ 인용을 각각 확인해야 한다.
+- 표준이 아직 OJ에 인용되지 않았다면 그 초안/작업항목은 Annex I 위험대응과 기술문서 설계의 참고자료로는 쓸 수 있어도 Article 27 적합성 추정을 발생시키지 않는다.
+
+### 51.4 증거 상태 및 다음 확인
+
+| 증거 | 상태 | 처리 |
+|---|---|---|
+| C(2026) 7861 공식 결정 본문 및 Articles 1–3 | 공식 Commission 문서등록부 PDF 확인 | 1차 법적 근거 |
+| Article 2의 1개월 비수락 조건 | 공식 결정 제2조 확인 | ESO별 실제 수령일을 별도 확인 |
+| ESO별 receipt date / non-acceptance notice | 미확보 | Unknown; 만료일 계산 금지 |
+| Annex의 항목별 날짜 | 공식 페이지의 개요 및 2차 표준화 추적자료로 교차확인; Annex 표 원본은 미확보 | 세부 날짜는 교차확인 값으로 표시 |
+| CRA 표준 OJ 인용 | 이번 확인에서 제품 관련 OJ 인용 확인 불가 | OJ 공식 목록을 계속 확인 |
+
+**1차 출처**
+1. European Commission, Commission Implementing Decision C(2026) 7861 final, 10.11.2026, 공식 문서등록부 PDF: https://ec.europa.eu/transparency/documents-register/api/files/C%282026%297861_0/de00000001090398
+2. European Commission, Cyber Resilience Act — Standardisation: https://digital-strategy.ec.europa.eu/en/policies/cra-standardisation
+3. ETSI, EN 304 625 Work Item DEN/CYBER-EUS-0017: https://portal.etsi.org/webapp/WorkProgram/Report_WorkItem.asp?WKI_ID=74860
+
+**세부 일정 교차확인 자료(2차 출처; Annex 원문 대체 아님)**
+- Shieldbook, CRA harmonised standards status: https://shieldbook.ppftec.com/guides/cra-harmonised-standards
+- CRA Evidence, harmonised standards status: https://craevidence.com/cra-compliance/harmonised-standards-status
+
+**검증 원칙:** 1차 결정문에 적힌 Article 2 조건과 2차 출처가 설명하는 Annex 세부 날짜를 구분한다. 2차 자료를 Commission의 공식 원문인 것처럼 인용하지 않는다.
