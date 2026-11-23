@@ -2723,3 +2723,5 @@
 - main read-back: 보고서 v0.13 §43, M/606 matrix Markdown/CSV, JSONL 314 records, invalid 0, interior blank 0.
 - safety ref: safety/post-merge-pr198-2026-11-23.
 - main push Run #1326 / ID 45114580241은 in_progress 시점 기록. 최종 결론은 후속 확인.
+
+- PR #198 merge SHA의 main push Run #1326 / ID 45114580241 최종 success 확인. Source integrity, compile, CRA traceability, full pytest, PDF/HTML canary, PDF evidence upload, provenance manifest upload 모두 success. PR exact-head Run #1324의 PDF upload skipped와 구분한다.
