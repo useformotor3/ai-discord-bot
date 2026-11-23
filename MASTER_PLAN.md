@@ -1984,3 +1984,13 @@
 4. iX700M 정확한 Solution Square manual PDF/file version, PDF bytes/hash 확보를 계속한다. 인덱스 update date만으로 revision을 추정하지 않는다.
 5. Actual SKU/HW/FW/BOM, Converter/Drive Unit 판매 경계, ST MCU full order code가 없으면 제품 분류/적합성 경로는 Unknown.
 6. CRA only; SIL 3 제외; 운영 코드/workflow/secrets/API cadence 변경 금지.
+
+
+## 2026-11-23 — PR #210 병합 및 CI 완료
+
+- PR #210 squash merge SHA 5318eb279076748e12d17fc29c7a7d34d28a6f48.
+- PR exact-head Run #1370 / ID 45149854235 success; main push Run #1371 / ID 45149981745 success.
+- Recovery refs: safety/pre-pr210-merge-2026-11-23 / safety/post-merge-pr210-2026-11-23.
+- Report v0.20 §51 and product evidence register §12 are on main.
+- Next: secure official Annex table copy for C(2026) 7861; verify ESO receipt/non-acceptance status; continue iX700M exact manual PDF retrieval and product-specific evidence.
+- CRA only; SIL 3 excluded; no operational code/workflow/secrets/API cadence changes.
