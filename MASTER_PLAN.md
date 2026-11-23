@@ -1813,3 +1813,10 @@
 - 다음: (1) M/606 회의 결과/ESO 통지 1차 증거 확보, (2) ST MCU 전체 주문 코드 및 LS메카피온 SKU/HW/FW/BOM 증거 확보, (3) 통합 보고서 §5~§10 독자 검토와 법률·기술 교차검토.
 - CRA only. SIL 3 범위 제외. 운영 코드/운영 workflow/secret/API 호출 빈도 미변경.
 
+
+## 2026-11-23 — PR #196 병합 후 검증
+- PR #196 merge SHA e82683964413ca2c5922477e9755c62ae7b21064. main은 기준점 c56299a531b54eaed48e1a2e7324175b93c0f6ad 대비 1 commit ahead.
+- Exact-head PR CI Run #1312 success. PDF source evidence upload 단계는 skipped; PDF bytes 확보라고 주장하지 않는다.
+- main report v0.12, M/606/ST MCU follow-up note 및 프로젝트 상태 read-back 확인. JSONL 310 records, 0 invalid, 0 interior blank.
+- Safety refs: pre-pr196 및 post-merge-pr196. Main push CI는 확인 시점에 아직 조회되지 않아 별도 확인 대상으로 남김.
+
