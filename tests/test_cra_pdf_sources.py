@@ -136,6 +136,8 @@ def test_guidance_oj_c6013_is_fetched_from_eurlex_primary_without_fallback():
     with patch.object(pdf, "PdfReader", FakeReader):
         item = pdf.fetch_pdf_source(definition, get=lambda *a, **k: response)
     assert item["id"] == "CRA-GUIDANCE-OJ-2026-6013"
+    assert definition["url"] == "https://publications.europa.eu/resource/cellar/dcbc848b-e227-11f1-aefc-01aa75ed71a1.0006.01/DOC_1"
+    assert definition["allowed_hosts"] == ("publications.europa.eu",)
     assert item["fallback_used"] is False
     assert item["final_url"] == definition["url"]
 
