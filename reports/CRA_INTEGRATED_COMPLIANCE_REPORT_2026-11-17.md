@@ -1499,7 +1499,7 @@ Class II category 4는 category 14 MCU에 더해 tamper evidence/resistance/resp
 통합 MCU가 host servo drive의 class를 자동 승계하지 않는다. 다만 Guidance §§167–173에 따른 component due diligence 및 제품 전체 위험평가는 필요하다.
 
 ### 54.5 EN 40000 최신 공개
-CEN/CENELEC는 2026-11-19 EN 40000-1-1(Vocabulary) 및 EN 40000-1-2(Principles, product risk management and lifecycle activities)를 공개했다. 전자는 공통 용어, 후자는 위험관리·수명주기 활동의 공통 기반으로 활용한다. 이번 조사에서 CRA Article 27 OJ 인용 근거는 확인되지 않았으므로 적합성 추정을 주장하지 않는다.
+CEN/CENELEC는 2026-11-19 EN 40000-1-1(Vocabulary) 및 EN 40000-1-2(Principles, product risk management and lifecycle activities)의 공개를 발표했으며, 공식 카탈로그상 DAV는 2026-11-18이다. 두 표준의 CEN 카탈로그 Legal 항목은 모두 “Citation in OJEU: No citation expected for Directive 2024/2847”로 표시한다. 따라서 이 표준들은 CRA Article 27 조화표준 적합성 추정 근거로 사용하지 않는다. 공통 용어 및 위험관리·제품 수명주기 활동의 참고기준으로 활용한다.
 
 ### 54.6 Unknown 및 다음 게이트
 실제 SKU/nameplate, Converter/Drive Unit 별도 판매 여부, HW/FW revision, BOM, ST MCU full order code, 보안 설정, interface driver/API, EU 시장 공급 주체는 Unknown이다. 증거 확보 전 최종 제품별 분류와 Article 32 경로는 확정하지 않는다.
