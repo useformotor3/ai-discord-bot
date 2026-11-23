@@ -1148,3 +1148,6 @@ CLC/TC 65X의 M/606 20b/21b/22b/25b/27b/36b를 prEN 50770-4/-2/-6/-3/-5/-1에 �
 - [공식 출처 최신성 대장](reports/CRA_LIVE_SOURCE_FRESHNESS_REGISTER_2026-11-20.csv).
 - [ETSI M/606 상태 감사](reports/CRA_ETSI_M606_LIVE_STATUS_2026-11-18.md), [CEN/CENELEC EN 40000 및 OT 상태 감사](reports/CRA_CEN_CENELEC_EN40000_OT50770_STATUS_2026-11-18.md).
 - Article 27 추정 적합성은 실제 OJ citation과 제품/표준 범위가 확인된 경우에만 주장한다. CEN 발행 또는 ETSI Work Programme의 Harmonised Standard 메타데이터만으로 추정 적합성을 주장하지 않는다.
+ 
+> **CRA 보고서 갱신 — 2026-11-23:** 통합 보고서 v0.12에서 §5~§10의 제조사 의무, Article 14 신고 운영, 표준/OJ, 기계류 관계, 제품 증거, 실행 게이트 설명을 보강했습니다. M/606 AMD 1 회의는 ETSI 캘린더상 11월 23일 Online 일정으로 확인했으나 회의 결과/ESO 수락은 미확인입니다. [보고서 보기](reports/CRA_INTEGRATED_COMPLIANCE_REPORT_2026-11-17.md)
+
