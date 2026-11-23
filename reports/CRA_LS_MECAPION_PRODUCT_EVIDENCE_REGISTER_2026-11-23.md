@@ -48,7 +48,7 @@ LS메카피온 공식 매뉴얼 목록은 다음 문서 항목을 게시한다.
 
 - iX700M DRIVE 400[V] 매뉴얼 Ver1.4 — 2026-05-26 게시
 - PEGA2 매뉴얼 Ver1.3 — 2026-04-01 게시
-- 별도 Servo 카탈로그 목록에는 iX700M Catalogue(2025년 7월), PEGA2 Series leaflet 등재
+- 별도 Servo 카탈로그 인덱스에는 iX700M Catalogue(2025년 7월), PEGA2 Series leaflet이 등재되어 있다. 다만 iX700M 상세 게시물의 첨부파일 메타데이터에는 PDF 파일명 iX700M 브로셔 최종KR_251205.pdf 및 iX700M 브로셔 최종EN_251205.pdf, 파일 날짜 2025-12-05가 표시된다. 목록 제목의 기준 월과 첨부파일의 파일 날짜를 서로 다른 메타데이터로 보존하며, PDF 본문/개정 이력은 실제 파일을 확보해 확인하기 전까지 검증 완료로 보지 않는다.
 
 문서 인덱스 메타데이터와 문서 본문 검증을 구분한다. iX700M Ver1.4 PDF 원문 다운로드는 이번 조사에서 성공적으로 확보하지 못했다. 따라서 그 문서의 상세 통신·보안 기능을 읽은 것처럼 인용하지 않는다.
 
@@ -90,3 +90,10 @@ LS ELECTRIC 공식 세미나 자료의 iX700M 설명은 모듈형 Converter Unit
 - ST MCU 사용 사실은 사용자 제공 정보이나, 전체 부품번호는 미확보 상태다.
 - 다음 P0 증거는 대상 제품의 nameplate 또는 주문서상의 전체 모델코드, HW revision, FW version, ST MCU full order code, 통신 구성도다.
 - 위 증거가 확보되면 제품별 Annex III/IV category, Article 32 conformity route, Annex I technical evidence matrix를 별도 판단한다.
+
+## 8. 카탈로그 인덱스와 첨부파일 메타데이터의 날짜 차이
+
+- Servo 카탈로그 목록의 iX700M 항목 제목은 “2025년 7월”을 표시한다.
+- 해당 iX700M 상세 게시물은 첨부파일 iX700M 브로셔 최종KR_251205.pdf 및 iX700M 브로셔 최종EN_251205.pdf를 표시하고 파일 날짜를 2025-12-05로 제공한다.
+- 이는 목록 제목과 첨부파일 메타데이터의 차이다. 파일명 날짜를 공식 문서 개정일로 단정하지 않으며, 첨부 PDF 원문을 확보해 표지·개정 이력·본문을 확인하기 전까지 문서 내용은 미검증으로 유지한다.
+- 출처: LS메카피온 공식 Servo 카탈로그 인덱스 https://www.lsmecapion.com/bbs/board.php?bo_table=catalog&sca=Servo ; iX700M 상세 게시물 https://www.lsmecapion.com/bbs/board.php?bo_table=catalog&wr_id=12110
