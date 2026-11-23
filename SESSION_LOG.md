@@ -3065,3 +3065,10 @@
 - Corrected C/2026/6013 source URL to official Publications Office direct OJ PDF (61 pages, C/2026/6013, 17.11.2026 verified in browser); exact host allowlist and regression assertion updated.
 - First-source Commission interstitial handling remains exact-host-only with explicit ANFR fallback; arbitrary non-allowlisted hosts remain fail-closed.
 - New exact-head CI still required. PR #218 not merged.
+
+
+## 2026-11-24 — Run #1404 M/606 PDF access restriction
+- Exact PR #218 HEAD `30d2985272786bafe8083b98313266b9c786a145`, Run #1404: source identity, compile, CRA traceability and pytest 184 passed; live PDF canary failed on C(2026)7861 Annex Commission document-register API redirect to sorry.ec.europa.eu.
+- C/2026/6013 direct Publications Office OJ PDF endpoint is browser-verified; C(2026)7861 is not an OJ publication, so no fabricated OJ fallback.
+- Exact Commission interstitial now maps to PDFSourceUnavailableError; no third-party mirror auto-accepted. PDF batch can report SKIPPED/exit 0; independent HTML canary remains. Automated C(2026)7861 PDF bytes/hash remain unavailable.
+- PR #218 latest head has new source/test patch and documentation; fresh exact-head CI required before merge.
