@@ -2889,3 +2889,13 @@
 - ETSI 캘린더는 2026-11-23 examination meeting 일정을 표시하지만 공개 minutes/decision 및 ESO별 수령·비수락 통지는 확보되지 않아 Unknown 유지.
 - EN 304 625 work item은 “Draft Review after PE” 상태의 candidate for harmonisation. 네트워크 포트가 있다는 사실만으로 iX700M 전체의 분류/적용을 단정하지 않음.
 - 통합 보고서 v0.19 §50 및 제품 증거 등록부 §11에 반영. 운영 코드/workflow/secrets/API cadence 변경 없음.
+
+
+## 2026-11-23 — PR #208 merge + exact-head/main CI 완료
+
+- PR #208 squash merge: a27130d7f4a36bdeb9a64717188583f9fa66278c.
+- PR exact-head Run #1366 / ID 45138293050 success.
+- Main push Run #1367 / ID 45138412407 success.
+- Pre/post recovery refs: safety/pre-pr208-merge-2026-11-23 / safety/post-merge-pr208-2026-11-23.
+- Main read-back: report v0.19 §50, evidence register §11; PROJECT_LOG 328 records/0 invalid.
+- Scope CRA only; SIL 3 excluded; no operational code/workflow/secrets/API cadence changes.
