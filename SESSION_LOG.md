@@ -2899,3 +2899,14 @@
 - Pre/post recovery refs: safety/pre-pr208-merge-2026-11-23 / safety/post-merge-pr208-2026-11-23.
 - Main read-back: report v0.19 §50, evidence register §11; PROJECT_LOG 328 records/0 invalid.
 - Scope CRA only; SIL 3 excluded; no operational code/workflow/secrets/API cadence changes.
+
+
+## 2026-11-23 — PR #209 merge 및 M/606 법적 조건 후속 조사
+
+- PR #209 squash merge SHA 2ec5a92ad942bb9437d8c7ecd72b8afea389c92c.
+- PR exact-head Run #1368 / ID 45138595693 success; main push Run #1369 / ID 45149364434 success.
+- Pre/post recovery refs: safety/pre-pr209-merge-2026-11-23 / safety/post-merge-pr209-2026-11-23.
+- Commission Implementing Decision C(2026) 7861 official PDF body checked directly. Article 2: any one of CEN/CENELEC/ETSI can cause amendment to cease applying by notifying non-acceptance within one month of receipt; original 2025-02-03 version continues. ESO receipt date/non-acceptance notices unknown.
+- Detailed M/606 dates cross-checked: items 1 and 15 2026-11-30; items 16–41 2027-01-31; items 2–14 2027-10-30. Annex table itself not present in retrieved official PDF copy, so mark dates as cross-checked, not primary annex transcription.
+- Report v0.20 §51 and product evidence register §12 added on research branch.
+- CRA only; SIL 3 excluded; no operational code/workflow/secrets/API cadence changes.
