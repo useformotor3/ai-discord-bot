@@ -50,8 +50,8 @@ PDF_SOURCE_CATALOG = (
     {
         "id": "CRA-GUIDANCE-OJ-2026-6013",
         "filename": "C_2026_6013_cra_guidance_oj.pdf",
-        "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX%3A52026XC06013",
-        "allowed_hosts": ("eur-lex.europa.eu",),
+        "url": "https://publications.europa.eu/resource/cellar/dcbc848b-e227-11f1-aefc-01aa75ed71a1.0006.01/DOC_1",
+        "allowed_hosts": ("publications.europa.eu",),
         "required_markers": (
             "C/2026/6013",
             "Cyber Resilience Act",
