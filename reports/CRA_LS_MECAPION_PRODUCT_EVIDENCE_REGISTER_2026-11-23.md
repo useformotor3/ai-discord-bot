@@ -387,3 +387,11 @@ ESO별 C(2026)7861 실제 수령일과 Article 2 비수락 통지는 여전히 U
 - Browser verification: official OJ PDF, 61 pages, title Commission guidance on the application of Regulation (EU) 2024/2847, C/2026/6013, 17.11.2026.
 - Host allowlist is exact publications.europa.eu; test asserts URL and host. Existing PDF magic, required identity markers, extracted text and SHA-256 checks remain.
 - New exact-head CI required; no merge based on Run #1395.
+
+
+## 18.2 C(2026)7861 official register automated access restriction
+- Run #1404: source identity, compile, CRA traceability and pytest 184 passed; PDF acquisition failed on C(2026)7861 Annex API redirect to sorry.ec.europa.eu.
+- C/2026/6013 was already switched to the browser-verified official Publications Office direct OJ PDF.
+- C(2026)7861 is a Commission document-register file, not an OJ publication; no substitute OJ URL is asserted.
+- Exact Commission anti-bot interstitial now maps to PDFSourceUnavailableError. No external mirror is auto-accepted for C(2026)7861. Main reports SKIPPED with exit 0; PDF artifact upload may be skipped, while the independent HTML canary remains.
+- This is not a content validation success: automated C(2026)7861 PDF bytes/hash remain unavailable. Official Commission register content is browser-verified; retain this provenance limitation.
