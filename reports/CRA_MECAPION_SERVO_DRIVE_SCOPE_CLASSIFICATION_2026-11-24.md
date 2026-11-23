@@ -417,3 +417,41 @@ Converter Unit의 정류·DC bus 공급 기능만으로 CRA 적용 여부를 단
 4. 각 유닛의 MCU 전체 주문코드, 보안 기능, 업데이트·키 관리 및 취약점 대응 책임.
 
 **현재 결론:** 제조사 자료는 Converter Unit과 Drive Unit의 기능적·모델코드·적합성 문서상 분리를 입증한다. 그러나 실제 독립 상업 판매와 EU 시장 공급 단위는 입증하지 않는다. 따라서 제품 구조의 분리는 Confirmed, 독립 판매/시장 공급은 Unknown으로 기록한다.
+
+
+## 14. 2026-11-24 추가 제조사 증거 및 CI 실패 원인 분석
+
+### 14.1 제품군 공식 페이지
+LS메카피온 공식 드라이브 제품군 페이지는 iX700M을 **다축 모듈러 EtherCAT 통신 드라이브**로 분류하고, 입력 AC 380–480 V, 용량 4.5–75 kW, 정격전류 16.1–168 A(축당)로 표시한다. 이는 제품군 수준의 사양이며 개별 SKU별 정격을 대신하지 않는다.
+
+### 14.2 최신 매뉴얼 버전
+공식 Servo 매뉴얼 카테고리의 현재 목록(게시물 ID 12652)은 `iX700M DRIVE 400[V] 매뉴얼 Ver1.4`, 게시일 2026-05-26으로 표시한다. 일부 검색 캐시의 Ver1.3 표기는 오래된 결과로 보이며, 직접 열람한 현재 카테고리 페이지의 Ver1.4를 기준으로 정정한다. 상세 게시물과 첨부 PDF는 timeout/502로 확보하지 못해 본문·페이지·SHA-256은 미검증이다.
+
+### 14.3 외형 CAD와 내부 설계 자료 구분
+공식 Servo Drive 도면 목록(게시물 ID 12455)은 `iX700M Series 서보드라이브 외형도 2D(CAD), 3D(STEP)`를 2026-04-21 게시한 것으로 표시한다. 이는 외형/기구 CAD 게시 증거다. 첨부 파일은 미확보이며, 외형 CAD는 회로도·PCB layout·BOM·MCU part number·보안 설정을 입증하지 않는다. 이번 공개 검색에서 iX700M 내부 회로도·BOM·PCB·ST MCU 전체 주문코드를 명시한 제조사 공개 자료는 찾지 못했다.
+
+### 14.4 해외 판매 채널
+제조사 해외 대리점 페이지는 해외 담당 창구로 **LS ELECTRIC 자동화 / automation@ls-electric.com**을 표시한다. 해외 문의·영업 경로가 있다는 증거이지, iX700M Converter/Drive 별도 견적·발주·가격·EU 재판매 가능성을 입증하지 않는다. 공개 페이지에서 유닛별 구매 버튼·가격표·온라인 주문 내역은 확인되지 않았다. 독립 판매와 EU 개별 공급은 여전히 Unknown이다.
+
+### 14.5 추가 모델코드 단서
+KC 목록에는 `iX700MCB-B-8K`가 별도 iX700M 드라이브 항목으로 게시되고 CE 목록에도 `iX700MCB`가 나타난다. 확보한 공식 코드 정의만으로 `MCB`와 `8K`의 의미·기능·판매단위를 확정할 수 없어 Unknown으로 유지한다. Converter나 Bus module 등으로 추정하지 않는다.
+
+### 14.6 MCU/ST 및 BOM
+프로젝트 사용자가 ST MCU를 사용한다고 알린 사실은 개발 프로젝트의 MCU 공급사 정보다. 이를 iX700M에 ST MCU가 탑재되었다는 증거로 전용하지 않는다. iX700M의 MCU 제조사·정확한 order code·silicon revision·security feature·debug lifecycle·secure boot configuration·BOM은 현재 공개 제조사 자료에서 확인되지 않았다. iX700M의 ST MCU 탑재 여부는 Unknown이다.
+
+### 14.7 판정 업데이트
+- 제품군 EtherCAT/모듈형 성격 및 AC 380–480V, 4.5–75kW, 16.1–168A/축: **제품군 페이지 수준에서 Confirmed**.
+- Ver1.4 매뉴얼 게시 메타데이터: **Confirmed**; 본문/해시: **Not acquired**.
+- 2D CAD/3D STEP 외형도 게시 메타데이터: **Confirmed**; 파일 본문: **Not acquired**.
+- 해외 영업 창구 존재: **Confirmed**; EU 실제 판매/수입자/공급계약: **Unknown**.
+- `iX700MCB-B-8K` 식별자 존재: **Confirmed**; 코드 의미: **Unknown**.
+- 내부 회로도/BOM/MCU 및 ST MCU 탑재: **Unknown**.
+- Converter/Drive 독립 판매·별도 EU 공급: **Unknown**.
+
+### 14.8 제조사 링크
+1. 제품군: https://www.lsmecapion.com/bbs/board.php?bo_table=pd_drive
+2. Ver1.4 매뉴얼 목록: https://lsmecapion.com/bbs/board.php?bo_table=manual&sca=Servo (게시물 ID 12652)
+3. 외형 CAD 목록: https://lsmecapion.com/bbs/board.php?bo_table=drawing&sca=Servo+Drive (게시물 ID 12455)
+4. KC 모델코드 목록: https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&page=2&sca=KC
+5. 해외 대리점 창구: https://www.lsmecapion.com/customer/agency2.php
+6. 해외 영업 담당: https://www.lsmecapion.com/customer/take2.php
