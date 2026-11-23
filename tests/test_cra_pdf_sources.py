@@ -63,6 +63,22 @@ def test_guidance_primary_non_pdf_uses_only_allowlisted_anfr_mirror():
     assert item["final_url"] == definition["fallback_url"]
 
 
+def test_official_commission_sorry_interstitial_uses_allowlisted_anfr_mirror():
+    definition = pdf.PDF_SOURCE_CATALOG[0]
+    responses = iter([
+        FakeResponse(
+            url="https://sorry.ec.europa.eu/",
+            body=b"<html>Commission automated access interstitial</html>",
+            content_type="text/html",
+        ),
+        FakeResponse(url=definition["fallback_url"]),
+    ])
+    with patch.object(pdf, "PdfReader", FakeReader):
+        item = pdf.fetch_pdf_source(definition, get=lambda *a, **k: next(responses))
+    assert item["fallback_used"] is True
+    assert item["final_url"] == definition["fallback_url"]
+
+
 def test_untrusted_redirect_fails_closed_without_mirror_fallback():
     definition = pdf.PDF_SOURCE_CATALOG[0]
     response = FakeResponse(url="https://evil.example/document.pdf")
