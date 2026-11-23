@@ -1,3 +1,23 @@
+## 2026-11-23 — C(2026)7861 Annex I 공식 별첨 원문 확보
+
+### 수행
+- Commission document register에서 C(2026)7861 별도 Annex PDF를 확보하고 Annex I 표의 Item 1~41 기한을 직접 확인.
+- 보고서 §53, 제품 증거 등록부 §14에 1차 자료 근거 및 해석 제한을 추가.
+- 앞선 §51~§52의 교차확인값/Annex 원문 미확보 표시는 당시의 이력으로 보존하고, 현재 상태를 공식 1차 자료 확보로 상향.
+
+### 확인 결과
+- Item 1 및 15: 2026-11-30
+- Items 2–14: 2027-10-30
+- Items 16–41: 2027-01-31
+- Item 25 network interfaces, Item 28/29 security-related microprocessors/microcontrollers, Item 37/38 tamper-resistant microprocessors/microcontrollers도 직접 확인.
+- Annex의 날짜는 ESO 채택 목표일이며 제조사 CRA 기한/OJ 인용일이 아니다.
+- C(2026)7861 Article 2의 ESO 실제 수령일·비수락 통지 및 최종 적용 상태는 여전히 Unknown.
+
+### 다음
+1. ETSI GoSRSReq006 회의 결과/회의록과 ESO 수령/비수락 여부 계속 추적.
+2. iX700M PDF 바이너리 확보 및 revision/hash 검증.
+3. 보고서·증거등록부·상황판 동기화 후 CI 확인.
+
 ## 2026-11-23 — PR #212 병합 및 main CI 검증 완료
 
 - PR #212: https://github.com/useformotor3/ai-discord-bot/pull/212 — squash merge 완료.
