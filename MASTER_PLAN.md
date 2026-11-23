@@ -2090,3 +2090,10 @@
 - 동일한 공식 OJ PDF를 제공하는 Publications Office 직접 URL로 primary endpoint 변경, exact host allowlist 및 회귀 테스트 추가.
 - Run #1395의 184 pytest 통과는 수정 전 코드 테스트 결과이며 새 endpoint의 live canary 검증을 대신하지 않는다.
 - PR #218은 새 exact-head CI 통과 및 diff 검토 전 병합 금지.
+
+
+## 2026-11-24 — M/606 PDF canary 보수적 처리
+- Run #1404에서 C(2026)7861 Commission document-register API가 CI runner를 anti-bot interstitial로 리디렉션한 것을 확인. 184 pytest 및 compile/traceability 통과.
+- C/2026/6013은 공식 Publications Office PDF로 직접 접근. C(2026)7861은 OJ 문서가 아니므로 OJ URL을 추정하지 않음.
+- 정확한 Commission interstitial은 source-unavailable로 기록하고 third-party mirror 자동 사용 금지. PDF batch SKIPPED/exit 0, HTML canary 독립 수행. 자동 PDF hash 미확보 사실 유지.
+- PR #218 새 exact HEAD CI와 최종 diff 검토 전 병합 금지.
