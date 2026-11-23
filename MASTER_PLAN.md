@@ -1896,3 +1896,13 @@
 - Main push Run #1326 / ID 45114580241은 별도 CI 검증 중. 성공 전까지 main CI 완료로 표기하지 않는다.
 
 - Main push Run #1326 / ID 45114580241: success. PDF evidence upload도 성공했으므로 PR exact-head 단계의 skipped와 분리해 기록한다.
+
+
+
+## 2026-11-23 — 제품 증거 등록 PR #204 및 M/606 후속 검증
+
+1. PR #204 research/cra-lsmecapion-product-evidence-2026-11-23는 main 대비 7 ahead / 0 behind이며 보고서 v0.16 §46 및 제품 증거 등록부를 추가한다. exact-head CI와 최종 diff 확인 전에는 병합하지 않는다.
+2. iX700M 카탈로그 목록 제목(2025년 7월)과 상세 게시물 첨부파일 날짜(2025-12-05)를 별도 메타데이터로 기록했다. PDF 본문/개정 이력은 원본 확보 전까지 미검증.
+3. 2026-11-23 ETSI M/606 AMD 1 일정은 공식 캘린더에서 재확인했으나 회의록·결정·ESO 수령/수락/비수락 원문은 확보하지 못했다. Unknown 유지.
+4. 다음 P0: PR #204 exact-head CI 확인 및 병합 안전 게이트; M/606 official minutes/ESO receipt notices; 실제 LS메카피온 SKU/HW/FW/BOM 및 ST MCU full order code 확보.
+5. CRA only. SIL 3 제외. 운영 코드/workflow/secrets/API cadence 변경 금지.
