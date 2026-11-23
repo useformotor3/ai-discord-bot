@@ -1,3 +1,29 @@
+## 2026-11-24 — 공식 Guidance·EN 40000 OJ citation 정정
+- 2026-07-27 Commission release와 2026-11-17 OJ C/2026/6013이 동일한 C(2026)6013 guidance임을 확인하고 표현을 정정했다.
+- EN 40000-1-1/-1-2 CEN catalogue metadata를 직접 열람: DAV 2026-11-18, Citation in OJEU = No citation expected for Directive 2024/2847. Article 27 적합성 추정이 발생하는 조화표준으로 사용하지 않는다.
+- 독립 보고서 §7.3, 통합 보고서 §54.5 및 증거 등록부 §16에 반영.
+
+## 2026-11-24 — LS메카피온 서보 드라이브 CRA 적용 범위·제품 분류 정밀 분석
+
+### 수행
+- GitHub 최신 상황판과 기존 보고서/제품 증거 등록부를 확인하고 최신 main 기준점 PR #214 동기화 SHA d1b33a4d8988f6f940070e03d5b4fa26570c384e를 사용했다.
+- 복구용 safety branch와 별도 연구 브랜치를 만들었다.
+- Regulation 2024/2847, Commission Guidance C/2026/6013, Implementing Regulation 2025/2392, EN 40000 공개 상태 및 LS메카피온 제품 증거를 대조했다.
+- 신규 상세 보고서 v1.0, 통합 보고서 §54, 제품 증거 등록부 §15 및 프로젝트 상황판/계획/세션/행동규칙/JSONL을 갱신했다.
+
+### 확인 결과
+- 통신형 제품은 디지털 데이터 연결 및 EU 시장 공급이 확인되면 CRA 적용 가능성이 높다. 단순 ON/OFF/전원 신호만으로는 데이터 연결을 단정하지 않는다.
+- 완제품 핵심 기능이 모터 제어라면 Default category 가능성이 높다. Category 10 Fieldbus interface, category 14 security MCU, category 4 tamper-resistant MCU는 별도 제품 경계와 핵심 기능으로 판단한다.
+- ST MCU 통합은 완제품 등급을 자동 승계하지 않지만 제조자의 component due diligence는 필요하다.
+- EN 40000-1-1/-1-2 공개 확인. Article 27 OJ citation은 확인되지 않아 presumption of conformity를 주장하지 않는다.
+- SKU/HW/FW/BOM/MCU code/보안 설정/모듈 판매경계는 Unknown으로 유지.
+
+### 다음
+1. 연구 브랜치의 변경사항 read-back, JSONL parse, 문서 일관성 검증.
+2. PR 생성 전 변경 파일 및 정확한 HEAD 확인.
+3. PR exact-head CI가 성공하면 결과 확인 후 통합 여부 판단; main CI는 별도로 확인.
+4. 제조사 자료 확보 후 제품별 판정 갱신.
+
 ## 2026-11-23 — PR #214 병합 및 공식 Annex 원문 근거 반영
 
 - PR #214: https://github.com/useformotor3/ai-discord-bot/pull/214 — squash merge 완료.

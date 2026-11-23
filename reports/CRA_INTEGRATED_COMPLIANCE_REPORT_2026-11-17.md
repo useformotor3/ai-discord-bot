@@ -1,7 +1,7 @@
 # CRA 서보 드라이브 통합 규제·기술 준수 보고서
 
-- 문서 버전: v0.22 (C(2026)7861 Annex I 공식 별첨 원문 직접 검증)
-- 기준일: 2026-11-23
+- 문서 버전: v0.23 (LS메카피온 서보 드라이브 CRA 적용 범위·제품 분류 정밀 분석)
+- 기준일: 2026-11-24
 - 프로젝트 범위: EU Cyber Resilience Act(CRA) 대응만
 - 기준 제품군: 산업용 서보 드라이브 및 필수 펌웨어·설정/진단 소프트웨어
 - 법적 기준 원문: Regulation (EU) 2024/2847, Official Journal OJ L 2024/2847, 20.11.2024
@@ -1472,3 +1472,36 @@ Annex 표에서 Item 25는 physical and virtual network interfaces, Item 28은 s
 - 제조사 CRA 의무기한 또는 OJ 인용 상태로의 오독: 금지.
 
 **검증 원칙:** 앞으로 일정표를 인용할 때는 C(2026)7861 Annex I를 1차 근거로 우선 인용하고, Commission 개요 페이지 및 2차 추적자료는 보조적 교차검증에만 사용한다.
+
+
+## §54. LS메카피온 서보 드라이브 CRA 적용 범위 및 제품 분류 정밀 분석
+
+상세 보고서: reports/CRA_MECAPION_SERVO_DRIVE_SCOPE_CLASSIFICATION_2026-11-24.md (v1.0)
+
+### 54.1 적용 범위
+CRA Article 2(1)은 제품의 intended purpose 또는 reasonably foreseeable use에 기기/네트워크와의 직접·간접 논리적/물리적 데이터 연결이 포함되는지 판단한다. Commission Guidance C/2026/6013 §§26–28은 단순 전기 신호와 디지털 정보 교환을 구분한다. 송신 측에서 정보를 부호화하고 수신 측이 정보를 해석하는 통신인지 확인해야 한다.
+
+LS메카피온 공개자료상 iX700M은 EtherCAT 통신 기반 다축 모듈러 제품군으로 소개되고, Converter Unit/Drive Unit, EtherCAT IN/OUT, 유닛 간 RS-485 Cross Communication 등이 공개 소개자료에 나타난다. 따라서 실제 EU 공급 구성에서 이러한 디지털 통신이 사용된다면 CRA 적용 가능성이 높다. 다만 실제 대상 SKU, 공급 구성 및 판매 단위는 Unknown이다.
+
+### 54.2 완제품 핵심 기능과 잠정 분류
+Commission Guidance §139는 core functionality를 intended purpose 달성에 필수인 주된 특징·기술 능력으로 본다. §§141–145는 일부 기능이나 중요 제품 구성품의 통합만으로 host product에 해당 category를 자동 승계하지 않으며, 별도 구매·라이선스·구독 등으로 제공되는 모듈은 독립 제품이 될 수 있다고 설명한다.
+
+실제 제품의 핵심 기능이 전동기의 토크·속도·위치 제어라면, 현재 확인된 CRA Annex III/IV category와 직접 일치한다고 보기 어려워 완제품은 Default category일 가능성이 가장 높다. 이 결론은 실제 intended purpose와 기술문서 확인 전의 잠정 판단이다.
+
+### 54.3 Annex III category 10 — Fieldbus/network interface
+2025/2392 Annex I category 10은 physical/virtual network interfaces를 정의하고 Fieldbus를 예시로 든다. 별도 판매되는 Fieldbus interface 제품의 핵심 기능이 네트워크 연결 자체라면 Class I category 10을 검토한다. 통합 드라이브에 EtherCAT 포트가 있다는 사실만으로 완제품 전체가 category 10이 되는 것은 아니다. 별도 SKU, driver/API, network-interface 기능 및 제품 공급 단위를 확인한다.
+
+### 54.4 ST MCU category 14/4
+2025/2392 Annex I category 14는 프로그래머블 메모리와 주변장치를 통합한 MCU가 encryption, authentication, secure key storage, RNG, TEE 등 보안기능을 제공하여 MCU 외부의 제품·네트워크·서비스를 보호하는 경우를 설명한다. ST라는 브랜드만으로는 해당 분류를 확정할 수 없다.
+
+Class II category 4는 category 14 MCU에 더해 tamper evidence/resistance/response 및 AVA_VAN 2 또는 3 수준의 설계가 필요하다. Secure boot나 debug lock만으로 category 4를 단정하지 않는다.
+
+통합 MCU가 host servo drive의 class를 자동 승계하지 않는다. 다만 Guidance §§167–173에 따른 component due diligence 및 제품 전체 위험평가는 필요하다.
+
+### 54.5 EN 40000 최신 공개
+CEN/CENELEC는 2026-11-19 EN 40000-1-1(Vocabulary) 및 EN 40000-1-2(Principles, product risk management and lifecycle activities)의 공개를 발표했으며, 공식 카탈로그상 DAV는 2026-11-18이다. 두 표준의 CEN 카탈로그 Legal 항목은 모두 “Citation in OJEU: No citation expected for Directive 2024/2847”로 표시한다. 따라서 이 표준들은 CRA Article 27 조화표준 적합성 추정 근거로 사용하지 않는다. 공통 용어 및 위험관리·제품 수명주기 활동의 참고기준으로 활용한다.
+
+### 54.6 Unknown 및 다음 게이트
+실제 SKU/nameplate, Converter/Drive Unit 별도 판매 여부, HW/FW revision, BOM, ST MCU full order code, 보안 설정, interface driver/API, EU 시장 공급 주체는 Unknown이다. 증거 확보 전 최종 제품별 분류와 Article 32 경로는 확정하지 않는다.
+
+상세 분석·근거 URL·증거 요청 목록은 위 독립 보고서 v1.0을 기준으로 한다. CRA only; SIL 3 제외.

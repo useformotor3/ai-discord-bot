@@ -573,3 +573,18 @@
 - 보고서 앞부분에는 목적·독자·읽는 순서·핵심 용어·제품 작동 원리·상태 표시를 제공한다. 표와 다이어그램은 본문 해설 및 원문 locator를 대체하지 않는다.
 - 법령상 의무, 비구속적 가이드, 표준 초안, OJ 인용 표준, 제품 사실, 분석, 권고, 미확인 가설을 구분한다. 세부 작성 기준은 `REPORT_WRITING_STANDARD_CRA.md`를 따른다.
 - 이 기준의 실제 효과는 비전문 독자 검토와 전문가 검토에서 이해도·정확성·누락 여부를 확인한 뒤 운영상 효과로 승격한다.
+
+
+## 2026-11-24 — CRA 제품 적용성·분류의 증거 규칙
+- 제품에 전자회로/MCU가 있다는 사실만으로 CRA Article 2(1) 데이터 연결을 단정하지 않는다. 디지털 정보의 송신·수신 및 intended/foreseeable use를 확인한다.
+- 제품 category는 부품 보유 여부가 아니라 시장 공급 단위의 core functionality로 판단한다. 별도 판매 구성품은 독립 PDE가 될 수 있고, 통합 제품은 부품 category를 자동 승계하지 않는다.
+- MCU category 14와 category 4를 혼동하지 않는다. category 4는 tamper evidence/resistance/response 및 AVA_VAN 2/3 설계 근거가 추가로 필요하다.
+- 제품 SKU/HW/FW/BOM/MCU order code/보안 설정이 없으면 Unknown으로 유지한다. 제품 구조를 상상으로 채우지 않는다.
+- EN 표준 발행 사실과 CRA Article 27 OJ 인용/적합성 추정을 분리한다. OJ 근거가 없으면 presumption을 주장하지 않는다.
+- Commission guidance는 공식 해석자료지만 binding regulation과 구별한다. 최신 관보판과 publication date를 기록한다.
+
+
+## 2026-11-24 — EN 40000 legal status verification
+- EN 40000 publication status, DAV, OJEU citation expectation must be checked from the individual CEN catalogue records, not inferred from the standard's EN prefix or M/606 link.
+- If CEN metadata states “No citation expected for Directive 2024/2847”, do not claim CRA Article 27 presumption of conformity. Use the standard only within its stated technical scope unless binding legal sources establish otherwise.
+- Treat the 2026-07-27 C(2026)6013 announcement and 2026-11-17 OJ C/2026/6013 publication as the same guidance document.
