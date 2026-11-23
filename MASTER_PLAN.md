@@ -1,3 +1,15 @@
+## 2026-11-23 — PR #202 병합 및 main 검증 완료
+
+- PR #202 병합 완료: https://github.com/useformotor3/ai-discord-bot/pull/202
+- squash merge SHA: `794d2d69c6a46e85d5cc64c7c0c337a7493ebcc4`
+- 보고서 main read-back: v0.15, §45 및 §45.7 확인.
+- 최신 매트릭스 Markdown/CSV main read-back 확인: 18개 데이터 행, CSV 21개 열, 모든 행의 열 수 일치.
+- PR exact-head Run #1341 / ID `45133314471`: success. 전체 테스트·CRA traceability·공식 PDF/HTML canary·provenance manifest upload 성공. PDF evidence upload은 unchanged 조건으로 skipped.
+- main push Run #1342 / ID `45133462189`: success. 전체 테스트·CRA traceability·공식 PDF/HTML canary·provenance manifest upload 성공. PDF evidence upload은 unchanged 조건으로 skipped.
+- post-merge 복구 기준점: `safety/post-merge-pr202-2026-11-23`.
+- PROJECT_LOG에는 이번 상태 갱신 이벤트를 추가한다. 제품별 분류는 LS메카피온 정확한 모델 및 ST MCU 주문 코드가 확보되기 전까지 Unknown.
+- 범위: CRA only. SIL 3 제외. 운영 코드, 운영 workflow, secrets, API cadence 변경 없음.
+
 ## 2026-11-23 — ETSI M/606 18개 Work Item live status 재점검
 
 - 공식 ETSI active list 재조회: 2026-11-23 / Work Programme v2.3.3 / 18 active items.
