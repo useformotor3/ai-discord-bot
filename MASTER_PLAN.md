@@ -2076,3 +2076,10 @@
 - 다음 P0: nameplate와 전체 주문코드, 실제 견적/발주/납품 문서, EU 공급계약/수입자 자료 확보.
 - 다음 P1: iX700M DRIVE 400[V] Ver1.4 PDF 본문/해시, 회로도·BOM·HW/FW revision, ST MCU order code 및 EtherCAT/RS-485 protocol/API 검증.
 - CE DoC 게시를 CRA 적합성 증거나 Article 27 presumption으로 오인하지 않는다. PDF 본문 미확보 상태에서 적용 법령·표준을 추정하지 않는다.
+
+
+## 2026-11-24 — PR #218 CI 보완 및 iX700M 증거 공백
+- CI 실패 원인: C(2026)5252 PDF newsroom redirect to `sorry.ec.europa.eu`; code/tests unaffected. Exact host fallback trigger, strict allowlist and ANFR identity validation retained.
+- iX700M product-family spec, Ver1.4 manual listing, exterior CAD listing, MCB-B-8K listing, overseas sales contact recorded.
+- Unknown: separate sales/orderability and EU PDE supply, user SKU, MCB meaning, PDF bodies, schematics/BOM/PCB, MCU order code/security.
+- User-reported ST MCU is not attributed to Mecapion iX700M without BOM proof.
