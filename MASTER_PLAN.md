@@ -1845,3 +1845,5 @@
 - Exact-head Run #1324 success; duplicate Run #1325 cancelled. PDF evidence upload skipped.
 - Post-merge safety ref: safety/post-merge-pr198-2026-11-23.
 - Main push Run #1326 / ID 45114580241은 별도 CI 검증 중. 성공 전까지 main CI 완료로 표기하지 않는다.
+
+- Main push Run #1326 / ID 45114580241: success. PDF evidence upload도 성공했으므로 PR exact-head 단계의 skipped와 분리해 기록한다.
