@@ -1,3 +1,8 @@
+## 2026-11-24 — EN 40000 / C(2026)6013 메타데이터 정밀 확인
+- 7월 27일 발표와 11월 17일 OJ 게재는 같은 C(2026)6013 guidance다. 날짜를 서로 다른 지침으로 처리하지 않는다.
+- EN 40000-1-1/-1-2 CEN catalogue metadata: DAV 2026-11-18; Citation in OJEU: No citation expected for Directive 2024/2847. Article 27 presumption을 부여하는 harmonised standard로 인용하지 않는다.
+- 다음 보고서 업데이트는 이 정정 상태를 기준으로 한다.
+
 ## 2026-11-24 — LS메카피온 서보 드라이브 CRA 적용 범위·제품 분류 정밀 분석
 
 
