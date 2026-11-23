@@ -1,5 +1,9 @@
 # CRA Servo Drive Compliance & Engineering Project
 
+
+> **CRA 조사 갱신 — 2026-11-23:** [ST MCU 통합 제품 분류 및 ETSI M/606 AMD 1 후속 메모](reports/CRA_ST_MCU_INTEGRATION_AND_M606_FOLLOWUP_2026-11-23.md). ST MCU 사용만으로 서보 드라이브 완제품을 Annex III Class I category 14로 자동 분류하지 않으며, 제품 전체 core functionality와 정확한 MCU/제품 증거를 별도로 확인합니다. ETSI 공식 캘린더의 11월 23일 회의 일정은 확인했으나 회의 결과 및 ESO 수락은 미확인입니다.
+
+
 > **보고서 독자 안내 — 2026-11-22:** [CRA 통합 보고서 v0.10](reports/CRA_INTEGRATED_COMPLIANCE_REPORT_2026-11-17.md)의 첫 부분에 읽는 순서, 서보 드라이브 작동 원리, CRA 판단 흐름, 핵심 용어 및 회사 내 활용 방법을 추가했습니다. 작성 기준은 [CRA 기업용 보고서 작성·설명 표준](REPORT_WRITING_STANDARD_CRA.md)을 따릅니다. 전문적인 법률·기술 세부사항은 생략하지 않고 비전문 독자도 따라갈 수 있도록 설명 계층을 추가합니다.
 
 > **자동화 운영 점검 — 2026-11-20:** [실제 운영은 3시간 주기이며, 정각 지연을 줄이기 위해 UTC :17로 이동하고 no-op/모델 장애 결과를 별도 표시하도록 개선](reports/CRA_AUTOMATION_CADENCE_AND_OUTCOME_OBSERVABILITY_AUDIT_2026-11-20.md). 5분 주기 Gemini 실행은 설정하지 않음. 초기 PR #189 HEAD CI 182 passed / 0 failed. cron 변경 후 cadence 테스트의 구 설정값 고정 문제를 발견·수정했고 code HEAD Run #1271에서 182 passed / 0 failed; fallback fixture의 2개 실패를 수정했고 최신 HEAD Run #1285에서 183 passed / 0 failed; main 미병합.
@@ -1144,3 +1148,6 @@ CLC/TC 65X의 M/606 20b/21b/22b/25b/27b/36b를 prEN 50770-4/-2/-6/-3/-5/-1에 �
 - [공식 출처 최신성 대장](reports/CRA_LIVE_SOURCE_FRESHNESS_REGISTER_2026-11-20.csv).
 - [ETSI M/606 상태 감사](reports/CRA_ETSI_M606_LIVE_STATUS_2026-11-18.md), [CEN/CENELEC EN 40000 및 OT 상태 감사](reports/CRA_CEN_CENELEC_EN40000_OT50770_STATUS_2026-11-18.md).
 - Article 27 추정 적합성은 실제 OJ citation과 제품/표준 범위가 확인된 경우에만 주장한다. CEN 발행 또는 ETSI Work Programme의 Harmonised Standard 메타데이터만으로 추정 적합성을 주장하지 않는다.
+ 
+> **CRA 보고서 갱신 — 2026-11-23:** 통합 보고서 v0.12에서 §5~§10의 제조사 의무, Article 14 신고 운영, 표준/OJ, 기계류 관계, 제품 증거, 실행 게이트 설명을 보강했습니다. M/606 AMD 1 회의는 ETSI 캘린더상 11월 23일 Online 일정으로 확인했으나 회의 결과/ESO 수락은 미확인입니다. [보고서 보기](reports/CRA_INTEGRATED_COMPLIANCE_REPORT_2026-11-17.md)
+

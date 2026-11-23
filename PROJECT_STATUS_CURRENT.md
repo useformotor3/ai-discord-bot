@@ -1616,3 +1616,21 @@
 - v0.11에서 §1 요약 10개 결론의 독자용 해설, §2 법령·가이드·표준·OJ 효력의 읽는 순서, §3 가상 인터페이스 사례와 증거 요구, §4 단계별 적용일·전환 규칙 설명을 추가.
 - 원래 법률 조항·예외·제품별 Unknown 판정은 유지하고, 쉬운 설명과 정확한 전문 기준을 병렬 제공.
 - 후속: §5~§10 제조사 의무·신고·표준·기계류·증거·실행 절을 같은 방식으로 순차 확장하고, 심층 부속서도 핵심 개념 안내 및 원문 추적을 보강.
+
+
+## 2026-11-23 — ST MCU 및 M/606 AMD 1 추적
+
+- 신규 메모: `reports/CRA_ST_MCU_INTEGRATION_AND_M606_FOLLOWUP_2026-11-23.md`.
+- EUR-Lex 법령 대조: Implementing Regulation (EU) 2025/2392 Annex I Class I category 14는 보안 관련 기능을 가진 MCU의 기술 설명이며, CRA Article 7(1) 및 해당 규정 전문 (1)~(2)에 따라 중요/핵심 제품 카테고리는 제품 전체의 core functionality 기준으로 판단. ST MCU 통합만으로 드라이브 완제품의 category 14 분류를 자동 확정하지 않음.
+- MCU의 실제 보안 기능은 완제품 위험평가·설계·시험 증거에서 별도 평가해야 한다. 정확한 ST order code, 기능 활성화 상태, 키/부트/디버그 정책 및 LS메카피온 SKU/HW/FW/BOM 미확보로 제품별 분류와 Article 32 경로는 Unknown.
+- ETSI 공식 캘린더는 GoSRSReq006-M/606 AMD 1 examination meeting을 2026-11-23 Online으로 게시. 일정은 확인했으나 회의 결과·ESO receipt/acceptance는 확인되지 않음.
+- 다음 P0: 회의 후 minutes/decision 및 ESO 공식 수령·수락/비수락 통지 확보. 제품 측은 ST 전체 part number와 LS메카피온 정확한 모델 자료를 증거 register에 연결.
+ 
+## 2026-11-23 — CRA 통합 보고서 v0.12 및 M/606/CI 확인
+
+- 통합 보고서 v0.12: §5~§10의 법률 조항을 개발 생애주기·부서 책임·Article 14 접수/triage·표준/OJ 상태 구분·기계류/CRA 위험 경계·제품 증거 추적·완료 게이트로 상세 해설. 기존 법적 조건과 제품별 Unknown을 유지.
+- ETSI 공식 캘린더는 GoSRSReq006-M/606 AMD 1 examination meeting을 2026-11-23 Online으로 표시. 일정은 확인했으나 회의 실제 개최/결과·ESO 수락/비수락 원문은 확보하지 못해 Unknown 유지.
+- PR #196 exact-head Run #1308 (45094691796): success. Source integrity, compile, CRA traceability, 전체 pytest, PDF/HTML source canary, PDF evidence 및 provenance 업로드 성공. 이전 Run #1307의 JSONL 빈 행 실패는 복구 이력으로 보존.
+- ST MCU Category 14: 정확한 주문 코드와 완제품 구성/활성화 증거가 없으므로 부품·완제품 분류를 구분하고 Unknown 유지.
+- 다음 P0: M/606 minutes/decision 및 ESO receipt/acceptance 확인, ST 전체 order code 및 LS메카피온 SKU/HW/FW/BOM 확보, §5~§10 실제 독자/전문가 검토.
+

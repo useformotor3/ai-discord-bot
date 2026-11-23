@@ -1796,3 +1796,20 @@
 - 완료: v0.11 §1~§4에 요약 결론 해설, 법령 효력 계층, 가상 적용성 사례, 적용 일정/전환 규칙 상세 설명을 추가.
 - 다음 순서: §5 제조사 의무와 기술문서/SBOM/지원기간, §6 Article 14 신고 절차, §7 표준·OJ·적합성 평가, §8 기계류 관계, §9 증거 요청, §10 실행계획을 순차 보강.
 - 작성 표준 REPORT_WRITING_STANDARD_CRA.md 및 AI_RULEBOOK §73 유지. 설명을 쉽게 만들되 원문 조건·예외·검증 한계를 삭제하지 않는다.
+
+
+## 2026-11-23 — ST MCU 통합 및 M/606 회의 후속 조사
+
+- [신규 메모](reports/CRA_ST_MCU_INTEGRATION_AND_M606_FOLLOWUP_2026-11-23.md): ST MCU와 Annex III Class I category 14의 기술 설명, 제품 전체 core functionality 기준, M/606 AMD 1 일정 상태 및 증거 요청 목록.
+- 법적 판단 원칙: MCU 부품에 보안 기능이 존재하는지와 서보 드라이브 완제품이 category 14에 해당하는지는 다른 질문이다. 완제품 분류는 제품 전체의 핵심 기능 및 실제 제품 경계 증거로 판단한다.
+- 다음 P0: 2026-11-23 ETSI M/606 AMD 1 회의 후 공식 minutes/decision, 개정 Annex I, ESO 수령일 및 수락/비수락 통지 확인. 공개 일정만으로 회의 결과를 추정하지 않는다.
+- 제품 P0: ST MCU 전체 주문 코드와 보안 기능/설정 자료, LS메카피온 모델별 SKU/HW/FW/BOM/매뉴얼 확보. 미확보 시 Annex III/IV 및 Article 32 route는 Unknown 유지.
+ 
+## 2026-11-23 — 보고서 v0.12 및 다음 조사 게이트
+
+- [CRA 통합 보고서](reports/CRA_INTEGRATED_COMPLIANCE_REPORT_2026-11-17.md) v0.12에서 §5~§10 설명을 추가: 제조사 의무의 생애주기 구현, Article 14 신고 운영, Article 27/OJ 추정 구분, CRA·기계류 위험 경계, 제품 증거 연결, 단계별 완료 게이트.
+- ETSI M/606 AMD 1 meeting은 2026-11-23 Online 일정으로 공식 캘린더에 표시. 회의록/결정/ESO 수령·수락 여부는 미확인. 후속 P0로 유지.
+- PR #196 exact-head CI Run #1308 success 확인. 이전 실패 Run #1307의 JSONL traceability 실패는 복구 이력으로 보존.
+- 다음: (1) M/606 회의 결과/ESO 통지 1차 증거 확보, (2) ST MCU 전체 주문 코드 및 LS메카피온 SKU/HW/FW/BOM 증거 확보, (3) 통합 보고서 §5~§10 독자 검토와 법률·기술 교차검토.
+- CRA only. SIL 3 범위 제외. 운영 코드/운영 workflow/secret/API 호출 빈도 미변경.
+

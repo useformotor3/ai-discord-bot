@@ -2627,3 +2627,50 @@
 - §3에 EtherCAT 디지털 데이터 교환, 아날로그 지령, USB 설정, MCU, 별도 보안 게이트웨이, 필수 클라우드에 대한 가상 사례를 추가. 각 사례에서 결론 가능한 범위와 추가 증거를 분리.
 - §4에 발효일, 부분 적용일, Article 14 적용일, 일반 적용일, 전환 규정의 차이를 단계별로 설명.
 - 실제 LS메카피온 제품 사실로 오인되지 않도록 가상 예시임을 명시. 기존 법적 결론과 Unknown 경계는 유지.
+
+
+## 2026-11-23 — ST MCU 통합 제품의 CRA 분류 및 M/606 AMD 1 일정 재확인
+
+### 조사
+- EUR-Lex의 Regulation (EU) 2024/2847 및 Implementing Regulation (EU) 2025/2392를 대조해 Article 7(1), Annex III Class I category 14, 2025/2392 전문 (1)~(2)의 제품 전체 핵심 기능 원칙을 정리.
+- ST MCU를 사용한다는 사실만으로 서보 드라이브 완제품이 category 14로 자동 분류되지 않는다는 판단 경계를 문서화. MCU 보안 기능은 부품 수준 사실과 완제품 위험평가/설계 증거로 별도 검토.
+- ETSI 공식 캘린더에서 GoSRSReq006-M/606 AMD 1 examination meeting이 2026-11-23 Online 일정으로 게시된 사실을 재확인. 회의 결과·ESO 수락은 공개 일정으로 입증되지 않아 Unknown 유지.
+
+### 산출물
+- `reports/CRA_ST_MCU_INTEGRATION_AND_M606_FOLLOWUP_2026-11-23.md` 신규 작성.
+- 제품 증거 요청 항목: ST 전체 order code, security feature/활성화 상태, secure boot·키관리·debug 정책, LS메카피온 정확한 SKU/HW/FW/BOM 및 통신 구조.
+
+### 한계와 다음 작업
+- ST MCU 정확한 부품번호, LS메카피온 모델별 BOM/FW/회로도는 미확보. 특정 MCU의 category 14 해당 여부 및 완제품 Annex III/IV·Article 32 경로는 확정하지 않음.
+- 회의 후 공식 minutes/decision, M/606 AMD 1 최종 문서, ESO receipt/acceptance/non-acceptance evidence를 확인.
+- 문서 변경은 CRA 조사 메모와 진행 기록에 한정. 운영 코드, workflow, secrets, Gemini/Discord 호출 빈도는 변경하지 않음.
+
+
+### 검증 오류 및 복구 기록 — 2026-11-23
+- PR #196 최초 CI Run #1303에서 CRA traceability가 PROJECT_LOG.jsonl line 309의 빈 행으로 실패했고, pytest 및 후속 canary는 실행되지 않음.
+- 원인: JSONL 파일이 이미 개행으로 끝나는 상태에서 새 레코드 앞에 추가 개행을 한 번 더 넣음. 사전 검사는 빈 행을 필터링한 뒤 JSON 파싱하여 이 결함을 놓침.
+- 복구: 기존 이벤트는 보존하고 이번 세션 이벤트만 1개 유지했으며, 파일 중간 빈 행/JSON 오류가 없는지 전 행 재검증. 현재 309 records, invalid JSON 0, interior blank line 0, 신규 event ID 1개.
+- 재발 방지: JSONL append 전 마지막 문자의 개행 여부를 확인하고, 빈 행을 허용하지 않는 전체 파일 파서를 실행한 후 CI를 재실행한다.
+- 상태: 최초 CI 실패는 숨기지 않고 기록. 수정된 HEAD의 재실행 결과 확인 전까지 CI 통과로 간주하지 않음.
+ 
+## 2026-11-23 — 통합 보고서 v0.12 §5~§10 설명 보강 및 M/606 후속 확인
+
+### 변경
+- 사용자 요구에 따라 기업용 전문 문서의 기술·법률 깊이를 유지하면서 비전문 독자도 이해할 수 있도록 통합 보고서 v0.12를 작성.
+- §5~§10에 실무 해설 추가: 제조사 의무를 제품 생애주기/부서별 역할로 연결, Article 14 신고 접수·최초 인지시각·triage 흐름, 표준 초안/Work Item/OJ citation 구분, CRA와 기계류 규정의 위험·증거 경계, SKU/HW/FW 단위 증거 추적, 단계별 완료 게이트.
+- §39~§42에 §5~§10 통합 해설, M/606 회의 상태, ST MCU Category 14 증거 분리, PR #196 CI 결과 기록.
+- 보고서 기준일 2026-11-23, 버전 v0.12.
+
+### 새로 확인한 사실과 한계
+- ETSI 공식 회의 캘린더는 GoSRSReq006-M/606 AMD 1 examination meeting을 2026-11-23 Online으로 표시. 일정 게시만 확인했으며 실제 개최/결과/표결/ESO 수락 여부는 공개 1차 증거를 확보하지 못함. Unknown 유지.
+- PR #196 exact-head Run #1308 / 45094691796 success: source integrity, compile, CRA traceability, full pytest, official CRA PDF/HTML canaries, PDF evidence and provenance uploads 모두 성공.
+- Run #1307은 JSONL 중간 빈 행으로 CRA traceability 단계 실패. 빈 행/중복 이벤트를 수정한 뒤 Run #1308 전체 성공. 최초 실패는 숨기지 않고 유지.
+- ST MCU 전체 order code와 LS메카피온 정확한 SKU/HW/FW/BOM은 미확보. Category 14/Annex III·IV/Article 32 제품별 결론은 Unknown.
+
+### 다음 작업
+1. M/606 공식 minutes/contribution/decision 및 ESO receipt/acceptance/non-acceptance 확인.
+2. ST 전체 주문 코드와 security feature/configuration 원문 확보.
+3. LS메카피온 모델별 SKU/HW/FW/BOM/매뉴얼/통신 구조 확보.
+4. §5~§10 비전문 독자 검토 및 CRA 법률·제품 기술 전문가 교차검토.
+5. 문서 변경은 PR #196에 유지하고 exact-head/main CI와 merge read-back 전에는 병합 완료로 기록하지 않는다.
+
