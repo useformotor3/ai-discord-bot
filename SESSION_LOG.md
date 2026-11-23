@@ -3058,3 +3058,10 @@
 - Manufacturer public evidence: product family specs; current Ver1.4 manual listing; 2D/3D outline CAD listing; KC code MCB-B-8K; overseas sales contact.
 - Manual/CAD attachments unavailable; internal schematic/BOM/PCB/MCU not found publicly. Actual SKU, independent sale and EU separate supply remain Unknown.
 - User ST MCU context is not proof of iX700M MCU.
+
+
+## 2026-11-24 — Run #1395 PDF canary failure and OJ endpoint correction
+- Run #1395 on exact head 6a6d5a58: source identity, compile, CRA traceability and pytest 184 passed; live PDF canary failed at C/2026/6013 EUR-Lex endpoint redirect to sorry.ec.europa.eu.
+- Corrected C/2026/6013 source URL to official Publications Office direct OJ PDF (61 pages, C/2026/6013, 17.11.2026 verified in browser); exact host allowlist and regression assertion updated.
+- First-source Commission interstitial handling remains exact-host-only with explicit ANFR fallback; arbitrary non-allowlisted hosts remain fail-closed.
+- New exact-head CI still required. PR #218 not merged.
