@@ -1,3 +1,15 @@
+## 2026-11-24 — LS메카피온 서보 드라이브 CRA 적용 범위·제품 분류 정밀 분석
+
+- 공식 법령 Regulation (EU) 2024/2847 Article 2/3/6/7/8/13/31/32 및 Annex III/IV, Commission Guidance C/2026/6013(OJ C 17.11.2026), Implementing Regulation (EU) 2025/2392를 대조했다.
+- 2026-07-27 Commission 발표는 1차 안내 공지이며, 최신 정식 관보 해석지침은 C/2026/6013(2026-11-17)로 구분했다.
+- 통신형 서보 드라이브는 실제 EU 공급 및 디지털 데이터 연결이 확인되면 CRA 적용 가능성이 높다. 단순 전자 신호와 디지털 정보 교환은 Guidance §§26–28에 따라 구분한다.
+- 모터 제어가 완제품의 core functionality라면 Default category 가능성이 높다. EtherCAT/Fieldbus 인터페이스는 2025/2392 Annex I category 10에 해당할 수 있지만 통합 드라이브 전체에 자동 승계되지 않는다.
+- ST MCU는 Annex III Class I category 14 또는 Class II category 4를 개별 검토한다. MCU 브랜드만으로 분류하지 않으며 category 4에는 tamper evidence/resistance/response 및 AVA_VAN 2/3 설계 근거가 필요하다.
+- EN 40000-1-1/-1-2는 2026-11-19 공개 확인. CRA Article 27 OJ 인용을 확인하지 못했으므로 적합성 추정 주장을 하지 않는다.
+- 상세 보고서 reports/CRA_MECAPION_SERVO_DRIVE_SCOPE_CLASSIFICATION_2026-11-24.md v1.0 작성. 통합 보고서 §54 및 제품 증거 등록부 §15에 연결했다.
+- 실제 SKU, Converter/Drive Unit 판매 경계, HW/FW, BOM, ST MCU 전체 주문코드/보안 설정은 Unknown 유지. 확인되지 않은 구조를 가정하지 않는다.
+- 운영 코드, 운영 workflow, secrets, API cadence는 변경하지 않는다. CRA only; SIL 3 제외.
+
 ## 2026-11-23 — C(2026)7861 Annex I 공식 별첨 원문 확보
 
 - 공식 Commission document register의 별도 Annex PDF를 확보: https://ec.europa.eu/transparency/documents-register/api/files/C%282026%297861_1/de00000001090401
