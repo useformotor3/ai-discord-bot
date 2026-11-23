@@ -2910,3 +2910,10 @@
 - Detailed M/606 dates cross-checked: items 1 and 15 2026-11-30; items 16–41 2027-01-31; items 2–14 2027-10-30. Annex table itself not present in retrieved official PDF copy, so mark dates as cross-checked, not primary annex transcription.
 - Report v0.20 §51 and product evidence register §12 added on research branch.
 - CRA only; SIL 3 excluded; no operational code/workflow/secrets/API cadence changes.
+
+
+## 2026-11-23 — PR #210 exact-head CI 대기 상태 확인
+
+- PR #210 head `eb51d03a60cbb4cfb4341a88ef7ed2fa4331e06a` 생성 후 GitHub Actions pull_request run 목록 및 commit check-runs를 조회했으나, 해당 SHA의 run/check가 아직 보이지 않음.
+- CI 미실행/미확인 상태이므로 PR #210을 병합하지 않는다. exact-head run 생성 및 성공 결과를 확인한 뒤 다음 단계 진행.
+- 이 상태 기록은 CI 결과를 성공으로 간주하지 않기 위한 통제 로그다.
