@@ -1964,3 +1964,13 @@
 4. iX700M 정확한 manual PDF/file version 및 PEGA2/iX700M PDF 원문·SHA-256 확보를 계속 최우선으로 둔다.
 5. actual SKU/HW/FW/BOM, Converter/Drive Unit 판매 경계, ST MCU full order code 확보 전 제품별 Annex III/IV 및 Article 32 route는 Unknown 유지.
 6. CRA only; SIL 3 제외; 운영 코드/workflow/secrets/API cadence 변경 금지.
+
+
+## 2026-11-23 — PR #208 병합 완료 및 검증
+
+- PR #208 squash merge SHA a27130d7f4a36bdeb9a64717188583f9fa66278c.
+- Exact-head PR Run #1366 / ID 45138293050 success; main push Run #1367 / ID 45138412407 success.
+- Pre/post safety refs: safety/pre-pr208-merge-2026-11-23 / safety/post-merge-pr208-2026-11-23.
+- 보고서 v0.19 §50 및 제품 증거 등록부 §11 main read-back 확인. PROJECT_LOG 328 records, invalid JSON 0.
+- 다음: iX700M 상세 매뉴얼 원문·PDF bytes 확보 시도; 정확한 SKU/HW/FW/BOM 및 ST MCU full order code 증거 확보; M/606 meeting outcome/ESO notices 추적.
+- CRA only; SIL 3 제외; 운영 코드/workflow/secrets/API cadence 변경 금지.
