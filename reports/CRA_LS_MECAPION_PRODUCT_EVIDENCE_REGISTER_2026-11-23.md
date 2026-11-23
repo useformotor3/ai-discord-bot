@@ -176,3 +176,53 @@ Commission Guidance C/2026/6013은 2026-11-17 OJ C에 게재된 61페이지 공�
 - https://craevidence.com/cra-compliance/harmonised-standards-status
 
 **적용성:** iX700M에 대한 제품별 표준 선택, Annex III/IV 등급 및 conformity assessment route는 실제 SKU·core functionality·판매 경계·최종 표준 scope 증거가 확보되기 전까지 Unknown.
+
+## 13. 2026-11-23 최신 공개자료 재점검
+
+### 13.1 ETSI EN 304 625
+
+공식 ETSI Work Item DEN/CYBER-EUS-0017은 2026-11-21 갱신 화면에서 EN 304 625 V1.0.0을 `Draft Review after PE (2026-11-19)`로 표시한다. CRA M/606 연계 및 candidate for harmonisation으로 분류되어 있으나, 이는 최종 발행 또는 OJ 인용을 뜻하지 않는다. EtherCAT 인터페이스 존재만으로 해당 표준 적용성이나 CRA class를 확정하지 않는다.
+
+- 공식 Work Item: https://portal.etsi.org/webapp/WorkProgram/Report_WorkItem.asp?WKI_ID=74860
+- 2026-11-23 현재 OJ 인용/Article 27 presumption: 이 조사에서 확인되지 않음.
+
+### 13.2 M/606 AMD 1 / C(2026)7861
+
+ETSI 달력에는 2026-11-23 GoSRSReq006-M/606 AMD 1 examination meeting 일정이 게시되어 있다. 회의 결과·회의록은 확보하지 못했다. ESO별 C(2026)7861 실제 수령일과 Article 2 비수락 통지 여부도 Unknown이다. 결정일을 수령일로 간주하거나 2026-12-10을 자동 만료일로 계산하지 않는다.
+
+| 항목 | 상태 |
+|---|---|
+| 회의 일정 게시 | Confirmed |
+| 회의 개최·결과·회의록 | Unknown |
+| CEN/CENELEC/ETSI 수령일 | Unknown |
+| Article 2 비수락 통지 | Unknown |
+| 결정 최종 적용 상태 | Unknown |
+
+- ETSI calendar: https://portal.etsi.org/tb.aspx?TBID=287&subTB=287
+- C(2026)7861: https://ec.europa.eu/transparency/documents-register/api/files/C%282026%297861_0/de00000001090398
+
+### 13.3 M/606 목표일
+
+기존 교차확인값: Items 1 및 15는 2026-11-30, Items 16–41은 2027-01-31, Items 2–14는 2027-10-30. 공식 결정 PDF의 Annex 표 원본은 아직 확보되지 않았으므로, 이 세부 날짜는 교차확인값으로 표시한다. Commission 페이지는 일부 horizontal 및 모든 vertical deliverable의 3개월 연장을 설명한다: https://digital-strategy.ec.europa.eu/en/policies/cra-standardisation
+
+이 목표일은 ESO 표준화 일정이며 제조사 CRA 적용기한이 아니다. OJ 공표 전 적합성 추정을 주장하지 않는다.
+
+### 13.4 iX700M 매뉴얼 인덱스 재확인
+
+- LS메카피온 iX700M DRIVE 400[V] Ver1.4: 2026-05-26 목록 게시.
+- Solution Square iX700M 사용 설명서: 2026-09-16 목록 갱신.
+- PEGA2 Ver1.3: LS메카피온 2026-04-01 / Solution Square 2026-08-28 목록 항목.
+
+PDF 본문, 파일명/revision equivalence, SHA-256은 미확보다. 목록 날짜만으로 더 최신 revision을 추정하지 않는다. 보안기능의 유무도 PDF와 설계자료 확인 전에는 Unknown으로 유지한다.
+
+공식 인덱스: https://www.lsmecapion.com/bbs/board.php?bo_table=manual
+
+### 13.5 운영 자동화
+
+CRA schedule Run #2546 (ID 45155788066)은 success. 조사·요약·검증 guard·checkpoint pruning 단계도 success였으나 artifact는 없었다. 이는 실행 성공이지 조사 결과의 법적 정확성 검증 완료를 의미하지 않는다. 운영 workflow/API cadence는 변경하지 않았다.
+
+- Run: https://github.com/useformotor3/ai-discord-bot/actions/runs/45155788066
+
+### 13.6 제품별 판정의 보류 사항
+
+정확한 iX700M SKU/nameplate, Converter/Drive Unit 공급·판매 경계, HW/FW revision, BOM, ST MCU 전체 order code 및 보안 설정이 확보되기 전까지 제품별 CRA 분류·Annex III 등급·적합성 평가 경로는 Unknown이다.
