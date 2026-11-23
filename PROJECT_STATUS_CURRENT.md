@@ -1763,3 +1763,15 @@
 - 새 공식 근거: Commission Guidance C/2026/6013 (OJ C, 17.11.2026) 비구속적 해석 지침. Core functionality, 모듈 별도 판매 경계, ST MCU due diligence, 잔여 위험, support period, firmware update substantial modification 해석을 §48에 반영.
 - 다음 P0: LS메카피온 실제 SKU/nameplate/HW/FW/BOM 및 Converter/Drive Unit 판매 경계 확보; ST MCU full order code와 보안 기능 활성화 증거 확보; M/606 ESO 수령·비수락 통지/회의 결과 추적.
 - 범위 CRA only. SIL 3 제외. 운영 코드/workflow/secrets/API cadence 변경 없음.
+
+
+
+## 2026-11-23 — LS ELECTRIC Solution Square 매뉴얼 인덱스 교차검증
+
+- LS ELECTRIC Solution Square 공식 Motion & Servo 문서 목록에서 iX700M 사용 설명서 update 2026-09-16, PEGA2 사용 설명서 update 2026-08-28 확인.
+- PEGA2 User Manual 영문 상세 결과: update 2026-09-23, PEGA2_ENG_Ver1.3_260831.pdf, 6.0 MB, 적용 제품 PEGA2 series 및 14개 목차 메타데이터 확인.
+- LS메카피온 PEGA2 상세 첨부파일은 PEGA2_KOR_Ver1.3_260826.pdf, DATE 2026-08-28. 언어별 파일 동일 개정 여부는 hash/본문 비교 전까지 Unknown.
+- iX700M Solution Square update date는 기존 LS메카피온 Ver1.4 인덱스 게시일(2026-05-26)보다 늦지만 버전/파일명이 확인되지 않아 Ver1.5 또는 개정판으로 추정하지 않음.
+- 보고서 v0.18 §49 및 제품 증거 등록부 §10 추가. PDF 원문·SHA-256·페이지별 본문은 아직 미확보/미검증.
+- 다음 P0: Solution Square iX700M 정확한 파일 식별; iX700M/PEGA2 PDF 원문 확보 및 hash/버전/언어 비교; 통신·업데이트·접근통제 장의 조항별 추출.
+- 범위 CRA only. SIL 3 제외. 운영 코드/workflow/secrets/API cadence 변경 없음.
