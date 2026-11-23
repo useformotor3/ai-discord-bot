@@ -1908,3 +1908,12 @@
 - Main push CI: source identity, compile, CRA traceability, full pytest, official PDF/HTML canaries, provenance manifest upload success. PDF evidence upload은 unchanged 조건으로 skipped.
 - PROJECT_LOG는 이 상태 동기화 이전 330 records, invalid JSON 0.
 - CRA only; SIL 3 제외; 운영 코드/workflow/secrets/API cadence 변경 없음.
+
+
+## 2026-11-24 — PR #217 병합 및 iX700M 제조사 제품경계 재조사
+- PR #217 exact HEAD `7cb58fa15294012cc8cad8ea622948f08dfa6792`, Run #1385 / ID `45270268204`: success. Blob identity, compile, CRA traceability, full pytest, official CRA PDF/HTML canaries 성공; PDF upload skipped_unchanged, provenance manifest upload success.
+- PR #217 squash merge 완료: `5ea2f500dc69bd7c946895aeb3141df8fd8d1f99`. 문서 9개만 변경, 운영 코드/workflow/secrets/API cadence 무변경.
+- LS메카피온 공식 자료에서 iX700M Converter/Drive 기능 분리, Bus-Bar/DC Link/RS-485/EtherCAT 구조, 개별 모델코드 체계와 유닛별 별도 CE DoC 게시 항목 확인.
+- 기능적 분리와 문서상 제품 식별은 Confirmed. 독립 상업 판매·별도 주문 및 EU 시장 개별 PDE 공급은 Unknown으로 유지. 사용자 실제 SKU도 Unknown.
+- 최신 매뉴얼 인덱스 Ver1.4(2026-05-26) 확인; PDF 본문/해시 미확보. CE DoC 본문도 미확보.
+- 상세 보고서 §13, 통합 보고서 §55, 증거 등록부 §17 추가 예정. 작업 브랜치 `research/cra-ix700m-unit-sales-boundary-2026-11-24`; CRA only, SIL 3 제외.
