@@ -1834,3 +1834,15 @@
 - PR #210 head `eb51d03a60cbb4cfb4341a88ef7ed2fa4331e06a` 기준으로 GitHub Actions의 pull_request run 목록과 commit check-runs를 조회했으나, exact-head run/check가 아직 생성되지 않은 상태를 확인했다.
 - PR #210은 open이며, exact-head CI 결과가 없으므로 병합하지 않는다.
 - 다음 확인: Actions run/check 생성 여부를 다시 조회한다. run이 끝나면 source identity, compile, CRA traceability, 전체 pytest, 공식 CRA PDF/HTML canary, provenance manifest 결과를 각각 확인한다.
+
+
+## 2026-11-23 — PR #210 병합 및 검증 완료
+
+- PR #210 병합 완료: squash SHA `5318eb279076748e12d17fc29c7a7d34d28a6f48`.
+- PR exact-head CI Run #1370 / ID `45149854235`: success.
+- Main push CI Run #1371 / ID `45149981745`: success.
+- 복구 기준점: `safety/pre-pr210-merge-2026-11-23`, `safety/post-merge-pr210-2026-11-23`.
+- 통합 CRA 보고서 v0.20 §51 및 제품 증거 등록부 §12 main read-back 확인.
+- Main push CI: source identity, compile, CRA traceability, full pytest, official PDF/HTML canaries, provenance manifest upload success. PDF evidence upload은 unchanged 조건으로 skipped.
+- PROJECT_LOG는 이 상태 동기화 이전 330 records, invalid JSON 0.
+- CRA only; SIL 3 제외; 운영 코드/workflow/secrets/API cadence 변경 없음.
