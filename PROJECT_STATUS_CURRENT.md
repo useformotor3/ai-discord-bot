@@ -1917,3 +1917,12 @@
 - 기능적 분리와 문서상 제품 식별은 Confirmed. 독립 상업 판매·별도 주문 및 EU 시장 개별 PDE 공급은 Unknown으로 유지. 사용자 실제 SKU도 Unknown.
 - 최신 매뉴얼 인덱스 Ver1.4(2026-05-26) 확인; PDF 본문/해시 미확보. CE DoC 본문도 미확보.
 - 상세 보고서 §13, 통합 보고서 §55, 증거 등록부 §17 반영 완료. 작업 브랜치 `research/cra-ix700m-unit-sales-boundary-2026-11-24`; CRA only, SIL 3 제외.
+
+
+## 2026-11-24 — PR #218 CI 및 제조사 증거 추가
+- Run #1388 attempt 1 실패: Commission PDF 뉴스룸이 `sorry.ec.europa.eu`로 리디렉션되어 allowlist에서 거부됨. Source identity, compile, CRA traceability, pytest 183개는 성공.
+- 특정 Commission interstitial만 fallback trigger로 처리하고 임의의 비허용 호스트는 계속 fail-closed하는 수정 및 regression test 추가. workflow blob pins 갱신.
+- 제품군 페이지: 모듈형 EtherCAT, AC380–480V, 4.5–75kW, 16.1–168A/축 확인.
+- Ver1.4 매뉴얼 목록(2026-05-26), 외형 CAD 2D/3D 목록(2026-04-21), KC `iX700MCB-B-8K`, 해외 영업 창구 확인.
+- 매뉴얼/CAD 본문, 회로도/BOM/PCB/MCU 미확보. MCB 의미 Unknown. 사용자 ST MCU 정보는 iX700M 탑재 증거가 아님.
+- Converter/Drive 독립 판매·EU 개별 공급 및 실제 사용자 SKU는 Unknown. PR #218 미병합.
