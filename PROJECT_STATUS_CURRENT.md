@@ -1,3 +1,8 @@
+## 2026-11-24 — EN 40000 및 CRA Guidance 근거 정밀 정정
+- 2026-07-27 Commission guidance announcement가 C(2026)6013을 연결하며, 2026-11-17 OJ C/2026/6013은 동일 문서의 관보 게재본임을 확인했다. 서로 다른 두 지침으로 세지 않는다.
+- CEN/CENELEC 공식 카탈로그에서 EN 40000-1-1:2026 및 EN 40000-1-2:2026의 DAV 2026-11-18과 “Citation in OJEU: No citation expected for Directive 2024/2847”를 직접 확인했다. CRA Article 27 적합성 추정 근거로 사용하지 않는다.
+- 보고서 v1.0, 통합 보고서 §54 및 제품 증거 등록부 §16에 정정 반영. CRA only; SIL 3 제외.
+
 ## 2026-11-24 — LS메카피온 서보 드라이브 CRA 적용 범위·제품 분류 정밀 분석
 
 - Regulation (EU) 2024/2847 Article 2/3/6/7/8/13/31/32 및 Annex III/IV, Commission Guidance C/2026/6013(OJ C 17.11.2026), Implementing Regulation (EU) 2025/2392를 대조했다.
