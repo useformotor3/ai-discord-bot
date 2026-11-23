@@ -1357,3 +1357,78 @@ Commission의 공식 표준화 페이지는 2026-11-10 개정으로 모든 verti
 - CRA Evidence, harmonised standards status: https://craevidence.com/cra-compliance/harmonised-standards-status
 
 **검증 원칙:** 1차 결정문에 적힌 Article 2 조건과 2차 출처가 설명하는 Annex 세부 날짜를 구분한다. 2차 자료를 Commission의 공식 원문인 것처럼 인용하지 않는다.
+
+## §52. 2026-11-23 최신 ETSI·M/606·제품자료 재점검
+
+### 52.1 EN 304 625의 실제 표준화 단계
+
+ETSI Work Item DEN/CYBER-EUS-0017의 2026-11-21 갱신된 Work Programme v2.3.3 화면은 EN 304 625, “Cybersecurity requirements for physical and virtual network interfaces”의 상태를 `Draft Review after PE (2026-11-19)`로 표시한다. 최신 버전은 1.0.0, 표지일은 2026-08-10으로 표시되며 CRA M/606 연계 및 candidate for harmonisation 메타데이터가 있다. ETSI Remarks에는 EC second assessment의 comment batch가 2026-09-28 및 2026-11-16에 접수되었다고 기재되어 있다.
+
+이 상태는 초안 검토 단계다. 최종 EN 발행, OJ 공표, CRA Article 27 적합성 추정을 뜻하지 않는다. Work Item의 “candidate for harmonisation”은 개발 목적·작업 분류이지, OJ에 인용된 harmonised standard라는 법적 상태와 동일하지 않다. 서보 드라이브에 EtherCAT 인터페이스가 있다는 사실만으로 이 표준의 적용 범위, CRA Annex III 등급 또는 적합성 추정을 결정할 수 없다. 최종 scope, 제품의 core functionality, 실제 판매 단위 및 제품 분류를 함께 확인해야 한다.
+
+공식 추적: https://portal.etsi.org/webapp/WorkProgram/Report_WorkItem.asp?WKI_ID=74860
+
+### 52.2 M/606 AMD 1 회의와 C(2026)7861 Article 2 상태
+
+ETSI 공식 Technical Body 달력에는 `GoSRSReq006-M/606 AMD 1 - examination meeting`이 2026-11-23 온라인 회의로 게시되어 있다. 그러나 이번 재점검에서 공개 회의 결과, 회의록, 결정문 또는 CEN/CENELEC/ETSI별 C(2026)7861 수령·비수락 통지를 확보하지 못했다.
+
+| 확인 항목 | 2026-11-23 현재 상태 |
+|---|---|
+| ETSI 달력에 회의 일정 게시 | Confirmed |
+| 실제 개최 여부 및 회의 결과 | Unknown |
+| CEN/CENELEC/ETSI별 결정 수령일 | Unknown |
+| Article 2의 1개월 내 비수락 통지 | Unknown |
+| C(2026)7861의 최종 적용 상태 | Unknown |
+
+결정일 2026-11-10을 ESO 수령일로 간주하지 않는다. 따라서 2026-12-10을 자동으로 Article 2의 만료일이라고 단정할 수 없다. 공식 결정문 Article 2는 수신 ESO 중 하나라도 실제 수령일부터 1개월 안에 개정안을 수락하지 않는다고 통지하면 개정 결정의 적용이 중단되고 2025-02-03자 C(2025)618이 계속 적용된다는 조건을 둔다.
+
+공식 달력: https://portal.etsi.org/tb.aspx?TBID=287&subTB=287  
+공식 결정문: https://ec.europa.eu/transparency/documents-register/api/files/C%282026%297861_0/de00000001090398
+
+### 52.3 M/606 목표일과 제조사 CRA 기한의 구분
+
+Commission CRA standardisation 페이지는 2026-11-10 표준화 요청 개정으로 모든 vertical 표준과 일부 horizontal 표준 deliverable 일정이 3개월 연장되었다고 설명한다. 세부 날짜는 기존 교차확인 결과를 유지하되, 공식 결정 PDF에서 Annex 표 원본을 확보하지 못한 제한을 명시한다.
+
+| M/606 항목 | 교차확인된 deliverable 목표일 |
+|---|---:|
+| Item 1 및 Item 15 | 2026-11-30 |
+| Items 16–41 | 2027-01-31 |
+| Items 2–14 | 2027-10-30 |
+
+위 날짜는 ESO의 표준화 deliverable 목표일이지 제조사의 CRA 준수기한이 아니다. 표준 초안 작성·제출 또는 ETSI Work Item 상태만으로 CRA Article 27의 적합성 추정은 발생하지 않는다. OJ에 표준 참조가 공표되었는지와 공표 범위를 별도로 확인해야 한다.
+
+공식 Commission 설명: https://digital-strategy.ec.europa.eu/en/policies/cra-standardisation  
+세부 Annex 표의 공식 원문 전사·독립 검증은 계속 열려 있는 작업이다.
+
+### 52.4 제품 문서 증거의 확보 한계
+
+2026-11-23 제조사/공급사 공개 인덱스에서 다음 목록 메타데이터를 재확인했다.
+
+- LS메카피온 iX700M DRIVE 400[V] 매뉴얼 Ver1.4: 2026-05-26 게시.
+- LS ELECTRIC Solution Square iX700M 사용 설명서: 2026-09-16 목록 갱신.
+- LS메카피온 PEGA2 Ver1.3: 2026-04-01 게시.
+- Solution Square PEGA2 사용 설명서: 2026-08-28 목록 갱신.
+
+Solution Square의 2026-09-16은 목록의 갱신일로 확인한 값이며 PDF 파일명, revision, 본문, SHA-256을 확보한 것이 아니다. 날짜가 더 늦다는 이유만으로 Ver1.5 또는 Ver1.4 이후 개정판이라고 부르지 않는다. iX700M Ver1.4 PDF 바이너리도 아직 확보하지 못했다. 따라서 통신·펌웨어 업데이트·진단·파라미터 접근·인증/접근통제·secure boot·서명검증·디버그 포트·취약점 처리의 존재 또는 부재를 매뉴얼 내용으로 단정하지 않는다.
+
+공식 인덱스:
+- https://www.lsmecapion.com/bbs/board.php?bo_table=manual
+- https://sol.ls-electric.com/kr/ko/product/category/4?pageNumber=4
+
+### 52.5 자동 조사 workflow 운영 상태와 품질의 구분
+
+GitHub Actions의 CRA 자동 조사 workflow Run #2546 (ID 45155788066)은 2026-11-23T10:24:21Z schedule 실행으로, 대상 main SHA `324570b64affdfc03866df792eabfd67033db6b6`에서 success로 종료했다. job의 조사 스크립트, 결과 요약, 데이터 검증/복원 guard, checkpoint pruning 단계가 success로 표시되었다. 해당 run에서 조회된 artifact는 없었다.
+
+이는 workflow 실행의 운영 성공 신호다. 신규 자료의 독립적인 법적·기술적 정확성 검증이나 보고서 내용의 자동 승인으로 해석하지 않는다. 운영 코드, workflow, secrets, API cadence는 변경하지 않았다.
+
+실행: https://github.com/useformotor3/ai-discord-bot/actions/runs/45155788066
+
+### 52.6 현재 결론과 미해결 증거
+
+1. EN 304 625는 초안 검토 단계로 추적하며 OJ 인용·적합성 추정은 확인되지 않았다.
+2. C(2026)7861 Article 2의 ESO 수령일·비수락 통지·최종 적용 상태는 Unknown이다.
+3. M/606 일정은 표준화 작업 일정이며 제조사 의무기한과 구분한다.
+4. iX700M 실제 매뉴얼 PDF 본문과 최신 revision은 미확보다.
+5. 실제 대상 SKU, Converter/Drive Unit 판매 경계, HW/FW, BOM 및 ST MCU 전체 주문 코드·보안 설정이 없으므로 제품별 CRA 분류·적합성 경로는 Unknown이다.
+
+**다음 조치:** ETSI 회의 결과 및 ESO 통지의 공식 증거 확보, C(2026)7861 Annex I 원본표 확보, iX700M 매뉴얼 바이너리 확보 및 SHA-256/개정 이력 비교를 우선한다. CRA 범위만 유지한다.
