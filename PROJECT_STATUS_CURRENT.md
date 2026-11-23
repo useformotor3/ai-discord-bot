@@ -1670,4 +1670,4 @@
 - 동일 head의 Run #1325 / ID 45105052195는 cancelled. 취소 실행은 성공 건수에 포함하지 않으며, 앞선 #1324 success를 근거로 병합했다.
 - main read-back: 보고서 v0.13 및 §43 존재, M/606 matrix Markdown/CSV 변경 반영, PROJECT_LOG.jsonl 314 records, invalid JSON 0, interior blank 0.
 - Post-merge safety ref: safety/post-merge-pr198-2026-11-23.
-- Merge SHA main push CI Run #1326 / ID 45114580241은 확인 당시 in_progress. PR exact-head CI 성공과 main push CI는 구분하고, main push 완료 후 결론을 갱신한다.
+- Main push CI Run #1326 / ID 45114580241 success. Source integrity, compile, CRA traceability, full pytest, official PDF/HTML canaries, PDF evidence upload 및 provenance manifest upload 모두 성공. PR exact-head Run #1324에서는 PDF evidence upload이 skipped였으나 main push에서는 실제 업로드 성공.
