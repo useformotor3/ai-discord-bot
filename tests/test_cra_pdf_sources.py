@@ -79,6 +79,20 @@ def test_official_commission_sorry_interstitial_uses_allowlisted_anfr_mirror():
     assert item["final_url"] == definition["fallback_url"]
 
 
+def test_official_commission_register_interstitial_is_unavailable_without_mirror():
+    definition = next(
+        item for item in pdf.PDF_SOURCE_CATALOG
+        if item["id"] == "CRA-M606-C2026-7861-ANNEX"
+    )
+    response = FakeResponse(
+        url="https://sorry.ec.europa.eu/",
+        body=b"<html>Commission automated access interstitial</html>",
+        content_type="text/html",
+    )
+    with pytest.raises(pdf.PDFSourceUnavailableError):
+        pdf.fetch_pdf_source(definition, get=lambda *a, **k: response)
+
+
 def test_untrusted_redirect_fails_closed_without_mirror_fallback():
     definition = pdf.PDF_SOURCE_CATALOG[0]
     response = FakeResponse(url="https://evil.example/document.pdf")
