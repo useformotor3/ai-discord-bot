@@ -1,3 +1,15 @@
+## 2026-11-23 — LS메카피온 제품군 증거 등록 및 PR #203 검증 동기화
+
+- PR #203 병합 완료: merge SHA `584a7c092ea434d52f7794452ca85b0cbe981210`.
+- PR exact-head Run #1343 / ID `45133630273`: success. Main push Run #1344 / ID `45133730871`: success. 전체 테스트·CRA traceability·공식 PDF/HTML canary·provenance manifest upload 성공. PDF evidence upload은 unchanged 조건으로 skipped.
+- 복구 기준점: `safety/post-merge-pr203-2026-11-23`.
+- LS메카피온 공식 드라이브 페이지에서 iX700M, iX7M, iX7NH, L7NHA/B, L7NHF, L7PA/B, PHOX, L7C, L7SA/B, GEM 제품군을 확인. 제품군별 전압·용량·통신 유형이 달라 단일 SKU처럼 다루지 않음.
+- iX700M 공개 모델코드 예시 `iX700MD1-B-150B`의 코드 구성은 제조사 인증서 페이지에서 확인. 실제 대상 모델이라고 단정하지 않음.
+- 통합 보고서 작업 브랜치 v0.15 → v0.16, §46 추가. 상세 증거 등록부 `reports/CRA_LS_MECAPION_PRODUCT_EVIDENCE_REGISTER_2026-11-23.md` 작성.
+- iX700M Ver1.4 매뉴얼 및 PEGA2 Ver1.3 매뉴얼의 제조사 목록 메타데이터는 확인했으나, iX700M Ver1.4 본문 PDF는 확보하지 못함. 미열람 내용을 검증된 사실처럼 쓰지 않음.
+- 제품별 Annex III/IV 분류는 정확한 실제 SKU, HW/FW, ST MCU order code 미확보로 Unknown 유지.
+- 범위: CRA only. SIL 3 제외. 운영 코드, workflow, secrets, API cadence 변경 없음.
+
 ## 2026-11-23 — PR #202 병합 및 main 검증 완료
 
 - PR #202 병합 완료: https://github.com/useformotor3/ai-discord-bot/pull/202
