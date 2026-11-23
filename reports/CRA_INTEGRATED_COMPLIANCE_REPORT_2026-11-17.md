@@ -1505,3 +1505,16 @@ CEN/CENELEC는 2026-11-19 EN 40000-1-1(Vocabulary) 및 EN 40000-1-2(Principles, 
 실제 SKU/nameplate, Converter/Drive Unit 별도 판매 여부, HW/FW revision, BOM, ST MCU full order code, 보안 설정, interface driver/API, EU 시장 공급 주체는 Unknown이다. 증거 확보 전 최종 제품별 분류와 Article 32 경로는 확정하지 않는다.
 
 상세 분석·근거 URL·증거 요청 목록은 위 독립 보고서 v1.0을 기준으로 한다. CRA only; SIL 3 제외.
+
+
+## §55. 2026-11-24 — iX700M Converter Unit / Drive Unit 공급 경계 및 실제 모델코드 증거
+
+LS ELECTRIC Solution Square에 게시된 LS메카피온 iX700M 소개자료는 Converter Unit과 Drive Unit을 별도 유닛으로 구분한다. Converter는 AC 380–480 V 3상 입력을 DC 535–675 V로 변환해 Bus-Bar로 Drive Unit에 공급하고, Drive Unit은 DC Bus 전력을 이용해 모터를 구동한다. 유닛 간에는 PE Bus-Bar, DC Link Bus-Bar, DC24V 및 RS-485 Cross Communication이 기재되어 있고 Drive Unit 연결부에는 EtherCAT IN/OUT이 기재되어 있다. 이는 제조사 자료에 근거한 기능적 모듈 구조의 확인이다.
+
+LS메카피온 공식 제품인증서 게시판은 Converter `iX700MCV...`와 Drive `iX700MD...`를 각각 별도 제품 항목으로 게시하며 각기 CE DoC 첨부파일을 표시한다. Converter의 공개 코드 예시는 `iX700MCV-B-150/370/550/750`(15/37/55/75 kW)이고, Drive 예시는 `iX700MD1-B-150B`이며 D1/D2/D3는 1/2/3축, B는 480 Vac, 150은 15 kW, Encoder B는 BiSS-C를 뜻한다. 공식 KC 목록에도 Converter 및 Drive 모델코드가 개별 항목으로 나타난다. 따라서 기능적 유닛 분리, 별도 모델코드 체계, 유닛별 별도 인증문서 게시 사실은 확인했다.
+
+그러나 **모델코드와 별도 CE DoC 게시만으로 독립적인 상업 판매, 별도 주문, 또는 EU 시장에서 각각 PDE로 공급된다는 사실까지 입증되지는 않는다.** 공개자료에서 가격표·주문서·판매조건·EU 공급 계약은 확인하지 못했다. CRA 공급 경계는 통합 시스템 공급, 유닛별 별도 공급, 혼합 공급의 세 시나리오로 유지하고 실제 계약·발주·납품·라벨 증거로 최종 판정한다.
+
+최신 매뉴얼 목록에는 `iX700M DRIVE 400[V] Ver1.4`가 2026-05-26 게시된 것으로 표시되나 PDF 본문·해시는 아직 확보하지 못했다. 카탈로그 첨부파일명에는 KR/EN `251205`가 표시되지만 본문·해시 검증은 미완료다. CE DoC PDF도 게시 사실은 확인했으나 본문 열람은 실패했으므로 그 내용이나 CRA 관련성을 추정하지 않는다.
+
+제품 증거 등록부 §17과 독립 상세 보고서 §13에 세부 출처·판정표·미확보 증거를 기록했다. 실제 사용자 대상 SKU와 독립 판매 여부는 계속 Unknown이다.
