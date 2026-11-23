@@ -1796,3 +1796,11 @@
 - 완료: v0.11 §1~§4에 요약 결론 해설, 법령 효력 계층, 가상 적용성 사례, 적용 일정/전환 규칙 상세 설명을 추가.
 - 다음 순서: §5 제조사 의무와 기술문서/SBOM/지원기간, §6 Article 14 신고 절차, §7 표준·OJ·적합성 평가, §8 기계류 관계, §9 증거 요청, §10 실행계획을 순차 보강.
 - 작성 표준 REPORT_WRITING_STANDARD_CRA.md 및 AI_RULEBOOK §73 유지. 설명을 쉽게 만들되 원문 조건·예외·검증 한계를 삭제하지 않는다.
+
+
+## 2026-11-23 — ST MCU 통합 및 M/606 회의 후속 조사
+
+- [신규 메모](reports/CRA_ST_MCU_INTEGRATION_AND_M606_FOLLOWUP_2026-11-23.md): ST MCU와 Annex III Class I category 14의 기술 설명, 제품 전체 core functionality 기준, M/606 AMD 1 일정 상태 및 증거 요청 목록.
+- 법적 판단 원칙: MCU 부품에 보안 기능이 존재하는지와 서보 드라이브 완제품이 category 14에 해당하는지는 다른 질문이다. 완제품 분류는 제품 전체의 핵심 기능 및 실제 제품 경계 증거로 판단한다.
+- 다음 P0: 2026-11-23 ETSI M/606 AMD 1 회의 후 공식 minutes/decision, 개정 Annex I, ESO 수령일 및 수락/비수락 통지 확인. 공개 일정만으로 회의 결과를 추정하지 않는다.
+- 제품 P0: ST MCU 전체 주문 코드와 보안 기능/설정 자료, LS메카피온 모델별 SKU/HW/FW/BOM/매뉴얼 확보. 미확보 시 Annex III/IV 및 Article 32 route는 Unknown 유지.
