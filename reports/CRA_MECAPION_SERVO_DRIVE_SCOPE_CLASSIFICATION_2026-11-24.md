@@ -455,3 +455,11 @@ KC 목록에는 `iX700MCB-B-8K`가 별도 iX700M 드라이브 항목으로 게�
 4. KC 모델코드 목록: https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&page=2&sca=KC
 5. 해외 대리점 창구: https://www.lsmecapion.com/customer/agency2.php
 6. 해외 영업 담당: https://www.lsmecapion.com/customer/take2.php
+
+
+### 14.9 CI 2차 실패 원인과 공식 OJ PDF 주소 정정
+PR #218 exact HEAD의 Run #1395에서 184개 pytest 및 코드/추적성 검사는 통과했지만 PDF canary가 다시 실패했다. 로그상 두 번째 문서(C/2026/6013) 원본 URL인 EUR-Lex PDF endpoint가 CI runner에서 sorry.ec.europa.eu로 리디렉션되어, 이 문서에는 fallback이 없으므로 엄격한 allowlist에 의해 차단되었다. 이는 CRA 본문 또는 모델 테스트 실패가 아니라 원문 호스트 접근 경로 문제다.
+
+해결을 위해 동일한 공식 관보 PDF를 제공하는 Publications Office의 직접 PDF URL로 변경했다: https://publications.europa.eu/resource/cellar/dcbc848b-e227-11f1-aefc-01aa75ed71a1.0006.01/DOC_1. 브라우저에서 PDF 형식, 61페이지, 제목, C/2026/6013 및 17.11.2026 관보 날짜를 확인했다. 다운로드 도구의 허용 호스트도 publications.europa.eu로 한정했고, 회귀 테스트에서 정확한 URL과 호스트를 확인하도록 했다. PDF magic, 필수 identity markers 및 본문 텍스트 검증은 그대로 유지한다.
+
+새 exact HEAD CI가 이 URL에서 실제 PDF를 받아 marker/hash 검증까지 성공하기 전에는 PR을 병합하지 않는다.
