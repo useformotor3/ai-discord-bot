@@ -1,6 +1,6 @@
 # CRA 서보 드라이브 통합 규제·기술 준수 보고서
 
-- 문서 버전: v0.16 (LS메카피온 제품군 증거 등록 및 제품별 분류 경계)
+- 문서 버전: v0.17 (2026-11-17 EU 관보 CRA 공식 지침 반영)
 - 기준일: 2026-11-23
 - 프로젝트 범위: EU Cyber Resilience Act(CRA) 대응만
 - 기준 제품군: 산업용 서보 드라이브 및 필수 펌웨어·설정/진단 소프트웨어
@@ -1177,3 +1177,64 @@ CRA Article 7(1)과 Commission Implementing Regulation (EU) 2025/2392의 전문 
 5. OJ citation은 EUR-Lex/Commission 공식 harmonised standards index에서 표준별로 독립 확인.
 
 **공식 확인 출처:** ETSI Technical Bodies meeting calendar, https://portal.etsi.org/tb.aspx?TBID=287&subTB=287 ; ETSI CYBER group calendar, https://portal.etsi.org/tb.aspx?TBID=162 ; Commission Implementing Decision C(2026) 7861 final 및 Annex I(§43 출처 참조).
+
+
+
+## 48. 2026-11-17 Commission CRA Guidance C/2026/6013 — 서보드라이브 적용 해석
+
+### 48.1 문서의 법적 지위와 조사상 중요성
+
+- 문서: Communication from the Commission — Commission guidance on the application of Regulation (EU) 2024/2847 (Cyber Resilience Act), C/2026/6013.
+- 관보 게재일: 2026-11-17, Official Journal C series.
+- 원문: https://eur-lex.europa.eu/eli/C/2026/6013/oj ; PDF: https://publications.europa.eu/resource/cellar/dcbc848b-e227-11f1-aefc-01aa75ed71a1.0006.01/DOC_1
+- 범위: 61페이지. CRA scope, placing on market, HW/SW combination, FOSS, substantial modifications/spare parts, support period, core functionality/conformity assessment, cybersecurity risk assessment, integrated components, remote data processing, reporting/vulnerability handling 및 타 법령과의 관계를 다룬다.
+- **법적 지위:** Commission의 공식 해석 지침이지만 그 자체가 CRA 규정과 같은 구속력 있는 법령은 아니다. 지침 §8은 지침이 경제운영자에게 구속력이 없고 CRA의 권위 있는 해석은 CJEU만 할 수 있다고 명시한다. 따라서 법적 의무의 근거는 Regulation (EU) 2024/2847 원문이며, C/2026/6013은 Commission 해석과 적용 예시를 설명하는 보조 근거로 인용한다.
+- 이 지침은 2025 FAQ와 별개인 2026-11-17 신규 공식 자료이므로 보고서·체크리스트·제품 판단에 반영한다.
+
+### 48.2 제품 분류는 MCU나 통신 옵션이 아니라 완제품의 핵심 기능을 기준으로 한다
+
+- 지침 §141~144: 제품이 중요/핵심 제품 카테고리의 기능을 일부 수행하거나 그러한 부품을 포함한다는 사실만으로 제품 전체가 그 카테고리에 해당하지 않는다. 해당 제품의 intended purpose, 실제 기술 특성, 주요 기능과 기술 능력을 객관적으로 평가해 core functionality를 하나로 식별한다. 마케팅 문구로 기능을 과장·축소해 분류를 회피해서는 안 된다.
+- 지침 §145: 복수 모듈이 하나의 제품으로 통합되어 공급되는 경우에는 통합 제품의 핵심 기능을 본다. 반대로 모듈을 별도 구매·라이선스 등으로 독립 제공하면 그 모듈은 별도 PDE로 취급하고 각자의 핵심 기능으로 분류한다. 통합 제품에만 부품으로 공급되고 별도 제공되지 않는 모듈은 통합 제품 수준에서 판단한다.
+- 지침 §147~151: 중요 제품의 적합성 평가 절차는 핵심 기능이 결정하지만, 제조자는 제품 전체가 Annex I 필수 요구사항을 충족하는지 보장해야 한다. OJ에 인용된 관련 조화표준이 핵심 기능 위험을 다루더라도 표준 범위 밖의 추가 기능 위험은 별도 평가·조치·문서화해야 한다.
+- **서보드라이브 적용:** 모터 전류/속도/위치 제어, 전력변환, 다축 동기화, 네트워크 통신, 진단·설정·업데이트 기능 중 실제 제품의 핵심 기능을 SKU별로 특정한다. EtherCAT/RS-485/USB/Ethernet 포트 또는 보안 기능 MCU가 있다는 이유만으로 라우터·네트워크 인터페이스·보안 MCU 카테고리로 자동 분류하지 않는다.
+- iX700M의 Converter Unit, Drive Unit 및 다축 구성은 별도 판매 여부, 공급·설치 방식, 독립 동작 가능성, 개별 모델/펌웨어, 계약상 제품 경계를 확인한다. 통합 시스템의 구성품인지 독립 판매되는 제품인지 확인 전에는 모듈별 CRA 분류를 확정하지 않는다.
+
+### 48.3 ST MCU와 외부 부품에 대한 위험 기반 실사(due diligence)
+
+- 지침 §170~173: 제3자 공급 하드웨어·소프트웨어가 제품에 물리적/논리적으로 통합되면 제조자는 그 부품의 속성이 완제품의 보안 목표와 필수 요구사항을 훼손하지 않도록 위험 기반 실사를 수행해야 한다.
+- 가능한 증거는 부품 제조사의 기술 사양, 보안 문서, 관련 적합성/보증 자료이며, 적절한 경우 제조자가 부품의 관련 기능을 확인하는 시험을 수행할 수 있다.
+- 자체 개발 기능은 제조자가 직접 필수 요구사항을 구현해야 한다. 외부 개발 부품은 해당 부품이 제품 전체의 CRA 준수를 가능하게 하는 방식으로 사용되는지 통합 단계에서 실사해야 한다.
+- **ST MCU 개발 증거 요청:** 정확한 full order code와 silicon revision, 적용 reference manual/datasheet/errata, secure boot 및 debug lock 기능의 존재와 실제 활성화 상태, 키 생성·저장·주입·회전·폐기 구조, firmware update 검증, rollback 방지 여부, 보안 이벤트/취약점 공지, 공급자 지원기간, 관련 시험결과를 확보한다. 기능이 칩에 존재한다는 것과 실제 제품에서 활성화·구성·검증되었다는 것은 별개다.
+- MCU 또는 통신칩 공급자 자료를 확보하지 못했다고 책임이 공급자에게 이전되는 것은 아니다. 제품을 EU 시장에 출시하는 제조자가 제품 전체의 적합성 입증 책임을 유지한다.
+
+### 48.4 잔여 위험·내부 위험 허용치·비용의 한계
+
+- 지침 §156~163: 위험평가는 위험 식별만으로 끝나지 않으며 제품 영향과 적절한 위험처리 조치를 연결해야 한다. 잔여 위험은 실제로 완전히 제거할 수 없지만, 제조자의 내부 위험 선호도(risk appetite), 상업 전략 또는 비용만으로 미처리 위험을 정당화할 수 없다.
+- 위험을 충분히 처리할 수 없다면 제품 설계·기능·intended purpose 변경이 필요할 수 있다. 사용자 설명서나 신뢰된 환경 사용 제한은 제품 설계 결함을 사용자에게 전가하는 수단이 아니라, 실제 위험평가와 적절한 보호조치에 연결될 때만 보완 수단이 된다.
+- **개발 적용:** 각 위험 항목에 자산, 위협 시나리오, 영향, 위험처리, 잔여 위험, 검증 증거, 승인 책임자를 연결한다. “현장망은 폐쇄망”, “고객이 방화벽을 설치”, “비용이 높음”만으로 위험 종결 처리하지 않는다.
+
+### 48.5 지원기간은 제품의 합리적 예상 사용기간에 맞춰 결정
+
+- 지침 §125~127: CRA Article 13(8)의 지원기간은 제품 및 구성요소 취약점을 효과적으로 처리하는 기간이며, intended purpose, 제품의 특성, 합리적인 사용자 기대, 관련 EU 법령 등을 고려해 예상 사용기간을 기준으로 정한다.
+- 최소 5년은 하한 보호장치이지 모든 제품에 자동 적용되는 기본값이 아니다. 합리적으로 5년보다 오래 사용될 것으로 예상되는 제품은 그보다 긴 지원기간을 정해야 한다. 구매 시점에 지원 종료일을 최소 월/연도 수준으로 명확히 알려야 한다.
+- **서보드라이브 적용:** 실제 설비 수명, 설치 후 교체 주기, 산업용 제어반/라인의 장기 운영, 대체 부품 수급, 통합 구성품(예: MCU/통신 모듈)의 지원기간, 유사 제품의 시장 지원 관행을 근거로 지원기간을 산정한다. 제품 수명이 길 수 있다는 일반론만으로 임의의 연수를 확정하지 말고, 회사의 제품 수명·서비스 정책과 근거를 수집한다.
+
+### 48.6 펌웨어 업데이트와 실질적 변경(substantial modification)
+
+- 지침 §108: 제품의 intended purpose를 변경하지 않고 새로운 사이버보안 위험을 도입하지 않는 보안 업데이트는 일반적으로 실질적 변경으로 보지 않는다. 기술적으로 큰 변경이 있더라도 보안 위험을 줄이는 목적의 업데이트라는 점만으로 실질적 변경이 되는 것은 아니다.
+- 다만 기능 추가, 통신 경로 변경, 원격 데이터 처리 구조 변경 또는 전체 제품의 사이버보안 위험을 악화시키는 변경은 실제 영향에 따라 별도 평가해야 한다. 변경 유형을 “펌웨어 업데이트”라는 이름만으로 자동 분류하지 않는다.
+- 원 제조자가 실질적 변경을 수행한 경우에도 영향받지 않은 부분의 기존 시험·문서는 재사용할 수 있으나, 변경된 부분과 제품 전체 위험에 대한 판단 및 문서화가 필요하다(지침 §122~124).
+- **개발 적용:** 릴리스마다 변경 목적, 기능·인터페이스 변화, intended purpose 영향, 위협모델 영향, 새 취약점/공격면, 기존 증거 재사용 가능 범위, 재시험 항목을 기록한다.
+
+### 48.7 M/606 일정과 지침의 구분
+
+- Commission CRA standardisation 페이지(2026-11-12 갱신)는 M/606 개정일을 2026-11-10으로 명시하고, 모든 vertical 표준 및 일부 horizontal 표준의 Commission 제출 기한이 3개월 연장되었다고 설명한다.
+- C/2026/6013은 CRA 해석 지침이고, C(2026) 7861은 M/606 표준화 요청의 Annex I 기한을 변경하는 Commission Implementing Decision이다. 두 문서의 법적 기능을 혼동하지 않는다.
+- ESO의 실제 수령·Article 2 비수락 조건과 표준별 Work Item 상태 및 OJ citation은 별도 증거로 추적한다. 표준화 요청 기한은 표준 발행일이나 OJ 인용일이 아니다.
+
+### 48.8 공식 근거 및 적용 한계
+
+1. Commission, C/2026/6013, OJ C, 17.11.2026, §§8, 108, 122~127, 141~151, 156~173: https://eur-lex.europa.eu/eli/C/2026/6013/oj
+2. European Commission, Cyber Resilience Act — Standardisation, last update 12.11.2026: https://digital-strategy.ec.europa.eu/en/policies/cra-standardisation
+3. Regulation (EU) 2024/2847, 특히 Articles 7, 13, 14, 27, 32 및 Annex I/VII: 구속력 있는 법령 원문을 우선한다.
+4. Commission guidance는 비구속적 해석 자료다. 특정 LS메카피온 제품의 core functionality, support period, conformity route를 확정하려면 실제 SKU, 판매·공급 경계, HW/FW, 사용환경 및 제조사 증거가 필요하다.
