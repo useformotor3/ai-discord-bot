@@ -1,3 +1,14 @@
+## 2026-11-23 — CRA 최신 공개자료 재점검 및 자동화 Run #2546 확인
+
+- 작업 브랜치: `research/cra-2026-11-23-live-recheck`; 기준 main: `324570b64affdfc03866df792eabfd67033db6b6`; 복구 ref: `safety/pre-pr212-cra-live-recheck-2026-11-23`.
+- 통합 보고서 §52 및 제품 증거 등록부 §13에 최신 재점검 결과를 추가하는 PR을 준비 중.
+- ETSI EN 304 625: 2026-11-21 갱신 화면의 상태는 `Draft Review after PE (2026-11-19)`. 최종 발행/OJ 인용/Article 27 적합성 추정과 구분.
+- GoSRSReq006-M/606 AMD 1은 2026-11-23 회의 일정 게시만 확인. 개최 결과·회의록, ESO 수령일·비수락 통지, C(2026)7861 최종 적용 상태는 Unknown.
+- M/606 세부 목표일은 기존 교차확인값을 유지하되 공식 Annex 표 원본 확보 전까지 교차확인값으로 표시. 제조사 CRA 기한과 혼동하지 않음.
+- iX700M Ver1.4 (2026-05-26) 및 Solution Square 2026-09-16 매뉴얼은 목록 메타데이터만 확인. PDF 본문·revision·SHA-256 미확보. 2026-09-16을 더 높은 버전이라고 추정하지 않음.
+- CRA 자동 조사 Run #2546 / ID `45155788066`: schedule success; 조사·요약·guard·pruning 성공. artifact 없음. 실행 성공은 자료의 법적 정확성 검증과 다름.
+- 변경은 문서만. 운영 코드/workflow/secrets/API cadence 변경 없음. CRA only; SIL 3 제외.
+
 ## 2026-11-23 — LS메카피온 제품군 증거 등록 및 PR #203 검증 동기화
 
 - PR #203 병합 완료: merge SHA `584a7c092ea434d52f7794452ca85b0cbe981210`.
