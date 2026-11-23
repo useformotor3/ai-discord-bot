@@ -1974,3 +1974,13 @@
 - 보고서 v0.19 §50 및 제품 증거 등록부 §11 main read-back 확인. PROJECT_LOG 328 records, invalid JSON 0.
 - 다음: iX700M 상세 매뉴얼 원문·PDF bytes 확보 시도; 정확한 SKU/HW/FW/BOM 및 ST MCU full order code 증거 확보; M/606 meeting outcome/ESO notices 추적.
 - CRA only; SIL 3 제외; 운영 코드/workflow/secrets/API cadence 변경 금지.
+
+
+## 2026-11-23 — C(2026) 7861 Article 2 / M/606 세부 일정 확인
+
+1. Commission Implementing Decision C(2026) 7861 공식 PDF 본문 Articles 1–3을 확인하고, Article 2의 ESO별 수령일부터 1개월 내 비수락 통지 조건을 보고서에 명시한다. 결정일을 실제 receipt date로 가정하지 않는다.
+2. 세부 M/606 dates: items 1 and 15 = 2026-11-30; items 16–41 = 2027-01-31; items 2–14 = 2027-10-30. 단, 확보한 공식 PDF에는 Annex 표 원문이 없어 공식 개요와 2차 추적자료를 교차확인 값으로 기록하고 Annex 원본 확보 후 재검증한다.
+3. ESO별 receipt date / non-acceptance notice, M/606 AMD 1 examination meeting outcome 및 OJ CRA harmonised standard citations를 공식 자료로 계속 추적한다.
+4. iX700M 정확한 Solution Square manual PDF/file version, PDF bytes/hash 확보를 계속한다. 인덱스 update date만으로 revision을 추정하지 않는다.
+5. Actual SKU/HW/FW/BOM, Converter/Drive Unit 판매 경계, ST MCU full order code가 없으면 제품 분류/적합성 경로는 Unknown.
+6. CRA only; SIL 3 제외; 운영 코드/workflow/secrets/API cadence 변경 금지.
