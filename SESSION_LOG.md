@@ -2774,3 +2774,31 @@
 - main push Run #1326 / ID 45114580241은 in_progress 시점 기록. 최종 결론은 후속 확인.
 
 - PR #198 merge SHA의 main push Run #1326 / ID 45114580241 최종 success 확인. Source integrity, compile, CRA traceability, full pytest, PDF/HTML canary, PDF evidence upload, provenance manifest upload 모두 success. PR exact-head Run #1324의 PDF upload skipped와 구분한다.
+
+
+
+## 2026-11-23 — PR #204 제품 증거 등록부 검토 및 M/606 회의 후속 재조회
+
+### 기준 상태
+- main 기준 commit: 584a7c092ea434d52f7794452ca85b0cbe981210.
+- 열린 PR #204 브랜치: research/cra-lsmecapion-product-evidence-2026-11-23; main 대비 7 ahead / 0 behind.
+- 변경 파일 7개: 보고서, 제품 증거 등록부, README, 상황판, 마스터 계획, 세션 로그, JSONL.
+
+### 조사·검토
+- PR #204의 보고서 v0.16 §46과 제품 증거 등록부를 읽고, 13개 제품군·예시 모델코드가 실제 사용자 대상 SKU로 오인되지 않도록 하는 경계와 미확인 증거 상태를 확인했다.
+- LS메카피온 공식 Servo 카탈로그 목록과 iX700M 상세 게시물을 대조했다. 목록 제목은 2025년 7월을 표시하지만 상세 첨부파일의 파일 날짜는 2025-12-05다. 이 차이를 문서 개정일로 단정하지 않고 register §8에 별도 기록했다. PDF 원문은 아직 확보·검토하지 않았다.
+- ETSI 공식 회의 캘린더를 재조회했다. GoSRSReq006-M/606 AMD 1은 2026-11-23 Online 일정으로 게시되어 있으나, 회의록/결정/공식 contribution 및 ESO receipt/acceptance/non-acceptance notice는 공개 근거로 확보하지 못했다.
+- 따라서 회의가 열리지 않았다고 판단하지 않는다. 회의 개최 여부·결과·개정안 채택·ESO 수령일은 Unknown으로 유지하고 통합 보고서 §47에 기록했다.
+
+### 개선 및 검증 원칙
+- 목록 제목, 첨부파일 메타데이터, 원문 PDF 개정 이력을 별도 필드로 관리한다.
+- 일정 게시와 회의 결과, ESO 수령과 수락, ESO 채택과 OJ citation/Article 27 presumption을 혼동하지 않는다.
+- PR #204는 exact-head CI 확인 전 병합하지 않는다. 이번 점검은 운영 코드/workflow/secrets/API cadence를 변경하지 않았다.
+
+### 다음 작업
+1. PR #204 exact-head CI, 파일 read-back 및 diff 확인.
+2. M/606 minutes/decision/contribution과 ESO별 수령·수락/비수락 통지 추적.
+3. 실제 LS메카피온 SKU/HW/FW/BOM 및 ST MCU full order code 확보.
+4. 원본 매뉴얼·카탈로그 PDF를 확보할 수 있으면 파일 해시·개정·모델 적용범위를 확인.
+
+범위: CRA only. SIL 3 제외.
