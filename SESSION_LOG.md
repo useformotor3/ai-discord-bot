@@ -2674,3 +2674,10 @@
 4. §5~§10 비전문 독자 검토 및 CRA 법률·제품 기술 전문가 교차검토.
 5. 문서 변경은 PR #196에 유지하고 exact-head/main CI와 merge read-back 전에는 병합 완료로 기록하지 않는다.
 
+
+## 2026-11-23 — PR #196 병합 사후 기록
+- PR #196을 exact-head CI Run #1312 success 확인 후 squash merge. Merge SHA e82683964413ca2c5922477e9755c62ae7b21064.
+- PR CI는 source integrity, compile, CRA traceability, full pytest, PDF/HTML canary, provenance upload 성공. PDF evidence upload는 skipped로 기록.
+- main read-back으로 보고서 v0.12, §39~§42, ST MCU/M/606 follow-up note 확인. JSONL 310개 유효 레코드, 내부 빈 행 0.
+- pre/post merge safety refs 생성. main push CI는 현재 조회되지 않으므로 PR exact-head 성공과 혼동하지 않고 후속 확인.
+
