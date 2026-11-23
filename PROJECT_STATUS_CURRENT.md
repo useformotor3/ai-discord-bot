@@ -1745,3 +1745,21 @@
 - PR #204 latest head dc9f6674f0a2e7cdeb3953776f3c573c7304272b exact-head Actions Run #1352 / ID 45135630033 success. Source identity, compile, CRA traceability, full pytest, PDF/HTML live canary 및 provenance manifest upload 성공. PDF evidence upload step은 unchanged 조건으로 skipped.
 - 새 §48/§9 문서 변경은 별도 커밋으로 추가되므로 최신 head CI를 다시 수행해야 한다. 이전 Run #1352 성공을 새 커밋의 CI 성공으로 오인하지 않는다.
 - 범위 CRA only. SIL 3 제외. 운영 코드/workflow/secrets/API cadence 변경 없음.
+
+
+
+## 2026-11-23 — PR #204 병합 및 최신 CRA 지침 반영 완료
+
+- PR #204: https://github.com/useformotor3/ai-discord-bot/pull/204
+- squash merge SHA: 8254b6f97a8c6a82cf33bfa25ab6d01bcf408ff0
+- Exact-head CI Run #1358 / ID 45136682197: success.
+  - Source identity, compile, CRA traceability, full pytest: success.
+  - Official CRA PDF/HTML live canary: success.
+  - Provenance manifest upload: success.
+  - PDF evidence upload: skipped (unchanged); 신규 PDF 원문 확보로 간주하지 않음.
+- main read-back: 통합 보고서 v0.17 §48, LS메카피온 제품 증거 등록부 §9 확인. PROJECT_LOG 324 records, invalid JSON 0.
+- 복구 기준점: safety/pre-pr204-merge-2026-11-23 (merge 전 main SHA 584a7c092ea434d52f7794452ca85b0cbe981210), safety/post-merge-pr204-2026-11-23 (merge SHA 8254b6f97a8c6a82cf33bfa25ab6d01bcf408ff0).
+- Main push CI: 현재 조회한 commit status에는 별도 status context가 없고, workflow 조회 도구는 PR-triggered runs만 반환하므로 main push run 여부/결과는 별도 확인 필요. PR exact-head CI success와 구분.
+- 새 공식 근거: Commission Guidance C/2026/6013 (OJ C, 17.11.2026) 비구속적 해석 지침. Core functionality, 모듈 별도 판매 경계, ST MCU due diligence, 잔여 위험, support period, firmware update substantial modification 해석을 §48에 반영.
+- 다음 P0: LS메카피온 실제 SKU/nameplate/HW/FW/BOM 및 Converter/Drive Unit 판매 경계 확보; ST MCU full order code와 보안 기능 활성화 증거 확보; M/606 ESO 수령·비수락 통지/회의 결과 추적.
+- 범위 CRA only. SIL 3 제외. 운영 코드/workflow/secrets/API cadence 변경 없음.

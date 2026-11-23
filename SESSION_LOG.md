@@ -2844,3 +2844,15 @@
 - PR #204 exact-head Run #1352 (commit dc9f6674f0a2e7cdeb3953776f3c573c7304272b) success. 이후 C/2026/6013 반영으로 문서 전용 커밋이 추가되어 현재 최신 head 36a3dd41236ee03df0dacf407d9117c5ab317cf7에 연결된 PR CI run은 확인되지 않음.
 - 최신 문서 커밋은 소스 코드·workflow 변경 없이 Markdown/JSONL만 변경했다. JSONL 전체 파싱과 핵심 문서 read-back은 통과했지만, 최신 head CI가 확인되기 전에는 PR 병합하지 않는다.
 - CRA only; SIL 3 제외. 운영 코드/workflow/secrets/API cadence 변경 없음.
+
+
+
+## 2026-11-23 — PR #204 병합 후 검증 상태
+
+- Merge SHA: 8254b6f97a8c6a82cf33bfa25ab6d01bcf408ff0; PR #204 squash merge 완료.
+- Exact-head Run #1358 / ID 45136682197 success: source integrity, compile, CRA traceability, full pytest, official PDF/HTML canary, provenance manifest upload.
+- PDF evidence upload은 unchanged 조건으로 skipped. PDF 원문을 새로 확보한 것으로 기록하지 않는다.
+- Pre-merge safety ref: safety/pre-pr204-merge-2026-11-23. Post-merge safety ref: safety/post-merge-pr204-2026-11-23.
+- main read-back: report v0.17 §48, LS Mecapion evidence register §9, JSONL 324 records/0 invalid.
+- main push CI: commit status context 미확인. PR exact-head CI와 구분해 별도 확인.
+- Next: actual LS Mecapion SKU/product boundary, ST MCU order code/configuration evidence, M/606 ESO receipt and meeting outcome.
