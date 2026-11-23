@@ -2681,3 +2681,26 @@
 - main read-back으로 보고서 v0.12, §39~§42, ST MCU/M/606 follow-up note 확인. JSONL 310개 유효 레코드, 내부 빈 행 0.
 - pre/post merge safety refs 생성. main push CI는 현재 조회되지 않으므로 PR exact-head 성공과 혼동하지 않고 후속 확인.
 
+
+
+## 2026-11-23 — PR #197 병합 및 M/606 개정 결정 원문 확인
+
+### PR #197 사후 검증
+- 이전 PR #197 exact-head Run ID 45095286445의 첫 attempt는 dependency install 도중 cancelled. 원인을 확인한 뒤 해당 job만 재실행했다.
+- 재실행 결과 exact-head Run 45095286445 success: source integrity, compile, CRA traceability, 전체 pytest, official CRA PDF/HTML canary, provenance manifest 업로드 성공. PDF evidence upload 단계는 skipped.
+- PR #197 squash merge SHA: b69710cf1eb3c17c1e99fc2ecd57e86c23053fde.
+- main read-back에서 PROJECT_LOG.jsonl 311 records, invalid JSON 0, interior blank lines 0 확인. Post-merge safety ref 생성.
+- PR exact-head CI success를 main push CI success로 간주하지 않는다. merge SHA의 main push workflow는 별도 확인 대상.
+
+### M/606 법령 1차 출처 업데이트
+- Commission Implementing Decision C(2026) 7861 final (2026-11-10) 본문 및 Annex I를 Commission document register에서 직접 확인.
+- 변경 기한: 항목 1·15=2026-11-30, 16~41=2027-01-31, 2~14=2027-10-30.
+- Article 2: CEN/CENELEC/ETSI가 해당 개정사항 수령 후 1개월 내 비수락을 통지하면 개정 결정은 적용 중단되고 C(2025)618의 2025-02-03 버전이 계속 적용된다. 각 ESO 수령일 및 비수락 통지 여부는 Unknown 유지.
+- M/606 ESO 채택 기한과 OJ 인용/CRA Article 27 적합성 추정을 분리한다. CRA Regulation 자체의 적용일은 변경되지 않음.
+- 보고서 v0.13 §43에 원문·기한표·조건·제품 영향·증거 한계를 추가.
+
+### 다음 작업
+1. ESO별 receipt/비수락 통지 및 11월 23일 ETSI 회의 결과 1차 증거 확보.
+2. 개정 Annex I 기준 41개 항목의 마스터 매트릭스 기한을 재검증·동기화.
+3. ST MCU 전체 order code/보안기능/활성화 증거와 LS메카피온 모델별 SKU/HW/FW/BOM 확보.
+4. 보고서 §1~§10을 비전문 독자 관점에서 읽고 법률·기술 전문가 교차검토를 위한 쟁점 목록을 정리.
