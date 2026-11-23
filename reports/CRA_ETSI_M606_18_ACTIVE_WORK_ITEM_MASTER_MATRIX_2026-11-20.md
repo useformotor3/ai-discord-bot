@@ -106,9 +106,9 @@ The live ETSI status table above remains a 2026-11-20 snapshot of work-item stat
 
 | ETSI work item mapping | M/606 Annex I item | Amended ESO adoption deadline | Notes |
 |---|---:|---:|---|
-| 17 ETSI vertical work items (EN 304 617–627 and EN 304 631–636) | 17–36 | 2027-01-31 | Vertical standards; each work item retains its own ETSI stage and forecast milestone |
+| 17 ETSI vertical work items (EN 304 617–627 and EN 304 631–636) | 17–27, 31–36 | 2027-01-31 | Vertical standards; each work item retains its own ETSI stage and forecast milestone |
 | EN 304 642 | No direct Annex I mapping identified | Not assigned in this crosswalk | Supporting telecom work item; do not infer a vertical-item deadline without a direct mapping |
-| Non-ETSI / remaining vertical items | 16, 37–41 | 2027-01-31 | Check CEN/CENELEC/other ESO assignments separately |
+| Non-ETSI / remaining vertical items | 16, 28–30, 37–41 | 2027-01-31 | Check CEN/CENELEC/other ESO assignments separately |
 | Horizontal item 1 | 1 | 2026-11-30 | Product design/development/production security requirements |
 | Horizontal item 15 | 15 | 2026-11-30 | Vulnerability handling |
 | Horizontal items 2–14 | 2–14 | 2027-10-30 | Unchanged by C(2026) 7861 |
