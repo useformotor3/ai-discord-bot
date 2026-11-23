@@ -1933,3 +1933,10 @@
 - C/2026/6013 EUR-Lex PDF URL redirected to sorry.ec.europa.eu; no fallback existed, so strict host validation failed closed.
 - Corrected primary source to the official Publications Office direct OJ PDF URL, verified as a 61-page C/2026/6013 PDF dated 17.11.2026. Host allowlist restricted to publications.europa.eu; exact URL/host regression assertion added.
 - PDF content identity and hash validation retained. Exact new HEAD CI required; PR not merged.
+
+
+## 2026-11-24 — Run #1404 C(2026)7861 PDF access limitation
+- Run #1404: source identity, compile, CRA traceability, pytest 184 passed; live PDF canary failed at Commission document-register API for C(2026)7861 Annex, redirected to sorry.ec.europa.eu.
+- C/2026/6013 already uses official Publications Office OJ PDF. C(2026)7861 is not an OJ publication; do not invent an OJ fallback.
+- Exact Commission interstitial now maps to PDFSourceUnavailableError; no third-party mirror auto-accepted. PDF batch reports SKIPPED with exit 0; PDF artifact may be skipped, independent HTML canary remains.
+- Automated C(2026)7861 PDF bytes/hash remain unavailable; Commission register content is browser-verified. PR #218 still requires new exact-head CI and final diff review.
