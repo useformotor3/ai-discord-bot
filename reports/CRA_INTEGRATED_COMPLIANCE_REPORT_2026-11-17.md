@@ -1,6 +1,6 @@
 # CRA 서보 드라이브 통합 규제·기술 준수 보고서
 
-- 문서 버전: v0.21 (2026-11-23 ETSI EN 304 625·M/606·iX700M 최신 재점검)
+- 문서 버전: v0.22 (C(2026)7861 Annex I 공식 별첨 원문 직접 검증)
 - 기준일: 2026-11-23
 - 프로젝트 범위: EU Cyber Resilience Act(CRA) 대응만
 - 기준 제품군: 산업용 서보 드라이브 및 필수 펌웨어·설정/진단 소프트웨어
@@ -1432,3 +1432,43 @@ GitHub Actions의 CRA 자동 조사 workflow Run #2546 (ID 45155788066)은 2026-
 5. 실제 대상 SKU, Converter/Drive Unit 판매 경계, HW/FW, BOM 및 ST MCU 전체 주문 코드·보안 설정이 없으므로 제품별 CRA 분류·적합성 경로는 Unknown이다.
 
 **다음 조치:** ETSI 회의 결과 및 ESO 통지의 공식 증거 확보, C(2026)7861 Annex I 원본표 확보, iX700M 매뉴얼 바이너리 확보 및 SHA-256/개정 이력 비교를 우선한다. CRA 범위만 유지한다.
+
+## §53. C(2026)7861 Annex I 공식 별첨 원문 확보 및 일정 재검증
+
+### 53.1 이번 확인의 의미
+
+앞선 §51~§52에서는 C(2026)7861 결정문 본문 PDF는 확보했지만, 별도 Annex I 표의 원문 파일은 확보하지 못해 세부 날짜를 Commission 개요 페이지 및 독립 추적자료와 대조한 값으로 표시했다. 2026-11-23 추가 조사에서 유럽연합 집행위원회 문서등록부의 별도 Annex 파일을 확인했다. 따라서 아래 일정은 이제 2차 추적자료가 아니라 **Commission 공식 Annex I 원문 직접 확인값**으로 상향한다. 이전 기록은 당시의 증거 상태를 보존하기 위해 삭제하지 않고, 이 절에서 근거 수준 변경을 명확히 한다.
+
+공식 Annex PDF:
+https://ec.europa.eu/transparency/documents-register/api/files/C%282026%297861_1/de00000001090401
+
+공식 문서등록부 검색 결과 및 Annex 본문은 문서명 `C(2026) 7861 final — ANNEX`, 날짜 10.11.2026으로 식별된다. Annex I 제목은 “List of new European Standards to be drafted”이며 표의 기한 열은 “Deadline for the adoption by the ESOs”로 명시되어 있다.
+
+### 53.2 Annex I의 전체 일정 구간
+
+| Annex I 항목 | 표준 주제 범위 | ESO 채택 목표일 |
+|---|---|---:|
+| Item 1 | 위험 기반 설계·개발·생산 수평 표준 | 2026-11-30 |
+| Items 2–14 | 기타 제품 보안 속성 관련 수평 표준 | 2027-10-30 |
+| Item 15 | 취약점 처리 수평 표준 | 2026-11-30 |
+| Items 16–41 | 제품 유형별 수직 표준 | 2027-01-31 |
+
+Annex 표에서 Item 25는 physical and virtual network interfaces, Item 28은 security-related functionalities를 갖는 microprocessors, Item 29는 security-related functionalities를 갖는 microcontrollers, Item 37은 tamper-resistant microprocessors, Item 38은 tamper-resistant microcontrollers에 관한 수직 표준 주제다. 이들 항목이 있다는 사실만으로 특정 부품 또는 완제품이 해당 표준의 대상이라고 결론 내리지 않는다. 각 표준의 최종 scope와 제품의 기능·구성·시장 출시 단위를 확인해야 한다.
+
+### 53.3 법적·일정상 해석 제한
+
+1. Annex 표의 기한은 CEN/CENELEC/ETSI 등 ESO가 해당 표준을 채택하도록 요청받은 목표일이다. 제조사의 CRA 제품 적합성 확보 기한이나 제품 출시 금지일이 아니다.
+2. ESO가 표준을 채택했다는 사실과 그 표준 참조가 EU Official Journal(OJ)에 CRA harmonised standard로 공표되었다는 사실은 다르다.
+3. CRA Article 27의 적합성 추정은 해당 harmonised standard의 참조가 OJ에 공표된 범위와 조건에 따라 판단한다. Annex I 일정만으로 적합성 추정이 발생하지 않는다.
+4. C(2026)7861 본문 Article 2의 조건은 별도다. CEN/CENELEC/ETSI 중 하나라도 실제 수령일부터 1개월 이내 비수락 통지를 했는지, 각 ESO의 실제 수령일이 언제인지 확인되지 않았다. 따라서 결정의 최종 적용 상태는 여전히 Unknown이다.
+5. Annex 표에서 Item 18 설명은 PDF 페이지 경계에서 이어져 표시된다(“standalone and embedded browsers”와 “password managers” 관련 문구). 항목 번호와 날짜를 인접 텍스트와 혼동하지 않도록 원본 페이지 배치를 함께 확인해야 한다.
+
+### 53.4 증거 상태 업데이트
+
+- C(2026)7861 본문: 공식 별도 PDF 확보 및 Article 1~3 확인.
+- C(2026)7861 Annex I: 이번에 공식 별도 PDF 확보, 표의 Item 1~41 기한 직접 확인.
+- ESO 수령일 및 Article 2 비수락 통지: Unknown.
+- M/606 표준화 deliverable 목표일: 공식 Annex I 원문 근거 Confirmed.
+- 제조사 CRA 의무기한 또는 OJ 인용 상태로의 오독: 금지.
+
+**검증 원칙:** 앞으로 일정표를 인용할 때는 C(2026)7861 Annex I를 1차 근거로 우선 인용하고, Commission 개요 페이지 및 2차 추적자료는 보조적 교차검증에만 사용한다.
