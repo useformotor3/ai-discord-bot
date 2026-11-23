@@ -2067,3 +2067,12 @@
 - Report v0.20 §51 and product evidence register §12 are on main.
 - Next: secure official Annex table copy for C(2026) 7861; verify ESO receipt/non-acceptance status; continue iX700M exact manual PDF retrieval and product-specific evidence.
 - CRA only; SIL 3 excluded; no operational code/workflow/secrets/API cadence changes.
+
+
+## 2026-11-24 — iX700M Converter / Drive 제품 경계 증거 기반 보강
+- 제조사 Solution Square PDF와 LS메카피온 공식 CE/KC 제품인증서·매뉴얼·카탈로그 인덱스를 대조한다.
+- 기능적 분리, 별도 모델코드, 별도 DoC 게시, 독립 상업 판매, EU 공급 단위를 서로 다른 증거 항목으로 분리한다.
+- 현재 Confirmed: Converter/Drive 기능 분리, 별도 코드 체계, 유닛별 별도 CE DoC 게시. Unknown: 실제 별도 판매·주문, EU 개별 PDE 공급, 사용자 실제 SKU.
+- 다음 P0: nameplate와 전체 주문코드, 실제 견적/발주/납품 문서, EU 공급계약/수입자 자료 확보.
+- 다음 P1: iX700M DRIVE 400[V] Ver1.4 PDF 본문/해시, 회로도·BOM·HW/FW revision, ST MCU order code 및 EtherCAT/RS-485 protocol/API 검증.
+- CE DoC 게시를 CRA 적합성 증거나 Article 27 presumption으로 오인하지 않는다. PDF 본문 미확보 상태에서 적용 법령·표준을 추정하지 않는다.
