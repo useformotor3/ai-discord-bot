@@ -2833,3 +2833,14 @@
 - PROJECT_STATUS_CURRENT, MASTER_PLAN, SESSION_LOG, README, PROJECT_LOG 갱신.
 - 이전 PR #204 exact-head CI Run #1352는 success. 이번 문서 변경 후의 새 head는 별도 CI가 필요하다.
 - 운영 코드, workflow, secrets, API cadence 변경 없음. CRA only; SIL 3 제외.
+
+## 2026-11-23 — PR #204 최종 브랜치 스냅샷 및 새 CI 게이트
+
+- 작업 브랜치: research/cra-lsmecapion-product-evidence-2026-11-23.
+- 기준 main: 584a7c092ea434d52f7794452ca85b0cbe981210.
+- C/2026/6013 guidance 분석 추가 후 브랜치 비교: 27 commits ahead / 0 behind; 변경 파일 8개.
+- 최신 문서 커밋: 36a3dd41236ee03df0dacf407d9117c5ab317cf7.
+- GitHub read-back: 통합 보고서 v0.17 및 §48, 제품 증거 등록부 §9 확인; PROJECT_LOG 323 records, JSONL parse invalid 0.
+- PR #204 exact-head Run #1352 (commit dc9f6674f0a2e7cdeb3953776f3c573c7304272b) success. 이후 C/2026/6013 반영으로 문서 전용 커밋이 추가되어 현재 최신 head 36a3dd41236ee03df0dacf407d9117c5ab317cf7에 연결된 PR CI run은 확인되지 않음.
+- 최신 문서 커밋은 소스 코드·workflow 변경 없이 Markdown/JSONL만 변경했다. JSONL 전체 파싱과 핵심 문서 read-back은 통과했지만, 최신 head CI가 확인되기 전에는 PR 병합하지 않는다.
+- CRA only; SIL 3 제외. 운영 코드/workflow/secrets/API cadence 변경 없음.
