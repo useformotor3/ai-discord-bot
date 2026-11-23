@@ -1726,7 +1726,7 @@
 ## 2026-11-23 17:00 KST — 일일 재개 점검 및 M/606 회의 후속 재조회
 
 - 기준 main SHA: 584a7c092ea434d52f7794452ca85b0cbe981210 (PR #203 상태 동기화 기준).
-- 열린 PR #204: research/cra-lsmecapion-product-evidence-2026-11-23, main 대비 7 commits ahead / 0 behind, 변경 파일 7개. 현재 열린 PR로 유지하며 exact-head CI를 확인하기 전에는 병합하지 않는다.
+- 열린 PR #204: research/cra-lsmecapion-product-evidence-2026-11-23, main 대비 14 commits ahead / 0 behind (최초 점검 7 ahead에서 이번 세션의 문서 갱신 7 commits 추가 후), 변경 파일 7개. 현재 열린 PR로 유지하며 exact-head CI를 확인하기 전에는 병합하지 않는다.
 - PR #204 보고서 v0.16 §46 및 LS메카피온 제품 증거 등록부를 검토. 제조사 13개 제품군과 예시 모델코드를 실제 사용자 대상 SKU와 구분하고, SKU/HW/FW/BOM 및 ST MCU full order code 미확보 상태를 Unknown으로 유지한다.
 - 제조사 공식 카탈로그 상세 페이지를 추가 확인: iX700M 카탈로그 목록 제목은 2025년 7월을 표시하지만 상세 첨부파일 메타데이터는 2025-12-05 파일 날짜를 표시한다. 문서 개정일로 단정하지 않고 register §8에 메타데이터 차이와 PDF 본문 미확보 한계를 기록했다.
 - ETSI 공식 캘린더는 GoSRSReq006-M/606 AMD 1 examination meeting을 2026-11-23 Online으로 계속 표시한다. 공개 회의록/결정/ESO receipt·acceptance·non-acceptance 원문은 이번 재조회에서 확보하지 못했다. 회의 개최 여부·결과·Article 2 수령일은 Unknown 유지; 보고서 §47 추가.
