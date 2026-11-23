@@ -1,3 +1,12 @@
+## 2026-11-23 — C(2026)7861 Annex I 공식 별첨 원문 확보
+
+- 공식 Commission document register의 별도 Annex PDF를 확보: https://ec.europa.eu/transparency/documents-register/api/files/C%282026%297861_1/de00000001090401
+- Annex I “Deadline for the adoption by the ESOs” 표를 직접 확인. Item 1/15: 2026-11-30; Items 2–14: 2027-10-30; Items 16–41: 2027-01-31.
+- 기존 보고서 §51~§52의 “공식 Annex 원문 확보 대기/교차확인값” 상태를 현재 시점에서 상향한다. 과거 스냅샷은 이력으로 보존하고 보고서 §53 및 증거등록부 §14를 최신 근거로 사용한다.
+- Item 25 network interfaces, Item 28 security-related microprocessors, Item 29 security-related microcontrollers, Item 37 tamper-resistant microprocessors, Item 38 tamper-resistant microcontrollers의 주제도 원문 확인.
+- ESO 실제 수령일·Article 2 비수락 통지·C(2026)7861 최종 적용 상태는 여전히 Unknown. ESO 채택 목표일은 제조사 CRA 기한이나 OJ 인용일이 아니다.
+- 작업 브랜치: `research/cra-m606-official-annex-2026-11-23`; 복구 기준: `safety/pre-pr214-annex-update-2026-11-23`. 문서 변경만 수행.
+
 ## 2026-11-23 — PR #212 병합 및 main CI 검증 완료
 
 - PR #212: https://github.com/useformotor3/ai-discord-bot/pull/212 — squash merge 완료.
