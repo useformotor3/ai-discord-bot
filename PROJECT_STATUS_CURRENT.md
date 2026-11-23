@@ -1815,3 +1815,15 @@
 - 복구 기준점: safety/pre-pr208-merge-2026-11-23 (기준 main SHA 5197ad352cdd79fdacf9c4e4cc20fedb8ae085c6), safety/post-merge-pr208-2026-11-23 (merge SHA a27130d7f4a36bdeb9a64717188583f9fa66278c).
 - Main read-back: 보고서 v0.19 §50, 제품 증거 등록부 §11, PROJECT_LOG 328 records / invalid JSON 0.
 - CRA only. SIL 3 제외. 운영 코드/workflow/secrets/API cadence 변경 없음.
+
+
+## 2026-11-23 — PR #209 병합 및 후속 법령 원문 조사
+
+- PR #209 병합 완료: squash SHA `2ec5a92ad942bb9437d8c7ecd72b8afea389c92c`.
+- PR exact-head Run #1368 / ID `45138595693`: success. Main push Run #1369 / ID `45149364434`: success.
+- 복구 기준점: `safety/pre-pr209-merge-2026-11-23`, `safety/post-merge-pr209-2026-11-23`.
+- Main push CI에서 source identity, compile, CRA traceability, full pytest, official PDF/HTML canary, provenance manifest upload success. PDF evidence upload은 unchanged 조건으로 skipped.
+- 후속 조사: Commission Implementing Decision C(2026) 7861 공식 PDF 본문 Articles 1–3 직접 확인. Article 2의 ESO별 수령일 기준 1개월 비수락 조건을 확인했으며, 수령일/비수락 통지는 Unknown. 세부 Annex 일정은 공식 페이지 개요 및 독립 추적자료로 교차확인했으나 Annex 표 원문은 미확보로 명시.
+- 보고서 v0.20 §51, 제품 증거 등록부 §12 추가 예정.
+- iX700M Solution Square 매뉴얼은 2026-09-16 인덱스 등록까지 확인. 정확한 파일/버전/PDF bytes는 미확보. 최신 날짜를 새 버전이라고 추정하지 않는다.
+- CRA only; SIL 3 제외; 운영 코드/workflow/secrets/API cadence 변경 없음.
