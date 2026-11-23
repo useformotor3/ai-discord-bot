@@ -3050,3 +3050,11 @@
 - 실제 nameplate/SKU, 견적·발주·납품 및 EU 수입자 공급단위 증거 확보.
 - iX700M Ver1.4 manual PDF body/hash 확보.
 - 각 유닛의 회로도/BOM/HW-FW/MCU 및 EtherCAT/RS-485 API·protocol 상세 검증.
+
+
+## 2026-11-24 — PR #218 CI failure and manufacturer evidence
+- Run #1388 attempt 1 failed only at PDF source canary due Commission newsroom interstitial redirect to `sorry.ec.europa.eu`; 183 pytest passed.
+- Specific interstitial fallback trigger, arbitrary untrusted redirects remain fail-closed; regression test and blob pins refreshed. Retry in progress; PR not merged.
+- Manufacturer public evidence: product family specs; current Ver1.4 manual listing; 2D/3D outline CAD listing; KC code MCB-B-8K; overseas sales contact.
+- Manual/CAD attachments unavailable; internal schematic/BOM/PCB/MCU not found publicly. Actual SKU, independent sale and EU separate supply remain Unknown.
+- User ST MCU context is not proof of iX700M MCU.
