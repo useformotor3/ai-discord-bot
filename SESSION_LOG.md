@@ -2917,3 +2917,14 @@
 - PR #210 head `eb51d03a60cbb4cfb4341a88ef7ed2fa4331e06a` 생성 후 GitHub Actions pull_request run 목록 및 commit check-runs를 조회했으나, 해당 SHA의 run/check가 아직 보이지 않음.
 - CI 미실행/미확인 상태이므로 PR #210을 병합하지 않는다. exact-head run 생성 및 성공 결과를 확인한 뒤 다음 단계 진행.
 - 이 상태 기록은 CI 결과를 성공으로 간주하지 않기 위한 통제 로그다.
+
+
+## 2026-11-23 — PR #210 merge + exact-head/main CI verified
+
+- PR #210 squash merge: 5318eb279076748e12d17fc29c7a7d34d28a6f48.
+- PR exact-head Run #1370 / ID 45149854235 success.
+- Main push Run #1371 / ID 45149981745 success.
+- Pre/post recovery refs: safety/pre-pr210-merge-2026-11-23 / safety/post-merge-pr210-2026-11-23.
+- Main read-back: report v0.20 §51, product evidence register §12.
+- CI success: source identity, compile, CRA traceability, full pytest, official PDF/HTML canaries, provenance manifest upload. PDF evidence upload skipped because unchanged.
+- Scope CRA only; SIL 3 excluded; no operational code/workflow/secrets/API cadence changes.
