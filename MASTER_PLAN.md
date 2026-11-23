@@ -1931,3 +1931,14 @@
 - P1: M/606 ESO별 receipt/non-acceptance evidence와 2026-11-23 examination meeting 결과 추적.
 - main push CI status는 별도 확인 필요. PR exact-head CI와 구분.
 - CRA only. SIL 3 제외. 운영 코드/workflow/secrets/API cadence 변경 금지.
+
+
+
+## 2026-11-23 — LS ELECTRIC 공식 매뉴얼 인덱스 추가 확인
+
+1. 보고서 v0.18 §49 / 제품 증거 등록부 §10에 Solution Square의 iX700M(2026-09-16) 및 PEGA2(2026-08-28) 목록 update date를 기록했다.
+2. PEGA2 영문 상세 문서 메타데이터는 PEGA2_ENG_Ver1.3_260831.pdf, update 2026-09-23, 6.0 MB. 한국어 첨부는 PEGA2_KOR_Ver1.3_260826.pdf, file date 2026-08-28. 동일 개정 여부는 원문 비교 전 Unknown.
+3. iX700M의 2026-09-16 항목은 version/file name 미확인. 기존 Ver1.4보다 새 버전이라고 단정하지 않는다.
+4. P0: PDF bytes/문서번호/개정 이력/SHA-256 확보. 통신·펌웨어·유지보수·접근통제 관련 장을 페이지/조항별로 추출한다.
+5. Safety Functions 목차를 CRA cybersecurity 또는 SIL 증거로 혼동하지 않는다.
+6. CRA only. SIL 3 제외. 운영 코드/workflow/secrets/API cadence 변경 금지.
