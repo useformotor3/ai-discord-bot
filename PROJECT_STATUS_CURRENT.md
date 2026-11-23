@@ -1634,3 +1634,11 @@
 - ST MCU Category 14: 정확한 주문 코드와 완제품 구성/활성화 증거가 없으므로 부품·완제품 분류를 구분하고 Unknown 유지.
 - 다음 P0: M/606 minutes/decision 및 ESO receipt/acceptance 확인, ST 전체 order code 및 LS메카피온 SKU/HW/FW/BOM 확보, §5~§10 실제 독자/전문가 검토.
 
+
+## PR #196 병합 및 main read-back — 2026-11-23
+- PR #196 squash merge 완료. Merge commit: e82683964413ca2c5922477e9755c62ae7b21064.
+- PR exact-head 8877c5c3889c43248207e3f55d1bfdbb34a51fd2, Actions Run #1312 / ID 45095111260: success. Source integrity, compile, CRA traceability, full pytest, official CRA PDF/HTML canary, provenance manifest upload 성공. PDF evidence upload step은 skipped로 종료했으므로 PDF 원본 확보로 간주하지 않는다.
+- main read-back: 보고서 v0.12, §39~§42, 신규 ST MCU/M/606 메모, 상태판 변경 확인. PROJECT_LOG.jsonl 310 records, invalid JSON 0, interior blank 0.
+- 복구 refs: safety/pre-pr196-merge-2026-11-23 (pre-merge base), safety/post-merge-pr196-2026-11-23 (merge SHA).
+- PR merge commit의 main push CI run은 확인 시점에 아직 조회되지 않음. PR exact-head CI 성공과 main push CI 실행/결과를 구분한다.
+
