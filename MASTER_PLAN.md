@@ -1918,3 +1918,16 @@
 5. P1: 펌웨어 릴리스별 보안 수정/기능 변경/새 위험을 구분해 substantial modification 영향평가 기록을 만든다.
 6. PR #204 이전 exact-head CI Run #1352 성공은 확인했으나 §48/§9 추가 커밋 후에는 새 exact-head CI가 필요하다. 새 CI 성공 전 병합하지 않는다.
 7. CRA only. SIL 3 제외. 운영 코드/workflow/secrets/API cadence 변경 금지.
+
+
+
+## 2026-11-23 — PR #204 병합 완료 후 다음 조사
+
+- PR #204 squash merge: 8254b6f97a8c6a82cf33bfa25ab6d01bcf408ff0; exact-head Run #1358 success; safety refs pre/post merge 생성.
+- CRA 통합 보고서 v0.17 §48 및 LS메카피온 제품 증거 등록부 §9가 main에 반영됨.
+- P0: actual SKU/nameplate, HW/FW/BOM, Converter Unit/Drive Unit의 독립 판매 여부를 확보해 PDE 경계를 결정.
+- P0: ST MCU full order code, silicon revision, security docs, secure boot/debug/key/update 설정 및 시험 증거 확보.
+- P1: 제품 예상 사용기간·서비스 계약·부품 지원기간을 모아 Article 13(8) support period 산정.
+- P1: M/606 ESO별 receipt/non-acceptance evidence와 2026-11-23 examination meeting 결과 추적.
+- main push CI status는 별도 확인 필요. PR exact-head CI와 구분.
+- CRA only. SIL 3 제외. 운영 코드/workflow/secrets/API cadence 변경 금지.
