@@ -37,6 +37,12 @@
 - EN 304 635 법적 분류는 CRA Annex III Class II category 1, EN 304 636은 Class II category 2다. ETSI page metadata와 충돌하면 Regulation (EU) 2024/2847 및 Implementing Regulation (EU) 2025/2392가 우선한다.
 - EN 304 642는 추가 통신망 기능 지원 work item이며, M/606 Annex I topic과 직접 1:1 매핑이 확인되지 않았다.
 
+## 개별 Work Item 상세 이력에서 확인한 사항
+
+- EN 304 635 WKI 74858: V1.0.9가 2026-11-20 업로드되었고, Enquiry 및 EC HAS2 comments resolution을 포함한 CYBER-EUSR 승인 버전이라고 ETSI remarks에 기록되어 있다. 현재 단계는 EC assessment before WNV requested (2026-11-19)이며, WNV 수령 또는 표준 채택 완료를 뜻하지 않는다.
+- EN 304 625 WKI 74860: 2026-11-19 EC second assessment received; comments는 2026-09-28 및 2026-11-16 두 배치로 기록. Official Journal field는 blank.
+- EN 304 635/636의 법적 Class II category 분류는 CRA/2025/2392에 따르며 ETSI scope metadata의 Class I 표기를 그대로 적용하지 않는다.
+
 ## 절차적 경계
 
 - 18개 Work Item 모두 active list에 존재한다는 사실은 18개 표준이 채택·발행되었다는 뜻이 아니다.
