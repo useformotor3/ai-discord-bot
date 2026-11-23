@@ -1803,3 +1803,15 @@
 - ETSI EN 304 625 work item: 2026-11-19 이후 “Draft Review after PE”, candidate for harmonisation. 물리적·가상 네트워크 인터페이스 요구사항 표준 후보이나 iX700M 적용성은 제품 core functionality/최종 scope 미확정으로 Unknown. EtherCAT/RS-485 포트만으로 자동 분류하지 않는다.
 - 통합 보고서 v0.19 §50, 제품 증거 등록부 §11 추가.
 - CRA only. SIL 3 제외. 운영 코드/workflow/secrets/API cadence 변경 없음.
+
+
+## 2026-11-23 — PR #208 병합 및 CI 이중 검증 완료
+
+- PR #208: https://github.com/useformotor3/ai-discord-bot/pull/208
+- 변경 범위: 보고서 v0.19 §50, 제품 증거 등록부 §11, 상황판/계획/세션/JSONL. 운영 코드·workflow·secrets·API cadence 변경 없음.
+- PR #208 squash merge SHA: a27130d7f4a36bdeb9a64717188583f9fa66278c.
+- Exact-head PR CI Run #1366 / ID 45138293050: success. Source identity, compile, CRA traceability, full pytest, official PDF/HTML canaries, provenance manifest upload 성공. PDF evidence upload은 unchanged 조건으로 skipped.
+- Main push CI Run #1367 / ID 45138412407: success. PR exact-head CI와 별도 확인.
+- 복구 기준점: safety/pre-pr208-merge-2026-11-23 (기준 main SHA 5197ad352cdd79fdacf9c4e4cc20fedb8ae085c6), safety/post-merge-pr208-2026-11-23 (merge SHA a27130d7f4a36bdeb9a64717188583f9fa66278c).
+- Main read-back: 보고서 v0.19 §50, 제품 증거 등록부 §11, PROJECT_LOG 328 records / invalid JSON 0.
+- CRA only. SIL 3 제외. 운영 코드/workflow/secrets/API cadence 변경 없음.
