@@ -1,3 +1,16 @@
+## 2026-11-23 — ETSI M/606 18개 Work Item live status 재점검
+
+- 공식 ETSI active list 재조회: 2026-11-23 / Work Programme v2.3.3 / 18 active items.
+- 통합 CRA 보고서 작업 브랜치에서 v0.14 → v0.15, §45 추가. 11월 20일 스냅샷과 구분해 11월 23일 최신 상태를 별도 기록.
+- 새 매트릭스: `reports/CRA_ETSI_M606_18_ACTIVE_WORK_ITEM_MASTER_MATRIX_2026-11-23.md` 및 `.csv`. CSV는 18개 데이터 행, 20개 열, 모든 행 열 수 일치 확인.
+- 중요 버전 변경: EN 304 619 V1.0.3, EN 304 635 V1.0.9. EN 304 635 상태는 EC assessment before WNV requested (2026-11-19), 다음 단계 2026-11-28로 표시.
+- EN 304 617/618/620/621/622/623/625/626/627/631/632/633/634/636의 최신 active-list status 및 next-stage dates를 snapshot에 반영. EN 304 624는 11월 23일 최신 목록의 상세 행을 재확인하지 못해 이전 monitoring snapshot으로 구분.
+- ETSI status milestone는 계획 단계다. 표준 채택·발행·OJ citation 또는 CRA Article 27 presumption으로 해석하지 않는다.
+- 2026-11-23 GoSRSReq006-M/606 AMD 1 회의는 ETSI calendar의 일정 게시만 확인. 개최 결과·회의록·ESO 수령일/비수락 통지는 Unknown.
+- PR #201 병합: merge SHA `0643c656b7801fcaf4453042e97623f2e57d73cd`. PR exact-head Run #1337 / ID `45123857980` success. Main push Run #1338 / ID `45132883785`는 마지막 확인 시점에 진행 중(공식 PDF canary 이후 단계 확인 필요).
+- 복구 기준점: `safety/post-merge-pr201-2026-11-23`.
+- 범위: CRA only. SIL 3 제외. 운영 코드, 운영 workflow, secrets, API cadence 변경 없음.
+
 ## 2026-11-23 — PR #200 병합 및 CRA Annex III MCU 분류 정밀화
 
 - PR #200: https://github.com/useformotor3/ai-discord-bot/pull/200 — squash merge 완료.

@@ -1,6 +1,6 @@
 # CRA 서보 드라이브 통합 규제·기술 준수 보고서
 
-- 문서 버전: v0.14 (Annex III MCU 분류 및 core functionality 법적 기준 정밀화)
+- 문서 버전: v0.15 (ETSI M/606 18개 Work Item 2026-11-23 최신 상태 재점검)
 - 기준일: 2026-11-23
 - 프로젝트 범위: EU Cyber Resilience Act(CRA) 대응만
 - 기준 제품군: 산업용 서보 드라이브 및 필수 펌웨어·설정/진단 소프트웨어
@@ -1071,3 +1071,76 @@ CRA Article 7(1)과 Commission Implementing Regulation (EU) 2025/2392의 전문 
 **공식 1차 출처**
 - Regulation (EU) 2024/2847, Article 7 및 Annex III: https://eur-lex.europa.eu/eli/reg/2024/2847/oj/eng
 - Commission Implementing Regulation (EU) 2025/2392, Article 2 및 Annex I: https://eur-lex.europa.eu/eli/reg_impl/2025/2392/oj/eng
+
+
+## 45. ETSI M/606 18개 Work Item 최신 상태 재점검 — 2026-11-23
+
+### 45.1 이번 갱신의 이유와 기준
+
+2026-11-20에 작성한 18개 Work Item 표는 당시의 상태 스냅샷이다. 2026-11-23 ETSI Work Programme의 M/606 active list를 다시 조회한 결과, 공식 화면은 **2026-11-23 / Version 2.3.3**으로 표시되고 18개 active item을 유지한다. 따라서 11월 20일 표의 상태·버전·다음 일정은 최신 상태로 오인하지 않도록 별도 스냅샷을 만들었다.
+
+이번 갱신은 법령의 요구사항이나 CRA 적용일을 변경하는 것이 아니다. ETSI의 작업 진행 상태와 예상 다음 단계만 갱신한다. ETSI의 “Draft Review after PE”, “EC assessment before WNV requested” 같은 단계는 표준의 최종 채택·발행 또는 유럽연합 관보(OJ) 인용을 의미하지 않는다.
+
+### 45.2 확인된 주요 상태 변경
+
+| ETSI EN | M/606 item | 2026-11-23 확인 상태 | 다음 단계 / 예정일 | 버전 | 서보 드라이브 분석상 의미 |
+|---|---:|---|---|---|---|
+| EN 304 617 | 17 | Draft Review after PE (2026-11-19) | Final deliverable endorsement (2026-12-21) | 1.0.0 | 브라우저 제품 기준. 드라이브의 웹 UI만으로 브라우저 제품이 되지는 않음 |
+| EN 304 618 | 18 | Draft Review after PE (2026-11-19) | Final deliverable endorsement (2026-11-23) | 0.2.2 | 암호정보 저장 기능만으로 패스워드 매니저 제품이 되지 않음 |
+| EN 304 619 | 19 | EC assessment before WNV requested (2026-11-19) | EC assessment before WNV received (2026-11-28) | **1.0.3** | 악성코드 탐지/제거 제품 범위. 드라이브의 단순 무결성 검사와 구분 |
+| EN 304 620 | 20 | Draft Review after PE (2026-11-19) | Final deliverable endorsement (2027-01-15) | 1.0.0 | 산업 OT VPN은 해당 Work Item scope에서 제외된다고 기술됨 |
+| EN 304 621 | 21 | Draft Review after PE (2026-11-19) | Final deliverable endorsement (2027-01-15) | 1.0.5 | 산업 OT용 NMS는 해당 Work Item scope에서 제외된다고 기술됨 |
+| EN 304 622 | 22 | Draft Review after PE (2026-11-19) | Final deliverable endorsement (2027-01-15) | 1.0.0 | 산업 OT용 SIEM은 해당 Work Item scope에서 제외된다고 기술됨 |
+| EN 304 623 | 23 | Draft Review after PE (2026-11-19) | Final deliverable endorsement (2026-12-05) | 0.1.3 | 부트로더 내장만으로 부트 매니저 제품이 되지는 않음 |
+| EN 304 624 | 24 | 최신 요약 목록에서 재확인 보류; monitoring snapshot은 2026-11-05 comments categorisation assessed | Final deliverable endorsement 예정 (2027-01-04, 이전 monitoring) | 1.0.0 | 인증서 사용만으로 PKI 발급 제품이 되지는 않음 |
+| EN 304 625 | 25 | Draft Review after PE (2026-11-19) | Final deliverable endorsement (2027-01-15) | 1.0.0 | Fieldbus controller/adapter의 별도 제품 경계와 호스트 드라이브를 구분 |
+| EN 304 626 | 26 | Draft Review after PE (2026-11-19) | Final deliverable endorsement (2027-01-21) | 1.0.1 | RTOS 탑재만으로 운영체제 제품이 되지는 않음 |
+| EN 304 627 | 27 | Draft Review after PE (2026-11-19) | Final deliverable endorsement (2026-11-25) | 1.0.1 | Ethernet/EtherCAT 포트만으로 라우터·스위치 제품이 되지는 않음 |
+| EN 304 631–634 | 31–34 | Draft Review after PE (2026-11-19) | Final deliverable endorsement (2026-12-04~05) | 1.0.0 | 가정용·소비자 제품 vertical로 서보 드라이브와 직접 관련성 낮음 |
+| EN 304 635 | 35 | EC assessment before WNV requested (2026-11-19) | EC assessment before WNV received (2026-11-28) | **1.0.9** | 법적 분류는 Class II category 1. ETSI 페이지 scope label이 다르면 구속력 있는 법령 우선 |
+| EN 304 636 | 36 | Draft Review after PE (2026-11-19) | Final deliverable endorsement (2026-12-22) | 1.0.0 | 법적 분류는 Class II category 2. M/606 item 36은 industrial-use systems 포함 |
+| EN 304 642 | 추가 지원 항목 | Early draft (2026-10-21) | Mature draft (2027-03-31) | 0.0.16 | 통신망 기능 표준화 지원 항목. Annex I item과 직접 1:1 매핑 확인 안 됨 |
+
+**증거 수준 주의:** EN 304 624의 최신 상태·다음 단계는 이번 최신 23일 요약 추출에서 개별 행을 다시 확인하지 못했으므로, 이전 ETSI monitoring snapshot임을 명시했다. 나머지 상태도 ETSI Work Programme 화면의 계획·상태 문구를 그대로 옮긴 것이며, 표준 원문 전체를 이번 갱신에서 재검토했다는 뜻이 아니다. 상세한 row-by-row CSV에는 최신 추출에서 확인되지 않은 행을 별도 표시한다.
+
+### 45.3 중요하게 확인된 버전 변경
+
+- EN 304 619: 11월 20일 기준으로 저장된 1.0.2에서 최신 ETSI active list의 **1.0.3**으로 변경 확인.
+- EN 304 635: 기존 1.0.1 snapshot에서 최신 ETSI active list의 **1.0.9**로 변경 확인. 현재 상태는 2026-11-19 EC assessment before WNV requested이며, 다음 단계는 2026-11-28 EC assessment before WNV received로 표시된다.
+- EN 304 635는 CRA Annex III Class II category 1, EN 304 636은 Class II category 2라는 법적 분류를 유지한다. ETSI Work Item의 오래된 Class I 표기 또는 metadata는 법령상 분류를 바꾸지 않는다.
+- EN 304 635 상세 Work Item 기록은 V1.0.9가 2026-11-20 업로드되었고, Enquiry 및 EC HAS2 comments resolution을 포함해 CYBER-EUSR가 승인한 버전이라고 설명한다. 다만 현재 단계는 여전히 EC assessment before WNV requested로 표시된다.
+- EN 304 625 상세 Work Item 기록은 2026-11-19에 EC second assessment를 받았고, 2026-09-28 및 2026-11-16 두 차례로 나누어 comments를 받았다고 기록한다. 이 기록은 인터페이스 표준의 기술적 관련성을 보여주지만, 실제 서보 드라이브에 대한 적용 여부는 제품 인터페이스 구조와 제품 경계로 판단해야 한다.
+
+### 45.4 M/606 개정 결정 및 11월 23일 회의 후속
+
+- ETSI 공식 active list의 버전·기준일은 2026-11-23 / Version 2.3.3으로 재확인했다.
+- ETSI 공식 회의 캘린더에는 “GoSRSReq006-M/606 AMD 1 - examination meeting”이 2026-11-23 Online으로 게시되어 있다.
+- 공개된 회의 캘린더만으로 회의 개최 완료, 회의 결과, 수정안 채택, ESO 수락 또는 Commission 통지를 증명할 수 없다. 회의록·결정문·ESO의 C(2026) 7861 수령일 및 비수락 통지는 여전히 **Unknown / not evidenced**다.
+- C(2026) 7861 Article 2의 수령 후 1개월 조건은 각 ESO의 실제 수령일과 비수락 통지 증거가 있어야 계산할 수 있다. 원래 2025년 M/606 수락 사실을 2026년 개정 수락으로 대체 해석하지 않는다.
+- ETSI Work Programme에 “Harmonised Standard: Yes”라고 표시되는 것과 OJ에 실제 인용되어 CRA Article 27 추정 적합성이 발생하는 것은 다른 절차다. 현재 매트릭스의 OJ citation 확인 상태를 임의로 Yes로 바꾸지 않는다.
+
+### 45.5 공식 출처 및 검증 범위
+
+1. ETSI, M/606 active Work Item Summary List (2026-11-23, Version 2.3.3): https://portal.etsi.org/webapp/WorkProgram/Frame_WorkItemList.asp?SearchPage=TRUE&butExpertSearch=Search&includeNonActiveTB=FALSE&includeSubProjectCode=FALSE&optDisplay=10&qCLUSTER_BOOLEAN=OR&qETSI_ALL=&qFREQUENCIES_BOOLEAN=OR&qINCLUDE_MOVED_ON=&qINCLUDE_SUB_TB=True&qKEYWORD_BOOLEAN=OR&qMandate_List=%27M%2F606%27&qREPORT_TYPE=SUMMARY&qSORT=HIGHVERSION&qSTOPPING_OUTDATED=&qSTOP_FLG=N
+2. ETSI, M/606 Work Item Plan (2026-11-22, Version 2.3.3): https://portal.etsi.org/webapp/WorkProgram/WorkItemPlan.asp?SearchPage=TRUE&butExpertSearch=Search&includeNonActiveTB=FALSE&includeSubProjectCode=FALSE&optDisplay=10&qCLUSTER_BOOLEAN=OR&qETSI_ALL=&qFREQUENCIES_BOOLEAN=OR&qINCLUDE_MOVED_ON=&qINCLUDE_SUB_TB=True&qKEYWORD_BOOLEAN=OR&qMandate_List=%27M%2F606%27&qREPORT_TYPE=SUMMARY&qSORT=HIGHVERSION&qSTOPPING_OUTDATED=&qSTOP_FLG=N
+3. ETSI, Work Item Monitoring (CYBER EUSR): https://portal.etsi.org/Portal_WI/Form1.asp?NbToDisplay=30&PersonId=0&SubTB=&SupCrit=CYBER+++++++++++++++++++++19578862&TabId=&TbId=0&WIcritID=18
+4. ETSI, Technical Bodies meeting calendar: https://portal.etsi.org/tb.aspx?TBID=162
+5. Commission Implementing Decision C(2026) 7861 final and Annex I: https://ec.europa.eu/transparency/documents-register/api/files/C%282026%297861_0/de00000001090398 ; https://ec.europa.eu/transparency/documents-register/api/files/C%282026%297861_1/de00000001090401
+6. Regulation (EU) 2024/2847 and Commission Implementing Regulation (EU) 2025/2392 remain the controlling legal classification sources.
+
+
+
+### 45.7 개별 Work Item 상세 이력의 추가 검증
+
+- **EN 304 635 (WKI 74858):** ETSI 상세 레코드는 V1.0.9가 2026-11-20 새로 업로드되었고, Enquiry 및 EC HAS2 comments resolution을 포함해 CYBER-EUSR가 승인한 버전이라고 기록한다. 최신 버전이 등록되었다는 사실은 확인되지만, 이 시점의 상태는 “EC assessment before WNV requested (2026-11-19)”로 남아 있으므로 WNV 수령 또는 표준 최종 채택으로 오해하면 안 된다. ETSI 상세 페이지 scope의 Class I 문구는 CRA 법령상 Class II category 1 분류를 변경하지 않는다.
+- **EN 304 625 (WKI 74860):** ETSI 상세 레코드는 2026-11-19 EC second assessment를 받았으며, comments가 2026-09-28 및 2026-11-16 두 차례로 접수되었다고 기록한다. 상세 레코드의 Official Journal field는 비어 있다. 따라서 “Harmonised Standard: Yes” metadata만으로 OJ citation 또는 Article 27 추정 적합성을 주장할 수 없다.
+- EN 304 625의 제품 영향은 Fieldbus/physical/virtual network interface module이 독립적으로 공급되는지, 서보 드라이브에 통합되는지, host drive의 core functionality가 무엇인지 확인한 뒤 판단한다. 네트워크 인터페이스를 포함한다는 사실만으로 드라이브 전체가 Annex III Class I category 10 제품이 되는 것은 아니다.
+
+### 45.6 다음 확인 작업
+
+- P0: 2026-11-23 M/606 AMD 1 meeting minutes/decision and any official amended mandate or ESO acceptance/non-acceptance notice.
+- P0: EN 304 635 V1.0.9 and EN 304 619 V1.0.3 exact draft files, revision metadata, document hashes and relevant scope/security requirements. Do not substitute older public drafts.
+- P1: EN 304 625 interface/Fieldbus scope against actual LS Mecapion drive communication architecture and any separately marketed interface modules.
+- P1: exact LS Mecapion model, hardware revision, firmware version and ST MCU order code; until evidence arrives, product category remains Unknown.
+- P1: verify actual OJ citation status independently before any Article 27 presumption claim.
+
