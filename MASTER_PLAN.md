@@ -2083,3 +2083,10 @@
 - iX700M product-family spec, Ver1.4 manual listing, exterior CAD listing, MCB-B-8K listing, overseas sales contact recorded.
 - Unknown: separate sales/orderability and EU PDE supply, user SKU, MCB meaning, PDF bodies, schematics/BOM/PCB, MCU order code/security.
 - User-reported ST MCU is not attributed to Mecapion iX700M without BOM proof.
+
+
+## 2026-11-24 — 공식 CRA PDF endpoint 안정화
+- C/2026/6013의 EUR-Lex PDF endpoint가 CI runner에서 anti-bot interstitial로 리디렉션되는 문제를 확인.
+- 동일한 공식 OJ PDF를 제공하는 Publications Office 직접 URL로 primary endpoint 변경, exact host allowlist 및 회귀 테스트 추가.
+- Run #1395의 184 pytest 통과는 수정 전 코드 테스트 결과이며 새 endpoint의 live canary 검증을 대신하지 않는다.
+- PR #218은 새 exact-head CI 통과 및 diff 검토 전 병합 금지.
