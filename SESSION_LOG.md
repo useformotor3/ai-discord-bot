@@ -2867,3 +2867,14 @@
 - iX700M Solution Square 목록은 더 늦은 update date를 제공하지만 version/file name 미확인. Ver1.5 등으로 추정하지 않는다.
 - PDF 본문·hash·페이지 수는 미확보. 목차의 Safety Functions는 CRA cybersecurity/SIL 적합성 증거가 아니다.
 - 통합 보고서 v0.18 §49, 제품 증거 등록부 §10, 상태판·계획·세션로그·AI 프로토콜·README·JSONL 갱신.
+
+
+
+## 2026-11-23 — PR #206 병합 후 검증 상태
+
+- Merge SHA acd932fb70bb2e881fdd35b6b9e75f2c829ac59e; PR #206 squash merge 완료.
+- Exact-head Run #1362 / ID 45137336327 success: source integrity, compile, CRA traceability, full pytest, official PDF/HTML canary, provenance manifest upload.
+- PDF evidence upload은 unchanged 조건으로 skipped. PDF 원문을 새로 확보한 것으로 기록하지 않는다.
+- Pre/post merge safety refs: safety/pre-pr206-merge-2026-11-23 / safety/post-merge-pr206-2026-11-23.
+- main read-back: report v0.18 §49, product evidence register §10, PROJECT_LOG 326 records/0 invalid.
+- Next: exact iX700M Solution Square file/version; iX700M/PEGA2 PDF bytes, hashes and revision comparison; actual SKU/HW/FW/ST MCU part number.
