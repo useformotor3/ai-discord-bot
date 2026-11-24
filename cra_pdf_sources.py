@@ -38,8 +38,8 @@ PDF_SOURCE_CATALOG = (
         "filename": "C2026_5252_guidance_annex.pdf",
         "url": "https://ec.europa.eu/newsroom/dae/redirection/document/131456",
         "allowed_hosts": ("ec.europa.eu",),
-        "fallback_url": "https://www.anfr.fr/fileadmin/CRA/Commission_guidance_on_the_application_of_Regulation__EU__20242847__Cyber_Resilience_Act_.pdf",
-        "fallback_allowed_hosts": ("www.anfr.fr", "anfr.fr"),
+        "fallback_url": "https://transition-pathways.europa.eu/system/files/media/document/2026-09/C_2026_5252_1_EN_annexe_acte_autonome_cp_part1_v3_kXuCPwXXxAuG8Uj44Ar0o2Vros_131456.pdf",
+        "fallback_allowed_hosts": ("transition-pathways.europa.eu",),
         "required_markers": (
             "C(2026) 5252 final",
             "This guidance is not binding",
@@ -214,28 +214,47 @@ def fetch_pdf_source(definition, *, get=None):
 
 
 def fetch_all_pdf_sources(output_dir=None, *, get=None):
-    results = [
-        fetch_pdf_source(definition, get=get)
-        for definition in PDF_SOURCE_CATALOG
-    ]
+    results = []
+    unavailable = []
+    for definition in PDF_SOURCE_CATALOG:
+        try:
+            item = fetch_pdf_source(definition, get=get)
+        except PDFSourceUnavailableError as exc:
+            unavailable.append({
+                "id": definition["id"],
+                "requested_url": definition["url"],
+                "status": "unavailable",
+                "reason": str(exc),
+                "retrieved_at": datetime.now(timezone.utc).isoformat(),
+            })
+            continue
+        results.append(item)
+
     if output_dir is not None:
         output = Path(output_dir)
         output.mkdir(parents=True, exist_ok=True)
         manifest = []
-        for definition, item in zip(PDF_SOURCE_CATALOG, results):
+        for definition, item in zip(
+            [d for d in PDF_SOURCE_CATALOG if d["id"] not in {u["id"] for u in unavailable}],
+            results,
+        ):
             (output / definition["filename"]).write_bytes(item["bytes"])
             (output / (definition["filename"] + ".txt")).write_text(
                 item["text"], encoding="utf-8"
             )
             manifest.append({
-                key: value for key, value in item.items()
-                if key not in ("bytes", "text")
+                **{
+                    key: value for key, value in item.items()
+                    if key not in ("bytes", "text")
+                },
+                "status": "fetched",
             })
+        manifest.extend(unavailable)
         (output / "manifest.json").write_text(
             json.dumps(manifest, ensure_ascii=False, indent=2) + "\n",
             encoding="utf-8",
         )
-    return results
+    return results, unavailable
 
 
 def main(argv=None):
@@ -243,7 +262,7 @@ def main(argv=None):
     parser.add_argument("--output-dir", default="artifacts/cra-pdf-sources")
     args = parser.parse_args(argv)
     try:
-        results = fetch_all_pdf_sources(args.output_dir)
+        results, unavailable = fetch_all_pdf_sources(args.output_dir)
     except PDFSourceUnavailableError as exc:
         print(f"SKIPPED: temporary CRA PDF source outage: {exc}")
         return 0
@@ -252,7 +271,12 @@ def main(argv=None):
             "PASS: {id} bytes={byte_count} pages={page_count} "
             "sha256={sha256} fallback={fallback_used}".format(**item)
         )
-    print(f"PASS: fetched and hashed {len(results)} CRA Commission PDF sources")
+    for item in unavailable:
+        print(f"SKIPPED: {item['id']}: {item['reason']}")
+    print(
+        f"PASS: fetched and hashed {len(results)} CRA Commission PDF sources; "
+        f"unavailable={len(unavailable)}"
+    )
     return 0
 
 

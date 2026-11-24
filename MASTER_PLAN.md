@@ -2102,3 +2102,23 @@
 ## 2026-11-24 — PR #218 최신 CI 결과
 - Run #1410 success, but C(2026)7861 PDF source step explicitly SKIPPED due official Commission anti-bot interstitial; HTML locator checks and provenance manifest passed. Do not claim PDF artifact capture.
 - Source comment clarified and blob pin refreshed after this run; validate the new exact HEAD before merge.
+
+
+## 2026-11-24 — PR #218 병합 및 다음 증거 확보
+- PR #218 최종 diff 11개 파일 검토 후 squash merge 완료. Merge SHA `200ccca974ad3af09b1634fd9bf02c1baac5ca8c`.
+- Run #1417 success; pytest/traceability/HTML source/provenance passed. PDF canary SKIPPED because ANFR fallback timed out after Commission newsroom interstitial; no PDF byte/hash capture claimed.
+- 다음 P0: 실제 nameplate/주문서·견적서·납품서/EU 수입자 공급단위 증거, Ver1.4 manual 및 외형 CAD 첨부 본문 확보, 제조사에 내부 회로도/BOM/MCU part number 문의.
+- CRA only; SIL 3 excluded.
+
+
+## 2026-11-24 — PDF 수집 경로 개선 우선순위
+- ANFR fallback의 불안정(HTML 응답/timeout) 확인 후 Commission-hosted transition-pathways EU portal copy로 변경.
+- PDF source별 partial fetch 및 manifest에 fetched/unavailable status·reason 기록. 잘못된 파일·identity mismatch·비허용 host는 계속 fail-closed.
+- PR #223 새 HEAD에서 pytest, live canary, partial artifact upload 검증 후 병합.
+
+
+## 2026-11-24 — 공식 CRA PDF 부분 확보 완료
+- C(2026)5252 Annex와 C/2026/6013 OJ PDF의 실제 바이트 및 SHA-256을 확보. C(2026)7861 Annex는 Commission register timeout으로 미확보 상태를 manifest에 기록.
+- source별 partial fetch 검증: 미확보 문서가 나머지 PDF 저장을 막지 않음.
+- Run #1427 success, pytest 186, HTML locator 10개 통과. PDF/provenance artifacts 업로드 완료.
+- 다음: PR #223 최종 diff 검토 및 병합. C(2026)7861 official document register endpoint 접근성은 별도 조사.

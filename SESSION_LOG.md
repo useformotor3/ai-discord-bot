@@ -3079,3 +3079,25 @@
 - PDF source canary printed SKIPPED due C(2026)7861 official Commission document-register anti-bot interstitial; PDF evidence artifact upload skipped. Do not claim C7861 PDF bytes/hash acquisition.
 - C/2026/6013 official Publications Office direct OJ PDF is browser-verified. C7861 automated PDF retrieval remains unavailable.
 - A comment-only clarification to source fetcher and matching workflow blob pin was made after Run #1410; final exact HEAD CI required before merge.
+
+
+## 2026-11-24 — PR #218 merge and exact-head CI result
+- PR #218 final HEAD e3ebe08b5dcf14563bba0a75dca171459ab992c5, Run #1417 success; tests, CRA traceability, HTML source canary and provenance manifest passed.
+- PDF canary skipped because C(2026)5252 Commission newsroom redirected to interstitial and allowlisted ANFR mirror timed out; PDF bytes/hash not captured by CI.
+- Final 11-file diff reviewed; squash merge SHA 200ccca974ad3af09b1634fd9bf02c1baac5ca8c.
+- Independent sale/EU supply, actual SKU, internal BOM/MCU and manual/CAD file contents remain unknown.
+
+
+## 2026-11-24 — PR #223 PDF fallback reliability correction
+- Run #1419 failed at the PDF canary after all code/compile/traceability/pytest checks passed. The ANFR fallback returned an HTML page; another attempt timed out after 30 seconds.
+- Removed ANFR fallback and switched C(2026)5252 Annex to the browser-verified Commission-hosted transition-pathways.europa.eu PDF copy.
+- Reworked fetch_all_pdf_sources to continue source-by-source: fetched PDFs are written with binary/text SHA-256; unavailable sources are recorded in manifest with status/reason; invalid PDF magic, identity marker mismatch and arbitrary non-allowlisted redirects remain hard failures.
+- Added partial acquisition regression test; refreshed isolated workflow blob pins. PR #223 new exact HEAD CI pending.
+
+
+## 2026-11-24 — Run #1427 PDF evidence acquisition success
+- PR #223 exact HEAD fc736e91e98ad384c3efa8112345dfa8c4156158, Run #1427 / 45294643451: workflow success; pytest 186 passed; HTML source locator 10 passed; PDF/provenance artifacts uploaded.
+- C(2026)5252 Annex: 84 pages, 1,190,726 bytes, SHA-256 fe209c250e3d1f7599e42826d91963666951332927edcf511a2e79fe8d2f8234; Commission-hosted transition-pathways.europa.eu fallback.
+- C/2026/6013 OJ: 61 pages, 2,709,282 bytes, SHA-256 40ca76caeb0108f5b97c8f373a95f590b453fe92bd45a483addf3326e48c1dc2; Publications Office direct.
+- C(2026)7861 Annex: 30s Commission register timeout, recorded unavailable; remaining PDF acquisition succeeded.
+- PDF artifact 14874639916; provenance artifact 14875084483. New per-source partial manifest confirmed.

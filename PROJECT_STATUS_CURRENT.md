@@ -1947,3 +1947,27 @@
 - PDF canary explicitly SKIPPED due C(2026)7861 Commission document-register anti-bot interstitial; PDF evidence artifact skipped. No claim that C7861 PDF bytes/hash were acquired.
 - C/2026/6013 uses the browser-verified official Publications Office OJ PDF. C(2026)7861 PDF automated retrieval remains unavailable.
 - Source comment was clarified and source-blob pin refreshed after Run #1410; final exact HEAD CI required before merge.
+
+
+## 2026-11-24 — PR #218 병합 완료 및 최종 CI 기록
+- PR #218 final HEAD `e3ebe08b5dcf14563bba0a75dca171459ab992c5`, Run #1417 / ID `45293726074`: workflow success.
+- Source identity, compile, CRA traceability, full pytest, official CRA HTML locator validation, provenance manifest upload passed.
+- PDF canary SKIPPED: C(2026)5252 primary newsroom interstitial; explicit ANFR fallback timed out after 30 seconds. PDF artifact skipped; no Commission PDF byte/hash capture claim.
+- Final diff 11 files reviewed. No production main.py, secrets, production workflow or API cadence changes; only isolated test workflow blob pins changed.
+- PR #218 squash merge SHA `200ccca974ad3af09b1634fd9bf02c1baac5ca8c`.
+- Confirmed: iX700M Converter/Drive functional separation and separate model/document listing. Unknown: independent commercial sale, EU individual PDE supply, actual SKU, manual/CAD file bodies, internal schematic/BOM/MCU.
+
+
+## 2026-11-24 — PR #223 PDF source acquisition 보완
+- Run #1419: code/compile/traceability/pytest passed; PDF canary failed because ANFR fallback returned HTML (another attempt had 30s timeout).
+- ANFR fallback removed; C(2026)5252 Annex now uses Commission-hosted EU portal copy at transition-pathways.europa.eu, browser-verified as European Commission / 27.7.2026 / C(2026)5252 final / CRA guidance Annex.
+- PDF acquisition changed to per-source partial results: verified files and SHA-256 retained; unavailable sources explicitly recorded in manifest with reason; remaining sources continue.
+- Invalid PDF magic/identity markers and arbitrary non-allowlisted redirects remain hard failures. Regression tests and workflow source pins updated. PR #223 new exact-head CI pending.
+
+
+## 2026-11-24 — Run #1427 PDF source evidence 결과
+- PR #223 HEAD `fc736e91e98ad384c3efa8112345dfa8c4156158`, Run #1427 success; pytest 186 passed; HTML source locator 10개 검증 및 provenance manifest upload 성공.
+- C(2026)5252 Annex: 84p / 1,190,726 bytes / SHA-256 `fe209c250e3d1f7599e42826d91963666951332927edcf511a2e79fe8d2f8234` (Commission-hosted EU portal fallback).
+- C/2026/6013 OJ: 61p / 2,709,282 bytes / SHA-256 `40ca76caeb0108f5b97c8f373a95f590b453fe92bd45a483addf3326e48c1dc2` (Publications Office direct).
+- C(2026)7861 Annex: Commission register 30s timeout; unavailable status recorded, other PDFs unaffected.
+- Artifacts: PDF evidence ID `14874639916`; provenance ID `14875084483`.

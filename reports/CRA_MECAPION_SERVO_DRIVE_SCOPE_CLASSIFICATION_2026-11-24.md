@@ -471,3 +471,24 @@ Run #1404에서 C(2026)7861 M/606 Annex의 Commission document-register API가 C
 
 ### 14.11 최신 검증 결과 — Run #1410
 PR #218의 HEAD 1c49b9f4b5ad8fa747ffa08051fa6116dd3eff85에 대한 Run #1410은 workflow 전체가 success로 종료됐다. 소스 무결성, 컴파일, CRA 추적성, 전체 pytest, 공식 CRA HTML source locator 검사 및 provenance manifest 업로드는 성공했다. 단, PDF source canary는 C(2026)7861 Commission document-register의 anti-bot interstitial 때문에 SKIPPED로 종료했고 PDF evidence artifact도 업로드되지 않았다. 따라서 이를 PDF 원문 전체 확보 성공으로 표현하지 않는다. 이후 source fetcher 주석을 실제 동작과 일치하도록 정리하고 source blob pin을 갱신했으므로, 최종 병합 대상은 새 HEAD에서 한 번 더 검증한다.
+
+
+### 14.12 PR #218 최종 CI 및 병합 기록
+최종 대상 HEAD는 e3ebe08b5dcf14563bba0a75dca171459ab992c5이고 Run #1417 / 45293726074가 workflow success로 종료됐다. 소스 무결성, 컴파일, CRA 추적성, 전체 테스트, 공식 CRA HTML locator 검증 및 provenance manifest 업로드는 성공했다. PDF source canary는 C(2026)5252 Commission newsroom interstitial 후 설정된 ANFR mirror가 30초 timeout되어 SKIPPED로 종료했고 PDF artifact upload도 skip됐다. 따라서 이번 run에서 Commission PDF 바이너리/해시를 새로 확보했다고 주장하지 않는다. 최종 diff 11개 파일을 검토한 뒤 PR #218을 squash merge했다. Merge SHA: 200ccca974ad3af09b1634fd9bf02c1baac5ca8c. 변경은 CRA 보고서/증거/상황판, PDF 수집 스크립트와 격리 테스트 workflow의 blob pins에 한정되며 운영 main.py·secrets·운영 workflow는 수정하지 않았다.
+
+
+### 14.13 PDF mirror timeout/HTML 응답 재발 및 부분 수집 개선
+PR #223의 문서 동기화 CI Run #1419에서 기존 ANFR fallback URL이 한 번은 30초 read timeout, 다른 시도에서는 HTTP 200 HTML 안내 페이지를 반환했다. 이는 공식 원문 내용 오류가 아니라 fallback 호스트의 자동화 접근 불안정이다. ANFR mirror는 제거하고, 2026-07-27 C(2026)5252 Annex의 PDF 본문이 Commission 공식 EU portal인 transition-pathways.europa.eu에 게시된 사본으로 대체한다. 해당 PDF는 브라우저에서 European Commission 제목, 27.7.2026, C(2026)5252 final, guidance Annex 및 CRA 본문을 확인했다.
+
+또한 PDF 수집을 전체 성공/전체 실패 방식에서 source별 수집 방식으로 변경한다. 검증 성공한 PDF는 개별 저장·SHA-256 기록하고, 특정 문서가 공식 anti-bot interstitial/일시적 네트워크 오류로 접근 불가하면 해당 source를 manifest에 status=unavailable 및 이유와 함께 남기고 나머지 source는 계속 수집한다. 잘못된 PDF magic, identity marker 불일치, 임의 non-allowlisted redirect는 계속 validation failure로 중단한다. 따라서 일부 source 미확보를 전체 PDF 미확보로 숨기지 않고, 확보된 원문과 누락 항목을 분리한다.
+
+
+### 14.14 PR #223 최신 검증 — PDF 원문 2종 확보
+PR #223 최신 HEAD fc736e91e98ad384c3efa8112345dfa8c4156158의 Run #1427(45294643451)은 workflow success로 종료됐다. Source identity, 컴파일, CRA traceability, 전체 pytest 186개, 공식 CRA HTML source locator 10개, PDF source 수집 및 provenance manifest 업로드가 성공했다.
+
+실제 PDF 결과:
+- C(2026)5252 final Annex: 84 pages, 1,190,726 bytes, SHA-256 fe209c250e3d1f7599e42826d91963666951332927edcf511a2e79fe8d2f8234. Commission newsroom redirect 이후 Commission-hosted transition-pathways.europa.eu copy에서 수집(fallback=True).
+- C/2026/6013 OJ guidance: 61 pages, 2,709,282 bytes, SHA-256 40ca76caeb0108f5b97c8f373a95f590b453fe92bd45a483addf3326e48c1dc2. Publications Office direct OJ URL에서 수집(fallback=False).
+- C(2026)7861 M/606 Annex: Commission register endpoint read timeout 30s; manifest에 unavailable 사유 기록. 나머지 두 PDF의 확보를 막지 않았음.
+
+PDF artifact ID 14874639916 및 provenance artifact ID 14875084483이 Run #1427에 업로드됐다. 이 결과는 두 문서의 binary SHA-256을 확보했다는 뜻이며, C(2026)7861은 아직 PDF binary/hash 미확보로 유지한다.

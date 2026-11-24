@@ -1546,3 +1546,20 @@ PR #218 Run #1404에서 컴파일·추적성·pytest 184개는 통과했으나, 
 ## §59. 2026-11-24 — Run #1410 검증 결과와 PDF canary 범위
 
 PR #218 HEAD 1c49b9f4b5ad8fa747ffa08051fa6116dd3eff85의 Run #1410은 전체 workflow success로 종료됐다. Source identity, compile, CRA traceability, pytest, 공식 CRA HTML locator 검증, provenance manifest 업로드는 성공했다. 다만 PDF canary는 C(2026)7861 Commission document-register anti-bot interstitial로 SKIPPED 처리되었고 PDF evidence upload도 skip됐다. 따라서 C(2026)7861 PDF 본문·해시 확보 성공으로 기록하지 않는다. 이후 수집기 주석과 source blob pin을 정리해 새 HEAD를 만들었으므로 최종 병합 전 새 exact-head CI를 한 번 더 확인한다.
+
+
+## §60. 2026-11-24 — PR #218 최종 CI 및 병합
+
+PR #218의 최종 HEAD e3ebe08b5dcf14563bba0a75dca171459ab992c5에서 Run #1417(45293726074)이 workflow success로 종료됐다. Source identity, compile, CRA traceability, 전체 pytest, 공식 CRA HTML locator 및 provenance manifest upload가 성공했다. PDF source canary는 C(2026)5252 Commission newsroom interstitial 후 명시적으로 허용된 ANFR mirror가 30초 timeout되어 SKIPPED 처리됐고 PDF evidence upload도 skip됐다. 이 실행에서 Commission PDF 바이너리/해시를 확보했다고 주장하지 않는다. 최종 diff 11개 파일을 검토한 후 PR #218을 squash merge했다. Merge SHA: 200ccca974ad3af09b1634fd9bf02c1baac5ca8c. 운영 main.py, secrets, 운영 workflow는 변경하지 않았다.
+
+
+## §61. 2026-11-24 — PDF 원문 대체 경로 및 부분 수집 개선
+
+PR #223 Run #1419에서 기존 ANFR fallback이 HTML 안내 페이지를 반환해 PDF 검증이 실패했고, 다른 시도에서는 30초 timeout이 발생했다. ANFR 경로를 제거하고 C(2026)5252 Annex가 European Commission 공식 EU portal transition-pathways.europa.eu에 게시한 사본으로 변경했다. 브라우저에서 European Commission 제목, 27.7.2026, C(2026)5252 final, CRA guidance Annex를 확인했다.
+
+PDF 수집은 source별로 처리하도록 개선했다. 검증 성공한 파일은 개별 저장하고 바이너리 SHA-256을 기록하며, 공식 source 접근이 제한된 항목은 manifest에 unavailable 상태와 원인을 남기고 다른 source 수집을 계속한다. PDF magic/identity marker 오류, 잘못된 파일 및 임의 비허용 호스트 redirect는 여전히 fail-closed다. 회귀 테스트와 workflow blob pins를 갱신했고 PR #223의 새 exact HEAD CI를 기다린다.
+
+
+## §62. 2026-11-24 — 공식 CRA PDF 부분 확보 결과
+
+PR #223 Run #1427(45294643451)은 workflow success, pytest 186 passed로 종료됐다. C(2026)5252 final Annex는 Commission-hosted transition-pathways.europa.eu copy에서 84페이지·1,190,726 bytes로 수집했고 SHA-256은 fe209c250e3d1f7599e42826d91963666951332927edcf511a2e79fe8d2f8234다. C/2026/6013 OJ guidance는 Publications Office direct PDF에서 61페이지·2,709,282 bytes로 수집했고 SHA-256은 40ca76caeb0108f5b97c8f373a95f590b453fe92bd45a483addf3326e48c1dc2다. C(2026)7861 M/606 Annex는 Commission register API가 30초 read timeout되어 manifest에 unavailable로 기록했으나, 나머지 두 PDF는 정상 저장·업로드됐다. PDF artifact ID 14874639916, provenance artifact ID 14875084483. 이로써 PDF 수집은 source별 성공/미확보를 분리하고, 미확보 source가 다른 source의 증거 저장을 막지 않게 됐다.

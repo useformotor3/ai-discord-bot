@@ -403,3 +403,29 @@ ESO별 C(2026)7861 실제 수령일과 Article 2 비수락 통지는 여전히 U
 - PDF source step printed SKIPPED because C(2026)7861 document-register API returned official anti-bot interstitial. PDF evidence upload was skipped. Do not record this as successful PDF acquisition or SHA-256 capture.
 - C/2026/6013 primary PDF URL is the browser-verified official Publications Office OJ document. C(2026)7861 PDF bytes/hash remain not acquired automatically.
 - After Run #1410, a comment-only source clarification and corresponding source-blob pin were committed; new exact HEAD requires a final CI run before merge.
+
+
+## 18.4 PR #218 final CI and merge
+- Final HEAD: e3ebe08b5dcf14563bba0a75dca171459ab992c5.
+- Run #1417 / 45293726074: workflow success. Source identity, compile, CRA traceability, complete pytest, official CRA HTML locator validation and provenance manifest upload passed.
+- PDF source canary: SKIPPED because C(2026)5252 primary Commission newsroom redirected to interstitial and the explicitly allowlisted ANFR mirror timed out after 30 seconds. PDF evidence upload skipped. Do not claim new Commission PDF bytes/hash were captured by this run.
+- Final diff: 11 files, reviewed; no main.py, production workflow, secrets or API cadence change. Isolated test workflow source blob pins were updated.
+- PR #218 squash merged; merge SHA 200ccca974ad3af09b1634fd9bf02c1baac5ca8c.
+- Independent sale/EU supply, actual user SKU, manual/CAD attachment contents, internal schematic/BOM/MCU remain Unknown as detailed in §§17–18.
+
+
+## 18.5 PDF source fallback 안정성 및 부분 provenance
+- PR #223 Run #1419 failed after all 184 prior tests/traceability passed; PDF fallback URL for C(2026)5252 returned HTML instead of PDF (other run: 30-second read timeout).
+- Removed unstable ANFR fallback. Configured Commission-hosted EU portal copy at transition-pathways.europa.eu for C(2026)5252 Annex; browser verified European Commission heading, 27.7.2026, C(2026)5252 final and CRA guidance text.
+- fetch_all_pdf_sources now handles source-unavailable documents individually: verified PDFs are written with SHA-256; unavailable entries are retained in manifest with status/reason; remaining sources continue.
+- Invalid PDF magic, missing required identity markers, malformed content and arbitrary non-allowlisted redirects still fail closed.
+- Added regression test for partial acquisition and updated source/test blob pins. Exact PR #223 HEAD CI pending.
+
+
+## 18.6 Run #1427 — verified partial PDF evidence
+- Exact PR #223 HEAD: fc736e91e98ad384c3efa8112345dfa8c4156158; Run #1427 / 45294643451 success; pytest 186 passed.
+- C(2026)5252 Annex: 84 pages / 1,190,726 bytes / SHA-256 fe209c250e3d1f7599e42826d91963666951332927edcf511a2e79fe8d2f8234; Commission-hosted transition-pathways.europa.eu copy, fallback used.
+- C/2026/6013 OJ: 61 pages / 2,709,282 bytes / SHA-256 40ca76caeb0108f5b97c8f373a95f590b453fe92bd45a483addf3326e48c1dc2; Publications Office direct, no fallback.
+- C(2026)7861 Annex: Commission register read timeout after 30s; recorded as unavailable in manifest; does not prevent the other two PDFs from being stored.
+- PDF artifact ID 14874639916; provenance manifest artifact ID 14875084483. Run #1427 also passed official HTML source locator validation (10 sources).
+- Source acquisition now records per-source status; invalid PDF/identity/host checks remain hard failures.
