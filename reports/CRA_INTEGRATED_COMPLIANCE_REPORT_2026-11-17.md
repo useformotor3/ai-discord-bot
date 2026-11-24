@@ -1563,3 +1563,8 @@ PDF 수집은 source별로 처리하도록 개선했다. 검증 성공한 파일
 ## §62. 2026-11-24 — 공식 CRA PDF 부분 확보 결과
 
 PR #223 Run #1427(45294643451)은 workflow success, pytest 186 passed로 종료됐다. C(2026)5252 final Annex는 Commission-hosted transition-pathways.europa.eu copy에서 84페이지·1,190,726 bytes로 수집했고 SHA-256은 fe209c250e3d1f7599e42826d91963666951332927edcf511a2e79fe8d2f8234다. C/2026/6013 OJ guidance는 Publications Office direct PDF에서 61페이지·2,709,282 bytes로 수집했고 SHA-256은 40ca76caeb0108f5b97c8f373a95f590b453fe92bd45a483addf3326e48c1dc2다. C(2026)7861 M/606 Annex는 Commission register API가 30초 read timeout되어 manifest에 unavailable로 기록했으나, 나머지 두 PDF는 정상 저장·업로드됐다. PDF artifact ID 14874639916, provenance artifact ID 14875084483. 이로써 PDF 수집은 source별 성공/미확보를 분리하고, 미확보 source가 다른 source의 증거 저장을 막지 않게 됐다.
+
+
+## §63. 2026-11-24 — PR #223 PDF 수집 안정화 및 병합
+
+PR #223은 Run #1432 성공 및 11개 파일 최종 diff 검토 후 squash merge됐다. Merge SHA: a1fe5b983e1cecb1235b56071534e05884d61786. Run #1432는 pytest 186개, CRA traceability, 공식 CRA HTML locator 10개, C(2026)5252 Annex 및 C/2026/6013 PDF 수집, PDF/provenance artifact upload에 성공했다. C(2026)7861 Annex는 Commission register 30초 timeout으로 unavailable manifest 기록을 유지한다. 두 PDF의 SHA-256 및 artifact ID는 §62에 기록했다.
