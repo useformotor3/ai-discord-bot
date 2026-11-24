@@ -2209,3 +2209,11 @@
 - Fresh official-source search confirms Solution Square listing/search result for iX700M 사용 설명서 (update 2026-09-16), but opening detail still returns JS shell. LS Mecapion default/Servo-filter manual lists show Ver1.4 while explicit sca= list shows Ver1.3; binary revision remains Unknown. Drive CE detail opened, but attachment download timed out. Converter CE result exposes index metadata only. CAD previous-post link resolves wr_id=12455 but detail fetch times out.
 - No manual, CE DoC, DWG/DXF/STEP binary is marked acquired. Actual SKU, independent sale, EU/EEA supply, importer/economic operator, BOM/MCU/security Unknown; manufacturer inquiry draft_prepared_not_sent.
 - CRA only; SIL 3 excluded.
+
+## 2026-11-24 — PR #242 CI 최종 결과 및 제조사 자료 확장 재검증
+
+- Run #1510 / 45333438936: exact main SHA dd54132fb44ed752b1f7942f4485ee03399a2c2f, completed/success 25/25. Run #1511 / 45333628512: exact PR #242 HEAD f9dd8484403f6f91daa94f14b74250965d67e4f6, completed/success 25/25. 두 실행의 지연은 공식 CRA PDF/source canary 네트워크 단계에서 발생했으며 최종 성공. 실패 아님.
+- PR #242 pre-update: 6 files +72/-0, 6 ahead/0 behind, reviews 0, threads 0, JSONL 373/373 valid. PR #242는 Run #1511 exact HEAD와 일치. 이 기록 보정/추가 증거 반영 후 새 HEAD에 대한 exact-HEAD CI를 다시 실행해야 한다.
+- 최신 공식 인덱스 재검색에서 iX700M Drive CE DoC, Converter CE DoC, Converter UKCA DoC, iX700M UL Certificate listing, KC 모델 목록, KR/EN brochure listing 확인. 첨부 바이너리는 모두 미확보(다운로드 timeout 또는 상세 페이지 timeout). Drive CE example model은 iX700MD1-B-150B, 480Vac, 15kW, D1 1-axis, B BiSS-C/custom code. Converter는 iX700MCV, 480Vac, 15/37/55/75kW. UKCA Converter DoC도 목록 확인했으나 미확보.
+- Solution Square iX700M manual listing update 2026-09-16 확인, SPA detail/PDF 미확보. Manual listing revision snapshots inconsistent: some default/Servo lists Ver1.4, other default/empty-sca snapshots Ver1.3. Binary revision Unknown.
+- Actual SKU, independent sale, EU/EEA supply, importer/economic operator, BOM/MCU/security remain Unknown. Manufacturer inquiry draft_prepared_not_sent. CRA only; SIL 3 excluded.
