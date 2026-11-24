@@ -3342,3 +3342,13 @@ CRA only; SIL 3 excluded.
 - Expected-head squash merge SHA `bd46aa2a26a39a5389f3b314a94523bb495689b5`; main read-back identical.
 - Main push Run #1474 / ID 45316319487, event=push, exact merge SHA, success 25/25. PROJECT_LOG 361 / invalid 0.
 - PR #235 adds LS ELECTRIC-hosted iX700M architecture PDF evidence and 2025 catalog/training index metadata; exact-head Run #1475 / ID 45316512062 success. Awaiting final pre-merge checks. CRA only; SIL 3 excluded.
+
+
+## 2026-11-24 — PR #235 merge 및 post-merge main CI
+
+- PR #235 final exact HEAD `df68f617ee1e49d2c6183b8cb42f1f042043d007`, Run #1478 / ID 45316731254 success.
+- 6-file diff; JSONL 363 / invalid 0; review threads 0 / reviews 0; base `bd46aa2a26a39a5389f3b314a94523bb495689b5`.
+- Expected-head squash merge SHA `4e4aea75960de2e761e47ae3cdc33275ad5553f2`; main read-back identical.
+- Post-merge main push Run #1479 / ID 45316962126, event=push, exact merge SHA, success 25/25. Main PROJECT_LOG 363 / invalid 0.
+- PR #229 main push Run #1452 / 45312941583 remains verified success 25/25.
+- Report §74 and evidence register §28 now include iX700M architecture PDF, KR/EN catalog metadata, training index. Solution Square manual detail/PDF, Ver1.3/Ver1.4 originals, Converter/Drive CE DoC originals and CAD DWG/DXF/STEP still not acquired. Actual SKU/EU supply/importer/BOM/MCU/security remain Unknown; inquiry draft_prepared_not_sent. CRA only; SIL 3 excluded.
