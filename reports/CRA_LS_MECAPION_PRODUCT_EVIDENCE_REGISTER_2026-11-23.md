@@ -639,3 +639,22 @@ Run #1462 / ID 45314843427, PDF artifact 14884218192. ZIP 3,070,568 bytes, SHA-2
 - Important quality distinction: workflow conclusion `success` means test/canary process completed under its current policy; it does not mean every optional/live PDF source was retrieved. Run #1483 log truthfully states `fetched=2, unavailable=1`.
 - `cra_pdf_sources.py` currently records transient `PDFSourceUnavailableError` as unavailable and returns exit 0. No code/workflow change made in this PR. Retry/backoff and explicit completeness indicator are candidates for a separate tested change.
 - CRA only; SIL 3 excluded.
+
+
+## 31. 2026-11-24 — M/606 PDF repeated timeout 및 bounded retry 개선
+
+| 대상 | Run/근거 | 결과 |
+|---|---|---|
+| M606 PDF transient failure | Run #1483 ID 45318639981, Run #1484 ID 45319203387, Run #1485 ID 45319407719 | 3회 연속 artifact manifest에서 C(2026)7861 Annex unavailable, reason read timeout 30s. C(2026)5252 및 C/2026/6013은 3회 모두 fetched. |
+| Prior successful binary | Run #1481 artifact 14886830715 | C(2026)7861 Annex 6 pages, 151,267B, SHA-256 `262b09596cb5cbe7d72a2c7789fb2512ee00db7f69082e7def2c8181b0f63276`. 원본은 유효하게 보존. |
+| Code fix | `cra_pdf_sources.py` | transient network/HTTP errors only, max 3 attempts with 1s/2s backoff. Anti-bot interstitial and validation errors are not retried. |
+| Partial-status clarity | `cra_pdf_sources.py` | unavailable source is preserved in manifest; exit 0 remains to avoid external service flakiness turning all CI red, but console now says `WARNING: partial CRA PDF source pack` rather than unconditional PASS. |
+| Tests | `tests/test_cra_pdf_sources.py` | timeout-then-success, bounded exhaustion, and partial warning behavior covered. |
+
+- Workflow YAML changes only refresh the exact source-blob integrity pins for `cra_pdf_sources.py` and `tests/test_cra_pdf_sources.py`; job steps, cadence, secrets and `main.py` behavior remain unchanged. Retry is bounded and does not accept untrusted mirrors or bypass PDF identity markers.
+- CRA only; SIL 3 excluded.
+
+- Run #1486 / 45319973724 failed at workflow step 4 only: stale expected blob for `cra_pdf_sources.py` (`bbbb4156...` vs actual `c24f4d1c...`). The test file pin also needed refresh (`79acd36f...` to `1664ebcf...`). Updated only these two integrity pins; workflow execution logic unchanged. No compile/test ran in failed attempt.
+
+| CRA-PDF-1497 | https://github.com/useformotor3/ai-discord-bot/actions/runs/45320409623 | PR #239 exact branch HEAD `00a00ef1ad8fa09efc68d9d2764d18c2b5b9040f`, Run #1497 success 25/25, pytest 189 passed. PDF artifact 14887520943, 3,070,568B, ZIP SHA-256 `9f8c1c64a43c17fae1a093c454e4be212d5b55fd6914130c9a4e1921411a80b4`; C(2026)5252 84p, C/2026/6013 61p, C(2026)7861 Annex 6p. M606 binary SHA-256 `262b09596cb5cbe7d72a2c7789fb2512ee00db7f69082e7def2c8181b0f63276`, same as Run #1481. Provenance artifact 14887800169, 2,565B, ZIP SHA-256 `2247997aa180f94a61672674b4fc8144e18a0c91deb51fcb26d82880c1aef6bd`. |
+- Retry improvement successfully recovered M606 Annex after three consecutive earlier timeouts; keep previous original and new identical hash as independent retrieval confirmations.

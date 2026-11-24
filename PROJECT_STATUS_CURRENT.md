@@ -1,4 +1,13 @@
 
+## 2026-11-24 — PR #238 merge, Run #1485 and M/606 source retry fix
+
+- PR #238 exact HEAD `dc5c5ce30ff2d58ff6c1edd8910a7a9998361be8`, Run #1484 success 25/25; 6 files, JSONL 366 / invalid 0, reviews/threads 0, base `792eea6388382a1932f1b775e57776a7ccacf3a6`. Expected-head merge SHA `1e218a61d09a280d8c4c2ec168c225c6456f215b`.
+- Main read-back identical. Post-merge main push Run #1485 / ID 45319407719 exact SHA success 25/25.
+- Run #1483, #1484, #1485 PDF artifacts each fetched 2/3: C(2026)7861 Annex timed out after 30s. Previous successful Run #1481 original remains valid (6p, SHA-256 `262b09596cb5cbe7d72a2c7789fb2512ee00db7f69082e7def2c8181b0f63276`).
+- Root cause found in `cra_pdf_sources.py`: transient network/read-timeout errors had no retry; partial pack was marked unavailable but CLI exit 0 and PASS summary could mislead. Separate branch now adds bounded 3-attempt retry (1s/2s backoff) only for transient transport/HTTP errors and explicit WARNING for partial packs. Validation failures/interstitials are not retried. Unit tests added for recovery, exhaustion and warning.
+- This code/test change is in a separate PR; do not treat as merged until exact-head CI and merge checks complete. Workflow YAML change is limited to the two modified-file source-blob integrity pins; no job steps, cadence, secrets or `main.py` behavior changed.
+- CRA only; SIL 3 excluded.
+
 ## 2026-11-24 — PR #237 병합 및 Run #1483 PDF source completeness 확인
 
 - PR #237 exact HEAD `0b173310aafc82d8db1c7bce032d93ee9fbd0db3`, Run #1482 / 45318431483 success 25/25. 6-file diff, JSONL 365 / invalid 0, review threads/reviews 0, base `c395fc5b5b2a393632bb2fbe65b10fd6572b936d`. Expected-head squash merge SHA `792eea6388382a1932f1b775e57776a7ccacf3a6`.
@@ -2161,3 +2170,11 @@
 - Converter/Drive CE DoC와 CAD 원본 재시도 결과: Converter 게시물 첨부 클릭 cache miss, Drive 상세 cache miss, CAD 상세 `wr_id=12455` cache miss. 원본 bytes/hash 미확보.
 - 실제 SKU, 독립 판매, EU/EEA 개별 공급, importer/economic operator, BOM/MCU/보안 구성은 Unknown. 질의서 `draft_prepared_not_sent`; 실제 발송/접수/회신 없음.
 - CRA only; SIL 3 제외. 운영 코드/workflow/secrets/API cadence 변경 없음.
+
+- PR #239 Run #1486 failed before tests because the exact source-blob integrity pin was stale. The branch updates the workflow pins to `cra_pdf_sources.py` blob `c24f4d1cda683324930e6449673c49e507ba38a8` and `tests/test_cra_pdf_sources.py` blob `1664ebcfa93f2cdb8888fa1829f0188561319bcf`; this is a pin-only workflow change, not a job or schedule change.
+## 2026-11-24 — PR #239 bounded retry exact-head CI 실증 성공
+
+- PR #239 branch exact HEAD `00a00ef1ad8fa09efc68d9d2764d18c2b5b9040f`, Run #1497 / ID 45320409623 success 25/25. Source integrity, compile, CRA traceability, full tests, live PDF/HTML canaries and uploads all success. pytest 189 passed.
+- Retry change recovered official M/606 C(2026)7861 Annex after Runs #1483–#1485 had 30s timeouts. PDF artifact 14887520943, 3,070,568B, SHA-256 `9f8c1c64a43c17fae1a093c454e4be212d5b55fd6914130c9a4e1921411a80b4`, 3/3 PDFs. M606 PDF 6p SHA-256 `262b09596cb5cbe7d72a2c7789fb2512ee00db7f69082e7def2c8181b0f63276` matches Run #1481 original. Provenance artifact 14887800169, 2,565B, SHA-256 `2247997aa180f94a61672674b4fc8144e18a0c91deb51fcb26d82880c1aef6bd`.
+- Run #1486 failed only at source-blob pin verification before tests; two exact hashes were refreshed in workflow and exact-head Run #1497 passed.
+- PR #239 remains open pending final diff/review/base/head/JSONL recheck and expected-head merge. CRA only; SIL 3 excluded.

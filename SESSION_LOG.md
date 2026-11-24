@@ -3373,3 +3373,21 @@ CRA only; SIL 3 excluded.
 - C(2026)7861 Annex was already obtained in Run #1481 artifact 14886830715, 6 pages, SHA-256 `262b09596cb5cbe7d72a2c7789fb2512ee00db7f69082e7def2c8181b0f63276`; preserve as valid earlier acquisition. Official register web extraction also verified annex text/deadlines, but not binary acquisition.
 - Source collector intentionally returns exit 0 when transient sources are unavailable; record CI green separately from pack completeness. Retry/backoff and explicit completeness flag are future tested improvement candidates; no workflow/code changes made.
 - Report §74.8 and evidence register §30 appended. CRA only; SIL 3 excluded.
+
+
+## 2026-11-24 — M/606 source timeout diagnosis and bounded retry implementation
+
+- PR #238 merged SHA `1e218a61d09a280d8c4c2ec168c225c6456f215b`; exact-head Run #1484 success 25/25; post-merge main push Run #1485 exact SHA success 25/25.
+- Run #1483, #1484 and #1485 each fetched only C(2026)5252 + C/2026/6013; M606 C(2026)7861 timed out after 30s. Earlier Run #1481 acquired the 6-page M606 Annex (SHA-256 `262b09596cb5cbe7d72a2c7789fb2512ee00db7f69082e7def2c8181b0f63276`); preserve it.
+- Root cause: no bounded retry for transient network errors; CLI exit 0 on partial pack and generic PASS wording. Fix branch adds max 3 attempts with 1s/2s backoff for retryable transport/HTTP errors only; partial pack prints explicit WARNING; validation failures/interstitials are not retried.
+- Added tests: retry recovers on second attempt; retries stop at 3; partial pack warning emitted without failing CI. Workflow YAML changes only refresh source-blob integrity pins for the two modified files; no job steps, main.py behavior, secrets or API cadence changed.
+- PR pending exact-head CI/review/merge. CRA only; SIL 3 excluded.
+
+- Run #1486 / 45319973724 stopped at source-blob identity step before tests because expected hashes were stale. Refreshed only the two pins in `.github/workflows/tests.yml`; no workflow job logic/cadence or runtime behavior changed. Awaiting exact-head rerun.
+
+## 2026-11-24 — PR #239 retry fix exact-head CI success
+
+- Run #1497 / ID 45320409623 exact branch HEAD `00a00ef1ad8fa09efc68d9d2764d18c2b5b9040f`: success 25/25; pytest 189 passed.
+- Bounded retry recovered M606 C(2026)7861 Annex after 3 consecutive 30s timeouts. PDF artifact 14887520943, 3,070,568B, ZIP SHA-256 `9f8c1c64a43c17fae1a093c454e4be212d5b55fd6914130c9a4e1921411a80b4`; all 3 PDFs present. M606 6p SHA-256 `262b09596cb5cbe7d72a2c7789fb2512ee00db7f69082e7def2c8181b0f63276`, same as Run #1481. Provenance artifact 14887800169, ZIP SHA-256 `2247997aa180f94a61672674b4fc8144e18a0c91deb51fcb26d82880c1aef6bd`.
+- Run #1486 failed only because workflow blob pins were stale; corrected two pins; Run #1497 exact-head passed.
+- PR #239 awaiting final exact-head merge guards. CRA only; SIL 3 excluded.
