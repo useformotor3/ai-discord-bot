@@ -1546,3 +1546,8 @@ PR #218 Run #1404에서 컴파일·추적성·pytest 184개는 통과했으나, 
 ## §59. 2026-11-24 — Run #1410 검증 결과와 PDF canary 범위
 
 PR #218 HEAD 1c49b9f4b5ad8fa747ffa08051fa6116dd3eff85의 Run #1410은 전체 workflow success로 종료됐다. Source identity, compile, CRA traceability, pytest, 공식 CRA HTML locator 검증, provenance manifest 업로드는 성공했다. 다만 PDF canary는 C(2026)7861 Commission document-register anti-bot interstitial로 SKIPPED 처리되었고 PDF evidence upload도 skip됐다. 따라서 C(2026)7861 PDF 본문·해시 확보 성공으로 기록하지 않는다. 이후 수집기 주석과 source blob pin을 정리해 새 HEAD를 만들었으므로 최종 병합 전 새 exact-head CI를 한 번 더 확인한다.
+
+
+## §60. 2026-11-24 — PR #218 최종 CI 및 병합
+
+PR #218의 최종 HEAD e3ebe08b5dcf14563bba0a75dca171459ab992c5에서 Run #1417(45293726074)이 workflow success로 종료됐다. Source identity, compile, CRA traceability, 전체 pytest, 공식 CRA HTML locator 및 provenance manifest upload가 성공했다. PDF source canary는 C(2026)5252 Commission newsroom interstitial 후 명시적으로 허용된 ANFR mirror가 30초 timeout되어 SKIPPED 처리됐고 PDF evidence upload도 skip됐다. 이 실행에서 Commission PDF 바이너리/해시를 확보했다고 주장하지 않는다. 최종 diff 11개 파일을 검토한 후 PR #218을 squash merge했다. Merge SHA: 200ccca974ad3af09b1634fd9bf02c1baac5ca8c. 운영 main.py, secrets, 운영 workflow는 변경하지 않았다.
