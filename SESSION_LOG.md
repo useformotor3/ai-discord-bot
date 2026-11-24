@@ -3402,3 +3402,8 @@ CRA only; SIL 3 excluded.
 - Official manufacturer source recheck: Solution Square iX700M manual list update 2026-09-16; detail/PDF remains inaccessible due SPA JS shell. LS Mecapion Servo-filter index says Ver1.4; unfiltered index says Ver1.3 for post 41/same date; actual revision unresolved. Converter/Drive CE DoC and CAD DWG/DXF/STEP originals remain unacquired; listing metadata only.
 - Corrected old PR #229 pending/unverified status: Run #1452 / 45312941583 verified success 25/25, exact merge SHA 4263389aa79cbb7cc17ccda3a019c659ccddef85.
 - Report §75 / evidence register §32 appended. Actual SKU, independent sale, EU/EEA supply, importer/economic operator, BOM/MCU/security Unknown. Inquiry draft_prepared_not_sent. CRA only; SIL 3 excluded.
+
+
+## 2026-11-24 — iX700M manual index snapshot correction
+
+- Three official list snapshots checked: default manual index and Servo-filter index show Ver1.4; explicit empty-category parameter sca= shows Ver1.3 for post 41 / same date. Detail/PDF inaccessible; no valid binary revision conclusion.
