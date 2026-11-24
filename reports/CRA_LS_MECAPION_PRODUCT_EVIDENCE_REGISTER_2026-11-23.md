@@ -445,3 +445,12 @@ ESO별 C(2026)7861 실제 수령일과 Article 2 비수락 통지는 여전히 U
 - 질문별 답변 상태와 증거를 요구한다. 구두 답변은 참고자료로만 보관하고, 제품 분류를 변경하는 근거는 문서번호·개정일·적용 SKU·공급 단위가 확인되는 서면 자료로 한정한다.
 - NDA/redacted version/부품군별 BOM/제조사 서명 확인서도 대체 증거로 허용한다. 개인키·암호키 원문·비밀번호·생산 계정 등 비밀값은 요청하지 않는다.
 - 현재 상태: 질의서 작성 완료 / 제조사 발송 및 회신 미확인. 발송·회신 확인 전까지 Unknown 판정을 유지한다.
+
+
+## 20. 2026-11-24 — LS메카피온 공식 질의 발송 경로
+
+- CONTACT-DOM-01: 공식 국내 업무별 담당자 페이지 https://www.lsmecapion.com/customer/take.php. 지역별 국내 서보 영업 담당자 게시. 경기 담당자 공개 주소 scahn@lsmecapion.com / 070-7772-8422. 회사/프로젝트 소재지가 경기인지 확인한 후 사용하며 담당 업무와 접수 가능 여부는 발송 전 재확인.
+- CONTACT-TECH-01: 공식 기술지원 페이지 https://www.lsmecapion.com/customer/take4.php. 전국 서보 기술문의 및 지원 1544-5948, 상담시간 08:30~17:30(점심 12:30~13:30 제외). 기술지원 이메일은 페이지에 확인되지 않아 임의 생성하지 않음.
+- CONTACT-OVERSEAS-01: 공식 해외 담당 페이지 https://www.lsmecapion.com/customer/agency2.php. LS ELECTRIC 자동화 연락처 automation@ls-electric.com 게시. 해외 담당 창구로만 식별하며 실제 EU 수입자·판매 법인·경제운영자라고 추정하지 않음.
+- 발송 경로 및 커버메일 안내: reports/LS_MECAPION_IX700M_INQUIRY_DISPATCH_GUIDE_2026-11-24.md.
+- 질의서 발송/접수/회신은 미확인. 회사명·소재지·실제 담당부서 확인 전 발송 완료로 기록하지 않는다.
