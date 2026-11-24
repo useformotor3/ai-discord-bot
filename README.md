@@ -1223,3 +1223,5 @@ CLC/TC 65X의 M/606 20b/21b/22b/25b/27b/36b를 prEN 50770-4/-2/-6/-3/-5/-1에 �
 
 
 > **2026-11-24 CRA 최신 상태:** PR #230 Run #1458 success 및 squash merge SHA `7b3eaa39d96e78081621f8c40cde97ad916722e5`. main read-back identical. LS ELECTRIC Solution Square에 iX700M 사용 설명서 update 2026-09-16 항목이 있으나 PDF 원본/개정판은 미확보. LS메카피온 Ver1.3/Ver1.4 표시 충돌 unresolved. [통합 보고서 §70](reports/CRA_INTEGRATED_COMPLIANCE_REPORT_2026-11-17.md), [증거등록부 §24](reports/CRA_LS_MECAPION_PRODUCT_EVIDENCE_REGISTER_2026-11-23.md). PR #229 merge SHA의 post-merge main push CI는 pending/unverified. CRA only; SIL 3 제외.
+
+> PR #239 first CI Run #1486 stopped at source-blob verification because the expected hashes had not yet been refreshed after the code/test edits. The branch now updates only the two integrity pins; workflow job behavior and schedule remain unchanged. The next exact-head run is the required validation.
