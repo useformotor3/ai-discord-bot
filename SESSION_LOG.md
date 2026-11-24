@@ -3382,3 +3382,5 @@ CRA only; SIL 3 excluded.
 - Root cause: no bounded retry for transient network errors; CLI exit 0 on partial pack and generic PASS wording. Fix branch adds max 3 attempts with 1s/2s backoff for retryable transport/HTTP errors only; partial pack prints explicit WARNING; validation failures/interstitials are not retried.
 - Added tests: retry recovers on second attempt; retries stop at 3; partial pack warning emitted without failing CI. Workflow YAML changes only refresh source-blob integrity pins for the two modified files; no job steps, main.py behavior, secrets or API cadence changed.
 - PR pending exact-head CI/review/merge. CRA only; SIL 3 excluded.
+
+- Run #1486 / 45319973724 stopped at source-blob identity step before tests because expected hashes were stale. Refreshed only the two pins in `.github/workflows/tests.yml`; no workflow job logic/cadence or runtime behavior changed. Awaiting exact-head rerun.
