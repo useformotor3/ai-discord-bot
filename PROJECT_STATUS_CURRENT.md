@@ -1,3 +1,14 @@
+
+## 2026-11-24 — PR #233 병합 및 제조사 자료 원본 재접근
+
+- PR #233 exact HEAD `a46bbfd774fe778d44a8eec640a32e57414590d6`, Run #1471 / 45315401722 success. 6-file diff, JSONL 360 / invalid 0, review threads 0 / reviews 0, base `d3b75a84d2b84ada59d2314780461e53b21e090b`. Expected-head squash merge SHA `d160cb2eea13d3f18ac4bc8e98c40d4378881c1a`; main read-back identical.
+- Post-merge main push Run #1472 / 45315862331 exact merge SHA success, 25/25 steps. Main PROJECT_LOG 360 / invalid 0.
+- PR #229 main push Run #1452 / 45312941583 success 25/25 유지.
+- 공식 LS메카피온 iX700M 제품군 목록 재확인: EtherCAT 통신형, AC 380–480 V, 4.5–75 kW, 축당 16.1–168 A. 제품군 메타데이터일 뿐 actual SKU/구성/시장공급을 입증하지 않는다.
+- Solution Square iX700M manual update 2026-09-16 목록 및 검색은 재확인, 상세 route/PDF/문서 ID 미확보. LS메카피온 Ver1.3/Ver1.4 listing conflict 재현; actual PDF revision Unknown.
+- Drive CE DoC 게시물 상세 메타데이터는 열람했으나 첨부 다운로드 timeout. Converter DoC는 검색 metadata만 재확인. CAD listing item 19, 2026-04-21 확인; detail cache miss. DoC/CAD/manual original bytes/hash는 모두 미확보.
+- Actual SKU, independent sale, EU/EEA supply, importer/economic operator, BOM/MCU/security configuration Unknown. Manufacturer inquiry `draft_prepared_not_sent`.
+- CRA only; SIL 3 excluded. 운영 main.py/workflow/secrets/API cadence 변경 없음.
 ## 2026-11-24 — PR #232 병합, CRA 공식 PDF 3종 확보, iX700M 자료 상태 갱신
 
 - PR #232 exact HEAD `94bbe5d2e43b428ccbb48436d8c826603bca01ac`, Run #1462 / ID `45314843427`: workflow success, 25/25 steps. 6-file diff, base `c7b59ae51891a2b878fc85b0910a89b50e4efe17`, ahead 6 / behind 0, JSONL 358 / invalid 0, review thread 0 / review 0. Expected-head squash merge SHA `d3b75a84d2b84ada59d2314780461e53b21e090b`; main read-back identical.

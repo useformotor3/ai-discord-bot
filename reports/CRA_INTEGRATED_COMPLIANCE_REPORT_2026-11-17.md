@@ -1829,3 +1829,65 @@ LS메카피온 공식 CE 게시물은 Converter Unit `iX700MCV`와 Drive Unit `i
 - PR #229 merge SHA `4263389aa79cbb7cc17ccda3a019c659ccddef85`의 main push workflow를 일반 workflow-run API에서 직접 조회했다. Run #1452 / ID `45312941583`, event=push, head_branch=main, head_sha=해당 merge SHA, conclusion=success. 25개 단계 모두 success(소스 identity, compile, CRA traceability, full pytest, PDF/HTML canary, evidence/provenance upload 포함). 따라서 이전 pending/unverified 표시는 최종 확인으로 대체한다.
 
 CRA only; SIL 3 제외.
+
+
+## §73. 2026-11-24 — PR #233 병합 후 제조사 원본 재접근 및 제품군 공식 인덱스 재확인
+
+### 73.1 PR #233 병합 및 main push CI
+
+- PR #233 exact HEAD `a46bbfd774fe778d44a8eec640a32e57414590d6`, Run #1471 / ID `45315401722`: 최종 success. Source blob identity, compile, CRA cross-matrix traceability, complete repository test suite, 공식 CRA PDF/HTML read-only canary 및 PDF/provenance artifact upload 모두 성공.
+- 변경 파일 정확히 6개: PROJECT_LOG.jsonl, PROJECT_STATUS_CURRENT.md, README.md, SESSION_LOG.md, 통합 CRA 보고서, 제품 증거등록부. PR branch JSONL 360 records / invalid 0; review threads 0, reviews 0; base `d3b75a84d2b84ada59d2314780461e53b21e090b`, ahead 18 / behind 0.
+- Expected-head SHA `a46bbfd774fe778d44a8eec640a32e57414590d6`를 지정한 squash merge 성공. Merge SHA `d160cb2eea13d3f18ac4bc8e98c40d4378881c1a`; main read-back identical, main PROJECT_LOG 360 records / invalid 0.
+- Post-merge main push Run #1472 / ID `45315862331`, event=push, head SHA=merge SHA, 최종 success. 25개 단계 모두 성공: source blob identity, compile, CRA traceability, full test suite, official CRA PDF/HTML canary, PDF evidence upload, provenance upload 포함.
+- PR #229 merge SHA `4263389aa79cbb7cc17ccda3a019c659ccddef85`의 main push Run #1452 / ID `45312941583`, event=push, exact head SHA, success 25/25 기록은 유지한다.
+
+### 73.2 Solution Square iX700M 설명서 — 목록 재확인, 상세 URL/PDF는 여전히 미확보
+
+- LS ELECTRIC Solution Square 공식 Motion & Servo 목록 `https://sol.ls-electric.com/kr/ko/product/category/4?pageNumber=4`는 `iX700M 사용 설명서`와 update `2026-09-16`을 계속 표시한다.
+- 공식 통합검색 `https://sol.ls-electric.com/kr/ko/newSearch?pageNumber=70`에도 문서 제목이 표시된다.
+- 상세 화면을 직접 열면 JavaScript app shell(`You need to enable JavaScript to run this app`)만 반환되고, 검색결과에도 문서 ID·상세 route·파일명·첨부 URL이 나타나지 않는다. 2026-09-16은 목록 update date이지 PDF 발행일 또는 revision으로 간주하지 않는다.
+- 따라서 상세 URL, PDF 원본, 파일명, 문서번호, revision, 언어, bytes, SHA-256 및 SKU applicability는 계속 Unknown. URL 패턴이나 파일명을 추정해 기록하지 않는다.
+
+### 73.3 LS메카피온 매뉴얼 Ver1.3/Ver1.4 충돌 재현
+
+2026-11-24 공식 인덱스를 다시 조회한 결과:
+- 기본 목록 `https://www.lsmecapion.com/bbs/board.php?bo_table=manual` 및 Servo 필터 `https://www.lsmecapion.com/bbs/board.php?bo_table=manual&sca=Servo`: `iX700M DRIVE 400[V] 매뉴얼 Ver1.4`, 게시일 2026-05-26.
+- 빈 분류 `https://www.lsmecapion.com/bbs/board.php?bo_table=manual&sca=` 및 page=1 `https://www.lsmecapion.com/bbs/board.php?bo_table=manual&page=1`: 같은 게시물 번호 41과 같은 게시일을 Ver1.3으로 표시.
+- 최신 검색 인덱스도 위 충돌을 재현했다. 상세 게시물 `wr_id=12652` 직접 접근은 도구에서 URL inaccessible/cache miss로 실패했고 실제 첨부 PDF bytes를 확보하지 못했다.
+- 판정은 **official listing snapshot conflict unresolved**로 유지한다. 어느 버전이 배포 원본인지, 두 목록이 서로 다른 캐시/분류 데이터인지, 문서번호·개정이력·적용 SKU가 무엇인지 추정하지 않는다. PDF 내부 revision/hash는 Unknown.
+
+### 73.4 Converter/Drive CE DoC 원본 재시도
+
+- Drive 게시물 `https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&page=4&wr_id=12888`는 직접 열람 가능했다. `iX700MD1-B-150B` 예시, D1/D2/D3 = 1/2/3-axis, B = 480 Vac, 150 = 15 kW, encoder B = BiSS-C 또는 custom, 첨부명 `[CE_DoC-LVDEMC] iX700MD1-B-150B.pdf` (게시물 표기 238.9K), 날짜 2026-04-30 11:55:32 확인.
+- 첨부 링크 클릭은 download endpoint timeout으로 실패. PDF bytes, PDF 내부 모델범위, 서명, 발행자, 적용 법령/표준, 날짜, hash는 검증하지 못했다.
+- Converter 게시물 `https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&sca=CE&wr_id=12886`의 공식 검색 인덱스는 `iX700MCV`, B=480 Vac, rating code 150/370/550/750 = 15/37/55/75 kW, 첨부명 `[CE_DoC-LVDEMC] iX700MCV.pdf` (234.4K), 날짜 2026-04-30 11:50:26을 표시한다. 상세/첨부 PDF 원본은 timeout/cache miss.
+- 두 게시물/첨부는 CE DoC 원본 확보와 동일하지 않다. 분리 게시가 독립 상업 판매, 단품 EU 공급 또는 CRA 제품 경계를 입증하지 않는다.
+
+### 73.5 CAD 원본 재시도
+
+- LS메카피온 공식 Servo Drive 도면 인덱스 `https://www.lsmecapion.com/bbs/board.php?bo_table=drawing&sca=Servo+Drive`는 게시물 19번 `iX700M Series 서보드라이브 외형도 2D(CAD), 3D(STEP)`, 날짜 2026-04-21을 표시한다.
+- 상세 게시물 `wr_id=12455`는 502/cache miss로 열리지 않았다. DWG/DXF/STEP 파일명·바이트·revision·SHA-256 미확보. 도면 존재 목록을 원본 CAD 파일 취득으로 표현하지 않는다.
+
+### 73.6 제품군 공개 사양 — CRA 연결성 분석에 사용할 수 있는 범위와 한계
+
+LS메카피온 공식 드라이브 제품군 목록 `https://www.lsmecapion.com/bbs/board.php?bo_table=pd_drive`의 iX700M 행은 다음을 표시한다.
+- 제품 설명: 다축 모듈러 EtherCAT 통신형 드라이브.
+- 입력 전압: AC 380–480 V.
+- 용량: 4.5–75 kW.
+- 정격 전류: 축당 16.1–168 A.
+- 통신형/펄스형 구분: 통신형.
+
+이는 제조사가 공개한 **제품군 수준**의 EtherCAT/전기적 사양이다. 디지털 통신 인터페이스 존재를 설명하는 기술 자료로 쓸 수 있지만, 실제 프로젝트 SKU·구성·활성화된 인터페이스·EU/EEA 시장 공급·수입자·경제운영자 또는 완제품의 CRA 분류/중요도 등급을 단독으로 확정하지 않는다. 정확한 SKU와 제품 경계는 여전히 Unknown이다.
+
+### 73.7 현재 증거 판정 및 후속 게이트
+
+| 대상 | 최신 상태 | 다음 증거 게이트 |
+|---|---|---|
+| Solution Square iX700M manual | 목록/업데이트일만 확인 | 문서 상세 route/API, 원본 PDF, 문서번호·revision·SHA-256 |
+| LS메카피온 Ver1.3/1.4 | 공식 인덱스 충돌 unresolved | 원본 PDF 두 버전 및 문서관리 변경이력 |
+| Converter/Drive CE DoC | 첨부 메타데이터만 확인 | PDF 원본 bytes, 본문/서명/법령/표준/모델범위 검증 |
+| CAD DWG/DXF/STEP | 도면 목록만 확인 | 원본 다운로드, 파일 형식 식별, revision 및 SHA-256 |
+| 실제 SKU / 독립 판매 / EU 공급 / importer / BOM·MCU·보안 | Unknown | 제조사 또는 거래별 1차 증거 |
+| 제조사 질의 | `draft_prepared_not_sent` | 실제 발송·접수·회신 증거 없이는 상태 승격 금지 |
+
+CRA only; SIL 3 제외.
