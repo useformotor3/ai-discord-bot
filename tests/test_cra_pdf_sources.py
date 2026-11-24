@@ -233,7 +233,7 @@ def test_main_reports_partial_source_pack_as_warning_without_failing(monkeypatch
         pdf,
         "fetch_all_pdf_sources",
         lambda *_args, **_kwargs: (
-            [{"id": "CRA-GUIDANCE-2026-5252"}],
+            [{"id": "CRA-GUIDANCE-2026-5252", "byte_count": 10, "page_count": 1, "sha256": "0" * 64, "fallback_used": False}],
             [{"id": "CRA-M606-C2026-7861-ANNEX", "reason": "read timeout"}],
         ),
     )
