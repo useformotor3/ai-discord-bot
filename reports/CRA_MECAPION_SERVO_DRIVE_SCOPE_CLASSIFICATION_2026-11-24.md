@@ -492,3 +492,7 @@ PR #223 최신 HEAD fc736e91e98ad384c3efa8112345dfa8c4156158의 Run #1427(452946
 - C(2026)7861 M/606 Annex: Commission register endpoint read timeout 30s; manifest에 unavailable 사유 기록. 나머지 두 PDF의 확보를 막지 않았음.
 
 PDF artifact ID 14874639916 및 provenance artifact ID 14875084483이 Run #1427에 업로드됐다. 이 결과는 두 문서의 binary SHA-256을 확보했다는 뜻이며, C(2026)7861은 아직 PDF binary/hash 미확보로 유지한다.
+
+
+### 14.15 PR #223 병합 기록
+PR #223은 Run #1432 성공 및 최종 11개 파일 diff 검토 후 squash merge됐다. Merge SHA: a1fe5b983e1cecb1235b56071534e05884d61786. Run #1432는 pytest 186개, source identity, compile, CRA traceability, HTML source locator 10개, PDF source 수집 및 두 artifact upload가 모두 성공했다. C(2026)5252와 C/2026/6013 PDF 바이너리 및 SHA-256 확보 결과는 §14.14에 기록했고, C(2026)7861 Annex는 Commission register 30초 timeout으로 manifest unavailable 상태를 유지한다.
