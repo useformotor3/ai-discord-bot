@@ -3101,3 +3101,11 @@
 - C/2026/6013 OJ: 61 pages, 2,709,282 bytes, SHA-256 40ca76caeb0108f5b97c8f373a95f590b453fe92bd45a483addf3326e48c1dc2; Publications Office direct.
 - C(2026)7861 Annex: 30s Commission register timeout, recorded unavailable; remaining PDF acquisition succeeded.
 - PDF artifact 14874639916; provenance artifact 14875084483. New per-source partial manifest confirmed.
+
+
+## 2026-11-24 — PR #223 merge / verified PDF sources
+- PR #223 merge SHA `a1fe5b983e1cecb1235b56071534e05884d61786`.
+- Run #1432 exact HEAD `76e5bce626db999e434d41f50ac0b9413b9561d5`: 186 pytest passed; PDF sources C2026_5252 and C6013 fetched and hashed; 10 official HTML source locators validated; both artifacts uploaded.
+- C2026_7861 Commission register 30s timeout remains unavailable; manifest captures reason.
+- PDF artifact ID 14876885240; provenance artifact ID 14875348784.
+- No unsupported inference about separate sales, EU PDE supply, actual SKU or internal MCU/BOM.
