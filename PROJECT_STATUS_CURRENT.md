@@ -1,4 +1,9 @@
 
+## 2026-11-24 — 매뉴얼 버전 목록 snapshot 정밀 정정
+
+- 재조회 결과 기본 manual 목록과 Servo 필터 목록은 Ver1.4 (2026-05-26)를 표시하고, 명시적 빈 카테고리 파라미터 sca= 목록만 Ver1.3 (동일 게시글 번호 41/날짜)을 표시한다.
+- 따라서 현재 확인된 세 공식 index snapshot 중 2개는 Ver1.4, 1개는 Ver1.3. 실제 detail/PDF fetch는 502/timeout으로 실패해 binary revision/hash와 유효 배포본은 여전히 Unknown. Ver1.4를 최신 확정본으로 단정하지 않는다.
+
 ## 2026-11-24 — PR #239 병합 및 공식 iX700M 자료 재접근 정정
 
 - PR #239 closed/merged. Final PR HEAD e9a15eeaf69e56e610352941f5330604bf78639e, base 1e218a61d09a280d8c4c2ec168c225c6456f215b, 9 files, reviews 0 / threads 0. Branch CI Run #1497 / 45320409623 success 25/25, pytest 189 passed. Merge SHA 7d1fe1012bd2f8a8e1540918b43b58b4b41014f5.
