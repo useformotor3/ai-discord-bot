@@ -148,10 +148,18 @@ def test_fetch_all_writes_pdf_text_and_manifest(tmp_path):
 
 def test_fetch_all_keeps_verified_pdfs_when_one_official_source_is_unavailable(tmp_path):
     responses = iter([
-        FakeResponse(url=pdf.PDF_SOURCE_CATALOG[0]["url"]),
+        FakeResponse(
+            url="https://sorry.ec.europa.eu/",
+            body=b"<html>Commission automated access interstitial</html>",
+            content_type="text/html",
+        ),
         FakeResponse(url=pdf.PDF_SOURCE_CATALOG[0]["fallback_url"]),
         FakeResponse(url=pdf.PDF_SOURCE_CATALOG[1]["url"]),
-        FakeResponse(url="https://sorry.ec.europa.eu/"),
+        FakeResponse(
+            url="https://sorry.ec.europa.eu/",
+            body=b"<html>Commission automated access interstitial</html>",
+            content_type="text/html",
+        ),
     ])
     with patch.object(pdf, "PdfReader", FakeReader):
         results, unavailable = pdf.fetch_all_pdf_sources(
