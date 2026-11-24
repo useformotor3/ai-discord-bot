@@ -1241,3 +1241,7 @@ CLC/TC 65X의 M/606 20b/21b/22b/25b/27b/36b를 prEN 50770-4/-2/-6/-3/-5/-1에 �
 > **Source acquisition boundary:** Solution Square iX700M manual listing re-confirmed (2026-09-16) but detail/PDF remains JS-shell blocked; LS Mecapion Ver1.3/Ver1.4 listing conflict remains unresolved at binary level; Drive CE attachment timeout, Converter CE metadata only, CAD detail timeout. No original manual/DoC/CAD binaries acquired. CRA only; SIL 3 excluded.
 
 > **PR #242 CI final correction (2026-11-24):** Run #1510 / 45333438936 completed SUCCESS 25/25 on main SHA dd54132fb44ed752b1f7942f4485ee03399a2c2f. PR #242 Run #1511 / 45333628512 completed SUCCESS 25/25 on exact HEAD f9dd8484403f6f91daa94f14b74250965d67e4f6. Earlier in-progress notes above are superseded by these final results. New official listing evidence includes iX700M Converter UKCA DoC and UL/KC/catalogue index entries; none of the linked binaries was acquired. See report §78 and evidence register §35. CRA only; SIL 3 excluded.
+
+
+> **PR #242 merged:** exact HEAD e92bb6a0830cbdeb7ed4c05e31faba201c2754a3, Run #1513 success 25/25, expected-head squash merge 3fbc1bcbf669324706c4ae2f882ff7269ae87f48; main read-back identical. Main push Run #1514 / 45338702162 was in progress at snapshot. See report §79 / evidence register §36.
+> **Button omission corrective action:** the persistent protocol existed but the final-output gate was not executed. Protocol v1.1 now requires a final check for an actionable next-step button as the last response element. CRA only; SIL 3 excluded.
