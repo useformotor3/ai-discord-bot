@@ -2411,3 +2411,12 @@
 - C/2026/5252 fallback=true; its SHA identifies fallback bytes only. Run #1560 PDF ZIP artifact ID 14974783287, 3,070,565 bytes, SHA-256 `62b97e10e83a9d1791d2f8930e69cd39425bd2322cc5df50db8f1cfd7b325634`; provenance artifact ID 14974194343, 2,565 bytes, SHA-256 `fd75f596c0f42eddb534c43ed5ea41ee3bd74a33cf69bf95148c3a5dee0680ce`; expiry 2026-12-01.
 - Manufacturer inquiry 62 questions, draft not sent. iX700M original manual/DoC/catalogue/CAD binaries remain unacquired; listing metadata only.
 - Unknowns remain: actual SKU, EU/EEA supply, economic operators, signed DoC scope, BOM/MCU/SBOM, security configuration, CRA classification, vulnerability handling, update/support period. CRA only; SIL 3 excluded.
+
+ 
+## 2026-11-25 — PR #261 병합 및 main push Run #1562 성공
+
+- PR #261 exact head `9b64ca980a7818d9eab69724b818e53af95ccc42`, base `d18a3a651cf7cd5cecfd99564f4332b8a505f196`, 6 files(+44/-0), reviews 0, threads 0. Run #1561 / 45511278378 completed/success, 15/15 steps, pytest 189 passed, CRA traceability 393 events PASS, 10-source provenance PASS, PDF 3/3 fetch/hash PASS. Expected-head squash merge SHA `c7d4d360f4642d788859cf434ed9ddc5409d421d`.
+- Main push Run #1562 / 45511464761 exact merge SHA: completed/success, 15/15 steps, pytest 189 passed, traceability 393 events PASS, provenance 10 records JSON round-trip PASS, PDF 3/3 fetch/hash PASS.
+- C/2026/5252 fallback=true; its SHA identifies fallback bytes only. Run #1562 PDF ZIP artifact ID 14976180926, 3,070,565 bytes, SHA-256 `6eb56526131bc8ac54d315ff7700b5c9724279691a09cc606ff0b420b4e37e2c`; provenance artifact ID 14976815077, 2,565 bytes, SHA-256 `bfb63f7416eb323b81dbdb6fdc5f304f59e00ecfa3c9edece6c4f27bf6d0a022`; expiry 2026-12-01.
+- Manufacturer inquiry 62 questions, draft not sent. iX700M original manual/DoC/catalogue/CAD binaries remain unacquired; listing metadata only.
+- Unknowns remain: actual SKU, EU/EEA supply, economic operators, signed DoC scope, BOM/MCU/SBOM, security configuration, CRA classification, vulnerability handling, update/support period. CRA only; SIL 3 excluded.
