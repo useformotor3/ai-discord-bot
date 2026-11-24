@@ -139,3 +139,10 @@ CRA only; SIL 3 excluded.
 | CAD wr_id=12455 | 2D CAD / 3D STEP listing, 2026-04-21 | detail timeout; native files not obtained |
 
 이 자료는 게시물 metadata의 재확인 기록이며 원본 binary 취득 기록이 아닙니다. 제조사 회신 전까지 모든 product-specific facts remain Unknown.
+
+
+
+56. CE 카테고리 인덱스에는 2026-04-30자로 iX700MCB 및 Drive Unit의 모델 그룹별 게시물(075B/050B/D2-B-045B, 150B, 220B, 370B/300B, 750B/550B/450B)이 각각 표시됩니다. 각 게시물에 연결된 원본 EU DoC PDF, 문서번호, covered model/SKU 전체 목록, 정격·encoder·option code, HW revision, DoC별 적용 표준/법령 및 서로 다른 게시물 간 scope 중복/공백을 제공해 주십시오. 특히 iX700MCB가 독립 판매되는지, Converter/Drive와 결합되는 내부 모듈인지 제품 경계를 설명해 주십시오.
+57. KC 인덱스의 iX700MD1/MD2/MCV/MCB 모델 목록과 CE/UKCA DoC 목록을 별도 규제 근거로 관리하고 있습니까? 동일한 모델명이라도 각 문서의 관할·법적 근거·평가 범위·제조자 선언 책임을 구분한 compliance matrix를 요청합니다. KC 인증/게시 사실을 EU DoC 또는 CRA 적합성 증거로 간주하지 않는다는 점을 확인해 주십시오.
+58. Drive Unit(D1/D2/D3), Converter Unit(CV), iX700MCB 및 통신/제어 모듈의 조립·판매·교체 관계를 설명해 주십시오. 각각 별도 주문·시장 제공되는지, 하나의 drive system으로만 공급되는지, 어느 구성요소에 펌웨어·네트워크 인터페이스·보안 기능이 위치하는지, 통합 OEM이 기능·펌웨어를 변경할 수 있는지 SKU별 block diagram으로 제시해 주십시오.
+
