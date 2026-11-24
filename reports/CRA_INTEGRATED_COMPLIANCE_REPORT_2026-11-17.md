@@ -1805,7 +1805,7 @@ Provenance artifact ID `14884277978`, 2,565 bytes, ZIP SHA-256 `098047a15d56c990
 
 C(2026)7861 문서 식별: Brussels, 10.11.2026, C(2026)7861 final, Annex to Commission Implementing Decision amending Implementing Decision C(2025)618 on a standardisation request to CEN/CENELEC/ETSI for CRA support. 이 문서는 CRA 제품 요구사항 표준화 요청을 수정하는 문서이며, 그 자체를 조화표준 발행 또는 CRA 적합성 추정으로 오해하지 않는다.
 
-### 72.3 iX700M 매뉴얼 revision 상태 — 공식 목록은 Ver1.4, PDF 본문은 미확보
+### 72.3 iX700M 매뉴얼 revision 상태 — 공식 목록 snapshot 간 Ver1.3/Ver1.4 충돌, PDF 본문 미확보
 
 2026-11-24 재검색에서도 공식 매뉴얼 목록 snapshot 간 Ver1.3/Ver1.4 충돌이 재현됐다. `bo_table=manual` 기본 URL 및 `bo_table=manual&sca=Servo`는 `iX700M DRIVE 400[V] 매뉴얼 Ver1.4`, 작성일 2026-05-26을 표시한다. 반면 `bo_table=manual&sca=` 및 `bo_table=manual&page=1` 검색 snapshot은 같은 게시물 번호 41에 Ver1.3을 표시한다. 따라서 어느 한 표시를 최신으로 확정하지 않고 **공식 목록 snapshot 간 버전 충돌 unresolved**로 유지한다.
 
