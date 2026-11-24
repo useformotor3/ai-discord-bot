@@ -1256,3 +1256,18 @@ CLC/TC 65X의 M/606 20b/21b/22b/25b/27b/36b를 prEN 50770-4/-2/-6/-3/-5/-1에 �
 ## 2026-11-24 — CRA main CI Run #1520 최종 확인
 
 PR #245 merge SHA `2b9d924a92bbd497289b9e3afe0dd52df527472b`의 post-merge main push Run #1520 (ID `45401919091`)은 exact SHA 일치 및 최종 SUCCESS, 25/25 steps로 확인됐다. Source integrity, compile, CRA cross-matrix traceability, 전체 테스트, 공식 CRA PDF/source canary 및 evidence/provenance 업로드가 모두 성공했다. 이는 저장소 CI 검증 결과이며 iX700M 제품 CRA 적합성이나 제조사 보안 구현의 증명은 아니다. 제품 원본 자료 미확보 및 Unknown 항목은 상황판과 제품 증거등록부의 상태를 따른다. CRA only; SIL 3 excluded.
+
+
+## CRA 최신 법령·지침 반영 — 2026-11-24
+
+PR #247 문서 반영 후 main push Run #1523 (ID `45403594895`)이 exact SHA `30d5c5997d0c99a8eff804c589010695c8735ced`에서 SUCCESS 25/25로 완료됐다.
+
+추가로 European Commission의 2026-11-17 CRA Guidance (C/2026/6013, OJ C)를 검토했다. Article 14의 보고 의무는 2026-09-11부터 이미 적용 중이며, CRA 전체 제품 요구사항 적용일 2027-12-11과 구분해야 한다. 최신 지침은 인지 시점 이후 24시간 early warning, 72시간 notification, actively exploited vulnerability에 대한 최종 보고는 수정/완화 조치가 제공된 뒤 14일, severe incident 최종 보고는 72시간 notification 후 1개월의 단계적 제출 구조를 설명한다. 이미 2026-09-11 이전에 취약점과 실제 악용 사실 모두를 인지한 경우의 비소급 처리도 설명한다.
+
+공식 법령·지침: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R2847 ; https://publications.europa.eu/resource/cellar/dcbc848b-e227-11f1-aefc-01aa75ed71a1.0006.01/DOC_1
+
+지원기간은 원칙적으로 최소 5년이며 제품의 예상 사용기간이 5년 미만이면 예상 사용기간에 대응한다. 지원기간 중 제공한 보안 업데이트는 발행 후 최소 10년 또는 남은 지원기간 중 더 긴 기간 동안 이용 가능해야 한다. (Article 13(8)-(9))
+
+Annex I Part II의 실무 요구사항은 machine-readable SBOM(최소 top-level dependencies), 취약점 신속 수정, 기능 업데이트와 보안 업데이트의 분리(기술적으로 가능한 경우), 정기 보안 테스트, 수정 취약점 공개, coordinated vulnerability disclosure policy, 보고 연락처, 안전한 업데이트 배포 및 지체 없는 무상 보안 업데이트(해당 tailor-made business agreement 예외 포함)다.
+
+이 요구사항은 제조사 구현 증거가 없으므로 iX700M에 대해 현재 `Unknown`이다. CRA only; SIL 3 excluded.
