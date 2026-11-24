@@ -3613,3 +3613,10 @@ CRA only; SIL 3 excluded.
 - Main push Run #1560 / 45510915944 exact SHA SUCCESS, 15/15, 189 passed, traceability 392, provenance 10, PDFs 3/3. C/2026/5252 fallback=true.
 - Artifact IDs/digests in report §95/evidence §53. Product binaries not acquired. Inquiry 62 questions, draft not sent.
 - Unknowns retained. CRA only; SIL 3 excluded.
+
+ 
+## PR #261 / main Run #1562 completion
+- PR #261 exact head 9b64ca980a7818d9eab69724b818e53af95ccc42, 6 docs(+44/-0), reviews/threads 0. Run #1561 SUCCESS 15/15, 189 passed, traceability 393, provenance 10, PDFs 3/3. Merge SHA c7d4d360f4642d788859cf434ed9ddc5409d421d.
+- Main push Run #1562 / 45511464761 exact SHA SUCCESS, 15/15, 189 passed, traceability 393, provenance 10, PDFs 3/3. C/2026/5252 fallback=true.
+- Artifact IDs/digests in report §96/evidence §54. Product binaries not acquired. Inquiry 62 questions, draft not sent.
+- Unknowns retained. CRA only; SIL 3 excluded.
