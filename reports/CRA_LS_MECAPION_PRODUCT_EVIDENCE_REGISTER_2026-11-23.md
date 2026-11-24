@@ -543,3 +543,33 @@ ESO별 C(2026)7861 실제 수령일과 Article 2 비수락 통지는 여전히 U
 - iX700M Solution Square 2026-09-16 항목의 상세 URL/PDF, LS메카피온 Ver1.3/Ver1.4 실제 revision, Converter/Drive DoC, DWG/DXF/STEP 원본은 미확보. 실제 SKU, 독립 판매, EU/EEA 공급, importer/economic operator, BOM/MCU/security 설정은 Unknown.
 - 제조사 질의서는 `draft_prepared_not_sent`; 실제 발송·접수·회신 증거 없음.
 - PR #229 merge SHA `4263389aa79cbb7cc17ccda3a019c659ccddef85`의 post-merge main push CI는 accessible run/status 없음. `pending_unverified` 유지.
+
+
+## 26. 2026-11-24 — Run #1462 PDF 3종 확보 및 제품 증거 교차검증
+
+### 공식 CRA PDF evidence artifact
+
+Run #1462 / ID 45314843427, PDF artifact 14884218192. ZIP 3,070,568 bytes, SHA-256 `42775754732e4cc8b9a31a702beb7daf7c9722777210e55dfb87c8563176f6cf`.
+
+| ID | 원본 | 페이지 / bytes | SHA-256 | 상태 |
+|---|---|---:|---|---|
+| CRA-GUIDANCE-2026-5252 | C(2026)5252 final Annex | 84 / 1,190,726 | `fe209c250e3d1f7599e42826d91963666951332927edcf511a2e79fe8d2f8234` | fetched |
+| CRA-GUIDANCE-OJ-2026-6013 | C/2026/6013 OJ C 17.11.2026 | 61 / 2,709,282 | `40ca76caeb0108f5b97c8f373a95f590b453fe92bd45a483addf3326e48c1dc2` | fetched |
+| CRA-M606-C2026-7861-ANNEX | C(2026)7861 final Annex, 10.11.2026 | 6 / 151,267 | `262b09596cb5cbe7d72a2c7789fb2512ee00db7f69082e7def2c8181b0f63276` | fetched |
+
+각 PDF magic, 문서 식별문구, 페이지 수, SHA-256 확인. C(2026)7861은 Run #1460에서는 timeout/unavailable였으나 Run #1462에서 성공적으로 확보됨. Provenance artifact 14884277978 / 2,565 bytes / ZIP SHA-256 `098047a15d56c9908c9babc0a7afc8bb019900191621f08edb205a03df50b966`; manifest 10 sources, SHA-256 `7dff3ca57a325a1de522a344beffff48bdbbb785441e01014d3af33713c5902f`.
+
+### PR #232
+
+- Exact HEAD `94bbe5d2e43b428ccbb48436d8c826603bca01ac`, Run #1462 success, steps 1~12 and cleanup all success.
+- Base `c7b59ae51891a2b878fc85b0910a89b50e4efe17`; 6 files; ahead 6 / behind 0; branch JSONL 358 / invalid 0; review threads 0 / reviews 0.
+- Expected-head squash merge SHA `d3b75a84d2b84ada59d2314780461e53b21e090b`; main read-back identical, JSONL 358 / invalid 0.
+
+### iX700M evidence status
+
+- LS메카피온 공식 목록 snapshot 간 버전 충돌이 재현됨: `bo_table=manual` 및 `sca=Servo`는 Ver1.4, `sca=` 및 `page=1`은 같은 게시물 41번을 Ver1.3으로 표시(모두 2026-05-26). 어느 쪽이 실제 최신 PDF인지 미확정. 상세 `wr_id=12652` PDF 미확보; 내부 revision/hash/SKU applicability Unknown.
+- Solution Square `iX700M 사용 설명서` 2026-09-16 항목은 재확인. JS detail route/PDF/문서 ID 미확보.
+- Converter CE metadata: `iX700MCV`, 480Vac, 15/37/55/75kW rating codes, attachment metadata 234.4K. Drive CE metadata: example `iX700MD1-B-150B`, D1=1-axis, 480Vac, 15kW, BiSS-C encoder, attachment metadata 238.9K. Both original PDFs inaccessible (502/cache miss); DoC content and scope unverified. Separate CE listing is not proof of independent sale.
+- CAD DWG/DXF/STEP bytes still missing. Actual target SKU, independent sale, EU/EEA supply, importer/economic operator, BOM/MCU/security config remain Unknown.
+- Manufacturer inquiry remains `draft_prepared_not_sent`.
+- PR #229 main push is now verified: Run #1452 / ID 45312941583, event push, exact merge SHA 4263389aa79cbb7cc17ccda3a019c659ccddef85, conclusion success, 25/25 steps passed.

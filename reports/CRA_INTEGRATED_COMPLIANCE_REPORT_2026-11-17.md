@@ -1778,3 +1778,54 @@ Converter/Drive CE DoC 첨부 및 iX700M 2D DWG/DXF·3D STEP CAD 원본은 이�
 - 다음 문서 변경은 별도 작업 branch에서 exact-HEAD CI로 검증한다.
 
 CRA only; SIL 3 제외.
+
+
+## §72. 2026-11-24 — PR #232 병합, CRA PDF 3종 원본 확보 및 iX700M 자료 재교차검증
+
+### 72.1 PR #232 exact-HEAD CI 및 병합
+
+- PR #232 exact HEAD `94bbe5d2e43b428ccbb48436d8c826603bca01ac`, Run #1462 / ID `45314843427`: 최종 workflow success. 1~12단계와 cleanup 단계 모두 success. Source blob identity, compile, CRA cross-matrix traceability, complete pytest, 공식 CRA PDF/HTML canary 및 두 evidence artifact 업로드 완료.
+- Base main SHA `c7b59ae51891a2b878fc85b0910a89b50e4efe17`; compare ahead 6 / behind 0. 변경 파일 정확히 6개: PROJECT_LOG.jsonl, PROJECT_STATUS_CURRENT.md, README.md, SESSION_LOG.md, 통합 CRA 보고서, 제품 증거등록부.
+- PR branch JSONL 358 records / invalid 0; review threads 0, reviews 0. Main은 병합 전 base SHA와 identical임을 확인한 후 expected head SHA를 지정해 squash merge.
+- Merge SHA `d3b75a84d2b84ada59d2314780461e53b21e090b`. Main read-back compare 결과 merge SHA와 main identical. Main PROJECT_LOG 358 records / invalid 0.
+
+### 72.2 Run #1462 공식 CRA PDF evidence — 3개 원본 모두 확보
+
+Run #1462 PDF artifact ID `14884218192`를 실제 다운로드하여 ZIP 구조와 내부 PDF bytes를 검사했다. ZIP은 3,070,568 bytes, SHA-256 `42775754732e4cc8b9a31a702beb7daf7c9722777210e55dfb87c8563176f6cf`. ZIP 내부 PDF magic, 문서 식별문구, 페이지 수 및 각 파일 SHA-256을 확인했다.
+
+| 공식 문서 | 확보 결과 | PDF SHA-256 |
+|---|---|---|
+| Commission C(2026) 5252 final Annex — CRA Guidance | PDF 84쪽, 1,190,726 bytes | `fe209c250e3d1f7599e42826d91963666951332927edcf511a2e79fe8d2f8234` |
+| Commission C/2026/6013 — OJ C, 17.11.2026 | PDF 61쪽, 2,709,282 bytes | `40ca76caeb0108f5b97c8f373a95f590b453fe92bd45a483addf3326e48c1dc2` |
+| Commission C(2026) 7861 final Annex — CRA standardisation request amendment | PDF 6쪽, 151,267 bytes | `262b09596cb5cbe7d72a2c7789fb2512ee00db7f69082e7def2c8181b0f63276` |
+
+**정정:** §71은 Run #1460 시점에 C(2026)7861 Annex가 30초 timeout으로 미확보였다고 정확히 기록했다. 그러나 후속 Run #1462에서는 같은 Commission register 원본 URL을 재시도하여 PDF를 성공적으로 수신했다. 따라서 현재 최신 증거 상태는 **CRA PDF 3종 모두 원본 확보**다. 이전 Run #1460의 실패 이력은 삭제하지 않고 시간 순서로 보존한다.
+
+Provenance artifact ID `14884277978`, 2,565 bytes, ZIP SHA-256 `098047a15d56c9908c9babc0a7afc8bb019900191621f08edb205a03df50b966`. 내부 manifest SHA-256 `7dff3ca57a325a1de522a344beffff48bdbbb785441e01014d3af33713c5902f`, source_count 10, schema_version 1.0. PDF manifest는 각 문서의 final URL, content type, bytes, SHA-256, page count, extracted-text SHA-256 및 required markers를 기록한다.
+
+C(2026)7861 문서 식별: Brussels, 10.11.2026, C(2026)7861 final, Annex to Commission Implementing Decision amending Implementing Decision C(2025)618 on a standardisation request to CEN/CENELEC/ETSI for CRA support. 이 문서는 CRA 제품 요구사항 표준화 요청을 수정하는 문서이며, 그 자체를 조화표준 발행 또는 CRA 적합성 추정으로 오해하지 않는다.
+
+### 72.3 iX700M 매뉴얼 revision 상태 — 공식 목록 snapshot 간 Ver1.3/Ver1.4 충돌, PDF 본문 미확보
+
+2026-11-24 재검색에서도 공식 매뉴얼 목록 snapshot 간 Ver1.3/Ver1.4 충돌이 재현됐다. `bo_table=manual` 기본 URL 및 `bo_table=manual&sca=Servo`는 `iX700M DRIVE 400[V] 매뉴얼 Ver1.4`, 작성일 2026-05-26을 표시한다. 반면 `bo_table=manual&sca=` 및 `bo_table=manual&page=1` 검색 snapshot은 같은 게시물 번호 41에 Ver1.3을 표시한다. 따라서 어느 한 표시를 최신으로 확정하지 않고 **공식 목록 snapshot 간 버전 충돌 unresolved**로 유지한다.
+
+관련 공식 목록: `https://www.lsmecapion.com/bbs/board.php?bo_table=manual`; `https://www.lsmecapion.com/bbs/board.php?bo_table=manual&sca=Servo`; `https://www.lsmecapion.com/bbs/board.php?bo_table=manual&sca=`; `https://www.lsmecapion.com/bbs/board.php?bo_table=manual&page=1`. 게시물 `wr_id=12652` 상세/첨부 PDF는 timeout/cache miss로 열지 못했다. **PDF 내부 revision, 문서번호, 발행일, 변경이력, 적용 SKU 및 SHA-256은 Unknown**이다. 게시 목록 문자열만으로 실제 원본 revision을 판정하지 않는다.
+
+LS ELECTRIC Solution Square의 공식 Motion & Servo 목록은 `iX700M 사용 설명서` 항목 및 update `2026-09-16`을 현재도 표시한다. 상세 문서 페이지는 JavaScript app shell로만 열리고 검색 결과에도 문서 상세 URL/문서 ID/첨부 URL이 노출되지 않았다. 상세 URL과 PDF bytes는 여전히 미확보이며, 2026-09-16은 목록 update date이지 문서 revision/date로 간주하지 않는다.
+
+### 72.4 iX700M CE 문서의 제품식별 범위와 상업적 사실 구분
+
+LS메카피온 공식 CE 게시물은 Converter Unit `iX700MCV`와 Drive Unit `iX700MD1-B-150B`를 별도 게시물/첨부로 나누어 표시한다.
+
+- Converter CE 게시물 `wr_id=12886`: Converter Unit = CV, Input Rating B = 480 Vac, Rated Wattage code 150/370/550/750 = 15/37/55/75 kW, 표준 또는 customized option. 첨부명 `[CE_DoC-LVDEMC] iX700MCV.pdf`, 게시물 메타데이터 크기 234.4K, 작성 2026-04-30 11:50.
+- Drive CE 게시물 `wr_id=12888`: Drive Unit D1/D2/D3 = 1/2/3-axis, Input Rating B = 480 Vac, code 150 = 15 kW, encoder B = BiSS-C 또는 customized encoder code. 게시 예시 `iX700MD1-B-150B`. 첨부명 `[CE_DoC-LVDEMC] iX700MD1-B-150B.pdf`, 게시물 메타데이터 크기 238.9K, 작성 2026-04-30 11:55.
+- 두 첨부 원본은 클릭 시 502/cache miss로 실패해 PDF 본문, 서명, EU 법령·표준, 제품범위, DoC 작성자/날짜 및 인증 범위를 확인하지 못했다. 게시물 제목/파일명은 CE DoC 원본 확보와 동일하지 않다.
+- 별도 게시/모델 family 표시는 제품 구조·인증 문서의 구분을 시사하지만 Converter와 Drive가 독립적으로 판매되는지, 단품으로 EU 시장에 공급되는지 입증하지 않는다. 실제 고객 프로젝트의 정확한 SKU/옵션/명판과 BOM, EU/EEA 공급 및 거래별 importer/economic operator는 Unknown.
+
+### 72.5 CAD, 질의서 및 PR #229 main push CI
+
+- CAD 게시물의 2D DWG/DXF 및 3D STEP 원본은 상세 게시물 `wr_id=12455` 접근 실패로 계속 미확보. 원본 파일명·버전·크기·hash 없음.
+- 제조사 질의서는 초안만 준비. 실제 발송/접수번호/회신 없음; `draft_prepared_not_sent` 유지.
+- PR #229 merge SHA `4263389aa79cbb7cc17ccda3a019c659ccddef85`의 main push workflow를 일반 workflow-run API에서 직접 조회했다. Run #1452 / ID `45312941583`, event=push, head_branch=main, head_sha=해당 merge SHA, conclusion=success. 25개 단계 모두 success(소스 identity, compile, CRA traceability, full pytest, PDF/HTML canary, evidence/provenance upload 포함). 따라서 이전 pending/unverified 표시는 최종 확인으로 대체한다.
+
+CRA only; SIL 3 제외.

@@ -1,3 +1,16 @@
+## 2026-11-24 — PR #232 병합, CRA 공식 PDF 3종 확보, iX700M 자료 상태 갱신
+
+- PR #232 exact HEAD `94bbe5d2e43b428ccbb48436d8c826603bca01ac`, Run #1462 / ID `45314843427`: workflow success, 25/25 steps. 6-file diff, base `c7b59ae51891a2b878fc85b0910a89b50e4efe17`, ahead 6 / behind 0, JSONL 358 / invalid 0, review thread 0 / review 0. Expected-head squash merge SHA `d3b75a84d2b84ada59d2314780461e53b21e090b`; main read-back identical.
+- Run #1462 PDF artifact 14884218192 실제 ZIP 검사: 3 PDFs 모두 확보. C(2026)5252 Annex 84p / 1,190,726B / SHA `fe209c250e3d1f7599e42826d91963666951332927edcf511a2e79fe8d2f8234`; C/2026/6013 OJ 61p / 2,709,282B / SHA `40ca76caeb0108f5b97c8f373a95f590b453fe92bd45a483addf3326e48c1dc2`; C(2026)7861 Annex 6p / 151,267B / SHA `262b09596cb5cbe7d72a2c7789fb2512ee00db7f69082e7def2c8181b0f63276`. PDF ZIP SHA `42775754732e4cc8b9a31a702beb7daf7c9722777210e55dfb87c8563176f6cf`.
+- Provenance artifact 14884277978, 2,565B, ZIP SHA `098047a15d56c9908c9babc0a7afc8bb019900191621f08edb205a03df50b966`; manifest 10 sources, internal SHA `7dff3ca57a325a1de522a344beffff48bdbbb785441e01014d3af33713c5902f`.
+- Correction to previous status: C(2026)7861 was unavailable at Run #1460 but successfully acquired at Run #1462; latest status is all three PDFs fetched.
+- LS메카피온 Official list snapshots still conflict: base `bo_table=manual` and `sca=Servo` show Ver1.4, while `sca=` and `page=1` show Ver1.3 for the same post number 41/date 2026-05-26. Actual attachment PDF at wr_id=12652 remains inaccessible; internal revision, hash, SKU applicability Unknown.
+- Solution Square iX700M manual list update 2026-09-16 reconfirmed; JS detail URL/PDF/document ID still not obtained.
+- CE listing metadata identifies Converter family iX700MCV and Drive example iX700MD1-B-150B with 480Vac/rating/axis/encoder attributes. Original DoC PDFs remain inaccessible; separate listings do not prove independent sale. CAD originals DWG/DXF/STEP remain missing. Actual target SKU, EU/EEA supply, importer/economic operator, BOM/MCU/security config Unknown.
+- Manufacturer inquiry `draft_prepared_not_sent`, no send/receipt/reply proof.
+- PR #229 main push CI now verified: Run #1452 / 45312941583, event push, head SHA 4263389aa79cbb7cc17ccda3a019c659ccddef85, success, 25/25 steps. Replace pending/unverified.
+- CRA only; SIL 3 excluded.
+
 ## 2026-11-24 — PR #231 병합 및 CRA 공식 PDF evidence 확인
 
 - PR #231 exact HEAD `d1f0c2a32c455f2d2a27dda5eab8972cad87bcef`, base main `7b3eaa39d96e78081621f8c40cde97ad916722e5`; Run #1460 / ID `45314263089` success. 1~12단계 모두 성공(9 PDF canary, 10 PDF evidence upload, 11 HTML canary, 12 provenance upload 포함).

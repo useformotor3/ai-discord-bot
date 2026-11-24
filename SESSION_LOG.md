@@ -3285,3 +3285,25 @@
 - 후속 문서 동기화 branch `docs/cra-pr231-postmerge-evidence-2026-11-24`에서 보고서 §71, 증거등록부 §25, 상황판, README, SESSION_LOG 및 PROJECT_LOG를 갱신한다.
 
 CRA only; SIL 3 제외.
+
+
+## 2026-11-24 — PR #232 병합 및 CRA 증거 원본 추가 확인
+
+- PR #232 exact HEAD `94bbe5d2e43b428ccbb48436d8c826603bca01ac`; Run #1462 / 45314843427 success, all 25 steps success. 6-file diff, JSONL 358 / invalid 0, review thread 0, review 0. Base `c7b59ae51891a2b878fc85b0910a89b50e4efe17`; expected-head squash merge SHA `d3b75a84d2b84ada59d2314780461e53b21e090b`. Main read-back identical.
+- Run #1462 PDF artifact 14884218192 was downloaded and inspected: 3 official CRA PDFs, all PDF magic/markers/page counts/hashes verified. C(2026)5252: 84 pages, 1,190,726 bytes, SHA `fe209c250e3d1f7599e42826d91963666951332927edcf511a2e79fe8d2f8234`; C/2026/6013: 61 pages, 2,709,282 bytes, SHA `40ca76caeb0108f5b97c8f373a95f590b453fe92bd45a483addf3326e48c1dc2`; C(2026)7861: 6 pages, 151,267 bytes, SHA `262b09596cb5cbe7d72a2c7789fb2512ee00db7f69082e7def2c8181b0f63276`. ZIP SHA `42775754732e4cc8b9a31a702beb7daf7c9722777210e55dfb87c8563176f6cf`.
+- Provenance artifact 14884277978, ZIP SHA `098047a15d56c9908c9babc0a7afc8bb019900191621f08edb205a03df50b966`, manifest source_count 10.
+- Earlier Run #1460 C(2026)7861 timeout is historical; Run #1462 successfully fetched it. Latest CRA official PDF evidence status = 3/3 acquired.
+- LS Mecapion official full list and Servo filter now both index Ver1.4 dated 2026-05-26. Earlier Ver1.3 snapshot not reproduced; retain as stale/alternate historical snapshot. Actual PDF remains inaccessible; internal revision/hash/SKU mapping Unknown.
+- Solution Square iX700M manual listing 2026-09-16 reconfirmed, but JS detail URL/PDF unavailable.
+- Converter CE listing: iX700MCV, 480Vac, rating code 150/370/550/750 = 15/37/55/75kW, attachment metadata 234.4K. Drive CE listing: example iX700MD1-B-150B, D1=1-axis, 480Vac, 15kW, BiSS-C, attachment metadata 238.9K. Original PDFs still inaccessible; independent sale not proven. CAD originals DWG/DXF/STEP not acquired.
+- PR #229 main push direct workflow-run query: Run #1452 / ID 45312941583, event push, main, head SHA 4263389aa79cbb7cc17ccda3a019c659ccddef85, success, 25/25 steps. Replace pending/unverified.
+- Actual SKU, independent sale, EU/EEA supply, importer/economic operator, BOM/MCU/security configuration remain Unknown. Manufacturer inquiry not sent; `draft_prepared_not_sent`.
+
+CRA only; SIL 3 excluded.
+
+
+## 2026-11-24 — 매뉴얼 목록 snapshot 재검증 정정
+
+- 추가 검색에서 공식 목록의 Ver1.3/Ver1.4 충돌이 계속 재현됨. `bo_table=manual` 및 `bo_table=manual&sca=Servo` 검색 결과는 Ver1.4, `bo_table=manual&sca=` 및 `bo_table=manual&page=1` 결과는 같은 게시물 번호 41을 Ver1.3으로 표시(작성일 2026-05-26).
+- 따라서 직전 문서의 “Ver1.4로 수렴” 문구는 철회하고 “공식 목록 snapshot 간 충돌 unresolved”로 정정. 게시물 `wr_id=12652` 상세/첨부 PDF 원본, 실제 내부 revision 및 hash는 미확보.
+- iX700M CAD 목록 검색은 게시물 #19 / 2026-04-21 및 2D(CAD), 3D(STEP) 첨부 구성을 재확인. 상세 URL `wr_id=12455`는 timeout. 원본 bytes/hash 미확보.
