@@ -3544,3 +3544,21 @@ CRA only; SIL 3 excluded.
 - CRA classification check: do not assume “IACS” is an Annex III/IV product category; ask manufacturer for product core-functionality mapping and conformity route. Q59 added. Inquiry draft 59 questions, not sent.
 - Unknown: actual SKU, EU/EEA supply, economic operators, DoC coverage/signature, BOM/MCU/SBOM, security configuration, product classification, vulnerability handling and support/update period.
 - CRA only; SIL 3 excluded.
+
+ 
+## 2026-11-25 — Run #1540 final state and iX700M source retrieval
+
+- Rechecked Run #1540 / 45505830283 on exact main HEAD cffd2118d2ce4127e50352650479553cb12c2bdf. Final run status/conclusion completed/success; job 138840683889 completed/success; 15/15 steps (1–12,23–25), pytest 189 passed, CRA traceability 384 events PASS, 10 official sources provenance PASS.
+- Previous API response showed in_progress after all steps had completed; later run/job metadata transitioned to completed/success. Record only observed status propagation delay; no speculative root cause and no rerun.
+- Official CRA PDF 2/3 fetch/hash; C/2026/5252 HTTP 503 skipped. Artifact digests and IDs are in report §88 / evidence §45; expiry 2026-12-01.
+- iX700M source retry: manual Ver1.4/Ver1.3 listing conflict, manual detail 502; EU DoC Drive, Converter CE/UKCA and KR/EN catalogue are metadata only, detail 502; CAD index row 19, detail timeout. No original product binary acquired.
+- Manufacturer inquiry Q60 added for secure official delivery with native file, filename, size, SHA-256, revision, signature validation and SKU coverage. 60 questions, draft not sent.
+- Actual SKU, EU/EEA supply, economic operators, BOM/MCU/SBOM, security configuration, CRA classification, vulnerability process and update/support period remain Unknown.
+- CRA only; SIL 3 excluded.
+
+ 
+## PR #253 CI correction — Run #1541 / #1542
+- Run #1541 on initial head c0b3c56... failed CRA traceability at PROJECT_LOG.jsonl line 385 because an extra blank line was introduced by append newline; run cancelled, pytest skipped, no merge.
+- Normalized JSONL, verified 385 records / 0 invalid / 0 blank lines. New exact head e0788eb79d8b5c061b28111f96d9d6419eac950b Run #1542 / 45507153261 completed/success, 15/15 steps, 189 passed, traceability 385 events PASS, 10-source provenance PASS.
+- Run #1542 obtained all 3 official CRA PDF source files; C/2026/5252 used fallback (do not claim byte identity with original mirror). Digests, artifact IDs and expiry recorded in report §88.6/evidence §46.
+- Product source binaries still not acquired; manufacturer inquiry 60-question draft not sent. CRA only; SIL 3 excluded.

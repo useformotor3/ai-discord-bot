@@ -2441,3 +2441,36 @@ Regulation (EU) 2024/2847 공식 OJ 본문 Article 7은 Annex III 제품 범주�
 실제 SKU, EU/EEA 공급, 경제운영자, 개별 DoC coverage/서명, BOM/정확한 MCU/SBOM, 보안 설정, 제품 분류, 취약점 대응, 보안 업데이트와 지원기간은 계속 Unknown. 제조사 질의서 59문항은 draft이며 발송되지 않았다.
 
 CRA only; SIL 3 excluded.
+
+ 
+## §88. 2026-11-25 — main push Run #1540 최종 성공 및 제조사 원본 취득 재시도
+
+### 88.1 최종 CI 결론
+main exact HEAD `cffd2118d2ce4127e50352650479553cb12c2bdf`에서 Run #1540 / ID 45505830283은 최종 조회 시 event=push, completed/success, job 138840683889 completed/success로 확정됐다. 15/15 returned steps(1–12,23–25), pytest 189 passed, CRA cross-matrix traceability PASS(project_log_events=384), official source provenance 10개 PASS. 앞선 API 조회에서 step 완료 후 상위 run/job이 잠시 in_progress로 남았으나 후속 조회에서 정상 완료 상태를 확인했다. 이는 관측된 상태 반영 지연으로만 기록하며 GitHub 내부 원인을 추정하지 않는다.
+
+### 88.2 출처 canary 및 artifact
+공식 CRA PDF는 3종 중 2종 fresh fetch/hash success. OJ C/2026/6013: 2,709,282 bytes, 61 pages, SHA-256 `40ca76caeb0108f5b97c8f373a95f590b453fe92bd45a483addf3326e48c1dc2`; M/606 Annex도 fetch/hash success. C/2026/5252는 HTTP 503 temporary outage로 SKIPPED. PDF ZIP artifact ID 14972408962, 1,906,817 bytes, SHA-256 `c7955d47a2c18f7f4eb9d93678a2a6a559c4e19abae35b98528389b0b1d60c0e`; provenance ZIP artifact ID 14973656717, 2,565 bytes, SHA-256 `5468b1744806d109ba475574e5f209f568e83a3137f46f10b6ca9fb7c2c18d38`. 만료일 2026-12-01. 이는 Commission source pack이지 iX700M 제품 증거 binary가 아니다.
+
+### 88.3 제조사 원본 binary 재시도
+2026-11-25 재확인:
+- 매뉴얼: 공식 인덱스 row 41은 iX700M DRIVE 400[V] Ver1.4(2026-05-26), 그러나 빈 분류 필터는 Ver1.3을 표시한다. 상세 `wr_id=12652`는 502. 원본 PDF 미확보.
+- Drive EU DoC: iX700MD1-B-150B, CE_DoC-LVDEMC PDF 238.9KB metadata. 상세 페이지 502. signed PDF 미확보.
+- Converter CE: iX700MCV, PDF 234.4KB metadata. 상세 페이지 502. binary 미확보.
+- Converter UKCA: iX700MCV, PDF 224.1KB metadata. 상세 페이지 502. binary 미확보.
+- KR/EN Catalogue: 각각 10.7MB metadata. 상세 페이지 502. binary 미확보.
+- CAD: 공식 drawing index row 19, 2026-04-21, “iX700M Series 서보드라이브 외형도 2D(CAD), 3D(STEP)” metadata. listing/detail timeout; ZIP/STEP 미확보.
+따라서 상태는 전부 **listing metadata only**다. DoC의 서명·진위·모델 coverage를 확인한 것으로 취급하지 않는다.
+
+### 88.4 제조사 질의서 Q60
+Q60은 공식 페이지에서 파일 다운로드가 막힌 경우 revision-controlled secure transfer/alternate official distribution channel을 요청하고, 각 원본 파일에 대해 원본 파일명, native format, byte size, SHA-256, 발행일/개정일, 서명 검증방법, 적용 SKU/하드웨어·옵션 범위를 전달하도록 한다. 질문서는 총 60문항이며 미발송 초안이다.
+
+### 88.5 미확정 정보
+Actual SKU, EU/EEA supply, economic operators, signed DoC coverage, BOM/exact MCU/SBOM, security configuration, CRA classification, vulnerability handling, security update/support period는 모두 Unknown.
+
+ 
+### 88.6 PR #253 JSONL 교정 및 공식 CRA PDF 3종 확보 (Run #1541/#1542)
+PR #253 초기 실행 Run #1541은 이전 head `c0b3c56c612b5a014465e9f68bf9fb3e384a8f3a`에서 PROJECT_LOG.jsonl 385번째 빈 줄로 traceability 단계가 실패했다. 원인은 기존 파일의 trailing newline에 append payload가 추가 leading newline을 더한 것이었다. 이 실행은 취소되었고 pytest는 실행되지 않았다. 빈 줄을 제거하고 JSONL을 정규화한 새 exact head `e0788eb79d8b5c061b28111f96d9d6419eac950b`에서 Run #1542 / 45507153261은 completed/success, 15/15 steps, pytest 189 passed, traceability 385 events PASS, 10-source provenance PASS로 완료됐다. JSONL은 385 records / 0 invalid / 0 blank lines로 확인됐다.
+
+Run #1542는 CRA PDF 3종을 모두 fetch/hash 검증했다. C/2026/5252는 fallback=true로 1,190,726 bytes, 84 pages, SHA-256 `fe209c250e3d1f7599e42826d91963666951332927edcf511a2e79fe8d2f8234`; OJ C/2026/6013은 2,709,282 bytes, 61 pages, SHA-256 `40ca76caeb0108f5b97c8f373a95f590b453fe92bd45a483addf3326e48c1dc2`; M/606 Annex는 151,267 bytes, 6 pages, SHA-256 `262b09596cb5cbe7d72a2c7789fb2512ee00db7f69082e7def2c8181b0f63276`. fallback 취득본은 원래 mirror와 바이너리 동일성을 주장하지 않는다.
+
+PDF ZIP artifact ID 14973509955 (3,070,565 bytes, SHA-256 `ca03854e1a1fc393292d0676a9e73276fedb8f4e12f91f62ed08f5aba05ba8f7`), provenance ZIP artifact ID 14973037845 (2,565 bytes, SHA-256 `ac0f673fc8844fcd62977fad35e0c0d1a00d2e2aab8ad78bdbe8f2728c74623c`), 만료 2026-12-01. 이들은 CRA 법령·가이드 출처 pack이며 iX700M 제품 원본 파일이 아니다.
