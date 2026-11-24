@@ -3140,3 +3140,27 @@
 - 보고서·증거등록부·통합보고서·상황판·README·PROJECT_LOG 동기화 후 PR/CI 검증 예정.
 - 제조사 발송·회신은 확인되지 않았으므로 완료로 기록하지 않는다.
 - 운영 main.py, 운영 workflow, secrets, API cadence 변경 없음. CRA only; SIL 3 제외.
+
+
+## 2026-11-24 — PR #224 병합 및 지속 메모리/다음 단계 버튼 규약
+
+### PR #224 최종 검증·병합
+- PR #224의 exact HEAD ccb1ed8e9c38d1c0b31054186379d6964ae55a41 및 8개 문서 변경을 검토했다. Review thread는 없었다.
+- Run #1441 / 45298189166은 12개 job step 전체 success: source identity, compile, CRA traceability, full pytest, official CRA PDF/HTML canary, PDF/provenance artifact uploads.
+- PDF artifact 14876504424, provenance artifact 14876763752. PR #224 squash merge SHA 8351a511c51fcb6d63ec84b59dc2b96ccf90f7d2.
+
+### 버튼 요구사항의 영구 기록
+- 사용자는 대화창의 버튼을 편리하다고 확인했고, 버튼이 매번 제공되도록 GitHub에도 기록하라고 요청했다.
+- docs/AI_CONTINUOUS_IMPROVEMENT_AND_NEXT_STEP_PROTOCOL.md 신규 작성. 주요 응답 마지막에 '다음 단계 계속 진행' 버튼을 항상 제공하고, 버튼 payload가 최신 GitHub 문서/상황판을 읽고 관련성 평가 후 실제 다음 CRA 작업을 수행하도록 명문화했다.
+- 버튼 payload는 단순 '진행해'가 아니라 상태 재구성 → 관련 이력 분류 → 증거 확인 → 계획/복구기준 → 실제 실행 → 테스트/CI → 반성·선별 → GitHub 기록 → 버튼 재제공 순서를 요청한다.
+
+### 연구 근거와 적용
+- MemDev-Bench (arXiv:2610.27524, 2026-10-20): 무관하거나 맹목적으로 재사용된 메모리가 실패를 유발할 수 있고 raw trajectory에 과정 정보가 남는다는 관찰 → 관련성 게이트와 원시 로그 보존.
+- Continual AutoResearch (arXiv:2611.05108, 2026-11-03): persistent state는 효율을 높일 수 있으나 최종 성과 개선은 일관되지 않음 → 기록 자체를 성과로 보지 않고 실제 효과 검증.
+- Self-Improvements survey (arXiv:2607.13104, 2026-07-14): prompt/memory/tools/control logic도 개선 대상인 운영 scaffold → 모델 가중치가 아닌 GitHub에 저장된 운영 scaffold만 개선.
+- Dual-Process Agent (Electronics 2026, 15(6), 1232): 빠른 검색·응답과 느린 검토·보수적 메모리 선별 분리 → 세션 전 상태 회수, 세션 후 검증된 규칙만 업데이트.
+- 위 연구는 동일 CRA 저장소에서 성능 향상을 보장하지 않는다. preprint와 peer-reviewed publication을 구분하고, 적용 가설·검증 결과를 별도 기록한다.
+
+### 안전·범위
+- 작업 브랜치 docs/cra-ai-memory-button-protocol-2026-11-24, 기준 main 8351a511c51fcb6d63ec84b59dc2b96ccf90f7d2.
+- 문서 전용. CRA only; SIL 3 제외. 운영 main.py/workflow/secrets/API cadence 변경 없음.
