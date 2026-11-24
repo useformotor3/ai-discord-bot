@@ -487,3 +487,18 @@ ESO별 C(2026)7861 실제 수령일과 Article 2 비수락 통지는 여전히 U
 - CE DoC 첨부명/크기는 게시 메타데이터일 뿐 DoC 본문 검토나 CRA conformity 증거가 아니다.
 - CAD 게시 사실은 확인했으나 원본 첨부 확보는 실패. 다른 모델(PHOX) 첨부 크기를 iX700M에 적용하지 않는다.
 - 독립 판매, EU/EEA 개별 공급, 실제 대상 SKU, importer/economic operator, 내부 회로/BOM/MCU/보안 설정은 Unknown 유지.
+
+
+## 23. 2026-11-24 — 매뉴얼 버전 충돌·CE DoC/CAD 첨부 재접근
+
+| ID | 공식 출처 | 확인 사실 | 증거 한계 / 판정 |
+|---|---|---|---|
+| MFG-IX7M-22 | https://www.lsmecapion.com/bbs/board.php?bo_table=manual&sca= | 직접 열린 전체 목록 snapshot: iX700M DRIVE 400[V] Ver1.3, 2026-05-26 | 다른 공식 검색 snapshot은 Ver1.4 표시. revision conflict unresolved; 상세 `wr_id=12652` cache miss; PDF bytes/hash unknown |
+| MFG-IX7M-23 | https://www.lsmecapion.com/bbs/board.php?bo_table=manual 및 https://lsmecapion.com/bbs/board.php?bo_table=manual&sca=Servo | 공식 검색 snapshot에서 동일 게시일 Ver1.4 확인 | Ver1.3 snapshot도 존재. 검색 색인 오류/첨부 교체/실제 revision 중 무엇인지 제조사 확인 필요 |
+| MFG-IX7M-24 | https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&sca=CE&wr_id=12886 | Converter CE 상세 페이지 및 첨부명 `[CE_DoC-LVDEMC] iX700MCV.pdf` (234.4K) 확인 | attachment URL cache miss; PDF body/signature/scope not inspected |
+| MFG-IX7M-25 | https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&page=4&wr_id=12888 | Drive DoC 검색 snapshot: `[CE_DoC-LVDEMC] iX700MD1-B-150B.pdf` (238.9K) | 상세 페이지 cache miss; PDF original/body unknown |
+| MFG-IX7M-26 | https://www.lsmecapion.com/bbs/board.php?bo_table=drawing&sca=Servo+Drive | iX700M 2D(CAD)/3D(STEP) 게시, 2026-04-21 | 상세 `wr_id=12455` cache miss; original DWG/DXF/STEP, filename, size, revision, hash unknown |
+
+- 이전 “Ver1.4는 stale index” 단정은 철회. 현재 판정은 공식 페이지 snapshot 간 revision 표기 충돌이며 실제 PDF revision Unknown.
+- 원본 첨부 접근 실패는 확보 실패로 기록. DoC/CAD 내용 검토 완료로 표현하지 않는다.
+- 실제 프로젝트 SKU, 독립 판매, EU/EEA 개별 공급, importer/economic operator, BOM/MCU/security configuration은 Unknown.
