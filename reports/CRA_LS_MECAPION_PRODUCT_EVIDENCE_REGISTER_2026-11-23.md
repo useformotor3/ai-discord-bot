@@ -665,8 +665,8 @@ Run #1462 / ID 45314843427, PDF artifact 14884218192. ZIP 3,070,568 bytes, SHA-2
 | Evidence ID | 공식 자료 / 관찰 | 확인된 사실 | 미확보·한계 | 상태 |
 |---|---|---|---|---|
 | SQ-IX700M-MANUAL-2026 | https://sol.ls-electric.com/kr/ko/product/category/4?pageNumber=4 ; https://sol.ls-electric.com/kr/ko/newSearch?pageNumber=70 | Motion & Servo 목록의 iX700M 사용 설명서, update 2026-09-16; 통합검색 문서명·분류 일치 | SPA 상세 URL/문서 ID/PDF bytes/revision/hash 없음 | metadata verified; original not acquired |
-| LSM-MANUAL-V14 | https://lsmecapion.com/bbs/board.php?bo_table=manual&sca=Servo | Servo filter list: iX700M DRIVE 400[V] 매뉴얼 Ver1.4, 2026-05-26 | detail fetch 502/timeout; PDF bytes/hash/revision scope 없음 | index only |
-| LSM-MANUAL-V13 | https://www.lsmecapion.com/bbs/board.php?bo_table=manual&sca= | unfiltered list: post no. 41, same date 2026-05-26, Ver1.3 | list/detail cache/link inconsistency; original binary unavailable | index only; conflict unresolved |
+| LSM-MANUAL-V14 | https://lsmecapion.com/bbs/board.php?bo_table=manual&sca=Servo ; https://www.lsmecapion.com/bbs/board.php?bo_table=manual | Servo-filter and default lists both show iX700M DRIVE 400[V] 매뉴얼 Ver1.4, 2026-05-26 | detail fetch 502/timeout; PDF bytes/hash/revision scope 없음 | 2 index snapshots |
+| LSM-MANUAL-V13 | https://www.lsmecapion.com/bbs/board.php?bo_table=manual&sca= | explicit empty-category list shows post no.41, same date 2026-05-26, Ver1.3 | conflicts with two Ver1.4 index snapshots; original binary unavailable | index only; conflict unresolved |
 | LSM-CE-DRIVE | https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&page=4&wr_id=12888 | model example iX700MD1-B-150B; 480 Vac; 15 kW; attachment label and size 238.9K | attachment download timeout; DoC contents/signature/standards/model scope unverified | metadata only |
 | LSM-CE-CONVERTER | https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&sca=CE&wr_id=12886 | iX700MCV; 480 Vac; 15/37/55/75 kW codes; attachment label and size 234.4K | detail/attachment timeout; DoC contents unverified | metadata only |
 | LSM-CAD-IX700M | https://www.lsmecapion.com/bbs/board.php?bo_table=drawing&sca=Servo+Drive | iX700M Series outline drawing 2D CAD / 3D STEP, 2026-04-21 | detail and binary DWG/DXF/STEP not acquired; no hash | index only |
@@ -677,3 +677,5 @@ Run #1462 / ID 45314843427, PDF artifact 14884218192. ZIP 3,070,568 bytes, SHA-2
 - Run #1497 recovered C(2026)7861 after three repeated timeouts; binary SHA-256 remains 262b09596cb5cbe7d72a2c7789fb2512ee00db7f69082e7def2c8181b0f63276.
 - Actual SKU, independent sale, EU/EEA supply, importer/economic operator, BOM/MCU/security configuration Unknown. Manufacturer inquiry draft_prepared_not_sent.
 - CRA only; SIL 3 excluded.
+
+- Revision snapshot correction: two official index URLs (default and Servo-filter) show Ver1.4; only the explicit sca= URL shows Ver1.3. This is an index/cache/query inconsistency, not proof that Ver1.4 binary was downloaded or is the valid deployed revision.
