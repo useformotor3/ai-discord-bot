@@ -496,3 +496,14 @@ PDF artifact ID 14874639916 및 provenance artifact ID 14875084483이 Run #1427�
 
 ### 14.15 PR #223 병합 기록
 PR #223은 Run #1432 성공 및 최종 11개 파일 diff 검토 후 squash merge됐다. Merge SHA: a1fe5b983e1cecb1235b56071534e05884d61786. Run #1432는 pytest 186개, source identity, compile, CRA traceability, HTML source locator 10개, PDF source 수집 및 두 artifact upload가 모두 성공했다. C(2026)5252와 C/2026/6013 PDF 바이너리 및 SHA-256 확보 결과는 §14.14에 기록했고, C(2026)7861 Annex는 Commission register 30초 timeout으로 manifest unavailable 상태를 유지한다.
+
+
+## 19. 2026-11-24 — LS메카피온 공식 기술·영업 질의서 작성
+
+제조사 발송 전 공식 질의서 초안을 작성했다: reports/LS_MECAPION_IX700M_FORMAL_TECHNICAL_COMMERCIAL_INQUIRY_2026-11-24.md.
+
+질의 범위: Converter Unit과 Drive Unit의 독립 견적·주문·계약·납품·송장·교체 판매 여부, 표준/옵션 SKU 및 조합표; EU/EEA 실제 판매·수출·납품 이력과 공급 국가·법인·수입자·유닛별 공급 증거; 실제 SKU 및 iX700MCV/iX700MD/iX700MCB-B-8K 코드 정의; iX700M DRIVE 400[V] Ver1.4 PDF 원본과 2D CAD/3D STEP 원본; 유닛별 회로도·PCB·BOM 또는 redacted BOM; MCU/MPU/DSP/EtherCAT controller/PHY/FPGA/메모리/보안 IC의 full ordering code와 silicon revision; firmware/bootloader·secure boot·debug lock·인증·암호·tamper·anti-rollback; SBOM·PSIRT·취약점 대응·지원기간; 유닛별/조합별 EU DoC.
+
+NDA, redacted 자료, 부품군별 BOM 및 제조사 서명 확인서를 허용한다. 개인키·암호키 원문·비밀번호 등 비밀값은 요청하지 않는다. 사용자 프로젝트의 ST MCU 정보를 iX700M BOM에 전용하지 않는다.
+
+현재 공개자료상 기능적 유닛 분리·별도 모델코드·유닛별 CE DoC 게시 및 Ver1.4/CAD 게시 메타데이터는 확인됐다. 실제 독립 상업 판매, EU 개별 공급, 실제 대상 SKU, 첨부 원본 파일/본문/hash, 내부 회로도/BOM/MCU/보안 설정은 Unknown 또는 Not acquired로 유지한다. 질의서 작성 완료, 제조사 발송·회신 미확인이다. 운영 코드/workflow/secrets/API cadence는 변경하지 않는다. CRA only; SIL 3 제외.
