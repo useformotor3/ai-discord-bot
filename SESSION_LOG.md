@@ -3352,3 +3352,14 @@ CRA only; SIL 3 excluded.
 - Post-merge main push Run #1479 / ID 45316962126, event=push, exact merge SHA, success 25/25. Main PROJECT_LOG 363 / invalid 0.
 - PR #229 main push Run #1452 / 45312941583 remains verified success 25/25.
 - Report §74 and evidence register §28 now include iX700M architecture PDF, KR/EN catalog metadata, training index. Solution Square manual detail/PDF, Ver1.3/Ver1.4 originals, Converter/Drive CE DoC originals and CAD DWG/DXF/STEP still not acquired. Actual SKU/EU supply/importer/BOM/MCU/security remain Unknown; inquiry draft_prepared_not_sent. CRA only; SIL 3 excluded.
+
+
+## 2026-11-24 — Run #1481 최종 성공 및 iX700M 원본자료 재시도
+
+- Run #1481 / ID 45317449785, event push, exact main HEAD `c395fc5b5b2a393632bb2fbe65b10fd6572b936d`: final success 25/25; main read-back identical.
+- Job logs: source identity, compile, CRA cross-matrix, full tests, official CRA PDF/HTML canaries, PDF and provenance uploads all passed. PDF artifact 14886830715 ZIP 3,070,567B SHA-256 `de227aa54d5a76541738d10511b7f04de18fe6e6487ac0949c0a9a89be9c7175`; provenance artifact 14885424833 ZIP 2,565B SHA-256 `41be60344b6921ad9ccbead26ce870578e3bc2363b51dc24c78730e3fe1ee48c`.
+- Official Solution Square list shows iX700M manual update 2026-09-16, but JS app does not expose detail/document ID/PDF.
+- LS Mecapion manual snapshots remain inconsistent: Servo filter Ver1.4 vs full page=1 Ver1.3 (same post date 2026-05-26); wr_id=12652 detail timeout, PDF not acquired.
+- Converter and Drive CE posts/attachment metadata verified; actual PDFs timed out. CAD post 117 (2026-04-21) and wr_id=12455 verified, detail timeout; CAD originals not acquired.
+- Report §74.7 / evidence register §29 appended. Actual SKU, independent sale, EU/EEA supply, importer/economic operator, BOM/MCU/security remain Unknown; manufacturer inquiry `draft_prepared_not_sent`.
+- PR #229 Run #1452 success 25/25 preserved. CRA only; SIL 3 excluded.

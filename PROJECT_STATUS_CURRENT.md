@@ -1,4 +1,16 @@
 
+## 2026-11-24 — Run #1481 final success 및 제조사 자료 원본 재접근
+
+- Run #1481 / ID `45317449785`, event=push, exact HEAD `c395fc5b5b2a393632bb2fbe65b10fd6572b936d`: final success, 25/25. main read-back SHA identical.
+- 단계별: source blob identity, Python setup, compile, CRA traceability, full tests, official CRA PDF canary, PDF evidence upload, official CRA source canary, provenance manifest upload 모두 success.
+- PDF artifact 14886830715 (3,070,567B), ZIP SHA-256 `de227aa54d5a76541738d10511b7f04de18fe6e6487ac0949c0a9a89be9c7175`; provenance artifact 14885424833 (2,565B), ZIP SHA-256 `41be60344b6921ad9ccbead26ce870578e3bc2363b51dc24c78730e3fe1ee48c`. CRA official PDFs 3종 및 provenance manifest 재생성·업로드 확인.
+- Solution Square `iX700M 사용 설명서` 목록 update 2026-09-16 확인. JS app shell에서 detail/document ID/PDF URL 미노출; 원본 미확보.
+- LS Mecapion manual Servo filter Ver1.4 vs full index page=1 Ver1.3 conflict 재현. Detail wr_id=12652 timeout; actual PDF/revision Unknown.
+- Converter/Drive CE 게시물 메타데이터 및 첨부 파일명 확인. 첨부 PDF 다운로드 timeout; DoC 본문·서명·적용 범위 미검증. CAD 게시물 117번(2026-04-21) 및 detail wr_id=12455 확인, detail timeout; DWG/DXF/STEP 원본 미확보.
+- Actual SKU, independent sale, EU/EEA supply, importer/economic operator, BOM/MCU/security configuration Unknown. Manufacturer inquiry `draft_prepared_not_sent`.
+- PR #229 Run #1452 / ID 45312941583 main push success 25/25 기록 유지.
+- CRA only; SIL 3 excluded. 운영 main.py/workflow/secrets/API cadence 변경 없음.
+
 ## 2026-11-24 — PR #235 병합 및 main push CI 최종 확인
 
 - PR #235 final exact HEAD `df68f617ee1e49d2c6183b8cb42f1f042043d007`, Run #1478 / 45316731254 success. 6 files; JSONL 363 / invalid 0; review threads 0 / reviews 0; base `bd46aa2a26a39a5389f3b314a94523bb495689b5`.
