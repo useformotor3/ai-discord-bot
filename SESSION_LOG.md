@@ -3086,3 +3086,10 @@
 - PDF canary skipped because C(2026)5252 Commission newsroom redirected to interstitial and allowlisted ANFR mirror timed out; PDF bytes/hash not captured by CI.
 - Final 11-file diff reviewed; squash merge SHA 200ccca974ad3af09b1634fd9bf02c1baac5ca8c.
 - Independent sale/EU supply, actual SKU, internal BOM/MCU and manual/CAD file contents remain unknown.
+
+
+## 2026-11-24 — PR #223 PDF fallback reliability correction
+- Run #1419 failed at the PDF canary after all code/compile/traceability/pytest checks passed. The ANFR fallback returned an HTML page; another attempt timed out after 30 seconds.
+- Removed ANFR fallback and switched C(2026)5252 Annex to the browser-verified Commission-hosted transition-pathways.europa.eu PDF copy.
+- Reworked fetch_all_pdf_sources to continue source-by-source: fetched PDFs are written with binary/text SHA-256; unavailable sources are recorded in manifest with status/reason; invalid PDF magic, identity marker mismatch and arbitrary non-allowlisted redirects remain hard failures.
+- Added partial acquisition regression test; refreshed isolated workflow blob pins. PR #223 new exact HEAD CI pending.
