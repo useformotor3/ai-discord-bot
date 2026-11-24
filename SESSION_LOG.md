@@ -3522,3 +3522,13 @@ CRA only; SIL 3 excluded.
 
 - PR #250 문서 변경을 여러 파일에 순차 반영하는 동안 중간 PR workflow runs #1530/#1531/#1532는 후속 head 갱신에 따라 cancelled 처리됐다. 이들은 테스트 실패가 아니라 이전 head에 대한 실행 취소이며 최종 head의 통과 증거로 사용하지 않는다.
 - 마지막 변경 커밋 이후 새 exact-head run이 완료되는지 확인하고, 해당 run의 job/steps/log를 검증하기 전에는 PR #250을 병합하지 않는다.
+
+
+## 2026-11-25 — PR #250 병합 및 main push CI 확정
+
+- PR #250 exact head 7d361e1f9973dcd1ec783d7ff3895e0ddf05fe6f, Run #1535 / 45491181163 SUCCESS, 15/15 returned steps success, 189 passed, traceability PASS (382 log records), 10 sources/provenance PASS. 2026-5252 source mirror temporary HTTP 503 -> SKIPPED; two other PDFs fetched and hashed.
+- PR #250 diff 7 files(+179/-0), no reviews/threads, JSONL 382 valid / 0 invalid. Expected-head squash merge SHA ff42addc136836bbbb89bec48bb0c791f031db19.
+- Main push Run #1536 / 45491379142 exact merge SHA SUCCESS, 15/15 steps, 189 passed, 382 traceability events, 10 sources/provenance PASS. Same 2026-5252 temporary 503 skip; two PDFs freshly fetched and hashed. Earlier #1526/#1528 had all 3 PDFs successfully fetched.
+- Artifact digests and warnings recorded in integrated report §86 and evidence register §43. No workflow changes.
+- Product manual/DoC/catalogue/CAD binary still not obtained; only metadata. Inquiry 58 questions, draft not sent. Actual SKU, EU supply, economic operators, BOM/MCU/SBOM/security remain Unknown.
+- CRA only; SIL 3 excluded.
