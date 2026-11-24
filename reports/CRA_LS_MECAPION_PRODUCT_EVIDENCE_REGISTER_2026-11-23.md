@@ -713,3 +713,23 @@ Run #1462 / ID 45314843427, PDF artifact 14884218192. ZIP 3,070,568 bytes, SHA-2
 - Do not upgrade metadata to acquired binary evidence. Actual SKU, independent sale, EU/EEA supply, importer/economic operator, BOM/MCU/security remain Unknown.
 - Manufacturer inquiry remains draft_prepared_not_sent; no send/receipt/reply proof.
 - CRA only; SIL 3 excluded.
+
+## 35. 2026-11-24 — PR #242 최종 CI 및 공식 iX700M 인증·카탈로그 인덱스 확장
+
+| Evidence ID | 공식 출처 | 목록에서 확인된 내용 | 실제 원본 상태 |
+|---|---|---|---|
+| CI-1510 | https://github.com/useformotor3/ai-discord-bot/actions/runs/45333438936 | main exact SHA dd54132fb44ed752b1f7942f4485ee03399a2c2f, SUCCESS 25/25 | CI 검증 완료 |
+| CI-1511 | https://github.com/useformotor3/ai-discord-bot/actions/runs/45333628512 | PR #242 exact HEAD f9dd8484403f6f91daa94f14b74250965d67e4f6, SUCCESS 25/25 | CI 검증 완료; 문서 보정 후 새 HEAD CI 필요 |
+| IX700M-CE-DRIVE | https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&page=4&wr_id=12888 | iX700MD1-B-150B; D1 1축, B 480Vac, 150 15kW, B BiSS-C/custom; CE DoC 238.9K | 상세 페이지 확인; PDF download timeout, 미확보 |
+| IX700M-CE-CV | https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&sca=CE&wr_id=12886 | iX700MCV; 480Vac; 15/37/55/75kW; CE DoC 234.4K | 검색/게시물 메타데이터; PDF 미확보 |
+| IX700M-UKCA-CV | https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&page=3&wr_id=12893 | iX700MCV; 480Vac; 15/37/55/75kW; UKCA DoC 224.1K | 상세 페이지 확인; PDF download timeout, 미확보 |
+| IX700M-UL | https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&sca=UL | iX700M Series UL Certificate of Compliance listing, 2026-04-13 | 상세/인증서 미확보; file number/scope Unknown |
+| IX700M-KC | https://www.lsmecapion.com/bbs/board.php?bo_table=certificate | iX700MD1-B-150B, iX700MD1-B-075B, iX700MCV-B-750/-550 listings | 개별 원본/범위 미확보 |
+| IX700M-MANUAL | https://www.lsmecapion.com/bbs/board.php?bo_table=manual ; https://www.lsmecapion.com/bbs/board.php?bo_table=manual&sca=Servo ; https://www.lsmecapion.com/bbs/board.php?bo_table=manual&sca= | Default/Servo/empty-sca query snapshots disagree between Ver1.3 and Ver1.4 | binary revision Unknown |
+| IX700M-CATALOG | https://www.lsmecapion.com/bbs/board.php?bo_table=catalog&wr_id=12110 | KR/EN iX700M brochure PDFs, each 10.7MB | detail/download timeout; not acquired |
+| IX700M-CAD | https://www.lsmecapion.com/bbs/board.php?bo_table=drawing&sca=Servo+Drive&wr_id=12455 | 2D CAD / 3D STEP drawing listing dated 2026-04-21 | detail timeout; DWG/DXF/STEP binaries not acquired |
+| IX700M-SQUARE | https://sol.ls-electric.com/kr/ko/product/category/4?pageNumber=4 | iX700M 사용 설명서, update 2026-09-16 | SPA shell; PDF not acquired |
+
+- Listing metadata is not a substitute for original file contents. CE/UKCA/UL/KC are not proof of CRA conformity or EU/EEA supply.
+- Actual SKU, independent sale, EU/EEA supply, importer/economic operator, BOM/MCU/security remain Unknown. Manufacturer inquiry draft_prepared_not_sent.
+- CRA only; SIL 3 excluded.
