@@ -3109,3 +3109,34 @@
 - C2026_7861 Commission register 30s timeout remains unavailable; manifest captures reason.
 - PDF artifact ID 14876885240; provenance artifact ID 14875348784.
 - No unsupported inference about separate sales, EU PDE supply, actual SKU or internal MCU/BOM.
+
+
+## 2026-11-24 — LS메카피온 공식 기술·영업 질의서 작성
+
+### 수행
+- main 최신 commit bcf4b03bfb5899ff5d3748a8ff1eed54d8aaf34c, README, PROJECT_STATUS_CURRENT, 통합 보고서 §56~§63, 제품 분류 보고서 §17~§18, 제품 증거 등록부 §18, 세션 로그 및 PROJECT_LOG를 확인했다.
+- 작업 브랜치 research/cra-lsmecapion-formal-inquiry-2026-11-24를 main 기준으로 생성했다.
+- 공개 공식자료에서 iX700M 제품군 사양, CE 인증 목록의 Converter/Drive 코드 및 개별 DoC 게시, Ver1.4 매뉴얼 게시, 2D CAD/3D STEP 외형도 게시를 확인했다.
+- 제조사 발송 전 기술·영업 질의서 초안을 작성했다.
+
+### 질문 묶음
+1. Converter Unit/Drive Unit 각각의 독립 견적·발주·계약·납품·송장·교체 판매 여부와 표준 SKU.
+2. EU/EEA 실제 공급 이력, 국가, 공급 법인, 수입자/유통업체, 개별 유닛/조합 공급 증거.
+3. 실제 대상 SKU와 전체 모델코드 규칙, MCB 및 8K 코드 의미.
+4. iX700M DRIVE 400[V] Ver1.4 PDF 원본 및 2D CAD/3D STEP 원본 파일.
+5. 유닛별 회로도·PCB·BOM, MCU/MPU/DSP/통신/보안 IC 전체 주문코드와 silicon revision.
+6. 펌웨어/부트/업데이트, secure boot, debug lock, 인증·암호·tamper·anti-rollback 설정.
+7. SBOM, PSIRT, 취약점 처리, 지원기간, EU DoC 및 시험자료.
+
+### 증거 수준과 한계
+- 기능적 Converter/Drive 분리, 개별 모델코드 및 유닛별 CE DoC 게시: 공개자료 수준 Confirmed.
+- 독립 상업 판매, EU 개별 공급, 실제 SKU: Unknown.
+- Ver1.4 및 CAD는 게시 메타데이터만 확인. 첨부 원본/본문/hash는 미확보.
+- 회로도/BOM/MCU 전체 부품번호/보안 설정은 Unknown. 사용자 프로젝트에서 ST MCU를 쓴다는 정보는 iX700M에 전용하지 않는다.
+- 질의서는 NDA/redacted 자료와 제조사 확인서 대체를 허용하며 비밀키·비밀번호는 요청하지 않는다.
+
+### 변경/검증 경계
+- 신규 문서: reports/LS_MECAPION_IX700M_FORMAL_TECHNICAL_COMMERCIAL_INQUIRY_2026-11-24.md.
+- 보고서·증거등록부·통합보고서·상황판·README·PROJECT_LOG 동기화 후 PR/CI 검증 예정.
+- 제조사 발송·회신은 확인되지 않았으므로 완료로 기록하지 않는다.
+- 운영 main.py, 운영 workflow, secrets, API cadence 변경 없음. CRA only; SIL 3 제외.

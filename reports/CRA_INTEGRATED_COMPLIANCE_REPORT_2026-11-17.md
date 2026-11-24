@@ -1568,3 +1568,12 @@ PR #223 Run #1427(45294643451)은 workflow success, pytest 186 passed로 종료�
 ## §63. 2026-11-24 — PR #223 PDF 수집 안정화 및 병합
 
 PR #223은 Run #1432 성공 및 11개 파일 최종 diff 검토 후 squash merge됐다. Merge SHA: a1fe5b983e1cecb1235b56071534e05884d61786. Run #1432는 pytest 186개, CRA traceability, 공식 CRA HTML locator 10개, C(2026)5252 Annex 및 C/2026/6013 PDF 수집, PDF/provenance artifact upload에 성공했다. C(2026)7861 Annex는 Commission register 30초 timeout으로 unavailable manifest 기록을 유지한다. 두 PDF의 SHA-256 및 artifact ID는 §62에 기록했다.
+
+
+## §64. 2026-11-24 — LS메카피온 공식 기술·영업 질의서 작성
+
+iX700M의 CRA 제품경계 및 구성품 실사를 위해 제조사 질의서 초안을 작성했다. 문서: reports/LS_MECAPION_IX700M_FORMAL_TECHNICAL_COMMERCIAL_INQUIRY_2026-11-24.md.
+
+질의는 (1) Converter Unit/Drive Unit 독립 견적·발주·계약·납품·교체·판매 여부, (2) EU/EEA 실제 공급 국가·판매 법인·수입자·유닛별 공급 증거, (3) 실제 SKU 및 공개 모델코드 전체 정의, (4) Ver1.4 원본 PDF와 외형 2D/3D CAD 원본, (5) 유닛별 회로도·PCB·BOM 및 MCU/통신/보안 반도체 full ordering code, (6) firmware/bootloader·secure boot·debug lock·인증·암호·tamper·anti-rollback 설정, (7) SBOM·PSIRT·취약점 처리·지원기간, (8) 유닛별/조합별 EU DoC 및 시험자료를 포함한다.
+
+자료 요청은 NDA·redacted BOM·제조사 확인서 등 대체 방식을 허용하고 개인키/비밀번호 등 비밀값을 요구하지 않는다. 공개 게시판의 문서 목록·별도 CE DoC·CAD 메타데이터는 실제 독립 판매·EU 공급 또는 내부 설계를 입증하지 않는다는 한계를 유지한다. 질의서 작성은 완료했으나 제조사 발송 및 답변은 확인되지 않았다. 따라서 독립 판매, EU 개별 공급, 실제 SKU, 회로도/BOM/MCU/보안 설정은 Unknown으로 유지한다.

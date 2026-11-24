@@ -1,3 +1,13 @@
+## 2026-11-24 — LS메카피온 공식 기술·영업 질의서 작성
+
+- 최신 main 기준점: bcf4b03bfb5899ff5d3748a8ff1eed54d8aaf34c (PR #223 문서 동기화 commit).
+- 작업 브랜치: research/cra-lsmecapion-formal-inquiry-2026-11-24; main 기준에서 분기. 문서 전용 변경.
+- 신규 질의서 초안: reports/LS_MECAPION_IX700M_FORMAL_TECHNICAL_COMMERCIAL_INQUIRY_2026-11-24.md.
+- 질문: Converter/Drive 독립 주문·판매·교체, EU/EEA 실제 공급 및 수입자/판매 법인, 전체 SKU와 iX700MCB-B-8K 코드 정의, Ver1.4 원본 PDF, 2D/3D CAD 원본, 내부 회로도/BOM/PCB, MCU/통신/보안 IC 전체 부품번호·revision, firmware/update/security 설정, SBOM/PSIRT/support period, EU DoC.
+- NDA 및 redacted 자료/제조사 서명 확인서를 허용. 개인키·암호키 원문·비밀번호 등 비밀값은 요청하지 않음.
+- 공개 자료상 기능 분리·별도 코드·CE 게시·매뉴얼/CAD 게시 메타데이터는 확인됐으나 독립 상업 판매·EU 개별 공급·실제 SKU·내부 설계는 Unknown 유지.
+- 질의서 작성 완료, 제조사 발송·회신 미확인. 운영 main.py/workflow/secrets/API cadence 변경 없음. CRA only; SIL 3 제외.
+
 ## 2026-11-24 — EN 40000 및 CRA Guidance 근거 정밀 정정
 - 2026-07-27 Commission guidance announcement가 C(2026)6013을 연결하며, 2026-11-17 OJ C/2026/6013은 동일 문서의 관보 게재본임을 확인했다. 서로 다른 두 지침으로 세지 않는다.
 - CEN/CENELEC 공식 카탈로그에서 EN 40000-1-1:2026 및 EN 40000-1-2:2026의 DAV 2026-11-18과 “Citation in OJEU: No citation expected for Directive 2024/2847”를 직접 확인했다. CRA Article 27 적합성 추정 근거로 사용하지 않는다.
