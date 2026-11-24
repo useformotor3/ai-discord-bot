@@ -2201,3 +2201,11 @@
 - Retry change recovered official M/606 C(2026)7861 Annex after Runs #1483–#1485 had 30s timeouts. PDF artifact 14887520943, 3,070,568B, SHA-256 `9f8c1c64a43c17fae1a093c454e4be212d5b55fd6914130c9a4e1921411a80b4`, 3/3 PDFs. M606 PDF 6p SHA-256 `262b09596cb5cbe7d72a2c7789fb2512ee00db7f69082e7def2c8181b0f63276` matches Run #1481 original. Provenance artifact 14887800169, 2,565B, SHA-256 `2247997aa180f94a61672674b4fc8144e18a0c91deb51fcb26d82880c1aef6bd`.
 - Run #1486 failed only at source-blob pin verification before tests; two exact hashes were refreshed in workflow and exact-head Run #1497 passed.
 - PR #239 remains open pending final diff/review/base/head/JSONL recheck and expected-head merge. CRA only; SIL 3 excluded.
+
+## 2026-11-24 — PR #241 병합 및 제조사 원본 경로 재검증
+
+- PR #241 exact HEAD 159f8c16ba50c41e1dd0f3aa0fffba7a3ee1a09d, base/main 36b38bfa5ced2894f3bfb06c226706ce0a9bf38b, 6 files(+79/-0), reviews 0 / threads 0. Run #1509 / 45330332680 exact HEAD success 25/25. PROJECT_LOG 372 records / invalid 0. Expected-head squash merge SHA dd54132fb44ed752b1f7942f4485ee03399a2c2f; main read-back matches.
+- Post-merge main Push Run #1510 / 45333438936 targets exact merge SHA. At this snapshot it remains in_progress; do not mark final success until completed.
+- Fresh official-source search confirms Solution Square listing/search result for iX700M 사용 설명서 (update 2026-09-16), but opening detail still returns JS shell. LS Mecapion default/Servo-filter manual lists show Ver1.4 while explicit sca= list shows Ver1.3; binary revision remains Unknown. Drive CE detail opened, but attachment download timed out. Converter CE result exposes index metadata only. CAD previous-post link resolves wr_id=12455 but detail fetch times out.
+- No manual, CE DoC, DWG/DXF/STEP binary is marked acquired. Actual SKU, independent sale, EU/EEA supply, importer/economic operator, BOM/MCU/security Unknown; manufacturer inquiry draft_prepared_not_sent.
+- CRA only; SIL 3 excluded.
