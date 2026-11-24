@@ -1971,3 +1971,11 @@
 - C/2026/6013 OJ: 61p / 2,709,282 bytes / SHA-256 `40ca76caeb0108f5b97c8f373a95f590b453fe92bd45a483addf3326e48c1dc2` (Publications Office direct).
 - C(2026)7861 Annex: Commission register 30s timeout; unavailable status recorded, other PDFs unaffected.
 - Artifacts: PDF evidence ID `14874639916`; provenance ID `14875084483`.
+
+
+## 2026-11-24 — PR #223 병합 완료
+- PR #223 squash merge SHA `a1fe5b983e1cecb1235b56071534e05884d61786`.
+- Run #1432 exact HEAD `76e5bce626db999e434d41f50ac0b9413b9561d5` success; pytest 186, traceability, 10 HTML locators, 2 PDF source captures, PDF/provenance artifact uploads passed.
+- C(2026)5252 and C/2026/6013 PDF hashes confirmed. C(2026)7861 Commission register timeout remains explicit unavailable.
+- 11-file diff reviewed; no production main.py, secrets, API cadence or production workflow changes.
+- iX700M independent sale/EU individual PDE supply and actual SKU remain Unknown.
