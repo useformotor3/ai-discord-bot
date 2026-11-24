@@ -2386,3 +2386,12 @@ Run #1526 artifacts: CRA official PDF ZIP 3,070,565 bytes, digest `sha256:9c7dfa
 실제 SKU, EU/EEA 공급, 경제운영자, 독립 판매 또는 통합 공급, BOM/정확한 MCU/SBOM, 보안 구현, PSIRT/CVD, 업데이트 정책 및 지원기간은 계속 Unknown. PR push CI 성공은 저장소 테스트/출처 수집 파이프라인의 성공이지 iX700M 제품 CRA 적합성 증거가 아니다.
 
 CRA only; SIL 3 excluded.
+
+
+## §85.5 추가 모델 그룹 인덱스 확인 및 증거 해석
+
+공식 CE 인덱스에는 iX700M 항목이 Converter iX700MCV(번호 168), Drive iX700MD1-B-075B/050B/D2-B-045B(169), 150B(170), 220B(171), 370B/300B(172), 750B/550B/450B(173), iX700MCB(174)로 나뉘어 2026-04-30 게시된 것으로 나타난다. 이는 제조사 인덱스가 모델 그룹별로 여러 게시물을 운용한다는 증거다. 게시물 제목·번호만으로 각 개별 SKU가 어떤 DoC 본문에 포함되는지 또는 동일 DoC로 묶이는지는 판정할 수 없다.
+
+별도의 KC 인덱스에는 iX700MD1-B-075B/150B/220B/370B, iX700MD2-B-045B, iX700MCV-B-150/370/550/750, iX700MCB-B-8K 등이 나타난다. KC는 한국 규제 체계의 별도 증거이며 EU DoC coverage로 전환하거나 CRA 적합성 증거로 사용할 수 없다. 본 목록은 제품 구성과 모델 식별의 교차 질문을 만들기 위한 단서일 뿐, 실제 판매 SKU·EU 공급 여부를 증명하지 않는다.
+
+제조사 질의서 Q56-Q58은 (1) CE 인덱스의 iX700MCB 및 각 Drive model group의 원본 DoC와 정확한 coverage, (2) CE와 KC 목록의 법적 범위 분리, (3) Converter/Drive/MCB 구성의 별도 판매·통합 경계와 CRA 제품 식별을 확인하도록 추가했다.
