@@ -3216,3 +3216,11 @@
 - CAD 게시물 상세 페이지(wr_id=12455)와 매뉴얼 상세 페이지(wr_id=12652)는 Web fetch cache miss. Converter CE DoC 첨부 클릭도 cache miss. 첨부명/게시 메타데이터는 검색 snippet/게시물에서 확인됐으나 원본 byte/hash와 본문은 미확보.
 - 질의서/발송안내를 Ver1.4 단정에서 제거하고, 현재 목록 Ver1.3 및 Ver1.4 검색색인 상충, 원본 파일 revision/hash 요청으로 변경. 수신처 배정 확인 체크리스트 추가.
 - 실제 질의서 발송/접수/제조사 회신 없음. CRA only; SIL 3 제외.
+
+
+## 2026-11-24 — PR #228 main push Run #1450 최종 성공
+
+- Run #1450 / ID 45308789705, head `3db9896d5727701cb38c6a033d0d0e07f433339b`: success.
+- Source identity, compile, CRA cross-matrix traceability, complete pytest, official CRA PDF and HTML read-only canaries, PDF evidence upload, provenance manifest upload 모두 성공.
+- main branch read-back SHA와 PR #228 squash merge SHA 동일.
+- 이전 로그의 in-progress는 조회 당시 상태로 보존하고 이 항목으로 최종 결과를 추가했다.
