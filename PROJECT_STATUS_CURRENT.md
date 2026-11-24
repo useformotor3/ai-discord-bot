@@ -2357,3 +2357,13 @@
 - Main Run #1547 PDF artifact ID 14974835241, 3,070,565 bytes, SHA-256 `10baf4713686d065422e9efa744ab7513767313ca23538d355520a3d18f2ce7e`; provenance artifact ID 14972713583, 2,565 bytes, SHA-256 `040ebe67de2ba6a9b706f2666e01e74473bfdc1a75e2c613c9fc0df0bb8d92cf`; expiry 2026-12-01.
 - Manufacturer retry remains metadata-only: manual listing version discrepancy Ver1.4 vs Ver1.3 at same 2026-05-26 posted date, detail 502; signed DoC, converter CE/UKCA, catalogue, CAD binaries still not acquired. Q61 added to require controlled current-version statement and SKU/HW revision applicability.
 - Actual SKU, EU/EEA supply, economic operators, signed DoC scope, BOM/MCU/SBOM, security configuration, CRA classification, vulnerability handling and update/support period remain Unknown. Inquiry 61 questions, draft not sent. CRA only; SIL 3 excluded.
+
+ 
+## 2026-11-25 — PR #254 병합 및 main push Run #1549 성공
+
+- PR #254 exact head `5140882cdf89c3631c9fd9aaa0f0bf2fcedf38fb`, base `e89faa6f9d907edcaf09adbd8f72eb81091ed279`, 7 files(+56/-0), reviews 0, threads 0. Run #1548 / 45507928582 completed/success, 15/15 steps, pytest 189 passed, traceability 387 events PASS, provenance 10 sources, CRA PDF 3/3 fetch/hash PASS. Expected-head squash merge SHA `dc1704557e1c3e1071383701d7a4615546814054`.
+- Main push Run #1549 / 45508166302: event=push, exact merge SHA, completed/success, 15/15 steps, pytest 189 passed, traceability 387 events PASS, 10-source provenance manifest round-trip PASS, PDF 3/3 fetch/hash PASS.
+- C/2026/5252 fallback=true; its SHA identifies fallback bytes only, not primary mirror byte identity. Run #1549 artifacts: PDF ZIP ID 14974751014, 3,070,565 bytes, SHA-256 `c8b1d01f6aba66886a675ac081c978f595ebc5f6c265f3768c40ad2c9be706c7`; provenance ID 14974510954, 2,566 bytes, SHA-256 `0b358609a02446b0615a9a2f07fe591d88b8031ae1460052f2c76e4dd5ba290b`; expiry 2026-12-01.
+- Further manufacturer search did not yield direct original attachment binaries. Manual, SKU-specific Drive EU DoC, Converter CE/UKCA DoC, KR/EN catalogue, CAD remain metadata-only; manual revision discrepancy Ver1.4/Ver1.3 unresolved.
+- Manufacturer inquiry Q62 added for exact ST MCU part/revision and security configuration, firmware/bootloader versions, SBOM, third-party components and vulnerability tracking. Total 62 questions, draft not sent.
+- Unknown: actual SKU, EU/EEA supply, economic operators, signed DoC scope, BOM/exact MCU/SBOM, security configuration, product classification, vulnerability handling, update/support period. CRA only; SIL 3 excluded.
