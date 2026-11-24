@@ -3570,3 +3570,11 @@ CRA only; SIL 3 excluded.
 - Artifact IDs/digests in report §89/evidence §47.
 - Official manual index Ver1.4 vs Ver1.3 discrepancy remains unresolved; Q61 added for controlled revision and SKU/HW applicability. No iX700M product binary acquired. Inquiry 61 questions, draft not sent.
 - Unknowns retained. CRA only; SIL 3 excluded.
+
+ 
+## PR #254 / main Run #1549 completion and Q62
+- PR #254 exact head 5140882cdf89c3631c9fd9aaa0f0bf2fcedf38fb, 7 docs(+56/-0), reviews/threads 0. Run #1548 SUCCESS 15/15, 189 passed, traceability 387, provenance 10, PDF 3/3. Merge SHA dc1704557e1c3e1071383701d7a4615546814054.
+- Main push Run #1549 / 45508166302 exact SHA SUCCESS, 15/15, 189 passed, traceability 387, provenance 10, PDFs 3/3. C/2026/5252 fallback=true; no primary mirror byte identity claim.
+- Artifacts and digests in report §90/evidence §48.
+- Product binary retrieval remains unsuccessful; official listing metadata only. Q62 added for exact ST MCU and security/SBOM/vulnerability evidence. Inquiry 62 questions, draft not sent.
+- Unknowns retained; CRA only, SIL 3 excluded.
