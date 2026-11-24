@@ -2026,3 +2026,45 @@ CRA only; SIL 3 제외.
 - Bounded retry 적용 후 Run #1497에서 M/606 C(2026)7861 Annex 재취득 성공. PDF artifact ID `14887520943`, 3,070,568 bytes, ZIP SHA-256 `9f8c1c64a43c17fae1a093c454e4be212d5b55fd6914130c9a4e1921411a80b4`; 세 PDF 84p/61p/6p, M606 SHA-256 `262b09596cb5cbe7d72a2c7789fb2512ee00db7f69082e7def2c8181b0f63276`로 기존 확보본과 동일.
 - Provenance artifact ID `14887800169`, 2,565 bytes, ZIP SHA-256 `2247997aa180f94a61672674b4fc8144e18a0c91deb51fcb26d82880c1aef6bd`.
 - Run #1486 source-pin failure는 tests 실행 전 단계였고, 정확한 두 blob pin을 갱신한 후 Run #1497 exact HEAD에서 전체 검증 성공했다. 이는 소스 테스트 실패가 아니었다.
+
+
+## §75. 2026-11-24 — PR #239 병합·Run #1503 사후 검증 및 제조사 자료 원본 재접근
+
+### 75.1 Run #1481 최종 결과와 이후 collector 개선의 정합성
+
+- Run #1481 / ID 45317449785, event=push, exact HEAD c395fc5b5b2a393632bb2fbe65b10fd6572b936d: completed/success. 25/25 workflow steps 성공. 당시 main read-back과 일치했다.
+- Run #1481 PDF artifact 14886830715에서 C(2026)5252(84p), C/2026/6013(61p), C(2026)7861 Annex(6p) 3종 확보. C(2026)7861 Annex SHA-256 262b09596cb5cbe7d72a2c7789fb2512ee00db7f69082e7def2c8181b0f63276.
+- Run #1483~#1485에서 C(2026)7861 Annex가 반복 timeout으로 미수집된 사실을 숨기지 않았다. PR #238에서 transient transport/HTTP failure bounded retry와 partial-pack WARNING을 구현했고, PR #239 exact-head Run #1497에서 재취득 성공. Run #1481 성공 증거를 대체하지 않고 독립 재취득 확인으로 보강한다.
+
+### 75.2 PR #239 최종 병합과 main push
+
+- PR #239 final exact HEAD e9a15eeaf69e56e610352941f5330604bf78639e, base 1e218a61d09a280d8c4c2ec168c225c6456f215b, 9개 파일 변경. Run #1497 / ID 45320409623은 exact branch HEAD 00a00ef1ad8fa09efc68d9d2764d18c2b5b9040f에서 success 25/25, pytest 189 passed.
+- PR #239 closed/merged. Review 0, review threads 0. Merge SHA 7d1fe1012bd2f8a8e1540918b43b58b4b41014f5; main read-back이 이 SHA와 일치한다.
+- Post-merge main push Run #1503 / ID 45321136198, event=push, branch=main, exact head SHA=merge SHA, success 25/25. Source identity, compile, CRA traceability, full tests, official PDF/HTML canaries, evidence/provenance uploads 모두 성공.
+- main PROJECT_LOG는 369 JSONL records / invalid 0. PR #229 main push Run #1452 / ID 45312941583, exact merge SHA 4263389aa79cbb7cc17ccda3a019c659ccddef85, success 25/25라는 이전 검증을 유지한다. 과거 상황판의 pending/unverified 표기는 후속 검증으로 대체된 stale 상태다.
+
+### 75.3 Solution Square iX700M 사용 설명서 — 확인 범위와 미확보
+
+- 공식 Motion & Servo 목록은 iX700M 사용 설명서를 항목 5로 표시하고 업데이트 날짜를 2026-09-16으로 표시한다. 목록은 44개 사용 설명서를 포함한다.
+- 공식 통합 검색 결과도 문서명 iX700M 사용 설명서, 적용제품 분류 Motion & Servo를 표시한다.
+- 상세 SPA URL은 웹 조회 시 JavaScript 실행 안내만 반환하며 문서 ID·실제 다운로드 URL·파일명·revision·PDF bytes를 노출하지 않는다. 따라서 상세 URL과 PDF 원본은 여전히 미확보다. 제품 목록 URL과 검색 목록 URL은 증거로 보존하되 임의의 상세 링크를 만들지 않는다.
+
+### 75.4 LS메카피온 Ver1.3/Ver1.4 목록 불일치 재현
+
+- 공식 Servo 필터 목록 https://lsmecapion.com/bbs/board.php?bo_table=manual&sca=Servo 는 iX700M DRIVE 400[V] 매뉴얼 Ver1.4, 2026-05-26을 표시한다.
+- 공식 미분류 목록 https://www.lsmecapion.com/bbs/board.php?bo_table=manual&sca= 는 같은 게시글 번호 41 / 날짜 2026-05-26에 iX700M DRIVE 400[V] 매뉴얼 Ver1.3을 표시한다.
+- 두 인덱스 항목을 따라간 상세 fetch는 502/timeout으로 실패했다. 검색/페이지 캐시와 링크 경로가 일치하지 않아 실제 배포 바이너리 revision, 변경 이력, 문서번호, SKU 적용범위는 입증되지 않았다. Ver1.3/Ver1.4 중 어느 쪽이 최신·유효한 배포본인지 확정하지 않는다.
+
+### 75.5 Converter/Drive CE DoC 원본 및 CAD 재접근
+
+- Drive 게시물 https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&page=4&wr_id=12888 는 iX700MD1-B-150B, D1=1축, B=480 Vac, 150=15 kW, encoder B=BiSS-C 또는 사용자 코드, standard/custom option 구분과 첨부명 [CE_DoC-LVDEMC] iX700MD1-B-150B.pdf (238.9K)를 표시한다.
+- Converter 게시물 https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&sca=CE&wr_id=12886 는 iX700MCV, B=480 Vac, 150/370/550/750=15/37/55/75 kW, standard/custom option과 첨부명 [CE_DoC-LVDEMC] iX700MCV.pdf (234.4K)를 표시한다.
+- Drive 첨부 다운로드 URL fetch는 timeout. Converter 상세 fetch도 timeout. 첨부 메타데이터만 확인된 상태이므로 DoC 본문, 서명, 적용 EU 법령, 표준, 인증기관/Notified Body, 제품별 모델 범위는 미검증이다. CE 표시/게시물만으로 CRA 적합성 또는 CRA 의무 이행을 추론하지 않는다.
+- 공식 CAD 목록은 iX700M Series 외형도 2D(CAD), 3D(STEP), 2026-04-21 항목을 표시한다. 상세/첨부 fetch는 timeout. DWG/DXF/STEP 원본 bytes와 해시 미확보다.
+
+### 75.6 CRA 영향 분석과 Unknown 유지
+
+- 공식 제품군 설명에서 EtherCAT, 380–480 Vac, 모듈형 Converter/Drive, 공개 모델코드가 확인되는 범위는 공격표면/인터페이스 식별의 출발점으로만 사용한다. 특정 펌웨어 기능, 외부 네트워크 접근 가능성, 원격 업데이트, 취약점 처리 절차 또는 제품의 중요 제품 분류를 이 자료만으로 확정하지 않는다.
+- 실제 프로젝트 SKU/옵션, Converter와 Drive 독립 판매 여부, EU/EEA 개별 공급, importer/economic operator, BOM/MCU 전체 부품번호, secure boot/서명 업데이트/키 관리/암호화/취약점 처리 구현은 모두 Unknown.
+- 제조사 질의 상태는 draft_prepared_not_sent. 실제 발송·접수·회신 증거가 없다.
+- CRA only; SIL 3 제외.
