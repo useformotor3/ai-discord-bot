@@ -2254,3 +2254,29 @@ PR #244는 exact-head CI 성공 후 expected-head squash merge됐다. 변경 6�
 
 실제 대상 SKU/nameplate, 독립 판매 여부, EU/EEA 공급 경로, 수입자·경제운영자, HW/FW/BOM, ST MCU 정확한 부품번호 및 보안 설정은 여전히 Unknown이다. 제조사 질의서는 draft_prepared_not_sent. 우선순위는 iX700M DRIVE 400[V] 원본 매뉴얼 PDF 및 해당 SKU의 signed EU Declaration of Conformity, converter declaration, catalogue, CAD package 확보다.
 - CRA only; SIL 3 excluded.
+
+
+## §82. 2026-11-24 — PR #245 이후 main CI 최종 결과 및 적용성 판단 증거 경계
+
+### 82.1 저장소 검증 결과
+PR #245는 exact HEAD `2b23df758409743ba77e15d1b69bfce08abf941e`에서 Run #1519 (ID `45401753839`) 25/25 성공 후 expected-head squash merge 됐으며 merge SHA는 `2b9d924a92bbd497289b9e3afe0dd52df527472b`이다. Main push Run #1520 (ID `45401919091)는 event=push, 동일 exact SHA, final SUCCESS 25/25다. source blob identity, dependency install, compile, CRA cross-matrix traceability, full repository tests, official CRA PDF/source canary, PDF evidence 및 provenance manifest 업로드가 성공했다.
+
+이 CI는 CRA 조사 저장소의 코드·추적성·테스트·공식 CRA 자료 수집 workflow가 정상 실행되었다는 증거다. 개별 iX700M SKU의 CRA 적합성, signed EU DoC의 진위·적용범위, 제품의 보안 구현 또는 CRA conformity를 입증하지 않는다.
+
+### 82.2 제품 적합성 판단의 현재 경계
+- iX700M Ver1.4 매뉴얼은 공식 목록 snapshot에서 표시되나 동일 게시물의 다른 목록 snapshot에 Ver1.3도 표시된다. 실제 매뉴얼 PDF bytes, 내부 revision 및 hash를 확보하기 전에는 유효한 최신 revision을 확정하지 않는다.
+- Drive CE 게시물의 iX700MD1-B-150B 및 첨부 파일명/크기, Converter CE/UKCA 게시물의 iX700MCV 모델군과 첨부 메타데이터는 목록/게시물 수준 증거다. signed EU DoC의 실제 PDF 본문, 서명, 적용 모델 및 법령을 읽지 못했으므로 DoC 원본 확보로 취급하지 않는다.
+- 카탈로그와 iX700M 2D CAD/3D STEP 목록도 파일 원본을 취득·해시 검증하지 못했다.
+- 따라서 실제 SKU, 독립 판매 여부, EU/EEA 공급, 수입자/경제운영자, BOM, 정확한 ST MCU part number, firmware 구성, 보안 설정 및 지원기간은 Unknown이다.
+
+### 82.3 CRA 적용성·제품 경계 분석 진행 원칙
+CRA 적용성은 제품명이나 CE/UKCA 목록만으로 결론내리지 않는다. 실제 공급 SKU·의도된 목적·제품 경계·EU/EEA 시장 제공 방식·경제운영자 역할을 먼저 확정하고, 제품이 소프트웨어/하드웨어 제품 및 원격 데이터 처리 솔루션을 포함하는지, 다른 제품에 통합되는 구성품인지, 제조자 또는 통합자의 책임이 무엇인지 사실자료로 판단한다. 제품 독립 판매/통합 여부는 증거가 확보되기 전 Unknown으로 유지한다.
+
+기술 경계에는 전원 입력 및 DC link, Drive/Converter 모듈, MCU 및 메모리, EtherCAT/RS-485/USB/Loader, I/O·encoder, PC commissioning tool, 원격 진단·유지보수 경로, firmware update chain, 제조사 지원/취약점 접수 채널을 포함해 확인해야 한다. 2024년 아키텍처 소개자료는 인터페이스 후보를 식별하는 참고자료일 뿐 최신 SKU의 구현 증거가 아니다.
+
+### 82.4 SBOM·취약점·보안 업데이트·지원기간
+현재 SBOM 제공 여부와 포맷, 구성요소 버전, OSS 및 제3자 컴포넌트, 취약점 모니터링·접수·평가·조치·공개 절차, 보안 업데이트의 인증·무결성 검증, 롤백/복구, 지원기간 산정 근거 및 종료 통지 정책은 모두 제조사 확인 전 Unknown이다. ST MCU 사용 사실만 알려져 있고 정확한 part number, boot ROM/secure boot 사용 여부, debug lock, key storage, crypto 기능 활용, 펌웨어 서명/검증 구현은 확인되지 않았다.
+
+개발 조사표에는 각 항목별로 (1) 법적 요구사항, (2) 적용 판단 근거, (3) 제품 구현 증거, (4) 검증 방법/결과, (5) 책임자 및 미해결 조치의 다섯 열을 분리한다. 제조사 답변이나 원본 파일이 없으면 구현됨/준수함으로 표시하지 않는다.
+
+CRA only; SIL 3 excluded.
