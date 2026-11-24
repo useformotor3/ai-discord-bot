@@ -1283,3 +1283,6 @@ Annex I Part II의 실무 요구사항은 machine-readable SBOM(최소 top-level
 
 
 > **PR #250 and post-merge main CI (2026-11-25):** PR #250 exact-head Run #1535 / 45491181163 SUCCESS (15/15 returned steps, 189 pytest passed), squash merged as `ff42addc136836bbbb89bec48bb0c791f031db19`. Main push Run #1536 / 45491379142 SUCCESS on exact merge SHA (15/15 returned steps, 189 pytest passed). Both live canaries explicitly skipped CRA Guidance C/2026/5252 because its mirror returned temporary HTTP 503; two other PDFs were fetched/hash verified and 10-source provenance passed. Earlier Runs #1526/#1528 fetched all 3 PDFs. iX700M original binaries remain unacquired; inquiry now has 58 questions. See report §86 / evidence §43. CRA only; SIL 3 excluded.
+
+ 
+> **PR #251 / main push CI (2026-11-25):** PR #251 exact-head Run #1537 / 45491681394 SUCCESS, 15/15 steps, 189 pytest passed, traceability 383 events; expected-head squash merge `4c386689ab42c48e01456b72055217a75a78b14a`. Main push Run #1538 / 45505264304 SUCCESS on exact merge SHA, 15/15 steps, 189 pytest passed, 10-source provenance PASS. Both runs freshly fetched 2/3 CRA PDFs; C/2026/5252 was skipped due timeout (#1537) / HTTP 429 (#1538). See report §87 / evidence §44. iX700M source pages remain metadata-only; no product binary acquired. Inquiry now 59 questions. CRA only; SIL 3 excluded.

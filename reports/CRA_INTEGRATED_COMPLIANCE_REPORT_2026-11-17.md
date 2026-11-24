@@ -2415,3 +2415,29 @@ Node.js 20 action deprecation, punycode 및 url.parse deprecation warnings가 �
 실제 iX700M SKU, EU/EEA 공급, 경제운영자, BOM/정확한 MCU/SBOM, 보안 설정, 취약점 대응, 업데이트 정책 및 지원기간은 계속 Unknown. 제품 원본 매뉴얼·signed DoC·카탈로그·CAD binary도 아직 미확보다.
 
 CRA only; SIL 3 excluded.
+
+ 
+## §87. 2026-11-25 — PR #251 병합, main CI 및 iX700M 자료 재취득
+
+### 87.1 PR #251과 main push CI
+PR #251은 base `ff42addc136836bbbb89bec48bb0c791f031db19`에서 exact head `4e2dfd558bb69ab682f4d639a6c8387a1df6bad3`까지 문서 6개(+54/-0)를 변경했다. 리뷰 0, inline thread 0, JSONL 383 records / invalid 0이었다. Run #1537 / 45491681394는 completed/success, 15/15 returned steps success, pytest 189 passed, CRA traceability(project_log_events=383) 및 10개 공식 출처 provenance PASS였다. Expected-head squash merge SHA는 `4c386689ab42c48e01456b72055217a75a78b14a`다.
+
+Post-merge main push Run #1538 / 45505264304는 event=push이며 exact head SHA가 merge SHA와 일치한다. completed/success, 15/15 returned steps success, pytest 189 passed, traceability 383 events PASS, 10-source provenance manifest 생성 및 JSON round-trip PASS다.
+
+### 87.2 PDF 수집 결과와 artifact
+Run #1537에서 Commission Guidance C/2026/5252 mirror는 30초 read timeout, Run #1538에서는 HTTP 429 rate-limit으로 각각 SKIPPED됐다. 두 run 모두 OJ C/2026/6013 및 M/606 C(2026)7861 Annex는 실제 다운로드와 SHA-256 확인에 성공했다. 그러므로 두 run 모두 **3종 중 2종 fresh fetch**이며 3/3이라고 기록하지 않는다. Workflow는 일시적 보조 출처 장애를 허용하므로 success이며, 테스트 실패는 없다. 앞선 Run #1526/#1528은 별도로 3종 모두 fetch/hash 성공한 기록을 유지한다.
+
+Run #1537 PDF ZIP 1,906,868 bytes SHA-256 `eadca2c5a44c934134c83947d8ec7f248ca41f67f22bffce57b242bd683b158a`; provenance ZIP 2,565 bytes SHA-256 `daf43bea110d65240c2f73ed659726cced876f9909644c74304a14f4bbce2b7f`. Run #1538 PDF ZIP 1,906,816 bytes SHA-256 `bab3279433d4178f275a9bf2c3860d28f3dd4f99238d156f31fde4ff5b043afe`; provenance ZIP 2,565 bytes SHA-256 `34edad760c791d48e390712847d3d0ec01f459515314bbf54918e2a24b8e4e17`. Artifact expiry 2026-12-01. 이 파일들은 CRA Commission source pack이며 LS메카피온 iX700M 원본 자료가 아니다.
+
+Node.js 20 action, punycode, url.parse deprecation warnings는 남아 있으나 실패 step은 없다. CI 성공은 저장소·테스트·CRA source/provenance pipeline 검증이지 제품 CRA conformity 증명은 아니다.
+
+### 87.3 iX700M 제조사 원본 자료 재시도
+2026-11-25 재시도에서 제조사 검색 인덱스는 iX700M DRIVE 400[V] Ver1.4를 기본/Servo 목록에서 표시하지만 `sca=` 빈 필터는 같은 날짜의 Ver1.3을 표시한다. 매뉴얼 상세 페이지는 접근 불가. Drive EU CE DoC(iX700MD1-B-150B), Converter CE/UKCA DoC(iX700MCV), KR/EN 카탈로그, 2D CAD/3D STEP는 공식 목록 metadata는 확인되나 상세 페이지가 502 또는 inaccessible이어서 binary를 취득하지 못했다. CAD 인덱스는 row 117, 2026-04-21의 iX700M 2D(CAD)/3D(STEP) 자료 게시를 표시하지만 원본 파일은 미확보. 따라서 모든 자료의 상태는 listing metadata only이며 원본 signed PDF/CAD binary 취득으로 간주하지 않는다.
+
+### 87.4 CRA 제품 분류 질의 보강
+Regulation (EU) 2024/2847 공식 OJ 본문 Article 7은 Annex III 제품 범주에 해당하는 **core functionality**가 있는 제품을 important product로 분류하고, Article 8은 Annex IV의 critical category를 다룬다. Annex III Class I item 14에는 security-related functionalities를 가진 microcontrollers, Class II item 4에는 tamper-resistant microcontrollers가 열거되어 있다. Annex IV에는 hardware devices with security boxes, smart meter gateways, smartcards/similar devices including secure elements가 기재되어 있다. 게시된 Annex III/IV 목록에서 일반적인 “industrial automation and control systems”라는 범주는 확인되지 않는다. 따라서 iX700M을 IACS라는 이유만으로 Annex III/IV Class I/II/critical로 단정하지 않는다. 제품 자체의 core functionality와 시장 제공 단위, 내장 MCU가 독립 제품인지 구성품인지 구분해 제조사 근거를 요구한다. Q59는 해당 분류·근거 조항·Article 32 conformity assessment route를 질문한다. 법적 근거: https://eur-lex.europa.eu/legal-content/en/TXT/PDF/?uri=OJ%3AL_202402847
+
+### 87.5 미확정 사항
+실제 SKU, EU/EEA 공급, 경제운영자, 개별 DoC coverage/서명, BOM/정확한 MCU/SBOM, 보안 설정, 제품 분류, 취약점 대응, 보안 업데이트와 지원기간은 계속 Unknown. 제조사 질의서 59문항은 draft이며 발송되지 않았다.
+
+CRA only; SIL 3 excluded.

@@ -3532,3 +3532,15 @@ CRA only; SIL 3 excluded.
 - Artifact digests and warnings recorded in integrated report §86 and evidence register §43. No workflow changes.
 - Product manual/DoC/catalogue/CAD binary still not obtained; only metadata. Inquiry 58 questions, draft not sent. Actual SKU, EU supply, economic operators, BOM/MCU/SBOM/security remain Unknown.
 - CRA only; SIL 3 excluded.
+
+ 
+## 2026-11-25 — PR #251 exact-head merge 및 main push CI #1538 확정
+
+- PR #251 base ff42addc136836bbbb89bec48bb0c791f031db19, exact head 4e2dfd558bb69ab682f4d639a6c8387a1df6bad3, 6 files(+54/-0), 6 commits, reviews 0, threads 0. Run #1537 / 45491681394 SUCCESS, 15/15 returned steps, 189 passed, traceability 383 events, 10 official source provenance PASS. JSONL 383 valid / 0 invalid.
+- Expected-head squash merge SHA 4c386689ab42c48e01456b72055217a75a78b14a.
+- Main push Run #1538 / 45505264304 exact merge SHA SUCCESS, 15/15 returned steps, 189 passed, traceability 383 events, 10-source provenance PASS. 2026-5252 timed out in #1537 and HTTP 429 in #1538; both skipped under temporary source-outage handling. Other two PDFs fetched/hash-verified in both. No test failures.
+- Artifact digests, sizes, expiry, source limitation and warnings recorded in report §87 / evidence §44. No workflow or operational code changed.
+- Official manufacturer index retry: Ver1.4/Ver1.3 listing conflict persists; DoC, catalog, CAD and manual detail pages inaccessible/502; original product binaries remain unacquired. Metadata only.
+- CRA classification check: do not assume “IACS” is an Annex III/IV product category; ask manufacturer for product core-functionality mapping and conformity route. Q59 added. Inquiry draft 59 questions, not sent.
+- Unknown: actual SKU, EU/EEA supply, economic operators, DoC coverage/signature, BOM/MCU/SBOM, security configuration, product classification, vulnerability handling and support/update period.
+- CRA only; SIL 3 excluded.
