@@ -3562,3 +3562,11 @@ CRA only; SIL 3 excluded.
 - Normalized JSONL, verified 385 records / 0 invalid / 0 blank lines. New exact head e0788eb79d8b5c061b28111f96d9d6419eac950b Run #1542 / 45507153261 completed/success, 15/15 steps, 189 passed, traceability 385 events PASS, 10-source provenance PASS.
 - Run #1542 obtained all 3 official CRA PDF source files; C/2026/5252 used fallback (do not claim byte identity with original mirror). Digests, artifact IDs and expiry recorded in report §88.6/evidence §46.
 - Product source binaries still not acquired; manufacturer inquiry 60-question draft not sent. CRA only; SIL 3 excluded.
+
+ 
+## PR #253 / main push Run #1547 completion
+- PR #253 exact head f1322bccae3042d18d2b922deb3b394c76b48a53, 7 docs(+104/-0), reviews/threads 0. PR Run #1546 SUCCESS 15/15, 189 passed, traceability 386, 10 source provenance, PDF 3/3. Merge SHA e89faa6f9d907edcaf09adbd8f72eb81091ed279.
+- Main push Run #1547 / 45507593050 exact merge SHA SUCCESS, 15/15, 189 passed, traceability 386, provenance 10, all 3 CRA PDFs fetch/hash verified. C/2026/5252 uses fallback=true; hash does not assert primary-mirror byte identity.
+- Artifact IDs/digests in report §89/evidence §47.
+- Official manual index Ver1.4 vs Ver1.3 discrepancy remains unresolved; Q61 added for controlled revision and SKU/HW applicability. No iX700M product binary acquired. Inquiry 61 questions, draft not sent.
+- Unknowns retained. CRA only; SIL 3 excluded.
