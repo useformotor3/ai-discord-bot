@@ -1,4 +1,12 @@
 
+## 2026-11-24 — iX700M 공식 아키텍처 PDF·카탈로그·교육자료 재확인
+
+- LS ELECTRIC 호스팅 LS Mecapion PDF `서보 드라이브 신제품 소개(iX7M, iX700M)`를 열람. iX700M 전용 구간에서 Converter/Drive 분리 모듈, DC Link, 내부 RS-485, EtherCAT In/Out, USB/Loader, I/O, encoder, AC380–480V→DC535–675V 구조 확인. 문서 푸터 timestamp 2024-04-01; 현행 매뉴얼/보안 구현 증거는 아님. iX7M 전용 내용은 iX700M에 전용하지 않음.
+- LS메카피온 iX700M KR/EN catalog 게시물은 2025-11-17 게시, 제목에 2025년 7월, 첨부 2종 각 10.7M 및 attachment date 2025-12-05 표시. 상세 502/cache miss로 원본 PDF/hash 미확보.
+- iX700M 시스템서보 교육자료 인덱스 2025-10-27 확인; 상세 wr_id=52 timeout, 첨부 미확보.
+- 이들 자료는 제품 아키텍처·자료 존재의 보조 증거일 뿐 manual Ver1.3/Ver1.4 충돌, CE DoC/CAD 원본 미확보를 해소하지 않음. 보안 통제는 Unknown.
+- CRA only; SIL 3 제외.
+
 ## 2026-11-24 — PR #233 병합 및 제조사 자료 원본 재접근
 
 - PR #233 exact HEAD `a46bbfd774fe778d44a8eec640a32e57414590d6`, Run #1471 / 45315401722 success. 6-file diff, JSONL 360 / invalid 0, review threads 0 / reviews 0, base `d3b75a84d2b84ada59d2314780461e53b21e090b`. Expected-head squash merge SHA `d160cb2eea13d3f18ac4bc8e98c40d4378881c1a`; main read-back identical.
