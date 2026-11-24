@@ -658,3 +658,22 @@ Run #1462 / ID 45314843427, PDF artifact 14884218192. ZIP 3,070,568 bytes, SHA-2
 
 | CRA-PDF-1497 | https://github.com/useformotor3/ai-discord-bot/actions/runs/45320409623 | PR #239 exact branch HEAD `00a00ef1ad8fa09efc68d9d2764d18c2b5b9040f`, Run #1497 success 25/25, pytest 189 passed. PDF artifact 14887520943, 3,070,568B, ZIP SHA-256 `9f8c1c64a43c17fae1a093c454e4be212d5b55fd6914130c9a4e1921411a80b4`; C(2026)5252 84p, C/2026/6013 61p, C(2026)7861 Annex 6p. M606 binary SHA-256 `262b09596cb5cbe7d72a2c7789fb2512ee00db7f69082e7def2c8181b0f63276`, same as Run #1481. Provenance artifact 14887800169, 2,565B, ZIP SHA-256 `2247997aa180f94a61672674b4fc8144e18a0c91deb51fcb26d82880c1aef6bd`. |
 - Retry improvement successfully recovered M606 Annex after three consecutive earlier timeouts; keep previous original and new identical hash as independent retrieval confirmations.
+
+
+## 32. 2026-11-24 — PR #239 merge, official source recheck and retrieval boundary
+
+| Evidence ID | 공식 자료 / 관찰 | 확인된 사실 | 미확보·한계 | 상태 |
+|---|---|---|---|---|
+| SQ-IX700M-MANUAL-2026 | https://sol.ls-electric.com/kr/ko/product/category/4?pageNumber=4 ; https://sol.ls-electric.com/kr/ko/newSearch?pageNumber=70 | Motion & Servo 목록의 iX700M 사용 설명서, update 2026-09-16; 통합검색 문서명·분류 일치 | SPA 상세 URL/문서 ID/PDF bytes/revision/hash 없음 | metadata verified; original not acquired |
+| LSM-MANUAL-V14 | https://lsmecapion.com/bbs/board.php?bo_table=manual&sca=Servo | Servo filter list: iX700M DRIVE 400[V] 매뉴얼 Ver1.4, 2026-05-26 | detail fetch 502/timeout; PDF bytes/hash/revision scope 없음 | index only |
+| LSM-MANUAL-V13 | https://www.lsmecapion.com/bbs/board.php?bo_table=manual&sca= | unfiltered list: post no. 41, same date 2026-05-26, Ver1.3 | list/detail cache/link inconsistency; original binary unavailable | index only; conflict unresolved |
+| LSM-CE-DRIVE | https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&page=4&wr_id=12888 | model example iX700MD1-B-150B; 480 Vac; 15 kW; attachment label and size 238.9K | attachment download timeout; DoC contents/signature/standards/model scope unverified | metadata only |
+| LSM-CE-CONVERTER | https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&sca=CE&wr_id=12886 | iX700MCV; 480 Vac; 15/37/55/75 kW codes; attachment label and size 234.4K | detail/attachment timeout; DoC contents unverified | metadata only |
+| LSM-CAD-IX700M | https://www.lsmecapion.com/bbs/board.php?bo_table=drawing&sca=Servo+Drive | iX700M Series outline drawing 2D CAD / 3D STEP, 2026-04-21 | detail and binary DWG/DXF/STEP not acquired; no hash | index only |
+| CI-PR239 | https://github.com/useformotor3/ai-discord-bot/pull/239 ; https://github.com/useformotor3/ai-discord-bot/actions/runs/45320409623 | merged; exact HEAD e9a15eeaf69e56e610352941f5330604bf78639e; base 1e218a61d09a280d8c4c2ec168c225c6456f215b; Run1497 branch CI 25/25, pytest 189 passed; merge 7d1fe1012bd2f8a8e1540918b43b58b4b41014f5 | none for recorded CI metadata | verified |
+| CI-MAIN-1503 | https://github.com/useformotor3/ai-discord-bot/actions/runs/45321136198 | push/main exact merge SHA; success 25/25; main read-back identical | none for recorded CI metadata | verified |
+
+- Run #1481 / ID 45317449785 exact HEAD c395fc5b5b2a393632bb2fbe65b10fd6572b936d success 25/25 remains verified. The later retry implementation does not invalidate its earlier three-PDF artifact.
+- Run #1497 recovered C(2026)7861 after three repeated timeouts; binary SHA-256 remains 262b09596cb5cbe7d72a2c7789fb2512ee00db7f69082e7def2c8181b0f63276.
+- Actual SKU, independent sale, EU/EEA supply, importer/economic operator, BOM/MCU/security configuration Unknown. Manufacturer inquiry draft_prepared_not_sent.
+- CRA only; SIL 3 excluded.
