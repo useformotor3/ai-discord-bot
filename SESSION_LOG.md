@@ -3391,3 +3391,19 @@ CRA only; SIL 3 excluded.
 - Bounded retry recovered M606 C(2026)7861 Annex after 3 consecutive 30s timeouts. PDF artifact 14887520943, 3,070,568B, ZIP SHA-256 `9f8c1c64a43c17fae1a093c454e4be212d5b55fd6914130c9a4e1921411a80b4`; all 3 PDFs present. M606 6p SHA-256 `262b09596cb5cbe7d72a2c7789fb2512ee00db7f69082e7def2c8181b0f63276`, same as Run #1481. Provenance artifact 14887800169, ZIP SHA-256 `2247997aa180f94a61672674b4fc8144e18a0c91deb51fcb26d82880c1aef6bd`.
 - Run #1486 failed only because workflow blob pins were stale; corrected two pins; Run #1497 exact-head passed.
 - PR #239 awaiting final exact-head merge guards. CRA only; SIL 3 excluded.
+
+
+## 2026-11-24 — PR #239 merge/post-merge verification and product-source retry
+
+- Read main protocol, status, report, evidence register, README, session and PROJECT_LOG before continuing. Main base 7d1fe1012bd2f8a8e1540918b43b58b4b41014f5; main JSONL 369 records / invalid 0.
+- PR #239 merged: final PR head e9a15eeaf69e56e610352941f5330604bf78639e, base 1e218a61d09a280d8c4c2ec168c225c6456f215b, 9 files, reviews 0 / threads 0, merge SHA 7d1fe1012bd2f8a8e1540918b43b58b4b41014f5. Branch Run #1497 / 45320409623 success 25/25, pytest 189 passed.
+- Post-merge main push Run #1503 / 45321136198 exact merge SHA success 25/25. Run #1481 / 45317449785 exact HEAD c395fc5b5b2a393632bb2fbe65b10fd6572b936d remains success 25/25.
+- Run #1497 bounded retry fetched all 3 CRA official PDFs, including M606 C(2026)7861 Annex, same SHA-256 262b09596cb5cbe7d72a2c7789fb2512ee00db7f69082e7def2c8181b0f63276 as Run #1481.
+- Official manufacturer source recheck: Solution Square iX700M manual list update 2026-09-16; detail/PDF remains inaccessible due SPA JS shell. LS Mecapion Servo-filter index says Ver1.4; unfiltered index says Ver1.3 for post 41/same date; actual revision unresolved. Converter/Drive CE DoC and CAD DWG/DXF/STEP originals remain unacquired; listing metadata only.
+- Corrected old PR #229 pending/unverified status: Run #1452 / 45312941583 verified success 25/25, exact merge SHA 4263389aa79cbb7cc17ccda3a019c659ccddef85.
+- Report §75 / evidence register §32 appended. Actual SKU, independent sale, EU/EEA supply, importer/economic operator, BOM/MCU/security Unknown. Inquiry draft_prepared_not_sent. CRA only; SIL 3 excluded.
+
+
+## 2026-11-24 — iX700M manual index snapshot correction
+
+- Three official list snapshots checked: default manual index and Servo-filter index show Ver1.4; explicit empty-category parameter sca= shows Ver1.3 for post 41 / same date. Detail/PDF inaccessible; no valid binary revision conclusion.
