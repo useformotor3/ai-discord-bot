@@ -3024,3 +3024,58 @@
 - Main read-back: report v0.20 §51, product evidence register §12.
 - CI success: source identity, compile, CRA traceability, full pytest, official PDF/HTML canaries, provenance manifest upload. PDF evidence upload skipped because unchanged.
 - Scope CRA only; SIL 3 excluded; no operational code/workflow/secrets/API cadence changes.
+
+
+## 2026-11-24 — PR #217 병합 및 iX700M 유닛 판매경계 재조사
+### 수행
+- PR #217 exact-head CI Run #1385 성공 및 9개 파일 diff 검토 후 squash merge.
+- Merge SHA: `5ea2f500dc69bd7c946895aeb3141df8fd8d1f99`.
+- 제조사 Solution Square iX700M 소개 PDF, LS메카피온 공식 CE/KC 인증서 목록, 매뉴얼·카탈로그 인덱스를 교차검토.
+- 보고서에 유닛 기능/전기구조/통신구조, 모델코드, 별도 DoC 게시, 공급 경계 증거등급을 추가.
+
+### 확인된 사실
+- Converter Unit은 3상 AC 입력을 DC Bus로 변환해 Drive Unit에 공급.
+- Drive Unit은 DC Bus를 받아 모터를 구동하며 브레이크·엔코더 연결 기능을 갖는다고 소개됨.
+- 유닛 간 Bus-Bar/DC Link/RS-485 Cross Communication, Drive Unit EtherCAT IN/OUT 표기가 확인됨.
+- Converter `iX700MCV...`와 Drive `iX700MD...`의 별도 모델코드 체계와 유닛별 CE DoC 게시 항목을 확인.
+- 매뉴얼 인덱스 Ver1.4(2026-05-26)와 카탈로그 첨부파일명 KR/EN 251205를 확인했으나 본문/해시는 미확보.
+
+### 판단 및 제한
+- 기능적 유닛 분리와 별도 문서상 제품 식별은 Confirmed.
+- 독립 상업 판매/주문, EU 시장 개별 PDE 공급, 사용자의 실제 SKU는 Unknown.
+- DoC PDF를 열지 못했으므로 내용·법령·표준 범위 또는 CRA 적합성을 주장하지 않는다.
+- PR #217 변경은 문서 9개에 한정되었고 운영 코드/workflow/secrets는 바뀌지 않았다.
+
+### 다음 단계
+- 실제 nameplate/SKU, 견적·발주·납품 및 EU 수입자 공급단위 증거 확보.
+- iX700M Ver1.4 manual PDF body/hash 확보.
+- 각 유닛의 회로도/BOM/HW-FW/MCU 및 EtherCAT/RS-485 API·protocol 상세 검증.
+
+
+## 2026-11-24 — PR #218 CI failure and manufacturer evidence
+- Run #1388 attempt 1 failed only at PDF source canary due Commission newsroom interstitial redirect to `sorry.ec.europa.eu`; 183 pytest passed.
+- Specific interstitial fallback trigger, arbitrary untrusted redirects remain fail-closed; regression test and blob pins refreshed. Retry in progress; PR not merged.
+- Manufacturer public evidence: product family specs; current Ver1.4 manual listing; 2D/3D outline CAD listing; KC code MCB-B-8K; overseas sales contact.
+- Manual/CAD attachments unavailable; internal schematic/BOM/PCB/MCU not found publicly. Actual SKU, independent sale and EU separate supply remain Unknown.
+- User ST MCU context is not proof of iX700M MCU.
+
+
+## 2026-11-24 — Run #1395 PDF canary failure and OJ endpoint correction
+- Run #1395 on exact head 6a6d5a58: source identity, compile, CRA traceability and pytest 184 passed; live PDF canary failed at C/2026/6013 EUR-Lex endpoint redirect to sorry.ec.europa.eu.
+- Corrected C/2026/6013 source URL to official Publications Office direct OJ PDF (61 pages, C/2026/6013, 17.11.2026 verified in browser); exact host allowlist and regression assertion updated.
+- First-source Commission interstitial handling remains exact-host-only with explicit ANFR fallback; arbitrary non-allowlisted hosts remain fail-closed.
+- New exact-head CI still required. PR #218 not merged.
+
+
+## 2026-11-24 — Run #1404 M/606 PDF access restriction
+- Exact PR #218 HEAD `30d2985272786bafe8083b98313266b9c786a145`, Run #1404: source identity, compile, CRA traceability and pytest 184 passed; live PDF canary failed on C(2026)7861 Annex Commission document-register API redirect to sorry.ec.europa.eu.
+- C/2026/6013 direct Publications Office OJ PDF endpoint is browser-verified; C(2026)7861 is not an OJ publication, so no fabricated OJ fallback.
+- Exact Commission interstitial now maps to PDFSourceUnavailableError; no third-party mirror auto-accepted. PDF batch can report SKIPPED/exit 0; independent HTML canary remains. Automated C(2026)7861 PDF bytes/hash remain unavailable.
+- PR #218 latest head has new source/test patch and documentation; fresh exact-head CI required before merge.
+
+
+## 2026-11-24 — Run #1410 success with documented PDF skip
+- Exact tested HEAD 1c49b9f4b5ad8fa747ffa08051fa6116dd3eff85, Run #1410: workflow success. Source identity, compile, CRA traceability, pytest, official CRA HTML locator checks and provenance manifest upload passed.
+- PDF source canary printed SKIPPED due C(2026)7861 official Commission document-register anti-bot interstitial; PDF evidence artifact upload skipped. Do not claim C7861 PDF bytes/hash acquisition.
+- C/2026/6013 official Publications Office direct OJ PDF is browser-verified. C7861 automated PDF retrieval remains unavailable.
+- A comment-only clarification to source fetcher and matching workflow blob pin was made after Run #1410; final exact HEAD CI required before merge.

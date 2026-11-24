@@ -337,3 +337,137 @@ CRA Article 2(2)~(4)는 특정 의료기기, 자동차, 항공 인증 제품, �
 6. Commission CRA standardisation page: https://digital-strategy.ec.europa.eu/en/policies/cra-standardisation
 7. LS메카피온 drive products: https://www.lsmecapion.com/bbs/board.php?bo_table=pd_drive
 8. LS메카피온 manuals: https://www.lsmecapion.com/bbs/board.php?bo_table=manual
+
+
+## 13. 2026-11-24 제조사 공식자료 재조사 — Converter Unit / Drive Unit 제품 구조와 공급 경계
+
+### 13.1 제조사 자료에서 직접 확인된 구조
+
+LS ELECTRIC Solution Square에 게시된 LS메카피온의 iX700M 신제품 소개 자료는 iX700M을 *Modular Servo Drive*로 표시하고, Converter Unit과 Drive Unit을 별도 유닛으로 구분한다. 자료에는 Power/Converter 부분과 Drive의 Power 부분이 분리되어 필요한 용량의 Drive를 다중 연결할 수 있다고 설명되어 있다. 따라서 이 제품군이 단일 일체형 드라이브가 아니라 공통 DC Bus를 사용하는 모듈형 구성이라는 점은 제조사 공개자료로 확인된다.
+
+기능 분담은 다음과 같다.
+
+| 유닛 | 제조사 자료에 기재된 기능 | CRA 제품경계 검토 시 의미 |
+|---|---|---|
+| Converter (Power) Unit | AC 380–480 V 3상 입력을 정류·평활해 DC 535–675 V로 만들고 Bus-Bar를 통해 Drive Unit에 공급. 회생제동 구동회로 내장(저항은 외부 장착). DC24V 제어전원을 Bus-Bar로 Bypass 공급 | 전력 변환·공통 DC Link 공급 기능. 단독 판매 여부는 별도 확인 필요 |
+| Drive Unit | Converter에서 Bus-Bar로 전원을 공급받아 모터 구동. Dynamic brake, DC24V 제어전원, 모터브레이크 출력, BiSS 1st encoder 및 2nd universal encoder 제공 | 실제 모터 토크/속도/위치 제어의 핵심 실행 유닛으로 보이나, 개별 SKU의 상세 기능은 매뉴얼 확인 필요 |
+| 유닛 간 연결 | PE 연결 Bus-Bar, DC Link Bus-Bar, DC24V, Converter-Drive 간 RS-485 Cross Communication | 내부 유닛 연결 및 제어 데이터 교환의 제조사 설명. 이 RS-485가 외부 네트워크 제품으로 별도 공급된다는 근거는 아님 |
+| 외부 통신 | Drive Unit 연결부 설명에 EtherCAT IN/OUT이 기재 | 디지털 데이터 연결 가능성을 뒷받침하나, 포트/프로토콜 상세와 실제 SKU는 매뉴얼·회로 자료로 확인 필요 |
+
+제조사 자료는 15/37/55/75 kW Converter 및 5/7.5 kW Phase 3 Converter 용량군, Drive Unit의 축수(1/2/3축)와 용량군을 각각 표로 제시한다. 자료의 Phase 일정은 제품군 라인업 안내이지 현재 모든 SKU의 재고·판매 가능 상태를 입증하는 자료로 해석하지 않는다.
+
+### 13.2 제조사 공식 모델코드 및 독립 문서 식별
+
+LS메카피온 공식 제품인증서 게시판에는 Converter Unit과 Drive Unit이 각각 별도 항목으로 등록되어 있고, 각 항목에 대응하는 별도 CE DoC 첨부파일이 표시된다.
+
+**Converter Unit 공개 모델코드 예시**
+- CE 문서 페이지의 코드 체계: `iX700MCV` — Converter Unit = `CV`, Input Rating = `B (480 Vac)`, Rated Wattage = `150 (15 kW)`, `370 (37 kW)`, `550 (55 kW)`, `750 (75 kW)`; 옵션은 표준(blank) 또는 사용자 지정 코드.
+- 별도 KC 게시 항목에는 `iX700MCV-B-150`, `iX700MCV-B-370`, `iX700MCV-B-550`, `iX700MCV-B-750`가 각각 표시된다.
+
+**Drive Unit 공개 모델코드 예시**
+- CE 문서 페이지의 코드 체계: `iX700MD1-B-150B`. 모델 설명에서 `D1`은 1축, `D2`는 2축, `D3`는 3축을 뜻하고, `B` 입력 정격은 480 Vac, `150`은 15 kW, Encoder `B`는 BiSS-C로 설명된다. 옵션 코드는 표준(blank) 또는 사용자 지정 코드다.
+- CE 게시판에는 `iX700MD1-B-075B`, `iX700MD1-B-050B`, `iX700MD2-B-045B`, `iX700MD1-B-150B`, `iX700MD1-B-220B`, `iX700MD1-B-300B`, `iX700MD1-B-370B`, `iX700MD1-B-450B`, `iX700MD1-B-550B`, `iX700MD1-B-750B` 등 용량별 Drive Unit 항목이 나뉘어 있다. 목록의 모델명·첨부파일·정격을 사용자 실제 납품 SKU로 오인하지 않는다.
+
+이 모델코드와 별도 DoC 게시 사실은 Converter Unit과 Drive Unit이 제조자 문서에서 서로 구별되는 제품 식별·정격 단위로 관리된다는 강한 증거다. 그러나 **별도 CE DoC 또는 모델코드가 존재한다는 사실만으로 독립적인 상업 판매·별도 주문·EU 시장 공급이 확정되지는 않는다.** 가격표, 주문서, 견적서, 계약, 포장·라벨, 판매조건 또는 제조사의 명시적 독립 판매 설명은 이번 공개 조사에서 확인하지 못했다.
+
+### 13.3 공급 경계에 대한 현재 증거 판정
+
+| 질문 | 판정 | 근거와 한계 |
+|---|---|---|
+| Converter와 Drive가 기능적으로 분리된 유닛인가? | **확인** | 제조사 자료가 유닛을 명시적으로 구분하고 전력 변환·모터 구동 기능을 각각 설명 |
+| 각 유닛에 별도 모델코드 체계가 있는가? | **확인** | `iX700MCV...`와 `iX700MD...` 코드 체계 |
+| 각 유닛에 별도 CE DoC 게시 항목이 있는가? | **확인** | 제조사 제품인증서 게시판에 Converter Unit과 Drive Unit 항목 및 각각의 첨부 DoC가 있음 |
+| 유닛을 개별 교체·설치할 수 있는가? | **일부 정황만 확인** | 모듈형/Plug-and-Play 및 다중 연결 설명은 있으나, 실제 교체 절차·제한은 매뉴얼 본문 검증 필요 |
+| Converter Unit을 독립 SKU로 별도 판매하는가? | **Unknown** | 모델코드·별도 DoC는 있으나 독립 판매·주문 증거 미확보 |
+| Drive Unit을 독립 SKU로 별도 판매하는가? | **Unknown** | 모델코드·별도 DoC는 있으나 독립 판매·주문 증거 미확보 |
+| 두 유닛이 EU 시장에서 각각 별도 PDE로 공급되는가? | **Unknown** | EU 판매 계약·주문·포장·EU 수입자 공급단위 자료 미확보 |
+| 실제 사용자 대상 제품의 SKU는 무엇인가? | **Unknown** | 공개 모델 예시는 확인했으나 nameplate/주문서와 대조되지 않음 |
+
+### 13.4 CRA 적용성에 미치는 영향
+
+CRA Guidance C/2026/6013의 제품·모듈 공급 경계 원칙에 따라, Converter Unit 또는 Drive Unit이 실제로 독립적으로 시장에 제공되는 제품이라면 각 유닛을 별도의 PDE로 평가할 수 있다. 반대로 통합 시스템 내부 구성품으로만 제공된다면 통합 제품 전체의 intended purpose와 core functionality를 중심으로 평가해야 한다.
+
+현재 공개자료만으로는 어느 공급 시나리오인지 확정할 수 없다. 따라서 다음을 병렬로 유지한다.
+
+1. **통합 시스템 시나리오:** Converter + 하나 이상의 Drive Unit이 하나의 시스템 제품으로 공급되는 경우. 시스템 전체의 데이터 연결, 핵심 기능, 업데이트·취약점 처리 책임을 평가한다.
+2. **별도 유닛 공급 시나리오:** Converter 및/또는 Drive Unit이 각각 별도 주문·판매·공급되는 경우. 각 유닛의 intended purpose, 자체 디지털 데이터 연결, 독립 core functionality를 각각 평가한다.
+3. **혼합 시나리오:** Converter/Drive가 별도 주문되지만 특정 시스템 구성으로 함께 판매·설치되는 경우. 각 시장 공급 단위와 조합 시스템의 책임·기술문서 경계를 계약과 실제 판매 흐름으로 결정한다.
+
+Converter Unit의 정류·DC bus 공급 기능만으로 CRA 적용 여부를 단정할 수 없다. 유닛 자체에 디지털 데이터 처리·저장·전송 및 직접/간접 데이터 연결 기능이 있는지, Drive Unit·외부 네트워크와의 연결이 해당 유닛의 의도된 사용에 포함되는지를 회로도·인터페이스·펌웨어·매뉴얼로 확인해야 한다. Drive Unit의 EtherCAT IN/OUT 및 내부 RS-485는 데이터 연결 분석의 주요 단서이나, 별도 제품 분류를 자동 확정하지 않는다.
+
+### 13.5 최신 제조사 문서 상태와 미확보 자료
+
+- LS메카피온 매뉴얼 목록: `iX700M DRIVE 400[V] 매뉴얼 Ver1.4`, 게시일 2026-05-26 확인. 이번 확인은 목록 메타데이터 수준이며 PDF 본문·페이지·해시를 취득해 검증한 것은 아니다.
+- LS메카피온 카탈로그 목록: iX700M 국문/영문 카탈로그 항목 확인. 첨부파일명은 `iX700M 브로셔 최종KR_251205.pdf`, `iX700M 브로셔 최종EN_251205.pdf`로 표시되고 게시판에는 2025-11-17 항목, 파일 메타데이터에는 2025-12-05 시간이 표시된다. 파일 본문 및 SHA-256은 미확보.
+- LS ELECTRIC Solution Square의 2024-04-01 내부 제작 표기가 있는 iX7M/iX700M 신제품 소개 PDF에서 구조·기능·용량표를 확인했다. 이 문서는 제조사 도메인에 게시된 자료지만, 2025/2026 개정 SKU 전체를 대표한다고 가정하지 않는다.
+- CE DoC PDF 링크는 제조사 게시판에 존재함을 확인했으나 이번 웹 열람에서는 파일 본문을 성공적으로 내려받지 못했다. 따라서 DoC의 서명자·적용 법령·발행일·모델 범위·기술표준은 PDF 본문 확인 전까지 별도 검증 대상으로 남긴다. DoC 게시 사실을 CRA 적합성 증거로 사용하지 않는다.
+
+### 13.6 다음 증거 확보 우선순위
+
+**P0 — 제품 경계 확정**
+1. 실제 사용 제품 nameplate 사진과 전체 모델코드(Converter/Drive 각각).
+2. 견적서·발주서·납품서·송장 또는 제조사 대리점 주문 화면에서 각 유닛의 독립 주문 가능 여부.
+3. EU 공급 계약에서 제품이 단일 시스템인지 개별 유닛인지, 제조자/수입자/유통자의 역할.
+4. 실제 설치 구성도와 Converter-Drive 조합, Bus-Bar 및 통신 배선도.
+
+**P1 — 기술 구조 검증**
+1. iX700M DRIVE 400[V] Ver1.4 PDF 본문 및 해시 확보, 개정 이력 확인.
+2. Converter/Drive 각 유닛의 회로도·BOM·HW revision·펌웨어 범위.
+3. EtherCAT IN/OUT, RS-485 Cross Communication의 프로토콜·서비스·API 및 각 유닛에서의 종단점 확인.
+4. 각 유닛의 MCU 전체 주문코드, 보안 기능, 업데이트·키 관리 및 취약점 대응 책임.
+
+**현재 결론:** 제조사 자료는 Converter Unit과 Drive Unit의 기능적·모델코드·적합성 문서상 분리를 입증한다. 그러나 실제 독립 상업 판매와 EU 시장 공급 단위는 입증하지 않는다. 따라서 제품 구조의 분리는 Confirmed, 독립 판매/시장 공급은 Unknown으로 기록한다.
+
+
+## 14. 2026-11-24 추가 제조사 증거 및 CI 실패 원인 분석
+
+### 14.1 제품군 공식 페이지
+LS메카피온 공식 드라이브 제품군 페이지는 iX700M을 **다축 모듈러 EtherCAT 통신 드라이브**로 분류하고, 입력 AC 380–480 V, 용량 4.5–75 kW, 정격전류 16.1–168 A(축당)로 표시한다. 이는 제품군 수준의 사양이며 개별 SKU별 정격을 대신하지 않는다.
+
+### 14.2 최신 매뉴얼 버전
+공식 Servo 매뉴얼 카테고리의 현재 목록(게시물 ID 12652)은 `iX700M DRIVE 400[V] 매뉴얼 Ver1.4`, 게시일 2026-05-26으로 표시한다. 일부 검색 캐시의 Ver1.3 표기는 오래된 결과로 보이며, 직접 열람한 현재 카테고리 페이지의 Ver1.4를 기준으로 정정한다. 상세 게시물과 첨부 PDF는 timeout/502로 확보하지 못해 본문·페이지·SHA-256은 미검증이다.
+
+### 14.3 외형 CAD와 내부 설계 자료 구분
+공식 Servo Drive 도면 목록(게시물 ID 12455)은 `iX700M Series 서보드라이브 외형도 2D(CAD), 3D(STEP)`를 2026-04-21 게시한 것으로 표시한다. 이는 외형/기구 CAD 게시 증거다. 첨부 파일은 미확보이며, 외형 CAD는 회로도·PCB layout·BOM·MCU part number·보안 설정을 입증하지 않는다. 이번 공개 검색에서 iX700M 내부 회로도·BOM·PCB·ST MCU 전체 주문코드를 명시한 제조사 공개 자료는 찾지 못했다.
+
+### 14.4 해외 판매 채널
+제조사 해외 대리점 페이지는 해외 담당 창구로 **LS ELECTRIC 자동화 / automation@ls-electric.com**을 표시한다. 해외 문의·영업 경로가 있다는 증거이지, iX700M Converter/Drive 별도 견적·발주·가격·EU 재판매 가능성을 입증하지 않는다. 공개 페이지에서 유닛별 구매 버튼·가격표·온라인 주문 내역은 확인되지 않았다. 독립 판매와 EU 개별 공급은 여전히 Unknown이다.
+
+### 14.5 추가 모델코드 단서
+KC 목록에는 `iX700MCB-B-8K`가 별도 iX700M 드라이브 항목으로 게시되고 CE 목록에도 `iX700MCB`가 나타난다. 확보한 공식 코드 정의만으로 `MCB`와 `8K`의 의미·기능·판매단위를 확정할 수 없어 Unknown으로 유지한다. Converter나 Bus module 등으로 추정하지 않는다.
+
+### 14.6 MCU/ST 및 BOM
+프로젝트 사용자가 ST MCU를 사용한다고 알린 사실은 개발 프로젝트의 MCU 공급사 정보다. 이를 iX700M에 ST MCU가 탑재되었다는 증거로 전용하지 않는다. iX700M의 MCU 제조사·정확한 order code·silicon revision·security feature·debug lifecycle·secure boot configuration·BOM은 현재 공개 제조사 자료에서 확인되지 않았다. iX700M의 ST MCU 탑재 여부는 Unknown이다.
+
+### 14.7 판정 업데이트
+- 제품군 EtherCAT/모듈형 성격 및 AC 380–480V, 4.5–75kW, 16.1–168A/축: **제품군 페이지 수준에서 Confirmed**.
+- Ver1.4 매뉴얼 게시 메타데이터: **Confirmed**; 본문/해시: **Not acquired**.
+- 2D CAD/3D STEP 외형도 게시 메타데이터: **Confirmed**; 파일 본문: **Not acquired**.
+- 해외 영업 창구 존재: **Confirmed**; EU 실제 판매/수입자/공급계약: **Unknown**.
+- `iX700MCB-B-8K` 식별자 존재: **Confirmed**; 코드 의미: **Unknown**.
+- 내부 회로도/BOM/MCU 및 ST MCU 탑재: **Unknown**.
+- Converter/Drive 독립 판매·별도 EU 공급: **Unknown**.
+
+### 14.8 제조사 링크
+1. 제품군: https://www.lsmecapion.com/bbs/board.php?bo_table=pd_drive
+2. Ver1.4 매뉴얼 목록: https://lsmecapion.com/bbs/board.php?bo_table=manual&sca=Servo (게시물 ID 12652)
+3. 외형 CAD 목록: https://lsmecapion.com/bbs/board.php?bo_table=drawing&sca=Servo+Drive (게시물 ID 12455)
+4. KC 모델코드 목록: https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&page=2&sca=KC
+5. 해외 대리점 창구: https://www.lsmecapion.com/customer/agency2.php
+6. 해외 영업 담당: https://www.lsmecapion.com/customer/take2.php
+
+
+### 14.9 CI 2차 실패 원인과 공식 OJ PDF 주소 정정
+PR #218 exact HEAD의 Run #1395에서 184개 pytest 및 코드/추적성 검사는 통과했지만 PDF canary가 다시 실패했다. 로그상 두 번째 문서(C/2026/6013) 원본 URL인 EUR-Lex PDF endpoint가 CI runner에서 sorry.ec.europa.eu로 리디렉션되어, 이 문서에는 fallback이 없으므로 엄격한 allowlist에 의해 차단되었다. 이는 CRA 본문 또는 모델 테스트 실패가 아니라 원문 호스트 접근 경로 문제다.
+
+해결을 위해 동일한 공식 관보 PDF를 제공하는 Publications Office의 직접 PDF URL로 변경했다: https://publications.europa.eu/resource/cellar/dcbc848b-e227-11f1-aefc-01aa75ed71a1.0006.01/DOC_1. 브라우저에서 PDF 형식, 61페이지, 제목, C/2026/6013 및 17.11.2026 관보 날짜를 확인했다. 다운로드 도구의 허용 호스트도 publications.europa.eu로 한정했고, 회귀 테스트에서 정확한 URL과 호스트를 확인하도록 했다. PDF magic, 필수 identity markers 및 본문 텍스트 검증은 그대로 유지한다.
+
+새 exact HEAD CI가 이 URL에서 실제 PDF를 받아 marker/hash 검증까지 성공하기 전에는 PR을 병합하지 않는다.
+
+
+### 14.10 M/606 문서의 자동화 접근 제한과 보수적 처리
+Run #1404에서 C(2026)7861 M/606 Annex의 Commission document-register API가 CI runner를 sorry.ec.europa.eu interstitial로 리디렉션했다. 앞서 C/2026/6013은 공식 Publications Office 직접 OJ PDF로 전환해 별도 해결했다. C(2026)7861은 OJ에 게재된 문서가 아니므로 동일한 OJ URL로 대체할 수 없다. 이번 수정은 해당 Commission anti-bot interstitial을 유효 PDF가 아닌 source-unavailable 상태로 기록하고, 미허용 외부 mirror를 자동 사용하지 않도록 한다. 스크립트는 다른 PDF source를 무결하게 검증하되, 하나의 공식 문서가 접근 제한이면 PDF batch를 SKIPPED 처리한다. HTML canary와 별도 공식 브라우저 확인은 계속 유지한다. 따라서 CI 성공 후에도 C(2026)7861 PDF의 automated artifact가 확보되었다고 주장하지 않는다. 문서 내용 자체는 공식 Commission register의 브라우저 검색 결과에서 확인했으며, PDF 바이너리/hash는 runner에서 확보하지 못했다.
+
+
+### 14.11 최신 검증 결과 — Run #1410
+PR #218의 HEAD 1c49b9f4b5ad8fa747ffa08051fa6116dd3eff85에 대한 Run #1410은 workflow 전체가 success로 종료됐다. 소스 무결성, 컴파일, CRA 추적성, 전체 pytest, 공식 CRA HTML source locator 검사 및 provenance manifest 업로드는 성공했다. 단, PDF source canary는 C(2026)7861 Commission document-register의 anti-bot interstitial 때문에 SKIPPED로 종료했고 PDF evidence artifact도 업로드되지 않았다. 따라서 이를 PDF 원문 전체 확보 성공으로 표현하지 않는다. 이후 source fetcher 주석을 실제 동작과 일치하도록 정리하고 source blob pin을 갱신했으므로, 최종 병합 대상은 새 HEAD에서 한 번 더 검증한다.

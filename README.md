@@ -1,3 +1,15 @@
+> **Run #1410:** Exact HEAD 1c49b9f4 CI workflow succeeded, including tests, CRA traceability, HTML locator validation and provenance manifest upload. C(2026)7861 PDF canary was explicitly SKIPPED because the Commission document-register anti-bot interstitial blocked the unauthenticated runner; no PDF bytes/hash claim is made. A source-comment/pin-only update followed, so the newest HEAD still needs final CI.
+
+> **C(2026)7861 PDF 수집 한계:** Run #1404에서 Commission document-register API가 CI runner를 anti-bot interstitial로 리디렉션했습니다. 이 문서는 OJ PDF가 아니므로 대체 URL을 추정하지 않고 source-unavailable로 처리하도록 수정했습니다. 외부 mirror 자동 수용은 하지 않으며 PDF bytes/hash는 미확보 상태로 명시합니다. C/2026/6013은 공식 Publications Office OJ PDF로 전환했습니다.
+
+> **CI 원문 수집 수정:** C/2026/6013 PDF의 EUR-Lex endpoint가 CI에서 interstitial로 리디렉션되어 실패한 것을 확인하고, 공식 Publications Office 직접 OJ PDF(61 pages)로 변경했습니다. exact host allowlist와 회귀 테스트를 추가했으며 새 HEAD CI 검증 전 PR #218은 미병합입니다.
+
+> **2026-11-24 추가 조사:** iX700M 공식 제품군 사양, Ver1.4 매뉴얼 목록, 외형 CAD 2D/3D 게시, 해외 영업 창구 및 미해석 `iX700MCB-B-8K`를 확인했습니다. 매뉴얼/CAD 본문, 회로도/BOM/MCU는 미확보이며 독립 판매·EU 개별 공급은 Unknown입니다. PR #218 CI Run #1388은 Commission PDF newsroom interstitial redirect로 실패해 보완·재검증 중이며 미병합입니다. [상세 보고서 §14](reports/CRA_MECAPION_SERVO_DRIVE_SCOPE_CLASSIFICATION_2026-11-24.md), [증거 등록부 §18](reports/CRA_LS_MECAPION_PRODUCT_EVIDENCE_REGISTER_2026-11-23.md), [통합 보고서 §56](reports/CRA_INTEGRATED_COMPLIANCE_REPORT_2026-11-17.md).
+
+
+
+> **2026-11-24 iX700M 제품경계 조사:** 제조사 자료로 Converter Unit/Drive Unit의 기능 분리, `iX700MCV...` / `iX700MD...` 별도 모델코드 및 유닛별 CE DoC 게시를 확인했습니다. 실제 독립 판매·EU 개별 공급 및 사용자 실제 SKU는 아직 Unknown입니다. [상세 보고서 §13](reports/CRA_MECAPION_SERVO_DRIVE_SCOPE_CLASSIFICATION_2026-11-24.md), [제품 증거 등록부 §17](reports/CRA_LS_MECAPION_PRODUCT_EVIDENCE_REGISTER_2026-11-23.md), [통합 보고서 §55](reports/CRA_INTEGRATED_COMPLIANCE_REPORT_2026-11-17.md). PR #217 merge SHA: `5ea2f500dc69bd7c946895aeb3141df8fd8d1f99`.
+
 > **2026-11-24 CRA 제품 분류 분석:** [LS메카피온 서보 드라이브 CRA 적용 범위·제품 분류 보고서 v1.0](reports/CRA_MECAPION_SERVO_DRIVE_SCOPE_CLASSIFICATION_2026-11-24.md)을 추가했습니다. 통신형 제품의 Article 2 데이터 연결, 완제품 core functionality, EtherCAT/Fieldbus category 10, ST MCU category 14/4 및 구성품 실사를 구분합니다. 실제 SKU·HW/FW·BOM·MCU 주문코드·모듈 판매 경계는 Unknown으로 유지합니다. 작업 브랜치: research/cra-servo-drive-scope-classification-2026-11-24-v2; 기준 main: d1b33a4d8988f6f940070e03d5b4fa26570c384e.
 
 > **PR #206 병합 — 2026-11-23:** Merge SHA `acd932fb70bb2e881fdd35b6b9e75f2c829ac59e`. 통합 보고서 v0.18 §49 및 제품 증거 등록부 §10에 LS ELECTRIC Solution Square와 LS메카피온 매뉴얼 인덱스 교차검증을 반영했습니다. Exact-head Run #1362 / ID `45137336327` success. iX700M 최신 목록 update 2026-09-16은 확인했으나 버전/파일명은 Unknown; PEGA2 영문 Ver1.3 및 한국어 Ver1.3 파일 메타데이터를 기록했으며 동일 개정 여부는 미검증. 복구 refs: `safety/pre-pr206-merge-2026-11-23`, `safety/post-merge-pr206-2026-11-23`.

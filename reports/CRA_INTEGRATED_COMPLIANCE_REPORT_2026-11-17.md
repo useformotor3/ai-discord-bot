@@ -1505,3 +1505,44 @@ CEN/CENELEC는 2026-11-19 EN 40000-1-1(Vocabulary) 및 EN 40000-1-2(Principles, 
 실제 SKU/nameplate, Converter/Drive Unit 별도 판매 여부, HW/FW revision, BOM, ST MCU full order code, 보안 설정, interface driver/API, EU 시장 공급 주체는 Unknown이다. 증거 확보 전 최종 제품별 분류와 Article 32 경로는 확정하지 않는다.
 
 상세 분석·근거 URL·증거 요청 목록은 위 독립 보고서 v1.0을 기준으로 한다. CRA only; SIL 3 제외.
+
+
+## §55. 2026-11-24 — iX700M Converter Unit / Drive Unit 공급 경계 및 실제 모델코드 증거
+
+LS ELECTRIC Solution Square에 게시된 LS메카피온 iX700M 소개자료는 Converter Unit과 Drive Unit을 별도 유닛으로 구분한다. Converter는 AC 380–480 V 3상 입력을 DC 535–675 V로 변환해 Bus-Bar로 Drive Unit에 공급하고, Drive Unit은 DC Bus 전력을 이용해 모터를 구동한다. 유닛 간에는 PE Bus-Bar, DC Link Bus-Bar, DC24V 및 RS-485 Cross Communication이 기재되어 있고 Drive Unit 연결부에는 EtherCAT IN/OUT이 기재되어 있다. 이는 제조사 자료에 근거한 기능적 모듈 구조의 확인이다.
+
+LS메카피온 공식 제품인증서 게시판은 Converter `iX700MCV...`와 Drive `iX700MD...`를 각각 별도 제품 항목으로 게시하며 각기 CE DoC 첨부파일을 표시한다. Converter의 공개 코드 예시는 `iX700MCV-B-150/370/550/750`(15/37/55/75 kW)이고, Drive 예시는 `iX700MD1-B-150B`이며 D1/D2/D3는 1/2/3축, B는 480 Vac, 150은 15 kW, Encoder B는 BiSS-C를 뜻한다. 공식 KC 목록에도 Converter 및 Drive 모델코드가 개별 항목으로 나타난다. 따라서 기능적 유닛 분리, 별도 모델코드 체계, 유닛별 별도 인증문서 게시 사실은 확인했다.
+
+그러나 **모델코드와 별도 CE DoC 게시만으로 독립적인 상업 판매, 별도 주문, 또는 EU 시장에서 각각 PDE로 공급된다는 사실까지 입증되지는 않는다.** 공개자료에서 가격표·주문서·판매조건·EU 공급 계약은 확인하지 못했다. CRA 공급 경계는 통합 시스템 공급, 유닛별 별도 공급, 혼합 공급의 세 시나리오로 유지하고 실제 계약·발주·납품·라벨 증거로 최종 판정한다.
+
+최신 매뉴얼 목록에는 `iX700M DRIVE 400[V] Ver1.4`가 2026-05-26 게시된 것으로 표시되나 PDF 본문·해시는 아직 확보하지 못했다. 카탈로그 첨부파일명에는 KR/EN `251205`가 표시되지만 본문·해시 검증은 미완료다. CE DoC PDF도 게시 사실은 확인했으나 본문 열람은 실패했으므로 그 내용이나 CRA 관련성을 추정하지 않는다.
+
+제품 증거 등록부 §17과 독립 상세 보고서 §13에 세부 출처·판정표·미확보 증거를 기록했다. 실제 사용자 대상 SKU와 독립 판매 여부는 계속 Unknown이다.
+
+
+## §56. 2026-11-24 추가 제조사 자료 및 공급 경계 재검증
+
+LS메카피온의 최신 제품군 페이지는 iX700M을 다축 모듈러 EtherCAT 통신형으로 표시하며 AC 380–480V, 4.5–75kW, 축당 정격전류 16.1–168A를 제시한다. 공식 Servo 매뉴얼 카테고리(게시물 ID 12652)의 최신 목록은 `iX700M DRIVE 400[V] Ver1.4`, 2026-05-26 게시로 표시한다. 검색 캐시의 Ver1.3 표기는 현재 목록과 불일치하므로 현재 직접 열람한 목록 Ver1.4를 기준으로 정정한다. 첨부 PDF 본문은 timeout/502로 확보하지 못했다.
+
+공식 Servo Drive 도면 카테고리(게시물 ID 12455)는 `iX700M Series 서보드라이브 외형도 2D(CAD), 3D(STEP)`를 2026-04-21 게시한 것으로 확인된다. 이는 외형 CAD 게시 증거이며 내부 회로도·PCB·BOM·MCU part number의 증거가 아니다. 첨부 파일은 미확보 상태다.
+
+공식 해외 대리점 안내는 해외 문의 창구로 LS ELECTRIC 자동화(`automation@ls-electric.com`)를 표시한다. 해외 영업 경로는 확인되지만 iX700M Converter/Drive의 개별 주문·판매 또는 EU 실제 공급을 입증하지 않는다. 제품별 견적·발주·계약·EU 수입자 문서는 여전히 필요하다.
+
+KC 목록의 `iX700MCB-B-8K` 및 CE 목록의 `iX700MCB` 항목을 확인했으나 코드 의미·기능은 공개 정의가 없어 Unknown이다. 프로젝트에서 ST MCU를 사용한다는 사용자 제공 정보는 iX700M 내부 MCU 탑재 증거가 아니다. iX700M의 MCU·BOM·보안 설정은 Unknown이다.
+
+독립 보고서 §14 및 제품 증거 등록부 §18에 세부 근거와 증거 한계를 기록한다. Converter/Drive 독립 판매 및 EU 개별 PDE 공급 여부는 Unknown으로 유지한다.
+
+
+## §57. 2026-11-24 — CRA 공식 지침 PDF 수집 endpoint 보완
+
+PR #218 Run #1395에서 컴파일·추적성·pytest 184개는 성공했으나, C/2026/6013 PDF의 EUR-Lex endpoint가 CI에서 sorry.ec.europa.eu로 리디렉션되어 PDF canary가 실패했다. 공식 Publications Office의 직접 OJ PDF URL(https://publications.europa.eu/resource/cellar/dcbc848b-e227-11f1-aefc-01aa75ed71a1.0006.01/DOC_1)을 브라우저에서 확인한 결과 61페이지의 C/2026/6013 관보 PDF다. 수집기 primary URL과 정확한 호스트 allowlist를 Publications Office로 변경하고 테스트에서 URL/host를 고정했다. PDF magic·문서 식별 문구·본문·SHA-256 검증은 유지한다. 새 exact-head CI 통과 전 PR #218은 병합하지 않는다.
+
+
+## §58. 2026-11-24 — C(2026)7861 PDF 자동 수집 제한 기록
+
+PR #218 Run #1404에서 컴파일·추적성·pytest 184개는 통과했으나, Commission document-register의 C(2026)7861 Annex PDF API가 CI runner를 sorry.ec.europa.eu 차단 안내로 리디렉션했다. C/2026/6013은 이미 Publications Office 공식 OJ PDF 직접 주소로 전환했지만, C(2026)7861은 OJ 게재 문서가 아니므로 OJ PDF 대체 경로를 임의로 만들지 않는다. 해당 정확한 Commission interstitial은 이제 source-unavailable로 처리하고 외부 mirror를 자동 허용하지 않는다. PDF batch는 SKIPPED 처리될 수 있으며 C(2026)7861 PDF 바이너리/hash를 확보했다고 주장하지 않는다. 공식 Commission register 내용은 브라우저로 확인했고 HTML canary는 별도 검증한다.
+
+
+## §59. 2026-11-24 — Run #1410 검증 결과와 PDF canary 범위
+
+PR #218 HEAD 1c49b9f4b5ad8fa747ffa08051fa6116dd3eff85의 Run #1410은 전체 workflow success로 종료됐다. Source identity, compile, CRA traceability, pytest, 공식 CRA HTML locator 검증, provenance manifest 업로드는 성공했다. 다만 PDF canary는 C(2026)7861 Commission document-register anti-bot interstitial로 SKIPPED 처리되었고 PDF evidence upload도 skip됐다. 따라서 C(2026)7861 PDF 본문·해시 확보 성공으로 기록하지 않는다. 이후 수집기 주석과 source blob pin을 정리해 새 HEAD를 만들었으므로 최종 병합 전 새 exact-head CI를 한 번 더 확인한다.

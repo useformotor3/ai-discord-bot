@@ -63,6 +63,36 @@ def test_guidance_primary_non_pdf_uses_only_allowlisted_anfr_mirror():
     assert item["final_url"] == definition["fallback_url"]
 
 
+def test_official_commission_sorry_interstitial_uses_allowlisted_anfr_mirror():
+    definition = pdf.PDF_SOURCE_CATALOG[0]
+    responses = iter([
+        FakeResponse(
+            url="https://sorry.ec.europa.eu/",
+            body=b"<html>Commission automated access interstitial</html>",
+            content_type="text/html",
+        ),
+        FakeResponse(url=definition["fallback_url"]),
+    ])
+    with patch.object(pdf, "PdfReader", FakeReader):
+        item = pdf.fetch_pdf_source(definition, get=lambda *a, **k: next(responses))
+    assert item["fallback_used"] is True
+    assert item["final_url"] == definition["fallback_url"]
+
+
+def test_official_commission_register_interstitial_is_unavailable_without_mirror():
+    definition = next(
+        item for item in pdf.PDF_SOURCE_CATALOG
+        if item["id"] == "CRA-M606-C2026-7861-ANNEX"
+    )
+    response = FakeResponse(
+        url="https://sorry.ec.europa.eu/",
+        body=b"<html>Commission automated access interstitial</html>",
+        content_type="text/html",
+    )
+    with pytest.raises(pdf.PDFSourceUnavailableError):
+        pdf.fetch_pdf_source(definition, get=lambda *a, **k: response)
+
+
 def test_untrusted_redirect_fails_closed_without_mirror_fallback():
     definition = pdf.PDF_SOURCE_CATALOG[0]
     response = FakeResponse(url="https://evil.example/document.pdf")
@@ -120,6 +150,8 @@ def test_guidance_oj_c6013_is_fetched_from_eurlex_primary_without_fallback():
     with patch.object(pdf, "PdfReader", FakeReader):
         item = pdf.fetch_pdf_source(definition, get=lambda *a, **k: response)
     assert item["id"] == "CRA-GUIDANCE-OJ-2026-6013"
+    assert definition["url"] == "https://publications.europa.eu/resource/cellar/dcbc848b-e227-11f1-aefc-01aa75ed71a1.0006.01/DOC_1"
+    assert definition["allowed_hosts"] == ("publications.europa.eu",)
     assert item["fallback_used"] is False
     assert item["final_url"] == definition["url"]
 

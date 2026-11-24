@@ -50,8 +50,8 @@ PDF_SOURCE_CATALOG = (
     {
         "id": "CRA-GUIDANCE-OJ-2026-6013",
         "filename": "C_2026_6013_cra_guidance_oj.pdf",
-        "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX%3A52026XC06013",
-        "allowed_hosts": ("eur-lex.europa.eu",),
+        "url": "https://publications.europa.eu/resource/cellar/dcbc848b-e227-11f1-aefc-01aa75ed71a1.0006.01/DOC_1",
+        "allowed_hosts": ("publications.europa.eu",),
         "required_markers": (
             "C/2026/6013",
             "Cyber Resilience Act",
@@ -92,6 +92,15 @@ def _download(url, allowed_hosts, *, get=None):
 
     final_url = getattr(response, "url", "") or url
     parsed = urlparse(final_url)
+    # The Commission document service may redirect automated requests to
+    # its anti-bot interstitial. Never parse that page as a PDF. The caller
+    # may use only a source definition's explicit allowlisted fallback;
+    # without one, the document is recorded as unavailable.
+    if parsed.scheme == "https" and parsed.hostname == "sorry.ec.europa.eu":
+        raise PDFSourceUnavailableError(
+            "Commission document service redirected to its official anti-bot/interstitial host; "
+            "no trusted PDF response is available to this unauthenticated runner"
+        )
     if parsed.scheme != "https" or parsed.hostname not in allowed_hosts:
         raise PDFSourceValidationError(
             f"PDF source redirected to a non-allowlisted host: {final_url}"

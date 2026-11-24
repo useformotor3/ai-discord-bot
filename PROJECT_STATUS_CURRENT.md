@@ -1908,3 +1908,42 @@
 - Main push CI: source identity, compile, CRA traceability, full pytest, official PDF/HTML canaries, provenance manifest upload success. PDF evidence upload은 unchanged 조건으로 skipped.
 - PROJECT_LOG는 이 상태 동기화 이전 330 records, invalid JSON 0.
 - CRA only; SIL 3 제외; 운영 코드/workflow/secrets/API cadence 변경 없음.
+
+
+## 2026-11-24 — PR #217 병합 및 iX700M 제조사 제품경계 재조사
+- PR #217 exact HEAD `7cb58fa15294012cc8cad8ea622948f08dfa6792`, Run #1385 / ID `45270268204`: success. Blob identity, compile, CRA traceability, full pytest, official CRA PDF/HTML canaries 성공; PDF upload skipped_unchanged, provenance manifest upload success.
+- PR #217 squash merge 완료: `5ea2f500dc69bd7c946895aeb3141df8fd8d1f99`. 문서 9개만 변경, 운영 코드/workflow/secrets/API cadence 무변경.
+- LS메카피온 공식 자료에서 iX700M Converter/Drive 기능 분리, Bus-Bar/DC Link/RS-485/EtherCAT 구조, 개별 모델코드 체계와 유닛별 별도 CE DoC 게시 항목 확인.
+- 기능적 분리와 문서상 제품 식별은 Confirmed. 독립 상업 판매·별도 주문 및 EU 시장 개별 PDE 공급은 Unknown으로 유지. 사용자 실제 SKU도 Unknown.
+- 최신 매뉴얼 인덱스 Ver1.4(2026-05-26) 확인; PDF 본문/해시 미확보. CE DoC 본문도 미확보.
+- 상세 보고서 §13, 통합 보고서 §55, 증거 등록부 §17 반영 완료. 작업 브랜치 `research/cra-ix700m-unit-sales-boundary-2026-11-24`; CRA only, SIL 3 제외.
+
+
+## 2026-11-24 — PR #218 CI 및 제조사 증거 추가
+- Run #1388 attempt 1 실패: Commission PDF 뉴스룸이 `sorry.ec.europa.eu`로 리디렉션되어 allowlist에서 거부됨. Source identity, compile, CRA traceability, pytest 183개는 성공.
+- 특정 Commission interstitial만 fallback trigger로 처리하고 임의의 비허용 호스트는 계속 fail-closed하는 수정 및 regression test 추가. workflow blob pins 갱신.
+- 제품군 페이지: 모듈형 EtherCAT, AC380–480V, 4.5–75kW, 16.1–168A/축 확인.
+- Ver1.4 매뉴얼 목록(2026-05-26), 외형 CAD 2D/3D 목록(2026-04-21), KC `iX700MCB-B-8K`, 해외 영업 창구 확인.
+- 매뉴얼/CAD 본문, 회로도/BOM/PCB/MCU 미확보. MCB 의미 Unknown. 사용자 ST MCU 정보는 iX700M 탑재 증거가 아님.
+- Converter/Drive 독립 판매·EU 개별 공급 및 실제 사용자 SKU는 Unknown. PR #218 미병합.
+
+
+## 2026-11-24 — PR #218 PDF canary 2차 원인 및 endpoint 수정
+- Run #1395: source integrity, compile, CRA traceability, pytest 184 passed; live PDF canary failed.
+- C/2026/6013 EUR-Lex PDF URL redirected to sorry.ec.europa.eu; no fallback existed, so strict host validation failed closed.
+- Corrected primary source to the official Publications Office direct OJ PDF URL, verified as a 61-page C/2026/6013 PDF dated 17.11.2026. Host allowlist restricted to publications.europa.eu; exact URL/host regression assertion added.
+- PDF content identity and hash validation retained. Exact new HEAD CI required; PR not merged.
+
+
+## 2026-11-24 — Run #1404 C(2026)7861 PDF access limitation
+- Run #1404: source identity, compile, CRA traceability, pytest 184 passed; live PDF canary failed at Commission document-register API for C(2026)7861 Annex, redirected to sorry.ec.europa.eu.
+- C/2026/6013 already uses official Publications Office OJ PDF. C(2026)7861 is not an OJ publication; do not invent an OJ fallback.
+- Exact Commission interstitial now maps to PDFSourceUnavailableError; no third-party mirror auto-accepted. PDF batch reports SKIPPED with exit 0; PDF artifact may be skipped, independent HTML canary remains.
+- Automated C(2026)7861 PDF bytes/hash remain unavailable; Commission register content is browser-verified. PR #218 still requires new exact-head CI and final diff review.
+
+
+## 2026-11-24 — Run #1410 결과 및 최종 검증 대상 갱신
+- Run #1410, HEAD `1c49b9f4b5ad8fa747ffa08051fa6116dd3eff85`: workflow success. Source identity, compile, CRA traceability, pytest, official CRA HTML locator checks, provenance manifest upload passed.
+- PDF canary explicitly SKIPPED due C(2026)7861 Commission document-register anti-bot interstitial; PDF evidence artifact skipped. No claim that C7861 PDF bytes/hash were acquired.
+- C/2026/6013 uses the browser-verified official Publications Office OJ PDF. C(2026)7861 PDF automated retrieval remains unavailable.
+- Source comment was clarified and source-blob pin refreshed after Run #1410; final exact HEAD CI required before merge.

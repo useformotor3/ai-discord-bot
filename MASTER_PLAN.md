@@ -2067,3 +2067,38 @@
 - Report v0.20 §51 and product evidence register §12 are on main.
 - Next: secure official Annex table copy for C(2026) 7861; verify ESO receipt/non-acceptance status; continue iX700M exact manual PDF retrieval and product-specific evidence.
 - CRA only; SIL 3 excluded; no operational code/workflow/secrets/API cadence changes.
+
+
+## 2026-11-24 — iX700M Converter / Drive 제품 경계 증거 기반 보강
+- 제조사 Solution Square PDF와 LS메카피온 공식 CE/KC 제품인증서·매뉴얼·카탈로그 인덱스를 대조한다.
+- 기능적 분리, 별도 모델코드, 별도 DoC 게시, 독립 상업 판매, EU 공급 단위를 서로 다른 증거 항목으로 분리한다.
+- 현재 Confirmed: Converter/Drive 기능 분리, 별도 코드 체계, 유닛별 별도 CE DoC 게시. Unknown: 실제 별도 판매·주문, EU 개별 PDE 공급, 사용자 실제 SKU.
+- 다음 P0: nameplate와 전체 주문코드, 실제 견적/발주/납품 문서, EU 공급계약/수입자 자료 확보.
+- 다음 P1: iX700M DRIVE 400[V] Ver1.4 PDF 본문/해시, 회로도·BOM·HW/FW revision, ST MCU order code 및 EtherCAT/RS-485 protocol/API 검증.
+- CE DoC 게시를 CRA 적합성 증거나 Article 27 presumption으로 오인하지 않는다. PDF 본문 미확보 상태에서 적용 법령·표준을 추정하지 않는다.
+
+
+## 2026-11-24 — PR #218 CI 보완 및 iX700M 증거 공백
+- CI 실패 원인: C(2026)5252 PDF newsroom redirect to `sorry.ec.europa.eu`; code/tests unaffected. Exact host fallback trigger, strict allowlist and ANFR identity validation retained.
+- iX700M product-family spec, Ver1.4 manual listing, exterior CAD listing, MCB-B-8K listing, overseas sales contact recorded.
+- Unknown: separate sales/orderability and EU PDE supply, user SKU, MCB meaning, PDF bodies, schematics/BOM/PCB, MCU order code/security.
+- User-reported ST MCU is not attributed to Mecapion iX700M without BOM proof.
+
+
+## 2026-11-24 — 공식 CRA PDF endpoint 안정화
+- C/2026/6013의 EUR-Lex PDF endpoint가 CI runner에서 anti-bot interstitial로 리디렉션되는 문제를 확인.
+- 동일한 공식 OJ PDF를 제공하는 Publications Office 직접 URL로 primary endpoint 변경, exact host allowlist 및 회귀 테스트 추가.
+- Run #1395의 184 pytest 통과는 수정 전 코드 테스트 결과이며 새 endpoint의 live canary 검증을 대신하지 않는다.
+- PR #218은 새 exact-head CI 통과 및 diff 검토 전 병합 금지.
+
+
+## 2026-11-24 — M/606 PDF canary 보수적 처리
+- Run #1404에서 C(2026)7861 Commission document-register API가 CI runner를 anti-bot interstitial로 리디렉션한 것을 확인. 184 pytest 및 compile/traceability 통과.
+- C/2026/6013은 공식 Publications Office PDF로 직접 접근. C(2026)7861은 OJ 문서가 아니므로 OJ URL을 추정하지 않음.
+- 정확한 Commission interstitial은 source-unavailable로 기록하고 third-party mirror 자동 사용 금지. PDF batch SKIPPED/exit 0, HTML canary 독립 수행. 자동 PDF hash 미확보 사실 유지.
+- PR #218 새 exact HEAD CI와 최종 diff 검토 전 병합 금지.
+
+
+## 2026-11-24 — PR #218 최신 CI 결과
+- Run #1410 success, but C(2026)7861 PDF source step explicitly SKIPPED due official Commission anti-bot interstitial; HTML locator checks and provenance manifest passed. Do not claim PDF artifact capture.
+- Source comment clarified and blob pin refreshed after this run; validate the new exact HEAD before merge.
