@@ -3443,3 +3443,12 @@ CRA only; SIL 3 excluded.
 - **개선:** protocol v1.1에 마지막 응답 요소가 실제 동작하는 버튼인지 확인하는 필수 마감 게이트를 추가했다. 버튼 payload는 최신 GitHub 상태 재확인, 우선 CRA 작업 실행, 근거·테스트 검증, 로그 갱신 및 버튼 재제공을 포함한다. 버튼은 다음 사용자 턴을 시작하는 방식이며 자율 백그라운드 실행은 아니다.
 - **회귀방지 확인:** 이번 최종 응답에도 버튼을 실제 컴포넌트로 제공하고, 이후 모든 주요 CRA 응답에서 종료 직전 존재 여부를 확인한다.
 - CRA only; SIL 3 excluded.
+
+
+## 2026-11-24 — PR #243 exact-head verification, merge and post-merge CI
+
+- Run #1514 / 45338702162 final read-back: completed/success, exact main SHA 3fbc1bcbf669324706c4ae2f882ff7269ae87f48, all 25 steps successful. This corrects the intermediate in-progress snapshot recorded in the prior entry.
+- PR #243 final pre-merge checks: exact HEAD 9ae09486a10dc374b83ad417fbd09742f0213dc1; base 3fbc1bcbf669324706c4ae2f882ff7269ae87f48; 7 files +75/-0; compare 7 ahead/0 behind; reviews 0, review threads 0; PROJECT_LOG 375 records / invalid 0. Run #1515 / 45338890791 completed/success 25/25 on that exact HEAD.
+- Expected-head squash merge completed: 6548eec799c398b35007212e4831d058934fa83b. Main ref read-back equals merge SHA. Post-merge Run #1516 / 45340565876 targets exact merge SHA, completed/success 25/25, all source-integrity, compile, CRA traceability, full tests, official-source canaries, evidence uploads and post steps successful.
+- Manufacturer-source recheck: official manual index continues to show Ver1.4 in default/Servo snapshots and Ver1.3 in explicit empty-sca snapshot; original PDF revision unresolved. Drive CE / Converter UKCA detail pages list DoC PDFs but click/download times out; Converter CE listing metadata only; KR/EN catalogue listing and CAD listing visible but original binaries remain unacquired; Solution Square iX700M manual listing updated 2026-09-16 but detail remains SPA shell. Do not promote metadata to acquired evidence.
+- Actual SKU, independent sale, EU/EEA supply, importer/economic operator, BOM/MCU/security remain Unknown. Manufacturer inquiry draft_prepared_not_sent. CRA only; SIL 3 excluded.
