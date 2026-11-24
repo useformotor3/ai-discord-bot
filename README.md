@@ -1271,3 +1271,6 @@ PR #247 문서 반영 후 main push Run #1523 (ID `45403594895`)이 exact SHA `3
 Annex I Part II의 실무 요구사항은 machine-readable SBOM(최소 top-level dependencies), 취약점 신속 수정, 기능 업데이트와 보안 업데이트의 분리(기술적으로 가능한 경우), 정기 보안 테스트, 수정 취약점 공개, coordinated vulnerability disclosure policy, 보고 연락처, 안전한 업데이트 배포 및 지체 없는 무상 보안 업데이트(해당 tailor-made business agreement 예외 포함)다.
 
 이 요구사항은 제조사 구현 증거가 없으므로 iX700M에 대해 현재 `Unknown`이다. CRA only; SIL 3 excluded.
+
+
+> **PR #248 merged (2026-11-24):** Exact HEAD 8fceea39961ff1076066eaf0bfaf79383a769cbf passed Run #1525 / 45404057074 (job success; pytest 189 passed; CRA traceability and official-source canaries/provenance passed). Expected-head squash merge SHA dd09fc13cf9076c5cf895f4a8e8727f525847ee4. Main read-back confirms report §83 / evidence §40 and PROJECT_LOG 379 records / invalid 0. Post-merge main push CI is UNVERIFIED because the connected GitHub run-list tools do not expose push-triggered runs and combined commit statuses are empty; do not infer success. See report §84 / evidence §41 and manufacturer inquiry draft. CRA only; SIL 3 excluded.

@@ -836,3 +836,36 @@ Manufacturer inquiry: `draft_prepared_not_sent`; no sending, receipt or response
 - Article 13(8)-(9): support period generally at least 5 years (unless expected use shorter); security updates remain available for at least 10 years or remainder of support period, whichever longer.
 
 All product implementation claims remain Unknown pending original documents and manufacturer confirmation. CRA only; SIL 3 excluded.
+
+
+## §41. 2026-11-25 — PR #248 병합, 제조사 원본 재접근 및 질의서 준비
+
+### PR #248 저장소 검증
+- Exact HEAD 8fceea39961ff1076066eaf0bfaf79383a769cbf; Run #1525 / 45404057074 job conclusion success. Job log: pytest 189 passed; CRA traceability PASS; official CRA source PDFs 3종 및 10개 allowlisted sources provenance PASS.
+- PR diff 6 files(+93/-0), 7 ahead/0 behind, reviews 0, threads 0, PROJECT_LOG 379 records / invalid 0. Expected-head squash merge SHA dd09fc13cf9076c5cf895f4a8e8727f525847ee4. Main read-back blob contents for report §83/evidence §40/README/session/project log match the merged branch.
+- Post-merge main push CI는 연결된 GitHub 도구에서 push-event workflow run 목록을 제공하지 않고 merge SHA combined statuses도 빈 배열이므로 최종 상태 UNVERIFIED. 성공으로 간주하지 않음.
+
+### 제조사 공식 인덱스 재검색 — metadata only
+| 자료 | 2026-11-25 재확인 metadata | 원본 binary 검증 |
+|---|---|---|
+| iX700M DRIVE 400[V] manual | 기본 목록 Ver1.4, Servo 필터 Ver1.4, empty-sca Ver1.3; 모두 2026-05-26 | 상세 페이지 timeout; PDF bytes/hash 및 유효 revision 미확인 |
+| Drive EU DoC | iX700MD1-B-150B, CE_DoC-LVDEMC, 238.9K, 2026-04-30 게시 | signed PDF 미취득; 적용 SKU/서명/법령 미검증 |
+| Converter CE DoC | iX700MCV, 480Vac, 15/37/55/75kW, 234.4K | PDF bytes 미취득 |
+| Converter UKCA DoC | iX700MCV, 480Vac, 15/37/55/75kW, 224.1K | PDF bytes 미취득; EU DoC 대체 아님 |
+| KR/EN catalogue | 각 10.7MB, iX700M catalogue 게시물 | PDF bytes 미취득 |
+| 2D CAD / 3D STEP | iX700M Series 외형도 게시물, 2026-04-21 | DWG/DXF/STEP bytes 미취득 |
+| Solution Square manual | iX700M 사용 설명서 listing update 2026-09-16 | detail은 JavaScript app shell; PDF 미취득 |
+
+### 재접근 결과와 증거 경계
+- Search index에서 공식 게시물의 모델명·첨부파일명·크기·게시일을 다시 확인했다. 제조사 사이트 상세 페이지는 timeout이 재현됐고 Solution Square는 JavaScript 실행이 필요하다는 응답을 반환했다.
+- 현재 취득된 것은 게시물/index metadata뿐이다. 원본 PDF/DWG/DXF/STEP의 bytes, SHA-256, PDF 서명 및 문서 본문은 취득·검증되지 않았다.
+- 관련 공식 목록: https://www.lsmecapion.com/bbs/board.php?bo_table=manual ; https://www.lsmecapion.com/bbs/board.php?bo_table=manual&sca=Servo ; https://www.lsmecapion.com/bbs/board.php?bo_table=manual&sca= ; https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&page=4&wr_id=12888 ; https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&sca=CE&wr_id=12886 ; https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&page=3&wr_id=12893 ; https://www.lsmecapion.com/bbs/board.php?bo_table=catalog&wr_id=12110 ; https://www.lsmecapion.com/bbs/board.php?bo_table=drawing&sca=Servo+Drive ; https://sol.ls-electric.com/kr/ko/product/category/4?pageNumber=4
+
+### 제조사 질의서
+- 47문항의 한국어 질의서 초안: reports/LS_MECAPION_iX700M_CRA_MANUFACTURER_INQUIRY_KO.md
+- 제품 경계, EU/EEA 공급 및 경제운영자, SKU/HW/FW/BOM/SBOM, MCU, secure boot/signature/key storage/debug, PSIRT/CVD/Article 14, 보안 업데이트, 지원기간, 기술문서, signed EU DoC, 매뉴얼 revision, catalogue 및 CAD 원본을 요청한다.
+- 상태: draft_prepared_not_sent. 발송·수신·회신 증거 없음.
+
+### 유지할 Unknown
+실제 SKU, 독립 판매/통합 공급, EU/EEA 공급, 수입자·경제운영자, 정확한 MCU/BOM/SBOM, secure boot·서명·키 관리·debug lock, 취약점 처리, 보안 업데이트 방식 및 지원기간은 모두 Unknown.
+CRA only; SIL 3 excluded.

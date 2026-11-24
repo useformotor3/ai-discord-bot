@@ -2266,3 +2266,14 @@
 - Product assessment remains provisional: network-connected servo drive is a plausible PDE due to documented EtherCAT and service/data interfaces, but actual target SKU, market placement and exact product boundary remain Unknown. Do not infer CRA exemption or important-product class from generic servo-drive label or CE/UKCA listing.
 - Support period baseline: at least 5 years unless expected use time is shorter; security updates made available during support must remain available at least 10 years or remainder of support period, whichever is longer. Confirm product-specific expected lifetime and update implementation with manufacturer.
 - Actual SKU, independent sale/integration status, EU/EEA supply, importer/economic operator, BOM/exact ST MCU, SBOM, security configuration, vulnerability process and support period remain Unknown. Manufacturer inquiry `draft_prepared_not_sent`. CRA only; SIL 3 excluded.
+
+
+## 2026-11-25 — PR #248 merge 및 iX700M 제조사 질의서 구체화
+
+- PR #248 exact HEAD 8fceea39961ff1076066eaf0bfaf79383a769cbf의 Run #1525 / ID 45404057074는 workflow job completed/success. 로그에서 pytest 189 passed, CRA traceability PASS, 공식 CRA PDF 3종(Commission Guidance C/2026/5252, OJ C/2026/6013, M/606 C(2026)7861 Annex) 취득·hash 검증 및 10개 공식 출처 provenance 생성 확인. branch PROJECT_LOG 379 records / invalid 0.
+- PR #248은 6 files(+93/-0), base 30d5c5997d0c99a8eff804c589010695c8735ced 대비 7 ahead/0 behind, reviews 0 / threads 0. Expected-head squash merge 성공, merge SHA dd09fc13cf9076c5cf895f4a8e8727f525847ee4.
+- Main branch read-back에서 PR #248의 보고서 §83, 증거등록부 §40, README, SESSION_LOG 및 PROJECT_LOG(379/0) 반영을 확인했다. 다만 post-merge main push workflow run은 현재 연결된 GitHub 도구에서 조회되지 않았고 merge SHA combined statuses도 비어 있어 SUCCESS로 기록하지 않는다. post-merge CI 상태는 UNVERIFIED.
+- 공식 웹 재검색: LS메카피온 manual 기본 목록 및 Servo 필터는 Ver1.4, 명시적 empty-sca 목록은 Ver1.3(동일 post/date 2026-05-26). Drive EU DoC는 iX700MD1-B-150B / 238.9K, Converter CE는 iX700MCV / 234.4K, Converter UKCA는 iX700MCV / 224.1K, KR/EN 카탈로그는 각 10.7MB, CAD는 2D(CAD)/3D(STEP) 게시물 metadata. 상세 페이지 재접근은 timeout 또는 JavaScript shell. 원본 PDF/DWG/DXF/STEP bytes/hash/서명은 미확보.
+- Solution Square iX700M 사용 설명서 목록은 2026-09-16 update metadata를 다시 확인했으나 detail은 JavaScript 필요 화면이며 원본 미확보.
+- 제조사 질의서 47문항 초안을 작업 브랜치 reports/LS_MECAPION_iX700M_CRA_MANUFACTURER_INQUIRY_KO.md에 작성했다. 제품/SKU, EU/EEA 공급, 경제운영자, 제품 경계, BOM/MCU/SBOM, secure boot·서명·debug, 취약점/CVD/Article 14, 업데이트·지원기간, DoC·매뉴얼·CAD 원본을 질문한다. 발송하지 않았다.
+- CRA only; SIL 3 excluded.

@@ -2315,3 +2315,33 @@ Article 13(8)에 따라 지원기간은 예상 사용기간, 사용자 기대, �
 
 ### 83.6 iX700M 현황
 실제 SKU, EU/EEA 공급, 공급망 경제운영자, 독립 판매/통합 형태, 정확한 ST MCU part number, BOM/SBOM, secure boot/firmware signature/key storage/debug lock, 취약점 처리 조직과 보고 연락처, 보안 업데이트 방식, 지원기간 및 업데이트 보존 정책은 모두 `Unknown`이다. 제조사 질의서 상태는 `draft_prepared_not_sent`다. CRA only; SIL 3 excluded.
+
+
+## §84. 2026-11-25 — Article 13 lifecycle obligations 상세화 및 제조사 질의 기준
+
+### 84.1 Commission Guidance의 법적 지위와 Article 14의 지속 의무
+Commission Guidance C/2026/6013은 CRA 적용을 돕는 집행위원회의 해석 지침이며 그 자체가 구속력 있는 법령은 아니다. 구속력 있는 기준은 Regulation (EU) 2024/2847 원문이다. 지침은 개별 제품의 사실관계에 따른 case-by-case 평가가 필요하다고 명시한다.
+
+Article 14 보고는 2026-09-11부터 CRA 적용 대상 제품에 적용되며, 2027-12-11 이전에 시장에 제공된 제품에도 적용된다. 제조자는 actively exploited vulnerability 및 제품 보안에 영향을 미치는 severe incident를 인지하면 지정 조정 CSIRT와 ENISA에 동시에 통지해야 한다. 단계별 기한은 인지 후 24시간 이내 early warning, 72시간 이내 notification, actively exploited vulnerability의 final report는 corrective/mitigating measure 제공 후 14일 이내, severe incident의 final report는 72시간 notification 제출 후 1개월 이내다. 인지 시점은 단순 신고 수신 시각이 아니라 초기 평가 후 실제 악용 또는 보안 침해에 대한 합리적 확신을 얻은 시점에 따라 사실관계별로 판단한다.
+
+중요한 구분: Commission Guidance §210은 Article 14 보고 의무가 제품 지원 종료 후에도 계속 적용된다고 설명한다. 반면 Annex I Part II의 취약점 처리 의무는 지원기간 동안의 의무이며, 지원 종료 또는 2027-12-11 이전 시장 제공 제품에 대한 예외 범위는 관련 조항·전환 규정을 따져 구분해야 한다. 따라서 iX700M의 지원 종료를 Article 14 보고 종료로 취급하지 않는다.
+
+### 84.2 Article 13(8) 지원기간 — 산업용 제품의 5년은 자동 기본값이 아님
+지원기간은 제품이 실제로 사용될 것으로 예상되는 기간을 반영해야 한다. 합리적인 사용자 기대, 제품의 성격과 의도된 목적, 관련 EU 법령이 정하는 제품 수명, 유사 기능 제품의 지원기간, 운용환경의 가용성, 핵심 기능을 제공하는 통합 제3자 부품의 지원기간 등을 비례적으로 고려한다. 원칙적 최소는 5년이지만 제품의 예상 사용기간이 5년 미만임이 정당화되는 경우에만 그 예상 사용기간에 대응할 수 있다. 산업용 제어시스템은 5년을 훨씬 초과해 운용되는 경우가 많으므로, iX700M에 5년을 기계적으로 적용하지 말고 제조사의 수명·고객 기대·부품지원 근거를 받아야 한다. 지원기간 산정에 고려한 정보는 기술문서에 포함되어야 하며, 지원 종료일은 구매 시점에 적어도 월·연도로 명확히 안내되어야 한다.
+
+### 84.3 SBOM 및 취약점 처리 — 법적 최소와 조사상 권장 증거 구분
+Annex I Part II(1)은 제품 내 구성요소와 취약점을 식별·문서화하고, 일반적으로 사용되는 기계 판독 가능한 형식으로 최소 top-level dependencies를 포함하는 SBOM을 작성하도록 한다. 법적 최소 범위가 top-level dependencies라고 해서 내부 보안검토에 충분한 전체 BOM/SBOM이라는 뜻은 아니다. iX700M 평가에서는 SKU와 firmware release에 결합된 직접·간접 의존성, 버전, 공급자, 라이선스, 취약점 식별자를 가능한 범위에서 요청한다.
+
+Annex I Part II는 위험에 비례해 취약점을 지체 없이 처리·수정하고 보안 업데이트를 제공할 것, 기술적으로 가능한 경우 기능 업데이트와 분리할 것, 효과적이고 정기적인 보안 테스트·검토, 보안 업데이트 제공 후 수정 취약점 공개(정당한 보안상 사유가 있으면 사용자가 패치를 적용할 기회를 준 뒤 공개 지연 가능), coordinated vulnerability disclosure 정책, 취약점 신고 연락처, 안전한 업데이트 배포 메커니즘을 요구한다.
+
+보안 업데이트가 제공 가능한 경우 지체 없이 배포하고, 맞춤형 제품에 대해 제조자와 business user가 별도로 합의한 경우를 제외하고 무상 제공해야 한다. 업데이트에는 사용자가 취할 조치 등 관련 정보를 담은 advisory를 동반한다. 보안 업데이트는 지원기간 중 발행된 후 최소 10년 또는 남은 지원기간 중 더 긴 기간 동안 계속 이용 가능해야 한다(Article 13(9)).
+
+### 84.4 기술문서·EU DoC 보존 및 사용자 정보
+Article 13(13)은 기술문서와 EU DoC를 제품의 시장 제공 후 최소 10년 또는 지원기간 중 더 긴 기간 동안 보유하도록 한다. Annex VII 기술문서에는 제품 설명·SW 버전·하드웨어 외관/내부 배치·아키텍처·취약점 처리 절차·SBOM·CVD 정책·취약점 신고 연락처·안전한 업데이트 배포 설계·위험평가·지원기간 산정 근거·시험 보고서 등이 포함될 수 있다. Annex II 사용자 정보에는 제조자 연락처, 취약점 신고 단일 연락점, 제품 식별, 의도된 목적 및 보안 특성, 지원기간 종료일, 안전한 설치·업데이트·폐기 지침 등이 포함된다.
+
+### 84.5 iX700M에 대한 증거 요청 및 판정 상태
+제조사 질의서 47문항은 실제 SKU·HW/FW revision·EU/EEA 공급·경제운영자·제품 경계부터 확인하고, 이후 BOM/MCU/SBOM·secure boot·firmware signature·key storage·debug lock·취약점/CVD·Article 14 보고·보안 업데이트·지원기간·원본 EU DoC/매뉴얼/카탈로그/CAD를 연결해 답하도록 구성했다. 본 질의서는 발송 전 초안이며 제조사 회신이나 제품 구현 증거로 취급하지 않는다.
+
+실제 SKU, EU/EEA 공급, 경제운영자, 독립 판매/통합 형태, 정확한 MCU/BOM/SBOM, 보안 설정, 취약점 대응, 업데이트 정책 및 지원기간은 계속 Unknown이다. CRA only; SIL 3 excluded.
+
+공식 근거: Regulation (EU) 2024/2847 Articles 13(8), 13(9), 13(13), 14; Annex I Part II; Annex II; Annex VII. Commission Guidance C/2026/6013, points 126-127 and 209-221.
