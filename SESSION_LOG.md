@@ -3384,3 +3384,10 @@ CRA only; SIL 3 excluded.
 - PR pending exact-head CI/review/merge. CRA only; SIL 3 excluded.
 
 - Run #1486 / 45319973724 stopped at source-blob identity step before tests because expected hashes were stale. Refreshed only the two pins in `.github/workflows/tests.yml`; no workflow job logic/cadence or runtime behavior changed. Awaiting exact-head rerun.
+
+## 2026-11-24 — PR #239 retry fix exact-head CI success
+
+- Run #1497 / ID 45320409623 exact branch HEAD `00a00ef1ad8fa09efc68d9d2764d18c2b5b9040f`: success 25/25; pytest 189 passed.
+- Bounded retry recovered M606 C(2026)7861 Annex after 3 consecutive 30s timeouts. PDF artifact 14887520943, 3,070,568B, ZIP SHA-256 `9f8c1c64a43c17fae1a093c454e4be212d5b55fd6914130c9a4e1921411a80b4`; all 3 PDFs present. M606 6p SHA-256 `262b09596cb5cbe7d72a2c7789fb2512ee00db7f69082e7def2c8181b0f63276`, same as Run #1481. Provenance artifact 14887800169, ZIP SHA-256 `2247997aa180f94a61672674b4fc8144e18a0c91deb51fcb26d82880c1aef6bd`.
+- Run #1486 failed only because workflow blob pins were stale; corrected two pins; Run #1497 exact-head passed.
+- PR #239 awaiting final exact-head merge guards. CRA only; SIL 3 excluded.
