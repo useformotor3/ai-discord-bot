@@ -653,3 +653,5 @@ Run #1462 / ID 45314843427, PDF artifact 14884218192. ZIP 3,070,568 bytes, SHA-2
 
 - Workflow YAML changes only refresh the exact source-blob integrity pins for `cra_pdf_sources.py` and `tests/test_cra_pdf_sources.py`; job steps, cadence, secrets and `main.py` behavior remain unchanged. Retry is bounded and does not accept untrusted mirrors or bypass PDF identity markers.
 - CRA only; SIL 3 excluded.
+
+- Run #1486 / 45319973724 failed at workflow step 4 only: stale expected blob for `cra_pdf_sources.py` (`bbbb4156...` vs actual `c24f4d1c...`). The test file pin also needed refresh (`79acd36f...` to `1664ebcf...`). Updated only these two integrity pins; workflow execution logic unchanged. No compile/test ran in failed attempt.
