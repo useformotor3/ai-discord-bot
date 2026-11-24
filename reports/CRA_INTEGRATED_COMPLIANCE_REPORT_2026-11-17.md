@@ -2441,3 +2441,28 @@ Regulation (EU) 2024/2847 공식 OJ 본문 Article 7은 Annex III 제품 범주�
 실제 SKU, EU/EEA 공급, 경제운영자, 개별 DoC coverage/서명, BOM/정확한 MCU/SBOM, 보안 설정, 제품 분류, 취약점 대응, 보안 업데이트와 지원기간은 계속 Unknown. 제조사 질의서 59문항은 draft이며 발송되지 않았다.
 
 CRA only; SIL 3 excluded.
+
+ 
+## §88. 2026-11-25 — main push Run #1540 최종 성공 및 제조사 원본 취득 재시도
+
+### 88.1 최종 CI 결론
+main exact HEAD `cffd2118d2ce4127e50352650479553cb12c2bdf`에서 Run #1540 / ID 45505830283은 최종 조회 시 event=push, completed/success, job 138840683889 completed/success로 확정됐다. 15/15 returned steps(1–12,23–25), pytest 189 passed, CRA cross-matrix traceability PASS(project_log_events=384), official source provenance 10개 PASS. 앞선 API 조회에서 step 완료 후 상위 run/job이 잠시 in_progress로 남았으나 후속 조회에서 정상 완료 상태를 확인했다. 이는 관측된 상태 반영 지연으로만 기록하며 GitHub 내부 원인을 추정하지 않는다.
+
+### 88.2 출처 canary 및 artifact
+공식 CRA PDF는 3종 중 2종 fresh fetch/hash success. OJ C/2026/6013: 2,709,282 bytes, 61 pages, SHA-256 `40ca76caeb0108f5b97c8f373a95f590b453fe92bd45a483addf3326e48c1dc2`; M/606 Annex도 fetch/hash success. C/2026/5252는 HTTP 503 temporary outage로 SKIPPED. PDF ZIP artifact ID 14972408962, 1,906,817 bytes, SHA-256 `c7955d47a2c18f7f4eb9d93678a2a6a559c4e19abae35b98528389b0b1d60c0e`; provenance ZIP artifact ID 14973656717, 2,565 bytes, SHA-256 `5468b1744806d109ba475574e5f209f568e83a3137f46f10b6ca9fb7c2c18d38`. 만료일 2026-12-01. 이는 Commission source pack이지 iX700M 제품 증거 binary가 아니다.
+
+### 88.3 제조사 원본 binary 재시도
+2026-11-25 재확인:
+- 매뉴얼: 공식 인덱스 row 41은 iX700M DRIVE 400[V] Ver1.4(2026-05-26), 그러나 빈 분류 필터는 Ver1.3을 표시한다. 상세 `wr_id=12652`는 502. 원본 PDF 미확보.
+- Drive EU DoC: iX700MD1-B-150B, CE_DoC-LVDEMC PDF 238.9KB metadata. 상세 페이지 502. signed PDF 미확보.
+- Converter CE: iX700MCV, PDF 234.4KB metadata. 상세 페이지 502. binary 미확보.
+- Converter UKCA: iX700MCV, PDF 224.1KB metadata. 상세 페이지 502. binary 미확보.
+- KR/EN Catalogue: 각각 10.7MB metadata. 상세 페이지 502. binary 미확보.
+- CAD: 공식 drawing index row 19, 2026-04-21, “iX700M Series 서보드라이브 외형도 2D(CAD), 3D(STEP)” metadata. listing/detail timeout; ZIP/STEP 미확보.
+따라서 상태는 전부 **listing metadata only**다. DoC의 서명·진위·모델 coverage를 확인한 것으로 취급하지 않는다.
+
+### 88.4 제조사 질의서 Q60
+Q60은 공식 페이지에서 파일 다운로드가 막힌 경우 revision-controlled secure transfer/alternate official distribution channel을 요청하고, 각 원본 파일에 대해 원본 파일명, native format, byte size, SHA-256, 발행일/개정일, 서명 검증방법, 적용 SKU/하드웨어·옵션 범위를 전달하도록 한다. 질문서는 총 60문항이며 미발송 초안이다.
+
+### 88.5 미확정 정보
+Actual SKU, EU/EEA supply, economic operators, signed DoC coverage, BOM/exact MCU/SBOM, security configuration, CRA classification, vulnerability handling, security update/support period는 모두 Unknown.
