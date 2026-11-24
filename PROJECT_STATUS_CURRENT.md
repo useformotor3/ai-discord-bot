@@ -5,7 +5,7 @@
 - Main read-back identical. Post-merge main push Run #1485 / ID 45319407719 exact SHA success 25/25.
 - Run #1483, #1484, #1485 PDF artifacts each fetched 2/3: C(2026)7861 Annex timed out after 30s. Previous successful Run #1481 original remains valid (6p, SHA-256 `262b09596cb5cbe7d72a2c7789fb2512ee00db7f69082e7def2c8181b0f63276`).
 - Root cause found in `cra_pdf_sources.py`: transient network/read-timeout errors had no retry; partial pack was marked unavailable but CLI exit 0 and PASS summary could mislead. Separate branch now adds bounded 3-attempt retry (1s/2s backoff) only for transient transport/HTTP errors and explicit WARNING for partial packs. Validation failures/interstitials are not retried. Unit tests added for recovery, exhaustion and warning.
-- This code/test change is in a separate PR; do not treat as merged until exact-head CI and merge checks complete. No workflow/main.py/secrets/API cadence changes.
+- This code/test change is in a separate PR; do not treat as merged until exact-head CI and merge checks complete. Workflow YAML change is limited to the two modified-file source-blob integrity pins; no job steps, cadence, secrets or `main.py` behavior changed.
 - CRA only; SIL 3 excluded.
 
 ## 2026-11-24 — PR #237 병합 및 Run #1483 PDF source completeness 확인
