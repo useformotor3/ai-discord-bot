@@ -2217,3 +2217,12 @@
 - 최신 공식 인덱스 재검색에서 iX700M Drive CE DoC, Converter CE DoC, Converter UKCA DoC, iX700M UL Certificate listing, KC 모델 목록, KR/EN brochure listing 확인. 첨부 바이너리는 모두 미확보(다운로드 timeout 또는 상세 페이지 timeout). Drive CE example model은 iX700MD1-B-150B, 480Vac, 15kW, D1 1-axis, B BiSS-C/custom code. Converter는 iX700MCV, 480Vac, 15/37/55/75kW. UKCA Converter DoC도 목록 확인했으나 미확보.
 - Solution Square iX700M manual listing update 2026-09-16 확인, SPA detail/PDF 미확보. Manual listing revision snapshots inconsistent: some default/Servo lists Ver1.4, other default/empty-sca snapshots Ver1.3. Binary revision Unknown.
 - Actual SKU, independent sale, EU/EEA supply, importer/economic operator, BOM/MCU/security remain Unknown. Manufacturer inquiry draft_prepared_not_sent. CRA only; SIL 3 excluded.
+
+
+## 2026-11-24 — PR #242 병합 및 다음 단계 버튼 누락 운영 시정
+
+- PR #242 exact HEAD e92bb6a0830cbdeb7ed4c05e31faba201c2754a3, base dd54132fb44ed752b1f7942f4485ee03399a2c2f, 6 files(+141/-0), 12 ahead/0 behind, reviews 0 / threads 0. Run #1513 / ID 45335812764 exact HEAD SUCCESS 25/25.
+- PROJECT_LOG branch 374 records / invalid 0. Expected-head squash merge SHA 3fbc1bcbf669324706c4ae2f882ff7269ae87f48; main compare to merge SHA identical. Main push Run #1514 / ID 45338702162 was in_progress at this snapshot; final conclusion must be verified separately.
+- Button omission cause: the GitHub protocol already required a real actionable button; assistant failed to run the final-output checklist and omitted the button component. This is an execution/control-gate failure, not missing documentation. Protocol v1.1 adds a mandatory pre-finalization gate and recovery rule.
+- Corrective action: every substantive CRA response must end with an actionable **다음 단계 계속 진행** button carrying the canonical payload; verify the component exists before finalizing. A button starts the next user turn; it is not autonomous background execution.
+- CRA only; SIL 3 excluded.
