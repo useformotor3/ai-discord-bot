@@ -1949,3 +1949,49 @@ CRA only; SIL 3 제외.
 - Post-merge main push Run #1479 / ID `45316962126`, event=push, head SHA=merge SHA, success 25/25. Source identity, compile, CRA traceability, full tests, official PDF/HTML canaries, PDF evidence and provenance uploads 모두 success.
 - 최종 main PROJECT_LOG는 363 records / invalid 0. PR #229 main push Run #1452 / ID `45312941583`, exact merge SHA `4263389aa79cbb7cc17ccda3a019c659ccddef85`, success 25/25 기록은 유지한다.
 - PR #235는 문서 전용. 운영 main.py/workflow/secrets/API cadence 변경 없음.
+
+
+### 74.7 2026-11-24 제조사 자료 원본 재확인 및 Run #1481 증거 갱신
+
+#### 74.7.1 Solution Square iX700M 사용 설명서
+
+- LS ELECTRIC Solution Square Motion & Servo 자료 목록 및 통합 검색에서 `iX700M 사용 설명서` 항목을 재확인했다. 목록 표기 update date는 `2026-09-16`이다.
+- 공식 목록 URL: https://sol.ls-electric.com/kr/ko/product/category/4?pageNumber=4
+- 검색 결과 URL: https://sol.ls-electric.com/kr/ko/newSearch?pageNumber=70
+- 상세 화면은 JavaScript 앱 shell만 노출되어 문서 ID, 개별 상세 URL, 첨부파일 URL을 추출하지 못했다. 목록의 iX700M 항목에 접근 가능한 별도 상세 route를 확인하지 못했으며, PDF 원본·revision·파일 크기·SHA-256은 Unknown.
+- 이 문서가 LS메카피온 게시판의 Ver1.3 또는 Ver1.4와 동일 파일인지도 확인되지 않았다.
+
+#### 74.7.2 LS메카피온 매뉴얼 Ver1.3/Ver1.4 snapshot 충돌
+
+- Servo 분류 목록은 게시물 18번으로 `iX700M DRIVE 400[V] 매뉴얼 Ver1.4`, 작성일 `2026-05-26`을 표시한다: https://lsmecapion.com/bbs/board.php?bo_table=manual&sca=Servo
+- 반면 전체 목록의 `page=1` snapshot은 동일 게시물 41번/동일 작성일에 Ver1.3을 표시한다: https://www.lsmecapion.com/bbs/board.php?bo_table=manual&page=1
+- 개별 상세 URL은 https://lsmecapion.com/bbs/board.php?bo_table=manual&sca=Servo&wr_id=12652 이며, 검색/열람 시 timeout. 실제 첨부 PDF를 취득하지 못했다.
+- 결론: 게시판 검색 인덱스/목록 snapshot의 표기가 서로 다르다. 어느 쪽이 실제 최신 배포 PDF인지, 내부 revision/date/change log, 적용 SKU/옵션은 Unknown. Ver1.4가 최신이라고 단정하지 않는다. 과거 Ver1.3 표기 또한 원본 파일로 검증된 것은 아니다.
+
+#### 74.7.3 Converter/Drive CE DoC 게시물과 첨부 원본
+
+- Converter 게시물: https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&sca=CE&wr_id=12886. 제목은 `[iX700M Series] Converter Unit _ iX700MCV`, 게시일 2026-04-30. 게시물 설명은 CV, 입력 B=480 Vac, 정격 코드 150/370/550/750을 각각 15/37/55/75 kW로 설명하고 첨부명 `[CE_DoC-LVDEMC] iX700MCV.pdf`(234.4K)를 표시한다.
+- Drive 게시물: https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&page=4&wr_id=12888. 제목은 `[iX700M Series] Drive Unit _ iX700MD1-B-150B`, 게시일 2026-04-30. 게시물 설명은 D1=1축, B=480 Vac, 150=15 kW, encoder B=BiSS-C 또는 사용자 정의, 옵션은 표준/사용자 정의로 설명하고 첨부명 `[CE_DoC-LVDEMC] iX700MD1-B-150B.pdf`(238.9K)를 표시한다.
+- CE 목록에는 iX700MCB, 여러 MD1-B 용량군, iX700MCV의 개별 게시물이 같은 날 게시된 것으로 보인다: https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&sca=CE
+- 실제 첨부 다운로드 endpoint는 timeout. 따라서 CE DoC의 본문, 서명, 발행일, 적용 모델 범위, 인용 표준, 지침/규정 적합 선언은 검증되지 않았다. 첨부파일 이름과 게시물 메타데이터만 증거로 취급한다. 이 목록은 해당 SKU의 실제 판매·EU 공급·수입자 존재를 증명하지 않는다.
+
+#### 74.7.4 CAD/STEP 원본
+
+- 공식 도면 목록 게시물 117번: `iX700M Series 서보드라이브 외형도 2D(CAD), 3D(STEP)`, 작성일 2026-04-21.
+- 목록 URL: https://lsmecapion.com/bbs/board.php?bo_table=drawing&page=1
+- 개별 상세 URL: https://lsmecapion.com/bbs/board.php?bo_table=drawing&sca=Servo+Drive&wr_id=12455
+- 상세 URL timeout으로 첨부파일명·파일 포맷 세부사항·크기·원본 bytes/hash를 확인하지 못했다. 게시물 제목은 2D CAD 및 3D STEP 자료의 존재를 나타내지만 DWG와 DXF가 각각 제공되는지는 입증하지 않는다. DWG/DXF/STEP 원본 모두 미확보.
+
+#### 74.7.5 CRA 적용성 증거 경계
+
+- EtherCAT/기타 데이터 인터페이스의 존재는 디지털 데이터 연결 가능성에 관한 기술 단서다. 그러나 이 자료만으로 실제 SKU, 제품의 intended purpose/core functionality, 독립 제품/구성품 경계, EU/EEA 공급 사실, Annex III category/class, conformity assessment route를 확정하지 않는다.
+- CE 게시판에 DoC 파일명이 표시된다는 사실만으로 CRA 적합성, CRA CE marking, EU 공급 또는 CRA 필수 사이버보안 요구사항 충족을 주장하지 않는다. DoC PDF 원본 및 제품별 적용 범위 검증이 선행되어야 한다.
+- Actual SKU, independent sale, EU/EEA supply, importer/economic operator, BOM/MCU/security configuration은 근거 확보 전까지 Unknown. 제조사 질의 `draft_prepared_not_sent` 유지.
+- CRA only; SIL 3 제외.
+
+#### 74.7.6 Run #1481 exact-main verification
+
+- Main push Run #1481 / ID `45317449785`, exact HEAD `c395fc5b5b2a393632bb2fbe65b10fd6572b936d`: final `success`, 25/25 steps. Main branch read-back SHA identical.
+- Source blob identity, compile, CRA cross-matrix traceability, full test suite, live official CRA PDF/HTML canaries, PDF evidence upload and source provenance manifest upload all succeeded.
+- PDF evidence artifact ID `14886830715`, 3,070,567 bytes; ZIP SHA-256 `de227aa54d5a76541738d10511b7f04de18fe6e6487ac0949c0a9a89be9c7175`. Contains three official CRA PDFs (C(2026)5252, C/2026/6013, C(2026)7861), extracted text and manifest. Provenance artifact ID `14885424833`, 2,565 bytes; ZIP SHA-256 `41be60344b6921ad9ccbead26ce870578e3bc2363b51dc24c78730e3fe1ee48c`.
+- This CI result verifies the CRA source retrieval/test workflow and artifact integrity, not the truth of unverified manufacturer product-market facts.
