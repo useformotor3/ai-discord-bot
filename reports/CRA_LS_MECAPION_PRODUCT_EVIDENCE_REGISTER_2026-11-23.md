@@ -470,3 +470,20 @@ ESO별 C(2026)7861 실제 수령일과 Article 2 비수락 통지는 여전히 U
 - Unknown: 매뉴얼 최신 revision 및 PDF 본문, CAD 원본 bytes/hash, 내부 회로도·PCB·BOM·MCU order code·보안 설정.
 - 별도 CE DoC 게시 사실을 CRA conformity, 독립 판매, EU market placement로 해석하지 않는다.
 - 질의서 발송/접수/회신 미확인. CRA only; SIL 3 제외.
+
+
+## 22. 2026-11-24 — iX700M 매뉴얼 목록·CE DoC·CAD 원본 재검증
+
+| ID | 공식 출처 | 확인 사실 | 증거 한계 / 판정 |
+|---|---|---|---|
+| MFG-IX7M-16 | 전체 매뉴얼 목록 https://www.lsmecapion.com/bbs/board.php?bo_table=manual | 직접 열린 페이지 본문에서 iX700M DRIVE 400[V] Ver1.3, 게시일 2026-05-26 | 검색엔진 저장 결과에는 Ver1.4가 남아 있음. 상세 게시물/첨부 다운로드 cache miss. PDF revision/hash Unknown |
+| MFG-IX7M-17 | Servo 필터 목록 https://lsmecapion.com/bbs/board.php?bo_table=manual&sca=Servo | 직접 열린 페이지 본문에서도 Ver1.3, 게시일 2026-05-26 | 위 전체 목록과 동일 표시. 실제 첨부 PDF 본문 확인 아님 |
+| MFG-IX7M-18 | Converter CE 게시물 https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&sca=CE&wr_id=12886 | `[CE_DoC-LVDEMC] iX700MCV.pdf`, 234.4K 첨부명 및 게시일 2026-04-30 | 첨부 download URL cache miss; PDF 본문/서명/법령 범위 미검토 |
+| MFG-IX7M-19 | Drive CE 게시물 https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&page=4&wr_id=12888 | `[CE_DoC-LVDEMC] iX700MD1-B-150B.pdf`, 238.9K 첨부명 검색결과 확인 | 원본 PDF 미확보. 검색결과 외 상세 직접 열람 실패 |
+| MFG-IX7M-20 | CAD 목록 https://www.lsmecapion.com/bbs/board.php?bo_table=drawing&sca=Servo+Drive | iX700M Series 2D CAD/3D STEP 외형도, 2026-04-21 게시 | 상세 `wr_id=12455` cache miss; 첨부 원본·파일명·크기·hash Unknown |
+| MFG-IX7M-21 | 제품군 페이지 https://www.lsmecapion.com/bbs/board.php?bo_table=pd_drive | iX700M: AC 380–480 V, 4.5–75 kW, 다축 모듈러 EtherCAT 통신형 | 제품군 공개 사양. 실제 SKU/옵션/판매 계약 증거 아님 |
+
+- 현재 공식 목록의 직접 페이지 표시는 Ver1.3. 검색 snippet의 Ver1.4는 cache/index 불일치로 격하하고, 실제 PDF 버전은 원본 확보 전 Unknown.
+- CE DoC 첨부명/크기는 게시 메타데이터일 뿐 DoC 본문 검토나 CRA conformity 증거가 아니다.
+- CAD 게시 사실은 확인했으나 원본 첨부 확보는 실패. 다른 모델(PHOX) 첨부 크기를 iX700M에 적용하지 않는다.
+- 독립 판매, EU/EEA 개별 공급, 실제 대상 SKU, importer/economic operator, 내부 회로/BOM/MCU/보안 설정은 Unknown 유지.
