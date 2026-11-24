@@ -3407,3 +3407,12 @@ CRA only; SIL 3 excluded.
 ## 2026-11-24 — iX700M manual index snapshot correction
 
 - Three official list snapshots checked: default manual index and Servo-filter index show Ver1.4; explicit empty-category parameter sca= shows Ver1.3 for post 41 / same date. Detail/PDF inaccessible; no valid binary revision conclusion.
+
+
+## 2026-11-24 — PR #240 merge and Run #1508 final post-merge CI
+
+- PR #240 exact HEAD 6f94454ffe41e313c8450918b43b58b4b41014f4, base 7d1fe1012bd2f8a8e1540918b43b58b4b41014f5, 6 files, review threads/reviews 0, JSONL 371/0; Run #1507 success 25/25. Expected-head squash merge 36b38bfa5ced2894f3bfb06c226706ce0a9bf38b.
+- Post-merge main push Run #1508 / 45329930118 exact merge SHA success 25/25. PDF artifact 14890384807 SHA-256 1cb11a4d35de7c922efd5ad2a8d49aada8929875682d20e520c5c9b50f4f19ba; provenance artifact 14891920424 SHA-256 b807be3bd107fc03c70a3fe7f4d59501f1fbcc87e91233286a68600440cc2fc5. 3/3 CRA official PDFs.
+- Re-tried exact official source paths: LS manual detail wr_id=12652 502/timeout; Drive CE attachment URL timeout; Converter CE detail timeout; iX700M CAD detail wr_id=12455 timeout. Solution Square detail remains hidden behind SPA JS shell. Do not report binaries acquired.
+- Manual index refinement: default + Servo filter list Ver1.4; explicit empty category sca= Ver1.3. Actual binary revision unresolved.
+- Report §76 / evidence register §33 appended. CRA only; SIL 3 excluded.
