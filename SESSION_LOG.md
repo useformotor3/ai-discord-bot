@@ -3164,3 +3164,23 @@
 ### 안전·범위
 - 작업 브랜치 docs/cra-ai-memory-button-protocol-2026-11-24, 기준 main 8351a511c51fcb6d63ec84b59dc2b96ccf90f7d2.
 - 문서 전용. CRA only; SIL 3 제외. 운영 main.py/workflow/secrets/API cadence 변경 없음.
+
+
+## 2026-11-24 — PR #225 병합 및 LS메카피온 질의 발송 경로 조사
+
+### PR #225
+- PR #225 exact HEAD 2e24f7779a6daf33989ce5321c0128946f445457; Run #1443 / 45300041474 전체 단계 success.
+- 6개 문서 파일 diff 검토, review thread 없음. squash merge SHA e98f6354ee9a30dbaf815a339d77a68eac4d60f7.
+- Main push Run #1444 / 45300170290 success; main branch HEAD를 merge SHA와 대조했다.
+- docs/AI_CONTINUOUS_IMPROVEMENT_AND_NEXT_STEP_PROTOCOL.md가 main에 반영됐다. 주요 응답 마지막에 다음 단계 계속 진행 버튼을 제공하고, 버튼 payload는 GitHub 최신 상태 재구성·관련성 판정·증거검증·실제 작업·테스트·기록·버튼 재제공을 요청한다.
+
+### 공식 연락처 조사
+- LS메카피온 국내 업무별 담당자 페이지에서 지역별 서보 영업 담당자 정보를 확인. 경기 담당자 공개 이메일 scahn@lsmecapion.com, 전화 070-7772-8422. 사용 전 회사/프로젝트 소재지와 실제 담당 여부 확인 필요.
+- 전국 서보 기술지원은 1544-5948로 게시, 이메일은 공식 페이지에 확인되지 않음.
+- 해외 담당 페이지에는 automation@ls-electric.com이 게시됨. 해외 문의 창구이지 EU 수입자/판매 법인으로 간주하지 않음.
+- 신규 문서 reports/LS_MECAPION_IX700M_INQUIRY_DISPATCH_GUIDE_2026-11-24.md 작성. 커버메일 초안과 발송 전 확인사항 포함.
+- 실제 발송/접수/회신은 미확인. 회사명/소재지/담당부서 확인 후 발송해야 한다.
+
+### 범위·안전
+- 작업 브랜치 docs/cra-lsmecapion-inquiry-routing-2026-11-24; 기준 main e98f6354ee9a30dbaf815a339d77a68eac4d60f7.
+- 문서 전용. CRA only; SIL 3 제외. 운영 코드/workflow/secrets/API cadence 변경 없음.
