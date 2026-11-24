@@ -2345,3 +2345,53 @@ Article 13(13)은 기술문서와 EU DoC를 제품의 시장 제공 후 최소 1
 실제 SKU, EU/EEA 공급, 경제운영자, 독립 판매/통합 형태, 정확한 MCU/BOM/SBOM, 보안 설정, 취약점 대응, 업데이트 정책 및 지원기간은 계속 Unknown이다. CRA only; SIL 3 excluded.
 
 공식 근거: Regulation (EU) 2024/2847 Articles 13(8), 13(9), 13(13), 14; Annex I Part II; Annex II; Annex VII. Commission Guidance C/2026/6013, points 126-127 and 209-221.
+
+
+## §85. 2026-11-25 — 병합 후 main push CI 증거 및 iX700M 제품 자료 재접근
+
+### 85.1 PR #248 및 #249 main push CI 최종 결과
+PR 자체의 CI와 병합 후 main push CI는 서로 다른 실행이다. 이번에는 `GET /repos/{owner}/{repo}/actions/runs?head_sha={merge_sha}` 방식으로 각 merge SHA의 모든 이벤트 실행을 조회했다. 전용 commit-workflow wrapper는 pull_request 이벤트만 반환하므로 이전 미확인 판정은 도구 wrapper의 범위 제한에서 발생했다.
+
+| 대상 | main push Run | Exact head SHA | 결론 | Job / steps | pytest |
+|---|---|---|---|---|---|
+| PR #248 | #1526 / 45486715925 | dd09fc13cf9076c5cf895f4a8e8727f525847ee4 | SUCCESS | 1 job / 15 of 15 returned steps success | 189 passed |
+| PR #249 | #1528 / 45487328163 | e0a0af3aa7d29acb9fa0e26bddf466af7f3398b5 | SUCCESS | 1 job / 15 of 15 returned steps success | 189 passed |
+
+각 실행에서 반환된 실제 step 번호는 1~12, 23~25이다. 13~22는 실행 step이 존재하지 않으며, 반환된 모든 15개는 completed/success다. Job logs는 각 459 lines이며 compile, CRA cross-matrix traceability, pytest, 공식 CRA PDF 취득·해시, allowlisted official source canary, provenance manifest 및 artifact 업로드까지 완료했다.
+
+PR #248 traceability는 claims=13, interfaces=15, requirements=35, SEC=36, EVD_SEC_crosswalk=16, crosswalk_SEC_linked=36, product_evidence_records=15, M606_mapping_items=41, project_log_events=379. PR #249는 동일 구조에서 project_log_events=380. 각 실행 모두 official CRA PDF 3종 hash 검증 및 allowlisted official sources 10건 PASS.
+
+CI 경고: Node.js 20 기반 action deprecation 경고와 node url.parse deprecation warning이 로그에 있으나 workflow conclusion은 success이며 해당 경고로 step이 실패하지 않았다. 추후 actions/checkout 및 setup-python의 지원 버전 갱신 검토 후보로 남긴다. 이번 작업에서 workflow 변경은 하지 않는다.
+
+Run #1526 artifacts: CRA official PDF ZIP 3,070,565 bytes, digest `sha256:9c7dfa9ddcca2c6d4573350f8487fe3f18897e075417dbd316987afe4a2c0f92`; source provenance ZIP 2,565 bytes, digest `sha256:a03785341ce79aa969f47ddcbcdfb56455079b3829d67f0f59e47d7ffc40ad1d`. Run #1528: official PDF ZIP 3,070,567 bytes, digest `sha256:a917f455caea993d26a77e796fe47f35541647b55150b6400d89973e46897212`; provenance ZIP 2,565 bytes, digest `sha256:a94615984a6380b86bea590a346a757a4a58eda03a3c1ce93cf2dbf339331ea1`. Artifacts are CRA Commission legal-source pack/provenance, not LS iX700M manuals/DoCs/CAD. Retention expiry 2026-12-01.
+
+### 85.2 제조사 원본 binary 재접근 — metadata와 binary 구분
+| 자료 | 공식 인덱스에서 확인된 정보 | 실제 binary 상태 |
+|---|---|---|
+| iX700M DRIVE 400[V] manual | Ver1.4, 2026-05-26, post wr_id=12652 | detail timeout; PDF bytes/hash 미확보. empty category listing에는 Ver1.3도 존재 |
+| Drive EU CE DoC | iX700MD1-B-150B, 238.9KB, post wr_id=12888, 2026-04-30 | PDF bytes, 서명 및 DoC 본문 미검증 |
+| Converter CE DoC | iX700MCV, 480Vac, 15/37/55/75kW, 234.4KB, post wr_id=12886 | PDF bytes 미확보 |
+| Converter UKCA DoC | iX700MCV, 480Vac, 15/37/55/75kW, 224.1KB, post wr_id=12893 | PDF bytes 미확보; EU DoC 대체 문서가 아님 |
+| KR/EN catalogue | post wr_id=12110, 각 10.7MB | PDF bytes 미확보 |
+| 2D CAD / 3D STEP | post wr_id=12455, 2026-04-21 | 상세 페이지 timeout; DWG/DXF/STEP bytes 미확보 |
+
+매뉴얼 detail과 CAD detail은 제조사 웹페이지 접근에서 timeout이 발생했다. 인증서·카탈로그 검색 결과는 첨부파일명과 크기를 제공하지만 원본 다운로드 응답은 얻지 못했다. 따라서 SHA-256, PDF signature, 본문/적용범위 확인은 모두 미수행이다. metadata를 binary evidence로 승격하지 않는다.
+
+공식 iX700M 제품 소개는 다축 모듈러 EtherCAT, AC 380–480V, 4.5–75kW, 축당 16.1–168A 범위를 설명한다. 이는 시리즈 수준 설명이며 실제 구매·공급 SKU나 내부 BOM/MCU를 특정하지 않는다.
+
+### 85.3 제조사 질의서 구체화
+질의서는 55문항으로 확장했다. CE DoC의 실제 covered model/option, Converter 15/37/55/75kW 모델 suffix, custom option code, 제품 lineup과 catalog/manual/CAD의 SKU 매핑, Ver1.3/1.4 revision authority, signed PDF의 전자서명·서명자·문서 진위 확인, CAD의 file type/scale/revision을 추가 확인하도록 했다. 질문은 제조사 답변과 근거 문서/원본 파일이 제공되기 전까지 사실 판정을 내리지 않는다.
+
+### 85.4 판정 유지
+실제 SKU, EU/EEA 공급, 경제운영자, 독립 판매 또는 통합 공급, BOM/정확한 MCU/SBOM, 보안 구현, PSIRT/CVD, 업데이트 정책 및 지원기간은 계속 Unknown. PR push CI 성공은 저장소 테스트/출처 수집 파이프라인의 성공이지 iX700M 제품 CRA 적합성 증거가 아니다.
+
+CRA only; SIL 3 excluded.
+
+
+## §85.5 추가 모델 그룹 인덱스 확인 및 증거 해석
+
+공식 CE 인덱스에는 iX700M 항목이 Converter iX700MCV(번호 168), Drive iX700MD1-B-075B/050B/D2-B-045B(169), 150B(170), 220B(171), 370B/300B(172), 750B/550B/450B(173), iX700MCB(174)로 나뉘어 2026-04-30 게시된 것으로 나타난다. 이는 제조사 인덱스가 모델 그룹별로 여러 게시물을 운용한다는 증거다. 게시물 제목·번호만으로 각 개별 SKU가 어떤 DoC 본문에 포함되는지 또는 동일 DoC로 묶이는지는 판정할 수 없다.
+
+별도의 KC 인덱스에는 iX700MD1-B-075B/150B/220B/370B, iX700MD2-B-045B, iX700MCV-B-150/370/550/750, iX700MCB-B-8K 등이 나타난다. KC는 한국 규제 체계의 별도 증거이며 EU DoC coverage로 전환하거나 CRA 적합성 증거로 사용할 수 없다. 본 목록은 제품 구성과 모델 식별의 교차 질문을 만들기 위한 단서일 뿐, 실제 판매 SKU·EU 공급 여부를 증명하지 않는다.
+
+제조사 질의서 Q56-Q58은 (1) CE 인덱스의 iX700MCB 및 각 Drive model group의 원본 DoC와 정확한 coverage, (2) CE와 KC 목록의 법적 범위 분리, (3) Converter/Drive/MCB 구성의 별도 판매·통합 경계와 CRA 제품 식별을 확인하도록 추가했다.

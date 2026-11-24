@@ -3495,3 +3495,30 @@ CRA only; SIL 3 excluded.
 - Created a 47-question Korean manufacturer inquiry draft in reports/LS_MECAPION_iX700M_CRA_MANUFACTURER_INQUIRY_KO.md. It requests SKU and EU supply/operator facts, product boundary, BOM/MCU/SBOM, secure boot/signature/key/debug, PSIRT/CVD/Article 14, security updates/support, technical file, signed EU DoC, manual revision, catalogue and CAD originals. Not sent.
 - Report §84 expands support-period factors, industrial lifecycle nuance, SBOM minimum vs recommended full evidence, Article 14 persistence after support, security update retention and technical-document retention.
 - CRA only; SIL 3 excluded.
+
+
+## 2026-11-25 — PR #248/#249 main push CI 확정 및 제품 원본 재접근
+
+- Main HEAD 확인: e0a0af3aa7d29acb9fa0e26bddf466af7f3398b5.
+- PR #248 merge SHA dd09fc13cf9076c5cf895f4a8e8727f525847ee4 → main push Run #1526 / ID 45486715925 SUCCESS, exact head match. Job #138773948774, 15/15 returned steps success (1-12,23-25), logs 459 lines, pytest 189 passed, CRA traceability PASS, 3 official PDFs hashed, 10 official sources/provenance PASS.
+- PR #249 merge SHA e0a0af3aa7d29acb9fa0e26bddf466af7f3398b5 → main push Run #1528 / ID 45487328163 SUCCESS, exact head match. Job #138776089059, 15/15 returned steps success (1-12,23-25), logs 459 lines, pytest 189 passed, CRA traceability PASS, 3 official PDFs hashed, 10 official sources/provenance PASS.
+- Both artifact sets are Commission CRA source PDFs/provenance only; not iX700M product binaries. Node 20 action and node url.parse deprecation warnings only.
+- LS official sources rechecked: manual Ver1.4 and conflicting Ver1.3 listing; Drive EU DoC wr_id 12888 / iX700MD1-B-150B / 238.9KB; Converter CE wr_id 12886 / iX700MCV / 234.4KB; UKCA wr_id 12893 / 224.1KB; catalogue wr_id 12110 / KR/EN 10.7MB each; CAD wr_id 12455 / 2D/3D listing. Detail page fetches timed out; original binaries and signatures not acquired.
+- Manufacturer inquiry expanded 47→55 questions to map exact SKU/order code, DoC coverage, Converter ratings/options, manual revision, signed PDF authenticity and native CAD details. Draft only; not sent.
+- All actual product SKU, EU/EEA supply, economic operators, sale/integration, BOM/MCU/SBOM and security implementation remain Unknown.
+- CRA only; SIL 3 excluded.
+
+
+## 2026-11-25 추가 발견 — CE 인덱스의 iX700M 모델 그룹
+
+공식 CE 카테고리 인덱스에서 2026-04-30 게시된 iX700M 항목을 추가 확인했다. 인덱스 번호 174 iX700MCB, 173 iX700MD1-B-750B/550B/450B, 172 370B/300B, 171 220B, 170 150B, 169 075B/050B/D2-B-045B, 168 Converter iX700MCV가 표시된다. 이는 각 게시물/DoC 파일이 존재한다는 listing metadata이며 개별 DoC 원문을 취득하거나 서명·적용범위를 검증한 결과가 아니다. 12888은 Drive 150B 게시물로 별도 확인되지만 다른 모델 그룹의 post ID와 PDF 원본은 이번 검색에서 확인되지 않았다.
+
+주의: 2026-03-09 KC 인덱스에는 iX700MD1-B-075B/150B/220B/370B, iX700MD2-B-045B, iX700MCV-B-150/370/550/750, iX700MCB-B-8K 등 별도 모델 목록이 보인다. KC listing은 한국 적합성 자료이며 EU DoC 범위의 증거로 전용하지 않는다. 이 목록은 제조사에 CE/UKCA DoC를 모든 모델별로 연결해 달라는 질의를 보강하는 데만 사용한다.
+
+새 질의 Q56-Q58은 CE 인덱스의 iX700MCB 및 Drive model group별 개별 DoC 존재·coverage, CE와 KC listing의 scope 분리, 제품 구성·시스템 통합 경계를 확인한다. Actual SKU and EU supply remain Unknown.
+
+
+## CI 운영 메모 — PR #250 문서 연속 커밋 후 exact HEAD 재검증
+
+- PR #250 문서 변경을 여러 파일에 순차 반영하는 동안 중간 PR workflow runs #1530/#1531/#1532는 후속 head 갱신에 따라 cancelled 처리됐다. 이들은 테스트 실패가 아니라 이전 head에 대한 실행 취소이며 최종 head의 통과 증거로 사용하지 않는다.
+- 마지막 변경 커밋 이후 새 exact-head run이 완료되는지 확인하고, 해당 run의 job/steps/log를 검증하기 전에는 PR #250을 병합하지 않는다.

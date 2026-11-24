@@ -110,3 +110,39 @@
 - Commission Guidance C/2026/6013, OJ C, 17.11.2026: https://publications.europa.eu/resource/cellar/dcbc848b-e227-11f1-aefc-01aa75ed71a1.0006.01/DOC_1
 
 CRA only; SIL 3 excluded.
+
+
+## 12. 추가 확인 질문 — 공식 게시물의 모델 범위와 원본 진위 (2026-11-25)
+
+아래 질문은 공식 게시물에서 확인된 시리즈/첨부 metadata를 실제 주문 모델과 연결하기 위한 추가 질문입니다. 게시물 제목이나 첨부파일 크기만으로 covered SKU, 서명, 적합성 또는 실제 공급을 확정하지 않습니다.
+
+48. Drive EU CE DoC 게시물(wr_id=12888)은 제목상 iX700MD1-B-150B를 특정합니다. 해당 PDF의 covered model은 정확히 이 단일 SKU입니까? D2/D3, 다른 정격(예: 050B/075B/220B/300B/370B/450B/550B/750B), encoder code 및 custom option이 포함된다면 각 모델의 포함 근거와 제한을 DoC 원문 및 technical schedule로 제시해 주십시오.
+49. Converter CE/UKCA DoC의 iX700MCV 480Vac 15/37/55/75kW는 실제 주문 가능한 각 모델코드와 어떻게 대응합니까? rating suffix, standard/option code, HW revision 및 인증서 적용범위를 표로 제시하고 CE와 UKCA의 제조자·법적 근거·평가범위를 별도로 확인해 주십시오.
+50. 공식 iX700M 제품 소개의 AC 380–480V, 4.5–75kW, 축당 16.1–168A 및 EtherCAT 설명을 실제 Drive/Converter 조합별 SKU, axis count, firmware version, interface/option과 매핑한 공식 selection table을 제공해 주십시오. 이 시리즈 범위가 모든 개별 SKU에 동일하게 적용되는 것으로 보지 않습니다.
+51. 매뉴얼 게시물 wr_id=12652의 Ver1.4와 동일 날짜의 별도 목록에 나타나는 Ver1.3 중 어느 것이 release authority가 있는 정식 배포본입니까? Ver1.3→Ver1.4 변경이력, 승인일, 적용 SKU/HW/FW, 폐기된 revision 여부, 원본 PDF 파일명·크기·SHA-256을 제시해 주십시오.
+52. EU DoC/UKCA DoC 각각에 대해 원본 PDF의 전자서명 존재 여부, 서명 인증서 체인/검증 방법(전자서명이 없는 스캔본이면 원본 서명본 확인 방법), 서명자 권한, 발행일, 문서번호, 개정이력 및 현재 유효성 확인 책임부서를 알려주십시오. 비밀키나 민감한 내부 정보는 제공하지 않아도 됩니다.
+53. CAD 게시물(wr_id=12455)의 2D 및 3D 원본 파일별 파일명, native format(DWG/DXF/STEP 등), revision, 작성 소프트웨어/version, 단위·축척, 적용 모델/외형 option, 포함/제외 부품(커넥터·방열판·브라켓 등)을 목록화해 주십시오. PDF preview나 이미지가 아닌 원본 binary를 요청합니다.
+54. 카탈로그 KR/EN 파일 각각의 승인 revision, 언어별 내용 동등성, 발행일, SHA-256, 지원되는 모델·정격·옵션의 범위를 제공해 주십시오. 카탈로그의 marketing lineup과 현재 실제 판매/공급 가능한 SKU를 별도 표로 구분해 주십시오.
+55. 위 모든 자료에 대해 제조사 공식 document owner, 승인 상태(Released/Obsolete/Draft), 공개·배포일, 교체 문서, 원본 보관 위치 및 고객이 최신본을 확인할 공식 경로를 제공해 주십시오.
+
+**추가 증거 연결 원칙:** 각 답변은 질문번호 → exact SKU/order code → HW/FW revision → 문서번호/revision → 원본 파일 → SHA-256/서명 검증 결과 순으로 연결해야 합니다. 어느 한 연결고리가 누락되면 해당 제품·기능 판정은 Unknown으로 남깁니다.
+
+## 13. 제조사 공식 자료 metadata 재확인 결과
+
+| 게시물 | 공개 metadata | binary/내용 확인 |
+|---|---|---|
+| Manual wr_id=12652 | iX700M DRIVE 400[V] Ver1.4, 2026-05-26 | detail timeout; Ver1.3 index 충돌 지속 |
+| Drive EU CE DoC wr_id=12888 | iX700MD1-B-150B, 238.9KB | original PDF/signature not obtained |
+| Converter CE DoC wr_id=12886 | iX700MCV, 480Vac 15/37/55/75kW, 234.4KB | original PDF not obtained |
+| Converter UKCA DoC wr_id=12893 | iX700MCV, 224.1KB | original PDF not obtained; UKCA distinct from EU DoC |
+| Catalogue wr_id=12110 | KR/EN each 10.7MB | original PDFs not obtained |
+| CAD wr_id=12455 | 2D CAD / 3D STEP listing, 2026-04-21 | detail timeout; native files not obtained |
+
+이 자료는 게시물 metadata의 재확인 기록이며 원본 binary 취득 기록이 아닙니다. 제조사 회신 전까지 모든 product-specific facts remain Unknown.
+
+
+
+56. CE 카테고리 인덱스에는 2026-04-30자로 iX700MCB 및 Drive Unit의 모델 그룹별 게시물(075B/050B/D2-B-045B, 150B, 220B, 370B/300B, 750B/550B/450B)이 각각 표시됩니다. 각 게시물에 연결된 원본 EU DoC PDF, 문서번호, covered model/SKU 전체 목록, 정격·encoder·option code, HW revision, DoC별 적용 표준/법령 및 서로 다른 게시물 간 scope 중복/공백을 제공해 주십시오. 특히 iX700MCB가 독립 판매되는지, Converter/Drive와 결합되는 내부 모듈인지 제품 경계를 설명해 주십시오.
+57. KC 인덱스의 iX700MD1/MD2/MCV/MCB 모델 목록과 CE/UKCA DoC 목록을 별도 규제 근거로 관리하고 있습니까? 동일한 모델명이라도 각 문서의 관할·법적 근거·평가 범위·제조자 선언 책임을 구분한 compliance matrix를 요청합니다. KC 인증/게시 사실을 EU DoC 또는 CRA 적합성 증거로 간주하지 않는다는 점을 확인해 주십시오.
+58. Drive Unit(D1/D2/D3), Converter Unit(CV), iX700MCB 및 통신/제어 모듈의 조립·판매·교체 관계를 설명해 주십시오. 각각 별도 주문·시장 제공되는지, 하나의 drive system으로만 공급되는지, 어느 구성요소에 펌웨어·네트워크 인터페이스·보안 기능이 위치하는지, 통합 OEM이 기능·펌웨어를 변경할 수 있는지 SKU별 block diagram으로 제시해 주십시오.
+
