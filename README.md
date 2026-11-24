@@ -1292,3 +1292,6 @@ Annex I Part II의 실무 요구사항은 machine-readable SBOM(최소 top-level
 
  
 > **PR #253 validation:** Initial Run #1541 exposed a blank JSONL line and was cancelled without merge. After normalization, exact-head Run #1542 / 45507153261 SUCCESS, 15/15 steps, 189 passed, traceability 385 events PASS; all 3 CRA PDFs fetched/hash-verified (C/2026/5252 via fallback). See report §88.6 / evidence §46. CRA source packs are not iX700M product binaries.
+
+ 
+> **PR #253 / main Run #1547 (2026-11-25):** PR exact-head Run #1546 SUCCESS and expected-head squash merge `e89faa6f9d907edcaf09adbd8f72eb81091ed279`; main push Run #1547 / 45507593050 SUCCESS on exact merge SHA, 15/15 steps, 189 passed, traceability 386 events, 10-source provenance, CRA PDFs 3/3. C/2026/5252 fetched via fallback (not asserted byte-identical to primary mirror). See report §89 / evidence §47. iX700M original binaries still not acquired; manual Ver1.3/1.4 discrepancy unresolved, Q61 added. Inquiry 61 questions. CRA only; SIL 3 excluded.
