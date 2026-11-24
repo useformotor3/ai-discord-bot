@@ -1280,3 +1280,6 @@ Annex I Part II의 실무 요구사항은 machine-readable SBOM(최소 top-level
 
 
 > **Additional iX700M CE index finding (2026-11-25):** The manufacturer's CE index separately lists iX700MCB and several Drive model groups (075B/050B/D2-B-045B, 150B, 220B, 370B/300B, 750B/550B/450B), plus Converter iX700MCV. This is index metadata, not proof of each DoC's scope or binary. KC listings are separate Korean regulatory evidence, not EU DoC/CRA proof. Manufacturer inquiry expanded to 58 questions. See report §85.5 and evidence register §42. CRA only; SIL 3 excluded.
+
+
+> **PR #250 and post-merge main CI (2026-11-25):** PR #250 exact-head Run #1535 / 45491181163 SUCCESS (15/15 returned steps, 189 pytest passed), squash merged as `ff42addc136836bbbb89bec48bb0c791f031db19`. Main push Run #1536 / 45491379142 SUCCESS on exact merge SHA (15/15 returned steps, 189 pytest passed). Both live canaries explicitly skipped CRA Guidance C/2026/5252 because its mirror returned temporary HTTP 503; two other PDFs were fetched/hash verified and 10-source provenance passed. Earlier Runs #1526/#1528 fetched all 3 PDFs. iX700M original binaries remain unacquired; inquiry now has 58 questions. See report §86 / evidence §43. CRA only; SIL 3 excluded.
