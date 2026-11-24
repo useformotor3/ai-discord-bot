@@ -2102,3 +2102,10 @@
 ## 2026-11-24 — PR #218 최신 CI 결과
 - Run #1410 success, but C(2026)7861 PDF source step explicitly SKIPPED due official Commission anti-bot interstitial; HTML locator checks and provenance manifest passed. Do not claim PDF artifact capture.
 - Source comment clarified and blob pin refreshed after this run; validate the new exact HEAD before merge.
+
+
+## 2026-11-24 — PR #218 병합 및 다음 증거 확보
+- PR #218 최종 diff 11개 파일 검토 후 squash merge 완료. Merge SHA `200ccca974ad3af09b1634fd9bf02c1baac5ca8c`.
+- Run #1417 success; pytest/traceability/HTML source/provenance passed. PDF canary SKIPPED because ANFR fallback timed out after Commission newsroom interstitial; no PDF byte/hash capture claimed.
+- 다음 P0: 실제 nameplate/주문서·견적서·납품서/EU 수입자 공급단위 증거, Ver1.4 manual 및 외형 CAD 첨부 본문 확보, 제조사에 내부 회로도/BOM/MCU part number 문의.
+- CRA only; SIL 3 excluded.
