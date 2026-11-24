@@ -526,3 +526,20 @@ ESO별 C(2026)7861 실제 수령일과 Article 2 비수락 통지는 여전히 U
 - Solution Square update date는 PDF 발행일/revision number가 아니다. Ver1.5 등으로 추정하지 않는다.
 - Ver1.3/Ver1.4 게시물 표시 충돌은 unresolved. 실제 PDF bytes와 제조사 문서관리 이력으로 해결해야 한다.
 - Converter/Drive DoC 게시 사실과 별도 모델코드는 독립 상업 판매, EU 공급 또는 CRA conformity를 증명하지 않는다.
+
+
+## 25. 2026-11-24 — Run #1460 공식 CRA PDF evidence artifact 검증
+
+| ID | 공식 원본 | 확보/검증 결과 | SHA-256 |
+|---|---|---|---|
+| CRA-PDF-2026-5252 | Commission C(2026) 5252 final CRA Guidance Annex | PDF 84 pages, 1,190,726 bytes; artifact 14884517329 내부 원본 확인 | `fe209c250e3d1f7599e42826d91963666951332927edcf511a2e79fe8d2f8234` |
+| CRA-PDF-2026-6013 | Commission C/2026/6013 CRA Guidance, OJ C 17.11.2026 | PDF 61 pages, 2,709,282 bytes; artifact 14884517329 내부 원본 확인 | `40ca76caeb0108f5b97c8f373a95f590b453fe92bd45a483addf3326e48c1dc2` |
+| CRA-PDF-2026-7861 | Commission C(2026) 7861 M/606 Annex | unavailable; Commission document-register API 30초 read timeout. 바이너리 미확보 | Unknown |
+
+- PDF evidence ZIP artifact SHA-256: `404f048a117e84dbeab4dcff863c4a5b0990e47bf0550a28bcb505fef339b134`.
+- Provenance manifest artifact ID 14884017656, ZIP SHA-256 `4a2fe3024fe12f259dc1bce49ac0e32782a826fa01bbce4a16c19e604caaa1bf`; official source 10 records, manifest JSON round-trip passed.
+- Run #1460 PDF canary step은 success이나, 세 PDF 중 2개만 실제 확보했다. C(2026)7861은 성공으로 승격하지 않고 unavailable로 유지한다.
+- PR #231 exact HEAD `d1f0c2a32c455f2d2a27dda5eab8972cad87bcef`, Run #1460 / 45314263089 success. 8-file diff, JSONL 357 records / invalid 0, review threads 0. Expected-head squash merge SHA `c7b59ae51891a2b878fc85b0910a89b50e4efe17`.
+- iX700M Solution Square 2026-09-16 항목의 상세 URL/PDF, LS메카피온 Ver1.3/Ver1.4 실제 revision, Converter/Drive DoC, DWG/DXF/STEP 원본은 미확보. 실제 SKU, 독립 판매, EU/EEA 공급, importer/economic operator, BOM/MCU/security 설정은 Unknown.
+- 제조사 질의서는 `draft_prepared_not_sent`; 실제 발송·접수·회신 증거 없음.
+- PR #229 merge SHA `4263389aa79cbb7cc17ccda3a019c659ccddef85`의 post-merge main push CI는 accessible run/status 없음. `pending_unverified` 유지.
