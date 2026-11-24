@@ -51,7 +51,7 @@ def test_fetch_pdf_source_records_binary_hash_and_page_count():
     assert item["fallback_used"] is False
 
 
-def test_guidance_primary_non_pdf_uses_only_allowlisted_anfr_mirror():
+def test_guidance_primary_non_pdf_uses_only_allowlisted_commission_mirror():
     definition = pdf.PDF_SOURCE_CATALOG[0]
     responses = iter([
         FakeResponse(url=definition["url"], body=b"<html>not a PDF</html>", content_type="text/html"),
@@ -59,11 +59,13 @@ def test_guidance_primary_non_pdf_uses_only_allowlisted_anfr_mirror():
     ])
     with patch.object(pdf, "PdfReader", FakeReader):
         item = pdf.fetch_pdf_source(definition, get=lambda *a, **k: next(responses))
+    assert definition["fallback_allowed_hosts"] == ("transition-pathways.europa.eu",)
+    assert definition["fallback_url"].startswith("https://transition-pathways.europa.eu/")
     assert item["fallback_used"] is True
     assert item["final_url"] == definition["fallback_url"]
 
 
-def test_official_commission_sorry_interstitial_uses_allowlisted_anfr_mirror():
+def test_official_commission_sorry_interstitial_uses_allowlisted_commission_mirror():
     definition = pdf.PDF_SOURCE_CATALOG[0]
     responses = iter([
         FakeResponse(
@@ -129,11 +131,12 @@ def test_fetch_all_writes_pdf_text_and_manifest(tmp_path):
         FakeResponse(url=pdf.PDF_SOURCE_CATALOG[2]["url"]),
     ])
     with patch.object(pdf, "PdfReader", FakeReader):
-        results = pdf.fetch_all_pdf_sources(
+        results, unavailable = pdf.fetch_all_pdf_sources(
             tmp_path,
             get=lambda *a, **k: next(responses),
         )
     assert len(results) == 3
+    assert unavailable == []
     assert (tmp_path / "C2026_5252_guidance_annex.pdf").read_bytes().startswith(b"%PDF-")
     assert (tmp_path / "C_2026_6013_cra_guidance_oj.pdf").read_bytes().startswith(b"%PDF-")
     assert (tmp_path / "C2026_7861_m606_annex.pdf.txt").exists()
@@ -141,7 +144,33 @@ def test_fetch_all_writes_pdf_text_and_manifest(tmp_path):
     assert len(manifest) == 3
     assert all(len(item["sha256"]) == 64 for item in manifest)
 
-def test_guidance_oj_c6013_is_fetched_from_eurlex_primary_without_fallback():
+
+
+def test_fetch_all_keeps_verified_pdfs_when_one_official_source_is_unavailable(tmp_path):
+    responses = iter([
+        FakeResponse(url=pdf.PDF_SOURCE_CATALOG[0]["url"]),
+        FakeResponse(url=pdf.PDF_SOURCE_CATALOG[0]["fallback_url"]),
+        FakeResponse(url=pdf.PDF_SOURCE_CATALOG[1]["url"]),
+        FakeResponse(url="https://sorry.ec.europa.eu/"),
+    ])
+    with patch.object(pdf, "PdfReader", FakeReader):
+        results, unavailable = pdf.fetch_all_pdf_sources(
+            tmp_path,
+            get=lambda *a, **k: next(responses),
+        )
+    assert [item["id"] for item in results] == [
+        "CRA-GUIDANCE-2026-5252",
+        "CRA-GUIDANCE-OJ-2026-6013",
+    ]
+    assert [item["id"] for item in unavailable] == ["CRA-M606-C2026-7861-ANNEX"]
+    assert (tmp_path / "C2026_5252_guidance_annex.pdf").exists()
+    assert (tmp_path / "C_2026_6013_cra_guidance_oj.pdf").exists()
+    assert not (tmp_path / "C2026_7861_m606_annex.pdf").exists()
+    manifest = json.loads((tmp_path / "manifest.json").read_text(encoding="utf-8"))
+    assert [item["status"] for item in manifest] == ["fetched", "fetched", "unavailable"]
+
+
+def test_guidance_oj_c6013_is_fetched_from_official_publications_office_without_fallback():
     definition = next(
         item for item in pdf.PDF_SOURCE_CATALOG
         if item["id"] == "CRA-GUIDANCE-OJ-2026-6013"
