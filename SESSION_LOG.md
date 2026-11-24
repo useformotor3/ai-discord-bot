@@ -3363,3 +3363,13 @@ CRA only; SIL 3 excluded.
 - Converter and Drive CE posts/attachment metadata verified; actual PDFs timed out. CAD post 117 (2026-04-21) and wr_id=12455 verified, detail timeout; CAD originals not acquired.
 - Report §74.7 / evidence register §29 appended. Actual SKU, independent sale, EU/EEA supply, importer/economic operator, BOM/MCU/security remain Unknown; manufacturer inquiry `draft_prepared_not_sent`.
 - PR #229 Run #1452 success 25/25 preserved. CRA only; SIL 3 excluded.
+
+
+## 2026-11-24 — PR #237 merge 및 Run #1483 source completeness 주의
+
+- PR #237 exact HEAD `0b173310aafc82d8db1c7bce032d93ee9fbd0db3`, Run #1482 success 25/25; 6 files; JSONL 365/0; reviews 0; base c395fc5b5b2a393632bb2fbe65b10fd6572b936d. Expected-head squash merge `792eea6388382a1932f1b775e57776a7ccacf3a6`.
+- Main read-back identical. Post-merge Run #1483 / 45318639981 exact merge SHA success 25/25.
+- Run #1483 PDF artifact 14886766794, 2,922,421B, ZIP SHA-256 `3f6c27de5224eb480951133a39ea5791b83753ae2038c1072158db94bbbb758c`: C(2026)5252 + C/2026/6013 only. C(2026)7861 timed out (30s) and manifest marks unavailable. Provenance artifact 14885852834, 2,565B, SHA-256 `16b7160436069a0ccecc2a1b04e923a5eb119aa11506b8fb7a6197030bc2be7c`.
+- C(2026)7861 Annex was already obtained in Run #1481 artifact 14886830715, 6 pages, SHA-256 `262b09596cb5cbe7d72a2c7789fb2512ee00db7f69082e7def2c8181b0f63276`; preserve as valid earlier acquisition. Official register web extraction also verified annex text/deadlines, but not binary acquisition.
+- Source collector intentionally returns exit 0 when transient sources are unavailable; record CI green separately from pack completeness. Retry/backoff and explicit completeness flag are future tested improvement candidates; no workflow/code changes made.
+- Report §74.8 and evidence register §30 appended. CRA only; SIL 3 excluded.
