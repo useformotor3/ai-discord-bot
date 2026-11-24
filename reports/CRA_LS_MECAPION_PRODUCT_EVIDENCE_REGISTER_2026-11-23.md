@@ -898,3 +898,9 @@ CRA only; SIL 3 excluded.
 
 ### Unknown 유지
 Actual SKU, EU/EEA supply, economic operators, independent sale/integration, BOM/exact MCU/SBOM, security settings, PSIRT/CVD, update policy and support period remain Unknown. CRA only; SIL 3 excluded.
+
+
+### 추가 공식 인덱스 조사 — iX700M CE / KC 모델 그룹
+- CE index(2026-04-30): #174 iX700MCB; #173 iX700MD1-B-750B/550B/450B; #172 370B/300B; #171 220B; #170 150B; #169 075B/050B/D2-B-045B; #168 Converter iX700MCV. Search-index metadata only; each original DoC binary/signature/scope not verified. Source: https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&sca=CE
+- KC index(2026-03-09) separately lists iX700MD1-B-075B/150B/220B/370B, iX700MD2-B-045B, iX700MCV-B-150/370/550/750, iX700MCB-B-8K. KC is not EU DoC evidence and must not be conflated with CE or CRA. Source: https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&page=2&sca=KC
+- These lists expand model-specific questions only. They do not establish actual ordered SKU, EU/EEA supply, covered DoC scope or CRA conformity.
