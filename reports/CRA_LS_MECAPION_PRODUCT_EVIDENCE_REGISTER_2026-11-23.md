@@ -436,3 +436,12 @@ ESO별 C(2026)7861 실제 수령일과 Article 2 비수락 통지는 여전히 U
 - Exact HEAD 76e5bce626db999e434d41f50ac0b9413b9561d5, Run #1432 / 45295093222 success; 186 pytest passed; source identity/compile/CRA traceability/10 HTML locators/PDF canary/two artifact uploads all passed.
 - C(2026)5252 and C/2026/6013 PDF hashes and artifact IDs in §18.6. C(2026)7861 remains unavailable due Commission register timeout, explicitly recorded in manifest.
 - 11 files reviewed; only docs, CRA PDF source collector/tests and isolated test workflow blob pins changed. No production main.py, secrets or API cadence changes.
+
+
+## 19. 2026-11-24 — 제조사 질의서 및 증거 확보 게이트
+
+- MFG-IX7M-Q01: LS메카피온 공식 기술·영업 질의서 초안 — reports/LS_MECAPION_IX700M_FORMAL_TECHNICAL_COMMERCIAL_INQUIRY_2026-11-24.md.
+- 요청 증거: 독립 판매/주문/교체 여부, EU 공급국·법인·수입자·거래 문서, 전체 SKU 및 옵션 정의, Ver1.4 매뉴얼 원본, 외형 CAD 원본, 회로도/BOM 또는 redacted BOM, MCU/통신/보안 IC 전체 주문코드와 revision, firmware/update/security controls, SBOM/PSIRT/support period, 유닛별 및 조합별 EU DoC.
+- 질문별 답변 상태와 증거를 요구한다. 구두 답변은 참고자료로만 보관하고, 제품 분류를 변경하는 근거는 문서번호·개정일·적용 SKU·공급 단위가 확인되는 서면 자료로 한정한다.
+- NDA/redacted version/부품군별 BOM/제조사 서명 확인서도 대체 증거로 허용한다. 개인키·암호키 원문·비밀번호·생산 계정 등 비밀값은 요청하지 않는다.
+- 현재 상태: 질의서 작성 완료 / 제조사 발송 및 회신 미확인. 발송·회신 확인 전까지 Unknown 판정을 유지한다.
