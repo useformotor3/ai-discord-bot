@@ -1251,3 +1251,8 @@ CLC/TC 65X의 M/606 20b/21b/22b/25b/27b/36b를 prEN 50770-4/-2/-6/-3/-5/-1에 �
 
 > **PR #242 merged:** exact HEAD e92bb6a0830cbdeb7ed4c05e31faba201c2754a3, Run #1513 success 25/25, expected-head squash merge 3fbc1bcbf669324706c4ae2f882ff7269ae87f48; main read-back identical. Main push Run #1514 / 45338702162 was in progress at snapshot. See report §79 / evidence register §36.
 > **Button omission corrective action:** the persistent protocol existed but the final-output gate was not executed. Protocol v1.1 now requires a final check for an actionable next-step button as the last response element. CRA only; SIL 3 excluded.
+
+
+## 2026-11-24 — CRA main CI Run #1520 최종 확인
+
+PR #245 merge SHA `2b9d924a92bbd497289b9e3afe0dd52df527472b`의 post-merge main push Run #1520 (ID `45401919091`)은 exact SHA 일치 및 최종 SUCCESS, 25/25 steps로 확인됐다. Source integrity, compile, CRA cross-matrix traceability, 전체 테스트, 공식 CRA PDF/source canary 및 evidence/provenance 업로드가 모두 성공했다. 이는 저장소 CI 검증 결과이며 iX700M 제품 CRA 적합성이나 제조사 보안 구현의 증명은 아니다. 제품 원본 자료 미확보 및 Unknown 항목은 상황판과 제품 증거등록부의 상태를 따른다. CRA only; SIL 3 excluded.

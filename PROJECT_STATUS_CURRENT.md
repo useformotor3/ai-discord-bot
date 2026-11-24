@@ -2244,3 +2244,14 @@
 - Button omission cause: the GitHub protocol already required a real actionable button; assistant failed to run the final-output checklist and omitted the button component. This is an execution/control-gate failure, not missing documentation. Protocol v1.1 adds a mandatory pre-finalization gate and recovery rule.
 - Corrective action: every substantive CRA response must end with an actionable **다음 단계 계속 진행** button carrying the canonical payload; verify the component exists before finalizing. A button starts the next user turn; it is not autonomous background execution.
 - CRA only; SIL 3 excluded.
+
+
+## 2026-11-24 — PR #245 병합 후 main Run #1520 최종 성공
+
+- PR #245 exact HEAD `2b23df758409743ba77e15d1b69bfce08abf941e`, Run #1519 / ID `45401753839` success 25/25, expected-head squash merge SHA `2b9d924a92bbd497289b9e3afe0dd52df527472b`; main read-back SHA 일치.
+- Post-merge main push Run #1520 / ID `45401919091`, event=push, exact head SHA `2b9d924a92bbd497289b9e3afe0dd52df527472b`, final conclusion SUCCESS. 단일 job `Source integrity, compile and pytest` 성공, 25/25 steps.
+- 핵심 단계: source blob identity, dependency install, compile, CRA cross-matrix traceability, full repository tests, official CRA PDF/source read-only canaries, PDF evidence upload, provenance manifest upload 및 post-job 모두 success.
+- 이 결과는 CRA 법령/제품 적합성 또는 iX700M 보안 구현을 인증하는 것이 아니라, 해당 commit의 저장소 무결성·코드·테스트·공식 CRA 자료 수집 workflow 검증 성공을 의미한다.
+- iX700M 제조사 자료는 계속 metadata와 원본 binary를 구분한다. Ver1.4/Ver1.3 index 충돌, manual/DoC/catalogue/CAD binary 미확보 상태 유지.
+- Actual SKU, independent sale, EU/EEA supply, importer/economic operator, BOM/MCU/security configuration remain Unknown. Manufacturer inquiry `draft_prepared_not_sent`.
+- CRA only; SIL 3 excluded.

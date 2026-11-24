@@ -784,3 +784,35 @@ Run #1462 / ID 45314843427, PDF artifact 14884218192. ZIP 3,070,568 bytes, SHA-2
 
 - No original manual, DoC, catalogue or CAD binary was acquired. Metadata must not be labelled as acquired evidence.
 - Actual SKU, independent sale, EU/EEA supply, importer/economic operator, BOM/MCU/security remain Unknown. Manufacturer inquiry draft_prepared_not_sent. CRA only; SIL 3 excluded.
+
+
+## §39. 2026-11-24 — PR #245 이후 main CI 및 제품 원본 자료 상태 재확인
+
+### 저장소 CI
+- PR #245 exact HEAD `2b23df758409743ba77e15d1b69bfce08abf941e`; Run #1519 / ID `45401753839`: success 25/25.
+- Merge SHA / main HEAD `2b9d924a92bbd497289b9e3afe0dd52df527472b`.
+- Main push Run #1520 / ID `45401919091`: event=push, exact SHA match, completed/success, 25/25. Source integrity, compile, CRA traceability, full tests, official CRA PDF/source canaries, evidence and provenance uploads all success.
+- CI success is repository pipeline evidence only; not iX700M CRA conformity evidence.
+
+### 제조사 제품 자료 — 메타데이터와 원본 분리
+| 자료 | 현재 확인 | 원본 취득 상태 |
+|---|---|---|
+| iX700M Drive manual Ver1.4 | 공식 default/Servo filter index에 Ver1.4 표시, 다른 empty-sca snapshot은 Ver1.3 | 미취득; detail/download timeout; revision/hash Unknown |
+| Drive EU DoC | iX700MD1-B-150B 게시물 및 238.9K 첨부 메타데이터 | PDF bytes/서명/적용범위 미검증, 미취득 |
+| Converter CE DoC | iX700MCV, 480Vac 및 용량군, 234.4K 첨부 메타데이터 | PDF bytes/서명/적용범위 미취득 |
+| Converter UKCA DoC | iX700MCV, 480Vac 및 용량군, 224.1K 첨부 메타데이터 | PDF bytes/서명/적용범위 미취득 |
+| KR/EN catalogue | 각 10.7MB 첨부 목록 | 원본 PDF 미취득 |
+| 2D CAD / 3D STEP | iX700M 목록 2026-04-21 | DWG/DXF/STEP 미취득; detail timeout |
+| Solution Square manual | iX700M listing update 2026-09-16 | SPA shell; detail/PDF 미취득 |
+
+### Unknowns — 유지
+- Actual target SKU / HW revision / FW revision
+- Independent sale versus integrated component supply
+- EU/EEA market placement and supply chain
+- Importer / economic operator identities and roles
+- BOM, exact ST MCU part number, memory/communication ICs
+- SBOM and OSS/third-party component inventory
+- Secure boot, firmware signature, key storage, debug lock, cryptographic controls
+- Vulnerability handling process, update policy and support period
+
+Manufacturer inquiry: `draft_prepared_not_sent`; no sending, receipt or response evidence. CRA only; SIL 3 excluded.

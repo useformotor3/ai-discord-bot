@@ -3461,3 +3461,15 @@ CRA only; SIL 3 excluded.
 - Post-merge main push Run #1518 / 45401343718 targets exact merge SHA 40a92f1b00bf3b0f4e4694895b6399918ee5561f and completed/success 25/25. No main CI failure observed.
 - Manufacturer source recheck: default manual index and Servo filtered index show iX700M DRIVE 400[V] Ver1.4 (2026-05-26); explicit empty-sca snapshot shows Ver1.3 for post 41. Direct detail/download remains inaccessible, so actual binary revision/hash is Unknown. Drive CE page content was readable and lists iX700MD1-B-150B / 238.9K DoC; the exact download link timed out. Converter CE/UKCA, KR/EN catalogue, iX700M CAD index listings were corroborated by official search-index pages; no original binaries obtained. Solution Square manual listing update 2026-09-16 remains JS SPA metadata only.
 - Unknowns unchanged: actual SKU, independent sale, EU/EEA supply, importer/economic operator, BOM/MCU/security configuration. Manufacturer inquiry draft_prepared_not_sent. CRA only; SIL 3 excluded.
+
+
+## 2026-11-24 — PR #245 post-merge main Run #1520 final verification
+
+- Re-read main status board, README, integrated CRA report, iX700M evidence register, SESSION_LOG, PROJECT_LOG and operating protocol at SHA `2b9d924a92bbd497289b9e3afe0dd52df527472b`.
+- PR #245 exact HEAD `2b23df758409743ba77e15d1b69bfce08abf941e`; exact-head Run #1519 / 45401753839 success 25/25; squash merge SHA `2b9d924a92bbd497289b9e3afe0dd52df527472b`.
+- Post-merge main push Run #1520 / 45401919091 final success 25/25, exact SHA match. All listed job steps completed successfully including source identity, compile, traceability, full tests, official CRA canaries, evidence uploads and provenance.
+- Clarification: green CI validates repository automation and evidence acquisition workflow, not iX700M conformity or actual product security implementation.
+- Manufacturer originals still not acquired: Ver1.4 manual binary, signed SKU-specific EU DoC, Converter CE/UKCA DoCs, catalogue PDFs, 2D/3D CAD files. Index metadata is not binary evidence. Version listing discrepancy persists.
+- Updated analysis focus: product boundary and EU market placement facts first; interface/asset inventory; SBOM; vulnerability intake/triage/remediation; secure update integrity/recovery; support period. Unknowns retained: actual SKU, independent sale, EU/EEA supply, importer/economic operator, BOM/MCU/security.
+- No manufacturer contact sent; inquiry remains draft_prepared_not_sent.
+- CRA only; SIL 3 excluded.
