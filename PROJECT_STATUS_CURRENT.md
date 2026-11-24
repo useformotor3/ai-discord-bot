@@ -1,5 +1,13 @@
 
 
+## 2026-11-24 — PR #245 후 main Run #1520 성공
+
+- Run #1520 / 45401919091 completed/success; exact merge SHA 2b9d924a92bbd497289b9e3afe0dd52df527472b, main ref read-back same SHA; all 25 steps success.
+- Source identity, dependency installation, compile, CRA cross-matrix, complete test suite, official CRA PDF/source canaries, uploads/provenance and post-job steps passed.
+- iX700M source recheck: official default and Servo-filtered manual index show Ver1.4 (2026-05-26), but explicit empty-sca index shows Ver1.3; no actual PDF binary/hash to resolve discrepancy. Official catalog index now explicitly shows iX700M KR/EN catalog listing (2025-11-17; attachment names dated 2025-12-05), still not downloaded. DoC/CAD metadata listings are not binary acquisition.
+- Unknowns retained: target SKU, EU/EEA supply, importer/economic operator, BOM/MCU/security. CRA only.
+
+
 ## 2026-11-24 — PR #244 병합 및 main Run #1518 최종 성공
 
 - PR #244 exact HEAD 285b4b705c2bc86b4e7a4602ee7825963770b869, base 6548eec799c398b35007212e4831d058934fa83b, 6 files(+70/-0), 6 ahead/0 behind, reviews 0 / threads 0, branch PROJECT_LOG 376 valid / 0 invalid. Exact-head Run #1517 / 45340773376 completed/success 25/25.
