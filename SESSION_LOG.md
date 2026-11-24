@@ -3507,3 +3507,12 @@ CRA only; SIL 3 excluded.
 - Manufacturer inquiry expanded 47→55 questions to map exact SKU/order code, DoC coverage, Converter ratings/options, manual revision, signed PDF authenticity and native CAD details. Draft only; not sent.
 - All actual product SKU, EU/EEA supply, economic operators, sale/integration, BOM/MCU/SBOM and security implementation remain Unknown.
 - CRA only; SIL 3 excluded.
+
+
+## 2026-11-25 추가 발견 — CE 인덱스의 iX700M 모델 그룹
+
+공식 CE 카테고리 인덱스에서 2026-04-30 게시된 iX700M 항목을 추가 확인했다. 인덱스 번호 174 iX700MCB, 173 iX700MD1-B-750B/550B/450B, 172 370B/300B, 171 220B, 170 150B, 169 075B/050B/D2-B-045B, 168 Converter iX700MCV가 표시된다. 이는 각 게시물/DoC 파일이 존재한다는 listing metadata이며 개별 DoC 원문을 취득하거나 서명·적용범위를 검증한 결과가 아니다. 12888은 Drive 150B 게시물로 별도 확인되지만 다른 모델 그룹의 post ID와 PDF 원본은 이번 검색에서 확인되지 않았다.
+
+주의: 2026-03-09 KC 인덱스에는 iX700MD1-B-075B/150B/220B/370B, iX700MD2-B-045B, iX700MCV-B-150/370/550/750, iX700MCB-B-8K 등 별도 모델 목록이 보인다. KC listing은 한국 적합성 자료이며 EU DoC 범위의 증거로 전용하지 않는다. 이 목록은 제조사에 CE/UKCA DoC를 모든 모델별로 연결해 달라는 질의를 보강하는 데만 사용한다.
+
+새 질의 Q56-Q58은 CE 인덱스의 iX700MCB 및 Drive model group별 개별 DoC 존재·coverage, CE와 KC listing의 scope 분리, 제품 구성·시스템 통합 경계를 확인한다. Actual SKU and EU supply remain Unknown.
