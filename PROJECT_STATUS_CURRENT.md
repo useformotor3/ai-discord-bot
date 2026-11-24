@@ -1,4 +1,11 @@
 
+## 2026-11-24 — PR #234 병합 및 post-merge main CI
+
+- PR #234 exact HEAD `c1530e18a5452a8b3b0b35f70128dcaa405a25c7`, Run #1473 / 45316126142 success. 6 files; JSONL 361 / invalid 0; review threads 0 / reviews 0; base `d160cb2eea13d3f18ac4bc8e98c40d4378881c1a`.
+- Expected-head squash merge SHA `bd46aa2a26a39a5389f3b314a94523bb495689b5`; main read-back identical.
+- Post-merge main push Run #1474 / 45316319487, exact merge SHA, success 25/25. Main PROJECT_LOG 361 / invalid 0.
+- 다음 PR #235는 iX700M official architecture/catalog evidence 추가 문서화, base SHA `bd46aa2a26a39a5389f3b314a94523bb495689b5`, current head `79499f0e056b2da4b9dbc07152767b2e08e72bf5`; exact-head Run #1475 / 45316512062 success. 병합 전 diff/review/JSONL/base/head 재검증 필요.
+
 ## 2026-11-24 — iX700M 공식 아키텍처 PDF·카탈로그·교육자료 재확인
 
 - LS ELECTRIC 호스팅 LS Mecapion PDF `서보 드라이브 신제품 소개(iX7M, iX700M)`를 열람. iX700M 전용 구간에서 Converter/Drive 분리 모듈, DC Link, 내부 RS-485, EtherCAT In/Out, USB/Loader, I/O, encoder, AC380–480V→DC535–675V 구조 확인. 문서 푸터 timestamp 2024-04-01; 현행 매뉴얼/보안 구현 증거는 아님. iX7M 전용 내용은 iX700M에 전용하지 않음.
