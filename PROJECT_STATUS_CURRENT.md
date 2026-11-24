@@ -1,4 +1,13 @@
 
+## 2026-11-24 — PR #235 병합 및 main push CI 최종 확인
+
+- PR #235 final exact HEAD `df68f617ee1e49d2c6183b8cb42f1f042043d007`, Run #1478 / 45316731254 success. 6 files; JSONL 363 / invalid 0; review threads 0 / reviews 0; base `bd46aa2a26a39a5389f3b314a94523bb495689b5`.
+- Expected-head squash merge SHA `4e4aea75960de2e761e47ae3cdc33275ad5553f2`; main read-back identical.
+- Post-merge main push Run #1479 / 45316962126, exact merge SHA, success 25/25. Main PROJECT_LOG 363 / invalid 0.
+- Report §74 / evidence register §28: iX700M official architecture PDF, KR/EN catalog listing, education material listing documented. PDF is architecture support only; exact manuals, CE DoC and CAD originals still not acquired.
+- Actual SKU, independent sale, EU/EEA supply, importer/economic operator, BOM/MCU/security configuration remain Unknown; manufacturer inquiry `draft_prepared_not_sent`.
+- PR #229 Run #1452 / 45312941583 main push success 25/25 remains verified. CRA only; SIL 3 excluded.
+
 ## 2026-11-24 — PR #234 병합 및 post-merge main CI
 
 - PR #234 exact HEAD `c1530e18a5452a8b3b0b35f70128dcaa405a25c7`, Run #1473 / 45316126142 success. 6 files; JSONL 361 / invalid 0; review threads 0 / reviews 0; base `d160cb2eea13d3f18ac4bc8e98c40d4378881c1a`.
