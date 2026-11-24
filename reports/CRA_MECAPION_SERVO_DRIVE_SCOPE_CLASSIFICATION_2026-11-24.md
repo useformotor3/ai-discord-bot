@@ -471,3 +471,7 @@ Run #1404에서 C(2026)7861 M/606 Annex의 Commission document-register API가 C
 
 ### 14.11 최신 검증 결과 — Run #1410
 PR #218의 HEAD 1c49b9f4b5ad8fa747ffa08051fa6116dd3eff85에 대한 Run #1410은 workflow 전체가 success로 종료됐다. 소스 무결성, 컴파일, CRA 추적성, 전체 pytest, 공식 CRA HTML source locator 검사 및 provenance manifest 업로드는 성공했다. 단, PDF source canary는 C(2026)7861 Commission document-register의 anti-bot interstitial 때문에 SKIPPED로 종료했고 PDF evidence artifact도 업로드되지 않았다. 따라서 이를 PDF 원문 전체 확보 성공으로 표현하지 않는다. 이후 source fetcher 주석을 실제 동작과 일치하도록 정리하고 source blob pin을 갱신했으므로, 최종 병합 대상은 새 HEAD에서 한 번 더 검증한다.
+
+
+### 14.12 PR #218 최종 CI 및 병합 기록
+최종 대상 HEAD는 e3ebe08b5dcf14563bba0a75dca171459ab992c5이고 Run #1417 / 45293726074가 workflow success로 종료됐다. 소스 무결성, 컴파일, CRA 추적성, 전체 테스트, 공식 CRA HTML locator 검증 및 provenance manifest 업로드는 성공했다. PDF source canary는 C(2026)5252 Commission newsroom interstitial 후 설정된 ANFR mirror가 30초 timeout되어 SKIPPED로 종료했고 PDF artifact upload도 skip됐다. 따라서 이번 run에서 Commission PDF 바이너리/해시를 새로 확보했다고 주장하지 않는다. 최종 diff 11개 파일을 검토한 뒤 PR #218을 squash merge했다. Merge SHA: 200ccca974ad3af09b1634fd9bf02c1baac5ca8c. 변경은 CRA 보고서/증거/상황판, PDF 수집 스크립트와 격리 테스트 workflow의 blob pins에 한정되며 운영 main.py·secrets·운영 workflow는 수정하지 않았다.
