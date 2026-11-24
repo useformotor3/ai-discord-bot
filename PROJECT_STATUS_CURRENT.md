@@ -1,4 +1,14 @@
 
+
+## 2026-11-24 — PR #243 병합 및 main CI 최종 성공
+
+- Run #1514 / 45338702162: main SHA 3fbc1bcbf669324706c4ae2f882ff7269ae87f48, push, completed/success 25/25.
+- PR #243 exact HEAD 9ae09486a10dc374b83ad417fbd09742f0213dc1, base 3fbc1bcbf669324706c4ae2f882ff7269ae87f48, 7 files(+75/-0), 7 ahead/0 behind, reviews 0, threads 0, branch PROJECT_LOG 375 valid / 0 invalid. Run #1515 / 45338890791 completed/success 25/25.
+- Expected-head squash merge SHA 6548eec799c398b35007212e4831d058934fa83b. Main read-back identical. Post-merge push Run #1516 / 45340565876 targets exact merge SHA and completed/success 25/25.
+- Therefore prior Run #1514 in-progress snapshot in §79 / evidence #36 is superseded by this final result. PR #243 is closed/merged.
+- Official LS Mecapion recheck reconfirms manual index split (default/Servo Ver1.4 vs explicit empty sca Ver1.3), official CE/UKCA/catalogue/CAD listings, but detail/download requests still time out. No original manual, DoC, catalogue or CAD binary acquired. Solution Square manual listing updated 2026-09-16 remains SPA metadata only.
+- Actual SKU, independent sale, EU/EEA supply, importer/economic operator, BOM/MCU/security remain Unknown; manufacturer inquiry draft_prepared_not_sent. CRA only; SIL 3 excluded.
+
 ## 2026-11-24 — PR #240 병합 및 사후 Run #1508 성공
 
 - PR #240 exact HEAD 6f94454ffe41e313c8450918b43b58b4b41014f4, base 7d1fe1012bd2f8a8e1540918b43b58b4b41014f5, 6 files, reviews 0 / threads 0, JSONL 371 / invalid 0. Run #1507 / 45329806653 success 25/25. Expected-head merge SHA 36b38bfa5ced2894f3bfb06c226706ce0a9bf38b.
