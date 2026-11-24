@@ -765,3 +765,22 @@ Run #1462 / ID 45314843427, PDF artifact 14884218192. ZIP 3,070,568 bytes, SHA-2
 
 - No original manual, CE/UKCA declaration, catalogue PDF, or CAD binary was acquired. Listing metadata must not be represented as acquired evidence.
 - Actual SKU, independent sale, EU/EEA supply, importer/economic operator, BOM/MCU/security remain Unknown. Manufacturer inquiry draft_prepared_not_sent. CRA only; SIL 3 excluded.
+
+
+## 38. 2026-11-24 — PR #244 merge chain and iX700M manufacturer source recheck
+
+| Evidence ID | Source | Confirmed | Status / limitation |
+|---|---|---|---|
+| CI-PR244 | https://github.com/useformotor3/ai-discord-bot/pull/244 ; https://github.com/useformotor3/ai-discord-bot/actions/runs/45340773376 | exact HEAD 285b4b705c2bc86b4e7a4602ee7825963770b869; base 6548eec799c398b35007212e4831d058934fa83b; 6 files +70/-0; 6 ahead/0 behind; reviews/threads 0; branch JSONL 376/0; Run #1517 SUCCESS 25/25 | expected-head squash merge 40a92f1b00bf3b0f4e4694895b6399918ee5561f |
+| CI-MAIN-1518 | https://github.com/useformotor3/ai-discord-bot/actions/runs/45401343718 | exact main merge SHA 40a92f1b00bf3b0f4e4694895b6399918ee5561f; push SUCCESS 25/25 | post-merge verification complete |
+| IX700M-MANUAL-VER1.4 | https://www.lsmecapion.com/bbs/board.php?bo_table=manual ; https://www.lsmecapion.com/bbs/board.php?bo_table=manual&sca=Servo | Default and Servo filtered index: Ver1.4, 2026-05-26 | detail wr_id=12652 unavailable; PDF/hash Unknown |
+| IX700M-MANUAL-INDEX-CONFLICT | https://www.lsmecapion.com/bbs/board.php?bo_table=manual&sca= | Explicit empty sca index shows Ver1.3 for post 41, same date | Index snapshot conflict; no binary basis to select revision |
+| IX700M-DRIVE-CE-DOC | https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&page=4&wr_id=12888 | detail content readable; model iX700MD1-B-150B; 238.9K PDF attachment listed | exact download URL timeout; no PDF bytes/content/signature |
+| IX700M-CONVERTER-CE | https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&sca=CE&wr_id=12886 | iX700MCV, 480Vac, 15/37/55/75kW; 234.4K PDF listed | metadata only, no PDF bytes |
+| IX700M-CONVERTER-UKCA | https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&page=3&wr_id=12893 | iX700MCV; 480Vac; 15/37/55/75kW; 224.1K PDF listed | direct page timeout; no PDF bytes |
+| IX700M-CATALOGUE | https://www.lsmecapion.com/bbs/board.php?bo_table=catalog&wr_id=12110 | KR/EN PDF each 10.7MB; attachment date 2025-12-05 | direct page timeout; no PDF bytes |
+| IX700M-CAD | https://www.lsmecapion.com/bbs/board.php?bo_table=drawing&sca=Servo+Drive&wr_id=12455 | iX700M 2D CAD / 3D STEP listing dated 2026-04-21 | detail timeout; no DWG/DXF/STEP bytes |
+| IX700M-SOLUTION-SQUARE | https://sol.ls-electric.com/kr/ko/product/category/4?pageNumber=4 | manual listing update 2026-09-16 | JavaScript app shell; no document bytes/hash |
+
+- No original manual, DoC, catalogue or CAD binary was acquired. Metadata must not be labelled as acquired evidence.
+- Actual SKU, independent sale, EU/EEA supply, importer/economic operator, BOM/MCU/security remain Unknown. Manufacturer inquiry draft_prepared_not_sent. CRA only; SIL 3 excluded.
