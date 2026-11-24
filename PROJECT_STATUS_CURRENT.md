@@ -2394,3 +2394,11 @@
 - C/2026/5252 fallback=true; its SHA identifies fallback bytes only. Run #1555 PDF ZIP artifact ID 14973917921, 3,070,567 bytes, SHA-256 `426c0c7dc9e24e980e7e4117eaa98bd58110a927f620164342b009686c696f22`; provenance artifact ID 14975071982, 2,565 bytes, SHA-256 `daf898155731bbf8b3c4f52ad0198cf174c42d67192259ddbfb5b2e946c5e535`; expiry 2026-12-01.
 - Current main docs synchronized through PR #257. Manufacturer inquiry 62 questions, draft not sent. Original iX700M product binaries remain unacquired; listing metadata only.
 - Unknowns remain: actual SKU, EU/EEA supply, economic operators, signed DoC scope, BOM/MCU/SBOM, security configuration, CRA classification, vulnerability handling, update/support period. CRA only; SIL 3 excluded.
+
+ 
+## 2026-11-25 — PR #259 병합 및 main push Run #1558 성공
+
+- PR #259 exact head `764caffd921cfc9007b71843ce096b68c7a65325`, base `6f26d7166bd8a1208733c82c8fda592e1cfc0f9a`, 6 files(+44/-0), reviews 0, threads 0. Run #1557 / 45510213810 completed/success, 15/15 steps, pytest 189 passed, CRA traceability 391 events PASS, 10-source provenance PASS, PDF 3/3 fetch/hash PASS. Expected-head squash merge SHA `cabf4bfbb9bd5c4881eb951590813af5aa034ef0`.
+- Main push Run #1558 / 45510395033 exact merge SHA: completed/success, 15/15 steps, pytest 189 passed, traceability 391 events PASS, provenance 10 records JSON round-trip PASS, PDF 3/3 fetch/hash PASS.
+- C/2026/5252 fallback=true; its SHA identifies fallback bytes only. Run #1558 PDF ZIP artifact ID 14974454558, 3,070,565 bytes, SHA-256 `c58990a02462523067117f101ae053afc473c971d5896477bf568a7e3529ac21`; provenance artifact ID 14973949377, 2,565 bytes, SHA-256 `17778f980d7bc0fd1a3cfd6c028d830e19d7613962eb6898a0dc53ad7d622a23`; expiry 2026-12-01.
+- Manufacturer inquiry 62 questions, draft not sent. iX700M original manual/DoC/catalogue/CAD binaries remain unacquired; listing metadata only. Actual SKU, EU/EEA supply, economic operators, signed DoC scope, BOM/MCU/SBOM, security configuration, CRA classification, vulnerability handling, update/support period remain Unknown. CRA only; SIL 3 excluded.
