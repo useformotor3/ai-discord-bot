@@ -2051,9 +2051,9 @@ CRA only; SIL 3 제외.
 
 ### 75.4 LS메카피온 Ver1.3/Ver1.4 목록 불일치 재현
 
-- 공식 Servo 필터 목록 https://lsmecapion.com/bbs/board.php?bo_table=manual&sca=Servo 는 iX700M DRIVE 400[V] 매뉴얼 Ver1.4, 2026-05-26을 표시한다.
-- 공식 미분류 목록 https://www.lsmecapion.com/bbs/board.php?bo_table=manual&sca= 는 같은 게시글 번호 41 / 날짜 2026-05-26에 iX700M DRIVE 400[V] 매뉴얼 Ver1.3을 표시한다.
-- 두 인덱스 항목을 따라간 상세 fetch는 502/timeout으로 실패했다. 검색/페이지 캐시와 링크 경로가 일치하지 않아 실제 배포 바이너리 revision, 변경 이력, 문서번호, SKU 적용범위는 입증되지 않았다. Ver1.3/Ver1.4 중 어느 쪽이 최신·유효한 배포본인지 확정하지 않는다.
+- 공식 Servo 필터 목록(https://lsmecapion.com/bbs/board.php?bo_table=manual&sca=Servo)과 기본 목록(https://www.lsmecapion.com/bbs/board.php?bo_table=manual)은 모두 iX700M DRIVE 400[V] 매뉴얼 Ver1.4, 2026-05-26을 표시한다.
+- 반면 명시적으로 빈 카테고리 파라미터를 둔 목록(https://www.lsmecapion.com/bbs/board.php?bo_table=manual&sca=)은 같은 게시글 번호 41 / 날짜 2026-05-26에 Ver1.3을 표시한다. 따라서 세 snapshot 중 두 개는 Ver1.4, 하나는 Ver1.3이며, 목록 응답/캐시/쿼리별 데이터 불일치가 재현된다.
+- 상세 링크를 따라간 fetch는 502/timeout으로 실패했다. 검색/페이지 캐시와 링크 경로가 일치하지 않아 실제 배포 바이너리 revision, 변경 이력, 문서번호, SKU 적용범위는 입증되지 않았다. Ver1.4가 목록 snapshot 다수라는 점은 기록하되, 실제 배포 PDF를 확보하기 전에는 유효 revision을 확정하지 않는다.
 
 ### 75.5 Converter/Drive CE DoC 원본 및 CAD 재접근
 
