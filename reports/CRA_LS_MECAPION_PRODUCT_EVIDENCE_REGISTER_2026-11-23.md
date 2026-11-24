@@ -816,3 +816,23 @@ Run #1462 / ID 45314843427, PDF artifact 14884218192. ZIP 3,070,568 bytes, SHA-2
 - Vulnerability handling process, update policy and support period
 
 Manufacturer inquiry: `draft_prepared_not_sent`; no sending, receipt or response evidence. CRA only; SIL 3 excluded.
+
+
+## §40. 2026-11-24 — iX700M 공식 자료 재시도 및 최신 CRA 지침 상태
+
+### 원본 취득 재시도
+- Manual: 공식 목록의 Ver1.4/Ver1.3 충돌 재확인. 직접 detail 및 `download.php?bo_table=manual&no=0&page=1&wr_id=12652` 접근 실패/비접근. PDF bytes/hash 미확보.
+- Drive EU DoC: `iX700MD1-B-150B` 게시물 및 첨부 metadata 확인. detail/attachment fetch timeout; signed PDF, 서명, 적용 EU 법령, 해당 SKU 적용 범위 미확보.
+- Converter CE: `iX700MCV` 480Vac, 15/37/55/75kW 게시물 및 234.4K 첨부 metadata 확인. 원본 PDF 미확보.
+- Converter UKCA: 동일 계열 게시물 및 224.1K 첨부 metadata 확인. 원본 PDF 미확보. UKCA는 EU DoC 대체 자료로 간주하지 않음.
+- Catalogue: KR/EN 각 10.7MB 목록 metadata 확인. 원본 PDF 미확보.
+- CAD: iX700M 2D CAD/3D STEP listing metadata만 확인. DWG/DXF/STEP 미확보.
+- Search/index references: manual default `https://www.lsmecapion.com/bbs/board.php?bo_table=manual`; Servo filter `https://www.lsmecapion.com/bbs/board.php?bo_table=manual&sca=Servo`; empty-sca conflict `https://www.lsmecapion.com/bbs/board.php?bo_table=manual&sca=`; Drive CE `https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&page=4&wr_id=12888`; Converter CE `https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&sca=CE&wr_id=12886`; Converter UKCA `https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&page=3&wr_id=12893`; catalogue `https://www.lsmecapion.com/bbs/board.php?bo_table=catalog&wr_id=12110`.
+
+### 법령·지침 추가 자료
+- Regulation (EU) 2024/2847, official EUR-Lex: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R2847
+- Commission Guidance C/2026/6013, OJ C 17.11.2026: https://publications.europa.eu/resource/cellar/dcbc848b-e227-11f1-aefc-01aa75ed71a1.0006.01/DOC_1
+- Article 14 applies from 2026-09-11; CRA general application 2027-12-11. Article 14 vulnerability/incident report deadlines are 24h/72h/final 14d for exploited vulnerabilities and 24h/72h/final 1 month for severe incidents.
+- Article 13(8)-(9): support period generally at least 5 years (unless expected use shorter); security updates remain available for at least 10 years or remainder of support period, whichever longer.
+
+All product implementation claims remain Unknown pending original documents and manufacturer confirmation. CRA only; SIL 3 excluded.

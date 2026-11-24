@@ -3473,3 +3473,14 @@ CRA only; SIL 3 excluded.
 - Updated analysis focus: product boundary and EU market placement facts first; interface/asset inventory; SBOM; vulnerability intake/triage/remediation; secure update integrity/recovery; support period. Unknowns retained: actual SKU, independent sale, EU/EEA supply, importer/economic operator, BOM/MCU/security.
 - No manufacturer contact sent; inquiry remains draft_prepared_not_sent.
 - CRA only; SIL 3 excluded.
+
+
+## 2026-11-24 — PR #247 사후 CI 및 최신 CRA 법령 지침 검토
+
+- PR #247 exact HEAD `f943c4741f85cc8b5d34dd33ee9876542b313256`; Run #1522 / 45403427550 completed/success 25/25. 6 files(+87/-0), ahead 6 / behind 0, reviews 0, threads 0, PROJECT_LOG 378 records / invalid 0.
+- Expected-head squash merge SHA `30d5c5997d0c99a8eff804c589010695c8735ced`; main read-back matched. Post-merge main push Run #1523 / 45403594895 exact SHA success 25/25.
+- New official Commission guidance C/2026/6013 (OJ C, 2026-11-17) reviewed and added to report §83 / evidence register §40. Article 14 reporting is already applicable from 2026-09-11; 24h/72h/final 14d (actively exploited vulnerabilities) and 24h/72h/final one month (severe incidents) clarified.
+- CRA general application date 2027-12-11. Products placed before that date are generally subject to full requirements only if substantially modified from that date, but Article 14 applies to all in-scope products placed before then (Art. 69(2)-(3), 71(2)).
+- Support period generally >=5 years unless expected use is shorter; security updates remain available >=10 years or remaining support period, whichever longer (Art. 13(8)-(9)).
+- iX700M official index listing and direct download retries did not acquire original binaries. Ver1.3/1.4 listing conflict persists; Drive/Converter DoC, catalogue and CAD metadata only. Actual SKU, EU/EEA supply, economic operators, BOM/MCU/SBOM/security implementation remain Unknown. Inquiry remains draft_prepared_not_sent.
+- CRA only; SIL 3 excluded.

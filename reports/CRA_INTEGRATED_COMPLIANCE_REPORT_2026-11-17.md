@@ -2280,3 +2280,38 @@ CRA 적용성은 제품명이나 CE/UKCA 목록만으로 결론내리지 않는�
 개발 조사표에는 각 항목별로 (1) 법적 요구사항, (2) 적용 판단 근거, (3) 제품 구현 증거, (4) 검증 방법/결과, (5) 책임자 및 미해결 조치의 다섯 열을 분리한다. 제조사 답변이나 원본 파일이 없으면 구현됨/준수함으로 표시하지 않는다.
 
 CRA only; SIL 3 excluded.
+
+
+## §83. 2026-11-24 — CRA 최신 Commission Guidance 및 iX700M 적용성 1차 판단
+
+### 83.1 현행 법령 및 적용 일정
+공식 법령은 Regulation (EU) 2024/2847이다. Article 2(1)은 시장에 제공되는 제품 중 의도된 목적 또는 합리적으로 예측 가능한 사용에 장치 또는 네트워크와의 직접·간접 논리적/물리적 데이터 연결이 포함되는 제품에 적용한다. Article 3(1)은 제품을 소프트웨어/하드웨어 제품과 원격 데이터 처리 솔루션으로 정의하며, 별도 시장 제공되는 소프트웨어·하드웨어 구성요소도 포함한다. 공식 원문: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R2847
+
+CRA 일반 적용일은 2027-12-11이다(Article 71(2)). 단, Article 14 취약점·중대 보안사고 보고는 2026-09-11부터 적용된다. Article 69(3)에 따라 2027-12-11 이전에 시장에 제공된 제품도 Article 14 보고 의무 적용 대상이다. 따라서 2026년 현재의 보안 취약점 대응 연락망과 보고 절차를 CRA 전체 적용일 이후로 미뤄서는 안 된다.
+
+### 83.2 2026-11-17 Commission Guidance — Article 14 보고
+European Commission Guidance C/2026/6013 (OJ C, 17.11.2026)은 인지 시점 이후 단계별 보고를 설명한다.
+- actively exploited vulnerability: 24시간 이내 early warning, 72시간 이내 상세 notification, corrective/mitigating measure 제공 후 14일 이내 final report.
+- severe incident affecting product security: 24시간 이내 early warning, 72시간 이내 incident notification, 72시간 notification 제출 후 1개월 이내 final report.
+- 당국은 중간 진행보고를 요청할 수 있으며, 영향을 받은 사용자에게 필요한 정보를 알려야 한다.
+- 2026-09-11 이전에 제조자가 취약점과 실제 악용 사실 모두를 이미 알고 있었던 경우의 보고 의무 비소급 처리와, 취약점만 알고 실제 악용을 나중에 알게 된 경우의 적용을 구분한다.
+
+공식 지침 원문: https://publications.europa.eu/resource/cellar/dcbc848b-e227-11f1-aefc-01aa75ed71a1.0006.01/DOC_1
+
+### 83.3 iX700M 제품 경계 — 잠정 판단
+공식 제품 아키텍처 자료에서 EtherCAT 및 내부 RS-485, USB/Loader 등 통신·서비스 인터페이스 후보가 확인된 바 있다. 따라서 EU 시장에 제공되고 해당 인터페이스가 의도된 목적 또는 합리적으로 예측 가능한 사용에 포함되는 실제 SKU라면 Article 2(1)의 연결 조건을 충족할 가능성이 높다. 그러나 이는 제품 경계 및 시장 제공 사실이 미확정인 상태의 잠정 판단이지 최종 법률 결론은 아니다.
+
+확인할 제품 경계는 (a) Converter Unit, (b) Drive Unit/축별 모듈, (c) 제어보드와 MCU/메모리, (d) EtherCAT/RS-485/USB/Loader 및 I/O·encoder, (e) PC commissioning/configuration tool, (f) 원격 진단·데이터 처리 서비스, (g) firmware 배포·업데이트 인프라다. 각 요소가 별도 시장에 제공되는지, 하나의 SKU/시스템으로 공급되는지, 누가 자기 상표로 판매하는지 확인해야 한다.
+
+제품이 기계·설비에 통합된다는 사실만으로 CRA 적용이 자동 배제되지는 않는다. 별도 시장 제공되는 하드웨어/소프트웨어 구성요소도 Article 3(1)에 포함될 수 있다. 반대로 실제 EU/EEA 시장 제공 및 상업적 공급 여부가 확인되지 않으면 해당 공급 건에 대한 적용성 결론을 내릴 수 없다.
+
+### 83.4 Important product 분류의 주의점
+서보드라이브라는 명칭 또는 산업용이라는 이유만으로 Annex III Class I/II 중요 제품으로 자동 분류하지 않는다. 실제 제품의 core functionality를 채택된 Annex III 범주 정의와 대조해야 한다. 내장 MCU가 있다는 사실만으로 드라이브 전체가 중요 제품이 되는 것도 아니다. MCU 자체가 별도 시장 제공되는 제품인지, 해당 MCU의 core functionality에 security-related functionalities가 있는지도 분리해서 평가한다. 현 단계 분류는 `not yet determined`이다.
+
+### 83.5 SBOM, 취약점 처리, 업데이트, 지원기간
+Annex I Part II는 기계 판독 가능한 SBOM을 최소 top-level dependencies 범위로 작성하고, 구성요소 및 취약점을 식별·문서화할 것을 요구한다. 취약점은 지체 없이 수정하고 보안 업데이트를 제공해야 하며, 기술적으로 가능한 경우 기능 업데이트와 분리한다. 정기 보안 테스트, 수정된 취약점 정보 공개, coordinated vulnerability disclosure 정책, 외부 보고 연락처, 안전한 업데이트 배포 및 지체 없는 보안 업데이트 제공이 필요하다.
+
+Article 13(8)에 따라 지원기간은 예상 사용기간, 사용자 기대, 제품 성격 등을 반영해 정하고 원칙적으로 최소 5년이다. 제품의 예상 사용기간이 5년보다 짧다면 그 예상 사용기간에 대응한다. Article 13(9)는 지원기간 중 제공된 보안 업데이트가 발행 이후 최소 10년 또는 남은 지원기간 중 더 긴 기간 동안 계속 이용 가능하도록 요구한다. 지원 종료 시점은 사용자에게 명확히 안내해야 한다.
+
+### 83.6 iX700M 현황
+실제 SKU, EU/EEA 공급, 공급망 경제운영자, 독립 판매/통합 형태, 정확한 ST MCU part number, BOM/SBOM, secure boot/firmware signature/key storage/debug lock, 취약점 처리 조직과 보고 연락처, 보안 업데이트 방식, 지원기간 및 업데이트 보존 정책은 모두 `Unknown`이다. 제조사 질의서 상태는 `draft_prepared_not_sent`다. CRA only; SIL 3 excluded.
