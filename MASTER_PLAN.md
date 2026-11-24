@@ -2097,3 +2097,8 @@
 - C/2026/6013은 공식 Publications Office PDF로 직접 접근. C(2026)7861은 OJ 문서가 아니므로 OJ URL을 추정하지 않음.
 - 정확한 Commission interstitial은 source-unavailable로 기록하고 third-party mirror 자동 사용 금지. PDF batch SKIPPED/exit 0, HTML canary 독립 수행. 자동 PDF hash 미확보 사실 유지.
 - PR #218 새 exact HEAD CI와 최종 diff 검토 전 병합 금지.
+
+
+## 2026-11-24 — PR #218 최신 CI 결과
+- Run #1410 success, but C(2026)7861 PDF source step explicitly SKIPPED due official Commission anti-bot interstitial; HTML locator checks and provenance manifest passed. Do not claim PDF artifact capture.
+- Source comment clarified and blob pin refreshed after this run; validate the new exact HEAD before merge.
