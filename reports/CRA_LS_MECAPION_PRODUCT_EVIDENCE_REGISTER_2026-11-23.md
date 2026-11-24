@@ -963,3 +963,12 @@ Actual SKU, EU/EEA supply, economic operators, independent sale/integration, BOM
 - PDF artifact 14974751014, 3,070,565 bytes, SHA-256 c8b1d01f6aba66886a675ac081c978f595ebc5f6c265f3768c40ad2c9be706c7. Provenance 14974510954, 2,566 bytes, SHA-256 0b358609a02446b0615a9a2f07fe591d88b8031ae1460052f2c76e4dd5ba290b. Expiry 2026-12-01.
 - C/2026/5252 fallback=true; do not claim primary mirror byte identity. Product originals remain metadata only.
 - Q62 added for ST MCU identity/security features, firmware/bootloader, SBOM and vulnerability monitoring. Inquiry 62 questions; draft not sent. Unknowns remain.
+
+ 
+## §49. PR #255 / main push Run #1551
+
+- PR #255 exact head 7ed4005622cd5c40f8cf0342c175d8bcdad8eca5, 7 files(+53/-0), reviews/threads 0. Run #1550 SUCCESS 15/15, 189 passed, traceability 388 events, provenance 10, PDF 3/3. Merge SHA a8c51348615461f90560a3cce8443cce98c3b24f.
+- Main push Run #1551 / 45508666768 exact merge SHA SUCCESS, 15/15, 189 passed, traceability 388, provenance 10, PDF 3/3.
+- PDF artifact 14974826452, 3,070,563 bytes, SHA-256 e51c3492d882aeb2f53e30eb5b7fe155a50497bf176e986dd0a68a79d2de1491. Provenance 14974926433, 2,565 bytes, SHA-256 33e66afd51454c1d76a1a49deb0937b7a9c14fddbdf0fd9fdca550d20c069fd5. Expiry 2026-12-01.
+- C/2026/5252 fallback=true; no primary mirror byte identity claim. Product binaries remain metadata only.
+- Inquiry 62 questions, Q61 manual revision and Q62 ST MCU/security/SBOM/vulnerability evidence, draft not sent. Unknowns retained.
