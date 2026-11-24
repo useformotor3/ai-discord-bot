@@ -1,3 +1,13 @@
+## 2026-11-24 — PR #228 병합 및 CI 상태 정정
+
+- PR #228 exact HEAD `474d87b112ae229ed39a397b3964daf3d419b853`; Run #1449 / ID 45305273983 success. Source identity, compile, CRA traceability, full pytest, official CRA PDF/HTML canaries, evidence/provenance upload success.
+- PR #228 변경 3개 파일: PROJECT_LOG.jsonl, PROJECT_STATUS_CURRENT.md, SESSION_LOG.md. diff 검토 완료, review thread 0, PROJECT_LOG 351 records / invalid JSON 0.
+- PR #228 squash merge SHA `3db9896d5727701cb38c6a033d0d0e07f433339b`; main read-back 일치.
+- PR #227 post-merge main Run #1448 / ID 45305187475는 최종 success 확인. PR #228 post-merge main Run #1450 / ID 45308789705는 이 기록 시점 in progress. 마지막 조회에서 compile/traceability/full pytest/CRA PDF canary/evidence upload 성공, HTML canary와 provenance upload는 진행 중.
+- 최신 공식 사이트 직접 조회에서는 전체 매뉴얼 목록과 Servo 필터 목록 모두 iX700M DRIVE 400[V] 매뉴얼 Ver1.3, 게시일 2026-05-26으로 표시됨. 반면 검색엔진 저장 결과에는 Ver1.4가 표시되는 오래된/불일치 색인이 있음. 현 시점 공식 페이지 표시는 Ver1.3으로 정정하되, 첨부 PDF 본문/문서 revision/hash 미확보이므로 파일의 실제 버전은 아직 확정하지 않는다.
+- CE DoC 첨부 링크와 CAD 상세 게시물은 검색/페이지에서 존재와 첨부명은 확인했으나 원본 첨부 다운로드 경로가 cache miss로 실패. PDF/CAD 원본 바이트 및 SHA-256 미확보. DoC 본문 검토 완료로 표현하지 않는다.
+- 작업 브랜치 `research/cra-ix700m-source-refresh-2026-11-24`, 기준 main `3db9896d5727701cb38c6a033d0d0e07f433339b`; 문서/질의서 초안 업데이트 전용. CRA only; SIL 3 제외.
+
 ## 2026-11-24 — PR #227 병합 및 post-merge 검증 대기
 
 - PR #227: https://github.com/useformotor3/ai-discord-bot/pull/227 — squash merge 완료. Exact HEAD `c8d80197907457dedaa93a5f89f3abbe6c25e846`; PR Run #1447 / ID 45305092494 success (source integrity, compile, CRA traceability, full pytest, official CRA PDF/HTML canaries, PDF evidence/provenance uploads).
