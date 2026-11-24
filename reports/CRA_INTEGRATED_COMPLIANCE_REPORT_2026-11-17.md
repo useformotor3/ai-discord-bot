@@ -1660,3 +1660,29 @@ LS메카피온 공식 CE 게시판은 Converter Unit `iX700MCV`와 Drive Unit �
 ### 증거 접근성·품질 기록
 
 검색 결과의 저장된 snippet과 공식 사이트의 현재 페이지 본문이 다를 수 있음을 확인했다. 향후 보고서에서는 검색 snippet만으로 최신 버전 판정을 내리지 않고, 직접 열린 공식 페이지 본문·상세 게시물·원본 첨부를 별도 단계로 구분한다. 원본 첨부 다운로드가 실패하면 실패 사실과 접근 경로를 남기고 파일 확보로 표시하지 않는다.
+
+
+## §69. 2026-11-24 — iX700M 매뉴얼 Ver1.3/Ver1.4 표시 충돌 추가 재검증
+
+2026-11-24 추가 조회에서 공식 LS메카피온 사이트의 서로 다른 페이지 snapshot이 동일한 iX700M 매뉴얼에 대해 서로 다른 revision label을 표시하는 점을 재확인했다.
+
+- 직접 열린 전체 매뉴얼 목록 본문(https://www.lsmecapion.com/bbs/board.php?bo_table=manual&sca=)은 `iX700M DRIVE 400[V] 매뉴얼 Ver1.3`, 게시일 2026-05-26으로 표시한다.
+- 공식 전체 목록의 다른 검색 snapshot(https://www.lsmecapion.com/bbs/board.php?bo_table=manual)과 Servo 필터 검색 snapshot(https://lsmecapion.com/bbs/board.php?bo_table=manual&sca=Servo)은 동일 게시일에 Ver1.4로 표시한다. 다른 snapshot에는 Ver1.3도 남아 있다.
+- 따라서 Ver1.4를 단순히 오래된 검색 색인이라고 단정했던 이전 표현은 보수적으로 수정한다. 현재 결론은 **공식 웹 게시물 표기 충돌—최신 개정판 Unknown**이다. 목록 화면이나 검색 snippet만으로 실제 첨부 PDF의 revision을 확정하지 않는다.
+- 매뉴얼 상세 `wr_id=12652`를 다시 열었으나 cache miss. 첨부 PDF 파일명, 문서번호, 실제 bytes, revision history, SKU applicability, SHA-256은 미확보.
+
+### CE DoC 및 CAD 원본 재접근 결과
+
+- Converter CE 상세 페이지는 열렸고 `iX700MCV` 제목, 모델코드 설명, `[CE_DoC-LVDEMC] iX700MCV.pdf` (234.4K) 첨부 메타데이터가 확인된다. 실제 첨부 URL 클릭은 cache miss. PDF 본문·서명·법령/표준·적용 범위는 검토하지 못했다.
+- Drive CE 게시물 `iX700MD1-B-150B`와 `[CE_DoC-LVDEMC] iX700MD1-B-150B.pdf` (238.9K) 메타데이터는 검색 snapshot에서 확인되지만 상세 페이지는 cache miss. PDF 원본/본문 미확보.
+- CAD 목록 페이지는 iX700M Series 외형도 2D(CAD), 3D(STEP), 게시일 2026-04-21을 표시한다. 상세 링크 `wr_id=12455` 재시도는 cache miss. 원본 DWG/DXF/STEP, 파일명·크기·revision·SHA-256 미확보.
+- 이 자료들은 존재/게시 메타데이터 증거이며, CRA conformity, 실제 SKU, 독립 판매, EU 개별 공급 또는 importer/economic operator를 입증하지 않는다.
+
+### 제조사에 확인할 정확한 요청 항목
+
+1. 매뉴얼 현재 공식 배포 PDF 원본, 문서번호, revision, issue date, 전체 revision history, 변경 요약, 구판 대체 여부 및 SKU/HW/FW 적용 범위.
+2. Ver1.3과 Ver1.4가 실제 두 개 revision인지, 첨부 교체/게시 이력/검색 snapshot 차이인지에 대한 공식 서면 확인.
+3. Converter/Drive CE DoC 각각의 원본 PDF, 문서관리 ID, 적용 모델/SKU, 제조자 법인, 적용 법령/표준, 서명자·발행일, SHA-256.
+4. iX700M 2D CAD DWG/DXF 및 3D STEP 원본 파일, 각 파일명·revision·적용 SKU·크기·SHA-256.
+
+현재 원본 파일은 어느 것도 확보한 것으로 기록하지 않는다.
