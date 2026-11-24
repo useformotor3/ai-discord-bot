@@ -2170,3 +2170,5 @@
 - Converter/Drive CE DoC와 CAD 원본 재시도 결과: Converter 게시물 첨부 클릭 cache miss, Drive 상세 cache miss, CAD 상세 `wr_id=12455` cache miss. 원본 bytes/hash 미확보.
 - 실제 SKU, 독립 판매, EU/EEA 개별 공급, importer/economic operator, BOM/MCU/보안 구성은 Unknown. 질의서 `draft_prepared_not_sent`; 실제 발송/접수/회신 없음.
 - CRA only; SIL 3 제외. 운영 코드/workflow/secrets/API cadence 변경 없음.
+
+- PR #239 Run #1486 failed before tests because the exact source-blob integrity pin was stale. The branch updates the workflow pins to `cra_pdf_sources.py` blob `c24f4d1cda683324930e6449673c49e507ba38a8` and `tests/test_cra_pdf_sources.py` blob `1664ebcfa93f2cdb8888fa1829f0188561319bcf`; this is a pin-only workflow change, not a job or schedule change.
