@@ -3300,3 +3300,10 @@ CRA only; SIL 3 제외.
 - Actual SKU, independent sale, EU/EEA supply, importer/economic operator, BOM/MCU/security configuration remain Unknown. Manufacturer inquiry not sent; `draft_prepared_not_sent`.
 
 CRA only; SIL 3 excluded.
+
+
+## 2026-11-24 — 매뉴얼 목록 snapshot 재검증 정정
+
+- 추가 검색에서 공식 목록의 Ver1.3/Ver1.4 충돌이 계속 재현됨. `bo_table=manual` 및 `bo_table=manual&sca=Servo` 검색 결과는 Ver1.4, `bo_table=manual&sca=` 및 `bo_table=manual&page=1` 결과는 같은 게시물 번호 41을 Ver1.3으로 표시(작성일 2026-05-26).
+- 따라서 직전 문서의 “Ver1.4로 수렴” 문구는 철회하고 “공식 목록 snapshot 간 충돌 unresolved”로 정정. 게시물 `wr_id=12652` 상세/첨부 PDF 원본, 실제 내부 revision 및 hash는 미확보.
+- iX700M CAD 목록 검색은 게시물 #19 / 2026-04-21 및 2D(CAD), 3D(STEP) 첨부 구성을 재확인. 상세 URL `wr_id=12455`는 timeout. 원본 bytes/hash 미확보.
