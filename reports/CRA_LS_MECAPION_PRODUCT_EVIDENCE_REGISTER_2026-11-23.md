@@ -945,3 +945,12 @@ Actual SKU, EU/EEA supply, economic operators, independent sale/integration, BOM
 - CRA PDFs 3/3 fetched/hash verified. C/2026/5252 fallback=true (1,190,726 bytes, 84 pages, SHA-256 fe209c250e3d1f7599e42826d91963666951332927edcf511a2e79fe8d2f8234); OJ C/2026/6013 (2,709,282 bytes, 61 pages, SHA-256 40ca76caeb0108f5b97c8f373a95f590b453fe92bd45a483addf3326e48c1dc2); M/606 Annex (151,267 bytes, 6 pages, SHA-256 262b09596cb5cbe7d72a2c7789fb2512ee00db7f69082e7def2c8181b0f63276).
 - PDF artifact ID 14973509955: 3,070,565 bytes, SHA-256 ca03854e1a1fc393292d0676a9e73276fedb8f4e12f91f62ed08f5aba05ba8f7. Provenance artifact ID 14973037845: 2,565 bytes, SHA-256 ac0f673fc8844fcd62977fad35e0c0d1a00d2e2aab8ad78bdbe8f2728c74623c. Expiry 2026-12-01.
 - C/2026/5252 fallback copy is not asserted byte-identical to original mirror. These artifacts are CRA source packs, not iX700M product binaries.
+
+ 
+## §47. PR #253 merge 및 Run #1547 main CI
+
+- PR #253 exact head f1322bccae3042d18d2b922deb3b394c76b48a53, base cffd2118d2ce4127e50352650479553cb12c2bdf, 7 files(+104/-0), reviews 0, threads 0. Run #1546 / 45507438974 SUCCESS, 15/15, 189 passed, traceability 386 events, 10-source provenance, PDF 3/3. Merge SHA e89faa6f9d907edcaf09adbd8f72eb81091ed279.
+- Main push Run #1547 / 45507593050 exact merge SHA SUCCESS, 15/15, 189 passed, traceability 386, 10-source provenance, PDF 3/3.
+- C/2026/5252 fallback=true, 1,190,726 bytes, 84 pages, SHA-256 fe209c250e3d1f7599e42826d91963666951332927edcf511a2e79fe8d2f8234. OJ C/2026/6013 SHA-256 40ca76caeb0108f5b97c8f373a95f590b453fe92bd45a483addf3326e48c1dc2. M/606 Annex SHA-256 262b09596cb5cbe7d72a2c7789fb2512ee00db7f69082e7def2c8181b0f63276.
+- Run #1547 PDF artifact 14974835241, 3,070,565 bytes, SHA-256 10baf4713686d065422e9efa744ab7513767313ca23538d355520a3d18f2ce7e; provenance 14972713583, 2,565 bytes, SHA-256 040ebe67de2ba6a9b706f2666e01e74473bfdc1a75e2c613c9fc0df0bb8d92cf; expiry 2026-12-01.
+- Manual index Ver1.4 vs Ver1.3 conflict remains; Q61 added. No original iX700M binary acquired. Unknowns retained.

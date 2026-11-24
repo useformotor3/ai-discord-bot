@@ -2474,3 +2474,24 @@ PR #253 초기 실행 Run #1541은 이전 head `c0b3c56c612b5a014465e9f68bf9fb3e
 Run #1542는 CRA PDF 3종을 모두 fetch/hash 검증했다. C/2026/5252는 fallback=true로 1,190,726 bytes, 84 pages, SHA-256 `fe209c250e3d1f7599e42826d91963666951332927edcf511a2e79fe8d2f8234`; OJ C/2026/6013은 2,709,282 bytes, 61 pages, SHA-256 `40ca76caeb0108f5b97c8f373a95f590b453fe92bd45a483addf3326e48c1dc2`; M/606 Annex는 151,267 bytes, 6 pages, SHA-256 `262b09596cb5cbe7d72a2c7789fb2512ee00db7f69082e7def2c8181b0f63276`. fallback 취득본은 원래 mirror와 바이너리 동일성을 주장하지 않는다.
 
 PDF ZIP artifact ID 14973509955 (3,070,565 bytes, SHA-256 `ca03854e1a1fc393292d0676a9e73276fedb8f4e12f91f62ed08f5aba05ba8f7`), provenance ZIP artifact ID 14973037845 (2,565 bytes, SHA-256 `ac0f673fc8844fcd62977fad35e0c0d1a00d2e2aab8ad78bdbe8f2728c74623c`), 만료 2026-12-01. 이들은 CRA 법령·가이드 출처 pack이며 iX700M 제품 원본 파일이 아니다.
+
+ 
+## §89. 2026-11-25 — PR #253 병합 및 main push Run #1547
+
+### 89.1 PR 및 main CI
+PR #253 exact head `f1322bccae3042d18d2b922deb3b394c76b48a53`, base `cffd2118d2ce4127e50352650479553cb12c2bdf`, 7 files(+104/-0), reviews 0, inline threads 0. Run #1546 / 45507438974는 completed/success, 15/15 steps, pytest 189 passed, traceability 386 events PASS, 10-source provenance PASS, CRA PDF 3종 fetch/hash PASS. Expected-head squash merge SHA `e89faa6f9d907edcaf09adbd8f72eb81091ed279`.
+
+Post-merge main push Run #1547 / 45507593050은 event=push, exact head가 merge SHA와 일치, completed/success, 15/15 steps, pytest 189 passed, traceability 386 events PASS, provenance 10 records JSON round-trip PASS, PDF 3종 fetch/hash PASS다.
+
+### 89.2 CRA PDF 및 artifact
+C/2026/5252 fallback bytes: 1,190,726 bytes, 84 pages, SHA-256 `fe209c250e3d1f7599e42826d91963666951332927edcf511a2e79fe8d2f8234`, fallback=true. OJ C/2026/6013: 2,709,282 bytes, 61 pages, SHA-256 `40ca76caeb0108f5b97c8f373a95f590b453fe92bd45a483addf3326e48c1dc2`. M/606 Annex: 151,267 bytes, 6 pages, SHA-256 `262b09596cb5cbe7d72a2c7789fb2512ee00db7f69082e7def2c8181b0f63276`. C/2026/5252의 hash는 fallback에서 수신한 파일의 hash로만 사용하며 primary mirror와 byte-identical이라고 주장하지 않는다.
+
+Run #1547 PDF ZIP artifact ID 14974835241, 3,070,565 bytes, SHA-256 `10baf4713686d065422e9efa744ab7513767313ca23538d355520a3d18f2ce7e`; provenance ZIP artifact ID 14972713583, 2,565 bytes, SHA-256 `040ebe67de2ba6a9b706f2666e01e74473bfdc1a75e2c613c9fc0df0bb8d92cf`; 만료 2026-12-01. 이 artifact들은 CRA 법령·가이드 출처 pack이며 제품 원본이 아니다.
+
+### 89.3 iX700M 원본 취득 및 매뉴얼 버전 문제
+제조사 매뉴얼 목록은 기본 및 Servo 필터에서 Ver1.4를 표시하지만 빈 `sca=` 필터에서는 Ver1.3을 표시하며, 둘 다 2026-05-26 게시일로 보인다. 상세 `wr_id=12652`는 502. 이를 단순 오기로 판단하지 않고 Q61에서 (1) 현재 유효한 통제본, (2) Ver1.3/1.4 변경 이력 및 대체 관계, (3) 각 버전의 실제 발행·승인일, (4) SKU/HW revision/옵션별 적용 범위, (5) 구버전 폐기 여부와 현장 공급 제품과의 관계를 확인하도록 했다. 원본 매뉴얼 PDF는 미취득.
+
+Drive EU DoC, Converter CE/UKCA DoC, KR/EN catalogue, CAD 2D/3D STEP 역시 게시 metadata만 있고 원본 binary는 미취득. Q60은 통제된 공식 전송과 file checksum/signature/model scope를 요구한다.
+
+### 89.4 미확정 사항
+실제 SKU, EU/EEA 공급, 경제운영자, signed DoC coverage, BOM/정확한 MCU/SBOM, 보안 설정, CRA 제품 분류, 취약점 대응, 보안 업데이트·지원기간은 Unknown. 제조사 질의서 61문항은 미발송 초안.
