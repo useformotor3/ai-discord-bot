@@ -2049,3 +2049,20 @@
 - C(2026)5252 and C/2026/6013 PDF hashes confirmed. C(2026)7861 Commission register timeout remains explicit unavailable.
 - 11-file diff reviewed; no production main.py, secrets, API cadence or production workflow changes.
 - iX700M independent sale/EU individual PDE supply and actual SKU remain Unknown.
+
+
+## 2026-11-24 — PR #229 병합 및 main 사후 검증 상태
+
+- PR #229 exact HEAD `ccacd96f90ef9119d3b6c86abcec243a23561d9e`의 Run #1451 / ID `45309037166` 최종 success. 25개 단계 완료: source blob identity, compile, CRA traceability, 전체 pytest, 공식 CRA PDF/HTML canary, PDF evidence 및 provenance manifest 업로드.
+- 변경 7개 문서 파일 diff 검토, review thread 0, PROJECT_LOG 353 records / invalid JSON 0 재확인.
+- squash merge SHA `4263389aa79cbb7cc17ccda3a019c659ccddef85`; main 기준으로 post-merge 동기화 작업 브랜치를 생성.
+- main read-back: 병합 후 상태판/세션 로그/증거등록부/통합 보고서 blob을 읽어 병합 결과가 main에 반영된 것을 확인. Main push CI는 아직 실행 결과를 확인하지 못해 pending/unverified로 유지하며 success로 간주하지 않는다.
+- 공식 iX700M 매뉴얼 PDF, Converter/Drive CE DoC PDF, CAD DWG/DXF/STEP 원본은 미확보. 실제 SKU, 독립 판매, EU/EEA 공급 및 importer/economic operator, 내부 BOM/MCU/보안 구성도 Unknown. 제조사 질의서는 draft_prepared_not_sent 상태.
+- CRA only; SIL 3 제외. 운영 코드/workflow/secrets/API cadence 변경 없음.
+
+
+## 2026-11-24 — iX700M 매뉴얼 버전 표시 추가 교차검증
+
+- 공식 페이지의 서로 다른 조회 결과에서 Ver1.3과 Ver1.4가 모두 확인됨. 직접 열린 전체 매뉴얼 목록/Servo 필터의 한 snapshot은 Ver1.3을 표시하고, 다른 공식 검색결과 snapshot은 Ver1.4를 표시한다. 이를 검색 캐시 오류로 단정하지 않고 unresolved conflict로 격상.
+- 매뉴얼 상세 게시물 `wr_id=12652` 및 Converter DoC 첨부 `wr_id=12886` / CAD 상세 `wr_id=12455`는 재시도했으나 cache miss. Drive DoC 상세 페이지도 cache miss. PDF/CAD 원본 bytes/hash 미확보.
+- 최신 개정판 확정 금지. 제조사 원본 PDF와 document number/revision/issue date/change history/SKU applicability/SHA-256 확인 필요.

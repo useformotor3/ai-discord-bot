@@ -3224,3 +3224,24 @@
 - Source identity, compile, CRA cross-matrix traceability, complete pytest, official CRA PDF and HTML read-only canaries, PDF evidence upload, provenance manifest upload 모두 성공.
 - main branch read-back SHA와 PR #228 squash merge SHA 동일.
 - 이전 로그의 in-progress는 조회 당시 상태로 보존하고 이 항목으로 최종 결과를 추가했다.
+
+
+## 2026-11-24 — PR #229 exact-HEAD CI 성공 및 squash merge
+
+- PR #229: https://github.com/useformotor3/ai-discord-bot/pull/229. Exact HEAD `ccacd96f90ef9119d3b6c86abcec243a23561d9e`; Run #1451 / ID `45309037166` success.
+- 25개 job step 전부 success. Source blob identity, compile, CRA cross-matrix traceability, complete pytest, official CRA PDF/HTML read-only canaries, evidence/provenance artifact uploads 완료.
+- Artifacts: official PDF evidence ID `14882107200`, 2,922,422 bytes, ZIP SHA-256 `85d61b226a35159a80627494f175f886a760d55b187d133be73b602b1eb9112a`; provenance ID `14882875485`, 2,565 bytes, ZIP SHA-256 `d45087b09afa6a1fc17d68bbc535d2eadfda464e0087e8c337f80d2e40d36968`.
+- 7개 파일 diff 검토, review thread 0. PROJECT_LOG 353 records / invalid JSON 0. PR ready 전환 후 expected head SHA를 지정해 squash merge.
+- Merge SHA `4263389aa79cbb7cc17ccda3a019c659ccddef85`; main post-merge CI는 현재 도구 조회에서 run/status를 확인하지 못해 pending/unverified. 병합 성공과 post-merge CI 성공을 혼동하지 않는다.
+- 매뉴얼/CE DoC/CAD 원본 다운로드는 여전히 cache miss/미확보. 매뉴얼 목록 Ver1.3 대 검색 snippet Ver1.4 충돌은 제조사 확인 전 unresolved. 실제 SKU·독립 판매·EU 공급·수입자/경제운영자·BOM/MCU/보안 구성 Unknown.
+- 질의서 발송/접수/회신 없음. CRA only; SIL 3 제외. 작업 브랜치 `docs/cra-pr229-post-merge-sync-2026-11-24`, 기준점은 merge SHA.
+
+
+## 2026-11-24 — iX700M 원본 첨부 재시도 및 매뉴얼 버전 충돌 재분류
+
+- 공식 검색 결과를 추가 비교한 결과, iX700M DRIVE 400[V] 매뉴얼 Ver1.4가 all-manual/Servo filter 검색 snapshot에서 확인되는 한편, 직접 열린 all-manual/Servo list body snapshot에서는 Ver1.3이 확인됨. 기존에 Ver1.4를 stale index로 단정한 표현은 과도하므로 철회하고, 현 시점에는 Ver1.3/Ver1.4 표시 충돌로 분류.
+- 공식 Converter CE 페이지는 본문과 첨부명 `[CE_DoC-LVDEMC] iX700MCV.pdf`(234.4K)를 재확인했으나, 첨부 클릭 download URL cache miss. Drive CE 페이지도 cache miss. DoC PDF 본문은 미검토.
+- CAD 목록은 iX700M 2D(CAD)/3D(STEP) 게시와 2026-04-21 날짜를 재확인. 상세 링크 `wr_id=12455`는 cache miss. DWG/DXF/STEP 원본 파일명·크기·revision·hash 미확보.
+- 매뉴얼 상세 `wr_id=12652` 역시 cache miss. 파일 revision/hash는 제조사 원본 확보 전 Unknown.
+- 관련 원본 URL: https://www.lsmecapion.com/bbs/board.php?bo_table=manual ; https://lsmecapion.com/bbs/board.php?bo_table=manual&sca=Servo ; https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&sca=CE&wr_id=12886 ; https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&page=4&wr_id=12888 ; https://www.lsmecapion.com/bbs/board.php?bo_table=drawing&sca=Servo+Drive .
+- 실제 SKU, 독립 판매, EU 공급 및 importer/economic operator는 Unknown. 제조사 질의서 draft_prepared_not_sent; 발송·접수·회신 없음.
