@@ -1,4 +1,14 @@
 
+## 2026-11-24 — PR #239 병합 및 공식 iX700M 자료 재접근 정정
+
+- PR #239 closed/merged. Final PR HEAD e9a15eeaf69e56e610352941f5330604bf78639e, base 1e218a61d09a280d8c4c2ec168c225c6456f215b, 9 files, reviews 0 / threads 0. Branch CI Run #1497 / 45320409623 success 25/25, pytest 189 passed. Merge SHA 7d1fe1012bd2f8a8e1540918b43b58b4b41014f5.
+- Post-merge main push Run #1503 / 45321136198, event=push, exact main SHA, success 25/25. Main HEAD read-back identical; PROJECT_LOG 369 records / invalid 0.
+- PR #239 bounded retry fix recovers C(2026)7861 Annex after Runs #1483–#1485 timeout. Run #1497 PDF artifact 14887520943 contains 3/3 PDFs; M606 Annex SHA-256 262b09596cb5cbe7d72a2c7789fb2512ee00db7f69082e7def2c8181b0f63276 matches Run #1481 original.
+- Solution Square Motion & Servo list confirms iX700M manual metadata/update 2026-09-16, but SPA detail/PDF remains inaccessible. LS Mecapion Servo filter says Ver1.4 while unfiltered index says Ver1.3 for post no.41/date 2026-05-26; actual PDF/revision unresolved. Converter/Drive CE DoC and CAD attachments remain metadata-only; binary originals not acquired.
+- PR #229 main push Run #1452 / 45312941583 is verified success 25/25 for merge SHA 4263389aa79cbb7cc17ccda3a019c659ccddef85; any earlier pending/unverified text is stale and superseded by this record.
+- Actual SKU, independent sale, EU/EEA supply, importer/economic operator, BOM/MCU/security remain Unknown. Manufacturer inquiry draft_prepared_not_sent; no send/receipt/reply proof.
+- Report §75 and evidence register §32 added. CRA only; SIL 3 excluded.
+
 ## 2026-11-24 — PR #238 merge, Run #1485 and M/606 source retry fix
 
 - PR #238 exact HEAD `dc5c5ce30ff2d58ff6c1edd8910a7a9998361be8`, Run #1484 success 25/25; 6 files, JSONL 366 / invalid 0, reviews/threads 0, base `792eea6388382a1932f1b775e57776a7ccacf3a6`. Expected-head merge SHA `1e218a61d09a280d8c4c2ec168c225c6456f215b`.
