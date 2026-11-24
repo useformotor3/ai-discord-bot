@@ -1,4 +1,12 @@
 
+## 2026-11-24 — PR #240 병합 및 사후 Run #1508 성공
+
+- PR #240 exact HEAD 6f94454ffe41e313c8450918b43b58b4b41014f4, base 7d1fe1012bd2f8a8e1540918b43b58b4b41014f5, 6 files, reviews 0 / threads 0, JSONL 371 / invalid 0. Run #1507 / 45329806653 success 25/25. Expected-head merge SHA 36b38bfa5ced2894f3bfb06c226706ce0a9bf38b.
+- Main read-back matches merge SHA. Post-merge main push Run #1508 / 45329930118 exact SHA success 25/25. PDF artifact 14890384807 (3,070,567B, SHA-256 1cb11a4d35de7c922efd5ad2a8d49aada8929875682d20e520c5c9b50f4f19ba), provenance artifact 14891920424 (2,565B, SHA-256 b807be3bd107fc03c70a3fe7f4d59501f1fbcc87e91233286a68600440cc2fc5). PDF 3/3, all three hashes match prior verified set.
+- New exact manufacturer URLs recorded in report §76 / evidence register §33: manual detail wr_id=12652 (502/timeout), Drive CE detail opened but PDF download timed out, Converter CE detail timeout, CAD detail wr_id=12455 timeout. Solution Square remains SPA-only metadata; no fabricated detail URL.
+- Manual list conflict: default + Servo filter Ver1.4; explicit sca= Ver1.3. Original PDF/revision unresolved. Actual SKU, independent sale, EU/EEA supply, importer/economic operator, BOM/MCU/security Unknown; inquiry draft_prepared_not_sent.
+- CRA only; SIL 3 excluded.
+
 ## 2026-11-24 — 매뉴얼 버전 목록 snapshot 정밀 정정
 
 - 재조회 결과 기본 manual 목록과 Servo 필터 목록은 Ver1.4 (2026-05-26)를 표시하고, 명시적 빈 카테고리 파라미터 sca= 목록만 Ver1.3 (동일 게시글 번호 41/날짜)을 표시한다.
