@@ -2514,3 +2514,20 @@ Q62 asks manufacturer to disclose exact MCU vendor/family/part number/silicon re
 
 ### 90.4 미확정 사항
 Actual SKU, EU/EEA supply, economic operators, signed DoC coverage, BOM/exact MCU/SBOM, security configuration, CRA product classification, vulnerability handling, security update/support period remain Unknown. Manufacturer inquiry 62 questions, draft not sent.
+
+ 
+## §91. 2026-11-25 — PR #255 및 main push Run #1551
+
+### 91.1 PR and main CI
+PR #255 exact head `7ed4005622cd5c40f8cf0342c175d8bcdad8eca5`, base `dc1704557e1c3e1071383701d7a4615546814054`, 7 files(+53/-0), reviews 0, inline threads 0. Run #1550 / 45508489490 completed/success, 15/15 steps, pytest 189 passed, traceability 388 events PASS, 10-source provenance PASS, PDFs 3/3 fetch/hash PASS. Expected-head squash merge SHA `a8c51348615461f90560a3cce8443cce98c3b24f`.
+
+Main push Run #1551 / 45508666768 exact merge SHA, completed/success, 15/15 steps, pytest 189 passed, traceability 388 events PASS, 10-source provenance manifest JSON round-trip PASS, PDFs 3/3 fetch/hash PASS.
+
+### 91.2 Artifacts and source hashes
+Run #1551 PDF ZIP artifact ID 14974826452, 3,070,563 bytes, SHA-256 `e51c3492d882aeb2f53e30eb5b7fe155a50497bf176e986dd0a68a79d2de1491`; provenance ZIP artifact ID 14974926433, 2,565 bytes, SHA-256 `33e66afd51454c1d76a1a49deb0937b7a9c14fddbdf0fd9fdca550d20c069fd5`; expiry 2026-12-01. C/2026/5252 fallback=true; hash only identifies fallback bytes. OJ C/2026/6013 and M/606 Annex direct fetch/hash verified.
+
+### 91.3 Manufacturer evidence
+Further official site searches continue to return metadata but no downloadable iX700M original files. Manual revision conflict, signed DoC coverage, Converter CE/UKCA, catalogue and CAD native binary remain unresolved. Q61 requests controlled manual revision and model applicability. Q62 requests exact ST MCU part/revision by SKU, security configuration, boot/firmware identity, secure boot/debug/readout protection/cryptographic key lifecycle, SPDX/CycloneDX SBOM, third-party components and vulnerability handling. No credentials or secret keys are requested. Manufacturer inquiry 62 questions, draft not sent.
+
+### 91.4 Unknowns
+Actual SKU, EU/EEA supply, economic operators, signed DoC scope, BOM/exact MCU/SBOM, security configuration, CRA classification, vulnerability handling, security update/support period remain Unknown.
