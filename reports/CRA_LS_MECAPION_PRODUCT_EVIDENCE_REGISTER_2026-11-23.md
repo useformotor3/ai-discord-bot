@@ -869,3 +869,32 @@ All product implementation claims remain Unknown pending original documents and 
 ### 유지할 Unknown
 실제 SKU, 독립 판매/통합 공급, EU/EEA 공급, 수입자·경제운영자, 정확한 MCU/BOM/SBOM, secure boot·서명·키 관리·debug lock, 취약점 처리, 보안 업데이트 방식 및 지원기간은 모두 Unknown.
 CRA only; SIL 3 excluded.
+
+
+## §42. 2026-11-25 — main push CI exact SHA 증거 및 iX700M 원본 취득 재시도
+
+### Main push CI — GitHub Actions API 직접 조회
+- PR #248 merge SHA dd09fc13cf9076c5cf895f4a8e8727f525847ee4 → Run #1526 / 45486715925, event push, head_sha exact match, completed/success. Job #138773948774: 15/15 returned steps success (step numbers 1-12,23-25), logs 459 lines, pytest 189 passed.
+- PR #249 merge SHA e0a0af3aa7d29acb9fa0e26bddf466af7f3398b5 → Run #1528 / 45487328163, event push, head_sha exact match, completed/success. Job #138776089059: 15/15 returned steps success (step numbers 1-12,23-25), logs 459 lines, pytest 189 passed.
+- Both runs: compile and source blob identity PASS; CRA cross-matrix traceability PASS; 3 official Commission CRA PDFs fetched and SHA-256 verified; 10 allowlisted official sources and Article 13(8)/2025/2392 source locators PASS; provenance manifest JSON roundtrip PASS; artifacts uploaded.
+- Run #1526: PDF pack 3,070,565 bytes digest 9c7dfa9ddcca2c6d4573350f8487fe3f18897e075417dbd316987afe4a2c0f92; provenance 2,565 bytes digest a03785341ce79aa969f47ddcbcdfb56455079b3829d67f0f59e47d7ffc40ad1.
+- Run #1528: PDF pack 3,070,567 bytes digest a917f455caea993d26a77e796fe47f35541647b55150b6400d89973e46897212; provenance 2,565 bytes digest a94615984a6380b86bea590a346a757a4a58eda03a3c1ce93cf2dbf339331ea1.
+- These artifact bundles contain official CRA source documents/provenance, not LS Mecapion product manuals, declarations or CAD. Expiry 2026-12-01.
+- Warnings only: Node.js 20 action deprecation and node url.parse deprecation. No failed steps. No workflow edit made.
+
+### iX700M manufacturer source retry
+- Manual index: Ver1.4 post wr_id=12652 / 2026-05-26; empty category list also shows Ver1.3. Detail page timed out. Original PDF not obtained.
+- Drive EU DoC: post wr_id=12888, model iX700MD1-B-150B, 238.9KB metadata only.
+- Converter CE DoC: post wr_id=12886, iX700MCV 480Vac 15/37/55/75kW, 234.4KB metadata only.
+- Converter UKCA DoC: post wr_id=12893, same Converter family, 224.1KB metadata only; UKCA is not EU DoC.
+- KR/EN catalogue: post wr_id=12110, each 10.7MB metadata only.
+- CAD: post wr_id=12455, 2D CAD/3D STEP listing dated 2026-04-21; detail timeout, no archive downloaded.
+- Public product page states multi-axis modular EtherCAT, AC 380–480V, 4.5–75kW, 16.1–168A/axis. Series information only, not proof of actual delivered SKU.
+- No original product bytes, SHA-256, signature or content verification. Source links: https://lsmecapion.com/bbs/board.php?bo_table=manual ; https://lsmecapion.com/bbs/board.php?bo_table=manual&sca= ; https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&page=4&wr_id=12888 ; https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&sca=CE&wr_id=12886 ; https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&page=3&wr_id=12893 ; https://www.lsmecapion.com/bbs/board.php?bo_table=catalog&wr_id=12110 ; https://www.lsmecapion.com/bbs/board.php?bo_table=drawing&sca=Servo+Drive&wr_id=12455 ; https://www.lsmecapion.com/bbs/board.php?bo_table=pd_drive
+
+### 질의서 변경
+- 47 → 55 questions. Added covered SKU/options and model scope for Drive/Converter CE DoCs, exact Converter rating-to-order-code mapping, lineup and catalogue/manual/CAD mapping, manual revision authority, PDF signature/authenticity and CAD native-file metadata.
+- State remains draft_prepared_not_sent.
+
+### Unknown 유지
+Actual SKU, EU/EEA supply, economic operators, independent sale/integration, BOM/exact MCU/SBOM, security settings, PSIRT/CVD, update policy and support period remain Unknown. CRA only; SIL 3 excluded.
