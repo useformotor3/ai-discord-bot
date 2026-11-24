@@ -3516,3 +3516,9 @@ CRA only; SIL 3 excluded.
 주의: 2026-03-09 KC 인덱스에는 iX700MD1-B-075B/150B/220B/370B, iX700MD2-B-045B, iX700MCV-B-150/370/550/750, iX700MCB-B-8K 등 별도 모델 목록이 보인다. KC listing은 한국 적합성 자료이며 EU DoC 범위의 증거로 전용하지 않는다. 이 목록은 제조사에 CE/UKCA DoC를 모든 모델별로 연결해 달라는 질의를 보강하는 데만 사용한다.
 
 새 질의 Q56-Q58은 CE 인덱스의 iX700MCB 및 Drive model group별 개별 DoC 존재·coverage, CE와 KC listing의 scope 분리, 제품 구성·시스템 통합 경계를 확인한다. Actual SKU and EU supply remain Unknown.
+
+
+## CI 운영 메모 — PR #250 문서 연속 커밋 후 exact HEAD 재검증
+
+- PR #250 문서 변경을 여러 파일에 순차 반영하는 동안 중간 PR workflow runs #1530/#1531/#1532는 후속 head 갱신에 따라 cancelled 처리됐다. 이들은 테스트 실패가 아니라 이전 head에 대한 실행 취소이며 최종 head의 통과 증거로 사용하지 않는다.
+- 마지막 변경 커밋 이후 새 exact-head run이 완료되는지 확인하고, 해당 run의 job/steps/log를 검증하기 전에는 PR #250을 병합하지 않는다.
