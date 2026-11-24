@@ -972,3 +972,11 @@ Actual SKU, EU/EEA supply, economic operators, independent sale/integration, BOM
 - PDF artifact 14974826452, 3,070,563 bytes, SHA-256 e51c3492d882aeb2f53e30eb5b7fe155a50497bf176e986dd0a68a79d2de1491. Provenance 14974926433, 2,565 bytes, SHA-256 33e66afd51454c1d76a1a49deb0937b7a9c14fddbdf0fd9fdca550d20c069fd5. Expiry 2026-12-01.
 - C/2026/5252 fallback=true; no primary mirror byte identity claim. Product binaries remain metadata only.
 - Inquiry 62 questions, Q61 manual revision and Q62 ST MCU/security/SBOM/vulnerability evidence, draft not sent. Unknowns retained.
+
+ 
+## §50. PR #256 / main push Run #1553
+
+- PR #256 exact head ef3af6e9b4725422331737db6779429cb10504b3, 6 files(+46/-0), reviews/threads 0. Run #1552 SUCCESS 15/15, 189 passed, traceability 389 events, provenance 10, PDF 3/3. Merge SHA 0c732caa45e7fac532117e2a658463acc546ee72.
+- Main push Run #1553 / 45509151327 exact merge SHA SUCCESS, 15/15, 189 passed, traceability 389, provenance 10, PDF 3/3.
+- PDF artifact 14973833111, 3,070,564 bytes, SHA-256 f0db5c8cffd867ff65d7ede817ba7ef9e373f07ea4a54a119fa02be114288714. Provenance 14974127712, 2,565 bytes, SHA-256 90c4ce87a3ba6c2b0075b9c8cfd588fec0152771ef17a9679f2e4731e461ca6a. Expiry 2026-12-01.
+- C/2026/5252 fallback=true; hash only identifies fallback bytes. No original iX700M binary acquired; metadata only. Inquiry 62 questions, draft not sent.
