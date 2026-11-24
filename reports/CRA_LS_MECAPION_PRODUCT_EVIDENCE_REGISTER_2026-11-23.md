@@ -914,3 +914,14 @@ Actual SKU, EU/EEA supply, economic operators, independent sale/integration, BOM
 - Do not report 3/3 PDFs fetched for #1535/#1536. Earlier #1526/#1528 logs separately confirm 3/3. Temporary source outage is a skipped canary, not a failing test; workflow conclusion success. No actual errors. Node20/punycode/url.parse deprecation warnings.
 - PR #250 diff 7 files(+179/-0), no reviews/threads, JSONL 382/0 invalid, expected-head squash merge.
 - Product binary status unchanged: manual, signed EU/CE/UKCA DoCs, catalogue and CAD native files not downloaded; metadata only. Actual SKU/EU supply/operator/BOM/MCU/SBOM/security remain Unknown.
+
+ 
+## §44. 2026-11-25 — PR #251 및 main push Run #1538
+
+- PR #251 exact head `4e2dfd558bb69ab682f4d639a6c8387a1df6bad3`, base `ff42addc136836bbbb89bec48bb0c791f031db19`, 6 files(+54/-0), reviews 0, threads 0, JSONL 383/0 invalid. Run #1537 / 45491681394 success, 15/15 steps, 189 passed, traceability 383 events, 10-source provenance PASS. 2026-5252 timed out; 2/3 PDFs fetched. Merge SHA `4c386689ab42c48e01456b72055217a75a78b14a`.
+- Main push Run #1538 / 45505264304 exact merge SHA success, 15/15 steps, 189 passed, traceability 383, 10-source provenance PASS. 2026-5252 HTTP 429 -> SKIPPED; OJ C/2026/6013 and M/606 C(2026)7861 Annex fetched and SHA-256 verified.
+- #1537 PDF ZIP 1,906,868 bytes SHA-256 eadca2c5a44c934134c83947d8ec7f248ca41f67f22bffce57b242bd683b158a; provenance ZIP 2,565 bytes SHA-256 daf43bea110d65240c2f73ed659726cced876f9909644c74304a14f4bbce2b7f.
+- #1538 PDF ZIP 1,906,816 bytes SHA-256 bab3279433d4178f275a9bf2c3860d28f3dd4f99238d156f31fde4ff5b043afe; provenance ZIP 2,565 bytes SHA-256 34edad760c791d48e390712847d3d0ec01f459515314bbf54918e2a24b8e4e17. Artifacts expire 2026-12-01; Commission source pack, not product binaries.
+- No test failures; Node20/punycode/url.parse deprecation warnings. Do not overstate 3/3 PDF acquisition.
+- iX700M manual/DoC/catalogue/CAD original binaries still not acquired. Official listing metadata only; detail pages inaccessible/502. Q59 added for product core-functionality classification and Annex III/IV/Article 32 evidence.
+- Actual SKU, EU/EEA supply, economic operators, BOM/MCU/SBOM, security settings and classification remain Unknown. CRA only; SIL 3 excluded.
