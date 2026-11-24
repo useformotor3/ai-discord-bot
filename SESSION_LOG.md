@@ -3578,3 +3578,10 @@ CRA only; SIL 3 excluded.
 - Artifacts and digests in report §90/evidence §48.
 - Product binary retrieval remains unsuccessful; official listing metadata only. Q62 added for exact ST MCU and security/SBOM/vulnerability evidence. Inquiry 62 questions, draft not sent.
 - Unknowns retained; CRA only, SIL 3 excluded.
+
+ 
+## PR #255 / main Run #1551 completion
+- PR #255 exact head 7ed4005622cd5c40f8cf0342c175d8bcdad8eca5, 7 docs(+53/-0), reviews/threads 0. Run #1550 SUCCESS 15/15, 189 passed, traceability 388, provenance 10, PDFs 3/3. Merge SHA a8c51348615461f90560a3cce8443cce98c3b24f.
+- Main push Run #1551 / 45508666768 exact SHA SUCCESS, 15/15, 189 passed, traceability 388, provenance 10, PDFs 3/3. C/2026/5252 fallback=true; hash only identifies fallback bytes.
+- Artifact IDs/digests in report §91/evidence §49. Q61/Q62 retained; 62-question inquiry draft not sent. No product binaries acquired.
+- Unknowns retained. CRA only; SIL 3 excluded.
