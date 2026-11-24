@@ -1,3 +1,15 @@
+## 2026-11-24 — PR #224 병합 및 상시 다음 단계 버튼·재귀개선 모방 규약 등록
+
+- PR #224 squash merge 완료: https://github.com/useformotor3/ai-discord-bot/pull/224
+- Merge SHA: 8351a511c51fcb6d63ec84b59dc2b96ccf90f7d2. Exact HEAD ccb1ed8e9c38d1c0b31054186379d6964ae55a41.
+- Run #1441 / ID 45298189166: success. Source identity, compile, CRA traceability, full pytest, official CRA PDF/HTML canaries, PDF evidence and provenance uploads all passed. 12 job steps completed.
+- Artifacts: PDF evidence 14876504424 (SHA-256 digest 3e711181756b0b8d41338b9a4634ee8468d97f898255ef099fd3a0aa543943de); provenance 14876763752 (SHA-256 digest 380a67723580762414d333de359b4ed6ca75ad41a3fd1674275bc62a4a594ff2).
+- 상시 버튼 및 payload 규약 문서 추가: docs/AI_CONTINUOUS_IMPROVEMENT_AND_NEXT_STEP_PROTOCOL.md. 주요 CRA 진행 응답 끝에 '다음 단계 계속 진행' 버튼을 제공하고, 버튼은 최신 GitHub 상태 재확인·관련성 평가·증거검증·실제 작업·테스트·로그 갱신·다음 버튼 재제공을 요청한다.
+- 최신 연구 반영: MemDev-Bench(arXiv:2610.27524, 2026-10-20)의 관련성 재평가/무관 메모리 오염/원시 trajectory 보존, Continual AutoResearch(arXiv:2611.05108, 2026-11-03)의 보유 상태와 성과 차이, Self-Improvements survey(arXiv:2607.13104)의 prompt-memory-tools-control scaffold, Dual-Process Agent(2026-03-16)의 fast retrieval + conservative slow reflection을 운영 규칙으로 변환했다.
+- 실제 모델 가중치 학습이 아닌 GitHub 외부 메모리·프롬프트·도구절차의 검증 기반 개선 모방임을 명시. 기록량을 개선 성과로 오인하지 않고 재사용 효과와 검증 결과를 분리한다.
+- 작업 브랜치 docs/cra-ai-memory-button-protocol-2026-11-24; 기준 main 8351a511c51fcb6d63ec84b59dc2b96ccf90f7d2. 문서 전용.
+- CRA only; SIL 3 제외. 운영 main.py/workflow/secrets/API cadence 변경 없음.
+
 ## 2026-11-24 — LS메카피온 공식 기술·영업 질의서 작성
 
 - 최신 main 기준점: bcf4b03bfb5899ff5d3748a8ff1eed54d8aaf34c (PR #223 문서 동기화 commit).
