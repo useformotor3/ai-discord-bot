@@ -1,3 +1,5 @@
+> **2026-11-24 LS메카피온 질의 발송 안내:** [공식 연락 경로 및 커버메일 초안](reports/LS_MECAPION_IX700M_INQUIRY_DISPATCH_GUIDE_2026-11-24.md). 국내 영업·전국 기술지원·해외 채널을 공식 페이지 기준으로 구분했으며, 실제 발송/회신은 아직 미확인입니다.
+
 > **상시 다음 단계 버튼 규칙 (2026-11-24):** 주요 CRA 진행 응답의 마지막에 **다음 단계 계속 진행** 버튼을 제공한다. 버튼은 단순 진행 요청이 아니라 최신 GitHub 상태 재확인, 과거 기록의 관련성 판정, 증거·테스트 검증, 실제 다음 작업, 실패/개선 기록, 버튼 재제공을 요청한다. 최신 연구 근거와 정식 payload는 [AI 지속 메모리·개선 및 버튼 운영 규약](docs/AI_CONTINUOUS_IMPROVEMENT_AND_NEXT_STEP_PROTOCOL.md)에 고정했다.
 
 > **2026-11-24 LS메카피온 제조사 질의서 초안:** [iX700M 공식 기술·영업 질의서](reports/LS_MECAPION_IX700M_FORMAL_TECHNICAL_COMMERCIAL_INQUIRY_2026-11-24.md). Converter/Drive 독립 판매, EU 공급, 실제 SKU, Ver1.4 매뉴얼/CAD 원본, 회로도/BOM/MCU 전체 부품번호 및 보안 설정을 질문. 제조사 발송·회신은 아직 확인되지 않았으며 미확인 사항은 Unknown 유지.

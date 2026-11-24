@@ -1,3 +1,15 @@
+## 2026-11-24 — PR #225 병합 및 제조사 질의 발송 경로 조사
+
+- PR #225 squash merge 완료: https://github.com/useformotor3/ai-discord-bot/pull/225
+- Merge SHA: e98f6354ee9a30dbaf815a339d77a68eac4d60f7; exact PR HEAD 2e24f7779a6daf33989ce5321c0128946f445457.
+- PR exact-HEAD Run #1443 / ID 45300041474: success; source integrity, compile, full pytest, CRA traceability, official CRA PDF/HTML canaries, PDF evidence and provenance uploads passed.
+- Main push Run #1444 / ID 45300170290: success; main HEAD read-back matched merge SHA.
+- 상시 다음 단계 버튼과 검증 기반 메모리 운영 규약은 docs/AI_CONTINUOUS_IMPROVEMENT_AND_NEXT_STEP_PROTOCOL.md에 기록되어 main에 병합됐다.
+- 공식 연락 경로 추가 조사: 국내 지역별 서보 영업 담당자 https://www.lsmecapion.com/customer/take.php; 전국 서보 기술지원 1544-5948 https://www.lsmecapion.com/customer/take4.php; 해외 담당 페이지의 automation@ls-electric.com https://www.lsmecapion.com/customer/agency2.php.
+- 신규 발송 안내/커버메일 문서: reports/LS_MECAPION_IX700M_INQUIRY_DISPATCH_GUIDE_2026-11-24.md. 경기 담당자 scahn@lsmecapion.com은 공식 지역 담당자 목록의 공개 주소이며, 실제 회사/프로젝트 소재지가 경기인지 확인 후에만 사용한다. 기술지원 이메일은 공개 페이지에 확인되지 않아 임의 생성하지 않는다. automation@ls-electric.com은 해외 담당 페이지의 주소일 뿐 EU 수입자/공급법인으로 간주하지 않는다.
+- 제조사 질의서 작성 및 발송 경로 준비 완료. 실제 발송/접수/회신은 미확인. 회사명·소재지·담당자 및 수신부서 확인 전 발송 완료로 기록하지 않는다.
+- 작업 브랜치 docs/cra-lsmecapion-inquiry-routing-2026-11-24; 기준 main e98f6354ee9a30dbaf815a339d77a68eac4d60f7. 문서 전용. CRA only; SIL 3 제외.
+
 ## 2026-11-24 — PR #224 병합 및 상시 다음 단계 버튼·재귀개선 모방 규약 등록
 
 - PR #224 squash merge 완료: https://github.com/useformotor3/ai-discord-bot/pull/224
