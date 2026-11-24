@@ -2643,3 +2643,19 @@ Run #1566 PDF ZIP artifact ID 14976576885, 3,070,566 bytes, SHA-256 `87d053774d7
 iX700M 원본 매뉴얼, SKU별 signed EU DoC, Converter CE/UKCA DoC, KR/EN catalogue, CAD 2D/3D STEP는 취득하지 못했다. 공식 게시목록 metadata만 확인됐으며 상세 첨부 접근은 502/timeout이다. 제조사 질의서 62문항은 미발송 초안이다.
 
 Actual SKU, EU/EEA supply, economic operators, signed DoC coverage, BOM/exact MCU/SBOM, security configuration, CRA classification, vulnerability handling, security update/support period remain Unknown.
+
+ 
+## §99. 2026-11-25 — PR #264 및 main push Run #1568
+
+### 99.1 PR and main CI
+PR #264 exact head `95041e2ad5aa977e9209e5ead775981c31110451`, base `8d2d78b4ccc0ad326813f8e5cb74470bc5738e14`, 6 files(+45/-0), reviews 0, inline threads 0. Run #1567 / 45513033694 completed/success, 15/15 steps, pytest 189 passed, traceability 396 events PASS, 10-source provenance manifest JSON round-trip/upload PASS, PDFs 3/3 fetch/hash PASS. Optional read-only source canary recorded an allowed temporary official source outage; independent provenance step still passed.
+
+Expected-head squash merge SHA `de2006ff763610c836ca83a5455bf29135adabf7`. Main push Run #1568 / 45513256109 exact merge SHA, completed/success, 15/15 steps, pytest 189 passed, traceability 396 events PASS, 10-source provenance manifest round-trip/upload PASS, PDFs 3/3 fetch/hash PASS. Main optional source canary also logged an allowed temporary source outage; it did not prevent the separate provenance step from completing.
+
+### 99.2 Artifacts
+Run #1568 PDF ZIP artifact ID 14976831659, 3,070,566 bytes, SHA-256 `24948479709260897eb6c0fa5d3bfb5d14a39de43def3cab8c67c8ce063d8c8e`; provenance ZIP artifact ID 14977096262, 2,565 bytes, SHA-256 `6a04865a41f16401a05bd34cccedaf856692c8dce83a94b81a56b7a0ba984188`; expiry 2026-12-01. C/2026/5252 fallback=true; hash only identifies fallback bytes.
+
+### 99.3 제품 증거 상태
+iX700M 원본 매뉴얼, SKU별 signed EU DoC, Converter CE/UKCA DoC, KR/EN catalogue, CAD 2D/3D STEP는 취득하지 못했다. 공식 게시목록 metadata만 확인됐으며 상세 첨부 접근은 502/timeout이다. 제조사 질의서 62문항은 미발송 초안이다.
+
+Actual SKU, EU/EEA supply, economic operators, signed DoC coverage, BOM/exact MCU/SBOM, security configuration, CRA classification, vulnerability handling, security update/support period remain Unknown.

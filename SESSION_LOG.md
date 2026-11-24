@@ -3634,3 +3634,10 @@ CRA only; SIL 3 excluded.
 - Merge SHA 8d2d78b4ccc0ad326813f8e5cb74470bc5738e14. Main push Run #1566 / 45512624809 exact SHA SUCCESS, 15/15, 189 passed, traceability 395, 10-source provenance PASS/uploaded, PDFs 3/3. Main read-only canary also recorded allowed temporary source skip.
 - Artifact IDs/digests in report §98/evidence §56. Product binaries not acquired. Inquiry 62 questions, draft not sent.
 - Unknowns retained. CRA only; SIL 3 excluded.
+
+ 
+## PR #264 / main Run #1568 completion
+- PR #264 exact head 95041e2ad5aa977e9209e5ead775981c31110451, 6 docs(+45/-0), reviews/threads 0. Run #1567 SUCCESS 15/15, 189 passed, traceability 396, 10-source provenance manifest pass/upload, PDFs 3/3. Optional read-only source canary logged temporary outage; provenance step passed.
+- Merge SHA de2006ff763610c836ca83a5455bf29135adabf7. Main push Run #1568 / 45513256109 exact SHA SUCCESS, 15/15, 189 passed, traceability 396, 10-source provenance manifest pass/upload, PDFs 3/3. Optional canary source outage did not block manifest.
+- Artifact IDs/digests in report §99/evidence §57. Product binaries not acquired. Inquiry 62 questions, draft not sent.
+- Unknowns retained. CRA only; SIL 3 excluded.

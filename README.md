@@ -1322,3 +1322,6 @@ Annex I Part II의 실무 요구사항은 machine-readable SBOM(최소 top-level
 
  
 > **PR #263 / main Run #1566 (2026-11-25):** PR Run #1565 completed success with 14/15 successful steps; optional source provenance canary timed out and upload was skipped. Main push Run #1566 SUCCESS, 15/15, 189 passed, traceability 395, 10-source provenance PASS/uploaded, PDFs 3/3. Merge/main SHA `8d2d78b4ccc0ad326813f8e5cb74470bc5738e14`. C/2026/5252 fallback=true. See report §98 / evidence §56. iX700M original binaries remain unacquired; metadata only. Inquiry 62 questions. CRA only; SIL 3 excluded.
+
+ 
+> **PR #264 / main Run #1568 (2026-11-25):** PR Run #1567 and main push Run #1568 SUCCESS, 15/15 steps, 189 passed, traceability 396 events, 10-source provenance manifest PASS/upload, PDFs 3/3. Optional read-only source canary logged temporary outage but did not block provenance. Merge/main SHA `de2006ff763610c836ca83a5455bf29135adabf7`. C/2026/5252 fallback=true. See report §99 / evidence §57. iX700M original binaries remain unacquired; metadata only. Manufacturer inquiry 62 questions. CRA only; SIL 3 excluded.
