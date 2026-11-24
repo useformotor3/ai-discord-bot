@@ -3245,3 +3245,29 @@
 - 매뉴얼 상세 `wr_id=12652` 역시 cache miss. 파일 revision/hash는 제조사 원본 확보 전 Unknown.
 - 관련 원본 URL: https://www.lsmecapion.com/bbs/board.php?bo_table=manual ; https://lsmecapion.com/bbs/board.php?bo_table=manual&sca=Servo ; https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&sca=CE&wr_id=12886 ; https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&page=4&wr_id=12888 ; https://www.lsmecapion.com/bbs/board.php?bo_table=drawing&sca=Servo+Drive .
 - 실제 SKU, 독립 판매, EU 공급 및 importer/economic operator는 Unknown. 제조사 질의서 draft_prepared_not_sent; 발송·접수·회신 없음.
+
+
+## 2026-11-24 — PR #230 exact-HEAD 검증·병합 및 Solution Square 자료 재조사
+
+### PR #230 검증 및 병합
+- PR #230: https://github.com/useformotor3/ai-discord-bot/pull/230
+- exact HEAD `89d3d3306a4cdb119f5ad9ed06c48cdecaa1035e`; Run #1458 / ID `45313263121` 최종 success, 25개 단계 완료.
+- source blob identity, compile, CRA cross-matrix traceability, complete pytest, official CRA PDF/HTML canary, PDF evidence upload, provenance manifest upload 모두 성공.
+- 변경 5개 파일: PROJECT_LOG.jsonl, PROJECT_STATUS_CURRENT.md, SESSION_LOG.md, 통합 CRA 보고서, iX700M 증거등록부. 전체 diff 검토, review thread 0, PR branch JSONL 356 records / invalid 0.
+- main base SHA와 PR base는 `4263389aa79cbb7cc17ccda3a019c659ccddef85`로 일치. expected HEAD를 지정해 squash merge; merge SHA `7b3eaa39d96e78081621f8c40cde97ad916722e5`.
+- main read-back compare: merge SHA와 main identical. 5개 파일 read-back 완료. main PROJECT_LOG 356 records / invalid JSON 0.
+- PR #229 merge SHA `4263389aa79cbb7cc17ccda3a019c659ccddef85`의 post-merge push CI는 combined status가 비어 있고, 사용 가능한 workflow-run wrapper가 PR-triggered runs만 조회해 main push run을 확인할 수 없음. 성공으로 추정하지 않고 pending/unverified.
+
+### LS ELECTRIC Solution Square iX700M manual index
+- 공식 Solution Square Motion & Servo 자료 목록에서 `iX700M 사용 설명서` 항목과 update `2026-09-16`을 재확인: https://sol.ls-electric.com/kr/ko/product/category/4?pageNumber=4 . 같은 항목은 Solution Square 검색 결과에도 노출됨: https://sol.ls-electric.com/kr/ko/newSearch?pageNumber=70 .
+- 목록 항목의 update date는 LS메카피온 매뉴얼 게시일 2026-05-26보다 늦다. 하지만 JS 기반 상세 페이지가 웹 조회에서 본문/첨부 정보를 노출하지 않아 실제 PDF 파일명, 문서번호, revision, 언어, 크기, SHA-256 및 SKU 적용범위는 확인하지 못했다. 이를 Ver1.5 또는 새 개정판이라고 추정하지 않는다.
+- LS메카피온 공식 매뉴얼 직접 열린 전체 목록 및 Servo 필터 snapshot은 여전히 Ver1.3(2026-05-26)으로 표시(https://www.lsmecapion.com/bbs/board.php?bo_table=manual, https://lsmecapion.com/bbs/board.php?bo_table=manual&sca=Servo). 공식 검색 snapshot 일부는 동일 게시일 Ver1.4를 표시. 현재 판정은 **서로 다른 공식 snapshot의 표시 충돌; actual PDF revision Unknown**.
+- 상세 매뉴얼 게시물 `wr_id=12652` 및 첨부 다운로드 URL은 cache miss. Converter DoC 첨부 클릭 URL도 cache miss. Drive CE 상세 및 CAD 상세 `wr_id=12455`도 cache miss. 파일 원본 bytes/hash 미확보.
+- CAD 목록은 iX700M 2D(CAD)/3D(STEP) 외형도 게시와 2026-04-21을 확인: https://www.lsmecapion.com/bbs/board.php?bo_table=drawing&sca=Servo+Drive . 게시 메타데이터이지 원본 확보가 아님.
+- Converter CE 상세는 iX700MCV 및 `[CE_DoC-LVDEMC] iX700MCV.pdf` 234.4K를 표시: https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&sca=CE&wr_id=12886 . PDF 본문·서명·법령·표준·범위 미검토.
+- Drive DoC 검색 snapshot은 iX700MD1-B-150B와 `[CE_DoC-LVDEMC] iX700MD1-B-150B.pdf` 238.9K를 표시하나 원본/본문 미확보: https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&page=4&wr_id=12888 .
+
+### 제조사 질의서 보강 및 범위
+- 질의서에 Solution Square 2026-09-16 항목의 실제 상세 URL/문서번호/원본 PDF/파일명/revision/언어/발행일/크기/SHA-256/SKU applicability와 LS메카피온 Ver1.3/Ver1.4 충돌의 관계를 서면 확인하도록 추가.
+- 실제 SKU, Converter/Drive 독립 상업 판매, EU/EEA 공급, 거래별 수입자·경제운영자, 내부 BOM/MCU/보안 설정은 계속 Unknown. 사용자 별도 프로젝트의 ST MCU 정보를 iX700M에 전용하지 않는다.
+- 질의서는 작성된 초안일 뿐 발송·접수·회신은 없음. CRA only; SIL 3 제외.

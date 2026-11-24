@@ -180,3 +180,16 @@ CRA 구성품 실사와 취약점 관리에 필요한 범위에서 다음 자료
 - iX700M 2D CAD/3D STEP 원본 및 파일별 revision/적용 SKU/hash
 
 현재 공식 게시물/검색 결과에서 첨부파일명 또는 게시 사실은 확인되나, 실제 PDF/CAD 원본 파일 바이트는 확보하지 못했습니다. 파일 본문을 열람·검증했다고 간주하지 않습니다.
+
+
+## 6.10. LS ELECTRIC Solution Square iX700M 문서 메타데이터 추가 확인 (2026-11-24)
+
+LS ELECTRIC Solution Square 공식 Motion & Servo 자료 목록에 `iX700M 사용 설명서` 항목이 update date 2026-09-16으로 표시됩니다. 해당 목록의 상세 페이지는 웹 기반 앱으로 실제 파일 정보가 확인되지 않았으므로 다음 자료를 추가로 요청합니다.
+
+- 해당 항목의 직접 상세 URL 및 실제 배포 PDF 원본
+- 문서관리 ID, 원본 파일명, revision, 언어, 발행일, update date의 의미, 파일 크기 및 SHA-256
+- 이 문서가 LS메카피온 게시판의 iX700M DRIVE 400[V] Ver1.3 또는 Ver1.4와 동일한 문서인지, 대체판인지, 별도 문서인지
+- 변경 요약, revision history, 적용 SKU/HW/FW, 구판 대체 여부
+- Ver1.3/Ver1.4로 표시되는 공식 게시판 snapshot 간 차이에 대한 서면 확인
+
+추가로 Converter/Drive CE DoC 및 2D CAD/3D STEP 원본의 문서번호·revision·적용 SKU·SHA-256 요청은 기존 항목 A04/A11에 유지합니다. Solution Square 목록의 update date만으로 PDF revision을 추정하지 않습니다.

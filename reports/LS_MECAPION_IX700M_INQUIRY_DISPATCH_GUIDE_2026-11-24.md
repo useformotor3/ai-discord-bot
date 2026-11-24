@@ -111,3 +111,11 @@ LS메카피온 공식 '업무별 담당자' 페이지는 지역별 국내 서보
 - 첨부 PDF 파일명·크기·SHA-256 또는 제조사 문서관리 시스템 식별자
 - iX700M 2D CAD/3D STEP 상세 게시물의 원본 DWG/DXF/STEP 파일, 각 파일의 revision·크기·SHA-256 및 적용 SKU
 - Converter/Drive 별도 CE DoC 원본 PDF와 해당 DoC의 정확한 제품범위·제조자 법인·적용 법령/표준·서명/발행일
+
+
+## 8. Solution Square iX700M 문서 확인 라우팅 추가
+
+- LS ELECTRIC Solution Square Motion & Servo 목록에 `iX700M 사용 설명서` update 2026-09-16 항목이 표시되지만, 상세 페이지가 JS 앱으로만 응답해 파일 정보는 아직 확인되지 않았다.
+- 제조사 연락 시 LS메카피온 기술/문서관리 담당과 LS ELECTRIC Solution Square 자료관리 담당 중 누가 원본 파일 및 문서관리 이력을 제공할 수 있는지 확인한다.
+- 2026-09-16은 목록 update date일 뿐 PDF issue date/revision으로 쓰지 않는다. 원본 PDF·문서 ID·파일명·revision·언어·SKU/HW/FW applicability·SHA-256을 확인한 뒤 매뉴얼 게시판 Ver1.3/Ver1.4와 대조한다.
+- 실제 문의 전송·접수·회신이 없으므로 상태는 계속 `draft_prepared_not_sent`이다.

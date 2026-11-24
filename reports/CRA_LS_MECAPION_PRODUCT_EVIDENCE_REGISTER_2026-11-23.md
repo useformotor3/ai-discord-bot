@@ -510,3 +510,19 @@ ESO별 C(2026)7861 실제 수령일과 Article 2 비수락 통지는 여전히 U
 - `MFG-IX7M-28` — LS메카피온 국내 대리점 페이지 https://www.lsmecapion.com/customer/agency.php : 경기 수원 등 국내 지역 대리점 목록 표시. 국내 대리점 등록은 EU 공급/수입자 증거가 아님.
 - 검색된 LS ELECTRIC Solution Square의 `iX7M-A-...` DoC는 iX7M 모델을 대상으로 하므로 iX700M DoC로 전용하지 않음.
 - EU/EEA 개별 공급, importer/economic operator, actual SKU 및 각 거래 역할은 계속 Unknown. 공개 페이지에서 EU 판매자/수입자 확인이 안 된다는 사실을 “없다”로 확대 해석하지 않는다.
+
+
+## 24. 2026-11-24 — Solution Square iX700M 사용 설명서 메타데이터 및 재접근
+
+| ID | 공식 출처 | 확인 사실 | 증거 한계 / 판정 |
+|---|---|---|---|
+| MFG-IX7M-29 | https://sol.ls-electric.com/kr/ko/product/category/4?pageNumber=4 | LS ELECTRIC Solution Square Motion & Servo 목록에 `iX700M 사용 설명서`, update 2026-09-16 표시 | 상세는 JS 앱으로 실제 PDF 링크/파일명/document ID/revision/language/size/hash 접근 불가. Ver1.3/1.4 중 어느 것과 관계인지 Unknown |
+| MFG-IX7M-30 | https://sol.ls-electric.com/kr/ko/newSearch?pageNumber=70 | 공식 통합검색에서 `iX700M 사용 설명서` 문서 항목 확인 | 목록 메타데이터 외 상세 본문·첨부 미확보 |
+| MFG-IX7M-31 | https://www.lsmecapion.com/bbs/board.php?bo_table=manual 및 https://lsmecapion.com/bbs/board.php?bo_table=manual&sca=Servo | 직접 열린 페이지 본문 snapshot은 Ver1.3(2026-05-26) | 공식 검색 snapshot 일부는 Ver1.4(동일 게시일) 표시. 상세 `wr_id=12652` cache miss. actual PDF revision Unknown |
+| MFG-IX7M-32 | https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&sca=CE&wr_id=12886 | Converter iX700MCV CE 게시물과 첨부명 `[CE_DoC-LVDEMC] iX700MCV.pdf` (234.4K) 확인 | 첨부 클릭 cache miss; PDF bytes/body/signature/scope/hash unknown |
+| MFG-IX7M-33 | https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&page=4&wr_id=12888 | Drive iX700MD1-B-150B DoC 검색 메타데이터 및 첨부명/238.9K 확인 | 상세 cache miss; PDF bytes/body/signature/scope/hash unknown |
+| MFG-IX7M-34 | https://www.lsmecapion.com/bbs/board.php?bo_table=drawing&sca=Servo+Drive | iX700M 2D(CAD)/3D(STEP) 게시, 2026-04-21 | 상세 `wr_id=12455` cache miss; DWG/DXF/STEP 원본과 revision/hash unknown |
+
+- Solution Square update date는 PDF 발행일/revision number가 아니다. Ver1.5 등으로 추정하지 않는다.
+- Ver1.3/Ver1.4 게시물 표시 충돌은 unresolved. 실제 PDF bytes와 제조사 문서관리 이력으로 해결해야 한다.
+- Converter/Drive DoC 게시 사실과 별도 모델코드는 독립 상업 판매, EU 공급 또는 CRA conformity를 증명하지 않는다.
