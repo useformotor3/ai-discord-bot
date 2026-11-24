@@ -1891,3 +1891,44 @@ LS메카피온 공식 드라이브 제품군 목록 `https://www.lsmecapion.com/
 | 제조사 질의 | `draft_prepared_not_sent` | 실제 발송·접수·회신 증거 없이는 상태 승격 금지 |
 
 CRA only; SIL 3 제외.
+
+
+## §74. 2026-11-24 — LS ELECTRIC 공식 iX700M 아키텍처 PDF 및 제조사 카탈로그·교육자료 인덱스 추가 확인
+
+### 74.1 신규 공식 아키텍처 자료
+
+LS ELECTRIC 도메인에서 제공하는 LS Mecapion의 PDF `서보 드라이브 신제품 소개(iX7M, iX700M)`를 열어 텍스트 본문을 확인했다.
+
+- 원본 URL: https://sol.ls-electric.com/uploads/document/17120093352290/%5BLS%2BELECTRIC%2B%EC%98%A4%ED%94%88%EC%84%B8%EB%AF%B8%EB%82%98%5D%2B%EC%84%9C%EB%B3%B4%2B%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B8%8C%2B%EC%8B%A0%EC%A0%9C%ED%92%88%2B%EC%86%8C%EA%B0%9C%2B%EC%9BiX7M_iX700M_LS%EB%A9%94%EC%B9%B4%ED%94%BC%EC%98%A8.pdf
+- 문서 표제: `서보 드라이브 신제품 소개(iX7M, iX700M)`, 작성 주체 표기 LS Mecapion. 문서 푸터에 `2024-04-01 18:41:07` 내부 timestamp가 표시된다. 이를 별도 발행일로 단정하지 않는다.
+- **제품 구분 주의:** PDF 앞부분에는 iX7M 관련 내용도 포함되어 있다. 본 절에서 iX700M 근거로 사용하는 것은 iX700M Series 표제가 명시된 구간(텍스트 추출 기준 lines 153–240 및 245–269)뿐이다. iX7M 전용 사양표/비교행을 iX700M에 전용하지 않는다.
+
+### 74.2 iX700M 구간에서 확인한 기술 구조
+
+| 관찰 항목 | PDF에 표시된 내용 | CRA 조사에서의 제한 |
+|---|---|---|
+| 제품 구조 | Converter(Power) Unit과 Drive Unit이 분리된 모듈형 구조, DC Link Bus-Bar 연결 | 분리 모듈 존재는 확인되지만 단품 독립 판매/시장 공급 증거가 아님 |
+| 내부 통신 | Converter와 Drive 간 Cross Communication (RS-485) | 내부 인터페이스 식별만 확인; 프로토콜 보안·인증·암호화 여부 Unknown |
+| 외부 통신 | EtherCAT In/Out 포트 | 디지털 네트워크 연결 인터페이스의 제조사 자료 근거; 실제 SKU/옵션별 장착·활성화 여부는 Unknown |
+| 서비스/설정 포트 | Loader, USB 표기 | 포트의 기능·권한·인증·업데이트 보호 방식은 자료에 설명되지 않음 |
+| I/O·엔코더 | I/O, BiSS encoder 및 2nd Universal encoder 표기 | 인터페이스 존재 자료; 실제 구성은 SKU/하드웨어 확인 필요 |
+| Converter 입력/출력 | 3상 AC 380–480 V 입력, DC 535–675 V bus 출력 설명 | 해당 발표자료의 제품 구조 설명; 현행 개별 SKU 명판/정격을 대체하지 않음 |
+
+이 자료는 iX700M의 통신·서비스 인터페이스 및 모듈 경계를 설명하는 **아키텍처 보조 증거**로 활용할 수 있다. 특히 EtherCAT In/Out 및 USB/Loader 표기는 제품의 디지털 인터페이스 목록을 구체화한다. 다만 이 자료만으로 CRA의 제품 범위, EU 시장 공급, 실제 SKU, 보안 중요도 category, 취약점 처리·보안 업데이트·secure boot·서명 검증·암호화·인증 구현 여부를 확정하지 않는다. 자료에 없는 보안 통제는 Unknown으로 유지한다.
+
+### 74.3 최신 제조사 카탈로그 목록 및 교육자료 목록
+
+- LS메카피온 카탈로그 게시물 `https://www.lsmecapion.com/bbs/board.php?bo_table=catalog&wr_id=12110`의 공식 검색 snapshot은 `Servo iX700M 카탈로그 (iX700M_Catalogue_KR/EN) (2025년 7월)` 제목, 게시일 2025-11-17 14:28을 표시한다. 첨부 메타데이터는 `iX700M 브로셔 최종KR_251205.pdf`, `iX700M 브로셔 최종EN_251205.pdf`, 각 10.7M, attachment date 2025-12-05 13:43:50으로 표시한다.
+- 제목의 "(2025년 7월)", 게시일 2025-11-17, 첨부 날짜 2025-12-05는 서로 다른 메타데이터다. 실제 PDF 내부 revision/발행일을 확인하지 않았으므로 이를 하나의 개정일로 합치지 않는다. 상세 게시물 접근이 502/cache miss로 실패하여 카탈로그 PDF 원본 bytes/hash는 미확보.
+- LS메카피온 교육자료 공식 인덱스 `https://www.lsmecapion.com/bbs/board.php?bo_table=edu_data`는 `iX700M 교육자료`, "iX700M 시스템서보 드라이브 교육자료입니다", 작성일 2025-10-27 항목을 표시한다. 인접 iX7M 게시물의 이전글 링크에서 iX700M 상세 `wr_id=52`를 확인했으나, 해당 상세/첨부 접근은 timeout으로 실패했다. 첨부 파일명·본문·hash는 Unknown.
+- 이 목록들은 제조사가 별도의 제품 설명/교육자료를 게시했다는 사실만 입증한다. 매뉴얼 Ver1.3/Ver1.4 충돌을 해결하지 않으며, Solution Square 2026-09-16 항목의 PDF와 동일 문서인지도 확인되지 않았다.
+
+### 74.4 CRA 조사 반영 및 미확인 사항
+
+- EtherCAT, RS-485, USB/Loader, I/O, 엔코더 인터페이스를 제품 인터페이스 인벤토리에 반영할 수 있다. 이 사실은 디지털 데이터 연결 가능성의 기술 근거를 보강하지만, CRA 적용 여부에는 제품이 EU 시장에 공급/제공되는지 및 실제 대상 제품 경계를 별도로 확인해야 한다.
+- 네트워크 연결성만으로 Annex III의 중요 제품 category, Class I/II 또는 Article 32 제3자 평가 경로를 자동 결정하지 않는다. 제조사 내부 보안 설계·구현 자료와 exact SKU가 없으므로 category 및 security controls는 Unknown.
+- Converter/Drive 모듈 분리 구조는 확인되지만, 독립 판매/독립 시장 공급 여부는 Unknown.
+- Solution Square iX700M manual detail/PDF, Ver1.3/Ver1.4 원본 PDF, Converter/Drive CE DoC 원본, DWG/DXF/STEP 원본은 계속 미확보. 실제 SKU, EU/EEA 공급, importer/economic operator, BOM/MCU/security configuration Unknown.
+- 제조사 질의 상태 `draft_prepared_not_sent` 유지. 실제 발송·접수·회신 증거 없이는 완료 처리하지 않는다.
+
+CRA only; SIL 3 제외.
