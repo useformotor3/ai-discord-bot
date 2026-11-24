@@ -2324,3 +2324,15 @@
 - Manufacturer inquiry now 59 questions (Q59 adds CRA Annex III/IV core-functionality/product-classification and conformity-assessment basis). Draft only; not sent.
 - Actual SKU, EU/EEA supply, economic operators, DoC coverage/signature, BOM/MCU/SBOM, security configuration, product classification, vulnerability handling and security-update/support period remain Unknown.
 - CRA only; SIL 3 excluded.
+
+ 
+## 2026-11-25 — main push Run #1540 최종 성공 확정 및 iX700M 원본 재시도
+
+- Main HEAD `cffd2118d2ce4127e50352650479553cb12c2bdf`의 Run #1540 / ID 45505830283은 최종 재조회에서 event=push, completed/success, job 138840683889 completed/success로 확정. 전체 15/15 단계(1–12,23–25) 성공, pytest 189 passed, CRA traceability PASS(project_log_events=384), 10개 공식 출처 provenance PASS.
+- 앞선 조회에서는 개별 step 완료 뒤 run/job 상위 상태가 일시적으로 in_progress로 남아 있었으나, 후속 조회에서 completed/success로 전이된 것을 확인했다. 관측된 지연 상태 전이로 기록하며 내부 플랫폼 원인을 단정하지 않는다. 재실행은 불필요했다.
+- PDF 2/3 fresh fetch: OJ C/2026/6013 2,709,282 bytes, 61 pages, SHA-256 `40ca76caeb0108f5b97c8f373a95f590b453fe92bd45a483addf3326e48c1dc2`; M/606 Annex도 fetch/hash PASS; C/2026/5252는 HTTP 503으로 일시 제외.
+- PDF artifact ID 14972408962, 1,906,817 bytes, ZIP SHA-256 `c7955d47a2c18f7f4eb9d93678a2a6a559c4e19abae35b98528389b0b1d60c0e`; provenance artifact ID 14973656717, 2,565 bytes, SHA-256 `5468b1744806d109ba475574e5f209f568e83a3137f46f10b6ca9fb7c2c18d38`. 만료 2026-12-01. CRA source pack이며 iX700M 제품 binary가 아니다.
+- 제조사 원본 재시도: manual Ver1.4/Ver1.3 listing discrepancy, manual detail 502; Drive EU DoC iX700MD1-B-150B metadata 238.9KB, Converter CE iX700MCV 234.4KB, Converter UKCA iX700MCV 224.1KB, KR/EN catalogue 각각 10.7MB metadata만 확인. Detail pages 502. CAD index row 19, 2026-04-21, 2D CAD/3D STEP listing 확인, listing/detail timeout. 어떤 iX700M original PDF/CAD binary도 취득하지 못했다.
+- 제조사 질의서 Q60 추가: 원본 파일을 공식 첨부가 불가능한 경우 revision-controlled secure delivery channel로 전달하고, 파일별 원본명/format/size/SHA-256/발행·개정일/서명 검증방법/적용 SKU 범위를 제공하도록 요청. 총 60문항, draft not sent.
+- Unknown 유지: actual SKU, EU/EEA supply, economic operators, signed DoC scope, BOM/MCU/SBOM, security configuration, CRA classification, vulnerability handling, security-update/support period.
+- Node.js 20 action, punycode, url.parse deprecation warnings remain; no failed steps. CRA only; SIL 3 excluded.
