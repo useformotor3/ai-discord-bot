@@ -1,3 +1,10 @@
+## 2026-11-24 — PR #228 post-merge CI 최종 결과
+
+- PR #228 merge SHA `3db9896d5727701cb38c6a033d0d0e07f433339b`의 main push Run #1450 / ID 45308789705 최종 `success` 확인.
+- source blob identity, compile, CRA traceability, full pytest, official CRA PDF/HTML canaries, PDF evidence upload 및 provenance manifest upload 모두 성공.
+- main read-back은 merge SHA와 일치. PR #228 자체 exact-HEAD Run #1449도 success.
+- 이전 상태판/세션 로그에 Run #1450이 in progress로 기록된 부분은 당시 관찰 시점 기록이며, 본 항목에서 최종 success로 갱신.
+
 ## 2026-11-24 — PR #228 병합 및 CI 상태 정정
 
 - PR #228 exact HEAD `474d87b112ae229ed39a397b3964daf3d419b853`; Run #1449 / ID 45305273983 success. Source identity, compile, CRA traceability, full pytest, official CRA PDF/HTML canaries, evidence/provenance upload success.
