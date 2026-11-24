@@ -3416,3 +3416,11 @@ CRA only; SIL 3 excluded.
 - Re-tried exact official source paths: LS manual detail wr_id=12652 502/timeout; Drive CE attachment URL timeout; Converter CE detail timeout; iX700M CAD detail wr_id=12455 timeout. Solution Square detail remains hidden behind SPA JS shell. Do not report binaries acquired.
 - Manual index refinement: default + Servo filter list Ver1.4; explicit empty category sca= Ver1.3. Actual binary revision unresolved.
 - Report §76 / evidence register §33 appended. CRA only; SIL 3 excluded.
+
+## 2026-11-24 — PR #241 merge, exact-head verification and manufacturer-source recheck
+
+- PR #241 / Run #1509: exact HEAD 159f8c16ba50c41e1dd0f3aa0fffba7a3ee1a09d success 25/25. Six-file diff +79/-0; base main 36b38bfa5ced2894f3bfb06c226706ce0a9bf38b; compare 6 ahead/0 behind. Reviews 0, review threads 0. JSONL 372 records, every line parses (invalid 0).
+- Expected-head squash merge succeeded: dd54132fb44ed752b1f7942f4485ee03399a2c2f. Main ref read-back exactly matches. Post-merge push Run #1510 / 45333438936 targets that SHA; status was in_progress at this log snapshot, so final outcome is pending.
+- Fresh manufacturer source search: Solution Square result confirms iX700M 사용 설명서 and update 2026-09-16, but detail open is JS app shell. LS Mecapion manual listings continue to disagree (default/Servo filter Ver1.4 vs explicit sca= Ver1.3); actual PDF revision Unknown. Drive CE detail is readable, but PDF attachment click times out. Converter CE detail remains search-index metadata only. CAD previous-post link resolves iX700M detail wr_id=12455; detail times out. No original files acquired.
+- No actual SKU, independent sale, EU/EEA supply, importer/economic operator, BOM/MCU/security claims promoted from Unknown. Inquiry remains draft_prepared_not_sent.
+- CRA only; SIL 3 excluded.
