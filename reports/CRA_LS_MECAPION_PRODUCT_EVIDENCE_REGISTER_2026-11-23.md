@@ -679,3 +679,21 @@ Run #1462 / ID 45314843427, PDF artifact 14884218192. ZIP 3,070,568 bytes, SHA-2
 - CRA only; SIL 3 excluded.
 
 - Revision snapshot correction: two official index URLs (default and Servo-filter) show Ver1.4; only the explicit sca= URL shows Ver1.3. This is an index/cache/query inconsistency, not proof that Ver1.4 binary was downloaded or is the valid deployed revision.
+
+
+## 33. 2026-11-24 — PR #240 post-merge verification and exact manufacturer source paths
+
+| Evidence ID | Source / exact URL | Confirmed | Acquisition outcome / limitation |
+|---|---|---|---|
+| CI-PR240 | https://github.com/useformotor3/ai-discord-bot/pull/240 ; https://github.com/useformotor3/ai-discord-bot/actions/runs/45329806653 | PR #240 exact HEAD 6f94454ffe41e313c8450918b43b58b4b41014f4, Run #1507 success 25/25, 6 files, reviews/threads 0, JSONL 371/0; merge 36b38bfa5ced2894f3bfb06c226706ce0a9bf38b | verified |
+| CI-MAIN-1508 | https://github.com/useformotor3/ai-discord-bot/actions/runs/45329930118 | exact main merge SHA, push success 25/25; PDF artifact 14890384807, ZIP SHA-256 1cb11a4d35de7c922efd5ad2a8d49aada8929875682d20e520c5c9b50f4f19ba; provenance 14891920424 SHA-256 b807be3bd107fc03c70a3fe7f4d59501f1fbcc87e91233286a68600440cc2fc5 | verified |
+| SQ-IX700M-DETAIL | https://sol.ls-electric.com/kr/ko/product/category/4?pageNumber=4 ; https://sol.ls-electric.com/kr/ko/newSearch?pageNumber=70 | item name and update 2026-09-16 | SPA JS shell; no verified document ID/detail URL/PDF |
+| LSM-MANUAL-DETAIL | https://lsmecapion.com/bbs/board.php?bo_table=manual&sca=Servo&wr_id=12652 | detail URL resolved from Ver1.4 listing link | 502/timeout; no original PDF/hash; version remains unresolved |
+| LSM-CE-DRIVE-DOWNLOAD | https://www.lsmecapion.com/bbs/download.php?bo_table=certificate&no=0&page=4&wr_id=12888 | exact attachment link from opened Drive CE page | timeout/direct download failure; PDF not acquired |
+| LSM-CE-CONVERTER | https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&sca=CE&wr_id=12886 | indexed detail metadata and attachment filename/size | detail/attachment fetch timeout; PDF not acquired |
+| LSM-CAD-DETAIL | https://www.lsmecapion.com/bbs/board.php?bo_table=drawing&sca=Servo+Drive&wr_id=12455 | exact iX700M detail URL obtained via preceding post's previous-post link | timeout; DWG/DXF/STEP bytes/hash not acquired |
+| LSM-CE-INDEX | https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&sca=CE | multiple iX700M Converter/Drive CE index entries | listing only; does not prove DoC coverage for every SKU |
+
+- Keep Ver1.3/Ver1.4 actual revision Unknown; two list snapshots show Ver1.4, explicit sca= snapshot shows Ver1.3.
+- Actual SKU, independent sale, EU/EEA supply, importer/economic operator, BOM/MCU/security configuration Unknown. Manufacturer inquiry draft_prepared_not_sent.
+- CRA only; SIL 3 excluded.
