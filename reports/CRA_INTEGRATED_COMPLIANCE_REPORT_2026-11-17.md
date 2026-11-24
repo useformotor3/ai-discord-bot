@@ -2547,3 +2547,19 @@ Run #1553 PDF ZIP artifact ID 14973833111, 3,070,564 bytes, SHA-256 `f0db5c8cffd
 iX700M 매뉴얼, SKU별 signed EU DoC, Converter CE/UKCA DoC, KR/EN catalogue, CAD 2D/3D STEP 원본 binary는 여전히 취득하지 못했다. 공식 웹사이트의 listing metadata와 상세 페이지 접근 오류만 확인된 상태다. 매뉴얼 Ver1.3/Ver1.4 충돌도 미해결. 제조사 질의서는 Q61/Q62를 포함한 62문항 초안이며 발송하지 않았다.
 
 Actual SKU, EU/EEA supply, economic operators, signed DoC coverage, BOM/exact MCU/SBOM, security configuration, CRA classification, vulnerability handling, security update/support period remain Unknown.
+
+ 
+## §93. 2026-11-25 — PR #257 및 main push Run #1555
+
+### 93.1 PR and main CI
+PR #257 exact head `c7938143b7e474e5e3f38d1675ac7136e408d162`, base `0c732caa45e7fac532117e2a658463acc546ee72`, 6 files(+44/-0), reviews 0, inline threads 0. Run #1554 / 45509472274 completed/success, 15/15 steps, pytest 189 passed, traceability 390 events PASS, provenance 10 sources PASS, PDFs 3/3 fetch/hash PASS. Expected-head squash merge SHA `6f26d7166bd8a1208733c82c8fda592e1cfc0f9a`.
+
+Main push Run #1555 / 45509645611 exact merge SHA, completed/success, 15/15 steps, pytest 189 passed, traceability 390 events PASS, 10-source provenance manifest JSON round-trip PASS, PDFs 3/3 fetch/hash PASS.
+
+### 93.2 Artifacts
+Run #1555 PDF ZIP artifact ID 14973917921, 3,070,567 bytes, SHA-256 `426c0c7dc9e24e980e7e4117eaa98bd58110a927f620164342b009686c696f22`; provenance ZIP artifact ID 14975071982, 2,565 bytes, SHA-256 `daf898155731bbf8b3c4f52ad0198cf174c42d67192259ddbfb5b2e946c5e535`; expiry 2026-12-01. C/2026/5252 fallback=true; hash only identifies fallback bytes.
+
+### 93.3 제품 증거 상태
+iX700M 매뉴얼, SKU별 signed EU DoC, Converter CE/UKCA DoC, KR/EN catalogue, CAD 2D/3D STEP 원본 binary는 여전히 취득하지 못했다. 공식 게시목록 metadata만 확인됐다. 매뉴얼 Ver1.3/Ver1.4 충돌은 Q61로 제조사 확인 요청 중. Q62는 정확한 ST MCU, 보안 구성, firmware/SBOM 및 취약점 관리 증거를 요청한다. 질의서 62문항, 미발송 초안.
+
+Actual SKU, EU/EEA supply, economic operators, signed DoC coverage, BOM/exact MCU/SBOM, security configuration, CRA classification, vulnerability handling, security update/support period remain Unknown.
