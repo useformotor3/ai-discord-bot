@@ -2395,3 +2395,23 @@ CRA only; SIL 3 excluded.
 별도의 KC 인덱스에는 iX700MD1-B-075B/150B/220B/370B, iX700MD2-B-045B, iX700MCV-B-150/370/550/750, iX700MCB-B-8K 등이 나타난다. KC는 한국 규제 체계의 별도 증거이며 EU DoC coverage로 전환하거나 CRA 적합성 증거로 사용할 수 없다. 본 목록은 제품 구성과 모델 식별의 교차 질문을 만들기 위한 단서일 뿐, 실제 판매 SKU·EU 공급 여부를 증명하지 않는다.
 
 제조사 질의서 Q56-Q58은 (1) CE 인덱스의 iX700MCB 및 각 Drive model group의 원본 DoC와 정확한 coverage, (2) CE와 KC 목록의 법적 범위 분리, (3) Converter/Drive/MCB 구성의 별도 판매·통합 경계와 CRA 제품 식별을 확인하도록 추가했다.
+
+
+## §86. 2026-11-25 — PR #250 exact-head 검증 및 main push 최종 결과
+
+### 86.1 PR #250 검증·병합
+PR #250은 main base `e0a0af3aa7d29acb9fa0e26bddf466af7f3398b5`에서 시작해 exact head `7d361e1f9973dcd1ec783d7ff3895e0ddf05fe6f`로 검증했다. 변경은 7 files(+179/-0), 리뷰 0, inline thread 0, JSONL 382 records / invalid 0이었다. Run #1535 / 45491181163은 exact PR head에서 completed/success, 단일 job의 반환된 15개 step 모두 success, pytest 189 passed, CRA traceability 및 10개 공식 출처/provenance 검증 PASS였다. Expected-head squash merge SHA는 `ff42addc136836bbbb89bec48bb0c791f031db19`다.
+
+### 86.2 병합 후 main push CI
+Run #1536 / 45491379142는 event=push, head SHA가 merge SHA `ff42addc136836bbbb89bec48bb0c791f031db19`와 일치하며 completed/success다. 단일 job의 반환된 15개 step 모두 success이고 pytest 189 passed, CRA traceability (project_log_events=382), 10개 official source/provenance manifest 생성 및 JSON round-trip PASS다.
+
+다만 live source collection은 세 PDF 모두 매번 동일하게 성공한 것이 아니다. Commission Guidance C/2026/5252의 외부 mirror가 HTTP 503을 반환해 수집기가 temporary outage로 SKIPPED 처리했고, OJ C/2026/6013 및 M/606 C(2026)7861 Annex 두 문서는 실제 다운로드 및 SHA-256 검증에 성공했다. Workflow는 일시적 보조 출처 장애를 허용하도록 설계되어 전체 결론은 success다. 따라서 이번 Run #1535/#1536은 **2/3 PDF freshly acquired + 10-source provenance pass**로 기록한다. 모든 3 PDF의 최신 재취득은 주장하지 않는다. 앞선 Run #1526 및 #1528은 3종 모두 fetch/hash 성공 기록을 보유한다.
+
+Run #1535 artifacts: PDF ZIP 1,906,816 bytes, SHA-256 `eaf0f8eca6ecc2796813c80430f03c8c658c140d42088aa832d4890415e057eb`; provenance ZIP 2,565 bytes, SHA-256 `ed3e3e8468f6675a96fdb1a349dcb644a802154554975ba86e7f4500771a0794`. Run #1536: PDF ZIP 1,906,818 bytes, SHA-256 `71937d047f0bc84f8619c92ae2a34b5bfdd50a8b327cbf7b91dbd3afaf35dc29`; provenance ZIP 2,565 bytes, SHA-256 `367419dec3c4c0351ab2eaea19578445a0ee21ce1c01d5455970dc6ceb34561b`. Artifact는 2026-12-01 만료 예정이며 LS iX700M 제품 자료가 아니라 CRA Commission source pack이다.
+
+### 86.3 CI warning 및 범위 한계
+Node.js 20 action deprecation, punycode 및 url.parse deprecation warnings가 있으나 실패한 step은 없다. 운영 workflow 변경은 하지 않았다. CI 성공은 저장소 테스트·CRA 추적성·법령 출처 수집 파이프라인 검증이며 iX700M 제품 자체의 CRA 적합성을 증명하지 않는다.
+
+실제 iX700M SKU, EU/EEA 공급, 경제운영자, BOM/정확한 MCU/SBOM, 보안 설정, 취약점 대응, 업데이트 정책 및 지원기간은 계속 Unknown. 제품 원본 매뉴얼·signed DoC·카탈로그·CAD binary도 아직 미확보다.
+
+CRA only; SIL 3 excluded.

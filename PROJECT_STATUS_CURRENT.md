@@ -2300,3 +2300,13 @@
 주의: 2026-03-09 KC 인덱스에는 iX700MD1-B-075B/150B/220B/370B, iX700MD2-B-045B, iX700MCV-B-150/370/550/750, iX700MCB-B-8K 등 별도 모델 목록이 보인다. KC listing은 한국 적합성 자료이며 EU DoC 범위의 증거로 전용하지 않는다. 이 목록은 제조사에 CE/UKCA DoC를 모든 모델별로 연결해 달라는 질의를 보강하는 데만 사용한다.
 
 새 질의 Q56-Q58은 CE 인덱스의 iX700MCB 및 Drive model group별 개별 DoC 존재·coverage, CE와 KC listing의 scope 분리, 제품 구성·시스템 통합 경계를 확인한다. Actual SKU and EU supply remain Unknown.
+
+
+## 2026-11-25 — PR #250 병합 및 exact-head/main push CI 최종 결과
+
+- PR #250 head 7d361e1f9973dcd1ec783d7ff3895e0ddf05fe6f, base e0a0af3aa7d29acb9fa0e26bddf466af7f3398b5, 7 files(+179/-0), reviews 0, threads 0, PROJECT_LOG 382 records / invalid 0. Expected-head squash merge 성공, merge SHA ff42addc136836bbbb89bec48bb0c791f031db19.
+- PR exact-head Run #1535 / ID 45491181163: completed/success, 1 job, 15/15 returned steps success, pytest 189 passed, CRA traceability PASS (project_log_events=382), 10 official sources/provenance PASS. 2026-5252 PDF source endpoint returned temporary HTTP 503 and was explicitly SKIPPED by allowed outage handling; other two PDFs (OJ C/2026/6013 and M/606 C(2026)7861 Annex) fetched/hash verified. Artifact PDF ZIP 1,906,816 bytes digest eaf0f8eca6ecc2796813c80430f03c8c658c140d42088aa832d4890415e057eb; provenance ZIP 2,565 bytes digest ed3e3e8468f6675a96fdb1a349dcb644a802154554975ba86e7f4500771a0794.
+- Post-merge main push Run #1536 / ID 45491379142, exact head ff42addc136836bbbb89bec48bb0c791f031db19: completed/success, 1 job, 15/15 returned steps success, pytest 189 passed, CRA traceability PASS (382 events), 10 official sources/provenance PASS. The same temporary HTTP 503 for 2026-5252 caused explicit SKIPPED; the other two PDFs were fetched/hash verified. Artifact PDF ZIP 1,906,818 bytes digest 71937d047f0bc84f8619c92ae2a34b5bfdd50a8b327cbf7b91dbd3afaf35dc29; provenance ZIP 2,565 bytes digest 367419dec3c4c0351ab2eaea19578445a0ee21ce1c01d5455970dc6ceb34561b.
+- The workflow is SUCCESS because the source collector explicitly tolerates temporary unavailability of a secondary source; do not interpret it as all 3 PDFs freshly fetched in Run #1535/#1536. Earlier Runs #1526 and #1528 successfully fetched/hash verified all 3 PDFs. No test failures or actual errors; Node.js 20, punycode and url.parse deprecation warnings remain.
+- Main now includes report §85.5, evidence §42, expanded 58-question inquiry and CE/KC index metadata. Manufacturer original product binaries remain unacquired; all actual SKU, EU/EEA supply, economic operators, BOM/MCU/SBOM and product security settings remain Unknown.
+- CRA only; SIL 3 excluded.
