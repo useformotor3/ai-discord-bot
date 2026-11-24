@@ -1,3 +1,5 @@
+> **Run #1410:** Exact HEAD 1c49b9f4 CI workflow succeeded, including tests, CRA traceability, HTML locator validation and provenance manifest upload. C(2026)7861 PDF canary was explicitly SKIPPED because the Commission document-register anti-bot interstitial blocked the unauthenticated runner; no PDF bytes/hash claim is made. A source-comment/pin-only update followed, so the newest HEAD still needs final CI.
+
 > **C(2026)7861 PDF 수집 한계:** Run #1404에서 Commission document-register API가 CI runner를 anti-bot interstitial로 리디렉션했습니다. 이 문서는 OJ PDF가 아니므로 대체 URL을 추정하지 않고 source-unavailable로 처리하도록 수정했습니다. 외부 mirror 자동 수용은 하지 않으며 PDF bytes/hash는 미확보 상태로 명시합니다. C/2026/6013은 공식 Publications Office OJ PDF로 전환했습니다.
 
 > **CI 원문 수집 수정:** C/2026/6013 PDF의 EUR-Lex endpoint가 CI에서 interstitial로 리디렉션되어 실패한 것을 확인하고, 공식 Publications Office 직접 OJ PDF(61 pages)로 변경했습니다. exact host allowlist와 회귀 테스트를 추가했으며 새 HEAD CI 검증 전 PR #218은 미병합입니다.
