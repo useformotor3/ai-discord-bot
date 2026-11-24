@@ -1,3 +1,5 @@
+> **PDF 수집 안정성 보완:** Run #1419에서 ANFR fallback의 HTML 응답/timeout을 확인해 Commission-hosted transition-pathways.europa.eu PDF로 교체하고, source별 partial fetch 및 unavailable 사유 기록을 추가했습니다. 잘못된 PDF/identity mismatch/비허용 redirect는 계속 fail-closed입니다. PR #223 새 HEAD CI 검증 중입니다.
+
 > **Run #1410:** Exact HEAD 1c49b9f4 CI workflow succeeded, including tests, CRA traceability, HTML locator validation and provenance manifest upload. C(2026)7861 PDF canary was explicitly SKIPPED because the Commission document-register anti-bot interstitial blocked the unauthenticated runner; no PDF bytes/hash claim is made. A source-comment/pin-only update followed, so the newest HEAD still needs final CI.
 
 > **C(2026)7861 PDF 수집 한계:** Run #1404에서 Commission document-register API가 CI runner를 anti-bot interstitial로 리디렉션했습니다. 이 문서는 OJ PDF가 아니므로 대체 URL을 추정하지 않고 source-unavailable로 처리하도록 수정했습니다. 외부 mirror 자동 수용은 하지 않으며 PDF bytes/hash는 미확보 상태로 명시합니다. C/2026/6013은 공식 Publications Office OJ PDF로 전환했습니다.
@@ -536,12 +538,12 @@
 
 - [Commission Guidance claim register](reports/CRA_GUIDANCE_CLAIM_REGISTER_2026-11-17.csv): G-001~G-013 비구속적 설명과 문단/페이지·35개 요구사항·15개 인터페이스·36개 SEC 통제 연결.
 - [공식 Guidance/M/606 Annex 감사](reports/CRA_OFFICIAL_GUIDANCE_AND_M606_ANNEX_AUDIT_2026-11-17.md): 41개 M/606 표준화 주제와 CRA 관련 해석.
-- [PDF 원문 취득/해시 도구](cra_pdf_sources.py): Commission URL 우선, allowlist 검증된 ANFR mirror fallback, PDF magic/header/marker 검증, raw-byte SHA-256 및 page count, CI artifact 저장.
+- [PDF 원문 취득/해시 도구](cra_pdf_sources.py): Commission URL 우선, allowlist 검증된 Commission-hosted transition-pathways mirror fallback, PDF magic/header/marker 검증, raw-byte SHA-256 및 page count, CI artifact 저장.
 - 현재 작업 브랜치: `cra/guidance-claim-mapping-2026-11-17`; PR/CI 검증 전. PDF binary hash 취득 결과는 CI artifact를 확인한 후에만 확정한다.
 
 
 - [PDF source provenance manifest](reports/CRA_PDF_SOURCE_PROVENANCE_2026-11-17.json): Guidance mirror SHA-256, Commission M/606 Annex SHA-256, PDF page counts, extracted-text hashes, CI artifact digest and M/606 item 18 visual confirmation.
-- M/606 item 18 deadline confirmed visually as `31/01/2027` on PDF printed page 3. Guidance binary is ANFR mirror (Commission primary byte identity remains unverified).
+- M/606 item 18 deadline confirmed visually as `31/01/2027` on PDF printed page 3. Guidance binary is Commission-hosted transition-pathways mirror (Commission primary byte identity remains unverified).
 
 
 - 최종 재검증 [Run #669](https://github.com/useformotor3/ai-discord-bot/actions/runs/44052967754): **148 passed / 1 xfailed**, compileall·source blob identity·PDF 2종 취득/해시·artifact upload·공식 HTML source 9건·Article 13(8) locator/quote 모두 통과.
@@ -559,7 +561,7 @@
 - [PR #33](https://github.com/useformotor3/ai-discord-bot/pull/33) squash merge 완료. Merge commit `50e4784de60430bb2b8c70ca06b41627d75379ae`.
 - [Run #713](https://github.com/useformotor3/ai-discord-bot/actions/runs/44054006627): 148 passed / 1 xfailed; PDF 2종·HTML 공식 출처 9종 live canary 통과.
 - Pre/post refs: `safety/pre-merge-main-pr33-2026-11-17` → `16b5d2e732e9f5f158d2b79aa9c0c62f0488fc92`; `safety/post-merge-main-pr33-2026-11-17` → `50e4784de60430bb2b8c70ca06b41627d75379ae`; post ref와 main compare identical.
-- Guidance ANFR mirror SHA-256 `fe209c250e3d1f7599e42826d91963666951332927edcf511a2e79fe8d2f8234`; M/606 Commission Annex SHA-256 `262b09596cb5cbe7d72a2c7789fb2512ee00db7f69082e7def2c8181b0f63276`. Commission Guidance primary byte identity는 미확인.
+- Guidance Commission-hosted transition-pathways mirror SHA-256 `fe209c250e3d1f7599e42826d91963666951332927edcf511a2e79fe8d2f8234`; M/606 Commission Annex SHA-256 `262b09596cb5cbe7d72a2c7789fb2512ee00db7f69082e7def2c8181b0f63276`. Commission Guidance primary byte identity는 미확인.
 
 
 ## CRA 추적성 무결성 자동 검증
@@ -652,7 +654,7 @@
 ## 최신 Guidance 원문 기준 — OJ C/2026/6013 (2026-11-18)
 - CRA Guidance는 2026-11-17 Official Journal에 C/2026/6013 (CELEX 52026XC06013)으로 게재되었다. 최신 공식 PDF: https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX%3A52026XC06013
 - OJ PDF raw SHA-256: `40ca76caeb0108f5b97c8f373a95f590b453fe92bd45a483addf3326e48c1dc2` (61 pages, fallback=False).
-- C(2026) 5252 ANFR mirror hash는 별도 historical provenance로 보존하며 OJ PDF와 byte identity를 주장하지 않는다.
+- C(2026) 5252 Commission-hosted transition-pathways mirror hash는 별도 historical provenance로 보존하며 OJ PDF와 byte identity를 주장하지 않는다.
 - G-001–G-013 claim register는 OJ page locator로 이관되었다. 상세 crosswalk와 비교 한계는 `reports/CRA_OFFICIAL_GUIDANCE_AND_M606_ANNEX_AUDIT_2026-11-17.md` §7 참조.
 
 ### PR #52 검증 결과 — 2026-11-18
@@ -1188,5 +1190,5 @@ CLC/TC 65X의 M/606 20b/21b/22b/25b/27b/36b를 prEN 50770-4/-2/-6/-3/-5/-1에 �
 
 > **2026-11-23 병합 기록:** CRA 보고서 v0.12 및 ST MCU/M/606 조사 메모가 PR #196으로 병합되었습니다. [PR #196](https://github.com/useformotor3/ai-discord-bot/pull/196)
 
-> **PR #218 병합 완료:** final HEAD `e3ebe08b5dcf14563bba0a75dca171459ab992c5`, Run #1417 success, merge SHA `200ccca974ad3af09b1634fd9bf02c1baac5ca8c`. PDF canary was explicitly SKIPPED because the Commission newsroom interstitial was followed by a 30-second timeout on the configured ANFR mirror; no PDF bytes/hash are claimed. HTML source locator and provenance manifest passed. iX700M separate commercial sales/EU supply and actual SKU remain Unknown.
+> **PR #218 병합 완료:** final HEAD `e3ebe08b5dcf14563bba0a75dca171459ab992c5`, Run #1417 success, merge SHA `200ccca974ad3af09b1634fd9bf02c1baac5ca8c`. PDF canary was explicitly SKIPPED because the Commission newsroom interstitial was followed by a 30-second timeout on the configured Commission-hosted transition-pathways mirror; no PDF bytes/hash are claimed. HTML source locator and provenance manifest passed. iX700M separate commercial sales/EU supply and actual SKU remain Unknown.
 
