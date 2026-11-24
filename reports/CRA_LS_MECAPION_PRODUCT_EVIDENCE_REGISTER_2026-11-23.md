@@ -904,3 +904,13 @@ Actual SKU, EU/EEA supply, economic operators, independent sale/integration, BOM
 - CE index(2026-04-30): #174 iX700MCB; #173 iX700MD1-B-750B/550B/450B; #172 370B/300B; #171 220B; #170 150B; #169 075B/050B/D2-B-045B; #168 Converter iX700MCV. Search-index metadata only; each original DoC binary/signature/scope not verified. Source: https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&sca=CE
 - KC index(2026-03-09) separately lists iX700MD1-B-075B/150B/220B/370B, iX700MD2-B-045B, iX700MCV-B-150/370/550/750, iX700MCB-B-8K. KC is not EU DoC evidence and must not be conflated with CE or CRA. Source: https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&page=2&sca=KC
 - These lists expand model-specific questions only. They do not establish actual ordered SKU, EU/EEA supply, covered DoC scope or CRA conformity.
+
+
+## §43. 2026-11-25 — PR #250 및 main push CI 증거
+
+- PR #250 exact head `7d361e1f9973dcd1ec783d7ff3895e0ddf05fe6f`; Run #1535 / 45491181163 success; 15/15 returned steps success; pytest 189 passed; traceability PASS with 382 project log events; 10 official sources/provenance PASS. 2026-5252 source mirror HTTP 503 -> explicit temporary-outage SKIPPED; two other Commission PDFs fetched and hashed. Artifacts: PDF pack 1,906,816 bytes SHA-256 eaf0f8eca6ecc2796813c80430f03c8c658c140d42088aa832d4890415e057eb; provenance 2,565 bytes SHA-256 ed3e3e8468f6675a96fdb1a349dcb644a802154554975ba86e7f4500771a0794.
+- Squash merge SHA `ff42addc136836bbbb89bec48bb0c791f031db19`.
+- Main push Run #1536 / 45491379142 exact merge SHA success; 15/15 returned steps success; pytest 189 passed; traceability PASS 382; 10 official sources/provenance PASS. Same 2026-5252 HTTP 503 SKIPPED, other two PDFs fetched/hash verified. Artifacts: PDF pack 1,906,818 bytes SHA-256 71937d047f0bc84f8619c92ae2a34b5bfdd50a8b327cbf7b91dbd3afaf35dc29; provenance 2,565 bytes SHA-256 367419dec3c4c0351ab2eaea19578445a0ee21ce1c01d5455970dc6ceb34561b.
+- Do not report 3/3 PDFs fetched for #1535/#1536. Earlier #1526/#1528 logs separately confirm 3/3. Temporary source outage is a skipped canary, not a failing test; workflow conclusion success. No actual errors. Node20/punycode/url.parse deprecation warnings.
+- PR #250 diff 7 files(+179/-0), no reviews/threads, JSONL 382/0 invalid, expected-head squash merge.
+- Product binary status unchanged: manual, signed EU/CE/UKCA DoCs, catalogue and CAD native files not downloaded; metadata only. Actual SKU/EU supply/operator/BOM/MCU/SBOM/security remain Unknown.
