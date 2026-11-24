@@ -2531,3 +2531,19 @@ Further official site searches continue to return metadata but no downloadable i
 
 ### 91.4 Unknowns
 Actual SKU, EU/EEA supply, economic operators, signed DoC scope, BOM/exact MCU/SBOM, security configuration, CRA classification, vulnerability handling, security update/support period remain Unknown.
+
+ 
+## §92. 2026-11-25 — PR #256 및 main push Run #1553
+
+### 92.1 PR and main CI
+PR #256 exact head `ef3af6e9b4725422331737db6779429cb10504b3`, base `a8c51348615461f90560a3cce8443cce98c3b24f`, 6 files(+46/-0), reviews 0, inline threads 0. Run #1552 / 45508980711 completed/success, 15/15 steps, pytest 189 passed, traceability 389 events PASS, 10-source provenance PASS, PDFs 3/3 fetch/hash PASS. Expected-head squash merge SHA `0c732caa45e7fac532117e2a658463acc546ee72`.
+
+Main push Run #1553 / 45509151327 exact merge SHA, completed/success, 15/15 steps, pytest 189 passed, traceability 389 events PASS, 10-source provenance manifest JSON round-trip PASS, PDFs 3/3 fetch/hash PASS.
+
+### 92.2 Artifacts
+Run #1553 PDF ZIP artifact ID 14973833111, 3,070,564 bytes, SHA-256 `f0db5c8cffd867ff65d7ede817ba7ef9e373f07ea4a54a119fa02be114288714`; provenance ZIP artifact ID 14974127712, 2,565 bytes, SHA-256 `90c4ce87a3ba6c2b0075b9c8cfd588fec0152771ef17a9679f2e4731e461ca6a`; expiry 2026-12-01. C/2026/5252 fallback=true; hash only identifies fallback bytes, not primary mirror byte identity.
+
+### 92.3 제품 증거 및 미확정 사항
+iX700M 매뉴얼, SKU별 signed EU DoC, Converter CE/UKCA DoC, KR/EN catalogue, CAD 2D/3D STEP 원본 binary는 여전히 취득하지 못했다. 공식 웹사이트의 listing metadata와 상세 페이지 접근 오류만 확인된 상태다. 매뉴얼 Ver1.3/Ver1.4 충돌도 미해결. 제조사 질의서는 Q61/Q62를 포함한 62문항 초안이며 발송하지 않았다.
+
+Actual SKU, EU/EEA supply, economic operators, signed DoC coverage, BOM/exact MCU/SBOM, security configuration, CRA classification, vulnerability handling, security update/support period remain Unknown.
