@@ -3495,3 +3495,15 @@ CRA only; SIL 3 excluded.
 - Created a 47-question Korean manufacturer inquiry draft in reports/LS_MECAPION_iX700M_CRA_MANUFACTURER_INQUIRY_KO.md. It requests SKU and EU supply/operator facts, product boundary, BOM/MCU/SBOM, secure boot/signature/key/debug, PSIRT/CVD/Article 14, security updates/support, technical file, signed EU DoC, manual revision, catalogue and CAD originals. Not sent.
 - Report §84 expands support-period factors, industrial lifecycle nuance, SBOM minimum vs recommended full evidence, Article 14 persistence after support, security update retention and technical-document retention.
 - CRA only; SIL 3 excluded.
+
+
+## 2026-11-25 — PR #248/#249 main push CI 확정 및 제품 원본 재접근
+
+- Main HEAD 확인: e0a0af3aa7d29acb9fa0e26bddf466af7f3398b5.
+- PR #248 merge SHA dd09fc13cf9076c5cf895f4a8e8727f525847ee4 → main push Run #1526 / ID 45486715925 SUCCESS, exact head match. Job #138773948774, 15/15 returned steps success (1-12,23-25), logs 459 lines, pytest 189 passed, CRA traceability PASS, 3 official PDFs hashed, 10 official sources/provenance PASS.
+- PR #249 merge SHA e0a0af3aa7d29acb9fa0e26bddf466af7f3398b5 → main push Run #1528 / ID 45487328163 SUCCESS, exact head match. Job #138776089059, 15/15 returned steps success (1-12,23-25), logs 459 lines, pytest 189 passed, CRA traceability PASS, 3 official PDFs hashed, 10 official sources/provenance PASS.
+- Both artifact sets are Commission CRA source PDFs/provenance only; not iX700M product binaries. Node 20 action and node url.parse deprecation warnings only.
+- LS official sources rechecked: manual Ver1.4 and conflicting Ver1.3 listing; Drive EU DoC wr_id 12888 / iX700MD1-B-150B / 238.9KB; Converter CE wr_id 12886 / iX700MCV / 234.4KB; UKCA wr_id 12893 / 224.1KB; catalogue wr_id 12110 / KR/EN 10.7MB each; CAD wr_id 12455 / 2D/3D listing. Detail page fetches timed out; original binaries and signatures not acquired.
+- Manufacturer inquiry expanded 47→55 questions to map exact SKU/order code, DoC coverage, Converter ratings/options, manual revision, signed PDF authenticity and native CAD details. Draft only; not sent.
+- All actual product SKU, EU/EEA supply, economic operators, sale/integration, BOM/MCU/SBOM and security implementation remain Unknown.
+- CRA only; SIL 3 excluded.
