@@ -420,3 +420,12 @@ ESO별 C(2026)7861 실제 수령일과 Article 2 비수락 통지는 여전히 U
 - fetch_all_pdf_sources now handles source-unavailable documents individually: verified PDFs are written with SHA-256; unavailable entries are retained in manifest with status/reason; remaining sources continue.
 - Invalid PDF magic, missing required identity markers, malformed content and arbitrary non-allowlisted redirects still fail closed.
 - Added regression test for partial acquisition and updated source/test blob pins. Exact PR #223 HEAD CI pending.
+
+
+## 18.6 Run #1427 — verified partial PDF evidence
+- Exact PR #223 HEAD: fc736e91e98ad384c3efa8112345dfa8c4156158; Run #1427 / 45294643451 success; pytest 186 passed.
+- C(2026)5252 Annex: 84 pages / 1,190,726 bytes / SHA-256 fe209c250e3d1f7599e42826d91963666951332927edcf511a2e79fe8d2f8234; Commission-hosted transition-pathways.europa.eu copy, fallback used.
+- C/2026/6013 OJ: 61 pages / 2,709,282 bytes / SHA-256 40ca76caeb0108f5b97c8f373a95f590b453fe92bd45a483addf3326e48c1dc2; Publications Office direct, no fallback.
+- C(2026)7861 Annex: Commission register read timeout after 30s; recorded as unavailable in manifest; does not prevent the other two PDFs from being stored.
+- PDF artifact ID 14874639916; provenance manifest artifact ID 14875084483. Run #1427 also passed official HTML source locator validation (10 sources).
+- Source acquisition now records per-source status; invalid PDF/identity/host checks remain hard failures.
