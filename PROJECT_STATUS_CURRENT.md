@@ -1,5 +1,13 @@
 
 
+## 2026-11-24 — PR #244 병합 및 main Run #1518 최종 성공
+
+- PR #244 exact HEAD 285b4b705c2bc86b4e7a4602ee7825963770b869, base 6548eec799c398b35007212e4831d058934fa83b, 6 files(+70/-0), 6 ahead/0 behind, reviews 0 / threads 0, branch PROJECT_LOG 376 valid / 0 invalid. Exact-head Run #1517 / 45340773376 completed/success 25/25.
+- Expected-head squash merge SHA 40a92f1b00bf3b0f4e4694895b6399918ee5561f. Main ref read-back equals merge SHA. Post-merge main push Run #1518 / 45401343718 targets exact SHA and completed/success 25/25.
+- Manufacturer source recheck: official manual default and Servo filtered snapshots show Ver1.4; explicit empty-sca snapshot shows Ver1.3 for same post 41/date. Manual binary revision remains Unknown. Drive CE page opened and listed 238.9K DoC, but exact attachment download timed out. Converter CE/UKCA, catalogue, CAD listing metadata confirmed; binaries remain unacquired. Solution Square manual listing update 2026-09-16 remains SPA metadata only.
+- Actual SKU, independent sale, EU/EEA supply, importer/economic operator, BOM/MCU/security remain Unknown; manufacturer inquiry draft_prepared_not_sent. CRA only; SIL 3 excluded.
+
+
 ## 2026-11-24 — PR #243 병합 및 main CI 최종 성공
 
 - Run #1514 / 45338702162: main SHA 3fbc1bcbf669324706c4ae2f882ff7269ae87f48, push, completed/success 25/25.
