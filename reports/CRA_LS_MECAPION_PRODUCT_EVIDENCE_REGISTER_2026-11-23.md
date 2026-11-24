@@ -567,7 +567,7 @@ Run #1462 / ID 45314843427, PDF artifact 14884218192. ZIP 3,070,568 bytes, SHA-2
 
 ### iX700M evidence status
 
-- LS메카피온 공식 all-manual 및 Servo filter 검색은 현재 Ver1.4 (2026-05-26)로 일치. 과거 Ver1.3 직접 snapshot은 현재 재현되지 않으므로 stale/alternate snapshot 기록으로 보존. 실제 첨부 PDF는 아직 미확보이므로 내부 revision/hash/SKU applicability는 Unknown.
+- LS메카피온 공식 목록 snapshot 간 버전 충돌이 재현됨: `bo_table=manual` 및 `sca=Servo`는 Ver1.4, `sca=` 및 `page=1`은 같은 게시물 41번을 Ver1.3으로 표시(모두 2026-05-26). 어느 쪽이 실제 최신 PDF인지 미확정. 상세 `wr_id=12652` PDF 미확보; 내부 revision/hash/SKU applicability Unknown.
 - Solution Square `iX700M 사용 설명서` 2026-09-16 항목은 재확인. JS detail route/PDF/문서 ID 미확보.
 - Converter CE metadata: `iX700MCV`, 480Vac, 15/37/55/75kW rating codes, attachment metadata 234.4K. Drive CE metadata: example `iX700MD1-B-150B`, D1=1-axis, 480Vac, 15kW, BiSS-C encoder, attachment metadata 238.9K. Both original PDFs inaccessible (502/cache miss); DoC content and scope unverified. Separate CE listing is not proof of independent sale.
 - CAD DWG/DXF/STEP bytes still missing. Actual target SKU, independent sale, EU/EEA supply, importer/economic operator, BOM/MCU/security config remain Unknown.
