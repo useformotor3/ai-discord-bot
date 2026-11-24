@@ -3307,3 +3307,19 @@ CRA only; SIL 3 excluded.
 - 추가 검색에서 공식 목록의 Ver1.3/Ver1.4 충돌이 계속 재현됨. `bo_table=manual` 및 `bo_table=manual&sca=Servo` 검색 결과는 Ver1.4, `bo_table=manual&sca=` 및 `bo_table=manual&page=1` 결과는 같은 게시물 번호 41을 Ver1.3으로 표시(작성일 2026-05-26).
 - 따라서 직전 문서의 “Ver1.4로 수렴” 문구는 철회하고 “공식 목록 snapshot 간 충돌 unresolved”로 정정. 게시물 `wr_id=12652` 상세/첨부 PDF 원본, 실제 내부 revision 및 hash는 미확보.
 - iX700M CAD 목록 검색은 게시물 #19 / 2026-04-21 및 2D(CAD), 3D(STEP) 첨부 구성을 재확인. 상세 URL `wr_id=12455`는 timeout. 원본 bytes/hash 미확보.
+
+
+## 2026-11-24 — PR #233 병합, main CI 및 제조사 원본 재접근
+
+### PR/CI 검증
+- PR #233 exact HEAD `a46bbfd774fe778d44a8eec640a32e57414590d6`, Run #1471 / ID 45315401722 success. 6 files; JSONL 360 / invalid 0; review threads 0 / reviews 0; base main `d3b75a84d2b84ada59d2314780461e53b21e090b`.
+- Expected-head squash merge SHA `d160cb2eea13d3f18ac4bc8e98c40d4378881c1a`; main read-back identical.
+- Main push Run #1472 / ID 45315862331, exact merge SHA, success; 25/25 steps. PR #229 main push Run #1452 / ID 45312941583 success 25/25 remains verified.
+
+### Manufacturer source retry
+- Official LS Mecapion iX700M drive family index confirms EtherCAT communication, AC 380–480 V, 4.5–75 kW, 16.1–168 A per axis. This is family-level public metadata, not the target SKU's configuration.
+- Solution Square category/search still lists iX700M manual updated 2026-09-16; detail URL/document ID/PDF not exposed because the page resolves to a JavaScript app shell.
+- Manual list snapshots still conflict: default and Servo filter show Ver1.4; empty category and page=1 show Ver1.3 for same post/date. Detail post wr_id=12652 remains inaccessible; actual PDF revision/hash Unknown.
+- Drive CE DoC detail metadata opened; attachment download timed out. Converter CE metadata found but original PDF not acquired. CAD list item 19 / 2026-04-21 reconfirmed; detail wr_id=12455 returns 502/cache miss. No original CE DoC or DWG/DXF/STEP bytes/hash acquired.
+- Actual SKU, independent sale, EU/EEA supply, importer/economic operator, BOM/MCU/security remain Unknown. Manufacturer inquiry remains draft_prepared_not_sent.
+- Documentation branch created from main `d160cb2eea13d3f18ac4bc8e98c40d4378881c1a`; six files to synchronize: integrated report §73, evidence register §27, situation board, README, SESSION_LOG, append-only PROJECT_LOG. CRA only; SIL 3 excluded.
