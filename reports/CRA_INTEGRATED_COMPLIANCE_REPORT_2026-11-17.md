@@ -1899,7 +1899,7 @@ CRA only; SIL 3 제외.
 
 LS ELECTRIC 도메인에서 제공하는 LS Mecapion의 PDF `서보 드라이브 신제품 소개(iX7M, iX700M)`를 열어 텍스트 본문을 확인했다.
 
-- 원본 URL: https://sol.ls-electric.com/uploads/document/17120093352290/%5BLS%2BELECTRIC%2B%EC%98%A4%ED%94%88%EC%84%B8%EB%AF%B8%EB%82%98%5D%2B%EC%84%9C%EB%B3%B4%2B%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B8%8C%2B%EC%8B%A0%EC%A0%9C%ED%92%88%2B%EC%86%8C%EA%B0%9C%2B%EC%9BiX7M_iX700M_LS%EB%A9%94%EC%B9%B4%ED%94%BC%EC%98%A8.pdf
+- 원본 URL: https://sol.ls-electric.com/uploads/document/17120093352290/%5BLS%2BELECTRIC%2B%EC%98%A4%ED%94%88%EC%84%B8%EB%AF%B8%EB%82%98%5D%2B%EC%84%9C%EB%B3%B4%2B%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B8%8C%2B%EC%8B%A0%EC%A0%9C%ED%92%88%2B%EC%86%8C%EA%B0%9C%2BiX7M_iX700M_LS%EB%A9%94%EC%B9%B4%ED%94%BC%EC%98%A8.pdf
 - 문서 표제: `서보 드라이브 신제품 소개(iX7M, iX700M)`, 작성 주체 표기 LS Mecapion. 문서 푸터에 `2024-04-01 18:41:07` 내부 timestamp가 표시된다. 이를 별도 발행일로 단정하지 않는다.
 - **제품 구분 주의:** PDF 앞부분에는 iX7M 관련 내용도 포함되어 있다. 본 절에서 iX700M 근거로 사용하는 것은 iX700M Series 표제가 명시된 구간(텍스트 추출 기준 lines 153–240 및 245–269)뿐이다. iX7M 전용 사양표/비교행을 iX700M에 전용하지 않는다.
 
