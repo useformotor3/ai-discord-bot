@@ -3461,3 +3461,10 @@ CRA only; SIL 3 excluded.
 - Post-merge main push Run #1518 / 45401343718 targets exact merge SHA 40a92f1b00bf3b0f4e4694895b6399918ee5561f and completed/success 25/25. No main CI failure observed.
 - Manufacturer source recheck: default manual index and Servo filtered index show iX700M DRIVE 400[V] Ver1.4 (2026-05-26); explicit empty-sca snapshot shows Ver1.3 for post 41. Direct detail/download remains inaccessible, so actual binary revision/hash is Unknown. Drive CE page content was readable and lists iX700MD1-B-150B / 238.9K DoC; the exact download link timed out. Converter CE/UKCA, KR/EN catalogue, iX700M CAD index listings were corroborated by official search-index pages; no original binaries obtained. Solution Square manual listing update 2026-09-16 remains JS SPA metadata only.
 - Unknowns unchanged: actual SKU, independent sale, EU/EEA supply, importer/economic operator, BOM/MCU/security configuration. Manufacturer inquiry draft_prepared_not_sent. CRA only; SIL 3 excluded.
+
+
+## 2026-11-24 — PR #245 post-merge main CI Run #1520
+
+- Run #1520 / 45401919091: completed/success, exact SHA 2b9d924a92bbd497289b9e3afe0dd52df527472b; main read-back exact match; all 25 workflow steps successful, including source identity, dependencies, compile, CRA cross-matrix, full test suite, official CRA source canaries, evidence/provenance uploads and post steps.
+- Official source recheck: default manual and Servo filter indexes report iX700M Ver1.4 (2026-05-26), while explicit empty-sca snapshot reports Ver1.3. Binary revision/hash unresolved. Official catalog page index shows KR/EN catalogue listing; detail metadata attachment names dated 2025-12-05, binaries not acquired. CE/UKCA/CAD remain listing metadata only; download failure/timeout recorded, not acquired.
+- Unknown: target SKU, EU/EEA supply, importer/economic operator, BOM/MCU/security configuration. CRA-only scope.

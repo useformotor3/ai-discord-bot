@@ -784,3 +784,12 @@ Run #1462 / ID 45314843427, PDF artifact 14884218192. ZIP 3,070,568 bytes, SHA-2
 
 - No original manual, DoC, catalogue or CAD binary was acquired. Metadata must not be labelled as acquired evidence.
 - Actual SKU, independent sale, EU/EEA supply, importer/economic operator, BOM/MCU/security remain Unknown. Manufacturer inquiry draft_prepared_not_sent. CRA only; SIL 3 excluded.
+
+
+## 39. 2026-11-24 — Run #1520 post-merge CI and source recheck
+
+- Run #1520 / 45401919091: exact main SHA 2b9d924a92bbd497289b9e3afe0dd52df527472b, SUCCESS 25/25.
+- Manual index revision discrepancy unresolved: default/Servo-filtered Ver1.4; explicit empty-sca Ver1.3, 2026-05-26. PDF bytes/hash not acquired.
+- Catalogue listing confirmed for KR/EN iX700M; attachment metadata dates 2025-12-05, no binary acquired.
+- CE/UKCA and CAD listings do not equal acquired source evidence; bytes unavailable.
+- Unknown: actual target SKU, EU/EEA supply, importer/economic operator, BOM/MCU/security configuration. CRA-only scope.
