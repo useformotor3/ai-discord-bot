@@ -2346,3 +2346,14 @@
 - Run #1542에서 공식 CRA PDF 3종 모두 실제 fetch/hash 성공: C/2026/5252 1,190,726 bytes/84 pages/SHA-256 `fe209c250e3d1f7599e42826d91963666951332927edcf511a2e79fe8d2f8234` (fallback=true); OJ C/2026/6013 2,709,282 bytes/61 pages/SHA-256 `40ca76caeb0108f5b97c8f373a95f590b453fe92bd45a483addf3326e48c1dc2` (fallback=false); M/606 Annex 151,267 bytes/6 pages/SHA-256 `262b09596cb5cbe7d72a2c7789fb2512ee00db7f69082e7def2c8181b0f63276` (fallback=false). C/2026/5252 was obtained through fallback; do not assert it is byte-identical to the original mirror source.
 - PDF ZIP artifact ID 14973509955, 3,070,565 bytes, SHA-256 `ca03854e1a1fc393292d0676a9e73276fedb8f4e12f91f62ed08f5aba05ba8f7`; provenance ZIP artifact ID 14973037845, 2,565 bytes, SHA-256 `ac0f673fc8844fcd62977fad35e0c0d1a00d2e2aab8ad78bdbe8f2728c74623c`; expiry 2026-12-01.
 - No iX700M product binary was acquired. CRA only; SIL 3 excluded.
+
+ 
+## 2026-11-25 — PR #253 병합 및 main push Run #1547 성공
+
+- PR #253 exact head `f1322bccae3042d18d2b922deb3b394c76b48a53`, base `cffd2118d2ce4127e50352650479553cb12c2bdf`, 7 files(+104/-0), reviews 0, threads 0. Expected-head squash merge SHA `e89faa6f9d907edcaf09adbd8f72eb81091ed279`.
+- PR exact-head Run #1546 / 45507438974: completed/success, 15/15 steps, pytest 189 passed, CRA traceability 386 events PASS, 10-source provenance PASS, PDF 3/3 fetch/hash success.
+- Post-merge main push Run #1547 / 45507593050: event=push, exact head equals merge SHA, completed/success, 15/15 steps, pytest 189 passed, traceability 386 events PASS, 10-source provenance manifest PASS, PDF 3/3 fetch/hash success.
+- C/2026/5252 was acquired via fallback=true in #1546/#1547. Its SHA-256 identifies the fetched fallback bytes only; do not claim byte-identical to the primary mirror.
+- Main Run #1547 PDF artifact ID 14974835241, 3,070,565 bytes, SHA-256 `10baf4713686d065422e9efa744ab7513767313ca23538d355520a3d18f2ce7e`; provenance artifact ID 14972713583, 2,565 bytes, SHA-256 `040ebe67de2ba6a9b706f2666e01e74473bfdc1a75e2c613c9fc0df0bb8d92cf`; expiry 2026-12-01.
+- Manufacturer retry remains metadata-only: manual listing version discrepancy Ver1.4 vs Ver1.3 at same 2026-05-26 posted date, detail 502; signed DoC, converter CE/UKCA, catalogue, CAD binaries still not acquired. Q61 added to require controlled current-version statement and SKU/HW revision applicability.
+- Actual SKU, EU/EEA supply, economic operators, signed DoC scope, BOM/MCU/SBOM, security configuration, CRA classification, vulnerability handling and update/support period remain Unknown. Inquiry 61 questions, draft not sent. CRA only; SIL 3 excluded.
