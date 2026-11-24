@@ -11,6 +11,7 @@ import json
 from pathlib import Path
 import re
 from urllib.parse import urlparse
+import time
 
 import requests
 from pypdf import PdfReader
@@ -18,10 +19,16 @@ from pypdf import PdfReader
 
 TIMEOUT = (5, 30)
 MAX_BYTES = 25 * 1024 * 1024
+MAX_DOWNLOAD_ATTEMPTS = 3
+RETRY_BACKOFF_SECONDS = 1.0
 
 
 class PDFSourceUnavailableError(RuntimeError):
     """Temporary network/source outage; caller may safely skip the live canary."""
+
+
+class PDFSourceRetryableError(PDFSourceUnavailableError):
+    """Temporary transport failures that may succeed on a bounded retry."""
 
 
 class PDFSourceValidationError(RuntimeError):
@@ -78,11 +85,11 @@ def _download(url, allowed_hosts, *, get=None):
     try:
         response = get(url, timeout=TIMEOUT, allow_redirects=True, stream=True)
     except (requests.Timeout, requests.ConnectionError) as exc:
-        raise PDFSourceUnavailableError(f"PDF source network failure: {url}: {exc}") from exc
+        raise PDFSourceRetryableError(f"PDF source network failure: {url}: {exc}") from exc
 
     status = int(getattr(response, "status_code", 0) or 0)
     if status in (408, 425, 429) or status >= 500:
-        raise PDFSourceUnavailableError(
+        raise PDFSourceRetryableError(
             f"PDF source temporary HTTP status {status}: {url}"
         )
     if status in (401, 403, 404):
@@ -121,7 +128,7 @@ def _download(url, allowed_hosts, *, get=None):
                 )
             chunks.append(chunk)
     except (requests.Timeout, requests.ConnectionError) as exc:
-        raise PDFSourceUnavailableError(
+        raise PDFSourceRetryableError(
             f"PDF source interrupted while downloading: {final_url}: {exc}"
         ) from exc
     data = b"".join(chunks)
@@ -132,6 +139,19 @@ def _download(url, allowed_hosts, *, get=None):
             f"PDF magic header missing (Content-Type={content_type or 'unknown'}): {final_url}"
         )
     return data, final_url, content_type
+
+
+def _download_with_retries(url, allowed_hosts, *, get=None, sleep=None):
+    """Retry only transient transport/HTTP failures; never retry identity failures."""
+    get = get or requests.get
+    sleep = sleep or time.sleep
+    for attempt in range(MAX_DOWNLOAD_ATTEMPTS):
+        try:
+            return _download(url, allowed_hosts, get=get)
+        except PDFSourceRetryableError:
+            if attempt + 1 >= MAX_DOWNLOAD_ATTEMPTS:
+                raise
+            sleep(RETRY_BACKOFF_SECONDS * (2 ** attempt))
 
 
 def _extract_pdf_text(data, source_id):
@@ -159,20 +179,21 @@ def _extract_pdf_text(data, source_id):
     return text, len(pages)
 
 
-def fetch_pdf_source(definition, *, get=None):
+def fetch_pdf_source(definition, *, get=None, sleep=None):
     requested_url = definition["url"]
     fallback_used = False
     try:
-        data, final_url, content_type = _download(
-            requested_url, definition["allowed_hosts"], get=get
+        data, final_url, content_type = _download_with_retries(
+            requested_url, definition["allowed_hosts"], get=get, sleep=sleep
         )
     except PDFSourceUnavailableError:
         if not definition.get("fallback_url"):
             raise
-        data, final_url, content_type = _download(
+        data, final_url, content_type = _download_with_retries(
             definition["fallback_url"],
             definition["fallback_allowed_hosts"],
             get=get,
+            sleep=sleep,
         )
         fallback_used = True
     except PDFSourceFallbackError:
@@ -213,12 +234,12 @@ def fetch_pdf_source(definition, *, get=None):
     }
 
 
-def fetch_all_pdf_sources(output_dir=None, *, get=None):
+def fetch_all_pdf_sources(output_dir=None, *, get=None, sleep=None):
     results = []
     unavailable = []
     for definition in PDF_SOURCE_CATALOG:
         try:
-            item = fetch_pdf_source(definition, get=get)
+            item = fetch_pdf_source(definition, get=get, sleep=sleep)
         except PDFSourceUnavailableError as exc:
             unavailable.append({
                 "id": definition["id"],
@@ -273,10 +294,14 @@ def main(argv=None):
         )
     for item in unavailable:
         print(f"SKIPPED: {item['id']}: {item['reason']}")
-    print(
-        f"PASS: fetched and hashed {len(results)} CRA Commission PDF sources; "
-        f"unavailable={len(unavailable)}"
-    )
+    if unavailable:
+        missing_ids = ", ".join(item["id"] for item in unavailable)
+        print(
+            f"WARNING: partial CRA PDF source pack; fetched={len(results)} "
+            f"unavailable={len(unavailable)} ids={missing_ids}"
+        )
+    else:
+        print(f"PASS: fetched and hashed all {len(results)} CRA Commission PDF sources")
     return 0
 
 
