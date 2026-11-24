@@ -2255,3 +2255,14 @@
 - iX700M 제조사 자료는 계속 metadata와 원본 binary를 구분한다. Ver1.4/Ver1.3 index 충돌, manual/DoC/catalogue/CAD binary 미확보 상태 유지.
 - Actual SKU, independent sale, EU/EEA supply, importer/economic operator, BOM/MCU/security configuration remain Unknown. Manufacturer inquiry `draft_prepared_not_sent`.
 - CRA only; SIL 3 excluded.
+
+
+## 2026-11-24 — PR #247 병합 및 main Run #1523 최종 성공 / CRA 2026-11-17 Commission Guidance 반영
+
+- PR #247 exact HEAD `f943c4741f85cc8b5d34dd33ee9876542b313256`, Run #1522 / ID `45403427550` success 25/25, PROJECT_LOG 378 records / invalid 0, 6 files(+87/-0), reviews 0 / threads 0. Expected-head squash merge SHA `30d5c5997d0c99a8eff804c589010695c8735ced`; main read-back matched.
+- Post-merge main push Run #1523 / ID `45403594895`, event=push, exact SHA `30d5c5997d0c99a8eff804c589010695c8735ced`, final success 25/25.
+- Fresh official EU Commission guidance C/2026/6013, OJ C, 17.11.2026 reviewed. It clarifies Article 14 awareness and progressive reporting: early warning within 24h; fuller notification within 72h; final report for actively exploited vulnerability within 14 days after corrective/mitigating measure is available; severe incident final report within one month after 72h notification. It confirms Article 14 reporting start 2026-09-11 and non-retroactive treatment where manufacturer already knew of both vulnerability and exploitation before that date.
+- CRA general application date remains 2027-12-11; Article 14 reporting already applies since 2026-09-11, including in-scope products placed on market before 2027-12-11 (Articles 69(3), 71(2)).
+- Product assessment remains provisional: network-connected servo drive is a plausible PDE due to documented EtherCAT and service/data interfaces, but actual target SKU, market placement and exact product boundary remain Unknown. Do not infer CRA exemption or important-product class from generic servo-drive label or CE/UKCA listing.
+- Support period baseline: at least 5 years unless expected use time is shorter; security updates made available during support must remain available at least 10 years or remainder of support period, whichever is longer. Confirm product-specific expected lifetime and update implementation with manufacturer.
+- Actual SKU, independent sale/integration status, EU/EEA supply, importer/economic operator, BOM/exact ST MCU, SBOM, security configuration, vulnerability process and support period remain Unknown. Manufacturer inquiry `draft_prepared_not_sent`. CRA only; SIL 3 excluded.
