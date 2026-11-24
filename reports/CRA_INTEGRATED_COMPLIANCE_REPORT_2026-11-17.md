@@ -2627,3 +2627,19 @@ Run #1564 PDF ZIP artifact ID 14974949830, 3,070,568 bytes, SHA-256 `386c9478241
 iX700M 원본 매뉴얼, SKU별 signed EU DoC, Converter CE/UKCA DoC, KR/EN catalogue, CAD 2D/3D STEP는 취득하지 못했다. 공식 게시목록 metadata만 확인됐으며 상세 첨부 접근은 502/timeout이다. 제조사 질의서 62문항은 미발송 초안이다.
 
 Actual SKU, EU/EEA supply, economic operators, signed DoC coverage, BOM/exact MCU/SBOM, security configuration, CRA classification, vulnerability handling, security update/support period remain Unknown.
+
+ 
+## §98. 2026-11-25 — PR #263 및 main push Run #1566
+
+### 98.1 PR and main CI
+PR #263 exact head `e4e2601252d56610bf3cf2043603291856ad68e3`, base `a5f1f68351b19557c5444425ae46fb790ddaeec7`, 6 files(+44/-0), reviews 0, inline threads 0. PR Run #1565 / 45512336701 completed/success, 14/15 steps success; optional provenance read-only canary step timed out on CRA-COMMISSION-GUIDANCE-2026-07-27 and its upload step was skipped. Other key gates passed: compile, traceability 395 events, pytest 189 passed, PDF 3/3 fetch/hash. This skip is explicitly recorded, not described as a full 15/15 success.
+
+Expected-head squash merge SHA `8d2d78b4ccc0ad326813f8e5cb74470bc5738e14`. Main push Run #1566 / 45512624809 exact merge SHA completed/success, 15/15 steps success, pytest 189 passed, traceability 395 events PASS, 10-source provenance manifest JSON round-trip PASS and uploaded, PDFs 3/3 fetch/hash PASS. Main read-only canary logged a temporary source outage with allowed skip, but the independent 10-source provenance manifest/upload step completed successfully.
+
+### 98.2 Artifacts
+Run #1566 PDF ZIP artifact ID 14976576885, 3,070,566 bytes, SHA-256 `87d053774d70ba0794947802e98cede863d038cf24b5252541aadd21f1ef1672`; provenance ZIP artifact ID 14976921254, 2,565 bytes, SHA-256 `524a92d46f8c368430efafec8f5fd9e92a3ddd8a00895d8e1e46fa501b187c81`; expiry 2026-12-01. C/2026/5252 fallback=true; hash only identifies fallback bytes.
+
+### 98.3 제품 증거 상태
+iX700M 원본 매뉴얼, SKU별 signed EU DoC, Converter CE/UKCA DoC, KR/EN catalogue, CAD 2D/3D STEP는 취득하지 못했다. 공식 게시목록 metadata만 확인됐으며 상세 첨부 접근은 502/timeout이다. 제조사 질의서 62문항은 미발송 초안이다.
+
+Actual SKU, EU/EEA supply, economic operators, signed DoC coverage, BOM/exact MCU/SBOM, security configuration, CRA classification, vulnerability handling, security update/support period remain Unknown.
