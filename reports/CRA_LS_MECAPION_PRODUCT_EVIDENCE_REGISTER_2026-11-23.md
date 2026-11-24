@@ -604,3 +604,22 @@ Run #1462 / ID 45314843427, PDF artifact 14884218192. ZIP 3,070,568 bytes, SHA-2
 - PDF에 iX7M과 iX700M이 함께 수록되어 있으므로 iX700M 전용 구간만 사용하고 iX7M 사양을 전용하지 않는다.
 - 목록 메타데이터를 원본 PDF 확보로 표현하지 않는다. Solution Square manual, actual Ver1.3/1.4 manuals, CE DoC, CAD 원본은 여전히 미확보.
 - CRA only; SIL 3 제외.
+
+
+## 29. 2026-11-24 — iX700M 매뉴얼·CE DoC·CAD 자료 재접근 및 Run #1481
+
+| ID | 공식 자료/URL | 새로 확인된 정보 | 원본 취득 및 제한 |
+|---|---|---|---|
+| MFG-IX7M-44 | https://sol.ls-electric.com/kr/ko/product/category/4?pageNumber=4 ; https://sol.ls-electric.com/kr/ko/newSearch?pageNumber=70 | Solution Square Motion & Servo 목록 및 통합 검색에 `iX700M 사용 설명서`, update 2026-09-16 표시 | JS app shell로 상세 URL/document ID/PDF 원본 확인 불가. LS Mecapion Ver1.3/1.4와 동일 문서인지 Unknown |
+| MFG-IX7M-45 | https://lsmecapion.com/bbs/board.php?bo_table=manual&sca=Servo | Servo filter는 `iX700M DRIVE 400[V] 매뉴얼 Ver1.4`, 2026-05-26 표시 | 실제 detail `wr_id=12652` timeout. PDF bytes/hash/revision unknown |
+| MFG-IX7M-46 | https://www.lsmecapion.com/bbs/board.php?bo_table=manual&page=1 | Full index snapshot은 같은 게시물 no.41/date 2026-05-26을 Ver1.3으로 표시 | Ver1.3/Ver1.4 snapshot conflict unresolved. 실제 PDF revision 미확인 |
+| MFG-IX7M-47 | https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&sca=CE&wr_id=12886 | Converter CE 게시물, iX700MCV, CV, B=480Vac, 150/370/550/750=15/37/55/75kW, 첨부명 `[CE_DoC-LVDEMC] iX700MCV.pdf` 234.4K, 2026-04-30 | 실제 DoC PDF 다운로드 timeout; 본문/서명/규격/지침/모델범위 미검증 |
+| MFG-IX7M-48 | https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&page=4&wr_id=12888 | Drive 게시물 iX700MD1-B-150B, D1=1축, B=480Vac, 150=15kW, B=BiSS-C 또는 custom, 첨부명 `[CE_DoC-LVDEMC] iX700MD1-B-150B.pdf` 238.9K, 2026-04-30 | 실제 DoC PDF 다운로드 timeout; DoC 본문 미검증 |
+| MFG-IX7M-49 | https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&sca=CE | CE 목록에 iX700MCB, MD1-B 용량별 항목, iX700MCV가 2026-04-30에 게시된 것으로 표시 | 목록 메타데이터만. 실제 판매/독립 공급/EU 시장 공급 또는 CRA 적합성 증거 아님 |
+| MFG-IX7M-50 | https://lsmecapion.com/bbs/board.php?bo_table=drawing&page=1 ; https://lsmecapion.com/bbs/board.php?bo_table=drawing&sca=Servo+Drive&wr_id=12455 | 게시물 117번, iX700M 2D(CAD)/3D(STEP), 2026-04-21 | 상세 timeout; 첨부명·확장자·bytes/hash 미확보. DWG/DXF 각각 존재 여부 Unknown |
+| CRA-CI-1481 | https://github.com/useformotor3/ai-discord-bot/actions/runs/45317449785 | exact main HEAD `c395fc5b5b2a393632bb2fbe65b10fd6572b936d`, Run #1481 / 45317449785 success 25/25 | PDF artifact 14886830715 ZIP 3,070,567B SHA-256 `de227aa54d5a76541738d10511b7f04de18fe6e6487ac0949c0a9a89be9c7175`; provenance artifact 14885424833 ZIP 2,565B SHA-256 `41be60344b6921ad9ccbead26ce870578e3bc2363b51dc24c78730e3fe1ee48c` |
+
+- CE DoC listing/file names are not equivalent to inspected declarations; do not infer the standards/directives or CRA compliance until PDF body is acquired and reviewed.
+- Solution Square update date is a listing metadata fact only; no proof that the manual equals LS Mecapion Ver1.3 or Ver1.4.
+- Actual SKU, independent sale, EU/EEA supply, importer/economic operator, BOM/MCU/security configuration remain Unknown. Inquiry `draft_prepared_not_sent`.
+- CRA only; SIL 3 excluded.
