@@ -481,3 +481,14 @@ PR #218의 HEAD 1c49b9f4b5ad8fa747ffa08051fa6116dd3eff85에 대한 Run #1410은 
 PR #223의 문서 동기화 CI Run #1419에서 기존 ANFR fallback URL이 한 번은 30초 read timeout, 다른 시도에서는 HTTP 200 HTML 안내 페이지를 반환했다. 이는 공식 원문 내용 오류가 아니라 fallback 호스트의 자동화 접근 불안정이다. ANFR mirror는 제거하고, 2026-07-27 C(2026)5252 Annex의 PDF 본문이 Commission 공식 EU portal인 transition-pathways.europa.eu에 게시된 사본으로 대체한다. 해당 PDF는 브라우저에서 European Commission 제목, 27.7.2026, C(2026)5252 final, guidance Annex 및 CRA 본문을 확인했다.
 
 또한 PDF 수집을 전체 성공/전체 실패 방식에서 source별 수집 방식으로 변경한다. 검증 성공한 PDF는 개별 저장·SHA-256 기록하고, 특정 문서가 공식 anti-bot interstitial/일시적 네트워크 오류로 접근 불가하면 해당 source를 manifest에 status=unavailable 및 이유와 함께 남기고 나머지 source는 계속 수집한다. 잘못된 PDF magic, identity marker 불일치, 임의 non-allowlisted redirect는 계속 validation failure로 중단한다. 따라서 일부 source 미확보를 전체 PDF 미확보로 숨기지 않고, 확보된 원문과 누락 항목을 분리한다.
+
+
+### 14.14 PR #223 최신 검증 — PDF 원문 2종 확보
+PR #223 최신 HEAD fc736e91e98ad384c3efa8112345dfa8c4156158의 Run #1427(45294643451)은 workflow success로 종료됐다. Source identity, 컴파일, CRA traceability, 전체 pytest 186개, 공식 CRA HTML source locator 10개, PDF source 수집 및 provenance manifest 업로드가 성공했다.
+
+실제 PDF 결과:
+- C(2026)5252 final Annex: 84 pages, 1,190,726 bytes, SHA-256 fe209c250e3d1f7599e42826d91963666951332927edcf511a2e79fe8d2f8234. Commission newsroom redirect 이후 Commission-hosted transition-pathways.europa.eu copy에서 수집(fallback=True).
+- C/2026/6013 OJ guidance: 61 pages, 2,709,282 bytes, SHA-256 40ca76caeb0108f5b97c8f373a95f590b453fe92bd45a483addf3326e48c1dc2. Publications Office direct OJ URL에서 수집(fallback=False).
+- C(2026)7861 M/606 Annex: Commission register endpoint read timeout 30s; manifest에 unavailable 사유 기록. 나머지 두 PDF의 확보를 막지 않았음.
+
+PDF artifact ID 14874639916 및 provenance artifact ID 14875084483이 Run #1427에 업로드됐다. 이 결과는 두 문서의 binary SHA-256을 확보했다는 뜻이며, C(2026)7861은 아직 PDF binary/hash 미확보로 유지한다.
