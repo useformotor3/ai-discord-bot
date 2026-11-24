@@ -1,3 +1,13 @@
+## 2026-11-24 — iX700M 공식 CE·모델코드·매뉴얼/CAD 메타데이터 교차검증
+
+- PR #226 병합: 5b1b66adff29125409ea231ccbb877f5c1647670; exact PR HEAD `0a8a822296731e738bf80209230f6271e550025a`; PR Run #1445 success. 7개 파일 diff 검토, review thread 0개, PROJECT_LOG 349 records / invalid JSON 0.
+- main read-back SHA 확인. main push Run #1446은 확인 시점에 진행 중이며 최종 결과는 미확정.
+- LS메카피온 CE 게시판에서 Converter Unit `iX700MCV`와 Drive Unit `iX700MD1-B-...` 항목이 별도로 게시됨. 코드 정의: CV=Converter Unit, B=480 Vac, 150/370/550/750=15/37/55/75 kW; Drive D1/D2/D3=1/2/3축, encoder B=BiSS-C, 옵션 suffix 정의. 이는 기능·문서 식별 증거이며 독립 판매/계약/주문 또는 EU 개별 공급 증거가 아니다.
+- 매뉴얼 목록은 검색 색인에서 Ver1.4(2026-05-26), 직접 열린 공식 목록의 캐시에서는 Ver1.3(같은 게시일)로 상충. 원본 PDF·개정 이력·파일 hash 미확보. 제조사 확인 전 버전 확정 금지.
+- iX700M 외형도 2D CAD/3D STEP 게시물(2026-04-21)은 확인. 상세 첨부 페이지 및 원본 파일 byte/hash는 확보되지 않았고 내부 회로도/BOM/PCB 자료도 아님.
+- 보고서 §67 및 제품 증거 등록부 §21에 출처·한계·Unknown 상태를 반영. 질의서/커버메일은 준비 상태이며 실제 발송·접수·회신은 없음.
+- 작업 브랜치 `research/cra-ix700m-official-evidence-reconciliation-2026-11-24`, 기준 main `5b1b66adff29125409ea231ccbb877f5c1647670`; 문서 전용. CRA only; SIL 3 제외.
+
 ## 2026-11-24 — PR #225 병합 및 제조사 질의 발송 경로 조사
 
 - PR #225 squash merge 완료: https://github.com/useformotor3/ai-discord-bot/pull/225
