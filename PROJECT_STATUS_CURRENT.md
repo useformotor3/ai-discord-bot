@@ -3,7 +3,7 @@
 
 - PR #237 exact HEAD `0b173310aafc82d8db1c7bce032d93ee9fbd0db3`, Run #1482 / 45318431483 success 25/25. 6-file diff, JSONL 365 / invalid 0, review threads/reviews 0, base `c395fc5b5b2a393632bb2fbe65b10fd6572b936d`. Expected-head squash merge SHA `792eea6388382a1932f1b775e57776a7ccacf3a6`.
 - Main read-back identical. Post-merge main push Run #1483 / ID 45318639981, exact merge SHA, success 25/25.
-- **주의:** Run #1483 PDF artifact 14886766794는 3, 070? bytes? 실제 2,922,421B, ZIP SHA-256 `3f6c27de5224eb480951133a39ea5791b83753ae2038c1072158db94bbbb758c`; PDF 2/3 확보. C(2026)7861 Annex는 Commission register API read timeout 30s로 unavailable. Provenance artifact 14885852834 SHA-256 `16b7160436069a0ccecc2a1b04e923a5eb119aa11506b8fb7a6197030bc2be7c`.
+- **주의:** Run #1483 PDF artifact 14886766794는 2,922,421B, ZIP SHA-256 `3f6c27de5224eb480951133a39ea5791b83753ae2038c1072158db94bbbb758c`; PDF 2/3 확보. C(2026)7861 Annex는 Commission register API read timeout 30s로 unavailable. Provenance artifact 14885852834 SHA-256 `16b7160436069a0ccecc2a1b04e923a5eb119aa11506b8fb7a6197030bc2be7c`.
 - Run #1481 artifact 14886830715에서 C(2026)7861 Annex 원본 6p, SHA-256 `262b09596cb5cbe7d72a2c7789fb2512ee00db7f69082e7def2c8181b0f63276`를 이미 확보·검증했다. 기존 원본은 유효하게 보존하며 Run #1483의 재취득 timeout과 구분한다.
 - Official Commission register browser extraction으로 C(2026)7861 Annex 본문/41개 standards deadline 표 재확인. PDF bytes 재취득 성공으로 간주하지 않는다.
 - Source collector는 일시적 source unavailable을 기록하고 exit 0을 반환하므로 CI green과 complete PDF pack은 다르다. 현재 코드/workflow 변경은 하지 않고, retry/backoff 및 completeness 상태표시를 별도 테스트 후보로 등록한다.
