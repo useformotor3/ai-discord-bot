@@ -3224,3 +3224,14 @@
 - Source identity, compile, CRA cross-matrix traceability, complete pytest, official CRA PDF and HTML read-only canaries, PDF evidence upload, provenance manifest upload 모두 성공.
 - main branch read-back SHA와 PR #228 squash merge SHA 동일.
 - 이전 로그의 in-progress는 조회 당시 상태로 보존하고 이 항목으로 최종 결과를 추가했다.
+
+
+## 2026-11-24 — PR #229 exact-HEAD CI 성공 및 squash merge
+
+- PR #229: https://github.com/useformotor3/ai-discord-bot/pull/229. Exact HEAD `ccacd96f90ef9119d3b6c86abcec243a23561d9e`; Run #1451 / ID `45309037166` success.
+- 25개 job step 전부 success. Source blob identity, compile, CRA cross-matrix traceability, complete pytest, official CRA PDF/HTML read-only canaries, evidence/provenance artifact uploads 완료.
+- Artifacts: official PDF evidence ID `14882107200`, 2,922,422 bytes, ZIP SHA-256 `85d61b226a35159a80627494f175f886a760d55b187d133be73b602b1eb9112a`; provenance ID `14882875485`, 2,565 bytes, ZIP SHA-256 `d45087b09afa6a1fc17d68bbc535d2eadfda464e0087e8c337f80d2e40d36968`.
+- 7개 파일 diff 검토, review thread 0. PROJECT_LOG 353 records / invalid JSON 0. PR ready 전환 후 expected head SHA를 지정해 squash merge.
+- Merge SHA `4263389aa79cbb7cc17ccda3a019c659ccddef85`; main post-merge CI는 현재 도구 조회에서 run/status를 확인하지 못해 pending/unverified. 병합 성공과 post-merge CI 성공을 혼동하지 않는다.
+- 매뉴얼/CE DoC/CAD 원본 다운로드는 여전히 cache miss/미확보. 매뉴얼 목록 Ver1.3 대 검색 snippet Ver1.4 충돌은 제조사 확인 전 unresolved. 실제 SKU·독립 판매·EU 공급·수입자/경제운영자·BOM/MCU/보안 구성 Unknown.
+- 질의서 발송/접수/회신 없음. CRA only; SIL 3 제외. 작업 브랜치 `docs/cra-pr229-post-merge-sync-2026-11-24`, 기준점은 merge SHA.
