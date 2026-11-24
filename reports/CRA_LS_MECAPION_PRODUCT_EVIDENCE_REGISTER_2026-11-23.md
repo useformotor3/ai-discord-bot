@@ -412,3 +412,11 @@ ESO별 C(2026)7861 실제 수령일과 Article 2 비수락 통지는 여전히 U
 - Final diff: 11 files, reviewed; no main.py, production workflow, secrets or API cadence change. Isolated test workflow source blob pins were updated.
 - PR #218 squash merged; merge SHA 200ccca974ad3af09b1634fd9bf02c1baac5ca8c.
 - Independent sale/EU supply, actual user SKU, manual/CAD attachment contents, internal schematic/BOM/MCU remain Unknown as detailed in §§17–18.
+
+
+## 18.5 PDF source fallback 안정성 및 부분 provenance
+- PR #223 Run #1419 failed after all 184 prior tests/traceability passed; PDF fallback URL for C(2026)5252 returned HTML instead of PDF (other run: 30-second read timeout).
+- Removed unstable ANFR fallback. Configured Commission-hosted EU portal copy at transition-pathways.europa.eu for C(2026)5252 Annex; browser verified European Commission heading, 27.7.2026, C(2026)5252 final and CRA guidance text.
+- fetch_all_pdf_sources now handles source-unavailable documents individually: verified PDFs are written with SHA-256; unavailable entries are retained in manifest with status/reason; remaining sources continue.
+- Invalid PDF magic, missing required identity markers, malformed content and arbitrary non-allowlisted redirects still fail closed.
+- Added regression test for partial acquisition and updated source/test blob pins. Exact PR #223 HEAD CI pending.
