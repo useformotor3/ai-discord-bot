@@ -1940,3 +1940,10 @@
 - C/2026/6013 already uses official Publications Office OJ PDF. C(2026)7861 is not an OJ publication; do not invent an OJ fallback.
 - Exact Commission interstitial now maps to PDFSourceUnavailableError; no third-party mirror auto-accepted. PDF batch reports SKIPPED with exit 0; PDF artifact may be skipped, independent HTML canary remains.
 - Automated C(2026)7861 PDF bytes/hash remain unavailable; Commission register content is browser-verified. PR #218 still requires new exact-head CI and final diff review.
+
+
+## 2026-11-24 — Run #1410 결과 및 최종 검증 대상 갱신
+- Run #1410, HEAD `1c49b9f4b5ad8fa747ffa08051fa6116dd3eff85`: workflow success. Source identity, compile, CRA traceability, pytest, official CRA HTML locator checks, provenance manifest upload passed.
+- PDF canary explicitly SKIPPED due C(2026)7861 Commission document-register anti-bot interstitial; PDF evidence artifact skipped. No claim that C7861 PDF bytes/hash were acquired.
+- C/2026/6013 uses the browser-verified official Publications Office OJ PDF. C(2026)7861 PDF automated retrieval remains unavailable.
+- Source comment was clarified and source-blob pin refreshed after Run #1410; final exact HEAD CI required before merge.
