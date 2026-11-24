@@ -2021,3 +2021,8 @@ CRA only; SIL 3 제외.
 
 - First PR #239 Run #1486 / ID `45319973724` failed at step 4 `Verify exact source blob identities`, before dependency installation, compile or tests. Cause: workflow pinned old Git blob `bbbb4156d701ad11cc340609badb191cb53176ab` for `cra_pdf_sources.py`, but modified blob was `c24f4d1cda683324930e6449673c49e507ba38a8`; test pin also required refresh from `79acd36f4e5799b5aa90b88983be5af52a9dcb0d` to `1664ebcfa93f2cdb8888fa1829f0188561319bcf`.
 - Corrective change updates only those two expected source-blob hashes in `.github/workflows/tests.yml`; no job steps, workflow triggers, permissions, timeout, schedule, secrets or runtime behavior changed. The next exact-head CI must rerun from source identity check onward before merge.
+
+- **실증 결과:** PR #239 branch exact HEAD `00a00ef1ad8fa09efc68d9d2764d18c2b5b9040f`, Run #1497 / ID `45320409623` success 25/25. 전체 pytest `189 passed`; source identity, compile, CRA cross-matrix traceability, official PDF/HTML canaries, evidence/provenance uploads 모두 success.
+- Bounded retry 적용 후 Run #1497에서 M/606 C(2026)7861 Annex 재취득 성공. PDF artifact ID `14887520943`, 3,070,568 bytes, ZIP SHA-256 `9f8c1c64a43c17fae1a093c454e4be212d5b55fd6914130c9a4e1921411a80b4`; 세 PDF 84p/61p/6p, M606 SHA-256 `262b09596cb5cbe7d72a2c7789fb2512ee00db7f69082e7def2c8181b0f63276`로 기존 확보본과 동일.
+- Provenance artifact ID `14887800169`, 2,565 bytes, ZIP SHA-256 `2247997aa180f94a61672674b4fc8144e18a0c91deb51fcb26d82880c1aef6bd`.
+- Run #1486 source-pin failure는 tests 실행 전 단계였고, 정확한 두 blob pin을 갱신한 후 Run #1497 exact HEAD에서 전체 검증 성공했다. 이는 소스 테스트 실패가 아니었다.
