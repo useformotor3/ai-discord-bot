@@ -3484,3 +3484,14 @@ CRA only; SIL 3 excluded.
 - Support period generally >=5 years unless expected use is shorter; security updates remain available >=10 years or remaining support period, whichever longer (Art. 13(8)-(9)).
 - iX700M official index listing and direct download retries did not acquire original binaries. Ver1.3/1.4 listing conflict persists; Drive/Converter DoC, catalogue and CAD metadata only. Actual SKU, EU/EEA supply, economic operators, BOM/MCU/SBOM/security implementation remain Unknown. Inquiry remains draft_prepared_not_sent.
 - CRA only; SIL 3 excluded.
+
+
+## 2026-11-25 — PR #248 merge 및 iX700M 질의서 구체화
+
+- PR #248 exact HEAD 8fceea39961ff1076066eaf0bfaf79383a769cbf / Run #1525 ID 45404057074: workflow job completed/success; log confirms pytest 189 passed, CRA traceability PASS, official CRA PDF 3종 및 10개 allowlisted sources provenance PASS. Branch PROJECT_LOG 379 valid / 0 invalid.
+- PR #248 diff 6 files(+93/-0), ahead 7/behind 0, reviews 0, threads 0. Expected-head squash merge SHA dd09fc13cf9076c5cf895f4a8e8727f525847ee4. Main read-back confirms §83/§40 and 379-record log present.
+- Post-merge main push CI cannot currently be retrieved through the connected GitHub run-list functions; combined statuses for merge SHA were empty. Status remains UNVERIFIED, not SUCCESS.
+- Official LS Mecapion/Solution Square metadata re-search reconfirmed manual Ver1.4/Ver1.3 index conflict, Drive EU DoC/Converter CE/UKCA attachment metadata, KR/EN catalogue and CAD listing, Solution Square 2026-09-16 manual listing. Direct page retries timeout or return JS shell; no original product binary acquired.
+- Created a 47-question Korean manufacturer inquiry draft in reports/LS_MECAPION_iX700M_CRA_MANUFACTURER_INQUIRY_KO.md. It requests SKU and EU supply/operator facts, product boundary, BOM/MCU/SBOM, secure boot/signature/key/debug, PSIRT/CVD/Article 14, security updates/support, technical file, signed EU DoC, manual revision, catalogue and CAD originals. Not sent.
+- Report §84 expands support-period factors, industrial lifecycle nuance, SBOM minimum vs recommended full evidence, Article 14 persistence after support, security update retention and technical-document retention.
+- CRA only; SIL 3 excluded.
