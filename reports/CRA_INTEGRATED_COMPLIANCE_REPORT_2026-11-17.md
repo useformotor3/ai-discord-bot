@@ -1541,3 +1541,8 @@ PR #218 Run #1395에서 컴파일·추적성·pytest 184개는 성공했으나, 
 ## §58. 2026-11-24 — C(2026)7861 PDF 자동 수집 제한 기록
 
 PR #218 Run #1404에서 컴파일·추적성·pytest 184개는 통과했으나, Commission document-register의 C(2026)7861 Annex PDF API가 CI runner를 sorry.ec.europa.eu 차단 안내로 리디렉션했다. C/2026/6013은 이미 Publications Office 공식 OJ PDF 직접 주소로 전환했지만, C(2026)7861은 OJ 게재 문서가 아니므로 OJ PDF 대체 경로를 임의로 만들지 않는다. 해당 정확한 Commission interstitial은 이제 source-unavailable로 처리하고 외부 mirror를 자동 허용하지 않는다. PDF batch는 SKIPPED 처리될 수 있으며 C(2026)7861 PDF 바이너리/hash를 확보했다고 주장하지 않는다. 공식 Commission register 내용은 브라우저로 확인했고 HTML canary는 별도 검증한다.
+
+
+## §59. 2026-11-24 — Run #1410 검증 결과와 PDF canary 범위
+
+PR #218 HEAD 1c49b9f4b5ad8fa747ffa08051fa6116dd3eff85의 Run #1410은 전체 workflow success로 종료됐다. Source identity, compile, CRA traceability, pytest, 공식 CRA HTML locator 검증, provenance manifest 업로드는 성공했다. 다만 PDF canary는 C(2026)7861 Commission document-register anti-bot interstitial로 SKIPPED 처리되었고 PDF evidence upload도 skip됐다. 따라서 C(2026)7861 PDF 본문·해시 확보 성공으로 기록하지 않는다. 이후 수집기 주석과 source blob pin을 정리해 새 HEAD를 만들었으므로 최종 병합 전 새 exact-head CI를 한 번 더 확인한다.
