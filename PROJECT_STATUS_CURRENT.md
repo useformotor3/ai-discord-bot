@@ -1,3 +1,14 @@
+## 2026-11-24 — PR #231 병합 및 CRA 공식 PDF evidence 확인
+
+- PR #231 exact HEAD `d1f0c2a32c455f2d2a27dda5eab8972cad87bcef`, base main `7b3eaa39d96e78081621f8c40cde97ad916722e5`; Run #1460 / ID `45314263089` success. 1~12단계 모두 성공(9 PDF canary, 10 PDF evidence upload, 11 HTML canary, 12 provenance upload 포함).
+- PDF artifact ID `14884517329`: C(2026)5252 Annex PDF 84p / 1,190,726 bytes / SHA-256 `fe209c250e3d1f7599e42826d91963666951332927edcf511a2e79fe8d2f8234`; C/2026/6013 OJ PDF 61p / 2,709,282 bytes / SHA-256 `40ca76caeb0108f5b97c8f373a95f590b453fe92bd45a483addf3326e48c1dc2` 확보. C(2026)7861 Annex는 30초 timeout으로 unavailable.
+- PDF artifact ZIP SHA-256 `404f048a117e84dbeab4dcff863c4a5b0990e47bf0550a28bcb505fef339b134`; provenance artifact ID `14884017656`, ZIP SHA-256 `4a2fe3024fe12f259dc1bce49ac0e32782a826fa01bbce4a16c19e604caaa1bf`, source 10건.
+- PR diff 정확히 8개 파일, 8 commits ahead / 0 behind, JSONL 357 records / invalid 0, review threads 0, review submissions 0. Expected-head squash merge 완료: `c7b59ae51891a2b878fc85b0910a89b50e4efe17`. Main read-back 확인.
+- Solution Square iX700M 매뉴얼 2026-09-16 상세 URL/PDF 미확보. LS메카피온 Ver1.3/Ver1.4 충돌 unresolved. Converter/Drive CE DoC 및 DWG/DXF/STEP 원본 미확보. 실제 SKU, 독립 판매, EU/EEA 공급, importer/economic operator, BOM/MCU/security configuration Unknown.
+- 제조사 질의서 `draft_prepared_not_sent`; 실제 발송/접수/회신 없음.
+- PR #229 merge SHA `4263389aa79cbb7cc17ccda3a019c659ccddef85` main push CI는 accessible workflow run/combined status를 확인하지 못해 `pending/unverified` 유지.
+- 후속 작업 branch `docs/cra-pr231-postmerge-evidence-2026-11-24`에서 보고서 §71, 증거등록부 §25, 상황판, README, SESSION_LOG, PROJECT_LOG 동기화 중. CRA only; SIL 3 제외.
+
 ## 2026-11-24 — PR #228 post-merge CI 최종 결과
 
 - PR #228 merge SHA `3db9896d5727701cb38c6a033d0d0e07f433339b`의 main push Run #1450 / ID 45308789705 최종 `success` 확인.
