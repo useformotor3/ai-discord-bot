@@ -1995,3 +1995,15 @@ CRA only; SIL 3 제외.
 - Source blob identity, compile, CRA cross-matrix traceability, full test suite, live official CRA PDF/HTML canaries, PDF evidence upload and source provenance manifest upload all succeeded.
 - PDF evidence artifact ID `14886830715`, 3,070,567 bytes; ZIP SHA-256 `de227aa54d5a76541738d10511b7f04de18fe6e6487ac0949c0a9a89be9c7175`. Contains three official CRA PDFs (C(2026)5252, C/2026/6013, C(2026)7861), extracted text and manifest. Provenance artifact ID `14885424833`, 2,565 bytes; ZIP SHA-256 `41be60344b6921ad9ccbead26ce870578e3bc2363b51dc24c78730e3fe1ee48c`.
 - This CI result verifies the CRA source retrieval/test workflow and artifact integrity, not the truth of unverified manufacturer product-market facts.
+
+
+### 74.8 PR #237 병합 및 Run #1483 소스 팩의 부분 확보 판정
+
+- PR #237 exact HEAD `0b173310aafc82d8db1c7bce032d93ee9fbd0db3`, Run #1482 / ID `45318431483`: success 25/25. 6개 파일 diff, JSONL 365 / invalid 0, review threads 0, reviews 0, base `c395fc5b5b2a393632bb2fbe65b10fd6572b936d`. Expected-head squash merge SHA `792eea6388382a1932f1b775e57776a7ccacf3a6`.
+- Main read-back SHA는 merge SHA와 동일. Post-merge main push Run #1483 / ID `45318639981`, event=push, exact SHA `792eea6388382a1932f1b775e57776a7ccacf3a6`, final success 25/25.
+- 다만 Run #1483 PDF artifact ID `14886766794`는 ZIP 2,922,421 bytes, SHA-256 `3f6c27de5224eb480951133a39ea5791b83753ae2038c1072158db94bbbb758c`; 실제 구성은 C(2026)5252 84p 및 C/2026/6013 61p 두 PDF와 manifest/text files다. manifest는 `CRA-M606-C2026-7861-ANNEX`를 `unavailable`로 기록하며 원인은 Commission document-register API read timeout 30s. 즉 이번 run의 PDF pack은 2/3 fetched, 1 unavailable.
+- Provenance artifact ID `14885852834`, ZIP 2,565 bytes, SHA-256 `16b7160436069a0ccecc2a1b04e923a5eb119aa11506b8fb7a6197030bc2be7c`. 별도 HTML provenance canary는 공식 허용목록 10개 출처를 확인하고 Article 13(8), Regulation (EU) 2025/2392 Annex I category 10/Annex II category 1 locator를 검증했다.
+- **기존 확보 증거 보존:** Run #1481 PDF artifact ID `14886830715`에는 C(2026)7861 Annex 6페이지 원본이 실제 포함되었으며 SHA-256 `262b09596cb5cbe7d72a2c7789fb2512ee00db7f69082e7def2c8181b0f63276`. Run #1483의 일시적 재취득 실패는 Run #1481에서 검증된 원본을 무효화하지 않는다. 두 실행의 provenance를 혼동하거나 Run #1483 pack을 3/3으로 표현하지 않는다.
+- Commission official register Annex browser extraction도 재확인: https://ec.europa.eu/transparency/documents-register/api/files/C%282026%297861_1/de00000001090401 . 문서일 10.11.2026, C(2026)7861 final. Annex에는 41개 신규 표준 draft 항목과 채택 기한이 기재되어 있다. 이 웹 추출은 원본 PDF 바이너리 확보와 구분한다.
+- 구현 개선 후보: `cra_pdf_sources.py`의 transient network error는 unavailable로 기록하고 CLI exit 0을 반환한다. 따라서 workflow green과 PDF source pack completeness는 서로 다른 지표다. 현재는 운영 workflow/source collector 변경 없이 이 차이를 문서화한다. 다음 개선 검토 시 M/606 PDF 재시도/backoff와 source completeness 별도 상태 표시를 설계·테스트한다.
+- CRA only; SIL 3 제외.
