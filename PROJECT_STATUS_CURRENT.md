@@ -1,3 +1,12 @@
+## 2026-11-24 — PR #227 병합 및 post-merge 검증 대기
+
+- PR #227: https://github.com/useformotor3/ai-discord-bot/pull/227 — squash merge 완료. Exact HEAD `c8d80197907457dedaa93a5f89f3abbe6c25e846`; PR Run #1447 / ID 45305092494 success (source integrity, compile, CRA traceability, full pytest, official CRA PDF/HTML canaries, PDF evidence/provenance uploads).
+- Merge SHA: `194aa3b543685ef78b4b62d95fc91a154d144d79`; main branch read-back 일치.
+- PR #226 main push Run #1446 / ID 45304849931도 success. Source identity, compile, CRA traceability, full pytest, official PDF/HTML canaries 및 evidence/provenance upload 모두 통과.
+- PR #227에서 통합 CRA 보고서 §67 및 제품 증거 등록부 §21을 main에 반영. Converter/Drive의 CE 게시·코드 구분은 확인됐으나 독립 상업 판매 및 EU 개별 공급은 Unknown 유지. 매뉴얼 Ver1.4/Ver1.3 listing snapshot 불일치, PDF/CAD 원본 byte/hash 미확보도 명시.
+- main push Run #1448 / ID 45305187475는 이 기록 작성 시점에 in progress. 완료 전 success로 간주하지 않는다.
+- post-merge 동기화 작업 브랜치 `docs/cra-post-merge-status-sync-2026-11-24`, 기준 main `194aa3b543685ef78b4b62d95fc91a154d144d79`. 문서 전용; CRA only; SIL 3 제외.
+
 ## 2026-11-24 — iX700M 공식 CE·모델코드·매뉴얼/CAD 메타데이터 교차검증
 
 - PR #226 병합: 5b1b66adff29125409ea231ccbb877f5c1647670; exact PR HEAD `0a8a822296731e738bf80209230f6271e550025a`; PR Run #1445 success. 7개 파일 diff 검토, review thread 0개, PROJECT_LOG 349 records / invalid JSON 0.

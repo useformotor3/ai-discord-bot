@@ -3195,3 +3195,13 @@
 - CAD 2D/3D 외형도 게시 사실은 확인했으나 상세 원본 파일·bytes/hash는 미확보. 내부 회로도/BOM과 혼동 금지.
 - 증거 업데이트 작업 브랜치: `research/cra-ix700m-official-evidence-reconciliation-2026-11-24`; 기준 main `5b1b66adff29125409ea231ccbb877f5c1647670`. 보고서 §67, 증거등록부 §21, 상황판 및 PROJECT_LOG에 반영.
 - 제조사 질의서/커버메일은 미발송. 접수번호·제조사 회신 없음. CRA only; SIL 3 제외.
+
+
+## 2026-11-24 — PR #227 공식 증거 교차검증 병합
+
+- PR #227 exact HEAD `c8d80197907457dedaa93a5f89f3abbe6c25e846`; Run #1447 / 45305092494 success. Source identity, compile, CRA traceability, full pytest, official CRA PDF/HTML canaries, PDF evidence and provenance uploads passed.
+- 5개 파일 diff 검토, review thread 없음, PROJECT_LOG JSONL 350 records / invalid JSON 0.
+- squash merge SHA `194aa3b543685ef78b4b62d95fc91a154d144d79`; main read-back 동일.
+- PR #226 post-merge main Run #1446 / 45304849931 success. PR #227 post-merge main Run #1448 / 45305187475는 이 기록 시점 in progress.
+- 통합 보고서 §67 및 증거등록부 §21에 CE 모델코드, Converter/Drive 구분, 매뉴얼 listing snapshot 충돌, CAD 원본 미확보를 반영.
+- 문서 전용 변경. CRA only; SIL 3 제외. 제조사 질의서 미발송/회신 미확인 상태 유지.
