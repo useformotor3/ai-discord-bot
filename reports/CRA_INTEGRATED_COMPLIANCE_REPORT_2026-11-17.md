@@ -1807,9 +1807,9 @@ C(2026)7861 문서 식별: Brussels, 10.11.2026, C(2026)7861 final, Annex to Com
 
 ### 72.3 iX700M 매뉴얼 revision 상태 — 공식 목록은 Ver1.4, PDF 본문은 미확보
 
-2026-11-24 재검색에서 LS메카피온 공식 전체 매뉴얼 목록과 Servo 필터 페이지 모두 `iX700M DRIVE 400[V] 매뉴얼 Ver1.4`, 작성일 2026-05-26을 표시했다. 공식 목록 URL: `https://www.lsmecapion.com/bbs/board.php?bo_table=manual`; Servo filter: `https://www.lsmecapion.com/bbs/board.php?bo_table=manual&sca=Servo`.
+2026-11-24 재검색에서도 공식 매뉴얼 목록 snapshot 간 Ver1.3/Ver1.4 충돌이 재현됐다. `bo_table=manual` 기본 URL 및 `bo_table=manual&sca=Servo`는 `iX700M DRIVE 400[V] 매뉴얼 Ver1.4`, 작성일 2026-05-26을 표시한다. 반면 `bo_table=manual&sca=` 및 `bo_table=manual&page=1` 검색 snapshot은 같은 게시물 번호 41에 Ver1.3을 표시한다. 따라서 어느 한 표시를 최신으로 확정하지 않고 **공식 목록 snapshot 간 버전 충돌 unresolved**로 유지한다.
 
-이전 세션의 직접 페이지 snapshot 중 Ver1.3 표시는 현재 검색에서 재현되지 않았다. 따라서 목록 수준의 현재 표시는 Ver1.4로 수렴하며, Ver1.3은 과거 stale/다른 snapshot 기록으로 남긴다. 다만 매뉴얼 게시물 `wr_id=12652`의 실제 첨부 PDF를 열지 못했으므로 **PDF 내부 revision, 문서번호, 발행일, 변경이력, 적용 SKU 및 SHA-256은 여전히 미확인**이다. Ver1.4라는 목록 문자열만으로 PDF 원본 검증 완료로 처리하지 않는다.
+관련 공식 목록: `https://www.lsmecapion.com/bbs/board.php?bo_table=manual`; `https://www.lsmecapion.com/bbs/board.php?bo_table=manual&sca=Servo`; `https://www.lsmecapion.com/bbs/board.php?bo_table=manual&sca=`; `https://www.lsmecapion.com/bbs/board.php?bo_table=manual&page=1`. 게시물 `wr_id=12652` 상세/첨부 PDF는 timeout/cache miss로 열지 못했다. **PDF 내부 revision, 문서번호, 발행일, 변경이력, 적용 SKU 및 SHA-256은 Unknown**이다. 게시 목록 문자열만으로 실제 원본 revision을 판정하지 않는다.
 
 LS ELECTRIC Solution Square의 공식 Motion & Servo 목록은 `iX700M 사용 설명서` 항목 및 update `2026-09-16`을 현재도 표시한다. 상세 문서 페이지는 JavaScript app shell로만 열리고 검색 결과에도 문서 상세 URL/문서 ID/첨부 URL이 노출되지 않았다. 상세 URL과 PDF bytes는 여전히 미확보이며, 2026-09-16은 목록 update date이지 문서 revision/date로 간주하지 않는다.
 
