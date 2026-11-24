@@ -3555,3 +3555,10 @@ CRA only; SIL 3 excluded.
 - Manufacturer inquiry Q60 added for secure official delivery with native file, filename, size, SHA-256, revision, signature validation and SKU coverage. 60 questions, draft not sent.
 - Actual SKU, EU/EEA supply, economic operators, BOM/MCU/SBOM, security configuration, CRA classification, vulnerability process and update/support period remain Unknown.
 - CRA only; SIL 3 excluded.
+
+ 
+## PR #253 CI correction — Run #1541 / #1542
+- Run #1541 on initial head c0b3c56... failed CRA traceability at PROJECT_LOG.jsonl line 385 because an extra blank line was introduced by append newline; run cancelled, pytest skipped, no merge.
+- Normalized JSONL, verified 385 records / 0 invalid / 0 blank lines. New exact head e0788eb79d8b5c061b28111f96d9d6419eac950b Run #1542 / 45507153261 completed/success, 15/15 steps, 189 passed, traceability 385 events PASS, 10-source provenance PASS.
+- Run #1542 obtained all 3 official CRA PDF source files; C/2026/5252 used fallback (do not claim byte identity with original mirror). Digests, artifact IDs and expiry recorded in report §88.6/evidence §46.
+- Product source binaries still not acquired; manufacturer inquiry 60-question draft not sent. CRA only; SIL 3 excluded.
