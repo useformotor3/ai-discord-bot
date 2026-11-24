@@ -3072,3 +3072,10 @@
 - C/2026/6013 direct Publications Office OJ PDF endpoint is browser-verified; C(2026)7861 is not an OJ publication, so no fabricated OJ fallback.
 - Exact Commission interstitial now maps to PDFSourceUnavailableError; no third-party mirror auto-accepted. PDF batch can report SKIPPED/exit 0; independent HTML canary remains. Automated C(2026)7861 PDF bytes/hash remain unavailable.
 - PR #218 latest head has new source/test patch and documentation; fresh exact-head CI required before merge.
+
+
+## 2026-11-24 — Run #1410 success with documented PDF skip
+- Exact tested HEAD 1c49b9f4b5ad8fa747ffa08051fa6116dd3eff85, Run #1410: workflow success. Source identity, compile, CRA traceability, pytest, official CRA HTML locator checks and provenance manifest upload passed.
+- PDF source canary printed SKIPPED due C(2026)7861 official Commission document-register anti-bot interstitial; PDF evidence artifact upload skipped. Do not claim C7861 PDF bytes/hash acquisition.
+- C/2026/6013 official Publications Office direct OJ PDF is browser-verified. C7861 automated PDF retrieval remains unavailable.
+- A comment-only clarification to source fetcher and matching workflow blob pin was made after Run #1410; final exact HEAD CI required before merge.
