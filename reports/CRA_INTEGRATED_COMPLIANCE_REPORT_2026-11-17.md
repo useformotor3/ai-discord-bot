@@ -1694,3 +1694,43 @@ LS메카피온 공식 CE 게시판은 Converter Unit `iX700MCV`와 Drive Unit �
 - 이는 **공개된 해외 문의 경로**의 증거일 뿐, EU 공급이 없다는 증거도 아니고 LS ELECTRIC이 실제 EU 수입자/판매자라는 증거도 아니다. 실제 거래별 판매자·수출자·수입자·유통사·제조자 역할을 계약서/송장/운송·통관 자료 및 제조사 서면 답변으로 확인해야 한다.
 - LS메카피온 국내 대리점 목록은 경기 수원 등 국내 대리점 정보를 제공하지만, 국내 대리점 등재만으로 iX700M의 EU 판매 또는 개별 제품 공급을 입증하지 않는다.
 - 별도 검색된 `iX7M` CE DoC PDF는 모델명이 `iX7M-A-...`인 이전/다른 제품군 문서이며 iX700M DoC가 아니다. 제품명 유사성만으로 iX700M 증거에 편입하지 않는다.
+
+
+## §70. 2026-11-24 — LS ELECTRIC Solution Square iX700M 매뉴얼 목록 및 원본 추적
+
+### 70.1 공식 목록에서 확인한 새 메타데이터
+
+LS ELECTRIC 공식 Solution Square의 Motion & Servo 자료 목록은 `iX700M 사용 설명서` 항목을 표시하며 update date는 **2026-09-16**이다. 동일 항목은 공식 통합검색 결과에도 나타난다.
+
+- 목록: https://sol.ls-electric.com/kr/ko/product/category/4?pageNumber=4
+- 통합검색: https://sol.ls-electric.com/kr/ko/newSearch?pageNumber=70
+- 목록은 JavaScript 기반이다. 현재 확인 가능한 검색/목록 데이터는 자료명과 update date까지이며, 상세 페이지를 열면 앱 활성화 안내만 반환되어 PDF 첨부 URL·파일명·문서번호·revision·언어·파일 크기·hash를 얻지 못했다.
+- 따라서 이 자료가 LS메카피온 게시판의 Ver1.3 또는 Ver1.4와 같은 파일인지, 더 최신 revision인지, 별도 배포본인지 판정할 수 없다. 2026-09-16은 Solution Square 목록의 update date이지 PDF issue date나 revision number로 간주하지 않는다.
+
+### 70.2 LS메카피온 Ver1.3/Ver1.4 표시 충돌의 최신 판정
+
+2026-11-24 재조회에서 LS메카피온 공식 웹페이지의 직접 열린 본문 snapshot은 전체 목록과 Servo 필터 모두 Ver1.3(2026-05-26)을 표시했다. 반면 공식 사이트 검색 snapshot 일부는 전체 목록 및 Servo 필터에서 Ver1.4(2026-05-26)를 표시한다.
+
+- 전체 목록 본문: https://www.lsmecapion.com/bbs/board.php?bo_table=manual — iX700M DRIVE 400[V] Ver1.3 표시.
+- Servo 필터 본문: https://lsmecapion.com/bbs/board.php?bo_table=manual&sca=Servo — Ver1.3 표시.
+- 공식 검색 snapshot: https://www.lsmecapion.com/bbs/board.php?bo_table=manual 및 https://lsmecapion.com/bbs/board.php?bo_table=manual&sca=Servo — 일부 결과 Ver1.4 표시.
+- 매뉴얼 상세 게시물 `wr_id=12652`는 cache miss. 실제 첨부 PDF bytes·문서번호·revision·revision history·SKU/HW/FW applicability·SHA-256은 확보하지 못했다.
+
+**판정:** 게시물 snapshot 사이에 Ver1.3/Ver1.4 표시 충돌이 존재한다. Solution Square의 2026-09-16 항목은 새로운 문서 메타데이터 단서지만, 원본 파일을 식별하지 못했으므로 이 충돌을 해결하지 않는다. actual PDF revision은 Unknown으로 유지한다.
+
+### 70.3 CE DoC 및 CAD 첨부 재접근
+
+- Converter Unit CE 페이지: iX700MCV, model code, 첨부 `[CE_DoC-LVDEMC] iX700MCV.pdf` (234.4K), 게시 2026-04-30 확인. 첨부 클릭 URL은 cache miss; PDF 본문/서명/적용 법령·표준/제품범위 미검토.
+- Drive Unit CE 검색 결과: iX700MD1-B-150B 및 `[CE_DoC-LVDEMC] iX700MD1-B-150B.pdf` (238.9K) 메타데이터 확인. 상세 페이지 cache miss; PDF 본문 미검토.
+- CAD 목록: iX700M Series 외형도 2D(CAD), 3D(STEP), 2026-04-21 게시 확인. 상세 `wr_id=12455` cache miss; DWG/DXF/STEP 원본, 파일명·크기·revision·SKU 적용범위·SHA-256 미확보.
+- 위 정보는 게시 메타데이터다. DoC 적합성 내용, CRA 적합성, 실제 SKU, 독립 판매, EU 공급 및 수입자 역할을 입증하지 않는다.
+
+### 70.4 제조사/LS ELECTRIC에 추가 요청할 자료
+
+1. Solution Square `iX700M 사용 설명서`의 직접 상세 URL과 원본 PDF, 문서관리 ID, 파일명, revision, 언어, 발행일, update date 의미, 파일 크기 및 SHA-256.
+2. 해당 Solution Square PDF와 LS메카피온 Ver1.3/Ver1.4 매뉴얼의 동일성·대체 관계, 변경 요약, 구판 대체 여부 및 SKU/HW/FW applicability.
+3. LS메카피온 게시판 매뉴얼 상세의 현재 배포 첨부 PDF와 Ver1.3/Ver1.4 표기 차이에 대한 공식 서면 설명.
+4. Converter/Drive CE DoC PDF 원본과 적용 모델/SKU, 제조자 법인, 법령·표준, 서명·발행일, 문서관리 ID/SHA-256.
+5. iX700M CAD DWG/DXF/STEP 원본과 파일별 revision·적용 SKU·크기·SHA-256.
+
+원본 파일은 확보되지 않았다. 실제 SKU, 독립 판매, EU/EEA 개별 공급, importer/economic operator, 내부 BOM/MCU/security configuration은 계속 Unknown이다.
