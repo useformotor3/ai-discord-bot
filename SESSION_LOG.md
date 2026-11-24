@@ -3424,3 +3424,11 @@ CRA only; SIL 3 excluded.
 - Fresh manufacturer source search: Solution Square result confirms iX700M 사용 설명서 and update 2026-09-16, but detail open is JS app shell. LS Mecapion manual listings continue to disagree (default/Servo filter Ver1.4 vs explicit sca= Ver1.3); actual PDF revision Unknown. Drive CE detail is readable, but PDF attachment click times out. Converter CE detail remains search-index metadata only. CAD previous-post link resolves iX700M detail wr_id=12455; detail times out. No original files acquired.
 - No actual SKU, independent sale, EU/EEA supply, importer/economic operator, BOM/MCU/security claims promoted from Unknown. Inquiry remains draft_prepared_not_sent.
 - CRA only; SIL 3 excluded.
+
+## 2026-11-24 — Run #1510/#1511 final read-back and source expansion
+
+- Re-read GitHub Actions run objects and job steps: Run #1510 ID 45333438936, head dd54132fb44ed752b1f7942f4485ee03399a2c2f, completed/success 25/25; Run #1511 ID 45333628512, head f9dd8484403f6f91daa94f14b74250965d67e4f6, completed/success 25/25. Earlier in-progress snapshots were stale; both official-source canaries and evidence uploads ultimately passed. No failing step.
+- PR #242 pre-update guards: 6 files +72/-0, 6 ahead/0 behind, base dd54132fb44ed752b1f7942f4485ee03399a2c2f, head f9dd8484403f6f91daa94f14b74250965d67e4f6, reviews 0, threads 0, JSONL 373 valid/0 invalid. New documentation changes require new exact-head CI.
+- Fresh vendor listing search: iX700M Converter UKCA DoC listing; iX700M Series UL certificate listing; KC entries for iX700MD1-B-150B, iX700MD1-B-075B, iX700MCV-B-750, iX700MCV-B-550; iX700M KR/EN catalogue PDFs listed 10.7MB each. Drive CE/Converter CE attachment metadata reconfirmed. All binaries still not acquired; official download/detail timeouts.
+- Manual version index is more inconsistent than previously represented: default listing snapshots include both Ver1.3 and Ver1.4; Servo filter Ver1.4; explicit empty sca Ver1.3. Do not infer actual PDF revision. Solution Square detail remains JS shell. CAD wr_id=12455 remains timeout.
+- Unknowns remain actual SKU, independent sale, EU/EEA supply, importer/economic operator, BOM/MCU/security. Inquiry draft_prepared_not_sent. CRA only; SIL 3 excluded.
