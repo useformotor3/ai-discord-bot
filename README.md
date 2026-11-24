@@ -1188,3 +1188,5 @@ CLC/TC 65X의 M/606 20b/21b/22b/25b/27b/36b를 prEN 50770-4/-2/-6/-3/-5/-1에 �
 
 > **2026-11-23 병합 기록:** CRA 보고서 v0.12 및 ST MCU/M/606 조사 메모가 PR #196으로 병합되었습니다. [PR #196](https://github.com/useformotor3/ai-discord-bot/pull/196)
 
+> **PR #218 병합 완료:** final HEAD `e3ebe08b5dcf14563bba0a75dca171459ab992c5`, Run #1417 success, merge SHA `200ccca974ad3af09b1634fd9bf02c1baac5ca8c`. PDF canary was explicitly SKIPPED because the Commission newsroom interstitial was followed by a 30-second timeout on the configured ANFR mirror; no PDF bytes/hash are claimed. HTML source locator and provenance manifest passed. iX700M separate commercial sales/EU supply and actual SKU remain Unknown.
+
