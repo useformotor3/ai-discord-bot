@@ -467,3 +467,7 @@ PR #218 exact HEAD의 Run #1395에서 184개 pytest 및 코드/추적성 검사�
 
 ### 14.10 M/606 문서의 자동화 접근 제한과 보수적 처리
 Run #1404에서 C(2026)7861 M/606 Annex의 Commission document-register API가 CI runner를 sorry.ec.europa.eu interstitial로 리디렉션했다. 앞서 C/2026/6013은 공식 Publications Office 직접 OJ PDF로 전환해 별도 해결했다. C(2026)7861은 OJ에 게재된 문서가 아니므로 동일한 OJ URL로 대체할 수 없다. 이번 수정은 해당 Commission anti-bot interstitial을 유효 PDF가 아닌 source-unavailable 상태로 기록하고, 미허용 외부 mirror를 자동 사용하지 않도록 한다. 스크립트는 다른 PDF source를 무결하게 검증하되, 하나의 공식 문서가 접근 제한이면 PDF batch를 SKIPPED 처리한다. HTML canary와 별도 공식 브라우저 확인은 계속 유지한다. 따라서 CI 성공 후에도 C(2026)7861 PDF의 automated artifact가 확보되었다고 주장하지 않는다. 문서 내용 자체는 공식 Commission register의 브라우저 검색 결과에서 확인했으며, PDF 바이너리/hash는 runner에서 확보하지 못했다.
+
+
+### 14.11 최신 검증 결과 — Run #1410
+PR #218의 HEAD 1c49b9f4b5ad8fa747ffa08051fa6116dd3eff85에 대한 Run #1410은 workflow 전체가 success로 종료됐다. 소스 무결성, 컴파일, CRA 추적성, 전체 pytest, 공식 CRA HTML source locator 검사 및 provenance manifest 업로드는 성공했다. 단, PDF source canary는 C(2026)7861 Commission document-register의 anti-bot interstitial 때문에 SKIPPED로 종료했고 PDF evidence artifact도 업로드되지 않았다. 따라서 이를 PDF 원문 전체 확보 성공으로 표현하지 않는다. 이후 source fetcher 주석을 실제 동작과 일치하도록 정리하고 source blob pin을 갱신했으므로, 최종 병합 대상은 새 HEAD에서 한 번 더 검증한다.
