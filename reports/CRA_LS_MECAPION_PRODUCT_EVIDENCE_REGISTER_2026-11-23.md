@@ -655,3 +655,6 @@ Run #1462 / ID 45314843427, PDF artifact 14884218192. ZIP 3,070,568 bytes, SHA-2
 - CRA only; SIL 3 excluded.
 
 - Run #1486 / 45319973724 failed at workflow step 4 only: stale expected blob for `cra_pdf_sources.py` (`bbbb4156...` vs actual `c24f4d1c...`). The test file pin also needed refresh (`79acd36f...` to `1664ebcf...`). Updated only these two integrity pins; workflow execution logic unchanged. No compile/test ran in failed attempt.
+
+| CRA-PDF-1497 | https://github.com/useformotor3/ai-discord-bot/actions/runs/45320409623 | PR #239 exact branch HEAD `00a00ef1ad8fa09efc68d9d2764d18c2b5b9040f`, Run #1497 success 25/25, pytest 189 passed. PDF artifact 14887520943, 3,070,568B, ZIP SHA-256 `9f8c1c64a43c17fae1a093c454e4be212d5b55fd6914130c9a4e1921411a80b4`; C(2026)5252 84p, C/2026/6013 61p, C(2026)7861 Annex 6p. M606 binary SHA-256 `262b09596cb5cbe7d72a2c7789fb2512ee00db7f69082e7def2c8181b0f63276`, same as Run #1481. Provenance artifact 14887800169, 2,565B, ZIP SHA-256 `2247997aa180f94a61672674b4fc8144e18a0c91deb51fcb26d82880c1aef6bd`. |
+- Retry improvement successfully recovered M606 Annex after three consecutive earlier timeouts; keep previous original and new identical hash as independent retrieval confirmations.
