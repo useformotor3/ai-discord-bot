@@ -2107,3 +2107,40 @@ CRA only; SIL 3 제외.
 - Public listings and model-code examples are product-family evidence only. They do not establish the user's actual SKU, independent sale, EU/EEA supply, importer/economic operator, BOM/MCU or security configuration. All remain Unknown.
 - Manufacturer inquiry remains draft_prepared_not_sent. No send/receipt/reply evidence.
 - CRA only; SIL 3 excluded.
+
+## §77. 2026-11-24 — PR #241 병합 및 iX700M 제조사 자료 재접근
+
+### 77.1 PR #241 exact-HEAD CI, diff 및 병합
+
+- PR #241: https://github.com/useformotor3/ai-discord-bot/pull/241. Exact HEAD 159f8c16ba50c41e1dd0f3aa0fffba7a3ee1a09d, base main 36b38bfa5ced2894f3bfb06c226706ce0a9bf38b, Run #1509 / ID 45330332680, completed/success, all 25 steps successful.
+- Six changed files: PROJECT_LOG.jsonl, PROJECT_STATUS_CURRENT.md, README.md, SESSION_LOG.md, this report, and product evidence register. Diff +79/-0. Compare: 6 commits ahead, 0 behind. Review submissions 0; inline review threads 0.
+- PROJECT_LOG at exact PR HEAD: 372 JSONL lines, 372 parsed successfully, invalid 0.
+- Expected-head squash merge succeeded with merge SHA dd54132fb44ed752b1f7942f4485ee03399a2c2f. GitHub main ref read-back matched exactly. Post-merge Push Run #1510 / ID 45333438936 targets that SHA; at the time of this section's preparation it remained in_progress. Its final conclusion must be appended only after a completed run is read back.
+
+### 77.2 Solution Square iX700M manual listing and detail boundary
+
+- Fresh search results from official Solution Square category and integrated-search URLs continue to show iX700M 사용 설명서, classified under Motion & Servo, update date 2026-09-16: https://sol.ls-electric.com/kr/ko/product/category/4?pageNumber=4 and https://sol.ls-electric.com/kr/ko/newSearch?pageNumber=70.
+- A further official-host alias https://ssq.ls-electric.com/kr/ko/product/category/4?pageNumber=14 also exposes the same listing snapshot. Opening the primary category/search detail returns only the JavaScript app shell. No stable document ID, detail route, file name, PDF bytes, page count or hash could be independently verified. The listing is not evidence that this is the same binary as LS Mecapion Ver1.3/Ver1.4.
+
+### 77.3 LS Mecapion manual revision conflict — still unresolved
+
+- Official default list https://www.lsmecapion.com/bbs/board.php?bo_table=manual and Servo-filter list https://lsmecapion.com/bbs/board.php?bo_table=manual&sca=Servo show post 41 iX700M DRIVE 400[V] manual Ver1.4, date 2026-05-26.
+- Official explicit empty-category list https://www.lsmecapion.com/bbs/board.php?bo_table=manual&sca= continues to show the same post/date as Ver1.3. This is a reproducible listing/query inconsistency only. Exact detail wr_id=12652 remains 502/timeout; original PDF bytes, embedded revision, document number, revision history and hash are not acquired. Actual released revision remains Unknown.
+
+### 77.4 Converter/Drive CE DoC
+
+- Drive detail https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&page=4&wr_id=12888 opened successfully. It identifies an example model iX700MD1-B-150B, D1=1-axis, B=480 Vac, 150=15 kW, encoder B=BiSS-C or custom code, and attachment [CE_DoC-LVDEMC] iX700MD1-B-150B.pdf (238.9K; 2026-04-30 11:55:32). Exact attachment click resolves to https://www.lsmecapion.com/bbs/download.php?bo_table=certificate&no=0&page=4&wr_id=12888, but fetch times out. No PDF body/signature/directive/standard/model scope/hash has been inspected.
+- Converter official search result https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&sca=CE&wr_id=12886 confirms listing metadata for iX700MCV, 480 Vac, 15/37/55/75 kW rating codes, and attachment [CE_DoC-LVDEMC] iX700MCV.pdf (234.4K). Detail/attachment remains inaccessible; DoC bytes and contents not acquired.
+- A listing or attachment filename is not proof that a declaration covers every model, a project SKU, EU/EEA supply, or CRA conformity.
+
+### 77.5 CAD DWG/DXF/STEP
+
+- Official drawing index https://www.lsmecapion.com/bbs/board.php?bo_table=drawing&sca=Servo+Drive lists iX700M Series outline drawing 2D(CAD), 3D(STEP), dated 2026-04-21.
+- Opened PHOX 16A drawing page exposes an explicit previous-post link labelled iX700M: https://www.lsmecapion.com/bbs/board.php?bo_table=drawing&sca=Servo+Drive&wr_id=12435. Following it resolves the exact iX700M detail route https://www.lsmecapion.com/bbs/board.php?bo_table=drawing&sca=Servo+Drive&wr_id=12455, but fetch returns timeout. The page's 2D/3D attachment filenames, DWG/DXF availability, STEP files, bytes and hashes remain Unknown. Do not substitute iX7M CAD files.
+
+### 77.6 Evidence boundary and next action
+
+- Actual SKU, independent sale, EU/EEA supply, importer/economic operator, BOM/MCU and security configuration remain Unknown. Manufacturer inquiry remains draft_prepared_not_sent; no evidence of sending, receipt or response.
+- No Solution Square/LS manual, Drive/Converter CE DoC or iX700M CAD original binary was acquired in this recheck. Record exact URLs and failure outcomes; do not mark metadata as a downloaded original.
+- Next acquisition path: repeat with direct vendor document IDs/download links if discoverable, inspect official CDN/API routes only when evidenced by page/network metadata, and prepare a concise manufacturer request for exact binary files and SKU-specific declarations without sending it.
+- CRA only; SIL 3 excluded.
