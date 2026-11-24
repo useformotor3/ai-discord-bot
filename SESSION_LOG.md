@@ -3079,3 +3079,10 @@
 - PDF source canary printed SKIPPED due C(2026)7861 official Commission document-register anti-bot interstitial; PDF evidence artifact upload skipped. Do not claim C7861 PDF bytes/hash acquisition.
 - C/2026/6013 official Publications Office direct OJ PDF is browser-verified. C7861 automated PDF retrieval remains unavailable.
 - A comment-only clarification to source fetcher and matching workflow blob pin was made after Run #1410; final exact HEAD CI required before merge.
+
+
+## 2026-11-24 — PR #218 merge and exact-head CI result
+- PR #218 final HEAD e3ebe08b5dcf14563bba0a75dca171459ab992c5, Run #1417 success; tests, CRA traceability, HTML source canary and provenance manifest passed.
+- PDF canary skipped because C(2026)5252 Commission newsroom redirected to interstitial and allowlisted ANFR mirror timed out; PDF bytes/hash not captured by CI.
+- Final 11-file diff reviewed; squash merge SHA 200ccca974ad3af09b1634fd9bf02c1baac5ca8c.
+- Independent sale/EU supply, actual SKU, internal BOM/MCU and manual/CAD file contents remain unknown.
