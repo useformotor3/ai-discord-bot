@@ -697,3 +697,19 @@ Run #1462 / ID 45314843427, PDF artifact 14884218192. ZIP 3,070,568 bytes, SHA-2
 - Keep Ver1.3/Ver1.4 actual revision Unknown; two list snapshots show Ver1.4, explicit sca= snapshot shows Ver1.3.
 - Actual SKU, independent sale, EU/EEA supply, importer/economic operator, BOM/MCU/security configuration Unknown. Manufacturer inquiry draft_prepared_not_sent.
 - CRA only; SIL 3 excluded.
+
+## 34. 2026-11-24 — PR #241 merge and manufacturer-source recheck
+
+| Evidence ID | Source / exact URL | Confirmed | Acquisition outcome / limitation |
+|---|---|---|---|
+| CI-PR241 | https://github.com/useformotor3/ai-discord-bot/pull/241 ; https://github.com/useformotor3/ai-discord-bot/actions/runs/45330332680 | exact HEAD 159f8c16ba50c41e1dd0f3aa0fffba7a3ee1a09d, Run #1509 success 25/25, 6 files +79/-0, reviews/threads 0, JSONL 372/0, merge dd54132fb44ed752b1f7942f4485ee03399a2c2f | verified |
+| CI-MAIN-1510 | https://github.com/useformotor3/ai-discord-bot/actions/runs/45333438936 | main push exact merge SHA dd54132fb44ed752b1f7942f4485ee03399a2c2f | in_progress at evidence snapshot; await final conclusion |
+| SQ-IX700M-SEARCH | https://sol.ls-electric.com/kr/ko/product/category/4?pageNumber=4 ; https://sol.ls-electric.com/kr/ko/newSearch?pageNumber=70 ; https://ssq.ls-electric.com/kr/ko/product/category/4?pageNumber=14 | official listing/search results show iX700M user manual, Motion & Servo, update 2026-09-16 | detail is JS shell; no document ID/PDF bytes/hash |
+| LSM-MANUAL-INDEX | https://www.lsmecapion.com/bbs/board.php?bo_table=manual ; https://lsmecapion.com/bbs/board.php?bo_table=manual&sca=Servo ; https://www.lsmecapion.com/bbs/board.php?bo_table=manual&sca= | default + Servo filter Ver1.4; explicit empty-category Ver1.3; same post/date 41 / 2026-05-26 | index conflict only; exact detail wr_id=12652 502/timeout; actual binary revision Unknown |
+| LSM-DRIVE-DOC | https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&page=4&wr_id=12888 ; https://www.lsmecapion.com/bbs/download.php?bo_table=certificate&no=0&page=4&wr_id=12888 | Drive example iX700MD1-B-150B and attachment metadata 238.9K | detail readable; attachment fetch timeout; PDF not acquired |
+| LSM-CONVERTER-DOC | https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&sca=CE&wr_id=12886 | Converter iX700MCV metadata, 480Vac and 15/37/55/75kW codes, attachment metadata 234.4K | search-index evidence only; detail/PDF not acquired |
+| LSM-IX700M-CAD | https://www.lsmecapion.com/bbs/board.php?bo_table=drawing&sca=Servo+Drive ; https://www.lsmecapion.com/bbs/board.php?bo_table=drawing&sca=Servo+Drive&wr_id=12455 | drawing index item 19, 2D CAD/3D STEP; exact detail URL resolved through previous-post link from PHOX page | detail timeout; DWG/DXF/STEP filenames, bytes and hashes not acquired |
+
+- Do not upgrade metadata to acquired binary evidence. Actual SKU, independent sale, EU/EEA supply, importer/economic operator, BOM/MCU/security remain Unknown.
+- Manufacturer inquiry remains draft_prepared_not_sent; no send/receipt/reply proof.
+- CRA only; SIL 3 excluded.
