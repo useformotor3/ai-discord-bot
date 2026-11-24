@@ -1932,3 +1932,11 @@ LS ELECTRIC 도메인에서 제공하는 LS Mecapion의 PDF `서보 드라이브
 - 제조사 질의 상태 `draft_prepared_not_sent` 유지. 실제 발송·접수·회신 증거 없이는 완료 처리하지 않는다.
 
 CRA only; SIL 3 제외.
+
+
+### 74.5 PR #234 병합 및 사후 main CI 기록
+
+- PR #234 exact HEAD `c1530e18a5452a8b3b0b35f70128dcaa405a25c7`, Run #1473 / ID `45316126142`: success. 6-file diff, JSONL 361 / invalid 0, review threads 0, reviews 0, base main `d160cb2eea13d3f18ac4bc8e98c40d4378881c1a`.
+- Expected-head squash merge SHA `bd46aa2a26a39a5389f3b314a94523bb495689b5`. Main read-back identical; main PROJECT_LOG 361 records / invalid 0.
+- Post-merge main push Run #1474 / ID `45316319487`, event=push, exact merge SHA, final success, 25/25 steps. Source identity, compile, CRA traceability, full tests, official PDF/HTML canaries, PDF evidence and provenance uploads all success.
+- 이 병합은 문서 전용이며 운영 main.py/workflow/secrets/API cadence 변경 없음.
