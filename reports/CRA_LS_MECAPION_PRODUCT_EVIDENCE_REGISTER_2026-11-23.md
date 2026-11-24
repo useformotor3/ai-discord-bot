@@ -502,3 +502,11 @@ ESO별 C(2026)7861 실제 수령일과 Article 2 비수락 통지는 여전히 U
 - 이전 “Ver1.4는 stale index” 단정은 철회. 현재 판정은 공식 페이지 snapshot 간 revision 표기 충돌이며 실제 PDF revision Unknown.
 - 원본 첨부 접근 실패는 확보 실패로 기록. DoC/CAD 내용 검토 완료로 표현하지 않는다.
 - 실제 프로젝트 SKU, 독립 판매, EU/EEA 개별 공급, importer/economic operator, BOM/MCU/security configuration은 Unknown.
+
+
+### 공개 유통 경로 및 제품 세대 구분 보강
+
+- `MFG-IX7M-27` — LS메카피온 해외 대리점 공식 페이지 https://www.lsmecapion.com/customer/agency2.php : 해외 담당 `LS ELECTRIC 자동화 / automation@ls-electric.com` 표시. EU/EEA 현지 유통사·수입자·경제운영자 또는 iX700M 거래 역할은 명시하지 않음.
+- `MFG-IX7M-28` — LS메카피온 국내 대리점 페이지 https://www.lsmecapion.com/customer/agency.php : 경기 수원 등 국내 지역 대리점 목록 표시. 국내 대리점 등록은 EU 공급/수입자 증거가 아님.
+- 검색된 LS ELECTRIC Solution Square의 `iX7M-A-...` DoC는 iX7M 모델을 대상으로 하므로 iX700M DoC로 전용하지 않음.
+- EU/EEA 개별 공급, importer/economic operator, actual SKU 및 각 거래 역할은 계속 Unknown. 공개 페이지에서 EU 판매자/수입자 확인이 안 된다는 사실을 “없다”로 확대 해석하지 않는다.
