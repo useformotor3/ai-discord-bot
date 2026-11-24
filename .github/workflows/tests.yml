@@ -98,7 +98,7 @@ jobs:
           verify_blob "main.py" "16393261529c36f2f0ec914e38002e6795ed9c71"
           verify_blob "cra_source.py" "d283c233c5fdc149373de9fdbd95e6822a81d5af"
           verify_blob "cra_claims.py" "e786d0c6a6059490465ec08c866b529f72b71660"
-          verify_blob "cra_pdf_sources.py" "6696a349e52a54dc259159d3e4efb56f8d02a8a9"
+          verify_blob "cra_pdf_sources.py" "e91fd3faee38511dae42b04639b21d0ec40e9a7a"
           verify_blob "cra_traceability.py" "5eba8374b3e2c4e683e4d9522cf5fae4116bff28"
           verify_blob "tests/test_cra_traceability.py" "89479dc871b5b4e043254d1fba398801a7bb4649"
           verify_blob "reports/CRA_EVD_SEC_TRACEABILITY_CROSSWALK_2026-11-19.csv" "13eb0e00b1fab15f938701ecc54d3befee3a7275"
