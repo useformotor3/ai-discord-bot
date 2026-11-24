@@ -2563,3 +2563,19 @@ Run #1555 PDF ZIP artifact ID 14973917921, 3,070,567 bytes, SHA-256 `426c0c7dc9e
 iX700M 매뉴얼, SKU별 signed EU DoC, Converter CE/UKCA DoC, KR/EN catalogue, CAD 2D/3D STEP 원본 binary는 여전히 취득하지 못했다. 공식 게시목록 metadata만 확인됐다. 매뉴얼 Ver1.3/Ver1.4 충돌은 Q61로 제조사 확인 요청 중. Q62는 정확한 ST MCU, 보안 구성, firmware/SBOM 및 취약점 관리 증거를 요청한다. 질의서 62문항, 미발송 초안.
 
 Actual SKU, EU/EEA supply, economic operators, signed DoC coverage, BOM/exact MCU/SBOM, security configuration, CRA classification, vulnerability handling, security update/support period remain Unknown.
+
+ 
+## §94. 2026-11-25 — PR #259 및 main push Run #1558
+
+### 94.1 PR and main CI
+PR #259 exact head `764caffd921cfc9007b71843ce096b68c7a65325`, base `6f26d7166bd8a1208733c82c8fda592e1cfc0f9a`, 6 files(+44/-0), reviews 0, inline threads 0. Run #1557 / 45510213810 completed/success, 15/15 steps, pytest 189 passed, traceability 391 events PASS, provenance 10 sources PASS, PDFs 3/3 fetch/hash PASS. Expected-head squash merge SHA `cabf4bfbb9bd5c4881eb951590813af5aa034ef0`.
+
+Main push Run #1558 / 45510395033 exact merge SHA, completed/success, 15/15 steps, pytest 189 passed, traceability 391 events PASS, 10-source provenance manifest JSON round-trip PASS, PDFs 3/3 fetch/hash PASS.
+
+### 94.2 Artifacts
+Run #1558 PDF ZIP artifact ID 14974454558, 3,070,565 bytes, SHA-256 `c58990a02462523067117f101ae053afc473c971d5896477bf568a7e3529ac21`; provenance ZIP artifact ID 14973949377, 2,565 bytes, SHA-256 `17778f980d7bc0fd1a3cfd6c028d830e19d7613962eb6898a0dc53ad7d622a23`; expiry 2026-12-01. C/2026/5252 fallback=true; hash only identifies fallback bytes.
+
+### 94.3 제품 증거 상태
+iX700M 원본 매뉴얼, SKU별 signed EU DoC, Converter CE/UKCA DoC, KR/EN catalogue, CAD 2D/3D STEP는 취득하지 못했다. 공식 게시목록 metadata만 확인됐으며 상세 첨부 접근은 502/timeout이다. 제조사 질의서 62문항은 미발송 초안이다.
+
+Actual SKU, EU/EEA supply, economic operators, signed DoC coverage, BOM/exact MCU/SBOM, security configuration, CRA classification, vulnerability handling, security update/support period remain Unknown.
