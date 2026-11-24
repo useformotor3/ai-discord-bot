@@ -1,5 +1,8 @@
 
 
+> **PR #245 post-merge main CI:** Run #1520 / 45401919091 on exact merge SHA 2b9d924a92bbd497289b9e3afe0dd52df527472b completed SUCCESS 25/25. Source evidence recheck adds the official iX700M catalogue index but no original binaries were acquired. See report §82 and evidence register §39.
+
+
 > **PR #244 / post-merge main CI (2026-11-24):** PR #244 exact HEAD 285b4b705c2bc86b4e7a4602ee7825963770b869 passed Run #1517 / 45340773376 (25/25), then expected-head squash merged as 40a92f1b00bf3b0f4e4694895b6399918ee5561f. Main push Run #1518 / 45401343718 on exact merge SHA also passed 25/25. PR #244 changed 6 files (+70/-0), 6 ahead/0 behind, reviews/threads 0, branch PROJECT_LOG 376 valid / 0 invalid. iX700M manufacturer source metadata was rechecked; original manual/DoC/catalogue/CAD binaries remain unacquired. See report §81 / evidence register §38. CRA only; SIL 3 excluded.
 
 
