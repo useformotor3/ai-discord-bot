@@ -2376,3 +2376,12 @@
 - C/2026/5252 is fallback=true; its hash identifies fallback bytes only, not primary mirror byte identity. Run #1551 PDF artifact ID 14974826452, 3,070,563 bytes, SHA-256 `e51c3492d882aeb2f53e30eb5b7fe155a50497bf176e986dd0a68a79d2de1491`; provenance artifact ID 14974926433, 2,565 bytes, SHA-256 `33e66afd51454c1d76a1a49deb0937b7a9c14fddbdf0fd9fdca550d20c069fd5`; expiry 2026-12-01.
 - Manufacturer binary retrieval still unsuccessful: manual/DoCs/catalogue/CAD are metadata-only, detail pages 502/timeout. Q61 requests version resolution; Q62 requests exact ST MCU/security/SBOM/vulnerability evidence. Inquiry 62 questions, draft not sent.
 - Unknowns remain: actual SKU, EU/EEA supply, economic operators, signed DoC coverage, BOM/MCU/SBOM, security configuration, CRA classification, vulnerability handling and update/support period. CRA only; SIL 3 excluded.
+
+ 
+## 2026-11-25 — PR #256 병합 및 main push Run #1553 성공
+
+- PR #256 exact head `ef3af6e9b4725422331737db6779429cb10504b3`, base `a8c51348615461f90560a3cce8443cce98c3b24f`, 6 files(+46/-0), reviews 0, threads 0. Run #1552 / 45508980711 completed/success, 15/15 steps, pytest 189 passed, traceability 389 events PASS, provenance 10 sources PASS, PDF 3/3 fetch/hash PASS. Expected-head squash merge SHA `0c732caa45e7fac532117e2a658463acc546ee72`.
+- Main push Run #1553 / 45509151327 exact merge SHA: completed/success, 15/15 steps, pytest 189 passed, traceability 389 events PASS, provenance 10 records JSON round-trip PASS, PDF 3/3 fetch/hash PASS.
+- C/2026/5252 fallback=true; its hash identifies fallback bytes only. Run #1553 PDF ZIP artifact ID 14973833111, 3,070,564 bytes, SHA-256 `f0db5c8cffd867ff65d7ede817ba7ef9e373f07ea4a54a119fa02be114288714`; provenance artifact ID 14974127712, 2,565 bytes, SHA-256 `90c4ce87a3ba6c2b0075b9c8cfd588fec0152771ef17a9679f2e4731e461ca6a`; expiry 2026-12-01.
+- Main docs synchronized through PR #256. Manufacturer inquiry 62 questions; draft not sent. iX700M manual/DoC/catalogue/CAD original binaries remain unacquired; listing metadata only.
+- Unknowns remain: actual SKU, EU/EEA supply, economic operators, signed DoC scope, BOM/MCU/SBOM, security configuration, CRA classification, vulnerability handling, update/support period. CRA only; SIL 3 excluded.
