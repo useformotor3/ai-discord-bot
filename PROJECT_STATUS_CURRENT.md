@@ -1956,3 +1956,10 @@
 - Final diff 11 files reviewed. No production main.py, secrets, production workflow or API cadence changes; only isolated test workflow blob pins changed.
 - PR #218 squash merge SHA `200ccca974ad3af09b1634fd9bf02c1baac5ca8c`.
 - Confirmed: iX700M Converter/Drive functional separation and separate model/document listing. Unknown: independent commercial sale, EU individual PDE supply, actual SKU, manual/CAD file bodies, internal schematic/BOM/MCU.
+
+
+## 2026-11-24 — PR #223 PDF source acquisition 보완
+- Run #1419: code/compile/traceability/pytest passed; PDF canary failed because ANFR fallback returned HTML (another attempt had 30s timeout).
+- ANFR fallback removed; C(2026)5252 Annex now uses Commission-hosted EU portal copy at transition-pathways.europa.eu, browser-verified as European Commission / 27.7.2026 / C(2026)5252 final / CRA guidance Annex.
+- PDF acquisition changed to per-source partial results: verified files and SHA-256 retained; unavailable sources explicitly recorded in manifest with reason; remaining sources continue.
+- Invalid PDF magic/identity markers and arbitrary non-allowlisted redirects remain hard failures. Regression tests and workflow source pins updated. PR #223 new exact-head CI pending.
