@@ -2197,3 +2197,31 @@ CRA only; SIL 3 제외.
 - §78 / 증거등록부 §35에 정리한 공식 iX700M CE/UKCA/UL/KC·매뉴얼·카탈로그·CAD·Solution Square 자료는 계속 목록 메타데이터와 실제 원본 바이너리를 구분한다. 새 원본 PDF/DWG/DXF/STEP 확보 증거는 없으므로 획득 상태를 변경하지 않는다.
 - 실제 SKU, independent sale, EU/EEA supply, importer/economic operator, BOM/MCU/security configuration은 Unknown. 제조사 질의서는 draft_prepared_not_sent.
 - CRA only; SIL 3 excluded.
+
+
+## §80. 2026-11-24 — PR #243 병합·3단계 CI 완료 및 iX700M 원본 자료 재검증
+
+### 80.1 CI·병합 체인
+
+| 단계 | 대상 SHA | 실행 | 최종 결과 |
+|---|---|---|---|
+| PR #242 병합 후 main | 3fbc1bcbf669324706c4ae2f882ff7269ae87f48 | [Run #1514](https://github.com/useformotor3/ai-discord-bot/actions/runs/45338702162) | SUCCESS 25/25 |
+| PR #243 exact HEAD | 9ae09486a10dc374b83ad417fbd09742f0213dc1 | [Run #1515](https://github.com/useformotor3/ai-discord-bot/actions/runs/45338890791) | SUCCESS 25/25 |
+| PR #243 병합 후 main | 6548eec799c398b35007212e4831d058934fa83b | [Run #1516](https://github.com/useformotor3/ai-discord-bot/actions/runs/45340565876) | SUCCESS 25/25 |
+
+PR #243은 exact HEAD Run #1515 통과 후 expected-head squash merge됐다. 변경 7개 파일(+75/-0), base 대비 7 ahead/0 behind, reviews 0, threads 0, branch PROJECT_LOG 375 JSONL records / invalid 0. Merge SHA는 6548eec799c398b35007212e4831d058934fa83b이며 main ref read-back과 일치한다. Run #1516은 해당 SHA를 대상으로 한 push CI다. 이전 §79의 Run #1514 진행 중 기록은 당시 snapshot으로만 유효하며 현재 최종 결과는 SUCCESS다.
+
+### 80.2 최종 응답 버튼 제어 게이트
+
+PR #243은 기존 버튼 규칙을 실제 최종 응답에 강제하는 v1.1 마감 게이트를 추가했다. 모든 주요 CRA 응답은 scope·근거·실행상태·GitHub 기록을 확인하고 실제 동작하는 다음 단계 버튼을 마지막 UI 요소로 배치해야 한다. 버튼은 사용자가 클릭해 다음 턴을 시작하는 것이며 자율 백그라운드 실행이 아니다.
+
+### 80.3 제조사 원본 파일 재접근 결과
+
+- LS Mecapion 기본 매뉴얼 목록과 Servo 필터는 iX700M DRIVE 400[V] Ver1.4(2026-05-26)를 표시한다. 명시적 빈 카테고리 sca= 목록은 같은 게시물 번호/날짜에서 Ver1.3을 표시한다. 매뉴얼 상세 wr_id=12652 접근은 timeout. 따라서 실제 배포 PDF revision/hash는 Unknown이다.
+- Drive CE 상세는 iX700MD1-B-150B와 CE DoC PDF 238.9K 첨부를 표시하지만 다운로드 링크 요청이 timeout됐다. PDF 본문은 확보하지 못했다.
+- Converter UKCA 상세는 iX700MCV 및 480Vac, 15/37/55/75kW와 UKCA DoC 224.1K 첨부를 표시하지만 상세 재접근/다운로드가 timeout됐다. Converter CE는 공식 listing metadata만 재확인했고 PDF는 미확보다.
+- 카탈로그 게시물은 KR/EN brochure PDF 각 10.7MB를 열거하지만 상세 페이지 timeout으로 원본 미확보다. CAD 공식 인덱스는 iX700M 2D CAD/3D STEP 외형도(2026-04-21)를 표시하지만 상세 페이지 timeout, DWG/DXF/STEP 바이너리 미확보다.
+- Solution Square 모션&서보 목록은 iX700M 사용 설명서 업데이트 2026-09-16을 표시한다. 상세는 JavaScript SPA shell에 머물러 파일/바이너리/해시 미확보다.
+
+위 자료는 공식 사이트의 목록·첨부 메타데이터 확인이지 원본 파일 확보가 아니다. CE/UKCA listing만으로 CRA 적합성이나 EU/EEA 공급을 입증하지 않는다. 실제 SKU, 독립 판매, EU/EEA 공급, 수입자/경제운영자, BOM/MCU/보안 설정은 Unknown이며 제조사 질의서는 draft_prepared_not_sent다.
+- CRA only; SIL 3 excluded.
