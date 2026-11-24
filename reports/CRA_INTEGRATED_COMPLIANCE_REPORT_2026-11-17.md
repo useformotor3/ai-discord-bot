@@ -2018,3 +2018,6 @@ CRA only; SIL 3 제외.
 - Regression tests: timeout 후 2차 성공, 3회 재시도 소진, partial pack warning 표시. 실제 source network canary 결과와 unit-test retry semantics를 구분한다.
 - 이 개선은 read-only source acquisition 도구와 테스트를 변경한다. workflow YAML은 수정된 `cra_pdf_sources.py` 및 `tests/test_cra_pdf_sources.py`의 exact source-blob 무결성 pin만 갱신한다. job steps·schedule/cadence·secrets·`main.py` 동작은 변경하지 않는다.
 - CRA only; SIL 3 제외.
+
+- First PR #239 Run #1486 / ID `45319973724` failed at step 4 `Verify exact source blob identities`, before dependency installation, compile or tests. Cause: workflow pinned old Git blob `bbbb4156d701ad11cc340609badb191cb53176ab` for `cra_pdf_sources.py`, but modified blob was `c24f4d1cda683324930e6449673c49e507ba38a8`; test pin also required refresh from `79acd36f4e5799b5aa90b88983be5af52a9dcb0d` to `1664ebcfa93f2cdb8888fa1829f0188561319bcf`.
+- Corrective change updates only those two expected source-blob hashes in `.github/workflows/tests.yml`; no job steps, workflow triggers, permissions, timeout, schedule, secrets or runtime behavior changed. The next exact-head CI must rerun from source identity check onward before merge.
