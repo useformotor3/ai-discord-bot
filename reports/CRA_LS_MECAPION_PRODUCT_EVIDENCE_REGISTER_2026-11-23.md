@@ -623,3 +623,19 @@ Run #1462 / ID 45314843427, PDF artifact 14884218192. ZIP 3,070,568 bytes, SHA-2
 - Solution Square update date is a listing metadata fact only; no proof that the manual equals LS Mecapion Ver1.3 or Ver1.4.
 - Actual SKU, independent sale, EU/EEA supply, importer/economic operator, BOM/MCU/security configuration remain Unknown. Inquiry `draft_prepared_not_sent`.
 - CRA only; SIL 3 excluded.
+
+
+## 30. 2026-11-24 — PR #237 병합 및 Run #1483 partial source pack
+
+| ID | 증거 | 결과 및 해석 |
+|---|---|---|
+| CRA-CI-1482 | https://github.com/useformotor3/ai-discord-bot/actions/runs/45318431483 | PR #237 exact HEAD `0b173310aafc82d8db1c7bce032d93ee9fbd0db3`, Run #1482 success 25/25. 6 files, JSONL 365/0, review threads 0, reviews 0, base `c395fc5b5b2a393632bb2fbe65b10fd6572b936d`. Merge SHA `792eea6388382a1932f1b775e57776a7ccacf3a6`. |
+| CRA-CI-1483 | https://github.com/useformotor3/ai-discord-bot/actions/runs/45318639981 | Post-merge main push, exact merge SHA, success 25/25. Main read-back identical. |
+| CRA-PDF-1483 | Artifact 14886766794 | ZIP 2,922,421B, SHA-256 `3f6c27de5224eb480951133a39ea5791b83753ae2038c1072158db94bbbb758c`. Includes C(2026)5252 (84p), C/2026/6013 (61p), text extracts and manifest. C(2026)7861 is explicitly `unavailable` due official Commission register API read timeout (30s); 2/3 PDF fetched. |
+| CRA-PROV-1483 | Artifact 14885852834 | ZIP 2,565B, SHA-256 `16b7160436069a0ccecc2a1b04e923a5eb119aa11506b8fb7a6197030bc2be7c`. Separate official HTML source manifest, 10 sources. |
+| CRA-M606-1481 | Run #1481 artifact 14886830715 | Previously acquired C(2026)7861 Annex 6-page original retained, SHA-256 `262b09596cb5cbe7d72a2c7789fb2512ee00db7f69082e7def2c8181b0f63276`. Run #1483 temporary timeout does not invalidate this earlier verified binary. |
+| CRA-M606-REGISTRY | https://ec.europa.eu/transparency/documents-register/api/files/C%282026%297861_1/de00000001090401 | Official browser extraction confirms C(2026)7861 final Annex, dated 10.11.2026, and 41 standards draft items/deadlines. Web extraction is not a substitute for the binary PDF artifact. |
+
+- Important quality distinction: workflow conclusion `success` means test/canary process completed under its current policy; it does not mean every optional/live PDF source was retrieved. Run #1483 log truthfully states `fetched=2, unavailable=1`.
+- `cra_pdf_sources.py` currently records transient `PDFSourceUnavailableError` as unavailable and returns exit 0. No code/workflow change made in this PR. Retry/backoff and explicit completeness indicator are candidates for a separate tested change.
+- CRA only; SIL 3 excluded.
