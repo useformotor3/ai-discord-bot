@@ -2066,3 +2066,16 @@
 - 공식 페이지의 서로 다른 조회 결과에서 Ver1.3과 Ver1.4가 모두 확인됨. 직접 열린 전체 매뉴얼 목록/Servo 필터의 한 snapshot은 Ver1.3을 표시하고, 다른 공식 검색결과 snapshot은 Ver1.4를 표시한다. 이를 검색 캐시 오류로 단정하지 않고 unresolved conflict로 격상.
 - 매뉴얼 상세 게시물 `wr_id=12652` 및 Converter DoC 첨부 `wr_id=12886` / CAD 상세 `wr_id=12455`는 재시도했으나 cache miss. Drive DoC 상세 페이지도 cache miss. PDF/CAD 원본 bytes/hash 미확보.
 - 최신 개정판 확정 금지. 제조사 원본 PDF와 document number/revision/issue date/change history/SKU applicability/SHA-256 확인 필요.
+
+
+## 2026-11-24 — PR #230 병합 및 iX700M Solution Square 매뉴얼 추적 갱신
+
+- PR #230 exact HEAD `89d3d3306a4cdb119f5ad9ed06c48cdecaa1035e`, Run #1458 / ID `45313263121`: 25개 단계 전체 success. Source identity, compile, CRA traceability, full pytest, official CRA PDF/HTML canaries, PDF evidence 및 provenance uploads 성공.
+- 5개 문서 파일 diff 검토, review thread 0, PR branch PROJECT_LOG 356 records / invalid JSON 0. expected HEAD SHA를 고정해 squash merge.
+- PR #230 merge SHA `7b3eaa39d96e78081621f8c40cde97ad916722e5`; main compare 결과 merge SHA와 main이 identical, 보고서/증거등록부/상황판/세션 로그/PROJECT_LOG read-back 완료. main PROJECT_LOG 356 records / invalid JSON 0.
+- PR #229 merge SHA `4263389aa79cbb7cc17ccda3a019c659ccddef85`의 main push CI: commit combined status에 status context 없음, 사용 가능한 workflow-run 조회는 PR-triggered run만 반환해 push run을 확인하지 못함. **pending/unverified** 유지.
+- LS ELECTRIC Solution Square 공식 Motion & Servo 목록에서 `iX700M 사용 설명서`, update `2026-09-16` 항목을 재확인. 그러나 JS 기반 상세 페이지는 웹 조회에서 실제 파일/문서 식별정보를 제공하지 않으며 PDF 원본·파일명·revision·hash 미확보.
+- LS메카피온 공식 목록의 직접 본문 snapshot은 Ver1.3(2026-05-26), 공식 검색 snapshot 일부는 Ver1.4(동일 게시일)를 표시. 따라서 게시판 표시 충돌은 계속 unresolved이며 실제 배포 PDF revision은 Unknown.
+- Converter/Drive CE DoC와 CAD 원본 재시도 결과: Converter 게시물 첨부 클릭 cache miss, Drive 상세 cache miss, CAD 상세 `wr_id=12455` cache miss. 원본 bytes/hash 미확보.
+- 실제 SKU, 독립 판매, EU/EEA 개별 공급, importer/economic operator, BOM/MCU/보안 구성은 Unknown. 질의서 `draft_prepared_not_sent`; 실제 발송/접수/회신 없음.
+- CRA only; SIL 3 제외. 운영 코드/workflow/secrets/API cadence 변경 없음.
