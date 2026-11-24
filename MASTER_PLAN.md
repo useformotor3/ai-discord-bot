@@ -2115,3 +2115,10 @@
 - ANFR fallback의 불안정(HTML 응답/timeout) 확인 후 Commission-hosted transition-pathways EU portal copy로 변경.
 - PDF source별 partial fetch 및 manifest에 fetched/unavailable status·reason 기록. 잘못된 파일·identity mismatch·비허용 host는 계속 fail-closed.
 - PR #223 새 HEAD에서 pytest, live canary, partial artifact upload 검증 후 병합.
+
+
+## 2026-11-24 — 공식 CRA PDF 부분 확보 완료
+- C(2026)5252 Annex와 C/2026/6013 OJ PDF의 실제 바이트 및 SHA-256을 확보. C(2026)7861 Annex는 Commission register timeout으로 미확보 상태를 manifest에 기록.
+- source별 partial fetch 검증: 미확보 문서가 나머지 PDF 저장을 막지 않음.
+- Run #1427 success, pytest 186, HTML locator 10개 통과. PDF/provenance artifacts 업로드 완료.
+- 다음: PR #223 최종 diff 검토 및 병합. C(2026)7861 official document register endpoint 접근성은 별도 조사.
