@@ -2336,3 +2336,13 @@
 - 제조사 질의서 Q60 추가: 원본 파일을 공식 첨부가 불가능한 경우 revision-controlled secure delivery channel로 전달하고, 파일별 원본명/format/size/SHA-256/발행·개정일/서명 검증방법/적용 SKU 범위를 제공하도록 요청. 총 60문항, draft not sent.
 - Unknown 유지: actual SKU, EU/EEA supply, economic operators, signed DoC scope, BOM/MCU/SBOM, security configuration, CRA classification, vulnerability handling, security-update/support period.
 - Node.js 20 action, punycode, url.parse deprecation warnings remain; no failed steps. CRA only; SIL 3 excluded.
+
+ 
+## 2026-11-25 — PR #253 JSONL 수정 및 exact-head Run #1542 성공
+
+- PR #253 첫 실행 Run #1541 / 45507125350은 초기 PR head `c0b3c56c612b5a014465e9f68bf9fb3e384a8f3a`에서 시작했다. 기존 PROJECT_LOG.jsonl의 끝 줄바꿈 뒤 새 이벤트를 추가하며 선행 개행을 하나 더 넣어 385번째 줄이 빈 줄이 되었고 CRA traceability가 실패했다. 해당 실행은 cancelled로 종료됐으며 pytest는 skip. 실패한 상태로 병합하지 않았다.
+- JSONL을 빈 줄 없이 정규화해 새 exact head `e0788eb79d8b5c061b28111f96d9d6419eac950b`로 업데이트했다. 검증 결과 385 records / 0 invalid / 0 blank lines.
+- Run #1542 / 45507153261: exact normalized head, completed/success, 15/15 steps, CRA traceability PASS(project_log_events=385, modern_ids=380, legacy=5), pytest 189 passed, 10 official source provenance PASS.
+- Run #1542에서 공식 CRA PDF 3종 모두 실제 fetch/hash 성공: C/2026/5252 1,190,726 bytes/84 pages/SHA-256 `fe209c250e3d1f7599e42826d91963666951332927edcf511a2e79fe8d2f8234` (fallback=true); OJ C/2026/6013 2,709,282 bytes/61 pages/SHA-256 `40ca76caeb0108f5b97c8f373a95f590b453fe92bd45a483addf3326e48c1dc2` (fallback=false); M/606 Annex 151,267 bytes/6 pages/SHA-256 `262b09596cb5cbe7d72a2c7789fb2512ee00db7f69082e7def2c8181b0f63276` (fallback=false). C/2026/5252 was obtained through fallback; do not assert it is byte-identical to the original mirror source.
+- PDF ZIP artifact ID 14973509955, 3,070,565 bytes, SHA-256 `ca03854e1a1fc393292d0676a9e73276fedb8f4e12f91f62ed08f5aba05ba8f7`; provenance ZIP artifact ID 14973037845, 2,565 bytes, SHA-256 `ac0f673fc8844fcd62977fad35e0c0d1a00d2e2aab8ad78bdbe8f2728c74623c`; expiry 2026-12-01.
+- No iX700M product binary was acquired. CRA only; SIL 3 excluded.
