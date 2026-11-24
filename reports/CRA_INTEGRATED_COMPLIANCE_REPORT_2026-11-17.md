@@ -1630,3 +1630,33 @@ LS메카피온 공식 CE 게시판은 Converter Unit `iX700MCV`와 Drive Unit �
 - 기능·모델코드·CE 게시 단위의 구분은 확인되었지만 상업적 공급 단위는 미확정이다.
 - Converter/Drive 개별 PDE 공급 여부는 견적·발주·송장·납품·라벨·EU 수입자 문서와 제조사 서면 답변으로 확인해야 한다.
 - 제조사 질의서/커버메일은 준비됐으나 실제 발송·접수·회신은 없음. 제품별 독립 판매, EU 공급, 실제 SKU, 내부 회로도/BOM/MCU 및 보안 설정은 Unknown 유지.
+
+
+## §68. 2026-11-24 — 공식 매뉴얼 목록 최신 재조회 및 첨부 원본 접근 실패 기록
+
+### 매뉴얼 버전 표시 재검증
+
+2026-11-24 재조회 시점에 LS메카피온 공식 매뉴얼 목록의 직접 열린 페이지 본문은 다음과 같이 표시했다.
+
+- 전체 목록: https://www.lsmecapion.com/bbs/board.php?bo_table=manual — iX700M DRIVE 400[V] 매뉴얼 **Ver1.3**, 게시일 2026-05-26 (페이지 본문 2026-11-24 재조회).
+- Servo 필터: https://lsmecapion.com/bbs/board.php?bo_table=manual&sca=Servo — 동일하게 **Ver1.3**, 게시일 2026-05-26.
+- 별도 검색엔진 저장 결과에는 Ver1.4로 남아 있다. 검색 결과의 수집 시점/캐시가 공식 페이지의 현재 렌더링과 다를 수 있으므로 Ver1.4를 현재 공식 게시판 표기로 확정하지 않는다.
+- 상세 게시물 URL은 `wr_id=12652`로 연결되나 웹 조회가 cache miss로 실패해 상세 게시물 본문과 첨부 링크를 확인하지 못했다.
+- 판정: **현재 직접 열리는 공식 목록의 표시 버전은 Ver1.3**. 단, 실제 PDF 본문·문서번호·개정 이력·첨부 교체 여부·SHA-256은 미확보이므로 파일 자체의 실제 개정판은 Unknown. 제조사에 최신 원본과 Ver1.3/Ver1.4 차이, revision history, 적용 SKU를 확인해야 한다.
+
+### CE DoC와 CAD 원본 재시도
+
+- Converter CE 게시물은 `[CE_DoC-LVDEMC] iX700MCV.pdf` (234.4K) 첨부명을 표시한다: https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&sca=CE&wr_id=12886. 첨부 클릭 시 download URL 접근은 cache miss로 실패했다. PDF 본문/서명/적용 법령·표준을 직접 검토하지 않았다.
+- Drive CE 검색 결과는 `[CE_DoC-LVDEMC] iX700MD1-B-150B.pdf` (238.9K) 첨부명을 표시한다: https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&page=4&wr_id=12888. 이 역시 첨부 원본 본문은 미확보.
+- CAD 목록은 iX700M Series 외형도 2D(CAD), 3D(STEP), 2026-04-21 게시를 표시한다: https://www.lsmecapion.com/bbs/board.php?bo_table=drawing&sca=Servo+Drive. 상세 게시물 `wr_id=12455` 접근이 cache miss로 실패. 첨부파일명·포맷별 ZIP·파일 크기·원본 hash는 Unknown.
+- 검색엔진 결과는 동일 회사의 다른 제품(PHOX) 상세 게시물에 2D ZIP 2.4M, 3D ZIP 8.5M을 표시하지만, 이를 iX700M 첨부파일에 전용하지 않는다.
+
+### 상업적/CRA 경계
+
+- iX700M 공식 드라이브 제품군 목록은 AC 380–480 V, 4.5–75 kW, 다축 모듈러 EtherCAT 통신형 제품군으로 표시한다: https://www.lsmecapion.com/bbs/board.php?bo_table=pd_drive.
+- CE 게시판은 Converter/Drive 별도 항목과 일부 모델코드 예시를 제시한다. 이는 기능·문서상 구분 증거다. 실제 독립 견적/주문/판매, 개별 EU 공급, 수입자·경제운영자 또는 CRA 적합성을 입증하지 않는다.
+- 실제 프로젝트 SKU, 공급 계약/송장/납품 증거, PDF 원본, CAD 원본, 내부 회로/BOM/MCU/보안 구성은 계속 Unknown.
+
+### 증거 접근성·품질 기록
+
+검색 결과의 저장된 snippet과 공식 사이트의 현재 페이지 본문이 다를 수 있음을 확인했다. 향후 보고서에서는 검색 snippet만으로 최신 버전 판정을 내리지 않고, 직접 열린 공식 페이지 본문·상세 게시물·원본 첨부를 별도 단계로 구분한다. 원본 첨부 다운로드가 실패하면 실패 사실과 접근 경로를 남기고 파일 확보로 표시하지 않는다.
