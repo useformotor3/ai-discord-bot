@@ -651,5 +651,5 @@ Run #1462 / ID 45314843427, PDF artifact 14884218192. ZIP 3,070,568 bytes, SHA-2
 | Partial-status clarity | `cra_pdf_sources.py` | unavailable source is preserved in manifest; exit 0 remains to avoid external service flakiness turning all CI red, but console now says `WARNING: partial CRA PDF source pack` rather than unconditional PASS. |
 | Tests | `tests/test_cra_pdf_sources.py` | timeout-then-success, bounded exhaustion, and partial warning behavior covered. |
 
-- No workflow YAML/main.py/secrets/API cadence changes. Retry is bounded and does not accept untrusted mirrors or bypass PDF identity markers.
+- Workflow YAML changes only refresh the exact source-blob integrity pins for `cra_pdf_sources.py` and `tests/test_cra_pdf_sources.py`; job steps, cadence, secrets and `main.py` behavior remain unchanged. Retry is bounded and does not accept untrusted mirrors or bypass PDF identity markers.
 - CRA only; SIL 3 excluded.
