@@ -733,3 +733,16 @@ Run #1462 / ID 45314843427, PDF artifact 14884218192. ZIP 3,070,568 bytes, SHA-2
 - Listing metadata is not a substitute for original file contents. CE/UKCA/UL/KC are not proof of CRA conformity or EU/EEA supply.
 - Actual SKU, independent sale, EU/EEA supply, importer/economic operator, BOM/MCU/security remain Unknown. Manufacturer inquiry draft_prepared_not_sent.
 - CRA only; SIL 3 excluded.
+
+
+## 36. 2026-11-24 — PR #242 merge and response-control incident
+
+| Evidence ID | Source | Confirmed | Status / limitation |
+|---|---|---|---|
+| CI-PR242 | https://github.com/useformotor3/ai-discord-bot/pull/242 ; https://github.com/useformotor3/ai-discord-bot/actions/runs/45335812764 | exact HEAD e92bb6a0830cbdeb7ed4c05e31faba201c2754a3; Run #1513 success 25/25; 6 files +141/-0; 12 ahead/0 behind; reviews/threads 0; JSONL 374/0 | expected-head squash merged as 3fbc1bcbf669324706c4ae2f882ff7269ae87f48; main read-back identical |
+| CI-MAIN-1514 | https://github.com/useformotor3/ai-discord-bot/actions/runs/45338702162 | push event targets exact merge SHA 3fbc1bcbf669324706c4ae2f882ff7269ae87f48 | in progress at snapshot; final result must be read back |
+| OPS-NEXT-BUTTON-OMISSION | docs/AI_CONTINUOUS_IMPROVEMENT_AND_NEXT_STEP_PROTOCOL.md v1.1; SESSION_LOG 2026-11-24 entry | required button existed in v1.0 but was omitted from an assistant final response | execution failure: no mandatory final-output component check; v1.1 adds pre-finalization gate and recovery |
+
+- No new iX700M original manual, CE/UKCA/UL/KC certificate, catalogue PDF, or CAD binary was acquired in this step. §35 remains the authoritative manufacturer-source index snapshot; listing metadata is not an acquired file.
+- Actual SKU, independent sale, EU/EEA supply, importer/economic operator, BOM/MCU/security remain Unknown. Manufacturer inquiry draft_prepared_not_sent.
+- CRA only; SIL 3 excluded.

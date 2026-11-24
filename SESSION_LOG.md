@@ -3432,3 +3432,14 @@ CRA only; SIL 3 excluded.
 - Fresh vendor listing search: iX700M Converter UKCA DoC listing; iX700M Series UL certificate listing; KC entries for iX700MD1-B-150B, iX700MD1-B-075B, iX700MCV-B-750, iX700MCV-B-550; iX700M KR/EN catalogue PDFs listed 10.7MB each. Drive CE/Converter CE attachment metadata reconfirmed. All binaries still not acquired; official download/detail timeouts.
 - Manual version index is more inconsistent than previously represented: default listing snapshots include both Ver1.3 and Ver1.4; Servo filter Ver1.4; explicit empty sca Ver1.3. Do not infer actual PDF revision. Solution Square detail remains JS shell. CAD wr_id=12455 remains timeout.
 - Unknowns remain actual SKU, independent sale, EU/EEA supply, importer/economic operator, BOM/MCU/security. Inquiry draft_prepared_not_sent. CRA only; SIL 3 excluded.
+
+
+## 2026-11-24 — PR #242 병합 및 상시 다음 단계 버튼 누락 원인 분석
+
+- PR #242 exact HEAD e92bb6a0830cbdeb7ed4c05e31faba201c2754a3, base/main dd54132fb44ed752b1f7942f4485ee03399a2c2f, 6 files(+141/-0), 12 ahead/0 behind. Reviews 0 / threads 0. Run #1513 / 45335812764 exact HEAD success 25/25; compile, CRA traceability, full test suite, official CRA PDF/source canaries and evidence uploads all passed.
+- Branch PROJECT_LOG 374 JSONL records / invalid 0. Expected-head squash merge SHA 3fbc1bcbf669324706c4ae2f882ff7269ae87f48; main ref read-back compare identical. Post-merge main Push Run #1514 / 45338702162 targets exact merge SHA; status in_progress at this log snapshot.
+- **운영 실패:** 이전 응답에서 사용자가 한 번 눌러 다음 대화를 시작할 수 있는 버튼을 누락했다. 기존 GitHub protocol 및 README에는 이미 상시 버튼 규칙이 있었다. 따라서 원인은 규칙 미기록이 아니라, 응답 종료 직전 출력 체크리스트/컴포넌트 검증을 실행하지 않은 것이다.
+- **영향:** 사용자가 다음 작업을 직접 입력해야 했고, GitHub에 기록된 편의·연속성 규칙이 응답에서 실행되지 않았다.
+- **개선:** protocol v1.1에 마지막 응답 요소가 실제 동작하는 버튼인지 확인하는 필수 마감 게이트를 추가했다. 버튼 payload는 최신 GitHub 상태 재확인, 우선 CRA 작업 실행, 근거·테스트 검증, 로그 갱신 및 버튼 재제공을 포함한다. 버튼은 다음 사용자 턴을 시작하는 방식이며 자율 백그라운드 실행은 아니다.
+- **회귀방지 확인:** 이번 최종 응답에도 버튼을 실제 컴포넌트로 제공하고, 이후 모든 주요 CRA 응답에서 종료 직전 존재 여부를 확인한다.
+- CRA only; SIL 3 excluded.

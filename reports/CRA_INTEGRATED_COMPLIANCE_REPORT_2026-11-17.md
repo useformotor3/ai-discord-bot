@@ -2174,3 +2174,26 @@ CRA only; SIL 3 제외.
 - Actual SKU, independent sale, EU/EEA supply, importer/economic operator, BOM/MCU/security configuration remain Unknown. Manufacturer inquiry remains draft_prepared_not_sent.
 - No original manual, CE/UKCA/UL/KC certificate, catalogue PDF or CAD DWG/DXF/STEP binary was acquired in this recheck. Listing metadata must not be upgraded to acquired evidence.
 - CRA only; SIL 3 excluded.
+
+
+## §79. 2026-11-24 — PR #242 병합 및 다음 단계 버튼 누락 시정
+
+### 79.1 PR #242 최종 검증 및 병합
+
+- PR #242 exact HEAD e92bb6a0830cbdeb7ed4c05e31faba201c2754a3, base main dd54132fb44ed752b1f7942f4485ee03399a2c2f. 변경 파일 6개, +141/-0, 12 commits ahead / 0 behind, review submissions 0, review threads 0.
+- Run #1513 / ID 45335812764는 exact HEAD와 일치하며 completed/success, 25/25 steps. Source blob identity, compile, CRA traceability, full repository test suite, live official CRA PDF/source canaries, evidence/provenance uploads 모두 성공.
+- Branch PROJECT_LOG 374 JSONL records / invalid 0. Expected-head squash merge 성공, merge SHA 3fbc1bcbf669324706c4ae2f882ff7269ae87f48. Main과 merge SHA compare 결과 identical. Main push Run #1514 / ID 45338702162는 이 기록 시점에 in_progress이며 최종 결과는 별도 확인 대상.
+
+### 79.2 다음 단계 버튼 누락 운영 실패 분석
+
+- 증상: 이전 CRA 진행 응답의 마지막에 실제 동작하는 “다음 단계 계속 진행” 버튼이 출력되지 않아 사용자가 후속 작업을 직접 입력해야 했다.
+- 원인: 상시 버튼 규칙과 정식 payload는 이미 docs/AI_CONTINUOUS_IMPROVEMENT_AND_NEXT_STEP_PROTOCOL.md 및 README에 기록되어 있었다. 실패는 문서 누락이 아니라, 응답 최종화 시 출력 체크리스트가 강제되지 않아 버튼 컴포넌트 존재 여부를 확인하지 않은 실행 통제 실패다.
+- 영향: 다음 대화 재개에 불필요한 타이핑이 발생했고, 저장된 작업 연속성 규칙과 실제 응답 사이의 불일치가 생겼다.
+- 시정: protocol v1.1에 필수 최종 출력 게이트를 추가했다. CRA 범위·근거·실행상태·과장 금지·GitHub 기록을 확인한 뒤, 실제 버튼 컴포넌트와 canonical payload 존재를 확인하고 버튼을 마지막 요소로 배치한다. 누락이 발견되면 응답 완료 전에 수정하며, 이미 빠졌다면 다음 응답에서 원인을 기록하고 복구한다.
+- 한계: 버튼은 사용자의 클릭으로 다음 대화 턴을 시작한다. 모델이 대화 사이에 스스로 계속 실행되는 자율 에이전트라고 표현하지 않는다.
+
+### 79.3 제조사 원본 자료 조사 상태 유지
+
+- §78 / 증거등록부 §35에 정리한 공식 iX700M CE/UKCA/UL/KC·매뉴얼·카탈로그·CAD·Solution Square 자료는 계속 목록 메타데이터와 실제 원본 바이너리를 구분한다. 새 원본 PDF/DWG/DXF/STEP 확보 증거는 없으므로 획득 상태를 변경하지 않는다.
+- 실제 SKU, independent sale, EU/EEA supply, importer/economic operator, BOM/MCU/security configuration은 Unknown. 제조사 질의서는 draft_prepared_not_sent.
+- CRA only; SIL 3 excluded.
