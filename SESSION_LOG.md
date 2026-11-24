@@ -3205,3 +3205,14 @@
 - PR #226 post-merge main Run #1446 / 45304849931 success. PR #227 post-merge main Run #1448 / 45305187475는 이 기록 시점 in progress.
 - 통합 보고서 §67 및 증거등록부 §21에 CE 모델코드, Converter/Drive 구분, 매뉴얼 listing snapshot 충돌, CAD 원본 미확보를 반영.
 - 문서 전용 변경. CRA only; SIL 3 제외. 제조사 질의서 미발송/회신 미확인 상태 유지.
+
+
+## 2026-11-24 — PR #228 및 공식 iX700M 자료 최신 재확인
+
+- PR #228 exact HEAD `474d87b112ae229ed39a397b3964daf3d419b853`; Run #1449 success. 3개 파일 diff 검토, review thread 0, JSONL 351 records / invalid 0.
+- squash merge SHA `3db9896d5727701cb38c6a033d0d0e07f433339b`; main read-back 동일.
+- PR #227 main Run #1448 success 확인. PR #228 main Run #1450은 조회 시점 in progress; compile, traceability, full pytest 및 CRA PDF canary/evidence upload 성공, HTML canary/provenance 단계 미완료.
+- 매뉴얼 공식 페이지를 재조회: 전체 목록(https://www.lsmecapion.com/bbs/board.php?bo_table=manual)과 Servo 필터(https://lsmecapion.com/bbs/board.php?bo_table=manual&sca=Servo)의 직접 열린 본문 모두 iX700M DRIVE 400[V] Ver1.3, 게시일 2026-05-26 표시. 검색엔진 저장 결과는 Ver1.4로 남아 상충. 최신 직접 페이지 표시를 현재 게시판 상태로 채택하되 PDF 원본/문서 revision/hash 미확보로 파일 내용 버전은 Unknown.
+- CAD 게시물 상세 페이지(wr_id=12455)와 매뉴얼 상세 페이지(wr_id=12652)는 Web fetch cache miss. Converter CE DoC 첨부 클릭도 cache miss. 첨부명/게시 메타데이터는 검색 snippet/게시물에서 확인됐으나 원본 byte/hash와 본문은 미확보.
+- 질의서/발송안내를 Ver1.4 단정에서 제거하고, 현재 목록 Ver1.3 및 Ver1.4 검색색인 상충, 원본 파일 revision/hash 요청으로 변경. 수신처 배정 확인 체크리스트 추가.
+- 실제 질의서 발송/접수/제조사 회신 없음. CRA only; SIL 3 제외.
