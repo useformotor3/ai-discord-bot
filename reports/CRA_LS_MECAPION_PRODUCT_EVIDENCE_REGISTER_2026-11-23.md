@@ -429,3 +429,10 @@ ESO별 C(2026)7861 실제 수령일과 Article 2 비수락 통지는 여전히 U
 - C(2026)7861 Annex: Commission register read timeout after 30s; recorded as unavailable in manifest; does not prevent the other two PDFs from being stored.
 - PDF artifact ID 14874639916; provenance manifest artifact ID 14875084483. Run #1427 also passed official HTML source locator validation (10 sources).
 - Source acquisition now records per-source status; invalid PDF/identity/host checks remain hard failures.
+
+
+## 18.7 PR #223 merge record
+- PR #223 squash merged: a1fe5b983e1cecb1235b56071534e05884d61786.
+- Exact HEAD 76e5bce626db999e434d41f50ac0b9413b9561d5, Run #1432 / 45295093222 success; 186 pytest passed; source identity/compile/CRA traceability/10 HTML locators/PDF canary/two artifact uploads all passed.
+- C(2026)5252 and C/2026/6013 PDF hashes and artifact IDs in §18.6. C(2026)7861 remains unavailable due Commission register timeout, explicitly recorded in manifest.
+- 11 files reviewed; only docs, CRA PDF source collector/tests and isolated test workflow blob pins changed. No production main.py, secrets or API cadence changes.
