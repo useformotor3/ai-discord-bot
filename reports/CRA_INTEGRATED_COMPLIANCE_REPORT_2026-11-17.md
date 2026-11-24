@@ -1595,3 +1595,38 @@ LS메카피온 공식 홈페이지의 국내 지역별 서보 영업 담당자, 
 공식 국내 담당자 페이지에는 지역별 영업 이메일이 게시되어 있고 경기 담당자의 주소는 scahn@lsmecapion.com으로 표시된다. 단, 실제 회사/프로젝트 소재지가 경기인지 확인 후 사용해야 하며 iX700M 문의 접수 가능 여부는 발송 전 재확인한다. 전국 서보 기술지원은 1544-5948로 게시되어 있으나 이메일은 확인되지 않아 생성하지 않는다. 해외 담당 페이지의 automation@ls-electric.com은 해외 채널 주소로 확인했을 뿐 EU 수입자·판매 법인·경제운영자라고 간주하지 않는다.
 
 질의서와 커버메일 초안은 준비됐지만 실제 발송·접수·회신은 확인되지 않았다. 회사명·소재지·담당자 및 담당부서 확인 후 발송해야 한다. 제조사 답변 전 제품 독립 판매·EU 공급·실제 SKU·내부 설계/보안 정보는 Unknown으로 유지한다.
+
+
+## §67. 2026-11-24 — iX700M CE 게시물·모델코드 및 매뉴얼/CAD 버전 증거 교차검증
+
+### 공식 CE 게시물에서 확인한 코드 구조
+
+LS메카피온 공식 CE 게시판은 Converter Unit `iX700MCV`와 Drive Unit 모델들을 별도 게시물로 식별한다.
+
+- Converter Unit 게시물: https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&sca=CE&wr_id=12886
+  - `CV` = Converter Unit; `B` = 480 Vac; `150/370/550/750` = 15/37/55/75 kW; 표준/주문형 option suffix 정의.
+  - 게시물에 `[CE_DoC-LVDEMC] iX700MCV.pdf` 첨부파일명이 표시된다.
+- Drive Unit 게시물: https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&page=4&wr_id=12888
+  - `D1/D2/D3` = 1/2/3축; `B` = 480 Vac; `150` = 15 kW; encoder `B` = BiSS-C; option suffix 정의.
+  - 게시물에는 개별 Drive Unit 모델에 대한 CE DoC 게시가 확인된다.
+
+이 정보는 제조사가 제품 기능과 CE 문서 게시 단위에서 Converter/Drive를 구분한다는 증거다. **별도 DoC, 별도 모델코드만으로 실제 독립 견적·주문·계약·판매 또는 EU 개별 공급을 입증할 수 없다.** 실제 대상 SKU도 아직 Unknown이다. 첨부 PDF 본문은 웹 도구에서 원본을 열지 못해 DoC 내용·서명·적용 법령을 직접 검토했다고 주장하지 않는다.
+
+### 매뉴얼 게시 버전의 상충
+
+- 공식 검색 색인: iX700M DRIVE 400[V] 매뉴얼 Ver1.4, 2026-05-26 표시.
+- 직접 열린 공식 매뉴얼 목록의 저장된 페이지 내용: 동일 게시일 항목이 Ver1.3으로 표시됨.
+- 이 상충은 색인 갱신/페이지 캐시/첨부 교체 중 무엇 때문인지 현재 증거로 판별할 수 없다. 원본 PDF, 문서번호, 개정 이력, 파일 크기 및 SHA-256 미확보.
+- 판정: 최신 버전 Unknown/충돌 확인. Ver1.4 본문을 확보했다고 기록하지 않으며 제조사에 원본과 revision history를 요청한다.
+
+### CAD 게시 사실과 한계
+
+- 공식 Servo Drive 도면 목록에 “iX700M Series 서보드라이브 외형도 2D(CAD), 3D(STEP)” 게시물(2026-04-21)이 존재한다: https://www.lsmecapion.com/bbs/board.php?bo_table=drawing&sca=Servo+Drive
+- 상세 게시물 및 첨부 원본 파일은 현재 웹 조회 경로에서 열리지 않았다. 원본 파일명, DWG/DXF/STEP 구성, 크기, bytes, SHA-256은 Unknown.
+- 외형 CAD는 기구 외형 자료이며 내부 회로도·PCB layout·BOM을 대신하지 않는다.
+
+### CRA 제품경계에 미치는 영향
+
+- 기능·모델코드·CE 게시 단위의 구분은 확인되었지만 상업적 공급 단위는 미확정이다.
+- Converter/Drive 개별 PDE 공급 여부는 견적·발주·송장·납품·라벨·EU 수입자 문서와 제조사 서면 답변으로 확인해야 한다.
+- 제조사 질의서/커버메일은 준비됐으나 실제 발송·접수·회신은 없음. 제품별 독립 판매, EU 공급, 실제 SKU, 내부 회로도/BOM/MCU 및 보안 설정은 Unknown 유지.

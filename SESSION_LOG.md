@@ -3184,3 +3184,14 @@
 ### 범위·안전
 - 작업 브랜치 docs/cra-lsmecapion-inquiry-routing-2026-11-24; 기준 main e98f6354ee9a30dbaf815a339d77a68eac4d60f7.
 - 문서 전용. CRA only; SIL 3 제외. 운영 코드/workflow/secrets/API cadence 변경 없음.
+
+
+## 2026-11-24 — PR #226 병합 및 iX700M 공식 자료 교차검증
+
+- PR #226 exact HEAD `0a8a822296731e738bf80209230f6271e550025a`; Run #1445 / 45300462662 success. 7개 파일 diff 검토, review thread 없음, branch PROJECT_LOG 349 records / invalid JSON 0.
+- squash merge SHA `5b1b66adff29125409ea231ccbb877f5c1647670`; main read-back 동일. main push Run #1446 / 45304849931은 최종 확인 시점에 in progress. 성공으로 선기록하지 않는다.
+- 신규 공식 교차검증: CE 게시판에서 Converter Unit iX700MCV와 Drive Unit iX700MD1-B-... 별도 문서 항목 및 모델코드 구조를 확인. 문서상 유닛 구분·별도 DoC 게시이지 독립 판매/유럽 공급 증명은 아니다.
+- 매뉴얼 Ver1.4 검색색인 vs Ver1.3 직접 목록 캐시 상충을 발견. 원본 첨부 PDF·hash 미확보이므로 버전 판정 보류.
+- CAD 2D/3D 외형도 게시 사실은 확인했으나 상세 원본 파일·bytes/hash는 미확보. 내부 회로도/BOM과 혼동 금지.
+- 증거 업데이트 작업 브랜치: `research/cra-ix700m-official-evidence-reconciliation-2026-11-24`; 기준 main `5b1b66adff29125409ea231ccbb877f5c1647670`. 보고서 §67, 증거등록부 §21, 상황판 및 PROJECT_LOG에 반영.
+- 제조사 질의서/커버메일은 미발송. 접수번호·제조사 회신 없음. CRA only; SIL 3 제외.

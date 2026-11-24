@@ -454,3 +454,19 @@ ESO별 C(2026)7861 실제 수령일과 Article 2 비수락 통지는 여전히 U
 - CONTACT-OVERSEAS-01: 공식 해외 담당 페이지 https://www.lsmecapion.com/customer/agency2.php. LS ELECTRIC 자동화 연락처 automation@ls-electric.com 게시. 해외 담당 창구로만 식별하며 실제 EU 수입자·판매 법인·경제운영자라고 추정하지 않음.
 - 발송 경로 및 커버메일 안내: reports/LS_MECAPION_IX700M_INQUIRY_DISPATCH_GUIDE_2026-11-24.md.
 - 질의서 발송/접수/회신은 미확인. 회사명·소재지·실제 담당부서 확인 전 발송 완료로 기록하지 않는다.
+
+
+## 21. 2026-11-24 — iX700M CE·모델코드·매뉴얼/CAD 교차검증
+
+| ID | 공식 출처 | 새로 확인한 사실 | 증거 한계 / 상태 |
+|---|---|---|---|
+| MFG-IX7M-12 | CE Converter 게시물 https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&sca=CE&wr_id=12886 | iX700MCV, CV=Converter Unit, B=480Vac, 150/370/550/750=15/37/55/75kW; CE_DoC-LVDEMC iX700MCV.pdf 첨부명 표시 | PDF 본문/서명/hash 미열람. 별도 판매나 EU 공급 증거 아님 |
+| MFG-IX7M-13 | CE Drive 게시물 https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&page=4&wr_id=12888 | D1/D2/D3=1/2/3축, B=480Vac, 150=15kW, encoder B=BiSS-C, 옵션 suffix 정의; Drive별 CE 게시물 | 첨부 PDF 본문 미열람. 예시 SKU이며 실제 프로젝트 SKU 아님 |
+| MFG-IX7M-14 | 공식 매뉴얼 목록 https://www.lsmecapion.com/bbs/board.php?bo_table=manual | 검색 색인은 Ver1.4(2026-05-26), 직접 연 목록 캐시는 Ver1.3(동일 게시일)로 상충 | 원본 PDF·revision history·hash 미확보. 최신 버전 Unknown/충돌 |
+| MFG-IX7M-15 | 공식 Servo Drive 도면 목록 https://www.lsmecapion.com/bbs/board.php?bo_table=drawing&sca=Servo+Drive | iX700M 2D CAD/3D STEP 외형도 게시물, 2026-04-21 | 상세 첨부 원본·파일명·bytes·hash 미확보. 회로도/BOM 아님 |
+
+- Confirmed: 제조사 문서/모델코드 차원에서 Converter Unit과 Drive Unit 구분.
+- Unknown: 유닛별 독립 견적·발주·계약·판매, EU/EEA 개별 공급, 실제 프로젝트 SKU.
+- Unknown: 매뉴얼 최신 revision 및 PDF 본문, CAD 원본 bytes/hash, 내부 회로도·PCB·BOM·MCU order code·보안 설정.
+- 별도 CE DoC 게시 사실을 CRA conformity, 독립 판매, EU market placement로 해석하지 않는다.
+- 질의서 발송/접수/회신 미확인. CRA only; SIL 3 제외.
