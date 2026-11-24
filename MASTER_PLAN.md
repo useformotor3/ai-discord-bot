@@ -2122,3 +2122,10 @@
 - source별 partial fetch 검증: 미확보 문서가 나머지 PDF 저장을 막지 않음.
 - Run #1427 success, pytest 186, HTML locator 10개 통과. PDF/provenance artifacts 업로드 완료.
 - 다음: PR #223 최종 diff 검토 및 병합. C(2026)7861 official document register endpoint 접근성은 별도 조사.
+
+
+## 2026-11-24 — PR #223 병합 및 CRA PDF 증거 확보
+- PR #223 squash merge SHA `a1fe5b983e1cecb1235b56071534e05884d61786`.
+- Run #1432 exact HEAD `76e5bce626db999e434d41f50ac0b9413b9561d5`: success; pytest 186; source identity/compile/traceability/HTML locator 10/PDF canary/PDF artifact/provenance upload passed.
+- C(2026)5252 and C/2026/6013 PDF binary SHA-256 confirmed; C(2026)7861 remains unavailable due Commission register timeout and is recorded in manifest.
+- iX700M product-boundary unknowns remain: independent sale, EU separate supply, actual SKU, manual/CAD attachment bodies, internal schematic/BOM/MCU.
