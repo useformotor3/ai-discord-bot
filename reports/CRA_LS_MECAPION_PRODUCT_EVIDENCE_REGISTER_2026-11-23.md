@@ -395,3 +395,11 @@ ESO별 C(2026)7861 실제 수령일과 Article 2 비수락 통지는 여전히 U
 - C(2026)7861 is a Commission document-register file, not an OJ publication; no substitute OJ URL is asserted.
 - Exact Commission anti-bot interstitial now maps to PDFSourceUnavailableError. No external mirror is auto-accepted for C(2026)7861. Main reports SKIPPED with exit 0; PDF artifact upload may be skipped, while the independent HTML canary remains.
 - This is not a content validation success: automated C(2026)7861 PDF bytes/hash remain unavailable. Official Commission register content is browser-verified; retain this provenance limitation.
+
+
+## 18.3 Run #1410 검증 범위 및 PDF canary 한계
+- Exact tested HEAD at Run #1410: 1c49b9f4b5ad8fa747ffa08051fa6116dd3eff85.
+- Workflow conclusion success: source identity, compile, CRA traceability, pytest, official CRA HTML locator validation, provenance manifest upload passed.
+- PDF source step printed SKIPPED because C(2026)7861 document-register API returned official anti-bot interstitial. PDF evidence upload was skipped. Do not record this as successful PDF acquisition or SHA-256 capture.
+- C/2026/6013 primary PDF URL is the browser-verified official Publications Office OJ document. C(2026)7861 PDF bytes/hash remain not acquired automatically.
+- After Run #1410, a comment-only source clarification and corresponding source-blob pin were committed; new exact HEAD requires a final CI run before merge.
