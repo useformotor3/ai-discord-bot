@@ -2310,3 +2310,17 @@
 - The workflow is SUCCESS because the source collector explicitly tolerates temporary unavailability of a secondary source; do not interpret it as all 3 PDFs freshly fetched in Run #1535/#1536. Earlier Runs #1526 and #1528 successfully fetched/hash verified all 3 PDFs. No test failures or actual errors; Node.js 20, punycode and url.parse deprecation warnings remain.
 - Main now includes report §85.5, evidence §42, expanded 58-question inquiry and CE/KC index metadata. Manufacturer original product binaries remain unacquired; all actual SKU, EU/EEA supply, economic operators, BOM/MCU/SBOM and product security settings remain Unknown.
 - CRA only; SIL 3 excluded.
+
+ 
+## 2026-11-25 — PR #251 병합 및 main push Run #1538 최종 결과
+
+- PR #251 base `ff42addc136836bbbb89bec48bb0c791f031db19`, exact head `4e2dfd558bb69ab682f4d639a6c8387a1df6bad3`; 문서 6개(+54/-0), 6 commits, reviews 0, inline threads 0. CI 전 diff를 확인했고 운영 코드/workflow 변경은 없다.
+- Run #1537 / ID 45491681394: exact PR head, completed/success, 15/15 returned steps success (1–12, 23–25), pytest 189 passed, CRA traceability PASS(project_log_events=383), 10 official sources/provenance PASS. C/2026/5252 mirror는 30초 read timeout으로 SKIPPED, 다른 두 PDF는 fetch 및 SHA-256 확인.
+- Expected-head squash merge 성공: `4c386689ab42c48e01456b72055217a75a78b14a`.
+- Main push Run #1538 / ID 45505264304: event=push, exact head가 merge SHA와 일치, completed/success, 15/15 returned steps success, pytest 189 passed, traceability PASS(383 events), 10 official sources/provenance manifest 생성 및 JSON round-trip PASS. C/2026/5252는 HTTP 429 rate-limit으로 SKIPPED, OJ C/2026/6013 및 M/606 C(2026)7861 Annex는 다운로드 및 SHA-256 확인.
+- Run #1537 artifacts: PDF ZIP 1,906,868 bytes, SHA-256 `eadca2c5a44c934134c83947d8ec7f248ca41f67f22bffce57b242bd683b158a`; provenance ZIP 2,565 bytes, SHA-256 `daf43bea110d65240c2f73ed659726cced876f9909644c74304a14f4bbce2b7f`. Run #1538: PDF ZIP 1,906,816 bytes, SHA-256 `bab3279433d4178f275a9bf2c3860d28f3dd4f99238d156f31fde4ff5b043afe`; provenance ZIP 2,565 bytes, SHA-256 `34edad760c791d48e390712847d3d0ec01f459515314bbf54918e2a24b8e4e17`. Artifacts expire 2026-12-01; these are CRA Commission source packs, not iX700M product binaries.
+- Node.js 20 action, punycode, url.parse deprecation warnings remain; no failed steps. The 2026-5252 outage is a skipped source canary, not a test failure. Do not claim 3/3 PDF acquisition in #1537/#1538.
+- Manufacturer binary retry: manual Ver1.4/Ver1.3 index conflict persists; manual detail inaccessible. Drive EU DoC, Converter CE/UKCA DoCs, KR/EN catalogue, CAD 2D/3D pages yield only listing metadata; detail pages returned 502/inaccessible. No original product binary, signed PDF, CAD native file downloaded. Metadata is not binary evidence.
+- Manufacturer inquiry now 59 questions (Q59 adds CRA Annex III/IV core-functionality/product-classification and conformity-assessment basis). Draft only; not sent.
+- Actual SKU, EU/EEA supply, economic operators, DoC coverage/signature, BOM/MCU/SBOM, security configuration, product classification, vulnerability handling and security-update/support period remain Unknown.
+- CRA only; SIL 3 excluded.
