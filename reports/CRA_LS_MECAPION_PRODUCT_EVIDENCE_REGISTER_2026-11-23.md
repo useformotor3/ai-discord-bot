@@ -590,3 +590,17 @@ Run #1462 / ID 45314843427, PDF artifact 14884218192. ZIP 3,070,568 bytes, SHA-2
 - Actual SKU, independent sale, EU/EEA supply, transaction-specific importer/economic operator, BOM/MCU/security configuration remain Unknown.
 - Manufacturer inquiry remains `draft_prepared_not_sent`; no sending/receipt/reply proof.
 - CRA only; SIL 3 excluded.
+
+
+## 28. 2026-11-24 — iX700M 공식 아키텍처 PDF 및 제조사 카탈로그·교육자료 인덱스
+
+| ID | 공식 출처 | 확인 사실 | 원본 확보/한계 |
+|---|---|---|---|
+| MFG-IX7M-41 | https://sol.ls-electric.com/uploads/document/17120093352290/%5BLS%2BELECTRIC%2B%EC%98%A4%ED%94%88%EC%84%B8%EB%AF%B8%EB%82%98%5D%2B%EC%84%9C%EB%B3%B4%2B%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B8%8C%2B%EC%8B%A0%EC%A0%9C%ED%92%88%2B%EC%86%8C%EA%B0%9C%2B%EC%9BiX7M_iX700M_LS%EB%A9%94%EC%B9%B4%ED%94%BC%EC%98%A8.pdf | LS Mecapion PDF의 iX700M 전용 구간에서 Converter/Drive 모듈, DC Link, RS-485 cross communication, EtherCAT In/Out, USB, Loader, I/O, BiSS/Universal encoder 및 AC380–480V→DC535–675V 구조 확인 | PDF 텍스트는 브라우저에서 열람. 원본 바이너리 download/bytes/SHA-256 미확보. 푸터 내부 timestamp 2024-04-01; current manual 아님. iX7M 전용 표는 iX700M 근거에서 제외 |
+| MFG-IX7M-42 | https://www.lsmecapion.com/bbs/board.php?bo_table=catalog&wr_id=12110 | iX700M KR/EN catalog 게시물 및 첨부명 `iX700M 브로셔 최종KR_251205.pdf`, `iX700M 브로셔 최종EN_251205.pdf` 각 10.7M, attachment date 2025-12-05 표시 | 상세 페이지 502/cache miss. PDF bytes/body/revision/hash 미확보. 게시물 제목 (2025년 7월), 게시일 2025-11-17, 첨부일 2025-12-05 구분 |
+| MFG-IX7M-43 | https://www.lsmecapion.com/bbs/board.php?bo_table=edu_data | iX700M 시스템서보 드라이브 교육자료 항목, 작성일 2025-10-27 | 상세 `wr_id=52` timeout. 첨부명·본문·hash Unknown |
+
+- 아키텍처 PDF는 EtherCAT/USB/Loader 등 인터페이스 식별의 보조 근거이며, secure boot, signed update, encryption, authentication, vulnerability handling의 존재를 입증하지 않는다.
+- PDF에 iX7M과 iX700M이 함께 수록되어 있으므로 iX700M 전용 구간만 사용하고 iX7M 사양을 전용하지 않는다.
+- 목록 메타데이터를 원본 PDF 확보로 표현하지 않는다. Solution Square manual, actual Ver1.3/1.4 manuals, CE DoC, CAD 원본은 여전히 미확보.
+- CRA only; SIL 3 제외.
