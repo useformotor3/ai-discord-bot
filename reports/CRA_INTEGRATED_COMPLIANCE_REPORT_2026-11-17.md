@@ -2254,3 +2254,14 @@ PR #244는 exact-head CI 성공 후 expected-head squash merge됐다. 변경 6�
 
 실제 대상 SKU/nameplate, 독립 판매 여부, EU/EEA 공급 경로, 수입자·경제운영자, HW/FW/BOM, ST MCU 정확한 부품번호 및 보안 설정은 여전히 Unknown이다. 제조사 질의서는 draft_prepared_not_sent. 우선순위는 iX700M DRIVE 400[V] 원본 매뉴얼 PDF 및 해당 SKU의 signed EU Declaration of Conformity, converter declaration, catalogue, CAD package 확보다.
 - CRA only; SIL 3 excluded.
+
+
+## §82. 2026-11-24 — PR #245 후 main CI Run #1520
+
+Run #1520 / 45401919091 on exact merge SHA 2b9d924a92bbd497289b9e3afe0dd52df527472b completed SUCCESS, 25/25. Main ref read-back matches the target SHA. Source identity, install, compilation, CRA cross-matrix, complete repository tests, official CRA PDF/source read-only canaries, evidence/provenance uploads and post steps succeeded.
+
+### 제조사 자료 교차 확인
+- Manual index default and Servo-filtered results show iX700M DRIVE 400[V] Ver1.4, dated 2026-05-26. Explicit empty-sca index shows Ver1.3 for the same post/date. Without original PDF and hash, actual applicable revision remains unresolved.
+- Official catalogue index shows iX700M KR/EN catalogue listing (published listing 2025-11-17; attachment names indicate 2025-12-05). PDF bytes remain unavailable.
+- CE/UKCA DoC and CAD remain listing metadata only; original binaries not acquired. Listings do not establish CRA compliance.
+- Unknowns: actual target SKU, EU/EEA supply, importer/economic operator, BOM/MCU/security configuration. CRA only; SIL 3 excluded.
