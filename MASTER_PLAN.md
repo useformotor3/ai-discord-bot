@@ -2109,3 +2109,9 @@
 - Run #1417 success; pytest/traceability/HTML source/provenance passed. PDF canary SKIPPED because ANFR fallback timed out after Commission newsroom interstitial; no PDF byte/hash capture claimed.
 - 다음 P0: 실제 nameplate/주문서·견적서·납품서/EU 수입자 공급단위 증거, Ver1.4 manual 및 외형 CAD 첨부 본문 확보, 제조사에 내부 회로도/BOM/MCU part number 문의.
 - CRA only; SIL 3 excluded.
+
+
+## 2026-11-24 — PDF 수집 경로 개선 우선순위
+- ANFR fallback의 불안정(HTML 응답/timeout) 확인 후 Commission-hosted transition-pathways EU portal copy로 변경.
+- PDF source별 partial fetch 및 manifest에 fetched/unavailable status·reason 기록. 잘못된 파일·identity mismatch·비허용 host는 계속 fail-closed.
+- PR #223 새 HEAD에서 pytest, live canary, partial artifact upload 검증 후 병합.
