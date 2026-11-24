@@ -1577,3 +1577,12 @@ iX700M의 CRA 제품경계 및 구성품 실사를 위해 제조사 질의서 �
 질의는 (1) Converter Unit/Drive Unit 독립 견적·발주·계약·납품·교체·판매 여부, (2) EU/EEA 실제 공급 국가·판매 법인·수입자·유닛별 공급 증거, (3) 실제 SKU 및 공개 모델코드 전체 정의, (4) Ver1.4 원본 PDF와 외형 2D/3D CAD 원본, (5) 유닛별 회로도·PCB·BOM 및 MCU/통신/보안 반도체 full ordering code, (6) firmware/bootloader·secure boot·debug lock·인증·암호·tamper·anti-rollback 설정, (7) SBOM·PSIRT·취약점 처리·지원기간, (8) 유닛별/조합별 EU DoC 및 시험자료를 포함한다.
 
 자료 요청은 NDA·redacted BOM·제조사 확인서 등 대체 방식을 허용하고 개인키/비밀번호 등 비밀값을 요구하지 않는다. 공개 게시판의 문서 목록·별도 CE DoC·CAD 메타데이터는 실제 독립 판매·EU 공급 또는 내부 설계를 입증하지 않는다는 한계를 유지한다. 질의서 작성은 완료했으나 제조사 발송 및 답변은 확인되지 않았다. 따라서 독립 판매, EU 개별 공급, 실제 SKU, 회로도/BOM/MCU/보안 설정은 Unknown으로 유지한다.
+
+
+## §65. 2026-11-24 — 지속 메모리·검증 기반 개선 및 다음 단계 버튼 운영 규약
+
+프로젝트 세션 간 일관성을 위해 docs/AI_CONTINUOUS_IMPROVEMENT_AND_NEXT_STEP_PROTOCOL.md를 작성했다. 주요 CRA 진행 응답 끝에는 '다음 단계 계속 진행' 버튼을 제공하고, 버튼 payload는 최신 GitHub 상태 재구성, 관련 이력 판정, 공식 증거 확인, 실제 작업, 검증, 오류·개선 선별, 기록 및 다음 버튼 재제공을 요청한다.
+
+운영 방식은 모델 가중치를 갱신하는 실제 재귀학습이 아니라 GitHub에 보존된 prompt/memory/tool/control 절차를 검증하며 개선하는 모방 체계다. MemDev-Bench(arXiv:2610.27524)의 메모리 관련성·무관 이력 오염·원시 trajectory 보존, Continual AutoResearch(arXiv:2611.05108)의 상태 보존과 최종 성과의 비동일성, Self-Improvements survey(arXiv:2607.13104)의 운영 scaffold 관점, Dual-Process Agent(Electronics 2026, 15(6), 1232)의 빠른 회수와 보수적 사후 검토를 반영했다.
+
+따라서 과거 기록을 무조건 재사용하지 않고 현재 작업과의 관련성, 날짜, branch/commit 호환성을 재평가한다. 원시 증거·실패 기록은 보존하고 재사용 규칙만 선별한다. 기록량이나 CI 통과만으로 자기개선 성과를 주장하지 않으며, 반복 오류·검증 품질·증거 완전성·회귀 및 작업 효율을 분리해 추적한다. 연구 결과는 프로젝트 내 효과를 보장하지 않으며 preprint와 출판 논문을 구분한다.
