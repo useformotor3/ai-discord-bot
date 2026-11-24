@@ -1277,3 +1277,6 @@ Annex I Part II의 실무 요구사항은 machine-readable SBOM(최소 top-level
 
 
 > **Post-merge main CI final (2026-11-25):** PR #248 merge SHA `dd09fc13cf9076c5cf895f4a8e8727f525847ee4` → push Run #1526 / 45486715925 SUCCESS; PR #249 merge SHA `e0a0af3aa7d29acb9fa0e26bddf466af7f3398b5` → push Run #1528 / 45487328163 SUCCESS. Both exact-head runs returned 15/15 steps success, 189 pytest passed, CRA traceability PASS, 3 official CRA PDFs hashed, 10 official sources/provenance PASS. CI validates repository/test/source pipeline only, not iX700M product conformity. Product manual/DoC/catalogue/CAD binaries remain unacquired; only official listing metadata is available. Inquiry expanded to 55 questions. See integrated report §85 / evidence register §42. CRA only; SIL 3 excluded.
+
+
+> **Additional iX700M CE index finding (2026-11-25):** The manufacturer's CE index separately lists iX700MCB and several Drive model groups (075B/050B/D2-B-045B, 150B, 220B, 370B/300B, 750B/550B/450B), plus Converter iX700MCV. This is index metadata, not proof of each DoC's scope or binary. KC listings are separate Korean regulatory evidence, not EU DoC/CRA proof. Manufacturer inquiry expanded to 58 questions. See report §85.5 and evidence register §42. CRA only; SIL 3 excluded.
