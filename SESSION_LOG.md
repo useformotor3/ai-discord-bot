@@ -3373,3 +3373,12 @@ CRA only; SIL 3 excluded.
 - C(2026)7861 Annex was already obtained in Run #1481 artifact 14886830715, 6 pages, SHA-256 `262b09596cb5cbe7d72a2c7789fb2512ee00db7f69082e7def2c8181b0f63276`; preserve as valid earlier acquisition. Official register web extraction also verified annex text/deadlines, but not binary acquisition.
 - Source collector intentionally returns exit 0 when transient sources are unavailable; record CI green separately from pack completeness. Retry/backoff and explicit completeness flag are future tested improvement candidates; no workflow/code changes made.
 - Report §74.8 and evidence register §30 appended. CRA only; SIL 3 excluded.
+
+
+## 2026-11-24 — M/606 source timeout diagnosis and bounded retry implementation
+
+- PR #238 merged SHA `1e218a61d09a280d8c4c2ec168c225c6456f215b`; exact-head Run #1484 success 25/25; post-merge main push Run #1485 exact SHA success 25/25.
+- Run #1483, #1484 and #1485 each fetched only C(2026)5252 + C/2026/6013; M606 C(2026)7861 timed out after 30s. Earlier Run #1481 acquired the 6-page M606 Annex (SHA-256 `262b09596cb5cbe7d72a2c7789fb2512ee00db7f69082e7def2c8181b0f63276`); preserve it.
+- Root cause: no bounded retry for transient network errors; CLI exit 0 on partial pack and generic PASS wording. Fix branch adds max 3 attempts with 1s/2s backoff for retryable transport/HTTP errors only; partial pack prints explicit WARNING; validation failures/interstitials are not retried.
+- Added tests: retry recovers on second attempt; retries stop at 3; partial pack warning emitted without failing CI. No workflow/main.py/secrets/API cadence changes.
+- PR pending exact-head CI/review/merge. CRA only; SIL 3 excluded.
