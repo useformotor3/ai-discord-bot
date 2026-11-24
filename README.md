@@ -1,5 +1,8 @@
 
 
+> **PR #244 / post-merge main CI (2026-11-24):** PR #244 exact HEAD 285b4b705c2bc86b4e7a4602ee7825963770b869 passed Run #1517 / 45340773376 (25/25), then expected-head squash merged as 40a92f1b00bf3b0f4e4694895b6399918ee5561f. Main push Run #1518 / 45401343718 on exact merge SHA also passed 25/25. PR #244 changed 6 files (+70/-0), 6 ahead/0 behind, reviews/threads 0, branch PROJECT_LOG 376 valid / 0 invalid. iX700M manufacturer source metadata was rechecked; original manual/DoC/catalogue/CAD binaries remain unacquired. See report §81 / evidence register §38. CRA only; SIL 3 excluded.
+
+
 > **PR #243 / final CI correction (2026-11-24):** Run #1514 / 45338702162 succeeded 25/25 on exact main SHA 3fbc1bcbf669324706c4ae2f882ff7269ae87f48. PR #243 exact HEAD 9ae09486a10dc374b83ad417fbd09742f0213dc1 passed Run #1515 / 45338890791 (25/25), then expected-head squash merged as 6548eec799c398b35007212e4831d058934fa83b. Post-merge main push Run #1516 / 45340565876 also succeeded 25/25 on exact merge SHA. Earlier in-progress snapshots are superseded. Official source recheck still did not acquire original iX700M manual/DoC/catalogue/CAD binaries; see report §80 / evidence register §37. CRA only; SIL 3 excluded.
 > **PR #240 / post-merge main CI:** PR #240 merged at 36b38bfa5ced2894f3bfb06c226706ce0a9bf38b after Run #1507 exact-head success 25/25. Main push Run #1508 / 45329930118 on exact merge SHA also success 25/25. Main PROJECT_LOG 371 records / invalid 0. Official CRA PDF artifact 14890384807 includes all 3 PDFs; ZIP SHA-256 1cb11a4d35de7c922efd5ad2a8d49aada8929875682d20e520c5c9b50f4f19ba. See report §76 / evidence register §33.
 >

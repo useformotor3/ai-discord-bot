@@ -2225,3 +2225,32 @@ PR #243은 기존 버튼 규칙을 실제 최종 응답에 강제하는 v1.1 마
 
 위 자료는 공식 사이트의 목록·첨부 메타데이터 확인이지 원본 파일 확보가 아니다. CE/UKCA listing만으로 CRA 적합성이나 EU/EEA 공급을 입증하지 않는다. 실제 SKU, 독립 판매, EU/EEA 공급, 수입자/경제운영자, BOM/MCU/보안 설정은 Unknown이며 제조사 질의서는 draft_prepared_not_sent다.
 - CRA only; SIL 3 excluded.
+
+
+## §81. 2026-11-24 — PR #244 병합·main CI 완료 및 제조사 자료 재검증
+
+### 81.1 PR 및 CI 최종 상태
+
+| 검증 | 대상 SHA | 실행 | 최종 결과 |
+|---|---|---|---|
+| PR #244 exact HEAD | 285b4b705c2bc86b4e7a4602ee7825963770b869 | [Run #1517](https://github.com/useformotor3/ai-discord-bot/actions/runs/45340773376) | SUCCESS 25/25 |
+| PR #244 병합 후 main | 40a92f1b00bf3b0f4e4694895b6399918ee5561f | [Run #1518](https://github.com/useformotor3/ai-discord-bot/actions/runs/45401343718) | SUCCESS 25/25 |
+
+PR #244는 exact-head CI 성공 후 expected-head squash merge됐다. 변경 6개 파일(+70/-0), base 대비 6 ahead/0 behind, reviews 0, threads 0, branch PROJECT_LOG 376 records / invalid 0. 병합 SHA 40a92f1b00bf3b0f4e4694895b6399918ee5561f는 main read-back과 일치한다. 병합 후 push Run #1518도 동일 SHA에서 성공했다.
+
+### 81.2 LS메카피온 원본 자료 재확인
+
+- **매뉴얼:** 기본 목록은 iX700M DRIVE 400[V] Ver1.4, 2026-05-26을 표시한다. Servo 필터 목록도 Ver1.4다. 반면 명시적 빈 sca= 목록은 같은 게시물 번호 41 및 날짜에 Ver1.3을 표시한다. 상세 wr_id=12652 재접근 실패로 PDF bytes/hash를 확인하지 못했으므로 실제 유효 배포 revision은 Unknown이다.
+- **Drive CE:** 상세 페이지 본문은 열렸고 모델 iX700MD1-B-150B, 코드 구성(1축, 480Vac, 15kW, BiSS-C 또는 custom encoder option), [CE_DoC-LVDEMC] PDF 238.9K 첨부와 2026-04-30 날짜를 확인했다. 실제 다운로드 URL 요청은 timeout이다. 선언서 내용·서명·적용 법령은 확인하지 못했다.
+- **Converter CE:** 공식 검색 인덱스에서 iX700MCV, 480Vac, 15/37/55/75kW, 234.4K CE DoC listing을 확인했으나 PDF bytes 미확보.
+- **Converter UKCA:** 공식 검색 인덱스에서 iX700MCV, 480Vac, 15/37/55/75kW, 224.1K UKCA DoC listing 확인. 상세 직접 접근 timeout, PDF 미확보.
+- **카탈로그:** 공식 게시물 인덱스에서 국문·영문 PDF 각 10.7MB, 파일 날짜 2025-12-05를 재확인했다. 상세 직접 접근 timeout, PDF 미확보.
+- **CAD:** 공식 Servo Drive 인덱스에서 iX700M Series 외형도 2D(CAD), 3D(STEP), 2026-04-21 게시 확인. 이전 PHOX 페이지의 이전글 링크로 정확한 wr_id=12455 상세 URL을 도출했으나 페이지 timeout. DWG/DXF/STEP 원본 미확보.
+- **Solution Square:** iX700M 매뉴얼 listing update 2026-09-16 정보는 재확인됐지만 페이지는 JavaScript app shell이라 원본 문서/바이너리/hash 미확보.
+
+공식 자료 인덱스는 제품 문서의 존재·파일명·게시 메타데이터를 증명할 뿐, 원본 파일 취득 또는 해당 제품의 CRA 적합성을 증명하지 않는다. CE/UKCA/UL/KC listing만으로 CRA 적합성이나 EU/EEA 공급을 추론하지 않는다.
+
+### 81.3 미확인 사항 및 다음 증거 요청
+
+실제 대상 SKU/nameplate, 독립 판매 여부, EU/EEA 공급 경로, 수입자·경제운영자, HW/FW/BOM, ST MCU 정확한 부품번호 및 보안 설정은 여전히 Unknown이다. 제조사 질의서는 draft_prepared_not_sent. 우선순위는 iX700M DRIVE 400[V] 원본 매뉴얼 PDF 및 해당 SKU의 signed EU Declaration of Conformity, converter declaration, catalogue, CAD package 확보다.
+- CRA only; SIL 3 excluded.
