@@ -1947,3 +1947,12 @@
 - PDF canary explicitly SKIPPED due C(2026)7861 Commission document-register anti-bot interstitial; PDF evidence artifact skipped. No claim that C7861 PDF bytes/hash were acquired.
 - C/2026/6013 uses the browser-verified official Publications Office OJ PDF. C(2026)7861 PDF automated retrieval remains unavailable.
 - Source comment was clarified and source-blob pin refreshed after Run #1410; final exact HEAD CI required before merge.
+
+
+## 2026-11-24 — PR #218 병합 완료 및 최종 CI 기록
+- PR #218 final HEAD `e3ebe08b5dcf14563bba0a75dca171459ab992c5`, Run #1417 / ID `45293726074`: workflow success.
+- Source identity, compile, CRA traceability, full pytest, official CRA HTML locator validation, provenance manifest upload passed.
+- PDF canary SKIPPED: C(2026)5252 primary newsroom interstitial; explicit ANFR fallback timed out after 30 seconds. PDF artifact skipped; no Commission PDF byte/hash capture claim.
+- Final diff 11 files reviewed. No production main.py, secrets, production workflow or API cadence changes; only isolated test workflow blob pins changed.
+- PR #218 squash merge SHA `200ccca974ad3af09b1634fd9bf02c1baac5ca8c`.
+- Confirmed: iX700M Converter/Drive functional separation and separate model/document listing. Unknown: independent commercial sale, EU individual PDE supply, actual SKU, manual/CAD file bodies, internal schematic/BOM/MCU.
