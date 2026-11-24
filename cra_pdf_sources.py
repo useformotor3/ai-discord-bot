@@ -199,10 +199,11 @@ def fetch_pdf_source(definition, *, get=None, sleep=None):
     except PDFSourceFallbackError:
         if not definition.get("fallback_url"):
             raise
-        data, final_url, content_type = _download(
+        data, final_url, content_type = _download_with_retries(
             definition["fallback_url"],
             definition["fallback_allowed_hosts"],
             get=get,
+            sleep=sleep,
         )
         fallback_used = True
 
