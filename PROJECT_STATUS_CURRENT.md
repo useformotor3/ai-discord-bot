@@ -2385,3 +2385,12 @@
 - C/2026/5252 fallback=true; its hash identifies fallback bytes only. Run #1553 PDF ZIP artifact ID 14973833111, 3,070,564 bytes, SHA-256 `f0db5c8cffd867ff65d7ede817ba7ef9e373f07ea4a54a119fa02be114288714`; provenance artifact ID 14974127712, 2,565 bytes, SHA-256 `90c4ce87a3ba6c2b0075b9c8cfd588fec0152771ef17a9679f2e4731e461ca6a`; expiry 2026-12-01.
 - Main docs synchronized through PR #256. Manufacturer inquiry 62 questions; draft not sent. iX700M manual/DoC/catalogue/CAD original binaries remain unacquired; listing metadata only.
 - Unknowns remain: actual SKU, EU/EEA supply, economic operators, signed DoC scope, BOM/MCU/SBOM, security configuration, CRA classification, vulnerability handling, update/support period. CRA only; SIL 3 excluded.
+
+ 
+## 2026-11-25 — PR #257 병합 및 main push Run #1555 성공
+
+- PR #257 exact head `c7938143b7e474e5e3f38d1675ac7136e408d162`, base `0c732caa45e7fac532117e2a658463acc546ee72`, 6 files(+44/-0), reviews 0, threads 0. Run #1554 / 45509472274 completed/success, 15/15 steps, pytest 189 passed, CRA traceability 390 events PASS, 10-source provenance PASS, PDF 3/3 fetch/hash PASS. Expected-head squash merge SHA `6f26d7166bd8a1208733c82c8fda592e1cfc0f9a`.
+- Main push Run #1555 / 45509645611 exact merge SHA: completed/success, 15/15 steps, pytest 189 passed, traceability 390 events PASS, provenance 10 records JSON round-trip PASS, PDF 3/3 fetch/hash PASS.
+- C/2026/5252 fallback=true; its SHA identifies fallback bytes only. Run #1555 PDF ZIP artifact ID 14973917921, 3,070,567 bytes, SHA-256 `426c0c7dc9e24e980e7e4117eaa98bd58110a927f620164342b009686c696f22`; provenance artifact ID 14975071982, 2,565 bytes, SHA-256 `daf898155731bbf8b3c4f52ad0198cf174c42d67192259ddbfb5b2e946c5e535`; expiry 2026-12-01.
+- Current main docs synchronized through PR #257. Manufacturer inquiry 62 questions, draft not sent. Original iX700M product binaries remain unacquired; listing metadata only.
+- Unknowns remain: actual SKU, EU/EEA supply, economic operators, signed DoC scope, BOM/MCU/SBOM, security configuration, CRA classification, vulnerability handling, update/support period. CRA only; SIL 3 excluded.
