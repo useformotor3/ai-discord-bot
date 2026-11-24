@@ -2016,5 +2016,5 @@ CRA only; SIL 3 제외.
 - Root cause: `cra_pdf_sources.py`는 `requests.Timeout/ConnectionError`, 408/425/429/5xx 및 streaming read timeout을 unavailable로 즉시 반환한다. `fetch_all_pdf_sources`는 partial 결과를 manifest에 기록하고, CLI는 unavailable이 있어도 exit 0을 반환한다. 그래서 overall CI success와 3/3 PDF completeness가 다를 수 있다.
 - 개선 변경: transient transport/temporary HTTP failure만 최대 3회(1s, 2s backoff) 재시도. PDF identity/redirect/structure validation failure 및 Commission anti-bot interstitial은 재시도하지 않고 기존 fail-closed/fallback 정책을 유지. 최종 미확보 source는 manifest에 unavailable로 보존하며 CLI는 exit 0 유지하되 `WARNING: partial CRA PDF source pack`을 명시한다.
 - Regression tests: timeout 후 2차 성공, 3회 재시도 소진, partial pack warning 표시. 실제 source network canary 결과와 unit-test retry semantics를 구분한다.
-- 이 개선은 read-only source acquisition 도구와 테스트만 변경한다. workflow YAML, main.py, secrets, API cadence는 변경하지 않는다.
+- 이 개선은 read-only source acquisition 도구와 테스트를 변경한다. workflow YAML은 수정된 `cra_pdf_sources.py` 및 `tests/test_cra_pdf_sources.py`의 exact source-blob 무결성 pin만 갱신한다. job steps·schedule/cadence·secrets·`main.py` 동작은 변경하지 않는다.
 - CRA only; SIL 3 제외.
