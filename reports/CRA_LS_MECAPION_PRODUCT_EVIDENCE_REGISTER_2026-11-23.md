@@ -573,3 +573,20 @@ Run #1462 / ID 45314843427, PDF artifact 14884218192. ZIP 3,070,568 bytes, SHA-2
 - CAD DWG/DXF/STEP bytes still missing. Actual target SKU, independent sale, EU/EEA supply, importer/economic operator, BOM/MCU/security config remain Unknown.
 - Manufacturer inquiry remains `draft_prepared_not_sent`.
 - PR #229 main push is now verified: Run #1452 / ID 45312941583, event push, exact merge SHA 4263389aa79cbb7cc17ccda3a019c659ccddef85, conclusion success, 25/25 steps passed.
+
+
+## 27. 2026-11-24 — 공식 제조사 제품군·자료 인덱스 재검증 및 원본 접근 재시도
+
+| ID | 공식 출처 | 새로 재확인한 내용 | 원본/한계 및 증거 상태 |
+|---|---|---|---|
+| MFG-IX7M-35 | https://www.lsmecapion.com/bbs/board.php?bo_table=pd_drive | iX700M 다축 모듈러 EtherCAT 통신형, AC 380–480 V, 4.5–75 kW, 축당 16.1–168 A | 제품군 공개 사양. 개별 SKU/구성/EU 공급 또는 CRA 분류 증거로 확대 불가 |
+| MFG-IX7M-36 | https://www.lsmecapion.com/bbs/board.php?bo_table=manual 및 `&sca=Servo`, `&sca=`, `&page=1` | 기본 목록·Servo filter는 Ver1.4, 빈 분류·page=1은 같은 게시물 41번/2026-05-26에 Ver1.3 표시 | 상세 `wr_id=12652` inaccessible/cache miss. 실제 PDF revision, 문서번호, 변경이력, hash Unknown; conflict unresolved |
+| MFG-IX7M-37 | https://sol.ls-electric.com/kr/ko/product/category/4?pageNumber=4 및 https://sol.ls-electric.com/kr/ko/newSearch?pageNumber=70 | Solution Square 공식 목록/통합검색에 `iX700M 사용 설명서`, update 2026-09-16 | JS app shell만 접근. detail URL/document ID/PDF/file name/revision/hash Unknown |
+| MFG-IX7M-38 | https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&page=4&wr_id=12888 | Drive DoC 게시물 직접 열람. iX700MD1-B-150B 예시, 1-axis, 480Vac, 15kW, BiSS-C, attachment metadata 238.9K | attachment click/download timeout. PDF body/signature/scope/hash 미검증 |
+| MFG-IX7M-39 | https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&sca=CE&wr_id=12886 | Converter DoC 공식 검색 index: iX700MCV, 480Vac, 15/37/55/75kW codes, attachment metadata 234.4K | detail/attachment timeout. PDF bytes/body/signature/scope/hash 미검증 |
+| MFG-IX7M-40 | https://www.lsmecapion.com/bbs/board.php?bo_table=drawing&sca=Servo+Drive | iX700M 2D(CAD)/3D(STEP) drawing list item 19, 2026-04-21 | detail `wr_id=12455` 502/cache miss. DWG/DXF/STEP original bytes/hash 미확보 |
+
+- Official index metadata and source list evidence are distinct from acquiring/validating attached source bytes. Do not mark any manual, CE DoC or CAD original as acquired.
+- Actual SKU, independent sale, EU/EEA supply, transaction-specific importer/economic operator, BOM/MCU/security configuration remain Unknown.
+- Manufacturer inquiry remains `draft_prepared_not_sent`; no sending/receipt/reply proof.
+- CRA only; SIL 3 excluded.
