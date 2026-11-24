@@ -954,3 +954,12 @@ Actual SKU, EU/EEA supply, economic operators, independent sale/integration, BOM
 - C/2026/5252 fallback=true, 1,190,726 bytes, 84 pages, SHA-256 fe209c250e3d1f7599e42826d91963666951332927edcf511a2e79fe8d2f8234. OJ C/2026/6013 SHA-256 40ca76caeb0108f5b97c8f373a95f590b453fe92bd45a483addf3326e48c1dc2. M/606 Annex SHA-256 262b09596cb5cbe7d72a2c7789fb2512ee00db7f69082e7def2c8181b0f63276.
 - Run #1547 PDF artifact 14974835241, 3,070,565 bytes, SHA-256 10baf4713686d065422e9efa744ab7513767313ca23538d355520a3d18f2ce7e; provenance 14972713583, 2,565 bytes, SHA-256 040ebe67de2ba6a9b706f2666e01e74473bfdc1a75e2c613c9fc0df0bb8d92cf; expiry 2026-12-01.
 - Manual index Ver1.4 vs Ver1.3 conflict remains; Q61 added. No original iX700M binary acquired. Unknowns retained.
+
+ 
+## §48. PR #254 / main push Run #1549
+
+- PR #254 exact head 5140882cdf89c3631c9fd9aaa0f0bf2fcedf38fb, 7 files(+56/-0), reviews/threads 0. Run #1548 SUCCESS 15/15, 189 passed, traceability 387 events, 10-source provenance, PDF 3/3. Merge SHA dc1704557e1c3e1071383701d7a4615546814054.
+- Main push Run #1549 / 45508166302 exact merge SHA SUCCESS, 15/15, 189 passed, traceability 387, 10-source provenance, PDF 3/3.
+- PDF artifact 14974751014, 3,070,565 bytes, SHA-256 c8b1d01f6aba66886a675ac081c978f595ebc5f6c265f3768c40ad2c9be706c7. Provenance 14974510954, 2,566 bytes, SHA-256 0b358609a02446b0615a9a2f07fe591d88b8031ae1460052f2c76e4dd5ba290b. Expiry 2026-12-01.
+- C/2026/5252 fallback=true; do not claim primary mirror byte identity. Product originals remain metadata only.
+- Q62 added for ST MCU identity/security features, firmware/bootloader, SBOM and vulnerability monitoring. Inquiry 62 questions; draft not sent. Unknowns remain.
