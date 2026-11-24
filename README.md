@@ -1289,3 +1289,6 @@ Annex I Part II의 실무 요구사항은 machine-readable SBOM(최소 top-level
 
  
 > **Run #1540 final (2026-11-25):** main exact HEAD `cffd2118d2ce4127e50352650479553cb12c2bdf`, run 45505830283 completed/success, 15/15 steps, 189 pytest passed, CRA traceability 384 events and 10-source provenance PASS. PDF canary 2/3 (C/2026/5252 HTTP 503 skipped). See integrated report §88 and evidence register §45. iX700M original manual/DoC/catalogue/CAD binaries remain unacquired; official listing metadata only. Manufacturer inquiry now 60 questions, draft/not sent. CRA only; SIL 3 excluded.
+
+ 
+> **PR #253 validation:** Initial Run #1541 exposed a blank JSONL line and was cancelled without merge. After normalization, exact-head Run #1542 / 45507153261 SUCCESS, 15/15 steps, 189 passed, traceability 385 events PASS; all 3 CRA PDFs fetched/hash-verified (C/2026/5252 via fallback). See report §88.6 / evidence §46. CRA source packs are not iX700M product binaries.
