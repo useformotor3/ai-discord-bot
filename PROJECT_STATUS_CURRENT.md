@@ -2429,3 +2429,13 @@
 - C/2026/5252 fallback=true; its SHA identifies fallback bytes only. Run #1564 PDF ZIP artifact ID 14974949830, 3,070,568 bytes, SHA-256 `386c94782413af13217eff68e01390e07d411413f13aabaf58cee82a3f3aa6cc`; provenance artifact ID 14975374608, 2,565 bytes, SHA-256 `597b22e21c7da4d7e4454f15b22e6f3ed9748677c41b42c4ffb53a388a7d9057`; expiry 2026-12-01.
 - Manufacturer inquiry 62 questions, draft not sent. iX700M original manual/DoC/catalogue/CAD binaries remain unacquired; listing metadata only.
 - Unknowns remain: actual SKU, EU/EEA supply, economic operators, signed DoC scope, BOM/MCU/SBOM, security configuration, CRA classification, vulnerability handling, update/support period. CRA only; SIL 3 excluded.
+
+ 
+## 2026-11-25 — PR #263 병합 및 main push Run #1566 성공
+
+- PR #263 exact head `e4e2601252d56610bf3cf2043603291856ad68e3`, base `a5f1f68351b19557c5444425ae46fb790ddaeec7`, 6 files(+44/-0), reviews 0, threads 0. PR Run #1565 / 45512336701 completed/success, 14/15 steps success and 1 optional provenance step skipped after read-only canary timeout on CRA-COMMISSION-GUIDANCE-2026-07-27. It passed compile, traceability 395 events, pytest 189, and 3/3 PDF fetch/hash; PR provenance step itself was skipped. No failure was hidden.
+- Expected-head squash merge SHA `8d2d78b4ccc0ad326813f8e5cb74470bc5738e14`.
+- Main push Run #1566 / 45512624809 exact merge SHA: completed/success, 15/15 steps success, pytest 189 passed, traceability 395 events PASS, provenance 10 records JSON round-trip PASS and uploaded, PDF 3/3 fetch/hash PASS. Main push read-only canary logged a temporary source outage but allowed skip; the separate 10-source manifest step still passed and uploaded.
+- C/2026/5252 fallback=true; its SHA identifies fallback bytes only. Run #1566 PDF ZIP artifact ID 14976576885, 3,070,566 bytes, SHA-256 `87d053774d70ba0794947802e98cede863d038cf24b5252541aadd21f1ef1672`; provenance artifact ID 14976921254, 2,565 bytes, SHA-256 `524a92d46f8c368430efafec8f5fd9e92a3ddd8a00895d8e1e46fa501b187c81`; expiry 2026-12-01.
+- Manufacturer inquiry 62 questions, draft not sent. iX700M original manual/DoC/catalogue/CAD binaries remain unacquired; listing metadata only.
+- Unknowns remain: actual SKU, EU/EEA supply, economic operators, signed DoC scope, BOM/MCU/SBOM, security configuration, CRA classification, vulnerability handling, update/support period. CRA only; SIL 3 excluded.
