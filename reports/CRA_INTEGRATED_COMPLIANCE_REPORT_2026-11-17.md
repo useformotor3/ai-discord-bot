@@ -2107,3 +2107,70 @@ CRA only; SIL 3 제외.
 - Public listings and model-code examples are product-family evidence only. They do not establish the user's actual SKU, independent sale, EU/EEA supply, importer/economic operator, BOM/MCU or security configuration. All remain Unknown.
 - Manufacturer inquiry remains draft_prepared_not_sent. No send/receipt/reply evidence.
 - CRA only; SIL 3 excluded.
+
+## §77. 2026-11-24 — PR #241 병합 및 iX700M 제조사 자료 재접근
+
+### 77.1 PR #241 exact-HEAD CI, diff 및 병합
+
+- PR #241: https://github.com/useformotor3/ai-discord-bot/pull/241. Exact HEAD 159f8c16ba50c41e1dd0f3aa0fffba7a3ee1a09d, base main 36b38bfa5ced2894f3bfb06c226706ce0a9bf38b, Run #1509 / ID 45330332680, completed/success, all 25 steps successful.
+- Six changed files: PROJECT_LOG.jsonl, PROJECT_STATUS_CURRENT.md, README.md, SESSION_LOG.md, this report, and product evidence register. Diff +79/-0. Compare: 6 commits ahead, 0 behind. Review submissions 0; inline review threads 0.
+- PROJECT_LOG at exact PR HEAD: 372 JSONL lines, 372 parsed successfully, invalid 0.
+- Expected-head squash merge succeeded with merge SHA dd54132fb44ed752b1f7942f4485ee03399a2c2f. GitHub main ref read-back matched exactly. Post-merge Push Run #1510 / ID 45333438936 targets that SHA; at the time of this section's preparation it remained in_progress. Its final conclusion must be appended only after a completed run is read back.
+
+### 77.2 Solution Square iX700M manual listing and detail boundary
+
+- Fresh search results from official Solution Square category and integrated-search URLs continue to show iX700M 사용 설명서, classified under Motion & Servo, update date 2026-09-16: https://sol.ls-electric.com/kr/ko/product/category/4?pageNumber=4 and https://sol.ls-electric.com/kr/ko/newSearch?pageNumber=70.
+- A further official-host alias https://ssq.ls-electric.com/kr/ko/product/category/4?pageNumber=14 also exposes the same listing snapshot. Opening the primary category/search detail returns only the JavaScript app shell. No stable document ID, detail route, file name, PDF bytes, page count or hash could be independently verified. The listing is not evidence that this is the same binary as LS Mecapion Ver1.3/Ver1.4.
+
+### 77.3 LS Mecapion manual revision conflict — still unresolved
+
+- Official default list https://www.lsmecapion.com/bbs/board.php?bo_table=manual and Servo-filter list https://lsmecapion.com/bbs/board.php?bo_table=manual&sca=Servo show post 41 iX700M DRIVE 400[V] manual Ver1.4, date 2026-05-26.
+- Official explicit empty-category list https://www.lsmecapion.com/bbs/board.php?bo_table=manual&sca= continues to show the same post/date as Ver1.3. This is a reproducible listing/query inconsistency only. Exact detail wr_id=12652 remains 502/timeout; original PDF bytes, embedded revision, document number, revision history and hash are not acquired. Actual released revision remains Unknown.
+
+### 77.4 Converter/Drive CE DoC
+
+- Drive detail https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&page=4&wr_id=12888 opened successfully. It identifies an example model iX700MD1-B-150B, D1=1-axis, B=480 Vac, 150=15 kW, encoder B=BiSS-C or custom code, and attachment [CE_DoC-LVDEMC] iX700MD1-B-150B.pdf (238.9K; 2026-04-30 11:55:32). Exact attachment click resolves to https://www.lsmecapion.com/bbs/download.php?bo_table=certificate&no=0&page=4&wr_id=12888, but fetch times out. No PDF body/signature/directive/standard/model scope/hash has been inspected.
+- Converter official search result https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&sca=CE&wr_id=12886 confirms listing metadata for iX700MCV, 480 Vac, 15/37/55/75 kW rating codes, and attachment [CE_DoC-LVDEMC] iX700MCV.pdf (234.4K). Detail/attachment remains inaccessible; DoC bytes and contents not acquired.
+- A listing or attachment filename is not proof that a declaration covers every model, a project SKU, EU/EEA supply, or CRA conformity.
+
+### 77.5 CAD DWG/DXF/STEP
+
+- Official drawing index https://www.lsmecapion.com/bbs/board.php?bo_table=drawing&sca=Servo+Drive lists iX700M Series outline drawing 2D(CAD), 3D(STEP), dated 2026-04-21.
+- Opened PHOX 16A drawing page exposes an explicit previous-post link labelled iX700M: https://www.lsmecapion.com/bbs/board.php?bo_table=drawing&sca=Servo+Drive&wr_id=12435. Following it resolves the exact iX700M detail route https://www.lsmecapion.com/bbs/board.php?bo_table=drawing&sca=Servo+Drive&wr_id=12455, but fetch returns timeout. The page's 2D/3D attachment filenames, DWG/DXF availability, STEP files, bytes and hashes remain Unknown. Do not substitute iX7M CAD files.
+
+### 77.6 Evidence boundary and next action
+
+- Actual SKU, independent sale, EU/EEA supply, importer/economic operator, BOM/MCU and security configuration remain Unknown. Manufacturer inquiry remains draft_prepared_not_sent; no evidence of sending, receipt or response.
+- No Solution Square/LS manual, Drive/Converter CE DoC or iX700M CAD original binary was acquired in this recheck. Record exact URLs and failure outcomes; do not mark metadata as a downloaded original.
+- Next acquisition path: repeat with direct vendor document IDs/download links if discoverable, inspect official CDN/API routes only when evidenced by page/network metadata, and prepare a concise manufacturer request for exact binary files and SKU-specific declarations without sending it.
+- CRA only; SIL 3 excluded.
+
+## §78. 2026-11-24 — 공식 iX700M 인증·카탈로그 인덱스 확장 및 CI 결과 정정
+
+### 78.1 Run #1510 및 #1511 최종 상태
+
+- Run #1510 / ID 45333438936: main exact SHA dd54132fb44ed752b1f7942f4485ee03399a2c2f, completed/success, 25/25 steps.
+- PR #242 Run #1511 / ID 45333628512: exact HEAD f9dd8484403f6f91daa94f14b74250965d67e4f6, completed/success, 25/25 steps. 두 실행 모두 compile, CRA traceability, complete pytest, live official CRA PDF/source canary, evidence artifact upload 및 post steps가 통과했다. 이전 진행 중 표시는 중간 조회 스냅샷이며 최종 결과가 아니다.
+
+### 78.2 CE/UKCA/UL/KC 공식 목록 확장
+
+- Drive CE 상세: https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&page=4&wr_id=12888. iX700MD1-B-150B 예시의 D1=1축, B=480Vac, 150=15kW, Encoder B=BiSS-C 또는 사용자 정의 코드가 명시되고 CE DoC PDF 238.9K가 첨부로 열거된다. PDF 다운로드 URL은 timeout. PDF 본문/서명/지침/표준/적용범위는 미검토.
+- Converter CE: https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&sca=CE&wr_id=12886. iX700MCV, B=480Vac, 15/37/55/75kW 및 CE DoC PDF 234.4K가 목록에 표시된다. 바이너리 미확보.
+- Converter UKCA: https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&page=3&wr_id=12893. 같은 iX700MCV 계열, 480Vac, 15/37/55/75kW 및 UKCA DoC PDF 224.1K가 목록에 표시된다. 다운로드 timeout, 바이너리 미확보.
+- UL 목록: https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&sca=UL. iX700M Series UL CERTIFICATE OF COMPLIANCE 항목이 2026-04-13 등록된 것으로 표시된다. 상세/인증서 바이너리와 UL file number/scope는 미확인.
+- KC 인증 목록: https://www.lsmecapion.com/bbs/board.php?bo_table=certificate 에 iX700MD1-B-150B, iX700MD1-B-075B, iX700MCV-B-750, iX700MCV-B-550 항목이 검색 결과에 표시된다. 개별 인증서의 첨부 본문 및 인증 범위는 미확인.
+- CE/UKCA/UL/KC listing은 제품군/모델 문자열의 게시 근거이지, 실제 적용 SKU의 인증범위 또는 CRA 적합성 증거가 아니다.
+
+### 78.3 매뉴얼·카탈로그·CAD 원본 상태
+
+- Solution Square 공식 모션&서보 목록은 iX700M 사용 설명서, 업데이트 2026-09-16을 표시한다. 상세 접근은 JavaScript SPA shell로 제한되어 PDF/파일명/문서번호/해시 미확보.
+- LS Mecapion 매뉴얼 검색 인덱스는 시점/쿼리별로 불일치한다. 일부 default/Servo 목록은 Ver1.4, 다른 default 및 explicit empty sca= 목록은 Ver1.3을 표시한다. 게시물 날짜는 2026-05-26으로 표시되지만 상세 및 PDF를 확인하지 못했으므로 실제 revision은 Unknown.
+- 카탈로그 게시물 https://www.lsmecapion.com/bbs/board.php?bo_table=catalog&wr_id=12110 은 KR/EN iX700M brochure PDF 각각 10.7MB를 첨부로 열거한다. 상세/바이너리 다운로드 미확보.
+- CAD 목록 https://www.lsmecapion.com/bbs/board.php?bo_table=drawing&sca=Servo+Drive 는 iX700M 2D(CAD)/3D(STEP) 외형도, 2026-04-21을 표시한다. 상세 wr_id=12455는 timeout. DWG/DXF/STEP 파일명, 내용, 크기 및 해시 미확보.
+
+### 78.4 증거 한계 및 규제 해석
+
+- CE DoC는 특정 법령에 따른 적합성 선언일 수 있으나 그 자체로 CRA 적합성 선언을 대체하지 않는다. UKCA/UL/KC 역시 CRA 적합성 또는 EU/EEA 시장 공급을 자동 입증하지 않는다. 실제 문서 원문과 적용 제품/모델/변형/표준/발행자/서명/날짜 확인이 필요하다.
+- Actual SKU, independent sale, EU/EEA supply, importer/economic operator, BOM/MCU/security configuration remain Unknown. Manufacturer inquiry remains draft_prepared_not_sent.
+- No original manual, CE/UKCA/UL/KC certificate, catalogue PDF or CAD DWG/DXF/STEP binary was acquired in this recheck. Listing metadata must not be upgraded to acquired evidence.
+- CRA only; SIL 3 excluded.
