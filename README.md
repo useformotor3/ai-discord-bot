@@ -1307,3 +1307,6 @@ Annex I Part II의 실무 요구사항은 machine-readable SBOM(최소 top-level
 
  
 > **PR #257 / main Run #1555 (2026-11-25):** PR Run #1554 and main push Run #1555 SUCCESS, 15/15 steps, 189 passed, traceability 390 events, 10-source provenance, PDFs 3/3. Merge/main SHA `6f26d7166bd8a1208733c82c8fda592e1cfc0f9a`. C/2026/5252 fallback=true. See report §93 / evidence §51. iX700M original binaries remain unacquired; metadata only. Manufacturer inquiry 62 questions, draft not sent. CRA only; SIL 3 excluded.
+
+ 
+> **PR #259 / main Run #1558 (2026-11-25):** PR Run #1557 and main push Run #1558 SUCCESS, 15/15 steps, 189 passed, traceability 391 events, 10-source provenance, PDFs 3/3. Merge/main SHA `cabf4bfbb9bd5c4881eb951590813af5aa034ef0`. C/2026/5252 fallback=true. See report §94 / evidence §52. iX700M original binaries remain unacquired; metadata only. Manufacturer inquiry 62 questions, draft not sent. CRA only; SIL 3 excluded.
