@@ -3333,3 +3333,12 @@ CRA only; SIL 3 excluded.
 - iX700M KR/EN catalog listing: 게시일 2025-11-17, 제목은 2025년 7월 catalog, 첨부명 KR/EN 각 10.7M, attachment date 2025-12-05. 상세 page 502/cache miss, PDF bytes/hash 미확보.
 - iX700M 시스템서보 교육자료 listing 2025-10-27 확인, detail wr_id=52 timeout.
 - 기술 아키텍처 보조 근거를 report §74 및 evidence register §28에 추가. Security controls, exact SKU, EU/EEA supply, importer, BOM/MCU remain Unknown. CRA only; SIL 3 excluded.
+
+
+## 2026-11-24 — PR #234 병합 및 main push CI 확인
+
+- PR #234 exact HEAD `c1530e18a5452a8b3b0b35f70128dcaa405a25c7`, Run #1473 / ID 45316126142 success.
+- 6-file diff, JSONL 361 / invalid 0, review threads 0 / reviews 0, base main `d160cb2eea13d3f18ac4bc8e98c40d4378881c1a`.
+- Expected-head squash merge SHA `bd46aa2a26a39a5389f3b314a94523bb495689b5`; main read-back identical.
+- Main push Run #1474 / ID 45316319487, event=push, exact merge SHA, success 25/25. PROJECT_LOG 361 / invalid 0.
+- PR #235 adds LS ELECTRIC-hosted iX700M architecture PDF evidence and 2025 catalog/training index metadata; exact-head Run #1475 / ID 45316512062 success. Awaiting final pre-merge checks. CRA only; SIL 3 excluded.
