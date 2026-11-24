@@ -107,7 +107,7 @@ def test_temporary_http_outage_is_distinguished_from_validation_failure():
     definition = next(item for item in pdf.PDF_SOURCE_CATALOG if item["id"] == "CRA-M606-C2026-7861-ANNEX")
     response = FakeResponse(status=503, url=definition["url"])
     with pytest.raises(pdf.PDFSourceUnavailableError, match="temporary HTTP status"):
-        pdf.fetch_pdf_source(definition, get=lambda *a, **k: response)
+        pdf.fetch_pdf_source(definition, get=lambda *a, **k: response, sleep=lambda _delay: None)
 
 
 def test_missing_document_identity_marker_fails_validation():
@@ -191,4 +191,55 @@ def test_guidance_oj_c6013_is_fetched_from_official_publications_office_without_
     assert definition["allowed_hosts"] == ("publications.europa.eu",)
     assert item["fallback_used"] is False
     assert item["final_url"] == definition["url"]
+
+def test_retryable_network_timeout_retries_then_recovers():
+    definition = next(
+        item for item in pdf.PDF_SOURCE_CATALOG
+        if item["id"] == "CRA-M606-C2026-7861-ANNEX"
+    )
+    calls = {"count": 0}
+    response = FakeResponse(url=definition["url"])
+
+    def get(*_args, **_kwargs):
+        calls["count"] += 1
+        if calls["count"] == 1:
+            raise requests.Timeout("transient read timeout")
+        return response
+
+    with patch.object(pdf, "PdfReader", FakeReader):
+        item = pdf.fetch_pdf_source(definition, get=get, sleep=lambda _delay: None)
+    assert item["id"] == "CRA-M606-C2026-7861-ANNEX"
+    assert calls["count"] == 2
+
+
+def test_retryable_network_timeout_exhaustion_is_bounded():
+    definition = next(
+        item for item in pdf.PDF_SOURCE_CATALOG
+        if item["id"] == "CRA-M606-C2026-7861-ANNEX"
+    )
+    calls = {"count": 0}
+
+    def get(*_args, **_kwargs):
+        calls["count"] += 1
+        raise requests.Timeout("persistent read timeout")
+
+    with pytest.raises(pdf.PDFSourceUnavailableError, match="network failure"):
+        pdf.fetch_pdf_source(definition, get=get, sleep=lambda _delay: None)
+    assert calls["count"] == pdf.MAX_DOWNLOAD_ATTEMPTS == 3
+
+
+def test_main_reports_partial_source_pack_as_warning_without_failing(monkeypatch, capsys, tmp_path):
+    monkeypatch.setattr(
+        pdf,
+        "fetch_all_pdf_sources",
+        lambda *_args, **_kwargs: (
+            [{"id": "CRA-GUIDANCE-2026-5252"}],
+            [{"id": "CRA-M606-C2026-7861-ANNEX", "reason": "read timeout"}],
+        ),
+    )
+    assert pdf.main(["--output-dir", str(tmp_path)]) == 0
+    output = capsys.readouterr().out
+    assert "WARNING: partial CRA PDF source pack" in output
+    assert "CRA-M606-C2026-7861-ANNEX" in output
+    assert "PASS: fetched and hashed all" not in output
 
