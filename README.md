@@ -1,3 +1,7 @@
+> **PR #240 / post-merge main CI:** PR #240 merged at 36b38bfa5ced2894f3bfb06c226706ce0a9bf38b after Run #1507 exact-head success 25/25. Main push Run #1508 / 45329930118 on exact merge SHA also success 25/25. Main PROJECT_LOG 371 records / invalid 0. Official CRA PDF artifact 14890384807 includes all 3 PDFs; ZIP SHA-256 1cb11a4d35de7c922efd5ad2a8d49aada8929875682d20e520c5c9b50f4f19ba. See report §76 / evidence register §33.
+>
+> **Exact product source paths:** Solution Square manual listing is verified but detail/PDF unavailable; LS Mecapion manual detail wr_id=12652, Drive CE download, Converter CE detail and iX700M CAD detail wr_id=12455 were retried but timed out/502. CE/CAD originals remain unacquired. Manual index still has two Ver1.4 snapshots and one Ver1.3 snapshot. CRA only; SIL 3 excluded.
+
 > **매뉴얼 revision snapshot 정밀 정정:** 기본 목록 및 Servo 필터는 Ver1.4, 명시적 sca= 목록만 Ver1.3을 표시합니다(모두 2026-05-26 게시). 실제 PDF bytes 미확보로 valid revision은 unresolved. See report §75.4 / evidence register §32.
 > **최신 상태 정정 (2026-11-24):** PR #239 is merged. Exact PR HEAD e9a15eeaf69e56e610352941f5330604bf78639e, merge SHA 7d1fe1012bd2f8a8e1540918b43b58b4b41014f5; Run #1497 success 25/25 (pytest 189 passed), post-merge main push Run #1503 success 25/25 on exact merge SHA. Main PROJECT_LOG 369 records / invalid 0. The bounded retry recovered the C(2026)7861 Annex PDF; all three official PDFs were fetched in Run #1497. PR #239 and Run #1503: https://github.com/useformotor3/ai-discord-bot/actions/runs/45321136198.
 >
