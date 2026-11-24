@@ -1,3 +1,5 @@
+> **PR #223 병합 완료:** `a1fe5b983e1cecb1235b56071534e05884d61786`. Run #1432 success, pytest 186. C(2026)5252 Annex와 C/2026/6013 OJ PDF의 실제 바이너리/SHA-256 및 PDF/provenance artifact를 확보했습니다. C(2026)7861은 Commission register timeout으로 manifest에 unavailable 기록. iX700M의 독립 판매·EU 개별 공급·실제 SKU는 계속 미확인입니다.
+
 > **Run #1427 PDF 확보:** C(2026)5252 Annex(84p, SHA-256 `fe209c250e3d1f7599e42826d91963666951332927edcf511a2e79fe8d2f8234`)와 C/2026/6013 OJ(61p, SHA-256 `40ca76caeb0108f5b97c8f373a95f590b453fe92bd45a483addf3326e48c1dc2`) 실제 PDF를 확보했습니다. C(2026)7861 Annex는 Commission register timeout으로 unavailable manifest에 기록했습니다. PDF artifact [14874639916](https://github.com/useformotor3/ai-discord-bot/actions/runs/45294643451/artifacts/14874639916), provenance [14875084483](https://github.com/useformotor3/ai-discord-bot/actions/runs/45294643451/artifacts/14875084483). Run #1427 success, pytest 186.
 
 > **PDF 수집 안정성 보완:** Run #1419에서 ANFR fallback의 HTML 응답/timeout을 확인해 Commission-hosted transition-pathways.europa.eu PDF로 교체하고, source별 partial fetch 및 unavailable 사유 기록을 추가했습니다. 잘못된 PDF/identity mismatch/비허용 redirect는 계속 fail-closed입니다. PR #223 새 HEAD CI 검증 중입니다.
