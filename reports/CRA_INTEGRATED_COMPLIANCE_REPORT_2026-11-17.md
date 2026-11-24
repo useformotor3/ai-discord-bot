@@ -1551,3 +1551,10 @@ PR #218 HEAD 1c49b9f4b5ad8fa747ffa08051fa6116dd3eff85의 Run #1410은 전체 wor
 ## §60. 2026-11-24 — PR #218 최종 CI 및 병합
 
 PR #218의 최종 HEAD e3ebe08b5dcf14563bba0a75dca171459ab992c5에서 Run #1417(45293726074)이 workflow success로 종료됐다. Source identity, compile, CRA traceability, 전체 pytest, 공식 CRA HTML locator 및 provenance manifest upload가 성공했다. PDF source canary는 C(2026)5252 Commission newsroom interstitial 후 명시적으로 허용된 ANFR mirror가 30초 timeout되어 SKIPPED 처리됐고 PDF evidence upload도 skip됐다. 이 실행에서 Commission PDF 바이너리/해시를 확보했다고 주장하지 않는다. 최종 diff 11개 파일을 검토한 후 PR #218을 squash merge했다. Merge SHA: 200ccca974ad3af09b1634fd9bf02c1baac5ca8c. 운영 main.py, secrets, 운영 workflow는 변경하지 않았다.
+
+
+## §61. 2026-11-24 — PDF 원문 대체 경로 및 부분 수집 개선
+
+PR #223 Run #1419에서 기존 ANFR fallback이 HTML 안내 페이지를 반환해 PDF 검증이 실패했고, 다른 시도에서는 30초 timeout이 발생했다. ANFR 경로를 제거하고 C(2026)5252 Annex가 European Commission 공식 EU portal transition-pathways.europa.eu에 게시한 사본으로 변경했다. 브라우저에서 European Commission 제목, 27.7.2026, C(2026)5252 final, CRA guidance Annex를 확인했다.
+
+PDF 수집은 source별로 처리하도록 개선했다. 검증 성공한 파일은 개별 저장하고 바이너리 SHA-256을 기록하며, 공식 source 접근이 제한된 항목은 manifest에 unavailable 상태와 원인을 남기고 다른 source 수집을 계속한다. PDF magic/identity marker 오류, 잘못된 파일 및 임의 비허용 호스트 redirect는 여전히 fail-closed다. 회귀 테스트와 workflow blob pins를 갱신했고 PR #223의 새 exact HEAD CI를 기다린다.
