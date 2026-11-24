@@ -1,3 +1,5 @@
+> **2026-11-24 최신 확인:** PR #232 Run #1462 success 및 merge SHA `d3b75a84d2b84ada59d2314780461e53b21e090b`. 공식 CRA PDF C(2026)5252, C/2026/6013, C(2026)7861 세 원본 모두 확보·hash 검증. iX700M 공식 manual list는 Ver1.4 표시로 일치하지만 PDF 내부 revision은 미확인. Converter/Drive DoC 및 CAD 원본, 실제 SKU/EU 공급·수입자·BOM/MCU/security는 계속 미확인. PR #229 main push Run #1452 success 확인. 상세는 통합 보고서 §72와 증거등록부 §26.
+
 > **2026-11-24 PR #231 병합 및 공식 CRA PDF 증거:** Exact HEAD Run #1460 success, PDF artifact ID 14884517329에서 C(2026)5252 Annex 및 C/2026/6013 OJ Guidance PDF 원본과 SHA-256 확보. C(2026)7861 Annex는 timeout으로 미확보. PR #231 squash merge SHA `c7b59ae51891a2b878fc85b0910a89b50e4efe17`. 통합 보고서 §71 및 제품 증거등록부 §25 참조. Solution Square iX700M 상세 PDF, Ver1.3/Ver1.4 실제 revision, CE DoC/CAD 원본 및 제품별 SKU·EU 공급·BOM/MCU/security facts는 계속 Unknown. 제조사 질의서는 미발송.
 
 > **2026-11-24 LS메카피온 질의 발송 안내:** [공식 연락 경로 및 커버메일 초안](reports/LS_MECAPION_IX700M_INQUIRY_DISPATCH_GUIDE_2026-11-24.md). 국내 영업·전국 기술지원·해외 채널을 공식 페이지 기준으로 구분했으며, 실제 발송/회신은 아직 미확인입니다.
