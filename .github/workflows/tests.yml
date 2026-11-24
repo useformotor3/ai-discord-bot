@@ -104,7 +104,7 @@ jobs:
           verify_blob "reports/CRA_EVD_SEC_TRACEABILITY_CROSSWALK_2026-11-19.csv" "13eb0e00b1fab15f938701ecc54d3befee3a7275"
           verify_blob "reports/CRA_PRODUCT_EVIDENCE_REGISTER_TEMPLATE_2026-11-19.csv" "2d005f15c9163c460c761069dd97f87cc18e176c"
           verify_blob "reports/CRA_M606_ANNEX_I_SERVO_DRIVE_RELEVANCE_2026-11-17.csv" "d7f5a644f9ac1524a3639540278ebcd5581be63a"
-          verify_blob "tests/test_cra_pdf_sources.py" "f0f433794741d150898b3bfb815650e1b246e3ac"
+          verify_blob "tests/test_cra_pdf_sources.py" "79acd36f4e5799b5aa90b88983be5af52a9dcb0d"
           verify_blob "persistence.py" "953e2a52b7e6d6e619a4f43766e52d6835df50c8"
           verify_blob "tests/test_p1_b2_atomic_persistence.py" "f78d36164b5ac0d5d5eebe0c5eb5c1214c4e0671"
           verify_blob "tests/conftest.py" "f0d390b8041bcafc126dca0d4bc6486cc5844db2"
