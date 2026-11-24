@@ -1940,3 +1940,12 @@ CRA only; SIL 3 제외.
 - Expected-head squash merge SHA `bd46aa2a26a39a5389f3b314a94523bb495689b5`. Main read-back identical; main PROJECT_LOG 361 records / invalid 0.
 - Post-merge main push Run #1474 / ID `45316319487`, event=push, exact merge SHA, final success, 25/25 steps. Source identity, compile, CRA traceability, full tests, official PDF/HTML canaries, PDF evidence and provenance uploads all success.
 - 이 병합은 문서 전용이며 운영 main.py/workflow/secrets/API cadence 변경 없음.
+
+
+### 74.6 PR #235 병합 및 사후 main CI
+
+- PR #235 final exact HEAD `df68f617ee1e49d2c6183b8cb42f1f042043d007`, Run #1478 / ID `45316731254`: 최종 success. 6개 파일 diff, JSONL 363 / invalid 0, review threads 0, reviews 0, base `bd46aa2a26a39a5389f3b314a94523bb495689b5`.
+- Expected-head squash merge SHA `4e4aea75960de2e761e47ae3cdc33275ad5553f2`; main read-back identical.
+- Post-merge main push Run #1479 / ID `45316962126`, event=push, head SHA=merge SHA, success 25/25. Source identity, compile, CRA traceability, full tests, official PDF/HTML canaries, PDF evidence and provenance uploads 모두 success.
+- 최종 main PROJECT_LOG는 363 records / invalid 0. PR #229 main push Run #1452 / ID `45312941583`, exact merge SHA `4263389aa79cbb7cc17ccda3a019c659ccddef85`, success 25/25 기록은 유지한다.
+- PR #235는 문서 전용. 운영 main.py/workflow/secrets/API cadence 변경 없음.
