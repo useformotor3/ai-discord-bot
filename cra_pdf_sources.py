@@ -92,9 +92,10 @@ def _download(url, allowed_hosts, *, get=None):
 
     final_url = getattr(response, "url", "") or url
     parsed = urlparse(final_url)
-    # The Commission newsroom may redirect automated PDF requests to its
-    # anti-bot interstitial. Never accept that page as source content; use
-    # only the explicitly allowlisted archival mirror and validate its PDF.
+    # The Commission document service may redirect automated requests to
+    # its anti-bot interstitial. Never parse that page as a PDF. The caller
+    # may use only a source definition's explicit allowlisted fallback;
+    # without one, the document is recorded as unavailable.
     if parsed.scheme == "https" and parsed.hostname == "sorry.ec.europa.eu":
         raise PDFSourceUnavailableError(
             "Commission document service redirected to its official anti-bot/interstitial host; "
