@@ -403,3 +403,12 @@ ESO별 C(2026)7861 실제 수령일과 Article 2 비수락 통지는 여전히 U
 - PDF source step printed SKIPPED because C(2026)7861 document-register API returned official anti-bot interstitial. PDF evidence upload was skipped. Do not record this as successful PDF acquisition or SHA-256 capture.
 - C/2026/6013 primary PDF URL is the browser-verified official Publications Office OJ document. C(2026)7861 PDF bytes/hash remain not acquired automatically.
 - After Run #1410, a comment-only source clarification and corresponding source-blob pin were committed; new exact HEAD requires a final CI run before merge.
+
+
+## 18.4 PR #218 final CI and merge
+- Final HEAD: e3ebe08b5dcf14563bba0a75dca171459ab992c5.
+- Run #1417 / 45293726074: workflow success. Source identity, compile, CRA traceability, complete pytest, official CRA HTML locator validation and provenance manifest upload passed.
+- PDF source canary: SKIPPED because C(2026)5252 primary Commission newsroom redirected to interstitial and the explicitly allowlisted ANFR mirror timed out after 30 seconds. PDF evidence upload skipped. Do not claim new Commission PDF bytes/hash were captured by this run.
+- Final diff: 11 files, reviewed; no main.py, production workflow, secrets or API cadence change. Isolated test workflow source blob pins were updated.
+- PR #218 squash merged; merge SHA 200ccca974ad3af09b1634fd9bf02c1baac5ca8c.
+- Independent sale/EU supply, actual user SKU, manual/CAD attachment contents, internal schematic/BOM/MCU remain Unknown as detailed in §§17–18.
