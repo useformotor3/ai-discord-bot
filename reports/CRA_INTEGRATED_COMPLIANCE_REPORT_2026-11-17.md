@@ -1734,3 +1734,47 @@ LS ELECTRIC 공식 Solution Square의 Motion & Servo 자료 목록은 `iX700M �
 5. iX700M CAD DWG/DXF/STEP 원본과 파일별 revision·적용 SKU·크기·SHA-256.
 
 원본 파일은 확보되지 않았다. 실제 SKU, 독립 판매, EU/EEA 개별 공급, importer/economic operator, 내부 BOM/MCU/security configuration은 계속 Unknown이다.
+
+
+## §71. 2026-11-24 — PR #231 공식 CRA PDF canary 확보 결과 및 병합 검증
+
+PR #231 exact HEAD `d1f0c2a32c455f2d2a27dda5eab8972cad87bcef`의 GitHub Actions Run #1460 / ID `45314263089`는 전체 workflow success로 종료됐다. 1~8단계 source identity·compile·CRA traceability·전체 pytest와 9단계 공식 CRA PDF source canary, 10단계 PDF evidence artifact upload, 11단계 공식 CRA HTML canary, 12단계 provenance manifest upload가 모두 job step 기준 성공했다.
+
+### 71.1 실제 PDF 바이너리 확보와 부분 미확보 구분
+
+Run #1460 PDF artifact ID `14884517329`를 실제 다운로드해 ZIP 구조, PDF magic, 파일 크기 및 SHA-256을 확인했다.
+
+| 공식 문서 | 확보 결과 | 파일 SHA-256 |
+|---|---|---|
+| Commission C(2026) 5252 final CRA Guidance Annex | PDF 84쪽, 1,190,726 bytes 확보 | `fe209c250e3d1f7599e42826d91963666951332927edcf511a2e79fe8d2f8234` |
+| Commission C/2026/6013 CRA Guidance, OJ C 17.11.2026 | PDF 61쪽, 2,709,282 bytes 확보 | `40ca76caeb0108f5b97c8f373a95f590b453fe92bd45a483addf3326e48c1dc2` |
+| Commission C(2026) 7861 M/606 Annex | 미확보 | Commission document-register API read timeout 30초; manifest에 unavailable 기록 |
+
+PDF artifact ZIP SHA-256: `404f048a117e84dbeab4dcff863c4a5b0990e47bf0550a28bcb505fef339b134`. Provenance artifact ID `14884017656`, ZIP SHA-256 `4a2fe3024fe12f259dc1bce49ac0e32782a826fa01bbce4a16c19e604caaa1bf`. Manifest는 공식 출처 10개를 기록하고 JSON round-trip 검증을 통과했다. 따라서 **PDF canary 단계 자체는 성공했지만, PDF 대상 3개 중 2개만 실제 확보**했다. C(2026)7861 PDF를 확보했다고 표현하지 않는다.
+
+### 71.2 PR exact-HEAD 검증 및 병합
+
+- PR #231 base main SHA: `7b3eaa39d96e78081621f8c40cde97ad916722e5`; exact HEAD: `d1f0c2a32c455f2d2a27dda5eab8972cad87bcef`.
+- Base...HEAD compare: 8 commits ahead, 0 behind; 변경 파일은 정확히 8개이며 모두 문서/로그 파일이다. 삭제/수정 대체 없이 추가 기록 중심이다.
+- 변경 파일: PROJECT_LOG.jsonl, PROJECT_STATUS_CURRENT.md, README.md, SESSION_LOG.md, 통합 CRA 보고서, 제품 증거등록부, 제조사 질의서, 발송 안내서.
+- PROJECT_LOG.jsonl: 357개 비어 있지 않은 JSONL record, JSON parse 오류 0.
+- Inline review thread 0개, review submission 0개.
+- Expected head SHA를 지정해 squash merge 성공. Merge SHA: `c7b59ae51891a2b878fc85b0910a89b50e4efe17`. Main read-back에서 merge commit의 8개 변경 파일을 확인했다.
+
+### 71.3 제품 증거와 미확인 사항
+
+LS ELECTRIC Solution Square 공식 Motion & Servo 목록의 `iX700M 사용 설명서` update date 2026-09-16은 확인됐으나, JS 상세 화면에서 직접 상세 URL·문서 ID·파일명·revision·PDF 원본·SHA-256을 얻지 못했다. 이 날짜는 목록 update date이며 PDF 발행일이나 revision이 아니다. LS메카피온 공식 게시물 snapshot의 Ver1.3/Ver1.4 충돌도 실제 PDF와 제조사 문서관리 이력으로 해결되지 않았다.
+
+Converter/Drive CE DoC 첨부 및 iX700M 2D DWG/DXF·3D STEP CAD 원본은 이번에도 바이트 단위로 확보하지 못했다. 실제 SKU, Converter/Drive 독립 판매, EU/EEA 개별 공급, 거래별 importer/economic operator, 내부 schematic/PCB/BOM, MCU 전체 부품번호 및 security configuration은 Unknown이다. 사용자 프로젝트의 ST MCU 정보를 iX700M에 전용하지 않는다.
+
+제조사 질의서/발송 안내는 초안 준비 상태다. 실제 발송, 접수번호, 제조사 회신 증거는 없으므로 `draft_prepared_not_sent`로 유지한다.
+
+### 71.4 후속 검증
+
+- Solution Square JS 상세 URL/API 또는 제조사 문서관리 경로를 찾아 PDF 원본과 revision history 확보를 재시도한다.
+- Ver1.3/Ver1.4 게시물 표시 충돌을 실제 첨부 PDF와 문서번호로 해결한다.
+- Converter/Drive DoC와 CAD DWG/DXF/STEP 원본을 재시도하고 파일 hash를 기록한다.
+- PR #229 merge SHA `4263389aa79cbb7cc17ccda3a019c659ccddef85`의 post-merge main push CI는 현재 접근 가능한 commit workflow run 및 combined status에서 결과를 찾지 못했다. `pending/unverified` 유지.
+- 다음 문서 변경은 별도 작업 branch에서 exact-HEAD CI로 검증한다.
+
+CRA only; SIL 3 제외.

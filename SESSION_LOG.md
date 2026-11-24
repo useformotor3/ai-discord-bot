@@ -3271,3 +3271,17 @@
 - 질의서에 Solution Square 2026-09-16 항목의 실제 상세 URL/문서번호/원본 PDF/파일명/revision/언어/발행일/크기/SHA-256/SKU applicability와 LS메카피온 Ver1.3/Ver1.4 충돌의 관계를 서면 확인하도록 추가.
 - 실제 SKU, Converter/Drive 독립 상업 판매, EU/EEA 공급, 거래별 수입자·경제운영자, 내부 BOM/MCU/보안 설정은 계속 Unknown. 사용자 별도 프로젝트의 ST MCU 정보를 iX700M에 전용하지 않는다.
 - 질의서는 작성된 초안일 뿐 발송·접수·회신은 없음. CRA only; SIL 3 제외.
+
+
+## 2026-11-24 — PR #231 공식 CRA PDF canary·병합·증거 원본 확인
+
+- PR #231 exact HEAD `d1f0c2a32c455f2d2a27dda5eab8972cad87bcef`, base main `7b3eaa39d96e78081621f8c40cde97ad916722e5`. Run #1460 / ID `45314263089` success; steps 1~12 completed, including PDF canary/evidence upload, HTML canary and provenance upload.
+- PDF artifact 14884517329를 내려받아 실제 ZIP/PDF bytes를 검사했다. C(2026)5252 Annex: 84p, 1,190,726 bytes, SHA-256 `fe209c250e3d1f7599e42826d91963666951332927edcf511a2e79fe8d2f8234`. C/2026/6013 OJ Guidance: 61p, 2,709,282 bytes, SHA-256 `40ca76caeb0108f5b97c8f373a95f590b453fe92bd45a483addf3326e48c1dc2`. C(2026)7861 Annex는 30초 read timeout으로 unavailable. PDF ZIP digest `404f048a117e84dbeab4dcff863c4a5b0990e47bf0550a28bcb505fef339b134`.
+- Provenance artifact 14884017656, ZIP digest `4a2fe3024fe12f259dc1bce49ac0e32782a826fa01bbce4a16c19e604caaa1bf`; manifest source_count 10, JSON round-trip 통과.
+- PR 변경 8개 파일, compare ahead 8 / behind 0, PROJECT_LOG 357 JSONL records / invalid 0, review threads 0, reviews 0. Expected-head squash merge 성공, merge SHA `c7b59ae51891a2b878fc85b0910a89b50e4efe17`; main read-back 확인.
+- Solution Square iX700M 매뉴얼 update 2026-09-16의 JS 상세 URL·원본 PDF는 아직 미확보. LS메카피온 Ver1.3/Ver1.4 실제 PDF revision 충돌 unresolved. Converter/Drive CE DoC 및 CAD 원본 미확보. SKU, 독립 판매, EU/EEA 공급, importer/economic operator, BOM/MCU/security configuration Unknown.
+- 제조사 질의서 및 발송 안내는 준비됐지만 발송·접수·회신은 없음. `draft_prepared_not_sent` 유지.
+- PR #229 merge SHA `4263389aa79cbb7cc17ccda3a019c659ccddef85`의 main push CI는 현재 accessible run/status가 없어 `pending/unverified` 유지.
+- 후속 문서 동기화 branch `docs/cra-pr231-postmerge-evidence-2026-11-24`에서 보고서 §71, 증거등록부 §25, 상황판, README, SESSION_LOG 및 PROJECT_LOG를 갱신한다.
+
+CRA only; SIL 3 제외.
