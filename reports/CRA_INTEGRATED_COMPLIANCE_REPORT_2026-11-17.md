@@ -2495,3 +2495,22 @@ Drive EU DoC, Converter CE/UKCA DoC, KR/EN catalogue, CAD 2D/3D STEP 역시 게�
 
 ### 89.4 미확정 사항
 실제 SKU, EU/EEA 공급, 경제운영자, signed DoC coverage, BOM/정확한 MCU/SBOM, 보안 설정, CRA 제품 분류, 취약점 대응, 보안 업데이트·지원기간은 Unknown. 제조사 질의서 61문항은 미발송 초안.
+
+ 
+## §90. 2026-11-25 — PR #254 및 main push Run #1549
+
+### 90.1 PR 및 main CI
+PR #254 exact head `5140882cdf89c3631c9fd9aaa0f0bf2fcedf38fb`, base `e89faa6f9d907edcaf09adbd8f72eb81091ed279`, 7 files(+56/-0), reviews 0, inline threads 0. Run #1548 / 45507928582 completed/success, 15/15 steps, pytest 189 passed, traceability 387 events PASS, provenance 10 sources PASS, CRA PDFs 3/3 fetch/hash PASS. Expected-head squash merge SHA `dc1704557e1c3e1071383701d7a4615546814054`.
+
+Post-merge main push Run #1549 / 45508166302 event=push, exact head equals merge SHA, completed/success, 15/15 steps, pytest 189 passed, traceability 387 events PASS, 10-source provenance manifest JSON round-trip PASS, PDFs 3/3 fetch/hash PASS.
+
+### 90.2 Artifacts
+Run #1549 PDF ZIP artifact ID 14974751014, 3,070,565 bytes, SHA-256 `c8b1d01f6aba66886a675ac081c978f595ebc5f6c265f3768c40ad2c9be706c7`; provenance ZIP artifact ID 14974510954, 2,566 bytes, SHA-256 `0b358609a02446b0615a9a2f07fe591d88b8031ae1460052f2c76e4dd5ba290b`; expiry 2026-12-01. C/2026/5252 fallback=true; hash scope is the fetched fallback bytes, not proof of byte identity with primary mirror.
+
+### 90.3 iX700M original material and embedded MCU evidence
+Repeated official site search confirms listing metadata but not downloadable source binaries. Manual, SKU-specific Drive EU DoC, Converter CE/UKCA DoC, catalogue and CAD detail pages remain inaccessible/502/timeout. No original product binary is acquired. Manual Ver1.4/Ver1.3 index discrepancy remains unresolved.
+
+Q62 asks manufacturer to disclose exact MCU vendor/family/part number/silicon revision (including whether the stated ST MCU is used in each actual SKU), boot ROM/bootloader/firmware versions, secure boot and signature verification, debug/JTAG/SWD access controls, flash readout protection, cryptographic accelerator and key storage/rotation design, security-relevant configuration and whether features are enabled in shipped firmware. It also requests machine-readable SBOM (SPDX or CycloneDX), third-party libraries and versions, known CVEs, vulnerability monitoring/PSIRT intake and update responsibility. No secret keys or credentials are requested. This is evidence collection, not an assertion about actual implementation.
+
+### 90.4 미확정 사항
+Actual SKU, EU/EEA supply, economic operators, signed DoC coverage, BOM/exact MCU/SBOM, security configuration, CRA product classification, vulnerability handling, security update/support period remain Unknown. Manufacturer inquiry 62 questions, draft not sent.
