@@ -2466,3 +2466,11 @@ Q60은 공식 페이지에서 파일 다운로드가 막힌 경우 revision-cont
 
 ### 88.5 미확정 정보
 Actual SKU, EU/EEA supply, economic operators, signed DoC coverage, BOM/exact MCU/SBOM, security configuration, CRA classification, vulnerability handling, security update/support period는 모두 Unknown.
+
+ 
+### 88.6 PR #253 JSONL 교정 및 공식 CRA PDF 3종 확보 (Run #1541/#1542)
+PR #253 초기 실행 Run #1541은 이전 head `c0b3c56c612b5a014465e9f68bf9fb3e384a8f3a`에서 PROJECT_LOG.jsonl 385번째 빈 줄로 traceability 단계가 실패했다. 원인은 기존 파일의 trailing newline에 append payload가 추가 leading newline을 더한 것이었다. 이 실행은 취소되었고 pytest는 실행되지 않았다. 빈 줄을 제거하고 JSONL을 정규화한 새 exact head `e0788eb79d8b5c061b28111f96d9d6419eac950b`에서 Run #1542 / 45507153261은 completed/success, 15/15 steps, pytest 189 passed, traceability 385 events PASS, 10-source provenance PASS로 완료됐다. JSONL은 385 records / 0 invalid / 0 blank lines로 확인됐다.
+
+Run #1542는 CRA PDF 3종을 모두 fetch/hash 검증했다. C/2026/5252는 fallback=true로 1,190,726 bytes, 84 pages, SHA-256 `fe209c250e3d1f7599e42826d91963666951332927edcf511a2e79fe8d2f8234`; OJ C/2026/6013은 2,709,282 bytes, 61 pages, SHA-256 `40ca76caeb0108f5b97c8f373a95f590b453fe92bd45a483addf3326e48c1dc2`; M/606 Annex는 151,267 bytes, 6 pages, SHA-256 `262b09596cb5cbe7d72a2c7789fb2512ee00db7f69082e7def2c8181b0f63276`. fallback 취득본은 원래 mirror와 바이너리 동일성을 주장하지 않는다.
+
+PDF ZIP artifact ID 14973509955 (3,070,565 bytes, SHA-256 `ca03854e1a1fc393292d0676a9e73276fedb8f4e12f91f62ed08f5aba05ba8f7`), provenance ZIP artifact ID 14973037845 (2,565 bytes, SHA-256 `ac0f673fc8844fcd62977fad35e0c0d1a00d2e2aab8ad78bdbe8f2728c74623c`), 만료 2026-12-01. 이들은 CRA 법령·가이드 출처 pack이며 iX700M 제품 원본 파일이 아니다.
