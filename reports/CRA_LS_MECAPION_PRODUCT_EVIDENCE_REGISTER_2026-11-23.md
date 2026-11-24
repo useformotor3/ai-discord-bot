@@ -1020,3 +1020,11 @@ Actual SKU, EU/EEA supply, economic operators, independent sale/integration, BOM
 - Main push Run #1564 / 45511961014 exact merge SHA SUCCESS, 15/15, 189 passed, traceability 394, provenance 10, PDF 3/3.
 - PDF artifact 14974949830, 3,070,568 bytes, SHA-256 386c94782413af13217eff68e01390e07d411413f13aabaf58cee82a3f3aa6cc. Provenance 14975374608, 2,565 bytes, SHA-256 597b22e21c7da4d7e4454f15b22e6f3ed9748677c41b42c4ffb53a388a7d9057. Expiry 2026-12-01.
 - C/2026/5252 fallback=true; hash only identifies fallback bytes. Product binaries remain metadata only. Inquiry 62 questions, draft not sent. Unknowns retained.
+
+ 
+## §56. PR #263 / main push Run #1566
+
+- PR #263 exact head e4e2601252d56610bf3cf2043603291856ad68e3, 6 files(+44/-0), reviews/threads 0. Run #1565: conclusion success but 14/15 steps succeeded; optional provenance read-only canary timed out for CRA-COMMISSION-GUIDANCE-2026-07-27 and provenance upload step skipped. Other gates: 189 passed, traceability 395, PDFs 3/3.
+- Merge SHA 8d2d78b4ccc0ad326813f8e5cb74470bc5738e14. Main push Run #1566 / 45512624809 exact merge SHA SUCCESS, 15/15 steps, 189 passed, traceability 395, 10-source provenance manifest PASS/uploaded, PDFs 3/3.
+- PDF artifact 14976576885, 3,070,566 bytes, SHA-256 87d053774d70ba0794947802e98cede863d038cf24b5252541aadd21f1ef1672. Provenance 14976921254, 2,565 bytes, SHA-256 524a92d46f8c368430efafec8f5fd9e92a3ddd8a00895d8e1e46fa501b187c81. Expiry 2026-12-01.
+- C/2026/5252 fallback=true; hash only identifies fallback bytes. Product binaries remain metadata only. Inquiry 62 questions, draft not sent. Unknowns retained.

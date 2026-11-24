@@ -3627,3 +3627,10 @@ CRA only; SIL 3 excluded.
 - Main push Run #1564 / 45511961014 exact SHA SUCCESS, 15/15, 189 passed, traceability 394, provenance 10, PDFs 3/3. C/2026/5252 fallback=true.
 - Artifact IDs/digests in report §97/evidence §55. Product binaries not acquired. Inquiry 62 questions, draft not sent.
 - Unknowns retained. CRA only; SIL 3 excluded.
+
+ 
+## PR #263 / main Run #1566 completion
+- PR #263 exact head e4e2601252d56610bf3cf2043603291856ad68e3, 6 docs(+44/-0), reviews/threads 0. Run #1565 conclusion success but 14/15 steps succeeded: optional read-only source canary for CRA-COMMISSION-GUIDANCE-2026-07-27 timed out; provenance upload step skipped. Other gates 189 passed, traceability 395, PDFs 3/3.
+- Merge SHA 8d2d78b4ccc0ad326813f8e5cb74470bc5738e14. Main push Run #1566 / 45512624809 exact SHA SUCCESS, 15/15, 189 passed, traceability 395, 10-source provenance PASS/uploaded, PDFs 3/3. Main read-only canary also recorded allowed temporary source skip.
+- Artifact IDs/digests in report §98/evidence §56. Product binaries not acquired. Inquiry 62 questions, draft not sent.
+- Unknowns retained. CRA only; SIL 3 excluded.
