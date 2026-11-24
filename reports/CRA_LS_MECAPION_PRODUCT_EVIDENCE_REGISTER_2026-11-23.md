@@ -925,3 +925,13 @@ Actual SKU, EU/EEA supply, economic operators, independent sale/integration, BOM
 - No test failures; Node20/punycode/url.parse deprecation warnings. Do not overstate 3/3 PDF acquisition.
 - iX700M manual/DoC/catalogue/CAD original binaries still not acquired. Official listing metadata only; detail pages inaccessible/502. Q59 added for product core-functionality classification and Annex III/IV/Article 32 evidence.
 - Actual SKU, EU/EEA supply, economic operators, BOM/MCU/SBOM, security settings and classification remain Unknown. CRA only; SIL 3 excluded.
+
+ 
+## §45. 2026-11-25 — Run #1540 final CI and iX700M source retrieval retry
+
+- Run #1540 / 45505830283, main HEAD `cffd2118d2ce4127e50352650479553cb12c2bdf`: final completed/success; job 138840683889 completed/success; 15/15 steps; 189 passed; CRA traceability 384 events PASS; official provenance 10 sources PASS. Initial in_progress was transient upper-level status propagation after steps completed; final metadata verified success, no rerun.
+- CRA PDFs: 2/3 fetched; C/2026/6013 2,709,282 bytes/61 pages SHA-256 40ca76caeb0108f5b97c8f373a95f590b453fe92bd45a483addf3326e48c1dc2; M/606 Annex fetched/hash verified; C/2026/5252 HTTP 503 skipped.
+- PDF artifact 14972408962: 1,906,817 bytes, SHA-256 c7955d47a2c18f7f4eb9d93678a2a6a559c4e19abae35b98528389b0b1d60c0e. Provenance artifact 14973656717: 2,565 bytes, SHA-256 5468b1744806d109ba475574e5f209f568e83a3137f46f10b6ca9fb7c2c18d38. Expire 2026-12-01; not product binaries.
+- iX700M manual/DoC/catalogue/CAD retries: official listing metadata only; manual and DoC/catalogue detail 502, CAD listing timeout. No original signed DoC/PDF/CAD binaries acquired.
+- Q60 added requesting controlled official delivery, native format, original filename, size, SHA-256, revision/date, signature verification and SKU coverage. Inquiry 60 questions, draft/not sent.
+- Unknowns retained: SKU, EU/EEA supply, economic operators, BOM/MCU/SBOM, security configuration, CRA classification, vulnerability process, update/support term. CRA only; SIL 3 excluded.
