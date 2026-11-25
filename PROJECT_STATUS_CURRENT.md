@@ -2505,3 +2505,12 @@
 - 행동규약 §8.3 v1.3 main 반영: 컨테이너 없는 단독 다음 단계 button, direct GenUI.issueNewTurn, complete CRA-only/SIL3-excluded resume prompt, final UI placement hard gate.
 - Main push CI UNVERIFIED (Combined Status empty; connector run list PR-only).
 - iX700M metadata update in report §101/evidence §59; binary not acquired; all actual product/supply/security facts remain Unknown.
+
+
+## 2026-11-25 — main push CI 성공 확인 및 조회 경로 개선
+- PR #270 Run #1587 / 45532177358 exact head `1d815fa2589ba8f55e52c53cf9778a2317b70859`: completed/success, 15/15 steps, 189 pytest passed, CRA traceability 403 events, official CRA PDFs 3/3 hash, official source 10개 provenance JSON round-trip/upload PASS.
+- main push Run #1588 / 45532289060 exact head `660eb6d20e62f772272c03971dcd773b03a703f5`: event=push, branch=main, completed/success, 15/15 steps, 189 pytest passed, traceability 403, PDFs 3/3 hash, 10-source provenance round-trip/upload PASS.
+- push run 조회는 Actions API `actions/runs?head_sha={SHA}&event=push&per_page=100` 사용. 기존 connector wrapper가 PR run 위주였던 한계를 해결. main push CI status now SUCCESS.
+- PR #270 문서 동기화 검증에서 README/SESSION_LOG의 PR #270 기록이 누락되어 있음을 발견. 이번 후속 PR에서 이전 UNVERIFIED 기록을 지우지 않고 최신 정정 상태를 append해 이력 보존.
+- 제조사 원본 자료 재시도: manual list Ver1.4 vs indexed snapshot Ver1.3 conflict; detail timeout. Converter CE/UKCA, catalogue, CAD detail timeout. All metadata_only, binary/hash absent.
+- Q01–Q62 remains draft_prepared_not_sent. Actual SKU, EU/EEA supply, economic operators, signed DoC scope, BOM/MCU/SBOM/security config remain Unknown. CRA only; SIL 3 excluded.
