@@ -3691,3 +3691,11 @@ CRA only; SIL 3 excluded.
 - Main push CI remains UNVERIFIED: Combined Status empty; connector workflow-run lookup filters PR event only, no push-run listing action available. Do not infer.
 - Official metadata: manual current list Ver1.4; older indexed Ver1.3 conflict unresolved; Drive CE model groups; Converter CE/UKCA listing; KR/EN catalogue 10.7M each; CAD 2D/3D STEP listing. Detail pages time out; binary not acquired. See report §101/evidence §59.
 - Q01–Q62 remains draft/not sent. Actual SKU, EU/EEA supply, economic operators, signed DoC, BOM/MCU/SBOM/security config etc. remain Unknown. CRA only; SIL 3 excluded.
+
+
+## 2026-11-25 — PR #269 merge 및 v1.3 main read-back
+- PR #269 exact head 0cdffd2ffed3f06b5fc3e910dd9ca18eb2b9a146; Run #1585 / 45531936573 SUCCESS 15/15, pytest 189 passed, traceability 402, CRA PDF 3/3 fetch/hash, provenance 10-source JSON round-trip/upload.
+- Expected-head squash merge/current main SHA f0e351a8f1df6f24e103b12b73c71defe5b9757d; 7 files(+107/-0), reviews/threads 0.
+- 행동규약 §8.3 v1.3 main 반영. 마지막 응답 요소는 컨테이너 없는 단독 DIL button이며 직접 GenUI.issueNewTurn로 새 CRA 전용 턴을 시작한다. 자율 백그라운드 실행/모델 가중치 학습은 아님.
+- Main push CI UNVERIFIED; PR Run #1585를 push CI로 오인하지 않는다.
+- iX700M 원본 자료 취득은 미완료, metadata_only. Unknown 유지. CRA only; SIL 3 excluded.
