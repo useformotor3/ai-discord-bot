@@ -2497,3 +2497,11 @@
 - iX700M 공식 metadata 재확인: Manual current list Ver1.4(2026-05-26), detail ID 12652 timeout; older indexed snapshot Ver1.3 remains conflict. CE Drive model groups, Converter CE/UKCA, KR/EN catalogue, CAD 2D/3D STEP list confirmed; all binary files remain unacquired.
 - Converter CE wr_id=12886, UKCA wr_id=12893; CAD detail ID 12455. File names/sizes are metadata only.
 - Actual SKU, EU/EEA supply, economic operators, signed DoC scope, BOM/exact MCU/SBOM/security config, CRA classification, vulnerability handling/support period remain Unknown. Inquiry v2.0 Q01–Q62 draft not sent. CRA only; SIL 3 excluded.
+
+
+## 2026-11-25 — PR #269 병합 및 행동규약 v1.3 main 반영
+- PR #269 exact HEAD 0cdffd2ffed3f06b5fc3e910dd9ca18eb2b9a146; Run #1585 / 45531936573 SUCCESS, 15/15 steps, 189 passed, traceability 402, CRA PDF 3/3, provenance 10-source PASS/upload.
+- Expected-head squash merge/current main: f0e351a8f1df6f24e103b12b73c71defe5b9757d. 7 files(+107/-0), reviews 0, threads 0.
+- 행동규약 §8.3 v1.3 main 반영: 컨테이너 없는 단독 다음 단계 button, direct GenUI.issueNewTurn, complete CRA-only/SIL3-excluded resume prompt, final UI placement hard gate.
+- Main push CI UNVERIFIED (Combined Status empty; connector run list PR-only).
+- iX700M metadata update in report §101/evidence §59; binary not acquired; all actual product/supply/security facts remain Unknown.
