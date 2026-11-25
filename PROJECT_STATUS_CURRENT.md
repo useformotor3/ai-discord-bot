@@ -2616,3 +2616,15 @@
 - Manufacturer recheck: Ver1.4 vs Ver1.3 manual index conflict unresolved; Converter CE/UKCA, Solution Square manual, KR/EN catalogues, CAD/STEP all metadata_only. No original manufacturer binary/content hash acquired.
 - Q01–Q62 draft_prepared_not_sent, not sent. Actual SKU, EU/EEA supply, economic operators, signed SKU-specific DoC scope, BOM/MCU/SBOM/security configuration and CRA classification remain Unknown.
 - CRA only; SIL 3 excluded. Next priority: obtain the original manufacturer binaries via official attachment URLs or an authorized manufacturer contact, then verify PDF signatures/revisions and calculate per-file SHA-256 before changing any evidence status.
+
+## 2026-11-25 — PR #279 / Run #1610 및 main push Run #1611 closeout
+- Current main HEAD: 67244a3618ec21495613dedeaf707977effcc783.
+- PR #279 HEAD 49aa465811739fb5eb0dd36877f5875556fc51f5; Run #1610 / 45548956440 exact-head pull_request SUCCESS, job 138985236009, 15/15 steps, 475 log lines, 189 pytest, traceability 414, official CRA PDFs 3/3 individually fetched/hashed, 10 official sources, Article 13(8) + Regulation (EU) 2025/2392 locators PASS, provenance 10-record round-trip/upload PASS.
+- PR #279 merged SHA equals main HEAD 67244a3618ec21495613dedeaf707977effcc783.
+- Main push Run #1611 / 45549049529 exact SHA + event=push + head_branch=main, completed/success; job 138985534120, 15/15, 459 log lines, 189 pytest, traceability 414, PDFs 3/3, sources 10, provenance PASS.
+- Run #1610 artifacts: PDF ZIP 14993082129 / 3,070,564 B / SHA-256 f9451891e7ec142502d39a86b412c7375f8cbd67e0103246e26cd4e51a4d32ac; provenance ZIP 14992572830 / 2,565 B / SHA-256 593a3df9e6ef84ec22239c5c021f817d50992b783194377cd6e3e4476e6beb71.
+- Run #1611 artifacts: PDF ZIP 14992183761 / 3,070,566 B / SHA-256 8f0c0a2d39b7df4bcc54fc4104749e70a1e28d40ae01344159118af9fd0ec358; provenance ZIP 14992473112 / 2,565 B / SHA-256 2b38fca1efc50980ada42fa7c61e8f9cd3051aac9b65a4bebd21479ab63d2755.
+- Manufacturer recheck: manual list/filter Ver1.4 vs previously captured empty-category Ver1.3 remains unresolved. CE/UKCA attachment metadata confirmed; Solution Square manual, KR/EN catalog and CAD/STEP listings reconfirmed. No original manufacturer binaries obtained; all metadata_only and no per-file hashes/signature/revision verification.
+- Acquisition obstacles: official detail pages 502/timeouts, Solution Square JS shell, execution environment DNS unavailable. Continue via official direct attachment/authorized technical contact.
+- Q01–Q62 draft_prepared_not_sent; not sent. Actual SKU, EU/EEA supply, economic operators, signed SKU-specific DoC coverage, BOM/MCU/SBOM/security configuration, CRA classification, vulnerability handling and support period remain Unknown. CRA only; SIL 3 excluded.
+- Next: obtain controlled original binaries and verify each file independently before changing evidence status.

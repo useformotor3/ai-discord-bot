@@ -3802,3 +3802,15 @@ CRA only; SIL 3 excluded.
 - Warnings: Node.js 20, punycode and url.parse deprecation only; no failed steps; no workflow/code changes.
 - Manufacturer recheck remains metadata_only: Ver1.3/1.4 manual listing conflict unresolved; CE/UKCA declarations, Solution Square manual, KR/EN catalogues and CAD/STEP originals not downloaded. Q01–Q62 unsent; actual SKU/EU supply/economic operators/BOM/MCU/SBOM/security configuration/CRA classification Unknown.
 - Next priority is original manufacturer binary acquisition and per-file signature/revision/hash verification. CRA only; SIL 3 excluded.
+
+## 2026-11-25 — PR #279 / Run #1610 and main Run #1611; manufacturer evidence recheck
+- Re-read main HEAD 67244a3618ec21495613dedeaf707977effcc783, PR #279 and CRA report/evidence/status/logs.
+- PR #279 exact HEAD 49aa465811739fb5eb0dd36877f5875556fc51f5; Run #1610 / 45548956440 completed/success, job 138985236009, 15/15 steps, 475 log lines, 189 pytest, traceability 414, CRA PDFs 3/3, 10 official sources, provenance PASS.
+- PR #279 closed/merged; merge SHA equals main HEAD.
+- Main push Run #1611 / 45549049529 exact SHA, event=push, branch=main, completed/success; job 138985534120, 15/15, 459 log lines, 189 pytest, traceability 414, PDFs 3/3, sources 10, provenance PASS.
+- Run #1610 artifacts: PDF ZIP 14993082129 / f9451891e7ec142502d39a86b412c7375f8cbd67e0103246e26cd4e51a4d32ac; provenance ZIP 14992572830 / 593a3df9e6ef84ec22239c5c021f817d50992b783194377cd6e3e4476e6beb71.
+- Run #1611 artifacts: PDF ZIP 14992183761 / 8f0c0a2d39b7df4bcc54fc4104749e70a1e28d40ae01344159118af9fd0ec358; provenance ZIP 14992473112 / 2b38fca1efc50980ada42fa7c61e8f9cd3051aac9b65a4bebd21479ab63d2755.
+- Manufacturer official list shows manual Ver1.4 in main + Servo-filtered views, while earlier empty-category view showed Ver1.3; keep unresolved. CE/UKCA declaration attachment names/sizes/date and iX700MCV 480Vac rating-code metadata rechecked. Solution Square manual update 2026-09-16; KR/EN catalogue attachment metadata 10.7M each; CAD/STEP listing 2026-04-21.
+- Original manufacturer binary acquisition attempts failed: official detail pages 502/timeouts; Solution Square JS-only; execution container DNS resolution unavailable. No binaries, per-file hashes, signature checks, or actual revision validation. Keep all metadata_only.
+- Q01–Q62 unsent. Actual SKU, EU/EEA supply, economic operators, signed SKU DoC scope, BOM/MCU/SBOM/security configuration, CRA classification, vulnerability handling/support period Unknown. CRA only; SIL 3 excluded.
+- Next priority: official direct attachment URL or controlled manufacturer document package, then independent file hash/signature/revision validation.

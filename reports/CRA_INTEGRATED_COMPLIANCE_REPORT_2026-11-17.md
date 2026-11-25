@@ -3088,3 +3088,48 @@ Node.js 20, punycode 및 url.parse deprecation warning이 있었으나 실패 st
 - 2D CAD / 3D STEP: 2026-04-21 게시 목록을 확인했으나 상세 및 바이너리는 미취득.
 
 따라서 위 제조사 자료는 모두 metadata_only이며 개별 content hash 미확보다. Q01–Q62는 draft_prepared_not_sent이며 발송하지 않았다. Actual SKU, EU/EEA supply, economic operators, signed SKU-specific DoC coverage, BOM, exact MCU, SBOM, security configuration, CRA classification, vulnerability handling 및 support period는 계속 Unknown. CRA only; SIL 3 제외.
+
+## §113. 2026-11-25 — PR #279 / Run #1610 exact-head 및 main push Run #1611, 제조사 원본 재취득 시도
+
+### 113.1 PR 및 CI chain
+| 구분 | PR #279 exact-head | 병합 후 main push |
+|---|---|---|
+| PR HEAD / merge SHA | 49aa465811739fb5eb0dd36877f5875556fc51f5 | 67244a3618ec21495613dedeaf707977effcc783 |
+| Run / ID | #1610 / 45548956440 | #1611 / 45549049529 |
+| Event / branch | pull_request | push / main |
+| Job | 138985236009 | 138985534120 |
+| Result | SUCCESS | SUCCESS |
+| Steps / log | 15/15 / 475 lines | 15/15 / 459 lines |
+| pytest | 189 passed | 189 passed |
+| Traceability events | 414 | 414 |
+| Official CRA PDFs / sources | 3/3 / 10 | 3/3 / 10 |
+| Article 13(8), Regulation (EU) 2025/2392 locators | PASS | PASS |
+| Provenance JSON round-trip/upload | PASS | PASS |
+
+PR #279 is closed/merged. Merge SHA equals verified main HEAD. Run #1611 is event=push, head_branch=main, exact SHA 67244a3618ec21495613dedeaf707977effcc783, completed/success. All 15 returned steps completed successfully in both runs.
+
+### 113.2 Artifact archive digests
+Run #1610:
+- PDF ZIP artifact 14993082129, 3,070,564 bytes, archive SHA-256 f9451891e7ec142502d39a86b412c7375f8cbd67e0103246e26cd4e51a4d32ac.
+- Provenance ZIP artifact 14992572830, 2,565 bytes, archive SHA-256 593a3df9e6ef84ec22239c5c021f817d50992b783194377cd6e3e4476e6beb71.
+
+Run #1611:
+- PDF ZIP artifact 14992183761, 3,070,566 bytes, archive SHA-256 8f0c0a2d39b7df4bcc54fc4104749e70a1e28d40ae01344159118af9fd0ec358.
+- Provenance ZIP artifact 14992473112, 2,565 bytes, archive SHA-256 2b38fca1efc50980ada42fa7c61e8f9cd3051aac9b65a4bebd21479ab63d2755.
+
+These are ZIP archive hashes; individual Commission PDF hashes remain in earlier sections and are not replaced by ZIP digests.
+
+### 113.3 제조사 원본 재확인 — 게시 메타데이터만 취득
+- Manual: official main list and Servo-filtered list show “iX700M DRIVE 400[V] 매뉴얼 Ver1.4”, posted 2026-05-26. A previously captured empty-category listing showed Ver1.3. This is a conflicting listing state, not proof that either binary revision is authoritative. Keep conflict unresolved.
+- Converter CE: official page identifies “[CE_DoC-LVDEMC] iX700MCV.pdf”, 234.4K, 2026-04-30 11:50:26; iX700MCV Converter, 480 Vac, rating codes 15/37/55/75 kW.
+- Converter UKCA: official page identifies “[UKCA_DoC_LVDEMC] iX700MCV.pdf”, 224.1K, 2026-04-30 12:04:05; same published converter model/rating-code description.
+- Solution Square: “iX700M 사용 설명서”, updated 2026-09-16; accessible result is a JavaScript shell and does not expose the binary.
+- KR/EN catalog: official item page identifies “iX700M 브로셔 최종KR_251205.pdf” and “iX700M 브로셔 최종EN_251205.pdf”, each 10.7M, attachment timestamp 2025-12-05 13:43:50.
+- CAD/STEP: official drawing listing identifies “iX700M Series 서보드라이브 외형도 2D(CAD), 3D(STEP)”, posted 2026-04-21; no actual 2D/3D archive binary was retrieved.
+
+Acquisition attempts: official detail-page opens returned 502/timeouts; Solution Square detail remained JavaScript-only; direct fetch from the execution container could not resolve the manufacturer host. No manufacturer binary was downloaded. All above remain metadata_only, with no individual manufacturer-file SHA-256 and no verified PDF signature/revision inspection.
+
+### 113.4 Evidence boundary and next action
+Do not infer actual SKU or EU/EEA supply from the converter model family or rating-code list. Economic operators, signed SKU-specific EU DoC scope, BOM, exact MCU, SBOM, security configuration, CRA classification, vulnerability handling and support period remain Unknown. Q01–Q62 remains draft_prepared_not_sent and was not sent. CRA only; SIL 3 excluded.
+
+Next acquisition route: obtain direct original attachments or a controlled document package through the official manufacturer portal/authorized technical contact; record exact source URL, retrieval time, file size, revision/signature metadata and per-file SHA-256 before any evidence-state promotion.
