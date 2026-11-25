@@ -1088,3 +1088,11 @@ Actual SKU, EU/EEA supply, economic operators, signed DoC coverage, BOM/exact MC
 | MFG-IX7M-36 | [Drawing list](https://www.lsmecapion.com/bbs/board.php?bo_table=drawing&page=1) | iX700M Series 2D CAD/3D STEP drawing, 2026-04-21, detail ID 12455 | metadata_only; detail timeout |
 
 주의: 파일명/게시일/크기는 metadata이지 binary 자체가 아니다. signed DoC의 진위·서명·적용 법령·SKU scope, manual revision, CAD geometry는 원본 취득 및 검사 전까지 확인되지 않았다.
+
+
+## §60. 2026-11-25 — PR #269 / 행동규약 v1.3 병합
+- PR #269 exact HEAD 0cdffd2ffed3f06b5fc3e910dd9ca18eb2b9a146, Run #1585 / 45531936573 SUCCESS 15/15, pytest 189 passed, traceability 402, PDF 3/3, official source provenance 10개 JSON round-trip/upload.
+- Expected-head squash merge SHA / current main: f0e351a8f1df6f24e103b12b73c71defe5b9757d. 7 files(+107/-0), reviews 0, threads 0.
+- 행동규약 v1.3 §8.3 main 반영: 단독 버튼을 마지막 UI 요소로 출력, 직접 GenUI.issueNewTurn 호출, CRA only/SIL3 제외 payload, 응답 직전 hard gate.
+- Main push CI UNVERIFIED: Combined Status empty, available connector run lookup only returns PR events.
+- iX700M product binaries remain unacquired; metadata_only. Actual SKU, EU/EEA supply, economic operators, signed SKU DoC, BOM/MCU/SBOM/security configuration remain Unknown.
