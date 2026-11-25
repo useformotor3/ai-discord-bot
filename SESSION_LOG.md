@@ -3788,3 +3788,17 @@ CRA only; SIL 3 excluded.
 - Individual PDF hashes are repeated in report §111; ZIP digests are not individual content hashes. Run #1607 job log 459 lines; all returned steps succeeded.
 - JSONL strict parse now 412 records, no blank lines; 407 unique non-null event IDs and 5 legacy rows with no event_id. Run #1605 failure cause and correction preserved.
 - Manufacturer originals still metadata_only; Q01–Q62 not sent; all product-specific Unknowns retained. CRA only; SIL 3 excluded.
+
+
+## 2026-11-25 — PR #278 Run #1608 / main push Run #1609 final closeout
+- Re-read main HEAD bb59d1b38e563d5b72db1e97522a4ae5b79c6d9b, behavior protocol v1.4, situation board, PR #278 and report/evidence files.
+- PR #278 is closed/merged. Exact PR HEAD de30e11867d22801412b2daba39190791565b390; Run #1608 / 45543506669 SUCCESS, job 138967457882, 15/15, 189 pytest, traceability 413, official PDFs 3/3, official sources 10, provenance PASS. Diff 7 files(+100/-0), 1 ahead/0 behind, reviews 0, inline threads 0.
+- Expected-head squash merge SHA/current main: bb59d1b38e563d5b72db1e97522a4ae5b79c6d9b.
+- Direct Actions runs collection exact SHA + event=push identified main Run #1609 / 45543596033; head_branch=main, completed/success. Job 138967756419; 15/15 returned steps success; full log 459 lines; compileall PASS; pytest 189 passed.
+- Traceability: 13 claims, 15 interfaces, 35 requirements, 36 SEC, EVD_SEC crosswalk 16, linked SEC 36, product evidence 15, M606 mapping 41, project_log_events 413 (408 modern IDs, 5 legacy).
+- Official CRA PDFs 3/3 individually hashed; 10 official sources; Article 13(8), Regulation (EU) 2025/2392 core-functionality and Annex I(10)/Annex II(1) locators PASS; provenance manifest JSON round-trip/upload PASS.
+- Run #1608 artifacts: PDF ZIP 14989604437 / 1d2de3fbf53fb8528a61330d2969e75b7995db3b6eb8818abe6f8a2db6ab15eb; provenance ZIP 14989674323 / bc8af92230d0f7667746633558c60e1522760cee0504c33cc302d50a7f7c860d.
+- Run #1609 artifacts: PDF ZIP 14990725944 / bbd048563aaa1cba86dbe40065a46cc1e583846137f38bb0380595b20dbbd8e9; provenance ZIP 14990043643 / 55b15ffc7bd5aada82abe42ffb266aec04228da05b29e7a5e34b2fd804589593. Archive digests and individual PDF content hashes are recorded separately in report §112 and evidence register §70.
+- Warnings: Node.js 20, punycode and url.parse deprecation only; no failed steps; no workflow/code changes.
+- Manufacturer recheck remains metadata_only: Ver1.3/1.4 manual listing conflict unresolved; CE/UKCA declarations, Solution Square manual, KR/EN catalogues and CAD/STEP originals not downloaded. Q01–Q62 unsent; actual SKU/EU supply/economic operators/BOM/MCU/SBOM/security configuration/CRA classification Unknown.
+- Next priority is original manufacturer binary acquisition and per-file signature/revision/hash verification. CRA only; SIL 3 excluded.
