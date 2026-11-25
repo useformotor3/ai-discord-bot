@@ -1112,3 +1112,21 @@ Actual SKU, EU/EEA supply, economic operators, signed DoC coverage, BOM/exact MC
 **Actions push lookup:** `GET /repos/useformotor3/ai-discord-bot/actions/runs?head_sha={SHA}&event=push&per_page=100`. This finds post-merge runs missed by the PR-only connector wrapper.
 
 **iX700M original evidence:** manual current filtered list says Ver1.4; alternate indexed snapshot says Ver1.3 for the same date; PDF binary/detail page not obtained. Converter CE/UKCA PDFs, KR/EN catalogue, 2D CAD/3D STEP remain metadata_only. No manufacturer binary or content hash acquired. Inquiry v2.0 Q01–Q62 is draft_prepared_not_sent. Product identity, supply, operators, signed DoC scope, BOM/MCU/SBOM/security configuration remain Unknown.
+
+
+## §62. 2026-11-25 — PR #271 및 main push Run #1590 증거
+
+| 항목 | PR #271 | main push |
+|---|---|---|
+| Exact SHA | `47e36dadd2c61a891378a70b168a5cd5e0262c72` | `c9532486ad2aca0ba9538eeffb42d30f76d73ea0` |
+| Run | #1589 / 45536881236 | #1590 / 45537026894 |
+| Conclusion | SUCCESS | SUCCESS |
+| Steps | 15/15 | 15/15 |
+| pytest | 189 passed | 189 passed |
+| Traceability events | 404 | 404 |
+| CRA PDFs | 3/3 fetched+hashed | 3/3 fetched+hashed |
+| Official sources | 10, manifest round-trip/upload | 10, manifest round-trip/upload |
+
+PR #271 expected-head squash merge SHA `c9532486ad2aca0ba9538eeffb42d30f76d73ea0` and main read-back matched. Main push Run #1590 verifies post-merge workflow success.
+
+iX700M manual/DoC/catalogue/CAD remain metadata_only; Ver1.4/Ver1.3 manual index discrepancy unresolved; no original binary or content hash. Inquiry Q01–Q62 draft_prepared_not_sent. Product SKU/supply/operators/DoC scope/BOM/MCU/SBOM/security configuration remain Unknown.
