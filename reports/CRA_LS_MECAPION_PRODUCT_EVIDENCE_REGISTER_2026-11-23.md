@@ -1038,7 +1038,7 @@ Actual SKU, EU/EEA supply, economic operators, independent sale/integration, BOM
 | MFG-IX7M-26 | https://www.lsmecapion.com/bbs/board.php?bo_table=manual | 검색 snapshot: iX700M DRIVE 400[V] Ver1.4, 2026-05-26 | 직접 페이지 502; PDF 미취득. Ver1.3/Ver1.4 충돌 미해결 |
 | MFG-IX7M-27 | https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&sca=CE | CE 목록 2026-04-30: iX700MCB, Drive 그룹 075B/050B/D2-B-045B, 150B, 220B, 370B/300B, 750B/550B/450B | 목록 metadata only. SKU별 signed DoC 원본/서명/적용범위 미검증 |
 | MFG-IX7M-28 | https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&sca=CE&wr_id=12886 | Converter iX700MCV CE DoC 첨부명, 234.4K, 2026-04-30 | PDF bytes 미취득; 서명·적용 법령·표준·SKU 범위 미검토 |
-| MFG-IX7M-29 | https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&page=3&wr_id=12886 | Converter iX700MCV UKCA DoC 첨부명, 224.1K, 2026-04-30 | PDF bytes 미취득; 서명·UK 적용범위 미검토 |
+| MFG-IX7M-29 | https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&page=3&wr_id=12893 | Converter iX700MCV UKCA DoC 첨부명, 224.1K, 2026-04-30 | PDF bytes 미취득; 서명·UK 적용범위 미검토 |
 | MFG-IX7M-30 | https://www.lsmecapion.com/bbs/board.php?bo_table=catalog&wr_id=12110 | iX700M KR/EN catalogue, 각 10.7 MB attachment metadata, 2025-12-05 | 원본 binary 미취득; 카탈로그로 실제 SKU/EU supply 추정 금지 |
 | MFG-IX7M-31 | https://www.lsmecapion.com/bbs/board.php?bo_table=drawing&sca=Servo+Drive&wr_id=12455 | 기존 iX700M 2D CAD/3D STEP listing 단서 재확인 대상 | 상세/첨부 취득 실패; bytes/revision/hash Unknown |
 
