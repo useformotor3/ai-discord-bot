@@ -1557,3 +1557,16 @@ Actual SKU, EU/EEA supply, economic operators, signed SKU-specific DoC scope, BO
 - KR/EN catalogue detail search metadata: KR and EN PDFs each 10.7M, DATE 2025-12-05 13:43:50; direct fetch 502, no bytes. CAD/STEP official Servo Drive list item 19 / 2026-04-21; detail/attachment/binary not recovered.
 - Failures: Solution Square JS shell; LS Mecapion direct fetches 502/timeout; index snapshots disagree by date/filter and row numbers cannot identify a detail. Previous-post text lacks target href. No URL/ID guessing.
 - New manufacturer binaries 0; manufacturer SHA-256, PDF signature/signer chain, internal revision, SKU scope not verified. Q01–Q62 draft_prepared_not_sent; no manufacturer contact. CRA only; SIL 3 excluded.
+
+
+### §72.14 2026-11-26 — 공식 이전글 anchor/CE 개별 상세 및 원본 취득 재검증
+- PEGA2 Ver1.3 공식 상세 검색 결과는 이전글 텍스트 `iX700M DRIVE 400[V] 매뉴얼 Ver1.3`을 표시하나 실제 anchor href/wr_id는 제공하지 않음; 직접 상세 fetch timeout/502. Ver1.3 locator unknown.
+- Ver1.3/Ver1.4 index conflict retained: empty-sca search snapshot row41=Ver1.3; general list row41=Ver1.4; Servo-filter row18=Ver1.4. No row-number inference and no controlled revision conclusion.
+- Ver1.4 actual list anchor resolves to wr_id=12652, URL https://lsmecapion.com/bbs/board.php?bo_table=manual&wr_id=12652; detail 502, no attachment/binary.
+- Solution Square official page14/search page70: iX700M 사용 설명서, 2026-09-16, 171 views, #모션&Servo. JS shell; document ID/detail/attachment unavailable.
+- CE rows 171/172/173 are grouped titles 220B; 370B/300B; 750B/550B/450B. Individual detail href/wr_id/attachment not found. Row170 150B wr_id=12888 is known separately; do not infer adjacent IDs.
+- UKCA Drive Unit not located (not proof of absence); wr_id=12893 is Converter Unit iX700MCV only.
+- KR/EN catalogue each 10.7M, DATE 2025-12-05 13:43:50; direct detail 502, bytes absent. CAD/STEP item19 date 2026-04-21; detail/attachment/binary absent.
+- Failure causes: Solution Square SPA shell; LS Mecapion endpoints return 502/timeouts; search cache/filter snapshots inconsistent; PEGA2 previous-post text omits href. No guessed IDs/URLs.
+- Manufacturer binaries acquired: 0. metadata_only; SHA-256, PDF signature/signer chain, internal revision, SKU scope not verified. Q01–Q62 draft_prepared_not_sent; no manufacturer contact. CRA only; SIL 3 excluded.
+
