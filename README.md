@@ -1344,3 +1344,6 @@ Annex I Part II의 실무 요구사항은 machine-readable SBOM(최소 top-level
 
 
 > **2026-11-25 PR #266–#268 audit:** exact-head runs #1570/#1581/#1583 all SUCCESS, 15/15 returned steps, 189 pytest passed, traceability 397/399/400, CRA PDFs 3/3 hash and official source provenance 10/10 JSON round-trip/upload. Merged main = ea16c98118dceaecb5f37711152ccc83d189a799. Post-merge main push CI remains UNVERIFIED because Combined Status is empty and current run-list connector only exposes PR-triggered runs. iX700M official listing metadata is recorded in report §101 / evidence register §59; original binaries remain unacquired. CRA only; SIL 3 excluded.
+
+
+> **PR #269 merged (2026-11-25):** behavior protocol v1.3 §8.3 is now on main. Exact-head Run #1585 / 45531936573 SUCCESS 15/15, 189 pytest passed, traceability 402, CRA PDFs 3/3 fetch/hash, 10-source provenance manifest round-trip/upload. Merge/current main: f0e351a8f1df6f24e103b12b73c71defe5b9757d. Main push CI remains UNVERIFIED; PR CI is not main push CI. The final next-step button is a standalone native DIL button calling GenUI.issueNewTurn. CRA only; SIL 3 excluded.
