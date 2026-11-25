@@ -1570,3 +1570,13 @@ Actual SKU, EU/EEA supply, economic operators, signed SKU-specific DoC scope, BO
 - Failure causes: Solution Square SPA shell; LS Mecapion endpoints return 502/timeouts; search cache/filter snapshots inconsistent; PEGA2 previous-post text omits href. No guessed IDs/URLs.
 - Manufacturer binaries acquired: 0. metadata_only; SHA-256, PDF signature/signer chain, internal revision, SKU scope not verified. Q01–Q62 draft_prepared_not_sent; no manufacturer contact. CRA only; SIL 3 excluded.
 
+
+
+### §72.15 2026-11-26 — PR #294 exact-head merge / main push verification
+- PR #294 exact HEAD `774bfc45f2ca152d18b8236987cb616ab80f9a7f`, Run #1646 / 45718668986 completed/success, 25/25; compile, traceability, pytest 189, CRA PDFs 3/3, 10 official sources, source provenance manifest round-trip/upload all PASS.
+- Expected-head squash merge SHA `f7fe9c1151afcb210dbb0c9d589e6d22b7aec603`.
+- Main push Run #1647 / 45718795105 exact SHA + event=push + branch=main + completed/success; 25/25, pytest 189, traceability 431, PDFs 3/3, official sources 10, provenance upload PASS.
+- Run #1646 artifacts: PDF 15071491072 / SHA-256 db1ff28f7ef29678b1125143f57059b1500e0e2a08ed0a2f1675b045c5cc39ef; provenance 15070583873 / SHA-256 84bff376233110677ba498f8b320354c7a0ddcb38d927a4e6963bb593fd8063e.
+- Run #1647 artifacts: PDF 15071680573 / SHA-256 bcf3c51abd37fea815f45b20bd656556ec8d09c3f06ab308967bf252c5b8c71e; provenance 15070574079 / SHA-256 e905328bb69917028525b62fa8a507defd9b74226abba802a4db44e7d9c7ec1b.
+- Manufacturer binaries remain 0; metadata_only; no manufacturer SHA/signature/signer-chain/revision/SKU-scope validation. PR pipeline green is not manufacturer source acquisition. Q01–Q62 unsent; CRA only; SIL 3 excluded.
+
