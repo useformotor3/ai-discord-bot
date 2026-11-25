@@ -3930,3 +3930,12 @@ CRA only; SIL 3 excluded.
 - 실패 원인: Solution Square는 JS 앱 셸, LS메카피온 세부 페이지는 502/timeout, CE 검색결과는 모델별 그룹행만 제공. 첨부 URL을 추측하지 않고 모두 metadata_only 유지.
 - 제조사 SHA-256/서명/내부 revision/SKU 적용범위 검증 없음. Q01–Q62 미발송, 제조사 연락 없음. CRA only; SIL 3 제외.
 - 다음 단계: Solution Square의 실제 document identifier/detail/attachment가 공식적으로 노출되는지 재탐색하고, Ver1.3 목록행의 직접 링크 및 CE 개별 상세 링크만 공식 href로 확보한다. 바이너리 확보 시에만 해시·서명·revision·SKU scope 검사.
+
+
+## 2026-11-26 — CRA only: official source locator recheck
+- Confirmed main HEAD ac46c0dfbe068035fcf1422ebb96b1bc19c7c4de; pre-read report §114.7.13, evidence §72.11, status, README, session and log.
+- Solution Square page 14/search page 70 show iX700M manual updated 2026-09-16; direct open JS shell only, no document ID/detail/attachment.
+- Current opened LS Mecapion general manual list row 41 is Ver1.4; actual anchor 42 resolves wr_id=12652, detail fetch 502. Older cached empty-category snapshot row 41=Ver1.3 is inconsistent/stale snapshot evidence only. Ver1.3 target ID unknown; no guessing.
+- CE 220B/370B/300B/750B/550B/450B grouped index only; UKCA Drive Unit unlocated (not proof of absence); catalogue/CAD/STEP metadata only. Detail requests timeout/502.
+- No manufacturer binaries (0); no manufacturer SHA-256/signature/revision/SKU validation. Q01–Q62 unsent; no contact. CRA only; SIL 3 excluded.
+- Next: seek only actual official href/document IDs; if binary obtained, then validate SHA-256, signature chain, internal revision and SKU scope. Record all failures and do not infer IDs/URLs.

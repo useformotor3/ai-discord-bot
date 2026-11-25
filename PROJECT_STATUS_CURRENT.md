@@ -1,4 +1,13 @@
 
+## 2026-11-26 — CRA source locator recheck §114.7.14 / §72.12
+- Baseline main HEAD: ac46c0dfbe068035fcf1422ebb96b1bc19c7c4de; document-only branch `docs/cra-source-locator-recheck-20261126-v1`.
+- Solution Square page 14/search page 70 show iX700M user manual updated 2026-09-16; actual document ID/detail/attachment remains hidden behind JS app shell.
+- LS Mecapion current opened general manual list row 41 is Ver1.4; actual anchor resolves to wr_id=12652 (detail 502). Older cached empty-category result row 41=Ver1.3 is stale/conflicting snapshot evidence only. Ver1.3 target href/wr_id remains unknown; no inferred ID.
+- CE 220B/370B/300B/750B/550B/450B remain grouped index-only. UKCA Drive Unit not located (non-existence not proven); wr_id=12893 is Converter Unit only. Catalogue and CAD/STEP remain metadata_only.
+- Manufacturer binaries acquired: 0. No manufacturer SHA-256/signature/revision/SKU-scope validation. Q01–Q62 unsent; no manufacturer contact. CRA only; SIL 3 excluded.
+- Details: report §114.7.14 / evidence register §72.12.
+
+
 ## 2026-11-25 — 현재 기준: CRA 공식 원본 추적 §114.7.13 / §72.11 반영
 - 기준 main HEAD: 87c9c14831d848bcb129fb040f21336d7afda19f. 문서 전용 브랜치 `docs/cra-ver13-index-confirmation-20261125-v1`에서 갱신 중.
 - Ver1.3 공식 목록 행 새 확인: LS메카피온 빈 카테고리 목록 snapshot row 41 = iX700M DRIVE 400[V] Ver1.3, 2026-05-26. 전체/Servo 필터는 Ver1.4. Ver1.3 상세 href/wr_id는 미노출이므로 Unknown 유지.
