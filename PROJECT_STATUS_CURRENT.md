@@ -1,4 +1,12 @@
 
+## 2026-11-25 — 현재 기준: CRA 공식 원본 추적 §114.7.13 / §72.11 반영
+- 기준 main HEAD: 87c9c14831d848bcb129fb040f21336d7afda19f. 문서 전용 브랜치 `docs/cra-ver13-index-confirmation-20261125-v1`에서 갱신 중.
+- Ver1.3 공식 목록 행 새 확인: LS메카피온 빈 카테고리 목록 snapshot row 41 = iX700M DRIVE 400[V] Ver1.3, 2026-05-26. 전체/Servo 필터는 Ver1.4. Ver1.3 상세 href/wr_id는 미노출이므로 Unknown 유지.
+- Solution Square iX700M manual 2026-09-16 제목/목록 확인, document ID/detail/attachment URL 미확정(JS app shell). CE Drive Unit 220B/370B/300B/750B/550B/450B는 row 171–173 그룹행만 확인; 개별 ID/href 미확정. UKCA Drive Unit 검색 범위 내 미발견(부존재 증명 아님). KR/EN 카탈로그와 CAD/STEP는 메타데이터만 확인.
+- 신규 제조사 바이너리 0건; 전체 metadata_only; SHA-256/서명/내부 revision/SKU scope 검증 없음. Q01–Q62 draft_prepared_not_sent, 제조사 연락 없음. CRA only; SIL 3 제외.
+- 세부: 보고서 §114.7.13 / 증거등록부 §72.11. 이전 상단 요약(PR #282 / Run #1617)은 최신 main 기준보다 오래되어 이 항목으로 기준을 갱신한다.
+
+
 ## 2026-11-25 — 현재 기준: PR #282 / Run #1616 및 main push Run #1617 확인 완료
 - Current main HEAD: 127c9ec311e2939059dbff689c3b04f1208e2424.
 - PR #281/#282 merged. PR #282 exact HEAD 8eb522dad46a421f006ea5d0e75ee707f5b6cf8d; Run #1616 / 45550439993, pull_request, SUCCESS, job 138990088400, 15/15, 189 pytest, traceability 417, CRA PDFs 3/3, sources 10, Article 13(8)/Regulation (EU) 2025/2392 locators PASS, provenance PASS.
