@@ -1319,3 +1319,43 @@ Run #1607 archive ZIPs:
 Individual PDF content SHA-256: CRA-GUIDANCE-2026-5252 fe209c250e3d1f7599e42826d91963666951332927edcf511a2e79fe8d2f8234; CRA-GUIDANCE-OJ-2026-6013 40ca76caeb0108f5b97c8f373a95f590b453fe92bd45a483addf3326e48c1dc2; CRA-M606-C2026-7861-ANNEX 262b09596cb5cbe7d72a2c7789fb2512ee00db7f69082e7def2c8181b0f63276. These are file hashes, not archive hashes.
 
 Run #1605 failure was corrected: strict JSONL physical lines all parse; 412 records, 407 unique non-null event IDs and 5 retained legacy records without event_id. Manufacturer source files remain metadata_only; Q01–Q62 unsent; all product-specific Unknowns remain.
+
+
+## §70. 2026-11-25 — PR #278 / Run #1608 및 main push Run #1609 증거
+
+| 항목 | PR #278 exact-head | main push |
+|---|---|---|
+| Run ID | 45543506669 | 45543596033 |
+| SHA | de30e11867d22801412b2daba39190791565b390 | bb59d1b38e563d5b72db1e97522a4ae5b79c6d9b |
+| Event / branch | pull_request | push / main |
+| Result | SUCCESS | SUCCESS |
+| Job / steps | 138967457882 / 15/15 | 138967756419 / 15/15 |
+| pytest | 189 passed | 189 passed |
+| Traceability events | 413 | 413 |
+| CRA PDFs / official sources | 3/3 / 10 | 3/3 / 10 |
+| Provenance | PASS | PASS |
+
+PR #278 merged=true, squash merge SHA equals main HEAD. Diff 7 files (+100/-0), 1 ahead/0 behind, reviews 0, inline comments 0.
+
+### Artifact archive SHA-256
+- Run #1608 PDF ZIP artifact 14989604437, 3,070,565 bytes: 1d2de3fbf53fb8528a61330d2969e75b7995db3b6eb8818abe6f8a2db6ab15eb.
+- Run #1608 provenance ZIP artifact 14989674323, 2,565 bytes: bc8af92230d0f7667746633558c60e1522760cee0504c33cc302d50a7f7c860d.
+- Run #1609 PDF ZIP artifact 14990725944, 3,070,567 bytes: bbd048563aaa1cba86dbe40065a46cc1e583846137f38bb0380595b20dbbd8e9.
+- Run #1609 provenance ZIP artifact 14990043643, 2,565 bytes: 55b15ffc7bd5aada82abe42ffb266aec04228da05b29e7a5e34b2fd804589593.
+
+### 개별 PDF content SHA-256
+- CRA-GUIDANCE-2026-5252: fe209c250e3d1f7599e42826d91963666951332927edcf511a2e79fe8d2f8234.
+- CRA-GUIDANCE-OJ-2026-6013: 40ca76caeb0108f5b97c8f373a95f590b453fe92bd45a483addf3326e48c1dc2.
+- CRA-M606-C2026-7861-ANNEX: 262b09596cb5cbe7d72a2c7789fb2512ee00db7f69082e7def2c8181b0f63276.
+
+Run #1609 full job log: 459 lines; 15/15 steps success; compileall PASS; 189 pytest passed; traceability claims 13, interfaces 15, requirements 35, SEC 36, product evidence 15, M606 41, project log 413; 10 official sources and provenance upload PASS. ZIP digests are not individual PDF hashes.
+
+### 제조사 원본 취득 게이트
+- Manual Ver1.3/1.4 index conflict unresolved; original PDF unavailable.
+- Converter CE/UKCA declarations: attachment metadata only; binary/signature/SKU scope not inspected.
+- Solution Square iX700M manual: 2026-09-16 listing only; detail JS shell.
+- KR/EN catalogues: 10.7M each in listing; binaries unavailable.
+- CAD/STEP: official 2026-04-21 listing; binaries unavailable.
+- All remain metadata_only; no individual manufacturer-file content hash.
+
+Q01–Q62 unsent. Actual SKU, EU/EEA supply, economic operators, signed SKU DoC scope, BOM, exact MCU, SBOM, security configuration and CRA classification remain Unknown. CRA only; SIL 3 excluded.

@@ -3038,3 +3038,53 @@ PR #277은 expected-head squash merge로 e39c95cc993e39cd3950338f07e1ce9282cbc03
 Run #1607 logs 459 lines; all 15 returned steps completed/success. Official source canary fetched 10 allowlisted sources, Article 13(8) locator/quote and Regulation (EU) 2025/2392 core-functionality plus Annex I(10)/Annex II(1) locator checks passed. Node.js 20 deprecation warning remained non-failing. No operational workflow or product code changed.
 
 제조사 원본 바이너리는 계속 미취득이므로 manual Ver1.3/1.4 conflict, Converter CE/UKCA declarations, Solution Square manual, KR/EN catalogue, CAD/STEP 모두 metadata_only다. Q01–Q62 발송하지 않았다. Actual SKU, EU/EEA supply, economic operators, signed SKU-specific DoC coverage, BOM, exact MCU, SBOM, security configuration 및 CRA classification은 Unknown 유지. CRA only; SIL 3 제외.
+
+
+## §112. 2026-11-25 — PR #278 exact-head 및 main push Run #1609 최종 검증
+
+| 구분 | PR #278 exact-head CI | 병합 후 main push CI |
+|---|---|---|
+| Run / ID | #1608 / 45543506669 | #1609 / 45543596033 |
+| SHA | de30e11867d22801412b2daba39190791565b390 | bb59d1b38e563d5b72db1e97522a4ae5b79c6d9b |
+| Event / branch | pull_request | push / main |
+| Result | completed / success | completed / success |
+| Job | 138967457882 | 138967756419 |
+| Steps | 15/15 | 15/15 |
+| pytest | 189 passed | 189 passed |
+| Traceability events | 413 | 413 |
+| Official CRA PDFs / sources | 3/3 / 10 | 3/3 / 10 |
+| Article 13(8), Regulation (EU) 2025/2392 locators | PASS | PASS |
+| Provenance manifest | JSON round-trip / upload PASS | JSON round-trip / upload PASS |
+
+PR #278 API read-back confirms state=closed, merged=true, merge method=squash, merge_commit_sha equal to main HEAD bb59d1b38e563d5b72db1e97522a4ae5b79c6d9b. PR exact HEAD was de30e11867d22801412b2daba39190791565b390. Diff: 7 files, +100/-0; branch 1 commit ahead / 0 behind; reviews 0 and inline comments 0.
+
+Run #1609 was independently identified using the Actions runs collection filtered by exact head_sha=bb59d1b38e563d5b72db1e97522a4ae5b79c6d9b and event=push. The run API confirms head_branch=main, status=completed, conclusion=success. The main branch ref read-back equals the same SHA. Job 138967756419 returned 15 steps, all success; full job log is 459 lines. Compileall PASS; pytest 189 passed; traceability claims 13, interfaces 15, requirements 35, SEC 36, EVD_SEC crosswalk 16, linked SEC 36, product evidence 15, M606 mapping 41, project_log_events 413 (408 modern IDs, 5 legacy). The official source canary fetched 10 allowlisted sources and passed Article 13(8), Regulation (EU) 2025/2392 core-functionality and Annex I(10)/Annex II(1) locators.
+
+### 112.1 Run #1608 artifact archive digests
+- CRA PDF ZIP artifact ID 14989604437, 3,070,565 bytes, archive SHA-256: 1d2de3fbf53fb8528a61330d2969e75b7995db3b6eb8818abe6f8a2db6ab15eb.
+- Provenance ZIP artifact ID 14989674323, 2,565 bytes, archive SHA-256: bc8af92230d0f7667746633558c60e1522760cee0504c33cc302d50a7f7c860d.
+
+### 112.2 Run #1609 artifact archive digests
+- CRA PDF ZIP artifact ID 14990725944, 3,070,567 bytes, archive SHA-256: bbd048563aaa1cba86dbe40065a46cc1e583846137f38bb0380595b20dbbd8e9.
+- Provenance ZIP artifact ID 14990043643, 2,565 bytes, archive SHA-256: 55b15ffc7bd5aada82abe42ffb266aec04228da05b29e7a5e34b2fd804589593.
+
+### 112.3 개별 CRA PDF content SHA-256
+Run #1609 logs에서 개별 파일을 각각 취득·계산한 값:
+- CRA-GUIDANCE-2026-5252: 1,190,726 bytes, 84 pages; fe209c250e3d1f7599e42826d91963666951332927edcf511a2e79fe8d2f8234.
+- CRA-GUIDANCE-OJ-2026-6013: 2,709,282 bytes, 61 pages; 40ca76caeb0108f5b97c8f373a95f590b453fe92bd45a483addf3326e48c1dc2.
+- CRA-M606-C2026-7861-ANNEX: 151,267 bytes, 6 pages; 262b09596cb5cbe7d72a2c7789fb2512ee00db7f69082e7def2c8181b0f63276.
+
+ZIP archive digest는 압축 컨테이너의 hash이고 위 PDF SHA-256은 개별 파일의 content hash다. 서로 대체할 수 없다. Provenance ZIP도 archive digest만 확인했으며 내부 JSON 파일의 별도 hash를 주장하지 않는다.
+
+### 112.4 비실패 경고
+Node.js 20, punycode 및 url.parse deprecation warning이 있었으나 실패 step은 없었다. 이번 PR은 문서 전용 7-file update이며 운영 workflow, main.py, secrets, API cadence는 변경하지 않았다.
+
+### 112.5 제조사 자료 재확인 및 증거 한계
+2026-11-25 재검색 결과는 게시 인덱스/첨부 메타데이터 수준이다.
+- LS메카피온 매뉴얼: 기본 목록 및 Servo 필터는 Ver1.4, 명시적 빈 category(sca=) 목록은 Ver1.3을 표시한다. 같은 게시일 2026-05-26이며 상세/원본 PDF를 취득하지 못했다. revision conflict는 unresolved.
+- Converter CE/UKCA: iX700MCV, 480 Vac, 15/37/55/75 kW 코드군, 첨부명 및 크기(CE 234.4K, UKCA 224.1K)를 확인했다. 서명된 원본 선언서 및 실제 SKU별 적용범위는 확인하지 못했다.
+- Solution Square: iX700M 사용 설명서 목록과 2026-09-16 업데이트 표시는 확인했으나 상세는 JavaScript shell만 반환했다.
+- KR/EN 카탈로그: 각각 10.7M 첨부 메타데이터를 확인했으나 원본 파일은 미취득.
+- 2D CAD / 3D STEP: 2026-04-21 게시 목록을 확인했으나 상세 및 바이너리는 미취득.
+
+따라서 위 제조사 자료는 모두 metadata_only이며 개별 content hash 미확보다. Q01–Q62는 draft_prepared_not_sent이며 발송하지 않았다. Actual SKU, EU/EEA supply, economic operators, signed SKU-specific DoC coverage, BOM, exact MCU, SBOM, security configuration, CRA classification, vulnerability handling 및 support period는 계속 Unknown. CRA only; SIL 3 제외.
