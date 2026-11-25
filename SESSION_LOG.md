@@ -3898,3 +3898,11 @@ CRA only; SIL 3 excluded.
 - Manufacturer binaries acquired: 0. All remain metadata_only; no per-file SHA-256, PDF signature/signer/certificate chain, internal revision, or SKU scope checked. No guessed attachment URL.
 - Q01–Q62 draft_prepared_not_sent; no manufacturer contact. Product-specific unknowns retained. CRA only; SIL 3 excluded.
 - Sources: https://sol.ls-electric.com/kr/ko/product/category/4?pageNumber=4 ; https://sol.ls-electric.com/kr/ko/newSearch?pageNumber=70 ; https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&sca=CE ; https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&page=4&wr_id=12888 ; https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&page=3&wr_id=12893 ; https://www.lsmecapion.com/bbs/board.php?bo_table=catalog&wr_id=12110 ; https://www.lsmecapion.com/bbs/board.php?bo_table=drawing&sca=Servo+Drive
+
+## 2026-11-25 — iX700M CE Drive Unit 상세 식별자 및 UKCA 재검색
+- 기준 main d8b3ec43024368d76175a20742e42a036bf88e9c; §114.7.9 / §72.7 선행 검토.
+- 공식 CE index rows 171–173에서 220B, 370B/300B, 750B/550B/450B 그룹 제목·게시일 확인. 개별 detail ID/href/첨부명은 검색 결과에서 미노출. 150B wr_id=12888만 상세 메타데이터 확인.
+- UKCA index에서 iX700M Drive Unit 개별 항목은 검색 범위 내 미노출; 부존재 단정 금지. MCV Converter CE/UKCA 상세 링크는 확인되나 직접 open은 timeout.
+- 실패 원인: 공식 detail pages timeout, 검색 index snippets omit per-row href, Solution Square JS app shell only. No guessed URL. 신규 제조사 바이너리 0; all metadata_only; no hash/signature/internal revision/SKU scope.
+- Q01–Q62 draft_prepared_not_sent; no manufacturer contact. CRA only; SIL 3 excluded.
+- Sources: https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&sca=CE ; https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&page=4&wr_id=12888 ; https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&sca=CE&wr_id=12886 ; https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&page=3&wr_id=12893 ; https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&page=1&sca=UKCA&spt=-12859 ; https://www.lsmecapion.com/bbs/board.php?bo_table=drawing&sca=Servo+Drive
