@@ -3706,3 +3706,11 @@ CRA only; SIL 3 excluded.
 - main push Run #1588 / 45532289060 SUCCESS: exact main SHA `660eb6d20e62f772272c03971dcd773b03a703f5`, event=push, branch=main, completed/success, 15/15 steps, 189 pytest passed, traceability 403, PDF 3/3 hash, provenance 10-source round-trip/upload.
 - Direct Actions API query `actions/runs?head_sha={SHA}&event=push&per_page=100` resolves prior wrapper blind spot.
 - iX700M manual listing Ver1.4 vs alternate indexed Ver1.3 conflict unresolved; all requested original manufacturer binaries remain metadata_only/unacquired. Q01–Q62 not sent; Unknown fields preserved. CRA only; SIL 3 excluded.
+
+
+## 2026-11-25 — PR #271 merge / main push Run #1590 closeout
+- PR #271 exact head `47e36dadd2c61a891378a70b168a5cd5e0262c72`, Run #1589 / 45536881236 SUCCESS, 15/15 steps, 189 pytest passed, traceability 404, CRA PDF 3/3 fetch/hash, 10-source provenance JSON round-trip/upload.
+- Expected-head squash merge/main SHA `c9532486ad2aca0ba9538eeffb42d30f76d73ea0`.
+- Post-merge main push Run #1590 / 45537026894 SUCCESS, event=push, exact merge SHA, 15/15 steps, 189 passed, traceability 404, CRA PDF 3/3, provenance 10-source PASS/upload.
+- README and SESSION_LOG now explicitly include PR #271 and post-merge Run #1590; previous main push SUCCESS records remain in history.
+- iX700M manual Ver1.4 vs Ver1.3 index conflict and binary acquisition failures documented in report §104/evidence §62. Q01–Q62 not sent. Unknowns unchanged. CRA only; SIL 3 excluded.
