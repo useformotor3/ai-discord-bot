@@ -1395,3 +1395,12 @@ Annex I Part II의 실무 요구사항은 machine-readable SBOM(최소 top-level
 - PR diffs #272 6 files(+70/-0), #273 7(+98/-0), #274 7(+87/-0); reviews/threads 0.
 - iX700M official manual views still conflict: default/Servo search views Ver1.4, direct empty-category page Ver1.3; original binary not obtained. Solution Square iX700M manual update 2026-09-16 confirmed in search index only. Converter DoCs/catalogue/CAD STEP remain metadata_only.
 - Q01–Q62 not sent; product SKU/supply/operators/signed DoC/BOM/MCU/SBOM/security/classification Unknown. CRA only; SIL 3 excluded. See report §107 and evidence register §65.
+
+
+## 2026-11-25 — PR #275 exact-head CI 완료 (병합 전)
+- PR #275 HEAD `9231c47c88ff7fe9fc9ce1022eb3023e6af244ba`; Run #1597 / 45540553259 completed/success, 15/15 steps, 189 pytest passed.
+- Traceability claims 13, interfaces 15, requirements 35, SEC 36, product evidence 15, M606 mapping 41, PROJECT_LOG events 408.
+- Official CRA PDFs 3/3, official sources 10, Article 13(8) 및 Regulation 2025/2392 locators, 10-source provenance JSON manifest PASS.
+- Artifacts PDF 14988832738 (SHA-256 f3a29c9b…7786861), provenance 14989265975 (SHA-256 61736ebe…76fabf).
+- PR diff 7 files(+111/-0), reviews/threads 0. JSONL branch count 408, invalid 0. PR is not merged yet; any further documentation commit requires new exact-head CI before merge.
+- Manufacturer binaries remain metadata_only; Q01–Q62 not sent; product facts Unknown. CRA only; SIL 3 excluded.
