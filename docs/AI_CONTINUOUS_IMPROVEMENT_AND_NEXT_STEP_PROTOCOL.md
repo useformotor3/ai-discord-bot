@@ -190,3 +190,9 @@ main `660eb6d20e62f772272c03971dcd773b03a703f5`의 push Run #1588 / ID `45532289
 - PR #272 exact-head Run #1591 / 45537296095 SUCCESS, main branch Run #1592 / 45537422906 job SUCCESS; both 15/15 steps, 189 pytest passed, traceability 405, CRA PDFs 3/3, official source provenance 10건 round-trip/upload PASS.
 - Main run artifact metadata confirms `head_branch=main` and exact merge SHA `eb5894767cebdc7f956e31252b2d1831ef554a85`. Job/artifact wrapper가 event 필드를 제공하지 않는 경우에는 그 한계를 기록하고 event property를 직접 조회했다고 주장하지 않는다.
 - PR #272 merge 후 보고서 §105, 증거등록부 §63, 상황판, README, SESSION_LOG, append-only PROJECT_LOG 동기화는 후속 PR에서 수행한다.
+
+
+### 2026-11-25 PR #273 post-merge 상태 기록
+- PR #273 exact-head Run #1593 SUCCESS (15/15, 189 pytest, traceability 406, PDF 3/3, provenance 10-source upload) 후 expected-head squash merge SHA `ce36f290f34a6ce391b91cf3aa6742f48c93e44a`.
+- Post-merge main push는 commit-run wrapper가 PR event만 반환하고 combined status가 empty여서 UNVERIFIED. Direct Actions run-list가 불가하면 성공/실패를 추정하지 않고, run ID도 만들지 않는다.
+- 다음 동기화 PR에서 이 상태와 공식 제조사 인덱스 재확인 결과를 보고서·증거등록부·상황판·README·SESSION_LOG·PROJECT_LOG에 보존한다.
