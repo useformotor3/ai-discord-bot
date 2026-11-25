@@ -3960,3 +3960,12 @@ CRA only; SIL 3 excluded.
 - Failure causes: SPA shell; 502/timeouts; cache/filter snapshot conflict; previous-post target href omitted. No guessed URLs/IDs.
 - Q01–Q62 unsent; no manufacturer contact. CRA only; SIL 3 excluded.
 
+
+
+## 2026-11-26 — PR #294 exact-head and post-merge main push closeout
+- PR #294 exact HEAD `774bfc45f2ca152d18b8236987cb616ab80f9a7f`; Run #1646 / 45718668986 SUCCESS 25/25, 189 pytest, traceability 431, CRA PDFs 3/3, official sources 10, provenance PASS.
+- Expected-head squash merge/current main `f7fe9c1151afcb210dbb0c9d589e6d22b7aec603`.
+- Main push Run #1647 / 45718795105 independently verified exact SHA + push + main + completed/success; 25/25, 189 pytest, traceability 431, PDF 3/3, official sources 10, provenance upload PASS.
+- Run #1646 PDF/provenance artifacts 15071491072 / 15070583873; Run #1647 artifacts 15071680573 / 15070574079. SHA-256 recorded in report §114.7.17 and evidence §72.15.
+- Manufacturer binary acquisition remains 0; metadata_only; no manufacturer SHA/signature/revision/SKU-scope validation. Q01–Q62 unsent; CRA only; SIL 3 excluded.
+

@@ -3474,3 +3474,14 @@ Run #1617 artifacts:
 - Q01~Q62 draft_prepared_not_sent, 제조사 연락 없음. CRA only; SIL 3 제외.
 - 공식 출처: https://lsmecapion.com/bbs/board.php?bo_table=manual&sca=Servo&wr_id=12651 ; https://lsmecapion.com/bbs/board.php?bo_table=manual ; https://lsmecapion.com/bbs/board.php?bo_table=manual&sca= ; https://lsmecapion.com/bbs/board.php?bo_table=manual&sca=Servo ; https://ssq.ls-electric.com/kr/ko/product/category/4?pageNumber=14 ; https://sol.ls-electric.com/kr/ko/newSearch?pageNumber=70 ; https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&sca=CE ; https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&page=3&wr_id=12893 ; https://www.lsmecapion.com/bbs/board.php?bo_table=catalog&wr_id=12110 ; https://www.lsmecapion.com/bbs/board.php?bo_table=drawing&sca=Servo+Drive.
 
+
+
+### 114.7.17 2026-11-26 — PR #294 병합 및 exact-head/main push CI 종결
+- PR #294: https://github.com/useformotor3/ai-discord-bot/pull/294. Base main `3d40b386d43d172f4f0d9d09948e5a01ef372cd4`; PR exact HEAD `774bfc45f2ca152d18b8236987cb616ab80f9a7f`; exact-head Run #1646 / ID 45718668986 SUCCESS, 25/25 steps, compile PASS, CRA traceability PASS (13 claims, 15 interfaces, 35 requirements, 36 SEC, 41 M/606 items, PROJECT_LOG 431 events), pytest 189 passed.
+- PR exact-head official CRA canaries: 3/3 Commission PDFs fetched and SHA-256 checked; 10 allowlisted official sources fetched; consolidated CRA corrigenda, Article 13(8), Regulation 2025/2392 core-functionality and Annex I(10)/Annex II(1) locators PASS; provenance manifest 10 records round-trip/upload PASS.
+- Expected-head squash merge with expected PR head `774bfc45f2ca152d18b8236987cb616ab80f9a7f`; merge SHA/current main `f7fe9c1151afcb210dbb0c9d589e6d22b7aec603`.
+- Main push Run #1647 / ID 45718795105 verified independently: exact merge SHA + event=push + branch=main + completed/success; 25/25 steps, 189 pytest, traceability 431, CRA PDFs 3/3 hashed, 10 official sources and provenance manifest PASS.
+- Artifacts Run #1646: PDF ZIP ID 15071491072, 3,070,566 bytes, SHA-256 `db1ff28f7ef29678b1125143f57059b1500e0e2a08ed0a2f1675b045c5cc39ef`; provenance ZIP ID 15070583873, 2,565 bytes, SHA-256 `84bff376233110677ba498f8b320354c7a0ddcb38d927a4e6963bb593fd8063e`.
+- Artifacts main Run #1647: PDF ZIP ID 15071680573, 3,070,565 bytes, SHA-256 `bcf3c51abd37fea815f45b20bd656556ec8d09c3f06ab308967bf252c5b8c71e`; provenance ZIP ID 15070574079, 2,565 bytes, SHA-256 `e905328bb69917028525b62fa8a507defd9b74226abba802a4db44e7d9c7ec1b`.
+- Manufacturer source outcome is unchanged: no LS Mecapion/Solution Square original binaries acquired; all manufacturer sources metadata_only. PR CI success validates the CRA research pipeline, not manufacturer PDF acquisition. Ver1.3/Ver1.4 conflict, missing locators, SKU/supply/operator/BOM/MCU/security Unknowns remain. Q01–Q62 unsent. CRA only; SIL 3 excluded.
+

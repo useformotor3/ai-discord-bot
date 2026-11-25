@@ -1481,3 +1481,7 @@ Annex I Part II의 실무 요구사항은 machine-readable SBOM(최소 top-level
 
 > **2026-11-26 official locator retry (§114.7.16 / §72.14):** PEGA2 Ver1.3 previous-post title is indexed but actual target anchor href/wr_id remains unavailable; Ver1.3/Ver1.4 snapshots conflict. Ver1.4 wr_id=12652 confirmed, detail 502. Solution Square iX700M 2026-09-16 title/date confirmed, JS shell hides ID/detail/attachment. CE rows 171–173 remain grouped; individual IDs not recovered (row170 150B wr_id=12888 is separate; no inference). UKCA Drive Unit not located; wr_id=12893 is Converter Unit. KR/EN catalogue and CAD/STEP metadata only. No manufacturer binaries; all metadata_only; no hash/signature/revision/SKU validation. Q01–Q62 unsent. CRA only; SIL 3 excluded.
 
+
+
+> **PR #294 / main push Run #1647 closeout (2026-11-26):** PR exact HEAD 774bfc45f2ca152d18b8236987cb616ab80f9a7f passed Run #1646 / 45718668986 (25/25, 189 pytest, traceability 431, CRA PDFs 3/3, 10 official sources, provenance PASS), then expected-head squash merged as f7fe9c1151afcb210dbb0c9d589e6d22b7aec603. Main push Run #1647 / 45718795105 independently confirmed exact SHA + event=push + branch=main + completed/success, 25/25, 189 pytest, traceability 431, PDFs 3/3, sources 10, provenance PASS. Artifact IDs/digests and details in report §114.7.17 / evidence §72.15. Manufacturer originals remain unacquired, metadata_only; Ver1.3/Ver1.4 conflict unresolved; Q01–Q62 unsent. CRA only; SIL 3 excluded.
+
