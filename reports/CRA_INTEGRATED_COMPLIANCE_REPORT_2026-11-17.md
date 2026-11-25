@@ -3276,10 +3276,20 @@ Run #1617 artifacts:
 - Non-fatal warnings: Node.js 20 action deprecation notices and Node punycode/url.parse deprecation warnings; no job step failed.
 - Run URL: https://github.com/useformotor3/ai-discord-bot/actions/runs/45551394041
 
-#### 114.7.3 Run #1619 / post-merge main push verification
-- Run #1619 was not independently identified by run ID in the available GitHub Actions lookup. The commit-run wrapper returns PR-triggered runs only; combined status for merge SHA 0821dac7... returned an empty statuses array. Empty combined status is not proof of success or failure.
-- Therefore Run #1619 ID, event=push, branch=main, exact head SHA, job/steps, complete logs, artifacts and digests remain UNVERIFIED. Do not infer them from Run #1618 or from merged=true.
-- PR #283 is already merged as 0821dac7...; no further merge action is required for PR #283. Post-merge main push CI must be verified separately through an Actions run-list lookup filtered by exact SHA + event=push + branch=main.
+#### 114.7.3 Run #1619 / post-merge main push — exact 검증 완료
+- GitHub Actions 전체 run collection을 workflow ID 418086699에서 조회하고 exact SHA + event=push 필터로 Run #1619를 식별했다.
+- Run #1619 / ID 45551493565, workflow “Isolated Python Tests”, event=push, branch=main, head SHA 0821dac7a336848c1609c4c663860be90eb17337, completed/success.
+- Job 138993472609 “Source integrity, compile and pytest”: completed/success. 전체 로그 459줄, 반환된 15개 Step 모두 completed/success.
+- pytest 189 passed. CRA traceability 418 events (413 modern IDs + 5 legacy), 공식 CRA PDFs 3/3 취득 및 개별 해시, 공식 CRA source canary 10/10, Article 13(8) 및 Regulation (EU) 2025/2392 locator PASS, provenance 10-record round-trip/upload PASS.
+- 개별 CRA PDF 콘텐츠 SHA-256은 Run #1618과 동일하게 CRA-GUIDANCE-2026-5252 fe209c250e3d1f7599e42826d91963666951332927edcf511a2e79fe8d2f8234; CRA-GUIDANCE-OJ-2026-6013 40ca76caeb0108f5b97c8f373a95f590b453fe92bd45a483addf3326e48c1dc2; CRA-M606-C2026-7861-ANNEX 262b09596cb5cbe7d72a2c7789fb2512ee00db7f69082e7def2c8181b0f63276.
+- Run #1619 PDF ZIP artifact 14993487646, 3,070,565 bytes, archive SHA-256 b65d54aa81ccf92eaff22a11bef4f2a5934d730b77f5e4d647e8e13b3b689e38; provenance ZIP artifact 14994630545, 2,565 bytes, archive SHA-256 f8e6b8d28350464ec0916553da120190f896b5da1bb3aa22a1c5e210ce553c5d. Log upload digest and GitHub artifact metadata digest 일치. ZIP archive hashes와 개별 PDF content hashes를 혼동하지 않는다.
+- Exact merge SHA + push + main 조건이 모두 일치한다. PR #283의 PR exact-head Run #1618과 별도로 post-merge main push Run #1619까지 SUCCESS 확인 완료.
+- Run URL: https://github.com/useformotor3/ai-discord-bot/actions/runs/45551493565
+
+#### 114.7.5 후속 동기화 PR #284 exact-head CI
+- PR #284 base main SHA 0821dac7a336848c1609c4c663860be90eb17337; exact PR HEAD cf6dec50e9ff952c33491b54aca6db8476151a97. Run #1620 / ID 45552496961, event=pull_request, job 138996681495, SUCCESS, 15/15, 475 log lines, 189 pytest, traceability 419 (414 modern IDs + 5 legacy), CRA PDFs 3/3, official sources 10, Article 13(8)/2025/2392 locators PASS, provenance PASS.
+- Run #1620 PDF ZIP artifact 14993483515, 3,070,564 bytes, archive SHA-256 a9acd2d18b9f3fc88d9b1dc04fb893d1472b3416f2440a35238c1cf4941e9456; provenance ZIP artifact 14993882353, 2,565 bytes, archive SHA-256 7db26d3569b3582853fce0c833f6f776f68e7d74e0851e28b73d70a7d3c2810f. ZIP digests are not individual PDF hashes.
+- PR #284 remains open at this record's point; exact-head CI passed. Expected-head squash merge and post-merge main push verification are subsequent gates, not inferred from PR CI.
 
 #### 114.7.4 LS메카피온 공식 원본 취득 재시도
 - Official manual listing currently exposes “iX700M DRIVE 400[V] 매뉴얼 Ver1.4”, Servo filter view also Ver1.4 (posted 2026-05-26). A separate official list/index snapshot previously captured Ver1.3 for the same displayed date/item. This is an unresolved listing/cache divergence, not proof of the internal revision of a PDF. Preserve Ver1.3/Ver1.4 conflict.
