@@ -2802,3 +2802,34 @@ Actual SKU, EU/EEA supply, economic operators, signed SKU-specific EU DoC covera
 - 제조사 질의서 v2.0 Q01–Q62는 62개 unique/sequential, `draft_prepared_not_sent`. 발송·회신 없음.
 - Actual SKU, EU/EEA supply, economic operators, signed SKU-specific EU DoC coverage, BOM, exact MCU, SBOM, security configuration, CRA classification, vulnerability handling, security update/support period는 계속 Unknown.
 - CRA only; SIL 3 excluded.
+
+
+## §105. 2026-11-25 — PR #272 및 post-merge main Run #1592 검증
+
+### 105.1 PR #272 exact-head CI
+- PR #272 exact HEAD `c273e6511012ec6f7d29c87ab71c6da870c2cf46`; Run #1591 / ID `45537296095`, event=pull_request, completed/success.
+- Job `Source integrity, compile and pytest`: 반환된 전체 step 15/15 success; compileall 통과; complete repository pytest 189 passed.
+- CRA traceability PASS: claims=13, interfaces=15, requirements=35, SEC=36, EVD_SEC_crosswalk=16, crosswalk_SEC_linked=36, product_evidence_records=15, linked_claims=13, bidirectional_links=true, M606_mapping_items=41, project_log_events=405.
+- CRA Commission PDF 3/3 fetch/hash. 공식 allowlisted source 10개 fetch, Article 13(8) paragraph locator/quote 및 Implementing Regulation (EU) 2025/2392 Annex I category 10·Annex II category 1 locator PASS. Provenance manifest JSON round-trip 및 upload PASS.
+- Artifacts: PDF ID 14987053784, 3,070,566 bytes, ZIP SHA-256 `3a5e66e5ddde36b6debbc5b29fd3b94c5e13ab90839485b6c8d5cdafd423f7af`; provenance ID 14987088640, 2,565 bytes, ZIP SHA-256 `d504115a03a541f57109f5da37c23b7af9d75635e670fe099625bf8e9f704d92`.
+
+### 105.2 PR diff/review 및 병합
+- Base main `c9532486ad2aca0ba9538eeffb42d30f76d73ea0`; PR diff 6 files, +70/-0, 6 ahead / 0 behind. Review submissions 0, inline review threads 0.
+- PR #272는 exact HEAD `c273e6511012ec6f7d29c87ab71c6da870c2cf46`를 expected-head로 squash merge. Merge SHA `eb5894767cebdc7f956e31252b2d1831ef554a85`; main read-back 일치.
+
+### 105.3 병합 후 main branch CI
+- Main branch Run #1592 / ID `45537422906`, job `Source integrity, compile and pytest`, completed/success; 전체 반환 step 15/15 success, pytest 189 passed.
+- Traceability project_log_events=405, CRA PDFs 3/3 fetch/hash, 공식 source 10개, Article 13(8) 및 2025/2392 locator canary PASS, provenance JSON round-trip/upload PASS.
+- Artifact metadata는 head_branch=main 및 head_sha=`eb5894767cebdc7f956e31252b2d1831ef554a85`를 확인한다. 현재 job/artifact connector 응답은 event 필드를 반환하지 않으므로 event 속성 자체를 별도 API 필드로 read-back했다고 과장하지 않는다.
+- Artifacts: PDF ID 14986973967, 3,070,568 bytes, ZIP SHA-256 `ac77027d86715aaeb9695aaedd7f3bc88514e4f93705dfcae25ed0e49297a3a0`; provenance ID 14987143761, 2,565 bytes, ZIP SHA-256 `d670de307d2299a13d72d1c75bad0e301ed8743d3303471ce201a304646955aa`. 네 ZIP artifact를 내려받아 SHA-256을 재계산했고 GitHub digest와 일치했다.
+
+### 105.4 제조사 원본 재취득 시도와 증거 경계
+- iX700M manual Servo list는 Ver1.4 (2026-05-26), 다른 indexed snapshot은 Ver1.3 (같은 날짜). wr_id=12652 detail timeout; PDF binary·표지·revision history·content SHA-256 없음.
+- Converter CE wr_id=12886 `CE_DoC-LVDEMC iX700MCV.pdf` (234.4K metadata), Converter UKCA wr_id=12893 `UKCA_DoC_LVDEMC iX700MCV.pdf` (224.1K metadata); 원본 PDF 취득 실패.
+- KR/EN catalogue wr_id=12110 각 10.7M metadata; 원본 PDF 미취득. CAD wr_id=12455의 2D CAD/3D STEP 게시 metadata 확인, 상세 timeout 및 원본 미취득.
+- 이번 세션의 exact official detail URL 재접근 및 웹 검색도 접근 불가/검색 결과 없음. 모든 항목 `metadata_only`; 원본 바이너리 및 content SHA-256을 확보했다고 주장하지 않는다.
+
+### 105.5 질의서와 Unknown
+- Q01–Q62는 62개 질문 초안이며 `draft_prepared_not_sent`; 발송·접수·회신 없음.
+- actual SKU, EU/EEA supply, economic operators, signed SKU-specific EU DoC coverage, BOM, exact MCU, SBOM, security configuration, CRA classification, vulnerability handling, security update/support period는 Unknown 유지.
+- CRA only; SIL 3 excluded.
