@@ -2860,3 +2860,46 @@ Actual SKU, EU/EEA supply, economic operators, signed SKU-specific EU DoC covera
 - Q01–Q62 remains `draft_prepared_not_sent`; 발송·접수·회신 없음.
 - Actual SKU, EU/EEA supply, economic operators, signed SKU-specific EU DoC coverage, BOM, exact MCU, SBOM, security configuration, CRA classification, vulnerability handling, security update/support period는 Unknown.
 - CRA only; SIL 3 excluded.
+
+
+## §107. 2026-11-25 — PR #272~#274 및 main push exact-head CI 최종 검증
+
+### 107.1 Actions runs 조회 경로
+기존 GitHub connector의 `fetch_commit_workflow_runs`는 pull_request 이벤트를 반환하는 제한이 있어 main push 실행을 누락했다. GitHub Actions REST runs collection에서 SHA와 event를 함께 필터링해야 한다.
+
+```text
+GET /repos/useformotor3/ai-discord-bot/actions/runs?head_sha={exact_commit_sha}&event=push&per_page=100
+Workflow: .github/workflows/tests.yml (ID 418086699)
+```
+
+응답의 `head_sha`, `head_branch=main`, `event=push`, `status=completed`, `conclusion=success`를 확인하고 각 run의 jobs, 모든 steps, logs, artifacts를 별도로 조회한다. PR CI와 post-merge push CI는 별도 증거다.
+
+### 107.2 세 PR 및 병합 후 main push 결과
+
+| PR | PR exact-head run | PR HEAD | Expected-head squash merge SHA | main push run | main push 결과 |
+|---|---|---|---|---|---|
+| #272 | #1591 / 45537296095 | `c273e651…` | `eb589476…` | #1592 / 45537422906 | SUCCESS |
+| #273 | #1593 / 45539484334 | `c6792792…` | `ce36f290…` | #1594 / 45539588559 | SUCCESS |
+| #274 | #1595 / 45539787326 | `b95b64ae…` | `ea1c2b31…` | #1596 / 45539874073 | SUCCESS |
+
+모든 PR exact-head run 및 main push run은 단일 job `Source integrity, compile and pytest`, 반환된 step 15/15 SUCCESS, compile 성공, pytest 189 passed, CRA PDF 3/3 fetch/hash, 공식 CRA source 10건 및 provenance manifest JSON round-trip/upload 성공을 확인했다.
+
+Traceability 로그의 `project_log_events`는 각각 405(PR #272 및 main #1592), 406(PR #273 및 main #1594), 407(PR #274 및 main #1596)이다. 모든 run의 job log digest와 artifact API digest를 교차 확인했다.
+
+### 107.3 PR diff/review 및 artifact evidence
+- PR #272: 6 files, +70/-0, reviews 0, threads 0; expected-head `c273e651…` squash merge `eb589476…`.
+- PR #273: 7 files, +98/-0, reviews 0, threads 0; expected-head `c6792792…` squash merge `ce36f290…`.
+- PR #274: 7 files, +87/-0, reviews 0, threads 0; expected-head `b95b64ae…` squash merge `ea1c2b31…`.
+
+각 PR 및 post-merge main run의 PDF/provenance artifact IDs와 SHA-256은 PROJECT_LOG event에 구조화해 기록한다. Artifact API digest와 job log에 기록된 ZIP digest는 일치한다. (이번 교차검증에서 모든 신규 artifact ZIP을 독립 재다운로드한 것은 아니므로, 이를 별도 독립 파일 재해시로 표현하지 않는다.)
+
+### 107.4 iX700M 제조사 원본 자료 재확인
+- 매뉴얼: 기본 목록/Servo 필터 검색 인덱스는 Ver1.4, 2026-05-26을 표시한다. 반면 공식 `sca=` 빈 카테고리 페이지를 직접 열어 확인한 row 41은 Ver1.3, 동일 날짜를 표시한다. detail wr_id=12652는 timeout. 따라서 현재 확인 가능한 공식 인덱스 뷰 사이에 버전 표기 불일치가 있으며, 실제 PDF 표지·본문·개정이력·SHA-256을 얻기 전까지 정답 버전을 확정하지 않는다.
+- Solution Square: 공식 Motion & Servo 목록에 `iX700M 사용 설명서` 업데이트 2026-09-16 항목이 검색 색인에서 재확인된다. 상세 URL은 JavaScript app shell만 반환해 파일명·버전·본문·binary 미확보.
+- Converter CE/UKCA: iX700MCV 명칭, 각 첨부파일명·크기·2026-04-30 게시 메타데이터만 확인. 실제 DoC 서명, 발행자, 적용 SKU 범위 및 PDF binary 미확인.
+- KR/EN 카탈로그: 각 10.7M 게시 메타데이터 확인; PDF binary 미확인.
+- 2D CAD/3D STEP: 공식 목록의 iX700M 항목/2026-04-21 메타데이터 확인; 상세 wr_id=12455 timeout, CAD/STEP binary 미확인.
+- 위 모든 제조사 자료는 `metadata_only`; 원본 content SHA-256 미확보.
+
+### 107.5 Q01–Q62 및 Unknown 통제
+Q01–Q62는 `draft_prepared_not_sent`; 발송·접수·회신을 주장하지 않는다. Actual SKU, EU/EEA 공급, 경제운영자, signed SKU-specific EU DoC coverage, BOM, exact MCU, SBOM, security configuration, CRA classification, vulnerability handling, security update/support period는 증거 확보 전까지 Unknown이다. CRA only; SIL 3 excluded.
