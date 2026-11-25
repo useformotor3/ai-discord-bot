@@ -3874,3 +3874,9 @@ CRA only; SIL 3 excluded.
 - Main push Run #1623 / 45552908709, exact merge SHA + event=push + branch=main SUCCESS, job 138998000787, 15/15, 459 log lines, 189 pytest, traceability 420, PDFs 3/3, sources 10, legal locators/provenance PASS.
 - Run #1623 PDF ZIP 14993579506 / 3,070,566 B / 7a6015c038b6e8ce8f47d7cc41c6bee18d7b55bdf624dcb1c9c5a396069a324d; provenance ZIP 14993828989 / 2,564 B / 4ffdbcfe5d99425f7a26cdd82cb6a6013e749d19e124e195cb6c1d376b881a43.
 - Manufacturer originals remain metadata_only; Ver1.3/1.4 conflict unresolved; no inquiry sent; Q01–Q62 unsent. CRA only; SIL 3 excluded.
+
+
+## 2026-11-25 — Run #1625 and iX700M source recheck
+- Verified main HEAD `1b3d253211048411277c4ed04d8c6e0f60263602`; Run #1625 / 45553259298 exact SHA + event=push + branch=main, SUCCESS, job 138999166173, 15/15, 459 logs, 189 pytest, compileall PASS, traceability PASS, CRA PDFs 3/3 individually hashed, 10 official sources, Article 13(8)/2025/2392 locators and provenance PASS.
+- PDF ZIP 14993674654 / 3,070,566 B / fcc6d0a55060d5f3eb76c6f2e5dabff6ab0c8a90dc0b4df9010d5f7e97a1a6b0; provenance ZIP 14993779653 / 2,565 B / c72506bd9a24e55e09394bf6473ecf0208c7dceda80ee594e4dda4333c8d9e64. ZIP hashes are not individual PDF hashes.
+- Manual Ver1.3/1.4 conflict persists; CE Drive Unit groups/Converter and UKCA Converter listing metadata; KR/EN catalogue and CAD/STEP listing metadata. Detail pages timeout/502/inaccessible; no original bytes. All metadata_only; Q01–Q62 unsent; no contact. CRA only; SIL 3 excluded.
