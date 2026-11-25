@@ -3834,3 +3834,14 @@ CRA only; SIL 3 excluded.
 - Run #1614 PDF ZIP 14993188416 / b9bd452aad02e17501f2df2b8b0eec5642e4f53d42005c4fb98ec2fd06c5be4d; provenance ZIP 14993430968 / b045c9001f0140cc98069fda8ff8b08b915de1abf7ffe36ec58e0663e5a91d36.
 - Run #1615 PDF ZIP 14993282289 / 9ffdfbdc0a543537516a55bebffa1196b9567e6fdc2069323d84f3fd4f65fc8a; provenance ZIP 14992854400 / 63fb6972b2089bf1c8a3c339b6a29501d583538190ed56755c0a353a2c6050dd.
 - Manufacturer source state unchanged: no original binaries, metadata_only; Ver1.3/1.4 conflict unresolved; technical support route identified but no inquiry sent. Q01–Q62 unsent and all Unknowns retained. CRA only; SIL 3 excluded.
+
+
+
+## 2026-11-25 — PR #282 / Run #1616, main Run #1617 및 제조사 원본 취득 재조사
+- Rechecked main HEAD 127c9ec311e2939059dbff689c3b04f1208e2424, PR #281/#282 merged.
+- PR #282 exact HEAD 8eb522dad46a421f006ea5d0e75ee707f5b6cf8d; Run #1616 / 45550439993, job 138990088400, pull_request SUCCESS, 15/15, 189 pytest, traceability 417, PDFs 3/3, sources 10, provenance PASS.
+- Main push Run #1617 / 45550542045, exact merge SHA + push/main, job 138990414201, SUCCESS, 15/15, 189 pytest, traceability 417, PDFs 3/3, sources 10, provenance PASS.
+- Run #1616 PDF ZIP 14992959520 / 2374cce45ba7f1e5d29450546fee2d2ea435c0847c5aa57e83a7111176d14d8b; provenance ZIP 14993720613 / 66916a98c060444966da1304135572c03f8ec9f788c0ee1547076fce025debf9.
+- Run #1617 PDF ZIP 14992829930 / db929d6bcf77f075c91abb8fb945f6c06981a431e0343f8b5856788ccf4a6a67; provenance ZIP 14992794878 / 504b7af212e3c71948fff36bfa5559819e7d2c09dfb6750975a472793bdd036e.
+- Manufacturer pages: Ver1.3/1.4 listing conflict persists; CE/UKCA and KR/EN catalogue metadata rechecked; CAD/STEP filename/size absent from indexed view. Detail-page open returns HTTP 502; no attachment URL/binary acquired; all metadata_only.
+- Official support path rechecked; no email or inquiry sent. Q01–Q62 unsent; all product Unknowns retained. Report §114.6, evidence register §72.2. CRA only; SIL 3 excluded.
