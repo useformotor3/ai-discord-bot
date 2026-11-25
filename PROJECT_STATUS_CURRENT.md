@@ -2448,3 +2448,24 @@
 - 행동규약 §8.2(v1.2)에 DIL 버튼 존재, `GenUI.issueNewTurn`, CRA-only/최신 GitHub 상태 payload, 마지막 UI 요소 여부를 확인하는 hard gate를 추가한다. 스트리밍 중단 후 다음 응답에서 인정·복구하는 절차도 명문화한다.
 - 현재 main 기준: `de2006ff763610c836ca83a5455bf29135adabf7`. 본 교정은 문서 전용 작업 브랜치 `docs/cra-response-button-output-gate-v1-2-2026-11-25`에서 PR로 검증한다.
 - CRA only; SIL 3 제외.
+
+
+ 
+## 2026-11-25 — PR #266 병합 및 iX700M 원본 자료 재시도 최신 상태
+
+- PR #266 exact HEAD `6529ec9a9234ffdaa5a763a60a7d3df72646eb98`, Run #1570 / 45529191176 completed/success. 15/15 returned steps success, 189 pytest passed, CRA traceability 397 events, official CRA PDF 3/3 fetch/hash, 10-source provenance manifest uploaded.
+- Expected-head squash merge SHA / current main HEAD: `a015dc95f6c59d331275d646306b2b2a2137f437`. PR closed/merged. 변경 5 files(+36/-0), reviews 0, threads 0.
+- PROJECT_LOG JSONL 독립 검증: 397 records, 0 invalid JSON, 0 internal blank lines.
+- Main push CI는 Combined Status 및 commit workflow-run 조회가 비어 있어 **UNVERIFIED**. PR Run #1570을 main push CI로 오인하지 않는다.
+- iX700M 공식 검색 metadata: 매뉴얼 검색 snapshot Ver1.4(2026-05-26), CE index의 iX700MCB 및 Drive 모델 그룹, Converter iX700MCV CE/UKCA 첨부명, KR/EN catalogue 각각 10.7MB metadata. 직접 listing 접근은 502; 원본 PDF/CAD bytes 미취득.
+- Q61/Q62 정밀화: revision-controlled 매뉴얼 원본·이력·SKU/HW/FW/hash, 실제 BOM의 MCU order code·firmware·SBOM·secure boot/debug/update/vulnerability/support 증거 요청. 질의서 62문항 draft/not sent.
+- Unknown: actual SKU, EU/EEA supply, economic operators, signed DoC coverage, BOM/exact MCU/SBOM, security configuration, CRA classification, vulnerability handling, security update/support period.
+- CRA only; SIL 3 excluded.
+
+
+ 
+## 2026-11-25 — 제조사 질의서 62개 전역 ID 감사/정규화
+- 기존 질의서 번호 목록을 직접 세어 90개였음을 확인했다. 이전 문서/로그의 “62문항”은 stale count였다.
+- 중복 및 겹치는 행정성 항목을 통합하고 Q01~Q62 전역 ID로 재구성했다. 자동 점검: 62 questions, 62 unique IDs, Q01–Q62 연속, 누락/중복 0.
+- Q61 매뉴얼 revision 충돌, Q62 실제 SKU별 BOM·MCU·FW·SBOM·보안·취약점 증거 매트릭스.
+- 상태는 draft_prepared_not_sent. 발송·회신 없음. CRA only; SIL 3 excluded.

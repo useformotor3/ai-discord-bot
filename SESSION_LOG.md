@@ -3641,3 +3641,24 @@ CRA only; SIL 3 excluded.
 - 실제 문제: 규약이 없었던 것이 아니라 최신 규약 재독 및 최종 답변의 실제 버튼 렌더링을 놓친 것. 사용자는 반복 타이핑 대신 클릭으로 재개하는 버튼을 명시적으로 기대한다.
 - v1.2에서 DIL `<button onClick={() => GenUI.issueNewTurn(...)}>` 존재, 정식 CRA payload, 최신 main/PR/CI 재확인, 버튼이 마지막 UI 요소인지 응답 직전 검사하도록 강화한다.
 - 본 변경은 작업 브랜치 `docs/cra-response-button-output-gate-v1-2-2026-11-25`에서 PR/CI 후 반영한다. CRA only; SIL 3 제외.
+
+
+ 
+## 2026-11-25 — PR #266 merge, main read-back 및 제품 증거 재시도
+
+- main baseline before PR: `de2006ff763610c836ca83a5455bf29135adabf7`; PR #266 exact head `6529ec9a9234ffdaa5a763a60a7d3df72646eb98`; branch `docs/cra-response-button-output-gate-v1-2-2026-11-25`.
+- Run #1570 / 45529191176 completed/success. 1 job, 15 returned steps all success; source blob identities verified, compile, CRA traceability (397 events), pytest 189 passed, PDF 3/3 fetch/hash, 10-source provenance JSON round-trip/upload.
+- Diff 5 files(+36/-0), reviews 0, threads 0; JSONL parsed independently: 397 valid, 0 invalid, 0 internal blank lines.
+- Expected-head squash merge SHA `a015dc95f6c59d331275d646306b2b2a2137f437`; PR state closed/merged and latest main commit read-back match.
+- Main push CI remains UNVERIFIED: Combined Status empty and workflow-run wrapper returned no runs; Run #1570 is PR-triggered CI. Do not claim main push success.
+- Official iX700M manual/CE/UKCA/catalogue search metadata rechecked; direct listing fetch 502. No original product binary or SHA-256 acquired. Details in report §99 / evidence register §57.
+- Q61/Q62 refined for version-controlled manual evidence and actual BOM/MCU/SBOM/security implementation evidence. Inquiry remains 62 questions, draft/not sent.
+- Unknowns preserved. CRA only; SIL 3 excluded.
+
+
+ 
+## 2026-11-25 — 제조사 질의서 실제 문항 수 감사 및 v2.0 정규화
+- 기존 질의서 `reports/LS_MECAPION_IX700M_FORMAL_TECHNICAL_COMMERCIAL_INQUIRY_2026-11-24.md`의 numbered item을 직접 집계한 결과 90개였다. “62문항”이라는 기존 보고는 파일 상태와 맞지 않는 stale metadata였다.
+- 중복/행정성 항목을 통합하고 62개 전역 ID(Q01–Q62)로 재구성했다. 검증: 62 total, 62 unique, sequential Q01–Q62, no gap/duplicate.
+- Q61은 매뉴얼 revision 충돌, Q62는 actual SKU별 BOM/MCU/FW/SBOM/security/vulnerability evidence matrix.
+- 문서 v2.0은 발송 전 초안. 발송·접수·회신은 확인되지 않았다. CRA only; SIL 3 excluded.

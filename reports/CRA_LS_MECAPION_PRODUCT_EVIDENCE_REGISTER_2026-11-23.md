@@ -1028,3 +1028,38 @@ Actual SKU, EU/EEA supply, economic operators, independent sale/integration, BOM
 - Merge SHA 8d2d78b4ccc0ad326813f8e5cb74470bc5738e14. Main push Run #1566 / 45512624809 exact merge SHA SUCCESS, 15/15 steps, 189 passed, traceability 395, 10-source provenance manifest PASS/uploaded, PDFs 3/3.
 - PDF artifact 14976576885, 3,070,566 bytes, SHA-256 87d053774d70ba0794947802e98cede863d038cf24b5252541aadd21f1ef1672. Provenance 14976921254, 2,565 bytes, SHA-256 524a92d46f8c368430efafec8f5fd9e92a3ddd8a00895d8e1e46fa501b187c81. Expiry 2026-12-01.
 - C/2026/5252 fallback=true; hash only identifies fallback bytes. Product binaries remain metadata only. Inquiry 62 questions, draft not sent. Unknowns retained.
+
+
+ 
+## §57. 2026-11-25 — iX700M 공식 목록 재시도 및 PR #266 상태
+
+| ID | 공식 출처 | 새로 확인한 metadata | Binary / 검증 상태 |
+|---|---|---|---|
+| MFG-IX7M-26 | https://www.lsmecapion.com/bbs/board.php?bo_table=manual | 검색 snapshot: iX700M DRIVE 400[V] Ver1.4, 2026-05-26 | 직접 페이지 502; PDF 미취득. Ver1.3/Ver1.4 충돌 미해결 |
+| MFG-IX7M-27 | https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&sca=CE | CE 목록 2026-04-30: iX700MCB, Drive 그룹 075B/050B/D2-B-045B, 150B, 220B, 370B/300B, 750B/550B/450B | 목록 metadata only. SKU별 signed DoC 원본/서명/적용범위 미검증 |
+| MFG-IX7M-28 | https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&sca=CE&wr_id=12886 | Converter iX700MCV CE DoC 첨부명, 234.4K, 2026-04-30 | PDF bytes 미취득; 서명·적용 법령·표준·SKU 범위 미검토 |
+| MFG-IX7M-29 | https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&page=3&wr_id=12893 | Converter iX700MCV UKCA DoC 첨부명, 224.1K, 2026-04-30 | PDF bytes 미취득; 서명·UK 적용범위 미검토 |
+| MFG-IX7M-30 | https://www.lsmecapion.com/bbs/board.php?bo_table=catalog&wr_id=12110 | iX700M KR/EN catalogue, 각 10.7 MB attachment metadata, 2025-12-05 | 원본 binary 미취득; 카탈로그로 실제 SKU/EU supply 추정 금지 |
+| MFG-IX7M-31 | https://www.lsmecapion.com/bbs/board.php?bo_table=drawing&sca=Servo+Drive&wr_id=12455 | 기존 iX700M 2D CAD/3D STEP listing 단서 재확인 대상 | 상세/첨부 취득 실패; bytes/revision/hash Unknown |
+
+**접근 판정:** 2026-11-25 직접 open 시 manual/CE/catalogue listing은 502 Bad Gateway. 검색 결과에 나타난 제목·파일명·첨부 크기·게시일만 metadata로 기록했다. 검색 snapshot은 원본 파일이 아니며 파일 본문, 서명, 해시, 적용 SKU를 검증하지 못한다.
+
+### 질의서 62문항 개선 메모
+- 문항 수는 62개 유지. Q61은 Ver1.3/Ver1.4 충돌의 원인, authoritative revision, revision history, 적용 SKU/HW/FW, 원본 PDF 및 SHA-256을 하나의 추적 가능한 답변으로 요구하도록 구체화한다.
+- Q62는 실제 BOM 기준 MCU full part number, firmware build, SPDX/CycloneDX SBOM, secure boot/signing/debug lock/key lifecycle, PSIRT/CVD, vulnerability handling, update/rollback controls 및 support end date를 요구한다. secret key나 비밀번호 원문은 요청하지 않고 redacted/attested evidence를 허용한다.
+- 질의서 state: draft_prepared_not_sent. 발송·접수·회신 확인 전 Unknown 해제 금지.
+
+### Unknown 유지
+Actual SKU, EU/EEA supply, economic operators, signed DoC coverage, BOM/exact MCU/SBOM, security configuration, CRA classification, vulnerability handling, security update/support period remain Unknown. No iX700M original manual/DoC/catalogue/CAD binary acquired. CRA only; SIL 3 excluded.
+
+### PR #266 / main synchronization
+- PR #266 exact head `6529ec9a9234ffdaa5a763a60a7d3df72646eb98`, Run #1570 / 45529191176 success; 189 pytest passed, traceability 397 records, JSONL 397/0 invalid/0 blank.
+- Expected-head squash merge `a015dc95f6c59d331275d646306b2b2a2137f437`; main latest commit read-back matches.
+- Main push CI UNVERIFIED: Combined Status and commit-associated workflow runs returned empty; do not infer success from PR Run #1570.
+
+
+### §57.1 질의서 구조 감사 결과
+- 질의서 원본의 실제 번호 목록은 90개였다. 과거 “62문항” 기록은 최신 파일과 일치하지 않는 stale count로 확인됐다.
+- 질의서를 v2.0으로 통합·재번호화: Q01–Q62, 총 62개, unique ID 62, sequence gap 0. 중복 질문을 묶되 제품경계·EU 공급·SKU·DoC·설계·보안·취약점 범위는 유지했다.
+- Q61 = 매뉴얼 Ver1.3/Ver1.4 authoritative revision 확인, Q62 = SKU별 BOM/MCU/FW/SBOM/security/vulnerability evidence matrix.
+- 새 초안은 발송 전 상태(draft_prepared_not_sent)이며 제조사 답변은 없음.

@@ -2643,3 +2643,49 @@ Run #1566 PDF ZIP artifact ID 14976576885, 3,070,566 bytes, SHA-256 `87d053774d7
 iX700M 원본 매뉴얼, SKU별 signed EU DoC, Converter CE/UKCA DoC, KR/EN catalogue, CAD 2D/3D STEP는 취득하지 못했다. 공식 게시목록 metadata만 확인됐으며 상세 첨부 접근은 502/timeout이다. 제조사 질의서 62문항은 미발송 초안이다.
 
 Actual SKU, EU/EEA supply, economic operators, signed DoC coverage, BOM/exact MCU/SBOM, security configuration, CRA classification, vulnerability handling, security update/support period remain Unknown.
+
+
+## §99. 2026-11-25 — PR #266 병합 및 iX700M 제조사 원본 재취득 재시도
+
+### 99.1 PR #266 / exact-head CI / main 상태
+- PR #266 exact head `6529ec9a9234ffdaa5a763a60a7d3df72646eb98`, base `de2006ff763610c836ca83a5455bf29135adabf7`, 5개 문서 파일(+36/-0), 리뷰 0, inline review thread 0.
+- PR Run #1570 / ID `45529191176`: completed/success. Job 1개, 반환된 Step 15개 모두 success. Source blob identity 확인, compile, CRA traceability, 전체 pytest 189 passed, CRA PDF 3/3 fetch/hash, 공식 CRA source 10개 및 provenance manifest JSON round-trip/upload 성공.
+- CRA traceability: claims 13, interfaces 15, requirements 35, SEC 36, EVD-SEC crosswalk 16, product evidence 15, bidirectional links true, M/606 mapping 41, PROJECT_LOG 397 records(392 modern IDs + 5 legacy). 독립 JSONL 재파싱: 397 valid / 0 invalid / 0 internal blank lines.
+- Expected-head squash merge SHA `a015dc95f6c59d331275d646306b2b2a2137f437`; main 최신 commit 목록에서 merge SHA를 확인하고 PR state closed/merged를 재확인했다.
+- **Main push CI는 아직 UNVERIFIED**: merge SHA Combined Status는 빈 배열, commit-associated workflow-run 조회도 비어 있었다(해당 조회 wrapper는 PR-triggered runs만 제공). Run #1570은 PR CI이지 main push CI가 아니다. push run 번호·결론을 추정하거나 성공으로 기록하지 않는다.
+
+### 99.2 iX700M 공식 자료 인덱스 재확인 — metadata와 binary 분리
+2026-11-25 재시도에서 공식 웹사이트 검색 인덱스가 제공한 목록 메타데이터를 확인했다. 상세 페이지를 직접 열었을 때 502 Bad Gateway가 반환되었으므로 아래는 모두 **metadata_only**이며 첨부 원본 binary 취득·본문 검토·서명 검증·SHA-256 계산을 의미하지 않는다.
+
+| 자료 | 공식 게시 목록에서 확인한 메타데이터 | 이번 접근 결과 / 증거 한계 |
+|---|---|---|
+| iX700M 매뉴얼 | Servo 목록 검색 snapshot에 `iX700M DRIVE 400[V] 매뉴얼 Ver1.4`, 게시일 2026-05-26 표시 | 전체 목록/상세 직접 열기는 502. 기존 Ver1.3 표시 snapshot 및 Solution Square 2026-09-16 목록과 동일 파일인지 미확인. 실제 PDF revision Unknown |
+| Drive CE DoC | CE index 2026-04-30에 iX700MCB 및 Drive 모델 그룹: 075B/050B/D2-B-045B, 150B, 220B, 370B/300B, 750B/550B/450B | 게시물/첨부 파일명 metadata만. 각 DoC PDF bytes, signature, covered SKU 범위 및 표준 본문 미검토 |
+| Converter CE DoC | iX700MCV, 첨부명 `[CE_DoC-LVDEMC] iX700MCV.pdf`, 표시 크기 234.4K, 2026-04-30 | 첨부 원본 취득 및 서명/범위 확인 실패 |
+| Converter UKCA DoC | iX700MCV, 첨부명 `[UKCA_DoC_LVDEMC] iX700MCV.pdf`, 표시 크기 224.1K, 2026-04-30 | 첨부 원본 취득 및 서명/범위 확인 실패 |
+| KR/EN catalogue | iX700M Catalogue KR/EN 게시물, 첨부 각각 10.7 MB, 첨부 metadata 날짜 2025-12-05 | 첨부 binary 미취득. 카탈로그가 actual ordered SKU 또는 EU supply를 입증하지 않음 |
+| CAD | Servo Drive drawing index의 기존 iX700M 2D CAD/3D STEP 게시물 단서 | 상세/첨부 접근 실패. DWG/DXF/STEP bytes·revision·hash 미취득. 회로도/BOM과 혼동하지 않음 |
+
+공식 목록 URL:
+- Manual: https://www.lsmecapion.com/bbs/board.php?bo_table=manual
+- CE index: https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&sca=CE
+- Converter CE: https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&sca=CE&wr_id=12886
+- Converter UKCA: https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&page=3&wr_id=12893
+- KR/EN catalogue: https://www.lsmecapion.com/bbs/board.php?bo_table=catalog&wr_id=12110
+- Servo Drive drawings: https://www.lsmecapion.com/bbs/board.php?bo_table=drawing&sca=Servo+Drive&wr_id=12455
+
+### 99.3 제조사 질의서 62문항의 정밀화 기준
+질의서 원본의 실제 numbered item은 90개였다. 과거 62개 기록은 stale count였으며, 중복/행정성 항목을 통합해 v2.0에서 Q01–Q62로 재번호화했다. Q61/Q62는 아래 핵심 확인사항으로 고정한다. 본 정리는 질의 초안의 개선 사항이며 발송 또는 회신을 의미하지 않는다.
+- **Q61 — 매뉴얼 revision 충돌:** 공식 배포용 PDF 원본 파일, 문서번호, revision, 발행일, 전체 revision history 및 변경 요약, Ver1.3/Ver1.4의 관계(정식 개정/게시 첨부 교체/검색 snapshot 차이), 대체 여부, 적용 Drive SKU/HW/FW 범위, 원본 파일명·형식·크기·SHA-256, 서명/문서관리 검증 방법을 한 답변에서 연결해 달라고 요청한다.
+- **Q62 — MCU·SBOM·제품 보안 증거:** 실제 제품 BOM 기준 MCU 제조사와 full orderable part number(예: ST 계열 여부 포함하되 미리 단정하지 않음), firmware version/build ID, machine-readable SBOM(CycloneDX 또는 SPDX 및 버전/파일 hash), 보안 부팅·firmware 서명·debug/JTAG/SWD 잠금·키 저장/수명주기(비밀키 원문은 요청하지 않음), 취약점 접수/PSIRT/CVD 절차, 보안 업데이트 배포·검증·rollback 방지, 지원기간 및 종료일의 문서화된 증거를 요청한다. NDA가 필요한 경우 redacted BOM/SBOM 또는 제조사 서명 확인서를 대안으로 제시한다.
+- 모든 답변은 문서 ID·개정일·적용 SKU·공급 범위·서명/검증 방식과 연결한다. 구두 답변만으로 Unknown을 해제하지 않는다.
+
+### 99.4 CRA 판정 경계
+Actual SKU, EU/EEA supply, economic operators, signed DoC coverage, BOM/exact MCU/SBOM, security configuration, CRA classification, vulnerability handling 및 security update/support period는 계속 **Unknown**이다. CE/UKCA 목록 metadata는 서명된 SKU별 DoC binary나 CRA 적합성 증명이 아니다. CRA only; SIL 3 excluded.
+
+
+### 99.5 질의서 문항 수 실제 감사 및 재번호화
+- 기존 질의서 파일의 번호 목록을 실제 파싱한 결과 90개 항목(섹션 2~11 및 13)이 확인됐다. 기존 로그의 “62문항” 표기는 파일의 현재 내용과 불일치하는 stale metadata였다.
+- 중복/행정성 하위 항목을 통합하고 증거 요청의 적용 범위를 유지해 질의서를 v2.0으로 정리했다. 새 파일은 Q01~Q62의 전역 ID를 사용하며 독립 파싱 결과 62개, 중복 ID 0, 누락 ID 0, 순서 오류 0이다.
+- Q61은 Ver1.3/Ver1.4 매뉴얼 revision 충돌 및 Solution Square 2026-09-16 항목의 문서 동일성 확인, Q62는 실제 SKU별 BOM/MCU/FW/SBOM/security/vulnerability evidence matrix로 고정했다.
+- 발송 상태는 draft_prepared_not_sent. 질문을 62개로 정규화한 것은 제조사 답변이나 증거 취득을 의미하지 않는다.
