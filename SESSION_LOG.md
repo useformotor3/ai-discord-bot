@@ -3845,3 +3845,12 @@ CRA only; SIL 3 excluded.
 - Run #1617 PDF ZIP 14992829930 / db929d6bcf77f075c91abb8fb945f6c06981a431e0343f8b5856788ccf4a6a67; provenance ZIP 14992794878 / 504b7af212e3c71948fff36bfa5559819e7d2c09dfb6750975a472793bdd036e.
 - Manufacturer pages: Ver1.3/1.4 listing conflict persists; CE/UKCA and KR/EN catalogue metadata rechecked; CAD/STEP filename/size absent from indexed view. Detail-page open returns HTTP 502; no attachment URL/binary acquired; all metadata_only.
 - Official support path rechecked; no email or inquiry sent. Q01–Q62 unsent; all product Unknowns retained. Report §114.6, evidence register §72.2. CRA only; SIL 3 excluded.
+
+
+## 2026-11-25 — PR #283 / Run #1618 exact-head 검증 및 Run #1619 경계
+- PR #283 actual state CLOSED/MERGED. Base SHA 127c9ec311e2939059dbff689c3b04f1208e2424; PR HEAD 616b2a42049930290a42cd495f6c7543b0ba8751; merge SHA 0821dac7a336848c1609c4c663860be90eb17337.
+- Run #1618 / ID 45551394041, job 138993151093, workflow Isolated Python Tests, SUCCESS, 15/15, 475 log lines, 189 pytest, traceability 418, CRA PDFs 3/3, official source canary 10, legal locators PASS, provenance PASS.
+- Run #1618 PDF ZIP 14992614962 / 3,070,565 B / SHA-256 924219a47333054e5459f387df9ad11718d027ae3d7e8ca0224b15736bd5bc0d; provenance ZIP 14993551840 / 2,565 B / SHA-256 6848d995c1322e8b14f648ec1811d20ee26ee16ac1b7d3b758b2f754ca867810. Archive digests are distinct from individual PDF content hashes.
+- Run #1619 post-merge main push not identified; ID/event=push/branch=main/exact merge SHA/jobs/steps/logs/artifacts remain UNVERIFIED. Combined status empty is not success. Do not infer from PR CI.
+- Manufacturer recheck: official manual board shows Ver1.4 while another official list snapshot shows Ver1.3 for same displayed date; unresolved. CE/UKCA detail entries, KR/EN catalogue and CAD/STEP listing rechecked; detail-page 502/timeouts; no binary bytes. Keep metadata_only.
+- No inquiry sent; Q01–Q62 unsent; product Unknowns retained. Report §114.7, evidence register §72.3. CRA only; SIL 3 excluded.
