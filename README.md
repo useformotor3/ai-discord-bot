@@ -1322,3 +1322,6 @@ Annex I Part II의 실무 요구사항은 machine-readable SBOM(최소 top-level
 
  
 > **PR #263 / main Run #1566 (2026-11-25):** PR Run #1565 completed success with 14/15 successful steps; optional source provenance canary timed out and upload was skipped. Main push Run #1566 SUCCESS, 15/15, 189 passed, traceability 395, 10-source provenance PASS/uploaded, PDFs 3/3. Merge/main SHA `8d2d78b4ccc0ad326813f8e5cb74470bc5738e14`. C/2026/5252 fallback=true. See report §98 / evidence §56. iX700M original binaries remain unacquired; metadata only. Inquiry 62 questions. CRA only; SIL 3 excluded.
+
+
+> **운영 교정 v1.2 (2026-11-25):** "다음 단계 계속 진행" 버튼은 이미 행동규약 §1/§8.1에 기록돼 있었으나 assistant가 최종 응답에 실제 버튼을 누락했다. §8.2에 실제 DIL 버튼·`GenUI.issueNewTurn`·CRA 재개 payload·마지막 UI 요소 검사를 hard gate로 추가 중이다. 최신 main/PR/CI를 다시 확인하고, 모든 실질 CRA 응답 마지막에 작동 버튼을 제공한다. CRA only; SIL 3 제외.

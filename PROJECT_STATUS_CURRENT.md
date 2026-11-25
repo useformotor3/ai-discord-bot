@@ -2439,3 +2439,12 @@
 - C/2026/5252 fallback=true; its SHA identifies fallback bytes only. Run #1566 PDF ZIP artifact ID 14976576885, 3,070,566 bytes, SHA-256 `87d053774d70ba0794947802e98cede863d038cf24b5252541aadd21f1ef1672`; provenance artifact ID 14976921254, 2,565 bytes, SHA-256 `524a92d46f8c368430efafec8f5fd9e92a3ddd8a00895d8e1e46fa501b187c81`; expiry 2026-12-01.
 - Manufacturer inquiry 62 questions, draft not sent. iX700M original manual/DoC/catalogue/CAD binaries remain unacquired; listing metadata only.
 - Unknowns remain: actual SKU, EU/EEA supply, economic operators, signed DoC scope, BOM/MCU/SBOM, security configuration, CRA classification, vulnerability handling, update/support period. CRA only; SIL 3 excluded.
+
+
+## 2026-11-25 — 다음 단계 버튼 누락 재발 및 v1.2 교정
+
+- 사용자가 응답 마지막의 "다음 단계 계속 진행" 버튼이 빠졌다고 지적했다. 재확인 결과 main에는 이미 §1 및 §8.1(v1.1)로 상시 버튼 규칙과 출력 체크리스트가 기록되어 있었고, PR #253(merge SHA `e89faa6f9d907edcaf09adbd8f72eb81091ed279`)에도 Run #1540 상태, Run #1541 JSONL blank-line 실패, Run #1542의 수정 후 성공(3/3 CRA PDF fetch/hash)을 기록했다. 따라서 "GitHub에 기록하지 않았다"는 직전 답변의 표현은 부정확했다.
+- 실제 실패는 기존 규칙이 있었는데도 최신 규약을 재독하지 않고, 최종 답변에 실제 동작 버튼을 렌더링하지 않은 재발이다. 이를 규칙 부재가 아닌 **준수/출력 게이트 실행 실패**로 분류한다.
+- 행동규약 §8.2(v1.2)에 DIL 버튼 존재, `GenUI.issueNewTurn`, CRA-only/최신 GitHub 상태 payload, 마지막 UI 요소 여부를 확인하는 hard gate를 추가한다. 스트리밍 중단 후 다음 응답에서 인정·복구하는 절차도 명문화한다.
+- 현재 main 기준: `de2006ff763610c836ca83a5455bf29135adabf7`. 본 교정은 문서 전용 작업 브랜치 `docs/cra-response-button-output-gate-v1-2-2026-11-25`에서 PR로 검증한다.
+- CRA only; SIL 3 제외.

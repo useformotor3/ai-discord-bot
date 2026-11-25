@@ -3634,3 +3634,10 @@ CRA only; SIL 3 excluded.
 - Merge SHA 8d2d78b4ccc0ad326813f8e5cb74470bc5738e14. Main push Run #1566 / 45512624809 exact SHA SUCCESS, 15/15, 189 passed, traceability 395, 10-source provenance PASS/uploaded, PDFs 3/3. Main read-only canary also recorded allowed temporary source skip.
 - Artifact IDs/digests in report §98/evidence §56. Product binaries not acquired. Inquiry 62 questions, draft not sent.
 - Unknowns retained. CRA only; SIL 3 excluded.
+
+
+## 2026-11-25 — 다음 단계 버튼 누락 재발 분석
+- 사용자 지적 후 main 규약을 재확인했다. 버튼 상시 제공은 이미 §1과 §8.1(v1.1)에 기록돼 있었으며, PR #253 merge SHA e89faa6f9d907edcaf09adbd8f72eb81091ed279에서 Run #1540/1541/1542 및 JSONL 교정도 기록되어 있었다. "GitHub에 기록하지 않았다"는 이전 설명은 부정확했다.
+- 실제 문제: 규약이 없었던 것이 아니라 최신 규약 재독 및 최종 답변의 실제 버튼 렌더링을 놓친 것. 사용자는 반복 타이핑 대신 클릭으로 재개하는 버튼을 명시적으로 기대한다.
+- v1.2에서 DIL `<button onClick={() => GenUI.issueNewTurn(...)}>` 존재, 정식 CRA payload, 최신 main/PR/CI 재확인, 버튼이 마지막 UI 요소인지 응답 직전 검사하도록 강화한다.
+- 본 변경은 작업 브랜치 `docs/cra-response-button-output-gate-v1-2-2026-11-25`에서 PR/CI 후 반영한다. CRA only; SIL 3 제외.
