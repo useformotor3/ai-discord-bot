@@ -3133,3 +3133,50 @@ Acquisition attempts: official detail-page opens returned 502/timeouts; Solution
 Do not infer actual SKU or EU/EEA supply from the converter model family or rating-code list. Economic operators, signed SKU-specific EU DoC scope, BOM, exact MCU, SBOM, security configuration, CRA classification, vulnerability handling and support period remain Unknown. Q01–Q62 remains draft_prepared_not_sent and was not sent. CRA only; SIL 3 excluded.
 
 Next acquisition route: obtain direct original attachments or a controlled document package through the official manufacturer portal/authorized technical contact; record exact source URL, retrieval time, file size, revision/signature metadata and per-file SHA-256 before any evidence-state promotion.
+
+## §114. 2026-11-25 — PR #280 / Run #1612 및 main push Run #1613, 제조사 다운로드·기술지원 경로 재조사
+
+### 114.1 PR #280 및 CI chain 재확인
+| 구분 | PR #280 exact-head | 병합 후 main push |
+|---|---|---|
+| PR HEAD / merge SHA | 504ed25a538e0a61dbc500f3ba86ad60ed167414 | e2b2f39a16b5b41b466d1ec3db7138c49874d70e |
+| Run / ID | #1612 / 45549584947 | #1613 / 45549672737 |
+| Event / branch | pull_request | push / main |
+| Job | 138987281166 | 138987569743 |
+| Result | SUCCESS | SUCCESS |
+| Steps | 15/15 | 15/15 |
+| pytest | 189 passed | 189 passed |
+| Traceability events | 415 | 415 |
+| Official CRA PDFs / sources | 3/3 / 10 | 3/3 / 10 |
+| Article 13(8), Regulation (EU) 2025/2392 locators | PASS | PASS |
+| Provenance JSON round-trip/upload | PASS | PASS |
+
+PR #280 is closed/merged; merge SHA equals main HEAD. Main push Run #1613 has exact head SHA, event=push, branch=main, completed/success. All 15 job steps succeeded in both runs.
+
+Artifacts (archive-level SHA-256; do not confuse with individual PDF content hashes):
+- Run #1612 PDF ZIP 14992078865, 3,070,565 bytes, SHA-256 37d1ed30a314c9afa52ddb5f9b78fbe8b1b8a04847a4a5164b78e5d48e05989f.
+- Run #1612 provenance ZIP 14991919727, 2,565 bytes, SHA-256 298a4b0c94af9c31ffd7480158335a05a92ed4f92eadfee1dc0d370a6fe52cee.
+- Run #1613 PDF ZIP 14992429240, 3,070,566 bytes, SHA-256 685dbace5088cba72eed25c632882dd18bf687ba875b6963eefe683d82057ffc.
+- Run #1613 provenance ZIP 14992583792, 2,565 bytes, SHA-256 9ade5f0f156269d8cf6d0605230718f59eb88b43fc572d9bf29c641300b53d6b.
+
+### 114.2 제조사 직접 다운로드 경로 조사 결과
+- Manual listing: the official main list and Servo-filtered list both show “iX700M DRIVE 400[V] 매뉴얼 Ver1.4”, posted 2026-05-26. The individual detail click timed out (400); no attachment binary was returned. The earlier empty-category capture showed Ver1.3. Keep the revision/listing conflict unresolved; neither revision can be declared authoritative without the actual file and its internal revision metadata.
+- Converter CE: official item page search-index snapshot identifies “[CE_DoC-LVDEMC] iX700MCV.pdf” (234.4K), posted 2026-04-30 11:50:26; model description covers iX700MCV, 480 Vac, rating codes 15/37/55/75 kW. Opening the item detail returned 502; no PDF binary.
+- Converter UKCA: official item page identifies “[UKCA_DoC_LVDEMC] iX700MCV.pdf” (224.1K), posted 2026-04-30 12:04:05; same published converter model/rating-code description. Detail open returned 502; no PDF binary.
+- KR/EN catalog: official item page identifies “iX700M 브로셔 최종KR_251205.pdf” and “iX700M 브로셔 최종EN_251205.pdf”, each 10.7M, attachment timestamp 2025-12-05 13:43:50. Detail open returned 502; no binary.
+- CAD/STEP: official Servo Drive list exposes the item “iX700M Series 서보드라이브 외형도 2D(CAD), 3D(STEP)”, posted 2026-04-21; the item detail (wr_id=12455) returned 502. No CAD or STEP binary.
+- Solution Square: the product listing continues to show “iX700M 사용 설명서”, updated 2026-09-16. The page is an SPA shell requiring JavaScript; the accessible page/search result did not expose a direct file URL.
+
+The accessible official list pages confirm listing metadata, not the file contents. The detail pages were unavailable (502/timeout). No target manufacturer binary was acquired in this run; no individual SHA-256, embedded PDF revision, digital signature, signer identity, certificate chain or validity was checked. All manufacturer items remain metadata_only.
+
+### 114.3 Newly verified official technical-support route
+The LS Mecapion official “업무별 담당자” page exposes a Servo technical-support route and a separate drive-service route:
+- General customer center: 1544-5948; published hours 08:30–17:30, excluding lunch 12:30–13:30.
+- Servo technical support table: Seoul region lists khnam@lsmecapion.com / 070-4343-8207; 경기 region lists 070-7772-8422.
+- A/S table identifies drive service at 053-580-9191.
+- Official customer inquiry / technical inquiry portal: https://lsmecapion.com/bbs/board.php?bo_table=inquiry&page=1&sca=%EA%B8%B0%EC%88%A0%EB%AC%B8%EC%9D%98&spt=-2831
+
+This is a verified contact route, not evidence that the manufacturer was contacted. No email, web inquiry or Q01–Q62 questionnaire was sent. Recommended next retrieval step is a narrowly scoped request for the controlled original package and document-control metadata (manual binary and revision history; CE/UKCA signed declarations and exact model scope; KR/EN catalogue binaries; CAD/STEP package), using the official support route. Do not send until separately authorized; preserve Q01–Q62 as draft_prepared_not_sent.
+
+### 114.4 Evidence boundary
+Actual SKU, EU/EEA supply, economic operators, signed SKU-specific EU DoC coverage, BOM, exact MCU, SBOM, security configuration, CRA classification, vulnerability handling and security update/support period remain Unknown. Do not infer these from converter family/rating codes or catalogue metadata. Ver1.3/1.4 conflict remains unresolved. CRA only; SIL 3 excluded.
