@@ -1546,3 +1546,14 @@ Actual SKU, EU/EEA supply, economic operators, signed SKU-specific DoC scope, BO
 - KR/EN catalog filenames and each 10.7M / 2025-12-05 13:43:50 metadata only; detail fetch timeout. CAD/STEP item 19 / 2026-04-21 metadata only; list fetch 502.
 - New manufacturer binaries 0. All manufacturer items metadata_only; no SHA-256, PDF signature/signer chain, internal revision or SKU scope validation. Q01–Q62 draft_prepared_not_sent; no manufacturer contact. CRA only; SIL 3 excluded.
 - Failure: Solution Square JS app shell does not expose document links; LS Mecapion detail/list fetches return 502/timeouts; cached index snippets have inconsistent row/title snapshots. No guessed or assembled URLs.
+
+
+### §72.13 2026-11-26 — 공식 이전글·CE 그룹 및 제조사 원본 재추적
+- Solution Square official list pageNumber=14 and search pageNumber=70 index iX700M 사용 설명서 updated 2026-09-16 / #모션&Servo. No document ID/detail href/attachment URL in search snapshot; direct open JS app shell. metadata_only.
+- Ver1.3: official PEGA2 detail search result at https://lsmecapion.com/bbs/board.php?bo_table=manual&sca=Servo&wr_id=12651 exposes previous-post text “iX700M DRIVE 400[V] 매뉴얼 Ver1.3”. The target href/wr_id is not exposed; direct detail fetch timeout. Official empty-sca list snapshot row 41=Ver1.3, while current general list and Servo-filter snapshot row 41=Ver1.4. Title/existence evidence exists, actual ID/attachment/binary unresolved. Do not infer numeric wr_id.
+- Ver1.4: current official general list row 41 and Servo listing entry 1; detail URL https://lsmecapion.com/bbs/board.php?bo_table=manual&wr_id=12652 (wr_id=12652) confirmed; detail fetch 502, attachment/binary absent. metadata_only.
+- CE official index row 171=220B, row172=370B/300B, row173=750B/550B/450B, dated 2026-04-30. These are grouped index entries, not six individual pages; individual href/wr_id/attachment URLs remain unverified. Direct list fetch 502.
+- UKCA Drive Unit not located (absence not proven); wr_id=12893 is UKCA Converter Unit iX700MCV only.
+- KR/EN catalogue detail search metadata: KR and EN PDFs each 10.7M, DATE 2025-12-05 13:43:50; direct fetch 502, no bytes. CAD/STEP official Servo Drive list item 19 / 2026-04-21; detail/attachment/binary not recovered.
+- Failures: Solution Square JS shell; LS Mecapion direct fetches 502/timeout; index snapshots disagree by date/filter and row numbers cannot identify a detail. Previous-post text lacks target href. No URL/ID guessing.
+- New manufacturer binaries 0; manufacturer SHA-256, PDF signature/signer chain, internal revision, SKU scope not verified. Q01–Q62 draft_prepared_not_sent; no manufacturer contact. CRA only; SIL 3 excluded.
