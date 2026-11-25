@@ -3672,3 +3672,12 @@ CRA only; SIL 3 excluded.
 - Main push CI UNVERIFIED: Combined Status and commit-associated workflow-run lookup empty; Run #1581 is PR CI only.
 - Manufacturer inquiry normalized to v2.0 with 62 unique global IDs; prior source file had 90 numbered entries. Q61 manual revision, Q62 per-SKU BOM/MCU/FW/SBOM/security/vulnerability evidence matrix. Draft not sent.
 - Original iX700M product binary not acquired; metadata only; Unknowns preserved. CRA only; SIL 3 excluded.
+
+
+ 
+## 2026-11-25 — 다음 단계 버튼 전달 재발 및 v1.3 개선
+- 사용자 재보고: 다음 대화를 쉽게 시작하기 위한 버튼이 보이지 않거나 이용할 수 없음.
+- GitHub main 재확인 결과 행동규약 v1.2 §8.2와 이전 누락 재발 이벤트는 이미 존재했다. 문제는 기록 부재가 아니라 사용자에게 버튼을 안정적으로 전달하는 실행 실패다.
+- 이전 응답은 버튼을 box 컨테이너 안에 배치했다. 플랫폼 원인을 단정하지 않고, 발견성/접근성 단순화를 위해 컨테이너 없는 단독 DIL button으로 변경한다.
+- v1.3: 직접 GenUI.issueNewTurn, 완전한 CRA-only/SIL3-excluded 재개 payload, 마지막 UI 요소 배치, 출력 직전 네 항목 hard gate.
+- 버튼은 클릭 시 새 사용자 턴을 시작하는 재개 장치이며 자율 백그라운드 진행은 아니다. CRA only; SIL 3 excluded.
