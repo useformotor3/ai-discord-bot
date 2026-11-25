@@ -3456,3 +3456,21 @@ Run #1617 artifacts:
 - **접근 실패 원인/한계:** Solution Square 검색은 문서명만 색인되고 JS 앱이 실제 detail/download metadata를 정적 HTML에 내놓지 않는다. LS메카피온 상세·목록 fetch는 502/timeout. 검색 색인의 서로 다른 시점/필터 스냅샷은 같은 row 41에 Ver1.3 또는 Ver1.4를 표시하므로 row number는 고유 식별자가 아니다. 이전글 텍스트는 확인됐지만 anchor href가 노출되지 않았다. 공식 경로를 추측·조립하지 않았다.
 - 신규 제조사 바이너리 취득 0건. 모든 제조사 문서는 metadata_only. 제조사 파일 SHA-256, PDF 서명·서명자 체인, 내부 revision, SKU 적용범위 검증 없음. Q01–Q62 draft_prepared_not_sent, 제조사 연락 없음. CRA only; SIL 3 제외.
 - 공식 증거: https://ssq.ls-electric.com/kr/ko/product/category/4?pageNumber=14 ; https://sol.ls-electric.com/kr/ko/newSearch?pageNumber=70 ; https://lsmecapion.com/bbs/board.php?bo_table=manual ; https://lsmecapion.com/bbs/board.php?bo_table=manual&sca= ; https://lsmecapion.com/bbs/board.php?bo_table=manual&sca=Servo ; https://lsmecapion.com/bbs/board.php?bo_table=manual&sca=Servo&wr_id=12651 ; https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&sca=CE ; https://www.lsmecapion.com/bbs/board.php?bo_table=catalog&wr_id=12110 ; https://www.lsmecapion.com/bbs/board.php?bo_table=drawing&sca=Servo+Drive.
+
+
+### 114.7.16 2026-11-26 공식 링크 재탐색 — 검색 스냅샷·개별 CE 상세·원본 취득 한계
+
+- 기준 main HEAD: `3d40b386d43d172f4f0d9d09948e5a01ef372cd4`. §114.7.15, §72.13 및 PROJECT_STATUS_CURRENT, README, SESSION_LOG, PROJECT_LOG 선행 확인. 본 변경은 문서 전용이며 운영 코드와 workflow를 수정하지 않는다.
+- **PEGA2 Ver1.3 이전글:** 공식 PEGA2 Ver1.3 상세의 검색 색인 결과는 이전글 텍스트 `iX700M DRIVE 400[V] 매뉴얼 Ver1.3`을 노출한다. 해당 페이지의 실제 이전글 anchor href/wr_id는 검색 결과에 포함되지 않으며 공식 상세 직접 열기는 timeout/502. 따라서 Ver1.3 제목/게시물 존재를 뒷받침하는 교차증거일 뿐, target locator는 미확정이다. URL/ID 추정 금지.
+- **Ver1.3/Ver1.4 스냅샷 충돌:** 공식 empty-sca 색인 스냅샷은 row 41=Ver1.3, 전체 매뉴얼 색인은 row 41=Ver1.4, Servo 필터 색인은 Ver1.4를 노출한다. 두 결과 모두 게시일 2026-05-26으로 나타나지만 검색 색인의 수집 시점/캐시가 다를 수 있다. 어느 쪽도 PDF controlled revision을 입증하지 않는다. 충돌을 유지하며 최신 통제본·승인 이력은 Unknown.
+- **Ver1.4:** 전체목록 anchor 42의 실제 href는 `https://lsmecapion.com/bbs/board.php?bo_table=manual&wr_id=12652` (wr_id=12652). 검색/직접 상세 재시도에서도 502. 첨부 URL 및 PDF bytes 미취득.
+- **Solution Square:** 공식 목록 pageNumber=14와 통합검색 pageNumber=70은 `iX700M 사용 설명서`, 2026-09-16, 조회수 171 및 #모션&Servo를 표시한다. 직접 열기는 JS 앱 셸(“You need to enable JavaScript to run this app.”). 공개 검색 결과와 직접 fetch에서 document ID, detail href, attachment/download URL을 확보하지 못했다. 공식 공개 API 경로도 검증되지 않았다. metadata_only.
+- **CE row 171/172/173:** 공식 CE 색인 검색결과에서 row 171은 Drive Unit iX700MD1-B-220B, row 172는 iX700MD1-B-370B/300B, row 173은 iX700MD1-B-750B/550B/450B로 확인. 각 row는 그룹 게시물이며 개별 SKU별 detail href/wr_id와 첨부 URL은 확인되지 않았다. 인접 row 170의 150B 상세 wr_id=12888은 별도 게시물로 확인되지만 171~173 ID를 유추하는 근거로 사용하지 않는다. CE 목록 직접 fetch는 502.
+- **UKCA Drive Unit:** 공식 검색에서 iX700M Drive Unit별 UKCA 상세를 찾지 못했다(부존재 증명 아님). 확인된 wr_id=12893은 UKCA Converter Unit iX700MCV이며 Drive Unit DoC로 전용하지 않는다.
+- **KR/EN 카탈로그:** 공식 상세 색인은 KR/EN 각 PDF 10.7M, DATE 2025-12-05 13:43:50 메타데이터를 노출한다. 상세 직접 열기는 502; attachment URL/bytes 미취득.
+- **CAD/STEP:** 공식 Servo Drive 도면 색인은 item 19 `iX700M Series 서보드라이브 외형도 2D(CAD), 3D(STEP)`, 게시일 2026-04-21을 표시한다. 상세 href/첨부/원본 bytes 미취득.
+- **접근 실패 원인:** Solution Square JS SPA의 정적 응답에 document locator가 없음; LS메카피온 매뉴얼/CE/카탈로그/도면 상세가 502 또는 timeout; 검색 색인은 필터/캐시 시점별 row title이 상충하고 이전글 텍스트만 제공한다. 실제 href가 없는 경우 추정 링크를 만들지 않았다.
+- **바이너리 판정:** 신규 제조사 원본 바이너리 0건. 모든 제조사 자료는 metadata_only. SHA-256, PDF signature, signer chain, PDF 내부 revision, SKU scope는 검사 불가/미검증. 파일이 실제 취득되기 전에는 이 검증을 수행했다고 표시하지 않는다.
+- Q01~Q62 draft_prepared_not_sent, 제조사 연락 없음. CRA only; SIL 3 제외.
+- 공식 출처: https://lsmecapion.com/bbs/board.php?bo_table=manual&sca=Servo&wr_id=12651 ; https://lsmecapion.com/bbs/board.php?bo_table=manual ; https://lsmecapion.com/bbs/board.php?bo_table=manual&sca= ; https://lsmecapion.com/bbs/board.php?bo_table=manual&sca=Servo ; https://ssq.ls-electric.com/kr/ko/product/category/4?pageNumber=14 ; https://sol.ls-electric.com/kr/ko/newSearch?pageNumber=70 ; https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&sca=CE ; https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&page=3&wr_id=12893 ; https://www.lsmecapion.com/bbs/board.php?bo_table=catalog&wr_id=12110 ; https://www.lsmecapion.com/bbs/board.php?bo_table=drawing&sca=Servo+Drive.
+

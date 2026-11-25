@@ -1477,3 +1477,7 @@ Annex I Part II의 실무 요구사항은 machine-readable SBOM(최소 top-level
 
 
 > **2026-11-26 official detail retry:** LS Mecapion official PEGA2 detail search result exposes previous-post text “iX700M DRIVE 400[V] 매뉴얼 Ver1.3”, but not the target href/wr_id; direct fetch times out. Empty-sca cached row 41=Ver1.3 conflicts with current general/Servo row 41=Ver1.4. Ver1.4 wr_id=12652 is confirmed but detail fetch returns 502. Solution Square iX700M manual title/date (2026-09-16) confirmed; JS shell hides document ID/detail/attachment. CE rows 171–173 group six SKUs; no individual detail IDs/attachments verified. UKCA Drive Unit not located; wr_id=12893 is Converter Unit. KR/EN catalogue and CAD/STEP remain metadata_only. No manufacturer binaries; no manufacturer SHA/signature/revision/SKU checks. Q01–Q62 unsent. See §114.7.15 / §72.13. CRA only; SIL 3 excluded.
+
+
+> **2026-11-26 official locator retry (§114.7.16 / §72.14):** PEGA2 Ver1.3 previous-post title is indexed but actual target anchor href/wr_id remains unavailable; Ver1.3/Ver1.4 snapshots conflict. Ver1.4 wr_id=12652 confirmed, detail 502. Solution Square iX700M 2026-09-16 title/date confirmed, JS shell hides ID/detail/attachment. CE rows 171–173 remain grouped; individual IDs not recovered (row170 150B wr_id=12888 is separate; no inference). UKCA Drive Unit not located; wr_id=12893 is Converter Unit. KR/EN catalogue and CAD/STEP metadata only. No manufacturer binaries; all metadata_only; no hash/signature/revision/SKU validation. Q01–Q62 unsent. CRA only; SIL 3 excluded.
+

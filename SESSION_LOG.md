@@ -3948,3 +3948,15 @@ CRA only; SIL 3 excluded.
 - CE grouped index 171/172/173 covers 220B; 370B/300B; 750B/550B/450B. Individual IDs absent. UKCA Drive Unit unlocated; converter wr_id=12893 not interchangeable. Catalogue and CAD/STEP metadata only.
 - Manufacturer binaries 0; no manufacturer hash/signature/revision/SKU validation. Q01–Q62 unsent. CRA only; SIL 3 excluded.
 - Next: retrieve actual href or downloadable bytes only through official links; do not infer wr_id or attachment paths.
+
+
+## 2026-11-26 — CRA only: official locator and binary acquisition retry
+- Verified main HEAD `3d40b386d43d172f4f0d9d09948e5a01ef372cd4`; read report §114.7.15, evidence §72.13, current status, README, SESSION_LOG and PROJECT_LOG before work.
+- Official PEGA2 Ver1.3 detail search result shows previous-post title iX700M DRIVE 400[V] Ver1.3, but target anchor href/wr_id remains unavailable; direct fetch times out/502. Ver1.3/Ver1.4 list conflict remains unresolved.
+- Ver1.4 list anchor points to wr_id=12652; detail 502, no attachment/binary.
+- Solution Square page14/search page70 confirm iX700M manual updated 2026-09-16, but direct open is JS shell; no document ID/detail/attachment.
+- CE rows 171–173 are grouped 220B; 370B/300B; 750B/550B/450B. Individual IDs/hrefs not found. Row170 150B wr_id=12888 is separate; no adjacent-ID inference. UKCA Drive Unit not located; wr_id=12893 is Converter Unit only.
+- KR/EN catalog metadata and CAD/STEP index item 19 reconfirmed; no source binaries. All manufacturer items metadata_only; no SHA-256/signature/signer chain/internal revision/SKU-scope validation.
+- Failure causes: SPA shell; 502/timeouts; cache/filter snapshot conflict; previous-post target href omitted. No guessed URLs/IDs.
+- Q01–Q62 unsent; no manufacturer contact. CRA only; SIL 3 excluded.
+

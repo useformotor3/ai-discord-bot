@@ -1,4 +1,14 @@
 
+## 2026-11-26 — CRA 공식 원본 locator 재검증 (§114.7.16 / §72.14)
+- 기준 main: `3d40b386d43d172f4f0d9d09948e5a01ef372cd4`; 문서 전용 조사 브랜치에서 기록.
+- PEGA2 Ver1.3 이전글 텍스트는 확인했으나 실제 anchor href/wr_id는 여전히 미노출. Ver1.3/Ver1.4 목록 충돌 유지.
+- Ver1.4 wr_id=12652 확인, 상세 502. Solution Square iX700M 2026-09-16 목록/검색 확인, JS 앱 셸 때문에 document ID/detail/attachment 미확보.
+- CE row 171/172/173은 그룹 제목만 확인; 개별 href/wr_id 미확보. row170 150B wr_id=12888은 별도 자료이며 인접 ID 추정 금지. UKCA Drive Unit 미발견(부존재 증명 아님); wr_id=12893은 Converter Unit.
+- KR/EN 카탈로그와 CAD/STEP는 공식 메타데이터만, 원본 bytes 미취득. 제조사 바이너리 0, 모든 자료 metadata_only; SHA/signature/signer chain/internal revision/SKU scope 검증 없음.
+- 실패 원인: SPA shell, 502/timeouts, 필터/캐시별 index mismatch, 이전글 anchor href 미노출. 추정 URL/ID 생성 금지.
+- Q01–Q62 미발송, 제조사 연락 없음. CRA only; SIL 3 제외.
+- 다음: 실제 공식 anchor/document ID 또는 공식 첨부 bytes를 확보할 때까지 locator 재탐색을 계속하되, 이미 실패한 endpoint 반복 호출은 제한하고 다른 공식 공개 경로/정식 제조사 지원 경로를 우선 검토.
+
 ## 2026-11-26 — CRA official detail retry §114.7.15 / §72.13
 - Baseline main HEAD: 57ba09b6e6b9e936380bca120425fc3cb4d2c1d8; document-only branch `docs/cra-source-detail-retry-20261126-v2`.
 - Solution Square iX700M manual (2026-09-16) title/date confirmed; JS shell/search index do not expose document ID/detail/attachment.
