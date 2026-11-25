@@ -1359,3 +1359,32 @@ Run #1609 full job log: 459 lines; 15/15 steps success; compileall PASS; 189 pyt
 - All remain metadata_only; no individual manufacturer-file content hash.
 
 Q01–Q62 unsent. Actual SKU, EU/EEA supply, economic operators, signed SKU DoC scope, BOM, exact MCU, SBOM, security configuration and CRA classification remain Unknown. CRA only; SIL 3 excluded.
+
+## §71. 2026-11-25 — PR #279 / Run #1610 및 main push Run #1611
+
+| 항목 | PR #279 exact-head | main push |
+|---|---|---|
+| SHA | 49aa465811739fb5eb0dd36877f5875556fc51f5 | 67244a3618ec21495613dedeaf707977effcc783 |
+| Run ID | 45548956440 | 45549049529 |
+| Job | 138985236009 | 138985534120 |
+| Result | SUCCESS | SUCCESS |
+| Steps / pytest | 15/15 / 189 passed | 15/15 / 189 passed |
+| Traceability | 414 events | 414 events |
+| CRA PDFs / sources | 3/3 / 10 | 3/3 / 10 |
+| Provenance | PASS | PASS |
+
+Archive hashes:
+- Run #1610 PDF ZIP 14993082129: f9451891e7ec142502d39a86b412c7375f8cbd67e0103246e26cd4e51a4d32ac.
+- Run #1610 provenance ZIP 14992572830: 593a3df9e6ef84ec22239c5c021f817d50992b783194377cd6e3e4476e6beb71.
+- Run #1611 PDF ZIP 14992183761: 8f0c0a2d39b7df4bcc54fc4104749e70a1e28d40ae01344159118af9fd0ec358.
+- Run #1611 provenance ZIP 14992473112: 2b38fca1efc50980ada42fa7c61e8f9cd3051aac9b65a4bebd21479ab63d2755.
+
+### Manufacturer source recheck
+- Manual list + Servo filter: Ver1.4, 2026-05-26; previously captured empty-category list: Ver1.3. Conflict unresolved; no PDF binary.
+- CE Converter DoC: [CE_DoC-LVDEMC] iX700MCV.pdf, 234.4K, 2026-04-30 11:50:26; 480 Vac; listed ratings 15/37/55/75 kW.
+- UKCA Converter DoC: [UKCA_DoC_LVDEMC] iX700MCV.pdf, 224.1K, 2026-04-30 12:04:05; same model/rating description.
+- Solution Square: iX700M manual listing, update 2026-09-16; JS shell only.
+- Catalog: KR and EN files each 10.7M; item attachment date 2025-12-05.
+- CAD/STEP: listing dated 2026-04-21; 2D/3D binaries not retrieved.
+
+All manufacturer sources remain metadata_only; no per-file content hash, signature validation, or revision inspection. Official detail fetches encountered 502/timeouts; Solution Square is JS-only; execution environment DNS could not resolve the manufacturer host. Q01–Q62 unsent. Actual SKU, EU/EEA supply, economic operators, SKU-specific signed DoC scope, BOM/MCU/SBOM/security configuration, CRA classification, vulnerability handling and support period remain Unknown. CRA only; SIL 3 excluded.
