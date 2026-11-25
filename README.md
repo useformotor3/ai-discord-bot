@@ -1341,3 +1341,4 @@ Annex I Part II의 실무 요구사항은 machine-readable SBOM(최소 top-level
 
  
 > **다음 단계 버튼 운영규약 v1.3 (2026-11-25):** 실질 CRA 응답 마지막에 컨테이너 없는 단독 `다음 단계 계속 진행` 버튼을 제공한다. 버튼은 직접 `GenUI.issueNewTurn`를 호출하고 최신 GitHub 상태를 재조회하는 CRA-only/SIL3-excluded 재개 payload를 사용한다. 출력 전 button/action/payload/last-element 네 항목을 검사한다. 버튼은 사용자 클릭으로 새 턴을 여는 기능이며 백그라운드 자율 실행은 아니다.
+\n\n> **2026-11-25 PR #266–#268 audit:** exact-head runs #1570/#1581/#1583 all SUCCESS, 15/15 returned steps, 189 pytest passed, traceability 397/399/400, CRA PDFs 3/3 hash and official source provenance 10/10 JSON round-trip/upload. Merged main = ea16c98118dceaecb5f37711152ccc83d189a799. Post-merge main push CI remains UNVERIFIED because Combined Status is empty and current run-list connector only exposes PR-triggered runs. iX700M official listing metadata is recorded in report §101 / evidence register §59; original binaries remain unacquired. CRA only; SIL 3 excluded.\n
