@@ -3255,3 +3255,36 @@ Run #1617 artifacts:
 
 #### 114.6.4 증거 경계
 제조사 원본 파일은 하나도 취득하지 못했다. 따라서 제품 증거는 metadata_only다. 실제 SKU, EU/EEA 공급 여부, 경제운영자, SKU별 서명된 EU DoC 적용범위, BOM, MCU 정확한 부품번호, SBOM, 보안 구성, CRA 분류, 취약점 처리, 보안 업데이트/지원기간은 계속 Unknown이다. CRA only; SIL 3 제외.
+
+
+### 114.7 PR #283 / Run #1618 및 main push CI 검증 경계, 제조사 원본 재시도 (2026-11-25)
+#### 114.7.1 PR #283 식별 및 병합 사실
+- PR #283: https://github.com/useformotor3/ai-discord-bot/pull/283 — state=CLOSED, merged=true, base=main.
+- PR base SHA: 127c9ec311e2939059dbff689c3b04f1208e2424.
+- PR exact HEAD: 616b2a42049930290a42cd495f6c7543b0ba8751.
+- PR merge commit SHA: 0821dac7a336848c1609c4c663860be90eb17337. 이는 PR HEAD가 아니라 병합 결과 커밋이다. 최신 커밋 조회에서도 0821dac7...가 저장소 최신 커밋으로 확인됐다.
+- PR 상세 API에서 6 commits, 6 changed files, +84/-0 확인. 이미 merged=true이므로 이번 검증 과정에서 재병합하지 않았다.
+
+#### 114.7.2 Run #1618 exact-head CI
+- Run #1618 / ID 45551394041, workflow “Isolated Python Tests”, PR head SHA 616b2a42049930290a42cd495f6c7543b0ba8751, branch docs/cra-main127c9-run1617-source-investigation-20261125.
+- Job 138993151093 “Source integrity, compile and pytest”: completed/success. 전체 로그 475줄을 직접 조회했다.
+- 반환된 15개 Step 모두 completed/success: Set up job; Checkout approved working branch; Set up Python; Verify exact source blob identities; Install test dependency; Compile source and tests; Validate CRA cross-matrix traceability; Run complete repository test suite; Live official CRA PDF source read-only canary; Upload CRA official PDF source evidence; Live official CRA source read-only canary; Upload official CRA source provenance manifest; Post Set up Python; Post Checkout approved working branch; Complete job.
+- 전체 pytest 189 passed. CRA traceability: claims=13, interfaces=15, requirements=35, SEC=36, crosswalk_SEC_linked=36, product_evidence_records=15, linked_claims=13, bidirectional_links=true. PROJECT_LOG는 418 events, modern IDs 413, legacy 5로 검사됐다.
+- CRA Commission PDF 3/3 취득 및 개별 콘텐츠 SHA-256: CRA-GUIDANCE-2026-5252 (1,190,726 bytes; 84 pages; fe209c250e3d1f7599e42826d91963666951332927edcf511a2e79fe8d2f8234; fallback=true), CRA-GUIDANCE-OJ-2026-6013 (2,709,282 bytes; 61 pages; 40ca76caeb0108f5b97c8f373a95f590b453fe92bd45a483addf3326e48c1dc2), CRA-M606-C2026-7861-ANNEX (151,267 bytes; 6 pages; 262b09596cb5cbe7d72a2c7789fb2512ee00db7f69082e7def2c8181b0f63276).
+- Live official CRA source canary: 10 allowlisted sources PASS; consolidated CRA text reflects Article 64(10) and Article 67 corrigenda; Article 13(8) locator/quote PASS; Regulation (EU) 2025/2392 core-functionality marker and Annex I(10)/Annex II(1) locators PASS; provenance manifest 10-record JSON round-trip PASS.
+- Artifact 14992614962, cra-official-pdf-sources ZIP, 3,070,565 bytes, archive digest 924219a47333054e5459f387df9ad11718d027ae3d7e8ca0224b15736bd5bc0d. Artifact 14993551840, cra-source-provenance ZIP, 2,565 bytes, archive digest 6848d995c1322e8b14f648ec1811d20ee26ee16ac1b7d3b758b2f754ca867810. These are ZIP archive digests, not the individual PDF content digests listed above.
+- Non-fatal warnings: Node.js 20 action deprecation notices and Node punycode/url.parse deprecation warnings; no job step failed.
+- Run URL: https://github.com/useformotor3/ai-discord-bot/actions/runs/45551394041
+
+#### 114.7.3 Run #1619 / post-merge main push verification
+- Run #1619 was not independently identified by run ID in the available GitHub Actions lookup. The commit-run wrapper returns PR-triggered runs only; combined status for merge SHA 0821dac7... returned an empty statuses array. Empty combined status is not proof of success or failure.
+- Therefore Run #1619 ID, event=push, branch=main, exact head SHA, job/steps, complete logs, artifacts and digests remain UNVERIFIED. Do not infer them from Run #1618 or from merged=true.
+- PR #283 is already merged as 0821dac7...; no further merge action is required for PR #283. Post-merge main push CI must be verified separately through an Actions run-list lookup filtered by exact SHA + event=push + branch=main.
+
+#### 114.7.4 LS메카피온 공식 원본 취득 재시도
+- Official manual listing currently exposes “iX700M DRIVE 400[V] 매뉴얼 Ver1.4”, Servo filter view also Ver1.4 (posted 2026-05-26). A separate official list/index snapshot previously captured Ver1.3 for the same displayed date/item. This is an unresolved listing/cache divergence, not proof of the internal revision of a PDF. Preserve Ver1.3/Ver1.4 conflict.
+- Official UKCA list page was readable and lists iX700MCV Converter Unit among iX700M Drive items dated 2026-04-30. Clicking its detail entry returned HTTP 502. CE search-index metadata lists iX700MCV, attachment [CE_DoC-LVDEMC] iX700MCV.pdf (234.4K; 2026-04-30); opening the detail page returned HTTP 502. UKCA filename/size metadata remains [UKCA_DoC-LVDEMC] iX700MCV.pdf (224.1K; 2026-04-30) from prior official index capture; detail page returned HTTP 502.
+- KR/EN catalogue listing metadata: iX700M 브로셔 최종KR_251205.pdf and iX700M 브로셔 최종EN_251205.pdf, each 10.7M, 2025-12-05. Direct detail-page open timed out/failed.
+- Official Servo Drive drawing index exposes “iX700M Series 서보드라이브 외형도 2D(CAD), 3D(STEP)” posted 2026-04-21. Actual attachment names and sizes were not exposed; detail page returned HTTP 502.
+- No LS Mecapion manufacturer original binary was acquired. All manual, CE/UKCA, KR/EN catalogue and CAD/STEP evidence remains metadata_only. No manufacturer-file SHA-256, PDF signature, signer/certificate chain or internal revision was checked. Do not invent download URLs or promote metadata to binary evidence.
+- No manufacturer email, phone inquiry or portal submission was sent. Q01–Q62 remain draft_prepared_not_sent. Actual SKU, EU/EEA supply, economic operators, signed SKU-specific EU DoC scope, BOM, exact MCU part number, SBOM, security configuration, CRA classification, vulnerability handling and support period remain Unknown. CRA only; SIL 3 excluded.
