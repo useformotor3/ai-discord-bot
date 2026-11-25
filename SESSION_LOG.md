@@ -3654,3 +3654,11 @@ CRA only; SIL 3 excluded.
 - Official iX700M manual/CE/UKCA/catalogue search metadata rechecked; direct listing fetch 502. No original product binary or SHA-256 acquired. Details in report §99 / evidence register §57.
 - Q61/Q62 refined for version-controlled manual evidence and actual BOM/MCU/SBOM/security implementation evidence. Inquiry remains 62 questions, draft/not sent.
 - Unknowns preserved. CRA only; SIL 3 excluded.
+
+
+ 
+## 2026-11-25 — 제조사 질의서 실제 문항 수 감사 및 v2.0 정규화
+- 기존 질의서 `reports/LS_MECAPION_IX700M_FORMAL_TECHNICAL_COMMERCIAL_INQUIRY_2026-11-24.md`의 numbered item을 직접 집계한 결과 90개였다. “62문항”이라는 기존 보고는 파일 상태와 맞지 않는 stale metadata였다.
+- 중복/행정성 항목을 통합하고 62개 전역 ID(Q01–Q62)로 재구성했다. 검증: 62 total, 62 unique, sequential Q01–Q62, no gap/duplicate.
+- Q61은 매뉴얼 revision 충돌, Q62는 actual SKU별 BOM/MCU/FW/SBOM/security/vulnerability evidence matrix.
+- 문서 v2.0은 발송 전 초안. 발송·접수·회신은 확인되지 않았다. CRA only; SIL 3 excluded.
