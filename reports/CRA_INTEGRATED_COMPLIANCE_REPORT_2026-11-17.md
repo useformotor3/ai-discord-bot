@@ -2745,3 +2745,33 @@ Actual SKU, EU/EEA supply, economic operators, signed SKU-specific EU DoC covera
 - 행동규약 §8.3 v1.3 main 반영: 단독 DIL button, 직접 GenUI.issueNewTurn, CRA-only/SIL3-excluded 재개 payload, 응답 마지막 요소, 출력 전 hard gate.
 - main push CI는 여전히 UNVERIFIED: Combined Status 빈 배열, 현재 connector run 조회는 PR-triggered만 제공. PR #269 Run #1585를 main push CI로 간주하지 않는다.
 - iX700M 원본 binary는 여전히 미취득. 게시 metadata와 binary를 분리하고 Unknown 유지. CRA only; SIL 3 excluded.
+
+
+## §103. 2026-11-25 — PR #270 및 main push CI 직접 검증, iX700M binary 재취득 시도
+
+### 103.1 PR #270 exact-head 재검증
+- PR #270 exact HEAD `1d815fa2589ba8f55e52c53cf9778a2317b70859`, Run #1587 / ID `45532177358`, event=pull_request, completed/success.
+- Job `Source integrity, compile and pytest` 및 반환 step 15/15 모두 success. `pytest`: 189 passed.
+- CRA traceability PASS: claims=13, interfaces=15, requirements=35, SEC=36, EVD_SEC_crosswalk=16, crosswalk_SEC_linked=36, product_evidence_records=15, linked_claims=13, bidirectional_links=true, M606_mapping_items=41, project_log_events=403.
+- CRA Commission PDF 3/3 fetch/hash, 공식 출처 10개 fetch, provenance manifest JSON parse/round-trip 및 artifact upload PASS.
+- Artifact ZIP IDs: PDF 14985756045 (3,070,567 bytes; archive SHA-256 `f40c659a131bc901bb71b2d4a2d2d9e3472248af33782aef418c8ac3e18d10e5`), provenance 14984154078 (2,565 bytes; archive SHA-256 `b87bd06f98ba3c73dc6b65a396f47162b24580562782e6aabafb29cc2c1fa47`).
+
+### 103.2 main push CI 직접 발견 및 검증
+- main exact SHA `660eb6d20e62f772272c03971dcd773b03a703f5`에 대해 Actions runs collection을 `head_sha`와 `event=push`로 필터링하여 Run #1588 / ID `45532289060` 발견.
+- run metadata: branch=main, event=push, head_sha exact match, status=completed, conclusion=success.
+- Job `Source integrity, compile and pytest`; 반환 step 15/15 모두 success; pytest 189 passed.
+- CRA traceability PASS: project_log_events=403 및 §103.1과 동일 cross-matrix counters. CRA PDF 3/3 fetch/hash, official source 10개 fetch, manifest JSON round-trip/upload PASS.
+- Artifact ZIP IDs: PDF 14985077936 (3,070,565 bytes; archive SHA-256 `5662b524ec0e9c7b2d8603bddb34eea8b9de594b965b40dd9eef653ab35a2e53`), provenance 14985815057 (2,565 bytes; archive SHA-256 `51b73d9fa1b2bf7c717a33620695c3ad3a16015a4d87f76211431cfbac42f1b6`).
+- 결과: main push CI는 SUCCESS로 확정. 기존 UNVERIFIED 기록은 과거 조회 경로의 한계였으며, 본 절이 최신 상태를 supersede한다.
+
+### 103.3 제조사 원본 취득 재시도 및 매뉴얼 버전 불일치
+- 공식 Servo 매뉴얼 필터 목록은 iX700M DRIVE 400[V] Ver1.4, 2026-05-26, detail `wr_id=12652`를 표시한다. 다만 동일 제조사 도메인의 다른 검색 인덱스 snapshot은 Ver1.3 및 동일 날짜를 표시한다. detail 페이지는 timeout. Ver1.4가 현재 목록에서 확인되는 최신 표시지만, PDF binary/표지/개정 이력 미확보로 실제 파일 revision과 적용성을 확정하지 않는다.
+- Converter CE detail `wr_id=12886`: `[CE_DoC-LVDEMC] iX700MCV.pdf`, 234.4K metadata. Converter UKCA `wr_id=12893`: `[UKCA_DoC_LVDEMC] iX700MCV.pdf`, 224.1K metadata. 두 상세 페이지 모두 timeout, binary 미취득.
+- KR/EN catalogue detail `wr_id=12110`: 각 10.7M metadata, binary 미취득.
+- Drawing list: iX700M Series 2D CAD/3D STEP, 2026-04-21, detail `wr_id=12455`; 상세 페이지 timeout, CAD/STEP binary 미취득.
+- 제조사 사이트 direct detail 재시도 및 container HTTP 요청은 timeout/DNS resolution failure. 취득상태는 모두 `metadata_only`; content SHA-256 없음. 파일명/크기/게시일은 원본 파일 내용이나 DoC 서명·범위를 입증하지 않는다.
+
+### 103.4 질의서 및 Unknown 관리
+- 제조사 질의서 v2.0 Q01–Q62: 62개, ID unique/sequential. 상태 `draft_prepared_not_sent`; 발송/회신/증거 수령을 주장하지 않는다.
+- actual SKU, EU/EEA supply, economic operators, signed SKU-specific EU DoC coverage, BOM, exact MCU part number, SBOM, security configuration, CRA classification, vulnerability handling, security update/support period는 계속 Unknown.
+- CRA only; SIL 3 excluded.
