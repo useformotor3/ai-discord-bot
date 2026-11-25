@@ -2670,7 +2670,7 @@ Actual SKU, EU/EEA supply, economic operators, signed DoC coverage, BOM/exact MC
 - Manual: https://www.lsmecapion.com/bbs/board.php?bo_table=manual
 - CE index: https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&sca=CE
 - Converter CE: https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&sca=CE&wr_id=12886
-- Converter UKCA: https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&page=3&wr_id=12886
+- Converter UKCA: https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&page=3&wr_id=12893
 - KR/EN catalogue: https://www.lsmecapion.com/bbs/board.php?bo_table=catalog&wr_id=12110
 - Servo Drive drawings: https://www.lsmecapion.com/bbs/board.php?bo_table=drawing&sca=Servo+Drive&wr_id=12455
 
