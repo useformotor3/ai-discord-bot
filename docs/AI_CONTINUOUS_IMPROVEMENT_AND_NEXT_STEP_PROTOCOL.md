@@ -211,3 +211,11 @@ main `660eb6d20e62f772272c03971dcd773b03a703f5`의 push Run #1588 / ID `45532289
 - Artifacts: PDF 14988832738 SHA-256 `f3a29c9b7ad2c8cbaea65fc9d0c5eb3d47ad348005b3bf6cbe3b98b037786861`; provenance 14989265975 SHA-256 `61736ebe2e84c8b8bba92820b4b2f69e132edfcc9d5304a434c45e392e76fabf`.
 - PR #275 diff 7 files(+111/-0), reviews 0, threads 0; PR branch JSONL 408 valid records. Do not merge this HEAD if further docs are appended; any new commit invalidates exact-head CI and requires a new run.
 - Expected-head squash merge only after final diff and latest CI success; then direct Actions runs collection by merge SHA + event=push, verify main branch, exact SHA, completed/success and all jobs/steps/logs/artifacts.
+
+
+### 2026-11-25 — PR #275 final merge and post-merge push CI
+- PR exact final HEAD `2918f4b62c76d211462428ea32bbbd93a1cbdb61`, Run #1601 / 45540997785: SUCCESS, 15/15, 189 pytest, traceability 409, official sources 10, PDFs 3/3, provenance PASS.
+- Expected-head squash merge to `cd00a3b67eea7bf18f5143951f4616659157e15e`.
+- Post-merge main push Run #1602 / 45541169420: Actions runs collection filtered by exact merge SHA + event=push; branch=main, completed/success, 15/15, 189 pytest, traceability 409, PDFs 3/3, sources 10, provenance PASS.
+- Artifact IDs and archive digests are in PROJECT_LOG event `2026-11-25-CRA-PR275-RUN1601-MAIN1602-EXACTHEAD-CLOSEOUT`.
+- Keep product-specific Unknowns and manufacturer metadata_only boundary; Q01–Q62 remain unsent.
