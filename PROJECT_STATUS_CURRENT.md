@@ -2722,3 +2722,11 @@
 - Servo 필터 Ver1.4 vs 일반/빈 분류 목록 Ver1.3 충돌 유지; 실제 PDF 내부 revision/controlled copy는 Unknown.
 - KR/EN 카탈로그 상세는 파일명·각 10.7M·2025-12-05 첨부일 메타데이터만 재확인. 바이너리 0, metadata_only.
 - 상세: report §114.7.11 / evidence §72.9. CRA only; SIL 3 제외.
+
+## 2026-11-25 — Solution Square / Ver1.4 ID / KC cross-reference
+- 최신 main 기준 8898a733ec8328acfa411041d527b0e1517ec678; report §114.7.11 / evidence §72.9 확인 후 진행.
+- Solution Square iX700M manual (2026-09-16) official list/search result title confirmed; JS app shell prevents document ID/detail/download URL extraction.
+- LS메카피온 Ver1.4 actual official list anchor resolves to wr_id=12652; detail URL verified but HTTP 502; binary not acquired. Ver1.3 target link remains undisclosed; no guessed ID.
+- KC index provides individual rows for iX700MD1-B-220B (row 113) and iX700MD1-B-370B (row 114), 2026-03-09. KC evidence is not CE/UKCA replacement and does not identify CE detail hrefs.
+- CE groups 220B / 370B-300B / 750B-550B-450B remain index-only; UKCA Drive Unit not found in searched results, not proof of non-existence. KR/EN catalog and CAD/STEP remain metadata_only.
+- Manufacturer binary 0; no SHA/signature/revision/SKU-scope validation. Q01–Q62 unsent; no manufacturer contact. CRA only; SIL 3 excluded. Details §114.7.12 / §72.10.
