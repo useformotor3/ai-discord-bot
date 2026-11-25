@@ -2514,3 +2514,11 @@
 - PR #270 문서 동기화 검증에서 README/SESSION_LOG의 PR #270 기록이 누락되어 있음을 발견. 이번 후속 PR에서 이전 UNVERIFIED 기록을 지우지 않고 최신 정정 상태를 append해 이력 보존.
 - 제조사 원본 자료 재시도: manual list Ver1.4 vs indexed snapshot Ver1.3 conflict; detail timeout. Converter CE/UKCA, catalogue, CAD detail timeout. All metadata_only, binary/hash absent.
 - Q01–Q62 remains draft_prepared_not_sent. Actual SKU, EU/EEA supply, economic operators, signed DoC scope, BOM/MCU/SBOM/security config remain Unknown. CRA only; SIL 3 excluded.
+
+
+## 2026-11-25 — PR #271 병합 및 post-merge main push 성공
+- PR #271 exact HEAD `47e36dadd2c61a891378a70b168a5cd5e0262c72`, Run #1589 / 45536881236 SUCCESS, 15/15, 189 passed, traceability 404, PDF 3/3, official source 10-source provenance round-trip/upload PASS.
+- Expected-head squash merge SHA / main read-back `c9532486ad2aca0ba9538eeffb42d30f76d73ea0`.
+- Post-merge main push Run #1590 / 45537026894: event=push, exact merge SHA, completed/success, 15/15, 189 passed, traceability 404, PDF 3/3, provenance 10-source PASS/upload.
+- Actions API query by `head_sha` + `event=push` confirmed. Main push CI SUCCESS.
+- Manufacturer original iX700M binaries still not acquired; all metadata_only. Manual index Ver1.4 vs Ver1.3 conflict unresolved. Q01–Q62 not sent; Unknowns preserved. CRA only; SIL 3 excluded.

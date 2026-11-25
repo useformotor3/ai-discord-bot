@@ -1363,3 +1363,11 @@ Annex I Part II의 실무 요구사항은 machine-readable SBOM(최소 top-level
 - 조회 방법: `GET /repos/useformotor3/ai-discord-bot/actions/runs?head_sha={SHA}&event=push&per_page=100`. 이 직접 목록 조회로 PR-only wrapper가 놓친 push run을 발견했다.
 - iX700M 원본 매뉴얼/DoC/카탈로그/CAD binary는 미취득(metadata_only). Ver1.4 current listing vs Ver1.3 alternate indexed snapshot 충돌은 원본 PDF 확인 전 unresolved.
 - Q01–Q62 draft_prepared_not_sent. Actual SKU, EU/EEA supply, economic operators, signed SKU DoC scope, BOM/MCU/SBOM/security configuration remain Unknown. CRA only; SIL 3 excluded.
+
+
+## 2026-11-25 — PR #271 및 main push CI 결과
+- PR #271 exact-head Run #1589 SUCCESS; main push Run #1590 SUCCESS. Merge/main SHA `c9532486ad2aca0ba9538eeffb42d30f76d73ea0`.
+- Both runs: 15/15 steps, 189 pytest passed, CRA traceability 404, CRA Commission PDFs 3/3 fetch/hash, official source 10-record provenance manifest JSON round-trip and artifact upload PASS.
+- Main push run #1590 ID 45537026894. Actions API query: `actions/runs?head_sha={SHA}&event=push&per_page=100`.
+- PR #271 main sync included report §103, evidence §61, protocol v1.4 §8.4 and project status; this follow-up adds merge/push run closeout to README/SESSION_LOG and append-only PROJECT_LOG.
+- iX700M original binaries remain unacquired; metadata_only. Q01–Q62 draft not sent; Unknowns preserved. CRA only; SIL 3 excluded.
