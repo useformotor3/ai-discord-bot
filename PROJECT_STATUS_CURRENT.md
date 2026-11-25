@@ -2559,3 +2559,13 @@
 - Solution Square 공식 목록에서 iX700M 사용 설명서 2026-09-16 업데이트 항목 재확인. 상세는 JS shell만 반환. Converter CE/UKCA, KR/EN catalogue, CAD/STEP 원본도 미취득; metadata_only.
 - Q01–Q62 `draft_prepared_not_sent`; 발송하지 않음. actual SKU, EU/EEA 공급, 경제운영자, signed SKU DoC, BOM/MCU/SBOM/security configuration, CRA classification은 Unknown.
 - CRA only; SIL 3 제외.
+
+
+## 2026-11-25 — PR #275 Run #1597 exact-head CI 완료 및 병합 전 상태
+- PR #275 HEAD `9231c47c88ff7fe9fc9ce1022eb3023e6af244ba`, Run #1597 / 45540553259: event=pull_request, completed/success, Job 138957720914, 15/15 steps 성공, 189 pytest passed.
+- Traceability: claims 13, interfaces 15, requirements 35, SEC 36, EVD_SEC crosswalk 16, SEC linked 36, product evidence records 15, bidirectional links true, M606 mapping 41, project_log_events 408.
+- CRA 공식 PDF 3/3 취득·SHA-256 검증, 공식 CRA 출처 allowlist 10건, Article 13(8) locator 및 Regulation 2025/2392 locators PASS, provenance manifest JSON round-trip PASS.
+- Artifacts: PDF ID 14988832738 (3,070,565 bytes; archive SHA-256 f3a29c9b7ad2c8cbaea65fc9d0c5eb3d47ad348005b3bf6cbe3b98b037786861); provenance ID 14989265975 (2,565 bytes; archive SHA-256 61736ebe2e84c8b8bba92820b4b2f69e132edfcc9d5304a434c45e392e76fabf). API digest와 job log digest 일치.
+- PR diff 7 files(+111/-0), reviews 0, threads 0. PR branch PROJECT_LOG 408 records, JSON parse errors 0; test-reported event count 408.
+- 이 상태 기록을 위해 추가 문서 커밋이 발생하면 PR HEAD가 바뀌므로 해당 새 HEAD의 CI를 다시 통과시킨 뒤에만 merge한다. 현재 PR #275는 병합 전.
+- 제조사 파일은 계속 metadata_only; Q01–Q62 draft_prepared_not_sent. Actual SKU, EU/EEA supply, economic operators, signed SKU DoC, BOM/MCU/SBOM/security configuration, CRA classification Unknown. CRA only; SIL 3 제외.
