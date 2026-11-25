@@ -184,3 +184,9 @@ v1.2가 main에 존재하고 PROJECT_LOG에도 버튼 누락 재발 이력이 �
 
 ### 2026-11-25 실증
 main `660eb6d20e62f772272c03971dcd773b03a703f5`의 push Run #1588 / ID `45532289060`이 이 방식으로 발견되어 SUCCESS 및 15/15 steps로 검증되었다. 상세는 통합 보고서 §103과 PROJECT_LOG event에 기록한다.
+
+
+### 2026-11-25 Run #1592 실증 추가
+- PR #272 exact-head Run #1591 / 45537296095 SUCCESS, main branch Run #1592 / 45537422906 job SUCCESS; both 15/15 steps, 189 pytest passed, traceability 405, CRA PDFs 3/3, official source provenance 10건 round-trip/upload PASS.
+- Main run artifact metadata confirms `head_branch=main` and exact merge SHA `eb5894767cebdc7f956e31252b2d1831ef554a85`. Job/artifact wrapper가 event 필드를 제공하지 않는 경우에는 그 한계를 기록하고 event property를 직접 조회했다고 주장하지 않는다.
+- PR #272 merge 후 보고서 §105, 증거등록부 §63, 상황판, README, SESSION_LOG, append-only PROJECT_LOG 동기화는 후속 PR에서 수행한다.
