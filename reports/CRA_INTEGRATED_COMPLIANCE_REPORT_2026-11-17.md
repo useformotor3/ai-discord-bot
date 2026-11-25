@@ -2903,3 +2903,26 @@ Traceability 로그의 `project_log_events`는 각각 405(PR #272 및 main #1592
 
 ### 107.5 Q01–Q62 및 Unknown 통제
 Q01–Q62는 `draft_prepared_not_sent`; 발송·접수·회신을 주장하지 않는다. Actual SKU, EU/EEA 공급, 경제운영자, signed SKU-specific EU DoC coverage, BOM, exact MCU, SBOM, security configuration, CRA classification, vulnerability handling, security update/support period는 증거 확보 전까지 Unknown이다. CRA only; SIL 3 excluded.
+
+
+## §108. 2026-11-25 — PR #275 exact-head CI 및 CRA 공식 출처 재검증
+
+### 108.1 실행 식별
+PR #275 HEAD `9231c47c88ff7fe9fc9ce1022eb3023e6af244ba`, Run #1597 / ID `45540553259`, event `pull_request`, Job `138957720914`. 최종 상태 `completed/success`, 15/15 steps, 전체 테스트 189 passed.
+
+### 108.2 CRA traceability 및 법령 출처
+로그에서 claims 13, interfaces 15, requirements 35, SEC 36, EVD_SEC crosswalk 16, SEC linked 36, product evidence records 15, linked claims 13, bidirectional links true, M606 mapping items 41, PROJECT_LOG events 408을 확인했다. CRA Commission PDF 3건을 모두 취득하고 SHA-256을 계산했다. 공식 allowlist source 10건을 조회했고 Article 13(8) paragraph locator/quote 및 Implementing Regulation 2025/2392 Annex I category 10, Annex II category 1 locator가 PASS했다. Provenance manifest는 10 records JSON round-trip 후 artifact로 업로드됐다.
+
+### 108.3 Artifact 증거
+| Artifact | ID | Size | Job-log/API archive SHA-256 |
+|---|---:|---:|---|
+| CRA official PDF sources | 14988832738 | 3,070,565 bytes | `f3a29c9b7ad2c8cbaea65fc9d0c5eb3d47ad348005b3bf6cbe3b98b037786861` |
+| CRA source provenance | 14989265975 | 2,565 bytes | `61736ebe2e84c8b8bba92820b4b2f69e132edfcc9d5304a434c45e392e76fabf` |
+
+Artifact API metadata digest와 job log의 uploaded ZIP digest가 각각 일치한다. 이는 artifact archive digest이며 개별 PDF 파일의 content digest와 혼동하지 않는다.
+
+### 108.4 PR 및 JSONL 검토
+PR #275 diff 7 files, +111/-0, reviews 0, review threads 0. PR branch의 PROJECT_LOG.jsonl은 408 records, JSON parse errors 0이며 마지막 이벤트는 #272~#274 post-merge push 검증 이벤트다. CI traceability가 보고한 event count도 408이다. 이 문서의 검증 상태를 추가로 기록하는 후속 커밋은 PR HEAD를 바꾸므로 새 exact-head CI 통과 후 병합한다.
+
+### 108.5 제조사 증거 경계 및 Unknown
+iX700M Ver1.3/Ver1.4 공식 목록 충돌, Solution Square 2026-09-16 목록, Converter CE/UKCA, KR/EN catalog, 2D CAD/3D STEP은 계속 metadata_only이며 원본 바이너리와 content hash 미확보. Q01–Q62는 draft_prepared_not_sent; 발송하지 않았다. Actual SKU, EU/EEA supply, economic operators, signed SKU-specific EU DoC coverage, BOM, exact MCU, SBOM, security configuration, CRA classification, vulnerability handling 및 support period는 Unknown 유지. CRA only; SIL 3 excluded.
