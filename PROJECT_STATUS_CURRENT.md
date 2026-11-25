@@ -2686,3 +2686,9 @@
 - Main push Run #1623 / 45552908709 exact merge SHA + event=push + branch=main SUCCESS, job 138998000787, 15/15, 459 logs, 189 pytest, traceability 420, PDFs 3/3, sources 10, locators/provenance PASS.
 - Artifact IDs and archive digests are recorded in report §114.7.6 / evidence register §72.4.
 - Manufacturer binaries remain metadata_only; manual Ver1.3/1.4 conflict unresolved; CE/UKCA, KR/EN catalog and CAD/STEP originals not acquired. Q01–Q62 unsent; all product Unknowns retained. CRA only; SIL 3 excluded.
+
+
+## 2026-11-25 — Run #1625 / 제조사 원본 재조사
+- Main HEAD `1b3d253211048411277c4ed04d8c6e0f60263602`; Run #1625 / 45553259298 exact SHA + push + main SUCCESS; job 138999166173, 15/15, 459 logs, 189 pytest, compileall/traceability PASS, CRA PDFs 3/3, official sources 10, legal locators/provenance PASS. Digests in report §114.7.7 / register §72.5.
+- LS Mecapion: Ver1.3/1.4 official listing conflict reproduced; CE Drive Unit groups and Converter metadata, UKCA Converter metadata, KR/EN catalogue and CAD/STEP listing reconfirmed. Detail-page timeout/502/inaccessible responses prevented binary retrieval. All metadata_only; no manufacturer-file hash/signature/revision check.
+- No inquiry; Q01–Q62 unsent; product Unknowns retained. CRA only; SIL 3 excluded.

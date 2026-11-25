@@ -1453,3 +1453,6 @@ Annex I Part II의 실무 요구사항은 machine-readable SBOM(최소 top-level
 
 
 > **PR #284 / Run #1622 and main Run #1623:** PR exact HEAD 50e660161e269a75c85cea02d5a125f418e4aa4d passed Run #1622 / 45552789733 (15/15, 189 pytest, traceability 420, PDFs 3/3, sources 10, provenance PASS), then expected-head squash merged as 1c1e0f30b18877dd02b70078ca8863646c371e3b. Main push Run #1623 / 45552908709 on exact merge SHA + push/main passed 15/15 (189 pytest, traceability 420, PDFs 3/3, sources 10, provenance PASS). See report §114.7.6 / evidence register §72.4. Manufacturer binaries remain metadata_only; Ver1.3/1.4 unresolved; Q01–Q62 unsent. CRA only; SIL 3 excluded.
+
+
+> **2026-11-25 Run #1625 / latest manufacturer recheck:** main HEAD `1b3d253211048411277c4ed04d8c6e0f60263602`; exact main push Run #1625 / 45553259298 SUCCESS (15/15, 189 pytest, traceability PASS, CRA PDFs 3/3, official sources 10). See report §114.7.7 / register §72.5. LS Mecapion originals remain metadata_only; manual Ver1.3/1.4 conflict unresolved; CE Drive Unit/Converter and UKCA Converter listings only; no Drive Unit UKCA item located in searched results; KR/EN catalogue and CAD/STEP binaries not obtained. Detail pages timed out/502; no guessed URLs. Q01–Q62 unsent. CRA only; SIL 3 excluded.
