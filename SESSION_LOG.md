@@ -3759,3 +3759,21 @@ CRA only; SIL 3 excluded.
 - Run #1601 artifact IDs/digests: PDF 14988823487 / b9089acf0f81206b026c1f016e79588361e6c150bb49643cc9316e7bcad2bba0; provenance 14988593957 / acea80b32d1ed91d9af8d78f54f0ed65fe508cb1882c83261ab1c1a06fb9f8da.
 - Run #1602 artifact IDs/digests: PDF 14988324547 / bd8018361bb18e5ef326ca9f3e57884bc9b00de97a76f70f4e5945b603ae149d; provenance 14989940245 / 27460361017e0da584e2fc1a021d121ac4e405b6b8133bd6007703a091482fcb.
 - Main PROJECT_LOG 409 valid records. Manufacturer binary acquisition still metadata_only; Q01–Q62 not sent; product facts Unknown. CRA only; SIL 3 excluded.
+
+
+## 2026-11-25 — PR #276 / Run #1604 exact-head main push final verification
+- Re-read main HEAD, behavior protocol v1.4, situation board, PR #276 and current report/evidence files. PR #276 is merged; merge SHA/current main 45ec85172d2b5022b0eced1740a2c269b539e55c.
+- Run #1604 / 45541495434 identified through Actions runs collection filtered by exact head_sha=45ec85172d2b5022b0eced1740a2c269b539e55c and event=push; branch main, completed/success. Job 138960843560; 15 returned steps all success; logs 459 lines; compileall success; pytest 189 passed.
+- Traceability log: 410 events (405 modern IDs, 5 legacy); 13 claims, 15 interfaces, 35 requirements, SEC 36, crosswalk 16, product evidence 15, M606 mapping 41.
+- Official CRA PDF source checks 3/3 with individual content hashes; 10 allowlisted official sources; Article 13(8) locator/quote and Regulation (EU) 2025/2392 markers passed; provenance manifest JSON round-trip and upload passed.
+- Artifact ZIP digests: PDF ZIP ID 14988843820 / 3,070,565 bytes / SHA-256 5b0f7e5cd59a4955b2a22a8b18d5dd448b4df167119fa72a531bdd4074b9879b; provenance ZIP ID 14988684163 / 2,564 bytes / SHA-256 c9d8a97e9db97452444ef64d4f8493cd953317d82dcd499541b124e02f6228ff. Individual PDF hashes recorded separately in report §110; do not conflate archive and file hashes.
+- Warnings: Node.js 20 and punycode/url.parse deprecation only; no failed steps. No workflow/code change.
+- Official manufacturer index recheck: manual list Ver1.4 vs empty-category view Ver1.3 on same 2026-05-26 date; Solution Square iX700M manual list 2026-09-16; Converter iX700MCV CE/UKCA model code metadata; catalogue and CAD/STEP listing metadata. Original binaries remain unobtained, metadata_only.
+- Q01–Q62 draft_prepared_not_sent; not sent. Actual SKU, EU/EEA supply, economic operators, signed SKU DoC coverage, BOM/MCU/SBOM/security configuration and CRA classification remain Unknown. CRA only; SIL 3 excluded.
+
+
+## 2026-11-25 — PR #277 Run #1605 failure / corrective action
+- Run #1605 / 45542964674 on PR HEAD cf14a184135bd86be02efa4100a9a7a3894b71c3 failed at traceability validation. Log: PROJECT_LOG.jsonl line 411 invalid JSON; compile succeeded; pytest and live-source/artifact stages skipped.
+- Root cause: an extra leading newline was appended to an already newline-terminated JSONL file, creating a blank line. My first post-write validation filtered empty lines, so it missed the strict validator failure. This is a verification-method gap, not a CRA evidence failure.
+- Correction: reconstruct JSONL from all non-empty existing lines (preserving every JSON object), append a structured failure event, verify every physical line parses and verify all present event_id values are unique. Run new exact-head CI; no merge before success.
+- Run #1604 on main remains SUCCESS; no main changes or workflow changes.

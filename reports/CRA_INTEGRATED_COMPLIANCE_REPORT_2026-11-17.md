@@ -2948,3 +2948,55 @@ Run #1601 artifacts: PDF ID 14988823487, archive SHA-256 `b9089acf0f81206b026c1f
 Run #1602 artifacts: PDF ID 14988324547, archive SHA-256 `bd8018361bb18e5ef326ca9f3e57884bc9b00de97a76f70f4e5945b603ae149d`; provenance ID 14989940245, archive SHA-256 `27460361017e0da584e2fc1a021d121ac4e405b6b8133bd6007703a091482fcb`. API digest와 job log ZIP digest가 일치한다.
 
 main PROJECT_LOG는 409 JSONL records, parse errors 0. 제조사 원본 바이너리는 아직 취득하지 못했으므로 metadata_only. Q01–Q62 발송하지 않음. 제품 SKU, EU/EEA 공급, 경제운영자, SKU별 signed EU DoC 적용, BOM/MCU/SBOM/security configuration, CRA classification은 Unknown. CRA only; SIL 3 제외.
+
+
+## §110. 2026-11-25 — PR #276 및 main push Run #1604 최종 검증
+
+| 검증 항목 | 결과 |
+|---|---|
+| 기준 main / PR #276 | 45ec85172d2b5022b0eced1740a2c269b539e55c / 병합 완료 |
+| PR #276 HEAD / merge SHA | 7534c498fc0331d5044d30d062ea862e8f6d2792 / 45ec85172d2b5022b0eced1740a2c269b539e55c |
+| Main push Run | #1604 / 45541495434 |
+| Exact head / event / branch | 45ec85172d2b5022b0eced1740a2c269b539e55c / push / main |
+| 상태 | completed / success |
+| Job | 138960843560 — 15개 반환 step 모두 success |
+| Compile / pytest | 성공 / 189 passed |
+| CRA traceability | claims 13; interfaces 15; requirements 35; SEC 36; EVD_SEC crosswalk 16; linked SEC 36; product evidence 15; M606 41 |
+| PROJECT_LOG 검사 | 410 records; modern IDs 405; legacy 5 |
+| 공식 CRA PDF | 3/3 fetched+hashed |
+| 공식 CRA source | 10 allowlisted sources; Article 13(8) locator/quote PASS; Regulation (EU) 2025/2392 core-functionality 및 Annex I(10)/Annex II(1) locators PASS |
+| Provenance | 10-record manifest JSON round-trip 및 artifact upload PASS |
+
+Run #1604는 Actions runs collection을 exact head_sha=45ec85172d2b5022b0eced1740a2c269b539e55c, event=push로 필터링해 확인했다. 응답에서 head_branch=main, exact head_sha, status=completed, conclusion=success를 각각 대조했다. main ref도 같은 SHA를 가리킨다. 전체 job log 459 lines를 확보했고, 전체 job step 요약은 15개이며 모두 completed/success다. 주요 로그는 source blob identity 검증, compileall, CRA cross-matrix traceability, 전체 pytest, PDF 3건 다운로드/해시, 10개 공식 CRA 출처 canary, manifest JSON 왕복 및 artifact 업로드 성공을 포함한다.
+
+### 110.1 Artifact archive와 개별 파일 hash 구분
+
+| 산출물 | Artifact ID | 크기 | archive SHA-256 |
+|---|---:|---:|---|
+| CRA official PDF sources ZIP | 14988843820 | 3,070,565 bytes | 5b0f7e5cd59a4955b2a22a8b18d5dd448b4df167119fa72a531bdd4074b9879b |
+| CRA source provenance ZIP | 14988684163 | 2,564 bytes | c9d8a97e9db97452444ef64d4f8493cd953317d82dcd499541b124e02f6228ff |
+
+PDF 개별 content SHA-256은 job log에서 별도로 계산됐다.
+- CRA-GUIDANCE-2026-5252: 1,190,726 bytes; fe209c250e3d1f7599e42826d91963666951332927edcf511a2e79fe8d2f8234
+- CRA-GUIDANCE-OJ-2026-6013: 2,709,282 bytes; 40ca76caeb0108f5b97c8f373a95f590b453fe92bd45a483addf3326e48c1dc2
+- CRA-M606-C2026-7861-ANNEX: 151,267 bytes; 262b09596cb5cbe7d72a2c7789fb2512ee00db7f69082e7def2c8181b0f63276
+
+ZIP archive digest는 ZIP 컨테이너 전체의 hash이며, 개별 PDF content hash와 서로 대체할 수 없다. Provenance ZIP도 archive digest만 확인됐으며, 내부 JSON 파일 자체의 content hash를 별도로 주장하지 않는다.
+
+### 110.2 경고 및 비실패 항목
+job log에는 Node.js 20 deprecation, punycode 및 url.parse() deprecation 경고가 있었다. 이는 이번 run의 실패 원인이 아니며 모든 반환 step은 성공했다. 다만 향후 GitHub Actions 런타임 호환성 점검 후보로 기록한다. 이번 작업은 운영 workflow 변경을 하지 않았다.
+
+### 110.3 제조사 자료 상태 및 미확정 사실
+2026-11-25 재검색에서도 제조사 원본 바이너리는 확보되지 않았다.
+- LS메카피온 매뉴얼 기본 목록/Servo 필터 검색 인덱스는 Ver1.4, 같은 날짜의 빈 카테고리 직접 목록은 Ver1.3을 표시한다(2026-05-26). 상세 페이지는 timeout. 어느 판이 실제 관리본인지 확정하지 않는다.
+- iX700MCV CE/UKCA 게시물은 480 Vac, 15/37/55/75 kW 코드군 및 옵션 코드 설명과 PDF 첨부파일 이름/크기를 표시한다. 서명된 원본 선언서와 SKU 적용범위는 검사하지 못했다.
+- Solution Square의 iX700M 사용 설명서 2026-09-16 목록은 검색 결과로 확인되나 상세는 JavaScript shell만 반환한다.
+- KR/EN 카탈로그와 2D CAD/3D STEP은 공식 게시물 목록/첨부 메타데이터까지만 확인했다. 상세 원본 파일과 개별 content hash는 미취득.
+
+위 자료는 모두 metadata_only 유지. Q01–Q62는 draft_prepared_not_sent이며 발송하지 않았다. Actual SKU, EU/EEA 공급, 경제운영자, SKU별 signed DoC 적용, BOM, exact MCU, SBOM, security configuration, CRA classification, 취약점 처리 및 지원기간은 증거 확보 전까지 Unknown. CRA only; SIL 3 제외.
+
+
+### 110.4 PR #277 최초 exact-head CI 실패 분석 및 교정
+PR #277 최초 HEAD cf14a184135bd86be02efa4100a9a7a3894b71c3의 Run #1605 / 45542964674는 failed다. Job 138965657238의 compile 단계까지는 성공했으나 CRA traceability 단계에서 PROJECT_LOG.jsonl line 411 invalid JSON 오류로 중단됐다. 원인은 기존 JSONL이 newline으로 끝나는데 append 시 선행 newline을 한 번 더 넣어 빈 레코드 줄이 생긴 형식 오류다. 이 실패로 pytest 및 live-source/artifact 단계는 skipped이며, 이 HEAD의 테스트 통과를 주장하지 않는다.
+
+교정은 모든 비어 있지 않은 기존 JSONL 레코드를 그대로 보존하고, 빈 줄만 제거한 뒤 Run #1605 실패 기록을 새 JSON object 한 줄로 추가하는 방식이다. 교정 후 전체 물리 라인 JSON 파싱, 레코드 수 및 존재하는 event_id의 중복 검사를 다시 수행하고 새 PR HEAD에서 CI를 재실행한다. 기존 실패 시도와 로그는 보존한다. 운영 코드/workflow 변경은 없다.
