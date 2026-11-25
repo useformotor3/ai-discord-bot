@@ -3394,3 +3394,9 @@ Run #1617 artifacts:
 - 공식 도면 인덱스는 iX700M Series 2D(CAD)/3D(STEP) 항목 19, 2026-04-21을 표시한다: https://www.lsmecapion.com/bbs/board.php?bo_table=drawing&sca=Servo+Drive. 상세 원본 파일명·크기·첨부 URL은 미노출.
 - 재현된 접근 실패: LS메카피온 150B CE, MCV CE, MCV UKCA 상세 페이지 직접 열기는 timeout. Solution Square 목록은 JS 앱 셸만 반환하고 상세 식별자/href/첨부 URL을 노출하지 않는다. 검색 인덱스는 그룹 제목/게시일만 제공하므로 개별 detail URL을 역산할 근거가 없다.
 - 신규 제조사 바이너리 취득 0건. 모든 문서는 metadata_only; 제조사 파일 SHA-256, PDF 전자서명/서명자/인증서 체인, 내부 개정번호, 내용 및 SKU 적용범위 미검증. URL 추측/조립 금지. Q01–Q62 draft_prepared_not_sent; 이메일·전화·포털 문의 없음. 제품별 SKU/EU 공급/경제운영자/DoC 범위/BOM·MCU/SBOM/보안/CRA 분류/취약점 처리/지원기간 Unknown 유지. CRA only; SIL 3 제외.
+
+### 114.7.11 매뉴얼 Ver1.3 목록 교차참조 및 KR/EN 카탈로그 상세 메타데이터 재확인 (2026-11-25)
+- 공식 LS메카피온 PEGA2 매뉴얼 상세 검색 결과(https://lsmecapion.com/bbs/board.php?bo_table=manual&sca=Servo&wr_id=12651)는 PEGA2 Ver1.3 상세와 첨부를 표시하며, 페이지의 이전글 텍스트가 'iX700M DRIVE 400[V] 매뉴얼 Ver1.3'임을 노출한다. 이는 Ver1.3 항목이 공식 게시물 네비게이션에 존재한다는 교차 근거지만, 그 링크의 실제 href/wr_id는 검색 결과에 노출되지 않았다. Ver1.3 detail URL을 생성하지 않는다.
+- 같은 공식 목록의 Servo 필터는 iX700M Ver1.4를 표시하고, 일반 목록/빈 sca 목록은 Ver1.3을 표시한다(모두 2026-05-26). Ver1.3/Ver1.4 중 어느 것도 PDF bytes, 내부 문서 revision, 승인·배포 상태를 통해 authoritative controlled copy로 확정되지 않았다.
+- 공식 카탈로그 상세 검색 결과(https://www.lsmecapion.com/bbs/board.php?bo_table=catalog&wr_id=12110)는 iX700M KR/EN PDF 파일명 각 10.7M과 첨부 DATE 2025-12-05 13:43:50을 재확인한다. 이는 파일 목록 메타데이터일 뿐 바이너리 취득/해시 검증이 아니다.
+- 실제 제조사 바이너리 신규 취득 0건. 모두 metadata_only; SHA-256/전자서명/서명자 체인/내부 개정/SKU 범위 검증 미실시. 공식 상세페이지 접근 실패 또는 검색 snippet이 href를 노출하지 않는 한계를 유지한다. CRA only; SIL 3 제외.
