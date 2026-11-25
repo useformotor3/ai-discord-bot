@@ -3880,3 +3880,10 @@ CRA only; SIL 3 excluded.
 - Verified main HEAD `1b3d253211048411277c4ed04d8c6e0f60263602`; Run #1625 / 45553259298 exact SHA + event=push + branch=main, SUCCESS, job 138999166173, 15/15, 459 logs, 189 pytest, compileall PASS, traceability PASS, CRA PDFs 3/3 individually hashed, 10 official sources, Article 13(8)/2025/2392 locators and provenance PASS.
 - PDF ZIP 14993674654 / 3,070,566 B / fcc6d0a55060d5f3eb76c6f2e5dabff6ab0c8a90dc0b4df9010d5f7e97a1a6b0; provenance ZIP 14993779653 / 2,565 B / c72506bd9a24e55e09394bf6473ecf0208c7dceda80ee594e4dda4333c8d9e64. ZIP hashes are not individual PDF hashes.
 - Manual Ver1.3/1.4 conflict persists; CE Drive Unit groups/Converter and UKCA Converter listing metadata; KR/EN catalogue and CAD/STEP listing metadata. Detail pages timeout/502/inaccessible; no original bytes. All metadata_only; Q01–Q62 unsent; no contact. CRA only; SIL 3 excluded.
+
+
+## 2026-11-25 — iX700M official source cross-check and binary retrieval retry
+- Re-read main baseline `a5c2c8db84938a0805f1426476d02aed1986d24e`, report §114.7.7 and evidence register §72.5. Official manual listings show Ver1.3 vs Ver1.4 (same 2026-05-26 entry); LS ELECTRIC Solution Square also indexes a separate `iX700M 사용 설명서` updated 2026-09-16, but its JS page exposes no file URL/revision. Conflict remains unresolved.
+- CE Drive Unit official listing groups and 150B PDF metadata confirmed; CE/UKCA iX700MCV metadata confirmed. No Drive Unit-specific iX700M UKCA record located in searched official results (not proof of non-existence). KR/EN catalog and CAD/STEP listing metadata reconfirmed.
+- Direct detail pages 502/timeout/inaccessible; Solution Square JS listing did not reveal file URL; container DNS lookup failed. No binary acquired, so all remain metadata_only; no per-file hash/signature/revision check. No guessed URL. Q01–Q62 unsent; no manufacturer contact. CRA only; SIL 3 excluded.
+- Changes recorded in report §114.7.8 and evidence register §72.6.

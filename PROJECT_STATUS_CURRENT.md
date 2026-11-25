@@ -2692,3 +2692,10 @@
 - Main HEAD `1b3d253211048411277c4ed04d8c6e0f60263602`; Run #1625 / 45553259298 exact SHA + push + main SUCCESS; job 138999166173, 15/15, 459 logs, 189 pytest, compileall/traceability PASS, CRA PDFs 3/3, official sources 10, legal locators/provenance PASS. Digests in report §114.7.7 / register §72.5.
 - LS Mecapion: Ver1.3/1.4 official listing conflict reproduced; CE Drive Unit groups and Converter metadata, UKCA Converter metadata, KR/EN catalogue and CAD/STEP listing reconfirmed. Detail-page timeout/502/inaccessible responses prevented binary retrieval. All metadata_only; no manufacturer-file hash/signature/revision check.
 - No inquiry; Q01–Q62 unsent; product Unknowns retained. CRA only; SIL 3 excluded.
+
+
+## 2026-11-25 — iX700M 공식 원본 재취득 재시도
+- Official listing cross-check found manual Ver1.4 on Servo filter, Ver1.3 on general-list search snapshot, and a separate Solution Square `iX700M 사용 설명서` item updated 2026-09-16. Actual bytes/revision unknown.
+- CE Drive Unit groups 075B/050B+D2-B-045B, 150B, 220B, 370B/300B, 750B/550B/450B listed; 150B file metadata visible. CE iX700MCV and UKCA iX700MCV listing metadata visible. No Drive Unit-specific iX700M UKCA item found in searched results (not proof of non-existence).
+- KR/EN catalog filenames/sizes and iX700M CAD/STEP listing confirmed. Direct detail pages 502/timeout/inaccessible; Solution Square SPA did not expose attachment URL; container DNS failed. No manufacturer binary acquired; all metadata_only; no hash/signature/revision check. No guessed URLs.
+- Q01–Q62 unsent; no manufacturer contact. CRA only; SIL 3 excluded. See report §114.7.8 and evidence register §72.6.
