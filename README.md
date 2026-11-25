@@ -1379,3 +1379,10 @@ Annex I Part II의 실무 요구사항은 machine-readable SBOM(최소 top-level
 - Main branch Run #1592 / 45537422906 SUCCESS, 15/15 steps, 189 passed, traceability 405, PDFs 3/3, official sources 10, provenance round-trip/upload PASS. Artifact metadata confirms exact main SHA. Event field is not separately surfaced by job/artifact response.
 - Four artifact ZIPs downloaded and SHA-256 rechecked; report §105 / evidence register §63.
 - Manufacturer iX700M manual Ver1.4/Ver1.3 conflict persists; Converter CE/UKCA, KR/EN catalog and 2D CAD/3D STEP originals remain metadata_only. Q01–Q62 not sent; actual SKU/supply/operators/DoC/BOM/MCU/SBOM/security/classification remain Unknown. CRA only; SIL 3 excluded.
+
+
+## 2026-11-25 — PR #273 병합 및 post-merge CI 보류
+- PR #273 exact-head Run #1593 / 45539484334 SUCCESS, 15/15 steps, 189 pytest passed, traceability 406, CRA PDFs 3/3, official sources 10, provenance round-trip/upload PASS.
+- Expected-head squash merge/current main `ce36f290f34a6ce391b91cf3aa6742f48c93e44a`; diff 7 files(+98/-0), reviews/threads 0.
+- PR #273 post-merge main push CI is UNVERIFIED: commit-run wrapper is PR-only, combined status empty, direct Actions run-list unavailable. Do not claim success/failure or invent run ID.
+- Official LS Mecapion index recheck: manual default/Servo filter Ver1.4 vs empty `sca=` index Ver1.3 same date; Converter CE/UKCA DoC, KR/EN catalogue and 2D CAD/3D STEP metadata reconfirmed; Solution Square manual list update 2026-09-16. All originals remain metadata_only. Q01–Q62 not sent; all product facts Unknown. CRA only; SIL 3 excluded.

@@ -2833,3 +2833,30 @@ Actual SKU, EU/EEA supply, economic operators, signed SKU-specific EU DoC covera
 - Q01–Q62는 62개 질문 초안이며 `draft_prepared_not_sent`; 발송·접수·회신 없음.
 - actual SKU, EU/EEA supply, economic operators, signed SKU-specific EU DoC coverage, BOM, exact MCU, SBOM, security configuration, CRA classification, vulnerability handling, security update/support period는 Unknown 유지.
 - CRA only; SIL 3 excluded.
+
+
+## §106. 2026-11-25 — PR #273 병합, main push 검증 보류 및 제조사 인덱스 재확인
+
+### 106.1 PR #273 병합 검증
+- PR #273 exact HEAD `c67927926da70cf8089bbf306dfe9261511bb9d0`, Run #1593 / ID `45539484334`, completed/success; 모든 반환 step 15/15 success, pytest 189 passed.
+- CRA traceability PASS: claims=13, interfaces=15, requirements=35, SEC=36, EVD_SEC_crosswalk=16, crosswalk_SEC_linked=36, product_evidence_records=15, linked_claims=13, bidirectional_links=true, M606_mapping_items=41, project_log_events=406.
+- CRA Commission PDF 3/3 fetch/hash, official sources 10개, Article 13(8) locator/quote 및 2025/2392 Annex I(10)/Annex II(1) locator PASS, provenance manifest JSON round-trip/upload PASS.
+- Artifacts: PDF ID 14988448153 (3,070,566 bytes; ZIP SHA-256 `6529c98c6ad08c266aa2d25c42344bad3bacf47b853910effb19bee9a33e0200`), provenance ID 14987839034 (2,565 bytes; ZIP SHA-256 `0b54f46ed0e85db12dcbb71f2738f1eefbe281b97aa83d85d6a76df382653cce`).
+- Diff 7 files, +98/-0, 7 ahead/0 behind, reviews 0, threads 0. Expected-head squash merge SHA `ce36f290f34a6ce391b91cf3aa6742f48c93e44a`; latest commit read-back equals this SHA.
+
+### 106.2 Post-merge main push CI 상태
+- Main merge commit combined status는 empty. 사용 가능한 commit-workflow-run wrapper는 PR event만 반환하고, direct Actions run-list query를 현재 연결 경로로 조회하지 못했다.
+- 따라서 PR #273의 post-merge main push CI는 **UNVERIFIED**. PR Run #1593 SUCCESS를 main push CI 성공으로 확대 해석하지 않는다. run ID/number를 추정하지 않는다.
+
+### 106.3 LS메카피온 공식 인덱스 교차검토
+- Manual: 공식 기본 목록과 Servo 필터 검색 결과는 Ver1.4(2026-05-26)를 표시한다. 명시적 빈 카테고리 파라미터 `sca=`의 공식 인덱스 검색 결과는 같은 게시글 41/날짜에 Ver1.3을 표시한다. detail wr_id=12652는 timeout; PDF bytes, 표지, revision history, SHA-256 미확보.
+- Converter CE: 공식 상세 게시물 wr_id=12886은 iX700MCV, `CE_DoC-LVDEMC iX700MCV.pdf`, 234.4K, 2026-04-30 metadata를 표시한다. Converter UKCA wr_id=12893은 `UKCA_DoC_LVDEMC iX700MCV.pdf`, 224.1K, 같은 날짜 metadata를 표시한다. 검색 인덱스 본문은 첨부명·크기만 보여주며 PDF 서명/내용/SKU scope를 입증하지 않는다.
+- KR/EN catalogue wr_id=12110: `iX700M 브로셔 최종KR_251205.pdf`, `iX700M 브로셔 최종EN_251205.pdf`, 각각 10.7M; 게시물 2025-11-17, 첨부 timestamp 2025-12-05. Binary 미취득.
+- Drawing: Servo Drive 공식 목록은 iX700M Series 2D(CAD)/3D(STEP), 2026-04-21을 표시한다. detail wr_id=12455 timeout; binary 미취득.
+- Solution Square 공식 Motion & Servo 목록에는 `iX700M 사용 설명서` 업데이트 2026-09-16이 표시되지만, 상세는 JavaScript shell만 반환해 파일/개정/본문을 확인하지 못했다.
+- 이 자료는 게시물/인덱스 메타데이터다. 모든 원본 PDF/CAD의 binary 및 content SHA-256은 미취득이며 `metadata_only` 유지.
+
+### 106.4 질의서 및 제품 Unknown
+- Q01–Q62 remains `draft_prepared_not_sent`; 발송·접수·회신 없음.
+- Actual SKU, EU/EEA supply, economic operators, signed SKU-specific EU DoC coverage, BOM, exact MCU, SBOM, security configuration, CRA classification, vulnerability handling, security update/support period는 Unknown.
+- CRA only; SIL 3 excluded.

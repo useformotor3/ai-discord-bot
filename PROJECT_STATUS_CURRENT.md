@@ -2536,3 +2536,14 @@
 - 제조사 원본 재시도: 매뉴얼 Ver1.4 현재 Servo 목록 vs Ver1.3 대체 인덱스 충돌 지속; detail wr_id=12652 timeout. Converter CE/UKCA, KR/EN 카탈로그, CAD/STEP 상세 페이지 재접근도 실패. 검색/직접 URL 접근 불가. 모든 파일 metadata_only, 원본 바이너리 및 content SHA-256 없음.
 - Q01–Q62는 draft_prepared_not_sent. 발송하지 않았음. actual SKU, EU/EEA 공급, 경제운영자, signed SKU-specific EU DoC coverage, BOM/정확한 MCU/SBOM/security configuration, CRA classification, vulnerability handling, support period는 Unknown 유지.
 - CRA only; SIL 3 제외.
+
+
+## 2026-11-25 — PR #273 병합 및 main push CI 상태
+- PR #273 exact HEAD `c67927926da70cf8089bbf306dfe9261511bb9d0`, Run #1593 / 45539484334 SUCCESS, 15/15 steps, 189 pytest passed, traceability project_log_events=406, CRA PDF 3/3, official source 10, provenance JSON round-trip/upload PASS.
+- PR #273 diff 7 files(+98/-0), 7 ahead/0 behind, reviews 0, threads 0. Expected-head squash merge SHA `ce36f290f34a6ce391b91cf3aa6742f48c93e44a`; recent commit search/read-back confirms latest main commit.
+- **PR #273 post-merge main push CI: UNVERIFIED.** Commit-workflow-run wrapper only returns PR-triggered runs; combined status is empty; direct Actions run-list endpoint could not be accessed with current tools. No run number/ID/conclusion is guessed. Keep this as an open verification item.
+- 제조사 공식 인덱스 재검토: 기본 manual list와 Servo filter는 Ver1.4(2026-05-26), 명시적 빈 카테고리 `sca=` 인덱스는 Ver1.3(동일 게시글/날짜). Detail wr_id=12652 timeout; 실제 PDF revision/hash는 Unknown.
+- 공식 Converter CE/UKCA 상세 검색 색인에는 iX700MCV 및 첨부파일명/크기/날짜가 노출됨(CE 234.4K, UKCA 224.1K, 2026-04-30). 원본 PDF 미취득, 서명/범위 확인 불가.
+- 공식 KR/EN 카탈로그 게시물 wr_id=12110: 두 파일 각각 10.7M, 게시 2025-11-17 및 첨부일 2025-12-05. 원본 미취득.
+- 공식 Servo Drive 도면 목록에 iX700M 2D CAD/3D STEP(2026-04-21) 게시가 표시됨. Detail wr_id=12455 timeout; 원본 미취득. Solution Square에는 iX700M 사용 설명서 2026-09-16 업데이트 항목이 있으나 JS shell만 열려 문서 원본은 미확보.
+- 모든 제조사 파일 상태 `metadata_only`. Q01–Q62 `draft_prepared_not_sent`; 발송하지 않음. actual SKU, EU/EEA 공급, 경제운영자, SKU별 서명 EU DoC 범위, BOM/MCU/SBOM/security configuration, CRA classification 등은 Unknown 유지. CRA only; SIL 3 제외.

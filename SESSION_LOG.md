@@ -3724,3 +3724,11 @@ CRA only; SIL 3 excluded.
 - Artifact ZIPs 14987053784, 14987088640, 14986973967, 14987143761 downloaded; independently computed SHA-256 matched each GitHub digest.
 - Manufacturer original binary retry (official detail URLs + web search) did not retrieve source files. Manual Ver1.4 vs Ver1.3 conflict; Converter CE/UKCA, KR/EN catalogue and CAD/STEP all metadata_only. Q01–Q62 draft_prepared_not_sent; not sent. Actual SKU, EU/EEA supply, economic operators, signed SKU DoC, BOM/MCU/SBOM/security configuration and CRA classification Unknown.
 - CRA only; SIL 3 excluded. Next priority: pursue a reliable manufacturer source/alternate official distribution channel for original attachments and capture SHA-256; do not infer unknown product facts.
+
+
+## 2026-11-25 — PR #273 merge 및 post-merge main push 상태
+- PR #273 exact HEAD `c67927926da70cf8089bbf306dfe9261511bb9d0`; Run #1593 / 45539484334 SUCCESS, 15/15 steps, 189 passed, traceability 406, CRA PDF 3/3, official source 10, provenance JSON round-trip/upload.
+- PR diff 7 files(+98/-0), reviews 0, threads 0. Expected-head squash merge SHA / latest commit read-back `ce36f290f34a6ce391b91cf3aa6742f48c93e44a`.
+- Post-merge main push CI **UNVERIFIED**: commit-run wrapper PR-only, combined status empty, direct Actions run-list not available. No guessed run ID or conclusion.
+- Manufacturer official indexes: manual default/Servo filter Ver1.4 vs explicit empty `sca=` Ver1.3 for same post/date; Converter CE/UKCA attachments metadata; KR/EN catalogue 10.7M each; iX700M 2D CAD/3D STEP list; Solution Square iX700M manual updated 2026-09-16. Detail/binary access failed; metadata_only.
+- Q01–Q62 remains draft_prepared_not_sent; not sent. Actual SKU, EU/EEA supply, economic operators, signed SKU DoC scope, BOM/MCU/SBOM/security configuration, CRA classification, vulnerability handling and support period Unknown. CRA only; SIL 3 excluded.
