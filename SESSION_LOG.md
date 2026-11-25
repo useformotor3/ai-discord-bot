@@ -3921,3 +3921,12 @@ CRA only; SIL 3 excluded.
 - Official KC index adds model-specific listing rows 113 (iX700MD1-B-220B) and 114 (iX700MD1-B-370B), 2026-03-09. KC is not CE/UKCA evidence and doesn't supply CE detail IDs.
 - CE groups and UKCA Drive Unit remain unresolved; KR/EN catalog and CAD/STEP metadata only. No manufacturer binary, no digest/signature/revision/SKU checks. Q01–Q62 unsent; no manufacturer contact. CRA only; SIL 3 excluded.
 - Sources: https://ssq.ls-electric.com/kr/ko/product/category/4?pageNumber=26 ; https://sol.ls-electric.com/kr/ko/newSearch?pageNumber=70 ; https://lsmecapion.com/bbs/board.php?bo_table=manual&wr_id=12652 ; https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&page=1&sca=KC
+
+
+## 2026-11-25 — CRA only: Ver1.3 공식 목록 행 확인 및 원본 추적 재시도
+- main `87c9c14831d848bcb129fb040f21336d7afda19f`의 보고서 §114.7.12, 증거등록부 §72.10 및 상황판을 선행 확인했다.
+- LS메카피온 공식 빈 카테고리 매뉴얼 목록 검색 스냅샷에서 row 41이 iX700M DRIVE 400[V] Ver1.3 (2026-05-26)으로 표시됨을 확인했다. 전체 목록/Servo 필터는 Ver1.4를 표시한다. Ver1.3의 target href/wr_id는 노출되지 않아 ID를 추정하지 않았다.
+- Solution Square iX700M 사용 설명서(2026-09-16), CE 그룹 220B/370B/300B/750B/550B/450B, UKCA Drive Unit, KR/EN 카탈로그, CAD/STEP를 공식 검색/목록에서 재확인했다. 새 원본 바이너리는 취득하지 못했다.
+- 실패 원인: Solution Square는 JS 앱 셸, LS메카피온 세부 페이지는 502/timeout, CE 검색결과는 모델별 그룹행만 제공. 첨부 URL을 추측하지 않고 모두 metadata_only 유지.
+- 제조사 SHA-256/서명/내부 revision/SKU 적용범위 검증 없음. Q01–Q62 미발송, 제조사 연락 없음. CRA only; SIL 3 제외.
+- 다음 단계: Solution Square의 실제 document identifier/detail/attachment가 공식적으로 노출되는지 재탐색하고, Ver1.3 목록행의 직접 링크 및 CE 개별 상세 링크만 공식 href로 확보한다. 바이너리 확보 시에만 해시·서명·revision·SKU scope 검사.
