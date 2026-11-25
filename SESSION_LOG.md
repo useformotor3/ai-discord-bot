@@ -3887,3 +3887,14 @@ CRA only; SIL 3 excluded.
 - CE Drive Unit official listing groups and 150B PDF metadata confirmed; CE/UKCA iX700MCV metadata confirmed. No Drive Unit-specific iX700M UKCA record located in searched official results (not proof of non-existence). KR/EN catalog and CAD/STEP listing metadata reconfirmed.
 - Direct detail pages 502/timeout/inaccessible; Solution Square JS listing did not reveal file URL; container DNS lookup failed. No binary acquired, so all remain metadata_only; no per-file hash/signature/revision check. No guessed URL. Q01–Q62 unsent; no manufacturer contact. CRA only; SIL 3 excluded.
 - Changes recorded in report §114.7.8 and evidence register §72.6.
+
+
+## 2026-11-25 — Solution Square 2026-09-16 / iX700M source recheck
+- Baseline main: a8eed059bef2446d6f99678fe8e8866e00a2c634; report §114.7.8 and evidence §72.6 read first.
+- Official Solution Square category and search indexes list iX700M 사용 설명서, update 2026-09-16. No document ID, detail href, filename, size or attachment URL surfaced; direct page returned JS app shell.
+- LS Mecapion manual list conflict remains Ver1.4 (Servo filter) vs Ver1.3 (general index snapshot), same 2026-05-26 date. Solution Square item relation to either is unknown.
+- CE Drive Unit groups 075B/050B + D2-B-045B, 150B, 220B, 370B/300B, 750B/550B/450B reconfirmed. 150B metadata 238.9K. CE/UKCA iX700MCV metadata 234.4K/224.1K. iX700MCB separate CE index row; relation unknown.
+- UKCA Drive Unit item not located in searched official sources; not proof of non-existence. KR/EN catalogue PDFs each 10.7M and CAD/STEP listing 2026-04-21 remain metadata only.
+- Manufacturer binaries acquired: 0. All remain metadata_only; no per-file SHA-256, PDF signature/signer/certificate chain, internal revision, or SKU scope checked. No guessed attachment URL.
+- Q01–Q62 draft_prepared_not_sent; no manufacturer contact. Product-specific unknowns retained. CRA only; SIL 3 excluded.
+- Sources: https://sol.ls-electric.com/kr/ko/product/category/4?pageNumber=4 ; https://sol.ls-electric.com/kr/ko/newSearch?pageNumber=70 ; https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&sca=CE ; https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&page=4&wr_id=12888 ; https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&page=3&wr_id=12893 ; https://www.lsmecapion.com/bbs/board.php?bo_table=catalog&wr_id=12110 ; https://www.lsmecapion.com/bbs/board.php?bo_table=drawing&sca=Servo+Drive
