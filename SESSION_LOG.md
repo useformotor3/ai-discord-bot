@@ -3913,3 +3913,11 @@ CRA only; SIL 3 excluded.
 - KR/EN catalogue detail search result confirms filenames, 10.7M each, attachment date 2025-12-05; bytes not acquired.
 - All manufacturer items metadata_only; Q01–Q62 unsent; no manufacturer contact; CRA only; SIL 3 excluded.
 - Source: https://lsmecapion.com/bbs/board.php?bo_table=manual&sca=Servo&wr_id=12651 ; https://www.lsmecapion.com/bbs/board.php?bo_table=catalog&wr_id=12110
+
+## 2026-11-25 — Solution Square document locator and Ver1.4 official ID follow-up
+- Official Solution Square listing/search result confirms iX700M 사용 설명서 updated 2026-09-16; list and search pages are JS shell on direct open and do not expose document ID or attachment URL.
+- Official LS메카피온 manual listing link for Ver1.4 resolves to wr_id=12652. Detail URL is verified; direct fetch returned 502. No attachment bytes.
+- Ver1.3 target href/wr_id remains hidden in the PEGA2 Ver1.3 previous-post text; no numeric guess.
+- Official KC index adds model-specific listing rows 113 (iX700MD1-B-220B) and 114 (iX700MD1-B-370B), 2026-03-09. KC is not CE/UKCA evidence and doesn't supply CE detail IDs.
+- CE groups and UKCA Drive Unit remain unresolved; KR/EN catalog and CAD/STEP metadata only. No manufacturer binary, no digest/signature/revision/SKU checks. Q01–Q62 unsent; no manufacturer contact. CRA only; SIL 3 excluded.
+- Sources: https://ssq.ls-electric.com/kr/ko/product/category/4?pageNumber=26 ; https://sol.ls-electric.com/kr/ko/newSearch?pageNumber=70 ; https://lsmecapion.com/bbs/board.php?bo_table=manual&wr_id=12652 ; https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&page=1&sca=KC
