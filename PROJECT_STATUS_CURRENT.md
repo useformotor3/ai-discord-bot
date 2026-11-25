@@ -2678,3 +2678,11 @@
 - PR #284 exact HEAD cf6dec50e9ff952c33491b54aca6db8476151a97; Run #1620 / 45552496961, pull_request SUCCESS, job 138996681495, 15/15, 475 logs, 189 pytest, traceability 419, PDFs 3/3, sources 10, locators PASS, provenance PASS. Artifacts: PDF ZIP 14993483515 / 3,070,564 B / a9acd2d18b9f3fc88d9b1dc04fb893d1472b3416f2440a35238c1cf4941e9456; provenance ZIP 14993882353 / 2,565 B / 7db26d3569b3582853fce0c833f6f776f68e7d74e0851e28b73d70a7d3c2810f.
 - PR #284 is still open; do not claim its merge/main push until expected-head merge and exact push verification.
 - Manufacturer originals remain unacquired; Ver1.3/1.4 conflict unresolved; all manufacturer evidence metadata_only; Q01–Q62 unsent. CRA only; SIL 3 excluded.
+
+
+## 2026-11-25 — PR #284 / Run #1622 및 main push Run #1623 최종 성공
+- PR #284 merged. Exact PR HEAD 50e660161e269a75c85cea02d5a125f418e4aa4d; merge/main HEAD 1c1e0f30b18877dd02b70078ca8863646c371e3b.
+- Run #1622 / 45552789733 exact-head pull_request SUCCESS, job 138997652109, 15/15, 475 logs, 189 pytest, traceability 420, CRA PDFs 3/3, official sources 10, locators/provenance PASS.
+- Main push Run #1623 / 45552908709 exact merge SHA + event=push + branch=main SUCCESS, job 138998000787, 15/15, 459 logs, 189 pytest, traceability 420, PDFs 3/3, sources 10, locators/provenance PASS.
+- Artifact IDs and archive digests are recorded in report §114.7.6 / evidence register §72.4.
+- Manufacturer binaries remain metadata_only; manual Ver1.3/1.4 conflict unresolved; CE/UKCA, KR/EN catalog and CAD/STEP originals not acquired. Q01–Q62 unsent; all product Unknowns retained. CRA only; SIL 3 excluded.

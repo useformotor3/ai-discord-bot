@@ -3865,3 +3865,12 @@ CRA only; SIL 3 excluded.
 - LS Mecapion binaries remain metadata_only; Ver1.3/1.4 conflict unresolved; Q01–Q62 unsent; all product Unknowns retained. CRA only; SIL 3 excluded.
 
 - PR #284 exact-head Run #1620 / 45552496961: HEAD cf6dec50e9ff952c33491b54aca6db8476151a97, job 138996681495, SUCCESS, 15/15, 475 logs, 189 pytest, traceability 419, PDFs 3/3, sources 10, provenance PASS. PR #284 remains open pending expected-head merge and main push verification.
+
+
+## 2026-11-25 — PR #284 Run #1622 / main Run #1623 closeout
+- PR #284 merged; exact HEAD 50e660161e269a75c85cea02d5a125f418e4aa4d; merge/main SHA 1c1e0f30b18877dd02b70078ca8863646c371e3b.
+- Run #1622 / 45552789733, pull_request exact HEAD SUCCESS, job 138997652109, 15/15, 475 log lines, 189 pytest, traceability 420, PDFs 3/3, sources 10, legal locators/provenance PASS.
+- Run #1622 PDF ZIP 14994233122 / 3,070,566 B / 003f4c31d72b7d1cfdc2fde0f15bda648ceede66b65d022ed483279d531cc2f2; provenance ZIP 14994597522 / 2,565 B / 07b378870f8b1bddc42585bf674a39d8221636837c04f44aeda11dcb9dde49d6.
+- Main push Run #1623 / 45552908709, exact merge SHA + event=push + branch=main SUCCESS, job 138998000787, 15/15, 459 log lines, 189 pytest, traceability 420, PDFs 3/3, sources 10, legal locators/provenance PASS.
+- Run #1623 PDF ZIP 14993579506 / 3,070,566 B / 7a6015c038b6e8ce8f47d7cc41c6bee18d7b55bdf624dcb1c9c5a396069a324d; provenance ZIP 14993828989 / 2,564 B / 4ffdbcfe5d99425f7a26cdd82cb6a6013e749d19e124e195cb6c1d376b881a43.
+- Manufacturer originals remain metadata_only; Ver1.3/1.4 conflict unresolved; no inquiry sent; Q01–Q62 unsent. CRA only; SIL 3 excluded.

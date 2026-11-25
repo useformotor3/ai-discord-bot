@@ -1453,3 +1453,12 @@ Actual SKU, EU/EEA supply, economic operators, signed SKU-specific DoC scope, BO
 - No contact sent. Q01–Q62 draft_prepared_not_sent. Actual SKU, EU/EEA supply, economic operators, signed SKU-specific DoC, BOM/MCU/SBOM/security configuration, CRA classification, vulnerability handling and support period remain Unknown. CRA only; SIL 3 excluded.
 
 - PR #284 exact HEAD cf6dec50e9ff952c33491b54aca6db8476151a97; Run #1620 / 45552496961, job 138996681495, pull_request SUCCESS, 15/15, 475 log lines, 189 pytest, traceability 419 (414 modern IDs + 5 legacy), CRA PDFs 3/3, official sources 10, locators PASS, provenance PASS. PDF ZIP 14993483515 / 3,070,564 B / a9acd2d18b9f3fc88d9b1dc04fb893d1472b3416f2440a35238c1cf4941e9456; provenance ZIP 14993882353 / 2,565 B / 7db26d3569b3582853fce0c833f6f776f68e7d74e0851e28b73d70a7d3c2810f. PR #284 exact-head pass; merge/main push still pending.
+
+
+### §72.4 PR #284 Run #1622 / main Run #1623 closeout
+- PR #284 exact HEAD 50e660161e269a75c85cea02d5a125f418e4aa4d; Run #1622 / 45552789733, job 138997652109, pull_request SUCCESS, 15/15, 475 logs, 189 pytest, traceability 420, CRA PDFs 3/3, official sources 10, legal locators PASS, provenance PASS.
+- Run #1622 PDF ZIP 14994233122 / 3,070,566 B / SHA-256 003f4c31d72b7d1cfdc2fde0f15bda648ceede66b65d022ed483279d531cc2f2; provenance ZIP 14994597522 / 2,565 B / SHA-256 07b378870f8b1bddc42585bf674a39d8221636837c04f44aeda11dcb9dde49d6.
+- Expected-head squash merge SHA / main HEAD: 1c1e0f30b18877dd02b70078ca8863646c371e3b.
+- Main push Run #1623 / 45552908709, exact SHA + event=push + branch=main, job 138998000787, SUCCESS, 15/15, 459 logs, 189 pytest, traceability 420, PDFs 3/3, sources 10, legal locators/provenance PASS.
+- Run #1623 PDF ZIP 14993579506 / 3,070,566 B / SHA-256 7a6015c038b6e8ce8f47d7cc41c6bee18d7b55bdf624dcb1c9c5a396069a324d; provenance ZIP 14993828989 / 2,564 B / SHA-256 4ffdbcfe5d99425f7a26cdd82cb6a6013e749d19e124e195cb6c1d376b881a43. ZIP hashes are not individual PDF hashes.
+- Manufacturer binaries remain metadata_only; Ver1.3/1.4 conflict unresolved; no inquiry sent; Q01–Q62 unsent. CRA only; SIL 3 excluded.
