@@ -2775,3 +2775,30 @@ Actual SKU, EU/EEA supply, economic operators, signed SKU-specific EU DoC covera
 - 제조사 질의서 v2.0 Q01–Q62: 62개, ID unique/sequential. 상태 `draft_prepared_not_sent`; 발송/회신/증거 수령을 주장하지 않는다.
 - actual SKU, EU/EEA supply, economic operators, signed SKU-specific EU DoC coverage, BOM, exact MCU part number, SBOM, security configuration, CRA classification, vulnerability handling, security update/support period는 계속 Unknown.
 - CRA only; SIL 3 excluded.
+
+
+## §104. 2026-11-25 — PR #271 병합 및 main push Run #1590 최종 성공
+
+### 104.1 PR #271 exact-head CI
+- PR #271 exact HEAD `47e36dadd2c61a891378a70b168a5cd5e0262c72`, Run #1589 / ID `45536881236`, event=pull_request, completed/success.
+- Job `Source integrity, compile and pytest`, 모든 반환 Step 15/15 success, pytest 189 passed.
+- CRA traceability PASS: claims=13, interfaces=15, requirements=35, SEC=36, EVD_SEC_crosswalk=16, crosswalk_SEC_linked=36, product_evidence_records=15, linked_claims=13, bidirectional_links=true, M606_mapping_items=41, project_log_events=404.
+- CRA Commission PDF 3/3 fetch/hash, 공식 출처 10개 fetch, provenance JSON round-trip 및 upload PASS.
+- Artifact ZIP: PDF ID 14987302815 (3,070,565 bytes; archive SHA-256 `6fdf0281d2597c61ff9e0e72ba5a155e571cf7fc07d31272575f04795733b500`), provenance ID 14987600771 (2,565 bytes; archive SHA-256 `235deeb436df823c9198808a986716548aa5f6ad0784859c3531c3d1c6b4a5b2`).
+
+### 104.2 병합 및 post-merge main push
+- PR #271은 exact-head `47e36dadd2c61a891378a70b168a5cd5e0262c72`를 expected-head로 squash merge. Merge SHA `c9532486ad2aca0ba9538eeffb42d30f76d73ea0`; main read-back 일치.
+- Actions run-list `branch=main&event=push` 조회로 Run #1590 / ID `45537026894` 확인: exact head=merge SHA, event=push, status=completed, conclusion=success.
+- Job 전체 Step 15/15 success, pytest 189 passed, CRA traceability project_log_events=404, CRA PDF 3/3 fetch/hash, 공식 출처 10개 provenance manifest JSON round-trip/upload PASS.
+- Artifact ZIP: PDF ID 14986594912 (3,070,565 bytes; archive SHA-256 `5d8066e377ad40a54eea4ac9239a837430dfd648ec3e5a0dd25ac7907391eabf`), provenance ID 14987314126 (2,565 bytes; archive SHA-256 `0c977cdb407ef695ab5a58eac7e416548aa5f6ad0784859c3531c3d1c6b4a5b2`).
+- 결론: PR #271 exact-head CI 및 post-merge main push CI 모두 SUCCESS. 이후 README/SESSION_LOG 포함 문서 동기화는 후속 PR로 기록한다.
+
+### 104.3 제조사 binary 취득 재시도 결과
+- 공식 매뉴얼 Servo 필터 목록 Ver1.4(2026-05-26)와 다른 인덱스 snapshot Ver1.3(같은 날짜)의 불일치가 계속된다. 상세 `wr_id=12652` timeout. PDF binary/표지/개정 이력 미확보.
+- Converter CE `wr_id=12886`, UKCA `wr_id=12893`, KR/EN catalogue `wr_id=12110`, CAD/STEP `wr_id=12455`의 공식 목록 metadata는 확인되나 상세 페이지 timeout. 추정 download endpoint도 접근 불가, 실행 환경 직접 HTTP는 DNS resolution 실패. 원본 바이너리 및 content SHA-256 미취득.
+- 전부 `metadata_only`. 목록의 파일명·크기·날짜는 PDF/CAD 내용, 서명, SKU 적용범위의 증거가 아니다.
+
+### 104.4 질의서/Unknown
+- 제조사 질의서 v2.0 Q01–Q62는 62개 unique/sequential, `draft_prepared_not_sent`. 발송·회신 없음.
+- Actual SKU, EU/EEA supply, economic operators, signed SKU-specific EU DoC coverage, BOM, exact MCU, SBOM, security configuration, CRA classification, vulnerability handling, security update/support period는 계속 Unknown.
+- CRA only; SIL 3 excluded.
