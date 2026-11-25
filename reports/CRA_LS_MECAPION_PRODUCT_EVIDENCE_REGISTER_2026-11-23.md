@@ -1056,3 +1056,10 @@ Actual SKU, EU/EEA supply, economic operators, signed DoC coverage, BOM/exact MC
 - PR #266 exact head `6529ec9a9234ffdaa5a763a60a7d3df72646eb98`, Run #1570 / 45529191176 success; 189 pytest passed, traceability 397 records, JSONL 397/0 invalid/0 blank.
 - Expected-head squash merge `a015dc95f6c59d331275d646306b2b2a2137f437`; main latest commit read-back matches.
 - Main push CI UNVERIFIED: Combined Status and commit-associated workflow runs returned empty; do not infer success from PR Run #1570.
+
+
+### §57.1 질의서 구조 감사 결과
+- 질의서 원본의 실제 번호 목록은 90개였다. 과거 “62문항” 기록은 최신 파일과 일치하지 않는 stale count로 확인됐다.
+- 질의서를 v2.0으로 통합·재번호화: Q01–Q62, 총 62개, unique ID 62, sequence gap 0. 중복 질문을 묶되 제품경계·EU 공급·SKU·DoC·설계·보안·취약점 범위는 유지했다.
+- Q61 = 매뉴얼 Ver1.3/Ver1.4 authoritative revision 확인, Q62 = SKU별 BOM/MCU/FW/SBOM/security/vulnerability evidence matrix.
+- 새 초안은 발송 전 상태(draft_prepared_not_sent)이며 제조사 답변은 없음.
