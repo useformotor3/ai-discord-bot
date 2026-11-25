@@ -1233,3 +1233,22 @@ Official listing-view disagreement is not proof of which manual binary is curren
 Artifact archive digest equals job log uploaded ZIP digest; do not label it an individual PDF content hash. PR #275 is not merged at the time of this record. If this §66 entry is committed to the PR branch, re-run exact-head CI on the new HEAD before expected-head squash merge.
 
 Manufacturer source statuses unchanged: iX700M manual Ver1.3/Ver1.4 index discrepancy unresolved; Solution Square manual 2026-09-16 item metadata-only; Converter CE/UKCA DoCs, KR/EN catalogue, CAD/STEP originals metadata_only. Q01–Q62 not sent. Product-specific facts remain Unknown.
+
+
+## §67. 2026-11-25 — PR #275 merge / main push CI 증거
+
+| 증거 | PR Run #1601 | main push Run #1602 |
+|---|---|---|
+| Run ID | 45540997785 | 45541169420 |
+| Exact SHA | `2918f4b62c76d211462428ea32bbbd93a1cbdb61` | `cd00a3b67eea7bf18f5143951f4616659157e15e` |
+| Event/branch | pull_request | push / main |
+| Result | SUCCESS | SUCCESS |
+| Steps / pytest | 15/15 / 189 | 15/15 / 189 |
+| Traceability events | 409 | 409 |
+| Official CRA PDFs / sources | 3/3 / 10 | 3/3 / 10 |
+
+PR #275 expected-head squash merge SHA `cd00a3b67eea7bf18f5143951f4616659157e15e`.
+
+- Run #1601 PDF artifact 14988823487, 3,070,565 bytes, SHA-256 `b9089acf0f81206b026c1f016e79588361e6c150bb49643cc9316e7bcad2bba0`; provenance artifact 14988593957, 2,565 bytes, SHA-256 `acea80b32d1ed91d9af8d78f54f0ed65fe508cb1882c83261ab1c1a06fb9f8da`.
+- Run #1602 PDF artifact 14988324547, 3,070,566 bytes, SHA-256 `bd8018361bb18e5ef326ca9f3e57884bc9b00de97a76f70f4e5945b603ae149d`; provenance artifact 14989940245, 2,565 bytes, SHA-256 `27460361017e0da584e2fc1a021d121ac4e405b6b8133bd6007703a091482fcb`.
+- Main PROJECT_LOG 409 valid JSONL records. Manufacturer source files remain metadata_only; Q01–Q62 not sent; product facts Unknown.
