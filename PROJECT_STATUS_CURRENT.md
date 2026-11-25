@@ -2469,3 +2469,13 @@
 - 중복 및 겹치는 행정성 항목을 통합하고 Q01~Q62 전역 ID로 재구성했다. 자동 점검: 62 questions, 62 unique IDs, Q01–Q62 연속, 누락/중복 0.
 - Q61 매뉴얼 revision 충돌, Q62 실제 SKU별 BOM·MCU·FW·SBOM·보안·취약점 증거 매트릭스.
 - 상태는 draft_prepared_not_sent. 발송·회신 없음. CRA only; SIL 3 excluded.
+
+
+ 
+## 2026-11-25 — PR #267 병합 및 latest main 상태
+- PR #267 exact HEAD `3047df34212f7e5887ac358cd0156a1a75345fb6`, Run #1581 / 45530155733 completed/success, 15/15 steps, 189 passed, CRA traceability 399, official CRA PDFs 3/3 fetch/hash, provenance 10 sources PASS/upload.
+- Expected-head squash merge SHA / current main HEAD: `418e526485f1d7c8f43e0f16f471b42b5c2f5a6c`. PR closed/merged; 7 files(+269/-168), reviews 0, threads 0.
+- Main push CI remains **UNVERIFIED**: Combined Status and commit-associated workflow-run lookup returned empty. Run #1581 is PR CI only.
+- Manufacturer inquiry v2.0: 62 globally numbered unique questions Q01–Q62; original 90-item list was consolidated. Q61 manual revision conflict; Q62 per-SKU BOM/MCU/FW/SBOM/security/vulnerability evidence matrix. Draft/not sent.
+- iX700M manual/DoC/catalogue/CAD binary still not acquired; listing metadata only. Actual SKU/EU supply/operators/signed DoC/BOM-MCU-SBOM/security configuration/CRA classification and vulnerability/support facts remain Unknown.
+- CRA only; SIL 3 excluded.

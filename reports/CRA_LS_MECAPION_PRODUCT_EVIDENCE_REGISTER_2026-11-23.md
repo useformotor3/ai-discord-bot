@@ -1063,3 +1063,14 @@ Actual SKU, EU/EEA supply, economic operators, signed DoC coverage, BOM/exact MC
 - 질의서를 v2.0으로 통합·재번호화: Q01–Q62, 총 62개, unique ID 62, sequence gap 0. 중복 질문을 묶되 제품경계·EU 공급·SKU·DoC·설계·보안·취약점 범위는 유지했다.
 - Q61 = 매뉴얼 Ver1.3/Ver1.4 authoritative revision 확인, Q62 = SKU별 BOM/MCU/FW/SBOM/security/vulnerability evidence matrix.
 - 새 초안은 발송 전 상태(draft_prepared_not_sent)이며 제조사 답변은 없음.
+
+
+ 
+## §58. 2026-11-25 — PR #267 / Run #1581 및 문서 정규화 병합
+
+- PR #267 exact head `3047df34212f7e5887ac358cd0156a1a75345fb6`, base `a015dc95f6c59d331275d646306b2b2a2137f437`, 7 files(+269/-168), reviews 0, threads 0.
+- Run #1581 / 45530155733 completed/success: 15/15 steps, 189 pytest passed, traceability 399 events, PDF 3/3 fetch/hash, 10 official source provenance manifest JSON round-trip/upload.
+- Expected-head squash merge `418e526485f1d7c8f43e0f16f471b42b5c2f5a6c`; PR closed/merged; main latest commit read-back identical.
+- Main push CI UNVERIFIED: Combined Status and push-run lookup empty; PR Run #1581 must not be represented as main push CI.
+- Manufacturer inquiry v2.0 now has exactly 62 globally numbered questions Q01–Q62 after audit found the previous file actually had 90 numbered items. Q61 = manual revision discrepancy; Q62 = per-SKU BOM/MCU/FW/SBOM/security/vulnerability evidence matrix. Draft not sent.
+- iX700M product documents remain metadata_only; no original manual/DoC/catalogue/CAD bytes or hash acquired. Unknowns retained.

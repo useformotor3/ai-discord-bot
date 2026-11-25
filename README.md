@@ -1333,3 +1333,7 @@ Annex I Part II의 실무 요구사항은 machine-readable SBOM(최소 top-level
 
  
 > **Manufacturer inquiry v2.0:** 실제 번호 목록 감사에서 기존 파일은 90개였고, 과거 62개 기록은 stale count였다. 중복 통합 후 Q01–Q62로 정규화했으며 ID 연속성/중복/누락 검증을 통과했다. Q61 매뉴얼 revision, Q62 SKU별 BOM/MCU/FW/SBOM/security/vulnerability evidence matrix. Draft only; not sent.
+
+
+ 
+> **PR #267 merged (2026-11-25):** Exact HEAD `3047df34212f7e5887ac358cd0156a1a75345fb6`, Run #1581 / 45530155733 SUCCESS 15/15, pytest 189 passed, traceability 399, CRA PDFs 3/3 fetch/hash, 10-source provenance PASS/upload. Expected-head squash merge/current main `418e526485f1d7c8f43e0f16f471b42b5c2f5a6c`. Main push CI remains UNVERIFIED; do not infer from PR CI. Manufacturer inquiry v2.0 is exactly Q01–Q62 after audit corrected stale count (old file had 90 numbered items). iX700M original binaries remain unacquired; metadata only. CRA only; SIL 3 excluded.

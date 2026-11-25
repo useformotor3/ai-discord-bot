@@ -2689,3 +2689,21 @@ Actual SKU, EU/EEA supply, economic operators, signed DoC coverage, BOM/exact MC
 - 중복/행정성 하위 항목을 통합하고 증거 요청의 적용 범위를 유지해 질의서를 v2.0으로 정리했다. 새 파일은 Q01~Q62의 전역 ID를 사용하며 독립 파싱 결과 62개, 중복 ID 0, 누락 ID 0, 순서 오류 0이다.
 - Q61은 Ver1.3/Ver1.4 매뉴얼 revision 충돌 및 Solution Square 2026-09-16 항목의 문서 동일성 확인, Q62는 실제 SKU별 BOM/MCU/FW/SBOM/security/vulnerability evidence matrix로 고정했다.
 - 발송 상태는 draft_prepared_not_sent. 질문을 62개로 정규화한 것은 제조사 답변이나 증거 취득을 의미하지 않는다.
+
+
+ 
+## §100. 2026-11-25 — PR #267 문서 동기화 병합 및 exact-head CI
+
+### 100.1 PR #267 / exact-head 검증
+- Base main: `a015dc95f6c59d331275d646306b2b2a2137f437`.
+- PR #267 exact head: `3047df34212f7e5887ac358cd0156a1a75345fb6`; 7 files(+269/-168), reviews 0, inline review threads 0; branch 15 commits ahead / 0 behind.
+- Run #1581 / ID `45530155733`: completed/success, 1 job, 15/15 returned steps success. Source blob integrity, compile, CRA traceability, pytest 189 passed, official CRA PDFs 3/3 fetch/hash, 10-source official CRA provenance manifest JSON round-trip/upload passed.
+- CRA traceability: claims 13, interfaces 15, requirements 35, SEC 36, EVD-SEC crosswalk 16, product evidence 15, bidirectional links true, M/606 mapping 41, PROJECT_LOG 399 records(394 modern IDs + 5 legacy).
+- Expected-head squash merge SHA `418e526485f1d7c8f43e0f16f471b42b5c2f5a6c`; PR closed/merged. Main latest commit read-back matches merge SHA.
+- **Post-merge main push CI remains UNVERIFIED**: Combined Status and commit-associated workflow-run lookup returned no records. Run #1581 is the PR exact-head run, not main push CI. No push-run number or conclusion is inferred.
+
+### 100.2 제조사 질의서 v2.0 및 제품 증거 상태
+- 질의서 원본의 실제 numbered item 90개를 audit하고 Q01–Q62 전역 ID로 통합·재번호화했다. Q61은 매뉴얼 revision 충돌, Q62는 SKU별 BOM/MCU/FW/SBOM/security/vulnerability evidence matrix.
+- 공식 제조사 목록 검색 snapshot에서 iX700M Ver1.4 매뉴얼, Drive CE model groups, Converter CE/UKCA, KR/EN catalogue metadata를 확인했으나 직접 목록 접근은 502. 원본 iX700M 매뉴얼/DoC/catalogue/CAD binary 및 product SHA-256은 미취득.
+- Actual SKU, EU/EEA supply, economic operators, signed DoC coverage, BOM/exact MCU/SBOM, security configuration, CRA classification, vulnerability handling 및 security update/support period는 Unknown 유지.
+- 질의서 상태: draft_prepared_not_sent. 발송/회신 없음. CRA only; SIL 3 excluded.
