@@ -1213,3 +1213,23 @@ PR diff: #272 6 files(+70/-0), #273 7 files(+98/-0), #274 7 files(+87/-0); revie
 | 2D CAD/3D STEP | official iX700M drawing listing, 2026-04-21 | detail timeout; metadata_only |
 
 Official listing-view disagreement is not proof of which manual binary is current. Do not use Ver1.3 or Ver1.4 as the controlled product manual until the actual file and revision are acquired. Q01–Q62 remains draft_prepared_not_sent; product facts Unknown.
+
+
+## §66. 2026-11-25 — PR #275 exact-head CI 증거
+
+| 항목 | 검증 결과 |
+|---|---|
+| PR / HEAD | #275 / `9231c47c88ff7fe9fc9ce1022eb3023e6af244ba` |
+| Actions | Run #1597 / 45540553259, completed/success, 15/15 |
+| pytest | 189 passed |
+| Traceability | claims 13; interfaces 15; requirements 35; SEC 36; product evidence 15; M606 41; project log events 408 |
+| CRA official sources | PDF 3/3 fetched+hashed; official allowlist sources 10; Article 13(8) and Regulation 2025/2392 locators PASS |
+| Provenance | 10-source manifest JSON round-trip and upload PASS |
+| PDF artifact | ID 14988832738; 3,070,565 bytes; archive SHA-256 `f3a29c9b7ad2c8cbaea65fc9d0c5eb3d47ad348005b3bf6cbe3b98b037786861` |
+| Provenance artifact | ID 14989265975; 2,565 bytes; archive SHA-256 `61736ebe2e84c8b8bba92820b4b2f69e132edfcc9d5304a434c45e392e76fabf` |
+| Diff / reviews | 7 files, +111/-0; reviews 0; threads 0 |
+| PROJECT_LOG | PR branch 408 JSONL records; invalid 0; test reports 408 |
+
+Artifact archive digest equals job log uploaded ZIP digest; do not label it an individual PDF content hash. PR #275 is not merged at the time of this record. If this §66 entry is committed to the PR branch, re-run exact-head CI on the new HEAD before expected-head squash merge.
+
+Manufacturer source statuses unchanged: iX700M manual Ver1.3/Ver1.4 index discrepancy unresolved; Solution Square manual 2026-09-16 item metadata-only; Converter CE/UKCA DoCs, KR/EN catalogue, CAD/STEP originals metadata_only. Q01–Q62 not sent. Product-specific facts remain Unknown.
