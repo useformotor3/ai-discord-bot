@@ -1,4 +1,14 @@
 
+## 2026-11-25 — 현재 기준: PR #281 / Run #1614 및 main push Run #1615 최종 성공
+- Current main HEAD: 5805638439877d2b5dc18d64b7765a67c848a194.
+- PR #281 exact HEAD 28b1568bd6cc37f724c9180e879a29141714fbdb; Run #1614 / 45550104279 completed/success, job 138988973316, 15/15 steps, 475 log lines, 189 pytest, traceability 416, CRA PDFs 3/3, 10 official sources, Article 13(8) + Regulation (EU) 2025/2392 locators PASS, provenance PASS.
+- PR #281 merged by expected-head; merge SHA equals main HEAD. Main push Run #1615 / 45550213763 exact SHA + event=push + branch=main, completed/success, job 138989338467, 15/15, 459 log lines, 189 pytest, traceability 416, PDFs 3/3, sources 10, provenance PASS.
+- Run #1614 PDF ZIP 14993188416 / SHA-256 b9bd452aad02e17501f2df2b8b0eec5642e4f53d42005c4fb98ec2fd06c5be4d; provenance ZIP 14993430968 / b045c9001f0140cc98069fda8ff8b08b915de1abf7ffe36ec58e0663e5a91d36.
+- Run #1615 PDF ZIP 14993282289 / 9ffdfbdc0a543537516a55bebffa1196b9567e6fdc2069323d84f3fd4f65fc8a; provenance ZIP 14992854400 / 63fb6972b2089bf1c8a3c339b6a29501d583538190ed56755c0a353a2c6050dd.
+- Manufacturer original binary acquisition remains unsuccessful; metadata_only. Ver1.3/1.4 conflict unresolved. Official technical support route documented but no email/inquiry sent.
+- Q01–Q62 unsent. Actual SKU, EU/EEA supply, economic operators, signed SKU-specific DoC scope, BOM/MCU/SBOM/security configuration, CRA classification, vulnerability handling and support period remain Unknown.
+- Report §114.5 / evidence register §72.1; CRA only; SIL 3 excluded.
+
 ## 2026-11-25 — 현재 기준: PR #280 / Run #1612 및 main push Run #1613 검증, 제조사 기술지원 경로 확인
 - Current main HEAD: e2b2f39a16b5b41b466d1ec3db7138c49874d70e.
 - PR #280 exact HEAD 504ed25a538e0a61dbc500f3ba86ad60ed167414; Run #1612 / 45549584947 completed/success, job 138987281166, 15/15 steps, 189 pytest, traceability 415, official CRA PDFs 3/3, official sources 10, Article 13(8) + Regulation (EU) 2025/2392 locators PASS, provenance round-trip/upload PASS.

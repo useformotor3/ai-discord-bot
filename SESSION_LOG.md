@@ -3824,3 +3824,13 @@ CRA only; SIL 3 excluded.
 - Official manual main and Servo lists show Ver1.4, but earlier empty-category snapshot showed Ver1.3; unresolved. Manual detail timeout. CE/UKCA/catalogue/CAD detail pages 502; Solution Square manual SPA only. No manufacturer binary; all metadata_only; no file hashes/signature/revision inspection.
 - New official support path: customer center 1544-5948, hours 08:30–17:30 (lunch excluded); Servo technical support Seoul khnam@lsmecapion.com / 070-4343-8207, 경기 070-7772-8422; drive A/S 053-580-9191. Official technical inquiry portal recorded in report §114. This is route identification only; no contact was sent.
 - Q01–Q62 unsent. Actual SKU, EU/EEA supply, economic operators, signed SKU-specific DoC, BOM/MCU/SBOM/security configuration, CRA classification, vulnerability handling/support period Unknown. CRA only; SIL 3 excluded.
+
+
+
+## 2026-11-25 — PR #281 / Run #1614 및 main push Run #1615 closeout
+- PR #281 exact HEAD 28b1568bd6cc37f724c9180e879a29141714fbdb; Run #1614 / 45550104279 completed/success, job 138988973316, 15/15 steps, 475 log lines, 189 pytest, traceability 416, PDFs 3/3, official sources 10, provenance PASS.
+- Expected-head squash merge SHA/current main: 5805638439877d2b5dc18d64b7765a67c848a194.
+- Main push Run #1615 / 45550213763 exact SHA + event=push + branch=main, completed/success; job 138989338467, 15/15, 459 log lines, 189 pytest, traceability 416, PDFs 3/3, sources 10, provenance PASS.
+- Run #1614 PDF ZIP 14993188416 / b9bd452aad02e17501f2df2b8b0eec5642e4f53d42005c4fb98ec2fd06c5be4d; provenance ZIP 14993430968 / b045c9001f0140cc98069fda8ff8b08b915de1abf7ffe36ec58e0663e5a91d36.
+- Run #1615 PDF ZIP 14993282289 / 9ffdfbdc0a543537516a55bebffa1196b9567e6fdc2069323d84f3fd4f65fc8a; provenance ZIP 14992854400 / 63fb6972b2089bf1c8a3c339b6a29501d583538190ed56755c0a353a2c6050dd.
+- Manufacturer source state unchanged: no original binaries, metadata_only; Ver1.3/1.4 conflict unresolved; technical support route identified but no inquiry sent. Q01–Q62 unsent and all Unknowns retained. CRA only; SIL 3 excluded.
