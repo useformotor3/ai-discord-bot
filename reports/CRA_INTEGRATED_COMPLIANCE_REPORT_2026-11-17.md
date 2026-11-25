@@ -2735,3 +2735,13 @@ Actual SKU, EU/EEA supply, economic operators, signed DoC coverage, BOM/exact MC
 
 ### 101.4 제품/공급/설계 unknowns
 Actual SKU, EU/EEA supply, economic operators, signed SKU-specific EU DoC coverage, BOM, exact MCU part number, SBOM, security configuration, CRA classification, vulnerability handling 및 security update/support period는 모두 Unknown 유지. 제조사 질의서 v2.0 Q01–Q62는 draft_prepared_not_sent이며 발송·회신 없음. CRA only; SIL 3 excluded.
+
+
+## §102. 2026-11-25 — 행동규약 v1.3 및 PR #269 병합
+- PR #269 exact HEAD 0cdffd2ffed3f06b5fc3e910dd9ca18eb2b9a146, base f0e351a8f1df6f24e103b12b73c71defe5b9757d 직전 main.
+- Run #1585 / 45531936573: completed/success, 15/15 returned steps, 189 pytest passed, traceability 402 events, CRA PDF 3/3 fetch/hash, official source 10개 provenance manifest JSON round-trip/upload.
+- PDF artifact 14984882493 (3,070,566 bytes; SHA-256 0b4bb00497f4f739f329aaab2732461b95ae63f196183f946fb1fe20414c0dc8); provenance artifact 14984183799 (2,565 bytes; SHA-256 6ecc492302fb00055768722682fc8873329e44c32e93e36d7160e045ec3dbcb4).
+- Expected-head squash merge 및 main read-back: f0e351a8f1df6f24e103b12b73c71defe5b9757d. PR closed/merged. Diff 7 files (+107/-0), reviews 0, threads 0.
+- 행동규약 §8.3 v1.3 main 반영: 단독 DIL button, 직접 GenUI.issueNewTurn, CRA-only/SIL3-excluded 재개 payload, 응답 마지막 요소, 출력 전 hard gate.
+- main push CI는 여전히 UNVERIFIED: Combined Status 빈 배열, 현재 connector run 조회는 PR-triggered만 제공. PR #269 Run #1585를 main push CI로 간주하지 않는다.
+- iX700M 원본 binary는 여전히 미취득. 게시 metadata와 binary를 분리하고 Unknown 유지. CRA only; SIL 3 excluded.
