@@ -3180,3 +3180,32 @@ This is a verified contact route, not evidence that the manufacturer was contact
 
 ### 114.4 Evidence boundary
 Actual SKU, EU/EEA supply, economic operators, signed SKU-specific EU DoC coverage, BOM, exact MCU, SBOM, security configuration, CRA classification, vulnerability handling and security update/support period remain Unknown. Do not infer these from converter family/rating codes or catalogue metadata. Ver1.3/1.4 conflict remains unresolved. CRA only; SIL 3 excluded.
+
+### 114.5 PR #281 문서 동기화의 exact-head 및 main push 검증
+PR #281은 §114/§72 및 공식 기술지원 경로를 반영한 문서 동기화 PR이다. PR 자체의 CI와 병합 후 main push도 별도로 검증했다.
+
+| 구분 | PR #281 exact-head | 병합 후 main push |
+|---|---|---|
+| PR HEAD / merge SHA | 28b1568bd6cc37f724c9180e879a29141714fbdb | 5805638439877d2b5dc18d64b7765a67c848a194 |
+| Run / ID | #1614 / 45550104279 | #1615 / 45550213763 |
+| Event / branch | pull_request | push / main |
+| Job | 138988973316 | 138989338467 |
+| Result | SUCCESS | SUCCESS |
+| Steps / log | 15/15 / 475 lines | 15/15 / 459 lines |
+| pytest | 189 passed | 189 passed |
+| Traceability | 416 events | 416 events |
+| CRA PDFs / sources | 3/3 / 10 | 3/3 / 10 |
+| Article 13(8), Regulation (EU) 2025/2392 locators | PASS | PASS |
+| Provenance round-trip/upload | PASS | PASS |
+
+PR #281 expected-head squash merge SHA equals the main branch HEAD. Run #1615 is independently confirmed as exact SHA + event=push + head_branch=main, completed/success; all 15 steps succeeded.
+
+Run #1614 artifacts:
+- PDF ZIP 14993188416, 3,070,565 bytes, archive SHA-256 b9bd452aad02e17501f2df2b8b0eec5642e4f53d42005c4fb98ec2fd06c5be4d.
+- Provenance ZIP 14993430968, 2,565 bytes, archive SHA-256 b045c9001f0140cc98069fda8ff8b08b915de1abf7ffe36ec58e0663e5a91d36.
+
+Run #1615 artifacts:
+- PDF ZIP 14993282289, 3,070,566 bytes, archive SHA-256 9ffdfbdc0a543537516a55bebffa1196b9567e6fdc2069323d84f3fd4f65fc8a.
+- Provenance ZIP 14992854400, 2,565 bytes, archive SHA-256 63fb6972b2089bf1c8a3c339b6a29501d583538190ed56755c0a353a2c6050dd.
+
+These are ZIP archive hashes, not individual CRA PDF hashes. Manufacturer binary evidence status is unchanged: metadata_only, no LS Mecapion original file, no per-file hash/signature inspection. Ver1.3/1.4 unresolved; Q01–Q62 unsent; product-specific Unknowns retained. CRA only; SIL 3 excluded.
