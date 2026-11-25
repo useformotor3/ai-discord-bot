@@ -1424,3 +1424,10 @@ Archive SHA-256:
 - Contact path identified; no inquiry/email sent. Q01–Q62 remain draft_prepared_not_sent.
 
 Actual SKU, EU/EEA supply, economic operators, signed SKU-specific DoC scope, BOM/MCU/SBOM/security configuration, CRA classification, vulnerability handling and support period remain Unknown. CRA only; SIL 3 excluded.
+
+### §72.1 PR #281 문서 동기화 CI 후속 검증
+- PR #281 exact HEAD 28b1568bd6cc37f724c9180e879a29141714fbdb; Run #1614 / 45550104279, job 138988973316, SUCCESS, 15/15, 189 pytest, traceability 416, PDFs 3/3, sources 10, provenance PASS.
+- Merge SHA/main HEAD 5805638439877d2b5dc18d64b7765a67c848a194; main push Run #1615 / 45550213763, job 138989338467, exact SHA + push + main, SUCCESS, 15/15, 189 pytest, traceability 416, PDFs 3/3, sources 10, provenance PASS.
+- Run #1614 PDF ZIP 14993188416: b9bd452aad02e17501f2df2b8b0eec5642e4f53d42005c4fb98ec2fd06c5be4d; provenance ZIP 14993430968: b045c9001f0140cc98069fda8ff8b08b915de1abf7ffe36ec58e0663e5a91d36.
+- Run #1615 PDF ZIP 14993282289: 9ffdfbdc0a543537516a55bebffa1196b9567e6fdc2069323d84f3fd4f65fc8a; provenance ZIP 14992854400: 63fb6972b2089bf1c8a3c339b6a29501d583538190ed56755c0a353a2c6050dd.
+- Archive hashes are not individual PDF hashes. No change to LS Mecapion evidence state. Metadata_only; manual Ver1.3/1.4 unresolved; Q01–Q62 unsent; all Unknowns retained. CRA only; SIL 3 excluded.
