@@ -2661,3 +2661,12 @@
 - Acquisition obstacles: official detail pages 502/timeouts, Solution Square JS shell, execution environment DNS unavailable. Continue via official direct attachment/authorized technical contact.
 - Q01–Q62 draft_prepared_not_sent; not sent. Actual SKU, EU/EEA supply, economic operators, signed SKU-specific DoC coverage, BOM/MCU/SBOM/security configuration, CRA classification, vulnerability handling and support period remain Unknown. CRA only; SIL 3 excluded.
 - Next: obtain controlled original binaries and verify each file independently before changing evidence status.
+
+
+## 2026-11-25 — PR #283 Run #1618 확인 / Run #1619 UNVERIFIED
+- Current latest main commit / PR #283 merge SHA: 0821dac7a336848c1609c4c663860be90eb17337. PR #283 base 127c9ec311e2939059dbff689c3b04f1208e2424; exact PR HEAD 616b2a42049930290a42cd495f6c7543b0ba8751; merged=true. Do not confuse PR HEAD and merge SHA.
+- Run #1618 / 45551394041 exact PR HEAD SUCCESS, job 138993151093, 15/15, 475 log lines, 189 pytest, traceability 418, CRA PDFs 3/3, 10 official sources and provenance PASS. Artifact digests recorded in report §114.7 / evidence register §72.3.
+- Run #1619 post-merge main push is UNVERIFIED: no run ID or exact push event found; combined status empty is not a success signal. Do not claim CI complete or invent run metadata.
+- LS Mecapion binaries still not acquired; manual Ver1.3/1.4 conflict unresolved; CE/UKCA, KR/EN catalog and CAD/STEP remain metadata_only. No per-file hashes/signatures/revision verification.
+- No manufacturer inquiry sent; Q01–Q62 unsent. All product Unknowns retained. CRA only; SIL 3 excluded.
+- Next: identify Run #1619 by Actions run-list lookup exact SHA/event/branch; independently inspect all jobs/steps/logs/artifacts. Continue official attachment retrieval without guessing URLs.
