@@ -3939,3 +3939,12 @@ CRA only; SIL 3 excluded.
 - CE 220B/370B/300B/750B/550B/450B grouped index only; UKCA Drive Unit unlocated (not proof of absence); catalogue/CAD/STEP metadata only. Detail requests timeout/502.
 - No manufacturer binaries (0); no manufacturer SHA-256/signature/revision/SKU validation. Q01–Q62 unsent; no contact. CRA only; SIL 3 excluded.
 - Next: seek only actual official href/document IDs; if binary obtained, then validate SHA-256, signature chain, internal revision and SKU scope. Record all failures and do not infer IDs/URLs.
+
+
+## 2026-11-26 — CRA only official detail retry
+- Confirmed main HEAD 57ba09b6e6b9e936380bca120425fc3cb4d2c1d8; pre-read report §114.7.14/evidence §72.12 and project status documents.
+- New official evidence: PEGA2 detail search result exposes previous-post text for iX700M DRIVE 400[V] Ver1.3, but not href/wr_id; timeout on direct detail. Ver1.3 title supported, actual ID still unknown. Current general/Servo list row41=Ver1.4; older empty-sca cache row41=Ver1.3 conflict preserved.
+- Ver1.4 wr_id=12652 confirmed, detail fetch 502. Solution Square iX700M manual 2026-09-16 title/date confirmed, JS shell hides document ID/detail/attachment.
+- CE grouped index 171/172/173 covers 220B; 370B/300B; 750B/550B/450B. Individual IDs absent. UKCA Drive Unit unlocated; converter wr_id=12893 not interchangeable. Catalogue and CAD/STEP metadata only.
+- Manufacturer binaries 0; no manufacturer hash/signature/revision/SKU validation. Q01–Q62 unsent. CRA only; SIL 3 excluded.
+- Next: retrieve actual href or downloadable bytes only through official links; do not infer wr_id or attachment paths.

@@ -1,4 +1,13 @@
 
+## 2026-11-26 — CRA official detail retry §114.7.15 / §72.13
+- Baseline main HEAD: 57ba09b6e6b9e936380bca120425fc3cb4d2c1d8; document-only branch `docs/cra-source-detail-retry-20261126-v2`.
+- Solution Square iX700M manual (2026-09-16) title/date confirmed; JS shell/search index do not expose document ID/detail/attachment.
+- Ver1.3 title independently visible as previous-post text on official PEGA2 detail search result; target href/wr_id remains hidden. Empty-sca cached list row 41=Ver1.3 conflicts with current general/Servo lists row 41=Ver1.4. Ver1.4 wr_id=12652 confirmed, detail fetch 502. Do not infer Ver1.3 ID.
+- CE index groups: row171 220B; row172 370B/300B; row173 750B/550B/450B. Individual IDs/attachments unresolved. UKCA Drive Unit not found (absence not proven); wr_id12893 is Converter Unit only. Catalogue and CAD/STEP metadata only.
+- Manufacturer binaries 0; no manufacturer hash/signature/revision/SKU verification. Q01–Q62 unsent; no contact. CRA only; SIL 3 excluded.
+- See report §114.7.15 / evidence register §72.13.
+
+
 ## 2026-11-26 — CRA source locator recheck §114.7.14 / §72.12
 - Baseline main HEAD: ac46c0dfbe068035fcf1422ebb96b1bc19c7c4de; document-only branch `docs/cra-source-locator-recheck-20261126-v1`.
 - Solution Square page 14/search page 70 show iX700M user manual updated 2026-09-16; actual document ID/detail/attachment remains hidden behind JS app shell.
