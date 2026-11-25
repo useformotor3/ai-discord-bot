@@ -1447,3 +1447,6 @@ Annex I Part II의 실무 요구사항은 machine-readable SBOM(최소 top-level
 
 
 > **PR #282 / Run #1616 and main Run #1617:** PR #282 exact HEAD 8eb522dad46a421f006ea5d0e75ee707f5b6cf8d passed 15/15 (189 pytest, traceability 417, PDFs 3/3, sources 10, provenance PASS). Expected-head merge/main SHA 127c9ec311e2939059dbff689c3b04f1208e2424; main push Run #1617 / 45550542045 on exact SHA + push/main passed 15/15. Manufacturer source entries rechecked but no original binary obtained; all metadata_only, Ver1.3/1.4 unresolved, Q01–Q62 unsent, product Unknowns retained. See report §114.6 / evidence register §72.2. CRA only; SIL 3 excluded.
+
+
+> **PR #283 / Run #1618:** PR exact HEAD 616b2a42049930290a42cd495f6c7543b0ba8751 passed Run #1618 / 45551394041 (job 138993151093, 15/15, 189 pytest, traceability 418, CRA PDFs 3/3, 10 official sources, provenance PASS). Merge SHA is 0821dac7a336848c1609c4c663860be90eb17337. Post-merge main push Run #1619 remains UNVERIFIED: run ID and exact push event/branch/head not established; empty combined status is not success. See report §114.7 / evidence register §72.3. Manufacturer originals remain metadata_only; Ver1.3/1.4 conflict unresolved; Q01–Q62 unsent. CRA only; SIL 3 excluded.
