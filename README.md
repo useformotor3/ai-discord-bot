@@ -1347,3 +1347,11 @@ Annex I Part II의 실무 요구사항은 machine-readable SBOM(최소 top-level
 
 
 > **PR #269 merged (2026-11-25):** behavior protocol v1.3 §8.3 is now on main. Exact-head Run #1585 / 45531936573 SUCCESS 15/15, 189 pytest passed, traceability 402, CRA PDFs 3/3 fetch/hash, 10-source provenance manifest round-trip/upload. Merge/current main: f0e351a8f1df6f24e103b12b73c71defe5b9757d. Main push CI remains UNVERIFIED; PR CI is not main push CI. The final next-step button is a standalone native DIL button calling GenUI.issueNewTurn. CRA only; SIL 3 excluded.
+
+
+## 2026-11-25 — main push CI 성공 및 문서 상태 정정
+- PR #270 exact-head Run #1587 SUCCESS, main push Run #1588 SUCCESS 확인. main push는 `head_sha=660eb6d20e62f772272c03971dcd773b03a703f5`, `event=push`, branch=main, 15/15 steps, 189 pytest passed, CRA traceability 403, official CRA PDF 3/3 hash, official sources 10-source provenance manifest round-trip/upload PASS.
+- 기존 README/SESSION_LOG의 PR #270 누락 및 main push UNVERIFIED 문구는 과거 상태 기록으로 남기고, 이 최신 append가 현재 상태를 supersede한다.
+- Actions API 조회 방법: `/actions/runs?head_sha={SHA}&event=push&per_page=100`.
+- iX700M manual current list Ver1.4 vs alternate index Ver1.3 same date conflict remains; manual, DoC, catalogue, CAD binary unavailable. metadata_only.
+- Inquiry v2.0 Q01–Q62 draft_prepared_not_sent. Unknowns unchanged. CRA only; SIL 3 excluded.
