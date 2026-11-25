@@ -2479,3 +2479,12 @@
 - Manufacturer inquiry v2.0: 62 globally numbered unique questions Q01–Q62; original 90-item list was consolidated. Q61 manual revision conflict; Q62 per-SKU BOM/MCU/FW/SBOM/security/vulnerability evidence matrix. Draft/not sent.
 - iX700M manual/DoC/catalogue/CAD binary still not acquired; listing metadata only. Actual SKU/EU supply/operators/signed DoC/BOM-MCU-SBOM/security configuration/CRA classification and vulnerability/support facts remain Unknown.
 - CRA only; SIL 3 excluded.
+
+
+ 
+## 2026-11-25 — 다음 단계 버튼 전달 재발 / 행동규약 v1.3
+- 사용자가 다시 다음 단계 버튼을 찾지 못하거나 사용할 수 없다고 보고했다.
+- 확인: main에 행동규약 v1.2 §8.2 및 이전 버튼 누락 PROJECT_LOG 이벤트가 이미 존재했다. 따라서 규칙 부재가 원인은 아니다.
+- 개선: 마지막 UI 요소를 컨테이너 없는 단독 DIL button으로 고정하고, 직접 `GenUI.issueNewTurn` action 및 CRA-only/SIL3-excluded 재개 payload를 강제한다.
+- 출력 전 실제 컴포넌트·action·payload·마지막 배치 네 항목을 검사한다. 사용자의 누락 보고 시 즉시 복구하고 SESSION_LOG/PROJECT_LOG에 기록한다.
+- 이 변경은 문서/출력 통제 개선이며 모델 가중치 학습이나 대화 사이 자율 실행을 의미하지 않는다. CRA only; SIL 3 excluded.
