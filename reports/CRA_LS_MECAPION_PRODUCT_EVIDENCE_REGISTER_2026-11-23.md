@@ -1130,3 +1130,31 @@ Actual SKU, EU/EEA supply, economic operators, signed DoC coverage, BOM/exact MC
 PR #271 expected-head squash merge SHA `c9532486ad2aca0ba9538eeffb42d30f76d73ea0` and main read-back matched. Main push Run #1590 verifies post-merge workflow success.
 
 iX700M manual/DoC/catalogue/CAD remain metadata_only; Ver1.4/Ver1.3 manual index discrepancy unresolved; no original binary or content hash. Inquiry Q01–Q62 draft_prepared_not_sent. Product SKU/supply/operators/DoC scope/BOM/MCU/SBOM/security configuration remain Unknown.
+
+
+## §63. 2026-11-25 — PR #272 / Run #1591 및 main Run #1592 증거
+
+| 확인 항목 | PR #272 exact-head | main branch post-merge |
+|---|---|---|
+| SHA | `c273e6511012ec6f7d29c87ab71c6da870c2cf46` | `eb5894767cebdc7f956e31252b2d1831ef554a85` |
+| Run | #1591 / 45537296095 | #1592 / 45537422906 |
+| Job | 138946910010 | 138947346705 |
+| Job conclusion | SUCCESS | SUCCESS |
+| Returned steps | 15/15 | 15/15 |
+| pytest | 189 passed | 189 passed |
+| Traceability events | 405 | 405 |
+| CRA PDFs | 3/3 fetched+hashed | 3/3 fetched+hashed |
+| Official sources | 10, manifest round-trip/upload | 10, manifest round-trip/upload |
+| Article 13(8) locator/quote | PASS | PASS |
+| Regulation 2025/2392 locators | Annex I(10), Annex II(1) PASS | Annex I(10), Annex II(1) PASS |
+
+PR #272 diff: 6 files, +70/-0, 6 ahead / 0 behind, reviews 0, threads 0. Expected-head squash merge SHA and main read-back: `eb5894767cebdc7f956e31252b2d1831ef554a85`.
+
+| Artifact | PR #272 Run #1591 | Main Run #1592 |
+|---|---|---|
+| CRA PDF ZIP | ID 14987053784; 3,070,566B; SHA-256 `3a5e66e5ddde36b6debbc5b29fd3b94c5e13ab90839485b6c8d5cdafd423f7af` | ID 14986973967; 3,070,568B; SHA-256 `ac77027d86715aaeb9695aaedd7f3bc88514e4f93705dfcae25ed0e49297a3a0` |
+| Provenance ZIP | ID 14987088640; 2,565B; SHA-256 `d504115a03a541f57109f5da37c23b7af9d75635e670fe099625bf8e9f704d92` | ID 14987143761; 2,565B; SHA-256 `d670de307d2299a13d72d1c75bad0e301ed8743d3303471ce201a304646955aa` |
+
+All four artifacts were downloaded and independently SHA-256 checked against the GitHub artifact digests. Main artifact metadata confirms head_branch=main and exact merge SHA. The job/artifact wrapper response does not expose the event property; avoid claiming that this particular response independently returned event=push.
+
+Manufacturer originals remain metadata_only: manual Ver1.4/Ver1.3 index conflict unresolved; Converter CE/UKCA DoC, KR/EN catalogue, 2D CAD/3D STEP binaries and content hashes not acquired. Q01–Q62 draft_prepared_not_sent. All product identity/supply/operator/DoC scope/BOM/MCU/SBOM/security/classification fields remain Unknown.
