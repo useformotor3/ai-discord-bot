@@ -1513,3 +1513,14 @@ Actual SKU, EU/EEA supply, economic operators, signed SKU-specific DoC scope, BO
 - Servo filter continues to show iX700M Ver1.4; general/empty-category listing shows Ver1.3, same date 2026-05-26. No PDF bytes/internal revision/approval evidence; conflict unresolved.
 - Catalog detail search result reconfirms KR/EN filenames, 10.7M each, DATE 2025-12-05 13:43:50; no binary. https://www.lsmecapion.com/bbs/board.php?bo_table=catalog&wr_id=12110
 - No guessed Ver1.3 URL, no new manufacturer binary, no file hash/signature/revision/SKU-scope verification. All metadata_only; Q01–Q62 unsent; no manufacturer contact. CRA only; SIL 3 excluded.
+
+### §72.10 2026-11-25 — Solution Square document ID / Ver1.4 wr_id / KC cross-reference
+
+- 기준 main `8898a733ec8328acfa411041d527b0e1517ec678`; report §114.7.11 preflight passed.
+- Solution Square: 2026-09-16 iX700M 사용 설명서 title visible on official list (https://ssq.ls-electric.com/kr/ko/product/category/4?pageNumber=26) and official search result (https://sol.ls-electric.com/kr/ko/newSearch?pageNumber=70); direct page is JS shell only. document ID, detail URL, attachment URL and filename not exposed. metadata_only.
+- LS메카피온 Ver1.4 manual: actual list anchor resolves to wr_id=12652; official detail URL https://lsmecapion.com/bbs/board.php?bo_table=manual&wr_id=12652 ; listing date 2026-05-26. Detail open returned 502; attachment/binary unavailable. ID confirmed, binary metadata_only.
+- Ver1.3: PEGA2 detail wr_id=12651 exposes previous-post label for iX700M Ver1.3, but target href/wr_id not exposed. No inferred numeric ID. Ver1.3/1.4 controlled-revision conflict unresolved.
+- Additional KC index cross-check: official KC listing https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&page=1&sca=KC lists iX700MD1-B-220B (row 113) and iX700MD1-B-370B (row 114), dated 2026-03-09. KC index rows are not CE/UKCA declarations and do not reveal CE detail IDs. No KC detail links/binaries verified for the other requested models.
+- CE groups 220B, 370B/300B, 750B/550B/450B remain index-only; UKCA Drive Unit not found in searched index (not proof of non-existence). Confirmed UKCA wr_id=12893 is Converter Unit only.
+- Catalog KR/EN filename and size metadata only; CAD/STEP index item 19 only. No original bytes or attachment URL acquired.
+- No manufacturer binaries; no hash/signature/internal revision/SKU-scope checks. Q01–Q62 unsent; no manufacturer contact. CRA only; SIL 3 excluded.
