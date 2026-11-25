@@ -1,4 +1,11 @@
 
+## 2026-11-26 — PR #294 / main push Run #1647 종결
+- PR #294 exact HEAD `774bfc45f2ca152d18b8236987cb616ab80f9a7f`, Run #1646 / 45718668986 SUCCESS 25/25; pytest 189, compile/traceability, CRA PDF 3/3, 10 official sources, provenance manifest PASS.
+- Expected-head squash merge/current main: `f7fe9c1151afcb210dbb0c9d589e6d22b7aec603`.
+- Main push Run #1647 / 45718795105: exact merge SHA + event=push + branch=main, completed/success 25/25; pytest 189, traceability 431, PDFs 3/3, sources 10, provenance PASS.
+- Artifact digests/IDs 및 자세한 결과는 report §114.7.17 / evidence register §72.15.
+- 제조사 원본은 여전히 0건, metadata_only. Ver1.3/Ver1.4 conflict unresolved; SKU/supply/operator/BOM/MCU/security Unknown. Q01–Q62 unsent. CRA only; SIL 3 excluded.
+
 ## 2026-11-26 — CRA 공식 원본 locator 재검증 (§114.7.16 / §72.14)
 - 기준 main: `3d40b386d43d172f4f0d9d09948e5a01ef372cd4`; 문서 전용 조사 브랜치에서 기록.
 - PEGA2 Ver1.3 이전글 텍스트는 확인했으나 실제 anchor href/wr_id는 여전히 미노출. Ver1.3/Ver1.4 목록 충돌 유지.
