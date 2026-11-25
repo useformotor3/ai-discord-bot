@@ -204,3 +204,10 @@ main `660eb6d20e62f772272c03971dcd773b03a703f5`의 push Run #1588 / ID `45532289
 - PR #272 merge `eb589476…` main Run #1592 / 45537422906 SUCCESS; PR #273 merge `ce36f290…` main Run #1594 / 45539588559 SUCCESS; PR #274 merge `ea1c2b31…` main Run #1596 / 45539874073 SUCCESS. 각 15/15, 189 pytest, CRA PDF 3/3, official source 10, provenance upload.
 - 과거 §8.4의 PR #273 UNVERIFIED 기록은 당시 사용 가능한 wrapper 기준의 역사적 상태다. 직접 runs collection에서 Run #1594를 확인해 현재 상태를 SUCCESS로 정정한다. 유사하게 PR #274 Run #1596도 SUCCESS로 확인.
 - 다음 보고/증거 동기화에서는 기존 기록을 지우지 말고, 이 후속 실증으로 상태를 갱신한다.
+
+
+### 2026-11-25 — PR #275 CI closeout gate
+- PR #275 exact HEAD `9231c47c88ff7fe9fc9ce1022eb3023e6af244ba`, Run #1597 / 45540553259 completed/success, 15/15, 189 pytest. Verify full logs, traceability (13 claims, 15 interfaces, 35 requirements, 36 SEC, 15 product evidence, M606 41, JSONL 408), 3 CRA PDFs, 10 official sources and provenance manifest.
+- Artifacts: PDF 14988832738 SHA-256 `f3a29c9b7ad2c8cbaea65fc9d0c5eb3d47ad348005b3bf6cbe3b98b037786861`; provenance 14989265975 SHA-256 `61736ebe2e84c8b8bba92820b4b2f69e132edfcc9d5304a434c45e392e76fabf`.
+- PR #275 diff 7 files(+111/-0), reviews 0, threads 0; PR branch JSONL 408 valid records. Do not merge this HEAD if further docs are appended; any new commit invalidates exact-head CI and requires a new run.
+- Expected-head squash merge only after final diff and latest CI success; then direct Actions runs collection by merge SHA + event=push, verify main branch, exact SHA, completed/success and all jobs/steps/logs/artifacts.
