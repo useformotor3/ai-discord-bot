@@ -2569,3 +2569,12 @@
 - PR diff 7 files(+111/-0), reviews 0, threads 0. PR branch PROJECT_LOG 408 records, JSON parse errors 0; test-reported event count 408.
 - 이 상태 기록을 위해 추가 문서 커밋이 발생하면 PR HEAD가 바뀌므로 해당 새 HEAD의 CI를 다시 통과시킨 뒤에만 merge한다. 현재 PR #275는 병합 전.
 - 제조사 파일은 계속 metadata_only; Q01–Q62 draft_prepared_not_sent. Actual SKU, EU/EEA supply, economic operators, signed SKU DoC, BOM/MCU/SBOM/security configuration, CRA classification Unknown. CRA only; SIL 3 제외.
+
+
+## 2026-11-25 — PR #275 병합 및 main push 최종 완료
+- PR #275 updated HEAD `2918f4b62c76d211462428ea32bbbd93a1cbdb61`, Run #1601 / 45540997785 SUCCESS (15/15, 189 pytest, traceability 409, CRA PDF 3/3, official sources 10).
+- Expected-head squash merge SHA/current main: `cd00a3b67eea7bf18f5143951f4616659157e15e`.
+- Post-merge main push Run #1602 / 45541169420: direct Actions runs collection exact SHA + event=push; branch=main, completed/success, 15/15, 189 pytest, traceability 409, PDFs 3/3, official sources 10, provenance upload PASS.
+- Run #1602 artifacts: PDF 14988324547 SHA-256 bd8018361bb18e5ef326ca9f3e57884bc9b00de97a76f70f4e5945b603ae149d; provenance 14989940245 SHA-256 27460361017e0da584e2fc1a021d121ac4e405b6b8133bd6007703a091482fcb.
+- Run #1601 artifacts: PDF 14988823487 SHA-256 b9089acf0f81206b026c1f016e79588361e6c150bb49643cc9316e7bcad2bba0; provenance 14988593957 SHA-256 acea80b32d1ed91d9af8d78f54f0ed65fe508cb1882c83261ab1c1a06fb9f8da.
+- PROJECT_LOG main 409 records, JSON parse errors 0. Manufacturer binary evidence remains metadata_only. Q01–Q62 not sent; actual SKU, EU/EEA supply, economic operators, signed SKU DoC scope, BOM/MCU/SBOM/security configuration and CRA classification Unknown. CRA only; SIL 3 excluded.

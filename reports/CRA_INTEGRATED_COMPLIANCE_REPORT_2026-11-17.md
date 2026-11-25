@@ -2926,3 +2926,25 @@ PR #275 diff 7 files, +111/-0, reviews 0, review threads 0. PR branch의 PROJECT
 
 ### 108.5 제조사 증거 경계 및 Unknown
 iX700M Ver1.3/Ver1.4 공식 목록 충돌, Solution Square 2026-09-16 목록, Converter CE/UKCA, KR/EN catalog, 2D CAD/3D STEP은 계속 metadata_only이며 원본 바이너리와 content hash 미확보. Q01–Q62는 draft_prepared_not_sent; 발송하지 않았다. Actual SKU, EU/EEA supply, economic operators, signed SKU-specific EU DoC coverage, BOM, exact MCU, SBOM, security configuration, CRA classification, vulnerability handling 및 support period는 Unknown 유지. CRA only; SIL 3 excluded.
+
+
+## §109. 2026-11-25 — PR #275 최종 HEAD 및 병합 후 main CI
+
+| 구분 | PR exact-head CI | 병합 후 main push CI |
+|---|---|---|
+| Run | #1601 / 45540997785 | #1602 / 45541169420 |
+| SHA | `2918f4b62c76d211462428ea32bbbd93a1cbdb61` | `cd00a3b67eea7bf18f5143951f4616659157e15e` |
+| Event/branch | pull_request | push / main |
+| Result | completed/success | completed/success |
+| Steps | 15/15 | 15/15 |
+| pytest | 189 passed | 189 passed |
+| Traceability project log events | 409 | 409 |
+| CRA PDFs / official sources | 3/3 / 10 | 3/3 / 10 |
+
+PR #275는 expected-head squash merge로 `cd00a3b67eea7bf18f5143951f4616659157e15e`에 병합됐다. 병합 SHA와 동일한 head_sha, event=push, head_branch=main을 GitHub Actions runs collection에서 직접 조회해 Run #1602를 식별했다. 전체 15 steps, pytest 189 passed, official CRA source checks 및 provenance upload를 검증했다.
+
+Run #1601 artifacts: PDF ID 14988823487, archive SHA-256 `b9089acf0f81206b026c1f016e79588361e6c150bb49643cc9316e7bcad2bba0`; provenance ID 14988593957, archive SHA-256 `acea80b32d1ed91d9af8d78f54f0ed65fe508cb1882c83261ab1c1a06fb9f8da`.
+
+Run #1602 artifacts: PDF ID 14988324547, archive SHA-256 `bd8018361bb18e5ef326ca9f3e57884bc9b00de97a76f70f4e5945b603ae149d`; provenance ID 14989940245, archive SHA-256 `27460361017e0da584e2fc1a021d121ac4e405b6b8133bd6007703a091482fcb`. API digest와 job log ZIP digest가 일치한다.
+
+main PROJECT_LOG는 409 JSONL records, parse errors 0. 제조사 원본 바이너리는 아직 취득하지 못했으므로 metadata_only. Q01–Q62 발송하지 않음. 제품 SKU, EU/EEA 공급, 경제운영자, SKU별 signed EU DoC 적용, BOM/MCU/SBOM/security configuration, CRA classification은 Unknown. CRA only; SIL 3 제외.

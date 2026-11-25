@@ -3750,3 +3750,12 @@ CRA only; SIL 3 excluded.
 - Artifact API metadata: PDF 14988832738 / 3,070,565 bytes / SHA-256 f3a29c9b7ad2c8cbaea65fc9d0c5eb3d47ad348005b3bf6cbe3b98b037786861; provenance 14989265975 / 2,565 bytes / SHA-256 61736ebe2e84c8b8bba92820b4b2f69e132edfcc9d5304a434c45e392e76fabf. Both match job log ZIP digests.
 - PR #275 diff 7 files(+111/-0), reviews 0, threads 0; branch PROJECT_LOG 408 JSONL records, parse errors 0; CI reports 408 events.
 - PR not merged at this point. Since current status details are now being added to docs, re-run CI on the resulting new PR HEAD before expected-head merge. No merge claim until then.
+
+
+## 2026-11-25 — PR #275 Run #1601 / main push #1602 closeout
+- PR #275 final HEAD `2918f4b62c76d211462428ea32bbbd93a1cbdb61`; Run #1601 / 45540997785 completed/success, 15/15, 189 pytest, traceability 409, official CRA PDFs 3/3, official sources 10, provenance PASS.
+- Expected-head squash merge SHA `cd00a3b67eea7bf18f5143951f4616659157e15e`.
+- Direct Actions runs collection exact SHA + event=push confirmed main Run #1602 / 45541169420, branch=main, completed/success, 15/15, 189 pytest, traceability 409, PDFs 3/3, official sources 10, provenance PASS.
+- Run #1601 artifact IDs/digests: PDF 14988823487 / b9089acf0f81206b026c1f016e79588361e6c150bb49643cc9316e7bcad2bba0; provenance 14988593957 / acea80b32d1ed91d9af8d78f54f0ed65fe508cb1882c83261ab1c1a06fb9f8da.
+- Run #1602 artifact IDs/digests: PDF 14988324547 / bd8018361bb18e5ef326ca9f3e57884bc9b00de97a76f70f4e5945b603ae149d; provenance 14989940245 / 27460361017e0da584e2fc1a021d121ac4e405b6b8133bd6007703a091482fcb.
+- Main PROJECT_LOG 409 valid records. Manufacturer binary acquisition still metadata_only; Q01–Q62 not sent; product facts Unknown. CRA only; SIL 3 excluded.
