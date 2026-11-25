@@ -2699,3 +2699,12 @@
 - CE Drive Unit groups 075B/050B+D2-B-045B, 150B, 220B, 370B/300B, 750B/550B/450B listed; 150B file metadata visible. CE iX700MCV and UKCA iX700MCV listing metadata visible. No Drive Unit-specific iX700M UKCA item found in searched results (not proof of non-existence).
 - KR/EN catalog filenames/sizes and iX700M CAD/STEP listing confirmed. Direct detail pages 502/timeout/inaccessible; Solution Square SPA did not expose attachment URL; container DNS failed. No manufacturer binary acquired; all metadata_only; no hash/signature/revision check. No guessed URLs.
 - Q01–Q62 unsent; no manufacturer contact. CRA only; SIL 3 excluded. See report §114.7.8 and evidence register §72.6.
+
+
+## 2026-11-25 — iX700M Solution Square / CE / UKCA 원본 추적 업데이트
+- 작업 기준 main: a8eed059bef2446d6f99678fe8e8866e00a2c634; 상세는 보고서 §114.7.9 / 증거등록부 §72.7.
+- Solution Square iX700M 사용 설명서 공식 목록/검색 항목 update 2026-09-16 재확인. 문서 ID, 상세 링크, 첨부 파일명·크기·다운로드 URL 미노출; JS app shell만 접근됨. Ver1.3/Ver1.4와의 관계 Unknown.
+- CE Drive Unit 그룹 및 150B 첨부 메타데이터, CE/UKCA iX700MCV Converter 메타데이터, KR/EN 카탈로그, CAD/STEP 목록 재확인. Drive Unit UKCA는 검색 범위 내 미발견(부존재 증거 아님).
+- 제조사 원본 바이너리 0개. 모든 자료 metadata_only; 개별 해시/서명/내부 개정/모델 범위 검증 미실시. 첨부 URL 추측 금지.
+- Q01–Q62 unsent; 제조사 연락 없음. 제품 SKU/EU 공급/경제운영자/DoC 적용범위/BOM·ST MCU part number/SBOM/보안 설정/CRA 분류/취약점·지원기간 Unknown.
+- CRA only; SIL 3 제외.
