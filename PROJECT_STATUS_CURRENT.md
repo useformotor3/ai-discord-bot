@@ -2547,3 +2547,15 @@
 - 공식 KR/EN 카탈로그 게시물 wr_id=12110: 두 파일 각각 10.7M, 게시 2025-11-17 및 첨부일 2025-12-05. 원본 미취득.
 - 공식 Servo Drive 도면 목록에 iX700M 2D CAD/3D STEP(2026-04-21) 게시가 표시됨. Detail wr_id=12455 timeout; 원본 미취득. Solution Square에는 iX700M 사용 설명서 2026-09-16 업데이트 항목이 있으나 JS shell만 열려 문서 원본은 미확보.
 - 모든 제조사 파일 상태 `metadata_only`. Q01–Q62 `draft_prepared_not_sent`; 발송하지 않음. actual SKU, EU/EEA 공급, 경제운영자, SKU별 서명 EU DoC 범위, BOM/MCU/SBOM/security configuration, CRA classification 등은 Unknown 유지. CRA only; SIL 3 제외.
+
+
+## 2026-11-25 — PR #272~#274 post-merge main push exact-head 최종 검증
+- Actions API 직접 조회 경로 확립: `GET /repos/useformotor3/ai-discord-bot/actions/runs?head_sha={exact_sha}&event=push&per_page=100`; workflow `.github/workflows/tests.yml` (ID 418086699). 기존 `fetch_commit_workflow_runs`는 PR 이벤트만 반환하므로 push 검증에는 runs collection 직접 조회를 사용한다.
+- PR #272 merge `eb5894767cebdc7f956e31252b2d1831ef554a85`: main push Run #1592 / 45537422906, event=push, branch=main, exact SHA, completed/success, 15/15, 189 passed, traceability 405.
+- PR #273 merge `ce36f290f34a6ce391b91cf3aa6742f48c93e44a`: main push Run #1594 / 45539588559, event=push, branch=main, exact SHA, completed/success, 15/15, 189 passed, traceability 406.
+- PR #274 merge/current main `ea1c2b315a0828bceee5913c2620b4a62823856b`: main push Run #1596 / 45539874073, event=push, branch=main, exact SHA, completed/success, 15/15, 189 passed, traceability 407.
+- PR exact-head runs #1591/#1593/#1595도 각각 15/15, 189 passed, CRA PDFs 3/3, official source provenance 10건, artifact upload 성공. PR #272/#273/#274 모두 expected-head squash merge, diff/review 확인 완료.
+- 매뉴얼 인덱스 충돌을 다시 확인: 기본 목록 및 Servo 필터 검색 인덱스는 Ver1.4(2026-05-26), 공식 빈 카테고리 `sca=` 페이지 직접 열람은 Ver1.3(같은 날짜/row 41). 상세 wr_id=12652 timeout. 원본 PDF 없으므로 개정 판정 미확정, metadata_only.
+- Solution Square 공식 목록에서 iX700M 사용 설명서 2026-09-16 업데이트 항목 재확인. 상세는 JS shell만 반환. Converter CE/UKCA, KR/EN catalogue, CAD/STEP 원본도 미취득; metadata_only.
+- Q01–Q62 `draft_prepared_not_sent`; 발송하지 않음. actual SKU, EU/EEA 공급, 경제운영자, signed SKU DoC, BOM/MCU/SBOM/security configuration, CRA classification은 Unknown.
+- CRA only; SIL 3 제외.
