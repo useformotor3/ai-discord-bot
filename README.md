@@ -1329,3 +1329,7 @@ Annex I Part II의 실무 요구사항은 machine-readable SBOM(최소 top-level
 
  
 > **PR #266 / main update (2026-11-25):** Exact HEAD `6529ec9a9234ffdaa5a763a60a7d3df72646eb98`, Run #1570 SUCCESS, 15/15 returned steps, 189 passed, traceability 397, JSONL 397 valid / 0 invalid / 0 internal blanks. Expected-head squash merge `a015dc95f6c59d331275d646306b2b2a2137f437`; main read-back confirmed. Main push CI remains UNVERIFIED (no combined status or push run returned). Protocol §8.2 v1.2 is merged. iX700M original manual/DoC/catalogue/CAD binaries remain unacquired; latest official listing search metadata is recorded in report §99 / evidence register §57. Inquiry 62 questions, draft not sent; actual SKU/EU supply/operators/DoC coverage/BOM-MCU-SBOM/security configuration/CRA classification remain Unknown. CRA only; SIL 3 excluded.
+
+
+ 
+> **Manufacturer inquiry v2.0:** 실제 번호 목록 감사에서 기존 파일은 90개였고, 과거 62개 기록은 stale count였다. 중복 통합 후 Q01–Q62로 정규화했으며 ID 연속성/중복/누락 검증을 통과했다. Q61 매뉴얼 revision, Q62 SKU별 BOM/MCU/FW/SBOM/security/vulnerability evidence matrix. Draft only; not sent.
