@@ -2522,3 +2522,17 @@
 - Post-merge main push Run #1590 / 45537026894: event=push, exact merge SHA, completed/success, 15/15, 189 passed, traceability 404, PDF 3/3, provenance 10-source PASS/upload.
 - Actions API query by `head_sha` + `event=push` confirmed. Main push CI SUCCESS.
 - Manufacturer original iX700M binaries still not acquired; all metadata_only. Manual index Ver1.4 vs Ver1.3 conflict unresolved. Q01–Q62 not sent; Unknowns preserved. CRA only; SIL 3 excluded.
+
+
+## 2026-11-25 — PR #272 exact-head Run #1591 및 main Run #1592 교차검증
+- 기준 main HEAD: `eb5894767cebdc7f956e31252b2d1831ef554a85`. PR #272 exact HEAD `c273e6511012ec6f7d29c87ab71c6da870c2cf46`; PR 상태 closed/merged, merge SHA 및 main read-back은 기준 HEAD와 동일.
+- PR #272 Run #1591 / ID `45537296095`: completed/success. Job `Source integrity, compile and pytest` 15/15 steps success, 189 pytest passed, source blob identity·compile·CRA traceability 검증 성공.
+- Traceability: claims=13, interfaces=15, requirements=35, SEC=36, EVD_SEC_crosswalk=16, crosswalk_SEC_linked=36, product_evidence_records=15, linked_claims=13, bidirectional_links=true, M606_mapping_items=41, project_log_events=405.
+- CRA Commission PDFs 3/3 fetch/hash, 공식 CRA source 10건, Article 13(8) locator/quote 및 Regulation 2025/2392 Annex I category 10 / Annex II category 1 locator PASS. Provenance JSON round-trip/upload PASS.
+- PR #272 diff: 6 files, +70/-0, 6 commits ahead / 0 behind, reviews 0, review threads 0. PROJECT_LOG 405 records / invalid 0 at base.
+- Merge는 exact PR HEAD를 expected-head로 squash; merge/main read-back `eb5894767cebdc7f956e31252b2d1831ef554a85`.
+- Main branch Run #1592 / ID `45537422906`: job completed/success, 15/15 steps, 189 passed, traceability 405, CRA PDFs 3/3, official sources 10, provenance round-trip/upload PASS. Artifact metadata independently shows head_branch=main and exact head SHA `eb5894767cebdc7f956e31252b2d1831ef554a85`; jobs/artifacts wrapper response does not expose the event field itself, so event metadata is not separately asserted from that response.
+- Run #1591 artifacts: PDF 14987053784 (3,070,566B; ZIP SHA-256 `3a5e66e5ddde36b6debbc5b29fd3b94c5e13ab90839485b6c8d5cdafd423f7af`); provenance 14987088640 (2,565B; ZIP SHA-256 `d504115a03a541f57109f5da37c23b7af9d75635e670fe099625bf8e9f704d92`). Run #1592 artifacts: PDF 14986973967 (3,070,568B; ZIP SHA-256 `ac77027d86715aaeb9695aaedd7f3bc88514e4f93705dfcae25ed0e49297a3a0`); provenance 14987143761 (2,565B; ZIP SHA-256 `d670de307d2299a13d72d1c75bad0e301ed8743d3303471ce201a304646955aa`). ZIP 다운로드 후 SHA-256 재계산 결과 GitHub artifact digest와 일치.
+- 제조사 원본 재시도: 매뉴얼 Ver1.4 현재 Servo 목록 vs Ver1.3 대체 인덱스 충돌 지속; detail wr_id=12652 timeout. Converter CE/UKCA, KR/EN 카탈로그, CAD/STEP 상세 페이지 재접근도 실패. 검색/직접 URL 접근 불가. 모든 파일 metadata_only, 원본 바이너리 및 content SHA-256 없음.
+- Q01–Q62는 draft_prepared_not_sent. 발송하지 않았음. actual SKU, EU/EEA 공급, 경제운영자, signed SKU-specific EU DoC coverage, BOM/정확한 MCU/SBOM/security configuration, CRA classification, vulnerability handling, support period는 Unknown 유지.
+- CRA only; SIL 3 제외.
