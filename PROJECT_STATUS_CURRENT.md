@@ -2461,3 +2461,11 @@
 - Q61/Q62 정밀화: revision-controlled 매뉴얼 원본·이력·SKU/HW/FW/hash, 실제 BOM의 MCU order code·firmware·SBOM·secure boot/debug/update/vulnerability/support 증거 요청. 질의서 62문항 draft/not sent.
 - Unknown: actual SKU, EU/EEA supply, economic operators, signed DoC coverage, BOM/exact MCU/SBOM, security configuration, CRA classification, vulnerability handling, security update/support period.
 - CRA only; SIL 3 excluded.
+
+
+ 
+## 2026-11-25 — 제조사 질의서 62개 전역 ID 감사/정규화
+- 기존 질의서 번호 목록을 직접 세어 90개였음을 확인했다. 이전 문서/로그의 “62문항”은 stale count였다.
+- 중복 및 겹치는 행정성 항목을 통합하고 Q01~Q62 전역 ID로 재구성했다. 자동 점검: 62 questions, 62 unique IDs, Q01–Q62 연속, 누락/중복 0.
+- Q61 매뉴얼 revision 충돌, Q62 실제 SKU별 BOM·MCU·FW·SBOM·보안·취약점 증거 매트릭스.
+- 상태는 draft_prepared_not_sent. 발송·회신 없음. CRA only; SIL 3 excluded.
