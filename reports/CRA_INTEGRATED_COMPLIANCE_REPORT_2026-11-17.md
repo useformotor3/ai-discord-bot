@@ -2675,10 +2675,17 @@ Actual SKU, EU/EEA supply, economic operators, signed DoC coverage, BOM/exact MC
 - Servo Drive drawings: https://www.lsmecapion.com/bbs/board.php?bo_table=drawing&sca=Servo+Drive&wr_id=12455
 
 ### 99.3 제조사 질의서 62문항의 정밀화 기준
-질의서 총 문항 수는 62개로 유지하고, Q61/Q62를 아래와 같이 증거 중심으로 명확히 한다. 본 정리는 질의 초안의 개선 사항이며 발송 또는 회신을 의미하지 않는다.
+질의서 원본의 실제 numbered item은 90개였다. 과거 62개 기록은 stale count였으며, 중복/행정성 항목을 통합해 v2.0에서 Q01–Q62로 재번호화했다. Q61/Q62는 아래 핵심 확인사항으로 고정한다. 본 정리는 질의 초안의 개선 사항이며 발송 또는 회신을 의미하지 않는다.
 - **Q61 — 매뉴얼 revision 충돌:** 공식 배포용 PDF 원본 파일, 문서번호, revision, 발행일, 전체 revision history 및 변경 요약, Ver1.3/Ver1.4의 관계(정식 개정/게시 첨부 교체/검색 snapshot 차이), 대체 여부, 적용 Drive SKU/HW/FW 범위, 원본 파일명·형식·크기·SHA-256, 서명/문서관리 검증 방법을 한 답변에서 연결해 달라고 요청한다.
 - **Q62 — MCU·SBOM·제품 보안 증거:** 실제 제품 BOM 기준 MCU 제조사와 full orderable part number(예: ST 계열 여부 포함하되 미리 단정하지 않음), firmware version/build ID, machine-readable SBOM(CycloneDX 또는 SPDX 및 버전/파일 hash), 보안 부팅·firmware 서명·debug/JTAG/SWD 잠금·키 저장/수명주기(비밀키 원문은 요청하지 않음), 취약점 접수/PSIRT/CVD 절차, 보안 업데이트 배포·검증·rollback 방지, 지원기간 및 종료일의 문서화된 증거를 요청한다. NDA가 필요한 경우 redacted BOM/SBOM 또는 제조사 서명 확인서를 대안으로 제시한다.
 - 모든 답변은 문서 ID·개정일·적용 SKU·공급 범위·서명/검증 방식과 연결한다. 구두 답변만으로 Unknown을 해제하지 않는다.
 
 ### 99.4 CRA 판정 경계
 Actual SKU, EU/EEA supply, economic operators, signed DoC coverage, BOM/exact MCU/SBOM, security configuration, CRA classification, vulnerability handling 및 security update/support period는 계속 **Unknown**이다. CE/UKCA 목록 metadata는 서명된 SKU별 DoC binary나 CRA 적합성 증명이 아니다. CRA only; SIL 3 excluded.
+
+
+### 99.5 질의서 문항 수 실제 감사 및 재번호화
+- 기존 질의서 파일의 번호 목록을 실제 파싱한 결과 90개 항목(섹션 2~11 및 13)이 확인됐다. 기존 로그의 “62문항” 표기는 파일의 현재 내용과 불일치하는 stale metadata였다.
+- 중복/행정성 하위 항목을 통합하고 증거 요청의 적용 범위를 유지해 질의서를 v2.0으로 정리했다. 새 파일은 Q01~Q62의 전역 ID를 사용하며 독립 파싱 결과 62개, 중복 ID 0, 누락 ID 0, 순서 오류 0이다.
+- Q61은 Ver1.3/Ver1.4 매뉴얼 revision 충돌 및 Solution Square 2026-09-16 항목의 문서 동일성 확인, Q62는 실제 SKU별 BOM/MCU/FW/SBOM/security/vulnerability evidence matrix로 고정했다.
+- 발송 상태는 draft_prepared_not_sent. 질문을 62개로 정규화한 것은 제조사 답변이나 증거 취득을 의미하지 않는다.
