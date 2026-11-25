@@ -2479,3 +2479,21 @@
 - Manufacturer inquiry v2.0: 62 globally numbered unique questions Q01–Q62; original 90-item list was consolidated. Q61 manual revision conflict; Q62 per-SKU BOM/MCU/FW/SBOM/security/vulnerability evidence matrix. Draft/not sent.
 - iX700M manual/DoC/catalogue/CAD binary still not acquired; listing metadata only. Actual SKU/EU supply/operators/signed DoC/BOM-MCU-SBOM/security configuration/CRA classification and vulnerability/support facts remain Unknown.
 - CRA only; SIL 3 excluded.
+
+
+ 
+## 2026-11-25 — 다음 단계 버튼 전달 재발 / 행동규약 v1.3
+- 사용자가 다시 다음 단계 버튼을 찾지 못하거나 사용할 수 없다고 보고했다.
+- 확인: main에 행동규약 v1.2 §8.2 및 이전 버튼 누락 PROJECT_LOG 이벤트가 이미 존재했다. 따라서 규칙 부재가 원인은 아니다.
+- 개선: 마지막 UI 요소를 컨테이너 없는 단독 DIL button으로 고정하고, 직접 `GenUI.issueNewTurn` action 및 CRA-only/SIL3-excluded 재개 payload를 강제한다.
+- 출력 전 실제 컴포넌트·action·payload·마지막 배치 네 항목을 검사한다. 사용자의 누락 보고 시 즉시 복구하고 SESSION_LOG/PROJECT_LOG에 기록한다.
+- 이 변경은 문서/출력 통제 개선이며 모델 가중치 학습이나 대화 사이 자율 실행을 의미하지 않는다. CRA only; SIL 3 excluded.
+
+
+## 2026-11-25 — PR #266~#268 교차검증 및 iX700M 자료 재시도
+- PR #266/#267/#268 exact HEAD 및 Run #1570/#1581/#1583 ID 45529191176/45530155733/45530424569의 job logs를 재조회. 세 실행 모두 completed/success, 반환 Step 15/15, pytest 189 passed, traceability 397/399/400, CRA PDF 3/3 hash, 공식 출처 10개 manifest JSON round-trip/upload PASS.
+- Merge SHA 순서: a015dc95f6c59d331275d646306b2b2a2137f437 → 418e526485f1d7c8f43e0f16f471b42b5c2f5a6c → 현재 main ea16c98118dceaecb5f37711152ccc83d189a799.
+- main push CI UNVERIFIED. Combined Status는 빈 배열이며, 사용 가능한 commit-run 조회는 PR-triggered runs만 필터링해 push run을 열거하지 못한다. PR CI를 main push 성공으로 주장하지 않는다.
+- iX700M 공식 metadata 재확인: Manual current list Ver1.4(2026-05-26), detail ID 12652 timeout; older indexed snapshot Ver1.3 remains conflict. CE Drive model groups, Converter CE/UKCA, KR/EN catalogue, CAD 2D/3D STEP list confirmed; all binary files remain unacquired.
+- Converter CE wr_id=12886, UKCA wr_id=12893; CAD detail ID 12455. File names/sizes are metadata only.
+- Actual SKU, EU/EEA supply, economic operators, signed DoC scope, BOM/exact MCU/SBOM/security config, CRA classification, vulnerability handling/support period remain Unknown. Inquiry v2.0 Q01–Q62 draft not sent. CRA only; SIL 3 excluded.
