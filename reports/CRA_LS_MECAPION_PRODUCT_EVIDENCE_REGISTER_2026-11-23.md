@@ -1535,3 +1535,14 @@ Actual SKU, EU/EEA supply, economic operators, signed SKU-specific DoC scope, BO
 - KR/EN 카탈로그 파일명·각 10.7M·2025-12-05 13:43:50 메타데이터, CAD/STEP item 19·2026-04-21만 확인. 원본 bytes/첨부 URL 미취득.
 - 제조사 바이너리 신규 취득 0건. 모든 대상 자료 metadata_only. 개별 SHA-256, PDF 전자서명·서명자 체인, 내부 revision, SKU scope 검증 없음. Q01–Q62 draft_prepared_not_sent; 연락 없음. CRA only; SIL 3 제외.
 - 실패 원인: Solution Square JS 앱 셸은 문서 ID/첨부 링크를 반환하지 않고, LS메카피온 세부 페이지는 502/timeout을 반복한다. 검색 스니펫은 그룹 게시물의 개별 링크를 숨긴다. URL 추정/조립 금지 원칙을 유지했다.
+
+
+### §72.12 2026-11-26 — Solution Square / Ver1.3 row-cache conflict / official detail retry
+- Solution Square official list pageNumber=14: iX700M 사용 설명서, updated 2026-09-16, view count 171. Official search pageNumber=70 also indexes title and #모션&Servo. Direct page opens JS shell only; document ID/detail href/attachment URL/file name/revision remain unknown. URLs: https://ssq.ls-electric.com/kr/ko/product/category/4?pageNumber=14 ; https://sol.ls-electric.com/kr/ko/newSearch?pageNumber=70. metadata_only.
+- LS메카피온 current opened official general manual list shows row 41 = Ver1.4; actual link anchor 42 resolves to wr_id=12652. Detail returns 502. URL: https://lsmecapion.com/bbs/board.php?bo_table=manual&wr_id=12652. ID confirmed, binary metadata_only.
+- Older cached empty-category search snapshot showed row 41 = Ver1.3, but the current directly opened general list shows row 41 = Ver1.4. PEGA2 Ver1.3 detail's previous-post label still names iX700M Ver1.3 but hides target href/wr_id. Reclassify old row-41 Ver1.3 claim as stale/cached snapshot evidence only; Ver1.3 detail ID unknown. Do not infer a numeric wr_id. Ver1.3/Ver1.4 controlled revision and approved-release status unresolved.
+- CE official index rows 171/172/173 remain grouped: 220B; 370B/300B; 750B/550B/450B. Individual detail href/ID/attachments not recovered; list fetch timed out. KC rows for 220B/370B are not CE declarations.
+- UKCA Drive Unit not located in searched official results (not proof of non-existence). wr_id=12893 is UKCA Converter Unit iX700MCV only.
+- KR/EN catalog filenames and each 10.7M / 2025-12-05 13:43:50 metadata only; detail fetch timeout. CAD/STEP item 19 / 2026-04-21 metadata only; list fetch 502.
+- New manufacturer binaries 0. All manufacturer items metadata_only; no SHA-256, PDF signature/signer chain, internal revision or SKU scope validation. Q01–Q62 draft_prepared_not_sent; no manufacturer contact. CRA only; SIL 3 excluded.
+- Failure: Solution Square JS app shell does not expose document links; LS Mecapion detail/list fetches return 502/timeouts; cached index snippets have inconsistent row/title snapshots. No guessed or assembled URLs.
