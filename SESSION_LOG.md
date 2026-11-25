@@ -3732,3 +3732,21 @@ CRA only; SIL 3 excluded.
 - Post-merge main push CI **UNVERIFIED**: commit-run wrapper PR-only, combined status empty, direct Actions run-list not available. No guessed run ID or conclusion.
 - Manufacturer official indexes: manual default/Servo filter Ver1.4 vs explicit empty `sca=` Ver1.3 for same post/date; Converter CE/UKCA attachments metadata; KR/EN catalogue 10.7M each; iX700M 2D CAD/3D STEP list; Solution Square iX700M manual updated 2026-09-16. Detail/binary access failed; metadata_only.
 - Q01–Q62 remains draft_prepared_not_sent; not sent. Actual SKU, EU/EEA supply, economic operators, signed SKU DoC scope, BOM/MCU/SBOM/security configuration, CRA classification, vulnerability handling and support period Unknown. CRA only; SIL 3 excluded.
+
+
+## 2026-11-25 — PR #272~#274 main push CI 조회 경로 확보 및 최종 검증
+- Existing `fetch_commit_workflow_runs` wrapper was PR-event focused. Direct GitHub Actions runs collection by `head_sha + event=push` found exact main push runs.
+- PR #272: Run #1591 / 45537296095 (15/15, 189 passed, traceability 405); merge SHA `eb5894767cebdc7f956e31252b2d1831ef554a85`; main push #1592 / 45537422906 event=push exact-head SUCCESS (15/15, 189 passed, traceability 405).
+- PR #273: Run #1593 / 45539484334 (15/15, 189 passed, traceability 406); merge SHA `ce36f290f34a6ce391b91cf3aa6742f48c93e44a`; main push #1594 / 45539588559 event=push exact-head SUCCESS (15/15, 189 passed, traceability 406).
+- PR #274: Run #1595 / 45539787326 (15/15, 189 passed, traceability 407); merge/current main SHA `ea1c2b315a0828bceee5913c2620b4a62823856b`; main push #1596 / 45539874073 event=push exact-head SUCCESS (15/15, 189 passed, traceability 407).
+- All six runs: CRA PDFs 3/3 fetch/hash, official CRA sources 10, provenance JSON round-trip/upload. Artifact API digest equals job log ZIP digest. PR diffs #272 6(+70/-0), #273 7(+98/-0), #274 7(+87/-0), reviews/threads 0; expected-head squash merge verified.
+- Manufacturer source: official default/Servo search-index views show manual Ver1.4; directly opened official empty-category page row 41 shows Ver1.3 on same 2026-05-26 post. Detail timeout; actual PDF unavailable. Solution Square iX700M manual updated 2026-09-16 listed in search index but JS detail unavailable. Converter CE/UKCA, KR/EN catalogue and CAD/STEP remain metadata_only.
+- Q01–Q62 remains draft_prepared_not_sent; not sent. Actual SKU, EU/EEA supply, economic operators, signed SKU-specific DoC, BOM/MCU/SBOM/security configuration, CRA classification remain Unknown. CRA only; SIL 3 excluded.
+
+
+## 2026-11-25 — PR #275 Run #1597 exact-head final result
+- Run #1597 / 45540553259 on HEAD `9231c47c88ff7fe9fc9ce1022eb3023e6af244ba`: completed/success, job 138957720914, 15/15 steps, 189 pytest passed.
+- Full log confirms source blob identity, compile, cross-matrix traceability (13 claims, 15 interfaces, 35 requirements, 36 SEC, 15 product evidence records, 41 M606 items), 3/3 official CRA PDFs fetched+hashed, 10 official sources, Article 13(8)/2025/2392 locators and provenance manifest JSON parse/upload PASS.
+- Artifact API metadata: PDF 14988832738 / 3,070,565 bytes / SHA-256 f3a29c9b7ad2c8cbaea65fc9d0c5eb3d47ad348005b3bf6cbe3b98b037786861; provenance 14989265975 / 2,565 bytes / SHA-256 61736ebe2e84c8b8bba92820b4b2f69e132edfcc9d5304a434c45e392e76fabf. Both match job log ZIP digests.
+- PR #275 diff 7 files(+111/-0), reviews 0, threads 0; branch PROJECT_LOG 408 JSONL records, parse errors 0; CI reports 408 events.
+- PR not merged at this point. Since current status details are now being added to docs, re-run CI on the resulting new PR HEAD before expected-head merge. No merge claim until then.

@@ -1386,3 +1386,21 @@ Annex I Part II의 실무 요구사항은 machine-readable SBOM(최소 top-level
 - Expected-head squash merge/current main `ce36f290f34a6ce391b91cf3aa6742f48c93e44a`; diff 7 files(+98/-0), reviews/threads 0.
 - PR #273 post-merge main push CI is UNVERIFIED: commit-run wrapper is PR-only, combined status empty, direct Actions run-list unavailable. Do not claim success/failure or invent run ID.
 - Official LS Mecapion index recheck: manual default/Servo filter Ver1.4 vs empty `sca=` index Ver1.3 same date; Converter CE/UKCA DoC, KR/EN catalogue and 2D CAD/3D STEP metadata reconfirmed; Solution Square manual list update 2026-09-16. All originals remain metadata_only. Q01–Q62 not sent; all product facts Unknown. CRA only; SIL 3 excluded.
+
+
+## 2026-11-25 — PR #272~#274 및 post-merge main push CI exact-head 검증
+- Actions runs 직접 조회: `GET /repos/useformotor3/ai-discord-bot/actions/runs?head_sha={SHA}&event=push&per_page=100`; 기존 connector wrapper는 PR event 중심이라 push run 조회에 이 경로 사용.
+- PR #272/#273/#274 exact-head Runs #1591/#1593/#1595 및 main push Runs #1592/#1594/#1596 모두 15/15 steps, 189 pytest, CRA PDF 3/3, 10 official sources/provenance upload PASS. Main push 세 건은 exact SHA, branch=main, event=push, completed/success 직접 확인.
+- Expected-head squash merges: #272 `eb5894767cebdc7f956e31252b2d1831ef554a85`; #273 `ce36f290f34a6ce391b91cf3aa6742f48c93e44a`; #274/current main `ea1c2b315a0828bceee5913c2620b4a62823856b`.
+- PR diffs #272 6 files(+70/-0), #273 7(+98/-0), #274 7(+87/-0); reviews/threads 0.
+- iX700M official manual views still conflict: default/Servo search views Ver1.4, direct empty-category page Ver1.3; original binary not obtained. Solution Square iX700M manual update 2026-09-16 confirmed in search index only. Converter DoCs/catalogue/CAD STEP remain metadata_only.
+- Q01–Q62 not sent; product SKU/supply/operators/signed DoC/BOM/MCU/SBOM/security/classification Unknown. CRA only; SIL 3 excluded. See report §107 and evidence register §65.
+
+
+## 2026-11-25 — PR #275 exact-head CI 완료 (병합 전)
+- PR #275 HEAD `9231c47c88ff7fe9fc9ce1022eb3023e6af244ba`; Run #1597 / 45540553259 completed/success, 15/15 steps, 189 pytest passed.
+- Traceability claims 13, interfaces 15, requirements 35, SEC 36, product evidence 15, M606 mapping 41, PROJECT_LOG events 408.
+- Official CRA PDFs 3/3, official sources 10, Article 13(8) 및 Regulation 2025/2392 locators, 10-source provenance JSON manifest PASS.
+- Artifacts PDF 14988832738 (SHA-256 f3a29c9b…7786861), provenance 14989265975 (SHA-256 61736ebe…76fabf).
+- PR diff 7 files(+111/-0), reviews/threads 0. JSONL branch count 408, invalid 0. PR is not merged yet; any further documentation commit requires new exact-head CI before merge.
+- Manufacturer binaries remain metadata_only; Q01–Q62 not sent; product facts Unknown. CRA only; SIL 3 excluded.

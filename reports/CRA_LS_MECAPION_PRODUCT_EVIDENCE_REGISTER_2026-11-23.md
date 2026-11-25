@@ -1185,3 +1185,51 @@ Manufacturer originals remain metadata_only: manual Ver1.4/Ver1.3 index conflict
 | MFG-IX7M-37 | [Solution Square Motion & Servo list](https://ssq.ls-electric.com/kr/ko/product/category/4?pageNumber=14) | iX700M user manual updated 2026-09-16 | JS shell only; no file/revision |
 
 The manual listing discrepancy is confirmed by different official index views, not resolved by the index itself. No original manufacturer binary or content SHA-256 acquired. Inquiry Q01–Q62 remains draft_prepared_not_sent. All SKU, EU/EEA supply, operator, signed DoC scope, BOM/MCU/SBOM/security/classification facts remain Unknown.
+
+
+## §65. 2026-11-25 — PR #272~#274 exact-head / main push CI 및 iX700M 재확인
+
+### Actions CI 증거
+
+| PR | PR HEAD run | PR HEAD SHA | Merge SHA | main push run | main push exact-head |
+|---|---|---|---|---|---|
+| #272 | #1591 / 45537296095 | `c273e651…` | `eb589476…` | #1592 / 45537422906 | SUCCESS |
+| #273 | #1593 / 45539484334 | `c6792792…` | `ce36f290…` | #1594 / 45539588559 | SUCCESS |
+| #274 | #1595 / 45539787326 | `b95b64ae…` | `ea1c2b31…` | #1596 / 45539874073 | SUCCESS |
+
+각 6개 run 모두 15/15 step 성공, 189 pytest passed, CRA PDF 3/3 fetch/hash, official CRA source 10건, provenance round-trip/upload PASS. Traceability event counts 405/406/407. Main push run API 응답은 `event=push`, `head_branch=main`, exact `head_sha`, `completed/success`를 직접 반환했다.
+
+PR diff: #272 6 files(+70/-0), #273 7 files(+98/-0), #274 7 files(+87/-0); reviews 0, threads 0. All expected-head squash merges confirmed. Detailed artifact IDs and digests are in PROJECT_LOG event `2026-11-25-CRA-PR272-274-POSTMERGE-PUSH-EXACTHEAD-VERIFIED-MANUAL-INDEX-DIVERGENCE`.
+
+### Manufacturer source recheck
+
+| 자료 | 최신 인덱스 관찰 | binary/hash |
+|---|---|---|
+| iX700M manual | default/Servo filter search views Ver1.4; direct official empty-category page row 41 Ver1.3; same post date 2026-05-26 | detail timeout; metadata_only |
+| Solution Square manual | iX700M 사용 설명서, update 2026-09-16 | JS shell only; metadata_only |
+| Converter CE | iX700MCV; CE_DoC-LVDEMC PDF 234.4K, 2026-04-30 | metadata_only |
+| Converter UKCA | iX700MCV; UKCA_DoC_LVDEMC PDF 224.1K, 2026-04-30 | metadata_only |
+| KR/EN catalog | each 10.7M; 2025-12-05 attachment timestamp | metadata_only |
+| 2D CAD/3D STEP | official iX700M drawing listing, 2026-04-21 | detail timeout; metadata_only |
+
+Official listing-view disagreement is not proof of which manual binary is current. Do not use Ver1.3 or Ver1.4 as the controlled product manual until the actual file and revision are acquired. Q01–Q62 remains draft_prepared_not_sent; product facts Unknown.
+
+
+## §66. 2026-11-25 — PR #275 exact-head CI 증거
+
+| 항목 | 검증 결과 |
+|---|---|
+| PR / HEAD | #275 / `9231c47c88ff7fe9fc9ce1022eb3023e6af244ba` |
+| Actions | Run #1597 / 45540553259, completed/success, 15/15 |
+| pytest | 189 passed |
+| Traceability | claims 13; interfaces 15; requirements 35; SEC 36; product evidence 15; M606 41; project log events 408 |
+| CRA official sources | PDF 3/3 fetched+hashed; official allowlist sources 10; Article 13(8) and Regulation 2025/2392 locators PASS |
+| Provenance | 10-source manifest JSON round-trip and upload PASS |
+| PDF artifact | ID 14988832738; 3,070,565 bytes; archive SHA-256 `f3a29c9b7ad2c8cbaea65fc9d0c5eb3d47ad348005b3bf6cbe3b98b037786861` |
+| Provenance artifact | ID 14989265975; 2,565 bytes; archive SHA-256 `61736ebe2e84c8b8bba92820b4b2f69e132edfcc9d5304a434c45e392e76fabf` |
+| Diff / reviews | 7 files, +111/-0; reviews 0; threads 0 |
+| PROJECT_LOG | PR branch 408 JSONL records; invalid 0; test reports 408 |
+
+Artifact archive digest equals job log uploaded ZIP digest; do not label it an individual PDF content hash. PR #275 is not merged at the time of this record. If this §66 entry is committed to the PR branch, re-run exact-head CI on the new HEAD before expected-head squash merge.
+
+Manufacturer source statuses unchanged: iX700M manual Ver1.3/Ver1.4 index discrepancy unresolved; Solution Square manual 2026-09-16 item metadata-only; Converter CE/UKCA DoCs, KR/EN catalogue, CAD/STEP originals metadata_only. Q01–Q62 not sent. Product-specific facts remain Unknown.
