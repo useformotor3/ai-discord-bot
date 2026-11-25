@@ -169,3 +169,18 @@ v1.2가 main에 존재하고 PROJECT_LOG에도 버튼 누락 재발 이력이 �
 이 버튼은 사용자가 한 번 누르면 새 대화 턴을 시작하는 재개 장치다. 모델이 대화 사이에 스스로 계속 실행하거나 학습 가중치가 바뀌는 기능은 아니다. 재귀개선은 GitHub에 남긴 관찰·실패·검증·선별 규칙을 다음 턴에서 다시 읽고 적용하는 절차적 모방이다.
 
 - 2026-11-25 v1.3: 단독 버튼 배치로 단순화하고, 사용자 관점의 실제 전달/발견 실패를 별도 운영사건으로 기록.
+
+
+## 8.4 GitHub Actions main push 실행 직접 조회 (v1.4, 2026-11-25)
+
+### 기존 조회의 한계 및 해결
+기존 `fetch_commit_workflow_runs` wrapper는 pull_request 이벤트를 중심으로 반환하여, main 병합 후 push 실행을 누락할 수 있었다. Combined Status가 빈 배열인 경우에도 push workflow가 없다고 결론 내리면 안 된다.
+
+정확한 main push 검증은 GitHub Actions runs collection을 직접 조회한다.
+
+`GET /repos/{owner}/{repo}/actions/runs?head_sha={exact_commit_sha}&event=push&per_page=100`
+
+반드시 응답의 `head_sha`, `head_branch=main`, `event=push`, `status=completed`, `conclusion=success`를 대조한 후 run jobs, 모든 step, logs 및 artifacts를 확인한다. PR exact-head run과 main push run을 별도 기록한다. 조회가 0건이거나 권한/도구 실패면 UNVERIFIED 유지. main push success를 확인하면 report, evidence register, status, README, SESSION_LOG, append-only PROJECT_LOG를 후속 PR에서 동기화한다.
+
+### 2026-11-25 실증
+main `660eb6d20e62f772272c03971dcd773b03a703f5`의 push Run #1588 / ID `45532289060`이 이 방식으로 발견되어 SUCCESS 및 15/15 steps로 검증되었다. 상세는 통합 보고서 §103과 PROJECT_LOG event에 기록한다.
