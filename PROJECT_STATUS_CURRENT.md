@@ -2661,3 +2661,20 @@
 - Acquisition obstacles: official detail pages 502/timeouts, Solution Square JS shell, execution environment DNS unavailable. Continue via official direct attachment/authorized technical contact.
 - Q01–Q62 draft_prepared_not_sent; not sent. Actual SKU, EU/EEA supply, economic operators, signed SKU-specific DoC coverage, BOM/MCU/SBOM/security configuration, CRA classification, vulnerability handling and support period remain Unknown. CRA only; SIL 3 excluded.
 - Next: obtain controlled original binaries and verify each file independently before changing evidence status.
+
+
+## 2026-11-25 — PR #283 Run #1618 확인 / Run #1619 UNVERIFIED
+- Current latest main commit / PR #283 merge SHA: 0821dac7a336848c1609c4c663860be90eb17337. PR #283 base 127c9ec311e2939059dbff689c3b04f1208e2424; exact PR HEAD 616b2a42049930290a42cd495f6c7543b0ba8751; merged=true. Do not confuse PR HEAD and merge SHA.
+- Run #1618 / 45551394041 exact PR HEAD SUCCESS, job 138993151093, 15/15, 475 log lines, 189 pytest, traceability 418, CRA PDFs 3/3, 10 official sources and provenance PASS. Artifact digests recorded in report §114.7 / evidence register §72.3.
+- Run #1619 / 45551493565 is VERIFIED: event=push, branch=main, exact SHA 0821dac7a336848c1609c4c663860be90eb17337, job 138993472609, SUCCESS, 15/15, 459 log lines, 189 pytest, traceability 418, PDFs 3/3, sources 10, legal locators/provenance PASS. Artifact digests are in report §114.7.3.
+- LS Mecapion binaries still not acquired; manual Ver1.3/1.4 conflict unresolved; CE/UKCA, KR/EN catalog and CAD/STEP remain metadata_only. No per-file hashes/signatures/revision verification.
+- No manufacturer inquiry sent; Q01–Q62 unsent. All product Unknowns retained. CRA only; SIL 3 excluded.
+- Next: identify Run #1619 by Actions run-list lookup exact SHA/event/branch; independently inspect all jobs/steps/logs/artifacts. Continue official attachment retrieval without guessing URLs.
+
+
+## 2026-11-25 — Run #1619 main push SUCCESS / PR #284 Run #1620 SUCCESS
+- Corrected the provisional Run #1619 UNVERIFIED state after querying Actions runs collection by exact head SHA 0821dac7a336848c1609c4c663860be90eb17337 + event=push + branch=main.
+- Run #1619 / 45551493565, exact main SHA, completed/success, job 138993472609, 15/15 steps, 459 log lines, 189 pytest, traceability 418, CRA PDFs 3/3, sources 10, Article 13(8)/2025/2392 locators PASS, provenance PASS. Artifacts: PDF ZIP 14993487646 / 3,070,565 B / b65d54aa81ccf92eaff22a11bef4f2a5934d730b77f5e4d647e8e13b3b689e38; provenance ZIP 14994630545 / 2,565 B / f8e6b8d28350464ec0916553da120190f896b5da1bb3aa22a1c5e210ce553c5d.
+- PR #284 exact HEAD cf6dec50e9ff952c33491b54aca6db8476151a97; Run #1620 / 45552496961, pull_request SUCCESS, job 138996681495, 15/15, 475 logs, 189 pytest, traceability 419, PDFs 3/3, sources 10, locators PASS, provenance PASS. Artifacts: PDF ZIP 14993483515 / 3,070,564 B / a9acd2d18b9f3fc88d9b1dc04fb893d1472b3416f2440a35238c1cf4941e9456; provenance ZIP 14993882353 / 2,565 B / 7db26d3569b3582853fce0c833f6f776f68e7d74e0851e28b73d70a7d3c2810f.
+- PR #284 is still open; do not claim its merge/main push until expected-head merge and exact push verification.
+- Manufacturer originals remain unacquired; Ver1.3/1.4 conflict unresolved; all manufacturer evidence metadata_only; Q01–Q62 unsent. CRA only; SIL 3 excluded.
