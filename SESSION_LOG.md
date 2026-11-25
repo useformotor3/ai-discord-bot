@@ -3699,4 +3699,10 @@ CRA only; SIL 3 excluded.
 - 행동규약 §8.3 v1.3 main 반영. 마지막 응답 요소는 컨테이너 없는 단독 DIL button이며 직접 GenUI.issueNewTurn로 새 CRA 전용 턴을 시작한다. 자율 백그라운드 실행/모델 가중치 학습은 아님.
 - Main push CI UNVERIFIED; PR Run #1585를 push CI로 오인하지 않는다.
 - iX700M 원본 자료 취득은 미완료, metadata_only. Unknown 유지. CRA only; SIL 3 excluded.
-null
+
+
+## 2026-11-25 — PR #270 및 main push CI 최종 검증
+- PR #270 exact-head Run #1587 / 45532177358 SUCCESS: 15/15 steps, 189 pytest passed, CRA traceability 403, CRA PDFs 3/3 fetched/hashed, 10-source provenance manifest JSON round-trip/upload.
+- main push Run #1588 / 45532289060 SUCCESS: exact main SHA `660eb6d20e62f772272c03971dcd773b03a703f5`, event=push, branch=main, completed/success, 15/15 steps, 189 pytest passed, traceability 403, PDF 3/3 hash, provenance 10-source round-trip/upload.
+- Direct Actions API query `actions/runs?head_sha={SHA}&event=push&per_page=100` resolves prior wrapper blind spot.
+- iX700M manual listing Ver1.4 vs alternate indexed Ver1.3 conflict unresolved; all requested original manufacturer binaries remain metadata_only/unacquired. Q01–Q62 not sent; Unknown fields preserved. CRA only; SIL 3 excluded.
