@@ -1459,3 +1459,6 @@ Annex I Part II의 실무 요구사항은 machine-readable SBOM(최소 top-level
 
 
 > **2026-11-25 iX700M source recheck:** Manual conflict now includes LS ELECTRIC Solution Square's separately indexed `iX700M 사용 설명서` (2026-09-16) in addition to LS Mecapion Ver1.3/1.4 listing snapshots. CE Drive Unit groups and 150B metadata, CE/UKCA Converter metadata, KR/EN catalogue, and CAD/STEP listing are documented in report §114.7.8 / evidence register §72.6. No manufacturer binaries obtained; metadata_only. Q01–Q62 unsent. CRA only; SIL 3 excluded.
+
+
+> **2026-11-25 Solution Square / iX700M source recheck:** Official Solution Square lists iX700M 사용 설명서 updated 2026-09-16, but document ID, detail href and original attachment URL remain undisclosed by the JS-rendered listing. LS Mecapion Ver1.3/Ver1.4 conflict remains unresolved. CE Drive Unit groups and 150B metadata, CE/UKCA iX700MCV, KR/EN catalogue and CAD/STEP listings rechecked. No manufacturer binary acquired; all remain metadata_only, no file hashes/signatures/internal revisions verified. Q01–Q62 unsent; no manufacturer contact. See report §114.7.9 / evidence register §72.7. CRA only; SIL 3 excluded.

@@ -3331,3 +3331,55 @@ Run #1617 artifacts:
 - **실제 취득/검증 상태:** 이번 조사에서 제조사 원본 바이너리 취득 0건. 첨부 파일명/크기, 게시 제목·날짜는 metadata-only listing evidence다. 파일 SHA-256, PDF 서명/서명자/인증서 체인, PDF 내부 개정번호, 문서 페이지·모델 범위 검증은 모두 미실시(바이너리 미취득). 앞선 공식 상세 페이지 502/timeout과 이번 직접 페이지 열기 실패가 재현됐다. Container 네트워크의 제조사 호스트 DNS 조회도 실패해 대체 취득 경로가 되지 못했다. 첨부 URL은 추측/조합하지 않았다.
 - **보류/통제:** 모든 제조사 문서의 상태는 `metadata_only`; Q01~Q62는 `draft_prepared_not_sent`; 이메일·전화·포털 제출 없음. 실제 주문 SKU, EU/EEA 공급 여부, 경제운영자, 서명 EU DoC의 SKU 범위, BOM/정확한 MCU, SBOM, 보안 설정, CRA 제품 분류, 취약점 처리 및 보안 업데이트 지원기간은 Unknown 유지. CRA only; SIL 3 제외.
 - **조사 출처:** https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&sca=CE ; https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&page=4&wr_id=12888 ; https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&sca=CE&wr_id=12886 ; https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&page=3&wr_id=12893 ; https://www.lsmecapion.com/bbs/board.php?bo_table=manual&sca=Servo ; https://www.lsmecapion.com/bbs/board.php?bo_table=manual&page=1 ; https://sol.ls-electric.com/kr/ko/newSearch?pageNumber=70 ; https://www.lsmecapion.com/bbs/board.php?bo_table=catalog&wr_id=12110 ; https://www.lsmecapion.com/bbs/board.php?bo_table=drawing&sca=Servo+Drive
+
+
+### 114.7.9 Solution Square 문서 재추적 및 iX700M CE/UKCA·설계자료 교차확인 (2026-11-25)
+
+#### 114.7.9.1 선행 기준 및 조사 경계
+- 기준 main HEAD: a8eed059bef2446d6f99678fe8e8866e00a2c634. §114.7.8 및 §72.6 확인 후 문서 전용 브랜치 docs/cra-solution-square-20260916-recheck-20261125 생성.
+- CRA only. SIL 3 제외. 제조사 문의·메일·전화·포털 제출 없음. Q01–Q62는 draft_prepared_not_sent.
+- 목록 메타데이터와 실제 취득 파일 바이너리를 구분한다. 공식 페이지가 실제 노출한 주소만 기록하며 다운로드 경로를 조립하지 않는다.
+
+#### 114.7.9.2 LS ELECTRIC Solution Square — 2026-09-16 문서
+- 공식 Motion & Servo 자료 목록에서 iX700M 사용 설명서가 2026-09-16 업데이트 항목으로 재확인됐다. 2026-11-25 검색 인덱스 캡처에서 목록 5번째 항목, 조회수 172로 표시됐다.
+- 공식 통합 검색 결과에서도 같은 제목이 문서 범주의 사용 설명서로 노출되며 적용 제품 분류는 #모션&Servo, 조회수 171이다.
+- 공식 주소: https://sol.ls-electric.com/kr/ko/product/category/4?pageNumber=4 ; https://sol.ls-electric.com/kr/ko/newSearch?pageNumber=70
+- 실제 문서 식별자/파일 취득 결과: 검색 결과에는 문서 상세 ID, 내부 문서 번호, 첨부 파일명, 크기, 직접 다운로드 URL이 나타나지 않았다. 목록 페이지를 직접 열면 You need to enable JavaScript to run this app.만 반환됐다. 문서 상세로 이어지는 실제 href도 확인되지 않았다. 따라서 2026-09-16 항목의 상세 식별자와 공식 원본 파일 취득 경로는 Unknown이다.
+- 이 항목이 LS메카피온 Ver1.3/Ver1.4 매뉴얼과 동일 문서인지, 재편집·재게시본인지, 별도 설명서인지 판정할 근거가 없다. 2026-09-16 날짜만으로 Ver1.5 또는 최신 개정이라고 부르지 않는다.
+
+#### 114.7.9.3 LS메카피온 매뉴얼 개정 충돌
+- Servo 필터 목록은 iX700M DRIVE 400[V] 매뉴얼 Ver1.4, 2026-05-26으로 표시한다: https://lsmecapion.com/bbs/board.php?bo_table=manual&sca=Servo
+- 기본/일반 목록 검색 인덱스는 같은 게시물 번호 41과 날짜를 Ver1.3으로 표시하는 스냅샷이 확인된다: https://www.lsmecapion.com/bbs/board.php?bo_table=manual&page=1
+- 매뉴얼 상세 후보 wr_id=12652 직접 열기는 도구에서 접근 불가/실패했다. 목록/색인 스냅샷 충돌로만 기록한다.
+- 실제 PDF, 내부 개정 이력/표지, 문서관리번호, 발행·승인 정보가 없으므로 어느 버전도 authoritative controlled copy로 확정하지 않는다. Solution Square 항목도 충돌을 해소하지 못했다.
+
+#### 114.7.9.4 CE Drive Unit 상세 범위
+- 공식 CE 인덱스는 2026-04-30자로 다음 Drive Unit 그룹을 표시한다: iX700MD1-B-075B/050B 및 D2-B-045B, iX700MD1-B-150B, iX700MD1-B-220B, iX700MD1-B-370B/300B, iX700MD1-B-750B/550B/450B. 별도 iX700MCB 및 iX700MCV Converter 항목도 존재한다.
+- 인덱스: https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&sca=CE
+- 개별 Drive Unit 상세 메타데이터로 직접 확인된 것은 150B 게시물이다: https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&page=4&wr_id=12888. 첨부 표시명 [CE_DoC-LVDEMC] iX700MD1-B-150B.pdf, 238.9K, 2026-04-30. 페이지 설명은 D1=1축, D2=2축, D3=3축, B=480Vac, 150=15kW, encoder/option 코드 체계를 설명한다.
+- 나머지 Drive Unit 그룹은 공식 인덱스의 제목·게시일 수준에서 확인됐다. 개별 상세 페이지 ID와 첨부명·크기·내용은 확보하지 못했다. 인덱스 그룹명을 모델별 서명 DoC 원본 검증으로 확대하지 않는다.
+- CE Converter iX700MCV 상세는 [CE_DoC-LVDEMC] iX700MCV.pdf, 234.4K, 2026-04-30, 480Vac, rating code 150/370/550/750로 표시된다: https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&sca=CE&wr_id=12886. iX700MCB는 별도 인덱스 행으로 존재하지만 상세 선언서와 MCV와의 시스템 관계는 Unknown이다.
+
+#### 114.7.9.5 UKCA Drive Unit 및 Converter
+- 이번 공식 검색에서 확인된 iX700M UKCA 상세는 Converter Unit iX700MCV뿐이다: https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&page=3&wr_id=12893
+- 게시물 메타데이터: [UKCA_DoC_LVDEMC] iX700MCV.pdf, 224.1K, 2026-04-30, B=480Vac, rating code 150/370/550/750.
+- UKCA 인덱스 직접 열기는 timeout. Drive Unit 개별 UKCA 문서는 검색된 공식 목록/검색 결과에서 발견하지 못했다. 이는 조사 범위 내 미발견이며 부존재의 증명이 아니다.
+- UKCA 선언은 EU CE DoC의 대체물이 아니다. EU 시장 출시 제품의 적합성 증거 평가에서 UKCA만으로 EU DoC 요건을 충족했다고 판단하지 않는다.
+
+#### 114.7.9.6 KR/EN 카탈로그 및 CAD/STEP
+- 공식 카탈로그 상세: https://www.lsmecapion.com/bbs/board.php?bo_table=catalog&wr_id=12110. iX700M 브로셔 최종KR_251205.pdf와 iX700M 브로셔 최종EN_251205.pdf, 각 10.7M, 게시물 작성일 2025-11-17 및 첨부 DATE 2025-12-05 메타데이터가 확인됐다. 원본 첨부 바이너리는 취득하지 못했다.
+- 공식 Servo Drive 도면 목록: https://www.lsmecapion.com/bbs/board.php?bo_table=drawing&sca=Servo+Drive. iX700M Series 서보드라이브 외형도 2D(CAD), 3D(STEP), 2026-04-21, 목록 항목 19로 확인됐다. 실제 첨부 파일명·크기·원본 링크·CAD/STEP 바이트는 확보하지 못했다.
+- 첨부 상세 접근 실패 및 검색 인덱스의 링크 비노출 때문에 직접 파일 취득은 완료되지 않았다.
+
+#### 114.7.9.7 바이너리·서명 검증 상태 및 실패 원인
+- 이번 조사에서 새로 취득한 LS메카피온/LS ELECTRIC 제조사 바이너리: 0개.
+- 매뉴얼, CE/UKCA DoC, 카탈로그, CAD/STEP 모두 metadata_only 유지.
+- 바이너리가 없으므로 제조사 개별 파일 SHA-256, PDF 전자서명 존재 여부, 서명자, 인증서 체인, PDF 내부 개정번호, 페이지 내용, 적용 모델/SKU 범위 검증은 수행할 수 없었다. 기존 CI가 생성한 CRA 법령 PDF 해시와 제조사 파일 증거를 혼동하지 않는다.
+- 실패/제약: Solution Square는 JS 앱 셸만 반환하고 문서 상세 ID/href/첨부를 노출하지 않았다. LS메카피온 매뉴얼 상세 후보 직접 열기는 접근 불가, UKCA 인덱스는 timeout, 다른 첨부 상세는 기존 502/timeout이 반복됐다. 검색 인덱스는 파일명·크기 메타데이터 일부만 노출했다. 다운로드 URL을 추측하거나 Gnuboard 경로를 조립하지 않았다.
+- 다음 확보 단계는 Solution Square 항목의 실제 문서 상세 ID와 첨부 URL이 공식 앱/검색 결과에서 노출되는 경우에만 추적하고, LS메카피온 게시물의 공식 첨부 링크가 직접 확인될 때만 원본을 취득하는 것이다.
+
+#### 114.7.9.8 CRA 제품 적용성에 대한 현재 영향
+- 이번 자료는 제품 라인업/문서/선언서 게시 메타데이터를 보강하지만, 실제 판매 SKU, EU/EEA 시장 공급 여부, 경제운영자, 실제 장치 구성, 서명된 EU DoC의 SKU 범위, BOM, ST MCU 정확한 부품번호, 펌웨어, SBOM, 보안 설정, CRA 분류, 취약점 처리 및 지원기간을 입증하지 않는다.
+- CRA 적용성의 최종 판정, Annex III/IV 분류, conformity assessment route, 모델별 CE 적합성 범위는 계속 보류한다. 문서 목록의 존재를 제품별 적합성 선언의 유효성이나 CRA 준수 증명으로 취급하지 않는다.
+- 제조사 이메일·전화·포털 제출 없음. Q01–Q62 모두 draft_prepared_not_sent.
+- CRA only; SIL 3 제외.
