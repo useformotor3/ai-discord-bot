@@ -3412,3 +3412,17 @@ Run #1617 artifacts:
 - KR/EN 카탈로그 공식 상세 https://www.lsmecapion.com/bbs/board.php?bo_table=catalog&wr_id=12110 의 파일명·각 10.7M·2025-12-05 13:43:50 메타데이터만 재확인. CAD/STEP 공식 목록 https://www.lsmecapion.com/bbs/board.php?bo_table=drawing&sca=Servo+Drive 의 iX700M 항목 19 / 2026-04-21 확인. 두 자료 모두 실제 첨부 URL 및 원본 bytes 미취득.
 - 직접 접근 실패: Solution Square list/search pages = JavaScript app shell; LS메카피온 Ver1.4 detail = HTTP 502; CE/KC/certificate, catalog, drawing detail/list opens intermittently timeout. 검색 스니펫/목록행만으로 첨부 URL을 역산하지 않는다.
 - 이번 회차 제조사 바이너리 취득 0건. Ver1.4는 `metadata_only` (ID confirmed, bytes absent); Ver1.3, Solution Square manual, CE/UKCA, catalogs, CAD/STEP also `metadata_only`. 제조사 SHA-256, PDF signature/signer chain, internal revision, SKU scope 미검증. Q01–Q62 `draft_prepared_not_sent`; 제조사 문의/연락 없음. CRA only; SIL 3 제외.
+
+
+### 114.7.13 2026-11-25 공식 목록 재추적 — Ver1.3 목록 행 직접 확인 및 상세 식별자 미확정
+
+- 기준 main HEAD `87c9c14831d848bcb129fb040f21336d7afda19f`; §114.7.12 / §72.10을 읽고 시작했다. 본 변경은 문서 전용이며 운영 코드와 workflow는 수정하지 않는다.
+- LS메카피온 공식 매뉴얼 빈 카테고리 목록 `https://lsmecapion.com/bbs/board.php?bo_table=manual&sca=`의 검색 색인 스냅샷은 row 41을 `iX700M DRIVE 400[V] 매뉴얼 Ver1.3`, 게시일 2026-05-26으로 표시한다. Ver1.3이 공식 목록의 독립 행으로 노출됨을 확인했다.
+- 같은 공식 사이트의 전체 목록 및 Servo 필터는 `iX700M DRIVE 400[V] 매뉴얼 Ver1.4`, 게시일 2026-05-26으로 표시한다. 실제 목록 링크를 따라 확인한 Ver1.4 상세 URL은 `https://lsmecapion.com/bbs/board.php?bo_table=manual&wr_id=12652`이다. 목록 필터별 Ver1.3/Ver1.4 표기 병존은 확인됐지만, 두 항목의 상세 ID, 첨부 PDF, 문서관리 revision, 승인·배포 상태는 대조되지 않았다.
+- PEGA2 Ver1.3 상세 `wr_id=12651`의 이전글 텍스트도 iX700M Ver1.3을 표시하지만 target href/wr_id는 노출되지 않는다. Ver1.3 상세 URL을 추정하거나 Ver1.4와의 구판/신판 관계를 단정하지 않는다.
+- Solution Square 공식 Motion & Servo 목록 검색 결과는 `iX700M 사용 설명서`와 2026-09-16 업데이트일을 재확인한다. pageNumber=15/26 목록 및 통합 검색 pageNumber=70을 확인했다. 직접 열기는 JavaScript app shell만 반환하며 문서 ID, detail href, attachment URL, 파일명, revision은 여전히 미확정이다.
+- CE 공식 인덱스는 Drive Unit 220B(row 171), 370B/300B(row 172), 750B/550B/450B(row 173)의 그룹 제목만 확인된다. 여섯 SKU 각각의 detail ID/href/첨부 메타데이터는 미확정. 150B만 기존 별도 상세 `wr_id=12888` 및 파일명/크기 메타데이터가 확인된 상태이며 PDF bytes는 없다.
+- UKCA Drive Unit은 검색된 공식 인덱스에서 개별 항목을 확인하지 못했다(부존재 증거 아님). 확인된 `wr_id=12893`은 Converter Unit iX700MCV이다.
+- KR/EN 카탈로그 상세는 두 PDF 이름과 각 10.7M, 첨부 DATE 2025-12-05 13:43:50의 메타데이터만 확인된다. CAD/STEP 목록은 iX700M Series 외형도 2D(CAD), 3D(STEP), 항목 19, 2026-04-21을 표시한다. 두 자료 모두 첨부 URL/원본 bytes 미취득.
+- 접근 실패/한계: Solution Square direct open = JavaScript app shell; LS메카피온 매뉴얼/CE/카탈로그/도면 상세는 반복 timeout 또는 502; 공식 검색 인덱스는 그룹 제목 또는 파일 메타데이터만 제공하고 개별 attachment href를 노출하지 않았다. URL 패턴 조립, 숫자형 wr_id 추정, 파일명 추정은 하지 않았다.
+- 신규 제조사 바이너리 취득 0건. Ver1.3/Ver1.4, Solution Square 매뉴얼, CE/UKCA DoC, KR/EN 카탈로그, CAD/STEP는 계속 `metadata_only`. 실제 바이너리가 없으므로 제조사 개별 파일 SHA-256, PDF 서명/서명자/인증서 체인, 내부 revision, SKU 적용범위 검증은 수행하지 않았다. Q01–Q62 `draft_prepared_not_sent`; 제조사 문의/연락 없음. CRA only; SIL 3 제외.
