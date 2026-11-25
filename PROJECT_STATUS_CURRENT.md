@@ -2588,3 +2588,10 @@
 - CI log warnings: Node.js 20, punycode/url.parse deprecation; failed steps 없음. Workflow 변경은 하지 않음.
 - 제조사 자료: manual Ver1.3/1.4 official listing conflict unresolved; Solution Square 2026-09-16 manual metadata; Converter CE/UKCA code-family metadata only; catalogue and CAD/STEP originals unavailable. All remain metadata_only.
 - Q01–Q62 draft_prepared_not_sent, not sent. Actual SKU, EU/EEA supply, economic operators, signed SKU DoC coverage, BOM, exact MCU, SBOM, security configuration and CRA classification remain Unknown. CRA only; SIL 3 excluded.
+
+
+## 2026-11-25 — PR #277 Run #1605 실패 및 교정 진행
+- PR #277 최초 HEAD cf14a184135bd86be02efa4100a9a7a3894b71c3의 Run #1605 / 45542964674 failed.
+- 원인: PROJECT_LOG.jsonl 끝에 빈 줄이 추가되어 traceability validator가 line 411을 invalid JSON으로 판정. compile은 성공했지만 pytest 및 live source steps는 skipped.
+- 411개 기존 비어 있지 않은 JSONL 레코드를 보존하고 빈 줄만 제거한 뒤 실패 이벤트를 append한다. JSONL strict parse/존재하는 event_id 중복 검사 후 새 exact-head CI를 통과하기 전까지 PR 병합 금지.
+- 기존 Run #1604 main push SUCCESS는 영향 없음. main HEAD는 변경하지 않음. CRA only; SIL 3 제외.

@@ -2994,3 +2994,9 @@ job log에는 Node.js 20 deprecation, punycode 및 url.parse() deprecation 경�
 - KR/EN 카탈로그와 2D CAD/3D STEP은 공식 게시물 목록/첨부 메타데이터까지만 확인했다. 상세 원본 파일과 개별 content hash는 미취득.
 
 위 자료는 모두 metadata_only 유지. Q01–Q62는 draft_prepared_not_sent이며 발송하지 않았다. Actual SKU, EU/EEA 공급, 경제운영자, SKU별 signed DoC 적용, BOM, exact MCU, SBOM, security configuration, CRA classification, 취약점 처리 및 지원기간은 증거 확보 전까지 Unknown. CRA only; SIL 3 제외.
+
+
+### 110.4 PR #277 최초 exact-head CI 실패 분석 및 교정
+PR #277 최초 HEAD cf14a184135bd86be02efa4100a9a7a3894b71c3의 Run #1605 / 45542964674는 failed다. Job 138965657238의 compile 단계까지는 성공했으나 CRA traceability 단계에서 PROJECT_LOG.jsonl line 411 invalid JSON 오류로 중단됐다. 원인은 기존 JSONL이 newline으로 끝나는데 append 시 선행 newline을 한 번 더 넣어 빈 레코드 줄이 생긴 형식 오류다. 이 실패로 pytest 및 live-source/artifact 단계는 skipped이며, 이 HEAD의 테스트 통과를 주장하지 않는다.
+
+교정은 모든 비어 있지 않은 기존 JSONL 레코드를 그대로 보존하고, 빈 줄만 제거한 뒤 Run #1605 실패 기록을 새 JSON object 한 줄로 추가하는 방식이다. 교정 후 전체 물리 라인 JSON 파싱, 레코드 수 및 존재하는 event_id의 중복 검사를 다시 수행하고 새 PR HEAD에서 CI를 재실행한다. 기존 실패 시도와 로그는 보존한다. 운영 코드/workflow 변경은 없다.

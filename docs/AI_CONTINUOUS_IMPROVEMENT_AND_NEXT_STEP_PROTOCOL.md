@@ -229,3 +229,9 @@ main `660eb6d20e62f772272c03971dcd773b03a703f5`의 push Run #1588 / ID `45532289
 - Artifact archive digest는 ZIP 단위이며 PDF 개별 content hash와 별개다. 보고서 §110의 archive/file hash 분리 표기를 표준으로 재사용한다.
 - Node.js 20/punycode/url.parse deprecation warnings는 비실패 경고로 기록. Actions workflow 자체는 변경하지 않았다.
 - 제조사 자료 원본 미확보 시 계속 metadata_only. Q01–Q62 미발송 및 제품별 Unknown 경계 유지.
+
+
+### 2026-11-25 — JSONL strict-line validation regression prevention
+- PR #277 Run #1605 exposed a verification gap: local post-write validation filtered blank lines before parsing, while CI correctly treated every physical line as a JSONL record.
+- New hard gate: do not filter empty lines before validation. Require every physical line to be a non-empty valid JSON object; count physical lines and records equally; verify uniqueness for all non-null event_id values; allow only the final newline, never blank records. When appending, do not add a second separator newline.
+- If validation fails, preserve the failed run, record its exact cause, correct only the format defect, and rerun exact-head CI. No merge on a skipped downstream test suite.

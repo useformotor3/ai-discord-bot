@@ -1287,3 +1287,9 @@ Archive digest와 내부 개별 파일 content hash를 혼동하지 않는다. �
 - CAD/STEP: iX700M 2D CAD/3D STEP 목록 2026-04-21 확인, detail/binary 미취득.
 
 모든 제조사 자료 상태는 metadata_only; 개별 content hash는 미확보. Q01–Q62 미발송. Actual SKU, EU/EEA 공급, 경제운영자, signed SKU DoC coverage, BOM/MCU/SBOM/security configuration 및 CRA classification Unknown 유지.
+
+
+### §68.1 PR #277 최초 검증 실패와 JSONL 형식 교정
+- Run #1605 / 45542964674, PR HEAD cf14a184135bd86be02efa4100a9a7a3894b71c3: failed.
+- Job 138965657238: source blob identity 및 compile 성공 후 traceability 검사에서 PROJECT_LOG.jsonl line 411 invalid JSON. 빈 줄이 JSONL record로 해석된 것이 원인. pytest와 live-source/artifact 단계는 skipped.
+- 기존 411개 비어 있지 않은 JSON record는 보존하고 빈 줄만 제거, 실패 event를 새 JSONL record로 추가한다. 재검증 전까지 PR #277은 병합 금지.

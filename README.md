@@ -1419,3 +1419,8 @@ Annex I Part II의 실무 요구사항은 machine-readable SBOM(최소 top-level
 - Traceability 410 log events at run time; official CRA PDFs 3/3 individually hashed; 10 official sources; Article 13(8) and Regulation 2025/2392 locator checks; provenance manifest JSON round-trip/upload PASS.
 - Artifacts: PDF ZIP ID 14988843820, archive SHA-256 5b0f7e5cd59a4955b2a22a8b18d5dd448b4df167119fa72a531bdd4074b9879b; provenance ZIP ID 14988684163, archive SHA-256 c9d8a97e9db97452444ef64d4f8493cd953317d82dcd499541b124e02f6228ff. Individual PDF content hashes are recorded separately in report §110.
 - Manufacturer originals remain metadata_only; manual Ver1.3/1.4 listing conflict unresolved; Q01–Q62 not sent; all product-specific facts remain Unknown. CRA only; SIL 3 excluded.
+
+
+## PR #277 validation correction
+- Initial PR exact-head Run #1605 failed at CRA traceability validation because a blank line was appended to PROJECT_LOG.jsonl; line 411 was not valid JSON. Compile succeeded; pytest and source checks were skipped.
+- Preserve all 411 non-empty existing records, remove only blank line(s), append a structured failure event, then re-run strict JSONL validation and exact-head CI. Do not merge until the new run succeeds.

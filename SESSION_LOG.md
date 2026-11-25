@@ -3770,3 +3770,10 @@ CRA only; SIL 3 excluded.
 - Warnings: Node.js 20 and punycode/url.parse deprecation only; no failed steps. No workflow/code change.
 - Official manufacturer index recheck: manual list Ver1.4 vs empty-category view Ver1.3 on same 2026-05-26 date; Solution Square iX700M manual list 2026-09-16; Converter iX700MCV CE/UKCA model code metadata; catalogue and CAD/STEP listing metadata. Original binaries remain unobtained, metadata_only.
 - Q01–Q62 draft_prepared_not_sent; not sent. Actual SKU, EU/EEA supply, economic operators, signed SKU DoC coverage, BOM/MCU/SBOM/security configuration and CRA classification remain Unknown. CRA only; SIL 3 excluded.
+
+
+## 2026-11-25 — PR #277 Run #1605 failure / corrective action
+- Run #1605 / 45542964674 on PR HEAD cf14a184135bd86be02efa4100a9a7a3894b71c3 failed at traceability validation. Log: PROJECT_LOG.jsonl line 411 invalid JSON; compile succeeded; pytest and live-source/artifact stages skipped.
+- Root cause: an extra leading newline was appended to an already newline-terminated JSONL file, creating a blank line. My first post-write validation filtered empty lines, so it missed the strict validator failure. This is a verification-method gap, not a CRA evidence failure.
+- Correction: reconstruct JSONL from all non-empty existing lines (preserving every JSON object), append a structured failure event, verify every physical line parses and verify all present event_id values are unique. Run new exact-head CI; no merge before success.
+- Run #1604 on main remains SUCCESS; no main changes or workflow changes.
