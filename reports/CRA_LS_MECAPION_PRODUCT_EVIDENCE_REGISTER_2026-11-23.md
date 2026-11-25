@@ -1293,3 +1293,29 @@ Archive digest와 내부 개별 파일 content hash를 혼동하지 않는다. �
 - Run #1605 / 45542964674, PR HEAD cf14a184135bd86be02efa4100a9a7a3894b71c3: failed.
 - Job 138965657238: source blob identity 및 compile 성공 후 traceability 검사에서 PROJECT_LOG.jsonl line 411 invalid JSON. 빈 줄이 JSONL record로 해석된 것이 원인. pytest와 live-source/artifact 단계는 skipped.
 - 기존 411개 비어 있지 않은 JSON record는 보존하고 빈 줄만 제거, 실패 event를 새 JSONL record로 추가한다. 재검증 전까지 PR #277은 병합 금지.
+
+
+## §69. 2026-11-25 — PR #277 Run #1606 / main push Run #1607
+
+| 검증 | PR exact-head Run #1606 | main push Run #1607 |
+|---|---|---|
+| Run ID | 45543168422 | 45543315065 |
+| SHA | 56f09b43716dca8bda5391b0939a2c7891701ed9 | e39c95cc993e39cd3950338f07e1ce9282cbc03e |
+| Event/branch | pull_request | push / main |
+| Result | SUCCESS | SUCCESS |
+| Steps / pytest | 15/15 / 189 | 15/15 / 189 |
+| Traceability events | 412 | 412 |
+| CRA PDFs / official sources | 3/3 / 10 | 3/3 / 10 |
+| Provenance upload | PASS | PASS |
+
+Run #1606 archive ZIPs:
+- PDF ID 14990341815, 3,070,566 bytes, SHA-256 f5a548236ea06a8bf895c427a30f956af9d4f0e72d025c76e8b32db3d2946482.
+- Provenance ID 14990650392, 2,564 bytes, SHA-256 b1fe3375ee1b483bbda8da88066eeb805b5c1e0c63b34fbab79f09613e298c6d.
+
+Run #1607 archive ZIPs:
+- PDF ID 14989938648, 3,070,566 bytes, SHA-256 fabb36f5bae932e24742d03672c772010cb0f94d8a4876448ade82eea42efd17.
+- Provenance ID 14989474383, 2,565 bytes, SHA-256 d58229a18e47be2095f9d7e3671fa86d3595964f71b9a6013276bef35b15ccea.
+
+Individual PDF content SHA-256: CRA-GUIDANCE-2026-5252 fe209c250e3d1f7599e42826d91963666951332927edcf511a2e79fe8d2f8234; CRA-GUIDANCE-OJ-2026-6013 40ca76caeb0108f5b97c8f373a95f590b453fe92bd45a483addf3326e48c1dc2; CRA-M606-C2026-7861-ANNEX 262b09596cb5cbe7d72a2c7789fb2512ee00db7f69082e7def2c8181b0f63276. These are file hashes, not archive hashes.
+
+Run #1605 failure was corrected: strict JSONL physical lines all parse; 412 records, 407 unique non-null event IDs and 5 retained legacy records without event_id. Manufacturer source files remain metadata_only; Q01–Q62 unsent; all product-specific Unknowns remain.

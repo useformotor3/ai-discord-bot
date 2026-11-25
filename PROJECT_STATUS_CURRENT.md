@@ -2595,3 +2595,12 @@
 - 원인: PROJECT_LOG.jsonl 끝에 빈 줄이 추가되어 traceability validator가 line 411을 invalid JSON으로 판정. compile은 성공했지만 pytest 및 live source steps는 skipped.
 - 411개 기존 비어 있지 않은 JSONL 레코드를 보존하고 빈 줄만 제거한 뒤 실패 이벤트를 append한다. JSONL strict parse/존재하는 event_id 중복 검사 후 새 exact-head CI를 통과하기 전까지 PR 병합 금지.
 - 기존 Run #1604 main push SUCCESS는 영향 없음. main HEAD는 변경하지 않음. CRA only; SIL 3 제외.
+
+
+## 2026-11-25 — PR #277 merge and main push Run #1607 final
+- PR #277 expected-head squash merge SHA/current main: e39c95cc993e39cd3950338f07e1ce9282cbc03e.
+- PR exact-head Run #1606 / 45543168422: completed/success, 15/15 steps, 189 pytest, traceability 412, official CRA PDFs 3/3, 10 sources, provenance PASS.
+- Main push Run #1607 / 45543315065: exact merge SHA, event=push, head_branch=main, completed/success, 15/15, 189 pytest, traceability 412, PDF 3/3, official sources 10, provenance PASS.
+- Artifact archive digests and individual PDF content hashes are in report §111 and evidence register §69.
+- PROJECT_LOG strict JSONL: 412 records, every physical line valid, no blank record; 407 unique non-null event_id values, 5 legacy rows without event_id preserved. Run #1605 blank-line failure and recovery are documented.
+- Manufacturer originals remain metadata_only; Q01–Q62 not sent; actual SKU, EU/EEA supply, economic operators, signed SKU DoC, BOM/MCU/SBOM/security configuration and CRA classification Unknown. CRA only; SIL 3 excluded.
