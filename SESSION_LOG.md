@@ -3662,3 +3662,13 @@ CRA only; SIL 3 excluded.
 - 중복/행정성 항목을 통합하고 62개 전역 ID(Q01–Q62)로 재구성했다. 검증: 62 total, 62 unique, sequential Q01–Q62, no gap/duplicate.
 - Q61은 매뉴얼 revision 충돌, Q62는 actual SKU별 BOM/MCU/FW/SBOM/security/vulnerability evidence matrix.
 - 문서 v2.0은 발송 전 초안. 발송·접수·회신은 확인되지 않았다. CRA only; SIL 3 excluded.
+
+
+ 
+## 2026-11-25 — PR #267 병합 및 Run #1581 검증
+- PR #267 base `a015dc95f6c59d331275d646306b2b2a2137f437`, exact head `3047df34212f7e5887ac358cd0156a1a75345fb6`; 7 files(+269/-168), reviews/threads 0.
+- Run #1581 / 45530155733 completed/success: 1 job, 15/15 returned steps, source integrity, compile, CRA traceability 399, pytest 189 passed, CRA PDFs 3/3 fetch/hash, 10-source provenance manifest JSON round-trip/upload.
+- Expected-head squash merge `418e526485f1d7c8f43e0f16f471b42b5c2f5a6c`; PR closed/merged; main latest commit read-back matches.
+- Main push CI UNVERIFIED: Combined Status and commit-associated workflow-run lookup empty; Run #1581 is PR CI only.
+- Manufacturer inquiry normalized to v2.0 with 62 unique global IDs; prior source file had 90 numbered entries. Q61 manual revision, Q62 per-SKU BOM/MCU/FW/SBOM/security/vulnerability evidence matrix. Draft not sent.
+- Original iX700M product binary not acquired; metadata only; Unknowns preserved. CRA only; SIL 3 excluded.
