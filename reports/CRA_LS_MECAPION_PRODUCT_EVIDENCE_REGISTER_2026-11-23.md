@@ -1507,3 +1507,9 @@ Actual SKU, EU/EEA supply, economic operators, signed SKU-specific DoC scope, BO
 - UKCA index https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&page=1&sca=UKCA&spt=-12859 에서 iX700M Drive Unit 개별 항목 미노출. 검색 범위 내 미발견이며 부존재 증명은 아니다.
 - CAD list confirms item 19 / 2026-04-21, but no file identifier or attachment URL: https://www.lsmecapion.com/bbs/board.php?bo_table=drawing&sca=Servo+Drive.
 - Failure: official detail page requests timed out; index snippets omitted individual hrefs and IDs for grouped CE posts; Solution Square JavaScript shell did not expose document ID or attachment URL. No guessed URL, no new binary, no hash/signature/internal revision/SKU-scope verification. All manufacturer items metadata_only; Q01–Q62 unsent; no contact; product Unknowns unchanged. CRA only; SIL 3 excluded.
+
+### §72.9 2026-11-25 — 매뉴얼 Ver1.3 navigation cross-reference 및 카탈로그 파일 메타데이터
+- PEGA2 Ver1.3 official detail search result (wr_id=12651) shows previous-post label 'iX700M DRIVE 400[V] 매뉴얼 Ver1.3'; the target href/wr_id is not exposed. This corroborates the Ver1.3 list snapshot but does not establish the target detail URL or controlled revision. Source: https://lsmecapion.com/bbs/board.php?bo_table=manual&sca=Servo&wr_id=12651
+- Servo filter continues to show iX700M Ver1.4; general/empty-category listing shows Ver1.3, same date 2026-05-26. No PDF bytes/internal revision/approval evidence; conflict unresolved.
+- Catalog detail search result reconfirms KR/EN filenames, 10.7M each, DATE 2025-12-05 13:43:50; no binary. https://www.lsmecapion.com/bbs/board.php?bo_table=catalog&wr_id=12110
+- No guessed Ver1.3 URL, no new manufacturer binary, no file hash/signature/revision/SKU-scope verification. All metadata_only; Q01–Q62 unsent; no manufacturer contact. CRA only; SIL 3 excluded.
