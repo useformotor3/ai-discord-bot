@@ -2708,3 +2708,17 @@
 - 제조사 원본 바이너리 0개. 모든 자료 metadata_only; 개별 해시/서명/내부 개정/모델 범위 검증 미실시. 첨부 URL 추측 금지.
 - Q01–Q62 unsent; 제조사 연락 없음. 제품 SKU/EU 공급/경제운영자/DoC 적용범위/BOM·ST MCU part number/SBOM/보안 설정/CRA 분류/취약점·지원기간 Unknown.
 - CRA only; SIL 3 제외.
+
+## 2026-11-25 — CE Drive Unit 개별 상세 / UKCA Drive Unit 추가 재검색
+- 기준 main d8b3ec43024368d76175a20742e42a036bf88e9c; report §114.7.9 / evidence §72.7 read first.
+- 공식 CE index rows 171–173 list Drive Unit 220B, 370B/300B, 750B/550B/450B. 개별 wr_id/detail href/attachment metadata는 공식 검색 결과에서 확보하지 못함. 150B detail metadata만 확인됨.
+- UKCA index search에서도 iX700M Drive Unit 개별 항목 미노출(부존재 증거 아님); iX700MCV Converter UKCA detail만 확인된 상태 유지.
+- 150B CE, MCV CE/UKCA direct page opens timeout; Solution Square JS app shell은 document ID/href/attachment URL 미노출. 신규 제조사 binary 0; metadata_only, no guessed URLs.
+- Q01–Q62 unsent; manufacturer contact 없음. 제품 SKU/EU 공급/경제운영자/DoC 범위/BOM·MCU/SBOM/security/CRA classification/support unknown 유지. CRA only; SIL 3 제외.
+- 상세: report §114.7.10 / evidence register §72.8.
+
+## 2026-11-25 — 매뉴얼 Ver1.3 공식 게시물 교차참조
+- PEGA2 Ver1.3 상세(wr_id=12651)의 이전글 텍스트가 iX700M DRIVE 400[V] 매뉴얼 Ver1.3을 가리키는 것을 확인. 대상 링크 href/wr_id는 노출되지 않아 추정 URL을 만들지 않음.
+- Servo 필터 Ver1.4 vs 일반/빈 분류 목록 Ver1.3 충돌 유지; 실제 PDF 내부 revision/controlled copy는 Unknown.
+- KR/EN 카탈로그 상세는 파일명·각 10.7M·2025-12-05 첨부일 메타데이터만 재확인. 바이너리 0, metadata_only.
+- 상세: report §114.7.11 / evidence §72.9. CRA only; SIL 3 제외.
