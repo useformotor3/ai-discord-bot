@@ -3699,3 +3699,4 @@ CRA only; SIL 3 excluded.
 - 행동규약 §8.3 v1.3 main 반영. 마지막 응답 요소는 컨테이너 없는 단독 DIL button이며 직접 GenUI.issueNewTurn로 새 CRA 전용 턴을 시작한다. 자율 백그라운드 실행/모델 가중치 학습은 아님.
 - Main push CI UNVERIFIED; PR Run #1585를 push CI로 오인하지 않는다.
 - iX700M 원본 자료 취득은 미완료, metadata_only. Unknown 유지. CRA only; SIL 3 excluded.
+null
