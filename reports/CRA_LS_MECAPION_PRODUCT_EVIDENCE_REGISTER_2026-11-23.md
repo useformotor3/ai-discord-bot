@@ -1252,3 +1252,38 @@ PR #275 expected-head squash merge SHA `cd00a3b67eea7bf18f5143951f4616659157e15e
 - Run #1601 PDF artifact 14988823487, 3,070,565 bytes, SHA-256 `b9089acf0f81206b026c1f016e79588361e6c150bb49643cc9316e7bcad2bba0`; provenance artifact 14988593957, 2,565 bytes, SHA-256 `acea80b32d1ed91d9af8d78f54f0ed65fe508cb1882c83261ab1c1a06fb9f8da`.
 - Run #1602 PDF artifact 14988324547, 3,070,566 bytes, SHA-256 `bd8018361bb18e5ef326ca9f3e57884bc9b00de97a76f70f4e5945b603ae149d`; provenance artifact 14989940245, 2,565 bytes, SHA-256 `27460361017e0da584e2fc1a021d121ac4e405b6b8133bd6007703a091482fcb`.
 - Main PROJECT_LOG 409 valid JSONL records. Manufacturer source files remain metadata_only; Q01–Q62 not sent; product facts Unknown.
+
+
+## §68. 2026-11-25 — Run #1604 main push CI 및 제조사 증거 재확인
+
+| 항목 | 검증값 |
+|---|---|
+| Run | #1604 / 45541495434 |
+| main exact SHA | 45ec85172d2b5022b0eced1740a2c269b539e55c |
+| event / branch | push / main |
+| 상태 | completed / success |
+| Job / steps | 138960843560 / 15개 모두 success |
+| pytest | 189 passed |
+| Traceability | claims 13; interfaces 15; requirements 35; SEC 36; product evidence 15; M606 41; PROJECT_LOG events 410 |
+| CRA sources | PDF 3/3 fetched+hashed; allowlist 10; Article 13(8) 및 Regulation 2025/2392 locators PASS |
+| Provenance | 10-record JSON round-trip 및 upload PASS |
+
+### Artifact archive SHA-256
+- PDF ZIP artifact ID 14988843820, 3,070,565 bytes: 5b0f7e5cd59a4955b2a22a8b18d5dd448b4df167119fa72a531bdd4074b9879b.
+- Provenance ZIP artifact ID 14988684163, 2,564 bytes: c9d8a97e9db97452444ef64d4f8493cd953317d82dcd499541b124e02f6228ff.
+
+### 개별 PDF content SHA-256
+- CRA-GUIDANCE-2026-5252: fe209c250e3d1f7599e42826d91963666951332927edcf511a2e79fe8d2f8234.
+- CRA-GUIDANCE-OJ-2026-6013: 40ca76caeb0108f5b97c8f373a95f590b453fe92bd45a483addf3326e48c1dc2.
+- CRA-M606-C2026-7861-ANNEX: 262b09596cb5cbe7d72a2c7789fb2512ee00db7f69082e7def2c8181b0f63276.
+
+Archive digest와 내부 개별 파일 content hash를 혼동하지 않는다. 위 hash들은 job log에서 확인한 값이며, 제조사 파일 hash가 아니다.
+
+### 제조사 원본 취득 재시도
+- 매뉴얼: 기본/Servo 목록 Ver1.4와 빈 category 목록 Ver1.3 충돌 지속. 둘 다 2026-05-26. 원본 PDF/detail page 미취득.
+- Converter CE/UKCA: iX700MCV의 480 Vac 및 15/37/55/75 kW 코드군과 첨부 PDF metadata 재확인. 선언서 원본, 서명, 실제 SKU별 적용 범위 미검증.
+- Solution Square: iX700M 사용 설명서 2026-09-16 목록 확인, 상세 JS shell only.
+- 카탈로그: KR/EN 10.7M 첨부 이름 확인, 원본 binary 미취득.
+- CAD/STEP: iX700M 2D CAD/3D STEP 목록 2026-04-21 확인, detail/binary 미취득.
+
+모든 제조사 자료 상태는 metadata_only; 개별 content hash는 미확보. Q01–Q62 미발송. Actual SKU, EU/EEA 공급, 경제운영자, signed SKU DoC coverage, BOM/MCU/SBOM/security configuration 및 CRA classification Unknown 유지.

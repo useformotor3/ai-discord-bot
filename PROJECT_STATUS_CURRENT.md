@@ -2578,3 +2578,13 @@
 - Run #1602 artifacts: PDF 14988324547 SHA-256 bd8018361bb18e5ef326ca9f3e57884bc9b00de97a76f70f4e5945b603ae149d; provenance 14989940245 SHA-256 27460361017e0da584e2fc1a021d121ac4e405b6b8133bd6007703a091482fcb.
 - Run #1601 artifacts: PDF 14988823487 SHA-256 b9089acf0f81206b026c1f016e79588361e6c150bb49643cc9316e7bcad2bba0; provenance 14988593957 SHA-256 acea80b32d1ed91d9af8d78f54f0ed65fe508cb1882c83261ab1c1a06fb9f8da.
 - PROJECT_LOG main 409 records, JSON parse errors 0. Manufacturer binary evidence remains metadata_only. Q01–Q62 not sent; actual SKU, EU/EEA supply, economic operators, signed SKU DoC scope, BOM/MCU/SBOM/security configuration and CRA classification Unknown. CRA only; SIL 3 excluded.
+
+
+## 2026-11-25 — PR #276 및 Run #1604 main push closeout
+- PR #276 병합 완료. PR HEAD 7534c498fc0331d5044d30d062ea862e8f6d2792; merge/current main 45ec85172d2b5022b0eced1740a2c269b539e55c.
+- Run #1604 / 45541495434: direct Actions runs collection exact SHA + event=push; head_branch=main, completed/success. Job 138960843560, 15/15 returned steps success; compileall PASS; pytest 189 passed.
+- Traceability 13 claims, 15 interfaces, 35 requirements, 36 SEC, 16 crosswalk, 15 product evidence, M606 41, PROJECT_LOG 410 events. Official CRA PDFs 3/3 individual hashes; 10 sources; Article 13(8)/Regulation 2025/2392 locators; provenance JSON round-trip/upload PASS.
+- PDF ZIP artifact 14988843820 (3,070,565 bytes; archive SHA-256 5b0f7e5cd59a4955b2a22a8b18d5dd448b4df167119fa72a531bdd4074b9879b); provenance ZIP 14988684163 (2,564 bytes; archive SHA-256 c9d8a97e9db97452444ef64d4f8493cd953317d82dcd499541b124e02f6228ff). 개별 PDF hash는 보고서 §110에 별도 기록.
+- CI log warnings: Node.js 20, punycode/url.parse deprecation; failed steps 없음. Workflow 변경은 하지 않음.
+- 제조사 자료: manual Ver1.3/1.4 official listing conflict unresolved; Solution Square 2026-09-16 manual metadata; Converter CE/UKCA code-family metadata only; catalogue and CAD/STEP originals unavailable. All remain metadata_only.
+- Q01–Q62 draft_prepared_not_sent, not sent. Actual SKU, EU/EEA supply, economic operators, signed SKU DoC coverage, BOM, exact MCU, SBOM, security configuration and CRA classification remain Unknown. CRA only; SIL 3 excluded.

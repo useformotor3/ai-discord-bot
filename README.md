@@ -1411,3 +1411,11 @@ Annex I Part II의 실무 요구사항은 machine-readable SBOM(최소 top-level
 - Main push Run #1602 / 45541169420 verified from Actions runs collection with exact merge SHA, event=push, branch=main, completed/success. 15/15 steps, 189 pytest, traceability 409, CRA PDFs 3/3, official sources 10, provenance PASS.
 - Artifact IDs/digests and detailed status in report §109, evidence register §67, SESSION_LOG and PROJECT_LOG event `2026-11-25-CRA-PR275-RUN1601-MAIN1602-EXACTHEAD-CLOSEOUT`.
 - Q01–Q62 not sent; product-specific unknowns preserved. CRA only; SIL 3 excluded.
+
+
+## 2026-11-25 — PR #276 / Run #1604 closeout
+- PR #276 merged; current main 45ec85172d2b5022b0eced1740a2c269b539e55c.
+- Main push Run #1604 / 45541495434 exact SHA + event=push + branch=main; completed/success, 15/15 steps, compileall PASS, 189 pytest passed.
+- Traceability 410 log events at run time; official CRA PDFs 3/3 individually hashed; 10 official sources; Article 13(8) and Regulation 2025/2392 locator checks; provenance manifest JSON round-trip/upload PASS.
+- Artifacts: PDF ZIP ID 14988843820, archive SHA-256 5b0f7e5cd59a4955b2a22a8b18d5dd448b4df167119fa72a531bdd4074b9879b; provenance ZIP ID 14988684163, archive SHA-256 c9d8a97e9db97452444ef64d4f8493cd953317d82dcd499541b124e02f6228ff. Individual PDF content hashes are recorded separately in report §110.
+- Manufacturer originals remain metadata_only; manual Ver1.3/1.4 listing conflict unresolved; Q01–Q62 not sent; all product-specific facts remain Unknown. CRA only; SIL 3 excluded.

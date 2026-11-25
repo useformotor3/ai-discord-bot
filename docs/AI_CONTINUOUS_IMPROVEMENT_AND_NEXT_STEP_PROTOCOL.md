@@ -219,3 +219,13 @@ main `660eb6d20e62f772272c03971dcd773b03a703f5`의 push Run #1588 / ID `45532289
 - Post-merge main push Run #1602 / 45541169420: Actions runs collection filtered by exact merge SHA + event=push; branch=main, completed/success, 15/15, 189 pytest, traceability 409, PDFs 3/3, sources 10, provenance PASS.
 - Artifact IDs and archive digests are in PROJECT_LOG event `2026-11-25-CRA-PR275-RUN1601-MAIN1602-EXACTHEAD-CLOSEOUT`.
 - Keep product-specific Unknowns and manufacturer metadata_only boundary; Q01–Q62 remain unsent.
+
+
+### 2026-11-25 — Run #1604 main push exact-head 실증
+- Main 45ec85172d2b5022b0eced1740a2c269b539e55c, Run #1604 / 45541495434; exact SHA + event=push + branch=main, completed/success 확인.
+- Job 138960843560, 반환된 15 steps 모두 success; full job log 459 lines, compileall PASS, pytest 189 passed.
+- Traceability 410 PROJECT_LOG events; 13 claims, 15 interfaces, 35 requirements, SEC 36, crosswalk 16, product evidence 15, M606 41.
+- Official CRA PDFs 3/3 fetched+hashed, official source allowlist 10, Article 13(8) and Regulation 2025/2392 locators PASS, provenance manifest JSON round-trip/upload PASS.
+- Artifact archive digest는 ZIP 단위이며 PDF 개별 content hash와 별개다. 보고서 §110의 archive/file hash 분리 표기를 표준으로 재사용한다.
+- Node.js 20/punycode/url.parse deprecation warnings는 비실패 경고로 기록. Actions workflow 자체는 변경하지 않았다.
+- 제조사 자료 원본 미확보 시 계속 metadata_only. Q01–Q62 미발송 및 제품별 Unknown 경계 유지.
