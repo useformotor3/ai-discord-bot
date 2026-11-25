@@ -1158,3 +1158,30 @@ PR #272 diff: 6 files, +70/-0, 6 ahead / 0 behind, reviews 0, threads 0. Expecte
 All four artifacts were downloaded and independently SHA-256 checked against the GitHub artifact digests. Main artifact metadata confirms head_branch=main and exact merge SHA. The job/artifact wrapper response does not expose the event property; avoid claiming that this particular response independently returned event=push.
 
 Manufacturer originals remain metadata_only: manual Ver1.4/Ver1.3 index conflict unresolved; Converter CE/UKCA DoC, KR/EN catalogue, 2D CAD/3D STEP binaries and content hashes not acquired. Q01–Q62 draft_prepared_not_sent. All product identity/supply/operator/DoC scope/BOM/MCU/SBOM/security/classification fields remain Unknown.
+
+
+## §64. 2026-11-25 — PR #273 merge 및 제조사 공식 인덱스 추가 확인
+
+| 항목 | 확인 결과 |
+|---|---|
+| PR #273 exact HEAD | `c67927926da70cf8089bbf306dfe9261511bb9d0` |
+| Exact-head Run | #1593 / 45539484334 SUCCESS, 15/15, 189 passed |
+| Traceability | 406 events; cross-matrix PASS |
+| CRA PDFs / official sources | 3/3 fetched+hashed; 10 sources, provenance round-trip/upload PASS |
+| PR diff/reviews | 7 files, +98/-0, 7 ahead/0 behind, reviews 0, threads 0 |
+| Expected-head squash merge | `ce36f290f34a6ce391b91cf3aa6742f48c93e44a` |
+| Post-merge main push CI | **UNVERIFIED**; run-list unavailable, combined status empty; no inferred run ID |
+
+**추가 제조사 공식 인덱스 자료 (2026-11-25 재확인)**
+
+| Evidence | 공식 게시물/목록 | 메타데이터 | 원본 |
+|---|---|---|---|
+| MFG-IX7M-31 | [Manual default list](https://www.lsmecapion.com/bbs/board.php?bo_table=manual), [Servo filter](https://lsmecapion.com/bbs/board.php?bo_table=manual&sca=Servo) | Ver1.4, 2026-05-26 | detail wr_id=12652 timeout; metadata_only |
+| MFG-IX7M-31A | [Manual empty-category index](https://www.lsmecapion.com/bbs/board.php?bo_table=manual&sca=) | same post/date shown as Ver1.3 | index conflict; binary/revision Unknown |
+| MFG-IX7M-33 | [Converter CE detail](https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&sca=CE&wr_id=12886) | iX700MCV, CE_DoC-LVDEMC PDF, 234.4K, 2026-04-30 | metadata_only |
+| MFG-IX7M-34 | [Converter UKCA detail](https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&page=3&wr_id=12893) | iX700MCV, UKCA_DoC_LVDEMC PDF, 224.1K, 2026-04-30 | metadata_only |
+| MFG-IX7M-35 | [KR/EN catalogue](https://www.lsmecapion.com/bbs/board.php?bo_table=catalog&wr_id=12110) | KR/EN PDFs, 10.7M each; 2025-12-05 attachment date | metadata_only |
+| MFG-IX7M-36 | [Servo Drive drawing list](https://www.lsmecapion.com/bbs/board.php?bo_table=drawing&sca=Servo+Drive) | 2D CAD/3D STEP, 2026-04-21, detail ID 12455 | metadata_only; detail timeout |
+| MFG-IX7M-37 | [Solution Square Motion & Servo list](https://ssq.ls-electric.com/kr/ko/product/category/4?pageNumber=14) | iX700M user manual updated 2026-09-16 | JS shell only; no file/revision |
+
+The manual listing discrepancy is confirmed by different official index views, not resolved by the index itself. No original manufacturer binary or content SHA-256 acquired. Inquiry Q01–Q62 remains draft_prepared_not_sent. All SKU, EU/EEA supply, operator, signed DoC scope, BOM/MCU/SBOM/security/classification facts remain Unknown.
