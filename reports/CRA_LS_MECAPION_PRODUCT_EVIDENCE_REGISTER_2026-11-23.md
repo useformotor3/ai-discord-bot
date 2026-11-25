@@ -1096,3 +1096,19 @@ Actual SKU, EU/EEA supply, economic operators, signed DoC coverage, BOM/exact MC
 - 행동규약 v1.3 §8.3 main 반영: 단독 버튼을 마지막 UI 요소로 출력, 직접 GenUI.issueNewTurn 호출, CRA only/SIL3 제외 payload, 응답 직전 hard gate.
 - Main push CI UNVERIFIED: Combined Status empty, available connector run lookup only returns PR events.
 - iX700M product binaries remain unacquired; metadata_only. Actual SKU, EU/EEA supply, economic operators, signed SKU DoC, BOM/MCU/SBOM/security configuration remain Unknown.
+
+
+## §61. 2026-11-25 — main push Run #1588 및 iX700M 원본 취득 재시도
+
+| 확인 항목 | 결과 | 증거 |
+|---|---|---|
+| PR #270 exact head | SUCCESS, Run #1587 / 45532177358, 15/15 | `1d815fa2589ba8f55e52c53cf9778a2317b70859` |
+| main push | SUCCESS, Run #1588 / 45532289060, 15/15 | main SHA `660eb6d20e62f772272c03971dcd773b03a703f5`, event=push |
+| pytest | 189 passed in both | job logs |
+| CRA traceability | PASS, 403 project log events | job logs |
+| CRA Commission PDFs | 3/3 fetched+hashed | artifacts 14985756045 (PR), 14985077936 (push) |
+| official sources provenance | 10 sources; JSON round-trip and upload PASS | artifacts 14984154078 (PR), 14985815057 (push) |
+
+**Actions push lookup:** `GET /repos/useformotor3/ai-discord-bot/actions/runs?head_sha={SHA}&event=push&per_page=100`. This finds post-merge runs missed by the PR-only connector wrapper.
+
+**iX700M original evidence:** manual current filtered list says Ver1.4; alternate indexed snapshot says Ver1.3 for the same date; PDF binary/detail page not obtained. Converter CE/UKCA PDFs, KR/EN catalogue, 2D CAD/3D STEP remain metadata_only. No manufacturer binary or content hash acquired. Inquiry v2.0 Q01–Q62 is draft_prepared_not_sent. Product identity, supply, operators, signed DoC scope, BOM/MCU/SBOM/security configuration remain Unknown.
