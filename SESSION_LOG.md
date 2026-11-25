@@ -3732,3 +3732,13 @@ CRA only; SIL 3 excluded.
 - Post-merge main push CI **UNVERIFIED**: commit-run wrapper PR-only, combined status empty, direct Actions run-list not available. No guessed run ID or conclusion.
 - Manufacturer official indexes: manual default/Servo filter Ver1.4 vs explicit empty `sca=` Ver1.3 for same post/date; Converter CE/UKCA attachments metadata; KR/EN catalogue 10.7M each; iX700M 2D CAD/3D STEP list; Solution Square iX700M manual updated 2026-09-16. Detail/binary access failed; metadata_only.
 - Q01–Q62 remains draft_prepared_not_sent; not sent. Actual SKU, EU/EEA supply, economic operators, signed SKU DoC scope, BOM/MCU/SBOM/security configuration, CRA classification, vulnerability handling and support period Unknown. CRA only; SIL 3 excluded.
+
+
+## 2026-11-25 — PR #272~#274 main push CI 조회 경로 확보 및 최종 검증
+- Existing `fetch_commit_workflow_runs` wrapper was PR-event focused. Direct GitHub Actions runs collection by `head_sha + event=push` found exact main push runs.
+- PR #272: Run #1591 / 45537296095 (15/15, 189 passed, traceability 405); merge SHA `eb5894767cebdc7f956e31252b2d1831ef554a85`; main push #1592 / 45537422906 event=push exact-head SUCCESS (15/15, 189 passed, traceability 405).
+- PR #273: Run #1593 / 45539484334 (15/15, 189 passed, traceability 406); merge SHA `ce36f290f34a6ce391b91cf3aa6742f48c93e44a`; main push #1594 / 45539588559 event=push exact-head SUCCESS (15/15, 189 passed, traceability 406).
+- PR #274: Run #1595 / 45539787326 (15/15, 189 passed, traceability 407); merge/current main SHA `ea1c2b315a0828bceee5913c2620b4a62823856b`; main push #1596 / 45539874073 event=push exact-head SUCCESS (15/15, 189 passed, traceability 407).
+- All six runs: CRA PDFs 3/3 fetch/hash, official CRA sources 10, provenance JSON round-trip/upload. Artifact API digest equals job log ZIP digest. PR diffs #272 6(+70/-0), #273 7(+98/-0), #274 7(+87/-0), reviews/threads 0; expected-head squash merge verified.
+- Manufacturer source: official default/Servo search-index views show manual Ver1.4; directly opened official empty-category page row 41 shows Ver1.3 on same 2026-05-26 post. Detail timeout; actual PDF unavailable. Solution Square iX700M manual updated 2026-09-16 listed in search index but JS detail unavailable. Converter CE/UKCA, KR/EN catalogue and CAD/STEP remain metadata_only.
+- Q01–Q62 remains draft_prepared_not_sent; not sent. Actual SKU, EU/EEA supply, economic operators, signed SKU-specific DoC, BOM/MCU/SBOM/security configuration, CRA classification remain Unknown. CRA only; SIL 3 excluded.
