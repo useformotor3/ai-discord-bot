@@ -2604,3 +2604,15 @@
 - Artifact archive digests and individual PDF content hashes are in report §111 and evidence register §69.
 - PROJECT_LOG strict JSONL: 412 records, every physical line valid, no blank record; 407 unique non-null event_id values, 5 legacy rows without event_id preserved. Run #1605 blank-line failure and recovery are documented.
 - Manufacturer originals remain metadata_only; Q01–Q62 not sent; actual SKU, EU/EEA supply, economic operators, signed SKU DoC, BOM/MCU/SBOM/security configuration and CRA classification Unknown. CRA only; SIL 3 excluded.
+
+
+## 2026-11-25 — 현재 기준: PR #278 병합 및 main push Run #1609 검증 완료
+- Current main HEAD: bb59d1b38e563d5b72db1e97522a4ae5b79c6d9b.
+- PR #278 exact HEAD de30e11867d22801412b2daba39190791565b390; Run #1608 / 45543506669 completed/success, 15/15, 189 pytest, traceability 413, CRA PDFs 3/3, official sources 10, provenance PASS.
+- PR #278 expected-head squash merge SHA equals current main bb59d1b38e563d5b72db1e97522a4ae5b79c6d9b.
+- Main push Run #1609 / 45543596033 independently verified by Actions runs collection filtered by exact head_sha + event=push; head_branch=main, completed/success. Job 138967756419, 15/15 steps, full log 459 lines, compileall PASS, 189 pytest, traceability 413, PDFs 3/3, official sources 10, provenance JSON round-trip/upload PASS.
+- Run #1609 artifacts: PDF ZIP 14990725944 / 3,070,567 bytes / archive SHA-256 bbd048563aaa1cba86dbe40065a46cc1e583846137f38bb0380595b20dbbd8e9; provenance ZIP 14990043643 / 2,565 bytes / archive SHA-256 55b15ffc7bd5aada82abe42ffb266aec04228da05b29e7a5e34b2fd804589593. Individual PDF hashes are in report §112; do not conflate ZIP and file hashes.
+- PR #278 diff 7 files (+100/-0), 1 ahead/0 behind, reviews 0, inline comments 0.
+- Manufacturer recheck: Ver1.4 vs Ver1.3 manual index conflict unresolved; Converter CE/UKCA, Solution Square manual, KR/EN catalogues, CAD/STEP all metadata_only. No original manufacturer binary/content hash acquired.
+- Q01–Q62 draft_prepared_not_sent, not sent. Actual SKU, EU/EEA supply, economic operators, signed SKU-specific DoC scope, BOM/MCU/SBOM/security configuration and CRA classification remain Unknown.
+- CRA only; SIL 3 excluded. Next priority: obtain the original manufacturer binaries via official attachment URLs or an authorized manufacturer contact, then verify PDF signatures/revisions and calculate per-file SHA-256 before changing any evidence status.
