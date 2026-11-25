@@ -1388,3 +1388,39 @@ Archive hashes:
 - CAD/STEP: listing dated 2026-04-21; 2D/3D binaries not retrieved.
 
 All manufacturer sources remain metadata_only; no per-file content hash, signature validation, or revision inspection. Official detail fetches encountered 502/timeouts; Solution Square is JS-only; execution environment DNS could not resolve the manufacturer host. Q01–Q62 unsent. Actual SKU, EU/EEA supply, economic operators, SKU-specific signed DoC scope, BOM/MCU/SBOM/security configuration, CRA classification, vulnerability handling and support period remain Unknown. CRA only; SIL 3 excluded.
+
+## §72. 2026-11-25 — PR #280 / Run #1612·1613 및 제조사 자료·기술지원 경로
+
+| 항목 | PR #280 exact-head | main push |
+|---|---|---|
+| SHA | 504ed25a538e0a61dbc500f3ba86ad60ed167414 | e2b2f39a16b5b41b466d1ec3db7138c49874d70e |
+| Run ID | 45549584947 | 45549672737 |
+| Job | 138987281166 | 138987569743 |
+| Result / steps | SUCCESS / 15/15 | SUCCESS / 15/15 |
+| pytest | 189 passed | 189 passed |
+| Traceability | 415 | 415 |
+| CRA PDFs / sources | 3/3 / 10 | 3/3 / 10 |
+| Provenance | PASS | PASS |
+
+Archive SHA-256:
+- Run #1612 PDF ZIP 14992078865: 37d1ed30a314c9afa52ddb5f9b78fbe8b1b8a04847a4a5164b78e5d48e05989f.
+- Run #1612 provenance ZIP 14991919727: 298a4b0c94af9c31ffd7480158335a05a92ed4f92eadfee1dc0d370a6fe52cee.
+- Run #1613 PDF ZIP 14992429240: 685dbace5088cba72eed25c632882dd18bf687ba875b6963eefe683d82057ffc.
+- Run #1613 provenance ZIP 14992583792: 9ade5f0f156269d8cf6d0605230718f59eb88b43fc572d9bf29c641300b53d6b.
+
+### Manufacturer acquisition state
+- Manual official main/Servo lists: Ver1.4, 2026-05-26; detail click timed out. Earlier empty-category capture: Ver1.3. Conflict unresolved.
+- Converter CE/UKCA: official filenames, sizes, timestamps and 480Vac/15/37/55/75kW family metadata confirmed; detail pages 502; no original PDF.
+- Solution Square manual: listed 2026-09-16; SPA only, no direct binary URL.
+- KR/EN catalogue: filenames and 10.7M each confirmed; detail 502.
+- CAD/STEP: official listing 2026-04-21; detail 502.
+- All six requested manufacturer evidence groups remain metadata_only. No individual content hashes, signature checks, or binary revision inspection.
+
+### Official technical support
+- LS Mecapion general customer center: 1544-5948, 08:30–17:30 (lunch 12:30–13:30 excluded).
+- Servo technical-support page lists Seoul region khnam@lsmecapion.com / 070-4343-8207 and 경기 region 070-7772-8422.
+- Drive A/S service listing: 053-580-9191.
+- Official technical inquiry portal: https://lsmecapion.com/bbs/board.php?bo_table=inquiry&page=1&sca=%EA%B8%B0%EC%88%A0%EB%AC%B8%EC%9D%98&spt=-2831
+- Contact path identified; no inquiry/email sent. Q01–Q62 remain draft_prepared_not_sent.
+
+Actual SKU, EU/EEA supply, economic operators, signed SKU-specific DoC scope, BOM/MCU/SBOM/security configuration, CRA classification, vulnerability handling and support period remain Unknown. CRA only; SIL 3 excluded.

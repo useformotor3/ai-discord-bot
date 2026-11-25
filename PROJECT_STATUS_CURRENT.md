@@ -1,4 +1,16 @@
 
+## 2026-11-25 — 현재 기준: PR #280 / Run #1612 및 main push Run #1613 검증, 제조사 기술지원 경로 확인
+- Current main HEAD: e2b2f39a16b5b41b466d1ec3db7138c49874d70e.
+- PR #280 exact HEAD 504ed25a538e0a61dbc500f3ba86ad60ed167414; Run #1612 / 45549584947 completed/success, job 138987281166, 15/15 steps, 189 pytest, traceability 415, official CRA PDFs 3/3, official sources 10, Article 13(8) + Regulation (EU) 2025/2392 locators PASS, provenance round-trip/upload PASS.
+- PR #280 expected-head merge SHA equals main HEAD. Main push Run #1613 / 45549672737 exact SHA + event=push + branch=main, completed/success, job 138987569743, 15/15, 189 pytest, traceability 415, PDFs 3/3, sources 10, provenance PASS.
+- Run #1612 artifacts: PDF ZIP 14992078865 / SHA-256 37d1ed30a314c9afa52ddb5f9b78fbe8b1b8a04847a4a5164b78e5d48e05989f; provenance ZIP 14991919727 / 298a4b0c94af9c31ffd7480158335a05a92ed4f92eadfee1dc0d370a6fe52cee.
+- Run #1613 artifacts: PDF ZIP 14992429240 / SHA-256 685dbace5088cba72eed25c632882dd18bf687ba875b6963eefe683d82057ffc; provenance ZIP 14992583792 / 9ade5f0f156269d8cf6d0605230718f59eb88b43fc572d9bf29c641300b53d6b.
+- Manufacturer detail page direct attempts: manual item timeout; CE/UKCA/catalogue/CAD details 502; Solution Square SPA only. No manufacturer binary acquired. All metadata_only; no individual file SHA-256/signature/revision verification.
+- Manual Ver1.4 official main/Servo lists vs previous empty-category Ver1.3 snapshot remains unresolved.
+- Newly confirmed official contact route: customer center 1544-5948 (08:30–17:30; lunch excluded); Servo technical support Seoul khnam@lsmecapion.com / 070-4343-8207; 경기 070-7772-8422; drive A/S 053-580-9191; technical inquiry portal recorded in report §114.
+- No contact or inquiry sent. Q01–Q62 remain draft_prepared_not_sent. Actual SKU, EU/EEA supply, economic operators, signed SKU DoC scope, BOM/MCU/SBOM/security configuration, CRA classification, vulnerability handling and support period remain Unknown.
+- Report §114 / evidence register §72; CRA only; SIL 3 excluded. Next: authorized, narrowly scoped request for controlled original binary package and document-control metadata; do not send Q01–Q62.
+
 
 ## 2026-11-24 — PR #244 병합 및 main Run #1518 최종 성공
 

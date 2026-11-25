@@ -3814,3 +3814,13 @@ CRA only; SIL 3 excluded.
 - Original manufacturer binary acquisition attempts failed: official detail pages 502/timeouts; Solution Square JS-only; execution container DNS resolution unavailable. No binaries, per-file hashes, signature checks, or actual revision validation. Keep all metadata_only.
 - Q01–Q62 unsent. Actual SKU, EU/EEA supply, economic operators, signed SKU DoC scope, BOM/MCU/SBOM/security configuration, CRA classification, vulnerability handling/support period Unknown. CRA only; SIL 3 excluded.
 - Next priority: official direct attachment URL or controlled manufacturer document package, then independent file hash/signature/revision validation.
+
+
+## 2026-11-25 — PR #280 / Run #1612 및 main push Run #1613, 제조사 기술지원 경로 재확인
+- main HEAD e2b2f39a16b5b41b466d1ec3db7138c49874d70e, PR #280 merged. PR exact-head Run #1612 / 45549584947 SUCCESS, job 138987281166, 15/15 steps, 189 pytest, traceability 415, CRA PDFs 3/3, official sources 10, provenance PASS.
+- Main push Run #1613 / 45549672737 exact SHA + event=push + branch=main, SUCCESS, job 138987569743, 15/15, 189 pytest, traceability 415, PDFs 3/3, sources 10, provenance PASS.
+- Run #1612 archive digests: PDF ZIP 14992078865 / 37d1ed30a314c9afa52ddb5f9b78fbe8b1b8a04847a4a5164b78e5d48e05989f; provenance ZIP 14991919727 / 298a4b0c94af9c31ffd7480158335a05a92ed4f92eadfee1dc0d370a6fe52cee.
+- Run #1613 archive digests: PDF ZIP 14992429240 / 685dbace5088cba72eed25c632882dd18bf687ba875b6963eefe683d82057ffc; provenance ZIP 14992583792 / 9ade5f0f156269d8cf6d0605230718f59eb88b43fc572d9bf29c641300b53d6b.
+- Official manual main and Servo lists show Ver1.4, but earlier empty-category snapshot showed Ver1.3; unresolved. Manual detail timeout. CE/UKCA/catalogue/CAD detail pages 502; Solution Square manual SPA only. No manufacturer binary; all metadata_only; no file hashes/signature/revision inspection.
+- New official support path: customer center 1544-5948, hours 08:30–17:30 (lunch excluded); Servo technical support Seoul khnam@lsmecapion.com / 070-4343-8207, 경기 070-7772-8422; drive A/S 053-580-9191. Official technical inquiry portal recorded in report §114. This is route identification only; no contact was sent.
+- Q01–Q62 unsent. Actual SKU, EU/EEA supply, economic operators, signed SKU-specific DoC, BOM/MCU/SBOM/security configuration, CRA classification, vulnerability handling/support period Unknown. CRA only; SIL 3 excluded.
