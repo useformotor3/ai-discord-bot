@@ -1325,3 +1325,7 @@ Annex I Part II의 실무 요구사항은 machine-readable SBOM(최소 top-level
 
 
 > **운영 교정 v1.2 (2026-11-25):** "다음 단계 계속 진행" 버튼은 이미 행동규약 §1/§8.1에 기록돼 있었으나 assistant가 최종 응답에 실제 버튼을 누락했다. §8.2에 실제 DIL 버튼·`GenUI.issueNewTurn`·CRA 재개 payload·마지막 UI 요소 검사를 hard gate로 추가 중이다. 최신 main/PR/CI를 다시 확인하고, 모든 실질 CRA 응답 마지막에 작동 버튼을 제공한다. CRA only; SIL 3 제외.
+
+
+ 
+> **PR #266 / main update (2026-11-25):** Exact HEAD `6529ec9a9234ffdaa5a763a60a7d3df72646eb98`, Run #1570 SUCCESS, 15/15 returned steps, 189 passed, traceability 397, JSONL 397 valid / 0 invalid / 0 internal blanks. Expected-head squash merge `a015dc95f6c59d331275d646306b2b2a2137f437`; main read-back confirmed. Main push CI remains UNVERIFIED (no combined status or push run returned). Protocol §8.2 v1.2 is merged. iX700M original manual/DoC/catalogue/CAD binaries remain unacquired; latest official listing search metadata is recorded in report §99 / evidence register §57. Inquiry 62 questions, draft not sent; actual SKU/EU supply/operators/DoC coverage/BOM-MCU-SBOM/security configuration/CRA classification remain Unknown. CRA only; SIL 3 excluded.
