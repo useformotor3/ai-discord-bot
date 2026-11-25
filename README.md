@@ -1404,3 +1404,10 @@ Annex I Part II의 실무 요구사항은 machine-readable SBOM(최소 top-level
 - Artifacts PDF 14988832738 (SHA-256 f3a29c9b…7786861), provenance 14989265975 (SHA-256 61736ebe…76fabf).
 - PR diff 7 files(+111/-0), reviews/threads 0. JSONL branch count 408, invalid 0. PR is not merged yet; any further documentation commit requires new exact-head CI before merge.
 - Manufacturer binaries remain metadata_only; Q01–Q62 not sent; product facts Unknown. CRA only; SIL 3 excluded.
+
+
+## 2026-11-25 — PR #275 and main push closeout
+- PR #275 final head `2918f4b62c76d211462428ea32bbbd93a1cbdb61`, Run #1601 SUCCESS; squash merge/current main `cd00a3b67eea7bf18f5143951f4616659157e15e`.
+- Main push Run #1602 / 45541169420 verified from Actions runs collection with exact merge SHA, event=push, branch=main, completed/success. 15/15 steps, 189 pytest, traceability 409, CRA PDFs 3/3, official sources 10, provenance PASS.
+- Artifact IDs/digests and detailed status in report §109, evidence register §67, SESSION_LOG and PROJECT_LOG event `2026-11-25-CRA-PR275-RUN1601-MAIN1602-EXACTHEAD-CLOSEOUT`.
+- Q01–Q62 not sent; product-specific unknowns preserved. CRA only; SIL 3 excluded.
