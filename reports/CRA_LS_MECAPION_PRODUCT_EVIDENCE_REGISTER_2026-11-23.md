@@ -1431,3 +1431,14 @@ Actual SKU, EU/EEA supply, economic operators, signed SKU-specific DoC scope, BO
 - Run #1614 PDF ZIP 14993188416: b9bd452aad02e17501f2df2b8b0eec5642e4f53d42005c4fb98ec2fd06c5be4d; provenance ZIP 14993430968: b045c9001f0140cc98069fda8ff8b08b915de1abf7ffe36ec58e0663e5a91d36.
 - Run #1615 PDF ZIP 14993282289: 9ffdfbdc0a543537516a55bebffa1196b9567e6fdc2069323d84f3fd4f65fc8a; provenance ZIP 14992854400: 63fb6972b2089bf1c8a3c339b6a29501d583538190ed56755c0a353a2c6050dd.
 - Archive hashes are not individual PDF hashes. No change to LS Mecapion evidence state. Metadata_only; manual Ver1.3/1.4 unresolved; Q01–Q62 unsent; all Unknowns retained. CRA only; SIL 3 excluded.
+
+### §72.2 PR #282 / Run #1616 및 main push Run #1617, 제조사 자료 조사
+- PR #282 exact HEAD 8eb522dad46a421f006ea5d0e75ee707f5b6cf8d; Run #1616 / 45550439993, job 138990088400, pull_request, SUCCESS, 15/15, 189 pytest, traceability 417, PDFs 3/3, official sources 10, provenance PASS.
+- Merge/main SHA 127c9ec311e2939059dbff689c3b04f1208e2424; Run #1617 / 45550542045, job 138990414201, push/main exact SHA, SUCCESS, 15/15, 189 pytest, traceability 417, PDFs 3/3, sources 10, provenance PASS.
+- Run #1616 PDF ZIP 14992959520: 2374cce45ba7f1e5d29450546fee2d2ea435c0847c5aa57e83a7111176d14d8b; provenance ZIP 14993720613: 66916a98c060444966da1304135572c03f8ec9f788c0ee1547076fce025debf9.
+- Run #1617 PDF ZIP 14992829930: db929d6bcf77f075c91abb8fb945f6c06981a431e0343f8b5856788ccf4a6a67; provenance ZIP 14992794878: 504b7af212e3c71948fff36bfa5559819e7d2c09dfb6750975a472793bdd036e.
+- These are archive hashes, not individual PDF hashes.
+- Manufacturer metadata rechecked: manual list snapshots show Ver1.4 and Ver1.3 on different index/list snapshots (same displayed posting date 2026-05-26); unresolved. CE iX700MCV PDF metadata 234.4K; UKCA iX700MCV PDF 224.1K; KR/EN catalogue PDFs 10.7M each; CAD/STEP entry 2026-04-21 but actual filenames/sizes not exposed.
+- Official detail pages return HTTP 502 on open; indexed sources do not expose attachment URLs; no original bytes acquired. Do not guess direct download paths. All manufacturer items remain metadata_only; no per-file SHA-256, signature, signer/certificate chain, or internal revision validation.
+- Official support: 1544-5948 (08:30–17:30; lunch 12:30–13:30 excluded), Seoul Servo khnam@lsmecapion.com / 070-4343-8207, Gyeonggi scahn@lsmecapion.com / 070-7772-8422, official technical inquiry portal listed in report §114.6.3. No contact sent.
+- Q01–Q62 draft_prepared_not_sent. Actual SKU, EU/EEA supply, economic operators, signed SKU-specific DoC, BOM/MCU/SBOM/security configuration, CRA classification, vulnerability handling, support period remain Unknown. CRA only; SIL 3 excluded.

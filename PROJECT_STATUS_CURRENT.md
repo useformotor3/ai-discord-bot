@@ -1,4 +1,15 @@
 
+## 2026-11-25 — 현재 기준: PR #282 / Run #1616 및 main push Run #1617 확인 완료
+- Current main HEAD: 127c9ec311e2939059dbff689c3b04f1208e2424.
+- PR #281/#282 merged. PR #282 exact HEAD 8eb522dad46a421f006ea5d0e75ee707f5b6cf8d; Run #1616 / 45550439993, pull_request, SUCCESS, job 138990088400, 15/15, 189 pytest, traceability 417, CRA PDFs 3/3, sources 10, Article 13(8)/Regulation (EU) 2025/2392 locators PASS, provenance PASS.
+- PR #282 merge SHA equals current main. Main push Run #1617 / 45550542045, exact SHA + event=push + branch=main, SUCCESS, job 138990414201, 15/15, 189 pytest, traceability 417, PDFs 3/3, sources 10, provenance PASS.
+- Run #1616 PDF ZIP 14992959520 / 2374cce45ba7f1e5d29450546fee2d2ea435c0847c5aa57e83a7111176d14d8b; provenance ZIP 14993720613 / 66916a98c060444966da1304135572c03f8ec9f788c0ee1547076fce025debf9.
+- Run #1617 PDF ZIP 14992829930 / db929d6bcf77f075c91abb8fb945f6c06981a431e0343f8b5856788ccf4a6a67; provenance ZIP 14992794878 / 504b7af212e3c71948fff36bfa5559819e7d2c09dfb6750975a472793bdd036e.
+- Manufacturer official source recheck: manual list snapshots conflict Ver1.3/1.4; CE/UKCA, KR/EN catalogue and CAD/STEP entries reconfirmed. Official detail pages return HTTP 502; direct attachment URLs not exposed; no manufacturer binary acquired. All metadata_only; no individual hashes/signatures/revision inspection.
+- Official technical support contacts and technical inquiry portal recorded; no email/inquiry sent. Q01–Q62 unsent.
+- Unknowns retained: SKU, EU/EEA supply, economic operators, signed SKU-specific DoC scope, BOM/MCU/SBOM/security config, CRA classification, vulnerability handling, support period.
+- Detailed update in report §114.6 and evidence register §72.2. CRA only; SIL 3 excluded.
+
 ## 2026-11-25 — 현재 기준: PR #281 / Run #1614 및 main push Run #1615 최종 성공
 - Current main HEAD: 5805638439877d2b5dc18d64b7765a67c848a194.
 - PR #281 exact HEAD 28b1568bd6cc37f724c9180e879a29141714fbdb; Run #1614 / 45550104279 completed/success, job 138988973316, 15/15 steps, 475 log lines, 189 pytest, traceability 416, CRA PDFs 3/3, 10 official sources, Article 13(8) + Regulation (EU) 2025/2392 locators PASS, provenance PASS.

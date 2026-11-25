@@ -3209,3 +3209,49 @@ Run #1615 artifacts:
 - Provenance ZIP 14992854400, 2,565 bytes, archive SHA-256 63fb6972b2089bf1c8a3c339b6a29501d583538190ed56755c0a353a2c6050dd.
 
 These are ZIP archive hashes, not individual CRA PDF hashes. Manufacturer binary evidence status is unchanged: metadata_only, no LS Mecapion original file, no per-file hash/signature inspection. Ver1.3/1.4 unresolved; Q01–Q62 unsent; product-specific Unknowns retained. CRA only; SIL 3 excluded.
+
+### 114.6 PR #282 후속 검증 및 제조사 원본자료 직접 취득 조사
+#### 114.6.1 PR #282 / Run #1616 및 main push Run #1617
+PR #282와 병합 후 main push를 다시 조회했다. 두 실행 모두 정확한 HEAD, 이벤트 유형 및 브랜치가 일치하고 단일 job의 15개 step이 모두 성공했다.
+
+| 구분 | PR #282 exact-head | 병합 후 main push |
+|---|---|---|
+| PR HEAD / merge SHA | 8eb522dad46a421f006ea5d0e75ee707f5b6cf8d | 127c9ec311e2939059dbff689c3b04f1208e2424 |
+| Run / ID | #1616 / 45550439993 | #1617 / 45550542045 |
+| Event / branch | pull_request | push / main |
+| Job | 138990088400 | 138990414201 |
+| Result / steps | SUCCESS / 15/15 | SUCCESS / 15/15 |
+| pytest | 189 passed | 189 passed |
+| Traceability | 417 events | 417 events |
+| Commission CRA PDFs | 3/3 fetched and hashed | 3/3 fetched and hashed |
+| Official sources / provenance | 10 / PASS | 10 / PASS |
+| Article 13(8), Regulation (EU) 2025/2392 locators | PASS | PASS |
+
+Run #1616 artifacts:
+- PDF ZIP 14992959520, 3,070,565 bytes, archive SHA-256 2374cce45ba7f1e5d29450546fee2d2ea435c0847c5aa57e83a7111176d14d8b.
+- Provenance ZIP 14993720613, 2,565 bytes, archive SHA-256 66916a98c060444966da1304135572c03f8ec9f788c0ee1547076fce025debf9.
+
+Run #1617 artifacts:
+- PDF ZIP 14992829930, 3,070,566 bytes, archive SHA-256 db929d6bcf77f075c91abb8fb945f6c06981a431e0343f8b5856788ccf4a6a67.
+- Provenance ZIP 14992794878, 2,565 bytes, archive SHA-256 504b7af212e3c71948fff36bfa5559819e7d2c09dfb6750975a472793bdd036e.
+
+위 SHA-256은 GitHub Actions가 업로드한 ZIP 아카이브 해시이며, ZIP 안의 개별 PDF 파일 해시가 아니다. 보고서 및 증거등록부의 이전 문서화가 PR #281의 Run #1614/#1615에 머물러 있어, 이번 절에서 PR #282 및 Run #1616/#1617까지 후속 동기화한다.
+
+#### 114.6.2 제조사 공식 자료의 최신 메타데이터 재확인
+- 공식 매뉴얼 목록/Servo 필터의 검색 인덱스 중 하나는 2026-05-26 게시 항목을 Ver1.4로 표시한다. 다른 공식 목록 스냅샷은 동일 날짜/항목을 Ver1.3으로 표시한다. 이는 서로 다른 목록/캐시 스냅샷에서 확인된 메타데이터 충돌이다. 어느 쪽이 실제 최신 원본 바이너리인지, 파일 내부 개정이 무엇인지는 확인되지 않았다. Ver1.3/1.4를 미해결로 유지한다.
+- Converter CE: [CE_DoC-LVDEMC] iX700MCV.pdf, 234.4K, 2026-04-30 게시 메타데이터.
+- Converter UKCA: [UKCA_DoC_LVDEMC] iX700MCV.pdf, 224.1K, 2026-04-30 게시 메타데이터.
+- KR/EN 카탈로그: iX700M 브로셔 최종KR_251205.pdf 및 iX700M 브로셔 최종EN_251205.pdf, 각 10.7M, 첨부일 2025-12-05.
+- CAD/STEP: iX700M Series 서보드라이브 외형도 2D(CAD), 3D(STEP), 2026-04-21 게시 목록 항목. 검색 인덱스에서 실제 파일명/크기는 노출되지 않았다.
+
+공식 상세 페이지 직접 열기를 반복 시도했으나 HTTP 502 오류가 발생했고, 검색 인덱스도 직접 첨부 URL을 제공하지 않았다. 따라서 파일 bytes를 취득하지 못했다. 임의로 Gnuboard download 경로를 조립하거나 추측하지 않았다. 위 항목 전부 metadata_only로 유지하며 개별 SHA-256, PDF 서명, 서명자/인증서 체인 및 내부 개정번호는 미검증이다.
+
+#### 114.6.3 공식 기술지원 경로
+- 전국 서보 기술문의: 1544-5948, 08:30–17:30 (12:30–13:30 점심시간 제외).
+- 서울 서보 담당: khnam@lsmecapion.com / 070-4343-8207.
+- 경기 담당: scahn@lsmecapion.com / 070-7772-8422.
+- 공식 기술문의 게시판: https://lsmecapion.com/bbs/board.php?bo_table=inquiry&page=1&sca=%EA%B8%B0%EC%88%A0%EB%AC%B8%EC%9D%98&spt=-2831
+연락 경로만 확인했다. 이메일/게시판 문의를 발송하지 않았고 Q01~Q62는 계속 draft_prepared_not_sent 상태다.
+
+#### 114.6.4 증거 경계
+제조사 원본 파일은 하나도 취득하지 못했다. 따라서 제품 증거는 metadata_only다. 실제 SKU, EU/EEA 공급 여부, 경제운영자, SKU별 서명된 EU DoC 적용범위, BOM, MCU 정확한 부품번호, SBOM, 보안 구성, CRA 분류, 취약점 처리, 보안 업데이트/지원기간은 계속 Unknown이다. CRA only; SIL 3 제외.
