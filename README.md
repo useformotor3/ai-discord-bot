@@ -1371,3 +1371,11 @@ Annex I Part II의 실무 요구사항은 machine-readable SBOM(최소 top-level
 - Main push run #1590 ID 45537026894. Actions API query: `actions/runs?head_sha={SHA}&event=push&per_page=100`.
 - PR #271 main sync included report §103, evidence §61, protocol v1.4 §8.4 and project status; this follow-up adds merge/push run closeout to README/SESSION_LOG and append-only PROJECT_LOG.
 - iX700M original binaries remain unacquired; metadata_only. Q01–Q62 draft not sent; Unknowns preserved. CRA only; SIL 3 excluded.
+
+
+## 2026-11-25 — PR #272 및 main Run #1592 검증
+- PR #272 exact HEAD `c273e6511012ec6f7d29c87ab71c6da870c2cf46`, Run #1591 / 45537296095 SUCCESS, 15/15 steps, 189 pytest passed, traceability 405, CRA PDFs 3/3, official sources 10-source provenance PASS/upload.
+- Expected-head squash merge/current main `eb5894767cebdc7f956e31252b2d1831ef554a85`. Diff 6 files(+70/-0), reviews 0, threads 0.
+- Main branch Run #1592 / 45537422906 SUCCESS, 15/15 steps, 189 passed, traceability 405, PDFs 3/3, official sources 10, provenance round-trip/upload PASS. Artifact metadata confirms exact main SHA. Event field is not separately surfaced by job/artifact response.
+- Four artifact ZIPs downloaded and SHA-256 rechecked; report §105 / evidence register §63.
+- Manufacturer iX700M manual Ver1.4/Ver1.3 conflict persists; Converter CE/UKCA, KR/EN catalog and 2D CAD/3D STEP originals remain metadata_only. Q01–Q62 not sent; actual SKU/supply/operators/DoC/BOM/MCU/SBOM/security/classification remain Unknown. CRA only; SIL 3 excluded.
