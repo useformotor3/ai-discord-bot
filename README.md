@@ -1424,3 +1424,11 @@ Annex I Part II의 실무 요구사항은 machine-readable SBOM(최소 top-level
 ## PR #277 validation correction
 - Initial PR exact-head Run #1605 failed at CRA traceability validation because a blank line was appended to PROJECT_LOG.jsonl; line 411 was not valid JSON. Compile succeeded; pytest and source checks were skipped.
 - Preserve all 411 non-empty existing records, remove only blank line(s), append a structured failure event, then re-run strict JSONL validation and exact-head CI. Do not merge until the new run succeeds.
+
+
+## 2026-11-25 — PR #277 and main push Run #1607 closeout
+- PR #277 merged at e39c95cc993e39cd3950338f07e1ce9282cbc03e.
+- PR Run #1606 / 45543168422 and main push Run #1607 / 45543315065 both completed/success, 15/15 steps, 189 pytest, traceability 412, CRA PDFs 3/3, official sources 10, provenance upload PASS.
+- JSONL corrected after Run #1605 failure: 412 physical records, every line parses, 407 unique non-null event IDs; 5 legacy records without event_id retained.
+- Artifact ZIP digests and individual PDF hashes are recorded separately in report §111 and evidence register §69.
+- Manufacturer originals remain metadata_only; Q01–Q62 unsent; product-specific facts Unknown. CRA only; SIL 3 excluded.

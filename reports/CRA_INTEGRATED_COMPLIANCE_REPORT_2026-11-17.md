@@ -3000,3 +3000,41 @@ job log에는 Node.js 20 deprecation, punycode 및 url.parse() deprecation 경�
 PR #277 최초 HEAD cf14a184135bd86be02efa4100a9a7a3894b71c3의 Run #1605 / 45542964674는 failed다. Job 138965657238의 compile 단계까지는 성공했으나 CRA traceability 단계에서 PROJECT_LOG.jsonl line 411 invalid JSON 오류로 중단됐다. 원인은 기존 JSONL이 newline으로 끝나는데 append 시 선행 newline을 한 번 더 넣어 빈 레코드 줄이 생긴 형식 오류다. 이 실패로 pytest 및 live-source/artifact 단계는 skipped이며, 이 HEAD의 테스트 통과를 주장하지 않는다.
 
 교정은 모든 비어 있지 않은 기존 JSONL 레코드를 그대로 보존하고, 빈 줄만 제거한 뒤 Run #1605 실패 기록을 새 JSON object 한 줄로 추가하는 방식이다. 교정 후 전체 물리 라인 JSON 파싱, 레코드 수 및 존재하는 event_id의 중복 검사를 다시 수행하고 새 PR HEAD에서 CI를 재실행한다. 기존 실패 시도와 로그는 보존한다. 운영 코드/workflow 변경은 없다.
+
+
+## §111. 2026-11-25 — PR #277 exact-head 재검증 및 main push 최종 결과
+
+| 구분 | PR #277 exact-head CI | 병합 후 main push CI |
+|---|---|---|
+| Run | #1606 / 45543168422 | #1607 / 45543315065 |
+| SHA | 56f09b43716dca8bda5391b0939a2c7891701ed9 | e39c95cc993e39cd3950338f07e1ce9282cbc03e |
+| Event/branch | pull_request | push / main |
+| Result | completed/success | completed/success |
+| Job | 138966323181 | 138966815473 |
+| Steps | 15/15 | 15/15 |
+| pytest | 189 passed | 189 passed |
+| Traceability events | 412 | 412 |
+| Official CRA PDFs / sources | 3/3 / 10 | 3/3 / 10 |
+| Provenance | JSON round-trip/upload PASS | JSON round-trip/upload PASS |
+
+Run #1606 exact HEAD는 56f09b43716dca8bda5391b0939a2c7891701ed9이며, Run #1605의 빈 JSONL line 오류를 수정한 결과다. strict JSONL 검증에서 412개 물리 레코드 모두 JSON parse 성공, 빈 레코드 없음, 존재하는 event_id 407개 모두 고유함을 확인했다(legacy 5건은 event_id 필드가 없어 원형 보존). Traceability 결과도 project_log_events=412, modern_ids=407, legacy=5다.
+
+PR #277은 expected-head squash merge로 e39c95cc993e39cd3950338f07e1ce9282cbc03e에 병합됐다. 이 merge SHA를 exact head_sha, event=push, head_branch=main 조건으로 Actions runs collection에서 직접 확인해 Run #1607을 식별했다. main ref readback도 같은 SHA를 가리킨다.
+
+### 111.1 Run #1606 artifact archive digest
+- PDF ZIP artifact ID 14990341815, 3,070,566 bytes, archive SHA-256: f5a548236ea06a8bf895c427a30f956af9d4f0e72d025c76e8b32db3d2946482.
+- Provenance ZIP artifact ID 14990650392, 2,564 bytes, archive SHA-256: b1fe3375ee1b483bbda8da88066eeb805b5c1e0c63b34fbab79f09613e298c6d.
+
+### 111.2 Run #1607 artifact archive digest
+- PDF ZIP artifact ID 14989938648, 3,070,566 bytes, archive SHA-256: fabb36f5bae932e24742d03672c772010cb0f94d8a4876448ade82eea42efd17.
+- Provenance ZIP artifact ID 14989474383, 2,565 bytes, archive SHA-256: d58229a18e47be2095f9d7e3671fa86d3595964f71b9a6013276bef35b15ccea.
+
+### 111.3 개별 PDF content hash
+두 run의 job log에서 개별 PDF를 다시 취득해 계산한 값은 아래와 같다. ZIP digest와 개별 PDF hash는 서로 다른 대상이다.
+- CRA-GUIDANCE-2026-5252: 1,190,726 bytes; fe209c250e3d1f7599e42826d91963666951332927edcf511a2e79fe8d2f8234.
+- CRA-GUIDANCE-OJ-2026-6013: 2,709,282 bytes; 40ca76caeb0108f5b97c8f373a95f590b453fe92bd45a483addf3326e48c1dc2.
+- CRA-M606-C2026-7861-ANNEX: 151,267 bytes; 262b09596cb5cbe7d72a2c7789fb2512ee00db7f69082e7def2c8181b0f63276.
+
+Run #1607 logs 459 lines; all 15 returned steps completed/success. Official source canary fetched 10 allowlisted sources, Article 13(8) locator/quote and Regulation (EU) 2025/2392 core-functionality plus Annex I(10)/Annex II(1) locator checks passed. Node.js 20 deprecation warning remained non-failing. No operational workflow or product code changed.
+
+제조사 원본 바이너리는 계속 미취득이므로 manual Ver1.3/1.4 conflict, Converter CE/UKCA declarations, Solution Square manual, KR/EN catalogue, CAD/STEP 모두 metadata_only다. Q01–Q62 발송하지 않았다. Actual SKU, EU/EEA supply, economic operators, signed SKU-specific DoC coverage, BOM, exact MCU, SBOM, security configuration 및 CRA classification은 Unknown 유지. CRA only; SIL 3 제외.

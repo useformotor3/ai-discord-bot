@@ -3777,3 +3777,14 @@ CRA only; SIL 3 excluded.
 - Root cause: an extra leading newline was appended to an already newline-terminated JSONL file, creating a blank line. My first post-write validation filtered empty lines, so it missed the strict validator failure. This is a verification-method gap, not a CRA evidence failure.
 - Correction: reconstruct JSONL from all non-empty existing lines (preserving every JSON object), append a structured failure event, verify every physical line parses and verify all present event_id values are unique. Run new exact-head CI; no merge before success.
 - Run #1604 on main remains SUCCESS; no main changes or workflow changes.
+
+
+## 2026-11-25 — PR #277 Run #1606 / main push Run #1607 final closeout
+- PR #277 exact HEAD 56f09b43716dca8bda5391b0939a2c7891701ed9, Run #1606 / 45543168422 SUCCESS, 15/15 steps, 189 pytest, traceability 412, official CRA PDFs 3/3, 10 official sources, provenance upload PASS.
+- Expected-head squash merge SHA/current main e39c95cc993e39cd3950338f07e1ce9282cbc03e.
+- Direct Actions runs collection filtered by exact merge SHA + event=push confirmed Run #1607 / 45543315065, head_branch=main, completed/success, 15/15 steps, 189 pytest, traceability 412, official sources 10 and provenance upload PASS.
+- Run #1606 PDF ZIP artifact 14990341815 / SHA-256 f5a548236ea06a8bf895c427a30f956af9d4f0e72d025c76e8b32db3d2946482; provenance ZIP 14990650392 / SHA-256 b1fe3375ee1b483bbda8da88066eeb805b5c1e0c63b34fbab79f09613e298c6d.
+- Run #1607 PDF ZIP artifact 14989938648 / SHA-256 fabb36f5bae932e24742d03672c772010cb0f94d8a4876448ade82eea42efd17; provenance ZIP 14989474383 / SHA-256 d58229a18e47be2095f9d7e3671fa86d3595964f71b9a6013276bef35b15ccea.
+- Individual PDF hashes are repeated in report §111; ZIP digests are not individual content hashes. Run #1607 job log 459 lines; all returned steps succeeded.
+- JSONL strict parse now 412 records, no blank lines; 407 unique non-null event IDs and 5 legacy rows with no event_id. Run #1605 failure cause and correction preserved.
+- Manufacturer originals still metadata_only; Q01–Q62 not sent; all product-specific Unknowns retained. CRA only; SIL 3 excluded.

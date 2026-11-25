@@ -235,3 +235,10 @@ main `660eb6d20e62f772272c03971dcd773b03a703f5`의 push Run #1588 / ID `45532289
 - PR #277 Run #1605 exposed a verification gap: local post-write validation filtered blank lines before parsing, while CI correctly treated every physical line as a JSONL record.
 - New hard gate: do not filter empty lines before validation. Require every physical line to be a non-empty valid JSON object; count physical lines and records equally; verify uniqueness for all non-null event_id values; allow only the final newline, never blank records. When appending, do not add a second separator newline.
 - If validation fails, preserve the failed run, record its exact cause, correct only the format defect, and rerun exact-head CI. No merge on a skipped downstream test suite.
+
+
+### 2026-11-25 — PR #277 correction and main push evidence closeout
+- Corrected JSONL strict-line validation passed at PR HEAD 56f09b43716dca8bda5391b0939a2c7891701ed9: 412 physical records, all parse, no blank lines; 407 unique non-null event_id values; 5 legacy records without event_id retained.
+- Run #1606 / 45543168422 exact-head pull_request SUCCESS; expected-head squash merge to e39c95cc993e39cd3950338f07e1ce9282cbc03e.
+- Main push Run #1607 / 45543315065 verified by exact merge SHA + event=push + head_branch=main, completed/success, 15/15, 189 pytest, traceability 412, PDFs 3/3, sources 10, provenance PASS.
+- Preserve archive digest vs individual content hash distinction. Failure Run #1605 remains in log; do not erase failed attempts.
