@@ -3714,3 +3714,13 @@ CRA only; SIL 3 excluded.
 - Post-merge main push Run #1590 / 45537026894 SUCCESS, event=push, exact merge SHA, 15/15 steps, 189 passed, traceability 404, CRA PDF 3/3, provenance 10-source PASS/upload.
 - README and SESSION_LOG now explicitly include PR #271 and post-merge Run #1590; previous main push SUCCESS records remain in history.
 - iX700M manual Ver1.4 vs Ver1.3 index conflict and binary acquisition failures documented in report §104/evidence §62. Q01–Q62 not sent. Unknowns unchanged. CRA only; SIL 3 excluded.
+
+
+## 2026-11-25 — PR #272 exact-head Run #1591 및 main Run #1592 검증
+- 기준 main `eb5894767cebdc7f956e31252b2d1831ef554a85`; 행동규약 v1.4 §8.4, PROJECT_STATUS_CURRENT, README, SESSION_LOG, PROJECT_LOG 및 통합 보고서/증거등록부 재확인.
+- PR #272 HEAD `c273e6511012ec6f7d29c87ab71c6da870c2cf46`, Run #1591 / 45537296095 completed/success; 15/15 steps, 189 passed, traceability 405, CRA PDF 3/3, official source 10, provenance round-trip/upload PASS.
+- PR diff 6 files(+70/-0), 6 ahead/0 behind, reviews 0, threads 0. Expected-head squash merge SHA and main read-back `eb5894767cebdc7f956e31252b2d1831ef554a85`.
+- Main branch Run #1592 / 45537422906 job completed/success; 15/15, 189 passed, traceability 405, PDF 3/3, source 10, provenance round-trip/upload PASS. Artifact metadata confirms branch main and exact merge SHA. Job/artifact response does not expose event field; this limitation is preserved.
+- Artifact ZIPs 14987053784, 14987088640, 14986973967, 14987143761 downloaded; independently computed SHA-256 matched each GitHub digest.
+- Manufacturer original binary retry (official detail URLs + web search) did not retrieve source files. Manual Ver1.4 vs Ver1.3 conflict; Converter CE/UKCA, KR/EN catalogue and CAD/STEP all metadata_only. Q01–Q62 draft_prepared_not_sent; not sent. Actual SKU, EU/EEA supply, economic operators, signed SKU DoC, BOM/MCU/SBOM/security configuration and CRA classification Unknown.
+- CRA only; SIL 3 excluded. Next priority: pursue a reliable manufacturer source/alternate official distribution channel for original attachments and capture SHA-256; do not infer unknown product facts.
