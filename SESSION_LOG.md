@@ -3906,3 +3906,10 @@ CRA only; SIL 3 excluded.
 - 실패 원인: 공식 detail pages timeout, 검색 index snippets omit per-row href, Solution Square JS app shell only. No guessed URL. 신규 제조사 바이너리 0; all metadata_only; no hash/signature/internal revision/SKU scope.
 - Q01–Q62 draft_prepared_not_sent; no manufacturer contact. CRA only; SIL 3 excluded.
 - Sources: https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&sca=CE ; https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&page=4&wr_id=12888 ; https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&sca=CE&wr_id=12886 ; https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&page=3&wr_id=12893 ; https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&page=1&sca=UKCA&spt=-12859 ; https://www.lsmecapion.com/bbs/board.php?bo_table=drawing&sca=Servo+Drive
+
+## 2026-11-25 — iX700M Ver1.3 navigation cross-reference
+- Official PEGA2 Ver1.3 detail page wr_id=12651 exposes previous-post text 'iX700M DRIVE 400[V] 매뉴얼 Ver1.3'. Target href/ID absent; no URL inference.
+- Confirms a navigation reference to Ver1.3 but does not resolve Ver1.3 vs Ver1.4 conflict or establish controlled copy. Actual PDF bytes and revision still unknown.
+- KR/EN catalogue detail search result confirms filenames, 10.7M each, attachment date 2025-12-05; bytes not acquired.
+- All manufacturer items metadata_only; Q01–Q62 unsent; no manufacturer contact; CRA only; SIL 3 excluded.
+- Source: https://lsmecapion.com/bbs/board.php?bo_table=manual&sca=Servo&wr_id=12651 ; https://www.lsmecapion.com/bbs/board.php?bo_table=catalog&wr_id=12110
