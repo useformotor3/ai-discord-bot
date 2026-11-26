@@ -3577,3 +3577,28 @@ Run #1617 artifacts:
 1. 공식 공개 경로에서 실제 anchor href/document ID를 노출하는 새 증거를 찾는다. Ver1.3 target, CE 171~173 individual detail, Solution Square iX700M detail/API/attachment, UKCA Drive Unit, catalogue/CAD 첨부를 분리 추적한다.
 2. 원본 bytes 취득 즉시 파일별 SHA-256, PDF 서명·인증서 체인, 내부 revision, SKU scope를 검사한다. 미취득은 계속 metadata_only.
 3. 신규 공식 근거가 없으면 endpoint 반복 호출을 멈추고 실패 이유/증거 상태를 유지한다.
+
+
+### 114.7.21 2026-11-26 — Solution Square 검색 색인 교차확인 및 PR #298/main CI 종결
+
+**Solution Square 공식 검색 색인 교차확인**
+- 공식 통합검색 `https://sol.ls-electric.com/kr/ko/newSearch?pageNumber=70`의 최신 검색 색인은 전체 1,231건 중 문서 28건을 표시하고, 문서 결과 첫 항목으로 `iX700M 사용 설명서`를 표시한다. 적용제품은 제품명, 태그는 #모션&Servo, 유형은 사용 설명서, 조회수는 171로 노출된다.
+- 같은 검색 결과의 제품 섹션은 제품 8건 중 `iX700M`을 별도 제품 결과로 표시한다. 이는 iX700M 제품과 문서 항목의 검색 색인상 연계를 강화하지만, 문서 ID, 상세 route, API endpoint, 첨부 download URL을 제공하지 않는다.
+- 공식 모션&Servo 카테고리 페이지 `https://ssq.ls-electric.com/kr/ko/product/category/4?pageNumber=8`도 같은 제목/업데이트 2026-09-16을 표시하지만 조회수 165, pageNumber=14 결과는 조회수 171이다. 조회수는 검색 시점/페이지 캐시 값으로 취급하고, 문서 식별자나 파일 버전으로 사용하지 않는다.
+- 직접 open은 여전히 JavaScript SPA shell만 반환한다. 따라서 status는 metadata_only. 검색 색인상 문서 존재/제품명 연계는 확인됐지만 원본 파일 취득 또는 API/detail locator 확인으로 승격하지 않는다.
+
+**PR #298 / Run #1655 / main push Run #1656**
+- PR #298: `https://github.com/useformotor3/ai-discord-bot/pull/298`; base main `792d4e4ba7d5e4652692d86274d8f85474bfeb0b`; exact PR HEAD `82f1d778b48782e98340508081a394979eaf5a86`.
+- PR diff 재검토: 문서 6개만 변경, +75/-0. PROJECT_LOG.jsonl은 공백 행 정규화 후 비어 있지 않은 435개 레코드 모두 JSON parse 성공. 보고서 §114.7.20, 증거등록부 §72.18 및 status/README/SESSION_LOG 변경을 확인했다.
+- Exact-head Run #1655 / ID 45729969157: event=pull_request, exact head `82f1d778b48782e98340508081a394979eaf5a86`, completed/success. GitHub API job summary의 15개 step 모두 success; compile PASS; pytest 189 passed; traceability 435 events; CRA Commission PDFs 3/3 fetch/hash; 10 official sources; Article 13(8), Regulation 2025/2392 core-functionality, Annex I(10)/Annex II(1) locators PASS; 10-record provenance manifest round-trip/upload PASS.
+- Run #1655 artifact ZIPs: CRA PDF ZIP ID 15076785224, 3,070,564 bytes, SHA-256 `c126538f8e57946c6dabd37594d8ab679d95cb716129c7ce06f07da77b9678ba`; provenance ZIP ID 15076501353, 2,565 bytes, SHA-256 `e6f6c4d6e1ddf2781adddf530f7e3f386c540f0422e086f9576d83fa8a488fcb`.
+- Expected-head squash merge used expected PR head `82f1d778b48782e98340508081a394979eaf5a86`; merge SHA/current main `4c948a4b0b829485064ea6f577c9db9b2ce664e6`.
+- Main push Run #1656 / ID 45730146715: event=push, branch=main, exact merge SHA `4c948a4b0b829485064ea6f577c9db9b2ce664e6`, completed/success. API job summary 15/15 success; pytest 189 passed; traceability 435 events; 3 CRA Commission PDFs fetched/hashed; 10 official sources; legal locators and provenance PASS.
+- Run #1656 artifact ZIPs: provenance ZIP ID 15077015001, 2,565 bytes, SHA-256 `b89b8d65a97acedb32150afcc6a052461be2029d6788565168d6b29667a06064`; CRA PDF ZIP ID 15075774949, 3,070,567 bytes, SHA-256 `b55ae7426dab02e131da081805bc51f1afec05700896e297d0b28f233abded5b`.
+- All four artifact digests above are GitHub artifact ZIP hashes, not manufacturer document hashes. Manufacturer originals remain 0 / metadata_only. No manufacturer SHA-256, PDF signature, signer chain, internal revision or SKU applicability has been verified.
+
+**현재 제조사 원본 상태 및 제한**
+- PEGA2 Ver1.3 previous-post target href/wr_id remains unknown; Ver1.4 wr_id=12652 detail/attachment remains unavailable (502/timeout); Ver1.3/Ver1.4 search snapshot conflict remains unresolved.
+- CE rows 171/172/173 remain grouped index entries without individual detail href/IDs. UKCA Drive Unit not located (absence not proven); wr_id=12893 is Converter Unit only.
+- Solution Square iX700M manual and product search association is corroborated, but document ID/API/detail/attachment remains unknown. KR/EN catalogue and CAD/STEP remain metadata_only.
+- Q01~Q62 not sent; no manufacturer contact. CRA only; SIL 3 excluded.
