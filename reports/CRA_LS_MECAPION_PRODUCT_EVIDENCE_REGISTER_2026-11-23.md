@@ -1737,3 +1737,11 @@ Actual SKU, EU/EEA supply, economic operators, signed SKU-specific DoC scope, BO
 - New manufacturer binaries 0; metadata_only. No manufacturer SHA-256, PDF signature, signer chain, revision or SKU-scope verification.
 - Sources: https://sol.ls-electric.com/us/en/product/document/32720 ; https://ssq.ls-electric.com/kr/ko/product/category/4?pageNumber=14 ; https://sol.ls-electric.com/kr/ko/newSearch?pageNumber=70 ; https://www.lsmecapion.com/bbs/board.php?bo_table=manual ; https://www.lsmecapion.com/bbs/board.php?bo_table=manual&sca=Servo ; https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&sca=CE .
 - CRA only; SIL 3 excluded; Q01~Q62 not sent.
+
+
+### §72.30 2026-11-26 — PR #308 exact-head/main push CI 종결
+- PR #308 exact HEAD `6f7e7c39ae0e996de8256961a6f92bf7637d1642`; Run #1683 / 45761338380 pull_request completed/success, 15/15. Compileall PASS; pytest189; traceability claims13/interfaces15/requirements35/SEC36/EVD-SEC crosswalk16/M606 mapping41/PROJECT_LOG events446; 3 Commission PDF sources and 10 official sources PASS; Article 13(8), 2025/2392 core-functionality, Annex I(10), Annex II(1) locators/provenance PASS.
+- Run #1683 artifacts: PDF ZIP 15088989120 / SHA-256 `835474c34e153ea97f2458e154a9259ac3cb5d24e711d8b0c7321d3507bb7a2e`; provenance ZIP 15089233747 / SHA-256 `5e3325250e2cbe59eb7d9b59895902c5847785a54f288f063969b0a5496c7a2b`.
+- Expected-head squash merge SHA/current main `ca405190093fca8796784d98abb4069d8a932a5c`. Run #1684 / 45761461078 main push exact SHA completed/success, 15/15, same test/traceability/source/legal checks PASS.
+- Run #1684 artifacts: PDF ZIP 15088984387 / SHA-256 `451f82ffd4190993f047cca32d7b0ff4052ba07db75424e1c1bd045799b12ff8`; provenance ZIP 15089243856 / SHA-256 `1d7d333e507cf36f5c1f1c8654e4a467d6960321b26fd5f6857bddb4789cbe2a`.
+- Digests are CI artifact ZIP hashes, not manufacturer-source PDF hashes. Manufacturer originals 0 / metadata_only; no manufacturer SHA/signature/signer-chain/revision/SKU validation. CRA only; SIL 3 excluded.

@@ -4066,3 +4066,8 @@ CRA only; SIL 3 excluded.
 - PEGA2 32720 official index confirms PEGA2_ENG_Ver1.3_260831.pdf (EN, 6.0 MB, 2026-09-23); JS shell did not expose actual attachment href/API/download URL/bytes.
 - Solution Square iX700M manual dated 2026-09-16 remains without public individual document ID/detail href/attachment. LS Mecapion manual index displays iX700M Ver1.4 (2026-05-26) and PEGA2 Ver1.3 (2026-04-01); wr_id=12652 endpoint not repeated after prior timeout/502.
 - CE #171/#172/#173 indexed SKU groups/date reconfirmed; individual detail href/wr_id/attachment not exposed. Manufacturer binaries 0 / metadata_only; no manufacturer SHA/signature/signer-chain/revision/SKU validation. CRA only; SIL 3 excluded; Q01~Q62 not sent.
+
+## 2026-11-26 — PR #308 / Run #1683~#1684 closeout (§114.7.32 / §72.30)
+- PR #308 exact-head 6f7e7c39ae0e996de8256961a6f92bf7637d1642; Run #1683 / 45761338380 success 15/15, compileall PASS, pytest189, traceability446, Commission PDFs3/3, official sources10, Article 13(8)/2025/2392 locators PASS.
+- Expected-head squash merge/current main ca405190093fca8796784d98abb4069d8a932a5c. Run #1684 / 45761461078 push/main exact SHA success 15/15, same checks PASS.
+- Artifact ZIP hashes are recorded in report §114.7.32 / evidence §72.30; they are not manufacturer PDF hashes. Manufacturer binaries 0 / metadata_only. CRA only; SIL 3 excluded.
