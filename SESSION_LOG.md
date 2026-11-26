@@ -3994,3 +3994,10 @@ CRA only; SIL 3 excluded.
 - PEGA2 previous-post title, CE 171~173 grouped scope, UKCA Converter/Drive 구분, Solution Square JS shell, KR/EN catalogue, CAD/STEP metadata를 다시 확인했다. 신규 제조사 바이너리 0, metadata_only.
 - Run #1653 exact main push SHA 확인 및 job log 재검토: 15개 API step summaries 모두 success; CRA sources 10, PDFs 3/3, legal locators, provenance PASS. API 15-step summary와 이전 aggregate 25/25 집계는 구분해 기록.
 - 운영 코드/workflow 변경 없음. Q01~Q62 미발송. CRA only; SIL 3 제외.
+
+
+## 2026-11-26 — PR #298 병합 및 main push CI 검증
+- Solution Square 통합검색에서 iX700M 사용 설명서와 iX700M 제품 결과를 교차확인했다. ID/detail/API/attachment는 미노출, 직접 open은 JS SPA shell, metadata_only. 카테고리 페이지별 views 165/171은 snapshot metadata 차이로 기록.
+- PR #298 exact HEAD 82f1d778b48782e98340508081a394979eaf5a86, 문서 6개 +75/-0. JSONL 435 records parse valid. Run #1655 pull_request success; 15 API step summaries success; pytest189, traceability435, CRA PDFs3/3, official sources10, legal locators/provenance PASS.
+- Expected-head squash merge SHA/current main 4c948a4b0b829485064ea6f577c9db9b2ce664e6. Run #1656 main push exact SHA success; same checks PASS. Artifact ZIP digests in report §114.7.21 / evidence §72.19; not manufacturer file hashes.
+- 제조사 원본 0 / metadata_only. Q01~Q62 미발송, 제조사 연락 없음. CRA only; SIL 3 제외.
