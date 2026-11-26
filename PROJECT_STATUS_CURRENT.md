@@ -42,6 +42,14 @@
 
 ---
 
+## 2026-11-26 — 최신 상태: PR #329 Run #1725/#1726 종결 및 제조사 원본 링크 추적
+- Verified main HEAD: `f5d4d4578b4267f27fc0a2d06b72ae6c009cea28`; PR #329 merged with expected head `96bdf1c94d766d58ad3cd41d9198b5a25c25ea3a`.
+- Exact-head Run #1725 / 45820940421 and main push Run #1726 / 45821120618 both completed/success, 15/15; pytest189; traceability467 (modern462+legacy5); Commission PDFs3/3; official CRA sources10; provenance PASS. ZIP hashes are CI archives only.
+- Solution Square pages still expose only JS app shell to direct page reading; no static JS bundle/source-map/API/attachment href recovered. PEGA2 doc32720 Ver1.3 metadata and iX700M 2026-09-16 listing confirmed, but detail/download hrefs unknown.
+- CE #171~#173 models/date confirmed at official index only; individual detail/PDF hrefs unknown. wr_id=12652 remains the previously confirmed anchor destination from 12651; its own previous-post anchor/PDF unknown. Failed endpoint not retried.
+- Manufacturer binaries0; no manufacturer SHA-256/signature/chain/revision/SKU checks. No guessed IDs/URLs; Q01~Q62 not sent. CRA only; SIL 3 excluded. Details report §114.7.53 / evidence §72.50.
+
+
 # CRA 현재 상황판 — 2026-11-26
 
 - main HEAD: `293a8c5bcc8e328478ac18987aba60d12ad20e41` (PR #322 merge SHA)

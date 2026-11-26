@@ -1609,3 +1609,6 @@ PR #314의 exact-head CI Run #1695와 main push Run #1696가 모두 SUCCESS(15/1
 
 
 > **PR #328 / main CI closeout (2026-11-26):** exact-head Run #1723 / 45820488232 and main push Run #1724 / 45820657970 both SUCCESS 15/15, pytest189, traceability466 (modern461+legacy5), Commission PDFs3/3, official CRA sources10, provenance PASS. Expected base 1211308446a4c8b2b81a9e7f285fc3828f769ccf; merge/current main `ba09a41d90cda4add0b4c95180dba7b3d0d27d65`. See report §114.7.52 / evidence §72.49. Manufacturer file status remains separately qualified in §114.7.51 / §30.1. CRA only; SIL 3 excluded.
+
+
+> **PR #329 / main CI closeout (2026-11-26):** exact-head Run #1725 / 45820940421 and main push Run #1726 / 45821120618 both SUCCESS 15/15, pytest189, traceability467 (modern462 + legacy5), Commission PDFs3/3, official sources10, provenance PASS. Expected main base ba09a41d90cda4add0b4c95180dba7b3d0d27d65; merge/current main `f5d4d4578b4267f27fc0a2d06b72ae6c009cea28`. See report §114.7.53 / evidence §72.50. Manufacturer binary remains 0; no manufacturer file hash/signature verification. CRA only; SIL 3 excluded.
