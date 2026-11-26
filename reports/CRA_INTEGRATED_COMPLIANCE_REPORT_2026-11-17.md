@@ -3874,3 +3874,12 @@ Run #1617 artifacts:
 - Run #1698 / 45788121534, push/main exact merge SHA, completed/success; job 139799990444, 15/15. Same validation: compileall PASS, traceability453 (modern448 + legacy5), pytest189, Commission PDFs3/3, official sources10, legal locators/provenance PASS.
 - Run #1698 artifacts: source ZIP ID 15101870902, 3,070,566 bytes, SHA-256 `1d92f8a999414224feb91fd55059885d205a2c761b2752ddc17e279dc8db9e83`; provenance ZIP ID 15100779316, 2,565 bytes, SHA-256 `10ba609f7df7391ff9500caaeae39a60ee7bef9842becbcdf0f5d00ced1ba1a3`.
 - All four hashes above are GitHub CI artifact ZIP digests, not manufacturer PDF hashes. Manufacturer binaries remain 0; no manufacturer SHA-256, PDF signature, signer chain, internal revision or SKU verification. CRA only; SIL 3 excluded; Q01~Q62 not sent.
+
+
+### 114.7.40 2026-11-26 — PR #316 기록 동기화 exact-head / main push 종결
+- PR #316 exact head `ccacb4716eb1665bcd2a695971f822dfaa7ce16e`; Run #1699 / 45788389243 pull_request, exact-head completed/success, job 139800907274, 15/15. Logs: compileall PASS, CRA traceability claims13/interfaces15/requirements35/SEC36/EVD-SEC16/M60641/project_log_events454 (modern449 + legacy5), pytest **189 passed**, Commission PDFs3/3, official sources10, legal locators/provenance PASS.
+- Run #1699 artifact ZIPs: source ID 15102170619, 3,070,565 bytes, SHA-256 `87bcdb1dd49e6e947c817a2ca45c87c18b3083d60cdd31d3a32677202b8fc804`; provenance ID 15101107894, 2,565 bytes, SHA-256 `4726a352ab09652c9ca3b066c3741f79e16e11958a37e736a74143f090fe81f4`.
+- PR #316 expected-head merge succeeded; merge SHA `26974977a527d546e0257a8bce3401db3e76c587`; merged state and main ref exact equality independently confirmed.
+- Run #1700 / 45788548649, push/main exact merge SHA, completed/success; job 139801437794, 15/15. Same validation: compileall PASS, traceability454 (modern449 + legacy5), pytest189, Commission PDFs3/3, official sources10, legal locators/provenance PASS.
+- Run #1700 artifacts: source ID 15102580348, 3,070,564 bytes, SHA-256 `1844c5afd471795930bce7ba3655ae75a791315682de1987968059c424735294`; provenance ID 15100274805, 2,565 bytes, SHA-256 `47076268b2b900c805f8ba4cb4248009456b084ad58c7c268345ca9dd27938b2`.
+- Artifact hashes above are GitHub CI ZIP digests, not manufacturer PDF hashes. Manufacturer binaries remain 0; SHA-256/signature/signer chain/revision/SKU checks on manufacturer originals remain unverified. CRA only; SIL 3 excluded; Q01~Q62 not sent.

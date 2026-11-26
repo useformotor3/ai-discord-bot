@@ -1570,3 +1570,6 @@ PR #314의 exact-head CI Run #1695와 main push Run #1696가 모두 SUCCESS(15/1
 
 
 > **PR #315 / main CI closeout (2026-11-26):** PR exact-head Run #1697 / 45787893954 and main push Run #1698 / 45788121534 both completed/success, 15/15, pytest189, traceability453, Commission PDFs3/3, official sources10, legal locators/provenance PASS. Expected-head merge/current main `adeda5347682960e119f7df721c7c568c57b92a6`. See report §114.7.39 / evidence §72.37 for artifact ZIP digests. Manufacturer binaries remain 0. CRA only; SIL 3 excluded.
+
+
+> **PR #316 / main CI closeout (2026-11-26):** PR exact-head Run #1699 / 45788389243 and main push Run #1700 / 45788548649 both completed/success, 15/15, pytest189, traceability454, Commission PDFs3/3, official sources10, legal locators/provenance PASS. Expected-head merge/current main `26974977a527d546e0257a8bce3401db3e76c587`. See report §114.7.40 / evidence §72.38 for artifact ZIP digests. Manufacturer binaries remain 0. CRA only; SIL 3 excluded.
