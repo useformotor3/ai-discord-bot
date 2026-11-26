@@ -1876,6 +1876,20 @@ Actual SKU, EU/EEA supply, economic operators, signed SKU-specific DoC scope, BO
 | MFG-TRACE-20261126-D | [LS메카피온 wr_id=12651 detail](https://www.lsmecapion.com/bbs/board.php?bo_table=manual&sca=Servo&wr_id=12651) → 실제 이전글 anchor | 열린 HTML의 anchor destination을 따라 `https://www.lsmecapion.com/bbs/board.php?bo_table=manual&sca=Servo&wr_id=12652` 확인 | 목적지 fetch timeout. wr_id=12652 본문/PDF와 **wr_id=12652 자체의 이전글 anchor href**는 UNKNOWN. |
 | MFG-TRACE-20261126-E | 동일 wr_id=12651 공식 게시물의 공개 검색 스냅샷과 직접 열린 HTML 비교 | 검색 스냅샷은 PEGA2 Ver1.3 / `PEGA2_KOR_Ver1.3_260826.pdf`; 직접 열린 HTML은 PEGA2 Ver1.1 / `PEGA2_KOR_Ver1.1_260612.pdf` 표시 | 동일 게시물의 스냅샷/현재 추출 내용 충돌. 원본 bytes 및 revision metadata로 판정 전까지 UNRESOLVED. |
 
+
+### 30.1 2026-11-26 — 공개 검색색인에서 별도 공식 PEGA2 PDF 링크 발견 및 관계 검증
+| Evidence ID | 공식 출처/관찰 경로 | 확인된 사실 | 아직 확보하지 못한 증거 / 상태 |
+|---|---|---|---|
+| MFG-TRACE-20261126-F | [LS ELECTRIC 공식 업로드 PDF](https://sol.ls-electric.com/uploads/document/17808791009590/PEGA2_KOR_Ver1.1_260605.pdf?type=attachment) | 공식 호스트의 실제 PDF URL. PDF 파서로 본문을 열었으며 표지에 PEGA2 Series User Manual, Ver1.1 표시 | document 32720의 첨부라고 증명되지 않음. doc32720은 EN Ver1.3 파일명을 표시. 로컬 binary 미취득, SHA/signature/chain 미검증 |
+| MFG-TRACE-20261126-G | [PEGA2 document 32720 공개 검색색인](https://sol.ls-electric.com/us/en/product/document/32720) | 2026-09-23, `PEGA2_ENG_Ver1.3_260831.pdf`, EN, 6.0 MB, PEGA2 series 확인 | JS Version selector의 실제 attachment href/API 및 PDF bytes 계속 UNKNOWN |
+| MFG-TRACE-20261126-H | [Solution Square Motion&Servo 분류목록](https://ssq.ls-electric.com/kr/ko/product/category/4?pageNumber=14), [통합검색](https://sol.ls-electric.com/kr/ko/newSearch?pageNumber=70) | iX700M 사용 설명서, 2026-09-16 목록 날짜 재확인 | detail href/document ID/attachment href UNKNOWN. 별도 LS메카피온 manual index의 iX700M Ver1.4 (2026-05-26)는 다른 목록이므로 동일 문서로 합치지 않음 |
+| MFG-TRACE-20261126-I | [LS메카피온 CE index](https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&sca=CE) | #171 220B; #172 370B/300B; #173 750B/550B/450B; 2026-04-30 | 개별 detail href/wr_id와 첨부 href 미노출. 인접 #170/#174 ID로 추정하지 않음 |
+| MFG-TRACE-20261126-J | [LS메카피온 manual index](https://www.lsmecapion.com/bbs/board.php?bo_table=manual), [wr_id=12651 검색 스냅샷](https://www.lsmecapion.com/bbs/board.php?bo_table=manual&sca=Servo&wr_id=12651) | manual index에는 iX700M DRIVE 400[V] Ver1.4 (2026-05-26); wr_id=12651 snapshot의 이전글 제목은 Ver1.3. 이전에 추적한 실제 anchor 목적지는 wr_id=12652 | wr_id=12652 페이지 자체의 이전글 anchor 및 attachment는 UNKNOWN; 별도 인덱스 문서와 Solution Square 2026-09-16 항목을 동일시하지 않음 |
+
+- **파일 취득과 URL 발견 구분:** 공식 PDF direct URL은 한 건 발견했으나 프로젝트 실행환경에 PDF bytes를 저장하지 못했다. 따라서 제조사 원본 binary local acquisition=0, manufacturer SHA-256=NOT VERIFIED, PDF signature/signer chain/revocation/trust root=NOT VERIFIED, revision/SKU applicability=NOT VERIFIED.
+- **PR #327 CI read-back:** Run #1721 exact-head / 45817451856 and Run #1722 main push / 45817611667 both SUCCESS 15/15; pytest189; traceability465 (modern460+legacy5); Commission PDFs3/3; official CRA sources10; source/provenance artifacts uploaded. Artifact ZIP digests are CI package hashes, not manufacturer PDF hashes. Main `1211308446a4c8b2b81a9e7f285fc3828f769ccf`.
+- 기존 실패 endpoint 재시도 없음; 추정 ID/URL 없음; CRA only; SIL 3 excluded; Q01~Q62 not sent.
+
 - 제조사 바이너리 신규 취득: **0**. 제조사 파일 SHA-256, PDF 서명, signer certificate chain, revocation/trust-chain, 내부 revision 및 SKU scope 검증: **NOT PERFORMED**.
 - PEGA2 attachment URL, iX700M 2026-09-16 detail/attachment href, CE #171~#173 individual hrefs, wr_id=12652 자체의 이전글 anchor href는 계속 UNKNOWN. wr_id=12652 detail URL은 wr_id=12651의 이전글 anchor 목적지로만 확인됨.
 - 검색색인·목록 메타데이터는 원본 PDF 취득/진위/서명/제품 적용범위의 증거가 아니다. CRA only; SIL 3 excluded; Q01~Q62 not sent.

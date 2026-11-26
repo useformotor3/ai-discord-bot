@@ -1,5 +1,14 @@
 # CRA 현재 상황판 — 2026-11-26
 
+- **최신 main HEAD:** `1211308446a4c8b2b81a9e7f285fc3828f769ccf`; PR #327 merged (head `4a737ac2055a8b189ca68039b89b4b107a91b691`, merge SHA == main).
+- PR #327 Run #1721 exact-head SUCCESS 15/15; Run #1722 main push SUCCESS 15/15; pytest189; traceability465 (modern460+legacy5); Commission PDFs3/3; official CRA sources10; provenance uploads PASS.
+- 신규 제조사 조사: PEGA2 document32720은 EN Ver1.3 metadata만 재확인, direct attachment href UNKNOWN. 별도 LS ELECTRIC 공식-host PDF Ver1.1 실제 URL 발견했으나 doc32720 귀속 미증명 및 local bytes 미취득.
+- iX700M Solution Square 2026-09-16 listing 확인; detail/document ID/attachment href UNKNOWN. LS메카피온 별도 manual index에는 iX700M Ver1.4 (2026-05-26) 항목이 있으나 동일 문서로 취급하지 않음.
+- CE #171~#173 모델군/date 확인; 개별 detail/attachment href UNKNOWN. wr_id=12652는 wr_id=12651 이전글 anchor 목적지로 확인, target 자체의 이전글 anchor UNKNOWN.
+- 제조사 PDF local binary0; manufacturer SHA-256/signature/certificate chain/revocation/revision/SKU validation NOT VERIFIED. CI ZIP hashes are not manufacturer PDF hashes. CRA only; SIL 3 excluded; Q01~Q62 not sent.
+- 상세: 보고서 §114.7.51, 증거등록부 §30.1.
+
+
 - Last verified main baseline before PR #327: `4589f83dec1119e56ff1d7e6ab908ec411c20f3f` (PR #326 merge SHA; refs/heads/main verified).
 - PR #326 exact-head Run #1719 SUCCESS 15/15; main push Run #1720 SUCCESS 15/15; pytest189; traceability464 (modern459+legacy5); Commission PDFs3/3; official CRA sources10; legal locators/provenance PASS.
 - PR #326 artifact ZIP digests recorded in report §114.7.50 / evidence §72.48; ZIP hashes are not manufacturer PDF hashes.
