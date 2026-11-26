@@ -4076,3 +4076,8 @@ CRA only; SIL 3 excluded.
 - PR #309 exact-head b09b5206b52cec5271ddffa3ff02fd6ab9f5f870; Run #1685 / 45761654876 success 15/15, compileall PASS, pytest189, traceability447, Commission PDFs3/3, official sources10, Article 13(8)/2025/2392 locators PASS.
 - Expected-head squash merge/current main b04b7b0dd0e0d774af1c755fb5595316b2106a4c. Run #1686 / 45761741257 push/main exact SHA success 15/15, same checks PASS.
 - Artifact ZIP hashes in report §114.7.33 / evidence §72.31 are not manufacturer PDF hashes. Manufacturer binaries 0 / metadata_only. CRA only; SIL 3 excluded.
+
+## 2026-11-26 — PR #310 / Run #1687~#1688 closeout (§114.7.34 / §72.32)
+- PR #310 exact-head 119ee7207ea6ea8155ae80b0ae9eae1052690c5b; Run #1687 / 45761944295 success 15/15, compileall PASS, pytest189, traceability448, Commission PDFs3/3, official sources10, Article 13(8)/2025/2392 locators PASS.
+- Expected-head squash merge/current main 7889937298c125cbbc402af29bb50f10591f361f. Run #1688 / 45762058166 push/main exact SHA success 15/15, same checks PASS.
+- Artifact ZIP hashes in report §114.7.34 / evidence §72.32 are not manufacturer PDF hashes. Manufacturer binaries 0 / metadata_only. CRA only; SIL 3 excluded.
