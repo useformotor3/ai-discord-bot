@@ -3625,3 +3625,20 @@ Run #1617 artifacts:
 - **재검증:** Run #1655 / ID 45729969157은 exact corrected HEAD에서 completed/success, 189 pytest passed, traceability 435 events, CRA PDFs 3/3, official sources 10, legal locators 및 provenance PASS. 이후 PR #298을 expected-head로 병합하고 Run #1656 main push도 성공했다.
 - **재발 방지:** PROJECT_LOG.jsonl을 append할 때는 줄 끝 공백/빈 줄을 제거한 뒤 append하고, PR 생성 전 모든 비어 있지 않은 줄을 JSON parse한다. CI failure를 성공으로 덮지 않고 실패 run ID·원인·수정 commit·재검증 run을 함께 기록한다.
 - **정정 이력:** PR #298 초안 본문에는 최초 JSONL validation이 성공했다고 잘못 적혔으나, 실제 Run #1654 실패를 확인한 뒤 blank-line 문제를 고치고 Run #1655의 성공을 확인했다. 최종 병합된 PR #298의 JSONL은 435개 레코드 모두 유효하다.
+
+
+### 114.7.24 2026-11-26 — PR #300 및 exact-head/main push CI 종결, 문서 배치 업데이트 개선
+
+- PR #300: `https://github.com/useformotor3/ai-discord-bot/pull/300`; base main `9f77fcdb0498b4ab9dd88e8ac097458c8bd1d75b`; final exact PR HEAD `35e42f29a18ba09086f149ffff911a3026092e2f`; 문서 6개, +75/-0.
+- PROJECT_LOG.jsonl 최종 438개 비어 있지 않은 레코드 모두 JSON parse 성공. Run #1654의 blank-line 실패와 정정은 §114.7.23/§72.21에 기록했다.
+- Exact-head Run #1667 / ID 45731053759: event=pull_request, exact head `35e42f29a18ba09086f149ffff911a3026092e2f`, completed/success. API job summary 15/15 success; compile PASS; pytest 189 passed; traceability 438 events; CRA Commission PDFs 3/3 fetched/hashed; 10 allowlisted official sources; Article 13(8), Regulation 2025/2392 core-functionality, Annex I(10)/Annex II(1) locators PASS; 10-record provenance manifest round-trip/upload PASS.
+- Run #1667 artifacts: provenance ZIP ID 15076453510, 2,565 bytes, SHA-256 `89960ced3bb0434633423efbe65c5776bf1aaaf1c80fec539e9204b2a9ed0334`; CRA PDF ZIP ID 15076309072, 3,070,566 bytes, SHA-256 `41c65b5207abb9cf0240d75c5aa8a4f569f574cfc387d3e6f7863156eeacf83f`.
+- Expected-head squash merge required PR head `35e42f29a18ba09086f149ffff911a3026092e2f`; merge SHA/current main `d510ca516adae596d4ba43fef7cb281fc185afc5`.
+- Main push Run #1668 / ID 45731210292: exact SHA `d510ca516adae596d4ba43fef7cb281fc185afc5`, event=push, branch=main, completed/success. API job summary 15/15 success; pytest189; traceability438; CRA PDFs3/3; official sources10; legal locators and provenance PASS.
+- Run #1668 artifacts: provenance ZIP ID 15076841160, 2,565 bytes, SHA-256 `1b87f95bc366db21aff3b202b4d85818664f4641920215eda6a66094b992119c`; CRA PDF ZIP ID 15076344123, 3,070,566 bytes, SHA-256 `334bcc8a484937809fd08542f7320d4636193188bc27b60c264fa74f775bc6de`.
+- These digests identify GitHub artifact ZIP archives, not LS메카피온/Solution Square manufacturer files. Manufacturer source binaries remain 0 / metadata_only; manufacturer SHA-256, PDF signature, signer chain, internal revision, and SKU scope are unverified.
+
+**CI 실행 효율 개선 기록**
+- PR #300 브랜치에서 여러 파일을 순차적으로 `update_file`해 각각 별도 commit이 생성되면서 Runs #1660~#1666이 새 head로 대체되어 cancelled되었다. 이는 코드/테스트 실패가 아니라 같은 브랜치에 후속 commit이 연속 push되어 이전 head 검증이 취소된 것이다. 최종 exact-head Run #1667은 성공했다.
+- 재발 방지: 여러 문서를 함께 갱신할 때 Git blob들을 생성한 뒤 단일 tree + 단일 commit + expected-SHA가 있는 ref update로 묶는다. PR에는 최종 head 하나만 올리고 exact-head CI를 한 번 실행한다. 이번 PR의 GitHub 대화에도 동일 개선점을 기록했다.
+- CRA only; SIL 3 제외. Q01~Q62 문의/발송 없음.

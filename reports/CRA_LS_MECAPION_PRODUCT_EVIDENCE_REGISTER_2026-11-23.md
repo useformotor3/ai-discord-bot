@@ -1648,3 +1648,15 @@ Actual SKU, EU/EEA supply, economic operators, signed SKU-specific DoC scope, BO
 - Failure output: `PROJECT_LOG.jsonl line 435: invalid JSON (Expecting value: line 1 column 1 (char 0))`, traceability validation exit 1. Cause was an empty separator line in JSONL, not a product-source or code test failure.
 - Corrective action: removed empty lines, validated 435 non-empty records with invalid=0; corrected exact HEAD `82f1d778b48782e98340508081a394979eaf5a86`; Run #1655 / 45729969157 success, pytest189, traceability435, CRA PDFs3/3, official sources10, legal locators/provenance PASS.
 - Prevent recurrence: normalize JSONL line separators and parse every non-empty line before PR creation; preserve failed run ID, exact failure text, corrective commit and rerun result. PR #298 final merged content has valid JSONL.
+
+
+### §72.22 2026-11-26 — PR #300 exact-head/main CI 종결 및 CI 중복 실행 개선
+
+- PR #300 final HEAD `35e42f29a18ba09086f149ffff911a3026092e2f`, 문서 6개 +75/-0, PROJECT_LOG.jsonl 438 records parse valid.
+- Run #1667 / 45731053759 pull_request exact-head completed/success; API steps 15/15, pytest189, traceability438, CRA PDFs3/3, official sources10, Article13(8)/2025/2392 locators and provenance PASS.
+- Expected-head squash merge SHA/current main `d510ca516adae596d4ba43fef7cb281fc185afc5`. Main push Run #1668 / 45731210292 exact SHA/event=push/branch=main completed/success; same checks PASS.
+- Run #1667 artifacts: provenance ZIP 15076453510 / SHA-256 `89960ced3bb0434633423efbe65c5776bf1aaaf1c80fec539e9204b2a9ed0334`; PDF ZIP 15076309072 / SHA-256 `41c65b5207abb9cf0240d75c5aa8a4f569f574cfc387d3e6f7863156eeacf83f`.
+- Run #1668 artifacts: provenance ZIP 15076841160 / SHA-256 `1b87f95bc366db21aff3b202b4d85818664f4641920215eda6a66094b992119c`; PDF ZIP 15076344123 / SHA-256 `334bcc8a484937809fd08542f7320d4636193188bc27b60c264fa74f775bc6de`.
+- Artifact hashes are GitHub ZIP hashes, not manufacturer files. Manufacturer binaries 0 / metadata_only; SHA/signature/signer chain/revision/SKU unverified.
+- Runs #1660–#1666 were cancelled because sequential multi-file writes created successive branch heads; this is superseded-run overhead, not a failed test. Future multi-file docs updates should use one Git tree/commit/ref update to trigger one final-head CI.
+- CRA only; SIL 3 excluded.

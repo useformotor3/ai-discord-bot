@@ -1,3 +1,8 @@
+## 2026-11-26 — PR #300 / Run #1667~#1668 종결 (§114.7.24 / §72.22)
+- PR #300 exact HEAD 35e42f29a18ba09086f149ffff911a3026092e2f, 6 docs +75/-0, JSONL 438 records valid. Run #1667 exact-head success, pytest189, traceability438, PDFs3/3, official sources10, legal locators/provenance PASS.
+- Expected-head merge/current main d510ca516adae596d4ba43fef7cb281fc185afc5. Main push Run #1668 exact SHA/event=push/branch=main success, same checks PASS.
+- Runs #1660~#1666 were superseded/cancelled by successive branch commits, not test failures. Future multi-file docs writes will be batched into one Git tree/commit/ref update.
+- Manufacturer binaries 0 / metadata_only. CRA only; SIL 3 excluded.
 ## 2026-11-26 — Run #1654 실패 원인 및 복구 기록 (§114.7.23 / §72.21)
 - Run #1654 / 45729917159 실패: PROJECT_LOG.jsonl line 435 invalid JSON. 원인은 JSONL 레코드 사이의 빈 행. exit code 1.
 - 빈 행 제거 후 435개 non-empty records JSON parse valid; corrected head 82f1d778b48782e98340508081a394979eaf5a86의 Run #1655 success (pytest189, traceability435, CRA PDFs3/3, sources10, legal locators/provenance PASS).
