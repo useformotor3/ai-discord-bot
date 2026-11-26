@@ -1620,3 +1620,14 @@ Actual SKU, EU/EEA supply, economic operators, signed SKU-specific DoC scope, BO
 - **실패 원인:** 502/timeout, search snippet와 opened HTML의 row 불일치, previous-post anchor target 미노출, CE 그룹형 목록, Solution Square JS shell.
 - **Run #1653:** exact main SHA `792d4e4ba7d5e4652692d86274d8f85474bfeb0b`, event push, completed/success. API job step summary 15/15 success; job log에서 CRA 공식 원문/locator/provenance PASS. 기존 aggregate closeout의 25/25와 구분해 API 응답의 15개 step summary를 기록.
 - Q01~Q62 미발송, 제조사 연락 없음. CRA only; SIL 3 제외.
+
+
+### §72.19 2026-11-26 — Solution Square 검색 색인 교차확인 및 PR #298 CI 종결
+
+- Solution Square 공식 통합검색 pageNumber=70: 전체 1,231건, 문서 28건, `iX700M 사용 설명서` 문서 결과(적용제품 제품명, #모션&Servo, 사용 설명서, 171 views) 및 제품 8건 중 `iX700M` 별도 결과를 확인. document ID/detail/API/attachment URL은 노출되지 않음.
+- 공식 category pageNumber=8도 같은 제목/업데이트 2026-09-16을 표시하나 조회수 165; pageNumber=14는 171. 조회수 차이는 검색 시점/캐시 차이로 보고 문서 식별자·버전 증거로 사용하지 않는다. 직접 open은 JS SPA shell. metadata_only.
+- PR #298 exact HEAD `82f1d778b48782e98340508081a394979eaf5a86`; diff 6 docs +75/-0; PROJECT_LOG.jsonl nonempty 435 records parse valid. Run #1655 / 45729969157 pull_request success, API step summary 15/15, pytest189, traceability435, CRA PDFs3/3, official sources10, legal locators/provenance PASS.
+- Expected-head squash merge SHA/current main `4c948a4b0b829485064ea6f577c9db9b2ce664e6`. Main push Run #1656 / 45730146715 exact SHA/event=push/branch=main completed success; 15/15 API step summaries, pytest189, traceability435, CRA PDFs3/3, sources10, legal locators/provenance PASS.
+- Run #1655 artifact ZIPs: PDF 15076785224 / SHA-256 `c126538f8e57946c6dabd37594d8ab679d95cb716129c7ce06f07da77b9678ba`; provenance 15076501353 / SHA-256 `e6f6c4d6e1ddf2781adddf530f7e3f386c540f0422e086f9576d83fa8a488fcb`.
+- Run #1656 artifact ZIPs: provenance 15077015001 / SHA-256 `b89b8d65a97acedb32150afcc6a052461be2029d6788565168d6b29667a06064`; PDF 15075774949 / SHA-256 `b55ae7426dab02e131da081805bc51f1afec05700896e297d0b28f233abded5b`.
+- Artifact digests are GitHub ZIP hashes, not manufacturer file hashes. Manufacturer originals 0 / metadata_only; manufacturer SHA/signature/signer chain/revision/SKU scope not verified. Q01~Q62 unsent; no manufacturer contact. CRA only; SIL 3 excluded.
