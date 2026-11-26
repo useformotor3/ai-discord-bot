@@ -1753,3 +1753,11 @@ Actual SKU, EU/EEA supply, economic operators, signed SKU-specific DoC scope, BO
 - Expected-head squash merge SHA/current main `b04b7b0dd0e0d774af1c755fb5595316b2106a4c`. Run #1686 / 45761741257 main push exact SHA completed/success, 15/15, same checks PASS.
 - Run #1686 artifacts: PDF ZIP 15090117382 / SHA-256 `e14a780fe2dc9e74f0db971cf98548262c1c1008976946915f5e18f118690eca`; provenance ZIP 15089812889 / SHA-256 `31036d381b3ff236a6c7fcd4220c811f068b74475b907842e8f6ffe12d442955`.
 - Digests are CI artifact ZIP hashes, not manufacturer-source PDF hashes. Manufacturer originals 0 / metadata_only; no manufacturer SHA/signature/signer-chain/revision/SKU validation. CRA only; SIL 3 excluded.
+
+
+### §72.32 2026-11-26 — PR #310 exact-head/main push CI 종결
+- PR #310 exact HEAD `119ee7207ea6ea8155ae80b0ae9eae1052690c5b`; Run #1687 / 45761944295 pull_request completed/success, 15/15. Compileall PASS; pytest189; traceability claims13/interfaces15/requirements35/SEC36/EVD-SEC crosswalk16/M606 mapping41/PROJECT_LOG events448; Commission PDFs3/3 and official sources10 PASS; Article 13(8), 2025/2392 core-functionality, Annex I(10), Annex II(1) locators/provenance PASS.
+- Run #1687 artifacts: PDF ZIP 15090401004 / SHA-256 `bdf68fb611e925996762a8fb46bf19b61b28b49e2d19f56946b1d92b8f936227`; provenance ZIP 15089898857 / SHA-256 `dccc11b5e272060cac5778424886b86f10b1075ee896760231dccce2ffc6ddbd`.
+- Expected-head squash merge SHA/current main `7889937298c125cbbc402af29bb50f10591f361f`. Run #1688 / 45762058166 main push exact SHA completed/success, 15/15, same checks PASS.
+- Run #1688 artifacts: PDF ZIP 15089799317 / SHA-256 `970def930b58444aa820e61b64e22190ad94bc4e16f6a89e327d7d6a357317d2`; provenance ZIP 15090199027 / SHA-256 `a4291bd943bbd4e390351806061f1f131c3acd687724aafdf9f71f5c1bd360c4`.
+- Digests are CI artifact ZIP hashes, not manufacturer-source PDF hashes. Manufacturer originals 0 / metadata_only; no manufacturer SHA/signature/signer-chain/revision/SKU validation. CRA only; SIL 3 excluded.
