@@ -3704,3 +3704,12 @@ Run #1617 artifacts:
 - 실제 파일 bytes가 확보되지 않았으므로 제조사 파일 SHA-256, PDF 전자서명 존재/유효성, 서명자 인증서 체인, PDF 표지·본문 revision, SKU 범위 검증은 전부 미실시/미확정이다. GitHub CI artifact ZIP 해시를 제조사 PDF 해시로 전용하지 않는다.
 - 후속 P0는 #12652의 상세/첨부를 공식 링크에서 확보해 PDF bytes를 내려받는 것, 그리고 CE #171~#173 각 행의 실제 href를 공개 HTML 또는 공식 검색/문서 API에서 확보하는 것이다. 문서 ID를 추정하거나 실패한 endpoint를 반복하지 않는다.
 - CRA only; SIL 3 제외. Q01~Q62 미발송.
+
+
+### 114.7.28 2026-11-26 — PR #304 exact-head Run #1675 및 main push Run #1676 종결
+- PR #304 문서 변경 6개(+57/-0), 단일 tree/commit. Exact PR HEAD `7e10032519fd224419f8ba7e00ed9d9c0c559a6f`; Run #1675 / 45751710487: event=pull_request, exact-head, completed/success, 15/15 steps. compileall PASS, pytest 189 passed, CRA traceability PASS (442 project-log events), official CRA sources 10/10, Article 13(8), Regulation (EU) 2025/2392 core-functionality/Annex I(10)/Annex II(1) locators, provenance round-trip PASS.
+- Run #1675 artifacts: PDF ZIP ID 15086360629, 3,070,566 bytes, SHA-256 `991fccd6301a3e8b287093943f6b6738b9109ce0baa705e8d1b68b083b4a6d54`; provenance ZIP ID 15085942073, 2,565 bytes, SHA-256 `ff2381bf5801b6851816238f3b95150c1e6352f2990d17e8a4fc984beb001100`.
+- Expected-head squash merge enforced PR head `7e10032519fd224419f8ba7e00ed9d9c0c559a6f`; merge SHA/current main `3d83dd2fb5ea5d49b12897d66b76d695b24f9b64`. Main ref independently confirmed exact equality.
+- Main push Run #1676 / 45751795978: event=push, branch=main, exact merge SHA, completed/success, 15/15 steps. compileall PASS, pytest 189 passed, traceability442, official CRA sources10/10, legal locators and provenance PASS.
+- Run #1676 artifacts: PDF ZIP ID 15086100969, 3,070,566 bytes, SHA-256 `48e323f91e5f11875f67a18f43308719e756866feb018c26a8bc714b63cd1068`; provenance ZIP ID 15085991303, 2,565 bytes, SHA-256 `4058633b3dae4b9e9baa85160fb6d7691e94fafa0fdabd737c3bf03b40498709`.
+- 위 4개 digest는 GitHub CI artifact ZIP 해시이며 LS메카피온 제조사 PDF 해시가 아니다. 제조사 원본 바이너리 취득 0 / metadata_only; 제조사 SHA-256/PDF signature/signer chain/revision/SKU 미검증. CRA only; SIL 3 제외; Q01~Q62 미발송.
