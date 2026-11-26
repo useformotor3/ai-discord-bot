@@ -1719,3 +1719,11 @@ Actual SKU, EU/EEA supply, economic operators, signed SKU-specific DoC scope, BO
 - Manufacturer binaries acquired this turn: 0. All PEGA2/iX700M/CE evidence remains metadata_only; SHA-256, PDF signature, signer chain, internal revision and SKU scope not verified.
 - Sources: https://sol.ls-electric.com/us/en/product/document/32720 ; https://www.lsmecapion.com/bbs/board.php?bo_table=manual&sca=Servo&wr_id=12651 ; https://lsmecapion.com/bbs/board.php?bo_table=manual ; https://www.lsmecapion.com/bbs/board.php?bo_table=manual&sca= ; https://www.lsmecapion.com/bbs/board.php?bo_table=manual&sca=Servo ; https://ssq.ls-electric.com/kr/ko/product/category/4?pageNumber=14 ; https://sol.ls-electric.com/kr/ko/newSearch?pageNumber=70 ; https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&sca=CE ; https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&page=4&wr_id=12888 .
 - CRA only; SIL 3 excluded; Q01~Q62 not sent.
+
+
+### §72.28 2026-11-26 — PR #306 exact-head/main push CI 종결
+- PR #306 exact HEAD `0cd50a8acc78bb49de8a04bbb8600e209ec68958`; Run #1679 / 45752937289 pull_request exact-head completed/success, 15/15 steps, compileall PASS, pytest189, traceability444, official CRA sources10, Article 13(8)/2025/2392 core-functionality/Annex I(10)/Annex II(1) locators and provenance PASS.
+- Expected-head squash merge/current main `770fc317d21a25dc99eb209d1a9644f2d1257ea8`. Main push Run #1680 / 45753033948 exact SHA/event=push/branch=main completed/success, 15/15 steps, same validation PASS.
+- Run #1679 artifact ZIPs: PDF 15086810508 / SHA-256 `0498d87ed6f820353877fa59e431429ee355851a141339e93b1bb86ace06cd8c`; provenance 15085779588 / SHA-256 `ee367ac003a2c3c20cf3ca17b6effa2cd4cd0534cac034cb7b5346948e99c57b`.
+- Run #1680 artifact ZIPs: PDF 15085918922 / SHA-256 `4ef3a706cc3083cf6455e206d88d03cde911042ab6d780d758fb1ca4f4cbe4d2`; provenance 15086795720 / SHA-256 `38e14b7f477a0eab1a5bafef7ce2457ca0d197335cf36d8b628ab1a8207bcf3c`.
+- Digests are GitHub CI artifact ZIP hashes, not manufacturer source files. Manufacturer binaries 0 / metadata_only; no manufacturer hash/signature/signer-chain/revision/SKU validation. CRA only; SIL 3 excluded.

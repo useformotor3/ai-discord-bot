@@ -1539,3 +1539,6 @@ Annex I Part II의 실무 요구사항은 machine-readable SBOM(최소 top-level
 
 
 > **2026-11-26 §114.7.29 / §72.27:** Solution Square PEGA2 User Manual doc ID 32720 is confirmed; index metadata lists `PEGA2_ENG_Ver1.3_260831.pdf` (EN, 6.0 MB, updated 2026-09-23). LS Mecapion PEGA2 KR Ver1.3 attachment metadata is `PEGA2_KOR_Ver1.3_260826.pdf` (6.6 MB). No actual attachment URL/bytes acquired. iX700M label conflict persists: wr_id=12651 previous-post says Ver1.3; standard/Servo list says Ver1.4; empty-category snapshot says Ver1.3; wr_id=12652 detail/PDF unavailable. Solution Square iX700M 2026-09-16 index item confirmed but no detail ID/attachment. CE #171~#173 grouped rows only; #170 wr_id=12888 is 150B only and not used for ID inference. Manufacturer binaries 0 / metadata_only. CRA only; SIL 3 excluded.
+
+
+> **PR #306 / main CI closeout (2026-11-26):** PR exact-head Run #1679 / 45752937289 and main push Run #1680 / 45753033948 both completed/success, 15/15 steps, compileall PASS, pytest189, traceability444, official CRA sources10, legal locators/provenance PASS. Expected-head merge/current main `770fc317d21a25dc99eb209d1a9644f2d1257ea8`. CI ZIP hashes and artifact IDs are in report §114.7.30 / evidence §72.28; they are not manufacturer-file hashes. Manufacturer originals 0 / metadata_only. CRA only; SIL 3 excluded.

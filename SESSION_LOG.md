@@ -4055,3 +4055,9 @@ CRA only; SIL 3 excluded.
 - iX700M conflict: wr_id=12651 이전글 label Ver1.3, 기본/Servo list Ver1.4, 빈 분류 list snapshot Ver1.3. row anchor target wr_id=12652 상세/첨부 미취득. UNRESOLVED.
 - Solution Square iX700M 2026-09-16 색인 확인, detail ID/attachment 미노출. CE #171~#173 개별 href/첨부 미확보. #170 wr_id=12888 is 150B only, no adjacent-ID inference.
 - Manufacturer binaries 0 / metadata_only. No SHA-256/PDF signature/signer chain/revision/SKU validation. CRA only; SIL 3 excluded; Q01~Q62 not sent.
+
+
+## 2026-11-26 — PR #306 exact-head 및 main push CI 종결
+- PR #306 exact HEAD 0cd50a8acc78bb49de8a04bbb8600e209ec68958; Run #1679 / 45752937289 pull_request exact-head completed/success, 15/15, compileall PASS, pytest189, traceability444, official CRA sources10, legal locators/provenance PASS.
+- Expected-head squash merge/current main 770fc317d21a25dc99eb209d1a9644f2d1257ea8. Run #1680 / 45753033948 push/main exact SHA completed/success, same checks PASS.
+- Artifact ZIP hashes are recorded in report §114.7.30 / evidence §72.28; they are not manufacturer PDF hashes. Manufacturer originals 0 / metadata_only. CRA only; SIL 3 excluded.
