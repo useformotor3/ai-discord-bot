@@ -1777,3 +1777,14 @@ Actual SKU, EU/EEA supply, economic operators, signed SKU-specific DoC scope, BO
 - Expected-head squash merge SHA/current main `c92984b987083f6bc9133b5345867a804ea9d54f`. Run #1692 / 45762563955 main push exact SHA completed/success, 15/15, same checks PASS.
 - Run #1692 artifacts: PDF ZIP 15089664214 / SHA-256 `03124c9991042c2536138f855d2b516317a472b875e64fd277307199726ca08f`; provenance ZIP 15089509400 / SHA-256 `8e2e161a1cd3ea0334877b2bab5e877f014818d468f5995fcf1b3c10b7870ba6`.
 - Digests are CI artifact ZIP hashes, not manufacturer-source PDF hashes. Manufacturer originals 0 / metadata_only; no manufacturer SHA/signature/signer-chain/revision/SKU validation. CRA only; SIL 3 excluded.
+
+
+### §72.35 2026-11-26 — PR #313 closeout and new official index findings
+- PR #313 exact head `18018194146eb996914578d9dd59d132effa281a`; Run #1693 / 45762752285 pull_request success 15/15; pytest189; traceability451 (modern446, legacy5); Commission PDFs3/3; official sources10; Article 13(8)/2025/2392 legal locators PASS.
+- Run #1693 ZIPs: source ID 15091095590 / SHA-256 `6c24e3e42c69b3c5f9badcf538411b186e619203e7ec50b3234011291929bbc2`; provenance ID 15091095638 / SHA-256 `8580e462e08b6fe8e08539ed67c3602cea1386217a94321ad870df22d0eabc28`.
+- Expected-head merge/current main `08138829040d8c262baf218385ae2d4968b8d1d1`; Run #1694 / 45762866934 main push exact SHA success 15/15; same checks PASS.
+- Run #1694 ZIPs: source ID 15091165408 / SHA-256 `be5e2fba2b1814f4a12c67e4f3822c8fa130b7d0c1d81115bdf3a044f9ef9080`; provenance ID 15091045634 / SHA-256 `a05df3a653931da83b14797ea8640a1ab2b74678b7e5c9a463cc6f03ea8d7cf9`. Digests are CI ZIPs, not manufacturer PDF hashes.
+- PR #313 body/title stale “PR #312” wording corrected in this record.
+- Solution Square doc32720 detail is confirmed; indexed English PEGA2 Ver1.3 attachment name is visible but actual attachment URL not. Separate official PEGA2 Ver1.0 direct PDF URL: `https://ssq.ls-electric.com/uploads/document/17761472300650/PEGA2_KOR_Ver1.0_260413.pdf?type=attachment`. iX700M listing date 2026-09-16 confirmed; detail href/document ID unresolved.
+- LS Mecapion CE #171/#172/#173 model titles are indexed (220B / 370B+300B / 750B+550B+450B); individual hrefs unresolved. PEGA2 Ver1.3 manual row is wr_id12651 with attachment `PEGA2_KOR_Ver1.3_260826.pdf`, not requested 12652. iX700M Ver1.4 manual index row confirmed but wr_id unresolved. CE #170 wr_id12888 is distinct.
+- Manufacturer binaries 0 / metadata_only; no manufacturer SHA/signature/signer-chain/revision/SKU validation. CRA only; SIL 3 excluded; Q01~Q62 not sent.
