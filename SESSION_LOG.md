@@ -4135,3 +4135,11 @@ CRA only; SIL 3 excluded.
 - Run #1704 / 45795181803 push/main exact merge SHA success 15/15; same 189 pytest and source validation. Artifact ZIP digests and extracted Commission PDF hashes recorded in report §114.7.42/evidence §72.40.
 - Manufacturer index: official Solution Square category page confirms iX700M manual dated 2026-09-16; PEGA2 doc32720 indexed filename/version/size; LS Mecapion CE #171~#173 model titles and date. No new detail/attachment IDs for iX700M, CE records or wr_id12652. Manufacturer binaries0; no manufacturer hash/signature/signer-chain/revision/SKU validation.
 - No guessed IDs/URLs; no retry of failed wr_id12652 endpoint. CRA only; SIL3 excluded; Q01~Q62 not sent.
+
+
+## 2026-11-26 — PR #319 / Run #1705~#1706 종결 및 wr_id=12652 인접 링크 단서
+- PR #319 head e85a6c4593a83daff9af08ff62ad5ac0798b21df; Run #1705 / 45795546062 exact-head success 15/15; pytest189; traceability457 (modern452+legacy5); Commission PDFs3/3; official sources10; legal locators/provenance PASS.
+- Expected main base e8b545b679cfda632a8e36fddbfc48ec00357d8d; compare ahead1/behind0; 6 docs-only files, 44 additions/0 deletions. Expected-head merge; merge/current main db90ef36b2b8c222a801b03bb26b284029c477fc.
+- Run #1706 / 45795722205 main push exact SHA success 15/15; same validation. ZIP digests and Commission PDF internal hashes in report §114.7.43/evidence §72.41.
+- wr_id12651 detail page names PEGA2 Ver1.3 attachment and previous-article label iX700M DRIVE 400[V] Ver1.3. Actual previous href is not exposed, so no assumption it is ID12652. No failed endpoint retry.
+- Manufacturer binaries0; manufacturer hashes/signatures/cert chain/revision/SKU unverified. CRA only; SIL3 excluded; Q01~Q62 not sent.
