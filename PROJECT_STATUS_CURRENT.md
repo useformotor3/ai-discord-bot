@@ -1,3 +1,9 @@
+## 2026-11-26 — PR #308 / Run #1683~#1684 종결 (§114.7.32 / §72.30)
+- PR #308 exact-head Run #1683 success, 15/15, compileall PASS, pytest189, CRA traceability446, 3 Commission PDF sources and 10 official sources, Article 13(8)/2025/2392 legal locators/provenance PASS.
+- Expected-head merge/current main ca405190093fca8796784d98abb4069d8a932a5c. Run #1684 main push exact SHA success, 15/15 and same checks PASS.
+- CI ZIP digests/artifact IDs are in §114.7.32 / §72.30 and are not manufacturer PDF hashes. Manufacturer binaries 0 / metadata_only.
+- CRA only; SIL 3 excluded; Q01~Q62 not sent.
+
 ## 2026-11-26 — 공식 공개 색인 재검증 (§114.7.31 / §72.29)
 - PEGA2 doc 32720 색인은 파일명/언어/크기/적용제품을 재확인했으나 JS shell로 attachment href/API/download URL/bytes 미확보.
 - iX700M 2026-09-16 Solution Square 항목의 개별 ID/detail href는 UNKNOWN. LS메카피온 공식 매뉴얼 색인은 iX700M Ver1.4(2026-05-26), PEGA2 Ver1.3(2026-04-01) 표시. wr_id=12652 상세 재호출 금지 유지.
