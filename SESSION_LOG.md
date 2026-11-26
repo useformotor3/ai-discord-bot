@@ -4217,3 +4217,9 @@ CRA only; SIL 3 excluded.
 - Rechecked Solution Square PEGA2 doc32720, iX700M 2026-09-16 category/search, classic-view route. Direct page reads expose JS shell only; no static JS bundle/source map/public API/document JSON/attachment href recovered.
 - PEGA2 Ver1.3 indexed metadata remains confirmed; actual attachment href unknown. iX700M ID/detail/attachment unknown. CE #171~#173 exact models/date index-only, individual links unknown. wr_id=12652 own previous-post anchor/PDF unknown; no failed endpoint retry.
 - No new manufacturer binary; no manufacturer SHA/signature/chain/revision/SKU verification. No guessed IDs/URLs; Q01~Q62 not sent; CRA only; SIL 3 excluded. See report §114.7.53 / evidence §72.50.
+
+
+## 2026-11-26 — PR #330 / Run #1728~#1729 closeout
+- PR #330 exact-head Run #1728 / 45823938086 SUCCESS 15/15, pytest189, traceability468; expected-head merge SHA/current main 0d6db6e7be98ca130a8ceedb7ae6b8627b30d95d.
+- Main push Run #1729 / 45824091662 exact SHA + push + main SUCCESS 15/15; pytest189; traceability468; Commission PDFs3/3; official sources10; provenance PASS. Artifact ZIP digests and sizes are in report §114.7.54 / evidence §72.51.
+- Current situation board corrected to current main. Manufacturer binary status unchanged at 0; attachment/detail hrefs remain unknown. CRA only; SIL 3 excluded.
