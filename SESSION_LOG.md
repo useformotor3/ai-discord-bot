@@ -3969,3 +3969,11 @@ CRA only; SIL 3 excluded.
 - Run #1646 PDF/provenance artifacts 15071491072 / 15070583873; Run #1647 artifacts 15071680573 / 15070574079. SHA-256 recorded in report §114.7.17 and evidence §72.15.
 - Manufacturer binary acquisition remains 0; metadata_only; no manufacturer SHA/signature/revision/SKU-scope validation. Q01–Q62 unsent; CRA only; SIL 3 excluded.
 
+
+
+## 2026-11-26 — Official manufacturer index recheck §114.7.18 / §72.16
+- Fresh official search-index verification: PEGA2 Ver1.3 detail wr_id12651 shows previous-post title iX700M Ver1.3 but no target href/wr_id; general/Servo manual row41=Ver1.4 while empty-category snapshot row41=Ver1.3. Preserve conflict. Ver1.4 wr_id12652 still 502/no attachment.
+- CE row171/172/173 grouped SKU labels reconfirmed (220B; 370B/300B; 750B/550B/450B); individual IDs/details/attachments not recovered. UKCA wr_id12893 is Converter Unit only; Drive Unit UKCA not found (absence not proven). iX700M UL certificate is separate certification.
+- Solution Square iX700M manual 2026-09-16 listing confirmed, but JS shell hides ID/detail/attachment. Catalogue KR/EN 10.7M each and CAD/STEP 2026-04-21 listings confirmed; no binaries fetched.
+- Manufacturer binary acquisition remains 0; metadata_only; no manufacturer hash/signature/signer-chain/revision/SKU verification. Q01~Q62 unsent. CRA only; SIL 3 excluded.
+
