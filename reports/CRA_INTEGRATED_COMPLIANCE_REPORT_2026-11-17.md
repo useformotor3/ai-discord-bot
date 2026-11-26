@@ -3759,3 +3759,27 @@ Run #1617 artifacts:
 - Main push Run #1680 / 45753033948: event=push, branch=main, exact merge SHA, completed/success, 15/15 steps. compileall PASS, pytest 189 passed, traceability444, official CRA sources10/10, legal locators and provenance PASS.
 - Run #1680 artifacts: PDF ZIP ID 15085918922, 3,070,565 bytes, SHA-256 `4ef3a706cc3083cf6455e206d88d03cde911042ab6d780d758fb1ca4f4cbe4d2`; provenance ZIP ID 15086795720, 2,565 bytes, SHA-256 `38e14b7f477a0eab1a5bafef7ce2457ca0d197335cf36d8b628ab1a8207bcf3c`.
 - 위 4개 digest는 GitHub CI artifact ZIP 해시이며 LS메카피온 제조사 PDF 해시가 아니다. 제조사 원본 바이너리 취득 0 / metadata_only; 제조사 SHA-256/PDF signature/signer chain/revision/SKU 미검증. CRA only; SIL 3 제외; Q01~Q62 미발송.
+
+
+### 114.7.31 2026-11-26 — 공식 공개 검색 색인 재검증 및 attachment/detail locator 경계
+**조사 기준:** main HEAD `daaf7134142f3d6cb1ef78b23fad6a5a8d3aad23`; 직전 조사 §114.7.30 / 증거등록부 §72.28. 본 절은 공식 제조사 공개 페이지의 검색 색인 결과를 새로 대조한 기록이며, 실제 첨부 원본 취득으로 간주하지 않는다.
+
+**Solution Square — PEGA2 문서 ID 32720**
+- 공식 Solution Square 공개 검색 색인에서 `PEGA2 User Manual`, document ID 32720의 상세 경로 `https://sol.ls-electric.com/us/en/product/document/32720` 및 `PEGA2_ENG_Ver1.3_260831.pdf`, English, 6.0 MB, Update 2026-09-23, applicable product PEGA2 series를 재확인했다.
+- 공식 상세 URL을 열면 현재 수집 가능한 응답은 JavaScript 앱 셸뿐이다. 이 회차에 실제 anchor `href`, API 응답의 attachment object, signed/download URL 또는 PDF bytes를 얻지 못했다. attachment URL은 UNKNOWN으로 유지한다. 문서 ID/파일명/크기 메타데이터를 실제 파일 확보로 취급하지 않는다.
+
+**Solution Square — iX700M 사용 설명서 2026-09-16**
+- 기존 공식 카테고리 및 통합검색 결과의 제목·날짜(2026-09-16) 표시는 재확인했으나, 개별 document ID와 detail href는 공식 검색 색인 결과에 나타나지 않았다. 카테고리 URL `https://ssq.ls-electric.com/kr/ko/product/category/4?pageNumber=14` 및 통합검색 URL `https://sol.ls-electric.com/kr/ko/newSearch?pageNumber=70`는 JS 앱 셸로만 수집된다.
+- PEGA2 ID 32720의 전용/재사용은 금지한다. iX700M document ID, detail href, attachment URL은 계속 UNKNOWN.
+
+**LS메카피온 — 매뉴얼 및 CE**
+- 제조사 공식 매뉴얼 검색 색인 결과는 iX700M DRIVE 400[V] 매뉴얼 Ver1.4 (2026-05-26)와 PEGA2 매뉴얼 Ver1.3 (2026-04-01)을 각각 표시한다. 이는 공식 목록의 현재 표시 상태를 뒷받침하지만, wr_id=12652 상세 본문/첨부파일의 실제 bytes나 내부 revision을 입증하지 않는다.
+- wr_id=12652는 앞선 공식 목록 anchor를 따라 확인된 detail destination으로 유지한다. 이전 상세 요청이 timeout/502/Internal Error였으므로 이번에는 실패 endpoint를 반복 호출하지 않았다. 해당 detail의 본문·첨부 href·PDF는 미확보이며 Ver1.3/Ver1.4 label conflict는 UNRESOLVED.
+- 공식 CE 색인 #171/#172/#173은 각각 iX700MD1-B-220B, iX700MD1-B-370B 및 300B, iX700MD1-B-750B 및 550B 및 450B로 표시되고 게시일은 2026-04-30이다. 이번 공식 검색 결과에도 개별 상세 href/wr_id 또는 첨부파일명이 노출되지 않았다. #170 / wr_id=12888 / 150B 자료에서 인접 ID를 추정하지 않는다.
+
+**바이너리 및 검증 상태**
+- 신규 제조사 바이너리 취득: 0건. PEGA2 EN, iX700M manual, CE #171~#173은 metadata_only.
+- 제조사 원본 SHA-256, PDF 서명 유무/유효성, 서명자 인증서 체인, 내부 revision, SKU 적용범위는 모두 미검증. CI artifact ZIP digest와 혼동하지 않는다.
+- 실패 endpoint 반복, wr_id/document ID 추정, attachment URL 조립은 수행하지 않았다. 다음 진전 조건은 공식 앱이 실제로 반환하는 문서/첨부 식별자 또는 제조사 공개 색인에 노출된 개별 링크, 그리고 다운로드된 실제 bytes다.
+- 공식 검색 근거: https://sol.ls-electric.com/us/en/product/document/32720 ; https://ssq.ls-electric.com/kr/ko/product/category/4?pageNumber=14 ; https://sol.ls-electric.com/kr/ko/newSearch?pageNumber=70 ; https://www.lsmecapion.com/bbs/board.php?bo_table=manual ; https://www.lsmecapion.com/bbs/board.php?bo_table=manual&sca=Servo ; https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&sca=CE .
+- CRA only; SIL 3 excluded; Q01~Q62 not sent.
