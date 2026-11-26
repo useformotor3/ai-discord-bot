@@ -1,5 +1,17 @@
 # CRA 현재 상황판 — 2026-11-26
 
+- 기준 main HEAD: `eb0bccb746a94d3a24f5d13bfb6f561fd33b617a` (PR #317 병합 커밋)
+- PR #317: merged; exact-head Run #1701 SUCCESS 15/15; main push Run #1702 SUCCESS 15/15; pytest189; traceability455 (modern450 + legacy5).
+- 제조사 공개 색인 신규 확인: PEGA2 doc32720 파일명/버전/크기/목차/적용제품, iX700M 사용 설명서 제목·유형·Motion&Servo 태그, CE #171~#173 SKU 그룹 및 게시일.
+- 여전히 미확보: PEGA2 doc32720 실제 attachment href/바이너리, iX700M 2026-09-16 document ID/detail/attachment href, LS메카피온 wr_id=12652 상세/PDF, CE #171~#173 개별 href/원본 바이너리.
+- 제조사 원본 바이너리 0건. Run artifact digest는 GitHub CI ZIP 해시이며 제조사 PDF hash가 아님.
+- 다음 우선순위: 공개 검색색인의 상세 링크 추출 가능 경로 및 새 공식 JS/API 리소스 확인. 실패 endpoint 반복·ID 추정 금지.
+- 범위: CRA only; SIL 3 제외; Q01~Q62 문의 금지.
+
+---
+
+# CRA 현재 상황판 — 2026-11-26
+
 - 기준 main HEAD: `26974977a527d546e0257a8bce3401db3e76c587` (PR #316 병합 커밋)
 - PR #316: merged; exact-head Run #1699 SUCCESS 15/15; main push Run #1700 SUCCESS 15/15; pytest189; traceability454.
 - 제조사 원본 추적 미완료: PEGA2 doc32720 attachment href, iX700M 2026-09-16 document ID/detail href, LS메카피온 wr_id=12652, CE #171~#173 개별 href 및 원본 바이너리 미확인.
