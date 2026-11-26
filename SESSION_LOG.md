@@ -4232,3 +4232,11 @@ CRA only; SIL 3 excluded.
 - LS ELECTRIC official search page reveals dynamic automation-download field names and Solution Square link, but no actual file href/API/JS bundle. Direct SSQ page reads show JS app shell only. Static resource not recovered; do not invent endpoints.
 - CE #171~#173 model/date index-only; individual hrefs unknown. wr_id=12652 own previous-post anchor/PDF unknown. Manufacturer binary count 0; no manufacturer hash/signature/chain/revision/SKU verification.
 - No guessed IDs/URLs, no failed endpoint retries, Q01~Q62 not sent; CRA only; SIL 3 excluded. See §114.7.55 / §72.52.
+
+
+## 2026-11-27 — PR #332 / Run #1734~#1735 closeout
+- PR #332 exact-head Run #1734 / 45913163831 SUCCESS 15/15; pytest189; traceability472; expected-head merge SHA/current main 86174ae03d5f73fe50095c9d3a222ddf13feddfe.
+- Main push Run #1735 / 45913256940 exact SHA + push + main SUCCESS 15/15; pytest189; traceability472; official CRA PDF canary3/3; official sources10; live locators/provenance PASS.
+- Artifact ZIP digests and IDs recorded in report §114.7.56 / evidence §72.53; these are CI artifacts, not manufacturer PDF hashes.
+- CI self-correction: Run #1732/#1733 detected an interior blank JSONL record. The first trailing-whitespace trim was insufficient; removing all whitespace-only lines fixed validation. No failed PR head was merged.
+- Official Solution Square JS bundle/API and actual document attachment hrefs remain unavailable. Manufacturer binary0; no hash/signature/chain/revision/SKU checks. CRA only; SIL 3 excluded.
