@@ -1887,3 +1887,10 @@ Actual SKU, EU/EEA supply, economic operators, signed SKU-specific DoC scope, BO
 - Run #1718 ZIPs: source `b5f9949a9d270c10d52ebedcf05cb9469c34419f870cb04159503e5d85d9fb88` (ID15115153438, 3,070,565 bytes); provenance `da656938404e9984f96e0afdb04b40a67cc244c75c4470b7cbdec1479c82dc20` (ID15115597831, 2,564 bytes). These are GitHub CI ZIP digests only, not manufacturer PDF hashes.
 - CI emitted non-blocking Node.js 20 deprecation warnings for actions running under Node 24; all required steps succeeded.
 - Manufacturer original binaries0; PEGA2/iX700M/CE target attachment hrefs and wr_id=12652 page's own previous-post anchor href remain UNKNOWN. The actual previous anchor on wr_id=12651 resolves to the wr_id=12652 detail URL; destination body/PDF unavailable. No manufacturer SHA/signature/certificate-chain/revision/SKU verification. CRA only; SIL 3 excluded; Q01~Q62 not sent.
+
+
+### 72.48 2026-11-26 — PR #326 / Run #1719~#1720 CI closeout
+- PR #326 exact-head `f60462cf1a65d5be632a6b006319b1d31941c674`; Run #1719 / 45817055738 success 15/15; merge/current main baseline `4589f83dec1119e56ff1d7e6ab908ec411c20f3f`; Run #1720 / 45817198752 push/main exact SHA success 15/15. Both pytest189; traceability464 (modern459+legacy5); Commission PDFs3/3; official sources10; CRA locators/provenance PASS.
+- Run #1719 ZIPs: source `23d99ea98aa43e2935e5ba4bc995f7839559062485af66d4086441f092428356` (ID15115318766, 3,070,565 bytes); provenance `79e33018dc8591063b9e1776dd2805bd428b5ee72cb11e2fa0544b30ce64f552` (ID15115758214, 2,565 bytes).
+- Run #1720 ZIPs: source `e5eec0ec6c910999b6cc75253867326728280ab976c3a41453420a54572914ad` (ID15114699091, 3,070,565 bytes); provenance `d69d0bfd0196923bb294548cb49c7a7abe7b0334130c6bcb5852a9224e92b723` (ID15115283207, 2,565 bytes). ZIP digests only, not manufacturer PDF hashes.
+- Manufacturer binaries0; all requested manufacturer attachment/detail targets remain UNKNOWN except the actual wr_id=12651 previous-post anchor destination to wr_id=12652. wr_id=12652's own previous-post anchor href remains unknown. CRA only; SIL 3 excluded; Q01~Q62 not sent.

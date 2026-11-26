@@ -1,5 +1,14 @@
 # CRA 현재 상황판 — 2026-11-26
 
+- Last verified main baseline before PR #327: `4589f83dec1119e56ff1d7e6ab908ec411c20f3f` (PR #326 merge SHA; refs/heads/main verified).
+- PR #326 exact-head Run #1719 SUCCESS 15/15; main push Run #1720 SUCCESS 15/15; pytest189; traceability464 (modern459+legacy5); Commission PDFs3/3; official CRA sources10; legal locators/provenance PASS.
+- PR #326 artifact ZIP digests recorded in report §114.7.50 / evidence §72.48; ZIP hashes are not manufacturer PDF hashes.
+- Manufacturer originals0; PEGA2 32720 attachment href, iX700M 2026-09-16 detail/attachment href, CE #171~#173 individual hrefs, and wr_id=12652's own previous-post anchor href remain UNKNOWN.
+- wr_id=12651's actual previous anchor points to wr_id=12652; the target page fetch timed out. wr_id=12651 search snapshot Ver1.3 vs opened HTML Ver1.1 conflict remains unresolved.
+- No manufacturer SHA-256/PDF signature/certificate-chain/revision/SKU verification. CRA only; SIL 3 excluded; Q01~Q62 not sent.
+
+---
+
 - main HEAD: `2e51031efb18acb5c116624bf13de07c8fc67ed7` (PR #325 merge SHA; verified from refs/heads/main).
 - PR #325 exact-head Run #1717 SUCCESS 15/15; main push Run #1718 SUCCESS 15/15; pytest189; traceability463 (modern458+legacy5); Commission PDFs3/3; official CRA sources10; legal locators/provenance PASS.
 - PR #325 artifact ZIP digests recorded in report §114.7.49 / evidence §72.47. These are CI ZIP hashes, not manufacturer PDF hashes.

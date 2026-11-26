@@ -4188,3 +4188,10 @@ CRA only; SIL 3 excluded.
 - Expected base 2e51031efb18acb5c116624bf13de07c8fc67ed7; compare ahead1/behind0; one commit, six docs/log files, 45 additions/0 deletions. Expected-head merge; merge/current main 2e51031efb18acb5c116624bf13de07c8fc67ed7.
 - Run #1718 / 45816837042 main push exact SHA success 15/15; same validation. Artifact ZIP digests in report §114.7.49/evidence §72.47.
 - Manufacturer originals0; PEGA2/iX700M/CE attachment hrefs and wr_id=12652 own previous-post href remain unknown. No manufacturer hash/signature/certificate-chain/revision/SKU checks; CRA only; SIL3 excluded.
+
+
+## 2026-11-26 — PR #326 / Run #1719~#1720 종결
+- PR #326 head f60462cf1a65d5be632a6b006319b1d31941c674; Run #1719 / 45817055738 exact-head success 15/15; pytest189; traceability464 (modern459+legacy5); Commission PDFs3/3; official CRA sources10; legal locators/provenance PASS.
+- Expected base 4589f83dec1119e56ff1d7e6ab908ec411c20f3f; compare ahead1/behind0; one commit, six docs/log files, 37 additions/7 deletions. Expected-head merge; merge/current main baseline 4589f83dec1119e56ff1d7e6ab908ec411c20f3f.
+- Run #1720 / 45817198752 main push exact SHA success 15/15; same validation. Artifact ZIP digests in report §114.7.50/evidence §72.48.
+- Manufacturer originals0; PEGA2/iX700M/CE hrefs and wr_id=12652 own previous-post href remain unknown. No manufacturer hash/signature/certificate-chain/revision/SKU checks; CRA only; SIL3 excluded.
