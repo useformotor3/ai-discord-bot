@@ -3675,3 +3675,32 @@ Run #1617 artifacts:
 - Run #1671 / 45749576500: pull_request exact-head, completed/success, 15/15 steps; compileall PASS, pytest189, traceability440, CRA PDFs3/3, official sources10, legal locators/provenance PASS. Artifacts: PDF ZIP 15085375199 SHA-256 `743a3a99452d44dc4133729bbcd5721e2b24a6dd8abd608ffa872b064c0b94dd`; provenance ZIP 15085345301 SHA-256 `b68d9797afd22ed07216c394407fdf05aed8a13e6d16f33cbc264f051ef79322`.
 - Expected-head squash merge SHA/current main `8a06fa5b3790ebf14d743f9cdd5c8e6b66bc39c5`. Run #1672 / 45749657309: push/main/exact merge SHA/completed/success, 15/15 steps; compileall PASS, pytest189, traceability440, CRA PDFs3/3, official sources10, legal locators/provenance PASS. Artifacts: PDF ZIP 15084534083 SHA-256 `b84bfec3e0f8903c9da1297e7e0aefe50d8433dbc49c84a6ddd21d2570cfd1d7`; provenance ZIP 15084688372 SHA-256 `95b892f0964b7441a3db9d46b6abfca96bdbbd5ad0a43070b283d1ae449d7e88`.
 - Digests are GitHub artifact ZIP hashes, not manufacturer-file hashes. Manufacturer originals 0 / metadata_only; SHA/signature/signer-chain/revision/SKU unverified. CRA only; SIL 3 excluded.
+
+
+### 114.7.27 2026-11-26 — PEGA2/iX700M Ver1.3–Ver1.4 anchor 충돌 및 CE #171~#173 원본 locator 재검증
+
+**기준·범위**
+- 기준 main HEAD: `8272efeda10f8432cf504d799e8698a9590d278c`. 조사 범위는 CRA only이며 SIL 3는 제외한다. Q01~Q62 문의는 작성·발송하지 않았다.
+- 공식 출처를 검색 색인, 열린 HTML, 실제 목록 링크의 이동 결과로 구분해 대조했다. 실패한 상세 endpoint를 반복 호출하지 않았으며, 실제 PDF bytes는 이번 조사에서 확보되지 않았다.
+
+**PEGA2 Ver1.3 → iX700M Ver1.3/Ver1.4 충돌**
+- LS메카피온 PEGA2 Ver1.3 상세 `https://www.lsmecapion.com/bbs/board.php?bo_table=manual&sca=Servo&wr_id=12651`의 검색 가능한 상세 본문은 제목을 “Servo PEGA2 매뉴얼 Ver1.3”으로 표시하고, 이전글 텍스트를 “iX700M DRIVE 400[V] 매뉴얼 Ver1.3”으로 표시한다. 첨부 메타데이터는 `PEGA2_KOR_Ver1.3_260826.pdf`, 6.6 MB, DATE 2026-08-28이다.
+- 별도의 실제 매뉴얼 목록 HTML은 row 41의 iX700M 항목을 “Ver1.4”, 게시일 2026-05-26으로 표시한다. 목록의 해당 row 링크를 따라가면 공식 상세 locator `bo_table=manual&wr_id=12652`로 이동한다. 즉, PEGA2 상세의 이전글 표시 문자열 “Ver1.3”과 현행 목록에서 `wr_id=12652`에 연결된 row 제목 “Ver1.4”가 서로 맞지 않는다.
+- 중요한 한계: `wr_id=12652` 상세 페이지는 web open에서 timeout/Internal Error로 응답하여 본문과 첨부를 읽지 못했다. 따라서 이 ID의 실제 상세 제목, 첨부 파일명, PDF 표지·revision을 확보한 것으로 기록하지 않는다. anchor label/index label mismatch는 확인됐지만, 어느 쪽이 오기·구버전 캐시·변경 이력인지 판정은 **UNRESOLVED**다. Ver1.3 PDF와 Ver1.4 PDF의 동일성·차이·대체 관계도 미확정이다.
+- 공식 목록 HTML의 row 41 및 실제 클릭 결과는 검색 스니펫만 복사한 것이 아니라 링크 이동으로 교차확인했다. 그래도 첨부 원본 미취득 상태이므로 파일 해시·서명·서명자 체인·내부 revision·적용 SKU는 검증하지 않았다.
+- 출처: [PEGA2 Ver1.3 상세](https://www.lsmecapion.com/bbs/board.php?bo_table=manual&sca=Servo&wr_id=12651), [공식 매뉴얼 목록](https://lsmecapion.com/bbs/board.php?bo_table=manual), [Servo 필터 목록](https://lsmecapion.com/bbs/board.php?bo_table=manual&sca=Servo). 대상 `wr_id=12652`는 공식 목록 링크에서 확인했으나 상세 본문/첨부 미취득.
+
+**CE #171~#173**
+- 공식 CE 색인에서 2026-04-30 게시 항목을 재확인했다.
+  - #171: iX700M Drive Unit `iX700MD1-B-220B`
+  - #172: iX700M Drive Unit `iX700MD1-B-370B, 300B`
+  - #173: iX700M Drive Unit `iX700MD1-B-750B, 550B, 450B`
+- 공식 CE 색인 페이지의 개별 행은 확인했으나, 웹에서 해당 목록을 열어 각 행의 anchor href를 추출할 수 없었고, 검색 결과도 #171~#173의 개별 상세 locator를 제공하지 않았다. #170의 별도 150B 상세 `wr_id=12888`를 이웃 ID 규칙으로 #171~#173에 확장하지 않았다. 개별 detail href/wr_id 및 각 CE PDF 첨부 원본은 **UNKNOWN / metadata_only**다.
+- UKCA `wr_id=12893`는 앞서 확인한 바와 같이 iX700MCV Converter Unit 자료이며, Drive Unit #171~#173의 UKCA 또는 CE 첨부를 대신하지 않는다.
+- 출처: [LS메카피온 공식 CE 색인](https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&sca=CE), [별도 CE 150B 상세(참조 경계 확인용)](https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&page=4&wr_id=12888). 150B 상세는 #171~#173의 ID를 추정하는 근거로 사용하지 않았다.
+
+**바이너리 검증 상태 / 다음 획득 기준**
+- 이번 회차 신규 제조사 바이너리 취득: 0건. PEGA2 Ver1.3, iX700M Ver1.3/Ver1.4, CE #171~#173 모두 **metadata_only**.
+- 실제 파일 bytes가 확보되지 않았으므로 제조사 파일 SHA-256, PDF 전자서명 존재/유효성, 서명자 인증서 체인, PDF 표지·본문 revision, SKU 범위 검증은 전부 미실시/미확정이다. GitHub CI artifact ZIP 해시를 제조사 PDF 해시로 전용하지 않는다.
+- 후속 P0는 #12652의 상세/첨부를 공식 링크에서 확보해 PDF bytes를 내려받는 것, 그리고 CE #171~#173 각 행의 실제 href를 공개 HTML 또는 공식 검색/문서 API에서 확보하는 것이다. 문서 ID를 추정하거나 실패한 endpoint를 반복하지 않는다.
+- CRA only; SIL 3 제외. Q01~Q62 미발송.

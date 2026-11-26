@@ -1686,3 +1686,15 @@ Actual SKU, EU/EEA supply, economic operators, signed SKU-specific DoC scope, BO
 - Expected-head merge/current main `8a06fa5b3790ebf14d743f9cdd5c8e6b66bc39c5`; Run #1672 / 45749657309 push/main exact SHA completed/success, 15/15 steps, same checks PASS.
 - Artifact ZIP hashes: #1671 PDF `743a3a99452d44dc4133729bbcd5721e2b24a6dd8abd608ffa872b064c0b94dd`, provenance `b68d9797afd22ed07216c394407fdf05aed8a13e6d16f33cbc264f051ef79322`; #1672 PDF `b84bfec3e0f8903c9da1297e7e0aefe50d8433dbc49c84a6ddd21d2570cfd1d7`, provenance `95b892f0964b7441a3db9d46b6abfca96bdbbd5ad0a43070b283d1ae449d7e88`. These are GitHub ZIP hashes, not manufacturer binaries.
 - Manufacturer originals 0 / metadata_only. CRA only; SIL 3 excluded.
+
+
+### §72.25 2026-11-26 — PEGA2/iX700M anchor 충돌 및 CE #171~#173 상세 locator 재검증
+
+- Baseline main: `8272efeda10f8432cf504d799e8698a9590d278c`.
+- PEGA2 Ver1.3 official detail `manual&wr_id=12651`: previous-post label says “iX700M DRIVE 400[V] 매뉴얼 Ver1.3”; attachment metadata `PEGA2_KOR_Ver1.3_260826.pdf`, 6.6 MB, 2026-08-28.
+- Official manual list row 41 labels iX700M as Ver1.4 (2026-05-26); clicking the row resolves to `manual&wr_id=12652`. The destination detail fetch timed out/Internal Error. Therefore the visible previous-post label and current index row disagree; whether stale label, cache, or actual version/revision mismatch remains UNRESOLVED. No PDF bytes acquired.
+- CE index rows #171/#172/#173 identify respectively 220B; 370B+300B; 750B+550B+450B, dated 2026-04-30. Individual href/wr_id and attachment names/binaries were not exposed by the accessible index/search result. Do not infer from #170 `wr_id=12888` (150B, different SKU).
+- UKCA `wr_id=12893` remains iX700MCV Converter Unit only, not Drive Unit evidence.
+- Manufacturer binaries acquired this turn: 0. PEGA2/iX700M/CE items remain metadata_only; no manufacturer SHA-256, PDF signature, signer chain, internal revision, or SKU-scope validation.
+- Official references: https://www.lsmecapion.com/bbs/board.php?bo_table=manual&sca=Servo&wr_id=12651 ; https://lsmecapion.com/bbs/board.php?bo_table=manual ; https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&sca=CE .
+- Q01~Q62 unsent; CRA only; SIL 3 excluded.

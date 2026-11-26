@@ -1530,3 +1530,6 @@ Annex I Part II의 실무 요구사항은 machine-readable SBOM(최소 top-level
 
 
 > **PR #302 / main CI (2026-11-26):** PR #302 exact-head Run #1671 / 45749576500 and main push Run #1672 / 45749657309 both success, 15/15 steps, pytest189, traceability440, CRA PDFs3/3, official sources10, legal locators/provenance PASS. Expected-head merge/current main `8a06fa5b3790ebf14d743f9cdd5c8e6b66bc39c5`. Manufacturer originals remain 0 / metadata_only. Details report §114.7.26 / evidence §72.24. CRA only; SIL 3 excluded.
+
+
+> **2026-11-26 PEGA2/iX700M + CE evidence update (§114.7.27 / §72.25):** PEGA2 Ver1.3 detail wr_id=12651 previous-post label says iX700M Ver1.3, but the current official manual list row 41 says Ver1.4 and its clicked destination is wr_id=12652. Destination detail/PDF inaccessible, so version conflict remains UNRESOLVED. CE #171/#172/#173 list 220B / 370B+300B / 750B+550B+450B, but individual detail hrefs and PDF attachments remain unavailable. No manufacturer binaries; metadata_only; no manufacturer hash/signature/signer-chain/revision/SKU validation. CRA only; SIL 3 excluded.
