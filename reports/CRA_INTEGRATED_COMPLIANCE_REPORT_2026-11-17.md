@@ -3642,3 +3642,29 @@ Run #1617 artifacts:
 - PR #300 브랜치에서 여러 파일을 순차적으로 `update_file`해 각각 별도 commit이 생성되면서 Runs #1660~#1666이 새 head로 대체되어 cancelled되었다. 이는 코드/테스트 실패가 아니라 같은 브랜치에 후속 commit이 연속 push되어 이전 head 검증이 취소된 것이다. 최종 exact-head Run #1667은 성공했다.
 - 재발 방지: 여러 문서를 함께 갱신할 때 Git blob들을 생성한 뒤 단일 tree + 단일 commit + expected-SHA가 있는 ref update로 묶는다. PR에는 최종 head 하나만 올리고 exact-head CI를 한 번 실행한다. 이번 PR의 GitHub 대화에도 동일 개선점을 기록했다.
 - CRA only; SIL 3 제외. Q01~Q62 문의/발송 없음.
+
+
+### 114.7.25 2026-11-26 — PR #301 Run #1669/#1670 exact-head/main push 검증 및 제조사 원본 재조사
+
+**PR/CI 원본 확인**
+- GitHub REST PR #301 응답에서 state=closed, merged_at=2026-11-26T00:51:20Z, merge_commit_sha=`8ed9335322804f663f3546f9f80436144b0b14ab`, base SHA=`d510ca516adae596d4ba43fef7cb281fc185afc5`, PR head SHA=`55535995389441ccba2593ec9232c057ecb9a225`, head branch=`docs/cra-pr300-closeout-batched-2026-11-26-v1`를 확인했다.
+- Exact PR-head Run #1669 / ID 45731538549: event=pull_request, branch 위 head SHA `55535995389441ccba2593ec9232c057ecb9a225`, completed/success, attempt 1. Job `Source integrity, compile and pytest` 및 모든 15개 요약 단계 success. 원본 로그에서 compileall PASS, CRA traceability claims=13/interfaces=15/requirements=35/SEC=36/EVD_SEC_crosswalk=16/crosswalk_SEC_linked=36/product_evidence_records=15/linked_claims=13/M606_mapping_items=41/project_log_events=439, pytest 189 passed, CRA Commission PDF 3/3 fetch+hash, allowlisted official CRA sources 10, Article 13(8), Regulation 2025/2392 core-functionality/Annex I(10)/Annex II(1), provenance manifest round-trip PASS를 확인했다.
+- Run #1669 artifacts: CRA PDF ZIP ID 15076642899, 3,070,566 bytes, SHA-256 `e2ace762420310db0fea95cb8430c32ed85941cb6efc212878e4e96e12928914`; provenance ZIP ID 15076772558, 2,565 bytes, SHA-256 `0a74e34ae5e753645445a324405ee33aa8b3e34311f1d55b036b1ab41d8bec9c`.
+- Expected-head squash merge 확인: PR head `55535995389441ccba2593ec9232c057ecb9a225`가 병합되어 merge SHA `8ed9335322804f663f3546f9f80436144b0b14ab`가 됐다.
+- Main push Run #1670 / ID 45731699115: event=push, branch=main, exact merge SHA `8ed9335322804f663f3546f9f80436144b0b14ab`, completed/success, attempt 1. 동일 job 및 모든 15개 요약 단계 success. compileall PASS, pytest 189 passed, traceability 439 events, CRA Commission PDFs 3/3, official CRA sources 10, legal locators 및 provenance PASS.
+- Run #1670 artifacts: CRA PDF ZIP ID 15076782644, 3,070,566 bytes, SHA-256 `bb2d0a31041980214c5256b4f2e6ccf2d2ede8239c6b3d5849ad84963eb7b3d9`; provenance ZIP ID 15076708008, 2,565 bytes, SHA-256 `4d374d72a5661871a294c93052e92e83e52fa3d15d6e9e9bd642c431e4a97e8a`.
+- 위 4개 digest는 GitHub artifact ZIP 해시이며 LS메카피온 제조사 원본 파일 해시가 아니다. 제조사 바이너리 신규 취득은 0, metadata_only 유지.
+
+**제조사 공식 자료 재검증 — ID 추정 금지**
+- PEGA2 Ver1.3 상세 `wr_id=12651`의 실제 이전글 anchor 문구는 “iX700M DRIVE 400[V] 매뉴얼 Ver1.3”이며, href 대상은 `https://www.lsmecapion.com/bbs/board.php?bo_table=manual&wr_id=12652`로 확인했다. 다만 대상 상세 페이지는 현재 웹 열기에서 접근 불가(Internal Error/이전 timeout)라 본문·첨부파일·PDF revision을 검증하지 못했다.
+- 공식 매뉴얼 색인 검색 결과는 같은 제품 항목을 Servo 필터/일반 색인에 따라 Ver1.4 또는 Ver1.3으로 서로 다르게 노출한다. `wr_id=12652`를 Ver1.4 상세 ID 및 첨부파일 ID로 단정할 수 있는 직접 본문 증거는 이번 재검증에서도 확보하지 못했다. 따라서 Ver1.3 anchor의 실제 href 대상 ID=12652는 locator evidence로 기록하되, Ver1.3/Ver1.4의 문서 정체·revision 충돌은 UNRESOLVED로 유지한다. 파일 본문/표지/개정 이력 확인 전에는 어느 버전도 최신/대체본으로 확정하지 않는다.
+- CE 공식 색인 최신 검색 결과에서 row 171=iX700MD1-B-220B, row 172=370B/300B, row 173=750B/550B/450B 및 2026-04-30 게시일을 재확인했다. 여전히 각 row의 실제 detail href/wr_id 및 개별 첨부 PDF를 확보하지 못했다. row 170 `wr_id=12888`은 별도 150B 항목이므로 다른 SKU의 ID로 재사용하지 않는다.
+- UKCA 공식 상세 `wr_id=12893`는 iX700MCV Converter Unit, 첨부명 `[UKCA_DoC_LVDEMC] iX700MCV.pdf`, 224.1K로 확인된다. Drive Unit UKCA 원본은 검색된 공식 자료에서 찾지 못했으나 부존재 증명은 아니다. UL 자료를 UKCA 대체 증거로 취급하지 않는다.
+- Solution Square 공식 카테고리 검색 결과는 “iX700M 사용 설명서”, 업데이트 2026-09-16, 조회 171을 재확인했다. 상세 화면은 JS SPA shell(“You need to enable JavaScript to run this app”)만 반환하며 문서 ID/API/detail/attachment 식별자는 여전히 미노출이다.
+- LS메카피온 KR/EN 카탈로그 공식 상세 locator `wr_id=12110`: `iX700M 브로셔 최종KR_251205.pdf`, `iX700M 브로셔 최종EN_251205.pdf`, 각 10.7M, 2025-12-05 13:43:50 메타데이터 재확인. 상세/첨부 endpoint는 timeout, 원본 bytes 미취득.
+- 공식 Servo Drive 도면 색인에서 “iX700M Series 서보드라이브 외형도 2D(CAD), 3D(STEP)” 항목 및 2026-04-21 게시를 재확인했다. PHOX 상세 이전글 anchor에서 추적한 iX700M 대상 `wr_id=12455` 상세는 timeout으로 본문/첨부를 얻지 못했다.
+
+**실패 원인 및 증거 경계**
+- 기존에 실패한 endpoint를 무차별 반복하지 않았다. 이번 시도는 서로 다른 검색 색인/공식 카테고리 결과를 교차 대조했고, 직접 열기에서 확인된 실패는 PEGA2 대상 Internal Error, 카탈로그/CE timeout, UKCA 502, CAD/STEP timeout, Solution Square JS SPA shell이다.
+- 신규 제조사 바이너리 0. 제조사 파일 SHA-256, PDF signature, signer certificate chain, 내부 revision, SKU applicability 모두 미검증. 모든 해당 제조사 자료는 metadata_only.
+- Q01~Q62 문의/발송 없음. CRA only; SIL 3 제외.

@@ -4022,3 +4022,11 @@ CRA only; SIL 3 excluded.
 - Expected-head merge/current main d510ca516adae596d4ba43fef7cb281fc185afc5. Run #1668 main push exact SHA success, same checks PASS.
 - Sequential multi-file update_file writes triggered superseded/cancelled Runs #1660~#1666. Not code/test failures. Future use one Git tree + one commit + expected-SHA ref update for multi-file documentation changes.
 - Manufacturer binaries 0 / metadata_only. CRA only; SIL 3 excluded.
+
+
+## 2026-11-26 — PR #301 exact-head/main push CI 및 제조사 원본 재조사
+- PR #301 REST metadata를 직접 확인: merged_at 00:51:20Z, PR exact HEAD 55535995389441ccba2593ec9232c057ecb9a225, merge SHA 8ed9335322804f663f3546f9f80436144b0b14ab.
+- Run #1669 / 45731538549 pull_request exact-head success; Run #1670 / 45731699115 push/main exact merge SHA success. 각 15/15 step summaries, compileall, pytest189, traceability439, CRA PDFs3/3, official sources10, legal locators/provenance PASS. Artifact ZIP digests는 report §114.7.25 / evidence §72.23에 기록.
+- PEGA2 Ver1.3 실제 anchor href는 wr_id=12652로 확인되나 target detail inaccessible. 공식 index가 Ver1.3/Ver1.4로 상충하므로 revision 충돌 유지; 바이너리/첨부 미취득.
+- CE 171~173 individual IDs/attachments 미확정. UKCA wr_id=12893는 iX700MCV Converter Unit. Solution Square iX700M 매뉴얼은 2026-09-16 검색 색인만 확인, JS shell. KR/EN catalog wr_id=12110, CAD/STEP target wr_id=12455 metadata_only.
+- 기존 실패 endpoint 반복 대신 검색 색인 교차확인 및 확인된 실제 anchor만 기록. 제조사 바이너리 0, SHA/signature/signer chain/revision/SKU 검증 없음. Q01~Q62 미발송. CRA only; SIL 3 제외.
