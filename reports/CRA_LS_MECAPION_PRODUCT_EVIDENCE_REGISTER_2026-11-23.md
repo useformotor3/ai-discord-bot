@@ -1592,3 +1592,14 @@ Actual SKU, EU/EEA supply, economic operators, signed SKU-specific DoC scope, BO
 - Manufacturer binaries newly acquired 0; metadata_only. No manufacturer SHA-256/PDF signature/signer chain/internal revision/SKU scope verification. Failure causes: 502/timeouts, JS shell, hidden previous-post href, grouped CE list, index snapshot mismatch. No guessed IDs/URLs. Q01~Q62 unsent. CRA only; SIL 3 excluded.
 - Official URLs: https://lsmecapion.com/bbs/board.php?bo_table=manual&sca=Servo&wr_id=12651 ; https://www.lsmecapion.com/bbs/board.php?bo_table=manual ; https://www.lsmecapion.com/bbs/board.php?bo_table=manual&sca= ; https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&sca=CE ; https://www.lsmecapion.com/bbs/board.php?bo_table=catalog&wr_id=12110 ; https://www.lsmecapion.com/bbs/board.php?bo_table=drawing&sca=Servo+Drive ; https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&page=3&wr_id=12893 ; https://ssq.ls-electric.com/kr/ko/product/category/4?pageNumber=14 ; https://sol.ls-electric.com/kr/ko/newSearch?pageNumber=70.
 
+
+
+### §72.17 2026-11-26 — PR #296 exact-head and main push verification
+- PR #296 exact HEAD `2eb266711577c64fc182014c649f435b7f7049b4`, Run #1650 / 45728292172, completed/success, 25/25; 189 pytest; traceability 433 events; CRA PDFs 3/3; official sources 10; provenance PASS.
+- Diff reviewed: 6 docs, +75/-0; base d0fbdbd6b80688fd29bf420d5b709f6bd64dc493; 6 ahead / 0 behind.
+- Expected-head squash merge SHA `6f8dbbe907debd35292c29a2f994d2c0a2ae6b81`.
+- Main push Run #1651 / 45728389056: exact merge SHA + event=push + branch=main + completed/success, 25/25; pytest 189; traceability 433; CRA PDFs 3/3; official sources 10; provenance PASS.
+- Run #1650 ZIP artifacts: PDF 15075168107 / SHA-256 df76ffe5f4bcfc2190b3271314ae39f029451ea54b7d321a41705bbe0a197776; provenance 15075472328 / SHA-256 4986511e2462ecc0476570c486bcba66f7d0a219a7e27324049a32f3d7fb773c.
+- Run #1651 ZIP artifacts: PDF 15074329996 / SHA-256 36236eb3e3e4c897459ab34e94825a5c623a04ab5864c6b4dfe307700f403178; provenance 15075776058 / SHA-256 27eb727cd7589a1a6cd571a706786e98d8aa7840ad5ee8d46bb9f0123a5cd9a8.
+- Digests above are GitHub artifact ZIP hashes, not manufacturer document hashes. Manufacturer binaries remain 0 / metadata_only; no manufacturer signature/signer chain/revision/SKU scope verification. CRA only; SIL 3 excluded.
+
