@@ -4042,3 +4042,9 @@ CRA only; SIL 3 excluded.
 - 기준 main 8272efeda10f8432cf504d799e8698a9590d278c. 공식 PEGA2 Ver1.3 상세 wr_id=12651의 이전글 label은 iX700M Ver1.3. 한편 실제 공식 매뉴얼 목록 row 41은 Ver1.4이며 해당 row를 클릭한 실제 destination은 wr_id=12652. destination 상세는 timeout/Internal Error라 본문/첨부를 확보하지 못해 version-label mismatch는 UNRESOLVED로 남김.
 - 공식 CE 색인에서 #171 220B, #172 370B/300B, #173 750B/550B/450B, 게시일 2026-04-30 확인. 개별 detail href/wr_id/첨부는 노출되지 않음. #170 wr_id=12888은 150B 전용으로 인접 ID 추정 금지.
 - 바이너리 신규 취득 0. SHA-256/PDF signature/signer chain/revision/SKU 검증 불가; metadata_only. Q01~Q62 미발송, CRA only, SIL 3 제외.
+
+
+## 2026-11-26 — PR #304 exact-head 및 main push CI 종결
+- PR #304 exact HEAD 7e10032519fd224419f8ba7e00ed9d9c0c559a6f; Run #1675 / 45751710487 pull_request exact-head completed/success, 15/15, compileall PASS, pytest189, traceability442, official CRA sources10, legal locators/provenance PASS.
+- Expected-head squash merge/current main 3d83dd2fb5ea5d49b12897d66b76d695b24f9b64. Run #1676 / 45751795978 push/main exact SHA completed/success, same checks PASS.
+- Artifact ZIP hashes are recorded in report §114.7.28 / evidence §72.26; they are not manufacturer PDF hashes. Manufacturer originals 0 / metadata_only. CRA only; SIL 3 excluded.

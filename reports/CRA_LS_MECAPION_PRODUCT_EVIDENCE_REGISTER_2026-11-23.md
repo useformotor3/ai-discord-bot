@@ -1698,3 +1698,11 @@ Actual SKU, EU/EEA supply, economic operators, signed SKU-specific DoC scope, BO
 - Manufacturer binaries acquired this turn: 0. PEGA2/iX700M/CE items remain metadata_only; no manufacturer SHA-256, PDF signature, signer chain, internal revision, or SKU-scope validation.
 - Official references: https://www.lsmecapion.com/bbs/board.php?bo_table=manual&sca=Servo&wr_id=12651 ; https://lsmecapion.com/bbs/board.php?bo_table=manual ; https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&sca=CE .
 - Q01~Q62 unsent; CRA only; SIL 3 excluded.
+
+
+### §72.26 2026-11-26 — PR #304 exact-head/main push CI 종결
+- PR #304 exact HEAD `7e10032519fd224419f8ba7e00ed9d9c0c559a6f`; Run #1675 / 45751710487 pull_request exact-head completed/success, 15/15 steps, compileall PASS, pytest189, traceability442, official CRA sources10, Article 13(8)/2025/2392 core-functionality/Annex I(10)/Annex II(1) locators and provenance PASS.
+- Expected-head squash merge/current main `3d83dd2fb5ea5d49b12897d66b76d695b24f9b64`. Main push Run #1676 / 45751795978 exact SHA/event=push/branch=main completed/success, 15/15 steps, same validation PASS.
+- Run #1675 artifact ZIPs: PDF 15086360629 / SHA-256 `991fccd6301a3e8b287093943f6b6738b9109ce0baa705e8d1b68b083b4a6d54`; provenance 15085942073 / SHA-256 `ff2381bf5801b6851816238f3b95150c1e6352f2990d17e8a4fc984beb001100`.
+- Run #1676 artifact ZIPs: PDF 15086100969 / SHA-256 `48e323f91e5f11875f67a18f43308719e756866feb018c26a8bc714b63cd1068`; provenance 15085991303 / SHA-256 `4058633b3dae4b9e9baa85160fb6d7691e94fafa0fdabd737c3bf03b40498709`.
+- Digests are CI artifact ZIP hashes, not manufacturer source files. Manufacturer binaries 0 / metadata_only; no manufacturer hash/signature/signer-chain/revision/SKU validation. CRA only; SIL 3 excluded.
