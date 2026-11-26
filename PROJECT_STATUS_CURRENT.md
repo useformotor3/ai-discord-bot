@@ -1,3 +1,10 @@
+## 2026-11-26 — PR #313 / Run #1693~#1694 및 공식 제조사 색인 조사 (§114.7.37 / §72.35)
+- PR #313 exact-head 18018194146eb996914578d9dd59d132effa281a; Run #1693 / 45762752285 success 15/15; pytest189; traceability451; Commission PDFs3/3; official sources10; legal locators/provenance PASS.
+- Expected-head merge/current main 08138829040d8c262baf218385ae2d4968b8d1d1. Run #1694 / 45762866934 main push exact SHA success 15/15.
+- PR #313 title/body stale PR312 wording corrected in §114.7.37.
+- New anchors: PEGA2 doc32720 detail confirmed, separate Ver1.0 official PDF direct URL found; iX700M 2026-09-16 index found but detail ID unknown. CE #171~173 models indexed, hrefs unknown. wr_id12651 is PEGA2 Ver1.3, not requested 12652.
+- Manufacturer binaries 0; no manufacturer-file validation. CRA only; SIL 3 excluded; Q01~Q62 not sent.
+
 ## 2026-11-26 — PR #312 / Run #1691~#1692 종결 (§114.7.36 / §72.34)
 - PR #312 exact-head Run #1691 success, 15/15, compileall PASS, pytest189, CRA traceability450, Commission PDFs3/3, official sources10, Article 13(8)/2025/2392 locators/provenance PASS.
 - Expected-head merge/current main c92984b987083f6bc9133b5345867a804ea9d54f. Run #1692 main push exact SHA success, 15/15 and same checks PASS.

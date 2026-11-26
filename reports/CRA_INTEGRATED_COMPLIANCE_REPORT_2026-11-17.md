@@ -3828,3 +3828,29 @@ Run #1617 artifacts:
 - Main push Run #1692 / 45762563955, event=push, branch=main, exact merge SHA, completed/success, 15/15 steps. Source blob identity check, compileall, pytest189, traceability450, 3 Commission PDF source fetch/hash, 10 official sources, Article 13(8) and 2025/2392 locators/provenance all PASS.
 - Run #1692 artifact ZIPs: PDF sources ID 15089664214, 3,070,565 bytes, SHA-256 `03124c9991042c2536138f855d2b516317a472b875e64fd277307199726ca08f`; provenance ID 15089509400, 2,565 bytes, SHA-256 `8e2e161a1cd3ea0334877b2bab5e877f014818d468f5995fcf1b3c10b7870ba6`.
 - All four digests are GitHub CI artifact ZIP hashes, not manufacturer PDF hashes. Manufacturer binaries remain 0 / metadata_only; manufacturer SHA-256, PDF signature, signer chain, internal revision and SKU scope remain unverified. CRA only; SIL 3 excluded; Q01~Q62 not sent.
+
+
+### 114.7.37 2026-11-26 — PR #313 / Run #1693~#1694 종결 및 제조사 공개색인 재조사
+- PR #313 exact head `18018194146eb996914578d9dd59d132effa281a`; Run #1693 / 45762752285, pull_request, completed/success, job 139716338410, 15/15. Source blob identity/compileall PASS; pytest **189 passed**; CRA traceability PASS (claims13, interfaces15, requirements35, SEC36, EVD-SEC crosswalk16, M606 mappings41, PROJECT_LOG events451 = modern446 + legacy5); Commission PDF source fetch/hash3/3; official allowlist10; Article 13(8) locator/quote and Regulation (EU) 2025/2392 core-functionality / Annex I(10) / Annex II(1) locators PASS.
+- Run #1693 artifact ZIPs: Commission PDF source ID 15091095590, 3,070,566 bytes, SHA-256 `6c24e3e42c69b3c5f9badcf538411b186e619203e7ec50b3234011291929bbc2`; provenance ID 15091095638, 2,565 bytes, SHA-256 `8580e462e08b6fe8e08539ed67c3602cea1386217a94321ad870df22d0eabc28`.
+- PR #313 expected-head merge enforced at `18018194146eb996914578d9dd59d132effa281a`; merge SHA/current main `08138829040d8c262baf218385ae2d4968b8d1d1`; main ref independently confirmed exact equality.
+- Run #1694 / 45762866934, push/main exact merge SHA, completed/success, job 139716713340, 15/15. Source identity/compileall PASS; pytest189; traceability451; Commission PDF fetch/hash3/3; official sources10; same legal locators/provenance PASS.
+- Run #1694 artifact ZIPs: Commission PDF source ID 15091165408, 3,070,566 bytes, SHA-256 `be5e2fba2b1814f4a12c67e4f3822c8fa130b7d0c1d81115bdf3a044f9ef9080`; provenance ID 15091045634, 2,565 bytes, SHA-256 `a05df3a653931da83b14797ea8640a1ab2b74678b7e5c9a463cc6f03ea8d7cf9`. These are CI artifact ZIP hashes, not manufacturer PDF hashes.
+- PR #313 title/body contains inherited stale wording “PR #312”; PR number/head/merge and run identity above were independently read from GitHub API. This is a PR metadata/text error, not a CI identity change; the follow-up PR description is corrected to #313.
+
+#### Official Solution Square
+- Motion & Servo category index confirms `iX700M 사용 설명서` update **2026-09-16** and PEGA2 listing update 2026-08-28. JS-rendered index does not expose iX700M detail href/document ID in search output; ID is not inferred.
+- Official US detail route: `https://sol.ls-electric.com/us/en/product/document/32720`; indexed content identifies PEGA2 User Manual, update 2026-09-23, `PEGA2_ENG_Ver1.3_260831.pdf`, 6.0 MB, applicable PEGA2 series. Actual attachment URL remains undisclosed by indexed page.
+- Separate genuine official attachment URL found: `https://ssq.ls-electric.com/uploads/document/17761472300650/PEGA2_KOR_Ver1.0_260413.pdf?type=attachment`. This is PEGA2 Korean Ver1.0, **not** document 32720's indexed English Ver1.3 and not LS Mecapion's later Ver1.3. Do not conflate.
+- Direct PDF content confirms cover title PEGA2 Series User Manual Ver1.0. No file downloaded into project/CI workspace; no manufacturer binary hash/signature/certificate/revision/SKU verification is claimed.
+
+#### Official LS Mecapion indexes
+- CE index shows 2026-04-30 records: #171 `iX700MD1-B-220B`; #172 `iX700MD1-B-370B, 300B`; #173 `iX700MD1-B-750B, 550B, 450B`. Individual wr_id/detail href/attachment href not exposed. No IDs guessed.
+- Manual index shows iX700M DRIVE 400[V] Ver1.4 (2026-05-26) and PEGA2 Ver1.3 (2026-04-01). A separate indexed PEGA2 detail is `wr_id=12651`, with attachment `PEGA2_KOR_Ver1.3_260826.pdf` (6.6 MB; attachment date 2026-08-28). This is not requested `wr_id=12652`; 12652 remains unresolved. iX700M manual detail ID is also unresolved.
+- CE #170 detail `wr_id=12888` is a different 150B CE record; it is not used as evidence for CE #171~#173.
+- Prior failing LS Mecapion category endpoints were not retried in this pass; new official search-index results were used. Failure responses are not product evidence.
+
+#### Evidence gate
+- Manufacturer binaries: **0 new**; metadata_only. Manufacturer SHA-256, PDF signature, signer certificate chain, internal revision authenticity, SKU applicability remain unverified.
+- Next: locate a fresh public app/API resource or official indexed attachment anchor for doc32720 and iX700M 2026-09-16; separately resolve exact wr_id=12652 and CE #171~#173 hrefs. Only verified official binaries may pass into SHA/signature/revision/SKU validation.
+- CRA only; SIL 3 excluded; Q01~Q62 not sent.

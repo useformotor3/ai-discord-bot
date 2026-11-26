@@ -4091,3 +4091,10 @@ CRA only; SIL 3 excluded.
 - PR #312 exact-head b7a58ef619ac78abbd7f256957c3eba2ece5c4b5; Run #1691 / 45762478066 success 15/15, compileall PASS, pytest189, traceability450, Commission PDFs3/3, official sources10, Article 13(8)/2025/2392 locators PASS.
 - Expected-head squash merge/current main c92984b987083f6bc9133b5345867a804ea9d54f. Run #1692 / 45762563955 push/main exact SHA success 15/15, same checks PASS.
 - Artifact ZIP hashes in report §114.7.36 / evidence §72.34 are not manufacturer PDF hashes. Manufacturer binaries 0 / metadata_only. CRA only; SIL 3 excluded.
+
+## 2026-11-26 — PR #313 / Run #1693~#1694 and official manufacturer index discovery (§114.7.37 / §72.35)
+- PR #313 exact head 18018194146eb996914578d9dd59d132effa281a; Run #1693 / 45762752285 pull_request success 15/15; pytest189; traceability451 (modern446, legacy5); Commission PDFs3/3; official sources10; Article 13(8)/2025/2392 locators PASS.
+- Expected-head merge/current main 08138829040d8c262baf218385ae2d4968b8d1d1. Run #1694 / 45762866934 main push exact SHA success 15/15, same checks PASS.
+- Run #1693 artifact ZIPs: source 15091095590 SHA-256 6c24e3e42c69b3c5f9badcf538411b186e619203e7ec50b3234011291929bbc2; provenance 15091095638 SHA-256 8580e462e08b6fe8e08539ed67c3602cea1386217a94321ad870df22d0eabc28. Run #1694: source 15091165408 SHA-256 be5e2fba2b1814f4a12c67e4f3822c8fa130b7d0c1d81115bdf3a044f9ef9080; provenance 15091045634 SHA-256 a05df3a653931da83b14797ea8640a1ab2b74678b7e5c9a463cc6f03ea8d7cf9. ZIP digests are not manufacturer PDF hashes.
+- New official anchors: PEGA2 doc32720 detail confirmed, indexed Ver1.3 file but attachment URL absent; separate Korean Ver1.0 direct attachment found. iX700M 2026-09-16 listing confirmed, ID/href unknown. CE #171~173 models indexed but hrefs unresolved. PEGA2 Ver1.3 manual wr_id12651 (not requested 12652), iX700M Ver1.4 listing but detail ID unknown. No guessed IDs.
+- PR #313 title/body inherited stale PR312 wording; corrected in this record. Manufacturer binaries 0 / metadata_only; no SHA/signature/signer-chain/revision/SKU validation. CRA only; SIL 3 excluded; Q01~Q62 not sent.
