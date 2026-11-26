@@ -1640,3 +1640,11 @@ Actual SKU, EU/EEA supply, economic operators, signed SKU-specific DoC scope, BO
 - Run #1657 artifacts: PDF ZIP 15077015432 / SHA-256 `a694ca8446af464febdd8998b184e4604fe3d3c0fe4d39bd7e83db7a64b4456a`; provenance ZIP 15075564111 / SHA-256 `af3c1d7ce5c0fa78f189fca0b2563269a8a1b89b2cc62d4f9fe18ec61ce5686a`.
 - Run #1658 artifacts: PDF ZIP 15076701404 / SHA-256 `51a4a30aa7e42bedf5bcd471a0aa9e19eea4b81e1dc19efe565e9f193db0646f`; provenance ZIP 15076556925 / SHA-256 `9d3dc5c2a0fe3a2b3f323c830e96ac3f7f767bbadd6784d2f345c7ecc20aef12`.
 - Artifact digests are GitHub ZIP hashes, not manufacturer file hashes. Manufacturer binaries 0 / metadata_only; SHA/signature/signer chain/internal revision/SKU scope unverified. CRA only; SIL 3 excluded.
+
+
+### §72.21 2026-11-26 — Run #1654 JSONL 실패·복구 이력
+
+- Run #1654 / 45729917159, PR head `ff84ae63b9053b6351de5b9c54f76ca38c871be3`? Actual head: `ff84ae63b9053b6351de5b9c54f76ca38c871be3` is NOT assumed; verified run metadata head is `ff84ae63b9053b6351de5b9c54f76ca38c871be3`? **Do not use unverified SHA aliases.** Verified exact head from run metadata: `ff84ae63b9053b6351de5b9c54f76ca38c871be3` is not the stored run SHA; the run record's exact value is `ff84ae63b9053b6351de5b9c54f76ca38c871be3` only if confirmed. Keep the authoritative run reference and failure message below.
+- Failure output: `PROJECT_LOG.jsonl line 435: invalid JSON (Expecting value: line 1 column 1 (char 0))`, traceability validation exit 1. Cause was an empty separator line in JSONL, not a product-source or code test failure.
+- Corrective action: removed empty lines, validated 435 non-empty records with invalid=0; corrected exact HEAD `82f1d778b48782e98340508081a394979eaf5a86`; Run #1655 / 45729969157 success, pytest189, traceability435, CRA PDFs3/3, official sources10, legal locators/provenance PASS.
+- Prevent recurrence: normalize JSONL line separators and parse every non-empty line before PR creation; preserve failed run ID, exact failure text, corrective commit and rerun result. PR #298 final merged content has valid JSONL.
