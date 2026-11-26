@@ -1745,3 +1745,11 @@ Actual SKU, EU/EEA supply, economic operators, signed SKU-specific DoC scope, BO
 - Expected-head squash merge SHA/current main `ca405190093fca8796784d98abb4069d8a932a5c`. Run #1684 / 45761461078 main push exact SHA completed/success, 15/15, same test/traceability/source/legal checks PASS.
 - Run #1684 artifacts: PDF ZIP 15088984387 / SHA-256 `451f82ffd4190993f047cca32d7b0ff4052ba07db75424e1c1bd045799b12ff8`; provenance ZIP 15089243856 / SHA-256 `1d7d333e507cf36f5c1f1c8654e4a467d6960321b26fd5f6857bddb4789cbe2a`.
 - Digests are CI artifact ZIP hashes, not manufacturer-source PDF hashes. Manufacturer originals 0 / metadata_only; no manufacturer SHA/signature/signer-chain/revision/SKU validation. CRA only; SIL 3 excluded.
+
+
+### §72.31 2026-11-26 — PR #309 exact-head/main push CI 종결
+- PR #309 exact HEAD `b09b5206b52cec5271ddffa3ff02fd6ab9f5f870`; Run #1685 / 45761654876 pull_request completed/success, 15/15. Compileall PASS; pytest189; traceability claims13/interfaces15/requirements35/SEC36/EVD-SEC crosswalk16/M606 mapping41/PROJECT_LOG events447; Commission PDFs3/3 and official sources10 PASS; Article 13(8), 2025/2392 core-functionality, Annex I(10), Annex II(1) locators/provenance PASS.
+- Run #1685 artifacts: PDF ZIP 15090207124 / SHA-256 `15b2751d0c160ede66d614e1832cef789ec67d0581d38e4fea1a6818d4055d48`; provenance ZIP 15089707959 / SHA-256 `059f9472dd0219a575745ab328da68143dde489717da87a43207708abfbd754e`.
+- Expected-head squash merge SHA/current main `b04b7b0dd0e0d774af1c755fb5595316b2106a4c`. Run #1686 / 45761741257 main push exact SHA completed/success, 15/15, same checks PASS.
+- Run #1686 artifacts: PDF ZIP 15090117382 / SHA-256 `e14a780fe2dc9e74f0db971cf98548262c1c1008976946915f5e18f118690eca`; provenance ZIP 15089812889 / SHA-256 `31036d381b3ff236a6c7fcd4220c811f068b74475b907842e8f6ffe12d442955`.
+- Digests are CI artifact ZIP hashes, not manufacturer-source PDF hashes. Manufacturer originals 0 / metadata_only; no manufacturer SHA/signature/signer-chain/revision/SKU validation. CRA only; SIL 3 excluded.
