@@ -1,5 +1,11 @@
 # CRA 현재 상황판 — 2026-11-26
 
+- **Latest verified main HEAD:** `ba09a41d90cda4add0b4c95180dba7b3d0d27d65` (PR #328 merge SHA; refs/heads/main read-back).
+- PR #328 exact-head Run #1723 SUCCESS 15/15; main push Run #1724 SUCCESS 15/15; pytest189; traceability466 (modern461+legacy5); Commission PDFs3/3; official CRA sources10; provenance PASS.
+- PR #328 artifacts: Run #1723 source ZIP SHA-256 `d9643befa5fb32cbc1742fc8b31700639cd2f0040d51d3eff176926546ba88bb`, provenance `3908f0361c0877b6d70820ca15cec7cba65ff9d60e4d2e4252f9e6dbaaca321d`; Run #1724 source ZIP `237df9ecf7bb4b9704b68774e671d79808ab43ae1743d2ca94580ece397cb084`, provenance `13ea5859d9090bbc6619078e20cbdeb377cd483a00068036ee553c68c4d132e8`. These are CI ZIP digests, not manufacturer PDF hashes.
+- PR #328 documentation/log-only; manufacturer findings remain report §114.7.51 / evidence §30.1; CI closeout §114.7.52 / evidence §72.49.
+
+
 - **최신 main HEAD:** `1211308446a4c8b2b81a9e7f285fc3828f769ccf`; PR #327 merged (head `4a737ac2055a8b189ca68039b89b4b107a91b691`, merge SHA == main).
 - PR #327 Run #1721 exact-head SUCCESS 15/15; Run #1722 main push SUCCESS 15/15; pytest189; traceability465 (modern460+legacy5); Commission PDFs3/3; official CRA sources10; provenance uploads PASS.
 - 신규 제조사 조사: PEGA2 document32720은 EN Ver1.3 metadata만 재확인, direct attachment href UNKNOWN. 별도 LS ELECTRIC 공식-host PDF Ver1.1 실제 URL 발견했으나 doc32720 귀속 미증명 및 local bytes 미취득.
