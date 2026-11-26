@@ -1493,3 +1493,10 @@ Annex I Part II의 실무 요구사항은 machine-readable SBOM(최소 top-level
 
 > **PR #296 / main push Run #1651 closeout (2026-11-26):** PR exact HEAD 2eb266711577c64fc182014c649f435b7f7049b4 passed Run #1650 / 45728292172 (25/25, 189 pytest, traceability 433, CRA PDFs 3/3, 10 official sources, provenance PASS). Diff reviewed (6 documentation files, +75/-0), expected-head squash merged as 6f8dbbe907debd35292c29a2f994d2c0a2ae6b81. Main push Run #1651 / 45728389056 independently confirmed exact SHA + event=push + branch=main + completed/success, 25/25 and same checks PASS. Artifact ZIP IDs/digests in report §114.7.19 / evidence §72.17; these are not manufacturer document hashes. Manufacturer originals remain 0 / metadata_only; CRA only; SIL 3 excluded.
 
+
+
+## CRA 제조사 원본 증거 상태 (2026-11-26)
+- 최신 main: `792d4e4ba7d5e4652692d86274d8f85474bfeb0b`; 상세 조사 결과는 [통합 보고서 §114.7.20](reports/CRA_INTEGRATED_COMPLIANCE_REPORT_2026-11-17.md) 및 [제품 증거 등록부 §72.18](reports/CRA_LS_MECAPION_PRODUCT_EVIDENCE_REGISTER_2026-11-23.md).
+- LS메카피온 매뉴얼 row41의 Ver1.3/Ver1.4 색인 충돌은 유지한다. `page=1` 검색 스니펫의 Ver1.3 표시는 실제 열린 HTML 본문과 일치하지 않아 검색 스니펫만으로 확정하지 않는다.
+- 제조사 원본 바이너리 신규 취득 0, metadata_only. SHA-256·PDF 서명/서명자 체인·내부 revision·SKU 범위 검증 없음.
+- Run #1653 exact main push success; 제조사 원본 취득 성공과는 별개다. CRA only; SIL 3 제외.
