@@ -3977,3 +3977,12 @@ CRA only; SIL 3 excluded.
 - Solution Square iX700M manual 2026-09-16 listing confirmed, but JS shell hides ID/detail/attachment. Catalogue KR/EN 10.7M each and CAD/STEP 2026-04-21 listings confirmed; no binaries fetched.
 - Manufacturer binary acquisition remains 0; metadata_only; no manufacturer hash/signature/signer-chain/revision/SKU verification. Q01~Q62 unsent. CRA only; SIL 3 excluded.
 
+
+
+## 2026-11-26 — PR #296 exact-head / main push closeout
+- PR #296 exact HEAD 2eb266711577c64fc182014c649f435b7f7049b4; Run #1650 / 45728292172 SUCCESS 25/25, 189 pytest, traceability 433, CRA PDFs 3/3, 10 official sources, provenance PASS.
+- Diff reviewed: 6 documentation files +75/-0; expected-head squash merge/current main 6f8dbbe907debd35292c29a2f994d2c0a2ae6b81.
+- Main push Run #1651 / 45728389056 exact SHA + push + main + SUCCESS 25/25, 189 pytest, traceability 433, PDFs 3/3, sources 10, provenance PASS.
+- Artifact ZIP hashes and IDs in report §114.7.19 / evidence §72.17; they are not manufacturer PDF hashes.
+- Manufacturer binaries remain 0; metadata_only; Q01~Q62 unsent. CRA only; SIL 3 excluded.
+
