@@ -1727,3 +1727,13 @@ Actual SKU, EU/EEA supply, economic operators, signed SKU-specific DoC scope, BO
 - Run #1679 artifact ZIPs: PDF 15086810508 / SHA-256 `0498d87ed6f820353877fa59e431429ee355851a141339e93b1bb86ace06cd8c`; provenance 15085779588 / SHA-256 `ee367ac003a2c3c20cf3ca17b6effa2cd4cd0534cac034cb7b5346948e99c57b`.
 - Run #1680 artifact ZIPs: PDF 15085918922 / SHA-256 `4ef3a706cc3083cf6455e206d88d03cde911042ab6d780d758fb1ca4f4cbe4d2`; provenance 15086795720 / SHA-256 `38e14b7f477a0eab1a5bafef7ce2457ca0d197335cf36d8b628ab1a8207bcf3c`.
 - Digests are GitHub CI artifact ZIP hashes, not manufacturer source files. Manufacturer binaries 0 / metadata_only; no manufacturer hash/signature/signer-chain/revision/SKU validation. CRA only; SIL 3 excluded.
+
+
+### §72.29 2026-11-26 — 공식 공개 색인 재검증: PEGA2 32720 / iX700M / CE #171~#173
+- Solution Square PEGA2 doc 32720 공식 색인: `PEGA2_ENG_Ver1.3_260831.pdf`, EN, 6.0 MB, update 2026-09-23, PEGA2 series. Detail URL은 JS shell만 반환; 실제 attachment href/API object/download URL/bytes 없음.
+- Solution Square iX700M manual 2026-09-16: 공식 category/search index title/date 확인. 개별 document ID/detail href/attachment UNKNOWN; PEGA2 ID 32720 전용 금지.
+- LS메카피온 공식 manual index: iX700M DRIVE 400[V] Ver1.4 (2026-05-26), PEGA2 Ver1.3 (2026-04-01). wr_id=12652 상세/첨부는 이전 timeout/502 이후 반복 호출하지 않았으며 내부 revision은 UNRESOLVED.
+- CE index #171=220B; #172=370B+300B; #173=750B+550B+450B, all 2026-04-30. 개별 detail href/wr_id/attachment name not exposed. #170 wr_id=12888 is 150B only; no adjacent-ID inference.
+- New manufacturer binaries 0; metadata_only. No manufacturer SHA-256, PDF signature, signer chain, revision or SKU-scope verification.
+- Sources: https://sol.ls-electric.com/us/en/product/document/32720 ; https://ssq.ls-electric.com/kr/ko/product/category/4?pageNumber=14 ; https://sol.ls-electric.com/kr/ko/newSearch?pageNumber=70 ; https://www.lsmecapion.com/bbs/board.php?bo_table=manual ; https://www.lsmecapion.com/bbs/board.php?bo_table=manual&sca=Servo ; https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&sca=CE .
+- CRA only; SIL 3 excluded; Q01~Q62 not sent.

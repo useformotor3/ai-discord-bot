@@ -1,3 +1,9 @@
+## 2026-11-26 — 공식 공개 색인 재검증 (§114.7.31 / §72.29)
+- PEGA2 doc 32720 색인은 파일명/언어/크기/적용제품을 재확인했으나 JS shell로 attachment href/API/download URL/bytes 미확보.
+- iX700M 2026-09-16 Solution Square 항목의 개별 ID/detail href는 UNKNOWN. LS메카피온 공식 매뉴얼 색인은 iX700M Ver1.4(2026-05-26), PEGA2 Ver1.3(2026-04-01) 표시. wr_id=12652 상세 재호출 금지 유지.
+- CE #171~#173의 SKU 그룹/게시일은 색인 확인, 개별 detail href/wr_id/첨부 미노출. 제조사 바이너리 0 / metadata_only.
+- Main 기준 daaf7134142f3d6cb1ef78b23fad6a5a8d3aad23, main push Run #1682 / 45753348521 success, 15/15. CRA only; SIL 3 excluded.
+
 ## 2026-11-26 — PR #306 / Run #1679~#1680 종결 (§114.7.30 / §72.28)
 - PR #306 exact HEAD 0cd50a8acc78bb49de8a04bbb8600e209ec68958; Run #1679 exact-head success, 15/15, pytest189, traceability444, official sources10, legal locators/provenance PASS.
 - Expected-head merge/current main 770fc317d21a25dc99eb209d1a9644f2d1257ea8. Run #1680 main push exact SHA success, 15/15 and same checks PASS.

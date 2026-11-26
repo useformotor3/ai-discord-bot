@@ -4061,3 +4061,8 @@ CRA only; SIL 3 excluded.
 - PR #306 exact HEAD 0cd50a8acc78bb49de8a04bbb8600e209ec68958; Run #1679 / 45752937289 pull_request exact-head completed/success, 15/15, compileall PASS, pytest189, traceability444, official CRA sources10, legal locators/provenance PASS.
 - Expected-head squash merge/current main 770fc317d21a25dc99eb209d1a9644f2d1257ea8. Run #1680 / 45753033948 push/main exact SHA completed/success, same checks PASS.
 - Artifact ZIP hashes are recorded in report §114.7.30 / evidence §72.28; they are not manufacturer PDF hashes. Manufacturer originals 0 / metadata_only. CRA only; SIL 3 excluded.
+
+## 2026-11-26 — 공식 공개 색인 재검증 (§114.7.31 / §72.29)
+- PEGA2 32720 official index confirms PEGA2_ENG_Ver1.3_260831.pdf (EN, 6.0 MB, 2026-09-23); JS shell did not expose actual attachment href/API/download URL/bytes.
+- Solution Square iX700M manual dated 2026-09-16 remains without public individual document ID/detail href/attachment. LS Mecapion manual index displays iX700M Ver1.4 (2026-05-26) and PEGA2 Ver1.3 (2026-04-01); wr_id=12652 endpoint not repeated after prior timeout/502.
+- CE #171/#172/#173 indexed SKU groups/date reconfirmed; individual detail href/wr_id/attachment not exposed. Manufacturer binaries 0 / metadata_only; no manufacturer SHA/signature/signer-chain/revision/SKU validation. CRA only; SIL 3 excluded; Q01~Q62 not sent.
