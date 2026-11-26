@@ -4119,3 +4119,11 @@ CRA only; SIL 3 excluded.
 - Expected-head merge SHA/current main 26974977a527d546e0257a8bce3401db3e76c587; main ref independently confirmed.
 - Run #1700 / 45788548649 main push exact SHA success 15/15; same validation pass. Artifact ZIP digests are in report §114.7.40 and evidence §72.38; not manufacturer PDF hashes.
 - Manufacturer binaries 0; manufacturer hash/signature/signer chain/revision/SKU remain unverified.
+
+
+## 2026-11-26 — PR #317 / Run #1701~#1702 종결 및 제조사 색인 추가 조사
+- PR #317 exact-head d130d1cb6056601aac680e4443844921c9b78d91; Run #1701 / 45788826752 success 15/15; job139802364956. Expected-head merge/current main eb0bccb746a94d3a24f5d13bfb6f561fd33b617a.
+- Run #1702 / 45788943373 push/main exact SHA success 15/15; job139802762357. Both runs compileall PASS, pytest189, traceability455 (modern450 + legacy5), Commission PDFs3/3, official sources10, CRA legal locators PASS.
+- Run #1701 artifact ZIP digests: source c7aa946a55353303280d40b6a9e9ec5c96f273bbee2864f99355a0c06a836ac9; provenance 393f638535450c4c26c9820d0bda3b7a4f50830703f47c340de5168892425a4f. Run #1702: source 48c8830ef8e6e83b778648deb23f265015bf36a42a627989b1f523df0942e02e; provenance acb45103e06e121935ed2617afec40468b1c9d3ce60a0419e19879ae21101871. ZIP hashes only, not manufacturer PDF hashes.
+- New index metadata: PEGA2 doc32720 indexed Ver1.3 EN PDF name/size/contents/applicable product; iX700M user-manual search result title/type/tag/views; CE #171~173 SKU groups/date; LS Mecapion manual index rows 40/41. Actual attachment/detail links and requested wr_id12652 remain unresolved; failed endpoint not retried.
+- Manufacturer binaries0; no SHA/signature/certificate-chain/revision/SKU validation. No guessed IDs/URLs. CRA only; SIL3 excluded; Q01~Q62 not sent. See report §114.7.41 and evidence §72.39.
