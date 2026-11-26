@@ -1852,3 +1852,9 @@ Actual SKU, EU/EEA supply, economic operators, signed SKU-specific DoC scope, BO
 - Run #1709 ZIPs: source `77cdd0ff114d198041136393d8b8c649cfcbd29579bf90804782968b164f6040` (ID15105720611); provenance `6aebb09b8f199214f5c7c6a3958027e8637ee26f07d6eeb2632a0eed890d2a01` (ID15105167041). Run #1710: source `4fd57350b5755e34e835d63859431a0412bebe375b4a9237f27739d1fe6e383d` (ID15105276181); provenance `7871bc5e2a1b9bf624b3603bf846fd2e4e85a81b7f78e0d90a8e1549df1caa8f` (ID15105875275). ZIP digests only.
 - Manufacturer original binaries remain 0; target attachment/detail hrefs and exact IDs remain unresolved. The wr_id=12651 previous-article label remains an unverified lead only, not proof of wr_id=12652. No guessed ID/URL or failed endpoint retry.
 - Manufacturer SHA/signature/signer chain/revision/SKU checks not performed. CRA only; SIL 3 excluded; Q01~Q62 not sent.
+
+
+### 72.44 2026-11-26 — PR #322 / Run #1711~#1712 CI closeout
+- PR #322 exact-head `f572a2e6cab4109f542d2d2ab830bde4c88a0dbc`; Run #1711 / 45797020092 success 15/15; merge/current main `293a8c5bcc8e328478ac18987aba60d12ad20e41`; Run #1712 / 45797179785 push/main exact SHA success 15/15. Both pytest189; traceability460 (modern455+legacy5); Commission PDFs3/3; official sources10; legal locators/provenance PASS.
+- Run #1711 ZIPs: source `9b75853cbc18fb29aaf58cfb4bcf6278faaa4b39a6892ba5dbb210e27bbeca91` (ID15105705933); provenance `b830583c92638f02d68d2e552adfcfaedf5e965de34f2fe33056e8c81d92d86d` (ID15105915537). Run #1712: source `c87f337f845d5729051b29279e608fa6dcf9b08b604730114b79da0c10aabaaa` (ID15106105613); provenance `20991cf187b3688fb2d7d4863b875a39361aa64772eeaadd9dc5fbe9a0c4b018` (ID15104898767). ZIP digests only.
+- Manufacturer originals remain 0; all requested manufacturer detail/attachment hrefs remain unknown; wr_id=12651 adjacent title is not confirmed as wr_id=12652. No guessed URLs or IDs; no failed endpoint retry. CRA only; SIL 3 excluded; Q01~Q62 not sent.

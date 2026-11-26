@@ -4158,3 +4158,10 @@ CRA only; SIL 3 excluded.
 - Expected base 6f563b0246d3410290e1312edf53f011b6988d4d; compare ahead1/behind0; six docs-only files, 39 additions/0 deletions. Expected-head merge; merge/current main 0cd7c52dcb0d7e44c0569623fd7cab09790c90f8.
 - Run #1710 / 45796729202 main push exact SHA success 15/15; same validation. Artifact ZIP digests in report §114.7.45/evidence §72.43.
 - Manufacturer originals0. wr_id12651 adjacent previous-article title remains lead only; no mapping inferred to wr_id12652. CRA only; SIL3 excluded; Q01~Q62 not sent.
+
+
+## 2026-11-26 — PR #322 / Run #1711~#1712 종결
+- PR #322 head f572a2e6cab4109f542d2d2ab830bde4c88a0dbc; Run #1711 / 45797020092 exact-head success 15/15; pytest189; traceability460 (modern455+legacy5); Commission PDFs3/3; official sources10; legal locators/provenance PASS.
+- Expected base 0cd7c52dcb0d7e44c0569623fd7cab09790c90f8; compare ahead1/behind0; six docs-only files, 38 additions/0 deletions. Expected-head merge; merge/current main 293a8c5bcc8e328478ac18987aba60d12ad20e41.
+- Run #1712 / 45797179785 main push exact SHA success 15/15; same validation. Artifact ZIP digests in report §114.7.46/evidence §72.44.
+- Manufacturer originals0; PEGA2/iX700M/CE/wr_id12652 exact original links unresolved. No guessed IDs/URLs; CRA only; SIL3 excluded; Q01~Q62 not sent.

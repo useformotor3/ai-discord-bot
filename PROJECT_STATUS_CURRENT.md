@@ -1,5 +1,16 @@
 # CRA 현재 상황판 — 2026-11-26
 
+- main HEAD: `293a8c5bcc8e328478ac18987aba60d12ad20e41` (PR #322 merge SHA)
+- PR #322: exact-head Run #1711 SUCCESS 15/15; main push Run #1712 SUCCESS 15/15; pytest189; traceability460 (modern455 + legacy5); Commission PDFs3/3; official sources10; legal locators/provenance PASS.
+- PR #322 CI artifact ZIP digests recorded in report §114.7.46 / evidence §72.44.
+- Manufacturer originals remain 0. PEGA2 32720, iX700M 2026-09-16, CE #171~#173 and wr_id=12652 actual detail/attachment hrefs unresolved.
+- wr_id=12651 previous-article title names iX700M DRIVE 400[V] Ver1.3; target href/ID unavailable, not confirmed as 12652.
+- Next: only new official public API/JS/search-index evidence; no guessed IDs/URLs or failed endpoint retries. CRA only; SIL 3 excluded; Q01~Q62 not sent.
+
+---
+
+# CRA 현재 상황판 — 2026-11-26
+
 - main HEAD: `0cd7c52dcb0d7e44c0569623fd7cab09790c90f8` (PR #321 merge SHA)
 - PR #321: exact-head Run #1709 SUCCESS 15/15; main push Run #1710 SUCCESS 15/15; pytest189; traceability459 (modern454 + legacy5); Commission PDFs3/3; official sources10; legal locators/provenance PASS.
 - PR #321 CI artifacts and hashes recorded in report §114.7.45 / evidence §72.43.
