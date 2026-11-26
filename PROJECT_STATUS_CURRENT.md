@@ -1,3 +1,8 @@
+## 2026-11-26 — PR #302 / Run #1671~#1672 종결 (§114.7.26 / §72.24)
+- PR #302 exact HEAD 0404622e767f657f674cafc8f715397b0d8c63ec; 6 docs +63/-0, JSONL 440 valid. Run #1671 exact-head success, 15/15 steps, pytest189, traceability440, CRA PDFs3/3, sources10, legal locators/provenance PASS.
+- Expected-head merge/current main 8a06fa5b3790ebf14d743f9cdd5c8e6b66bc39c5. Run #1672 main push exact SHA success; same checks PASS.
+- Manufacturer originals 0 / metadata_only. CRA only; SIL 3 excluded. See report §114.7.26 / evidence §72.24.
+
 ## 2026-11-26 — PR #301 Run #1669/#1670 원본 검증 및 제조사 locator 재확인 (§114.7.25 / §72.23)
 - PR #301 merged at 2026-11-26T00:51:20Z; exact PR HEAD 55535995389441ccba2593ec9232c057ecb9a225. Run #1669 / 45731538549 pull_request exact-head success; 15/15 steps, pytest189, traceability439, CRA PDFs3/3, official sources10, legal locators/provenance PASS.
 - Expected-head merge SHA/main HEAD 8ed9335322804f663f3546f9f80436144b0b14ab. Run #1670 / 45731699115 push/main exact SHA success; 15/15 steps and same validation PASS.
