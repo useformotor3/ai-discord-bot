@@ -3713,3 +3713,40 @@ Run #1617 artifacts:
 - Main push Run #1676 / 45751795978: event=push, branch=main, exact merge SHA, completed/success, 15/15 steps. compileall PASS, pytest 189 passed, traceability442, official CRA sources10/10, legal locators and provenance PASS.
 - Run #1676 artifacts: PDF ZIP ID 15086100969, 3,070,566 bytes, SHA-256 `48e323f91e5f11875f67a18f43308719e756866feb018c26a8bc714b63cd1068`; provenance ZIP ID 15085991303, 2,565 bytes, SHA-256 `4058633b3dae4b9e9baa85160fb6d7691e94fafa0fdabd737c3bf03b40498709`.
 - 위 4개 digest는 GitHub CI artifact ZIP 해시이며 LS메카피온 제조사 PDF 해시가 아니다. 제조사 원본 바이너리 취득 0 / metadata_only; 제조사 SHA-256/PDF signature/signer chain/revision/SKU 미검증. CRA only; SIL 3 제외; Q01~Q62 미발송.
+
+
+### 114.7.29 2026-11-26 — Solution Square PEGA2 문서 ID/첨부 메타데이터 및 iX700M·CE 원본 경로 교차추적
+
+**기준과 조사 방법**
+- 기준 main HEAD: `73e48a0e786d7264bd750b8a85959d14d12baecd`; CRA only, SIL 3 제외. Q01~Q62 문의/발송 없음.
+- 이번에는 LS메카피온 공개 색인 외에 LS ELECTRIC Solution Square의 한국어/영어 공식 검색 인덱스와 문서 상세 페이지를 교차 확인했다. 상세 화면이 JavaScript SPA 셸로 반환되는 경우 검색 인덱스의 첨부 메타데이터를 실제 다운로드 URL/바이너리로 승격하지 않았다.
+
+**Solution Square PEGA2 문서 ID 32720 — 신규 확인**
+- 공식 상세 locator: `https://sol.ls-electric.com/us/en/product/document/32720` (제목 PEGA2 User Manual).
+- 공식 검색 색인에 문서 ID 32720의 상세 메타데이터가 노출된다: 2026-09-23 업데이트, 첨부/버전 `PEGA2_ENG_Ver1.3_260831.pdf`, English, 6.0 MB, 적용 제품 PEGA2 series. 이로써 Solution Square에 영문 Ver1.3 문서가 등록된 사실 및 실제 파일명/표시 크기를 확인했다.
+- LS메카피온 별도 공식 상세 `manual&sca=Servo&wr_id=12651`에는 한국어 PEGA2 Ver1.3 첨부 `PEGA2_KOR_Ver1.3_260826.pdf`, 6.6 MB, 2026-08-28 메타데이터가 있다. 두 파일은 언어/파일명/날짜/표시 크기가 다르므로 동일 파일로 간주하지 않는다.
+- 단, Solution Square 상세 URL은 웹에서 JavaScript 앱 셸만 반환한다. 첨부 파일명/버전은 검색 인덱스 메타데이터이며, 실제 다운로드 href 또는 업로드 저장 경로는 미노출. 문서 ID 32720을 파일 경로 숫자로 간주하거나 다운로드 URL을 조합하지 않는다. 두 Ver1.3 파일 모두 바이너리 미취득.
+- 공식 출처: https://sol.ls-electric.com/us/en/product/document/32720 ; https://www.lsmecapion.com/bbs/board.php?bo_table=manual&sca=Servo&wr_id=12651 .
+
+**iX700M 매뉴얼 버전 충돌 — 현재 증거의 정확한 범위**
+- LS메카피온 공식 PEGA2 상세 `wr_id=12651`의 이전글 표시: “iX700M DRIVE 400[V] 매뉴얼 Ver1.3”.
+- 공식 매뉴얼 목록의 기본 목록 페이지는 row 41을 Ver1.4(2026-05-26)로 표시하며, 해당 행 링크가 `bo_table=manual&wr_id=12652`로 이동하는 것은 이전 회차에서 실제 링크 이동으로 확인했다. 이번에도 기본 목록 검색 인덱스에서 Ver1.4 표시를 재확인했다.
+- 별도의 공식 목록 snapshot `bo_table=manual&sca=`는 같은 row 41을 Ver1.3으로 표시한다. Servo 필터 목록 `bo_table=manual&sca=Servo`는 iX700M DRIVE 400[V] Ver1.4를 표시한다. 즉, 공식 공개 목록 snapshot끼리도 row label이 다르며 PEGA2 상세 이전글 label까지 포함해 Ver1.3/Ver1.4 표기가 충돌한다.
+- `wr_id=12652` 상세 본문/첨부는 계속 timeout/Internal Error. 실제 제목·첨부 href·파일명·PDF 표지/내부 revision을 확보하지 못했다. 따라서 Ver1.4 PDF 원본 및 Ver1.3 PDF 원본을 비교한 것으로 기록하지 않는다. conflict = **UNRESOLVED**.
+- 공식 목록 참조: https://lsmecapion.com/bbs/board.php?bo_table=manual ; https://www.lsmecapion.com/bbs/board.php?bo_table=manual&sca= ; https://www.lsmecapion.com/bbs/board.php?bo_table=manual&sca=Servo . 대상 상세: https://www.lsmecapion.com/bbs/board.php?bo_table=manual&wr_id=12652 .
+
+**Solution Square iX700M 2026-09-16 문서**
+- 공식 Solution Square 모션&Servo 카테고리 및 통합검색 색인에서 “iX700M 사용 설명서”, 업데이트 2026-09-16, 조회수 171을 재확인했다. 한국어 카테고리 링크는 `https://ssq.ls-electric.com/kr/ko/product/category/4?pageNumber=14`, 통합검색 페이지는 `https://sol.ls-electric.com/kr/ko/newSearch?pageNumber=70`이다.
+- 공개 검색 색인에는 해당 문서의 개별 상세 ID나 첨부 파일명이 나타나지 않는다. 카테고리 상세 열기는 JS shell만 반환한다. 문서 ID, 실제 detail href, attachment URL은 **UNKNOWN**. PEGA2 문서 ID 32720을 iX700M 문서 ID로 전용하지 않는다.
+
+**CE #171~#173 — 비교 가능한 인접 자료와 추정 금지**
+- 공식 CE 색인 #171/#172/#173은 2026-04-30 게시, 모델 그룹은 각각 220B / 370B+300B / 750B+550B+450B로 재확인했다.
+- 실제 개별 상세 페이지로 검색 인덱싱된 #170 자료는 `wr_id=12888`, 제목 iX700MD1-B-150B, 첨부 `[CE_DoC-LVDEMC] iX700MD1-B-150B.pdf`, 238.9 KB, 2026-04-30 11:55:32이다. 이 파일은 #170/150B에만 해당하며 #171~#173의 개별 ID나 첨부를 추정하는 근거로 사용하지 않는다.
+- #171~#173 개별 detail href/wr_id와 첨부 파일명/바이너리는 여전히 확보하지 못했다. 공식 CE 목록의 실제 row anchor HTML이 열리지 않고, 상세 조회도 timeout이므로 미확정 상태를 유지한다.
+- 공식 참조: https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&sca=CE ; #170 비교 자료 https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&page=4&wr_id=12888 .
+
+**실제 바이너리/검증 결과**
+- 이번 회차 제조사 바이너리 신규 취득: 0건. PEGA2 KR/EN Ver1.3, iX700M Ver1.3/Ver1.4, CE #171~#173 모두 **metadata_only**.
+- SHA-256, PDF signature presence/validity, signer certificate chain, internal revision, SKU scope는 실제 bytes가 없으므로 전부 미검증. 파일명/표시 크기/게시일은 바이너리 검증을 대체하지 않는다.
+- 실패한 endpoint를 반복 호출하지 않았다. 공개 검색 색인/목록 snapshot으로 추가 확인 가능한 부분만 기록하고, 문서 ID·wr_id·첨부 URL을 추정하지 않았다.
+- CRA only; SIL 3 제외; Q01~Q62 문의/발송 없음.

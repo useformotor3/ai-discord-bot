@@ -4048,3 +4048,10 @@ CRA only; SIL 3 excluded.
 - PR #304 exact HEAD 7e10032519fd224419f8ba7e00ed9d9c0c559a6f; Run #1675 / 45751710487 pull_request exact-head completed/success, 15/15, compileall PASS, pytest189, traceability442, official CRA sources10, legal locators/provenance PASS.
 - Expected-head squash merge/current main 3d83dd2fb5ea5d49b12897d66b76d695b24f9b64. Run #1676 / 45751795978 push/main exact SHA completed/success, same checks PASS.
 - Artifact ZIP hashes are recorded in report §114.7.28 / evidence §72.26; they are not manufacturer PDF hashes. Manufacturer originals 0 / metadata_only. CRA only; SIL 3 excluded.
+
+
+## 2026-11-26 — Solution Square PEGA2 doc 32720 및 iX700M/CE 추가 추적
+- PEGA2 Solution Square 상세 ID 32720 확인. 공식 검색 색인에 PEGA2_ENG_Ver1.3_260831.pdf / EN / 6.0 MB / 2026-09-23 표시. 실제 상세는 JS shell, attachment href/bytes 미취득. LS메카피온 PEGA2 KR Ver1.3은 PEGA2_KOR_Ver1.3_260826.pdf / 6.6 MB metadata.
+- iX700M conflict: wr_id=12651 이전글 label Ver1.3, 기본/Servo list Ver1.4, 빈 분류 list snapshot Ver1.3. row anchor target wr_id=12652 상세/첨부 미취득. UNRESOLVED.
+- Solution Square iX700M 2026-09-16 색인 확인, detail ID/attachment 미노출. CE #171~#173 개별 href/첨부 미확보. #170 wr_id=12888 is 150B only, no adjacent-ID inference.
+- Manufacturer binaries 0 / metadata_only. No SHA-256/PDF signature/signer chain/revision/SKU validation. CRA only; SIL 3 excluded; Q01~Q62 not sent.

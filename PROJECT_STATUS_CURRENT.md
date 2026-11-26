@@ -1,3 +1,9 @@
+## 2026-11-26 — Solution Square PEGA2 32720 / iX700M / CE #171~#173 재조사 (§114.7.29 / §72.27)
+- PEGA2 Solution Square official doc ID 32720 confirmed. Indexed attachment metadata: PEGA2_ENG_Ver1.3_260831.pdf, English, 6.0 MB, update 2026-09-23; detail is JS shell and attachment href/bytes unavailable. LS메카피온 KR Ver1.3 metadata remains PEGA2_KOR_Ver1.3_260826.pdf, 6.6 MB.
+- iX700M Ver1.3/Ver1.4 conflict strengthened: wr_id=12651 previous-post label Ver1.3; basic/Servo lists Ver1.4; empty-category list snapshot Ver1.3; destination wr_id=12652 detail/attachment still inaccessible. UNRESOLVED.
+- Solution Square iX700M 2026-09-16 index entry confirmed; detail ID/attachment unknown. CE #171~#173 individual hrefs/attachments unknown; #170 wr_id=12888 comparator is 150B only.
+- Manufacturer binaries 0; all metadata_only; no manufacturer SHA/signature/signer-chain/revision/SKU checks. CRA only; SIL 3 excluded; Q01~Q62 not sent.
+
 ## 2026-11-26 — PR #304 / Run #1675~#1676 종결 (§114.7.28 / §72.26)
 - PR #304 exact HEAD 7e10032519fd224419f8ba7e00ed9d9c0c559a6f; Run #1675 exact-head success, 15/15, pytest189, traceability442, official sources10, legal locators/provenance PASS.
 - Expected-head merge/current main 3d83dd2fb5ea5d49b12897d66b76d695b24f9b64. Run #1676 main push exact SHA success, 15/15 and same checks PASS.
