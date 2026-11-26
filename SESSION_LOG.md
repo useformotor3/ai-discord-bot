@@ -4172,3 +4172,12 @@ CRA only; SIL 3 excluded.
 - Expected base 293a8c5bcc8e328478ac18987aba60d12ad20e41; compare ahead1/behind0; six docs-only files, 36 additions/0 deletions. Expected-head merge; merge/current main 54e0d4a1fe71815d12fc64e18e3fdf7be4b60228.
 - Run #1714 / 45797738392 main push exact SHA success 15/15; same validation. Artifact ZIP digests in report §114.7.47/evidence §72.45.
 - Manufacturer originals0; target links remain unresolved; CRA only; SIL3 excluded; Q01~Q62 not sent.
+
+
+## 2026-11-26 — 공식 제조사 anchor 재추적 및 증거 상태 갱신 (§114.7.48 / evidence §30)
+- main HEAD `2dc3760f6b68eeeb1cb22b70a4c9317a874eeabf`를 Git ref API에서 다시 읽어 확인했다. PR #324 merge SHA와 일치한다.
+- PEGA2 doc32720의 공식 detail route 및 Ver1.3 EN filename/size/update metadata는 확인했으나 JavaScript selector가 attachment href를 노출하지 않아 실제 PDF는 미취득.
+- Solution Square iX700M 사용 설명서의 2026-09-16 분류목록 항목을 재확인했으나 document ID/detail/attachment href는 여전히 UNKNOWN.
+- LS메카피온 CE #171~#173 모델 그룹과 날짜를 공식 목록에서 확인했으나 개별 detail/attachment href는 미확보.
+- wr_id=12651에서 실제 이전글 anchor를 따라가 wr_id=12652 detail URL을 확인했다. 대상 페이지 fetch는 timeout; wr_id=12652 자체의 이전글 anchor href 및 PDF는 미확인. 검색색인 Ver1.3과 직접 열린 페이지 Ver1.1이 충돌하므로 revision은 UNKNOWN.
+- 제조사 바이너리 0. 제조사 SHA-256/PDF 서명/인증서 체인/revision/SKU 검증은 미실시. 실패 endpoint 재호출 및 ID 추정 없음. CRA only; SIL 3 제외; Q01~Q62 미발송.
