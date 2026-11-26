@@ -1,3 +1,9 @@
+## 2026-11-26 — PR #309 / Run #1685~#1686 종결 (§114.7.33 / §72.31)
+- PR #309 exact-head Run #1685 success, 15/15, compileall PASS, pytest189, CRA traceability447, Commission PDFs3/3, official sources10, Article 13(8)/2025/2392 locators/provenance PASS.
+- Expected-head merge/current main b04b7b0dd0e0d774af1c755fb5595316b2106a4c. Run #1686 main push exact SHA success, 15/15 and same checks PASS.
+- CI ZIP digests/artifact IDs are in §114.7.33 / §72.31, not manufacturer PDF hashes. Manufacturer binaries 0 / metadata_only.
+- CRA only; SIL 3 excluded; Q01~Q62 not sent.
+
 ## 2026-11-26 — PR #308 / Run #1683~#1684 종결 (§114.7.32 / §72.30)
 - PR #308 exact-head Run #1683 success, 15/15, compileall PASS, pytest189, CRA traceability446, 3 Commission PDF sources and 10 official sources, Article 13(8)/2025/2392 legal locators/provenance PASS.
 - Expected-head merge/current main ca405190093fca8796784d98abb4069d8a932a5c. Run #1684 main push exact SHA success, 15/15 and same checks PASS.

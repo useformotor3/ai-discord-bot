@@ -1548,3 +1548,6 @@ Annex I Part II의 실무 요구사항은 machine-readable SBOM(최소 top-level
 
 
 > **PR #308 / main CI closeout (2026-11-26):** PR exact-head Run #1683 / 45761338380 and main push Run #1684 / 45761461078 both completed/success, 15/15, pytest189, traceability446, Commission PDFs3/3, official sources10, legal locators/provenance PASS. Expected-head merge/current main `ca405190093fca8796784d98abb4069d8a932a5c`. Artifact ZIP digests in report §114.7.32 / evidence §72.30 are not manufacturer PDF hashes. Manufacturer binaries 0 / metadata_only. CRA only; SIL 3 excluded.
+
+
+> **PR #309 / main CI closeout (2026-11-26):** PR exact-head Run #1685 / 45761654876 and main push Run #1686 / 45761741257 both completed/success, 15/15, pytest189, traceability447, Commission PDFs3/3, official sources10, legal locators/provenance PASS. Expected-head merge/current main `b04b7b0dd0e0d774af1c755fb5595316b2106a4c`. Artifact ZIP digests in report §114.7.33 / evidence §72.31 are not manufacturer PDF hashes. Manufacturer binaries 0 / metadata_only. CRA only; SIL 3 excluded.
