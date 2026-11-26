@@ -4008,3 +4008,10 @@ CRA only; SIL 3 excluded.
 - Run #1657 pull_request exact-head success: 15 API step summaries success, pytest189, traceability436, CRA PDFs3/3, official sources10, Article13(8)/2025/2392 locators and provenance PASS.
 - Expected-head squash merge SHA/current main 9f77fcdb0498b4ab9dd88e8ac097458c8bd1d75b. Run #1658 main push exact SHA success; same checks PASS.
 - Artifact ZIP hashes are not manufacturer source hashes. Manufacturer binaries 0 / metadata_only. Q01~Q62 unsent. CRA only; SIL 3 제외.
+
+
+## 2026-11-26 — Run #1654 JSONL 오류 및 복구
+- Run #1654 / 45729917159 failed in CRA traceability validation: PROJECT_LOG.jsonl line 435 was an empty line and therefore invalid JSON; process exit code 1.
+- Root cause was a blank separator inserted during JSONL append, not code or CRA source validation. Removed empty lines and parsed 435 non-empty records successfully.
+- Corrected exact head 82f1d778b48782e98340508081a394979eaf5a86 passed Run #1655 / 45729969157 (189 pytest, traceability435, PDFs3/3, official sources10, legal locators/provenance PASS).
+- Preventive action: normalize trailing/blank lines and validate every non-empty JSONL line before PR creation. Record failure, fix, and rerun rather than overwriting failure.
