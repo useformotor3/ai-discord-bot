@@ -3540,3 +3540,40 @@ Run #1617 artifacts:
 - Important distinction: these SHA-256 digests identify GitHub artifact ZIP archives, not LS Mecapion manufacturer binaries. Manufacturer binaries acquired in this investigation remain 0; manufacturer evidence remains metadata_only. No manufacturer PDF signature, signer chain, internal revision, or SKU scope was validated.
 - PR #296 merged successfully; current main is `6f8dbbe907debd35292c29a2f994d2c0a2ae6b81`. CRA only; SIL 3 excluded.
 
+
+
+### 114.7.20 2026-11-26 — 공식 검색 색인/실제 HTML 불일치 추가 확인 및 CI exact-head 로그 재검토
+
+**기준 및 변경 범위**
+- 기준 main HEAD: `792d4e4ba7d5e4652692d86274d8f85474bfeb0b`. §114.7.19, §72.17, PROJECT_STATUS_CURRENT, README, SESSION_LOG, PROJECT_LOG를 선행 read-back했다.
+- 문서 전용 변경이다. 운영 코드, workflow, 자동화 주기, secrets는 수정하지 않는다. CRA only; SIL 3 제외.
+- PR #296/#297 및 Run #1650~#1653을 다시 확인했다. PR #296 merge SHA `6f8dbbe907debd35292c29a2f994d2c0a2ae6b81`, PR #297 merge/current main SHA `792d4e4ba7d5e4652692d86274d8f85474bfeb0b`. Run #1650/#1652는 pull_request, Run #1651/#1653은 push/main이며 모두 completed/success. Run #1653은 exact head `792d4e4ba7d5e4652692d86274d8f85474bfeb0b`로 확인했다.
+
+**A. 매뉴얼 Ver1.3/Ver1.4 — 색인 검색결과와 실제 열린 HTML의 차이**
+- 공식 검색 결과 `https://www.lsmecapion.com/bbs/board.php?bo_table=manual&page=1`의 검색 스니펫은 row 41을 `iX700M DRIVE 400[V] 매뉴얼 Ver1.3`으로 표시한다. 반면 같은 결과를 실제로 열어 얻은 HTML 본문은 row 39~30을 보여주고 row 41을 포함하지 않는다. 본문에는 pagination 링크와 목록 내용이 있으며, 검색 스니펫의 row 41 텍스트를 현재 HTML의 직접 관찰값으로 취급할 수 없다.
+- 공식 기본 목록 검색 스니펫은 row 41=Ver1.4, Servo 필터 검색 스니펫도 Ver1.4, 빈 분류(`sca=`) 검색 스니펫은 Ver1.3이다. 이 결과들은 필터·페이지·색인 시점이 일치하지 않는다. 기존 충돌은 해소되지 않았고, 특히 `page=1` 결과는 검색 스니펫과 실제 열린 본문 사이에도 불일치가 확인되었다.
+- PEGA2 Ver1.3 공식 상세 검색결과는 본문 이전글 제목 `iX700M DRIVE 400[V] 매뉴얼 Ver1.3`을 표시하지만, 이전글 anchor의 실제 href/target wr_id는 여전히 검색 결과에서 노출되지 않는다. 해당 페이지 직접 열기는 502. `wr_id=12651`은 PEGA2 게시물 ID이며 iX700M 게시물 ID가 아니다.
+- Ver1.4의 `wr_id=12652`는 기존 공식 목록 링크에서 확인된 상세 식별자다. 상세 endpoint 502/timeout, attachment URL 및 PDF bytes 미취득 상태는 변함없다. 두 버전의 승인된 통제본/최신 revision은 Unknown.
+
+**B. 제조사 자료의 공식 색인 재확인**
+- CE 공식 색인 결과는 row 171=`iX700MD1-B-220B`, row 172=`iX700MD1-B-370B, 300B`, row 173=`iX700MD1-B-750B, 550B, 450B`를 다시 표시한다. 개별 상세 href/wr_id/첨부 URL은 검색 결과에서 노출되지 않는다. row 170의 `wr_id=12888`은 150B 별도 자료이며 인접 ID를 유추하는 데 사용하지 않는다.
+- UKCA Drive Unit 개별 DoC는 이번 검색에서도 확인되지 않았다(부존재 증명 아님). `wr_id=12893`은 Converter Unit iX700MCV이며 Drive Unit 자료로 대체하지 않는다.
+- Solution Square 공식 목록은 `iX700M 사용 설명서`, 업데이트 2026-09-16, 조회수 171을 표시한다. 공개 목록 검색 결과는 document ID/detail route/attachment/API 식별자를 제공하지 않는다. 직접 열기는 JavaScript SPA shell만 반환한다. 검색에서 보인 일반 `/product/document` 오류/만료 페이지는 iX700M과 연결된 식별자가 아니므로 추정 경로로 사용하지 않는다.
+- 공식 카탈로그 게시물 `wr_id=12110`은 KR/EN PDF 각 10.7M 및 파일 날짜 2025-12-05 13:43:50을 색인에 표시한다. 게시물/첨부 원본 bytes는 미취득.
+- 공식 Servo Drive 도면 색인은 iX700M 2D(CAD)/3D(STEP) 항목(2026-04-21)을 표시한다. 상세 ID/첨부 URL/ZIP bytes는 미취득. PHOX 이전글 제목은 iX700M 도면명을 보여주지만 target href는 노출되지 않는다.
+
+**C. 원본 취득 및 무결성 상태**
+- 이번 조사에서도 신규 제조사 바이너리 취득은 0건. 모든 LS메카피온/Solution Square 자료는 `metadata_only`.
+- 제조사 원본 bytes가 없으므로 제조사 파일 SHA-256, PDF 서명 유무, 서명자 인증서 체인, 내부 revision, SKU 적용범위를 검사하지 않았다. CI의 CRA 법령 PDF 및 artifact ZIP digest를 제조사 원본 해시로 취급하지 않는다.
+- 장애 원인: LS메카피온 개별 상세/목록 일부의 502/timeout, 검색 스니펫과 열린 HTML의 row 내용 불일치, 이전글 anchor href 미노출, CE 그룹형 색인, Solution Square SPA shell의 locator 비노출. 같은 실패 endpoint 반복 대신 실제 href/document ID가 새로 노출되는 공식 근거가 생길 때만 재시도한다.
+- Q01~Q62 문의/발송 없음. 제조사 연락 없음.
+
+**D. Run #1653 로그 재검토**
+- Run #1653 / ID 45728718673: event=push, branch=main, head SHA `792d4e4ba7d5e4652692d86274d8f85474bfeb0b`, completed/success. GitHub API job summary에서 단일 job의 15개 step summary가 반환되었고 15개 모두 completed/success였다. 전체 job log에서 10개 allowlisted official sources, CRA Commission PDFs 3/3, Article 13(8), Regulation 2025/2392 core-functionality 및 Annex I(10)/Annex II(1) locator, 10-record provenance manifest round-trip/upload PASS를 확인했다.
+- 기존 프로젝트 종결 기록의 25/25 단계 집계와 이번 API job step summary의 15개 항목은 집계 수준이 다를 수 있으므로, 본 절은 직접 조회한 API 응답을 그대로 15/15로 기록한다. pytest 189 passed 및 traceability 434 events는 기존 Run #1653 종결 로그와 동일하다.
+- Artifact ZIP digest: PDF ZIP ID 15074798454 SHA-256 `af6431a711c88c93b0c86d1915c2cf41075834ddbee29880af4f46ea9800c85f`; provenance ZIP ID 15075936106 SHA-256 `41bdfd4cf6cfa8bccca8c5cdd6f705cab8a27c971accd19ca9ebdb87b4b99ef2`. 이들은 GitHub artifact ZIP archive hash이며 제조사 파일 hash가 아니다.
+
+**다음 우선순위**
+1. 공식 공개 경로에서 실제 anchor href/document ID를 노출하는 새 증거를 찾는다. Ver1.3 target, CE 171~173 individual detail, Solution Square iX700M detail/API/attachment, UKCA Drive Unit, catalogue/CAD 첨부를 분리 추적한다.
+2. 원본 bytes 취득 즉시 파일별 SHA-256, PDF 서명·인증서 체인, 내부 revision, SKU scope를 검사한다. 미취득은 계속 metadata_only.
+3. 신규 공식 근거가 없으면 endpoint 반복 호출을 멈추고 실패 이유/증거 상태를 유지한다.
