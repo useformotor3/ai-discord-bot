@@ -1,5 +1,14 @@
 # CRA 현재 상황판 — 2026-11-27
 
+- **Latest verified main HEAD:** `86174ae03d5f73fe50095c9d3a222ddf13feddfe` (PR #332 expected-head merge SHA; refs/heads/main read-back).
+- PR #332 exact-head Run #1734 / 45913163831 and main push Run #1735 / 45913256940 both SUCCESS 15/15; pytest189; traceability472 (modern467+legacy5); official CRA PDF canary3/3; official sources10; live legal locators/provenance PASS.
+- Run #1734 artifact ZIP digests: source `8c6c52aec177603291c0b993f34dd01eb851ce8dbef14c001521cffec14f2baf`, provenance `72e6ce6241f66d1b6cbdafddf2ba4d0c55f1e8120d2c2f352d43f816be10c6db`. Run #1735: source `0ec1cae25a64a67f2293a3d5a036863c6909aa7a9e072b9cd78215bee973aa94`, provenance `82844a91baada775cb787f1105468bd7ebe57abbb0bc28a9e753f56f60ed523b`. CI ZIP hashes only.
+- SSQ public trace: official search page shows dynamic automation-download fields and Solution Square link; SSQ index confirms iX700M 2026-09-16 and PEGA2 listing; PEGA2 doc32720 metadata confirms EN Ver1.3. JS bundle/source map/API and concrete attachment hrefs remain unrecovered.
+- CE #171~#173 individual detail/PDF hrefs unknown; wr_id=12652 own previous-post anchor/PDF unknown. Manufacturer binaries0; no manufacturer SHA/signature/chain/revision/SKU checks.
+- CI learning: #1732/#1733 failed due interior blank JSONL line; whitespace-only line removal corrected the issue. Corrected #1734 and main push #1735 passed. No failed PR head merged.
+- No guessed IDs/URLs or failed manufacturer endpoint retries. CRA only; SIL 3 excluded; Q01~Q62 not sent. Details: report §114.7.56 / evidence §72.53.
+
+
 - **Latest verified main HEAD:** `3537d72c47d4a26bbe900faaa1ce594cc8ebfabf` (PR #331 expected-head merge SHA; refs/heads/main read-back; GitHub commit signature verified).
 - PR #331 exact-head Run #1730 / 45824393714 and main push Run #1731 / 45824572927 both SUCCESS 15/15; pytest189; traceability469 (modern464+legacy5).
 - Run #1730 artifact ZIP digests: source `06ab2bedd865ada00b34b416639c28e0174e846acd6975f42362042cbbc72654`, provenance `ea07e578ae7c97308739ee9182eba9ee1a54f486336fe583c7d2aeac24031393`. Run #1731: source `006dc20760acadde46f62af374cdbe5f03421bcf7afe24c1a0c50f9a2cdbb145`, provenance `7487b3b9fc6fdedb3718911d516b4fa261d0af79b4385a611c560abdeb9f4c3b`. CI ZIP hashes only.
