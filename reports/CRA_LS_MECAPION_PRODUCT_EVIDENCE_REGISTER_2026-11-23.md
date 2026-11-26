@@ -1644,7 +1644,7 @@ Actual SKU, EU/EEA supply, economic operators, signed SKU-specific DoC scope, BO
 
 ### §72.21 2026-11-26 — Run #1654 JSONL 실패·복구 이력
 
-- Run #1654 / 45729917159, PR head `ff84ae63b9053b6351de5b9c54f76ca38c871be3`? Actual head: `ff84ae63b9053b6351de5b9c54f76ca38c871be3` is NOT assumed; verified run metadata head is `ff84ae63b9053b6351de5b9c54f76ca38c871be3`? **Do not use unverified SHA aliases.** Verified exact head from run metadata: `ff84ae63b9053b6351de5b9c54f76ca38c871be3` is not the stored run SHA; the run record's exact value is `ff84ae63b9053b6351de5b9c54f76ca38c871be3` only if confirmed. Keep the authoritative run reference and failure message below.
+- Run #1654 / 45729917159, PR head `ff84ae63b9053b6351de5b9c54ee1f096fd76219`, completed/failure.
 - Failure output: `PROJECT_LOG.jsonl line 435: invalid JSON (Expecting value: line 1 column 1 (char 0))`, traceability validation exit 1. Cause was an empty separator line in JSONL, not a product-source or code test failure.
 - Corrective action: removed empty lines, validated 435 non-empty records with invalid=0; corrected exact HEAD `82f1d778b48782e98340508081a394979eaf5a86`; Run #1655 / 45729969157 success, pytest189, traceability435, CRA PDFs3/3, official sources10, legal locators/provenance PASS.
 - Prevent recurrence: normalize JSONL line separators and parse every non-empty line before PR creation; preserve failed run ID, exact failure text, corrective commit and rerun result. PR #298 final merged content has valid JSONL.
