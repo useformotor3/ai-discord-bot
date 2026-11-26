@@ -3668,3 +3668,10 @@ Run #1617 artifacts:
 - 기존에 실패한 endpoint를 무차별 반복하지 않았다. 이번 시도는 서로 다른 검색 색인/공식 카테고리 결과를 교차 대조했고, 직접 열기에서 확인된 실패는 PEGA2 대상 Internal Error, 카탈로그/CE timeout, UKCA 502, CAD/STEP timeout, Solution Square JS SPA shell이다.
 - 신규 제조사 바이너리 0. 제조사 파일 SHA-256, PDF signature, signer certificate chain, 내부 revision, SKU applicability 모두 미검증. 모든 해당 제조사 자료는 metadata_only.
 - Q01~Q62 문의/발송 없음. CRA only; SIL 3 제외.
+
+
+### 114.7.26 2026-11-26 — PR #302 exact-head Run #1671 및 main push Run #1672 종결
+- PR #302 exact HEAD `0404622e767f657f674cafc8f715397b0d8c63ec`, 6개 문서, +63/-0, 단일 tree/commit, JSONL 440 records valid.
+- Run #1671 / 45749576500: pull_request exact-head, completed/success, 15/15 steps; compileall PASS, pytest189, traceability440, CRA PDFs3/3, official sources10, legal locators/provenance PASS. Artifacts: PDF ZIP 15085375199 SHA-256 `743a3a99452d44dc4133729bbcd5721e2b24a6dd8abd608ffa872b064c0b94dd`; provenance ZIP 15085345301 SHA-256 `b68d9797afd22ed07216c394407fdf05aed8a13e6d16f33cbc264f051ef79322`.
+- Expected-head squash merge SHA/current main `8a06fa5b3790ebf14d743f9cdd5c8e6b66bc39c5`. Run #1672 / 45749657309: push/main/exact merge SHA/completed/success, 15/15 steps; compileall PASS, pytest189, traceability440, CRA PDFs3/3, official sources10, legal locators/provenance PASS. Artifacts: PDF ZIP 15084534083 SHA-256 `b84bfec3e0f8903c9da1297e7e0aefe50d8433dbc49c84a6ddd21d2570cfd1d7`; provenance ZIP 15084688372 SHA-256 `95b892f0964b7441a3db9d46b6abfca96bdbbd5ad0a43070b283d1ae449d7e88`.
+- Digests are GitHub artifact ZIP hashes, not manufacturer-file hashes. Manufacturer originals 0 / metadata_only; SHA/signature/signer-chain/revision/SKU unverified. CRA only; SIL 3 excluded.

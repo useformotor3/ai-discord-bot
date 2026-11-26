@@ -1679,3 +1679,10 @@ Actual SKU, EU/EEA supply, economic operators, signed SKU-specific DoC scope, BO
 - KR/EN catalogue `wr_id=12110`: both named PDF attachments 10.7M, metadata date 2025-12-05 13:43:50; bytes not acquired.
 - CAD/STEP index title/date 2026-04-21 confirmed; previous-post anchor target `wr_id=12455`; detail timed out, no ZIP acquired.
 - Manufacturer binaries 0; metadata_only. No manufacturer-file SHA/signature/signer chain/revision/SKU verification. Q01–Q62 unsent; CRA only; SIL 3 excluded.
+
+
+### 72.24 2026-11-26 — PR #302 exact-head/main push CI 종결
+- PR #302 exact HEAD `0404622e767f657f674cafc8f715397b0d8c63ec`, 6 docs +63/-0, JSONL 440 valid. Run #1671 / 45749576500 pull_request completed/success, 15/15 steps, pytest189, traceability440, CRA PDFs3/3, official sources10, legal locators/provenance PASS.
+- Expected-head merge/current main `8a06fa5b3790ebf14d743f9cdd5c8e6b66bc39c5`; Run #1672 / 45749657309 push/main exact SHA completed/success, 15/15 steps, same checks PASS.
+- Artifact ZIP hashes: #1671 PDF `743a3a99452d44dc4133729bbcd5721e2b24a6dd8abd608ffa872b064c0b94dd`, provenance `b68d9797afd22ed07216c394407fdf05aed8a13e6d16f33cbc264f051ef79322`; #1672 PDF `b84bfec3e0f8903c9da1297e7e0aefe50d8433dbc49c84a6ddd21d2570cfd1d7`, provenance `95b892f0964b7441a3db9d46b6abfca96bdbbd5ad0a43070b283d1ae449d7e88`. These are GitHub ZIP hashes, not manufacturer binaries.
+- Manufacturer originals 0 / metadata_only. CRA only; SIL 3 excluded.
