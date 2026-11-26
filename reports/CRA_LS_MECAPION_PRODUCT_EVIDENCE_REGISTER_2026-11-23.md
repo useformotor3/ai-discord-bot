@@ -1580,3 +1580,15 @@ Actual SKU, EU/EEA supply, economic operators, signed SKU-specific DoC scope, BO
 - Run #1647 artifacts: PDF 15071680573 / SHA-256 bcf3c51abd37fea815f45b20bd656556ec8d09c3f06ab308967bf252c5b8c71e; provenance 15070574079 / SHA-256 e905328bb69917028525b62fa8a507defd9b74226abba802a4db44e7d9c7ec1b.
 - Manufacturer binaries remain 0; metadata_only; no manufacturer SHA/signature/signer-chain/revision/SKU-scope validation. PR pipeline green is not manufacturer source acquisition. Q01–Q62 unsent; CRA only; SIL 3 excluded.
 
+
+
+### §72.16 2026-11-26 — 공식 인덱스 재검증 및 증거 범위 구분
+- PEGA2 Ver1.3 상세 `wr_id=12651` 검색 색인에 이전글 제목 `iX700M DRIVE 400[V] 매뉴얼 Ver1.3`가 표시됨. target anchor href/wr_id는 여전히 미노출. wr_id12651은 PEGA2 게시물 ID.
+- 일반/Servo manual 목록 row41=Ver1.4, 빈 분류 snapshot row41=Ver1.3. 충돌 유지, row 번호에서 ID 추정 금지. Ver1.4 wr_id12652 detail 502, attachment/binary 없음.
+- CE index rows 171/172/173의 SKU group 명칭을 확인: 220B; 370B/300B; 750B/550B/450B. 개별 상세 ID/href/첨부는 미확보. CE row170 wr_id12888=150B only; CE Converter wr_id12886=Converter, 개별 row ID 유추에 사용하지 않음.
+- UKCA wr_id12893은 Converter Unit iX700MCV, attachment label `[UKCA_DoC_LVDEMC] iX700MCV.pdf` (index 224.1K). Drive Unit UKCA 자료는 미발견(부존재 증명 아님). UL index row17의 iX700M Series UL Certificate(2026-04-13)는 별도 인증 종류이며 UKCA 대체 아님.
+- Solution Square iX700M 사용 설명서: 2026-09-16, 조회수 171 색인 확인. SPA direct page and search route show JS shell; document ID/detail/attachment unresolved.
+- Catalogue wr_id12110: KR/EN filenames each 10.7M, index date 2025-12-05; binaries not fetched. CAD/STEP: drawing list row19/overall row117, 2026-04-21; detail ID/attachment/binaries not fetched.
+- Manufacturer binaries newly acquired 0; metadata_only. No manufacturer SHA-256/PDF signature/signer chain/internal revision/SKU scope verification. Failure causes: 502/timeouts, JS shell, hidden previous-post href, grouped CE list, index snapshot mismatch. No guessed IDs/URLs. Q01~Q62 unsent. CRA only; SIL 3 excluded.
+- Official URLs: https://lsmecapion.com/bbs/board.php?bo_table=manual&sca=Servo&wr_id=12651 ; https://www.lsmecapion.com/bbs/board.php?bo_table=manual ; https://www.lsmecapion.com/bbs/board.php?bo_table=manual&sca= ; https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&sca=CE ; https://www.lsmecapion.com/bbs/board.php?bo_table=catalog&wr_id=12110 ; https://www.lsmecapion.com/bbs/board.php?bo_table=drawing&sca=Servo+Drive ; https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&page=3&wr_id=12893 ; https://ssq.ls-electric.com/kr/ko/product/category/4?pageNumber=14 ; https://sol.ls-electric.com/kr/ko/newSearch?pageNumber=70.
+
