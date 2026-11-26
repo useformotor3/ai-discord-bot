@@ -1500,3 +1500,9 @@ Annex I Part II의 실무 요구사항은 machine-readable SBOM(최소 top-level
 - LS메카피온 매뉴얼 row41의 Ver1.3/Ver1.4 색인 충돌은 유지한다. `page=1` 검색 스니펫의 Ver1.3 표시는 실제 열린 HTML 본문과 일치하지 않아 검색 스니펫만으로 확정하지 않는다.
 - 제조사 원본 바이너리 신규 취득 0, metadata_only. SHA-256·PDF 서명/서명자 체인·내부 revision·SKU 범위 검증 없음.
 - Run #1653 exact main push success; 제조사 원본 취득 성공과는 별개다. CRA only; SIL 3 제외.
+
+
+## CRA 진행 종결 업데이트 (2026-11-26)
+- PR #298 merged; current main `4c948a4b0b829485064ea6f577c9db9b2ce664e6`. PR #298 exact-head Run #1655 and main push Run #1656 both passed; details in report §114.7.21 / evidence register §72.19.
+- Solution Square search index independently shows the iX700M user manual and iX700M product result, but no document ID/detail/API/attachment locator; metadata_only.
+- Manufacturer binaries remain 0. CI artifact ZIP digests are not manufacturer file hashes. CRA only; SIL 3 excluded.

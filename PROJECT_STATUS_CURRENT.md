@@ -1,3 +1,8 @@
+## 2026-11-26 — PR #298 / Run #1655~#1656 종결 및 Solution Square 검색 색인 교차확인 (§114.7.21 / §72.19)
+- Solution Square 통합검색은 문서 28건 중 iX700M 사용 설명서, 제품 8건 중 iX700M을 노출한다. ID/detail/API/attachment는 미노출, JS shell, metadata_only. pageNumber=8/14의 views 165/171 차이는 snapshot metadata로만 보존.
+- PR #298 exact HEAD 82f1d778b48782e98340508081a394979eaf5a86, 6 docs +75/-0, JSONL 435 records valid. Run #1655 success, pytest189, traceability435, CRA PDFs3/3, sources10, legal locators/provenance PASS.
+- Expected-head merge/current main 4c948a4b0b829485064ea6f577c9db9b2ce664e6. Main push Run #1656 exact SHA/event push success, pytest189, traceability435, PDFs3/3, sources10, legal locators/provenance PASS.
+- 제조사 원본 0, metadata_only. SHA/signature/signer chain/revision/SKU 미검증. CRA only; SIL 3 제외.
 ## 2026-11-26 — 공식 색인 스니펫/실제 HTML 불일치 추가 (§114.7.20 / §72.18)
 - 기준 main `792d4e4ba7d5e4652692d86274d8f85474bfeb0b`. 매뉴얼 `page=1` 검색 스니펫은 row41=Ver1.3을 보여주지만 열린 HTML 본문에는 row41이 없고 row39~30만 표시된다. 기본 목록/Servo 필터 Ver1.4, 빈 분류 Ver1.3과 함께 snapshot conflict 유지; controlled revision은 Unknown.
 - PEGA2 Ver1.3 이전글 target href/wr_id 미확정, Ver1.4 wr_id12652 detail 502/attachment 미취득. CE 171~173 개별 상세 미확정. UKCA Drive Unit 미발견(부존재 증명 아님); 12893은 Converter. Solution Square iX700M document ID/API/detail/attachment 미확정(JS shell). KR/EN 카탈로그와 CAD/STEP는 metadata_only.
