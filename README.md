@@ -1606,3 +1606,6 @@ PR #314의 exact-head CI Run #1695와 main push Run #1696가 모두 SUCCESS(15/1
 
 
 > **2026-11-26 manufacturer source trace update (§114.7.51 / evidence §30.1):** A real LS ELECTRIC official-host PDF URL was found for PEGA2 Korean Ver1.1, but its relation to Solution Square doc32720 (which lists English Ver1.3) is unproven and its bytes were not acquired locally; no manufacturer PDF hash/signature/certificate-chain check. doc32720 direct attachment href, iX700M 2026-09-16 detail/attachment href, CE #171~#173 individual hrefs, and wr_id=12652's own previous-post anchor remain UNKNOWN. Separate LS MECAPION manual index shows iX700M Ver1.4 dated 2026-05-26; do not conflate with the Solution Square listing. CRA only; SIL 3 excluded.
+
+
+> **PR #328 / main CI closeout (2026-11-26):** exact-head Run #1723 / 45820488232 and main push Run #1724 / 45820657970 both SUCCESS 15/15, pytest189, traceability466 (modern461+legacy5), Commission PDFs3/3, official CRA sources10, provenance PASS. Expected base 1211308446a4c8b2b81a9e7f285fc3828f769ccf; merge/current main `ba09a41d90cda4add0b4c95180dba7b3d0d27d65`. See report §114.7.52 / evidence §72.49. Manufacturer file status remains separately qualified in §114.7.51 / §30.1. CRA only; SIL 3 excluded.

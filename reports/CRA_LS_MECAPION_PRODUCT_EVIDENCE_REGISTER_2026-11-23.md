@@ -1908,3 +1908,11 @@ Actual SKU, EU/EEA supply, economic operators, signed SKU-specific DoC scope, BO
 - Run #1719 ZIPs: source `23d99ea98aa43e2935e5ba4bc995f7839559062485af66d4086441f092428356` (ID15115318766, 3,070,565 bytes); provenance `79e33018dc8591063b9e1776dd2805bd428b5ee72cb11e2fa0544b30ce64f552` (ID15115758214, 2,565 bytes).
 - Run #1720 ZIPs: source `e5eec0ec6c910999b6cc75253867326728280ab976c3a41453420a54572914ad` (ID15114699091, 3,070,565 bytes); provenance `d69d0bfd0196923bb294548cb49c7a7abe7b0334130c6bcb5852a9224e92b723` (ID15115283207, 2,565 bytes). ZIP digests only, not manufacturer PDF hashes.
 - Manufacturer binaries0; all requested manufacturer attachment/detail targets remain UNKNOWN except the actual wr_id=12651 previous-post anchor destination to wr_id=12652. wr_id=12652's own previous-post anchor href remains unknown. CRA only; SIL 3 excluded; Q01~Q62 not sent.
+
+
+### 72.49 2026-11-26 — PR #328 / Run #1723~#1724 CI closeout
+- PR #328 exact-head `d92a62ffa07c7b41459a68d778fc47de1bb3c14e`; Run #1723 / 45820488232 success 15/15; expected base `1211308446a4c8b2b81a9e7f285fc3828f769ccf`; merge/current main `ba09a41d90cda4add0b4c95180dba7b3d0d27d65`; Run #1724 / 45820657970 push/main exact SHA success 15/15.
+- Both runs: pytest189; traceability466 (modern461+legacy5); Commission PDFs3/3; official CRA sources10; legal locators/provenance PASS.
+- Run #1723 ZIPs: source `d9643befa5fb32cbc1742fc8b31700639cd2f0040d51d3eff176926546ba88bb` (ID15117841475, 3,070,564 bytes); provenance `3908f0361c0877b6d70820ca15cec7cba65ff9d60e4d2e4252f9e6dbaaca321d` (ID15118136265, 2,565 bytes).
+- Run #1724 ZIPs: source `237df9ecf7bb4b9704b68774e671d79808ab43ae1743d2ca94580ece397cb084` (ID15117866680, 3,070,565 bytes); provenance `13ea5859d9090bbc6619078e20cbdeb377cd483a00068036ee553c68c4d132e8` (ID15117707028, 2,565 bytes). ZIP digests only, not manufacturer PDF hashes.
+- Manufacturer PDF candidate/link findings remain as recorded in evidence §30.1; no manufacturer binary/hash/signature/certificate-chain/revision/SKU validation. CRA only; SIL 3 excluded; Q01~Q62 not sent.
