@@ -1512,3 +1512,8 @@ Annex I Part II의 실무 요구사항은 machine-readable SBOM(최소 top-level
 - PR #299 exact-head Run #1657 and main push Run #1658 passed; current main `9f77fcdb0498b4ab9dd88e8ac097458c8bd1d75b`.
 - PROJECT_LOG.jsonl has 436 non-empty valid JSON records. Details in report §114.7.22 / evidence register §72.20.
 - Manufacturer originals remain 0 / metadata_only; GitHub artifact ZIP hashes are not manufacturer source hashes. CRA only; SIL 3 excluded.
+
+
+## CI 실패 및 복구 이력 (2026-11-26)
+- Run #1654 failed because an empty separator line in PROJECT_LOG.jsonl was parsed as an invalid JSON record (line 435). The blank line was removed; 435 records then parsed cleanly and corrected exact-head Run #1655 passed.
+- Preventive check: normalize JSONL separators and parse every non-empty record before opening a PR. Details: report §114.7.23 / evidence register §72.21.
