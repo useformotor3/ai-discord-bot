@@ -3527,3 +3527,16 @@ Run #1617 artifacts:
 - 다음 합리적 시도는 공식 사이트의 공개 검색 결과/공식 기술지원 경로를 통해 실제 anchor 또는 파일 링크를 확인하는 것이다. Q01~Q62는 발송하지 않는다.
 - CRA only; SIL 3 excluded.
 
+
+
+### 114.7.19 2026-11-26 — PR #296 exact-head / main push CI 종결
+- PR #296 문서 전용 변경 exact HEAD `2eb266711577c64fc182014c649f435b7f7049b4`; Run #1650 / ID 45728292172, event=pull_request, completed/success, 25/25 steps.
+- Exact-head validation: compile PASS; CRA traceability PASS (13 claims, 15 interfaces, 35 requirements, 36 SEC, 41 M/606 mapping items, PROJECT_LOG 433 events); pytest 189 passed; official CRA Commission PDFs 3/3 fetched and hashed; 10 allowlisted official sources fetched; Article 13(8) and Regulation 2025/2392 core-functionality + Annex I(10)/Annex II(1) locators PASS; provenance manifest uploaded.
+- Diff was reviewed before merge: 6 documentation files, +75/-0, base main `d0fbdbd6b80688fd29bf420d5b709f6bd64dc493`, 6 commits ahead / 0 behind. No source code/workflow modifications.
+- Expected-head squash merge required PR head `2eb266711577c64fc182014c649f435b7f7049b4`; merge SHA/current main `6f8dbbe907debd35292c29a2f994d2c0a2ae6b81`.
+- Main push Run #1651 / ID 45728389056 independently verified exact merge SHA + event=push + branch=main + completed/success, 25/25 steps; compile/traceability PASS, pytest 189, official CRA PDFs 3/3, 10 official sources, Article 13(8)/2025/2392 locators PASS, provenance uploaded.
+- Run #1650 artifacts: CRA PDF ZIP ID 15075168107, 3,070,568 bytes, archive SHA-256 `df76ffe5f4bcfc2190b3271314ae39f029451ea54b7d321a41705bbe0a197776`; provenance ZIP ID 15075472328, 2,565 bytes, archive SHA-256 `4986511e2462ecc0476570c486bcba66f7d0a219a7e27324049a32f3d7fb773c`.
+- Run #1651 artifacts: CRA PDF ZIP ID 15074329996, 3,070,566 bytes, archive SHA-256 `36236eb3e3e4c897459ab34e94825a5c623a04ab5864c6b4dfe307700f403178`; provenance ZIP ID 15075776058, 2,565 bytes, archive SHA-256 `27eb727cd7589a1a6cd571a706786e98d8aa7840ad5ee8d46bb9f0123a5cd9a8`.
+- Important distinction: these SHA-256 digests identify GitHub artifact ZIP archives, not LS Mecapion manufacturer binaries. Manufacturer binaries acquired in this investigation remain 0; manufacturer evidence remains metadata_only. No manufacturer PDF signature, signer chain, internal revision, or SKU scope was validated.
+- PR #296 merged successfully; current main is `6f8dbbe907debd35292c29a2f994d2c0a2ae6b81`. CRA only; SIL 3 excluded.
+
