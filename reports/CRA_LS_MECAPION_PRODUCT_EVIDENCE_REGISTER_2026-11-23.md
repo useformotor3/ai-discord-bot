@@ -1796,3 +1796,10 @@ Actual SKU, EU/EEA supply, economic operators, signed SKU-specific DoC scope, BO
 - Rechecked official indexes: PEGA2 doc32720 detail and indexed English Ver1.3 filename confirmed, attachment href unresolved; iX700M 2026-09-16 list item confirmed, document ID/detail href unresolved; CE #171–#173 model strings/date reconfirmed, individual hrefs/attachments unresolved; wr_id12652 not retried and unresolved. wr_id12651 is PEGA2 Ver1.3 and must not be substituted.
 - Solution Square pages are JS-rendered; page reader sees SPA shell only. Public web search did not disclose a documented API/JS resource endpoint yielding the requested identifiers. No guessed IDs, no constructed attachment URLs, no repeat of known failed wr_id12652 endpoint.
 - Manufacturer binaries acquired: 0 / metadata_only. No manufacturer SHA-256, PDF signature, signer-chain, revision or SKU validation.
+
+
+### §72.37 2026-11-26 — PR #315 exact-head / main push CI closeout
+- PR #315 exact head `6d66a06a32a6ee8218bbb9b0eb5940f1e8bb7d2d`; Run #1697 / 45787893954 pull_request exact-head success 15/15; job139799254293; pytest189; traceability453 (modern448, legacy5); Commission PDFs3/3; official sources10; legal locators/provenance PASS.
+- Expected-head merge SHA/current main `adeda5347682960e119f7df721c7c568c57b92a6`; main ref independently confirmed. Run #1698 / 45788121534 push/main exact SHA success 15/15; job139799990444; same tests and source checks PASS.
+- Run #1697 ZIP digests: source `522a3c524b594fee69f82c9d02dacc621c8eeced18436b242f24fcba1ae5a6d3`; provenance `2e14ba168afb2eb89c201efb42b4ce6b0772ca1a50f3b526dd826c51fc2b555f`. Run #1698 ZIP digests: source `1d92f8a999414224feb91fd55059885d205a2c761b2752ddc17e279dc8db9e83`; provenance `10ba609f7df7391ff9500caaeae39a60ee7bef9842becbcdf0f5d00ced1ba1a3`. All are CI ZIP hashes, not manufacturer PDFs.
+- Manufacturer originals remain 0 / metadata_only; no manufacturer SHA/signature/signer-chain/revision/SKU validation.

@@ -4105,3 +4105,10 @@ CRA only; SIL 3 excluded.
 - 공식 Solution Square 검색색인과 LS메카피온 CE/manual 색인을 재조사했으나, 요청한 실제 attachment/detail href 및 문서 ID는 추가로 확보하지 못했다.
 - JS SPA shell은 검색 결과 외의 앱 리소스/API를 페이지 추출기로 노출하지 않았다. 추정 URL/ID를 만들지 않았고 wr_id=12652 실패 endpoint도 재호출하지 않았다.
 - 제조사 바이너리 0건. 따라서 제조사 SHA-256/PDF 서명/인증서 체인/revision/SKU 검증은 미실시 상태 유지.
+
+
+## 2026-11-26 — PR #315 CI / main push closeout
+- PR #315 exact head 6d66a06a32a6ee8218bbb9b0eb5940f1e8bb7d2d; Run #1697 / 45787893954 exact-head success 15/15; pytest189; traceability453 (modern448 + legacy5); Commission PDFs3/3; official sources10; legal locators/provenance PASS.
+- Expected-head merge SHA/current main adeda5347682960e119f7df721c7c568c57b92a6; main ref independently verified.
+- Run #1698 / 45788121534 main push exact SHA success 15/15; same validation pass.
+- Artifact ZIP digests recorded in report §114.7.39 and evidence §72.37; they are not manufacturer PDF hashes. Manufacturer binaries 0; signature/revision/SKU checks remain not run.
