@@ -1506,3 +1506,9 @@ Annex I Part II의 실무 요구사항은 machine-readable SBOM(최소 top-level
 - PR #298 merged; current main `4c948a4b0b829485064ea6f577c9db9b2ce664e6`. PR #298 exact-head Run #1655 and main push Run #1656 both passed; details in report §114.7.21 / evidence register §72.19.
 - Solution Square search index independently shows the iX700M user manual and iX700M product result, but no document ID/detail/API/attachment locator; metadata_only.
 - Manufacturer binaries remain 0. CI artifact ZIP digests are not manufacturer file hashes. CRA only; SIL 3 excluded.
+
+
+## PR #299 / main CI 종결 (2026-11-26)
+- PR #299 exact-head Run #1657 and main push Run #1658 passed; current main `9f77fcdb0498b4ab9dd88e8ac097458c8bd1d75b`.
+- PROJECT_LOG.jsonl has 436 non-empty valid JSON records. Details in report §114.7.22 / evidence register §72.20.
+- Manufacturer originals remain 0 / metadata_only; GitHub artifact ZIP hashes are not manufacturer source hashes. CRA only; SIL 3 excluded.
