@@ -3602,3 +3602,15 @@ Run #1617 artifacts:
 - CE rows 171/172/173 remain grouped index entries without individual detail href/IDs. UKCA Drive Unit not located (absence not proven); wr_id=12893 is Converter Unit only.
 - Solution Square iX700M manual and product search association is corroborated, but document ID/API/detail/attachment remains unknown. KR/EN catalogue and CAD/STEP remain metadata_only.
 - Q01~Q62 not sent; no manufacturer contact. CRA only; SIL 3 excluded.
+
+
+### 114.7.22 2026-11-26 — PR #299 exact-head 및 main push CI 종결
+
+- 기준 main HEAD `9f77fcdb0498b4ab9dd88e8ac097458c8bd1d75b`; PR #299 문서 전용 변경 6개 파일, +55/-0. 변경 대상은 통합 보고서, 제품 증거 등록부, PROJECT_STATUS_CURRENT, README, SESSION_LOG, PROJECT_LOG.jsonl이며 운영 코드/workflow 변경은 없다.
+- PROJECT_LOG.jsonl은 비어 있지 않은 436개 레코드 모두 JSON parse 성공, invalid 0.
+- PR #299 exact HEAD `6c661ec285f800de90086cf470f83ab894742309`; Run #1657 / ID 45730411555, event=pull_request, completed/success. GitHub API job summary 15/15 success; compile PASS; pytest 189 passed; CRA traceability 436 events; CRA Commission PDFs 3/3 fetched/hashed; 10 allowlisted official sources; Article 13(8), Regulation 2025/2392 core-functionality, Annex I(10)/Annex II(1) locators PASS; 10-record provenance manifest round-trip/upload PASS.
+- Run #1657 artifact ZIPs: CRA PDF ZIP ID 15077015432, 3,070,565 bytes, SHA-256 `a694ca8446af464febdd8998b184e4604fe3d3c0fe4d39bd7e83db7a64b4456a`; provenance ZIP ID 15075564111, 2,565 bytes, SHA-256 `af3c1d7ce5c0fa78f189fca0b2563269a8a1b89b2cc62d4f9fe18ec61ce5686a`.
+- Expected-head squash merge with required PR head `6c661ec285f800de90086cf470f83ab894742309`; merge SHA/current main `9f77fcdb0498b4ab9dd88e8ac097458c8bd1d75b`.
+- Main push Run #1658 / ID 45730551230 independently verified exact merge SHA + event=push + branch=main + completed/success. API job summary 15/15 success; pytest 189; traceability 436 events; CRA PDFs 3/3; 10 official sources; Article 13(8)/2025/2392 locators and provenance PASS.
+- Run #1658 artifact ZIPs: PDF ZIP ID 15076701404, 3,070,565 bytes, SHA-256 `51a4a30aa7e42bedf5bcd471a0aa9e19eea4b81e1dc19efe565e9f193db0646f`; provenance ZIP ID 15076556925, 2,565 bytes, SHA-256 `9d3dc5c2a0fe3a2b3f323c830e96ac3f7f767bbadd6784d2f345c7ecc20aef12`.
+- These are GitHub artifact ZIP archive digests, not manufacturer document hashes. Manufacturer source binaries remain 0 / metadata_only. No manufacturer SHA-256, PDF signature, signer chain, internal revision, or SKU scope is verified. CRA only; SIL 3 excluded.
