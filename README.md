@@ -1597,3 +1597,6 @@ PR #314의 exact-head CI Run #1695와 main push Run #1696가 모두 SUCCESS(15/1
 
 
 > **2026-11-26 manufacturer locator update (§114.7.48 / evidence §30):** Re-verified PEGA2 Solution Square doc32720 metadata (Ver1.3 EN filename, 6.0 MB, 2026-09-23) but attachment href remains hidden by JS. iX700M 2026-09-16 listing confirmed; detail/attachment ID unknown. CE #171~#173 SKU groups confirmed; individual hrefs unknown. Following the actual previous-post anchor from official wr_id=12651 resolves to the exact wr_id=12652 detail URL, but destination fetch timed out and wr_id=12652's own previous-post href remains unknown. Search snapshot Ver1.3 vs opened HTML Ver1.1 conflict recorded. Manufacturer binaries 0; no manufacturer hash/signature/certificate-chain/revision/SKU verification. CRA only; SIL 3 excluded.
+
+
+> **PR #325 / main CI closeout (2026-11-26):** exact-head Run #1717 / 45816659504 and main push Run #1718 / 45816837042 both completed/success, 15/15, pytest189, traceability463 (modern458 + legacy5), Commission PDFs3/3, official CRA sources10, legal locators/provenance PASS. Expected main base 2e51031efb18acb5c116624bf13de07c8fc67ed7; merge/current main `2e51031efb18acb5c116624bf13de07c8fc67ed7`. See report §114.7.49 / evidence §72.47. Manufacturer binaries remain 0; target manufacturer attachment hrefs remain unresolved. CRA only; SIL 3 excluded.

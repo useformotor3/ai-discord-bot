@@ -1,12 +1,13 @@
-- main HEAD: `2dc3760f6b68eeeb1cb22b70a4c9317a874eeabf` (PR #324 merge SHA; independently read from refs/heads/main).
-- Manufacturer trace update: wr_id=12651 page's actual previous-post anchor resolves to `https://www.lsmecapion.com/bbs/board.php?bo_table=manual&sca=Servo&wr_id=12652`; destination body/PDF and wr_id=12652's own previous-post href remain UNKNOWN.
-- PEGA2 doc32720 file metadata confirmed; actual attachment URL unknown. iX700M 2026-09-16 listing confirmed; detail ID/href/attachment unknown. CE #171~#173 SKU groups/date confirmed; individual hrefs/attachments unknown.
-- wr_id=12651 search-index Ver1.3 vs opened-page Ver1.1 content conflict recorded; no revision conclusion. Manufacturer binaries 0; no manufacturer SHA/signature/certificate-chain/revision/SKU checks.
-- Details: integrated report §114.7.48 / product evidence register §30. CRA only; SIL 3 excluded; Q01~Q62 not sent.
+# CRA 현재 상황판 — 2026-11-26
+
+- main HEAD: `2e51031efb18acb5c116624bf13de07c8fc67ed7` (PR #325 merge SHA; verified from refs/heads/main).
+- PR #325 exact-head Run #1717 SUCCESS 15/15; main push Run #1718 SUCCESS 15/15; pytest189; traceability463 (modern458+legacy5); Commission PDFs3/3; official CRA sources10; legal locators/provenance PASS.
+- PR #325 artifact ZIP digests recorded in report §114.7.49 / evidence §72.47. These are CI ZIP hashes, not manufacturer PDF hashes.
+- Manufacturer trace: PEGA2 doc32720 metadata verified but attachment URL unknown; iX700M 2026-09-16 listing verified but detail ID/href unknown; CE #171~#173 rows verified but individual hrefs unknown.
+- Actual previous anchor on wr_id=12651 points to wr_id=12652; wr_id=12652 page content/PDF and its own previous-post anchor href remain unknown. wr_id=12651 search snapshot Ver1.3 vs opened HTML Ver1.1 conflict unresolved.
+- Manufacturer binaries0; no manufacturer SHA-256/PDF signature/certificate-chain/revision/SKU validation. CRA only; SIL 3 excluded; Q01~Q62 not sent.
 
 ---
-
-# CRA 현재 상황판 — 2026-11-26
 
 - main HEAD: `54e0d4a1fe71815d12fc64e18e3fdf7be4b60228` (PR #323 merge SHA)
 - PR #323: exact-head Run #1713 SUCCESS 15/15; main push Run #1714 SUCCESS 15/15; pytest189; traceability461 (modern456 + legacy5); Commission PDFs3/3; official sources10; legal locators/provenance PASS.

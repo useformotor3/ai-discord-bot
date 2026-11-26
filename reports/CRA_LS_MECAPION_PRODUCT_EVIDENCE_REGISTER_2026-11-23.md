@@ -1879,3 +1879,11 @@ Actual SKU, EU/EEA supply, economic operators, signed SKU-specific DoC scope, BO
 - 제조사 바이너리 신규 취득: **0**. 제조사 파일 SHA-256, PDF 서명, signer certificate chain, revocation/trust-chain, 내부 revision 및 SKU scope 검증: **NOT PERFORMED**.
 - PEGA2 attachment URL, iX700M 2026-09-16 detail/attachment href, CE #171~#173 individual hrefs, wr_id=12652 자체의 이전글 anchor href는 계속 UNKNOWN. wr_id=12652 detail URL은 wr_id=12651의 이전글 anchor 목적지로만 확인됨.
 - 검색색인·목록 메타데이터는 원본 PDF 취득/진위/서명/제품 적용범위의 증거가 아니다. CRA only; SIL 3 excluded; Q01~Q62 not sent.
+
+
+### 72.47 2026-11-26 — PR #325 / Run #1717~#1718 CI closeout
+- PR #325 exact-head `5d2bbe93b0d9984555f919fddf7f8bf40f87b2da`; Run #1717 / 45816659504 success 15/15; merge/current main `2e51031efb18acb5c116624bf13de07c8fc67ed7`; Run #1718 / 45816837042 push/main exact SHA success 15/15. Both pytest189; traceability463 (modern458+legacy5); Commission PDFs3/3; official sources10; CRA legal locators/provenance PASS.
+- Run #1717 ZIPs: source `fdcbe9440497d2d801ab207bdcb1a86a93750e9c32023591eae2103e20437d8d` (ID15116575655, 3,070,566 bytes); provenance `265aa2286139f4a022ea9f2ba6e15b36ebe7d4fd1c04fd0f0153f9721d80d4d7` (ID15115088182, 2,565 bytes).
+- Run #1718 ZIPs: source `b5f9949a9d270c10d52ebedcf05cb9469c34419f870cb04159503e5d85d9fb88` (ID15115153438, 3,070,565 bytes); provenance `da656938404e9984f96e0afdb04b40a67cc244c75c4470b7cbdec1479c82dc20` (ID15115597831, 2,564 bytes). These are GitHub CI ZIP digests only, not manufacturer PDF hashes.
+- CI emitted non-blocking Node.js 20 deprecation warnings for actions running under Node 24; all required steps succeeded.
+- Manufacturer original binaries0; PEGA2/iX700M/CE target attachment hrefs and wr_id=12652 page's own previous-post anchor href remain UNKNOWN. The actual previous anchor on wr_id=12651 resolves to the wr_id=12652 detail URL; destination body/PDF unavailable. No manufacturer SHA/signature/certificate-chain/revision/SKU verification. CRA only; SIL 3 excluded; Q01~Q62 not sent.

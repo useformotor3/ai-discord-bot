@@ -4181,3 +4181,10 @@ CRA only; SIL 3 excluded.
 - LS메카피온 CE #171~#173 모델 그룹과 날짜를 공식 목록에서 확인했으나 개별 detail/attachment href는 미확보.
 - wr_id=12651에서 실제 이전글 anchor를 따라가 wr_id=12652 detail URL을 확인했다. 대상 페이지 fetch는 timeout; wr_id=12652 자체의 이전글 anchor href 및 PDF는 미확인. 검색색인 Ver1.3과 직접 열린 페이지 Ver1.1이 충돌하므로 revision은 UNKNOWN.
 - 제조사 바이너리 0. 제조사 SHA-256/PDF 서명/인증서 체인/revision/SKU 검증은 미실시. 실패 endpoint 재호출 및 ID 추정 없음. CRA only; SIL 3 제외; Q01~Q62 미발송.
+
+
+## 2026-11-26 — PR #325 / Run #1717~#1718 종결
+- PR #325 head 5d2bbe93b0d9984555f919fddf7f8bf40f87b2da; Run #1717 / 45816659504 exact-head success 15/15; pytest189; traceability463 (modern458+legacy5); Commission PDFs3/3; official CRA sources10; legal locators/provenance PASS.
+- Expected base 2e51031efb18acb5c116624bf13de07c8fc67ed7; compare ahead1/behind0; one commit, six docs/log files, 45 additions/0 deletions. Expected-head merge; merge/current main 2e51031efb18acb5c116624bf13de07c8fc67ed7.
+- Run #1718 / 45816837042 main push exact SHA success 15/15; same validation. Artifact ZIP digests in report §114.7.49/evidence §72.47.
+- Manufacturer originals0; PEGA2/iX700M/CE attachment hrefs and wr_id=12652 own previous-post href remain unknown. No manufacturer hash/signature/certificate-chain/revision/SKU checks; CRA only; SIL3 excluded.
