@@ -4015,3 +4015,10 @@ CRA only; SIL 3 excluded.
 - Root cause was a blank separator inserted during JSONL append, not code or CRA source validation. Removed empty lines and parsed 435 non-empty records successfully.
 - Corrected exact head 82f1d778b48782e98340508081a394979eaf5a86 passed Run #1655 / 45729969157 (189 pytest, traceability435, PDFs3/3, official sources10, legal locators/provenance PASS).
 - Preventive action: normalize trailing/blank lines and validate every non-empty JSONL line before PR creation. Record failure, fix, and rerun rather than overwriting failure.
+
+
+## 2026-11-26 — PR #300 병합 및 문서 갱신 절차 개선
+- PR #300 final HEAD 35e42f29a18ba09086f149ffff911a3026092e2f, 6 docs +75/-0, JSONL 438 records valid. Run #1667 exact-head success (pytest189, traceability438, PDFs3/3, sources10, legal locators/provenance PASS).
+- Expected-head merge/current main d510ca516adae596d4ba43fef7cb281fc185afc5. Run #1668 main push exact SHA success, same checks PASS.
+- Sequential multi-file update_file writes triggered superseded/cancelled Runs #1660~#1666. Not code/test failures. Future use one Git tree + one commit + expected-SHA ref update for multi-file documentation changes.
+- Manufacturer binaries 0 / metadata_only. CRA only; SIL 3 excluded.

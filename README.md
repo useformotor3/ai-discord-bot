@@ -1517,3 +1517,10 @@ Annex I Part II의 실무 요구사항은 machine-readable SBOM(최소 top-level
 ## CI 실패 및 복구 이력 (2026-11-26)
 - Run #1654 failed because an empty separator line in PROJECT_LOG.jsonl was parsed as an invalid JSON record (line 435). The blank line was removed; 435 records then parsed cleanly and corrected exact-head Run #1655 passed.
 - Preventive check: normalize JSONL separators and parse every non-empty record before opening a PR. Details: report §114.7.23 / evidence register §72.21.
+
+
+## PR #300 / main CI 및 문서 갱신 효율 (2026-11-26)
+- PR #300 merged; exact-head Run #1667 and main push Run #1668 passed. Current main: `d510ca516adae596d4ba43fef7cb281fc185afc5`.
+- PROJECT_LOG.jsonl: 438 non-empty valid JSON records. Run #1654 blank-line failure and repair are documented in report §114.7.23 / evidence §72.21.
+- Runs #1660~#1666 were cancelled as sequential commits superseded earlier branch heads. Future multi-file docs updates will be batched into a single Git tree/commit/ref update. Details §114.7.24 / §72.22.
+- Manufacturer binaries remain 0 / metadata_only. CRA only; SIL 3 excluded.
