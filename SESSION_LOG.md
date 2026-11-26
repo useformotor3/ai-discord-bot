@@ -4195,3 +4195,11 @@ CRA only; SIL 3 excluded.
 - Expected base 4589f83dec1119e56ff1d7e6ab908ec411c20f3f; compare ahead1/behind0; one commit, six docs/log files, 37 additions/7 deletions. Expected-head merge; merge/current main baseline 4589f83dec1119e56ff1d7e6ab908ec411c20f3f.
 - Run #1720 / 45817198752 main push exact SHA success 15/15; same validation. Artifact ZIP digests in report §114.7.50/evidence §72.48.
 - Manufacturer originals0; PEGA2/iX700M/CE hrefs and wr_id=12652 own previous-post href remain unknown. No manufacturer hash/signature/certificate-chain/revision/SKU checks; CRA only; SIL3 excluded.
+
+
+## 2026-11-26 — 제조사 공식 원본 경로 재추적 후속
+- PR #327 / main HEAD 1211308446a4c8b2b81a9e7f285fc3828f769ccf; Run #1721 exact-head and Run #1722 main push both SUCCESS 15/15; pytest189; traceability465 (modern460+legacy5); Commission PDFs3/3; official CRA sources10; provenance artifacts uploaded.
+- PEGA2 doc32720: EN Ver1.3 metadata reconfirmed, attachment href remains unknown. Separately located LS ELECTRIC official-host PEGA2_KOR_Ver1.1_260605.pdf direct URL; PDF parsed as PEGA2 Series User Manual Ver1.1, but association to doc32720 unproven and binary not acquired locally.
+- iX700M 2026-09-16 Solution Square listing confirmed; detail/document ID/attachment href unknown. Separate LS MECAPION manual index shows iX700M DRIVE 400[V] Ver1.4 dated 2026-05-26; not assumed to be same item.
+- CE #171~#173 models/date confirmed; individual detail/attachment hrefs remain unknown. wr_id=12652 remains the actual previous-post anchor destination from wr_id=12651; wr_id=12652's own previous-post anchor href remains unknown.
+- Manufacturer local binary0; no manufacturer SHA-256, PDF signature, signer chain, revocation, revision/SKU validation. CI ZIP digests are not manufacturer PDF hashes. CRA only; SIL 3 excluded; Q01~Q62 not sent.
