@@ -1706,3 +1706,16 @@ Actual SKU, EU/EEA supply, economic operators, signed SKU-specific DoC scope, BO
 - Run #1675 artifact ZIPs: PDF 15086360629 / SHA-256 `991fccd6301a3e8b287093943f6b6738b9109ce0baa705e8d1b68b083b4a6d54`; provenance 15085942073 / SHA-256 `ff2381bf5801b6851816238f3b95150c1e6352f2990d17e8a4fc984beb001100`.
 - Run #1676 artifact ZIPs: PDF 15086100969 / SHA-256 `48e323f91e5f11875f67a18f43308719e756866feb018c26a8bc714b63cd1068`; provenance 15085991303 / SHA-256 `4058633b3dae4b9e9baa85160fb6d7691e94fafa0fdabd737c3bf03b40498709`.
 - Digests are CI artifact ZIP hashes, not manufacturer source files. Manufacturer binaries 0 / metadata_only; no manufacturer hash/signature/signer-chain/revision/SKU validation. CRA only; SIL 3 excluded.
+
+
+### §72.27 2026-11-26 — Solution Square PEGA2 doc 32720 / iX700M / CE #171~#173 추가 교차검증
+
+- Baseline main `73e48a0e786d7264bd750b8a85959d14d12baecd`.
+- **PEGA2 Solution Square:** official document detail ID `32720`, title PEGA2 User Manual, update 2026-09-23. Search-index attachment metadata: `PEGA2_ENG_Ver1.3_260831.pdf`, English, 6.0 MB, applicable product PEGA2 series. Detail page itself is a JS shell; actual attachment href/storage path and bytes unavailable. Do not derive download path from doc ID.
+- **PEGA2 KR counterpart:** LS Mecapion detail `manual&sca=Servo&wr_id=12651` shows `PEGA2_KOR_Ver1.3_260826.pdf`, 6.6 MB, metadata date 2026-08-28. Different language/filename/date/size; not treated as identical to Solution Square EN PDF.
+- **iX700M version conflict:** PEGA2 detail wr_id=12651 previous-post label says iX700M Ver1.3. Basic official manual list row 41 and Servo-filter list show Ver1.4; empty-category snapshot shows Ver1.3. The row target previously followed from list anchor is wr_id=12652, but its detail/attachment is inaccessible. Version/revision remains UNRESOLVED; no iX700M binary acquired.
+- **Solution Square iX700M:** category/search index confirms “iX700M 사용 설명서”, updated 2026-09-16, views 171. No detail ID/attachment filename exposed. JS SPA shell only. Do not reuse PEGA2 doc ID 32720.
+- **CE:** #171=220B, #172=370B/300B, #173=750B/550B/450B, date 2026-04-30. Individual href/wr_id/attachments still unknown. #170 comparator `wr_id=12888` is iX700MD1-B-150B only, attachment `[CE_DoC-LVDEMC] iX700MD1-B-150B.pdf`, 238.9 KB, 2026-04-30 11:55:32; not used to infer adjacent IDs.
+- Manufacturer binaries acquired this turn: 0. All PEGA2/iX700M/CE evidence remains metadata_only; SHA-256, PDF signature, signer chain, internal revision and SKU scope not verified.
+- Sources: https://sol.ls-electric.com/us/en/product/document/32720 ; https://www.lsmecapion.com/bbs/board.php?bo_table=manual&sca=Servo&wr_id=12651 ; https://lsmecapion.com/bbs/board.php?bo_table=manual ; https://www.lsmecapion.com/bbs/board.php?bo_table=manual&sca= ; https://www.lsmecapion.com/bbs/board.php?bo_table=manual&sca=Servo ; https://ssq.ls-electric.com/kr/ko/product/category/4?pageNumber=14 ; https://sol.ls-electric.com/kr/ko/newSearch?pageNumber=70 ; https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&sca=CE ; https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&page=4&wr_id=12888 .
+- CRA only; SIL 3 excluded; Q01~Q62 not sent.
