@@ -4112,3 +4112,10 @@ CRA only; SIL 3 excluded.
 - Expected-head merge SHA/current main adeda5347682960e119f7df721c7c568c57b92a6; main ref independently verified.
 - Run #1698 / 45788121534 main push exact SHA success 15/15; same validation pass.
 - Artifact ZIP digests recorded in report §114.7.39 and evidence §72.37; they are not manufacturer PDF hashes. Manufacturer binaries 0; signature/revision/SKU checks remain not run.
+
+
+## 2026-11-26 — PR #316 exact-head / main push closeout
+- PR #316 exact head ccacb4716eb1665bcd2a695971f822dfaa7ce16e; Run #1699 / 45788389243 success 15/15; pytest189; traceability454 (modern449 + legacy5); Commission PDFs3/3; official sources10; legal locators/provenance PASS.
+- Expected-head merge SHA/current main 26974977a527d546e0257a8bce3401db3e76c587; main ref independently confirmed.
+- Run #1700 / 45788548649 main push exact SHA success 15/15; same validation pass. Artifact ZIP digests are in report §114.7.40 and evidence §72.38; not manufacturer PDF hashes.
+- Manufacturer binaries 0; manufacturer hash/signature/signer chain/revision/SKU remain unverified.

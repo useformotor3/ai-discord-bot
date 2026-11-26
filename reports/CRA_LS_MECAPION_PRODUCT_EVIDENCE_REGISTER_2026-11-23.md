@@ -1803,3 +1803,10 @@ Actual SKU, EU/EEA supply, economic operators, signed SKU-specific DoC scope, BO
 - Expected-head merge SHA/current main `adeda5347682960e119f7df721c7c568c57b92a6`; main ref independently confirmed. Run #1698 / 45788121534 push/main exact SHA success 15/15; job139799990444; same tests and source checks PASS.
 - Run #1697 ZIP digests: source `522a3c524b594fee69f82c9d02dacc621c8eeced18436b242f24fcba1ae5a6d3`; provenance `2e14ba168afb2eb89c201efb42b4ce6b0772ca1a50f3b526dd826c51fc2b555f`. Run #1698 ZIP digests: source `1d92f8a999414224feb91fd55059885d205a2c761b2752ddc17e279dc8db9e83`; provenance `10ba609f7df7391ff9500caaeae39a60ee7bef9842becbcdf0f5d00ced1ba1a3`. All are CI ZIP hashes, not manufacturer PDFs.
 - Manufacturer originals remain 0 / metadata_only; no manufacturer SHA/signature/signer-chain/revision/SKU validation.
+
+
+### §72.38 2026-11-26 — PR #316 exact-head / main push CI closeout
+- PR #316 exact head `ccacb4716eb1665bcd2a695971f822dfaa7ce16e`; Run #1699 / 45788389243 pull_request exact-head success 15/15; job139800907274; pytest189; traceability454 (modern449, legacy5); Commission PDFs3/3; official sources10; legal locators/provenance PASS.
+- Expected-head merge SHA/current main `26974977a527d546e0257a8bce3401db3e76c587`; main ref independently verified. Run #1700 / 45788548649 push/main exact SHA success 15/15; job139801437794; same validation PASS.
+- Run #1699 ZIP digests: source `87bcdb1dd49e6e947c817a2ca45c87c18b3083d60cdd31d3a32677202b8fc804`; provenance `4726a352ab09652c9ca3b066c3741f79e16e11958a37e736a74143f090fe81f4`. Run #1700 ZIP digests: source `1844c5afd471795930bce7ba3655ae75a791315682de1987968059c424735294`; provenance `47076268b2b900c805f8ba4cb4248009456b084ad58c7c268345ca9dd27938b2`. These are ZIP hashes, not manufacturer PDF hashes.
+- Manufacturer originals remain 0 / metadata_only; no manufacturer hash/signature/signer-chain/revision/SKU validation.
