@@ -3614,3 +3614,14 @@ Run #1617 artifacts:
 - Main push Run #1658 / ID 45730551230 independently verified exact merge SHA + event=push + branch=main + completed/success. API job summary 15/15 success; pytest 189; traceability 436 events; CRA PDFs 3/3; 10 official sources; Article 13(8)/2025/2392 locators and provenance PASS.
 - Run #1658 artifact ZIPs: PDF ZIP ID 15076701404, 3,070,565 bytes, SHA-256 `51a4a30aa7e42bedf5bcd471a0aa9e19eea4b81e1dc19efe565e9f193db0646f`; provenance ZIP ID 15076556925, 2,565 bytes, SHA-256 `9d3dc5c2a0fe3a2b3f323c830e96ac3f7f767bbadd6784d2f345c7ecc20aef12`.
 - These are GitHub artifact ZIP archive digests, not manufacturer document hashes. Manufacturer source binaries remain 0 / metadata_only. No manufacturer SHA-256, PDF signature, signer chain, internal revision, or SKU scope is verified. CRA only; SIL 3 excluded.
+
+
+### 114.7.23 2026-11-26 — PR #298 초기 JSONL 검사 실패 원인 및 수정 조치 기록
+
+- **실패 실행:** Run #1654 / ID 45729917159, event=pull_request, head `ff84ae63b9053b6351de5b9c54ee1f096fd76219`, conclusion=failure.
+- **실패 로그의 직접 원문:** `FAIL: CRA traceability validation`; `PROJECT_LOG.jsonl line 435: invalid JSON (Expecting value: line 1 column 1 (char 0))`; process exit code 1.
+- **원인:** 문서 업데이트 과정에서 JSONL 레코드 사이에 빈 줄이 들어갔다. JSONL은 한 줄에 하나의 JSON 객체가 있어야 하므로, 빈 줄도 파서에 입력되면서 오류가 발생했다. application code, CRA 법령 source canary, workflow 설정의 실패로 분류하지 않는다.
+- **수정:** 프로젝트 로그를 비어 있지 않은 줄만 남기도록 정규화하고 각 줄을 JSON.parse로 다시 검사했다. 정규화 후 435개 레코드, invalid 0을 확인했다. 수정된 PR head는 `82f1d778b48782e98340508081a394979eaf5a86`.
+- **재검증:** Run #1655 / ID 45729969157은 exact corrected HEAD에서 completed/success, 189 pytest passed, traceability 435 events, CRA PDFs 3/3, official sources 10, legal locators 및 provenance PASS. 이후 PR #298을 expected-head로 병합하고 Run #1656 main push도 성공했다.
+- **재발 방지:** PROJECT_LOG.jsonl을 append할 때는 줄 끝 공백/빈 줄을 제거한 뒤 append하고, PR 생성 전 모든 비어 있지 않은 줄을 JSON parse한다. CI failure를 성공으로 덮지 않고 실패 run ID·원인·수정 commit·재검증 run을 함께 기록한다.
+- **정정 이력:** PR #298 초안 본문에는 최초 JSONL validation이 성공했다고 잘못 적혔으나, 실제 Run #1654 실패를 확인한 뒤 blank-line 문제를 고치고 Run #1655의 성공을 확인했다. 최종 병합된 PR #298의 JSONL은 435개 레코드 모두 유효하다.
