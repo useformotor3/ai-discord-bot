@@ -1,4 +1,11 @@
 
+## 2026-11-26 — PR #296 / Run #1650~#1651 종결
+- PR #296 exact HEAD 2eb266711577c64fc182014c649f435b7f7049b4; Run #1650 / 45728292172 SUCCESS 25/25, pytest 189, traceability 433, CRA PDFs 3/3, official sources 10, provenance PASS.
+- Diff reviewed: 6 documentation files, +75/-0; expected-head squash merge SHA/current main 6f8dbbe907debd35292c29a2f994d2c0a2ae6b81.
+- Main push Run #1651 / 45728389056 independently verified exact SHA + event=push + branch=main + completed/success, 25/25; pytest 189, traceability 433, PDFs 3/3, sources 10, provenance PASS.
+- Artifact IDs/digests are in report §114.7.19 / evidence §72.17; hashes are artifact ZIP hashes, not manufacturer file hashes.
+- Manufacturer binaries remain 0, metadata_only. No manufacturer SHA/signature/signer chain/internal revision/SKU scope validation. CRA only; SIL 3 excluded.
+
 ## 2026-11-26 — 공식 제조사 색인 재검증 (§114.7.18 / §72.16)
 - PEGA2 Ver1.3 상세 wr_id=12651 검색 색인에서 이전글 iX700M Ver1.3 제목 확인. target anchor href/wr_id 미노출. 일반/Servo 목록 row41=Ver1.4, 빈 분류 snapshot row41=Ver1.3 충돌 유지. Ver1.4 wr_id12652 detail 502, 첨부 미취득.
 - CE row171/172/173 SKU 범위는 각각 220B / 370B·300B / 750B·550B·450B로 색인 재확인; 개별 상세 ID/href 미확보. row170 wr_id12888은 150B 별도 자료.
