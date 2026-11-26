@@ -4143,3 +4143,11 @@ CRA only; SIL 3 excluded.
 - Run #1706 / 45795722205 main push exact SHA success 15/15; same validation. ZIP digests and Commission PDF internal hashes in report §114.7.43/evidence §72.41.
 - wr_id12651 detail page names PEGA2 Ver1.3 attachment and previous-article label iX700M DRIVE 400[V] Ver1.3. Actual previous href is not exposed, so no assumption it is ID12652. No failed endpoint retry.
 - Manufacturer binaries0; manufacturer hashes/signatures/cert chain/revision/SKU unverified. CRA only; SIL3 excluded; Q01~Q62 not sent.
+
+
+## 2026-11-26 — PR #320 / Run #1707~#1708 종결
+- PR #320 head 41c6b60061bd37e1c6c67dcc758f8601c017361c; Run #1707 / 45796077973 exact-head success 15/15; pytest189; traceability458 (modern453+legacy5); Commission PDFs3/3; official sources10; legal locators/provenance PASS.
+- Expected base db90ef36b2b8c222a801b03bb26b284029c477fc; compare ahead1/behind0; six docs-only files, 45 additions/0 deletions. Expected-head merge; merge/current main 6f563b0246d3410290e1312edf53f011b6988d4d.
+- Run #1708 / 45796230772 main push exact SHA success 15/15; same validation. Artifact ZIP hashes in report §114.7.44/evidence §72.42.
+- wr_id12651 previous-article title iX700M DRIVE 400[V] Ver1.3 retained as lead only; href/ID not exposed, so no inferred mapping to 12652. Manufacturer originals0.
+- CRA only; SIL3 excluded; Q01~Q62 not sent.
