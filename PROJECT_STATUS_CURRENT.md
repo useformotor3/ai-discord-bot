@@ -1,3 +1,11 @@
+- main HEAD: `2dc3760f6b68eeeb1cb22b70a4c9317a874eeabf` (PR #324 merge SHA; independently read from refs/heads/main).
+- Manufacturer trace update: wr_id=12651 page's actual previous-post anchor resolves to `https://www.lsmecapion.com/bbs/board.php?bo_table=manual&sca=Servo&wr_id=12652`; destination body/PDF and wr_id=12652's own previous-post href remain UNKNOWN.
+- PEGA2 doc32720 file metadata confirmed; actual attachment URL unknown. iX700M 2026-09-16 listing confirmed; detail ID/href/attachment unknown. CE #171~#173 SKU groups/date confirmed; individual hrefs/attachments unknown.
+- wr_id=12651 search-index Ver1.3 vs opened-page Ver1.1 content conflict recorded; no revision conclusion. Manufacturer binaries 0; no manufacturer SHA/signature/certificate-chain/revision/SKU checks.
+- Details: integrated report §114.7.48 / product evidence register §30. CRA only; SIL 3 excluded; Q01~Q62 not sent.
+
+---
+
 # CRA 현재 상황판 — 2026-11-26
 
 - main HEAD: `54e0d4a1fe71815d12fc64e18e3fdf7be4b60228` (PR #323 merge SHA)
