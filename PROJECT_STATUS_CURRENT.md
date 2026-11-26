@@ -1,4 +1,13 @@
-# CRA 현재 상황판 — 2026-11-26
+# CRA 현재 상황판 — 2026-11-27
+
+- **Latest verified main HEAD:** `3537d72c47d4a26bbe900faaa1ce594cc8ebfabf` (PR #331 expected-head merge SHA; refs/heads/main read-back; GitHub commit signature verified).
+- PR #331 exact-head Run #1730 / 45824393714 and main push Run #1731 / 45824572927 both SUCCESS 15/15; pytest189; traceability469 (modern464+legacy5).
+- Run #1730 artifact ZIP digests: source `06ab2bedd865ada00b34b416639c28e0174e846acd6975f42362042cbbc72654`, provenance `ea07e578ae7c97308739ee9182eba9ee1a54f486336fe583c7d2aeac24031393`. Run #1731: source `006dc20760acadde46f62af374cdbe5f03421bcf7afe24c1a0c50f9a2cdbb145`, provenance `7487b3b9fc6fdedb3718911d516b4fa261d0af79b4385a611c560abdeb9f4c3b`. CI ZIP hashes only.
+- New public trace: LS ELECTRIC official search page exposes dynamic automation-download metadata fields and Solution Square link; SSQ category search index confirms iX700M 2026-09-16 and PEGA2 manual listing; PEGA2 document32720 confirms Ver1.3 metadata. Actual JS bundle/source map/API and attachment hrefs remain unexposed.
+- CE #171~#173 model/date rows confirmed; individual detail/PDF hrefs unknown. wr_id=12652 is confirmed only as 12651's previous-link destination; its own previous anchor/PDF unknown.
+- Manufacturer original binaries0; no manufacturer SHA-256/signature/certificate-chain/revision/SKU checks. No guessed IDs/URLs or failed endpoint retries. CRA only; SIL 3 excluded; Q01~Q62 not sent.
+- Details: report §114.7.55 / evidence register §72.52. Next: acquire actual official script asset reference or concrete indexed file anchor only from newly surfaced public evidence; do not retry failed endpoints or infer identifiers.
+
 
 - **Latest verified main HEAD:** `0d6db6e7be98ca130a8ceedb7ae6b8627b30d95d` (PR #330 expected-head merge SHA; refs/heads/main read-back).
 - PR #330 exact-head Run #1728 / 45823938086 and main push Run #1729 / 45824091662 both SUCCESS 15/15; pytest189; traceability468 (modern463+legacy5); Commission PDFs3/3; official CRA sources10; legal locators/provenance PASS.
