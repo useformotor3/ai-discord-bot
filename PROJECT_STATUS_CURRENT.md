@@ -1,5 +1,16 @@
 # CRA 현재 상황판 — 2026-11-26
 
+- 기준 main HEAD: `adeda5347682960e119f7df721c7c568c57b92a6` (PR #315 병합 커밋)
+- PR #315: merged; exact-head Run #1697 SUCCESS 15/15; main push Run #1698 SUCCESS 15/15; pytest189; traceability453.
+- 제조사 원본 추적: PEGA2 document 32720 attachment href, iX700M 2026-09-16 document ID/detail href, LS메카피온 wr_id=12652, CE #171~#173 개별 href/원본 바이너리는 여전히 미확인.
+- 제조사 원본 바이너리 취득 0건. CI artifact ZIP digest는 제조사 PDF hash가 아님.
+- 다음 우선순위: 신규 공식 공개 JS/API resource 또는 제조사 원본 attachment anchor 추적. 실패 endpoint 재호출 및 ID 추정 금지.
+- 범위: CRA only; SIL 3 제외; Q01~Q62 문의 금지.
+
+---
+
+# CRA 현재 상황판 — 2026-11-26
+
 - 기준 main HEAD: `676289d6e854e9ff564ee8f345cbcb587f266b1b` (PR #314 병합 커밋)
 - PR #314: merged; exact-head Run #1695 SUCCESS 15/15; main push Run #1696 SUCCESS 15/15.
 - 이번 조사: PEGA2 document 32720 attachment href, iX700M 2026-09-16 document ID/detail href, LS Mecapion wr_id=12652, CE #171~#173 individual hrefs 및 원본 파일은 여전히 미확인. 공식 검색색인으로 제목/목록 메타데이터만 재확인됨.

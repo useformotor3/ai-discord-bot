@@ -3865,3 +3865,12 @@ Run #1617 artifacts:
 - LS Mecapion CE index independently re-confirms records #171–#173 and model strings: 220B; 370B/300B; 750B/550B/450B, all dated 2026-04-30. Individual hrefs and attachment URLs remain unavailable from indexed output; opening the index timed out. No neighboring wr_id is inferred.
 - LS Mecapion manual index still lists iX700M DRIVE 400[V] Ver1.4 (2026-05-26) and PEGA2 Ver1.3 (2026-04-01). PEGA2 Ver1.3 detail is wr_id=12651 and is not requested wr_id=12652. The exact wr_id=12652 endpoint was not retried; its detail/PDF remains unresolved.
 - Manufacturer binaries acquired in this pass: 0. Manufacturer SHA-256, PDF signature, signer certificate chain, internal revision and SKU applicability remain unverified. CRA only; SIL 3 excluded; Q01~Q62 not sent.
+
+
+### 114.7.39 2026-11-26 — PR #315 문서 동기화 CI / main push 종결
+- PR #315는 baseline `676289d6e854e9ff564ee8f345cbcb587f266b1b`에서 단일 tree/commit으로 6개 문서를 갱신했고 exact head `6d66a06a32a6ee8218bbb9b0eb5940f1e8bb7d2d`를 검증했다. Run #1697 / 45787893954, pull_request, exact head 일치, completed/success; job 139799254293, 15/15. 로그: compileall PASS, CRA traceability claims13/interfaces15/requirements35/SEC36/EVD-SEC16/M60641/project log453 (modern448 + legacy5), pytest **189 passed**, Commission PDFs3/3, official allowlist10, legal locators/provenance PASS.
+- Run #1697 artifacts: source ZIP ID 15101316964, 3,070,566 bytes, SHA-256 `522a3c524b594fee69f82c9d02dacc621c8eeced18436b242f24fcba1ae5a6d3`; provenance ZIP ID 15101461605, 2,564 bytes, SHA-256 `2e14ba168afb2eb89c201efb42b4ce6b0772ca1a50f3b526dd826c51fc2b555f`.
+- PR #315 expected-head merge succeeded; merge SHA `adeda5347682960e119f7df721c7c568c57b92a6`, PR state merged. main ref independently equals the merge SHA.
+- Run #1698 / 45788121534, push/main exact merge SHA, completed/success; job 139799990444, 15/15. Same validation: compileall PASS, traceability453 (modern448 + legacy5), pytest189, Commission PDFs3/3, official sources10, legal locators/provenance PASS.
+- Run #1698 artifacts: source ZIP ID 15101870902, 3,070,566 bytes, SHA-256 `1d92f8a999414224feb91fd55059885d205a2c761b2752ddc17e279dc8db9e83`; provenance ZIP ID 15100779316, 2,565 bytes, SHA-256 `10ba609f7df7391ff9500caaeae39a60ee7bef9842becbcdf0f5d00ced1ba1a3`.
+- All four hashes above are GitHub CI artifact ZIP digests, not manufacturer PDF hashes. Manufacturer binaries remain 0; no manufacturer SHA-256, PDF signature, signer chain, internal revision or SKU verification. CRA only; SIL 3 excluded; Q01~Q62 not sent.

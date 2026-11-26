@@ -1567,3 +1567,6 @@ Annex I Part II의 실무 요구사항은 machine-readable SBOM(최소 top-level
 
 ## CRA 조사 업데이트 (2026-11-26)
 PR #314의 exact-head CI Run #1695와 main push Run #1696가 모두 SUCCESS(15/15)로 종결되었고 main HEAD는 `676289d6e854e9ff564ee8f345cbcb587f266b1b`이다. 제조사 문서 추적은 계속 진행 중이며 PEGA2 doc32720 실제 attachment, iX700M 2026-09-16 detail ID, wr_id=12652, CE #171~#173 개별 href 및 원본 바이너리는 아직 미확인이다. CI ZIP digest를 제조사 PDF hash로 오인하지 않는다. CRA only; SIL 3 제외.
+
+
+> **PR #315 / main CI closeout (2026-11-26):** PR exact-head Run #1697 / 45787893954 and main push Run #1698 / 45788121534 both completed/success, 15/15, pytest189, traceability453, Commission PDFs3/3, official sources10, legal locators/provenance PASS. Expected-head merge/current main `adeda5347682960e119f7df721c7c568c57b92a6`. See report §114.7.39 / evidence §72.37 for artifact ZIP digests. Manufacturer binaries remain 0. CRA only; SIL 3 excluded.
