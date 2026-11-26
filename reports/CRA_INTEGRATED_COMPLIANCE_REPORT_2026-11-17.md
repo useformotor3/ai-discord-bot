@@ -3485,3 +3485,45 @@ Run #1617 artifacts:
 - Artifacts main Run #1647: PDF ZIP ID 15071680573, 3,070,565 bytes, SHA-256 `bcf3c51abd37fea815f45b20bd656556ec8d09c3f06ab308967bf252c5b8c71e`; provenance ZIP ID 15070574079, 2,565 bytes, SHA-256 `e905328bb69917028525b62fa8a507defd9b74226abba802a4db44e7d9c7ec1b`.
 - Manufacturer source outcome is unchanged: no LS Mecapion/Solution Square original binaries acquired; all manufacturer sources metadata_only. PR CI success validates the CRA research pipeline, not manufacturer PDF acquisition. Ver1.3/Ver1.4 conflict, missing locators, SKU/supply/operator/BOM/MCU/security Unknowns remain. Q01–Q62 unsent. CRA only; SIL 3 excluded.
 
+
+
+### 114.7.18 2026-11-26 — 공식 검색 인덱스 재검증: PEGA2 이전글·CE SKU 그룹·UKCA 범위·CAD/카탈로그
+**조사 범위:** CRA 제품 증거 추적만 수행. Q01~Q62 문의/발송 없음. SIL 3 제외.
+
+#### A. PEGA2 Ver1.3 페이지와 iX700M Ver1.3 이전글
+- LS메카피온 공식 PEGA2 Ver1.3 상세 페이지 `https://lsmecapion.com/bbs/board.php?bo_table=manual&sca=Servo&wr_id=12651`의 검색 색인에는 본문 제목 PEGA2 Ver1.3과 함께 하단 이전글 텍스트 `iX700M DRIVE 400[V] 매뉴얼 Ver1.3`가 표시된다.
+- 다만 검색 결과가 노출하는 것은 이전글 제목 문자열뿐이며 실제 anchor의 `href`/target URL/target `wr_id`는 여전히 제공되지 않는다. 현재 확인된 `wr_id=12651`은 PEGA2 게시물 ID이며 iX700M Ver1.3 ID로 오인하지 않는다.
+- 공식 일반 목록 `https://www.lsmecapion.com/bbs/board.php?bo_table=manual` 및 Servo 필터 `https://lsmecapion.com/bbs/board.php?bo_table=manual&sca=Servo`는 row 41을 Ver1.4로 표시한다. 빈 분류 스냅샷 `https://www.lsmecapion.com/bbs/board.php?bo_table=manual&sca=`는 row 41을 Ver1.3으로 표시한다. 두 snapshot 충돌은 그대로 유지한다. 목록 row 번호로 ID를 추정하지 않는다.
+- Ver1.4 `wr_id=12652`는 기존 공식 상세 URL로 확인되나 상세 조회는 502/timeout이며 첨부 URL 또는 원본 bytes를 확보하지 못했다. 따라서 Ver1.3/Ver1.4 어느 쪽도 제조사 바이너리 검증 완료로 취급하지 않는다.
+
+#### B. CE row 171/172/173 개별 범위
+- 공식 CE 목록 `https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&sca=CE` 검색 색인에서 2026-04-30 게시물 그룹과 제품 범위를 재확인했다.
+  - row 171: `iX700MD1-B-220B`
+  - row 172: `iX700MD1-B-370B, 300B`
+  - row 173: `iX700MD1-B-750B, 550B, 450B`
+- 세 행은 각각의 제품 범위가 구체화된 색인 결과지만, 개별 상세 URL/게시물 ID/첨부 링크는 색인에서 노출되지 않았고 직접 상세 페이지도 확인되지 않았다. 세부 상세를 확보했다고 과장하지 않는다.
+- 비교 기준으로 row 170의 `wr_id=12888`은 150B 단일 범위이고, CE Converter Unit의 `wr_id=12886`은 별도 Converter 자료다. 이 ID들을 171~173의 ID 추정 근거로 사용하지 않는다.
+- CE Converter 상세 색인에는 `[CE_DoC-LVDEMC] iX700MCV.pdf` 234.4K가 표시되지만 실제 바이너리는 취득·검증하지 않았다.
+
+#### C. UKCA 범위 구분
+- 공식 `wr_id=12893` 상세는 UKCA **Converter Unit iX700MCV**이며 첨부 표시명은 `[UKCA_DoC_LVDEMC] iX700MCV.pdf`, 색인상 크기는 224.1K다.
+- 이는 Drive Unit 선언서가 아니다. iX700M Drive Unit UKCA 자료는 이번 검색에서도 개별 항목을 찾지 못했으나, 미발견은 부존재의 증명이 아니다.
+- 별도 UKCA/CE 자료와 혼동하지 않도록 문서 증거 범위를 분리한다. UL 목록에는 2026-04-13 게시된 `iX700M Series UL CERTIFICATE OF COMPLIANCE` 항목이 확인되지만 UL 자료는 UKCA DoC 대체물이 아니다.
+
+#### D. Solution Square iX700M 사용 설명서
+- 공식 Solution Square 모션&Servo 목록 `https://ssq.ls-electric.com/kr/ko/product/category/4?pageNumber=14`의 검색 색인은 `iX700M 사용 설명서`, 업데이트 `26-09-16`, 조회수 171을 표시한다. 다른 페이지/검색 색인에서도 같은 제목과 날짜가 재확인된다.
+- 직접 페이지 열기는 `You need to enable JavaScript to run this app`만 반환한다. 검색/목록은 항목 제목과 날짜를 보이지만 document ID, 상세 route, attachment URL을 노출하지 않는다. `https://sol.ls-electric.com/kr/ko/newSearch?pageNumber=70` 역시 JS 앱 셸이다.
+- 따라서 document ID/detail/attachment 경로는 미확정, 상태는 metadata_only.
+
+#### E. 카탈로그 및 CAD/STEP
+- 공식 카탈로그 게시물 `https://www.lsmecapion.com/bbs/board.php?bo_table=catalog&wr_id=12110`은 `Servo iX700M 카탈로그 (iX700M_Catalogue_KR/EN)` 제목과 국문/영문 파일명 `iX700M 브로셔 최종KR_251205.pdf`, `iX700M 브로셔 최종EN_251205.pdf`를 표시한다. 각 색인상 10.7M, 파일 DATE 2025-12-05 13:43:50. 실제 PDF bytes는 취득하지 않았다.
+- 공식 도면 목록 `https://www.lsmecapion.com/bbs/board.php?bo_table=drawing&sca=Servo+Drive`의 row 19 및 전체 목록 row 117은 `iX700M Series 서보드라이브 외형도 2D(CAD), 3D(STEP)`, 게시일 2026-04-21을 표시한다. 기존 PHOX 상세 `wr_id=12435`의 이전글 텍스트도 iX700M 도면 제목을 표시하지만 실제 target href/ID는 노출되지 않는다. iX700M 도면의 상세 ID/첨부 URL/ZIP 원본은 미확보.
+- 파일명·크기·게시일·목록 행은 메타데이터이지 파일 무결성의 증거가 아니다.
+
+#### F. 원본 바이너리 검증 상태와 실패 원인
+- 이번 재조사에서도 신규 LS메카피온/Solution Square 제조사 바이너리 취득 0건. 관련 증거는 metadata_only.
+- 제조사 원본 bytes가 없으므로 제조사 파일 SHA-256, PDF 서명 유무, 서명자 인증서 체인, 내부 revision, 개별 SKU 적용범위는 검증하지 않았다. 위에 언급한 검색 색인 파일 크기나 CI가 취득한 EU 법령 PDF의 hash를 제조사 파일 hash로 혼동하지 않는다.
+- 확인된 장애/한계: LS메카피온 상세 endpoint 502/timeout, 검색 색인의 row/필터 캐시 불일치, 이전글의 anchor target 미노출, Solution Square SPA의 JS shell. 실패한 URL에 임의 wr_id/첨부 URL을 붙여 반복 추정하지 않는다.
+- 다음 합리적 시도는 공식 사이트의 공개 검색 결과/공식 기술지원 경로를 통해 실제 anchor 또는 파일 링크를 확인하는 것이다. Q01~Q62는 발송하지 않는다.
+- CRA only; SIL 3 excluded.
+
