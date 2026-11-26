@@ -3750,3 +3750,12 @@ Run #1617 artifacts:
 - SHA-256, PDF signature presence/validity, signer certificate chain, internal revision, SKU scope는 실제 bytes가 없으므로 전부 미검증. 파일명/표시 크기/게시일은 바이너리 검증을 대체하지 않는다.
 - 실패한 endpoint를 반복 호출하지 않았다. 공개 검색 색인/목록 snapshot으로 추가 확인 가능한 부분만 기록하고, 문서 ID·wr_id·첨부 URL을 추정하지 않았다.
 - CRA only; SIL 3 제외; Q01~Q62 문의/발송 없음.
+
+
+### 114.7.30 2026-11-26 — PR #306 exact-head Run #1679 및 main push Run #1680 종결
+- PR #306 exact HEAD `0cd50a8acc78bb49de8a04bbb8600e209ec68958`; Run #1679 / 45752937289: event=pull_request, exact-head, completed/success, 15/15 steps. compileall PASS, pytest 189 passed, CRA traceability PASS (444 project-log events), official CRA sources 10/10, Article 13(8), Regulation (EU) 2025/2392 core-functionality/Annex I(10)/Annex II(1) locators and provenance PASS.
+- Run #1679 artifacts: PDF ZIP ID 15086810508, 3,070,565 bytes, SHA-256 `0498d87ed6f820353877fa59e431429ee355851a141339e93b1bb86ace06cd8c`; provenance ZIP ID 15085779588, 2,565 bytes, SHA-256 `ee367ac003a2c3c20cf3ca17b6effa2cd4cd0534cac034cb7b5346948e99c57b`.
+- Expected-head squash merge enforced exact PR head `0cd50a8acc78bb49de8a04bbb8600e209ec68958`; merge SHA/current main `770fc317d21a25dc99eb209d1a9644f2d1257ea8`. Main ref independently confirmed exact equality.
+- Main push Run #1680 / 45753033948: event=push, branch=main, exact merge SHA, completed/success, 15/15 steps. compileall PASS, pytest 189 passed, traceability444, official CRA sources10/10, legal locators and provenance PASS.
+- Run #1680 artifacts: PDF ZIP ID 15085918922, 3,070,565 bytes, SHA-256 `4ef3a706cc3083cf6455e206d88d03cde911042ab6d780d758fb1ca4f4cbe4d2`; provenance ZIP ID 15086795720, 2,565 bytes, SHA-256 `38e14b7f477a0eab1a5bafef7ce2457ca0d197335cf36d8b628ab1a8207bcf3c`.
+- 위 4개 digest는 GitHub CI artifact ZIP 해시이며 LS메카피온 제조사 PDF 해시가 아니다. 제조사 원본 바이너리 취득 0 / metadata_only; 제조사 SHA-256/PDF signature/signer chain/revision/SKU 미검증. CRA only; SIL 3 제외; Q01~Q62 미발송.
