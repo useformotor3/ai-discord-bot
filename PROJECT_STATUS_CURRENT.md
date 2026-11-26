@@ -1,10 +1,10 @@
 # CRA 현재 상황판 — 2026-11-26
 
-- **Latest verified main HEAD:** `ba09a41d90cda4add0b4c95180dba7b3d0d27d65` (PR #328 merge SHA; refs/heads/main read-back).
-- PR #328 exact-head Run #1723 SUCCESS 15/15; main push Run #1724 SUCCESS 15/15; pytest189; traceability466 (modern461+legacy5); Commission PDFs3/3; official CRA sources10; provenance PASS.
-- PR #328 artifacts: Run #1723 source ZIP SHA-256 `d9643befa5fb32cbc1742fc8b31700639cd2f0040d51d3eff176926546ba88bb`, provenance `3908f0361c0877b6d70820ca15cec7cba65ff9d60e4d2e4252f9e6dbaaca321d`; Run #1724 source ZIP `237df9ecf7bb4b9704b68774e671d79808ab43ae1743d2ca94580ece397cb084`, provenance `13ea5859d9090bbc6619078e20cbdeb377cd483a00068036ee553c68c4d132e8`. These are CI ZIP digests, not manufacturer PDF hashes.
-- PR #328 documentation/log-only; manufacturer findings remain report §114.7.51 / evidence §30.1; CI closeout §114.7.52 / evidence §72.49.
-
+- **Latest verified main HEAD:** `f5d4d4578b4267f27fc0a2d06b72ae6c009cea28` (PR #329 merge SHA; refs/heads/main read-back).
+- PR #329 exact-head Run #1725 / 45820940421 and main push Run #1726 / 45821120618 both SUCCESS 15/15; pytest189; traceability467 (modern462+legacy5); Commission PDFs3/3; official CRA sources10; provenance PASS.
+- PR #329 artifact ZIP digests: Run #1725 source `0f56f340fde1f91c14b0d361a8c720913028449262754b34163fee2cfa90e6a8`, provenance `92c9e8065861e5bbe5728ea46bc5762dcd96f0cb9e276310bf35d0492a6b5866`; Run #1726 source `1e9b633d12b0cd843223c133dc98cd4500cbac0ffdb043f89d50b55f8d1afdb9`, provenance `55421549176c04006a647efe3f3097ab4af797bade97ac5f3fdef080ca771e8a`. These are CI ZIP digests, not manufacturer PDF hashes.
+- Manufacturer source recheck: PEGA2 doc32720 Ver1.3 metadata confirmed, actual attachment href unknown; iX700M 2026-09-16 listing confirmed, document ID/detail/attachment unknown; CE #171~#173 model/date rows confirmed, individual hrefs unknown; wr_id=12652 remains the known previous-anchor destination from 12651, but its own previous-post anchor/PDF remain unknown.
+- Solution Square direct page opens expose only the JS app shell; no static JS bundle/source map/public API/document JSON/attachment href recovered. Manufacturer binaries0; no manufacturer SHA-256/signature/certificate-chain/revision/SKU checks. No guessed IDs/URLs; no failed endpoint retries; Q01~Q62 not sent. CRA only; SIL 3 excluded. Details report §114.7.53 / evidence §72.50.
 
 - **최신 main HEAD:** `1211308446a4c8b2b81a9e7f285fc3828f769ccf`; PR #327 merged (head `4a737ac2055a8b189ca68039b89b4b107a91b691`, merge SHA == main).
 - PR #327 Run #1721 exact-head SUCCESS 15/15; Run #1722 main push SUCCESS 15/15; pytest189; traceability465 (modern460+legacy5); Commission PDFs3/3; official CRA sources10; provenance uploads PASS.
