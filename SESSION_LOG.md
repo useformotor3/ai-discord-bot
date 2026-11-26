@@ -4098,3 +4098,10 @@ CRA only; SIL 3 excluded.
 - Run #1693 artifact ZIPs: source 15091095590 SHA-256 6c24e3e42c69b3c5f9badcf538411b186e619203e7ec50b3234011291929bbc2; provenance 15091095638 SHA-256 8580e462e08b6fe8e08539ed67c3602cea1386217a94321ad870df22d0eabc28. Run #1694: source 15091165408 SHA-256 be5e2fba2b1814f4a12c67e4f3822c8fa130b7d0c1d81115bdf3a044f9ef9080; provenance 15091045634 SHA-256 a05df3a653931da83b14797ea8640a1ab2b74678b7e5c9a463cc6f03ea8d7cf9. ZIP digests are not manufacturer PDF hashes.
 - New official anchors: PEGA2 doc32720 detail confirmed, indexed Ver1.3 file but attachment URL absent; separate Korean Ver1.0 direct attachment found. iX700M 2026-09-16 listing confirmed, ID/href unknown. CE #171~173 models indexed but hrefs unresolved. PEGA2 Ver1.3 manual wr_id12651 (not requested 12652), iX700M Ver1.4 listing but detail ID unknown. No guessed IDs.
 - PR #313 title/body inherited stale PR312 wording; corrected in this record. Manufacturer binaries 0 / metadata_only; no SHA/signature/signer-chain/revision/SKU validation. CRA only; SIL 3 excluded; Q01~Q62 not sent.
+
+
+## 2026-11-26 — PR #314 closeout 및 공식 원본 anchor 재확인
+- PR #314 / Run #1695 exact-head / Run #1696 main push 종결 상태를 API, jobs, artifacts로 재확인했다. 둘 다 SUCCESS 15/15.
+- 공식 Solution Square 검색색인과 LS메카피온 CE/manual 색인을 재조사했으나, 요청한 실제 attachment/detail href 및 문서 ID는 추가로 확보하지 못했다.
+- JS SPA shell은 검색 결과 외의 앱 리소스/API를 페이지 추출기로 노출하지 않았다. 추정 URL/ID를 만들지 않았고 wr_id=12652 실패 endpoint도 재호출하지 않았다.
+- 제조사 바이너리 0건. 따라서 제조사 SHA-256/PDF 서명/인증서 체인/revision/SKU 검증은 미실시 상태 유지.
