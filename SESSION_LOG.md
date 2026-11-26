@@ -3986,3 +3986,11 @@ CRA only; SIL 3 excluded.
 - Artifact ZIP hashes and IDs in report §114.7.19 / evidence §72.17; they are not manufacturer PDF hashes.
 - Manufacturer binaries remain 0; metadata_only; Q01~Q62 unsent. CRA only; SIL 3 excluded.
 
+
+
+## 2026-11-26 — CRA 공식 색인/실제 HTML 불일치 재검증 (§114.7.20 / §72.18)
+- 기준 main `792d4e4ba7d5e4652692d86274d8f85474bfeb0b`, §114.7.19/§72.17, status/README/session/project log 확인.
+- 공식 manual?page=1 검색 스니펫의 row41=Ver1.3은 실제 열린 HTML의 row39~30과 일치하지 않는다. 기본 목록/Servo 필터 Ver1.4 및 빈 분류 Ver1.3 스냅샷과 함께 충돌 유지. Ver1.3 실제 target href/wr_id는 여전히 미확정.
+- PEGA2 previous-post title, CE 171~173 grouped scope, UKCA Converter/Drive 구분, Solution Square JS shell, KR/EN catalogue, CAD/STEP metadata를 다시 확인했다. 신규 제조사 바이너리 0, metadata_only.
+- Run #1653 exact main push SHA 확인 및 job log 재검토: 15개 API step summaries 모두 success; CRA sources 10, PDFs 3/3, legal locators, provenance PASS. API 15-step summary와 이전 aggregate 25/25 집계는 구분해 기록.
+- 운영 코드/workflow 변경 없음. Q01~Q62 미발송. CRA only; SIL 3 제외.

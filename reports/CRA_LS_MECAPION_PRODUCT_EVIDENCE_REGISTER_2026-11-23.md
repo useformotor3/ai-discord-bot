@@ -1603,3 +1603,20 @@ Actual SKU, EU/EEA supply, economic operators, signed SKU-specific DoC scope, BO
 - Run #1651 ZIP artifacts: PDF 15074329996 / SHA-256 36236eb3e3e4c897459ab34e94825a5c623a04ab5864c6b4dfe307700f403178; provenance 15075776058 / SHA-256 27eb727cd7589a1a6cd571a706786e98d8aa7840ad5ee8d46bb9f0123a5cd9a8.
 - Digests above are GitHub artifact ZIP hashes, not manufacturer document hashes. Manufacturer binaries remain 0 / metadata_only; no manufacturer signature/signer chain/revision/SKU scope verification. CRA only; SIL 3 excluded.
 
+
+
+### §72.18 2026-11-26 — 공식 색인 스니펫/열린 HTML 불일치 및 원본 취득 재검증
+
+- 기준 main `792d4e4ba7d5e4652692d86274d8f85474bfeb0b`; §72.17 및 통합 보고서 §114.7.19 read-back 후 문서 전용 조사.
+- **매뉴얼 색인:** 공식 검색결과 `manual?page=1` 스니펫은 row41=Ver1.3이라고 표시하지만, 해당 결과를 실제 open한 HTML 본문은 row39~30을 표시하고 row41은 포함하지 않는다. 기본 목록/Servo 필터 스니펫은 row41=Ver1.4, 빈 분류 스니펫은 Ver1.3. 이 불일치는 필터·페이지·캐시/색인 차이로 보존하며 어느 하나를 controlled revision으로 단정하지 않는다.
+- **PEGA2 이전글:** PEGA2 Ver1.3 상세 검색결과는 iX700M Ver1.3 이전글 제목을 표시하지만 실제 target anchor href/wr_id 미노출. `wr_id=12651`은 PEGA2 페이지 ID. Ver1.3 ID 추정 금지.
+- **Ver1.4:** `wr_id=12652`는 공식 목록 링크에서 확인. detail 502/timeout, attachment URL/bytes 없음.
+- **CE:** row171=220B, row172=370B/300B, row173=750B/550B/450B. 개별 detail href/wr_id/attachment 미확정. row170 `wr_id=12888`은 150B만 해당.
+- **UKCA:** Drive Unit 개별 DoC 미발견(부존재 증명 아님). `wr_id=12893`은 iX700MCV Converter Unit.
+- **Solution Square:** iX700M 사용 설명서 2026-09-16 / 171 views 색인 확인. document ID/detail/API/attachment 미확정, 직접 open은 JS SPA shell. iX700M과 연결이 확인되지 않은 일반 document endpoint를 ID 추정에 사용하지 않는다.
+- **KR/EN 카탈로그:** `wr_id=12110`, 파일 각 10.7M, 2025-12-05 13:43:50 메타데이터. bytes 미취득.
+- **CAD/STEP:** 공식 Servo Drive 색인 iX700M 2D/3D 항목 2026-04-21. detail ID/attachment/ZIP bytes 미취득.
+- **바이너리:** 제조사 원본 신규 취득 0. 모든 자료 metadata_only. 제조사 SHA-256/PDF signature/signer chain/internal revision/SKU scope 검증 없음.
+- **실패 원인:** 502/timeout, search snippet와 opened HTML의 row 불일치, previous-post anchor target 미노출, CE 그룹형 목록, Solution Square JS shell.
+- **Run #1653:** exact main SHA `792d4e4ba7d5e4652692d86274d8f85474bfeb0b`, event push, completed/success. API job step summary 15/15 success; job log에서 CRA 공식 원문/locator/provenance PASS. 기존 aggregate closeout의 25/25와 구분해 API 응답의 15개 step summary를 기록.
+- Q01~Q62 미발송, 제조사 연락 없음. CRA only; SIL 3 제외.
