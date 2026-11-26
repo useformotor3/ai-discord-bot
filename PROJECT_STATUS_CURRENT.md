@@ -1,3 +1,7 @@
+## 2026-11-26 — Run #1654 실패 원인 및 복구 기록 (§114.7.23 / §72.21)
+- Run #1654 / 45729917159 실패: PROJECT_LOG.jsonl line 435 invalid JSON. 원인은 JSONL 레코드 사이의 빈 행. exit code 1.
+- 빈 행 제거 후 435개 non-empty records JSON parse valid; corrected head 82f1d778b48782e98340508081a394979eaf5a86의 Run #1655 success (pytest189, traceability435, CRA PDFs3/3, sources10, legal locators/provenance PASS).
+- 재발 방지: JSONL append 후 빈 행 정규화 및 PR 전 모든 비어 있지 않은 행 JSON parse. 세부 §114.7.23 / §72.21.
 ## 2026-11-26 — PR #299 / Run #1657~#1658 종결 (§114.7.22 / §72.20)
 - PR #299 exact HEAD 6c661ec285f800de90086cf470f83ab894742309, 6 docs +55/-0, JSONL 436 records valid. Run #1657 exact-head success, pytest189, traceability436, PDFs3/3, official sources10, legal locators/provenance PASS.
 - Expected-head merge/current main 9f77fcdb0498b4ab9dd88e8ac097458c8bd1d75b. Main push Run #1658 exact SHA/event=push/branch=main success; same validation PASS.
