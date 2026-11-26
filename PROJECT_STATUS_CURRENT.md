@@ -1,5 +1,17 @@
 # CRA 현재 상황판 — 2026-11-26
 
+- main HEAD: `db90ef36b2b8c222a801b03bb26b284029c477fc` (PR #319 merge SHA)
+- PR #319: exact-head Run #1705 SUCCESS 15/15; main push Run #1706 SUCCESS 15/15; pytest189; traceability457 (modern452 + legacy5); Commission PDFs3/3; official sources10; legal locators/provenance PASS.
+- PR #319 기록에 Run #1705/#1706 artifacts 및 Commission PDF SHA-256 포함.
+- wr_id=12651 official detail confirms PEGA2 Ver1.3 attachment; its previous-article label names iX700M DRIVE 400[V] Ver1.3. This is a lead only; previous-link href and ID not exposed. Do not infer wr_id=12652.
+- Still missing: PEGA2 32720 actual attachment URL/binary; iX700M 2026-09-16 document ID/detail/attachment href; CE #171~#173 individual detail/attachment hrefs; wr_id=12652 exact detail/PDF.
+- Manufacturer originals 0; manufacturer SHA/signature/certificate-chain/revision/SKU validation not performed. No guessed IDs/URLs or failed-endpoint retries.
+- Next: obtain actual anchor href from a newly exposed official public index/API/JS asset, prioritizing previous-link from wr_id=12651 and PEGA2 doc32720. CRA only; SIL 3 excluded; Q01~Q62 not sent.
+
+---
+
+# CRA 현재 상황판 — 2026-11-26
+
 - main HEAD: `e8b545b679cfda632a8e36fddbfc48ec00357d8d` (PR #318 merge SHA)
 - PR #318: merged after exact-head Run #1703 SUCCESS 15/15; main push Run #1704 SUCCESS 15/15; pytest189; traceability456 (modern451 + legacy5); Commission PDFs3/3; official sources10; legal locators/provenance PASS.
 - CI artifact ZIPs downloaded and independently SHA-256 checked; three Commission legal-source PDFs individually hashed. These are not manufacturer files.

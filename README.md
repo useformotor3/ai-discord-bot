@@ -1579,3 +1579,6 @@ PR #314의 exact-head CI Run #1695와 main push Run #1696가 모두 SUCCESS(15/1
 
 
 > **PR #318 / main CI closeout (2026-11-26):** exact-head Run #1703 / 45793319850 and main push Run #1704 / 45795181803 both completed/success, 15/15, pytest189, traceability456 (modern451 + legacy5), Commission PDFs3/3, official sources10, legal locators/provenance PASS. Expected main base eb0bccb746a94d3a24f5d13bfb6f561fd33b617a; merge/current main `e8b545b679cfda632a8e36fddbfc48ec00357d8d`. See report §114.7.42 / evidence §72.40 for ZIP and Commission PDF hashes. Manufacturer binaries remain 0. CRA only; SIL 3 excluded.
+
+
+> **PR #319 / main CI closeout (2026-11-26):** exact-head Run #1705 / 45795546062 and main push Run #1706 / 45795722205 both completed/success, 15/15, pytest189, traceability457 (modern452 + legacy5), Commission PDFs3/3, official sources10, legal locators/provenance PASS. Expected main base e8b545b679cfda632a8e36fddbfc48ec00357d8d; merge/current main `db90ef36b2b8c222a801b03bb26b284029c477fc`. See report §114.7.43 / evidence §72.41. Manufacturer binaries remain 0. CRA only; SIL 3 excluded.
