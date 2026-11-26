@@ -1,3 +1,9 @@
+## 2026-11-26 — PR #301 Run #1669/#1670 원본 검증 및 제조사 locator 재확인 (§114.7.25 / §72.23)
+- PR #301 merged at 2026-11-26T00:51:20Z; exact PR HEAD 55535995389441ccba2593ec9232c057ecb9a225. Run #1669 / 45731538549 pull_request exact-head success; 15/15 steps, pytest189, traceability439, CRA PDFs3/3, official sources10, legal locators/provenance PASS.
+- Expected-head merge SHA/main HEAD 8ed9335322804f663f3546f9f80436144b0b14ab. Run #1670 / 45731699115 push/main exact SHA success; 15/15 steps and same validation PASS.
+- Manufacturer recheck: PEGA2 Ver1.3 actual anchor from wr_id=12651 points to wr_id=12652; target inaccessible. Index search variants conflict Ver1.3/Ver1.4; direct detail proof of revision/attachment unavailable, conflict retained UNRESOLVED. CE 171–173 grouped only; UKCA 12893 is Converter Unit only; Solution Square iX700M manual date 2026-09-16 still JS shell; KR/EN catalog wr_id=12110 metadata only; CAD/STEP index entry 2026-04-21, anchor target wr_id=12455 but detail timeout.
+- Manufacturer binaries 0 / metadata_only; no manufacturer SHA/signature/signer chain/revision/SKU validation. Q01–Q62 unsent. CRA only; SIL 3 excluded. See §114.7.25 / §72.23.
+
 ## 2026-11-26 — PR #300 / Run #1667~#1668 종결 (§114.7.24 / §72.22)
 - PR #300 exact HEAD 35e42f29a18ba09086f149ffff911a3026092e2f, 6 docs +75/-0, JSONL 438 records valid. Run #1667 exact-head success, pytest189, traceability438, PDFs3/3, official sources10, legal locators/provenance PASS.
 - Expected-head merge/current main d510ca516adae596d4ba43fef7cb281fc185afc5. Main push Run #1668 exact SHA/event=push/branch=main success, same checks PASS.

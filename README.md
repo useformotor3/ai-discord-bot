@@ -1524,3 +1524,6 @@ Annex I Part II의 실무 요구사항은 machine-readable SBOM(최소 top-level
 - PROJECT_LOG.jsonl: 438 non-empty valid JSON records. Run #1654 blank-line failure and repair are documented in report §114.7.23 / evidence §72.21.
 - Runs #1660~#1666 were cancelled as sequential commits superseded earlier branch heads. Future multi-file docs updates will be batched into a single Git tree/commit/ref update. Details §114.7.24 / §72.22.
 - Manufacturer binaries remain 0 / metadata_only. CRA only; SIL 3 excluded.
+
+
+> **PR #301 / Run #1669~#1670 verified (2026-11-26):** PR #301 merged as `8ed9335322804f663f3546f9f80436144b0b14ab`. Exact PR-head Run #1669 / 45731538549 and main push Run #1670 / 45731699115 both completed/success, 15/15 step summaries, pytest189, traceability439, CRA PDFs3/3, official sources10, legal locators/provenance PASS. Manufacturer recheck: PEGA2 actual Ver1.3 previous-post anchor points to wr_id=12652 but target detail remains inaccessible; Ver1.3/Ver1.4 conflict remains unresolved. CE rows 171~173 grouped/index-only; UKCA wr_id=12893 is Converter Unit; Solution Square remains JS shell; KR/EN catalog wr_id=12110 and CAD/STEP wr_id=12455 metadata-only. Manufacturer binaries 0. See report §114.7.25 / evidence §72.23. CRA only; SIL 3 excluded.

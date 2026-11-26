@@ -1660,3 +1660,22 @@ Actual SKU, EU/EEA supply, economic operators, signed SKU-specific DoC scope, BO
 - Artifact hashes are GitHub ZIP hashes, not manufacturer files. Manufacturer binaries 0 / metadata_only; SHA/signature/signer chain/revision/SKU unverified.
 - Runs #1660–#1666 were cancelled because sequential multi-file writes created successive branch heads; this is superseded-run overhead, not a failed test. Future multi-file docs updates should use one Git tree/commit/ref update to trigger one final-head CI.
 - CRA only; SIL 3 excluded.
+
+
+### 72.23 2026-11-26 — PR #301 CI 원본 및 iX700M 제조사 locator 재검증
+
+**PR #301 / CI**
+- PR REST 원본: merged_at 2026-11-26T00:51:20Z; base `d510ca516adae596d4ba43fef7cb281fc185afc5`; exact head `55535995389441ccba2593ec9232c057ecb9a225`; merge commit `8ed9335322804f663f3546f9f80436144b0b14ab`.
+- Run #1669 / 45731538549: pull_request, exact head 위 SHA, completed/success, job 1개, 요약 단계 15/15 success; pytest 189; traceability 439; CRA PDFs 3/3; official CRA sources 10; Article 13(8), 2025/2392 core functionality/Annex I(10)/Annex II(1), provenance PASS.
+- Run #1669 ZIPs: PDF artifact 15076642899 / SHA-256 `e2ace762420310db0fea95cb8430c32ed85941cb6efc212878e4e96e12928914`; provenance artifact 15076772558 / SHA-256 `0a74e34ae5e753645445a324405ee33aa8b3e34311f1d55b036b1ab41d8bec9c`.
+- Expected-head squash merge SHA `8ed9335322804f663f3546f9f80436144b0b14ab`. Run #1670 / 45731699115: push/main/exact merge SHA/completed/success; 15/15 step summaries, pytest 189, traceability 439, CRA PDFs 3/3, official sources 10, legal locators/provenance PASS.
+- Run #1670 ZIPs: PDF 15076782644 / SHA-256 `bb2d0a31041980214c5256b4f2e6ccf2d2ede8239c6b3d5849ad84963eb7b3d9`; provenance 15076708008 / SHA-256 `4d374d72a5661871a294c93052e92e83e52fa3d15d6e9e9bd642c431e4a97e8a`. Digests identify GitHub artifact ZIPs, not manufacturer PDFs.
+
+**Manufacturer locators**
+- PEGA2 Ver1.3 `wr_id=12651` actual previous-post anchor text “iX700M DRIVE 400[V] 매뉴얼 Ver1.3” resolves to `bo_table=manual&wr_id=12652`. Target detail remains inaccessible; no attachment or binary acquired. Current official search-index variants show Ver1.3 vs Ver1.4 for the product entry. Direct detail/body proof that `12652` is a Ver1.4 record was not recovered; keep the version conflict unresolved and do not promote the index snippet to controlled-revision evidence.
+- CE rows 171/172/173: SKU group labels and 2026-04-30 date confirmed; individual detail href/wr_id/attachments still unknown. `wr_id=12888` is CE 150B only.
+- UKCA `wr_id=12893`: iX700MCV Converter Unit only; attachment label `[UKCA_DoC_LVDEMC] iX700MCV.pdf` (224.1K). iX700M Drive Unit UKCA not located; absence not proven.
+- Solution Square category result: iX700M 사용 설명서, update 2026-09-16, 171 views; JS shell hides document ID/API/detail/attachment.
+- KR/EN catalogue `wr_id=12110`: both named PDF attachments 10.7M, metadata date 2025-12-05 13:43:50; bytes not acquired.
+- CAD/STEP index title/date 2026-04-21 confirmed; previous-post anchor target `wr_id=12455`; detail timed out, no ZIP acquired.
+- Manufacturer binaries 0; metadata_only. No manufacturer-file SHA/signature/signer chain/revision/SKU verification. Q01–Q62 unsent; CRA only; SIL 3 excluded.
