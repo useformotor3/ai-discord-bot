@@ -1,5 +1,17 @@
 # CRA 현재 상황판 — 2026-11-26
 
+- main HEAD: `e8b545b679cfda632a8e36fddbfc48ec00357d8d` (PR #318 merge SHA)
+- PR #318: merged after exact-head Run #1703 SUCCESS 15/15; main push Run #1704 SUCCESS 15/15; pytest189; traceability456 (modern451 + legacy5); Commission PDFs3/3; official sources10; legal locators/provenance PASS.
+- CI artifact ZIPs downloaded and independently SHA-256 checked; three Commission legal-source PDFs individually hashed. These are not manufacturer files.
+- New official index evidence: iX700M category listing dated 2026-09-16; PEGA2 doc32720 Ver1.3 English PDF metadata; LS메카피온 CE #171~#173 SKU group/date and manual index.
+- Still missing: PEGA2 32720 actual attachment URL/binary; iX700M document ID/detail/attachment href; CE #171~#173 individual detail/attachment hrefs; wr_id=12652 detail/PDF.
+- Manufacturer originals 0; manufacturer SHA/signature/certificate-chain/revision/SKU validation not performed. No guessed IDs/URLs or failed-endpoint retries.
+- Next: find new official public API/JS resource or indexed detail href. CRA only; SIL 3 excluded; Q01~Q62 not sent.
+
+---
+
+# CRA 현재 상황판 — 2026-11-26
+
 - 기준 main HEAD: `eb0bccb746a94d3a24f5d13bfb6f561fd33b617a` (PR #317 병합 커밋)
 - PR #317: merged; exact-head Run #1701 SUCCESS 15/15; main push Run #1702 SUCCESS 15/15; pytest189; traceability455 (modern450 + legacy5).
 - 제조사 공개 색인 신규 확인: PEGA2 doc32720 파일명/버전/크기/목차/적용제품, iX700M 사용 설명서 제목·유형·Motion&Servo 태그, CE #171~#173 SKU 그룹 및 게시일.

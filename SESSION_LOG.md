@@ -4127,3 +4127,11 @@ CRA only; SIL 3 excluded.
 - Run #1701 artifact ZIP digests: source c7aa946a55353303280d40b6a9e9ec5c96f273bbee2864f99355a0c06a836ac9; provenance 393f638535450c4c26c9820d0bda3b7a4f50830703f47c340de5168892425a4f. Run #1702: source 48c8830ef8e6e83b778648deb23f265015bf36a42a627989b1f523df0942e02e; provenance acb45103e06e121935ed2617afec40468b1c9d3ce60a0419e19879ae21101871. ZIP hashes only, not manufacturer PDF hashes.
 - New index metadata: PEGA2 doc32720 indexed Ver1.3 EN PDF name/size/contents/applicable product; iX700M user-manual search result title/type/tag/views; CE #171~173 SKU groups/date; LS Mecapion manual index rows 40/41. Actual attachment/detail links and requested wr_id12652 remain unresolved; failed endpoint not retried.
 - Manufacturer binaries0; no SHA/signature/certificate-chain/revision/SKU validation. No guessed IDs/URLs. CRA only; SIL3 excluded; Q01~Q62 not sent. See report §114.7.41 and evidence §72.39.
+
+
+## 2026-11-26 — PR #318 / Run #1703~#1704 종결 및 공식 색인 재조사
+- PR #318 head fd2f2ed613a9b8f5bfdbaa867108024a60b073fa; exact-head Run #1703 / 45793319850 success 15/15; pytest189; traceability456 (modern451+legacy5); 3 Commission PDFs; 10 official sources; legal locators/provenance PASS.
+- Base main eb0bccb746a94d3a24f5d13bfb6f561fd33b617a verified unchanged; compare ahead1/behind0; reviewed six docs-only files, 44 additions/0 deletions; merged with expected_head_sha exact. Merge/current main e8b545b679cfda632a8e36fddbfc48ec00357d8d.
+- Run #1704 / 45795181803 push/main exact merge SHA success 15/15; same 189 pytest and source validation. Artifact ZIP digests and extracted Commission PDF hashes recorded in report §114.7.42/evidence §72.40.
+- Manufacturer index: official Solution Square category page confirms iX700M manual dated 2026-09-16; PEGA2 doc32720 indexed filename/version/size; LS Mecapion CE #171~#173 model titles and date. No new detail/attachment IDs for iX700M, CE records or wr_id12652. Manufacturer binaries0; no manufacturer hash/signature/signer-chain/revision/SKU validation.
+- No guessed IDs/URLs; no retry of failed wr_id12652 endpoint. CRA only; SIL3 excluded; Q01~Q62 not sent.
