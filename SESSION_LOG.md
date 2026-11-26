@@ -4001,3 +4001,17 @@ CRA only; SIL 3 excluded.
 - PR #298 exact HEAD 82f1d778b48782e98340508081a394979eaf5a86, 문서 6개 +75/-0. JSONL 435 records parse valid. Run #1655 pull_request success; 15 API step summaries success; pytest189, traceability435, CRA PDFs3/3, official sources10, legal locators/provenance PASS.
 - Expected-head squash merge SHA/current main 4c948a4b0b829485064ea6f577c9db9b2ce664e6. Run #1656 main push exact SHA success; same checks PASS. Artifact ZIP digests in report §114.7.21 / evidence §72.19; not manufacturer file hashes.
 - 제조사 원본 0 / metadata_only. Q01~Q62 미발송, 제조사 연락 없음. CRA only; SIL 3 제외.
+
+
+## 2026-11-26 — PR #299 병합 및 main push CI 검증
+- PR #299 exact HEAD 6c661ec285f800de90086cf470f83ab894742309, 문서 6개 +55/-0. JSONL 436 records parse valid.
+- Run #1657 pull_request exact-head success: 15 API step summaries success, pytest189, traceability436, CRA PDFs3/3, official sources10, Article13(8)/2025/2392 locators and provenance PASS.
+- Expected-head squash merge SHA/current main 9f77fcdb0498b4ab9dd88e8ac097458c8bd1d75b. Run #1658 main push exact SHA success; same checks PASS.
+- Artifact ZIP hashes are not manufacturer source hashes. Manufacturer binaries 0 / metadata_only. Q01~Q62 unsent. CRA only; SIL 3 제외.
+
+
+## 2026-11-26 — Run #1654 JSONL 오류 및 복구
+- Run #1654 / 45729917159 failed in CRA traceability validation: PROJECT_LOG.jsonl line 435 was an empty line and therefore invalid JSON; process exit code 1.
+- Root cause was a blank separator inserted during JSONL append, not code or CRA source validation. Removed empty lines and parsed 435 non-empty records successfully.
+- Corrected exact head 82f1d778b48782e98340508081a394979eaf5a86 passed Run #1655 / 45729969157 (189 pytest, traceability435, PDFs3/3, official sources10, legal locators/provenance PASS).
+- Preventive action: normalize trailing/blank lines and validate every non-empty JSONL line before PR creation. Record failure, fix, and rerun rather than overwriting failure.

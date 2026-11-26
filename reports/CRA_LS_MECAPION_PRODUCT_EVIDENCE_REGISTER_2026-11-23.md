@@ -1631,3 +1631,20 @@ Actual SKU, EU/EEA supply, economic operators, signed SKU-specific DoC scope, BO
 - Run #1655 artifact ZIPs: PDF 15076785224 / SHA-256 `c126538f8e57946c6dabd37594d8ab679d95cb716129c7ce06f07da77b9678ba`; provenance 15076501353 / SHA-256 `e6f6c4d6e1ddf2781adddf530f7e3f386c540f0422e086f9576d83fa8a488fcb`.
 - Run #1656 artifact ZIPs: provenance 15077015001 / SHA-256 `b89b8d65a97acedb32150afcc6a052461be2029d6788565168d6b29667a06064`; PDF 15075774949 / SHA-256 `b55ae7426dab02e131da081805bc51f1afec05700896e297d0b28f233abded5b`.
 - Artifact digests are GitHub ZIP hashes, not manufacturer file hashes. Manufacturer originals 0 / metadata_only; manufacturer SHA/signature/signer chain/revision/SKU scope not verified. Q01~Q62 unsent; no manufacturer contact. CRA only; SIL 3 excluded.
+
+
+### §72.20 2026-11-26 — PR #299 exact-head/main CI 종결 및 증거 상태 유지
+
+- PR #299 exact HEAD `6c661ec285f800de90086cf470f83ab894742309`, 6 docs +55/-0, PROJECT_LOG.jsonl 436 records parse valid. Run #1657 / 45730411555 pull_request completed/success, API step summary 15/15, pytest189, traceability436, CRA PDFs3/3, official sources10, legal locators/provenance PASS.
+- Expected-head squash merge SHA/current main `9f77fcdb0498b4ab9dd88e8ac097458c8bd1d75b`. Main push Run #1658 / 45730551230 exact SHA/event=push/branch=main completed/success; 15/15 API steps, pytest189, traceability436, PDFs3/3, sources10, legal locators/provenance PASS.
+- Run #1657 artifacts: PDF ZIP 15077015432 / SHA-256 `a694ca8446af464febdd8998b184e4604fe3d3c0fe4d39bd7e83db7a64b4456a`; provenance ZIP 15075564111 / SHA-256 `af3c1d7ce5c0fa78f189fca0b2563269a8a1b89b2cc62d4f9fe18ec61ce5686a`.
+- Run #1658 artifacts: PDF ZIP 15076701404 / SHA-256 `51a4a30aa7e42bedf5bcd471a0aa9e19eea4b81e1dc19efe565e9f193db0646f`; provenance ZIP 15076556925 / SHA-256 `9d3dc5c2a0fe3a2b3f323c830e96ac3f7f767bbadd6784d2f345c7ecc20aef12`.
+- Artifact digests are GitHub ZIP hashes, not manufacturer file hashes. Manufacturer binaries 0 / metadata_only; SHA/signature/signer chain/internal revision/SKU scope unverified. CRA only; SIL 3 excluded.
+
+
+### §72.21 2026-11-26 — Run #1654 JSONL 실패·복구 이력
+
+- Run #1654 / 45729917159, PR head `ff84ae63b9053b6351de5b9c54ee1f096fd76219`, completed/failure.
+- Failure output: `PROJECT_LOG.jsonl line 435: invalid JSON (Expecting value: line 1 column 1 (char 0))`, traceability validation exit 1. Cause was an empty separator line in JSONL, not a product-source or code test failure.
+- Corrective action: removed empty lines, validated 435 non-empty records with invalid=0; corrected exact HEAD `82f1d778b48782e98340508081a394979eaf5a86`; Run #1655 / 45729969157 success, pytest189, traceability435, CRA PDFs3/3, official sources10, legal locators/provenance PASS.
+- Prevent recurrence: normalize JSONL line separators and parse every non-empty line before PR creation; preserve failed run ID, exact failure text, corrective commit and rerun result. PR #298 final merged content has valid JSONL.
