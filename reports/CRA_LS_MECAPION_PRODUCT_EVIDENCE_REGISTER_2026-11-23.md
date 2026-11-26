@@ -1845,3 +1845,10 @@ Actual SKU, EU/EEA supply, economic operators, signed SKU-specific DoC scope, BO
 - Run #1707 ZIPs: source `16e576d145cd89e64b965be7aa0205577e676b582a5bc9043bca636e7ae931e3` (ID15104653015); provenance `0a2f21bee86324c0bbbe88ec813208f70d89c4b9a63239a56ba6e44159ae75b2` (ID15104228995). Run #1708: source `425cc10d20e9abe3388143f889db72ba8353d84c0e78571047bdc76b09d3f80d` (ID15105420389); provenance `00375d521f620adcefdd87c924e7c4dad5936935bc705586feabfbaf23c2940e` (ID15104348605). ZIP digests only.
 - Manufacturer originals remain 0. Exact attachment/detail hrefs for PEGA2 doc32720, iX700M 2026-09-16, CE #171~#173 and wr_id=12652 remain unresolved. wr_id=12651 previous-article title is a search lead only, not a confirmed ID mapping. No guessed URLs/IDs and no failed endpoint retry.
 - Manufacturer hash/signature/signer chain/revision/SKU checks not performed. CRA only; SIL 3 excluded; Q01~Q62 not sent.
+
+
+### 72.43 2026-11-26 — PR #321 / Run #1709~#1710 CI closeout
+- PR #321 exact-head `5877d3eca2d95205d852da7ce7c02b745cfe7130`; Run #1709 / 45796539826 success 15/15; merge/current main `0cd7c52dcb0d7e44c0569623fd7cab09790c90f8`; Run #1710 / 45796729202 push/main exact SHA success 15/15. Both pytest189; traceability459 (modern454+legacy5); Commission PDFs3/3; official sources10; legal locators/provenance PASS.
+- Run #1709 ZIPs: source `77cdd0ff114d198041136393d8b8c649cfcbd29579bf90804782968b164f6040` (ID15105720611); provenance `6aebb09b8f199214f5c7c6a3958027e8637ee26f07d6eeb2632a0eed890d2a01` (ID15105167041). Run #1710: source `4fd57350b5755e34e835d63859431a0412bebe375b4a9237f27739d1fe6e383d` (ID15105276181); provenance `7871bc5e2a1b9bf624b3603bf846fd2e4e85a81b7f78e0d90a8e1549df1caa8f` (ID15105875275). ZIP digests only.
+- Manufacturer original binaries remain 0; target attachment/detail hrefs and exact IDs remain unresolved. The wr_id=12651 previous-article label remains an unverified lead only, not proof of wr_id=12652. No guessed ID/URL or failed endpoint retry.
+- Manufacturer SHA/signature/signer chain/revision/SKU checks not performed. CRA only; SIL 3 excluded; Q01~Q62 not sent.
