@@ -1,3 +1,9 @@
+## 2026-11-26 — PEGA2/iX700M anchor 충돌 및 CE #171~#173 재검증 (§114.7.27 / §72.25)
+- Baseline main: 8272efeda10f8432cf504d799e8698a9590d278c. PEGA2 Ver1.3 detail wr_id=12651의 이전글 label은 iX700M Ver1.3이지만, 공식 목록 row 41은 Ver1.4이며 row 링크는 wr_id=12652로 연결됨. 대상 상세 timeout으로 PDF/revision 미검증; label/index 충돌 UNRESOLVED.
+- CE #171=220B, #172=370B/300B, #173=750B/550B/450B 색인 확인. 개별 href/wr_id/첨부 원본은 미확보; #170 wr_id=12888(150B)에서 인접 ID 추정 금지.
+- 제조사 바이너리 0, 모두 metadata_only. 제조사 SHA-256/PDF 서명/서명자 체인/revision/SKU 미검증. Q01~Q62 미발송. CRA only; SIL 3 제외.
+- 상세 §114.7.27 / §72.25.
+
 ## 2026-11-26 — PR #302 / Run #1671~#1672 종결 (§114.7.26 / §72.24)
 - PR #302 exact HEAD 0404622e767f657f674cafc8f715397b0d8c63ec; 6 docs +63/-0, JSONL 440 valid. Run #1671 exact-head success, 15/15 steps, pytest189, traceability440, CRA PDFs3/3, sources10, legal locators/provenance PASS.
 - Expected-head merge/current main 8a06fa5b3790ebf14d743f9cdd5c8e6b66bc39c5. Run #1672 main push exact SHA success; same checks PASS.
