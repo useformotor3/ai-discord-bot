@@ -4223,3 +4223,12 @@ CRA only; SIL 3 excluded.
 - PR #330 exact-head Run #1728 / 45823938086 SUCCESS 15/15, pytest189, traceability468; expected-head merge SHA/current main 0d6db6e7be98ca130a8ceedb7ae6b8627b30d95d.
 - Main push Run #1729 / 45824091662 exact SHA + push + main SUCCESS 15/15; pytest189; traceability468; Commission PDFs3/3; official sources10; provenance PASS. Artifact ZIP digests and sizes are in report §114.7.54 / evidence §72.51.
 - Current situation board corrected to current main. Manufacturer binary status unchanged at 0; attachment/detail hrefs remain unknown. CRA only; SIL 3 excluded.
+
+
+## 2026-11-27 — PR #331 / Run #1730~#1731 closeout and SSQ public-download trace
+- Verified PR #331 merged with expected base 0d6db6e7be98ca130a8ceedb7ae6b8627b30d95d and merge/current main 3537d72c47d4a26bbe900faaa1ce594cc8ebfabf; exact-head Run #1730 and main push Run #1731 SUCCESS 15/15.
+- Both jobs ran 189 tests; CRA traceability=469 (modern464+legacy5). CI artifact ZIP digests are recorded in report §114.7.55 / evidence §72.52.
+- Rechecked official SSQ category listing: iX700M manual 2026-09-16 and PEGA2 manual 2026-08-28; PEGA2 doc32720 metadata confirms EN Ver1.3 file PEGA2_ENG_Ver1.3_260831.pdf (6.0 MB; updated 2026-09-23). Actual attachment hrefs remain unknown.
+- LS ELECTRIC official search page reveals dynamic automation-download field names and Solution Square link, but no actual file href/API/JS bundle. Direct SSQ page reads show JS app shell only. Static resource not recovered; do not invent endpoints.
+- CE #171~#173 model/date index-only; individual hrefs unknown. wr_id=12652 own previous-post anchor/PDF unknown. Manufacturer binary count 0; no manufacturer hash/signature/chain/revision/SKU verification.
+- No guessed IDs/URLs, no failed endpoint retries, Q01~Q62 not sent; CRA only; SIL 3 excluded. See §114.7.55 / §72.52.
