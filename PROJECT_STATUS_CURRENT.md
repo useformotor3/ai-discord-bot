@@ -1,4 +1,12 @@
 
+## 2026-11-26 — 공식 제조사 색인 재검증 (§114.7.18 / §72.16)
+- PEGA2 Ver1.3 상세 wr_id=12651 검색 색인에서 이전글 iX700M Ver1.3 제목 확인. target anchor href/wr_id 미노출. 일반/Servo 목록 row41=Ver1.4, 빈 분류 snapshot row41=Ver1.3 충돌 유지. Ver1.4 wr_id12652 detail 502, 첨부 미취득.
+- CE row171/172/173 SKU 범위는 각각 220B / 370B·300B / 750B·550B·450B로 색인 재확인; 개별 상세 ID/href 미확보. row170 wr_id12888은 150B 별도 자료.
+- UKCA wr_id12893은 Converter Unit iX700MCV, 첨부 표시명 [UKCA_DoC_LVDEMC] iX700MCV.pdf(224.1K). Drive Unit UKCA 미발견(부존재 증명 아님). iX700M UL certificate 목록은 별도 인증 종류.
+- Solution Square iX700M 사용 설명서 2026-09-16 목록 확인, SPA JS shell로 document ID/detail/attachment 미확보. KR/EN catalogue 10.7M씩, CAD/STEP 2026-04-21 목록 확인, 원본 bytes 미취득.
+- 신규 제조사 바이너리 0, metadata_only; 제조사 SHA/signature/signer-chain/revision/SKU 검증 없음. 장애: 502/timeout, JS shell, 이전글 href 미노출, 그룹형 CE index 및 snapshot 충돌. 추정 ID/URL 금지. Q01~Q62 unsent. CRA only; SIL 3 excluded.
+- PR #294/#295 and Runs #1646~#1649 reviewed; PR #295 merge/main SHA remains d0fbdbd6b80688fd29bf420d5b709f6bd64dc493; exact-head #1648 and main push #1649 SUCCESS. Details in §114.7.17 / §72.15.
+
 ## 2026-11-26 — PR #294 / main push Run #1647 종결
 - PR #294 exact HEAD `774bfc45f2ca152d18b8236987cb616ab80f9a7f`, Run #1646 / 45718668986 SUCCESS 25/25; pytest 189, compile/traceability, CRA PDF 3/3, 10 official sources, provenance manifest PASS.
 - Expected-head squash merge/current main: `f7fe9c1151afcb210dbb0c9d589e6d22b7aec603`.
