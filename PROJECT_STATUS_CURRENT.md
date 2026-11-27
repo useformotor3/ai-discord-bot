@@ -3225,3 +3225,15 @@
 - CE #171~#173 individual PDF hrefs and wr_id=12652 own previous-post anchor remain UNKNOWN. No substitute from unrelated manual posts. Actual DOM/Network/HAR not captured. Manufacturer binaries0.
 - PROJECT_LOG before this sync: 488 valid JSONL records, 0 blanks, 483 unique event IDs + 5 legacy no-ID records. Append new event -> 489 valid lines, 0 blanks, 484 unique event IDs + 5 legacy records; every physical line parsed.
 - Previously-502 CE endpoint remains prohibited from access. No guessed IDs/URLs. CRA only; SIL 3 excluded.
+
+
+---
+
+# CRA 프로젝트 최신 상황판 — 2026-11-27 (PR #348 / Run #1773 확인)
+- 기준 main HEAD: `753c5704f8b5f1cb87b0a9ac64992675e6a9b252`. PR #348은 GitHub 검색에서 merged 상태로 확인; 작업 HEAD `2d4b6efe4c9c907c32029b0c177a69035d6c0d3d`, PR 본문 기준 expected base `b99c954ece218e1fa2baed9bf67c7a1950fcc8be`. Merge commit metadata는 별도 독립 조회되지 않아 main HEAD와 동일하다고 단정하지 않음.
+- Run #1773 / ID `46004581886`: exact PR head SUCCESS 15/15; pytest189 (2.69s); traceability489 (modern484+legacy5); 공식 CRA source10; Commission PDF3개 원문 취득·해시. Artifact ZIP IDs 15199144529 / 15199318654. ZIP digest는 제조사 PDF 해시가 아님.
+- Run #1774 main push: 번호는 요청 기준으로 기록하되 실제 run ID/job/log/artifact/exact-head 결과를 현재 연결 경로에서 조회하지 못해 UNVERIFIED. 성공으로 추정하지 않음.
+- 신규 공식 관찰: LS메카피온 매뉴얼 상세 wr_id=12651(PEGA2 매뉴얼 Ver1.3)의 검색 인덱스 텍스트에 이전글 제목 `iX700M DRIVE 400[V] 매뉴얼 Ver1.3`가 표시됨. 실제 anchor href는 노출되지 않았으며, 목표 wr_id=12652 자체 이전글 anchor와 혼동하지 않음.
+- PEGA2 32720 실제 attachment href/binary, iX700M 2026-09-16 detail/document ID, CE #171~#173 개별 PDF, wr_id=12652 자체 이전글 anchor는 계속 NOT RECOVERED. CE #168/#170 대체 금지. Browser DOM/Network/HAR 미확보.
+- Process deviation: 금지된 과거 502 CE category endpoint를 검색 결과에서 열어보려다 timeout을 받음. 이 응답은 증거로 사용하지 않으며 이후 재요청 0회. 해당 endpoint는 앞으로 절대 접근하지 않음.
+- PROJECT_LOG: 490 nonblank JSON records, valid JSON, blank lines0, 485 unique event IDs + 5 legacy no-ID. CRA only; SIL 3 excluded.
