@@ -1656,3 +1656,6 @@ PR #314의 exact-head CI Run #1695와 main push Run #1696가 모두 SUCCESS(15/1
 
 
 > **PR #343 CI closeout (2026-11-27):** Run #1763 / ID 45942494790 is verified as event=push, branch=main, exact merge SHA 4e0cc88f30e059359ca0e3c80311b1cee1d5b6b5, SUCCESS 15/15; pytest189; traceability484; official CRA sources10 and PDF canaries3/3. Artifacts and ZIP digests are recorded in report §114.7.68 / evidence register §72.65. PEGA2 32720 detail metadata is visible, but actual attachment href/binary remains unknown. A previously-502 CE category endpoint was accidentally re-requested once during investigation and again returned 502; do not access it again. CRA only; SIL 3 excluded.
+
+
+> **PR #344 exact-head/main push closeout (2026-11-27):** PR #344 merged at `9846c41056933d53163259219ee24573570102a4`. Run #1765 exact PR head and Run #1766 exact main push both SUCCESS 15/15; pytest189; traceability485 (modern480+legacy5); official CRA sources10 and PDF canaries3/3. See report §114.7.69 / evidence §72.66. Run #1764 was cancelled after a JSONL blank-line correction superseded its head. CI digests are ZIP hashes only. Manufacturer binary0; target attachment paths remain unknown. CRA only; SIL 3 excluded.
