@@ -4111,3 +4111,17 @@ Run #1617 artifacts:
 - 전체 job log 원인: PROJECT_LOG.jsonl line 544~613이 invalid JSON. 원인은 신규 이벤트를 pretty-printed multi-line JSON으로 append하여 JSONL의 한 줄당 객체 규칙을 위반한 것.
 - 오류는 조사 결과가 아니라 문서 기록 코드 작성 실수. 복구는 정확한 main 기준 PROJECT_LOG.jsonl을 다시 가져와 기존 이벤트를 보존하고, 이벤트 객체를 compact JSON 한 줄씩 append하는 방식으로 수행. 다른 다섯 문서에 원인/조치/검증을 명시.
 - 재검증 필수: traceability PASS, 전체 pytest PASS, 공식 source canaries PASS를 exact PR head에서 확인한 뒤에만 expected-head 병합 및 main push CI 진행. 실패 상태에서 병합 금지.
+
+
+### 114.7.64 2026-11-27 — PR #339 문서 오류 수정, exact-head 및 main push CI 종결
+- PR #339 expected-base `64a85d59d269c3dbb00f77940b78ae15f5560d11`, final PR head `776e3f69a8a4aa49ff3e252f1db5302dccfab7c5`, expected-head squash merge SHA/current main `64a85d59d269c3dbb00f77940b78ae15f5560d11`. 6 files; +82/-0.
+- Run #1748 / 45918661874 failed because initial documentation update appended pretty-printed multi-line JSON into PROJECT_LOG.jsonl. Root cause disclosed in §114.7.63; no merge. Runs #1749~#1753 were cancelled as successive file commits superseded earlier PR heads.
+- Corrected PROJECT_LOG.jsonl by restoring exact main baseline and appending compact one-line JSON objects. Read-back parser verified 480 lines, 0 invalid JSON records.
+- Run #1754 / 45918777399 / job140244219646: final PR head `776e3f69a8a4aa49ff3e252f1db5302dccfab7c5`, SUCCESS 15/15; traceability claims13/interfaces15/requirements35/SEC36/EVD_SEC16/M60641, project_log_events480, modern_ids475, legacy5; pytest189 passed in 1.99s; 3 official CRA Commission PDFs fetched/hashed; 10 official sources; Article13(8), 2025/2392 core-functionality, Annex I(10)/Annex II(1) locators and provenance manifest10 PASS.
+- Run #1754 artifacts: official CRA PDF-source ZIP ID15163760434, 3,070,566 B, SHA-256 `c0a6b1c7666eefc2313b75ff9e02643de3e10659af03ae5a9a5e145e5dd5f043`; provenance ZIP ID15163620700, 2,565 B, SHA-256 `4efc4f14e2affa32cccab5987b9fc50331b7cdb452e288ac9dc1a410517af486`.
+- Expected-head squash merge succeeded: merge SHA `64a85d59d269c3dbb00f77940b78ae15f5560d11`; refs/heads/main read-back matches.
+- Run #1755 / 45918884900 / job140244566661: event=push, branch=main, exact merge SHA, SUCCESS 15/15; same traceability counts; pytest189 passed in 2.57s; official CRA PDFs3, sources10, legal locators and provenance10 PASS.
+- Run #1755 artifacts: official CRA PDF-source ZIP ID15163366979, 3,070,564 B, SHA-256 `4dcd8ea1eab97a56e98372bfbe382e1163c0573a2cc7fb85e596eb0335d524eb`; provenance ZIP ID15163905585, 2,565 B, SHA-256 `197d72a80915c999bbe97c51148f2f43f3dad7ab5259715146732f6749a84a82`. These are CI ZIP digests, not manufacturer PDF hashes.
+- Non-blocking Node 20→24 and punycode/url.parse deprecation warnings remain; no job failure.
+- Manufacturer investigation unchanged: Solution Square script src/bundle/source map/API and target download href not recovered; PEGA2 32720 attachment/binary unknown; iX700M 2026-09-16 detail/document ID/attachment unknown; CE #171~#173 individual detail/PDF unknown; wr_id=12652 own previous anchor unknown. Manufacturer binary0; no manufacturer PDF SHA/signature/chain/revision/SKU validation.
+- Procedure deviation: CE index endpoint previously returning 502 was inadvertently reopened during this investigation; do not call again. No guessed IDs/URLs. CRA only; SIL 3 excluded.

@@ -1641,3 +1641,6 @@ PR #314의 exact-head CI Run #1695와 main push Run #1696가 모두 SUCCESS(15/1
 
 
 > **PR #339 validation correction:** first exact-head Run #1748 failed because a multi-line JSON object was appended to PROJECT_LOG.jsonl; traceability validation correctly rejected the file, and pytest/source canaries were skipped. No merge. Restoring baseline JSONL and appending compact one-line records; see report §114.7.63 / evidence §72.60. CRA only; SIL 3 excluded.
+
+
+> **PR #339 / corrected CI and main closeout (2026-11-27):** Run #1748 exposed a JSONL multi-line append defect; it was corrected before merge. Final PR head Run #1754 and main push Run #1755 both SUCCESS 15/15; pytest189; traceability480 (modern475+legacy5); official CRA PDFs3, sources10, legal locators and provenance10 PASS. Latest main `64a85d59d269c3dbb00f77940b78ae15f5560d11`. See report §114.7.64 / evidence §72.61. CI ZIP digests only. Manufacturer binary0; target attachment hrefs/SSQ JS/API remain unknown. CRA only; SIL 3 excluded.

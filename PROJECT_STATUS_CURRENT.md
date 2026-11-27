@@ -1,3 +1,13 @@
+# CRA 현재 상황판 — 2026-11-27 (PR #339 종결)
+
+- **Latest verified main HEAD:** `64a85d59d269c3dbb00f77940b78ae15f5560d11` (PR #339 expected-head squash merge and Run #1755 exact main push).
+- PR #339 final head `776e3f69a8a4aa49ff3e252f1db5302dccfab7c5`; Run #1754 exact-head SUCCESS 15/15 and Run #1755 exact main push SUCCESS 15/15.
+- Both runs: pytest189; traceability480 (modern475+legacy5); official CRA PDFs3, official sources10, live legal locators and provenance10 PASS. See report §114.7.64 / evidence §72.61.
+- JSONL formatting failure from initial PR #339 attempt was corrected; 480 lines parse with zero invalid records. No merge occurred before corrected exact-head PASS.
+- GitHub permission confirmed: admin/maintain/push=true.
+- Manufacturer evidence still unresolved: SSQ actual JS bundle/source map/API and target attachment hrefs; PEGA2 32720 attachment/binary; iX700M 2026-09-16 detail; CE #171~#173 detail/PDF; wr_id=12652 own previous anchor. Manufacturer binary0; no SHA/signature/certificate-chain/revision/SKU validation.
+- CE index 502 endpoint inadvertently reopened once during investigation; do not retry. No guessed IDs/URLs. CRA only; SIL 3 excluded.
+
 # CRA 현재 상황판 — PR #339 CI 수정 진행
 
 - 기준 main remains `edf6e12ab31e6e562ef01548b85cb0e9795c1f97`; PR #338 exact-head Run #1746 and main push Run #1747 both SUCCESS 15/15.
