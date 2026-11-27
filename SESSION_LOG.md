@@ -4290,3 +4290,8 @@ CRA only; SIL 3 excluded.
 - Official SSQ pages open as JS app shells; actual script src, bundle, source map, API/JSON and target attachment href remain unknown. PEGA2 32720 metadata known, binary unavailable. iX700M 2026-09-16 remains index-only. CE #171~#173 model/date indexed; individual detail/PDF unknown. Manual index lists iX700M Ver1.4 and PEGA2 Ver1.3; wr_id=12652 own previous anchor unknown.
 - Procedure deviation: CE index URL previously returning 502 was inadvertently opened again in this session; returned 502. No further access. No guessed IDs/URLs.
 - Manufacturer binary0; no manufacturer PDF SHA/signature/certificate-chain/revision/SKU validation. CRA only; SIL 3 excluded.
+
+
+## 2026-11-27 — PR #339 Run #1748 failure and correction
+- Run #1748 / 45918661874 / job140243842093 failed at traceability after compile and blob identity checks passed; pytest and source canaries skipped; no merge.
+- Root cause was this assistant's documentation update: PROJECT_LOG.jsonl received pretty-printed multi-line JSON, violating JSONL. Restore exact main baseline and append compact one-line JSON only. Disclose and validate again before merge.
