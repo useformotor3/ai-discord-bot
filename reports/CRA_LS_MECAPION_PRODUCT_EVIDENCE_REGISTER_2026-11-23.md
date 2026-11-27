@@ -2008,3 +2008,9 @@ Actual SKU, EU/EEA supply, economic operators, signed SKU-specific DoC scope, BO
 - iX700M 2026-09-16 listing remains index-only; detail/document ID/attachment unknown. CE #171~#173 dated 2026-04-30 and model associations are indexed; individual detail/PDF unknown. Manual index lists Ver1.4 iX700M (2026-05-26) and PEGA2 Ver1.3 (2026-04-01); wr_id=12652 own previous anchor unknown.
 - SSQ direct opens return JavaScript app shell; script src/bundle/source map/API/JSON/target download href not recovered. No inference or guessed URL.
 - Process deviation: CE index endpoint returned 502 on an inadvertent repeat open during this session; do not access it again. Manufacturer binary0; no manufacturer PDF SHA/signature/chain/revision/SKU checks. CRA only; SIL 3 excluded.
+
+
+### 72.60 2026-11-27 — PR #339 JSONL validation failure
+- Run #1748 / 45918661874 / job140243842093 failed at CRA cross-matrix traceability after source blob and compile checks passed. pytest and source canaries were skipped; no merge.
+- Root cause: PROJECT_LOG.jsonl was appended with pretty-printed multi-line JSON, breaking one-record-per-line JSONL. Validator identified malformed lines 544–613.
+- Corrective action: restore exact main baseline log, preserve all prior events, append compact single-line JSON objects only; document the failure and re-run exact-head CI. No product evidence claims changed.
