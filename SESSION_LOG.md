@@ -4322,3 +4322,11 @@ CRA only; SIL 3 excluded.
 - Run #1759 / 45933223321 / job140290399418 exact main push SUCCESS 15/15; pytest189 (2.80s); same checks PASS. Source ZIP ID15169247006 / 3,070,565 B / c07696124a119e149ad1c514a5b05f1fdf6d4208032ca9d7198663b52795aa2f; provenance ZIP ID15169142372 / 2,565 B / 4239c506808305a2cb50e4b86cb21f42b616361403dbe999586cc191c3343e5c. ZIP digests only.
 - Full logs show source blob identity, compile, traceability, pytest189, official CRA PDF canaries3, source allowlist10, legal locators and provenance all passed. Node20→24, punycode/url.parse warnings non-blocking.
 - Manufacturer source unknowns remain unchanged; binary0; no manufacturer PDF cryptographic/revision/SKU checks. Previously 502 CE endpoint not re-requested. CRA only; SIL 3 excluded.
+
+
+## 2026-11-27 — SSQ official renewal/index follow-up
+- Reconfirmed main 87e5e17d3bcf143f209a8cd1274a4066cfc0e34c; PR #341/#342 merged, Runs #1758~#1761 all SUCCESS 15/15, pytest189.
+- Official SSQ renewal notice: document title opens detail; Download icon triggers immediate download; Share copies/shares document link. UI description only; not a captured network trace.
+- Official Motion&Servo index confirms iX700M user manual dated 2026-09-16 and PEGA2 entry. Detail href/document ID/attachment href remain unknown. PEGA2 32720 indexed filename PEGA2_ENG_Ver1.3_260831.pdf, EN, 6.0 MB, updated 2026-09-23; no attachment/binary.
+- CE #171~#173 model/date verified from official indexed result only; individual PDFs unknown. Previously 502 CE endpoint not opened. wr_id=12652 own previous anchor unknown; no guessed IDs/URLs.
+- Actual DOM/DevTools Network unavailable: renderer returns JS shell; runtime DNS resolution failed. This is not a site-outage conclusion. Manufacturer binary0; SHA/signature/chain/revision/SKU checks not performed. CRA only; SIL 3 excluded.
