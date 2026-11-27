@@ -2094,3 +2094,11 @@ Actual SKU, EU/EEA supply, economic operators, signed SKU-specific DoC scope, BO
 - Official indexed manual detail `https://lsmecapion.com/bbs/board.php?bo_table=manual&sca=Servo&wr_id=12651`: PEGA2 매뉴얼 Ver1.3; visible previous-post text `iX700M DRIVE 400[V] 매뉴얼 Ver1.3`; actual anchor href NOT EXPOSED. Do not confuse with target `wr_id=12652` own previous-post anchor, which remains NOT RECOVERED.
 - PEGA2 32720 English Ver1.3 detail metadata unchanged; actual attachment href/binary NOT RECOVERED. iX700M 2026-09-16 detail/document ID and attachment NOT RECOVERED. CE #171/#172/#173 individual detail/PDF hrefs NOT RECOVERED; no CE #168/#170 substitute. Manufacturer binary0; browser DOM/Network/HAR not captured.
 - Process deviation: previously-502 CE category endpoint inadvertently opened from search result and timed out; response not used as evidence, no further requests. Never access again. CRA only; SIL 3 excluded.
+
+
+### 72.71 2026-11-27 — PR #349 CI/merge closeout and evidence state
+- PR #349 exact head `0c443fbf5797051357cee6e4ec5ee545776d9609`; expected base `753c5704f8b5f1cb87b0a9ac64992675e6a9b252`; expected-head merge/current main `bdb539672f5100f4677b485c06ed67d649499e92` exact match.
+- Run #1775 / ID `46008207489`: exact PR head SUCCESS15/15; pytest189 (2.55s); traceability490 (modern485+legacy5); official CRA sources10; Commission PDFs3 fetched/hashed. Artifact ZIP digests: source `09668b4dc0033d49a07cd2f65047ffdaf9cc93caaceb2a641ed199c156c8d9bb`; provenance `1ee8978660e56790ffea9a1b3e9e5b504582f5fbe07ab599f86e11a79303f8e7`.
+- Main push CI remains UNVERIFIED; no push-run ID/log was retrievable and combined commit status had no entries.
+- PEGA2 32720 actual attachment href/binary NOT RECOVERED; iX700M 2026-09-16 detail/document ID/attachment NOT RECOVERED; CE #171/#172/#173 individual PDFs NOT RECOVERED; wr_id=12652 own previous anchor NOT RECOVERED. wr_id=12651's visible previous-post text is `iX700M DRIVE 400[V] 매뉴얼 Ver1.3`, but its href is not exposed and it is not the target 12652 anchor.
+- Browser DOM/Network/HAR not captured; manufacturer binary0; no manufacturer PDF hash/signature/revision/SKU verification. Previously-502 CE endpoint timeout deviation recorded; never access again. CRA only; SIL 3 excluded.
