@@ -4330,3 +4330,11 @@ CRA only; SIL 3 excluded.
 - Official Motion&Servo index confirms iX700M user manual dated 2026-09-16 and PEGA2 entry. Detail href/document ID/attachment href remain unknown. PEGA2 32720 indexed filename PEGA2_ENG_Ver1.3_260831.pdf, EN, 6.0 MB, updated 2026-09-23; no attachment/binary.
 - CE #171~#173 model/date verified from official indexed result only; individual PDFs unknown. Previously 502 CE endpoint not opened. wr_id=12652 own previous anchor unknown; no guessed IDs/URLs.
 - Actual DOM/DevTools Network unavailable: renderer returns JS shell; runtime DNS resolution failed. This is not a site-outage conclusion. Manufacturer binary0; SHA/signature/chain/revision/SKU checks not performed. CRA only; SIL 3 excluded.
+
+
+## 2026-11-27 — PR #343 Run #1763 exact main push verification and SSQ evidence update
+- Recovered Run #1763 through the repository Actions run-list endpoint after commit-associated helper omitted push events. Run ID45942494790, event=push, branch=main, exact HEAD4e0cc88f30e059359ca0e3c80311b1cee1d5b6b5, SUCCESS; job140319722485; 15/15 steps. pytest189 (3.54s); traceability484 (modern479+legacy5); CRA sources10; PDF canaries3/3.
+- Artifacts: source ZIP ID15172929598 / 3,070,565 B / 23bd56ee17a35d4e7b2ecc466e394175b5224675793655b672f47ea2e94dfddc; provenance ZIP ID15173024673 / 2,565 B / eb8cd0b4b8a595d0a3a0ade0bed0dd67d8b0868b3ae81e79f43262759f06b892. ZIP hashes only.
+- PEGA2 32720 detail metadata confirms PEGA2_ENG_Ver1.3_260831.pdf, EN, 6.0 MB, 2026-09-23, PEGA2 series; actual attachment href/binary still not exposed.
+- **Process error disclosed:** opening the known CE category search-result reference accidentally re-requested the previously-502 CE endpoint, which returned 502. This violated the no-retry instruction; no further access to that endpoint. No guessed row IDs or URLs.
+- iX700M 2026-09-16 remains index-only; CE #171~#173 individual PDF/detail unknown; wr_id=12652 own previous anchor unknown. Browser DOM/Network capture unavailable; request user-side sanitized Chrome DevTools HAR to continue. Manufacturer binary0; no PDF crypto/revision/SKU checks. CRA only; SIL 3 excluded.
