@@ -1,3 +1,17 @@
+# CRA 프로젝트 최신 상황판 — 2026-11-27 (PR #343 main push CI 및 SSQ 원본 추적)
+
+- 기준 main HEAD: `4e0cc88f30e059359ca0e3c80311b1cee1d5b6b5`; PR #343 merged, merge SHA와 일치.
+- Run #1762: ID `45942338100`, event=pull_request, head `a0aa8028d397c39662e6a359e8f7f79c8185aeee`, SUCCESS 15/15, pytest189.
+- Run #1763: ID `45942494790`, event=push, branch=main, exact head `4e0cc88f30e059359ca0e3c80311b1cee1d5b6b5`, SUCCESS 15/15, job `140319722485`, pytest189 (3.54s), traceability484 (modern479+legacy5), official CRA sources10, CRA PDF canaries3/3. Artifact ZIP digests: source `23bd56ee17a35d4e7b2ecc466e394175b5224675793655b672f47ea2e94dfddc`; provenance `eb8cd0b4b8a595d0a3a0ade0bed0dd67d8b0868b3ae81e79f43262759f06b892`. These are CI ZIP digests, not manufacturer PDF hashes.
+- PEGA2 32720 official detail renderer/index content confirms filename `PEGA2_ENG_Ver1.3_260831.pdf`, EN, 6.0 MB, update 2026-09-23, applicable product PEGA2 series and contents. Actual attachment href/binary remains NOT RECOVERED.
+- iX700M Solution Square item remains listing-only: 2026-09-16 confirmed; detail href/document ID/attachment href unknown.
+- CE #171–#173 model/date associations remain official index evidence only; individual detail/PDF links unknown. **Process deviation:** while opening the search-result reference to inspect the CE index, the browser fetcher re-requested the previously-502 CE index and returned 502 again. This was accidental and contrary to the no-retry instruction. Do not access that endpoint again; do not infer individual IDs/URLs.
+- `wr_id=12652` own previous-post anchor remains NOT RECOVERED.
+- No actual browser DOM/DevTools Network capture. script src, bundle, source map, API, download request remain NOT RECOVERED. Obtain user-side Chrome DevTools capture (Elements + Network + sanitized HAR) or desktop Chrome remote debugging; do not represent the search renderer as a real browser.
+- Manufacturer binary count 0; manufacturer PDF SHA-256/signature/certificate chain/revision/SKU checks not performed. CRA only; SIL 3 excluded.
+
+---
+
 # CRA 프로젝트 최신 상황판 — 2026-11-27 (SSQ 공개 색인 재확인)
 
 - 최신 확인 main HEAD: `87e5e17d3bcf143f209a8cd1274a4066cfc0e34c`.
