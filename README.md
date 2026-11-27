@@ -1633,3 +1633,5 @@ PR #314의 exact-head CI Run #1695와 main push Run #1696가 모두 SUCCESS(15/1
 
 
 > **PR #336 / main CI closeout (2026-11-27):** exact-head Run #1742 / 45915557837 and main push Run #1743 / 45915680159 both SUCCESS 15/15; pytest189; traceability476. Latest main `02dcaa3e051431bbae1da968278385f956c06c69`. See report §114.7.60 / evidence §72.57. Manufacturer binary0; SSQ target attachment hrefs/JS bundle remain unknown. CRA only; SIL 3 excluded.
+
+> **PR #337 / main CI closeout (2026-11-27):** exact-head Run #1744 / 45915846066 and main push Run #1745 / 45915931761 both SUCCESS 15/15; pytest189; traceability477 (modern472+legacy5); latest main `9db86d5deaa459af3bd4bc9de7eda9d1397a9bb4`. See report §114.7.61 / evidence §72.58. Official SSQ notice describes title→detail, Download→instant file, Share→copy/share link; actual JS bundle/source map/API and target hrefs remain unknown. Manufacturer binary0. One accidental repeat request to a previously 502 CE index URL is disclosed in the report; no further retry. CRA only; SIL 3 excluded.
