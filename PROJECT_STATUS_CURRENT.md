@@ -3202,3 +3202,15 @@
 - KC index provides individual rows for iX700MD1-B-220B (row 113) and iX700MD1-B-370B (row 114), 2026-03-09. KC evidence is not CE/UKCA replacement and does not identify CE detail hrefs.
 - CE groups 220B / 370B-300B / 750B-550B-450B remain index-only; UKCA Drive Unit not found in searched results, not proof of non-existence. KR/EN catalog and CAD/STEP remain metadata_only.
 - Manufacturer binary 0; no SHA/signature/revision/SKU-scope validation. Q01–Q62 unsent; no manufacturer contact. CRA only; SIL 3 excluded. Details §114.7.12 / §72.10.
+
+
+---
+
+# CRA 프로젝트 최신 상황판 — 2026-11-27 (PR #346 및 main push 종결)
+- 최신 main HEAD: `997545f3573be902eb9a767231d563facbcf5dc7` (PR #346 merge SHA exact match).
+- PR #346 head `9c1596883bce8c42f04ca9365a889c1c154246d7`, expected-base `9b6a2b397b6ef0ec30ca1d21b153223f83812311`, squash merge 완료.
+- Run #1769 exact PR head: SUCCESS15/15, pytest189, traceability487 (modern482+legacy5), CRA PDFs3/3, sources10.
+- Run #1770 exact main push: SUCCESS15/15, pytest189, traceability487, CRA PDFs3/3, sources10. 상세는 report §114.7.71 / evidence §72.68.
+- PROJECT_LOG 동기화 전 487 valid JSONL records, blank0. 이번 event 추가 후 488 records, non-null event_id 483 unique, legacy no-id 5, blank0; 모든 physical line JSON parse 통과.
+- Manufacturer binaries0. PEGA2 32720 attachment href, iX700M 2026-09-16 detail/document ID, CE #171~#173 individual PDF, wr_id=12652 own previous anchor UNKNOWN. Browser DOM/Network/HAR not captured. No guessed IDs/URLs; do not reopen previously-502 CE endpoint.
+- CRA only; SIL 3 excluded.
