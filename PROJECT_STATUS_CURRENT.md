@@ -1,3 +1,13 @@
+# CRA 현재 상황판 — 2026-11-27 (PR #337 종결)
+
+- **Latest verified main HEAD:** `9db86d5deaa459af3bd4bc9de7eda9d1397a9bb4` (PR #337 merge SHA and Run #1745 exact main push).
+- PR #337 exact-head Run #1744 / 45915846066 and main push Run #1745 / 45915931761 both SUCCESS 15/15; pytest189; traceability477 (modern472+legacy5); official CRA PDFs3, sources10, legal locators and provenance manifest10 PASS.
+- Run #1744 ZIP SHA-256: source `6cda098479215415f142d63b0b937f1a7eb18e9edfe4e8f7d5e5620ee771f054`, provenance `338024e427dc5e651119b50fafe22190f18a36a027b5bd9864dad3d76196449c`. Run #1745: source `4fbe5c7bfa8f5e7f76245e53c1e2b9b8fb609688db339bdca2602bbbbf62bc58`, provenance `6b29e4d0432176ebfc3965fd410da80d2a0bf2eca2d1d5d03357f6c9676ca6ad`. CI ZIP hashes only.
+- Official SSQ notice describes title→detail, Download→immediate file download, Share→copy/share link. Actual script src/bundle/source map/API and target document hrefs remain unknown.
+- PEGA2 32720 metadata verified; binary/attachment unknown. iX700M 2026-09-16 listing verified; detail/document ID/attachment unknown. CE #171~#173 model/date verified at index only. wr_id=12652 own previous anchor unknown; wr_id=12651 previous-title text is inconsistent with current index's iX700M Ver1.4 listing.
+- **Procedure deviation:** one accidental repeat open of the previously 502 CE index URL occurred and returned 502. No further request to that endpoint. No guessed IDs/URLs.
+- Manufacturer binary0; no manufacturer PDF hash/signature/chain/revision/SKU checks. Q01–Q62 unsent. CRA only; SIL 3 excluded. Details report §114.7.61 / evidence §72.58.
+
 # CRA 현재 상황판 — 2026-11-27 (PR #336 종결)
 
 - **Latest verified main HEAD:** `02dcaa3e051431bbae1da968278385f956c06c69` (PR #336 expected-head merge SHA and refs/heads/main read-back).

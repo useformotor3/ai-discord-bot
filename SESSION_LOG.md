@@ -4269,3 +4269,12 @@ CRA only; SIL 3 excluded.
 - Main push Run #1743 / 45915680159 exact SHA + push/main SUCCESS 15/15; pytest189; traceability476; official sources10, live legal locators and provenance manifest PASS.
 - CI artifact ZIP digests recorded in report §114.7.60 / evidence §72.57; not manufacturer PDF hashes.
 - No manufacturer original PDF or target attachment hrefs obtained. SSQ JS bundle/source map/API remain unrecovered. CRA only; SIL 3 excluded.
+
+## 2026-11-27 — PR #337 / Run #1744~#1745 closeout and official download-flow trace
+- PR #337 exact head b9cdf22db8ff28e881d3428cb589eda37d95b0d2, expected base 02dcaa3e051431bbae1da968278385f956c06c69, expected-head squash merge/current main 9db86d5deaa459af3bd4bc9de7eda9d1397a9bb4.
+- Run #1744 exact PR head SUCCESS 15/15; pytest189; traceability477. Run #1745 exact main push SHA/event/branch SUCCESS 15/15; pytest189; traceability477. Official CRA PDFs3, sources10, Article13(8), 2025/2392 locators, provenance manifest10 PASS.
+- Artifact digests are CI ZIP hashes, not manufacturer PDF hashes; recorded in report §114.7.61 / evidence §72.58.
+- Official SSQ renewal notice describes generic Download Center UX (title opens detail; Download icon downloads; Share copies/shares link). It does not expose target file anchors or actual network requests. Actual script src/bundle/source map/API remain unrecovered.
+- PEGA2 32720 metadata and iX700M 2026-09-16 listing rechecked; target hrefs unknown. CE #171~#173 individual detail/PDF unknown. wr_id=12652 own previous anchor unknown; wr_id=12651 previous-title text conflicts with current index's Ver1.4 listing.
+- Process deviation: one accidental repeat open of the previously 502 CE index URL occurred; it returned 502. Do not access this endpoint again. No IDs/URLs guessed.
+- Manufacturer binary0; no manufacturer SHA/signature/chain/revision/SKU checks. CRA only; SIL 3 excluded.
