@@ -4393,3 +4393,10 @@ CRA only; SIL 3 excluded.
 - Artifacts: source ZIP ID15201614213, 3,070,566 B, digest `09668b4dc0033d49a07cd2f65047ffdaf9cc93caaceb2a641ed199c156c8d9bb`; provenance ZIP ID15201949108, 2,565 B, digest `1ee8978660e56790ffea9a1b3e9e5b504582f5fbe07ab599f86e11a79303f8e7`. ZIP hashes only.
 - Main push CI after merge: UNVERIFIED. Commit-associated run helper filters PR events; combined status endpoint returned no entries; no push run ID/log independently retrieved.
 - Product locators unchanged. The wr_id=12651 official indexed previous-post text does not establish wr_id=12652's own previous anchor. Manufacturer binary0; no DOM/Network/HAR. Never access previously-502 CE endpoint again. CRA only; SIL 3 excluded.
+
+## 2026-11-27 — PR #350 exact-head CI / expected-head merge 종결
+- PR #350 base `bdb539672f5100f4677b485c06ed67d649499e92`, head `42b7c99597be3764f6c7b37a58caea809cda2c0e`; 6 files +41/-0. Expected-head squash merge `1122ca725d6845e0fe860ebd37ae599c62cf5df6`; main read-back exact match.
+- Run #1777 / ID `46008519450`, job140537715389: exact PR head SUCCESS15/15; compileall PASS; traceability491 (modern486+legacy5); pytest189 (1.86s); official CRA sources10; Commission PDFs3 fetched/hashed.
+- Artifacts: source15202558368 / 3,070,566 B / `ab3d3add4d6fb2fb0e9dec8cb2ae492b5a56afc9a8d8bdf57f371a222695038a`; provenance15202930349 / 2,565 B / `ac6f90b82de832b73f67674d40518a2f0187d6cccd4e064e735be6ea439ec1fd`. ZIP hashes only.
+- Main push CI UNVERIFIED; no push run ID/log and combined status empty.
+- Manufacturer evidence unresolved; no DOM/Network/HAR; no access to prohibited CE endpoint. CRA only; SIL 3 excluded.
