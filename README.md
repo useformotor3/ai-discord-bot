@@ -1659,3 +1659,6 @@ PR #314의 exact-head CI Run #1695와 main push Run #1696가 모두 SUCCESS(15/1
 
 
 > **PR #344 exact-head/main push closeout (2026-11-27):** PR #344 merged at `9846c41056933d53163259219ee24573570102a4`. Run #1765 exact PR head and Run #1766 exact main push both SUCCESS 15/15; pytest189; traceability485 (modern480+legacy5); official CRA sources10 and PDF canaries3/3. See report §114.7.69 / evidence §72.66. Run #1764 was cancelled after a JSONL blank-line correction superseded its head. CI digests are ZIP hashes only. Manufacturer binary0; target attachment paths remain unknown. CRA only; SIL 3 excluded.
+
+
+> **PR #345 exact-head/main push closeout (2026-11-27):** PR #345 merged at `9b6a2b397b6ef0ec30ca1d21b153223f83812311`. Run #1767 exact PR head and Run #1768 exact main push both SUCCESS15/15; pytest189; traceability486; official CRA sources10 and PDF canaries3/3. See report §114.7.70 / evidence §72.67. CI digests are ZIP hashes only. Manufacturer binary0; target attachment paths remain unknown. CRA only; SIL 3 excluded.

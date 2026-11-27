@@ -1,3 +1,13 @@
+# CRA 프로젝트 최신 상황판 — 2026-11-27 (PR #345 및 main push CI 종결)
+
+- 최신 확인 main HEAD: `9b6a2b397b6ef0ec30ca1d21b153223f83812311`.
+- PR #345: base `9846c41056933d53163259219ee24573570102a4`; exact PR head `c1a727208441cccaf98dd4ec420207b7b531f057`; expected-head squash merge 성공; merge SHA/main ref read-back `9b6a2b397b6ef0ec30ca1d21b153223f83812311`.
+- Run #1767 / ID `45951503539`: exact PR head, SUCCESS 15/15; pytest189 (3.27s); traceability486 (modern481+legacy5); official CRA sources10; PDF canaries3/3. Artifact ZIP digests: source `1f6b84be2e5eacc321fbc5406b07fc5b32835c3b2f6a40d7c5224fb6d08c9fa3`; provenance `ca2a2ef4417aa36086bfa4b28c8115f1159f58c6bb17ed19403a4b1b5707a58d`.
+- Run #1768 / ID `45951599590`: event=push, branch=main, exact merge SHA `9b6a2b397b6ef0ec30ca1d21b153223f83812311`, SUCCESS 15/15; job `140348482896`; pytest189 (2.58s); traceability486 (modern481+legacy5); official CRA sources10; PDF canaries3/3. Artifact ZIP digests: source `786631260ed6de1269b7680225287a074b052491e3402cd48c22c77459399d3f`; provenance `a90ce2df055ffeb97c8ecbe8e5c04cd84df30c17c2587e722ff16cdff429ef3c`. These are CI ZIP digests, not manufacturer PDF hashes.
+- Manufacturer evidence remains unchanged: PEGA2 32720 attachment href/binary unknown; iX700M 2026-09-16 detail/document ID/attachment unknown; CE #171~#173 individual PDFs unknown; wr_id=12652 own previous anchor unknown. Previously-502 CE category endpoint must never be accessed again. No actual browser DOM/Network evidence; sanitized user-side HAR required. Manufacturer binary0; PDF SHA/signature/certificate chain/revision/SKU checks not performed. CRA only; SIL 3 excluded.
+
+---
+
 # CRA 프로젝트 최신 상황판 — 2026-11-27 (PR #344 CI 및 main push 종결)
 
 - 최신 확인 main HEAD: `9846c41056933d53163259219ee24573570102a4`; PR #344 merge SHA와 일치.
