@@ -4366,3 +4366,11 @@ CRA only; SIL 3 excluded.
 - Run #1770 / 45951917597 exact main push SUCCESS15/15; job140349504249; pytest189 (2.18s); traceability487; sources10, PDFs3/3. Source/provenance ZIP hashes `987a5fac425c459b36dfc8a19186ca73a3b55b91c6a35348f2c17837a8b6ef29` / `c1fb4b6fcb50f38b9bec05588c013aaf2921b5196dd411ace1e85b0720de4d7`. ZIP hashes are not manufacturer PDF hashes.
 - All 15 steps passed. Non-blocking Node.js20→24, punycode and url.parse deprecation warnings persist.
 - Manufacturer evidence unchanged; no binary; target attachment locators and browser DOM/Network remain unknown. Never access the previously-502 CE endpoint. CRA only; SIL 3 excluded.
+
+
+## 2026-11-27 — PR #347 exact-head merge/main push and official SSQ search recheck
+- PR #347 head `fe522d1a8580d286ba170cae01b7fa73051b86b1`; expected base `997545f3573be902eb9a767231d563facbcf5dc7`; expected-head merge/current main `b99c954ece218e1fa2baed9bf67c7a1950fcc8be`.
+- Run #1771 / 45983937960 exact PR head SUCCESS15/15; pytest189 (2.63s); traceability488 (modern483+legacy5); sources10; Commission PDFs3 fetched/hashed. Source/provenance ZIP hashes `cdb429f7770b20f87866e56e11a4f29c4e4de29d80edcd3e7ef6af18417f64da` / `5312864b19eb2bd305fee2bc5b0712858172f1082932bbb443ec03a9aadc7096`.
+- Run #1772 / 45984100206 exact main push SUCCESS15/15; job140455160227; pytest189 (2.77s); traceability488; sources10; PDFs3 fetched/hashed. Source/provenance ZIP hashes `94a78c8091b926fc6009b141f99206fdf80d3647fc75e2af9a6f118712b6b3cc` / `6b7110641b01b026f462db4611025e98be3b3236c56030cb77a771b74728f7a4`. ZIP digests only.
+- Official Solution Square category/search index confirms iX700M manual title and category update 2026-09-16, but no detail ID or attachment href. PEGA2 32720 English Ver1.3 metadata reconfirmed, no actual attachment. CE #171~#173 PDFs and wr_id=12652 own previous anchor remain unknown. No unrelated attachment substitution; browser DOM/Network/HAR not captured.
+- Manufacturer binary0; no PDF crypto/revision/SKU verification. Previously-502 CE endpoint not accessed. CRA only; SIL 3 excluded.
