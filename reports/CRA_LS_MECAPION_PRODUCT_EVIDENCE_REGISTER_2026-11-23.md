@@ -2022,3 +2022,12 @@ Actual SKU, EU/EEA supply, economic operators, signed SKU-specific DoC scope, BO
 - PR #339 expected-head merge SHA/current main `64a85d59d269c3dbb00f77940b78ae15f5560d11`.
 - Run #1755 / 45918884900 exact main push SUCCESS 15/15; pytest189; traceability480 (modern475+legacy5); official sources/PDF/legal/provenance PASS. Source ZIP ID15163366979 / 3,070,564 B / `4dcd8ea1eab97a56e98372bfbe382e1163c0573a2cc7fb85e596eb0335d524eb`; provenance ID15163905585 / 2,565 B / `197d72a80915c999bbe97c51148f2f43f3dad7ab5259715146732f6749a84a82`. CI ZIP hashes only.
 - Manufacturer source unknowns remain unchanged; no manufacturer binary or PDF cryptographic/SKU verification. CE index 502 endpoint accidentally re-opened once; no further retry. CRA only; SIL 3 excluded.
+
+
+### 72.62 2026-11-27 — PR #340 CI closeout and manufacturer-source trace delta
+- PR #340 head `4aa5264e8af8020811e049e2c7404a8386684eef` merged at main `aecff846981a719054285922966b37191785de94`. Run #1756 exact PR head and Run #1757 exact main push both SUCCESS 15/15; pytest189 (2.19s / 2.81s); traceability481 events (modern476+legacy5); official CRA PDFs3, allowlisted sources10, legal locators and provenance10 PASS.
+- CI ZIP digests only: Run1756 source ID15163124732 / 3,070,565 B / `a7695332945e499a8b7eed8c6666fe9b0f3cbc224c1be2069bcdb1358ecf3958`; provenance ID15164285101 / 2,564 B / `4b5d61e887d75b7ea23db5b2ccaf722e4cc7f90e6be21ec533a525e5de22336e`. Run1757 source ID15163124927 / 3,070,565 B / `c4c0a7a037ddb11eb687ce2f61e26d3245775c4aeeb8923a77cb4e08dcd43ddd`; provenance ID15163606962 / 2,565 B / `7ca2f840242bb3a6ff82aa141e4c1d39716e433a6384234902b4ee9e3986a057`. Not manufacturer PDF hashes.
+- PEGA2 32720 official metadata remains confirmed (Ver1.3 EN, 6.0 MB, 2026-09-23, PEGA2 series); attachment href/binary unknown. iX700M 2026-09-16 entry remains index-only; detail/document ID/attachment unknown.
+- CE #171~#173 indexed model/date associations reconfirmed; individual detail/PDF hrefs unknown. Previously 502 CE index URL was not re-requested.
+- SSQ script src/bundle/source map/API/JSON/download request remain unrecovered; detail renderer exposes JS app shell. Raw runtime HTTP retrieval failed DNS resolution. Official XG5000 legacy desktop manual documents Sample Gallery download UI only, not current web API.
+- wr_id=12652 own previous-post anchor remains unknown; no guessed IDs/URLs. Manufacturer binary0; PDF SHA/signature/chain/revision/SKU checks NOT PERFORMED. CRA only; SIL 3 excluded.

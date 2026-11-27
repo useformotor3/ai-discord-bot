@@ -1,3 +1,16 @@
+# CRA 프로젝트 최신 상황판 — 2026-11-27
+
+- 최신 확인 main HEAD: `aecff846981a719054285922966b37191785de94` (PR #340 merge SHA와 일치)
+- PR #340 Run #1756 exact PR head / Run #1757 main push: SUCCESS 15/15; pytest189; traceability481 (modern476+legacy5); official CRA PDFs3, official sources10, legal locators/provenance PASS.
+- 현재 최우선 미해결: Solution Square 실제 JS script src/bundle/source map/API/다운로드 네트워크 요청, PEGA2 32720 attachment href, iX700M 2026-09-16 detail/document ID/attachment href, CE #171~#173 개별 PDF, wr_id=12652 자체 이전글 anchor.
+- CE index URL은 과거 502 이력이 있어 재요청 금지. ID/URL 추정 금지. 이번 세션 해당 URL 재호출 없음.
+- 공식 공개 색인으로 PEGA2 메타데이터와 CE #171~#173 모델/날짜를 확인했으나, 제조사 원본 PDF 바이너리 취득은 0건. 제조사 PDF SHA-256/서명/인증서 체인/revision/SKU 검증은 미수행.
+- 공식 XG5000 매뉴얼의 Solution Square Sample Gallery 다운로드 설명은 레거시 데스크톱 UI 근거이며 현 웹 SPA의 API/첨부 경로 증거가 아님.
+- 다음 실행: 제조사 공개 경로에서 DOM/네트워크 응답을 추가로 확보할 수 있는 경로를 탐색하되, 502 endpoint는 배제하고 원본 확보 후에만 무결성·서명·적용 SKU 검증.
+- 상세: 보고서 §114.7.65 / 제품 증거등록부 §72.62. CRA only; SIL 3 제외.
+
+---
+
 # CRA 현재 상황판 — 2026-11-27 (PR #339 종결)
 
 - **Latest verified main HEAD:** `64a85d59d269c3dbb00f77940b78ae15f5560d11` (PR #339 expected-head squash merge and Run #1755 exact main push).
