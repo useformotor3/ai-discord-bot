@@ -1,3 +1,10 @@
+# CRA 현재 상황판 — PR #339 CI 수정 진행
+
+- 기준 main remains `edf6e12ab31e6e562ef01548b85cb0e9795c1f97`; PR #338 exact-head Run #1746 and main push Run #1747 both SUCCESS 15/15.
+- PR #339 head `4f6f6c486bb0c859705bfc2d1f624819bc430`; Run #1748 failed traceability because PROJECT_LOG.jsonl received a pretty-printed multi-line JSON record. Source identity and compile passed; pytest/source canaries skipped. No merge.
+- Correction: restore main baseline JSONL and append compact one-line JSON records. Re-run exact-head validation before any merge.
+- Details report §114.7.63 / evidence §72.60. CRA only; SIL 3 excluded.
+
 # CRA 현재 상황판 — 2026-11-27 (PR #338 종결)
 
 - **Latest verified main HEAD:** `edf6e12ab31e6e562ef01548b85cb0e9795c1f97` (PR #338 merge SHA; refs/heads/main read-back matches).
