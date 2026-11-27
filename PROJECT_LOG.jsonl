@@ -476,3 +476,138 @@
 {"event_id":"2026-11-27-CRA-PR335-CI-CLOSEOUT-021","date":"2026-11-27","timezone":"Asia/Seoul","kind":"cra_pr335_exact_head_and_main_push_ci_closeout","scope":"CRA only; SIL 3 excluded","pr":{"number":335,"head":"aaeb20bc84841b8fa505afb5c608ea0c93ceca54","base":"89c3304262fefba5365586e89da8681ec0f38966","merge":"ddb97ad60a20f9d87bfda8e4a78eb73b2c23ede0","merged":true,"files":6,"additions":35,"deletions":0},"exact_head_run":{"number":1740,"id":45915259752,"job_id":140232807728,"conclusion":"success","steps":15,"pytest":189,"traceability":475,"modern":470,"legacy":5,"source_zip":{"id":15161952072,"bytes":3070566,"sha256":"14efc54f4f38e26984bcb784628dcd4098f6ea249fdb47f236853a2b6a556bb0"},"provenance_zip":{"id":15161693169,"bytes":2565,"sha256":"2ac93ad7fbe799761edda0405671c71728bd820956a4c5aa7b793fe5b9ac2966"}},"main_push_run":{"number":1741,"id":45915371120,"job_id":140233166145,"head_sha":"ddb97ad60a20f9d87bfda8e4a78eb73b2c23ede0","event":"push","branch":"main","conclusion":"success","steps":15,"pytest":189,"traceability":475,"modern":470,"legacy":5,"source_zip":{"id":15161906535,"bytes":3070565,"sha256":"ffdee75b0ef12af9f493c486b5d7fb9bde7be15f4ddedfd41e2c7ef0ab3599a3"},"provenance_zip":{"id":15161866582,"bytes":2565,"sha256":"4451b9f178a6d53d28c5e51422fb42df861c9dd15e82abd6a11decbbda85ef3c"}},"controls":{"manufacturer_binary_count":0,"manufacturer_pdf_sha256":false,"pdf_signature":false,"certificate_chain":false,"revision":false,"sku_scope":false,"guessed_ids":0,"guessed_urls":0,"failed_endpoint_retries":0,"Q01_Q62":"not_sent"},"documents":{"report":"§114.7.59","evidence_register":"§72.56","status":"prepend","readme":"append","session_log":"append","project_log":"append"}}
 {"event_id":"2026-11-27-CRA-PR336-CI-CLOSEOUT-022","date":"2026-11-27","timezone":"Asia/Seoul","kind":"cra_pr336_exact_head_and_main_push_ci_closeout","scope":"CRA only; SIL 3 excluded","pr":{"number":336,"head":"5195457a0c9985edad91f3cfffec2061444285fc","base":"ddb97ad60a20f9d87bfda8e4a78eb73b2c23ede0","merge":"02dcaa3e051431bbae1da968278385f956c06c69","merged":true,"files":6,"additions":35,"deletions":0},"exact_head_run":{"number":1742,"id":45915557837,"job_id":140233789539,"conclusion":"success","steps":15,"pytest":189,"traceability":476,"modern":471,"legacy":5,"source_zip":{"id":15162605600,"bytes":3070565,"sha256":"70d1e4686bd602d5c3836cb0923d9484f5577208bbb8be4a559096c457f9a6a8"},"provenance_zip":{"id":15162350874,"bytes":2565,"sha256":"fbf40888627122a3a8182a5e75f9030c6b0eb24080880db6d48b7c1ebca71942"}},"main_push_run":{"number":1743,"id":45915680159,"job_id":140234182524,"head_sha":"02dcaa3e051431bbae1da968278385f956c06c69","event":"push","branch":"main","conclusion":"success","steps":15,"pytest":189,"traceability":476,"modern":471,"legacy":5,"source_zip":{"id":15161833399,"bytes":3070565,"sha256":"b08b372edf7d53eef290c9e652ecb2df8af2bad86b3a5aa6f31f499cd8bc24a2"},"provenance_zip":{"id":15161624063,"bytes":2565,"sha256":"06983564981721b90a95b7138d9e361418846d25ee84d4089089bd210a87f24f"}},"controls":{"manufacturer_binary_count":0,"manufacturer_pdf_sha256":false,"pdf_signature":false,"certificate_chain":false,"revision":false,"sku_scope":false,"guessed_ids":0,"guessed_urls":0,"failed_endpoint_retries":0,"Q01_Q62":"not_sent"},"documents":{"report":"§114.7.60","evidence_register":"§72.57","status":"prepend","readme":"append","session_log":"append","project_log":"append"}}
 {"event_id":"2026-11-27-CRA-PR337-CI-CLOSEOUT-023","date":"2026-11-27","timezone":"Asia/Seoul","kind":"cra_pr337_exact_head_and_main_push_ci_closeout_and_official_download_trace","scope":"CRA only; SIL 3 excluded","pr":{"number":337,"head":"b9cdf22db8ff28e881d3428cb589eda37d95b0d2","expected_base":"02dcaa3e051431bbae1da968278385f956c06c69","merge":"9db86d5deaa459af3bd4bc9de7eda9d1397a9bb4","merged":true,"files":6,"additions":35,"deletions":0},"runs":[{"number":1744,"id":45915846066,"job_id":140234734935,"head":"b9cdf22db8ff28e881d3428cb589eda37d95b0d2","event":"pull_request","conclusion":"success","steps":15,"pytest":189,"traceability":477,"modern":472,"legacy":5,"source_zip":{"id":15162556354,"bytes":3070565,"sha256":"6cda098479215415f142d63b0b937f1a7eb18e9edfe4e8f7d5e5620ee771f054"},"provenance_zip":{"id":15161579487,"bytes":2565,"sha256":"338024e427dc5e651119b50fafe22190f18a36a027b5bd9864dad3d76196449c"}},{"number":1745,"id":45915931761,"job_id":140235024349,"head":"9db86d5deaa459af3bd4bc9de7eda9d1397a9bb4","event":"push","branch":"main","conclusion":"success","steps":15,"pytest":189,"traceability":477,"modern":472,"legacy":5,"source_zip":{"id":15162371297,"bytes":3070565,"sha256":"4fbe5c7bfa8f5e7f76245e53c1e2b9b8fb609688db339bdca2602bbbbf62bc58"},"provenance_zip":{"id":15162012191,"bytes":2565,"sha256":"6b29e4d0432176ebfc3965fd410da80d2a0bf2eca2d1d5d03357f6c9676ca6ad"}}],"official_findings":{"ssq_download_ui":{"notice_url":"https://sol.ls-electric.com/ww/en/community/board","notice":"SSQ System Renewal Notice (Open on November 26)","title_action":"opens detail page","download_action":"instant file download","share_action":"copies/shares link","script_src":null,"bundle_url":null,"source_map":null,"api_endpoint":null,"target_attachment_href":null},"pega2_32720":{"url":"https://sol.ls-electric.com/us/en/product/document/32720","file":"PEGA2_ENG_Ver1.3_260831.pdf","language":"EN","size":"6.0 MB","updated":"2026-09-23","scope":"PEGA2 series","attachment_href":null,"binary":false},"ix700m_2026_09_16":{"listing_url":"https://ssq.ls-electric.com/kr/ko/product/category/4?pageNumber=14","search_url":"https://sol.ls-electric.com/kr/ko/newSearch?pageNumber=70","title":"iX700M 사용 설명서","detail_href":null,"document_id":null,"attachment_href":null},"ce_171_173":{"index_url":"https://www.lsmecapion.com/bbs/board.php?bo_table=certificate&sca=CE","date":"2026-04-30","models":{"171":"iX700MD1-B-220B","172":"iX700MD1-B-370B, 300B","173":"iX700MD1-B-750B, 550B, 450B"},"individual_detail_href":null,"pdf_href":null},"wr_id_12652":{"own_previous_anchor":null,"attachment_href":null,"wr_id_12651_previous_text":"iX700M DRIVE 400[V] 매뉴얼 Ver1.3","current_servo_index":"iX700M DRIVE 400[V] 매뉴얼 Ver1.4; PEGA2 매뉴얼 Ver1.3","relation_unresolved":true}},"manufacturer_evidence":{"binary_count":0,"pdf_sha256":false,"pdf_signature":false,"certificate_chain":false,"revision":false,"sku_scope":false},"controls":{"guessed_ids":0,"guessed_urls":0,"failed_endpoint_retries":1,"failed_endpoint_retry_note":"One inadvertent repeat open of the previously 502 CE index endpoint occurred during this session; it returned 502. No further request will be made.","Q01_Q62":"not_sent"},"documents":{"report":"§114.7.61","evidence_register":"§72.58","status":"prepend","readme":"append","session_log":"append","project_log":"append"}}
+{
+  "event_id": "2026-11-27-CRA-PR338-RUN1746-1747-CLOSEOUT-024",
+  "date": "2026-11-27",
+  "timezone": "Asia/Seoul",
+  "kind": "cra_pr338_exact_head_main_push_ci_closeout_and_manufacturer_public_source_trace",
+  "scope": "CRA only; SIL 3 excluded",
+  "baseline_main": "edf6e12ab31e6e562ef01548b85cb0e9795c1f97",
+  "github_permissions": {
+    "admin": true,
+    "maintain": true,
+    "push": true,
+    "pull": true
+  },
+  "pr": {
+    "number": 338,
+    "head_sha": "f671dc1bb1ba5d7bcf72d036d304c04e4b7eec16",
+    "expected_base": "9db86d5deaa459af3bd4bc9de7eda9d1397a9bb4",
+    "merge_sha": "edf6e12ab31e6e562ef01548b85cb0e9795c1f97",
+    "merged": true,
+    "changed_files": 6
+  },
+  "runs": [
+    {
+      "number": 1746,
+      "id": 45917536170,
+      "job_id": 140240258153,
+      "event": "pull_request",
+      "head_sha": "f671dc1bb1ba5d7bcf72d036d304c04e4b7eec16",
+      "conclusion": "success",
+      "steps": "15/15",
+      "pytest": 189,
+      "traceability_events": 478,
+      "modern_ids": 473,
+      "legacy": 5,
+      "official_cra_pdfs": 3,
+      "official_sources": 10,
+      "source_zip": {
+        "artifact_id": 15162328691,
+        "bytes": 3070565,
+        "sha256": "01c1064431afb74b4f6aeadd226bc394bf5c5c6d9dd7a093262e52223f7b11ed"
+      },
+      "provenance_zip": {
+        "artifact_id": 15161864807,
+        "bytes": 2565,
+        "sha256": "7e29ce42e1562376fa970d70057c0af5b8d4729219a510c1fee56a9099c04790"
+      }
+    },
+    {
+      "number": 1747,
+      "id": 45917662172,
+      "job_id": 140240665436,
+      "event": "push",
+      "branch": "main",
+      "head_sha": "edf6e12ab31e6e562ef01548b85cb0e9795c1f97",
+      "conclusion": "success",
+      "steps": "15/15",
+      "pytest": 189,
+      "traceability_events": 478,
+      "modern_ids": 473,
+      "legacy": 5,
+      "official_cra_pdfs": 3,
+      "official_sources": 10,
+      "source_zip": {
+        "artifact_id": 15162358870,
+        "bytes": 3070565,
+        "sha256": "8b3619c6534645ac64dba6a81cd639364ff044f2c5e0cb8819601975c7129b9e"
+      },
+      "provenance_zip": {
+        "artifact_id": 15162373711,
+        "bytes": 2565,
+        "sha256": "caeb2d5c93ed54b67e200c6f99bfc148ea41733377ce05b03273345eb28160c6"
+      }
+    }
+  ],
+  "manufacturer_sources": {
+    "ssq_js": {
+      "script_src": null,
+      "bundle_url": null,
+      "source_map": null,
+      "api_url": null,
+      "target_attachment_href": null,
+      "status": "not_recovered"
+    },
+    "pega2_32720": {
+      "filename": "PEGA2_ENG_Ver1.3_260831.pdf",
+      "language": "EN",
+      "size_mb": 6,
+      "updated": "2026-09-23",
+      "attachment_href": null,
+      "binary": false
+    },
+    "ix700m_2026_09_16": {
+      "listing_confirmed": true,
+      "detail_href": null,
+      "document_id": null,
+      "attachment_href": null
+    },
+    "ce_171_173": {
+      "index_date": "2026-04-30",
+      "models": {
+        "171": "iX700MD1-B-220B",
+        "172": "iX700MD1-B-370B, 300B",
+        "173": "iX700MD1-B-750B, 550B, 450B"
+      },
+      "individual_detail_hrefs": null,
+      "pdf_hrefs": null
+    },
+    "wr_id_12652": {
+      "own_previous_anchor": null
+    }
+  },
+  "manufacturer_evidence": {
+    "binary_count": 0,
+    "pdf_sha256": false,
+    "pdf_signature": false,
+    "certificate_chain": false,
+    "revision": false,
+    "sku_scope": false
+  },
+  "controls": {
+    "guessed_ids": 0,
+    "guessed_urls": 0,
+    "failed_endpoint_retries": 1,
+    "failed_endpoint_retry_note": "Previously 502 CE index URL was inadvertently opened once again during current session; no further request.",
+    "Q01_Q62": "not_sent"
+  },
+  "documents": {
+    "report": "§114.7.62",
+    "evidence_register": "§72.59",
+    "status": "prepend",
+    "readme": "append",
+    "session_log": "append",
+    "project_log": "append"
+  }
+}
