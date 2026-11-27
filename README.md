@@ -1647,3 +1647,6 @@ PR #314의 exact-head CI Run #1695와 main push Run #1696가 모두 SUCCESS(15/1
 
 
 > **PR #340 / exact-head + main push closeout (2026-11-27):** PR #340 merged at `aecff846981a719054285922966b37191785de94`. Run #1756 exact PR head and Run #1757 exact main push both SUCCESS 15/15; pytest189; traceability481 (modern476+legacy5); official CRA PDFs3, sources10, legal locators and provenance10 PASS. See report §114.7.65 / evidence §72.62. CI hashes are ZIP digests only. Solution Square script/bundle/map/API and target attachment hrefs remain unknown; manufacturer binary0. Previously 502 CE endpoint not re-requested. CRA only; SIL 3 excluded.
+
+
+> **PR #341 / exact-head + main push closeout (2026-11-27):** PR #341 merged at `0bda43b81c5b64106c39b0da6b145f44573930fc`. Run #1758 exact PR head and Run #1759 exact main push both SUCCESS 15/15; pytest189; traceability482 (modern477+legacy5); official CRA PDFs3, sources10, legal locators and provenance10 PASS. See report §114.7.66 / evidence §72.63. CI digests are ZIP hashes only. Manufacturer binary0; target attachment hrefs remain unknown. CRA only; SIL 3 excluded.
