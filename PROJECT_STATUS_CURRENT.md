@@ -1,3 +1,14 @@
+# CRA 프로젝트 최신 상황판 — 2026-11-27 (PR #341 종결 기준)
+
+- PR #341 exact-head Run #1758 / main push Run #1759 모두 SUCCESS 15/15; pytest189; traceability482 (modern477+legacy5); official CRA PDFs3, official sources10, legal locators/provenance PASS.
+- PR #341 merge SHA 및 main HEAD 기준: `0bda43b81c5b64106c39b0da6b145f44573930fc`.
+- 보고서 §114.7.66 / 제품 증거등록부 §72.63은 PR #341 CI 및 merge/main push를 기록함.
+- 제조사 원본 추적 미해결: Solution Square JS script src/bundle/source map/API/download request, PEGA2 32720 attachment href, iX700M 2026-09-16 detail/document ID/attachment, CE #171~#173 individual PDFs, wr_id=12652 own previous-post anchor.
+- 제조사 바이너리 0건. 제조사 PDF SHA-256/전자서명/인증서 체인/revision/SKU 검증 미수행. CE index의 기존 502 URL 재요청 금지. ID/URL 추정 금지.
+- CRA only; SIL 3 제외.
+
+---
+
 # CRA 프로젝트 최신 상황판 — 2026-11-27
 
 - 최신 확인 main HEAD: `aecff846981a719054285922966b37191785de94` (PR #340 merge SHA와 일치)

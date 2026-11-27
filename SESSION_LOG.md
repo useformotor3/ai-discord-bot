@@ -4314,3 +4314,11 @@ CRA only; SIL 3 excluded.
 - Official product evidence: PEGA2 32720 metadata confirmed (PEGA2_ENG_Ver1.3_260831.pdf, EN, 6.0 MB, 2026-09-23, PEGA2 series), attachment href unknown. iX700M 2026-09-16 item confirmed at search/index level only; detail/document ID/attachment unknown. CE #171~#173 indexed model/date rows confirmed; individual detail/PDF unknown.
 - Solution Square script src/bundle/source map/API/JSON/download request not recovered; rendered page returns JS app shell. Raw HTTP attempt failed DNS resolution in runtime; not a site outage conclusion. Official XG5000 manual describes legacy desktop Sample Gallery download UI only.
 - wr_id=12652 own previous anchor unknown. CE index URL with prior 502 was not requested again. No guessed IDs/URLs. Manufacturer binary0; PDF hash/signature/chain/revision/SKU checks not performed. CRA only; SIL 3 excluded.
+
+
+## 2026-11-27 — PR #341 exact-head, expected-head merge and main push closeout
+- PR #341 head e5af2ad25dfdb10e095184aae76df3381e44ea22, expected-base aecff846981a719054285922966b37191785de94; merged at 0bda43b81c5b64106c39b0da6b145f44573930fc.
+- Run #1758 / 45933102510 / job140290006490 exact PR head SUCCESS 15/15; pytest189 (2.46s); traceability482 (modern477+legacy5); official CRA PDFs3, sources10, legal locators/provenance PASS. Source ZIP ID15169024958 / 3,070,566 B / eca9e25d4948e72c14257a073f34dde9dce09153a98de9f0625c4bd1e1a342b7; provenance ZIP ID15169019953 / 2,565 B / c1a0f68af70144070af3ad777ad091c228d8ee472fb0696c31b4721e690562dc.
+- Run #1759 / 45933223321 / job140290399418 exact main push SUCCESS 15/15; pytest189 (2.80s); same checks PASS. Source ZIP ID15169247006 / 3,070,565 B / c07696124a119e149ad1c514a5b05f1fdf6d4208032ca9d7198663b52795aa2f; provenance ZIP ID15169142372 / 2,565 B / 4239c506808305a2cb50e4b86cb21f42b616361403dbe999586cc191c3343e5c. ZIP digests only.
+- Full logs show source blob identity, compile, traceability, pytest189, official CRA PDF canaries3, source allowlist10, legal locators and provenance all passed. Node20→24, punycode/url.parse warnings non-blocking.
+- Manufacturer source unknowns remain unchanged; binary0; no manufacturer PDF cryptographic/revision/SKU checks. Previously 502 CE endpoint not re-requested. CRA only; SIL 3 excluded.

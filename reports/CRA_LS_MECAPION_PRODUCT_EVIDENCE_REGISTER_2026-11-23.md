@@ -2031,3 +2031,10 @@ Actual SKU, EU/EEA supply, economic operators, signed SKU-specific DoC scope, BO
 - CE #171~#173 indexed model/date associations reconfirmed; individual detail/PDF hrefs unknown. Previously 502 CE index URL was not re-requested.
 - SSQ script src/bundle/source map/API/JSON/download request remain unrecovered; detail renderer exposes JS app shell. Raw runtime HTTP retrieval failed DNS resolution. Official XG5000 legacy desktop manual documents Sample Gallery download UI only, not current web API.
 - wr_id=12652 own previous-post anchor remains unknown; no guessed IDs/URLs. Manufacturer binary0; PDF SHA/signature/chain/revision/SKU checks NOT PERFORMED. CRA only; SIL 3 excluded.
+
+
+### 72.63 2026-11-27 — PR #341 exact-head/main push CI closeout
+- PR #341 head `e5af2ad25dfdb10e095184aae76df3381e44ea22` merged at main `0bda43b81c5b64106c39b0da6b145f44573930fc`; expected-base `aecff846981a719054285922966b37191785de94`; 6 files, +51/-0.
+- Run #1758 exact PR head SUCCESS 15/15; pytest189 (2.46s); traceability482 (modern477+legacy5); official CRA PDFs3, sources10, legal locators/provenance PASS. Source ZIP ID15169024958 / 3,070,566 B / `eca9e25d4948e72c14257a073f34dde9dce09153a98de9f0625c4bd1e1a342b7`; provenance ID15169019953 / 2,565 B / `c1a0f68af70144070af3ad777ad091c228d8ee472fb0696c31b4721e690562dc`.
+- Run #1759 exact main push SUCCESS 15/15; pytest189 (2.80s); traceability482; official source/legal/provenance checks PASS. Source ZIP ID15169247006 / 3,070,565 B / `c07696124a119e149ad1c514a5b05f1fdf6d4208032ca9d7198663b52795aa2f`; provenance ID15169142372 / 2,565 B / `4239c506808305a2cb50e4b86cb21f42b616361403dbe999586cc191c3343e5c`. ZIP digests only.
+- No manufacturer binary or new target href recovered by this closeout. Manufacturer SHA/signature/certificate-chain/revision/SKU checks remain NOT PERFORMED. CRA only; SIL 3 excluded.
