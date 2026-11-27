@@ -4240,3 +4240,11 @@ CRA only; SIL 3 excluded.
 - Artifact ZIP digests and IDs recorded in report §114.7.56 / evidence §72.53; these are CI artifacts, not manufacturer PDF hashes.
 - CI self-correction: Run #1732/#1733 detected an interior blank JSONL record. The first trailing-whitespace trim was insufficient; removing all whitespace-only lines fixed validation. No failed PR head was merged.
 - Official Solution Square JS bundle/API and actual document attachment hrefs remain unavailable. Manufacturer binary0; no hash/signature/chain/revision/SKU checks. CRA only; SIL 3 excluded.
+
+
+## 2026-11-27 — PR #332/#333 and Runs #1734~#1737 recheck; Solution Square follow-up
+- Main HEAD re-read: c593465dadc761481c4e7f50837e6a7424c6d52f; PR #332 and #333 merged with expected base/head/merge SHA values documented in report §114.7.57.
+- Runs #1734/#1735/#1736/#1737 all SUCCESS 15/15; pytest189; traceability event counts 472,472,473,473; all official CRA source and provenance checks passed. Four source/provenance CI ZIP digests recorded in report/evidence register; not manufacturer PDF hashes.
+- Official SSQ category index confirms iX700M manual 2026-09-16. PEGA2 doc32720 metadata confirms EN Ver1.3 file name/size/date and PEGA2 series. Actual attachment href/binary remain unknown.
+- Static JS bundle/source map/API not exposed by official text pages; only JS app shell and generic Download/Copy Link UI labels. CE #171~#173 individual detail/PDF hrefs unknown. wr_id=12651 previous-title text shows iX700M Ver1.3, but href not present; exact known wr_id=12652 read failed 502 once and was not retried.
+- Manufacturer binary0; no PDF SHA/signature/certificate chain/revision/SKU verification. No guessed IDs/URLs or retries. CRA only; SIL 3 excluded.
