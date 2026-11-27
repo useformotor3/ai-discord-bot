@@ -1650,3 +1650,6 @@ PR #314의 exact-head CI Run #1695와 main push Run #1696가 모두 SUCCESS(15/1
 
 
 > **PR #341 / exact-head + main push closeout (2026-11-27):** PR #341 merged at `0bda43b81c5b64106c39b0da6b145f44573930fc`. Run #1758 exact PR head and Run #1759 exact main push both SUCCESS 15/15; pytest189; traceability482 (modern477+legacy5); official CRA PDFs3, sources10, legal locators and provenance10 PASS. See report §114.7.66 / evidence §72.63. CI digests are ZIP hashes only. Manufacturer binary0; target attachment hrefs remain unknown. CRA only; SIL 3 excluded.
+
+
+> **SSQ public index recheck (2026-11-27):** Official 2026-11-26 renewal notice documents title→detail, Download→immediate download, Share→copy/share link; official Motion&Servo index confirms iX700M manual 2026-09-16 and PEGA2 listing. Actual browser DOM/Network trace, JS bundle/API and target attachment hrefs remain unverified. See report §114.7.67 / evidence §72.64. Manufacturer binary0; no cryptographic/revision/SKU checks. CRA only; SIL 3 excluded.

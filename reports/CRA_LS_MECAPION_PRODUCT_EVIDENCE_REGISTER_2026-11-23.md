@@ -2038,3 +2038,13 @@ Actual SKU, EU/EEA supply, economic operators, signed SKU-specific DoC scope, BO
 - Run #1758 exact PR head SUCCESS 15/15; pytest189 (2.46s); traceability482 (modern477+legacy5); official CRA PDFs3, sources10, legal locators/provenance PASS. Source ZIP ID15169024958 / 3,070,566 B / `eca9e25d4948e72c14257a073f34dde9dce09153a98de9f0625c4bd1e1a342b7`; provenance ID15169019953 / 2,565 B / `c1a0f68af70144070af3ad777ad091c228d8ee472fb0696c31b4721e690562dc`.
 - Run #1759 exact main push SUCCESS 15/15; pytest189 (2.80s); traceability482; official source/legal/provenance checks PASS. Source ZIP ID15169247006 / 3,070,565 B / `c07696124a119e149ad1c514a5b05f1fdf6d4208032ca9d7198663b52795aa2f`; provenance ID15169142372 / 2,565 B / `4239c506808305a2cb50e4b86cb21f42b616361403dbe999586cc191c3343e5c`. ZIP digests only.
 - No manufacturer binary or new target href recovered by this closeout. Manufacturer SHA/signature/certificate-chain/revision/SKU checks remain NOT PERFORMED. CRA only; SIL 3 excluded.
+
+
+### 72.64 2026-11-27 — SSQ renewal/index 재확인 및 증거 한계
+- 공식 SSQ 2026-11-26 renewal notice는 문서명→detail, Download→즉시 파일 다운로드, Share→링크 복사/공유 동작을 설명한다. 이는 제품 UI 설명이며 실제 network request/attachment href의 증거가 아니다.
+- 공식 Motion&Servo 색인 pageNumber=15는 iX700M 사용 설명서(2026-09-16)와 PEGA2 사용 설명서 목록을 표시한다. 상세 href/document ID/첨부 href 미확보.
+- PEGA2 32720 색인 메타데이터: `PEGA2_ENG_Ver1.3_260831.pdf`, EN, 6.0 MB, 2026-09-23, PEGA2 series. attachment href/binary 미확보.
+- CE #171~#173 공식 색인 결과: 2026-04-30, 각각 iX700MD1-B-220B; iX700MD1-B-370B/300B; iX700MD1-B-750B/550B/450B. 개별 PDF/detail 미확보. 과거 502 endpoint 재요청 금지 유지.
+- wr_id=12652 own previous anchor 미확보; 추정하지 않음.
+- 실제 DOM/Network trace 미실행: JS shell만 반환되고 실행 컨테이너 DNS resolution 실패. script src/bundle/source map/API/download request URL은 NOT RECOVERED. 이 환경 오류를 사이트 장애로 해석하지 않음.
+- Manufacturer binary0; PDF SHA-256/signature/certificate chain/revision/SKU checks NOT PERFORMED. CRA only; SIL 3 excluded.

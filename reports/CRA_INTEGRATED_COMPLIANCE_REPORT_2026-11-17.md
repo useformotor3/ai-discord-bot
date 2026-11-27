@@ -4150,3 +4150,14 @@ Run #1617 artifacts:
 - Run #1759 / 45933223321 / job140290399418: event=push, branch=main, exact merge SHA, SUCCESS 15/15; pytest189 (2.80s); same traceability/legal/source/provenance checks PASS. CI ZIPs only: source ZIP ID15169247006, 3,070,565 B, SHA-256 `c07696124a119e149ad1c514a5b05f1fdf6d4208032ca9d7198663b52795aa2f`; provenance ZIP ID15169142372, 2,565 B, SHA-256 `4239c506808305a2cb50e4b86cb21f42b616361403dbe999586cc191c3343e5c`. These are CI ZIP hashes, not manufacturer PDF hashes.
 - All source identity, compile, traceability, pytest, official CRA PDF canaries, 10-source allowlist, live legal locators and provenance checks passed. Node.js 20→24, punycode and url.parse warnings were non-blocking.
 - This PR validates documentation and records the preceding manufacturer-source investigation. It does not change product evidence status: manufacturer binary0; target SSQ attachment hrefs/API, PEGA2 32720 attachment, iX700M 2026-09-16 detail, CE #171~#173 individual PDFs and wr_id=12652 own previous anchor remain unknown. No manufacturer PDF cryptographic/revision/SKU checks. CRA only; SIL 3 excluded.
+
+
+### 114.7.67 2026-11-27 — Solution Square 개편 공지 및 공식 목록 재추적
+- 시작 기준 main `87e5e17d3bcf143f209a8cd1274a4066cfc0e34c`; PR #341/#342 병합 상태와 Run #1758~#1761을 재확인. 네 실행 모두 exact PR head 또는 exact merge main push, SUCCESS 15/15; PR #341 merge SHA `0bda43b81c5b64106c39b0da6b145f44573930fc`, PR #342 merge/current main SHA `87e5e17d3bcf143f209a8cd1274a4066cfc0e34c`. 저장소 permissions 응답 admin/maintain/push/pull=true.
+- 공식 Solution Square News/Events 색인(https://sol.ls-electric.com/ww/en/community/board)의 2026-11-26 SSQ System Renewal Notice를 확인. 공지에 따르면 목록에서 문서명을 누르면 detail 화면으로 이동하고, Download 아이콘은 파일을 즉시 로컬로 다운로드하며, Share 아이콘은 문서 링크를 복사/공유한다. 이는 공식 UI 기능 설명이며, 실제 HTTP request URL이나 SPA 내부 API를 입증하는 네트워크 trace가 아니다.
+- 공식 Motion&Servo 목록(https://ssq.ls-electric.com/kr/ko/product/category/4?pageNumber=15) 색인에서 `iX700M 사용 설명서` 2026-09-16 등록 및 `PEGA2 사용 설명서` 항목을 재확인. 현재 검색 색인에서 실제 상세 href/document ID/첨부 href는 노출되지 않음.
+- PEGA2 32720 공식 detail URL(https://sol.ls-electric.com/us/en/product/document/32720)의 색인 메타데이터는 `PEGA2_ENG_Ver1.3_260831.pdf`, EN, 6.0 MB, update 2026-09-23, PEGA2 series. attachment href와 binary는 미확보.
+- CE #171~#173은 기존 공식 CE 색인 검색결과로 2026-04-30 및 모델명 #171 iX700MD1-B-220B, #172 iX700MD1-B-370B/300B, #173 iX700MD1-B-750B/550B/450B를 재확인. 개별 detail/PDF href 미확보. 이전에 502를 반환한 CE endpoint는 이번에도 열지 않았고, 향후에도 재호출 금지.
+- `wr_id=12652` 자체 이전글 anchor를 독립적으로 입증하는 공식 검색결과는 확보하지 못함. 인접 게시글 번호나 이전글 제목으로 URL을 유추하지 않음.
+- 실제 DOM/DevTools Network capture는 수행할 수 없었음. Web page renderer가 JS 실행 shell 한 줄만 반환했고, 실행 컨테이너에서 `sol.ls-electric.com` DNS resolution이 실패함. 이는 실행환경 한계이며 사이트 장애 증거가 아님. 따라서 script src, bundle, source map, API, 다운로드 request URL은 모두 미확보로 유지.
+- 제조사 원본 binary 0건. 제조사 PDF SHA-256, 전자서명, 인증서 체인, revision, SKU 검증 미수행. URL/ID 추정 0건. CRA only; SIL 3 excluded.

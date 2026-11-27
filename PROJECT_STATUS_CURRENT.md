@@ -1,3 +1,17 @@
+# CRA 프로젝트 최신 상황판 — 2026-11-27 (SSQ 공개 색인 재확인)
+
+- 최신 확인 main HEAD: `87e5e17d3bcf143f209a8cd1274a4066cfc0e34c`.
+- PR #341/#342 병합 완료. Runs #1758/#1759/#1760/#1761 모두 exact-head 또는 exact main push SUCCESS 15/15; pytest189.
+- 공식 SSQ 2026-11-26 renewal notice는 문서명→detail, Download→즉시 다운로드, Share→링크 복사/공유 동작을 설명함. 단 실제 DOM/Network trace는 확보되지 않아 JS script src/bundle/source map/API/download request URL은 미확인.
+- 공식 Motion&Servo 목록 pageNumber=15에서 iX700M 사용 설명서(2026-09-16) 및 PEGA2 사용 설명서 목록 확인. detail/document ID/attachment href 미확보.
+- PEGA2 32720 metadata: PEGA2_ENG_Ver1.3_260831.pdf, EN, 6.0 MB, update 2026-09-23, PEGA2 series. attachment href/binary 미확보.
+- CE #171~#173은 공식 색인 검색결과에서 모델/2026-04-30 확인; 개별 PDF 미확보. 과거 502 endpoint 재호출 금지.
+- wr_id=12652 자체 이전글 anchor 미확보. ID/URL 추정 금지.
+- 실제 브라우저 DOM/DevTools Network 미확보: JS shell 응답 및 실행 컨테이너 DNS resolution 실패. 사이트 장애로 단정하지 않음.
+- 제조사 원본 binary0; SHA-256/전자서명/인증서 체인/revision/SKU 검증 미수행. CRA only; SIL 3 제외.
+
+---
+
 # CRA 프로젝트 최신 상황판 — 2026-11-27 (PR #341 종결 기준)
 
 - PR #341 exact-head Run #1758 / main push Run #1759 모두 SUCCESS 15/15; pytest189; traceability482 (modern477+legacy5); official CRA PDFs3, official sources10, legal locators/provenance PASS.
