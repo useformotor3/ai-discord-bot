@@ -1,3 +1,15 @@
+# CRA 프로젝트 최신 상황판 — 2026-11-27 (PR #344 CI 및 main push 종결)
+
+- 최신 확인 main HEAD: `9846c41056933d53163259219ee24573570102a4`; PR #344 merge SHA와 일치.
+- PR #344: base `4e0cc88f30e059359ca0e3c80311b1cee1d5b6b5`; exact PR head `fa1c02ecd65690d72347eaa446dec23b05f7caa2`; expected-head squash merge 성공; main push ref read-back 일치.
+- Run #1764 / ID `45951221540`: 이전 PR head `e232b908469a6bb520f3868650ad1cb6e61af110`; 새 JSONL fix commit 도착 후 stale run 취소됨(실패로 오인 금지).
+- Run #1765 / ID `45951240878`: exact PR head `fa1c02ecd65690d72347eaa446dec23b05f7caa2`, SUCCESS 15/15, pytest189 (2.59s), traceability485 (modern480+legacy5), 10 official CRA sources, CRA PDF canaries3/3. Artifact ZIP digests: source `11f2c1810fda632d3af4bbdf19c9d4e1e9240db784265f83242c08febbfa1234`; provenance `dabcb1dcced473c1420a23d7c8a693104f723deea8c040ae209c7697b3a7833f`.
+- Run #1766 / ID `45951330835`: event=push, branch=main, exact merge SHA `9846c41056933d53163259219ee24573570102a4`, SUCCESS 15/15, job `140347642592`, pytest189 (1.89s), traceability485 (modern480+legacy5), official CRA sources10, CRA PDF canaries3/3. Artifact ZIP digests: source `5a932c31e852f4777f14b240c062dec6c7b34d0cac615c4229b30faf4d7e6835`; provenance `a6790ea22bd6ea06aa2a1be8b03d12e72231bb96f5f4979d2be733d9ed13af13`. All digests are CI ZIPs, not manufacturer PDF hashes.
+- Run #1763 earlier confirmed PR #343 exact main push SUCCESS; details report §114.7.68 / evidence §72.65.
+- Manufacturer evidence unchanged: PEGA2 32720 attachment href/binary unknown; iX700M 2026-09-16 detail/document ID/attachment unknown; CE #171~#173 individual PDF hrefs unknown; wr_id=12652 own previous anchor unknown. CE category endpoint must not be accessed again following recorded accidental 502 retry. No actual browser DOM/Network evidence; request sanitized user-side HAR. Manufacturer binary0; no PDF SHA/signature/certificate chain/revision/SKU checks. CRA only; SIL 3 excluded.
+
+---
+
 # CRA 프로젝트 최신 상황판 — 2026-11-27 (PR #343 main push CI 및 SSQ 원본 추적)
 
 - 기준 main HEAD: `4e0cc88f30e059359ca0e3c80311b1cee1d5b6b5`; PR #343 merged, merge SHA와 일치.
