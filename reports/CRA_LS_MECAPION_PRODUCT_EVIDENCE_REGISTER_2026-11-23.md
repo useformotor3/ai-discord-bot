@@ -2102,3 +2102,9 @@ Actual SKU, EU/EEA supply, economic operators, signed SKU-specific DoC scope, BO
 - Main push CI remains UNVERIFIED; no push-run ID/log was retrievable and combined commit status had no entries.
 - PEGA2 32720 actual attachment href/binary NOT RECOVERED; iX700M 2026-09-16 detail/document ID/attachment NOT RECOVERED; CE #171/#172/#173 individual PDFs NOT RECOVERED; wr_id=12652 own previous anchor NOT RECOVERED. wr_id=12651's visible previous-post text is `iX700M DRIVE 400[V] 매뉴얼 Ver1.3`, but its href is not exposed and it is not the target 12652 anchor.
 - Browser DOM/Network/HAR not captured; manufacturer binary0; no manufacturer PDF hash/signature/revision/SKU verification. Previously-502 CE endpoint timeout deviation recorded; never access again. CRA only; SIL 3 excluded.
+
+### 72.72 2026-11-27 — PR #350 CI/merge closeout
+- PR #350 exact head `42b7c99597be3764f6c7b37a58caea809cda2c0e`; expected base `bdb539672f5100f4677b485c06ed67d649499e92`; expected-head merge/current main `1122ca725d6845e0fe860ebd37ae599c62cf5df6` exact match.
+- Run #1777 / ID `46008519450`: exact PR head SUCCESS15/15; pytest189 (1.86s); traceability491 (modern486+legacy5); 10 official CRA sources; 3 Commission PDFs fetched/hashed. Artifact ZIP digests `ab3d3add4d6fb2fb0e9dec8cb2ae492b5a56afc9a8d8bdf57f371a222695038a` / `ac6f90b82de832b73f67674d40518a2f0187d6cccd4e064e735be6ea439ec1fd`.
+- Main push CI remains UNVERIFIED; no push-run ID/log; combined status empty.
+- PEGA2 32720 attachment, iX700M 2026-09-16 detail/document ID, CE #171~#173 individual PDFs, wr_id=12652 own previous anchor remain NOT RECOVERED. No CE #168/#170 substitute; no HAR/DOM/Network evidence; manufacturer binary0. CRA only; SIL 3 excluded.
