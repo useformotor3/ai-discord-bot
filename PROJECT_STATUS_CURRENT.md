@@ -3214,3 +3214,14 @@
 - PROJECT_LOG 동기화 전 487 valid JSONL records, blank0. 이번 event 추가 후 488 records, non-null event_id 483 unique, legacy no-id 5, blank0; 모든 physical line JSON parse 통과.
 - Manufacturer binaries0. PEGA2 32720 attachment href, iX700M 2026-09-16 detail/document ID, CE #171~#173 individual PDF, wr_id=12652 own previous anchor UNKNOWN. Browser DOM/Network/HAR not captured. No guessed IDs/URLs; do not reopen previously-502 CE endpoint.
 - CRA only; SIL 3 excluded.
+
+
+---
+
+# CRA 프로젝트 최신 상황판 — 2026-11-27 (PR #347 종결)
+- 최신 main HEAD: `b99c954ece218e1fa2baed9bf67c7a1950fcc8be`; PR #347 exact head `fe522d1a8580d286ba170cae01b7fa73051b86b1`, merge SHA exact match.
+- Run #1771 exact PR head and Run #1772 exact main push: both SUCCESS15/15; pytest189; traceability488 (modern483+legacy5); 10 official CRA sources; 3 Commission PDF sources fetched/hashed. ZIP digests are not manufacturer PDF hashes.
+- New official Solution Square observation: category index lists iX700M manual (2026-09-16, views171), integrated search lists its title, but detail/document ID and attachment href remain unavailable. PEGA2 32720 English Ver1.3 metadata reconfirmed; actual attachment href remains unknown.
+- CE #171~#173 individual PDF hrefs and wr_id=12652 own previous-post anchor remain UNKNOWN. No substitute from unrelated manual posts. Actual DOM/Network/HAR not captured. Manufacturer binaries0.
+- PROJECT_LOG before this sync: 488 valid JSONL records, 0 blanks, 483 unique event IDs + 5 legacy no-ID records. Append new event -> 489 valid lines, 0 blanks, 484 unique event IDs + 5 legacy records; every physical line parsed.
+- Previously-502 CE endpoint remains prohibited from access. No guessed IDs/URLs. CRA only; SIL 3 excluded.
