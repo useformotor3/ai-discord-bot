@@ -4374,3 +4374,14 @@ CRA only; SIL 3 excluded.
 - Run #1772 / 45984100206 exact main push SUCCESS15/15; job140455160227; pytest189 (2.77s); traceability488; sources10; PDFs3 fetched/hashed. Source/provenance ZIP hashes `94a78c8091b926fc6009b141f99206fdf80d3647fc75e2af9a6f118712b6b3cc` / `6b7110641b01b026f462db4611025e98be3b3236c56030cb77a771b74728f7a4`. ZIP digests only.
 - Official Solution Square category/search index confirms iX700M manual title and category update 2026-09-16, but no detail ID or attachment href. PEGA2 32720 English Ver1.3 metadata reconfirmed, no actual attachment. CE #171~#173 PDFs and wr_id=12652 own previous anchor remain unknown. No unrelated attachment substitution; browser DOM/Network/HAR not captured.
 - Manufacturer binary0; no PDF crypto/revision/SKU verification. Previously-502 CE endpoint not accessed. CRA only; SIL 3 excluded.
+
+
+## 2026-11-27 — PR #348 Run #1773 검증 및 공식 매뉴얼 이전글 텍스트 관찰
+- PR #348 작업 HEAD `2d4b6efe4c9c907c32029b0c177a69035d6c0d3d`; GitHub 검색 결과 merged; 현재 main HEAD read-back `753c5704f8b5f1cb87b0a9ac64992675e6a9b252`. Merge commit SHA는 별도 독립 조회되지 않음.
+- Run #1773 ID `46004581886`, job `140524429411`, event=pull_request, exact head, SUCCESS15/15. Source blob identity checks PASS; compileall PASS; CRA traceability claims13/interfaces15/requirements35/SEC36/EVD_SEC16/crosswalk linked36/product evidence15/bidirectional true/M606 items41; PROJECT_LOG489 (modern484+legacy5); pytest189 in2.69s.
+- Commission PDF originals fetched and hashed: CRA-GUIDANCE-2026-5252 1,190,726 bytes / 84 pages / `fe209c250e3d1f7599e42826d91963666951332927edcf511a2e79fe8d2f8234`; CRA-GUIDANCE-OJ-2026-6013 2,709,282 bytes / 61 pages / `40ca76caeb0108f5b97c8f373a95f590b453fe92bd45a483addf3326e48c1dc2`; CRA-M606-C2026-7861-ANNEX 151,267 bytes / 6 pages / `262b09596cb5cbe7d72a2c7789fb2512ee00db7f69082e7def2c8181b0f63276`.
+- Source ZIP artifact15199144529 / 3,070,565 B / `c9749ff8f9f0c8e0ffbc945091f1987c35a407f5d559d773b19735a2893bd368`; provenance ZIP artifact15199318654 / 2,565 B / `89f0c962130d48c3f3818cb5f6a3f70653db7059a60d3d1451a8d2c3ad2efab2`. ZIP digests only. Nonblocking Node20/punycode/url.parse warnings.
+- Run #1774 main push exact-head/status/log/artifact details not independently retrieved; status UNVERIFIED, no success inference.
+- Official LS Mecapion search-index page `wr_id=12651` PEGA2 Ver1.3 shows previous-post title `iX700M DRIVE 400[V] 매뉴얼 Ver1.3`; actual href not exposed. This does not identify the previous anchor on target page `wr_id=12652`.
+- PEGA2 32720 actual attachment href, iX700M 2026-09-16 detail/document ID, CE #171~#173 individual PDFs, and wr_id=12652 own previous anchor remain unknown. No CE #168/#170 substitution. Browser DOM/Network/HAR not captured.
+- Process deviation: known prohibited 502 CE category endpoint was inadvertently opened from a search result and timed out. Response not used as evidence; no subsequent requests. Never access again.
