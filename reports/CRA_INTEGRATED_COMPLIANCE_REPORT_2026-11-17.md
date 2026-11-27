@@ -4104,3 +4104,10 @@ Run #1617 artifacts:
 - LS메카피온 indexed CE category result lists 2026-04-30 #171 iX700MD1-B-220B, #172 iX700MD1-B-370B/300B, #173 iX700MD1-B-750B/550B/450B, plus #174 iX700MCB. Individual detail/PDF hrefs remain unknown. The CE category URL returned HTTP 502 when inadvertently opened again in this session despite the no-retry constraint; this is a process deviation, disclose it, and do not call that endpoint again.
 - Manual index search independently lists iX700M DRIVE 400[V] Ver1.4 (2026-05-26) and PEGA2 Ver1.3 (2026-04-01). wr_id=12652 own previous anchor remains unknown; do not infer from neighboring row or Ver1.3 previous-title text.
 - Manufacturer binary count 0; manufacturer PDF SHA-256/signature/certificate chain/revocation/revision/SKU validation not performed. No guessed IDs/URLs. CRA only; SIL 3 excluded.
+
+
+### 114.7.63 2026-11-27 — PR #339 첫 CI 실패 및 JSONL 형식 복구
+- PR #339 head `4f6f6c486bb0c859705bfc2d28f1d624819bc430` (Run #1748 ID45918661874, job140243842093) exact-head CI에서 컴파일 PASS 후 traceability 단계 FAIL. pytest 및 공식 원본 canary는 실패 단계에서 skip; 병합하지 않음.
+- 전체 job log 원인: PROJECT_LOG.jsonl line 544~613이 invalid JSON. 원인은 신규 이벤트를 pretty-printed multi-line JSON으로 append하여 JSONL의 한 줄당 객체 규칙을 위반한 것.
+- 오류는 조사 결과가 아니라 문서 기록 코드 작성 실수. 복구는 정확한 main 기준 PROJECT_LOG.jsonl을 다시 가져와 기존 이벤트를 보존하고, 이벤트 객체를 compact JSON 한 줄씩 append하는 방식으로 수행. 다른 다섯 문서에 원인/조치/검증을 명시.
+- 재검증 필수: traceability PASS, 전체 pytest PASS, 공식 source canaries PASS를 exact PR head에서 확인한 뒤에만 expected-head 병합 및 main push CI 진행. 실패 상태에서 병합 금지.
