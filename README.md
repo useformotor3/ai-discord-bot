@@ -1638,3 +1638,6 @@ PR #314의 exact-head CI Run #1695와 main push Run #1696가 모두 SUCCESS(15/1
 
 
 > **PR #338 / exact-head + main push CI closeout (2026-11-27):** PR #338 merged at `edf6e12ab31e6e562ef01548b85cb0e9795c1f97` (PR head `f671dc1bb1ba5d7bcf72d036d304c04e4b7eec16`). Run #1746 / 45917536170 exact PR head and Run #1747 / 45917662172 exact main push both SUCCESS 15/15; pytest189; traceability478 (modern473+legacy5); official CRA PDF sources3, sources10, legal locators and provenance10 PASS. See report §114.7.62 / evidence §72.59. CI artifact hashes are ZIP hashes only. GitHub write permission confirmed. SSQ static resources/download API and manufacturer document attachments remain unresolved; manufacturer binary0. CE index 502 endpoint inadvertently re-opened; no further retries. CRA only; SIL 3 excluded.
+
+
+> **PR #339 validation correction:** first exact-head Run #1748 failed because a multi-line JSON object was appended to PROJECT_LOG.jsonl; traceability validation correctly rejected the file, and pytest/source canaries were skipped. No merge. Restoring baseline JSONL and appending compact one-line records; see report §114.7.63 / evidence §72.60. CRA only; SIL 3 excluded.
