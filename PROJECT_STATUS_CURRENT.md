@@ -1,3 +1,12 @@
+# CRA 현재 상황판 — 2026-11-27 (PR #335 종결)
+
+- **Latest verified main HEAD:** `ddb97ad60a20f9d87bfda8e4a78eb73b2c23ede0` (PR #335 expected-head merge SHA and refs/heads/main read-back).
+- PR #332~#334 and Runs #1734~#1739 are merged/verified; PR #335 exact-head Run #1740 / 45915259752 and main push Run #1741 / 45915371120 both SUCCESS 15/15.
+- Run #1740/#1741: pytest189; traceability475 (modern470+legacy5); official CRA sources10; PDF/source canaries, Article13(8), 2025/2392 Annex I(10)/Annex II(1), provenance manifest PASS.
+- Run #1740 CI ZIP hashes: source `14efc54f4f38e26984bcb784628dcd4098f6ea249fdb47f236853a2b6a556bb0`, provenance `2ac93ad7fbe799761edda0405671c71728bd820956a4c5aa7b793fe5b9ac2966`. Run #1741: source `ffdee75b0ef12af9f493c486b5d7fb9bde7be15f4ddedfd41e2c7ef0ab3599a3`, provenance `4451b9f178a6d53d28c5e51422fb42df861c9dd15e82abd6a11decbbda85ef3c`. CI ZIP hashes only.
+- Solution Square: PEGA2 32720 Ver1.3 metadata, iX700M 2026-09-16 listing, CE #171~#173 index model/date rows, wr_id=12651 previous-title text confirmed. Actual target attachment hrefs, CE detail/PDF hrefs, and wr_id=12652 own previous anchor unknown. Exact known wr_id=12652 page read returned 502 once; no retry.
+- Actual SSQ JS bundle/source map/API unrecovered. Manufacturer binary0; no manufacturer SHA/signature/chain/revision/SKU checks. No guessed IDs/URLs or failed endpoint retries; Q01~Q62 not sent. CRA only; SIL 3 excluded. Details report §114.7.59 / evidence §72.56.
+
 # CRA 현재 상황판 — 2026-11-27 (PR #334 종결)
 
 - **Latest verified main HEAD:** `89c3304262fefba5365586e89da8681ec0f38966` (PR #334 expected-head merge SHA and refs/heads/main read-back).
