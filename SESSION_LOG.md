@@ -4358,3 +4358,11 @@ CRA only; SIL 3 excluded.
 - A post-append parse check detected that the new PR #345 closeout event had been concatenated directly to the preceding JSON object because the source file lacked a terminal newline. No malformed data was merged.
 - Repaired by splitting the two adjacent top-level JSON objects using string/escape-aware brace-depth parsing; preserved both records, inserted one record boundary, and added explicit integrity metadata to event 032.
 - Revalidated all 487 PROJECT_LOG.jsonl records: 0 invalid, 0 blank lines. PR #346 exact-head CI must independently re-run traceability before merge. This is a documented assistant process defect; future append procedure must normalize terminal newline and parse every line before creating a PR.
+
+
+## 2026-11-27 — PR #346 exact-head merge and main push closeout
+- PR #346 exact head `9c1596883bce8c42f04ca9365a889c1c154246d7`; expected base `9b6a2b397b6ef0ec30ca1d21b153223f83812311`; expected-head squash merge/current main `997545f3573be902eb9a767231d563facbcf5dc7`.
+- Run #1769 / 45951835312 exact PR head SUCCESS15/15; pytest189 (2.73s); traceability487 (modern482+legacy5); sources10, PDFs3/3. Source/provenance ZIP hashes `2f6d9d7b01ce7bc8b25e983fa64e061e53e12cf4a9e61e592af5125a4b43f474` / `e93377a9ba33b0317e086d1059d3139f3abbe4624623e860a51ea5133e1e1a3a`.
+- Run #1770 / 45951917597 exact main push SUCCESS15/15; job140349504249; pytest189 (2.18s); traceability487; sources10, PDFs3/3. Source/provenance ZIP hashes `987a5fac425c459b36dfc8a19186ca73a3b55b91c6a35348f2c17837a8b6ef29` / `c1fb4b6fcb50f38b9bec05588c013aaf2921b5196dd411ace1e85b0720de4d7`. ZIP hashes are not manufacturer PDF hashes.
+- All 15 steps passed. Non-blocking Node.js20→24, punycode and url.parse deprecation warnings persist.
+- Manufacturer evidence unchanged; no binary; target attachment locators and browser DOM/Network remain unknown. Never access the previously-502 CE endpoint. CRA only; SIL 3 excluded.
