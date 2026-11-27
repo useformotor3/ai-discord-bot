@@ -3249,3 +3249,13 @@
 - PROJECT_LOG after append: 491 nonblank JSONL records, valid JSON, blank lines0, 486 unique event IDs + 5 legacy no-ID records.
 - Product evidence unchanged: PEGA2 32720 attachment, iX700M 2026-09-16 detail/document ID, CE #171~#173 individual PDFs, wr_id=12652 own previous anchor remain NOT RECOVERED. wr_id=12651 previous-post text is iX700M Ver1.3 only; not the target 12652 anchor.
 - Previously-502 CE endpoint accidental timeout deviation is recorded; never access again. No CE #168/#170 substitution; no browser DOM/Network/HAR. CRA only; SIL 3 excluded.
+
+---
+
+# CRA 프로젝트 최신 상황판 — 2026-11-27 (PR #350 종결)
+- 최신 main HEAD `1122ca725d6845e0fe860ebd37ae599c62cf5df6`; PR #350 expected-head squash merge SHA와 main 재조회 SHA 일치.
+- PR #350 head `42b7c99597be3764f6c7b37a58caea809cda2c0e`; Run #1777 / ID `46008519450` SUCCESS15/15; pytest189 (1.86s); traceability491 (modern486+legacy5); official CRA sources10; Commission PDFs3 fetched/hashed.
+- Artifact ZIP IDs 15202558368 / 15202930349; digests `ab3d3add4d6fb2fb0e9dec8cb2ae492b5a56afc9a8d8bdf57f371a222695038a` / `ac6f90b82de832b73f67674d40518a2f0187d6cccd4e064e735be6ea439ec1fd` (ZIP hashes only).
+- Main push CI after merge UNVERIFIED; push-run ID/log not exposed and combined status empty. No success inference.
+- PROJECT_LOG: 492 nonblank valid JSONL records, blank lines0, 487 unique event IDs + 5 legacy no-ID.
+- Manufacturer targets remain unresolved; previously-502 CE endpoint must never be accessed again. CRA only; SIL 3 excluded.
