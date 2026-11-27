@@ -1630,3 +1630,6 @@ PR #314의 exact-head CI Run #1695와 main push Run #1696가 모두 SUCCESS(15/1
 
 
 > **PR #335 / main CI closeout (2026-11-27):** exact-head Run #1740 / 45915259752 and main push Run #1741 / 45915371120 both SUCCESS 15/15; pytest189; traceability475. Latest main `ddb97ad60a20f9d87bfda8e4a78eb73b2c23ede0`. See report §114.7.59 / evidence §72.56. Manufacturer binary0; SSQ target attachment hrefs/JS bundle remain unknown. CRA only; SIL 3 excluded.
+
+
+> **PR #336 / main CI closeout (2026-11-27):** exact-head Run #1742 / 45915557837 and main push Run #1743 / 45915680159 both SUCCESS 15/15; pytest189; traceability476. Latest main `02dcaa3e051431bbae1da968278385f956c06c69`. See report §114.7.60 / evidence §72.57. Manufacturer binary0; SSQ target attachment hrefs/JS bundle remain unknown. CRA only; SIL 3 excluded.
