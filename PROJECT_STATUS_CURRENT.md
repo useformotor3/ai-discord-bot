@@ -3237,3 +3237,15 @@
 - PEGA2 32720 실제 attachment href/binary, iX700M 2026-09-16 detail/document ID, CE #171~#173 개별 PDF, wr_id=12652 자체 이전글 anchor는 계속 NOT RECOVERED. CE #168/#170 대체 금지. Browser DOM/Network/HAR 미확보.
 - Process deviation: 금지된 과거 502 CE category endpoint를 검색 결과에서 열어보려다 timeout을 받음. 이 응답은 증거로 사용하지 않으며 이후 재요청 0회. 해당 endpoint는 앞으로 절대 접근하지 않음.
 - PROJECT_LOG: 490 nonblank JSON records, valid JSON, blank lines0, 485 unique event IDs + 5 legacy no-ID. CRA only; SIL 3 excluded.
+
+
+---
+
+# CRA 프로젝트 최신 상황판 — 2026-11-27 (PR #349 종결)
+- 최신 main HEAD: `bdb539672f5100f4677b485c06ed67d649499e92` (PR #349 expected-head squash merge SHA와 재조회 main HEAD 일치).
+- PR #349 head `0c443fbf5797051357cee6e4ec5ee545776d9609`; 6 files, +49/-3. Expected-head merge 성공.
+- Run #1775 / ID `46008207489`: exact PR head SUCCESS15/15; pytest189 (2.55s); traceability490 (modern485+legacy5); official CRA sources10; Commission PDFs3 fetched/hashed. Artifacts 15201614213 / 15201949108; ZIP digests only.
+- Main push CI after merge remains UNVERIFIED: current connector exposes PR-triggered runs only; commit combined-status query returned no entries. Do not infer success.
+- PROJECT_LOG after append: 491 nonblank JSONL records, valid JSON, blank lines0, 486 unique event IDs + 5 legacy no-ID records.
+- Product evidence unchanged: PEGA2 32720 attachment, iX700M 2026-09-16 detail/document ID, CE #171~#173 individual PDFs, wr_id=12652 own previous anchor remain NOT RECOVERED. wr_id=12651 previous-post text is iX700M Ver1.3 only; not the target 12652 anchor.
+- Previously-502 CE endpoint accidental timeout deviation is recorded; never access again. No CE #168/#170 substitution; no browser DOM/Network/HAR. CRA only; SIL 3 excluded.
