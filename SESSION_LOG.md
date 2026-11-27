@@ -4248,3 +4248,10 @@ CRA only; SIL 3 excluded.
 - Official SSQ category index confirms iX700M manual 2026-09-16. PEGA2 doc32720 metadata confirms EN Ver1.3 file name/size/date and PEGA2 series. Actual attachment href/binary remain unknown.
 - Static JS bundle/source map/API not exposed by official text pages; only JS app shell and generic Download/Copy Link UI labels. CE #171~#173 individual detail/PDF hrefs unknown. wr_id=12651 previous-title text shows iX700M Ver1.3, but href not present; exact known wr_id=12652 read failed 502 once and was not retried.
 - Manufacturer binary0; no PDF SHA/signature/certificate chain/revision/SKU verification. No guessed IDs/URLs or retries. CRA only; SIL 3 excluded.
+
+
+## 2026-11-27 — PR #334 / Run #1738~#1739 closeout
+- PR #334 exact-head Run #1738 SUCCESS 15/15; pytest189; traceability474; expected-head squash merge SHA/current main 89c3304262fefba5365586e89da8681ec0f38966.
+- Main push Run #1739 / 45915081555 exact SHA + push/main SUCCESS 15/15; pytest189; traceability474; official sources10, live legal locators and provenance manifest PASS.
+- CI artifact ZIP digests recorded in report §114.7.58 / evidence §72.55; they are not manufacturer PDF hashes.
+- No new manufacturer attachment hrefs or original binaries. SSQ JS bundle/source map/API and target attachment hrefs remain unknown. CRA only; SIL 3 excluded.
