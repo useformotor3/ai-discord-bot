@@ -4352,3 +4352,9 @@ CRA only; SIL 3 excluded.
 - Run #1767 ID45951503539 exact PR head SUCCESS15/15; pytest189 (3.27s); traceability486 (modern481+legacy5); sources10; PDF canaries3/3. Source ZIP15177270642 / 3,070,565 B / 1f6b84be2e5eacc321fbc5406b07fc5b32835c3b2f6a40d7c5224fb6d08c9fa3; provenance ZIP15176996131 / 2,565 B / ca2a2ef4417aa36086bfa4b28c8115f1159f58c6bb17ed19403a4b1b5707a58d.
 - Run #1768 ID45951599590 exact main push SUCCESS15/15; pytest189 (2.58s); traceability486; sources10; PDF canaries3/3. Source ZIP15177311399 / 3,070,566 B / 786631260ed6de1269b7680225287a074b052491e3402cd48c22c77459399d3f; provenance ZIP15177605220 / 2,565 B / a90ce2df055ffeb97c8ecbe8e5c04cd84df30c17c2587e722ff16cdff429ef3c. ZIP digests only.
 - Manufacturer source unknowns unchanged. Previously-502 CE endpoint must never be reopened; no guessed IDs/URLs. Need sanitized user-side Chrome DevTools HAR for actual DOM/Network. Manufacturer binary0; no PDF cryptographic/revision/SKU validation. CRA only; SIL 3 excluded.
+
+
+## 2026-11-27 — JSONL append separator correction during PR #346 preparation
+- A post-append parse check detected that the new PR #345 closeout event had been concatenated directly to the preceding JSON object because the source file lacked a terminal newline. No malformed data was merged.
+- Repaired by splitting the two adjacent top-level JSON objects using string/escape-aware brace-depth parsing; preserved both records, inserted one record boundary, and added explicit integrity metadata to event 032.
+- Revalidated all 487 PROJECT_LOG.jsonl records: 0 invalid, 0 blank lines. PR #346 exact-head CI must independently re-run traceability before merge. This is a documented assistant process defect; future append procedure must normalize terminal newline and parse every line before creating a PR.
