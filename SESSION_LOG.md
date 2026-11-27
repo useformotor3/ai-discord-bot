@@ -4295,3 +4295,12 @@ CRA only; SIL 3 excluded.
 ## 2026-11-27 — PR #339 Run #1748 failure and correction
 - Run #1748 / 45918661874 / job140243842093 failed at traceability after compile and blob identity checks passed; pytest and source canaries skipped; no merge.
 - Root cause was this assistant's documentation update: PROJECT_LOG.jsonl received pretty-printed multi-line JSON, violating JSONL. Restore exact main baseline and append compact one-line JSON only. Disclose and validate again before merge.
+
+
+## 2026-11-27 — PR #339 correction, successful merge and main CI
+- Initial Run #1748 failed traceability because PROJECT_LOG.jsonl update used multi-line pretty JSON. Corrected by rebuilding from exact baseline and appending compact JSONL; 480 lines parsed with 0 errors.
+- Final PR head 776e3f69a8a4aa49ff3e252f1db5302dccfab7c5; Run #1754 / 45918777399 / job140244219646 SUCCESS 15/15; pytest189; traceability480 (modern475+legacy5); official CRA PDF sources3, official sources10, legal locators and provenance10 PASS.
+- Run #1754 artifacts: source ZIP 15163760434 / 3,070,566 B / c0a6b1c7666eefc2313b75ff9e02643de3e10659af03ae5a9a5e145e5dd5f043; provenance ZIP 15163620700 / 2,565 B / 4efc4f14e2affa32cccab5987b9fc50331b7cdb452e288ac9dc1a410517af486.
+- PR #339 expected-head squash merge succeeded at 64a85d59d269c3dbb00f77940b78ae15f5560d11. Main push Run #1755 / 45918884900 / job140244566661 exact SHA, event push, branch main, SUCCESS 15/15; pytest189; traceability480; official source/legal/provenance PASS.
+- Run #1755 artifacts: source ZIP 15163366979 / 3,070,564 B / 4dcd8ea1eab97a56e98372bfbe382e1163c0573a2cc7fb85e596eb0335d524eb; provenance ZIP 15163905585 / 2,565 B / 197d72a80915c999bbe97c51148f2f43f3dad7ab5259715146732f6749a84a82.
+- Manufacturer original binaries and requested detail/download hrefs remain unverified. CRA only; SIL 3 excluded.

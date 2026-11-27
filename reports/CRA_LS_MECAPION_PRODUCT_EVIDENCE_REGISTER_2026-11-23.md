@@ -2014,3 +2014,11 @@ Actual SKU, EU/EEA supply, economic operators, signed SKU-specific DoC scope, BO
 - Run #1748 / 45918661874 / job140243842093 failed at CRA cross-matrix traceability after source blob and compile checks passed. pytest and source canaries were skipped; no merge.
 - Root cause: PROJECT_LOG.jsonl was appended with pretty-printed multi-line JSON, breaking one-record-per-line JSONL. Validator identified malformed lines 544–613.
 - Corrective action: restore exact main baseline log, preserve all prior events, append compact single-line JSON objects only; document the failure and re-run exact-head CI. No product evidence claims changed.
+
+
+### 72.61 2026-11-27 — PR #339 CI correction and merge closeout
+- PROJECT_LOG.jsonl multi-line append defect caught by Run #1748; repaired by restoring baseline and appending compact one-line records. 480 lines parsed, 0 invalid records.
+- Run #1754 / 45918777399 final PR head SUCCESS 15/15; pytest189; traceability480 (modern475+legacy5); official CRA PDFs3; sources10; live legal locators and provenance10 PASS. Source ZIP ID15163760434 / 3,070,566 B / `c0a6b1c7666eefc2313b75ff9e02643de3e10659af03ae5a9a5e145e5dd5f043`; provenance ID15163620700 / 2,565 B / `4efc4f14e2affa32cccab5987b9fc50331b7cdb452e288ac9dc1a410517af486`.
+- PR #339 expected-head merge SHA/current main `64a85d59d269c3dbb00f77940b78ae15f5560d11`.
+- Run #1755 / 45918884900 exact main push SUCCESS 15/15; pytest189; traceability480 (modern475+legacy5); official sources/PDF/legal/provenance PASS. Source ZIP ID15163366979 / 3,070,564 B / `4dcd8ea1eab97a56e98372bfbe382e1163c0573a2cc7fb85e596eb0335d524eb`; provenance ID15163905585 / 2,565 B / `197d72a80915c999bbe97c51148f2f43f3dad7ab5259715146732f6749a84a82`. CI ZIP hashes only.
+- Manufacturer source unknowns remain unchanged; no manufacturer binary or PDF cryptographic/SKU verification. CE index 502 endpoint accidentally re-opened once; no further retry. CRA only; SIL 3 excluded.
