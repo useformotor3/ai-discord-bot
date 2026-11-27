@@ -4228,3 +4228,9 @@ Run #1617 artifacts:
 - Main push CI after merge remains UNVERIFIED. The available commit-associated helper filters PR-triggered runs; combined commit status returned no entries. No push-run ID/log/artifacts were retrieved; do not claim success.
 - Product evidence unchanged: PEGA2 32720 attachment href/binary, iX700M 2026-09-16 detail/document ID, CE #171~#173 individual PDFs, and wr_id=12652 own previous anchor remain NOT RECOVERED. wr_id=12651's visible previous-post text is only an adjacent manual page observation; it does not establish wr_id=12652's anchor. Browser DOM/Network/HAR not captured; manufacturer binary0.
 - Previously-502 CE endpoint timeout deviation remains recorded; no further request. CE #168/#170 not used as substitutes. CRA only; SIL 3 excluded.
+
+### 114.7.75 2026-11-27 — PR #350 exact-head CI / expected-head merge 종결
+- PR #350 base `bdb539672f5100f4677b485c06ed67d649499e92`, head `42b7c99597be3764f6c7b37a58caea809cda2c0e`; 6 files +41/-0. Expected-head squash merge `1122ca725d6845e0fe860ebd37ae599c62cf5df6`; main ref read-back exact match.
+- Run #1777 / ID `46008519450`: exact PR head SUCCESS15/15; pytest189 (1.86s); traceability491 (modern486+legacy5); official CRA sources10; Commission PDFs3 fetched/hashed. Artifacts15202558368 and15202930349; ZIP digests `ab3d3add4d6fb2fb0e9dec8cb2ae492b5a56afc9a8d8bdf57f371a222695038a` / `ac6f90b82de832b73f67674d40518a2f0187d6cccd4e064e735be6ea439ec1fd` (not manufacturer PDF hashes).
+- Main push CI remains UNVERIFIED: push-run ID/log not retrieved; combined status returned no entries.
+- Product evidence status unchanged: PEGA2 32720 actual attachment href, iX700M 2026-09-16 detail/document ID, CE #171~#173 individual PDFs, and wr_id=12652 own previous anchor NOT RECOVERED. Browser DOM/Network/HAR not captured; manufacturer binary0. Previously-502 CE endpoint must never be reopened. CRA only; SIL 3 excluded.
