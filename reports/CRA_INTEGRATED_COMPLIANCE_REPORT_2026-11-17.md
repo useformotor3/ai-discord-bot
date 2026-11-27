@@ -4088,3 +4088,26 @@ Run #1617 artifacts:
 - PEGA2 Ver1.3 detail wr_id=12651 shows previous-post text “iX700M DRIVE 400[V] 매뉴얼 Ver1.3”, while current Servo index lists iX700M Ver1.4 and PEGA2 Ver1.3. Exact anchor href and wr_id=12652 own previous anchor remain unknown; do not infer target from adjacent row/title.
 - Procedure deviation: a previously 502 CE index endpoint was inadvertently opened once again in this session and returned 502. This was one prohibited repeat request. No further access to that endpoint; no guessed IDs/URLs.
 - Manufacturer binary count 0; no manufacturer PDF SHA-256, signature, certificate-chain, revision or SKU-scope validation. Q01–Q62 not sent. CRA only; SIL 3 excluded.
+
+
+### 114.7.62 2026-11-27 — PR #338 exact-head/main CI 검증 및 제조사 공개경로 재추적
+
+- 기준 main `edf6e12ab31e6e562ef01548b85cb0e9795c1f97`를 GitHub refs/heads/main에서 재확인. 저장소 API 권한 객체는 admin=true, maintain=true, push=true, pull=true로 반환되어 연결 계정에 쓰기 권한이 노출됨.
+- PR #338은 closed/merged=true. PR head `f671dc1bb1ba5d7bcf72d036d304c04e4b7eec16`, expected base `9db86d5deaa459af3bd4bc9de7eda9d1397a9bb4`, merge commit `edf6e12ab31e6e562ef01548b85cb0e9795c1f97`. 변경 파일 6개.
+- Run #1746 ID45917536170, event=pull_request, exact PR head `f671dc1bb1ba5d7bcf72d036d304c04e4b7eec16`, job140240258153, SUCCESS, 15/15. Compile PASS; traceability claims13/interfaces15/requirements35/SEC36/EVD_SEC16/M60641, project_log_events478, modern_ids473, legacy5; pytest189 passed in 2.64s; 3 official CRA Commission PDFs fetched/hashed; 10 official sources and Article13(8), 2025/2392 core-functionality and Annex I(10)/Annex II(1) locators PASS; provenance manifest 10 records round-trip PASS.
+- Run #1746 artifacts: PDF-source CI ZIP ID15162328691, 3,070,565 bytes, ZIP SHA-256 `01c1064431afb74b4f6aeadd226bc394bf5c5c6d9dd7a093262e52223f7b11ed`; provenance ZIP ID15161864807, 2,565 bytes, ZIP SHA-256 `7e29ce42e1562376fa970d70057c0af5b8d4729219a510c1fee56a9099c04790`.
+- Run #1747 ID45917662172, event=push, branch=main, exact SHA `edf6e12ab31e6e562ef01548b85cb0e9795c1f97`, job140240665436, SUCCESS, 15/15. Compile PASS; same traceability counts; pytest189 passed in 2.76s; 3 official CRA Commission PDFs fetched/hashed; 10 official sources and legal locators PASS; provenance manifest 10 records round-trip PASS.
+- Run #1747 artifacts: PDF-source CI ZIP ID15162358870, 3,070,565 bytes, ZIP SHA-256 `8b3619c6534645ac64dba6a81cd639364ff044f2c5e0cb8819601975c7129b9e`; provenance ZIP ID15162373711, 2,565 bytes, ZIP SHA-256 `caeb2d5c93ed54b67e200c6f99bfc148ea41733377ce05b03273345eb28160c6`. These are CI artifact ZIP digests; do not identify them as individual manufacturer PDF hashes.
+- Full job logs show non-blocking deprecation warnings: actions/checkout@v4, setup-python@v5 and upload-artifact@v4 forced to Node 24 because Node 20 is deprecated; Node punycode/url.parse deprecation notices. No test/compile failure.
+- Official Solution Square PEGA2 32720 page returns SPA shell to direct page fetch; indexed page metadata still identifies `PEGA2_ENG_Ver1.3_260831.pdf`, EN, 6.0 MB, update 2026-09-23, PEGA2 series. Actual script src, JS bundle, source map, API/JSON response and target attachment href remain unrecovered; no binary.
+- Official Solution Square Download Center/category pages similarly expose only JavaScript app shell in direct open. Previously recorded iX700M 2026-09-16 listing remains verified at index/search level only; detail/document ID/attachment unknown.
+- LS메카피온 indexed CE category result lists 2026-04-30 #171 iX700MD1-B-220B, #172 iX700MD1-B-370B/300B, #173 iX700MD1-B-750B/550B/450B, plus #174 iX700MCB. Individual detail/PDF hrefs remain unknown. The CE category URL returned HTTP 502 when inadvertently opened again in this session despite the no-retry constraint; this is a process deviation, disclose it, and do not call that endpoint again.
+- Manual index search independently lists iX700M DRIVE 400[V] Ver1.4 (2026-05-26) and PEGA2 Ver1.3 (2026-04-01). wr_id=12652 own previous anchor remains unknown; do not infer from neighboring row or Ver1.3 previous-title text.
+- Manufacturer binary count 0; manufacturer PDF SHA-256/signature/certificate chain/revocation/revision/SKU validation not performed. No guessed IDs/URLs. CRA only; SIL 3 excluded.
+
+
+### 114.7.63 2026-11-27 — PR #339 첫 CI 실패 및 JSONL 형식 복구
+- PR #339 head `4f6f6c486bb0c859705bfc2d28f1d624819bc430` (Run #1748 ID45918661874, job140243842093) exact-head CI에서 컴파일 PASS 후 traceability 단계 FAIL. pytest 및 공식 원본 canary는 실패 단계에서 skip; 병합하지 않음.
+- 전체 job log 원인: PROJECT_LOG.jsonl line 544~613이 invalid JSON. 원인은 신규 이벤트를 pretty-printed multi-line JSON으로 append하여 JSONL의 한 줄당 객체 규칙을 위반한 것.
+- 오류는 조사 결과가 아니라 문서 기록 코드 작성 실수. 복구는 정확한 main 기준 PROJECT_LOG.jsonl을 다시 가져와 기존 이벤트를 보존하고, 이벤트 객체를 compact JSON 한 줄씩 append하는 방식으로 수행. 다른 다섯 문서에 원인/조치/검증을 명시.
+- 재검증 필수: traceability PASS, 전체 pytest PASS, 공식 source canaries PASS를 exact PR head에서 확인한 뒤에만 expected-head 병합 및 main push CI 진행. 실패 상태에서 병합 금지.

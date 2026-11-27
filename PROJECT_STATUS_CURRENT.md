@@ -1,3 +1,20 @@
+# CRA 현재 상황판 — PR #339 CI 수정 진행
+
+- 기준 main remains `edf6e12ab31e6e562ef01548b85cb0e9795c1f97`; PR #338 exact-head Run #1746 and main push Run #1747 both SUCCESS 15/15.
+- PR #339 head `4f6f6c486bb0c859705bfc2d1f624819bc430`; Run #1748 failed traceability because PROJECT_LOG.jsonl received a pretty-printed multi-line JSON record. Source identity and compile passed; pytest/source canaries skipped. No merge.
+- Correction: restore main baseline JSONL and append compact one-line JSON records. Re-run exact-head validation before any merge.
+- Details report §114.7.63 / evidence §72.60. CRA only; SIL 3 excluded.
+
+# CRA 현재 상황판 — 2026-11-27 (PR #338 종결)
+
+- **Latest verified main HEAD:** `edf6e12ab31e6e562ef01548b85cb0e9795c1f97` (PR #338 merge SHA; refs/heads/main read-back matches).
+- PR #338 merged: PR head `f671dc1bb1ba5d7bcf72d036d304c04e4b7eec16`, expected base `9db86d5deaa459af3bd4bc9de7eda9d1397a9bb4`, merge SHA exact requested HEAD.
+- Run #1746 / 45917536170 exact PR head and Run #1747 / 45917662172 exact main push both SUCCESS 15/15; pytest189; traceability478 events (modern473+legacy5); 3 official CRA PDFs, 10 official sources, legal locators and provenance manifest10 PASS. CI ZIP digests and artifact IDs in report §114.7.62 / evidence §72.59.
+- GitHub repository permission response: admin=true, maintain=true, push=true; write access is available. Documentation follow-up branch created for a separate evidence update.
+- SSQ direct page access still returns JS app shell; actual script src/bundle/source map/API/target attachment href not recovered. PEGA2 32720 metadata known, binary absent. iX700M 2026-09-16 index-only. CE #171~#173 index-only; detail/PDF unknown. wr_id=12652 own previous anchor unknown.
+- **Process deviation:** a previously 502 CE index endpoint was inadvertently opened again during the current investigation and returned 502. Do not request it again. No IDs/URLs guessed.
+- Manufacturer binary0; no manufacturer PDF SHA/signature/chain/revision/SKU checks. CRA only; SIL 3 excluded. Details report §114.7.62 / evidence §72.59.
+
 # CRA 현재 상황판 — 2026-11-27 (PR #337 종결)
 
 - **Latest verified main HEAD:** `9db86d5deaa459af3bd4bc9de7eda9d1397a9bb4` (PR #337 merge SHA and Run #1745 exact main push).

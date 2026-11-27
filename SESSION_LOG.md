@@ -4278,3 +4278,20 @@ CRA only; SIL 3 excluded.
 - PEGA2 32720 metadata and iX700M 2026-09-16 listing rechecked; target hrefs unknown. CE #171~#173 individual detail/PDF unknown. wr_id=12652 own previous anchor unknown; wr_id=12651 previous-title text conflicts with current index's Ver1.4 listing.
 - Process deviation: one accidental repeat open of the previously 502 CE index URL occurred; it returned 502. Do not access this endpoint again. No IDs/URLs guessed.
 - Manufacturer binary0; no manufacturer SHA/signature/chain/revision/SKU checks. CRA only; SIL 3 excluded.
+
+
+## 2026-11-27 — PR #338 exact-head/main CI closeout and manufacturer trace continuation
+- Verified main refs/heads/main exact SHA edf6e12ab31e6e562ef01548b85cb0e9795c1f97.
+- PR #338 merged: head f671dc1bb1ba5d7bcf72d036d304c04e4b7eec16; expected base 9db86d5deaa459af3bd4bc9de7eda9d1397a9bb4; merge SHA equals main.
+- Run #1746 ID45917536170/job140240258153 exact PR head SUCCESS 15/15; pytest189; traceability478 (modern473+legacy5); official CRA PDFs3, sources10, legal locators and provenance10 PASS. Artifact ZIPs: source ID15162328691 / 3,070,565 B / 01c1064431afb74b4f6aeadd226bc394bf5c5c6d9dd7a093262e52223f7b11ed; provenance ID15161864807 / 2,565 B / 7e29ce42e1562376fa970d70057c0af5b8d4729219a510c1fee56a9099c04790.
+- Run #1747 ID45917662172/job140240665436 exact main push SUCCESS 15/15; pytest189; same checks PASS. Artifact ZIPs: source ID15162358870 / 3,070,565 B / 8b3619c6534645ac64dba6a81cd639364ff044f2c5e0cb8819601975c7129b9e; provenance ID15162373711 / 2,565 B / caeb2d5c93ed54b67e200c6f99bfc148ea41733377ce05b03273345eb28160c6.
+- Full job logs reviewed. Non-blocking Node 20→24 compatibility/deprecation warnings and punycode/url.parse deprecation warnings; no CI failures.
+- GitHub repository permission response confirms admin/maintain/push=true. Follow-up documentation branch created.
+- Official SSQ pages open as JS app shells; actual script src, bundle, source map, API/JSON and target attachment href remain unknown. PEGA2 32720 metadata known, binary unavailable. iX700M 2026-09-16 remains index-only. CE #171~#173 model/date indexed; individual detail/PDF unknown. Manual index lists iX700M Ver1.4 and PEGA2 Ver1.3; wr_id=12652 own previous anchor unknown.
+- Procedure deviation: CE index URL previously returning 502 was inadvertently opened again in this session; returned 502. No further access. No guessed IDs/URLs.
+- Manufacturer binary0; no manufacturer PDF SHA/signature/certificate-chain/revision/SKU validation. CRA only; SIL 3 excluded.
+
+
+## 2026-11-27 — PR #339 Run #1748 failure and correction
+- Run #1748 / 45918661874 / job140243842093 failed at traceability after compile and blob identity checks passed; pytest and source canaries skipped; no merge.
+- Root cause was this assistant's documentation update: PROJECT_LOG.jsonl received pretty-printed multi-line JSON, violating JSONL. Restore exact main baseline and append compact one-line JSON only. Disclose and validate again before merge.

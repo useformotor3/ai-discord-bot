@@ -1997,3 +1997,20 @@ Actual SKU, EU/EEA supply, economic operators, signed SKU-specific DoC scope, BO
 - wr_id=12651 previous-title text says iX700M Ver1.3, but current Servo index lists iX700M Ver1.4. Actual href and wr_id=12652 own previous anchor unknown.
 - Procedure deviation: one inadvertent repeat open of the previously 502 CE index URL occurred; it returned 502. No further request will be made to that endpoint. No guessed IDs/URLs.
 - Manufacturer binary0; no manufacturer SHA/signature/chain/revision/SKU checks; Q01–Q62 not sent. CRA only; SIL 3 excluded.
+
+
+### 72.59 2026-11-27 — PR #338 CI and official product evidence delta
+- PR #338 merged at exact requested main HEAD `edf6e12ab31e6e562ef01548b85cb0e9795c1f97`. PR head `f671dc1bb1ba5d7bcf72d036d304c04e4b7eec16`; expected base `9db86d5deaa459af3bd4bc9de7eda9d1397a9bb4`.
+- Run #1746 ID45917536170 / job140240258153 exact PR head SUCCESS 15/15; pytest189; traceability project log 478 events, modern473+legacy5; official CRA PDF source3 and official source10; Article13(8), 2025/2392 locators and provenance10 PASS.
+- Run #1747 ID45917662172 / job140240665436 exact main push SHA/event=push/branch=main SUCCESS 15/15; pytest189; same traceability/source/legal/provenance checks PASS.
+- CI ZIPs only: Run1746 source ID15162328691 3,070,565 B SHA-256 `01c1064431afb74b4f6aeadd226bc394bf5c5c6d9dd7a093262e52223f7b11ed`; provenance ID15161864807 2,565 B SHA-256 `7e29ce42e1562376fa970d70057c0af5b8d4729219a510c1fee56a9099c04790`. Run1747 source ID15162358870 3,070,565 B SHA-256 `8b3619c6534645ac64dba6a81cd639364ff044f2c5e0cb8819601975c7129b9e`; provenance ID15162373711 2,565 B SHA-256 `caeb2d5c93ed54b67e200c6f99bfc148ea41733377ce05b03273345eb28160c6`. None is a manufacturer PDF digest.
+- PEGA2 32720 indexed official detail metadata: `PEGA2_ENG_Ver1.3_260831.pdf`, EN, 6.0 MB, updated 2026-09-23, PEGA2 series; attachment/binary unknown.
+- iX700M 2026-09-16 listing remains index-only; detail/document ID/attachment unknown. CE #171~#173 dated 2026-04-30 and model associations are indexed; individual detail/PDF unknown. Manual index lists Ver1.4 iX700M (2026-05-26) and PEGA2 Ver1.3 (2026-04-01); wr_id=12652 own previous anchor unknown.
+- SSQ direct opens return JavaScript app shell; script src/bundle/source map/API/JSON/target download href not recovered. No inference or guessed URL.
+- Process deviation: CE index endpoint returned 502 on an inadvertent repeat open during this session; do not access it again. Manufacturer binary0; no manufacturer PDF SHA/signature/chain/revision/SKU checks. CRA only; SIL 3 excluded.
+
+
+### 72.60 2026-11-27 — PR #339 JSONL validation failure
+- Run #1748 / 45918661874 / job140243842093 failed at CRA cross-matrix traceability after source blob and compile checks passed. pytest and source canaries were skipped; no merge.
+- Root cause: PROJECT_LOG.jsonl was appended with pretty-printed multi-line JSON, breaking one-record-per-line JSONL. Validator identified malformed lines 544–613.
+- Corrective action: restore exact main baseline log, preserve all prior events, append compact single-line JSON objects only; document the failure and re-run exact-head CI. No product evidence claims changed.
