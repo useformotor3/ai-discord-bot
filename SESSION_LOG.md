@@ -4255,3 +4255,10 @@ CRA only; SIL 3 excluded.
 - Main push Run #1739 / 45915081555 exact SHA + push/main SUCCESS 15/15; pytest189; traceability474; official sources10, live legal locators and provenance manifest PASS.
 - CI artifact ZIP digests recorded in report §114.7.58 / evidence §72.55; they are not manufacturer PDF hashes.
 - No new manufacturer attachment hrefs or original binaries. SSQ JS bundle/source map/API and target attachment hrefs remain unknown. CRA only; SIL 3 excluded.
+
+
+## 2026-11-27 — PR #335 / Run #1740~#1741 closeout
+- PR #335 exact-head Run #1740 SUCCESS 15/15; pytest189; traceability475; expected-head squash merge SHA/current main ddb97ad60a20f9d87bfda8e4a78eb73b2c23ede0.
+- Main push Run #1741 / 45915371120 exact SHA + push/main SUCCESS 15/15; pytest189; traceability475; official sources10, live legal locators and provenance manifest PASS.
+- CI artifact ZIP digests recorded in report §114.7.59 / evidence §72.56; they are not manufacturer PDF hashes.
+- No manufacturer original PDF or target attachment hrefs obtained. SSQ JS bundle/source map/API remain unrecovered. CRA only; SIL 3 excluded.
