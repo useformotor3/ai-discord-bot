@@ -1662,3 +1662,6 @@ PR #314의 exact-head CI Run #1695와 main push Run #1696가 모두 SUCCESS(15/1
 
 
 > **PR #345 exact-head/main push closeout (2026-11-27):** PR #345 merged at `9b6a2b397b6ef0ec30ca1d21b153223f83812311`. Run #1767 exact PR head and Run #1768 exact main push both SUCCESS15/15; pytest189; traceability486; official CRA sources10 and PDF canaries3/3. See report §114.7.70 / evidence §72.67. CI digests are ZIP hashes only. Manufacturer binary0; target attachment paths remain unknown. CRA only; SIL 3 excluded.
+
+
+> **PR #346 / exact-head + main push closeout (2026-11-27):** PR #346 merged at `997545f3573be902eb9a767231d563facbcf5dc7` (head `9c1596883bce8c42f04ca9365a889c1c154246d7`). Run #1769 exact PR head and Run #1770 exact main push both SUCCESS15/15; pytest189; traceability487 (modern482+legacy5); official CRA sources10 and PDF canaries3/3. See report §114.7.71 / evidence §72.68. CI digests are ZIP hashes only. Manufacturer binary0; PEGA2/iX700M/CE/wr_id=12652 locators and browser DOM/Network remain unresolved. Previously-502 CE endpoint must never be reopened. CRA only; SIL 3 excluded.
