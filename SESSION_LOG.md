@@ -4385,3 +4385,11 @@ CRA only; SIL 3 excluded.
 - Official LS Mecapion search-index page `wr_id=12651` PEGA2 Ver1.3 shows previous-post title `iX700M DRIVE 400[V] 매뉴얼 Ver1.3`; actual href not exposed. This does not identify the previous anchor on target page `wr_id=12652`.
 - PEGA2 32720 actual attachment href, iX700M 2026-09-16 detail/document ID, CE #171~#173 individual PDFs, and wr_id=12652 own previous anchor remain unknown. No CE #168/#170 substitution. Browser DOM/Network/HAR not captured.
 - Process deviation: known prohibited 502 CE category endpoint was inadvertently opened from a search result and timed out. Response not used as evidence; no subsequent requests. Never access again.
+
+
+## 2026-11-27 — PR #349 exact-head CI 및 expected-head merge 종결
+- PR #349 base `753c5704f8b5f1cb87b0a9ac64992675e6a9b252`; exact head `0c443fbf5797051357cee6e4ec5ee545776d9609`; 6 files, +49/-3. Expected-head squash merge 성공; merge SHA `bdb539672f5100f4677b485c06ed67d649499e92`; main ref read-back exact match.
+- Run #1775 / ID `46008207489`: event=pull_request, exact PR head, SUCCESS15/15; job140536660030; compileall PASS; traceability490 (modern485+legacy5); pytest189 (2.55s); official CRA sources10; Commission PDFs3 fetched/hashed.
+- Artifacts: source ZIP ID15201614213, 3,070,566 B, digest `09668b4dc0033d49a07cd2f65047ffdaf9cc93caaceb2a641ed199c156c8d9bb`; provenance ZIP ID15201949108, 2,565 B, digest `1ee8978660e56790ffea9a1b3e9e5b504582f5fbe07ab599f86e11a79303f8e7`. ZIP hashes only.
+- Main push CI after merge: UNVERIFIED. Commit-associated run helper filters PR events; combined status endpoint returned no entries; no push run ID/log independently retrieved.
+- Product locators unchanged. The wr_id=12651 official indexed previous-post text does not establish wr_id=12652's own previous anchor. Manufacturer binary0; no DOM/Network/HAR. Never access previously-502 CE endpoint again. CRA only; SIL 3 excluded.
