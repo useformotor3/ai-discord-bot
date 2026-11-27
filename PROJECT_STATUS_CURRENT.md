@@ -1,3 +1,14 @@
+# CRA 현재 상황판 — 2026-11-27 (최신 검증)
+
+- **Latest verified main HEAD:** `c593465dadc761481c4e7f50837e6a7424c6d52f` (PR #333 merge SHA and GitHub refs/heads/main read-back; PR #332/#333 both merged).
+- PR #332 exact-head Run #1734 / 45913163831; main push Run #1735 / 45913256940; PR #333 exact-head Run #1736 / 45913399445; main push Run #1737 / 45913480927. All completed SUCCESS, 15/15 steps, pytest189.
+- Traceability events: #1734/#1735 = 472 (modern467+legacy5); #1736/#1737 = 473 (modern468+legacy5). All four: official CRA sources10, Article13(8) live locator, 2025/2392 core-functionality + Annex I(10)/Annex II(1) locators, provenance manifest PASS.
+- CI ZIP hashes only: #1734 source `8c6c52aec177603291c0b993f34dd01eb851ce8dbef14c001521cffec14f2baf`; provenance `72e6ce6241f66d1b6cbdafddf2ba4d0c55f1e8120d2c2f352d43f816be10c6db`. #1735 source `0ec1cae25a64a67f2293a3d5a036863c6909aa7a9e072b9cd78215bee973aa94`; provenance `82844a91baada775cb787f1105468bd7ebe57abbb0bc28a9e753f56f60ed523b`. #1736 source `16fd3dac2d161a86d31201276dfe6a25252d4c543db8d31565a786cb20eeba01`; provenance `89345f20f58fee1a521308a390309bcabc568c9b9828a4494bbcb3d580ad44c7`. #1737 source `7dc6349b4bdc9012ac882c3e7c6c4fca32f0448a8ee72d4a0128619bb799cfdb`; provenance `4548bd9a7440ca412392e723946c51b63771199c563d91dd7626aff41ac1f8f8`. None are manufacturer PDF hashes.
+- Official SSQ index confirms iX700M manual 2026-09-16; PEGA2 doc32720 confirms English Ver1.3 filename `PEGA2_ENG_Ver1.3_260831.pdf`, 6.0MB, 2026-09-23, PEGA2 series. Actual attachment href and binary not obtained.
+- SSQ static JS/source map/API remains unrecovered: text renderer returns app shell; no concrete script src, bundle URL, API response, or attachment anchor. Global Download Center exposes Download/Copy Link UI labels, not target file URL.
+- CE #171/#172/#173 index rows and model groups/date confirmed; individual detail/PDF links unknown. wr_id=12651 displays previous-post title “iX700M DRIVE 400[V] 매뉴얼 Ver1.3” but actual anchor href not exposed. Exact known wr_id=12652 page fetch returned 502 once; no retry; its own previous-post anchor unknown.
+- Manufacturer binary0; no manufacturer SHA/signature/certificate chain/revision/SKU checks. No guessed IDs/URLs, no failed endpoint retries; Q01~Q62 not sent. CRA only; SIL 3 excluded. Details report §114.7.57 / evidence §72.54.
+
 # CRA 현재 상황판 — 2026-11-27
 
 - **Latest verified main HEAD:** `86174ae03d5f73fe50095c9d3a222ddf13feddfe` (PR #332 expected-head merge SHA; refs/heads/main read-back).
