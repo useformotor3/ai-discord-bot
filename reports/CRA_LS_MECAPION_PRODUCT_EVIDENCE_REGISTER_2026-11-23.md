@@ -2048,3 +2048,12 @@ Actual SKU, EU/EEA supply, economic operators, signed SKU-specific DoC scope, BO
 - wr_id=12652 own previous anchor 미확보; 추정하지 않음.
 - 실제 DOM/Network trace 미실행: JS shell만 반환되고 실행 컨테이너 DNS resolution 실패. script src/bundle/source map/API/download request URL은 NOT RECOVERED. 이 환경 오류를 사이트 장애로 해석하지 않음.
 - Manufacturer binary0; PDF SHA-256/signature/certificate chain/revision/SKU checks NOT PERFORMED. CRA only; SIL 3 excluded.
+
+
+### 72.65 2026-11-27 — Run #1763 verified; PEGA2 detail metadata; CE endpoint retry deviation
+- PR #343 merged at `4e0cc88f30e059359ca0e3c80311b1cee1d5b6b5`. Run #1763 ID `45942494790`, event=push, branch=main, exact SHA, SUCCESS 15/15; job `140319722485`; pytest189; traceability484 (modern479+legacy5); CRA official sources10; CRA PDF canaries3/3. Artifact ZIP hashes: source `23bd56ee17a35d4e7b2ecc466e394175b5224675793655b672f47ea2e94dfddc`; provenance `eb8cd0b4b8a595d0a3a0ade0bed0dd67d8b0868b3ae81e79f43262759f06b892`. CI ZIP digests only.
+- PEGA2 32720 detail metadata: `PEGA2_ENG_Ver1.3_260831.pdf`, EN, 6.0 MB, 2026-09-23, PEGA2 series, contents outline visible in indexed page text. Actual attachment href and binary remain unknown; no manufacturer PDF hash/signature/chain/revision/SKU checks.
+- iX700M 2026-09-16 title remains index-only; detail/document ID/attachment unknown. CE #171–#173 individual detail/PDF hrefs remain unknown; indexed date/model mapping unchanged. `wr_id=12652` own previous-post anchor remains unknown.
+- Process deviation: accidentally opened the known CE category index search-result reference, which triggered another request to the previously-502 endpoint and returned 502. This violated the user's explicit no-retry rule; record as assistant process error. No further request/open to that endpoint. Do not guess row-specific IDs/URLs.
+- Browser evidence: no real DOM or Network capture. script src/bundle/source map/API/download request remain NOT RECOVERED. Need sanitized real Chrome DevTools HAR from user-side browser; inspect Elements and Network (Preserve log, Disable cache; Doc/JS/Fetch/XHR), capture page load and Download action, strip cookies/Authorization/session tokens.
+- Manufacturer binary0; PDF SHA-256/e-signature/certificate chain/revision/SKU validation NOT PERFORMED. CRA only; SIL 3 excluded.

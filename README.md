@@ -1653,3 +1653,6 @@ PR #314의 exact-head CI Run #1695와 main push Run #1696가 모두 SUCCESS(15/1
 
 
 > **SSQ public index recheck (2026-11-27):** Official 2026-11-26 renewal notice documents title→detail, Download→immediate download, Share→copy/share link; official Motion&Servo index confirms iX700M manual 2026-09-16 and PEGA2 listing. Actual browser DOM/Network trace, JS bundle/API and target attachment hrefs remain unverified. See report §114.7.67 / evidence §72.64. Manufacturer binary0; no cryptographic/revision/SKU checks. CRA only; SIL 3 excluded.
+
+
+> **PR #343 CI closeout (2026-11-27):** Run #1763 / ID 45942494790 is verified as event=push, branch=main, exact merge SHA 4e0cc88f30e059359ca0e3c80311b1cee1d5b6b5, SUCCESS 15/15; pytest189; traceability484; official CRA sources10 and PDF canaries3/3. Artifacts and ZIP digests are recorded in report §114.7.68 / evidence register §72.65. PEGA2 32720 detail metadata is visible, but actual attachment href/binary remains unknown. A previously-502 CE category endpoint was accidentally re-requested once during investigation and again returned 502; do not access it again. CRA only; SIL 3 excluded.
